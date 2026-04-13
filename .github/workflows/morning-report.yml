@@ -21,6 +21,9 @@ jobs:
 
       - name: Run report
         env:
-          RUNABLE_API_KEY: ${{ secrets.RUNABLE_API_KEY }}
-          RECIPIENT: ${{ secrets.RECIPIENT }}
+          RESEND_API_KEY:          ${{ secrets.RESEND_API_KEY }}
+          CLOUDINARY_CLOUD_NAME:   ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY:      ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET:   ${{ secrets.CLOUDINARY_API_SECRET }}
+          RECIPIENT:               ${{ secrets.RECIPIENT }}
         run: python report_ci.py
