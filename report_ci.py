@@ -292,8 +292,12 @@ def send_email(subject, html):
             'Content-Type': 'application/json'
         }
     )
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.loads(r.read())
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        body = e.read().decode()
+        raise Exception(f"Resend error {e.code}: {body}")
 
 # ── HTML ─────────────────────────────────────────────────────────────────
 
