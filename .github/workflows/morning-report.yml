@@ -27,3 +27,4 @@ jobs:
           CLOUDINARY_API_SECRET:   ${{ secrets.CLOUDINARY_API_SECRET }}
           RECIPIENT:               ${{ secrets.RECIPIENT }}
         run: python report_ci.py
+
