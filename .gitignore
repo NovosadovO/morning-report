@@ -1,0 +1,8 @@
+charts/
+*.log
+__pycache__/
+*.pyc
+.env*
+latest_report.html
+scheduler.sh
+report.py
