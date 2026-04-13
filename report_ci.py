@@ -278,26 +278,22 @@ def cloudinary_upload(path):
 # ── EMAIL VIA RESEND ─────────────────────────────────────────────────────
 
 def send_email(subject, html):
-    payload = json.dumps({
+    import requests as req_lib
+    payload = {
         "from": "Morning Report <onboarding@resend.dev>",
         "to": [RECIPIENT],
         "subject": subject,
         "html": html
-    }).encode()
-    req = urllib.request.Request(
+    }
+    r = req_lib.post(
         'https://api.resend.com/emails',
-        data=payload,
-        headers={
-            'Authorization': f'Bearer {RESEND_API_KEY}',
-            'Content-Type': 'application/json'
-        }
+        json=payload,
+        headers={'Authorization': f'Bearer {RESEND_API_KEY}'},
+        timeout=30
     )
-    try:
-        with urllib.request.urlopen(req, timeout=30) as r:
-            return json.loads(r.read())
-    except urllib.error.HTTPError as e:
-        body = e.read().decode()
-        raise Exception(f"Resend error {e.code}: {body}")
+    if not r.ok:
+        raise Exception(f"Resend error {r.status_code}: {r.text}")
+    return r.json()
 
 # ── HTML ─────────────────────────────────────────────────────────────────
 
