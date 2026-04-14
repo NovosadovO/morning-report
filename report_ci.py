@@ -84,33 +84,39 @@ def fetch_vava():
         return {'ticker':'VAVA','name':'VanEck Avalanche ETN','price':None,'change_pct':None,'currency':'EUR','note':''}
 
 def fetch_yf(symbols):
-    import yfinance as yf
-
+    """Fetch prices directly from Yahoo Finance JSON API — no library needed."""
     result = {}
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36',
+        'Accept': 'application/json',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Origin': 'https://finance.yahoo.com',
+        'Referer': 'https://finance.yahoo.com/',
+    }
     for sym in symbols:
-        last_close = prev_close = chg_pct = mcap = None
+        price = chg_pct = mcap = None
         for attempt in range(3):
             try:
-                t = yf.Ticker(sym)
-                h = t.history(period='5d')
-                if len(h) >= 2:
-                    last_close = float(h['Close'].iloc[-1])
-                    prev_close = float(h['Close'].iloc[-2])
-                    chg_pct    = (last_close - prev_close) / prev_close * 100
-                elif len(h) == 1:
-                    last_close = float(h['Close'].iloc[-1])
-                try:
-                    fi = t.fast_info
-                    mcap = getattr(fi, 'market_cap', None)
-                except:
-                    mcap = None
+                url = f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?interval=1d&range=5d"
+                req = urllib.request.Request(url, headers=headers)
+                with urllib.request.urlopen(req, timeout=15) as r:
+                    d = json.loads(r.read())
+                meta   = d['chart']['result'][0]['meta']
+                closes = d['chart']['result'][0]['indicators']['quote'][0]['close']
+                closes = [c for c in closes if c is not None]
+                if len(closes) >= 2:
+                    price   = closes[-1]
+                    chg_pct = (closes[-1] - closes[-2]) / closes[-2] * 100
+                elif len(closes) == 1:
+                    price = closes[-1]
+                mcap = meta.get('marketCap')
                 break
             except Exception:
                 if attempt < 2:
                     time.sleep(5 + attempt * 3)
-        result[sym] = {'price': last_close, 'change_pct': chg_pct,
-                       'prev_close': prev_close, 'market_cap': mcap}
-        time.sleep(0.5)
+        result[sym] = {'price': price, 'change_pct': chg_pct,
+                       'prev_close': None, 'market_cap': mcap}
+        time.sleep(0.4)
     return result
 
 STOCK_SYMBOLS  = ['NVDA','AAPL','MSFT','AMZN','META','GOOG','TSLA','AVGO','JPM','BRK-B']

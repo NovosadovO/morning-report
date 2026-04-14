@@ -1,5 +1,3 @@
-yfinance>=0.2.55
-curl_cffi>=0.7.0
 matplotlib==3.10.1
 requests==2.32.3
 numpy==2.2.4
