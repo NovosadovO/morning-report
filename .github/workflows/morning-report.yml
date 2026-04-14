@@ -26,5 +26,6 @@ jobs:
           CLOUDINARY_API_KEY:      ${{ secrets.CLOUDINARY_API_KEY }}
           CLOUDINARY_API_SECRET:   ${{ secrets.CLOUDINARY_API_SECRET }}
           RECIPIENT:               ${{ secrets.RECIPIENT }}
+          OPENAI_API_KEY:          ${{ secrets.OPENAI_API_KEY }}
         run: python report_ci.py
 

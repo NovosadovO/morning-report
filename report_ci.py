@@ -275,6 +275,100 @@ def cloudinary_upload(path):
         result = json.loads(r.read())
     return result['secure_url']
 
+# ── NEWS ─────────────────────────────────────────────────────────────────
+
+def fetch_news():
+    """Fetch top-10 crypto/finance news from RSS feeds, translated to Ukrainian"""
+    import re
+    from email.utils import parsedate_to_datetime
+
+    feeds = [
+        ('CoinDesk',      'https://www.coindesk.com/arc/outboundfeeds/rss/'),
+        ('CoinTelegraph', 'https://cointelegraph.com/rss'),
+        ('Investing.com', 'https://www.investing.com/rss/news.rss'),
+    ]
+
+    all_items = []
+    cutoff = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=24)
+
+    for source, url in feeds:
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=10) as r:
+                xml = r.read().decode('utf-8', errors='ignore')
+            items = re.findall(r'<item>(.*?)</item>', xml, re.DOTALL)
+            for item in items[:15]:
+                title_m = re.search(r'<title><!\[CDATA\[(.*?)\]\]></title>|<title>(.*?)</title>', item, re.DOTALL)
+                link_m  = re.search(r'<link>(.*?)</link>|<guid[^>]*>(https?://[^<]+)</guid>', item, re.DOTALL)
+                date_m  = re.search(r'<pubDate>(.*?)</pubDate>', item)
+                title = (title_m.group(1) or title_m.group(2) or '').strip() if title_m else ''
+                link  = (link_m.group(1) or link_m.group(2) or '').strip() if link_m else ''
+                pub   = date_m.group(1).strip() if date_m else ''
+                # parse date
+                try:
+                    dt = parsedate_to_datetime(pub)
+                    if dt.tzinfo is None:
+                        dt = dt.replace(tzinfo=datetime.timezone.utc)
+                    if dt < cutoff:
+                        continue
+                except:
+                    pass
+                if title:
+                    all_items.append({'title': title, 'link': link, 'source': source, 'pub': pub})
+        except Exception as e:
+            log(f"  News fetch error ({source}): {e}")
+
+    # Deduplicate and take top 10
+    seen = set()
+    unique = []
+    for item in all_items:
+        key = item['title'][:40].lower()
+        if key not in seen:
+            seen.add(key)
+            unique.append(item)
+        if len(unique) >= 10:
+            break
+
+    # Translate to Ukrainian via OpenAI
+    OPENAI_KEY = os.environ.get('OPENAI_API_KEY', '')
+    if OPENAI_KEY and unique:
+        try:
+            titles_en = [item['title'] for item in unique]
+            prompt = "Translate these news headlines to Ukrainian. Return only a JSON array of translated strings, same order:\n" + json.dumps(titles_en)
+            payload = json.dumps({
+                "model": "gpt-4o-mini",
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.3
+            }).encode()
+            req = urllib.request.Request(
+                'https://api.openai.com/v1/chat/completions',
+                data=payload,
+                headers={
+                    'Authorization': f'Bearer {OPENAI_KEY}',
+                    'Content-Type': 'application/json'
+                }
+            )
+            with urllib.request.urlopen(req, timeout=20) as r:
+                resp = json.loads(r.read())
+            content = resp['choices'][0]['message']['content']
+            # extract JSON array
+            arr_match = re.search(r'\[.*\]', content, re.DOTALL)
+            if arr_match:
+                translated = json.loads(arr_match.group())
+                for i, item in enumerate(unique):
+                    if i < len(translated):
+                        item['title_uk'] = translated[i]
+        except Exception as e:
+            log(f"  Translation error: {e}")
+
+    # fallback: use original title
+    for item in unique:
+        if 'title_uk' not in item:
+            item['title_uk'] = item['title']
+
+    return unique
+
+
 # ── EMAIL VIA RESEND ─────────────────────────────────────────────────────
 
 def send_email(subject, html):
@@ -297,7 +391,7 @@ def send_email(subject, html):
 
 # ── HTML ─────────────────────────────────────────────────────────────────
 
-def build_html(crypto20, stocks_data, etf_data, vava, top_etf_data, indices_data, chart_urls, date_str):
+def build_html(crypto20, stocks_data, etf_data, vava, top_etf_data, indices_data, chart_urls, date_str, news=None):
     p1, p2, p3, p4, p5 = chart_urls
 
     def img(url, alt):
@@ -361,6 +455,24 @@ def build_html(crypto20, stocks_data, etf_data, vava, top_etf_data, indices_data
           <td style="color:{col};font-weight:bold">{fmt_pct(d.get("change_pct"))}</td>
         </tr>'''
 
+    # ── News HTML
+    news_html = ''
+    if news:
+        news_items = ''
+        for i, item in enumerate(news, 1):
+            news_items += f'''<tr>
+              <td style="color:#9ca3af;text-align:center;font-size:11px;width:24px">{i}</td>
+              <td style="font-size:13px;padding:10px 12px">
+                <a href="{item.get('link','#')}" target="_blank" style="color:#111827;text-decoration:none;font-weight:500;line-height:1.4">{item['title_uk']}</a>
+                <br><span style="color:#9ca3af;font-size:11px">{item.get('source','')} · {item.get('pub','')[:16]}</span>
+              </td>
+            </tr>'''
+        news_html = f'''<h2>📰 Новини за 24 години</h2>
+<table>
+  <tr><th>#</th><th>Заголовок</th></tr>
+  {news_items}
+</table>'''
+
     return f'''<!DOCTYPE html>
 <html>
 <head>
@@ -408,8 +520,10 @@ def build_html(crypto20, stocks_data, etf_data, vava, top_etf_data, indices_data
 <table><tr><th>ETF</th><th>Ціна (USD)</th><th>Зміна</th><th>Кап.</th></tr>{top_etf_rows}</table>
 {img(p4,"Топ ETF")}
 
+{news_html}
+
 <div class="footer">
-  Джерела: CoinGecko API, yfinance (Yahoo Finance) — дані зібрано о 09:00 CEST<br>
+  Джерела: CoinGecko API, yfinance (Yahoo Finance), CoinDesk, CoinTelegraph, Investing.com — дані зібрано о 09:00 CEST<br>
   Не є фінансовою порадою. Автоматичний щоденний звіт.
 </div>
 </div>
@@ -450,8 +564,12 @@ def main():
     chart_urls = [cloudinary_upload(p) for p in chart_paths]
     log(f"  Uploaded {len(chart_urls)} charts")
 
+    log("Fetching news...")
+    news = fetch_news()
+    log(f"  Got {len(news)} news items")
+
     log("Building HTML...")
-    html = build_html(crypto20, stocks_data, etf_data, vava, top_etf_raw, indices_data, chart_urls, date_str)
+    html = build_html(crypto20, stocks_data, etf_data, vava, top_etf_raw, indices_data, chart_urls, date_str, news)
 
     log(f"Sending email to {RECIPIENT}...")
     result = send_email(f'📊 Ранковий дайджест ринків — {subject_date}', html)
