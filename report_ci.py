@@ -85,29 +85,32 @@ def fetch_vava():
 
 def fetch_yf(symbols):
     import yfinance as yf
+
     result = {}
     for sym in symbols:
-        try:
-            t = yf.Ticker(sym)
-            h = t.history(period='5d')
-            if len(h) >= 2:
-                last_close = float(h['Close'].iloc[-1])
-                prev_close = float(h['Close'].iloc[-2])
-                chg_pct    = (last_close - prev_close) / prev_close * 100
-            elif len(h) == 1:
-                last_close = float(h['Close'].iloc[-1])
-                chg_pct = prev_close = None
-            else:
-                last_close = prev_close = chg_pct = None
+        last_close = prev_close = chg_pct = mcap = None
+        for attempt in range(3):
             try:
-                mcap = t.fast_info.get('market_cap')
-            except:
-                mcap = None
-            result[sym] = {'price': last_close, 'change_pct': chg_pct,
-                           'prev_close': prev_close, 'market_cap': mcap}
-        except:
-            result[sym] = {'price': None, 'change_pct': None,
-                           'prev_close': None, 'market_cap': None}
+                t = yf.Ticker(sym)
+                h = t.history(period='5d')
+                if len(h) >= 2:
+                    last_close = float(h['Close'].iloc[-1])
+                    prev_close = float(h['Close'].iloc[-2])
+                    chg_pct    = (last_close - prev_close) / prev_close * 100
+                elif len(h) == 1:
+                    last_close = float(h['Close'].iloc[-1])
+                try:
+                    fi = t.fast_info
+                    mcap = getattr(fi, 'market_cap', None)
+                except:
+                    mcap = None
+                break
+            except Exception:
+                if attempt < 2:
+                    time.sleep(5 + attempt * 3)
+        result[sym] = {'price': last_close, 'change_pct': chg_pct,
+                       'prev_close': prev_close, 'market_cap': mcap}
+        time.sleep(0.5)
     return result
 
 STOCK_SYMBOLS  = ['NVDA','AAPL','MSFT','AMZN','META','GOOG','TSLA','AVGO','JPM','BRK-B']
