@@ -338,41 +338,25 @@ def fetch_news():
         if len(unique) >= 10:
             break
 
-    # Translate to Ukrainian via OpenAI
-    OPENAI_KEY = os.environ.get('OPENAI_API_KEY', '')
-    if OPENAI_KEY and unique:
+    # Translate to Ukrainian via Google Translate (free, no key needed)
+    def translate_ua(text):
         try:
-            titles_en = [item['title'] for item in unique]
-            prompt = "Translate these news headlines to Ukrainian. Return only a JSON array of translated strings, same order:\n" + json.dumps(titles_en)
-            payload = json.dumps({
-                "model": "gpt-4o-mini",
-                "messages": [{"role": "user", "content": prompt}],
-                "temperature": 0.3
-            }).encode()
+            params = urllib.parse.urlencode({'client':'gtx','sl':'en','tl':'uk','dt':'t','q':text})
             req = urllib.request.Request(
-                'https://api.openai.com/v1/chat/completions',
-                data=payload,
-                headers={
-                    'Authorization': f'Bearer {OPENAI_KEY}',
-                    'Content-Type': 'application/json'
-                }
+                f"https://translate.googleapis.com/translate_a/single?{params}",
+                headers={'User-Agent':'Mozilla/5.0'}
             )
-            with urllib.request.urlopen(req, timeout=20) as r:
-                resp = json.loads(r.read())
-            content = resp['choices'][0]['message']['content']
-            # extract JSON array
-            arr_match = re.search(r'\[.*\]', content, re.DOTALL)
-            if arr_match:
-                translated = json.loads(arr_match.group())
-                for i, item in enumerate(unique):
-                    if i < len(translated):
-                        item['title_uk'] = translated[i]
-        except Exception as e:
-            log(f"  Translation error: {e}")
+            with urllib.request.urlopen(req, timeout=10) as r:
+                d = json.loads(r.read())
+            return ''.join([s[0] for s in d[0] if s[0]])
+        except:
+            return text
 
-    # fallback: use original title
     for item in unique:
-        if 'title_uk' not in item:
+        try:
+            item['title_uk'] = translate_ua(item['title'])
+            time.sleep(0.3)
+        except:
             item['title_uk'] = item['title']
 
     return unique
@@ -488,14 +472,14 @@ def build_html(crypto20, stocks_data, etf_data, vava, top_etf_data, indices_data
 <meta charset="UTF-8">
 <style>
   *{{box-sizing:border-box;margin:0;padding:0}}
-  body{{font-family:-apple-system,Arial,sans-serif;background:#f3f4f6;color:#111827;padding:24px;line-height:1.6}}
+  body{{font-family:-apple-system,Arial,sans-serif;background:#f3f4f6;color:#111827;padding:24px;line-height:1.7;font-size:16px}}
   .wrap{{max-width:700px;margin:0 auto;background:#fff;border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.08)}}
   h1{{color:#111827;font-size:22px;font-weight:800;margin-bottom:4px}}
   h2{{color:#1a56db;margin:28px 0 10px;font-size:15px;font-weight:700;border-left:3px solid #1a56db;padding-left:10px;text-transform:uppercase;letter-spacing:.4px}}
   .date{{display:inline-block;background:#eff6ff;color:#1a56db;padding:3px 12px;border-radius:20px;font-size:12px;font-weight:600;margin:6px 0 20px}}
   table{{width:100%;border-collapse:collapse;margin-bottom:6px;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb}}
   th{{background:#f9fafb;color:#6b7280;padding:9px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e5e7eb;font-weight:600}}
-  td{{padding:9px 12px;border-bottom:1px solid #f3f4f6;font-size:13px}}
+  td{{padding:11px 14px;border-bottom:1px solid #f3f4f6;font-size:15px}}
   tr:last-child td{{border-bottom:none}}
   .footer{{color:#9ca3af;font-size:11px;margin-top:24px;border-top:1px solid #e5e7eb;padding-top:12px}}
 </style>
