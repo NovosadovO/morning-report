@@ -123,9 +123,9 @@ STOCK_SYMBOLS  = ['NVDA','AAPL','MSFT','AMZN','META','GOOG','TSLA','AVGO','JPM',
 STOCK_NAMES    = {'NVDA':'NVIDIA','AAPL':'Apple','MSFT':'Microsoft','AMZN':'Amazon',
                   'META':'Meta','GOOG':'Alphabet','TSLA':'Tesla','AVGO':'Broadcom',
                   'JPM':'JPMorgan','BRK-B':'Berkshire'}
-ETF_SYMBOLS    = ['IBIT','ETHA','GAVA']
+ETF_SYMBOLS    = ['IBIT','ETHA','GAVA','BAVA']
 ETF_NAMES      = {'IBIT':'BlackRock Bitcoin ETF','ETHA':'BlackRock Ethereum ETF',
-                  'GAVA':'Grayscale Avalanche ETF'}
+                  'GAVA':'Grayscale Avalanche ETF','BAVA':'Bitwise Avalanche ETF'}
 TOP_ETF_SYMBOLS = ['SPY','QQQ','GLD','TLT','VTI','IWM','EEM','HYG','VNQ','ARKK']
 TOP_ETF_NAMES   = {'SPY':'S&P 500 ETF','QQQ':'NASDAQ-100 ETF','GLD':'Gold ETF',
                    'TLT':'20+Y Treasury','VTI':'Total Market ETF','IWM':'Russell 2000',
@@ -237,7 +237,7 @@ def generate_charts(crypto20, stocks_data, etf_data, top_etf_data, indices_data)
     etf_all  = ETF_SYMBOLS + ['VAVA']
     etf_vals = [etf_data.get(s,{}).get('change_pct') or 0 for s in ETF_SYMBOLS]
     etf_vals += [top_etf_data.get('VAVA',{}).get('change_pct') or 0]
-    gradient_bar_v(etf_all, etf_vals, 'Крипто ETF', p3, (8, 4.5))
+    gradient_bar_v(etf_all, etf_vals, 'Крипто ETF', p3, (10, 4.5))
 
     p4 = f'{CHARTS_DIR}/top_etf.png'
     gradient_bar_v(TOP_ETF_SYMBOLS,
