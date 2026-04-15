@@ -284,6 +284,54 @@ def cloudinary_upload(path):
         result = json.loads(r.read())
     return result['secure_url']
 
+# ── DEFI (DeFiLlama) ─────────────────────────────────────────────────────
+
+def fetch_defi():
+    """Fetch top-20 chains and top-20 protocols from DeFiLlama"""
+    headers = {'User-Agent': 'Mozilla/5.0'}
+
+    # Top-20 chains by TVL
+    chains = []
+    try:
+        req = urllib.request.Request('https://api.llama.fi/v2/chains', headers=headers)
+        with urllib.request.urlopen(req, timeout=15) as r:
+            data = json.loads(r.read())
+        sorted_chains = sorted([c for c in data if c.get('tvl')], key=lambda x: x['tvl'], reverse=True)[:20]
+        for i, c in enumerate(sorted_chains):
+            chains.append({
+                'rank':    i + 1,
+                'name':    c.get('name', ''),
+                'tvl':     c.get('tvl'),
+                'change1d': c.get('change_1d'),
+                'change7d': c.get('change_7d'),
+            })
+    except Exception as e:
+        log(f"  DeFi chains error: {e}")
+
+    # Top-20 protocols by TVL (exclude CEX)
+    protocols = []
+    try:
+        req = urllib.request.Request('https://api.llama.fi/protocols', headers=headers)
+        with urllib.request.urlopen(req, timeout=15) as r:
+            data = json.loads(r.read())
+        filtered = [p for p in data if p.get('tvl') and p.get('category','').lower() != 'cex']
+        sorted_protos = sorted(filtered, key=lambda x: x['tvl'], reverse=True)[:20]
+        for i, p in enumerate(sorted_protos):
+            protocols.append({
+                'rank':     i + 1,
+                'name':     p.get('name', ''),
+                'category': p.get('category', ''),
+                'chain':    p.get('chain', ''),
+                'tvl':      p.get('tvl'),
+                'change1d': p.get('change_1d'),
+                'change7d': p.get('change_7d'),
+            })
+    except Exception as e:
+        log(f"  DeFi protocols error: {e}")
+
+    return chains, protocols
+
+
 # ── NEWS ─────────────────────────────────────────────────────────────────
 
 def fetch_news():
@@ -384,7 +432,7 @@ def send_email(subject, html):
 
 # ── HTML ─────────────────────────────────────────────────────────────────
 
-def build_html(crypto20, stocks_data, etf_data, vava, top_etf_data, indices_data, chart_urls, date_str, news=None):
+def build_html(crypto20, stocks_data, etf_data, vava, top_etf_data, indices_data, chart_urls, date_str, news=None, defi_chains=None, defi_protocols=None):
     p1, p2, p3, p4, p5 = chart_urls
 
     def img(url, alt):
@@ -447,6 +495,56 @@ def build_html(crypto20, stocks_data, etf_data, vava, top_etf_data, indices_data
           <td style="color:#111827;font-weight:600">{fmt_price(d.get("price")) if d.get("price") else "—"}</td>
           <td style="color:{col};font-weight:bold">{fmt_pct(d.get("change_pct"))}</td>
         </tr>'''
+
+    # ── DeFi HTML
+    def fmt_tvl(v):
+        if v is None: return '—'
+        if v >= 1e9: return f'${v/1e9:.2f}B'
+        if v >= 1e6: return f'${v/1e6:.2f}M'
+        return f'${v:.0f}'
+
+    defi_chains_html = ''
+    if defi_chains:
+        rows = ''
+        for c in defi_chains:
+            col1d = hchg(c.get('change1d'))
+            col7d = hchg(c.get('change7d'))
+            ch1d = f"{c['change1d']:+.2f}%" if c.get('change1d') is not None else '—'
+            ch7d = f"{c['change7d']:+.2f}%" if c.get('change7d') is not None else '—'
+            rows += f'''<tr>
+              <td style="color:#9ca3af;text-align:center;font-size:13px">{c["rank"]}</td>
+              <td><strong style="color:#1a56db">{c["name"]}</strong></td>
+              <td style="color:#111827;font-weight:600">{fmt_tvl(c["tvl"])}</td>
+              <td style="color:{col1d};font-weight:bold">{ch1d}</td>
+              <td style="color:{col7d};font-weight:bold">{ch7d}</td>
+            </tr>'''
+        defi_chains_html = f'''<h2>⛓️ DeFi — Топ-20 блокчейнів (TVL)</h2>
+<table>
+  <tr><th>#</th><th>Блокчейн</th><th>TVL</th><th>24г</th><th>7д</th></tr>
+  {rows}
+</table>'''
+
+    defi_protocols_html = ''
+    if defi_protocols:
+        rows = ''
+        for p in defi_protocols:
+            col1d = hchg(p.get('change1d'))
+            col7d = hchg(p.get('change7d'))
+            ch1d = f"{p['change1d']:+.2f}%" if p.get('change1d') is not None else '—'
+            ch7d = f"{p['change7d']:+.2f}%" if p.get('change7d') is not None else '—'
+            rows += f'''<tr>
+              <td style="color:#9ca3af;text-align:center;font-size:13px">{p["rank"]}</td>
+              <td><strong style="color:#1a56db">{p["name"]}</strong><br><span style="color:#9ca3af;font-size:12px">{p["category"]}</span></td>
+              <td style="color:#6b7280;font-size:13px">{p["chain"]}</td>
+              <td style="color:#111827;font-weight:600">{fmt_tvl(p["tvl"])}</td>
+              <td style="color:{col1d};font-weight:bold">{ch1d}</td>
+              <td style="color:{col7d};font-weight:bold">{ch7d}</td>
+            </tr>'''
+        defi_protocols_html = f'''<h2>🏦 DeFi — Топ-20 протоколів (TVL)</h2>
+<table>
+  <tr><th>#</th><th>Протокол</th><th>Мережа</th><th>TVL</th><th>24г</th><th>7д</th></tr>
+  {rows}
+</table>'''
 
     # ── News HTML
     news_html = ''
@@ -513,10 +611,14 @@ def build_html(crypto20, stocks_data, etf_data, vava, top_etf_data, indices_data
 <table><tr><th>ETF</th><th>Ціна (USD)</th><th>Зміна</th><th>Кап.</th></tr>{top_etf_rows}</table>
 {img(p4,"Топ ETF")}
 
+{defi_chains_html}
+
+{defi_protocols_html}
+
 {news_html}
 
 <div class="footer">
-  Джерела: CoinGecko API, yfinance (Yahoo Finance), CoinDesk, CoinTelegraph, Investing.com — дані зібрано о 09:00 CEST<br>
+  Джерела: CoinGecko API, Yahoo Finance, DeFiLlama, CoinDesk, CoinTelegraph, Investing.com — дані зібрано о 09:00 CEST<br>
   Не є фінансовою порадою. Автоматичний щоденний звіт.
 </div>
 </div>
@@ -557,12 +659,16 @@ def main():
     chart_urls = [cloudinary_upload(p) for p in chart_paths]
     log(f"  Uploaded {len(chart_urls)} charts")
 
+    log("Fetching DeFi data (DeFiLlama)...")
+    defi_chains, defi_protocols = fetch_defi()
+    log(f"  Got {len(defi_chains)} chains, {len(defi_protocols)} protocols")
+
     log("Fetching news...")
     news = fetch_news()
     log(f"  Got {len(news)} news items")
 
     log("Building HTML...")
-    html = build_html(crypto20, stocks_data, etf_data, vava, top_etf_raw, indices_data, chart_urls, date_str, news)
+    html = build_html(crypto20, stocks_data, etf_data, vava, top_etf_raw, indices_data, chart_urls, date_str, news, defi_chains, defi_protocols)
 
     log(f"Sending email to {RECIPIENT}...")
     result = send_email(f'📊 Ранковий дайджест ринків — {subject_date}', html)
