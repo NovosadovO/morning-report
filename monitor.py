@@ -188,7 +188,8 @@ def check_emails():
             if is_spam(sender, subject):
                 continue
 
-            new_alerts.append(f"• <b>{subject[:60]}</b>\n  від: {sender[:50]}")
+            def esc(s): return s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
+            new_alerts.append(f"• <b>{esc(subject[:60])}</b>\n  від: {esc(sender[:50])}")
 
         mail.logout()
 
