@@ -242,39 +242,57 @@ def check_weather():
     prob   = hourly.get("precipitation_probability", [])
     codes  = hourly.get("weathercode", [])
 
-    # WMO codes for rain/snow
+    # WMO weather code descriptions
+    WMO_DESC = {
+        0: "☀️ Ясно", 1: "🌤 Переважно ясно", 2: "⛅️ Мінлива хмарність", 3: "☁️ Хмарно",
+        45: "🌫 Туман", 48: "🌫 Туман з інеєм",
+        51: "🌦 Мряка", 53: "🌦 Мряка", 55: "🌦 Густа мряка",
+        61: "🌧 Дощ", 63: "🌧 Помірний дощ", 65: "🌧 Сильний дощ",
+        71: "❄️ Сніг", 73: "❄️ Помірний сніг", 75: "❄️ Сильний сніг",
+        80: "🌦 Злива", 81: "🌦 Помірна злива", 82: "⛈ Сильна злива",
+        95: "⛈ Гроза", 96: "⛈ Гроза з градом", 99: "⛈ Сильна гроза",
+    }
+
     RAIN_CODES  = {51,53,55,61,63,65,80,81,82}
     SNOW_CODES  = {71,73,75,77,85,86}
     STORM_CODES = {95,96,99}
 
     now_utc = datetime.now(timezone.utc)
-    # Europe/Prague is UTC+2 in summer, UTC+1 in winter — approximate
     local_hour = (now_utc.hour + 2) % 24
 
-    alerts = []
+    # Знайти поточну годину і наступні 3
+    current_weather = None
+    rain_alerts = []
+
     for i, t in enumerate(times):
-        # t is like "2024-01-15T14:00"
         try:
             h = int(t[11:13])
         except Exception:
             continue
-        # next 3 hours
         diff = (h - local_hour) % 24
-        if diff > 3:
-            continue
         p = precip[i] if i < len(precip) else 0
         pr = prob[i] if i < len(prob) else 0
         code = codes[i] if i < len(codes) else 0
-        if p > 0.3 or pr >= 60 or code in RAIN_CODES | SNOW_CODES | STORM_CODES:
-            kind = "❄️ Сніг" if code in SNOW_CODES else ("⛈ Гроза" if code in STORM_CODES else "🌧 Дощ")
-            alerts.append(f"{kind} о {t[11:16]}: {p}мм, ймовірність {pr}%")
 
-    if alerts:
-        msg = "☔ <b>Погода Košice — візьми парасольку!</b>\n\n" + "\n".join(alerts)
-        send_telegram(msg)
-        print("Weather alert sent")
-    else:
-        print("Weather OK, no precipitation.")
+        # Поточна година
+        if diff == 0:
+            desc = WMO_DESC.get(code, f"код {code}")
+            current_weather = f"{desc}, {pr}% дощу"
+
+        # Попередження про опади в наступні 3 год
+        if 0 < diff <= 3:
+            if p > 0.3 or pr >= 60 or code in RAIN_CODES | SNOW_CODES | STORM_CODES:
+                kind = "❄️ Сніг" if code in SNOW_CODES else ("⛈ Гроза" if code in STORM_CODES else "🌧 Дощ")
+                rain_alerts.append(f"{kind} о {t[11:16]}: {p}мм, {pr}%")
+
+    msg_parts = [f"🌡 <b>Погода Košice</b>"]
+    if current_weather:
+        msg_parts.append(current_weather)
+    if rain_alerts:
+        msg_parts.append("⚠️ Найближчі години:\n" + "\n".join(rain_alerts))
+
+    send_telegram("\n".join(msg_parts))
+    print("Weather sent")
 
 
 # ─── 4. GOOGLE CALENDAR ──────────────────────────────────────────────────────
