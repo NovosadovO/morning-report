@@ -179,8 +179,6 @@ def check_emails():
             def esc(s): return s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
             new_alerts.append(f"• <b>{esc(subject[:60])}</b>\n  від: {esc(sender[:50])}")
 
-        mail.logout()
-
         # Update seen
         all_seen = list(seen_set | set(new_seen))
         save_json_file(SEEN_EMAIL_FILE, all_seen[-500:])
@@ -192,7 +190,30 @@ def check_emails():
             send_telegram(msg)
             print(f"Email alert: {len(new_alerts)} new")
         else:
-            print("No new important emails.")
+            # Показати останні 5 листів
+            _, data2 = mail.search(None, "ALL")
+            all_ids = data2[0].split() if data2[0] else []
+            last_ids = all_ids[-10:]  # беремо 10, відфільтруємо спам до 5
+            recent = []
+            for uid in reversed(last_ids):
+                if len(recent) >= 5:
+                    break
+                _, msg_data = mail.fetch(uid, "(RFC822)")
+                raw = msg_data[0][1] if msg_data and msg_data[0] else None
+                if not raw:
+                    continue
+                msg = email.message_from_bytes(raw)
+                sender  = decode_header_str(msg.get("From", ""))
+                subject = decode_header_str(msg.get("Subject", "(no subject)"))
+                def esc(s): return s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
+                if not is_spam(sender, subject):
+                    recent.append(f"• <b>{esc(subject[:60])}</b>\n  від: {esc(sender[:50])}")
+            if recent:
+                text = f"📬 <b>Останні листи</b>\n\n" + "\n\n".join(recent)
+                send_telegram(text)
+            print("No new emails, showed recent.")
+
+        mail.logout()
 
     except Exception as e:
         print(f"Email check error: {e}")
