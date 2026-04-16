@@ -295,21 +295,22 @@ def check_calendar():
         service = build("calendar", "v3", credentials=creds)
 
         now = datetime.now(timezone.utc)
-        time_min = now.isoformat()
-        time_max = (now + timedelta(hours=2)).isoformat()
+        # Початок сьогоднішнього дня (UTC+2 Košice)
+        today_start = (now + timedelta(hours=2)).replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        today_end = today_start + timedelta(hours=24)
 
         events_result = service.events().list(
             calendarId="novosadovoleg@gmail.com",
-            timeMin=time_min,
-            timeMax=time_max,
+            timeMin=today_start.isoformat(),
+            timeMax=today_end.isoformat(),
             singleEvents=True,
             orderBy="startTime",
-            maxResults=10,
+            maxResults=20,
         ).execute()
 
         events = events_result.get("items", [])
         if not events:
-            print("No calendar events in next 2 hours.")
+            print("No calendar events today.")
             return
 
         lines = []
@@ -317,18 +318,17 @@ def check_calendar():
             start = ev["start"].get("dateTime") or ev["start"].get("date")
             summary = ev.get("summary", "(без назви)")
             loc = ev.get("location", "")
-            # Parse time
             try:
                 dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                # Use time as-is from calendar (already in user's timezone)
                 time_str = dt.strftime("%H:%M")
             except Exception:
                 time_str = start
-            lines.append(f"• <b>{summary}</b> о {time_str}" + (f"\n  📍 {loc}" if loc else ""))
+            lines.append(f"• {time_str} — <b>{summary}</b>" + (f" 📍 {loc}" if loc else ""))
 
-        msg = f"📅 <b>Найближчі події ({len(lines)})</b>\n\n" + "\n\n".join(lines)
+        date_str = (now + timedelta(hours=2)).strftime("%d.%m.%Y")
+        msg = f"📅 <b>Твій день {date_str}</b>\n\n" + "\n".join(lines)
         send_telegram(msg)
-        print(f"Calendar alert: {len(lines)} events")
+        print(f"Calendar: {len(lines)} events today")
 
     except Exception as e:
         print(f"Calendar error: {e}")
