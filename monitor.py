@@ -89,41 +89,29 @@ def save_json_file(path: str, data):
 
 def check_prices():
     ids = ",".join(COINS.values())
-    url = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd"
+    url = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd&include_24hr_change=true"
     data = fetch_json(url)
     if not data:
         print("CoinGecko unavailable")
         return
 
-    prev = load_json_file(PRICE_FILE)
-    now_prices = {}
-    alerts = []
+    now = datetime.now(timezone.utc)
+    lines = []
 
     for symbol, cg_id in COINS.items():
         price = data.get(cg_id, {}).get("usd")
+        change = data.get(cg_id, {}).get("usd_24h_change")
         if price is None:
             continue
-        now_prices[cg_id] = price
+        arrow = "🔺" if (change or 0) > 0 else "🔻"
+        change_str = f"{'+' if change > 0 else ''}{change:.1f}%" if change is not None else ""
+        lines.append(f"{arrow} <b>{symbol}</b>: ${price:,.2f}  <i>{change_str} за 24г</i>")
 
-        old = prev.get(cg_id)
-        if old and old > 0:
-            pct = (price - old) / old
-            if abs(pct) >= PRICE_THRESHOLD:
-                arrow = "🔺" if pct > 0 else "🔻"
-                alerts.append(
-                    f"{arrow} <b>{symbol}</b>: ${price:,.2f} "
-                    f"({'+' if pct>0 else ''}{pct*100:.1f}% за 15 хв)"
-                )
-
-    # Save new prices
-    save_json_file(PRICE_FILE, now_prices)
-
-    if alerts:
-        msg = "⚡ <b>Цінове сповіщення</b>\n\n" + "\n".join(alerts)
+    if lines:
+        time_str = (now + timedelta(hours=2)).strftime("%H:%M")
+        msg = f"💰 <b>Ціни активів — {time_str}</b>\n\n" + "\n".join(lines)
         send_telegram(msg)
-        print("Price alert sent:", alerts)
-    else:
-        print("Prices OK, no alert.")
+        print("Price update sent")
 
 
 # ─── 2. GMAIL IMPORTANT EMAIL MONITOR ────────────────────────────────────────
