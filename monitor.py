@@ -311,7 +311,7 @@ def check_calendar():
         time_max = (now + timedelta(hours=2)).isoformat()
 
         events_result = service.events().list(
-            calendarId="primary",
+            calendarId="novosadovoleg@gmail.com",
             timeMin=time_min,
             timeMax=time_max,
             singleEvents=True,
@@ -332,8 +332,8 @@ def check_calendar():
             # Parse time
             try:
                 dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                local_dt = dt + timedelta(hours=2)  # CEST approx
-                time_str = local_dt.strftime("%H:%M")
+                # Use time as-is from calendar (already in user's timezone)
+                time_str = dt.strftime("%H:%M")
             except Exception:
                 time_str = start
             lines.append(f"• <b>{summary}</b> о {time_str}" + (f"\n  📍 {loc}" if loc else ""))
