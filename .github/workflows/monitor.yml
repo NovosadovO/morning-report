@@ -1,9 +1,9 @@
-name: Monitor & Alerts
+name: Monitor — Telegram Alerts
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # every 15 minutes
-  workflow_dispatch:          # manual trigger for testing
+    - cron: '*/15 * * * *'   # every 15 min
+  workflow_dispatch:           # manual trigger
 
 jobs:
   monitor:
@@ -12,37 +12,40 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Restore cached price state from previous run
-      - name: Restore price cache
-        uses: actions/cache@v4
-        with:
-          path: /tmp/crypto_prices.json
-          key: crypto-prices-${{ runner.os }}
-          restore-keys: crypto-prices-
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: monitor-pip-${{ hashFiles('requirements-monitor.txt') }}
+
       - name: Install dependencies
-        run: |
-          pip install --quiet google-api-python-client google-auth
+        run: pip install -r requirements-monitor.txt
+
+      # Restore price history between runs
+      - name: Restore price cache
+        uses: actions/cache@v4
+        with:
+          path: /tmp/monitor_prices.json
+          key: monitor-prices-${{ github.run_number }}
+          restore-keys: monitor-prices-
+
+      # Restore seen emails list between runs
+      - name: Restore email seen cache
+        uses: actions/cache@v4
+        with:
+          path: /tmp/monitor_seen_emails.json
+          key: monitor-emails-${{ github.run_number }}
+          restore-keys: monitor-emails-
 
       - name: Run monitor
         env:
           TELEGRAM_TOKEN:                ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID:              ${{ secrets.TELEGRAM_CHAT_ID }}
-          GMAIL_USER:                    ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD:            ${{ secrets.GMAIL_APP_PASSWORD }}
           GOOGLE_CALENDAR_CREDENTIALS:   ${{ secrets.GOOGLE_CALENDAR_CREDENTIALS }}
-          GOOGLE_CALENDAR_ID:            ${{ secrets.GOOGLE_CALENDAR_ID }}
         run: python monitor.py
-
-      # Save updated price state
-      - name: Save price cache
-        if: always()
-        uses: actions/cache/save@v4
-        with:
-          path: /tmp/crypto_prices.json
-          key: crypto-prices-${{ runner.os }}
