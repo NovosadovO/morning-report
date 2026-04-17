@@ -1,30 +1,26 @@
 #!/usr/bin/env python3
 """
-Monitor script — runs every 15 min via GitHub Actions.
-Sends Telegram alerts for:
-- Crypto price changes 5%+ (BTC/ETH/AVAX/ONDO)
-- Important new emails (Gmail IMAP)
-- Rain/snow in Košice
-- Google Calendar events in next 2 hours
+Monitor — надсилає один зведений звіт кожні 3 години:
+- Ціни BTC/ETH/AVAX/ONDO
+- Погода Košice
+- Календар на сьогодні
+- Листи Gmail
 """
 
 import os
 import json
-import time
 import imaplib
 import email
 import email.header
 import urllib.request
-import urllib.parse
 import urllib.error
 from datetime import datetime, timezone, timedelta
 
-# ─── CONFIG ──────────────────────────────────────────────────────────────────
+# ─── CONFIG ───────────────────────────────────────────────────────────────────
 TELEGRAM_TOKEN  = os.environ["TELEGRAM_TOKEN"]
 TELEGRAM_CHAT   = os.environ["TELEGRAM_CHAT_ID"]
 GMAIL_USER      = "novosadovoleg@gmail.com"
 GMAIL_PASSWORD  = os.environ.get("GMAIL_APP_PASSWORD", "")
-PRICE_FILE      = "/tmp/monitor_prices.json"
 SEEN_EMAIL_FILE = "/tmp/monitor_seen_emails.json"
 
 COINS = {
@@ -34,9 +30,6 @@ COINS = {
     "ONDO": "ondo-finance",
 }
 
-PRICE_THRESHOLD = 0.05  # 5%
-
-# Spam / newsletter senders to ignore (lowercase fragments)
 IGNORE_SENDERS = [
     "noreply", "no-reply", "newsletter", "notifications", "mailer",
     "support@", "info@", "marketing", "promo", "unsubscribe",
@@ -52,27 +45,39 @@ IGNORE_SUBJECTS = [
 
 def send_telegram(text: str) -> bool:
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-    payload = json.dumps({"chat_id": TELEGRAM_CHAT, "text": text, "parse_mode": "HTML"}).encode()
-    req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
+    payload = json.dumps({
+        "chat_id": TELEGRAM_CHAT,
+        "text": text[:4090],
+        "parse_mode": "HTML"
+    }).encode()
+    req = urllib.request.Request(url, data=payload,
+          headers={"Content-Type": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=10) as r:
             return r.status == 200
+    except urllib.error.HTTPError as e:
+        print(f"Telegram HTTP error: {e.code} {e.read().decode()}")
+        return False
     except Exception as e:
         print(f"Telegram error: {e}")
         return False
 
 
-def fetch_json(url: str) -> dict | list | None:
+def fetch_json(url):
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "monitor/1.0"})
         with urllib.request.urlopen(req, timeout=15) as r:
             return json.loads(r.read().decode())
     except Exception as e:
-        print(f"fetch_json error {url}: {e}")
+        print(f"fetch_json error: {e}")
         return None
 
 
-def load_json_file(path: str, default=None):
+def esc(s):
+    return str(s).replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
+
+
+def load_json_file(path, default=None):
     try:
         with open(path) as f:
             return json.load(f)
@@ -80,43 +85,144 @@ def load_json_file(path: str, default=None):
         return default if default is not None else {}
 
 
-def save_json_file(path: str, data):
+def save_json_file(path, data):
     with open(path, "w") as f:
         json.dump(data, f)
 
 
-# ─── 1. CRYPTO PRICE MONITOR ─────────────────────────────────────────────────
+# ─── БЛОКИ ЗВІТУ ──────────────────────────────────────────────────────────────
 
-def check_prices():
+def get_prices():
     ids = ",".join(COINS.values())
     url = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd&include_24hr_change=true"
     data = fetch_json(url)
     if not data:
-        print("CoinGecko unavailable")
-        return
+        return "💰 <b>Ціни</b>\n⚠️ Недоступно"
 
-    now = datetime.now(timezone.utc)
     lines = []
-
     for symbol, cg_id in COINS.items():
-        price = data.get(cg_id, {}).get("usd")
+        price  = data.get(cg_id, {}).get("usd")
         change = data.get(cg_id, {}).get("usd_24h_change")
         if price is None:
             continue
         arrow = "🔺" if (change or 0) > 0 else "🔻"
-        change_str = f"{'+' if change > 0 else ''}{change:.1f}%" if change is not None else ""
-        lines.append(f"{arrow} <b>{symbol}</b>: ${price:,.2f}  <i>{change_str} за 24г</i>")
+        ch = f"{'+' if change > 0 else ''}{change:.1f}%" if change is not None else ""
+        lines.append(f"{arrow} <b>{symbol}</b>: ${price:,.2f} <i>({ch} 24г)</i>")
 
-    if lines:
-        time_str = (now + timedelta(hours=2)).strftime("%H:%M")
-        msg = f"💰 <b>Ціни активів — {time_str}</b>\n\n" + "\n".join(lines)
-        send_telegram(msg)
-        print("Price update sent")
+    return "💰 <b>Ціни активів</b>\n" + "\n".join(lines)
 
 
-# ─── 2. GMAIL IMPORTANT EMAIL MONITOR ────────────────────────────────────────
+def get_weather():
+    url = (
+        "https://api.open-meteo.com/v1/forecast"
+        "?latitude=48.7163&longitude=21.2611"
+        "&hourly=precipitation,precipitation_probability,weathercode,temperature_2m"
+        "&forecast_days=1&timezone=Europe%2FPrague"
+    )
+    data = fetch_json(url)
+    if not data:
+        return "🌡 <b>Погода Košice</b>\n⚠️ Недоступно"
 
-def decode_header_str(h) -> str:
+    hourly = data.get("hourly", {})
+    times  = hourly.get("time", [])
+    precip = hourly.get("precipitation", [])
+    prob   = hourly.get("precipitation_probability", [])
+    codes  = hourly.get("weathercode", [])
+    temps  = hourly.get("temperature_2m", [])
+
+    WMO = {
+        0: "☀️ Ясно", 1: "🌤 Переважно ясно", 2: "⛅️ Мінлива хмарність", 3: "☁️ Хмарно",
+        45: "🌫 Туман", 48: "🌫 Туман",
+        51: "🌦 Мряка", 53: "🌦 Мряка", 55: "🌦 Мряка",
+        61: "🌧 Дощ", 63: "🌧 Дощ", 65: "🌧 Сильний дощ",
+        71: "❄️ Сніг", 73: "❄️ Сніг", 75: "❄️ Сильний сніг",
+        80: "🌦 Злива", 81: "🌦 Злива", 82: "⛈ Сильна злива",
+        95: "⛈ Гроза", 96: "⛈ Гроза з градом", 99: "⛈ Сильна гроза",
+    }
+    RAIN  = {51,53,55,61,63,65,80,81,82}
+    SNOW  = {71,73,75,77,85,86}
+    STORM = {95,96,99}
+
+    local_hour = (datetime.now(timezone.utc).hour + 2) % 24
+    current = ""
+    warnings = []
+
+    for i, t in enumerate(times):
+        try:
+            h = int(t[11:13])
+        except Exception:
+            continue
+        diff = (h - local_hour) % 24
+        code = codes[i] if i < len(codes) else 0
+        temp = temps[i] if i < len(temps) else None
+        p    = precip[i] if i < len(precip) else 0
+        pr   = prob[i] if i < len(prob) else 0
+
+        if diff == 0:
+            desc = WMO.get(code, "—")
+            t_str = f", {temp:.0f}°C" if temp is not None else ""
+            current = f"{desc}{t_str}"
+
+        if 0 < diff <= 3 and (p > 0.3 or pr >= 60 or code in RAIN | SNOW | STORM):
+            kind = "❄️ Сніг" if code in SNOW else ("⛈ Гроза" if code in STORM else "🌧 Дощ")
+            warnings.append(f"  {kind} о {t[11:16]} ({pr}%)")
+
+    result = f"🌡 <b>Погода Košice</b>\n{current}"
+    if warnings:
+        result += "\n⚠️ Найближчі 3г:\n" + "\n".join(warnings)
+    return result
+
+
+def get_calendar():
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    now = datetime.now(timezone.utc)
+    date_str = (now + timedelta(hours=2)).strftime("%d.%m.%Y")
+
+    if not creds_json:
+        return f"📅 <b>Календар {date_str}</b>\n⚠️ Не налаштовано"
+
+    try:
+        import google.oauth2.service_account as sa
+        from googleapiclient.discovery import build
+
+        creds_data = json.loads(creds_json)
+        creds = sa.Credentials.from_service_account_info(
+            creds_data, scopes=["https://www.googleapis.com/auth/calendar.readonly"])
+        service = build("calendar", "v3", credentials=creds)
+
+        today_start = (now + timedelta(hours=2)).replace(
+            hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        today_end = today_start + timedelta(hours=24)
+
+        result = service.events().list(
+            calendarId="novosadovoleg@gmail.com",
+            timeMin=today_start.isoformat(),
+            timeMax=today_end.isoformat(),
+            singleEvents=True, orderBy="startTime", maxResults=20
+        ).execute()
+
+        events = result.get("items", [])
+        if not events:
+            return f"📅 <b>Календар {date_str}</b>\nНа сьогодні нічого не заплановано"
+
+        lines = []
+        for ev in events:
+            start = ev["start"].get("dateTime") or ev["start"].get("date")
+            summary = ev.get("summary", "(без назви)")
+            try:
+                dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
+                t = dt.strftime("%H:%M")
+            except Exception:
+                t = start
+            lines.append(f"• {t} — <b>{esc(summary)}</b>")
+
+        return f"📅 <b>Календар {date_str}</b>\n" + "\n".join(lines)
+
+    except Exception as e:
+        return f"📅 <b>Календар {date_str}</b>\n⚠️ Помилка: {esc(str(e)[:80])}"
+
+
+def decode_header_str(h):
     parts = email.header.decode_header(h or "")
     result = []
     for part, enc in parts:
@@ -127,40 +233,33 @@ def decode_header_str(h) -> str:
     return "".join(result)
 
 
-def is_spam(sender: str, subject: str) -> bool:
-    s = sender.lower()
-    sub = subject.lower()
-    if any(x in s for x in IGNORE_SENDERS):
-        return True
-    if any(x in sub for x in IGNORE_SUBJECTS):
-        return True
-    return False
+def is_spam(sender, subject):
+    s, sub = sender.lower(), subject.lower()
+    return any(x in s for x in IGNORE_SENDERS) or any(x in sub for x in IGNORE_SUBJECTS)
 
 
-def check_emails():
+def get_emails():
     if not GMAIL_PASSWORD:
-        print("No Gmail password, skipping email check")
-        return
+        return "📬 <b>Email</b>\n⚠️ Не налаштовано"
 
-    seen = load_json_file(SEEN_EMAIL_FILE, default=[])
-    seen_set = set(seen)
+    seen = set(load_json_file(SEEN_EMAIL_FILE, default=[]))
 
     try:
         mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
         mail.login(GMAIL_USER, GMAIL_PASSWORD.replace(" ", ""))
         mail.select("INBOX")
 
-        # Fetch UNSEEN emails from last 30 min
-        since = (datetime.now(timezone.utc) - timedelta(minutes=30)).strftime("%d-%b-%Y")
+        # Нові непрочитані
+        since = (datetime.now(timezone.utc) - timedelta(hours=3)).strftime("%d-%b-%Y")
         _, data = mail.search(None, f'(UNSEEN SINCE "{since}")')
         ids = data[0].split() if data[0] else []
 
-        new_alerts = []
+        new_items = []
         new_seen = []
 
-        for uid in ids[-20:]:  # cap at last 20
+        for uid in ids[-20:]:
             uid_str = uid.decode()
-            if uid_str in seen_set:
+            if uid_str in seen:
                 continue
             _, msg_data = mail.fetch(uid, "(RFC822)")
             raw = msg_data[0][1] if msg_data and msg_data[0] else None
@@ -169,33 +268,16 @@ def check_emails():
             msg = email.message_from_bytes(raw)
             sender  = decode_header_str(msg.get("From", ""))
             subject = decode_header_str(msg.get("Subject", "(no subject)"))
-            date_str = msg.get("Date", "")
-
             new_seen.append(uid_str)
+            if not is_spam(sender, subject):
+                new_items.append(f"• <b>{esc(subject[:55])}</b>\n  {esc(sender[:45])}")
 
-            if is_spam(sender, subject):
-                continue
-
-            def esc(s): return s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
-            new_alerts.append(f"• <b>{esc(subject[:60])}</b>\n  від: {esc(sender[:50])}")
-
-        # Update seen
-        all_seen = list(seen_set | set(new_seen))
-        save_json_file(SEEN_EMAIL_FILE, all_seen[-500:])
-
-        if new_alerts:
-            msg = f"📬 <b>Нові важливі листи ({len(new_alerts)})</b>\n\n" + "\n\n".join(new_alerts[:5])
-            if len(new_alerts) > 5:
-                msg += f"\n\n...і ще {len(new_alerts)-5}"
-            send_telegram(msg)
-            print(f"Email alert: {len(new_alerts)} new")
-        else:
-            # Показати останні 5 листів
+        # Якщо нових нема — останні 5
+        if not new_items:
             _, data2 = mail.search(None, "ALL")
             all_ids = data2[0].split() if data2[0] else []
-            last_ids = all_ids[-10:]  # беремо 10, відфільтруємо спам до 5
             recent = []
-            for uid in reversed(last_ids):
+            for uid in reversed(all_ids[-15:]):
                 if len(recent) >= 5:
                     break
                 _, msg_data = mail.fetch(uid, "(RFC822)")
@@ -205,189 +287,42 @@ def check_emails():
                 msg = email.message_from_bytes(raw)
                 sender  = decode_header_str(msg.get("From", ""))
                 subject = decode_header_str(msg.get("Subject", "(no subject)"))
-                def esc(s): return s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
                 if not is_spam(sender, subject):
-                    recent.append(f"• <b>{esc(subject[:60])}</b>\n  від: {esc(sender[:50])}")
+                    recent.append(f"• <b>{esc(subject[:55])}</b>\n  {esc(sender[:45])}")
+            mail.logout()
+            save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
             if recent:
-                text = f"📬 <b>Останні листи</b>\n\n" + "\n\n".join(recent)
-                send_telegram(text)
-            print("No new emails, showed recent.")
+                return "📬 <b>Останні листи</b>\n" + "\n".join(recent)
+            return "📬 <b>Email</b>\nНових листів немає"
 
         mail.logout()
+        save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
+        header = f"📬 <b>Нових листів: {len(new_items)}</b>\n"
+        return header + "\n".join(new_items[:5])
 
     except Exception as e:
-        print(f"Email check error: {e}")
-
-
-# ─── 3. WEATHER KOŠICE ───────────────────────────────────────────────────────
-
-def check_weather():
-    # Open-Meteo — no API key needed
-    # Košice coords: 48.7163, 21.2611
-    url = (
-        "https://api.open-meteo.com/v1/forecast"
-        "?latitude=48.7163&longitude=21.2611"
-        "&hourly=precipitation,precipitation_probability,weathercode"
-        "&forecast_days=1"
-        "&timezone=Europe%2FPrague"
-    )
-    data = fetch_json(url)
-    if not data:
-        print("Weather API unavailable")
-        return
-
-    hourly = data.get("hourly", {})
-    times  = hourly.get("time", [])
-    precip = hourly.get("precipitation", [])
-    prob   = hourly.get("precipitation_probability", [])
-    codes  = hourly.get("weathercode", [])
-
-    # WMO weather code descriptions
-    WMO_DESC = {
-        0: "☀️ Ясно", 1: "🌤 Переважно ясно", 2: "⛅️ Мінлива хмарність", 3: "☁️ Хмарно",
-        45: "🌫 Туман", 48: "🌫 Туман з інеєм",
-        51: "🌦 Мряка", 53: "🌦 Мряка", 55: "🌦 Густа мряка",
-        61: "🌧 Дощ", 63: "🌧 Помірний дощ", 65: "🌧 Сильний дощ",
-        71: "❄️ Сніг", 73: "❄️ Помірний сніг", 75: "❄️ Сильний сніг",
-        80: "🌦 Злива", 81: "🌦 Помірна злива", 82: "⛈ Сильна злива",
-        95: "⛈ Гроза", 96: "⛈ Гроза з градом", 99: "⛈ Сильна гроза",
-    }
-
-    RAIN_CODES  = {51,53,55,61,63,65,80,81,82}
-    SNOW_CODES  = {71,73,75,77,85,86}
-    STORM_CODES = {95,96,99}
-
-    now_utc = datetime.now(timezone.utc)
-    local_hour = (now_utc.hour + 2) % 24
-
-    # Знайти поточну годину і наступні 3
-    current_weather = None
-    rain_alerts = []
-
-    for i, t in enumerate(times):
-        try:
-            h = int(t[11:13])
-        except Exception:
-            continue
-        diff = (h - local_hour) % 24
-        p = precip[i] if i < len(precip) else 0
-        pr = prob[i] if i < len(prob) else 0
-        code = codes[i] if i < len(codes) else 0
-
-        # Поточна година
-        if diff == 0:
-            desc = WMO_DESC.get(code, f"код {code}")
-            current_weather = f"{desc}, {pr}% дощу"
-
-        # Попередження про опади в наступні 3 год
-        if 0 < diff <= 3:
-            if p > 0.3 or pr >= 60 or code in RAIN_CODES | SNOW_CODES | STORM_CODES:
-                kind = "❄️ Сніг" if code in SNOW_CODES else ("⛈ Гроза" if code in STORM_CODES else "🌧 Дощ")
-                rain_alerts.append(f"{kind} о {t[11:16]}: {p}мм, {pr}%")
-
-    msg_parts = [f"🌡 <b>Погода Košice</b>"]
-    if current_weather:
-        msg_parts.append(current_weather)
-    if rain_alerts:
-        msg_parts.append("⚠️ Найближчі години:\n" + "\n".join(rain_alerts))
-
-    send_telegram("\n".join(msg_parts))
-    print("Weather sent")
-
-
-# ─── 4. GOOGLE CALENDAR ──────────────────────────────────────────────────────
-
-def check_calendar():
-    """
-    Uses Google Calendar API with service account or OAuth credentials.
-    Credentials JSON from env var GOOGLE_CALENDAR_CREDENTIALS.
-    """
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
-    if not creds_json:
-        print("No Google Calendar credentials, skipping")
-        return
-
-    try:
-        import google.oauth2.service_account as sa
-        from googleapiclient.discovery import build
-    except ImportError:
-        print("google-auth not installed, skipping calendar")
-        return
-
-    try:
-        creds_data = json.loads(creds_json)
-        scopes = ["https://www.googleapis.com/auth/calendar.readonly"]
-
-        if creds_data.get("type") == "service_account":
-            creds = sa.Credentials.from_service_account_info(creds_data, scopes=scopes)
-        else:
-            # OAuth2 refresh token flow
-            from google.oauth2.credentials import Credentials
-            creds = Credentials(
-                token=None,
-                refresh_token=creds_data.get("refresh_token"),
-                token_uri="https://oauth2.googleapis.com/token",
-                client_id=creds_data.get("client_id"),
-                client_secret=creds_data.get("client_secret"),
-            )
-
-        service = build("calendar", "v3", credentials=creds)
-
-        now = datetime.now(timezone.utc)
-        # Початок сьогоднішнього дня (UTC+2 Košice)
-        today_start = (now + timedelta(hours=2)).replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
-        today_end = today_start + timedelta(hours=24)
-
-        events_result = service.events().list(
-            calendarId="novosadovoleg@gmail.com",
-            timeMin=today_start.isoformat(),
-            timeMax=today_end.isoformat(),
-            singleEvents=True,
-            orderBy="startTime",
-            maxResults=20,
-        ).execute()
-
-        events = events_result.get("items", [])
-        if not events:
-            date_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%d.%m.%Y")
-            send_telegram(f"📅 <b>Твій день {date_str}</b>\n\nНа сьогодні нічого не заплановано")
-            print("Calendar: no events today")
-            return
-
-        lines = []
-        for ev in events:
-            start = ev["start"].get("dateTime") or ev["start"].get("date")
-            summary = ev.get("summary", "(без назви)")
-            loc = ev.get("location", "")
-            try:
-                dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                time_str = dt.strftime("%H:%M")
-            except Exception:
-                time_str = start
-            lines.append(f"• {time_str} — <b>{summary}</b>" + (f" 📍 {loc}" if loc else ""))
-
-        date_str = (now + timedelta(hours=2)).strftime("%d.%m.%Y")
-        msg = f"📅 <b>Твій день {date_str}</b>\n\n" + "\n".join(lines)
-        send_telegram(msg)
-        print(f"Calendar: {len(lines)} events today")
-
-    except Exception as e:
-        print(f"Calendar error: {e}")
+        return f"📬 <b>Email</b>\n⚠️ Помилка: {esc(str(e)[:80])}"
 
 
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
 
 def main():
-    print(f"=== Monitor run at {datetime.now(timezone.utc).isoformat()} ===")
+    now = datetime.now(timezone.utc)
+    local_time = (now + timedelta(hours=2)).strftime("%H:%M")
+    local_date = (now + timedelta(hours=2)).strftime("%d.%m.%Y")
 
-    # Run all checks — catch individual errors so one failure doesn't block others
-    for check_fn in [check_prices, check_emails, check_weather, check_calendar]:
+    print(f"=== Monitor run at {now.isoformat()} ===")
+
+    sections = []
+    for fn in [get_prices, get_weather, get_calendar, get_emails]:
         try:
-            check_fn()
+            sections.append(fn())
         except Exception as e:
-            print(f"ERROR in {check_fn.__name__}: {e}")
+            print(f"ERROR in {fn.__name__}: {e}")
 
-    print("=== Done ===")
+    report = f"🕐 <b>Звіт {local_time} · {local_date}</b>\n\n" + "\n\n".join(sections)
+    send_telegram(report)
+    print("=== Report sent ===")
 
 
 if __name__ == "__main__":

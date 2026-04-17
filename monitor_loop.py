@@ -24,5 +24,5 @@ while True:
     except Exception as e:
         print(f"Error running monitor: {e}", flush=True)
     
-    print("Sleeping 60 minutes...", flush=True)
-    time.sleep(3600)  # 1 година
+    print("Sleeping 3 hours...", flush=True)
+    time.sleep(10800)  # 3 години
