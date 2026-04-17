@@ -349,7 +349,9 @@ def check_calendar():
 
         events = events_result.get("items", [])
         if not events:
-            print("No calendar events today.")
+            date_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%d.%m.%Y")
+            send_telegram(f"📅 <b>Твій день {date_str}</b>\n\nНа сьогодні нічого не заплановано")
+            print("Calendar: no events today")
             return
 
         lines = []
