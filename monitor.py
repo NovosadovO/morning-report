@@ -109,7 +109,7 @@ def get_prices():
         old = prev.get(cg_id)
         if old and old > 0:
             pct = (price - old) / old * 100
-            arrow = "🔺" if pct > 0 else "🔻"
+            arrow = "📈" if pct > 0 else "📉"
             ch = f"{'+' if pct > 0 else ''}{pct:.1f}%"
             lines.append(f"{arrow} <b>{symbol}</b>: ${price:,.2f} <i>({ch} за 3г)</i>")
         else:
