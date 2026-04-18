@@ -2,7 +2,10 @@
 nixPkgs = ["python311"]
 
 [phases.install]
-cmds = ["pip install google-auth google-api-python-client google-auth-httplib2"]
+cmds = [
+  "pip install --upgrade pip",
+  "pip install -r requirements.txt"
+]
 
 [start]
 cmd = "python monitor_loop.py"

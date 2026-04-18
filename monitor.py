@@ -17,8 +17,9 @@ TELEGRAM_TOKEN  = os.environ["TELEGRAM_TOKEN"]
 TELEGRAM_CHAT   = os.environ["TELEGRAM_CHAT_ID"]
 GMAIL_USER      = "novosadovoleg@gmail.com"
 GMAIL_PASSWORD  = os.environ.get("GMAIL_APP_PASSWORD", "")
-SEEN_EMAIL_FILE = "/tmp/monitor_seen_emails.json"
-PRICE_CACHE     = "/tmp/monitor_prices_3h.json"
+_DATA_DIR       = os.path.dirname(os.path.abspath(__file__))
+SEEN_EMAIL_FILE = os.path.join(_DATA_DIR, "monitor_seen_emails.json")
+PRICE_CACHE     = os.path.join(_DATA_DIR, "monitor_prices_3h.json")
 
 COINS = {
     "BTC":  "bitcoin",
