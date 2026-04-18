@@ -429,6 +429,60 @@ def get_emails():
         return f"📬 <b>Email</b>\n⚠️ Помилка: {esc(str(e)[:80])}"
 
 
+# ─── 4b. МИТТЄВІ СПОВІЩЕННЯ ПРО НОВІ ЛИСТИ ───────────────────────────────────
+
+ALERT_EMAIL_FILE = os.path.join(_DATA_DIR, "monitor_alert_emails.json")
+
+def check_new_emails():
+    """Перевіряє нові листи за останні 6 хв — шле миттєве сповіщення якщо є важливі."""
+    if not GMAIL_PASSWORD:
+        return
+
+    alerted = set(load_json_file(ALERT_EMAIL_FILE, default=[]))
+
+    try:
+        mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
+        mail.login(GMAIL_USER, GMAIL_PASSWORD.replace(" ", ""))
+        mail.select("INBOX")
+
+        since = (datetime.now(timezone.utc) - timedelta(minutes=6)).strftime("%d-%b-%Y")
+        _, data = mail.search(None, f'(UNSEEN SINCE "{since}")')
+        ids = data[0].split() if data[0] else []
+
+        new_alerts = []
+        new_alerted = []
+
+        for uid in ids[-10:]:
+            uid_str = uid.decode()
+            if uid_str in alerted:
+                continue
+            _, msg_data = mail.fetch(uid, "(RFC822)")
+            raw = msg_data[0][1] if msg_data and msg_data[0] else None
+            if not raw:
+                continue
+            msg = email.message_from_bytes(raw)
+            sender  = decode_header_str(msg.get("From", ""))
+            subject = decode_header_str(msg.get("Subject", "(no subject)"))
+            new_alerted.append(uid_str)
+            if not is_spam(sender, subject):
+                new_alerts.append((subject, sender))
+
+        mail.logout()
+        save_json_file(ALERT_EMAIL_FILE, list(alerted | set(new_alerted))[-1000:])
+
+        for subject, sender in new_alerts:
+            text = (
+                f"📬 <b>Новий лист!</b>\n"
+                f"<b>{esc(subject[:80])}</b>\n"
+                f"<i>{esc(sender[:60])}</i>"
+            )
+            send_telegram(text)
+            print(f"Alert sent: {subject[:50]}")
+
+    except Exception as e:
+        print(f"check_new_emails error: {e}")
+
+
 # ─── 5. ПІДСУМОК ТА РЕКОМЕНДАЦІЇ ─────────────────────────────────────────────
 
 def get_summary(prices_text, weather_text, calendar_text):
