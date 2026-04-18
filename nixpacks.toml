@@ -1,5 +1,5 @@
 [phases.install]
-cmds = ["pip install -r requirements-monitor.txt"]
+cmds = ["pip install -r requirements.txt"]
 
 [start]
 cmd = "python monitor_loop.py"

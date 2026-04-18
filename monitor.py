@@ -18,6 +18,7 @@ TELEGRAM_CHAT   = os.environ["TELEGRAM_CHAT_ID"]
 GMAIL_USER      = "novosadovoleg@gmail.com"
 GMAIL_PASSWORD  = os.environ.get("GMAIL_APP_PASSWORD", "")
 SEEN_EMAIL_FILE = "/tmp/monitor_seen_emails.json"
+PRICE_CACHE     = "/tmp/monitor_prices_3h.json"
 
 COINS = {
     "BTC":  "bitcoin",
@@ -90,20 +91,32 @@ def save_json_file(path, data):
 
 def get_prices():
     ids = ",".join(COINS.values())
-    url = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd&include_24hr_change=true"
+    url = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd"
     data = fetch_json(url)
     if not data:
         return "💰 <b>Ціни</b>\n⚠️ Недоступно"
 
+    # Завантажуємо попередні ціни (3г тому)
+    prev = load_json_file(PRICE_CACHE, default={})
+    now_prices = {}
     lines = []
+
     for symbol, cg_id in COINS.items():
-        price  = data.get(cg_id, {}).get("usd")
-        change = data.get(cg_id, {}).get("usd_24h_change")
+        price = data.get(cg_id, {}).get("usd")
         if price is None:
             continue
-        arrow = "🔺" if (change or 0) > 0 else "🔻"
-        ch = f"{'+' if change > 0 else ''}{change:.1f}%" if change is not None else ""
-        lines.append(f"{arrow} <b>{symbol}</b>: ${price:,.2f} <i>({ch} 24г)</i>")
+        now_prices[cg_id] = price
+        old = prev.get(cg_id)
+        if old and old > 0:
+            pct = (price - old) / old * 100
+            arrow = "🔺" if pct > 0 else "🔻"
+            ch = f"{'+' if pct > 0 else ''}{pct:.1f}%"
+            lines.append(f"{arrow} <b>{symbol}</b>: ${price:,.2f} <i>({ch} за 3г)</i>")
+        else:
+            lines.append(f"▪️ <b>{symbol}</b>: ${price:,.2f}")
+
+    # Зберігаємо поточні ціни
+    save_json_file(PRICE_CACHE, now_prices)
 
     return "💰 <b>Ціни активів</b>\n" + "\n".join(lines)
 
