@@ -10,7 +10,14 @@ import email
 import email.header
 import urllib.request
 import urllib.error
+import time
 from datetime import datetime, timezone, timedelta
+
+try:
+    import requests as _requests
+    _HAS_REQUESTS = True
+except ImportError:
+    _HAS_REQUESTS = False
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
 TELEGRAM_TOKEN  = os.environ["TELEGRAM_TOKEN"]
@@ -64,14 +71,22 @@ def send_telegram(text: str) -> bool:
         return False
 
 
-def fetch_json(url):
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": "monitor/1.0"})
-        with urllib.request.urlopen(req, timeout=15) as r:
-            return json.loads(r.read().decode())
-    except Exception as e:
-        print(f"fetch_json error: {e}")
-        return None
+def fetch_json(url, retries=3):
+    for attempt in range(1, retries + 1):
+        try:
+            if _HAS_REQUESTS:
+                r = _requests.get(url, headers={"User-Agent": "monitor/1.0"}, timeout=20)
+                r.raise_for_status()
+                return r.json()
+            else:
+                req = urllib.request.Request(url, headers={"User-Agent": "monitor/1.0"})
+                with urllib.request.urlopen(req, timeout=20) as r:
+                    return json.loads(r.read().decode())
+        except Exception as e:
+            print(f"fetch_json attempt {attempt}/{retries} error [{url[:60]}]: {e}")
+            if attempt < retries:
+                time.sleep(2 * attempt)
+    return None
 
 
 def esc(s):
