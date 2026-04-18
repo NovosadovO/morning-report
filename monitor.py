@@ -72,6 +72,25 @@ def send_telegram(text: str) -> bool:
         return False
 
 
+def _send_telegram_photo(photo_url: str, caption: str) -> bool:
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto"
+    payload = json.dumps({
+        "chat_id": TELEGRAM_CHAT,
+        "photo": photo_url,
+        "caption": caption[:1024],
+        "parse_mode": "HTML"
+    }).encode()
+    req = urllib.request.Request(url, data=payload,
+          headers={"Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=10) as r:
+            return r.status == 200
+    except Exception as e:
+        print(f"sendPhoto error: {e}")
+        # Fallback — шлемо без фото
+        return send_telegram(caption)
+
+
 def fetch_json(url, retries=3):
     for attempt in range(1, retries + 1):
         try:
@@ -471,12 +490,15 @@ def check_new_emails():
         save_json_file(ALERT_EMAIL_FILE, list(alerted | set(new_alerted))[-1000:])
 
         for subject, sender in new_alerts:
-            text = (
+            caption = (
                 f"📬 <b>Новий лист!</b>\n"
                 f"<b>{esc(subject[:80])}</b>\n"
                 f"<i>{esc(sender[:60])}</i>"
             )
-            send_telegram(text)
+            _send_telegram_photo(
+                "https://storage.googleapis.com/runable-templates/cli-uploads%2F1zsprqn6ymqOFgAJnNEK2HbTycMPBvLc%2FkcWiPqymnvLAOrTgU45OX%2Fphoto_LXBUM2.jpg",
+                caption
+            )
             print(f"Alert sent: {subject[:50]}")
 
     except Exception as e:
