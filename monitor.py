@@ -31,11 +31,14 @@ IGNORE_SENDERS = [
     "noreply", "no-reply", "newsletter", "notifications", "mailer",
     "support@", "info@", "marketing", "promo", "unsubscribe",
     "digest", "updates@", "news@", "alert@binance", "alert@coinbase",
-    "donotreply", "do-not-reply",
+    "donotreply", "do-not-reply", "notify.railway", "temu", "footshop",
+    "unstoppabledomains", "startengine", "temuemail",
 ]
 IGNORE_SUBJECTS = [
     "newsletter", "digest", "promo", "offer", "sale", "discount",
-    "unsubscribe", "your daily", "weekly", "monthly",
+    "unsubscribe", "your daily", "weekly", "monthly", "referral",
+    "new launch", "collecting", "portfolio", "managed by ai",
+    "predtým", "teraz", "máš ich",
 ]
 
 # ─── HELPERS ──────────────────────────────────────────────────────────────────
