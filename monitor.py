@@ -132,22 +132,13 @@ def get_weather():
     url = (
         "https://api.open-meteo.com/v1/forecast"
         "?latitude=48.7163&longitude=21.2611"
-        "&hourly=precipitation,precipitation_probability,weathercode,"
-        "temperature_2m,apparent_temperature,windspeed_10m"
-        "&forecast_days=2&timezone=Europe%2FPrague"
+        "&current=temperature_2m,apparent_temperature,weathercode,windspeed_10m,precipitation"
+        "&hourly=precipitation,precipitation_probability,weathercode"
+        "&forecast_days=1&timezone=Europe%2FPrague"
     )
     data = fetch_json(url)
     if not data:
         return "🌡 <b>Погода Košice</b>\n⚠️ Недоступно"
-
-    hourly  = data.get("hourly", {})
-    times   = hourly.get("time", [])
-    precip  = hourly.get("precipitation", [])
-    prob    = hourly.get("precipitation_probability", [])
-    codes   = hourly.get("weathercode", [])
-    temps   = hourly.get("temperature_2m", [])
-    feels   = hourly.get("apparent_temperature", [])
-    winds   = hourly.get("windspeed_10m", [])
 
     WMO = {
         0: "☀️ Ясно", 1: "🌤 Переважно ясно", 2: "⛅️ Мінлива хмарність", 3: "☁️ Хмарно",
@@ -162,8 +153,30 @@ def get_weather():
     SNOW  = {71, 73, 75, 77, 85, 86}
     STORM = {95, 96, 99}
 
+    # Поточні дані
+    current = data.get("current", {})
+    temp  = current.get("temperature_2m")
+    feel  = current.get("apparent_temperature")
+    code  = current.get("weathercode", 0)
+    wind  = current.get("windspeed_10m")
+    desc  = WMO.get(code, "—")
+
+    t_str = f"{temp:.0f}°C" if temp is not None else "—"
+    f_str = f"відчувається {feel:.0f}°C" if feel is not None else ""
+    w_str = f"вітер {wind:.0f} км/г" if wind is not None else ""
+    extras = ", ".join(filter(None, [f_str, w_str]))
+
+    result = f"🌡 <b>Погода Košice</b>\n{desc}, {t_str}"
+    if extras:
+        result += f"\n  {extras}"
+
+    # Попередження про опади в наступні 3г
+    hourly = data.get("hourly", {})
+    times  = hourly.get("time", [])
+    precip = hourly.get("precipitation", [])
+    prob   = hourly.get("precipitation_probability", [])
+    codes  = hourly.get("weathercode", [])
     local_hour = (datetime.now(timezone.utc).hour + 2) % 24
-    current = ""
     warnings = []
 
     for i, t in enumerate(times):
@@ -172,28 +185,17 @@ def get_weather():
         except Exception:
             continue
         diff = (h - local_hour) % 24
-        code  = codes[i] if i < len(codes) else 0
-        temp  = temps[i] if i < len(temps) else None
-        feel  = feels[i] if i < len(feels) else None
-        wind  = winds[i] if i < len(winds) else None
-        p     = precip[i] if i < len(precip) else 0
-        pr    = prob[i] if i < len(prob) else 0
+        if 0 < diff <= 3:
+            c = codes[i] if i < len(codes) else 0
+            p = precip[i] if i < len(precip) else 0
+            pr = prob[i] if i < len(prob) else 0
+            if p > 0.3 or pr >= 60 or c in RAIN | SNOW | STORM:
+                kind = "❄️ Сніг" if c in SNOW else ("⛈ Гроза" if c in STORM else "🌧 Дощ")
+                warnings.append(f"  {kind} о {t[11:16]} ({pr}%)")
 
-        if diff == 0:
-            desc   = WMO.get(code, "—")
-            t_str  = f"{temp:.0f}°C" if temp is not None else "—"
-            f_str  = f"відчувається {feel:.0f}°C" if feel is not None else ""
-            w_str  = f"вітер {wind:.0f} км/г" if wind is not None else ""
-            extras = ", ".join(filter(None, [f_str, w_str]))
-            current = f"{desc}, {t_str}" + (f"\n  {extras}" if extras else "")
-
-        if 0 < diff <= 3 and (p > 0.3 or pr >= 60 or code in RAIN | SNOW | STORM):
-            kind = "❄️ Сніг" if code in SNOW else ("⛈ Гроза" if code in STORM else "🌧 Дощ")
-            warnings.append(f"  {kind} о {t[11:16]} ({pr}%)")
-
-    result = f"🌡 <b>Погода Košice</b>\n{current}"
     if warnings:
         result += "\n⚠️ Найближчі 3г:\n" + "\n".join(warnings)
+
     return result
 
 
