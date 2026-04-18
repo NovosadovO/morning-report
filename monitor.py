@@ -94,18 +94,18 @@ def save_json_file(path, data):
 
 def get_prices():
     ids = ",".join(COINS.values())
-    url = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd"
+    url = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd&include_24hr_change=true"
     data = fetch_json(url)
     if not data:
         return "💰 <b>Ціни</b>\n⚠️ Недоступно"
 
-    # Завантажуємо попередні ціни (3г тому)
     prev = load_json_file(PRICE_CACHE, default={})
     now_prices = {}
     lines = []
 
     for symbol, cg_id in COINS.items():
-        price = data.get(cg_id, {}).get("usd")
+        price   = data.get(cg_id, {}).get("usd")
+        change24 = data.get(cg_id, {}).get("usd_24h_change")
         if price is None:
             continue
         now_prices[cg_id] = price
@@ -113,14 +113,16 @@ def get_prices():
         if old and old > 0:
             pct = (price - old) / old * 100
             arrow = "📈" if pct > 0 else "📉"
-            ch = f"{'+' if pct > 0 else ''}{pct:.1f}%"
-            lines.append(f"{arrow} <b>{symbol}</b>: ${price:,.2f} <i>({ch} за 3г)</i>")
+            ch = f"{'+' if pct > 0 else ''}{pct:.1f}% за 3г"
+        elif change24 is not None:
+            arrow = "📈" if change24 > 0 else "📉"
+            ch = f"{'+' if change24 > 0 else ''}{change24:.1f}% за 24г"
         else:
-            lines.append(f"▪️ <b>{symbol}</b>: ${price:,.2f}")
+            arrow = "▪️"
+            ch = ""
+        lines.append(f"{arrow} <b>{symbol}</b>: ${price:,.2f} <i>({ch})</i>" if ch else f"{arrow} <b>{symbol}</b>: ${price:,.2f}")
 
-    # Зберігаємо поточні ціни
     save_json_file(PRICE_CACHE, now_prices)
-
     return "💰 <b>Ціни активів</b>\n" + "\n".join(lines)
 
 
