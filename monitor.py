@@ -10,6 +10,7 @@ import email
 import email.header
 import urllib.request
 import urllib.error
+import urllib.parse
 import time
 from datetime import datetime, timezone, timedelta
 
@@ -217,41 +218,104 @@ def get_weather():
 
 # ─── 3. КАЛЕНДАР ──────────────────────────────────────────────────────────────
 
+def _get_google_token(creds_data, scope):
+    """Отримує access token для service account через JWT — без googleapiclient."""
+    import base64, hashlib, hmac, struct, time as _time
+
+    def _b64url(data):
+        if isinstance(data, str):
+            data = data.encode()
+        return base64.urlsafe_b64encode(data).rstrip(b"=").decode()
+
+    now_ts = int(_time.time())
+    header  = _b64url(json.dumps({"alg": "RS256", "typ": "JWT"}))
+    payload = _b64url(json.dumps({
+        "iss": creds_data["client_email"],
+        "scope": scope,
+        "aud": "https://oauth2.googleapis.com/token",
+        "iat": now_ts,
+        "exp": now_ts + 3600,
+    }))
+    signing_input = f"{header}.{payload}".encode()
+
+    # Підпис через cryptography або fallback через subprocess openssl
+    try:
+        from cryptography.hazmat.primitives import hashes, serialization
+        from cryptography.hazmat.primitives.asymmetric import padding
+        private_key = serialization.load_pem_private_key(
+            creds_data["private_key"].encode(), password=None)
+        signature = private_key.sign(signing_input, padding.PKCS1v15(), hashes.SHA256())
+    except Exception:
+        import subprocess, tempfile
+        with tempfile.NamedTemporaryFile(suffix=".pem", delete=False, mode="w") as f:
+            f.write(creds_data["private_key"])
+            pem_path = f.name
+        proc = subprocess.run(
+            ["openssl", "dgst", "-sha256", "-sign", pem_path],
+            input=signing_input, capture_output=True)
+        signature = proc.stdout
+        import os as _os; _os.unlink(pem_path)
+
+    jwt_token = f"{header}.{payload}.{_b64url(signature)}"
+
+    if _HAS_REQUESTS:
+        resp = _requests.post("https://oauth2.googleapis.com/token", data={
+            "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+            "assertion": jwt_token,
+        }, timeout=15)
+        resp.raise_for_status()
+        return resp.json()["access_token"]
+    else:
+        import urllib.parse
+        body = urllib.parse.urlencode({
+            "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+            "assertion": jwt_token,
+        }).encode()
+        req = urllib.request.Request("https://oauth2.googleapis.com/token",
+            data=body, method="POST")
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return json.loads(r.read())["access_token"]
+
+
 def get_calendar():
     creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
     now = datetime.now(timezone.utc)
-    date_today = (now + timedelta(hours=2)).strftime("%d.%m.%Y")
+    date_today    = (now + timedelta(hours=2)).strftime("%d.%m.%Y")
     date_tomorrow = (now + timedelta(hours=26)).strftime("%d.%m.%Y")
 
     if not creds_json:
-        return f"📅 <b>Календар</b>\n⚠️ Не налаштовано"
+        return "📅 <b>Календар</b>\n⚠️ Не налаштовано"
 
     try:
-        import google.oauth2.service_account as sa
-        from googleapiclient.discovery import build
-
         creds_data = json.loads(creds_json)
-        creds = sa.Credentials.from_service_account_info(
-            creds_data, scopes=["https://www.googleapis.com/auth/calendar.readonly"])
-        service = build("calendar", "v3", credentials=creds)
+        token = _get_google_token(
+            creds_data, "https://www.googleapis.com/auth/calendar.readonly")
 
-        # Сьогодні
+        headers = {"Authorization": f"Bearer {token}"}
+        cal_id  = "novosadovoleg%40gmail.com"
+
+        # Часові межі
         today_start = (now + timedelta(hours=2)).replace(
             hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
-        today_end = today_start + timedelta(hours=24)
-
-        # Завтра
-        tomorrow_start = today_start + timedelta(hours=24)
+        today_end      = today_start + timedelta(hours=24)
+        tomorrow_start = today_end
         tomorrow_end   = tomorrow_start + timedelta(hours=24)
 
         def fetch_events(t_min, t_max):
-            r = service.events().list(
-                calendarId="novosadovoleg@gmail.com",
-                timeMin=t_min.isoformat(),
-                timeMax=t_max.isoformat(),
-                singleEvents=True, orderBy="startTime", maxResults=20
-            ).execute()
-            return r.get("items", [])
+            url = (
+                f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+                f"?timeMin={urllib.parse.quote(t_min.isoformat())}"
+                f"&timeMax={urllib.parse.quote(t_max.isoformat())}"
+                f"&singleEvents=true&orderBy=startTime&maxResults=20"
+            )
+            if _HAS_REQUESTS:
+                r = _requests.get(url, headers=headers, timeout=15)
+                r.raise_for_status()
+                return r.json().get("items", [])
+            else:
+                req = urllib.request.Request(url, headers=headers)
+                with urllib.request.urlopen(req, timeout=15) as r:
+                    return json.loads(r.read()).get("items", [])
 
         today_events    = fetch_events(today_start, today_end)
         tomorrow_events = fetch_events(tomorrow_start, tomorrow_end)
@@ -259,29 +323,29 @@ def get_calendar():
         def format_events(events):
             lines = []
             for ev in events:
-                start = ev["start"].get("dateTime") or ev["start"].get("date")
+                start   = ev["start"].get("dateTime") or ev["start"].get("date")
                 summary = ev.get("summary", "(без назви)")
                 try:
                     dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                    t = dt.strftime("%H:%M")
+                    t  = (dt + timedelta(hours=0)).strftime("%H:%M")
                 except Exception:
                     t = start
                 lines.append(f"• {t} — <b>{esc(summary)}</b>")
             return lines
 
-        result = f"📅 <b>Календар</b>\n"
+        result  = "📅 <b>Календар</b>\n"
         result += f"<b>Сьогодні {date_today}:</b>\n"
         today_lines = format_events(today_events)
-        result += ("\n".join(today_lines) if today_lines else "Нічого не заплановано")
+        result += "\n".join(today_lines) if today_lines else "Нічого не заплановано"
 
         result += f"\n\n<b>Завтра {date_tomorrow}:</b>\n"
         tomorrow_lines = format_events(tomorrow_events)
-        result += ("\n".join(tomorrow_lines) if tomorrow_lines else "Нічого не заплановано")
+        result += "\n".join(tomorrow_lines) if tomorrow_lines else "Нічого не заплановано"
 
         return result
 
     except Exception as e:
-        return f"📅 <b>Календар</b>\n⚠️ Помилка: {esc(str(e)[:80])}"
+        return f"📅 <b>Календар</b>\n⚠️ Помилка: {esc(str(e)[:120])}"
 
 
 # ─── 4. EMAIL ─────────────────────────────────────────────────────────────────
