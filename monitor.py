@@ -77,7 +77,7 @@ def _send_telegram_photo(photo_url: str, caption: str) -> bool:
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendAnimation"
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,
-        "animation": "https://storage.googleapis.com/runable-templates/cli-uploads%2F1zsprqn6ymqOFgAJnNEK2HbTycMPBvLc%2FLSjdFVubRZIexAVUx7PCS%2Fmail_alert.gif",
+        "animation": "https://storage.googleapis.com/runable-templates/cli-uploads%2F1zsprqn6ymqOFgAJnNEK2HbTycMPBvLc%2F84VzoRtuRjk0i6Ju6EUAd%2Fmail_alert.gif",
         "caption": caption[:1024],
         "parse_mode": "HTML"
     }).encode()
