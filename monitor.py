@@ -132,6 +132,11 @@ def get_prices():
     ids = ",".join(COINS.values())
     url = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd&include_24hr_change=true"
     data = fetch_json(url)
+
+    # Fallback на Kraken якщо CoinGecko не відповів (rate limit)
+    if not data:
+        data = _get_prices_kraken()
+
     if not data:
         return "💰 <b>Ціни</b>\n⚠️ Недоступно"
 
@@ -140,7 +145,7 @@ def get_prices():
     lines = []
 
     for symbol, cg_id in COINS.items():
-        price   = data.get(cg_id, {}).get("usd")
+        price    = data.get(cg_id, {}).get("usd")
         change24 = data.get(cg_id, {}).get("usd_24h_change")
         if price is None:
             continue
@@ -160,6 +165,40 @@ def get_prices():
 
     save_json_file(PRICE_CACHE, now_prices)
     return "💰 <b>Ціни активів</b>\n" + "\n".join(lines)
+
+
+def _get_prices_kraken():
+    """Fallback: отримує ціни з Kraken (публічний API, без ключа, без блокування)."""
+    # Kraken повертає власні назви пар (XXBTZUSD, XETHZUSD тощо)
+    KRAKEN_MAP = {
+        "bitcoin":      ("XBTUSD",  ["XXBTZUSD", "XBTUSD"]),
+        "ethereum":     ("ETHUSD",  ["XETHZUSD", "ETHUSD"]),
+        "avalanche-2":  ("AVAXUSD", ["AVAXUSD"]),
+        "ondo-finance": ("ONDOUSD", ["ONDOUSD"]),
+    }
+    try:
+        pairs = ",".join(v[0] for v in KRAKEN_MAP.values())
+        raw = fetch_json(f"https://api.kraken.com/0/public/Ticker?pair={pairs}")
+        if not raw or raw.get("error"):
+            return None
+        result_data = raw.get("result", {})
+        out = {}
+        for cg_id, (_, aliases) in KRAKEN_MAP.items():
+            item = None
+            for alias in aliases:
+                if alias in result_data:
+                    item = result_data[alias]
+                    break
+            if not item:
+                continue
+            price    = float(item["c"][0])
+            open24   = float(item["o"])
+            change24 = (price - open24) / open24 * 100 if open24 else 0
+            out[cg_id] = {"usd": price, "usd_24h_change": round(change24, 2)}
+        return out if out else None
+    except Exception as e:
+        print(f"Kraken fallback error: {e}")
+        return None
 
 
 # ─── 2. ПОГОДА ────────────────────────────────────────────────────────────────
@@ -613,14 +652,14 @@ CRYPTO_NEWS_FILE = os.path.join(_DATA_DIR, "monitor_crypto_news.json")
 
 def check_crypto_news():
     """
-    Раз на 4 години перевіряє топ новини з CryptoPanic.
+    Раз на 4 години перевіряє топ новини з CoinGecko News.
     Шле нові важливі новини в Telegram.
     """
     state = load_json_file(CRYPTO_NEWS_FILE, default={"sent": [], "last_check": ""})
 
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
-    now_str = now_local.strftime("%Y-%m-%d %H")
-    last = state.get("last_check", "")
+    now_str   = now_local.strftime("%Y-%m-%d %H")
+    last      = state.get("last_check", "")
 
     # Не частіше ніж раз на 4г
     try:
@@ -630,42 +669,30 @@ def check_crypto_news():
     except Exception:
         pass
 
-    # CryptoPanic публічний API (без ключа, але є обмеження)
-    url = "https://cryptopanic.com/api/free/v1/posts/?auth_token=free&public=true&kind=news&filter=hot&currencies=BTC,ETH"
-    data = fetch_json(url)
-    if not data:
-        # Fallback — Alternative.me Fear&Greed + простий RSS
-        _check_fear_greed()
-        return
+    # CoinGecko News API (безкоштовно, без ключа)
+    data = fetch_json("https://api.coingecko.com/api/v3/news?page=1")
 
-    sent = set(state.get("sent", []))
+    sent     = set(state.get("sent", []))
     new_news = []
 
-    results = data.get("results", [])[:8]
-    for item in results:
-        nid   = str(item.get("id", ""))
-        title = item.get("title", "")
-        url_  = item.get("url", "")
-        votes = item.get("votes", {})
-        positive = votes.get("positive", 0)
-        negative = votes.get("negative", 0)
-
-        if nid in sent:
-            continue
-        # Тільки новини з помітними голосами
-        if positive + negative < 3 and len(results) > 3:
-            continue
-
-        sent.add(nid)
-        new_news.append((title, url_))
+    if data:
+        items = data.get("data", [])[:10]
+        for item in items:
+            nid   = str(item.get("id", ""))
+            title = item.get("title", "")
+            url_  = item.get("url", "")
+            if not nid or nid in sent:
+                continue
+            sent.add(nid)
+            new_news.append((title, url_))
 
     if new_news:
         lines = [f"• <a href='{u}'>{esc(t[:80])}</a>" for t, u in new_news[:5]]
-        msg = "📰 <b>Крипто новини</b>\n" + "\n".join(lines)
+        msg   = "📰 <b>Крипто новини</b>\n" + "\n".join(lines)
         send_telegram(msg)
         print(f"Crypto news sent: {len(new_news)} items")
 
-    state["sent"] = list(sent)[-200:]
+    state["sent"]       = list(sent)[-300:]
     state["last_check"] = now_str
     save_json_file(CRYPTO_NEWS_FILE, state)
 
