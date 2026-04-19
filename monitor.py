@@ -505,6 +505,205 @@ def check_new_emails():
         print(f"check_new_emails error: {e}")
 
 
+# ─── 4c. ПОГОДНІ АЛЕРТИ ───────────────────────────────────────────────────────
+
+WEATHER_ALERT_FILE = os.path.join(_DATA_DIR, "monitor_weather_alert.json")
+
+def check_weather_alert():
+    """
+    Щовечора (~20:00 місцевого) перевіряє погоду на завтра.
+    Якщо очікується дощ/гроза/сніг — шле сповіщення.
+    Також: якщо зараз різка зміна погоди (>5° за 3г) — миттєве сповіщення.
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+
+    url = (
+        "https://api.open-meteo.com/v1/forecast"
+        "?latitude=48.7163&longitude=21.2611"
+        "&current=temperature_2m,weathercode,precipitation"
+        "&daily=weathercode,precipitation_sum,temperature_2m_max,temperature_2m_min,precipitation_probability_max"
+        "&forecast_days=2&timezone=Europe%2FPrague"
+    )
+    data = fetch_json(url)
+    if not data:
+        return
+
+    state = load_json_file(WEATHER_ALERT_FILE, default={})
+    alerts = []
+
+    WMO_BAD = {
+        51, 53, 55, 61, 63, 65, 71, 73, 75, 77,
+        80, 81, 82, 85, 86, 95, 96, 99
+    }
+    WMO_LABEL = {
+        51: "🌦 Мряка", 53: "🌦 Мряка", 55: "🌦 Мряка",
+        61: "🌧 Дощ", 63: "🌧 Дощ", 65: "🌧 Сильний дощ",
+        71: "❄️ Сніг", 73: "❄️ Сніг", 75: "❄️ Сильний сніг",
+        80: "🌦 Злива", 81: "🌦 Злива", 82: "⛈ Сильна злива",
+        95: "⛈ Гроза", 96: "⛈ Гроза з градом", 99: "⛈ Сильна гроза",
+    }
+
+    # ── Вечірній алерт про завтра (шлемо між 19:00-21:00) ──
+    if 19 <= now_local.hour < 21:
+        today_str = now_local.strftime("%Y-%m-%d")
+        last_evening = state.get("last_evening_alert", "")
+        if last_evening != today_str:
+            daily = data.get("daily", {})
+            times = daily.get("time", [])
+            codes = daily.get("weathercode", [])
+            precip = daily.get("precipitation_sum", [])
+            precip_prob = daily.get("precipitation_probability_max", [])
+            tmax = daily.get("temperature_2m_max", [])
+            tmin = daily.get("temperature_2m_min", [])
+
+            # Завтра = індекс 1
+            if len(times) > 1:
+                code = codes[1] if len(codes) > 1 else 0
+                pr   = precip[1] if len(precip) > 1 else 0
+                prob = precip_prob[1] if len(precip_prob) > 1 else 0
+                hi   = tmax[1] if len(tmax) > 1 else None
+                lo   = tmin[1] if len(tmin) > 1 else None
+                tomorrow_date = (now_local + timedelta(days=1)).strftime("%d.%m")
+
+                if code in WMO_BAD or prob >= 50:
+                    label = WMO_LABEL.get(code, "🌧 Опади")
+                    temp_str = f"{lo:.0f}…{hi:.0f}°C" if hi and lo else ""
+                    msg = (
+                        f"🌦 <b>Погода на завтра ({tomorrow_date})</b>\n"
+                        f"{label}"
+                        + (f", {prob}% імовірність опадів" if prob else "")
+                        + (f", {pr:.1f} мм" if pr > 0 else "")
+                        + (f"\n🌡 {temp_str}" if temp_str else "")
+                        + "\n\n☔ Не забудь парасольку!"
+                    )
+                    alerts.append(msg)
+                    state["last_evening_alert"] = today_str
+
+    # ── Різка зміна температури (>6° за останні 3г) ──
+    current = data.get("current", {})
+    temp_now = current.get("temperature_2m")
+    if temp_now is not None:
+        last_temp = state.get("last_temp")
+        last_temp_time = state.get("last_temp_time", "")
+        now_str = now_local.strftime("%Y-%m-%d %H")
+
+        if last_temp is not None and last_temp_time != now_str:
+            diff = temp_now - last_temp
+            if abs(diff) >= 6:
+                direction = "впала" if diff < 0 else "піднялась"
+                alerts.append(
+                    f"🌡 <b>Різка зміна температури!</b>\n"
+                    f"Температура {direction} на {abs(diff):.0f}°C за 3г\n"
+                    f"Зараз: {temp_now:.0f}°C"
+                )
+
+        state["last_temp"] = temp_now
+        state["last_temp_time"] = now_str
+
+    save_json_file(WEATHER_ALERT_FILE, state)
+
+    for msg in alerts:
+        send_telegram(msg)
+        print(f"Weather alert sent: {msg[:60]}")
+
+
+# ─── 4d. КРИПТО НОВИНИ ────────────────────────────────────────────────────────
+
+CRYPTO_NEWS_FILE = os.path.join(_DATA_DIR, "monitor_crypto_news.json")
+
+def check_crypto_news():
+    """
+    Раз на 4 години перевіряє топ новини з CryptoPanic.
+    Шле нові важливі новини в Telegram.
+    """
+    state = load_json_file(CRYPTO_NEWS_FILE, default={"sent": [], "last_check": ""})
+
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    now_str = now_local.strftime("%Y-%m-%d %H")
+    last = state.get("last_check", "")
+
+    # Не частіше ніж раз на 4г
+    try:
+        last_dt = datetime.strptime(last, "%Y-%m-%d %H").replace(tzinfo=timezone.utc)
+        if (datetime.now(timezone.utc) - last_dt).total_seconds() < 4 * 3600:
+            return
+    except Exception:
+        pass
+
+    # CryptoPanic публічний API (без ключа, але є обмеження)
+    url = "https://cryptopanic.com/api/free/v1/posts/?auth_token=free&public=true&kind=news&filter=hot&currencies=BTC,ETH"
+    data = fetch_json(url)
+    if not data:
+        # Fallback — Alternative.me Fear&Greed + простий RSS
+        _check_fear_greed()
+        return
+
+    sent = set(state.get("sent", []))
+    new_news = []
+
+    results = data.get("results", [])[:8]
+    for item in results:
+        nid   = str(item.get("id", ""))
+        title = item.get("title", "")
+        url_  = item.get("url", "")
+        votes = item.get("votes", {})
+        positive = votes.get("positive", 0)
+        negative = votes.get("negative", 0)
+
+        if nid in sent:
+            continue
+        # Тільки новини з помітними голосами
+        if positive + negative < 3 and len(results) > 3:
+            continue
+
+        sent.add(nid)
+        new_news.append((title, url_))
+
+    if new_news:
+        lines = [f"• <a href='{u}'>{esc(t[:80])}</a>" for t, u in new_news[:5]]
+        msg = "📰 <b>Крипто новини</b>\n" + "\n".join(lines)
+        send_telegram(msg)
+        print(f"Crypto news sent: {len(new_news)} items")
+
+    state["sent"] = list(sent)[-200:]
+    state["last_check"] = now_str
+    save_json_file(CRYPTO_NEWS_FILE, state)
+
+    _check_fear_greed()
+
+
+def _check_fear_greed():
+    """Шле Fear & Greed якщо екстремальне значення (< 20 або > 80)."""
+    state = load_json_file(CRYPTO_NEWS_FILE, default={})
+    last_fg = state.get("last_fg_date", "")
+    today = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+    if last_fg == today:
+        return
+
+    data = fetch_json("https://api.alternative.me/fng/?limit=1")
+    if not data:
+        return
+
+    try:
+        value = int(data["data"][0]["value"])
+        label = data["data"][0]["value_classification"]
+    except Exception:
+        return
+
+    if value <= 20:
+        emoji = "😱"
+        msg = f"{emoji} <b>Fear &amp; Greed: {value} — {esc(label)}</b>\nРинок в екстремальному страху. Можливо час купувати?"
+    elif value >= 80:
+        emoji = "🤑"
+        msg = f"{emoji} <b>Fear &amp; Greed: {value} — {esc(label)}</b>\nРинок в екстремальній жадібності. Будь обережний."
+    else:
+        return  # Нормальне значення — не шлемо
+
+    send_telegram(msg)
+    state["last_fg_date"] = today
+    save_json_file(CRYPTO_NEWS_FILE, state)
+
+
 # ─── 5. ПІДСУМОК ТА РЕКОМЕНДАЦІЇ ─────────────────────────────────────────────
 
 def get_summary(prices_text, weather_text, calendar_text):

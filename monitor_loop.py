@@ -21,22 +21,46 @@ def run_bot():
             print(f"Bot crashed: {e}, restarting in 10s...", flush=True)
             time.sleep(10)
 
+def _load_monitor():
+    import importlib.util, os
+    spec = importlib.util.spec_from_file_location(
+        "monitor", os.path.join(os.path.dirname(__file__), "monitor.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
 def run_email_watcher():
-    """Перевіряє нові важливі листи кожні 5 хвилин — шле миттєве сповіщення."""
+    """Перевіряє нові важливі листи кожні 5 хвилин."""
     print("=== Starting email watcher (every 5min) ===", flush=True)
-    # Пауза при старті щоб monitor.py встиг відпрацювати першим
     time.sleep(30)
     while True:
         try:
-            import importlib.util, os
-            spec = importlib.util.spec_from_file_location(
-                "monitor", os.path.join(os.path.dirname(__file__), "monitor.py"))
-            mod = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(mod)
-            mod.check_new_emails()
+            _load_monitor().check_new_emails()
         except Exception as e:
             print(f"Email watcher error: {e}", flush=True)
-        time.sleep(300)  # 5 хвилин
+        time.sleep(300)
+
+def run_weather_watcher():
+    """Перевіряє погодні алерти кожні 30 хвилин."""
+    print("=== Starting weather watcher (every 30min) ===", flush=True)
+    time.sleep(60)
+    while True:
+        try:
+            _load_monitor().check_weather_alert()
+        except Exception as e:
+            print(f"Weather watcher error: {e}", flush=True)
+        time.sleep(1800)
+
+def run_news_watcher():
+    """Перевіряє крипто новини кожні 4 години."""
+    print("=== Starting crypto news watcher (every 4h) ===", flush=True)
+    time.sleep(90)
+    while True:
+        try:
+            _load_monitor().check_crypto_news()
+        except Exception as e:
+            print(f"News watcher error: {e}", flush=True)
+        time.sleep(14400)
 
 def run_monitor_loop():
     """Запускає monitor.py кожні 3 години"""
@@ -51,13 +75,11 @@ def run_monitor_loop():
         print("Sleeping 3 hours...", flush=True)
         time.sleep(10800)
 
-# Запускаємо бота в окремому потоці
-bot_thread = threading.Thread(target=run_bot, daemon=True)
-bot_thread.start()
-
-# Email watcher в окремому потоці
-email_thread = threading.Thread(target=run_email_watcher, daemon=True)
-email_thread.start()
+# Запускаємо всі сервіси в окремих потоках
+threading.Thread(target=run_bot,             daemon=True).start()
+threading.Thread(target=run_email_watcher,   daemon=True).start()
+threading.Thread(target=run_weather_watcher, daemon=True).start()
+threading.Thread(target=run_news_watcher,    daemon=True).start()
 
 # Монітор в головному потоці
 run_monitor_loop()
