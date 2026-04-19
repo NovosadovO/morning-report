@@ -73,10 +73,11 @@ def send_telegram(text: str) -> bool:
 
 
 def _send_telegram_photo(photo_url: str, caption: str) -> bool:
-    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto"
+    # Шлемо як анімацію (GIF)
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendAnimation"
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,
-        "photo": photo_url,
+        "animation": "https://storage.googleapis.com/runable-templates/cli-uploads%2F1zsprqn6ymqOFgAJnNEK2HbTycMPBvLc%2FLSjdFVubRZIexAVUx7PCS%2Fmail_alert.gif",
         "caption": caption[:1024],
         "parse_mode": "HTML"
     }).encode()
@@ -86,8 +87,7 @@ def _send_telegram_photo(photo_url: str, caption: str) -> bool:
         with urllib.request.urlopen(req, timeout=10) as r:
             return r.status == 200
     except Exception as e:
-        print(f"sendPhoto error: {e}")
-        # Fallback — шлемо без фото
+        print(f"sendAnimation error: {e}")
         return send_telegram(caption)
 
 
