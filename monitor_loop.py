@@ -92,7 +92,7 @@ def run_defi_report_loop():
     while True:
         now_local = datetime.now(timezone.utc) + timedelta(hours=2)
         h, m = now_local.hour, now_local.minute
-        if h in (7, 19) and m < 3:
+        if h in (10, 19) and m < 3:
             print(f"[DeFi report] Running at {now_local.strftime('%H:%M')}...", flush=True)
             try:
                 subprocess.run([sys.executable, "report_defi.py"], timeout=300)
