@@ -5,6 +5,7 @@
 - monitor.py           — основний звіт кожні 3г
 - report2.py           — дайджест кожні 3г (зсув 1.5г)
 - report_defi.py       — DeFi & RWA звіт о 07:00 і 19:00
+- report_social.py     — соц пост (крипто/акції/DeFi) раз на 3 дні о 10:00
 - check_new_emails()   — миттєві сповіщення про листи кожні 5хв
 - check_weather_alert()— погодні алерти кожні 30хв
 - check_crypto_news()  — крипто новини кожні 4г
@@ -132,6 +133,24 @@ def run_calendar_reminder_watcher():
         time.sleep(300)
 
 
+def run_social_post_loop():
+    """Соціальний пост (крипто/акції/DeFi) — раз на 3 дні о 10:00 місцевого часу."""
+    print("=== Starting social post loop (every 3 days at 10:00) ===", flush=True)
+    time.sleep(120)  # затримка старту
+    while True:
+        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        h, m = now_local.hour, now_local.minute
+        if h == 10 and m < 5:
+            print(f"[Social post] Checking at {now_local.strftime('%H:%M')}...", flush=True)
+            try:
+                subprocess.run([sys.executable, "report_social.py"], timeout=120)
+            except Exception as e:
+                print(f"Social post error: {e}", flush=True)
+            time.sleep(360)  # щоб не запустити двічі у те саме вікно
+        else:
+            time.sleep(60)
+
+
 threading.Thread(target=run_bot,                      daemon=True).start()
 threading.Thread(target=run_email_watcher,            daemon=True).start()
 threading.Thread(target=run_weather_watcher,          daemon=True).start()
@@ -139,6 +158,7 @@ threading.Thread(target=run_news_watcher,             daemon=True).start()
 threading.Thread(target=run_report2_loop,             daemon=True).start()
 threading.Thread(target=run_defi_report_loop,         daemon=True).start()
 threading.Thread(target=run_calendar_reminder_watcher, daemon=True).start()
+threading.Thread(target=run_social_post_loop,         daemon=True).start()
 
 # Основний монітор в головному потоці
 run_monitor_loop()
