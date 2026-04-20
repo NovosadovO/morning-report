@@ -1,18 +1,23 @@
 #!/usr/bin/env python3
 """
-Запускає:
-- bot.py — слухає команди в Telegram (в окремому потоці)
-- monitor.py — надсилає звіт кожні 3 години
+Головний процес. Запускає:
+- bot.py               — Telegram bot polling
+- monitor.py           — основний звіт кожні 3г
+- report2.py           — дайджест кожні 3г (зсув 1.5г)
+- report_defi.py       — DeFi & RWA звіт о 07:00 і 19:00
+- check_new_emails()   — миттєві сповіщення про листи кожні 5хв
+- check_weather_alert()— погодні алерти кожні 30хв
+- check_crypto_news()  — крипто новини кожні 4г
 """
 
 import time
 import subprocess
 import sys
 import threading
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
+
 
 def run_bot():
-    """Запускає Telegram bot polling в окремому процесі"""
     print("=== Starting bot listener ===", flush=True)
     while True:
         try:
@@ -20,6 +25,7 @@ def run_bot():
         except Exception as e:
             print(f"Bot crashed: {e}, restarting in 10s...", flush=True)
             time.sleep(10)
+
 
 def _load_monitor():
     import importlib.util, os
@@ -29,8 +35,9 @@ def _load_monitor():
     spec.loader.exec_module(mod)
     return mod
 
+
 def run_email_watcher():
-    """Перевіряє нові важливі листи кожні 5 хвилин."""
+    """Нові листи — кожні 5 хвилин."""
     print("=== Starting email watcher (every 5min) ===", flush=True)
     time.sleep(30)
     while True:
@@ -40,8 +47,9 @@ def run_email_watcher():
             print(f"Email watcher error: {e}", flush=True)
         time.sleep(300)
 
+
 def run_weather_watcher():
-    """Перевіряє погодні алерти кожні 30 хвилин."""
+    """Погодні алерти — кожні 30 хвилин."""
     print("=== Starting weather watcher (every 30min) ===", flush=True)
     time.sleep(60)
     while True:
@@ -51,8 +59,9 @@ def run_weather_watcher():
             print(f"Weather watcher error: {e}", flush=True)
         time.sleep(1800)
 
+
 def run_news_watcher():
-    """Перевіряє крипто новини кожні 4 години."""
+    """Крипто новини — кожні 4 години."""
     print("=== Starting crypto news watcher (every 4h) ===", flush=True)
     time.sleep(90)
     while True:
@@ -62,10 +71,11 @@ def run_news_watcher():
             print(f"News watcher error: {e}", flush=True)
         time.sleep(14400)
 
+
 def run_report2_loop():
-    """Запускає report2.py кожні 3 години зі зсувом 1.5г від основного звіту."""
+    """Дайджест (новини світу, трафік, курси, AQI) — кожні 3г зі зсувом 1.5г."""
     print("=== Starting report2 loop (every 3h, offset 1.5h) ===", flush=True)
-    time.sleep(5400)  # чекаємо 1.5г після старту
+    time.sleep(5400)  # зсув 1.5г
     while True:
         now = datetime.now(timezone.utc)
         print(f"\n[{now.strftime('%Y-%m-%d %H:%M')} UTC] Running report2...", flush=True)
@@ -73,11 +83,28 @@ def run_report2_loop():
             subprocess.run([sys.executable, "report2.py"], timeout=120)
         except Exception as e:
             print(f"Report2 error: {e}", flush=True)
-        time.sleep(10800)  # кожні 3г
+        time.sleep(10800)
 
 
+def run_defi_report_loop():
+    """DeFi & RWA звіт — о 07:00 і 19:00 місцевого часу (UTC+2)."""
+    print("=== Starting DeFi report loop (07:00 + 19:00) ===", flush=True)
+    while True:
+        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        h, m = now_local.hour, now_local.minute
+        if h in (7, 19) and m < 3:
+            print(f"[DeFi report] Running at {now_local.strftime('%H:%M')}...", flush=True)
+            try:
+                subprocess.run([sys.executable, "report_defi.py"], timeout=300)
+            except Exception as e:
+                print(f"DeFi report error: {e}", flush=True)
+            time.sleep(300)  # щоб не запустити двічі у те саме вікно
+        else:
+            time.sleep(60)
 
-    """Запускає monitor.py кожні 3 години"""
+
+def run_monitor_loop():
+    """Основний звіт — кожні 3 години."""
     print("=== Starting monitor loop (every 3h) ===", flush=True)
     while True:
         now = datetime.now(timezone.utc)
@@ -89,12 +116,15 @@ def run_report2_loop():
         print("Sleeping 3 hours...", flush=True)
         time.sleep(10800)
 
-# Запускаємо всі сервіси в окремих потоках
+
+# ─── ЗАПУСК ───────────────────────────────────────────────────────────────────
+
 threading.Thread(target=run_bot,             daemon=True).start()
 threading.Thread(target=run_email_watcher,   daemon=True).start()
 threading.Thread(target=run_weather_watcher, daemon=True).start()
 threading.Thread(target=run_news_watcher,    daemon=True).start()
 threading.Thread(target=run_report2_loop,    daemon=True).start()
+threading.Thread(target=run_defi_report_loop, daemon=True).start()
 
 # Основний монітор в головному потоці
 run_monitor_loop()
