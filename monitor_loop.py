@@ -62,7 +62,21 @@ def run_news_watcher():
             print(f"News watcher error: {e}", flush=True)
         time.sleep(14400)
 
-def run_monitor_loop():
+def run_report2_loop():
+    """Запускає report2.py кожні 3 години зі зсувом 1.5г від основного звіту."""
+    print("=== Starting report2 loop (every 3h, offset 1.5h) ===", flush=True)
+    time.sleep(5400)  # чекаємо 1.5г після старту
+    while True:
+        now = datetime.now(timezone.utc)
+        print(f"\n[{now.strftime('%Y-%m-%d %H:%M')} UTC] Running report2...", flush=True)
+        try:
+            subprocess.run([sys.executable, "report2.py"], timeout=120)
+        except Exception as e:
+            print(f"Report2 error: {e}", flush=True)
+        time.sleep(10800)  # кожні 3г
+
+
+
     """Запускає monitor.py кожні 3 години"""
     print("=== Starting monitor loop (every 3h) ===", flush=True)
     while True:
@@ -80,6 +94,7 @@ threading.Thread(target=run_bot,             daemon=True).start()
 threading.Thread(target=run_email_watcher,   daemon=True).start()
 threading.Thread(target=run_weather_watcher, daemon=True).start()
 threading.Thread(target=run_news_watcher,    daemon=True).start()
+threading.Thread(target=run_report2_loop,    daemon=True).start()
 
-# Монітор в головному потоці
+# Основний монітор в головному потоці
 run_monitor_loop()
