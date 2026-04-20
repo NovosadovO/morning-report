@@ -37,8 +37,10 @@ def parse_metrics(data):
 
     metrics = data.get("metrics", [])
     if not metrics:
-        # Спробуємо плоский формат
         return data
+
+    from datetime import date
+    today = date.today().isoformat()
 
     for metric in metrics:
         name = metric.get("name", "")
@@ -46,13 +48,28 @@ def parse_metrics(data):
         if not entries:
             continue
 
-        # Беремо останнє значення
-        last = entries[-1]
-        qty = last.get("qty")
-        if qty is None:
+        # Кроки — сума за сьогодні
+        if "step" in name.lower():
+            total = sum(float(e.get("qty", 0)) for e in entries
+                        if e.get("date", "").startswith(today))
+            if total == 0:
+                total = sum(float(e.get("qty", 0)) for e in entries)
+            result[name] = total
             continue
 
-        result[name] = qty
+        # Сон — totalSleep з останнього запису
+        if "sleep" in name.lower():
+            last = entries[-1]
+            total = last.get("totalSleep") or last.get("asleep") or last.get("qty")
+            if total:
+                result[name] = total
+            continue
+
+        # Решта — останнє значення qty
+        last = entries[-1]
+        qty = last.get("qty")
+        if qty is not None:
+            result[name] = qty
 
     return result
 
@@ -196,12 +213,37 @@ class HealthHandler(BaseHTTPRequestHandler):
             data = {}
             if body:
                 try:
-                    data = json.loads(body.decode("utf-8", errors="replace"))
-                except Exception:
-                    # Спробуємо як form-encoded
+                    parsed = json.loads(body.decode("utf-8", errors="replace"))
+                    # Healthy Widgets надсилає {"data": {...}} або {"data": "..."}
+                    if "data" in parsed:
+                        inner = parsed["data"]
+                        if isinstance(inner, str):
+                            try:
+                                data = json.loads(inner)
+                            except:
+                                import ast
+                                data = ast.literal_eval(inner)
+                        elif isinstance(inner, dict):
+                            data = inner
+                        else:
+                            data = parsed
+                    else:
+                        data = parsed
+                except Exception as e:
+                    print(f"JSON parse error: {e}, trying form-encoded")
                     from urllib.parse import parse_qs
                     parsed = parse_qs(body.decode("utf-8", errors="replace"))
-                    data = {k: v[0] for k, v in parsed.items()}
+                    raw = parsed.get("data", [None])[0]
+                    if raw:
+                        try:
+                            import ast
+                            data = ast.literal_eval(raw)
+                        except:
+                            data = {k: v[0] for k, v in parsed.items()}
+                    else:
+                        data = {k: v[0] for k, v in parsed.items()}
+
+            print(f"[Health] Parsed data keys: {list(data.keys())[:10]}", flush=True)
 
             # Форматуємо і надсилаємо
             report = format_health_report(data)
