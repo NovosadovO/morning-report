@@ -650,6 +650,19 @@ def check_weather_alert():
 
 CRYPTO_NEWS_FILE = os.path.join(_DATA_DIR, "monitor_crypto_news.json")
 
+def _translate_ua(text):
+    """Перекладає текст на українську через Google Translate (без ключа)."""
+    try:
+        url = "https://translate.googleapis.com/translate_a/single"
+        params = "client=gtx&sl=en&tl=uk&dt=t&q=" + urllib.parse.quote(text)
+        data = fetch_json(url + "?" + params)
+        if data and data[0]:
+            return "".join([s[0] for s in data[0] if s and s[0]])
+    except Exception as e:
+        print(f"translate error: {e}")
+    return text  # fallback — оригінал
+
+
 def check_crypto_news():
     """
     Раз на 4 години перевіряє топ новини з CoinGecko News.
@@ -687,8 +700,11 @@ def check_crypto_news():
             new_news.append((title, url_))
 
     if new_news:
-        lines = [f"• <a href='{u}'>{esc(t[:80])}</a>" for t, u in new_news[:5]]
-        msg   = "📰 <b>Крипто новини</b>\n" + "\n".join(lines)
+        lines = []
+        for title, url_ in new_news[:5]:
+            translated = _translate_ua(title)
+            lines.append(f"• <a href='{url_}'>{esc(translated[:100])}</a>")
+        msg = "📰 <b>Крипто новини</b>\n" + "\n".join(lines)
         send_telegram(msg)
         print(f"Crypto news sent: {len(new_news)} items")
 
