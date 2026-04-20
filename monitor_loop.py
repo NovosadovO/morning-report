@@ -8,6 +8,7 @@
 - check_new_emails()   — миттєві сповіщення про листи кожні 5хв
 - check_weather_alert()— погодні алерти кожні 30хв
 - check_crypto_news()  — крипто новини кожні 4г
+- check_calendar_reminders() — нагадування за 30хв до подій кожні 5хв
 """
 
 import time
@@ -119,12 +120,25 @@ def run_monitor_loop():
 
 # ─── ЗАПУСК ───────────────────────────────────────────────────────────────────
 
-threading.Thread(target=run_bot,             daemon=True).start()
-threading.Thread(target=run_email_watcher,   daemon=True).start()
-threading.Thread(target=run_weather_watcher, daemon=True).start()
-threading.Thread(target=run_news_watcher,    daemon=True).start()
-threading.Thread(target=run_report2_loop,    daemon=True).start()
-threading.Thread(target=run_defi_report_loop, daemon=True).start()
+def run_calendar_reminder_watcher():
+    """Нагадування за 30хв до подій — кожні 5 хвилин."""
+    print("=== Starting calendar reminder watcher (every 5min) ===", flush=True)
+    time.sleep(45)
+    while True:
+        try:
+            _load_monitor().check_calendar_reminders()
+        except Exception as e:
+            print(f"Calendar reminder watcher error: {e}", flush=True)
+        time.sleep(300)
+
+
+threading.Thread(target=run_bot,                      daemon=True).start()
+threading.Thread(target=run_email_watcher,            daemon=True).start()
+threading.Thread(target=run_weather_watcher,          daemon=True).start()
+threading.Thread(target=run_news_watcher,             daemon=True).start()
+threading.Thread(target=run_report2_loop,             daemon=True).start()
+threading.Thread(target=run_defi_report_loop,         daemon=True).start()
+threading.Thread(target=run_calendar_reminder_watcher, daemon=True).start()
 
 # Основний монітор в головному потоці
 run_monitor_loop()

@@ -818,5 +818,72 @@ def main():
     print("=== Report sent ===")
 
 
+# ─── 4c. НАГАДУВАННЯ ПРО ПОДІЇ КАЛЕНДАРЯ (за 30 хв) ──────────────────────────
+
+CALENDAR_REMINDED_FILE = os.path.join(_DATA_DIR, "monitor_calendar_reminded.json")
+
+def check_calendar_reminders():
+    """Шле нагадування за 30 хвилин до старту кожної події в Google Calendar."""
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    if not creds_json:
+        return
+
+    reminded = set(load_json_file(CALENDAR_REMINDED_FILE, default=[]))
+
+    try:
+        creds_data = json.loads(creds_json)
+        token = _get_google_token(
+            creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+
+        headers = {"Authorization": f"Bearer {token}"}
+        cal_id  = "novosadovoleg%40gmail.com"
+
+        now = datetime.now(timezone.utc)
+        window_start = now + timedelta(minutes=28)
+        window_end   = now + timedelta(minutes=32)
+
+        url = (
+            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+            f"?timeMin={urllib.parse.quote(window_start.isoformat())}"
+            f"&timeMax={urllib.parse.quote(window_end.isoformat())}"
+            f"&singleEvents=true&orderBy=startTime&maxResults=10"
+        )
+        if _HAS_REQUESTS:
+            r = _requests.get(url, headers=headers, timeout=15)
+            r.raise_for_status()
+            events = r.json().get("items", [])
+        else:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as r:
+                events = json.loads(r.read()).get("items", [])
+
+        new_reminded = list(reminded)
+        for ev in events:
+            ev_id   = ev.get("id", "")
+            summary = ev.get("summary", "(без назви)")
+            start   = ev["start"].get("dateTime") or ev["start"].get("date")
+            reminder_key = f"{ev_id}_{start}"
+
+            if reminder_key in reminded:
+                continue
+
+            try:
+                dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
+                local_dt = dt + timedelta(hours=2)
+                t = local_dt.strftime("%H:%M")
+            except Exception:
+                t = start
+
+            msg = f"⏰ <b>Нагадування</b>\nЧерез 30 хв: <b>{esc(summary)}</b>\n🕐 Початок о {t}"
+            send_telegram(msg)
+            print(f"Calendar reminder sent: {summary} at {t}")
+            new_reminded.append(reminder_key)
+
+        save_json_file(CALENDAR_REMINDED_FILE, new_reminded[-500:])
+
+    except Exception as e:
+        print(f"check_calendar_reminders error: {e}")
+
+
 if __name__ == "__main__":
     main()
