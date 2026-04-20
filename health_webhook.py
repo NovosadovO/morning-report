@@ -31,19 +31,68 @@ def send_telegram(text):
         print(f"Telegram error: {e}")
 
 
-def format_health_report(data):
+def parse_metrics(data):
+    """Парсить формат Healthy Widgets: {'metrics': [{'name': '...', 'data': [...]}]}"""
+    result = {}
+
+    metrics = data.get("metrics", [])
+    if not metrics:
+        # Спробуємо плоский формат
+        return data
+
+    for metric in metrics:
+        name = metric.get("name", "")
+        entries = metric.get("data", [])
+        if not entries:
+            continue
+
+        # Беремо останнє значення
+        last = entries[-1]
+        qty = last.get("qty")
+        if qty is None:
+            continue
+
+        result[name] = qty
+
+    return result
+
+
+def format_health_report(raw_data):
     """Форматує дані від Healthy Widgets у читабельний звіт."""
     local = datetime.now(timezone.utc) + timedelta(hours=2)
     date_str = local.strftime("%d.%m.%Y %H:%M")
 
+    # Парсимо вкладену структуру
+    data = parse_metrics(raw_data)
+
     lines = [f"<b>Health звіт · {date_str}</b>", "━━━━━━━━━━━━━━━━━━━━"]
 
-    # Кроки
-    steps = (data.get("step_count") or data.get("stepCount") or
-             data.get("steps") or data.get("HKQuantityTypeIdentifierStepCount"))
+    # Вага
+    weight = data.get("weight_body_mass")
+    if weight:
+        try:
+            w = float(weight)
+            lines.append(f"\n⚖️ <b>Вага:</b> {w:.1f} кг")
+        except: pass
+
+    # Кроки — сума за день
+    steps = data.get("step_count") or data.get("steps")
+    if steps is None:
+        # Спробуємо знайти в metrics масиві і посумувати за сьогодні
+        today = local.strftime("%Y-%m-%d")
+        for metric in raw_data.get("metrics", []):
+            if "step" in metric.get("name","").lower():
+                total = sum(
+                    float(e.get("qty",0))
+                    for e in metric.get("data",[])
+                    if e.get("date","").startswith(today)
+                )
+                if total > 0:
+                    steps = total
+                    break
     if steps:
         try:
-            s = int(float(str(steps).split()[0]))
+            s = int(float(steps))
             emoji = "🔥" if s >= 10000 else ("👍" if s >= 7000 else "🚶")
             lines.append(f"\n{emoji} <b>Кроки:</b> {s:,}")
             if s >= 10000:
@@ -53,30 +102,35 @@ def format_health_report(data):
         except: pass
 
     # Пульс
-    hr = (data.get("heart_rate") or data.get("heartRate") or
-          data.get("HKQuantityTypeIdentifierHeartRate"))
+    hr = data.get("heart_rate") or data.get("resting_heart_rate")
     if hr:
         try:
-            h = int(float(str(hr).split()[0]))
+            h = int(float(hr))
             emoji = "❤️" if 60 <= h <= 80 else ("⚠️" if h > 100 else "💙")
             lines.append(f"\n{emoji} <b>Пульс:</b> {h} bpm")
         except: pass
 
-    # Вага
-    weight = (data.get("body_mass") or data.get("bodyMass") or
-              data.get("weight") or data.get("HKQuantityTypeIdentifierBodyMass"))
-    if weight:
+    # Вода
+    water = data.get("dietary_water") or data.get("water")
+    if water:
         try:
-            w = float(str(weight).split()[0])
-            lines.append(f"\n⚖️ <b>Вага:</b> {w:.1f} кг")
+            w = float(water)
+            # Конвертуємо мл якщо треба
+            if w < 20:  # літри
+                w_ml = int(w * 1000)
+            else:
+                w_ml = int(w)
+            emoji = "💧" if w_ml >= 2000 else "🫗"
+            lines.append(f"\n{emoji} <b>Вода:</b> {w_ml} мл")
+            if w_ml < 2000:
+                lines.append(f"   До норми: {2000-w_ml} мл")
         except: pass
 
     # Сон
-    sleep = (data.get("sleep") or data.get("sleepAnalysis") or
-             data.get("HKCategoryTypeIdentifierSleepAnalysis"))
+    sleep = data.get("sleep_analysis") or data.get("sleep")
     if sleep:
         try:
-            s = float(str(sleep).split()[0])
+            s = float(sleep)
             if 0 < s < 24:
                 emoji = "😴" if s >= 7 else "😵"
                 lines.append(f"\n{emoji} <b>Сон:</b> {s:.1f} год")
@@ -85,39 +139,36 @@ def format_health_report(data):
         except: pass
 
     # Активні калорії
-    kcal = (data.get("active_energy") or data.get("activeEnergy") or
-            data.get("HKQuantityTypeIdentifierActiveEnergyBurned"))
+    kcal = data.get("active_energy_burned") or data.get("active_energy")
     if kcal:
         try:
-            k = int(float(str(kcal).split()[0]))
+            k = int(float(kcal))
             lines.append(f"\n🔥 <b>Активні калорії:</b> {k} ккал")
         except: pass
 
     # Дистанція
-    dist = (data.get("distance") or data.get("distanceWalkingRunning") or
-            data.get("HKQuantityTypeIdentifierDistanceWalkingRunning"))
+    dist = data.get("walking_running_distance") or data.get("distance")
     if dist:
         try:
-            d = float(str(dist).split()[0])
+            d = float(dist)
             lines.append(f"\n🗺 <b>Дистанція:</b> {d:.2f} км")
         except: pass
 
-    # Кисень у крові
-    spo2 = (data.get("oxygen_saturation") or data.get("oxygenSaturation") or
-            data.get("HKQuantityTypeIdentifierOxygenSaturation"))
+    # SpO2
+    spo2 = data.get("oxygen_saturation")
     if spo2:
         try:
-            o = float(str(spo2).split()[0])
+            o = float(spo2)
             if o <= 1: o *= 100
             emoji = "✅" if o >= 95 else "⚠️"
             lines.append(f"\n{emoji} <b>SpO2:</b> {o:.0f}%")
         except: pass
 
-    # Якщо нічого не розпізнали — показуємо raw
+    # Якщо нічого не розпізнали
     if len(lines) <= 2:
-        lines.append("\n📊 Дані отримано:")
-        for k, v in list(data.items())[:15]:
-            if v:
+        lines.append("\n📊 Отримані метрики:")
+        for k, v in list(data.items())[:10]:
+            if v is not None:
                 lines.append(f"  {k}: {v}")
 
     lines.append("\n━━━━━━━━━━━━━━━━━━━━")
