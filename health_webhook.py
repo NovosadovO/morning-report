@@ -434,14 +434,37 @@ class HealthHandler(BaseHTTPRequestHandler):
             else:
                 zip_bytes = body
 
-            if not zip_bytes or not zip_bytes.startswith(b"PK"):
-                print(f"[ZIP] Not a valid ZIP: {zip_bytes[:20]}", flush=True)
+            if not zip_bytes:
+                send_telegram("⚠️ HAE: не вдалось витягти дані з multipart.")
                 self.send_response(400)
                 self.end_headers()
-                self.wfile.write(b"Not a ZIP file")
+                self.wfile.write(b"No data extracted")
                 return
 
-            stats = analyze_hae_zip(zip_bytes)
+            # Підтримка і ZIP і сирого CSV
+            if zip_bytes.startswith(b"PK"):
+                stats = analyze_hae_zip(zip_bytes)
+            else:
+                # Спробуємо як CSV напряму
+                try:
+                    csv_text = zip_bytes.decode("utf-8", errors="replace").lstrip("\ufeff")
+                    import csv as csv_mod, io as io_mod
+                    reader = csv_mod.reader(io_mod.StringIO(csv_text))
+                    rows = list(reader)
+                    full_headers = [rows[i][0] for i in range(5)] + rows[5]
+                    data_rows = rows[6:]
+                    # Передаємо в аналізатор через фейковий ZIP
+                    import zipfile as zf_mod
+                    buf = io.BytesIO()
+                    with zf_mod.ZipFile(buf, "w") as tmp_zip:
+                        fname = "HealthAutoExport-data.csv"
+                        tmp_zip.writestr(fname, zip_bytes.decode("utf-8", errors="replace"))
+                    stats = analyze_hae_zip(buf.getvalue())
+                except Exception as e:
+                    print(f"[ZIP] CSV parse error: {e}", flush=True)
+                    stats = None
+
+            print(f"[ZIP] Stats: {stats}", flush=True)
 
             if not stats:
                 send_telegram("⚠️ Health ZIP отримано, але не вдалось розпарсити CSV.")
@@ -544,20 +567,16 @@ def extract_zip_from_multipart(body, content_type):
     parts = body.split(b"--" + boundary)
 
     for part in parts:
-        if b"Content-Disposition" in part and (b".zip" in part.lower() or b"application/zip" in part.lower() or b"application/octet" in part.lower()):
-            # Знайти кінець заголовків (\r\n\r\n)
-            header_end = part.find(b"\r\n\r\n")
-            if header_end != -1:
-                return part[header_end + 4:].rstrip(b"\r\n")
-
-    # Якщо не знайшли по типу — беремо перший бінарний part
-    for part in parts:
-        if b"Content-Disposition" in part:
-            header_end = part.find(b"\r\n\r\n")
-            if header_end != -1:
-                data = part[header_end + 4:].rstrip(b"\r\n")
-                if data.startswith(b"PK"):
-                    return data
+        if b"Content-Disposition" not in part:
+            continue
+        # Знайти кінець заголовків (\r\n\r\n)
+        header_end = part.find(b"\r\n\r\n")
+        if header_end == -1:
+            continue
+        data = part[header_end + 4:].rstrip(b"\r\n--")
+        # Перевіряємо чи це ZIP (PK magic) або CSV (текст)
+        if data and (data.startswith(b"PK") or data.startswith(b"Date") or data.startswith(b"\xef\xbb\xbf") or len(data) > 1000):
+            return data
 
     return body
 
