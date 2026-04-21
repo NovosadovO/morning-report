@@ -64,12 +64,82 @@ def get_val(row, headers, name):
     return None
 
 
-def analyze_hae_zip(zip_bytes):
-    """Аналізує ZIP від Health Auto Export, повертає dict зі статистикою."""
+def aggregate_hae_stats(headers, data_rows, workout_data=None):
+    """Агрегує статистику з HAE CSV рядків."""
     stats = {}
 
+    # Фільтруємо тільки рядки з датою
+    valid_rows = [r for r in data_rows if r and r[0].strip().startswith("20")]
+
+    if not valid_rows:
+        return None
+
+    dates = [r[0][:10] for r in valid_rows]
+    stats["period_start"] = dates[0]
+    stats["period_end"] = dates[-1]
+    stats["days"] = len(dates)
+
+    # Кроки
+    steps_vals = []
+    max_steps = 0
+    max_steps_day = ""
+    for r in valid_rows:
+        v = get_val(r, headers, "Кількість кроків")
+        if v is not None and v > 0:
+            steps_vals.append(v)
+            if v > max_steps:
+                max_steps = v
+                max_steps_day = r[0][:10]
+    if steps_vals:
+        stats["avg_steps"] = int(sum(steps_vals) / len(steps_vals))
+        stats["max_steps"] = int(max_steps)
+        stats["max_steps_day"] = max_steps_day
+
+    # Вага
+    weight_vals = [(r[0][:10], get_val(r, headers, "Вага (кг)")) for r in valid_rows]
+    weight_vals = [(d, v) for d, v in weight_vals if v is not None]
+    if weight_vals:
+        stats["weight_start"] = weight_vals[0][1]
+        stats["weight_end"] = weight_vals[-1][1]
+        stats["weight_diff"] = round(weight_vals[-1][1] - weight_vals[0][1], 1)
+
+    # Дистанція
+    dist_vals = [get_val(r, headers, "Дистанція ходьби + бігу") for r in valid_rows]
+    dist_vals = [v for v in dist_vals if v is not None and v > 0]
+    if dist_vals:
+        stats["total_dist_km"] = round(sum(dist_vals), 1)
+        stats["avg_dist_km"] = round(sum(dist_vals) / len(dist_vals), 1)
+
+    # Сон
+    sleep_vals = [get_val(r, headers, "Аналіз сну [Уві сні]") for r in valid_rows]
+    sleep_vals = [v for v in sleep_vals if v is not None and v > 0]
+    if sleep_vals:
+        stats["avg_sleep"] = round(sum(sleep_vals) / len(sleep_vals), 1)
+        stats["min_sleep"] = round(min(sleep_vals), 1)
+        stats["max_sleep"] = round(max(sleep_vals), 1)
+
+    # VO2 Max
+    vo2_vals = [get_val(r, headers, "VO2 Макс") for r in valid_rows]
+    vo2_vals = [v for v in vo2_vals if v is not None]
+    if vo2_vals:
+        stats["vo2_max"] = round(vo2_vals[-1], 1)
+
+    # HRV
+    hrv_vals = [get_val(r, headers, "Варіабельність серцевого ритму") for r in valid_rows]
+    hrv_vals = [v for v in hrv_vals if v is not None]
+    if hrv_vals:
+        stats["hrv_avg"] = round(sum(hrv_vals) / len(hrv_vals), 0)
+
+    # Пробіжки
+    if workout_data:
+        stats["run_days"] = workout_data
+
+    return stats
+
+
+def analyze_hae_zip(zip_bytes):
+    """Аналізує ZIP від Health Auto Export, повертає dict зі статистикою."""
     with zipfile.ZipFile(io.BytesIO(zip_bytes)) as zf:
-        # Знаходимо головний CSV (HealthAutoExport-*.csv)
         main_csv = None
         workout_csvs = []
         for name in zf.namelist():
@@ -83,85 +153,18 @@ def analyze_hae_zip(zip_bytes):
 
         content = zf.read(main_csv).decode("utf-8", errors="replace")
         headers, data_rows = parse_hae_csv(content)
-
         if not headers:
             return None
 
-        # Визначаємо діапазон дат
-        dates = [r[0][:10] for r in data_rows if r[0].strip()]
-        stats["period_start"] = dates[0] if dates else "?"
-        stats["period_end"] = dates[-1] if dates else "?"
-        stats["days"] = len(dates)
-
-        # Кроки
-        steps_vals = []
-        max_steps = 0
-        max_steps_day = ""
-        for r in data_rows:
-            v = get_val(r, headers, "Кількість кроків")
-            if v is not None:
-                steps_vals.append(v)
-                if v > max_steps:
-                    max_steps = v
-                    max_steps_day = r[0][:10]
-
-        if steps_vals:
-            stats["avg_steps"] = int(sum(steps_vals) / len(steps_vals))
-            stats["max_steps"] = int(max_steps)
-            stats["max_steps_day"] = max_steps_day
-
-        # Вага
-        weight_vals = []
-        for r in data_rows:
-            v = get_val(r, headers, "Вага (кг)")
-            if v is not None:
-                weight_vals.append((r[0][:10], v))
-
-        if weight_vals:
-            stats["weight_start"] = weight_vals[0][1]
-            stats["weight_end"] = weight_vals[-1][1]
-            stats["weight_diff"] = round(weight_vals[-1][1] - weight_vals[0][1], 1)
-
-        # Дистанція (загальна щоденна)
-        dist_vals = [get_val(r, headers, "Дистанція ходьби + бігу") for r in data_rows]
-        dist_vals = [v for v in dist_vals if v is not None]
-        if dist_vals:
-            stats["total_dist_km"] = round(sum(dist_vals), 1)
-            stats["avg_dist_km"] = round(sum(dist_vals) / len(dist_vals), 1)
-
-        # Сон
-        sleep_vals = [get_val(r, headers, "Аналіз сну [Уві сні]") for r in data_rows]
-        sleep_vals = [v for v in sleep_vals if v is not None and v > 0]
-        if sleep_vals:
-            stats["avg_sleep"] = round(sum(sleep_vals) / len(sleep_vals), 1)
-            stats["min_sleep"] = round(min(sleep_vals), 1)
-            stats["max_sleep"] = round(max(sleep_vals), 1)
-
-        # VO2 Max
-        vo2_vals = [get_val(r, headers, "VO2 Макс") for r in data_rows]
-        vo2_vals = [v for v in vo2_vals if v is not None]
-        if vo2_vals:
-            stats["vo2_max"] = round(vo2_vals[-1], 1)
-
-        # HRV
-        hrv_vals = [get_val(r, headers, "Варіабельність серцевого ритму") for r in data_rows]
-        hrv_vals = [v for v in hrv_vals if v is not None]
-        if hrv_vals:
-            stats["hrv_avg"] = round(sum(hrv_vals) / len(hrv_vals), 0)
-
-        # Пробіжки — кількість унікальних дат з workout CSV
+        # Пробіжки
         run_dates = set()
         for fname in workout_csvs:
             raw = zf.read(fname).decode("utf-8", errors="replace")
             for line in raw.split("\n")[1:]:
-                if line.strip():
-                    d = line[:10]
-                    if d.startswith("20"):
-                        run_dates.add(d)
-        if run_dates:
-            stats["run_days"] = len(run_dates)
+                if line.strip() and line[:10].startswith("20"):
+                    run_dates.add(line[:10])
 
-    return stats
+        return aggregate_hae_stats(headers, data_rows, len(run_dates) if run_dates else None)
 
 
 def format_hae_report(stats, period=None):
@@ -445,23 +448,12 @@ class HealthHandler(BaseHTTPRequestHandler):
             if zip_bytes.startswith(b"PK"):
                 stats = analyze_hae_zip(zip_bytes)
             else:
-                # Спробуємо як CSV напряму
-                try:
-                    csv_text = zip_bytes.decode("utf-8", errors="replace").lstrip("\ufeff")
-                    import csv as csv_mod, io as io_mod
-                    reader = csv_mod.reader(io_mod.StringIO(csv_text))
-                    rows = list(reader)
-                    full_headers = [rows[i][0] for i in range(5)] + rows[5]
-                    data_rows = rows[6:]
-                    # Передаємо в аналізатор через фейковий ZIP
-                    import zipfile as zf_mod
-                    buf = io.BytesIO()
-                    with zf_mod.ZipFile(buf, "w") as tmp_zip:
-                        fname = "HealthAutoExport-data.csv"
-                        tmp_zip.writestr(fname, zip_bytes.decode("utf-8", errors="replace"))
-                    stats = analyze_hae_zip(buf.getvalue())
-                except Exception as e:
-                    print(f"[ZIP] CSV parse error: {e}", flush=True)
+                # Сирий CSV від HAE (не ZIP)
+                csv_text = zip_bytes.decode("utf-8", errors="replace").lstrip("\ufeff")
+                headers, data_rows = parse_hae_csv(csv_text)
+                if headers and data_rows:
+                    stats = aggregate_hae_stats(headers, data_rows)
+                else:
                     stats = None
 
             print(f"[ZIP] Stats: {stats}", flush=True)
