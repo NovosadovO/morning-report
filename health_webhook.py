@@ -381,8 +381,12 @@ class HealthHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path = self.path.split("?")[0].rstrip("/")
+        content_type = self.headers.get("Content-Type", "")
+        content_length = self.headers.get("Content-Length", "0")
+        print(f"[POST] path={path} ct={content_type} len={content_length}", flush=True)
 
-        if path == "/upload":
+        # Route: /upload або якщо тіло схоже на ZIP/multipart/octet
+        if path == "/upload" or "multipart" in content_type or "octet" in content_type or "zip" in content_type:
             self._handle_zip_upload()
         else:
             self._handle_widgets_json()
@@ -394,6 +398,16 @@ class HealthHandler(BaseHTTPRequestHandler):
             body = self.rfile.read(content_length) if content_length else b""
 
             print(f"[ZIP] Received {len(body)} bytes", flush=True)
+            print(f"[ZIP] Headers: {dict(self.headers)}", flush=True)
+            print(f"[ZIP] Body first 100: {body[:100]}", flush=True)
+
+            # Якщо тіло порожнє — повідом в Telegram для діагностики
+            if not body:
+                send_telegram("⚠️ HAE: запит отримано але тіло порожнє. Перевір налаштування.")
+                self.send_response(200)
+                self.end_headers()
+                self.wfile.write(b"Empty body")
+                return
 
             if not body:
                 self.send_response(400)
