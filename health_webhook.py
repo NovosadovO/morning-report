@@ -561,19 +561,30 @@ def extract_zip_from_multipart(body, content_type):
         return body
 
     boundary = boundary_match.group(1).encode()
-    parts = body.split(b"--" + boundary)
+
+    # HAE може надсилати без -- на початку, тому шукаємо обидва варіанти
+    sep = b"--" + boundary
+    if sep not in body:
+        # Спробуємо без --
+        sep = boundary
+
+    parts = body.split(sep)
 
     best = b""
     for part in parts:
-        if b"Content-Disposition" not in part:
-            continue
+        # Знайти кінець заголовків
         header_end = part.find(b"\r\n\r\n")
         if header_end == -1:
-            continue
-        data = part[header_end + 4:]
-        # Обрізаємо хвіст (boundary залишки)
-        if data.endswith(b"\r\n"):
-            data = data[:-2]
+            # Спробуємо \n\n
+            header_end = part.find(b"\n\n")
+            if header_end == -1:
+                continue
+            data = part[header_end + 2:]
+        else:
+            data = part[header_end + 4:]
+
+        # Обрізаємо хвіст
+        data = data.rstrip(b"\r\n-")
 
         if not data:
             continue
