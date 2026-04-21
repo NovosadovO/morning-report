@@ -385,8 +385,9 @@ class HealthHandler(BaseHTTPRequestHandler):
         content_length = self.headers.get("Content-Length", "0")
         print(f"[POST] path={path} ct={content_type} len={content_length}", flush=True)
 
-        # Route: /upload або якщо тіло схоже на ZIP/multipart/octet
-        if path == "/upload" or "multipart" in content_type or "octet" in content_type or "zip" in content_type:
+        # Route: /upload або ZIP/multipart/octet/csv → HAE handler (без time window)
+        # JSON → Healthy Widgets handler (з time window)
+        if path == "/upload" or "multipart" in content_type or "octet" in content_type or "zip" in content_type or "csv" in content_type or "text/plain" in content_type:
             self._handle_zip_upload()
         else:
             self._handle_widgets_json()
