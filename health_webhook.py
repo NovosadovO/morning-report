@@ -204,10 +204,22 @@ class HealthHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         try:
+            # Перевіряємо час — приймаємо тільки між 18:45 і 19:15
+            local = datetime.now(timezone.utc) + timedelta(hours=2)
+            h, m = local.hour, local.minute
+            in_window = (h == 18 and m >= 45) or (h == 19 and m <= 15)
+
             length = int(self.headers.get("Content-Length", 0))
             body = self.rfile.read(length) if length else b""
 
-            print(f"[Health] Received {length} bytes: {body[:200]}", flush=True)
+            print(f"[Health] {local.strftime('%H:%M')} | {length} bytes | window={in_window}", flush=True)
+
+            if not in_window:
+                # Отримали але не в час — тихо ігноруємо
+                self.send_response(200)
+                self.end_headers()
+                self.wfile.write(json.dumps({"ok": True, "skipped": "outside window"}).encode())
+                return
 
             # Парсимо JSON
             data = {}
