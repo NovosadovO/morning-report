@@ -445,12 +445,17 @@ class HealthHandler(BaseHTTPRequestHandler):
                 return
 
             # Підтримка і ZIP і сирого CSV
+            print(f"[ZIP] First bytes: {zip_bytes[:4]}", flush=True)
             if zip_bytes.startswith(b"PK"):
+                print("[ZIP] Detected ZIP format", flush=True)
                 stats = analyze_hae_zip(zip_bytes)
             else:
                 # Сирий CSV від HAE (не ZIP)
+                print("[ZIP] Detected raw CSV format", flush=True)
                 csv_text = zip_bytes.decode("utf-8", errors="replace").lstrip("\ufeff")
+                print(f"[ZIP] CSV first 200: {repr(csv_text[:200])}", flush=True)
                 headers, data_rows = parse_hae_csv(csv_text)
+                print(f"[ZIP] headers={len(headers) if headers else 0}, rows={len(data_rows) if data_rows else 0}", flush=True)
                 if headers and data_rows:
                     stats = aggregate_hae_stats(headers, data_rows)
                 else:
@@ -549,7 +554,7 @@ class HealthHandler(BaseHTTPRequestHandler):
 
 
 def extract_zip_from_multipart(body, content_type):
-    """Витягує ZIP файл з multipart/form-data."""
+    """Витягує ZIP або CSV файл з multipart/form-data."""
     import re
     boundary_match = re.search(r'boundary=([^\s;]+)', content_type)
     if not boundary_match:
@@ -558,19 +563,30 @@ def extract_zip_from_multipart(body, content_type):
     boundary = boundary_match.group(1).encode()
     parts = body.split(b"--" + boundary)
 
+    best = b""
     for part in parts:
         if b"Content-Disposition" not in part:
             continue
-        # Знайти кінець заголовків (\r\n\r\n)
         header_end = part.find(b"\r\n\r\n")
         if header_end == -1:
             continue
-        data = part[header_end + 4:].rstrip(b"\r\n--")
-        # Перевіряємо чи це ZIP (PK magic) або CSV (текст)
-        if data and (data.startswith(b"PK") or data.startswith(b"Date") or data.startswith(b"\xef\xbb\xbf") or len(data) > 1000):
+        data = part[header_end + 4:]
+        # Обрізаємо хвіст (boundary залишки)
+        if data.endswith(b"\r\n"):
+            data = data[:-2]
+
+        if not data:
+            continue
+
+        # ZIP — найвищий пріоритет
+        if data.startswith(b"PK"):
             return data
 
-    return body
+        # Беремо найбільший part
+        if len(data) > len(best):
+            best = data
+
+    return best if best else body
 
 
 def run_server():
