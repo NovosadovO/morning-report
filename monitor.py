@@ -205,16 +205,17 @@ def get_weather():
     url = (
         "https://api.open-meteo.com/v1/forecast"
         "?latitude=48.7163&longitude=21.2611"
-        "&current=temperature_2m,apparent_temperature,weathercode,windspeed_10m,precipitation"
-        "&hourly=precipitation,precipitation_probability,weathercode"
-        "&forecast_days=1&timezone=Europe%2FPrague"
+        "&current=temperature_2m,apparent_temperature,weathercode,windspeed_10m,precipitation,relative_humidity_2m,surface_pressure"
+        "&hourly=temperature_2m,precipitation,precipitation_probability,weathercode,windspeed_10m"
+        "&daily=temperature_2m_max,temperature_2m_min,weathercode,sunrise,sunset,uv_index_max,precipitation_sum"
+        "&forecast_days=2&timezone=Europe%2FPrague"
     )
     data = fetch_json(url)
     if not data:
         return "🌡 <b>Погода Košice</b>\n⚠️ Недоступно"
 
     WMO = {
-        0: "☀️ Ясно", 1: "🌤 Переважно ясно", 2: "⛅️ Мінлива хмарність", 3: "☁️ Хмарно",
+        0: "☀️ Ясно", 1: "🌤 Перев. ясно", 2: "⛅️ Мінлива хмарність", 3: "☁️ Хмарно",
         45: "🌫 Туман", 48: "🌫 Туман",
         51: "🌦 Мряка", 53: "🌦 Мряка", 55: "🌦 Мряка",
         61: "🌧 Дощ", 63: "🌧 Дощ", 65: "🌧 Сильний дощ",
@@ -226,48 +227,83 @@ def get_weather():
     SNOW  = {71, 73, 75, 77, 85, 86}
     STORM = {95, 96, 99}
 
-    # Поточні дані
     current = data.get("current", {})
     temp  = current.get("temperature_2m")
     feel  = current.get("apparent_temperature")
     code  = current.get("weathercode", 0)
     wind  = current.get("windspeed_10m")
+    hum   = current.get("relative_humidity_2m")
     desc  = WMO.get(code, "—")
 
-    t_str = f"{temp:.0f}°C" if temp is not None else "—"
-    f_str = f"відчувається {feel:.0f}°C" if feel is not None else ""
-    w_str = f"вітер {wind:.0f} км/г" if wind is not None else ""
-    extras = ", ".join(filter(None, [f_str, w_str]))
+    daily = data.get("daily", {})
+    tmax = daily.get("temperature_2m_max", [None])[0]
+    tmin = daily.get("temperature_2m_min", [None])[0]
+    sunrise = daily.get("sunrise", [""])[0][11:16] if daily.get("sunrise") else "—"
+    sunset  = daily.get("sunset",  [""])[0][11:16] if daily.get("sunset")  else "—"
+    uv      = daily.get("uv_index_max", [None])[0]
+    precip_sum = daily.get("precipitation_sum", [None])[0]
 
-    result = f"🌡 <b>Погода Košice</b>\n{desc}, {t_str}"
-    if extras:
-        result += f"\n  {extras}"
+    uv_str = ""
+    if uv is not None:
+        uv_lvl = "🟢 Низький" if uv < 3 else ("🟡 Помірний" if uv < 6 else ("🟠 Високий" if uv < 8 else "🔴 Дуже високий"))
+        uv_str = f"\n• УФ індекс: {uv:.0f} — {uv_lvl}"
 
-    # Попередження про опади в наступні 3г
+    result = (
+        f"🌡 <b>Погода Košice</b>\n"
+        f"• {desc}, <b>{temp:.0f}°C</b> (відч. {feel:.0f}°C)\n"
+        f"• Мін/Макс: {tmin:.0f}°C / {tmax:.0f}°C\n"
+        f"• Вітер: {wind:.0f} км/г  💧 Вологість: {hum:.0f}%"
+    )
+    if precip_sum and precip_sum > 0:
+        result += f"\n• Опади за день: {precip_sum:.1f} мм"
+    result += f"\n• 🌅 {sunrise}  🌇 {sunset}"
+    if uv_str:
+        result += uv_str
+
+    # Прогноз по годинах (наступні 6г)
     hourly = data.get("hourly", {})
     times  = hourly.get("time", [])
-    precip = hourly.get("precipitation", [])
-    prob   = hourly.get("precipitation_probability", [])
-    codes  = hourly.get("weathercode", [])
-    local_hour = (datetime.now(timezone.utc).hour + 2) % 24
-    warnings = []
+    h_temps = hourly.get("temperature_2m", [])
+    h_codes = hourly.get("weathercode", [])
+    h_probs = hourly.get("precipitation_probability", [])
+    h_winds = hourly.get("windspeed_10m", [])
 
+    local_hour = (datetime.now(timezone.utc).hour + 2) % 24
+    forecast_lines = []
     for i, t in enumerate(times):
         try:
             h = int(t[11:13])
-        except Exception:
+        except:
+            continue
+        diff = (h - local_hour) % 24
+        if 1 <= diff <= 6:
+            c = h_codes[i] if i < len(h_codes) else 0
+            tmp = h_temps[i] if i < len(h_temps) else "—"
+            pr = h_probs[i] if i < len(h_probs) else 0
+            wd = h_winds[i] if i < len(h_winds) else 0
+            icon = WMO.get(c, "—").split()[0]
+            rain_str = f" 🌧{pr}%" if pr >= 30 else ""
+            forecast_lines.append(f"  {t[11:16]} {icon} {tmp:.0f}°C{rain_str}")
+
+    if forecast_lines:
+        result += "\n<b>Прогноз:</b>\n" + "\n".join(forecast_lines[:6])
+
+    # Попередження
+    warnings = []
+    for i, t in enumerate(times):
+        try:
+            h = int(t[11:13])
+        except:
             continue
         diff = (h - local_hour) % 24
         if 0 < diff <= 3:
-            c = codes[i] if i < len(codes) else 0
-            p = precip[i] if i < len(precip) else 0
-            pr = prob[i] if i < len(prob) else 0
-            if p > 0.3 or pr >= 60 or c in RAIN | SNOW | STORM:
+            c = h_codes[i] if i < len(h_codes) else 0
+            pr = h_probs[i] if i < len(h_probs) else 0
+            if pr >= 60 or c in RAIN | SNOW | STORM:
                 kind = "❄️ Сніг" if c in SNOW else ("⛈ Гроза" if c in STORM else "🌧 Дощ")
                 warnings.append(f"  {kind} о {t[11:16]} ({pr}%)")
-
     if warnings:
-        result += "\n⚠️ Найближчі 3г:\n" + "\n".join(warnings)
+        result += "\n⚠️ <b>Найближчі 3г:</b>\n" + "\n".join(warnings)
 
     return result
 
@@ -450,9 +486,11 @@ def get_email_preview(msg, max_chars=120):
 
         # Чистимо
         import re
+        body = re.sub(r'https?://\S+', '', body)          # прибираємо URL
+        body = re.sub(r'\[.*?\]', '', body)                # [посилання]
+        body = re.sub(r'<.*?>', '', body)                  # <email@...>
+        body = re.sub(r'(unsubscribe|відписатись|view in browser|view this post).{0,60}', '', body, flags=re.IGNORECASE)
         body = re.sub(r'\s+', ' ', body).strip()
-        body = re.sub(r'(unsubscribe|відписатись|click here).{0,40}', '', body, flags=re.IGNORECASE)
-        body = body.strip()
 
         if len(body) > max_chars:
             body = body[:max_chars].rsplit(' ', 1)[0] + "…"
@@ -493,7 +531,8 @@ def get_emails():
             new_seen.append(uid_str)
             if not is_spam(sender, subject):
                 preview = get_email_preview(msg)
-                new_items.append(f"✉️ <b>{esc(subject[:60])}</b>\n  👤 {esc(sender[:40])}\n  📄 {esc(preview)}")
+                sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
+                new_items.append(f"✉️ <b>{esc(subject[:60])}</b>\n  👤 <i>{esc(sender_clean[:40])}</i>\n  📄 {esc(preview)}")
 
         if not new_items:
             _, data2 = mail.search(None, "ALL")
@@ -511,7 +550,8 @@ def get_emails():
                 subject = decode_header_str(msg.get("Subject", "(no subject)"))
                 if not is_spam(sender, subject):
                     preview = get_email_preview(msg)
-                    recent.append(f"✉️ <b>{esc(subject[:60])}</b>\n  👤 {esc(sender[:40])}\n  📄 {esc(preview)}")
+                    sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
+                    recent.append(f"✉️ <b>{esc(subject[:60])}</b>\n  👤 <i>{esc(sender_clean[:40])}</i>\n  📄 {esc(preview)}")
             mail.logout()
             save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
             if recent:
