@@ -153,18 +153,16 @@ def get_prices():
         old = prev.get(cg_id)
         if old and old > 0:
             pct = (price - old) / old * 100
-            arrow = "📈" if pct > 0 else "📉"
-            ch = f"{'+' if pct > 0 else ''}{pct:.1f}% за 3г"
-        elif change24 is not None:
-            arrow = "📈" if change24 > 0 else "📉"
-            ch = f"{'+' if change24 > 0 else ''}{change24:.1f}% за 24г"
+            arrow = "🟢" if pct > 0 else "🔴"
+            sign = "+" if pct > 0 else ""
+            ch = f"{sign}{pct:.2f}% за 3г"
         else:
-            arrow = "▪️"
-            ch = ""
-        lines.append(f"{arrow} <b>{symbol}</b>: ${price:,.2f} <i>({ch})</i>" if ch else f"{arrow} <b>{symbol}</b>: ${price:,.2f}")
+            arrow = "⚪️"
+            ch = "перший вимір"
+        lines.append(f"{arrow} <b>{symbol}</b>: <code>${price:,.2f}</code>  <i>{ch}</i>")
 
     save_json_file(PRICE_CACHE, now_prices)
-    return "💰 <b>Ціни активів</b>\n" + "\n".join(lines)
+    return "💹 <b>Ціни активів</b>\n" + "\n".join(lines)
 
 
 def _get_prices_kraken():
@@ -424,6 +422,45 @@ def is_spam(sender, subject):
     return any(x in s for x in IGNORE_SENDERS) or any(x in sub for x in IGNORE_SUBJECTS)
 
 
+def get_email_preview(msg, max_chars=120):
+    """Витягує короткий текстовий preview з тіла листа."""
+    try:
+        body = ""
+        if msg.is_multipart():
+            for part in msg.walk():
+                ct = part.get_content_type()
+                cd = str(part.get("Content-Disposition", ""))
+                if ct == "text/plain" and "attachment" not in cd:
+                    charset = part.get_content_charset() or "utf-8"
+                    body = part.get_payload(decode=True).decode(charset, errors="replace")
+                    break
+            if not body:
+                for part in msg.walk():
+                    ct = part.get_content_type()
+                    if ct == "text/html":
+                        charset = part.get_content_charset() or "utf-8"
+                        html = part.get_payload(decode=True).decode(charset, errors="replace")
+                        import re
+                        body = re.sub(r'<[^>]+>', ' ', html)
+                        body = re.sub(r'\s+', ' ', body).strip()
+                        break
+        else:
+            charset = msg.get_content_charset() or "utf-8"
+            body = msg.get_payload(decode=True).decode(charset, errors="replace")
+
+        # Чистимо
+        import re
+        body = re.sub(r'\s+', ' ', body).strip()
+        body = re.sub(r'(unsubscribe|відписатись|click here).{0,40}', '', body, flags=re.IGNORECASE)
+        body = body.strip()
+
+        if len(body) > max_chars:
+            body = body[:max_chars].rsplit(' ', 1)[0] + "…"
+        return body if body else "—"
+    except:
+        return "—"
+
+
 def get_emails():
     if not GMAIL_PASSWORD:
         return "📬 <b>Email</b>\n⚠️ Не налаштовано"
@@ -455,7 +492,8 @@ def get_emails():
             subject = decode_header_str(msg.get("Subject", "(no subject)"))
             new_seen.append(uid_str)
             if not is_spam(sender, subject):
-                new_items.append(f"• <b>{esc(subject[:55])}</b>\n  {esc(sender[:45])}")
+                preview = get_email_preview(msg)
+                new_items.append(f"✉️ <b>{esc(subject[:60])}</b>\n  👤 {esc(sender[:40])}\n  📄 {esc(preview)}")
 
         if not new_items:
             _, data2 = mail.search(None, "ALL")
@@ -472,16 +510,17 @@ def get_emails():
                 sender  = decode_header_str(msg.get("From", ""))
                 subject = decode_header_str(msg.get("Subject", "(no subject)"))
                 if not is_spam(sender, subject):
-                    recent.append(f"• <b>{esc(subject[:55])}</b>\n  {esc(sender[:45])}")
+                    preview = get_email_preview(msg)
+                    recent.append(f"✉️ <b>{esc(subject[:60])}</b>\n  👤 {esc(sender[:40])}\n  📄 {esc(preview)}")
             mail.logout()
             save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
             if recent:
-                return "📬 <b>Останні листи</b>\n" + "\n".join(recent)
+                return "📬 <b>Останні листи</b>\n\n" + "\n\n".join(recent)
             return "📬 <b>Email</b>\nНових листів немає"
 
         mail.logout()
         save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
-        return f"📬 <b>Нових листів: {len(new_items)}</b>\n" + "\n".join(new_items[:5])
+        return f"📬 <b>Нових листів: {len(new_items)}</b>\n\n" + "\n\n".join(new_items[:5])
 
     except Exception as e:
         return f"📬 <b>Email</b>\n⚠️ Помилка: {esc(str(e)[:80])}"
