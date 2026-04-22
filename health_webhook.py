@@ -401,15 +401,29 @@ class HealthHandler(BaseHTTPRequestHandler):
         """Приймає ZIP від Health Auto Export і надсилає розширений звіт."""
         try:
             content_length = int(self.headers.get("Content-Length", 0))
-            body = self.rfile.read(content_length) if content_length else b""
+            # Читаємо весь body надійно
+            if content_length > 0:
+                body = b""
+                remaining = content_length
+                while remaining > 0:
+                    chunk = self.rfile.read(min(remaining, 65536))
+                    if not chunk:
+                        break
+                    body += chunk
+                    remaining -= len(chunk)
+            else:
+                body = b""
 
-            print(f"[ZIP] Received {len(body)} bytes", flush=True)
+            print(f"[ZIP] Received {len(body)} bytes (Content-Length: {content_length})", flush=True)
             print(f"[ZIP] Headers: {dict(self.headers)}", flush=True)
             print(f"[ZIP] Body first 100: {body[:100]}", flush=True)
 
-            # DEBUG — надсилаємо в Telegram що отримали
+            # Відправляємо діагностику в Telegram одразу
             ct = self.headers.get("Content-Type", "none")
-            print(f"[ZIP] ct={ct}, size={len(body)}, first={body[:50]}", flush=True)
+            send_telegram(
+                f"<b>[DEBUG2]</b>\nSize: {len(body)}b (CL:{content_length})\n"
+                f"CT: {ct[:80]}\nFirst: <code>{body[:60]}</code>"
+            )
 
             # Якщо тіло порожнє — повідом в Telegram для діагностики
             if not body:
