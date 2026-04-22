@@ -68,8 +68,10 @@ def aggregate_hae_stats(headers, data_rows, workout_data=None):
     """Агрегує статистику з HAE CSV рядків."""
     stats = {}
 
-    # Фільтруємо тільки рядки з датою
-    valid_rows = [r for r in data_rows if r and r[0].strip().startswith("20")]
+    # Фільтруємо тільки рядки з датою — беремо денні (00:00:00) або будь-які якщо денних нема
+    all_date_rows = [r for r in data_rows if r and r[0].strip().startswith("20")]
+    daily_rows = [r for r in all_date_rows if "00:00:00" in r[0] or len(r[0].strip()) == 10]
+    valid_rows = daily_rows if daily_rows else all_date_rows
 
     if not valid_rows:
         return None
@@ -439,8 +441,32 @@ class HealthHandler(BaseHTTPRequestHandler):
 
             # Підтримка і ZIP і сирого CSV
             print(f"[ZIP] First bytes: {zip_bytes[:4]}", flush=True)
+
+            # Зберігаємо для діагностики
+            try:
+                import tempfile, os as _os
+                tmp = f"/tmp/hae_last.{'zip' if zip_bytes.startswith(b'PK') else 'csv'}"
+                with open(tmp, 'wb') as _f:
+                    _f.write(zip_bytes)
+                print(f"[ZIP] Saved to {tmp}", flush=True)
+            except: pass
+
             if zip_bytes.startswith(b"PK"):
                 print("[ZIP] Detected ZIP format", flush=True)
+                # Логуємо структуру ZIP
+                try:
+                    import zipfile as _zf
+                    with _zf.ZipFile(io.BytesIO(zip_bytes)) as _z:
+                        names = _z.namelist()
+                        print(f"[ZIP] Files: {names[:5]}", flush=True)
+                        main_csv = next((n for n in names if n.startswith("HealthAutoExport-") and n.endswith(".csv")), None)
+                        if main_csv:
+                            raw = _z.read(main_csv).decode("utf-8", errors="replace")
+                            import csv as _csv, io as _io
+                            rows = list(_csv.reader(_io.StringIO(raw)))
+                            print(f"[ZIP] CSV rows={len(rows)}, row6={rows[6][0] if len(rows)>6 else '?'}, last={rows[-1][0] if rows else '?'}", flush=True)
+                except Exception as _e:
+                    print(f"[ZIP] Log error: {_e}", flush=True)
                 stats = analyze_hae_zip(zip_bytes)
             else:
                 # Сирий CSV від HAE (не ZIP)
