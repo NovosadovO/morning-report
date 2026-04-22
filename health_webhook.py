@@ -464,9 +464,12 @@ class HealthHandler(BaseHTTPRequestHandler):
                             raw = _z.read(main_csv).decode("utf-8", errors="replace")
                             import csv as _csv, io as _io
                             rows = list(_csv.reader(_io.StringIO(raw)))
-                            print(f"[ZIP] CSV rows={len(rows)}, row6={rows[6][0] if len(rows)>6 else '?'}, last={rows[-1][0] if rows else '?'}", flush=True)
+                            info = f"ZIP OK: {len(rows)} rows, first={rows[6][0][:10] if len(rows)>6 else '?'}"
+                            print(f"[ZIP] {info}", flush=True)
+                            send_telegram(f"<b>[DEBUG]</b> {info}\nSize: {len(zip_bytes)} bytes")
                 except Exception as _e:
                     print(f"[ZIP] Log error: {_e}", flush=True)
+                    send_telegram(f"<b>[DEBUG]</b> ZIP error: {_e}")
                 stats = analyze_hae_zip(zip_bytes)
             else:
                 # Сирий CSV від HAE (не ZIP)
