@@ -407,14 +407,7 @@ class HealthHandler(BaseHTTPRequestHandler):
 
             # DEBUG — надсилаємо в Telegram що отримали
             ct = self.headers.get("Content-Type", "none")
-            preview = body[:200].decode("utf-8", errors="replace") if body else "(empty)"
-            send_telegram(
-                f"<b>[DEBUG HAE]</b>\n"
-                f"Path: {self.path}\n"
-                f"Content-Type: {ct}\n"
-                f"Size: {len(body)} bytes\n"
-                f"Starts with: <code>{preview[:150]}</code>"
-            )
+            print(f"[ZIP] ct={ct}, size={len(body)}, first={body[:50]}", flush=True)
 
             # Якщо тіло порожнє — повідом в Telegram для діагностики
             if not body:
