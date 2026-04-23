@@ -151,6 +151,18 @@ def run_social_post_loop():
             time.sleep(60)
 
 
+def run_habits_loop():
+    """Трекер звичок — щоденні питання + тижневий/місячний звіт."""
+    print("=== Starting habits tracker ===", flush=True)
+    import subprocess
+    while True:
+        try:
+            subprocess.run([sys.executable, "habits.py"])
+        except Exception as e:
+            print(f"Habits crashed: {e}, restarting in 10s...", flush=True)
+            time.sleep(10)
+
+
 threading.Thread(target=run_bot,                      daemon=True).start()
 threading.Thread(target=run_email_watcher,            daemon=True).start()
 threading.Thread(target=run_weather_watcher,          daemon=True).start()
@@ -159,6 +171,7 @@ threading.Thread(target=run_report2_loop,             daemon=True).start()
 threading.Thread(target=run_defi_report_loop,         daemon=True).start()
 threading.Thread(target=run_calendar_reminder_watcher, daemon=True).start()
 threading.Thread(target=run_social_post_loop,         daemon=True).start()
+threading.Thread(target=run_habits_loop,              daemon=True).start()
 
 # Основний монітор в головному потоці
 run_monitor_loop()
