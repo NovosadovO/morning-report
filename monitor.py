@@ -158,9 +158,13 @@ def get_prices():
             arrow = "🟢" if pct > 0 else "🔴"
             sign = "+" if pct > 0 else ""
             ch = f"{sign}{pct:.2f}% за 3г"
+        elif change24 is not None:
+            arrow = "🟢" if change24 > 0 else "🔴"
+            sign = "+" if change24 > 0 else ""
+            ch = f"{sign}{change24:.2f}% за 24г"
         else:
             arrow = "⚪️"
-            ch = "перший вимір"
+            ch = "—"
         lines.append(f"{arrow} <b>{symbol}</b>: <code>${price:,.2f}</code>  <i>{ch}</i>")
 
     save_json_file(PRICE_CACHE, now_prices)
