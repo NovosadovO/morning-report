@@ -348,65 +348,116 @@ def get_chains():
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
 
 def main():
-    now        = datetime.now(timezone.utc)
-    local      = now + timedelta(hours=2)
-    time_str   = local.strftime("%H:%M")
-    date_str   = local.strftime("%d.%m.%Y")
-    period     = "🌅 Ранковий" if local.hour < 13 else "🌆 Вечірній"
+    now      = datetime.now(timezone.utc)
+    local    = now + timedelta(hours=2)
+    time_str = local.strftime("%H:%M")
+    date_str = local.strftime("%d.%m.%Y")
+    period   = "🌅 Ранковий" if local.hour < 13 else "🌆 Вечірній"
 
     print(f"=== DeFi Report run at {now.isoformat()} ===")
 
-    # Завантажуємо протоколи один раз
-    print("Loading protocols...")
     protocols = _get(f"{LLAMA}/protocols")
     if not protocols:
         send_part("⚠️ DeFi звіт: не вдалось завантажити дані DeFiLlama")
         return
 
-    # Заголовок
-    header = (
-        f"📡 <b>{period} DeFi & RWA звіт</b>\n"
-        f"🕐 {time_str} · {date_str}\n"
-        f"━━━━━━━━━━━━━━━━━━━━"
+    SEP = "\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n"
+
+    # ── Загальний TVL ──
+    total = sum(p.get("tvl") or 0 for p in protocols if p.get("tvl"))
+    cat_tvl = {}
+    for p in protocols:
+        cat = p.get("category", "Other")
+        cat_tvl[cat] = cat_tvl.get(cat, 0) + (p.get("tvl") or 0)
+    top_cats = sorted(cat_tvl.items(), key=lambda x: -x[1])[:5]
+
+    tvl_lines = [
+        f"📡 <b>{period} DeFi звіт</b>  ·  {time_str} {date_str}\n",
+        f"💎 <b>ЗАГАЛЬНИЙ TVL:  {fmt_b(total)}</b>\n",
+    ]
+    for cat, tvl in top_cats:
+        pct = tvl / total * 100 if total else 0
+        bar = "▓" * int(pct / 8) + "░" * (12 - int(pct / 8))
+        tvl_lines.append(f"<code>{bar}</code>  {esc(cat)}: <b>{fmt_b(tvl)}</b> <i>{pct:.1f}%</i>")
+
+    # ── Топ-10 DeFi ──
+    defi = [p for p in protocols if p.get("category") in DEFI_CATS and (p.get("tvl") or 0) > 0]
+    top10 = sorted(defi, key=lambda x: x.get("tvl") or 0, reverse=True)[:10]
+
+    defi_lines = ["🏆 <b>ТОП-10 DeFi  (TVL)</b>\n"]
+    for i, p in enumerate(top10, 1):
+        tvl  = p.get("tvl") or 0
+        ch1d = p.get("change_1d")
+        ar   = "🟢" if (ch1d or 0) > 0 else ("🔴" if (ch1d or 0) < 0 else "⚪️")
+        d1   = f"{'+' if (ch1d or 0)>0 else ''}{ch1d:.1f}%" if ch1d is not None else "—"
+        defi_lines.append(f"{i:>2}. {ar} <b>{esc(p['name'])}</b>  <code>{fmt_b(tvl)}</code>  <i>{d1}</i>")
+
+    # ── RWA топ-8 ──
+    rwa = [p for p in protocols if p.get("category") == "RWA" and (p.get("tvl") or 0) > 0]
+    rwa = sorted(rwa, key=lambda x: x.get("tvl") or 0, reverse=True)[:8]
+    total_rwa = sum(p.get("tvl") or 0 for p in rwa)
+
+    rwa_lines = [f"🏦 <b>RWA  —  {fmt_b(total_rwa)}</b>\n"]
+    for i, p in enumerate(rwa, 1):
+        tvl  = p.get("tvl") or 0
+        ch1d = p.get("change_1d")
+        ar   = "🟢" if (ch1d or 0) > 0 else ("🔴" if (ch1d or 0) < 0 else "⚪️")
+        d1   = f"{'+' if (ch1d or 0)>0 else ''}{ch1d:.1f}%" if ch1d is not None else "—"
+        chains = "/".join((p.get("chains") or [])[:2])
+        rwa_lines.append(f"{i:>2}. {ar} <b>{esc(p['name'])}</b>  <code>{fmt_b(tvl)}</code>  <i>{d1}</i>  <i>[{esc(chains)}]</i>")
+
+    # ── Lending топ-7 ──
+    lending = [p for p in protocols if p.get("category") in ("Lending", "CDP") and (p.get("tvl") or 0) > 0]
+    lending = sorted(lending, key=lambda x: x.get("tvl") or 0, reverse=True)[:7]
+    total_lend = sum(p.get("tvl") or 0 for p in lending)
+
+    lend_lines = [f"🏛 <b>LENDING  —  {fmt_b(total_lend)}</b>\n"]
+    for i, p in enumerate(lending, 1):
+        tvl  = p.get("tvl") or 0
+        ch1d = p.get("change_1d")
+        ar   = "🟢" if (ch1d or 0) > 0 else ("🔴" if (ch1d or 0) < 0 else "⚪️")
+        d1   = f"{'+' if (ch1d or 0)>0 else ''}{ch1d:.1f}%" if ch1d is not None else "—"
+        lend_lines.append(f"{i:>2}. {ar} <b>{esc(p['name'])}</b>  <code>{fmt_b(tvl)}</code>  <i>{d1}</i>")
+
+    # ── Стейблкоіни ──
+    stables_data = _get(f"{STABLES}/stablecoins?includePrices=true")
+    stable_lines = []
+    if stables_data:
+        assets = sorted(stables_data.get("peggedAssets", []),
+                        key=lambda x: float((x.get("circulating") or {}).get("peggedUSD") or 0), reverse=True)
+        total_mcap = sum(float((a.get("circulating") or {}).get("peggedUSD") or 0) for a in assets)
+        stable_lines = [f"🪙 <b>СТЕЙБЛКОІНИ  —  {fmt_b(total_mcap)}</b>\n"]
+        for i, a in enumerate(assets[:6], 1):
+            circ  = float((a.get("circulating") or {}).get("peggedUSD") or 0)
+            prev  = float((a.get("circulatingPrevDay") or {}).get("peggedUSD") or 0)
+            ch    = (circ - prev) / prev * 100 if prev else 0
+            ar    = "🟢" if ch > 0.1 else ("🔴" if ch < -0.1 else "⚪️")
+            ch_s  = f"{'+' if ch>0 else ''}{ch:.2f}%"
+            stable_lines.append(f"{i:>2}. {ar} <b>{esc(a['symbol'])}</b>  <code>{fmt_b(circ)}</code>  <i>{ch_s}</i>")
+
+    # ── Збираємо в один звіт ──
+    report = (
+        "\n".join(tvl_lines)
+        + SEP
+        + "\n".join(defi_lines)
+        + SEP
+        + "\n".join(rwa_lines)
+        + SEP
+        + "\n".join(lend_lines)
+        + SEP
+        + ("\n".join(stable_lines) if stable_lines else "")
+        + f"\n\n<i>📊 DeFiLlama · Наступний о {'19:00' if local.hour < 13 else '07:00'}</i>"
     )
-    send_part(header)
-    time.sleep(0.5)
 
-    # Частина 1: Загальне TVL + Chains
-    part1 = get_total_tvl(protocols)
-    chains = get_chains()
-    if chains:
-        part1 += "\n\n" + chains
-    send_part(part1)
-    time.sleep(0.5)
+    # Telegram ліміт 4096 — ріжемо якщо треба
+    if len(report) <= 4090:
+        send_part(report)
+    else:
+        mid = report[:4090].rfind(SEP.strip())
+        send_part(report[:mid] if mid > 0 else report[:4090])
+        time.sleep(0.5)
+        send_part(report[mid:] if mid > 0 else "")
 
-    # Частина 2: Топ-20 DeFi
-    send_part(get_top_defi(protocols))
-    time.sleep(0.5)
-
-    # Частина 3: RWA
-    send_part(get_rwa(protocols))
-    time.sleep(0.5)
-
-    # Частина 4: DEX + Lending
-    dex = get_dex_volumes()
-    lending = get_lending(protocols)
-    send_part(dex + "\n\n" + lending)
-    time.sleep(0.5)
-
-    # Частина 5: Yields + Stablecoins
-    yields = get_top_yields()
-    stables = get_stablecoins()
-    send_part(yields + "\n\n" + stables)
-    time.sleep(0.5)
-
-    # Футер
-    footer = (
-        f"━━━━━━━━━━━━━━━━━━━━\n"
-        f"📊 Дані: <a href='https://defillama.com'>DeFiLlama</a> · "
-        f"Наступний звіт через ~12г"
-    )
-    send_part(footer)
     print("DeFi report sent.")
 
 
