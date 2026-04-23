@@ -28,6 +28,9 @@ HABITS = [
     {"id": "water",  "name": "Вода (2л)",      "emoji": "💧", "hour": 20, "minute": 0},
 ]
 
+SLEEP_HOUR   = 8
+SLEEP_MINUTE = 0
+
 # ─── HELPERS ──────────────────────────────────────────────────────────────────
 
 def api(method, data=None):
@@ -89,6 +92,24 @@ def send_question(habit):
     print(f"Sent question: {habit['name']}")
     return result
 
+
+def send_sleep_question():
+    """Надсилає питання про сон з кнопками годин."""
+    api("sendMessage", {
+        "chat_id": TELEGRAM_CHAT,
+        "text": "😴 <b>Сон</b>\nСкільки годин спав цієї ночі?",
+        "parse_mode": "HTML",
+        "reply_markup": {
+            "inline_keyboard": [[
+                {"text": "😩 ≤5г", "callback_data": "sleep_5"},
+                {"text": "😐 6г",  "callback_data": "sleep_6"},
+                {"text": "🙂 7г",  "callback_data": "sleep_7"},
+                {"text": "😊 8г+", "callback_data": "sleep_8"},
+            ]]
+        }
+    })
+    print("Sent sleep question")
+
 # ─── ОБРОБКА ВІДПОВІДІ ────────────────────────────────────────────────────────
 
 def handle_callback(callback_query):
@@ -142,12 +163,18 @@ def weekly_report():
     lines = ["📊 <b>ТИЖНЕВИЙ ЗВІТ ЗВИЧОК</b>\n"]
     for h in HABITS:
         done  = sum(1 for d in days if db.get(d, {}).get(h["id"]) is True)
-        total = sum(1 for d in days if h["id"] in db.get(d, {}))
         pct   = done / 7 * 100
         bar   = "▓" * done + "░" * (7 - done)
         medal = "🥇" if done == 7 else ("🥈" if done >= 5 else ("🥉" if done >= 3 else "😔"))
         lines.append(f"{h['emoji']} <b>{h['name']}</b>\n"
                      f"<code>{bar}</code>  {done}/7  {pct:.0f}%  {medal}")
+
+    # Сон
+    sleep_vals = [db.get(d, {}).get("sleep") for d in days if db.get(d, {}).get("sleep")]
+    if sleep_vals:
+        avg = sum(sleep_vals) / len(sleep_vals)
+        sleep_icon = "😊" if avg >= 8 else ("🙂" if avg >= 7 else ("😐" if avg >= 6 else "😩"))
+        lines.append(f"\n😴 <b>Сон</b>\nСередній: <b>{avg:.1f}г</b>  {sleep_icon}  (за {len(sleep_vals)} днів)")
 
     lines.append(f"\n<i>Тиждень {days[0]} – {days[-1]}</i>")
     api("sendMessage", {
@@ -162,7 +189,6 @@ def weekly_report():
 def monthly_report():
     db  = load_data()
     now = now_local()
-    # Всі дні поточного місяця до сьогодні
     days_in_month = now.day
     days = [(now - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(days_in_month - 1, -1, -1)]
 
@@ -175,6 +201,17 @@ def monthly_report():
         medal = "🏆" if pct >= 90 else ("🥇" if pct >= 70 else ("🥈" if pct >= 50 else "💪"))
         lines.append(f"{h['emoji']} <b>{h['name']}</b>\n"
                      f"<code>{bar}</code>  {done}/{days_in_month}  {pct:.0f}%  {medal}")
+
+    # Сон
+    sleep_vals = [db.get(d, {}).get("sleep") for d in days if db.get(d, {}).get("sleep")]
+    if sleep_vals:
+        avg = sum(sleep_vals) / len(sleep_vals)
+        best = max(sleep_vals)
+        worst = min(sleep_vals)
+        sleep_icon = "😊" if avg >= 8 else ("🙂" if avg >= 7 else ("😐" if avg >= 6 else "😩"))
+        lines.append(f"\n😴 <b>Сон</b>\n"
+                     f"Середній: <b>{avg:.1f}г</b>  {sleep_icon}\n"
+                     f"Найкращий: {best}г  ·  Найгірший: {worst}г")
 
     lines.append(f"\n<i>Дані за {days_in_month} днів</i>")
     api("sendMessage", {
@@ -195,7 +232,7 @@ def run():
         sent = load_sent()
         today = today_key()
 
-        # Перевіряємо чи час надсилати питання
+        # Перевіряємо чи час надсилати питання про звички
         for h in HABITS:
             key = f"{today}_{h['id']}"
             if sent.get(key):
@@ -204,6 +241,13 @@ def run():
                 send_question(h)
                 sent[key] = True
                 save_sent(sent)
+
+        # Питання про сон о 8:00
+        sleep_key = f"{today}_sleep_q"
+        if not sent.get(sleep_key) and now.hour == SLEEP_HOUR and now.minute >= SLEEP_MINUTE:
+            send_sleep_question()
+            sent[sleep_key] = True
+            save_sent(sent)
 
         # Тижневий звіт — щонеділі о 20:30
         if now.weekday() == 6 and now.hour == 20 and now.minute >= 30:

@@ -75,6 +75,26 @@ def handle_habit_callback(callback_query):
     chat_id = callback_query["message"]["chat"]["id"]
     cb_id   = callback_query["id"]
 
+    # Обробка сну
+    if data.startswith("sleep_"):
+        hours = int(data.split("_")[1])
+        today    = today_key()
+        db       = load_data()
+        db.setdefault(today, {})["sleep"] = hours
+        save_data(db)
+        icons = {5: "😩", 6: "😐", 7: "🙂", 8: "😊"}
+        icon  = icons.get(hours, "😴")
+        label = f"{hours}г+" if hours == 8 else f"{hours}г"
+        api("editMessageText", {
+            "chat_id": chat_id,
+            "message_id": msg_id,
+            "text": f"😴 <b>Сон</b> — {label} записано  {icon}",
+            "parse_mode": "HTML",
+            "reply_markup": {"inline_keyboard": []}
+        })
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Збережено ✓"})
+        return True
+
     if not data.startswith("habit_"):
         return False
 
