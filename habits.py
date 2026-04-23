@@ -222,17 +222,6 @@ def run():
                 sent[mkey] = True
                 save_sent(sent)
 
-        # Polling для callback кнопок
-        try:
-            result = api("getUpdates", {"offset": offset, "timeout": 10, "limit": 10})
-            for update in result.get("result", []):
-                offset = update["update_id"] + 1
-                cb = update.get("callback_query")
-                if cb and str(cb["message"]["chat"]["id"]) == str(TELEGRAM_CHAT):
-                    handle_callback(cb)
-        except Exception as e:
-            print(f"Polling error: {e}", flush=True)
-
         time.sleep(30)  # перевіряємо кожні 30 секунд
 
 

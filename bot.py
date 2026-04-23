@@ -50,6 +50,70 @@ def send(chat_id, text):
     })
 
 
+def send_with_buttons(chat_id, text, habit_id):
+    return api("sendMessage", {
+        "chat_id": chat_id,
+        "text": text,
+        "parse_mode": "HTML",
+        "reply_markup": {
+            "inline_keyboard": [[
+                {"text": "✅ Так", "callback_data": f"habit_yes_{habit_id}"},
+                {"text": "❌ Ні",  "callback_data": f"habit_no_{habit_id}"},
+            ]]
+        }
+    })
+
+
+def handle_habit_callback(callback_query):
+    """Обробляє натискання ✅/❌ на звичках."""
+    import sys
+    sys.path.insert(0, os.path.dirname(__file__))
+    from habits import HABITS, load_data, save_data, today_key
+
+    data    = callback_query.get("data", "")
+    msg_id  = callback_query["message"]["message_id"]
+    chat_id = callback_query["message"]["chat"]["id"]
+    cb_id   = callback_query["id"]
+
+    if not data.startswith("habit_"):
+        return False
+
+    parts  = data.split("_")   # habit_yes_shower
+    answer = parts[1]           # yes / no
+    hab_id = parts[2]           # shower / run / water
+
+    habit = next((h for h in HABITS if h["id"] == hab_id), None)
+    if not habit:
+        return False
+
+    # Зберігаємо результат
+    today    = today_key()
+    db       = load_data()
+    db.setdefault(today, {})[hab_id] = (answer == "yes")
+    save_data(db)
+
+    # Редагуємо повідомлення — прибираємо кнопки і показуємо результат
+    if answer == "yes":
+        reply = f"✅ <b>{habit['name']}</b> — зараховано! 💪"
+    else:
+        reply = f"❌ <b>{habit['name']}</b> — не зараховано. Завтра краще!"
+
+    api("editMessageText", {
+        "chat_id": chat_id,
+        "message_id": msg_id,
+        "text": reply,
+        "parse_mode": "HTML",
+        "reply_markup": {"inline_keyboard": []}  # прибираємо кнопки
+    })
+
+    # Підтверджуємо callback (прибирає годинник)
+    api("answerCallbackQuery", {
+        "callback_query_id": cb_id,
+        "text": "Збережено ✓"
+    })
+    return True
+
+
 def get_updates(offset=0):
     result = api("getUpdates", {"offset": offset, "timeout": 30, "limit": 10})
     return result.get("result", [])
@@ -145,6 +209,13 @@ def main():
             for update in updates:
                 offset = update["update_id"] + 1
                 save_offset(offset)
+
+                # Обробка кнопок (callback_query)
+                cb = update.get("callback_query")
+                if cb:
+                    if str(cb["message"]["chat"]["id"]) == str(TELEGRAM_CHAT):
+                        handle_habit_callback(cb)
+                    continue
 
                 msg = update.get("message") or update.get("edited_message")
                 if not msg:
