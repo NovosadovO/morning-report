@@ -165,10 +165,10 @@ def get_prices():
         else:
             arrow = "⚪️"
             ch = "—"
-        lines.append(f"{arrow} <b>{symbol}</b>: <code>${price:,.2f}</code>  <i>{ch}</i>")
+        lines.append(f"{arrow} <b>{symbol}</b>  <code>${price:,.2f}</code>\n   <i>{ch}</i>")
 
     save_json_file(PRICE_CACHE, now_prices)
-    return "💹 <b>Ціни активів</b>\n" + "\n".join(lines)
+    return "💹 <b>ЦІНИ АКТИВІВ</b>\n\n" + "\n".join(lines)
 
 
 def _get_prices_kraken():
@@ -255,14 +255,14 @@ def get_weather():
         uv_str = f"\n• УФ індекс: {uv:.0f} — {uv_lvl}"
 
     result = (
-        f"🌡 <b>Погода Košice</b>\n"
-        f"• {desc}, <b>{temp:.0f}°C</b> (відч. {feel:.0f}°C)\n"
-        f"• Мін/Макс: {tmin:.0f}°C / {tmax:.0f}°C\n"
-        f"• Вітер: {wind:.0f} км/г  💧 Вологість: {hum:.0f}%"
+        f"🌤 <b>ПОГОДА — Košice</b>\n"
+        f"• {desc}  <b>{temp:.0f}°C</b>  <i>(відч. {feel:.0f}°C)</i>\n"
+        f"• 🔻 {tmin:.0f}°C  /  🔺 {tmax:.0f}°C\n"
+        f"• 💨 {wind:.0f} км/г   💧 {hum:.0f}%"
     )
     if precip_sum and precip_sum > 0:
-        result += f"\n• Опади за день: {precip_sum:.1f} мм"
-    result += f"\n• 🌅 {sunrise}  🌇 {sunset}"
+        result += f"   🌧 {precip_sum:.1f} мм"
+    result += f"\n• 🌅 {sunrise}   🌇 {sunset}"
     if uv_str:
         result += uv_str
 
@@ -288,11 +288,11 @@ def get_weather():
             pr = h_probs[i] if i < len(h_probs) else 0
             wd = h_winds[i] if i < len(h_winds) else 0
             icon = WMO.get(c, "—").split()[0]
-            rain_str = f" 🌧{pr}%" if pr >= 30 else ""
-            forecast_lines.append(f"  {t[11:16]} {icon} {tmp:.0f}°C{rain_str}")
+            rain_str = f"🌧{pr}%" if pr >= 30 else ""
+            forecast_lines.append(f"<code>{t[11:16]}</code> {icon}{tmp:.0f}°{rain_str}")
 
     if forecast_lines:
-        result += "\n<b>Прогноз:</b>\n" + "\n".join(forecast_lines[:6])
+        result += "\n\n<b>Прогноз:</b>  " + "  │  ".join(forecast_lines[:6])
 
     # Попередження
     warnings = []
@@ -431,7 +431,7 @@ def get_calendar():
                 lines.append(f"• {t} — <b>{esc(summary)}</b>")
             return lines
 
-        result  = "📅 <b>Календар</b>\n"
+        result  = "📅 <b>КАЛЕНДАР</b>\n"
         result += f"<b>Сьогодні {date_today}:</b>\n"
         today_lines = format_events(today_events)
         result += "\n".join(today_lines) if today_lines else "Нічого не заплановано"
@@ -490,6 +490,8 @@ def get_email_preview(msg, max_chars=120):
             body = msg.get_payload(decode=True).decode(charset, errors="replace")
 
         # Чистимо
+        import html as _html
+        body = _html.unescape(body)                        # декодуємо &#44; тощо
         body = re.sub(r'https?://\S+', '', body)          # прибираємо URL
         body = re.sub(r'\[.*?\]', '', body)                # [посилання]
         body = re.sub(r'<.*?>', '', body)                  # <email@...>
@@ -536,7 +538,7 @@ def get_emails():
             if not is_spam(sender, subject):
                 preview = get_email_preview(msg)
                 sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
-                new_items.append(f"✉️ <b>{esc(subject[:60])}</b>\n  👤 <i>{esc(sender_clean[:40])}</i>\n  📄 {esc(preview)}")
+                new_items.append(f"✉️ <b>{esc(subject[:60])}</b>\n👤 <i>{esc(sender_clean[:40])}</i>\n💬 <i>{esc(preview)}</i>")
 
         if not new_items:
             _, data2 = mail.search(None, "ALL")
@@ -555,16 +557,16 @@ def get_emails():
                 if not is_spam(sender, subject):
                     preview = get_email_preview(msg)
                     sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
-                    recent.append(f"✉️ <b>{esc(subject[:60])}</b>\n  👤 <i>{esc(sender_clean[:40])}</i>\n  📄 {esc(preview)}")
+                    recent.append(f"✉️ <b>{esc(subject[:60])}</b>\n👤 <i>{esc(sender_clean[:40])}</i>\n💬 <i>{esc(preview)}</i>")
             mail.logout()
             save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
             if recent:
-                return "📬 <b>Останні листи</b>\n\n" + "\n\n".join(recent)
-            return "📬 <b>Email</b>\nНових листів немає"
+                return "📬 <b>ЛИСТИ</b>\n\n" + "\n\n".join(recent)
+            return "📬 <b>ЛИСТИ</b>\nНових листів немає"
 
         mail.logout()
         save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
-        return f"📬 <b>Нових листів: {len(new_items)}</b>\n\n" + "\n\n".join(new_items[:5])
+        return f"📬 <b>НОВІ ЛИСТИ  ({len(new_items)})</b>\n\n" + "\n\n".join(new_items[:5])
 
     except Exception as e:
         return f"📬 <b>Email</b>\n⚠️ Помилка: {esc(str(e)[:80])}"
@@ -870,7 +872,7 @@ def get_summary(prices_text, weather_text, calendar_text):
     if not tips:
         tips.append("✅ Все спокійно")
 
-    return "💡 <b>Підсумок та рекомендації</b>\n" + "\n".join(tips)
+    return "💡 <b>ПІДСУМОК</b>\n" + "\n".join(tips)
 
 
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
@@ -888,12 +890,19 @@ def main():
     email_text   = get_emails()
     summary_text = get_summary(prices_text, weather_text, cal_text)
 
+    SEP = "\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n"
     report = (
-        f"🕐 <b>Звіт {local_time} · {local_date}</b>\n\n"
-        f"{prices_text}\n\n"
-        f"{weather_text}\n\n"
-        f"{cal_text}\n\n"
-        f"{email_text}\n\n"
+        f"🕐 <b>Звіт {local_time}  ·  {local_date}</b>\n"
+        f"<i>3х годинний репорт</i>"
+        f"{SEP}"
+        f"{prices_text}"
+        f"{SEP}"
+        f"{weather_text}"
+        f"{SEP}"
+        f"{cal_text}"
+        f"{SEP}"
+        f"{email_text}"
+        f"{SEP}"
         f"{summary_text}"
     )
 
