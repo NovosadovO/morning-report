@@ -64,6 +64,24 @@ def send_with_buttons(chat_id, text, habit_id):
     })
 
 
+def log_to_calendar(summary, date_str, hour, minute):
+    """Додає подію-висновок в Google Calendar через quick-add."""
+    try:
+        import subprocess, json as _json
+        # Формат: "🚿 Холодний душ ✅ 24/04/2026 09:00"
+        # quick-add парсить природну мову — вказуємо дату і час
+        day, month, year = date_str.split("-")[2], date_str.split("-")[1], date_str.split("-")[0]
+        text = f"{summary} {day}/{month}/{year} {hour:02d}:{minute:02d}"
+        props = _json.dumps({"text": text})
+        subprocess.Popen(
+            ["connector", "run", "google_calendar", "google_calendar-quick-add-event", props],
+            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+        )
+        print(f"Calendar log: {text}")
+    except Exception as e:
+        print(f"Calendar log error: {e}")
+
+
 def handle_habit_callback(callback_query):
     """Обробляє натискання ✅/❌ на звичках."""
     import sys
@@ -93,6 +111,10 @@ def handle_habit_callback(callback_query):
             "reply_markup": {"inline_keyboard": []}
         })
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Збережено ✓"})
+        # Логуємо в календар
+        from datetime import datetime, timezone, timedelta
+        now_l = datetime.now(timezone.utc) + timedelta(hours=2)
+        log_to_calendar(f"😴 Сон — {label} {icon}", now_l.strftime("%Y-%m-%d"), 8, 0)
         return True
 
     if not data.startswith("habit_"):
@@ -131,6 +153,14 @@ def handle_habit_callback(callback_query):
         "callback_query_id": cb_id,
         "text": "Збережено ✓"
     })
+
+    # Логуємо результат в Google Calendar
+    from datetime import datetime, timezone, timedelta
+    now_l = datetime.now(timezone.utc) + timedelta(hours=2)
+    mark = "✅" if answer == "yes" else "❌"
+    cal_summary = f"{habit['emoji']} {habit['name']} {mark}"
+    log_to_calendar(cal_summary, now_l.strftime("%Y-%m-%d"), habit["hour"], habit["minute"])
+
     return True
 
 
