@@ -63,15 +63,21 @@ def run_weather_watcher():
 
 
 def run_news_watcher():
-    """Крипто новини — кожні 4 години."""
-    print("=== Starting crypto news watcher (every 4h) ===", flush=True)
+    """Крипто новини — щодня о 19:30."""
+    print("=== Starting crypto news watcher (daily 19:30) ===", flush=True)
     time.sleep(90)
     while True:
-        try:
-            _load_monitor().check_crypto_news()
-        except Exception as e:
-            print(f"News watcher error: {e}", flush=True)
-        time.sleep(14400)
+        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        h, m = now_local.hour, now_local.minute
+        if h == 19 and 30 <= m < 35:
+            print(f"[Crypto news] Running at {now_local.strftime('%H:%M')}...", flush=True)
+            try:
+                _load_monitor().check_crypto_news()
+            except Exception as e:
+                print(f"News watcher error: {e}", flush=True)
+            time.sleep(360)  # щоб не запустити двічі
+        else:
+            time.sleep(60)
 
 
 def run_report2_loop():
