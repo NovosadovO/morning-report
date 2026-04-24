@@ -65,19 +65,41 @@ def send_with_buttons(chat_id, text, habit_id):
 
 
 def log_to_calendar(summary, date_str, hour, minute):
-    """Додає подію-висновок в Google Calendar через quick-add."""
+    """Додає подію-висновок в Google Calendar через API напряму."""
     try:
-        import subprocess, json as _json
-        # Формат: "🚿 Холодний душ ✅ 24/04/2026 09:00"
-        # quick-add парсить природну мову — вказуємо дату і час
-        day, month, year = date_str.split("-")[2], date_str.split("-")[1], date_str.split("-")[0]
-        text = f"{summary} {day}/{month}/{year} {hour:02d}:{minute:02d}"
-        props = _json.dumps({"text": text})
-        subprocess.Popen(
-            ["connector", "run", "google_calendar", "google_calendar-quick-add-event", props],
-            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+        import sys, json as _json, urllib.request, urllib.parse
+        from datetime import datetime, timedelta
+        sys.path.insert(0, os.path.dirname(__file__))
+        from monitor import _get_google_token
+
+        creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+        if not creds_json:
+            print("Calendar log: no credentials")
+            return
+
+        creds_data = _json.loads(creds_json)
+        token = _get_google_token(
+            creds_data, "https://www.googleapis.com/auth/calendar.events")
+
+        start_str = f"{date_str}T{hour:02d}:{minute:02d}:00+02:00"
+        end_dt = datetime.strptime(f"{date_str} {hour:02d}:{minute:02d}", "%Y-%m-%d %H:%M") + timedelta(minutes=30)
+        end_str = f"{date_str}T{end_dt.hour:02d}:{end_dt.minute:02d}:00+02:00"
+
+        event = {
+            "summary": summary,
+            "start": {"dateTime": start_str, "timeZone": "Europe/Bratislava"},
+            "end":   {"dateTime": end_str,   "timeZone": "Europe/Bratislava"},
+        }
+        body = _json.dumps(event).encode()
+        req = urllib.request.Request(
+            "https://www.googleapis.com/calendar/v3/calendars/primary/events",
+            data=body,
+            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+            method="POST"
         )
-        print(f"Calendar log: {text}")
+        with urllib.request.urlopen(req, timeout=15) as r:
+            r.read()
+        print(f"Calendar log OK: {summary}")
     except Exception as e:
         print(f"Calendar log error: {e}")
 
