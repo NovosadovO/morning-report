@@ -930,6 +930,11 @@ def get_city_traffic():
         return None
 
     return "🚦 <b>ТРАФІК Košice</b>\n" + "\n".join(segments)
+
+
+# ─── MAIN ─────────────────────────────────────────────────────────────────────
+
+def main():
     now = datetime.now(timezone.utc)
     local_time = (now + timedelta(hours=2)).strftime("%H:%M")
     local_date = (now + timedelta(hours=2)).strftime("%d.%m.%Y")
