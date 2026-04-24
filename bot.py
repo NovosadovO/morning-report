@@ -92,7 +92,7 @@ def log_to_calendar(summary, date_str, hour, minute):
         }
         body = _json.dumps(event).encode()
         req = urllib.request.Request(
-            "https://www.googleapis.com/calendar/v3/calendars/primary/events",
+            "https://www.googleapis.com/calendar/v3/calendars/novosadovoleg%40gmail.com/events",
             data=body,
             headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
             method="POST"
