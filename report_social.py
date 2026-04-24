@@ -37,14 +37,31 @@ def _get(url):
         print(f"GET error [{url[:60]}]: {e}")
         return None
 
-def send_text(text):
-    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-    payload = json.dumps({
-        "chat_id": TELEGRAM_CHAT,
-        "text": text[:4090],
-        "parse_mode": "HTML",
-        "disable_web_page_preview": True,
-    }).encode()
+TOPIC_IMAGES = {
+    "crypto": "https://storage.googleapis.com/runable-templates/cli-uploads%2F1zsprqn6ymqOFgAJnNEK2HbTycMPBvLc%2F5W3elrxxuw6OAmJPUBKgk%2Fbitcoin-crypto-investment-site-unsplash-com_5.jpg",
+    "defi":   "https://storage.googleapis.com/runable-templates/cli-uploads%2F1zsprqn6ymqOFgAJnNEK2HbTycMPBvLc%2FVsnXOI79PSD7WNiNEcYyj%2Fdefi-blockchain-finance-site-unsplash-com_1.jpg",
+    "stocks": "https://storage.googleapis.com/runable-templates/cli-uploads%2F1zsprqn6ymqOFgAJnNEK2HbTycMPBvLc%2FRI3Pa6ro9nbBIy2csiEip%2Fstock-market-investment-site-unsplash-com_0.jpg",
+}
+
+def send_post(text, topic):
+    """Надсилає пост з картинкою."""
+    img_url = TOPIC_IMAGES.get(topic)
+    if img_url:
+        url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto"
+        payload = json.dumps({
+            "chat_id": TELEGRAM_CHAT,
+            "photo": img_url,
+            "caption": text[:1024],
+            "parse_mode": "HTML",
+        }).encode()
+    else:
+        url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+        payload = json.dumps({
+            "chat_id": TELEGRAM_CHAT,
+            "text": text[:4090],
+            "parse_mode": "HTML",
+            "disable_web_page_preview": True,
+        }).encode()
     try:
         if _HAS_REQUESTS:
             _req.post(url, data=payload, headers={"Content-Type": "application/json"}, timeout=20)
@@ -52,7 +69,7 @@ def send_text(text):
             req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
             urllib.request.urlopen(req, timeout=20)
     except Exception as e:
-        print(f"send_text error: {e}")
+        print(f"send_post error: {e}")
 
 def load_state():
     try:
@@ -273,7 +290,7 @@ def main():
     else:
         text = make_defi_post()
 
-    send_text(text)
+    send_post(text, topic)
 
     today = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
     state["last_post_date"] = today
