@@ -15,7 +15,8 @@ except ImportError:
 
 TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
 TELEGRAM_CHAT  = os.environ["TELEGRAM_CHAT_ID"]
-ORS_KEY        = os.environ.get("ORS_API_KEY", "")
+ORS_KEY     = os.environ.get("ORS_API_KEY", "")
+TOMTOM_KEY  = os.environ.get("TOMTOM_API_KEY", "")
 
 # Koordinати міст (звідки / куди)
 LOCATIONS = {
@@ -54,31 +55,58 @@ def send_telegram(text):
         print(f"Telegram error: {e}")
 
 def get_route(origin, destination):
-    """Повертає (км, хвилини) або None."""
-    if not ORS_KEY:
-        return None
-    lon1, lat1 = origin[1], origin[0]
-    lon2, lat2 = destination[1], destination[0]
-    url = (
-        f"https://api.openrouteservice.org/v2/directions/driving-car"
-        f"?api_key={ORS_KEY}&start={lon1},{lat1}&end={lon2},{lat2}"
-    )
-    try:
-        if _HAS_REQUESTS:
-            r = _req.get(url, timeout=15)
-            r.raise_for_status()
-            data = r.json()
-        else:
-            req = urllib.request.Request(url)
-            with urllib.request.urlopen(req, timeout=15) as r:
-                data = json.loads(r.read())
-        seg  = data["features"][0]["properties"]["segments"][0]
-        km   = seg["distance"] / 1000
-        mins = seg["duration"] / 60
-        return km, mins
-    except Exception as e:
-        print(f"ORS error: {e}")
-        return None
+    """Повертає (км, хв_без_пробок, затримка_хв, incidents) або None.
+    Спочатку пробує TomTom (пробки), fallback на ORS."""
+
+    # ── TomTom (реальний трафік) ──
+    if TOMTOM_KEY:
+        try:
+            url = (
+                f"https://api.tomtom.com/routing/1/calculateRoute/"
+                f"{origin[0]},{origin[1]}:{destination[0]},{destination[1]}/json"
+                f"?key={TOMTOM_KEY}&traffic=true&travelMode=car"
+            )
+            if _HAS_REQUESTS:
+                r = _req.get(url, timeout=15)
+                r.raise_for_status()
+                data = r.json()
+            else:
+                req = urllib.request.Request(url)
+                with urllib.request.urlopen(req, timeout=15) as r:
+                    data = json.loads(r.read())
+            s     = data["routes"][0]["summary"]
+            km    = s["lengthInMeters"] / 1000
+            base  = s["travelTimeInSeconds"] / 60
+            delay = s["trafficDelayInSeconds"] / 60
+            return km, base, delay
+        except Exception as e:
+            print(f"TomTom error: {e}")
+
+    # ── ORS fallback ──
+    if ORS_KEY:
+        try:
+            lon1, lat1 = origin[1], origin[0]
+            lon2, lat2 = destination[1], destination[0]
+            url = (
+                f"https://api.openrouteservice.org/v2/directions/driving-car"
+                f"?api_key={ORS_KEY}&start={lon1},{lat1}&end={lon2},{lat2}"
+            )
+            if _HAS_REQUESTS:
+                r = _req.get(url, timeout=15)
+                r.raise_for_status()
+                data = r.json()
+            else:
+                req = urllib.request.Request(url)
+                with urllib.request.urlopen(req, timeout=15) as r:
+                    data = json.loads(r.read())
+            seg  = data["features"][0]["properties"]["segments"][0]
+            km   = seg["distance"] / 1000
+            mins = seg["duration"] / 60
+            return km, mins, 0
+        except Exception as e:
+            print(f"ORS error: {e}")
+
+    return None
 
 def detect_destination(text):
     """Знаходить місто призначення в тексті події."""
@@ -88,12 +116,14 @@ def detect_destination(text):
             return key.capitalize(), coords
     return None, None
 
-def traffic_advice(mins):
-    """Порада залежно від часу в дорозі."""
-    if mins > 60:
-        return "🔴 Затори! Виїжджай раніше на 20-30 хв"
-    elif mins > 45:
-        return "🟡 Невеликі затори, закладай +15 хв"
+def traffic_advice(delay_mins):
+    """Порада залежно від затримки через пробки."""
+    if delay_mins >= 20:
+        return f"🔴 Серйозні пробки! Затримка +{delay_mins:.0f} хв — виїжджай раніше"
+    elif delay_mins >= 10:
+        return f"🟡 Помірні пробки, затримка +{delay_mins:.0f} хв"
+    elif delay_mins >= 3:
+        return f"🟠 Незначні затори +{delay_mins:.0f} хв"
     else:
         return "🟢 Дорога вільна"
 
@@ -154,17 +184,19 @@ def check_calendar_traffic():
             t_str = local_dt.strftime("%H:%M")
 
             if route:
-                km, mins = route
-                advice = traffic_advice(mins)
-                # Рекомендований час виїзду
-                depart = dt - timedelta(minutes=mins + 10)
+                km, base, delay = route
+                total = base + delay
+                advice = traffic_advice(delay)
+                depart = dt - timedelta(minutes=total + 10)
                 depart_local = (depart + timedelta(hours=2)).strftime("%H:%M")
+
+                delay_str = f"\n⚠️ Затримка через пробки: <b>+{delay:.0f} хв</b>" if delay >= 3 else ""
 
                 msg = (
                     f"🚗 <b>Маршрут: Košice → {dest_name}</b>\n\n"
                     f"📍 Подія: <b>{summary}</b> о {t_str}\n\n"
                     f"🛣 Відстань: <b>{km:.1f} км</b>\n"
-                    f"⏱ Час в дорозі: <b>{mins:.0f} хв</b>\n"
+                    f"⏱ Час в дорозі: <b>{total:.0f} хв</b>{delay_str}\n"
                     f"{advice}\n\n"
                     f"✅ Рекомендований виїзд: <b>{depart_local}</b>"
                 )
@@ -190,15 +222,17 @@ def handle_route_command(destination_text):
     if not route:
         return "⚠️ Не вдалось отримати маршрут. Спробуй пізніше."
 
-    km, mins = route
-    advice = traffic_advice(mins)
+    km, base, delay = route
+    total = base + delay
+    advice = traffic_advice(delay)
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
-    arrive = (now_local + timedelta(minutes=mins)).strftime("%H:%M")
+    arrive = (now_local + timedelta(minutes=total)).strftime("%H:%M")
+    delay_str = f"\n⚠️ Затримка через пробки: <b>+{delay:.0f} хв</b>" if delay >= 3 else ""
 
     return (
         f"🚗 <b>Košice → {dest_name}</b>\n\n"
         f"🛣 Відстань: <b>{km:.1f} км</b>\n"
-        f"⏱ Час в дорозі: <b>{mins:.0f} хв</b>\n"
+        f"⏱ Час в дорозі: <b>{total:.0f} хв</b>{delay_str}\n"
         f"{advice}\n\n"
         f"🏁 Прибуття орієнтовно о <b>{arrive}</b>"
     )
