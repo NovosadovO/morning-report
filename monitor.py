@@ -877,7 +877,59 @@ def get_summary(prices_text, weather_text, calendar_text):
 
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
 
-def main():
+def get_city_traffic():
+    """Ситуація на дорогах Košice через TomTom Traffic Flow."""
+    tomtom_key = os.environ.get("TOMTOM_API_KEY", "")
+    if not tomtom_key:
+        return None
+
+    # Перевіряємо 4 ключові точки Košice
+    POINTS = [
+        ("Центр",       48.7163, 21.2611),
+        ("Північ",      48.7350, 21.2450),
+        ("Південь",     48.6950, 21.2700),
+        ("Схід",        48.7100, 21.2900),
+    ]
+
+    segments = []
+    for name, lat, lon in POINTS:
+        try:
+            url = (
+                f"https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json"
+                f"?point={lat},{lon}&key={tomtom_key}"
+            )
+            if _HAS_REQUESTS:
+                r = _requests.get(url, timeout=10)
+                r.raise_for_status()
+                data = r.json()
+            else:
+                req = urllib.request.Request(url)
+                with urllib.request.urlopen(req, timeout=10) as r:
+                    data = json.loads(r.read())
+
+            fd = data.get("flowSegmentData", {})
+            current = fd.get("currentSpeed", 0)
+            free    = fd.get("freeFlowSpeed", 1)
+            conf    = fd.get("confidence", 0)
+
+            if free > 0:
+                ratio = current / free
+                if ratio >= 0.85:
+                    status = "🟢"
+                elif ratio >= 0.6:
+                    status = "🟡"
+                elif ratio >= 0.4:
+                    status = "🟠"
+                else:
+                    status = "🔴"
+                segments.append(f"{status} {name}: <b>{current:.0f}</b>/<i>{free:.0f}</i> км/г")
+        except Exception as e:
+            print(f"Traffic flow error {name}: {e}")
+
+    if not segments:
+        return None
+
+    return "🚦 <b>ТРАФІК Košice</b>\n" + "\n".join(segments)
     now = datetime.now(timezone.utc)
     local_time = (now + timedelta(hours=2)).strftime("%H:%M")
     local_date = (now + timedelta(hours=2)).strftime("%d.%m.%Y")
@@ -888,6 +940,7 @@ def main():
     weather_text = get_weather()
     cal_text     = get_calendar()
     email_text   = get_emails()
+    traffic_text = get_city_traffic()
     summary_text = get_summary(prices_text, weather_text, cal_text)
 
     SEP = "\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n"
@@ -899,7 +952,8 @@ def main():
         f"{SEP}"
         f"{weather_text}"
         f"{SEP}"
-        f"{cal_text}"
+        + (f"{traffic_text}{SEP}" if traffic_text else "")
+        + f"{cal_text}"
         f"{SEP}"
         f"{email_text}"
         f"{SEP}"
