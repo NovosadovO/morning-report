@@ -151,6 +151,21 @@ def run_social_post_loop():
             time.sleep(60)
 
 
+def run_traffic_watcher():
+    """Трафік — перевіряє події в календарі кожні 5 хв."""
+    print("=== Starting traffic watcher (every 5min) ===", flush=True)
+    time.sleep(60)
+    while True:
+        try:
+            import sys, os
+            sys.path.insert(0, os.path.dirname(__file__))
+            from traffic import check_calendar_traffic
+            check_calendar_traffic()
+        except Exception as e:
+            print(f"Traffic watcher error: {e}", flush=True)
+        time.sleep(300)
+
+
 def run_habits_loop():
     """Трекер звичок — щоденні питання + тижневий/місячний звіт."""
     print("=== Starting habits tracker ===", flush=True)
@@ -171,6 +186,7 @@ threading.Thread(target=run_report2_loop,             daemon=True).start()
 threading.Thread(target=run_defi_report_loop,         daemon=True).start()
 threading.Thread(target=run_calendar_reminder_watcher, daemon=True).start()
 threading.Thread(target=run_social_post_loop,         daemon=True).start()
+threading.Thread(target=run_traffic_watcher,          daemon=True).start()
 threading.Thread(target=run_habits_loop,              daemon=True).start()
 
 # Основний монітор в головному потоці

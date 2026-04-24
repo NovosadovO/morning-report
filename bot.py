@@ -172,6 +172,17 @@ def handle_command(chat_id, text):
     if text in ["/start", "start"]:
         send(chat_id, "👋 Привіт! Я твій асистент.\n" + HELP_TEXT)
 
+    elif text.startswith("/маршрут") or text.startswith("маршрут"):
+        dest = text.replace("/маршрут", "").replace("маршрут", "").strip()
+        if not dest:
+            send(chat_id, "Вкажи місто: /маршрут Прешов")
+        else:
+            try:
+                from traffic import handle_route_command
+                send(chat_id, handle_route_command(dest))
+            except Exception as e:
+                send(chat_id, f"⚠️ Помилка: {e}")
+
     elif text in ["/допомога", "/help", "допомога"]:
         send(chat_id, HELP_TEXT)
 
