@@ -628,50 +628,41 @@ def get_emails():
 
     seen = set(load_json_file(SEEN_EMAIL_FILE, default=[]))
 
-    # ── ОСНОВНІ (Primary tab = CATEGORY_PERSONAL) ──
+    # Беремо останні 20 листів з INBOX з повними даними (включаючи labelIds)
+    all_msgs = _gmail_list(token, ["INBOX"], max_results=20)
+
     primary = []
-    primary_msgs = _gmail_list(token, ["INBOX", "CATEGORY_PERSONAL"], max_results=10)
-    for m in primary_msgs:
-        if len(primary) >= 4:
-            break
+    promo   = []
+    social  = []
+    all_ids = []
+
+    for m in all_msgs:
         msg_data = _gmail_get(token, m["id"], fmt="full")
         if not msg_data:
             continue
+        all_ids.append(m["id"])
+        labels = msg_data.get("labelIds", [])
         subject, sender, preview, is_unread = _parse_gmail_msg(msg_data, full=True)
         if is_spam(sender, subject):
             continue
-        primary.append((subject, sender, preview, is_unread))
 
-    # ── ПРОМО (Promotions tab) ──
-    promo = []
-    promo_msgs = _gmail_list(token, ["INBOX", "CATEGORY_PROMOTIONS"], max_results=6)
-    for m in promo_msgs:
-        if len(promo) >= 2:
-            break
-        msg_data = _gmail_get(token, m["id"], fmt="metadata")
-        if not msg_data:
-            continue
-        subject, sender, preview, is_unread = _parse_gmail_msg(msg_data)
-        if is_spam(sender, subject):
-            continue
-        promo.append((subject, sender, preview, is_unread))
+        if "CATEGORY_PROMOTIONS" in labels:
+            if len(promo) < 2:
+                promo.append((subject, sender, preview, is_unread))
+        elif "CATEGORY_SOCIAL" in labels:
+            if len(social) < 2:
+                social.append((subject, sender, preview, is_unread))
+        elif "CATEGORY_UPDATES" in labels or "CATEGORY_FORUMS" in labels:
+            pass  # ігноруємо updates/forums
+        else:
+            # CATEGORY_PERSONAL або без категорії = Primary
+            if len(primary) < 5:
+                primary.append((subject, sender, preview, is_unread))
 
-    # ── СОЦІАЛЬНІ ──
-    social = []
-    social_msgs = _gmail_list(token, ["INBOX", "CATEGORY_SOCIAL"], max_results=4)
-    for m in social_msgs:
-        if len(social) >= 1:
+        if len(primary) >= 5 and len(promo) >= 2 and len(social) >= 2:
             break
-        msg_data = _gmail_get(token, m["id"], fmt="metadata")
-        if not msg_data:
-            continue
-        subject, sender, preview, is_unread = _parse_gmail_msg(msg_data)
-        if is_spam(sender, subject):
-            continue
-        social.append((subject, sender, preview, is_unread))
 
     # Зберігаємо seen IDs
-    all_ids = [m["id"] for m in primary_msgs + promo_msgs + social_msgs]
     new_seen = [mid for mid in all_ids if mid not in seen]
     save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
 
@@ -703,7 +694,7 @@ def get_emails():
 ALERT_EMAIL_FILE = os.path.join(_DATA_DIR, "monitor_alert_emails.json")
 
 def check_new_emails():
-    """Перевіряє нові непрочитані листи в Primary — шле сповіщення якщо є нові."""
+    """Перевіряє нові непрочитані листи в INBOX — шле сповіщення тільки для Primary."""
     token = _gmail_access_token()
     if not token:
         return
@@ -711,8 +702,8 @@ def check_new_emails():
     alerted = set(load_json_file(ALERT_EMAIL_FILE, default=[]))
 
     try:
-        # Тільки непрочитані в Primary за останні 10 хв
-        msgs = _gmail_list(token, ["INBOX", "CATEGORY_PERSONAL", "UNREAD"], max_results=10)
+        # Всі непрочитані в INBOX
+        msgs = _gmail_list(token, ["INBOX", "UNREAD"], max_results=15)
 
         new_alerts = []
         new_alerted = list(alerted)
@@ -724,6 +715,15 @@ def check_new_emails():
             msg_data = _gmail_get(token, mid, fmt="metadata")
             if not msg_data:
                 continue
+
+            labels = msg_data.get("labelIds", [])
+            # Сповіщення тільки для Primary (не промо, не соцмережі, не updates)
+            skip_labels = {"CATEGORY_PROMOTIONS", "CATEGORY_SOCIAL",
+                           "CATEGORY_UPDATES", "CATEGORY_FORUMS"}
+            if any(l in labels for l in skip_labels):
+                new_alerted.append(mid)
+                continue
+
             subject, sender, _, _ = _parse_gmail_msg(msg_data)
             new_alerted.append(mid)
             if not is_spam(sender, subject):
