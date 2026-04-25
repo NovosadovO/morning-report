@@ -628,12 +628,11 @@ def get_emails():
 
     seen = set(load_json_file(SEEN_EMAIL_FILE, default=[]))
 
-    # Беремо останні 20 листів з INBOX з повними даними (включаючи labelIds)
-    all_msgs = _gmail_list(token, ["INBOX"], max_results=20)
+    # Беремо останні 25 листів з INBOX
+    all_msgs = _gmail_list(token, ["INBOX"], max_results=25)
 
-    primary = []
-    promo   = []
-    social  = []
+    primary = []  # CATEGORY_PERSONAL або без категорії
+    other   = []  # CATEGORY_PROMOTIONS, SOCIAL, UPDATES
     all_ids = []
 
     for m in all_msgs:
@@ -641,25 +640,23 @@ def get_emails():
         if not msg_data:
             continue
         all_ids.append(m["id"])
-        labels = msg_data.get("labelIds", [])
+        labels  = msg_data.get("labelIds", [])
         subject, sender, preview, is_unread = _parse_gmail_msg(msg_data, full=True)
         if is_spam(sender, subject):
             continue
 
-        if "CATEGORY_PROMOTIONS" in labels:
-            if len(promo) < 2:
-                promo.append((subject, sender, preview, is_unread))
-        elif "CATEGORY_SOCIAL" in labels:
-            if len(social) < 2:
-                social.append((subject, sender, preview, is_unread))
-        elif "CATEGORY_UPDATES" in labels or "CATEGORY_FORUMS" in labels:
-            pass  # ігноруємо updates/forums
+        is_promo  = "CATEGORY_PROMOTIONS" in labels
+        is_social = "CATEGORY_SOCIAL"     in labels
+        is_update = "CATEGORY_UPDATES"    in labels or "CATEGORY_FORUMS" in labels
+
+        if is_promo or is_social or is_update:
+            if len(other) < 3:
+                other.append((subject, sender, preview, is_unread))
         else:
-            # CATEGORY_PERSONAL або без категорії = Primary
             if len(primary) < 5:
                 primary.append((subject, sender, preview, is_unread))
 
-        if len(primary) >= 5 and len(promo) >= 2 and len(social) >= 2:
+        if len(primary) >= 5 and len(other) >= 3:
             break
 
     # Зберігаємо seen IDs
@@ -676,14 +673,12 @@ def get_emails():
             lines.append(format_email_item(s, snd, p, u))
         lines.append("")
 
-    if promo or social:
+    if other:
         lines.append("📂 <b>ІНШІ</b>")
-        for s, snd, p, u in promo:
-            lines.append(format_email_item(s, snd, p, u))
-        for s, snd, p, u in social:
+        for s, snd, p, u in other:
             lines.append(format_email_item(s, snd, p, u))
 
-    if not primary and not promo and not social:
+    if not primary and not other:
         lines.append("✅ Немає листів")
 
     return "\n".join(lines)
