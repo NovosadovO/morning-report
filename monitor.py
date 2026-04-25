@@ -647,12 +647,13 @@ def get_emails():
 
         is_promo  = "CATEGORY_PROMOTIONS" in labels
         is_social = "CATEGORY_SOCIAL"     in labels
-        is_update = "CATEGORY_UPDATES"    in labels or "CATEGORY_FORUMS" in labels
+        is_forum  = "CATEGORY_FORUMS"     in labels
 
-        if is_promo or is_social or is_update:
+        if is_promo or is_social or is_forum:
             if len(other) < 3:
                 other.append((subject, sender, preview, is_unread))
         else:
+            # CATEGORY_PERSONAL + CATEGORY_UPDATES = ОСНОВНІ
             if len(primary) < 5:
                 primary.append((subject, sender, preview, is_unread))
 
