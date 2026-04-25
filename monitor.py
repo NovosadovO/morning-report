@@ -6,6 +6,7 @@ Monitor — надсилає один зведений звіт кожні 3 г�
 import os
 import re
 import json
+import base64
 import imaplib
 import email
 import email.header
@@ -446,7 +447,7 @@ def get_calendar():
         return f"📅 <b>Календар</b>\n⚠️ Помилка: {esc(str(e)[:120])}"
 
 
-# ─── 4. EMAIL ─────────────────────────────────────────────────────────────────
+# ─── 4. EMAIL (Gmail API) ────────────────────────────────────────────────────
 
 def decode_header_str(h):
     parts = email.header.decode_header(h or "")
@@ -464,37 +465,129 @@ def is_spam(sender, subject):
     return any(x in s for x in IGNORE_SENDERS) or any(x in sub for x in IGNORE_SUBJECTS)
 
 
-def get_email_preview(msg, max_chars=120):
-    """Витягує короткий текстовий preview з тіла листа."""
+def _gmail_access_token():
+    """Отримує Gmail access token через refresh token."""
+    client_id     = os.environ.get("GMAIL_CLIENT_ID", "")
+    client_secret = os.environ.get("GMAIL_CLIENT_SECRET", "")
+    refresh_token = os.environ.get("GMAIL_REFRESH_TOKEN", "")
+    if not all([client_id, client_secret, refresh_token]):
+        return None
     try:
-        body = ""
-        if msg.is_multipart():
-            for part in msg.walk():
-                ct = part.get_content_type()
-                cd = str(part.get("Content-Disposition", ""))
-                if ct == "text/plain" and "attachment" not in cd:
-                    charset = part.get_content_charset() or "utf-8"
-                    body = part.get_payload(decode=True).decode(charset, errors="replace")
-                    break
-            if not body:
-                for part in msg.walk():
-                    ct = part.get_content_type()
-                    if ct == "text/html":
-                        charset = part.get_content_charset() or "utf-8"
-                        html = part.get_payload(decode=True).decode(charset, errors="replace")
-                        body = re.sub(r'<[^>]+>', ' ', html)
-                        body = re.sub(r'\s+', ' ', body).strip()
-                        break
+        if _HAS_REQUESTS:
+            r = _requests.post("https://oauth2.googleapis.com/token", data={
+                "client_id":     client_id,
+                "client_secret": client_secret,
+                "refresh_token": refresh_token,
+                "grant_type":    "refresh_token",
+            }, timeout=15)
+            r.raise_for_status()
+            return r.json().get("access_token")
         else:
-            charset = msg.get_content_charset() or "utf-8"
-            body = msg.get_payload(decode=True).decode(charset, errors="replace")
+            body = urllib.parse.urlencode({
+                "client_id":     client_id,
+                "client_secret": client_secret,
+                "refresh_token": refresh_token,
+                "grant_type":    "refresh_token",
+            }).encode()
+            req = urllib.request.Request("https://oauth2.googleapis.com/token",
+                data=body, method="POST")
+            with urllib.request.urlopen(req, timeout=15) as r:
+                return json.loads(r.read()).get("access_token")
+    except Exception as e:
+        print(f"Gmail token error: {e}")
+        return None
 
-        # Чистимо
+
+def _gmail_list(token, label_ids, max_results=10, q=""):
+    """Повертає список {id, threadId} повідомлень."""
+    params = {"maxResults": max_results, "labelIds": label_ids}
+    if q:
+        params["q"] = q
+    url = "https://gmail.googleapis.com/gmail/v1/users/me/messages?" + urllib.parse.urlencode(
+        [("labelIds", lid) for lid in label_ids] +
+        ([("q", q)] if q else []) +
+        [("maxResults", max_results)]
+    )
+    headers = {"Authorization": f"Bearer {token}"}
+    try:
+        if _HAS_REQUESTS:
+            r = _requests.get(url, headers=headers, timeout=15)
+            r.raise_for_status()
+            return r.json().get("messages", [])
+        else:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as r:
+                return json.loads(r.read()).get("messages", [])
+    except Exception as e:
+        print(f"Gmail list error ({label_ids}): {e}")
+        return []
+
+
+def _gmail_get(token, msg_id, fmt="metadata"):
+    """Отримує один лист. fmt='metadata' або 'full'."""
+    url = f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}?format={fmt}"
+    headers = {"Authorization": f"Bearer {token}"}
+    try:
+        if _HAS_REQUESTS:
+            r = _requests.get(url, headers=headers, timeout=15)
+            r.raise_for_status()
+            return r.json()
+        else:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as r:
+                return json.loads(r.read())
+    except Exception as e:
+        print(f"Gmail get error ({msg_id}): {e}")
+        return None
+
+
+def _extract_header(msg_data, name):
+    for h in msg_data.get("payload", {}).get("headers", []):
+        if h["name"].lower() == name.lower():
+            return h["value"]
+    return ""
+
+
+def _extract_body_preview(msg_data, max_chars=120):
+    """Витягує preview з Gmail API повідомлення (format=full)."""
+    try:
         import html as _html
-        body = _html.unescape(body)                        # декодуємо &#44; тощо
-        body = re.sub(r'https?://\S+', '', body)          # прибираємо URL
-        body = re.sub(r'\[.*?\]', '', body)                # [посилання]
-        body = re.sub(r'<.*?>', '', body)                  # <email@...>
+
+        def get_parts(payload):
+            parts = []
+            if payload.get("mimeType", "").startswith("multipart"):
+                for p in payload.get("parts", []):
+                    parts.extend(get_parts(p))
+            else:
+                parts.append(payload)
+            return parts
+
+        payload = msg_data.get("payload", {})
+        all_parts = get_parts(payload)
+
+        body = ""
+        # Спочатку шукаємо text/plain
+        for p in all_parts:
+            if p.get("mimeType") == "text/plain":
+                data = p.get("body", {}).get("data", "")
+                if data:
+                    body = base64.urlsafe_b64decode(data + "==").decode("utf-8", errors="replace")
+                    break
+
+        # Якщо немає — беремо text/html
+        if not body:
+            for p in all_parts:
+                if p.get("mimeType") == "text/html":
+                    data = p.get("body", {}).get("data", "")
+                    if data:
+                        html_body = base64.urlsafe_b64decode(data + "==").decode("utf-8", errors="replace")
+                        body = re.sub(r'<[^>]+>', ' ', html_body)
+                        break
+
+        body = _html.unescape(body)
+        body = re.sub(r'https?://\S+', '', body)
+        body = re.sub(r'\[.*?\]', '', body)
+        body = re.sub(r'<.*?>', '', body)
         body = re.sub(r'(unsubscribe|відписатись|view in browser|view this post).{0,60}', '', body, flags=re.IGNORECASE)
         body = re.sub(r'\s+', ' ', body).strip()
 
@@ -505,149 +598,104 @@ def get_email_preview(msg, max_chars=120):
         return "—"
 
 
+def _parse_gmail_msg(msg_data, full=False):
+    """Повертає (subject, sender_clean, preview, is_unread)."""
+    subject = decode_header_str(_extract_header(msg_data, "Subject")) or "(no subject)"
+    sender  = decode_header_str(_extract_header(msg_data, "From")) or ""
+    sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
+    is_unread = "UNREAD" in msg_data.get("labelIds", [])
+    preview = _extract_body_preview(msg_data) if full else (msg_data.get("snippet", "") or "—")
+    if len(preview) > 120:
+        preview = preview[:120].rsplit(' ', 1)[0] + "…"
+    return subject, sender_clean, preview, is_unread
+
+
+def format_email_item(subject, sender, preview, is_unread=False):
+    mark = "🔴 " if is_unread else "   "
+    return (
+        f"┌─────────────────────\n"
+        f"{mark}📨 <b>{esc(subject[:55])}</b>\n"
+        f"    👤 <code>{esc(sender[:40])}</code>\n"
+        f"    💬 {esc(preview[:110])}\n"
+        f"└─────────────────────"
+    )
+
+
 def get_emails():
-    if not GMAIL_PASSWORD:
-        return "📬 <b>Email</b>\n⚠️ Не налаштовано"
+    token = _gmail_access_token()
+    if not token:
+        return "📬 <b>Email</b>\n⚠️ Gmail API не налаштовано"
 
     seen = set(load_json_file(SEEN_EMAIL_FILE, default=[]))
 
-    def fetch_folder(mail_conn, folder, limit=3, only_unread=False):
-        """Отримує листи з папки. Повертає список (subject, sender, preview, is_unread)."""
-        try:
-            status, _ = mail_conn.select(folder, readonly=True)
-            if status != "OK":
-                return []
-        except:
-            return []
-        try:
-            if only_unread:
-                _, data = mail_conn.search(None, "UNSEEN")
-            else:
-                _, data = mail_conn.search(None, "ALL")
-        except:
-            return []
-        ids = data[0].split() if data[0] else []
-        items = []
-        for uid in reversed(ids[-15:]):
-            if len(items) >= limit:
-                break
-            try:
-                _, msg_data = mail_conn.fetch(uid, "(RFC822 FLAGS)")
-                if not msg_data or not msg_data[0]:
-                    continue
-                raw = msg_data[0][1]
-                flags = msg_data[0][0].decode() if msg_data[0][0] else ""
-                is_unread = "\\Seen" not in flags
-                msg = email.message_from_bytes(raw)
-                sender  = decode_header_str(msg.get("From", ""))
-                subject = decode_header_str(msg.get("Subject", "(no subject)"))
-                if is_spam(sender, subject):
-                    continue
-                preview = get_email_preview(msg)
-                sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
-                items.append((subject, sender_clean, preview, is_unread))
-            except:
-                continue
-        return items
+    # ── ОСНОВНІ (Primary tab = CATEGORY_PERSONAL) ──
+    primary = []
+    primary_msgs = _gmail_list(token, ["INBOX", "CATEGORY_PERSONAL"], max_results=10)
+    for m in primary_msgs:
+        if len(primary) >= 4:
+            break
+        msg_data = _gmail_get(token, m["id"], fmt="full")
+        if not msg_data:
+            continue
+        subject, sender, preview, is_unread = _parse_gmail_msg(msg_data, full=True)
+        if is_spam(sender, subject):
+            continue
+        primary.append((subject, sender, preview, is_unread))
 
-    def format_item(subject, sender, preview, is_unread=False):
-        mark = "🔴 " if is_unread else "   "
-        return (
-            f"┌─────────────────────\n"
-            f"{mark}📨 <b>{esc(subject[:55])}</b>\n"
-            f"    👤 <code>{esc(sender[:40])}</code>\n"
-            f"    💬 {esc(preview[:110])}\n"
-            f"└─────────────────────"
-        )
+    # ── ПРОМО (Promotions tab) ──
+    promo = []
+    promo_msgs = _gmail_list(token, ["INBOX", "CATEGORY_PROMOTIONS"], max_results=6)
+    for m in promo_msgs:
+        if len(promo) >= 2:
+            break
+        msg_data = _gmail_get(token, m["id"], fmt="metadata")
+        if not msg_data:
+            continue
+        subject, sender, preview, is_unread = _parse_gmail_msg(msg_data)
+        if is_spam(sender, subject):
+            continue
+        promo.append((subject, sender, preview, is_unread))
 
-    try:
-        mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
-        mail.login(GMAIL_USER, GMAIL_PASSWORD.replace(" ", ""))
+    # ── СОЦІАЛЬНІ ──
+    social = []
+    social_msgs = _gmail_list(token, ["INBOX", "CATEGORY_SOCIAL"], max_results=4)
+    for m in social_msgs:
+        if len(social) >= 1:
+            break
+        msg_data = _gmail_get(token, m["id"], fmt="metadata")
+        if not msg_data:
+            continue
+        subject, sender, preview, is_unread = _parse_gmail_msg(msg_data)
+        if is_spam(sender, subject):
+            continue
+        social.append((subject, sender, preview, is_unread))
 
-        # ── ОСНОВНІ (CATEGORY_PERSONAL) через X-GM-LABELS ──
-        primary = []
-        try:
-            status, _ = mail.select("INBOX", readonly=True)
-            if status == "OK":
-                _, data = mail.search(None, 'X-GM-LABELS "\\\\Inbox" X-GM-LABELS "\\\\Important"')
-                ids = data[0].split() if data[0] else []
-                for uid in reversed(ids[-15:]):
-                    if len(primary) >= 4:
-                        break
-                    try:
-                        _, msg_data = mail.fetch(uid, "(RFC822 FLAGS)")
-                        if not msg_data or not msg_data[0]:
-                            continue
-                        raw = msg_data[0][1]
-                        flags = msg_data[0][0].decode() if msg_data[0][0] else ""
-                        is_unread = "\\Seen" not in flags
-                        msg = email.message_from_bytes(raw)
-                        sender  = decode_header_str(msg.get("From", ""))
-                        subject = decode_header_str(msg.get("Subject", "(no subject)"))
-                        if is_spam(sender, subject):
-                            continue
-                        preview = get_email_preview(msg)
-                        sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
-                        primary.append((subject, sender_clean, preview, is_unread))
-                    except:
-                        continue
-        except:
-            pass
+    # Зберігаємо seen IDs
+    all_ids = [m["id"] for m in primary_msgs + promo_msgs + social_msgs]
+    new_seen = [mid for mid in all_ids if mid not in seen]
+    save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
 
-        # fallback якщо X-GM-LABELS не спрацював
-        if not primary:
-            primary = fetch_folder(mail, "INBOX", limit=4)
+    lines = ["📩 <b>━━━ ЛИСТИ ━━━</b>\n"]
 
-        # ── РЕШТА (Promotions + Social + Updates) ──
-        other = []
-        for folder in ["[Gmail]/Promotions", "[Gmail]/Social", "[Gmail]/Updates",
-                       "[Google Mail]/Promotions", "[Google Mail]/Social"]:
-            if len(other) >= 3:
-                break
-            got = fetch_folder(mail, folder, limit=2)
-            other.extend(got)
+    if primary:
+        unread_count = sum(1 for _, _, _, u in primary if u)
+        header = "📥 <b>ОСНОВНІ</b>" + (f"  🔴 {unread_count} нових" if unread_count else "")
+        lines.append(header)
+        for s, snd, p, u in primary:
+            lines.append(format_email_item(s, snd, p, u))
+        lines.append("")
 
-        # ── НОВІ НЕПРОЧИТАНІ для відмітки seen ──
-        mail.select("INBOX", readonly=True)
-        since = (datetime.now(timezone.utc) - timedelta(hours=6)).strftime("%d-%b-%Y")
-        new_seen = []
-        try:
-            _, udata = mail.search(None, f'(UNSEEN SINCE "{since}")')
-            unread_ids = udata[0].split() if udata[0] else []
-            for uid in unread_ids[-20:]:
-                uid_str = uid.decode()
-                if uid_str not in seen:
-                    new_seen.append(uid_str)
-        except:
-            pass
+    if promo or social:
+        lines.append("📂 <b>ІНШІ</b>")
+        for s, snd, p, u in promo:
+            lines.append(format_email_item(s, snd, p, u))
+        for s, snd, p, u in social:
+            lines.append(format_email_item(s, snd, p, u))
 
-        mail.logout()
-        save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
+    if not primary and not promo and not social:
+        lines.append("✅ Немає листів")
 
-        lines = ["📩 <b>━━━ ЛИСТИ ━━━</b>\n"]
-
-        # Основні — першими, непрочитані виділені 🔴
-        if primary:
-            unread_count = sum(1 for _, _, _, u in primary if u)
-            header = f"📥 <b>ОСНОВНІ</b>" + (f"  🔴 {unread_count} нових" if unread_count else "")
-            lines.append(header)
-            for s, snd, p, u in primary:
-                lines.append(format_item(s, snd, p, u))
-            lines.append("")
-
-        # Решта — промо, соцмережі тощо
-        if other:
-            lines.append("📂 <b>ІНШІ</b>")
-            for s, snd, p, u in other[:3]:
-                lines.append(format_item(s, snd, p, u))
-
-        if not primary and not other:
-            lines.append("✅ Немає листів")
-
-        return "\n".join(lines)
-
-    except Exception as e:
-        return f"📩 <b>━━ ЛИСТИ ━━</b>\n⚠️ Помилка: {esc(str(e)[:80])}"
+    return "\n".join(lines)
 
 
 # ─── 4b. МИТТЄВІ СПОВІЩЕННЯ ПРО НОВІ ЛИСТИ ───────────────────────────────────
@@ -655,41 +703,33 @@ def get_emails():
 ALERT_EMAIL_FILE = os.path.join(_DATA_DIR, "monitor_alert_emails.json")
 
 def check_new_emails():
-    """Перевіряє нові листи за останні 6 хв — шле миттєве сповіщення якщо є важливі."""
-    if not GMAIL_PASSWORD:
+    """Перевіряє нові непрочитані листи в Primary — шле сповіщення якщо є нові."""
+    token = _gmail_access_token()
+    if not token:
         return
 
     alerted = set(load_json_file(ALERT_EMAIL_FILE, default=[]))
 
     try:
-        mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
-        mail.login(GMAIL_USER, GMAIL_PASSWORD.replace(" ", ""))
-        mail.select("INBOX")
-
-        since = (datetime.now(timezone.utc) - timedelta(minutes=6)).strftime("%d-%b-%Y")
-        _, data = mail.search(None, f'(UNSEEN SINCE "{since}")')
-        ids = data[0].split() if data[0] else []
+        # Тільки непрочитані в Primary за останні 10 хв
+        msgs = _gmail_list(token, ["INBOX", "CATEGORY_PERSONAL", "UNREAD"], max_results=10)
 
         new_alerts = []
-        new_alerted = []
+        new_alerted = list(alerted)
 
-        for uid in ids[-10:]:
-            uid_str = uid.decode()
-            if uid_str in alerted:
+        for m in msgs:
+            mid = m["id"]
+            if mid in alerted:
                 continue
-            _, msg_data = mail.fetch(uid, "(RFC822)")
-            raw = msg_data[0][1] if msg_data and msg_data[0] else None
-            if not raw:
+            msg_data = _gmail_get(token, mid, fmt="metadata")
+            if not msg_data:
                 continue
-            msg = email.message_from_bytes(raw)
-            sender  = decode_header_str(msg.get("From", ""))
-            subject = decode_header_str(msg.get("Subject", "(no subject)"))
-            new_alerted.append(uid_str)
+            subject, sender, _, _ = _parse_gmail_msg(msg_data)
+            new_alerted.append(mid)
             if not is_spam(sender, subject):
                 new_alerts.append((subject, sender))
 
-        mail.logout()
-        save_json_file(ALERT_EMAIL_FILE, list(alerted | set(new_alerted))[-1000:])
+        save_json_file(ALERT_EMAIL_FILE, new_alerted[-1000:])
 
         for subject, sender in new_alerts:
             caption = (
