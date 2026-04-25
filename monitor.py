@@ -713,9 +713,8 @@ def check_new_emails():
                 continue
 
             labels = msg_data.get("labelIds", [])
-            # Сповіщення тільки для Primary (не промо, не соцмережі, не updates)
-            skip_labels = {"CATEGORY_PROMOTIONS", "CATEGORY_SOCIAL",
-                           "CATEGORY_UPDATES", "CATEGORY_FORUMS"}
+            # Сповіщення тільки для Primary + Updates (не промо, не соцмережі)
+            skip_labels = {"CATEGORY_PROMOTIONS", "CATEGORY_SOCIAL", "CATEGORY_FORUMS"}
             if any(l in labels for l in skip_labels):
                 new_alerted.append(mid)
                 continue
