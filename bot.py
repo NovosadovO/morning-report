@@ -187,7 +187,8 @@ def handle_habit_callback(callback_query):
 
 
 def get_updates(offset=0):
-    result = api("getUpdates", {"offset": offset, "timeout": 30, "limit": 10})
+    result = api("getUpdates", {"offset": offset, "timeout": 30, "limit": 10,
+                                "allowed_updates": ["message", "callback_query"]})
     return result.get("result", [])
 
 
