@@ -514,10 +514,15 @@ def get_emails():
     def fetch_emails_from_folder(mail, folder, limit=3):
         """Отримує останні листи з папки, повертає список рядків."""
         try:
-            mail.select(folder)
+            status, _ = mail.select(folder)
+            if status != "OK":
+                return []
         except:
             return []
-        _, data = mail.search(None, "ALL")
+        try:
+            _, data = mail.search(None, "ALL")
+        except:
+            return []
         ids = data[0].split() if data[0] else []
         items = []
         for uid in reversed(ids[-10:]):
