@@ -511,48 +511,19 @@ def get_emails():
 
     seen = set(load_json_file(SEEN_EMAIL_FILE, default=[]))
 
-    try:
-        mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
-        mail.login(GMAIL_USER, GMAIL_PASSWORD.replace(" ", ""))
-        mail.select("INBOX")
-
-        since = (datetime.now(timezone.utc) - timedelta(hours=3)).strftime("%d-%b-%Y")
-        _, data = mail.search(None, f'(UNSEEN SINCE "{since}")')
+    def fetch_emails_from_folder(mail, folder, limit=3):
+        """Отримує останні листи з папки, повертає список рядків."""
+        try:
+            mail.select(folder)
+        except:
+            return []
+        _, data = mail.search(None, "ALL")
         ids = data[0].split() if data[0] else []
-
-        new_items = []
-        new_seen = []
-
-        for uid in ids[-20:]:
-            uid_str = uid.decode()
-            if uid_str in seen:
-                continue
-            _, msg_data = mail.fetch(uid, "(RFC822)")
-            raw = msg_data[0][1] if msg_data and msg_data[0] else None
-            if not raw:
-                continue
-            msg = email.message_from_bytes(raw)
-            sender  = decode_header_str(msg.get("From", ""))
-            subject = decode_header_str(msg.get("Subject", "(no subject)"))
-            new_seen.append(uid_str)
-            if not is_spam(sender, subject):
-                preview = get_email_preview(msg)
-                sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
-                new_items.append(
-                    f"┌─────────────────────\n"
-                    f"📨 <b>{esc(subject[:55])}</b>\n"
-                    f"👤 <code>{esc(sender_clean[:40])}</code>\n"
-                    f"💬 {esc(preview[:100])}\n"
-                    f"└─────────────────────"
-                )
-
-        if not new_items:
-            _, data2 = mail.search(None, "ALL")
-            all_ids = data2[0].split() if data2[0] else []
-            recent = []
-            for uid in reversed(all_ids[-15:]):
-                if len(recent) >= 5:
-                    break
+        items = []
+        for uid in reversed(ids[-10:]):
+            if len(items) >= limit:
+                break
+            try:
                 _, msg_data = mail.fetch(uid, "(RFC822)")
                 raw = msg_data[0][1] if msg_data and msg_data[0] else None
                 if not raw:
@@ -560,28 +531,111 @@ def get_emails():
                 msg = email.message_from_bytes(raw)
                 sender  = decode_header_str(msg.get("From", ""))
                 subject = decode_header_str(msg.get("Subject", "(no subject)"))
-                if not is_spam(sender, subject):
+                if is_spam(sender, subject):
+                    continue
+                preview = get_email_preview(msg)
+                sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
+                items.append((subject, sender_clean, preview))
+            except:
+                continue
+        return items
+
+    def format_item(subject, sender, preview, new=False):
+        mark = "🔴 " if new else ""
+        return (
+            f"┌─────────────────────\n"
+            f"{mark}📨 <b>{esc(subject[:55])}</b>\n"
+            f"👤 <code>{esc(sender[:40])}</code>\n"
+            f"💬 {esc(preview[:110])}\n"
+            f"└─────────────────────"
+        )
+
+    try:
+        mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
+        mail.login(GMAIL_USER, GMAIL_PASSWORD.replace(" ", ""))
+
+        # ── ОСНОВНІ (CATEGORY_PERSONAL) ──
+        primary = fetch_emails_from_folder(mail, "INBOX/[Gmail]/&BCEEPgQ7BEIEMAQyBDsENg-", limit=3)
+        if not primary:
+            primary = fetch_emails_from_folder(mail, "[Gmail]/Important", limit=3)
+        if not primary:
+            # fallback — INBOX без промо/соцмереж
+            mail.select("INBOX")
+            _, data = mail.search(None, "ALL")
+            ids = data[0].split() if data[0] else []
+            primary = []
+            for uid in reversed(ids[-15:]):
+                if len(primary) >= 3:
+                    break
+                try:
+                    _, msg_data = mail.fetch(uid, "(RFC822)")
+                    raw = msg_data[0][1] if msg_data and msg_data[0] else None
+                    if not raw:
+                        continue
+                    msg = email.message_from_bytes(raw)
+                    sender  = decode_header_str(msg.get("From", ""))
+                    subject = decode_header_str(msg.get("Subject", "(no subject)"))
+                    if is_spam(sender, subject):
+                        continue
                     preview = get_email_preview(msg)
                     sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
-                    recent.append(
-                        f"┌─────────────────────\n"
-                        f"📨 <b>{esc(subject[:55])}</b>\n"
-                        f"👤 <code>{esc(sender_clean[:40])}</code>\n"
-                        f"💬 {esc(preview[:100])}\n"
-                        f"└─────────────────────"
-                    )
-            mail.logout()
-            save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
-            if recent:
-                return "📬 <b>━━ ЛИСТИ ━━</b>\n\n" + "\n\n".join(recent)
-            return "📬 <b>━━ ЛИСТИ ━━</b>\n✅ Нових листів немає"
+                    primary.append((subject, sender_clean, preview))
+                except:
+                    continue
+
+        # ── НОВІ НЕПРОЧИТАНІ (INBOX) ──
+        mail.select("INBOX")
+        since = (datetime.now(timezone.utc) - timedelta(hours=6)).strftime("%d-%b-%Y")
+        _, udata = mail.search(None, f'(UNSEEN SINCE "{since}")')
+        unread_ids = udata[0].split() if udata[0] else []
+        new_seen = []
+        new_items = []
+        for uid in reversed(unread_ids[-10:]):
+            uid_str = uid.decode()
+            if uid_str in seen:
+                continue
+            try:
+                _, msg_data = mail.fetch(uid, "(RFC822)")
+                raw = msg_data[0][1] if msg_data and msg_data[0] else None
+                if not raw:
+                    continue
+                msg = email.message_from_bytes(raw)
+                sender  = decode_header_str(msg.get("From", ""))
+                subject = decode_header_str(msg.get("Subject", "(no subject)"))
+                new_seen.append(uid_str)
+                if is_spam(sender, subject):
+                    continue
+                preview = get_email_preview(msg)
+                sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
+                new_items.append((subject, sender_clean, preview))
+            except:
+                continue
 
         mail.logout()
         save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
-        return f"🔔 <b>━━ НОВІ ЛИСТИ ({len(new_items)}) ━━</b>\n\n" + "\n\n".join(new_items[:5])
+
+        lines = ["📩 <b>━━━ ЛИСТИ ━━━</b>\n"]
+
+        # Нові непрочитані — першими
+        if new_items:
+            lines.append(f"🔴 <b>НОВІ ({len(new_items)})</b>")
+            for s, snd, p in new_items[:3]:
+                lines.append(format_item(s, snd, p, new=True))
+            lines.append("")
+
+        # Основні
+        if primary:
+            lines.append("📥 <b>ОСНОВНІ</b>")
+            for s, snd, p in primary:
+                lines.append(format_item(s, snd, p))
+
+        if not new_items and not primary:
+            lines.append("✅ Немає нових листів")
+
+        return "\n".join(lines)
 
     except Exception as e:
-        return f"📬 <b>Email</b>\n⚠️ Помилка: {esc(str(e)[:80])}"
+        return f"📩 <b>━━ ЛИСТИ ━━</b>\n⚠️ Помилка: {esc(str(e)[:80])}"
 
 
 # ─── 4b. МИТТЄВІ СПОВІЩЕННЯ ПРО НОВІ ЛИСТИ ───────────────────────────────────
