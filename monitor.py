@@ -538,7 +538,13 @@ def get_emails():
             if not is_spam(sender, subject):
                 preview = get_email_preview(msg)
                 sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
-                new_items.append(f"✉️ <b>{esc(subject[:60])}</b>\n👤 <i>{esc(sender_clean[:40])}</i>\n💬 <i>{esc(preview)}</i>")
+                new_items.append(
+                    f"┌─────────────────────\n"
+                    f"📨 <b>{esc(subject[:55])}</b>\n"
+                    f"👤 <code>{esc(sender_clean[:40])}</code>\n"
+                    f"💬 {esc(preview[:100])}\n"
+                    f"└─────────────────────"
+                )
 
         if not new_items:
             _, data2 = mail.search(None, "ALL")
@@ -557,16 +563,22 @@ def get_emails():
                 if not is_spam(sender, subject):
                     preview = get_email_preview(msg)
                     sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
-                    recent.append(f"✉️ <b>{esc(subject[:60])}</b>\n👤 <i>{esc(sender_clean[:40])}</i>\n💬 <i>{esc(preview)}</i>")
+                    recent.append(
+                        f"┌─────────────────────\n"
+                        f"📨 <b>{esc(subject[:55])}</b>\n"
+                        f"👤 <code>{esc(sender_clean[:40])}</code>\n"
+                        f"💬 {esc(preview[:100])}\n"
+                        f"└─────────────────────"
+                    )
             mail.logout()
             save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
             if recent:
-                return "📬 <b>ЛИСТИ</b>\n\n" + "\n\n".join(recent)
-            return "📬 <b>ЛИСТИ</b>\nНових листів немає"
+                return "📬 <b>━━ ЛИСТИ ━━</b>\n\n" + "\n\n".join(recent)
+            return "📬 <b>━━ ЛИСТИ ━━</b>\n✅ Нових листів немає"
 
         mail.logout()
         save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
-        return f"📬 <b>НОВІ ЛИСТИ  ({len(new_items)})</b>\n\n" + "\n\n".join(new_items[:5])
+        return f"🔔 <b>━━ НОВІ ЛИСТИ ({len(new_items)}) ━━</b>\n\n" + "\n\n".join(new_items[:5])
 
     except Exception as e:
         return f"📬 <b>Email</b>\n⚠️ Помилка: {esc(str(e)[:80])}"
@@ -615,9 +627,9 @@ def check_new_emails():
 
         for subject, sender in new_alerts:
             caption = (
-                f"📬 <b>Новий лист!</b>\n"
-                f"<b>{esc(subject[:80])}</b>\n"
-                f"<i>{esc(sender[:60])}</i>"
+                f"📩 <b>━━ НОВИЙ ЛИСТ ━━</b>\n\n"
+                f"📨 <b>{esc(subject[:70])}</b>\n"
+                f"👤 <code>{esc(sender[:55])}</code>"
             )
             _send_telegram_photo(
                 "https://storage.googleapis.com/runable-templates/cli-uploads%2F1zsprqn6ymqOFgAJnNEK2HbTycMPBvLc%2FkcWiPqymnvLAOrTgU45OX%2Fphoto_LXBUM2.jpg",
