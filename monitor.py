@@ -632,7 +632,7 @@ def check_new_emails():
                 f"👤 <code>{esc(sender[:55])}</code>"
             )
             _send_telegram_photo(
-                "https://storage.googleapis.com/runable-templates/cli-uploads%2F1zsprqn6ymqOFgAJnNEK2HbTycMPBvLc%2FkcWiPqymnvLAOrTgU45OX%2Fphoto_LXBUM2.jpg",
+                "https://storage.googleapis.com/runable-templates/cli-uploads%2F1zsprqn6ymqOFgAJnNEK2HbTycMPBvLc%2FTPPUfhLfZwJmqMoezuxQM%2Fmail_banner_v2.png",
                 caption
             )
             print(f"Alert sent: {subject[:50]}")
