@@ -511,28 +511,33 @@ def get_emails():
 
     seen = set(load_json_file(SEEN_EMAIL_FILE, default=[]))
 
-    def fetch_emails_from_folder(mail, folder, limit=3):
-        """Отримує останні листи з папки, повертає список рядків."""
+    def fetch_folder(mail_conn, folder, limit=3, only_unread=False):
+        """Отримує листи з папки. Повертає список (subject, sender, preview, is_unread)."""
         try:
-            status, _ = mail.select(folder)
+            status, _ = mail_conn.select(folder, readonly=True)
             if status != "OK":
                 return []
         except:
             return []
         try:
-            _, data = mail.search(None, "ALL")
+            if only_unread:
+                _, data = mail_conn.search(None, "UNSEEN")
+            else:
+                _, data = mail_conn.search(None, "ALL")
         except:
             return []
         ids = data[0].split() if data[0] else []
         items = []
-        for uid in reversed(ids[-10:]):
+        for uid in reversed(ids[-15:]):
             if len(items) >= limit:
                 break
             try:
-                _, msg_data = mail.fetch(uid, "(RFC822)")
-                raw = msg_data[0][1] if msg_data and msg_data[0] else None
-                if not raw:
+                _, msg_data = mail_conn.fetch(uid, "(RFC822 FLAGS)")
+                if not msg_data or not msg_data[0]:
                     continue
+                raw = msg_data[0][1]
+                flags = msg_data[0][0].decode() if msg_data[0][0] else ""
+                is_unread = "\\Seen" not in flags
                 msg = email.message_from_bytes(raw)
                 sender  = decode_header_str(msg.get("From", ""))
                 subject = decode_header_str(msg.get("Subject", "(no subject)"))
@@ -540,18 +545,18 @@ def get_emails():
                     continue
                 preview = get_email_preview(msg)
                 sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
-                items.append((subject, sender_clean, preview))
+                items.append((subject, sender_clean, preview, is_unread))
             except:
                 continue
         return items
 
-    def format_item(subject, sender, preview, new=False):
-        mark = "🔴 " if new else ""
+    def format_item(subject, sender, preview, is_unread=False):
+        mark = "🔴 " if is_unread else "   "
         return (
             f"┌─────────────────────\n"
             f"{mark}📨 <b>{esc(subject[:55])}</b>\n"
-            f"👤 <code>{esc(sender[:40])}</code>\n"
-            f"💬 {esc(preview[:110])}\n"
+            f"    👤 <code>{esc(sender[:40])}</code>\n"
+            f"    💬 {esc(preview[:110])}\n"
             f"└─────────────────────"
         )
 
@@ -559,83 +564,85 @@ def get_emails():
         mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
         mail.login(GMAIL_USER, GMAIL_PASSWORD.replace(" ", ""))
 
-        # ── ОСНОВНІ (CATEGORY_PERSONAL) ──
-        primary = fetch_emails_from_folder(mail, "INBOX/[Gmail]/&BCEEPgQ7BEIEMAQyBDsENg-", limit=3)
-        if not primary:
-            primary = fetch_emails_from_folder(mail, "[Gmail]/Important", limit=3)
-        if not primary:
-            # fallback — INBOX без промо/соцмереж
-            mail.select("INBOX")
-            _, data = mail.search(None, "ALL")
-            ids = data[0].split() if data[0] else []
-            primary = []
-            for uid in reversed(ids[-15:]):
-                if len(primary) >= 3:
-                    break
-                try:
-                    _, msg_data = mail.fetch(uid, "(RFC822)")
-                    raw = msg_data[0][1] if msg_data and msg_data[0] else None
-                    if not raw:
+        # ── ОСНОВНІ (CATEGORY_PERSONAL) через X-GM-LABELS ──
+        primary = []
+        try:
+            status, _ = mail.select("INBOX", readonly=True)
+            if status == "OK":
+                _, data = mail.search(None, 'X-GM-LABELS "\\\\Inbox" X-GM-LABELS "\\\\Important"')
+                ids = data[0].split() if data[0] else []
+                for uid in reversed(ids[-15:]):
+                    if len(primary) >= 4:
+                        break
+                    try:
+                        _, msg_data = mail.fetch(uid, "(RFC822 FLAGS)")
+                        if not msg_data or not msg_data[0]:
+                            continue
+                        raw = msg_data[0][1]
+                        flags = msg_data[0][0].decode() if msg_data[0][0] else ""
+                        is_unread = "\\Seen" not in flags
+                        msg = email.message_from_bytes(raw)
+                        sender  = decode_header_str(msg.get("From", ""))
+                        subject = decode_header_str(msg.get("Subject", "(no subject)"))
+                        if is_spam(sender, subject):
+                            continue
+                        preview = get_email_preview(msg)
+                        sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
+                        primary.append((subject, sender_clean, preview, is_unread))
+                    except:
                         continue
-                    msg = email.message_from_bytes(raw)
-                    sender  = decode_header_str(msg.get("From", ""))
-                    subject = decode_header_str(msg.get("Subject", "(no subject)"))
-                    if is_spam(sender, subject):
-                        continue
-                    preview = get_email_preview(msg)
-                    sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
-                    primary.append((subject, sender_clean, preview))
-                except:
-                    continue
+        except:
+            pass
 
-        # ── НОВІ НЕПРОЧИТАНІ (INBOX) ──
-        mail.select("INBOX")
+        # fallback якщо X-GM-LABELS не спрацював
+        if not primary:
+            primary = fetch_folder(mail, "INBOX", limit=4)
+
+        # ── РЕШТА (Promotions + Social + Updates) ──
+        other = []
+        for folder in ["[Gmail]/Promotions", "[Gmail]/Social", "[Gmail]/Updates",
+                       "[Google Mail]/Promotions", "[Google Mail]/Social"]:
+            if len(other) >= 3:
+                break
+            got = fetch_folder(mail, folder, limit=2)
+            other.extend(got)
+
+        # ── НОВІ НЕПРОЧИТАНІ для відмітки seen ──
+        mail.select("INBOX", readonly=True)
         since = (datetime.now(timezone.utc) - timedelta(hours=6)).strftime("%d-%b-%Y")
-        _, udata = mail.search(None, f'(UNSEEN SINCE "{since}")')
-        unread_ids = udata[0].split() if udata[0] else []
         new_seen = []
-        new_items = []
-        for uid in reversed(unread_ids[-10:]):
-            uid_str = uid.decode()
-            if uid_str in seen:
-                continue
-            try:
-                _, msg_data = mail.fetch(uid, "(RFC822)")
-                raw = msg_data[0][1] if msg_data and msg_data[0] else None
-                if not raw:
-                    continue
-                msg = email.message_from_bytes(raw)
-                sender  = decode_header_str(msg.get("From", ""))
-                subject = decode_header_str(msg.get("Subject", "(no subject)"))
-                new_seen.append(uid_str)
-                if is_spam(sender, subject):
-                    continue
-                preview = get_email_preview(msg)
-                sender_clean = re.sub(r'<.*?>', '', sender).strip().strip('"') or sender
-                new_items.append((subject, sender_clean, preview))
-            except:
-                continue
+        try:
+            _, udata = mail.search(None, f'(UNSEEN SINCE "{since}")')
+            unread_ids = udata[0].split() if udata[0] else []
+            for uid in unread_ids[-20:]:
+                uid_str = uid.decode()
+                if uid_str not in seen:
+                    new_seen.append(uid_str)
+        except:
+            pass
 
         mail.logout()
         save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
 
         lines = ["📩 <b>━━━ ЛИСТИ ━━━</b>\n"]
 
-        # Нові непрочитані — першими
-        if new_items:
-            lines.append(f"🔴 <b>НОВІ ({len(new_items)})</b>")
-            for s, snd, p in new_items[:3]:
-                lines.append(format_item(s, snd, p, new=True))
+        # Основні — першими, непрочитані виділені 🔴
+        if primary:
+            unread_count = sum(1 for _, _, _, u in primary if u)
+            header = f"📥 <b>ОСНОВНІ</b>" + (f"  🔴 {unread_count} нових" if unread_count else "")
+            lines.append(header)
+            for s, snd, p, u in primary:
+                lines.append(format_item(s, snd, p, u))
             lines.append("")
 
-        # Основні
-        if primary:
-            lines.append("📥 <b>ОСНОВНІ</b>")
-            for s, snd, p in primary:
-                lines.append(format_item(s, snd, p))
+        # Решта — промо, соцмережі тощо
+        if other:
+            lines.append("📂 <b>ІНШІ</b>")
+            for s, snd, p, u in other[:3]:
+                lines.append(format_item(s, snd, p, u))
 
-        if not new_items and not primary:
-            lines.append("✅ Немає нових листів")
+        if not primary and not other:
+            lines.append("✅ Немає листів")
 
         return "\n".join(lines)
 
