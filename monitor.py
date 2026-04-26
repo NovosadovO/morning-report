@@ -993,58 +993,15 @@ def get_summary(prices_text, weather_text, calendar_text):
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
 
 def get_city_traffic():
-    """Ситуація на дорогах Košice через TomTom Traffic Flow."""
-    tomtom_key = os.environ.get("TOMTOM_API_KEY", "")
-    if not tomtom_key:
+    """Ситуація на дорогах Košice через TomTom — інциденти."""
+    try:
+        import sys, os as _os
+        sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+        from traffic_kosice import format_traffic_report
+        return format_traffic_report()
+    except Exception as e:
+        print(f"Traffic error: {e}")
         return None
-
-    # Перевіряємо 4 ключові точки Košice
-    POINTS = [
-        ("Центр",       48.7163, 21.2611),
-        ("Північ",      48.7350, 21.2450),
-        ("Південь",     48.6950, 21.2700),
-        ("Схід",        48.7100, 21.2900),
-    ]
-
-    segments = []
-    for name, lat, lon in POINTS:
-        try:
-            url = (
-                f"https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json"
-                f"?point={lat},{lon}&key={tomtom_key}"
-            )
-            if _HAS_REQUESTS:
-                r = _requests.get(url, timeout=10)
-                r.raise_for_status()
-                data = r.json()
-            else:
-                req = urllib.request.Request(url)
-                with urllib.request.urlopen(req, timeout=10) as r:
-                    data = json.loads(r.read())
-
-            fd = data.get("flowSegmentData", {})
-            current = fd.get("currentSpeed", 0)
-            free    = fd.get("freeFlowSpeed", 1)
-            conf    = fd.get("confidence", 0)
-
-            if free > 0:
-                ratio = current / free
-                if ratio >= 0.85:
-                    status = "🟢"
-                elif ratio >= 0.6:
-                    status = "🟡"
-                elif ratio >= 0.4:
-                    status = "🟠"
-                else:
-                    status = "🔴"
-                segments.append(f"{status} {name}: <b>{current:.0f}</b>/<i>{free:.0f}</i> км/г")
-        except Exception as e:
-            print(f"Traffic flow error {name}: {e}")
-
-    if not segments:
-        return None
-
-    return "🚦 <b>ТРАФІК Košice</b>\n" + "\n".join(segments)
 
 
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
@@ -1841,3 +1798,36 @@ def check_day_summary():
 
     except Exception as e:
         print(f"check_day_summary error: {e}")
+
+# ─── ТРАФІК ПЕРЕД ЗМІНОЮ ─────────────────────────────────────────────────────
+
+TRAFFIC_ALERT_FILE = os.path.join(_DATA_DIR, "monitor_traffic_alert.json")
+
+def check_traffic_before_shift():
+    """За 1 год до зміни надсилає стан трафіку в Кошіце."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+
+    # О 05:00 (перед ранньою 06:00) і о 17:00 (перед нічною 18:00)
+    if not ((h == 5 and m < 5) or (h == 17 and m < 5)):
+        return
+
+    state = load_json_file(TRAFFIC_ALERT_FILE, default={})
+    key = now_local.strftime("%Y-%m-%d-%H")
+    if state.get(key):
+        return
+
+    try:
+        from traffic_kosice import format_traffic_report
+        report = format_traffic_report()
+
+        shift = "☀️ Рання зміна (06:00)" if h == 5 else "🌙 Нічна зміна (18:00)"
+        msg = f"🚗 <b>Трафік перед зміною</b>\n{shift}\n\n{report}"
+        send_telegram(msg)
+        print(f"Traffic before shift sent at {h}:00")
+
+        state[key] = True
+        save_json_file(TRAFFIC_ALERT_FILE, state)
+
+    except Exception as e:
+        print(f"check_traffic_before_shift error: {e}")
