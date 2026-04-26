@@ -25,7 +25,9 @@ SENT_FILE   = os.path.join("/tmp", "habits_sent.json")
 HABITS = [
     {"id": "shower", "name": "Холодний душ", "emoji": "🚿", "hour": 9,  "minute": 0},
     {"id": "run",    "name": "Біг",           "emoji": "🏃", "hour": 19, "minute": 10},
-    {"id": "water",  "name": "Вода (2л)",      "emoji": "💧", "hour": 20, "minute": 0},
+    {"id": "water",  "name": "Вода (2л+)",    "emoji": "💧", "hour": 20, "minute": 0},
+    {"id": "tea",    "name": "Трав'яний чай", "emoji": "🍵", "hour": 20, "minute": 10},
+    {"id": "sauna",  "name": "Сауна",          "emoji": "🧖", "hour": 20, "minute": 20},
 ]
 
 SLEEP_HOUR   = 8
@@ -247,6 +249,54 @@ def run():
         if not sent.get(sleep_key) and now.hour == SLEEP_HOUR and now.minute >= SLEEP_MINUTE:
             send_sleep_question()
             sent[sleep_key] = True
+            save_sent(sent)
+
+        # Нагадування про біг — о 17:30 якщо ще не відмітив
+        run_key_done = f"{today}_run"
+        run_remind_key = f"{today}_run_remind"
+        if (not sent.get(run_remind_key) and
+                now.hour == 17 and now.minute >= 30 and
+                load_data().get(today, {}).get("run") is not True):
+            api("sendMessage", {
+                "chat_id": TELEGRAM_CHAT,
+                "text": "🏃 <b>Ще не бігав сьогодні!</b>\nЗалишилось кілька годин — саме час 💪",
+                "parse_mode": "HTML"
+            })
+            sent[run_remind_key] = True
+            save_sent(sent)
+
+        # Нагадування перед нічною зміною — о 16:00 (за 2г до 18:00)
+        night_pre_key = f"{today}_night_pre"
+        if (not sent.get(night_pre_key) and now.hour == 16 and now.minute >= 0 and now.minute < 5):
+            # Перевіряємо чи є нічна зміна сьогодні — просто надсилаємо якщо понеділок-неділя
+            api("sendMessage", {
+                "chat_id": TELEGRAM_CHAT,
+                "text": (
+                    "🌙 <b>Підготовка до нічної зміни</b>\n\n"
+                    "🚿 Прийми холодний душ\n"
+                    "💧 Випий воду зараз\n"
+                    "🍵 Завари чай з собою\n"
+                    "😴 Поспи 1-2 години якщо є час"
+                ),
+                "parse_mode": "HTML"
+            })
+            sent[night_pre_key] = True
+            save_sent(sent)
+
+        # Нагадування після нічної зміни — о 07:00
+        night_post_key = f"{today}_night_post"
+        if (not sent.get(night_post_key) and now.hour == 7 and now.minute >= 0 and now.minute < 5):
+            api("sendMessage", {
+                "chat_id": TELEGRAM_CHAT,
+                "text": (
+                    "☀️ <b>Після нічної зміни</b>\n\n"
+                    "🍵 Випий трав'яний чай\n"
+                    "💧 Не забудь про воду\n"
+                    "😴 Час відпочивати — солодких снів!"
+                ),
+                "parse_mode": "HTML"
+            })
+            sent[night_post_key] = True
             save_sent(sent)
 
         # Тижневий звіт — щонеділі о 20:30
