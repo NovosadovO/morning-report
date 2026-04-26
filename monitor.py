@@ -1151,3 +1151,387 @@ def check_calendar_reminders():
 
 if __name__ == "__main__":
     main()
+
+
+# ─── НАГАДУВАННЯ ЗА 2Г ДО ЗМІНИ ─────────────────────────────────────────────
+
+SHIFT_REMINDED_FILE = os.path.join(_DATA_DIR, "monitor_shift_reminded.json")
+
+def check_shift_reminders():
+    """Шле нагадування за 2 години до початку зміни."""
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    if not creds_json:
+        return
+
+    reminded = set(load_json_file(SHIFT_REMINDED_FILE, default=[]))
+
+    try:
+        creds_data = json.loads(creds_json)
+        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        headers = {"Authorization": f"Bearer {token}"}
+        cal_id  = "novosadovoleg%40gmail.com"
+
+        now = datetime.now(timezone.utc)
+        window_start = now + timedelta(hours=1, minutes=55)
+        window_end   = now + timedelta(hours=2, minutes=5)
+
+        url = (
+            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+            f"?timeMin={urllib.parse.quote(window_start.isoformat())}"
+            f"&timeMax={urllib.parse.quote(window_end.isoformat())}"
+            f"&singleEvents=true&orderBy=startTime&maxResults=10"
+        )
+        if _HAS_REQUESTS:
+            r = _requests.get(url, headers=headers, timeout=15)
+            r.raise_for_status()
+            events = r.json().get("items", [])
+        else:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as r:
+                events = json.loads(r.read()).get("items", [])
+
+        new_reminded = list(reminded)
+        for ev in events:
+            summary = ev.get("summary", "")
+            if "зміна" not in summary.lower():
+                continue
+            ev_id = ev.get("id", "")
+            start = ev["start"].get("dateTime") or ev["start"].get("date")
+            key   = f"shift2h_{ev_id}_{start}"
+            if key in reminded:
+                continue
+
+            try:
+                dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
+                local_dt = dt + timedelta(hours=2)
+                t = local_dt.strftime("%H:%M")
+            except Exception:
+                t = start
+
+            emoji = "🌙" if "нічна" in summary.lower() else "☀️"
+            msg = (
+                f"{emoji} <b>Через 2 години зміна!</b>\n"
+                f"<b>{esc(summary)}</b>\n"
+                f"🕐 Початок о <b>{t}</b>\n"
+                f"Приготуйся вчасно 💪"
+            )
+            send_telegram(msg)
+            print(f"Shift reminder sent: {summary} at {t}")
+            new_reminded.append(key)
+
+        save_json_file(SHIFT_REMINDED_FILE, new_reminded[-500:])
+
+    except Exception as e:
+        print(f"check_shift_reminders error: {e}")
+
+
+# ─── РАНКОВИЙ БРИФІНГ (7:00 у вихідні) ───────────────────────────────────────
+
+MORNING_BRIEF_FILE = os.path.join(_DATA_DIR, "monitor_morning_brief.json")
+
+def check_morning_brief():
+    """О 7:00 у вихідні дні шле план дня з календаря."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+
+    if not (h == 7 and 0 <= m < 5):
+        return
+
+    state = load_json_file(MORNING_BRIEF_FILE, default={})
+    today = now_local.strftime("%Y-%m-%d")
+    if state.get("last") == today:
+        return
+
+    # Перевіряємо чи є зміна сьогодні
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    if not creds_json:
+        return
+
+    try:
+        creds_data = json.loads(creds_json)
+        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        headers = {"Authorization": f"Bearer {token}"}
+        cal_id  = "novosadovoleg%40gmail.com"
+
+        now_utc = datetime.now(timezone.utc)
+        day_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0)
+        day_end   = day_start + timedelta(hours=24)
+
+        url = (
+            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+            f"?timeMin={urllib.parse.quote(day_start.isoformat())}"
+            f"&timeMax={urllib.parse.quote(day_end.isoformat())}"
+            f"&singleEvents=true&orderBy=startTime&maxResults=20"
+        )
+        if _HAS_REQUESTS:
+            r = _requests.get(url, headers=headers, timeout=15)
+            r.raise_for_status()
+            events = r.json().get("items", [])
+        else:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as r:
+                events = json.loads(r.read()).get("items", [])
+
+        has_shift = any("зміна" in e.get("summary","").lower() for e in events)
+
+        lines = [f"🌅 <b>Доброго ранку! План на {now_local.strftime('%d.%m')}:</b>\n"]
+
+        if has_shift:
+            shift_ev = next(e for e in events if "зміна" in e.get("summary","").lower())
+            start = shift_ev["start"].get("dateTime","")
+            try:
+                dt = datetime.fromisoformat(start.replace("Z","+00:00")) + timedelta(hours=2)
+                lines.append(f"💼 Робочий день — зміна о <b>{dt.strftime('%H:%M')}</b>")
+            except:
+                lines.append("💼 Сьогодні є зміна")
+        else:
+            lines.append("🏖 Вихідний день — відпочивай!")
+
+        lines.append("")
+        for ev in events:
+            summary = ev.get("summary","")
+            if "зміна" in summary.lower() or "нагадування" in summary.lower():
+                continue
+            start = ev["start"].get("dateTime") or ev["start"].get("date")
+            try:
+                dt = datetime.fromisoformat(start.replace("Z","+00:00")) + timedelta(hours=2)
+                t = dt.strftime("%H:%M")
+            except:
+                t = ""
+            lines.append(f"• {t} {esc(summary)}")
+
+        send_telegram("\n".join(lines))
+        state["last"] = today
+        save_json_file(MORNING_BRIEF_FILE, state)
+        print(f"Morning brief sent for {today}")
+
+    except Exception as e:
+        print(f"check_morning_brief error: {e}")
+
+
+# ─── КРИПТО АЛЕРТ >5% ЗА ГОДИНУ ──────────────────────────────────────────────
+
+CRYPTO_ALERT_FILE = os.path.join(_DATA_DIR, "monitor_crypto_alert.json")
+
+def check_crypto_price_alert():
+    """Шле сповіщення якщо BTC/ETH/AVAX/ONDO змінились >5% за годину."""
+    state = load_json_file(CRYPTO_ALERT_FILE, default={})
+    now_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d %H")
+
+    ids = ",".join(COINS.values())
+    url = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd&include_1h_change=true"
+    data = fetch_json(url)
+    if not data:
+        return
+
+    alerts = []
+    for symbol, cg_id in COINS.items():
+        price   = data.get(cg_id, {}).get("usd")
+        change1h = data.get(cg_id, {}).get("usd_1h_change")
+        if price is None or change1h is None:
+            continue
+
+        key = f"{cg_id}_{now_str}"
+        if state.get(key):
+            continue
+
+        if abs(change1h) >= 5:
+            arrow = "🚀" if change1h > 0 else "💥"
+            sign  = "+" if change1h > 0 else ""
+            alerts.append(
+                f"{arrow} <b>{symbol}</b> {sign}{change1h:.1f}% за годину\n"
+                f"   Ціна: <code>${price:,.2f}</code>"
+            )
+            state[key] = True
+
+    if alerts:
+        msg = "⚡ <b>Крипто алерт!</b>\n\n" + "\n".join(alerts)
+        send_telegram(msg)
+        print(f"Crypto price alert sent: {len(alerts)} coins")
+
+    save_json_file(CRYPTO_ALERT_FILE, state)
+
+
+# ─── СТАТИСТИКА ЗВИЧОК ЗА ТИЖДЕНЬ (щопонеділка 9:00) ─────────────────────────
+
+HABIT_STATS_FILE = os.path.join(_DATA_DIR, "monitor_habit_stats.json")
+
+def check_weekly_habit_stats():
+    """Щопонеділка о 9:00 шле статистику звичок за минулий тиждень."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    if not (now_local.weekday() == 0 and now_local.hour == 9 and now_local.minute < 5):
+        return
+
+    state = load_json_file(HABIT_STATS_FILE, default={})
+    today = now_local.strftime("%Y-%m-%d")
+    if state.get("last") == today:
+        return
+
+    # Читаємо дані з habits.py
+    try:
+        import sys as _sys
+        _sys.path.insert(0, _DATA_DIR)
+        import habits as _habits
+        data = load_json_file(os.path.join(_DATA_DIR, "habits_data.json"), default={})
+        if not data:
+            return
+
+        # Останні 7 днів
+        from datetime import date
+        days = [(now_local - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(1, 8)]
+        days.reverse()
+
+        lines = [f"📊 <b>Статистика звичок за тиждень</b>\n({days[0][5:]} — {days[-1][5:]})\n"]
+
+        habit_names = data.get("habits", [])
+        logs = data.get("logs", {})
+
+        for habit in habit_names:
+            count = sum(1 for d in days if logs.get(d, {}).get(habit) == True)
+            bar   = "🟩" * count + "⬜" * (7 - count)
+            lines.append(f"{bar} <b>{esc(habit)}</b> {count}/7")
+
+        send_telegram("\n".join(lines))
+        state["last"] = today
+        save_json_file(HABIT_STATS_FILE, state)
+        print("Weekly habit stats sent")
+
+    except Exception as e:
+        print(f"check_weekly_habit_stats error: {e}")
+
+
+# ─── НАГАДУВАННЯ ПИТИ ВОДУ (кожні 2г, 8:00–20:00 у вихідні) ─────────────────
+
+WATER_FILE = os.path.join(_DATA_DIR, "monitor_water.json")
+
+def check_water_reminder():
+    """Нагадування пити воду кожні 2г у вихідні між 8:00 і 20:00."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+
+    if not (8 <= h <= 20 and 0 <= m < 5):
+        return
+
+    if h % 2 != 0:
+        return
+
+    # Перевіряємо чи є зміна сьогодні (тоді не нагадуємо)
+    state = load_json_file(WATER_FILE, default={})
+    key = now_local.strftime("%Y-%m-%d-%H")
+    if state.get(key):
+        return
+
+    # Простий check — якщо є зміна пропускаємо
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    if creds_json:
+        try:
+            creds_data = json.loads(creds_json)
+            token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+            headers = {"Authorization": f"Bearer {token}"}
+            cal_id  = "novosadovoleg%40gmail.com"
+            now_utc = datetime.now(timezone.utc)
+            day_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0)
+            day_end   = day_start + timedelta(hours=24)
+            url = (
+                f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+                f"?timeMin={urllib.parse.quote(day_start.isoformat())}"
+                f"&timeMax={urllib.parse.quote(day_end.isoformat())}"
+                f"&singleEvents=true&maxResults=10"
+            )
+            if _HAS_REQUESTS:
+                r = _requests.get(url, headers=headers, timeout=10)
+                events = r.json().get("items", [])
+            else:
+                req = urllib.request.Request(url, headers=headers)
+                with urllib.request.urlopen(req, timeout=10) as r:
+                    events = json.loads(r.read()).get("items", [])
+            if any("зміна" in e.get("summary","").lower() for e in events):
+                return  # робочий день — не нагадуємо
+        except:
+            pass
+
+    send_telegram("💧 <b>Час випити воду!</b>\nВипий склянку води зараз 🥤")
+    state[key] = True
+    save_json_file(WATER_FILE, state)
+    print(f"Water reminder sent at {h}:00")
+
+
+# ─── ПЛАН ТИЖНЯ (щопонеділка 8:00) ───────────────────────────────────────────
+
+WEEK_PLAN_FILE = os.path.join(_DATA_DIR, "monitor_week_plan.json")
+
+def check_weekly_plan():
+    """Щопонеділка о 8:00 шле план на тиждень з календаря."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    if not (now_local.weekday() == 0 and now_local.hour == 8 and now_local.minute < 5):
+        return
+
+    state = load_json_file(WEEK_PLAN_FILE, default={})
+    today = now_local.strftime("%Y-%m-%d")
+    if state.get("last") == today:
+        return
+
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    if not creds_json:
+        return
+
+    try:
+        creds_data = json.loads(creds_json)
+        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        headers = {"Authorization": f"Bearer {token}"}
+        cal_id  = "novosadovoleg%40gmail.com"
+
+        now_utc = datetime.now(timezone.utc)
+        week_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0)
+        week_end   = week_start + timedelta(days=7)
+
+        url = (
+            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+            f"?timeMin={urllib.parse.quote(week_start.isoformat())}"
+            f"&timeMax={urllib.parse.quote(week_end.isoformat())}"
+            f"&singleEvents=true&orderBy=startTime&maxResults=50"
+        )
+        if _HAS_REQUESTS:
+            r = _requests.get(url, headers=headers, timeout=15)
+            r.raise_for_status()
+            events = r.json().get("items", [])
+        else:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as r:
+                events = json.loads(r.read()).get("items", [])
+
+        DAY_UA = ["Пн","Вт","Ср","Чт","Пт","Сб","Нд"]
+        by_day = {}
+        for ev in events:
+            summary = ev.get("summary","")
+            if "нагадування" in summary.lower():
+                continue
+            start = ev["start"].get("dateTime") or ev["start"].get("date")
+            try:
+                dt = datetime.fromisoformat(start.replace("Z","+00:00")) + timedelta(hours=2)
+                d  = dt.strftime("%Y-%m-%d")
+                t  = dt.strftime("%H:%M")
+            except:
+                continue
+            by_day.setdefault(d, []).append(f"{t} {esc(summary)}")
+
+        lines = ["📅 <b>План на тиждень:</b>\n"]
+        for i in range(7):
+            day = (now_local + timedelta(days=i))
+            d_str = day.strftime("%Y-%m-%d")
+            d_label = f"{DAY_UA[day.weekday()]} {day.strftime('%d.%m')}"
+            evs = by_day.get(d_str, [])
+            if evs:
+                lines.append(f"<b>{d_label}</b>")
+                for e in evs[:5]:
+                    lines.append(f"  • {e}")
+            else:
+                lines.append(f"<b>{d_label}</b> — вихідний")
+
+        send_telegram("\n".join(lines))
+        state["last"] = today
+        save_json_file(WEEK_PLAN_FILE, state)
+        print("Weekly plan sent")
+
+    except Exception as e:
+        print(f"check_weekly_plan error: {e}")

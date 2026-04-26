@@ -184,6 +184,68 @@ def run_habits_loop():
             time.sleep(10)
 
 
+def run_shift_reminder_watcher():
+    """Нагадування за 2г до зміни — кожні 5 хвилин."""
+    print("=== Starting shift reminder watcher (every 5min) ===", flush=True)
+    time.sleep(50)
+    while True:
+        try:
+            _load_monitor().check_shift_reminders()
+        except Exception as e:
+            print(f"Shift reminder watcher error: {e}", flush=True)
+        time.sleep(300)
+
+
+def run_morning_brief_watcher():
+    """Ранковий брифінг о 7:00 — перевірка кожну хвилину."""
+    print("=== Starting morning brief watcher ===", flush=True)
+    time.sleep(70)
+    while True:
+        try:
+            _load_monitor().check_morning_brief()
+        except Exception as e:
+            print(f"Morning brief watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+def run_crypto_alert_watcher():
+    """Крипто алерт >5% — кожні 15 хвилин."""
+    print("=== Starting crypto price alert watcher (every 15min) ===", flush=True)
+    time.sleep(80)
+    while True:
+        try:
+            _load_monitor().check_crypto_price_alert()
+        except Exception as e:
+            print(f"Crypto alert watcher error: {e}", flush=True)
+        time.sleep(900)
+
+
+def run_water_reminder_watcher():
+    """Нагадування пити воду — перевірка кожні 5 хв."""
+    print("=== Starting water reminder watcher ===", flush=True)
+    time.sleep(90)
+    while True:
+        try:
+            _load_monitor().check_water_reminder()
+        except Exception as e:
+            print(f"Water reminder watcher error: {e}", flush=True)
+        time.sleep(300)
+
+
+def run_weekly_plan_watcher():
+    """Щопонеділка план тижня і статистика звичок — перевірка кожну хвилину."""
+    print("=== Starting weekly plan watcher ===", flush=True)
+    time.sleep(100)
+    while True:
+        try:
+            m = _load_monitor()
+            m.check_weekly_plan()
+            m.check_weekly_habit_stats()
+        except Exception as e:
+            print(f"Weekly plan watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
 threading.Thread(target=run_bot,                      daemon=True).start()
 threading.Thread(target=run_email_watcher,            daemon=True).start()
 threading.Thread(target=run_weather_watcher,          daemon=True).start()
@@ -194,6 +256,11 @@ threading.Thread(target=run_calendar_reminder_watcher, daemon=True).start()
 threading.Thread(target=run_social_post_loop,         daemon=True).start()
 threading.Thread(target=run_traffic_watcher,          daemon=True).start()
 threading.Thread(target=run_habits_loop,              daemon=True).start()
+threading.Thread(target=run_shift_reminder_watcher,   daemon=True).start()
+threading.Thread(target=run_morning_brief_watcher,    daemon=True).start()
+threading.Thread(target=run_crypto_alert_watcher,     daemon=True).start()
+threading.Thread(target=run_water_reminder_watcher,   daemon=True).start()
+threading.Thread(target=run_weekly_plan_watcher,      daemon=True).start()
 
 # Основний монітор в головному потоці
 run_monitor_loop()
