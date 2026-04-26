@@ -259,7 +259,6 @@ threading.Thread(target=run_habits_loop,              daemon=True).start()
 threading.Thread(target=run_shift_reminder_watcher,   daemon=True).start()
 threading.Thread(target=run_morning_brief_watcher,    daemon=True).start()
 threading.Thread(target=run_crypto_alert_watcher,     daemon=True).start()
-threading.Thread(target=run_water_reminder_watcher,   daemon=True).start()
 threading.Thread(target=run_weekly_plan_watcher,      daemon=True).start()
 
 # Основний монітор в головному потоці
