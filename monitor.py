@@ -1158,7 +1158,7 @@ if __name__ == "__main__":
 SHIFT_REMINDED_FILE = os.path.join(_DATA_DIR, "monitor_shift_reminded.json")
 
 def check_shift_reminders():
-    """Шле нагадування за 2 години до початку зміни."""
+    """Шле нагадування за 2 години до будь-якої події в Google Calendar."""
     creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
     if not creds_json:
         return
@@ -1179,7 +1179,7 @@ def check_shift_reminders():
             f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
             f"?timeMin={urllib.parse.quote(window_start.isoformat())}"
             f"&timeMax={urllib.parse.quote(window_end.isoformat())}"
-            f"&singleEvents=true&orderBy=startTime&maxResults=10"
+            f"&singleEvents=true&orderBy=startTime&maxResults=20"
         )
         if _HAS_REQUESTS:
             r = _requests.get(url, headers=headers, timeout=15)
@@ -1192,15 +1192,14 @@ def check_shift_reminders():
 
         new_reminded = list(reminded)
         for ev in events:
-            summary = ev.get("summary", "")
-            if "зміна" not in summary.lower():
-                continue
+            summary = ev.get("summary", "(без назви)")
             ev_id = ev.get("id", "")
             start = ev["start"].get("dateTime") or ev["start"].get("date")
-            key   = f"shift2h_{ev_id}_{start}"
+            key   = f"2h_{ev_id}_{start}"
             if key in reminded:
                 continue
 
+            # визначаємо час
             try:
                 dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
                 local_dt = dt + timedelta(hours=2)
@@ -1208,15 +1207,26 @@ def check_shift_reminders():
             except Exception:
                 t = start
 
-            emoji = "🌙" if "нічна" in summary.lower() else "☀️"
+            # емодзі залежно від типу події
+            s_lower = summary.lower()
+            if "нічна" in s_lower:
+                emoji = "🌙"
+            elif "рання" in s_lower or "ранн" in s_lower:
+                emoji = "☀️"
+            elif "день народження" in s_lower or "birthday" in s_lower:
+                emoji = "🎂"
+            elif "зустріч" in s_lower or "meet" in s_lower:
+                emoji = "🤝"
+            else:
+                emoji = "📅"
+
             msg = (
-                f"{emoji} <b>Через 2 години зміна!</b>\n"
+                f"{emoji} <b>Нагадування — через 2 години:</b>\n"
                 f"<b>{esc(summary)}</b>\n"
-                f"🕐 Початок о <b>{t}</b>\n"
-                f"Приготуйся вчасно 💪"
+                f"🕐 Початок о <b>{t}</b>"
             )
             send_telegram(msg)
-            print(f"Shift reminder sent: {summary} at {t}")
+            print(f"2h reminder sent: {summary} at {t}")
             new_reminded.append(key)
 
         save_json_file(SHIFT_REMINDED_FILE, new_reminded[-500:])
