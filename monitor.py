@@ -1679,7 +1679,7 @@ def check_event_done():
 DAY_SUMMARY_FILE = os.path.join(_DATA_DIR, "monitor_day_summary.json")
 
 def check_day_summary():
-    """О 21:00 надсилає підсумок дня — події з календаря + статус виконання."""
+    """О 21:00 надсилає підсумок дня — події з календаря + звички."""
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
     if not (h == 21 and m < 5):
@@ -1701,10 +1701,8 @@ def check_day_summary():
         cal_id = "novosadovoleg%40gmail.com"
 
         # Всі події за сьогодні
-        day_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0)
-        day_end   = now_local.replace(hour=23, minute=59, second=59, microsecond=0)
-        day_start_utc = day_start - timedelta(hours=2)
-        day_end_utc   = day_end   - timedelta(hours=2)
+        day_start_utc = now_local.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        day_end_utc   = now_local.replace(hour=23, minute=59, second=59, microsecond=0) - timedelta(hours=2)
 
         url = (
             f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
@@ -1721,61 +1719,104 @@ def check_day_summary():
             with urllib.request.urlopen(req, timeout=15) as r:
                 events = json.loads(r.read()).get("items", [])
 
-        # Завантажуємо статуси виконання (збережені bot.py після натискання кнопки)
+        # Статуси виконання подій (з кнопок ✅/❌)
         results_file = os.path.join(_DATA_DIR, "monitor_event_results.json")
         results = load_json_file(results_file, default={})
 
-        if not events:
-            send_telegram("📋 <b>Підсумок дня</b>\n\nСьогодні подій не було.")
-            state["last"] = today
-            save_json_file(DAY_SUMMARY_FILE, state)
-            return
+        # Звички з habits_data.json
+        habits_file = "/tmp/habits_data.json"
+        try:
+            with open(habits_file) as f:
+                habits_db = json.load(f)
+            today_habits = habits_db.get(today, {})
+        except Exception:
+            today_habits = {}
 
-        lines = [f"📋 <b>Підсумок дня — {now_local.strftime('%d.%m.%Y')}</b>\n"]
+        lines = []
+        lines.append(f"━━━━━━━━━━━━━━━━━━━━━━")
+        lines.append(f"📋 <b>ПІДСУМОК ДНЯ</b>  {now_local.strftime('%d.%m.%Y')}")
+        lines.append(f"━━━━━━━━━━━━━━━━━━━━━━")
 
-        for ev in events:
-            summary = ev.get("summary", "(без назви)")
-            start_raw = ev["start"].get("dateTime") or ev["start"].get("date")
-            end_raw   = ev["end"].get("dateTime")   or ev["end"].get("date")
-            ev_id     = ev.get("id", "")
+        # ── КАЛЕНДАР ──
+        # Фільтруємо — тільки реальні події (не звички з habits.py)
+        HABIT_NAMES = {"холодний душ", "біг", "вода", "трав'яний чай", "сауна", "сон"}
+        cal_events = [
+            ev for ev in events
+            if not any(h in ev.get("summary", "").lower() for h in HABIT_NAMES)
+        ]
 
-            # Час
-            try:
-                start_dt = datetime.fromisoformat(start_raw.replace("Z", "+00:00"))
-                end_dt   = datetime.fromisoformat(end_raw.replace("Z", "+00:00"))
-                t_start  = (start_dt + timedelta(hours=2)).strftime("%H:%M")
-                t_end    = (end_dt   + timedelta(hours=2)).strftime("%H:%M")
-                time_str = f"{t_start}–{t_end}"
-            except Exception:
-                time_str = ""
+        if cal_events:
+            lines.append("\n🗓 <b>Події дня</b>")
+            for ev in cal_events:
+                summary  = ev.get("summary", "(без назви)")
+                start_raw = ev["start"].get("dateTime") or ev["start"].get("date")
+                end_raw   = ev["end"].get("dateTime")   or ev["end"].get("date")
+                ev_id     = ev.get("id", "")
 
-            # Статус виконання
-            done_key_prefix = f"done_{ev_id}_"
-            result = next((v for k, v in results.items() if done_key_prefix in k), None)
+                try:
+                    start_dt = datetime.fromisoformat(start_raw.replace("Z", "+00:00"))
+                    end_dt   = datetime.fromisoformat(end_raw.replace("Z", "+00:00"))
+                    t_start  = (start_dt + timedelta(hours=2)).strftime("%H:%M")
+                    t_end    = (end_dt   + timedelta(hours=2)).strftime("%H:%M")
+                    time_str = f"{t_start}–{t_end}"
+                except Exception:
+                    time_str = ""
 
-            s_lower = summary.lower()
-            if "нічна" in s_lower:
-                emoji = "🌙"
-            elif "рання" in s_lower:
-                emoji = "☀️"
-            elif "день народження" in s_lower or "birthday" in s_lower:
-                emoji = "🎂"
-            elif "зустріч" in s_lower or "meet" in s_lower:
-                emoji = "🤝"
+                done_key_prefix = f"done_{ev_id}_"
+                result = next((v for k, v in results.items() if done_key_prefix in k), None)
+
+                s_lower = summary.lower()
+                if "нічна" in s_lower:      ev_emoji = "🌙"
+                elif "рання" in s_lower:    ev_emoji = "☀️"
+                elif "birthday" in s_lower or "народження" in s_lower: ev_emoji = "🎂"
+                elif "зустріч" in s_lower or "meet" in s_lower:        ev_emoji = "🤝"
+                else:                       ev_emoji = "📅"
+
+                if result == "yes":   status = "✅"
+                elif result == "no":  status = "❌"
+                else:                 status = "—"
+
+                lines.append(f"\n{ev_emoji} <b>{esc(summary)}</b>  {status}")
+                if time_str:
+                    lines.append(f"    🕐 {time_str}")
+        else:
+            lines.append("\n🗓 <b>Події дня</b>\n    Вільний день")
+
+        # ── ЗДОРОВ'Я ──
+        HEALTH_HABITS = [
+            ("shower", "🚿", "Холодний душ"),
+            ("run",    "🏃", "Біг"),
+            ("water",  "💧", "Вода 2л+"),
+            ("tea",    "🍵", "Трав'яний чай"),
+            ("sauna",  "🧖", "Сауна"),
+        ]
+        lines.append("\n\n💪 <b>Здоров'я сьогодні</b>")
+        done_count = 0
+        for hid, hemoji, hname in HEALTH_HABITS:
+            val = today_habits.get(hid)
+            if val is True:
+                mark = "✅"
+                done_count += 1
+            elif val is False:
+                mark = "❌"
             else:
-                emoji = "📅"
+                mark = "○"  # не відповів
+            lines.append(f"    {hemoji} {hname}  {mark}")
 
-            if result == "yes":
-                status = " ✅"
-            elif result == "no":
-                status = " ❌"
-            else:
-                status = " ⏳" if (now_local > (datetime.fromisoformat(end_raw.replace("Z","+00:00")) + timedelta(hours=2))) else ""
-            lines.append(f"{emoji} <b>{esc(summary)}</b>{status}")
-            if time_str:
-                lines.append(f"   🕐 {time_str}")
+        # Сон
+        sleep_val = today_habits.get("sleep")
+        if sleep_val:
+            sleep_icon = "😊" if sleep_val >= 8 else ("🙂" if sleep_val >= 7 else ("😐" if sleep_val >= 6 else "😩"))
+            lines.append(f"    😴 Сон  {sleep_val}г  {sleep_icon}")
 
-        lines.append("\nГарного вечора! 🌙")
+        # Загальний рахунок
+        total = len(HEALTH_HABITS)
+        bar = "▓" * done_count + "░" * (total - done_count)
+        lines.append(f"\n    <code>{bar}</code>  {done_count}/{total}")
+
+        lines.append(f"\n━━━━━━━━━━━━━━━━━━━━━━")
+        lines.append("Гарного вечора! 🌙")
+
         send_telegram("\n".join(lines))
         print("Day summary sent")
 
