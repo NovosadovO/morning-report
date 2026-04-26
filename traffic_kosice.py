@@ -63,6 +63,9 @@ def format_traffic_report():
             label = SERIOUS[cat]
             delay_str = f" (+{delay//60} хв)" if delay and delay > 60 else ""
             serious.append(f"{label}{delay_str} — {loc}")
+        elif cat in (6, 7):  # затори — завжди показуємо
+            delay_str = f" (+{delay//60} хв)" if delay and delay > 60 else ""
+            serious.append(f"🐢 Затор{delay_str} — {loc}")
         elif cat in MINOR and mag >= 2:
             minor_count += 1
 
