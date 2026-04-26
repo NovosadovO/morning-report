@@ -246,6 +246,18 @@ def run_weekly_plan_watcher():
         time.sleep(60)
 
 
+def run_day_summary_watcher():
+    """Підсумок дня о 21:00 — перевірка кожну хвилину."""
+    print("=== Starting day summary watcher (21:00) ===", flush=True)
+    time.sleep(65)
+    while True:
+        try:
+            _load_monitor().check_day_summary()
+        except Exception as e:
+            print(f"Day summary watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
 def run_event_done_watcher():
     """Питає 'Виконано?' після закінчення події — кожні 5 хвилин."""
     print("=== Starting event done watcher (every 5min) ===", flush=True)
@@ -272,6 +284,7 @@ threading.Thread(target=run_shift_reminder_watcher,   daemon=True).start()
 threading.Thread(target=run_morning_brief_watcher,    daemon=True).start()
 threading.Thread(target=run_crypto_alert_watcher,     daemon=True).start()
 threading.Thread(target=run_weekly_plan_watcher,      daemon=True).start()
+threading.Thread(target=run_day_summary_watcher,      daemon=True).start()
 threading.Thread(target=run_event_done_watcher,       daemon=True).start()
 
 # Основний монітор в головному потоці

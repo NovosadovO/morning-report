@@ -106,6 +106,7 @@ def log_to_calendar(summary, date_str, hour, minute):
 
 def handle_event_done_callback(callback_query):
     """Обробляє ✅/❌ відповідь на питання 'Виконано?'."""
+    import json as _json
     data    = callback_query.get("data", "")
     msg_id  = callback_query["message"]["message_id"]
     chat_id = callback_query["message"]["chat"]["id"]
@@ -115,6 +116,7 @@ def handle_event_done_callback(callback_query):
     # evdone_yes_<key> або evdone_no_<key>
     parts  = data.split("_", 2)
     answer = parts[1] if len(parts) > 1 else "?"
+    key    = parts[2] if len(parts) > 2 else ""
 
     if answer == "yes":
         reply = orig.split("\n")[0] + "\n✅ <b>Виконано!</b>"
@@ -129,6 +131,20 @@ def handle_event_done_callback(callback_query):
         "reply_markup": {"inline_keyboard": []}
     })
     api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Записано ✓"})
+
+    # Зберігаємо статус у файл для підсумку дня
+    try:
+        results_file = os.path.join(os.path.dirname(__file__), "monitor_event_results.json")
+        if os.path.exists(results_file):
+            with open(results_file) as f:
+                results = _json.load(f)
+        else:
+            results = {}
+        results[key] = answer
+        with open(results_file, "w") as f:
+            _json.dump(results, f)
+    except Exception as e:
+        print(f"event results save error: {e}")
 
 
 def handle_habit_callback(callback_query):

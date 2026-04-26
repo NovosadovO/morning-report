@@ -1673,3 +1673,114 @@ def check_event_done():
 
     except Exception as e:
         print(f"check_event_done error: {e}")
+
+# ─── ПІДСУМОК ДНЯ ────────────────────────────────────────────────────────────
+
+DAY_SUMMARY_FILE = os.path.join(_DATA_DIR, "monitor_day_summary.json")
+
+def check_day_summary():
+    """О 21:00 надсилає підсумок дня — події з календаря + статус виконання."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+    if not (h == 21 and m < 5):
+        return
+
+    state = load_json_file(DAY_SUMMARY_FILE, default={})
+    today = now_local.strftime("%Y-%m-%d")
+    if state.get("last") == today:
+        return
+
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    if not creds_json:
+        return
+
+    try:
+        creds_data = json.loads(creds_json)
+        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        headers = {"Authorization": f"Bearer {token}"}
+        cal_id = "novosadovoleg%40gmail.com"
+
+        # Всі події за сьогодні
+        day_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0)
+        day_end   = now_local.replace(hour=23, minute=59, second=59, microsecond=0)
+        day_start_utc = day_start - timedelta(hours=2)
+        day_end_utc   = day_end   - timedelta(hours=2)
+
+        url = (
+            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+            f"?timeMin={urllib.parse.quote(day_start_utc.isoformat())}"
+            f"&timeMax={urllib.parse.quote(day_end_utc.isoformat())}"
+            f"&singleEvents=true&orderBy=startTime&maxResults=20"
+        )
+        if _HAS_REQUESTS:
+            r = _requests.get(url, headers=headers, timeout=15)
+            r.raise_for_status()
+            events = r.json().get("items", [])
+        else:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as r:
+                events = json.loads(r.read()).get("items", [])
+
+        # Завантажуємо статуси виконання (збережені bot.py після натискання кнопки)
+        results_file = os.path.join(_DATA_DIR, "monitor_event_results.json")
+        results = load_json_file(results_file, default={})
+
+        if not events:
+            send_telegram("📋 <b>Підсумок дня</b>\n\nСьогодні подій не було.")
+            state["last"] = today
+            save_json_file(DAY_SUMMARY_FILE, state)
+            return
+
+        lines = [f"📋 <b>Підсумок дня — {now_local.strftime('%d.%m.%Y')}</b>\n"]
+
+        for ev in events:
+            summary = ev.get("summary", "(без назви)")
+            start_raw = ev["start"].get("dateTime") or ev["start"].get("date")
+            end_raw   = ev["end"].get("dateTime")   or ev["end"].get("date")
+            ev_id     = ev.get("id", "")
+
+            # Час
+            try:
+                start_dt = datetime.fromisoformat(start_raw.replace("Z", "+00:00"))
+                end_dt   = datetime.fromisoformat(end_raw.replace("Z", "+00:00"))
+                t_start  = (start_dt + timedelta(hours=2)).strftime("%H:%M")
+                t_end    = (end_dt   + timedelta(hours=2)).strftime("%H:%M")
+                time_str = f"{t_start}–{t_end}"
+            except Exception:
+                time_str = ""
+
+            # Статус виконання
+            done_key_prefix = f"done_{ev_id}_"
+            result = next((v for k, v in results.items() if done_key_prefix in k), None)
+
+            s_lower = summary.lower()
+            if "нічна" in s_lower:
+                emoji = "🌙"
+            elif "рання" in s_lower:
+                emoji = "☀️"
+            elif "день народження" in s_lower or "birthday" in s_lower:
+                emoji = "🎂"
+            elif "зустріч" in s_lower or "meet" in s_lower:
+                emoji = "🤝"
+            else:
+                emoji = "📅"
+
+            if result == "yes":
+                status = " ✅"
+            elif result == "no":
+                status = " ❌"
+            else:
+                status = " ⏳" if (now_local > (datetime.fromisoformat(end_raw.replace("Z","+00:00")) + timedelta(hours=2))) else ""
+            lines.append(f"{emoji} <b>{esc(summary)}</b>{status}")
+            if time_str:
+                lines.append(f"   🕐 {time_str}")
+
+        lines.append("\nГарного вечора! 🌙")
+        send_telegram("\n".join(lines))
+        print("Day summary sent")
+
+        state["last"] = today
+        save_json_file(DAY_SUMMARY_FILE, state)
+
+    except Exception as e:
+        print(f"check_day_summary error: {e}")
