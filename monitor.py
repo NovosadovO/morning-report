@@ -690,7 +690,7 @@ def get_emails():
 ALERT_EMAIL_FILE = os.path.join(_DATA_DIR, "monitor_alert_emails.json")
 
 def check_new_emails():
-    """Перевіряє нові непрочитані листи в INBOX — шле сповіщення тільки для Primary."""
+    """Перевіряє нові листи в INBOX за останні 10 хвилин — шле сповіщення для Primary."""
     token = _gmail_access_token()
     if not token:
         return
@@ -698,8 +698,10 @@ def check_new_emails():
     alerted = set(load_json_file(ALERT_EMAIL_FILE, default=[]))
 
     try:
-        # Всі непрочитані в INBOX
-        msgs = _gmail_list(token, ["INBOX", "UNREAD"], max_results=15)
+        # Шукаємо листи що прийшли за останні 10 хвилин (незалежно від прочитано чи ні)
+        import time as _time
+        after_ts = int(_time.time()) - 600  # 10 хвилин тому
+        msgs = _gmail_list(token, ["INBOX"], max_results=20, q=f"after:{after_ts}")
 
         new_alerts = []
         new_alerted = list(alerted)
