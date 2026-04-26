@@ -1809,11 +1809,12 @@ def check_day_summary():
             sleep_icon = "😊" if sleep_val >= 8 else ("🙂" if sleep_val >= 7 else ("😐" if sleep_val >= 6 else "😩"))
             lines.append(f"    😴 Сон  {sleep_val}г  {sleep_icon}")
 
-        # Загальний рахунок — прогрес бар
+        # Загальний рахунок — зірки
         total = len(HEALTH_HABITS)
         pct = int(done_count / total * 100) if total else 0
-        filled = int(done_count / total * 10) if total else 0
-        bar = "█" * filled + "▒" * (10 - filled)
+        stars_filled = done_count
+        stars_empty  = total - done_count
+        bar = "⭐️" * stars_filled + "☆" * stars_empty
 
         if pct == 100:
             grade = "🏆 Ідеальний день!"
@@ -1826,7 +1827,7 @@ def check_day_summary():
         else:
             grade = "💤 Слабкий день"
 
-        lines.append(f"\n    <code>[{bar}]</code>  <b>{done_count}/{total}</b>  {pct}%")
+        lines.append(f"\n    {bar}  <b>{done_count}/{total}</b>")
         lines.append(f"    {grade}")
 
         lines.append(f"\n━━━━━━━━━━━━━━━━━━━━━━")
