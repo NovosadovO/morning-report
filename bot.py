@@ -104,6 +104,33 @@ def log_to_calendar(summary, date_str, hour, minute):
         print(f"Calendar log error: {e}")
 
 
+def handle_event_done_callback(callback_query):
+    """Обробляє ✅/❌ відповідь на питання 'Виконано?'."""
+    data    = callback_query.get("data", "")
+    msg_id  = callback_query["message"]["message_id"]
+    chat_id = callback_query["message"]["chat"]["id"]
+    cb_id   = callback_query["id"]
+    orig    = callback_query["message"].get("text", "")
+
+    # evdone_yes_<key> або evdone_no_<key>
+    parts  = data.split("_", 2)
+    answer = parts[1] if len(parts) > 1 else "?"
+
+    if answer == "yes":
+        reply = orig.split("\n")[0] + "\n✅ <b>Виконано!</b>"
+    else:
+        reply = orig.split("\n")[0] + "\n❌ <b>Не виконано.</b>"
+
+    api("editMessageText", {
+        "chat_id": chat_id,
+        "message_id": msg_id,
+        "text": reply,
+        "parse_mode": "HTML",
+        "reply_markup": {"inline_keyboard": []}
+    })
+    api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Записано ✓"})
+
+
 def handle_habit_callback(callback_query):
     """Обробляє натискання ✅/❌ на звичках."""
     import sys
@@ -298,7 +325,11 @@ def main():
                 cb = update.get("callback_query")
                 if cb:
                     if str(cb["message"]["chat"]["id"]) == str(TELEGRAM_CHAT):
-                        handle_habit_callback(cb)
+                        data = cb.get("data", "")
+                        if data.startswith("evdone_"):
+                            handle_event_done_callback(cb)
+                        else:
+                            handle_habit_callback(cb)
                     continue
 
                 msg = update.get("message") or update.get("edited_message")

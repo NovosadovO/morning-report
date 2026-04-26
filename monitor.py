@@ -1545,3 +1545,129 @@ def check_weekly_plan():
 
     except Exception as e:
         print(f"check_weekly_plan error: {e}")
+
+# ─── ПЕРЕВІРКА ВИКОНАНИХ ПОДІЙ ────────────────────────────────────────────────
+
+EVENT_DONE_FILE = os.path.join(_DATA_DIR, "monitor_event_done.json")
+
+def check_event_done():
+    """Після закінчення події питає 'Виконано?' з кнопками Так/Ні."""
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    if not creds_json:
+        return
+
+    asked = set(load_json_file(EVENT_DONE_FILE, default=[]))
+
+    try:
+        creds_data = json.loads(creds_json)
+        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        headers = {"Authorization": f"Bearer {token}"}
+        cal_id = "novosadovoleg%40gmail.com"
+
+        now = datetime.now(timezone.utc)
+        # Вікно: події що закінчились 0-10 хвилин тому
+        window_start = now - timedelta(minutes=10)
+        window_end   = now
+
+        url = (
+            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+            f"?timeMin={urllib.parse.quote(window_start.isoformat())}"
+            f"&timeMax={urllib.parse.quote(window_end.isoformat())}"
+            f"&singleEvents=true&orderBy=startTime&maxResults=20"
+            f"&timeZone=UTC"
+        )
+        # Нам потрібні події за END time — тому беремо всі за ширше вікно і фільтруємо
+        # Розширюємо: беремо події що почались до now і закінчуються у вікні
+        url = (
+            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+            f"?timeMin={urllib.parse.quote((now - timedelta(days=1)).isoformat())}"
+            f"&timeMax={urllib.parse.quote(now.isoformat())}"
+            f"&singleEvents=true&orderBy=startTime&maxResults=50"
+        )
+
+        if _HAS_REQUESTS:
+            r = _requests.get(url, headers=headers, timeout=15)
+            r.raise_for_status()
+            events = r.json().get("items", [])
+        else:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as r:
+                events = json.loads(r.read()).get("items", [])
+
+        new_asked = list(asked)
+        for ev in events:
+            ev_id   = ev.get("id", "")
+            summary = ev.get("summary", "(без назви)")
+            end_raw = ev["end"].get("dateTime") or ev["end"].get("date")
+            if not end_raw or "T" not in end_raw:
+                continue  # пропускаємо цілоденні події
+
+            try:
+                end_dt = datetime.fromisoformat(end_raw.replace("Z", "+00:00"))
+            except Exception:
+                continue
+
+            # Перевіряємо що подія закінчилась 0-10 хв тому
+            diff = (now - end_dt).total_seconds()
+            if not (0 <= diff <= 600):
+                continue
+
+            key = f"done_{ev_id}_{end_raw}"
+            if key in asked:
+                continue
+
+            # Надсилаємо питання з кнопками через Telegram Bot API напряму
+            local_end = end_dt + timedelta(hours=2)
+            t = local_end.strftime("%H:%M")
+
+            s_lower = summary.lower()
+            if "нічна" in s_lower:
+                emoji = "🌙"
+            elif "рання" in s_lower or "ранн" in s_lower:
+                emoji = "☀️"
+            elif "день народження" in s_lower or "birthday" in s_lower:
+                emoji = "🎂"
+            elif "зустріч" in s_lower or "meet" in s_lower:
+                emoji = "🤝"
+            else:
+                emoji = "📅"
+
+            text = (
+                f"{emoji} <b>{esc(summary)}</b> закінчилась о {t}\n"
+                f"Виконано?"
+            )
+
+            import urllib.request as _ur
+            import urllib.parse as _up
+            bot_token = os.environ.get("TELEGRAM_TOKEN", "8374312425:AAHqrQCEqrgtVdl5Te5WhWblM2ESCnqhpfk")
+            chat_id_tg = os.environ.get("TELEGRAM_CHAT", "2100366814")
+            safe_key = key.replace("/", "_").replace("@", "_")[:60]
+
+            payload = json.dumps({
+                "chat_id": chat_id_tg,
+                "text": text,
+                "parse_mode": "HTML",
+                "reply_markup": {
+                    "inline_keyboard": [[
+                        {"text": "✅ Виконано", "callback_data": f"evdone_yes_{safe_key}"},
+                        {"text": "❌ Не виконано", "callback_data": f"evdone_no_{safe_key}"},
+                    ]]
+                }
+            }).encode()
+
+            req2 = _ur.Request(
+                f"https://api.telegram.org/bot{bot_token}/sendMessage",
+                data=payload,
+                headers={"Content-Type": "application/json"},
+                method="POST"
+            )
+            with _ur.urlopen(req2, timeout=15) as resp:
+                resp.read()
+
+            print(f"Event done question sent: {summary}")
+            new_asked.append(key)
+
+        save_json_file(EVENT_DONE_FILE, new_asked[-500:])
+
+    except Exception as e:
+        print(f"check_event_done error: {e}")

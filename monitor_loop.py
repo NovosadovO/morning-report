@@ -246,6 +246,18 @@ def run_weekly_plan_watcher():
         time.sleep(60)
 
 
+def run_event_done_watcher():
+    """Питає 'Виконано?' після закінчення події — кожні 5 хвилин."""
+    print("=== Starting event done watcher (every 5min) ===", flush=True)
+    time.sleep(55)
+    while True:
+        try:
+            _load_monitor().check_event_done()
+        except Exception as e:
+            print(f"Event done watcher error: {e}", flush=True)
+        time.sleep(300)
+
+
 threading.Thread(target=run_bot,                      daemon=True).start()
 threading.Thread(target=run_email_watcher,            daemon=True).start()
 threading.Thread(target=run_weather_watcher,          daemon=True).start()
@@ -260,6 +272,7 @@ threading.Thread(target=run_shift_reminder_watcher,   daemon=True).start()
 threading.Thread(target=run_morning_brief_watcher,    daemon=True).start()
 threading.Thread(target=run_crypto_alert_watcher,     daemon=True).start()
 threading.Thread(target=run_weekly_plan_watcher,      daemon=True).start()
+threading.Thread(target=run_event_done_watcher,       daemon=True).start()
 
 # Основний монітор в головному потоці
 run_monitor_loop()
