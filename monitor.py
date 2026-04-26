@@ -1809,10 +1809,25 @@ def check_day_summary():
             sleep_icon = "😊" if sleep_val >= 8 else ("🙂" if sleep_val >= 7 else ("😐" if sleep_val >= 6 else "😩"))
             lines.append(f"    😴 Сон  {sleep_val}г  {sleep_icon}")
 
-        # Загальний рахунок
+        # Загальний рахунок — прогрес бар
         total = len(HEALTH_HABITS)
-        bar = "▓" * done_count + "░" * (total - done_count)
-        lines.append(f"\n    <code>{bar}</code>  {done_count}/{total}")
+        pct = int(done_count / total * 100) if total else 0
+        filled = int(done_count / total * 10) if total else 0
+        bar = "█" * filled + "▒" * (10 - filled)
+
+        if pct == 100:
+            grade = "🏆 Ідеальний день!"
+        elif pct >= 80:
+            grade = "💪 Відмінно!"
+        elif pct >= 60:
+            grade = "👍 Непогано"
+        elif pct >= 40:
+            grade = "😐 Є над чим працювати"
+        else:
+            grade = "💤 Слабкий день"
+
+        lines.append(f"\n    <code>[{bar}]</code>  <b>{done_count}/{total}</b>  {pct}%")
+        lines.append(f"    {grade}")
 
         lines.append(f"\n━━━━━━━━━━━━━━━━━━━━━━")
         lines.append("Гарного вечора! 🌙")
