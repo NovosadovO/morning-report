@@ -1831,3 +1831,86 @@ def check_traffic_before_shift():
 
     except Exception as e:
         print(f"check_traffic_before_shift error: {e}")
+
+# ─── НАГАДУВАННЯ ЗВАЖИТИСЬ ────────────────────────────────────────────────────
+
+WEIGHT_REMIND_FILE = os.path.join(_DATA_DIR, "monitor_weight_remind.json")
+
+def check_weight_reminder():
+    """
+    Нагадує зважитись:
+    - 04:55 — якщо сьогодні рання зміна (06:00)
+    - 10:10 — якщо вихідний (немає змін)
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+    today = now_local.strftime("%Y-%m-%d")
+
+    # Перевіряємо тільки у потрібні вікна
+    is_455  = (h == 4 and 55 <= m <= 59)
+    is_1010 = (h == 10 and 10 <= m <= 14)
+    if not (is_455 or is_1010):
+        return
+
+    state = load_json_file(WEIGHT_REMIND_FILE, default={})
+    key = f"{today}_{h}"
+    if state.get(key):
+        return
+
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    if not creds_json:
+        return
+
+    try:
+        # Перевіряємо календар — є зміна сьогодні?
+        creds_data = json.loads(creds_json)
+        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        headers = {"Authorization": f"Bearer {token}"}
+        cal_id = "novosadovoleg%40gmail.com"
+
+        day_start_utc = now_local.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        day_end_utc   = now_local.replace(hour=23, minute=59, second=59, microsecond=0) - timedelta(hours=2)
+
+        url = (
+            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+            f"?timeMin={urllib.parse.quote(day_start_utc.isoformat())}"
+            f"&timeMax={urllib.parse.quote(day_end_utc.isoformat())}"
+            f"&singleEvents=true&orderBy=startTime&maxResults=10"
+        )
+        if _HAS_REQUESTS:
+            r = _requests.get(url, headers=headers, timeout=15)
+            r.raise_for_status()
+            events = r.json().get("items", [])
+        else:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as r:
+                events = json.loads(r.read()).get("items", [])
+
+        has_early = any("рання" in ev.get("summary","").lower() for ev in events)
+        has_shift = any("зміна" in ev.get("summary","").lower() for ev in events)
+        is_day_off = not has_shift
+
+        # 04:55 — тільки якщо є рання зміна
+        if is_455 and not has_early:
+            return
+
+        # 10:10 — тільки якщо вихідний
+        if is_1010 and not is_day_off:
+            return
+
+        msg = (
+            "━━━━━━━━━━━━━━━━━━━━━━\n"
+            "⚖️ <b>ЧАС ЗВАЖИТИСЬ</b>\n"
+            "━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            "Зваж себе зараз і запиши в Apple Health.\n\n"
+            "Потім надішли мені свою вагу, наприклад:\n"
+            "<code>82.5</code>"
+        )
+        send_telegram(msg)
+        print(f"Weight reminder sent at {h}:{m:02d}")
+
+        state[key] = True
+        save_json_file(WEIGHT_REMIND_FILE, state)
+
+    except Exception as e:
+        print(f"check_weight_reminder error: {e}")

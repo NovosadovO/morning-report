@@ -320,7 +320,28 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
+    elif text in ["/вага", "вага"]:
+        try:
+            from weight import format_weekly_weight_report
+            send(chat_id, format_weekly_weight_report())
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
     else:
+        # Спроба розпізнати вагу (число типу 82 або 82.5)
+        try:
+            kg = float(text.replace(",", "."))
+            if 30 < kg < 250:
+                from weight import save_weight, get_trend
+                save_weight(kg)
+                trend = get_trend()
+                reply = f"⚖️ <b>{kg} кг</b> — збережено!\n\nНе забудь записати в Apple Health 🍎"
+                if trend:
+                    reply += f"\n\n{trend}"
+                send(chat_id, reply)
+                return
+        except ValueError:
+            pass
         send(chat_id, f"Не розумію команду. Напиши /допомога щоб побачити список команд.")
 
 

@@ -246,6 +246,18 @@ def run_weekly_plan_watcher():
         time.sleep(60)
 
 
+def run_weight_reminder_watcher():
+    """Нагадування зважитись — перевірка кожну хвилину."""
+    print("=== Starting weight reminder watcher ===", flush=True)
+    time.sleep(80)
+    while True:
+        try:
+            _load_monitor().check_weight_reminder()
+        except Exception as e:
+            print(f"Weight reminder watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
 def run_traffic_shift_watcher():
     """Трафік перед зміною — о 05:00 і 17:00."""
     print("=== Starting traffic shift watcher ===", flush=True)
@@ -296,6 +308,7 @@ threading.Thread(target=run_shift_reminder_watcher,   daemon=True).start()
 threading.Thread(target=run_morning_brief_watcher,    daemon=True).start()
 threading.Thread(target=run_crypto_alert_watcher,     daemon=True).start()
 threading.Thread(target=run_weekly_plan_watcher,      daemon=True).start()
+threading.Thread(target=run_weight_reminder_watcher,  daemon=True).start()
 threading.Thread(target=run_traffic_shift_watcher,    daemon=True).start()
 threading.Thread(target=run_day_summary_watcher,      daemon=True).start()
 threading.Thread(target=run_event_done_watcher,       daemon=True).start()

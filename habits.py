@@ -342,6 +342,22 @@ def run():
             sent[night_post_key] = True
             save_sent(sent)
 
+        # Тижневий звіт ваги — щонеділі о 20:35
+        weight_weekly_key = f"weight_weekly_{today}"
+        if (now.weekday() == 6 and now.hour == 20 and now.minute >= 35
+                and not sent.get(weight_weekly_key)):
+            try:
+                from weight import format_weekly_weight_report
+                api("sendMessage", {
+                    "chat_id": TELEGRAM_CHAT,
+                    "text": format_weekly_weight_report(),
+                    "parse_mode": "HTML"
+                })
+                sent[weight_weekly_key] = True
+                save_sent(sent)
+            except Exception as e:
+                print(f"Weight weekly report error: {e}")
+
         # Тижневий звіт — щонеділі о 20:30
         if now.weekday() == 6 and now.hour == 20 and now.minute >= 30:
             wkey = f"weekly_{today}"
