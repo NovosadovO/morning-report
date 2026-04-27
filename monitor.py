@@ -295,6 +295,19 @@ def get_weather():
     if forecast_lines:
         result += "\n\n<b>Прогноз:</b>  " + "  │  ".join(forecast_lines[:6])
 
+    # Прогноз на завтра
+    tmax_tmr   = daily.get("temperature_2m_max",  [None, None])[1]
+    tmin_tmr   = daily.get("temperature_2m_min",  [None, None])[1]
+    code_tmr   = daily.get("weathercode",          [0,    0])[1]
+    precip_tmr = daily.get("precipitation_sum",   [None, None])[1]
+    if tmax_tmr is not None and tmin_tmr is not None:
+        desc_tmr = WMO.get(code_tmr, "—")
+        rain_tmr = f"  🌧 {precip_tmr:.1f} мм" if precip_tmr and precip_tmr > 0 else ""
+        result += (
+            f"\n\n<b>Завтра:</b>  {desc_tmr}  "
+            f"🔻{tmin_tmr:.0f}°  /  🔺{tmax_tmr:.0f}°{rain_tmr}"
+        )
+
     # Попередження
     warnings = []
     for i, t in enumerate(times):
