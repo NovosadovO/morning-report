@@ -340,10 +340,14 @@ HELP_TEXT = """
 🤖 <b>Команди бота:</b>
 
 /звіт — повний звіт зараз
+/тиждень — тижневий підсумок
+/сон — аналіз сну
 /ціни — ціни BTC/ETH/AVAX/ONDO
 /погода — погода Košice
 /календар — події на сьогодні
 /листи — останні email
+/вага — динаміка ваги
+/ліки — таблетки за тиждень
 /допомога — цей список
 """
 
@@ -403,6 +407,29 @@ def handle_command(chat_id, text):
     elif text in ["/листи", "листи"]:
         try:
             send(chat_id, get_emails())
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif text in ["/тиждень", "тиждень", "/підсумок", "підсумок"]:
+        send(chat_id, "⏳ Готую тижневий підсумок...")
+        try:
+            import sys, os as _os
+            sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+            from weekly_report import send_weekly_report
+            send_weekly_report()
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif text in ["/сон", "сон"]:
+        try:
+            from sleep import get_last_night_sleep, format_sleep_week_block
+            last = get_last_night_sleep()
+            week = format_sleep_week_block()
+            msg = ""
+            if last:
+                msg += f"<b>Минула ніч:</b>\n{last}\n\n"
+            msg += week
+            send(chat_id, msg)
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 

@@ -393,6 +393,20 @@ def run():
             except Exception as e:
                 print(f"Weight weekly report error: {e}")
 
+        # Недільний підсумок о 18:45 — повний звіт тижня
+        if now.weekday() == 6 and now.hour == 18 and now.minute >= 45:
+            sunday_key = f"sunday_summary_{today}"
+            if not sent.get(sunday_key):
+                try:
+                    import sys, os as _os
+                    sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+                    from weekly_report import send_weekly_report
+                    send_weekly_report()
+                    sent[sunday_key] = True
+                    save_sent(sent)
+                except Exception as e:
+                    print(f"Sunday summary error: {e}")
+
         # Тижневий звіт — щонеділі о 20:30
         if now.weekday() == 6 and now.hour == 20 and now.minute >= 30:
             wkey = f"weekly_{today}"
