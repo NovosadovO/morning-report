@@ -7,12 +7,24 @@ import os, json
 from datetime import datetime, timezone, timedelta
 
 WEIGHT_FILE = os.path.join("/tmp", "weight_data.json")
+INITIAL_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "weight_data_initial.json")
 
 
 def load_data():
+    # Спочатку /tmp, якщо немає — беремо initial з репозиторію
     try:
         with open(WEIGHT_FILE) as f:
-            return json.load(f)
+            data = json.load(f)
+        if data:
+            return data
+    except:
+        pass
+    try:
+        with open(INITIAL_FILE) as f:
+            data = json.load(f)
+        # Копіюємо в /tmp для подальших записів
+        save_data(data)
+        return data
     except:
         return {}
 
