@@ -348,6 +348,8 @@ HELP_TEXT = """
 /листи — останні email
 /вага — динаміка ваги
 /ліки — таблетки за тиждень
+/ліки місяць — за місяць
+/ліки курс — весь курс (27.04–27.07)
 /допомога — цей список
 """
 
@@ -434,10 +436,25 @@ def handle_command(chat_id, text):
             send(chat_id, f"⚠️ Помилка: {e}")
 
     elif text in ["/ліки", "ліки", "/armolopid"]:
-        send(chat_id, get_meds_report("week"))
+        try:
+            from meds import get_meds_report_full
+            send(chat_id, get_meds_report_full("week"))
+        except Exception as e:
+            send(chat_id, get_meds_report("week"))
 
     elif text in ["/ліки місяць", "ліки місяць"]:
-        send(chat_id, get_meds_report("month"))
+        try:
+            from meds import get_meds_report_full
+            send(chat_id, get_meds_report_full("month"))
+        except Exception as e:
+            send(chat_id, get_meds_report("month"))
+
+    elif text in ["/ліки курс", "ліки курс"]:
+        try:
+            from meds import get_meds_report_full
+            send(chat_id, get_meds_report_full("course"))
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
 
     elif text in ["/вага", "вага"]:
         try:

@@ -247,12 +247,17 @@ def run_weekly_plan_watcher():
 
 
 def run_meds_reminder_watcher():
-    """Нагадування про Armolopid Plus — перевірка кожну хвилину."""
+    """Нагадування про Armolopid Plus — перевірка кожну хвилину (новий meds.py)."""
     print("=== Starting meds reminder watcher ===", flush=True)
     time.sleep(85)
     while True:
         try:
-            _load_monitor().check_meds_reminder()
+            import importlib.util, os
+            spec = importlib.util.spec_from_file_location(
+                "meds", os.path.join(os.path.dirname(__file__), "meds.py"))
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            mod.check_meds_reminder()
         except Exception as e:
             print(f"Meds reminder watcher error: {e}", flush=True)
         time.sleep(60)

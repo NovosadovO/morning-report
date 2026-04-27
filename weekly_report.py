@@ -234,25 +234,26 @@ def block_habits():
     return "\n".join(lines)
 
 def block_meds():
-    """Блок ліків."""
-    db    = get_meds_data()
-    dates = get_week_dates()
-
-    taken = sum(1 for d in dates if db.get(d) is True)
-    missed = 7 - taken
-    pct = taken / 7 * 100
-    b = bar(taken, 7, 7)
-    medal = "✅" if taken == 7 else ("⚠️" if taken >= 5 else "❌")
-
-    lines = [
-        "💊 <b>ЛІКИ (Armolopid Plus)</b>",
-        f"<code>{b}</code> {taken}/7 {medal}",
-    ]
-    if missed > 0:
-        missed_dates = [d[5:] for d in dates if not db.get(d)]
-        lines.append(f"Пропущено: {', '.join(missed_dates)}")
-
-    return "\n".join(lines)
+    """Блок ліків — використовує meds.py."""
+    try:
+        import sys, os as _os
+        sys.path.insert(0, _DIR)
+        from meds import get_meds_report_full
+        return get_meds_report_full("week")
+    except Exception as e:
+        # fallback
+        db    = get_meds_data()
+        dates = get_week_dates()
+        taken = sum(1 for d in dates if db.get(d) is True)
+        missed = 7 - taken
+        pct = taken / 7 * 100
+        b = bar(taken, 7, 7)
+        medal = "✅" if taken == 7 else ("⚠️" if taken >= 5 else "❌")
+        lines = ["💊 <b>ЛІКИ (Armolopid Plus)</b>", f"<code>{b}</code> {taken}/7 {medal}"]
+        if missed > 0:
+            missed_dates = [d[5:] for d in dates if not db.get(d)]
+            lines.append(f"Пропущено: {', '.join(missed_dates)}")
+        return "\n".join(lines)
 
 def block_weight():
     """Блок ваги."""
