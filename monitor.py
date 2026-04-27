@@ -1914,3 +1914,103 @@ def check_weight_reminder():
 
     except Exception as e:
         print(f"check_weight_reminder error: {e}")
+
+# ─── ARMOLOPID PLUS — НАГАДУВАННЯ ────────────────────────────────────────────
+
+MEDS_FILE = os.path.join(_DATA_DIR, "monitor_meds.json")
+
+def check_meds_reminder():
+    """
+    Нагадує прийняти Armolopid Plus:
+    - 11:00 — вихідний день
+    - 13:15 — рання зміна
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+    today = now_local.strftime("%Y-%m-%d")
+
+    is_1100  = (h == 11 and 0  <= m <= 4)
+    is_1315  = (h == 13 and 15 <= m <= 19)
+    if not (is_1100 or is_1315):
+        return
+
+    state = load_json_file(MEDS_FILE, default={})
+    remind_key = f"remind_{today}_{h}"
+    if state.get(remind_key):
+        return
+
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    if not creds_json:
+        return
+
+    try:
+        creds_data = json.loads(creds_json)
+        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        headers = {"Authorization": f"Bearer {token}"}
+        cal_id = "novosadovoleg%40gmail.com"
+
+        day_start_utc = now_local.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        day_end_utc   = now_local.replace(hour=23, minute=59, second=59, microsecond=0) - timedelta(hours=2)
+        url = (
+            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+            f"?timeMin={urllib.parse.quote(day_start_utc.isoformat())}"
+            f"&timeMax={urllib.parse.quote(day_end_utc.isoformat())}"
+            f"&singleEvents=true&orderBy=startTime&maxResults=10"
+        )
+        if _HAS_REQUESTS:
+            r = _requests.get(url, headers=headers, timeout=15)
+            r.raise_for_status()
+            events = r.json().get("items", [])
+        else:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as r:
+                events = json.loads(r.read()).get("items", [])
+
+        has_early  = any("рання" in ev.get("summary","").lower() for ev in events)
+        has_shift  = any("зміна" in ev.get("summary","").lower() for ev in events)
+        is_day_off = not has_shift
+
+        if is_1100 and not is_day_off:
+            return
+        if is_1315 and not has_early:
+            return
+
+        # Надсилаємо з кнопками
+        bot_token  = os.environ.get("TELEGRAM_TOKEN", "8374312425:AAHqrQCEqrgtVdl5Te5WhWblM2ESCnqhpfk")
+        chat_id_tg = os.environ.get("TELEGRAM_CHAT_ID", "2100366814")
+
+        text = (
+            "━━━━━━━━━━━━━━━━━━━━━━\n"
+            "💊 <b>ARMOLOPID PLUS</b>\n"
+            "━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            "Час прийняти таблетку від холестерину!\n\n"
+            "<i>Прийняв сьогодні?</i>"
+        )
+        payload = json.dumps({
+            "chat_id": chat_id_tg,
+            "text": text,
+            "parse_mode": "HTML",
+            "reply_markup": {
+                "inline_keyboard": [[
+                    {"text": "✅ Прийняв", "callback_data": f"meds_yes_{today}"},
+                    {"text": "❌ Не прийняв", "callback_data": f"meds_no_{today}"},
+                ]]
+            }
+        }).encode()
+
+        import urllib.request as _ur
+        req2 = _ur.Request(
+            f"https://api.telegram.org/bot{bot_token}/sendMessage",
+            data=payload,
+            headers={"Content-Type": "application/json"},
+            method="POST"
+        )
+        with _ur.urlopen(req2, timeout=15) as resp:
+            resp.read()
+
+        print(f"Meds reminder sent at {h}:{m:02d}")
+        state[remind_key] = True
+        save_json_file(MEDS_FILE, state)
+
+    except Exception as e:
+        print(f"check_meds_reminder error: {e}")

@@ -246,6 +246,18 @@ def run_weekly_plan_watcher():
         time.sleep(60)
 
 
+def run_meds_reminder_watcher():
+    """Нагадування про Armolopid Plus — перевірка кожну хвилину."""
+    print("=== Starting meds reminder watcher ===", flush=True)
+    time.sleep(85)
+    while True:
+        try:
+            _load_monitor().check_meds_reminder()
+        except Exception as e:
+            print(f"Meds reminder watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
 def run_weight_reminder_watcher():
     """Нагадування зважитись — перевірка кожну хвилину."""
     print("=== Starting weight reminder watcher ===", flush=True)
@@ -308,6 +320,7 @@ threading.Thread(target=run_shift_reminder_watcher,   daemon=True).start()
 threading.Thread(target=run_morning_brief_watcher,    daemon=True).start()
 threading.Thread(target=run_crypto_alert_watcher,     daemon=True).start()
 threading.Thread(target=run_weekly_plan_watcher,      daemon=True).start()
+threading.Thread(target=run_meds_reminder_watcher,    daemon=True).start()
 threading.Thread(target=run_weight_reminder_watcher,  daemon=True).start()
 threading.Thread(target=run_traffic_shift_watcher,    daemon=True).start()
 threading.Thread(target=run_day_summary_watcher,      daemon=True).start()

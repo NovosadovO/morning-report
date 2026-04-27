@@ -104,6 +104,92 @@ def log_to_calendar(summary, date_str, hour, minute):
         print(f"Calendar log error: {e}")
 
 
+def handle_meds_callback(callback_query):
+    """Обробляє ✅/❌ відповідь на питання про ліки."""
+    import json as _json
+    data    = callback_query.get("data", "")
+    msg_id  = callback_query["message"]["message_id"]
+    chat_id = callback_query["message"]["chat"]["id"]
+    cb_id   = callback_query["id"]
+
+    # meds_yes_2026-04-27 або meds_no_2026-04-27
+    parts  = data.split("_", 2)
+    answer = parts[1]  # yes / no
+    date   = parts[2] if len(parts) > 2 else ""
+
+    meds_file = os.path.join(os.path.dirname(__file__), "meds_data.json")
+    try:
+        with open(meds_file) as f:
+            meds_db = _json.load(f)
+    except:
+        meds_db = {}
+
+    meds_db[date] = (answer == "yes")
+    with open(meds_file, "w") as f:
+        _json.dump(meds_db, f)
+
+    if answer == "yes":
+        reply = "━━━━━━━━━━━━━━━━━━━━━━\n💊 <b>ARMOLOPID PLUS</b>\n━━━━━━━━━━━━━━━━━━━━━━\n\n✅ <b>Прийнято!</b> Молодець 💪\nПродовжуй в тому ж дусі."
+    else:
+        reply = "━━━━━━━━━━━━━━━━━━━━━━\n💊 <b>ARMOLOPID PLUS</b>\n━━━━━━━━━━━━━━━━━━━━━━\n\n❌ <b>Не прийнято.</b>\nНе забудь прийняти при першій нагоді!"
+
+    api("editMessageText", {
+        "chat_id": chat_id,
+        "message_id": msg_id,
+        "text": reply,
+        "parse_mode": "HTML",
+        "reply_markup": {"inline_keyboard": []}
+    })
+    api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Записано ✓"})
+
+
+def get_meds_report(period="week"):
+    """Звіт про прийом ліків за тиждень або місяць."""
+    import json as _json
+    from datetime import datetime, timezone, timedelta
+    meds_file = os.path.join(os.path.dirname(__file__), "meds_data.json")
+    try:
+        with open(meds_file) as f:
+            db = _json.load(f)
+    except:
+        db = {}
+
+    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    if period == "week":
+        days = [(now - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(6, -1, -1)]
+        title = "тиждень"
+    else:
+        days = [(now - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(now.day - 1, -1, -1)]
+        title = now.strftime("%B %Y")
+
+    taken = sum(1 for d in days if db.get(d) is True)
+    missed = sum(1 for d in days if db.get(d) is False)
+    no_data = len(days) - taken - missed
+    pct = int(taken / len(days) * 100) if days else 0
+
+    stars = "⭐️" * min(taken, 7) + "☆" * (7 - min(taken, 7)) if period == "week" else ""
+
+    lines = [
+        f"💊 <b>Armolopid Plus — {title}</b>\n",
+        f"✅ Прийнято:    <b>{taken}</b> дн.",
+        f"❌ Пропущено:  <b>{missed}</b> дн.",
+        f"○  Немає даних: <b>{no_data}</b> дн.",
+    ]
+    if stars:
+        lines.append(f"\n{stars}  {pct}%")
+    else:
+        filled = int(pct / 10)
+        bar = "█" * filled + "▒" * (10 - filled)
+        lines.append(f"\n<code>[{bar}]</code>  {pct}%")
+
+    if pct == 100:   lines.append("🏆 Ідеально!")
+    elif pct >= 80:  lines.append("💪 Відмінно!")
+    elif pct >= 60:  lines.append("👍 Непогано")
+    else:            lines.append("⚠️ Намагайся не пропускати!")
+
+    return "\n".join(lines)
+
+
 def handle_event_done_callback(callback_query):
     """Обробляє ✅/❌ відповідь на питання 'Виконано?'."""
     import json as _json
@@ -320,6 +406,12 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
+    elif text in ["/ліки", "ліки", "/armolopid"]:
+        send(chat_id, get_meds_report("week"))
+
+    elif text in ["/ліки місяць", "ліки місяць"]:
+        send(chat_id, get_meds_report("month"))
+
     elif text in ["/вага", "вага"]:
         try:
             from weight import format_weekly_weight_report
@@ -365,6 +457,8 @@ def main():
                         data = cb.get("data", "")
                         if data.startswith("evdone_"):
                             handle_event_done_callback(cb)
+                        elif data.startswith("meds_"):
+                            handle_meds_callback(cb)
                         else:
                             handle_habit_callback(cb)
                     continue

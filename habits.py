@@ -342,6 +342,41 @@ def run():
             sent[night_post_key] = True
             save_sent(sent)
 
+        # Тижневий звіт ліків — щонеділі о 20:40
+        meds_weekly_key = f"meds_weekly_{today}"
+        if (now.weekday() == 6 and now.hour == 20 and now.minute >= 40
+                and not sent.get(meds_weekly_key)):
+            try:
+                import sys, os as _os
+                sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+                from bot import get_meds_report
+                api("sendMessage", {
+                    "chat_id": TELEGRAM_CHAT,
+                    "text": get_meds_report("week"),
+                    "parse_mode": "HTML"
+                })
+                sent[meds_weekly_key] = True
+                save_sent(sent)
+            except Exception as e:
+                print(f"Meds weekly report error: {e}")
+
+        # Місячний звіт ліків — останній день місяця о 21:05
+        next_day2 = (now + timedelta(days=1))
+        if next_day2.month != now.month and now.hour == 21 and now.minute >= 5:
+            mkey2 = f"meds_monthly_{now.strftime('%Y-%m')}"
+            if not sent.get(mkey2):
+                try:
+                    from bot import get_meds_report
+                    api("sendMessage", {
+                        "chat_id": TELEGRAM_CHAT,
+                        "text": get_meds_report("month"),
+                        "parse_mode": "HTML"
+                    })
+                    sent[mkey2] = True
+                    save_sent(sent)
+                except Exception as e:
+                    print(f"Meds monthly report error: {e}")
+
         # Тижневий звіт ваги — щонеділі о 20:35
         weight_weekly_key = f"weight_weekly_{today}"
         if (now.weekday() == 6 and now.hour == 20 and now.minute >= 35
