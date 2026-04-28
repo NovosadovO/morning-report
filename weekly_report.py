@@ -62,9 +62,14 @@ def get_week_dates():
     return [(now - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(6, -1, -1)]
 
 def get_habits_data():
-    """Завантажує дані звичок."""
-    path = "/tmp/habits_data.json"
-    return load_json(path, {})
+    """Завантажує дані звичок через storage (Google Sheets)."""
+    try:
+        import sys; sys.path.insert(0, _DIR)
+        from storage import load_habits
+        return load_habits()
+    except Exception as e:
+        print(f"get_habits_data error: {e}")
+        return load_json("/tmp/habits_data.json", {})
 
 def get_weight_data():
     """Завантажує дані ваги."""
@@ -76,9 +81,14 @@ def get_weight_data():
     return data
 
 def get_meds_data():
-    """Завантажує дані ліків."""
-    path = os.path.join(_DIR, "meds_data.json")
-    return load_json(path, {})
+    """Завантажує дані ліків через storage (Google Sheets)."""
+    try:
+        import sys; sys.path.insert(0, _DIR)
+        from storage import load_meds
+        return load_meds()
+    except Exception as e:
+        print(f"get_meds_data error: {e}")
+        return load_json(os.path.join(_DIR, "meds_data.json"), {})
 
 def get_runs_from_health():
     """Витягує пробіжки з Apple Health XML за останні 7 днів."""
