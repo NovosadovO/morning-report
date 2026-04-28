@@ -112,35 +112,40 @@ def handle_meds_callback(callback_query):
     chat_id = callback_query["message"]["chat"]["id"]
     cb_id   = callback_query["id"]
 
+    # ПЕРШИМ — підтверджуємо callback
+    api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Записано ✓"})
+
     # meds_yes_2026-04-27 або meds_no_2026-04-27
     parts  = data.split("_", 2)
     answer = parts[1]  # yes / no
     date   = parts[2] if len(parts) > 2 else ""
 
-    meds_file = os.path.join(os.path.dirname(__file__), "meds_data.json")
     try:
-        with open(meds_file) as f:
-            meds_db = _json.load(f)
-    except:
-        meds_db = {}
+        meds_file = os.path.join(os.path.dirname(__file__), "meds_data.json")
+        try:
+            with open(meds_file) as f:
+                meds_db = _json.load(f)
+        except:
+            meds_db = {}
 
-    meds_db[date] = (answer == "yes")
-    with open(meds_file, "w") as f:
-        _json.dump(meds_db, f)
+        meds_db[date] = (answer == "yes")
+        with open(meds_file, "w") as f:
+            _json.dump(meds_db, f)
 
-    if answer == "yes":
-        reply = "━━━━━━━━━━━━━━━━━━━━━━\n💊 <b>ARMOLOPID PLUS</b>\n━━━━━━━━━━━━━━━━━━━━━━\n\n✅ <b>Прийнято!</b> Молодець 💪\nПродовжуй в тому ж дусі."
-    else:
-        reply = "━━━━━━━━━━━━━━━━━━━━━━\n💊 <b>ARMOLOPID PLUS</b>\n━━━━━━━━━━━━━━━━━━━━━━\n\n❌ <b>Не прийнято.</b>\nНе забудь прийняти при першій нагоді!"
+        if answer == "yes":
+            reply = "💊 <b>ARMOLOPID PLUS</b>\n\n✅ <b>Прийнято!</b> Молодець 💪\nПродовжуй в тому ж дусі."
+        else:
+            reply = "💊 <b>ARMOLOPID PLUS</b>\n\n❌ <b>Не прийнято.</b>\nНе забудь прийняти при першій нагоді!"
 
-    api("editMessageText", {
-        "chat_id": chat_id,
-        "message_id": msg_id,
-        "text": reply,
-        "parse_mode": "HTML",
-        "reply_markup": {"inline_keyboard": []}
-    })
-    api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Записано ✓"})
+        api("editMessageText", {
+            "chat_id": chat_id,
+            "message_id": msg_id,
+            "text": reply,
+            "parse_mode": "HTML",
+            "reply_markup": {"inline_keyboard": []}
+        })
+    except Exception as e:
+        print(f"meds callback error: {e}")
 
 
 def get_meds_report(period="week"):
@@ -199,6 +204,9 @@ def handle_event_done_callback(callback_query):
     cb_id   = callback_query["id"]
     orig    = callback_query["message"].get("text", "")
 
+    # ПЕРШИМ — відповідаємо Telegram
+    api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Записано ✓"})
+
     # evdone_yes_<key> або evdone_no_<key>
     parts  = data.split("_", 2)
     answer = parts[1] if len(parts) > 1 else "?"
@@ -209,14 +217,16 @@ def handle_event_done_callback(callback_query):
     else:
         reply = orig.split("\n")[0] + "\n❌ <b>Не виконано.</b>"
 
-    api("editMessageText", {
-        "chat_id": chat_id,
-        "message_id": msg_id,
-        "text": reply,
-        "parse_mode": "HTML",
-        "reply_markup": {"inline_keyboard": []}
-    })
-    api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Записано ✓"})
+    try:
+        api("editMessageText", {
+            "chat_id": chat_id,
+            "message_id": msg_id,
+            "text": reply,
+            "parse_mode": "HTML",
+            "reply_markup": {"inline_keyboard": []}
+        })
+    except Exception as e:
+        print(f"event_done editMessage error: {e}")
 
     # Зберігаємо статус у файл для підсумку дня
     try:
@@ -244,28 +254,29 @@ def handle_habit_callback(callback_query):
     chat_id = callback_query["message"]["chat"]["id"]
     cb_id   = callback_query["id"]
 
+    # ПЕРШИМ — підтверджуємо callback, щоб Telegram прибрав годинник
+    api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Збережено ✓"})
+
     # Обробка сну
     if data.startswith("sleep_"):
-        hours = int(data.split("_")[1])
-        today    = today_key()
-        db       = load_data()
-        db.setdefault(today, {})["sleep"] = hours
-        save_data(db)
-        icons = {5: "😩", 6: "😐", 7: "🙂", 8: "😊"}
-        icon  = icons.get(hours, "😴")
-        label = f"{hours}г+" if hours == 8 else f"{hours}г"
-        api("editMessageText", {
-            "chat_id": chat_id,
-            "message_id": msg_id,
-            "text": f"😴 <b>Сон</b> — {label} записано  {icon}",
-            "parse_mode": "HTML",
-            "reply_markup": {"inline_keyboard": []}
-        })
-        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Збережено ✓"})
-        # Логуємо в календар
-        from datetime import datetime, timezone, timedelta
-        now_l = datetime.now(timezone.utc) + timedelta(hours=2)
-        log_to_calendar(f"😴 Сон — {label} {icon}", now_l.strftime("%Y-%m-%d"), 8, 0)
+        try:
+            hours = int(data.split("_")[1])
+            today    = today_key()
+            db       = load_data()
+            db.setdefault(today, {})["sleep"] = hours
+            save_data(db)
+            icons = {5: "😩", 6: "😐", 7: "🙂", 8: "😊"}
+            icon  = icons.get(hours, "😴")
+            label = f"{hours}г+" if hours == 8 else f"{hours}г"
+            api("editMessageText", {
+                "chat_id": chat_id,
+                "message_id": msg_id,
+                "text": f"😴 <b>Сон</b> — {label} записано  {icon}",
+                "parse_mode": "HTML",
+                "reply_markup": {"inline_keyboard": []}
+            })
+        except Exception as e:
+            print(f"sleep callback error: {e}")
         return True
 
     if not data.startswith("habit_"):
@@ -279,38 +290,36 @@ def handle_habit_callback(callback_query):
     if not habit:
         return False
 
-    # Зберігаємо результат
-    today    = today_key()
-    db       = load_data()
-    db.setdefault(today, {})[hab_id] = (answer == "yes")
-    save_data(db)
+    try:
+        # Зберігаємо результат
+        today    = today_key()
+        db       = load_data()
+        db.setdefault(today, {})[hab_id] = (answer == "yes")
+        save_data(db)
 
-    # Редагуємо повідомлення — прибираємо кнопки і показуємо результат
-    if answer == "yes":
-        reply = f"✅ <b>{habit['name']}</b> — зараховано! 💪"
-    else:
-        reply = f"❌ <b>{habit['name']}</b> — не зараховано. Завтра краще!"
+        if answer == "yes":
+            reply = f"✅ <b>{habit['name']}</b> — зараховано! 💪"
+        else:
+            reply = f"❌ <b>{habit['name']}</b> — не зараховано. Завтра краще!"
 
-    api("editMessageText", {
-        "chat_id": chat_id,
-        "message_id": msg_id,
-        "text": reply,
-        "parse_mode": "HTML",
-        "reply_markup": {"inline_keyboard": []}  # прибираємо кнопки
-    })
+        api("editMessageText", {
+            "chat_id": chat_id,
+            "message_id": msg_id,
+            "text": reply,
+            "parse_mode": "HTML",
+            "reply_markup": {"inline_keyboard": []}
+        })
+    except Exception as e:
+        print(f"habit callback error: {e}")
 
-    # Підтверджуємо callback (прибирає годинник)
-    api("answerCallbackQuery", {
-        "callback_query_id": cb_id,
-        "text": "Збережено ✓"
-    })
-
-    # Логуємо результат в Google Calendar
-    from datetime import datetime, timezone, timedelta
-    now_l = datetime.now(timezone.utc) + timedelta(hours=2)
-    mark = "✅" if answer == "yes" else "❌"
-    cal_summary = f"{habit['emoji']} {habit['name']} {mark}"
-    log_to_calendar(cal_summary, now_l.strftime("%Y-%m-%d"), habit["hour"], habit["minute"])
+    # Логуємо в Calendar — окремо, помилка не критична
+    try:
+        from datetime import datetime, timezone, timedelta
+        now_l = datetime.now(timezone.utc) + timedelta(hours=2)
+        mark = "✅" if answer == "yes" else "❌"
+        log_to_calendar(f"{habit['emoji']} {habit['name']} {mark}", now_l.strftime("%Y-%m-%d"), habit["hour"], habit["minute"])
+    except Exception as e:
+        print(f"habit log_to_calendar error: {e}")
 
     return True
 
