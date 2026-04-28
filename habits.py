@@ -165,14 +165,26 @@ def api(method, data=None):
 
 def load_data():
     try:
-        with open(HABITS_FILE) as f:
-            return json.load(f)
-    except:
-        return {}
+        import sys as _sys; _sys.path.insert(0, _DIR)
+        from storage import load_habits
+        return load_habits()
+    except Exception as e:
+        print(f"load_data error: {e}")
+        try:
+            with open(HABITS_FILE) as f:
+                return json.load(f)
+        except:
+            return {}
 
 def save_data(data):
-    with open(HABITS_FILE, "w") as f:
-        json.dump(data, f)
+    try:
+        import sys as _sys; _sys.path.insert(0, _DIR)
+        from storage import save_habits
+        save_habits(data)
+    except Exception as e:
+        print(f"save_data error: {e}")
+        with open(HABITS_FILE, "w") as f:
+            json.dump(data, f)
 
 def load_sent():
     try:
@@ -325,7 +337,7 @@ def weekly_report():
     for h in HABITS:
         done  = sum(1 for d in days if db.get(d, {}).get(h["id"]) is True)
         pct   = done / 7 * 100
-        bar   = "▓" * done + "░" * (7 - done)
+        bar   = "🟩" * done + "⬜️" * (7 - done)
         medal = "🥇" if done == 7 else ("🥈" if done >= 5 else ("🥉" if done >= 3 else "😔"))
         lines.append(f"{h['emoji']} <b>{h['name']}</b>\n"
                      f"<code>{bar}</code>  {done}/7  {pct:.0f}%  {medal}")
@@ -358,7 +370,7 @@ def monthly_report():
         done  = sum(1 for d in days if db.get(d, {}).get(h["id"]) is True)
         pct   = done / days_in_month * 100
         bar_l = int(pct / 10)
-        bar   = "▓" * bar_l + "░" * (10 - bar_l)
+        bar   = "🟩" * bar_l + "⬜️" * (10 - bar_l)
         medal = "🏆" if pct >= 90 else ("🥇" if pct >= 70 else ("🥈" if pct >= 50 else "💪"))
         lines.append(f"{h['emoji']} <b>{h['name']}</b>\n"
                      f"<code>{bar}</code>  {done}/{days_in_month}  {pct:.0f}%  {medal}")

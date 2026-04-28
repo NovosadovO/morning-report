@@ -121,16 +121,23 @@ def handle_meds_callback(callback_query):
     date   = parts[2] if len(parts) > 2 else ""
 
     try:
-        meds_file = "/tmp/meds_data.json"
         try:
-            with open(meds_file) as f:
-                meds_db = _json.load(f)
-        except:
-            meds_db = {}
-
-        meds_db[date] = (answer == "yes")
-        with open(meds_file, "w") as f:
-            _json.dump(meds_db, f)
+            import sys as _sys; _sys.path.insert(0, os.path.dirname(__file__))
+            from storage import load_meds as _lm, save_meds as _sm
+            meds_db = _lm()
+            meds_db[date] = (answer == "yes")
+            _sm(meds_db)
+        except Exception as _se:
+            print(f"meds save error: {_se}")
+            meds_file = "/tmp/meds_data.json"
+            try:
+                with open(meds_file) as f:
+                    meds_db = _json.load(f)
+            except:
+                meds_db = {}
+            meds_db[date] = (answer == "yes")
+            with open(meds_file, "w") as f:
+                _json.dump(meds_db, f)
 
         if answer == "yes":
             reply = "💊 <b>ARMOLOPID PLUS</b>\n\n✅ <b>Прийнято!</b> Молодець 💪\nПродовжуй в тому ж дусі."
@@ -184,7 +191,7 @@ def get_meds_report(period="week"):
         lines.append(f"\n{stars}  {pct}%")
     else:
         filled = int(pct / 10)
-        bar = "█" * filled + "▒" * (10 - filled)
+        bar = "🟩" * filled + "⬜️" * (10 - filled)
         lines.append(f"\n<code>[{bar}]</code>  {pct}%")
 
     if pct == 100:   lines.append("🏆 Ідеально!")
@@ -494,6 +501,16 @@ def handle_command(chat_id, text):
 
 def main():
     print("=== Bot started, listening for messages ===", flush=True)
+    # Print service account email for Google Sheets setup
+    try:
+        import json as _json
+        _creds = _json.loads(os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "{}"))
+        _email = _creds.get("client_email", "not found")
+        print(f"=== SERVICE ACCOUNT EMAIL: {_email} ===", flush=True)
+        _sheets_id = os.environ.get("GOOGLE_SHEETS_ID", "NOT SET")
+        print(f"=== GOOGLE_SHEETS_ID: {_sheets_id} ===", flush=True)
+    except Exception as _e:
+        print(f"=== Could not read service account: {_e} ===", flush=True)
     offset = load_offset()
 
     while True:

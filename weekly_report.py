@@ -52,7 +52,7 @@ def bar(value, max_val, width=8):
     """Прогрес-бар: bar(5, 7) → '▓▓▓▓▓░░'"""
     filled = round(value / max_val * width) if max_val > 0 else 0
     filled = max(0, min(width, filled))
-    return "▓" * filled + "░" * (width - filled)
+    return "🟩" * filled + "⬜️" * (width - filled)
 
 # ─── ДАНІ ─────────────────────────────────────────────────────────────────────
 

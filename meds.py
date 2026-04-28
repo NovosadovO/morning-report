@@ -62,25 +62,27 @@ def today_str():
     return now_local().strftime("%Y-%m-%d")
 
 def load_meds():
-    # /tmp спочатку, fallback на repo
     try:
-        with open(MEDS_FILE) as f:
-            data = json.load(f)
-        if data:
-            return data
-    except:
-        pass
-    try:
-        with open(MEDS_FILE_REPO) as f:
-            data = json.load(f)
-        save_meds(data)
-        return data
-    except:
-        return {}
+        import sys as _sys; _sys.path.insert(0, _DIR)
+        from storage import load_meds as _lm
+        return _lm()
+    except Exception as e:
+        print(f"load_meds error: {e}")
+        try:
+            with open(MEDS_FILE) as f:
+                return json.load(f)
+        except:
+            return {}
 
 def save_meds(db):
-    with open(MEDS_FILE, "w") as f:
-        json.dump(db, f)
+    try:
+        import sys as _sys; _sys.path.insert(0, _DIR)
+        from storage import save_meds as _sm
+        _sm(db)
+    except Exception as e:
+        print(f"save_meds error: {e}")
+        with open(MEDS_FILE, "w") as f:
+            json.dump(db, f)
 
 def load_sent():
     try:
