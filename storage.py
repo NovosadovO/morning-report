@@ -1,204 +1,125 @@
 #!/usr/bin/env python3
 """
-Persistent storage через Google Sheets.
-Замінює /tmp файли — дані не зникають між редеплоями.
-
-Структура таблиці (одна на весь проект):
-  Аркуш "habits"  — {date: {shower: true, run: false, ...}}
-  Аркуш "meds"    — {date: true/false}
-  Аркуш "weight"  — {date: 82.5}
-  Аркуш "sleep"   — {date: hours}
-
-Кожен рядок: [key, value_json]
+Persistent storage через GitHub repository.
+Зберігає JSON файли в repo NovosadovO/morning-report/data/
+Дані не зникають між редеплоями.
 """
 
-import os, json, time, urllib.request, urllib.parse
-from datetime import datetime, timezone, timedelta
+import os, json, time, base64, urllib.request, urllib.parse
+
+GITHUB_TOKEN = "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"
+GITHUB_REPO  = "NovosadovO/morning-report"
+GITHUB_API   = "https://api.github.com"
 
 _DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Кеш в пам'яті — щоб не робити запити кожні 30 сек
+# Кеш в пам'яті
 _CACHE = {}
 _CACHE_TIME = {}
-CACHE_TTL = 60  # секунд
+CACHE_TTL = 30  # секунд
 
-_TOKEN_CACHE = {"token": None, "exp": 0}
-
-def _get_token():
-    """Access token — та сама логіка що працює в monitor.py для Calendar."""
-    now_ts = int(time.time())
-    if _TOKEN_CACHE["token"] and now_ts < _TOKEN_CACHE["exp"] - 60:
-        return _TOKEN_CACHE["token"]
-
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
-    if not creds_json:
-        print("storage: GOOGLE_CALENDAR_CREDENTIALS not set")
-        return None
-    try:
-        import base64
-        creds = json.loads(creds_json)
-
-        def _b64url(data):
-            if isinstance(data, str):
-                data = data.encode()
-            return base64.urlsafe_b64encode(data).rstrip(b"=").decode()
-
-        header  = _b64url(json.dumps({"alg": "RS256", "typ": "JWT"}))
-        payload = _b64url(json.dumps({
-            "iss": creds["client_email"],
-            "scope": "https://www.googleapis.com/auth/spreadsheets",
-            "aud": "https://oauth2.googleapis.com/token",
-            "iat": now_ts,
-            "exp": now_ts + 3600,
-        }))
-        signing_input = f"{header}.{payload}".encode()
-
-        try:
-            from cryptography.hazmat.primitives import hashes, serialization
-            from cryptography.hazmat.primitives.asymmetric import padding
-            private_key = serialization.load_pem_private_key(
-                creds["private_key"].encode(), password=None)
-            signature = private_key.sign(signing_input, padding.PKCS1v15(), hashes.SHA256())
-        except Exception:
-            import subprocess, tempfile
-            with tempfile.NamedTemporaryFile(suffix=".pem", delete=False, mode="w") as f:
-                f.write(creds["private_key"])
-                pem_path = f.name
-            proc = subprocess.run(
-                ["openssl", "dgst", "-sha256", "-sign", pem_path],
-                input=signing_input, capture_output=True)
-            signature = proc.stdout
-            import os as _os; _os.unlink(pem_path)
-
-        jwt_token = f"{header}.{payload}.{_b64url(signature)}"
-        post_data = urllib.parse.urlencode({
-            "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-            "assertion": jwt_token,
-        }).encode()
-        req = urllib.request.Request(
-            "https://oauth2.googleapis.com/token",
-            data=post_data,
-            headers={"Content-Type": "application/x-www-form-urlencoded"}
-        )
-        with urllib.request.urlopen(req, timeout=15) as r:
-            resp = json.loads(r.read())
-        token = resp["access_token"]
-        _TOKEN_CACHE["token"] = token
-        _TOKEN_CACHE["exp"] = now_ts + resp.get("expires_in", 3600)
-        print(f"storage: token OK")
-        return token
-    except Exception as e:
-        print(f"storage token error: {e}")
-        return None
-
-def _get_sheet_id():
-    return os.environ.get("GOOGLE_SHEETS_ID", "")
-
-def _sheets_request(method, path, body=None):
-    """GET або PUT/POST до Sheets API."""
-    token = _get_token()
-    if not token:
-        return None
-    url = f"https://sheets.googleapis.com/v4/spreadsheets/{_get_sheet_id()}/{path}"
+def _gh_request(method, path, body=None):
+    url = f"{GITHUB_API}/repos/{GITHUB_REPO}/contents/{path}"
     headers = {
-        "Authorization": f"Bearer {token}",
-        "Content-Type": "application/json"
+        "Authorization": f"token {GITHUB_TOKEN}",
+        "Content-Type": "application/json",
+        "Accept": "application/vnd.github.v3+json",
+        "User-Agent": "morning-report-bot"
     }
     try:
         data = json.dumps(body).encode() if body else None
         req = urllib.request.Request(url, data=data, headers=headers, method=method)
         with urllib.request.urlopen(req, timeout=15) as r:
-            result = json.loads(r.read())
-            print(f"sheets OK [{method} {path[:50]}]")
-            return result
+            return json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            return None
+        body_err = e.read().decode()
+        print(f"GitHub {method} {path} error {e.code}: {body_err[:200]}")
+        return None
     except Exception as e:
-        print(f"sheets ERROR [{method} {path[:60]}]: {e}")
+        print(f"GitHub error [{method} {path}]: {e}")
         return None
 
-def _load_sheet(sheet_name):
-    """Завантажує аркуш як dict {key: value}."""
-    cache_key = f"sheet_{sheet_name}"
+def _load_github(filename):
+    """Читає JSON файл з GitHub repo."""
+    cache_key = filename
     now = time.time()
     if cache_key in _CACHE and now - _CACHE_TIME.get(cache_key, 0) < CACHE_TTL:
         return _CACHE[cache_key]
 
-    result = _sheets_request("GET", f"values/{urllib.parse.quote(sheet_name)}!A:B")
+    result = _gh_request("GET", f"data/{filename}")
     if not result:
-        return _load_local_fallback(sheet_name)
+        return _load_local(filename)
 
-    rows = result.get("values", [])
-    data = {}
-    for row in rows:
-        if len(row) >= 2:
-            try:
-                data[row[0]] = json.loads(row[1])
-            except:
-                data[row[0]] = row[1]
+    try:
+        content = base64.b64decode(result["content"]).decode()
+        data = json.loads(content)
+        _CACHE[cache_key] = data
+        _CACHE_TIME[cache_key] = now
+        print(f"storage: loaded {filename} from GitHub ({len(data)} keys)")
+        return data
+    except Exception as e:
+        print(f"storage parse error {filename}: {e}")
+        return _load_local(filename)
 
-    _CACHE[cache_key] = data
-    _CACHE_TIME[cache_key] = now
-    return data
+def _save_github(filename, data):
+    """Зберігає JSON файл в GitHub repo."""
+    _CACHE[filename] = data
+    _CACHE_TIME[filename] = time.time()
 
-def _save_sheet(sheet_name, data):
-    """Зберігає весь dict назад у аркуш."""
-    _CACHE[f"sheet_{sheet_name}"] = data
-    _CACHE_TIME[f"sheet_{sheet_name}"] = time.time()
+    # Також локально
+    _save_local(filename, data)
 
-    # Також зберігаємо локально як fallback
-    _save_local_fallback(sheet_name, data)
+    content = base64.b64encode(json.dumps(data, ensure_ascii=False, indent=2).encode()).decode()
 
-    if not _get_sheet_id():
-        return False
-
-    values = [["key", "value"]]
-    for k, v in data.items():
-        values.append([k, json.dumps(v)])
+    # Отримуємо поточний SHA (потрібен для update)
+    existing = _gh_request("GET", f"data/{filename}")
+    sha = existing["sha"] if existing else None
 
     body = {
-        "values": values,
-        "majorDimension": "ROWS"
+        "message": f"update {filename}",
+        "content": content,
     }
-    result = _sheets_request(
-        "PUT",
-        f"values/{urllib.parse.quote(sheet_name)}!A1?valueInputOption=RAW",
-        body
-    )
-    return result is not None
+    if sha:
+        body["sha"] = sha
 
-def _load_local_fallback(sheet_name):
-    """Fallback — читає з /tmp."""
-    path = f"/tmp/{sheet_name}_data.json"
+    result = _gh_request("PUT", f"data/{filename}", body)
+    if result:
+        print(f"storage: saved {filename} to GitHub")
+        return True
+    else:
+        print(f"storage: failed to save {filename} to GitHub")
+        return False
+
+def _load_local(filename):
     try:
-        with open(path) as f:
+        with open(f"/tmp/{filename}") as f:
             return json.load(f)
     except:
         return {}
 
-def _save_local_fallback(sheet_name, data):
-    """Backup в /tmp."""
-    path = f"/tmp/{sheet_name}_data.json"
+def _save_local(filename, data):
     try:
-        with open(path, "w") as f:
+        with open(f"/tmp/{filename}", "w") as f:
             json.dump(data, f)
     except:
         pass
 
-def invalidate_cache(sheet_name):
-    _CACHE_TIME[f"sheet_{sheet_name}"] = 0
+def invalidate_cache(filename):
+    _CACHE_TIME[filename] = 0
 
 # ─── PUBLIC API ───────────────────────────────────────────────────────────────
 
 def load_habits():
-    return _load_sheet("habits")
+    return _load_github("habits.json")
 
 def save_habits(data):
-    return _save_sheet("habits", data)
+    return _save_github("habits.json", data)
 
 def load_meds():
-    """Завантажує meds — fallback на repo meds_data.json."""
-    data = _load_sheet("meds")
+    data = _load_github("meds.json")
     if not data:
-        # Початкові дані з репо
         repo_file = os.path.join(_DIR, "meds_data.json")
         try:
             with open(repo_file) as f:
@@ -209,10 +130,10 @@ def load_meds():
     return data
 
 def save_meds(data):
-    return _save_sheet("meds", data)
+    return _save_github("meds.json", data)
 
 def load_weight():
-    data = _load_sheet("weight")
+    data = _load_github("weight.json")
     if not data:
         initial = os.path.join(_DIR, "weight_data_initial.json")
         try:
@@ -224,4 +145,4 @@ def load_weight():
     return data
 
 def save_weight(data):
-    return _save_sheet("weight", data)
+    return _save_github("weight.json", data)
