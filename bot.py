@@ -405,6 +405,7 @@ HELP_TEXT = """
 🤖 <b>Команди бота:</b>
 
 /звички — відмітити звички вручну
+/статус — детальний звіт по кожній звичці (7 днів)
 /звіт — повний звіт зараз
 /тиждень — тижневий підсумок
 /сон — аналіз сну
@@ -480,6 +481,45 @@ def handle_command(chat_id, text):
         ])
 
         send_with_keyboard(chat_id, "\n".join(lines), keyboard)
+
+    elif text in ["/статус", "статус"]:
+        from habits import HABITS, load_data, now_local
+        from datetime import datetime, timezone, timedelta
+        db  = load_data()
+        now = now_local()
+        # Останні 7 днів
+        days = [(now - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(6, -1, -1)]
+
+        all_habits = [{"id": "shower", "name": "Холодний душ", "emoji": "🚿"}] + HABITS
+        parts = []
+        for h in all_habits:
+            taken   = sum(1 for d in days if db.get(d, {}).get(h["id"]) is True)
+            missed  = sum(1 for d in days if db.get(d, {}).get(h["id"]) is False)
+            no_data = 7 - taken - missed
+            pct     = int(taken / 7 * 100)
+            bar     = "🟩" * taken + "⬜️" * (7 - taken)
+            if pct == 100:   rating = "🏆 Ідеально!"
+            elif pct >= 85:  rating = "💪 Відмінно!"
+            elif pct >= 57:  rating = "👍 Непогано"
+            else:            rating = "⚠️ Намагайся не пропускати!"
+
+            lines_h = [
+                f"{h['emoji']} <b>{h['name']}</b>",
+                f"{bar}  {pct}%",
+                f"✅ Виконано:    <b>{taken}</b> дн.",
+                f"❌ Пропущено:  <b>{missed}</b> дн.",
+                f"○  Немає даних: <b>{no_data}</b> дн.",
+                rating,
+                "<b>По днях:</b>",
+            ]
+            for d in days:
+                d_short = d[5:]
+                v = db.get(d, {}).get(h["id"])
+                icon = "✅" if v is True else ("❌" if v is False else "○")
+                lines_h.append(f"  {d_short}  {icon}")
+            parts.append("\n".join(lines_h))
+
+        send(chat_id, f"📊 <b>Статус звичок (7 днів)</b>\n\n" + "\n\n─────────────\n\n".join(parts))
 
     elif text in ["/звіт", "звіт"]:
         send(chat_id, "⏳ Збираю звіт...")
