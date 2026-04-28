@@ -124,10 +124,15 @@ def handle_meds_callback(callback_query):
     # ПЕРШИМ — підтверджуємо callback
     api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Записано ✓"})
 
-    # meds_yes_2026-04-27 або meds_no_2026-04-27
+    # meds_yes_2026-04-27 або meds_no_2026-04-27 або meds_yes_today
     parts  = data.split("_", 2)
     answer = parts[1]  # yes / no
-    date   = parts[2] if len(parts) > 2 else ""
+    date_raw = parts[2] if len(parts) > 2 else ""
+    if date_raw == "today":
+        from datetime import datetime, timezone, timedelta
+        date = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+    else:
+        date = date_raw
 
     try:
         try:
@@ -437,26 +442,39 @@ def handle_command(chat_id, text):
 
     elif text in ["/звички", "звички"]:
         from habits import HABITS, load_data, today_key
-        data = load_data()
+        from meds import load_meds, save_meds, now_local, MEDS_NAME, MEDS_START, MEDS_END
+        hab_data = load_data()
         today = today_key()
-        day_data = data.get(today, {})
+        day_data = hab_data.get(today, {})
 
         all_habits = [{"id": "shower", "name": "Холодний душ", "emoji": "🚿"}] + HABITS
         keyboard = []
         for h in all_habits:
             done = day_data.get(h["id"])
-            if done is True:
-                status = "✅"
-            elif done is False:
-                status = "❌"
-            else:
-                status = "⬜️"
+            status = "✅" if done is True else ("❌" if done is False else "⬜️")
             keyboard.append([
-                {"text": f"{h['emoji']} {h['name']} {status}", "callback_data": f"habit_toggle_{h['id']}"},
+                {"text": f"✅ {h['emoji']} {h['name']}", "callback_data": f"habit_yes_{h['id']}"},
+                {"text": f"❌", "callback_data": f"habit_no_{h['id']}"},
             ])
 
+        # Таблетки
+        meds_db = load_meds()
+        meds_today = meds_db.get(today)
+        meds_status = "✅" if meds_today is True else ("❌" if meds_today is False else "⬜️")
+        keyboard.append([
+            {"text": f"✅ 💊 {MEDS_NAME}", "callback_data": "meds_yes_today"},
+            {"text": "❌", "callback_data": "meds_no_today"},
+        ])
+
+        lines = []
+        for h in all_habits:
+            done = day_data.get(h["id"])
+            s = "✅" if done is True else ("❌" if done is False else "⬜️")
+            lines.append(f"{s} {h['emoji']} {h['name']}")
+        lines.append(f"{meds_status} 💊 {MEDS_NAME}")
+
         send_with_keyboard(chat_id,
-            "📋 <b>Звички сьогодні</b>\nНатисни щоб відмітити ✅/❌",
+            "📋 <b>Звички сьогодні</b>\n" + "\n".join(lines),
             keyboard)
 
     elif text in ["/звіт", "звіт"]:

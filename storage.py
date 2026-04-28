@@ -96,9 +96,11 @@ def _sheets_request(method, path, body=None):
         data = json.dumps(body).encode() if body else None
         req = urllib.request.Request(url, data=data, headers=headers, method=method)
         with urllib.request.urlopen(req, timeout=15) as r:
-            return json.loads(r.read())
+            result = json.loads(r.read())
+            print(f"sheets OK [{method} {path[:50]}]")
+            return result
     except Exception as e:
-        print(f"sheets error [{method} {path[:60]}]: {e}")
+        print(f"sheets ERROR [{method} {path[:60]}]: {e}")
         return None
 
 def _load_sheet(sheet_name):
