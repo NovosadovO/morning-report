@@ -151,26 +151,49 @@ def _get_today_shift_type():
 
 # ─── НАГАДУВАННЯ ТАБЛЕТКИ ─────────────────────────────────────────────────────
 
+def _progress_bar(day_n, total=92, width=10):
+    """Прогрес-бар емодзі — нормально рендериться в Telegram."""
+    filled = round(day_n / total * width)
+    filled = max(0, min(width, filled))
+    return "🟩" * filled + "⬜️" * (width - filled)
+
+def _motivational_note(day_n, remaining):
+    """Маленька мотивашка залежно від прогресу."""
+    if day_n == 1:
+        return "🚀 Перший день — відмінний початок!"
+    elif day_n == 7:
+        return "🎉 Тиждень позаду — так тримати!"
+    elif day_n == 30:
+        return "💪 Місяць пройдено — ти молодець!"
+    elif day_n == 60:
+        return "🔥 Два місяці! Залишився останній!"
+    elif remaining <= 14:
+        return f"🏁 Фінішна пряма — {remaining} дн. до кінця!"
+    elif remaining <= 7:
+        return f"⚡️ Майже фінiш — ще {remaining} дн.!"
+    elif day_n % 10 == 0:
+        return f"✨ {day_n} днів — ти крутий!"
+    else:
+        return "💊 Регулярний прийом — запорука результату"
+
 def _send_meds_question(today):
     day_n     = days_into_course()
     remaining = days_remaining()
 
-    if remaining > 0:
-        progress_note = f"День <b>{day_n}</b> з 92  ·  залишилось <b>{remaining}</b> дн."
-    else:
-        progress_note = f"🔚 Сьогодні <b>останній день</b> курсу!"
+    bar = _progress_bar(day_n)
+    pct = min(round(day_n / 92 * 100), 100)
+    note = _motivational_note(day_n, remaining)
 
-    # Прогрес-бар
-    pct   = min(day_n / 92 * 100, 100)
-    filled = int(pct / 10)
-    bar   = "█" * filled + "▒" * (10 - filled)
+    if remaining > 0:
+        progress_line = f"День <b>{day_n}</b> / 92  ·  ще <b>{remaining}</b> дн."
+    else:
+        progress_line = "🔚 Сьогодні <b>останній день</b> курсу!"
 
     text = (
-        f"━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"💊 <b>ARMOLOPID PLUS</b>\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━\n\n"
-        f"{progress_note}\n"
-        f"<code>[{bar}]</code>  {pct:.0f}%\n\n"
+        f"💊 <b>ARMOLOPID PLUS</b>\n\n"
+        f"{bar}  {pct}%\n"
+        f"{progress_line}\n\n"
+        f"{note}\n\n"
         f"<i>Прийняв таблетку сьогодні?</i>"
     )
 
@@ -236,12 +259,16 @@ def check_meds_reminder():
         # Надсилаємо повторне через 2г після закриття вікна
         repeat_start = window_end + 120
         if cur_min >= repeat_start:
+            day_n2 = days_into_course()
+            bar2   = _progress_bar(day_n2)
+            pct2   = min(round(day_n2 / 92 * 100), 100)
             api("sendMessage", {
                 "chat_id": TELEGRAM_CHAT,
                 "text": (
-                    f"⚠️ <b>Нагадування!</b>\n"
-                    f"💊 Ти ще не відмітив <b>{MEDS_NAME}</b> сьогодні.\n"
-                    f"Прийняв таблетку?"
+                    f"⏰ <b>Ще не відмітив ліки!</b>\n\n"
+                    f"{bar2}  {pct2}%\n"
+                    f"День {day_n2} / 92\n\n"
+                    f"💊 <b>{MEDS_NAME}</b> — прийняв сьогодні?"
                 ),
                 "parse_mode": "HTML",
                 "reply_markup": {
@@ -310,23 +337,22 @@ def get_meds_report_full(period="week"):
     # Прогрес курсу
     day_n     = days_into_course()
     remaining = days_remaining()
-    course_pct = min(day_n / 92 * 100, 100)
-    cf = int(course_pct / 10)
-    course_bar = "█" * cf + "▒" * (10 - cf)
+    course_pct = min(round(day_n / 92 * 100), 100)
+    course_bar = _progress_bar(day_n)
 
-    # Звіт бар
-    filled = int(pct / 10)
-    bar    = "█" * filled + "▒" * (10 - filled)
+    # Звіт бар (по взятих/всього)
+    report_filled = round(pct / 10)
+    report_bar = "🟩" * report_filled + "⬜️" * (10 - report_filled)
 
     lines = [
         f"💊 <b>Armolopid Plus — {title}</b>\n",
         f"📅 Курс: день <b>{day_n}</b> / 92",
-        f"<code>[{course_bar}]</code>  {course_pct:.0f}%",
+        f"{course_bar}  {course_pct}%",
         f"⏳ Залишилось: <b>{max(remaining, 0)}</b> дн.  (кінець: 27.07.2026)\n",
         f"✅ Прийнято:    <b>{taken}</b> дн.",
         f"❌ Пропущено:  <b>{missed}</b> дн.",
         f"○  Немає даних: <b>{no_data}</b> дн.",
-        f"\n<code>[{bar}]</code>  <b>{pct}%</b>",
+        f"\n{report_bar}  <b>{pct}%</b>",
     ]
 
     if pct == 100:   lines.append("🏆 Ідеально!")
