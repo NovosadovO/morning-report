@@ -25,7 +25,7 @@ CACHE_TTL = 60  # секунд
 _TOKEN_CACHE = {"token": None, "exp": 0}
 
 def _get_token():
-    """JWT auth для service account — без зовнішніх залежностей."""
+    """Access token через google-auth (service account)."""
     now_ts = int(time.time())
     if _TOKEN_CACHE["token"] and now_ts < _TOKEN_CACHE["exp"] - 60:
         return _TOKEN_CACHE["token"]
@@ -35,45 +35,22 @@ def _get_token():
         print("storage: GOOGLE_CALENDAR_CREDENTIALS not set")
         return None
     try:
-        import base64
-        creds = json.loads(creds_json)
+        import json as _json, tempfile
+        from google.oauth2 import service_account
 
-        def b64url(data):
-            if isinstance(data, str):
-                data = data.encode()
-            return base64.urlsafe_b64encode(data).rstrip(b"=").decode()
-
-        header  = b64url(json.dumps({"alg": "RS256", "typ": "JWT"}))
-        payload = b64url(json.dumps({
-            "iss": creds["client_email"],
-            "scope": "https://www.googleapis.com/auth/spreadsheets",
-            "aud": "https://oauth2.googleapis.com/token",
-            "iat": now_ts,
-            "exp": now_ts + 3600,
-        }))
-        signing_input = f"{header}.{payload}".encode()
-
-        from cryptography.hazmat.primitives import hashes, serialization
-        from cryptography.hazmat.primitives.asymmetric import padding
-        private_key = serialization.load_pem_private_key(
-            creds["private_key"].encode(), password=None)
-        signature = private_key.sign(signing_input, padding.PKCS1v15(), hashes.SHA256())
-
-        jwt = f"{header}.{payload}.{b64url(signature)}"
-        post_data = urllib.parse.urlencode({
-            "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-            "assertion": jwt
-        }).encode()
-        req = urllib.request.Request(
-            "https://oauth2.googleapis.com/token",
-            data=post_data,
-            headers={"Content-Type": "application/x-www-form-urlencoded"}
+        creds_data = _json.loads(creds_json)
+        # Пишемо в tmpfile бо from_service_account_info потребує dict
+        credentials = service_account.Credentials.from_service_account_info(
+            creds_data,
+            scopes=["https://www.googleapis.com/auth/spreadsheets"]
         )
-        with urllib.request.urlopen(req, timeout=15) as r:
-            resp = json.loads(r.read())
-        token = resp.get("access_token")
+        import google.auth.transport.requests
+        credentials.refresh(google.auth.transport.requests.Request())
+        token = credentials.token
+        exp = int(credentials.expiry.timestamp()) if credentials.expiry else now_ts + 3600
         _TOKEN_CACHE["token"] = token
-        _TOKEN_CACHE["exp"] = now_ts + resp.get("expires_in", 3600)
+        _TOKEN_CACHE["exp"] = exp
+        print(f"storage: token OK (expires {exp - now_ts}s)")
         return token
     except Exception as e:
         print(f"storage token error: {e}")
