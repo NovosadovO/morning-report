@@ -121,7 +121,7 @@ def handle_meds_callback(callback_query):
     date   = parts[2] if len(parts) > 2 else ""
 
     try:
-        meds_file = os.path.join(os.path.dirname(__file__), "meds_data.json")
+        meds_file = "/tmp/meds_data.json"
         try:
             with open(meds_file) as f:
                 meds_db = _json.load(f)
@@ -152,7 +152,7 @@ def get_meds_report(period="week"):
     """Звіт про прийом ліків за тиждень або місяць."""
     import json as _json
     from datetime import datetime, timezone, timedelta
-    meds_file = os.path.join(os.path.dirname(__file__), "meds_data.json")
+    meds_file = "/tmp/meds_data.json"
     try:
         with open(meds_file) as f:
             db = _json.load(f)

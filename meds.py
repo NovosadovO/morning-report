@@ -24,7 +24,8 @@ TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
 TELEGRAM_CHAT  = os.environ["TELEGRAM_CHAT_ID"]
 
 _DIR       = os.path.dirname(os.path.abspath(__file__))
-MEDS_FILE  = os.path.join(_DIR, "meds_data.json")
+MEDS_FILE_REPO = os.path.join(_DIR, "meds_data.json")
+MEDS_FILE      = os.path.join("/tmp", "meds_data.json")
 MEDS_SENT  = os.path.join("/tmp", "meds_sent.json")
 
 MEDS_START = "2026-04-27"
@@ -61,9 +62,19 @@ def today_str():
     return now_local().strftime("%Y-%m-%d")
 
 def load_meds():
+    # /tmp спочатку, fallback на repo
     try:
         with open(MEDS_FILE) as f:
-            return json.load(f)
+            data = json.load(f)
+        if data:
+            return data
+    except:
+        pass
+    try:
+        with open(MEDS_FILE_REPO) as f:
+            data = json.load(f)
+        save_meds(data)
+        return data
     except:
         return {}
 
