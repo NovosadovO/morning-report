@@ -50,6 +50,15 @@ def send(chat_id, text):
     })
 
 
+def send_with_keyboard(chat_id, text, keyboard):
+    api("sendMessage", {
+        "chat_id": chat_id,
+        "text": text,
+        "parse_mode": "HTML",
+        "reply_markup": {"inline_keyboard": keyboard}
+    })
+
+
 def send_with_buttons(chat_id, text, habit_id):
     return api("sendMessage", {
         "chat_id": chat_id,
@@ -289,11 +298,46 @@ def handle_habit_callback(callback_query):
     if not data.startswith("habit_"):
         return False
 
-    parts  = data.split("_")   # habit_yes_shower
-    answer = parts[1]           # yes / no
+    parts  = data.split("_")   # habit_yes_shower або habit_toggle_shower
+    action = parts[1]           # yes / no / toggle
     hab_id = parts[2]           # shower / run / water
 
-    habit = next((h for h in HABITS if h["id"] == hab_id), None)
+    # habit_toggle_ — з команди /звички (перемикає стан)
+    if action == "toggle":
+        all_habits = [{"id": "shower", "name": "Холодний душ", "emoji": "🚿"}] + HABITS
+        habit = next((h for h in all_habits if h["id"] == hab_id), None)
+        if not habit:
+            return False
+        try:
+            today = today_key()
+            db = load_data()
+            day_data = db.setdefault(today, {})
+            current = day_data.get(hab_id)
+            # toggle: None→True→False→True
+            day_data[hab_id] = False if current is True else True
+            save_data(db)
+
+            # Оновлюємо весь список кнопок
+            keyboard = []
+            for h in all_habits:
+                done = db[today].get(h["id"])
+                status = "✅" if done is True else ("❌" if done is False else "⬜️")
+                keyboard.append([
+                    {"text": f"{h['emoji']} {h['name']} {status}", "callback_data": f"habit_toggle_{h['id']}"},
+                ])
+            api("editMessageReplyMarkup", {
+                "chat_id": chat_id,
+                "message_id": msg_id,
+                "reply_markup": {"inline_keyboard": keyboard}
+            })
+        except Exception as e:
+            print(f"habit toggle error: {e}")
+        return True
+
+    answer = action  # yes / no
+
+    all_h = [{"id": "shower", "name": "Холодний душ", "emoji": "🚿"}] + HABITS
+    habit = next((h for h in all_h if h["id"] == hab_id), None)
     if not habit:
         return False
 
@@ -355,6 +399,7 @@ def save_offset(offset):
 HELP_TEXT = """
 🤖 <b>Команди бота:</b>
 
+/звички — відмітити звички вручну
 /звіт — повний звіт зараз
 /тиждень — тижневий підсумок
 /сон — аналіз сну
@@ -389,6 +434,30 @@ def handle_command(chat_id, text):
 
     elif text in ["/допомога", "/help", "допомога"]:
         send(chat_id, HELP_TEXT)
+
+    elif text in ["/звички", "звички"]:
+        from habits import HABITS, load_data, today_key
+        data = load_data()
+        today = today_key()
+        day_data = data.get(today, {})
+
+        all_habits = [{"id": "shower", "name": "Холодний душ", "emoji": "🚿"}] + HABITS
+        keyboard = []
+        for h in all_habits:
+            done = day_data.get(h["id"])
+            if done is True:
+                status = "✅"
+            elif done is False:
+                status = "❌"
+            else:
+                status = "⬜️"
+            keyboard.append([
+                {"text": f"{h['emoji']} {h['name']} {status}", "callback_data": f"habit_toggle_{h['id']}"},
+            ])
+
+        send_with_keyboard(chat_id,
+            "📋 <b>Звички сьогодні</b>\nНатисни щоб відмітити ✅/❌",
+            keyboard)
 
     elif text in ["/звіт", "звіт"]:
         send(chat_id, "⏳ Збираю звіт...")
