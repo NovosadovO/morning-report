@@ -448,34 +448,38 @@ def handle_command(chat_id, text):
         day_data = hab_data.get(today, {})
 
         all_habits = [{"id": "shower", "name": "Холодний душ", "emoji": "🚿"}] + HABITS
-        keyboard = []
-        for h in all_habits:
-            done = day_data.get(h["id"])
-            status = "✅" if done is True else ("❌" if done is False else "⬜️")
-            keyboard.append([
-                {"text": f"✅ {h['emoji']} {h['name']}", "callback_data": f"habit_yes_{h['id']}"},
-                {"text": f"❌", "callback_data": f"habit_no_{h['id']}"},
-            ])
-
-        # Таблетки
         meds_db = load_meds()
         meds_today = meds_db.get(today)
         meds_status = "✅" if meds_today is True else ("❌" if meds_today is False else "⬜️")
-        keyboard.append([
-            {"text": f"✅ 💊 {MEDS_NAME}", "callback_data": "meds_yes_today"},
-            {"text": "❌", "callback_data": "meds_no_today"},
-        ])
 
-        lines = []
+        from datetime import datetime, timezone, timedelta
+        date_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%d.%m")
+
+        lines = [f"📋 <b>Звички {date_str}</b>\n"]
         for h in all_habits:
             done = day_data.get(h["id"])
             s = "✅" if done is True else ("❌" if done is False else "⬜️")
             lines.append(f"{s} {h['emoji']} {h['name']}")
         lines.append(f"{meds_status} 💊 {MEDS_NAME}")
+        lines.append("\n<i>Натисни щоб змінити:</i>")
 
-        send_with_keyboard(chat_id,
-            "📋 <b>Звички сьогодні</b>\n" + "\n".join(lines),
-            keyboard)
+        keyboard = []
+        for h in all_habits:
+            done = day_data.get(h["id"])
+            yes_mark = "·" if done is True else ""
+            no_mark = "·" if done is False else ""
+            keyboard.append([
+                {"text": f"✅{yes_mark} {h['emoji']} {h['name']}", "callback_data": f"habit_yes_{h['id']}"},
+                {"text": f"❌{no_mark}", "callback_data": f"habit_no_{h['id']}"},
+            ])
+        yes_mark = "·" if meds_today is True else ""
+        no_mark = "·" if meds_today is False else ""
+        keyboard.append([
+            {"text": f"✅{yes_mark} 💊 {MEDS_NAME}", "callback_data": "meds_yes_today"},
+            {"text": f"❌{no_mark}", "callback_data": "meds_no_today"},
+        ])
+
+        send_with_keyboard(chat_id, "\n".join(lines), keyboard)
 
     elif text in ["/звіт", "звіт"]:
         send(chat_id, "⏳ Збираю звіт...")
