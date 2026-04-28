@@ -22,19 +22,59 @@ _CACHE = {}
 _CACHE_TIME = {}
 CACHE_TTL = 60  # секунд
 
+_TOKEN_CACHE = {"token": None, "exp": 0}
+
 def _get_token():
+    """JWT auth для service account — без зовнішніх залежностей."""
+    now_ts = int(time.time())
+    if _TOKEN_CACHE["token"] and now_ts < _TOKEN_CACHE["exp"] - 60:
+        return _TOKEN_CACHE["token"]
+
     creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
     if not creds_json:
+        print("storage: GOOGLE_CALENDAR_CREDENTIALS not set")
         return None
     try:
-        import sys
-        sys.path.insert(0, _DIR)
-        from monitor import _get_google_token
-        creds_data = json.loads(creds_json)
-        return _get_google_token(
-            creds_data,
-            "https://www.googleapis.com/auth/spreadsheets"
+        import base64
+        creds = json.loads(creds_json)
+
+        def b64url(data):
+            if isinstance(data, str):
+                data = data.encode()
+            return base64.urlsafe_b64encode(data).rstrip(b"=").decode()
+
+        header  = b64url(json.dumps({"alg": "RS256", "typ": "JWT"}))
+        payload = b64url(json.dumps({
+            "iss": creds["client_email"],
+            "scope": "https://www.googleapis.com/auth/spreadsheets",
+            "aud": "https://oauth2.googleapis.com/token",
+            "iat": now_ts,
+            "exp": now_ts + 3600,
+        }))
+        signing_input = f"{header}.{payload}".encode()
+
+        from cryptography.hazmat.primitives import hashes, serialization
+        from cryptography.hazmat.primitives.asymmetric import padding
+        private_key = serialization.load_pem_private_key(
+            creds["private_key"].encode(), password=None)
+        signature = private_key.sign(signing_input, padding.PKCS1v15(), hashes.SHA256())
+
+        jwt = f"{header}.{payload}.{b64url(signature)}"
+        post_data = urllib.parse.urlencode({
+            "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+            "assertion": jwt
+        }).encode()
+        req = urllib.request.Request(
+            "https://oauth2.googleapis.com/token",
+            data=post_data,
+            headers={"Content-Type": "application/x-www-form-urlencoded"}
         )
+        with urllib.request.urlopen(req, timeout=15) as r:
+            resp = json.loads(r.read())
+        token = resp.get("access_token")
+        _TOKEN_CACHE["token"] = token
+        _TOKEN_CACHE["exp"] = now_ts + resp.get("expires_in", 3600)
+        return token
     except Exception as e:
         print(f"storage token error: {e}")
         return None
