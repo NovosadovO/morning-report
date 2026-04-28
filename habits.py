@@ -23,7 +23,7 @@ SENT_FILE   = os.path.join("/tmp", "habits_sent.json")
 # ─── КОНФІГ ЗВИЧОК ────────────────────────────────────────────────────────────
 
 HABITS = [
-    {"id": "shower", "name": "Холодний душ", "emoji": "🚿", "hour": 8,  "minute": 0},
+    # shower handled dynamically by check_shower_reminder()
     {"id": "run",    "name": "Біг",           "emoji": "🏃", "hour": 19, "minute": 10},
     {"id": "water",  "name": "Вода (2л+)",    "emoji": "💧", "hour": 20, "minute": 0},
     {"id": "tea",    "name": "Трав'яний чай", "emoji": "🍵", "hour": 20, "minute": 10},
@@ -32,6 +32,122 @@ HABITS = [
 
 SLEEP_HOUR   = 8
 SLEEP_MINUTE = 0
+
+# ─── ТИП ЗМІНИ З GOOGLE CALENDAR ─────────────────────────────────────────────
+
+def _get_shift_type():
+    """
+    Повертає тип дня по Google Calendar:
+      'early'   — рання зміна → душ о 05:00
+      'night'   — нічна зміна  → душ о 16:30
+      'weekend' — вихідний / немає змін → душ о 10:00
+    """
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    if not creds_json:
+        return "weekend"
+    try:
+        import json as _json, sys, urllib.parse as _up
+        sys.path.insert(0, _DIR)
+        from monitor import _get_google_token
+        creds_data = _json.loads(creds_json)
+        token   = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        headers = {"Authorization": f"Bearer {token}"}
+        cal_id  = "novosadovoleg%40gmail.com"
+        now_utc = __import__('datetime').datetime.now(__import__('datetime').timezone.utc)
+        from datetime import timedelta as _td
+        day_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0) - _td(hours=2)
+        day_end   = day_start + _td(hours=24)
+        url = (
+            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+            f"?timeMin={_up.quote(day_start.isoformat())}"
+            f"&timeMax={_up.quote(day_end.isoformat())}"
+            f"&singleEvents=true&orderBy=startTime&maxResults=20"
+        )
+        import urllib.request as _ur
+        req = _ur.Request(url, headers=headers)
+        with _ur.urlopen(req, timeout=15) as r:
+            events = _json.loads(r.read()).get("items", [])
+        for ev in events:
+            s = ev.get("summary", "").lower()
+            if any(x in s for x in ["рання", "ранн", "early"]):
+                return "early"
+            if any(x in s for x in ["нічна", "нічн", "night"]):
+                return "night"
+        return "weekend"
+    except Exception as e:
+        print(f"_get_shift_type error: {e}")
+        return "weekend"
+
+
+def check_shower_reminder():
+    """
+    Надсилає питання про холодний душ у правильний час:
+      рання зміна → 05:00
+      нічна зміна → 16:30
+      вихідний    → 10:00
+    Якщо не відповів — повтор через 1г.
+    """
+    now   = now_local()
+    today = today_key()
+    sent  = load_sent()
+
+    # Вже відмітив сьогодні
+    db = load_data()
+    if db.get(today, {}).get("shower") is not None:
+        return
+
+    remind_key = f"{today}_shower_smart"
+    if sent.get(remind_key):
+        # Повтор через 1г якщо не відповів
+        remind2_key = f"{today}_shower_smart2"
+        if not sent.get(remind2_key):
+            first_sent_time = sent.get(f"{today}_shower_smart_time", 0)
+            cur_min = now.hour * 60 + now.minute
+            if first_sent_time and cur_min >= first_sent_time + 60:
+                if db.get(today, {}).get("shower") is None:
+                    _send_shower_question(today)
+                    sent[remind2_key] = True
+                    save_sent(sent)
+        return
+
+    shift   = _get_shift_type()
+    cur_min = now.hour * 60 + now.minute
+
+    if shift == "early":
+        trigger = 5 * 60       # 05:00
+    elif shift == "night":
+        trigger = 16 * 60 + 30  # 16:30
+    else:
+        trigger = 10 * 60       # 10:00
+
+    if cur_min >= trigger:
+        _send_shower_question(today)
+        sent[remind_key] = True
+        sent[f"{today}_shower_smart_time"] = cur_min
+        save_sent(sent)
+
+
+def _send_shower_question(today):
+    api("sendMessage", {
+        "chat_id": TELEGRAM_CHAT,
+        "text": (
+            "━━━━━━━━━━━━━━━━━━━━━━\n"
+            "🚿 <b>ХОЛОДНИЙ ДУШ</b>\n"
+            "━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            "❄️ Холодна вода бадьорить, зміцнює імунітет\n"
+            "та підвищує рівень енергії на весь день.\n\n"
+            "<i>Зробив сьогодні?</i>"
+        ),
+        "parse_mode": "HTML",
+        "reply_markup": {
+            "inline_keyboard": [[
+                {"text": "✅ Так", "callback_data": "habit_yes_shower"},
+                {"text": "❌ Ні",  "callback_data": "habit_no_shower"},
+            ]]
+        }
+    })
+    print(f"Shower question sent for {today}")
+
 
 # ─── HELPERS ──────────────────────────────────────────────────────────────────
 
@@ -277,8 +393,13 @@ def run():
         sent = load_sent()
         today = today_key()
 
+        # Душ — динамічний час по Calendar
+        check_shower_reminder()
+
         # Перевіряємо чи час надсилати питання про звички
         for h in HABITS:
+            if h.get("id") == "shower":
+                continue  # shower handled by check_shower_reminder
             key = f"{today}_{h['id']}"
             if sent.get(key):
                 continue
