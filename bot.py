@@ -263,6 +263,56 @@ def handle_event_done_callback(callback_query):
     except Exception as e:
         print(f"event results save error: {e}")
 
+    # Якщо ✅ — оновлюємо подію в Google Calendar (зелений + ✅ в назві)
+    if answer == "yes":
+        try:
+            import sys, os as _os
+            sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+            from monitor import _get_google_token
+            import json as _j, urllib.request as _ur, urllib.parse as _up
+
+            creds_json = _os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+            if creds_json:
+                creds_data = _j.loads(creds_json)
+                token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar")
+                headers = {
+                    "Authorization": f"Bearer {token}",
+                    "Content-Type": "application/json"
+                }
+                cal_id = "novosadovoleg%40gmail.com"
+
+                # Витягуємо ev_id з key: "done_{ev_id}_{end_raw}" або safe_key версія
+                # key виглядає як: done_abc123_2026-04-29T14:15:00+02:00
+                key_parts = key.split("_", 2)
+                ev_id = key_parts[1] if len(key_parts) > 1 else ""
+
+                if ev_id:
+                    # Отримуємо поточну подію
+                    get_url = f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events/{ev_id}"
+                    req_get = _ur.Request(get_url, headers=headers)
+                    with _ur.urlopen(req_get, timeout=10) as r:
+                        ev = _j.loads(r.read())
+
+                    # Додаємо ✅ в назву якщо ще немає
+                    summary = ev.get("summary", "")
+                    if not summary.startswith("✅"):
+                        ev["summary"] = "✅ " + summary
+
+                    # Зелений колір (sage=10 або basil=9 або green)
+                    ev["colorId"] = "10"  # sage (зелений)
+
+                    # Оновлюємо
+                    patch_data = _j.dumps({
+                        "summary": ev["summary"],
+                        "colorId": ev["colorId"]
+                    }).encode()
+                    patch_url = f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events/{ev_id}"
+                    req_patch = _ur.Request(patch_url, data=patch_data, headers=headers, method="PATCH")
+                    _ur.urlopen(req_patch, timeout=10)
+                    print(f"Calendar event updated: {ev['summary']}")
+        except Exception as e:
+            print(f"Calendar update error: {e}")
+
 
 def handle_habit_callback(callback_query):
     """Обробляє натискання ✅/❌ на звичках."""
