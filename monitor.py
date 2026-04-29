@@ -1498,14 +1498,17 @@ def check_water_reminder():
 WEEK_PLAN_FILE = os.path.join(_DATA_DIR, "monitor_week_plan.json")
 
 def check_weekly_plan():
-    """Щопонеділка о 8:00 шле план на тиждень з календаря."""
+    """Щопонеділка о 8:00 і щонеділі о 18:00 шле план на тиждень з календаря."""
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
-    if not (now_local.weekday() == 0 and now_local.hour == 8 and now_local.minute < 5):
+    is_monday_8  = (now_local.weekday() == 0 and now_local.hour == 8  and now_local.minute < 5)
+    is_sunday_18 = (now_local.weekday() == 6 and now_local.hour == 18 and now_local.minute < 5)
+    if not (is_monday_8 or is_sunday_18):
         return
 
     state = load_json_file(WEEK_PLAN_FILE, default={})
     today = now_local.strftime("%Y-%m-%d")
-    if state.get("last") == today:
+    key = f"{today}_{'sun18' if is_sunday_18 else 'mon8'}"
+    if state.get(key):
         return
 
     creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
@@ -1566,7 +1569,7 @@ def check_weekly_plan():
                 lines.append(f"<b>{d_label}</b> — вихідний")
 
         send_telegram("\n".join(lines))
-        state["last"] = today
+        state[key] = True
         save_json_file(WEEK_PLAN_FILE, state)
         print("Weekly plan sent")
 
