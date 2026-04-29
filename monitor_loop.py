@@ -342,13 +342,25 @@ def run_reminders_watcher():
     TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN","")
     TELEGRAM_CHAT  = os.environ.get("TELEGRAM_CHAT_ID","")
 
-    def tg_send(text):
+    def tg_send_with_buttons(text, reminder_id):
         url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-        data = json.dumps({"chat_id": TELEGRAM_CHAT, "text": text, "parse_mode": "HTML"}).encode()
+        safe_id = reminder_id.replace("/","_").replace("@","_")[:50]
+        data = json.dumps({
+            "chat_id": TELEGRAM_CHAT,
+            "text": text,
+            "parse_mode": "HTML",
+            "reply_markup": {
+                "inline_keyboard": [[
+                    {"text": "✅ Зробив", "callback_data": f"reminder_yes_{safe_id}"},
+                    {"text": "❌ Не зробив", "callback_data": f"reminder_no_{safe_id}"},
+                ]]
+            }
+        }).encode()
         req = urllib.request.Request(url, data=data, headers={"Content-Type":"application/json"})
         try:
             urllib.request.urlopen(req, timeout=10)
-        except: pass
+        except Exception as e:
+            print(f"tg_send error: {e}")
 
     def gh_get():
         url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/reminders.json"
@@ -382,7 +394,7 @@ def run_reminders_watcher():
             changed = False
             for r in reminders:
                 if not r.get("sent") and r.get("datetime_utc","")[:16] <= now_utc:
-                    tg_send(r["text"])
+                    tg_send_with_buttons(r["text"], r["id"])
                     r["sent"] = True
                     changed = True
                     print(f"Reminder sent: {r['id']}", flush=True)

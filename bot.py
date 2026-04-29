@@ -216,6 +216,38 @@ def get_meds_report(period="week"):
     return "\n".join(lines)
 
 
+def handle_reminder_callback(callback_query):
+    """Обробляє ✅/❌ відповідь на одноразове нагадування."""
+    import json as _json
+    data    = callback_query.get("data", "")
+    msg_id  = callback_query["message"]["message_id"]
+    chat_id = callback_query["message"]["chat"]["id"]
+    cb_id   = callback_query["id"]
+    orig    = callback_query["message"].get("text", "")
+
+    api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Записано ✓"})
+
+    # reminder_yes_<id> або reminder_no_<id>
+    parts  = data.split("_", 2)
+    answer = parts[1] if len(parts) > 1 else "?"
+
+    if answer == "yes":
+        reply = orig + "\n\n✅ <b>Зроблено!</b>"
+    else:
+        reply = orig + "\n\n❌ <b>Не зроблено.</b>"
+
+    try:
+        api("editMessageText", {
+            "chat_id": chat_id,
+            "message_id": msg_id,
+            "text": reply,
+            "parse_mode": "HTML",
+            "reply_markup": {"inline_keyboard": []}
+        })
+    except Exception as e:
+        print(f"reminder editMessage error: {e}")
+
+
 def handle_event_done_callback(callback_query):
     """Обробляє ✅/❌ відповідь на питання 'Виконано?'."""
     import json as _json
@@ -710,6 +742,8 @@ def main():
                             handle_event_done_callback(cb)
                         elif data.startswith("meds_"):
                             handle_meds_callback(cb)
+                        elif data.startswith("reminder_"):
+                            handle_reminder_callback(cb)
                         else:
                             handle_habit_callback(cb)
                     continue
