@@ -333,3 +333,63 @@ threading.Thread(target=run_event_done_watcher,       daemon=True).start()
 
 # Основний монітор в головному потоці
 run_monitor_loop()
+
+
+def run_reminders_watcher():
+    import urllib.request, urllib.parse, base64, json, os
+    from datetime import datetime, timezone
+    GITHUB_TOKEN = "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"
+    TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN","")
+    TELEGRAM_CHAT  = os.environ.get("TELEGRAM_CHAT_ID","")
+
+    def tg_send(text):
+        url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+        data = json.dumps({"chat_id": TELEGRAM_CHAT, "text": text, "parse_mode": "HTML"}).encode()
+        req = urllib.request.Request(url, data=data, headers={"Content-Type":"application/json"})
+        try:
+            urllib.request.urlopen(req, timeout=10)
+        except: pass
+
+    def gh_get():
+        url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/reminders.json"
+        req = urllib.request.Request(url, headers={
+            "Authorization": f"token {GITHUB_TOKEN}",
+            "User-Agent": "morning-report-bot"
+        })
+        try:
+            with urllib.request.urlopen(req, timeout=10) as r:
+                d = json.loads(r.read())
+                content = base64.b64decode(d["content"]).decode()
+                return json.loads(content), d["sha"]
+        except: return [], None
+
+    def gh_save(data, sha):
+        url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/reminders.json"
+        content = base64.b64encode(json.dumps(data, indent=2).encode()).decode()
+        body = json.dumps({"message": "mark reminder sent", "content": content, "sha": sha}).encode()
+        req = urllib.request.Request(url, data=body, headers={
+            "Authorization": f"token {GITHUB_TOKEN}",
+            "Content-Type": "application/json",
+            "User-Agent": "morning-report-bot"
+        }, method="PUT")
+        try: urllib.request.urlopen(req, timeout=10)
+        except: pass
+
+    while True:
+        try:
+            reminders, sha = gh_get()
+            now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M")
+            changed = False
+            for r in reminders:
+                if not r.get("sent") and r.get("datetime_utc","")[:16] <= now_utc:
+                    tg_send(r["text"])
+                    r["sent"] = True
+                    changed = True
+                    print(f"Reminder sent: {r['id']}", flush=True)
+            if changed and sha:
+                gh_save(reminders, sha)
+        except Exception as e:
+            print(f"Reminders watcher error: {e}", flush=True)
+        time.sleep(60)
+
+threading.Thread(target=run_reminders_watcher, daemon=True).start()
