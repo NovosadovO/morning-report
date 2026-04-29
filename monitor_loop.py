@@ -331,13 +331,11 @@ threading.Thread(target=run_traffic_shift_watcher,    daemon=True).start()
 threading.Thread(target=run_day_summary_watcher,      daemon=True).start()
 threading.Thread(target=run_event_done_watcher,       daemon=True).start()
 
-# Основний монітор в головному потоці
-run_monitor_loop()
-
 
 def run_reminders_watcher():
+    """Нагадування з data/reminders.json — кожну хвилину. Підтримка repeat: daily."""
     import urllib.request, urllib.parse, base64, json, os
-    from datetime import datetime, timezone
+    from datetime import datetime, timezone, timedelta
     GITHUB_TOKEN = "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"
     TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN","")
     TELEGRAM_CHAT  = os.environ.get("TELEGRAM_CHAT_ID","")
@@ -377,8 +375,8 @@ def run_reminders_watcher():
 
     def gh_save(data, sha):
         url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/reminders.json"
-        content = base64.b64encode(json.dumps(data, indent=2).encode()).decode()
-        body = json.dumps({"message": "mark reminder sent", "content": content, "sha": sha}).encode()
+        content = base64.b64encode(json.dumps(data, indent=2, ensure_ascii=False).encode()).decode()
+        body = json.dumps({"message": "update reminders", "content": content, "sha": sha}).encode()
         req = urllib.request.Request(url, data=body, headers={
             "Authorization": f"token {GITHUB_TOKEN}",
             "Content-Type": "application/json",
@@ -387,21 +385,34 @@ def run_reminders_watcher():
         try: urllib.request.urlopen(req, timeout=10)
         except: pass
 
+    print("=== Starting reminders watcher (every 1min, supports repeat:daily) ===", flush=True)
     while True:
         try:
             reminders, sha = gh_get()
             now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M")
             changed = False
             for r in reminders:
-                if not r.get("sent") and r.get("datetime_utc","")[:16] <= now_utc:
+                if r.get("sent"):
+                    continue
+                if r.get("datetime_utc","")[:16] <= now_utc:
                     tg_send_with_buttons(r["text"], r["id"])
-                    r["sent"] = True
-                    changed = True
                     print(f"Reminder sent: {r['id']}", flush=True)
+                    changed = True
+                    if r.get("repeat") == "daily":
+                        # Зсуваємо на наступний день, не ставимо sent=True
+                        old_dt = datetime.fromisoformat(r["datetime_utc"])
+                        r["datetime_utc"] = (old_dt + timedelta(days=1)).strftime("%Y-%m-%dT%H:%M:%S")
+                        print(f"  repeat:daily → next: {r['datetime_utc']}", flush=True)
+                    else:
+                        r["sent"] = True
             if changed and sha:
                 gh_save(reminders, sha)
         except Exception as e:
             print(f"Reminders watcher error: {e}", flush=True)
         time.sleep(60)
 
+
 threading.Thread(target=run_reminders_watcher, daemon=True).start()
+
+# Основний монітор в головному потоці
+run_monitor_loop()

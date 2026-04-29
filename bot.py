@@ -462,6 +462,53 @@ def handle_habit_callback(callback_query):
     return True
 
 
+def handle_health_photo(chat_id, msg):
+    """Обробляє фото з Apple Health скріну. Зберігає дані вручну або просить ввести."""
+    caption = msg.get("caption", "").strip()
+    today = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+
+    # Якщо є caption з даними — парсимо
+    # Формат caption: "кроки сон ЧСС калорії [score]" або "health"
+    parts = caption.split() if caption else []
+
+    try:
+        from storage import load_health, save_health
+        health = load_health()
+        entry = health.get(today, {})
+
+        if len(parts) >= 4:
+            try:
+                entry["steps"]       = int(parts[0])
+                entry["sleep_hours"] = float(parts[1])
+                entry["heart_rate"]  = int(parts[2])
+                entry["calories"]    = int(parts[3])
+                if len(parts) >= 5:
+                    entry["health_score"] = int(parts[4])
+                health[today] = entry
+                save_health(health)
+                reply = f"✅ <b>Health дані {today} збережено з фото!</b>\n\n"
+                reply += f"👟 Кроки: {entry.get('steps','—')}\n"
+                reply += f"😴 Сон: {entry.get('sleep_hours','—')} год\n"
+                reply += f"❤️ ЧСС: {entry.get('heart_rate','—')} bpm\n"
+                reply += f"🔥 Калорії: {entry.get('calories','—')}\n"
+                if entry.get("health_score"):
+                    reply += f"💚 Health Score: {entry['health_score']}/100"
+                send(chat_id, reply)
+                return
+            except (ValueError, IndexError):
+                pass
+
+        # Без даних — просимо ввести вручну
+        send(chat_id, (
+            f"📸 Фото отримано! Введи дані вручну:\n\n"
+            f"<code>/здоров'я [кроки] [сон_год] [ЧСС] [калорії] [score]</code>\n\n"
+            f"Наприклад:\n<code>/здоров'я 10476 7.5 85 2500 75</code>"
+        ))
+    except Exception as e:
+        print(f"handle_health_photo error: {e}", flush=True)
+        send(chat_id, f"⚠️ Помилка обробки фото: {e}")
+
+
 def get_updates(offset=0):
     result = api("getUpdates", {"offset": offset, "timeout": 30, "limit": 10,
                                 "allowed_updates": ["message", "callback_query"]})
@@ -692,6 +739,47 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
+    elif text.lower().startswith("/здоров'я") or text.lower().startswith("/health"):
+        # /здоров'я [кроки] [сон] [ЧСС] [калорії]
+        try:
+            parts = text.split()[1:]
+            today = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+            from storage import load_health, save_health
+            health = load_health()
+            entry = health.get(today, {})
+            if len(parts) >= 4:
+                entry["steps"]       = int(parts[0])
+                entry["sleep_hours"] = float(parts[1])
+                entry["heart_rate"]  = int(parts[2])
+                entry["calories"]    = int(parts[3])
+                if len(parts) >= 5:
+                    entry["health_score"] = int(parts[4])
+                health[today] = entry
+                save_health(health)
+                reply = f"✅ <b>Health дані {today} збережено!</b>\n\n"
+                reply += f"👟 Кроки: {entry.get('steps','—')}\n"
+                reply += f"😴 Сон: {entry.get('sleep_hours','—')} год\n"
+                reply += f"❤️ ЧСС: {entry.get('heart_rate','—')} bpm\n"
+                reply += f"🔥 Калорії: {entry.get('calories','—')}\n"
+                if entry.get("health_score"):
+                    reply += f"💚 Health Score: {entry['health_score']}/100"
+                send(chat_id, reply)
+            else:
+                # Показати поточні дані
+                if health:
+                    sorted_days = sorted(health.keys(), reverse=True)[:7]
+                    reply = "💚 <b>Health дані (останні 7 днів)</b>\n\n"
+                    for d in sorted_days:
+                        h = health[d]
+                        score = f" | Score: {h['health_score']}/100" if h.get("health_score") else ""
+                        reply += f"<b>{d}</b>{score}\n"
+                        reply += f"  👟 {h.get('steps','—')} | 😴 {h.get('sleep_hours','—')}г | ❤️ {h.get('heart_rate','—')} bpm\n"
+                    send(chat_id, reply)
+                else:
+                    send(chat_id, "Немає health даних. Введи: /здоров'я [кроки] [сон] [ЧСС] [калорії]")
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}\nФормат: /здоров'я [кроки] [сон] [ЧСС] [калорії]")
+
     else:
         # Спроба розпізнати вагу (число типу 82 або 82.5)
         try:
@@ -758,6 +846,11 @@ def main():
                 # Тільки від авторизованого користувача
                 if str(chat_id) != str(TELEGRAM_CHAT):
                     send(chat_id, "⛔ Немає доступу.")
+                    continue
+
+                # Обробка фото (скрін Health Score)
+                if msg.get("photo"):
+                    handle_health_photo(chat_id, msg)
                     continue
 
                 print(f"Message: {text}", flush=True)

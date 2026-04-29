@@ -146,3 +146,14 @@ def load_weight():
 
 def save_weight(data):
     return _save_github("weight.json", data)
+
+def load_health():
+    """Завантажує щоденні health дані. Структура: {"2026-04-29": {steps, sleep_hours, ...}}"""
+    data = _load_github("health.json")
+    if not data:
+        return {}
+    return data
+
+def save_health(data):
+    """Зберігає щоденні health дані."""
+    return _save_github("health.json", data)

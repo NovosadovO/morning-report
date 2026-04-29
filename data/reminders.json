@@ -3,7 +3,7 @@
     "id": "financial_analysis_reminder",
     "datetime_utc": "2026-04-29T14:15:00",
     "text": "📊 <b>Нагадування!</b>\n\nВідправ фінансовий аналіз всім клієнтам 💼",
-    "sent": false
+    "sent": true
   },
   {
     "id": "yanka_data_reminder",
@@ -13,8 +13,8 @@
   },
   {
     "id": "health_data_daily",
-    "datetime_utc": "2026-04-29T19:15:00",
-    "text": "💊 <b>Час надіслати дані про здоров'я!</b>\n\nВідкрий Health Score і надішли скрін сюди 📊",
+    "datetime_utc": "2026-04-30T19:15:00",
+    "text": "💊 <b>Час надіслати дані про здоров'я!</b>\n\nВідкрий Apple Health і надішли скрін, або введи вручну:\n<code>/здоров'я [кроки] [сон_год] [ЧСС] [калорії] [score]</code>",
     "sent": false,
     "repeat": "daily"
   }
