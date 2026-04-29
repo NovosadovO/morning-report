@@ -1404,12 +1404,12 @@ def check_weekly_habit_stats():
     if state.get("last") == today:
         return
 
-    # Читаємо дані з habits.py
+    # Читаємо дані з habits.py через storage (GitHub)
     try:
         import sys as _sys
-        _sys.path.insert(0, _DATA_DIR)
-        import habits as _habits
-        data = load_json_file(os.path.join(_DATA_DIR, "habits_data.json"), default={})
+        _sys.path.insert(0, _DIR)
+        from storage import load_habits as _lh
+        data = _lh()
         if not data:
             return
 
@@ -1751,13 +1751,14 @@ def check_day_summary():
         results_file = os.path.join(_DATA_DIR, "monitor_event_results.json")
         results = load_json_file(results_file, default={})
 
-        # Звички з habits_data.json
-        habits_file = "/tmp/habits_data.json"
+        # Звички через storage (GitHub)
         try:
-            with open(habits_file) as f:
-                habits_db = json.load(f)
+            import sys as _sys; _sys.path.insert(0, _DIR)
+            from storage import load_habits as _lh
+            habits_db = _lh()
             today_habits = habits_db.get(today, {})
-        except Exception:
+        except Exception as _e:
+            print(f"habits load error in day summary: {_e}")
             today_habits = {}
 
         lines = []
