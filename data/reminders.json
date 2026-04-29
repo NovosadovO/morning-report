@@ -10,5 +10,12 @@
     "datetime_utc": "2026-04-30T05:10:00",
     "text": "✍️ <b>Нагадування!</b>\n\nНаписати Янці за дані 📩",
     "sent": false
+  },
+  {
+    "id": "health_data_daily",
+    "datetime_utc": "2026-04-29T19:15:00",
+    "text": "💊 <b>Час надіслати дані про здоров'я!</b>\n\nВідкрий Health Score і надішли скрін сюди 📊",
+    "sent": false,
+    "repeat": "daily"
   }
 ]
