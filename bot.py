@@ -546,6 +546,9 @@ HELP_TEXT = """
 /ліки — таблетки за тиждень
 /ліки місяць — за місяць
 /ліки курс — весь курс (27.04–27.07)
+/здоров'я — health дані (останні 7 днів)
+/здоров'я тиждень — тижневий health звіт
+/здоров'я місяць — місячний health звіт
 /допомога — цей список
 """
 
@@ -736,6 +739,22 @@ def handle_command(chat_id, text):
         try:
             from weight import format_weekly_weight_report
             send(chat_id, format_weekly_weight_report())
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif text.lower() in ["/здоров'я тиждень", "здоров'я тиждень", "/health week"]:
+        send(chat_id, "⏳ Готую тижневий health звіт...")
+        try:
+            from health_report import get_health_week_report
+            send(chat_id, get_health_week_report())
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif text.lower() in ["/здоров'я місяць", "здоров'я місяць", "/health month"]:
+        send(chat_id, "⏳ Готую місячний health звіт...")
+        try:
+            from health_report import get_health_month_report
+            send(chat_id, get_health_month_report())
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
