@@ -288,8 +288,8 @@ def run_traffic_shift_watcher():
 
 
 def run_day_summary_watcher():
-    """Підсумок дня о 21:00 — перевірка кожну хвилину."""
-    print("=== Starting day summary watcher (21:00) ===", flush=True)
+    """Підсумок дня о 19:00 — перевірка кожну хвилину."""
+    print("=== Starting day summary watcher (19:00) ===", flush=True)
     time.sleep(65)
     while True:
         try:

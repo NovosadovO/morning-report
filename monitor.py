@@ -1721,10 +1721,10 @@ def check_event_done():
 DAY_SUMMARY_FILE = os.path.join(_DATA_DIR, "monitor_day_summary.json")
 
 def check_day_summary():
-    """О 21:00 надсилає підсумок дня — події з календаря + звички."""
+    """О 19:00 надсилає підсумок дня — події з календаря + звички."""
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
-    if not (h == 21 and m < 5):
+    if not (h == 19 and m < 5):
         return
 
     state = load_json_file(DAY_SUMMARY_FILE, default={})
