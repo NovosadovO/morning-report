@@ -546,9 +546,10 @@ HELP_TEXT = """
 /ліки — таблетки за тиждень
 /ліки місяць — за місяць
 /ліки курс — весь курс (27.04–27.07)
-/здоров'я — health дані (останні 7 днів)
-/здоров'я тиждень — тижневий health звіт
-/здоров'я місяць — місячний health звіт
+/зд — health дані (останні 7 днів)
+/зд т — тижневий health звіт
+/зд м — місячний health звіт
+/зд [кроки] [сон] [ЧСС] [кал] [score] — записати дані
 /допомога — цей список
 """
 
@@ -744,7 +745,7 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
-    elif any(x in text for x in ["/здоров'я тиждень", "здоров'я тиждень", "/health week", "здоров'я тиждень"]) or text in ["/здоровя тиждень", "здоровя тиждень"]:
+    elif any(x in text for x in ["/здоров'я тиждень", "здоров'я тиждень", "/health week", "здоров'я тиждень"]) or text in ["/здоровя тиждень", "здоровя тиждень", "/зд т", "зд т", "/здт"]:
         send(chat_id, "⏳ Готую тижневий health звіт...")
         try:
             from health_report import get_health_week_report
@@ -752,7 +753,7 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
-    elif any(x in text for x in ["/здоров'я місяць", "здоров'я місяць", "/health month", "здоров'я місяць"]) or text in ["/здоровя місяць", "здоровя місяць"]:
+    elif any(x in text for x in ["/здоров'я місяць", "здоров'я місяць", "/health month", "здоров'я місяць"]) or text in ["/здоровя місяць", "здоровя місяць", "/зд м", "зд м", "/здм"]:
         send(chat_id, "⏳ Готую місячний health звіт...")
         try:
             from health_report import get_health_month_report
@@ -760,7 +761,29 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
-    elif text.startswith("/здоров'я") or text.startswith("/health") or text.startswith("/здоровя"):
+    elif text in ["/зд", "зд"]:
+        # Швидкий перегляд останніх 7 днів
+        try:
+            from storage import load_health
+            health = load_health()
+            if health:
+                sorted_days = sorted(health.keys(), reverse=True)[:7]
+                reply = "💚 <b>Health (7 днів)</b>\n\n"
+                for d in sorted_days:
+                    h = health[d]
+                    score = f" 💚{h['health_score']}" if h.get("health_score") else ""
+                    steps = f"👟{h['steps']//1000}к" if h.get("steps") else ""
+                    sleep = f"😴{h.get('sleep_hours','')}г" if h.get("sleep_hours") else ""
+                    hr = f"❤️{h['heart_rate']}" if h.get("heart_rate") else ""
+                    parts = [x for x in [steps, sleep, hr] if x]
+                    reply += f"<b>{d[5:]}</b>  {' '.join(parts)}{score}\n"
+                send(chat_id, reply)
+            else:
+                send(chat_id, "Немає health даних.\n\nДодай: /зд [кроки] [сон] [ЧСС] [калорії] [score]")
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif text.startswith("/здоров'я") or text.startswith("/health") or text.startswith("/здоровя") or text.startswith("/зд"):
         # /здоров'я [кроки] [сон] [ЧСС] [калорії]
         try:
             parts = text.split()[1:]
