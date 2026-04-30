@@ -343,16 +343,27 @@ def run_reminders_watcher():
     def tg_send_with_buttons(text, reminder_id):
         url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
         safe_id = reminder_id.replace("/","_").replace("@","_")[:50]
+
+        # Для health нагадування — спеціальні кнопки
+        if reminder_id == "health_data_daily":
+            keyboard = [[
+                {"text": "📸 Надішли фото", "callback_data": "reminder_health_photo"},
+                {"text": "📊 Мої дані", "callback_data": "reminder_health_view"},
+            ], [
+                {"text": "✅ Вже ввів", "callback_data": f"reminder_yes_{safe_id}"},
+                {"text": "⏭ Пропустити", "callback_data": f"reminder_no_{safe_id}"},
+            ]]
+        else:
+            keyboard = [[
+                {"text": "✅ Зробив", "callback_data": f"reminder_yes_{safe_id}"},
+                {"text": "❌ Не зробив", "callback_data": f"reminder_no_{safe_id}"},
+            ]]
+
         data = json.dumps({
             "chat_id": TELEGRAM_CHAT,
             "text": text,
             "parse_mode": "HTML",
-            "reply_markup": {
-                "inline_keyboard": [[
-                    {"text": "✅ Зробив", "callback_data": f"reminder_yes_{safe_id}"},
-                    {"text": "❌ Не зробив", "callback_data": f"reminder_no_{safe_id}"},
-                ]]
-            }
+            "reply_markup": {"inline_keyboard": keyboard}
         }).encode()
         req = urllib.request.Request(url, data=data, headers={"Content-Type":"application/json"})
         try:

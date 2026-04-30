@@ -912,6 +912,30 @@ def main():
                             handle_event_done_callback(cb)
                         elif data.startswith("meds_"):
                             handle_meds_callback(cb)
+                        elif data == "reminder_health_photo":
+                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Надішли фото 📸"})
+                            send(chat_id, "📸 Надішли скрін Apple Health — прочитаю автоматично!")
+                        elif data == "reminder_health_view":
+                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": ""})
+                            try:
+                                from storage import load_health
+                                health = load_health()
+                                if health:
+                                    sorted_days = sorted(health.keys(), reverse=True)[:7]
+                                    reply = "💚 <b>Health (7 днів)</b>\n\n"
+                                    for d in sorted_days:
+                                        h = health[d]
+                                        score = f" 💚{h['health_score']}" if h.get("health_score") else ""
+                                        steps = f"👟{h['steps']//1000}к" if h.get("steps") else ""
+                                        sleep = f"😴{h.get('sleep_hours','')}г" if h.get("sleep_hours") else ""
+                                        hr = f"❤️{h['heart_rate']}" if h.get("heart_rate") else ""
+                                        parts = [x for x in [steps, sleep, hr] if x]
+                                        reply += f"<b>{d[5:]}</b>  {' '.join(parts)}{score}\n"
+                                    send(chat_id, reply)
+                                else:
+                                    send(chat_id, "Немає даних. Введи /зд [кроки] [сон] [ЧСС] [кал] [score]")
+                            except Exception as e:
+                                send(chat_id, f"⚠️ {e}")
                         elif data.startswith("reminder_"):
                             handle_reminder_callback(cb)
                         else:
