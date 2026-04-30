@@ -554,7 +554,9 @@ HELP_TEXT = """
 
 
 def handle_command(chat_id, text):
+    # Нормалізуємо апострофи (Telegram може надсилати різні варіанти)
     text = text.strip().lower()
+    text = text.replace("\u2019", "'").replace("\u2018", "'").replace("\u02bc", "'").replace("`", "'")
 
     if text in ["/start", "start"]:
         send(chat_id, "👋 Привіт! Я твій асистент.\n" + HELP_TEXT)
@@ -742,7 +744,7 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
-    elif text.lower() in ["/здоров'я тиждень", "здоров'я тиждень", "/health week"]:
+    elif any(x in text for x in ["/здоров'я тиждень", "здоров'я тиждень", "/health week", "здоров'я тиждень"]) or text in ["/здоровя тиждень", "здоровя тиждень"]:
         send(chat_id, "⏳ Готую тижневий health звіт...")
         try:
             from health_report import get_health_week_report
@@ -750,7 +752,7 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
-    elif text.lower() in ["/здоров'я місяць", "здоров'я місяць", "/health month"]:
+    elif any(x in text for x in ["/здоров'я місяць", "здоров'я місяць", "/health month", "здоров'я місяць"]) or text in ["/здоровя місяць", "здоровя місяць"]:
         send(chat_id, "⏳ Готую місячний health звіт...")
         try:
             from health_report import get_health_month_report
@@ -758,7 +760,7 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
-    elif text.lower().startswith("/здоров'я") or text.lower().startswith("/health"):
+    elif text.startswith("/здоров'я") or text.startswith("/health") or text.startswith("/здоровя"):
         # /здоров'я [кроки] [сон] [ЧСС] [калорії]
         try:
             parts = text.split()[1:]
