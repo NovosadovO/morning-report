@@ -1114,7 +1114,7 @@ def main():
 CALENDAR_REMINDED_FILE = os.path.join(_DATA_DIR, "monitor_calendar_reminded.json")
 
 def check_calendar_reminders():
-    """Шле нагадування за 30 хвилин до старту кожної події в Google Calendar."""
+    """Шле нагадування за 1 годину до старту кожної події в Google Calendar."""
     creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
     if not creds_json:
         return
@@ -1130,8 +1130,8 @@ def check_calendar_reminders():
         cal_id  = "novosadovoleg%40gmail.com"
 
         now = datetime.now(timezone.utc)
-        window_start = now + timedelta(minutes=28)
-        window_end   = now + timedelta(minutes=32)
+        window_start = now + timedelta(minutes=58)
+        window_end   = now + timedelta(minutes=62)
 
         url = (
             f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
@@ -1153,7 +1153,7 @@ def check_calendar_reminders():
             ev_id   = ev.get("id", "")
             summary = ev.get("summary", "(без назви)")
             start   = ev["start"].get("dateTime") or ev["start"].get("date")
-            reminder_key = f"{ev_id}_{start}"
+            reminder_key = f"1h_{ev_id}_{start}"
 
             if reminder_key in reminded:
                 continue
@@ -1165,9 +1165,16 @@ def check_calendar_reminders():
             except Exception:
                 t = start
 
-            msg = f"⏰ <b>Нагадування</b>\nЧерез 30 хв: <b>{esc(summary)}</b>\n🕐 Початок о {t}"
+            s_lower = summary.lower()
+            if "нічна" in s_lower:      emoji = "🌙"
+            elif "рання" in s_lower:    emoji = "☀️"
+            elif "birthday" in s_lower or "народження" in s_lower: emoji = "🎂"
+            elif "зустріч" in s_lower or "meet" in s_lower:        emoji = "🤝"
+            else:                       emoji = "📅"
+
+            msg = f"{emoji} <b>Нагадування — через 1 годину:</b>\n<b>{esc(summary)}</b>\n🕐 Початок о <b>{t}</b>"
             send_telegram(msg)
-            print(f"Calendar reminder sent: {summary} at {t}")
+            print(f"1h reminder sent: {summary} at {t}")
             new_reminded.append(reminder_key)
 
         save_json_file(CALENDAR_REMINDED_FILE, new_reminded[-500:])
