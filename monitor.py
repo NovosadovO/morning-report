@@ -1160,7 +1160,7 @@ def check_calendar_reminders():
 
             try:
                 dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                local_dt = dt.astimezone(timezone.utc) + timedelta(hours=2)
+                local_dt = dt.astimezone(timezone(timedelta(hours=2)))
                 t = local_dt.strftime("%H:%M")
             except Exception:
                 t = start
@@ -1236,7 +1236,7 @@ def check_shift_reminders():
             # визначаємо час
             try:
                 dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                local_dt = dt.astimezone(timezone.utc) + timedelta(hours=2)
+                local_dt = dt.astimezone(timezone(timedelta(hours=2)))
                 t = local_dt.strftime("%H:%M")
             except Exception:
                 t = start
