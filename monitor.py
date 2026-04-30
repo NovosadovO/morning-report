@@ -1164,6 +1164,13 @@ def check_calendar_reminders():
                 t = local_dt.strftime("%H:%M")
             except Exception:
                 t = start
+                dt = None
+
+            # Пропускаємо якщо подія вже минула (захист від повторів після redeploy)
+            if dt is not None and dt < datetime.now(timezone.utc):
+                print(f"Skipping past event: {summary} at {t}")
+                new_reminded.append(reminder_key)
+                continue
 
             s_lower = summary.lower()
             if "нічна" in s_lower:      emoji = "🌙"
