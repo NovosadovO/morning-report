@@ -414,5 +414,35 @@ def run_reminders_watcher():
 
 threading.Thread(target=run_reminders_watcher, daemon=True).start()
 
+
+def run_health_alert_watcher():
+    """Health алерти (HRV/стрес/кроки) — кожні 15 хв після того як дані занесені."""
+    print("=== Starting health alert watcher (every 15min) ===", flush=True)
+    time.sleep(110)
+    while True:
+        try:
+            _load_monitor().check_health_alert()
+        except Exception as e:
+            print(f"Health alert watcher error: {e}", flush=True)
+        time.sleep(900)
+
+
+threading.Thread(target=run_health_alert_watcher, daemon=True).start()
+
+
+def run_health_remind_watcher():
+    """Нагадування внести health дані о 22:00 якщо не занесено."""
+    print("=== Starting health remind watcher (22:00) ===", flush=True)
+    time.sleep(115)
+    while True:
+        try:
+            _load_monitor().check_health_data_reminder()
+        except Exception as e:
+            print(f"Health remind watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+threading.Thread(target=run_health_remind_watcher, daemon=True).start()
+
 # Основний монітор в головному потоці
 run_monitor_loop()

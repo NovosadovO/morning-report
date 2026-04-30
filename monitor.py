@@ -1859,7 +1859,73 @@ def check_day_summary():
         lines.append(f"\n    {bar}  <b>{done_count}/{total}</b>")
         lines.append(f"    {grade}")
 
-        lines.append(f"\n━━━━━━━━━━━━━━━━━━━━━━")
+        # ── ЛІКИ ──
+        try:
+            from storage import load_meds as _lmeds
+            meds_db = _lmeds()
+            meds_taken = meds_db.get(today)
+            if meds_taken is True:
+                lines.append("\n\n💊 <b>Armolopid Plus</b>  ✅")
+            elif meds_taken is False:
+                lines.append("\n\n💊 <b>Armolopid Plus</b>  ❌ Не прийнято!")
+            else:
+                lines.append("\n\n💊 <b>Armolopid Plus</b>  ○ Не відмічено")
+        except Exception as _me:
+            print(f"meds in day summary error: {_me}")
+
+        # ── ВАГА ──
+        try:
+            from storage import load_weight as _lw
+            weight_db = _lw()
+            if weight_db:
+                last_w_date = max(weight_db.keys())
+                last_w_val  = weight_db[last_w_date]
+                days_ago = (now_local.date() - datetime.strptime(last_w_date, "%Y-%m-%d").date()).days
+                if days_ago == 0:
+                    lines.append(f"\n⚖️ <b>Вага сьогодні</b>  <b>{last_w_val} кг</b> ✅")
+                else:
+                    lines.append(f"\n⚖️ <b>Вага</b>  {last_w_val} кг  <i>({days_ago} дн. тому)</i>")
+        except Exception as _we:
+            print(f"weight in day summary error: {_we}")
+
+        # ── HEALTH SCORE ──
+        try:
+            from storage import load_health as _lhealth
+            health_db = _lhealth()
+            today_health = health_db.get(today, {})
+            if today_health:
+                h_lines = []
+                if today_health.get("steps"):
+                    h_lines.append(f"👟 {today_health['steps']:,} кр.")
+                if today_health.get("sleep_hours"):
+                    h_lines.append(f"😴 {today_health['sleep_hours']}г")
+                if today_health.get("heart_rate"):
+                    h_lines.append(f"❤️ {today_health['heart_rate']} bpm")
+                if today_health.get("hrv"):
+                    h_lines.append(f"💓 HRV {today_health['hrv']}")
+                if today_health.get("health_score"):
+                    sc = today_health['health_score']
+                    sc_emoji = "🟢" if sc >= 75 else ("🟡" if sc >= 55 else "🔴")
+                    h_lines.append(f"{sc_emoji} Score {sc}/100")
+                if h_lines:
+                    lines.append(f"\n\n🍎 <b>Apple Health</b>")
+                    lines.append(f"    {' · '.join(h_lines)}")
+            else:
+                lines.append(f"\n\n🍎 <b>Apple Health</b>  <i>немає даних — надішли /зд</i>")
+        except Exception as _he:
+            print(f"health in day summary error: {_he}")
+
+        # ── ВОДА ──
+        try:
+            water_state = load_json_file(WATER_FILE, default={})
+            water_count = water_state.get(today, 0)
+            water_ml = water_count * 250
+            water_bar = "💧" * water_count + "○" * max(0, 8 - water_count)
+            lines.append(f"\n\n💧 <b>Вода</b>  {water_ml} мл  {water_bar}")
+        except Exception as _wt:
+            print(f"water in day summary error: {_wt}")
+
+        lines.append(f"\n\n━━━━━━━━━━━━━━━━━━━━━━")
         lines.append("Гарного вечора! 🌙")
 
         send_telegram("\n".join(lines))
@@ -2086,3 +2152,148 @@ def check_meds_reminder():
 
     except Exception as e:
         print(f"check_meds_reminder error: {e}")
+
+# ─── HEALTH ALERT (HRV / СТРЕС) ──────────────────────────────────────────────
+
+HEALTH_ALERT_FILE = os.path.join(_DATA_DIR, "monitor_health_alert.json")
+
+def check_health_alert():
+    """
+    Після того як користувач вніс health дані — перевіряє:
+    - HRV впав на 15+ від середнього за 7 днів → алерт
+    - Стрес макс >= 60 → алерт
+    - Стрес зріс на 15+ від середнього → алерт
+    Надсилає не частіше 1 разу на день.
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    today = now_local.strftime("%Y-%m-%d")
+
+    state = load_json_file(HEALTH_ALERT_FILE, default={})
+    if state.get(today):
+        return  # вже надсилали сьогодні
+
+    try:
+        import sys as _sys, os as _os
+        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+        from storage import load_health as _lh
+        health = _lh()
+    except Exception as e:
+        print(f"health_alert load error: {e}")
+        return
+
+    today_data = health.get(today, {})
+    if not today_data:
+        return  # немає даних за сьогодні — нічого перевіряти
+
+    # Середнє за останні 7 днів (без сьогодні)
+    past_days = sorted([d for d in health.keys() if d < today], reverse=True)[:7]
+    past_data = [health[d] for d in past_days]
+
+    alerts = []
+
+    # ── HRV ──
+    hrv_today = today_data.get("hrv")
+    if hrv_today and past_data:
+        hrv_vals = [d["hrv"] for d in past_data if d.get("hrv")]
+        if hrv_vals:
+            hrv_avg = sum(hrv_vals) / len(hrv_vals)
+            hrv_drop = hrv_avg - hrv_today
+            if hrv_drop >= 15:
+                alerts.append(
+                    f"💓 <b>HRV впав!</b>  {int(hrv_today)} ms  (серед. {int(hrv_avg)} ms, -<b>{int(hrv_drop)}</b>)\n"
+                    f"   → Можливо перевтома або погана ніч. Більше відпочинку!"
+                )
+
+    # ── СТРЕС ──
+    stress_today = today_data.get("stress_max")
+    if stress_today:
+        if stress_today >= 60:
+            alerts.append(
+                f"😤 <b>Високий стрес!</b>  {stress_today}/100\n"
+                f"   → Рекомендую: дихальні вправи, прогулянка, менше екранів"
+            )
+        elif past_data:
+            stress_vals = [d["stress_max"] for d in past_data if d.get("stress_max")]
+            if stress_vals:
+                stress_avg = sum(stress_vals) / len(stress_vals)
+                stress_rise = stress_today - stress_avg
+                if stress_rise >= 15:
+                    alerts.append(
+                        f"😤 <b>Стрес зріс!</b>  {stress_today}  (серед. {int(stress_avg)}, +<b>{int(stress_rise)}</b>)\n"
+                        f"   → Зверни увагу на відновлення"
+                    )
+
+    # ── КРОКИ ──
+    steps_today = today_data.get("steps")
+    if steps_today and steps_today < 5000:
+        alerts.append(
+            f"👟 <b>Мало кроків!</b>  {steps_today:,}  (ціль 10,000)\n"
+            f"   → Невелика прогулянка ввечері?"
+        )
+
+    # ── HEALTH SCORE ──
+    score_today = today_data.get("health_score")
+    if score_today and past_data:
+        score_vals = [d["health_score"] for d in past_data if d.get("health_score")]
+        if score_vals:
+            score_avg = sum(score_vals) / len(score_vals)
+            score_drop = score_avg - score_today
+            if score_drop >= 15:
+                alerts.append(
+                    f"💚 <b>Health Score впав!</b>  {score_today}/100  (серед. {int(score_avg)}, -<b>{int(score_drop)}</b>)\n"
+                    f"   → Провів поганий день? Аналізуй сон і стрес"
+                )
+
+    if not alerts:
+        return
+
+    msg = f"⚠️ <b>Health Alert</b>  {now_local.strftime('%d.%m')}\n\n"
+    msg += "\n\n".join(alerts)
+    send_telegram(msg)
+    print(f"Health alert sent: {len(alerts)} alerts")
+
+    state[today] = True
+    save_json_file(HEALTH_ALERT_FILE, state)
+
+# ─── НАГАДУВАННЯ ВНЕСТИ HEALTH ДАНІ ──────────────────────────────────────────
+
+HEALTH_REMIND_FILE = os.path.join(_DATA_DIR, "monitor_health_remind.json")
+
+def check_health_data_reminder():
+    """
+    О 22:00 — якщо health дані за сьогодні не занесені → нагадування.
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+    if not (h == 22 and m < 5):
+        return
+
+    today = now_local.strftime("%Y-%m-%d")
+    state = load_json_file(HEALTH_REMIND_FILE, default={})
+    if state.get(today):
+        return
+
+    try:
+        import sys as _sys, os as _os
+        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+        from storage import load_health as _lh
+        health = _lh()
+        today_data = health.get(today, {})
+
+        if today_data and today_data.get("steps"):
+            return  # вже є дані
+
+        msg = (
+            "🍎 <b>Health дані за сьогодні!</b>\n\n"
+            "Не забудь занести показники зі скріну Apple Health:\n\n"
+            "Надішли фото скріну або вручну:\n"
+            "<code>/зд [кроки] [сон] [ЧСС] [кал] [score]</code>"
+        )
+        send_telegram(msg)
+        print("Health data reminder sent")
+
+        state[today] = True
+        save_json_file(HEALTH_REMIND_FILE, state)
+
+    except Exception as e:
+        print(f"check_health_data_reminder error: {e}")
