@@ -18,7 +18,8 @@ TELEGRAM_CHAT  = os.environ["TELEGRAM_CHAT_ID"]
 
 _DIR        = os.path.dirname(os.path.abspath(__file__))
 HABITS_FILE = os.path.join("/tmp", "habits_data.json")
-SENT_FILE   = os.path.join("/tmp", "habits_sent.json")
+SENT_FILE   = os.path.join("/tmp", "habits_sent.json")  # локальний кеш
+_SENT_GH_KEY = "habits_sent.json"  # GitHub persistent storage
 
 # ─── КОНФІГ ЗВИЧОК ────────────────────────────────────────────────────────────
 
@@ -187,6 +188,19 @@ def save_data(data):
             json.dump(data, f)
 
 def load_sent():
+    """Завантажує стан надісланих питань. GitHub → fallback /tmp."""
+    try:
+        import sys as _sys, os as _os
+        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+        from storage import _load_github
+        data = _load_github(_SENT_GH_KEY)
+        if data:
+            # Зберігаємо локально як кеш
+            with open(SENT_FILE, "w") as f:
+                json.dump(data, f)
+            return data
+    except Exception as _e:
+        pass
     try:
         with open(SENT_FILE) as f:
             return json.load(f)
@@ -194,8 +208,21 @@ def load_sent():
         return {}
 
 def save_sent(sent):
-    with open(SENT_FILE, "w") as f:
-        json.dump(sent, f)
+    """Зберігає стан — локально + GitHub."""
+    # Локально завжди
+    try:
+        with open(SENT_FILE, "w") as f:
+            json.dump(sent, f)
+    except:
+        pass
+    # GitHub — async щоб не гальмувати цикл
+    try:
+        import sys as _sys, os as _os, threading as _th
+        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+        from storage import _save_github
+        _th.Thread(target=_save_github, args=(_SENT_GH_KEY, sent), daemon=True).start()
+    except Exception as _e:
+        pass
 
 def today_key():
     return (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
