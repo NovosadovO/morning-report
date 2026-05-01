@@ -462,13 +462,94 @@ def handle_habit_callback(callback_query):
     return True
 
 
-def handle_health_zip(chat_id, doc):
-    """Обробляє ZIP файл від Health Auto Export."""
+def _parse_apple_health_xml(zip_bytes):
+    """Парсить Apple Health export.zip — повертає dict {date: {steps, sleep_hours, heart_rate, ...}}"""
+    import zipfile, io, re as _re, xml.etree.ElementTree as ET
+    from datetime import datetime, timezone, timedelta
     try:
-        send(chat_id, "⏳ Обробляю ZIP файл Health Auto Export...")
+        with zipfile.ZipFile(io.BytesIO(zip_bytes)) as zf:
+            xml_name = next((n for n in zf.namelist() if n.endswith("export.xml")), None)
+            if not xml_name:
+                return None
+            xml_bytes = zf.read(xml_name)
+
+        # Парсимо XML потоково щоб не вантажити весь в пам'ять
+        daily = {}
+
+        def add(date, key, val):
+            if date not in daily:
+                daily[date] = {}
+            if key not in daily[date]:
+                daily[date][key] = []
+            daily[date][key].append(val)
+
+        context = ET.iterparse(io.BytesIO(xml_bytes), events=("end",))
+        for event, elem in context:
+            if elem.tag != "Record":
+                elem.clear()
+                continue
+            rtype = elem.get("type", "")
+            start = elem.get("startDate", "")[:10]
+            val_str = elem.get("value", "")
+            try:
+                val = float(val_str)
+            except:
+                elem.clear()
+                continue
+
+            if "StepCount" in rtype:
+                add(start, "steps", val)
+            elif "HeartRate" in rtype and "Variability" not in rtype:
+                add(start, "heart_rate", val)
+            elif "ActiveEnergyBurned" in rtype:
+                add(start, "calories_active", val)
+            elif "BasalEnergyBurned" in rtype:
+                add(start, "calories_basal", val)
+            elif "DistanceWalkingRunning" in rtype:
+                add(start, "distance_km", val)
+            elif "SleepAnalysis" in rtype and elem.get("value","") == "HKCategoryValueSleepAnalysisAsleepUnspecified":
+                # Розрахунок тривалості сну
+                try:
+                    s = datetime.fromisoformat(elem.get("startDate","").replace(" ", "T")[:19])
+                    e = datetime.fromisoformat(elem.get("endDate","").replace(" ", "T")[:19])
+                    hours = (e - s).total_seconds() / 3600
+                    add(start, "sleep_hours", hours)
+                except:
+                    pass
+            elif "HeartRateVariability" in rtype:
+                add(start, "hrv", val)
+            elif "FlightsClimbed" in rtype:
+                add(start, "flights_climbed", val)
+
+            elem.clear()
+
+        # Агрегуємо
+        result = {}
+        for date, vals in daily.items():
+            entry = {}
+            if "steps" in vals:          entry["steps"]           = int(sum(vals["steps"]))
+            if "heart_rate" in vals:     entry["heart_rate"]      = int(sum(vals["heart_rate"]) / len(vals["heart_rate"]))
+            if "calories_active" in vals:entry["calories_active"] = int(sum(vals["calories_active"]))
+            if "calories_basal" in vals: entry["calories"]        = int(sum(vals.get("calories_active",[0])) + sum(vals["calories_basal"]))
+            if "distance_km" in vals:    entry["distance_km"]     = round(sum(vals["distance_km"]) / 1000, 2)  # метри -> км
+            if "sleep_hours" in vals:    entry["sleep_hours"]     = round(sum(vals["sleep_hours"]), 1)
+            if "hrv" in vals:            entry["hrv"]             = round(sum(vals["hrv"]) / len(vals["hrv"]), 1)
+            if "flights_climbed" in vals:entry["flights_climbed"] = int(sum(vals["flights_climbed"]))
+            if entry:
+                result[date] = entry
+
+        return result if result else None
+    except Exception as e:
+        print(f"_parse_apple_health_xml error: {e}")
+        return None
+
+
+def handle_health_zip(chat_id, doc):
+    """Обробляє ZIP файл — Apple Health export або Health Auto Export."""
+    try:
+        send(chat_id, "⏳ Обробляю ZIP файл...")
 
         file_id = doc["file_id"]
-        # Отримуємо URL файлу
         url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/getFile?file_id={file_id}"
         import urllib.request as _ur
         req = _ur.Request(url)
@@ -482,42 +563,83 @@ def handle_health_zip(chat_id, doc):
         with _ur.urlopen(req2, timeout=60) as r:
             zip_bytes = r.read()
 
-        import sys as _sys, os as _os
-        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-        from health_webhook import analyze_hae_zip, format_hae_report
+        import zipfile, io as _io
+        # Визначаємо тип ZIP
+        with zipfile.ZipFile(_io.BytesIO(zip_bytes)) as zf:
+            names = zf.namelist()
 
-        stats = analyze_hae_zip(zip_bytes)
-        if not stats:
-            send(chat_id, "❌ Не вдалось розпарсити ZIP. Переконайся що це файл від <b>Health Auto Export</b> app.")
-            return
+        is_apple_health = any("export.xml" in n for n in names)
+        is_hae = any(n.startswith("HealthAutoExport-") and n.endswith(".csv") for n in names)
 
-        # Зберігаємо останній день в health.json на GitHub
-        try:
+        if is_apple_health:
+            # Apple Health export
+            send(chat_id, "🍎 Знайдено Apple Health export.xml — парсю...")
+            daily_data = _parse_apple_health_xml(zip_bytes)
+            if not daily_data:
+                send(chat_id, "❌ Не вдалось розпарсити XML.")
+                return
+
+            from storage import load_health, save_health
+            health_db = load_health()
+            new_days = 0
+            for date, entry in daily_data.items():
+                if entry:
+                    existing = health_db.get(date, {})
+                    existing.update(entry)
+                    health_db[date] = existing
+                    new_days += 1
+
+            save_health(health_db)
+
+            # Показуємо дані за сьогодні або вчора
+            today = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+            yesterday = (datetime.now(timezone.utc) + timedelta(hours=2) - timedelta(days=1)).strftime("%Y-%m-%d")
+            show_date = today if today in daily_data else yesterday
+            d = daily_data.get(show_date, {})
+
+            lines = [
+                f"✅ <b>Apple Health — оновлено {new_days} днів!</b>\n",
+                f"📅 Останні дані ({show_date[5:].replace('-', '.')}):",
+            ]
+            if d.get("steps"):        lines.append(f"  👟 Кроки: <b>{d['steps']:,}</b>".replace(",", " "))
+            if d.get("distance_km"):  lines.append(f"  📏 Дистанція: <b>{d['distance_km']} км</b>")
+            if d.get("heart_rate"):   lines.append(f"  ❤️ Пульс: <b>{d['heart_rate']} уд/хв</b>")
+            if d.get("calories_active"): lines.append(f"  🔥 Калорії: <b>{d['calories_active']} ккал</b>")
+            if d.get("sleep_hours"):  lines.append(f"  😴 Сон: <b>{d['sleep_hours']} год</b>")
+            if d.get("hrv"):          lines.append(f"  💓 HRV: <b>{d['hrv']}</b>")
+            send(chat_id, "\n".join(lines))
+
+        elif is_hae:
+            # Health Auto Export
+            import sys as _sys, os as _os
+            _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+            from health_webhook import analyze_hae_zip, format_hae_report
+
+            stats = analyze_hae_zip(zip_bytes)
+            if not stats:
+                send(chat_id, "❌ Не вдалось розпарсити HAE ZIP.")
+                return
+
             from storage import load_health, save_health
             health_db = load_health()
             last_date = stats.get("period_end") or stats.get("period_start")
             if last_date:
                 entry = health_db.get(last_date, {})
-                if stats.get("avg_steps"):   entry["steps"]         = int(stats["avg_steps"])
-                if stats.get("avg_sleep"):   entry["sleep_hours"]   = round(stats["avg_sleep"], 1)
-                if stats.get("avg_dist_km"): entry["distance_km"]   = round(stats["avg_dist_km"], 1)
-                if stats.get("hrv_avg"):     entry["hrv"]           = int(stats["hrv_avg"])
-                if stats.get("vo2_max"):     entry["vo2_max"]       = stats["vo2_max"]
+                if stats.get("avg_steps"):   entry["steps"]       = int(stats["avg_steps"])
+                if stats.get("avg_sleep"):   entry["sleep_hours"] = round(stats["avg_sleep"], 1)
+                if stats.get("avg_dist_km"): entry["distance_km"] = round(stats["avg_dist_km"], 1)
+                if stats.get("hrv_avg"):     entry["hrv"]         = int(stats["hrv_avg"])
                 health_db[last_date] = entry
                 save_health(health_db)
-            saved = bool(last_date)
-        except Exception as e:
-            print(f"save health error: {e}")
-            saved = False
 
-        report = format_hae_report(stats)
-        if saved:
-            report += "\n\n✅ <b>Дані збережено в базу!</b>"
-        send(chat_id, report)
+            report = format_hae_report(stats) + "\n\n✅ <b>Дані збережено!</b>"
+            send(chat_id, report)
+        else:
+            send(chat_id, "❌ Невідомий формат ZIP.\n\nОчікується:\n• <b>Apple Health</b> export (export.zip з iPhone)\n• <b>Health Auto Export</b> app")
 
     except Exception as e:
         print(f"handle_health_zip error: {e}", flush=True)
-        send(chat_id, f"❌ Помилка обробки ZIP: {e}\n\nСпробуй ввести вручну:\n<code>/зд [кроки] [сон] [ЧСС] [кал] [score]</code>")
+        send(chat_id, f"❌ Помилка: {e}\n\nВведи вручну:\n<code>/зд [кроки] [сон] [ЧСС] [кал]</code>")
 
 
 def handle_health_photo(chat_id, msg):
