@@ -484,7 +484,7 @@ def handle_health_zip(chat_id, doc):
 
         import sys as _sys, os as _os
         _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-        from health_webhook import analyze_hae_zip, format_hae_report, save_today_to_github
+        from health_webhook import analyze_hae_zip, format_hae_report
 
         stats = analyze_hae_zip(zip_bytes)
         if not stats:
