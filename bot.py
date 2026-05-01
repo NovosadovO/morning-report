@@ -462,6 +462,64 @@ def handle_habit_callback(callback_query):
     return True
 
 
+def handle_health_zip(chat_id, doc):
+    """Обробляє ZIP файл від Health Auto Export."""
+    try:
+        send(chat_id, "⏳ Обробляю ZIP файл Health Auto Export...")
+
+        file_id = doc["file_id"]
+        # Отримуємо URL файлу
+        url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/getFile?file_id={file_id}"
+        import urllib.request as _ur
+        req = _ur.Request(url)
+        with _ur.urlopen(req, timeout=15) as r:
+            file_info = json.loads(r.read())
+
+        file_path = file_info["result"]["file_path"]
+        file_url = f"https://api.telegram.org/file/bot{TELEGRAM_TOKEN}/{file_path}"
+
+        req2 = _ur.Request(file_url)
+        with _ur.urlopen(req2, timeout=60) as r:
+            zip_bytes = r.read()
+
+        import sys as _sys, os as _os
+        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+        from health_webhook import analyze_hae_zip, format_hae_report, save_today_to_github
+
+        stats = analyze_hae_zip(zip_bytes)
+        if not stats:
+            send(chat_id, "❌ Не вдалось розпарсити ZIP. Переконайся що це файл від <b>Health Auto Export</b> app.")
+            return
+
+        # Зберігаємо останній день в health.json на GitHub
+        try:
+            from storage import load_health, save_health
+            health_db = load_health()
+            last_date = stats.get("period_end") or stats.get("period_start")
+            if last_date:
+                entry = health_db.get(last_date, {})
+                if stats.get("avg_steps"):   entry["steps"]         = int(stats["avg_steps"])
+                if stats.get("avg_sleep"):   entry["sleep_hours"]   = round(stats["avg_sleep"], 1)
+                if stats.get("avg_dist_km"): entry["distance_km"]   = round(stats["avg_dist_km"], 1)
+                if stats.get("hrv_avg"):     entry["hrv"]           = int(stats["hrv_avg"])
+                if stats.get("vo2_max"):     entry["vo2_max"]       = stats["vo2_max"]
+                health_db[last_date] = entry
+                save_health(health_db)
+            saved = bool(last_date)
+        except Exception as e:
+            print(f"save health error: {e}")
+            saved = False
+
+        report = format_hae_report(stats)
+        if saved:
+            report += "\n\n✅ <b>Дані збережено в базу!</b>"
+        send(chat_id, report)
+
+    except Exception as e:
+        print(f"handle_health_zip error: {e}", flush=True)
+        send(chat_id, f"❌ Помилка обробки ZIP: {e}\n\nСпробуй ввести вручну:\n<code>/зд [кроки] [сон] [ЧСС] [кал] [score]</code>")
+
+
 def handle_health_photo(chat_id, msg):
     """Обробляє фото з Apple Health скріну — OCR через Google Vision API."""
     caption = msg.get("caption", "").strip()
@@ -958,6 +1016,14 @@ def main():
                 if msg.get("photo"):
                     handle_health_photo(chat_id, msg)
                     continue
+
+                # Обробка ZIP файлу (Health Auto Export)
+                if msg.get("document"):
+                    doc = msg["document"]
+                    fname = doc.get("file_name", "")
+                    if fname.endswith(".zip") or "export" in fname.lower():
+                        handle_health_zip(chat_id, doc)
+                        continue
 
                 print(f"Message: {text}", flush=True)
                 handle_command(chat_id, text)
