@@ -648,7 +648,7 @@ def _parse_gmail_msg(msg_data, full=False):
 
 def _gemini_summarize(text, max_input=3000):
     """Робить короткий summary через Gemini API."""
-    api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyCilMSyJgilYYkziPXvnaCU9-ehmxIuHaQ")
+    api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
     if not api_key or not text or text == "—":
         return None
     try:
@@ -658,7 +658,7 @@ def _gemini_summarize(text, max_input=3000):
             "— про що цей лист, що від тебе вимагається або що важливо знати. "
             "Без зайвих слів, тільки суть.\n\nЛист:\n" + text_trimmed
         )
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
         body = json.dumps({"contents": [{"parts": [{"text": prompt}]}]}).encode()
         req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
         with urllib.request.urlopen(req, timeout=15) as r:
