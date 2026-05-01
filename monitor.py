@@ -45,12 +45,17 @@ IGNORE_SENDERS = [
     "digest", "updates@", "news@", "alert@binance", "alert@coinbase",
     "donotreply", "do-not-reply", "notify.railway", "temu", "footshop",
     "unstoppabledomains", "startengine", "temuemail",
+    "linkedin", "jobvite", "greenhouse", "workday", "lever.co",
+    "economist", "okx", "roundup", "dlnews", "coindesk", "cointelegraph",
+    "decrypt.co", "theblock", "blockworks",
 ]
 IGNORE_SUBJECTS = [
     "newsletter", "digest", "promo", "offer", "sale", "discount",
     "unsubscribe", "your daily", "weekly", "monthly", "referral",
     "new launch", "collecting", "portfolio", "managed by ai",
     "predtým", "teraz", "máš ich",
+    "вакансі", "job alert", "new job", "recommended job", "hiring",
+    "trading suite", "one step away",
 ]
 
 # ─── HELPERS ──────────────────────────────────────────────────────────────────
@@ -600,21 +605,26 @@ def _extract_body_preview(msg_data, max_chars=120):
                     body = base64.urlsafe_b64decode(data + "==").decode("utf-8", errors="replace")
                     break
 
-        # Якщо немає — беремо text/html
+        # Якщо немає — беремо text/html і конвертуємо в текст
         if not body:
             for p in all_parts:
                 if p.get("mimeType") == "text/html":
                     data = p.get("body", {}).get("data", "")
                     if data:
                         html_body = base64.urlsafe_b64decode(data + "==").decode("utf-8", errors="replace")
+                        # Видаляємо style/script блоки повністю
+                        html_body = re.sub(r'<style[^>]*>.*?</style>', ' ', html_body, flags=re.DOTALL | re.IGNORECASE)
+                        html_body = re.sub(r'<script[^>]*>.*?</script>', ' ', html_body, flags=re.DOTALL | re.IGNORECASE)
+                        # Заміняємо теги на пробіли
                         body = re.sub(r'<[^>]+>', ' ', html_body)
                         break
 
         body = _html.unescape(body)
         body = re.sub(r'https?://\S+', '', body)
+        body = re.sub(r'\{[^}]*\}', '', body)   # CSS блоки типу {color: red}
+        body = re.sub(r'@[a-zA-Z-]+\s*\{[^}]*\}', '', body)  # @media etc
         body = re.sub(r'\[.*?\]', '', body)
-        body = re.sub(r'<.*?>', '', body)
-        body = re.sub(r'(unsubscribe|відписатись|view in browser|view this post).{0,60}', '', body, flags=re.IGNORECASE)
+        body = re.sub(r'(unsubscribe|відписатись|view in browser|view this post|click here).{0,60}', '', body, flags=re.IGNORECASE)
         body = re.sub(r'\s+', ' ', body).strip()
 
         if len(body) > max_chars:
