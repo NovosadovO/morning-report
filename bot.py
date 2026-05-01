@@ -520,6 +520,9 @@ def _parse_apple_health_xml(zip_bytes):
                 add(start, "hrv", val)
             elif "FlightsClimbed" in rtype:
                 add(start, "flights_climbed", val)
+            elif "DietaryWater" in rtype:
+                # Apple Health зберігає в літрах або мл — перевіряємо
+                add(start, "water_ml", val * 1000 if val < 20 else val)
 
             elem.clear()
 
@@ -535,6 +538,7 @@ def _parse_apple_health_xml(zip_bytes):
             if "sleep_hours" in vals:    entry["sleep_hours"]     = round(sum(vals["sleep_hours"]), 1)
             if "hrv" in vals:            entry["hrv"]             = round(sum(vals["hrv"]) / len(vals["hrv"]), 1)
             if "flights_climbed" in vals:entry["flights_climbed"] = int(sum(vals["flights_climbed"]))
+            if "water_ml" in vals:       entry["water_ml"]        = int(sum(vals["water_ml"]))
             if entry:
                 result[date] = entry
 
