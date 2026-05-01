@@ -636,15 +636,43 @@ def _parse_gmail_msg(msg_data, full=False):
     return subject, sender_clean, preview, is_unread
 
 
-def format_email_item(subject, sender, preview, is_unread=False):
+def _gemini_summarize(text, max_input=3000):
+    """Робить короткий summary через Gemini API."""
+    api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyCilMSyJgilYYkziPXvnaCU9-ehmxIuHaQ")
+    if not api_key or not text or text == "—":
+        return None
+    try:
+        text_trimmed = text[:max_input]
+        prompt = (
+            "Прочитай цей email і дай ДУЖЕ короткий опис (1-2 речення українською) "
+            "— про що цей лист, що від тебе вимагається або що важливо знати. "
+            "Без зайвих слів, тільки суть.\n\nЛист:\n" + text_trimmed
+        )
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
+        body = json.dumps({"contents": [{"parts": [{"text": prompt}]}]}).encode()
+        req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=15) as r:
+            data = json.loads(r.read())
+        summary = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        return summary[:300]
+    except Exception as e:
+        print(f"Gemini summary error: {e}")
+        return None
+
+
+def format_email_item(subject, sender, preview, is_unread=False, ai_summary=None):
     mark = "🔴 " if is_unread else "   "
-    return (
-        f"┌─────────────────────\n"
-        f"{mark}📨 <b>{esc(subject[:55])}</b>\n"
-        f"    👤 <code>{esc(sender[:40])}</code>\n"
-        f"    💬 {esc(preview[:110])}\n"
-        f"└─────────────────────"
-    )
+    lines = [
+        f"┌─────────────────────",
+        f"{mark}📨 <b>{esc(subject[:55])}</b>",
+        f"    👤 <code>{esc(sender[:40])}</code>",
+    ]
+    if ai_summary:
+        lines.append(f"    🤖 {esc(ai_summary)}")
+    else:
+        lines.append(f"    💬 {esc(preview[:110])}")
+    lines.append("└─────────────────────")
+    return "\n".join(lines)
 
 
 def get_emails():
@@ -657,7 +685,7 @@ def get_emails():
     # Беремо останні 25 листів з INBOX
     all_msgs = _gmail_list(token, ["INBOX"], max_results=25)
 
-    primary = []  # CATEGORY_PERSONAL або без категорії
+    primary = []  # CATEGORY_PERSONAL або без категорії — зберігаємо з msg_data для Gemini
     other   = []  # CATEGORY_PROMOTIONS, SOCIAL, UPDATES
     all_ids = []
 
@@ -679,9 +707,9 @@ def get_emails():
             if len(other) < 3:
                 other.append((subject, sender, preview, is_unread))
         else:
-            # CATEGORY_PERSONAL + CATEGORY_UPDATES = ОСНОВНІ
+            # CATEGORY_PERSONAL + CATEGORY_UPDATES = ОСНОВНІ — зберігаємо msg_data для Gemini
             if len(primary) < 5:
-                primary.append((subject, sender, preview, is_unread))
+                primary.append((subject, sender, preview, is_unread, msg_data))
 
         if len(primary) >= 5 and len(other) >= 3:
             break
@@ -693,11 +721,14 @@ def get_emails():
     lines = ["📩 <b>━━━ ЛИСТИ ━━━</b>\n"]
 
     if primary:
-        unread_count = sum(1 for _, _, _, u in primary if u)
+        unread_count = sum(1 for _, _, _, u, _ in primary if u)
         header = "📥 <b>ОСНОВНІ</b>" + (f"  🔴 {unread_count} нових" if unread_count else "")
         lines.append(header)
-        for s, snd, p, u in primary:
-            lines.append(format_email_item(s, snd, p, u))
+        for s, snd, p, u, md in primary:
+            # Gemini summary для основних листів
+            full_body = _extract_body_preview(md, max_chars=3000)
+            ai_sum = _gemini_summarize(full_body)
+            lines.append(format_email_item(s, snd, p, u, ai_summary=ai_sum))
         lines.append("")
 
     if other:
@@ -1076,34 +1107,48 @@ def get_city_traffic():
 
 def main():
     now = datetime.now(timezone.utc)
-    local_time = (now + timedelta(hours=2)).strftime("%H:%M")
-    local_date = (now + timedelta(hours=2)).strftime("%d.%m.%Y")
+    now_local = now + timedelta(hours=2)
+    local_time = now_local.strftime("%H:%M")
+    local_date = now_local.strftime("%d.%m.%Y")
+    weekday = now_local.weekday()  # 0=Пн, 5=Сб, 6=Нд
+    local_hour = now_local.hour
 
-    print(f"=== Monitor run at {now.isoformat()} ===")
+    # У вихідні (Сб/Нд) — навчання/крипто/пошта тільки з 11:00
+    is_weekend = weekday >= 5
+    include_learning_blocks = (not is_weekend) or (local_hour >= 11)
 
-    prices_text  = get_prices()
+    print(f"=== Monitor run at {now.isoformat()} (weekend={is_weekend}, include_learning={include_learning_blocks}) ===")
+
+    prices_text  = get_prices() if include_learning_blocks else None
     weather_text = get_weather()
     cal_text     = get_calendar()
-    email_text   = get_emails()
+    email_text   = get_emails() if include_learning_blocks else None
     traffic_text = get_city_traffic()
-    summary_text = get_summary(prices_text, weather_text, cal_text)
+    summary_text = get_summary(prices_text or "", weather_text, cal_text)
 
     SEP = "\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n"
-    report = (
-        f"🕐 <b>Звіт {local_time}  ·  {local_date}</b>\n"
-        f"<i>3х годинний репорт</i>"
-        f"{SEP}"
-        f"{prices_text}"
-        f"{SEP}"
-        f"{weather_text}"
-        f"{SEP}"
-        + (f"{traffic_text}{SEP}" if traffic_text else "")
-        + f"{cal_text}"
-        f"{SEP}"
-        f"{email_text}"
-        f"{SEP}"
-        f"{summary_text}"
-    )
+
+    parts = [f"🕐 <b>Звіт {local_time}  ·  {local_date}</b>\n<i>3х годинний репорт</i>"]
+
+    if prices_text:
+        parts.append(prices_text)
+
+    parts.append(weather_text)
+
+    if traffic_text:
+        parts.append(traffic_text)
+
+    parts.append(cal_text)
+
+    if email_text:
+        parts.append(email_text)
+
+    if is_weekend and not include_learning_blocks:
+        parts.append("💤 <i>Вихідний — крипто/пошта/навчання з 11:00</i>")
+
+    parts.append(summary_text)
+
+    report = SEP.join(parts)
 
     send_telegram(report)
     print("=== Report sent ===")
