@@ -774,9 +774,8 @@ def get_emails():
             if len(primary) >= 5 and len(other) >= 3:
                 break
 
-        # Зберігаємо seen
-        all_seen = list(seen | {uid.decode() for uid in recent_ids})
-        save_json_file(SEEN_EMAIL_FILE, all_seen[-500:])
+        # Зберігаємо seen (по Message-ID, не IMAP UID)
+        save_json_file(SEEN_EMAIL_FILE, list(seen)[-500:])
         mail.logout()
 
         lines = ["📩 <b>━━━ ЛИСТИ ━━━</b>\n"]
@@ -823,15 +822,23 @@ def check_new_emails():
         new_alerted = list(alerted)
 
         for uid in unseen_ids[-20:]:
-            uid_str = uid.decode()
-            if uid_str in alerted:
-                continue
             _, msg_data = mail.fetch(uid, "(RFC822.HEADER)")
             raw = msg_data[0][1]
             msg = email.message_from_bytes(raw)
+
+            # Використовуємо Message-ID як унікальний ключ (не IMAP UID)
+            msg_id = msg.get("Message-ID", "").strip()
+            if not msg_id:
+                # Fallback: subject+date
+                msg_id = msg.get("Subject", "") + msg.get("Date", "")
+            msg_id = msg_id[:100]
+
+            if msg_id in alerted:
+                continue
+
             subject = _imap_decode_header(msg.get("Subject", "(без теми)"))
             sender  = _imap_decode_header(msg.get("From", ""))
-            new_alerted.append(uid_str)
+            new_alerted.append(msg_id)
             is_promo = any(kw in sender.lower() for kw in PROMO_KEYWORDS)
             if not is_spam(sender, subject) and not is_promo:
                 new_alerts.append((subject, sender))
