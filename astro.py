@@ -11,9 +11,13 @@ from datetime import datetime, timezone, timedelta
 # ─── Дані народження ──────────────────────────────────────────────────────────
 BIRTH_DATE = (1989, 9, 22)
 BIRTH_TIME = (2, 52, 0)
-BIRTH_LAT  = 48.7163
-BIRTH_LON  = 21.2611
-BIRTH_TZ   = 1.0  # UTC+1 (Кошіце 1989 — зимовий час)
+BIRTH_LAT  = 49.8397   # Львів
+BIRTH_LON  = 24.0297   # Львів
+BIRTH_TZ   = 3.0       # UTC+3 (Україна 1989, літній час — вересень)
+
+# ─── Місто проживання (для будинків транзиту) ─────────────────────────────────
+CURRENT_LAT = 48.7163  # Кошіце
+CURRENT_LON = 21.2611  # Кошіце
 
 # ─── Довідники ────────────────────────────────────────────────────────────────
 PLANETS = [
@@ -172,7 +176,8 @@ def get_astro_report():
         natal_lons.append(result[0])
 
     # ── Будинки (Placidus) для транзиту ──
-    cusps_now, ascmc_now = swe.houses(jd_now, BIRTH_LAT, BIRTH_LON, b"P")
+    # Будинки транзиту — по місцю проживання (Кошіце)
+    cusps_now, ascmc_now = swe.houses(jd_now, CURRENT_LAT, CURRENT_LON, b"P")
     asc_now = ascmc_now[0]
     mc_now  = ascmc_now[1]
 
