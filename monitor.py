@@ -808,42 +808,46 @@ def get_emails():
 ALERT_EMAIL_FILE = os.path.join(_DATA_DIR, "monitor_alert_emails.json")
 
 def check_new_emails():
-    """Перевіряє нові непрочитані листи — шле сповіщення."""
-    alerted = set(load_json_file(ALERT_EMAIL_FILE, default=[]))
+    """Перевіряє листи що прийшли за останні 12 хвилин — шле сповіщення."""
     PROMO_KEYWORDS = ["unsubscribe", "відписатись", "promotions", "newsletter",
                       "noreply", "no-reply", "marketing", "notification"]
     try:
         mail = _imap_connect()
         mail.select("INBOX")
-        _, data = mail.search(None, "UNSEEN")
+
+        # Шукаємо ТІЛЬКИ листи що прийшли за останні 12 хвилин по IMAP date
+        since_dt = datetime.now(timezone.utc) - timedelta(minutes=12)
+        since_str = since_dt.strftime("%d-%b-%Y")  # IMAP формат: 02-May-2026
+        _, data = mail.search(None, f'(UNSEEN SINCE "{since_str}")')
         unseen_ids = data[0].split()
 
-        new_alerts = []
-        new_alerted = list(alerted)
+        if not unseen_ids:
+            mail.logout()
+            return
 
-        for uid in unseen_ids[-20:]:
+        new_alerts = []
+
+        for uid in unseen_ids[-10:]:
             _, msg_data = mail.fetch(uid, "(RFC822.HEADER)")
             raw = msg_data[0][1]
             msg = email.message_from_bytes(raw)
 
-            # Використовуємо Message-ID як унікальний ключ (не IMAP UID)
-            msg_id = msg.get("Message-ID", "").strip()
-            if not msg_id:
-                # Fallback: subject+date
-                msg_id = msg.get("Subject", "") + msg.get("Date", "")
-            msg_id = msg_id[:100]
-
-            if msg_id in alerted:
-                continue
+            # Перевіряємо точний час отримання
+            date_str = msg.get("Date", "")
+            try:
+                import email.utils as _eu
+                msg_dt = datetime.fromtimestamp(_eu.parsedate_to_datetime(date_str).timestamp(), tz=timezone.utc)
+                if msg_dt < since_dt:
+                    continue  # старіший ніж 12 хв
+            except Exception:
+                pass
 
             subject = _imap_decode_header(msg.get("Subject", "(без теми)"))
             sender  = _imap_decode_header(msg.get("From", ""))
-            new_alerted.append(msg_id)
             is_promo = any(kw in sender.lower() for kw in PROMO_KEYWORDS)
             if not is_spam(sender, subject) and not is_promo:
                 new_alerts.append((subject, sender))
 
-        save_json_file(ALERT_EMAIL_FILE, new_alerted[-1000:])
         mail.logout()
 
         for subject, sender in new_alerts:
