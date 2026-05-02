@@ -55,6 +55,8 @@ IGNORE_SENDERS = [
     "uniswap", "investing.com", "coinpoker", "novinky@",
     "sizeer", "pullandbear", "uefa", "store@", "streetguide@",
     "slovnaft", "kaufland", "loyalty", "temu", "aboutyou",
+    "finexity", "xtb.com", "zlavomat", "fox.com", "inbox.fox",
+    "rondogo", "avax.network", "nft.", "airdrop", "binance.com",
 ]
 IGNORE_SUBJECTS = [
     "newsletter", "digest", "promo", "offer", "sale", "discount",
