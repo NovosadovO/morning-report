@@ -39,26 +39,38 @@ COINS = {
     "ONDO": "ondo-finance",
 }
 
-IGNORE_SENDERS = [
-    "noreply", "no-reply", "newsletter", "notifications", "mailer",
-    "support@", "info@", "marketing", "promo", "unsubscribe",
+# ─── EMAIL CLASSIFICATION ─────────────────────────────────────────────────────
+# Рівні: SPAM (викинути) → PROMO (показати в "Інші") → REAL (основні)
+
+# Домени/ключові слова відправника — одразу в смітник
+_SPAM_SENDERS = {
+    "noreply", "no-reply", "donotreply", "do-not-reply", "mailer-daemon",
+    "newsletter", "notifications", "mailer", "marketing", "unsubscribe",
     "digest", "updates@", "news@", "alert@binance", "alert@coinbase",
-    "donotreply", "do-not-reply", "notify.railway", "temu", "footshop",
-    "unstoppabledomains", "startengine", "temuemail",
+    "notify.railway", "temu", "footshop", "temuemail",
+    "unstoppabledomains", "startengine",
     "linkedin", "jobvite", "greenhouse", "workday", "lever.co",
     "economist", "okx", "roundup", "dlnews", "coindesk", "cointelegraph",
     "decrypt.co", "theblock", "blockworks",
-    # Промо домени
-    "tripadvis", "booking.com", "campaign@", "inspiration@", "aboutyou",
-    "sg.booking", "mp1.", "em.", "e.tripadvisor", "email.booking",
-    "hello@news", "deals@", "offers@", "hello@", "team@", "hi@",
+    "tripadvis", "booking.com", "sg.booking", "e.tripadvisor", "email.booking",
+    "campaign@", "inspiration@", "aboutyou", "hello@news", "deals@", "offers@",
     "uniswap", "investing.com", "coinpoker", "novinky@",
     "sizeer", "pullandbear", "uefa", "store@", "streetguide@",
-    "slovnaft", "kaufland", "loyalty", "temu", "aboutyou",
+    "slovnaft", "kaufland", "loyalty", "mp1.", "em.", "info@",
     "finexity", "xtb.com", "zlavomat", "fox.com", "inbox.fox",
     "rondogo", "avax.network", "nft.", "airdrop", "binance.com",
-]
-IGNORE_SUBJECTS = [
+    "support@", "promo@", "hello@", "team@", "hi@",
+}
+
+# Суб-домени відправника що означають bulk-mail
+_SPAM_SUBDOMAINS = re.compile(
+    r'^(news|mail|em|e\d*|m\d*|campaign|email|noreply|no-reply|'
+    r'update|notification|send|go|sg|mp\d+|loyalty|kcard|alert|digest|'
+    r'bulk|bounce|reply|auto|info|promo|marketing)\.'
+)
+
+# Ключові слова в темі листа
+_SPAM_SUBJECTS = {
     "newsletter", "digest", "promo", "offer", "sale", "discount",
     "unsubscribe", "your daily", "weekly", "monthly", "referral",
     "new launch", "collecting", "portfolio", "managed by ai",
@@ -67,7 +79,60 @@ IGNORE_SUBJECTS = [
     "trading suite", "one step away",
     "national parks", "genius", "watchlist", "satellites",
     "vyberte", "dobierku", "zľava", "výpredaj",
-]
+    "% off", "limited time", "exclusive deal", "flash sale",
+}
+
+def _classify_email(sender: str, subject: str) -> str:
+    """
+    Повертає: 'spam' | 'promo' | 'real'
+    - spam  → не показувати взагалі
+    - promo → показати в розділі "Інші" (якщо місце є)
+    - real  → показати в "Основних"
+    """
+    s = sender.lower()
+    sub = subject.lower()
+
+    # 1. Явний спам/маркетинг — одразу drop
+    if any(kw in s for kw in _SPAM_SENDERS):
+        return "spam"
+    if any(kw in sub for kw in _SPAM_SUBJECTS):
+        return "spam"
+
+    # 2. Промо піддомен (@news.example.com, @em.example.com тощо)
+    domain_match = re.search(r'@([\w.-]+)', s)
+    domain = domain_match.group(1) if domain_match else ""
+    if _SPAM_SUBDOMAINS.match(domain):
+        return "promo"
+
+    # 3. Відправник — реальна людина?
+    # Формат "Ім'я Прізвище <email>" → видобути display name
+    name_match = re.match(r'^"?([^<"@]+)"?\s*<', sender)
+    display_name = name_match.group(1).strip() if name_match else ""
+
+    # Якщо display name є і схожий на людину (≥2 слова, немає "Team", "Support", "Bot", "System")
+    bot_words = {"team", "support", "bot", "system", "service", "group", "noreply",
+                 "sales", "billing", "account", "admin", "office", "help", "info",
+                 "reply", "automated", "alert", "notify", "notification", "news",
+                 "updates", "deals", "offers", "promo", "hello", "hi"}
+    name_lower = display_name.lower()
+    name_words = name_lower.split()
+    is_human = (
+        len(name_words) >= 2
+        and not any(w in bot_words for w in name_words)
+        and not re.search(r'\d', display_name)  # немає цифр у імені
+    )
+    if is_human:
+        return "real"
+
+    # 4. Якщо нема display name або схожий на сервіс — promo
+    return "promo"
+
+# Зворотна сумісність
+IGNORE_SENDERS = list(_SPAM_SENDERS)
+IGNORE_SUBJECTS = list(_SPAM_SUBJECTS)
+
+def is_spam(sender, subject):
+    return _classify_email(sender, subject) == "spam"
 
 # ─── HELPERS ──────────────────────────────────────────────────────────────────
 
@@ -779,13 +844,6 @@ def get_emails():
         primary = []
         other   = []
 
-        PROMO_DOMAINS = [
-            "tripadvis", "booking.com", "aboutyou", "temu.com", "newsletter",
-            "noreply", "no-reply", "marketing", "promotions", "notifications",
-            "news.railway", "campaign", "mailchimp", "sendgrid", "unsubscribe",
-            "digest", "updates@", "info@", "deals@", "offers@", "hello@news",
-        ]
-
         for uid in recent_ids:
             _, msg_data = mail.fetch(uid, "(RFC822)")
             raw = msg_data[0][1]
@@ -795,27 +853,20 @@ def get_emails():
             sender  = _imap_decode_header(msg.get("From", ""))
             is_unread = uid.decode() not in seen
 
-            if is_spam(sender, subject):
+            cls = _classify_email(sender, subject)
+            if cls == "spam":
                 continue
 
             body = _imap_get_body(msg)
             preview = body[:120].replace("\n", " ").strip()
 
-            sender_lower = sender.lower()
-            # Промо домени — піддомени типу @news., @mail., @em., @campaign., @e., @m.
-            import re as _re2
-            sender_domain = _re2.search(r'@([\w.-]+)', sender_lower)
-            domain = sender_domain.group(1) if sender_domain else ""
-            promo_subdomains = bool(_re2.match(r'^(news|mail|em|e\d?|m\d?|campaign|email|info|noreply|no-reply|update|notification|send|go|sg|mp\d|loyalty|kcard|alert|digest)\.',  domain))
-            is_promo = promo_subdomains or any(kw in sender_lower for kw in PROMO_DOMAINS)
-
-            if is_promo:
-                if len(other) < 3:
-                    other.append((subject, sender, preview, is_unread))
-            else:
+            if cls == "real":
                 if len(primary) < 5:
                     ai_sum = _gemini_summarize(body) if body else ""
                     primary.append((subject, sender, preview, is_unread, ai_sum))
+            else:  # promo
+                if len(other) < 3:
+                    other.append((subject, sender, preview, is_unread))
 
             if len(primary) >= 5 and len(other) >= 3:
                 break
@@ -855,8 +906,6 @@ ALERT_EMAIL_FILE = os.path.join(_DATA_DIR, "monitor_alert_emails.json")
 
 def check_new_emails():
     """Перевіряє листи що прийшли за останні 12 хвилин — шле сповіщення."""
-    PROMO_KEYWORDS = ["unsubscribe", "відписатись", "promotions", "newsletter",
-                      "noreply", "no-reply", "marketing", "notification"]
     try:
         mail = _imap_connect()
         mail.select("INBOX")
@@ -890,8 +939,7 @@ def check_new_emails():
 
             subject = _imap_decode_header(msg.get("Subject", "(без теми)"))
             sender  = _imap_decode_header(msg.get("From", ""))
-            is_promo = any(kw in sender.lower() for kw in PROMO_KEYWORDS)
-            if not is_spam(sender, subject) and not is_promo:
+            if _classify_email(sender, subject) == "real":
                 new_alerts.append((subject, sender))
 
         mail.logout()
