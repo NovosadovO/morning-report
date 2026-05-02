@@ -685,71 +685,123 @@ def format_email_item(subject, sender, preview, is_unread=False, ai_summary=None
     return "\n".join(lines)
 
 
-def get_emails():
-    token = _gmail_access_token()
-    if not token:
-        return "📬 <b>Email</b>\n⚠️ Gmail API не налаштовано"
+def _imap_connect():
+    """Підключення до Gmail через IMAP."""
+    app_password = os.environ.get("GMAIL_APP_PASSWORD", "zbzlkvxjspuekbuk")
+    mail = imaplib.IMAP4_SSL("imap.gmail.com")
+    mail.login(GMAIL_USER, app_password)
+    return mail
 
-    seen = set(load_json_file(SEEN_EMAIL_FILE, default=[]))
-
-    # Беремо останні 25 листів з INBOX
-    all_msgs = _gmail_list(token, ["INBOX"], max_results=25)
-
-    primary = []  # CATEGORY_PERSONAL або без категорії — зберігаємо з msg_data для Gemini
-    other   = []  # CATEGORY_PROMOTIONS, SOCIAL, UPDATES
-    all_ids = []
-
-    for m in all_msgs:
-        msg_data = _gmail_get(token, m["id"], fmt="full")
-        if not msg_data:
-            continue
-        all_ids.append(m["id"])
-        labels  = msg_data.get("labelIds", [])
-        subject, sender, preview, is_unread = _parse_gmail_msg(msg_data, full=True)
-        if is_spam(sender, subject):
-            continue
-
-        is_promo  = "CATEGORY_PROMOTIONS" in labels
-        is_social = "CATEGORY_SOCIAL"     in labels
-        is_forum  = "CATEGORY_FORUMS"     in labels
-
-        if is_promo or is_social or is_forum:
-            if len(other) < 3:
-                other.append((subject, sender, preview, is_unread))
+def _imap_decode_header(raw):
+    """Декодує email заголовок."""
+    parts = email.header.decode_header(raw or "")
+    result = []
+    for part, enc in parts:
+        if isinstance(part, bytes):
+            try:
+                result.append(part.decode(enc or "utf-8", errors="replace"))
+            except Exception:
+                result.append(part.decode("utf-8", errors="replace"))
         else:
-            # CATEGORY_PERSONAL + CATEGORY_UPDATES = ОСНОВНІ — зберігаємо msg_data для Gemini
-            if len(primary) < 5:
-                primary.append((subject, sender, preview, is_unread, msg_data))
+            result.append(str(part))
+    return "".join(result)
 
-        if len(primary) >= 5 and len(other) >= 3:
-            break
+def _imap_get_body(msg):
+    """Витягує текст листа."""
+    body = ""
+    if msg.is_multipart():
+        for part in msg.walk():
+            ct = part.get_content_type()
+            cd = str(part.get("Content-Disposition", ""))
+            if ct == "text/plain" and "attachment" not in cd:
+                try:
+                    body = part.get_payload(decode=True).decode(
+                        part.get_content_charset() or "utf-8", errors="replace")
+                    break
+                except Exception:
+                    pass
+    else:
+        try:
+            body = msg.get_payload(decode=True).decode(
+                msg.get_content_charset() or "utf-8", errors="replace")
+        except Exception:
+            pass
+    return body[:3000]
 
-    # Зберігаємо seen IDs
-    new_seen = [mid for mid in all_ids if mid not in seen]
-    save_json_file(SEEN_EMAIL_FILE, list(seen | set(new_seen))[-500:])
+def get_emails():
+    try:
+        mail = _imap_connect()
+        mail.select("INBOX")
 
-    lines = ["📩 <b>━━━ ЛИСТИ ━━━</b>\n"]
+        # Всі листи, сортуємо по даті (останні 30)
+        _, data = mail.search(None, "ALL")
+        all_ids = data[0].split()
+        recent_ids = all_ids[-30:][::-1]  # останні 30, від нового до старого
 
-    if primary:
-        unread_count = sum(1 for _, _, _, u, _ in primary if u)
-        header = "📥 <b>ОСНОВНІ</b>" + (f"  🔴 {unread_count} нових" if unread_count else "")
-        lines.append(header)
-        for s, snd, p, u, md in primary:
-            # Gemini summary для основних листів
-            full_body = _extract_body_preview(md, max_chars=3000)
-            ai_sum = _gemini_summarize(full_body)
-            lines.append(format_email_item(s, snd, p, u, ai_summary=ai_sum))
-        lines.append("")
+        seen = set(load_json_file(SEEN_EMAIL_FILE, default=[]))
+        primary = []
+        other   = []
 
-    if other:
-        lines.append("📂 <b>ІНШІ</b>")
-        for s, snd, p, u in other:
-            lines.append(format_email_item(s, snd, p, u))
+        PROMO_KEYWORDS = ["unsubscribe", "відписатись", "promotions", "newsletter",
+                          "noreply", "no-reply", "marketing", "notification"]
 
-    if not primary and not other:
-        lines.append("✅ Немає листів")
+        for uid in recent_ids:
+            _, msg_data = mail.fetch(uid, "(RFC822)")
+            raw = msg_data[0][1]
+            msg = email.message_from_bytes(raw)
 
-    return "\n".join(lines)
+            subject = _imap_decode_header(msg.get("Subject", "(без теми)"))
+            sender  = _imap_decode_header(msg.get("From", ""))
+            is_unread = uid.decode() not in seen
+
+            if is_spam(sender, subject):
+                continue
+
+            body = _imap_get_body(msg)
+            preview = body[:120].replace("\n", " ").strip()
+
+            sender_lower = sender.lower()
+            is_promo = any(kw in sender_lower for kw in PROMO_KEYWORDS)
+
+            if is_promo:
+                if len(other) < 3:
+                    other.append((subject, sender, preview, is_unread))
+            else:
+                if len(primary) < 5:
+                    ai_sum = _gemini_summarize(body) if body else ""
+                    primary.append((subject, sender, preview, is_unread, ai_sum))
+
+            if len(primary) >= 5 and len(other) >= 3:
+                break
+
+        # Зберігаємо seen
+        all_seen = list(seen | {uid.decode() for uid in recent_ids})
+        save_json_file(SEEN_EMAIL_FILE, all_seen[-500:])
+        mail.logout()
+
+        lines = ["📩 <b>━━━ ЛИСТИ ━━━</b>\n"]
+
+        if primary:
+            unread_count = sum(1 for _, _, _, u, _ in primary if u)
+            header = "📥 <b>ОСНОВНІ</b>" + (f"  🔴 {unread_count} нових" if unread_count else "")
+            lines.append(header)
+            for s, snd, p, u, ai_sum in primary:
+                lines.append(format_email_item(s, snd, p, u, ai_summary=ai_sum))
+            lines.append("")
+
+        if other:
+            lines.append("📂 <b>ІНШІ</b>")
+            for s, snd, p, u in other:
+                lines.append(format_email_item(s, snd, p, u))
+
+        if not primary and not other:
+            lines.append("✅ Немає листів")
+
+        return "\n".join(lines)
+
+    except Exception as e:
+        print(f"get_emails IMAP error: {e}")
+        return f"📬 <b>Email</b>\n⚠️ Помилка: {e}"
 
 
 # ─── 4b. МИТТЄВІ СПОВІЩЕННЯ ПРО НОВІ ЛИСТИ ───────────────────────────────────
@@ -757,43 +809,35 @@ def get_emails():
 ALERT_EMAIL_FILE = os.path.join(_DATA_DIR, "monitor_alert_emails.json")
 
 def check_new_emails():
-    """Перевіряє нові листи в INBOX за останні 10 хвилин — шле сповіщення для Primary."""
-    token = _gmail_access_token()
-    if not token:
-        return
-
+    """Перевіряє нові непрочитані листи — шле сповіщення."""
     alerted = set(load_json_file(ALERT_EMAIL_FILE, default=[]))
-
+    PROMO_KEYWORDS = ["unsubscribe", "відписатись", "promotions", "newsletter",
+                      "noreply", "no-reply", "marketing", "notification"]
     try:
-        # Шукаємо листи що прийшли за останні 10 хвилин (незалежно від прочитано чи ні)
-        import time as _time
-        after_ts = int(_time.time()) - 600  # 10 хвилин тому
-        msgs = _gmail_list(token, ["INBOX"], max_results=20, q=f"after:{after_ts}")
+        mail = _imap_connect()
+        mail.select("INBOX")
+        _, data = mail.search(None, "UNSEEN")
+        unseen_ids = data[0].split()
 
         new_alerts = []
         new_alerted = list(alerted)
 
-        for m in msgs:
-            mid = m["id"]
-            if mid in alerted:
+        for uid in unseen_ids[-20:]:
+            uid_str = uid.decode()
+            if uid_str in alerted:
                 continue
-            msg_data = _gmail_get(token, mid, fmt="metadata")
-            if not msg_data:
-                continue
-
-            labels = msg_data.get("labelIds", [])
-            # Сповіщення тільки для Primary + Updates (не промо, не соцмережі)
-            skip_labels = {"CATEGORY_PROMOTIONS", "CATEGORY_SOCIAL", "CATEGORY_FORUMS"}
-            if any(l in labels for l in skip_labels):
-                new_alerted.append(mid)
-                continue
-
-            subject, sender, _, _ = _parse_gmail_msg(msg_data)
-            new_alerted.append(mid)
-            if not is_spam(sender, subject):
+            _, msg_data = mail.fetch(uid, "(RFC822.HEADER)")
+            raw = msg_data[0][1]
+            msg = email.message_from_bytes(raw)
+            subject = _imap_decode_header(msg.get("Subject", "(без теми)"))
+            sender  = _imap_decode_header(msg.get("From", ""))
+            new_alerted.append(uid_str)
+            is_promo = any(kw in sender.lower() for kw in PROMO_KEYWORDS)
+            if not is_spam(sender, subject) and not is_promo:
                 new_alerts.append((subject, sender))
 
         save_json_file(ALERT_EMAIL_FILE, new_alerted[-1000:])
+        mail.logout()
 
         for subject, sender in new_alerts:
             caption = (
