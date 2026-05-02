@@ -4,7 +4,14 @@
 Дані народження: 22.09.1989, 02:52, Кошіце (48.7163°N, 21.2611°E)
 """
 
-import os, json, math
+import os, json, math, glob
+
+# pyswisseph bundled sqlite — підвантажуємо її перед імпортом
+_swe_libs = glob.glob("/usr/local/lib/python3*/dist-packages/pyswisseph.libs/libsqlite3*.so*")
+if _swe_libs:
+    import ctypes
+    ctypes.CDLL(_swe_libs[0])
+
 import swisseph as swe
 from datetime import datetime, timezone, timedelta
 
