@@ -1,9 +1,10 @@
 [phases.setup]
-nixPkgs = ["python311", "sqlite"]
+nixPkgs = ["python311"]
 
 [phases.install]
 cmds = [
   "pip install --upgrade pip",
+  "pip uninstall -y pyswisseph || true",
   "pip install -r requirements.txt"
 ]
 
