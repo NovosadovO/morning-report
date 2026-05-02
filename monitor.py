@@ -48,6 +48,13 @@ IGNORE_SENDERS = [
     "linkedin", "jobvite", "greenhouse", "workday", "lever.co",
     "economist", "okx", "roundup", "dlnews", "coindesk", "cointelegraph",
     "decrypt.co", "theblock", "blockworks",
+    # Промо домени
+    "tripadvis", "booking.com", "campaign@", "inspiration@", "aboutyou",
+    "sg.booking", "mp1.", "em.", "e.tripadvisor", "email.booking",
+    "hello@news", "deals@", "offers@", "hello@", "team@", "hi@",
+    "uniswap", "investing.com", "coinpoker", "novinky@",
+    "sizeer", "pullandbear", "uefa", "store@", "streetguide@",
+    "slovnaft", "kaufland", "loyalty", "temu", "aboutyou",
 ]
 IGNORE_SUBJECTS = [
     "newsletter", "digest", "promo", "offer", "sale", "discount",
@@ -56,6 +63,8 @@ IGNORE_SUBJECTS = [
     "predtým", "teraz", "máš ich",
     "вакансі", "job alert", "new job", "recommended job", "hiring",
     "trading suite", "one step away",
+    "national parks", "genius", "watchlist", "satellites",
+    "vyberte", "dobierku", "zľava", "výpredaj",
 ]
 
 # ─── HELPERS ──────────────────────────────────────────────────────────────────
@@ -707,9 +716,11 @@ def _imap_decode_header(raw):
     return "".join(result)
 
 def _imap_get_body(msg):
-    """Витягує текст листа."""
+    """Витягує текст листа (plain або з HTML)."""
+    import re as _re
     body = ""
     if msg.is_multipart():
+        # Спочатку шукаємо text/plain
         for part in msg.walk():
             ct = part.get_content_type()
             cd = str(part.get("Content-Disposition", ""))
@@ -720,10 +731,29 @@ def _imap_get_body(msg):
                     break
                 except Exception:
                     pass
+        # Якщо plain не знайшли — беремо HTML і стрипаємо теги
+        if not body.strip():
+            for part in msg.walk():
+                ct = part.get_content_type()
+                cd = str(part.get("Content-Disposition", ""))
+                if ct == "text/html" and "attachment" not in cd:
+                    try:
+                        html = part.get_payload(decode=True).decode(
+                            part.get_content_charset() or "utf-8", errors="replace")
+                        body = _re.sub(r'<[^>]+>', ' ', html)
+                        body = _re.sub(r'\s+', ' ', body).strip()
+                        break
+                    except Exception:
+                        pass
     else:
         try:
-            body = msg.get_payload(decode=True).decode(
+            raw = msg.get_payload(decode=True).decode(
                 msg.get_content_charset() or "utf-8", errors="replace")
+            if msg.get_content_type() == "text/html":
+                body = _re.sub(r'<[^>]+>', ' ', raw)
+                body = _re.sub(r'\s+', ' ', body).strip()
+            else:
+                body = raw
         except Exception:
             pass
     return body[:3000]
@@ -733,17 +763,26 @@ def get_emails():
         mail = _imap_connect()
         mail.select("INBOX")
 
-        # Всі листи, сортуємо по даті (останні 30)
-        _, data = mail.search(None, "ALL")
-        all_ids = data[0].split()
-        recent_ids = all_ids[-30:][::-1]  # останні 30, від нового до старого
+        # Непрочитані + останні 20 прочитані
+        _, unseen_data = mail.search(None, "UNSEEN")
+        _, all_data = mail.search(None, "ALL")
+        unseen_ids = unseen_data[0].split()
+        all_ids = all_data[0].split()
+        # Об'єднуємо: всі непрочитані + останні 20
+        recent_read = all_ids[-20:]
+        combined = list(dict.fromkeys(unseen_ids + recent_read))  # без дублів
+        recent_ids = sorted(combined, key=lambda x: int(x))[::-1]  # від нових до старих
 
         seen = set(load_json_file(SEEN_EMAIL_FILE, default=[]))
         primary = []
         other   = []
 
-        PROMO_KEYWORDS = ["unsubscribe", "відписатись", "promotions", "newsletter",
-                          "noreply", "no-reply", "marketing", "notification"]
+        PROMO_DOMAINS = [
+            "tripadvis", "booking.com", "aboutyou", "temu.com", "newsletter",
+            "noreply", "no-reply", "marketing", "promotions", "notifications",
+            "news.railway", "campaign", "mailchimp", "sendgrid", "unsubscribe",
+            "digest", "updates@", "info@", "deals@", "offers@", "hello@news",
+        ]
 
         for uid in recent_ids:
             _, msg_data = mail.fetch(uid, "(RFC822)")
@@ -761,7 +800,12 @@ def get_emails():
             preview = body[:120].replace("\n", " ").strip()
 
             sender_lower = sender.lower()
-            is_promo = any(kw in sender_lower for kw in PROMO_KEYWORDS)
+            # Промо домени — піддомени типу @news., @mail., @em., @campaign., @e., @m.
+            import re as _re2
+            sender_domain = _re2.search(r'@([\w.-]+)', sender_lower)
+            domain = sender_domain.group(1) if sender_domain else ""
+            promo_subdomains = bool(_re2.match(r'^(news|mail|em|e\d?|m\d?|campaign|email|info|noreply|no-reply|update|notification|send|go|sg|mp\d|loyalty|kcard|alert|digest)\.',  domain))
+            is_promo = promo_subdomains or any(kw in sender_lower for kw in PROMO_DOMAINS)
 
             if is_promo:
                 if len(other) < 3:
