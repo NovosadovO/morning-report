@@ -916,6 +916,13 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
+    elif text in ["/астро", "астро"]:
+        try:
+            from astro import get_astro_report
+            send(chat_id, get_astro_report())
+        except Exception as e:
+            send(chat_id, f"⚠️ Астро помилка: {e}")
+
     elif text in ["/тиждень", "тиждень", "/підсумок", "підсумок"]:
         send(chat_id, "⏳ Готую тижневий підсумок...")
         try:
