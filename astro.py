@@ -182,9 +182,8 @@ def get_astro_report():
         result, _ = swe.calc_ut(jd_natal, planet_id)
         natal_lons.append(result[0])
 
-    # ── Будинки (Placidus) для транзиту ──
-    # Будинки транзиту — по місцю проживання (Кошіце)
-    cusps_now, ascmc_now = swe.houses(jd_now, CURRENT_LAT, CURRENT_LON, b"P")
+    # ── Натальні будинки (Placidus) — транзити показуємо через них, як у Sotis ──
+    cusps_now, ascmc_now = swe.houses(jd_natal, BIRTH_LAT, BIRTH_LON, b"P")
     asc_now = ascmc_now[0]
     mc_now  = ascmc_now[1]
 
