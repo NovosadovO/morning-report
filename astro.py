@@ -97,9 +97,16 @@ def _sign_deg(lon):
     return f"{int(deg)}°{int((deg % 1) * 60)}'"
 
 def _house_num(lon, cusps):
+    lon = lon % 360
     for i in range(11, -1, -1):
-        if lon >= cusps[i]:
-            return i + 1
+        cs = cusps[i] % 360
+        ce = cusps[(i + 1) % 12] % 360
+        if cs > ce:  # перехід через 0°
+            if lon >= cs or lon < ce:
+                return i + 1
+        else:
+            if cs <= lon < ce:
+                return i + 1
     return 12
 
 def _moon_phase(sun_lon, moon_lon):
