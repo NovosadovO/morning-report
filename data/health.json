@@ -4344,51 +4344,69 @@
     "water_ml": 1550
   },
   "2026-04-28": {
-    "steps": 24741,
+    "steps": 34753,
     "heart_rate": 69,
     "sleep_hours": 7.9,
-    "calories_active": 1316,
-    "calories": 3105,
+    "calories_active": 1745,
+    "calories": 3534,
     "distance_km": 0.01,
     "flights_climbed": 1,
     "water_ml": 2150
   },
   "2026-04-29": {
-    "steps": 38225,
+    "steps": 59485,
     "heart_rate": 74,
     "sleep_hours": 5.3,
-    "calories_active": 2202,
-    "calories": 4050,
+    "calories_active": 3089,
+    "calories": 4937,
     "distance_km": 0.02,
     "flights_climbed": 2,
     "water_ml": 2750
   },
   "2026-04-30": {
-    "steps": 36798,
+    "steps": 56551,
     "heart_rate": 73,
-    "calories_active": 2181,
-    "calories": 4015,
-    "distance_km": 0.01,
+    "calories_active": 3003,
+    "calories": 4837,
+    "distance_km": 0.02,
     "flights_climbed": 3,
     "water_ml": 2150
   },
   "2026-05-01": {
-    "steps": 38533,
+    "steps": 54669,
     "heart_rate": 70,
-    "calories_active": 2274,
-    "calories": 4133,
+    "calories_active": 2945,
+    "calories": 4803,
     "distance_km": 0.02,
     "flights_climbed": 1,
     "health_score": 80,
     "water_ml": 2800
   },
   "2026-05-02": {
-    "steps": 26223,
-    "heart_rate": 127,
-    "calories_active": 2611,
-    "calories": 4045,
+    "steps": 41971,
+    "heart_rate": 126,
+    "calories_active": 3344,
+    "calories": 5154,
     "distance_km": 0.02,
     "flights_climbed": 2,
     "water_ml": 2450
+  },
+  "2026-05-03": {
+    "steps": 62546,
+    "heart_rate": 73,
+    "calories_active": 2386,
+    "calories": 4221,
+    "distance_km": 0.03,
+    "flights_climbed": 2,
+    "water_ml": 2700
+  },
+  "2026-05-04": {
+    "steps": 44789,
+    "heart_rate": 74,
+    "calories_active": 1616,
+    "calories": 3125,
+    "distance_km": 0.02,
+    "flights_climbed": 3,
+    "water_ml": 2000
   }
 }
