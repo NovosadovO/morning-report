@@ -86,69 +86,80 @@ _SPAM_SUBJECTS = {
 def _classify_email(sender: str, subject: str) -> str:
     """
     Повертає: 'spam' | 'promo' | 'real'
-    - spam  → не показувати взагалі
-    - promo → показати в розділі "Інші" (якщо місце є)
-    - real  → показати в "Основних"
+    Логіка базується на EMAIL ДОМЕНІ — не на display name (бо його підробляють).
     """
     s = sender.lower()
     sub = subject.lower()
 
-    # 1. Явний спам/маркетинг — одразу drop
+    # Витягуємо email адресу відправника
+    email_match = re.search(r'[\w.+%-]+@([\w.-]+\.[a-z]{2,})', s)
+    if not email_match:
+        return "spam"
+    email_addr = email_match.group(0)
+    domain = email_match.group(1)  # example.com
+    # Верхній рівень домену (TLD): gmail.com → gmail, s-mania.com → s-mania
+    domain_parts = domain.split('.')
+    root = domain_parts[-2] if len(domain_parts) >= 2 else domain
+
+    # 1. Явний спам по email/домену — drop
     if any(kw in s for kw in _SPAM_SENDERS):
         return "spam"
     if any(kw in sub for kw in _SPAM_SUBJECTS):
         return "spam"
 
-    # 2. Промо піддомен (@news.example.com, @em.example.com тощо)
-    domain_match = re.search(r'@([\w.-]+)', s)
-    domain = domain_match.group(1) if domain_match else ""
+    # 2. Промо піддомен — drop
     if _SPAM_SUBDOMAINS.match(domain):
         return "promo"
 
-    # 3. Відправник — реальна людина?
-    # Формат "Ім'я Прізвище <email>" → видобути display name
-    name_match = re.match(r'^"?([^<"@]+)"?\s*<', sender)
-    display_name = name_match.group(1).strip() if name_match else ""
-
-    # Якщо display name є — перевіряємо чи це реальна людина
-    # Критерії: рівно 2 слова, обидва тільки літери (кирилиця/латиниця),
-    # кожне починається з великої, немає сервісних слів
-    _NOT_HUMAN = {
-        "team", "support", "bot", "system", "service", "group", "noreply",
-        "sales", "billing", "account", "admin", "office", "help", "info",
-        "reply", "automated", "alert", "notify", "notification", "news",
-        "updates", "deals", "offers", "promo", "hello", "hi",
-        # Бренди/медіа/продукти
-        "degen", "daily", "weekly", "digest", "newsletter", "report",
-        "bolt", "hotels", "booking", "airbnb", "uber", "lyft", "stripe",
-        "rewards", "loyalty", "club", "plus", "premium", "insider",
-        "community", "network", "foundation", "protocol", "finance",
-        "trading", "crypto", "defi", "nft", "web3", "labs", "ventures",
-        "capital", "fund", "asset", "market", "exchange", "wallet",
-        "ai", "gpt", "llm", "app", "platform", "app",
-        # Загальні що не є іменами
-        "the", "from", "via", "by", "on", "at", "in", "for",
-        # Бренди/продукти з суфіксами
-        "mix", "hub", "pro", "go", "io", "co", "inc", "llc", "ltd",
-        "media", "digital", "tech", "studio", "agency",
-        "astromix", "astro", "horoscope", "tarot",
+    # 3. ОСОБИСТИЙ EMAIL домен → реальна людина
+    # gmail, outlook, hotmail, yahoo, ukr.net, icloud, proton, meta.ua тощо
+    _PERSONAL_DOMAINS = {
+        "gmail", "googlemail",
+        "outlook", "hotmail", "live", "msn",
+        "yahoo", "ymail",
+        "icloud", "me", "mac",
+        "ukr", "i", "meta", "ua",
+        "proton", "protonmail",
+        "tutanota", "tutamail",
+        "seznam",
+        "azet", "zoznam", "centrum",  # SK домени
+        "post", "email",
     }
-    name_lower = display_name.lower()
-    name_words = name_lower.split()
-
-    _WORD_RE = re.compile(r"^[a-zA-Z\u0400-\u04FF'-]+$")
-    is_human = (
-        len(name_words) == 2
-        and all(_WORD_RE.match(w) for w in name_words)
-        and all(w[0].isupper() for w in display_name.split())
-        and not any(w in _NOT_HUMAN for w in name_words)
-        and not re.search(r'\d', display_name)
-        and len(name_words[0]) >= 2 and len(name_words[1]) >= 2
-    )
-    if is_human:
+    if root in _PERSONAL_DOMAINS:
         return "real"
 
-    return "promo"
+    # 4. Корпоративний домен — перевіряємо чи виглядає як особистий email
+    # Ознаки масової розсилки в локальній частині (перед @):
+    local = email_addr.split('@')[0]
+    _BULK_LOCAL = {
+        "noreply", "no-reply", "donotreply", "newsletter", "news",
+        "notifications", "notify", "mailer", "marketing", "promo",
+        "info", "hello", "hi", "team", "support", "admin", "updates",
+        "deals", "offers", "digest", "alert", "alerts", "bulletin",
+        "campaign", "email", "mail", "contact", "service", "sales",
+        "billing", "reply", "bounce", "postmaster", "welcome",
+        "notification", "automated", "system", "bot",
+    }
+    if any(kw == local or kw in local for kw in _BULK_LOCAL):
+        return "spam"
+
+    # 5. Відомі масові сервіси по root домену
+    _BULK_ROOTS = {
+        "facebook", "instagram", "twitter", "x", "linkedin", "youtube",
+        "google", "apple", "amazon", "microsoft",
+        "duolingo", "spotify", "netflix", "twitch",
+        "substack", "beehiiv", "mailchimp", "sendgrid", "klaviyo",
+        "tradingview", "coinmarketcap", "coingecko", "binance",
+        "temu", "shopify", "etsy", "ebay",
+        "booking", "airbnb", "expedia", "tripadvisor",
+        "profesia", "indeed", "glassdoor",
+        "s-mania", "smania", "lanet", "railway",
+    }
+    if root in _BULK_ROOTS:
+        return "spam"
+
+    # 6. Корпоративний домен без ознак розсилки → скоріш за все реальна людина
+    return "real"
 
 # Зворотна сумісність
 IGNORE_SENDERS = list(_SPAM_SENDERS)
