@@ -853,48 +853,72 @@ def get_emails():
         mail = _imap_connect()
         mail.select("INBOX")
 
-        # Непрочитані + останні 20 прочитані
-        _, unseen_data = mail.search(None, "UNSEEN")
-        _, all_data = mail.search(None, "ALL")
-        unseen_ids = unseen_data[0].split()
-        all_ids = all_data[0].split()
-        # Об'єднуємо: всі непрочитані + останні 20
-        recent_read = all_ids[-20:]
-        combined = list(dict.fromkeys(unseen_ids + recent_read))  # без дублів
-        recent_ids = sorted(combined, key=lambda x: int(x))[::-1]  # від нових до старих
+        # ── Стратегія: Gmail категорії через X-GM-RAW ──────────────────────────
+        # Primary = листи від людей (Gmail сам класифікує)
+        # Promotions/Updates/Social = решта
+        # Беремо непрочитані Primary + останні 10 прочитані Primary
+
+        _, p_unseen = mail.search(None, 'X-GM-RAW "category:primary is:unread"')
+        _, p_all    = mail.search(None, 'X-GM-RAW "category:primary"')
+        _, o_unseen = mail.search(None, 'X-GM-RAW "-category:primary is:unread"')
+
+        primary_unread_ids = p_unseen[0].split()
+        primary_all_ids    = p_all[0].split()
+        other_unread_ids   = o_unseen[0].split()
+
+        # Об'єднуємо: всі непрочитані primary + останні 10 прочитаних primary
+        recent_primary = list(dict.fromkeys(
+            primary_unread_ids + primary_all_ids[-10:]
+        ))
+        recent_primary = sorted(recent_primary, key=lambda x: int(x))[::-1]
+
+        # Інші категорії — тільки непрочитані, останні 10
+        recent_other = sorted(other_unread_ids, key=lambda x: int(x))[::-1][:10]
 
         seen = set(load_json_file(SEEN_EMAIL_FILE, default=[]))
         primary = []
         other   = []
 
-        for uid in recent_ids:
+        # ── Primary листи ──────────────────────────────────────────────────────
+        for uid in recent_primary:
+            if len(primary) >= 5:
+                break
             _, msg_data = mail.fetch(uid, "(RFC822)")
             raw = msg_data[0][1]
             msg = email.message_from_bytes(raw)
 
             subject = _imap_decode_header(msg.get("Subject", "(без теми)"))
             sender  = _imap_decode_header(msg.get("From", ""))
-            is_unread = uid.decode() not in seen
+            is_unread = uid in primary_unread_ids
 
+            # Додатковий фільтр: YouTube, Duolingo, Google нотифікації — drop
             cls = _classify_email(sender, subject)
             if cls == "spam":
                 continue
 
             body = _imap_get_body(msg)
             preview = body[:120].replace("\n", " ").strip()
+            ai_sum = _gemini_summarize(body) if body else ""
+            primary.append((subject, sender, preview, is_unread, ai_sum))
 
-            if cls == "real":
-                if len(primary) < 5:
-                    ai_sum = _gemini_summarize(body) if body else ""
-                    primary.append((subject, sender, preview, is_unread, ai_sum))
-            else:  # promo
-                if len(other) < 3:
-                    other.append((subject, sender, preview, is_unread))
-
-            if len(primary) >= 5 and len(other) >= 3:
+        # ── Інші категорії (Promotions/Updates/Social) ─────────────────────────
+        for uid in recent_other:
+            if len(other) >= 3:
                 break
+            _, msg_data = mail.fetch(uid, "(RFC822.HEADER)")
+            raw = msg_data[0][1]
+            msg = email.message_from_bytes(raw)
 
-        # Зберігаємо seen (по Message-ID, не IMAP UID)
+            subject = _imap_decode_header(msg.get("Subject", "(без теми)"))
+            sender  = _imap_decode_header(msg.get("From", ""))
+
+            # Явний спам — skip
+            if _classify_email(sender, subject) == "spam":
+                continue
+
+            other.append((subject, sender, "", True))
+
+        # Зберігаємо seen
         save_json_file(SEEN_EMAIL_FILE, list(seen)[-500:])
         mail.logout()
 
@@ -933,10 +957,11 @@ def check_new_emails():
         mail = _imap_connect()
         mail.select("INBOX")
 
-        # Шукаємо ТІЛЬКИ листи що прийшли за останні 12 хвилин по IMAP date
+        # Шукаємо ТІЛЬКИ Primary листи за останні 12 хвилин
         since_dt = datetime.now(timezone.utc) - timedelta(minutes=12)
-        since_str = since_dt.strftime("%d-%b-%Y")  # IMAP формат: 02-May-2026
-        _, data = mail.search(None, f'(UNSEEN SINCE "{since_str}")')
+        since_str = since_dt.strftime("%d-%b-%Y")
+        # Gmail X-GM-RAW: category:primary + unread + since
+        _, data = mail.search(None, f'X-GM-RAW "category:primary is:unread after:{since_dt.strftime("%Y/%m/%d")}"')
         unseen_ids = data[0].split()
 
         if not unseen_ids:
@@ -956,13 +981,14 @@ def check_new_emails():
                 import email.utils as _eu
                 msg_dt = datetime.fromtimestamp(_eu.parsedate_to_datetime(date_str).timestamp(), tz=timezone.utc)
                 if msg_dt < since_dt:
-                    continue  # старіший ніж 12 хв
+                    continue
             except Exception:
                 pass
 
             subject = _imap_decode_header(msg.get("Subject", "(без теми)"))
             sender  = _imap_decode_header(msg.get("From", ""))
-            if _classify_email(sender, subject) == "real":
+            # Додатковий фільтр — YouTube, Duolingo тощо що Gmail кладе в Primary
+            if _classify_email(sender, subject) != "spam":
                 new_alerts.append((subject, sender))
 
         mail.logout()
