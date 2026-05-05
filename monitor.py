@@ -5187,21 +5187,23 @@ def check_crypto_weekly_summary():
     try:
         ids = ",".join(COINS.values())
         url = (
-            f"https://api.coingecko.com/api/v3/simple/price"
-            f"?ids={ids}&vs_currencies=usd"
-            f"&include_7d_change=true&include_24h_change=true"
+            f"https://api.coingecko.com/api/v3/coins/markets"
+            f"?vs_currency=usd&ids={ids}&price_change_percentage=7d,24h"
         )
-        data = fetch_json(url)
-        if not data:
+        raw = fetch_json(url)
+        if not raw:
             return
+        # convert list → dict by id
+        data = {c["id"]: c for c in raw}
 
+        # symbol order from COINS dict
         lines = []
         summary_parts = []
         for symbol, cg_id in COINS.items():
             coin = data.get(cg_id, {})
-            price = coin.get("usd")
-            ch7d  = coin.get("usd_7d_change")
-            ch24h = coin.get("usd_24h_change")
+            price = coin.get("current_price")
+            ch7d  = coin.get("price_change_percentage_7d_in_currency")
+            ch24h = coin.get("price_change_percentage_24h")
             if price is None:
                 continue
 
@@ -5229,10 +5231,10 @@ def check_crypto_weekly_summary():
             try:
                 payload = json.dumps({
                     "contents": [{"parts": [{"text": prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 150, "temperature": 0.7}
+                    "generationConfig": {"maxOutputTokens": 400, "temperature": 0.7}
                 }).encode()
                 req = urllib.request.Request(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-04-17:generateContent?key={gemini_key}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
                     data=payload,
                     headers={"Content-Type": "application/json"},
                     method="POST"
@@ -5350,10 +5352,10 @@ def check_investment_news_digest():
 
         payload = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"maxOutputTokens": 200, "temperature": 0.6}
+            "generationConfig": {"maxOutputTokens": 400, "temperature": 0.6}
         }).encode()
         req = urllib.request.Request(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-04-17:generateContent?key={gemini_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
             data=payload,
             headers={"Content-Type": "application/json"},
             method="POST"
