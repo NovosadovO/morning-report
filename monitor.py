@@ -864,73 +864,53 @@ def get_emails():
         mail = _imap_connect()
         mail.select("INBOX")
 
-        # ── Стратегія: Gmail категорії через X-GM-RAW ──────────────────────────
-        # Primary = листи від людей (Gmail сам класифікує)
-        # Promotions/Updates/Social = решта
-        # Беремо непрочитані Primary + останні 10 прочитані Primary
-
+        # Стратегія: довіряємо Gmail category:primary повністю
+        # Беремо: непрочитані primary + останні 15 прочитані primary
         _, p_unseen = mail.search(None, 'X-GM-RAW "category:primary is:unread"')
         _, p_all    = mail.search(None, 'X-GM-RAW "category:primary"')
-        _, o_unseen = mail.search(None, 'X-GM-RAW "-category:primary is:unread"')
 
-        primary_unread_ids = p_unseen[0].split()
+        primary_unread_ids = set(p_unseen[0].split())
         primary_all_ids    = p_all[0].split()
-        other_unread_ids   = o_unseen[0].split()
 
-        # Об'єднуємо: всі непрочитані primary + останні 10 прочитаних primary
-        recent_primary = list(dict.fromkeys(
-            primary_unread_ids + primary_all_ids[-10:]
+        # Об'єднуємо: всі непрочитані + останні 15 прочитаних, від нових до старих
+        combined = list(dict.fromkeys(
+            list(primary_unread_ids) + primary_all_ids[-15:]
         ))
-        recent_primary = sorted(recent_primary, key=lambda x: int(x))[::-1]
+        combined = sorted(combined, key=lambda x: int(x))[::-1]
 
-        # Інші категорії — тільки непрочитані, останні 10
-        recent_other = sorted(other_unread_ids, key=lambda x: int(x))[::-1][:10]
+        # Мінімальний чорний список — тільки явні системні нотифікації
+        # (YouTube, Duolingo, Maps тощо що Gmail іноді кладе в Primary)
+        _ALWAYS_SKIP = {
+            "noreply@youtube.com", "no-reply@youtube.com",
+            "no-reply@accounts.google.com", "noreply-maps-timeline@google.com",
+            "hello@duolingo.com", "no-reply@duolingo.com",
+            "no-reply@medium.com",
+        }
 
-        seen = set(load_json_file(SEEN_EMAIL_FILE, default=[]))
         primary = []
-        other   = []
 
-        # ── Primary листи ──────────────────────────────────────────────────────
-        for uid in recent_primary:
-            if len(primary) >= 5:
+        for uid in combined:
+            if len(primary) >= 7:
                 break
             _, msg_data = mail.fetch(uid, "(RFC822)")
             raw = msg_data[0][1]
             msg = email.message_from_bytes(raw)
 
-            subject = _imap_decode_header(msg.get("Subject", "(без теми)"))
-            sender  = _imap_decode_header(msg.get("From", ""))
+            subject  = _imap_decode_header(msg.get("Subject", "(без теми)"))
+            sender   = _imap_decode_header(msg.get("From", ""))
             is_unread = uid in primary_unread_ids
 
-            # Додатковий фільтр: YouTube, Duolingo, Google нотифікації — drop
-            cls = _classify_email(sender, subject)
-            if cls == "spam":
+            # Пропускаємо тільки явні системні нотифікації
+            email_match = re.search(r'[\w.+%-]+@[\w.-]+\.[a-z]{2,}', sender.lower())
+            email_addr = email_match.group(0) if email_match else ""
+            if email_addr in _ALWAYS_SKIP:
                 continue
 
-            body = _imap_get_body(msg)
+            body    = _imap_get_body(msg)
             preview = body[:120].replace("\n", " ").strip()
-            ai_sum = _gemini_summarize(body) if body else ""
+            ai_sum  = _gemini_summarize(body) if body and is_unread else ""
             primary.append((subject, sender, preview, is_unread, ai_sum))
 
-        # ── Інші категорії (Promotions/Updates/Social) ─────────────────────────
-        for uid in recent_other:
-            if len(other) >= 3:
-                break
-            _, msg_data = mail.fetch(uid, "(RFC822.HEADER)")
-            raw = msg_data[0][1]
-            msg = email.message_from_bytes(raw)
-
-            subject = _imap_decode_header(msg.get("Subject", "(без теми)"))
-            sender  = _imap_decode_header(msg.get("From", ""))
-
-            # Явний спам — skip
-            if _classify_email(sender, subject) == "spam":
-                continue
-
-            other.append((subject, sender, "", True))
-
-        # Зберігаємо seen
-        save_json_file(SEEN_EMAIL_FILE, list(seen)[-500:])
         mail.logout()
 
         lines = ["📩 <b>━━━ ЛИСТИ ━━━</b>\n"]
@@ -941,14 +921,7 @@ def get_emails():
             lines.append(header)
             for s, snd, p, u, ai_sum in primary:
                 lines.append(format_email_item(s, snd, p, u, ai_summary=ai_sum))
-            lines.append("")
-
-        if other:
-            lines.append("📂 <b>ІНШІ</b>")
-            for s, snd, p, u in other:
-                lines.append(format_email_item(s, snd, p, u))
-
-        if not primary and not other:
+        else:
             lines.append("✅ Немає листів")
 
         return "\n".join(lines)
@@ -998,8 +971,13 @@ def check_new_emails():
 
             subject = _imap_decode_header(msg.get("Subject", "(без теми)"))
             sender  = _imap_decode_header(msg.get("From", ""))
-            # Додатковий фільтр — YouTube, Duolingo тощо що Gmail кладе в Primary
-            if _classify_email(sender, subject) != "spam":
+            # Пропускаємо тільки явні системні нотифікації
+            em = re.search(r'[\w.+%-]+@[\w.-]+\.[a-z]{2,}', sender.lower())
+            ea = em.group(0) if em else ""
+            _SKIP = {"noreply@youtube.com","no-reply@youtube.com",
+                     "no-reply@accounts.google.com","noreply-maps-timeline@google.com",
+                     "hello@duolingo.com","no-reply@duolingo.com","no-reply@medium.com"}
+            if ea not in _SKIP:
                 new_alerts.append((subject, sender))
 
         mail.logout()
