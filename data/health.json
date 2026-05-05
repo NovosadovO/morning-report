@@ -4401,12 +4401,21 @@
     "water_ml": 2700
   },
   "2026-05-04": {
-    "steps": 44789,
+    "steps": 44861,
     "heart_rate": 74,
-    "calories_active": 1616,
-    "calories": 3125,
+    "calories_active": 1618,
+    "calories": 3505,
     "distance_km": 0.02,
     "flights_climbed": 3,
-    "water_ml": 2000
+    "water_ml": 2350
+  },
+  "2026-05-05": {
+    "steps": 12990,
+    "heart_rate": 65,
+    "calories_active": 461,
+    "calories": 2048,
+    "distance_km": 0.01,
+    "flights_climbed": 1,
+    "water_ml": 1400
   }
 }
