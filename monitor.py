@@ -5167,3 +5167,461 @@ def check_health_data_reminder():
 
     except Exception as e:
         print(f"check_health_data_reminder error: {e}")
+
+
+# ─── КРИПТО ТИЖНЕВИЙ ПІДСУМОК (неділя 19:00) ─────────────────────────────────
+
+CRYPTO_WEEKLY_FILE = os.path.join(_DATA_DIR, "monitor_crypto_weekly.json")
+
+def check_crypto_weekly_summary():
+    """Щонеділі о 19:00: % зміна BTC/ETH/AVAX/ONDO за тиждень + AI коментар."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=1)
+    if not (now_local.weekday() == 6 and now_local.hour == 19 and now_local.minute < 5):
+        return
+
+    today = now_local.strftime("%Y-%m-%d")
+    state = load_json_file(CRYPTO_WEEKLY_FILE, default={})
+    if state.get("last") == today:
+        return
+
+    try:
+        ids = ",".join(COINS.values())
+        url = (
+            f"https://api.coingecko.com/api/v3/simple/price"
+            f"?ids={ids}&vs_currencies=usd"
+            f"&include_7d_change=true&include_24h_change=true"
+        )
+        data = fetch_json(url)
+        if not data:
+            return
+
+        lines = []
+        summary_parts = []
+        for symbol, cg_id in COINS.items():
+            coin = data.get(cg_id, {})
+            price = coin.get("usd")
+            ch7d  = coin.get("usd_7d_change")
+            ch24h = coin.get("usd_24h_change")
+            if price is None:
+                continue
+
+            arrow7 = "🟢" if (ch7d or 0) > 0 else "🔴"
+            sign7  = "+" if (ch7d or 0) > 0 else ""
+            lines.append(
+                f"{arrow7} <b>{symbol}</b>: ${price:,.2f}  "
+                f"7д: {sign7}{ch7d:.1f}%  24г: {'+' if (ch24h or 0)>0 else ''}{ch24h:.1f}%"
+            )
+            summary_parts.append(f"{symbol} {sign7}{ch7d:.1f}% за тиждень (${price:,.2f})")
+
+        if not lines:
+            return
+
+        # AI коментар
+        ai_comment = ""
+        gemini_key = os.environ.get("GEMINI_API_KEY", "")
+        if gemini_key and summary_parts:
+            prompt = (
+                "Ти фінансовий аналітик. Ось динаміка криптовалют за тиждень:\n"
+                + "\n".join(summary_parts)
+                + "\n\nДай короткий коментар (2-3 речення) українською: що відбулось на крипторинку цього тижня "
+                  "і на що звернути увагу інвестору. Без зайвих слів, по суті."
+            )
+            try:
+                payload = json.dumps({
+                    "contents": [{"parts": [{"text": prompt}]}],
+                    "generationConfig": {"maxOutputTokens": 150, "temperature": 0.7}
+                }).encode()
+                req = urllib.request.Request(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-04-17:generateContent?key={gemini_key}",
+                    data=payload,
+                    headers={"Content-Type": "application/json"},
+                    method="POST"
+                )
+                with urllib.request.urlopen(req, timeout=15) as r:
+                    resp = json.loads(r.read())
+                ai_comment = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+            except Exception as e:
+                print(f"crypto weekly AI error: {e}")
+
+        msg = f"📊 <b>Крипто підсумок тижня</b> ({today[5:]})\n\n"
+        msg += "\n".join(lines)
+        if ai_comment:
+            msg += f"\n\n🤖 <i>{ai_comment}</i>"
+
+        send_telegram(msg)
+        print("Crypto weekly summary sent")
+        state["last"] = today
+        save_json_file(CRYPTO_WEEKLY_FILE, state)
+
+    except Exception as e:
+        print(f"check_crypto_weekly_summary error: {e}")
+
+
+# ─── NET WORTH НАГАДУВАННЯ (1-е число місяця 10:00) ──────────────────────────
+
+NET_WORTH_FILE = os.path.join(_DATA_DIR, "monitor_net_worth.json")
+
+def check_net_worth_reminder():
+    """1-го числа кожного місяця о 10:00 — нагадування оновити net worth."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=1)
+    if not (now_local.day == 1 and now_local.hour == 10 and now_local.minute < 5):
+        return
+
+    month_key = now_local.strftime("%Y-%m")
+    state = load_json_file(NET_WORTH_FILE, default={})
+    if state.get("last") == month_key:
+        return
+
+    month_names = {
+        1:"Січень",2:"Лютий",3:"Березень",4:"Квітень",5:"Травень",
+        6:"Червень",7:"Липень",8:"Серпень",9:"Вересень",10:"Жовтень",
+        11:"Листопад",12:"Грудень"
+    }
+    month_name = month_names[now_local.month]
+
+    send_telegram(
+        f"📊 <b>Net Worth — {month_name} {now_local.year}</b>\n\n"
+        f"Початок нового місяця — час підбити підсумки!\n\n"
+        f"Перевір та запиши:\n"
+        f"💹 <b>Крипто</b> — BTC, ETH, AVAX, ONDO\n"
+        f"🏦 <b>Банк</b> — поточний рахунок + заощадження\n"
+        f"📈 <b>Інвестиції</b> — InterFin портфель\n"
+        f"💰 <b>Готівка</b> — якщо є\n\n"
+        f"Відстеження = мотивація рости! 💪"
+    )
+    print("Net worth reminder sent")
+    state["last"] = month_key
+    save_json_file(NET_WORTH_FILE, state)
+
+
+# ─── ІНВЕСТИЦІЙНИЙ ДАЙДЖЕСТ (вівторок 08:00) ─────────────────────────────────
+
+INVEST_DIGEST_FILE = os.path.join(_DATA_DIR, "monitor_invest_digest.json")
+
+def check_investment_news_digest():
+    """Щовівторка о 08:00: AI дайджест новин по інвестиціях/ETF/крипто-регуляції."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=1)
+    if not (now_local.weekday() == 1 and now_local.hour == 8 and now_local.minute < 5):
+        return
+
+    today = now_local.strftime("%Y-%m-%d")
+    state = load_json_file(INVEST_DIGEST_FILE, default={})
+    if state.get("last") == today:
+        return
+
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    if not gemini_key:
+        return
+
+    try:
+        # Збираємо новини з Google News RSS
+        import xml.etree.ElementTree as ET
+        topics = [
+            ("інвестиції ETF", "https://news.google.com/rss/search?q=investments+ETF+crypto&hl=uk&gl=UA&ceid=UA:uk"),
+            ("crypto regulation", "https://news.google.com/rss/search?q=crypto+regulation+Bitcoin+ETF&hl=en&gl=US&ceid=US:en"),
+            ("AVAX ONDO altcoin", "https://news.google.com/rss/search?q=Avalanche+AVAX+ONDO+altcoin&hl=en&gl=US&ceid=US:en"),
+        ]
+
+        all_titles = []
+        for label, rss_url in topics:
+            try:
+                req = urllib.request.Request(rss_url, headers={"User-Agent": "Mozilla/5.0"})
+                with urllib.request.urlopen(req, timeout=10) as r:
+                    tree = ET.fromstring(r.read())
+                items = tree.findall(".//item")
+                for item in items[:5]:
+                    title_el = item.find("title")
+                    if title_el is not None and title_el.text:
+                        all_titles.append(title_el.text.strip())
+            except Exception as e:
+                print(f"RSS {label} error: {e}")
+
+        if not all_titles:
+            return
+
+        news_block = "\n".join(f"- {t}" for t in all_titles[:15])
+        prompt = (
+            "Ти фінансовий аналітик. Ось заголовки новин за останні дні:\n\n"
+            + news_block
+            + "\n\nСклади короткий дайджест (3-4 речення) українською: що важливо знати "
+              "приватному інвестору в крипто та ETF цього тижня. "
+              "Виділи 1-2 ключові події. Без зайвих вступів, одразу по суті."
+        )
+
+        payload = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"maxOutputTokens": 200, "temperature": 0.6}
+        }).encode()
+        req = urllib.request.Request(
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-04-17:generateContent?key={gemini_key}",
+            data=payload,
+            headers={"Content-Type": "application/json"},
+            method="POST"
+        )
+        with urllib.request.urlopen(req, timeout=20) as r:
+            resp = json.loads(r.read())
+        digest = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+
+        send_telegram(
+            f"📰 <b>Інвестиційний дайджест</b> ({today[5:]})\n\n"
+            f"{digest}\n\n"
+            f"<i>🤖 AI підсумок по Google News</i>"
+        )
+        print("Investment news digest sent")
+        state["last"] = today
+        save_json_file(INVEST_DIGEST_FILE, state)
+
+    except Exception as e:
+        print(f"check_investment_news_digest error: {e}")
+
+
+# ─── НАГАДУВАННЯ ПРО ІНТЕРВАЛЬНЕ ГОЛОДУВАННЯ (20:00 вільний день) ────────────
+
+FASTING_FILE = os.path.join(_DATA_DIR, "monitor_fasting.json")
+
+def check_fasting_reminder():
+    """О 20:00 у вільний день: нагадування закінчити їсти (ціль — схуднення до 78 кг)."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=1)
+    if not (now_local.hour == 20 and now_local.minute < 5):
+        return
+
+    today = now_local.strftime("%Y-%m-%d")
+    state = load_json_file(FASTING_FILE, default={})
+    if state.get("last") == today:
+        return
+
+    # Перевіряємо чи є зміна сьогодні
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    has_shift = False
+    if creds_json:
+        try:
+            creds_data = json.loads(creds_json)
+            token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+            tmin = now_local.replace(hour=0, minute=0, second=0, microsecond=0)
+            tmax = tmin + timedelta(hours=24)
+            url = (
+                f"https://www.googleapis.com/calendar/v3/calendars/novosadovoleg%40gmail.com/events"
+                f"?timeMin={urllib.parse.quote(tmin.isoformat())}"
+                f"&timeMax={urllib.parse.quote(tmax.isoformat())}"
+                f"&singleEvents=true&maxResults=10"
+            )
+            req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
+            with urllib.request.urlopen(req, timeout=10) as r:
+                events = json.loads(r.read()).get("items", [])
+            has_shift = any("рання" in e.get("summary","").lower() or "нічна" in e.get("summary","").lower() for e in events)
+        except Exception as e:
+            print(f"fasting calendar check error: {e}")
+
+    if has_shift:
+        return  # в робочий день режим інший
+
+    # Поточна вага для мотивації
+    weight_data = load_json_file(os.path.join(_DATA_DIR, "weight.json"), default={})
+    weight_note = ""
+    if weight_data:
+        last_w = sorted(weight_data.items())[-1][1]
+        to_goal = last_w - 78.0
+        if to_goal > 0:
+            weight_note = f"\n\n⚖️ До цілі 78 кг ще: <b>{to_goal:.1f} кг</b> — кожен день рахується!"
+
+    send_telegram(
+        "🕗 <b>Час зупинитись з їжею!</b>\n\n"
+        "Якщо практикуєш <b>інтервальне голодування 16:8</b>:\n"
+        "• Останній прийом їжі о 20:00\n"
+        "• Наступний — о 12:00 завтра\n"
+        "• Можна: вода, чай без цукру\n\n"
+        "💪 Дотримання вікна — ключ до схуднення!"
+        + weight_note
+    )
+    print("Fasting reminder sent")
+    state["last"] = today
+    save_json_file(FASTING_FILE, state)
+
+
+# ─── ПОГОДА ПЕРЕД ЗМІНОЮ (за 1.5г до початку) ───────────────────────────────
+
+PRE_SHIFT_WEATHER_FILE = os.path.join(_DATA_DIR, "monitor_pre_shift_weather.json")
+
+def check_pre_shift_weather():
+    """За 1.5 години до зміни: погода на час дороги + чи потрібна куртка/парасоля."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=1)
+    h, m = now_local.hour, now_local.minute
+    today = now_local.strftime("%Y-%m-%d")
+
+    # Рання зміна о 05:00 → нагадування о 03:30
+    # Нічна зміна о 17:00 → нагадування о 15:30
+    is_pre_early = (h == 3 and 28 <= m <= 35)
+    is_pre_night = (h == 15 and 28 <= m <= 35)
+
+    if not (is_pre_early or is_pre_night):
+        return
+
+    key = "pre_early" if is_pre_early else "pre_night"
+    shift_time = "05:00" if is_pre_early else "17:00"
+
+    state = load_json_file(PRE_SHIFT_WEATHER_FILE, default={})
+    if state.get(key) == today:
+        return
+
+    # Перевіряємо чи є відповідна зміна сьогодні
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    has_shift = False
+    if creds_json:
+        try:
+            creds_data = json.loads(creds_json)
+            token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+            tmin = now_local.replace(hour=0, minute=0, second=0, microsecond=0)
+            tmax = tmin + timedelta(hours=24)
+            url = (
+                f"https://www.googleapis.com/calendar/v3/calendars/novosadovoleg%40gmail.com/events"
+                f"?timeMin={urllib.parse.quote(tmin.isoformat())}"
+                f"&timeMax={urllib.parse.quote(tmax.isoformat())}"
+                f"&singleEvents=true&maxResults=10"
+            )
+            req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
+            with urllib.request.urlopen(req, timeout=10) as r:
+                events = json.loads(r.read()).get("items", [])
+
+            shift_word = "рання" if is_pre_early else "нічна"
+            has_shift = any(shift_word in e.get("summary","").lower() for e in events)
+        except Exception as e:
+            print(f"pre_shift_weather calendar error: {e}")
+
+    if not has_shift:
+        return
+
+    try:
+        # Погода на конкретну годину через open-meteo hourly
+        shift_hour = 5 if is_pre_early else 17
+        url = (
+            "https://api.open-meteo.com/v1/forecast"
+            "?latitude=48.7163&longitude=21.2611"
+            f"&hourly=temperature_2m,apparent_temperature,precipitation_probability,weathercode,windspeed_10m"
+            f"&forecast_days=1&timezone=Europe%2FPrague"
+        )
+        data = fetch_json(url)
+        if not data:
+            return
+
+        hourly = data.get("hourly", {})
+        times  = hourly.get("time", [])
+        temps  = hourly.get("temperature_2m", [])
+        feels  = hourly.get("apparent_temperature", [])
+        precip = hourly.get("precipitation_probability", [])
+        codes  = hourly.get("weathercode", [])
+        winds  = hourly.get("windspeed_10m", [])
+
+        # Знаходимо потрібний час
+        idx = None
+        for i, t in enumerate(times):
+            if t.endswith(f"T{shift_hour:02d}:00"):
+                idx = i
+                break
+
+        if idx is None or idx >= len(temps):
+            return
+
+        WMO = {
+            0:"☀️ Ясно",1:"🌤 Перев.ясно",2:"⛅️ Хмарно",3:"☁️ Похмуро",
+            45:"🌫 Туман",51:"🌦 Мряка",61:"🌧 Дощ",63:"🌧 Дощ",65:"🌧 Сильний дощ",
+            71:"❄️ Сніг",80:"🌦 Злива",81:"🌦 Злива",95:"⛈ Гроза",96:"⛈ Гроза"
+        }
+
+        temp   = temps[idx]
+        feel   = feels[idx] if idx < len(feels) else temp
+        rain_p = precip[idx] if idx < len(precip) else 0
+        code   = codes[idx] if idx < len(codes) else 0
+        wind   = winds[idx] if idx < len(winds) else 0
+        desc   = WMO.get(code, "—")
+
+        # Рекомендації
+        tips = []
+        if rain_p >= 50 or code in {51,53,55,61,63,65,80,81,82,95,96,99}:
+            tips.append("☂️ Візьми парасолю!")
+        if feel < 10:
+            tips.append("🧥 Тепла куртка — на вулиці холодно")
+        elif feel < 16:
+            tips.append("🧥 Легка куртка не завадить")
+        if wind >= 30:
+            tips.append("💨 Сильний вітер")
+
+        tips_text = "\n".join(tips) if tips else "✅ Погода нормальна — нічого особливого"
+
+        send_telegram(
+            f"🌤 <b>Погода на дорогу до роботи</b> ({shift_time})\n\n"
+            f"{desc}  {temp:.0f}°C (відчувається {feel:.0f}°C)\n"
+            f"💧 Дощ: {rain_p}%  💨 Вітер: {wind:.0f} км/г\n\n"
+            f"{tips_text}"
+        )
+        print(f"Pre-shift weather sent for {shift_time}")
+        state[key] = today
+        save_json_file(PRE_SHIFT_WEATHER_FILE, state)
+
+    except Exception as e:
+        print(f"check_pre_shift_weather error: {e}")
+
+
+# ─── СТРІК НАВЧАННЯ ІНВЕСТИЦІЯМ ──────────────────────────────────────────────
+
+LEARNING_STREAK_FILE = os.path.join(_DATA_DIR, "monitor_learning_streak.json")
+
+def check_learning_streak():
+    """
+    Якщо 2+ дні підряд немає запису в habits про навчання → нагадування.
+    Перевіряємо щодня о 18:00.
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=1)
+    if not (now_local.hour == 18 and now_local.minute < 5):
+        return
+
+    today = now_local.strftime("%Y-%m-%d")
+    state = load_json_file(LEARNING_STREAK_FILE, default={})
+    if state.get("last") == today:
+        return
+
+    try:
+        import sys as _sys
+        _sys.path.insert(0, _DIR)
+        from storage import load_habits as _lh
+        habits = _lh()
+        if not habits:
+            return
+
+        # Шукаємо кількість днів без навчання підряд
+        days_without = 0
+        for i in range(1, 8):  # перевіряємо до 7 днів назад
+            day = (now_local - timedelta(days=i)).strftime("%Y-%m-%d")
+            day_data = habits.get(day, {})
+
+            # Перевіряємо наявність запису про навчання
+            # Habits зазвичай мають поля: learning, study, навчання тощо
+            has_learning = (
+                day_data.get("learning") or
+                day_data.get("study") or
+                day_data.get("навчання") or
+                day_data.get("invest_study") or
+                day_data.get("education")
+            )
+            if has_learning:
+                break
+            days_without += 1
+
+        if days_without >= 2:
+            msg = (
+                f"📚 <b>Навчання інвестиціям — {days_without} дні без занять!</b>\n\n"
+                f"⚠️ Не переривай streak!\n\n"
+                f"Навіть 15-20 хвилин на день:\n"
+                f"• Курс від Maroš Sivák / InterFin\n"
+                f"• Читання статті про ETF або крипто\n"
+                f"• Перегляд відео по фінансах\n\n"
+                f"💡 <i>Консистентність > інтенсивність</i>"
+            )
+            send_telegram(msg)
+            print(f"Learning streak reminder sent: {days_without} days without study")
+
+        state["last"] = today
+        save_json_file(LEARNING_STREAK_FILE, state)
+
+    except Exception as e:
+        print(f"check_learning_streak error: {e}")
+

@@ -515,5 +515,26 @@ def run_proactive_watcher():
 
 threading.Thread(target=run_proactive_watcher, daemon=True).start()
 
+
+def run_extra_watchers():
+    """Додаткові проактивні функції — перевірка кожні 3 хвилини."""
+    print("=== Starting extra watchers (crypto weekly, net worth, invest digest, fasting, pre-shift weather, learning streak) ===", flush=True)
+    time.sleep(120)
+    while True:
+        try:
+            m = _load_monitor()
+            m.check_crypto_weekly_summary()
+            m.check_net_worth_reminder()
+            m.check_investment_news_digest()
+            m.check_fasting_reminder()
+            m.check_pre_shift_weather()
+            m.check_learning_streak()
+        except Exception as e:
+            print(f"Extra watchers error: {e}", flush=True)
+        time.sleep(180)
+
+
+threading.Thread(target=run_extra_watchers, daemon=True).start()
+
 # Основний монітор в головному потоці
 run_monitor_loop()
