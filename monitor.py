@@ -757,16 +757,16 @@ def _parse_gmail_msg(msg_data, full=False):
 
 
 def _gemini_summarize(text, max_input=3000):
-    """Робить короткий summary через Gemini API."""
+    """Робить короткий actionable summary через Gemini API."""
     api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
     if not api_key or not text or text == "—":
         return None
     try:
         text_trimmed = text[:max_input]
         prompt = (
-            "Прочитай цей email і дай ДУЖЕ короткий опис (1-2 речення українською) "
-            "— про що цей лист, що від тебе вимагається або що важливо знати. "
-            "Без зайвих слів, тільки суть.\n\nЛист:\n" + text_trimmed
+            "Прочитай цей email і дай ДУЖЕ короткий опис (1 речення українською, макс 120 символів). "
+            "Формат: якщо потрібна дія — почни з емодзі дії (⚠️ помилка, 📋 інфо, 💰 фінанси, ✅ підтвердження, 📩 відповідь потрібна). "
+            "Тільки суть і що робити. Без 'Лист про', без 'Повідомлення про'.\n\nЛист:\n" + text_trimmed
         )
         url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
         body = json.dumps({"contents": [{"parts": [{"text": prompt}]}]}).encode()
@@ -774,7 +774,7 @@ def _gemini_summarize(text, max_input=3000):
         with urllib.request.urlopen(req, timeout=15) as r:
             data = json.loads(r.read())
         summary = data["candidates"][0]["content"]["parts"][0]["text"].strip()
-        return summary[:300]
+        return summary[:200]
     except Exception as e:
         print(f"Gemini summary error: {e}")
         return None
@@ -908,7 +908,8 @@ def get_emails():
 
             body    = _imap_get_body(msg)
             preview = body[:120].replace("\n", " ").strip()
-            ai_sum  = _gemini_summarize(body) if body and is_unread else ""
+            # AI summary для всіх листів — читає і дає суть
+            ai_sum  = _gemini_summarize(body) if body else ""
             primary.append((subject, sender, preview, is_unread, ai_sum))
 
         mail.logout()
@@ -1600,6 +1601,227 @@ def check_morning_brief():
 
     except Exception as e:
         print(f"check_morning_brief error: {e}")
+
+
+# ─── ПРОАКТИВНІ ПЕРСОНАЛЬНІ ІНСАЙТИ ──────────────────────────────────────────
+
+PROACTIVE_FILE = os.path.join(_DATA_DIR, "monitor_proactive.json")
+
+def check_proactive_insights():
+    """
+    Ініціативні повідомлення на основі профілю Олега:
+    - Перед/після змін на роботі
+    - Мотивація у вільні дні
+    - Тижневий підсумок (бігу, ваги)
+    - Крипто тренди
+    - Нагадування про цілі
+    """
+    now_utc  = datetime.now(timezone.utc)
+    now_local = now_utc + timedelta(hours=1)  # CEST UTC+1 (Кошіце)
+    h, m  = now_local.hour, now_local.minute
+    dow   = now_local.weekday()  # 0=пн, 6=нд
+    today = now_local.strftime("%Y-%m-%d")
+
+    if not (0 <= m < 5):  # тільки на початку кожної години
+        return
+
+    state = load_json_file(PROACTIVE_FILE, default={})
+
+    def already_sent(key):
+        return state.get(key) == today
+
+    def mark_sent(key):
+        state[key] = today
+        save_json_file(PROACTIVE_FILE, state)
+
+    # ── Отримуємо календар на сьогодні і завтра ───────────────────────────────
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    today_events = []
+    tomorrow_events = []
+    if creds_json:
+        try:
+            creds_data = json.loads(creds_json)
+            token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+            headers = {"Authorization": f"Bearer {token}"}
+            cal_id = "novosadovoleg%40gmail.com"
+
+            for offset, store in [(0, "today_events"), (1, "tomorrow_events")]:
+                day = now_local + timedelta(days=offset)
+                tmin = day.replace(hour=0, minute=0, second=0, microsecond=0)
+                tmax = tmin + timedelta(hours=24)
+                url = (
+                    f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+                    f"?timeMin={urllib.parse.quote(tmin.isoformat()+'Z'.replace('+01:00Z','Z'))}"
+                    f"&timeMax={urllib.parse.quote(tmax.isoformat()+'Z'.replace('+01:00Z','Z'))}"
+                    f"&singleEvents=true&orderBy=startTime&maxResults=20"
+                )
+                req = urllib.request.Request(url, headers=headers)
+                with urllib.request.urlopen(req, timeout=10) as r:
+                    evs = json.loads(r.read()).get("items", [])
+                if offset == 0:
+                    today_events = evs
+                else:
+                    tomorrow_events = evs
+        except Exception as e:
+            print(f"proactive calendar error: {e}")
+
+    def get_shift(events):
+        """Повертає ('early'/'night'/None, start_dt)"""
+        for ev in events:
+            s = ev.get("summary", "").lower()
+            if "рання" in s:
+                start = ev["start"].get("dateTime","")
+                try:
+                    dt = datetime.fromisoformat(start.replace("Z","+00:00")) + timedelta(hours=1)
+                    return ("early", dt)
+                except: return ("early", None)
+            if "нічна" in s:
+                start = ev["start"].get("dateTime","")
+                try:
+                    dt = datetime.fromisoformat(start.replace("Z","+00:00")) + timedelta(hours=1)
+                    return ("night", dt)
+                except: return ("night", None)
+        return (None, None)
+
+    today_shift, today_shift_dt   = get_shift(today_events)
+    tomorrow_shift, tomorrow_shift_dt = get_shift(tomorrow_events)
+
+    # ── 1. Ранкове привітання (08:00, вільний день) ───────────────────────────
+    if h == 8 and not today_shift and not already_sent("morning_free"):
+        tomorrow_note = ""
+        if tomorrow_shift == "early":
+            tomorrow_note = "\n\n⚡️ Завтра рання зміна — лягай спати вчасно!"
+        elif tomorrow_shift == "night":
+            tomorrow_note = "\n\n🌙 Завтра нічна зміна — відпочинь вдень."
+
+        weekday_names = ["Понеділок","Вівторок","Середа","Четвер","П'ятниця","Субота","Неділя"]
+        day_name = weekday_names[dow]
+
+        # Мотивація залежно від дня
+        if dow == 0:  # Понеділок
+            motivation = "💪 Новий тиждень — нові можливості! Сьогодні:\n• 📈 Навчання інвестиціям\n• 💹 Чек крипто та портфель\n• 🏃 Пробіжка якщо дозволяє погода"
+        elif dow == 4:  # П'ятниця
+            motivation = "🎉 П'ятниця! Заплануй активний вікенд:\n• 🏃 Пробіжка або спорт\n• 📊 Аналіз тижня — крипто та інвестиції\n• 😴 Відпочинок — теж інвестиція"
+        elif dow == 6:  # Неділя
+            motivation = "🌿 Неділя — день відновлення та планування:\n• 📝 Плани на тиждень\n• ⚖️ Зважся та запиши результат\n• 🧘 Відпочинок і підзарядка"
+        else:
+            motivation = "✨ Гарний день для розвитку:\n• 📈 Навчання + крипто-аналіз\n• 🏃 Фізична активність\n• 📚 Читання або курси"
+
+        send_telegram(f"🌅 <b>Доброго ранку, {day_name}!</b>\n\n{motivation}{tomorrow_note}")
+        mark_sent("morning_free")
+
+    # ── 2. Нагадування перед ранньою зміною (04:00) ───────────────────────────
+    if h == 4 and today_shift == "early" and not already_sent("pre_early_shift"):
+        send_telegram(
+            "⏰ <b>Рання зміна через 1 годину!</b>\n\n"
+            "☀️ Час прокидатись — зміна о 05:00\n"
+            "☕ Випий воду та сніданок\n"
+            "🎯 Гарної зміни!"
+        )
+        mark_sent("pre_early_shift")
+
+    # ── 3. Нагадування перед нічною зміною (15:00) ────────────────────────────
+    if h == 15 and today_shift == "night" and not already_sent("pre_night_shift"):
+        send_telegram(
+            "🌙 <b>Нічна зміна через 2 години!</b>\n\n"
+            "• Постарайся трохи відпочити\n"
+            "• Поїж нормально перед зміною\n"
+            "• Візьми перекус на ніч\n"
+            "💪 Гарної зміни!"
+        )
+        mark_sent("pre_night_shift")
+
+    # ── 4. Після нічної зміни (06:00 — зміна закінчується о 05:00) ───────────
+    # Перевіряємо чи вчора була нічна зміна
+    yesterday = (now_local - timedelta(days=1)).strftime("%Y-%m-%d")
+    if h == 6 and not already_sent("post_night_shift"):
+        # Перевіряємо вчорашній календар
+        try:
+            creds_data = json.loads(creds_json) if creds_json else None
+            if creds_data:
+                token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+                yest = now_local - timedelta(days=1)
+                tmin = yest.replace(hour=0,minute=0,second=0,microsecond=0)
+                tmax = tmin + timedelta(hours=24)
+                url = (
+                    f"https://www.googleapis.com/calendar/v3/calendars/novosadovoleg%40gmail.com/events"
+                    f"?timeMin={urllib.parse.quote(tmin.isoformat())}"
+                    f"&timeMax={urllib.parse.quote(tmax.isoformat())}"
+                    f"&singleEvents=true&maxResults=10"
+                )
+                req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
+                with urllib.request.urlopen(req, timeout=10) as r:
+                    yest_events = json.loads(r.read()).get("items", [])
+                had_night = any("нічна" in e.get("summary","").lower() for e in yest_events)
+                if had_night:
+                    send_telegram(
+                        "😴 <b>Нічна зміна завершена!</b>\n\n"
+                        "Час додому і відпочивати 🛏\n"
+                        "• Поїж і лягай спати\n"
+                        "• Усі справи — після пробудження\n\n"
+                        "Добре відпочинь! 💤"
+                    )
+                    mark_sent("post_night_shift")
+        except Exception as e:
+            print(f"post_night check error: {e}")
+
+    # ── 5. Тижневий підсумок ваги (неділя 20:00) ─────────────────────────────
+    if dow == 6 and h == 20 and not already_sent("weekly_weight"):
+        try:
+            weight_data = load_json_file(os.path.join(_DATA_DIR, "weight.json"), default={})
+            if weight_data:
+                sorted_w = sorted(weight_data.items())
+                last_entries = sorted_w[-7:]  # останні 7 записів
+                if last_entries:
+                    last_date, last_w = last_entries[-1]
+                    first_date, first_w = sorted_w[0]
+                    total_change = last_w - first_w
+                    recent_change = last_w - last_entries[0][1] if len(last_entries) > 1 else 0
+                    target = 78.0  # ціль
+                    to_goal = last_w - target
+
+                    trend = "📉" if recent_change < -0.2 else "📈" if recent_change > 0.2 else "➡️"
+                    msg = (
+                        f"⚖️ <b>Тижневий підсумок ваги</b>\n\n"
+                        f"Поточна: <b>{last_w} кг</b> ({last_date})\n"
+                        f"{trend} За тиждень: {recent_change:+.1f} кг\n"
+                        f"До цілі (78 кг): <b>{to_goal:.1f} кг</b>\n\n"
+                    )
+                    if to_goal > 5:
+                        msg += "💪 Тримай режим харчування та активність!"
+                    elif to_goal > 2:
+                        msg += "🎯 Вже близько! Продовжуй у тому ж темпі."
+                    else:
+                        msg += "🏆 Майже ціль! Ти молодець!"
+                    send_telegram(msg)
+                    mark_sent("weekly_weight")
+        except Exception as e:
+            print(f"weekly weight error: {e}")
+
+    # ── 6. Мотивація до бігу (вт/чт/сб о 09:00 якщо вільний) ────────────────
+    if h == 9 and dow in (1, 3, 5) and not today_shift and not already_sent("run_motivation"):
+        day_names = {1:"вівторок", 3:"четвер", 5:"субота"}
+        send_telegram(
+            f"🏃 <b>Час для пробіжки!</b>\n\n"
+            f"Сьогодні {day_names[dow]} — ідеальний день для бігу.\n"
+            f"• 20-30 хвилин легкого бігу\n"
+            f"• Потом — сніданок і навчання\n\n"
+            f"Вперед! 💨"
+        )
+        mark_sent("run_motivation")
+
+    # ── 7. Щопонеділковий огляд цілей (пн 09:00, вільний) ────────────────────
+    if h == 9 and dow == 0 and not today_shift and not already_sent("monday_goals"):
+        send_telegram(
+            "🎯 <b>Понеділок — огляд цілей тижня</b>\n\n"
+            "Нагадую твої основні цілі:\n"
+            "💰 Фінансова незалежність — вчись щодня\n"
+            "⚖️ Схуднення до 78 кг — слідкуй за харчуванням\n"
+            "💼 Нова робота в інвестиціях — нетворкінг та розвиток\n"
+            "🏃 Активний спосіб життя — біг та спорт\n\n"
+            "Що зробиш цього тижня для кожної цілі? 💪"
+        )
+        mark_sent("monday_goals")
 
 
 # ─── КРИПТО АЛЕРТ >5% ЗА ГОДИНУ ──────────────────────────────────────────────
