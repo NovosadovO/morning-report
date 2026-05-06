@@ -1989,17 +1989,24 @@ def check_water_reminder():
 
     if not (8 <= h <= 20 and 0 <= m < 5):
         return
-
     if h % 2 != 0:
         return
 
-    # Перевіряємо чи є зміна сьогодні (тоді не нагадуємо)
-    state = load_json_file(WATER_FILE, default={})
     key = now_local.strftime("%Y-%m-%d-%H")
-    if state.get(key):
-        return
 
-    # Простий check — якщо є зміна пропускаємо
+    # GitHub-dedup (захист від кількох інстансів)
+    gh_sent, gh_sha = _gh_get_sent()
+    gh_water_key = f"water_{key}"
+    if gh_sent is not None:
+        if gh_sent.get(gh_water_key):
+            return
+    else:
+        # fallback local
+        state = load_json_file(WATER_FILE, default={})
+        if state.get(key):
+            return
+
+    # Якщо є зміна сьогодні — пропускаємо (check_smart_notifications шле воду на зміні)
     creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
     if creds_json:
         try:
@@ -2024,14 +2031,21 @@ def check_water_reminder():
                 with urllib.request.urlopen(req, timeout=10) as r:
                     events = json.loads(r.read()).get("items", [])
             if any("зміна" in e.get("summary","").lower() for e in events):
-                return  # робочий день — не нагадуємо
+                return
         except:
             pass
 
     send_telegram("💧 <b>Час випити воду!</b>\nВипий склянку води зараз 🥤")
-    state[key] = True
-    save_json_file(WATER_FILE, state)
     print(f"Water reminder sent at {h}:00")
+
+    # Зберігаємо в GitHub
+    if gh_sent is not None:
+        gh_sent[gh_water_key] = True
+        _gh_save_sent(gh_sent, gh_sha)
+    else:
+        state = load_json_file(WATER_FILE, default={})
+        state[key] = True
+        save_json_file(WATER_FILE, state)
 
 
 # ─── ПЛАН ТИЖНЯ (щопонеділка 8:00) ───────────────────────────────────────────
@@ -4238,58 +4252,6 @@ def check_weekly_habit_stats():
 
 WATER_FILE = os.path.join(_DATA_DIR, "monitor_water.json")
 
-def check_water_reminder():
-    """Нагадування пити воду кожні 2г у вихідні між 8:00 і 20:00."""
-    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
-    h, m = now_local.hour, now_local.minute
-
-    if not (8 <= h <= 20 and 0 <= m < 5):
-        return
-
-    if h % 2 != 0:
-        return
-
-    # Перевіряємо чи є зміна сьогодні (тоді не нагадуємо)
-    state = load_json_file(WATER_FILE, default={})
-    key = now_local.strftime("%Y-%m-%d-%H")
-    if state.get(key):
-        return
-
-    # Простий check — якщо є зміна пропускаємо
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
-    if creds_json:
-        try:
-            creds_data = json.loads(creds_json)
-            token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
-            headers = {"Authorization": f"Bearer {token}"}
-            cal_id  = "novosadovoleg%40gmail.com"
-            now_utc = datetime.now(timezone.utc)
-            day_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0)
-            day_end   = day_start + timedelta(hours=24)
-            url = (
-                f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
-                f"?timeMin={urllib.parse.quote(day_start.isoformat())}"
-                f"&timeMax={urllib.parse.quote(day_end.isoformat())}"
-                f"&singleEvents=true&maxResults=10"
-            )
-            if _HAS_REQUESTS:
-                r = _requests.get(url, headers=headers, timeout=10)
-                events = r.json().get("items", [])
-            else:
-                req = urllib.request.Request(url, headers=headers)
-                with urllib.request.urlopen(req, timeout=10) as r:
-                    events = json.loads(r.read()).get("items", [])
-            if any("зміна" in e.get("summary","").lower() for e in events):
-                return  # робочий день — не нагадуємо
-        except:
-            pass
-
-    send_telegram("💧 <b>Час випити воду!</b>\nВипий склянку води зараз 🥤")
-    state[key] = True
-    save_json_file(WATER_FILE, state)
-    print(f"Water reminder sent at {h}:00")
-
-
 # ─── ПЛАН ТИЖНЯ (щопонеділка 8:00) ───────────────────────────────────────────
 
 WEEK_PLAN_FILE = os.path.join(_DATA_DIR, "monitor_week_plan.json")
@@ -5648,22 +5610,9 @@ def check_smart_notifications():
 
         # ── 5. НАГАДУВАННЯ ПОЇСТИ ПЕРЕД ГОЛОДУВАННЯМ (20:00 вільний день) ─
         # Вже є check_fasting_reminder() — не дублюємо
+        # Вода — обробляється в check_water_reminder(), не дублюємо тут
 
-        # ── 6. ВОДНИЙ БАЛАНС під час зміни (кожні 3г на роботі) ───────────
-        water_keys = {9: "water_work_9", 12: "water_work_12", 15: "water_work_15",
-                      21: "water_work_21", 0: "water_work_0", 3: "water_work_3"}
-        if today_shift in ("early", "night") and h in water_keys and 0 <= m < 5:
-            wkey = water_keys[h]
-            on_shift = (today_shift == "early" and 6 <= h < 18) or \
-                       (today_shift == "night" and (h >= 18 or h < 6))
-            if on_shift and not sent(wkey):
-                send_telegram(
-                    f"💧 <b>Вода!</b> Вже {h}:00 — випий склянку.\n"
-                    f"<i>На зміні легко забути про воду.</i>"
-                )
-                mark(wkey)
-
-        # ── 7. AI ПОРАДА РАЗ НА 4 ГОДИНИ (вдома, не зайнятий) ─────────────
+        # ── 6. AI ПОРАДА РАЗ НА 4 ГОДИНИ (вдома, не зайнятий) ─────────────
         ai_hour_keys = {10: "ai_tip_10", 14: "ai_tip_14", 19: "ai_tip_19"}
         if today_shift == "free" and h in ai_hour_keys and 0 <= m < 5:
             akey = ai_hour_keys[h]
