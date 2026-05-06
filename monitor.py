@@ -1303,9 +1303,21 @@ def get_city_traffic():
 
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
 
+MAIN_SENT_FILE = os.path.join(_DATA_DIR, "monitor_main_sent.json")
+
 def main():
     now = datetime.now(timezone.utc)
     now_local = now + timedelta(hours=2)
+
+    # Захист від дублів — одна відправка на годину
+    hour_key = now_local.strftime("%Y-%m-%dT%H")
+    _sent = load_json_file(MAIN_SENT_FILE, default={})
+    if _sent.get("last_hour") == hour_key:
+        print(f"=== Already sent this hour ({hour_key}), skipping ===")
+        return
+    _sent["last_hour"] = hour_key
+    save_json_file(MAIN_SENT_FILE, _sent)
+
     local_time = now_local.strftime("%H:%M")
     local_date = now_local.strftime("%d.%m.%Y")
     weekday = now_local.weekday()  # 0=Пн, 5=Сб, 6=Нд
@@ -1326,7 +1338,7 @@ def main():
 
     SEP = "\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n"
 
-    parts = [f"🕐 <b>Звіт {local_time}  ·  {local_date}</b>\n<i>3х годинний репорт</i>"]
+    parts = [f"🕐 <b>Звіт {local_time}  ·  {local_date}</b>\n<i>Годинний звіт</i>"]
 
     if prices_text:
         parts.append(prices_text)
@@ -3919,6 +3931,16 @@ def get_city_traffic():
 def main():
     now = datetime.now(timezone.utc)
     now_local = now + timedelta(hours=2)
+
+    # Захист від дублів — одна відправка на годину
+    hour_key = now_local.strftime("%Y-%m-%dT%H")
+    _sent = load_json_file(MAIN_SENT_FILE, default={})
+    if _sent.get("last_hour") == hour_key:
+        print(f"=== Already sent this hour ({hour_key}), skipping ===")
+        return
+    _sent["last_hour"] = hour_key
+    save_json_file(MAIN_SENT_FILE, _sent)
+
     local_time = now_local.strftime("%H:%M")
     local_date = now_local.strftime("%d.%m.%Y")
     weekday = now_local.weekday()  # 0=Пн, 5=Сб, 6=Нд
@@ -3939,7 +3961,7 @@ def main():
 
     SEP = "\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n"
 
-    parts = [f"🕐 <b>Звіт {local_time}  ·  {local_date}</b>\n<i>3х годинний репорт</i>"]
+    parts = [f"🕐 <b>Звіт {local_time}  ·  {local_date}</b>\n<i>Годинний звіт</i>"]
 
     if prices_text:
         parts.append(prices_text)
