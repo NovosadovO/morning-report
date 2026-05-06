@@ -1305,18 +1305,69 @@ def get_city_traffic():
 
 MAIN_SENT_FILE = os.path.join(_DATA_DIR, "monitor_main_sent.json")
 
+def _gh_get_sent():
+    """Читає monitor_main_sent.json з GitHub (shared між усіма інстансами)."""
+    import base64
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
+    if not gh_token:
+        return None, None
+    url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_main_sent.json"
+    req = urllib.request.Request(url, headers={
+        "Authorization": f"token {gh_token}",
+        "User-Agent": "morning-report-bot"
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=8) as r:
+            d = json.loads(r.read())
+            content = json.loads(base64.b64decode(d["content"]).decode())
+            return content, d["sha"]
+    except Exception:
+        return {}, None
+
+def _gh_save_sent(data, sha):
+    """Зберігає monitor_main_sent.json на GitHub."""
+    import base64
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
+    if not gh_token:
+        return
+    url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_main_sent.json"
+    content = base64.b64encode(json.dumps(data, indent=2).encode()).decode()
+    body = json.dumps({
+        "message": "dedup: mark hour sent",
+        "content": content,
+        **({"sha": sha} if sha else {})
+    }).encode()
+    req = urllib.request.Request(url, data=body, headers={
+        "Authorization": f"token {gh_token}",
+        "Content-Type": "application/json",
+        "User-Agent": "morning-report-bot"
+    }, method="PUT")
+    try:
+        urllib.request.urlopen(req, timeout=8)
+    except Exception as e:
+        print(f"_gh_save_sent error: {e}")
+
 def main():
     now = datetime.now(timezone.utc)
     now_local = now + timedelta(hours=2)
-
-    # Захист від дублів — одна відправка на годину
     hour_key = now_local.strftime("%Y-%m-%dT%H")
-    _sent = load_json_file(MAIN_SENT_FILE, default={})
-    if _sent.get("last_hour") == hour_key:
-        print(f"=== Already sent this hour ({hour_key}), skipping ===")
-        return
-    _sent["last_hour"] = hour_key
-    save_json_file(MAIN_SENT_FILE, _sent)
+
+    # Захист від дублів — GitHub як shared state (працює при кількох інстансах)
+    gh_sent, gh_sha = _gh_get_sent()
+    if gh_sent is not None:
+        if gh_sent.get("last_hour") == hour_key:
+            print(f"=== Already sent this hour ({hour_key}) [GitHub], skipping ===")
+            return
+        gh_sent["last_hour"] = hour_key
+        _gh_save_sent(gh_sent, gh_sha)
+    else:
+        # Fallback — local file
+        _sent = load_json_file(MAIN_SENT_FILE, default={})
+        if _sent.get("last_hour") == hour_key:
+            print(f"=== Already sent this hour ({hour_key}) [local], skipping ===")
+            return
+        _sent["last_hour"] = hour_key
+        save_json_file(MAIN_SENT_FILE, _sent)
 
     local_time = now_local.strftime("%H:%M")
     local_date = now_local.strftime("%d.%m.%Y")
