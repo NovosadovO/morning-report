@@ -536,5 +536,20 @@ def run_extra_watchers():
 
 threading.Thread(target=run_extra_watchers, daemon=True).start()
 
+
+def run_smart_notifications_watcher():
+    """Розумні контекст-залежні нотифікації — кожну хвилину."""
+    print("=== Starting smart notifications watcher ===", flush=True)
+    time.sleep(95)
+    while True:
+        try:
+            _load_monitor().check_smart_notifications()
+        except Exception as e:
+            print(f"Smart notif watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+threading.Thread(target=run_smart_notifications_watcher, daemon=True).start()
+
 # Основний монітор в головному потоці
 run_monitor_loop()

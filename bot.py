@@ -755,23 +755,35 @@ def save_offset(offset):
 HELP_TEXT = """
 🤖 <b>Команди бота:</b>
 
-/звички — відмітити звички вручну
-/статус — детальний звіт по кожній звичці (7 днів)
+<b>💬 AI Асистент</b>
+Просто напиши будь-що — я відповім як тренер, дієтолог, фін. радник або просто друг.
+/я — твій поточний статус (де ти, зміна, вага, звички)
+/забути — очистити пам'ять розмови
+
+<b>📊 Звіти</b>
 /звіт — повний звіт зараз
 /тиждень — тижневий підсумок
-/сон — аналіз сну
 /ціни — ціни BTC/ETH/AVAX/ONDO
 /погода — погода Košice
 /календар — події на сьогодні
 /листи — останні email
+/астро — астрологічний прогноз
+
+<b>💪 Здоров'я</b>
+/звички — відмітити звички
+/статус — статус звичок (7 днів)
 /вага — динаміка ваги
-/ліки — таблетки за тиждень
-/ліки місяць — за місяць
-/ліки курс — весь курс (27.04–27.07)
-/зд — health дані (останні 7 днів)
+/сон — аналіз сну
+/зд — health дані (7 днів)
 /зд т — тижневий health звіт
 /зд м — місячний health звіт
-/зд [кроки] [сон] [ЧСС] [кал] [score] — записати дані
+/зд [кроки] [сон] [ЧСС] [кал] [score] — записати
+
+<b>💊 Ліки</b>
+/ліки — Armolopid Plus за тиждень
+/ліки місяць — за місяць
+/ліки курс — весь курс (27.04–27.07)
+
 /допомога — цей список
 """
 
@@ -1053,6 +1065,33 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}\nФормат: /здоров'я [кроки] [сон] [ЧСС] [калорії]")
 
+    elif text in ["/забути", "забути", "/clear", "/скинути"]:
+        from context import clear_history
+        clear_history()
+        send(chat_id, "🧹 Пам'ять розмови очищена. Починаємо з чистого аркуша!")
+
+    elif text in ["/статус_зараз", "/я", "я зараз", "де я"]:
+        try:
+            from context import get_context, STATUS_LABELS
+            ctx = get_context(include_crypto=True)
+            shift_labels = {"early": "рання (06:00–18:00)", "night": "нічна (18:00–06:00)", "free": "вихідний"}
+            msg = (
+                f"📍 <b>Твій статус зараз</b>\n\n"
+                f"🕐 {ctx['time_str']}, {ctx['weekday']} {ctx['date_str']}\n"
+                f"👤 {ctx['status_label']}\n"
+                f"📅 Зміна сьогодні: <b>{shift_labels.get(ctx['shift_today'], ctx['shift_today'])}</b>\n"
+                f"📅 Зміна завтра: <b>{shift_labels.get(ctx['shift_tomorrow'], ctx['shift_tomorrow'])}</b>\n\n"
+                f"⚖️ {ctx['weight']}\n"
+                f"💚 {ctx['health']}\n"
+                f"📋 Звички: {ctx['habits']}\n"
+                f"💊 {ctx['meds']}\n"
+            )
+            if ctx.get("crypto"):
+                msg += f"\n💹 {ctx['crypto']}"
+            send(chat_id, msg)
+        except Exception as e:
+            send(chat_id, f"⚠️ {e}")
+
     else:
         # Спроба розпізнати вагу (число типу 82 або 82.5)
         try:
@@ -1068,7 +1107,17 @@ def handle_command(chat_id, text):
                 return
         except ValueError:
             pass
-        send(chat_id, f"Не розумію команду. Напиши /допомога щоб побачити список команд.")
+
+        # Будь-який текст → AI асистент
+        try:
+            send(chat_id, "⏳")
+            from context import ask_ai
+            # Якщо питання про календар/пошту — підтягуємо
+            need_cal = any(w in text for w in ["календар", "план", "події", "сьогодні", "завтра", "зміна", "розклад"])
+            answer = ask_ai(text, include_calendar=need_cal)
+            send(chat_id, answer)
+        except Exception as e:
+            send(chat_id, f"⚠️ AI помилка: {e}")
 
 
 # ─── MAIN LOOP ────────────────────────────────────────────────────────────────

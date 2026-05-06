@@ -5554,3 +5554,162 @@ def check_learning_streak():
     except Exception as e:
         print(f"check_learning_streak error: {e}")
 
+
+# ─── SMART CONTEXT-AWARE NOTIFICATIONS ───────────────────────────────────────
+
+SMART_NOTIF_FILE = os.path.join(_DATA_DIR, "monitor_smart_notif.json")
+
+def check_smart_notifications():
+    """
+    Розумні нотифікації — знає де Олег зараз і пише тільки коли доречно.
+    Перевіряється кожну хвилину.
+    Включає:
+      - Повідомлення перед/після зміни (з урахуванням нового графіку 06-18/18-06)
+      - Нагадування їсти перед нічною зміною
+      - Ранковий старт після нічної зміни
+      - Проактивна AI-порада раз на кілька годин (вдома)
+      - Нагадування про воду під час зміни
+    """
+    import sys
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+    try:
+        from context import get_context, get_shift_from_calendar, should_notify, should_notify_low_priority
+    except Exception as e:
+        print(f"context import error: {e}")
+        return
+
+    try:
+        now_local = datetime.now(timezone.utc) + timedelta(hours=1)  # UTC+1 Košice
+        h = now_local.hour
+        m = now_local.minute
+        today = now_local.strftime("%Y-%m-%d")
+        state = load_json_file(SMART_NOTIF_FILE, default={})
+
+        def sent(key):
+            return state.get(key) == today
+
+        def mark(key):
+            state[key] = today
+            save_json_file(SMART_NOTIF_FILE, state)
+
+        shift_info = get_shift_from_calendar()
+        today_shift    = shift_info.get("today", "free")
+        tomorrow_shift = shift_info.get("tomorrow", "free")
+
+        # ── 1. ПЕРЕД РАННЬОЮ ЗМІНОЮ (04:30) — прокидайся ──────────────────
+        if today_shift == "early" and h == 4 and 30 <= m < 35 and not sent("pre_early"):
+            send_telegram(
+                "⏰ <b>Через 1.5 години рання зміна!</b>\n\n"
+                "Час вставати 💪\n\n"
+                "• Сніданок — важливо поїсти\n"
+                "• Ліки Armolopid Plus\n"
+                "• Погода: перевір /погода\n\n"
+                "<i>Давай, ти впораєшся!</i>"
+            )
+            mark("pre_early")
+
+        # ── 2. ПІСЛЯ РАННЬОЇ ЗМІНИ (18:15) — повернувся додому ─────────────
+        elif today_shift == "early" and h == 18 and 15 <= m < 20 and not sent("post_early"):
+            send_telegram(
+                "🏠 <b>Рання зміна завершена!</b>\n\n"
+                "Добре попрацював 💪 Тепер відпочинок.\n\n"
+                "• Відмітити звички? /звички\n"
+                "• Записати вагу? (просто відправ число)\n"
+                "• Є час на пробіжку поки є сили!\n\n"
+                "<i>Вечір твій — використай добре.</i>"
+            )
+            mark("post_early")
+
+        # ── 3. ПЕРЕД НІЧНОЮ ЗМІНОЮ (16:30) — підготовка ───────────────────
+        elif today_shift == "night" and h == 16 and 30 <= m < 35 and not sent("pre_night"):
+            send_telegram(
+                "🌙 <b>Через 1.5 години нічна зміна!</b>\n\n"
+                "Підготуйся:\n"
+                "• 🍽 Поїж зараз — на зміні важко\n"
+                "• 💊 Ліки Armolopid Plus\n"
+                "• 😴 Якщо не спав — хоча б 20 хв лягти\n"
+                "• 👟 Зручне взуття\n\n"
+                "<i>Хорошої зміни!</i>"
+            )
+            mark("pre_night")
+
+        # ── 4. ПІСЛЯ НІЧНОЇ ЗМІНИ (06:15) — додому спати ──────────────────
+        elif today_shift == "night" and h == 6 and 15 <= m < 20 and not sent("post_night"):
+            send_telegram(
+                "😴 <b>Нічна завершена — додому!</b>\n\n"
+                "Молодець, відробив ніч 💪\n\n"
+                "• Поїж щось легке\n"
+                "• Ляж спати — сон після нічної критичний\n"
+                "• Звички і вагу запишеш після сну\n\n"
+                "<i>Солодких снів!</i>"
+            )
+            mark("post_night")
+
+        # ── 5. НАГАДУВАННЯ ПОЇСТИ ПЕРЕД ГОЛОДУВАННЯМ (20:00 вільний день) ─
+        # Вже є check_fasting_reminder() — не дублюємо
+
+        # ── 6. ВОДНИЙ БАЛАНС під час зміни (кожні 3г на роботі) ───────────
+        water_keys = {9: "water_work_9", 12: "water_work_12", 15: "water_work_15",
+                      21: "water_work_21", 0: "water_work_0", 3: "water_work_3"}
+        if today_shift in ("early", "night") and h in water_keys and 0 <= m < 5:
+            wkey = water_keys[h]
+            on_shift = (today_shift == "early" and 6 <= h < 18) or \
+                       (today_shift == "night" and (h >= 18 or h < 6))
+            if on_shift and not sent(wkey):
+                send_telegram(
+                    f"💧 <b>Вода!</b> Вже {h}:00 — випий склянку.\n"
+                    f"<i>На зміні легко забути про воду.</i>"
+                )
+                mark(wkey)
+
+        # ── 7. AI ПОРАДА РАЗ НА 4 ГОДИНИ (вдома, не зайнятий) ─────────────
+        ai_hour_keys = {10: "ai_tip_10", 14: "ai_tip_14", 19: "ai_tip_19"}
+        if today_shift == "free" and h in ai_hour_keys and 0 <= m < 5:
+            akey = ai_hour_keys[h]
+            if not sent(akey):
+                try:
+                    from context import get_context, get_system_prompt
+                    ctx = get_context(include_crypto=True)
+                    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+                    if gemini_key:
+                        prompts = {
+                            10: "Олег щойно прокинувся, вихідний день. Дай коротку мотиваційну пораду на сьогодні — враховуй його ціль схуднення, крипто і плани. 2-3 речення максимум.",
+                            14: "Олег вдома в середині дня. Дай одну конкретну пораду що зробити зараз для здоров'я або фінансів. Коротко, дієво.",
+                            19: "Вечір вихідного дня. Підбий короткий підсумок — чи добре пройшов день для цілей Олега? Що варто зробити перед сном. 2-3 речення.",
+                        }
+                        prompt_text = prompts[h]
+                        system = get_system_prompt(ctx)
+                        full_prompt = f"{system}\n\n{prompt_text}"
+                        payload = json.dumps({
+                            "contents": [{"parts": [{"text": full_prompt}]}],
+                            "generationConfig": {"maxOutputTokens": 250, "temperature": 0.9}
+                        }).encode()
+                        req = urllib.request.Request(
+                            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                            data=payload, headers={"Content-Type": "application/json"}, method="POST"
+                        )
+                        with urllib.request.urlopen(req, timeout=20) as r:
+                            resp = json.loads(r.read())
+                        tip = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+                        tip_labels = {10: "🌅 Доброго ранку!", 14: "☀️ Середина дня", 19: "🌙 Добрий вечір!"}
+                        send_telegram(f"{tip_labels[h]}\n\n{tip}")
+                        mark(akey)
+                except Exception as e:
+                    print(f"AI tip error: {e}")
+
+        # ── 8. ПЛАН НА ЗАВТРА (22:00 якщо є зміна завтра) ──────────────────
+        if tomorrow_shift in ("early", "night") and h == 22 and 0 <= m < 5 and not sent("tomorrow_plan"):
+            shift_name = "рання (06:00)" if tomorrow_shift == "early" else "нічна (18:00)"
+            tip_early = "• Лягти спати до 22:30\n• Будильник на 04:30\n• Приготувати одяг і їжу"
+            tip_night = "• Поспати вдень якщо можливо\n• Поїсти о 16:30–17:00\n• Підготувати термос з чаєм"
+            tip = tip_early if tomorrow_shift == "early" else tip_night
+            send_telegram(
+                f"📋 <b>Завтра {shift_name} зміна</b>\n\n"
+                f"Підготуйся:\n{tip}\n\n"
+                f"<i>Гарного відпочинку сьогодні!</i>"
+            )
+            mark("tomorrow_plan")
+
+    except Exception as e:
+        print(f"check_smart_notifications error: {e}")
