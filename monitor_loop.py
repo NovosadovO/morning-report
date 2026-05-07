@@ -551,5 +551,97 @@ def run_smart_notifications_watcher():
 
 threading.Thread(target=run_smart_notifications_watcher, daemon=True).start()
 
+def run_morning_context_watcher():
+    """Ранковий контекст (AI + погода + календар) — кожну хвилину."""
+    print("=== Starting morning context watcher ===", flush=True)
+    time.sleep(130)
+    while True:
+        try:
+            _load_monitor().check_morning_context()
+        except Exception as e:
+            print(f"Morning context watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+def run_run_coach_watcher():
+    """Тренер бігу — нагадування до тренування кожну хвилину."""
+    print("=== Starting run coach watcher ===", flush=True)
+    time.sleep(135)
+    while True:
+        try:
+            _load_monitor().check_run_coach()
+        except Exception as e:
+            print(f"Run coach watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+def run_nutrition_watcher():
+    """Нагадування харчування — кожну хвилину."""
+    print("=== Starting nutrition reminder watcher ===", flush=True)
+    time.sleep(140)
+    while True:
+        try:
+            _load_monitor().check_nutrition_reminder()
+        except Exception as e:
+            print(f"Nutrition watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+def run_sleep_quality_watcher():
+    """Якість сну — питає вранці о 08:00 кожну хвилину."""
+    print("=== Starting sleep quality watcher ===", flush=True)
+    time.sleep(145)
+    while True:
+        try:
+            _load_monitor().check_sleep_quality()
+        except Exception as e:
+            print(f"Sleep quality watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+def run_crypto_morning_watcher():
+    """Крипто-ранок — AI огляд портфелю о 08:30 кожну хвилину."""
+    print("=== Starting crypto morning watcher ===", flush=True)
+    time.sleep(150)
+    while True:
+        try:
+            _load_monitor().check_crypto_morning()
+        except Exception as e:
+            print(f"Crypto morning watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+def run_week_goals_watcher():
+    """Цілі тижня — щопонеділка і щоп'ятниці кожну хвилину."""
+    print("=== Starting week goals watcher ===", flush=True)
+    time.sleep(155)
+    while True:
+        try:
+            _load_monitor().check_week_goals()
+        except Exception as e:
+            print(f"Week goals watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+def run_calendar_live_watcher():
+    """Живий календар — сповіщення за 15хв і при старті події кожні 5 хв."""
+    print("=== Starting calendar live watcher (every 5min) ===", flush=True)
+    time.sleep(160)
+    while True:
+        try:
+            _load_monitor().check_calendar_live()
+        except Exception as e:
+            print(f"Calendar live watcher error: {e}", flush=True)
+        time.sleep(300)
+
+
+threading.Thread(target=run_morning_context_watcher,  daemon=True).start()
+threading.Thread(target=run_run_coach_watcher,         daemon=True).start()
+threading.Thread(target=run_nutrition_watcher,         daemon=True).start()
+threading.Thread(target=run_sleep_quality_watcher,     daemon=True).start()
+threading.Thread(target=run_crypto_morning_watcher,    daemon=True).start()
+threading.Thread(target=run_week_goals_watcher,        daemon=True).start()
+threading.Thread(target=run_calendar_live_watcher,     daemon=True).start()
+
 # Основний монітор в головному потоці
 run_monitor_loop()

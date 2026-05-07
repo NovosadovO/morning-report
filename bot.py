@@ -1150,6 +1150,32 @@ def main():
                         data = cb.get("data", "")
                         if data.startswith("evdone_"):
                             handle_event_done_callback(cb)
+                        elif data.startswith("sleep_q_"):
+                            scores = {
+                                "sleep_q_1": "😩 Погано",
+                                "sleep_q_2": "😐 Нормально",
+                                "sleep_q_3": "😊 Добре",
+                                "sleep_q_4": "🌟 Відмінно"
+                            }
+                            label = scores.get(data, data)
+                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": f"Записано: {label}"})
+                            # Зберегти в health data
+                            try:
+                                from datetime import date
+                                today_str = date.today().isoformat()
+                                try:
+                                    from storage import load_health, save_health
+                                    health = load_health()
+                                    if today_str not in health:
+                                        health[today_str] = {}
+                                    health[today_str]["sleep_quality"] = data.replace("sleep_q_", "")
+                                    health[today_str]["sleep_quality_label"] = label
+                                    save_health(health)
+                                except Exception:
+                                    pass
+                            except Exception:
+                                pass
+                            send(chat_id, f"✅ Сон записано: <b>{label}</b>")
                         elif data.startswith("meds_"):
                             handle_meds_callback(cb)
                         elif data == "reminder_health_photo":
