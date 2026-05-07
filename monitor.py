@@ -878,17 +878,23 @@ def get_emails():
         mail = _imap_connect()
         mail.select("INBOX")
 
-        # Стратегія: довіряємо Gmail category:primary повністю
-        # Беремо: непрочитані primary + останні 15 прочитані primary
-        _, p_unseen = mail.search(None, 'X-GM-RAW "category:primary is:unread"')
-        _, p_all    = mail.search(None, 'X-GM-RAW "category:primary"')
+        # UID-based пошук (правильно — sequence numbers не persistent між сесіями)
+        # Беремо: непрочитані primary + останні 15 прочитаних primary
+        _, p_unseen = mail.uid('search', None, 'X-GM-RAW "category:primary is:unread"')
+        _, p_all    = mail.uid('search', None, 'X-GM-RAW "category:primary"')
 
-        primary_unread_ids = set(p_unseen[0].split())
-        primary_all_ids    = p_all[0].split()
+        primary_unread_uids = set(u.decode() for u in p_unseen[0].split())
+        primary_all_uids    = [u.decode() for u in p_all[0].split()]
+
+        # Якщо primary порожній — беремо всі UNSEEN як fallback
+        if not primary_all_uids:
+            _, fallback = mail.uid('search', None, 'UNSEEN')
+            primary_all_uids = [u.decode() for u in fallback[0].split()]
+            primary_unread_uids = set(primary_all_uids)
 
         # Об'єднуємо: всі непрочитані + останні 15 прочитаних, від нових до старих
         combined = list(dict.fromkeys(
-            list(primary_unread_ids) + primary_all_ids[-15:]
+            list(primary_unread_uids) + primary_all_uids[-15:]
         ))
         combined = sorted(combined, key=lambda x: int(x))[::-1]
 
@@ -906,13 +912,13 @@ def get_emails():
         for uid in combined:
             if len(primary) >= 7:
                 break
-            _, msg_data = mail.fetch(uid, "(RFC822)")
+            _, msg_data = mail.uid('fetch', uid.encode(), "(RFC822)")
             raw = msg_data[0][1]
             msg = email.message_from_bytes(raw)
 
             subject  = _imap_decode_header(msg.get("Subject", "(без теми)"))
             sender   = _imap_decode_header(msg.get("From", ""))
-            is_unread = uid in primary_unread_ids
+            is_unread = uid in primary_unread_uids
 
             # Пропускаємо тільки явні системні нотифікації
             email_match = re.search(r'[\w.+%-]+@[\w.-]+\.[a-z]{2,}', sender.lower())
@@ -980,7 +986,8 @@ def check_new_emails():
         mail = _imap_connect()
         mail.select("INBOX")
 
-        _, data = mail.search(None, 'X-GM-RAW "category:primary is:unread"')
+        # UID-based пошук (sequence numbers не persistent між IMAP сесіями!)
+        _, data = mail.uid('search', None, 'X-GM-RAW "category:primary is:unread"')
         all_unread = data[0].split()
 
         if not all_unread:
@@ -1002,7 +1009,7 @@ def check_new_emails():
 
         for uid in new_uids:
             uid_str = uid.decode()
-            _, msg_data = mail.fetch(uid, "(RFC822.HEADER)")
+            _, msg_data = mail.uid('fetch', uid, "(RFC822.HEADER)")
             if not msg_data or not msg_data[0]:
                 continue
             msg = email.message_from_bytes(msg_data[0][1])
