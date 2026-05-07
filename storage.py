@@ -157,3 +157,14 @@ def load_health():
 def save_health(data):
     """Зберігає щоденні health дані."""
     return _save_github("health.json", data)
+
+def load(filename, default=None):
+    """Generic load — читає будь-який JSON файл з GitHub data/."""
+    data = _load_github(filename)
+    if data is None:
+        return default if default is not None else {}
+    return data
+
+def save(filename, data):
+    """Generic save — зберігає будь-який JSON файл в GitHub data/."""
+    return _save_github(filename, data)
