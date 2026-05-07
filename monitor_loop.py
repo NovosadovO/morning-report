@@ -112,8 +112,8 @@ def run_defi_report_loop():
 
 
 def run_monitor_loop():
-    """Основний звіт — кожну годину (дублі захищені в monitor.py по hour_key)."""
-    print("=== Starting monitor loop (every 1h) ===", flush=True)
+    """Основний звіт — кожні 20 хвилин (дублі захищені в monitor.py по 20min slot)."""
+    print("=== Starting monitor loop (every 20min) ===", flush=True)
     while True:
         now = datetime.now(timezone.utc)
         print(f"\n[{now.strftime('%Y-%m-%d %H:%M')} UTC] Running monitor...", flush=True)
@@ -121,8 +121,8 @@ def run_monitor_loop():
             subprocess.run([sys.executable, "monitor.py"], timeout=120)
         except Exception as e:
             print(f"Monitor error: {e}", flush=True)
-        print("Sleeping 1 hour...", flush=True)
-        time.sleep(3600)
+        print("Sleeping 20 min...", flush=True)
+        time.sleep(1200)
 
 
 # ─── ЗАПУСК ───────────────────────────────────────────────────────────────────

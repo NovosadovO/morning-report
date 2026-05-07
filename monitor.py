@@ -1395,18 +1395,20 @@ def _gh_save_sent(data, sha):
 def main():
     now = datetime.now(timezone.utc)
     now_local = now + timedelta(hours=2)
-    hour_key = now_local.strftime("%Y-%m-%dT%H")
+    # Dedup по 20-хвилинному слоту: HH:00, HH:20, HH:40
+    slot = (now_local.minute // 20) * 20
+    hour_key = now_local.strftime(f"%Y-%m-%dT%H:{slot:02d}")
 
     # Захист від дублів — перевіряємо ДО відправки
     gh_sent, gh_sha = _gh_get_sent()
     if gh_sent is not None:
         if gh_sent.get("last_hour") == hour_key:
-            print(f"=== Already sent this hour ({hour_key}) [GitHub], skipping ===")
+            print(f"=== Already sent this slot ({hour_key}) [GitHub], skipping ===")
             return
     else:
         _sent = load_json_file(MAIN_SENT_FILE, default={})
         if _sent.get("last_hour") == hour_key:
-            print(f"=== Already sent this hour ({hour_key}) [local], skipping ===")
+            print(f"=== Already sent this slot ({hour_key}) [local], skipping ===")
             return
 
     local_time = now_local.strftime("%H:%M")
