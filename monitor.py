@@ -950,64 +950,88 @@ def get_emails():
 
 ALERT_EMAIL_FILE = os.path.join(_DATA_DIR, "monitor_alert_emails.json")
 
+_SKIP_EMAILS = {
+    "noreply@youtube.com", "no-reply@youtube.com",
+    "no-reply@accounts.google.com", "noreply-maps-timeline@google.com",
+    "hello@duolingo.com", "no-reply@duolingo.com", "no-reply@medium.com"
+}
+
+def _email_sent_ids():
+    """Повертає set вже надісланих IMAP UID (з GitHub — persistent)."""
+    try:
+        import storage as _st
+        data = _st.load("monitor_alert_emails.json", default={})
+        return set(str(x) for x in data.get("sent_ids", []))
+    except Exception:
+        return set()
+
+def _email_save_ids(sent_ids: set):
+    """Зберігає sent UID в GitHub. Тримає останні 1000."""
+    try:
+        import storage as _st
+        lst = sorted(int(x) for x in sent_ids if str(x).isdigit())[-1000:]
+        _st.save("monitor_alert_emails.json", {"sent_ids": [str(x) for x in lst]})
+    except Exception as e:
+        print(f"_email_save_ids error: {e}")
+
 def check_new_emails():
-    """Перевіряє листи що прийшли за останні 12 хвилин — шле сповіщення."""
+    """Перевіряє непрочитані Primary листи — шле сповіщення ОДИН РАЗ на кожен лист (dedup по UID)."""
     try:
         mail = _imap_connect()
         mail.select("INBOX")
 
-        # Шукаємо ТІЛЬКИ Primary листи за останні 12 хвилин
-        since_dt = datetime.now(timezone.utc) - timedelta(minutes=12)
-        since_str = since_dt.strftime("%d-%b-%Y")
-        # Gmail X-GM-RAW: category:primary + unread + since
-        _, data = mail.search(None, f'X-GM-RAW "category:primary is:unread after:{since_dt.strftime("%Y/%m/%d")}"')
-        unseen_ids = data[0].split()
+        _, data = mail.search(None, 'X-GM-RAW "category:primary is:unread"')
+        all_unread = data[0].split()
 
-        if not unseen_ids:
+        if not all_unread:
             mail.logout()
             return
 
-        new_alerts = []
+        # Завантажуємо вже надіслані з GitHub
+        sent_ids = _email_sent_ids()
 
-        for uid in unseen_ids[-10:]:
+        # Фільтруємо тільки нові (не бачені) — беремо останні 20
+        new_uids = [u for u in all_unread[-20:] if u.decode() not in sent_ids]
+
+        if not new_uids:
+            mail.logout()
+            return
+
+        to_alert = []
+        newly_seen = set()
+
+        for uid in new_uids:
+            uid_str = uid.decode()
             _, msg_data = mail.fetch(uid, "(RFC822.HEADER)")
-            raw = msg_data[0][1]
-            msg = email.message_from_bytes(raw)
-
-            # Перевіряємо точний час отримання
-            date_str = msg.get("Date", "")
-            try:
-                import email.utils as _eu
-                msg_dt = datetime.fromtimestamp(_eu.parsedate_to_datetime(date_str).timestamp(), tz=timezone.utc)
-                if msg_dt < since_dt:
-                    continue
-            except Exception:
-                pass
+            if not msg_data or not msg_data[0]:
+                continue
+            msg = email.message_from_bytes(msg_data[0][1])
 
             subject = _imap_decode_header(msg.get("Subject", "(без теми)"))
             sender  = _imap_decode_header(msg.get("From", ""))
-            # Пропускаємо тільки явні системні нотифікації
+
             em = re.search(r'[\w.+%-]+@[\w.-]+\.[a-z]{2,}', sender.lower())
             ea = em.group(0) if em else ""
-            _SKIP = {"noreply@youtube.com","no-reply@youtube.com",
-                     "no-reply@accounts.google.com","noreply-maps-timeline@google.com",
-                     "hello@duolingo.com","no-reply@duolingo.com","no-reply@medium.com"}
-            if ea not in _SKIP:
-                new_alerts.append((subject, sender))
+
+            newly_seen.add(uid_str)  # позначаємо як бачений незалежно від _SKIP
+            if ea not in _SKIP_EMAILS:
+                to_alert.append((subject, sender))
 
         mail.logout()
 
-        for subject, sender in new_alerts:
-            caption = (
+        # Надсилаємо і одразу зберігаємо stateв GitHub
+        if newly_seen:
+            sent_ids.update(newly_seen)
+            _email_save_ids(sent_ids)
+
+        for subject, sender in to_alert:
+            _send_telegram_photo(
+                "https://storage.googleapis.com/runable-templates/cli-uploads%2F1zsprqn6ymqOFgAJnNEK2HbTycMPBvLc%2FTPPUfhLfZwJmqMoezuxQM%2Fmail_banner_v2.png",
                 f"📩 <b>━━ НОВИЙ ЛИСТ ━━</b>\n\n"
                 f"📨 <b>{esc(subject[:70])}</b>\n"
                 f"👤 <code>{esc(sender[:55])}</code>"
             )
-            _send_telegram_photo(
-                "https://storage.googleapis.com/runable-templates/cli-uploads%2F1zsprqn6ymqOFgAJnNEK2HbTycMPBvLc%2FTPPUfhLfZwJmqMoezuxQM%2Fmail_banner_v2.png",
-                caption
-            )
-            print(f"Alert sent: {subject[:50]}")
+            print(f"Email alert sent: {subject[:50]}")
 
     except Exception as e:
         print(f"check_new_emails error: {e}")
