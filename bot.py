@@ -1204,6 +1204,39 @@ def main():
                                 send(chat_id, f"⚠️ {e}")
                         elif data.startswith("reminder_"):
                             handle_reminder_callback(cb)
+                        elif data.startswith("mood_"):
+                            # Обробка оцінки настрою 1-5
+                            try:
+                                score = int(data.split("_")[1])
+                                api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Записано ✓"})
+                                labels = {1: "😩 Важкий день", 2: "😕 Нижче норми", 3: "😐 Нормально", 4: "😊 Добре", 5: "🤩 Чудово"}
+                                label = labels.get(score, str(score))
+                                # Зберігаємо в monitor_mood.json
+                                try:
+                                    from datetime import date
+                                    today_str = date.today().isoformat()
+                                    import sys; sys.path.insert(0, os.path.dirname(__file__))
+                                    from monitor import load_json_file, save_json_file, MOOD_FILE
+                                    state = load_json_file(MOOD_FILE, default={})
+                                    state[today_str] = score
+                                    save_json_file(MOOD_FILE, state)
+                                except Exception as _e:
+                                    print(f"mood save error: {_e}")
+                                # AI реакція
+                                reactions = {
+                                    1: "Важкий день буває у кожного. Завтра буде краще 💙",
+                                    2: "Нічого — відпочинь, завтра нова сторінка 🌙",
+                                    3: "Стабільно — і це вже добре 👌",
+                                    4: "Гарний день! Так тримати 💪",
+                                    5: "Відмінно! Ось це день 🔥"
+                                }
+                                send(chat_id,
+                                    f"✨ <b>Настрій: {label}</b>\n\n"
+                                    f"{reactions.get(score, '')}\n\n"
+                                    f"<i>Записано для тижневого аналізу</i>"
+                                )
+                            except Exception as _e:
+                                print(f"mood callback error: {_e}")
                         else:
                             handle_habit_callback(cb)
                     continue

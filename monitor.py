@@ -4496,6 +4496,9 @@ def check_step_goal():
                 "Скільки пройшов? Надішли /зд щоб записати!\n\n"
                 "<i>Ціль: 10 000 кроків на день</i>"
             )
+            state[today] = True
+            save_json_file(STEPS_FILE, state)
+            print("Step goal check sent: no data")
         else:
             step_goal = 10000
             remaining = step_goal - steps
@@ -4531,10 +4534,10 @@ def check_step_goal():
                     f"Час невеличкої прогулянки? 🚶‍♂️\n"
                     f"<i>Кожен крок → ближче до 78 кг!</i>"
                 )
-        send_telegram(msg)
-        state[today] = True
-        save_json_file(STEPS_FILE, state)
-        print(f"Step goal check sent: {steps}")
+            send_telegram(msg)
+            state[today] = True
+            save_json_file(STEPS_FILE, state)
+            print(f"Step goal check sent: {steps}")
 
     except Exception as e:
         print(f"check_step_goal error: {e}")
