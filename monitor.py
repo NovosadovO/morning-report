@@ -1731,7 +1731,7 @@ def check_morning_brief():
             # Мини-бар по 24h (від -5% до +5%)
             bar_val = max(-5, min(5, ch24))
             bar_pos = int((bar_val + 5) / 10 * 8)
-            bar = "▓" * bar_pos + "░" * (8 - bar_pos)
+            bar = "🟦" * bar_pos + "⬜" * (8 - bar_pos)
             crypto_lines.append(f"{icon} <b>{sym}</b> ${price:,.0f}  {arrow24}{sign24}{ch24:.1f}%  [{bar}]  7д:{sign7}{ch7:.1f}%")
 
         if crypto_lines:
@@ -1751,7 +1751,7 @@ def check_morning_brief():
             habit_parts = []
             for hid, hico, hname in HABIT_MAP:
                 v = yest_habits.get(hid)
-                mark = "✅" if v is True else ("❌" if v is False else "○")
+                mark = "✅" if v is True else ("❌" if v is False else "⬜")
                 habit_parts.append(f"{hico}{mark}")
             lines_out.append(f"📊 <b>Вчора</b>  {'  '.join(habit_parts)}")
             lines_out.append("")
@@ -1773,7 +1773,7 @@ def check_morning_brief():
                 for v in w_vals:
                     bar_h = int((v - w_min) / w_range * 5)
                     bar_h = max(1, min(5, bar_h))
-                    blocks = ["▁","▂","▃","▄","▅","▆","▇","█"]
+                    blocks = ["⬜","🟦","🟦","🟩","🟩","🟨","🟧","🟥"]
                     bars.append(blocks[bar_h])
                 trend = "↗️" if w_vals[-1] > w_vals[0] else ("↘️" if w_vals[-1] < w_vals[0] else "→")
                 last_w = w_vals[-1]
@@ -2147,7 +2147,7 @@ def check_weekly_habit_stats():
                     row_marks.append("❌")
                     current_streak = 0
                 else:
-                    row_marks.append("○")
+                    row_marks.append("⬜")
                     current_streak = 0
             pct = int(count / 7 * 100)
             total_score += pct
@@ -2175,7 +2175,7 @@ def check_weekly_habit_stats():
 
         # Заповненість смужки
         filled = int(avg_pct / 100 * 10)
-        progress_bar = "█" * filled + "░" * (10 - filled)
+        progress_bar = "🟩" * filled + "⬜" * (10 - filled)
         lines_out.append(f"<code>[{progress_bar}]</code> {avg_pct}%  {week_grade}")
         lines_out.append("")
 
@@ -2565,13 +2565,13 @@ def check_day_summary():
         elif v is False:
             mark = "❌"
         else:
-            mark = "○"
+            mark = "⬜"
         habit_lines.append(f"{hico} {hname}  {mark}")
 
     # Прогрес-бар звичок
     total_h = len(HEALTH_HABITS)
     filled = int(done_count / total_h * 10) if total_h else 0
-    bar = "█" * filled + "░" * (10 - filled)
+    bar = "🟩" * filled + "⬜" * (10 - filled)
     pct = int(done_count / total_h * 100) if total_h else 0
 
     if pct == 100: grade = "🏆 Ідеальний день!"
@@ -2601,7 +2601,7 @@ def check_day_summary():
         elif meds_taken is False:
             lines_out.append("💊 <b>Armolopid Plus</b>  ❌ <b>НЕ ПРИЙНЯТО!</b>")
         else:
-            lines_out.append("💊 <b>Armolopid Plus</b>  ○ Не відмічено — прийняв?")
+            lines_out.append("💊 <b>Armolopid Plus</b>  ⬜ Не відмічено — прийняв?")
         lines_out.append("")
     except Exception:
         pass
@@ -2644,9 +2644,9 @@ def check_day_summary():
                 step_goal = 10000
                 s_pct = int(steps / step_goal * 100)
                 step_bar_f = int(s_pct / 100 * 8)
-                step_bar = "▓" * step_bar_f + "░" * (8 - step_bar_f)
+                step_bar = "🟩" * step_bar_f + "⬜" * (8 - step_bar_f)
                 step_ico = "✅" if steps >= step_goal else ("⚠️" if steps >= 6000 else "❌")
-                h_parts.append(f"👟 {steps:,} кроків {step_ico} [{step_bar}]")
+                h_parts.append(f"👟 {steps:,} кроків {step_ico} {step_bar}")
             if td.get("sleep_hours"):
                 sh = td["sleep_hours"]
                 sh_ico = "✅" if sh >= 7.5 else ("⚠️" if sh >= 6 else "❌")
@@ -2661,7 +2661,7 @@ def check_day_summary():
                 h_parts.append(f"🔥 {cal} ккал {cal_ico}")
             sc = td.get("health_score")
             if sc:
-                sc_bar = "█" * int(sc/100*10) + "░" * (10 - int(sc/100*10))
+                sc_bar = "🟢" * int(sc/100*10) + "⬜" * (10 - int(sc/100*10))
                 sc_ico = "🟢" if sc >= 75 else ("🟡" if sc >= 55 else "🔴")
                 h_parts.append(f"{sc_ico} Score {sc}/100 [{sc_bar}]")
 
@@ -3714,7 +3714,7 @@ def check_smart_notifications():
                             w_vals = [wdata[d] for d in recent_5]
                             w_min = min(w_vals) - 0.3
                             w_max = max(w_vals) + 0.3
-                            blocks = ["▁","▂","▃","▄","▅","▆","▇","█"]
+                            blocks = ["⬜","🟦","🟦","🟩","🟩","🟨","🟧","🟥"]
                             bars = []
                             for v in w_vals:
                                 b = int((v - w_min) / max(w_max - w_min, 0.1) * 7)
@@ -4167,7 +4167,7 @@ def check_crypto_morning():
 
             # Бар від -5% до +5%
             bar_pos = int(max(0, min(10, (ch24 + 5) / 10 * 10)))
-            bar = "░" * bar_pos + "▓" * (10 - bar_pos) if ch24 < 0 else "▓" * bar_pos + "░" * (10 - bar_pos)
+            bar = "🔴" * bar_pos + "⬜" * (10 - bar_pos) if ch24 < 0 else "🟢" * bar_pos + "⬜" * (10 - bar_pos)
             bar = bar[:10]
 
             lines_out.append(f"")
@@ -4500,7 +4500,7 @@ def check_step_goal():
             step_goal = 10000
             remaining = step_goal - steps
             bar_f = min(10, int(steps / step_goal * 10))
-            bar = "▓" * bar_f + "░" * (10 - bar_f)
+            bar = "🟩" * bar_f + "⬜" * (10 - bar_f)
             pct = int(steps / step_goal * 100)
 
             if steps >= 12000:
@@ -4593,7 +4593,7 @@ def check_friday_recap():
         lines_out.append("💪 <b>Звички за тиждень (Пн–Пт)</b>")
         for hid, hico, hname in HABITS:
             count = habit_stats[hid]
-            dots = "●" * count + "○" * (5 - count)
+            dots = "🟩" * count + "⬜" * (5 - count)
             grade = "🏆" if count == 5 else ("⭐️" if count >= 3 else ("👍" if count >= 1 else "💤"))
             lines_out.append(f"   {hico} {hname}: {count}/5  {dots}  {grade}")
         lines_out.append("")
@@ -4692,7 +4692,7 @@ def check_weight_trend_alert():
         # Графік останніх 5 вимірювань
         w_min = min(w_vals) - 0.3
         w_max = max(w_vals) + 0.3
-        blocks = ["▁","▂","▃","▄","▅","▆","▇","█"]
+        blocks = ["⬜","🟦","🟦","🟩","🟩","🟨","🟧","🟥"]
         bars = []
         for v in w_vals:
             b = int((v - w_min) / max(w_max - w_min, 0.1) * 7)
