@@ -1397,40 +1397,63 @@ def main():
     now_local = now + timedelta(hours=2)
     hour_key = now_local.strftime("%Y-%m-%dT%H")
 
-    # Захист від дублів — GitHub як shared state (працює при кількох інстансах)
+    # Захист від дублів — перевіряємо ДО відправки
     gh_sent, gh_sha = _gh_get_sent()
     if gh_sent is not None:
         if gh_sent.get("last_hour") == hour_key:
             print(f"=== Already sent this hour ({hour_key}) [GitHub], skipping ===")
             return
-        gh_sent["last_hour"] = hour_key
-        _gh_save_sent(gh_sent, gh_sha)
     else:
-        # Fallback — local file
         _sent = load_json_file(MAIN_SENT_FILE, default={})
         if _sent.get("last_hour") == hour_key:
             print(f"=== Already sent this hour ({hour_key}) [local], skipping ===")
             return
-        _sent["last_hour"] = hour_key
-        save_json_file(MAIN_SENT_FILE, _sent)
 
     local_time = now_local.strftime("%H:%M")
     local_date = now_local.strftime("%d.%m.%Y")
-    weekday = now_local.weekday()  # 0=Пн, 5=Сб, 6=Нд
+    weekday = now_local.weekday()
     local_hour = now_local.hour
 
-    # У вихідні (Сб/Нд) — навчання/крипто/пошта тільки з 11:00
     is_weekend = weekday >= 5
     include_learning_blocks = (not is_weekend) or (local_hour >= 11)
 
     print(f"=== Monitor run at {now.isoformat()} (weekend={is_weekend}, include_learning={include_learning_blocks}) ===")
 
-    prices_text  = get_prices() if include_learning_blocks else None
-    weather_text = get_weather()
-    cal_text     = get_calendar()
-    email_text   = get_emails() if include_learning_blocks else None
-    traffic_text = get_city_traffic()
-    summary_text = get_summary(prices_text or "", weather_text, cal_text)
+    try:
+        prices_text  = get_prices() if include_learning_blocks else None
+    except Exception as e:
+        print(f"get_prices error: {e}")
+        prices_text = "💰 <b>Ціни</b>\n⚠️ Помилка завантаження"
+
+    try:
+        weather_text = get_weather()
+    except Exception as e:
+        print(f"get_weather error: {e}")
+        weather_text = "🌤 <b>Погода</b>\n⚠️ Помилка завантаження"
+
+    try:
+        cal_text = get_calendar()
+    except Exception as e:
+        print(f"get_calendar error: {e}")
+        cal_text = "📅 <b>Календар</b>\n⚠️ Помилка завантаження"
+
+    try:
+        email_text = get_emails() if include_learning_blocks else None
+    except Exception as e:
+        print(f"get_emails error: {e}")
+        email_text = None
+
+    try:
+        traffic_text = get_city_traffic()
+    except Exception as e:
+        print(f"get_traffic error: {e}")
+        traffic_text = None
+
+    try:
+        summary_text = get_summary(prices_text or "", weather_text, cal_text)
+    except Exception as e:
+        print(f"get_summary error: {e}")
+        summary_text = ""
 
     SEP = "\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n"
 
@@ -1452,12 +1475,22 @@ def main():
     if is_weekend and not include_learning_blocks:
         parts.append("💤 <i>Вихідний — крипто/пошта/навчання з 11:00</i>")
 
-    parts.append(summary_text)
+    if summary_text:
+        parts.append(summary_text)
 
     report = SEP.join(parts)
 
-    send_telegram(report)
-    print("=== Report sent ===")
+    sent = send_telegram(report)
+    print(f"=== Report {'sent' if sent else 'FAILED'} ===")
+
+    # Зберігаємо ПІСЛЯ успішного відправлення
+    if gh_sent is not None:
+        gh_sent["last_hour"] = hour_key
+        _gh_save_sent(gh_sent, gh_sha)
+    else:
+        _sent = load_json_file(MAIN_SENT_FILE, default={})
+        _sent["last_hour"] = hour_key
+        save_json_file(MAIN_SENT_FILE, _sent)
 
 
 # ─── 4c. НАГАДУВАННЯ ПРО ПОДІЇ КАЛЕНДАРЯ (за 30 хв) ──────────────────────────
@@ -3742,6 +3775,8 @@ def check_smart_notifications():
     except Exception as e:
         print(f"check_smart_notifications error: {e}")
 
+
+MORNING_CTX_FILE = os.path.join(_DATA_DIR, "monitor_morning_ctx.json")
 
 def check_morning_context():
     """
