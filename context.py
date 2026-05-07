@@ -70,14 +70,16 @@ def get_shift_from_calendar():
         now_utc = datetime.now(timezone.utc)
 
         for offset, key in [(0, "today"), (1, "tomorrow")]:
-            day_local = _now_local() + timedelta(days=offset)
-            day_start_utc = now_utc.replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(days=offset) - timedelta(hours=2)
-            day_end_utc   = day_start_utc + timedelta(hours=28)
+            # Шукаємо події що ПОЧИНАЮТЬСЯ в цей день (00:00–23:59 за UTC+2)
+            # Для нічної зміни: старт 18:00 цього дня — це правильно
+            # Не захоплюємо наступний день щоб нічна зміна не дублювалась
+            day_local_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(days=offset) - timedelta(hours=2)
+            day_local_end   = day_local_start + timedelta(hours=24)  # рівно 24г, не 28
 
             url = (
                 f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
-                f"?timeMin={urllib.parse.quote(day_start_utc.isoformat())}"
-                f"&timeMax={urllib.parse.quote(day_end_utc.isoformat())}"
+                f"?timeMin={urllib.parse.quote(day_local_start.isoformat())}"
+                f"&timeMax={urllib.parse.quote(day_local_end.isoformat())}"
                 f"&singleEvents=true&orderBy=startTime&maxResults=20"
             )
             req = urllib.request.Request(url, headers=headers)
@@ -93,6 +95,12 @@ def get_shift_from_calendar():
                 except Exception:
                     dt_local = None
 
+                # Перевіряємо що подія ПОЧИНАЄТЬСЯ саме в цей день (за локальним часом)
+                if dt_local:
+                    day_local_date = (_now_local() + timedelta(days=offset)).date()
+                    if dt_local.date() != day_local_date:
+                        continue  # подія починається в інший день — пропускаємо
+
                 if any(x in s for x in ["рання", "early"]):
                     result[key] = "early"
                     if key == "today":
@@ -105,6 +113,8 @@ def get_shift_from_calendar():
                     result[key] = "night"
                     if key == "today":
                         result["today_start"] = dt_local
+                        # Нічна закінчується наступного дня о 06:00 — але для
+                        # відображення показуємо кінець як 06:00 наступного дня
                         result["today_end"] = dt_local + timedelta(hours=12) if dt_local else None
                     else:
                         result["tomorrow_start"] = dt_local
