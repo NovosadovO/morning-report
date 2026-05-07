@@ -643,5 +643,59 @@ threading.Thread(target=run_crypto_morning_watcher,    daemon=True).start()
 threading.Thread(target=run_week_goals_watcher,        daemon=True).start()
 threading.Thread(target=run_calendar_live_watcher,     daemon=True).start()
 
+
+def run_mood_watcher():
+    """Вечірнє питання про настрій — о 21:30."""
+    print("=== Starting mood evening watcher ===", flush=True)
+    time.sleep(165)
+    while True:
+        try:
+            _load_monitor().check_mood_evening()
+        except Exception as e:
+            print(f"Mood watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+def run_step_goal_watcher():
+    """Прогрес кроків — о 18:00 у вільний день."""
+    print("=== Starting step goal watcher ===", flush=True)
+    time.sleep(170)
+    while True:
+        try:
+            _load_monitor().check_step_goal()
+        except Exception as e:
+            print(f"Step goal watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+def run_friday_recap_watcher():
+    """П'ятничний підсумок тижня — о 20:00."""
+    print("=== Starting friday recap watcher ===", flush=True)
+    time.sleep(175)
+    while True:
+        try:
+            _load_monitor().check_friday_recap()
+        except Exception as e:
+            print(f"Friday recap watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+def run_weight_trend_watcher():
+    """Алерт якщо вага росте 3+ дні — о 10:00."""
+    print("=== Starting weight trend watcher ===", flush=True)
+    time.sleep(180)
+    while True:
+        try:
+            _load_monitor().check_weight_trend_alert()
+        except Exception as e:
+            print(f"Weight trend watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+threading.Thread(target=run_mood_watcher,         daemon=True).start()
+threading.Thread(target=run_step_goal_watcher,    daemon=True).start()
+threading.Thread(target=run_friday_recap_watcher, daemon=True).start()
+threading.Thread(target=run_weight_trend_watcher, daemon=True).start()
+
 # Основний монітор в головному потоці
 run_monitor_loop()
