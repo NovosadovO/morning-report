@@ -4381,3 +4381,655 @@ def check_smart_notifications():
 
     except Exception as e:
         print(f"check_smart_notifications error: {e}")
+
+# ─── РОЗШИРЕНИЙ РАНКОВИЙ БРИФІНГ (адаптивний) ────────────────────────────────
+
+MORNING_CTX_FILE = os.path.join(_DATA_DIR, "monitor_morning_ctx.json")
+
+def check_morning_context():
+    """
+    Розумний ранковий брифінг — знає тип дня і адаптує зміст + час:
+      рання зміна  → о 05:00 (перед виходом)
+      нічна зміна  → о 10:00 (після сну)
+      вихідний     → о 08:30
+    Містить: привітання, що сьогодні заплановано, погода, крипто, мотивація.
+    """
+    import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+    today = now_local.strftime("%Y-%m-%d")
+
+    state = load_json_file(MORNING_CTX_FILE, default={})
+    if state.get("last") == today:
+        return
+
+    try:
+        from context import get_shift_from_calendar
+        shift_info = get_shift_from_calendar()
+        shift = shift_info.get("today", "free")
+    except Exception:
+        shift = "free"
+
+    # Час відправки залежно від типу дня
+    trigger = {"early": 5, "night": 10, "free": 8}.get(shift, 8)
+    if not (h == trigger and 0 <= m < 10):
+        return
+
+    try:
+        # Календар на сьогодні
+        cal = get_calendar()
+
+        # Погода коротко
+        try:
+            weather = get_weather()
+            # Беремо тільки першу строчку
+            weather_short = weather.split("\n")[0] if weather else ""
+        except Exception:
+            weather_short = ""
+
+        # Крипто топ
+        try:
+            ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
+            url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h"
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=8) as r:
+                raw = json.loads(r.read())
+            crypto_lines = []
+            for c in raw:
+                sym = c["symbol"].upper()
+                price = c["current_price"]
+                ch = c.get("price_change_percentage_24h") or 0
+                icon = "🟢" if ch > 0 else "🔴"
+                sign = "+" if ch > 0 else ""
+                crypto_lines.append(f"{icon} {sym} ${price:,.0f} ({sign}{ch:.1f}%)")
+            crypto_text = "  ".join(crypto_lines)
+        except Exception:
+            crypto_text = ""
+
+        # AI мотивація на день
+        gemini_key = os.environ.get("GEMINI_API_KEY", "")
+        ai_tip = ""
+        if gemini_key:
+            try:
+                shift_labels = {"early": "рання зміна (06:00–18:00)", "night": "нічна зміна (18:00–06:00)", "free": "вихідний день"}
+                prompt = (
+                    f"Сьогодні {['Пн','Вт','Ср','Чт','Пт','Сб','Нд'][now_local.weekday()]}, "
+                    f"{shift_labels.get(shift,'вихідний')}. "
+                    f"Дай Олегу одну конкретну мотиваційну пораду на сьогодні (1-2 речення) українською. "
+                    f"Враховуй: ціль схуднення 78 кг, інвестиції/крипто, біг. "
+                    f"Коротко, бадьоро, по суті."
+                )
+                payload = json.dumps({
+                    "contents": [{"parts": [{"text": prompt}]}],
+                    "generationConfig": {"maxOutputTokens": 120, "temperature": 0.9}
+                }).encode()
+                req2 = urllib.request.Request(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                    data=payload, headers={"Content-Type": "application/json"}, method="POST"
+                )
+                with urllib.request.urlopen(req2, timeout=15) as r:
+                    resp = json.loads(r.read())
+                ai_tip = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+            except Exception as e:
+                print(f"morning context AI error: {e}")
+
+        greetings = {"early": "☀️ Доброго ранку!", "night": "🌞 З добрим ранком!", "free": "🌅 Доброго ранку!"}
+        greeting = greetings.get(shift, "🌅 Доброго ранку!")
+
+        shift_info_text = {
+            "early": "💼 Сьогодні рання зміна — виходити о 05:30",
+            "night": "🌙 Сьогодні нічна зміна — виходити о 17:30",
+            "free":  "🏖 Сьогодні вихідний — твій день!"
+        }.get(shift, "")
+
+        msg = f"{greeting} Олеже!\n\n{shift_info_text}\n\n"
+        if weather_short:
+            msg += f"🌤 {weather_short}\n\n"
+        msg += f"📅 <b>План дня:</b>\n{cal}\n\n"
+        if crypto_text:
+            msg += f"💹 {crypto_text}\n\n"
+        if ai_tip:
+            msg += f"💡 <i>{ai_tip}</i>"
+
+        send_telegram(msg)
+        print(f"Morning context sent: shift={shift}, hour={h}")
+        state["last"] = today
+        save_json_file(MORNING_CTX_FILE, state)
+
+    except Exception as e:
+        print(f"check_morning_context error: {e}")
+
+
+# ─── ТРЕКЕР БІГ / RUN COACH ──────────────────────────────────────────────────
+
+RUN_COACH_FILE = os.path.join(_DATA_DIR, "monitor_run_coach.json")
+
+def check_run_coach():
+    """
+    Тренер бігу — нагадує бігати 3 рази на тиждень.
+    - Пн/Ср/Пт вихідного дня о 09:30: нагадування + план тренування
+    - Якщо не бігав 3+ дні — нагадування будь-якого дня о 17:00
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+    today = now_local.strftime("%Y-%m-%d")
+    dow = now_local.weekday()  # 0=Пн
+
+    state = load_json_file(RUN_COACH_FILE, default={})
+
+    # Перевіримо скільки днів без бігу
+    days_without = 0
+    try:
+        import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from habits import load_data as _load_habits
+        db = _load_habits()
+        for i in range(1, 8):
+            d = (now_local - timedelta(days=i)).strftime("%Y-%m-%d")
+            if db.get(d, {}).get("run") is True:
+                break
+            days_without += 1
+    except Exception:
+        days_without = 0
+
+    try:
+        from context import get_shift_from_calendar
+        shift_info = get_shift_from_calendar()
+        today_shift = shift_info.get("today", "free")
+    except Exception:
+        today_shift = "free"
+
+    is_free_day = today_shift == "free"
+
+    # Нагадування Пн/Ср/Пт о 09:30 якщо вихідний
+    run_key_day = f"run_coach_{today}"
+    if is_free_day and dow in (0, 2, 4) and h == 9 and 30 <= m < 35 and not state.get(run_key_day):
+        plans = [
+            "🏃 <b>День бігу!</b>\n\nПлан: 20-30 хв легкий біг.\n• Розминка 5 хв ходьба\n• Темп розмовний (можеш говорити)\n• Заминка 5 хв ходьба\n\n💪 Навіть 2 км — це прогрес!",
+            "🏃 <b>Час бігти!</b>\n\nСьогодні: 25-35 хв.\n• Перші 10 хв повільно\n• Середина — комфортний темп\n• Останні 5 хв — трохи швидше\n\n🔥 Кожне тренування = -калорії = ближче до 78 кг!",
+            "🏃 <b>Пробіжка!</b>\n\nЦього тижня скільки разів бігав? Якщо 0-1 — сьогодні обов'язково!\n• 20 хв — мінімум\n• Повітря + рух = настрій на весь день\n\n🎯 Ціль: 3 тренування/тиждень",
+        ]
+        import random
+        send_telegram(plans[dow % 3])
+        state[run_key_day] = True
+        save_json_file(RUN_COACH_FILE, state)
+        return
+
+    # Якщо 3+ дні без бігу — нагадування о 17:00 будь-якого вільного дня
+    run_alert_key = f"run_alert_{today}"
+    if days_without >= 3 and is_free_day and h == 17 and 0 <= m < 5 and not state.get(run_alert_key):
+        send_telegram(
+            f"🏃 <b>{days_without} днів без пробіжки!</b>\n\n"
+            f"Ще не пізно — 20 хв бігу сьогодні ввечері?\n"
+            f"Настрій гарантований 💪\n\n"
+            f"<i>Ціль 78 кг — кожне тренування рахується!</i>"
+        )
+        state[run_alert_key] = True
+        save_json_file(RUN_COACH_FILE, state)
+
+
+# ─── НАГАДУВАННЯ ПРО ЇЖУ (дієтолог) ─────────────────────────────────────────
+
+NUTRITION_FILE = os.path.join(_DATA_DIR, "monitor_nutrition.json")
+
+def check_nutrition_reminder():
+    """
+    Дієтолог — нагадування про їжу з прив'язкою до графіку:
+      Рання зміна:
+        05:00 — сніданок перед виходом
+        12:00 — обід на зміні
+        19:00 — вечеря після зміни
+      Нічна зміна:
+        09:30 — сніданок після сну
+        15:30 — обід/перекус перед зміною (ВАЖЛИВО — більше не поїсти)
+        21:00 — легкий перекус на зміні якщо потрібно
+      Вихідний:
+        09:00 — сніданок
+        13:00 — обід
+        19:00 — вечеря (і нагадування про 16:8)
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+    today = now_local.strftime("%Y-%m-%d")
+
+    state = load_json_file(NUTRITION_FILE, default={})
+
+    def already(key):
+        return state.get(f"{today}_{key}")
+
+    def mark(key):
+        state[f"{today}_{key}"] = True
+        save_json_file(NUTRITION_FILE, state)
+
+    try:
+        from context import get_shift_from_calendar
+        shift_info = get_shift_from_calendar()
+        shift = shift_info.get("today", "free")
+    except Exception:
+        shift = "free"
+
+    # Рання зміна
+    if shift == "early":
+        if h == 5 and 0 <= m < 10 and not already("breakfast"):
+            send_telegram(
+                "🍳 <b>Сніданок!</b>\n\n"
+                "Перед ранньою зміною важливо поїсти — дасть енергію на всі 12г.\n"
+                "• Вівсянка / яйця / бутерброд\n"
+                "• Вода або кава\n\n"
+                "<i>Не виходь голодним!</i>"
+            )
+            mark("breakfast")
+        elif h == 12 and 0 <= m < 10 and not already("lunch"):
+            send_telegram(
+                "🥗 <b>Обід на зміні!</b>\n\n"
+                "Час поїсти — середина зміни.\n"
+                "Намагайся уникати фастфуду:\n"
+                "• Щось з собою > з кафетерію\n"
+                "• Не забувай про воду 💧"
+            )
+            mark("lunch")
+        elif h == 19 and 0 <= m < 10 and not already("dinner"):
+            send_telegram(
+                "🍽 <b>Вечеря!</b>\n\n"
+                "Зміна позаду — час поїсти.\n"
+                "💡 Порада: якщо практикуєш 16:8 —\n"
+                "останній прийом їжі до 20:00\n\n"
+                "<i>Легке і поживне 🥦</i>"
+            )
+            mark("dinner")
+
+    # Нічна зміна
+    elif shift == "night":
+        if h == 9 and 30 <= m < 40 and not already("breakfast"):
+            send_telegram(
+                "🍳 <b>Сніданок!</b>\n\n"
+                "Добрий ранок після нічної!\n"
+                "Поїж щось легке перед сном:\n"
+                "• Йогурт, фрукти, каша\n"
+                "• Не їж важке — важче засинати"
+            )
+            mark("breakfast")
+        elif h == 15 and 30 <= m < 40 and not already("lunch"):
+            send_telegram(
+                "🍽 <b>Важливо: обід перед нічною!</b>\n\n"
+                "Це твій основний прийом їжі сьогодні.\n"
+                "Через 2.5г виходиш на зміну — поїж добре:\n"
+                "• Білок + вуглеводи + овочі\n"
+                "• Уникай важкого — будеш на зміні\n\n"
+                "<i>Це остання нормальна їжа до 06:00!</i>"
+            )
+            mark("lunch")
+
+    # Вихідний
+    else:
+        if h == 9 and 0 <= m < 10 and not already("breakfast"):
+            send_telegram(
+                "🌅 <b>Сніданок!</b>\n\n"
+                "Починаємо день правильно 💪\n"
+                "• Повноцінний сніданок = енергія на весь ранок\n"
+                "• Не пропускай — особливо якщо плануєш біг!\n\n"
+                "<i>Ціль 78 кг: важливо що і коли їсти</i>"
+            )
+            mark("breakfast")
+        elif h == 13 and 0 <= m < 10 and not already("lunch"):
+            send_telegram(
+                "🥗 <b>Обід!</b>\n\n"
+                "Час заправитись 🍽\n"
+                "• Тарілка: ½ овочі, ¼ білок, ¼ крупи\n"
+                "• Не переїдай — вечеря ще буде\n\n"
+                "<i>Слідкуй за порціями → 78 кг реальні!</i>"
+            )
+            mark("lunch")
+        elif h == 19 and 0 <= m < 10 and not already("dinner"):
+            send_telegram(
+                "🌙 <b>Вечеря!</b>\n\n"
+                "Якщо практикуєш 16:8 — це останній прийом їжі.\n"
+                "• Їж до 20:00\n"
+                "• Легке: риба, овочі, яйця\n"
+                "• Уникай солодкого та важкого\n\n"
+                "💪 <i>Ціль 78 кг: дисципліна ввечері — результат вранці!</i>"
+            )
+            mark("dinner")
+
+
+# ─── ЯКІСТЬ СНУ — РАНКОВЕ ПИТАННЯ ────────────────────────────────────────────
+
+SLEEP_Q_FILE = os.path.join(_DATA_DIR, "monitor_sleep_q.json")
+
+def check_sleep_quality():
+    """
+    Вранці питає про якість сну — адаптивний час:
+      Після ранньої (о 18:30): як спалось перед зміною?
+      Після нічної (о 07:00): як перенесли нічну?
+      Вихідний (о 08:00): як спалось?
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+    today = now_local.strftime("%Y-%m-%d")
+
+    state = load_json_file(SLEEP_Q_FILE, default={})
+    if state.get(f"asked_{today}"):
+        return
+
+    try:
+        from context import get_shift_from_calendar
+        shift_info = get_shift_from_calendar()
+        shift = shift_info.get("today", "free")
+        yesterday_shift = shift_info.get("tomorrow", "free")  # використаємо як proxy
+    except Exception:
+        shift = "free"
+
+    trigger = None
+    if shift == "free" and h == 8 and 0 <= m < 10:
+        trigger = "free"
+    elif shift == "night" and h == 7 and 0 <= m < 10:
+        trigger = "night"
+
+    if not trigger:
+        return
+
+    questions = {
+        "free":  "😴 <b>Як спалось?</b>\n\nОціни якість сну минулої ночі:",
+        "night": "😴 <b>Як перенесли нічну?</b>\n\nЯкість сну після зміни:"
+    }
+
+    try:
+        import urllib.request as _ur
+        tg_token = os.environ.get("TELEGRAM_TOKEN", "")
+        tg_chat  = os.environ.get("TELEGRAM_CHAT_ID", "")
+        payload  = json.dumps({
+            "chat_id": tg_chat,
+            "text": questions[trigger],
+            "parse_mode": "HTML",
+            "reply_markup": {"inline_keyboard": [[
+                {"text": "😩 Погано",    "callback_data": "sleep_q_1"},
+                {"text": "😐 Нормально","callback_data": "sleep_q_2"},
+                {"text": "😊 Добре",    "callback_data": "sleep_q_3"},
+                {"text": "🌟 Відмінно", "callback_data": "sleep_q_4"},
+            ]]}
+        }).encode()
+        req = _ur.Request(
+            f"https://api.telegram.org/bot{tg_token}/sendMessage",
+            data=payload, headers={"Content-Type": "application/json"}
+        )
+        with _ur.urlopen(req, timeout=10) as r:
+            pass
+        state[f"asked_{today}"] = True
+        save_json_file(SLEEP_Q_FILE, state)
+        print("Sleep quality question sent")
+    except Exception as e:
+        print(f"sleep quality error: {e}")
+
+
+# ─── КРИПТО РАНОК (щоденно при пробудженні) ──────────────────────────────────
+
+CRYPTO_MORNING_FILE = os.path.join(_DATA_DIR, "monitor_crypto_morning.json")
+
+def check_crypto_morning():
+    """
+    Щоранку короткий крипто дайджест з AI коментарем:
+      Рання: о 05:10
+      Нічна/вихідний: о 09:10
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+    today = now_local.strftime("%Y-%m-%d")
+
+    state = load_json_file(CRYPTO_MORNING_FILE, default={})
+    if state.get("last") == today:
+        return
+
+    try:
+        from context import get_shift_from_calendar
+        shift_info = get_shift_from_calendar()
+        shift = shift_info.get("today", "free")
+    except Exception:
+        shift = "free"
+
+    trigger = 5 if shift == "early" else 9
+    if not (h == trigger and 10 <= m < 20):
+        return
+
+    try:
+        ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
+        url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h,7d"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=10) as r:
+            raw = json.loads(r.read())
+        data = {c["id"]: c for c in raw}
+
+        coins_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2", "ONDO": "ondo-finance"}
+        lines = []
+        summary = []
+        for sym, cg_id in coins_map.items():
+            c = data.get(cg_id, {})
+            price = c.get("current_price")
+            ch24  = c.get("price_change_percentage_24h") or 0
+            if price is None:
+                continue
+            icon = "🟢" if ch24 > 0 else "🔴"
+            sign = "+" if ch24 > 0 else ""
+            lines.append(f"{icon} <b>{sym}</b>: ${price:,.2f} ({sign}{ch24:.1f}%)")
+            summary.append(f"{sym} {sign}{ch24:.1f}%")
+
+        if not lines:
+            return
+
+        # AI коментар
+        ai_comment = ""
+        gemini_key = os.environ.get("GEMINI_API_KEY", "")
+        if gemini_key and summary:
+            try:
+                prompt = (
+                    f"Крипто ринок сьогодні зранку: {', '.join(summary)}.\n"
+                    f"Дай 1-2 речення коментар українською — що це означає для інвестора? "
+                    f"Коротко, без зайвого."
+                )
+                payload = json.dumps({
+                    "contents": [{"parts": [{"text": prompt}]}],
+                    "generationConfig": {"maxOutputTokens": 150, "temperature": 0.7}
+                }).encode()
+                req2 = urllib.request.Request(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                    data=payload, headers={"Content-Type": "application/json"}, method="POST"
+                )
+                with urllib.request.urlopen(req2, timeout=15) as r:
+                    resp = json.loads(r.read())
+                ai_comment = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+            except Exception as e:
+                print(f"crypto morning AI error: {e}")
+
+        msg = f"💹 <b>Крипто зранку</b> ({today[5:]})\n\n"
+        msg += "\n".join(lines)
+        if ai_comment:
+            msg += f"\n\n🤖 <i>{ai_comment}</i>"
+
+        send_telegram(msg)
+        print("Crypto morning sent")
+        state["last"] = today
+        save_json_file(CRYPTO_MORNING_FILE, state)
+
+    except Exception as e:
+        print(f"check_crypto_morning error: {e}")
+
+
+# ─── ЦІЛІ НА ТИЖДЕНЬ (неділя ввечері) ────────────────────────────────────────
+
+WEEK_GOALS_FILE = os.path.join(_DATA_DIR, "monitor_week_goals.json")
+
+def check_week_goals():
+    """
+    Неділя о 20:30 — підсумок + цілі на наступний тиждень.
+    AI аналізує тиждень і пропонує 3 конкретні цілі.
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+    dow = now_local.weekday()
+    today = now_local.strftime("%Y-%m-%d")
+
+    if not (dow == 6 and h == 20 and 30 <= m < 40):
+        return
+
+    state = load_json_file(WEEK_GOALS_FILE, default={})
+    if state.get("last") == today:
+        return
+
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    if not gemini_key:
+        return
+
+    try:
+        # Збираємо дані за тиждень
+        from habits import load_data as _load_habits
+        db = _load_habits()
+        week_days = [(now_local - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(6, -1, -1)]
+        habit_ids = ["run", "water", "tea", "shower"]
+        habit_stats = {}
+        for hid in habit_ids:
+            done = sum(1 for d in week_days if db.get(d, {}).get(hid) is True)
+            habit_stats[hid] = done
+
+        # Вага
+        try:
+            from weight import load_weight_data
+            wdata = load_weight_data()
+            last_weight = None
+            if wdata:
+                last_key = sorted(wdata.keys())[-1]
+                last_weight = wdata[last_key]["weight"]
+        except Exception:
+            last_weight = None
+
+        prompt = (
+            f"Тиждень Олега (Кошіце, Словаччина):\n"
+            f"• Біг: {habit_stats.get('run',0)}/7 днів\n"
+            f"• Вода: {habit_stats.get('water',0)}/7 днів\n"
+            f"• Холодний душ: {habit_stats.get('shower',0)}/7 днів\n"
+        )
+        if last_weight:
+            prompt += f"• Вага: {last_weight} кг (ціль 78 кг)\n"
+        prompt += (
+            f"\nСформулюй 3 конкретні цілі на наступний тиждень українською. "
+            f"Враховуй слабкі місця цього тижня. Кожна ціль — одне речення, конкретна і досяжна. "
+            f"Формат: '1. ... 2. ... 3. ...'"
+        )
+
+        payload = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"maxOutputTokens": 250, "temperature": 0.8}
+        }).encode()
+        req = urllib.request.Request(
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            data=payload, headers={"Content-Type": "application/json"}, method="POST"
+        )
+        with urllib.request.urlopen(req, timeout=20) as r:
+            resp = json.loads(r.read())
+        goals_text = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+
+        # Підсумок тижня
+        run_count = habit_stats.get("run", 0)
+        run_emoji = "🏆" if run_count >= 3 else ("👍" if run_count >= 1 else "😔")
+
+        msg = (
+            f"📅 <b>Підсумок тижня</b>\n\n"
+            f"{run_emoji} Біг: {run_count}/7 днів\n"
+            f"💧 Вода: {habit_stats.get('water',0)}/7 днів\n"
+            f"🚿 Душ: {habit_stats.get('shower',0)}/7 днів\n"
+        )
+        if last_weight:
+            diff = round(last_weight - 78.0, 1)
+            msg += f"⚖️ Вага: {last_weight} кг (до цілі: -{diff} кг)\n"
+
+        msg += f"\n🎯 <b>Цілі на наступний тиждень:</b>\n{goals_text}"
+
+        send_telegram(msg)
+        print("Week goals sent")
+        state["last"] = today
+        save_json_file(WEEK_GOALS_FILE, state)
+
+    except Exception as e:
+        print(f"check_week_goals error: {e}")
+
+
+# ─── СЛІДКУВАННЯ ЗА КАЛЕНДАРЕМ — ЩО ЗАРАЗ ВІДБУВАЄТЬСЯ ──────────────────────
+
+CALENDAR_CONTEXT_FILE = os.path.join(_DATA_DIR, "monitor_calendar_context.json")
+
+def check_calendar_live():
+    """
+    Відстежує поточні події в календарі — що відбувається прямо зараз.
+    Кожні 5 хвилин перевіряє:
+    - Якщо подія почалась — "🔔 Почалась: [назва]"
+    - За 15 хв до події — "⏰ Через 15 хв: [назва]"
+    - Нагадування про незаплановані вихідні (нічого в календарі — пропонує щось корисне)
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+
+    # Тільки в активний час (07:00–23:00)
+    if not (7 <= h <= 23):
+        return
+
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    if not creds_json:
+        return
+
+    state = load_json_file(CALENDAR_CONTEXT_FILE, default={})
+
+    try:
+        creds_data = json.loads(creds_json)
+        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        headers = {"Authorization": f"Bearer {token}"}
+        cal_id  = "novosadovoleg%40gmail.com"
+
+        now_utc = datetime.now(timezone.utc)
+        # Вікно: наступні 20 хвилин
+        window_end = now_utc + timedelta(minutes=20)
+
+        url = (
+            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+            f"?timeMin={urllib.parse.quote(now_utc.isoformat())}"
+            f"&timeMax={urllib.parse.quote(window_end.isoformat())}"
+            f"&singleEvents=true&orderBy=startTime&maxResults=5"
+        )
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, timeout=10) as r:
+            events = json.loads(r.read()).get("items", [])
+
+        for ev in events:
+            summary = ev.get("summary", "(без назви)")
+            # Пропускаємо зміни та автоматичні події
+            s_lower = summary.lower()
+            if any(x in s_lower for x in ["зміна", "shift", "нагадування"]):
+                continue
+
+            start_str = ev["start"].get("dateTime") or ev["start"].get("date")
+            try:
+                dt_start = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
+                dt_local = dt_start + timedelta(hours=2)
+                mins_until = int((dt_start - now_utc).total_seconds() / 60)
+            except Exception:
+                continue
+
+            ev_key_15 = f"cal_15min_{ev['id']}_{dt_local.strftime('%Y%m%d%H%M')}"
+            ev_key_now = f"cal_now_{ev['id']}_{dt_local.strftime('%Y%m%d%H%M')}"
+
+            # За 15 хв
+            if 12 <= mins_until <= 17 and not state.get(ev_key_15):
+                send_telegram(
+                    f"⏰ <b>Через 15 хв:</b> {esc(summary)}\n"
+                    f"🕐 Початок о {dt_local.strftime('%H:%M')}"
+                )
+                state[ev_key_15] = True
+                save_json_file(CALENDAR_CONTEXT_FILE, state)
+
+            # Тільки що почалась (0–3 хв)
+            elif 0 <= mins_until <= 3 and not state.get(ev_key_now):
+                send_telegram(
+                    f"🔔 <b>Починається зараз:</b> {esc(summary)}\n"
+                    f"🕐 {dt_local.strftime('%H:%M')}"
+                )
+                state[ev_key_now] = True
+                save_json_file(CALENDAR_CONTEXT_FILE, state)
+
+    except Exception as e:
+        print(f"check_calendar_live error: {e}")
