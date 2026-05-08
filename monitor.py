@@ -1291,45 +1291,169 @@ def _get_run_recommendation(weather_text):
         return f"🏃 <b>{last_run_days} днів без бігу!</b> Сьогодні — обов\'язково! 💨"
 
 
-def get_summary(prices_text, weather_text, calendar_text):
-    tips = []
+def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro_text=None):
+    import re as _re
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h = now_local.hour
+    lines = []
 
-    if "дощ" in weather_text.lower() or "злива" in weather_text.lower():
-        tips.append("☔ Візьми парасольку")
-    if "гроза" in weather_text.lower():
-        tips.append("⛈ Уникай відкритих місць — гроза")
-    if "сніг" in weather_text.lower():
-        tips.append("🧥 Одягнись тепліше — очікується сніг")
-    if "туман" in weather_text.lower():
-        tips.append("🚗 Обережно на дорозі — туман")
+    # ── Привітання по часу ────────────────────────────────────────────────────
+    if 5 <= h < 10:
+        lines.append("🌅 <b>Доброго ранку, Олеже!</b> Починаємо день продуктивно.")
+    elif 10 <= h < 13:
+        lines.append("☀️ <b>Гарного ранку!</b> Ще є час для найважливішого.")
+    elif 13 <= h < 16:
+        lines.append("🍽 <b>Пообідній час.</b> Перезарядись і вперед!")
+    elif 16 <= h < 20:
+        lines.append("🌆 <b>Добрий вечір!</b> Добий фінішний спурт.")
+    elif h >= 20 or h < 5:
+        lines.append("🌙 <b>Пізній вечір.</b> Час відпочити й підготуватись до завтра.")
 
+    # ── Крипто — конкретні ціни ───────────────────────────────────────────────
+    if prices_text:
+        crypto_lines = []
+        for coin_name, coin_emoji in [
+            ("BTC", "₿"), ("ETH", "Ξ"), ("SOL", "◎"), ("BNB", "🔶"),
+        ]:
+            # шукаємо рядок що містить назву монети (може бути emoji перед нею)
+            row_m = _re.search(r"[^\n]*" + coin_name + r"[^\n]*", prices_text)
+            if not row_m:
+                continue
+            row = row_m.group(0)
+            price_m = _re.search(r"\$([\d,]+)", row)
+            if not price_m:
+                continue
+            price = price_m.group(1)
+            pct_m = _re.search(r"([+\-−][\d.]+%)", row)
+            pct = pct_m.group(1) if pct_m else ""
+            trend = "🔺" if "🔺" in row else ("🔻" if "🔻" in row else "➡️")
+            crypto_lines.append(f"  {trend} {coin_emoji} {coin_name}: ${price} {pct}".strip())
+
+        if crypto_lines:
+            # Загальний тренд
+            up = prices_text.count("🔺")
+            down = prices_text.count("🔻")
+            if up > down:
+                market_mood = "📈 Ринок зелений"
+            elif down > up:
+                market_mood = "📉 Ринок у мінусі — стежи за позиціями"
+            else:
+                market_mood = "↔️ Ринок нейтральний"
+            lines.append(f"💰 <b>Крипто:</b> {market_mood}\n" + "\n".join(crypto_lines))
+        elif "🔻" in prices_text:
+            lines.append("📉 <b>Крипто:</b> ринок падає — слідкуй за портфелем")
+        elif "🔺" in prices_text:
+            lines.append("📈 <b>Крипто:</b> ринок росте")
+
+    # ── Погода — конкретна температура + поради ───────────────────────────────
+    if weather_text:
+        temp_m = _re.search(r"([-−]?\d+)[°℃]", weather_text)
+        temp_str = f"{temp_m.group(1)}°" if temp_m else ""
+        # Відчуває як
+        feels_m = _re.search(r"(?:відчувається|feels)[^\d]*([-−]?\d+)", weather_text, _re.IGNORECASE)
+        feels_str = f", відчув. {feels_m.group(1)}°" if feels_m else ""
+        weather_summary = f"🌡 Температура: <b>{temp_str}{feels_str}</b>"
+        weather_advice = []
+        wl = weather_text.lower()
+        if "дощ" in wl or "злива" in wl:
+            weather_advice.append("☂️ Візьми парасольку")
+        if "гроза" in wl:
+            weather_advice.append("⛈ Уникай відкритих місць")
+        if "сніг" in wl:
+            weather_advice.append("🧥 Одягнись тепліше")
+        if "туман" in wl:
+            weather_advice.append("🚗 Обережно на дорозі — туман")
+        if temp_m:
+            t_val = int(temp_m.group(1).replace("−", "-"))
+            if t_val < 0:
+                weather_advice.append("🧣 Мороз — тепло одягайся!")
+            elif t_val < 10:
+                weather_advice.append("🧥 Прохолодно — куртка обов'язкова")
+            elif t_val > 28:
+                weather_advice.append("🥵 Спека — пий більше води")
+        advice_str = "  " + " · ".join(weather_advice) if weather_advice else ""
+        lines.append(weather_summary + (f"\n{advice_str}" if advice_str else ""))
+
+    # ── Бігова рекомендація ───────────────────────────────────────────────────
     run_rec = _get_run_recommendation(weather_text)
     if run_rec:
-        tips.append(run_rec)
+        lines.append(run_rec)
 
-    if "🔻" in prices_text:
-        tips.append("📉 Крипторинок падає — слідкуй за портфелем")
-    if "🔺" in prices_text:
-        tips.append("📈 Крипторинок росте")
+    # ── Важливі листи — потребують відповіді ──────────────────────────────────
+    if email_text:
+        # Шукаємо непрочитані або позначені листи
+        unread_m = _re.findall(r"📩\s*(.{5,60}?)(?:\n|$)", email_text)
+        # Також пробуємо знайти відправників
+        sender_m = _re.findall(r"👤\s*(.{3,40}?)(?:\n|$)", email_text)
+        important_senders = []
+        skip_kw = ["newsletter", "noreply", "no-reply", "unsubscribe", "blockworks", "notification"]
+        for s in sender_m:
+            if not any(k in s.lower() for k in skip_kw):
+                important_senders.append(s.strip())
+        if important_senders:
+            lines.append(
+                "📬 <b>Листи, що потребують відповіді:</b>\n" +
+                "\n".join(f"  ↩️ {s}" for s in important_senders[:3])
+            )
+        elif unread_m:
+            lines.append(f"📬 <b>Нових листів: {len(unread_m)}</b> — перевір пошту")
 
-    h = now_local.hour
-    if 6 <= h < 10:
-        tips.append("☕ Доброго ранку! Гарного дня")
-    elif 12 <= h < 14:
-        tips.append("🍽 Час обіду")
-    elif 18 <= h < 21:
-        tips.append("🌆 Гарного вечора")
-    elif h >= 22 or h < 6:
-        tips.append("😴 Пізно — час відпочивати")
+    # ── Астрологія — важливі аспекти ─────────────────────────────────────────
+    if astro_text:
+        # Знаходимо тільки червоні (напружені) аспекти
+        tense = _re.findall(r"🔴[^\n]+", astro_text)
+        harmonic = _re.findall(r"🟢[^\n]+", astro_text)
+        astro_advice = []
+        if tense:
+            # Беремо перший напружений аспект
+            aspect_clean = _re.sub(r"<[^>]+>", "", tense[0]).strip()
+            astro_advice.append(f"⚠️ Напружений аспект: {aspect_clean}")
+        if harmonic:
+            aspect_clean = _re.sub(r"<[^>]+>", "", harmonic[0]).strip()
+            astro_advice.append(f"✨ Сприятливий: {aspect_clean}")
+        # Поради по аспектах
+        if astro_text:
+            al = astro_text.lower()
+            if "меркурій" in al and ("квадра" in al or "опозиція" in al):
+                astro_advice.append("🗣 Будь уважний у переговорах і комунікації")
+            if "венера" in al and ("трин" in al or "секстиль" in al):
+                astro_advice.append("💚 Добрий час для відносин і творчості")
+            if "марс" in al and ("трин" in al or "секстиль" in al):
+                astro_advice.append("💪 Висока енергія — використай для спорту або справ")
+            if "сатурн" in al and ("квадра" in al or "опозиція" in al):
+                astro_advice.append("🧱 Обмеження та відповідальність — зосередься на головному")
+            if "юпітер" in al and ("трин" in al or "секстиль" in al or "кон'юнк" in al):
+                astro_advice.append("🌟 Юпітер підтримує — добрий день для розширення")
+        if astro_advice:
+            lines.append("🔮 <b>Астро-нотатки:</b>\n" + "\n".join(f"  {a}" for a in astro_advice[:3]))
 
-    if "нічого не заплановано" not in calendar_text.lower():
-        tips.append("📌 Перевір заплановані події на сьогодні")
+    # ── Календарні події ──────────────────────────────────────────────────────
+    if calendar_text and "нічого не заплановано" not in calendar_text.lower():
+        # Витягнути назви подій
+        ev_m = _re.findall(r"—\s*<b>(.{3,50}?)</b>", calendar_text)
+        if ev_m:
+            ev_str = " · ".join(ev_m[:3])
+            lines.append(f"📅 <b>Сьогодні:</b> {ev_str}")
+        else:
+            lines.append("📅 Є заплановані події — перевір календар")
 
-    if not tips:
-        tips.append("✅ Все спокійно")
+    # ── Мотиваційна нотатка дня ───────────────────────────────────────────────
+    import hashlib as _hsh
+    day_hash = int(_hsh.md5(now_local.strftime("%Y-%m-%d").encode()).hexdigest(), 16)
+    motivations = [
+        "💡 <i>Зроби один маленький крок сьогодні — він рухає тебе вперед.</i>",
+        "🎯 <i>Фокус на одну ключову задачу — це сила.</i>",
+        "🔋 <i>Твоя енергія = твій капітал. Витрачай мудро.</i>",
+        "🌊 <i>Прогрес щодня — навіть мікро-прогрес — це перемога.</i>",
+        "🧠 <i>10 хв читання = 3650 хв на рік. Вклади в себе.</i>",
+        "⚡ <i>Найважча задача першою — решта піде легше.</i>",
+        "🕊 <i>Спокій зсередини = кращі рішення зовні.</i>",
+    ]
+    lines.append(motivations[day_hash % len(motivations)])
 
-    return "💡 <b>ПІДСУМОК</b>\n" + "\n".join(tips)
+    header = "━━━━━━━━━━━━━━━━━━━━━━\n🗂 <b>ПІДСУМОК</b>\n━━━━━━━━━━━━━━━━━━━━━━"
+    body = "\n\n".join(lines)
+    return f"{header}\n{body}"
 
 
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
@@ -1488,12 +1612,6 @@ def main():
         print(f"get_traffic error: {e}")
         traffic_text = None
 
-    try:
-        summary_text = get_summary(prices_text or "", weather_text, cal_text)
-    except Exception as e:
-        print(f"get_summary error: {e}")
-        summary_text = ""
-
     astro_text = None
     try:
         import sys as _sys
@@ -1502,6 +1620,12 @@ def main():
         astro_text = get_natal_transits_short(max_aspects=5)
     except Exception as e:
         print(f"get_astro error: {e}")
+
+    try:
+        summary_text = get_summary(prices_text or "", weather_text, cal_text, email_text, astro_text)
+    except Exception as e:
+        print(f"get_summary error: {e}")
+        summary_text = ""
 
     SEP = "\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n"
 
