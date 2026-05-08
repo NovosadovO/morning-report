@@ -803,7 +803,7 @@ def _try_become_leader():
     # Перевіряємо чи є живий лідер (не старший 30с)
     existing_id = lock.get("instance", "")
     existing_ts = lock.get("ts", 0)
-    if existing_id and existing_id != _INSTANCE_ID and (now_ts - existing_ts) < 30:
+    if existing_id and existing_id != _INSTANCE_ID and (now_ts - existing_ts) < 90:
         print(f"[Leader] Another leader alive: {existing_id} (age {int(now_ts-existing_ts)}s)", flush=True)
         _is_leader = False
         return False
@@ -826,18 +826,18 @@ def _try_become_leader():
 
 
 def _heartbeat_leader():
-    """Оновлює lock кожні 15с. Якщо хтось перехопив — зупиняємо бота."""
+    """Оновлює lock кожні 45с. Якщо хтось перехопив — зупиняємо бота."""
     global _is_leader
     while True:
-        time.sleep(15)
+        time.sleep(45)
         try:
             lock, sha = _gh_read(_GH_LOCK_URL)
             if lock.get("instance") != _INSTANCE_ID:
                 print(f"[Leader] Lock taken by {lock.get('instance')} — stepping down", flush=True)
                 _is_leader = False
                 return  # thread exits — main loop перевірить _is_leader
-            # Оновлюємо timestamp
-            _gh_write(_GH_LOCK_URL, {"instance": _INSTANCE_ID, "ts": time.time()}, sha, "heartbeat")
+            # Оновлюємо timestamp (без git commit — просто API)
+            _gh_write(_GH_LOCK_URL, {"instance": _INSTANCE_ID, "ts": time.time()}, sha, "hb")
         except Exception as e:
             print(f"[Leader] Heartbeat error: {e}", flush=True)
 
