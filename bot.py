@@ -738,6 +738,16 @@ def get_updates(offset=0):
 
 
 def load_offset():
+    # Спочатку GitHub (persistent між деплоями), потім /tmp (fallback)
+    try:
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import storage as _st
+        data = _st.load("bot_offset.json", default={})
+        if data.get("offset"):
+            return data["offset"]
+    except Exception:
+        pass
     try:
         with open(OFFSET_FILE) as f:
             return json.load(f).get("offset", 0)
@@ -746,8 +756,19 @@ def load_offset():
 
 
 def save_offset(offset):
-    with open(OFFSET_FILE, "w") as f:
-        json.dump({"offset": offset}, f)
+    # Зберігаємо і локально і на GitHub
+    try:
+        with open(OFFSET_FILE, "w") as f:
+            json.dump({"offset": offset}, f)
+    except Exception:
+        pass
+    try:
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import storage as _st
+        _st.save("bot_offset.json", {"offset": offset})
+    except Exception:
+        pass
 
 
 # ─── КОМАНДИ ──────────────────────────────────────────────────────────────────
@@ -1110,26 +1131,10 @@ def handle_command(chat_id, text):
 
         # Будь-який текст → AI асистент
         try:
-            # Надсилаємо ⏳ і запам'ятовуємо msg_id щоб потім замінити відповіддю
-            wait_resp = api("sendMessage", {"chat_id": chat_id, "text": "⏳"})
-            wait_msg_id = wait_resp.get("result", {}).get("message_id") if wait_resp else None
-
             from context import ask_ai
             need_cal = any(w in text for w in ["календар", "план", "події", "сьогодні", "завтра", "зміна", "розклад"])
             answer = ask_ai(text, include_calendar=need_cal)
-
-            # Замінюємо ⏳ на відповідь (editMessageText)
-            if wait_msg_id:
-                edited = api("editMessageText", {
-                    "chat_id": chat_id,
-                    "message_id": wait_msg_id,
-                    "text": answer[:4090],
-                    "parse_mode": "HTML"
-                })
-                if not edited or not edited.get("ok"):
-                    send(chat_id, answer)
-            else:
-                send(chat_id, answer)
+            send(chat_id, answer)
         except Exception as e:
             send(chat_id, f"⚠️ AI помилка: {e}")
 
