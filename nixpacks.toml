@@ -1,11 +1,13 @@
 [phases.setup]
-nixPkgs = ["python311", "gcc", "libffi", "openssl"]
+nixPkgs = ["python311", "python311Packages.pip", "gcc", "libffi", "openssl"]
 
 [phases.install]
 cmds = [
   "pip install --upgrade pip --no-cache-dir",
-  "pip install --no-cache-dir google-auth google-api-python-client google-auth-httplib2 requests cryptography",
-  "pip install --no-cache-dir kerykeion || echo 'kerykeion install failed, astro disabled'"
+  "pip install --no-cache-dir cryptography",
+  "pip install --no-cache-dir google-auth google-auth-httplib2 google-api-python-client",
+  "pip install --no-cache-dir requests",
+  "pip install --no-cache-dir kerykeion || echo 'kerykeion optional, skip'"
 ]
 
 [start]

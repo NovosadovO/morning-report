@@ -14,6 +14,7 @@ Telegram bot — відповідає на команди користувача
 import os
 import json
 import time
+import uuid
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone, timedelta
@@ -21,6 +22,12 @@ from datetime import datetime, timezone, timedelta
 TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
 TELEGRAM_CHAT  = os.environ["TELEGRAM_CHAT_ID"]
 OFFSET_FILE    = "/tmp/bot_offset.json"
+
+# Унікальний ідентифікатор цього інстансу бота (leader election)
+_INSTANCE_ID = str(uuid.uuid4())[:12]
+_GH_TOKEN    = os.environ.get("GITHUB_TOKEN", "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")
+_GH_LOCK_URL = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_lock.json"
+_GH_OFF_URL  = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_offset.json"
 
 # Імпортуємо функції з monitor.py
 import sys
@@ -737,62 +744,109 @@ def get_updates(offset=0):
     return result.get("result", [])
 
 
-def _gh_claim_update(update_id):
-    """
-    Атомарний claim через GitHub PUT з SHA.
-    True = цей процес перший обробляє update_id.
-    False = вже оброблено або не вдалось зробити claim.
-
-    ВАЖЛИВО: при будь-якій помилці (timeout, network) — повертаємо False,
-    щоб уникнути дублів. Краще пропустити повідомлення ніж надіслати 4 копії.
-    """
+def _gh_read(url):
+    """Читає файл з GitHub. Повертає (data_dict, sha) або ({}, None)."""
+    import base64 as _b64
     try:
-        import urllib.request as _ur, json as _json, base64 as _b64
-        TOKEN_GH = os.environ.get("GITHUB_TOKEN", "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")
-        url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_offset.json"
-        headers = {"Authorization": f"token {TOKEN_GH}", "Content-Type": "application/json"}
+        req = urllib.request.Request(url, headers={
+            "Authorization": f"token {_GH_TOKEN}",
+            "User-Agent": "morning-report-bot"
+        })
+        with urllib.request.urlopen(req, timeout=8) as r:
+            d = json.loads(r.read())
+            content = json.loads(_b64.b64decode(d["content"]))
+            return content, d["sha"]
+    except Exception:
+        return {}, None
 
-        # Читаємо поточний offset + SHA
-        req = _ur.Request(url, headers=headers)
-        with _ur.urlopen(req, timeout=8) as r:
-            d = _json.load(r)
-            sha = d["sha"]
-            current = _json.loads(_b64.b64decode(d["content"])).get("offset", 0)
 
-        if update_id <= current:
-            return False  # вже оброблено
-
-        # Атомарний запис — якщо інший процес вже записав цей SHA, отримаємо 409/422
-        body = _json.dumps({
-            "message": f"bot offset {update_id}",
-            "content": _b64.b64encode(_json.dumps({"offset": update_id}).encode()).decode(),
+def _gh_write(url, data, sha, message="update"):
+    """Записує файл у GitHub. Повертає True при успіху, False при конфлікті."""
+    import base64 as _b64
+    try:
+        body = json.dumps({
+            "message": message,
+            "content": _b64.b64encode(json.dumps(data).encode()).decode(),
             "sha": sha
         }).encode()
-        req2 = _ur.Request(url, data=body, headers=headers, method="PUT")
-        with _ur.urlopen(req2, timeout=8) as r2:
-            _json.load(r2)
-        return True  # ми перші
+        req = urllib.request.Request(url, data=body, headers={
+            "Authorization": f"token {_GH_TOKEN}",
+            "Content-Type": "application/json",
+            "User-Agent": "morning-report-bot"
+        }, method="PUT")
+        with urllib.request.urlopen(req, timeout=8) as r:
+            r.read()
+        return True
     except urllib.error.HTTPError as e:
         if e.code in (409, 422):
-            return False  # інший процес вже записав — пропускаємо
-        print(f"_gh_claim_update HTTP {e.code}: {e}", flush=True)
-        return False  # при помилці — не дозволяємо (уникаємо дублів)
-    except Exception as e:
-        print(f"_gh_claim_update error: {e}", flush=True)
-        return False  # timeout або network error — не дозволяємо
+            return False  # conflict — інший процес записав першим
+        return False
+    except Exception:
+        return False
+
+
+# ─── LEADER ELECTION ─────────────────────────────────────────────────────────
+
+_is_leader = False
+
+
+def _try_become_leader():
+    """
+    Намагається стати лідером (єдиним активним ботом).
+    Записує bot_lock.json з нашим instance_id + timestamp.
+    Якщо там вже є свіжий lock від іншого instance — повертає False.
+    """
+    global _is_leader
+    lock, sha = _gh_read(_GH_LOCK_URL)
+    now_ts = time.time()
+
+    # Перевіряємо чи є живий лідер (не старший 30с)
+    existing_id = lock.get("instance", "")
+    existing_ts = lock.get("ts", 0)
+    if existing_id and existing_id != _INSTANCE_ID and (now_ts - existing_ts) < 30:
+        print(f"[Leader] Another leader alive: {existing_id} (age {int(now_ts-existing_ts)}s)", flush=True)
+        _is_leader = False
+        return False
+
+    # Записуємо себе як лідера
+    new_lock = {"instance": _INSTANCE_ID, "ts": now_ts}
+    if sha:
+        ok = _gh_write(_GH_LOCK_URL, new_lock, sha, f"lock {_INSTANCE_ID}")
+    else:
+        # Файл не існує — створюємо (sha=None не підходить для PUT, потрібен POST)
+        ok = _gh_write(_GH_LOCK_URL, new_lock, "", f"lock {_INSTANCE_ID}")
+
+    if ok:
+        print(f"[Leader] I am leader: {_INSTANCE_ID}", flush=True)
+        _is_leader = True
+    else:
+        print(f"[Leader] Failed to claim lock", flush=True)
+        _is_leader = False
+    return _is_leader
+
+
+def _heartbeat_leader():
+    """Оновлює lock кожні 15с. Якщо хтось перехопив — зупиняємо бота."""
+    global _is_leader
+    while True:
+        time.sleep(15)
+        try:
+            lock, sha = _gh_read(_GH_LOCK_URL)
+            if lock.get("instance") != _INSTANCE_ID:
+                print(f"[Leader] Lock taken by {lock.get('instance')} — stepping down", flush=True)
+                _is_leader = False
+                return  # thread exits — main loop перевірить _is_leader
+            # Оновлюємо timestamp
+            _gh_write(_GH_LOCK_URL, {"instance": _INSTANCE_ID, "ts": time.time()}, sha, "heartbeat")
+        except Exception as e:
+            print(f"[Leader] Heartbeat error: {e}", flush=True)
 
 
 def load_offset():
-    try:
-        import urllib.request as _ur, json as _json, base64 as _b64
-        TOKEN_GH = os.environ.get("GITHUB_TOKEN", "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")
-        url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_offset.json"
-        req = _ur.Request(url, headers={"Authorization": f"token {TOKEN_GH}"})
-        with _ur.urlopen(req, timeout=3) as r:
-            d = _json.load(r)
-            return _json.loads(_b64.b64decode(d["content"])).get("offset", 0)
-    except Exception:
-        pass
+    """Читає offset з GitHub, fallback до /tmp."""
+    data, _ = _gh_read(_GH_OFF_URL)
+    if data.get("offset"):
+        return data["offset"]
     try:
         with open(OFFSET_FILE) as f:
             return json.load(f).get("offset", 0)
@@ -801,11 +855,22 @@ def load_offset():
 
 
 def save_offset(offset):
+    """Зберігає offset локально (швидко) + в GitHub (async не потрібен)."""
     try:
         with open(OFFSET_FILE, "w") as f:
             json.dump({"offset": offset}, f)
     except Exception:
         pass
+    # GitHub запис — окремий потік щоб не блокувати polling
+    import threading
+    def _bg():
+        try:
+            data, sha = _gh_read(_GH_OFF_URL)
+            if sha:
+                _gh_write(_GH_OFF_URL, {"offset": offset}, sha, f"offset {offset}")
+        except Exception as e:
+            print(f"save_offset GH error: {e}", flush=True)
+    threading.Thread(target=_bg, daemon=True).start()
 
 
 # ─── КОМАНДИ ──────────────────────────────────────────────────────────────────
@@ -1180,20 +1245,48 @@ def handle_command(chat_id, text):
 # ─── MAIN LOOP ────────────────────────────────────────────────────────────────
 
 def main():
-    print("=== Bot started, listening for messages ===", flush=True)
+    import threading as _threading
+    print(f"=== Bot started [{_INSTANCE_ID}] ===", flush=True)
+
+    # Скидаємо webhook (якщо був) і очищуємо pending updates
+    try:
+        api("deleteWebhook", {"drop_pending_updates": True})
+        print("[Bot] Webhook deleted, pending updates dropped", flush=True)
+    except Exception as e:
+        print(f"[Bot] deleteWebhook error: {e}", flush=True)
+
+    # Чекаємо стати лідером (до 60с)
+    waited = 0
+    while not _try_become_leader():
+        waited += 5
+        if waited >= 60:
+            print(f"[Leader] Could not become leader in 60s — exiting", flush=True)
+            return
+        print(f"[Leader] Waiting... ({waited}s)", flush=True)
+        time.sleep(5)
+
+    # Запускаємо heartbeat в background
+    _threading.Thread(target=_heartbeat_leader, daemon=True).start()
+
     # Print service account email for Google Sheets setup
     try:
-        import json as _json
-        _creds = _json.loads(os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "{}"))
+        _creds = json.loads(os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "{}"))
         _email = _creds.get("client_email", "not found")
         print(f"=== SERVICE ACCOUNT EMAIL: {_email} ===", flush=True)
         _sheets_id = os.environ.get("GOOGLE_SHEETS_ID", "NOT SET")
         print(f"=== GOOGLE_SHEETS_ID: {_sheets_id} ===", flush=True)
     except Exception as _e:
         print(f"=== Could not read service account: {_e} ===", flush=True)
+
     offset = load_offset()
+    print(f"[Bot] Starting polling from offset {offset}", flush=True)
 
     while True:
+        # Якщо ми більше не лідер — зупиняємось
+        if not _is_leader:
+            print(f"[Bot] Not leader anymore [{_INSTANCE_ID}] — stopping", flush=True)
+            return
+
         try:
             updates = get_updates(offset)
             for update in updates:
@@ -1201,9 +1294,10 @@ def main():
                 offset = uid + 1
                 save_offset(offset)
 
-                # Атомарний claim — тільки один процес обробляє кожен update_id
-                if not _gh_claim_update(uid):
-                    continue
+                # Перевіряємо лідерство перед кожною обробкою
+                if not _is_leader:
+                    print(f"[Bot] Lost leadership mid-loop — stopping", flush=True)
+                    return
 
                 # Обробка кнопок (callback_query)
                 cb = update.get("callback_query")

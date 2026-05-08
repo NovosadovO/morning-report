@@ -1399,17 +1399,54 @@ def main():
     slot = (now_local.minute // 20) * 20
     hour_key = now_local.strftime(f"%Y-%m-%dT%H:{slot:02d}")
 
-    # Захист від дублів — перевіряємо ДО відправки
+    # Захист від дублів — атомарний claim через SHA conflict
+    # Читаємо стан + SHA
     gh_sent, gh_sha = _gh_get_sent()
-    if gh_sent is not None:
-        if gh_sent.get("last_hour") == hour_key:
-            print(f"=== Already sent this slot ({hour_key}) [GitHub], skipping ===")
-            return
+    if gh_sent is None:
+        gh_sent = load_json_file(MAIN_SENT_FILE, default={})
+        gh_sha = None
+
+    if gh_sent.get("last_hour") == hour_key:
+        print(f"=== Already sent this slot ({hour_key}), skipping ===")
+        return
+
+    # Атомарно записуємо claim ПЕРЕД відправкою — якщо інший контейнер встиг,
+    # отримаємо 409 і вийдемо без відправки
+    claim_data = dict(gh_sent)
+    claim_data["last_hour"] = hour_key
+    claim_data["claimed_at"] = now.isoformat()
+    if gh_sha:
+        try:
+            import base64 as _b64
+            gh_token = os.environ.get("GITHUB_TOKEN", "")
+            _url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_main_sent.json"
+            _content = _b64.b64encode(json.dumps(claim_data, indent=2).encode()).decode()
+            _body = json.dumps({
+                "message": f"claim slot {hour_key}",
+                "content": _content,
+                "sha": gh_sha
+            }).encode()
+            _req = urllib.request.Request(_url, data=_body, headers={
+                "Authorization": f"token {gh_token}",
+                "Content-Type": "application/json",
+                "User-Agent": "morning-report-bot"
+            }, method="PUT")
+            with urllib.request.urlopen(_req, timeout=8) as _r:
+                _resp = json.loads(_r.read())
+                gh_sha = _resp.get("content", {}).get("sha", gh_sha)
+            print(f"=== Claimed slot {hour_key} ===")
+        except urllib.error.HTTPError as _he:
+            if _he.code in (409, 422):
+                print(f"=== Slot {hour_key} already claimed by another instance, skipping ===")
+                return
+            print(f"=== GH claim error {_he.code} — proceeding anyway ===")
+        except Exception as _ce:
+            print(f"=== GH claim error: {_ce} — proceeding anyway ===")
     else:
+        # Немає SHA — локальна перевірка (один контейнер)
         _sent = load_json_file(MAIN_SENT_FILE, default={})
-        if _sent.get("last_hour") == hour_key:
-            print(f"=== Already sent this slot ({hour_key}) [local], skipping ===")
-            return
+        _sent["last_hour"] = hour_key
+        save_json_file(MAIN_SENT_FILE, _sent)
 
     local_time = now_local.strftime("%H:%M")
     local_date = now_local.strftime("%d.%m.%Y")
@@ -1484,15 +1521,7 @@ def main():
 
     sent = send_telegram(report)
     print(f"=== Report {'sent' if sent else 'FAILED'} ===")
-
-    # Зберігаємо ПІСЛЯ успішного відправлення
-    if gh_sent is not None:
-        gh_sent["last_hour"] = hour_key
-        _gh_save_sent(gh_sent, gh_sha)
-    else:
-        _sent = load_json_file(MAIN_SENT_FILE, default={})
-        _sent["last_hour"] = hour_key
-        save_json_file(MAIN_SENT_FILE, _sent)
+    # Claim вже записаний до відправки — нічого більше не потрібно
 
 
 # ─── 4c. НАГАДУВАННЯ ПРО ПОДІЇ КАЛЕНДАРЯ (за 30 хв) ──────────────────────────
