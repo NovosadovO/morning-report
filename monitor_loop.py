@@ -462,42 +462,57 @@ threading.Thread(target=run_health_remind_watcher, daemon=True).start()
 
 
 def run_astro_watcher():
-    """Астрологічний звіт — рання зміна о 08:00, вихідний/нічна о 11:00."""
-    print("=== Starting astro watcher (early=08:00, other=11:00) ===", flush=True)
+    """Астрологічний звіт — 2 рази на день:
+       Ранок: рання зміна о 08:00, вихідний/нічна о 11:00
+       Вечір: завжди о 20:00
+    """
+    print("=== Starting astro watcher (morning + 20:00 evening) ===", flush=True)
     import os, sys
     sys.path.insert(0, os.path.dirname(__file__))
-    _sent_today = None
+    _sent_morning = None  # дата останнього ранкового
+    _sent_evening = None  # дата останнього вечірнього
     time.sleep(120)
+
+    def _send_astro(label):
+        import importlib, urllib.request, json as _json, os as _os
+        import astro as _astro_mod
+        importlib.reload(_astro_mod)
+        report = _astro_mod.get_astro_report()
+        token = _os.environ.get("TELEGRAM_TOKEN", "")
+        chat  = _os.environ.get("TELEGRAM_CHAT_ID", "")
+        url   = f"https://api.telegram.org/bot{token}/sendMessage"
+        payload = _json.dumps({"chat_id": chat, "text": report, "parse_mode": "HTML"}).encode()
+        req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
+        urllib.request.urlopen(req, timeout=15)
+        print(f"Astro report sent [{label}]", flush=True)
+
     while True:
         try:
             now_local = datetime.now(timezone.utc) + timedelta(hours=2)
             today = now_local.strftime("%Y-%m-%d")
-            if _sent_today != today:
-                # Визначаємо тип зміни
+            h, m = now_local.hour, now_local.minute
+
+            # ── Ранковий ──
+            if _sent_morning != today:
                 try:
                     from meds import _get_today_shift_type
                     shift = _get_today_shift_type()
                 except Exception:
                     shift = "weekend"
-
                 send_hour = 8 if shift == "early" else 11
+                if h == send_hour and m < 5:
+                    _send_astro(f"morning shift={shift}")
+                    _sent_morning = today
+                    time.sleep(360)
+                    continue
 
-                if now_local.hour == send_hour and now_local.minute < 5:
-                    from astro import get_astro_report
-                    import importlib, astro as _astro_mod
-                    importlib.reload(_astro_mod)
-                    from astro import get_astro_report
-                    import urllib.request, json as _json, os as _os
-                    report = get_astro_report()
-                    token = _os.environ.get("TELEGRAM_TOKEN", "")
-                    chat  = _os.environ.get("TELEGRAM_CHAT_ID", "")
-                    url   = f"https://api.telegram.org/bot{token}/sendMessage"
-                    payload = _json.dumps({"chat_id": chat, "text": report, "parse_mode": "HTML"}).encode()
-                    req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
-                    urllib.request.urlopen(req, timeout=15)
-                    _sent_today = today
-                    print(f"Astro report sent for {today} (shift={shift}, hour={send_hour})", flush=True)
-                    time.sleep(3600)
+            # ── Вечірній о 20:00 ──
+            if _sent_evening != today and h == 20 and m < 5:
+                _send_astro("evening 20:00")
+                _sent_evening = today
+                time.sleep(360)
+                continue
+
         except Exception as e:
             print(f"Astro watcher error: {e}", flush=True)
         time.sleep(60)
