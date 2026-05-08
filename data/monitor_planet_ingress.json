@@ -1,0 +1,62 @@
+{
+  "sun": {
+    "name": "☀️ Сонце",
+    "sign": "Телець ♉",
+    "house": 11,
+    "retro": false
+  },
+  "moon": {
+    "name": "🌙 Місяць",
+    "sign": "Водолій ♒",
+    "house": 7,
+    "retro": false
+  },
+  "mercury": {
+    "name": "☿ Меркурій",
+    "sign": "Телець ♉",
+    "house": 10,
+    "retro": false
+  },
+  "venus": {
+    "name": "♀ Венера",
+    "sign": "Близнюки ♊",
+    "house": 11,
+    "retro": false
+  },
+  "mars": {
+    "name": "♂ Марс",
+    "sign": "Овен ♈",
+    "house": 10,
+    "retro": false
+  },
+  "jupiter": {
+    "name": "♃ Юпітер",
+    "sign": "Рак ♋",
+    "house": 12,
+    "retro": false
+  },
+  "saturn": {
+    "name": "♄ Сатурн",
+    "sign": "Овен ♈",
+    "house": 10,
+    "retro": false
+  },
+  "uranus": {
+    "name": "⛢ Уран",
+    "sign": "Близнюки ♊",
+    "house": 11,
+    "retro": false
+  },
+  "neptune": {
+    "name": "♆ Нептун",
+    "sign": "Овен ♈",
+    "house": 9,
+    "retro": false
+  },
+  "pluto": {
+    "name": "♇ Плутон",
+    "sign": "Водолій ♒",
+    "house": 7,
+    "retro": true
+  }
+}
