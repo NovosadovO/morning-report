@@ -1,5 +1,7 @@
+providers = ["python"]
+
 [phases.setup]
-nixPkgs = ["python311", "python311Packages.pip", "gcc", "libffi", "openssl"]
+nixPkgs = ["gcc", "libffi", "openssl"]
 
 [phases.install]
 cmds = [
