@@ -1494,6 +1494,15 @@ def main():
         print(f"get_summary error: {e}")
         summary_text = ""
 
+    astro_text = None
+    try:
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from astro import get_natal_transits_short
+        astro_text = get_natal_transits_short(max_aspects=5)
+    except Exception as e:
+        print(f"get_astro error: {e}")
+
     SEP = "\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n"
 
     parts = [f"🕐 <b>Звіт {local_time}  ·  {local_date}</b>\n<i>Годинний звіт</i>"]
@@ -1513,6 +1522,9 @@ def main():
 
     if is_weekend and not include_learning_blocks:
         parts.append("💤 <i>Вихідний — крипто/пошта/навчання з 11:00</i>")
+
+    if astro_text:
+        parts.append(astro_text)
 
     if summary_text:
         parts.append(summary_text)

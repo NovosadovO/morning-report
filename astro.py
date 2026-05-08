@@ -140,6 +140,70 @@ def _transit_aspects(natal_lons, transit_lons, natal_names, transit_names, orb=3
     aspects.sort(key=lambda x: x[4])
     return aspects[:12]
 
+# ─── КОРОТКИЙ БЛОК ДЛЯ ГОДИННОГО ЗВІТУ ───────────────────────────────────────
+
+def get_natal_transits_short(max_aspects=5):
+    """
+    Повертає короткий текстовий блок з актуальними транзитами до натальних планет.
+    Використовується в годинному звіті monitor.py.
+    """
+    if not _KERYKEION_OK:
+        return None
+    try:
+        from datetime import datetime, timezone, timedelta
+        now_utc = datetime.now(timezone.utc)
+
+        natal = AstrologicalSubject(
+            "natal",
+            BIRTH_YEAR, BIRTH_MONTH, BIRTH_DAY, BIRTH_HOUR, BIRTH_MIN,
+            lat=BIRTH_LAT, lng=BIRTH_LON,
+            tz_str=BIRTH_TZ,
+            zodiac_type="Tropic", houses_system_identifier="P", online=False,
+        )
+        transit = AstrologicalSubject(
+            "transit",
+            now_utc.year, now_utc.month, now_utc.day,
+            now_utc.hour, now_utc.minute,
+            lat=CURRENT_LAT, lng=CURRENT_LON,
+            tz_str="UTC",
+            zodiac_type="Tropic", houses_system_identifier="P", online=False,
+        )
+
+        transit_data, natal_data = [], []
+        for key, name_ua in PLANETS_LIST:
+            tp = getattr(transit, key, None)
+            np = getattr(natal, key, None)
+            if tp:
+                transit_data.append((name_ua, tp.abs_pos))
+            if np:
+                natal_data.append((name_ua, np.abs_pos))
+
+        transit_lons  = [lon for _, lon in transit_data]
+        transit_names = [n   for n, _   in transit_data]
+        natal_lons    = [lon for _, lon in natal_data]
+        natal_names   = [n   for n, _   in natal_data]
+
+        aspects = _transit_aspects(natal_lons, transit_lons, natal_names, transit_names, orb=3.0)
+        if not aspects:
+            return None
+
+        # Фаза місяця
+        moon_lon = transit_data[1][1] if len(transit_data) > 1 else 0
+        sun_lon  = transit_data[0][1] if len(transit_data) > 0 else 0
+        moon_phase_name, _ = _moon_phase(sun_lon, moon_lon)
+        moon_sign_ua = _sign_ua(getattr(transit, "moon", None).sign if getattr(transit, "moon", None) else "Ari")
+
+        lines = [f"🔮 <b>АСТРО — транзити до натальних планет</b>"]
+        lines.append(f"{moon_phase_name}  ·  Місяць у <b>{moon_sign_ua}</b>")
+        lines.append(f"<i>{MOON_SIGN_TIPS.get(moon_sign_ua, '')}</i>\n")
+        for t_planet, n_planet, asp, emoji, exact in aspects[:max_aspects]:
+            lines.append(f"{emoji} {t_planet} {asp} натальний {n_planet}  <i>({exact:.1f}°)</i>")
+        return "\n".join(lines)
+    except Exception as e:
+        print(f"get_natal_transits_short error: {e}")
+        return None
+
+
 # ─── ОСНОВНА ФУНКЦІЯ ──────────────────────────────────────────────────────────
 
 def get_astro_report():
