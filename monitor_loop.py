@@ -20,14 +20,15 @@ from datetime import datetime, timezone, timedelta
 
 
 def run_bot():
+    """Запускає bot.py як subprocess. При краші — пауза 30с і рестарт."""
     print("=== Starting bot listener ===", flush=True)
     while True:
         try:
             subprocess.run([sys.executable, "bot.py"])
         except Exception as e:
             print(f"Bot crashed: {e}", flush=True)
-        print("Bot exited, restarting in 5s...", flush=True)
-        time.sleep(5)
+        print("Bot exited, restarting in 30s...", flush=True)
+        time.sleep(30)
 
 
 def _load_monitor():

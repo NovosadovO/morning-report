@@ -739,59 +739,52 @@ def get_updates(offset=0):
 
 def _gh_claim_update(update_id):
     """
-    Атомарний claim через GitHub API.
-    Повертає True якщо цей процес першим взяв update_id, False якщо вже хтось інший.
-    Логіка: читаємо поточний last_processed, якщо update_id <= last_processed — вже оброблено.
-    Якщо ні — записуємо update_id як last_processed. Race condition мінімальний бо GitHub PUT атомарний.
+    Атомарний claim через GitHub PUT з SHA.
+    True = цей процес перший обробляє update_id.
+    False = вже оброблено.
+    Швидкий timeout (2 сек) щоб не блокувати polling.
     """
     try:
-        import sys as _sys
-        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        import storage as _st
         import urllib.request as _ur, json as _json, base64 as _b64
-
         TOKEN_GH = os.environ.get("GITHUB_TOKEN", "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")
-        url = f"https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_offset.json"
+        url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_offset.json"
         headers = {"Authorization": f"token {TOKEN_GH}", "Content-Type": "application/json"}
 
-        # Читаємо поточний стан з SHA
+        # Читаємо поточний offset + SHA
         req = _ur.Request(url, headers=headers)
-        try:
-            with _ur.urlopen(req, timeout=5) as r:
-                d = _json.load(r)
-                sha = d["sha"]
-                content = _json.loads(_b64.b64decode(d["content"]))
-        except Exception:
-            sha = None
-            content = {}
+        with _ur.urlopen(req, timeout=2) as r:
+            d = _json.load(r)
+            sha = d["sha"]
+            current = _json.loads(_b64.b64decode(d["content"])).get("offset", 0)
 
-        last = content.get("offset", 0)
-        if update_id <= last:
-            return False  # вже оброблено іншим процесом
+        if update_id <= current:
+            return False  # вже оброблено
 
-        # Записуємо новий offset — якщо інший процес вже записав, PUT поверне 409/conflict
-        new_content = _b64.b64encode(_json.dumps({"offset": update_id}, indent=2).encode()).decode()
-        body = {"message": f"bot offset {update_id}", "content": new_content}
-        if sha:
-            body["sha"] = sha
-        req2 = _ur.Request(url, data=_json.dumps(body).encode(), headers=headers, method="PUT")
-        try:
-            with _ur.urlopen(req2, timeout=5) as r2:
-                _json.load(r2)
-                return True  # ми перші записали
-        except Exception:
-            return False  # хтось інший вже записав (race condition)
+        # Атомарний запис — якщо інший процес вже записав цей SHA, отримаємо 409
+        body = _json.dumps({
+            "message": f"bot offset {update_id}",
+            "content": _b64.b64encode(_json.dumps({"offset": update_id}).encode()).decode(),
+            "sha": sha
+        }).encode()
+        req2 = _ur.Request(url, data=body, headers=headers, method="PUT")
+        with _ur.urlopen(req2, timeout=2) as r2:
+            _json.load(r2)
+        return True  # ми перші
+    except urllib.error.HTTPError as e:
+        if e.code == 409 or e.code == 422:
+            return False  # інший процес вже записав — пропускаємо
+        return True  # інша помилка — дозволяємо (краще одна відповідь ніж мовчання)
     except Exception:
-        return True  # якщо GitHub недоступний — дозволяємо (краще дублі ніж мовчання)
+        return True  # timeout або недоступний — дозволяємо
 
 
 def load_offset():
     try:
-        TOKEN_GH = os.environ.get("GITHUB_TOKEN", "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")
         import urllib.request as _ur, json as _json, base64 as _b64
+        TOKEN_GH = os.environ.get("GITHUB_TOKEN", "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")
         url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_offset.json"
         req = _ur.Request(url, headers={"Authorization": f"token {TOKEN_GH}"})
-        with _ur.urlopen(req, timeout=5) as r:
+        with _ur.urlopen(req, timeout=3) as r:
             d = _json.load(r)
             return _json.loads(_b64.b64decode(d["content"])).get("offset", 0)
     except Exception:
