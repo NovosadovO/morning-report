@@ -717,5 +717,20 @@ threading.Thread(target=run_step_goal_watcher,    daemon=True).start()
 threading.Thread(target=run_friday_recap_watcher, daemon=True).start()
 threading.Thread(target=run_weight_trend_watcher, daemon=True).start()
 
+
+def run_planet_ingress_watcher():
+    """Транзит планет — зміна знаку або натального дому. Перевірка кожні 30 хв."""
+    print("=== Starting planet ingress watcher (every 30min) ===", flush=True)
+    time.sleep(200)
+    while True:
+        try:
+            _load_monitor().check_planet_ingress()
+        except Exception as e:
+            print(f"Planet ingress watcher error: {e}", flush=True)
+        time.sleep(1800)
+
+
+threading.Thread(target=run_planet_ingress_watcher, daemon=True).start()
+
 # Основний монітор в головному потоці
 run_monitor_loop()

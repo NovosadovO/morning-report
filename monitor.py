@@ -4806,3 +4806,124 @@ def check_weight_trend_alert():
 
     except Exception as e:
         print(f"check_weight_trend_alert error: {e}")
+
+
+# ─── ТРАНЗИТ ПЛАНЕТ — ЗМІНА ЗНАКУ АБО ДОМУ ───────────────────────────────────
+
+PLANET_INGRESS_FILE = os.path.join(_DATA_DIR, "monitor_planet_ingress.json")
+
+def check_planet_ingress():
+    """
+    Відстежує коли транзитна планета переходить в інший знак або натальний дім.
+    Шле сповіщення при кожному переході. Стан зберігається в GitHub.
+    Перевірка кожні 30 хв (для Місяця достатньо, він рухається ~1° за 2г).
+    """
+    try:
+        from kerykeion import AstrologicalSubject as _AS
+        from astro import (
+            PLANETS_LIST, CURRENT_LAT, CURRENT_LON,
+            BIRTH_YEAR, BIRTH_MONTH, BIRTH_DAY, BIRTH_HOUR, BIRTH_MIN,
+            BIRTH_LAT, BIRTH_LON, BIRTH_TZ,
+            _get_natal_house, _sign_ua, MOON_SIGN_TIPS
+        )
+    except ImportError as e:
+        print(f"check_planet_ingress import error: {e}")
+        return
+
+    now_utc   = datetime.now(timezone.utc)
+    now_local = now_utc + timedelta(hours=2)
+
+    try:
+        transit = _AS(
+            "t",
+            now_utc.year, now_utc.month, now_utc.day,
+            now_utc.hour, now_utc.minute,
+            lat=CURRENT_LAT, lng=CURRENT_LON,
+            tz_str="UTC", zodiac_type="Tropic",
+            houses_system_identifier="P", online=False,
+        )
+        natal = _AS(
+            "n",
+            BIRTH_YEAR, BIRTH_MONTH, BIRTH_DAY, BIRTH_HOUR, BIRTH_MIN,
+            lat=BIRTH_LAT, lng=BIRTH_LON,
+            tz_str=BIRTH_TZ, zodiac_type="Tropic",
+            houses_system_identifier="P", online=False,
+        )
+    except Exception as e:
+        print(f"check_planet_ingress kerykeion error: {e}")
+        return
+
+    _HOUSE_NAMES = [
+        "first","second","third","fourth","fifth","sixth",
+        "seventh","eighth","ninth","tenth","eleventh","twelfth"
+    ]
+    natal_cusps = [getattr(natal, f"{h}_house").abs_pos for h in _HOUSE_NAMES]
+
+    # Поточний стан всіх планет
+    current = {}
+    for key, name_ua in PLANETS_LIST:
+        p = getattr(transit, key, None)
+        if not p:
+            continue
+        house = _get_natal_house(p.abs_pos, natal_cusps)
+        sign  = _sign_ua(p.sign)
+        current[key] = {"name": name_ua, "sign": sign, "house": house, "retro": p.retrograde}
+
+    # Завантажуємо попередній стан
+    prev = load_json_file(PLANET_INGRESS_FILE, default={})
+
+    HOUSE_MEANING = {
+        1: "🏃 Особистість, зовнішність",
+        2: "💰 Фінанси, цінності",
+        3: "💬 Комунікація, поїздки",
+        4: "🏠 Дім, родина",
+        5: "🎭 Творчість, роман, діти",
+        6: "⚕️ Здоров'я, робота, рутина",
+        7: "🤝 Партнерства, відносини",
+        8: "🔮 Трансформація, ресурси партнера",
+        9: "🌍 Подорожі, навчання, філософія",
+        10: "🏆 Кар'єра, репутація",
+        11: "👥 Друзі, цілі, спільноти",
+        12: "🌊 Підсвідоме, усамітнення",
+    }
+
+    alerts = []
+    changed = False
+
+    for key, cur in current.items():
+        old = prev.get(key, {})
+        name = cur["name"]
+        sign = cur["sign"]
+        house = cur["house"]
+        retro = cur["retro"]
+        retro_str = " <b>℞</b>" if retro else ""
+
+        # Зміна знаку
+        if old.get("sign") and old["sign"] != sign:
+            tip = MOON_SIGN_TIPS.get(sign, "")
+            msg = (
+                f"🌀 <b>{name}{retro_str} увійшов у {sign}</b>\n"
+                f"🏠 Натальний дім {house} — {HOUSE_MEANING.get(house, '')}\n"
+            )
+            if tip:
+                msg += f"<i>{tip}</i>"
+            alerts.append(msg)
+            print(f"Planet ingress (sign): {name} → {sign}")
+
+        # Зміна натального дому
+        elif old.get("house") and old["house"] != house:
+            msg = (
+                f"🚪 <b>{name}{retro_str} перейшов у {house}-й натальний дім</b>\n"
+                f"♑ Знак: {sign}\n"
+                f"{HOUSE_MEANING.get(house, '')}"
+            )
+            alerts.append(msg)
+            print(f"Planet ingress (house): {name} → house {house}")
+
+        changed = True
+
+    # Зберігаємо поточний стан
+    save_json_file(PLANET_INGRESS_FILE, current)
+
+    for msg in alerts:
+        send_telegram(msg)
