@@ -9,7 +9,11 @@ import os, warnings
 warnings.filterwarnings("ignore")
 
 from datetime import datetime, timezone, timedelta
-from kerykeion import AstrologicalSubject
+try:
+    from kerykeion import AstrologicalSubject
+    _KERYKEION_OK = True
+except ImportError:
+    _KERYKEION_OK = False
 
 # ─── Дані народження ──────────────────────────────────────────────────────────
 BIRTH_YEAR, BIRTH_MONTH, BIRTH_DAY = 1989, 9, 22
@@ -139,6 +143,8 @@ def _transit_aspects(natal_lons, transit_lons, natal_names, transit_names, orb=3
 # ─── ОСНОВНА ФУНКЦІЯ ──────────────────────────────────────────────────────────
 
 def get_astro_report():
+    if not _KERYKEION_OK:
+        return "♈ <b>Астро</b>\n⚠️ kerykeion не встановлений"
     now_utc = datetime.now(timezone.utc)
     now_local = now_utc + timedelta(hours=2)
     today_str = now_local.strftime("%d.%m.%Y")

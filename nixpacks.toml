@@ -4,8 +4,8 @@ nixPkgs = ["python311"]
 [phases.install]
 cmds = [
   "pip install --upgrade pip --no-cache-dir",
-  "pip uninstall -y pyswisseph || true",
-  "pip install --no-cache-dir kerykeion google-auth google-api-python-client google-auth-httplib2 requests cryptography"
+  "pip install --no-cache-dir google-auth google-api-python-client google-auth-httplib2 requests cryptography",
+  "pip install --no-cache-dir kerykeion || echo 'kerykeion install failed, astro disabled'"
 ]
 
 [start]
