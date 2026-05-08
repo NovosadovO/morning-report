@@ -741,8 +741,10 @@ def _gh_claim_update(update_id):
     """
     Атомарний claim через GitHub PUT з SHA.
     True = цей процес перший обробляє update_id.
-    False = вже оброблено.
-    Швидкий timeout (2 сек) щоб не блокувати polling.
+    False = вже оброблено або не вдалось зробити claim.
+
+    ВАЖЛИВО: при будь-якій помилці (timeout, network) — повертаємо False,
+    щоб уникнути дублів. Краще пропустити повідомлення ніж надіслати 4 копії.
     """
     try:
         import urllib.request as _ur, json as _json, base64 as _b64
@@ -752,7 +754,7 @@ def _gh_claim_update(update_id):
 
         # Читаємо поточний offset + SHA
         req = _ur.Request(url, headers=headers)
-        with _ur.urlopen(req, timeout=2) as r:
+        with _ur.urlopen(req, timeout=8) as r:
             d = _json.load(r)
             sha = d["sha"]
             current = _json.loads(_b64.b64decode(d["content"])).get("offset", 0)
@@ -760,22 +762,24 @@ def _gh_claim_update(update_id):
         if update_id <= current:
             return False  # вже оброблено
 
-        # Атомарний запис — якщо інший процес вже записав цей SHA, отримаємо 409
+        # Атомарний запис — якщо інший процес вже записав цей SHA, отримаємо 409/422
         body = _json.dumps({
             "message": f"bot offset {update_id}",
             "content": _b64.b64encode(_json.dumps({"offset": update_id}).encode()).decode(),
             "sha": sha
         }).encode()
         req2 = _ur.Request(url, data=body, headers=headers, method="PUT")
-        with _ur.urlopen(req2, timeout=2) as r2:
+        with _ur.urlopen(req2, timeout=8) as r2:
             _json.load(r2)
         return True  # ми перші
     except urllib.error.HTTPError as e:
-        if e.code == 409 or e.code == 422:
+        if e.code in (409, 422):
             return False  # інший процес вже записав — пропускаємо
-        return True  # інша помилка — дозволяємо (краще одна відповідь ніж мовчання)
-    except Exception:
-        return True  # timeout або недоступний — дозволяємо
+        print(f"_gh_claim_update HTTP {e.code}: {e}", flush=True)
+        return False  # при помилці — не дозволяємо (уникаємо дублів)
+    except Exception as e:
+        print(f"_gh_claim_update error: {e}", flush=True)
+        return False  # timeout або network error — не дозволяємо
 
 
 def load_offset():

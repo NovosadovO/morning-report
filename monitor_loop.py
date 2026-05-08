@@ -20,11 +20,14 @@ from datetime import datetime, timezone, timedelta
 
 
 def run_bot():
-    """Запускає bot.py як subprocess. При краші — пауза 30с і рестарт."""
+    """Запускає bot main() inline (не subprocess) — гарантовано один процес."""
     print("=== Starting bot listener ===", flush=True)
     while True:
         try:
-            subprocess.run([sys.executable, "bot.py"])
+            import importlib
+            import bot as _bot_module
+            importlib.reload(_bot_module)  # перечитуємо модуль при рестарті
+            _bot_module.main()
         except Exception as e:
             print(f"Bot crashed: {e}", flush=True)
         print("Bot exited, restarting in 30s...", flush=True)
