@@ -1110,12 +1110,26 @@ def handle_command(chat_id, text):
 
         # Будь-який текст → AI асистент
         try:
-            send(chat_id, "⏳")
+            # Надсилаємо ⏳ і запам'ятовуємо msg_id щоб потім замінити відповіддю
+            wait_resp = api("sendMessage", {"chat_id": chat_id, "text": "⏳"})
+            wait_msg_id = wait_resp.get("result", {}).get("message_id") if wait_resp else None
+
             from context import ask_ai
-            # Якщо питання про календар/пошту — підтягуємо
             need_cal = any(w in text for w in ["календар", "план", "події", "сьогодні", "завтра", "зміна", "розклад"])
             answer = ask_ai(text, include_calendar=need_cal)
-            send(chat_id, answer)
+
+            # Замінюємо ⏳ на відповідь (editMessageText)
+            if wait_msg_id:
+                edited = api("editMessageText", {
+                    "chat_id": chat_id,
+                    "message_id": wait_msg_id,
+                    "text": answer[:4090],
+                    "parse_mode": "HTML"
+                })
+                if not edited or not edited.get("ok"):
+                    send(chat_id, answer)
+            else:
+                send(chat_id, answer)
         except Exception as e:
             send(chat_id, f"⚠️ AI помилка: {e}")
 

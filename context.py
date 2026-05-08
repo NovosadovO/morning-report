@@ -417,7 +417,7 @@ def ask_ai(user_message, include_calendar=False):
     Відправляє повідомлення в Gemini з контекстом + пам'яттю розмови.
     Повертає текст відповіді.
     """
-    api_key = os.environ.get("GEMINI_API_KEY", "")
+    api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
     if not api_key:
         return "⚠️ Gemini API key не налаштований."
 
