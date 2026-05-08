@@ -25,8 +25,9 @@ def run_bot():
         try:
             subprocess.run([sys.executable, "bot.py"])
         except Exception as e:
-            print(f"Bot crashed: {e}, restarting in 10s...", flush=True)
-            time.sleep(10)
+            print(f"Bot crashed: {e}", flush=True)
+        print("Bot exited, restarting in 5s...", flush=True)
+        time.sleep(5)
 
 
 def _load_monitor():

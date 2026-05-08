@@ -1131,6 +1131,7 @@ def handle_command(chat_id, text):
 
         # Будь-який текст → AI асистент
         try:
+            api("sendChatAction", {"chat_id": chat_id, "action": "typing"})
             from context import ask_ai
             need_cal = any(w in text for w in ["календар", "план", "події", "сьогодні", "завтра", "зміна", "розклад"])
             answer = ask_ai(text, include_calendar=need_cal)
@@ -1154,13 +1155,23 @@ def main():
     except Exception as _e:
         print(f"=== Could not read service account: {_e} ===", flush=True)
     offset = load_offset()
+    _processed = set()  # dedup у рамках поточного процесу
 
     while True:
         try:
             updates = get_updates(offset)
             for update in updates:
-                offset = update["update_id"] + 1
+                uid = update["update_id"]
+                offset = uid + 1
                 save_offset(offset)
+
+                # Dedup — пропускаємо якщо вже обробляли в цьому процесі
+                if uid in _processed:
+                    continue
+                _processed.add(uid)
+                # Тримаємо тільки останні 200
+                if len(_processed) > 200:
+                    _processed.clear()
 
                 # Обробка кнопок (callback_query)
                 cb = update.get("callback_query")
