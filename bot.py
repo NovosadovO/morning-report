@@ -737,15 +737,63 @@ def get_updates(offset=0):
     return result.get("result", [])
 
 
-def load_offset():
-    # Спочатку GitHub (persistent між деплоями), потім /tmp (fallback)
+def _gh_claim_update(update_id):
+    """
+    Атомарний claim через GitHub API.
+    Повертає True якщо цей процес першим взяв update_id, False якщо вже хтось інший.
+    Логіка: читаємо поточний last_processed, якщо update_id <= last_processed — вже оброблено.
+    Якщо ні — записуємо update_id як last_processed. Race condition мінімальний бо GitHub PUT атомарний.
+    """
     try:
         import sys as _sys
         _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         import storage as _st
-        data = _st.load("bot_offset.json", default={})
-        if data.get("offset"):
-            return data["offset"]
+        import urllib.request as _ur, json as _json, base64 as _b64
+
+        TOKEN_GH = os.environ.get("GITHUB_TOKEN", "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")
+        url = f"https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_offset.json"
+        headers = {"Authorization": f"token {TOKEN_GH}", "Content-Type": "application/json"}
+
+        # Читаємо поточний стан з SHA
+        req = _ur.Request(url, headers=headers)
+        try:
+            with _ur.urlopen(req, timeout=5) as r:
+                d = _json.load(r)
+                sha = d["sha"]
+                content = _json.loads(_b64.b64decode(d["content"]))
+        except Exception:
+            sha = None
+            content = {}
+
+        last = content.get("offset", 0)
+        if update_id <= last:
+            return False  # вже оброблено іншим процесом
+
+        # Записуємо новий offset — якщо інший процес вже записав, PUT поверне 409/conflict
+        new_content = _b64.b64encode(_json.dumps({"offset": update_id}, indent=2).encode()).decode()
+        body = {"message": f"bot offset {update_id}", "content": new_content}
+        if sha:
+            body["sha"] = sha
+        req2 = _ur.Request(url, data=_json.dumps(body).encode(), headers=headers, method="PUT")
+        try:
+            with _ur.urlopen(req2, timeout=5) as r2:
+                _json.load(r2)
+                return True  # ми перші записали
+        except Exception:
+            return False  # хтось інший вже записав (race condition)
+    except Exception:
+        return True  # якщо GitHub недоступний — дозволяємо (краще дублі ніж мовчання)
+
+
+def load_offset():
+    try:
+        TOKEN_GH = os.environ.get("GITHUB_TOKEN", "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")
+        import urllib.request as _ur, json as _json, base64 as _b64
+        url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_offset.json"
+        req = _ur.Request(url, headers={"Authorization": f"token {TOKEN_GH}"})
+        with _ur.urlopen(req, timeout=5) as r:
+            d = _json.load(r)
+            return _json.loads(_b64.b64decode(d["content"])).get("offset", 0)
     except Exception:
         pass
     try:
@@ -756,17 +804,9 @@ def load_offset():
 
 
 def save_offset(offset):
-    # Зберігаємо і локально і на GitHub
     try:
         with open(OFFSET_FILE, "w") as f:
             json.dump({"offset": offset}, f)
-    except Exception:
-        pass
-    try:
-        import sys as _sys
-        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        import storage as _st
-        _st.save("bot_offset.json", {"offset": offset})
     except Exception:
         pass
 
@@ -1155,7 +1195,6 @@ def main():
     except Exception as _e:
         print(f"=== Could not read service account: {_e} ===", flush=True)
     offset = load_offset()
-    _processed = set()  # dedup у рамках поточного процесу
 
     while True:
         try:
@@ -1165,13 +1204,9 @@ def main():
                 offset = uid + 1
                 save_offset(offset)
 
-                # Dedup — пропускаємо якщо вже обробляли в цьому процесі
-                if uid in _processed:
+                # Атомарний claim — тільки один процес обробляє кожен update_id
+                if not _gh_claim_update(uid):
                     continue
-                _processed.add(uid)
-                # Тримаємо тільки останні 200
-                if len(_processed) > 200:
-                    _processed.clear()
 
                 # Обробка кнопок (callback_query)
                 cb = update.get("callback_query")
