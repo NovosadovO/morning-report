@@ -374,6 +374,28 @@ def get_system_prompt(ctx=None):
     if ctx.get("crypto"):
         lines.append(f"• Крипто зараз: {ctx['crypto']}")
 
+    # Додаємо user_state — що Олег казав нещодавно
+    try:
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(__file__))
+        from proactive import load_user_state
+        state = load_user_state()
+        if state:
+            lines.append("")
+            lines.append("Що Олег казав нещодавно (його контекст):")
+            if state.get("location"):
+                lines.append(f"• Знаходиться: {state['location']}")
+            if state.get("activity"):
+                lines.append(f"• Займається: {state['activity']}")
+            if state.get("mood"):
+                lines.append(f"• Настрій/стан: {state['mood']}")
+            if state.get("last_message_from_oleg"):
+                lines.append(f"• Останнє повідомлення: «{state['last_message_from_oleg'][:120]}»")
+            if state.get("last_message_time"):
+                lines.append(f"• Коли писав: {state['last_message_time'][:16]}")
+    except Exception:
+        pass
+
     lines += [
         "",
         "Профіль:",
@@ -384,6 +406,7 @@ def get_system_prompt(ctx=None):
         "Якщо питає про їжу/вагу — враховуй ціль 78 кг і голодування 16:8.",
         "Якщо питає про біг — знаєш що він бігає, мотивуй конкретно.",
         "Відповідай в межах 3–5 речень якщо питання загальне. Більше тільки якщо просить деталі.",
+        "Використовуй user_state щоб відповідати в контексті — якщо знаєш де він і що робить, враховуй це.",
     ]
 
     return "\n".join(lines)

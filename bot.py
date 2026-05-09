@@ -1231,6 +1231,13 @@ def handle_command(chat_id, text):
         except ValueError:
             pass
 
+        # Зберігаємо контекст з відповіді Олега (локація, активність, настрій)
+        try:
+            from proactive import update_user_state_from_message
+            update_user_state_from_message(text)
+        except Exception:
+            pass
+
         # Будь-який текст → AI асистент
         try:
             api("sendChatAction", {"chat_id": chat_id, "action": "typing"})
