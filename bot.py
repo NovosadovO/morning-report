@@ -803,7 +803,7 @@ def _try_become_leader():
     # Перевіряємо чи є живий лідер (не старший 30с)
     existing_id = lock.get("instance", "")
     existing_ts = lock.get("ts", 0)
-    if existing_id and existing_id != _INSTANCE_ID and (now_ts - existing_ts) < 90:
+    if existing_id and existing_id != _INSTANCE_ID and (now_ts - existing_ts) < 60:
         print(f"[Leader] Another leader alive: {existing_id} (age {int(now_ts-existing_ts)}s)", flush=True)
         _is_leader = False
         return False
@@ -1262,12 +1262,12 @@ def main():
     except Exception as e:
         print(f"[Bot] deleteWebhook error: {e}", flush=True)
 
-    # Чекаємо стати лідером (до 60с)
+    # Чекаємо стати лідером (до 180с)
     waited = 0
     while not _try_become_leader():
         waited += 5
-        if waited >= 60:
-            print(f"[Leader] Could not become leader in 60s — exiting", flush=True)
+        if waited >= 180:
+            print(f"[Leader] Could not become leader in 180s — exiting", flush=True)
             return
         print(f"[Leader] Waiting... ({waited}s)", flush=True)
         time.sleep(5)
