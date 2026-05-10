@@ -521,19 +521,6 @@ def run_astro_watcher():
 threading.Thread(target=run_astro_watcher, daemon=True).start()
 
 
-def run_proactive_watcher():
-    """Проактивні персональні інсайти — перевірка щохвилини."""
-    print("=== Starting proactive insights watcher ===", flush=True)
-    time.sleep(90)
-    while True:
-        try:
-            _load_monitor().check_proactive_insights()
-        except Exception as e:
-            print(f"Proactive watcher error: {e}", flush=True)
-        time.sleep(60)
-
-
-threading.Thread(target=run_proactive_watcher, daemon=True).start()
 
 
 def run_extra_watchers():
