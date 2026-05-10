@@ -737,6 +737,9 @@ def get_astro_report():
         lines.append(f"<i>(як небо впливає особисто на тебе)</i>\n")
         for t_planet, n_planet, asp, emoji, exact in n_aspects[:8]:
             lines.append(f"{emoji} Транзитний {t_planet} {asp} натальний {n_planet}  <i>({exact:.1f}°)</i>")
+            desc = get_aspect_description(t_planet, asp, n_planet)
+            if desc:
+                lines.append(f"    <i>↳ {desc}</i>")
 
     # Місяць на тиждень
     lines.append(f"\n━━━━━━━━━━━━━━━━━━━━")
