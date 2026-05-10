@@ -121,16 +121,67 @@ def _now_local():
     return datetime.now(timezone.utc) + timedelta(hours=2)
 
 
-def _load_sent() -> dict:
+_GH_PROACTIVE_URL = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/proactive_sent.json"
+
+def _gh_load_sent():
+    """Читає proactive_sent.json з GitHub — persistent між restarts."""
+    import base64
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
+    if not gh_token:
+        # fallback до локального файлу
+        try:
+            with open(PROACTIVE_SENT_FILE) as f:
+                return json.load(f), None
+        except Exception:
+            return {}, None
+    req = urllib.request.Request(_GH_PROACTIVE_URL, headers={
+        "Authorization": f"token {gh_token}",
+        "User-Agent": "morning-report-bot"
+    })
     try:
-        with open(PROACTIVE_SENT_FILE) as f:
-            return json.load(f)
+        with urllib.request.urlopen(req, timeout=8) as r:
+            d = json.loads(r.read())
+            content = json.loads(base64.b64decode(d["content"]).decode())
+            return content, d["sha"]
     except Exception:
-        return {}
+        return {}, None
+
+
+def _gh_save_sent(data: dict, sha):
+    """Зберігає proactive_sent.json на GitHub."""
+    import base64
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
+    if not gh_token:
+        try:
+            with open(PROACTIVE_SENT_FILE, "w") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+        except Exception:
+            pass
+        return
+    content = base64.b64encode(json.dumps(data, indent=2).encode()).decode()
+    body = json.dumps({
+        "message": "proactive: mark slot sent",
+        "content": content,
+        **({"sha": sha} if sha else {})
+    }).encode()
+    req = urllib.request.Request(_GH_PROACTIVE_URL, data=body, headers={
+        "Authorization": f"token {gh_token}",
+        "Content-Type": "application/json",
+        "User-Agent": "morning-report-bot"
+    }, method="PUT")
+    try:
+        urllib.request.urlopen(req, timeout=8)
+    except Exception as e:
+        print(f"_gh_save_sent error: {e}")
+
+
+def _load_sent() -> dict:
+    data, _ = _gh_load_sent()
+    return data
 
 
 def _mark_sent(slot: str):
-    sent = _load_sent()
+    sent, sha = _gh_load_sent()
     today = _now_local().strftime("%Y-%m-%d")
     if today not in sent:
         sent[today] = {}
@@ -138,11 +189,7 @@ def _mark_sent(slot: str):
     # Чистимо старіші за 3 дні
     cutoff = (_now_local() - timedelta(days=3)).strftime("%Y-%m-%d")
     sent = {k: v for k, v in sent.items() if k >= cutoff}
-    try:
-        with open(PROACTIVE_SENT_FILE, "w") as f:
-            json.dump(sent, f, ensure_ascii=False, indent=2)
-    except Exception:
-        pass
+    _gh_save_sent(sent, sha)
 
 
 def _already_sent(slot: str) -> bool:
