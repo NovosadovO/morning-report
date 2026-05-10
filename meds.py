@@ -225,8 +225,10 @@ def _send_meds_question(today):
 
 def check_meds_reminder():
     """
-    Головна функція — викликається кожні 30 сек з habits.py.
-    Визначає правильний час нагадування залежно від типу дня.
+    Головна функція — викликається кожну хвилину з monitor_loop.py.
+    Визначає час нагадування залежно від типу дня (Google Calendar):
+      early   → перше о 09:00, повторне о 19:00 (якщо не відмітив)
+      weekend/night → перше о 11:00, повторне о 18:00
     """
     now   = now_local()
     today = today_str()
@@ -239,61 +241,60 @@ def check_meds_reminder():
     sent  = load_sent()
     meds  = load_meds()
 
-    # Вже відмітив сьогодні
+    # Вже відмітив сьогодні — нічого не робимо (але перевіряємо аналізи)
     if meds.get(today) is True:
+        _check_analysis_alerts(today)
         return
 
-    remind_key = f"meds_remind_{today}"
-    if sent.get(remind_key):
-        return
-
-    # Визначаємо вікно залежно від типу дня
-    shift = _get_today_shift_type()
-    h, m  = now.hour, now.minute
+    shift   = _get_today_shift_type()
+    h, m    = now.hour, now.minute
     cur_min = h * 60 + m
 
     if shift == "early":
-        # 12:30 – 13:30 → надсилаємо рівно о 12:30
-        window_start = 12 * 60 + 30
-        window_end   = 13 * 60 + 30
+        first_time  = 9 * 60       # 09:00
+        second_time = 19 * 60      # 19:00
     else:
-        # Вихідний / нічна / немає змін → 09:00 – 12:00
-        window_start = 9 * 60
-        window_end   = 12 * 60
+        # weekend / night / невідомо
+        first_time  = 11 * 60      # 11:00
+        second_time = 18 * 60      # 18:00
 
-    if window_start <= cur_min < window_end:
+    # ── Перше нагадування ──────────────────────────────────────────────
+    remind_key = f"meds_remind_{today}"
+    if not sent.get(remind_key) and cur_min >= first_time:
         _send_meds_question(today)
         sent[remind_key] = True
         save_sent(sent)
+        print(f"Meds first reminder sent for {today} (shift={shift})")
 
-    # Повторне нагадування якщо не відмітив через 2г після першого вікна
+    # ── Повторне нагадування (якщо не відмітив) ────────────────────────
     remind2_key = f"meds_remind2_{today}"
-    if not sent.get(remind2_key) and cur_min >= window_end and not meds.get(today):
-        # Надсилаємо повторне через 2г після закриття вікна
-        repeat_start = window_end + 120
-        if cur_min >= repeat_start:
-            day_n2 = days_into_course()
-            bar2   = _progress_bar(day_n2)
-            pct2   = min(round(day_n2 / 92 * 100), 100)
-            api("sendMessage", {
-                "chat_id": TELEGRAM_CHAT,
-                "text": (
-                    f"⏰ <b>Ще не відмітив ліки!</b>\n\n"
-                    f"{bar2}  {pct2}%\n"
-                    f"День {day_n2} / 92\n\n"
-                    f"💊 <b>{MEDS_NAME}</b> — прийняв сьогодні?"
-                ),
-                "parse_mode": "HTML",
-                "reply_markup": {
-                    "inline_keyboard": [[
-                        {"text": "✅ Прийняв", "callback_data": f"meds_yes_{today}"},
-                        {"text": "❌ Не прийняв", "callback_data": f"meds_no_{today}"},
-                    ]]
-                }
-            })
-            sent[remind2_key] = True
-            save_sent(sent)
-            print(f"Meds repeat reminder sent for {today}")
+    if (
+        sent.get(remind_key)           # перше вже відправлено
+        and not sent.get(remind2_key)  # повторне ще не відправлено
+        and cur_min >= second_time     # настав час повторного
+    ):
+        day_n2 = days_into_course()
+        bar2   = _progress_bar(day_n2)
+        pct2   = min(round(day_n2 / 92 * 100), 100)
+        api("sendMessage", {
+            "chat_id": TELEGRAM_CHAT,
+            "text": (
+                f"⏰ <b>Ще не відмітив ліки!</b>\n\n"
+                f"{bar2}  {pct2}%\n"
+                f"День {day_n2} / 92\n\n"
+                f"💊 <b>{MEDS_NAME}</b> — прийняв сьогодні?"
+            ),
+            "parse_mode": "HTML",
+            "reply_markup": {
+                "inline_keyboard": [[
+                    {"text": "✅ Прийняв", "callback_data": f"meds_yes_{today}"},
+                    {"text": "❌ Не прийняв", "callback_data": f"meds_no_{today}"},
+                ]]
+            }
+        })
+        sent[remind2_key] = True
+        save_sent(sent)
+        print(f"Meds second reminder sent for {today} (shift={shift})")
 
     # Аналізи / ключові дати
     _check_analysis_alerts(today)
