@@ -980,6 +980,68 @@ def _email_save_ids(sent_ids: set):
     except Exception as e:
         print(f"_email_save_ids error: {e}")
 
+def _gemini_email_analysis(full_text: str) -> dict:
+    """Аналізує лист через Gemini: короткий зміст + думка."""
+    api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+    try:
+        prompt = (
+            "Проаналізуй цей email і дай відповідь ТІЛЬКИ у форматі JSON:\n"
+            "{\"summary\": \"про що лист (1-2 речення)\", \"opinion\": \"твоя думка чи варто читати/діяти (1 речення)\"}\n\n"
+            "Мова відповіді: українська. Коротко і по суті.\n\n"
+            f"Лист:\n{full_text[:3000]}"
+        )
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+        body = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"maxOutputTokens": 400, "temperature": 0.5}
+        }).encode()
+        req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            data = json.loads(r.read())
+        text = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        # Витягуємо JSON з відповіді
+        import re as _re
+        m = _re.search(r'\{.*\}', text, _re.DOTALL)
+        if m:
+            return json.loads(m.group(0))
+    except Exception as e:
+        print(f"_gemini_email_analysis error: {e}")
+    return None
+
+
+def _send_telegram_photo_with_keyboard(caption: str, keyboard: dict):
+    """Надсилає GIF + caption + inline keyboard."""
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendAnimation"
+    payload = json.dumps({
+        "chat_id": TELEGRAM_CHAT,
+        "animation": "https://storage.googleapis.com/runable-templates/cli-uploads%2F1zsprqn6ymqOFgAJnNEK2HbTycMPBvLc%2F84VzoRtuRjk0i6Ju6EUAd%2Fmail_alert.gif",
+        "caption": caption[:1024],
+        "parse_mode": "HTML",
+        "reply_markup": json.dumps(keyboard)
+    }).encode()
+    req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return r.status == 200
+    except Exception as e:
+        print(f"_send_telegram_photo_with_keyboard error: {e}")
+        return send_telegram(caption)
+
+
+def _imap_delete_email(uid_str: str):
+    """Видаляє лист з Gmail по UID через IMAP."""
+    try:
+        mail = _imap_connect()
+        mail.select("INBOX")
+        mail.uid('store', uid_str.encode(), '+FLAGS', '\\Deleted')
+        mail.expunge()
+        mail.logout()
+        return True
+    except Exception as e:
+        print(f"_imap_delete_email error: {e}")
+        return False
+
+
 def check_new_emails():
     """Перевіряє непрочитані Primary листи — шле сповіщення ОДИН РАЗ на кожен лист (dedup по UID)."""
     try:
@@ -1009,20 +1071,21 @@ def check_new_emails():
 
         for uid in new_uids:
             uid_str = uid.decode()
-            _, msg_data = mail.uid('fetch', uid, "(RFC822.HEADER)")
+            _, msg_data = mail.uid('fetch', uid, "(RFC822)")
             if not msg_data or not msg_data[0]:
                 continue
             msg = email.message_from_bytes(msg_data[0][1])
 
             subject = _imap_decode_header(msg.get("Subject", "(без теми)"))
             sender  = _imap_decode_header(msg.get("From", ""))
+            body    = _imap_get_body(msg)
 
             em = re.search(r'[\w.+%-]+@[\w.-]+\.[a-z]{2,}', sender.lower())
             ea = em.group(0) if em else ""
 
             newly_seen.add(uid_str)  # позначаємо як бачений незалежно від _SKIP
             if ea not in _SKIP_EMAILS:
-                to_alert.append((subject, sender))
+                to_alert.append((uid_str, subject, sender, body))
 
         mail.logout()
 
@@ -1031,13 +1094,26 @@ def check_new_emails():
             sent_ids.update(newly_seen)
             _email_save_ids(sent_ids)
 
-        for subject, sender in to_alert:
-            _send_telegram_photo(
-                "https://storage.googleapis.com/runable-templates/cli-uploads%2F1zsprqn6ymqOFgAJnNEK2HbTycMPBvLc%2FTPPUfhLfZwJmqMoezuxQM%2Fmail_banner_v2.png",
+        for uid_str, subject, sender, body in to_alert:
+            # AI аналіз листа
+            full_text = f"Від: {sender}\nТема: {subject}\n\n{body}"
+            ai = _gemini_email_analysis(full_text)
+
+            caption = (
                 f"📩 <b>━━ НОВИЙ ЛИСТ ━━</b>\n\n"
-                f"📨 <b>{esc(subject[:70])}</b>\n"
-                f"👤 <code>{esc(sender[:55])}</code>"
+                f"👤 <b>Від:</b> {esc(sender[:60])}\n"
+                f"📋 <b>Тема:</b> {esc(subject[:70])}\n"
             )
+            if ai:
+                caption += f"\n💬 <b>Про що:</b> {esc(ai.get('summary',''))}\n"
+                caption += f"\n🤖 <b>Моя думка:</b> {esc(ai.get('opinion',''))}"
+
+            keyboard = {"inline_keyboard": [[
+                {"text": "🗑 Видалити", "callback_data": f"email_delete_{uid_str}"},
+                {"text": "📥 Залишити", "callback_data": f"email_keep_{uid_str}"},
+            ]]}
+
+            _send_telegram_photo_with_keyboard(caption, keyboard)
             print(f"Email alert sent: {subject[:50]}")
 
     except Exception as e:

@@ -223,6 +223,43 @@ def get_meds_report(period="week"):
     return "\n".join(lines)
 
 
+def handle_email_callback(callback_query):
+    """Обробляє кнопки 'Видалити' / 'Залишити' для листів."""
+    data    = callback_query.get("data", "")
+    msg_id  = callback_query["message"]["message_id"]
+    chat_id = callback_query["message"]["chat"]["id"]
+    cb_id   = callback_query["id"]
+
+    if data.startswith("email_delete_"):
+        uid_str = data[len("email_delete_"):]
+        try:
+            import sys, os as _os
+            sys.path.insert(0, _os.path.dirname(__file__))
+            from monitor import _imap_delete_email
+            ok = _imap_delete_email(uid_str)
+            if ok:
+                api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "🗑 Лист видалено"})
+                api("editMessageCaption", {
+                    "chat_id": chat_id,
+                    "message_id": msg_id,
+                    "caption": callback_query["message"].get("caption", "") + "\n\n<i>🗑 Видалено</i>",
+                    "parse_mode": "HTML"
+                })
+            else:
+                api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "⚠️ Не вдалось видалити"})
+        except Exception as e:
+            api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"Помилка: {e}"})
+
+    elif data.startswith("email_keep_"):
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📥 Залишено в скриньці"})
+        api("editMessageCaption", {
+            "chat_id": chat_id,
+            "message_id": msg_id,
+            "caption": callback_query["message"].get("caption", "") + "\n\n<i>📥 Залишено</i>",
+            "parse_mode": "HTML"
+        })
+
+
 def handle_reminder_callback(callback_query):
     """Обробляє ✅/❌ відповідь на одноразове нагадування."""
     import json as _json
@@ -1365,6 +1402,8 @@ def main():
                                     send(chat_id, "Немає даних. Введи /зд [кроки] [сон] [ЧСС] [кал] [score]")
                             except Exception as e:
                                 send(chat_id, f"⚠️ {e}")
+                        elif data.startswith("email_delete_") or data.startswith("email_keep_"):
+                            handle_email_callback(cb)
                         elif data.startswith("reminder_"):
                             handle_reminder_callback(cb)
                         elif data.startswith("mood_"):
