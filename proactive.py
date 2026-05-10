@@ -121,6 +121,9 @@ def _now_local():
     return datetime.now(timezone.utc) + timedelta(hours=2)
 
 
+# In-memory lock — захист від race condition в межах одного процесу
+_SENT_INMEM = set()
+
 _GH_PROACTIVE_URL = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/proactive_sent.json"
 
 def _gh_load_sent():
@@ -181,8 +184,10 @@ def _load_sent() -> dict:
 
 
 def _mark_sent(slot: str):
-    sent, sha = _gh_load_sent()
     today = _now_local().strftime("%Y-%m-%d")
+    key = f"{today}:{slot}"
+    _SENT_INMEM.add(key)  # одразу в пам'ять — захист від race
+    sent, sha = _gh_load_sent()
     if today not in sent:
         sent[today] = {}
     sent[today][slot] = True
@@ -193,9 +198,15 @@ def _mark_sent(slot: str):
 
 
 def _already_sent(slot: str) -> bool:
-    sent = _load_sent()
     today = _now_local().strftime("%Y-%m-%d")
-    return sent.get(today, {}).get(slot, False)
+    key = f"{today}:{slot}"
+    if key in _SENT_INMEM:  # спочатку в пам'яті — миттєво
+        return True
+    sent = _load_sent()
+    result = sent.get(today, {}).get(slot, False)
+    if result:
+        _SENT_INMEM.add(key)  # кешуємо
+    return result
 
 
 # ─── TELEGRAM ─────────────────────────────────────────────────────────────────
@@ -384,11 +395,19 @@ def check_proactive():
             f"Можливо нагадати про воду або прогулянку. Одне питання."
         )
 
-    # ── Після зміни check-in (рання: 18:30–19:30, нічна: 06:30–07:30) ───────
+    # ── Після зміни check-in (рання: 18:30–20:00, нічна: 06:30–08:00) ───────
     elif status == "post_shift" and not _already_sent("post_shift_checkin"):
         slot = "post_shift_checkin"
         shift = ctx.get("shift_today", "free")
-        if shift == "early":
+        # Перевірка часового вікна щоб не шлялося весь день
+        in_window = False
+        if shift == "early" and (18 < h < 20 or (h == 18 and m >= 30)):
+            in_window = True
+        elif shift == "night" and (6 < h < 8 or (h == 6 and m >= 30)):
+            in_window = True
+        if not in_window:
+            slot = None
+        elif shift == "early":
             prompt = (
                 f"Олег щойно після ранньої зміни (закінчилась о 18:00). "
                 f"Зараз {now.strftime('%H:%M')}. "
