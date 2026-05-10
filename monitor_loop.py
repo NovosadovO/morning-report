@@ -739,5 +739,21 @@ def run_proactive_watcher():
 
 threading.Thread(target=run_proactive_watcher, daemon=True).start()
 
+# ─── Webhook сервер в окремому thread ────────────────────────────────────────
+def run_webhook_server():
+    """Запускає health_webhook.py HTTP сервер в окремому thread."""
+    try:
+        import importlib.util, os as _os
+        spec = importlib.util.spec_from_file_location(
+            "health_webhook", _os.path.join(_os.path.dirname(__file__), "health_webhook.py"))
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        mod.run_server()
+    except Exception as e:
+        print(f"Webhook server error: {e}", flush=True)
+
+threading.Thread(target=run_webhook_server, daemon=True).start()
+print("=== Webhook server thread started ===", flush=True)
+
 # Основний монітор в головному потоці
 run_monitor_loop()

@@ -1,2 +1,1 @@
-web: python health_webhook.py
-worker: python monitor_loop.py
+web: python monitor_loop.py
