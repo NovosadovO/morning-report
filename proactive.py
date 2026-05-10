@@ -244,6 +244,7 @@ def _build_system(ctx: dict, state: dict) -> str:
         "• Якщо Олег на роботі — будь лаконічним.",
         "• Якщо Олег втомлений — підтримай, не грузи.",
         "• Відповідь має бути 2–4 речення MAX, якщо не просять більше.",
+        "• ВАЖЛИВО: завжди закінчуй кожне речення повністю. Ніколи не обривай на середині слова чи речення.",
     ]
     return "\n".join(lines)
 
@@ -427,7 +428,7 @@ def check_proactive():
         slot, prompt = _check_calendar_event_proactive(ctx, state, now)
 
     if slot and prompt and not _already_sent(slot):
-        answer = _ask_gemini(prompt, system, max_tokens=250)
+        answer = _ask_gemini(prompt, system, max_tokens=450)
         if answer and not answer.startswith("⚠️"):
             _send(answer)
             _mark_sent(slot)
