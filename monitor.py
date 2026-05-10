@@ -167,11 +167,12 @@ IGNORE_SUBJECTS = list(_SPAM_SUBJECTS)
 
 # ─── HELPERS ──────────────────────────────────────────────────────────────────
 
-def send_telegram(text: str) -> bool:
+def _send_telegram_chunk(text: str) -> bool:
+    """Надсилає одне повідомлення (до 4090 символів)."""
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,
-        "text": text[:4090],
+        "text": text,
         "parse_mode": "HTML"
     }).encode()
     req = urllib.request.Request(url, data=payload,
@@ -185,6 +186,40 @@ def send_telegram(text: str) -> bool:
     except Exception as e:
         print(f"Telegram error: {e}")
         return False
+
+
+def send_telegram(text: str) -> bool:
+    """Надсилає текст, автоматично розбиваючи на частини якщо > 4090 символів."""
+    MAX = 4090
+    if len(text) <= MAX:
+        return _send_telegram_chunk(text)
+
+    # Розбиваємо по рядках, не ріжемо слова
+    parts = []
+    current = ""
+    for line in text.split("\n"):
+        candidate = current + ("\n" if current else "") + line
+        if len(candidate) <= MAX:
+            current = candidate
+        else:
+            if current:
+                parts.append(current)
+            # Якщо один рядок сам по собі довший MAX — ріжемо
+            while len(line) > MAX:
+                parts.append(line[:MAX])
+                line = line[MAX:]
+            current = line
+    if current:
+        parts.append(current)
+
+    import time as _time
+    ok = True
+    for i, part in enumerate(parts):
+        if i > 0:
+            _time.sleep(0.5)
+        if not _send_telegram_chunk(part):
+            ok = False
+    return ok
 
 
 def _send_telegram_photo(photo_url: str, caption: str) -> bool:
