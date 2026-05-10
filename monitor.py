@@ -1020,7 +1020,7 @@ def _gemini_email_analysis(full_text: str) -> dict:
     api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
     try:
         prompt = (
-            "Проаналізуй цей email і дай відповідь ТІЛЬКИ у форматі JSON:\n"
+            "Проаналізуй цей email і дай відповідь ТІЛЬКИ у форматі JSON (без markdown обгортки):\n"
             "{\"summary\": \"про що лист (1-2 речення)\", \"opinion\": \"твоя думка чи варто читати/діяти (1 речення)\"}\n\n"
             "Мова відповіді: українська. Коротко і по суті.\n\n"
             f"Лист:\n{full_text[:3000]}"
@@ -1031,14 +1031,18 @@ def _gemini_email_analysis(full_text: str) -> dict:
             "generationConfig": {"maxOutputTokens": 400, "temperature": 0.5}
         }).encode()
         req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=20) as r:
+        with urllib.request.urlopen(req, timeout=25) as r:
             data = json.loads(r.read())
-        text = data["candidates"][0]["content"]["parts"][0]["text"].strip()
-        # Витягуємо JSON з відповіді
+        raw = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        print(f"[email AI] raw response: {raw[:200]}")
         import re as _re
-        m = _re.search(r'\{.*\}', text, _re.DOTALL)
+        m = _re.search(r'\{.*\}', raw, _re.DOTALL)
         if m:
-            return json.loads(m.group(0))
+            result = json.loads(m.group(0))
+            print(f"[email AI] parsed ok: summary={result.get('summary','')[:50]}")
+            return result
+        else:
+            print(f"[email AI] no JSON found in response")
     except Exception as e:
         print(f"_gemini_email_analysis error: {e}")
     return None
@@ -1147,7 +1151,10 @@ def check_new_emails():
         for uid_str, subject, sender, body in to_alert:
             # AI аналіз листа
             full_text = f"Від: {sender}\nТема: {subject}\n\n{body}"
+            print(f"[email] analyzing uid={uid_str} subject={subject[:40]}")
             ai = _gemini_email_analysis(full_text)
+            if not ai:
+                print(f"[email] AI returned None for uid={uid_str}")
 
             # 1. GIF окремо (без тексту)
             _send_telegram_gif_only()
@@ -1159,8 +1166,14 @@ def check_new_emails():
                 f"📋 <b>Тема:</b> {esc(subject[:70])}\n"
             )
             if ai:
-                text += f"\n💬 <b>Про що:</b> {esc(ai.get('summary',''))}\n"
-                text += f"\n🤖 <b>Моя думка:</b> {esc(ai.get('opinion',''))}"
+                summary = ai.get('summary', '').strip()
+                opinion = ai.get('opinion', '').strip()
+                if summary:
+                    text += f"\n💬 <b>Про що:</b> {esc(summary)}\n"
+                if opinion:
+                    text += f"\n🤖 <b>Моя думка:</b> {esc(opinion)}"
+            else:
+                text += "\n💬 <i>Аналіз недоступний</i>"
 
             keyboard = {"inline_keyboard": [[
                 {"text": "🗑 Видалити", "callback_data": f"email_delete_{uid_str}"},
@@ -1168,7 +1181,7 @@ def check_new_emails():
             ]]}
 
             _send_telegram_text_with_keyboard(text, keyboard)
-            print(f"Email alert sent: {subject[:50]}")
+            print(f"[email] alert sent: {subject[:50]}")
 
     except Exception as e:
         print(f"check_new_emails error: {e}")
