@@ -1044,13 +1044,28 @@ def _gemini_email_analysis(full_text: str) -> dict:
     return None
 
 
-def _send_telegram_photo_with_keyboard(caption: str, keyboard: dict):
-    """Надсилає GIF + caption + inline keyboard."""
+def _send_telegram_gif_only():
+    """Надсилає тільки GIF без тексту."""
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendAnimation"
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,
         "animation": "https://storage.googleapis.com/runable-templates/cli-uploads%2F1zsprqn6ymqOFgAJnNEK2HbTycMPBvLc%2F84VzoRtuRjk0i6Ju6EUAd%2Fmail_alert.gif",
-        "caption": caption[:1024],
+    }).encode()
+    req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return r.status == 200
+    except Exception as e:
+        print(f"_send_telegram_gif_only error: {e}")
+        return False
+
+
+def _send_telegram_text_with_keyboard(text: str, keyboard: dict):
+    """Надсилає текстове повідомлення з inline keyboard."""
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+    payload = json.dumps({
+        "chat_id": TELEGRAM_CHAT,
+        "text": text[:4096],
         "parse_mode": "HTML",
         "reply_markup": json.dumps(keyboard)
     }).encode()
@@ -1059,8 +1074,8 @@ def _send_telegram_photo_with_keyboard(caption: str, keyboard: dict):
         with urllib.request.urlopen(req, timeout=15) as r:
             return r.status == 200
     except Exception as e:
-        print(f"_send_telegram_photo_with_keyboard error: {e}")
-        return send_telegram(caption)
+        print(f"_send_telegram_text_with_keyboard error: {e}")
+        return False
 
 
 def _imap_delete_email(uid_str: str):
@@ -1134,21 +1149,25 @@ def check_new_emails():
             full_text = f"Від: {sender}\nТема: {subject}\n\n{body}"
             ai = _gemini_email_analysis(full_text)
 
-            caption = (
+            # 1. GIF окремо (без тексту)
+            _send_telegram_gif_only()
+
+            # 2. Текст з AI аналізом + кнопки окремим повідомленням
+            text = (
                 f"📩 <b>━━ НОВИЙ ЛИСТ ━━</b>\n\n"
                 f"👤 <b>Від:</b> {esc(sender[:60])}\n"
                 f"📋 <b>Тема:</b> {esc(subject[:70])}\n"
             )
             if ai:
-                caption += f"\n💬 <b>Про що:</b> {esc(ai.get('summary',''))}\n"
-                caption += f"\n🤖 <b>Моя думка:</b> {esc(ai.get('opinion',''))}"
+                text += f"\n💬 <b>Про що:</b> {esc(ai.get('summary',''))}\n"
+                text += f"\n🤖 <b>Моя думка:</b> {esc(ai.get('opinion',''))}"
 
             keyboard = {"inline_keyboard": [[
                 {"text": "🗑 Видалити", "callback_data": f"email_delete_{uid_str}"},
                 {"text": "📥 Залишити", "callback_data": f"email_keep_{uid_str}"},
             ]]}
 
-            _send_telegram_photo_with_keyboard(caption, keyboard)
+            _send_telegram_text_with_keyboard(text, keyboard)
             print(f"Email alert sent: {subject[:50]}")
 
     except Exception as e:
