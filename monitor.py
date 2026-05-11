@@ -998,6 +998,9 @@ _SKIP_EMAILS = {
     "noreply@tradingview.com",
 }
 
+# In-memory dedup — захист від дублів в межах одного процесу
+_EMAIL_SENT_INMEM: set = set()
+
 def _email_sent_ids():
     """Повертає set вже надісланих IMAP UID (з GitHub — persistent)."""
     try:
@@ -1111,8 +1114,9 @@ def check_new_emails():
             mail.logout()
             return
 
-        # Завантажуємо вже надіслані з GitHub
+        # Завантажуємо вже надіслані з GitHub + in-memory
         sent_ids = _email_sent_ids()
+        sent_ids.update(_EMAIL_SENT_INMEM)  # додаємо in-memory dedup
 
         # Фільтруємо тільки нові (не бачені) — беремо останні 20
         new_uids = [u for u in all_unread[-20:] if u.decode() not in sent_ids]
@@ -1138,7 +1142,8 @@ def check_new_emails():
             em = re.search(r'[\w.+%-]+@[\w.-]+\.[a-z]{2,}', sender.lower())
             ea = em.group(0) if em else ""
 
-            newly_seen.add(uid_str)  # позначаємо як бачений незалежно від _SKIP
+            newly_seen.add(uid_str)
+            _EMAIL_SENT_INMEM.add(uid_str)  # одразу в пам'ять — захист від race
             if ea not in _SKIP_EMAILS:
                 to_alert.append((uid_str, subject, sender, body))
 

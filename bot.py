@@ -245,11 +245,12 @@ def handle_email_callback(callback_query):
                     "message_id": msg_id,
                     "text": orig_text + "\n\n<i>🗑 Видалено</i>",
                     "parse_mode": "HTML",
-                    "reply_markup": json.dumps({"inline_keyboard": []})
+                    "reply_markup": {"inline_keyboard": []}
                 })
             else:
                 api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "⚠️ Не вдалось видалити"})
         except Exception as e:
+            print(f"email_delete error: {e}")
             api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"Помилка: {e}"})
 
     elif data.startswith("email_keep_"):
@@ -260,7 +261,7 @@ def handle_email_callback(callback_query):
             "message_id": msg_id,
             "text": orig_text + "\n\n<i>📥 Залишено</i>",
             "parse_mode": "HTML",
-            "reply_markup": json.dumps({"inline_keyboard": []})
+            "reply_markup": {"inline_keyboard": []}
         })
 
 
