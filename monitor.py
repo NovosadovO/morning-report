@@ -1562,22 +1562,26 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
 
     # ── Важливі листи — потребують відповіді ──────────────────────────────────
     if email_text:
-        # Шукаємо непрочитані або позначені листи
-        unread_m = _re.findall(r"📩\s*(.{5,60}?)(?:\n|$)", email_text)
-        # Також пробуємо знайти відправників
+        # Реальний unread_count з header рядка: "🔴 N нових"
+        unread_cnt_m = _re.search(r"🔴\s*(\d+)\s*нових", email_text)
+        real_unread = int(unread_cnt_m.group(1)) if unread_cnt_m else 0
+
+        # Відправники (тільки реальні люди, не розсилки)
         sender_m = _re.findall(r"👤\s*(.{3,40}?)(?:\n|$)", email_text)
         important_senders = []
-        skip_kw = ["newsletter", "noreply", "no-reply", "unsubscribe", "blockworks", "notification"]
+        skip_kw = ["newsletter", "noreply", "no-reply", "unsubscribe", "blockworks", "notification", "info@", "support@", "hello@"]
         for s in sender_m:
             if not any(k in s.lower() for k in skip_kw):
                 important_senders.append(s.strip())
+
         if important_senders:
             lines.append(
                 "📬 <b>Листи, що потребують відповіді:</b>\n" +
                 "\n".join(f"  ↩️ {s}" for s in important_senders[:3])
             )
-        elif unread_m:
-            lines.append(f"📬 <b>Нових листів: {len(unread_m)}</b> — перевір пошту")
+        elif real_unread > 0:
+            lines.append(f"📬 <b>Нових листів: {real_unread}</b> — перевір пошту")
+        # якщо 0 непрочитаних — нічого не додаємо
 
     # ── Астрологія — важливі аспекти ─────────────────────────────────────────
     if astro_text:
