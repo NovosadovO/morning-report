@@ -1094,12 +1094,20 @@ def _send_telegram_text_with_keyboard(text: str, keyboard: dict):
         "chat_id": TELEGRAM_CHAT,
         "text": text[:4096],
         "parse_mode": "HTML",
-        "reply_markup": json.dumps(keyboard)
+        "reply_markup": keyboard
     }).encode()
     req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=15) as r:
-            return r.status == 200
+            resp = json.loads(r.read().decode())
+            if not resp.get("ok"):
+                print(f"[tg] sendMessage error: {resp}")
+                return False
+            return True
+    except urllib.error.HTTPError as e:
+        body = e.read().decode()
+        print(f"[tg] sendMessage HTTP {e.code}: {body}")
+        return False
     except Exception as e:
         print(f"_send_telegram_text_with_keyboard error: {e}")
         return False
@@ -1161,14 +1169,16 @@ def check_new_emails():
             em = re.search(r'[\w.+%-]+@[\w.-]+\.[a-z]{2,}', sender.lower())
             ea = em.group(0) if em else ""
 
+            # Одразу в in-memory щоб race condition не дублював
+            _EMAIL_SENT_INMEM.add(uid_str)
             newly_seen.add(uid_str)
-            _EMAIL_SENT_INMEM.add(uid_str)  # одразу в пам'ять — захист від race
+
             if ea not in _SKIP_EMAILS:
                 to_alert.append((uid_str, subject, sender, body))
 
         mail.logout()
 
-        # Надсилаємо і одразу зберігаємо stateв GitHub
+        # Зберігаємо в GitHub одразу (до надсилання Telegram) — щоб redeploy не дублював
         if newly_seen:
             sent_ids.update(newly_seen)
             _email_save_ids(sent_ids)
@@ -1198,7 +1208,10 @@ def check_new_emails():
                 if opinion:
                     text += f"\n🤖 <b>Моя думка:</b> {esc(opinion)}"
             else:
-                text += "\n💬 <i>Аналіз недоступний</i>"
+                # Fallback — тіло листа перші 300 символів
+                preview = body[:300].strip() if body else ""
+                if preview:
+                    text += f"\n📄 <b>Початок:</b> <i>{esc(preview)}...</i>"
 
             keyboard = {"inline_keyboard": [[
                 {"text": "🗑 Видалити", "callback_data": f"email_delete_{uid_str}"},
@@ -1206,7 +1219,7 @@ def check_new_emails():
             ]]}
 
             _send_telegram_text_with_keyboard(text, keyboard)
-            print(f"[email] alert sent: {subject[:50]}")
+            print(f"[email] alert sent: uid={uid_str} subject={subject[:50]}")
 
     except Exception as e:
         print(f"check_new_emails error: {e}")

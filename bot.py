@@ -43,9 +43,16 @@ def api(method, data=None):
           headers={"Content-Type": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=15) as r:
-            return json.loads(r.read().decode())
+            resp = json.loads(r.read().decode())
+            if not resp.get("ok"):
+                print(f"[API] {method} not ok: {resp.get('description','?')} | data={str(data)[:200]}")
+            return resp
+    except urllib.error.HTTPError as e:
+        body = e.read().decode()
+        print(f"[API] {method} HTTP {e.code}: {body[:300]}")
+        return {}
     except Exception as e:
-        print(f"API error {method}: {e}")
+        print(f"[API] {method} error: {e}")
         return {}
 
 
@@ -239,42 +246,28 @@ def handle_email_callback(callback_query):
             ok = _imap_delete_email(uid_str)
             if ok:
                 api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "🗑 Лист видалено"})
-                orig_text = callback_query["message"].get("text", "")
-                r1 = api("editMessageText", {
-                    "chat_id": chat_id,
-                    "message_id": msg_id,
-                    "text": orig_text + "\n\n<i>🗑 Видалено</i>",
-                    "parse_mode": "HTML"
-                })
-                print(f"[btn] editMessageText resp: {str(r1)[:200]}")
-                r2 = api("editMessageReplyMarkup", {
-                    "chat_id": chat_id,
-                    "message_id": msg_id,
-                    "reply_markup": {"inline_keyboard": []}
-                })
-                print(f"[btn] editMessageReplyMarkup resp: {str(r2)[:200]}")
             else:
                 api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "⚠️ Не вдалось видалити"})
+            # Прибираємо кнопки незалежно від результату видалення
+            r = api("editMessageReplyMarkup", {
+                "chat_id": chat_id,
+                "message_id": msg_id,
+                "reply_markup": {"inline_keyboard": []}
+            })
+            print(f"[btn] editReplyMarkup delete resp: {str(r)[:200]}")
         except Exception as e:
             print(f"email_delete error: {e}")
             api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"Помилка: {e}"})
 
     elif data.startswith("email_keep_"):
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📥 Залишено в скриньці"})
-        orig_text = callback_query["message"].get("text", "")
-        r1 = api("editMessageText", {
-            "chat_id": chat_id,
-            "message_id": msg_id,
-            "text": orig_text + "\n\n<i>📥 Залишено</i>",
-            "parse_mode": "HTML"
-        })
-        print(f"[btn] editMessageText keep resp: {str(r1)[:200]}")
-        r2 = api("editMessageReplyMarkup", {
+        # Прибираємо кнопки
+        r = api("editMessageReplyMarkup", {
             "chat_id": chat_id,
             "message_id": msg_id,
             "reply_markup": {"inline_keyboard": []}
         })
-        print(f"[btn] editMessageReplyMarkup keep resp: {str(r2)[:200]}")
+        print(f"[btn] editReplyMarkup keep resp: {str(r)[:200]}")
 
 
 def handle_reminder_callback(callback_query):
