@@ -240,13 +240,19 @@ def handle_email_callback(callback_query):
             if ok:
                 api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "🗑 Лист видалено"})
                 orig_text = callback_query["message"].get("text", "")
-                api("editMessageText", {
+                r1 = api("editMessageText", {
                     "chat_id": chat_id,
                     "message_id": msg_id,
                     "text": orig_text + "\n\n<i>🗑 Видалено</i>",
-                    "parse_mode": "HTML",
+                    "parse_mode": "HTML"
+                })
+                print(f"[btn] editMessageText resp: {str(r1)[:200]}")
+                r2 = api("editMessageReplyMarkup", {
+                    "chat_id": chat_id,
+                    "message_id": msg_id,
                     "reply_markup": {"inline_keyboard": []}
                 })
+                print(f"[btn] editMessageReplyMarkup resp: {str(r2)[:200]}")
             else:
                 api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "⚠️ Не вдалось видалити"})
         except Exception as e:
@@ -256,13 +262,19 @@ def handle_email_callback(callback_query):
     elif data.startswith("email_keep_"):
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📥 Залишено в скриньці"})
         orig_text = callback_query["message"].get("text", "")
-        api("editMessageText", {
+        r1 = api("editMessageText", {
             "chat_id": chat_id,
             "message_id": msg_id,
             "text": orig_text + "\n\n<i>📥 Залишено</i>",
-            "parse_mode": "HTML",
+            "parse_mode": "HTML"
+        })
+        print(f"[btn] editMessageText keep resp: {str(r1)[:200]}")
+        r2 = api("editMessageReplyMarkup", {
+            "chat_id": chat_id,
+            "message_id": msg_id,
             "reply_markup": {"inline_keyboard": []}
         })
+        print(f"[btn] editMessageReplyMarkup keep resp: {str(r2)[:200]}")
 
 
 def handle_reminder_callback(callback_query):
