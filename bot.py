@@ -179,6 +179,21 @@ def handle_meds_callback(callback_query):
             "parse_mode": "HTML",
             "reply_markup": {"inline_keyboard": []}
         })
+
+        # Логуємо в Google Calendar
+        try:
+            from datetime import datetime, timezone, timedelta
+            now_l = datetime.now(timezone.utc) + timedelta(hours=2)
+            mark = "✅" if answer == "yes" else "❌"
+            log_to_calendar(
+                f"💊 Armolopid Plus {mark}",
+                date,
+                now_l.hour,
+                now_l.minute
+            )
+        except Exception as _ce:
+            print(f"meds log_to_calendar error: {_ce}")
+
     except Exception as e:
         print(f"meds callback error: {e}")
 
