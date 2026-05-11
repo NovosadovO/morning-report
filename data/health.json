@@ -4446,12 +4446,30 @@
     "water_ml": 1850
   },
   "2026-05-09": {
-    "steps": 32412,
-    "heart_rate": 128,
-    "calories_active": 3096,
-    "calories": 4666,
+    "steps": 32740,
+    "heart_rate": 126,
+    "calories_active": 3110,
+    "calories": 4977,
     "distance_km": 0.02,
     "flights_climbed": 2,
     "water_ml": 1650
+  },
+  "2026-05-10": {
+    "steps": 44797,
+    "heart_rate": 73,
+    "calories_active": 1559,
+    "calories": 3386,
+    "distance_km": 0.02,
+    "flights_climbed": 2,
+    "water_ml": 2350
+  },
+  "2026-05-11": {
+    "steps": 48114,
+    "heart_rate": 74,
+    "calories_active": 1794,
+    "calories": 3211,
+    "distance_km": 0.02,
+    "flights_climbed": 3,
+    "water_ml": 1600
   }
 }
