@@ -211,13 +211,14 @@ def _already_sent(slot: str) -> bool:
 
 # ─── TELEGRAM ─────────────────────────────────────────────────────────────────
 
-def _send(text: str):
+def _send_chunk(text: str):
+    """Надсилає один шматок тексту (до 4090 символів)."""
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT:
         print(f"[proactive] {text}")
         return
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,
-        "text": text[:4090],
+        "text": text,
         "parse_mode": "HTML"
     }).encode()
     req = urllib.request.Request(
@@ -230,6 +231,34 @@ def _send(text: str):
             pass
     except Exception as e:
         print(f"_send error: {e}")
+
+
+def _send(text: str):
+    """Надсилає текст, розбиваючи на частини якщо > 4090 символів."""
+    MAX = 4090
+    if len(text) <= MAX:
+        _send_chunk(text)
+        return
+    # Розбиваємо по рядках
+    parts, current = [], ""
+    for line in text.split("\n"):
+        candidate = current + ("\n" if current else "") + line
+        if len(candidate) <= MAX:
+            current = candidate
+        else:
+            if current:
+                parts.append(current)
+            while len(line) > MAX:
+                parts.append(line[:MAX])
+                line = line[MAX:]
+            current = line
+    if current:
+        parts.append(current)
+    import time as _t
+    for i, part in enumerate(parts):
+        if i > 0:
+            _t.sleep(0.5)
+        _send_chunk(part)
 
 
 # ─── GEMINI ───────────────────────────────────────────────────────────────────
@@ -438,8 +467,8 @@ def check_proactive():
             f"Питання про плани на завтра. Одне питання, дружньо."
         )
 
-    # ── Нагадування про воду (кожен день о 10:00 і 15:00) ────────────────────
-    elif h == 10 and 0 <= m < 30 and status in ("home", "post_shift") and not _already_sent("water_reminder_10"):
+    # ── Нагадування про воду (кожен день о 10:00 і 15:00) — вікно 10 хвилин ──
+    elif h == 10 and 0 <= m < 10 and status in ("home", "post_shift") and not _already_sent("water_reminder_10"):
         slot = "water_reminder_10"
         prompt = (
             f"Зараз {now.strftime('%H:%M')}. Просто коротке нагадування Олегу — "
@@ -447,7 +476,7 @@ def check_proactive():
             f"Додай щось коротке про здоров'я або самопочуття. 1-2 речення."
         )
 
-    elif h == 15 and 0 <= m < 30 and status in ("home", "post_shift", "working_early", "working_night") and not _already_sent("water_reminder_15"):
+    elif h == 15 and 0 <= m < 10 and status in ("home", "post_shift", "working_early", "working_night") and not _already_sent("water_reminder_15"):
         slot = "water_reminder_15"
         prompt = (
             f"Зараз {now.strftime('%H:%M')}. Нагадування про воду — "
