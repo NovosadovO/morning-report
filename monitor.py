@@ -994,7 +994,8 @@ ALERT_EMAIL_FILE = os.path.join(_DATA_DIR, "monitor_alert_emails.json")
 _SKIP_EMAILS = {
     "noreply@youtube.com", "no-reply@youtube.com",
     "no-reply@accounts.google.com", "noreply-maps-timeline@google.com",
-    "hello@duolingo.com", "no-reply@duolingo.com", "no-reply@medium.com"
+    "hello@duolingo.com", "no-reply@duolingo.com", "no-reply@medium.com",
+    "noreply@tradingview.com",
 }
 
 def _email_sent_ids():

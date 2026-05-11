@@ -239,11 +239,13 @@ def handle_email_callback(callback_query):
             ok = _imap_delete_email(uid_str)
             if ok:
                 api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "🗑 Лист видалено"})
-                api("editMessageCaption", {
+                orig_text = callback_query["message"].get("text", "")
+                api("editMessageText", {
                     "chat_id": chat_id,
                     "message_id": msg_id,
-                    "caption": callback_query["message"].get("caption", "") + "\n\n<i>🗑 Видалено</i>",
-                    "parse_mode": "HTML"
+                    "text": orig_text + "\n\n<i>🗑 Видалено</i>",
+                    "parse_mode": "HTML",
+                    "reply_markup": json.dumps({"inline_keyboard": []})
                 })
             else:
                 api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "⚠️ Не вдалось видалити"})
@@ -252,11 +254,13 @@ def handle_email_callback(callback_query):
 
     elif data.startswith("email_keep_"):
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📥 Залишено в скриньці"})
-        api("editMessageCaption", {
+        orig_text = callback_query["message"].get("text", "")
+        api("editMessageText", {
             "chat_id": chat_id,
             "message_id": msg_id,
-            "caption": callback_query["message"].get("caption", "") + "\n\n<i>📥 Залишено</i>",
-            "parse_mode": "HTML"
+            "text": orig_text + "\n\n<i>📥 Залишено</i>",
+            "parse_mode": "HTML",
+            "reply_markup": json.dumps({"inline_keyboard": []})
         })
 
 
