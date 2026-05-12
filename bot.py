@@ -194,6 +194,16 @@ def handle_meds_callback(callback_query):
         except Exception as _ce:
             print(f"meds log_to_calendar error: {_ce}")
 
+        # Позначаємо в monitor_meds.json що відреагував → повтор не прийде
+        try:
+            import sys as _sys2; _sys2.path.insert(0, os.path.dirname(__file__))
+            from monitor import MEDS_FILE, load_json_file, save_json_file
+            _meds_state = load_json_file(MEDS_FILE, default={})
+            _meds_state[f"done_{date}"] = True
+            save_json_file(MEDS_FILE, _meds_state)
+        except Exception as _me:
+            print(f"meds done_flag error: {_me}")
+
     except Exception as e:
         print(f"meds callback error: {e}")
 
