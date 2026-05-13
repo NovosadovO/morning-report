@@ -25,7 +25,7 @@ OFFSET_FILE    = "/tmp/bot_offset.json"
 
 # Унікальний ідентифікатор цього інстансу бота (leader election)
 _INSTANCE_ID = str(uuid.uuid4())[:12]
-_GH_TOKEN    = os.environ.get("GITHUB_TOKEN", "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")
+_GH_TOKEN    = os.environ.get("GITHUB_TOKEN", "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")
 _GH_LOCK_URL = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_lock.json"
 _GH_OFF_URL  = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_offset.json"
 
