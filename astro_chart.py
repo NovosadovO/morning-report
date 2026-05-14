@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-Генерує зображення натальної карти + транзити з виділеними аспектами та будинками.
-Повертає шлях до PNG файлу.
+Натальна карта + транзити. Висока чіткість, великі символи, читабельні аспекти.
 """
 import os, math, tempfile, warnings
 warnings.filterwarnings("ignore")
@@ -9,8 +8,8 @@ warnings.filterwarnings("ignore")
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import matplotlib.patches as patches
-from matplotlib.patches import FancyArrowPatch, Arc
+import matplotlib.patches as mpatches
+from matplotlib.patches import Arc
 import numpy as np
 from datetime import datetime, timezone, timedelta
 
@@ -20,7 +19,7 @@ try:
 except ImportError:
     _OK = False
 
-# ─── Дані народження ─────────────────────────────────────────────────────────
+# ─── Дані ────────────────────────────────────────────────────────────────────
 BIRTH_YEAR, BIRTH_MONTH, BIRTH_DAY = 1989, 9, 22
 BIRTH_HOUR, BIRTH_MIN = 2, 52
 BIRTH_LAT, BIRTH_LON = 49.8383, 24.0233
@@ -28,57 +27,84 @@ BIRTH_TZ = "Europe/Kiev"
 CURRENT_LAT, CURRENT_LON = 48.7136, 21.2581
 
 SIGN_SYMBOLS = ['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓']
-SIGN_NAMES_UA = ['Овен','Телець','Близнюки','Рак','Лев','Діва','Терези','Скорпіон','Стрілець','Козеріг','Водолій','Риби']
-
+# Кольори стихій: вогонь, земля, повітря, вода
 SIGN_COLORS = [
-    '#e74c3c','#2ecc71','#f39c12','#3498db',
-    '#e74c3c','#2ecc71','#f39c12','#3498db',
-    '#e74c3c','#2ecc71','#f39c12','#3498db',
+    '#e74c3c','#8BC34A','#F9A825','#2196F3',  # Овен Телець Близ Рак
+    '#e74c3c','#8BC34A','#F9A825','#2196F3',  # Лев Діва Терези Скорп
+    '#e74c3c','#8BC34A','#F9A825','#2196F3',  # Стріл Козер Водол Риби
 ]
 
 PLANET_SYMBOLS = {
-    'sun': '☉', 'moon': '☽', 'mercury': '☿', 'venus': '♀',
-    'mars': '♂', 'jupiter': '♃', 'saturn': '♄',
-    'uranus': '⛢', 'neptune': '♆', 'pluto': '♇',
+    'sun':'☉','moon':'☽','mercury':'☿','venus':'♀','mars':'♂',
+    'jupiter':'♃','saturn':'♄','uranus':'⛢','neptune':'♆','pluto':'♇',
+}
+PLANET_UA = {
+    'sun':'Сонце','moon':'Місяць','mercury':'Меркурій','venus':'Венера','mars':'Марс',
+    'jupiter':'Юпітер','saturn':'Сатурн','uranus':'Уран','neptune':'Нептун','pluto':'Плутон',
 }
 
-NATAL_COLOR   = '#f1c40f'   # золотий — натальні
-TRANSIT_COLOR = '#3498db'   # синій — транзитні
+NATAL_COL   = '#FFD700'    # золотий
+TRANSIT_COL = '#64B5F6'    # блакитний
+BG = '#0A0E1A'             # темно-синій фон
+
 ASP_COLORS = {
-    'conjunction': '#f39c12',
-    'trine':       '#2ecc71',
-    'sextile':     '#27ae60',
-    'square':      '#e74c3c',
-    'opposition':  '#c0392b',
-    'quincunx':    '#9b59b6',
+    'conjunction': '#FFC107',
+    'trine':       '#4CAF50',
+    'sextile':     '#8BC34A',
+    'square':      '#F44336',
+    'opposition':  '#E91E63',
+    'quincunx':    '#9C27B0',
+}
+ASP_UA = {
+    'conjunction':'Конюнкція','trine':'Трин','sextile':'Секстиль',
+    'square':'Квадрат','opposition':'Опозиція','quincunx':'Квінкункс',
 }
 
 PLANETS_LIST = ['sun','moon','mercury','venus','mars','jupiter','saturn','uranus','neptune','pluto']
 
-def _lon_to_angle(lon):
-    """Конвертує еклиптичну довготу (0..360) в кут на колі (радіани), 0° = правий бік, CCW."""
-    return math.radians(180 - lon)
+
+def _lon_to_rad(lon):
+    """Еклиптична довгота → радіани для matplotlib (0°=праворуч, CCW)."""
+    return math.radians(180.0 - lon)
+
 
 def _get_aspects(lons_a, names_a, lons_b, names_b, orb=8.0, cross=False):
-    """Аспекти між двома наборами планет."""
-    ASPECTS = {0: 'conjunction', 60: 'sextile', 90: 'square', 120: 'trine', 150: 'quincunx', 180: 'opposition'}
+    ASPECTS = {0:'conjunction',60:'sextile',90:'square',120:'trine',150:'quincunx',180:'opposition'}
+    ORB_MAP  = {0:8,60:6,90:7,120:8,150:3,180:8}
     result = []
-    for i, (la, na) in enumerate(zip(lons_a, names_a)):
-        for j, (lb, nb) in enumerate(zip(lons_b, names_b)):
-            if not cross and i >= j:
-                continue
-            diff = abs(la - lb) % 360
-            if diff > 180:
-                diff = 360 - diff
-            for deg, name in ASPECTS.items():
-                o = min(orb, 8 if deg in (0,180) else 6 if deg in (60,120,90) else 4)
-                if abs(diff - deg) <= o:
-                    result.append((na, nb, name, abs(diff - deg)))
+    for i,(la,na) in enumerate(zip(lons_a,names_a)):
+        for j,(lb,nb) in enumerate(zip(lons_b,names_b)):
+            if not cross and i>=j: continue
+            diff = abs(la-lb)%360
+            if diff>180: diff=360-diff
+            for deg,name in ASPECTS.items():
+                o = min(orb, ORB_MAP[deg])
+                if abs(diff-deg)<=o:
+                    result.append((na,nb,name,abs(diff-deg)))
     return result
 
 
+def _spread_planets(lons, min_gap=9.0):
+    """Рознести планети що накладаються, зберігаючи порядок."""
+    indexed = sorted(enumerate(lons), key=lambda x: x[1])
+    display = list(lons)
+    for _ in range(100):
+        changed = False
+        for k in range(len(indexed)):
+            idx_a, _ = indexed[k]
+            idx_b, _ = indexed[(k+1) % len(indexed)]
+            diff = (display[idx_b] - display[idx_a]) % 360
+            if diff < min_gap and diff >= 0:
+                push = (min_gap - diff) / 2.0 + 0.1
+                display[idx_a] = (display[idx_a] - push) % 360
+                display[idx_b] = (display[idx_b] + push) % 360
+                changed = True
+        if not changed:
+            break
+    return display
+
+
 def generate_natal_chart(output_path=None):
-    """Генерує PNG з натальною картою + транзити. Повертає шлях."""
     if not _OK:
         return None
 
@@ -88,6 +114,7 @@ def generate_natal_chart(output_path=None):
         tmp.close()
 
     now_utc = datetime.now(timezone.utc)
+    now_local = now_utc + timedelta(hours=3)  # Київ (літо)
 
     natal = AstrologicalSubject(
         "natal", BIRTH_YEAR, BIRTH_MONTH, BIRTH_DAY, BIRTH_HOUR, BIRTH_MIN,
@@ -100,243 +127,280 @@ def generate_natal_chart(output_path=None):
         zodiac_type="Tropic", houses_system_identifier="P", online=False,
     )
 
-    # Будинки (куспіди)
-    house_keys = ['first_house','second_house','third_house','fourth_house','fifth_house','sixth_house',
-                  'seventh_house','eighth_house','ninth_house','tenth_house','eleventh_house','twelfth_house']
+    house_keys = [
+        'first_house','second_house','third_house','fourth_house',
+        'fifth_house','sixth_house','seventh_house','eighth_house',
+        'ninth_house','tenth_house','eleventh_house','twelfth_house'
+    ]
     cusps = [getattr(natal, k).abs_pos for k in house_keys]
 
-    # Натальні планети
     natal_lons, natal_names = [], []
     for key in PLANETS_LIST:
         try:
-            p = getattr(natal, key)
-            natal_lons.append(p.abs_pos)
+            natal_lons.append(getattr(natal, key).abs_pos)
             natal_names.append(key)
         except: pass
 
-    # Транзитні планети
     transit_lons, transit_names = [], []
     for key in PLANETS_LIST:
         try:
-            p = getattr(transit, key)
-            transit_lons.append(p.abs_pos)
+            transit_lons.append(getattr(transit, key).abs_pos)
             transit_names.append(key)
         except: pass
 
-    # Аспекти натальних між собою
-    natal_aspects = _get_aspects(natal_lons, natal_names, natal_lons, natal_names, orb=8)
-    # Транзити до натальних
+    natal_aspects   = _get_aspects(natal_lons, natal_names, natal_lons, natal_names, orb=8)
     transit_aspects = _get_aspects(transit_lons, transit_names, natal_lons, natal_names, orb=5, cross=True)
 
-    # ─── Малювання ───────────────────────────────────────────────────────────
-    fig = plt.figure(figsize=(12, 12), facecolor='#0d1117')
-    ax = fig.add_axes([0, 0, 1, 1], facecolor='#0d1117')
-    ax.set_xlim(-1.5, 1.5)
-    ax.set_ylim(-1.5, 1.5)
+    # Рознести планети
+    natal_display   = _spread_planets(natal_lons,   min_gap=9.0)
+    transit_display = _spread_planets(transit_lons, min_gap=9.0)
+
+    # ─── Полотно ─────────────────────────────────────────────────────────────
+    SIZE = 18  # дюйми — велике!
+    fig = plt.figure(figsize=(SIZE, SIZE), facecolor=BG)
+    ax = fig.add_axes([0.0, 0.0, 1.0, 1.0], facecolor=BG)
+    ax.set_xlim(-1.55, 1.55)
+    ax.set_ylim(-1.65, 1.60)
     ax.set_aspect('equal')
     ax.axis('off')
 
-    # Зовнішнє кільце знаків зодіаку
-    outer_r = 1.35
-    sign_r  = 1.28
-    house_r = 1.15
-    asp_r   = 0.75  # радіус для ліній аспектів (натальні)
-    transit_asp_r = 0.72
+    # ── Радіуси кіл ──────────────────────────────────────────────────────────
+    R_OUTER     = 1.38   # зовнішній край знаків
+    R_SIGN_IN   = 1.20   # внутрішній край кільця знаків
+    R_NATAL_P   = 1.09   # кільце натальних планет
+    R_CUSP_OUT  = R_SIGN_IN
+    R_CUSP_IN   = 0.35   # лінії будинків до центру
+    R_HOUSE_LBL = 1.13   # ← номер будинку (зовні, між куспідами)  
+    R_ASPECT    = 0.78   # аспектні лінії натальних
+    R_TRANSIT_P = 0.63   # кільце транзитних планет (зовнішнє)
+    R_TRANSIT_P2= 0.50   # друге кільце (для натовпу планет)
+    R_TRANSIT_A = 0.58   # аспектні лінії транзитів
+    R_CENTER    = 0.28   # центральне коло
 
-    # Зовнішнє коло
-    outer_circle = plt.Circle((0,0), outer_r, color='#2c3e50', fill=False, linewidth=2)
-    ax.add_patch(outer_circle)
+    def circle(r, color, lw=1.5, fill=False, fc=BG, alpha=1.0, zorder=2):
+        c = plt.Circle((0,0), r, color=color, fill=fill, linewidth=lw,
+                        facecolor=fc if fill else 'none', alpha=alpha, zorder=zorder)
+        ax.add_patch(c)
 
-    # Кільце знаків
-    sign_inner = plt.Circle((0,0), 1.20, color='#1a252f', fill=True, zorder=1)
-    ax.add_patch(sign_inner)
-    sign_outer = plt.Circle((0,0), outer_r, color='#2c3e50', fill=False, linewidth=2, zorder=2)
-    ax.add_patch(sign_outer)
-    sign_inner_c = plt.Circle((0,0), 1.20, color='#2c3e50', fill=False, linewidth=1.5, zorder=2)
-    ax.add_patch(sign_inner_c)
+    # Фонові кола
+    circle(R_OUTER,    '#263244', lw=2.5, zorder=3)
+    circle(R_SIGN_IN,  '#1a2840', lw=1.5, fill=True, fc='#101828', zorder=1)
+    circle(R_SIGN_IN,  '#263244', lw=1.5, zorder=3)
+    circle(R_NATAL_P,  '#1e3050', lw=1.0, alpha=0.5, zorder=3)
+    circle(R_TRANSIT_P,'#142030', lw=1.0, alpha=0.5, zorder=3)
+    circle(R_CENTER,   '#0A0E1A', lw=0, fill=True, fc='#0A0E1A', zorder=9)
+    circle(R_CENTER,   '#263244', lw=2, zorder=10)
 
-    # Знаки зодіаку (30° кожен)
+    # ── Знаки зодіаку ────────────────────────────────────────────────────────
     for i in range(12):
         lon_start = i * 30
         lon_mid   = lon_start + 15
-        # Лінія-розподільник між знаками
-        angle_line = _lon_to_angle(lon_start)
-        x1 = 1.20 * math.cos(angle_line)
-        y1 = 1.20 * math.sin(angle_line)
-        x2 = outer_r * math.cos(angle_line)
-        y2 = outer_r * math.sin(angle_line)
-        ax.plot([x1, x2], [y1, y2], color='#34495e', linewidth=0.8, zorder=3)
+
+        # Кольоровий сектор фону
+        theta1 = 180 - (lon_start + 30)
+        theta2 = 180 - lon_start
+        wedge = mpatches.Wedge(
+            (0,0), R_OUTER, theta1, theta2,
+            width=(R_OUTER - R_SIGN_IN),
+            color=SIGN_COLORS[i], alpha=0.10, zorder=2
+        )
+        ax.add_patch(wedge)
+
+        # Розподільні лінії
+        a = _lon_to_rad(lon_start)
+        x1,y1 = R_SIGN_IN*math.cos(a), R_SIGN_IN*math.sin(a)
+        x2,y2 = R_OUTER*math.cos(a),   R_OUTER*math.sin(a)
+        ax.plot([x1,x2],[y1,y2], color='#2c4060', lw=1.0, zorder=4)
 
         # Символ знаку
-        angle_mid = _lon_to_angle(lon_mid)
-        tx = sign_r * math.cos(angle_mid)
-        ty = sign_r * math.sin(angle_mid)
-        ax.text(tx, ty, SIGN_SYMBOLS[i], ha='center', va='center',
-                fontsize=14, color=SIGN_COLORS[i], fontweight='bold', zorder=5,
-                fontfamily='DejaVu Sans')
+        am = _lon_to_rad(lon_mid)
+        r_mid = (R_SIGN_IN + R_OUTER) / 2.0
+        ax.text(r_mid*math.cos(am), r_mid*math.sin(am),
+                SIGN_SYMBOLS[i], ha='center', va='center',
+                fontsize=20, color=SIGN_COLORS[i], fontweight='bold',
+                zorder=6, fontfamily='DejaVu Sans')
 
-    # Будинки (куспіди) — лінії всередині від house_r до center
-    house_labels_r = 1.10
+    # ── Будинки ──────────────────────────────────────────────────────────────
+    MAIN_AXES = (0, 3, 6, 9)
     for idx, cusp_lon in enumerate(cusps):
-        angle = _lon_to_angle(cusp_lon)
-        # Лінія куспіду
-        lw = 2.5 if idx in (0, 3, 6, 9) else 0.8
-        col = '#f39c12' if idx in (0, 3, 6, 9) else '#4a6278'
-        x1 = 0.35 * math.cos(angle)
-        y1 = 0.35 * math.sin(angle)
-        x2 = 1.20 * math.cos(angle)
-        y2 = 1.20 * math.sin(angle)
-        ax.plot([x1, x2], [y1, y2], color=col, linewidth=lw, zorder=3, alpha=0.8)
+        a = _lon_to_rad(cusp_lon)
+        is_main = idx in MAIN_AXES
+        col = '#FFB300' if is_main else '#3d6080'
+        lw  = 2.2 if is_main else 0.9
+        x1,y1 = R_CUSP_IN*math.cos(a),  R_CUSP_IN*math.sin(a)
+        x2,y2 = R_CUSP_OUT*math.cos(a), R_CUSP_OUT*math.sin(a)
+        ax.plot([x1,x2],[y1,y2], color=col, lw=lw, zorder=5, alpha=0.9)
+
+        # Мітка куспіда (I, IV, VII, X — великі)
+        if is_main:
+            labels = {0:'ASC',3:'IC',6:'DSC',9:'MC'}
+            lbl_r = R_CUSP_IN - 0.08
+            ax.text(lbl_r*math.cos(a), lbl_r*math.sin(a),
+                    labels[idx], ha='center', va='center',
+                    fontsize=9, color='#FFB300', fontweight='bold', zorder=12,
+                    fontfamily='DejaVu Sans')
 
         # Номер будинку посередині між куспідами
-        next_cusp = cusps[(idx + 1) % 12]
-        mid_lon = cusp_lon + ((next_cusp - cusp_lon) % 360) / 2
-        mid_angle = _lon_to_angle(mid_lon)
-        hx = house_labels_r * math.cos(mid_angle)
-        hy = house_labels_r * math.sin(mid_angle)
-        ax.text(hx, hy, str(idx + 1), ha='center', va='center',
-                fontsize=8, color='#7f8c8d', zorder=5, fontfamily='DejaVu Sans')
+        next_lon = cusps[(idx+1)%12]
+        delta = (next_lon - cusp_lon) % 360
+        mid_lon = cusp_lon + delta/2
+        am = _lon_to_rad(mid_lon)
+        r_lbl = (R_SIGN_IN + R_NATAL_P) / 2.0  # між знаками і планетами
+        ax.text(r_lbl*math.cos(am), r_lbl*math.sin(am),
+                str(idx+1), ha='center', va='center',
+                fontsize=8, color='#607D8B', fontweight='bold', zorder=6,
+                fontfamily='DejaVu Sans')
 
-    # Кола планет
-    natal_circle = plt.Circle((0,0), 1.02, color='#1a252f', fill=False, linewidth=1.5, linestyle='--', zorder=3, alpha=0.6)
-    ax.add_patch(natal_circle)
-    transit_circle = plt.Circle((0,0), 0.88, color='#1a252f', fill=False, linewidth=1.5, linestyle=':', zorder=3, alpha=0.6)
-    ax.add_patch(transit_circle)
-
-    # Центральне коло
-    center_c = plt.Circle((0,0), 0.30, color='#0d1117', fill=True, zorder=8)
-    ax.add_patch(center_c)
-    center_c2 = plt.Circle((0,0), 0.30, color='#2c3e50', fill=False, linewidth=2, zorder=9)
-    ax.add_patch(center_c2)
-
-    # Аспекти натальних між собою (внутрішні лінії)
-    for p1, p2, asp_name, orb_val in natal_aspects:
+    # ── Аспектні лінії натальних ─────────────────────────────────────────────
+    for p1,p2,asp_name,orb_v in natal_aspects:
         i1 = natal_names.index(p1)
         i2 = natal_names.index(p2)
-        a1 = _lon_to_angle(natal_lons[i1])
-        a2 = _lon_to_angle(natal_lons[i2])
-        x1 = asp_r * math.cos(a1); y1 = asp_r * math.sin(a1)
-        x2 = asp_r * math.cos(a2); y2 = asp_r * math.sin(a2)
-        col = ASP_COLORS.get(asp_name, '#7f8c8d')
-        lw  = 1.5 if asp_name in ('trine','sextile') else (2.0 if asp_name == 'conjunction' else 1.2)
-        alpha = max(0.25, 0.8 - orb_val * 0.08)
-        ls = '-' if asp_name in ('conjunction','trine','opposition','sextile') else '--'
-        ax.plot([x1, x2], [y1, y2], color=col, linewidth=lw, alpha=alpha, linestyle=ls, zorder=4)
+        a1 = _lon_to_rad(natal_lons[i1])
+        a2 = _lon_to_rad(natal_lons[i2])
+        x1,y1 = R_ASPECT*math.cos(a1), R_ASPECT*math.sin(a1)
+        x2,y2 = R_ASPECT*math.cos(a2), R_ASPECT*math.sin(a2)
+        col = ASP_COLORS.get(asp_name,'#607D8B')
+        lw  = 2.2 if asp_name in ('conjunction','trine','opposition') else 1.5
+        alpha = max(0.35, 0.95 - orb_v*0.07)
+        ls = '--' if asp_name == 'square' else (':' if asp_name == 'quincunx' else '-')
+        ax.plot([x1,x2],[y1,y2], color=col, lw=lw, alpha=alpha, linestyle=ls, zorder=5, solid_capstyle='round')
 
-    # Аспекти транзитів до натальних (пунктир, ближче до центру)
-    for tp, np_, asp_name, orb_val in transit_aspects:
+    # ── Аспектні лінії транзитів до натальних ────────────────────────────────
+    for tp,np_,asp_name,orb_v in transit_aspects:
         if tp not in transit_names or np_ not in natal_names: continue
         ti = transit_names.index(tp)
         ni = natal_names.index(np_)
-        a_t = _lon_to_angle(transit_lons[ti])
-        a_n = _lon_to_angle(natal_lons[ni])
-        xt = transit_asp_r * math.cos(a_t); yt = transit_asp_r * math.sin(a_t)
-        xn = asp_r * math.cos(a_n); yn = asp_r * math.sin(a_n)
-        col = ASP_COLORS.get(asp_name, '#7f8c8d')
-        alpha = max(0.3, 0.9 - orb_val * 0.12)
-        ax.plot([xt, xn], [yt, yn], color=col, linewidth=1.8, alpha=alpha,
-                linestyle='-.', zorder=5)
+        a_t = _lon_to_rad(transit_lons[ti])
+        a_n = _lon_to_rad(natal_lons[ni])
+        xt,yt = R_TRANSIT_A*math.cos(a_t), R_TRANSIT_A*math.sin(a_t)
+        xn,yn = R_ASPECT*math.cos(a_n),    R_ASPECT*math.sin(a_n)
+        col = ASP_COLORS.get(asp_name,'#607D8B')
+        alpha = max(0.3, 0.85 - orb_v*0.10)
+        ax.plot([xt,xn],[yt,yn], color=col, lw=1.6, alpha=alpha,
+                linestyle='-.', zorder=5, solid_capstyle='round')
 
-    # ── Натальні планети (золоті, зовнішнє кільце) ───────────────────────────
-    natal_planet_r = 1.02
-    # Розраховуємо офсети щоб не накладались
-    sorted_natal = sorted(enumerate(natal_lons), key=lambda x: x[1])
-    offsets = [0.0] * len(natal_lons)
-    for k in range(1, len(sorted_natal)):
-        prev_idx, prev_lon = sorted_natal[k-1]
-        curr_idx, curr_lon = sorted_natal[k]
-        if (curr_lon - prev_lon) % 360 < 6:
-            offsets[curr_idx] = offsets[prev_idx] + 0.06
-
+    # ── Натальні планети (зовнішнє кільце, золоті) ───────────────────────────
     for i, key in enumerate(natal_names):
-        lon = natal_lons[i] + offsets[i] * 30
-        angle = _lon_to_angle(lon)
-        px = natal_planet_r * math.cos(angle)
-        py = natal_planet_r * math.sin(angle)
+        lon_display = natal_display[i]
+        a = _lon_to_rad(lon_display)
+        px,py = R_NATAL_P*math.cos(a), R_NATAL_P*math.sin(a)
 
-        # Фон
-        circle = plt.Circle((px, py), 0.055, color='#1a2530', zorder=10)
-        ax.add_patch(circle)
-        circle2 = plt.Circle((px, py), 0.055, color=NATAL_COLOR, fill=False, linewidth=1.5, zorder=11)
-        ax.add_patch(circle2)
+        # Лінія-підводка до точного градуса
+        a_exact = _lon_to_rad(natal_lons[i])
+        xe,ye = R_SIGN_IN*math.cos(a_exact), R_SIGN_IN*math.sin(a_exact)
+        ax.plot([px,xe],[py,ye], color=NATAL_COL, lw=0.6, alpha=0.25, zorder=6)
+
+        # Кружок планети
+        bg = plt.Circle((px,py), 0.072, color='#0f1a2b', zorder=11)
+        ax.add_patch(bg)
+        border = plt.Circle((px,py), 0.072, color=NATAL_COL, fill=False, lw=2.0, zorder=12)
+        ax.add_patch(border)
 
         sym = PLANET_SYMBOLS.get(key, key[:2])
-        ax.text(px, py, sym, ha='center', va='center', fontsize=10,
-                color=NATAL_COLOR, fontweight='bold', zorder=12,
-                fontfamily='DejaVu Sans')
+        ax.text(px, py, sym, ha='center', va='center',
+                fontsize=13, color=NATAL_COL, fontweight='bold',
+                zorder=13, fontfamily='DejaVu Sans')
 
-        # Лінія-покажчик до куспіду
-        angle2 = _lon_to_angle(natal_lons[i])
-        x_tick = 1.19 * math.cos(angle2)
-        y_tick = 1.19 * math.sin(angle2)
-        ax.plot([px, x_tick], [py, y_tick], color=NATAL_COLOR, linewidth=0.5, alpha=0.3, zorder=6)
+        # Градуси (маленько, знизу кружка)
+        deg_in_sign = natal_lons[i] % 30
+        ax.text(px, py-0.100, f"{int(deg_in_sign)}°", ha='center', va='center',
+                fontsize=6.5, color='#B8860B', zorder=13, fontfamily='DejaVu Sans')
 
-    # ── Транзитні планети (сині, внутрішнє кільце) ───────────────────────────
-    transit_planet_r = 0.88
-    sorted_transit = sorted(enumerate(transit_lons), key=lambda x: x[1])
-    t_offsets = [0.0] * len(transit_lons)
-    for k in range(1, len(sorted_transit)):
-        prev_idx, prev_lon = sorted_transit[k-1]
-        curr_idx, curr_lon = sorted_transit[k]
-        if (curr_lon - prev_lon) % 360 < 6:
-            t_offsets[curr_idx] = t_offsets[prev_idx] + 0.07
+    # ── Транзитні планети (2 кільця шахово для скупчених) ────────────────────
+    # Знайдемо групи близьких планет і розмістимо їх на двох радіусах
+    sorted_t_idx = sorted(range(len(transit_display)), key=lambda i: transit_display[i])
+    ring_assignment = {}  # index -> R
+    prev_lon = None
+    toggle = 0
+    for idx in sorted_t_idx:
+        lon = transit_display[idx]
+        if prev_lon is not None and (lon - prev_lon) % 360 < 12.0:
+            toggle = 1 - toggle
+        else:
+            toggle = 0
+        ring_assignment[idx] = R_TRANSIT_P2 if toggle else R_TRANSIT_P
+        prev_lon = lon
 
     for i, key in enumerate(transit_names):
-        lon = transit_lons[i] + t_offsets[i] * 30
-        angle = _lon_to_angle(lon)
-        px = transit_planet_r * math.cos(angle)
-        py = transit_planet_r * math.sin(angle)
+        lon_display = transit_display[i]
+        a = _lon_to_rad(lon_display)
+        r_use = ring_assignment.get(i, R_TRANSIT_P)
+        px,py = r_use*math.cos(a), r_use*math.sin(a)
 
-        # Фон
-        circle = plt.Circle((px, py), 0.052, color='#0d1117', zorder=10)
-        ax.add_patch(circle)
-        circle2 = plt.Circle((px, py), 0.052, color=TRANSIT_COLOR, fill=False, linewidth=1.5, zorder=11)
-        ax.add_patch(circle2)
+        bg = plt.Circle((px,py), 0.068, color='#070d18', zorder=11)
+        ax.add_patch(bg)
+        border = plt.Circle((px,py), 0.068, color=TRANSIT_COL, fill=False, lw=2.0, zorder=12)
+        ax.add_patch(border)
 
         sym = PLANET_SYMBOLS.get(key, key[:2])
-        ax.text(px, py, sym, ha='center', va='center', fontsize=9,
-                color=TRANSIT_COLOR, fontweight='bold', zorder=12,
-                fontfamily='DejaVu Sans')
+        ax.text(px, py, sym, ha='center', va='center',
+                fontsize=12, color=TRANSIT_COL, fontweight='bold',
+                zorder=13, fontfamily='DejaVu Sans')
 
-    # ── Заголовок та легенда ─────────────────────────────────────────────────
-    now_local = now_utc + timedelta(hours=2)
-    title = f"Натальна карта + Транзити · {now_local.strftime('%d.%m.%Y %H:%M')}"
-    ax.text(0, 1.47, title, ha='center', va='center', fontsize=11,
-            color='#ecf0f1', fontweight='bold', zorder=15, fontfamily='DejaVu Sans')
+        deg_in_sign = transit_lons[i] % 30
+        ax.text(px, py-0.097, f"{int(deg_in_sign)}°", ha='center', va='center',
+                fontsize=6.5, color='#1565C0', zorder=13, fontfamily='DejaVu Sans')
 
-    # Легенда аспектів
+    # ── Заголовок ────────────────────────────────────────────────────────────
+    ax.text(0, 1.53, f"☉ НАТАЛЬНА КАРТА  +  ТРАНЗИТИ  ·  {now_local.strftime('%d.%m.%Y %H:%M')}",
+            ha='center', va='center', fontsize=13, color='#ECF0F1', fontweight='bold',
+            zorder=20, fontfamily='DejaVu Sans')
+    ax.text(0, -1.55, 'Народження: 22.09.1989  ·  02:52  ·  Львів  ·  Пласідус',
+            ha='center', va='center', fontsize=9, color='#546E7A',
+            zorder=20, fontfamily='DejaVu Sans')
+
+    # ── Легенда аспектів (ліво-знизу) ────────────────────────────────────────
+    legend_x = -1.52
     legend_items = [
-        ('──', ASP_COLORS['conjunction'], 'Конфліктація'),
-        ('──', ASP_COLORS['trine'],       'Трин (тригон)'),
-        ('──', ASP_COLORS['sextile'],     'Секстиль'),
-        ('──', ASP_COLORS['square'],      'Квадратура'),
-        ('──', ASP_COLORS['opposition'],  'Опозиція'),
+        (ASP_COLORS['conjunction'], '-',  'Конюнкція  0°'),
+        (ASP_COLORS['trine'],       '-',  'Трин  120°'),
+        (ASP_COLORS['sextile'],     '-',  'Секстиль  60°'),
+        (ASP_COLORS['square'],      '--', 'Квадрат  90°'),
+        (ASP_COLORS['opposition'],  '-',  'Опозиція  180°'),
+        (ASP_COLORS['quincunx'],    ':',  'Квінкункс  150°'),
     ]
-    lx = -1.45
-    for k, (sym, col, label) in enumerate(legend_items):
-        ly = -1.20 + k * 0.12
-        ax.plot([lx, lx+0.12], [ly, ly], color=col, linewidth=2.5, zorder=15)
-        ax.text(lx+0.16, ly, label, va='center', fontsize=7, color='#bdc3c7', zorder=15,
-                fontfamily='DejaVu Sans')
+    ax.text(legend_x, -1.08, 'АСПЕКТИ', fontsize=8, color='#78909C', fontweight='bold',
+            va='center', fontfamily='DejaVu Sans', zorder=20)
+    for k,(col,ls,label) in enumerate(legend_items):
+        ly = -1.18 - k*0.097
+        ax.plot([legend_x, legend_x+0.14],[ly,ly], color=col, lw=2.5, ls=ls, zorder=20,
+                solid_capstyle='round')
+        ax.text(legend_x+0.18, ly, label, va='center', fontsize=7.5,
+                color='#90A4AE', fontfamily='DejaVu Sans', zorder=20)
 
-    # Легенда кільця планет
-    ax.plot([0.7, 0.82], [-1.38, -1.38], color=NATAL_COLOR, linewidth=2, zorder=15)
-    ax.text(0.86, -1.38, 'Натальні', va='center', fontsize=7, color=NATAL_COLOR,
-            fontfamily='DejaVu Sans')
-    ax.plot([0.7, 0.82], [-1.26, -1.26], color=TRANSIT_COLOR, linewidth=2, zorder=15)
-    ax.text(0.86, -1.26, 'Транзити', va='center', fontsize=7, color=TRANSIT_COLOR,
-            fontfamily='DejaVu Sans')
+    # ── Легенда кілець (право-знизу) ─────────────────────────────────────────
+    rx = 0.90
+    ax.text(rx, -1.08, 'КІЛЬЦЯ', fontsize=8, color='#78909C', fontweight='bold',
+            va='center', fontfamily='DejaVu Sans', zorder=20)
+    ax.plot([rx, rx+0.14],[-1.18,-1.18], color=NATAL_COL, lw=2.5, zorder=20)
+    ax.text(rx+0.18, -1.18, 'Натальні планети', va='center', fontsize=7.5,
+            color=NATAL_COL, fontfamily='DejaVu Sans', zorder=20)
+    ax.plot([rx, rx+0.14],[-1.28,-1.28], color=TRANSIT_COL, lw=2.5, ls='--', zorder=20)
+    ax.text(rx+0.18, -1.28, 'Транзити сьогодні', va='center', fontsize=7.5,
+            color=TRANSIT_COL, fontfamily='DejaVu Sans', zorder=20)
 
-    # Дата народження
-    ax.text(0, -1.48, 'Народження: 22.09.1989 · 02:52 · Львів', ha='center', va='center',
-            fontsize=7, color='#7f8c8d', zorder=15, fontfamily='DejaVu Sans')
+    # ── Список активних транзит-аспектів (знизу по центру) ───────────────────
+    active = [(tp,np_,aname,orb) for tp,np_,aname,orb in transit_aspects
+              if aname in ('conjunction','trine','square','opposition') and orb < 3.5]
+    active.sort(key=lambda x: x[3])
+    if active:
+        ax.text(0.42, -1.08, 'АКТИВНІ ТРАНЗИТИ', ha='center', fontsize=8,
+                color='#78909C', fontweight='bold', zorder=20, fontfamily='DejaVu Sans')
+        for k,(tp,np_,aname,orb) in enumerate(active[:6]):
+            col = ASP_COLORS.get(aname,'#607D8B')
+            sym_t = PLANET_SYMBOLS.get(tp,'?')
+            sym_n = PLANET_SYMBOLS.get(np_,'?')
+            asp_sym = {'conjunction':'☌','trine':'△','square':'□','opposition':'☍'}.get(aname,'*')
+            txt = f"{sym_t}{asp_sym}{sym_n}  {orb:.1f}°  {ASP_UA.get(aname,'')}"
+            ax.text(0.42, -1.18 - k*0.092, txt, ha='center', va='center',
+                    fontsize=7.5, color=col, zorder=20, fontfamily='DejaVu Sans')
 
-    plt.savefig(output_path, dpi=150, bbox_inches='tight',
-                facecolor='#0d1117', edgecolor='none')
+    plt.savefig(output_path, dpi=200, bbox_inches='tight',
+                facecolor=BG, edgecolor='none')
     plt.close(fig)
     return output_path
 
 
 if __name__ == "__main__":
     path = generate_natal_chart("/tmp/test_chart.png")
-    print(f"Chart saved: {path}")
+    print(f"Saved: {path} ({os.path.getsize(path)//1024}K)")
