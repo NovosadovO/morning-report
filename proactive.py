@@ -378,7 +378,17 @@ def check_proactive():
     prompt = None
 
     # ── Ранковий привіт (06:30–07:30) ────────────────────────────────────────
-    if 6 <= h < 8 and not _already_sent("morning_greet"):
+    # Пропускаємо якщо morning_context вже надіслав брифінг сьогодні
+    _morning_ctx_sent = False
+    try:
+        import storage as _st
+        _mc = _st.load("monitor_morning_ctx.json", default={})
+        if _mc.get("last") == today:
+            _morning_ctx_sent = True
+    except Exception:
+        pass
+
+    if 6 <= h < 8 and not _already_sent("morning_greet") and not _morning_ctx_sent:
         slot = "morning_greet"
         shift = ctx.get("shift_today", "free")
         shift_str = {"early": "рання зміна о 06:00", "night": "нічна зміна о 18:00", "free": "вільний день"}.get(shift, shift)
@@ -502,19 +512,21 @@ def check_proactive():
             f"Спитай чи планує сьогодні пробіжку — легко і без тиску. 1-2 речення."
         )
 
-    # ── Пізній вечір (21:30–22:30) — підсумок дня ────────────────────────────
-    elif 21 <= h < 23 and not _already_sent("night_summary"):
+    # ── Пізній вечір (22:00–22:30) — коротке побажання ночі
+    # НЕ 21:00 щоб не дублювати check_day_summary і check_mood_evening
+    elif h == 22 and 0 <= m < 30 and not _already_sent("night_summary"):
         slot = "night_summary"
-        habits_ctx = ctx.get("habits", "")
-        weight_ctx = ctx.get("weight", "")
         mood = state.get("mood", "")
+        last_msg = state.get("last_message_from_oleg", "")
+        shift_tomorrow = ctx.get("shift_tomorrow", "невідомо")
         prompt = (
-            f"Зараз {now.strftime('%H:%M')}, пізній вечір. "
-            f"Звички сьогодні: {habits_ctx}. Вага: {weight_ctx}. "
-            f"{'Настрій Олега: ' + mood + '. ' if mood else ''}"
-            f"Зроби короткий підсумок дня — що добре, що можна краще. "
-            f"Побажай доброї ночі і скажи щось позитивне про завтра. "
-            f"Зміна завтра: {ctx.get('shift_tomorrow', 'невідомо')}."
+            f"Зараз {now.strftime('%H:%M')} {now.strftime('%d.%m.%Y')}, вечір. "
+            f"{'Олег казав: «' + last_msg + '». ' if last_msg else ''}"
+            f"{'Настрій: ' + mood + '. ' if mood else ''}"
+            f"Зміна завтра: {shift_tomorrow}. "
+            f"Напиши Олегу КОРОТКЕ (2-3 речення) і ТЕПЛЕ побажання доброї ночі. "
+            f"Обов'язково згадай завтрашню зміну і що варто взяти/підготувати. "
+            f"Без загальних фраз — конкретно і по-дружньому."
         )
 
     # ── Якщо є подія в календарі за 2 год ────────────────────────────────────

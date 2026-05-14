@@ -2047,7 +2047,7 @@ def check_morning_brief():
     else:
         trigger_h = 7
 
-    if not (h == trigger_h and 0 <= m < 10):
+    if not (h == trigger_h and 0 <= m < 3):
         return
 
     DAY_UA = ["Понеділок","Вівторок","Середа","Четвер","П'ятниця","Субота","Неділя"]
@@ -2915,7 +2915,7 @@ def check_day_summary():
     """
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
-    if not (h == 21 and m < 5):
+    if not (h == 21 and 0 <= m < 3):
         return
 
     state = load_json_file(DAY_SUMMARY_FILE, default={})
@@ -3928,13 +3928,15 @@ def check_smart_notifications():
             )
             mark("post_night")
 
-        # ── 5. AI ПОРАДА (10:00, 14:00, 19:00 — вільний день) ─────────────
+        # ── 5. AI ПОРАДА (11:00, 15:00, 20:30 — вільний день)
+        # Часи зміщені щоб НЕ збігались з morning_context (08:30/10:00),
+        # crypto_morning (09:10), day_summary (19:00), mood (21:30)
         ai_slots = {
-            10: ("🌅 Ранкова порада", "Олег щойно прокинувся у вільний день. Дай ОДНУ конкретну дію на ранок — для схуднення (ціль 78 кг) або здоров'я. 1-2 речення, конкретно."),
-            14: ("☀️ Порада на середину дня", "Олег вдома в середині дня. Дай одну ідею — що зробити для здоров'я або продуктивності наступні 2 години. Коротко і конкретно."),
-            19: ("🌙 Вечірня порада", "Вечір вільного дня Олега. 1-2 речення: коротка оцінка дня і одна порада перед сном (схуднення/здоров'я/фінанси). По суті, без загальних слів."),
+            11: ("💡 Порада на день", "Олег вдома у вільний день, ранок минув. Дай ОДНУ конкретну дію на найближчі години — для схуднення (ціль 78 кг) або здоров'я. 1-2 речення, конкретно."),
+            15: ("☀️ Порада на другу половину дня", "Олег вдома в середині дня. Дай одну ідею — що зробити для здоров'я або продуктивності наступні 2 години. Коротко і конкретно."),
+            20: ("🌙 Вечірня порада", "Вечір вільного дня Олега. 1-2 речення: коротка оцінка дня і одна порада перед сном (схуднення/здоров'я/фінанси). По суті, без загальних слів."),
         }
-        if today_shift == "free" and h in ai_slots and 0 <= m < 5:
+        if today_shift == "free" and h in ai_slots and 30 <= m < 35:
             akey = f"ai_tip_{h}"
             if not sent(akey):
                 label, prompt_text = ai_slots[h]
@@ -4055,7 +4057,7 @@ def check_morning_context():
 
     # Час відправки залежно від типу дня
     trigger = {"early": 5, "night": 10, "free": 8}.get(shift, 8)
-    if not (h == trigger and 0 <= m < 10):
+    if not (h == trigger and 0 <= m < 3):
         return
 
     try:
@@ -4095,16 +4097,43 @@ def check_morning_context():
         if gemini_key:
             try:
                 shift_labels = {"early": "рання зміна (06:00–18:00)", "night": "нічна зміна (18:00–06:00)", "free": "вихідний день"}
+                # Збираємо реальний контекст для AI
+                weight_ctx = ""
+                try:
+                    from storage import load_weight as _lw
+                    wdata = _lw()
+                    if wdata:
+                        last_key = sorted(wdata.keys())[-1]
+                        weight_ctx = f"Остання вага: {wdata[last_key]} кг (дата: {last_key})."
+                except Exception: pass
+
+                health_ctx = ""
+                try:
+                    from storage import load_health as _lh
+                    hdata = _lh()
+                    if hdata:
+                        last_hkey = sorted(hdata.keys())[-1]
+                        hd = hdata[last_hkey]
+                        parts = []
+                        if hd.get("steps"): parts.append(f"кроки {hd['steps']}")
+                        if hd.get("sleep_hours"): parts.append(f"сон {hd['sleep_hours']}г")
+                        if hd.get("hrv"): parts.append(f"HRV {hd['hrv']}")
+                        if parts: health_ctx = f"Здоров'я вчора: {', '.join(parts)}."
+                except Exception: pass
+
+                day_names = ['Пн','Вт','Ср','Чт','Пт','Сб','Нд']
                 prompt = (
-                    f"Сьогодні {['Пн','Вт','Ср','Чт','Пт','Сб','Нд'][now_local.weekday()]}, "
+                    f"Сьогодні {day_names[now_local.weekday()]} {now_local.strftime('%d.%m.%Y')}, "
                     f"{shift_labels.get(shift,'вихідний')}. "
-                    f"Дай Олегу одну конкретну мотиваційну пораду на сьогодні (1-2 речення) українською. "
-                    f"Враховуй: ціль схуднення 78 кг, інвестиції/крипто, біг. "
-                    f"Коротко, бадьоро, по суті."
+                    f"{weight_ctx} {health_ctx} "
+                    f"Погода зараз: {weather_short if weather_short else 'невідома'}. "
+                    f"Дай Олегу одну КОНКРЕТНУ і НОВУ мотиваційну пораду на СЬОГОДНІ (1-2 речення) українською. "
+                    f"Враховуй реальні цифри вище. Ціль: схуднення до 78 кг, регулярний біг, крипто-інвестиції. "
+                    f"Порада має бути про конкретну дію саме сьогодні, не загальну. Бадьоро, по суті."
                 )
                 payload = json.dumps({
                     "contents": [{"parts": [{"text": prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 120, "temperature": 0.9}
+                    "generationConfig": {"maxOutputTokens": 150, "temperature": 0.95}
                 }).encode()
                 req2 = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -4259,7 +4288,7 @@ def check_nutrition_reminder():
 
     # Рання зміна
     if shift == "early":
-        if h == 5 and 0 <= m < 10 and not already("breakfast"):
+        if h == 5 and 0 <= m < 3 and not already("breakfast"):
             send_telegram(
                 "🍳 <b>Сніданок!</b>\n\n"
                 "Перед ранньою зміною важливо поїсти — дасть енергію на всі 12г.\n"
@@ -4268,7 +4297,7 @@ def check_nutrition_reminder():
                 "<i>Не виходь голодним!</i>"
             )
             mark("breakfast")
-        elif h == 12 and 0 <= m < 10 and not already("lunch"):
+        elif h == 12 and 0 <= m < 3 and not already("lunch"):
             send_telegram(
                 "🥗 <b>Обід на зміні!</b>\n\n"
                 "Час поїсти — середина зміни.\n"
@@ -4277,7 +4306,7 @@ def check_nutrition_reminder():
                 "• Не забувай про воду 💧"
             )
             mark("lunch")
-        elif h == 19 and 0 <= m < 10 and not already("dinner"):
+        elif h == 19 and 0 <= m < 3 and not already("dinner"):
             send_telegram(
                 "🍽 <b>Вечеря!</b>\n\n"
                 "Зміна позаду — час поїсти.\n"
@@ -4311,7 +4340,7 @@ def check_nutrition_reminder():
 
     # Вихідний
     else:
-        if h == 9 and 0 <= m < 10 and not already("breakfast"):
+        if h == 9 and 0 <= m < 3 and not already("breakfast"):
             send_telegram(
                 "🌅 <b>Сніданок!</b>\n\n"
                 "Починаємо день правильно 💪\n"
@@ -4320,7 +4349,7 @@ def check_nutrition_reminder():
                 "<i>Ціль 78 кг: важливо що і коли їсти</i>"
             )
             mark("breakfast")
-        elif h == 13 and 0 <= m < 10 and not already("lunch"):
+        elif h == 13 and 0 <= m < 3 and not already("lunch"):
             send_telegram(
                 "🥗 <b>Обід!</b>\n\n"
                 "Час заправитись 🍽\n"
@@ -4329,7 +4358,7 @@ def check_nutrition_reminder():
                 "<i>Слідкуй за порціями → 78 кг реальні!</i>"
             )
             mark("lunch")
-        elif h == 19 and 0 <= m < 10 and not already("dinner"):
+        elif h == 19 and 0 <= m < 3 and not already("dinner"):
             send_telegram(
                 "🌙 <b>Вечеря!</b>\n\n"
                 "Якщо практикуєш 16:8 — це останній прийом їжі.\n"
@@ -4369,9 +4398,9 @@ def check_sleep_quality():
         shift = "free"
 
     trigger = None
-    if shift == "free" and h == 8 and 0 <= m < 10:
+    if shift == "free" and h == 8 and 0 <= m < 3:
         trigger = "free"
-    elif shift == "night" and h == 7 and 0 <= m < 10:
+    elif shift == "night" and h == 7 and 0 <= m < 3:
         trigger = "night"
 
     if not trigger:
@@ -4872,7 +4901,7 @@ def check_friday_recap():
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
 
-    if not (now_local.weekday() == 4 and h == 20 and 0 <= m < 10):
+    if not (now_local.weekday() == 4 and h == 20 and 0 <= m < 3):
         return
 
     state = load_json_file(FRIDAY_RECAP_FILE, default={})

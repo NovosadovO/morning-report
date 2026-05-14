@@ -202,15 +202,8 @@ def run_shift_reminder_watcher():
 
 
 def run_morning_brief_watcher():
-    """Ранковий брифінг о 7:00 — перевірка кожну хвилину."""
-    print("=== Starting morning brief watcher ===", flush=True)
-    time.sleep(70)
-    while True:
-        try:
-            _load_monitor().check_morning_brief()
-        except Exception as e:
-            print(f"Morning brief watcher error: {e}", flush=True)
-        time.sleep(60)
+    """DEPRECATED — замінено на check_morning_context. Нічого не робить."""
+    print("=== morning_brief_watcher DISABLED (replaced by morning_context) ===", flush=True)
 
 
 def run_crypto_alert_watcher():
