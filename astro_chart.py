@@ -2,8 +2,15 @@
 """
 Натальна карта + транзити. Висока чіткість, великі символи, читабельні аспекти.
 """
-import os, math, tempfile, warnings
+import os, math, tempfile, warnings, subprocess, sys
 warnings.filterwarnings("ignore")
+
+# Auto-install if missing (Railway runtime)
+for _pkg in ("numpy", "matplotlib"):
+    try:
+        __import__(_pkg)
+    except ImportError:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "--quiet", _pkg])
 
 import matplotlib
 matplotlib.use("Agg")
