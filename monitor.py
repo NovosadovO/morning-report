@@ -1214,8 +1214,9 @@ def check_new_emails():
                     text += f"\n📄 <b>Початок:</b> <i>{esc(preview)}...</i>"
 
             keyboard = {"inline_keyboard": [[
-                {"text": "🗑 Видалити", "callback_data": f"email_delete_{uid_str}"},
-                {"text": "📥 Залишити", "callback_data": f"email_keep_{uid_str}"},
+                {"text": "✍️ Відповісти", "callback_data": f"email_reply_{uid_str}"},
+                {"text": "📥 Залишити",   "callback_data": f"email_keep_{uid_str}"},
+                {"text": "🗑 Видалити",   "callback_data": f"email_delete_{uid_str}"},
             ]]}
 
             _send_telegram_text_with_keyboard(text, keyboard)
@@ -2212,6 +2213,108 @@ def check_morning_brief():
 
 PROACTIVE_FILE = os.path.join(_DATA_DIR, "monitor_proactive.json")
 
+
+def _ai_personal_message(situation: str, context: dict = None, max_tokens: int = 200) -> str:
+    """
+    Генерує реальне персоналізоване повідомлення через Gemini.
+    situation — опис ситуації (що відбувається).
+    context — словник з додатковими даними (вага, сон, кроки, зміна, тощо).
+    """
+    gemini_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+
+    # Збираємо реальний контекст
+    ctx_parts = []
+
+    # Вага
+    try:
+        from storage import load_weight as _lw
+        wd = _lw()
+        if wd:
+            last_key = sorted(wd.keys())[-1]
+            ctx_parts.append(f"Вага: {wd[last_key]} кг (ціль 78 кг, різниця {wd[last_key]-78:.1f} кг)")
+    except: pass
+
+    # Здоров'я
+    try:
+        from storage import load_health as _lhh
+        hd = _lhh()
+        if hd:
+            last_k = sorted(hd.keys())[-1]
+            h = hd[last_k]
+            parts_h = []
+            if h.get("steps"): parts_h.append(f"кроки {h['steps']}")
+            if h.get("sleep_hours"): parts_h.append(f"сон {h['sleep_hours']}г")
+            if h.get("hrv"): parts_h.append(f"HRV {h['hrv']}")
+            if parts_h: ctx_parts.append(f"Вчора ({last_k}): {', '.join(parts_h)}")
+    except: pass
+
+    # Звички за тиждень
+    try:
+        from habits import load_data as _lhab, HABITS as _HAB
+        from datetime import datetime as _dt, timezone as _tz, timedelta as _td
+        hab_data = _lhab()
+        now_l = _dt.now(_tz.utc) + _td(hours=2)
+        days7 = [(now_l - _td(days=i)).strftime("%Y-%m-%d") for i in range(6,-1,-1)]
+        run_count = sum(1 for d in days7 if hab_data.get(d,{}).get("run") is True)
+        if run_count is not None: ctx_parts.append(f"Пробіжки цього тижня: {run_count}/7")
+    except: pass
+
+    # Крипто (швидко)
+    try:
+        ids = "bitcoin,ethereum"
+        url_c = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd&include_24hr_change=true"
+        req_c = urllib.request.Request(url_c, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req_c, timeout=6) as r:
+            cd = json.loads(r.read())
+        btc_ch = cd.get("bitcoin", {}).get("usd_24h_change", 0)
+        eth_ch = cd.get("ethereum", {}).get("usd_24h_change", 0)
+        ctx_parts.append(f"Крипто: BTC {btc_ch:+.1f}%, ETH {eth_ch:+.1f}% за добу")
+    except: pass
+
+    # Додаткові дані з параметра
+    if context:
+        for k, v in context.items():
+            ctx_parts.append(f"{k}: {v}")
+
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    weekday_ua = ["понеділок","вівторок","середа","четвер","п'ятниця","субота","неділя"][now_local.weekday()]
+
+    profile = (
+        "Ти — персональний асистент Олега Новосадова (35 років, живе в Кошіце, Словаччина). "
+        "Олег: працює на заводі (змінна робота: рання 06-18 / нічна 18-06 / вихідний), "
+        "цілі — схуднути до 78 кг, регулярно бігати, інвестиції в крипто (BTC,ETH,AVAX,ONDO), "
+        "приймає ліки Armolopid щодня. "
+        "Спілкуйся як близький друг — природньо, по-українськи, без шаблонних фраз. "
+        "Твої повідомлення ЗАВЖДИ базуються на реальних даних вище, не вигадуй. "
+    )
+
+    prompt = (
+        f"{profile}\n\n"
+        f"Сьогодні {weekday_ua} {now_local.strftime('%d.%m.%Y')}, {now_local.strftime('%H:%M')}.\n"
+        f"Реальні дані:\n" + "\n".join(f"• {p}" for p in ctx_parts) + "\n\n"
+        f"Ситуація: {situation}\n\n"
+        f"Напиши коротке повідомлення (2-4 речення) з конкретними порадами/коментарями "
+        f"на основі реальних даних. Без загальних фраз типа 'тримай темп' чи 'все буде добре'. "
+        f"Тільки конкретика."
+    )
+
+    try:
+        payload = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.9}
+        }).encode()
+        req = urllib.request.Request(
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
+            data=payload, headers={"Content-Type": "application/json"}, method="POST"
+        )
+        with urllib.request.urlopen(req, timeout=15) as r:
+            resp = json.loads(r.read())
+        return resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+    except Exception as e:
+        print(f"_ai_personal_message error: {e}")
+        return ""
+
+
 def check_proactive_insights():
     """
     Ініціативні повідомлення на основі профілю Олега:
@@ -2291,56 +2394,79 @@ def check_proactive_insights():
     today_shift, today_shift_dt   = get_shift(today_events)
     tomorrow_shift, tomorrow_shift_dt = get_shift(tomorrow_events)
 
-    # ── 1. Ранкове привітання (08:00, вільний день) ───────────────────────────
+    # ── 1. Ранкове привітання з AI (08:00, вільний день) ─────────────────────
     if h == 8 and not today_shift and not already_sent("morning_free"):
-        tomorrow_note = ""
-        if tomorrow_shift == "early":
-            tomorrow_note = "\n\n⚡️ Завтра рання зміна — лягай спати вчасно!"
-        elif tomorrow_shift == "night":
-            tomorrow_note = "\n\n🌙 Завтра нічна зміна — відпочинь вдень."
-
         weekday_names = ["Понеділок","Вівторок","Середа","Четвер","П'ятниця","Субота","Неділя"]
         day_name = weekday_names[dow]
+        tomorrow_ctx = ""
+        if tomorrow_shift == "early":
+            tomorrow_ctx = " Завтра рання зміна — врахуй при плануванні вечора."
+        elif tomorrow_shift == "night":
+            tomorrow_ctx = " Завтра нічна зміна — варто відпочити вдень."
 
-        # Мотивація залежно від дня
-        if dow == 0:  # Понеділок
-            motivation = "💪 Новий тиждень — нові можливості! Сьогодні:\n• 📈 Навчання інвестиціям\n• 💹 Чек крипто та портфель\n• 🏃 Пробіжка якщо дозволяє погода"
-        elif dow == 4:  # П'ятниця
-            motivation = "🎉 П'ятниця! Заплануй активний вікенд:\n• 🏃 Пробіжка або спорт\n• 📊 Аналіз тижня — крипто та інвестиції\n• 😴 Відпочинок — теж інвестиція"
-        elif dow == 6:  # Неділя
-            motivation = "🌿 Неділя — день відновлення та планування:\n• 📝 Плани на тиждень\n• ⚖️ Зважся та запиши результат\n• 🧘 Відпочинок і підзарядка"
-        else:
-            motivation = "✨ Гарний день для розвитку:\n• 📈 Навчання + крипто-аналіз\n• 🏃 Фізична активність\n• 📚 Читання або курси"
+        # Отримуємо реальні події календаря
+        cal_events_str = ""
+        try:
+            cal_text = get_calendar()
+            if cal_text and "немає" not in cal_text.lower():
+                cal_events_str = cal_text
+        except: pass
 
-        send_telegram(f"🌅 <b>Доброго ранку, {day_name}!</b>\n\n{motivation}{tomorrow_note}")
+        # Погода
+        weather_str = ""
+        try:
+            weather_str = get_weather().split("\n")[0]
+        except: pass
+
+        ai_msg = _ai_personal_message(
+            f"Вільний ранок — {day_name}. {tomorrow_ctx}",
+            context={
+                "Календар сьогодні": cal_events_str[:200] if cal_events_str else "порожній",
+                "Погода": weather_str or "невідома",
+            }
+        )
+        header = f"🌅 <b>Доброго ранку, {day_name}!</b>\n\n"
+        if weather_str:
+            header += f"🌤 {weather_str}\n\n"
+        if cal_events_str and "немає" not in cal_events_str.lower()[:50]:
+            header += f"📅 {cal_events_str[:200]}\n\n"
+        if ai_msg:
+            header += f"🤖 {ai_msg}"
+        send_telegram(header)
         mark_sent("morning_free")
 
     # ── 2. Нагадування перед ранньою зміною (04:00) ───────────────────────────
     if h == 4 and today_shift == "early" and not already_sent("pre_early_shift"):
-        send_telegram(
-            "⏰ <b>Рання зміна через 1 годину!</b>\n\n"
-            "☀️ Час прокидатись — зміна о 05:00\n"
-            "☕ Випий воду та сніданок\n"
-            "🎯 Гарної зміни!"
+        # Погода на ранок
+        weather_str = ""
+        try:
+            weather_str = get_weather().split("\n")[0]
+        except: pass
+        ai_msg = _ai_personal_message(
+            "Олег прокидається перед ранньою зміною о 04:00. Зміна о 06:00.",
+            context={"Погода": weather_str or "невідома"}
         )
+        msg = f"⏰ <b>Рання зміна о 06:00!</b>"
+        if weather_str:
+            msg += f"\n🌤 {weather_str}"
+        if ai_msg:
+            msg += f"\n\n{ai_msg}"
+        send_telegram(msg)
         mark_sent("pre_early_shift")
 
     # ── 3. Нагадування перед нічною зміною (15:00) ────────────────────────────
     if h == 15 and today_shift == "night" and not already_sent("pre_night_shift"):
-        send_telegram(
-            "🌙 <b>Нічна зміна через 2 години!</b>\n\n"
-            "• Постарайся трохи відпочити\n"
-            "• Поїж нормально перед зміною\n"
-            "• Візьми перекус на ніч\n"
-            "💪 Гарної зміни!"
+        ai_msg = _ai_personal_message(
+            "Нічна зміна починається о 18:00. Зараз 15:00 — час підготуватися."
         )
+        msg = f"🌙 <b>Нічна зміна о 18:00</b>\nЛишилось 3 години."
+        if ai_msg:
+            msg += f"\n\n{ai_msg}"
+        send_telegram(msg)
         mark_sent("pre_night_shift")
 
-    # ── 4. Після нічної зміни (06:00 — зміна закінчується о 05:00) ───────────
-    # Перевіряємо чи вчора була нічна зміна
-    yesterday = (now_local - timedelta(days=1)).strftime("%Y-%m-%d")
+    # ── 4. Після нічної зміни (06:00) ─────────────────────────────────────────
     if h == 6 and not already_sent("post_night_shift"):
-        # Перевіряємо вчорашній календар
         try:
             creds_data = json.loads(creds_json) if creds_json else None
             if creds_data:
@@ -2359,73 +2485,106 @@ def check_proactive_insights():
                     yest_events = json.loads(r.read()).get("items", [])
                 had_night = any("нічна" in e.get("summary","").lower() for e in yest_events)
                 if had_night:
-                    send_telegram(
-                        "😴 <b>Нічна зміна завершена!</b>\n\n"
-                        "Час додому і відпочивати 🛏\n"
-                        "• Поїж і лягай спати\n"
-                        "• Усі справи — після пробудження\n\n"
-                        "Добре відпочинь! 💤"
+                    # Що сьогодні в календарі
+                    today_cal = ""
+                    try: today_cal = get_calendar()
+                    except: pass
+                    ai_msg = _ai_personal_message(
+                        "Нічна зміна щойно закінчилась (06:00). Олег їде додому.",
+                        context={"Сьогодні в календарі": today_cal[:200] if today_cal else "порожньо"}
                     )
+                    msg = "😴 <b>Нічна зміна завершена!</b>\n\nЧас додому 🛏"
+                    if ai_msg:
+                        msg += f"\n\n{ai_msg}"
+                    send_telegram(msg)
                     mark_sent("post_night_shift")
         except Exception as e:
             print(f"post_night check error: {e}")
 
-    # ── 5. Тижневий підсумок ваги (неділя 20:00) ─────────────────────────────
+    # ── 5. Тижневий підсумок ваги (неділя 20:00) з AI аналізом ──────────────
     if dow == 6 and h == 20 and not already_sent("weekly_weight"):
         try:
             weight_data = load_json_file(os.path.join(_DATA_DIR, "weight.json"), default={})
             if weight_data:
                 sorted_w = sorted(weight_data.items())
-                last_entries = sorted_w[-7:]  # останні 7 записів
+                last_entries = sorted_w[-7:]
                 if last_entries:
                     last_date, last_w = last_entries[-1]
-                    first_date, first_w = sorted_w[0]
-                    total_change = last_w - first_w
                     recent_change = last_w - last_entries[0][1] if len(last_entries) > 1 else 0
-                    target = 78.0  # ціль
-                    to_goal = last_w - target
-
+                    to_goal = last_w - 78.0
                     trend = "📉" if recent_change < -0.2 else "📈" if recent_change > 0.2 else "➡️"
+
+                    # AI аналіз тренду
+                    weight_history = ", ".join(f"{d}:{w}кг" for d, w in last_entries[-5:])
+                    ai_msg = _ai_personal_message(
+                        f"Тижневий підсумок ваги. Остання: {last_w} кг, зміна за тиждень: {recent_change:+.1f} кг, до цілі: {to_goal:.1f} кг.",
+                        context={"Динаміка": weight_history}
+                    )
                     msg = (
                         f"⚖️ <b>Тижневий підсумок ваги</b>\n\n"
-                        f"Поточна: <b>{last_w} кг</b> ({last_date})\n"
+                        f"Зараз: <b>{last_w} кг</b> ({last_date})\n"
                         f"{trend} За тиждень: {recent_change:+.1f} кг\n"
-                        f"До цілі (78 кг): <b>{to_goal:.1f} кг</b>\n\n"
+                        f"До цілі 78 кг: <b>{to_goal:.1f} кг</b>\n"
                     )
-                    if to_goal > 5:
-                        msg += "💪 Тримай режим харчування та активність!"
-                    elif to_goal > 2:
-                        msg += "🎯 Вже близько! Продовжуй у тому ж темпі."
-                    else:
-                        msg += "🏆 Майже ціль! Ти молодець!"
+                    if ai_msg:
+                        msg += f"\n{ai_msg}"
                     send_telegram(msg)
                     mark_sent("weekly_weight")
         except Exception as e:
             print(f"weekly weight error: {e}")
 
-    # ── 6. Мотивація до бігу (вт/чт/сб о 09:00 якщо вільний) ────────────────
+    # ── 6. Нагадування про пробіжку (вт/чт/сб о 09:00 вільний) з реальною погодою
     if h == 9 and dow in (1, 3, 5) and not today_shift and not already_sent("run_motivation"):
-        day_names = {1:"вівторок", 3:"четвер", 5:"субота"}
-        send_telegram(
-            f"🏃 <b>Час для пробіжки!</b>\n\n"
-            f"Сьогодні {day_names[dow]} — ідеальний день для бігу.\n"
-            f"• 20-30 хвилин легкого бігу\n"
-            f"• Потом — сніданок і навчання\n\n"
-            f"Вперед! 💨"
+        weather_str = ""
+        try:
+            weather_str = get_weather().split("\n")[0]
+        except: pass
+        ai_msg = _ai_personal_message(
+            "Добрий ранок вільного дня — час для пробіжки (09:00).",
+            context={"Погода зараз": weather_str or "невідома"}
         )
+        msg = f"🏃 <b>Час для пробіжки!</b>"
+        if weather_str:
+            msg += f"\n🌤 {weather_str}"
+        if ai_msg:
+            msg += f"\n\n{ai_msg}"
+        send_telegram(msg)
         mark_sent("run_motivation")
 
-    # ── 7. Щопонеділковий огляд цілей (пн 09:00, вільний) ────────────────────
+    # ── 7. Понеділок — реальний огляд тижня (пн 09:00, вільний) ─────────────
     if h == 9 and dow == 0 and not today_shift and not already_sent("monday_goals"):
-        send_telegram(
-            "🎯 <b>Понеділок — огляд цілей тижня</b>\n\n"
-            "Нагадую твої основні цілі:\n"
-            "💰 Фінансова незалежність — вчись щодня\n"
-            "⚖️ Схуднення до 78 кг — слідкуй за харчуванням\n"
-            "💼 Нова робота в інвестиціях — нетворкінг та розвиток\n"
-            "🏃 Активний спосіб життя — біг та спорт\n\n"
-            "Що зробиш цього тижня для кожної цілі? 💪"
+        # Реальний тижневий контекст
+        cal_next = ""
+        try:
+            creds_data = json.loads(creds_json) if creds_json else None
+            if creds_data:
+                token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+                tmin = now_local.replace(hour=0,minute=0,second=0,microsecond=0)
+                tmax = tmin + timedelta(days=7)
+                url = (
+                    f"https://www.googleapis.com/calendar/v3/calendars/novosadovoleg%40gmail.com/events"
+                    f"?timeMin={urllib.parse.quote(tmin.isoformat())}"
+                    f"&timeMax={urllib.parse.quote(tmax.isoformat())}"
+                    f"&singleEvents=true&orderBy=startTime&maxResults=15"
+                )
+                req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
+                with urllib.request.urlopen(req, timeout=10) as r:
+                    week_events = json.loads(r.read()).get("items", [])
+                shifts = [e.get("summary","") for e in week_events if "зміна" in e.get("summary","").lower()]
+                other = [e.get("summary","") for e in week_events if "зміна" not in e.get("summary","").lower()]
+                cal_next = f"{len(shifts)} змін, інші події: {', '.join(other[:3])}" if other else f"{len(shifts)} змін"
+        except: pass
+
+        ai_msg = _ai_personal_message(
+            "Понеділок — початок тижня. Огляд цілей і планування.",
+            context={"Календар тижня": cal_next or "не завантажено"}
         )
+        msg = f"🎯 <b>Понеділок — план тижня</b>"
+        if cal_next:
+            msg += f"\n📅 {cal_next}"
+        if ai_msg:
+            msg += f"\n\n{ai_msg}"
+        send_telegram(msg)
         mark_sent("monday_goals")
 
 
@@ -3069,35 +3228,39 @@ def check_day_summary():
         pass
 
     # ── AI персональний підсумок ──────────────────────────────────────────────
-    gemini_key = os.environ.get("GEMINI_API_KEY","")
-    if gemini_key:
+    try:
+        # Збираємо контекст для AI
+        extra_ctx = {
+            "Звички сьогодні": f"{done_count}/{total_h}"
+        }
         try:
-            habit_summary = f"звички {done_count}/{total_h}"
-            w_info = ""
-            try:
-                if wdata:
-                    lw_keys = sorted(wdata.keys())
-                    if lw_keys:
-                        w_info = f", вага {wdata[lw_keys[-1]]} кг (ціль 78)"
-            except Exception: pass
+            shift_s = get_shift_from_calendar()
+            tom_shift = shift_s.get("tomorrow", "free")
+            extra_ctx["Зміна завтра"] = tom_shift
+        except Exception: pass
+        try:
+            cal_events = get_calendar()
+            if cal_events:
+                # Беремо тільки завтрашні події
+                tom_str = (now_local + timedelta(days=1)).strftime("%Y-%m-%d")
+                tom_events = [e for e in cal_events if e.get("date","").startswith(tom_str)]
+                if tom_events:
+                    extra_ctx["Події завтра"] = "; ".join(e.get("summary","?") for e in tom_events[:3])
+        except Exception: pass
 
-            prompt = (
-                f"Олег сьогодні ({day_name}): {habit_summary}{w_info}. "
-                f"Дай ДУЖЕ короткий вечірній підсумок (1-2 речення) + одна порада на завтра. "
-                f"Тон: підтримуючий і конкретний."
-            )
-            payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":150,"temperature":0.8}}).encode()
-            req = urllib.request.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-                data=payload, headers={"Content-Type":"application/json"}, method="POST"
-            )
-            with urllib.request.urlopen(req, timeout=15) as r:
-                resp = json.loads(r.read())
-            ai_text = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+        ai_text = _ai_personal_message(
+            f"Вечір {day_name}а, Олег закінчує день. "
+            f"Зроби короткий підсумок дня на основі реальних даних (2-3 речення): "
+            f"оціни звички, прогрес по вазі, і дай одну конкретну пораду на завтра. "
+            f"Без загальних фраз, тільки факти і конкретика.",
+            extra_ctx,
+            max_tokens=200
+        )
+        if ai_text:
             lines_out.append(f"🤖 <i>{ai_text}</i>")
             lines_out.append("")
-        except Exception as e:
-            print(f"day summary AI error: {e}")
+    except Exception as e:
+        print(f"day summary AI error: {e}")
 
     lines_out.append("━━━━━━━━━━━━━━━━━━━━━━")
     lines_out.append("🌙 Гарного відпочинку!")
@@ -3858,7 +4021,7 @@ def check_smart_notifications():
         # ── 1. ПІДЙОМ ПЕРЕД РАННЬОЮ (04:30) ───────────────────────────────
         if today_shift == "early" and h == 4 and 30 <= m < 35 and not sent("pre_early"):
             # Погода швидко
-            weather_line = ""
+            weather_ctx = ""
             try:
                 wkey = os.environ.get("WEATHER_API_KEY","")
                 if wkey:
@@ -3868,64 +4031,65 @@ def check_smart_notifications():
                         wd = json.loads(r.read())
                     temp = round(wd["main"]["temp"])
                     desc = wd["weather"][0]["description"]
-                    weather_line = f"\n🌤 Надворі {temp}°C, {desc}"
+                    weather_ctx = f"{temp}°C, {desc}"
             except Exception: pass
 
-            send_telegram(
-                f"⏰ <b>ПІДЙОМ! Рання зміна через 1.5г</b>\n"
-                f"━━━━━━━━━━━━━━━━\n"
-                f"✅ Сніданок — не пропускай!\n"
-                f"💊 Armolopid Plus\n"
-                f"👟 Зручне взуття{weather_line}\n\n"
-                f"<i>💪 Ти можеш — до роботи!</i>"
+            ai_txt = _ai_personal_message(
+                "Олег прокидається о 04:30 на ранню зміну (06:00–18:00). "
+                "Нагадай про сніданок, ліки Armolopid, підбадьори конкретно на основі реальних даних.",
+                {"Погода в Кошіце": weather_ctx} if weather_ctx else None,
+                max_tokens=180
             )
+            header = "⏰ <b>ПІДЙОМ! Рання зміна о 06:00</b>\n━━━━━━━━━━━━━━━━\n"
+            send_telegram(header + (ai_txt or "💊 Armolopid + сніданок — і вперед!"))
             mark("pre_early")
 
         # ── 2. ПІСЛЯ РАННЬОЇ (18:15) ───────────────────────────────────────
         elif today_shift == "early" and h == 18 and 15 <= m < 20 and not sent("post_early"):
-            # Прогрес по звичках
-            habit_hint = ""
+            habits_ctx = ""
             try:
                 from storage import load_habits as _lh
                 db = _lh()
-                td = db.get(today, {})
-                done = sum(1 for k in ["run","water","shower","tea"] if td.get(k) is True)
-                habit_hint = f"\n\n📊 Звички сьогодні: {done}/4 — відміть решту!"
+                td_habits = db.get(today, {})
+                done = sum(1 for k in ["run","water","shower","tea"] if td_habits.get(k) is True)
+                habits_ctx = f"{done}/4 звичок виконано сьогодні"
             except Exception: pass
 
-            send_telegram(
-                f"🏠 <b>Рання зміна завершена! Молодець 💪</b>\n"
-                f"━━━━━━━━━━━━━━━━\n"
-                f"⚖️ Зважся — запиши вагу\n"
-                f"🏃 Є сили на пробіжку?\n"
-                f"✅ Відміть звички /звички{habit_hint}\n\n"
-                f"<i>🌙 Вечір твій — використай добре!</i>"
+            ai_txt = _ai_personal_message(
+                "Олег тільки що прийшов додому після ранньої зміни (06:00–18:00). "
+                "Запитай про вагу (зважитись), порадь чи варто бігти зараз, "
+                "оціни день конкретно на основі даних. 2-3 речення, по суті.",
+                {"Звички сьогодні": habits_ctx} if habits_ctx else None,
+                max_tokens=200
             )
+            header = "🏠 <b>Рання зміна завершена!</b>\n━━━━━━━━━━━━━━━━\n"
+            send_telegram(header + (ai_txt or "Зважся та відміть звички /звички"))
             mark("post_early")
 
         # ── 3. ПІДГОТОВКА ДО НІЧНОЇ (16:30) ──────────────────────────────
         elif today_shift == "night" and h == 16 and 30 <= m < 35 and not sent("pre_night"):
-            send_telegram(
-                f"🌙 <b>Нічна зміна через 1.5г</b>\n"
-                f"━━━━━━━━━━━━━━━━\n"
-                f"🍽 Поїж зараз — наступний раз о 06:00\n"
-                f"💊 Armolopid Plus\n"
-                f"☕️ Кава або чай — заряд на ніч\n"
-                f"😴 Хоча б 20 хв відпочинку\n\n"
-                f"<i>⚡️ Хорошої зміни!</i>"
+            ai_txt = _ai_personal_message(
+                "Олег готується до нічної зміни (18:00–06:00), старт через 1.5 години. "
+                "Нагадай поїсти зараз (до 06:00 не буде можливості), прийняти Armolopid, "
+                "коротко підбадьори. Дуже конкретно, 2-3 речення.",
+                None,
+                max_tokens=180
             )
+            header = "🌙 <b>Нічна зміна через 1.5г</b>\n━━━━━━━━━━━━━━━━\n"
+            send_telegram(header + (ai_txt or "🍽 Поїж зараз + 💊 Armolopid. Хорошої зміни!"))
             mark("pre_night")
 
         # ── 4. ПІСЛЯ НІЧНОЇ (06:15) ───────────────────────────────────────
         elif today_shift == "night" and h == 6 and 15 <= m < 20 and not sent("post_night"):
-            send_telegram(
-                f"😴 <b>Нічна завершена — ДОДОМУ!</b>\n"
-                f"━━━━━━━━━━━━━━━━\n"
-                f"🍳 Поїж щось легке перед сном\n"
-                f"📵 Телефон в сторону — сон критичний\n"
-                f"✅ Звички запишеш після сну\n\n"
-                f"<i>💪 Ти відробив ніч — заслужений відпочинок!</i>"
+            ai_txt = _ai_personal_message(
+                "Олег тільки що закінчив нічну зміну (18:00–06:00) і йде додому. "
+                "Скажи йому легко поїсти, лягти спати, не гортати телефон — конкретно і коротко. "
+                "Оціни його зусилля на основі реальних даних (вага, звички). 2-3 речення.",
+                None,
+                max_tokens=180
             )
+            header = "😴 <b>Нічна завершена — ДОДОМУ!</b>\n━━━━━━━━━━━━━━━━\n"
+            send_telegram(header + (ai_txt or "🍳 Легкий сніданок і спати. Телефон відклади — сон важливіший."))
             mark("post_night")
 
         # ── 5. AI ПОРАДА (11:00, 15:00, 20:30 — вільний день)

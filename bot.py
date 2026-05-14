@@ -256,7 +256,8 @@ def get_meds_report(period="week"):
 
 
 def handle_email_callback(callback_query):
-    """Обробляє кнопки 'Видалити' / 'Залишити' для листів."""
+    """Обробляє кнопки 'Видалити' / 'Залишити' / 'Відповісти' для листів."""
+    import json as _json
     data    = callback_query.get("data", "")
     msg_id  = callback_query["message"]["message_id"]
     chat_id = callback_query["message"]["chat"]["id"]
@@ -273,26 +274,75 @@ def handle_email_callback(callback_query):
                 api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "🗑 Лист видалено"})
             else:
                 api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "⚠️ Не вдалось видалити"})
-            # Прибираємо кнопки незалежно від результату видалення
-            r = api("editMessageReplyMarkup", {
+            api("editMessageReplyMarkup", {
                 "chat_id": chat_id,
                 "message_id": msg_id,
                 "reply_markup": {"inline_keyboard": []}
             })
-            print(f"[btn] editReplyMarkup delete resp: {str(r)[:200]}")
         except Exception as e:
             print(f"email_delete error: {e}")
             api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"Помилка: {e}"})
 
     elif data.startswith("email_keep_"):
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📥 Залишено в скриньці"})
-        # Прибираємо кнопки
-        r = api("editMessageReplyMarkup", {
+        api("editMessageReplyMarkup", {
             "chat_id": chat_id,
             "message_id": msg_id,
             "reply_markup": {"inline_keyboard": []}
         })
-        print(f"[btn] editReplyMarkup keep resp: {str(r)[:200]}")
+
+    elif data.startswith("email_reply_"):
+        # Генеруємо AI draft відповіді
+        uid_str = data[len("email_reply_"):]
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "✍️ Готую draft..."})
+        try:
+            import sys, os as _os, urllib.request as _ur
+            sys.path.insert(0, _os.path.dirname(__file__))
+            from monitor import _imap_connect, _imap_get_body, _imap_decode_header
+            import email as _email_lib
+
+            mail = _imap_connect()
+            mail.select("INBOX")
+            _, msg_data = mail.uid('fetch', uid_str.encode(), "(RFC822)")
+            mail.logout()
+
+            if msg_data and msg_data[0]:
+                msg = _email_lib.message_from_bytes(msg_data[0][1])
+                subject = _imap_decode_header(msg.get("Subject", ""))
+                sender  = _imap_decode_header(msg.get("From", ""))
+                body    = _imap_get_body(msg)
+
+                # AI draft
+                api_key = _os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+                prompt = (
+                    f"Ти пишеш від імені Олега Новосадова (новосадовоleg@gmail.com).\n"
+                    f"Напиши КОРОТКИЙ і природній draft відповіді на цей лист.\n"
+                    f"Від: {sender}\nТема: {subject}\n\n{body[:2000]}\n\n"
+                    f"Відповідь українською, по-людськи, не формально. 3-6 речень максимум."
+                )
+                payload = _json.dumps({
+                    "contents": [{"parts": [{"text": prompt}]}],
+                    "generationConfig": {"maxOutputTokens": 300, "temperature": 0.85}
+                }).encode()
+                req = _ur.Request(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}",
+                    data=payload, headers={"Content-Type": "application/json"}
+                )
+                with _ur.urlopen(req, timeout=20) as r:
+                    resp = _json.loads(r.read())
+                draft = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+
+                send(chat_id,
+                    f"✍️ <b>Draft відповіді</b>\n"
+                    f"<i>Кому: {sender[:50]}\nТема: Re: {subject[:50]}</i>\n\n"
+                    f"<code>{draft}</code>\n\n"
+                    f"<i>📋 Скопіюй і відредагуй за потреби</i>"
+                )
+            else:
+                send(chat_id, "⚠️ Не вдалось завантажити лист")
+        except Exception as e:
+            print(f"email_reply error: {e}")
+            send(chat_id, f"⚠️ Помилка генерації draft: {e}")
 
 
 def handle_reminder_callback(callback_query):
@@ -1151,6 +1201,39 @@ def handle_command(chat_id, text):
 
     elif text in ["/астро", "астро"]:
         try:
+            send(chat_id, "⏳ Будую карту...")
+            # 1. Надсилаємо зображення натальної карти + транзитів
+            try:
+                from astro_chart import generate_natal_chart
+                import tempfile, os as _os
+                chart_path = generate_natal_chart()
+                if chart_path and _os.path.exists(chart_path):
+                    with open(chart_path, 'rb') as f:
+                        img_bytes = f.read()
+                    import urllib.request as _ur
+                    boundary = b"----boundary"
+                    body = (
+                        b"------boundary\r\n"
+                        b'Content-Disposition: form-data; name="chat_id"\r\n\r\n' +
+                        str(chat_id).encode() + b"\r\n"
+                        b"------boundary\r\n"
+                        b'Content-Disposition: form-data; name="photo"; filename="chart.png"\r\n'
+                        b"Content-Type: image/png\r\n\r\n" +
+                        img_bytes + b"\r\n"
+                        b"------boundary--\r\n"
+                    )
+                    req = _ur.Request(
+                        f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
+                        data=body,
+                        headers={"Content-Type": "multipart/form-data; boundary=----boundary"}
+                    )
+                    with _ur.urlopen(req, timeout=30) as r:
+                        pass
+                    try: _os.unlink(chart_path)
+                    except: pass
+            except Exception as ce:
+                print(f"[astro] chart send error: {ce}")
+            # 2. Текстовий звіт
             from astro import get_astro_report
             send(chat_id, get_astro_report())
         except Exception as e:
@@ -1502,7 +1585,7 @@ def main():
                                     send(chat_id, "Немає даних. Введи /зд [кроки] [сон] [ЧСС] [кал] [score]")
                             except Exception as e:
                                 send(chat_id, f"⚠️ {e}")
-                        elif data.startswith("email_delete_") or data.startswith("email_keep_"):
+                        elif data.startswith("email_delete_") or data.startswith("email_keep_") or data.startswith("email_reply_"):
                             handle_email_callback(cb)
                         elif data.startswith("reminder_"):
                             handle_reminder_callback(cb)
