@@ -1,7 +1,7 @@
 providers = ["python"]
 
 [phases.setup]
-nixPkgs = ["gcc", "libffi", "openssl"]
+nixPkgs = ["gcc", "libffi", "openssl", "zlib", "freetype", "pkg-config"]
 
 [phases.install]
 cmds = [
@@ -9,8 +9,9 @@ cmds = [
   "pip install --no-cache-dir cryptography",
   "pip install --no-cache-dir google-auth google-auth-httplib2 google-api-python-client",
   "pip install --no-cache-dir requests",
-  "pip install --no-cache-dir kerykeion || echo 'kerykeion optional, skip'",
-  "pip install --no-cache-dir matplotlib || echo 'matplotlib optional, skip'"
+  "pip install --no-cache-dir numpy",
+  "pip install --no-cache-dir matplotlib",
+  "pip install --no-cache-dir kerykeion || echo 'kerykeion optional, skip'"
 ]
 
 [start]
