@@ -4183,26 +4183,33 @@ def check_run_coach():
 
     is_free_day = today_shift == "free"
 
-    # Нагадування Пн/Ср/Пт о 09:30 якщо вихідний
+    # Нагадування тільки у вихідний день (не рання і не нічна зміна)
+    # Час: якщо рання зміна сьогодні — не бігати (він на роботі)
+    #       вихідний — нагадування після обіду о 13:00 якщо не бігав сьогодні
+    #       або вранці о 09:30 у пн/ср/пт
     run_key_day = f"run_coach_{today}"
-    if is_free_day and dow in (0, 2, 4) and h == 9 and 30 <= m < 35 and not state.get(run_key_day):
+
+    if not is_free_day:
+        return  # зміна — не чіпаємо
+
+    # Варіант 1: вранці пн/ср/пт о 09:30
+    if dow in (0, 2, 4) and h == 9 and 30 <= m < 35 and not state.get(run_key_day):
         plans = [
             "🏃 <b>День бігу!</b>\n\nПлан: 20-30 хв легкий біг.\n• Розминка 5 хв ходьба\n• Темп розмовний (можеш говорити)\n• Заминка 5 хв ходьба\n\n💪 Навіть 2 км — це прогрес!",
             "🏃 <b>Час бігти!</b>\n\nСьогодні: 25-35 хв.\n• Перші 10 хв повільно\n• Середина — комфортний темп\n• Останні 5 хв — трохи швидше\n\n🔥 Кожне тренування = -калорії = ближче до 78 кг!",
             "🏃 <b>Пробіжка!</b>\n\nЦього тижня скільки разів бігав? Якщо 0-1 — сьогодні обов'язково!\n• 20 хв — мінімум\n• Повітря + рух = настрій на весь день\n\n🎯 Ціль: 3 тренування/тиждень",
         ]
-        import random
         send_telegram(plans[dow % 3])
         state[run_key_day] = True
         save_json_file(RUN_COACH_FILE, state)
         return
 
-    # Якщо 3+ дні без бігу — нагадування о 17:00 будь-якого вільного дня
+    # Варіант 2: якщо 3+ дні без бігу — нагадування після обіду о 13:00 у вихідний
     run_alert_key = f"run_alert_{today}"
-    if days_without >= 3 and is_free_day and h == 17 and 0 <= m < 5 and not state.get(run_alert_key):
+    if days_without >= 3 and h == 13 and 0 <= m < 5 and not state.get(run_alert_key):
         send_telegram(
             f"🏃 <b>{days_without} днів без пробіжки!</b>\n\n"
-            f"Ще не пізно — 20 хв бігу сьогодні ввечері?\n"
+            f"Сьогодні вихідний — гарний момент для 20 хв бігу після обіду!\n"
             f"Настрій гарантований 💪\n\n"
             f"<i>Ціль 78 кг — кожне тренування рахується!</i>"
         )
@@ -4640,7 +4647,19 @@ def check_calendar_live():
     if not creds_json:
         return
 
-    state = load_json_file(CALENDAR_CONTEXT_FILE, default={})
+    # Стан зберігаємо в GitHub щоб не дублювати після редеплою
+    try:
+        import storage as _storage
+        state = _storage.load("calendar_context.json", default={})
+    except Exception:
+        state = load_json_file(CALENDAR_CONTEXT_FILE, default={})
+
+    def _save_state(s):
+        try:
+            import storage as _storage
+            _storage.save("calendar_context.json", s)
+        except Exception:
+            save_json_file(CALENDAR_CONTEXT_FILE, s)
 
     try:
         creds_data = json.loads(creds_json)
@@ -4662,6 +4681,7 @@ def check_calendar_live():
         with urllib.request.urlopen(req, timeout=10) as r:
             events = json.loads(r.read()).get("items", [])
 
+        changed = False
         for ev in events:
             summary = ev.get("summary", "(без назви)")
             # Пропускаємо зміни та автоматичні події
@@ -4687,7 +4707,7 @@ def check_calendar_live():
                     f"🕐 Початок о {dt_local.strftime('%H:%M')}"
                 )
                 state[ev_key_15] = True
-                save_json_file(CALENDAR_CONTEXT_FILE, state)
+                changed = True
 
             # Тільки що почалась (0–3 хв)
             elif 0 <= mins_until <= 3 and not state.get(ev_key_now):
@@ -4696,7 +4716,10 @@ def check_calendar_live():
                     f"🕐 {dt_local.strftime('%H:%M')}"
                 )
                 state[ev_key_now] = True
-                save_json_file(CALENDAR_CONTEXT_FILE, state)
+                changed = True
+
+        if changed:
+            _save_state(state)
 
     except Exception as e:
         print(f"check_calendar_live error: {e}")
