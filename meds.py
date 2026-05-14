@@ -6,8 +6,9 @@
 Кінець: 2026-07-27 (рівно 3 місяці)
 
 Розклад нагадувань:
-  - Рання зміна (є в Calendar) → 12:30–13:30
-  - Вихідний / нічна / немає змін → 09:00–12:00
+  - Рання зміна → 05:00, повтор 07:00
+  - Нічна зміна → 17:10, повтор 19:10
+  - Вихідний    → 11:00, повтор 13:00
 
 Ключові дати:
   - 2026-07-13 (за 2 тижні) → нагадування: здай аналізи ДО відміни
@@ -86,14 +87,30 @@ def save_meds(db):
 
 def load_sent():
     try:
-        with open(MEDS_SENT) as f:
-            return json.load(f)
-    except:
-        return {}
+        import sys as _sys; _sys.path.insert(0, _DIR)
+        from storage import load_meds_sent as _ls
+        return _ls()
+    except Exception as e:
+        print(f"load_sent error: {e}")
+        try:
+            with open(MEDS_SENT) as f:
+                return json.load(f)
+        except:
+            return {}
 
 def save_sent(s):
-    with open(MEDS_SENT, "w") as f:
-        json.dump(s, f)
+    try:
+        import sys as _sys; _sys.path.insert(0, _DIR)
+        from storage import save_meds_sent as _ss
+        _ss(s)
+    except Exception as e:
+        print(f"save_sent error: {e}")
+    # також локально як backup
+    try:
+        with open(MEDS_SENT, "w") as f:
+            json.dump(s, f)
+    except:
+        pass
 
 def days_into_course():
     start = datetime.strptime(MEDS_START, "%Y-%m-%d")
@@ -251,12 +268,15 @@ def check_meds_reminder():
     cur_min = h * 60 + m
 
     if shift == "early":
-        first_time  = 9 * 60       # 09:00
-        second_time = 19 * 60      # 19:00
+        first_time  = 5 * 60           # 05:00
+        second_time = 7 * 60           # 07:00 (повтор)
+    elif shift == "night":
+        first_time  = 17 * 60 + 10     # 17:10
+        second_time = 19 * 60 + 10     # 19:10 (повтор)
     else:
-        # weekend / night / невідомо
-        first_time  = 11 * 60      # 11:00
-        second_time = 18 * 60      # 18:00
+        # weekend / невідомо
+        first_time  = 11 * 60          # 11:00
+        second_time = 13 * 60          # 13:00 (повтор)
 
     # ── Перше нагадування ──────────────────────────────────────────────
     remind_key = f"meds_remind_{today}"

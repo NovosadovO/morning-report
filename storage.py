@@ -132,6 +132,12 @@ def load_meds():
 def save_meds(data):
     return _save_github("meds.json", data)
 
+def load_meds_sent():
+    return _load_github("meds_sent.json") or {}
+
+def save_meds_sent(data):
+    return _save_github("meds_sent.json", data)
+
 def load_weight():
     data = _load_github("weight.json")
     if not data:
