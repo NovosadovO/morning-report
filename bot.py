@@ -653,6 +653,25 @@ def handle_health_zip(chat_id, doc):
 
         is_apple_health = any("export.xml" in n for n in names)
         is_hae = any(n.startswith("HealthAutoExport-") and n.endswith(".csv") for n in names)
+        # StepsApp ZIP: містить CSV файли з крапкою з комою, без export.xml
+        is_stepsapp = (
+            not is_apple_health and not is_hae and
+            any(n.endswith(".csv") for n in names) and
+            not any("HealthAutoExport" in n for n in names)
+        )
+
+        if is_stepsapp:
+            # StepsApp export
+            send(chat_id, "👟 Знайдено StepsApp export — парсю...")
+            try:
+                import sys as _sys, os as _os
+                _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+                import steps as _steps
+                result = _steps.parse_zip(zip_bytes)
+                send(chat_id, result)
+            except Exception as _se:
+                send(chat_id, f"❌ Помилка парсингу StepsApp: {_se}")
+            return
 
         if is_apple_health:
             # Apple Health export
@@ -974,6 +993,13 @@ HELP_TEXT = """
 /зд м — місячний health звіт
 /зд [кроки] [сон] [ЧСС] [кал] [score] — записати
 
+<b>👟 Кроки (StepsApp)</b>
+Надішли ZIP з StepsApp — збережу автоматично
+/кроки — підсумок кроків сьогодні
+/кроки тиждень — тижневий звіт з графіком
+/кроки місяць — місячний звіт з графіком
+/пробіжки — історія пробіжок
+
 <b>💊 Ліки</b>
 /ліки — Armolopid Plus за тиждень
 /ліки місяць — за місяць
@@ -1178,6 +1204,45 @@ def handle_command(chat_id, text):
         try:
             from weight import format_weekly_weight_report
             send(chat_id, format_weekly_weight_report())
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    # ─── КРОКИ (StepsApp) ──────────────────────────────────────────────────────
+    elif text in ["/кроки", "кроки"]:
+        try:
+            import sys as _sys, os as _os
+            _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+            import steps as _steps
+            send(chat_id, _steps.get_steps_summary())
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif text in ["/кроки тиждень", "кроки тиждень", "/кт"]:
+        send(chat_id, "⏳ Готую тижневий звіт кроків...")
+        try:
+            import sys as _sys, os as _os
+            _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+            import steps as _steps
+            _steps.send_weekly_report()
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif text in ["/кроки місяць", "кроки місяць", "/км"]:
+        send(chat_id, "⏳ Готую місячний звіт кроків...")
+        try:
+            import sys as _sys, os as _os
+            _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+            import steps as _steps
+            _steps.send_monthly_report()
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif text in ["/пробіжки", "пробіжки"]:
+        try:
+            import sys as _sys, os as _os
+            _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+            import steps as _steps
+            _steps.send_run_history()
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 

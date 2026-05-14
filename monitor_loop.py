@@ -742,6 +742,55 @@ def run_proactive_watcher():
 
 threading.Thread(target=run_proactive_watcher, daemon=True).start()
 
+
+def run_steps_watcher():
+    """StepsApp сповіщення + тижневий/місячний звіт кроків."""
+    print("=== Starting steps watcher ===", flush=True)
+    time.sleep(220)
+    import importlib.util, os as _os
+    spec = importlib.util.spec_from_file_location(
+        "steps", _os.path.join(_os.path.dirname(__file__), "steps.py"))
+    _steps_mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(_steps_mod)
+
+    _sent_weekly  = None   # дата (YYYY-Www) останнього тижневого
+    _sent_monthly = None   # дата (YYYY-MM)  останнього місячного
+
+    while True:
+        try:
+            now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+            h, m = now_local.hour, now_local.minute
+            weekday = now_local.weekday()  # 0=Mon, 6=Sun
+
+            # Щоденні сповіщення — кожну хвилину
+            _steps_mod.check_steps_notifications()
+
+            # Тижневий звіт — щонеділі о 20:00
+            week_key = now_local.strftime("%Y-W%W")
+            if weekday == 6 and h == 20 and m < 5 and _sent_weekly != week_key:
+                print(f"[Steps] Sending weekly report...", flush=True)
+                _steps_mod.send_weekly_report()
+                _sent_weekly = week_key
+                time.sleep(360)
+                continue
+
+            # Місячний звіт — 1-го числа о 10:00
+            month_key = now_local.strftime("%Y-%m")
+            if now_local.day == 1 and h == 10 and m < 5 and _sent_monthly != month_key:
+                print(f"[Steps] Sending monthly report...", flush=True)
+                _steps_mod.send_monthly_report()
+                _sent_monthly = month_key
+                time.sleep(360)
+                continue
+
+        except Exception as e:
+            print(f"Steps watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+threading.Thread(target=run_steps_watcher, daemon=True).start()
+
+
 # ─── Webhook сервер в окремому thread ────────────────────────────────────────
 def run_webhook_server():
     """Запускає health_webhook.py HTTP сервер в окремому thread."""
