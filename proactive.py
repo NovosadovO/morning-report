@@ -212,14 +212,13 @@ def _already_sent(slot: str) -> bool:
 # ─── TELEGRAM ─────────────────────────────────────────────────────────────────
 
 def _send_chunk(text: str):
-    """Надсилає один шматок тексту (до 4090 символів)."""
+    """Надсилає один шматок тексту (до 4090 символів). Без parse_mode — Gemini може генерувати невалідний HTML."""
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT:
         print(f"[proactive] {text}")
         return
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,
         "text": text,
-        "parse_mode": "HTML"
     }).encode()
     req = urllib.request.Request(
         f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage",
@@ -523,7 +522,7 @@ def check_proactive():
         slot, prompt = _check_calendar_event_proactive(ctx, state, now)
 
     if slot and prompt and not _already_sent(slot):
-        answer = _ask_gemini(prompt, system, max_tokens=450)
+        answer = _ask_gemini(prompt, system, max_tokens=300)
         if answer and not answer.startswith("⚠️"):
             _send(answer)
             _mark_sent(slot)

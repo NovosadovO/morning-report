@@ -721,17 +721,20 @@ threading.Thread(target=run_planet_ingress_watcher, daemon=True).start()
 
 
 def run_proactive_watcher():
-    """Проактивні повідомлення від бота — кожні 30 хвилин."""
+    """Проактивні повідомлення від бота — кожні 30 хвилин.
+    Модуль завантажується ОДИН РАЗ щоб _SENT_INMEM не скидався між викликами.
+    """
     print("=== Starting proactive watcher (every 30min) ===", flush=True)
     time.sleep(210)  # чекаємо 3.5 хв після старту
+    import importlib.util, os as _os
+    # Завантажуємо один раз — in-memory стан зберігається
+    spec = importlib.util.spec_from_file_location(
+        "proactive", _os.path.join(_os.path.dirname(__file__), "proactive.py"))
+    _proactive_mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(_proactive_mod)
     while True:
         try:
-            import importlib.util, os as _os
-            spec = importlib.util.spec_from_file_location(
-                "proactive", _os.path.join(_os.path.dirname(__file__), "proactive.py"))
-            mod = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(mod)
-            mod.check_proactive()
+            _proactive_mod.check_proactive()
         except Exception as e:
             print(f"Proactive watcher error: {e}", flush=True)
         time.sleep(1800)  # 30 хвилин
