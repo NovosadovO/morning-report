@@ -1232,7 +1232,10 @@ def handle_command(chat_id, text):
                     try: _os.unlink(chart_path)
                     except: pass
             except Exception as ce:
+                import traceback
                 print(f"[astro] chart send error: {ce}")
+                traceback.print_exc()
+                send(chat_id, f"⚠️ Не вдалося згенерувати карту: {ce}")
             # 2. Текстовий звіт
             from astro import get_astro_report
             send(chat_id, get_astro_report())
