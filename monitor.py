@@ -1046,8 +1046,8 @@ def _gemini_email_analysis(full_text: str) -> dict:
         "generationConfig": {"maxOutputTokens": 400, "temperature": 0.5}
     }).encode()
 
-    # Спробуємо спочатку gemini-2.5-flash, потім fallback на gemini-2.0-flash
-    models = ["gemini-2.5-flash", "gemini-2.0-flash"]
+    # Спробуємо спочатку gemini-2.5-flash, потім fallback на gemini-2.5-flash
+    models = ["gemini-2.5-flash", "gemini-2.5-flash"]
     for model in models:
         try:
             print(f"[email AI] trying model={model} text_len={len(full_text)}")
@@ -2350,7 +2350,7 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
             "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.9}
         }).encode()
         req = urllib.request.Request(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
             data=payload, headers={"Content-Type": "application/json"}, method="POST"
         )
         with urllib.request.urlopen(req, timeout=15) as r:

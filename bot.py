@@ -330,7 +330,7 @@ def handle_email_callback(callback_query):
                     "generationConfig": {"maxOutputTokens": 300, "temperature": 0.85}
                 }).encode()
                 req = _ur.Request(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}",
                     data=payload, headers={"Content-Type": "application/json"}
                 )
                 with _ur.urlopen(req, timeout=20) as r:
