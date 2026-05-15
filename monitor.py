@@ -3267,6 +3267,17 @@ def check_day_summary():
     except Exception:
         pass
 
+    # ── QWatch Pro ────────────────────────────────────────────────────────────
+    try:
+        import sys as _sys; _sys.path.insert(0, os.path.dirname(__file__))
+        from qwatch import format_day_block as _qw_block
+        qw = _qw_block(today)
+        if qw:
+            lines_out.append(qw)
+            lines_out.append("")
+    except Exception as _e:
+        print(f"day summary qwatch error: {_e}")
+
     # ── AI персональний підсумок ──────────────────────────────────────────────
     try:
         # Збираємо контекст для AI

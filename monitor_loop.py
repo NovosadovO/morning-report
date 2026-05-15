@@ -866,6 +866,28 @@ def run_steps_watcher():
 threading.Thread(target=run_steps_watcher, daemon=True).start()
 
 
+# ─── QWatch watcher ───────────────────────────────────────────────────────────
+def run_qwatch_watcher():
+    """QWatch: нагадування о 19:02, тижневий (нд 20:30), місячний (1-го 09:05)."""
+    print("=== Starting QWatch watcher ===", flush=True)
+    time.sleep(70)
+    while True:
+        try:
+            import importlib.util, os as _os
+            spec = importlib.util.spec_from_file_location(
+                "qwatch", _os.path.join(_os.path.dirname(__file__), "qwatch.py"))
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            mod.check_qwatch_reminder()
+            mod.check_qwatch_weekly()
+            mod.check_qwatch_monthly()
+        except Exception as e:
+            print(f"QWatch watcher error: {e}", flush=True)
+        time.sleep(60)
+
+threading.Thread(target=run_qwatch_watcher, daemon=True).start()
+
+
 # ─── Webhook сервер в окремому thread ────────────────────────────────────────
 def run_webhook_server():
     """Запускає health_webhook.py HTTP сервер в окремому thread."""

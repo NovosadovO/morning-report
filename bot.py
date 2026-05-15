@@ -1055,6 +1055,12 @@ HELP_TEXT = """
 /кроки місяць — місячний звіт з графіком
 /пробіжки — історія пробіжок
 
+<b>⌚ QWatch Pro</b>
+Надішли текст з QWatch Pro — збережу автоматично
+/qwatch — дані за сьогодні
+/qwatch тиждень — тижневий звіт
+/qwatch місяць — місячний звіт
+
 <b>💊 Ліки</b>
 /ліки — Armolopid Plus за тиждень
 /ліки місяць — за місяць
@@ -1416,6 +1422,34 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}\nФормат: /здоров'я [кроки] [сон] [ЧСС] [калорії]")
 
+    elif text in ["/qwatch", "qwatch", "/qs"]:
+        try:
+            from qwatch import report_weekly, _load
+            from datetime import datetime, timezone, timedelta
+            today = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+            db = _load()
+            if today in db:
+                from qwatch import format_day_block
+                send(chat_id, format_day_block(today) or "QWatch: немає даних за сьогодні.")
+            else:
+                send(chat_id, "⌚ Даних QWatch за сьогодні ще немає.\nНадішли текст з QWatch Pro.")
+        except Exception as e:
+            send(chat_id, f"⚠️ {e}")
+
+    elif text in ["/qwatch тиждень", "qwatch тиждень", "/qст", "qст"]:
+        try:
+            from qwatch import report_weekly
+            send(chat_id, report_weekly())
+        except Exception as e:
+            send(chat_id, f"⚠️ {e}")
+
+    elif text in ["/qwatch місяць", "qwatch місяць", "/qм", "qм"]:
+        try:
+            from qwatch import report_monthly
+            send(chat_id, report_monthly())
+        except Exception as e:
+            send(chat_id, f"⚠️ {e}")
+
     elif text in ["/забути", "забути", "/clear", "/скинути"]:
         from context import clear_history
         clear_history()
@@ -1444,6 +1478,19 @@ def handle_command(chat_id, text):
             send(chat_id, f"⚠️ {e}")
 
     else:
+        # Розпізнавання тексту QWatch Pro
+        raw_text = msg.get("text", "") if isinstance(msg, dict) else text
+        if "health score" in raw_text.lower() or ("hrv" in raw_text.lower() and "сон" in raw_text.lower()):
+            try:
+                api("sendChatAction", {"chat_id": chat_id, "action": "typing"})
+                from qwatch import parse_and_save, send_confirmation
+                record = parse_and_save(raw_text)
+                send_confirmation(record)
+                return
+            except Exception as e:
+                send(chat_id, f"⚠️ QWatch помилка: {e}")
+                return
+
         # Спроба розпізнати вагу (число типу 82 або 82.5)
         try:
             kg = float(text.replace(",", "."))
