@@ -477,9 +477,10 @@ def run():
         # Питання про сон о 8:00
         sleep_key = f"{today}_sleep_q"
         if not sent.get(sleep_key) and now.hour == SLEEP_HOUR and SLEEP_MINUTE <= now.minute < SLEEP_MINUTE + 5:
-            send_sleep_question()
+            # Зберігаємо ПЕРЕД надсиланням — захист від дублювання
             sent[sleep_key] = True
             save_sent(sent)
+            send_sleep_question()
 
         # Нагадування про біг — о 17:30 якщо ще не відмітив
         run_key_done = f"{today}_run"
@@ -487,18 +488,20 @@ def run():
         if (not sent.get(run_remind_key) and
                 now.hour == 17 and 30 <= now.minute < 35 and
                 load_data().get(today, {}).get("run") is not True):
+            # Зберігаємо ПЕРЕД надсиланням
+            sent[run_remind_key] = True
+            save_sent(sent)
             api("sendMessage", {
                 "chat_id": TELEGRAM_CHAT,
                 "text": "🏃 <b>Ще не бігав сьогодні!</b>\nЗалишилось кілька годин — саме час 💪",
                 "parse_mode": "HTML"
             })
-            sent[run_remind_key] = True
-            save_sent(sent)
 
         # Нагадування перед нічною зміною — о 16:00 (за 2г до 18:00)
         night_pre_key = f"{today}_night_pre"
         if (not sent.get(night_pre_key) and now.hour == 16 and now.minute >= 0 and now.minute < 5):
-            # Перевіряємо чи є нічна зміна сьогодні — просто надсилаємо якщо понеділок-неділя
+            sent[night_pre_key] = True  # save ПЕРЕД send
+            save_sent(sent)
             api("sendMessage", {
                 "chat_id": TELEGRAM_CHAT,
                 "text": (
@@ -510,12 +513,12 @@ def run():
                 ),
                 "parse_mode": "HTML"
             })
-            sent[night_pre_key] = True
-            save_sent(sent)
 
         # Нагадування після нічної зміни — о 07:00
         night_post_key = f"{today}_night_post"
         if (not sent.get(night_post_key) and now.hour == 7 and now.minute >= 0 and now.minute < 5):
+            sent[night_post_key] = True  # save ПЕРЕД send
+            save_sent(sent)
             api("sendMessage", {
                 "chat_id": TELEGRAM_CHAT,
                 "text": (
@@ -526,13 +529,13 @@ def run():
                 ),
                 "parse_mode": "HTML"
             })
-            sent[night_post_key] = True
-            save_sent(sent)
 
         # Тижневий звіт ліків — щонеділі о 20:40
         meds_weekly_key = f"meds_weekly_{today}"
         if (now.weekday() == 6 and now.hour == 20 and 40 <= now.minute < 45
                 and not sent.get(meds_weekly_key)):
+            sent[meds_weekly_key] = True  # save ПЕРЕД send
+            save_sent(sent)
             try:
                 import sys, os as _os
                 sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
@@ -542,8 +545,6 @@ def run():
                     "text": get_meds_report("week"),
                     "parse_mode": "HTML"
                 })
-                sent[meds_weekly_key] = True
-                save_sent(sent)
             except Exception as e:
                 print(f"Meds weekly report error: {e}")
 
@@ -552,6 +553,8 @@ def run():
         if next_day2.month != now.month and now.hour == 21 and 5 <= now.minute < 10:
             mkey2 = f"meds_monthly_{now.strftime('%Y-%m')}"
             if not sent.get(mkey2):
+                sent[mkey2] = True  # save ПЕРЕД send
+                save_sent(sent)
                 try:
                     from bot import get_meds_report
                     api("sendMessage", {
@@ -559,8 +562,6 @@ def run():
                         "text": get_meds_report("month"),
                         "parse_mode": "HTML"
                     })
-                    sent[mkey2] = True
-                    save_sent(sent)
                 except Exception as e:
                     print(f"Meds monthly report error: {e}")
 
@@ -568,6 +569,8 @@ def run():
         weight_weekly_key = f"weight_weekly_{today}"
         if (now.weekday() == 6 and now.hour == 20 and 35 <= now.minute < 40
                 and not sent.get(weight_weekly_key)):
+            sent[weight_weekly_key] = True  # save ПЕРЕД send
+            save_sent(sent)
             try:
                 from weight import format_weekly_weight_report
                 api("sendMessage", {
@@ -575,8 +578,6 @@ def run():
                     "text": format_weekly_weight_report(),
                     "parse_mode": "HTML"
                 })
-                sent[weight_weekly_key] = True
-                save_sent(sent)
             except Exception as e:
                 print(f"Weight weekly report error: {e}")
 
@@ -584,13 +585,13 @@ def run():
         if now.weekday() == 6 and now.hour == 18 and 45 <= now.minute < 50:
             sunday_key = f"sunday_summary_{today}"
             if not sent.get(sunday_key):
+                sent[sunday_key] = True  # save ПЕРЕД send
+                save_sent(sent)
                 try:
                     import sys, os as _os
                     sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
                     from weekly_report import send_weekly_report
                     send_weekly_report()
-                    sent[sunday_key] = True
-                    save_sent(sent)
                 except Exception as e:
                     print(f"Sunday summary error: {e}")
 
@@ -598,20 +599,26 @@ def run():
         if now.weekday() == 6 and now.hour == 20 and 30 <= now.minute < 35:
             wkey = f"weekly_{today}"
             if not sent.get(wkey):
-                weekly_report()
-                sent[wkey] = True
+                sent[wkey] = True  # save ПЕРЕД send
                 save_sent(sent)
+                try:
+                    weekly_report()
+                except Exception as e:
+                    print(f"Weekly report error: {e}")
 
         # Місячний звіт — останній день місяця о 21:00
         next_day = (now + timedelta(days=1))
-        if next_day.month != now.month and now.hour == 21:
+        if next_day.month != now.month and now.hour == 21 and 0 <= now.minute < 5:
             mkey = f"monthly_{now.strftime('%Y-%m')}"
             if not sent.get(mkey):
-                monthly_report()
-                sent[mkey] = True
+                sent[mkey] = True  # save ПЕРЕД send
                 save_sent(sent)
+                try:
+                    monthly_report()
+                except Exception as e:
+                    print(f"Monthly report error: {e}")
 
-        time.sleep(30)  # перевіряємо кожні 30 секунд
+        time.sleep(60)  # перевіряємо кожні 60 секунд (було 30)
 
 
 if __name__ == "__main__":
