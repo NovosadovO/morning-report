@@ -2481,71 +2481,11 @@ def check_proactive_insights():
         send_telegram(header)
         mark_sent("morning_free")
 
-    # ── 2. Нагадування перед ранньою зміною (04:00) ───────────────────────────
-    if h == 4 and today_shift == "early" and not already_sent("pre_early_shift"):
-        # Погода на ранок
-        weather_str = ""
-        try:
-            weather_str = get_weather().split("\n")[0]
-        except: pass
-        ai_msg = _ai_personal_message(
-            "Олег прокидається перед ранньою зміною о 04:00. Зміна о 06:00.",
-            context={"Погода": weather_str or "невідома"}
-        )
-        msg = f"⏰ <b>Рання зміна о 06:00!</b>"
-        if weather_str:
-            msg += f"\n🌤 {weather_str}"
-        if ai_msg:
-            msg += f"\n\n{ai_msg}"
-        send_telegram(msg)
-        mark_sent("pre_early_shift")
+    # ── 2 & 3. Нагадування перед зміною — перенесено в check_smart_notifications
+    #    (04:30 рання, 16:30 нічна) щоб уникнути дублювання
 
-    # ── 3. Нагадування перед нічною зміною (15:00) ────────────────────────────
-    if h == 15 and today_shift == "night" and not already_sent("pre_night_shift"):
-        ai_msg = _ai_personal_message(
-            "Нічна зміна починається о 18:00. Зараз 15:00 — час підготуватися."
-        )
-        msg = f"🌙 <b>Нічна зміна о 18:00</b>\nЛишилось 3 години."
-        if ai_msg:
-            msg += f"\n\n{ai_msg}"
-        send_telegram(msg)
-        mark_sent("pre_night_shift")
-
-    # ── 4. Після нічної зміни (06:00) ─────────────────────────────────────────
-    if h == 6 and not already_sent("post_night_shift"):
-        try:
-            creds_data = json.loads(creds_json) if creds_json else None
-            if creds_data:
-                token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
-                yest = now_local - timedelta(days=1)
-                tmin = yest.replace(hour=0,minute=0,second=0,microsecond=0)
-                tmax = tmin + timedelta(hours=24)
-                url = (
-                    f"https://www.googleapis.com/calendar/v3/calendars/novosadovoleg%40gmail.com/events"
-                    f"?timeMin={urllib.parse.quote(tmin.isoformat())}"
-                    f"&timeMax={urllib.parse.quote(tmax.isoformat())}"
-                    f"&singleEvents=true&maxResults=10"
-                )
-                req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
-                with urllib.request.urlopen(req, timeout=10) as r:
-                    yest_events = json.loads(r.read()).get("items", [])
-                had_night = any("нічна" in e.get("summary","").lower() for e in yest_events)
-                if had_night:
-                    # Що сьогодні в календарі
-                    today_cal = ""
-                    try: today_cal = get_calendar()
-                    except: pass
-                    ai_msg = _ai_personal_message(
-                        "Нічна зміна щойно закінчилась (06:00). Олег їде додому.",
-                        context={"Сьогодні в календарі": today_cal[:200] if today_cal else "порожньо"}
-                    )
-                    msg = "😴 <b>Нічна зміна завершена!</b>\n\nЧас додому 🛏"
-                    if ai_msg:
-                        msg += f"\n\n{ai_msg}"
-                    send_telegram(msg)
-                    mark_sent("post_night_shift")
-        except Exception as e:
-            print(f"post_night check error: {e}")
+    # ── 4. Після нічної зміни — перенесено в check_smart_notifications (06:15)
+    #    щоб уникнути дублювання
 
     # ── 5. Тижневий підсумок ваги (неділя 20:00) з AI аналізом ──────────────
     if dow == 6 and h == 20 and not already_sent("weekly_weight"):

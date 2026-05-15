@@ -404,23 +404,9 @@ def check_proactive():
             f"Одне коротке питання в кінці. Без зайвого пафосу."
         )
 
-    # ── Перед зміною (рання: нагадування о 05:15, нічна: о 17:00) ───────────
-    elif status == "pre_shift" and not _already_sent("pre_shift_reminder"):
-        slot = "pre_shift_reminder"
-        shift = ctx.get("shift_today", "free")
-        if shift == "early":
-            prompt = (
-                f"Олег зараз готується до ранньої зміни (починається о 06:00). "
-                f"Зараз {now.strftime('%H:%M')}. "
-                f"Нагадай коротко: взяти ліки (Armolopid Plus), поїсти/каву, "
-                f"і щось підбадьорливе. 2-3 речення максимум."
-            )
-        else:
-            prompt = (
-                f"Олег готується до нічної зміни (починається о 18:00). "
-                f"Зараз {now.strftime('%H:%M')}. "
-                f"Нагадай коротко взяти ліки, поїсти перед зміною, підбадьор. 2-3 речення."
-            )
+    # ── Перед зміною — відключено (дублює check_smart_notifications)
+    elif False and status == "pre_shift" and not _already_sent("pre_shift_reminder"):
+        slot = None  # відключено
 
     # ── Обідній check-in (12:00–13:00, тільки вдома/вільний день) ───────────
     elif 12 <= h < 13 and status in ("home", "post_shift") and not _already_sent("midday_checkin"):
