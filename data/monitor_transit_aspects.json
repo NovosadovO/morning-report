@@ -6,8 +6,8 @@
   },
   "moon__pluto__180": {
     "orb": 1.46,
-    "sent": true,
-    "event": "enter"
+    "sent": false,
+    "exact_sent": false
   },
   "venus__moon__0": {
     "orb": 0.95,
