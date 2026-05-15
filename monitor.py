@@ -3053,6 +3053,59 @@ def check_event_done():
 
 DAY_SUMMARY_FILE = os.path.join(_DATA_DIR, "monitor_day_summary.json")
 
+_DAY_SUMMARY_GH_URL = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/day_summary_sent.json"
+
+def _day_summary_gh_check(date_str):
+    """Повертає True якщо підсумок вже надіслано сьогодні (GitHub dedup)."""
+    import base64
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
+    if not gh_token:
+        return False
+    req = urllib.request.Request(_DAY_SUMMARY_GH_URL, headers={
+        "Authorization": f"token {gh_token}",
+        "User-Agent": "morning-report-bot"
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=8) as r:
+            d = json.loads(r.read())
+            content = json.loads(base64.b64decode(d["content"]).decode())
+            return content.get("last") == date_str
+    except Exception:
+        return False
+
+def _day_summary_gh_mark(date_str):
+    """Зберігає дату підсумку на GitHub."""
+    import base64
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
+    if not gh_token:
+        return
+    # Get current SHA
+    sha = None
+    req = urllib.request.Request(_DAY_SUMMARY_GH_URL, headers={
+        "Authorization": f"token {gh_token}",
+        "User-Agent": "morning-report-bot"
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=8) as r:
+            sha = json.loads(r.read()).get("sha")
+    except Exception:
+        pass
+    content = base64.b64encode(json.dumps({"last": date_str}, indent=2).encode()).decode()
+    body = json.dumps({
+        "message": f"dedup: day summary sent {date_str}",
+        "content": content,
+        **({"sha": sha} if sha else {})
+    }).encode()
+    req2 = urllib.request.Request(_DAY_SUMMARY_GH_URL, data=body, headers={
+        "Authorization": f"token {gh_token}",
+        "Content-Type": "application/json",
+        "User-Agent": "morning-report-bot"
+    }, method="PUT")
+    try:
+        urllib.request.urlopen(req2, timeout=8)
+    except Exception as e:
+        print(f"_day_summary_gh_mark error: {e}")
+
 def check_day_summary():
     """
     🌙 RICH DAY SUMMARY — о 21:00 щодня.
@@ -3064,9 +3117,9 @@ def check_day_summary():
     if not (h == 21 and 0 <= m < 3):
         return
 
-    state = load_json_file(DAY_SUMMARY_FILE, default={})
     today = now_local.strftime("%Y-%m-%d")
-    if state.get("last") == today:
+    # GitHub dedup (survives Railway restarts)
+    if _day_summary_gh_check(today):
         return
 
     DAY_UA = ["Понеділок","Вівторок","Середа","Четвер","П'ятниця","Субота","Неділя"]
@@ -3252,10 +3305,10 @@ def check_day_summary():
     lines_out.append("━━━━━━━━━━━━━━━━━━━━━━")
     lines_out.append("🌙 Гарного відпочинку!")
 
+    # Save-before-send (GitHub) — prevents duplicate on Railway restart
+    _day_summary_gh_mark(today)
     send_telegram("\n".join(lines_out))
     print(f"Day summary sent: {today}")
-    state["last"] = today
-    save_json_file(DAY_SUMMARY_FILE, state)
 
 
 def check_traffic_before_shift():
