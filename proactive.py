@@ -462,22 +462,7 @@ def check_proactive():
             f"Питання про плани на завтра. Одне питання, дружньо."
         )
 
-    # ── Нагадування про воду (кожен день о 10:00 і 15:00) — вікно 10 хвилин ──
-    elif h == 10 and 0 <= m < 10 and status in ("home", "post_shift") and not _already_sent("water_reminder_10"):
-        slot = "water_reminder_10"
-        prompt = (
-            f"Зараз {now.strftime('%H:%M')}. Просто коротке нагадування Олегу — "
-            f"чи він пив воду сьогодні? Ціль 2л на день. "
-            f"Додай щось коротке про здоров'я або самопочуття. 1-2 речення."
-        )
-
-    elif h == 15 and 0 <= m < 10 and status in ("home", "post_shift", "working_early", "working_night") and not _already_sent("water_reminder_15"):
-        slot = "water_reminder_15"
-        prompt = (
-            f"Зараз {now.strftime('%H:%M')}. Нагадування про воду — "
-            f"2л на день це важливо особливо при схудненні (ціль 78 кг). "
-            f"Коротко і з турботою. 1-2 речення."
-        )
+    # ── Нагадування про воду — ВИДАЛЕНО (обробляється check_water_reminder() в monitor.py) ──
 
     # ── Нагадування про ліки (якщо ще не прийняв, о 8:00–10:00) ─────────────
     elif 8 <= h < 10 and not _already_sent("meds_reminder"):

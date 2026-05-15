@@ -467,17 +467,56 @@ def run_astro_watcher():
     time.sleep(120)
 
     def _send_astro(label):
-        import importlib, urllib.request, json as _json, os as _os
-        import astro as _astro_mod
+        import importlib, urllib.request, urllib.parse, json as _json, os as _os, tempfile
+        import astro as _astro_mod, astro_chart as _chart_mod
         importlib.reload(_astro_mod)
-        report = _astro_mod.get_astro_report()
+        importlib.reload(_chart_mod)
         token = _os.environ.get("TELEGRAM_TOKEN", "")
         chat  = _os.environ.get("TELEGRAM_CHAT_ID", "")
-        url   = f"https://api.telegram.org/bot{token}/sendMessage"
-        payload = _json.dumps({"chat_id": chat, "text": report, "parse_mode": "HTML"}).encode()
-        req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
-        urllib.request.urlopen(req, timeout=15)
-        print(f"Astro report sent [{label}]", flush=True)
+
+        # 1. Generate chart image
+        chart_path = None
+        try:
+            chart_path = _chart_mod.generate_natal_chart()
+        except Exception as e:
+            print(f"Chart generation failed: {e}", flush=True)
+
+        # 2. Send chart image (sendPhoto) if available
+        if chart_path and _os.path.exists(chart_path):
+            try:
+                boundary = "----TelegramBoundary"
+                with open(chart_path, "rb") as f:
+                    img_data = f.read()
+                body = (
+                    f"--{boundary}\r\n"
+                    f'Content-Disposition: form-data; name="chat_id"\r\n\r\n{chat}\r\n'
+                    f"--{boundary}\r\n"
+                    f'Content-Disposition: form-data; name="photo"; filename="astro_chart.png"\r\n'
+                    f"Content-Type: image/png\r\n\r\n"
+                ).encode() + img_data + f"\r\n--{boundary}--\r\n".encode()
+                photo_url = f"https://api.telegram.org/bot{token}/sendPhoto"
+                req2 = urllib.request.Request(
+                    photo_url, data=body,
+                    headers={"Content-Type": f"multipart/form-data; boundary={boundary}"}
+                )
+                urllib.request.urlopen(req2, timeout=30)
+                print(f"Astro chart image sent [{label}]", flush=True)
+            except Exception as e:
+                print(f"Chart send failed: {e}", flush=True)
+            finally:
+                try: _os.unlink(chart_path)
+                except: pass
+
+        # 3. Send text report as separate message
+        report = _astro_mod.get_astro_report()
+        # Split if > 4000 chars (Telegram limit)
+        chunks = [report[i:i+4000] for i in range(0, len(report), 4000)]
+        msg_url = f"https://api.telegram.org/bot{token}/sendMessage"
+        for chunk in chunks:
+            payload = _json.dumps({"chat_id": chat, "text": chunk, "parse_mode": "HTML"}).encode()
+            req3 = urllib.request.Request(msg_url, data=payload, headers={"Content-Type": "application/json"})
+            urllib.request.urlopen(req3, timeout=15)
+        print(f"Astro report text sent [{label}]", flush=True)
 
     while True:
         try:
