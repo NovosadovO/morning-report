@@ -1886,14 +1886,21 @@ def check_calendar_reminders():
                 events = json.loads(r.read()).get("items", [])
 
         new_reminded = list(reminded)
+        sent_this_run = set()  # дедуплікація по summary+start в межах одного запуску
         for ev in events:
             ev_id   = ev.get("id", "")
             summary = ev.get("summary", "(без назви)")
             start   = ev["start"].get("dateTime") or ev["start"].get("date")
             reminder_key = f"1h_{ev_id}_{start}"
+            content_key  = f"1h_content_{summary}_{start}"  # захист від дублів по змісту
 
             if reminder_key in reminded:
                 continue
+            if content_key in sent_this_run:
+                print(f"Duplicate content skipped: {summary} at {start}")
+                new_reminded.append(reminder_key)
+                continue
+            sent_this_run.add(content_key)
 
             try:
                 dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
@@ -1969,13 +1976,20 @@ def check_shift_reminders():
                 events = json.loads(r.read()).get("items", [])
 
         new_reminded = list(reminded)
+        sent_this_run_2h = set()  # дедуплікація по summary+start
         for ev in events:
             summary = ev.get("summary", "(без назви)")
             ev_id = ev.get("id", "")
             start = ev["start"].get("dateTime") or ev["start"].get("date")
-            key   = f"2h_{ev_id}_{start}"
+            key          = f"2h_{ev_id}_{start}"
+            content_key  = f"2h_content_{summary}_{start}"
             if key in reminded:
                 continue
+            if content_key in sent_this_run_2h:
+                print(f"2h duplicate content skipped: {summary} at {start}")
+                new_reminded.append(key)
+                continue
+            sent_this_run_2h.add(content_key)
 
             # визначаємо час
             try:
