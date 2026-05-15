@@ -1839,11 +1839,43 @@ def main():
     if summary_text:
         parts.append(summary_text)
 
-    report = SEP.join(parts)
+    # Розбиваємо на повідомлення по секціях щоб не обрізати HTML теги
+    MAX_MSG = 4000
+    messages = []
+    current_msg = ""
+    for section in parts:
+        candidate = current_msg + (SEP if current_msg else "") + section
+        if len(candidate) <= MAX_MSG:
+            current_msg = candidate
+        else:
+            if current_msg:
+                messages.append(current_msg)
+            # Якщо одна секція сама > MAX — ріжемо по рядках (fallback)
+            if len(section) > MAX_MSG:
+                chunk = ""
+                for line in section.split("\n"):
+                    c2 = chunk + ("\n" if chunk else "") + line
+                    if len(c2) <= MAX_MSG:
+                        chunk = c2
+                    else:
+                        if chunk:
+                            messages.append(chunk)
+                        chunk = line
+                if chunk:
+                    messages.append(chunk)
+            else:
+                current_msg = section
+    if current_msg:
+        messages.append(current_msg)
 
-    sent = send_telegram(report)
-    print(f"=== Report {'sent' if sent else 'FAILED'} ===")
-    # Claim вже записаний до відправки — нічого більше не потрібно
+    import time as _time_main
+    ok = True
+    for i, msg in enumerate(messages):
+        if i > 0:
+            _time_main.sleep(0.5)
+        if not send_telegram(msg):
+            ok = False
+    print(f"=== Report {'sent' if ok else 'FAILED'} ({len(messages)} msg) ===")
 
 
 # ─── 4c. НАГАДУВАННЯ ПРО ПОДІЇ КАЛЕНДАРЯ (за 30 хв) ──────────────────────────
