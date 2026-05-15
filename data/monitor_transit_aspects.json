@@ -1,8 +1,8 @@
 {
   "moon__venus__180": {
     "orb": 1.37,
-    "sent": true,
-    "event": "enter"
+    "sent": false,
+    "exact_sent": false
   },
   "moon__jupiter__60": {
     "orb": 0.86,
