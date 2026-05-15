@@ -5351,3 +5351,216 @@ def check_planet_ingress():
 
     for msg in alerts:
         send_telegram(msg)
+
+# ─── Транзитні аспекти до натальних планет ────────────────────────────────────
+TRANSIT_ASPECTS_FILE = os.path.join(_DATA_DIR, "monitor_transit_aspects.json")
+
+NATAL_PLANETS_DATA = {
+    # key: (lon, sign_ua, name_ua)  — заповнюється динамічно з kerykeion
+}
+
+ASP_EXACT_DEF = {
+    0:   ("☌", "Кон'юнкція",   "#E53935"),  # червоний
+    60:  ("⚹", "Секстиль",     "#43A047"),  # зелений
+    90:  ("□", "Квадратура",   "#FF9800"),  # помаранчевий
+    120: ("△", "Трин",         "#1565C0"),  # синій
+    150: ("⚻", "Квінкункс",    "#9C27B0"),  # фіолетовий
+    180: ("☍", "Опозиція",     "#E53935"),  # червоний
+}
+
+ASP_HOUSE_MEANING = {
+    1:"Особистість",2:"Фінанси",3:"Комунікація",4:"Дім/Родина",
+    5:"Творчість",6:"Здоров'я",7:"Партнерства",8:"Трансформація",
+    9:"Подорожі",10:"Кар'єра",11:"Друзі/Цілі",12:"Підсвідоме",
+}
+
+ASP_PLANET_MEANING = {
+    "sun":     "💫 Воля, его, батько",
+    "moon":    "🌙 Емоції, мати, звички",
+    "mercury": "☿ Розум, комунікація",
+    "venus":   "♀ Кохання, краса, гроші",
+    "mars":    "♂ Енергія, дія, конфлікт",
+    "jupiter": "♃ Удача, розширення",
+    "saturn":  "♄ Обмеження, дисципліна",
+    "uranus":  "⛢ Зміни, несподіванки",
+    "neptune": "♆ Ілюзії, духовність",
+    "pluto":   "♇ Трансформація, влада",
+}
+
+_TRANSIT_PLANETS_ORDER = ['sun','moon','mercury','venus','mars','jupiter','saturn','uranus','neptune','pluto']
+
+def check_transit_aspects():
+    """
+    Кожні 30 хв перевіряє чи транзитна планета ЩОЙНО увійшла в орб точного аспекту
+    до натальної планети (орб ≤ 1.5°) або виходить з нього.
+    Надсилає сповіщення з AI-поясненням.
+    """
+    try:
+        from kerykeion import AstrologicalSubject as _AS
+        from astro import (
+            CURRENT_LAT, CURRENT_LON,
+            BIRTH_YEAR, BIRTH_MONTH, BIRTH_DAY, BIRTH_HOUR, BIRTH_MIN,
+            BIRTH_LAT, BIRTH_LON, BIRTH_TZ,
+            _sign_ua
+        )
+    except ImportError as e:
+        print(f"check_transit_aspects import error: {e}")
+        return
+
+    now_utc = datetime.now(timezone.utc)
+
+    try:
+        transit_subj = _AS(
+            "tr",
+            now_utc.year, now_utc.month, now_utc.day,
+            now_utc.hour, now_utc.minute,
+            lat=CURRENT_LAT, lng=CURRENT_LON,
+            tz_str="UTC", zodiac_type="Tropic",
+            houses_system_identifier="P", online=False,
+        )
+        natal_subj = _AS(
+            "nt",
+            BIRTH_YEAR, BIRTH_MONTH, BIRTH_DAY, BIRTH_HOUR, BIRTH_MIN,
+            lat=BIRTH_LAT, lng=BIRTH_LON,
+            tz_str=BIRTH_TZ, zodiac_type="Tropic",
+            houses_system_identifier="P", online=False,
+        )
+    except Exception as e:
+        print(f"check_transit_aspects kerykeion error: {e}")
+        return
+
+    _HOUSE_NAMES_TA = ["first","second","third","fourth","fifth","sixth",
+                       "seventh","eighth","ninth","tenth","eleventh","twelfth"]
+    natal_cusps = [getattr(natal_subj, f"{h}_house").abs_pos for h in _HOUSE_NAMES_TA]
+
+    def _get_house_ta(lon):
+        for i in range(12):
+            start = natal_cusps[i]
+            end   = natal_cusps[(i+1) % 12]
+            if start < end:
+                if start <= lon < end: return i+1
+            else:
+                if lon >= start or lon < end: return i+1
+        return 1
+
+    # Поточні позиції транзитних планет
+    transit_positions = {}
+    for key in _TRANSIT_PLANETS_ORDER:
+        p = getattr(transit_subj, key, None)
+        if p:
+            transit_positions[key] = {
+                "lon": p.abs_pos,
+                "sign": _sign_ua(p.sign),
+                "retro": p.retrograde,
+            }
+
+    # Натальні позиції (фіксовані)
+    natal_positions = {}
+    for key in _TRANSIT_PLANETS_ORDER:
+        p = getattr(natal_subj, key, None)
+        if p:
+            natal_positions[key] = {
+                "lon": p.abs_pos,
+                "sign": _sign_ua(p.sign),
+                "house": _get_house_ta(p.abs_pos),
+            }
+
+    # Завантажуємо попередній стан активних аспектів
+    # Формат: {"transit_key__natal_key__asp_deg": {"orb": 1.2, "sent": true}}
+    prev_state = load_json_file(TRANSIT_ASPECTS_FILE, default={})
+    new_state  = {}
+    alerts = []
+
+    ORB_ENTER = 1.5   # увійти в орб при ≤ цьому
+    ORB_EXACT = 0.5   # "точний" аспект
+
+    PLANET_SYMBOLS_TA = {
+        'sun':'☉','moon':'☽','mercury':'☿','venus':'♀','mars':'♂',
+        'jupiter':'♃','saturn':'♄','uranus':'⛢','neptune':'♆','pluto':'♇',
+    }
+    PLANET_NAMES_UA = {
+        'sun':'Сонце','moon':'Місяць','mercury':'Меркурій','venus':'Венера',
+        'mars':'Марс','jupiter':'Юпітер','saturn':'Сатурн',
+        'uranus':'Уран','neptune':'Нептун','pluto':'Плутон',
+    }
+
+    for tr_key, tr_data in transit_positions.items():
+        for nt_key, nt_data in natal_positions.items():
+            tr_lon = tr_data["lon"]
+            nt_lon = nt_data["lon"]
+
+            diff = abs(tr_lon - nt_lon) % 360
+            if diff > 180:
+                diff = 360 - diff
+
+            for asp_deg, (asp_sym, asp_name_ua, asp_color) in ASP_EXACT_DEF.items():
+                orb = abs(diff - asp_deg)
+                state_key = f"{tr_key}__{nt_key}__{asp_deg}"
+
+                if orb <= ORB_ENTER:
+                    new_state[state_key] = {"orb": round(orb, 2), "sent": False}
+
+                    was_active = state_key in prev_state
+                    was_sent   = prev_state.get(state_key, {}).get("sent", False)
+                    prev_orb   = prev_state.get(state_key, {}).get("orb", 999)
+
+                    # Надсилаємо якщо:
+                    # 1) Щойно увійшов в орб (не був раніше)
+                    # 2) Або став точнішим (зменшився orb і ще не надсилали "exact")
+                    should_send = False
+                    is_exact    = orb <= ORB_EXACT
+
+                    if not was_active:
+                        should_send = True
+                        new_state[state_key]["event"] = "enter"
+                    elif is_exact and not prev_state.get(state_key, {}).get("exact_sent", False):
+                        should_send = True
+                        new_state[state_key]["event"] = "exact"
+                        new_state[state_key]["exact_sent"] = True
+                    else:
+                        # Зберігаємо попередній стан exact_sent
+                        new_state[state_key]["exact_sent"] = prev_state.get(state_key, {}).get("exact_sent", False)
+
+                    if should_send:
+                        tr_name  = PLANET_NAMES_UA.get(tr_key, tr_key)
+                        nt_name  = PLANET_NAMES_UA.get(nt_key, nt_key)
+                        tr_sym   = PLANET_SYMBOLS_TA.get(tr_key,'?')
+                        nt_sym   = PLANET_SYMBOLS_TA.get(nt_key,'?')
+                        nt_house = nt_data["house"]
+                        nt_sign  = nt_data["sign"]
+                        tr_sign  = tr_data["sign"]
+                        retro_s  = " ℞" if tr_data["retro"] else ""
+                        exact_s  = " <b>(ТОЧНИЙ!)</b>" if is_exact else f" (орб {orb:.1f}°)"
+
+                        # AI-пояснення аспекту
+                        situation = (
+                            f"Транзитний {tr_name}{retro_s} у {tr_sign} формує {asp_name_ua} "
+                            f"({asp_sym}{exact_s}) до натального {nt_name} у {nt_sign} ({nt_house}-й дім). "
+                            f"Натальний {nt_name}: {ASP_PLANET_MEANING.get(nt_key,'')}. "
+                            f"Дім {nt_house}: {ASP_HOUSE_MEANING.get(nt_house,'')}."
+                        )
+                        ai_text = _ai_personal_message(
+                            situation=situation,
+                            max_tokens=150
+                        )
+
+                        event_label = "🎯 ТОЧНИЙ АСПЕКТ" if is_exact else "🔭 Новий транзит"
+                        msg = (
+                            f"{event_label}\n"
+                            f"{tr_sym} <b>{tr_name}</b>{retro_s} {asp_sym} {nt_sym} <b>Натальний {nt_name}</b>{exact_s}\n"
+                            f"📍 {tr_name} у <b>{tr_sign}</b> | Натальний {nt_name} у {nt_sign}, {nt_house}-й дім\n"
+                            f"<i>{asp_name_ua} · {ASP_HOUSE_MEANING.get(nt_house,'')}</i>\n\n"
+                            f"{ai_text}"
+                        )
+                        alerts.append(msg)
+                        new_state[state_key]["sent"] = True
+
+                # Якщо вийшов з орбу — видаляємо з стану (просто не додаємо в new_state)
+
+    # Зберігаємо новий стан
+    save_json_file(TRANSIT_ASPECTS_FILE, new_state)
+
+    for msg in alerts:
+        send_telegram(msg)
+        import time as _time_ta
+        _time_ta.sleep(2)  # пауза між повідомленнями

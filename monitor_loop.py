@@ -713,6 +713,20 @@ def run_planet_ingress_watcher():
 threading.Thread(target=run_planet_ingress_watcher, daemon=True).start()
 
 
+def run_transit_aspects_watcher():
+    """Транзитні аспекти до натальних планет — перевірка кожні 30 хвилин."""
+    print("=== Starting transit aspects watcher (every 30min) ===", flush=True)
+    time.sleep(300)  # затримка при старті щоб не перевантажувати
+    while True:
+        try:
+            _load_monitor().check_transit_aspects()
+        except Exception as e:
+            print(f"Transit aspects watcher error: {e}", flush=True)
+        time.sleep(1800)
+
+threading.Thread(target=run_transit_aspects_watcher, daemon=True).start()
+
+
 def run_proactive_watcher():
     """Проактивні повідомлення від бота — кожні 30 хвилин.
     Модуль завантажується ОДИН РАЗ щоб _SENT_INMEM не скидався між викликами.
