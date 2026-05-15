@@ -60,7 +60,14 @@ def now_local():
     return datetime.now(timezone.utc) + timedelta(hours=2)
 
 def today_str():
-    return now_local().strftime("%Y-%m-%d")
+    """
+    Дата для запису ліків.
+    Нічна зміна 18:00–06:00: якщо зараз 00:00–05:59 — вважаємо що ще "вчора".
+    """
+    now = now_local()
+    if 0 <= now.hour < 6:
+        return (now - timedelta(days=1)).strftime("%Y-%m-%d")
+    return now.strftime("%Y-%m-%d")
 
 def load_meds():
     try:
@@ -279,15 +286,18 @@ def check_meds_reminder():
         second_time = 13 * 60          # 13:00 (повтор)
 
     # ── Перше нагадування ──────────────────────────────────────────────
-    remind_key = f"meds_remind_{today}"
+    # Ключ включає shift щоб при зміні типу дня (помилка Calendar) надіслалось знову
+    remind_key = f"meds_remind_{today}_{shift}"
     if not sent.get(remind_key) and cur_min >= first_time:
         _send_meds_question(today)
         sent[remind_key] = True
+        # Також стара форма ключа для зворотної сумісності
+        sent[f"meds_remind_{today}"] = True
         save_sent(sent)
         print(f"Meds first reminder sent for {today} (shift={shift})")
 
     # ── Повторне нагадування (якщо не відмітив) ────────────────────────
-    remind2_key = f"meds_remind2_{today}"
+    remind2_key = f"meds_remind2_{today}_{shift}"
     if (
         sent.get(remind_key)           # перше вже відправлено
         and not sent.get(remind2_key)  # повторне ще не відправлено

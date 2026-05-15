@@ -106,9 +106,10 @@ def check_shower_reminder():
             cur_min = now.hour * 60 + now.minute
             if first_sent_time and cur_min >= first_sent_time + 60:
                 if db.get(today, {}).get("shower") is None:
-                    _send_shower_question(today)
+                    # Зберігаємо ПЕРЕД надсиланням — захист від дублювання
                     sent[remind2_key] = True
                     save_sent(sent)
+                    _send_shower_question(today)
         return
 
     shift   = _get_shift_type()
@@ -122,10 +123,11 @@ def check_shower_reminder():
         trigger = 10 * 60       # 10:00
 
     if cur_min >= trigger:
-        _send_shower_question(today)
+        # Зберігаємо ПЕРЕД надсиланням — щоб не дублювати при паралельному запуску
         sent[remind_key] = True
         sent[f"{today}_shower_smart_time"] = cur_min
         save_sent(sent)
+        _send_shower_question(today)
 
 
 def _send_shower_question(today):
@@ -208,27 +210,36 @@ def load_sent():
         return {}
 
 def save_sent(sent):
-    """Зберігає стан — локально + GitHub."""
+    """Зберігає стан — локально + GitHub (синхронно)."""
     # Локально завжди
     try:
         with open(SENT_FILE, "w") as f:
             json.dump(sent, f)
     except:
         pass
-    # GitHub — async щоб не гальмувати цикл
+    # GitHub — синхронно щоб стан не губився при перезапуску
     try:
-        import sys as _sys, os as _os, threading as _th
+        import sys as _sys, os as _os
         _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
         from storage import _save_github
-        _th.Thread(target=_save_github, args=(_SENT_GH_KEY, sent), daemon=True).start()
+        _save_github(_SENT_GH_KEY, sent)
     except Exception as _e:
-        pass
-
-def today_key():
-    return (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+        print(f"save_sent github error: {_e}")
 
 def now_local():
     return datetime.now(timezone.utc) + timedelta(hours=2)
+
+def today_key():
+    """
+    Дата для запису.
+    Нічна зміна 18:00–06:00: якщо зараз 00:00–05:59 — вважаємо що ще "вчора"
+    (нічна зміна ще не закінчилась), записуємо на попередній день.
+    """
+    now = now_local()
+    if 0 <= now.hour < 6:
+        # Могла бути нічна зміна — лишаємо дату вчора
+        return (now - timedelta(days=1)).strftime("%Y-%m-%d")
+    return now.strftime("%Y-%m-%d")
 
 # ─── НАДСИЛАННЯ ПИТАННЯ ───────────────────────────────────────────────────────
 
@@ -443,9 +454,10 @@ def run():
             if sent.get(key):
                 continue
             if now.hour == h["hour"] and now.minute >= h["minute"]:
-                send_question(h)
+                # Зберігаємо ПЕРЕД надсиланням — захист від дублювання
                 sent[key] = True
                 save_sent(sent)
+                send_question(h)
 
         # Питання про сон о 8:00
         sleep_key = f"{today}_sleep_q"

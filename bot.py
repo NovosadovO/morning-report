@@ -143,8 +143,13 @@ def handle_meds_callback(callback_query):
     answer = parts[1]  # yes / no
     date_raw = parts[2] if len(parts) > 2 else ""
     if date_raw == "today":
-        from datetime import datetime, timezone, timedelta
-        date = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+        from datetime import datetime, timezone, timedelta as _td
+        _now = datetime.now(timezone.utc) + _td(hours=2)
+        # Нічна зміна: 00:00–05:59 → запис на вчора
+        if 0 <= _now.hour < 6:
+            date = (_now - _td(days=1)).strftime("%Y-%m-%d")
+        else:
+            date = _now.strftime("%Y-%m-%d")
     else:
         date = date_raw
 
