@@ -347,6 +347,32 @@ def get_chains():
 
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
 
+def _defi_dedup_check():
+    """Returns (already_sent: bool, sent_data: dict, sha: str|None).
+    Uses storage.py GitHub dedup — key: defi_{date}_{slot} where slot = 'am' or 'pm'."""
+    try:
+        import sys as _sys, os as _os
+        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+        from storage import _load_github, _save_github
+        local = datetime.now(timezone.utc) + timedelta(hours=2)
+        slot  = "am" if local.hour < 13 else "pm"
+        key   = f"defi_{local.strftime('%Y-%m-%d')}_{slot}"
+        data  = _load_github("defi_sent.json") or {}
+        return data.get(key, False), data, key
+    except Exception as e:
+        print(f"defi dedup check error: {e}")
+        return False, {}, None
+
+def _defi_dedup_save(data, key):
+    try:
+        import sys as _sys, os as _os
+        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+        from storage import _save_github
+        data[key] = True
+        _save_github("defi_sent.json", data)
+    except Exception as e:
+        print(f"defi dedup save error: {e}")
+
 def main():
     now      = datetime.now(timezone.utc)
     local    = now + timedelta(hours=2)
@@ -355,6 +381,12 @@ def main():
     period   = "🌅 Ранковий" if local.hour < 13 else "🌆 Вечірній"
 
     print(f"=== DeFi Report run at {now.isoformat()} ===")
+
+    # ── GitHub dedup — захист від дублів при Railway restart ──
+    already_sent, sent_data, sent_key = _defi_dedup_check()
+    if already_sent:
+        print(f"DeFi report already sent this slot ({sent_key}), skipping.")
+        return
 
     protocols = _get(f"{LLAMA}/protocols")
     if not protocols:
@@ -448,6 +480,10 @@ def main():
         + ("\n".join(stable_lines) if stable_lines else "")
         + f"\n\n<i>📊 DeFiLlama · Наступний о {'19:00' if local.hour < 13 else '07:00'}</i>"
     )
+
+    # Зберігаємо ПЕРЕД надсиланням — захист від дублів
+    if sent_key:
+        _defi_dedup_save(sent_data, sent_key)
 
     # Telegram ліміт 4096 — ріжемо якщо треба
     if len(report) <= 4090:

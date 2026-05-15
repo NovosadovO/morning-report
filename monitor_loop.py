@@ -178,15 +178,24 @@ def run_traffic_watcher():
 
 
 def run_habits_loop():
-    """Трекер звичок — щоденні питання + тижневий/місячний звіт."""
-    print("=== Starting habits tracker ===", flush=True)
-    import subprocess
+    """Трекер звичок — щоденні питання + тижневий/місячний звіт.
+    Запускається як in-process модуль (не subprocess) щоб зберігати
+    in-memory стан між ітераціями і не дублювати повідомлення.
+    habits.run() має власний while True — просто запускаємо і ловимо краш.
+    """
+    print("=== Starting habits tracker (in-process) ===", flush=True)
+    import importlib.util, os as _os
     while True:
         try:
-            subprocess.run([sys.executable, "habits.py"])
+            # Завантажуємо заново тільки після краша — _INMEM_SENT скидається
+            spec = importlib.util.spec_from_file_location(
+                "habits", _os.path.join(_os.path.dirname(__file__), "habits.py"))
+            _habits_mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(_habits_mod)
+            _habits_mod.run()  # блокує вічно — власний while True
         except Exception as e:
-            print(f"Habits crashed: {e}, restarting in 10s...", flush=True)
-            time.sleep(10)
+            print(f"Habits crashed: {e}, restarting in 30s...", flush=True)
+            time.sleep(30)
 
 
 def run_shift_reminder_watcher():
@@ -462,8 +471,26 @@ def run_astro_watcher():
     print("=== Starting astro watcher (morning + 20:00 evening) ===", flush=True)
     import os, sys
     sys.path.insert(0, os.path.dirname(__file__))
-    _sent_morning = None  # дата останнього ранкового
-    _sent_evening = None  # дата останнього вечірнього
+
+    def _astro_gh_sent(slot_key):
+        """Check if astro was already sent (slot_key = date_morning / date_evening). Returns bool."""
+        try:
+            from storage import _load_github
+            data = _load_github("astro_sent.json") or {}
+            return bool(data.get(slot_key))
+        except Exception as e:
+            print(f"[astro] dedup check error: {e}", flush=True)
+            return False
+
+    def _astro_gh_mark(slot_key):
+        """Mark astro as sent in GitHub."""
+        try:
+            from storage import _load_github, _save_github
+            data = _load_github("astro_sent.json") or {}
+            data[slot_key] = True
+            _save_github("astro_sent.json", data)
+        except Exception as e:
+            print(f"[astro] dedup save error: {e}", flush=True)
     time.sleep(120)
 
     def _send_astro(label):
@@ -525,7 +552,8 @@ def run_astro_watcher():
             h, m = now_local.hour, now_local.minute
 
             # ── Ранковий ──
-            if _sent_morning != today:
+            morning_key = f"{today}_morning"
+            if not _astro_gh_sent(morning_key):
                 try:
                     from meds import _get_today_shift_type
                     shift = _get_today_shift_type()
@@ -533,15 +561,16 @@ def run_astro_watcher():
                     shift = "weekend"
                 send_hour = 8 if shift == "early" else 11
                 if h == send_hour and m < 5:
+                    _astro_gh_mark(morning_key)  # зберігаємо ДО надсилання
                     _send_astro(f"morning shift={shift}")
-                    _sent_morning = today
                     time.sleep(360)
                     continue
 
             # ── Вечірній о 20:00 ──
-            if _sent_evening != today and h == 20 and m < 5:
+            evening_key = f"{today}_evening"
+            if not _astro_gh_sent(evening_key) and h == 20 and m < 5:
+                _astro_gh_mark(evening_key)  # зберігаємо ДО надсилання
                 _send_astro("evening 20:00")
-                _sent_evening = today
                 time.sleep(360)
                 continue
 

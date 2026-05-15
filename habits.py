@@ -21,6 +21,11 @@ HABITS_FILE = os.path.join("/tmp", "habits_data.json")
 SENT_FILE   = os.path.join("/tmp", "habits_sent.json")  # локальний кеш
 _SENT_GH_KEY = "habits_sent.json"  # GitHub persistent storage
 
+# ─── IN-MEMORY КЕШ (захист від дублів при рестарті) ──────────────────────────
+# Завантажується ОДИН РАЗ при старті. Між ітераціями використовується пам'ять.
+# При рестарті процесу — перечитує GitHub (1 запит), після чого знову в пам'яті.
+_INMEM_SENT: dict | None = None  # None = ще не завантажено
+
 # ─── КОНФІГ ЗВИЧОК ────────────────────────────────────────────────────────────
 
 HABITS = [
@@ -122,7 +127,7 @@ def check_shower_reminder():
     else:
         trigger = 10 * 60       # 10:00
 
-    if cur_min >= trigger:
+    if trigger <= cur_min < trigger + 10:
         # Зберігаємо ПЕРЕД надсиланням — щоб не дублювати при паралельному запуску
         sent[remind_key] = True
         sent[f"{today}_shower_smart_time"] = cur_min
@@ -190,28 +195,38 @@ def save_data(data):
             json.dump(data, f)
 
 def load_sent():
-    """Завантажує стан надісланих питань. GitHub → fallback /tmp."""
+    """Завантажує стан з in-memory кешу. При першому виклику — GitHub → /tmp."""
+    global _INMEM_SENT
+    if _INMEM_SENT is not None:
+        return _INMEM_SENT  # швидкий шлях — тільки пам'ять, без I/O
+    # Перший виклик після старту — завантажуємо з GitHub
     try:
         import sys as _sys, os as _os
         _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
         from storage import _load_github
         data = _load_github(_SENT_GH_KEY)
         if data:
-            # Зберігаємо локально як кеш
             with open(SENT_FILE, "w") as f:
                 json.dump(data, f)
-            return data
+            _INMEM_SENT = data
+            print(f"[habits] Loaded sent state from GitHub: {len(data)} keys")
+            return _INMEM_SENT
     except Exception as _e:
-        pass
+        print(f"[habits] load_sent github error: {_e}")
     try:
         with open(SENT_FILE) as f:
-            return json.load(f)
+            _INMEM_SENT = json.load(f)
+            print(f"[habits] Loaded sent state from /tmp: {len(_INMEM_SENT)} keys")
+            return _INMEM_SENT
     except:
-        return {}
+        _INMEM_SENT = {}
+        return _INMEM_SENT
 
 def save_sent(sent):
-    """Зберігає стан — локально + GitHub (синхронно)."""
-    # Локально завжди
+    """Зберігає стан — в пам'яті (миттєво) + /tmp (кеш) + GitHub (persist)."""
+    global _INMEM_SENT
+    _INMEM_SENT = sent  # миттєвий захист від дублів ще до I/O
+    # Локально — кеш
     try:
         with open(SENT_FILE, "w") as f:
             json.dump(sent, f)
@@ -224,7 +239,7 @@ def save_sent(sent):
         from storage import _save_github
         _save_github(_SENT_GH_KEY, sent)
     except Exception as _e:
-        print(f"save_sent github error: {_e}")
+        print(f"[habits] save_sent github error: {_e}")
 
 def now_local():
     return datetime.now(timezone.utc) + timedelta(hours=2)
@@ -453,7 +468,7 @@ def run():
             key = f"{today}_{h['id']}"
             if sent.get(key):
                 continue
-            if now.hour == h["hour"] and now.minute >= h["minute"]:
+            if now.hour == h["hour"] and h["minute"] <= now.minute < h["minute"] + 5:
                 # Зберігаємо ПЕРЕД надсиланням — захист від дублювання
                 sent[key] = True
                 save_sent(sent)
@@ -461,7 +476,7 @@ def run():
 
         # Питання про сон о 8:00
         sleep_key = f"{today}_sleep_q"
-        if not sent.get(sleep_key) and now.hour == SLEEP_HOUR and now.minute >= SLEEP_MINUTE:
+        if not sent.get(sleep_key) and now.hour == SLEEP_HOUR and SLEEP_MINUTE <= now.minute < SLEEP_MINUTE + 5:
             send_sleep_question()
             sent[sleep_key] = True
             save_sent(sent)
@@ -470,7 +485,7 @@ def run():
         run_key_done = f"{today}_run"
         run_remind_key = f"{today}_run_remind"
         if (not sent.get(run_remind_key) and
-                now.hour == 17 and now.minute >= 30 and
+                now.hour == 17 and 30 <= now.minute < 35 and
                 load_data().get(today, {}).get("run") is not True):
             api("sendMessage", {
                 "chat_id": TELEGRAM_CHAT,
@@ -516,7 +531,7 @@ def run():
 
         # Тижневий звіт ліків — щонеділі о 20:40
         meds_weekly_key = f"meds_weekly_{today}"
-        if (now.weekday() == 6 and now.hour == 20 and now.minute >= 40
+        if (now.weekday() == 6 and now.hour == 20 and 40 <= now.minute < 45
                 and not sent.get(meds_weekly_key)):
             try:
                 import sys, os as _os
@@ -534,7 +549,7 @@ def run():
 
         # Місячний звіт ліків — останній день місяця о 21:05
         next_day2 = (now + timedelta(days=1))
-        if next_day2.month != now.month and now.hour == 21 and now.minute >= 5:
+        if next_day2.month != now.month and now.hour == 21 and 5 <= now.minute < 10:
             mkey2 = f"meds_monthly_{now.strftime('%Y-%m')}"
             if not sent.get(mkey2):
                 try:
@@ -551,7 +566,7 @@ def run():
 
         # Тижневий звіт ваги — щонеділі о 20:35
         weight_weekly_key = f"weight_weekly_{today}"
-        if (now.weekday() == 6 and now.hour == 20 and now.minute >= 35
+        if (now.weekday() == 6 and now.hour == 20 and 35 <= now.minute < 40
                 and not sent.get(weight_weekly_key)):
             try:
                 from weight import format_weekly_weight_report
@@ -566,7 +581,7 @@ def run():
                 print(f"Weight weekly report error: {e}")
 
         # Недільний підсумок о 18:45 — повний звіт тижня
-        if now.weekday() == 6 and now.hour == 18 and now.minute >= 45:
+        if now.weekday() == 6 and now.hour == 18 and 45 <= now.minute < 50:
             sunday_key = f"sunday_summary_{today}"
             if not sent.get(sunday_key):
                 try:
@@ -580,7 +595,7 @@ def run():
                     print(f"Sunday summary error: {e}")
 
         # Тижневий звіт — щонеділі о 20:30
-        if now.weekday() == 6 and now.hour == 20 and now.minute >= 30:
+        if now.weekday() == 6 and now.hour == 20 and 30 <= now.minute < 35:
             wkey = f"weekly_{today}"
             if not sent.get(wkey):
                 weekly_report()

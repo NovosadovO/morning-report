@@ -2778,7 +2778,8 @@ def check_water_reminder():
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
 
-    if not (8 <= h <= 20 and 0 <= m < 5):
+    # Stop before 20:00 — habits.py sends water check-in at 20:00, avoid duplicate
+    if not (8 <= h < 20 and 0 <= m < 5):
         return
     if h % 2 != 0:
         return
