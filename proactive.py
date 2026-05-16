@@ -125,6 +125,7 @@ def _now_local():
 _SENT_INMEM = set()
 
 _GH_PROACTIVE_URL = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/proactive_sent.json"
+_GH_DATA_BRANCH = "data"  # всі runtime-записи йдуть в data, не main
 
 def _gh_load_sent():
     """Читає proactive_sent.json з GitHub — persistent між restarts."""
@@ -137,10 +138,10 @@ def _gh_load_sent():
                 return json.load(f), None
         except Exception:
             return {}, None
-    req = urllib.request.Request(_GH_PROACTIVE_URL, headers={
-        "Authorization": f"token {gh_token}",
-        "User-Agent": "morning-report-bot"
-    })
+    req = urllib.request.Request(
+        f"{_GH_PROACTIVE_URL}?ref={_GH_DATA_BRANCH}",
+        headers={"Authorization": f"token {gh_token}", "User-Agent": "morning-report-bot"}
+    )
     try:
         with urllib.request.urlopen(req, timeout=8) as r:
             d = json.loads(r.read())
@@ -165,6 +166,7 @@ def _gh_save_sent(data: dict, sha):
     body = json.dumps({
         "message": "proactive: mark slot sent",
         "content": content,
+        "branch": _GH_DATA_BRANCH,
         **({"sha": sha} if sha else {})
     }).encode()
     req = urllib.request.Request(_GH_PROACTIVE_URL, data=body, headers={
@@ -467,15 +469,9 @@ def check_proactive():
 
     # ── Нагадування про воду — ВИДАЛЕНО (обробляється check_water_reminder() в monitor.py) ──
 
-    # ── Нагадування про ліки (якщо ще не прийняв, о 8:00–10:00) ─────────────
-    elif 8 <= h < 10 and not _already_sent("meds_reminder"):
-        meds = ctx.get("meds", "")
-        if "не відмічено" in meds or "не прийнято" in meds.lower():
-            slot = "meds_reminder"
-            prompt = (
-                f"Зараз {now.strftime('%H:%M')}. Олег ще не відмітив прийом Armolopid Plus. "
-                f"Нагадай коротко — 1 речення, по-дружньому."
-            )
+    # ── Нагадування про ліки — ВИДАЛЕНО (обробляється check_meds_reminder() в meds.py) ──
+    # elif 8 <= h < 10 and not _already_sent("meds_reminder"):
+    #     ... (дублювало meds.py, породжувало 4+ повідомлення)
 
     # ── Питання про пробіжку (вільний день, 09:00–11:00) ─────────────────────
     elif 9 <= h < 11 and status == "home" and ctx.get("shift_today") == "free" and not _already_sent("run_question"):
