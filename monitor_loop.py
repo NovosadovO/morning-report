@@ -117,17 +117,25 @@ def run_defi_report_loop():
 
 
 def run_monitor_loop():
-    """Основний звіт — кожні 20 хвилин (дублі захищені в monitor.py по 20min slot)."""
-    print("=== Starting monitor loop (every 20min) ===", flush=True)
+    """
+    Основний звіт — перевіряє кожні 2 хвилини чи ми у вікні (:00, :20, :40).
+    Дублі захищені в monitor.py через GitHub SHA claim.
+    Запуск кожні 2хв гарантує що не пропустимо 2-хвилинне вікно
+    навіть якщо Railway перезапустив процес в будь-який момент.
+    """
+    print("=== Starting monitor loop (check every 2min, windows :00/:20/:40) ===", flush=True)
     while True:
         now = datetime.now(timezone.utc)
-        print(f"\n[{now.strftime('%Y-%m-%d %H:%M')} UTC] Running monitor...", flush=True)
-        try:
-            subprocess.run([sys.executable, "monitor.py"], timeout=120)
-        except Exception as e:
-            print(f"Monitor error: {e}", flush=True)
-        print("Sleeping 20 min...", flush=True)
-        time.sleep(1200)
+        now_local = now + timedelta(hours=2)
+        m = now_local.minute
+        # Запускаємо тільки у вікнах: хвилини 0-2, 20-22, 40-42
+        if m < 3 or (20 <= m < 23) or (40 <= m < 43):
+            print(f"\n[{now.strftime('%Y-%m-%d %H:%M')} UTC] Running monitor (local {now_local.strftime('%H:%M')})...", flush=True)
+            try:
+                subprocess.run([sys.executable, "monitor.py"], timeout=120)
+            except Exception as e:
+                print(f"Monitor error: {e}", flush=True)
+        time.sleep(120)
 
 
 # ─── ЗАПУСК ───────────────────────────────────────────────────────────────────
