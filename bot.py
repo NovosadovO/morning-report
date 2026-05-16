@@ -25,6 +25,7 @@ OFFSET_FILE    = "/tmp/bot_offset.json"
 
 # Унікальний ідентифікатор цього інстансу бота (leader election)
 _INSTANCE_ID = str(uuid.uuid4())[:12]
+_DRAFT_STORE: dict = {}  # uid_str -> {to, subject, body} — тимчасовий store для email drafts
 _GH_TOKEN    = os.environ.get("GITHUB_TOKEN", "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")
 _GH_LOCK_URL = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_lock.json"
 _GH_OFF_URL  = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_offset.json"
@@ -298,7 +299,7 @@ def handle_email_callback(callback_query):
         })
 
     elif data.startswith("email_reply_"):
-        # Генеруємо AI draft відповіді
+        # Генеруємо AI draft відповіді + кнопки [Надіслати] [Скасувати]
         uid_str = data[len("email_reply_"):]
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "✍️ Готую draft..."})
         try:
@@ -321,7 +322,7 @@ def handle_email_callback(callback_query):
                 # AI draft
                 api_key = _os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
                 prompt = (
-                    f"Ти пишеш від імені Олега Новосадова (новосадовоleg@gmail.com).\n"
+                    f"Ти пишеш від імені Олега Новосадова (novosadovoleg@gmail.com).\n"
                     f"Напиши КОРОТКИЙ і природній draft відповіді на цей лист.\n"
                     f"Від: {sender}\nТема: {subject}\n\n{body[:2000]}\n\n"
                     f"Відповідь українською, по-людськи, не формально. 3-6 речень максимум."
@@ -338,17 +339,56 @@ def handle_email_callback(callback_query):
                     resp = _json.loads(r.read())
                 draft = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
 
-                send(chat_id,
+                # Зберігаємо draft + метадані для подальшого надсилання
+                import re as _re
+                to_addr = _re.search(r'<(.+?)>', sender)
+                to_addr = to_addr.group(1) if to_addr else sender.strip()
+                _DRAFT_STORE[uid_str] = {"to": to_addr, "subject": f"Re: {subject}", "body": draft}
+
+                send_with_keyboard(chat_id,
                     f"✍️ <b>Draft відповіді</b>\n"
-                    f"<i>Кому: {sender[:50]}\nТема: Re: {subject[:50]}</i>\n\n"
-                    f"<code>{draft}</code>\n\n"
-                    f"<i>📋 Скопіюй і відредагуй за потреби</i>"
+                    f"<i>Кому: {to_addr[:60]}\nТема: Re: {subject[:50]}</i>\n\n"
+                    f"{draft}\n\n"
+                    f"<i>Надіслати цей draft?</i>",
+                    [[
+                        {"text": "✉️ Надіслати", "callback_data": f"email_send_{uid_str}"},
+                        {"text": "❌ Скасувати", "callback_data": f"email_cancel_{uid_str}"}
+                    ]]
                 )
             else:
                 send(chat_id, "⚠️ Не вдалось завантажити лист")
         except Exception as e:
             print(f"email_reply error: {e}")
             send(chat_id, f"⚠️ Помилка генерації draft: {e}")
+
+    elif data.startswith("email_send_"):
+        uid_str = data[len("email_send_"):]
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📤 Надсилаю..."})
+        try:
+            import sys, os as _os
+            sys.path.insert(0, _os.path.dirname(__file__))
+            draft_info = _DRAFT_STORE.pop(uid_str, None)
+            if not draft_info:
+                send(chat_id, "⚠️ Draft не знайдено. Спробуй ще раз через кнопку Відповісти.")
+                return
+            import importlib.util
+            spec = importlib.util.spec_from_file_location(
+                "assistant", _os.path.join(_os.path.dirname(__file__), "assistant.py"))
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            ok = mod.send_email_reply(draft_info["to"], draft_info["subject"], draft_info["body"])
+            if ok:
+                api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+                send(chat_id, f"✅ Лист надіслано → {draft_info['to']}")
+            else:
+                send(chat_id, "⚠️ Помилка надсилання листа. Перевір логи.")
+        except Exception as e:
+            print(f"email_send error: {e}")
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif data.startswith("email_cancel_"):
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Скасовано"})
+        api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
 
 
 def handle_reminder_callback(callback_query):
@@ -1656,7 +1696,26 @@ def main():
                                     send(chat_id, "Немає даних. Введи /зд [кроки] [сон] [ЧСС] [кал] [score]")
                             except Exception as e:
                                 send(chat_id, f"⚠️ {e}")
-                        elif data.startswith("email_delete_") or data.startswith("email_keep_") or data.startswith("email_reply_"):
+                        elif data.startswith("cal_done_"):
+                            # Видалити подію з Google Calendar після натискання "✅ Зроблено"
+                            ev_id = data[len("cal_done_"):]
+                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "🗑 Видаляю подію..."})
+                            try:
+                                import importlib.util, os as _os
+                                spec = importlib.util.spec_from_file_location(
+                                    "assistant", _os.path.join(_os.path.dirname(__file__), "assistant.py"))
+                                mod = importlib.util.module_from_spec(spec)
+                                spec.loader.exec_module(mod)
+                                ok = mod.delete_calendar_event(ev_id)
+                                api("editMessageReplyMarkup", {
+                                    "chat_id": chat_id, "message_id": cb["message"]["message_id"],
+                                    "reply_markup": {"inline_keyboard": []}
+                                })
+                                send(chat_id, "✅ Подію видалено з Google Calendar" if ok else "⚠️ Не вдалось видалити подію")
+                            except Exception as e:
+                                print(f"cal_done error: {e}")
+                                send(chat_id, f"⚠️ Помилка: {e}")
+                        elif data.startswith("email_delete_") or data.startswith("email_keep_") or data.startswith("email_reply_") or data.startswith("email_send_") or data.startswith("email_cancel_"):
                             handle_email_callback(cb)
                         elif data.startswith("reminder_"):
                             handle_reminder_callback(cb)

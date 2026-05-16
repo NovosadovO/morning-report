@@ -888,6 +888,30 @@ def run_qwatch_watcher():
 threading.Thread(target=run_qwatch_watcher, daemon=True).start()
 
 
+# ─── Assistant watcher (10хв/1г нагадування + вечір завтра + пропозиції) ─────
+def run_assistant_watcher():
+    """assistant.py: нагадування за 10хв/1г, вечірній огляд завтра, пропозиції."""
+    print("=== Starting assistant watcher ===", flush=True)
+    time.sleep(70)  # затримка щоб уникнути старту разом з іншими
+    while True:
+        try:
+            import importlib.util, os as _os
+            spec = importlib.util.spec_from_file_location(
+                "assistant", _os.path.join(_os.path.dirname(__file__), "assistant.py"))
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            mod.check_calendar_10min()
+            mod.check_calendar_1h()
+            mod.check_calendar_day_ahead()
+            mod.propose_calendar_events()
+        except Exception as e:
+            print(f"Assistant watcher error: {e}", flush=True)
+        time.sleep(60)
+
+threading.Thread(target=run_assistant_watcher, daemon=True).start()
+print("=== Assistant watcher thread started ===", flush=True)
+
+
 # ─── Webhook сервер в окремому thread ────────────────────────────────────────
 def run_webhook_server():
     """Запускає health_webhook.py HTTP сервер в окремому thread."""
