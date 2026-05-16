@@ -1702,11 +1702,272 @@ def _gh_save_sent(data, sha):
     except Exception as e:
         print(f"_gh_save_sent error: {e}")
 
+def _get_report_slot(now_local):
+    """
+    3 слоти на годину: :00, :20, :40
+    Повертає ключ слоту або None якщо ми не у вікні.
+    Вікна: 0-2хв, 20-22хв, 40-42хв
+    """
+    m = now_local.minute
+    h = now_local.hour
+    date_str = now_local.strftime("%Y-%m-%d")
+    if 0 <= m < 3:
+        return f"{date_str}T{h:02d}:00"
+    elif 20 <= m < 23:
+        return f"{date_str}T{h:02d}:20"
+    elif 40 <= m < 43:
+        return f"{date_str}T{h:02d}:40"
+    return None
+
+
+def _build_report_header(now_local, slot_key, cal_events_raw):
+    """
+    Різноманітний заголовок звіту залежно від часу та слоту.
+    Кожен слот — свій стиль.
+    """
+    import random as _rnd, hashlib as _hsh
+    h = now_local.hour
+    m = now_local.minute
+    weekday_ua = ["Пн","Вт","Ср","Чт","Пт","Сб","Нд"][now_local.weekday()]
+    weekday_full = ["понеділок","вівторок","середа","четвер","п'ятниця","субота","неділя"][now_local.weekday()]
+    time_str = now_local.strftime("%H:%M")
+    date_str = now_local.strftime("%d.%m")
+    is_weekend = now_local.weekday() >= 5
+
+    # Визначаємо слот (:00/:20/:40)
+    if ":00" in slot_key:
+        slot_label = "00"
+    elif ":20" in slot_key:
+        slot_label = "20"
+    else:
+        slot_label = "40"
+
+    # Час доби
+    if 5 <= h < 9:
+        period = "morning"
+    elif 9 <= h < 13:
+        period = "midday"
+    elif 13 <= h < 17:
+        period = "afternoon"
+    elif 17 <= h < 21:
+        period = "evening"
+    else:
+        period = "night"
+
+    # Унікальний стиль на основі дати+слоту (стабільний, але різний кожен раз)
+    seed_str = f"{slot_key}"
+    seed_int = int(_hsh.md5(seed_str.encode()).hexdigest(), 16)
+    style_idx = seed_int % 12
+
+    # Виводимо контекст з календаря в заголовку
+    cal_hint = ""
+    if cal_events_raw and "нічого не заплановано" not in cal_events_raw.lower():
+        import re as _re
+        ev_names = _re.findall(r"—\s*<b>(.{2,40}?)</b>", cal_events_raw)
+        if ev_names:
+            cal_hint = f"\n📌 <i>{esc(ev_names[0])}</i>" if len(ev_names) == 1 else f"\n📌 <i>{esc(ev_names[0])} +{len(ev_names)-1}</i>"
+
+    # 12 різних стилів заголовку
+    headers = [
+        # 0
+        f"┌─────────────────────────┐\n"
+        f"│  🕐 <b>{time_str}</b>  ·  {date_str} ({weekday_ua})  │\n"
+        f"└─────────────────────────┘{cal_hint}",
+        # 1
+        f"⚡ <b>ЗВІТ {time_str}</b>  ·  {weekday_ua} {date_str}{cal_hint}\n"
+        f"{'─' * 28}",
+        # 2
+        f"🔔 <b>{time_str} — {'Вихідний' if is_weekend else weekday_full.capitalize()}</b>{cal_hint}\n"
+        f"<i>Твій {['перший','другий','третій'][['00','20','40'].index(slot_label)]} звіт цієї години</i>",
+        # 3
+        f"{'🌅' if period=='morning' else '☀️' if period=='midday' else '🌆' if period=='afternoon' else '🌙' if period=='evening' else '🌃'} "
+        f"<b>{time_str}  |  {date_str}</b>{cal_hint}\n"
+        f"<code>{'━'*24}</code>",
+        # 4
+        f"📡 <b>МОНІТОРИНГ</b>  {time_str} — {weekday_ua}{cal_hint}\n"
+        f"<i>{'Вихідний день' if is_weekend else 'Робочий день'}</i>",
+        # 5
+        f"<b>╔══ {time_str}  ·  {date_str} ══╗</b>{cal_hint}",
+        # 6
+        f"🗓 <b>{weekday_full.upper()}, {date_str}</b>  🕐 {time_str}{cal_hint}\n"
+        f"{'▬' * 22}",
+        # 7
+        f"{'🏙' if not is_weekend else '🏖'} <b>Кошіце, {time_str}</b>  ·  {date_str}{cal_hint}",
+        # 8
+        f"⏱ <b>Оновлення {time_str}</b>{cal_hint}\n"
+        f"<i>{weekday_full.capitalize()} — {'відпочиваємо' if is_weekend else 'продуктивний день'}</i>",
+        # 9
+        f"🔵 <b>{time_str}</b>  {weekday_ua} {date_str}{cal_hint}\n"
+        f"<code>• • • • • • • • • •</code>",
+        # 10
+        f"{'🌤' if period in ('morning','midday') else '🌇' if period=='afternoon' else '🌙'} "
+        f"<b>{time_str}  ·  {weekday_ua}</b>{cal_hint}\n"
+        f"<i>Слот #{['00','20','40'].index(slot_label)+1}/3</i>",
+        # 11
+        f"📊 <b>ДАШБОРД</b>  {time_str}  {date_str}{cal_hint}\n"
+        f"{'═' * 20}",
+    ]
+
+    return headers[style_idx]
+
+
+def _get_calendar_context_for_report():
+    """Швидко витягує події календаря для контексту звіту."""
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    if not creds_json:
+        return [], "нічого не заплановано"
+    try:
+        creds_data = json.loads(creds_json)
+        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        headers = {"Authorization": f"Bearer {token}"}
+        cal_id = "novosadovoleg%40gmail.com"
+        now = datetime.now(timezone.utc)
+        now_local = now + timedelta(hours=2)
+        today_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        today_end = today_start + timedelta(hours=48)
+        url = (
+            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+            f"?timeMin={urllib.parse.quote(today_start.isoformat())}"
+            f"&timeMax={urllib.parse.quote(today_end.isoformat())}"
+            f"&singleEvents=true&orderBy=startTime&maxResults=15"
+        )
+        if _HAS_REQUESTS:
+            r = _requests.get(url, headers=headers, timeout=10)
+            r.raise_for_status()
+            events = r.json().get("items", [])
+        else:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=10) as r:
+                events = json.loads(r.read()).get("items", [])
+        result = []
+        for ev in events:
+            start = ev["start"].get("dateTime") or ev["start"].get("date")
+            summary = ev.get("summary", "")
+            try:
+                dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
+                t = (dt + timedelta(hours=2)).strftime("%H:%M") if "T" in start else "весь день"
+                ev_date = (dt + timedelta(hours=2)).strftime("%Y-%m-%d")
+            except:
+                t = start; ev_date = ""
+            result.append({"summary": summary, "time": t, "date": ev_date, "raw_start": start})
+        text_parts = [f"{e['time']} {e['summary']}" for e in result if e['date'] == now_local.strftime("%Y-%m-%d")]
+        return result, (", ".join(text_parts) if text_parts else "нічого не заплановано")
+    except Exception as e:
+        print(f"_get_calendar_context_for_report error: {e}")
+        return [], "нічого не заплановано"
+
+
+def _format_weather_visual(weather_text):
+    """Форматує погоду з мінімалістичним візуальним стилем."""
+    import re as _re
+    if not weather_text:
+        return None
+    # Витягуємо ключові дані
+    temp_m = _re.search(r"([-−]?\d+)[°℃]", weather_text)
+    feels_m = _re.search(r"(?:відчув|feels)[^\d]*([-−]?\d+)", weather_text, _re.I)
+    humid_m = _re.search(r"вологість[:\s]*([\d]+)%", weather_text, _re.I)
+    wind_m = _re.search(r"вітер[:\s]*([\d.]+)", weather_text, _re.I)
+    desc_m = _re.search(r"(?:Опис|desc|:)\s*([а-яА-ЯіїєёІЇЄ ,а-я]+?)(?:\n|$)", weather_text)
+
+    if not temp_m:
+        return weather_text  # fallback
+
+    temp = int(temp_m.group(1).replace("−", "-"))
+    feels = int(feels_m.group(1).replace("−", "-")) if feels_m else temp
+
+    # Погодний емоджі
+    wl = weather_text.lower()
+    if "гроза" in wl: w_icon = "⛈"
+    elif "злива" in wl or "сильний дощ" in wl: w_icon = "🌧"
+    elif "дощ" in wl: w_icon = "🌦"
+    elif "хмарно" in wl and "хмарно без опадів" not in wl: w_icon = "☁️"
+    elif "ясно" in wl or "сонячно" in wl: w_icon = "☀️"
+    elif "туман" in wl: w_icon = "🌫"
+    elif "сніг" in wl: w_icon = "❄️"
+    elif "мряка" in wl: w_icon = "🌧"
+    else: w_icon = "🌤"
+
+    # Температурний колір
+    if temp < 0: t_style = "❄️"
+    elif temp < 10: t_style = "🥶"
+    elif temp < 20: t_style = "😊"
+    elif temp < 28: t_style = "☀️"
+    else: t_style = "🥵"
+
+    # Поради
+    advice = []
+    if "дощ" in wl or "злива" in wl: advice.append("☂️ парасолька")
+    if "гроза" in wl: advice.append("🏠 краще вдома")
+    if temp < 0: advice.append("🧣 мороз!")
+    elif temp < 8: advice.append("🧥 куртка")
+    elif temp > 28: advice.append("💧 пий воду")
+    if "туман" in wl: advice.append("🚗 обережно на дорозі")
+
+    result = f"🌡 <b>ПОГОДА ЗАРАЗ</b>\n"
+    result += f"{w_icon} <b>{temp}°C</b>"
+    if feels != temp:
+        result += f"  (відчув. {feels}°)"
+    if humid_m: result += f"  💧{humid_m.group(1)}%"
+    if wind_m: result += f"  🌬{wind_m.group(1)} м/с"
+    if advice:
+        result += f"\n<i>{'  ·  '.join(advice)}</i>"
+    return result
+
+
+def _format_prices_visual(prices_text, cal_events_text=""):
+    """Форматує крипто з акцентом на зміні + calendar-aware порада."""
+    import re as _re
+    if not prices_text:
+        return None
+
+    up = prices_text.count("🔺")
+    dn = prices_text.count("🔻")
+
+    if up > dn + 1:
+        market = "🟢 БИЧАЧИЙ"
+        market_tip = "Ринок зелений — гарний час переглянути портфель."
+    elif dn > up + 1:
+        market = "🔴 ВЕДМЕЖИЙ"
+        market_tip = "Ринок падає — не панікуй, стеж за стоп-лосами."
+    else:
+        market = "🟡 НЕЙТРАЛЬНИЙ"
+        market_tip = "Бокова торгівля — жодних різких рухів."
+
+    # Якщо є вільний час — додаємо контекстну пораду
+    if "вихідний" in cal_events_text.lower() or not cal_events_text or "нічого" in cal_events_text:
+        tip_line = f"\n<i>💡 {market_tip}</i>"
+    else:
+        tip_line = ""
+
+    # Витягуємо монети
+    coins = []
+    for coin in ["BTC", "ETH", "SOL", "BNB", "AVAX", "ONDO"]:
+        row_m = _re.search(r"[^\n]*" + coin + r"[^\n]*", prices_text)
+        if not row_m: continue
+        row = row_m.group(0)
+        price_m = _re.search(r"\$([\d,]+(?:\.\d+)?)", row)
+        pct_m = _re.search(r"([+\-−][\d.]+)%", row)
+        if not price_m: continue
+        price = price_m.group(1)
+        pct_str = pct_m.group(0) if pct_m else ""
+        trend = "🔺" if "🔺" in row else ("🔻" if "🔻" in row else "➡")
+        pct_val = float(pct_m.group(1).replace("−", "-")) if pct_m else 0
+        bar = "▓▓▓" if pct_val > 3 else ("▓▓░" if pct_val > 0 else ("░░░" if pct_val < -3 else "▓░░"))
+        coins.append(f"{trend} <b>{coin}</b> ${price}  <code>{bar}</code> {pct_str}")
+
+    header = f"💰 <b>КРИПТО</b>  ·  {market}"
+    body = "\n".join(coins[:5]) if coins else prices_text[:300]
+    return f"{header}\n{body}{tip_line}"
+
+
 def main():
     now = datetime.now(timezone.utc)
     now_local = now + timedelta(hours=2)
-    # Деплікація по годинному слоту: раз на годину (не кожні 20 хв)
-    hour_key = now_local.strftime("%Y-%m-%dT%H:00")
+    # 3 слоти на годину: :00, :20, :40
+    hour_key = _get_report_slot(now_local)
+    if hour_key is None:
+        print(f"=== Not in report window (m={now_local.minute}), skipping ===")
+        return
 
     # Захист від дублів — атомарний claim через SHA conflict
     # Читаємо стан + SHA
@@ -1715,14 +1976,14 @@ def main():
         gh_sent = load_json_file(MAIN_SENT_FILE, default={})
         gh_sha = None
 
-    if gh_sent.get("last_hour") == hour_key:
+    if gh_sent.get("last_slot") == hour_key:
         print(f"=== Already sent this slot ({hour_key}), skipping ===")
         return
 
     # Атомарно записуємо claim ПЕРЕД відправкою — якщо інший контейнер встиг,
     # отримаємо 409 і вийдемо без відправки
     claim_data = dict(gh_sent)
-    claim_data["last_hour"] = hour_key
+    claim_data["last_slot"] = hour_key
     claim_data["claimed_at"] = now.isoformat()
     if gh_sha:
         try:
@@ -1754,7 +2015,7 @@ def main():
     else:
         # Немає SHA — локальна перевірка (один контейнер)
         _sent = load_json_file(MAIN_SENT_FILE, default={})
-        _sent["last_hour"] = hour_key
+        _sent["last_slot"] = hour_key
         save_json_file(MAIN_SENT_FILE, _sent)
 
     local_time = now_local.strftime("%H:%M")
@@ -1765,38 +2026,53 @@ def main():
     is_weekend = weekday >= 5
     include_learning_blocks = (not is_weekend) or (local_hour >= 11)
 
-    print(f"=== Monitor run at {now.isoformat()} (weekend={is_weekend}, include_learning={include_learning_blocks}) ===")
+    print(f"=== Monitor run at {now.isoformat()} slot={hour_key} (weekend={is_weekend}) ===")
 
-    try:
-        prices_text  = get_prices() if include_learning_blocks else None
-    except Exception as e:
-        print(f"get_prices error: {e}")
-        prices_text = "💰 <b>Ціни</b>\n⚠️ Помилка завантаження"
+    # ── КРОК 1: СПОЧАТКУ КАЛЕНДАР — він визначає контекст ────────────────────
+    cal_events_list, cal_events_text = _get_calendar_context_for_report()
+    print(f"Calendar context: {cal_events_text[:80]}")
 
-    try:
-        weather_text = get_weather()
-    except Exception as e:
-        print(f"get_weather error: {e}")
-        weather_text = "🌤 <b>Погода</b>\n⚠️ Помилка завантаження"
-
+    # Повний блок календаря для звіту
     try:
         cal_text = get_calendar()
     except Exception as e:
         print(f"get_calendar error: {e}")
-        cal_text = "📅 <b>Календар</b>\n⚠️ Помилка завантаження"
+        cal_text = "📅 <b>Календар</b>\n⚠️ Помилка"
 
+    # ── КРОК 2: Погода ───────────────────────────────────────────────────────
+    try:
+        weather_raw = get_weather()
+        weather_text = _format_weather_visual(weather_raw) or weather_raw
+    except Exception as e:
+        print(f"get_weather error: {e}")
+        weather_text = "🌤 <b>Погода</b>\n⚠️ Помилка"
+        weather_raw = ""
+
+    # ── КРОК 3: Крипто (тільки якщо не раннє ранкове в будень) ───────────────
+    prices_text = None
+    if include_learning_blocks:
+        try:
+            prices_raw = get_prices()
+            prices_text = _format_prices_visual(prices_raw, cal_events_text) or prices_raw
+        except Exception as e:
+            print(f"get_prices error: {e}")
+            prices_text = None
+
+    # ── КРОК 4: Email ─────────────────────────────────────────────────────────
     try:
         email_text = get_emails() if include_learning_blocks else None
     except Exception as e:
         print(f"get_emails error: {e}")
         email_text = None
 
+    # ── КРОК 5: Трафік ───────────────────────────────────────────────────────
     try:
         traffic_text = get_city_traffic()
     except Exception as e:
         print(f"get_traffic error: {e}")
         traffic_text = None
 
+    # ── КРОК 6: Астро ────────────────────────────────────────────────────────
     astro_text = None
     try:
         import sys as _sys
@@ -1806,37 +2082,116 @@ def main():
     except Exception as e:
         print(f"get_astro error: {e}")
 
+    # ── КРОК 7: AI-підсумок — знає про календар ──────────────────────────────
     try:
-        summary_text = get_summary(prices_text or "", weather_text, cal_text, email_text, astro_text)
+        summary_text = get_summary(prices_text or "", weather_raw if 'weather_raw' in dir() else weather_text, cal_text, email_text, astro_text)
     except Exception as e:
         print(f"get_summary error: {e}")
         summary_text = ""
 
-    SEP = "\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n"
+    # ── КРОК 8: Calendar-aware AI секція (кожен звіт унікальна порада) ───────
+    ai_insight = None
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    if gemini_key:
+        try:
+            import uuid as _uuid_r, re as _re_r
+            seed = str(_uuid_r.uuid4())[:8]
+            h_val = local_hour
+            shift_hint = ""
+            # Визначаємо зміну з календаря
+            cal_lower = cal_events_text.lower()
+            if "рання" in cal_lower or "ранн" in cal_lower:
+                shift_hint = "Сьогодні рання зміна (06:00–18:00)."
+            elif "нічна" in cal_lower or "нічн" in cal_lower:
+                shift_hint = "Сьогодні нічна зміна (18:00–06:00)."
+            else:
+                shift_hint = "Сьогодні вихідний/вільний день."
 
-    parts = [f"🕐 <b>Звіт {local_time}  ·  {local_date}</b>\n<i>Годинний звіт</i>"]
+            # Контекст ваги
+            weight_hint = ""
+            try:
+                from storage import load_weight as _lw_r
+                wd_r = _lw_r()
+                if wd_r:
+                    lk = sorted(wd_r.keys())[-1]
+                    weight_hint = f"Остання вага: {wd_r[lk]} кг (ціль 78 кг)."
+            except: pass
 
-    if prices_text:
-        parts.append(prices_text)
+            # Час-специфічна порада
+            if 5 <= h_val < 9:
+                tip_ctx = "Ранок. Дай одну конкретну пораду для успішного старту дня виходячи з календаря та цілей."
+            elif 9 <= h_val < 13:
+                tip_ctx = "Перша половина дня. Нагадай про найважливіше завдання зараз виходячи з календаря."
+            elif 13 <= h_val < 17:
+                tip_ctx = "Після обіду. Дай пораду: що зробити для здоров'я або продуктивності в наступні 2 години."
+            elif 17 <= h_val < 21:
+                tip_ctx = "Вечір. Оціни чи є час для пробіжки або підготовки до завтра з урахуванням зміни."
+            else:
+                tip_ctx = "Пізній вечір. Що треба підготувати перед сном виходячи з завтрашнього розкладу."
 
+            ai_prompt = (
+                f"Ти персональний асистент Олега (Кошіце). {shift_hint} {weight_hint} "
+                f"Календар сьогодні: {cal_events_text}. "
+                f"{tip_ctx} "
+                f"1-2 речення, по-українськи, КОНКРЕТНО (не загальні слова). "
+                f"[seed:{seed}]"
+            )
+            ai_payload = json.dumps({
+                "contents": [{"parts": [{"text": ai_prompt}]}],
+                "generationConfig": {"maxOutputTokens": 120, "temperature": 0.9},
+                "thinkingConfig": {"thinkingBudget": 0}
+            }).encode()
+            ai_req = urllib.request.Request(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                data=ai_payload, headers={"Content-Type": "application/json"}, method="POST"
+            )
+            with urllib.request.urlopen(ai_req, timeout=20) as r_ai:
+                ai_resp = json.loads(r_ai.read())
+            ai_insight = ai_resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+            if ai_insight and ai_insight[-1] not in ".!?»":
+                ai_insight += "."
+        except Exception as e:
+            print(f"ai_insight error: {e}")
+
+    # ── СКЛАДАЄМО ЗВІТ ────────────────────────────────────────────────────────
+    SEP = "\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n"
+
+    # Динамічний заголовок — різний для кожного слоту
+    header = _build_report_header(now_local, hour_key, cal_text)
+    parts = [header]
+
+    # Блок 1: Погода (завжди)
     parts.append(weather_text)
 
+    # Блок 2: Трафік (якщо є)
     if traffic_text:
         parts.append(traffic_text)
 
+    # Блок 3: Крипто (якщо активований)
+    if prices_text:
+        parts.append(prices_text)
+
+    # Блок 4: Календар (ЗАВЖДИ — основа всього)
     parts.append(cal_text)
 
+    # Блок 5: Email (якщо є непрочитані)
     if email_text:
         parts.append(email_text)
 
-    if is_weekend and not include_learning_blocks:
-        parts.append("💤 <i>Вихідний — крипто/пошта/навчання з 11:00</i>")
-
+    # Блок 6: Астро (якщо завантажено)
     if astro_text:
         parts.append(astro_text)
 
+    # Блок 7: AI-підсумок
     if summary_text:
         parts.append(summary_text)
+
+    # Блок 8: Calendar-aware AI порада (нова, унікальна кожен раз)
+    if ai_insight:
+        parts.append(f"🤖 <b>AI-порада</b>\n<i>{esc(ai_insight)}</i>")
+
+    if is_weekend and not include_learning_blocks:
+        parts.append("💤 <i>Вихідний — крипто/пошта з 11:00</i>")
 
     # Розбиваємо на повідомлення по секціях щоб не обрізати HTML теги
     MAX_MSG = 4000
@@ -1948,13 +2303,64 @@ def check_calendar_reminders():
                 continue
 
             s_lower = summary.lower()
-            if "нічна" in s_lower:      emoji = "🌙"
-            elif "рання" in s_lower:    emoji = "☀️"
-            elif "birthday" in s_lower or "народження" in s_lower: emoji = "🎂"
-            elif "зустріч" in s_lower or "meet" in s_lower:        emoji = "🤝"
-            else:                       emoji = "📅"
+            if "нічна" in s_lower:
+                emoji = "🌙"
+                ev_tip = "Поїж перед виходом  ·  Armolopid  ·  Термос"
+                ev_style = "shift_night"
+            elif "рання" in s_lower:
+                emoji = "☀️"
+                ev_tip = "Приготуй одяг  ·  Сніданок  ·  Armolopid"
+                ev_style = "shift_early"
+            elif "birthday" in s_lower or "народження" in s_lower:
+                emoji = "🎂"
+                ev_tip = "Не забудь привітати!"
+                ev_style = "birthday"
+            elif "зустріч" in s_lower or "meet" in s_lower:
+                emoji = "🤝"
+                ev_tip = "Підготуйся до зустрічі"
+                ev_style = "meeting"
+            elif "лікар" in s_lower or "лікарня" in s_lower or "doctor" in s_lower:
+                emoji = "🏥"
+                ev_tip = "Візьми документи  ·  Запиши питання"
+                ev_style = "medical"
+            elif "тренуван" in s_lower or "gym" in s_lower or "спорт" in s_lower:
+                emoji = "🏃"
+                ev_tip = "Підготуй спорядження  ·  Вода"
+                ev_style = "sport"
+            else:
+                emoji = "📅"
+                ev_tip = ""
+                ev_style = "default"
 
-            msg = f"{emoji} <b>Нагадування — через 1 годину:</b>\n<b>{esc(summary)}</b>\n🕐 Початок о <b>{t}</b>"
+            # Різні стилі для різних типів подій
+            if ev_style in ("shift_early", "shift_night"):
+                msg = (
+                    f"{emoji} <b>ЧЕРЕЗ 1 ГОДИНУ</b>\n"
+                    f"{'═' * 22}\n"
+                    f"  <b>{esc(summary)}</b>\n"
+                    f"  🕐 Старт о <b>{t}</b>\n"
+                    f"{'─' * 22}\n"
+                    f"<i>{ev_tip}</i>"
+                )
+            elif ev_style == "birthday":
+                msg = (
+                    f"🎂 <b>ЧАС ПРИВІТАТИ!</b>\n"
+                    f"<b>{esc(summary)}</b>  о {t}\n"
+                    f"<i>{ev_tip}</i>"
+                )
+            elif ev_style == "meeting":
+                msg = (
+                    f"🤝 <b>Зустріч через 1 годину</b>\n"
+                    f"<b>{esc(summary)}</b>\n"
+                    f"🕐 о {t}  ·  <i>{ev_tip}</i>"
+                )
+            else:
+                msg = (
+                    f"{emoji} <b>Нагадування — через 1г</b>\n"
+                    f"┌─ <b>{esc(summary)}</b>\n"
+                    f"└─ 🕐 о <b>{t}</b>"
+                    + (f"\n<i>{ev_tip}</i>" if ev_tip else "")
+                )
             send_telegram(msg)
             print(f"1h reminder sent: {summary} at {t}")
             new_reminded.append(reminder_key)
@@ -4142,8 +4548,19 @@ def check_smart_notifications():
                 {"Погода в Кошіце": weather_ctx} if weather_ctx else None,
                 max_tokens=180
             )
-            header = "⏰ <b>ПІДЙОМ! Рання зміна о 06:00</b>\n━━━━━━━━━━━━━━━━\n"
-            send_telegram(header + (ai_txt or "💊 Armolopid + сніданок — і вперед!"))
+            # Час до виходу
+            now_l2 = datetime.now(timezone.utc) + timedelta(hours=2)
+            mins_to_go = max(0, (6*60 - (now_l2.hour*60 + now_l2.minute)) - 30)
+            weather_line = f"\n🌡 <b>{weather_ctx}</b>" if weather_ctx else ""
+            header = (
+                f"⏰ <b>ПІДЙОМ!</b>  ·  04:30{weather_line}\n"
+                f"┌─────────────────────────┐\n"
+                f"│  ☀️ Рання зміна  06:00–18:00  │\n"
+                f"│  🚶 Вихід приблизно о 05:30  │\n"
+                f"└─────────────────────────┘\n"
+                f"💊 Armolopid  ·  🍳 Сніданок  ·  👕 Одяг\n\n"
+            )
+            send_telegram(header + (ai_txt or "Вперед — ти впораєшся!"))
             mark("pre_early")
 
         # ── 2. ПІСЛЯ РАННЬОЇ (18:15) ───────────────────────────────────────
@@ -4164,8 +4581,19 @@ def check_smart_notifications():
                 {"Звички сьогодні": habits_ctx} if habits_ctx else None,
                 max_tokens=200
             )
-            header = "🏠 <b>Рання зміна завершена!</b>\n━━━━━━━━━━━━━━━━\n"
-            send_telegram(header + (ai_txt or "Зважся та відміть звички /звички"))
+            habits_bar = ""
+            if habits_ctx:
+                done_n = int(habits_ctx[0]) if habits_ctx[0].isdigit() else 0
+                bars_post = "✅" * done_n + "⬜" * (4 - done_n)
+                habits_bar = f"\n{bars_post} {habits_ctx}"
+            header = (
+                f"🏠 <b>РАННЯ ЗМІНА ЗАВЕРШЕНА</b>\n"
+                f"{'─' * 26}\n"
+                f"12 годин відпрацьовано 💪{habits_bar}\n\n"
+                f"📋 Що зараз:\n"
+                f"⚖️ Зважся  ·  🍽 Поїж  ·  🛁 Душ\n\n"
+            )
+            send_telegram(header + (ai_txt or "Ти сьогодні молодець — відпочивай!"))
             mark("post_early")
 
         # ── 3. ПІДГОТОВКА ДО НІЧНОЇ (16:30) ──────────────────────────────
@@ -4177,8 +4605,15 @@ def check_smart_notifications():
                 None,
                 max_tokens=180
             )
-            header = "🌙 <b>Нічна зміна через 1.5г</b>\n━━━━━━━━━━━━━━━━\n"
-            send_telegram(header + (ai_txt or "🍽 Поїж зараз + 💊 Armolopid. Хорошої зміни!"))
+            header = (
+                f"🌙 <b>НІЧНА ЗМІНА — ЧЕРЕЗ 1.5 ГОДИНИ</b>\n"
+                f"{'═' * 28}\n"
+                f"  🕕 Старт: 18:00  ·  🕕 Фініш: 06:00\n"
+                f"  🚶 Вихід о 17:25–17:30\n"
+                f"{'─' * 28}\n"
+                f"☑️ Поїж зараз  ·  💊 Armolopid  ·  ☕ Термос\n\n"
+            )
+            send_telegram(header + (ai_txt or "Хорошої зміни! Ти справишся 🌙"))
             mark("pre_night")
 
         # ── 4. ПІСЛЯ НІЧНОЇ (06:15) ───────────────────────────────────────
@@ -4190,8 +4625,14 @@ def check_smart_notifications():
                 None,
                 max_tokens=180
             )
-            header = "😴 <b>Нічна завершена — ДОДОМУ!</b>\n━━━━━━━━━━━━━━━━\n"
-            send_telegram(header + (ai_txt or "🍳 Легкий сніданок і спати. Телефон відклади — сон важливіший."))
+            header = (
+                f"😴 <b>НІЧНА ЗАВЕРШЕНА!</b>  06:15\n"
+                f"{'━' * 26}\n"
+                f"  12 нічних годин ✅  Йди додому!\n"
+                f"{'─' * 26}\n"
+                f"🍳 Легкий сніданок  ·  📵 Телефон відклади  ·  😴 СОН\n\n"
+            )
+            send_telegram(header + (ai_txt or "Сон після ночі — пріоритет №1. Все інше зачекає."))
             mark("post_night")
 
         # ── 5. AI ПОРАДА (11:00, 15:00, 20:30 — вільний день)
@@ -4241,21 +4682,31 @@ def check_smart_notifications():
         if tomorrow_shift in ("early", "night") and h == 22 and 0 <= m < 5 and not sent("tomorrow_plan"):
             if tomorrow_shift == "early":
                 send_telegram(
-                    f"📋 <b>Завтра РАННЯ зміна (06:00)</b>\n"
-                    f"━━━━━━━━━━━━━━━━\n"
-                    f"😴 Лягай спати до 22:30\n"
-                    f"⏰ Будильник на 04:30\n"
-                    f"👕 Приготуй одяг і їжу зараз\n\n"
-                    f"<i>Гарного відпочинку!</i>"
+                    f"🌙 <b>ВЕЧІРНІЙ ЧЕКЛІСТ</b>\n"
+                    f"╔══════════════════════╗\n"
+                    f"║  ☀️ Завтра РАННЯ зміна  ║\n"
+                    f"║      06:00 → 18:00      ║\n"
+                    f"╚══════════════════════╝\n\n"
+                    f"Зроби зараз:\n"
+                    f"  😴 Лягай до 22:30\n"
+                    f"  ⏰ Поставь будильник 04:30\n"
+                    f"  👕 Приготуй одяг і їжу\n"
+                    f"  💊 Armolopid на ранок (поруч)\n\n"
+                    f"<i>Хороший сон = успішна зміна!</i>"
                 )
             else:
                 send_telegram(
-                    f"📋 <b>Завтра НІЧНА зміна (18:00)</b>\n"
-                    f"━━━━━━━━━━━━━━━━\n"
-                    f"😴 Поспи вдень якщо зможеш\n"
-                    f"🍽 Поїж о 16:30–17:00 (останній раз до 06:00)\n"
-                    f"☕️ Підготуй термос з чаєм\n\n"
-                    f"<i>Ти впораєшся 💪</i>"
+                    f"🌙 <b>ВЕЧІРНІЙ ЧЕКЛІСТ</b>\n"
+                    f"╔══════════════════════╗\n"
+                    f"║  🌙 Завтра НІЧНА зміна  ║\n"
+                    f"║      18:00 → 06:00      ║\n"
+                    f"╚══════════════════════╝\n\n"
+                    f"Підготовка:\n"
+                    f"  😴 Поспи вдень якщо зможеш\n"
+                    f"  🍽 Поїж о 16:30–17:00 (до 06:00 більше не буде)\n"
+                    f"  ☕ Підготуй термос з чаєм\n"
+                    f"  💊 Armolopid після обіду\n\n"
+                    f"<i>Ти впораєшся, нічна — твій режим 💪</i>"
                 )
             mark("tomorrow_plan")
 
