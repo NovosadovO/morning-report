@@ -599,7 +599,7 @@ def run_extra_watchers():
             m.check_learning_streak()
         except Exception as e:
             print(f"Extra watchers error: {e}", flush=True)
-        time.sleep(180)
+        time.sleep(300)
 
 
 threading.Thread(target=run_extra_watchers, daemon=True).start()

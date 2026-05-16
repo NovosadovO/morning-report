@@ -1705,9 +1705,8 @@ def _gh_save_sent(data, sha):
 def main():
     now = datetime.now(timezone.utc)
     now_local = now + timedelta(hours=2)
-    # Dedup по 20-хвилинному слоту: HH:00, HH:20, HH:40
-    slot = (now_local.minute // 20) * 20
-    hour_key = now_local.strftime(f"%Y-%m-%dT%H:{slot:02d}")
+    # Деплікація по годинному слоту: раз на годину (не кожні 20 хв)
+    hour_key = now_local.strftime("%Y-%m-%dT%H:00")
 
     # Захист від дублів — атомарний claim через SHA conflict
     # Читаємо стан + SHA
@@ -2416,15 +2415,23 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
     try:
         payload = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.95}
+            "generationConfig": {
+                "maxOutputTokens": max(max_tokens, 300),
+                "temperature": 0.95
+            },
+            "thinkingConfig": {"thinkingBudget": 0}
         }).encode()
         req = urllib.request.Request(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
             data=payload, headers={"Content-Type": "application/json"}, method="POST"
         )
-        with urllib.request.urlopen(req, timeout=15) as r:
+        with urllib.request.urlopen(req, timeout=25) as r:
             resp = json.loads(r.read())
-        return resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+        text = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+        # Якщо текст обривається — спробуємо ще раз з більшим ліком
+        if text and not text[-1] in ".!?»":
+            text += "."
+        return text
     except Exception as e:
         print(f"_ai_personal_message error: {e}")
         return ""
@@ -3894,15 +3901,14 @@ def check_pre_shift_weather():
     today = now_local.strftime("%Y-%m-%d")
 
     # Рання зміна о 05:00 → нагадування о 03:30
-    # Нічна зміна о 17:00 → нагадування о 15:30
-    is_pre_early = (h == 3 and 28 <= m <= 35)
-    is_pre_night = (h == 15 and 28 <= m <= 35)
+    # Нічна зміна о 17:00 → погода вже включена в pre_night (check_smart_notifications 16:30)
+    is_pre_early = (h == 3 and 28 <= m <= 31)
 
-    if not (is_pre_early or is_pre_night):
+    if not is_pre_early:
         return
 
-    key = "pre_early" if is_pre_early else "pre_night"
-    shift_time = "05:00" if is_pre_early else "17:00"
+    key = "pre_early"
+    shift_time = "05:00"
 
     state = load_json_file(PRE_SHIFT_WEATHER_FILE, default={})
     if state.get(key) == today:
@@ -3927,7 +3933,7 @@ def check_pre_shift_weather():
             with urllib.request.urlopen(req, timeout=10) as r:
                 events = json.loads(r.read()).get("items", [])
 
-            shift_word = "рання" if is_pre_early else "нічна"
+            shift_word = "рання"
             has_shift = any(shift_word in e.get("summary","").lower() for e in events)
         except Exception as e:
             print(f"pre_shift_weather calendar error: {e}")
@@ -3937,7 +3943,7 @@ def check_pre_shift_weather():
 
     try:
         # Погода на конкретну годину через open-meteo hourly
-        shift_hour = 5 if is_pre_early else 17
+        shift_hour = 5
         url = (
             "https://api.open-meteo.com/v1/forecast"
             "?latitude=48.7163&longitude=21.2611"

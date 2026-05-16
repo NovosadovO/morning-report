@@ -378,12 +378,15 @@ def check_proactive():
     prompt = None
 
     # ── Ранковий привіт (06:30–07:30) ────────────────────────────────────────
-    # Пропускаємо якщо morning_context вже надіслав брифінг сьогодні
+    # Пропускаємо якщо morning_context АБО morning_brief вже надіслав брифінг сьогодні
     _morning_ctx_sent = False
     try:
         import storage as _st
         _mc = _st.load("monitor_morning_ctx.json", default={})
         if _mc.get("last") == today:
+            _morning_ctx_sent = True
+        _mb = _st.load("monitor_morning_brief.json", default={})
+        if _mb.get("last") == today:
             _morning_ctx_sent = True
     except Exception:
         pass
