@@ -515,7 +515,9 @@ def run():
             })
 
         # Нагадування після нічної зміни — о 07:00
-        night_post_key = f"{today}_night_post"
+        # Використовуємо реальну календарну дату (не нічну межу) — о 07:00 ми вже поза межею
+        real_today = now.strftime("%Y-%m-%d")
+        night_post_key = f"{real_today}_night_post"
         if (not sent.get(night_post_key) and now.hour == 7 and now.minute >= 0 and now.minute < 5):
             sent[night_post_key] = True  # save ПЕРЕД send
             save_sent(sent)

@@ -64,7 +64,7 @@ def _load_github(filename):
         return _load_local(filename)
 
 def _save_github(filename, data):
-    """Зберігає JSON файл в GitHub repo."""
+    """Зберігає JSON файл в GitHub repo. Retry при 409 conflict."""
     _CACHE[filename] = data
     _CACHE_TIME[filename] = time.time()
 
@@ -73,24 +73,28 @@ def _save_github(filename, data):
 
     content = base64.b64encode(json.dumps(data, ensure_ascii=False, indent=2).encode()).decode()
 
-    # Отримуємо поточний SHA (потрібен для update)
-    existing = _gh_request("GET", f"data/{filename}")
-    sha = existing["sha"] if existing else None
+    for attempt in range(3):
+        # Отримуємо поточний SHA (потрібен для update) — завжди свіжий
+        existing = _gh_request("GET", f"data/{filename}")
+        sha = existing["sha"] if existing else None
 
-    body = {
-        "message": f"update {filename}",
-        "content": content,
-    }
-    if sha:
-        body["sha"] = sha
+        body = {
+            "message": f"update {filename}",
+            "content": content,
+        }
+        if sha:
+            body["sha"] = sha
 
-    result = _gh_request("PUT", f"data/{filename}", body)
-    if result:
-        print(f"storage: saved {filename} to GitHub")
-        return True
-    else:
-        print(f"storage: failed to save {filename} to GitHub")
-        return False
+        result = _gh_request("PUT", f"data/{filename}", body)
+        if result:
+            print(f"storage: saved {filename} to GitHub (attempt {attempt+1})")
+            return True
+        else:
+            print(f"storage: failed to save {filename} to GitHub (attempt {attempt+1}), retrying...")
+            time.sleep(0.5)
+
+    print(f"storage: gave up saving {filename} to GitHub after 3 attempts")
+    return False
 
 def _load_local(filename):
     try:

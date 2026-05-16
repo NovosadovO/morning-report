@@ -2250,9 +2250,14 @@ def check_morning_brief():
 
     lines_out.append(f"<i>{mood}</i>")
 
-    send_telegram("\n".join(lines_out))
+    # Зберігаємо ПЕРЕД відправкою — захист від дублів при Railway restart
     state["last"] = today
     save_json_file(MORNING_BRIEF_FILE, state)
+    msg_out = "\n".join(lines_out)
+    # Обрізаємо до ліміту Telegram (4096 символів)
+    if len(msg_out) > 4090:
+        msg_out = msg_out[:4087] + "..."
+    send_telegram(msg_out)
     print(f"Morning brief sent: {today} shift={shift}")
 
 
@@ -2441,45 +2446,10 @@ def check_proactive_insights():
     tomorrow_shift, tomorrow_shift_dt = get_shift(tomorrow_events)
 
     # ── 1. Ранкове привітання з AI (08:00, вільний день) ─────────────────────
-    if h == 8 and not today_shift and not already_sent("morning_free"):
-        weekday_names = ["Понеділок","Вівторок","Середа","Четвер","П'ятниця","Субота","Неділя"]
-        day_name = weekday_names[dow]
-        tomorrow_ctx = ""
-        if tomorrow_shift == "early":
-            tomorrow_ctx = " Завтра рання зміна — врахуй при плануванні вечора."
-        elif tomorrow_shift == "night":
-            tomorrow_ctx = " Завтра нічна зміна — варто відпочити вдень."
-
-        # Отримуємо реальні події календаря
-        cal_events_str = ""
-        try:
-            cal_text = get_calendar()
-            if cal_text and "немає" not in cal_text.lower():
-                cal_events_str = cal_text
-        except: pass
-
-        # Погода
-        weather_str = ""
-        try:
-            weather_str = get_weather().split("\n")[0]
-        except: pass
-
-        ai_msg = _ai_personal_message(
-            f"Вільний ранок — {day_name}. {tomorrow_ctx}",
-            context={
-                "Календар сьогодні": cal_events_str[:200] if cal_events_str else "порожній",
-                "Погода": weather_str or "невідома",
-            }
-        )
-        header = f"🌅 <b>Доброго ранку, {day_name}!</b>\n\n"
-        if weather_str:
-            header += f"🌤 {weather_str}\n\n"
-        if cal_events_str and "немає" not in cal_events_str.lower()[:50]:
-            header += f"📅 {cal_events_str[:200]}\n\n"
-        if ai_msg:
-            header += f"🤖 {ai_msg}"
-        send_telegram(header)
-        mark_sent("morning_free")
+    # ── 1. Ранкове привітання — ВИМКНЕНО тут, обробляється в check_morning_context (08:00 вільний)
+    #    щоб уникнути дублювання ранкових повідомлень
+    if False and h == 8 and not today_shift and not already_sent("morning_free"):
+        pass  # логіка перенесена в check_morning_context
 
     # ── 2 & 3. Нагадування перед зміною — перенесено в check_smart_notifications
     #    (04:30 рання, 16:30 нічна) щоб уникнути дублювання
@@ -2514,8 +2484,8 @@ def check_proactive_insights():
                     )
                     if ai_msg:
                         msg += f"\n{ai_msg}"
-                    send_telegram(msg)
                     mark_sent("weekly_weight")
+                    send_telegram(msg)
         except Exception as e:
             print(f"weekly weight error: {e}")
 
@@ -2534,8 +2504,8 @@ def check_proactive_insights():
             msg += f"\n🌤 {weather_str}"
         if ai_msg:
             msg += f"\n\n{ai_msg}"
-        send_telegram(msg)
         mark_sent("run_motivation")
+        send_telegram(msg)
 
     # ── 7. Понеділок — реальний огляд тижня (пн 09:00, вільний) ─────────────
     if h == 9 and dow == 0 and not today_shift and not already_sent("monday_goals"):
@@ -2570,8 +2540,8 @@ def check_proactive_insights():
             msg += f"\n📅 {cal_next}"
         if ai_msg:
             msg += f"\n\n{ai_msg}"
-        send_telegram(msg)
         mark_sent("monday_goals")
+        send_telegram(msg)
 
 
 # ─── КРИПТО АЛЕРТ >5% ЗА ГОДИНУ ──────────────────────────────────────────────
@@ -4378,10 +4348,14 @@ def check_morning_context():
         if ai_tip:
             msg += f"💡 <i>{ai_tip}</i>"
 
-        send_telegram(msg)
-        print(f"Morning context sent: shift={shift}, hour={h}")
+        # Зберігаємо ПЕРЕД відправкою — захист від дублів при Railway restart
         state["last"] = today
         save_json_file(MORNING_CTX_FILE, state)
+        # Обрізаємо до ліміту Telegram (4096 символів)
+        if len(msg) > 4090:
+            msg = msg[:4087] + "..."
+        send_telegram(msg)
+        print(f"Morning context sent: shift={shift}, hour={h}")
 
     except Exception as e:
         print(f"check_morning_context error: {e}")
