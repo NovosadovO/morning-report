@@ -135,17 +135,19 @@ def handle_meds_callback(callback_query):
     chat_id = callback_query["message"]["chat"]["id"]
     cb_id   = callback_query["id"]
 
-    # ПЕРШИМ — підтверджуємо callback
-    api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Записано ✓"})
+    # ПЕРШИМ — підтверджуємо callback (завжди, незалежно від решти)
+    try:
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Записано ✓"})
+    except Exception as _ae:
+        print(f"answerCallbackQuery error: {_ae}")
 
-    # meds_yes_2026-04-27 або meds_no_2026-04-27 або meds_yes_today
-    parts  = data.split("_", 2)
-    answer = parts[1]  # yes / no
+    # meds_yes_2026-04-27 або meds_no_2026-04-27
+    parts    = data.split("_", 2)
+    answer   = parts[1] if len(parts) > 1 else "yes"  # yes / no
     date_raw = parts[2] if len(parts) > 2 else ""
-    if date_raw == "today":
-        from datetime import datetime, timezone, timedelta as _td
-        _now = datetime.now(timezone.utc) + _td(hours=2)
-        # Нічна зміна: 00:00–05:59 → запис на вчора
+    from datetime import datetime, timezone, timedelta as _td
+    _now = datetime.now(timezone.utc) + _td(hours=2)
+    if not date_raw or date_raw == "today":
         if 0 <= _now.hour < 6:
             date = (_now - _td(days=1)).strftime("%Y-%m-%d")
         else:
@@ -153,30 +155,13 @@ def handle_meds_callback(callback_query):
     else:
         date = date_raw
 
+    # ДРУГИМ — редагуємо повідомлення (прибираємо кнопки) — до будь-яких важких операцій
+    if answer == "yes":
+        reply = "💊 <b>ARMOLOPID PLUS</b>\n\n✅ <b>Прийнято!</b> Молодець 💪\nПродовжуй в тому ж дусі."
+    else:
+        reply = "💊 <b>ARMOLOPID PLUS</b>\n\n❌ <b>Не прийнято</b> — прийми при першій нагоді!"
+
     try:
-        try:
-            import sys as _sys; _sys.path.insert(0, os.path.dirname(__file__))
-            from storage import load_meds as _lm, save_meds as _sm
-            meds_db = _lm()
-            meds_db[date] = (answer == "yes")
-            _sm(meds_db)
-        except Exception as _se:
-            print(f"meds save error: {_se}")
-            meds_file = "/tmp/meds_data.json"
-            try:
-                with open(meds_file) as f:
-                    meds_db = _json.load(f)
-            except:
-                meds_db = {}
-            meds_db[date] = (answer == "yes")
-            with open(meds_file, "w") as f:
-                _json.dump(meds_db, f)
-
-        if answer == "yes":
-            reply = "💊 <b>ARMOLOPID PLUS</b>\n\n✅ <b>Прийнято!</b> Молодець 💪\nПродовжуй в тому ж дусі."
-        else:
-            reply = "💊 <b>ARMOLOPID PLUS</b>\n\n❌ <b>Не прийнято.</b>\nНе забудь прийняти при першій нагоді!"
-
         api("editMessageText", {
             "chat_id": chat_id,
             "message_id": msg_id,
@@ -184,33 +169,49 @@ def handle_meds_callback(callback_query):
             "parse_mode": "HTML",
             "reply_markup": {"inline_keyboard": []}
         })
-
-        # Логуємо в Google Calendar
+    except Exception as _ee:
+        print(f"editMessageText error: {_ee}")
+        # Якщо edit не вдався — хоча б видалимо кнопки окремим запитом
         try:
-            from datetime import datetime, timezone, timedelta
-            now_l = datetime.now(timezone.utc) + timedelta(hours=2)
-            mark = "✅" if answer == "yes" else "❌"
-            log_to_calendar(
-                f"💊 Armolopid Plus {mark}",
-                date,
-                now_l.hour,
-                now_l.minute
-            )
-        except Exception as _ce:
-            print(f"meds log_to_calendar error: {_ce}")
+            api("editMessageReplyMarkup", {
+                "chat_id": chat_id,
+                "message_id": msg_id,
+                "reply_markup": {"inline_keyboard": []}
+            })
+        except Exception as _re:
+            print(f"editMessageReplyMarkup error: {_re}")
 
-        # Позначаємо в monitor_meds.json що відреагував → повтор не прийде
+    # ТРЕТІМ — зберігаємо в storage (не критично якщо впаде)
+    try:
+        import sys as _sys; _sys.path.insert(0, os.path.dirname(__file__))
+        from storage import load_meds as _lm, save_meds as _sm
+        meds_db = _lm()
+        meds_db[date] = (answer == "yes")
+        _sm(meds_db)
+        print(f"meds saved: {date} = {answer}")
+    except Exception as _se:
+        print(f"meds save error (storage): {_se}")
+        # Fallback: локальний файл
         try:
-            import sys as _sys2; _sys2.path.insert(0, os.path.dirname(__file__))
-            from monitor import MEDS_FILE, load_json_file, save_json_file
-            _meds_state = load_json_file(MEDS_FILE, default={})
-            _meds_state[f"done_{date}"] = True
-            save_json_file(MEDS_FILE, _meds_state)
-        except Exception as _me:
-            print(f"meds done_flag error: {_me}")
+            meds_file = "/tmp/meds_data.json"
+            try:
+                with open(meds_file) as f:
+                    meds_db = _json.load(f)
+            except Exception:
+                meds_db = {}
+            meds_db[date] = (answer == "yes")
+            with open(meds_file, "w") as f:
+                _json.dump(meds_db, f)
+        except Exception as _fe:
+            print(f"meds save error (file): {_fe}")
 
-    except Exception as e:
-        print(f"meds callback error: {e}")
+    # ЧЕТВЕРТИМ — логуємо в Google Calendar (не критично)
+    try:
+        now_l = datetime.now(timezone.utc) + _td(hours=2)
+        mark = "✅" if answer == "yes" else "❌"
+        log_to_calendar(f"💊 Armolopid Plus {mark}", date, now_l.hour, now_l.minute)
+    except Exception as _ce:
+        print(f"meds log_to_calendar error: {_ce}")
 
 
 def get_meds_report(period="week"):
@@ -1281,20 +1282,29 @@ def handle_command(chat_id, text):
             from meds import get_meds_report_full
             send(chat_id, get_meds_report_full("week"))
         except Exception as e:
-            send(chat_id, get_meds_report("week"))
+            print(f"/ліки (full) error: {e}")
+            try:
+                send(chat_id, get_meds_report("week"))
+            except Exception as e2:
+                send(chat_id, f"⚠️ Помилка звіту ліків: {e2}")
 
     elif text in ["/ліки місяць", "ліки місяць"]:
         try:
             from meds import get_meds_report_full
             send(chat_id, get_meds_report_full("month"))
         except Exception as e:
-            send(chat_id, get_meds_report("month"))
+            print(f"/ліки місяць (full) error: {e}")
+            try:
+                send(chat_id, get_meds_report("month"))
+            except Exception as e2:
+                send(chat_id, f"⚠️ Помилка звіту ліків: {e2}")
 
     elif text in ["/ліки курс", "ліки курс"]:
         try:
             from meds import get_meds_report_full
             send(chat_id, get_meds_report_full("course"))
         except Exception as e:
+            print(f"/ліки курс (full) error: {e}")
             send(chat_id, f"⚠️ Помилка: {e}")
 
     elif text in ["/вага", "вага"]:
