@@ -25,13 +25,59 @@ _GMAIL_USER    = "novosadovoleg@gmail.com"
 def _now():
     return datetime.now(timezone.utc) + timedelta(hours=2)
 
+def _get_google_token(creds_data, scope):
+    """JWT service account token — inline copy, no monitor import needed."""
+    import time as _time
+
+    def _b64url(data):
+        if isinstance(data, str):
+            data = data.encode()
+        return base64.urlsafe_b64encode(data).rstrip(b"=").decode()
+
+    now_ts = int(_time.time())
+    header  = _b64url(json.dumps({"alg": "RS256", "typ": "JWT"}))
+    payload = _b64url(json.dumps({
+        "iss": creds_data["client_email"],
+        "scope": scope,
+        "aud": "https://oauth2.googleapis.com/token",
+        "iat": now_ts,
+        "exp": now_ts + 3600,
+    }))
+    signing_input = f"{header}.{payload}".encode()
+
+    try:
+        from cryptography.hazmat.primitives import hashes, serialization
+        from cryptography.hazmat.primitives.asymmetric import padding
+        private_key = serialization.load_pem_private_key(
+            creds_data["private_key"].encode(), password=None)
+        signature = private_key.sign(signing_input, padding.PKCS1v15(), hashes.SHA256())
+    except Exception:
+        import subprocess, tempfile
+        with tempfile.NamedTemporaryFile(suffix=".pem", delete=False, mode="w") as f:
+            f.write(creds_data["private_key"])
+            pem_path = f.name
+        proc = subprocess.run(
+            ["openssl", "dgst", "-sha256", "-sign", pem_path],
+            input=signing_input, capture_output=True)
+        signature = proc.stdout
+        os.unlink(pem_path)
+
+    jwt_token = f"{header}.{payload}.{_b64url(signature)}"
+    body = urllib.parse.urlencode({
+        "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+        "assertion": jwt_token,
+    }).encode()
+    req = urllib.request.Request("https://oauth2.googleapis.com/token",
+        data=body, method="POST")
+    with urllib.request.urlopen(req, timeout=15) as r:
+        return json.loads(r.read())["access_token"]
+
+
 def _token():
     creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
     if not creds_json:
         return None
     try:
-        import sys; sys.path.insert(0, os.path.dirname(__file__))
-        from monitor import _get_google_token
         return _get_google_token(json.loads(creds_json),
                                  "https://www.googleapis.com/auth/calendar")
     except Exception as e:

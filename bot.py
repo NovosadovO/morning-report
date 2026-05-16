@@ -377,11 +377,11 @@ def handle_email_callback(callback_query):
             mod = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(mod)
             ok = mod.send_email_reply(draft_info["to"], draft_info["subject"], draft_info["body"])
-            if ok:
+            if ok.get("ok"):
                 api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
                 send(chat_id, f"✅ Лист надіслано → {draft_info['to']}")
             else:
-                send(chat_id, "⚠️ Помилка надсилання листа. Перевір логи.")
+                send(chat_id, f"⚠️ Помилка надсилання: {ok.get('error', 'невідома помилка')}")
         except Exception as e:
             print(f"email_send error: {e}")
             send(chat_id, f"⚠️ Помилка: {e}")
@@ -1711,7 +1711,10 @@ def main():
                                     "chat_id": chat_id, "message_id": cb["message"]["message_id"],
                                     "reply_markup": {"inline_keyboard": []}
                                 })
-                                send(chat_id, "✅ Подію видалено з Google Calendar" if ok else "⚠️ Не вдалось видалити подію")
+                                if ok.get("ok"):
+                                    send(chat_id, "✅ Подію видалено з Google Calendar")
+                                else:
+                                    send(chat_id, f"⚠️ Не вдалось видалити: {ok.get('error', 'невідома помилка')}")
                             except Exception as e:
                                 print(f"cal_done error: {e}")
                                 send(chat_id, f"⚠️ Помилка: {e}")
