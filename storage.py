@@ -18,8 +18,12 @@ _CACHE = {}
 _CACHE_TIME = {}
 CACHE_TTL = 30  # секунд
 
+DATA_BRANCH = "data"  # окрема гілка для даних — не тригерить Railway редеплой
+
 def _gh_request(method, path, body=None):
     url = f"{GITHUB_API}/repos/{GITHUB_REPO}/contents/{path}"
+    if method == "GET":
+        url += f"?ref={DATA_BRANCH}"
     headers = {
         "Authorization": f"token {GITHUB_TOKEN}",
         "Content-Type": "application/json",
@@ -27,6 +31,8 @@ def _gh_request(method, path, body=None):
         "User-Agent": "morning-report-bot"
     }
     try:
+        if body and method == "PUT":
+            body["branch"] = DATA_BRANCH
         data = json.dumps(body).encode() if body else None
         req = urllib.request.Request(url, data=data, headers=headers, method=method)
         with urllib.request.urlopen(req, timeout=15) as r:

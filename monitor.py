@@ -1660,13 +1660,15 @@ def get_city_traffic():
 
 MAIN_SENT_FILE = os.path.join(_DATA_DIR, "monitor_main_sent.json")
 
+_GH_DATA_BRANCH = "data"  # окрема гілка для даних — не тригерить Railway
+
 def _gh_get_sent():
-    """Читає monitor_main_sent.json з GitHub (shared між усіма інстансами)."""
+    """Читає monitor_main_sent.json з GitHub гілки data."""
     import base64
     gh_token = os.environ.get("GITHUB_TOKEN", "")
     if not gh_token:
         return None, None
-    url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_main_sent.json"
+    url = f"https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_main_sent.json?ref={_GH_DATA_BRANCH}"
     req = urllib.request.Request(url, headers={
         "Authorization": f"token {gh_token}",
         "User-Agent": "morning-report-bot"
@@ -1680,18 +1682,21 @@ def _gh_get_sent():
         return {}, None
 
 def _gh_save_sent(data, sha):
-    """Зберігає monitor_main_sent.json на GitHub."""
+    """Зберігає monitor_main_sent.json на GitHub гілку data."""
     import base64
     gh_token = os.environ.get("GITHUB_TOKEN", "")
     if not gh_token:
         return
     url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_main_sent.json"
     content = base64.b64encode(json.dumps(data, indent=2).encode()).decode()
-    body = json.dumps({
-        "message": "dedup: mark hour sent",
+    body_dict = {
+        "message": "dedup: mark slot sent",
         "content": content,
-        **({"sha": sha} if sha else {})
-    }).encode()
+        "branch": _GH_DATA_BRANCH,
+    }
+    if sha:
+        body_dict["sha"] = sha
+    body = json.dumps(body_dict).encode()
     req = urllib.request.Request(url, data=body, headers={
         "Authorization": f"token {gh_token}",
         "Content-Type": "application/json",
@@ -1994,7 +1999,8 @@ def main():
             _body = json.dumps({
                 "message": f"claim slot {hour_key}",
                 "content": _content,
-                "sha": gh_sha
+                "sha": gh_sha,
+                "branch": _GH_DATA_BRANCH,
             }).encode()
             _req = urllib.request.Request(_url, data=_body, headers={
                 "Authorization": f"token {gh_token}",
@@ -3528,7 +3534,7 @@ def _day_summary_gh_mark(date_str):
         return
     # Get current SHA
     sha = None
-    req = urllib.request.Request(_DAY_SUMMARY_GH_URL, headers={
+    req = urllib.request.Request(_DAY_SUMMARY_GH_URL + f"?ref={_GH_DATA_BRANCH}", headers={
         "Authorization": f"token {gh_token}",
         "User-Agent": "morning-report-bot"
     })
@@ -3538,11 +3544,14 @@ def _day_summary_gh_mark(date_str):
     except Exception:
         pass
     content = base64.b64encode(json.dumps({"last": date_str}, indent=2).encode()).decode()
-    body = json.dumps({
+    body_dict = {
         "message": f"dedup: day summary sent {date_str}",
         "content": content,
-        **({"sha": sha} if sha else {})
-    }).encode()
+        "branch": _GH_DATA_BRANCH,
+    }
+    if sha:
+        body_dict["sha"] = sha
+    body = json.dumps(body_dict).encode()
     req2 = urllib.request.Request(_DAY_SUMMARY_GH_URL, data=body, headers={
         "Authorization": f"token {gh_token}",
         "Content-Type": "application/json",

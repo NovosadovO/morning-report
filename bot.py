@@ -891,11 +891,14 @@ def get_updates(offset=0):
     return result.get("result", [])
 
 
+_GH_DATA_BRANCH = "data"  # окрема гілка для lock/offset — не тригерить Railway
+
 def _gh_read(url):
-    """Читає файл з GitHub. Повертає (data_dict, sha) або ({}, None)."""
+    """Читає файл з GitHub гілки data. Повертає (data_dict, sha) або ({}, None)."""
     import base64 as _b64
     try:
-        req = urllib.request.Request(url, headers={
+        read_url = url + f"?ref={_GH_DATA_BRANCH}"
+        req = urllib.request.Request(read_url, headers={
             "Authorization": f"token {_GH_TOKEN}",
             "User-Agent": "morning-report-bot"
         })
@@ -908,14 +911,17 @@ def _gh_read(url):
 
 
 def _gh_write(url, data, sha, message="update"):
-    """Записує файл у GitHub. Повертає True при успіху, False при конфлікті."""
+    """Записує файл у GitHub гілку data. Повертає True при успіху, False при конфлікті."""
     import base64 as _b64
     try:
-        body = json.dumps({
+        body_dict = {
             "message": message,
             "content": _b64.b64encode(json.dumps(data).encode()).decode(),
-            "sha": sha
-        }).encode()
+            "branch": _GH_DATA_BRANCH,
+        }
+        if sha:
+            body_dict["sha"] = sha
+        body = json.dumps(body_dict).encode()
         req = urllib.request.Request(url, data=body, headers={
             "Authorization": f"token {_GH_TOKEN}",
             "Content-Type": "application/json",
