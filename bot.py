@@ -1530,12 +1530,11 @@ def handle_command(chat_id, text):
         except Exception:
             pass
 
-        # Будь-який текст → AI асистент
+        # Будь-який текст → AI асистент (Calendar завжди підключений)
         try:
             api("sendChatAction", {"chat_id": chat_id, "action": "typing"})
             from context import ask_ai
-            need_cal = any(w in text for w in ["календар", "план", "події", "сьогодні", "завтра", "зміна", "розклад"])
-            answer = ask_ai(text, include_calendar=need_cal)
+            answer = ask_ai(text, include_calendar=True)
             send(chat_id, answer)
         except Exception as e:
             send(chat_id, f"⚠️ AI помилка: {e}")

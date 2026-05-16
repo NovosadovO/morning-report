@@ -3,9 +3,11 @@
 context.py — спільний контекст про стан Олега.
 Використовується ботом (AI-чат) і monitor.py (розумні нотифікації).
 
-get_context() → dict з усією інформацією про поточний момент.
-get_context_text() → готовий текст для Gemini system prompt.
-should_notify() → чи доречно зараз писати (не спить, не на роботі в тиху зону).
+get_context()        → dict з усією інформацією про поточний момент
+get_system_prompt()  → готовий system prompt для Gemini (з Calendar завжди)
+ask_ai()             → чат з Gemini (підтримує create_event)
+create_calendar_event() → створити подію в Google Calendar
+should_notify()      → чи доречно зараз писати
 """
 
 import os
@@ -33,59 +35,145 @@ PROFILE = """
 """
 
 SHIFT_HOURS = {
-    "early": (6, 18),   # 06:00–18:00
-    "night": (18, 6),   # 18:00–06:00
+    "early": (6, 18),
+    "night": (18, 6),
 }
 
-# ─── ВИЗНАЧЕННЯ СТАНУ ─────────────────────────────────────────────────────────
+_CAL_ID = "novosadovoleg%40gmail.com"
+
+# ─── HELPERS ──────────────────────────────────────────────────────────────────
 
 def _now_local():
     return datetime.now(timezone.utc) + timedelta(hours=2)  # CEST
 
+def _get_token():
+    """Отримує Google OAuth token."""
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    if not creds_json:
+        return None
+    try:
+        import sys
+        sys.path.insert(0, os.path.dirname(__file__))
+        from monitor import _get_google_token
+        creds_data = json.loads(creds_json)
+        return _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar")
+    except Exception as e:
+        print(f"_get_token error: {e}")
+        return None
+
+def _gh(url, headers=None, method="GET", data=None):
+    """Простий HTTP запит."""
+    req = urllib.request.Request(url, data=data, headers=headers or {}, method=method)
+    with urllib.request.urlopen(req, timeout=15) as r:
+        return json.loads(r.read())
+
+# ─── CALENDAR: ЧИТАННЯ ────────────────────────────────────────────────────────
+
+# Кеш подій: {date_str: (timestamp, events_list)}
+_CAL_CACHE: dict = {}
+_CAL_CACHE_TTL = 300  # 5 хвилин
+
+def _fetch_events_for_day(token: str, day_offset: int = 0) -> list:
+    """Завантажує події Google Calendar для дня (offset=0 сьогодні, 1 завтра)."""
+    now_utc = datetime.now(timezone.utc)
+    cache_key = (_now_local() + timedelta(days=day_offset)).strftime("%Y-%m-%d")
+
+    # Перевіряємо кеш
+    cached = _CAL_CACHE.get(cache_key)
+    if cached:
+        ts, events = cached
+        if (datetime.now(timezone.utc).timestamp() - ts) < _CAL_CACHE_TTL:
+            return events
+
+    day_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0) \
+                + timedelta(days=day_offset) - timedelta(hours=2)
+    day_end = day_start + timedelta(hours=24)
+
+    url = (
+        f"https://www.googleapis.com/calendar/v3/calendars/{_CAL_ID}/events"
+        f"?timeMin={urllib.parse.quote(day_start.isoformat())}"
+        f"&timeMax={urllib.parse.quote(day_end.isoformat())}"
+        f"&singleEvents=true&orderBy=startTime&maxResults=30"
+    )
+    headers = {"Authorization": f"Bearer {token}"}
+    try:
+        result = _gh(url, headers=headers)
+        events = result.get("items", [])
+        _CAL_CACHE[cache_key] = (datetime.now(timezone.utc).timestamp(), events)
+        return events
+    except Exception as e:
+        print(f"_fetch_events_for_day error: {e}")
+        return []
+
+def _format_events_plain(events: list) -> str:
+    """Форматує список подій в текст для system prompt."""
+    if not events:
+        return "нічого не заплановано"
+    lines = []
+    for ev in events:
+        summary = ev.get("summary", "(без назви)")
+        start_str = ev["start"].get("dateTime") or ev["start"].get("date")
+        try:
+            dt = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
+            dt_local = dt + timedelta(hours=2)
+            t = dt_local.strftime("%H:%M")
+        except Exception:
+            t = start_str[:10] if start_str else "?"
+        desc = ev.get("description", "")
+        loc = ev.get("location", "")
+        extra = ""
+        if loc:
+            extra += f" | 📍{loc}"
+        if desc:
+            extra += f" | {desc[:60]}"
+        lines.append(f"{t} — {summary}{extra}")
+    return "\n".join(lines)
+
+def get_calendar_events(days: int = 2) -> dict:
+    """
+    Повертає dict з подіями:
+    {"today": [(time, summary, ev), ...], "tomorrow": [...], "today_text": "...", "tomorrow_text": "..."}
+    """
+    result = {
+        "today": [], "tomorrow": [],
+        "today_text": "нічого не заплановано",
+        "tomorrow_text": "нічого не заплановано",
+    }
+    token = _get_token()
+    if not token:
+        return result
+
+    try:
+        today_events = _fetch_events_for_day(token, 0)
+        tomorrow_events = _fetch_events_for_day(token, 1)
+        result["today"] = today_events
+        result["tomorrow"] = tomorrow_events
+        result["today_text"] = _format_events_plain(today_events)
+        result["tomorrow_text"] = _format_events_plain(tomorrow_events)
+    except Exception as e:
+        print(f"get_calendar_events error: {e}")
+
+    return result
+
+# ─── CALENDAR: ВИЗНАЧЕННЯ ЗМІНИ ───────────────────────────────────────────────
 
 def get_shift_from_calendar():
     """
     Читає Google Calendar і повертає shift для СЬОГОДНІ + ЗАВТРА.
-    Returns: {"today": "early"|"night"|"free", "tomorrow": ..., 
+    Returns: {"today": "early"|"night"|"free", "tomorrow": ...,
               "today_start": datetime|None, "today_end": datetime|None}
     """
     result = {"today": "free", "tomorrow": "free",
               "today_start": None, "today_end": None,
               "tomorrow_start": None}
 
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
-    if not creds_json:
+    token = _get_token()
+    if not token:
         return result
 
     try:
-        import sys
-        sys.path.insert(0, os.path.dirname(__file__))
-        from monitor import _get_google_token
-
-        creds_data = json.loads(creds_json)
-        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
-        headers = {"Authorization": f"Bearer {token}"}
-        cal_id = "novosadovoleg%40gmail.com"
-
-        now_utc = datetime.now(timezone.utc)
-
         for offset, key in [(0, "today"), (1, "tomorrow")]:
-            # Шукаємо події що ПОЧИНАЮТЬСЯ в цей день (00:00–23:59 за UTC+2)
-            # Для нічної зміни: старт 18:00 цього дня — це правильно
-            # Не захоплюємо наступний день щоб нічна зміна не дублювалась
-            day_local_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(days=offset) - timedelta(hours=2)
-            day_local_end   = day_local_start + timedelta(hours=24)  # рівно 24г, не 28
-
-            url = (
-                f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
-                f"?timeMin={urllib.parse.quote(day_local_start.isoformat())}"
-                f"&timeMax={urllib.parse.quote(day_local_end.isoformat())}"
-                f"&singleEvents=true&orderBy=startTime&maxResults=20"
-            )
-            req = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(req, timeout=10) as r:
-                events = json.loads(r.read()).get("items", [])
-
+            events = _fetch_events_for_day(token, offset)
             for ev in events:
                 s = ev.get("summary", "").lower()
                 start_str = ev["start"].get("dateTime") or ev["start"].get("date")
@@ -95,11 +183,10 @@ def get_shift_from_calendar():
                 except Exception:
                     dt_local = None
 
-                # Перевіряємо що подія ПОЧИНАЄТЬСЯ саме в цей день (за локальним часом)
                 if dt_local:
                     day_local_date = (_now_local() + timedelta(days=offset)).date()
                     if dt_local.date() != day_local_date:
-                        continue  # подія починається в інший день — пропускаємо
+                        continue
 
                 if any(x in s for x in ["рання", "early"]):
                     result[key] = "early"
@@ -113,8 +200,6 @@ def get_shift_from_calendar():
                     result[key] = "night"
                     if key == "today":
                         result["today_start"] = dt_local
-                        # Нічна закінчується наступного дня о 06:00 — але для
-                        # відображення показуємо кінець як 06:00 наступного дня
                         result["today_end"] = dt_local + timedelta(hours=12) if dt_local else None
                     else:
                         result["tomorrow_start"] = dt_local
@@ -125,6 +210,63 @@ def get_shift_from_calendar():
 
     return result
 
+# ─── CALENDAR: СТВОРЕННЯ ПОДІЙ ────────────────────────────────────────────────
+
+def create_calendar_event(summary: str, start_dt: datetime, end_dt: datetime = None,
+                           description: str = "", location: str = "") -> dict:
+    """
+    Створює подію в Google Calendar.
+    start_dt / end_dt — об'єкти datetime (локальний час UTC+2).
+    Якщо end_dt не вказано — подія тривалістю 1 годину.
+    Повертає {"ok": True, "event_id": "...", "link": "..."} або {"ok": False, "error": "..."}
+    """
+    token = _get_token()
+    if not token:
+        return {"ok": False, "error": "Google Calendar не підключений"}
+
+    if end_dt is None:
+        end_dt = start_dt + timedelta(hours=1)
+
+    # Конвертуємо в UTC для API (UTC+2 → UTC)
+    tz_offset = "+02:00"
+    start_iso = start_dt.strftime("%Y-%m-%dT%H:%M:%S") + tz_offset
+    end_iso   = end_dt.strftime("%Y-%m-%dT%H:%M:%S") + tz_offset
+
+    body = {
+        "summary": summary,
+        "start": {"dateTime": start_iso, "timeZone": "Europe/Bratislava"},
+        "end":   {"dateTime": end_iso,   "timeZone": "Europe/Bratislava"},
+    }
+    if description:
+        body["description"] = description
+    if location:
+        body["location"] = location
+
+    url = f"https://www.googleapis.com/calendar/v3/calendars/{_CAL_ID}/events"
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json",
+    }
+    try:
+        data = json.dumps(body).encode()
+        result = _gh(url, headers=headers, method="POST", data=data)
+        event_id = result.get("id", "")
+        link = result.get("htmlLink", "")
+        # Скидаємо кеш щоб наступний запит побачив нову подію
+        _CAL_CACHE.clear()
+        return {"ok": True, "event_id": event_id, "link": link, "summary": summary}
+    except Exception as e:
+        return {"ok": False, "error": str(e)}
+
+def _parse_create_event_from_text(text: str):
+    """
+    Парсить запит типу "додай зустріч завтра о 15:00 — Лікар"
+    Повертає (summary, start_dt, end_dt) або None якщо не вдалось розпарсити.
+    Делегуємо Gemini — бот сам зрозуміє і поверне JSON.
+    """
+    return None  # обробляється через AI intent
+
+# ─── СТАТУС ОЛЕГА ─────────────────────────────────────────────────────────────
 
 def get_status(shift_info=None):
     """
@@ -138,10 +280,8 @@ def get_status(shift_info=None):
         shift_info = get_shift_from_calendar()
 
     today = shift_info.get("today", "free")
-    start = shift_info.get("today_start")
 
     if today == "early":
-        # Рання: 06:00–18:00
         if 6 <= h < 18:
             return "working_early"
         elif 4 <= h < 6:
@@ -152,7 +292,6 @@ def get_status(shift_info=None):
             return "sleeping"
 
     elif today == "night":
-        # Нічна: 18:00–06:00
         if h >= 18 or h < 6:
             return "working_night"
         elif 16 <= h < 18:
@@ -163,14 +302,12 @@ def get_status(shift_info=None):
             return "home"
 
     else:
-        # Вільний день
         if 0 <= h < 7:
             return "sleeping"
         elif 22 <= h <= 23:
             return "sleeping"
         else:
             return "home"
-
 
 STATUS_LABELS = {
     "working_early": "на ранній зміні (06:00–18:00)",
@@ -181,34 +318,22 @@ STATUS_LABELS = {
     "post_shift":    "після зміни, відпочиває",
 }
 
-
 def should_notify(status=None):
-    """
-    True якщо можна писати нотифікації.
-    Не пишемо якщо: спить, або на зміні (тільки важливе).
-    """
     if status is None:
         status = get_status()
     return status not in ("sleeping",)
 
-
 def should_notify_low_priority(status=None):
-    """
-    True тільки якщо вдома і не зайнятий.
-    Для некритичних порад і нагадувань.
-    """
     if status is None:
         status = get_status()
     return status in ("home", "post_shift")
 
-
-# ─── HEALTH / HABITS CONTEXT ──────────────────────────────────────────────────
+# ─── HEALTH / HABITS / MEDS / КРИПТО КОНТЕКСТ ────────────────────────────────
 
 def _get_health_context():
     try:
-        sys_path = os.path.dirname(__file__)
         import sys
-        sys.path.insert(0, sys_path)
+        sys.path.insert(0, os.path.dirname(__file__))
         from storage import load_health
         health = load_health()
         if not health:
@@ -216,7 +341,7 @@ def _get_health_context():
         last_day = sorted(health.keys())[-1]
         h = health[last_day]
         parts = [f"дата: {last_day}"]
-        if h.get("steps"):     parts.append(f"кроки: {h['steps']}")
+        if h.get("steps"):       parts.append(f"кроки: {h['steps']}")
         if h.get("sleep_hours"): parts.append(f"сон: {h['sleep_hours']}г")
         if h.get("heart_rate"):  parts.append(f"ЧСС: {h['heart_rate']} bpm")
         if h.get("calories"):    parts.append(f"калорії: {h['calories']}")
@@ -224,7 +349,6 @@ def _get_health_context():
         return ", ".join(parts)
     except Exception:
         return "health дані недоступні"
-
 
 def _get_weight_context():
     try:
@@ -236,12 +360,10 @@ def _get_weight_context():
             return "вага невідома"
         last = sorted(data.keys())[-1]
         w = data[last]["weight"]
-        goal = 78.0
-        diff = round(w - goal, 1)
+        diff = round(w - 78.0, 1)
         return f"вага {w} кг (ціль 78 кг, залишилось -{diff} кг)"
     except Exception:
         return "вага невідома"
-
 
 def _get_habits_context():
     try:
@@ -262,160 +384,166 @@ def _get_habits_context():
     except Exception:
         return "звички недоступні"
 
-
 def _get_meds_context():
     try:
         import sys
         sys.path.insert(0, os.path.dirname(__file__))
-        from meds import load_meds, now_local as meds_now
+        from meds import load_meds
         from habits import today_key
         db = load_meds()
         today = today_key()
         taken = db.get(today)
-        if taken is True:   return "ліки сьогодні прийнято ✅"
-        if taken is False:  return "ліки сьогодні НЕ прийнято ❌"
+        if taken is True:  return "ліки сьогодні прийнято ✅"
+        if taken is False: return "ліки сьогодні НЕ прийнято ❌"
         return "ліки сьогодні: не відмічено"
     except Exception:
         return "ліки: невідомо"
 
-
 def _get_crypto_context():
     try:
         ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
-        url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h"
+        url = (f"https://api.coingecko.com/api/v3/coins/markets"
+               f"?vs_currency=usd&ids={ids}&price_change_percentage=24h")
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
         with urllib.request.urlopen(req, timeout=8) as r:
             raw = json.loads(r.read())
         parts = []
         for c in raw:
-            sym = c["symbol"].upper()
+            sym   = c["symbol"].upper()
             price = c["current_price"]
-            ch24 = c.get("price_change_percentage_24h") or 0
-            sign = "+" if ch24 > 0 else ""
+            ch24  = c.get("price_change_percentage_24h") or 0
+            sign  = "+" if ch24 > 0 else ""
             parts.append(f"{sym} ${price:,.0f} ({sign}{ch24:.1f}%)")
         return ", ".join(parts)
     except Exception:
         return "крипто ціни недоступні"
 
+# ─── ГОЛОВНА ФУНКЦІЯ КОНТЕКСТУ ────────────────────────────────────────────────
 
-def _get_calendar_today():
-    try:
-        import sys
-        sys.path.insert(0, os.path.dirname(__file__))
-        from monitor import get_calendar
-        return get_calendar()
-    except Exception:
-        return "календар недоступний"
-
-
-# ─── ГОЛОВНА ФУНКЦІЯ ──────────────────────────────────────────────────────────
-
-def get_context(include_calendar=False, include_crypto=False):
+def get_context(include_calendar=True, include_crypto=False):
     """Повертає dict з усім контекстом про Олега зараз."""
     now = _now_local()
     shift_info = get_shift_from_calendar()
     status = get_status(shift_info)
+    cal = get_calendar_events()
 
     ctx = {
-        "now":           now,
-        "time_str":      now.strftime("%H:%M"),
-        "date_str":      now.strftime("%d.%m.%Y"),
-        "weekday":       ["Пн","Вт","Ср","Чт","Пт","Сб","Нд"][now.weekday()],
-        "shift_today":   shift_info["today"],
+        "now":            now,
+        "time_str":       now.strftime("%H:%M"),
+        "date_str":       now.strftime("%d.%m.%Y"),
+        "weekday":        ["Пн","Вт","Ср","Чт","Пт","Сб","Нд"][now.weekday()],
+        "shift_today":    shift_info["today"],
         "shift_tomorrow": shift_info["tomorrow"],
-        "status":        status,
-        "status_label":  STATUS_LABELS.get(status, status),
-        "health":        _get_health_context(),
-        "weight":        _get_weight_context(),
-        "habits":        _get_habits_context(),
-        "meds":          _get_meds_context(),
+        "status":         status,
+        "status_label":   STATUS_LABELS.get(status, status),
+        "health":         _get_health_context(),
+        "weight":         _get_weight_context(),
+        "habits":         _get_habits_context(),
+        "meds":           _get_meds_context(),
+        "calendar_today":    cal["today_text"],
+        "calendar_tomorrow": cal["tomorrow_text"],
     }
 
     if include_crypto:
         ctx["crypto"] = _get_crypto_context()
-    if include_calendar:
-        ctx["calendar"] = _get_calendar_today()
 
     return ctx
 
+# ─── SYSTEM PROMPT ────────────────────────────────────────────────────────────
 
 def get_system_prompt(ctx=None):
     """
-    Системний промпт для Gemini — хто такий бот і що знає про Олега зараз.
+    Системний промпт для Gemini — з повним контекстом часу, дня, Calendar.
     """
     if ctx is None:
         ctx = get_context(include_crypto=True)
 
     now = ctx["now"]
-    shift_labels = {"early": "рання (06:00–18:00)", "night": "нічна (18:00–06:00)", "free": "вихідний"}
+    shift_labels = {
+        "early": "рання (06:00–18:00)",
+        "night": "нічна (18:00–06:00)",
+        "free":  "вихідний / вільний",
+    }
+
+    weekday_ua = ["понеділок","вівторок","середа","четвер","п'ятниця","субота","неділя"][now.weekday()]
 
     lines = [
         "Ти персональний AI-асистент Олега Новосадова. Твоя роль — одночасно:",
-        "• Особистий тренер (фітнес, біг, схуднення)",
-        "• Дієтолог (ціль 78 кг, зараз ~83–84 кг, інтервальне голодування 16:8)",
+        "• Особистий помічник (нагадування, Calendar, пошта, плани)",
+        "• Тренер (фітнес, біг, схуднення до 78 кг)",
+        "• Дієтолог (інтервальне голодування 16:8)",
         "• Фінансовий радник (крипто BTC/ETH/AVAX/ONDO, ETF, InterFin)",
-        "• Особистий помічник (нагадування, календар, пошта)",
         "• Друг і мотиватор",
         "",
-        "Стиль спілкування: коротко і по суті, як хороший друг. Без зайвого офіціозу.",
-        "Мова: завжди українська.",
-        f"Поточний час: {ctx['time_str']}, {ctx['weekday']} {ctx['date_str']}",
-        f"Статус Олега зараз: {ctx['status_label']}",
-        f"Зміна сьогодні: {shift_labels.get(ctx['shift_today'], ctx['shift_today'])}",
-        f"Зміна завтра: {shift_labels.get(ctx['shift_tomorrow'], ctx['shift_tomorrow'])}",
+        "Стиль: коротко і по суті, як хороший друг. Мова: завжди українська.",
         "",
-        "Що відомо про Олега зараз:",
-        f"• {ctx['weight']}",
-        f"• Здоров'я (останні дані): {ctx['health']}",
-        f"• Звички сьогодні: {ctx['habits']}",
-        f"• {ctx['meds']}",
+        "══ ПОТОЧНИЙ МОМЕНТ ══",
+        f"Час: {ctx['time_str']}  |  {weekday_ua}, {ctx['date_str']}",
+        f"Статус Олега: {ctx['status_label']}",
+        f"Зміна сьогодні: {shift_labels.get(ctx['shift_today'], ctx['shift_today'])}",
+        f"Зміна завтра:   {shift_labels.get(ctx['shift_tomorrow'], ctx['shift_tomorrow'])}",
+        "",
+        "══ КАЛЕНДАР СЬОГОДНІ ══",
+        ctx["calendar_today"],
+        "",
+        "══ КАЛЕНДАР ЗАВТРА ══",
+        ctx["calendar_tomorrow"],
+        "",
+        "══ СТАН ОЛЕГА ══",
+        f"Вага: {ctx['weight']}",
+        f"Здоров'я: {ctx['health']}",
+        f"Звички: {ctx['habits']}",
+        f"Ліки: {ctx['meds']}",
     ]
 
     if ctx.get("crypto"):
-        lines.append(f"• Крипто зараз: {ctx['crypto']}")
+        lines += ["", "══ КРИПТО ══", ctx["crypto"]]
 
-    # Додаємо user_state — що Олег казав нещодавно
+    # user_state — що Олег казав нещодавно
     try:
-        import sys as _sys
-        _sys.path.insert(0, os.path.dirname(__file__))
+        import sys
+        sys.path.insert(0, os.path.dirname(__file__))
         from proactive import load_user_state
         state = load_user_state()
         if state:
-            lines.append("")
-            lines.append("Що Олег казав нещодавно (його контекст):")
+            lines += ["", "══ ЩО ОЛЕГ КАЗАВ НЕЩОДАВНО ══"]
             if state.get("location"):
-                lines.append(f"• Знаходиться: {state['location']}")
+                lines.append(f"Місце: {state['location']}")
             if state.get("activity"):
-                lines.append(f"• Займається: {state['activity']}")
+                lines.append(f"Активність: {state['activity']}")
             if state.get("mood"):
-                lines.append(f"• Настрій/стан: {state['mood']}")
+                lines.append(f"Настрій: {state['mood']}")
             if state.get("last_message_from_oleg"):
-                lines.append(f"• Останнє повідомлення: «{state['last_message_from_oleg'][:120]}»")
-            if state.get("last_message_time"):
-                lines.append(f"• Коли писав: {state['last_message_time'][:16]}")
+                lines.append(f"Останнє: «{state['last_message_from_oleg'][:150]}»")
     except Exception:
         pass
 
     lines += [
         "",
-        "Профіль:",
+        "══ ПРОФІЛЬ ══",
         PROFILE.strip(),
         "",
-        "Важливо: якщо Олег спить або на зміні — будь лаконічним, не грузи зайвим.",
-        "Якщо питає про крипто — давай конкретику з цінами.",
-        "Якщо питає про їжу/вагу — враховуй ціль 78 кг і голодування 16:8.",
-        "Якщо питає про біг — знаєш що він бігає, мотивуй конкретно.",
-        "Відповідай в межах 3–5 речень якщо питання загальне. Більше тільки якщо просить деталі.",
-        "Використовуй user_state щоб відповідати в контексті — якщо знаєш де він і що робить, враховуй це.",
+        "══ ЩО ТИ ВМІЄШ ══",
+        "Ти можеш СТВОРЮВАТИ події в Google Calendar.",
+        "Якщо Олег просить щось додати в Calendar — відповідай JSON:",
+        '{"action":"create_event","summary":"...","date":"YYYY-MM-DD","time":"HH:MM","duration_hours":1,"description":"..."}',
+        "Наприклад: 'додай лікар завтра о 14:00' → поверни JSON вище + підтвердження.",
+        "Якщо не впевнений в даті/часі — перепитай.",
+        "",
+        "Важливо:",
+        "• Завжди знаєш поточний час, день, що в Calendar — враховуй це в кожній відповіді.",
+        "• Якщо Олег на зміні — лаконічно, без зайвого.",
+        "• Якщо питає про крипто — давай конкретику з цінами.",
+        "• Якщо питає про їжу/вагу — враховуй ціль 78 кг і голодування 16:8.",
+        "• Відповідай 2–4 речення якщо питання загальне. Більше тільки якщо просить.",
     ]
 
     return "\n".join(lines)
 
-
-# ─── GEMINI CALL ──────────────────────────────────────────────────────────────
+# ─── AI ЧАТ ───────────────────────────────────────────────────────────────────
 
 _CHAT_HISTORY_FILE = os.path.join(os.path.dirname(__file__), "data", "chat_history.json")
-MAX_HISTORY = 10  # останні N пар повідомлень
+MAX_HISTORY = 12
 
 
 def _load_history():
@@ -430,49 +558,60 @@ def _save_history(history):
     os.makedirs(os.path.dirname(_CHAT_HISTORY_FILE), exist_ok=True)
     try:
         with open(_CHAT_HISTORY_FILE, "w") as f:
-            json.dump(history[-MAX_HISTORY*2:], f, ensure_ascii=False, indent=2)
+            json.dump(history[-MAX_HISTORY * 2:], f, ensure_ascii=False, indent=2)
     except Exception:
         pass
 
 
-def ask_ai(user_message, include_calendar=False):
+def _try_parse_create_event(text: str):
     """
-    Відправляє повідомлення в Gemini з контекстом + пам'яттю розмови.
+    Шукає JSON з action=create_event у відповіді Gemini.
+    Повертає dict або None.
+    """
+    import re
+    m = re.search(r'\{[^{}]*"action"\s*:\s*"create_event"[^{}]*\}', text, re.DOTALL)
+    if not m:
+        return None
+    try:
+        return json.loads(m.group())
+    except Exception:
+        return None
+
+
+def ask_ai(user_message: str, include_calendar: bool = True) -> str:
+    """
+    Відправляє повідомлення в Gemini з повним контекстом (Calendar завжди).
+    Якщо Gemini хоче створити подію — створює її автоматично.
     Повертає текст відповіді.
     """
     api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
     if not api_key:
         return "⚠️ Gemini API key не налаштований."
 
-    ctx = get_context(include_crypto=True, include_calendar=include_calendar)
+    ctx = get_context(include_crypto=True, include_calendar=True)
     system_prompt = get_system_prompt(ctx)
 
     history = _load_history()
 
-    # Будуємо contents: спочатку system через перший user turn
     contents = []
-
-    # System prompt як перший user повідомлення (Gemini не має system role)
     contents.append({
         "role": "user",
-        "parts": [{"text": f"[SYSTEM CONTEXT — не відповідай на це, просто прийми до відома]\n{system_prompt}"}]
+        "parts": [{"text": f"[SYSTEM — прийми до відома, не відповідай]\n{system_prompt}"}]
     })
     contents.append({
         "role": "model",
-        "parts": [{"text": "Зрозумів. Я твій персональний асистент, тренер і радник. Готовий допомагати!"}]
+        "parts": [{"text": "Зрозумів. Я твій персональний асистент, знаю час, дату і що в Calendar. Готовий!"}]
     })
 
-    # Додаємо історію розмови
     for turn in history:
         contents.append({"role": turn["role"], "parts": [{"text": turn["text"]}]})
 
-    # Поточне питання
     contents.append({"role": "user", "parts": [{"text": user_message}]})
 
     payload = json.dumps({
         "contents": contents,
         "generationConfig": {
-            "maxOutputTokens": 600,
+            "maxOutputTokens": 700,
             "temperature": 0.8,
         }
     }).encode()
@@ -485,11 +624,19 @@ def ask_ai(user_message, include_calendar=False):
     )
 
     try:
-        with urllib.request.urlopen(req, timeout=25) as r:
+        with urllib.request.urlopen(req, timeout=30) as r:
             resp = json.loads(r.read())
         answer = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
 
-        # Зберігаємо в історію
+        # Перевіряємо чи Gemini хоче створити подію
+        event_intent = _try_parse_create_event(answer)
+        if event_intent:
+            result_text = _handle_create_event(event_intent, ctx["now"])
+            # Прибираємо JSON з відповіді, додаємо результат
+            import re
+            clean_answer = re.sub(r'\{[^{}]*"action"\s*:\s*"create_event"[^{}]*\}', '', answer, flags=re.DOTALL).strip()
+            answer = f"{clean_answer}\n\n{result_text}".strip()
+
         history.append({"role": "user",  "text": user_message})
         history.append({"role": "model", "text": answer})
         _save_history(history)
@@ -498,6 +645,28 @@ def ask_ai(user_message, include_calendar=False):
 
     except Exception as e:
         return f"⚠️ AI помилка: {e}"
+
+
+def _handle_create_event(intent: dict, now: datetime) -> str:
+    """Виконує create_event з intent dict і повертає підтвердження."""
+    try:
+        summary = intent.get("summary", "Нова подія")
+        date_str = intent.get("date", now.strftime("%Y-%m-%d"))
+        time_str = intent.get("time", "10:00")
+        duration = float(intent.get("duration_hours", 1))
+        description = intent.get("description", "")
+
+        start_dt = datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M")
+        end_dt   = start_dt + timedelta(hours=duration)
+
+        res = create_calendar_event(summary, start_dt, end_dt, description)
+        if res["ok"]:
+            date_fmt = start_dt.strftime("%d.%m.%Y")
+            return f"✅ Подію додано в Calendar: <b>{summary}</b> — {date_fmt} о {time_str}"
+        else:
+            return f"❌ Не вдалось створити подію: {res['error']}"
+    except Exception as e:
+        return f"❌ Помилка при створенні події: {e}"
 
 
 def clear_history():

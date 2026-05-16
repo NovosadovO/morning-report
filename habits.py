@@ -127,7 +127,7 @@ def check_shower_reminder():
     else:
         trigger = 10 * 60       # 10:00
 
-    if trigger <= cur_min < trigger + 10:
+    if trigger == cur_min:
         # Зберігаємо ПЕРЕД надсиланням — щоб не дублювати при паралельному запуску
         sent[remind_key] = True
         sent[f"{today}_shower_smart_time"] = cur_min
@@ -454,6 +454,8 @@ def run():
     offset = 0
 
     while True:
+        global _INMEM_SENT
+        _INMEM_SENT = None  # скидаємо кеш кожну ітерацію — завжди читаємо GitHub
         now  = now_local()
         sent = load_sent()
         today = today_key()
@@ -468,7 +470,7 @@ def run():
             key = f"{today}_{h['id']}"
             if sent.get(key):
                 continue
-            if now.hour == h["hour"] and h["minute"] <= now.minute < h["minute"] + 5:
+            if now.hour == h["hour"] and now.minute == h["minute"]:
                 # Зберігаємо ПЕРЕД надсиланням — захист від дублювання
                 sent[key] = True
                 save_sent(sent)
@@ -476,7 +478,7 @@ def run():
 
         # Питання про сон о 8:00
         sleep_key = f"{today}_sleep_q"
-        if not sent.get(sleep_key) and now.hour == SLEEP_HOUR and SLEEP_MINUTE <= now.minute < SLEEP_MINUTE + 5:
+        if not sent.get(sleep_key) and now.hour == SLEEP_HOUR and now.minute == SLEEP_MINUTE:
             # Зберігаємо ПЕРЕД надсиланням — захист від дублювання
             sent[sleep_key] = True
             save_sent(sent)
@@ -486,7 +488,7 @@ def run():
         run_key_done = f"{today}_run"
         run_remind_key = f"{today}_run_remind"
         if (not sent.get(run_remind_key) and
-                now.hour == 17 and 30 <= now.minute < 35 and
+                now.hour == 17 and now.minute == 30 and
                 load_data().get(today, {}).get("run") is not True):
             # Зберігаємо ПЕРЕД надсиланням
             sent[run_remind_key] = True
@@ -499,7 +501,7 @@ def run():
 
         # Нагадування перед нічною зміною — о 16:00 (за 2г до 18:00)
         night_pre_key = f"{today}_night_pre"
-        if (not sent.get(night_pre_key) and now.hour == 16 and now.minute >= 0 and now.minute < 5):
+        if (not sent.get(night_pre_key) and now.hour == 16 and now.minute == 0):
             sent[night_pre_key] = True  # save ПЕРЕД send
             save_sent(sent)
             api("sendMessage", {
@@ -520,7 +522,7 @@ def run():
 
         # Тижневий звіт ліків — щонеділі о 20:40
         meds_weekly_key = f"meds_weekly_{today}"
-        if (now.weekday() == 6 and now.hour == 20 and 40 <= now.minute < 45
+        if (now.weekday() == 6 and now.hour == 20 and now.minute == 40
                 and not sent.get(meds_weekly_key)):
             sent[meds_weekly_key] = True  # save ПЕРЕД send
             save_sent(sent)
@@ -538,7 +540,7 @@ def run():
 
         # Місячний звіт ліків — останній день місяця о 21:05
         next_day2 = (now + timedelta(days=1))
-        if next_day2.month != now.month and now.hour == 21 and 5 <= now.minute < 10:
+        if next_day2.month != now.month and now.hour == 21 and now.minute == 5:
             mkey2 = f"meds_monthly_{now.strftime('%Y-%m')}"
             if not sent.get(mkey2):
                 sent[mkey2] = True  # save ПЕРЕД send
@@ -555,7 +557,7 @@ def run():
 
         # Тижневий звіт ваги — щонеділі о 20:35
         weight_weekly_key = f"weight_weekly_{today}"
-        if (now.weekday() == 6 and now.hour == 20 and 35 <= now.minute < 40
+        if (now.weekday() == 6 and now.hour == 20 and now.minute == 35
                 and not sent.get(weight_weekly_key)):
             sent[weight_weekly_key] = True  # save ПЕРЕД send
             save_sent(sent)
@@ -570,7 +572,7 @@ def run():
                 print(f"Weight weekly report error: {e}")
 
         # Недільний підсумок о 18:45 — повний звіт тижня
-        if now.weekday() == 6 and now.hour == 18 and 45 <= now.minute < 50:
+        if now.weekday() == 6 and now.hour == 18 and now.minute == 45:
             sunday_key = f"sunday_summary_{today}"
             if not sent.get(sunday_key):
                 sent[sunday_key] = True  # save ПЕРЕД send
@@ -584,7 +586,7 @@ def run():
                     print(f"Sunday summary error: {e}")
 
         # Тижневий звіт — щонеділі о 20:30
-        if now.weekday() == 6 and now.hour == 20 and 30 <= now.minute < 35:
+        if now.weekday() == 6 and now.hour == 20 and now.minute == 30:
             wkey = f"weekly_{today}"
             if not sent.get(wkey):
                 sent[wkey] = True  # save ПЕРЕД send
@@ -596,7 +598,7 @@ def run():
 
         # Місячний звіт — останній день місяця о 21:00
         next_day = (now + timedelta(days=1))
-        if next_day.month != now.month and now.hour == 21 and 0 <= now.minute < 5:
+        if next_day.month != now.month and now.hour == 21 and now.minute == 0:
             mkey = f"monthly_{now.strftime('%Y-%m')}"
             if not sent.get(mkey):
                 sent[mkey] = True  # save ПЕРЕД send
