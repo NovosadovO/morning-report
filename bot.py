@@ -1490,7 +1490,8 @@ def handle_command(chat_id, text):
     else:
         # Розпізнавання тексту QWatch Pro
         raw_text = msg.get("text", "") if isinstance(msg, dict) else text
-        if "health score" in raw_text.lower() or ("hrv" in raw_text.lower() and "сон" in raw_text.lower()):
+        if ("health score" in raw_text.lower() or "оцінка здоров" in raw_text.lower()
+                or ("hrv" in raw_text.lower() and ("сон" in raw_text.lower() or "кроки" in raw_text.lower() or "пульс" in raw_text.lower()))):
             try:
                 api("sendChatAction", {"chat_id": chat_id, "action": "typing"})
                 from qwatch import parse_and_save, send_confirmation

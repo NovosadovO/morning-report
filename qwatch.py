@@ -70,29 +70,26 @@ def parse_qwatch_text(text: str) -> dict:
     """
     result = {}
 
-    # Date
-    date_m = re.search(r'Date[:\s]+(\d{4}-\d{2}-\d{2})', text)
+    # Date — "Дата: 2026-05-16 19:02" або "Date: 2026-05-16"
+    date_m = re.search(r'(?:Date|Дата)[:\s]+(\d{4}-\d{2}-\d{2})', text, re.IGNORECASE)
     if date_m:
         result["date"] = date_m.group(1)
     else:
-        # fallback — сьогодні
         now = datetime.now(timezone.utc) + timedelta(hours=2)
         result["date"] = now.strftime("%Y-%m-%d")
 
-    # Health Score
-    hs = _extract_int(r'Health Score[:\s]+(\d+)', text)
+    # Health Score — "Health Score: 78" або "Оцінка здоров'я: 78%"
+    hs = _extract_int(r'(?:Health Score|Оцінка здоров.я)[:\s]+(\d+)', text)
     if hs: result["health_score"] = hs
 
-    # Steps
-    steps = _extract_int(r'(\d[\d,\s]*)\s*кроків|зробив\s+([\d,]+)\s*кроків|Steps.*?(\d[\d,]+)', text)
-    # більш точний пошук
-    m = re.search(r'зробив\s+([\d,]+)\s*кроків', text, re.IGNORECASE)
+    # Steps — "12 053 кроки" або "зробили 12 053 кроки" або "Steps: 12053"
+    m = re.search(r'(?:зробили?|зробив)[^\d]*([\d\s,]+)\s*крок', text, re.IGNORECASE)
     if m:
-        result["steps"] = int(m.group(1).replace(",", ""))
+        result["steps"] = int(m.group(1).replace(",", "").replace(" ", "").replace("\u00a0", ""))
     else:
-        m2 = re.search(r'(\d[\d,]+)\s*кроків', text, re.IGNORECASE)
+        m2 = re.search(r'([\d][\d\s,]*)\s*крок', text, re.IGNORECASE)
         if m2:
-            result["steps"] = int(m2.group(1).replace(",", ""))
+            result["steps"] = int(m2.group(1).replace(",", "").replace(" ", "").replace("\u00a0", ""))
 
     # Sleep total — "6 годин 45 хвилин"
     m = re.search(r'(\d+)\s*годин\s+(\d+)\s*хвилин', text, re.IGNORECASE)
@@ -116,29 +113,39 @@ def parse_qwatch_text(text: str) -> dict:
         if val <= 100:
             result["sleep_quality"] = val
 
-    # Heart Rate avg
-    m = re.search(r'(?:середній пульс|avg.*?пульс|серцевий ритм)[^\d]*(\d+)\s*уд', text, re.IGNORECASE)
+    # Heart Rate avg — "пульс сьогодні — 62 удари/хв" або "62 уд/хв"
+    m = re.search(r'пульс[^\d]*—?\s*(\d+)\s*удар', text, re.IGNORECASE)
     if m:
         result["hr_avg"] = int(m.group(1))
     else:
-        m2 = re.search(r'(\d+)\s*уд/хв', text, re.IGNORECASE)
+        m2 = re.search(r'(\d+)\s*уд(?:ар)?[и]?/хв', text, re.IGNORECASE)
         if m2:
             result["hr_avg"] = int(m2.group(1))
 
-    # Calories
-    m = re.search(r'(\d+)\s*ккал', text, re.IGNORECASE)
+    # Calories — "508 620" після "споживання енергії" або просто ккал
+    # QWatch Pro дає калорії як великі числа без "ккал" — шукаємо в контексті
+    m = re.search(r'(?:споживання енергії|витрат|калорі)[^\d]*([\d\s]+)', text, re.IGNORECASE)
     if m:
-        result["calories"] = int(m.group(1))
+        val_str = m.group(1).replace(" ", "").replace("\u00a0", "")[:8]
+        try:
+            val = int(val_str)
+            if val > 0:
+                result["calories"] = val
+        except: pass
+    else:
+        m2 = re.search(r'(\d+)\s*ккал', text, re.IGNORECASE)
+        if m2:
+            result["calories"] = int(m2.group(1))
 
-    # Stress
-    m = re.search(r'(\d+)\s*бал', text, re.IGNORECASE)
+    # Stress — "Показник стресу сьогодні — 45"
+    m = re.search(r'(?:показник стресу|стрес)[^\d]*—?\s*(\d+)', text, re.IGNORECASE)
     if m:
         val = int(m.group(1))
         if val <= 100:
             result["stress"] = val
 
-    # HRV
-    m = re.search(r'HRV[^\d]*(\d+)\s*мс', text, re.IGNORECASE)
+    # HRV — "HRV сьогодні — 48" або "HRV: 48 мс" або просто "48"
+    m = re.search(r'HRV[^\d]*—?\s*(\d+)', text, re.IGNORECASE)
     if m:
         result["hrv"] = int(m.group(1))
 
