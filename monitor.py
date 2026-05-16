@@ -1473,14 +1473,64 @@ def _get_run_recommendation(weather_text):
         return f"🏃 <b>{last_run_days} днів без бігу!</b> Сьогодні — обов\'язково! 💨"
 
 
+def _get_current_shift_context(calendar_text=""):
+    """Визначає поточний статус зміни Олега.
+    Повертає dict: {shift, is_working_now, greeting_override}
+    shift: 'night' | 'early' | 'free'
+    is_working_now: True якщо зараз він на роботі
+    greeting_override: str або None (якщо потрібне особливе привітання)
+    """
+    try:
+        from context import get_shift_from_calendar
+        shift_info = get_shift_from_calendar()
+        shift = shift_info.get("today", "free")
+    except Exception:
+        # fallback: парсимо calendar_text
+        cl = (calendar_text or "").lower()
+        if "нічна" in cl or "нічн" in cl:
+            shift = "night"
+        elif "рання" in cl or "ранн" in cl:
+            shift = "early"
+        else:
+            shift = "free"
+
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h = now_local.hour
+
+    is_working_now = False
+    if shift == "night" and (h >= 17 or h < 6):
+        is_working_now = True
+    elif shift == "early" and (6 <= h < 18):
+        is_working_now = True
+
+    greeting_override = None
+    if shift == "night":
+        if h >= 17 or h < 6:
+            greeting_override = "🌙 <b>Нічна зміна.</b> Олег зараз на роботі — тримайся!"
+        elif 6 <= h < 10:
+            greeting_override = "😴 <b>Після нічної зміни.</b> Час відпочити — заслужено!"
+        elif 10 <= h < 16:
+            greeting_override = "☀️ <b>Підготовка до нічної.</b> Зміна ввечері — плануй відповідно."
+    elif shift == "early":
+        if 6 <= h < 18:
+            greeting_override = "🏭 <b>Рання зміна.</b> Олег на роботі — вперед!"
+        elif h >= 18:
+            greeting_override = "🌆 <b>Після ранньої зміни.</b> Відпочинок заслужений."
+
+    return {"shift": shift, "is_working_now": is_working_now, "greeting_override": greeting_override}
+
+
 def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro_text=None):
     import re as _re
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h = now_local.hour
     lines = []
 
-    # ── Привітання по часу ────────────────────────────────────────────────────
-    if 5 <= h < 10:
+    # ── Привітання по часу з урахуванням зміни ───────────────────────────────
+    shift_ctx = _get_current_shift_context(calendar_text)
+    if shift_ctx["greeting_override"]:
+        lines.append(shift_ctx["greeting_override"])
+    elif 5 <= h < 10:
         lines.append("🌅 <b>Доброго ранку, Олеже!</b> Починаємо день продуктивно.")
     elif 10 <= h < 13:
         lines.append("☀️ <b>Гарного ранку!</b> Ще є час для найважливішого.")
@@ -2064,9 +2114,9 @@ def main():
             print(f"get_prices error: {e}")
             prices_text = None
 
-    # ── КРОК 4: Email ─────────────────────────────────────────────────────────
+    # ── КРОК 4: Email — завжди включаємо в звіт (незалежно від дня/часу) ──────
     try:
-        email_text = get_emails() if include_learning_blocks else None
+        email_text = get_emails()
     except Exception as e:
         print(f"get_emails error: {e}")
         email_text = None
@@ -2103,12 +2153,15 @@ def main():
             import uuid as _uuid_r, re as _re_r
             seed = str(_uuid_r.uuid4())[:8]
             h_val = local_hour
+            # ── Визначаємо зміну + поточний статус ──────────────────────────
+            _sc = _get_current_shift_context(cal_events_text)
+            _shift = _sc["shift"]
+            _working_now = _sc["is_working_now"]
+
             shift_hint = ""
-            # Визначаємо зміну з календаря
-            cal_lower = cal_events_text.lower()
-            if "рання" in cal_lower or "ранн" in cal_lower:
+            if _shift == "early":
                 shift_hint = "Сьогодні рання зміна (06:00–18:00)."
-            elif "нічна" in cal_lower or "нічн" in cal_lower:
+            elif _shift == "night":
                 shift_hint = "Сьогодні нічна зміна (18:00–06:00)."
             else:
                 shift_hint = "Сьогодні вихідний/вільний день."
@@ -2123,8 +2176,18 @@ def main():
                     weight_hint = f"Остання вага: {wd_r[lk]} кг (ціль 78 кг)."
             except: pass
 
-            # Час-специфічна порада
-            if 5 <= h_val < 9:
+            # Час-специфічна порада з урахуванням зміни
+            if _working_now and _shift == "night":
+                tip_ctx = "Олег ЗАРАЗ на нічній зміні (18:00–06:00). Дай пораду що допоможе пережити ніч: енергія, концентрація, безпека. НЕ пиши про сон чи відпочинок."
+            elif _shift == "night" and 6 <= h_val < 14:
+                tip_ctx = "Олег щойно повернувся з нічної зміни. Пора спати і відновитися. Порада про якісний відпочинок після нічної."
+            elif _shift == "night" and 14 <= h_val < 17:
+                tip_ctx = "Олег прокинувся після нічної зміни. Підготовка до наступної зміни о 18:00. Що важливо зробити за ці 3 години?"
+            elif _working_now and _shift == "early":
+                tip_ctx = "Олег ЗАРАЗ на ранній зміні (06:00–18:00). Порада для продуктивності на роботі прямо зараз."
+            elif _shift == "early" and h_val >= 18:
+                tip_ctx = "Рання зміна закінчилась. Вечір після роботи — відпочинок або саморозвиток?"
+            elif 5 <= h_val < 9:
                 tip_ctx = "Ранок. Дай одну конкретну пораду для успішного старту дня виходячи з календаря та цілей."
             elif 9 <= h_val < 13:
                 tip_ctx = "Перша половина дня. Нагадай про найважливіше завдання зараз виходячи з календаря."
@@ -2196,7 +2259,9 @@ def main():
     if ai_insight:
         parts.append(f"🤖 <b>AI-порада</b>\n<i>{esc(ai_insight)}</i>")
 
-    if is_weekend and not include_learning_blocks:
+    # Вихідний блок — тільки якщо Олег не на нічній зміні зараз
+    _sc_main = _get_current_shift_context(cal_events_text if 'cal_events_text' in dir() else "")
+    if is_weekend and not include_learning_blocks and not _sc_main["is_working_now"]:
         parts.append("💤 <i>Вихідний — крипто/пошта з 11:00</i>")
 
     # Розбиваємо на повідомлення по секціях щоб не обрізати HTML теги
