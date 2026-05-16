@@ -2260,7 +2260,7 @@ def main():
         parts.append(f"🤖 <b>AI-порада</b>\n<i>{esc(ai_insight)}</i>")
 
     # Вихідний блок — тільки якщо Олег не на нічній зміні зараз
-    _sc_main = _get_current_shift_context(cal_events_text if 'cal_events_text' in dir() else "")
+    _sc_main = _get_current_shift_context(cal_events_text)
     if is_weekend and not include_learning_blocks and not _sc_main["is_working_now"]:
         parts.append("💤 <i>Вихідний — крипто/пошта з 11:00</i>")
 

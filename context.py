@@ -160,6 +160,7 @@ def get_calendar_events(days: int = 2) -> dict:
 def get_shift_from_calendar():
     """
     Читає Google Calendar і повертає shift для СЬОГОДНІ + ЗАВТРА.
+    ВАЖЛИВО: якщо зараз 00:00–05:59 і вчора була нічна зміна — вона ще триває!
     Returns: {"today": "early"|"night"|"free", "tomorrow": ...,
               "today_start": datetime|None, "today_end": datetime|None}
     """
@@ -172,6 +173,28 @@ def get_shift_from_calendar():
         return result
 
     try:
+        now_local = _now_local()
+        h = now_local.hour
+
+        # Якщо зараз 00:00–05:59 — можливо нічна зміна почалась ВЧОРА
+        # і ще триває до ~06:00. Перевіряємо вчорашній день першим.
+        if h < 6:
+            yesterday_events = _fetch_events_for_day(token, -1)
+            for ev in yesterday_events:
+                s = ev.get("summary", "").lower()
+                if any(x in s for x in ["нічна", "night"]):
+                    start_str = ev["start"].get("dateTime") or ev["start"].get("date")
+                    try:
+                        dt_start = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
+                        dt_local = dt_start + timedelta(hours=2)
+                    except Exception:
+                        dt_local = None
+                    # Нічна зміна з вчора — вважаємо що "today" = night (ще на роботі)
+                    result["today"] = "night"
+                    result["today_start"] = dt_local
+                    result["today_end"] = dt_local + timedelta(hours=13) if dt_local else None
+                    break
+
         for offset, key in [(0, "today"), (1, "tomorrow")]:
             events = _fetch_events_for_day(token, offset)
             for ev in events:
