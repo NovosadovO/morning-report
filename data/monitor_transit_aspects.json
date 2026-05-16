@@ -6,8 +6,8 @@
   },
   "venus__sun__90": {
     "orb": 1.5,
-    "sent": true,
-    "event": "enter"
+    "sent": false,
+    "exact_sent": false
   },
   "venus__moon__0": {
     "orb": 0.23,
