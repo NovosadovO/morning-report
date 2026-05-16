@@ -514,23 +514,9 @@ def run():
                 "parse_mode": "HTML"
             })
 
-        # Нагадування після нічної зміни — о 07:00
-        # Використовуємо реальну календарну дату (не нічну межу) — о 07:00 ми вже поза межею
-        real_today = now.strftime("%Y-%m-%d")
-        night_post_key = f"{real_today}_night_post"
-        if (not sent.get(night_post_key) and now.hour == 7 and now.minute >= 0 and now.minute < 5):
-            sent[night_post_key] = True  # save ПЕРЕД send
-            save_sent(sent)
-            api("sendMessage", {
-                "chat_id": TELEGRAM_CHAT,
-                "text": (
-                    "☀️ <b>Після нічної зміни</b>\n\n"
-                    "🍵 Випий трав'яний чай\n"
-                    "💧 Не забудь про воду\n"
-                    "😴 Час відпочивати — солодких снів!"
-                ),
-                "parse_mode": "HTML"
-            })
+        # Нагадування після нічної зміни — ВИДАЛЕНО з habits.py
+        # Тепер надсилається ТІЛЬКИ через monitor.py check_smart_notifications() post_night (06:15)
+        # щоб уникнути дублів
 
         # Тижневий звіт ліків — щонеділі о 20:40
         meds_weekly_key = f"meds_weekly_{today}"

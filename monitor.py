@@ -2224,18 +2224,30 @@ def check_morning_brief():
     except Exception:
         pass
 
-    # ── AI порада на день ────────────────────────────────────────────────────
+    # ── AI порада на день (з урахуванням КАЛЕНДАРЯ) ─────────────────────────
     gemini_key = os.environ.get("GEMINI_API_KEY","")
     if gemini_key:
         try:
+            import uuid as _uuid_brief
             shift_labels = {"early":"рання зміна 06:00–18:00","night":"нічна зміна 18:00–06:00","free":"вихідний"}
-            prompt = (
-                f"Сьогодні {day_name}, {shift_labels.get(shift,'вихідний')}. "
-                f"Олег (Кошіце). Дай ОДНУ конкретну actionable пораду на цей день — "
-                f"здоров'я/схуднення (ціль 78 кг)/фінанси/крипто/саморозвиток. "
-                f"1-2 речення, бадьоро, без загальних слів. Тільки конкретика."
+            # Отримуємо події календаря
+            cal_events_for_ai = _get_calendar_events_text()
+            cal_ctx_brief = (
+                f"Заплановано сьогодні: {cal_events_for_ai}"
+                if cal_events_for_ai and cal_events_for_ai != "нічого не заплановано"
+                else "Подій у календарі немає"
             )
-            payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":120,"temperature":0.85}}).encode()
+            brief_seed = str(_uuid_brief.uuid4())[:8]
+            prompt = (
+                f"Ти асистент Олега (Кошіце). Сьогодні {day_name} {now_local.strftime('%d.%m.%Y')}. [id:{brief_seed}]\n"
+                f"Тип дня: {shift_labels.get(shift,'вихідний')}.\n"
+                f"{cal_ctx_brief}\n\n"
+                f"Дай ОДНУ конкретну actionable пораду на ЦЕЙ КОНКРЕТНИЙ день. "
+                f"Якщо є події в календарі — враховуй їх. "
+                f"Ціль: схуднення до 78 кг, регулярний біг, крипто-інвестиції. "
+                f"1-2 речення, бадьоро, тільки конкретика. Українська."
+            )
+            payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":130,"temperature":0.95}}).encode()
             req_ai = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
                 data=payload, headers={"Content-Type":"application/json"}, method="POST"
@@ -2265,12 +2277,57 @@ def check_morning_brief():
 PROACTIVE_FILE = os.path.join(_DATA_DIR, "monitor_proactive.json")
 
 
+def _get_calendar_events_text() -> str:
+    """Повертає короткий список подій з Google Calendar на СЬОГОДНІ (для AI промптів)."""
+    try:
+        creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+        if not creds_json:
+            return ""
+        creds_data = json.loads(creds_json)
+        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        now_utc = datetime.now(timezone.utc)
+        local_start = (now_utc + timedelta(hours=2)).replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        local_end   = local_start + timedelta(hours=24)
+        cal_id = "novosadovoleg%40gmail.com"
+        url = (
+            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+            f"?timeMin={urllib.parse.quote(local_start.isoformat())}"
+            f"&timeMax={urllib.parse.quote(local_end.isoformat())}"
+            f"&singleEvents=true&orderBy=startTime&maxResults=15"
+        )
+        req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
+        with urllib.request.urlopen(req, timeout=8) as r:
+            items = json.loads(r.read()).get("items", [])
+        if not items:
+            return "нічого не заплановано"
+        lines = []
+        for ev in items:
+            start = ev["start"].get("dateTime") or ev["start"].get("date")
+            summary = ev.get("summary", "(без назви)")
+            try:
+                dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
+                t  = (dt + timedelta(hours=2)).strftime("%H:%M")
+            except Exception:
+                t = ""
+            lines.append(f"{t} {summary}".strip())
+        return "; ".join(lines)
+    except Exception as e:
+        print(f"_get_calendar_events_text error: {e}")
+        return ""
+
+
 def _ai_personal_message(situation: str, context: dict = None, max_tokens: int = 200) -> str:
     """
     Генерує реальне персоналізоване повідомлення через Gemini.
     situation — опис ситуації (що відбувається).
     context — словник з додатковими даними (вага, сон, кроки, зміна, тощо).
+
+    Включає ЗАВЖДИ:
+    - поточний стан календаря (що заплановано сьогодні)
+    - унікальний seed (UUID) щоб Gemini не повторювався
+    - реальні дані (вага, звички, здоров'я, крипто)
     """
+    import uuid as _uuid
     gemini_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
 
     # Збираємо реальний контекст
@@ -2282,7 +2339,7 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
         wd = _lw()
         if wd:
             last_key = sorted(wd.keys())[-1]
-            ctx_parts.append(f"Вага: {wd[last_key]} кг (ціль 78 кг, різниця {wd[last_key]-78:.1f} кг)")
+            ctx_parts.append(f"Вага: {wd[last_key]} кг (ціль 78 кг, залишилось {wd[last_key]-78:.1f} кг)")
     except: pass
 
     # Здоров'я
@@ -2301,13 +2358,12 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
 
     # Звички за тиждень
     try:
-        from habits import load_data as _lhab, HABITS as _HAB
-        from datetime import datetime as _dt, timezone as _tz, timedelta as _td
+        from habits import load_data as _lhab
         hab_data = _lhab()
-        now_l = _dt.now(_tz.utc) + _td(hours=2)
-        days7 = [(now_l - _td(days=i)).strftime("%Y-%m-%d") for i in range(6,-1,-1)]
+        now_l = datetime.now(timezone.utc) + timedelta(hours=2)
+        days7 = [(now_l - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(6,-1,-1)]
         run_count = sum(1 for d in days7 if hab_data.get(d,{}).get("run") is True)
-        if run_count is not None: ctx_parts.append(f"Пробіжки цього тижня: {run_count}/7")
+        ctx_parts.append(f"Пробіжки за 7 днів: {run_count}/7")
     except: pass
 
     # Крипто (швидко)
@@ -2319,8 +2375,13 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
             cd = json.loads(r.read())
         btc_ch = cd.get("bitcoin", {}).get("usd_24h_change", 0)
         eth_ch = cd.get("ethereum", {}).get("usd_24h_change", 0)
-        ctx_parts.append(f"Крипто: BTC {btc_ch:+.1f}%, ETH {eth_ch:+.1f}% за добу")
+        ctx_parts.append(f"Крипто зараз: BTC {btc_ch:+.1f}%, ETH {eth_ch:+.1f}% за 24г")
     except: pass
+
+    # КАЛЕНДАР — ключова нова частина
+    cal_events = _get_calendar_events_text()
+    if cal_events:
+        ctx_parts.append(f"Календар сьогодні: {cal_events}")
 
     # Додаткові дані з параметра
     if context:
@@ -2329,30 +2390,33 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
 
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     weekday_ua = ["понеділок","вівторок","середа","четвер","п'ятниця","субота","неділя"][now_local.weekday()]
+    # Унікальний seed — гарантує що Gemini не дає однаковий текст
+    msg_seed = str(_uuid.uuid4())[:8]
 
     profile = (
-        "Ти — персональний асистент Олега Новосадова (35 років, живе в Кошіце, Словаччина). "
-        "Олег: працює на заводі (змінна робота: рання 06-18 / нічна 18-06 / вихідний), "
+        "Ти — персональний асистент Олега Новосадова (живе в Кошіце, Словаччина). "
+        "Олег: завод Minebea Mitsumi, змінна робота (рання 06-18 / нічна 18-06 / вихідний), "
         "цілі — схуднути до 78 кг, регулярно бігати, інвестиції в крипто (BTC,ETH,AVAX,ONDO), "
-        "приймає ліки Armolopid щодня. "
-        "Спілкуйся як близький друг — природньо, по-українськи, без шаблонних фраз. "
-        "Твої повідомлення ЗАВЖДИ базуються на реальних даних вище, не вигадуй. "
+        "приймає ліки Armolopid щодня (курс 27.04–27.07.2026). "
+        "Стиль: як близький друг — по-українськи, без шаблонних фраз. "
+        "Враховуй ПОДІЇ КАЛЕНДАРЯ — якщо є заплановане, пов'яжи пораду з цим. "
+        "Якщо нічого не заплановано — підкажи що зробити виходячи з цілей. "
     )
 
     prompt = (
         f"{profile}\n\n"
-        f"Сьогодні {weekday_ua} {now_local.strftime('%d.%m.%Y')}, {now_local.strftime('%H:%M')}.\n"
+        f"Сьогодні {weekday_ua} {now_local.strftime('%d.%m.%Y')}, {now_local.strftime('%H:%M')}. [seed:{msg_seed}]\n"
         f"Реальні дані:\n" + "\n".join(f"• {p}" for p in ctx_parts) + "\n\n"
         f"Ситуація: {situation}\n\n"
-        f"Напиши коротке повідомлення (2-4 речення) з конкретними порадами/коментарями "
-        f"на основі реальних даних. Без загальних фраз типа 'тримай темп' чи 'все буде добре'. "
-        f"Тільки конкретика."
+        f"Напиши НОВЕ унікальне повідомлення (2-4 речення) з конкретними порадами "
+        f"на основі РЕАЛЬНИХ даних вище. ОБОВ'ЯЗКОВО врахуй календар. "
+        f"Без шаблонних фраз. Тільки конкретика і нова інформація."
     )
 
     try:
         payload = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.9}
+            "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.95}
         }).encode()
         req = urllib.request.Request(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -4015,11 +4079,14 @@ def check_smart_notifications():
     """
     🧠 SMART NOTIFICATIONS — щохвилинна перевірка.
     Ситуативні сповіщення прив'язані до зміни + прогрес до цілей.
+
+    ПРАВИЛО: спочатку читаємо КАЛЕНДАР — і тільки тоді вирішуємо що і коли писати.
+    Якщо Олег спить — нічого не надсилаємо (крім pre_early о 04:30).
     """
     import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
     try:
-        from context import get_context, get_shift_from_calendar, should_notify, should_notify_low_priority
+        from context import get_context, get_shift_from_calendar, get_status, should_notify, should_notify_low_priority
     except Exception as e:
         print(f"context import error: {e}"); return
 
@@ -4035,9 +4102,17 @@ def check_smart_notifications():
             state[key] = today
             save_json_file(SMART_NOTIF_FILE, state)
 
+        # ── КРОК 1: ЗАВЖДИ читаємо календар першим ───────────────────────────
         shift_info     = get_shift_from_calendar()
         today_shift    = shift_info.get("today", "free")
         tomorrow_shift = shift_info.get("tomorrow", "free")
+        current_status = get_status(shift_info)
+
+        # pre_early дозволений навіть якщо статус "sleeping" (будимо на зміну)
+        # Для решти — якщо спить, нічого не надсилаємо
+        is_pre_early_window = (today_shift == "early" and h == 4 and 30 <= m < 35)
+        if current_status == "sleeping" and not is_pre_early_window:
+            return
 
         # ── 1. ПІДЙОМ ПЕРЕД РАННЬОЮ (04:30) ───────────────────────────────
         if today_shift == "early" and h == 4 and 30 <= m < 35 and not sent("pre_early"):
@@ -4138,8 +4213,12 @@ def check_smart_notifications():
                                 w_context = f" Остання вага: {wdata[last_k]} кг."
                         except Exception: pass
 
-                        full_prompt = f"{prompt_text}{w_context}"
-                        payload = json.dumps({"contents":[{"parts":[{"text":full_prompt}]}],"generationConfig":{"maxOutputTokens":150,"temperature":0.9}}).encode()
+                        import uuid as _uuid_slot
+                        slot_seed = str(_uuid_slot.uuid4())[:8]
+                        cal_ev = _get_calendar_events_text()
+                        cal_hint = f" Календар: {cal_ev}." if cal_ev and cal_ev != "нічого не заплановано" else ""
+                        full_prompt = f"{prompt_text}{w_context}{cal_hint} [id:{slot_seed}]"
+                        payload = json.dumps({"contents":[{"parts":[{"text":full_prompt}]}],"generationConfig":{"maxOutputTokens":150,"temperature":0.95}}).encode()
                         req_ai = urllib.request.Request(
                             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
                             data=payload, headers={"Content-Type":"application/json"}, method="POST"
@@ -4222,9 +4301,16 @@ def check_morning_context():
       рання зміна  → о 05:00 (перед виходом)
       нічна зміна  → о 10:00 (після сну)
       вихідний     → о 08:30
-    Містить: привітання, що сьогодні заплановано, погода, крипто, мотивація.
+
+    ЛОГІКА:
+    1. Спочатку читає Google Calendar — визначає shift
+    2. Підлаштовує час відправки і зміст під тип дня
+    3. AI-порада базується на реальних подіях календаря + даних
+    4. Dedup через GitHub — не дублює при Railway restart
+    5. Uniq seed — кожне повідомлення нове, не повторюється
     """
-    import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import sys, uuid as _uuid
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
@@ -4233,6 +4319,7 @@ def check_morning_context():
     if state.get("last") == today:
         return
 
+    # ── КРОК 1: Читаємо календар ПЕРШИМ ──────────────────────────────────────
     try:
         from context import get_shift_from_calendar
         shift_info = get_shift_from_calendar()
@@ -4242,22 +4329,23 @@ def check_morning_context():
 
     # Час відправки залежно від типу дня
     trigger = {"early": 5, "night": 10, "free": 8}.get(shift, 8)
-    if not (h == trigger and 0 <= m < 3):
+    if not (h == trigger and 0 <= m < 5):
         return
 
     try:
-        # Календар на сьогодні
-        cal = get_calendar()
+        # ── КРОК 2: Збираємо події з календаря ──────────────────────────────
+        cal_events_raw = _get_calendar_events_text()  # "HH:MM Подія; HH:MM Подія2"
+        cal_full = get_calendar()  # відформатований блок для повідомлення
 
-        # Погода коротко
+        # ── КРОК 3: Погода ───────────────────────────────────────────────────
         try:
             weather = get_weather()
-            # Беремо тільки першу строчку
             weather_short = weather.split("\n")[0] if weather else ""
         except Exception:
             weather_short = ""
 
-        # Крипто топ
+        # ── КРОК 4: Крипто ───────────────────────────────────────────────────
+        crypto_text = ""
         try:
             ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
             url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h"
@@ -4274,23 +4362,28 @@ def check_morning_context():
                 crypto_lines.append(f"{icon} {sym} ${price:,.0f} ({sign}{ch:.1f}%)")
             crypto_text = "  ".join(crypto_lines)
         except Exception:
-            crypto_text = ""
+            pass
 
-        # AI мотивація на день
+        # ── КРОК 5: AI-порада з урахуванням КАЛЕНДАРЯ ────────────────────────
         gemini_key = os.environ.get("GEMINI_API_KEY", "")
         ai_tip = ""
         if gemini_key:
             try:
-                shift_labels = {"early": "рання зміна (06:00–18:00)", "night": "нічна зміна (18:00–06:00)", "free": "вихідний день"}
-                # Збираємо реальний контекст для AI
+                shift_labels = {
+                    "early": "рання зміна (06:00–18:00) — сьогодні на роботу",
+                    "night": "нічна зміна (18:00–06:00) — сьогодні ввечері на роботу",
+                    "free":  "вихідний день — вільний графік"
+                }
+
                 weight_ctx = ""
                 try:
                     from storage import load_weight as _lw
                     wdata = _lw()
                     if wdata:
                         last_key = sorted(wdata.keys())[-1]
-                        weight_ctx = f"Остання вага: {wdata[last_key]} кг (дата: {last_key})."
-                except Exception: pass
+                        weight_ctx = f"Вага: {wdata[last_key]} кг (ціль 78, залишилось {wdata[last_key]-78:.1f} кг)."
+                except Exception:
+                    pass
 
                 health_ctx = ""
                 try:
@@ -4303,22 +4396,47 @@ def check_morning_context():
                         if hd.get("steps"): parts.append(f"кроки {hd['steps']}")
                         if hd.get("sleep_hours"): parts.append(f"сон {hd['sleep_hours']}г")
                         if hd.get("hrv"): parts.append(f"HRV {hd['hrv']}")
-                        if parts: health_ctx = f"Здоров'я вчора: {', '.join(parts)}."
-                except Exception: pass
+                        if parts: health_ctx = f"Вчора: {', '.join(parts)}."
+                except Exception:
+                    pass
+
+                habits_ctx = ""
+                try:
+                    from habits import load_data as _lhab
+                    hab_db = _lhab()
+                    yest = (now_local - timedelta(days=1)).strftime("%Y-%m-%d")
+                    yd = hab_db.get(yest, {})
+                    done_h = [k for k in ["run","water","shower","tea"] if yd.get(k) is True]
+                    if done_h: habits_ctx = f"Звички вчора: {', '.join(done_h)}."
+                except Exception:
+                    pass
 
                 day_names = ['Пн','Вт','Ср','Чт','Пт','Сб','Нд']
+                msg_seed = str(_uuid.uuid4())[:8]
+
+                cal_ctx = (
+                    f"Заплановано сьогодні: {cal_events_raw}"
+                    if cal_events_raw and cal_events_raw != "нічого не заплановано"
+                    else "Подій у календарі сьогодні немає"
+                )
+
                 prompt = (
+                    f"Ти персональний асистент Олега (Кошіце, Словаччина). "
                     f"Сьогодні {day_names[now_local.weekday()]} {now_local.strftime('%d.%m.%Y')}, "
-                    f"{shift_labels.get(shift,'вихідний')}. "
-                    f"{weight_ctx} {health_ctx} "
-                    f"Погода зараз: {weather_short if weather_short else 'невідома'}. "
-                    f"Дай Олегу одну КОНКРЕТНУ і НОВУ мотиваційну пораду на СЬОГОДНІ (1-2 речення) українською. "
-                    f"Враховуй реальні цифри вище. Ціль: схуднення до 78 кг, регулярний біг, крипто-інвестиції. "
-                    f"Порада має бути про конкретну дію саме сьогодні, не загальну. Бадьоро, по суті."
+                    f"{now_local.strftime('%H:%M')}. [id:{msg_seed}]\n"
+                    f"Тип дня: {shift_labels.get(shift,'вихідний')}.\n"
+                    f"{cal_ctx}\n"
+                    f"{weight_ctx} {health_ctx} {habits_ctx}\n"
+                    f"Погода: {weather_short if weather_short else 'невідома'}.\n\n"
+                    f"Напиши ПЕРСОНАЛЬНЕ привітання і конкретну пораду на ЦЕЙ день (2-3 речення). "
+                    f"ОБОВ'ЯЗКОВО: якщо є події в календарі — згадай їх і дай пораду відповідно. "
+                    f"Якщо рання/нічна зміна — враховуй це у пораді. "
+                    f"Якщо вихідний і нема подій — запропонуй конкретне (біг, ціль по вазі і т.д.). "
+                    f"Реальні цифри, конкретика, без загальних фраз. Мова: українська."
                 )
                 payload = json.dumps({
                     "contents": [{"parts": [{"text": prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 150, "temperature": 0.95}
+                    "generationConfig": {"maxOutputTokens": 180, "temperature": 0.95}
                 }).encode()
                 req2 = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -4330,28 +4448,33 @@ def check_morning_context():
             except Exception as e:
                 print(f"morning context AI error: {e}")
 
-        greetings = {"early": "☀️ Доброго ранку!", "night": "🌞 З добрим ранком!", "free": "🌅 Доброго ранку!"}
+        # ── КРОК 6: Будуємо повідомлення ─────────────────────────────────────
+        greetings = {
+            "early": "☀️ Доброго ранку!",
+            "night": "🌞 З добрим ранком, Олеже!",
+            "free":  "🌅 Доброго ранку, Олеже!"
+        }
         greeting = greetings.get(shift, "🌅 Доброго ранку!")
 
         shift_info_text = {
-            "early": "💼 Сьогодні рання зміна — виходити о 05:30",
-            "night": "🌙 Сьогодні нічна зміна — виходити о 17:30",
-            "free":  "🏖 Сьогодні вихідний — твій день!"
+            "early": "💼 Сьогодні <b>рання зміна</b> — виходити о 05:30",
+            "night": "🌙 Сьогодні <b>нічна зміна</b> — виходити о 17:30",
+            "free":  "🏖 Сьогодні <b>вихідний</b> — твій день!"
         }.get(shift, "")
 
-        msg = f"{greeting} Олеже!\n\n{shift_info_text}\n\n"
+        msg = f"{greeting}\n\n{shift_info_text}\n\n"
         if weather_short:
             msg += f"🌤 {weather_short}\n\n"
-        msg += f"📅 <b>План дня:</b>\n{cal}\n\n"
+        msg += f"📅 <b>Календар на сьогодні:</b>\n{cal_full}\n\n"
         if crypto_text:
             msg += f"💹 {crypto_text}\n\n"
         if ai_tip:
             msg += f"💡 <i>{ai_tip}</i>"
 
-        # Зберігаємо ПЕРЕД відправкою — захист від дублів при Railway restart
+        # ── КРОК 7: Зберігаємо ПЕРЕД відправкою (dedup) ──────────────────────
         state["last"] = today
         save_json_file(MORNING_CTX_FILE, state)
-        # Обрізаємо до ліміту Telegram (4096 символів)
+
         if len(msg) > 4090:
             msg = msg[:4087] + "..."
         send_telegram(msg)
