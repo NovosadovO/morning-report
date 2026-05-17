@@ -83,23 +83,32 @@ def parse_qwatch_text(text: str) -> dict:
             now = datetime.now(timezone.utc) + timedelta(hours=2)
             result["date"] = now.strftime("%Y-%m-%d")
 
-    # Health Score — "Health Score: 78" або "Оцінка здоров'я: 78%"
-    hs = _extract_int(r'(?:Health Score|Оцінка здоров.я)[:\s]+(\d+)', text)
-    if hs: result["health_score"] = hs
+    # Health Score — "Health Score: 78", "Health Score (Показник здоров'я): 85%", "Оцінка здоров'я: 78%", "Оцінка (Score): 85"
+    hs = _extract_int(r'(?:Health Score|Оцінка здоров.я)[^:\d]*[:\s]+(\d+)', text)
+    if not hs:
+        hs = _extract_int(r'Оцінка\s*\([^)]*\)\s*[:\s]*(\d+)', text)
+    if not hs:
+        hs = _extract_int(r'^Оцінка\s*\n(\d+)', text, )
+    if hs and 0 < hs <= 100:
+        result["health_score"] = hs
 
     # Steps — "19 498 кроків" або "становить 19 498 кроків"
-    m = re.search(r'становить\s+([\d][\d\s\u00a0,]*)\s*крок', text, re.IGNORECASE)
-    if m:
-        result["steps"] = int(m.group(1).replace(",", "").replace(" ", "").replace("\u00a0", "").replace("\xa0", ""))
-    else:
-        m = re.search(r'(?:зробили?|зробив)[^\d]*([\d\s,]+)\s*крок', text, re.IGNORECASE)
+    # Steps — "становить 19 498 кроків" або "є солідною — 19 498 кроків" або просто "19 498 кроків"
+    _steps_raw = None
+    for pat in [
+        r'становить\s*([\d][\d\s\u00a0,]*)\s*крок',
+        r'—\s*([\d][\d\s\u00a0,]*)\s*крок',
+        r'(?:зробили?|зробив)[^\d]*([\d\s,]+)\s*крок',
+        r'([\d][\d\s,\u00a0]*)\s*крок',
+    ]:
+        m = re.search(pat, text, re.IGNORECASE)
         if m:
-            result["steps"] = int(m.group(1).replace(",", "").replace(" ", "").replace("\u00a0", ""))
-        else:
-            m2 = re.search(r'([\d][\d\s,\u00a0]*)\s*крок', text, re.IGNORECASE)
-            if m2:
-                s = m2.group(1).replace(",", "").replace(" ", "").replace("\u00a0", "").replace("\xa0", "")
-                result["steps"] = int(s)
+            _steps_raw = m.group(1)
+            break
+    if _steps_raw:
+        try:
+            result["steps"] = int(_steps_raw.replace(",","").replace(" ","").replace("\u00a0","").replace("\xa0",""))
+        except: pass
 
     # Sleep total — "6 годин 45 хвилин"
     m = re.search(r'(\d+)\s*годин\s+(\d+)\s*хвилин', text, re.IGNORECASE)
@@ -147,8 +156,9 @@ def parse_qwatch_text(text: str) -> dict:
         if m2:
             result["calories"] = int(m2.group(1))
 
-    # Stress — "Показник стресу сьогодні — 45"
-    m = re.search(r'(?:показник стресу|стрес)[^\d]*—?\s*(\d+)', text, re.IGNORECASE)
+    # Stress — "Показник стресу сьогодні — 45" або "варіабельність серцевого ритму на рівні 40 балів"
+    # НЕ плутати з тиском (тиск: 48) або HRV
+    m = re.search(r'(?:показник стресу)[^\d]*—?\s*(\d+)', text, re.IGNORECASE)
     if m:
         val = int(m.group(1))
         if val <= 100:
