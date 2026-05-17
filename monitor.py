@@ -4888,6 +4888,52 @@ def check_smart_notifications():
             except Exception as e:
                 print(f"weight progress error: {e}")
 
+        # ── 8. НАГАДУВАННЯ ХОЛОДНИЙ ДУШ ──────────────────────────────────
+        # вихідний → 11:00, рання → 05:10, нічна → 17:00
+        shower_time = None
+        if today_shift == "free" and h == 11 and 0 <= m < 5:
+            shower_time = "shower_remind"
+        elif today_shift == "early" and h == 5 and 10 <= m < 15:
+            shower_time = "shower_remind"
+        elif today_shift == "night" and h == 17 and 0 <= m < 5:
+            shower_time = "shower_remind"
+
+        if shower_time and not sent("shower_remind"):
+            # Перевіряємо чи вже позначений сьогодні
+            already_done = False
+            try:
+                from storage import load_habits as _lsh
+                _hdb = _lsh()
+                already_done = _hdb.get(today, {}).get("shower") is True
+            except Exception:
+                pass
+
+            if not already_done:
+                _tg_token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+                _tg_chat  = os.environ.get("TELEGRAM_CHAT_ID", "")
+                if _tg_token and _tg_chat:
+                    _shower_payload = json.dumps({
+                        "chat_id": _tg_chat,
+                        "text": "🚿 <b>Холодний душ!</b>\n\nЗроби зараз — 30 секунд холодної води.\nКортизол ↓  Дофамін ↑  Імунітет ↑",
+                        "parse_mode": "HTML",
+                        "reply_markup": {"inline_keyboard": [[
+                            {"text": "✅ Зробив",    "callback_data": "habit_yes_shower"},
+                            {"text": "❌ Пропустив", "callback_data": "habit_no_shower"},
+                        ]]}
+                    }).encode()
+                    _shower_req = urllib.request.Request(
+                        f"https://api.telegram.org/bot{_tg_token}/sendMessage",
+                        data=_shower_payload,
+                        headers={"Content-Type": "application/json"},
+                        method="POST"
+                    )
+                    try:
+                        urllib.request.urlopen(_shower_req, timeout=10)
+                        print("Shower reminder sent")
+                    except Exception as _se:
+                        print(f"Shower remind send error: {_se}")
+                mark("shower_remind")
+
     except Exception as e:
         print(f"check_smart_notifications error: {e}")
 
