@@ -116,8 +116,8 @@ def parse_qwatch_text(text: str) -> dict:
     if m:
         result["sleep_light_min"] = int(m.group(1)) * 60 + int(m.group(2))
 
-    # Sleep quality score
-    m = re.search(r'(?:якість|бал|score)[^\d]*(\d+)', text, re.IGNORECASE)
+    # Sleep quality score — тільки в контексті сну
+    m = re.search(r'(?:якість сну|sleep score|sleep quality)[^\d]*(\d+)', text, re.IGNORECASE)
     if m:
         val = int(m.group(1))
         if val <= 100:
@@ -162,6 +162,37 @@ def parse_qwatch_text(text: str) -> dict:
         m = re.search(r'(?:ВСР|варіабельність серцевого ритму)[^\d]*становить\s+(\d+)', text, re.IGNORECASE)
         if m:
             result["hrv"] = int(m.group(1))
+
+    # Weight — "Вага: 83 кг"
+    m = re.search(r'Вага[:\s]+(\d+(?:[.,]\d+)?)\s*кг', text, re.IGNORECASE)
+    if m:
+        result["weight_kg"] = float(m.group(1).replace(",", "."))
+
+    # Age — "Вік: 36 років"
+    m = re.search(r'Вік[:\s]+(\d+)\s*рок', text, re.IGNORECASE)
+    if m:
+        result["age"] = int(m.group(1))
+
+    # Height — "Зріст: 175 см"
+    m = re.search(r'Зріст[:\s]+(\d+)\s*см', text, re.IGNORECASE)
+    if m:
+        result["height_cm"] = int(m.group(1))
+
+    # Gender — "Стать: Чоловіча / Жіноча"
+    m = re.search(r'Стать[:\s]+(Чоловіча|Жіноча|Male|Female)', text, re.IGNORECASE)
+    if m:
+        g = m.group(1).lower()
+        result["gender"] = "male" if g in ("чоловіча", "male") else "female"
+
+    # Blood pressure — "тиск: 48" або "тиск 120/80"
+    m = re.search(r'тиск[:\s]+(\d+)/(\d+)', text, re.IGNORECASE)
+    if m:
+        result["bp_systolic"] = int(m.group(1))
+        result["bp_diastolic"] = int(m.group(2))
+    else:
+        m = re.search(r'\(тиск[:\s]+(\d+)\)', text, re.IGNORECASE)
+        if m:
+            result["bp_raw"] = int(m.group(1))
 
     # SpO2
     m = re.search(r'(\d+)\s*%.*?кисн|SpO2[^\d]*(\d+)', text, re.IGNORECASE)
@@ -415,12 +446,30 @@ def send_confirmation(record: dict):
     sl   = _fmt_sleep(record.get("sleep_total_min"))
     st   = record.get("steps")
     hrv  = record.get("hrv")
+    hr   = record.get("hr_avg")
+    cal  = record.get("calories")
+    stress = record.get("stress")
+    spo2 = record.get("spo2")
+    wt   = record.get("weight_kg")
+    bp_s = record.get("bp_systolic")
+    bp_d = record.get("bp_diastolic")
+    bp_r = record.get("bp_raw")
 
     lines = [f"✅ <b>QWatch дані збережено</b> ({date})\n"]
-    if hs:   lines.append(f"  🏆 Health Score: {hs}%")
-    if st:   lines.append(f"  🚶 Кроки: {st:,}")
+    if hs:    lines.append(f"  🏆 Health Score: {hs}%")
+    if st:    lines.append(f"  🚶 Кроки: {st:,}")
     if sl != "—": lines.append(f"  🛌 Сон: {sl}")
-    if hrv:  lines.append(f"  🧘 HRV: {hrv} мс")
+    if hr:    lines.append(f"  ❤️ Пульс: {hr} уд/хв")
+    if hrv:   lines.append(f"  🧘 HRV: {hrv} мс")
+    if spo2:  lines.append(f"  🩸 SpO2: {spo2}%")
+    if stress is not None: lines.append(f"  😬 Стрес: {stress}")
+    if cal:
+        cal_show = round(cal / 1000, 1) if cal > 10000 else cal
+        unit = "ккал" if cal <= 10000 else "ккал (×1000)"
+        lines.append(f"  🔥 Калорії: {cal_show} {unit}")
+    if wt:    lines.append(f"  ⚖️ Вага: {wt} кг")
+    if bp_s and bp_d: lines.append(f"  🩺 Тиск: {bp_s}/{bp_d}")
+    elif bp_r: lines.append(f"  🩺 Тиск: {bp_r}")
     lines.append("\n<i>Включено в денний підсумок о 21:00</i>")
     _send("\n".join(lines))
 
