@@ -3513,9 +3513,15 @@ def check_weekly_plan():
 EVENT_DONE_FILE = os.path.join(_DATA_DIR, "monitor_event_done.json")
 
 def check_event_done():
-    """Після закінчення події питає 'Виконано?' з кнопками Так/Ні."""
+    """Кожні 5 хвилин: питає 'Виконано?' для ВСІХ подій що закінчились сьогодні
+    і ще не отримали відповідь. Стійко до перезавантажень — dedup по event_id."""
     creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
     if not creds_json:
+        return
+
+    # Не питати вночі (00:00–07:00 місцевого)
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    if now_local.hour < 7:
         return
 
     asked = set(load_json_file(EVENT_DONE_FILE, default=[]))
@@ -3527,22 +3533,13 @@ def check_event_done():
         cal_id = "novosadovoleg%40gmail.com"
 
         now = datetime.now(timezone.utc)
-        # Вікно: події що закінчились 0-10 хвилин тому
-        window_start = now - timedelta(minutes=10)
-        window_end   = now
+
+        # Беремо всі події з початку сьогоднішнього дня (місцевого) до зараз
+        day_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
 
         url = (
             f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
-            f"?timeMin={urllib.parse.quote(window_start.isoformat())}"
-            f"&timeMax={urllib.parse.quote(window_end.isoformat())}"
-            f"&singleEvents=true&orderBy=startTime&maxResults=20"
-            f"&timeZone=UTC"
-        )
-        # Нам потрібні події за END time — тому беремо всі за ширше вікно і фільтруємо
-        # Розширюємо: беремо події що почались до now і закінчуються у вікні
-        url = (
-            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
-            f"?timeMin={urllib.parse.quote((now - timedelta(days=1)).isoformat())}"
+            f"?timeMin={urllib.parse.quote(day_start.isoformat())}"
             f"&timeMax={urllib.parse.quote(now.isoformat())}"
             f"&singleEvents=true&orderBy=startTime&maxResults=50"
         )
@@ -3556,53 +3553,56 @@ def check_event_done():
             with urllib.request.urlopen(req, timeout=15) as r:
                 events = json.loads(r.read()).get("items", [])
 
+        # Фільтруємо зміни і нічні — не питати про них
+        SKIP_KEYWORDS = {"нічна", "рання зміна", "night shift", "early shift", "відпустка", "вихідний"}
+
         new_asked = list(asked)
         for ev in events:
             ev_id   = ev.get("id", "")
             summary = ev.get("summary", "(без назви)")
             end_raw = ev["end"].get("dateTime") or ev["end"].get("date")
+
+            # Пропускаємо цілоденні події і зміни
             if not end_raw or "T" not in end_raw:
-                continue  # пропускаємо цілоденні події
+                continue
+            if any(kw in summary.lower() for kw in SKIP_KEYWORDS):
+                continue
 
             try:
                 end_dt = datetime.fromisoformat(end_raw.replace("Z", "+00:00"))
             except Exception:
                 continue
 
-            # Перевіряємо що подія закінчилась 0-10 хв тому
-            diff = (now - end_dt).total_seconds()
-            if not (0 <= diff <= 600):
+            # Подія має вже закінчитись (end_dt < now)
+            if end_dt >= now:
                 continue
 
-            key = f"done_{ev_id}_{end_raw}"
+            # Dedup по event_id + дата (один раз на подію на добу)
+            today_str = now_local.strftime("%Y-%m-%d")
+            key = f"done_{ev_id}_{today_str}"
             if key in asked:
                 continue
 
-            # Надсилаємо питання з кнопками через Telegram Bot API напряму
             local_end = end_dt + timedelta(hours=2)
             t = local_end.strftime("%H:%M")
 
             s_lower = summary.lower()
-            if "нічна" in s_lower:
-                emoji = "🌙"
-            elif "рання" in s_lower or "ранн" in s_lower:
-                emoji = "☀️"
-            elif "день народження" in s_lower or "birthday" in s_lower:
+            if "день народження" in s_lower or "birthday" in s_lower:
                 emoji = "🎂"
-            elif "зустріч" in s_lower or "meet" in s_lower:
+            elif "зустріч" in s_lower or "meet" in s_lower or "дзвінок" in s_lower:
                 emoji = "🤝"
+            elif "лікар" in s_lower or "doctor" in s_lower:
+                emoji = "🏥"
             else:
                 emoji = "📅"
 
             text = (
-                f"{emoji} <b>{esc(summary)}</b> закінчилась о {t}\n"
-                f"Виконано?"
+                f"{emoji} <b>{esc(summary)}</b>\n"
+                f"Планувалась до {t} — виконано?"
             )
 
-            import urllib.request as _ur
-            import urllib.parse as _up
-            bot_token = os.environ.get("TELEGRAM_TOKEN", "8374312425:AAHqrQCEqrgtVdl5Te5WhWblM2ESCnqhpfk")
-            chat_id_tg = os.environ.get("TELEGRAM_CHAT", "2100366814")
+            bot_token = os.environ.get("TELEGRAM_TOKEN", TELEGRAM_TOKEN)
+            chat_id_tg = os.environ.get("TELEGRAM_CHAT_ID", TELEGRAM_CHAT)
             safe_key = key.replace("/", "_").replace("@", "_")[:60]
 
             payload = json.dumps({
@@ -3613,20 +3613,21 @@ def check_event_done():
                     "inline_keyboard": [[
                         {"text": "✅ Виконано", "callback_data": f"evdone_yes_{safe_key}"},
                         {"text": "❌ Не виконано", "callback_data": f"evdone_no_{safe_key}"},
+                        {"text": "⏭ Перенести",  "callback_data": f"evdone_skip_{safe_key}"},
                     ]]
                 }
             }).encode()
 
-            req2 = _ur.Request(
+            req2 = urllib.request.Request(
                 f"https://api.telegram.org/bot{bot_token}/sendMessage",
                 data=payload,
                 headers={"Content-Type": "application/json"},
                 method="POST"
             )
-            with _ur.urlopen(req2, timeout=15) as resp:
+            with urllib.request.urlopen(req2, timeout=15) as resp:
                 resp.read()
 
-            print(f"Event done question sent: {summary}")
+            print(f"[event_done] asked: {summary} (ended {t})")
             new_asked.append(key)
 
         save_json_file(EVENT_DONE_FILE, new_asked[-500:])

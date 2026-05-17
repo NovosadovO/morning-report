@@ -638,6 +638,8 @@ def handle_event_done_callback(callback_query):
 
     if answer == "yes":
         reply = orig.split("\n")[0] + "\n✅ <b>Виконано!</b>"
+    elif answer == "skip":
+        reply = orig.split("\n")[0] + "\n⏭ <b>Перенесено.</b>"
     else:
         reply = orig.split("\n")[0] + "\n❌ <b>Не виконано.</b>"
 
