@@ -484,6 +484,29 @@ def get_weather():
             f"\n\n<b>Завтра:</b>  {desc_tmr}  "
             f"🔻{tmin_tmr:.0f}°  /  🔺{tmax_tmr:.0f}°{rain_tmr}"
         )
+        # Погодинний прогноз на завтра по ключових годинах
+        from datetime import date as _date_cls
+        tomorrow_str = (_date_cls.today() + __import__('datetime').timedelta(days=1)).strftime("%Y-%m-%d")
+        KEY_HOURS = {9, 12, 15, 18, 21}
+        tmr_lines = []
+        for i, t in enumerate(times):
+            if not t.startswith(tomorrow_str):
+                continue
+            try:
+                h = int(t[11:13])
+            except:
+                continue
+            if h not in KEY_HOURS:
+                continue
+            c = h_codes[i] if i < len(h_codes) else 0
+            tmp = h_temps[i] if i < len(h_temps) else None
+            pr = h_probs[i] if i < len(h_probs) else 0
+            icon = WMO.get(c, "—").split()[0]
+            rain_str = f"🌧{pr}%" if pr >= 30 else ""
+            tmp_str = f"{tmp:.0f}°" if tmp is not None else "—"
+            tmr_lines.append(f"<code>{h:02d}:00</code> {icon}{tmp_str}{rain_str}")
+        if tmr_lines:
+            result += "\n         " + "  │  ".join(tmr_lines)
 
     # Попередження
     warnings = []
