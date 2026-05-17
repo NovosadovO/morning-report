@@ -6,8 +6,8 @@
   },
   "moon__saturn__150": {
     "orb": 1.41,
-    "sent": true,
-    "event": "enter"
+    "sent": false,
+    "exact_sent": false
   },
   "mercury__sun__120": {
     "orb": 1.2,
