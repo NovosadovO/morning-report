@@ -3292,63 +3292,45 @@ def check_weekly_habit_stats():
 
 
 def check_water_reminder():
-    """Нагадування пити воду кожні 2г у вихідні між 8:00 і 20:00."""
+    """
+    Нагадування пити воду кожні 3 години — час залежить від зміни:
+      Вихідний:    08:00 11:00 14:00 17:00 20:00
+      Рання зміна: 05:00 08:00 11:00 14:00 17:00 (на роботі з 06:00)
+      Нічна зміна: 14:00 17:00 20:00 23:00 02:00 (на роботі з 18:00)
+    """
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
-
-    # Stop before 20:00 — habits.py sends water check-in at 20:00, avoid duplicate
-    if not (8 <= h < 20 and 0 <= m < 5):
-        return
-    if h % 2 != 0:
+    if not (0 <= m < 5):
         return
 
     key = now_local.strftime("%Y-%m-%d-%H")
-
-    # GitHub-dedup (захист від кількох інстансів)
     gh_sent, gh_sha = _gh_get_sent()
     gh_water_key = f"water_{key}"
     if gh_sent is not None:
         if gh_sent.get(gh_water_key):
             return
     else:
-        # fallback local
         state = load_json_file(WATER_FILE, default={})
         if state.get(key):
             return
 
-    # Якщо є зміна сьогодні — пропускаємо (check_smart_notifications шле воду на зміні)
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
-    if creds_json:
-        try:
-            creds_data = json.loads(creds_json)
-            token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
-            headers = {"Authorization": f"Bearer {token}"}
-            cal_id  = "novosadovoleg%40gmail.com"
-            now_utc = datetime.now(timezone.utc)
-            day_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0)
-            day_end   = day_start + timedelta(hours=24)
-            url = (
-                f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
-                f"?timeMin={urllib.parse.quote(day_start.isoformat())}"
-                f"&timeMax={urllib.parse.quote(day_end.isoformat())}"
-                f"&singleEvents=true&maxResults=10"
-            )
-            if _HAS_REQUESTS:
-                r = _requests.get(url, headers=headers, timeout=10)
-                events = r.json().get("items", [])
-            else:
-                req = urllib.request.Request(url, headers=headers)
-                with urllib.request.urlopen(req, timeout=10) as r:
-                    events = json.loads(r.read()).get("items", [])
-            if any("зміна" in e.get("summary","").lower() for e in events):
-                return
-        except:
-            pass
+    try:
+        from context import get_shift_from_calendar
+        shift = get_shift_from_calendar().get("today", "free")
+    except Exception:
+        shift = "free"
+
+    water_hours = {
+        "free":  [8, 11, 14, 17, 20],
+        "early": [5, 8, 11, 14, 17],
+        "night": [14, 17, 20, 23, 2],
+    }
+    if h not in water_hours.get(shift, []):
+        return
 
     send_telegram("💧 <b>Час випити воду!</b>\nВипий склянку води зараз 🥤")
-    print(f"Water reminder sent at {h}:00")
+    print(f"Water reminder sent at {h}:00 (shift={shift})")
 
-    # Зберігаємо в GitHub
     if gh_sent is not None:
         gh_sent[gh_water_key] = True
         _gh_save_sent(gh_sent, gh_sha)
@@ -3879,17 +3861,17 @@ WEIGHT_REMIND_FILE = os.path.join(_DATA_DIR, "monitor_weight_remind.json")
 def check_weight_reminder():
     """
     Нагадує зважитись:
-    - 04:55 — якщо сьогодні рання зміна (06:00)
-    - 10:10 — якщо вихідний (немає змін)
+    - 04:45 — якщо сьогодні рання зміна (06:00)
+    - 11:11 — якщо вихідний (немає змін)
     """
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
 
     # Перевіряємо тільки у потрібні вікна
-    is_455  = (h == 4 and 55 <= m <= 59)
-    is_1010 = (h == 10 and 10 <= m <= 14)
-    if not (is_455 or is_1010):
+    is_445  = (h == 4 and 45 <= m <= 49)
+    is_1111 = (h == 11 and 11 <= m <= 15)
+    if not (is_445 or is_1111):
         return
 
     state = load_json_file(WEIGHT_REMIND_FILE, default={})
@@ -3930,12 +3912,12 @@ def check_weight_reminder():
         has_shift = any("зміна" in ev.get("summary","").lower() for ev in events)
         is_day_off = not has_shift
 
-        # 04:55 — тільки якщо є рання зміна
-        if is_455 and not has_early:
+        # 04:45 — тільки якщо є рання зміна
+        if is_445 and not has_early:
             return
 
-        # 10:10 — тільки якщо вихідний
-        if is_1010 and not is_day_off:
+        # 11:11 — тільки якщо вихідний
+        if is_1111 and not is_day_off:
             return
 
         msg = (
@@ -5101,13 +5083,12 @@ def check_nutrition_reminder():
         12:00 — обід на зміні
         19:00 — вечеря після зміни
       Нічна зміна:
-        09:30 — сніданок після сну
-        15:30 — обід/перекус перед зміною (ВАЖЛИВО — більше не поїсти)
-        21:00 — легкий перекус на зміні якщо потрібно
+        14:00 — основний прийом їжі перед зміною (головний!)
+        21:00 — легкий перекус на зміні
       Вихідний:
         09:00 — сніданок
         13:00 — обід
-        19:00 — вечеря (і нагадування про 16:8)
+        18:00 — вечеря (і нагадування про 16:8)
     """
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
@@ -5161,25 +5142,25 @@ def check_nutrition_reminder():
 
     # Нічна зміна
     elif shift == "night":
-        if h == 9 and 30 <= m < 40 and not already("breakfast"):
+        if h == 14 and 0 <= m < 3 and not already("lunch"):
             send_telegram(
-                "🍳 <b>Сніданок!</b>\n\n"
-                "Добрий ранок після нічної!\n"
-                "Поїж щось легке перед сном:\n"
-                "• Йогурт, фрукти, каша\n"
-                "• Не їж важке — важче засинати"
-            )
-            mark("breakfast")
-        elif h == 15 and 30 <= m < 40 and not already("lunch"):
-            send_telegram(
-                "🍽 <b>Важливо: обід перед нічною!</b>\n\n"
-                "Це твій основний прийом їжі сьогодні.\n"
-                "Через 2.5г виходиш на зміну — поїж добре:\n"
+                "🍽 <b>Час обідати — перед нічною!</b>\n\n"
+                "Це твій головний прийом їжі сьогодні.\n"
+                "За 4г виходиш на зміну — поїж добре:\n"
                 "• Білок + вуглеводи + овочі\n"
-                "• Уникай важкого — будеш на зміні\n\n"
-                "<i>Це остання нормальна їжа до 06:00!</i>"
+                "• Не переїдай — зміна ще попереду\n\n"
+                "<i>Наступна нормальна їжа лише вранці!</i>"
             )
             mark("lunch")
+        elif h == 21 and 0 <= m < 3 and not already("snack"):
+            send_telegram(
+                "🥜 <b>Перекус на зміні</b>\n\n"
+                "Якщо голодний — час для легкого перекусу:\n"
+                "• Горіхи, фрукт, йогурт\n"
+                "• Уникай важкого — залишилась ще частина зміни\n\n"
+                "<i>Тримай енергію, але не переїдай!</i>"
+            )
+            mark("snack")
 
     # Вихідний
     else:
@@ -5201,11 +5182,11 @@ def check_nutrition_reminder():
                 "<i>Слідкуй за порціями → 78 кг реальні!</i>"
             )
             mark("lunch")
-        elif h == 19 and 0 <= m < 3 and not already("dinner"):
+        elif h == 18 and 0 <= m < 3 and not already("dinner"):
             send_telegram(
                 "🌙 <b>Вечеря!</b>\n\n"
                 "Якщо практикуєш 16:8 — це останній прийом їжі.\n"
-                "• Їж до 20:00\n"
+                "• Їж до 19:00\n"
                 "• Легке: риба, овочі, яйця\n"
                 "• Уникай солодкого та важкого\n\n"
                 "💪 <i>Ціль 78 кг: дисципліна ввечері — результат вранці!</i>"
