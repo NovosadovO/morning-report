@@ -26,6 +26,7 @@ OFFSET_FILE    = "/tmp/bot_offset.json"
 # Унікальний ідентифікатор цього інстансу бота (leader election)
 _INSTANCE_ID = str(uuid.uuid4())[:12]
 _DRAFT_STORE: dict = {}  # uid_str -> {to, subject, body} — тимчасовий store для email drafts
+_IMPORTANT_EMAILS_FILE = "data/important_emails.json"  # важливі листи (GitHub)
 _GH_TOKEN    = os.environ.get("GITHUB_TOKEN", "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")
 _GH_LOCK_URL = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_lock.json"
 _GH_OFF_URL  = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_offset.json"
@@ -298,6 +299,199 @@ def handle_email_callback(callback_query):
             "reply_markup": {"inline_keyboard": []}
         })
 
+    elif data.startswith("email_star_"):
+        # Зберігаємо лист як важливий у GitHub
+        uid_str = data[len("email_star_"):]
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "⭐ Збережено як важливий"})
+        try:
+            import sys, os as _os
+            sys.path.insert(0, _os.path.dirname(__file__))
+            from monitor import _imap_connect, _imap_get_body, _imap_decode_header
+            import email as _email_lib, base64 as _b64, urllib.request as _ur2
+
+            mail = _imap_connect()
+            mail.select("INBOX")
+            _, msg_data = mail.uid('fetch', uid_str.encode(), "(RFC822)")
+            mail.logout()
+
+            subject, sender, body = "(невідомо)", "(невідомо)", ""
+            if msg_data and msg_data[0]:
+                msg = _email_lib.message_from_bytes(msg_data[0][1])
+                subject = _imap_decode_header(msg.get("Subject", ""))
+                sender  = _imap_decode_header(msg.get("From", ""))
+                body    = _imap_get_body(msg)[:500]
+
+            # Завантажуємо поточний список важливих
+            gh_url = f"https://api.github.com/repos/NovosadovO/morning-report/contents/data/important_emails.json"
+            gh_headers = {"Authorization": f"token {_GH_TOKEN}", "User-Agent": "bot"}
+            try:
+                req = _ur2.Request(gh_url, headers=gh_headers)
+                with _ur2.urlopen(req, timeout=10) as r:
+                    gh_data = _json.loads(r.read())
+                    existing = _json.loads(_b64.b64decode(gh_data["content"]).decode())
+                    sha = gh_data["sha"]
+            except Exception:
+                existing, sha = [], None
+
+            import datetime as _dt2
+            existing.append({
+                "uid": uid_str,
+                "subject": subject,
+                "sender": sender,
+                "preview": body,
+                "saved_at": _dt2.datetime.utcnow().isoformat()
+            })
+
+            content = _b64.b64encode(_json.dumps(existing, ensure_ascii=False, indent=2).encode()).decode()
+            body_gh = {"message": "star email", "content": content}
+            if sha:
+                body_gh["sha"] = sha
+            req2 = _ur2.Request(gh_url, data=_json.dumps(body_gh).encode(), headers={**gh_headers, "Content-Type": "application/json"}, method="PUT")
+            _ur2.urlopen(req2, timeout=15)
+
+            send(chat_id, f"⭐ <b>Збережено як важливий</b>\n<i>{subject[:80]}</i>\n\nНагадаю якщо не дав відповідь протягом 24 год.")
+        except Exception as e:
+            print(f"email_star error: {e}")
+            send(chat_id, f"⚠️ Помилка збереження: {e}")
+
+    elif data.startswith("email_cal_"):
+        # AI витягує дату/подію з листа і пропонує додати в Google Calendar
+        uid_str = data[len("email_cal_"):]
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📅 Аналізую лист..."})
+        try:
+            import sys, os as _os, urllib.request as _ur3, re as _re3
+            sys.path.insert(0, _os.path.dirname(__file__))
+            from monitor import _imap_connect, _imap_get_body, _imap_decode_header
+            import email as _email_lib, datetime as _dt3
+
+            mail = _imap_connect()
+            mail.select("INBOX")
+            _, msg_data = mail.uid('fetch', uid_str.encode(), "(RFC822)")
+            mail.logout()
+
+            if not (msg_data and msg_data[0]):
+                send(chat_id, "⚠️ Не вдалось завантажити лист")
+                return
+
+            msg = _email_lib.message_from_bytes(msg_data[0][1])
+            subject = _imap_decode_header(msg.get("Subject", ""))
+            sender  = _imap_decode_header(msg.get("From", ""))
+            body    = _imap_get_body(msg)
+
+            api_key = _os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+            today = _dt3.date.today().isoformat()
+            prompt = (
+                f"Сьогодні {today}. Проаналізуй цей лист і знайди всі важливі дати, події, дедлайни, зустрічі.\n"
+                f"Від: {sender}\nТема: {subject}\n\n{body[:3000]}\n\n"
+                f"Відповідь ТІЛЬКИ у форматі JSON (без markdown):\n"
+                f"{{\"events\": [{{\"title\": \"назва події\", \"date\": \"YYYY-MM-DD\", \"time\": \"HH:MM або null\", \"description\": \"деталі\"}}]}}\n"
+                f"Якщо дат немає — {{\"events\": []}}\n"
+                f"Мова полів: українська."
+            )
+            payload = _json.dumps({
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"maxOutputTokens": 500, "temperature": 0.3}
+            }).encode()
+            req = _ur3.Request(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}",
+                data=payload, headers={"Content-Type": "application/json"}
+            )
+            with _ur3.urlopen(req, timeout=25) as r:
+                resp = _json.loads(r.read())
+            raw = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+            m = _re3.search(r'\{.*\}', raw, _re3.DOTALL)
+            if not m:
+                send(chat_id, "📅 У листі не знайдено жодних дат або подій.")
+                return
+
+            parsed = _json.loads(m.group(0))
+            events = parsed.get("events", [])
+            if not events:
+                send(chat_id, "📅 У листі не знайдено жодних дат або подій.")
+                return
+
+            # Зберігаємо events для підтвердження
+            _DRAFT_STORE[f"cal_{uid_str}"] = {"events": events, "subject": subject}
+
+            lines = [f"📅 <b>Знайдено події в листі:</b>\n<i>{subject[:60]}</i>\n"]
+            for i, ev in enumerate(events[:5]):
+                t = ev.get("time") or "весь день"
+                lines.append(f"{i+1}. <b>{ev['title']}</b>\n   📆 {ev['date']}  🕐 {t}\n   <i>{ev.get('description','')[:80]}</i>")
+
+            send_with_keyboard(chat_id,
+                "\n".join(lines) + "\n\nДодати ці події в Google Calendar?",
+                [[
+                    {"text": "✅ Додати всі", "callback_data": f"cal_add_{uid_str}"},
+                    {"text": "❌ Скасувати",  "callback_data": f"cal_skip_{uid_str}"}
+                ]]
+            )
+        except Exception as e:
+            print(f"email_cal error: {e}")
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif data.startswith("cal_add_"):
+        # Додаємо події в Google Calendar
+        uid_str = data[len("cal_add_"):]
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📅 Додаю в календар..."})
+        try:
+            import sys, os as _os, urllib.request as _ur4, urllib.parse as _up4, datetime as _dt4
+            sys.path.insert(0, _os.path.dirname(__file__))
+            from monitor import _get_google_token
+
+            store_key = f"cal_{uid_str}"
+            cal_data = _DRAFT_STORE.pop(store_key, None)
+            if not cal_data:
+                send(chat_id, "⚠️ Дані не знайдено. Спробуй ще раз.")
+                return
+
+            creds_json = _os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+            if not creds_json:
+                send(chat_id, "⚠️ Google Calendar не налаштовано.")
+                return
+
+            import json as _j4
+            creds_data = _j4.loads(creds_json)
+            token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar")
+            headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+            cal_id = "novosadovoleg%40gmail.com"
+
+            added = []
+            for ev in cal_data["events"][:5]:
+                try:
+                    date_str = ev["date"]
+                    time_str = ev.get("time")
+                    if time_str and time_str != "null":
+                        start = {"dateTime": f"{date_str}T{time_str}:00+02:00", "timeZone": "Europe/Prague"}
+                        end_dt = _dt4.datetime.fromisoformat(f"{date_str}T{time_str}:00") + _dt4.timedelta(hours=1)
+                        end = {"dateTime": end_dt.strftime(f"%Y-%m-%dT%H:%M:00+02:00"), "timeZone": "Europe/Prague"}
+                    else:
+                        start = {"date": date_str}
+                        end = {"date": date_str}
+
+                    body_ev = _j4.dumps({
+                        "summary": ev["title"],
+                        "description": f"{ev.get('description','')}\n\n📧 З листа: {cal_data['subject']}",
+                        "start": start,
+                        "end": end,
+                    }).encode()
+                    url = f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+                    req = _ur4.Request(url, data=body_ev, headers=headers, method="POST")
+                    with _ur4.urlopen(req, timeout=15) as r:
+                        r.read()
+                    added.append(f"✅ {ev['title']} ({ev['date']})")
+                except Exception as e_ev:
+                    added.append(f"⚠️ {ev.get('title','?')}: {e_ev}")
+
+            api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+            send(chat_id, "📅 <b>Додано в Google Calendar:</b>\n" + "\n".join(added))
+        except Exception as e:
+            print(f"cal_add error: {e}")
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif data.startswith("cal_skip_"):
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Скасовано"})
+        api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+
     elif data.startswith("email_reply_"):
         # Генеруємо AI draft відповіді + кнопки [Надіслати] [Скасувати]
         uid_str = data[len("email_reply_"):]
@@ -325,7 +519,9 @@ def handle_email_callback(callback_query):
                     f"Ти пишеш від імені Олега Новосадова (novosadovoleg@gmail.com).\n"
                     f"Напиши КОРОТКИЙ і природній draft відповіді на цей лист.\n"
                     f"Від: {sender}\nТема: {subject}\n\n{body[:2000]}\n\n"
-                    f"Відповідь українською, по-людськи, не формально. 3-6 речень максимум."
+                    f"ВАЖЛИВО: відповідай ТІЄЮ САМОЮ МОВОЮ на якій написаний оригінальний лист. "
+                    f"Якщо лист словацькою — відповідь словацькою. Якщо англійською — англійською. Якщо українською — українською. "
+                    f"По-людськи, не формально. 3-6 речень максимум."
                 )
                 payload = _json.dumps({
                     "contents": [{"parts": [{"text": prompt}]}],

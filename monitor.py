@@ -1236,11 +1236,17 @@ def check_new_emails():
                 if preview:
                     text += f"\n📄 <b>Початок:</b> <i>{esc(preview)}...</i>"
 
-            keyboard = {"inline_keyboard": [[
-                {"text": "✍️ Відповісти", "callback_data": f"email_reply_{uid_str}"},
-                {"text": "📥 Залишити",   "callback_data": f"email_keep_{uid_str}"},
-                {"text": "🗑 Видалити",   "callback_data": f"email_delete_{uid_str}"},
-            ]]}
+            keyboard = {"inline_keyboard": [
+                [
+                    {"text": "✍️ Відповісти", "callback_data": f"email_reply_{uid_str}"},
+                    {"text": "⭐ Важливий",   "callback_data": f"email_star_{uid_str}"},
+                ],
+                [
+                    {"text": "📅 В календар", "callback_data": f"email_cal_{uid_str}"},
+                    {"text": "📥 Залишити",   "callback_data": f"email_keep_{uid_str}"},
+                    {"text": "🗑 Видалити",   "callback_data": f"email_delete_{uid_str}"},
+                ]
+            ]}
 
             _send_telegram_text_with_keyboard(text, keyboard)
             print(f"[email] alert sent: uid={uid_str} subject={subject[:50]}")
@@ -6303,3 +6309,72 @@ def check_transit_aspects():
         send_telegram(msg)
         import time as _time_ta
         _time_ta.sleep(2)  # пауза між повідомленнями
+
+
+# ─── НАГАДУВАННЯ ПРО ВАЖЛИВІ ЛИСТИ БЕЗ ВІДПОВІДІ ────────────────────────────
+
+def check_important_emails_followup():
+    """Щогодини (08:00-22:00): нагадує про важливі листи без відповіді > 24г."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    if not (8 <= now_local.hour < 22):
+        return
+
+    import base64 as _b64i, urllib.request as _uri
+    gh_url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/important_emails.json"
+    gh_headers = {
+        "Authorization": f"token {os.environ.get('GITHUB_TOKEN','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')}",
+        "User-Agent": "bot"
+    }
+
+    try:
+        req = _uri.Request(gh_url, headers=gh_headers)
+        with _uri.urlopen(req, timeout=10) as r:
+            gh_data = json.loads(r.read())
+            emails = json.loads(_b64i.b64decode(gh_data["content"]).decode())
+            sha = gh_data["sha"]
+    except Exception:
+        return  # файл не існує або порожній
+
+    if not emails:
+        return
+
+    now_utc = datetime.now(timezone.utc)
+    still_pending = []
+    reminders = []
+
+    for em in emails:
+        saved_at_str = em.get("saved_at", "")
+        try:
+            saved_at = datetime.fromisoformat(saved_at_str).replace(tzinfo=timezone.utc)
+        except Exception:
+            still_pending.append(em)
+            continue
+
+        age_hours = (now_utc - saved_at).total_seconds() / 3600
+        reminded = em.get("reminded", False)
+
+        if age_hours >= 24 and not reminded:
+            reminders.append(em)
+            em["reminded"] = True
+
+        still_pending.append(em)
+
+    if reminders:
+        for em in reminders:
+            msg = (
+                f"⭐ <b>Нагадування: важливий лист без відповіді</b>\n\n"
+                f"👤 <b>Від:</b> {esc(em.get('sender','')[:60])}\n"
+                f"📋 <b>Тема:</b> {esc(em.get('subject','')[:70])}\n"
+                f"<i>{esc(em.get('preview','')[:200])}</i>\n\n"
+                f"⏰ Збережено більше 24 годин тому. Не забув відповісти?"
+            )
+            send_telegram(msg)
+
+        # Оновлюємо файл
+        content = _b64i.b64encode(json.dumps(still_pending, ensure_ascii=False, indent=2).encode()).decode()
+        body_gh = json.dumps({"message": "followup update", "content": content, "sha": sha}).encode()
+        req2 = _uri.Request(gh_url, data=body_gh, headers={**gh_headers, "Content-Type": "application/json"}, method="PUT")
+        try:
+            _uri.urlopen(req2, timeout=15)
+        except Exception as e:
+            print(f"important_emails save error: {e}")

@@ -921,6 +921,7 @@ def run_assistant_watcher():
             mod.check_user_silent()
             mod.check_birthdays()
             mod.check_old_unread_emails()
+            mod.check_important_emails_followup()
         except Exception as e:
             print(f"Assistant watcher error: {e}", flush=True)
         time.sleep(60)
