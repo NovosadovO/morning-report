@@ -2121,7 +2121,7 @@ def main():
     # ── КРОК 2: Погода ───────────────────────────────────────────────────────
     try:
         weather_raw = get_weather()
-        weather_text = _format_weather_visual(weather_raw) or weather_raw
+        weather_text = weather_raw  # повний вивід з прогнозом по годинах
     except Exception as e:
         print(f"get_weather error: {e}")
         weather_text = "🌤 <b>Погода</b>\n⚠️ Помилка"
@@ -2265,6 +2265,62 @@ def main():
 
     # Блок 4: Календар (ЗАВЖДИ — основа всього)
     parts.append(cal_text)
+
+    # Блок 4b: Здоров'я — вага, кроки, ліки
+    try:
+        _health_lines = ["🏥 <b>ЗДОРОВ'Я</b>"]
+        _today_h = now_local.strftime("%Y-%m-%d")
+        _yest_h  = (now_local - __import__("datetime").timedelta(days=1)).strftime("%Y-%m-%d")
+
+        # Вага
+        try:
+            from storage import load_weight as _lw_h
+            _wd = _lw_h()
+            if _wd:
+                _recent_keys = sorted(_wd.keys())[-7:]
+                _recent_vals = [_wd[d] for d in _recent_keys if _wd.get(d)]
+                _last_w = _wd.get(_today_h) or (_wd.get(_recent_keys[-1]) if _recent_keys else None)
+                if _last_w:
+                    _diff_goal = round(_last_w - 78.0, 1)
+                    _goal_str = f"до 78 кг: -{_diff_goal} кг" if _diff_goal > 0 else "🏆 ціль досягнута!"
+                    _trend_str = ""
+                    if len(_recent_vals) >= 2:
+                        _delta = round(_recent_vals[-1] - _recent_vals[-2], 1)
+                        _trend_str = f"  ({'↗️' if _delta > 0 else '↘️'}{abs(_delta):+.1f} кг)"
+                    _health_lines.append(f"⚖️ Вага: <b>{_last_w} кг</b>{_trend_str}  <i>{_goal_str}</i>")
+        except Exception as _e_w:
+            pass
+
+        # Кроки (вчора)
+        try:
+            from steps import load_steps_data as _lsd
+            _sdata = _lsd()
+            _yest_steps = _sdata.get(_yest_h, {})
+            if _yest_steps:
+                _st = _yest_steps.get("steps", 0)
+                _km = _yest_steps.get("distance_m", 0) / 1000
+                _bar = "▓" * min(10, int(_st / 1000)) + "░" * max(0, 10 - int(_st / 1000))
+                _goal_icon = "✅" if _st >= 8000 else ("🟡" if _st >= 5000 else "🔴")
+                _health_lines.append(f"👟 Кроки вчора: <b>{_st:,}</b>  {_goal_icon}  {_bar}  ({_km:.1f} км)")
+        except Exception:
+            pass
+
+        # Ліки
+        try:
+            from storage import load_meds as _lmeds_h
+            _meds_db = _lmeds_h()
+            _taken = _meds_db.get(_today_h)
+            if _taken:
+                _health_lines.append("💊 Armolopid: ✅ прийнято")
+            else:
+                _health_lines.append("💊 Armolopid: ⬜ не відмічено — прийняв?")
+        except Exception:
+            pass
+
+        if len(_health_lines) > 1:
+            parts.append("\n".join(_health_lines))
+    except Exception as _e_health:
+        print(f"health block error: {_e_health}")
 
     # Блок 5: Email (якщо є непрочитані)
     if email_text:
