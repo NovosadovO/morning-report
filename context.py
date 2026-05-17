@@ -601,6 +601,22 @@ def _try_parse_create_event(text: str):
         return None
 
 
+def _fetch_week_calendar(token: str) -> str:
+    """Завантажує події на наступні 7 днів і форматує текстом."""
+    lines = []
+    for offset in range(1, 8):
+        try:
+            events = _fetch_events_for_day(token, offset)
+            if events:
+                day = (_now_local() + timedelta(days=offset))
+                day_name = ["Пн","Вт","Ср","Чт","Пт","Сб","Нд"][day.weekday()]
+                date_str = day.strftime("%d.%m")
+                lines.append(f"{day_name} {date_str}: {_format_events_plain(events)}")
+        except Exception:
+            pass
+    return "\n".join(lines) if lines else "нічого не заплановано на тижень"
+
+
 def ask_ai(user_message: str, include_calendar: bool = True) -> str:
     """
     Відправляє повідомлення в Gemini з повним контекстом (Calendar завжди).
@@ -613,6 +629,19 @@ def ask_ai(user_message: str, include_calendar: bool = True) -> str:
 
     ctx = get_context(include_crypto=True, include_calendar=True)
     system_prompt = get_system_prompt(ctx)
+
+    # Якщо запит про тиждень — додаємо розширений Calendar контекст
+    week_keywords = ["тиждень", "наступний тиждень", "week", "7 днів", "7 дні", "на тижні"]
+    extra_calendar = ""
+    if any(kw in user_message.lower() for kw in week_keywords):
+        try:
+            token = _get_token()
+            if token:
+                week_text = _fetch_week_calendar(token)
+                extra_calendar = f"\n\n══ КАЛЕНДАР НА НАСТУПНІ 7 ДНІВ ══\n{week_text}"
+        except Exception:
+            pass
+    system_prompt += extra_calendar
 
     history = _load_history()
 
