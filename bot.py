@@ -484,6 +484,49 @@ def handle_email_callback(callback_query):
 
             api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
             send(chat_id, "📅 <b>Додано в Google Calendar:</b>\n" + "\n".join(added))
+
+            # ── Зберігаємо дедлайни в GitHub для нагадування -24г ──────────
+            try:
+                import base64 as _b64dl, urllib.request as _ur_dl, json as _jdl
+                _dl_url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/email_deadlines.json"
+                _dl_headers = {"Authorization": f"token {_GH_TOKEN}", "User-Agent": "bot"}
+
+                # Читаємо поточний файл
+                try:
+                    _r = _ur_dl.Request(_dl_url, headers=_dl_headers)
+                    with _ur_dl.urlopen(_r, timeout=10) as _resp:
+                        _existing = _jdl.loads(_resp.read())
+                    _dl_sha = _existing.get("sha", "")
+                    _dl_data = _jdl.loads(_b64dl.b64decode(_existing["content"]).decode())
+                    if not isinstance(_dl_data, list):
+                        _dl_data = []
+                except Exception:
+                    _dl_sha = ""
+                    _dl_data = []
+
+                # Додаємо нові дедлайни (тільки успішно додані)
+                _now_iso = _dt4.datetime.now(_dt4.timezone.utc).isoformat()
+                for ev in cal_data["events"][:5]:
+                    if ev.get("date"):
+                        _dl_data.append({
+                            "date": ev["date"],
+                            "title": ev["title"],
+                            "subject": cal_data.get("subject", ""),
+                            "added_at": _now_iso,
+                            "reminded": False
+                        })
+
+                _content_enc = _b64dl.b64encode(_jdl.dumps(_dl_data, ensure_ascii=False, indent=2).encode()).decode()
+                _body_dl = {"message": "email deadlines update", "content": _content_enc}
+                if _dl_sha:
+                    _body_dl["sha"] = _dl_sha
+                _req_dl = _ur_dl.Request(_dl_url, data=_jdl.dumps(_body_dl).encode(),
+                                          headers={**_dl_headers, "Content-Type": "application/json"}, method="PUT")
+                _ur_dl.urlopen(_req_dl, timeout=15)
+                print(f"email_deadlines saved: {len(cal_data['events'])} events")
+            except Exception as _dle:
+                print(f"email_deadlines save error: {_dle}")
+
         except Exception as e:
             print(f"cal_add error: {e}")
             send(chat_id, f"⚠️ Помилка: {e}")

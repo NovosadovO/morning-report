@@ -6425,3 +6425,82 @@ def check_important_emails_followup():
             _uri.urlopen(req2, timeout=15)
         except Exception as e:
             print(f"important_emails save error: {e}")
+
+
+# ─── НАГАДУВАННЯ -24г ДО ДЕДЛАЙНІВ З ЛИСТІВ ─────────────────────────────────
+
+def check_email_deadlines():
+    """
+    Щоранку о 09:05 — перевіряє email_deadlines.json на GitHub.
+    Якщо є подія завтра (або сьогодні) — надсилає нагадування.
+    """
+    import base64 as _b64ed
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+
+    if not (h == 9 and 5 <= m < 10):
+        return
+
+    today     = now_local.strftime("%Y-%m-%d")
+    tomorrow  = (now_local + timedelta(days=1)).strftime("%Y-%m-%d")
+
+    state_key = f"email_dl_{today}"
+    state = load_json_file(os.path.join(_DATA_DIR, "monitor_email_dl.json"), default={})
+    if state.get(state_key):
+        return
+
+    try:
+        gh_token = os.environ.get("GITHUB_TOKEN", "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")
+        gh_url   = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/email_deadlines.json"
+        gh_hdrs  = {"Authorization": f"token {gh_token}", "User-Agent": "monitor"}
+
+        req = urllib.request.Request(gh_url, headers=gh_hdrs)
+        with urllib.request.urlopen(req, timeout=10) as r:
+            raw = json.loads(r.read())
+        dl_sha  = raw.get("sha", "")
+        dl_list = json.loads(_b64ed.b64decode(raw["content"]).decode())
+        if not isinstance(dl_list, list):
+            return
+
+        alerts = []
+        updated = False
+        for item in dl_list:
+            if item.get("reminded"):
+                continue
+            ev_date = item.get("date", "")
+            if ev_date in (today, tomorrow):
+                label = "📌 СЬОГОДНІ" if ev_date == today else "📅 ЗАВТРА"
+                alerts.append(
+                    f"{label}: <b>{item.get('title','')}</b>\n"
+                    f"   📧 З листа: <i>{item.get('subject','')[:60]}</i>"
+                )
+                item["reminded"] = True
+                updated = True
+
+        if alerts:
+            msg = "⏰ <b>Дедлайни з листів:</b>\n\n" + "\n\n".join(alerts)
+            send_telegram(msg)
+            print(f"email_deadlines: {len(alerts)} alerts sent")
+
+        # Зберігаємо оновлений список назад
+        if updated:
+            content_enc = _b64ed.b64encode(
+                json.dumps(dl_list, ensure_ascii=False, indent=2).encode()
+            ).decode()
+            body_put = json.dumps({
+                "message": "deadlines reminded",
+                "content": content_enc,
+                "sha": dl_sha
+            }).encode()
+            req2 = urllib.request.Request(
+                gh_url, data=body_put,
+                headers={**gh_hdrs, "Content-Type": "application/json"},
+                method="PUT"
+            )
+            urllib.request.urlopen(req2, timeout=15)
+
+        state[state_key] = True
+        save_json_file(os.path.join(_DATA_DIR, "monitor_email_dl.json"), state)
+
+    except Exception as e:
+        print(f"check_email_deadlines error: {e}")
