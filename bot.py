@@ -1359,6 +1359,8 @@ HELP_TEXT = """
 
 
 def handle_command(chat_id, text):
+    # Зберігаємо оригінальний текст для парсерів (QWatch тощо)
+    original_text = text.strip()
     # Нормалізуємо апострофи (Telegram може надсилати різні варіанти)
     text = text.strip().lower()
     text = text.replace("\u2019", "'").replace("\u2018", "'").replace("\u02bc", "'").replace("`", "'")
@@ -1776,7 +1778,7 @@ def handle_command(chat_id, text):
 
     else:
         # Розпізнавання тексту QWatch Pro
-        raw_text = msg.get("text", "") if isinstance(msg, dict) else text
+        raw_text = original_text
         if ("health score" in raw_text.lower() or "оцінка здоров" in raw_text.lower()
                 or ("hrv" in raw_text.lower() and ("сон" in raw_text.lower() or "кроки" in raw_text.lower() or "пульс" in raw_text.lower()))):
             try:
