@@ -1505,7 +1505,7 @@ def _get_run_recommendation(weather_text):
 def _get_current_shift_context(calendar_text=""):
     """Визначає поточний статус зміни Олега.
     Повертає dict: {shift, is_working_now, greeting_override}
-    shift: 'night' | 'early' | 'free'
+    shift: 'night' | 'after_night' | 'early' | 'free'
     is_working_now: True якщо зараз він на роботі
     greeting_override: str або None (якщо потрібне особливе привітання)
     """
@@ -1516,8 +1516,10 @@ def _get_current_shift_context(calendar_text=""):
     except Exception:
         # fallback: парсимо calendar_text
         cl = (calendar_text or "").lower()
+        h_now = (datetime.now(timezone.utc) + timedelta(hours=2)).hour
         if "нічна" in cl or "нічн" in cl:
-            shift = "night"
+            # якщо вже ранок/день — скоріш за все повернувся з нічної
+            shift = "after_night" if h_now >= 6 else "night"
         elif "рання" in cl or "ранн" in cl:
             shift = "early"
         else:
@@ -1567,6 +1569,8 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
     shift_ctx = _get_current_shift_context(calendar_text)
     if shift_ctx["greeting_override"]:
         lines.append(shift_ctx["greeting_override"])
+    elif shift_ctx["shift"] == "after_night":
+        lines.append("🛋 <b>Після нічної зміни.</b> Відновлення важливіше за активність.")
     elif 5 <= h < 10:
         lines.append("🌅 <b>Доброго ранку, Олеже!</b> Починаємо день продуктивно.")
     elif 10 <= h < 13:
