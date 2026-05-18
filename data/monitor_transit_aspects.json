@@ -26,8 +26,8 @@
   },
   "mars__uranus__120": {
     "orb": 1.49,
-    "sent": true,
-    "event": "enter"
+    "sent": false,
+    "exact_sent": false
   },
   "saturn__venus__150": {
     "orb": 0.09,
