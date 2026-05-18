@@ -176,9 +176,10 @@ def get_shift_from_calendar():
         now_local = _now_local()
         h = now_local.hour
 
-        # Якщо зараз 00:00–05:59 — можливо нічна зміна почалась ВЧОРА
-        # і ще триває до ~06:00. Перевіряємо вчорашній день першим.
-        if h < 6:
+        # Якщо зараз 00:00–14:59 — можливо нічна зміна почалась ВЧОРА
+        # Нічна зміна: ~17:30 → ~06:00. Після неї людина відпочиває до ~14:00.
+        # Тому до 15:00 перевіряємо вчорашній день.
+        if h < 15:
             yesterday_events = _fetch_events_for_day(token, -1)
             for ev in yesterday_events:
                 s = ev.get("summary", "").lower()
@@ -189,8 +190,12 @@ def get_shift_from_calendar():
                         dt_local = dt_start + timedelta(hours=2)
                     except Exception:
                         dt_local = None
-                    # Нічна зміна з вчора — вважаємо що "today" = night (ще на роботі)
-                    result["today"] = "night"
+                    if h < 6:
+                        # Ще на роботі
+                        result["today"] = "night"
+                    else:
+                        # Після нічної — відпочиває вдома
+                        result["today"] = "after_night"
                     result["today_start"] = dt_local
                     result["today_end"] = dt_local + timedelta(hours=13) if dt_local else None
                     break
