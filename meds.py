@@ -132,9 +132,10 @@ def days_remaining():
 def _get_today_shift_type():
     """
     Повертає:
-      'early'   — є рання зміна сьогодні
-      'night'   — нічна зміна
-      'weekend' — вихідний або нема змін
+      'early'      — є рання зміна сьогодні
+      'night'      — нічна зміна сьогодні
+      'after_night'— вчора була нічна і зараз < 15:00
+      'weekend'    — вихідний або нема змін
     """
     creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
     if not creds_json:
@@ -144,7 +145,6 @@ def _get_today_shift_type():
         import json as _json
         creds_data = _json.loads(creds_json)
 
-        # Беремо JWT token — копіюємо логіку з monitor.py
         import sys
         sys.path.insert(0, _DIR)
         from monitor import _get_google_token
@@ -153,9 +153,13 @@ def _get_today_shift_type():
         headers = {"Authorization": f"Bearer {token}"}
         cal_id  = "novosadovoleg%40gmail.com"
 
-        now_utc    = datetime.now(timezone.utc)
-        day_start  = now_utc.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
-        day_end    = day_start + timedelta(hours=24)
+        now_utc   = datetime.now(timezone.utc)
+        now_local_ = now_utc + timedelta(hours=2)
+        h_now     = now_local_.hour
+
+        # ── Сьогоднішні події ──────────────────────────────────────────
+        day_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        day_end   = day_start + timedelta(hours=24)
 
         url = (
             f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
@@ -167,18 +171,43 @@ def _get_today_shift_type():
             import requests as _req
             r = _req.get(url, headers=headers, timeout=15)
             r.raise_for_status()
-            events = r.json().get("items", [])
+            today_events = r.json().get("items", [])
         except ImportError:
             req = urllib.request.Request(url, headers=headers)
             with urllib.request.urlopen(req, timeout=15) as r:
-                events = json.loads(r.read()).get("items", [])
+                today_events = json.loads(r.read()).get("items", [])
 
-        for ev in events:
+        for ev in today_events:
             summary = ev.get("summary", "").lower()
             if any(x in summary for x in ["рання", "ранн", "early"]):
                 return "early"
             if any(x in summary for x in ["нічна", "нічн", "night"]):
                 return "night"
+
+        # ── Вчорашні події (after_night) ───────────────────────────────
+        if h_now < 15:
+            yest_start = day_start - timedelta(hours=24)
+            yest_end   = day_start
+            url2 = (
+                f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+                f"?timeMin={urllib.parse.quote(yest_start.isoformat())}"
+                f"&timeMax={urllib.parse.quote(yest_end.isoformat())}"
+                f"&singleEvents=true&orderBy=startTime&maxResults=20"
+            )
+            try:
+                import requests as _req2
+                r2 = _req2.get(url2, headers=headers, timeout=15)
+                r2.raise_for_status()
+                yest_events = r2.json().get("items", [])
+            except ImportError:
+                req2 = urllib.request.Request(url2, headers=headers)
+                with urllib.request.urlopen(req2, timeout=15) as r2:
+                    yest_events = json.loads(r2.read()).get("items", [])
+
+            for ev in yest_events:
+                summary = ev.get("summary", "").lower()
+                if any(x in summary for x in ["нічна", "нічн", "night"]):
+                    return "after_night"
 
         return "weekend"
 
@@ -293,10 +322,15 @@ def _send_meds_question(today):
 def check_meds_reminder():
     """
     Головна функція — викликається кожну хвилину з monitor_loop.py.
-    Визначає час нагадування залежно від типу дня (Google Calendar):
-      early   → перше о 05:00, повторне о 07:00 (якщо не відмітив)
-      night   → перше о 17:10, повторне о 19:10
-      weekend → перше о 11:00, повторне о 13:00
+
+    Розклад першого нагадування (залежно від зміни):
+      early      → 05:00
+      night      → 17:10
+      after_night→ 11:00
+      weekend    → 09:00
+
+    Якщо після першого нагадування не підтвердив — повтор щогодини
+    (кожну повну годину) до 22:00 або до підтвердження.
     """
     now   = now_local()
     today = today_str()
@@ -306,28 +340,18 @@ def check_meds_reminder():
         _check_analysis_alerts(today)
         return
 
-    sent  = load_sent()
-    meds  = load_meds()
+    sent = load_sent()
+    meds = load_meds()
 
-    # Вже відмітив сьогодні через кнопку — нічого не робимо
+    # Вже підтвердив сьогодні ✅ — нічого не робимо
     if meds.get(today) is True:
         _check_analysis_alerts(today)
         return
 
-    # Перевіряємо Calendar — можливо відмітив там
+    # Перевіряємо Calendar — можливо там відмічено
     if _already_taken_in_calendar(today):
-        # Зберігаємо в meds щоб наступного разу не ходити в Calendar
         meds[today] = True
         save_meds(meds)
-        _check_analysis_alerts(today)
-        return
-
-    # Ключ БЕЗ shift — щоб зміна типу зміни не породжувала нові нагадування
-    remind_key  = f"meds_remind_{today}"
-    remind2_key = f"meds_remind2_{today}"
-
-    # Якщо обидва вже відправлені — нічого не робимо
-    if sent.get(remind_key) and sent.get(remind2_key):
         _check_analysis_alerts(today)
         return
 
@@ -335,42 +359,66 @@ def check_meds_reminder():
     h, m    = now.hour, now.minute
     cur_min = h * 60 + m
 
+    # Перше нагадування залежно від зміни
     if shift == "early":
-        first_time  = 5 * 60           # 05:00
-        second_time = 7 * 60           # 07:00
+        first_time = 5 * 60           # 05:00
     elif shift == "night":
-        first_time  = 17 * 60 + 10     # 17:10
-        second_time = 19 * 60 + 10     # 19:10
+        first_time = 17 * 60 + 10    # 17:10
+    elif shift == "after_night":
+        first_time = 11 * 60          # 11:00
     else:
-        # weekend / невідомо
-        first_time  = 11 * 60          # 11:00
-        second_time = 13 * 60          # 13:00
+        first_time = 9 * 60           # 09:00 для вихідного
+
+    # Ще не настав час першого нагадування
+    if cur_min < first_time:
+        _check_analysis_alerts(today)
+        return
+
+    # Після 22:00 більше не турбуємо
+    if h >= 22:
+        _check_analysis_alerts(today)
+        return
 
     # ── Перше нагадування ──────────────────────────────────────────────
-    if not sent.get(remind_key) and cur_min >= first_time:
+    first_key = f"meds_remind_{today}"
+    if not sent.get(first_key):
         _send_meds_question(today)
-        sent[remind_key] = True
+        sent[first_key] = True
         save_sent(sent)
         print(f"Meds first reminder sent for {today} (shift={shift})")
         _check_analysis_alerts(today)
-        return  # вийти — не перевіряти повторне в ту ж хвилину
+        return
 
-    # ── Повторне нагадування (якщо не відмітив) ────────────────────────
-    if (
-        sent.get(remind_key)           # перше вже відправлено
-        and not sent.get(remind2_key)  # повторне ще не відправлено
-        and cur_min >= second_time     # настав час повторного
-    ):
-        day_n2 = days_into_course()
-        bar2   = _progress_bar(day_n2)
-        pct2   = min(round(day_n2 / 92 * 100), 100)
+    # ── Погодинні повтори якщо не підтвердив ───────────────────────────
+    # Ключ для кожної повної години: meds_hourly_2026-05-18_14
+    hourly_key = f"meds_hourly_{today}_{h}"
+    if not sent.get(hourly_key) and m >= 0:
+        # Надсилаємо тільки якщо ця година ще не відправлена
+        day_n = days_into_course()
+        bar   = _progress_bar(day_n)
+        pct   = min(round(day_n / 92 * 100), 100)
+
+        # Рахуємо скільки разів вже нагадували сьогодні
+        remind_count = sum(
+            1 for k in sent
+            if k.startswith(f"meds_hourly_{today}_") or k == first_key
+        )
+
+        if remind_count == 1:
+            urgency = "⏰ <b>Нагадування про ліки</b>"
+        elif remind_count == 2:
+            urgency = "⏰⏰ <b>Ще не відмітив!</b>"
+        else:
+            urgency = f"🔔 <b>Нагадування #{remind_count}</b> — ліки!"
+
         api("sendMessage", {
             "chat_id": TELEGRAM_CHAT,
             "text": (
-                f"⏰ <b>Ще не відмітив ліки!</b>\n\n"
-                f"{bar2}  {pct2}%\n"
-                f"День {day_n2} / 92\n\n"
-                f"💊 <b>{MEDS_NAME}</b> — прийняв сьогодні?"
+                f"{urgency}\n\n"
+                f"{bar}  {pct}%\n"
+                f"День {day_n} / 92\n\n"
+                f"💊 <b>{MEDS_NAME}</b>\n"
+                f"<i>Прийняв сьогодні?</i>"
             ),
             "parse_mode": "HTML",
             "reply_markup": {
@@ -380,9 +428,9 @@ def check_meds_reminder():
                 ]]
             }
         })
-        sent[remind2_key] = True
+        sent[hourly_key] = True
         save_sent(sent)
-        print(f"Meds second reminder sent for {today} (shift={shift})")
+        print(f"Meds hourly reminder sent for {today} hour={h} (shift={shift}, count={remind_count})")
 
     # Аналізи / ключові дати
     _check_analysis_alerts(today)
