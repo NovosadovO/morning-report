@@ -1560,177 +1560,235 @@ def _get_current_shift_context(calendar_text=""):
 
 
 def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro_text=None):
-    import re as _re
+    """
+    Живий підсумок дня — генерується Gemini на основі реальних даних.
+    Кожен підсумок унікальний, прив'язаний до конкретних цифр і контексту.
+    """
+    import re as _re, hashlib as _hsh
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h = now_local.hour
-    lines = []
+    today_str_s = now_local.strftime("%Y-%m-%d")
+    slot_seed = now_local.strftime("%Y-%m-%d-%H") + str(now_local.minute // 20)
 
-    # ── Привітання по часу з урахуванням зміни ───────────────────────────────
     shift_ctx = _get_current_shift_context(calendar_text)
-    if shift_ctx["greeting_override"]:
-        lines.append(shift_ctx["greeting_override"])
-    elif shift_ctx["shift"] == "after_night":
-        lines.append("🛋 <b>Після нічної зміни.</b> Відновлення важливіше за активність.")
-    elif 5 <= h < 10:
-        lines.append("🌅 <b>Доброго ранку, Олеже!</b> Починаємо день продуктивно.")
-    elif 10 <= h < 13:
-        lines.append("☀️ <b>Гарного ранку!</b> Ще є час для найважливішого.")
-    elif 13 <= h < 16:
-        lines.append("🍽 <b>Пообідній час.</b> Перезарядись і вперед!")
-    elif 16 <= h < 20:
-        lines.append("🌆 <b>Добрий вечір!</b> Добий фінішний спурт.")
-    elif h >= 20 or h < 5:
-        lines.append("🌙 <b>Пізній вечір.</b> Час відпочити й підготуватись до завтра.")
+    shift = shift_ctx.get("shift", "free")
 
-    # ── Крипто — конкретні ціни ───────────────────────────────────────────────
-    if prices_text:
-        crypto_lines = []
-        for coin_name, coin_emoji in [
-            ("BTC", "₿"), ("ETH", "Ξ"), ("SOL", "◎"), ("BNB", "🔶"),
-        ]:
-            # шукаємо рядок що містить назву монети (може бути emoji перед нею)
-            row_m = _re.search(r"[^\n]*" + coin_name + r"[^\n]*", prices_text)
-            if not row_m:
-                continue
-            row = row_m.group(0)
-            price_m = _re.search(r"\$([\d,]+)", row)
-            if not price_m:
-                continue
-            price = price_m.group(1)
-            pct_m = _re.search(r"([+\-−][\d.]+%)", row)
-            pct = pct_m.group(1) if pct_m else ""
-            trend = "🔺" if "🔺" in row else ("🔻" if "🔻" in row else "➡️")
-            crypto_lines.append(f"  {trend} {coin_emoji} {coin_name}: ${price} {pct}".strip())
+    # ── Збираємо реальні дані для контексту Gemini ───────────────────────────
 
-        if crypto_lines:
-            # Загальний тренд
-            up = prices_text.count("🔺")
-            down = prices_text.count("🔻")
-            if up > down:
-                market_mood = "📈 Ринок зелений"
-            elif down > up:
-                market_mood = "📉 Ринок у мінусі — стежи за позиціями"
-            else:
-                market_mood = "↔️ Ринок нейтральний"
-            lines.append(f"💰 <b>Крипто:</b> {market_mood}\n" + "\n".join(crypto_lines))
-        elif "🔻" in prices_text:
-            lines.append("📉 <b>Крипто:</b> ринок падає — слідкуй за портфелем")
-        elif "🔺" in prices_text:
-            lines.append("📈 <b>Крипто:</b> ринок росте")
-
-    # ── Погода — конкретна температура + поради ───────────────────────────────
+    # Погода
+    weather_facts = ""
     if weather_text:
         temp_m = _re.search(r"([-−]?\d+)[°℃]", weather_text)
-        temp_str = f"{temp_m.group(1)}°" if temp_m else ""
-        # Відчуває як
-        feels_m = _re.search(r"(?:відчувається|feels)[^\d]*([-−]?\d+)", weather_text, _re.IGNORECASE)
-        feels_str = f", відчув. {feels_m.group(1)}°" if feels_m else ""
-        weather_summary = f"🌡 Температура: <b>{temp_str}{feels_str}</b>"
-        weather_advice = []
-        wl = weather_text.lower()
-        if "дощ" in wl or "злива" in wl:
-            weather_advice.append("☂️ Візьми парасольку")
-        if "гроза" in wl:
-            weather_advice.append("⛈ Уникай відкритих місць")
-        if "сніг" in wl:
-            weather_advice.append("🧥 Одягнись тепліше")
-        if "туман" in wl:
-            weather_advice.append("🚗 Обережно на дорозі — туман")
+        feels_m = _re.search(r"(?:відчув|feels)[^\d]*([-−]?\d+)", weather_text, _re.I)
         if temp_m:
-            t_val = int(temp_m.group(1).replace("−", "-"))
-            if t_val < 0:
-                weather_advice.append("🧣 Мороз — тепло одягайся!")
-            elif t_val < 10:
-                weather_advice.append("🧥 Прохолодно — куртка обов'язкова")
-            elif t_val > 28:
-                weather_advice.append("🥵 Спека — пий більше води")
-        advice_str = "  " + " · ".join(weather_advice) if weather_advice else ""
-        lines.append(weather_summary + (f"\n{advice_str}" if advice_str else ""))
+            weather_facts = f"Погода: {temp_m.group(1)}°C"
+            if feels_m:
+                weather_facts += f" (відчув. {feels_m.group(1)}°)"
+            wl = weather_text.lower()
+            if "дощ" in wl: weather_facts += ", дощ"
+            elif "сніг" in wl: weather_facts += ", сніг"
+            elif "гроза" in wl: weather_facts += ", гроза"
+            elif "ясно" in wl or "сонячно" in wl: weather_facts += ", ясно"
+            elif "хмарно" in wl: weather_facts += ", хмарно"
 
-    # ── Бігова рекомендація ───────────────────────────────────────────────────
-    run_rec = _get_run_recommendation(weather_text)
-    if run_rec:
-        lines.append(run_rec)
+    # Крипто
+    crypto_facts = ""
+    if prices_text:
+        coins_data = []
+        for coin in ["BTC", "ETH", "SOL", "BNB"]:
+            row_m = _re.search(r"[^\n]*" + coin + r"[^\n]*", prices_text)
+            if not row_m: continue
+            row = row_m.group(0)
+            price_m = _re.search(r"\$([\d,]+(?:\.\d+)?)", row)
+            pct_m = _re.search(r"([+\-−][\d.]+)%", row)
+            if price_m:
+                pct_str = pct_m.group(0) if pct_m else ""
+                trend = "🔺" if "🔺" in row else ("🔻" if "🔻" in row else "→")
+                coins_data.append(f"{coin} ${price_m.group(1)} {pct_str} {trend}")
+        if coins_data:
+            up = prices_text.count("🔺")
+            dn = prices_text.count("🔻")
+            mood = "зелений" if up > dn else ("червоний" if dn > up else "нейтральний")
+            crypto_facts = f"Крипторинок {mood}: " + ", ".join(coins_data[:4])
 
-    # ── Важливі листи — потребують відповіді ──────────────────────────────────
-    if email_text:
-        # Реальний unread_count з header рядка: "🔴 N нових"
-        unread_cnt_m = _re.search(r"🔴\s*(\d+)\s*нових", email_text)
-        real_unread = int(unread_cnt_m.group(1)) if unread_cnt_m else 0
+    # Вага
+    weight_facts = ""
+    try:
+        from storage import load_weight as _lw_s
+        wd = _lw_s()
+        if wd:
+            keys = sorted(wd.keys())
+            last_w = wd.get(today_str_s) or wd.get(keys[-1])
+            if last_w:
+                diff = round(last_w - 78.0, 1)
+                trend_w = ""
+                if len(keys) >= 2:
+                    delta = round(wd[keys[-1]] - wd[keys[-2]], 1)
+                    trend_w = f", тренд {'+' if delta > 0 else ''}{delta} кг"
+                weight_facts = f"Вага: {last_w} кг (ціль 78 кг, залишилось {diff} кг{trend_w})"
+    except: pass
 
-        # Відправники (тільки реальні люди, не розсилки)
-        sender_m = _re.findall(r"👤\s*(.{3,40}?)(?:\n|$)", email_text)
-        important_senders = []
-        skip_kw = ["newsletter", "noreply", "no-reply", "unsubscribe", "blockworks", "notification", "info@", "support@", "hello@"]
-        for s in sender_m:
-            if not any(k in s.lower() for k in skip_kw):
-                important_senders.append(s.strip())
+    # Кроки
+    steps_facts = ""
+    try:
+        yest = (now_local - timedelta(days=1)).strftime("%Y-%m-%d")
+        from steps import load_steps_data as _lsd_s
+        sd = _lsd_s()
+        if sd and sd.get(yest):
+            st = sd[yest].get("steps", 0)
+            km = sd[yest].get("distance_m", 0) / 1000
+            goal_ok = "ціль виконана ✅" if st >= 8000 else "ціль 8000 не виконана ❌"
+            steps_facts = f"Кроки вчора: {st:,} ({km:.1f} км) — {goal_ok}"
+    except: pass
 
-        if important_senders:
-            lines.append(
-                "📬 <b>Листи, що потребують відповіді:</b>\n" +
-                "\n".join(f"  ↩️ {s}" for s in important_senders[:3])
-            )
-        elif real_unread > 0:
-            lines.append(f"📬 <b>Нових листів: {real_unread}</b> — перевір пошту")
-        # якщо 0 непрочитаних — нічого не додаємо
-
-    # ── Астрологія — важливі аспекти ─────────────────────────────────────────
-    if astro_text:
-        # Знаходимо тільки червоні (напружені) аспекти
-        tense = _re.findall(r"🔴[^\n]+", astro_text)
-        harmonic = _re.findall(r"🟢[^\n]+", astro_text)
-        astro_advice = []
-        if tense:
-            # Беремо перший напружений аспект
-            aspect_clean = _re.sub(r"<[^>]+>", "", tense[0]).strip()
-            astro_advice.append(f"⚠️ Напружений аспект: {aspect_clean}")
-        if harmonic:
-            aspect_clean = _re.sub(r"<[^>]+>", "", harmonic[0]).strip()
-            astro_advice.append(f"✨ Сприятливий: {aspect_clean}")
-        # Поради по аспектах
-        if astro_text:
-            al = astro_text.lower()
-            if "меркурій" in al and ("квадра" in al or "опозиція" in al):
-                astro_advice.append("🗣 Будь уважний у переговорах і комунікації")
-            if "венера" in al and ("трин" in al or "секстиль" in al):
-                astro_advice.append("💚 Добрий час для відносин і творчості")
-            if "марс" in al and ("трин" in al or "секстиль" in al):
-                astro_advice.append("💪 Висока енергія — використай для спорту або справ")
-            if "сатурн" in al and ("квадра" in al or "опозиція" in al):
-                astro_advice.append("🧱 Обмеження та відповідальність — зосередься на головному")
-            if "юпітер" in al and ("трин" in al or "секстиль" in al or "кон'юнк" in al):
-                astro_advice.append("🌟 Юпітер підтримує — добрий день для розширення")
-        if astro_advice:
-            lines.append("🔮 <b>Астро-нотатки:</b>\n" + "\n".join(f"  {a}" for a in astro_advice[:3]))
-
-    # ── Календарні події ──────────────────────────────────────────────────────
-    if calendar_text and "нічого не заплановано" not in calendar_text.lower():
-        # Витягнути назви подій
-        ev_m = _re.findall(r"—\s*<b>(.{3,50}?)</b>", calendar_text)
-        if ev_m:
-            ev_str = " · ".join(ev_m[:3])
-            lines.append(f"📅 <b>Сьогодні:</b> {ev_str}")
+    # Ліки
+    meds_facts = ""
+    try:
+        from storage import load_meds as _lm_s
+        mdb = _lm_s()
+        taken = mdb.get(today_str_s)
+        if taken is True:
+            meds_facts = "Armolopid Plus: прийнято ✅"
+        elif taken is False:
+            meds_facts = "Armolopid Plus: НЕ прийнято ❌"
         else:
-            lines.append("📅 Є заплановані події — перевір календар")
+            meds_facts = "Armolopid Plus: статус невідомий ⬜"
+    except: pass
 
-    # ── Мотиваційна нотатка дня ───────────────────────────────────────────────
-    import hashlib as _hsh
-    day_hash = int(_hsh.md5(now_local.strftime("%Y-%m-%d").encode()).hexdigest(), 16)
-    motivations = [
-        "💡 <i>Зроби один маленький крок сьогодні — він рухає тебе вперед.</i>",
-        "🎯 <i>Фокус на одну ключову задачу — це сила.</i>",
-        "🔋 <i>Твоя енергія = твій капітал. Витрачай мудро.</i>",
-        "🌊 <i>Прогрес щодня — навіть мікро-прогрес — це перемога.</i>",
-        "🧠 <i>10 хв читання = 3650 хв на рік. Вклади в себе.</i>",
-        "⚡ <i>Найважча задача першою — решта піде легше.</i>",
-        "🕊 <i>Спокій зсередини = кращі рішення зовні.</i>",
-    ]
-    lines.append(motivations[day_hash % len(motivations)])
+    # Календар
+    cal_facts = ""
+    if calendar_text and "нічого не заплановано" not in calendar_text.lower():
+        ev_m = _re.findall(r"(\d{2}:\d{2})[^\n]*<b>(.{2,50}?)</b>", calendar_text)
+        if ev_m:
+            cal_facts = "Календар: " + "; ".join(f"{t} {n}" for t, n in ev_m[:4])
+        else:
+            ev_m2 = _re.findall(r"—\s*<b>(.{2,50}?)</b>", calendar_text)
+            if ev_m2:
+                cal_facts = "Календар: " + "; ".join(ev_m2[:4])
+
+    # Email
+    email_facts = ""
+    email_drafts_context = ""
+    if email_text:
+        unread_m = _re.search(r"🔴\s*(\d+)\s*нових", email_text)
+        unread_cnt = int(unread_m.group(1)) if unread_m else 0
+        subjects = _re.findall(r"📨\s*<b>(.{3,60}?)</b>", email_text)
+        senders = _re.findall(r"👤\s*<code>(.{3,50}?)</code>", email_text)
+        ai_sums = _re.findall(r"🤖\s*(.{5,200}?)(?:\n|$)", email_text)
+        skip_kw = ["newsletter", "noreply", "no-reply", "notification", "blockworks",
+                   "duolingo", "youtube", "medium", "unsubscribe"]
+        important_emails = []
+        for i, subj in enumerate(subjects[:5]):
+            sender = senders[i] if i < len(senders) else ""
+            ai_s = ai_sums[i] if i < len(ai_sums) else ""
+            if not any(k in sender.lower() for k in skip_kw):
+                important_emails.append({"subject": subj, "sender": sender, "summary": ai_s})
+        if important_emails:
+            email_facts = f"Листів непрочитаних: {unread_cnt}. Потребують уваги: " + "; ".join(f'"{e["subject"]}" від {e["sender"]}' for e in important_emails[:3])
+            email_drafts_context = "\n".join(f'- Лист від "{e["sender"]}": {e["subject"]}. Суть: {e["summary"]}' for e in important_emails[:3])
+        elif unread_cnt > 0:
+            email_facts = f"Нових листів: {unread_cnt}"
+
+    # Астро
+    astro_facts = ""
+    if astro_text:
+        tense = _re.findall(r"🔴[^\n<]+", astro_text)
+        good = _re.findall(r"🟢[^\n<]+", astro_text)
+        parts_a = []
+        if tense: parts_a.append("Напружено: " + _re.sub(r"<[^>]+>","",tense[0]).strip())
+        if good: parts_a.append("Сприятливо: " + _re.sub(r"<[^>]+>","",good[0]).strip())
+        if parts_a: astro_facts = "Астро: " + "; ".join(parts_a)
+
+    # Зміна
+    if shift == "early":
+        shift_desc = "рання зміна 06:00–18:00"
+    elif shift == "night":
+        shift_desc = "нічна зміна 18:00–06:00"
+    elif shift == "after_night":
+        shift_desc = "вихідний після нічної — відновлення"
+    else:
+        shift_desc = "вихідний / вільний день"
+
+    context_parts = [p for p in [
+        weather_facts, crypto_facts, weight_facts, steps_facts,
+        meds_facts, cal_facts, email_facts, astro_facts
+    ] if p]
+
+    drafts_section = ""
+    if email_drafts_context:
+        drafts_section = (
+            "\n\nТакож для кожного важливого листа напиши коротку чернетку відповіді "
+            "(1-3 речення, ввічливо, по суті). Формат:\n"
+            "✍️ Чернетка для [відправник]: [текст]\n\n"
+            f"Листи для чернеток:\n{email_drafts_context}"
+        )
+
+    prompt = (
+        f"Ти персональний асистент Олега (Кошіце, Словаччина). "
+        f"Зараз {now_local.strftime('%H:%M')}, {shift_desc}. "
+        f"Реальні дані прямо зараз:\n"
+        + "\n".join(f"• {p}" for p in context_parts) +
+        "\n\n"
+        "Напиши живий підсумок-аналіз (НЕ загальні слова — тільки конкретні факти). "
+        "Структура:\n"
+        "1. Одне речення про загальну картину дня\n"
+        "2. Що є / що зроблено — конкретно\n"
+        "3. Чого нема / що треба зробити\n"
+        "4. 1-2 практичні рекомендації ЗАРАЗ\n"
+        "5. Якщо є листи — що з ними робити"
+        + drafts_section +
+        f"\n\nПо-українськи. Без зайвих слів. Кожен пункт з нового рядка з емоджі. Seed: {slot_seed}"
+    )
+
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    ai_summary = ""
+    if gemini_key:
+        try:
+            body_ai = json.dumps({
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"maxOutputTokens": 700, "temperature": 0.85},
+                "thinkingConfig": {"thinkingBudget": 0}
+            }).encode()
+            req_ai = urllib.request.Request(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                data=body_ai, headers={"Content-Type": "application/json"}, method="POST"
+            )
+            with urllib.request.urlopen(req_ai, timeout=25) as r_ai:
+                resp_ai = json.loads(r_ai.read())
+            ai_summary = resp_ai["candidates"][0]["content"]["parts"][0]["text"].strip()
+        except Exception as e:
+            print(f"get_summary gemini error: {e}")
+
+    if not ai_summary:
+        lines_fb = []
+        if shift_ctx.get("greeting_override"):
+            lines_fb.append(shift_ctx["greeting_override"])
+        elif shift == "after_night":
+            lines_fb.append("🛋 <b>Після нічної.</b> Відновлення важливіше за активність.")
+        elif 5 <= h < 10:
+            lines_fb.append("🌅 <b>Доброго ранку, Олежу!</b>")
+        elif 10 <= h < 17:
+            lines_fb.append("☀️ <b>Добрий день!</b>")
+        else:
+            lines_fb.append("🌙 <b>Добрий вечір!</b>")
+        for fact in context_parts:
+            lines_fb.append(f"• {fact}")
+        day_hash = int(_hsh.md5(today_str_s.encode()).hexdigest(), 16)
+        motivations = [
+            "💡 Зроби один крок вперед сьогодні.",
+            "🎯 Фокус на одну ключову задачу.",
+            "🔋 Твоя енергія = твій капітал.",
+            "🌊 Мікро-прогрес щодня — це перемога.",
+            "🧠 10 хв читання = інвестиція в себе.",
+            "⚡ Найважча задача першою.",
+            "🕊 Спокій = кращі рішення.",
+        ]
+        lines_fb.append(motivations[day_hash % len(motivations)])
+        ai_summary = "\n".join(lines_fb)
 
     header = "━━━━━━━━━━━━━━━━━━━━━━\n🗂 <b>ПІДСУМОК</b>\n━━━━━━━━━━━━━━━━━━━━━━"
-    body = "\n\n".join(lines)
-    return f"{header}\n{body}"
+    return f"{header}\n{ai_summary}"
+
 
 
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
