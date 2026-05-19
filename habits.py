@@ -500,8 +500,11 @@ def run():
             })
 
         # Нагадування перед нічною зміною — о 16:00 (за 2г до 18:00)
+        # ТІЛЬКИ якщо сьогодні нічна зміна
         night_pre_key = f"{today}_night_pre"
-        if (not sent.get(night_pre_key) and now.hour == 16 and now.minute == 0):
+        _today_shift = _get_shift_type()
+        if (not sent.get(night_pre_key) and now.hour == 16 and now.minute == 0
+                and _today_shift == "night"):
             sent[night_pre_key] = True  # save ПЕРЕД send
             save_sent(sent)
             api("sendMessage", {
