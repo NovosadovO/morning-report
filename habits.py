@@ -31,9 +31,9 @@ _INMEM_SENT: dict | None = None  # None = ще не завантажено
 HABITS = [
     # shower handled dynamically by check_shower_reminder()
     {"id": "run",    "name": "Біг",           "emoji": "🏃", "hour": 19, "minute": 10},
-    {"id": "water",  "name": "Вода (2л+)",    "emoji": "💧", "hour": 20, "minute": 0},
-    {"id": "tea",    "name": "Трав'яний чай", "emoji": "🍵", "hour": 20, "minute": 10},
-    {"id": "sauna",  "name": "Сауна",          "emoji": "🧖", "hour": 20, "minute": 20},
+    {"id": "water",  "name": "Вода (2л+)",    "emoji": "💧", "hour": 19, "minute": 10},
+    {"id": "tea",    "name": "Трав'яний чай", "emoji": "🍵", "hour": 19, "minute": 10},
+    {"id": "sauna",  "name": "Сауна",          "emoji": "🧖", "hour": 19, "minute": 10},
 ]
 
 SLEEP_HOUR   = 8
@@ -127,7 +127,7 @@ def check_shower_reminder():
     else:
         trigger = 10 * 60       # 10:00
 
-    if trigger == cur_min:
+    if trigger <= cur_min <= trigger + 4:  # вікно 4 хвилини щоб не пропустити
         # Зберігаємо ПЕРЕД надсиланням — щоб не дублювати при паралельному запуску
         sent[remind_key] = True
         sent[f"{today}_shower_smart_time"] = cur_min
@@ -464,13 +464,15 @@ def run():
         check_shower_reminder()
 
         # Перевіряємо чи час надсилати питання про звички
+        cur_min_abs = now.hour * 60 + now.minute
         for h in HABITS:
             if h.get("id") == "shower":
                 continue  # shower handled by check_shower_reminder
             key = f"{today}_{h['id']}"
             if sent.get(key):
                 continue
-            if now.hour == h["hour"] and now.minute == h["minute"]:
+            h_trigger = h["hour"] * 60 + h["minute"]
+            if h_trigger <= cur_min_abs <= h_trigger + 4:  # вікно 4 хв
                 # Зберігаємо ПЕРЕД надсиланням — захист від дублювання
                 sent[key] = True
                 save_sent(sent)
@@ -522,6 +524,22 @@ def run():
         # Нагадування після нічної зміни — ВИДАЛЕНО з habits.py
         # Тепер надсилається ТІЛЬКИ через monitor.py check_smart_notifications() post_night (06:15)
         # щоб уникнути дублів
+
+        # Нагадування про невиконані звички — о 21:30
+        undone_key = f"{today}_undone_remind"
+        if not sent.get(undone_key) and now.hour == 21 and 30 <= now.minute <= 34:
+            db_today = load_data().get(today, {})
+            all_habits = [{"id": "shower", "name": "Холодний душ", "emoji": "🚿"}] + HABITS
+            missed = [h for h in all_habits if db_today.get(h["id"]) is not True]
+            if missed:
+                lines = "\n".join(f"{h['emoji']} {h['name']}" for h in missed)
+                sent[undone_key] = True
+                save_sent(sent)
+                api("sendMessage", {
+                    "chat_id": TELEGRAM_CHAT,
+                    "text": f"⚠️ <b>Ще не відмічено сьогодні:</b>\n\n{lines}\n\nЩе є час виконати!",
+                    "parse_mode": "HTML"
+                })
 
         # Тижневий звіт ліків — щонеділі о 20:40
         meds_weekly_key = f"meds_weekly_{today}"
