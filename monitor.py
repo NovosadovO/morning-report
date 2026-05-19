@@ -1197,7 +1197,11 @@ def check_new_emails():
             newly_seen.add(uid_str)
 
             if ea not in _SKIP_EMAILS:
-                to_alert.append((uid_str, subject, sender, body))
+                category = _classify_email(sender, subject)
+                if category in ("spam", "promo"):
+                    print(f"[email] skip {category}: {sender[:50]} / {subject[:40]}")
+                else:
+                    to_alert.append((uid_str, subject, sender, body, category))
 
         mail.logout()
 
@@ -1206,7 +1210,10 @@ def check_new_emails():
             sent_ids.update(newly_seen)
             _email_save_ids(sent_ids)
 
-        for uid_str, subject, sender, body in to_alert:
+        # Сортуємо: 'real' першими
+        to_alert.sort(key=lambda x: 0 if x[4] == "real" else 1)
+
+        for uid_str, subject, sender, body, category in to_alert:
             # AI аналіз листа
             full_text = f"Від: {sender}\nТема: {subject}\n\n{body}"
             print(f"[email] analyzing uid={uid_str} subject={subject[:40]}")
