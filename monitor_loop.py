@@ -149,6 +149,13 @@ def run_calendar_reminder_watcher():
             _load_monitor().check_calendar_reminders()
         except Exception as e:
             print(f"Calendar reminder watcher error: {e}", flush=True)
+        try:
+            import sys, os as _os
+            sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+            import planner as _planner
+            _planner.check_planner_triggers()
+        except Exception as e:
+            print(f"Planner trigger error: {e}", flush=True)
         time.sleep(300)
 
 

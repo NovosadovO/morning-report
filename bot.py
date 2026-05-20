@@ -1961,6 +1961,21 @@ def main():
                             except Exception as e:
                                 print(f"cal_done error: {e}")
                                 send(chat_id, f"⚠️ Помилка: {e}")
+                        elif data.startswith("planner_"):
+                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": ""})
+                            try:
+                                from planner import handle_planner_confirm, handle_planner_cancel, handle_planner_edit, ask_tomorrow_plans, clear_state
+                                if data == "planner_confirm":
+                                    handle_planner_confirm()
+                                elif data == "planner_cancel":
+                                    handle_planner_cancel()
+                                elif data == "planner_edit":
+                                    handle_planner_edit()
+                                elif data == "planner_skip":
+                                    clear_state()
+                                    send(chat_id, "⏭ Зрозумів, пропускаємо.")
+                            except Exception as _ple:
+                                print(f"planner callback error: {_ple}")
                         elif data.startswith("email_delete_") or data.startswith("email_keep_") or data.startswith("email_reply_") or data.startswith("email_send_") or data.startswith("email_cancel_"):
                             handle_email_callback(cb)
                         elif data.startswith("reminder_"):
@@ -2028,6 +2043,15 @@ def main():
                         continue
 
                 print(f"Message: {text}", flush=True)
+
+                # Planner — обробляємо першим якщо бот очікує відповідь
+                try:
+                    from planner import handle_planner_reply
+                    if handle_planner_reply(text):
+                        continue
+                except Exception as _pe:
+                    print(f"planner reply error: {_pe}")
+
                 handle_command(chat_id, text)
 
         except Exception as e:
