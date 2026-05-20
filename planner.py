@@ -188,8 +188,19 @@ def create_calendar_event(title: str, date: str, time_str: str = None, allday: b
 
 # ─── ПИТАННЯ ПРО ПЛАНИ ───────────────────────────────────────────────────────
 
+def _send_force_reply(text):
+    """Надсилає повідомлення з force_reply — Telegram відкриє поле вводу автоматично."""
+    params = {
+        "chat_id": TELEGRAM_CHAT,
+        "text": text,
+        "parse_mode": "HTML",
+        "reply_markup": {"force_reply": True, "input_field_placeholder": "Напиши свої плани..."}
+    }
+    _tg("sendMessage", params)
+
+
 def ask_tomorrow_plans():
-    """Бот питає про плани на завтра. Викликається о 21:00."""
+    """Бот питає про плани на завтра. Викликається о 10:00."""
     now = datetime.now(timezone.utc) + timedelta(hours=2)
     tomorrow = (now + timedelta(days=1)).strftime("%A")
     weekday_ua = {
@@ -199,24 +210,34 @@ def ask_tomorrow_plans():
     tomorrow_ua = weekday_ua.get(tomorrow, "завтра")
 
     set_state("awaiting_tomorrow", {"base_date": now.strftime("%Y-%m-%d")})
+
+    # Спочатку виділене повідомлення-заголовок
     send(
-        f"📅 <b>Плани на {tomorrow_ua}?</b>\n\n"
-        f"Напиши вільним текстом що плануєш — я сам розберу і запишу в календар.\n\n"
-        f"<i>Наприклад: зранку спортзал о 8, о 14 лікар, ввечері зателефонувати Максиму</i>\n\n"
-        f"Або напиши <b>немає</b> якщо нічого не плануєш.",
-        keyboard=[[{"text": "⏭ Пропустити", "callback_data": "planner_skip"}]]
+        f"━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"📅 <b>ПЛАНИ НА {tomorrow_ua.upper()}</b>\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━\n\n"
+        f"Що плануєш? Напиши нижче — я запишу в календар.\n"
+        f"<i>Наприклад: спортзал о 8, лікар о 14, зателефонувати Максиму ввечері</i>",
+        keyboard=[
+            [{"text": "✏️ Написати плани", "callback_data": "planner_write"}],
+            [{"text": "⏭ Пропустити",      "callback_data": "planner_skip"}]
+        ]
     )
 
 def ask_week_plans():
-    """Бот питає про плани на тиждень. Викликається в неділю о 20:00."""
+    """Бот питає про плани на тиждень. Викликається в неділю о 10:00."""
     now = datetime.now(timezone.utc) + timedelta(hours=2)
     set_state("awaiting_week", {"base_date": now.strftime("%Y-%m-%d")})
     send(
-        "📆 <b>Плани на наступний тиждень?</b>\n\n"
-        "Напиши що плануєш — я сам розберу дати і запишу всі події в календар.\n\n"
-        "<i>Наприклад: в понеділок о 10 стоматолог, в середу тренування о 18, в п'ятницю відгул</i>\n\n"
-        "Або напиши <b>немає</b> якщо нічого не плануєш.",
-        keyboard=[[{"text": "⏭ Пропустити", "callback_data": "planner_skip"}]]
+        "━━━━━━━━━━━━━━━━━━━━━━\n"
+        "📆 <b>ПЛАНИ НА ТИЖДЕНЬ</b>\n"
+        "━━━━━━━━━━━━━━━━━━━━━━\n\n"
+        "Що плануєш на наступний тиждень?\n"
+        "<i>Наприклад: в понеділок о 10 стоматолог, в середу тренування о 18</i>",
+        keyboard=[
+            [{"text": "✏️ Написати плани", "callback_data": "planner_write"}],
+            [{"text": "⏭ Пропустити",      "callback_data": "planner_skip"}]
+        ]
     )
 
 # ─── ОБРОБКА ВІДПОВІДІ ───────────────────────────────────────────────────────
@@ -367,8 +388,8 @@ def check_planner_triggers():
         today_str = now.strftime("%Y-%m-%d")
         weekday   = now.weekday()  # 0=пн, 6=нд
 
-        # Неділя о 20:00 — плани на тиждень
-        if weekday == 6 and h == 20:
+        # Неділя о 10:00 — плани на тиждень
+        if weekday == 6 and h == 10:
             key = f"{today_str}_week"
             if not sent.get(key):
                 sent[key] = True
@@ -377,8 +398,8 @@ def check_planner_triggers():
                 ask_week_plans()
                 return
 
-        # Щодня о 21:00 (крім неділі — вже питали про тиждень) — плани на завтра
-        if h == 21 and weekday != 6:
+        # Щодня о 10:00 (крім неділі — вже питали про тиждень) — плани на завтра
+        if h == 10 and weekday != 6:
             key = f"{today_str}_tomorrow"
             if not sent.get(key):
                 sent[key] = True

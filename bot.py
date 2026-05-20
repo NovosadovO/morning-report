@@ -1964,13 +1964,16 @@ def main():
                         elif data.startswith("planner_"):
                             api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": ""})
                             try:
-                                from planner import handle_planner_confirm, handle_planner_cancel, handle_planner_edit, ask_tomorrow_plans, clear_state
+                                from planner import handle_planner_confirm, handle_planner_cancel, handle_planner_edit, clear_state, _send_force_reply
                                 if data == "planner_confirm":
                                     handle_planner_confirm()
                                 elif data == "planner_cancel":
                                     handle_planner_cancel()
                                 elif data == "planner_edit":
                                     handle_planner_edit()
+                                elif data == "planner_write":
+                                    # Відкриває поле вводу в Telegram
+                                    _send_force_reply("✏️ <b>Напиши свої плани:</b>\n\n<i>Наприклад: спортзал о 8, лікар о 14, зателефонувати Максиму</i>")
                                 elif data == "planner_skip":
                                     clear_state()
                                     send(chat_id, "⏭ Зрозумів, пропускаємо.")
