@@ -1473,6 +1473,12 @@ def handle_command(chat_id, text):
                 sections.append(fn())
             except Exception as e:
                 print(f"Error in {fn.__name__}: {e}")
+        # Плани/нотатки — окрема секція
+        try:
+            from planner import format_planner_for_report
+            sections.append(format_planner_for_report())
+        except Exception as e:
+            print(f"Error in format_planner_for_report: {e}")
         report = f"🕐 <b>Звіт {local_time} · {local_date}</b>\n\n" + "\n\n".join(sections)
         send(chat_id, report)
 
@@ -1964,7 +1970,11 @@ def main():
                         elif data.startswith("planner_"):
                             api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": ""})
                             try:
-                                from planner import handle_planner_confirm, handle_planner_cancel, handle_planner_edit, clear_state, _send_force_reply
+                                from planner import (
+                                    handle_planner_confirm, handle_planner_cancel,
+                                    handle_planner_edit, clear_state, _send_force_reply,
+                                    set_state, get_state
+                                )
                                 if data == "planner_confirm":
                                     handle_planner_confirm()
                                 elif data == "planner_cancel":
@@ -1972,11 +1982,22 @@ def main():
                                 elif data == "planner_edit":
                                     handle_planner_edit()
                                 elif data == "planner_write":
-                                    # Відкриває поле вводу в Telegram
+                                    # Якщо немає активного стану — ставимо awaiting_tomorrow
+                                    st = get_state()
+                                    if not st.get("mode"):
+                                        from datetime import datetime, timezone, timedelta
+                                        now = datetime.now(timezone.utc) + timedelta(hours=2)
+                                        set_state("awaiting_tomorrow", {"base_date": now.strftime("%Y-%m-%d")})
                                     _send_force_reply("✏️ <b>Напиши свої плани:</b>\n\n<i>Наприклад: спортзал о 8, лікар о 14, зателефонувати Максиму</i>")
+                                elif data == "planner_write_today":
+                                    # Кнопка "записати" в денному нагадуванні — ставимо стан today
+                                    from datetime import datetime, timezone, timedelta
+                                    now = datetime.now(timezone.utc) + timedelta(hours=2)
+                                    set_state("awaiting_today", {"base_date": now.strftime("%Y-%m-%d"), "context": "today"})
+                                    _send_force_reply("✏️ <b>Що занотуємо?</b>\n\n<i>Зустріч, ідея, завдання — будь що</i>")
                                 elif data == "planner_skip":
                                     clear_state()
-                                    send(chat_id, "⏭ Зрозумів, пропускаємо.")
+                                    send(chat_id, "👍 Добре, нічого не записую.")
                             except Exception as _ple:
                                 print(f"planner callback error: {_ple}")
                         elif data.startswith("email_delete_") or data.startswith("email_keep_") or data.startswith("email_reply_") or data.startswith("email_send_") or data.startswith("email_cancel_"):

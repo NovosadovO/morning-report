@@ -2,13 +2,14 @@
 planner.py — Планувальник подій через чат
 
 Схема:
-  1. Щовечора о 21:00 (або неділя о 20:00 для тижня) бот питає про плани
-  2. Користувач відповідає вільним текстом
-  3. Gemini парсить → список подій з датою/часом/назвою
-  4. Бот показує список і питає "Підтвердити?"
-  5. Після підтвердження — записує в Google Calendar з нагадуванням за 30 хв
+  1. О 10:00 бот питає про плани на сьогодні
+  2. О 14:00 легке нагадування — "чи є щось записати?" (якщо нічого за день)
+  3. О 19:30 — вечірнє питання про плани на завтра (або тиждень у неділю)
+  4. Якщо до 19:30 нічого не записано — питання більш наполегливе
+  5. Gemini парсить вільний текст → список подій → підтвердження → Google Calendar
 
-Стан зберігається в data/planner_state.json
+Стан: data/planner_state.json
+Надіслані: data/planner_sent.json
 """
 
 import os, json, re, urllib.request, urllib.parse
@@ -24,6 +25,7 @@ _DATA_DIR  = os.path.join(_DIR, "data")
 os.makedirs(_DATA_DIR, exist_ok=True)
 
 STATE_FILE = os.path.join(_DATA_DIR, "planner_state.json")
+SENT_FILE  = os.path.join(_DATA_DIR, "planner_sent.json")
 
 # ─── STATE ───────────────────────────────────────────────────────────────────
 
@@ -42,7 +44,7 @@ def get_state():
     return _load_state()
 
 def set_state(mode, data=None):
-    """mode: None | 'awaiting_tomorrow' | 'awaiting_week' | 'awaiting_confirm'"""
+    """mode: None | 'awaiting_today' | 'awaiting_tomorrow' | 'awaiting_week' | 'awaiting_confirm'"""
     s = _load_state()
     s["mode"] = mode
     s["data"] = data or {}
@@ -51,6 +53,34 @@ def set_state(mode, data=None):
 
 def clear_state():
     _save_state({"mode": None, "data": {}})
+
+# ─── SENT TRACKER ────────────────────────────────────────────────────────────
+
+def _load_sent():
+    try:
+        with open(SENT_FILE) as f:
+            return json.load(f)
+    except:
+        return {}
+
+def _mark_sent(key):
+    sent = _load_sent()
+    sent[key] = True
+    with open(SENT_FILE, "w") as f:
+        json.dump(sent, f)
+
+def _was_sent(key):
+    return bool(_load_sent().get(key))
+
+def _mark_recorded(date_str):
+    """Відмітити що сьогодні вже щось записали."""
+    sent = _load_sent()
+    sent[f"{date_str}_recorded"] = True
+    with open(SENT_FILE, "w") as f:
+        json.dump(sent, f)
+
+def _has_recorded_today(date_str):
+    return bool(_load_sent().get(f"{date_str}_recorded"))
 
 # ─── TELEGRAM ────────────────────────────────────────────────────────────────
 
@@ -65,6 +95,16 @@ def send(text, keyboard=None):
     params = {"chat_id": TELEGRAM_CHAT, "text": text, "parse_mode": "HTML"}
     if keyboard:
         params["reply_markup"] = {"inline_keyboard": keyboard}
+    _tg("sendMessage", params)
+
+def _send_force_reply(text):
+    """Надсилає повідомлення з force_reply — Telegram відкриє поле вводу."""
+    params = {
+        "chat_id": TELEGRAM_CHAT,
+        "text": text,
+        "parse_mode": "HTML",
+        "reply_markup": {"force_reply": True, "input_field_placeholder": "Напиши свої плани..."}
+    }
     _tg("sendMessage", params)
 
 # ─── GEMINI ──────────────────────────────────────────────────────────────────
@@ -83,10 +123,7 @@ def _gemini(prompt):
 # ─── ПАРСИНГ ПОДІЙ ───────────────────────────────────────────────────────────
 
 def parse_events_from_text(user_text: str, base_date: datetime) -> list:
-    """
-    Gemini парсить вільний текст → список подій.
-    Повертає: [{"title": str, "date": "YYYY-MM-DD", "time": "HH:MM" or None, "allday": bool}]
-    """
+    """Gemini парсить вільний текст → список подій."""
     base_str = base_date.strftime("%Y-%m-%d")
     weekday_ua = ["понеділок","вівторок","середа","четвер","п'ятниця","субота","неділя"]
     today_name = weekday_ua[base_date.weekday()]
@@ -108,7 +145,6 @@ def parse_events_from_text(user_text: str, base_date: datetime) -> list:
 """
     try:
         raw = _gemini(prompt)
-        # Витягуємо JSON з відповіді
         m = re.search(r'\[.*?\]', raw, re.DOTALL)
         if m:
             return json.loads(m.group(0))
@@ -152,11 +188,10 @@ def create_calendar_event(title: str, date: str, time_str: str = None, allday: b
             "end":   {"date": date},
             "reminders": {
                 "useDefault": False,
-                "overrides": [{"method": "popup", "minutes": 480}]  # нагадування о 8 ранку
+                "overrides": [{"method": "popup", "minutes": 480}]
             }
         }
     else:
-        # Конвертуємо в UTC (Олег у UTC+2)
         try:
             dt_local = datetime.strptime(f"{date} {time_str}", "%Y-%m-%d %H:%M")
             dt_local = dt_local.replace(tzinfo=timezone(timedelta(hours=2)))
@@ -171,7 +206,7 @@ def create_calendar_event(title: str, date: str, time_str: str = None, allday: b
             "end":   {"dateTime": end_iso,   "timeZone": "Europe/Kiev"},
             "reminders": {
                 "useDefault": False,
-                "overrides": [{"method": "popup", "minutes": 30}]  # нагадування за 30 хв
+                "overrides": [{"method": "popup", "minutes": 30}]
             }
         }
 
@@ -186,38 +221,113 @@ def create_calendar_event(title: str, date: str, time_str: str = None, allday: b
         print(f"create_calendar_event error: {e}")
         return False
 
+def get_today_planned_events() -> list:
+    """Повертає події з календаря на сьогодні (для звіту)."""
+    try:
+        import sys
+        sys.path.insert(0, _DIR)
+        from monitor import _get_google_token, _fetch_events_all_calendars
+        creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+        if not creds_json:
+            return []
+        creds_data = json.loads(creds_json)
+        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        headers = {"Authorization": f"Bearer {token}"}
+        now = datetime.now(timezone.utc)
+        today_start = (now + timedelta(hours=2)).replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        today_end   = today_start + timedelta(hours=24)
+        return _fetch_events_all_calendars(headers, today_start, today_end)
+    except Exception as e:
+        print(f"get_today_planned_events error: {e}")
+        return []
+
+def format_planner_for_report() -> str:
+    """Секція для щоденного звіту: плани на сьогодні + чи щось занотовано."""
+    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    today_str = now.strftime("%Y-%m-%d")
+    recorded = _has_recorded_today(today_str)
+
+    events = get_today_planned_events()
+
+    lines = ["📋 <b>ПЛАНИ СЬОГОДНІ</b>"]
+    if events:
+        for ev in events[:8]:
+            start = ev["start"].get("dateTime") or ev["start"].get("date")
+            summary = ev.get("summary", "(без назви)")
+            try:
+                from datetime import datetime as _dt
+                dt = _dt.fromisoformat(start.replace("Z", "+00:00"))
+                t = (dt + timedelta(hours=2)).strftime("%H:%M") if "T" in start else "весь день"
+            except:
+                t = "?"
+            lines.append(f"• {t} — {summary}")
+    else:
+        lines.append("• Нічого не заплановано")
+
+    # Віконце: чи занотовано щось нове сьогодні
+    if recorded:
+        lines.append("\n✏️ <i>Сьогодні ти вже щось занотував</i> ✅")
+    else:
+        lines.append("\n✏️ <i>Ще нічого не занотовано сьогодні</i>")
+
+    return "\n".join(lines)
+
 # ─── ПИТАННЯ ПРО ПЛАНИ ───────────────────────────────────────────────────────
 
-def _send_force_reply(text):
-    """Надсилає повідомлення з force_reply — Telegram відкриє поле вводу автоматично."""
-    params = {
-        "chat_id": TELEGRAM_CHAT,
-        "text": text,
-        "parse_mode": "HTML",
-        "reply_markup": {"force_reply": True, "input_field_placeholder": "Напиши свої плани..."}
+def ask_today_plans():
+    """О 10:00 — питання про плани на сьогодні."""
+    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    today = now.strftime("%A")
+    weekday_ua = {
+        "Monday":"понеділок","Tuesday":"вівторок","Wednesday":"середа",
+        "Thursday":"четвер","Friday":"п'ятниця","Saturday":"субота","Sunday":"неділя"
     }
-    _tg("sendMessage", params)
+    today_ua = weekday_ua.get(today, "сьогодні").upper()
 
+    set_state("awaiting_today", {"base_date": now.strftime("%Y-%m-%d"), "context": "today"})
+
+    send(
+        f"━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"🌅 <b>ДОБРОГО РАНКУ! {today_ua}</b>\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━\n\n"
+        f"Що плануєш на <b>сьогодні</b>? 📝\n"
+        f"<i>Запишу в календар автоматично</i>",
+        keyboard=[
+            [{"text": "✏️ Написати плани", "callback_data": "planner_write_today"}],
+            [{"text": "⏭ Пропустити",      "callback_data": "planner_skip"}]
+        ]
+    )
 
 def ask_tomorrow_plans():
-    """Бот питає про плани на завтра. Викликається о 10:00."""
+    """О 19:30 — питання про плани на завтра."""
     now = datetime.now(timezone.utc) + timedelta(hours=2)
+    today_str = now.strftime("%Y-%m-%d")
+    already_recorded = _has_recorded_today(today_str)
+
     tomorrow = (now + timedelta(days=1)).strftime("%A")
     weekday_ua = {
         "Monday":"понеділок","Tuesday":"вівторок","Wednesday":"середу",
         "Thursday":"четвер","Friday":"п'ятницю","Saturday":"суботу","Sunday":"неділю"
     }
-    tomorrow_ua = weekday_ua.get(tomorrow, "завтра")
+    tomorrow_ua = weekday_ua.get(tomorrow, "завтра").upper()
 
     set_state("awaiting_tomorrow", {"base_date": now.strftime("%Y-%m-%d")})
 
-    # Спочатку виділене повідомлення-заголовок
+    if already_recorded:
+        # Вже щось записував сьогодні — легше питання
+        header = f"🌆 <b>ВЕЧІР. ПЛАНИ НА {tomorrow_ua}</b>"
+        body = "Щось ще плануєш на завтра? Додати в календар?"
+    else:
+        # Нічого не записано за день — більш наполегливо
+        header = f"🌆 <b>ВЕЧІР. ПЛАНИ НА {tomorrow_ua}</b>"
+        body = "⚠️ Сьогодні нічого не занотовано.\nЩо плануєш на завтра — записую?"
+
     send(
         f"━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"📅 <b>ПЛАНИ НА {tomorrow_ua.upper()}</b>\n"
+        f"{header}\n"
         f"━━━━━━━━━━━━━━━━━━━━━━\n\n"
-        f"Що плануєш? Напиши нижче — я запишу в календар.\n"
-        f"<i>Наприклад: спортзал о 8, лікар о 14, зателефонувати Максиму ввечері</i>",
+        f"{body}\n"
+        f"<i>Наприклад: спортзал о 8, лікар о 14, зателефонувати Максиму</i>",
         keyboard=[
             [{"text": "✏️ Написати плани", "callback_data": "planner_write"}],
             [{"text": "⏭ Пропустити",      "callback_data": "planner_skip"}]
@@ -225,14 +335,14 @@ def ask_tomorrow_plans():
     )
 
 def ask_week_plans():
-    """Бот питає про плани на тиждень. Викликається в неділю о 10:00."""
+    """В неділю о 10:00 — плани на тиждень."""
     now = datetime.now(timezone.utc) + timedelta(hours=2)
     set_state("awaiting_week", {"base_date": now.strftime("%Y-%m-%d")})
     send(
         "━━━━━━━━━━━━━━━━━━━━━━\n"
-        "📆 <b>ПЛАНИ НА ТИЖДЕНЬ</b>\n"
+        "📆 <b>НЕДІЛЯ — ПЛАНИ НА ТИЖДЕНЬ</b>\n"
         "━━━━━━━━━━━━━━━━━━━━━━\n\n"
-        "Що плануєш на наступний тиждень?\n"
+        "Що плануєш на наступний тиждень? 🗓\n"
         "<i>Наприклад: в понеділок о 10 стоматолог, в середу тренування о 18</i>",
         keyboard=[
             [{"text": "✏️ Написати плани", "callback_data": "planner_write"}],
@@ -240,17 +350,35 @@ def ask_week_plans():
         ]
     )
 
+def ask_midday_reminder():
+    """О 14:00 — легке нагадування якщо нічого не записано."""
+    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    today_str = now.strftime("%Y-%m-%d")
+
+    if _has_recorded_today(today_str):
+        return  # вже щось записав — не турбуємо
+
+    send(
+        "💡 <b>Нагадування</b>\n\n"
+        "Чи є щось, що хочеш занотувати? 📝\n"
+        "<i>Зустріч, завдання, ідея — просто напиши</i>",
+        keyboard=[
+            [{"text": "✏️ Записати", "callback_data": "planner_write_today"}],
+            [{"text": "👍 Все ок",   "callback_data": "planner_skip"}]
+        ]
+    )
+
 # ─── ОБРОБКА ВІДПОВІДІ ───────────────────────────────────────────────────────
 
 def handle_planner_reply(user_text: str) -> bool:
     """
-    Обробляє відповідь користувача якщо бот очікує плани.
-    Повертає True якщо повідомлення оброблено (не треба передавати далі).
+    Обробляє відповідь користувача.
+    Повертає True якщо повідомлення оброблено.
     """
     state = _load_state()
     mode = state.get("mode")
 
-    if mode not in ("awaiting_tomorrow", "awaiting_week"):
+    if mode not in ("awaiting_today", "awaiting_tomorrow", "awaiting_week"):
         return False
 
     text_lower = user_text.strip().lower()
@@ -261,11 +389,12 @@ def handle_planner_reply(user_text: str) -> bool:
         send("✅ Зрозумів, нічого не записую.")
         return True
 
-    # Парсимо події
+    # База дати
     base_date_str = state.get("data", {}).get("base_date", "")
+    context = state.get("data", {}).get("context", "")
     try:
         base_date = datetime.strptime(base_date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
-        base_date = base_date + timedelta(hours=2)  # local
+        base_date = base_date + timedelta(hours=2)
     except:
         base_date = datetime.now(timezone.utc) + timedelta(hours=2)
 
@@ -275,10 +404,10 @@ def handle_planner_reply(user_text: str) -> bool:
 
     if not events:
         clear_state()
-        send("🤷 Не зміг розпізнати жодної події. Спробуй написати чіткіше, наприклад: <i>завтра о 10 лікар</i>")
+        send("🤷 Не зміг розпізнати жодної події. Спробуй чіткіше:\n<i>завтра о 10 лікар, спортзал о 8</i>")
         return True
 
-    # Показуємо що знайшли і просимо підтвердити
+    # Показуємо знайдені події
     lines = []
     for i, ev in enumerate(events, 1):
         t = f" о {ev['time']}" if ev.get("time") else " (весь день)"
@@ -289,11 +418,11 @@ def handle_planner_reply(user_text: str) -> bool:
             d_fmt = d
         lines.append(f"{i}. 📌 <b>{ev['title']}</b> — {d_fmt}{t}")
 
-    set_state("awaiting_confirm", {"events": events, "original": user_text})
+    set_state("awaiting_confirm", {"events": events, "original": user_text, "context": context})
 
     send(
-        "Ось що я знайшов:\n\n" + "\n".join(lines) + "\n\n"
-        "Записати все в календар?",
+        "Ось що знайшов:\n\n" + "\n".join(lines) + "\n\n"
+        "Записати в календар? 📅",
         keyboard=[
             [{"text": "✅ Так, записати", "callback_data": "planner_confirm"}],
             [{"text": "✏️ Редагувати", "callback_data": "planner_edit"},
@@ -303,7 +432,7 @@ def handle_planner_reply(user_text: str) -> bool:
     return True
 
 def handle_planner_confirm() -> bool:
-    """Підтверджено — записуємо всі події в Calendar."""
+    """Підтверджено — записуємо в Calendar."""
     state = _load_state()
     if state.get("mode") != "awaiting_confirm":
         return False
@@ -337,17 +466,16 @@ def handle_planner_confirm() -> bool:
             fail_count += 1
             lines.append(f"❌ <b>{title}</b> — помилка запису")
 
+    # Відмічаємо що сьогодні записали
+    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    _mark_recorded(now.strftime("%Y-%m-%d"))
+
     clear_state()
 
     result = "\n".join(lines)
-    if ok_count > 0:
-        reminder_note = "\n\n🔔 Нагадування встановлено автоматично."
-    else:
-        reminder_note = ""
+    reminder_note = "\n\n🔔 Нагадування встановлено." if ok_count > 0 else ""
 
-    send(
-        f"📅 <b>Записано в календар:</b>\n\n{result}{reminder_note}"
-    )
+    send(f"📅 <b>Записано в календар:</b>\n\n{result}{reminder_note}")
     return True
 
 def handle_planner_cancel():
@@ -357,7 +485,8 @@ def handle_planner_cancel():
 def handle_planner_edit():
     """Просимо переписати."""
     state = _load_state()
-    base_date_str = state.get("data", {}).get("events", [{}])[0].get("date", "")
+    events = state.get("data", {}).get("events", [])
+    base_date_str = events[0].get("date", "") if events else ""
     try:
         base_date = datetime.strptime(base_date_str, "%Y-%m-%d")
         base_date_out = base_date.strftime("%Y-%m-%d")
@@ -365,12 +494,12 @@ def handle_planner_edit():
         base_date_out = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
 
     set_state("awaiting_tomorrow", {"base_date": base_date_out})
-    send("✏️ Напиши плани ще раз:")
+    _send_force_reply("✏️ <b>Напиши плани ще раз:</b>")
 
-# ─── ТРИГЕРИ (викликаються з monitor_loop або habits) ────────────────────────
+# ─── ТРИГЕРИ ─────────────────────────────────────────────────────────────────
 
 def check_planner_triggers():
-    """Щохвилинно перевіряє чи час питати про плани."""
+    """Щохвилинно перевіряє чи час надіслати нагадування."""
     try:
         now = datetime.now(timezone.utc) + timedelta(hours=2)
         h, m = now.hour, now.minute
@@ -378,34 +507,49 @@ def check_planner_triggers():
         if m > 4:  # вікно 5 хвилин
             return
 
-        sent_file = os.path.join(_DATA_DIR, "planner_sent.json")
-        try:
-            with open(sent_file) as f:
-                sent = json.load(f)
-        except:
-            sent = {}
-
         today_str = now.strftime("%Y-%m-%d")
         weekday   = now.weekday()  # 0=пн, 6=нд
 
-        # Неділя о 10:00 — плани на тиждень
+        # ── Неділя о 10:00 — плани на тиждень ─────────────────────────────
         if weekday == 6 and h == 10:
             key = f"{today_str}_week"
-            if not sent.get(key):
-                sent[key] = True
-                with open(sent_file, "w") as f:
-                    json.dump(sent, f)
+            if not _was_sent(key):
+                _mark_sent(key)
                 ask_week_plans()
                 return
 
-        # Щодня о 10:00 (крім неділі — вже питали про тиждень) — плани на завтра
+        # ── Щодня о 10:00 (крім неділі) — плани на сьогодні ──────────────
         if h == 10 and weekday != 6:
-            key = f"{today_str}_tomorrow"
-            if not sent.get(key):
-                sent[key] = True
-                with open(sent_file, "w") as f:
-                    json.dump(sent, f)
-                ask_tomorrow_plans()
+            key = f"{today_str}_morning"
+            if not _was_sent(key):
+                _mark_sent(key)
+                ask_today_plans()
+                return
+
+        # ── О 14:00 — нагадування про нотатки (якщо нічого не записано) ───
+        if h == 14:
+            key = f"{today_str}_midday"
+            if not _was_sent(key):
+                _mark_sent(key)
+                ask_midday_reminder()
+                return
+
+        # ── О 19:30 — плани на завтра (або тиждень у неділю) ─────────────
+        if h == 19 and m >= 30:
+            # Вікно 19:30–19:34
+            if m > 34:
+                return
+            if weekday == 6:
+                # В неділю вже питали про тиждень вранці — ввечері плани на завтра
+                key = f"{today_str}_evening"
+                if not _was_sent(key):
+                    _mark_sent(key)
+                    ask_tomorrow_plans()
+            else:
+                key = f"{today_str}_evening"
+                if not _was_sent(key):
+                    _mark_sent(key)
+                    ask_tomorrow_plans()
 
     except Exception as e:
         print(f"check_planner_triggers error: {e}")
