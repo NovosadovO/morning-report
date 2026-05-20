@@ -589,6 +589,62 @@ def _get_google_token(creds_data, scope):
             return json.loads(r.read())["access_token"]
 
 
+def _get_all_calendar_ids(headers):
+    """Повертає список всіх calendar_id з Google Calendar (всі підписані календарі)."""
+    try:
+        url = "https://www.googleapis.com/calendar/v3/users/me/calendarList?maxResults=50"
+        if _HAS_REQUESTS:
+            r = _requests.get(url, headers=headers, timeout=10)
+            r.raise_for_status()
+            items = r.json().get("items", [])
+        else:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=10) as r:
+                items = json.loads(r.read()).get("items", [])
+        return [it["id"] for it in items if not it.get("deleted")]
+    except Exception as e:
+        print(f"_get_all_calendar_ids error: {e}")
+        return ["novosadovoleg@gmail.com"]
+
+
+def _fetch_events_all_calendars(headers, t_min, t_max, max_per_cal=20):
+    """Збирає події з УСІХ календарів (включно з нагадуваннями, завданнями, ДН)."""
+    cal_ids = _get_all_calendar_ids(headers)
+    all_events = []
+    seen = set()
+    for cal_id in cal_ids:
+        try:
+            url = (
+                f"https://www.googleapis.com/calendar/v3/calendars/{urllib.parse.quote(cal_id, safe='')}/events"
+                f"?timeMin={urllib.parse.quote(t_min.isoformat())}"
+                f"&timeMax={urllib.parse.quote(t_max.isoformat())}"
+                f"&singleEvents=true&orderBy=startTime&maxResults={max_per_cal}"
+            )
+            if _HAS_REQUESTS:
+                r = _requests.get(url, headers=headers, timeout=10)
+                if r.status_code != 200:
+                    continue
+                events = r.json().get("items", [])
+            else:
+                req = urllib.request.Request(url, headers=headers)
+                with urllib.request.urlopen(req, timeout=10) as r:
+                    events = json.loads(r.read()).get("items", [])
+            for ev in events:
+                uid = ev.get("id", "")
+                if uid not in seen:
+                    seen.add(uid)
+                    ev["_cal_id"] = cal_id
+                    all_events.append(ev)
+        except Exception as e:
+            print(f"_fetch_events_all_calendars cal={cal_id} error: {e}")
+    # Сортуємо по часу початку
+    def _sort_key(ev):
+        s = ev["start"].get("dateTime") or ev["start"].get("date", "")
+        return s
+    all_events.sort(key=_sort_key)
+    return all_events
+
+
 def get_calendar():
     creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
     now = datetime.now(timezone.utc)
@@ -604,7 +660,6 @@ def get_calendar():
             creds_data, "https://www.googleapis.com/auth/calendar.readonly")
 
         headers = {"Authorization": f"Bearer {token}"}
-        cal_id  = "novosadovoleg%40gmail.com"
 
         # Часові межі
         today_start = (now + timedelta(hours=2)).replace(
@@ -613,24 +668,9 @@ def get_calendar():
         tomorrow_start = today_end
         tomorrow_end   = tomorrow_start + timedelta(hours=24)
 
-        def fetch_events(t_min, t_max):
-            url = (
-                f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
-                f"?timeMin={urllib.parse.quote(t_min.isoformat())}"
-                f"&timeMax={urllib.parse.quote(t_max.isoformat())}"
-                f"&singleEvents=true&orderBy=startTime&maxResults=20"
-            )
-            if _HAS_REQUESTS:
-                r = _requests.get(url, headers=headers, timeout=15)
-                r.raise_for_status()
-                return r.json().get("items", [])
-            else:
-                req = urllib.request.Request(url, headers=headers)
-                with urllib.request.urlopen(req, timeout=15) as r:
-                    return json.loads(r.read()).get("items", [])
-
-        today_events    = fetch_events(today_start, today_end)
-        tomorrow_events = fetch_events(tomorrow_start, tomorrow_end)
+        # Читаємо ВСІ календарі
+        today_events    = _fetch_events_all_calendars(headers, today_start, today_end)
+        tomorrow_events = _fetch_events_all_calendars(headers, tomorrow_start, tomorrow_end)
 
         def format_events(events):
             lines = []
@@ -639,7 +679,7 @@ def get_calendar():
                 summary = ev.get("summary", "(без назви)")
                 try:
                     dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                    t  = (dt + timedelta(hours=0)).strftime("%H:%M")
+                    t  = (dt + timedelta(hours=2)).strftime("%H:%M") if "T" in start else "весь день"
                 except Exception:
                     t = start
                 lines.append(f"• {t} — <b>{esc(summary)}</b>")
@@ -1265,6 +1305,89 @@ def check_new_emails():
 # ─── 4c. ПОГОДНІ АЛЕРТИ ───────────────────────────────────────────────────────
 
 WEATHER_ALERT_FILE = os.path.join(_DATA_DIR, "monitor_weather_alert.json")
+
+def check_calendar_reminders():
+    """
+    Перевіряє всі події з УСІХ календарів.
+    За 30 хвилин до кожної події надсилає нагадування (один раз).
+    Також нагадує про події 'весь день' о 08:00.
+    """
+    try:
+        creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+        if not creds_json:
+            return
+        creds_data = json.loads(creds_json)
+        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        headers = {"Authorization": f"Bearer {token}"}
+
+        now_utc = datetime.now(timezone.utc)
+        now_loc = now_utc + timedelta(hours=2)
+        today_start = now_loc.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        today_end   = today_start + timedelta(hours=24)
+
+        events = _fetch_events_all_calendars(headers, today_start, today_end, max_per_cal=25)
+
+        # Завантажуємо вже надіслані нагадування
+        sent_file = os.path.join(_DATA_DIR, "cal_reminders_sent.json")
+        try:
+            with open(sent_file) as f:
+                sent_reminders = json.load(f)
+        except:
+            sent_reminders = {}
+
+        # Чистимо старі записи (старіші за 2 дні)
+        today_str = now_loc.strftime("%Y-%m-%d")
+        sent_reminders = {k: v for k, v in sent_reminders.items() if k >= today_str[:8]}
+
+        changed = False
+
+        for ev in events:
+            uid     = ev.get("id", "")
+            summary = ev.get("summary", "(без назви)")
+            start   = ev["start"].get("dateTime") or ev["start"].get("date")
+            is_allday = "T" not in start
+
+            if is_allday:
+                # Подія весь день — нагадуємо о 08:00
+                key = f"allday_{today_str}_{uid}"
+                if not sent_reminders.get(key) and now_loc.hour == 8 and now_loc.minute <= 4:
+                    sent_reminders[key] = True
+                    changed = True
+                    api("sendMessage", {
+                        "chat_id": TELEGRAM_CHAT,
+                        "text": f"📅 <b>Сьогодні весь день:</b>\n\n📌 {esc(summary)}",
+                        "parse_mode": "HTML"
+                    })
+            else:
+                # Подія з часом — нагадуємо за 30 хвилин
+                try:
+                    dt_event = datetime.fromisoformat(start.replace("Z", "+00:00"))
+                    dt_loc   = dt_event + timedelta(hours=2)
+                    minutes_left = int((dt_event - now_utc).total_seconds() / 60)
+                    key = f"30min_{today_str}_{uid}"
+                    if not sent_reminders.get(key) and 28 <= minutes_left <= 32:
+                        sent_reminders[key] = True
+                        changed = True
+                        t_str = dt_loc.strftime("%H:%M")
+                        api("sendMessage", {
+                            "chat_id": TELEGRAM_CHAT,
+                            "text": (
+                                f"⏰ <b>Через 30 хвилин:</b>\n\n"
+                                f"📌 {esc(summary)}\n"
+                                f"🕐 о {t_str}"
+                            ),
+                            "parse_mode": "HTML"
+                        })
+                except Exception as e:
+                    print(f"check_calendar_reminders ev parse error: {e}")
+
+        if changed:
+            with open(sent_file, "w") as f:
+                json.dump(sent_reminders, f)
+
+    except Exception as e:
+        print(f"check_calendar_reminders error: {e}")
+
 
 def check_weather_alert():
     """
@@ -1973,7 +2096,7 @@ def _build_report_header(now_local, slot_key, cal_events_raw):
 
 
 def _get_calendar_context_for_report():
-    """Швидко витягує події календаря для контексту звіту."""
+    """Витягує події з УСІХ календарів (включно з нагадуваннями, завданнями, ДН)."""
     creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
     if not creds_json:
         return [], "нічого не заплановано"
@@ -1981,25 +2104,12 @@ def _get_calendar_context_for_report():
         creds_data = json.loads(creds_json)
         token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
         headers = {"Authorization": f"Bearer {token}"}
-        cal_id = "novosadovoleg%40gmail.com"
         now = datetime.now(timezone.utc)
         now_local = now + timedelta(hours=2)
         today_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
         today_end = today_start + timedelta(hours=48)
-        url = (
-            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
-            f"?timeMin={urllib.parse.quote(today_start.isoformat())}"
-            f"&timeMax={urllib.parse.quote(today_end.isoformat())}"
-            f"&singleEvents=true&orderBy=startTime&maxResults=15"
-        )
-        if _HAS_REQUESTS:
-            r = _requests.get(url, headers=headers, timeout=10)
-            r.raise_for_status()
-            events = r.json().get("items", [])
-        else:
-            req = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(req, timeout=10) as r:
-                events = json.loads(r.read()).get("items", [])
+        # Читаємо ВСІ календарі
+        events = _fetch_events_all_calendars(headers, today_start, today_end, max_per_cal=20)
         result = []
         for ev in events:
             start = ev["start"].get("dateTime") or ev["start"].get("date")
