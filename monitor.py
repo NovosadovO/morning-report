@@ -2574,6 +2574,27 @@ def main():
             ok = False
     print(f"=== Report {'sent' if ok else 'FAILED'} ({len(messages)} msg) ===")
 
+    # ── Кнопка "Додати в календар" після підсумку ────────────────────────────
+    try:
+        from planner import _tg as _planner_tg, set_state as _planner_set_state
+        _now_btn = datetime.now(timezone.utc) + timedelta(hours=2)
+        _planner_tg("sendMessage", {
+            "chat_id": TELEGRAM_CHAT,
+            "text": (
+                "📅 <b>Додати в календар?</b>\n"
+                "<i>Запиши зустріч, нагадування або задачу — я додам автоматично</i>"
+            ),
+            "parse_mode": "HTML",
+            "reply_markup": {
+                "inline_keyboard": [
+                    [{"text": "✏️ Написати нагадування", "callback_data": "planner_write_today"}],
+                    [{"text": "👍 Нічого",               "callback_data": "planner_skip"}]
+                ]
+            }
+        })
+    except Exception as _e_btn:
+        print(f"planner button error: {_e_btn}")
+
 
 # ─── 4c. НАГАДУВАННЯ ПРО ПОДІЇ КАЛЕНДАРЯ (за 30 хв) ──────────────────────────
 
@@ -4101,6 +4122,26 @@ def check_day_summary():
     _day_summary_gh_mark(today)
     send_telegram("\n".join(lines_out))
     print(f"Day summary sent: {today}")
+
+    # ── Кнопка "Додати в календар" після підсумку дня ────────────────────────
+    try:
+        from planner import _tg as _planner_tg_d, set_state as _planner_set_state_d
+        _planner_tg_d("sendMessage", {
+            "chat_id": TELEGRAM_CHAT,
+            "text": (
+                "📅 <b>Є щось на завтра?</b>\n"
+                "<i>Запиши — я додам в календар і нагадаю</i>"
+            ),
+            "parse_mode": "HTML",
+            "reply_markup": {
+                "inline_keyboard": [
+                    [{"text": "✏️ Записати в календар", "callback_data": "planner_write"}],
+                    [{"text": "👍 Нічого",               "callback_data": "planner_skip"}]
+                ]
+            }
+        })
+    except Exception as _e_btn_d:
+        print(f"planner button day_summary error: {_e_btn_d}")
 
 
 def check_traffic_before_shift():
