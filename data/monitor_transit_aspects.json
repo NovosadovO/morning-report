@@ -6,8 +6,8 @@
   },
   "sun__mars__120": {
     "orb": 1.5,
-    "sent": true,
-    "event": "enter"
+    "sent": false,
+    "exact_sent": false
   },
   "sun__uranus__150": {
     "orb": 1.38,
