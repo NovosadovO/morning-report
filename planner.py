@@ -168,6 +168,32 @@ def _get_token_write():
         print(f"_get_token_write error: {e}")
         return None
 
+def _get_primary_calendar_id() -> str:
+    """Знаходить primary calendar ID через calendarList (де accessRole=owner або primary=True)."""
+    token = _get_token_write()
+    if not token:
+        return "novosadovoleg@gmail.com"
+    try:
+        url = "https://www.googleapis.com/calendar/v3/users/me/calendarList?maxResults=50"
+        req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
+        with urllib.request.urlopen(req, timeout=10) as r:
+            items = json.loads(r.read()).get("items", [])
+        # Шукаємо primary calendar
+        for it in items:
+            if it.get("primary"):
+                print(f"_get_primary_calendar_id: found primary = {it['id']}")
+                return it["id"]
+        # Якщо немає primary — беремо перший з owner
+        for it in items:
+            if it.get("accessRole") == "owner":
+                print(f"_get_primary_calendar_id: found owner = {it['id']}")
+                return it["id"]
+        print(f"_get_primary_calendar_id: fallback, items={[i['id'] for i in items]}")
+    except Exception as e:
+        print(f"_get_primary_calendar_id error: {e}")
+    return "novosadovoleg@gmail.com"
+
+
 def create_calendar_event(title: str, date: str, time_str: str = None, allday: bool = True) -> bool:
     """Створює подію в Google Calendar. Повертає True якщо успішно."""
     token = _get_token_write()
@@ -179,7 +205,8 @@ def create_calendar_event(title: str, date: str, time_str: str = None, allday: b
         "Authorization": f"Bearer {token}",
         "Content-Type": "application/json"
     }
-    cal_id = "novosadovoleg@gmail.com"
+    cal_id = _get_primary_calendar_id()
+    print(f"create_calendar_event: writing to cal_id={cal_id}, title={title}")
 
     if allday or not time_str:
         event = {
@@ -216,7 +243,14 @@ def create_calendar_event(title: str, date: str, time_str: str = None, allday: b
         req = urllib.request.Request(url, data=body, headers=headers, method="POST")
         with urllib.request.urlopen(req, timeout=15) as r:
             result = json.loads(r.read())
-            return bool(result.get("id"))
+            event_id = result.get("id")
+            event_link = result.get("htmlLink", "")
+            print(f"create_calendar_event: OK id={event_id} link={event_link}")
+            return bool(event_id)
+    except urllib.error.HTTPError as e:
+        err_body = e.read().decode("utf-8", errors="replace")
+        print(f"create_calendar_event HTTP {e.code}: {err_body}")
+        return False
     except Exception as e:
         print(f"create_calendar_event error: {e}")
         return False
