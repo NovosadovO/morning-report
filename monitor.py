@@ -1100,13 +1100,16 @@ def _gemini_email_analysis(full_text: str) -> dict:
 
     prompt = (
         "Проаналізуй цей email і дай відповідь ТІЛЬКИ у форматі JSON (без markdown обгортки):\n"
-        "{\"summary\": \"про що лист (1-2 речення)\", \"opinion\": \"твоя думка чи варто читати/діяти (1 речення)\"}\n\n"
-        "Мова відповіді: українська. Коротко і по суті.\n\n"
+        "{\n"
+        "  \"description\": \"детальний переказ змісту листа: про що йдеться, які конкретні дані (цифри, суми, дати, імена, посилання), яка мета відправника, що від одержувача очікується — 3-5 речень\",\n"
+        "  \"opinion\": \"твоя коротка думка: чи варто реагувати і що саме зробити (1 речення)\"\n"
+        "}\n\n"
+        "Мова відповіді: українська. description має бути детальним і інформативним.\n\n"
         f"Лист:\n{full_text[:3000]}"
     )
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"maxOutputTokens": 400, "temperature": 0.5}
+        "generationConfig": {"maxOutputTokens": 600, "temperature": 0.4}
     }).encode()
 
     # Спробуємо спочатку gemini-2.5-flash, потім fallback на gemini-2.5-flash
@@ -1271,10 +1274,10 @@ def check_new_emails():
                 f"📋 <b>Тема:</b> {esc(subject[:70])}\n"
             )
             if ai:
-                summary = ai.get('summary', '').strip()
+                description = ai.get('description', ai.get('summary', '')).strip()
                 opinion = ai.get('opinion', '').strip()
-                if summary:
-                    text += f"\n💬 <b>Про що:</b> {esc(summary)}\n"
+                if description:
+                    text += f"\n📝 <b>Опис:</b> {esc(description)}\n"
                 if opinion:
                     text += f"\n🤖 <b>Моя думка:</b> {esc(opinion)}"
             else:
