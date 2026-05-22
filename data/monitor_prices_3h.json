@@ -1,6 +1,18 @@
 {
-  "bitcoin": 75859,
-  "ethereum": 2070.06,
-  "avalanche-2": 9.22,
-  "ondo-finance": 0.392228
+  "bitcoin": {
+    "price": 75890,
+    "ts": 1779483628
+  },
+  "ethereum": {
+    "price": 2070.57,
+    "ts": 1779483628
+  },
+  "avalanche-2": {
+    "price": 9.24,
+    "ts": 1779483628
+  },
+  "ondo-finance": {
+    "price": 0.393979,
+    "ts": 1779483628
+  }
 }
