@@ -2841,61 +2841,37 @@ def main():
     # ── Графік тренду цін — після звіту ─────────────────────────────────────
     if prices_text:
         try:
+            import requests as _req_lib
+            import io as _io_c
             _cchart = generate_crypto_trend_chart(30)
             if _cchart:
-                _boundary = b"MonitorBoundary1234"
-                def _mp(name, value_bytes, filename=None, ctype=None):
-                    h = f'Content-Disposition: form-data; name="{name}"'
-                    if filename:
-                        h += f'; filename="{filename}"'
-                    h = h.encode() + b"\r\n"
-                    if ctype:
-                        h += f"Content-Type: {ctype}\r\n".encode()
-                    return b"--" + _boundary + b"\r\n" + h + b"\r\n" + value_bytes + b"\r\n"
-                _body = (
-                    _mp("chat_id", str(TELEGRAM_CHAT).encode()) +
-                    _mp("caption", "Trend 30d | BTC ETH AVAX ONDO".encode()) +
-                    _mp("photo", _cchart, filename="crypto_trend.png", ctype="image/png") +
-                    b"--" + _boundary + b"--\r\n"
-                )
-                import urllib.request as _urp
-                _req = _urp.Request(
+                _r = _req_lib.post(
                     f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
-                    data=_body,
-                    headers={"Content-Type": f"multipart/form-data; boundary={_boundary.decode()}"}
+                    data={"chat_id": TELEGRAM_CHAT, "caption": "Trend 30d | BTC ETH AVAX ONDO"},
+                    files={"photo": ("crypto_trend.png", _io_c.BytesIO(_cchart), "image/png")},
+                    timeout=25
                 )
-                with _urp.urlopen(_req, timeout=20) as _r:
-                    print(f"[crypto chart] sent OK ({len(_cchart)} bytes, status={_r.status})")
+                print(f"[crypto chart] status={_r.status_code} resp={_r.text[:200]}")
+            else:
+                print("[crypto chart] generate returned None")
         except Exception as _cce:
             print(f"[crypto chart] error: {_cce}")
 
     # ── Графік тренду ваги — після крипто-графіка ────────────────────────────
     try:
+        import requests as _req_lib2
+        import io as _io_w
         _wchart = generate_weight_trend_chart(30)
         if _wchart:
-            _wboundary = b"WeightBoundary5678"
-            def _wmp(name, value_bytes, filename=None, ctype=None):
-                h = f'Content-Disposition: form-data; name="{name}"'
-                if filename:
-                    h += f'; filename="{filename}"'
-                h = h.encode() + b"\r\n"
-                if ctype:
-                    h += f"Content-Type: {ctype}\r\n".encode()
-                return b"--" + _wboundary + b"\r\n" + h + b"\r\n" + value_bytes + b"\r\n"
-            _wbody = (
-                _wmp("chat_id", str(TELEGRAM_CHAT).encode()) +
-                _wmp("caption", "Trend 30d | Вага (кг)".encode()) +
-                _wmp("photo", _wchart, filename="weight_trend.png", ctype="image/png") +
-                b"--" + _wboundary + b"--\r\n"
-            )
-            import urllib.request as _wurp
-            _wreq = _wurp.Request(
+            _rw = _req_lib2.post(
                 f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
-                data=_wbody,
-                headers={"Content-Type": f"multipart/form-data; boundary={_wboundary.decode()}"}
+                data={"chat_id": TELEGRAM_CHAT, "caption": "Trend 30d | Вага (кг)"},
+                files={"photo": ("weight_trend.png", _io_w.BytesIO(_wchart), "image/png")},
+                timeout=25
             )
-            with _wurp.urlopen(_wreq, timeout=20) as _wr:
-                print(f"[weight chart] sent OK ({len(_wchart)} bytes, status={_wr.status})")
+            print(f"[weight chart] status={_rw.status_code} resp={_rw.text[:200]}")
+        else:
+            print("[weight chart] generate returned None")
     except Exception as _wce:
         print(f"[weight chart] error: {_wce}")
 

@@ -67,41 +67,21 @@ def send(chat_id, text):
 
 
 def send_photo(chat_id, photo_bytes, caption=None):
-    import urllib.request as _ur
-    body_parts = []
-    body_parts.append(
-        b"------boundary\r\n"
-        b'Content-Disposition: form-data; name="chat_id"\r\n\r\n' +
-        str(chat_id).encode() + b"\r\n"
-    )
-    if caption:
-        body_parts.append(
-            b"------boundary\r\n"
-            b'Content-Disposition: form-data; name="caption"\r\n'
-            b'Content-Type: text/plain; charset=utf-8\r\n\r\n' +
-            caption.encode("utf-8") + b"\r\n"
-        )
-        body_parts.append(
-            b"------boundary\r\n"
-            b'Content-Disposition: form-data; name="parse_mode"\r\n\r\n'
-            b"HTML\r\n"
-        )
-    body_parts.append(
-        b"------boundary\r\n"
-        b'Content-Disposition: form-data; name="photo"; filename="health_trend.png"\r\n'
-        b"Content-Type: image/png\r\n\r\n" +
-        photo_bytes + b"\r\n"
-    )
-    body_parts.append(b"------boundary--\r\n")
-    body = b"".join(body_parts)
-    req = _ur.Request(
-        f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
-        data=body,
-        headers={"Content-Type": "multipart/form-data; boundary=----boundary"}
-    )
     try:
-        with _ur.urlopen(req, timeout=30) as r:
-            pass
+        import requests as _rq
+        import io as _io
+        data = {"chat_id": str(chat_id)}
+        if caption:
+            data["caption"] = caption
+            data["parse_mode"] = "HTML"
+        r = _rq.post(
+            f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
+            data=data,
+            files={"photo": ("photo.png", _io.BytesIO(photo_bytes), "image/png")},
+            timeout=30
+        )
+        if not r.ok:
+            print(f"[send_photo] error {r.status_code}: {r.text[:200]}", flush=True)
     except Exception as e:
         print(f"[send_photo] error: {e}", flush=True)
 
