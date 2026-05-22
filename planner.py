@@ -44,7 +44,7 @@ def get_state():
     return _load_state()
 
 def set_state(mode, data=None):
-    """mode: None | 'awaiting_today' | 'awaiting_tomorrow' | 'awaiting_week' | 'awaiting_confirm'"""
+    """mode: None | 'awaiting_today' | 'awaiting_tomorrow' | 'awaiting_week' | 'awaiting_confirm' | 'awaiting_time' | 'awaiting_minutes'"""
     s = _load_state()
     s["mode"] = mode
     s["data"] = data or {}
@@ -444,7 +444,67 @@ def handle_planner_reply(user_text: str) -> bool:
         send("🤷 Не зміг розпізнати жодної події. Спробуй чіткіше:\n<i>завтра о 10 лікар, спортзал о 8</i>")
         return True
 
-    # Показуємо знайдені події
+    # Якщо є події без часу — запитуємо час по черзі
+    allday_indices = [i for i, ev in enumerate(events) if ev.get("allday", True) and not ev.get("time")]
+    if allday_indices:
+        set_state("awaiting_time", {
+            "events": events,
+            "original": user_text,
+            "context": context,
+            "pending_time_indices": allday_indices,
+            "current_time_idx": allday_indices[0],
+        })
+        _ask_hour(events[allday_indices[0]])
+        return True
+
+    # Всі події мають час — показуємо підтвердження
+    _show_confirm(events)
+    set_state("awaiting_confirm", {"events": events, "original": user_text, "context": context})
+    return True
+
+def _ask_hour(ev: dict):
+    """Надсилає кнопки вибору години для події."""
+    title = ev.get("title", "подія")
+    d = ev.get("date", "")
+    try:
+        d_fmt = datetime.strptime(d, "%Y-%m-%d").strftime("%d.%m")
+    except:
+        d_fmt = d
+
+    # Кнопки годин: 06–22 по 4 в ряд
+    hours = list(range(6, 23))
+    rows = []
+    row = []
+    for h in hours:
+        row.append({"text": f"{h:02d}", "callback_data": f"planner_hour_{h:02d}"})
+        if len(row) == 4:
+            rows.append(row)
+            row = []
+    if row:
+        rows.append(row)
+    rows.append([{"text": "🗓 Весь день", "callback_data": "planner_hour_allday"}])
+
+    send(
+        f"🕐 <b>О котрій:</b> <i>{title}</i> ({d_fmt})?\n\nОберіть годину:",
+        keyboard=rows
+    )
+
+def _ask_minute(hour: str, ev: dict):
+    """Надсилає кнопки вибору хвилин."""
+    title = ev.get("title", "подія")
+    rows = [
+        [
+            {"text": f"{hour}:00", "callback_data": f"planner_min_{hour}_00"},
+            {"text": f"{hour}:15", "callback_data": f"planner_min_{hour}_15"},
+            {"text": f"{hour}:30", "callback_data": f"planner_min_{hour}_30"},
+            {"text": f"{hour}:45", "callback_data": f"planner_min_{hour}_45"},
+        ],
+        [{"text": "◀️ Назад (година)", "callback_data": "planner_time_back"}]
+    ]
+    send(f"🕐 <b>{title}</b> о <b>{hour}:??</b>\n\nОберіть хвилини:", keyboard=rows)
+
+def _show_confirm(events: list):
+    """Показує підсумок і кнопки підтвердження."""
     lines = []
     for i, ev in enumerate(events, 1):
         t = f" о {ev['time']}" if ev.get("time") else " (весь день)"
@@ -455,8 +515,6 @@ def handle_planner_reply(user_text: str) -> bool:
             d_fmt = d
         lines.append(f"{i}. 📌 <b>{ev['title']}</b> — {d_fmt}{t}")
 
-    set_state("awaiting_confirm", {"events": events, "original": user_text, "context": context})
-
     send(
         "Ось що знайшов:\n\n" + "\n".join(lines) + "\n\n"
         "Записати в календар? 📅",
@@ -466,7 +524,81 @@ def handle_planner_reply(user_text: str) -> bool:
              {"text": "❌ Скасувати",  "callback_data": "planner_cancel"}]
         ]
     )
+
+def handle_planner_hour(hour: str) -> bool:
+    """Обробляє вибір години (або 'allday')."""
+    state = _load_state()
+    if state.get("mode") != "awaiting_time":
+        return False
+
+    data = state.get("data", {})
+    events = data.get("events", [])
+    pending = data.get("pending_time_indices", [])
+    cur_idx = data.get("current_time_idx")
+
+    if hour == "allday":
+        # Залишаємо allday=True, переходимо до наступної події без часу
+        _advance_time_state(state, events, pending, cur_idx)
+        return True
+
+    # Зберігаємо вибрану годину, запитуємо хвилини
+    data["selected_hour"] = hour
+    set_state("awaiting_minutes", data)
+    _ask_minute(hour, events[cur_idx])
     return True
+
+def handle_planner_minute(hour: str, minute: str) -> bool:
+    """Обробляє вибір хвилин."""
+    state = _load_state()
+    if state.get("mode") != "awaiting_minutes":
+        return False
+
+    data = state.get("data", {})
+    events = data.get("events", [])
+    pending = data.get("pending_time_indices", [])
+    cur_idx = data.get("current_time_idx")
+
+    # Встановлюємо час для поточної події
+    time_str = f"{hour}:{minute}"
+    events[cur_idx]["time"] = time_str
+    events[cur_idx]["allday"] = False
+    data["events"] = events
+    data.pop("selected_hour", None)
+
+    set_state("awaiting_time", data)
+    _advance_time_state(state, events, pending, cur_idx)
+    return True
+
+def handle_planner_time_back() -> bool:
+    """Повернутись до вибору години."""
+    state = _load_state()
+    if state.get("mode") != "awaiting_minutes":
+        return False
+    data = state.get("data", {})
+    events = data.get("events", [])
+    cur_idx = data.get("current_time_idx", 0)
+    data.pop("selected_hour", None)
+    set_state("awaiting_time", data)
+    _ask_hour(events[cur_idx])
+    return True
+
+def _advance_time_state(state, events, pending, cur_idx):
+    """Переходить до наступної події без часу або до підтвердження."""
+    data = state.get("data", {})
+    remaining = [i for i in pending if i != cur_idx and not events[i].get("time")]
+
+    if remaining:
+        data["events"] = events
+        data["pending_time_indices"] = remaining
+        data["current_time_idx"] = remaining[0]
+        set_state("awaiting_time", data)
+        _ask_hour(events[remaining[0]])
+    else:
+        # Всі часи зібрані — показуємо підтвердження
+        context = data.get("context", "")
+        original = data.get("original", "")
+        set_state("awaiting_confirm", {"events": events, "original": original, "context": context})
+        _show_confirm(events)
 
 def handle_planner_confirm() -> bool:
     """Підтверджено — записуємо в Calendar."""

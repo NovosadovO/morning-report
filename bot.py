@@ -1998,7 +1998,9 @@ def main():
                                 from planner import (
                                     handle_planner_confirm, handle_planner_cancel,
                                     handle_planner_edit, clear_state, _send_force_reply,
-                                    set_state, get_state
+                                    set_state, get_state,
+                                    handle_planner_hour, handle_planner_minute,
+                                    handle_planner_time_back
                                 )
                                 if data == "planner_confirm":
                                     handle_planner_confirm()
@@ -2006,6 +2008,16 @@ def main():
                                     handle_planner_cancel()
                                 elif data == "planner_edit":
                                     handle_planner_edit()
+                                elif data == "planner_time_back":
+                                    handle_planner_time_back()
+                                elif data.startswith("planner_hour_"):
+                                    hour_val = data[len("planner_hour_"):]
+                                    handle_planner_hour(hour_val)
+                                elif data.startswith("planner_min_"):
+                                    # planner_min_09_30
+                                    parts = data.split("_")  # ['planner','min','09','30']
+                                    if len(parts) == 4:
+                                        handle_planner_minute(parts[2], parts[3])
                                 elif data == "planner_write":
                                     # Якщо немає активного стану — ставимо awaiting_tomorrow
                                     st = get_state()
