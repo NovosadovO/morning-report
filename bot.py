@@ -66,6 +66,46 @@ def send(chat_id, text):
     })
 
 
+def send_photo(chat_id, photo_bytes, caption=None):
+    import urllib.request as _ur
+    body_parts = []
+    body_parts.append(
+        b"------boundary\r\n"
+        b'Content-Disposition: form-data; name="chat_id"\r\n\r\n' +
+        str(chat_id).encode() + b"\r\n"
+    )
+    if caption:
+        body_parts.append(
+            b"------boundary\r\n"
+            b'Content-Disposition: form-data; name="caption"\r\n'
+            b'Content-Type: text/plain; charset=utf-8\r\n\r\n' +
+            caption.encode("utf-8") + b"\r\n"
+        )
+        body_parts.append(
+            b"------boundary\r\n"
+            b'Content-Disposition: form-data; name="parse_mode"\r\n\r\n'
+            b"HTML\r\n"
+        )
+    body_parts.append(
+        b"------boundary\r\n"
+        b'Content-Disposition: form-data; name="photo"; filename="health_trend.png"\r\n'
+        b"Content-Type: image/png\r\n\r\n" +
+        photo_bytes + b"\r\n"
+    )
+    body_parts.append(b"------boundary--\r\n")
+    body = b"".join(body_parts)
+    req = _ur.Request(
+        f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
+        data=body,
+        headers={"Content-Type": "multipart/form-data; boundary=----boundary"}
+    )
+    try:
+        with _ur.urlopen(req, timeout=30) as r:
+            pass
+    except Exception as e:
+        print(f"[send_photo] error: {e}", flush=True)
+
+
 def send_with_keyboard(chat_id, text, keyboard):
     api("sendMessage", {
         "chat_id": chat_id,
@@ -1047,6 +1087,13 @@ def handle_health_zip(chat_id, doc):
             if d.get("sleep_hours"):  lines.append(f"  😴 Сон: <b>{d['sleep_hours']} год</b>")
             if d.get("hrv"):          lines.append(f"  💓 HRV: <b>{d['hrv']}</b>")
             send(chat_id, "\n".join(lines))
+            try:
+                from health_report import generate_health_trend_chart
+                _chart = generate_health_trend_chart(14)
+                if _chart:
+                    send_photo(chat_id, _chart, caption="📊 Тренди здоров'я — 14 днів")
+            except Exception as _ce:
+                print(f"[health chart] {_ce}", flush=True)
 
         elif is_hae:
             # Health Auto Export
@@ -1073,6 +1120,13 @@ def handle_health_zip(chat_id, doc):
 
             report = format_hae_report(stats) + "\n\n✅ <b>Дані збережено!</b>"
             send(chat_id, report)
+            try:
+                from health_report import generate_health_trend_chart
+                _chart = generate_health_trend_chart(14)
+                if _chart:
+                    send_photo(chat_id, _chart, caption="📊 Тренди здоров'я — 14 днів")
+            except Exception as _ce:
+                print(f"[health chart] {_ce}", flush=True)
         else:
             send(chat_id, "❌ Невідомий формат ZIP.\n\nОчікується:\n• <b>Apple Health</b> export (export.zip з iPhone)\n• <b>Health Auto Export</b> app")
 
@@ -1108,6 +1162,13 @@ def handle_health_photo(chat_id, msg):
             if entry.get("health_score"):
                 reply += f"💚 Health Score: {entry['health_score']}/100"
             send(chat_id, reply)
+            try:
+                from health_report import generate_health_trend_chart
+                _chart = generate_health_trend_chart(14)
+                if _chart:
+                    send_photo(chat_id, _chart, caption="📊 Тренди здоров'я — 14 днів")
+            except Exception as _ce:
+                print(f"[health chart] {_ce}", flush=True)
             return
         except (ValueError, IndexError):
             pass
@@ -1151,6 +1212,13 @@ def handle_health_photo(chat_id, msg):
                 reply += f"Доповни: <code>/зд [кроки] [сон] [ЧСС] [кал] [score]</code>"
 
             send(chat_id, reply)
+            try:
+                from health_report import generate_health_trend_chart
+                _chart = generate_health_trend_chart(14)
+                if _chart:
+                    send_photo(chat_id, _chart, caption="📊 Тренди здоров'я — 14 днів")
+            except Exception as _ce:
+                print(f"[health chart] {_ce}", flush=True)
         else:
             # OCR не спрацював — просимо вручну
             send(chat_id, (
@@ -1711,6 +1779,13 @@ def handle_command(chat_id, text):
                 if entry.get("health_score"):
                     reply += f"💚 Health Score: {entry['health_score']}/100"
                 send(chat_id, reply)
+                try:
+                    from health_report import generate_health_trend_chart
+                    _chart = generate_health_trend_chart(14)
+                    if _chart:
+                        send_photo(chat_id, _chart, caption="📊 Тренди здоров'я — 14 днів")
+                except Exception as _ce:
+                    print(f"[health chart] {_ce}", flush=True)
             else:
                 # Показати поточні дані
                 if health:

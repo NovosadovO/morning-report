@@ -219,3 +219,143 @@ def get_health_month_report():
             lines.append(f"  Тиж {wk+1}: {wk_steps} {wk_score} ({len(wk_data)}/{week_size} дн.)")
 
     return "\n".join(lines)
+
+
+# ─── ГРАФІК ТЕНДЕНЦІЙ ─────────────────────────────────────────────────────────
+
+def generate_health_trend_chart(days: int = 14) -> bytes | None:
+    """
+    Генерує PNG графік тенденцій по всім доступним категоріям за останні N днів.
+    Повертає bytes (PNG) або None якщо даних немає.
+    """
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        import matplotlib.dates as mdates
+        import matplotlib.patches as mpatches
+        from matplotlib.gridspec import GridSpec
+        import numpy as np
+        from datetime import date as _date
+
+        health = load_health()
+        if not health:
+            return None
+
+        now = now_local()
+        dates = [(now - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(days - 1, -1, -1)]
+        data  = [health.get(d, {}) for d in dates]
+        x     = [_date.fromisoformat(d) for d in dates]
+
+        # Метрики: (ключ, мітка, колір, ціль або None, множник для нормалізації)
+        METRICS = [
+            ("health_score", "Health Score",  "#4CAF50", 100,   1),
+            ("steps",        "Кроки",         "#2196F3", 12000, 0.001),
+            ("sleep_hours",  "Сон (год)",     "#9C27B0", 8,     1),
+            ("heart_rate",   "ЧСС (bpm)",     "#F44336", None,  1),
+            ("hrv",          "HRV (ms)",      "#00BCD4", None,  1),
+            ("stress_max",   "Стрес макс",    "#FF9800", None,  1),
+            ("calories",     "Калорії (ккал)","#795548", None,  0.001),
+        ]
+
+        # Визначаємо які метрики мають хоча б 2 точки
+        available = []
+        for key, label, color, goal, mult in METRICS:
+            vals = [(xi, d[key] * mult) for xi, d in zip(x, data) if key in d]
+            if len(vals) >= 2:
+                available.append((key, label, color, goal, mult, vals))
+
+        if not available:
+            return None
+
+        n = len(available)
+        ncols = 2
+        nrows = (n + 1) // 2
+
+        fig, axes = plt.subplots(nrows, ncols, figsize=(12, 3.5 * nrows), facecolor="#0D1117")
+        fig.patch.set_facecolor("#0D1117")
+        axes_flat = axes.flatten() if n > 1 else [axes]
+
+        for ax in axes_flat:
+            ax.set_facecolor("#161B22")
+            ax.tick_params(colors="#8B949E", labelsize=8)
+            ax.spines["bottom"].set_color("#30363D")
+            ax.spines["left"].set_color("#30363D")
+            ax.spines["top"].set_visible(False)
+            ax.spines["right"].set_visible(False)
+
+        for idx, (key, label, color, goal, mult, vals) in enumerate(available):
+            ax = axes_flat[idx]
+            xi, yi = zip(*vals)
+
+            # Лінія + точки
+            ax.plot(xi, yi, color=color, linewidth=2.2, zorder=3)
+            ax.scatter(xi, yi, color=color, s=40, zorder=4)
+
+            # Тренд-лінія (поліном 1 ступеня)
+            xi_num = np.array([d.toordinal() for d in xi], dtype=float)
+            coeffs = np.polyfit(xi_num, yi, 1)
+            trend_y = np.polyval(coeffs, xi_num)
+            trend_color = "#4CAF50" if coeffs[0] >= 0 else "#F44336"
+            ax.plot(xi, trend_y, color=trend_color, linewidth=1.2,
+                    linestyle="--", alpha=0.7, zorder=2, label="тренд")
+
+            # Зафарбовуємо під лінією
+            ax.fill_between(xi, yi, alpha=0.12, color=color)
+
+            # Ціль
+            if goal is not None:
+                goal_val = goal * mult
+                ax.axhline(goal_val, color="#FFD700", linewidth=1, linestyle=":", alpha=0.6)
+                ax.text(xi[-1], goal_val, f"  ціль", color="#FFD700",
+                        fontsize=7, va="center", alpha=0.8)
+
+            # Форматуємо значення назад для мітки (mult зворотній)
+            last_real = vals[-1][1] / mult
+            if mult == 0.001:
+                last_str = f"{last_real:,.0f}"
+            else:
+                last_str = f"{last_real:.1f}" if isinstance(last_real, float) else f"{last_real:.0f}"
+
+            # Тренд стрілка
+            arrow = "↗" if coeffs[0] > 0.001 else ("↘" if coeffs[0] < -0.001 else "→")
+            ax.set_title(f"{label}  {arrow}  {last_str}",
+                         color="#E6EDF3", fontsize=10, fontweight="bold", pad=8)
+
+            # Вісь X — тільки дати
+            ax.xaxis.set_major_formatter(mdates.DateFormatter("%d.%m"))
+            ax.xaxis.set_major_locator(mdates.DayLocator(interval=max(1, days // 7)))
+            plt.setp(ax.xaxis.get_majorticklabels(), rotation=35, ha="right")
+
+            # Y мінімальні значення
+            min_y = min(yi) * 0.92
+            max_y = max(yi) * 1.08
+            if min_y == max_y:
+                min_y -= 1; max_y += 1
+            ax.set_ylim(min_y, max_y)
+            ax.tick_params(colors="#8B949E", labelsize=8)
+            ax.yaxis.label.set_color("#8B949E")
+
+        # Ховаємо зайві axes
+        for i in range(len(available), len(axes_flat)):
+            axes_flat[i].set_visible(False)
+
+        # Заголовок
+        period_str = f"14 днів" if days == 14 else f"{days} днів"
+        fig.suptitle(f"📊 Health тренди — останні {period_str}",
+                     color="#E6EDF3", fontsize=13, fontweight="bold", y=1.01)
+
+        plt.tight_layout(pad=1.5)
+
+        import io as _io
+        buf = _io.BytesIO()
+        fig.savefig(buf, format="png", dpi=130, bbox_inches="tight",
+                    facecolor="#0D1117")
+        plt.close(fig)
+        buf.seek(0)
+        return buf.read()
+
+    except Exception as e:
+        print(f"generate_health_trend_chart error: {e}")
+        import traceback; traceback.print_exc()
+        return None
