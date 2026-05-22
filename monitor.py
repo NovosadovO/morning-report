@@ -2235,8 +2235,8 @@ def _format_prices_visual(prices_text, cal_events_text=""):
         pct_str = pct_m.group(0) if pct_m else ""
         trend = "🔺" if "🔺" in row else ("🔻" if "🔻" in row else "➡")
         pct_val = float(pct_m.group(1).replace("−", "-")) if pct_m else 0
-        bar = "▓▓▓" if pct_val > 3 else ("▓▓░" if pct_val > 0 else ("░░░" if pct_val < -3 else "▓░░"))
-        coins.append(f"{trend} <b>{coin}</b> ${price}  <code>{bar}</code> {pct_str}")
+        bar = "🔥🔥🔥" if pct_val > 3 else ("📈📈" if pct_val > 0 else ("📉📉" if pct_val < -3 else "📉"))
+        coins.append(f"{trend} <b>{coin}</b> ${price}  {bar} {pct_str}")
 
     header = f"💰 <b>КРИПТО</b>  ·  {market}"
     body = "\n".join(coins[:5]) if coins else prices_text[:300]
@@ -2934,30 +2934,42 @@ def check_morning_brief():
     # ── Крипто dashboard ────────────────────────────────────────────────────
     try:
         ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
-        url_c = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h,7d"
+        url_c = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h,7d,30d"
         req_c = urllib.request.Request(url_c, headers={"User-Agent":"bot"})
         with urllib.request.urlopen(req_c, timeout=8) as r:
             raw_c = json.loads(r.read())
         data_c = {c["id"]: c for c in raw_c}
         sym_map = [("BTC","bitcoin"),("ETH","ethereum"),("AVAX","avalanche-2"),("ONDO","ondo-finance")]
 
+        def _trend_emoji(pct):
+            """Емодзі тренду замість бару."""
+            if pct is None: return "➡️"
+            if pct > 5:  return "🚀"
+            if pct > 2:  return "📈"
+            if pct > 0:  return "🟢"
+            if pct > -2: return "🔴"
+            if pct > -5: return "📉"
+            return "💥"
+
         crypto_lines = []
         for sym, cid in sym_map:
             c = data_c.get(cid, {})
             price = c.get("current_price")
-            ch24 = c.get("price_change_percentage_24h") or 0
-            ch7  = c.get("price_change_percentage_7d_in_currency") or 0
+            ch24  = c.get("price_change_percentage_24h") or 0
+            ch7   = c.get("price_change_percentage_7d_in_currency") or 0
+            ch30  = c.get("price_change_percentage_30d_in_currency") or 0
             if price is None: continue
-            arrow24 = "↑" if ch24 > 0 else "↓"
-            arrow7  = "↑" if ch7  > 0 else "↓"
-            sign24  = "+" if ch24 > 0 else ""
-            sign7   = "+" if ch7  > 0 else ""
-            icon    = "🟢" if ch24 > 0 else "🔴"
-            # Мини-бар по 24h (від -5% до +5%)
-            bar_val = max(-5, min(5, ch24))
-            bar_pos = int((bar_val + 5) / 10 * 8)
-            bar = "🟦" * bar_pos + "⬜" * (8 - bar_pos)
-            crypto_lines.append(f"{icon} <b>{sym}</b> ${price:,.0f}  {arrow24}{sign24}{ch24:.1f}%  [{bar}]  7д:{sign7}{ch7:.1f}%")
+            sign24 = "+" if ch24 >= 0 else ""
+            sign7  = "+" if ch7  >= 0 else ""
+            sign30 = "+" if ch30 >= 0 else ""
+            e24  = _trend_emoji(ch24)
+            e7   = _trend_emoji(ch7)
+            e30  = _trend_emoji(ch30)
+            price_fmt = f"${price:,.0f}" if price >= 1 else f"${price:.4f}"
+            crypto_lines.append(
+                f"{e24} <b>{sym}</b> {price_fmt}\n"
+                f"   День: {sign24}{ch24:.1f}% {e24}  Тиждень: {sign7}{ch7:.1f}% {e7}  Місяць: {sign30}{ch30:.1f}% {e30}"
+            )
 
         if crypto_lines:
             lines_out.append("💹 <b>Крипто</b>")
