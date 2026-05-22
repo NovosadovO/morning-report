@@ -2372,6 +2372,129 @@ def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
         return None
 
 
+def generate_weight_trend_chart(days: int = 30) -> bytes | None:
+    """
+    Генерує PNG з тренд-лінією ваги за N днів.
+    Темна тема, одна панель, fill_between, ціль 78 кг пунктиром, тренд-лінія.
+    Повертає bytes або None при помилці.
+    """
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        import matplotlib.dates as mdates
+        import numpy as np
+        import io
+        from datetime import datetime as _dt, timedelta as _td
+
+        BG   = "#0D1117"
+        GRID = "#21262D"
+        TEXT = "#C9D1D9"
+        GOAL_COLOR = "#58A6FF"  # синя пунктирна лінія цілі
+        LINE_COLOR = "#3FB950"  # зелена лінія ваги
+
+        # Завантажуємо дані
+        try:
+            from storage import load_weight as _lw_chart
+            raw = _lw_chart() or {}
+        except Exception:
+            return None
+
+        if not raw:
+            return None
+
+        # Фільтруємо за N днів
+        today = _dt.utcnow().date()
+        cutoff = today - _td(days=days)
+        entries = []
+        for date_str, w in raw.items():
+            try:
+                d = _dt.strptime(date_str, "%Y-%m-%d").date()
+                if d >= cutoff and w is not None:
+                    entries.append((d, float(w)))
+            except Exception:
+                continue
+        entries.sort(key=lambda x: x[0])
+
+        if len(entries) < 2:
+            return None
+
+        dates = [e[0] for e in entries]
+        weights = [e[1] for e in entries]
+        x_dates = [_dt.combine(d, _dt.min.time()) for d in dates]
+
+        fig, ax = plt.subplots(figsize=(8, 3.5), facecolor=BG)
+        ax.set_facecolor(BG)
+
+        # Fill between
+        ax.fill_between(x_dates, weights, min(weights) - 0.5,
+                        alpha=0.18, color=LINE_COLOR)
+
+        # Лінія ваги
+        ax.plot(x_dates, weights, color=LINE_COLOR, linewidth=2.0,
+                marker="o", markersize=3.5, markerfacecolor=LINE_COLOR,
+                zorder=3, label="Вага")
+
+        # Тренд-лінія (поліном 1-го ступеня)
+        if len(weights) >= 4:
+            xn = np.arange(len(weights))
+            z = np.polyfit(xn, weights, 1)
+            p = np.poly1d(z)
+            trend_col = "#F85149" if z[0] > 0 else "#3FB950"
+            ax.plot(x_dates, p(xn), "--", color=trend_col,
+                    linewidth=1.4, alpha=0.85, label="Тренд")
+
+        # Ціль 78 кг
+        ax.axhline(78.0, color=GOAL_COLOR, linewidth=1.2,
+                   linestyle=":", alpha=0.7, label="Ціль 78 кг")
+
+        # Мітки першої і останньої точки
+        ax.annotate(f"{weights[0]:.1f}",
+                    (x_dates[0], weights[0]),
+                    textcoords="offset points", xytext=(4, 6),
+                    color=TEXT, fontsize=8)
+        ax.annotate(f"{weights[-1]:.1f}",
+                    (x_dates[-1], weights[-1]),
+                    textcoords="offset points", xytext=(4, 6),
+                    color=TEXT, fontsize=8, fontweight="bold")
+
+        # Оформлення осей
+        ax.xaxis.set_major_formatter(mdates.DateFormatter("%d.%m"))
+        ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=1))
+        plt.setp(ax.xaxis.get_majorticklabels(), rotation=30,
+                 ha="right", color=TEXT, fontsize=8)
+        ax.yaxis.set_tick_params(labelcolor=TEXT, labelsize=8)
+        ax.tick_params(colors=TEXT)
+        for spine in ax.spines.values():
+            spine.set_edgecolor(GRID)
+        ax.set_facecolor(BG)
+        ax.grid(True, color=GRID, linewidth=0.6, alpha=0.6)
+        ax.set_ylabel("кг", color=TEXT, fontsize=9)
+
+        # Заголовок
+        delta = round(weights[-1] - weights[0], 1)
+        sign = "+" if delta > 0 else ""
+        to_goal = round(weights[-1] - 78.0, 1)
+        goal_txt = f"до 78 кг: -{to_goal} кг" if to_goal > 0 else "ціль досягнута!"
+        ax.set_title(f"Вага за {days} днів  ({sign}{delta} кг)  {goal_txt}",
+                     color=TEXT, fontsize=10, fontweight="bold", pad=8)
+
+        leg = ax.legend(fontsize=8, facecolor=GRID, edgecolor=GRID,
+                        labelcolor=TEXT, framealpha=0.8)
+
+        fig.tight_layout(pad=0.8)
+
+        buf = io.BytesIO()
+        fig.savefig(buf, format="png", dpi=130, facecolor=BG, bbox_inches="tight")
+        plt.close(fig)
+        buf.seek(0)
+        return buf.read()
+
+    except Exception as e:
+        print(f"[generate_weight_trend_chart] error: {e}")
+        return None
+
+
 def main():
     now = datetime.now(timezone.utc)
     now_local = now + timedelta(hours=2)
@@ -2745,6 +2868,36 @@ def main():
                     print(f"[crypto chart] sent OK ({len(_cchart)} bytes, status={_r.status})")
         except Exception as _cce:
             print(f"[crypto chart] error: {_cce}")
+
+    # ── Графік тренду ваги — після крипто-графіка ────────────────────────────
+    try:
+        _wchart = generate_weight_trend_chart(30)
+        if _wchart:
+            _wboundary = b"WeightBoundary5678"
+            def _wmp(name, value_bytes, filename=None, ctype=None):
+                h = f'Content-Disposition: form-data; name="{name}"'
+                if filename:
+                    h += f'; filename="{filename}"'
+                h = h.encode() + b"\r\n"
+                if ctype:
+                    h += f"Content-Type: {ctype}\r\n".encode()
+                return b"--" + _wboundary + b"\r\n" + h + b"\r\n" + value_bytes + b"\r\n"
+            _wbody = (
+                _wmp("chat_id", str(TELEGRAM_CHAT).encode()) +
+                _wmp("caption", "Trend 30d | Вага (кг)".encode()) +
+                _wmp("photo", _wchart, filename="weight_trend.png", ctype="image/png") +
+                b"--" + _wboundary + b"--\r\n"
+            )
+            import urllib.request as _wurp
+            _wreq = _wurp.Request(
+                f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
+                data=_wbody,
+                headers={"Content-Type": f"multipart/form-data; boundary={_wboundary.decode()}"}
+            )
+            with _wurp.urlopen(_wreq, timeout=20) as _wr:
+                print(f"[weight chart] sent OK ({len(_wchart)} bytes, status={_wr.status})")
+    except Exception as _wce:
+        print(f"[weight chart] error: {_wce}")
 
     # ── Кнопка "Додати в календар" після підсумку ────────────────────────────
     try:
