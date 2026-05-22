@@ -49,9 +49,9 @@ _SPAM_SENDERS = {
     "digest", "updates@", "news@", "alert@binance", "alert@coinbase",
     "notify.railway", "temu", "footshop", "temuemail",
     "unstoppabledomains", "startengine",
-    "linkedin", "jobvite", "greenhouse", "workday", "lever.co",
-    "economist", "okx", "roundup", "dlnews", "coindesk", "cointelegraph",
-    "decrypt.co", "theblock", "blockworks",
+    "jobvite", "greenhouse", "workday", "lever.co",
+    "okx", "roundup", "dlnews", "coindesk", "cointelegraph",
+    "decrypt.co",
     "tripadvis", "booking.com", "sg.booking", "e.tripadvisor", "email.booking",
     "campaign@", "inspiration@", "aboutyou", "hello@news", "deals@", "offers@",
     "uniswap", "investing.com", "coinpoker", "novinky@",
@@ -90,6 +90,22 @@ def _classify_email(sender: str, subject: str) -> str:
     """
     s = sender.lower()
     sub = subject.lower()
+
+    # WHITELIST — завжди 'real' незалежно від інших правил
+    _WHITELIST_DOMAINS = {
+        "theblock.co", "blockworks.co",
+        "economist.com",
+        "jpmorgan.com", "jpmorganchase.com",
+        "linkedin.com",  # LinkedIn newsletters (не job alerts)
+    }
+    _wl_match = re.search(r'[\w.+%-]+@([\w.-]+\.[a-z]{2,})', s)
+    if _wl_match:
+        _wl_domain = _wl_match.group(1)
+        if _wl_domain in _WHITELIST_DOMAINS:
+            # Виключаємо job alerts від LinkedIn
+            _job_kw = {"job alert", "new job", "recommended job", "hiring", "вакансі", "jobvite"}
+            if not any(kw in sub for kw in _job_kw):
+                return "real"
 
     # Витягуємо email адресу відправника
     email_match = re.search(r'[\w.+%-]+@([\w.-]+\.[a-z]{2,})', s)
@@ -145,7 +161,7 @@ def _classify_email(sender: str, subject: str) -> str:
 
     # 5. Відомі масові сервіси по root домену
     _BULK_ROOTS = {
-        "facebook", "instagram", "twitter", "x", "linkedin", "youtube",
+        "facebook", "instagram", "twitter", "x", "youtube",
         "google", "apple", "amazon", "microsoft",
         "duolingo", "spotify", "netflix", "twitch",
         "substack", "beehiiv", "mailchimp", "sendgrid", "klaviyo",
@@ -1801,7 +1817,7 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
         subjects = _re.findall(r"📨\s*<b>(.{3,60}?)</b>", email_text)
         senders = _re.findall(r"👤\s*<code>(.{3,50}?)</code>", email_text)
         ai_sums = _re.findall(r"🤖\s*(.{5,200}?)(?:\n|$)", email_text)
-        skip_kw = ["newsletter", "noreply", "no-reply", "notification", "blockworks",
+        skip_kw = ["newsletter", "noreply", "no-reply", "notification",
                    "duolingo", "youtube", "medium", "unsubscribe"]
         important_emails = []
         for i, subj in enumerate(subjects[:5]):
