@@ -1549,10 +1549,21 @@ def handle_command(chat_id, text):
             print(f"Error in format_planner_for_report: {e}")
         report = f"🕐 <b>Звіт {local_time} · {local_date}</b>\n\n" + "\n\n".join(sections)
         send(chat_id, report)
+        try:
+            from monitor import generate_crypto_trend_chart
+            _cchart = generate_crypto_trend_chart(30)
+            if _cchart:
+                send_photo(chat_id, _cchart, caption="📈 Тренд цін — 30 днів")
+        except Exception as _cce:
+            print(f"[crypto chart] {_cce}", flush=True)
 
     elif text in ["/ціни", "ціни"]:
         try:
             send(chat_id, get_prices())
+            from monitor import generate_crypto_trend_chart
+            _cchart = generate_crypto_trend_chart(30)
+            if _cchart:
+                send_photo(chat_id, _cchart, caption="📈 Тренд цін — 30 днів")
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 

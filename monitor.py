@@ -2720,31 +2720,31 @@ def main():
         try:
             _cchart = generate_crypto_trend_chart(30)
             if _cchart:
-                import urllib.request as _urp, io as _io
-                _boundary = b"----boundary"
-                _caption = "📈 Тренд цін — 30 днів".encode("utf-8")
+                _boundary = b"MonitorBoundary1234"
+                def _mp(name, value_bytes, filename=None, ctype=None):
+                    h = f'Content-Disposition: form-data; name="{name}"'
+                    if filename:
+                        h += f'; filename="{filename}"'
+                    h = h.encode() + b"\r\n"
+                    if ctype:
+                        h += f"Content-Type: {ctype}\r\n".encode()
+                    return b"--" + _boundary + b"\r\n" + h + b"\r\n" + value_bytes + b"\r\n"
                 _body = (
-                    b"--" + _boundary + b"\r\n"
-                    b'Content-Disposition: form-data; name="chat_id"\r\n\r\n' +
-                    str(TELEGRAM_CHAT).encode() + b"\r\n"
-                    b"--" + _boundary + b"\r\n"
-                    b'Content-Disposition: form-data; name="caption"\r\n\r\n' +
-                    _caption + b"\r\n"
-                    b"--" + _boundary + b"\r\n"
-                    b'Content-Disposition: form-data; name="photo"; filename="crypto_trend.png"\r\n'
-                    b"Content-Type: image/png\r\n\r\n" +
-                    _cchart + b"\r\n"
+                    _mp("chat_id", str(TELEGRAM_CHAT).encode()) +
+                    _mp("caption", "Trend 30d | BTC ETH AVAX ONDO".encode()) +
+                    _mp("photo", _cchart, filename="crypto_trend.png", ctype="image/png") +
                     b"--" + _boundary + b"--\r\n"
                 )
+                import urllib.request as _urp
                 _req = _urp.Request(
                     f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
                     data=_body,
-                    headers={"Content-Type": "multipart/form-data; boundary=----boundary"}
+                    headers={"Content-Type": f"multipart/form-data; boundary={_boundary.decode()}"}
                 )
-                _urp.urlopen(_req, timeout=15)
-                print("[crypto chart] sent OK")
+                with _urp.urlopen(_req, timeout=20) as _r:
+                    print(f"[crypto chart] sent OK ({len(_cchart)} bytes, status={_r.status})")
         except Exception as _cce:
-            print(f"[crypto chart] {_cce}")
+            print(f"[crypto chart] error: {_cce}")
 
     # ── Кнопка "Додати в календар" після підсумку ────────────────────────────
     try:
