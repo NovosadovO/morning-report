@@ -2227,34 +2227,6 @@ def _format_prices_visual(prices_text, cal_events_text=""):
     else:
         tip_line = ""
 
-    # Місячний спарклайн — беремо з CoinGecko (тихо, без помилок)
-    _SPARK_COINS = [("BTC","bitcoin"),("ETH","ethereum"),("AVAX","avalanche-2"),("ONDO","ondo-finance")]
-    _spark_lines = []
-    try:
-        import urllib.request as _ur, json as _js
-        _BLOCKS = "▁▂▃▄▅▆▇█"
-        for _sym, _cid in _SPARK_COINS:
-            _url = f"https://api.coingecko.com/api/v3/coins/{_cid}/market_chart?vs_currency=usd&days=30&interval=daily"
-            try:
-                with _ur.urlopen(_ur.Request(_url, headers={"User-Agent":"bot"}), timeout=5) as _r:
-                    _mc = _js.loads(_r.read())
-                _prices_30 = [p[1] for p in _mc.get("prices", [])]
-                if len(_prices_30) >= 5:
-                    _mn, _mx = min(_prices_30), max(_prices_30)
-                    _rng = _mx - _mn or 1
-                    _spark = "".join(_BLOCKS[int((_p - _mn) / _rng * 7)] for _p in _prices_30[-15:])
-                    _ch30 = (_prices_30[-1] - _prices_30[0]) / _prices_30[0] * 100
-                    _sign = "+" if _ch30 >= 0 else ""
-                    _e = "🚀" if _ch30 > 10 else ("📈" if _ch30 > 0 else ("📉" if _ch30 > -10 else "💥"))
-                    _spark_lines.append(f"<code>{_sym:4s} {_spark}</code> {_e} {_sign}{_ch30:.1f}% / 30д")
-            except Exception:
-                pass
-    except Exception:
-        pass
-    spark_block = ""
-    if _spark_lines:
-        spark_block = "\n\n📉 <b>Тренд 30д</b>\n" + "\n".join(_spark_lines)
-
     # Витягуємо монети
     coins = []
     for coin in ["BTC", "ETH", "AVAX", "ONDO"]:
@@ -2268,7 +2240,7 @@ def _format_prices_visual(prices_text, cal_events_text=""):
         price = price_m.group(1)
         pct_val = float(pct_m.group(1).replace("−", "-")) if pct_m else 0
         trend_icon = "🔺" if pct_val > 0 else ("🔻" if pct_val < 0 else "➡️")
-        bar = "🔥🔥🔥" if pct_val > 3 else ("📈📈" if pct_val > 0 else ("📉📉" if pct_val < -3 else "📉"))
+        pct_str = (("+" if pct_val > 0 else "") + f"{pct_val:.2f}%") if pct_m else ""
         # % від попереднього звіту
         if pct3h_m:
             p3h = float(pct3h_m.group(1))
@@ -2276,12 +2248,128 @@ def _format_prices_visual(prices_text, cal_events_text=""):
             prev_str = f"  <i>({sign3h}{p3h:.2f}% від попер.)</i>"
         else:
             prev_str = ""
-        pct_str = pct_m.group(0) if pct_m else ""
-        coins.append(f"{trend_icon} <b>{coin}</b> ${price}  {bar} {pct_str}{prev_str}")
+        coins.append(f"{trend_icon} <b>{coin}</b> <code>${price}</code>  {pct_str}{prev_str}")
 
     header = f"💰 <b>КРИПТО</b>  ·  {market}"
     body = "\n".join(coins) if coins else prices_text[:300]
-    return f"{header}\n{body}{tip_line}{spark_block}"
+    return f"{header}\n{body}{tip_line}"
+
+
+def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
+    """
+    Генерує PNG з лінійними графіками цін BTC/ETH/AVAX/ONDO за N днів.
+    Темна тема, 2×2 сабплоти, fill_between, тренд-лінія, % зміна.
+    Повертає bytes або None при помилці.
+    """
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        import matplotlib.dates as mdates
+        import numpy as np
+        from datetime import datetime as dt, timedelta as td
+        import io, urllib.request as _ur, json as _js
+
+        COINS_MAP = [
+            ("BTC", "bitcoin",       "#F7931A"),
+            ("ETH", "ethereum",      "#627EEA"),
+            ("AVAX","avalanche-2",   "#E84142"),
+            ("ONDO","ondo-finance",  "#00C6A2"),
+        ]
+
+        BG      = "#0D1117"
+        PANEL   = "#161B22"
+        GRID    = "#21262D"
+        TEXT    = "#C9D1D9"
+        MUTED   = "#8B949E"
+
+        fig, axes = plt.subplots(2, 2, figsize=(10, 6))
+        fig.patch.set_facecolor(BG)
+        fig.subplots_adjust(hspace=0.45, wspace=0.35, left=0.07, right=0.97, top=0.90, bottom=0.08)
+
+        # Завантажуємо дані з затримкою щоб уникнути rate limit
+        import time as _tslp
+        coin_data = {}
+        for sym, cid, color in COINS_MAP:
+            try:
+                _url = (f"https://api.coingecko.com/api/v3/coins/{cid}"
+                        f"/market_chart?vs_currency=usd&days={days}&interval=daily")
+                with _ur.urlopen(_ur.Request(_url, headers={"User-Agent":"bot/1.0"}), timeout=10) as _r:
+                    _mc = _js.loads(_r.read())
+                coin_data[sym] = _mc.get("prices", [])
+            except Exception as _e:
+                coin_data[sym] = []
+            _tslp.sleep(1.2)  # CoinGecko free tier: ~5 req/min
+
+        for ax, (sym, cid, color) in zip(axes.flat, COINS_MAP):
+            ax.set_facecolor(PANEL)
+            for spine in ax.spines.values():
+                spine.set_edgecolor(GRID)
+            ax.tick_params(colors=MUTED, labelsize=7)
+            ax.yaxis.label.set_color(MUTED)
+            ax.xaxis.set_major_formatter(mdates.DateFormatter("%d.%m"))
+            ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=1))
+
+            try:
+                raw = coin_data.get(sym, [])
+                if len(raw) < 3:
+                    ax.text(0.5, 0.5, "немає даних", ha="center", va="center",
+                            color=MUTED, transform=ax.transAxes, fontsize=9)
+                    ax.set_title(sym, color=color, fontsize=10, fontweight="bold", pad=6)
+                    continue
+
+                timestamps = [dt.utcfromtimestamp(p[0]/1000) for p in raw]
+                prices     = [p[1] for p in raw]
+
+                # Лінія + заливка
+                ax.plot(timestamps, prices, color=color, linewidth=1.6, zorder=3)
+                ax.fill_between(timestamps, prices, min(prices),
+                                color=color, alpha=0.12, zorder=2)
+
+                # Тренд-лінія (поліном 1-го ступеня)
+                x_num = np.array([(t - timestamps[0]).total_seconds() for t in timestamps])
+                coeffs = np.polyfit(x_num, prices, 1)
+                trend_vals = np.polyval(coeffs, x_num)
+                t_color = "#3FB950" if coeffs[0] >= 0 else "#F85149"
+                ax.plot(timestamps, trend_vals, color=t_color, linewidth=1.0,
+                        linestyle="--", alpha=0.7, zorder=4)
+
+                # Сітка
+                ax.grid(True, color=GRID, linewidth=0.5, zorder=1)
+
+                # % зміна за весь період
+                ch = (prices[-1] - prices[0]) / prices[0] * 100
+                sign = "+" if ch >= 0 else ""
+                e = "^^" if ch > 15 else ("+" if ch > 0 else "-")
+
+                # Заголовок
+                p_fmt = f"${prices[-1]:,.0f}" if prices[-1] >= 10 else f"${prices[-1]:.3f}"
+                ax.set_title(f"{sym}  {p_fmt}   {sign}{ch:.1f}%  {e}",
+                             color=TEXT, fontsize=9, fontweight="bold", pad=5)
+
+                # Форматування цін на осі Y
+                ax.yaxis.set_major_formatter(
+                    plt.FuncFormatter(lambda v, _: f"${v:,.0f}" if v >= 10 else f"${v:.2f}")
+                )
+                plt.setp(ax.get_xticklabels(), rotation=30, ha="right", fontsize=6)
+
+            except Exception as e:
+                ax.text(0.5, 0.5, f"помилка\n{e}", ha="center", va="center",
+                        color=MUTED, transform=ax.transAxes, fontsize=7)
+                ax.set_title(sym, color=color, fontsize=10, fontweight="bold", pad=6)
+
+        fig.suptitle(f"Trend {days}d  |  BTC / ETH / AVAX / ONDO", color=TEXT, fontsize=12,
+                     fontweight="bold", y=0.97)
+
+        buf = io.BytesIO()
+        fig.savefig(buf, format="png", dpi=130, bbox_inches="tight",
+                    facecolor=BG, edgecolor="none")
+        plt.close(fig)
+        buf.seek(0)
+        return buf.read()
+    except Exception as e:
+        print(f"[generate_crypto_trend_chart] error: {e}")
+        return None
 
 
 def main():
@@ -2626,6 +2714,37 @@ def main():
         if not send_telegram(msg):
             ok = False
     print(f"=== Report {'sent' if ok else 'FAILED'} ({len(messages)} msg) ===")
+
+    # ── Графік тренду цін — після звіту ─────────────────────────────────────
+    if prices_text:
+        try:
+            _cchart = generate_crypto_trend_chart(30)
+            if _cchart:
+                import urllib.request as _urp, io as _io
+                _boundary = b"----boundary"
+                _caption = "📈 Тренд цін — 30 днів".encode("utf-8")
+                _body = (
+                    b"--" + _boundary + b"\r\n"
+                    b'Content-Disposition: form-data; name="chat_id"\r\n\r\n' +
+                    str(TELEGRAM_CHAT).encode() + b"\r\n"
+                    b"--" + _boundary + b"\r\n"
+                    b'Content-Disposition: form-data; name="caption"\r\n\r\n' +
+                    _caption + b"\r\n"
+                    b"--" + _boundary + b"\r\n"
+                    b'Content-Disposition: form-data; name="photo"; filename="crypto_trend.png"\r\n'
+                    b"Content-Type: image/png\r\n\r\n" +
+                    _cchart + b"\r\n"
+                    b"--" + _boundary + b"--\r\n"
+                )
+                _req = _urp.Request(
+                    f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
+                    data=_body,
+                    headers={"Content-Type": "multipart/form-data; boundary=----boundary"}
+                )
+                _urp.urlopen(_req, timeout=15)
+                print("[crypto chart] sent OK")
+        except Exception as _cce:
+            print(f"[crypto chart] {_cce}")
 
     # ── Кнопка "Додати в календар" після підсумку ────────────────────────────
     try:
