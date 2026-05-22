@@ -2437,7 +2437,7 @@ def main():
     local_hour = now_local.hour
 
     is_weekend = weekday >= 5
-    include_learning_blocks = (not is_weekend) or (local_hour >= 11)
+    include_learning_blocks = True  # крипто/ціни — завжди
 
     print(f"=== Monitor run at {now.isoformat()} slot={hour_key} (weekend={is_weekend}) ===")
 
