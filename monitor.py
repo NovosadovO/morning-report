@@ -1065,23 +1065,16 @@ _SKIP_EMAILS = {
 _EMAIL_SENT_INMEM: set = set()
 
 def _email_sent_ids():
-    """Повертає set вже надісланих IMAP UID (з GitHub — persistent, без кешу)."""
-    import base64
-    gh_token = os.environ.get("GITHUB_TOKEN", "")
-    if not gh_token:
-        return set()
-    url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_alert_emails.json"
-    req = urllib.request.Request(url, headers={
-        "Authorization": f"token {gh_token}",
-        "User-Agent": "morning-report-bot",
-        "Cache-Control": "no-cache"
-    })
+    """Повертає set вже надісланих IMAP UID (з GitHub data branch — persistent, без кешу)."""
+    # Використовуємо storage.py (hardcoded token + data branch) — той самий шлях що й _email_save_ids
     try:
-        with urllib.request.urlopen(req, timeout=10) as r:
-            d = json.loads(r.read())
-            content = json.loads(base64.b64decode(d["content"]).decode())
-            return set(str(x) for x in content.get("sent_ids", []))
-    except Exception:
+        import storage as _st
+        from storage import invalidate_cache
+        invalidate_cache("monitor_alert_emails.json")
+        data = _st.load("monitor_alert_emails.json", default={})
+        return set(str(x) for x in data.get("sent_ids", []))
+    except Exception as e:
+        print(f"_email_sent_ids error: {e}")
         return set()
 
 def _email_save_ids(sent_ids: set):
