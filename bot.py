@@ -1945,6 +1945,31 @@ def main():
                                     send(chat_id, "Немає даних. Введи /зд [кроки] [сон] [ЧСС] [кал] [score]")
                             except Exception as e:
                                 send(chat_id, f"⚠️ {e}")
+                        elif data == "cal_all_done_today":
+                            # Persistent reminder — підтвердження що всі події виконано
+                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "✅ Чудово!"})
+                            try:
+                                api("editMessageReplyMarkup", {
+                                    "chat_id": chat_id, "message_id": cb["message"]["message_id"],
+                                    "reply_markup": {"inline_keyboard": []}
+                                })
+                            except: pass
+                            send(chat_id, "✅ Відмічено — всі події сьогодні виконані!")
+                            # Записуємо в persist state щоб більше не нагадувало сьогодні
+                            try:
+                                import sys as _sys, os as _os
+                                _sys.path.insert(0, _os.path.dirname(__file__))
+                                from storage import load as _st_load, save as _st_save
+                                from datetime import datetime, timezone, timedelta
+                                today_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+                                ps = _st_load("habits_persist_remind.json") or {}
+                                import time as _time
+                                # Виставляємо timestamp далеко в майбутнє — щоб не нагадувало сьогодні
+                                ps[f"persist_calendar_{today_str}_ts"] = int(_time.time()) + 86400
+                                _st_save("habits_persist_remind.json", ps)
+                            except Exception as _e:
+                                print(f"cal_all_done_today state error: {_e}")
+
                         elif data.startswith("cal_done_"):
                             # Видалити подію з Google Calendar після натискання "✅ Зроблено"
                             ev_id = data[len("cal_done_"):]

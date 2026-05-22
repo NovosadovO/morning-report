@@ -634,3 +634,173 @@ def run():
 
 if __name__ == "__main__":
     run()
+
+
+# ─── PERSISTENT REMINDERS ────────────────────────────────────────────────────
+# Нагадує про невиконані звички/planner/календар кожну годину поки не натиснуто
+
+_PERSIST_GH_KEY = "habits_persist_remind.json"
+
+def _load_persist_state() -> dict:
+    try:
+        import sys as _sys; _sys.path.insert(0, _DIR)
+        from storage import load as _st_load
+        d = _st_load(_PERSIST_GH_KEY)
+        return d if d else {}
+    except:
+        return {}
+
+def _save_persist_state(data: dict):
+    try:
+        import sys as _sys; _sys.path.insert(0, _DIR)
+        from storage import save as _st_save
+        _st_save(_PERSIST_GH_KEY, data)
+    except Exception as e:
+        print(f"[persist] save error: {e}")
+
+
+def check_persistent_reminders():
+    """
+    Нагадує кожну годину про невиконані:
+    - звички (немає ✅/❌ в habits_data)
+    - planner завдання (є в planner state)
+    - події календаря сьогодні (не відмічені як done)
+    Стоп о 23:59. Нагадує тільки якщо перше питання вже було надіслано.
+    """
+    now = now_local()
+    if now.hour >= 24:
+        return  # safety (не буває, але на всяк)
+
+    today = today_key()
+    state = _load_persist_state()
+    sent  = load_sent()
+    db    = load_data()
+    today_habits = db.get(today, {})
+
+    changed = False
+
+    # ── 1. ЗВИЧКИ ─────────────────────────────────────────────────────────────
+    all_habit_ids = ["shower", "run", "water", "tea", "sauna"]
+    for hid in all_habit_ids:
+        val = today_habits.get(hid)
+        if val is True or val is False:
+            continue  # вже відмітив
+
+        # Перше питання вже відправлялось?
+        first_sent_key = f"{today}_{hid}"
+        if not sent.get(first_sent_key):
+            continue  # ще не час (перше питання не надіслано)
+
+        # Чи час нагадати? Раз на годину
+        remind_ts_key = f"persist_habit_{today}_{hid}_ts"
+        last_ts = state.get(remind_ts_key, 0)
+        now_ts = int(now.timestamp())
+        if now_ts - last_ts < 3600:
+            continue  # ще не пройшла година
+
+        # Знаходимо назву звички
+        name_map = {
+            "shower": "🚿 Холодний душ",
+            "run":    "🏃 Біг",
+            "water":  "💧 Вода (2л+)",
+            "tea":    "🍵 Трав'яний чай",
+            "sauna":  "🧖 Сауна",
+        }
+        name = name_map.get(hid, hid)
+
+        keyboard = {"inline_keyboard": [[
+            {"text": "✅ Так", "callback_data": f"habit_yes_{hid}"},
+            {"text": "❌ Ні",  "callback_data": f"habit_no_{hid}"},
+        ]]}
+        api("sendMessage", {
+            "chat_id": TELEGRAM_CHAT,
+            "text": f"🔔 <b>Нагадування:</b> {name}\n\nЩе не відмічено — виконав сьогодні?",
+            "parse_mode": "HTML",
+            "reply_markup": keyboard,
+        })
+        state[remind_ts_key] = now_ts
+        changed = True
+        print(f"[persist] habit reminder sent: {hid}")
+
+    # ── 2. PLANNER ЗАВДАННЯ ───────────────────────────────────────────────────
+    try:
+        import sys as _sys, json as _json, os as _os
+        _sys.path.insert(0, _DIR)
+        from storage import load as _st_load
+        planner_data = _st_load("planner_tasks.json") or {}
+        tasks = planner_data.get("tasks", [])
+        today_str = now.strftime("%Y-%m-%d")
+        pending = [t for t in tasks if not t.get("done") and t.get("date", "") == today_str]
+
+        if pending:
+            remind_ts_key = f"persist_planner_{today}_ts"
+            last_ts = state.get(remind_ts_key, 0)
+            now_ts = int(now.timestamp())
+            if now_ts - last_ts >= 3600:
+                lines = "\n".join(f"• {t.get('title', '?')}" for t in pending[:5])
+                keyboard = {"inline_keyboard": [[
+                    {"text": "📋 Відкрити список", "callback_data": "planner_view_today"},
+                ]]}
+                api("sendMessage", {
+                    "chat_id": TELEGRAM_CHAT,
+                    "text": f"🔔 <b>Невиконані завдання на сьогодні:</b>\n\n{lines}\n\n<i>Відмічай коли зробиш!</i>",
+                    "parse_mode": "HTML",
+                    "reply_markup": keyboard,
+                })
+                state[remind_ts_key] = now_ts
+                changed = True
+                print(f"[persist] planner reminder sent: {len(pending)} tasks")
+    except Exception as e:
+        print(f"[persist] planner check error: {e}")
+
+    # ── 3. ПОДІЇ КАЛЕНДАРЯ ────────────────────────────────────────────────────
+    try:
+        import sys as _sys
+        _sys.path.insert(0, _DIR)
+        from storage import load as _st_load
+        event_done = set(_st_load("monitor_event_done.json") or [])
+
+        from monitor import _get_google_token, _fetch_events_all_calendars
+        import os as _os
+        creds_json = _os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+        if creds_json:
+            import json as _json
+            creds_data = _json.loads(creds_json)
+            token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+            headers = {"Authorization": f"Bearer {token}"}
+            from datetime import timezone as _tz, timedelta as _td
+            now_utc = __import__('datetime').datetime.now(_tz.utc)
+            today_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0)
+            today_end   = today_start + _td(hours=24)
+            events = _fetch_events_all_calendars(headers, today_start, today_end)
+
+            pending_cal = []
+            for ev in events:
+                eid = ev.get("id", "")
+                summary = ev.get("summary", "")
+                if eid and eid not in event_done:
+                    pending_cal.append(summary)
+
+            if pending_cal:
+                remind_ts_key = f"persist_calendar_{today}_ts"
+                last_ts = state.get(remind_ts_key, 0)
+                now_ts_c = int(now.timestamp())
+                if now_ts_c - last_ts >= 3600:
+                    lines = "\n".join(f"📌 {e}" for e in pending_cal[:5])
+                    keyboard = {"inline_keyboard": [[
+                        {"text": "✅ Виконано", "callback_data": "cal_all_done_today"},
+                    ]]}
+                    api("sendMessage", {
+                        "chat_id": TELEGRAM_CHAT,
+                        "text": f"🔔 <b>Події з календаря сьогодні:</b>\n\n{lines}\n\n<i>Все зроблено?</i>",
+                        "parse_mode": "HTML",
+                        "reply_markup": keyboard,
+                    })
+                    state[remind_ts_key] = now_ts_c
+                    changed = True
+                    print(f"[persist] calendar reminder sent: {len(pending_cal)} events")
+    except Exception as e:
+        print(f"[persist] calendar check error: {e}")
+
+    if changed:
+        _save_persist_state(state)

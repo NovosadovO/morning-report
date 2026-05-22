@@ -954,5 +954,26 @@ def run_webhook_server():
 threading.Thread(target=run_webhook_server, daemon=True).start()
 print("=== Webhook server thread started ===", flush=True)
 
+
+def run_persistent_reminders_watcher():
+    """Persistent нагадування — звички/planner/календар кожну годину поки не відмічено."""
+    print("=== Starting persistent reminders watcher (every 15min check) ===", flush=True)
+    time.sleep(120)
+    while True:
+        try:
+            import importlib.util, os as _os
+            spec = importlib.util.spec_from_file_location(
+                "habits", _os.path.join(_os.path.dirname(__file__), "habits.py"))
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            mod.check_persistent_reminders()
+        except Exception as e:
+            print(f"Persistent reminders watcher error: {e}", flush=True)
+        time.sleep(900)  # перевіряємо кожні 15 хв, але шлемо раз на годину (логіка всередині)
+
+
+threading.Thread(target=run_persistent_reminders_watcher, daemon=True).start()
+print("=== Persistent reminders watcher thread started ===", flush=True)
+
 # Основний монітор в головному потоці
 run_monitor_loop()
