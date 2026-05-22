@@ -2719,6 +2719,15 @@ def main():
     # Блок 3: Крипто (якщо активований)
     if prices_text:
         parts.append(prices_text)
+        # PNG графік цін — одразу після крипто тексту
+        try:
+            _cchart_inline = generate_crypto_trend_chart(30)
+            if _cchart_inline:
+                parts.append({"photo": _cchart_inline, "caption": "📈 Тренд 30д | BTC ETH AVAX ONDO"})
+            else:
+                print("[crypto chart inline] generate returned None")
+        except Exception as _cci_e:
+            print(f"[crypto chart inline] error: {_cci_e}")
 
     # Блок 4: Календар (ЗАВЖДИ — основа всього)
     parts.append(cal_text)
@@ -2776,6 +2785,15 @@ def main():
 
         if len(_health_lines) > 1:
             parts.append("\n".join(_health_lines))
+            # PNG графік ваги — одразу після здоров'я тексту
+            try:
+                _wchart_inline = generate_weight_trend_chart(30)
+                if _wchart_inline:
+                    parts.append({"photo": _wchart_inline, "caption": "⚖️ Тренд ваги 30д"})
+                else:
+                    print("[weight chart inline] generate returned None")
+            except Exception as _wci_e:
+                print(f"[weight chart inline] error: {_wci_e}")
     except Exception as _e_health:
         print(f"health block error: {_e_health}")
 
@@ -2800,18 +2818,48 @@ def main():
     if is_weekend and not include_learning_blocks and not _sc_main["is_working_now"]:
         parts.append("💤 <i>Вихідний — крипто/пошта з 11:00</i>")
 
-    # Розбиваємо на повідомлення по секціях щоб не обрізати HTML теги
+    # Розбиваємо текстові секції на повідомлення, фото-секції надсилаємо одразу між ними
+    import time as _time_main
+    import requests as _req_send
+    import io as _io_send
+
+    def _send_photo_inline(photo_bytes, caption):
+        try:
+            _r = _req_send.post(
+                f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
+                data={"chat_id": TELEGRAM_CHAT, "caption": caption},
+                files={"photo": ("chart.png", _io_send.BytesIO(photo_bytes), "image/png")},
+                timeout=25
+            )
+            print(f"[photo inline] {caption[:30]} status={_r.status_code} resp={_r.text[:150]}")
+        except Exception as _pe:
+            print(f"[photo inline] error: {_pe}")
+
     MAX_MSG = 4000
-    messages = []
+    ok = True
     current_msg = ""
+
+    def _flush_text():
+        nonlocal current_msg, ok
+        if current_msg:
+            if not send_telegram(current_msg):
+                ok = False
+            current_msg = ""
+            _time_main.sleep(0.4)
+
     for section in parts:
+        # Фото-секція — спочатку надіслати накопичений текст, потім фото
+        if isinstance(section, dict) and "photo" in section:
+            _flush_text()
+            _send_photo_inline(section["photo"], section.get("caption", ""))
+            _time_main.sleep(0.4)
+            continue
+        # Текстова секція
         candidate = current_msg + (SEP if current_msg else "") + section
         if len(candidate) <= MAX_MSG:
             current_msg = candidate
         else:
-            if current_msg:
-                messages.append(current_msg)
-            # Якщо одна секція сама > MAX — ріжемо по рядках (fallback)
+            _flush_text()
             if len(section) > MAX_MSG:
                 chunk = ""
                 for line in section.split("\n"):
@@ -2820,60 +2868,16 @@ def main():
                         chunk = c2
                     else:
                         if chunk:
-                            messages.append(chunk)
+                            if not send_telegram(chunk):
+                                ok = False
+                            _time_main.sleep(0.4)
                         chunk = line
-                if chunk:
-                    messages.append(chunk)
+                current_msg = chunk
             else:
                 current_msg = section
-    if current_msg:
-        messages.append(current_msg)
 
-    import time as _time_main
-    ok = True
-    for i, msg in enumerate(messages):
-        if i > 0:
-            _time_main.sleep(0.5)
-        if not send_telegram(msg):
-            ok = False
-    print(f"=== Report {'sent' if ok else 'FAILED'} ({len(messages)} msg) ===")
-
-    # ── Графік тренду цін — після звіту ─────────────────────────────────────
-    if prices_text:
-        try:
-            import requests as _req_lib
-            import io as _io_c
-            _cchart = generate_crypto_trend_chart(30)
-            if _cchart:
-                _r = _req_lib.post(
-                    f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
-                    data={"chat_id": TELEGRAM_CHAT, "caption": "Trend 30d | BTC ETH AVAX ONDO"},
-                    files={"photo": ("crypto_trend.png", _io_c.BytesIO(_cchart), "image/png")},
-                    timeout=25
-                )
-                print(f"[crypto chart] status={_r.status_code} resp={_r.text[:200]}")
-            else:
-                print("[crypto chart] generate returned None")
-        except Exception as _cce:
-            print(f"[crypto chart] error: {_cce}")
-
-    # ── Графік тренду ваги — після крипто-графіка ────────────────────────────
-    try:
-        import requests as _req_lib2
-        import io as _io_w
-        _wchart = generate_weight_trend_chart(30)
-        if _wchart:
-            _rw = _req_lib2.post(
-                f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
-                data={"chat_id": TELEGRAM_CHAT, "caption": "Trend 30d | Вага (кг)"},
-                files={"photo": ("weight_trend.png", _io_w.BytesIO(_wchart), "image/png")},
-                timeout=25
-            )
-            print(f"[weight chart] status={_rw.status_code} resp={_rw.text[:200]}")
-        else:
-            print("[weight chart] generate returned None")
-    except Exception as _wce:
-        print(f"[weight chart] error: {_wce}")
+    _flush_text()
+    print(f"=== Report {'sent' if ok else 'FAILED'} ===")
 
     # ── Кнопка "Додати в календар" після підсумку ────────────────────────────
     try:
