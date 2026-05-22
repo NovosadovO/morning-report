@@ -332,21 +332,26 @@ def get_prices():
         change24 = data.get(cg_id, {}).get("usd_24h_change")
         if price is None:
             continue
-        now_prices[cg_id] = price
-        old = prev.get(cg_id)
-        if old and old > 0:
-            pct = (price - old) / old * 100
+        now_prices[cg_id] = {"price": price, "ts": int(time.time())}
+        old_entry = prev.get(cg_id)
+        old_price = old_entry.get("price") if isinstance(old_entry, dict) else old_entry
+        if old_price and old_price > 0:
+            pct = (price - old_price) / old_price * 100
             arrow = "🟢" if pct > 0 else "🔴"
             sign = "+" if pct > 0 else ""
-            ch = f"{sign}{pct:.2f}% за 3г"
+            ch = f"{sign}{pct:.2f}% від попер."
+            # Зберігаємо pct_prev у рядку для _format_prices_visual
+            pct_prev_tag = f"  [pct3h:{pct:+.2f}]"
         elif change24 is not None:
             arrow = "🟢" if change24 > 0 else "🔴"
             sign = "+" if change24 > 0 else ""
             ch = f"{sign}{change24:.2f}% за 24г"
+            pct_prev_tag = ""
         else:
             arrow = "⚪️"
             ch = "—"
-        lines.append(f"{arrow} <b>{symbol}</b>  <code>${price:,.2f}</code>\n   <i>{ch}</i>")
+            pct_prev_tag = ""
+        lines.append(f"{arrow} <b>{symbol}</b>  <code>${price:,.2f}</code>  <i>{ch}</i>{pct_prev_tag}")
 
     save_json_file(PRICE_CACHE, now_prices)
     return "💹 <b>ЦІНИ АКТИВІВ</b>\n\n" + "\n".join(lines)
@@ -2222,25 +2227,61 @@ def _format_prices_visual(prices_text, cal_events_text=""):
     else:
         tip_line = ""
 
+    # Місячний спарклайн — беремо з CoinGecko (тихо, без помилок)
+    _SPARK_COINS = [("BTC","bitcoin"),("ETH","ethereum"),("AVAX","avalanche-2"),("ONDO","ondo-finance")]
+    _spark_lines = []
+    try:
+        import urllib.request as _ur, json as _js
+        _BLOCKS = "▁▂▃▄▅▆▇█"
+        for _sym, _cid in _SPARK_COINS:
+            _url = f"https://api.coingecko.com/api/v3/coins/{_cid}/market_chart?vs_currency=usd&days=30&interval=daily"
+            try:
+                with _ur.urlopen(_ur.Request(_url, headers={"User-Agent":"bot"}), timeout=5) as _r:
+                    _mc = _js.loads(_r.read())
+                _prices_30 = [p[1] for p in _mc.get("prices", [])]
+                if len(_prices_30) >= 5:
+                    _mn, _mx = min(_prices_30), max(_prices_30)
+                    _rng = _mx - _mn or 1
+                    _spark = "".join(_BLOCKS[int((_p - _mn) / _rng * 7)] for _p in _prices_30[-15:])
+                    _ch30 = (_prices_30[-1] - _prices_30[0]) / _prices_30[0] * 100
+                    _sign = "+" if _ch30 >= 0 else ""
+                    _e = "🚀" if _ch30 > 10 else ("📈" if _ch30 > 0 else ("📉" if _ch30 > -10 else "💥"))
+                    _spark_lines.append(f"<code>{_sym:4s} {_spark}</code> {_e} {_sign}{_ch30:.1f}% / 30д")
+            except Exception:
+                pass
+    except Exception:
+        pass
+    spark_block = ""
+    if _spark_lines:
+        spark_block = "\n\n📉 <b>Тренд 30д</b>\n" + "\n".join(_spark_lines)
+
     # Витягуємо монети
     coins = []
-    for coin in ["BTC", "ETH", "SOL", "BNB", "AVAX", "ONDO"]:
+    for coin in ["BTC", "ETH", "AVAX", "ONDO"]:
         row_m = _re.search(r"[^\n]*" + coin + r"[^\n]*", prices_text)
         if not row_m: continue
         row = row_m.group(0)
         price_m = _re.search(r"\$([\d,]+(?:\.\d+)?)", row)
-        pct_m = _re.search(r"([+\-−][\d.]+)%", row)
+        pct_m = _re.search(r"([+\-−\+][\d.]+)%", row)
+        pct3h_m = _re.search(r"\[pct3h:([+\-][\d.]+)\]", row)
         if not price_m: continue
         price = price_m.group(1)
-        pct_str = pct_m.group(0) if pct_m else ""
-        trend = "🔺" if "🔺" in row else ("🔻" if "🔻" in row else "➡")
         pct_val = float(pct_m.group(1).replace("−", "-")) if pct_m else 0
+        trend_icon = "🔺" if pct_val > 0 else ("🔻" if pct_val < 0 else "➡️")
         bar = "🔥🔥🔥" if pct_val > 3 else ("📈📈" if pct_val > 0 else ("📉📉" if pct_val < -3 else "📉"))
-        coins.append(f"{trend} <b>{coin}</b> ${price}  {bar} {pct_str}")
+        # % від попереднього звіту
+        if pct3h_m:
+            p3h = float(pct3h_m.group(1))
+            sign3h = "+" if p3h >= 0 else ""
+            prev_str = f"  <i>({sign3h}{p3h:.2f}% від попер.)</i>"
+        else:
+            prev_str = ""
+        pct_str = pct_m.group(0) if pct_m else ""
+        coins.append(f"{trend_icon} <b>{coin}</b> ${price}  {bar} {pct_str}{prev_str}")
 
     header = f"💰 <b>КРИПТО</b>  ·  {market}"
-    body = "\n".join(coins[:5]) if coins else prices_text[:300]
-    return f"{header}\n{body}{tip_line}"
+    body = "\n".join(coins) if coins else prices_text[:300]
+    return f"{header}\n{body}{tip_line}{spark_block}"
 
 
 def main():
