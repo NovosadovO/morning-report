@@ -174,6 +174,15 @@ def save_health(data):
     """Зберігає щоденні health дані."""
     return _save_github("health.json", data)
 
+def load_price_history():
+    """Завантажує price history для крипто графіка. Структура: {cg_id: [[ts, price], ...]}"""
+    data = _load_github("price_history_30d.json")
+    return data if data else {}
+
+def save_price_history(data):
+    """Зберігає price history для крипто графіка."""
+    return _save_github("price_history_30d.json", data)
+
 def load(filename, default=None):
     """Generic load — читає будь-який JSON файл з GitHub data/."""
     data = _load_github(filename)

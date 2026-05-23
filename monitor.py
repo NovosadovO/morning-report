@@ -31,7 +31,7 @@ _DATA_DIR       = os.path.dirname(os.path.abspath(__file__))
 SEEN_EMAIL_FILE = os.path.join(_DATA_DIR, "monitor_seen_emails.json")
 # Ціновий кеш в /tmp — зберігається між циклами але скидається при деплої
 PRICE_CACHE     = "/tmp/monitor_prices_3h.json"
-PRICE_HISTORY   = "/tmp/price_history_30d.json"  # накопичена historical для графіка
+# PRICE_HISTORY moved to GitHub storage via storage.load_price_history() / save_price_history()
 
 COINS = {
     "BTC":  "bitcoin",
@@ -359,7 +359,7 @@ def get_prices():
     # ── Дописуємо в historical для графіка (1 точка на годину, 30д) ──────────
     try:
         _now_ts = int(time.time())
-        _hist = load_json_file(PRICE_HISTORY, default={})  # {cg_id: [[ts, price], ...]}
+        _hist = storage.load_price_history()  # {cg_id: [[ts, price], ...]}
         _cutoff = _now_ts - 30 * 86400
         for _sym, _cg_id in COINS.items():
             _price = now_prices.get(_cg_id, {}).get("price")
@@ -372,7 +372,7 @@ def get_prices():
             # Обрізаємо старіші 30д
             _pts = [p for p in _pts if p[0] >= _cutoff]
             _hist[_cg_id] = _pts
-        save_json_file(PRICE_HISTORY, _hist)
+        storage.save_price_history(_hist)
     except Exception as _he:
         print(f"[price history] save error: {_he}")
 
@@ -2304,8 +2304,8 @@ def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
         TEXT  = "#C9D1D9"
         MUTED = "#8B949E"
 
-        # Читаємо з локального history файлу
-        hist = load_json_file(PRICE_HISTORY, default={})
+        # Читаємо з GitHub storage
+        hist = storage.load_price_history()
         cutoff = _t.time() - days * 86400
 
         fig, axes = plt.subplots(2, 2, figsize=(10, 6))
