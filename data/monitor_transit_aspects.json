@@ -10,7 +10,7 @@
     "exact_sent": true
   },
   "mercury__pluto__150": {
-    "orb": 0.09,
+    "orb": 0.08,
     "sent": false,
     "exact_sent": true
   },
@@ -20,9 +20,9 @@
     "exact_sent": true
   },
   "mars__mercury__150": {
-    "orb": 1.5,
-    "sent": true,
-    "event": "enter"
+    "orb": 1.49,
+    "sent": false,
+    "exact_sent": false
   },
   "saturn__venus__150": {
     "orb": 0.55,
