@@ -936,18 +936,50 @@ def _gemini_summarize(text, max_input=3000):
         return None
 
 
-def format_email_item(subject, sender, preview, is_unread=False, ai_summary=None):
-    mark = "🔴 " if is_unread else "   "
-    lines = [
-        f"┌─────────────────────",
-        f"{mark}📨 <b>{esc(subject[:55])}</b>",
-        f"    👤 <code>{esc(sender[:40])}</code>",
-    ]
-    if ai_summary:
-        lines.append(f"    🤖 {esc(ai_summary)}")
+def format_email_item(subject, sender, preview, is_unread=False, ai_summary=None, ai_analysis=None):
+    """
+    ai_analysis: dict з ключами 'description' і 'opinion' (з _gemini_email_analysis)
+    ai_summary: старий короткий рядок (fallback)
+    """
+    status = "🔴 <b>НОВЕ</b>" if is_unread else "✉️"
+    # Класифікація по sender/subject
+    s_low = subject.lower() + sender.lower()
+    if any(k in s_low for k in ["invoice", "інвойс", "рахунок", "payment", "оплат"]):
+        cat = "💰"
+    elif any(k in s_low for k in ["security", "безпек", "password", "пароль", "alert", "verify"]):
+        cat = "🔐"
+    elif any(k in s_low for k in ["order", "замовлен", "delivery", "доставк", "shipment"]):
+        cat = "📦"
+    elif any(k in s_low for k in ["meeting", "зустріч", "calendar", "invite", "запрошен"]):
+        cat = "📅"
+    elif any(k in s_low for k in ["job", "робот", "vacancy", "вакансі", "career"]):
+        cat = "💼"
     else:
-        lines.append(f"    💬 {esc(preview[:110])}")
-    lines.append("└─────────────────────")
+        cat = "📩"
+
+    lines = [
+        f"┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄",
+        f"{cat} {status}",
+        f"📌 <b>{esc(subject[:60])}</b>",
+        f"👤 {esc(sender[:50])}",
+    ]
+
+    if ai_analysis and isinstance(ai_analysis, dict):
+        desc = ai_analysis.get("description", "").strip()
+        opinion = ai_analysis.get("opinion", "").strip()
+        if desc:
+            lines.append(f"")
+            lines.append(f"📋 <i>{esc(desc[:400])}</i>")
+        if opinion:
+            lines.append(f"")
+            lines.append(f"🤖 <b>Думка:</b> {esc(opinion[:150])}")
+    elif ai_summary:
+        lines.append(f"")
+        lines.append(f"🤖 {esc(ai_summary[:200])}")
+    else:
+        lines.append(f"")
+        lines.append(f"💬 {esc(preview[:150])}")
+
     return "\n".join(lines)
 
 
@@ -1069,23 +1101,28 @@ def get_emails():
                 continue
 
             body    = _imap_get_body(msg)
-            preview = body[:120].replace("\n", " ").strip()
-            # AI summary для всіх листів — читає і дає суть
-            ai_sum  = _gemini_summarize(body) if body else ""
-            primary.append((subject, sender, preview, is_unread, ai_sum))
+            preview = body[:150].replace("\n", " ").strip()
+            # Повний AI аналіз — читає весь лист, дає опис + думку
+            ai_analysis = _gemini_email_analysis(body) if body else None
+            primary.append((subject, sender, preview, is_unread, ai_analysis))
 
         mail.logout()
 
-        lines = ["📩 <b>━━━ ЛИСТИ ━━━</b>\n"]
+        unread_count = sum(1 for _, _, _, u, _ in primary if u)
+
+        lines = []
+        if unread_count > 0:
+            lines.append(f"📬 <b>━━━ ПОШТА ━━━</b>  🔴 {unread_count} нових")
+        else:
+            lines.append(f"📬 <b>━━━ ПОШТА ━━━</b>")
+        lines.append("")
 
         if primary:
-            unread_count = sum(1 for _, _, _, u, _ in primary if u)
-            header = "📥 <b>ОСНОВНІ</b>" + (f"  🔴 {unread_count} нових" if unread_count else "")
-            lines.append(header)
-            for s, snd, p, u, ai_sum in primary:
-                lines.append(format_email_item(s, snd, p, u, ai_summary=ai_sum))
+            for s, snd, p, u, ai_anal in primary:
+                lines.append(format_email_item(s, snd, p, u, ai_analysis=ai_anal))
+                lines.append("")
         else:
-            lines.append("✅ Немає листів")
+            lines.append("✅ Нових листів немає")
 
         return "\n".join(lines)
 
