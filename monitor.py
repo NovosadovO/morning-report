@@ -377,7 +377,48 @@ def get_prices():
     except Exception as _he:
         print(f"[price history] save error: {_he}")
 
+    # ── ETF та S&P 500 через Yahoo Finance ─────────────────────────────────────
+    etf_block = _get_etf_prices()
+    if etf_block:
+        lines.append("")
+        lines.append(etf_block)
+
     return "💹 <b>ЦІНИ АКТИВІВ</b>\n\n" + "\n".join(lines)
+
+
+def _get_etf_prices() -> str:
+    """Повертає рядок з цінами ETF (IBIT, ETHA, VAVA, GAVA) та S&P 500."""
+    try:
+        import yfinance as yf
+        ETF_TICKERS = [
+            ("IBIT",  "IBIT",   "🟠"),
+            ("ETHA",  "ETHA",   "🔷"),
+            ("VAVA",  "VAVA.SW","🏔️"),
+            ("GAVA",  "GAVA",   "🟣"),
+            ("S&P500","^GSPC",  "📊"),
+        ]
+        rows = []
+        for name, sym, icon in ETF_TICKERS:
+            try:
+                h = yf.Ticker(sym).history(period="2d")
+                if len(h) >= 2:
+                    c    = h["Close"].iloc[-1]
+                    prev = h["Close"].iloc[-2]
+                    pct  = (c - prev) / prev * 100
+                    arrow = "🟢" if pct > 0 else "🔴"
+                    sign  = "+" if pct > 0 else ""
+                    rows.append(f"{arrow} <b>{name}</b>  <code>${c:,.2f}</code>  <i>{sign}{pct:.2f}% за день</i>")
+                elif len(h) == 1:
+                    c = h["Close"].iloc[-1]
+                    rows.append(f"⚪️ <b>{name}</b>  <code>${c:,.2f}</code>")
+            except Exception as _e:
+                rows.append(f"⚪️ <b>{name}</b>  —")
+        if rows:
+            return "📈 <b>ETF / ІНДЕКСИ</b>\n" + "\n".join(rows)
+        return ""
+    except Exception as _e:
+        print(f"[etf prices] error: {_e}")
+        return ""
 
 
 def _get_prices_kraken():
