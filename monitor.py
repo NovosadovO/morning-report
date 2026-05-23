@@ -1168,48 +1168,52 @@ def _email_save_ids(sent_ids: set):
         print(f"_email_save_ids error: {e}")
 
 def _gemini_email_analysis(full_text: str) -> dict:
-    """Аналізує лист через Gemini: короткий зміст + думка."""
-    api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+    """Аналізує лист через Gemini: детальний переказ + думка."""
     import re as _re
+    api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
 
     prompt = (
-        "Проаналізуй цей email і дай відповідь ТІЛЬКИ у форматі JSON (без markdown обгортки):\n"
-        "{\n"
-        "  \"description\": \"детальний переказ змісту листа: про що йдеться, які конкретні дані (цифри, суми, дати, імена, посилання), яка мета відправника, що від одержувача очікується — 3-5 речень\",\n"
-        "  \"opinion\": \"твоя коротка думка: чи варто реагувати і що саме зробити (1 речення)\"\n"
-        "}\n\n"
-        "Мова відповіді: українська. description має бути детальним і інформативним.\n\n"
-        f"Лист:\n{full_text[:3000]}"
+        "Проаналізуй цей email. Відповідь — ТІЛЬКИ валідний JSON, без markdown, без коментарів:\n"
+        '{"description": "...", "opinion": "..."}\n\n'
+        "description: переказ змісту — про що лист, ключові цифри/дати/суми, що очікується від одержувача (2-4 речення українською).\n"
+        "opinion: твоя коротка думка — чи реагувати і що зробити (1 речення українською).\n\n"
+        f"Лист:\n{full_text[:2000]}"
     )
-    body = json.dumps({
+    req_body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"maxOutputTokens": 600, "temperature": 0.4}
+        "generationConfig": {"maxOutputTokens": 1024, "temperature": 0.3}
     }).encode()
 
-    # Спробуємо спочатку gemini-2.5-flash, потім fallback на gemini-2.5-flash
-    models = ["gemini-2.5-flash", "gemini-2.5-flash"]
-    for model in models:
+    try:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+        req = urllib.request.Request(url, data=req_body, headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=40) as r:
+            resp_data = json.loads(r.read())
+        raw = resp_data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        # Прибираємо markdown огорожі якщо є
+        raw = _re.sub(r"^```(?:json)?\s*", "", raw, flags=_re.MULTILINE)
+        raw = _re.sub(r"\s*```\s*$", "", raw, flags=_re.MULTILINE)
+        raw = raw.strip()
+        # Пряме парсування
         try:
-            print(f"[email AI] trying model={model} text_len={len(full_text)}")
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
-            req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
-            with urllib.request.urlopen(req, timeout=40) as r:
-                resp_data = json.loads(r.read())
-            raw = resp_data["candidates"][0]["content"]["parts"][0]["text"].strip()
-            print(f"[email AI] {model} raw: {raw[:300]}")
-            m = _re.search(r'\{.*\}', raw, _re.DOTALL)
-            if m:
-                result = json.loads(m.group(0))
-                print(f"[email AI] parsed ok via {model}: summary={result.get('summary','')[:60]}")
+            result = json.loads(raw)
+            if isinstance(result, dict) and "description" in result:
                 return result
-            else:
-                print(f"[email AI] {model}: no JSON in response, trying next")
-        except Exception as e:
-            print(f"[email AI] {model} error: {type(e).__name__}: {e}")
-
-    print("[email AI] all models failed, returning None")
-    return None
-
+        except Exception:
+            pass
+        # Regex fallback — витягти description/opinion вручну
+        desc_m = _re.search(r'"description"\s*:\s*"((?:[^"\\]|\\.)*)"', raw, _re.DOTALL)
+        opin_m = _re.search(r'"opinion"\s*:\s*"((?:[^"\\]|\\.)*)"', raw, _re.DOTALL)
+        if desc_m:
+            return {
+                "description": desc_m.group(1),
+                "opinion": opin_m.group(1) if opin_m else ""
+            }
+        print(f"[email AI] parse failed, raw: {raw[:150]}")
+        return None
+    except Exception as e:
+        print(f"[email AI] error: {type(e).__name__}: {e}")
+        return None
 
 def _send_telegram_gif_only():
     """Надсилає тільки GIF без тексту."""
