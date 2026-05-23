@@ -977,10 +977,10 @@ def _gemini_summarize(text, max_input=3000):
         return None
 
 
-def format_email_item(subject, sender, preview, is_unread=False, ai_summary=None, ai_analysis=None):
+def format_email_item(subject, sender, preview, is_unread=False, ai_summary=None, ai_analysis=None, uid_str=None):
     """
-    ai_analysis: dict з ключами 'description' і 'opinion' (з _gemini_email_analysis)
-    ai_summary: старий короткий рядок (fallback)
+    У звіті — тільки від кого і тема. Опис — окремо по кнопці.
+    uid_str: якщо передано — додає кнопки під листом
     """
     status = "🔴 <b>НОВЕ</b>" if is_unread else "✉️"
     # Класифікація по sender/subject
@@ -1004,22 +1004,6 @@ def format_email_item(subject, sender, preview, is_unread=False, ai_summary=None
         f"📌 <b>{esc(subject[:60])}</b>",
         f"👤 {esc(sender[:50])}",
     ]
-
-    if ai_analysis and isinstance(ai_analysis, dict):
-        desc = ai_analysis.get("description", "").strip()
-        opinion = ai_analysis.get("opinion", "").strip()
-        if desc:
-            lines.append(f"")
-            lines.append(f"📋 <i>{esc(desc[:400])}</i>")
-        if opinion:
-            lines.append(f"")
-            lines.append(f"🤖 <b>Думка:</b> {esc(opinion[:150])}")
-    elif ai_summary:
-        lines.append(f"")
-        lines.append(f"🤖 {esc(ai_summary[:200])}")
-    else:
-        lines.append(f"")
-        lines.append(f"💬 {esc(preview[:150])}")
 
     return "\n".join(lines)
 
@@ -1141,31 +1125,32 @@ def get_emails():
             if email_addr in _ALWAYS_SKIP:
                 continue
 
-            body    = _imap_get_body(msg)
-            preview = body[:150].replace("\n", " ").strip()
-            # Повний AI аналіз — читає весь лист, дає опис + думку
-            ai_analysis = _gemini_email_analysis(body) if body else None
-            primary.append((subject, sender, preview, is_unread, ai_analysis))
+            # Тільки UID зберігаємо — опис читається по кнопці
+            primary.append((subject, sender, uid, is_unread))
 
         mail.logout()
 
-        unread_count = sum(1 for _, _, _, u, _ in primary if u)
+        unread_count = sum(1 for _, _, _, u in primary if u)
 
-        lines = []
+        # Заголовок блоку
         if unread_count > 0:
-            lines.append(f"📬 <b>━━━ ПОШТА ━━━</b>  🔴 {unread_count} нових")
+            header = f"📬 <b>━━━ ПОШТА ━━━</b>  🔴 {unread_count} нових"
         else:
-            lines.append(f"📬 <b>━━━ ПОШТА ━━━</b>")
-        lines.append("")
+            header = f"📬 <b>━━━ ПОШТА ━━━</b>"
 
-        if primary:
-            for s, snd, p, u, ai_anal in primary:
-                lines.append(format_email_item(s, snd, p, u, ai_analysis=ai_anal))
-                lines.append("")
-        else:
-            lines.append("✅ Нових листів немає")
+        if not primary:
+            return header + "\n\n✅ Нових листів немає"
 
-        return "\n".join(lines)
+        # Повертаємо спеціальний dict щоб main() міг надіслати кожен лист з кнопками
+        items = []
+        for s, snd, uid_s, u in primary:
+            items.append({
+                "subject": s,
+                "sender": snd,
+                "uid": uid_s,
+                "unread": u,
+            })
+        return {"__email_block__": True, "header": header, "items": items}
 
     except Exception as e:
         print(f"get_emails IMAP error: {e}")
@@ -2997,9 +2982,49 @@ def main():
     except Exception as _e_health:
         print(f"health block error: {_e_health}")
 
-    # Блок 5: Email (якщо є непрочитані)
+    # Блок 5: Email — заголовок + кожен лист окремо з кнопками
     if email_text:
-        parts.append(email_text)
+        if isinstance(email_text, dict) and email_text.get("__email_block__"):
+            # Надсилаємо заголовок
+            parts.append(email_text["header"])
+            # Кожен лист — окреме повідомлення з кнопками
+            for _em in email_text.get("items", []):
+                _s   = _em["subject"]
+                _snd = _em["sender"]
+                _uid = _em["uid"]
+                _u   = _em["unread"]
+                _status = "🔴 <b>НОВЕ</b>" if _u else "✉️"
+                _s_low = _s.lower() + _snd.lower()
+                if any(k in _s_low for k in ["invoice","інвойс","рахунок","payment","оплат"]):
+                    _cat = "💰"
+                elif any(k in _s_low for k in ["security","безпек","password","пароль","alert","verify"]):
+                    _cat = "🔐"
+                elif any(k in _s_low for k in ["order","замовлен","delivery","доставк","shipment"]):
+                    _cat = "📦"
+                elif any(k in _s_low for k in ["meeting","зустріч","calendar","invite","запрошен"]):
+                    _cat = "📅"
+                elif any(k in _s_low for k in ["job","робот","vacancy","вакансі","career"]):
+                    _cat = "💼"
+                else:
+                    _cat = "📩"
+                _text = (
+                    f"{_cat} {_status}\n"
+                    f"📌 <b>{esc(_s[:60])}</b>\n"
+                    f"👤 {esc(_snd[:50])}"
+                )
+                _keyboard = {"inline_keyboard": [
+                    [
+                        {"text": "📖 Описати лист", "callback_data": f"email_describe_{_uid}"},
+                        {"text": "📅 В календар",   "callback_data": f"email_cal_{_uid}"},
+                    ],
+                    [
+                        {"text": "📥 Залишити",     "callback_data": f"email_keep_{_uid}"},
+                        {"text": "🗑 Видалити",     "callback_data": f"email_delete_{_uid}"},
+                    ]
+                ]}
+                parts.append({"email_msg": True, "text": _text, "keyboard": _keyboard})
+        else:
+            parts.append(email_text)
 
     # Блок 6: Астро (якщо завантажено)
     if astro_text:
@@ -3052,6 +3077,12 @@ def main():
         if isinstance(section, dict) and "photo" in section:
             _flush_text()
             _send_photo_inline(section["photo"], section.get("caption", ""))
+            _time_main.sleep(0.4)
+            continue
+        # Email лист з кнопками
+        if isinstance(section, dict) and section.get("email_msg"):
+            _flush_text()
+            _send_telegram_text_with_keyboard(section["text"], section["keyboard"])
             _time_main.sleep(0.4)
             continue
         # Текстова секція

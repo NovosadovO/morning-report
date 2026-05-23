@@ -284,14 +284,70 @@ def get_meds_report(period="week"):
 
 
 def handle_email_callback(callback_query):
-    """Обробляє кнопки 'Видалити' / 'Залишити' / 'Відповісти' для листів."""
+    """Обробляє кнопки листів: Описати / Видалити / Залишити / В календар."""
     import json as _json
     data    = callback_query.get("data", "")
     msg_id  = callback_query["message"]["message_id"]
     chat_id = callback_query["message"]["chat"]["id"]
     cb_id   = callback_query["id"]
 
-    if data.startswith("email_delete_"):
+    if data.startswith("email_describe_"):
+        uid_str = data[len("email_describe_"):]
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📖 Читаю лист..."})
+        try:
+            import sys, os as _os
+            sys.path.insert(0, _os.path.dirname(__file__))
+            from monitor import _imap_connect, _imap_get_body, _imap_decode_header, _gemini_email_analysis
+            import email as _email_lib
+
+            mail = _imap_connect()
+            mail.select("INBOX")
+            _, msg_data = mail.uid('fetch', uid_str.encode(), "(RFC822)")
+            mail.logout()
+
+            if not (msg_data and msg_data[0]):
+                send(chat_id, "⚠️ Не вдалось завантажити лист")
+                return
+
+            msg     = _email_lib.message_from_bytes(msg_data[0][1])
+            subject = _imap_decode_header(msg.get("Subject", ""))
+            sender  = _imap_decode_header(msg.get("From", ""))
+            body    = _imap_get_body(msg)
+
+            if not body.strip():
+                send(chat_id, f"📩 <b>{subject[:60]}</b>\n⚠️ Лист порожній або тільки вкладення.")
+                return
+
+            # Gemini аналізує повний текст листа
+            ai = _gemini_email_analysis(f"Від: {sender}\nТема: {subject}\n\n{body}")
+
+            if ai:
+                desc    = ai.get("description", "").strip()
+                opinion = ai.get("opinion", "").strip()
+                text = (
+                    f"📖 <b>Опис листа</b>\n"
+                    f"📌 <b>{subject[:60]}</b>\n"
+                    f"👤 {sender[:50]}\n\n"
+                )
+                if desc:
+                    text += f"📋 <b>Зміст:</b>\n{desc}\n\n"
+                if opinion:
+                    text += f"🤖 <b>Думка AI:</b> {opinion}"
+            else:
+                # Fallback — перші 500 символів
+                text = (
+                    f"📖 <b>Лист</b>\n"
+                    f"📌 <b>{subject[:60]}</b>\n"
+                    f"👤 {sender[:50]}\n\n"
+                    f"<i>{body[:500]}...</i>"
+                )
+
+            send(chat_id, text[:4000])
+        except Exception as e:
+            print(f"email_describe error: {e}")
+            api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"Помилка: {e}"})
+
+    elif data.startswith("email_delete_"):
         uid_str = data[len("email_delete_"):]
         try:
             import sys, os as _os
@@ -2103,7 +2159,11 @@ def main():
                                     send(chat_id, "👍 Добре, нічого не записую.")
                             except Exception as _ple:
                                 print(f"planner callback error: {_ple}")
-                        elif data.startswith("email_delete_") or data.startswith("email_keep_") or data.startswith("email_reply_") or data.startswith("email_send_") or data.startswith("email_cancel_"):
+                        elif (data.startswith("email_describe_") or data.startswith("email_delete_") or
+                              data.startswith("email_keep_") or data.startswith("email_star_") or
+                              data.startswith("email_cal_") or data.startswith("email_reply_") or
+                              data.startswith("email_send_") or data.startswith("email_cancel_") or
+                              data.startswith("cal_add_") or data.startswith("cal_skip_")):
                             handle_email_callback(cb)
                         elif data.startswith("reminder_"):
                             handle_reminder_callback(cb)
