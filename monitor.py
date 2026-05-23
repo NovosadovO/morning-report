@@ -1946,6 +1946,43 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
             )
     except: pass
 
+    # ── QWatch Pro дані ───────────────────────────────────────────────────────
+    qwatch_facts = ""
+    try:
+        qw_all = storage.load("qwatch_data.json", default={})
+        if qw_all:
+            qw_today = qw_all.get(today_str_s)
+            if not qw_today:
+                # беремо останній доступний запис (не старіше 2 днів)
+                from datetime import timedelta
+                yesterday = (now_local - timedelta(days=1)).strftime("%Y-%m-%d")
+                qw_today = qw_all.get(yesterday)
+            if qw_today:
+                parts_qw = []
+                if qw_today.get("health_score"):
+                    parts_qw.append(f"Health Score: {qw_today['health_score']}/100")
+                if qw_today.get("sleep_total_min"):
+                    sh, sm = divmod(int(qw_today["sleep_total_min"]), 60)
+                    parts_qw.append(f"Сон: {sh}г {sm:02d}хв")
+                    if qw_today.get("sleep_deep_min"):
+                        parts_qw.append(f"глибокий: {qw_today['sleep_deep_min']}хв")
+                    if qw_today.get("sleep_quality"):
+                        parts_qw.append(f"якість сну: {qw_today['sleep_quality']}")
+                if qw_today.get("hr_avg"):
+                    parts_qw.append(f"ЧСС: {qw_today['hr_avg']} уд/хв")
+                if qw_today.get("hrv"):
+                    parts_qw.append(f"HRV: {qw_today['hrv']} мс")
+                if qw_today.get("stress"):
+                    parts_qw.append(f"стрес: {qw_today['stress']}")
+                if qw_today.get("spo2"):
+                    parts_qw.append(f"SpO2: {qw_today['spo2']}%")
+                if qw_today.get("steps"):
+                    parts_qw.append(f"кроки: {int(qw_today['steps']):,}")
+                if parts_qw:
+                    qwatch_facts = ", ".join(parts_qw)
+    except Exception as _qe:
+        print(f"get_summary qwatch error: {_qe}")
+
     # ── Будуємо промпт для Gemini ─────────────────────────────────────────────
     sections_data = {
         "🌤 ПОГОДА": weather_facts,
@@ -1957,6 +1994,7 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
         "📅 КАЛЕНДАР": cal_facts or "Нічого",
         "📧 ПОШТА": email_facts or "—",
         "🔮 АСТРО": astro_facts or "—",
+        "⌚ QWATCH": qwatch_facts or "—",
     }
 
     sections_str = "\n".join(f"{k}: {v}" for k, v in sections_data.items() if v and v != "—")
@@ -1991,7 +2029,7 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
 [аналіз ринку — настрій, тренд, порівняй з попередніми підсумками якщо є, своя думка]
 
 ⚖️ <b>ЗДОРОВ'Я</b>
-[вага + кроки + ліки разом — тренд, оцінка, конкретна порада]
+[вага + кроки + ліки + QWatch (сон, пульс, HRV, Health Score, стрес) — тренд, оцінка, конкретна порада]
 
 ✅ <b>ЗВИЧКИ ТА ПРОДУКТИВНІСТЬ</b>
 [звички + календар — що виконано, що ні, рекомендація]
