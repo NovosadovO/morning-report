@@ -242,6 +242,18 @@ def run_crypto_alert_watcher():
         time.sleep(900)
 
 
+def run_etf_alert_watcher():
+    """ETF/S&P500 алерт >3% — кожні 15 хвилин (тільки в торгові години NYSE)."""
+    print("=== Starting ETF price alert watcher (every 15min) ===", flush=True)
+    time.sleep(100)
+    while True:
+        try:
+            _load_monitor().check_etf_price_alert()
+        except Exception as e:
+            print(f"ETF alert watcher error: {e}", flush=True)
+        time.sleep(900)
+
+
 def run_water_reminder_watcher():
     """Нагадування пити воду — перевірка кожні 5 хв."""
     print("=== Starting water reminder watcher ===", flush=True)
@@ -346,6 +358,7 @@ threading.Thread(target=run_habits_loop,              daemon=True).start()
 # run_shift_reminder_watcher — замінено на check_calendar_reminders (1г)
 threading.Thread(target=run_morning_brief_watcher,    daemon=True).start()
 threading.Thread(target=run_crypto_alert_watcher,     daemon=True).start()
+threading.Thread(target=run_etf_alert_watcher,        daemon=True).start()
 threading.Thread(target=run_weekly_plan_watcher,      daemon=True).start()
 threading.Thread(target=run_meds_reminder_watcher,    daemon=True).start()
 threading.Thread(target=run_weight_reminder_watcher,  daemon=True).start()

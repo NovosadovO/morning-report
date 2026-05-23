@@ -3908,42 +3908,205 @@ def check_proactive_insights():
 CRYPTO_ALERT_FILE = os.path.join(_DATA_DIR, "monitor_crypto_alert.json")
 
 def check_crypto_price_alert():
-    """Шле сповіщення якщо BTC/ETH/AVAX/ONDO змінились >5% за годину."""
-    state = load_json_file(CRYPTO_ALERT_FILE, default={})
+    """Шле сповіщення якщо BTC/ETH/AVAX/ONDO змінились >5% за ~1 годину.
+    Логіка: зберігаємо snapshot цін в GitHub storage кожні 15хв,
+    порівнюємо з snapshot що був ~60хв тому.
+    """
+    now_ts  = int(time.time())
     now_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d %H")
 
-    ids = ",".join(COINS.values())
-    url = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd&include_1h_change=true"
+    # ── Завантажуємо поточні ціни ────────────────────────────────────────────
+    ids  = ",".join(COINS.values())
+    url  = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd"
     data = fetch_json(url)
+    if not data:
+        # Fallback на Kraken
+        data = _get_prices_kraken()
     if not data:
         return
 
-    alerts = []
+    # ── Поточні ціни ─────────────────────────────────────────────────────────
+    current = {}
     for symbol, cg_id in COINS.items():
-        price   = data.get(cg_id, {}).get("usd")
-        change1h = data.get(cg_id, {}).get("usd_1h_change")
-        if price is None or change1h is None:
+        price = data.get(cg_id, {}).get("usd") if isinstance(data.get(cg_id), dict) else None
+        if price:
+            current[cg_id] = price
+
+    if not current:
+        return
+
+    # ── Читаємо/оновлюємо snapshot з GitHub storage ───────────────────────────
+    snapshots = storage.load("crypto_price_snapshots.json", default={})
+    # snapshots = {cg_id: [[ts, price], ...]}  — хронологічний список
+
+    alerts = []
+    alert_key_prefix = f"alerted_{now_str}"
+
+    for symbol, cg_id in COINS.items():
+        price = current.get(cg_id)
+        if not price:
             continue
 
-        key = f"{cg_id}_{now_str}"
-        if state.get(key):
-            continue
+        pts = snapshots.get(cg_id, [])
 
-        if abs(change1h) >= 5:
-            arrow = "🚀" if change1h > 0 else "💥"
-            sign  = "+" if change1h > 0 else ""
-            alerts.append(
-                f"{arrow} <b>{symbol}</b> {sign}{change1h:.1f}% за годину\n"
-                f"   Ціна: <code>${price:,.2f}</code>"
-            )
-            state[key] = True
+        # Знаходимо точку ~45-75 хв тому
+        ref_price = None
+        for ts_old, p_old in reversed(pts):
+            age_min = (now_ts - ts_old) / 60
+            if 45 <= age_min <= 75:
+                ref_price = p_old
+                break
+
+        # Якщо немає ~1год точки — беремо найстарішу з доступних (>30хв)
+        if ref_price is None:
+            for ts_old, p_old in pts:
+                if (now_ts - ts_old) >= 1800:
+                    ref_price = p_old
+                    break
+
+        if ref_price and ref_price > 0:
+            pct = (price - ref_price) / ref_price * 100
+            alert_key = f"{cg_id}_{now_str}"
+            already_sent = snapshots.get("_alerts_sent", {}).get(alert_key)
+
+            if abs(pct) >= 5 and not already_sent:
+                arrow = "🚀" if pct > 0 else "💥"
+                sign  = "+" if pct > 0 else ""
+                age_h = (now_ts - [ts for ts, _ in pts if _ == ref_price][0] if [(ts, p) for ts, p in pts if p == ref_price] else now_ts - now_ts + 3600) / 3600
+                alerts.append(
+                    f"{arrow} <b>{symbol}</b> {sign}{pct:.1f}% за ~1г\n"
+                    f"   Зараз: <code>${price:,.2f}</code>  Було: <code>${ref_price:,.2f}</code>"
+                )
+                if "_alerts_sent" not in snapshots:
+                    snapshots["_alerts_sent"] = {}
+                snapshots["_alerts_sent"][alert_key] = True
+
+        # Додаємо поточну точку (не частіше ніж раз на 10хв)
+        if not pts or (now_ts - pts[-1][0]) >= 600:
+            pts.append([now_ts, price])
+        # Тримаємо тільки останні 2 години
+        pts = [[ts, p] for ts, p in pts if (now_ts - ts) <= 7200]
+        snapshots[cg_id] = pts
+
+    # Чистимо старі ключі алертів (старші 6г)
+    if "_alerts_sent" in snapshots:
+        cutoff = (datetime.now(timezone.utc) + timedelta(hours=2) - timedelta(hours=6)).strftime("%Y-%m-%d %H")
+        snapshots["_alerts_sent"] = {
+            k: v for k, v in snapshots["_alerts_sent"].items()
+            if k.split("_")[-1] >= cutoff
+        }
+
+    storage.save("crypto_price_snapshots.json", snapshots)
 
     if alerts:
-        msg = "⚡ <b>Крипто алерт!</b>\n\n" + "\n".join(alerts)
+        msg = "⚡ <b>Крипто алерт!</b>\n\n" + "\n\n".join(alerts)
         send_telegram(msg)
         print(f"Crypto price alert sent: {len(alerts)} coins")
 
-    save_json_file(CRYPTO_ALERT_FILE, state)
+
+# ─── ETF PRICE ALERT ──────────────────────────────────────────────────────────
+
+ETF_ALERT_TICKERS = [
+    ("IBIT",  "IBIT"),
+    ("ETHA",  "ETHA"),
+    ("VAVA",  "VAVA.SW"),
+    ("GAVA",  "GAVA"),
+    ("S&P500","^GSPC"),
+]
+ETF_ALERT_THRESHOLD = 3.0  # % зміна за ~1г для алерту
+
+def check_etf_price_alert():
+    """Шле сповіщення якщо ETF/S&P500 змінились >3% за ~1 годину.
+    Працює тільки в торгові години NYSE (14:30–21:00 UTC).
+    """
+    try:
+        import yfinance as yf
+    except ImportError:
+        return
+
+    now_utc = datetime.now(timezone.utc)
+    now_ts  = int(time.time())
+    now_str = (now_utc + timedelta(hours=2)).strftime("%Y-%m-%d %H")
+
+    # NYSE торгується 14:30–21:00 UTC, пн-пт
+    weekday = now_utc.weekday()  # 0=пн, 6=нд
+    hour_utc = now_utc.hour + now_utc.minute / 60
+    if weekday >= 5 or not (14.5 <= hour_utc <= 21.0):
+        return  # ринок закритий
+
+    # ── Поточні ціни ─────────────────────────────────────────────────────────
+    current = {}
+    for name, sym in ETF_ALERT_TICKERS:
+        try:
+            h = yf.Ticker(sym).history(period="1d", interval="5m")
+            if len(h) > 0:
+                current[name] = float(h["Close"].iloc[-1])
+        except Exception:
+            pass
+
+    if not current:
+        return
+
+    # ── Snapshot з GitHub storage ─────────────────────────────────────────────
+    snaps = storage.load("etf_price_snapshots.json", default={})
+    alerts = []
+
+    for name, sym in ETF_ALERT_TICKERS:
+        price = current.get(name)
+        if not price:
+            continue
+
+        pts = snaps.get(name, [])
+
+        # Шукаємо точку ~45-75 хв тому
+        ref_price = None
+        for ts_old, p_old in reversed(pts):
+            age_min = (now_ts - ts_old) / 60
+            if 45 <= age_min <= 90:
+                ref_price = p_old
+                break
+        if ref_price is None:
+            for ts_old, p_old in pts:
+                if (now_ts - ts_old) >= 1800:
+                    ref_price = p_old
+                    break
+
+        if ref_price and ref_price > 0:
+            pct = (price - ref_price) / ref_price * 100
+            alert_key = f"{name}_{now_str}"
+            already_sent = snaps.get("_alerts_sent", {}).get(alert_key)
+
+            if abs(pct) >= ETF_ALERT_THRESHOLD and not already_sent:
+                arrow = "🚀" if pct > 0 else "💥"
+                sign  = "+" if pct > 0 else ""
+                alerts.append(
+                    f"{arrow} <b>{name}</b> {sign}{pct:.1f}% за ~1г\n"
+                    f"   Зараз: <code>${price:,.2f}</code>  Було: <code>${ref_price:,.2f}</code>"
+                )
+                if "_alerts_sent" not in snaps:
+                    snaps["_alerts_sent"] = {}
+                snaps["_alerts_sent"][alert_key] = True
+
+        # Зберігаємо точку (не частіше ніж раз на 10хв)
+        if not pts or (now_ts - pts[-1][0]) >= 600:
+            pts.append([now_ts, price])
+        pts = [[ts, p] for ts, p in pts if (now_ts - ts) <= 7200]
+        snaps[name] = pts
+
+    # Чистимо старі ключі алертів
+    if "_alerts_sent" in snaps:
+        cutoff = (now_utc + timedelta(hours=2) - timedelta(hours=6)).strftime("%Y-%m-%d %H")
+        snaps["_alerts_sent"] = {
+            k: v for k, v in snaps["_alerts_sent"].items()
+            if k.split("_")[-1] >= cutoff
+        }
+
+    storage.save("etf_price_snapshots.json", snaps)
+
+    if alerts:
+        msg = "📊 <b>ETF алерт!</b>\n\n" + "\n\n".join(alerts)
+        send_telegram(msg)
+        print(f"ETF price alert sent: {len(alerts)} tickers")
 
 
 # ─── СТАТИСТИКА ЗВИЧОК ЗА ТИЖДЕНЬ (щопонеділка 9:00) ─────────────────────────
