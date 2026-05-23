@@ -1731,8 +1731,7 @@ def _get_current_shift_context(calendar_text=""):
 
 def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro_text=None):
     """
-    Живий підсумок дня — генерується Gemini на основі реальних даних.
-    Кожен підсумок унікальний, прив'язаний до конкретних цифр і контексту.
+    Живий підсумок дня — розділений по темах, з аналізом попередніх підсумків.
     """
     import re as _re, hashlib as _hsh
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
@@ -1743,7 +1742,7 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
     shift_ctx = _get_current_shift_context(calendar_text)
     shift = shift_ctx.get("shift", "free")
 
-    # ── Збираємо реальні дані для контексту Gemini ───────────────────────────
+    # ── Збираємо реальні дані для контексту ──────────────────────────────────
 
     # Погода
     weather_facts = ""
@@ -1765,7 +1764,7 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
     crypto_facts = ""
     if prices_text:
         coins_data = []
-        for coin in ["BTC", "ETH", "SOL", "BNB"]:
+        for coin in ["BTC", "ETH", "AVAX", "ONDO"]:
             row_m = _re.search(r"[^\n]*" + coin + r"[^\n]*", prices_text)
             if not row_m: continue
             row = row_m.group(0)
@@ -1773,29 +1772,32 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
             pct_m = _re.search(r"([+\-−][\d.]+)%", row)
             if price_m:
                 pct_str = pct_m.group(0) if pct_m else ""
-                trend = "🔺" if "🔺" in row else ("🔻" if "🔻" in row else "→")
+                trend = "▲" if "🔺" in row else ("▼" if "🔻" in row else "→")
                 coins_data.append(f"{coin} ${price_m.group(1)} {pct_str} {trend}")
-        if coins_data:
-            up = prices_text.count("🔺")
-            dn = prices_text.count("🔻")
-            mood = "зелений" if up > dn else ("червоний" if dn > up else "нейтральний")
-            crypto_facts = f"Крипторинок {mood}: " + ", ".join(coins_data[:4])
+        up = prices_text.count("🔺")
+        dn = prices_text.count("🔻")
+        mood = "бичачий" if up > dn else ("ведмежий" if dn > up else "нейтральний")
+        crypto_facts = f"Ринок {mood}. " + ", ".join(coins_data)
 
     # Вага
     weight_facts = ""
+    weight_trend = ""
     try:
-        from storage import load_weight as _lw_s
-        wd = _lw_s()
+        wd = storage.load_weight()
         if wd:
             keys = sorted(wd.keys())
-            last_w = wd.get(today_str_s) or wd.get(keys[-1])
-            if last_w:
-                diff = round(last_w - 78.0, 1)
-                trend_w = ""
-                if len(keys) >= 2:
-                    delta = round(wd[keys[-1]] - wd[keys[-2]], 1)
-                    trend_w = f", тренд {'+' if delta > 0 else ''}{delta} кг"
-                weight_facts = f"Вага: {last_w} кг (ціль 78 кг, залишилось {diff} кг{trend_w})"
+            last_key = keys[-1]
+            last_w = wd[last_key]
+            diff = round(last_w - 78.0, 1)
+            if len(keys) >= 7:
+                week_ago = wd.get(keys[-7], wd.get(keys[0]))
+                delta_week = round(last_w - week_ago, 1)
+                weight_trend = f"За тиждень: {'+' if delta_week > 0 else ''}{delta_week} кг"
+            if len(keys) >= 30:
+                month_ago_val = wd.get(keys[-30], wd.get(keys[0]))
+                delta_month = round(last_w - month_ago_val, 1)
+                weight_trend += f", за місяць: {'+' if delta_month > 0 else ''}{delta_month} кг"
+            weight_facts = f"Остання: {last_w} кг. Ціль 78 кг — залишилось {diff} кг. {weight_trend}"
     except: pass
 
     # Кроки
@@ -1807,22 +1809,34 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
         if sd and sd.get(yest):
             st = sd[yest].get("steps", 0)
             km = sd[yest].get("distance_m", 0) / 1000
-            goal_ok = "ціль виконана ✅" if st >= 8000 else "ціль 8000 не виконана ❌"
-            steps_facts = f"Кроки вчора: {st:,} ({km:.1f} км) — {goal_ok}"
+            goal_ok = "ціль ✅" if st >= 8000 else "ціль 8000 ❌"
+            steps_facts = f"Вчора: {st:,} кроків ({km:.1f} км) — {goal_ok}"
     except: pass
 
     # Ліки
     meds_facts = ""
     try:
-        from storage import load_meds as _lm_s
-        mdb = _lm_s()
+        mdb = storage.load_meds()
         taken = mdb.get(today_str_s)
         if taken is True:
             meds_facts = "Armolopid Plus: прийнято ✅"
         elif taken is False:
             meds_facts = "Armolopid Plus: НЕ прийнято ❌"
         else:
-            meds_facts = "Armolopid Plus: статус невідомий ⬜"
+            meds_facts = "Armolopid Plus: ще не відмічено"
+    except: pass
+
+    # Звички
+    habits_facts = ""
+    try:
+        hd = storage.load_habits()
+        today_h = hd.get(today_str_s, {})
+        done = [k for k, v in today_h.items() if v]
+        not_done = [k for k, v in today_h.items() if not v]
+        if today_h:
+            habits_facts = f"Виконано {len(done)}/{len(today_h)}"
+            if done: habits_facts += f": {', '.join(done[:4])}"
+            if not_done: habits_facts += f". Залишилось: {', '.join(not_done[:3])}"
     except: pass
 
     # Календар
@@ -1830,11 +1844,11 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
     if calendar_text and "нічого не заплановано" not in calendar_text.lower():
         ev_m = _re.findall(r"(\d{2}:\d{2})[^\n]*<b>(.{2,50}?)</b>", calendar_text)
         if ev_m:
-            cal_facts = "Календар: " + "; ".join(f"{t} {n}" for t, n in ev_m[:4])
+            cal_facts = "; ".join(f"{t} {n}" for t, n in ev_m[:5])
         else:
             ev_m2 = _re.findall(r"—\s*<b>(.{2,50}?)</b>", calendar_text)
             if ev_m2:
-                cal_facts = "Календар: " + "; ".join(ev_m2[:4])
+                cal_facts = "; ".join(ev_m2[:5])
 
     # Email
     email_facts = ""
@@ -1854,7 +1868,7 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
             if not any(k in sender.lower() for k in skip_kw):
                 important_emails.append({"subject": subj, "sender": sender, "summary": ai_s})
         if important_emails:
-            email_facts = f"Листів непрочитаних: {unread_cnt}. Потребують уваги: " + "; ".join(f'"{e["subject"]}" від {e["sender"]}' for e in important_emails[:3])
+            email_facts = f"Непрочитаних: {unread_cnt}. Важливі: " + "; ".join(f'"{e["subject"]}" від {e["sender"]}' for e in important_emails[:3])
             email_drafts_context = "\n".join(f'- Лист від "{e["sender"]}": {e["subject"]}. Суть: {e["summary"]}' for e in important_emails[:3])
         elif unread_cnt > 0:
             email_facts = f"Нових листів: {unread_cnt}"
@@ -1865,9 +1879,9 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
         tense = _re.findall(r"🔴[^\n<]+", astro_text)
         good = _re.findall(r"🟢[^\n<]+", astro_text)
         parts_a = []
-        if tense: parts_a.append("Напружено: " + _re.sub(r"<[^>]+>","",tense[0]).strip())
-        if good: parts_a.append("Сприятливо: " + _re.sub(r"<[^>]+>","",good[0]).strip())
-        if parts_a: astro_facts = "Астро: " + "; ".join(parts_a)
+        if tense: parts_a.append(_re.sub(r"<[^>]+>","",tense[0]).strip())
+        if good: parts_a.append(_re.sub(r"<[^>]+>","",good[0]).strip())
+        if parts_a: astro_facts = "; ".join(parts_a)
 
     # Зміна
     if shift == "early":
@@ -1875,40 +1889,86 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
     elif shift == "night":
         shift_desc = "нічна зміна 18:00–06:00"
     elif shift == "after_night":
-        shift_desc = "вихідний після нічної — відновлення"
+        shift_desc = "вихідний після нічної"
     else:
-        shift_desc = "вихідний / вільний день"
+        shift_desc = "вільний день"
 
-    context_parts = [p for p in [
-        weather_facts, crypto_facts, weight_facts, steps_facts,
-        meds_facts, cal_facts, email_facts, astro_facts
-    ] if p]
+    # ── Завантажуємо попередні підсумки (останні 5) ───────────────────────────
+    prev_summaries_ctx = ""
+    try:
+        prev_data = storage.load("summaries_history.json", default=[])
+        if prev_data:
+            recent = prev_data[-5:]
+            prev_summaries_ctx = "\n".join(
+                f"[{p['date']} {p.get('time','')}] {p['text'][:300]}"
+                for p in recent
+            )
+    except: pass
 
-    drafts_section = ""
+    # ── Будуємо промпт для Gemini ─────────────────────────────────────────────
+    sections_data = {
+        "🌤 ПОГОДА": weather_facts,
+        "💹 КРИПТО": crypto_facts,
+        "⚖️ ВАГА": weight_facts or "—",
+        "🏃 АКТИВНІСТЬ": steps_facts or "—",
+        "💊 ЛІКИ": meds_facts or "—",
+        "✅ ЗВИЧКИ": habits_facts or "—",
+        "📅 КАЛЕНДАР": cal_facts or "Нічого",
+        "📧 ПОШТА": email_facts or "—",
+        "🔮 АСТРО": astro_facts or "—",
+    }
+
+    sections_str = "\n".join(f"{k}: {v}" for k, v in sections_data.items() if v and v != "—")
+
+    prev_ctx_block = ""
+    if prev_summaries_ctx:
+        prev_ctx_block = f"""
+Попередні підсумки (для розуміння трендів):
+{prev_summaries_ctx}
+"""
+
+    drafts_block = ""
     if email_drafts_context:
-        drafts_section = (
-            "\n\nТакож для кожного важливого листа напиши коротку чернетку відповіді "
-            "(1-3 речення, ввічливо, по суті). Формат:\n"
-            "✍️ Чернетка для [відправник]: [текст]\n\n"
-            f"Листи для чернеток:\n{email_drafts_context}"
-        )
+        drafts_block = f"""
+Для кожного важливого листа — коротка чернетка відповіді (1-3 речення):
+Формат: ✍️ Чернетка для [відправник]: [текст]
+Листи:
+{email_drafts_context}"""
 
-    prompt = (
-        f"Ти персональний асистент Олега (Кошіце, Словаччина). "
-        f"Зараз {now_local.strftime('%H:%M')}, {shift_desc}. "
-        f"Реальні дані прямо зараз:\n"
-        + "\n".join(f"• {p}" for p in context_parts) +
-        "\n\n"
-        "Напиши живий підсумок-аналіз (НЕ загальні слова — тільки конкретні факти). "
-        "Структура:\n"
-        "1. Одне речення про загальну картину дня\n"
-        "2. Що є / що зроблено — конкретно\n"
-        "3. Чого нема / що треба зробити\n"
-        "4. 1-2 практичні рекомендації ЗАРАЗ\n"
-        "5. Якщо є листи — що з ними робити"
-        + drafts_section +
-        f"\n\nПо-українськи. Без зайвих слів. Кожен пункт з нового рядка з емоджі. Seed: {slot_seed}"
-    )
+    prompt = f"""Ти персональний AI-асистент Олега (Кошіце, Словаччина).
+Зараз {now_local.strftime('%H:%M')}, {today_str_s}, {shift_desc}.
+
+Поточні дані:
+{sections_str}
+{prev_ctx_block}
+Завдання: напиши структурований підсумок з розділами. ФОРМАТ ВІДПОВІДІ:
+
+🌤 <b>ПОГОДА</b>
+[аналіз погоди — що це означає для дня, чи варто виходити, чи брати парасолю]
+
+💹 <b>КРИПТО</b>
+[аналіз ринку — настрій, тренд, порівняй з попередніми підсумками якщо є, своя думка]
+
+⚖️ <b>ЗДОРОВ'Я</b>
+[вага + кроки + ліки разом — тренд, оцінка, конкретна порада]
+
+✅ <b>ЗВИЧКИ ТА ПРОДУКТИВНІСТЬ</b>
+[звички + календар — що виконано, що ні, рекомендація]
+
+📧 <b>ПОШТА</b>
+[що треба зробити з листами, пріоритети]
+{drafts_block}
+
+🎯 <b>МОЯ ДУМКА</b>
+[загальна оцінка дня від бота — порівняй з попередніми підсумками, що змінилось, що турбує або радує, 1-2 особисті рекомендації САМЕ ЗАРАЗ]
+
+Правила:
+- Тільки конкретні факти і числа — ніяких загальних слів
+- Кожен розділ — 2-4 речення, стисло
+- Якщо даних нема — пиши "немає даних" і не вигадуй
+- Порівнюй з попередніми підсумками де є дані
+- По-українськи, без markdown крім <b>
+- Seed: {slot_seed}"""
 
     gemini_key = os.environ.get("GEMINI_API_KEY", "")
     ai_summary = ""
@@ -1916,48 +1976,56 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
         try:
             body_ai = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 700, "temperature": 0.85},
+                "generationConfig": {"maxOutputTokens": 900, "temperature": 0.8},
                 "thinkingConfig": {"thinkingBudget": 0}
             }).encode()
             req_ai = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
                 data=body_ai, headers={"Content-Type": "application/json"}, method="POST"
             )
-            with urllib.request.urlopen(req_ai, timeout=25) as r_ai:
+            with urllib.request.urlopen(req_ai, timeout=30) as r_ai:
                 resp_ai = json.loads(r_ai.read())
             ai_summary = resp_ai["candidates"][0]["content"]["parts"][0]["text"].strip()
         except Exception as e:
             print(f"get_summary gemini error: {e}")
 
+    # ── Зберігаємо підсумок в history ────────────────────────────────────────
+    if ai_summary:
+        try:
+            prev_data = storage.load("summaries_history.json", default=[])
+            if not isinstance(prev_data, list):
+                prev_data = []
+            prev_data.append({
+                "date": today_str_s,
+                "time": now_local.strftime("%H:%M"),
+                "text": ai_summary
+            })
+            # Зберігаємо останні 60 підсумків (20 днів * 3 рази)
+            prev_data = prev_data[-60:]
+            storage.save("summaries_history.json", prev_data)
+        except Exception as _se:
+            print(f"[summary history] save error: {_se}")
+
     if not ai_summary:
+        # Fallback без Gemini
         lines_fb = []
-        if shift_ctx.get("greeting_override"):
-            lines_fb.append(shift_ctx["greeting_override"])
-        elif shift == "after_night":
+        if shift == "after_night":
             lines_fb.append("🛋 <b>Після нічної.</b> Відновлення важливіше за активність.")
         elif 5 <= h < 10:
-            lines_fb.append("🌅 <b>Доброго ранку, Олежу!</b>")
+            lines_fb.append("🌅 Доброго ранку!")
         elif 10 <= h < 17:
-            lines_fb.append("☀️ <b>Добрий день!</b>")
+            lines_fb.append("☀️ Добрий день!")
         else:
-            lines_fb.append("🌙 <b>Добрий вечір!</b>")
-        for fact in context_parts:
-            lines_fb.append(f"• {fact}")
-        day_hash = int(_hsh.md5(today_str_s.encode()).hexdigest(), 16)
-        motivations = [
-            "💡 Зроби один крок вперед сьогодні.",
-            "🎯 Фокус на одну ключову задачу.",
-            "🔋 Твоя енергія = твій капітал.",
-            "🌊 Мікро-прогрес щодня — це перемога.",
-            "🧠 10 хв читання = інвестиція в себе.",
-            "⚡ Найважча задача першою.",
-            "🕊 Спокій = кращі рішення.",
-        ]
-        lines_fb.append(motivations[day_hash % len(motivations)])
+            lines_fb.append("🌙 Добрий вечір!")
+        for k, v in sections_data.items():
+            if v and v != "—":
+                lines_fb.append(f"{k}: {v}")
         ai_summary = "\n".join(lines_fb)
 
     header = "━━━━━━━━━━━━━━━━━━━━━━\n🗂 <b>ПІДСУМОК</b>\n━━━━━━━━━━━━━━━━━━━━━━"
-    return f"{header}\n{ai_summary}"
+    return f"{header}\n\n{ai_summary}"
+
+
 
 
 
