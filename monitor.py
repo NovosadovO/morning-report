@@ -31,6 +31,7 @@ _DATA_DIR       = os.path.dirname(os.path.abspath(__file__))
 SEEN_EMAIL_FILE = os.path.join(_DATA_DIR, "monitor_seen_emails.json")
 # Ціновий кеш в /tmp — зберігається між циклами але скидається при деплої
 PRICE_CACHE     = "/tmp/monitor_prices_3h.json"
+PRICE_HISTORY   = "/tmp/price_history_30d.json"  # накопичена historical для графіка
 
 COINS = {
     "BTC":  "bitcoin",
@@ -354,6 +355,27 @@ def get_prices():
         lines.append(f"{arrow} <b>{symbol}</b>  <code>${price:,.2f}</code>  <i>{ch}</i>{pct_prev_tag}")
 
     save_json_file(PRICE_CACHE, now_prices)
+
+    # ── Дописуємо в historical для графіка (1 точка на годину, 30д) ──────────
+    try:
+        _now_ts = int(time.time())
+        _hist = load_json_file(PRICE_HISTORY, default={})  # {cg_id: [[ts, price], ...]}
+        _cutoff = _now_ts - 30 * 86400
+        for _sym, _cg_id in COINS.items():
+            _price = now_prices.get(_cg_id, {}).get("price")
+            if _price is None:
+                continue
+            _pts = _hist.get(_cg_id, [])
+            # Додаємо тільки якщо остання точка >45 хв тому
+            if not _pts or (_now_ts - _pts[-1][0]) > 2700:
+                _pts.append([_now_ts, _price])
+            # Обрізаємо старіші 30д
+            _pts = [p for p in _pts if p[0] >= _cutoff]
+            _hist[_cg_id] = _pts
+        save_json_file(PRICE_HISTORY, _hist)
+    except Exception as _he:
+        print(f"[price history] save error: {_he}")
+
     return "💹 <b>ЦІНИ АКТИВІВ</b>\n\n" + "\n".join(lines)
 
 
@@ -2258,8 +2280,8 @@ def _format_prices_visual(prices_text, cal_events_text=""):
 def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
     """
     Генерує PNG з лінійними графіками цін BTC/ETH/AVAX/ONDO за N днів.
+    Читає з локального PRICE_HISTORY (накопичується кожен звіт) — без CoinGecko.
     Темна тема, 2×2 сабплоти, fill_between, тренд-лінія, % зміна.
-    Повертає bytes або None при помилці.
     """
     try:
         import matplotlib
@@ -2267,100 +2289,81 @@ def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
         import matplotlib.pyplot as plt
         import matplotlib.dates as mdates
         import numpy as np
-        from datetime import datetime as dt, timedelta as td
-        import io, urllib.request as _ur, json as _js
+        from datetime import datetime as dt
+        import io, time as _t
 
         COINS_MAP = [
-            ("BTC", "bitcoin",       "#F7931A"),
-            ("ETH", "ethereum",      "#627EEA"),
-            ("AVAX","avalanche-2",   "#E84142"),
-            ("ONDO","ondo-finance",  "#00C6A2"),
+            ("BTC", "bitcoin",      "#F7931A"),
+            ("ETH", "ethereum",     "#627EEA"),
+            ("AVAX","avalanche-2",  "#E84142"),
+            ("ONDO","ondo-finance", "#00C6A2"),
         ]
+        BG    = "#0D1117"
+        PANEL = "#161B22"
+        GRID  = "#21262D"
+        TEXT  = "#C9D1D9"
+        MUTED = "#8B949E"
 
-        BG      = "#0D1117"
-        PANEL   = "#161B22"
-        GRID    = "#21262D"
-        TEXT    = "#C9D1D9"
-        MUTED   = "#8B949E"
+        # Читаємо з локального history файлу
+        hist = load_json_file(PRICE_HISTORY, default={})
+        cutoff = _t.time() - days * 86400
 
         fig, axes = plt.subplots(2, 2, figsize=(10, 6))
         fig.patch.set_facecolor(BG)
         fig.subplots_adjust(hspace=0.45, wspace=0.35, left=0.07, right=0.97, top=0.90, bottom=0.08)
 
-        # Завантажуємо дані з затримкою щоб уникнути rate limit
-        import time as _tslp
-        coin_data = {}
-        for sym, cid, color in COINS_MAP:
-            try:
-                _url = (f"https://api.coingecko.com/api/v3/coins/{cid}"
-                        f"/market_chart?vs_currency=usd&days={days}&interval=daily")
-                with _ur.urlopen(_ur.Request(_url, headers={"User-Agent":"bot/1.0"}), timeout=10) as _r:
-                    _mc = _js.loads(_r.read())
-                coin_data[sym] = _mc.get("prices", [])
-            except Exception as _e:
-                coin_data[sym] = []
-            _tslp.sleep(1.2)  # CoinGecko free tier: ~5 req/min
+        has_any_data = False
 
         for ax, (sym, cid, color) in zip(axes.flat, COINS_MAP):
             ax.set_facecolor(PANEL)
             for spine in ax.spines.values():
                 spine.set_edgecolor(GRID)
             ax.tick_params(colors=MUTED, labelsize=7)
-            ax.yaxis.label.set_color(MUTED)
             ax.xaxis.set_major_formatter(mdates.DateFormatter("%d.%m"))
             ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=1))
 
-            try:
-                raw = coin_data.get(sym, [])
-                if len(raw) < 3:
-                    ax.text(0.5, 0.5, "немає даних", ha="center", va="center",
-                            color=MUTED, transform=ax.transAxes, fontsize=9)
-                    ax.set_title(sym, color=color, fontsize=10, fontweight="bold", pad=6)
-                    continue
+            pts = [p for p in hist.get(cid, []) if p[0] >= cutoff]
+            pts.sort(key=lambda x: x[0])
 
-                timestamps = [dt.utcfromtimestamp(p[0]/1000) for p in raw]
-                prices     = [p[1] for p in raw]
-
-                # Лінія + заливка
-                ax.plot(timestamps, prices, color=color, linewidth=1.6, zorder=3)
-                ax.fill_between(timestamps, prices, min(prices),
-                                color=color, alpha=0.12, zorder=2)
-
-                # Тренд-лінія (поліном 1-го ступеня)
-                x_num = np.array([(t - timestamps[0]).total_seconds() for t in timestamps])
-                coeffs = np.polyfit(x_num, prices, 1)
-                trend_vals = np.polyval(coeffs, x_num)
-                t_color = "#3FB950" if coeffs[0] >= 0 else "#F85149"
-                ax.plot(timestamps, trend_vals, color=t_color, linewidth=1.0,
-                        linestyle="--", alpha=0.7, zorder=4)
-
-                # Сітка
-                ax.grid(True, color=GRID, linewidth=0.5, zorder=1)
-
-                # % зміна за весь період
-                ch = (prices[-1] - prices[0]) / prices[0] * 100
-                sign = "+" if ch >= 0 else ""
-                e = "^^" if ch > 15 else ("+" if ch > 0 else "-")
-
-                # Заголовок
-                p_fmt = f"${prices[-1]:,.0f}" if prices[-1] >= 10 else f"${prices[-1]:.3f}"
-                ax.set_title(f"{sym}  {p_fmt}   {sign}{ch:.1f}%  {e}",
-                             color=TEXT, fontsize=9, fontweight="bold", pad=5)
-
-                # Форматування цін на осі Y
-                ax.yaxis.set_major_formatter(
-                    plt.FuncFormatter(lambda v, _: f"${v:,.0f}" if v >= 10 else f"${v:.2f}")
-                )
-                plt.setp(ax.get_xticklabels(), rotation=30, ha="right", fontsize=6)
-
-            except Exception as e:
-                ax.text(0.5, 0.5, f"помилка\n{e}", ha="center", va="center",
-                        color=MUTED, transform=ax.transAxes, fontsize=7)
+            if len(pts) < 2:
+                ax.text(0.5, 0.5, "накопичується...", ha="center", va="center",
+                        color=MUTED, transform=ax.transAxes, fontsize=9)
                 ax.set_title(sym, color=color, fontsize=10, fontweight="bold", pad=6)
+                continue
 
-        fig.suptitle(f"Trend {days}d  |  BTC / ETH / AVAX / ONDO", color=TEXT, fontsize=12,
-                     fontweight="bold", y=0.97)
+            has_any_data = True
+            timestamps = [dt.utcfromtimestamp(p[0]) for p in pts]
+            prices     = [p[1] for p in pts]
 
+            ax.plot(timestamps, prices, color=color, linewidth=1.6, zorder=3)
+            ax.fill_between(timestamps, prices, min(prices), color=color, alpha=0.12, zorder=2)
+
+            # Тренд-лінія
+            x_num = np.array([(t - timestamps[0]).total_seconds() for t in timestamps])
+            coeffs = np.polyfit(x_num, prices, 1)
+            t_color = "#3FB950" if coeffs[0] >= 0 else "#F85149"
+            ax.plot(timestamps, np.polyval(coeffs, x_num), color=t_color,
+                    linewidth=1.0, linestyle="--", alpha=0.75, zorder=4)
+
+            ax.grid(True, color=GRID, linewidth=0.5, zorder=1)
+
+            ch = (prices[-1] - prices[0]) / prices[0] * 100
+            sign = "+" if ch >= 0 else ""
+            p_fmt = f"${prices[-1]:,.0f}" if prices[-1] >= 10 else f"${prices[-1]:.3f}"
+            ax.set_title(f"{sym}  {p_fmt}   {sign}{ch:.1f}%",
+                         color=TEXT, fontsize=9, fontweight="bold", pad=5)
+            ax.yaxis.set_major_formatter(
+                plt.FuncFormatter(lambda v, _: f"${v:,.0f}" if v >= 10 else f"${v:.2f}")
+            )
+            plt.setp(ax.get_xticklabels(), rotation=30, ha="right", fontsize=6)
+
+        if not has_any_data:
+            print("[generate_crypto_trend_chart] no history data yet")
+            plt.close(fig)
+            return None
+
+        fig.suptitle(f"Trend {days}d  |  BTC / ETH / AVAX / ONDO", color=TEXT,
+                     fontsize=12, fontweight="bold", y=0.97)
         buf = io.BytesIO()
         fig.savefig(buf, format="png", dpi=130, bbox_inches="tight",
                     facecolor=BG, edgecolor="none")
