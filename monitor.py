@@ -2720,8 +2720,10 @@ def main():
     if prices_text:
         parts.append(prices_text)
         # PNG графік цін — одразу після крипто тексту
+        print("[chart] starting crypto chart generation...")
         try:
             _cchart_inline = generate_crypto_trend_chart(30)
+            print(f"[chart] crypto generate result: {len(_cchart_inline) if _cchart_inline else None} bytes")
             if _cchart_inline:
                 parts.append({"photo": _cchart_inline, "caption": "📈 Тренд 30д | BTC ETH AVAX ONDO"})
             else:
@@ -2786,8 +2788,10 @@ def main():
         if len(_health_lines) > 1:
             parts.append("\n".join(_health_lines))
             # PNG графік ваги — одразу після здоров'я тексту
+            print("[chart] starting weight chart generation...")
             try:
                 _wchart_inline = generate_weight_trend_chart(30)
+                print(f"[chart] weight generate result: {len(_wchart_inline) if _wchart_inline else None} bytes")
                 if _wchart_inline:
                     parts.append({"photo": _wchart_inline, "caption": "⚖️ Тренд ваги 30д"})
                 else:
