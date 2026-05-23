@@ -2781,7 +2781,11 @@ def main():
     if include_learning_blocks:
         try:
             prices_raw = get_prices()
-            prices_text = _format_prices_visual(prices_raw, cal_events_text) or prices_raw
+            # Відокремлюємо ETF блок перед форматуванням (щоб не загубити)
+            etf_split = prices_raw.split("\n📈 <b>ETF / ІНДЕКСИ</b>", 1)
+            crypto_raw = etf_split[0]
+            etf_suffix = ("\n\n📈 <b>ETF / ІНДЕКСИ</b>" + etf_split[1]) if len(etf_split) > 1 else ""
+            prices_text = (_format_prices_visual(crypto_raw, cal_events_text) or crypto_raw) + etf_suffix
         except Exception as e:
             print(f"get_prices error: {e}")
             prices_text = None
