@@ -399,23 +399,25 @@ def handle_email_callback(callback_query):
                 try:
                     with urllib.request.urlopen(req, timeout=40) as r:
                         resp_data = json.loads(r.read())
-                    send(_cid, "🔍 DEBUG: Gemini відповів, парсю...")
                     raw_ai = resp_data["candidates"][0]["content"]["parts"][0]["text"].strip()
+                    # прибираємо markdown обгортку
                     raw_ai = _re2.sub(r"^```(?:json)?\s*", "", raw_ai, flags=_re2.MULTILINE)
                     raw_ai = _re2.sub(r"\s*```\s*$", "", raw_ai, flags=_re2.MULTILINE).strip()
                     try:
                         ai = json.loads(raw_ai)
                     except Exception:
+                        # спробуємо витягнути поля regex
                         dm = _re2.search(r'"description"\s*:\s*"((?:[^"\\]|\\.)*)"', raw_ai, _re2.DOTALL)
                         om = _re2.search(r'"opinion"\s*:\s*"((?:[^"\\]|\\.)*)"', raw_ai, _re2.DOTALL)
                         if dm:
                             ai = {"description": dm.group(1), "opinion": om.group(1) if om else ""}
+                        else:
+                            # Gemini відповів але не JSON — беремо як є
+                            ai = {"description": raw_ai[:600], "opinion": ""}
                 except Exception as _ge:
-                    send(_cid, f"🔍 DEBUG: Gemini ERROR: {_ge}")
                     print(f"[email_describe] gemini error: {_ge}", flush=True)
 
                 # ── Формуємо відповідь ────────────────────────────────────────
-                send(_cid, f"🔍 DEBUG: ai={str(ai)[:100]}, формую відповідь...")
                 if ai and isinstance(ai, dict) and (ai.get("description") or ai.get("opinion")):
                     desc    = (ai.get("description") or "").strip()
                     opinion = (ai.get("opinion") or "").strip()
@@ -428,9 +430,16 @@ def handle_email_callback(callback_query):
                     preview = body[:800].strip() if body else "(порожній лист)"
                     out = f"📖 <b>Текст листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n<i>{preview}</i>"
 
-                send(_cid, f"🔍 DEBUG: надсилаю reply, mid={_mid}")
-                send_reply(_cid, _mid, out[:4000])
-                send(_cid, "🔍 DEBUG: DONE")
+                # send_reply — якщо повідомлення вже старе, Telegram може відхилити reply
+                result = api("sendMessage", {
+                    "chat_id": _cid,
+                    "text": out[:4000],
+                    "parse_mode": "HTML",
+                    "reply_to_message_id": _mid
+                })
+                if not result.get("ok"):
+                    # fallback — просто надіслати без reply
+                    send(_cid, out[:4000])
 
             except Exception as _e:
                 import traceback as _tb
