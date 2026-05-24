@@ -358,14 +358,21 @@ def handle_email_callback(callback_query):
 
             # ── Gemini ───────────────────────────────────────────────────────
             prompt = (
-                "Проаналізуй цей email і дай відповідь українською у форматі:\n"
-                "Зміст: (5-8 речень — детально про що лист, хто відправник, що пропонує або просить)\n"
-                "Порада: (2-3 речення — чи реагувати, що конкретно зробити і коли)\n\n"
-                f"Лист:\nВід: {sender}\nТема: {subject}\n\n{body[:2000]}"
+                "Проаналізуй цей email і дай розгорнуту відповідь ТІЛЬКИ українською мовою.\n"
+                "Відповідай у такому форматі (без зірочок, без markdown, лише звичайний текст):\n\n"
+                "ВІДПРАВНИК\n"
+                "Хто це, з якої компанії або організації, яка їхня роль чи мета.\n\n"
+                "СУТЬ ЛИСТА\n"
+                "Детально поясни про що йдеться — мінімум 6-8 речень. Що пропонується, що повідомляється, контекст ситуації.\n\n"
+                "КЛЮЧОВІ ДЕТАЛІ\n"
+                "Важливі факти, цифри, дати, суми, посилання, умови — все що варто запам'ятати.\n\n"
+                "ЩО РОБИТИ\n"
+                "Конкретні дії у відповідь: чи потрібно відповідати, що саме зробити, в який термін, пріоритет.\n\n"
+                f"Лист:\nВід: {sender}\nТема: {subject}\n\n{body[:3000]}"
             )
             req_body = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 1024, "temperature": 0.3}
+                "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.3}
             }).encode()
             url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
             req = urllib.request.Request(url, data=req_body, headers={"Content-Type": "application/json"})
@@ -375,6 +382,7 @@ def handle_email_callback(callback_query):
                 with urllib.request.urlopen(req, timeout=40) as r:
                     resp_data = json.loads(r.read())
                 ai_text = resp_data["candidates"][0]["content"]["parts"][0]["text"].strip()
+                ai_text = ai_text.replace("**", "").replace("*", "")
                 print(f"[email_describe] gemini ok, len={len(ai_text)}", flush=True)
             except Exception as _ge:
                 print(f"[email_describe] gemini error: {_ge}", flush=True)
@@ -392,12 +400,12 @@ def handle_email_callback(callback_query):
 
             result = api("sendMessage", {
                 "chat_id": _cid,
-                "text": out[:4000],
+                "text": out[:4096],
                 "reply_to_message_id": _mid
             })
             if not result.get("ok"):
                 # reply не спрацював — надсилаємо без reply
-                api("sendMessage", {"chat_id": _cid, "text": out[:4000]})
+                api("sendMessage", {"chat_id": _cid, "text": out[:4096]})
 
         except Exception as _e:
             import traceback as _tb
