@@ -321,11 +321,54 @@ def handle_email_callback(callback_query):
                 import storage as _storage
                 cache = _storage.load("email_body_cache.json") or {}
                 entry = cache.get(_uid)
+                print(f"[email_describe] cache keys={list(cache.keys())[:5]}, entry={'found' if entry else 'MISS'}", flush=True)
 
                 if not entry:
-                    print(f"[email_describe] uid={_uid} not in cache, keys={list(cache.keys())[:5]}", flush=True)
-                    send_reply(_cid, _mid, "⚠️ Лист не знайдено в кеші. Зачекай наступного звіту — тоді кнопка запрацює.")
-                    return
+                    # Fallback: читаємо з IMAP напряму
+                    print(f"[email_describe] cache miss, trying IMAP fallback", flush=True)
+                    try:
+                        import imaplib, email as _email_lib, socket
+                        socket.setdefaulttimeout(25)
+                        _IMAP_HOST = os.environ.get("IMAP_HOST", "imap.gmail.com")
+                        _IMAP_USER = os.environ.get("EMAIL_USER", "")
+                        _IMAP_PASS = os.environ.get("EMAIL_PASS", "")
+                        _mail = imaplib.IMAP4_SSL(_IMAP_HOST, timeout=25)
+                        _mail.login(_IMAP_USER, _IMAP_PASS)
+                        _mail.select("INBOX")
+                        _, _md = _mail.uid('fetch', _uid.encode(), "(RFC822)")
+                        _mail.logout()
+                        _raw_msg = _md[0][1]
+                        _msg = _email_lib.message_from_bytes(_raw_msg)
+                        # decode subject/sender
+                        import email.header as _eh
+                        def _dh(v):
+                            if not v: return ""
+                            parts = _eh.decode_header(v)
+                            result = []
+                            for _p, _enc in parts:
+                                if isinstance(_p, bytes):
+                                    result.append(_p.decode(_enc or "utf-8", errors="replace"))
+                                else:
+                                    result.append(str(_p))
+                            return " ".join(result)
+                        subject = _dh(_msg.get("Subject", "(без теми)"))
+                        sender  = _dh(_msg.get("From", ""))
+                        # body
+                        body = ""
+                        if _msg.is_multipart():
+                            for _part in _msg.walk():
+                                if _part.get_content_type() == "text/plain":
+                                    body = _part.get_payload(decode=True).decode(_part.get_content_charset() or "utf-8", errors="replace")
+                                    break
+                        else:
+                            body = _msg.get_payload(decode=True).decode(_msg.get_content_charset() or "utf-8", errors="replace")
+                        body = body[:2000]
+                        entry = {"subject": subject, "sender": sender, "body": body}
+                        print(f"[email_describe] IMAP fallback ok: subj={subject[:40]}", flush=True)
+                    except Exception as _fe:
+                        print(f"[email_describe] IMAP fallback error: {_fe}", flush=True)
+                        send_reply(_cid, _mid, f"⚠️ Лист не знайдено в кеші, IMAP fallback теж не спрацював:\n<code>{_fe}</code>")
+                        return
 
                 subject = entry.get("subject", "(без теми)")
                 sender  = entry.get("sender", "")
