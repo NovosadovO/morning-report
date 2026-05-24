@@ -314,16 +314,13 @@ def handle_email_callback(callback_query):
         def _do_describe():
             try:
                 print(f"[email_describe] uid={_uid}", flush=True)
-                send(_cid, f"🔍 DEBUG: старт, uid={_uid}")
 
                 # ── Читаємо з кешу (збережений при get_emails) ───────────────
                 import sys as _sys
                 _sys.path.insert(0, os.path.dirname(__file__))
                 import storage as _storage
-                send(_cid, "🔍 DEBUG: storage imported, loading cache...")
                 cache = _storage.load("email_body_cache.json") or {}
                 entry = cache.get(_uid)
-                send(_cid, f"🔍 DEBUG: cache keys={list(cache.keys())[:5]}, entry={'FOUND' if entry else 'MISS'}")
                 print(f"[email_describe] cache keys={list(cache.keys())[:5]}, entry={'found' if entry else 'MISS'}", flush=True)
 
                 if not entry:
@@ -379,13 +376,11 @@ def handle_email_callback(callback_query):
                 print(f"[email_describe] from cache: subj={subject[:40]}, body_len={len(body)}", flush=True)
 
                 # ── Gemini аналіз ─────────────────────────────────────────────
-                send(_cid, f"🔍 DEBUG: кеш ок, body_len={len(body)}, йду в Gemini...")
                 full_text = f"Від: {sender}\nТема: {subject}\n\n{body}"
                 prompt = (
-                    "Проаналізуй цей email. Відповідь — ТІЛЬКИ валідний JSON, без markdown:\n"
-                    '{"description": "...", "opinion": "..."}\n\n'
-                    "description: переказ змісту (2-4 речення українською).\n"
-                    "opinion: коротка порада — чи реагувати і що зробити (1 речення).\n\n"
+                    "Проаналізуй цей email і дай відповідь українською у форматі:\n"
+                    "Зміст: (2-4 речення — про що лист)\n"
+                    "Порада: (1 речення — чи реагувати і що зробити)\n\n"
                     f"Лист:\n{full_text[:2000]}"
                 )
                 req_body = json.dumps({
@@ -395,42 +390,21 @@ def handle_email_callback(callback_query):
                 url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
                 req = urllib.request.Request(url, data=req_body, headers={"Content-Type": "application/json"})
 
-                ai = None
+                ai_text = None
                 try:
                     with urllib.request.urlopen(req, timeout=40) as r:
                         resp_data = json.loads(r.read())
-                    raw_ai = resp_data["candidates"][0]["content"]["parts"][0]["text"].strip()
-                    # прибираємо markdown обгортку
-                    raw_ai = _re2.sub(r"^```(?:json)?\s*", "", raw_ai, flags=_re2.MULTILINE)
-                    raw_ai = _re2.sub(r"\s*```\s*$", "", raw_ai, flags=_re2.MULTILINE).strip()
-                    try:
-                        ai = json.loads(raw_ai)
-                    except Exception:
-                        # спробуємо витягнути поля regex
-                        dm = _re2.search(r'"description"\s*:\s*"((?:[^"\\]|\\.)*)"', raw_ai, _re2.DOTALL)
-                        om = _re2.search(r'"opinion"\s*:\s*"((?:[^"\\]|\\.)*)"', raw_ai, _re2.DOTALL)
-                        if dm:
-                            ai = {"description": dm.group(1), "opinion": om.group(1) if om else ""}
-                        else:
-                            # Gemini відповів але не JSON — беремо як є
-                            ai = {"description": raw_ai[:600], "opinion": ""}
+                    ai_text = resp_data["candidates"][0]["content"]["parts"][0]["text"].strip()
                 except Exception as _ge:
                     print(f"[email_describe] gemini error: {_ge}", flush=True)
 
                 # ── Формуємо відповідь ────────────────────────────────────────
-                if ai and isinstance(ai, dict) and (ai.get("description") or ai.get("opinion")):
-                    desc    = (ai.get("description") or "").strip()
-                    opinion = (ai.get("opinion") or "").strip()
-                    out = f"📖 <b>Опис листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n"
-                    if desc:
-                        out += f"📋 <b>Зміст:</b>\n{desc}\n\n"
-                    if opinion:
-                        out += f"🤖 <b>Порада:</b> {opinion}"
+                if ai_text:
+                    out = f"📖 <b>Опис листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n{ai_text}"
                 else:
                     preview = body[:800].strip() if body else "(порожній лист)"
                     out = f"📖 <b>Текст листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n<i>{preview}</i>"
 
-                # send_reply — якщо повідомлення вже старе, Telegram може відхилити reply
                 result = api("sendMessage", {
                     "chat_id": _cid,
                     "text": out[:4000],
@@ -438,7 +412,6 @@ def handle_email_callback(callback_query):
                     "reply_to_message_id": _mid
                 })
                 if not result.get("ok"):
-                    # fallback — просто надіслати без reply
                     send(_cid, out[:4000])
 
             except Exception as _e:
