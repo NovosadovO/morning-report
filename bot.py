@@ -294,80 +294,164 @@ def handle_email_callback(callback_query):
     if data.startswith("email_describe_"):
         uid_str = data[len("email_describe_"):]
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📖 Читаю лист..."})
-        try:
-            import sys, os as _os, threading as _thr
-            sys.path.insert(0, _os.path.dirname(__file__))
 
-            def _do_describe():
-                try:
-                    from monitor import _imap_connect, _imap_get_body, _imap_decode_header, _gemini_email_analysis
-                    import email as _email_lib
+        import threading as _thr
 
-                    # ── Завантажуємо лист ────────────────────────────────────
-                    mail = _imap_connect()
-                    mail.select("INBOX")
-                    _, msg_data = mail.uid('fetch', uid_str.encode(), "(RFC822)")
-                    mail.logout()
+        _cid   = chat_id    # capture for closure
+        _uid   = uid_str    # capture for closure
 
-                    # Розпаковуємо відповідь IMAP (може бути list of tuples)
-                    raw_bytes = None
-                    if msg_data:
-                        for item in msg_data:
-                            if isinstance(item, tuple) and len(item) >= 2:
-                                raw_bytes = item[1]
-                                break
-                            elif isinstance(item, bytes) and len(item) > 100:
-                                raw_bytes = item
-                                break
+        def _do_describe():
+            try:
+                import imaplib as _imap
+                import email as _email_lib
+                import email.header as _email_hdr
+                import re as _re2
+                import socket as _sock
 
-                    if not raw_bytes:
-                        send(chat_id, "⚠️ Не вдалось завантажити лист — спробуй ще раз.")
-                        return
+                _sock.setdefaulttimeout(30)
 
-                    msg     = _email_lib.message_from_bytes(raw_bytes)
-                    subject = _imap_decode_header(msg.get("Subject", "(без теми)"))
-                    sender  = _imap_decode_header(msg.get("From", ""))
-                    body    = _imap_get_body(msg)
+                GMAIL_USER = os.environ.get("GMAIL_USER", "novosadovoleg@gmail.com")
+                GMAIL_PASS = os.environ.get("GMAIL_APP_PASSWORD", "zbzlkvxjspuekbuk")
+                GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
 
-                    # ── Gemini аналіз ─────────────────────────────────────────
-                    full_text = f"Від: {sender}\nТема: {subject}\n\n{body}"
-                    ai = _gemini_email_analysis(full_text)
+                print(f"[email_describe] starting for uid={_uid}", flush=True)
 
-                    if ai and (ai.get("description") or ai.get("opinion")):
-                        desc    = (ai.get("description") or "").strip()
-                        opinion = (ai.get("opinion") or "").strip()
-                        text = (
-                            f"📖 <b>Опис листа</b>\n\n"
-                            f"📌 <b>{subject[:70]}</b>\n"
-                            f"👤 {sender[:60]}\n\n"
-                        )
-                        if desc:
-                            text += f"📋 <b>Зміст:</b>\n{desc}\n\n"
-                        if opinion:
-                            text += f"🤖 <b>Порада:</b> {opinion}"
+                # ── IMAP: завантажуємо лист ───────────────────────────────────
+                mail = _imap.IMAP4_SSL("imap.gmail.com")
+                mail.login(GMAIL_USER, GMAIL_PASS)
+                mail.select("INBOX")
+                _, msg_data = mail.uid('fetch', _uid.encode(), "(RFC822)")
+                mail.logout()
+                print(f"[email_describe] imap fetch done, msg_data len={len(msg_data) if msg_data else 0}", flush=True)
+
+                # Розпаковуємо
+                raw_bytes = None
+                if msg_data:
+                    for item in msg_data:
+                        if isinstance(item, tuple) and len(item) >= 2 and isinstance(item[1], bytes) and len(item[1]) > 50:
+                            raw_bytes = item[1]
+                            break
+                        elif isinstance(item, bytes) and len(item) > 50:
+                            raw_bytes = item
+                            break
+
+                if not raw_bytes:
+                    print(f"[email_describe] raw_bytes is None, msg_data={msg_data!r:.200}", flush=True)
+                    send(_cid, "⚠️ Не вдалось завантажити лист. Можливо він вже видалений або UID застарів.")
+                    return
+
+                # ── Декодуємо ─────────────────────────────────────────────────
+                def _decode_hdr(raw):
+                    parts = _email_hdr.decode_header(raw or "")
+                    result = []
+                    for part, enc in parts:
+                        if isinstance(part, bytes):
+                            result.append(part.decode(enc or "utf-8", errors="replace"))
+                        else:
+                            result.append(str(part))
+                    return "".join(result)
+
+                def _get_body(msg):
+                    body = ""
+                    if msg.is_multipart():
+                        for part in msg.walk():
+                            ct = part.get_content_type()
+                            cd = str(part.get("Content-Disposition", ""))
+                            if ct == "text/plain" and "attachment" not in cd:
+                                try:
+                                    body = part.get_payload(decode=True).decode(
+                                        part.get_content_charset() or "utf-8", errors="replace")
+                                    break
+                                except Exception:
+                                    pass
+                        if not body:
+                            for part in msg.walk():
+                                ct = part.get_content_type()
+                                if ct == "text/html" and "attachment" not in str(part.get("Content-Disposition", "")):
+                                    try:
+                                        raw = part.get_payload(decode=True).decode(
+                                            part.get_content_charset() or "utf-8", errors="replace")
+                                        body = _re2.sub(r'<[^>]+>', ' ', raw)
+                                        body = _re2.sub(r'\s+', ' ', body).strip()
+                                        break
+                                    except Exception:
+                                        pass
                     else:
-                        # Fallback — показуємо сирий текст листа
-                        preview = body[:800].strip() if body else "(порожній лист)"
-                        text = (
-                            f"📖 <b>Текст листа</b>\n\n"
-                            f"📌 <b>{subject[:70]}</b>\n"
-                            f"👤 {sender[:60]}\n\n"
-                            f"<i>{preview}</i>"
-                        )
+                        try:
+                            raw = msg.get_payload(decode=True).decode(
+                                msg.get_content_charset() or "utf-8", errors="replace")
+                            if msg.get_content_type() == "text/html":
+                                body = _re2.sub(r'<[^>]+>', ' ', raw)
+                                body = _re2.sub(r'\s+', ' ', body).strip()
+                            else:
+                                body = raw
+                        except Exception:
+                            pass
+                    return body[:3000]
 
-                    send(chat_id, text[:4000])
+                msg     = _email_lib.message_from_bytes(raw_bytes)
+                subject = _decode_hdr(msg.get("Subject", "(без теми)"))
+                sender  = _decode_hdr(msg.get("From", ""))
+                body    = _get_body(msg)
+                print(f"[email_describe] subject={subject[:50]}, body_len={len(body)}", flush=True)
 
-                except Exception as _e:
-                    print(f"email_describe thread error: {type(_e).__name__}: {_e}")
-                    import traceback; traceback.print_exc()
-                    send(chat_id, f"⚠️ Помилка при читанні листа:\n<code>{type(_e).__name__}: {str(_e)[:200]}</code>")
+                # ── Gemini аналіз ─────────────────────────────────────────────
+                full_text = f"Від: {sender}\nТема: {subject}\n\n{body}"
+                prompt = (
+                    "Проаналізуй цей email. Відповідь — ТІЛЬКИ валідний JSON, без markdown:\n"
+                    '{"description": "...", "opinion": "..."}\n\n'
+                    "description: переказ змісту (2-4 речення українською).\n"
+                    "opinion: коротка порада — чи реагувати і що зробити (1 речення).\n\n"
+                    f"Лист:\n{full_text[:2000]}"
+                )
+                req_body = json.dumps({
+                    "contents": [{"parts": [{"text": prompt}]}],
+                    "generationConfig": {"maxOutputTokens": 512, "temperature": 0.3}
+                }).encode()
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
+                req = urllib.request.Request(url, data=req_body, headers={"Content-Type": "application/json"})
 
-            # Запускаємо в окремому потоці — Gemini може йти 10-30 сек
-            _thr.Thread(target=_do_describe, daemon=True).start()
+                ai = None
+                try:
+                    with urllib.request.urlopen(req, timeout=40) as r:
+                        resp_data = json.loads(r.read())
+                    raw_ai = resp_data["candidates"][0]["content"]["parts"][0]["text"].strip()
+                    raw_ai = _re2.sub(r"^```(?:json)?\s*", "", raw_ai, flags=_re2.MULTILINE)
+                    raw_ai = _re2.sub(r"\s*```\s*$", "", raw_ai, flags=_re2.MULTILINE).strip()
+                    print(f"[email_describe] gemini raw: {raw_ai[:100]}", flush=True)
+                    try:
+                        ai = json.loads(raw_ai)
+                    except Exception:
+                        desc_m = _re2.search(r'"description"\s*:\s*"((?:[^"\\]|\\.)*)"', raw_ai, _re2.DOTALL)
+                        opin_m = _re2.search(r'"opinion"\s*:\s*"((?:[^"\\]|\\.)*)"', raw_ai, _re2.DOTALL)
+                        if desc_m:
+                            ai = {"description": desc_m.group(1), "opinion": opin_m.group(1) if opin_m else ""}
+                except Exception as _ge:
+                    print(f"[email_describe] gemini error: {_ge}", flush=True)
 
-        except Exception as e:
-            print(f"email_describe error: {e}")
-            send(chat_id, f"⚠️ Помилка: <code>{e}</code>")
+                # ── Формуємо відповідь ────────────────────────────────────────
+                if ai and isinstance(ai, dict) and (ai.get("description") or ai.get("opinion")):
+                    desc    = (ai.get("description") or "").strip()
+                    opinion = (ai.get("opinion") or "").strip()
+                    text = f"📖 <b>Опис листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n"
+                    if desc:
+                        text += f"📋 <b>Зміст:</b>\n{desc}\n\n"
+                    if opinion:
+                        text += f"🤖 <b>Порада:</b> {opinion}"
+                else:
+                    preview = body[:800].strip() if body else "(порожній лист)"
+                    text = f"📖 <b>Текст листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n<i>{preview}</i>"
+
+                print(f"[email_describe] sending result, len={len(text)}", flush=True)
+                send(_cid, text[:4000])
+
+            except Exception as _e:
+                import traceback as _tb
+                print(f"[email_describe] EXCEPTION: {type(_e).__name__}: {_e}", flush=True)
+                _tb.print_exc()
+                send(_cid, f"⚠️ Помилка при читанні листа:\n<code>{type(_e).__name__}: {str(_e)[:200]}</code>")
+
+        _thr.Thread(target=_do_describe, daemon=True).start()
 
     elif data.startswith("email_delete_"):
         uid_str = data[len("email_delete_"):]
