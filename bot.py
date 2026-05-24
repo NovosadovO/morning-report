@@ -314,13 +314,16 @@ def handle_email_callback(callback_query):
         def _do_describe():
             try:
                 print(f"[email_describe] uid={_uid}", flush=True)
+                send(_cid, f"🔍 DEBUG: старт, uid={_uid}")
 
                 # ── Читаємо з кешу (збережений при get_emails) ───────────────
                 import sys as _sys
                 _sys.path.insert(0, os.path.dirname(__file__))
                 import storage as _storage
+                send(_cid, "🔍 DEBUG: storage imported, loading cache...")
                 cache = _storage.load("email_body_cache.json") or {}
                 entry = cache.get(_uid)
+                send(_cid, f"🔍 DEBUG: cache keys={list(cache.keys())[:5]}, entry={'FOUND' if entry else 'MISS'}")
                 print(f"[email_describe] cache keys={list(cache.keys())[:5]}, entry={'found' if entry else 'MISS'}", flush=True)
 
                 if not entry:
