@@ -1127,8 +1127,8 @@ def get_emails():
             if email_addr in _ALWAYS_SKIP:
                 continue
 
-            # Тільки UID зберігаємо — опис читається по кнопці
-            primary.append((subject, sender, uid, is_unread))
+            # Зберігаємо UID + тіло листа
+            primary.append((subject, sender, uid, is_unread, _imap_get_body(msg)))
 
         mail.logout()
 
@@ -1145,13 +1145,28 @@ def get_emails():
 
         # Повертаємо спеціальний dict щоб main() міг надіслати кожен лист з кнопками
         items = []
-        for s, snd, uid_s, u in primary:
+        email_cache = {}
+        for s, snd, uid_s, u, body_text in primary:
             items.append({
                 "subject": s,
                 "sender": snd,
                 "uid": uid_s,
                 "unread": u,
             })
+            # Кешуємо тіло для кнопки "Описати"
+            email_cache[uid_s] = {
+                "subject": s,
+                "sender": snd,
+                "body": body_text or "",
+            }
+
+        # Зберігаємо кеш в GitHub storage
+        try:
+            storage.save("email_body_cache.json", email_cache)
+            print(f"[get_emails] body cache saved, {len(email_cache)} items", flush=True)
+        except Exception as _ce:
+            print(f"[get_emails] cache save error: {_ce}", flush=True)
+
         return {"__email_block__": True, "header": header, "items": items}
 
     except Exception as e:

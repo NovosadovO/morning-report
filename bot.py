@@ -304,104 +304,33 @@ def handle_email_callback(callback_query):
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📖 Читаю лист..."})
 
         import threading as _thr
+        import re as _re2
 
-        _cid   = chat_id    # capture for closure
-        _uid   = uid_str    # capture for closure
-        _mid   = msg_id     # capture for reply
+        _cid = chat_id
+        _uid = uid_str
+        _mid = msg_id
+        GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
 
         def _do_describe():
             try:
-                import imaplib as _imap
-                import email as _email_lib
-                import email.header as _email_hdr
-                import re as _re2
-                import socket as _sock
+                print(f"[email_describe] uid={_uid}", flush=True)
 
-                GMAIL_USER = os.environ.get("GMAIL_USER", "novosadovoleg@gmail.com")
-                GMAIL_PASS = os.environ.get("GMAIL_APP_PASSWORD", "zbzlkvxjspuekbuk")
-                GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+                # ── Читаємо з кешу (збережений при get_emails) ───────────────
+                import sys as _sys
+                _sys.path.insert(0, os.path.dirname(__file__))
+                import storage as _storage
+                cache = _storage.load("email_body_cache.json") or {}
+                entry = cache.get(_uid)
 
-                print(f"[email_describe] thread started, uid={_uid}", flush=True)
-
-                # ── IMAP: завантажуємо лист ───────────────────────────────────
-                _sock.setdefaulttimeout(25)
-                mail = _imap.IMAP4_SSL("imap.gmail.com", timeout=25)
-                mail.login(GMAIL_USER, GMAIL_PASS)
-                mail.select("INBOX")
-                _, msg_data = mail.uid('fetch', _uid.encode(), "(RFC822)")
-                mail.logout()
-                print(f"[email_describe] imap fetch done, msg_data len={len(msg_data) if msg_data else 0}", flush=True)
-
-                # Розпаковуємо
-                raw_bytes = None
-                if msg_data:
-                    for item in msg_data:
-                        if isinstance(item, tuple) and len(item) >= 2 and isinstance(item[1], bytes) and len(item[1]) > 50:
-                            raw_bytes = item[1]
-                            break
-                        elif isinstance(item, bytes) and len(item) > 50:
-                            raw_bytes = item
-                            break
-
-                if not raw_bytes:
-                    print(f"[email_describe] raw_bytes is None, msg_data={msg_data!r:.200}", flush=True)
-                    send_reply(_cid, _mid, "⚠️ Не вдалось завантажити лист. Можливо він вже видалений або UID застарів.")
+                if not entry:
+                    print(f"[email_describe] uid={_uid} not in cache, keys={list(cache.keys())[:5]}", flush=True)
+                    send_reply(_cid, _mid, "⚠️ Лист не знайдено в кеші. Зачекай наступного звіту — тоді кнопка запрацює.")
                     return
 
-                # ── Декодуємо ─────────────────────────────────────────────────
-                def _decode_hdr(raw):
-                    parts = _email_hdr.decode_header(raw or "")
-                    result = []
-                    for part, enc in parts:
-                        if isinstance(part, bytes):
-                            result.append(part.decode(enc or "utf-8", errors="replace"))
-                        else:
-                            result.append(str(part))
-                    return "".join(result)
-
-                def _get_body(msg):
-                    body = ""
-                    if msg.is_multipart():
-                        for part in msg.walk():
-                            ct = part.get_content_type()
-                            cd = str(part.get("Content-Disposition", ""))
-                            if ct == "text/plain" and "attachment" not in cd:
-                                try:
-                                    body = part.get_payload(decode=True).decode(
-                                        part.get_content_charset() or "utf-8", errors="replace")
-                                    break
-                                except Exception:
-                                    pass
-                        if not body:
-                            for part in msg.walk():
-                                ct = part.get_content_type()
-                                if ct == "text/html" and "attachment" not in str(part.get("Content-Disposition", "")):
-                                    try:
-                                        raw = part.get_payload(decode=True).decode(
-                                            part.get_content_charset() or "utf-8", errors="replace")
-                                        body = _re2.sub(r'<[^>]+>', ' ', raw)
-                                        body = _re2.sub(r'\s+', ' ', body).strip()
-                                        break
-                                    except Exception:
-                                        pass
-                    else:
-                        try:
-                            raw = msg.get_payload(decode=True).decode(
-                                msg.get_content_charset() or "utf-8", errors="replace")
-                            if msg.get_content_type() == "text/html":
-                                body = _re2.sub(r'<[^>]+>', ' ', raw)
-                                body = _re2.sub(r'\s+', ' ', body).strip()
-                            else:
-                                body = raw
-                        except Exception:
-                            pass
-                    return body[:3000]
-
-                msg     = _email_lib.message_from_bytes(raw_bytes)
-                subject = _decode_hdr(msg.get("Subject", "(без теми)"))
-                sender  = _decode_hdr(msg.get("From", ""))
-                body    = _get_body(msg)
-                print(f"[email_describe] subject={subject[:50]}, body_len={len(body)}", flush=True)
+                subject = entry.get("subject", "(без теми)")
+                sender  = entry.get("sender", "")
+                body    = entry.get("body", "")
+                print(f"[email_describe] from cache: subj={subject[:40]}, body_len={len(body)}", flush=True)
 
                 # ── Gemini аналіз ─────────────────────────────────────────────
                 full_text = f"Від: {sender}\nТема: {subject}\n\n{body}"
@@ -426,14 +355,13 @@ def handle_email_callback(callback_query):
                     raw_ai = resp_data["candidates"][0]["content"]["parts"][0]["text"].strip()
                     raw_ai = _re2.sub(r"^```(?:json)?\s*", "", raw_ai, flags=_re2.MULTILINE)
                     raw_ai = _re2.sub(r"\s*```\s*$", "", raw_ai, flags=_re2.MULTILINE).strip()
-                    print(f"[email_describe] gemini raw: {raw_ai[:100]}", flush=True)
                     try:
                         ai = json.loads(raw_ai)
                     except Exception:
-                        desc_m = _re2.search(r'"description"\s*:\s*"((?:[^"\\]|\\.)*)"', raw_ai, _re2.DOTALL)
-                        opin_m = _re2.search(r'"opinion"\s*:\s*"((?:[^"\\]|\\.)*)"', raw_ai, _re2.DOTALL)
-                        if desc_m:
-                            ai = {"description": desc_m.group(1), "opinion": opin_m.group(1) if opin_m else ""}
+                        dm = _re2.search(r'"description"\s*:\s*"((?:[^"\\]|\\.)*)"', raw_ai, _re2.DOTALL)
+                        om = _re2.search(r'"opinion"\s*:\s*"((?:[^"\\]|\\.)*)"', raw_ai, _re2.DOTALL)
+                        if dm:
+                            ai = {"description": dm.group(1), "opinion": om.group(1) if om else ""}
                 except Exception as _ge:
                     print(f"[email_describe] gemini error: {_ge}", flush=True)
 
@@ -450,14 +378,13 @@ def handle_email_callback(callback_query):
                     preview = body[:800].strip() if body else "(порожній лист)"
                     text = f"📖 <b>Текст листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n<i>{preview}</i>"
 
-                print(f"[email_describe] sending result, len={len(text)}", flush=True)
                 send_reply(_cid, _mid, text[:4000])
 
             except Exception as _e:
                 import traceback as _tb
                 print(f"[email_describe] EXCEPTION: {type(_e).__name__}: {_e}", flush=True)
                 _tb.print_exc()
-                send_reply(_cid, _mid, f"⚠️ Помилка при читанні листа:\n<code>{type(_e).__name__}: {str(_e)[:200]}</code>")
+                send_reply(_cid, _mid, f"⚠️ Помилка:\n<code>{type(_e).__name__}: {str(_e)[:200]}</code>")
 
         _thr.Thread(target=_do_describe, daemon=True).start()
 
