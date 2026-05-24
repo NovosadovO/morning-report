@@ -1921,24 +1921,44 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
     email_facts = ""
     email_drafts_context = ""
     if email_text:
-        unread_m = _re.search(r"🔴\s*(\d+)\s*нових", email_text)
-        unread_cnt = int(unread_m.group(1)) if unread_m else 0
-        subjects = _re.findall(r"📨\s*<b>(.{3,60}?)</b>", email_text)
-        senders = _re.findall(r"👤\s*<code>(.{3,50}?)</code>", email_text)
-        ai_sums = _re.findall(r"🤖\s*(.{5,200}?)(?:\n|$)", email_text)
-        skip_kw = ["newsletter", "noreply", "no-reply", "notification",
-                   "duolingo", "youtube", "medium", "unsubscribe"]
-        important_emails = []
-        for i, subj in enumerate(subjects[:5]):
-            sender = senders[i] if i < len(senders) else ""
-            ai_s = ai_sums[i] if i < len(ai_sums) else ""
-            if not any(k in sender.lower() for k in skip_kw):
-                important_emails.append({"subject": subj, "sender": sender, "summary": ai_s})
-        if important_emails:
-            email_facts = f"Непрочитаних: {unread_cnt}. Важливі: " + "; ".join(f'"{e["subject"]}" від {e["sender"]}' for e in important_emails[:3])
-            email_drafts_context = "\n".join(f'- Лист від "{e["sender"]}": {e["subject"]}. Суть: {e["summary"]}' for e in important_emails[:3])
-        elif unread_cnt > 0:
-            email_facts = f"Нових листів: {unread_cnt}"
+        # Новий формат: dict з __email_block__
+        if isinstance(email_text, dict) and email_text.get("__email_block__"):
+            items = email_text.get("items", [])
+            unread_cnt = len(items)
+            skip_kw = ["newsletter", "noreply", "no-reply", "notification",
+                       "duolingo", "youtube", "medium", "unsubscribe"]
+            important_emails = []
+            for em in items[:5]:
+                sender = em.get("sender", "")
+                subj = em.get("subject", "")
+                if not any(k in sender.lower() for k in skip_kw):
+                    important_emails.append({"subject": subj, "sender": sender, "summary": ""})
+            if important_emails:
+                email_facts = f"Непрочитаних: {unread_cnt}. Важливі: " + "; ".join(f'"{e["subject"]}" від {e["sender"]}' for e in important_emails[:3])
+                email_drafts_context = "\n".join(f'- Лист від "{e["sender"]}": {e["subject"]}' for e in important_emails[:3])
+            elif unread_cnt > 0:
+                email_facts = f"Нових листів: {unread_cnt}"
+        else:
+            # Старий формат: рядок (fallback)
+            _et = str(email_text)
+            unread_m = _re.search(r"🔴\s*(\d+)\s*нових", _et)
+            unread_cnt = int(unread_m.group(1)) if unread_m else 0
+            subjects = _re.findall(r"📨\s*<b>(.{3,60}?)</b>", _et)
+            senders = _re.findall(r"👤\s*<code>(.{3,50}?)</code>", _et)
+            ai_sums = _re.findall(r"🤖\s*(.{5,200}?)(?:\n|$)", _et)
+            skip_kw = ["newsletter", "noreply", "no-reply", "notification",
+                       "duolingo", "youtube", "medium", "unsubscribe"]
+            important_emails = []
+            for i, subj in enumerate(subjects[:5]):
+                sender = senders[i] if i < len(senders) else ""
+                ai_s = ai_sums[i] if i < len(ai_sums) else ""
+                if not any(k in sender.lower() for k in skip_kw):
+                    important_emails.append({"subject": subj, "sender": sender, "summary": ai_s})
+            if important_emails:
+                email_facts = f"Непрочитаних: {unread_cnt}. Важливі: " + "; ".join(f'"{e["subject"]}" від {e["sender"]}' for e in important_emails[:3])
+                email_drafts_context = "\n".join(f'- Лист від "{e["sender"]}": {e["subject"]}. Суть: {e["summary"]}' for e in important_emails[:3])
+            elif unread_cnt > 0:
+                email_facts = f"Нових листів: {unread_cnt}"
 
     # Астро
     astro_facts = ""
