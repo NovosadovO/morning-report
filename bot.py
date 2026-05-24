@@ -459,8 +459,7 @@ def handle_email_callback(callback_query):
                 _tb.print_exc()
                 send_reply(_cid, _mid, f"⚠️ Помилка при читанні листа:\n<code>{type(_e).__name__}: {str(_e)[:200]}</code>")
 
-        t = _thr.Thread(target=_do_describe, daemon=False)
-        t.start()
+        _thr.Thread(target=_do_describe, daemon=True).start()
 
     elif data.startswith("email_delete_"):
         uid_str = data[len("email_delete_"):]
