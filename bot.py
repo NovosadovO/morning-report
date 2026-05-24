@@ -65,6 +65,14 @@ def send(chat_id, text):
         "parse_mode": "HTML"
     })
 
+def send_reply(chat_id, reply_to_msg_id, text):
+    api("sendMessage", {
+        "chat_id": chat_id,
+        "text": text[:4090],
+        "parse_mode": "HTML",
+        "reply_to_message_id": reply_to_msg_id
+    })
+
 
 def send_photo(chat_id, photo_bytes, caption=None):
     try:
@@ -299,6 +307,7 @@ def handle_email_callback(callback_query):
 
         _cid   = chat_id    # capture for closure
         _uid   = uid_str    # capture for closure
+        _mid   = msg_id     # capture for reply
 
         def _do_describe():
             try:
@@ -308,17 +317,15 @@ def handle_email_callback(callback_query):
                 import re as _re2
                 import socket as _sock
 
-                _sock.setdefaulttimeout(30)
-
                 GMAIL_USER = os.environ.get("GMAIL_USER", "novosadovoleg@gmail.com")
                 GMAIL_PASS = os.environ.get("GMAIL_APP_PASSWORD", "zbzlkvxjspuekbuk")
                 GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
 
                 print(f"[email_describe] thread started, uid={_uid}", flush=True)
-                send(_cid, f"⏳ Завантажую лист (uid={_uid})...")
 
                 # ── IMAP: завантажуємо лист ───────────────────────────────────
-                mail = _imap.IMAP4_SSL("imap.gmail.com")
+                _sock.setdefaulttimeout(25)
+                mail = _imap.IMAP4_SSL("imap.gmail.com", timeout=25)
                 mail.login(GMAIL_USER, GMAIL_PASS)
                 mail.select("INBOX")
                 _, msg_data = mail.uid('fetch', _uid.encode(), "(RFC822)")
@@ -338,7 +345,7 @@ def handle_email_callback(callback_query):
 
                 if not raw_bytes:
                     print(f"[email_describe] raw_bytes is None, msg_data={msg_data!r:.200}", flush=True)
-                    send(_cid, "⚠️ Не вдалось завантажити лист. Можливо він вже видалений або UID застарів.")
+                    send_reply(_cid, _mid, "⚠️ Не вдалось завантажити лист. Можливо він вже видалений або UID застарів.")
                     return
 
                 # ── Декодуємо ─────────────────────────────────────────────────
@@ -444,13 +451,13 @@ def handle_email_callback(callback_query):
                     text = f"📖 <b>Текст листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n<i>{preview}</i>"
 
                 print(f"[email_describe] sending result, len={len(text)}", flush=True)
-                send(_cid, text[:4000])
+                send_reply(_cid, _mid, text[:4000])
 
             except Exception as _e:
                 import traceback as _tb
                 print(f"[email_describe] EXCEPTION: {type(_e).__name__}: {_e}", flush=True)
                 _tb.print_exc()
-                send(_cid, f"⚠️ Помилка при читанні листа:\n<code>{type(_e).__name__}: {str(_e)[:200]}</code>")
+                send_reply(_cid, _mid, f"⚠️ Помилка при читанні листа:\n<code>{type(_e).__name__}: {str(_e)[:200]}</code>")
 
         t = _thr.Thread(target=_do_describe, daemon=False)
         t.start()
