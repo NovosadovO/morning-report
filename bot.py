@@ -1793,8 +1793,13 @@ def handle_command(chat_id, text):
 
     elif text in ["/вага", "вага"]:
         try:
-            from weight import format_weekly_weight_report
-            send(chat_id, format_weekly_weight_report())
+            from weight import format_weekly_weight_report, make_weight_chart
+            text_msg = format_weekly_weight_report()
+            chart = make_weight_chart(30)
+            if chart:
+                send_photo(chat_id, chart, text_msg)
+            else:
+                send(chat_id, text_msg)
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
@@ -1840,16 +1845,26 @@ def handle_command(chat_id, text):
     elif any(x in text for x in ["/здоров'я тиждень", "здоров'я тиждень", "/health week", "здоров'я тиждень"]) or text in ["/здоровя тиждень", "здоровя тиждень", "/зд т", "зд т", "/здт"]:
         send(chat_id, "⏳ Готую тижневий health звіт...")
         try:
-            from health_report import get_health_week_report
-            send(chat_id, get_health_week_report())
+            from health_report import get_health_week_report, generate_health_trend_chart
+            report_text = get_health_week_report()
+            chart = generate_health_trend_chart(7)
+            if chart:
+                send_photo(chat_id, chart, report_text)
+            else:
+                send(chat_id, report_text)
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
     elif any(x in text for x in ["/здоров'я місяць", "здоров'я місяць", "/health month", "здоров'я місяць"]) or text in ["/здоровя місяць", "здоровя місяць", "/зд м", "зд м", "/здм"]:
         send(chat_id, "⏳ Готую місячний health звіт...")
         try:
-            from health_report import get_health_month_report
-            send(chat_id, get_health_month_report())
+            from health_report import get_health_month_report, generate_health_trend_chart
+            report_text = get_health_month_report()
+            chart = generate_health_trend_chart(30)
+            if chart:
+                send_photo(chat_id, chart, report_text)
+            else:
+                send(chat_id, report_text)
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 

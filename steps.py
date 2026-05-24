@@ -593,21 +593,25 @@ def _tg_send_text(text: str):
 def _tg_send_photo(photo_bytes: bytes, caption: str = ""):
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT or not photo_bytes:
         return
-    import urllib.parse
-    boundary = "----FormBoundary"
+    boundary = "----FormBoundary7Ma4YWxkTrZu0gW"
+
+    def field(name, value):
+        return (
+            f"--{boundary}\r\n"
+            f'Content-Disposition: form-data; name="{name}"\r\n\r\n'
+            f"{value}\r\n"
+        ).encode()
+
     body = (
-        f"--{boundary}\r\n"
-        f'Content-Disposition: form-data; name="chat_id"\r\n\r\n'
-        f"{TELEGRAM_CHAT}\r\n"
-        f"--{boundary}\r\n"
-        f'Content-Disposition: form-data; name="caption"\r\n\r\n'
-        f"{caption}\r\n"
-        f'Content-Disposition: form-data; name="parse_mode"\r\n\r\n'
-        f"HTML\r\n"
-        f"--{boundary}\r\n"
-        f'Content-Disposition: form-data; name="photo"; filename="chart.png"\r\n'
-        f"Content-Type: image/png\r\n\r\n"
-    ).encode() + photo_bytes + f"\r\n--{boundary}--\r\n".encode()
+        field("chat_id", TELEGRAM_CHAT) +
+        field("parse_mode", "HTML") +
+        field("caption", caption) +
+        f"--{boundary}\r\n".encode() +
+        f'Content-Disposition: form-data; name="photo"; filename="chart.png"\r\n'.encode() +
+        f"Content-Type: image/png\r\n\r\n".encode() +
+        photo_bytes +
+        f"\r\n--{boundary}--\r\n".encode()
+    )
 
     req = urllib.request.Request(
         f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
