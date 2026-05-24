@@ -673,9 +673,23 @@ def digest_24h(force: bool = False):
     losers  = sorted([p for p in defi if (p.get("change_1d") or 0) < -3],
                      key=lambda x: x["change_1d"])[:5]
 
-    # ── Блок 3: Chains TVL ──
-    chains_data = _get(f"{LLAMA}/chains") or []
-    top_chains = sorted(chains_data, key=lambda x: x.get("tvl") or 0, reverse=True)[:8]
+    # ── Блок 3: Chains TVL (агрегуємо з protocols — там є change_1d) ──
+    chain_tvl = {}
+    chain_delta = {}   # summed absolute TVL delta (to estimate %)
+    for p in protocols:
+        ch1d = p.get("change_1d")
+        tvl  = p.get("tvl") or 0
+        for ch in (p.get("chains") or []):
+            chain_tvl[ch] = chain_tvl.get(ch, 0) + tvl
+            if ch1d is not None:
+                chain_delta.setdefault(ch, []).append(ch1d * tvl / 100)
+    top_chain_names = sorted(chain_tvl, key=lambda x: -chain_tvl[x])[:8]
+    top_chains = []
+    for name in top_chain_names:
+        tvl  = chain_tvl[name]
+        deltas = chain_delta.get(name, [])
+        avg_ch = (sum(deltas) / tvl * 100) if deltas and tvl > 0 else None
+        top_chains.append({"name": name, "tvl": tvl, "change_1d": avg_ch})
 
     # ── Блок 4: DEX volumes ──
     dex_data = _get(f"{LLAMA}/overview/dexs?excludeTotalDataChart=true&excludeTotalDataChartBreakdown=true") or {}
@@ -689,7 +703,7 @@ def digest_24h(force: bool = False):
     pools = [p for p in (yields_data.get("data") or [])
              if (p.get("apy") or 0) > 10
              and (p.get("tvlUsd") or 0) > 1_000_000
-             and not p.get("ilRisk", False)]
+             and not p.get("outlier", False)]
     top_pools = sorted(pools, key=lambda x: x.get("tvlUsd") or 0, reverse=True)[:5]
 
     # ── Блок 6: Stablecoins ──
