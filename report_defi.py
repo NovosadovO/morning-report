@@ -497,5 +497,351 @@ def main():
     print("DeFi report sent.")
 
 
+# ─── 24H DIGEST ───────────────────────────────────────────────────────────────
+
+def _digest_dedup_check():
+    """Dedup для 18:15 дайджесту. Ключ: digest_18h_{date}."""
+    try:
+        import sys as _sys, os as _os
+        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+        from storage import _load_github, _save_github
+        local = datetime.now(timezone.utc) + timedelta(hours=2)
+        key   = f"digest_18h_{local.strftime('%Y-%m-%d')}"
+        data  = _load_github("defi_sent.json") or {}
+        return data.get(key, False), data, key
+    except Exception as e:
+        print(f"digest dedup check error: {e}")
+        return False, {}, None
+
+
+def _digest_dedup_save(data, key):
+    try:
+        import sys as _sys, os as _os
+        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+        from storage import _save_github
+        data[key] = True
+        _save_github("defi_sent.json", data)
+    except Exception as e:
+        print(f"digest dedup save error: {e}")
+
+
+def _gemini_digest_summary(context: str) -> str:
+    """Короткий AI-висновок через Gemini (2-3 речення)."""
+    key = os.environ.get("GEMINI_API_KEY", "")
+    if not key:
+        return ""
+    try:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={key}"
+        prompt = (
+            "На основі цих DeFi даних за останні 24 години напиши 2-3 речення українською: "
+            "що найважливіше змінилось, які тренди варто відстежити, чи є ризики.\n\n"
+            + context
+        )
+        payload = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"maxOutputTokens": 200, "temperature": 0.7}
+        }).encode()
+        req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            resp = json.loads(r.read())
+            return resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+    except Exception as e:
+        print(f"Gemini digest error: {e}")
+        return ""
+
+
+def _make_digest_chart(gainers, losers) -> str | None:
+    """Малює bar chart gainers/losers, повертає шлях до PNG."""
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        import tempfile
+
+        names_g = [p["name"][:12] for p in gainers]
+        vals_g  = [p.get("change_1d") or 0 for p in gainers]
+        names_l = [p["name"][:12] for p in losers]
+        vals_l  = [p.get("change_1d") or 0 for p in losers]
+
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+        fig.patch.set_facecolor("#0d1117")
+
+        for ax in (ax1, ax2):
+            ax.set_facecolor("#161b22")
+            ax.tick_params(colors="#c9d1d9")
+            ax.spines[:].set_color("#30363d")
+
+        if names_g:
+            bars = ax1.barh(names_g[::-1], vals_g[::-1], color="#2ea043")
+            ax1.set_title("📈 Зростаючі", color="#c9d1d9", fontsize=11)
+            ax1.set_xlabel("change_1d %", color="#8b949e")
+            for bar, v in zip(bars, vals_g[::-1]):
+                ax1.text(v + 0.3, bar.get_y() + bar.get_height()/2,
+                         f"+{v:.1f}%", va="center", color="#2ea043", fontsize=8)
+
+        if names_l:
+            bars = ax2.barh(names_l[::-1], vals_l[::-1], color="#da3633")
+            ax2.set_title("📉 Падаючі", color="#c9d1d9", fontsize=11)
+            ax2.set_xlabel("change_1d %", color="#8b949e")
+            for bar, v in zip(bars, vals_l[::-1]):
+                ax2.text(v - 0.3, bar.get_y() + bar.get_height()/2,
+                         f"{v:.1f}%", va="center", ha="right", color="#da3633", fontsize=8)
+
+        plt.suptitle("DeFi 24h зміни", color="#e6edf3", fontsize=13, y=1.01)
+        plt.tight_layout()
+
+        tmp = tempfile.NamedTemporaryFile(suffix=".png", delete=False)
+        plt.savefig(tmp.name, dpi=120, bbox_inches="tight", facecolor=fig.get_facecolor())
+        plt.close()
+        return tmp.name
+    except Exception as e:
+        print(f"Chart error: {e}")
+        return None
+
+
+def _send_photo_digest(photo_path: str, caption: str):
+    """Шле фото з підписом через Telegram multipart."""
+    boundary = "----DigestBoundary"
+    try:
+        with open(photo_path, "rb") as f:
+            img_data = f.read()
+        caption_bytes = caption[:1024].encode("utf-8")
+        body = (
+            f"--{boundary}\r\n"
+            f'Content-Disposition: form-data; name="chat_id"\r\n\r\n{TELEGRAM_CHAT}\r\n'
+            f"--{boundary}\r\n"
+            f'Content-Disposition: form-data; name="parse_mode"\r\n\r\nHTML\r\n'
+            f"--{boundary}\r\n"
+            f'Content-Disposition: form-data; name="caption"\r\n\r\n'
+        ).encode() + caption_bytes + (
+            f"\r\n--{boundary}\r\n"
+            f'Content-Disposition: form-data; name="photo"; filename="digest.png"\r\n'
+            f"Content-Type: image/png\r\n\r\n"
+        ).encode() + img_data + f"\r\n--{boundary}--\r\n".encode()
+
+        url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto"
+        req = urllib.request.Request(
+            url, data=body,
+            headers={"Content-Type": f"multipart/form-data; boundary={boundary}"}
+        )
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return r.status == 200
+    except Exception as e:
+        print(f"sendPhoto error: {e}")
+        return False
+    finally:
+        try:
+            import os as _os
+            _os.unlink(photo_path)
+        except Exception:
+            pass
+
+
+def digest_24h(force: bool = False):
+    """Компактний дайджест змін DeFi за останні 24год."""
+    local    = datetime.now(timezone.utc) + timedelta(hours=2)
+    time_str = local.strftime("%H:%M")
+    date_str = local.strftime("%d.%m.%Y")
+
+    print(f"=== DeFi Digest 24h run at {local.isoformat()} ===")
+
+    # ── Dedup ──
+    if not force:
+        already, sent_data, sent_key = _digest_dedup_check()
+        if already:
+            print(f"Digest already sent ({sent_key}), skipping.")
+            return
+    else:
+        _, sent_data, sent_key = _digest_dedup_check()
+
+    # ── Отримуємо дані ──
+    protocols = _get(f"{LLAMA}/protocols")
+    if not protocols:
+        send_part("⚠️ DeFi дайджест: не вдалось завантажити дані")
+        return
+
+    # ── Блок 1+2: Gainers / Losers ──
+    DEFI_CATS = {"DEX", "Lending", "CDP", "Yield", "Bridge", "Liquid Staking",
+                 "Derivatives", "Staking", "Restaking", "Yield Aggregator"}
+    defi = [p for p in protocols
+            if p.get("category") in DEFI_CATS
+            and (p.get("tvl") or 0) > 50_000_000
+            and p.get("change_1d") is not None]
+
+    gainers = sorted([p for p in defi if (p.get("change_1d") or 0) > 3],
+                     key=lambda x: x["change_1d"], reverse=True)[:5]
+    losers  = sorted([p for p in defi if (p.get("change_1d") or 0) < -3],
+                     key=lambda x: x["change_1d"])[:5]
+
+    # ── Блок 3: Chains TVL ──
+    chains_data = _get(f"{LLAMA}/chains") or []
+    top_chains = sorted(chains_data, key=lambda x: x.get("tvl") or 0, reverse=True)[:8]
+
+    # ── Блок 4: DEX volumes ──
+    dex_data = _get(f"{LLAMA}/overview/dexs?excludeTotalDataChart=true&excludeTotalDataChartBreakdown=true") or {}
+    dex_protos = sorted(
+        [p for p in (dex_data.get("protocols") or []) if p.get("totalAllTime")],
+        key=lambda x: x.get("dailyVolume") or x.get("total24h") or 0, reverse=True
+    )[:5]
+
+    # ── Блок 5: Топ yields ──
+    yields_data = _get(f"{YIELDS}/pools") or {}
+    pools = [p for p in (yields_data.get("data") or [])
+             if (p.get("apy") or 0) > 10
+             and (p.get("tvlUsd") or 0) > 1_000_000
+             and not p.get("ilRisk", False)]
+    top_pools = sorted(pools, key=lambda x: x.get("tvlUsd") or 0, reverse=True)[:5]
+
+    # ── Блок 6: Stablecoins ──
+    stables_data = _get(f"{STABLES}/stablecoins?includePrices=true") or {}
+    stable_assets = sorted(
+        (stables_data.get("peggedAssets") or []),
+        key=lambda x: float((x.get("circulating") or {}).get("peggedUSD") or 0), reverse=True
+    )[:6]
+
+    # ─── Будуємо текст ───────────────────────────────────────────────────────
+
+    SEP = "\n──────────────────\n"
+
+    lines = [f"📡 <b>DeFi дайджест — зміни 24год</b>  ·  {time_str} {date_str}\n"]
+
+    # Gainers
+    if gainers:
+        lines.append("📈 <b>Топ зростання (TVL 24h):</b>")
+        for p in gainers:
+            lines.append(
+                f"  🟢 <b>{esc(p['name'])}</b>  "
+                f"<code>{fmt_b(p.get('tvl'))}</code>  "
+                f"<i>+{p['change_1d']:.1f}%</i>"
+                + (f"  7d:{'+' if (p.get('change_7d') or 0)>0 else ''}{p['change_7d']:.1f}%"
+                   if p.get("change_7d") is not None else "")
+            )
+    else:
+        lines.append("📈 <b>Значних зростань немає</b>")
+
+    lines.append(SEP)
+
+    # Losers
+    if losers:
+        lines.append("📉 <b>Топ падіння (TVL 24h):</b>")
+        for p in losers:
+            lines.append(
+                f"  🔴 <b>{esc(p['name'])}</b>  "
+                f"<code>{fmt_b(p.get('tvl'))}</code>  "
+                f"<i>{p['change_1d']:.1f}%</i>"
+                + (f"  7d:{'+' if (p.get('change_7d') or 0)>0 else ''}{p['change_7d']:.1f}%"
+                   if p.get("change_7d") is not None else "")
+            )
+    else:
+        lines.append("📉 <b>Значних падінь немає</b>")
+
+    lines.append(SEP)
+
+    # Chains
+    if top_chains:
+        lines.append("⛓ <b>Chains TVL (топ-8):</b>")
+        for c in top_chains:
+            ch1d = c.get("change_1d")
+            ar   = "🟢" if (ch1d or 0) > 0 else ("🔴" if (ch1d or 0) < 0 else "⚪️")
+            d1   = f"{'+' if (ch1d or 0)>0 else ''}{ch1d:.1f}%" if ch1d is not None else "—"
+            lines.append(
+                f"  {ar} <b>{esc(c.get('name','?'))}</b>  "
+                f"<code>{fmt_b(c.get('tvl'))}</code>  <i>{d1}</i>"
+            )
+
+    lines.append(SEP)
+
+    # DEX
+    if dex_protos:
+        lines.append("🔄 <b>DEX обсяги 24h:</b>")
+        for p in dex_protos:
+            vol = p.get("dailyVolume") or p.get("total24h") or 0
+            lines.append(
+                f"  • <b>{esc(p.get('displayName') or p.get('name','?'))}</b>  "
+                f"<code>{fmt_b(vol)}</code>"
+            )
+
+    lines.append(SEP)
+
+    # Yields
+    if top_pools:
+        lines.append("💰 <b>Топ yields (APY >10%, за TVL):</b>")
+        for p in top_pools:
+            lines.append(
+                f"  • <b>{esc(p.get('project','?'))}</b> {esc(p.get('symbol',''))}  "
+                f"APY <b>{p.get('apy',0):.1f}%</b>  "
+                f"TVL <code>{fmt_b(p.get('tvlUsd'))}</code>"
+            )
+
+    lines.append(SEP)
+
+    # Stablecoins
+    if stable_assets:
+        total_mcap = sum(float((a.get("circulating") or {}).get("peggedUSD") or 0) for a in stable_assets)
+        lines.append(f"🪙 <b>Стейблкоіни — {fmt_b(total_mcap)}:</b>")
+        for a in stable_assets:
+            circ = float((a.get("circulating") or {}).get("peggedUSD") or 0)
+            prev = float((a.get("circulatingPrevDay") or {}).get("peggedUSD") or 0)
+            ch   = (circ - prev) / prev * 100 if prev else 0
+            ar   = "🟢" if ch > 0.1 else ("🔴" if ch < -0.1 else "⚪️")
+            lines.append(
+                f"  {ar} <b>{esc(a.get('symbol','?'))}</b>  "
+                f"<code>{fmt_b(circ)}</code>  "
+                f"<i>{'+' if ch>0 else ''}{ch:.2f}%</i>"
+            )
+
+    text_body = "\n".join(lines)
+
+    # ── Gemini AI висновок ──
+    _g_str = ", ".join(f"{p['name']} +{p['change_1d']:.1f}%" for p in gainers)
+    _l_str = ", ".join(f"{p['name']} {p['change_1d']:.1f}%" for p in losers)
+    _c_str = ", ".join(f"{c.get('name')} {fmt_b(c.get('tvl'))}" for c in top_chains[:4])
+    _s_str = ", ".join(a.get("symbol", "") for a in stable_assets[:4])
+    context_for_ai = (
+        f"Gainers 24h: {_g_str}\n"
+        f"Losers 24h: {_l_str}\n"
+        f"Chains top TVL: {_c_str}\n"
+        f"Stables mcap changes: {_s_str}\n"
+    )
+    ai_text = _gemini_digest_summary(context_for_ai)
+
+    if ai_text:
+        text_body += f"\n\n🤖 <i>{esc(ai_text)}</i>"
+
+    text_body += "\n\n<i>📊 DeFiLlama · Наступний о 07:00</i>"
+
+    # ── Зберігаємо dedup ──
+    if sent_key:
+        _digest_dedup_save(sent_data, sent_key)
+
+    # ── Генеруємо графік і шлемо ──
+    chart_path = _make_digest_chart(gainers, losers)
+    if chart_path:
+        # caption = перший блок (до 1024 символів)
+        caption = "\n".join(lines[:15])[:1020]
+        _send_photo_digest(chart_path, caption)
+        # Решта тексту (AI + stables) як окреме повідомлення
+        rest = text_body
+        if len(rest) > 4090:
+            rest = rest[:4090]
+        send_part(rest)
+    else:
+        # Без графіка — просто текст
+        if len(text_body) <= 4090:
+            send_part(text_body)
+        else:
+            mid = text_body[:4090].rfind(SEP.strip())
+            send_part(text_body[:mid] if mid > 0 else text_body[:4090])
+            time.sleep(0.5)
+            send_part(text_body[mid:] if mid > 0 else "")
+
+    print("DeFi digest 24h sent.")
+
+
+def send_defi_digest():
+    """Entry point для monitor_loop.py."""
+    digest_24h()
+
+
 if __name__ == "__main__":
     main()

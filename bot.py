@@ -1494,6 +1494,7 @@ HELP_TEXT = """
 /календар — події на сьогодні
 /листи — останні email
 /астро — астрологічний прогноз
+/dd — DeFi дайджест 24h (зміни TVL, DEX, yields, stables)
 
 <b>💪 Здоров'я</b>
 /звички — відмітити звички
@@ -1639,6 +1640,16 @@ def handle_command(chat_id, text):
             parts.append("\n".join(lines_h))
 
         send(chat_id, f"📊 <b>Статус звичок (7 днів)</b>\n\n" + "\n\n─────────────\n\n".join(parts))
+
+    elif text in ["/dd", "/defi", "defi дайджест", "defi digest", "дефі дайджест"]:
+        send(chat_id, "⏳ Збираю DeFi дайджест...")
+        try:
+            import sys as _sys, os as _os
+            _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+            from report_defi import digest_24h
+            digest_24h(force=True)
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка дайджесту: {e}")
 
     elif text in ["/звіт", "звіт"]:
         send(chat_id, "⏳ Збираю звіт...")

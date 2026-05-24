@@ -100,18 +100,34 @@ def run_report2_loop():
 
 
 def run_defi_report_loop():
-    """DeFi & RWA звіт — о 07:00 і 19:00 місцевого часу (UTC+2)."""
-    print("=== Starting DeFi report loop (07:00 + 19:00) ===", flush=True)
+    """DeFi & RWA звіт — о 07:00 і 19:00 місцевого часу (UTC+2).
+    DeFi дайджест (24h зміни) — о 18:15."""
+    print("=== Starting DeFi report loop (07:00 + 18:15 digest + 19:00) ===", flush=True)
     while True:
         now_local = datetime.now(timezone.utc) + timedelta(hours=2)
         h, m = now_local.hour, now_local.minute
+
+        # Повний звіт о 07:00 і 19:00
         if h in (10, 19) and m < 3:
             print(f"[DeFi report] Running at {now_local.strftime('%H:%M')}...", flush=True)
             try:
                 subprocess.run([sys.executable, "report_defi.py"], timeout=300)
             except Exception as e:
                 print(f"DeFi report error: {e}", flush=True)
-            time.sleep(300)  # щоб не запустити двічі у те саме вікно
+            time.sleep(300)
+
+        # 24h дайджест о 18:15
+        elif h == 18 and 15 <= m < 20:
+            print(f"[DeFi digest] Running 24h digest at {now_local.strftime('%H:%M')}...", flush=True)
+            try:
+                import sys as _sys, os as _os
+                _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+                from report_defi import send_defi_digest
+                send_defi_digest()
+            except Exception as e:
+                print(f"DeFi digest error: {e}", flush=True)
+            time.sleep(360)  # не запускати знову у те ж вікно
+
         else:
             time.sleep(60)
 
