@@ -303,7 +303,6 @@ def handle_email_callback(callback_query):
         uid_str = data[len("email_describe_"):]
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📖 Читаю лист..."})
 
-        import threading as _thr
         import re as _re2
 
         _cid = chat_id
@@ -311,116 +310,94 @@ def handle_email_callback(callback_query):
         _mid = msg_id
         GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
 
-        def _do_describe():
-            try:
-                print(f"[email_describe] uid={_uid}", flush=True)
+        try:
+            print(f"[email_describe] uid={_uid}", flush=True)
 
-                # ── Читаємо з кешу (збережений при get_emails) ───────────────
-                import sys as _sys
-                _sys.path.insert(0, os.path.dirname(__file__))
-                import storage as _storage
-                cache = _storage.load("email_body_cache.json") or {}
-                entry = cache.get(_uid)
-                print(f"[email_describe] cache keys={list(cache.keys())[:5]}, entry={'found' if entry else 'MISS'}", flush=True)
+            # ── Читаємо з кешу ───────────────────────────────────────────────
+            import sys as _sys
+            _sys.path.insert(0, os.path.dirname(__file__))
+            import storage as _storage
+            cache = _storage.load("email_body_cache.json") or {}
+            entry = cache.get(_uid)
+            print(f"[email_describe] cache entry={'found' if entry else 'MISS'}", flush=True)
 
-                if not entry:
-                    # Fallback: читаємо з IMAP напряму
-                    print(f"[email_describe] cache miss, trying IMAP fallback", flush=True)
-                    try:
-                        import imaplib, email as _email_lib, socket
-                        socket.setdefaulttimeout(25)
-                        _IMAP_HOST = os.environ.get("IMAP_HOST", "imap.gmail.com")
-                        _IMAP_USER = os.environ.get("EMAIL_USER", "")
-                        _IMAP_PASS = os.environ.get("EMAIL_PASS", "")
-                        _mail = imaplib.IMAP4_SSL(_IMAP_HOST, timeout=25)
-                        _mail.login(_IMAP_USER, _IMAP_PASS)
-                        _mail.select("INBOX")
-                        _, _md = _mail.uid('fetch', _uid.encode(), "(RFC822)")
-                        _mail.logout()
-                        _raw_msg = _md[0][1]
-                        _msg = _email_lib.message_from_bytes(_raw_msg)
-                        # decode subject/sender
-                        import email.header as _eh
-                        def _dh(v):
-                            if not v: return ""
-                            parts = _eh.decode_header(v)
-                            result = []
-                            for _p, _enc in parts:
-                                if isinstance(_p, bytes):
-                                    result.append(_p.decode(_enc or "utf-8", errors="replace"))
-                                else:
-                                    result.append(str(_p))
-                            return " ".join(result)
-                        subject = _dh(_msg.get("Subject", "(без теми)"))
-                        sender  = _dh(_msg.get("From", ""))
-                        # body
-                        body = ""
-                        if _msg.is_multipart():
-                            for _part in _msg.walk():
-                                if _part.get_content_type() == "text/plain":
-                                    body = _part.get_payload(decode=True).decode(_part.get_content_charset() or "utf-8", errors="replace")
-                                    break
-                        else:
-                            body = _msg.get_payload(decode=True).decode(_msg.get_content_charset() or "utf-8", errors="replace")
-                        body = body[:2000]
-                        entry = {"subject": subject, "sender": sender, "body": body}
-                        print(f"[email_describe] IMAP fallback ok: subj={subject[:40]}", flush=True)
-                    except Exception as _fe:
-                        print(f"[email_describe] IMAP fallback error: {_fe}", flush=True)
-                        send_reply(_cid, _mid, f"⚠️ Лист не знайдено в кеші, IMAP fallback теж не спрацював:\n<code>{_fe}</code>")
-                        return
-
-                subject = entry.get("subject", "(без теми)")
-                sender  = entry.get("sender", "")
-                body    = entry.get("body", "")
-                print(f"[email_describe] from cache: subj={subject[:40]}, body_len={len(body)}", flush=True)
-
-                # ── Gemini аналіз ─────────────────────────────────────────────
-                full_text = f"Від: {sender}\nТема: {subject}\n\n{body}"
-                prompt = (
-                    "Проаналізуй цей email і дай відповідь українською у форматі:\n"
-                    "Зміст: (2-4 речення — про що лист)\n"
-                    "Порада: (1 речення — чи реагувати і що зробити)\n\n"
-                    f"Лист:\n{full_text[:2000]}"
-                )
-                req_body = json.dumps({
-                    "contents": [{"parts": [{"text": prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 512, "temperature": 0.3}
-                }).encode()
-                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
-                req = urllib.request.Request(url, data=req_body, headers={"Content-Type": "application/json"})
-
-                ai_text = None
+            if not entry:
+                # Fallback: IMAP
                 try:
-                    with urllib.request.urlopen(req, timeout=40) as r:
-                        resp_data = json.loads(r.read())
-                    ai_text = resp_data["candidates"][0]["content"]["parts"][0]["text"].strip()
-                except Exception as _ge:
-                    print(f"[email_describe] gemini error: {_ge}", flush=True)
+                    import imaplib, email as _email_lib, socket
+                    socket.setdefaulttimeout(25)
+                    _mail = imaplib.IMAP4_SSL(os.environ.get("IMAP_HOST", "imap.gmail.com"), timeout=25)
+                    _mail.login(os.environ.get("EMAIL_USER", ""), os.environ.get("EMAIL_PASS", ""))
+                    _mail.select("INBOX")
+                    _, _md = _mail.uid('fetch', _uid.encode(), "(RFC822)")
+                    _mail.logout()
+                    _msg = _email_lib.message_from_bytes(_md[0][1])
+                    import email.header as _eh
+                    def _dh(v):
+                        if not v: return ""
+                        parts = _eh.decode_header(v)
+                        return " ".join(p.decode(e or "utf-8", errors="replace") if isinstance(p, bytes) else str(p) for p, e in parts)
+                    subject = _dh(_msg.get("Subject", "(без теми)"))
+                    sender  = _dh(_msg.get("From", ""))
+                    body = ""
+                    if _msg.is_multipart():
+                        for _part in _msg.walk():
+                            if _part.get_content_type() == "text/plain":
+                                body = _part.get_payload(decode=True).decode(_part.get_content_charset() or "utf-8", errors="replace")
+                                break
+                    else:
+                        body = _msg.get_payload(decode=True).decode(_msg.get_content_charset() or "utf-8", errors="replace")
+                    entry = {"subject": subject, "sender": sender, "body": body[:2000]}
+                except Exception as _fe:
+                    send(_cid, f"⚠️ Лист не знайдено. Помилка: <code>{str(_fe)[:200]}</code>")
+                    return
 
-                # ── Формуємо відповідь ────────────────────────────────────────
-                if ai_text:
-                    out = f"📖 <b>Опис листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n{ai_text}"
-                else:
-                    preview = body[:800].strip() if body else "(порожній лист)"
-                    out = f"📖 <b>Текст листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n<i>{preview}</i>"
+            subject = entry.get("subject", "(без теми)")
+            sender  = entry.get("sender", "")
+            body    = entry.get("body", "")
 
-                result = api("sendMessage", {
-                    "chat_id": _cid,
-                    "text": out[:4000],
-                    "parse_mode": "HTML",
-                    "reply_to_message_id": _mid
-                })
-                if not result.get("ok"):
-                    send(_cid, out[:4000])
+            # ── Gemini ───────────────────────────────────────────────────────
+            prompt = (
+                "Проаналізуй цей email і дай відповідь українською у форматі:\n"
+                "Зміст: (2-4 речення — про що лист)\n"
+                "Порада: (1 речення — чи реагувати і що зробити)\n\n"
+                f"Лист:\nВід: {sender}\nТема: {subject}\n\n{body[:2000]}"
+            )
+            req_body = json.dumps({
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"maxOutputTokens": 512, "temperature": 0.3}
+            }).encode()
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
+            req = urllib.request.Request(url, data=req_body, headers={"Content-Type": "application/json"})
 
-            except Exception as _e:
-                import traceback as _tb
-                print(f"[email_describe] EXCEPTION: {type(_e).__name__}: {_e}", flush=True)
-                _tb.print_exc()
-                send_reply(_cid, _mid, f"⚠️ Помилка:\n<code>{type(_e).__name__}: {str(_e)[:200]}</code>")
+            ai_text = None
+            try:
+                with urllib.request.urlopen(req, timeout=40) as r:
+                    resp_data = json.loads(r.read())
+                ai_text = resp_data["candidates"][0]["content"]["parts"][0]["text"].strip()
+                print(f"[email_describe] gemini ok, len={len(ai_text)}", flush=True)
+            except Exception as _ge:
+                print(f"[email_describe] gemini error: {_ge}", flush=True)
 
-        _thr.Thread(target=_do_describe, daemon=True).start()
+            if ai_text:
+                out = f"📖 <b>Опис листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n{ai_text}"
+            else:
+                preview = body[:800].strip() if body else "(порожній лист)"
+                out = f"📖 <b>Текст листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n<i>{preview}</i>"
+
+            result = api("sendMessage", {
+                "chat_id": _cid,
+                "text": out[:4000],
+                "parse_mode": "HTML",
+                "reply_to_message_id": _mid
+            })
+            if not result.get("ok"):
+                send(_cid, out[:4000])
+
+        except Exception as _e:
+            import traceback as _tb
+            _tb.print_exc()
+            send(_cid, f"⚠️ Помилка: <code>{type(_e).__name__}: {str(_e)[:200]}</code>")
 
     elif data.startswith("email_delete_"):
         uid_str = data[len("email_delete_"):]
