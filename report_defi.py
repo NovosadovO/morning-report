@@ -558,46 +558,57 @@ def _make_digest_chart(gainers, losers) -> str | None:
         import matplotlib.pyplot as plt
         import tempfile
 
-        names_g = [p["name"][:12] for p in gainers]
+        BG     = "#0D1117"
+        PANEL  = "#161B22"
+        GRID   = "#1E2530"
+        BORDER = "#30363D"
+        TEXT   = "#E6EDF3"
+        SUBTEXT = "#8B949E"
+
+        names_g = [p["name"][:14] for p in gainers]
         vals_g  = [p.get("change_1d") or 0 for p in gainers]
-        names_l = [p["name"][:12] for p in losers]
+        names_l = [p["name"][:14] for p in losers]
         vals_l  = [p.get("change_1d") or 0 for p in losers]
 
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
-        fig.patch.set_facecolor("#0d1117")
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+        fig.patch.set_facecolor(BG)
 
         for ax in (ax1, ax2):
-            ax.set_facecolor("#161b22")
-            ax.tick_params(colors="#c9d1d9")
-            ax.spines[:].set_color("#30363d")
+            ax.set_facecolor(PANEL)
+            ax.tick_params(colors=TEXT, labelsize=10)
+            for spine in ax.spines.values():
+                spine.set_edgecolor(BORDER)
+                spine.set_linewidth(1.2)
+            ax.grid(True, axis="x", color=GRID, linewidth=0.7, alpha=0.7)
 
         if names_g:
-            bars = ax1.barh(names_g[::-1], vals_g[::-1], color="#2ea043")
-            ax1.set_title("📈 Зростаючі", color="#c9d1d9", fontsize=11)
-            ax1.set_xlabel("change_1d %", color="#8b949e")
+            bars = ax1.barh(names_g[::-1], vals_g[::-1], color="#2EA043", height=0.6)
+            ax1.set_title("Зростання 24h", color=TEXT, fontsize=13, fontweight="bold", pad=8)
+            ax1.set_xlabel("Зміна %", color=SUBTEXT, fontsize=10)
+            ax1.tick_params(axis="y", labelsize=10, labelcolor=TEXT)
             for bar, v in zip(bars, vals_g[::-1]):
-                ax1.text(v + 0.3, bar.get_y() + bar.get_height()/2,
-                         f"+{v:.1f}%", va="center", color="#2ea043", fontsize=8)
+                ax1.text(v + 0.2, bar.get_y() + bar.get_height() / 2,
+                         f"+{v:.1f}%", va="center", color="#3FB950", fontsize=11, fontweight="bold")
 
         if names_l:
-            bars = ax2.barh(names_l[::-1], vals_l[::-1], color="#da3633")
-            ax2.set_title("📉 Падаючі", color="#c9d1d9", fontsize=11)
-            ax2.set_xlabel("change_1d %", color="#8b949e")
+            bars = ax2.barh(names_l[::-1], vals_l[::-1], color="#DA3633", height=0.6)
+            ax2.set_title("Падіння 24h", color=TEXT, fontsize=13, fontweight="bold", pad=8)
+            ax2.set_xlabel("Зміна %", color=SUBTEXT, fontsize=10)
+            ax2.tick_params(axis="y", labelsize=10, labelcolor=TEXT)
             for bar, v in zip(bars, vals_l[::-1]):
-                ax2.text(v - 0.3, bar.get_y() + bar.get_height()/2,
-                         f"{v:.1f}%", va="center", ha="right", color="#da3633", fontsize=8)
+                ax2.text(v - 0.2, bar.get_y() + bar.get_height() / 2,
+                         f"{v:.1f}%", va="center", ha="right", color="#F85149", fontsize=11, fontweight="bold")
 
-        plt.suptitle("DeFi 24h зміни", color="#e6edf3", fontsize=13, y=1.01)
-        plt.tight_layout()
+        plt.suptitle("DeFi 24h зміни", color=TEXT, fontsize=15, fontweight="bold", y=1.02)
+        plt.tight_layout(pad=1.2)
 
         tmp = tempfile.NamedTemporaryFile(suffix=".png", delete=False)
-        plt.savefig(tmp.name, dpi=120, bbox_inches="tight", facecolor=fig.get_facecolor())
+        plt.savefig(tmp.name, dpi=150, bbox_inches="tight", facecolor=BG)
         plt.close()
         return tmp.name
     except Exception as e:
         print(f"Chart error: {e}")
         return None
-
 
 def _send_photo_digest(photo_path: str, caption: str):
     """Шле фото з підписом через Telegram multipart."""
