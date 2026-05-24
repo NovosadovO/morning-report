@@ -386,39 +386,78 @@ def get_prices():
     return "💹 <b>ЦІНИ АКТИВІВ</b>\n\n" + "\n".join(lines)
 
 
+def _yahoo_quote(sym: str) -> tuple[float | None, float | None]:
+    """Отримує (price, pct_change) через Yahoo Finance v8 API (без yfinance)."""
+    import urllib.request, json as _json, ssl
+    headers = {
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36",
+        "Accept": "application/json",
+    }
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?interval=1d&range=2d"
+    try:
+        ctx = ssl.create_default_context()
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, timeout=10, context=ctx) as r:
+            d = _json.loads(r.read())
+        result = d["chart"]["result"][0]
+        closes = result["indicators"]["quote"][0]["close"]
+        closes = [c for c in closes if c is not None]
+        if len(closes) >= 2:
+            price = closes[-1]
+            prev  = closes[-2]
+            pct   = (price - prev) / prev * 100
+            return price, pct
+        elif len(closes) == 1:
+            return closes[-1], None
+    except Exception as _e:
+        print(f"[yahoo quote {sym}] {_e}")
+    return None, None
+
+
 def _get_etf_prices() -> str:
     """Повертає рядок з цінами ETF (IBIT, ETHA, VAVA, GAVA) та S&P 500."""
-    try:
-        import yfinance as yf
-        ETF_TICKERS = [
-            ("IBIT",  "IBIT",   "🟠"),
-            ("ETHA",  "ETHA",   "🔷"),
-            ("VAVA",  "VAVA.SW","🏔️"),
-            ("GAVA",  "GAVA",   "🟣"),
-            ("S&P500","^GSPC",  "📊"),
-        ]
-        rows = []
-        for name, sym, icon in ETF_TICKERS:
-            try:
-                h = yf.Ticker(sym).history(period="2d")
-                if len(h) >= 2:
-                    c    = h["Close"].iloc[-1]
-                    prev = h["Close"].iloc[-2]
-                    pct  = (c - prev) / prev * 100
+    ETF_TICKERS = [
+        ("IBIT",  "IBIT",   "🟠"),
+        ("ETHA",  "ETHA",   "🔷"),
+        ("VAVA",  "VAVA.SW","🏔️"),
+        ("GAVA",  "GAVA",   "🟣"),
+        ("S&P500","^GSPC",  "📊"),
+    ]
+    rows = []
+    for name, sym, icon in ETF_TICKERS:
+        try:
+            price, pct = _yahoo_quote(sym)
+            if price is not None:
+                if pct is not None:
                     arrow = "🟢" if pct > 0 else "🔴"
                     sign  = "+" if pct > 0 else ""
-                    rows.append(f"{arrow} <b>{name}</b>  <code>${c:,.2f}</code>  <i>{sign}{pct:.2f}% за день</i>")
-                elif len(h) == 1:
-                    c = h["Close"].iloc[-1]
-                    rows.append(f"⚪️ <b>{name}</b>  <code>${c:,.2f}</code>")
-            except Exception as _e:
-                rows.append(f"⚪️ <b>{name}</b>  —")
-        if rows:
-            return "📈 <b>ETF / ІНДЕКСИ</b>\n" + "\n".join(rows)
-        return ""
-    except Exception as _e:
-        print(f"[etf prices] error: {_e}")
-        return ""
+                    rows.append(f"{arrow} <b>{name}</b>  <code>${price:,.2f}</code>  <i>{sign}{pct:.2f}% за день</i>")
+                else:
+                    rows.append(f"⚪️ <b>{name}</b>  <code>${price:,.2f}</code>")
+            else:
+                # fallback: yfinance
+                try:
+                    import yfinance as yf
+                    h = yf.Ticker(sym).history(period="2d")
+                    if len(h) >= 2:
+                        c    = h["Close"].iloc[-1]
+                        prev = h["Close"].iloc[-2]
+                        pct2 = (c - prev) / prev * 100
+                        arrow = "🟢" if pct2 > 0 else "🔴"
+                        sign  = "+" if pct2 > 0 else ""
+                        rows.append(f"{arrow} <b>{name}</b>  <code>${c:,.2f}</code>  <i>{sign}{pct2:.2f}% за день</i>")
+                    elif len(h) == 1:
+                        rows.append(f"⚪️ <b>{name}</b>  <code>${h['Close'].iloc[-1]:,.2f}</code>")
+                    else:
+                        rows.append(f"⚪️ <b>{name}</b>  —")
+                except Exception:
+                    rows.append(f"⚪️ <b>{name}</b>  —")
+        except Exception as _e:
+            print(f"[etf prices {name}] {_e}")
+            rows.append(f"⚪️ <b>{name}</b>  —")
+    if rows:
+        return "📈 <b>ETF / ІНДЕКСИ</b>\n" + "\n".join(rows)
+    return ""
 
 
 def _get_prices_kraken():
