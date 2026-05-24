@@ -1573,6 +1573,15 @@ def handle_command(chat_id, text):
     elif text in ["/допомога", "/help", "допомога"]:
         send(chat_id, HELP_TEXT)
 
+    elif text in ["/resetlock", "resetlock"]:
+        try:
+            lock, sha = _gh_read(_GH_LOCK_URL)
+            if sha:
+                _gh_write(_GH_LOCK_URL, {"instance": "", "ts": 0}, sha, "manual reset")
+            send(chat_id, f"🔓 Lock скинуто. Був: {lock.get('instance', 'empty')}\nБот перезапуститься сам.")
+        except Exception as _rle:
+            send(chat_id, f"⚠️ Помилка: {_rle}")
+
     elif text in ["/звички", "звички"]:
         from habits import HABITS, load_data, today_key
         from meds import load_meds, save_meds, now_local, MEDS_NAME, MEDS_START, MEDS_END
