@@ -359,20 +359,20 @@ def handle_email_callback(callback_query):
             # ── Gemini ───────────────────────────────────────────────────────
             prompt = (
                 "Проаналізуй цей email і відповідай ТІЛЬКИ українською. Без зірочок, без markdown.\n"
-                "Формат — 4 розділи, кожен 2-3 речення, лаконічно і по суті:\n\n"
+                "Формат — 4 розділи. Пиши стисло але повно — кожен розділ завершуй повністю:\n\n"
                 "ВІДПРАВНИК\n"
-                "Хто це, компанія/організація, їхня роль.\n\n"
+                "1-2 речення: хто це, компанія, роль.\n\n"
                 "СУТЬ\n"
-                "Головна ідея листа — що пропонують або повідомляють (3-4 речення).\n\n"
+                "4-5 речень: що пропонують/повідомляють, контекст, головне послання.\n\n"
                 "ДЕТАЛІ\n"
-                "Найважливіші факти: дати, суми, умови, посилання.\n\n"
+                "2-3 речення: факти, дати, суми, умови, посилання.\n\n"
                 "ДІЇ\n"
-                "Що конкретно потрібно зробити і в який термін.\n\n"
+                "2-3 речення: що конкретно зробити, в який термін, пріоритет.\n\n"
                 f"Лист:\nВід: {sender}\nТема: {subject}\n\n{body[:3000]}"
             )
             req_body = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 900, "temperature": 0.3}
+                "generationConfig": {"maxOutputTokens": 1500, "temperature": 0.3}
             }).encode()
             url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
             req = urllib.request.Request(url, data=req_body, headers={"Content-Type": "application/json"})
