@@ -359,13 +359,13 @@ def handle_email_callback(callback_query):
             # ── Gemini ───────────────────────────────────────────────────────
             prompt = (
                 "Проаналізуй цей email і дай відповідь українською у форматі:\n"
-                "Зміст: (2-4 речення — про що лист)\n"
-                "Порада: (1 речення — чи реагувати і що зробити)\n\n"
+                "Зміст: (5-8 речень — детально про що лист, хто відправник, що пропонує або просить)\n"
+                "Порада: (2-3 речення — чи реагувати, що конкретно зробити і коли)\n\n"
                 f"Лист:\nВід: {sender}\nТема: {subject}\n\n{body[:2000]}"
             )
             req_body = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 512, "temperature": 0.3}
+                "generationConfig": {"maxOutputTokens": 1024, "temperature": 0.3}
             }).encode()
             url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
             req = urllib.request.Request(url, data=req_body, headers={"Content-Type": "application/json"})
