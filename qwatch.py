@@ -348,93 +348,273 @@ def _avg(values):
     vals = [v for v in values if v is not None]
     return round(sum(vals) / len(vals), 1) if vals else None
 
-def report_weekly() -> str:
-    """Тижневий звіт QWatch."""
+def report_weekly() -> tuple:
+    """Тижневий звіт QWatch. Повертає (text, chart_bytes|None)."""
     records = _get_week_records()
     if not records:
-        return "📊 QWatch: даних за тиждень немає."
+        return "📊 QWatch: даних за тиждень немає.", None
 
     dates_str = f"{records[0][0][5:]} – {records[-1][0][5:]}"
-
-    steps_list   = [r.get("steps") for _, r in records]
-    sleep_list   = [r.get("sleep_total_min") for _, r in records]
-    hr_list      = [r.get("hr_avg") for _, r in records]
-    hrv_list     = [r.get("hrv") for _, r in records]
-    stress_list  = [r.get("stress") for _, r in records]
-    cal_list     = [r.get("calories") for _, r in records]
-    hs_list      = [r.get("health_score") for _, r in records]
-
-    lines = [
-        f"📊 <b>QWatch — тижневий звіт</b> ({dates_str})",
-        f"Днів з даними: {len(records)}/7\n",
-    ]
-
-    if any(v for v in hs_list):
-        lines.append(f"🏆 Health Score: сер. <b>{_avg(hs_list)}%</b>")
-    if any(v for v in steps_list):
-        total = sum(v for v in steps_list if v)
-        lines.append(f"🚶 Кроки: сер. <b>{int(_avg(steps_list)):,}</b> / всього {total:,}")
-    if any(v for v in sleep_list):
-        lines.append(f"🛌 Сон: сер. <b>{_fmt_sleep(int(_avg(sleep_list)))}</b>")
-    if any(v for v in hr_list):
-        lines.append(f"❤️ ЧСС: сер. <b>{_avg(hr_list)} уд/хв</b>")
-    if any(v for v in hrv_list):
-        lines.append(f"🧘 HRV: сер. <b>{_avg(hrv_list)} мс</b>  (min {min(v for v in hrv_list if v)} / max {max(v for v in hrv_list if v)})")
-    if any(v for v in stress_list):
-        lines.append(f"🤯 Стрес: сер. <b>{_avg(stress_list)}</b>")
-    if any(v for v in cal_list):
-        lines.append(f"🔥 Калорії: сер. <b>{int(_avg(cal_list))} ккал</b>")
-
-    # Деталі по днях
-    lines.append("\n<b>По днях:</b>")
-    DAY_UA = ["Пн","Вт","Ср","Чт","Пт","Сб","Нд"]
-    for d, r in records:
-        dt = datetime.strptime(d, "%Y-%m-%d")
-        day = DAY_UA[dt.weekday()]
-        hs = f"{r['health_score']}%" if r.get("health_score") else "—"
-        sl = _fmt_sleep(r.get("sleep_total_min"))
-        st = str(r["steps"]) if r.get("steps") else "—"
-        hrv = f"{r['hrv']}мс" if r.get("hrv") else "—"
-        lines.append(f"  {day} {d[5:]}: HS {hs} | сон {sl} | кроки {st} | HRV {hrv}")
-
-    return "\n".join(lines)
-
-def report_monthly() -> str:
-    """Місячний звіт QWatch."""
-    records = _get_month_records()
-    if not records:
-        return "📈 QWatch: даних за місяць немає."
-
-    now = datetime.now(timezone.utc) + timedelta(hours=2)
-    month_name = now.strftime("%B %Y")
 
     steps_list  = [r.get("steps") for _, r in records]
     sleep_list  = [r.get("sleep_total_min") for _, r in records]
     hr_list     = [r.get("hr_avg") for _, r in records]
     hrv_list    = [r.get("hrv") for _, r in records]
     stress_list = [r.get("stress") for _, r in records]
+    cal_list    = [r.get("calories") for _, r in records]
     hs_list     = [r.get("health_score") for _, r in records]
+    wt_list     = [r.get("weight_kg") for _, r in records]
+    spo2_list   = [r.get("spo2") for _, r in records]
 
     lines = [
-        f"📈 <b>QWatch — місячний звіт</b> ({month_name})",
-        f"Днів з даними: {len(records)}\n",
+        f"📊 <b>QWatch — тижневий звіт</b>",
+        f"<i>{dates_str} | {len(records)}/7 днів</i>\n",
     ]
 
     if any(v for v in hs_list):
-        lines.append(f"🏆 Health Score: сер. <b>{_avg(hs_list)}%</b>  (max {max(v for v in hs_list if v)}%)")
+        vals = [v for v in hs_list if v]
+        lines.append(f"🏆 Health Score: сер. <b>{_avg(hs_list)}%</b>  (min {min(vals)} / max {max(vals)})")
     if any(v for v in steps_list):
         total = sum(v for v in steps_list if v)
         lines.append(f"🚶 Кроки: сер. <b>{int(_avg(steps_list)):,}</b> / всього {total:,}")
     if any(v for v in sleep_list):
-        lines.append(f"🛌 Сон: сер. <b>{_fmt_sleep(int(_avg(sleep_list)))}</b>")
+        vals = [v for v in sleep_list if v]
+        lines.append(f"🛌 Сон: сер. <b>{_fmt_sleep(int(_avg(sleep_list)))}</b>  (min {_fmt_sleep(min(vals))} / max {_fmt_sleep(max(vals))})")
     if any(v for v in hr_list):
         lines.append(f"❤️ ЧСС: сер. <b>{_avg(hr_list)} уд/хв</b>")
     if any(v for v in hrv_list):
-        lines.append(f"🧘 HRV: сер. <b>{_avg(hrv_list)} мс</b>  (min {min(v for v in hrv_list if v)} / max {max(v for v in hrv_list if v)})")
+        vals = [v for v in hrv_list if v]
+        lines.append(f"🧘 HRV: сер. <b>{_avg(hrv_list)} мс</b>  (min {min(vals)} / max {max(vals)})")
     if any(v for v in stress_list):
-        lines.append(f"🤯 Стрес: сер. <b>{_avg(stress_list)}</b>")
+        lines.append(f"😬 Стрес: сер. <b>{_avg(stress_list)}</b>")
+    if any(v for v in cal_list):
+        lines.append(f"🔥 Калорії: сер. <b>{int(_avg(cal_list)):,} ккал</b>")
+    if any(v for v in wt_list):
+        lines.append(f"⚖️ Вага: сер. <b>{_avg(wt_list)} кг</b>")
+    if any(v for v in spo2_list):
+        lines.append(f"🩸 SpO2: сер. <b>{_avg(spo2_list)}%</b>")
 
-    return "\n".join(lines)
+    lines.append("\n<b>По днях:</b>")
+    DAY_UA = ["Пн","Вт","Ср","Чт","Пт","Сб","Нд"]
+    for d, r in records:
+        dt  = datetime.strptime(d, "%Y-%m-%d")
+        day = DAY_UA[dt.weekday()]
+        hs  = f"💚{r['health_score']}%" if r.get("health_score") else "—"
+        sl  = f"🛌{_fmt_sleep(r['sleep_total_min'])}" if r.get("sleep_total_min") else "—"
+        st  = f"🚶{r['steps']:,}" if r.get("steps") else "—"
+        hrv = f"🧘{r['hrv']}мс" if r.get("hrv") else ""
+        wt  = f"⚖️{r['weight_kg']}кг" if r.get("weight_kg") else ""
+        extras = " ".join(filter(None, [hrv, wt]))
+        lines.append(f"  {day} {d[5:]}: {hs} | {sl} | {st}" + (f" | {extras}" if extras else ""))
+
+    text = "\n".join(lines)
+    chart = make_qwatch_chart(records, title="QWatch — тиждень")
+    return text, chart
+
+
+def report_monthly() -> tuple:
+    """Місячний звіт QWatch. Повертає (text, chart_bytes|None)."""
+    records = _get_month_records()
+    if not records:
+        return "📈 QWatch: даних за місяць немає.", None
+
+    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    MONTHS_UA = ["Січень","Лютий","Березень","Квітень","Травень","Червень",
+                 "Липень","Серпень","Вересень","Жовтень","Листопад","Грудень"]
+    month_name = f"{MONTHS_UA[now.month-1]} {now.year}"
+
+    steps_list  = [r.get("steps") for _, r in records]
+    sleep_list  = [r.get("sleep_total_min") for _, r in records]
+    hr_list     = [r.get("hr_avg") for _, r in records]
+    hrv_list    = [r.get("hrv") for _, r in records]
+    stress_list = [r.get("stress") for _, r in records]
+    cal_list    = [r.get("calories") for _, r in records]
+    hs_list     = [r.get("health_score") for _, r in records]
+    wt_list     = [r.get("weight_kg") for _, r in records]
+    spo2_list   = [r.get("spo2") for _, r in records]
+
+    lines = [
+        f"📈 <b>QWatch — місячний звіт</b>",
+        f"<i>{month_name} | {len(records)} днів з даними</i>\n",
+    ]
+
+    if any(v for v in hs_list):
+        vals = [v for v in hs_list if v]
+        best_day = records[hs_list.index(max(vals))][0][5:]
+        lines.append(f"🏆 Health Score: сер. <b>{_avg(hs_list)}%</b>  (кращий: {max(vals)}% {best_day})")
+    if any(v for v in steps_list):
+        total = sum(v for v in steps_list if v)
+        lines.append(f"🚶 Кроки: сер. <b>{int(_avg(steps_list)):,}</b> / всього <b>{total:,}</b>")
+    if any(v for v in sleep_list):
+        vals = [v for v in sleep_list if v]
+        lines.append(f"🛌 Сон: сер. <b>{_fmt_sleep(int(_avg(sleep_list)))}</b>  (min {_fmt_sleep(min(vals))} / max {_fmt_sleep(max(vals))})")
+    if any(v for v in hr_list):
+        lines.append(f"❤️ ЧСС: сер. <b>{_avg(hr_list)} уд/хв</b>")
+    if any(v for v in hrv_list):
+        vals = [v for v in hrv_list if v]
+        lines.append(f"🧘 HRV: сер. <b>{_avg(hrv_list)} мс</b>  (min {min(vals)} / max {max(vals)})")
+    if any(v for v in stress_list):
+        lines.append(f"😬 Стрес: сер. <b>{_avg(stress_list)}</b>")
+    if any(v for v in cal_list):
+        lines.append(f"🔥 Калорії: сер. <b>{int(_avg(cal_list)):,} ккал</b>")
+    if any(v for v in wt_list):
+        vals = [v for v in wt_list if v]
+        lines.append(f"⚖️ Вага: сер. <b>{_avg(wt_list)} кг</b>  (min {min(vals)} / max {max(vals)})")
+    if any(v for v in spo2_list):
+        lines.append(f"🩸 SpO2: сер. <b>{_avg(spo2_list)}%</b>")
+
+    # Тижні
+    if len(records) >= 7:
+        lines.append("\n<b>По тижнях:</b>")
+        week_records = [[], [], [], [], []]
+        for d, r in records:
+            dt = datetime.strptime(d, "%Y-%m-%d")
+            wk = min((dt.day - 1) // 7, 4)
+            week_records[wk].append(r)
+        for i, wr in enumerate(week_records):
+            if not wr:
+                continue
+            whs = _avg([r.get("health_score") for r in wr])
+            wsl = _avg([r.get("sleep_total_min") for r in wr])
+            wst = _avg([r.get("steps") for r in wr])
+            parts = []
+            if whs: parts.append(f"💚{int(whs)}%")
+            if wsl: parts.append(f"🛌{_fmt_sleep(int(wsl))}")
+            if wst: parts.append(f"🚶{int(wst):,}")
+            lines.append(f"  Тиж {i+1} ({len(wr)} дн.): {' | '.join(parts)}")
+
+    text = "\n".join(lines)
+    chart = make_qwatch_chart(records, title=f"QWatch — {month_name}")
+    return text, chart
+
+
+# ─── ГРАФІКИ ──────────────────────────────────────────────────────────────────
+
+def make_qwatch_chart(records: list, title: str = "QWatch") -> bytes | None:
+    """
+    Генерує PNG-графік з усіма метриками QWatch.
+    records: список (date_str, record_dict)
+    """
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        import matplotlib.dates as mdates
+        import numpy as np
+        import io
+        from datetime import date as _date
+
+        dates = [r[0] for r in records]
+        recs  = [r[1] for r in records]
+        x = [_date.fromisoformat(d) for d in dates]
+
+        # Метрики: (ключ, мітка, колір, ціль або None)
+        METRICS = [
+            ("health_score", "Health Score (%)",  "#4CAF50", 80),
+            ("steps",        "Кроки",             "#2196F3", None),
+            ("sleep_total_min", "Сон (год)",      "#9C27B0", None),
+            ("hr_avg",       "ЧСС (уд/хв)",       "#F44336", None),
+            ("hrv",          "HRV (мс)",           "#00BCD4", None),
+            ("stress",       "Стрес",              "#FF9800", None),
+            ("calories",     "Калорії (ккал)",     "#795548", None),
+            ("weight_kg",    "Вага (кг)",          "#E91E63", None),
+        ]
+
+        # Залишаємо тільки метрики де є хоча б 2 точки
+        available = []
+        for key, label, color, goal in METRICS:
+            vals = []
+            for i, r in enumerate(recs):
+                v = r.get(key)
+                if v is not None:
+                    # sleep → години
+                    if key == "sleep_total_min":
+                        v = round(v / 60, 2)
+                    vals.append((x[i], v))
+            if len(vals) >= 2:
+                available.append((key, label, color, goal, vals))
+
+        if not available:
+            return None
+
+        n = len(available)
+        ncols = 2
+        nrows = (n + 1) // 2
+
+        fig, axes = plt.subplots(nrows, ncols, figsize=(12, 3.8 * nrows), facecolor="#0D1117")
+        fig.suptitle(title, color="#E6EDF3", fontsize=14, fontweight="bold", y=1.01)
+        axes_flat = axes.flatten() if n > 1 else [axes]
+
+        for ax in axes_flat:
+            ax.set_facecolor("#161B22")
+            ax.tick_params(colors="#8B949E", labelsize=8)
+            for spine in ["top", "right"]:
+                ax.spines[spine].set_visible(False)
+            for spine in ["bottom", "left"]:
+                ax.spines[spine].set_color("#30363D")
+
+        for idx, (key, label, color, goal, vals) in enumerate(available):
+            ax = axes_flat[idx]
+            xi, yi = zip(*vals)
+
+            ax.plot(xi, yi, color=color, linewidth=2.2, marker="o",
+                    markersize=5, markerfacecolor="white", zorder=3)
+            ax.fill_between(xi, yi, min(yi) * 0.97, alpha=0.13, color=color)
+
+            # Тренд-лінія
+            xi_num = np.array([d.toordinal() for d in xi], dtype=float)
+            if len(xi_num) >= 2:
+                coeffs = np.polyfit(xi_num, yi, 1)
+                trend_y = np.polyval(coeffs, xi_num)
+                t_color = "#4CAF50" if coeffs[0] >= 0 else "#F44336"
+                ax.plot(xi, trend_y, color=t_color, linewidth=1.2,
+                        linestyle="--", alpha=0.7, zorder=2)
+                arrow = "↗" if coeffs[0] > 0.01 else ("↘" if coeffs[0] < -0.01 else "→")
+            else:
+                arrow = "→"
+
+            # Ціль
+            if goal is not None:
+                ax.axhline(goal, color="#FFD700", linewidth=1,
+                           linestyle=":", alpha=0.6)
+                ax.text(xi[-1], goal, f"  ціль {goal}",
+                        color="#FFD700", fontsize=7, va="center", alpha=0.8)
+
+            # Підписи значень
+            for xi_pt, yi_pt in zip(xi, yi):
+                lbl = f"{yi_pt:.1f}" if isinstance(yi_pt, float) and yi_pt != int(yi_pt) else f"{int(yi_pt)}"
+                ax.annotate(lbl, (xi_pt, yi_pt),
+                            textcoords="offset points", xytext=(0, 7),
+                            ha="center", color="white", fontsize=7)
+
+            last_val = vals[-1][1]
+            last_str = f"{last_val:.1f}" if isinstance(last_val, float) and last_val != int(last_val) else f"{int(last_val)}"
+            ax.set_title(f"{label}  {arrow}  {last_str}",
+                         color="#E6EDF3", fontsize=10, fontweight="bold", pad=6)
+
+            ax.xaxis.set_major_formatter(mdates.DateFormatter("%d.%m"))
+            ax.xaxis.set_major_locator(mdates.DayLocator(interval=max(1, len(dates) // 7)))
+            plt.setp(ax.xaxis.get_majorticklabels(), rotation=30, ha="right")
+
+            mn, mx = min(yi), max(yi)
+            pad = max((mx - mn) * 0.15, 0.5)
+            ax.set_ylim(mn - pad, mx + pad * 2)
+
+        # Ховаємо зайві axes
+        for i in range(len(available), len(axes_flat)):
+            axes_flat[i].set_visible(False)
+
+        plt.tight_layout(pad=1.5)
+
+        buf = io.BytesIO()
+        fig.savefig(buf, format="png", dpi=130, bbox_inches="tight", facecolor="#0D1117")
+        plt.close(fig)
+        buf.seek(0)
+        return buf.read()
+
+    except Exception as e:
+        print(f"make_qwatch_chart error: {e}")
+        return None
 
 # ─── SEND ─────────────────────────────────────────────────────────────────────
 
@@ -483,11 +663,52 @@ def send_confirmation(record: dict):
     lines.append("\n<i>Включено в денний підсумок о 21:00</i>")
     _send("\n".join(lines))
 
+def _send_photo(photo_bytes: bytes, caption: str = ""):
+    """Відправляє фото з підписом в Telegram."""
+    boundary = "----QWatchBoundary7Ma4"
+
+    def field(name, value):
+        return (
+            f"--{boundary}\r\n"
+            f'Content-Disposition: form-data; name="{name}"\r\n\r\n'
+            f"{value}\r\n"
+        ).encode()
+
+    body = (
+        field("chat_id", TELEGRAM_CHAT) +
+        field("parse_mode", "HTML") +
+        field("caption", caption[:1024]) +
+        f"--{boundary}\r\n".encode() +
+        f'Content-Disposition: form-data; name="photo"; filename="chart.png"\r\n'.encode() +
+        f"Content-Type: image/png\r\n\r\n".encode() +
+        photo_bytes +
+        f"\r\n--{boundary}--\r\n".encode()
+    )
+    req = urllib.request.Request(
+        f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
+        data=body,
+        headers={"Content-Type": f"multipart/form-data; boundary={boundary}"}
+    )
+    try:
+        urllib.request.urlopen(req, timeout=30)
+    except Exception as e:
+        print(f"qwatch send_photo error: {e}")
+        _send(caption)  # fallback text
+
+
 def send_weekly_report():
-    _send(report_weekly())
+    text, chart = report_weekly()
+    if chart:
+        _send_photo(chart, text)
+    else:
+        _send(text)
 
 def send_monthly_report():
-    _send(report_monthly())
+    text, chart = report_monthly()
+    if chart:
+        _send_photo(chart, text)
+    else:
+        _send(text)
 
 # ─── AUTO REMINDERS (викликається з monitor_loop.py) ─────────────────────────
 

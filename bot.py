@@ -1953,16 +1953,26 @@ def handle_command(chat_id, text):
             send(chat_id, f"⚠️ {e}")
 
     elif text in ["/qwatch тиждень", "qwatch тиждень", "/qст", "qст"]:
+        send(chat_id, "⏳ Готую тижневий QWatch звіт...")
         try:
             from qwatch import report_weekly
-            send(chat_id, report_weekly())
+            rtext, rchart = report_weekly()
+            if rchart:
+                send_photo(chat_id, rchart, rtext)
+            else:
+                send(chat_id, rtext)
         except Exception as e:
             send(chat_id, f"⚠️ {e}")
 
     elif text in ["/qwatch місяць", "qwatch місяць", "/qм", "qм"]:
+        send(chat_id, "⏳ Готую місячний QWatch звіт...")
         try:
             from qwatch import report_monthly
-            send(chat_id, report_monthly())
+            rtext, rchart = report_monthly()
+            if rchart:
+                send_photo(chat_id, rchart, rtext)
+            else:
+                send(chat_id, rtext)
         except Exception as e:
             send(chat_id, f"⚠️ {e}")
 
