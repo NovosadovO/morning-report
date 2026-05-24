@@ -379,12 +379,16 @@ def handle_email_callback(callback_query):
             except Exception as _ge:
                 print(f"[email_describe] gemini error: {_ge}", flush=True)
 
+            # Витягуємо тільки ім'я з sender (прибираємо email адресу)
+            import re as _re3
+            sender_name = _re3.sub(r'<[^>]+>', '', sender).strip().strip('"').strip("'") or sender[:60]
+
             # plain text — без HTML щоб спецсимволи не ламали
             if ai_text:
-                out = f"📖 Опис листа\n\n📌 {subject[:70]}\n👤 {sender[:60]}\n\n{ai_text}"
+                out = f"📖 Опис листа\n\n📌 {subject[:70]}\n👤 {sender_name[:60]}\n\n{ai_text}"
             else:
                 preview = body[:800].strip() if body else "(порожній лист)"
-                out = f"📖 Текст листа\n\n📌 {subject[:70]}\n👤 {sender[:60]}\n\n{preview}"
+                out = f"📖 Текст листа\n\n📌 {subject[:70]}\n👤 {sender_name[:60]}\n\n{preview}"
 
             result = api("sendMessage", {
                 "chat_id": _cid,
@@ -392,6 +396,7 @@ def handle_email_callback(callback_query):
                 "reply_to_message_id": _mid
             })
             if not result.get("ok"):
+                # reply не спрацював — надсилаємо без reply
                 api("sendMessage", {"chat_id": _cid, "text": out[:4000]})
 
         except Exception as _e:
