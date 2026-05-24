@@ -1132,7 +1132,7 @@ def get_emails():
 
         mail.logout()
 
-        unread_count = sum(1 for _, _, _, u in primary if u)
+        unread_count = sum(1 for _, _, _, u, _ in primary if u)
 
         # Заголовок блоку
         if unread_count > 0:
