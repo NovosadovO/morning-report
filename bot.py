@@ -379,25 +379,25 @@ def handle_email_callback(callback_query):
             except Exception as _ge:
                 print(f"[email_describe] gemini error: {_ge}", flush=True)
 
+            # plain text — без HTML щоб спецсимволи не ламали
             if ai_text:
-                out = f"📖 <b>Опис листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n{ai_text}"
+                out = f"📖 Опис листа\n\n📌 {subject[:70]}\n👤 {sender[:60]}\n\n{ai_text}"
             else:
                 preview = body[:800].strip() if body else "(порожній лист)"
-                out = f"📖 <b>Текст листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n<i>{preview}</i>"
+                out = f"📖 Текст листа\n\n📌 {subject[:70]}\n👤 {sender[:60]}\n\n{preview}"
 
             result = api("sendMessage", {
                 "chat_id": _cid,
                 "text": out[:4000],
-                "parse_mode": "HTML",
                 "reply_to_message_id": _mid
             })
             if not result.get("ok"):
-                send(_cid, out[:4000])
+                api("sendMessage", {"chat_id": _cid, "text": out[:4000]})
 
         except Exception as _e:
             import traceback as _tb
             _tb.print_exc()
-            send(_cid, f"⚠️ Помилка: <code>{type(_e).__name__}: {str(_e)[:200]}</code>")
+            api("sendMessage", {"chat_id": _cid, "text": f"Помилка: {type(_e).__name__}: {str(_e)[:200]}"})
 
     elif data.startswith("email_delete_"):
         uid_str = data[len("email_delete_"):]
