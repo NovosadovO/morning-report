@@ -314,7 +314,8 @@ def handle_email_callback(callback_query):
                 GMAIL_PASS = os.environ.get("GMAIL_APP_PASSWORD", "zbzlkvxjspuekbuk")
                 GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
 
-                print(f"[email_describe] starting for uid={_uid}", flush=True)
+                print(f"[email_describe] thread started, uid={_uid}", flush=True)
+                send(_cid, f"⏳ Завантажую лист (uid={_uid})...")
 
                 # ── IMAP: завантажуємо лист ───────────────────────────────────
                 mail = _imap.IMAP4_SSL("imap.gmail.com")
@@ -451,7 +452,8 @@ def handle_email_callback(callback_query):
                 _tb.print_exc()
                 send(_cid, f"⚠️ Помилка при читанні листа:\n<code>{type(_e).__name__}: {str(_e)[:200]}</code>")
 
-        _thr.Thread(target=_do_describe, daemon=True).start()
+        t = _thr.Thread(target=_do_describe, daemon=False)
+        t.start()
 
     elif data.startswith("email_delete_"):
         uid_str = data[len("email_delete_"):]
