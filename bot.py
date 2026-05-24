@@ -295,57 +295,79 @@ def handle_email_callback(callback_query):
         uid_str = data[len("email_describe_"):]
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📖 Читаю лист..."})
         try:
-            import sys, os as _os
+            import sys, os as _os, threading as _thr
             sys.path.insert(0, _os.path.dirname(__file__))
-            from monitor import _imap_connect, _imap_get_body, _imap_decode_header, _gemini_email_analysis
-            import email as _email_lib
 
-            mail = _imap_connect()
-            mail.select("INBOX")
-            _, msg_data = mail.uid('fetch', uid_str.encode(), "(RFC822)")
-            mail.logout()
+            def _do_describe():
+                try:
+                    from monitor import _imap_connect, _imap_get_body, _imap_decode_header, _gemini_email_analysis
+                    import email as _email_lib
 
-            if not (msg_data and msg_data[0]):
-                send(chat_id, "⚠️ Не вдалось завантажити лист")
-                return
+                    # ── Завантажуємо лист ────────────────────────────────────
+                    mail = _imap_connect()
+                    mail.select("INBOX")
+                    _, msg_data = mail.uid('fetch', uid_str.encode(), "(RFC822)")
+                    mail.logout()
 
-            msg     = _email_lib.message_from_bytes(msg_data[0][1])
-            subject = _imap_decode_header(msg.get("Subject", ""))
-            sender  = _imap_decode_header(msg.get("From", ""))
-            body    = _imap_get_body(msg)
+                    # Розпаковуємо відповідь IMAP (може бути list of tuples)
+                    raw_bytes = None
+                    if msg_data:
+                        for item in msg_data:
+                            if isinstance(item, tuple) and len(item) >= 2:
+                                raw_bytes = item[1]
+                                break
+                            elif isinstance(item, bytes) and len(item) > 100:
+                                raw_bytes = item
+                                break
 
-            if not body.strip():
-                send(chat_id, f"📩 <b>{subject[:60]}</b>\n⚠️ Лист порожній або тільки вкладення.")
-                return
+                    if not raw_bytes:
+                        send(chat_id, "⚠️ Не вдалось завантажити лист — спробуй ще раз.")
+                        return
 
-            # Gemini аналізує повний текст листа
-            ai = _gemini_email_analysis(f"Від: {sender}\nТема: {subject}\n\n{body}")
+                    msg     = _email_lib.message_from_bytes(raw_bytes)
+                    subject = _imap_decode_header(msg.get("Subject", "(без теми)"))
+                    sender  = _imap_decode_header(msg.get("From", ""))
+                    body    = _imap_get_body(msg)
 
-            if ai:
-                desc    = ai.get("description", "").strip()
-                opinion = ai.get("opinion", "").strip()
-                text = (
-                    f"📖 <b>Опис листа</b>\n"
-                    f"📌 <b>{subject[:60]}</b>\n"
-                    f"👤 {sender[:50]}\n\n"
-                )
-                if desc:
-                    text += f"📋 <b>Зміст:</b>\n{desc}\n\n"
-                if opinion:
-                    text += f"🤖 <b>Думка AI:</b> {opinion}"
-            else:
-                # Fallback — перші 500 символів
-                text = (
-                    f"📖 <b>Лист</b>\n"
-                    f"📌 <b>{subject[:60]}</b>\n"
-                    f"👤 {sender[:50]}\n\n"
-                    f"<i>{body[:500]}...</i>"
-                )
+                    # ── Gemini аналіз ─────────────────────────────────────────
+                    full_text = f"Від: {sender}\nТема: {subject}\n\n{body}"
+                    ai = _gemini_email_analysis(full_text)
 
-            send(chat_id, text[:4000])
+                    if ai and (ai.get("description") or ai.get("opinion")):
+                        desc    = (ai.get("description") or "").strip()
+                        opinion = (ai.get("opinion") or "").strip()
+                        text = (
+                            f"📖 <b>Опис листа</b>\n\n"
+                            f"📌 <b>{subject[:70]}</b>\n"
+                            f"👤 {sender[:60]}\n\n"
+                        )
+                        if desc:
+                            text += f"📋 <b>Зміст:</b>\n{desc}\n\n"
+                        if opinion:
+                            text += f"🤖 <b>Порада:</b> {opinion}"
+                    else:
+                        # Fallback — показуємо сирий текст листа
+                        preview = body[:800].strip() if body else "(порожній лист)"
+                        text = (
+                            f"📖 <b>Текст листа</b>\n\n"
+                            f"📌 <b>{subject[:70]}</b>\n"
+                            f"👤 {sender[:60]}\n\n"
+                            f"<i>{preview}</i>"
+                        )
+
+                    send(chat_id, text[:4000])
+
+                except Exception as _e:
+                    print(f"email_describe thread error: {type(_e).__name__}: {_e}")
+                    import traceback; traceback.print_exc()
+                    send(chat_id, f"⚠️ Помилка при читанні листа:\n<code>{type(_e).__name__}: {str(_e)[:200]}</code>")
+
+            # Запускаємо в окремому потоці — Gemini може йти 10-30 сек
+            _thr.Thread(target=_do_describe, daemon=True).start()
+
         except Exception as e:
             print(f"email_describe error: {e}")
-            api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"Помилка: {e}"})
+            send(chat_id, f"⚠️ Помилка: <code>{e}</code>")
 
     elif data.startswith("email_delete_"):
         uid_str = data[len("email_delete_"):]
