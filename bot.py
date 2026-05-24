@@ -379,6 +379,7 @@ def handle_email_callback(callback_query):
                 print(f"[email_describe] from cache: subj={subject[:40]}, body_len={len(body)}", flush=True)
 
                 # ── Gemini аналіз ─────────────────────────────────────────────
+                send(_cid, f"🔍 DEBUG: кеш ок, body_len={len(body)}, йду в Gemini...")
                 full_text = f"Від: {sender}\nТема: {subject}\n\n{body}"
                 prompt = (
                     "Проаналізуй цей email. Відповідь — ТІЛЬКИ валідний JSON, без markdown:\n"
@@ -398,6 +399,7 @@ def handle_email_callback(callback_query):
                 try:
                     with urllib.request.urlopen(req, timeout=40) as r:
                         resp_data = json.loads(r.read())
+                    send(_cid, "🔍 DEBUG: Gemini відповів, парсю...")
                     raw_ai = resp_data["candidates"][0]["content"]["parts"][0]["text"].strip()
                     raw_ai = _re2.sub(r"^```(?:json)?\s*", "", raw_ai, flags=_re2.MULTILINE)
                     raw_ai = _re2.sub(r"\s*```\s*$", "", raw_ai, flags=_re2.MULTILINE).strip()
@@ -409,22 +411,26 @@ def handle_email_callback(callback_query):
                         if dm:
                             ai = {"description": dm.group(1), "opinion": om.group(1) if om else ""}
                 except Exception as _ge:
+                    send(_cid, f"🔍 DEBUG: Gemini ERROR: {_ge}")
                     print(f"[email_describe] gemini error: {_ge}", flush=True)
 
                 # ── Формуємо відповідь ────────────────────────────────────────
+                send(_cid, f"🔍 DEBUG: ai={str(ai)[:100]}, формую відповідь...")
                 if ai and isinstance(ai, dict) and (ai.get("description") or ai.get("opinion")):
                     desc    = (ai.get("description") or "").strip()
                     opinion = (ai.get("opinion") or "").strip()
-                    text = f"📖 <b>Опис листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n"
+                    out = f"📖 <b>Опис листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n"
                     if desc:
-                        text += f"📋 <b>Зміст:</b>\n{desc}\n\n"
+                        out += f"📋 <b>Зміст:</b>\n{desc}\n\n"
                     if opinion:
-                        text += f"🤖 <b>Порада:</b> {opinion}"
+                        out += f"🤖 <b>Порада:</b> {opinion}"
                 else:
                     preview = body[:800].strip() if body else "(порожній лист)"
-                    text = f"📖 <b>Текст листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n<i>{preview}</i>"
+                    out = f"📖 <b>Текст листа</b>\n\n📌 <b>{subject[:70]}</b>\n👤 {sender[:60]}\n\n<i>{preview}</i>"
 
-                send_reply(_cid, _mid, text[:4000])
+                send(_cid, f"🔍 DEBUG: надсилаю reply, mid={_mid}")
+                send_reply(_cid, _mid, out[:4000])
+                send(_cid, "🔍 DEBUG: DONE")
 
             except Exception as _e:
                 import traceback as _tb
