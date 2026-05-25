@@ -725,7 +725,9 @@ def _get_all_calendar_ids(headers):
             req = urllib.request.Request(url, headers=headers)
             with urllib.request.urlopen(req, timeout=10) as r:
                 items = json.loads(r.read()).get("items", [])
-        return [it["id"] for it in items if not it.get("deleted")]
+        ids = [it["id"] for it in items if not it.get("deleted")]
+        print(f"[CAL] calendar_ids={ids}")
+        return ids
     except Exception as e:
         print(f"_get_all_calendar_ids error: {e}")
         return ["novosadovoleg@gmail.com"]
@@ -747,6 +749,7 @@ def _fetch_events_all_calendars(headers, t_min, t_max, max_per_cal=20):
             if _HAS_REQUESTS:
                 r = _requests.get(url, headers=headers, timeout=10)
                 if r.status_code != 200:
+                    print(f"[CAL] cal={cal_id} status={r.status_code} body={r.text[:200]}")
                     continue
                 events = r.json().get("items", [])
             else:
