@@ -772,20 +772,34 @@ def _fetch_events_all_calendars(headers, t_min, t_max, max_per_cal=20):
     return all_events
 
 
-def get_calendar():
+def _calendar_access_token():
+    """Отримує Calendar access token — спочатку через Gmail OAuth2 refresh token,
+    потім fallback на service account."""
+    token = _gmail_access_token()
+    if token:
+        return token
+    # fallback: service account
     creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    if creds_json:
+        try:
+            return _get_google_token(
+                json.loads(creds_json),
+                "https://www.googleapis.com/auth/calendar.readonly")
+        except Exception as e:
+            print(f"[CAL] service account token error: {e}")
+    return None
+
+
+def get_calendar():
     now = datetime.now(timezone.utc)
     date_today    = (now + timedelta(hours=3)).strftime("%d.%m.%Y")
     date_tomorrow = (now + timedelta(hours=27)).strftime("%d.%m.%Y")
 
-    if not creds_json:
+    token = _calendar_access_token()
+    if not token:
         return "📅 <b>Календар</b>\n⚠️ Не налаштовано"
 
     try:
-        creds_data = json.loads(creds_json)
-        token = _get_google_token(
-            creds_data, "https://www.googleapis.com/auth/calendar.readonly")
-
         headers = {"Authorization": f"Bearer {token}"}
 
         # Часові межі
@@ -1483,11 +1497,9 @@ def check_calendar_reminders():
     Також нагадує про події 'весь день' о 08:00.
     """
     try:
-        creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
-        if not creds_json:
+        token = _calendar_access_token()
+        if not token:
             return
-        creds_data = json.loads(creds_json)
-        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
         headers = {"Authorization": f"Bearer {token}"}
 
         now_utc = datetime.now(timezone.utc)
@@ -2393,12 +2405,10 @@ def _build_report_header(now_local, slot_key, cal_events_raw):
 
 def _get_calendar_context_for_report():
     """Витягує події з УСІХ календарів (включно з нагадуваннями, завданнями, ДН)."""
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
-    if not creds_json:
+    token = _calendar_access_token()
+    if not token:
         return [], "нічого не заплановано"
     try:
-        creds_data = json.loads(creds_json)
-        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
         headers = {"Authorization": f"Bearer {token}"}
         now = datetime.now(timezone.utc)
         now_local = now + timedelta(hours=3)
@@ -3251,17 +3261,13 @@ CALENDAR_REMINDED_FILE = os.path.join(_DATA_DIR, "monitor_calendar_reminded.json
 
 def check_calendar_reminders():
     """Шле нагадування за 1 годину до старту кожної події в Google Calendar."""
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
-    if not creds_json:
+    token = _calendar_access_token()
+    if not token:
         return
 
     reminded = set(load_json_file(CALENDAR_REMINDED_FILE, default=[]))
 
     try:
-        creds_data = json.loads(creds_json)
-        token = _get_google_token(
-            creds_data, "https://www.googleapis.com/auth/calendar.readonly")
-
         headers = {"Authorization": f"Bearer {token}"}
         cal_id  = "novosadovoleg%40gmail.com"
 
@@ -3394,15 +3400,14 @@ SHIFT_REMINDED_FILE = os.path.join(_DATA_DIR, "monitor_shift_reminded.json")
 
 def check_shift_reminders():
     """Шле нагадування за 2 години до будь-якої події в Google Calendar."""
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
-    if not creds_json:
+    token = _calendar_access_token()
+    if not token:
         return
 
     reminded = set(load_json_file(SHIFT_REMINDED_FILE, default=[]))
 
     try:
-        creds_data = json.loads(creds_json)
-        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        token = _calendar_access_token()
         headers = {"Authorization": f"Bearer {token}"}
         cal_id  = "novosadovoleg%40gmail.com"
 
@@ -3715,13 +3720,11 @@ PROACTIVE_FILE = os.path.join(_DATA_DIR, "monitor_proactive.json")
 def _get_calendar_events_text() -> str:
     """Повертає короткий список подій з Google Calendar на СЬОГОДНІ (для AI промптів)."""
     try:
-        creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
-        if not creds_json:
+        token = _calendar_access_token()
+        if not token:
             return ""
-        creds_data = json.loads(creds_json)
-        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
         now_utc = datetime.now(timezone.utc)
-        local_start = (now_utc + timedelta(hours=2)).replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        local_start = (now_utc + timedelta(hours=3)).replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=3)
         local_end   = local_start + timedelta(hours=24)
         cal_id = "novosadovoleg%40gmail.com"
         url = (
@@ -3741,7 +3744,7 @@ def _get_calendar_events_text() -> str:
             summary = ev.get("summary", "(без назви)")
             try:
                 dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                t  = (dt + timedelta(hours=2)).strftime("%H:%M")
+                t  = dt.astimezone(timezone(timedelta(hours=3))).strftime("%H:%M")
             except Exception:
                 t = ""
             lines.append(f"{t} {summary}".strip())
@@ -3901,13 +3904,11 @@ def check_proactive_insights():
         save_json_file(PROACTIVE_FILE, state)
 
     # ── Отримуємо календар на сьогодні і завтра ───────────────────────────────
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
     today_events = []
     tomorrow_events = []
-    if creds_json:
-        try:
-            creds_data = json.loads(creds_json)
-            token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+    try:
+        token = _calendar_access_token()
+        if token:
             headers = {"Authorization": f"Bearer {token}"}
             cal_id = "novosadovoleg%40gmail.com"
 
@@ -3928,8 +3929,8 @@ def check_proactive_insights():
                     today_events = evs
                 else:
                     tomorrow_events = evs
-        except Exception as e:
-            print(f"proactive calendar error: {e}")
+    except Exception as e:
+        print(f"proactive calendar error: {e}")
 
     def get_shift(events):
         """Повертає ('early'/'night'/None, start_dt)"""
@@ -4019,9 +4020,9 @@ def check_proactive_insights():
         # Реальний тижневий контекст
         cal_next = ""
         try:
-            creds_data = json.loads(creds_json) if creds_json else None
-            if creds_data:
-                token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+            _week_token = _calendar_access_token()
+            if _week_token:
+                token = _week_token
                 tmin = now_local.replace(hour=0,minute=0,second=0,microsecond=0)
                 tmax = tmin + timedelta(days=7)
                 url = (
@@ -4480,13 +4481,10 @@ def check_weekly_plan():
     if state.get(key):
         return
 
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
-    if not creds_json:
-        return
-
     try:
-        creds_data = json.loads(creds_json)
-        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        token = _calendar_access_token()
+        if not token:
+            return
         headers = {"Authorization": f"Bearer {token}"}
         cal_id  = "novosadovoleg%40gmail.com"
 
@@ -4552,10 +4550,6 @@ EVENT_DONE_FILE = os.path.join(_DATA_DIR, "monitor_event_done.json")
 def check_event_done():
     """Кожні 5 хвилин: питає 'Виконано?' для ВСІХ подій що закінчились сьогодні
     і ще не отримали відповідь. Стійко до перезавантажень — dedup по event_id."""
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
-    if not creds_json:
-        return
-
     # Не питати вночі (00:00–07:00 місцевого)
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     if now_local.hour < 7:
@@ -4564,8 +4558,7 @@ def check_event_done():
     asked = set(load_json_file(EVENT_DONE_FILE, default=[]))
 
     try:
-        creds_data = json.loads(creds_json)
-        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        token = _calendar_access_token()
         headers = {"Authorization": f"Bearer {token}"}
         cal_id = "novosadovoleg%40gmail.com"
 
@@ -5022,14 +5015,9 @@ def check_weight_reminder():
     if state.get(key):
         return
 
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
-    if not creds_json:
-        return
-
     try:
         # Перевіряємо календар — є зміна сьогодні?
-        creds_data = json.loads(creds_json)
-        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        token = _calendar_access_token()
         headers = {"Authorization": f"Bearer {token}"}
         cal_id = "novosadovoleg%40gmail.com"
 
@@ -5448,12 +5436,10 @@ def check_fasting_reminder():
         return
 
     # Перевіряємо чи є зміна сьогодні
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
     has_shift = False
-    if creds_json:
-        try:
-            creds_data = json.loads(creds_json)
-            token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+    try:
+        token = _calendar_access_token()
+        if token:
             tmin = now_local.replace(hour=0, minute=0, second=0, microsecond=0)
             tmax = tmin + timedelta(hours=24)
             url = (
@@ -5466,8 +5452,8 @@ def check_fasting_reminder():
             with urllib.request.urlopen(req, timeout=10) as r:
                 events = json.loads(r.read()).get("items", [])
             has_shift = any("рання" in e.get("summary","").lower() or "нічна" in e.get("summary","").lower() for e in events)
-        except Exception as e:
-            print(f"fasting calendar check error: {e}")
+    except Exception as e:
+        print(f"fasting calendar check error: {e}")
 
     if has_shift:
         return  # в робочий день режим інший
@@ -5520,12 +5506,10 @@ def check_pre_shift_weather():
         return
 
     # Перевіряємо чи є відповідна зміна сьогодні
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
     has_shift = False
-    if creds_json:
-        try:
-            creds_data = json.loads(creds_json)
-            token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+    try:
+        token = _calendar_access_token()
+        if token:
             tmin = now_local.replace(hour=0, minute=0, second=0, microsecond=0)
             tmax = tmin + timedelta(hours=24)
             url = (
@@ -5540,8 +5524,8 @@ def check_pre_shift_weather():
 
             shift_word = "рання"
             has_shift = any(shift_word in e.get("summary","").lower() for e in events)
-        except Exception as e:
-            print(f"pre_shift_weather calendar error: {e}")
+    except Exception as e:
+        print(f"pre_shift_weather calendar error: {e}")
 
     if not has_shift:
         return
@@ -6689,8 +6673,8 @@ def check_calendar_live():
     if not (7 <= h <= 23):
         return
 
-    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
-    if not creds_json:
+    token = _calendar_access_token()
+    if not token:
         return
 
     # Стан зберігаємо в GitHub щоб не дублювати після редеплою
@@ -6708,8 +6692,7 @@ def check_calendar_live():
             save_json_file(CALENDAR_CONTEXT_FILE, s)
 
     try:
-        creds_data = json.loads(creds_json)
-        token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        token = _calendar_access_token()
         headers = {"Authorization": f"Bearer {token}"}
         cal_id  = "novosadovoleg%40gmail.com"
 
