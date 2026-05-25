@@ -792,8 +792,10 @@ def _calendar_access_token():
 
 def get_calendar():
     now = datetime.now(timezone.utc)
-    date_today    = (now + timedelta(hours=3)).strftime("%d.%m.%Y")
-    date_tomorrow = (now + timedelta(hours=27)).strftime("%d.%m.%Y")
+    tz_kyiv_top   = timezone(timedelta(hours=3))
+    now_kyiv_top  = now.astimezone(tz_kyiv_top)
+    date_today    = now_kyiv_top.strftime("%d.%m.%Y")
+    date_tomorrow = (now_kyiv_top + timedelta(hours=24)).strftime("%d.%m.%Y")
 
     token = _calendar_access_token()
     if not token:
@@ -802,9 +804,10 @@ def get_calendar():
     try:
         headers = {"Authorization": f"Bearer {token}"}
 
-        # Часові межі
-        today_start = (now + timedelta(hours=3)).replace(
-            hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=3)
+        # Часові межі (Kyiv UTC+3)
+        tz_kyiv = timezone(timedelta(hours=3))
+        now_kyiv = now.astimezone(tz_kyiv)
+        today_start = now_kyiv.replace(hour=0, minute=0, second=0, microsecond=0).astimezone(timezone.utc)
         today_end      = today_start + timedelta(hours=24)
         tomorrow_start = today_end
         tomorrow_end   = tomorrow_start + timedelta(hours=24)
