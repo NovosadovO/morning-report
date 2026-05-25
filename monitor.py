@@ -793,8 +793,12 @@ def get_calendar():
         tomorrow_end   = tomorrow_start + timedelta(hours=24)
 
         # Читаємо ВСІ календарі
+        print(f"[CAL] today_start={today_start.isoformat()} today_end={today_end.isoformat()}")
         today_events    = _fetch_events_all_calendars(headers, today_start, today_end)
         tomorrow_events = _fetch_events_all_calendars(headers, tomorrow_start, tomorrow_end)
+        print(f"[CAL] today_events={len(today_events)} tomorrow_events={len(tomorrow_events)}")
+        for ev in today_events:
+            print(f"[CAL] TODAY ev: {ev.get('summary')} start={ev['start']}")
 
         def format_events(events):
             lines = []
