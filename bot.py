@@ -303,8 +303,6 @@ def handle_email_callback(callback_query):
         uid_str = data[len("email_describe_"):]
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📖 Читаю лист..."})
 
-        import re as _re2
-
         _cid = chat_id
         _uid = uid_str
         _mid = msg_id
@@ -313,16 +311,20 @@ def handle_email_callback(callback_query):
         try:
             print(f"[email_describe] uid={_uid}", flush=True)
 
-            # ── Читаємо з кешу ───────────────────────────────────────────────
             import sys as _sys
             _sys.path.insert(0, os.path.dirname(__file__))
             import storage as _storage
+
+            # ── Оригінальний текст повідомлення ──────────────────────────────
+            orig_text = callback_query["message"].get("text", "")
+            orig_kb   = callback_query["message"].get("reply_markup", {})
+
+            # ── Читаємо з кешу ───────────────────────────────────────────────
             cache = _storage.load("email_body_cache.json") or {}
             entry = cache.get(_uid)
             print(f"[email_describe] cache entry={'found' if entry else 'MISS'}", flush=True)
 
             if not entry:
-                # Fallback: IMAP
                 try:
                     import imaplib, email as _email_lib, socket
                     socket.setdefaulttimeout(25)
@@ -349,7 +351,7 @@ def handle_email_callback(callback_query):
                         body = _msg.get_payload(decode=True).decode(_msg.get_content_charset() or "utf-8", errors="replace")
                     entry = {"subject": subject, "sender": sender, "body": body[:2000]}
                 except Exception as _fe:
-                    send(_cid, f"⚠️ Лист не знайдено. Помилка: <code>{str(_fe)[:200]}</code>")
+                    api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"⚠️ Лист не знайдено"})
                     return
 
             subject = entry.get("subject", "(без теми)")
@@ -387,32 +389,68 @@ def handle_email_callback(callback_query):
             except Exception as _ge:
                 print(f"[email_describe] gemini error: {_ge}", flush=True)
 
-            # Витягуємо тільки ім'я з sender (прибираємо email адресу)
             import re as _re3
             sender_name = _re3.sub(r'<[^>]+>', '', sender).strip().strip('"').strip("'") or sender[:60]
 
-            # plain text — без HTML щоб спецсимволи не ламали
             if ai_text:
-                out = f"📖 Опис листа\n\n📌 {subject[:70]}\n👤 {sender_name[:60]}\n\n{ai_text}"
+                description = f"\n\n─────────────────\n📖 ОПИС ЛИСТА\n\n{ai_text}"
             else:
-                preview = body[:800].strip() if body else "(порожній лист)"
-                out = f"📖 Текст листа\n\n📌 {subject[:70]}\n👤 {sender_name[:60]}\n\n{preview}"
+                preview = body[:600].strip() if body else "(порожній лист)"
+                description = f"\n\n─────────────────\n📖 ТЕКСТ ЛИСТА\n\n{preview}"
 
-            delete_kb = {"inline_keyboard": [[{"text": "🗑 Закрити", "callback_data": "delete_self"}]]}
-            result = api("sendMessage", {
+            # ── Зберігаємо оригінал для відновлення ──────────────────────────
+            orig_cache = _storage.load("email_orig_text.json") or {}
+            orig_cache[f"{_cid}_{_mid}"] = {"text": orig_text, "keyboard": orig_kb}
+            _storage.save("email_orig_text.json", orig_cache)
+
+            # ── Нова клавіатура з кнопкою "Прибрати опис" ────────────────────
+            new_kb = orig_kb.copy() if orig_kb else {"inline_keyboard": []}
+            # Замінюємо кнопку "Описати лист" на "🗑 Прибрати опис"
+            new_rows = []
+            for row in new_kb.get("inline_keyboard", []):
+                new_row = []
+                for btn in row:
+                    if btn.get("callback_data", "").startswith("email_describe_"):
+                        new_row.append({"text": "🗑 Прибрати опис", "callback_data": f"email_undescribe_{_uid}"})
+                    else:
+                        new_row.append(btn)
+                new_rows.append(new_row)
+            new_kb["inline_keyboard"] = new_rows
+
+            # ── Редагуємо повідомлення листа ─────────────────────────────────
+            new_text = (orig_text + description)[:4096]
+            api("editMessageText", {
                 "chat_id": _cid,
-                "text": out[:4096],
-                "reply_to_message_id": _mid,
-                "reply_markup": delete_kb
+                "message_id": _mid,
+                "text": new_text,
+                "reply_markup": new_kb
             })
-            if not result.get("ok"):
-                # reply не спрацював — надсилаємо без reply
-                api("sendMessage", {"chat_id": _cid, "text": out[:4096], "reply_markup": delete_kb})
 
         except Exception as _e:
             import traceback as _tb
             _tb.print_exc()
-            api("sendMessage", {"chat_id": _cid, "text": f"Помилка: {type(_e).__name__}: {str(_e)[:200]}"})
+            api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"Помилка: {str(_e)[:100]}"})
+
+    elif data.startswith("email_undescribe_"):
+        uid_str = data[len("email_undescribe_"):]
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Опис прибрано"})
+
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(__file__))
+        import storage as _storage
+
+        orig_cache = _storage.load("email_orig_text.json") or {}
+        key = f"{chat_id}_{msg_id}"
+        orig = orig_cache.get(key)
+        if orig:
+            api("editMessageText", {
+                "chat_id": chat_id,
+                "message_id": msg_id,
+                "text": orig["text"],
+                "reply_markup": orig["keyboard"]
+            })
+        else:
+            api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "⚠️ Оригінал не знайдено"})
 
     elif data.startswith("email_delete_"):
         uid_str = data[len("email_delete_"):]
@@ -2274,7 +2312,8 @@ def main():
                         elif data == "delete_self":
                             api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Закрито"})
                             api("deleteMessage", {"chat_id": chat_id, "message_id": cb["message"]["message_id"]})
-                        elif (data.startswith("email_describe_") or data.startswith("email_delete_") or
+                        elif (data.startswith("email_describe_") or data.startswith("email_undescribe_") or
+                              data.startswith("email_delete_") or
                               data.startswith("email_keep_") or data.startswith("email_star_") or
                               data.startswith("email_cal_") or data.startswith("email_reply_") or
                               data.startswith("email_send_") or data.startswith("email_cancel_") or
