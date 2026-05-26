@@ -120,7 +120,7 @@ def generate_natal_chart(output_path=None):
         tmp.close()
 
     now_utc   = datetime.now(timezone.utc)
-    now_local = now_utc + timedelta(hours=3)
+    now_local = now_utc + timedelta(hours=2)
 
     natal = AstrologicalSubject(
         "natal", BIRTH_YEAR, BIRTH_MONTH, BIRTH_DAY, BIRTH_HOUR, BIRTH_MIN,

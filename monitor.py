@@ -792,10 +792,10 @@ def _calendar_access_token():
 
 def get_calendar():
     now = datetime.now(timezone.utc)
-    tz_kyiv_top   = timezone(timedelta(hours=3))
-    now_kyiv_top  = now.astimezone(tz_kyiv_top)
-    date_today    = now_kyiv_top.strftime("%d.%m.%Y")
-    date_tomorrow = (now_kyiv_top + timedelta(hours=24)).strftime("%d.%m.%Y")
+    tz_local_top   = timezone(timedelta(hours=2))
+    now_local_top  = now.astimezone(tz_local_top)
+    date_today    = now_local_top.strftime("%d.%m.%Y")
+    date_tomorrow = (now_local_top + timedelta(hours=24)).strftime("%d.%m.%Y")
 
     token = _calendar_access_token()
     if not token:
@@ -804,10 +804,10 @@ def get_calendar():
     try:
         headers = {"Authorization": f"Bearer {token}"}
 
-        # Часові межі (Kyiv UTC+3)
-        tz_kyiv = timezone(timedelta(hours=3))
-        now_kyiv = now.astimezone(tz_kyiv)
-        today_start = now_kyiv.replace(hour=0, minute=0, second=0, microsecond=0).astimezone(timezone.utc)
+        # Часові межі (Košice UTC+2)
+        tz_local = timezone(timedelta(hours=2))
+        now_local = now.astimezone(tz_local)
+        today_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0).astimezone(timezone.utc)
         today_end      = today_start + timedelta(hours=24)
         tomorrow_start = today_end
         tomorrow_end   = tomorrow_start + timedelta(hours=24)
@@ -827,7 +827,7 @@ def get_calendar():
                 summary = ev.get("summary", "(без назви)")
                 try:
                     dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                    t  = dt.astimezone(timezone(timedelta(hours=3))).strftime("%H:%M") if "T" in start else "весь день"
+                    t  = dt.astimezone(timezone(timedelta(hours=2))).strftime("%H:%M") if "T" in start else "весь день"
                 except Exception:
                     t = start
                 lines.append(f"• {t} — <b>{esc(summary)}</b>")
@@ -2414,8 +2414,8 @@ def _get_calendar_context_for_report():
     try:
         headers = {"Authorization": f"Bearer {token}"}
         now = datetime.now(timezone.utc)
-        now_local = now + timedelta(hours=3)
-        today_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=3)
+        now_local = now + timedelta(hours=2)
+        today_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
         today_end = today_start + timedelta(hours=48)
         # Читаємо ВСІ календарі
         events = _fetch_events_all_calendars(headers, today_start, today_end, max_per_cal=20)
@@ -2425,9 +2425,9 @@ def _get_calendar_context_for_report():
             summary = ev.get("summary", "")
             try:
                 dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                tz_kyiv = timezone(timedelta(hours=3))
-                t = dt.astimezone(tz_kyiv).strftime("%H:%M") if "T" in start else "весь день"
-                ev_date = dt.astimezone(tz_kyiv).strftime("%Y-%m-%d")
+                tz_local = timezone(timedelta(hours=2))
+                t = dt.astimezone(tz_local).strftime("%H:%M") if "T" in start else "весь день"
+                ev_date = dt.astimezone(tz_local).strftime("%Y-%m-%d")
             except:
                 t = start; ev_date = ""
             result.append({"summary": summary, "time": t, "date": ev_date, "raw_start": start})
@@ -2800,7 +2800,7 @@ def generate_weight_trend_chart(days: int = 30) -> bytes | None:
 
 def main():
     now = datetime.now(timezone.utc)
-    now_local = now + timedelta(hours=3)
+    now_local = now + timedelta(hours=2)
     # 3 слоти на годину: :00, :20, :40
     hour_key = _get_report_slot(now_local)
     if hour_key is None:
@@ -3727,7 +3727,7 @@ def _get_calendar_events_text() -> str:
         if not token:
             return ""
         now_utc = datetime.now(timezone.utc)
-        local_start = (now_utc + timedelta(hours=3)).replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=3)
+        local_start = (now_utc + timedelta(hours=2)).replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
         local_end   = local_start + timedelta(hours=24)
         cal_id = "novosadovoleg%40gmail.com"
         url = (
@@ -3747,7 +3747,7 @@ def _get_calendar_events_text() -> str:
             summary = ev.get("summary", "(без назви)")
             try:
                 dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                t  = dt.astimezone(timezone(timedelta(hours=3))).strftime("%H:%M")
+                t  = dt.astimezone(timezone(timedelta(hours=2))).strftime("%H:%M")
             except Exception:
                 t = ""
             lines.append(f"{t} {summary}".strip())
