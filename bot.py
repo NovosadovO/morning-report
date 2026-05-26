@@ -398,14 +398,16 @@ def handle_email_callback(callback_query):
                 preview = body[:800].strip() if body else "(порожній лист)"
                 out = f"📖 Текст листа\n\n📌 {subject[:70]}\n👤 {sender_name[:60]}\n\n{preview}"
 
+            delete_kb = {"inline_keyboard": [[{"text": "🗑 Закрити", "callback_data": "delete_self"}]]}
             result = api("sendMessage", {
                 "chat_id": _cid,
                 "text": out[:4096],
-                "reply_to_message_id": _mid
+                "reply_to_message_id": _mid,
+                "reply_markup": delete_kb
             })
             if not result.get("ok"):
                 # reply не спрацював — надсилаємо без reply
-                api("sendMessage", {"chat_id": _cid, "text": out[:4096]})
+                api("sendMessage", {"chat_id": _cid, "text": out[:4096], "reply_markup": delete_kb})
 
         except Exception as _e:
             import traceback as _tb
@@ -2269,6 +2271,9 @@ def main():
                                     send(chat_id, "👍 Добре, нічого не записую.")
                             except Exception as _ple:
                                 print(f"planner callback error: {_ple}")
+                        elif data == "delete_self":
+                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Закрито"})
+                            api("deleteMessage", {"chat_id": chat_id, "message_id": cb["message"]["message_id"]})
                         elif (data.startswith("email_describe_") or data.startswith("email_delete_") or
                               data.startswith("email_keep_") or data.startswith("email_star_") or
                               data.startswith("email_cal_") or data.startswith("email_reply_") or
