@@ -3162,6 +3162,16 @@ def main():
     if ai_insight:
         parts.append(f"🤖 <b>AI-порада</b>\n<i>{esc(ai_insight)}</i>")
 
+    # Блок: Список покупок (тільки незакуплені, тільки якщо є)
+    try:
+        import shopping as _sh_rep
+        _uncompleted = _sh_rep.get_uncompleted()
+        if _uncompleted:
+            _shop_lines = "\n".join(f"⬜ {x}" for x in _uncompleted)
+            parts.append(f"🛒 <b>Список покупок</b>\n{_shop_lines}")
+    except Exception as _sh_err:
+        print(f"shopping in report error: {_sh_err}")
+
     # Вихідний блок — тільки якщо Олег не на нічній зміні зараз
     _sc_main = _get_current_shift_context(cal_events_text)
     if is_weekend and not include_learning_blocks and not _sc_main["is_working_now"]:
