@@ -52,5 +52,32 @@
         ]
       ]
     }
+  },
+  "2100366814_11917": {
+    "text": "📩 ✉️\n📌 😱 All of DeFi is at risk\n👤 The Daily Bone <newsletter@mail.dailybones.com>",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_73671"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_73671"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_73671"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_73671"
+          }
+        ]
+      ]
+    }
   }
 }
