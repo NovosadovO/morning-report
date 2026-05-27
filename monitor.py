@@ -1882,7 +1882,7 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h = now_local.hour
     today_str_s = now_local.strftime("%Y-%m-%d")
-    slot_seed = now_local.strftime("%Y-%m-%d-%H") + str(now_local.minute // 20)
+    slot_seed = now_local.strftime("%Y-%m-%d-%H") + str(now_local.minute // 30)
 
     shift_ctx = _get_current_shift_context(calendar_text)
     shift = shift_ctx.get("shift", "free")
@@ -2299,19 +2299,17 @@ def _gh_save_sent(data, sha):
 
 def _get_report_slot(now_local):
     """
-    3 слоти на годину: :00, :20, :40
+    2 слоти на годину: :00, :30
     Повертає ключ слоту або None якщо ми не у вікні.
-    Вікна: 0-2хв, 20-22хв, 40-42хв
+    Вікна: 0-2хв, 30-32хв
     """
     m = now_local.minute
     h = now_local.hour
     date_str = now_local.strftime("%Y-%m-%d")
     if 0 <= m < 3:
         return f"{date_str}T{h:02d}:00"
-    elif 20 <= m < 23:
-        return f"{date_str}T{h:02d}:20"
-    elif 40 <= m < 43:
-        return f"{date_str}T{h:02d}:40"
+    elif 30 <= m < 33:
+        return f"{date_str}T{h:02d}:30"
     return None
 
 
