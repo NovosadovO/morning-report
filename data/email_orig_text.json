@@ -25,5 +25,32 @@
         ]
       ]
     }
+  },
+  "2100366814_11865": {
+    "text": "📩 ✉️\n📌 Ethereum's Stake Queue Outpaces Exits 53,000-to-1\n👤 The Defiant <no-reply@mail.thedefiant.io>",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_73643"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_73643"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_73643"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_73643"
+          }
+        ]
+      ]
+    }
   }
 }
