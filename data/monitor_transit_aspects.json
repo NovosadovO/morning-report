@@ -6,8 +6,8 @@
   },
   "sun__saturn__150": {
     "orb": 1.49,
-    "sent": true,
-    "event": "enter"
+    "sent": false,
+    "exact_sent": false
   },
   "venus__venus__120": {
     "orb": 1.28,
