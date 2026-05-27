@@ -36,8 +36,8 @@
   },
   "saturn__pluto__150": {
     "orb": 1.5,
-    "sent": true,
-    "event": "enter"
+    "sent": false,
+    "exact_sent": false
   },
   "uranus__mars__120": {
     "orb": 0.3,
