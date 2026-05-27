@@ -1004,5 +1004,21 @@ def run_persistent_reminders_watcher():
 threading.Thread(target=run_persistent_reminders_watcher, daemon=True).start()
 print("=== Persistent reminders watcher thread started ===", flush=True)
 
+
+def run_shopping_watcher():
+    """Нагадування про список покупок о 12:45 і 19:15 — кожну хвилину."""
+    print("=== Starting shopping reminder watcher (12:45 + 19:15) ===", flush=True)
+    time.sleep(190)
+    while True:
+        try:
+            _load_monitor().check_shopping_reminder()
+        except Exception as e:
+            print(f"Shopping watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+threading.Thread(target=run_shopping_watcher, daemon=True).start()
+print("=== Shopping reminder watcher thread started ===", flush=True)
+
 # Основний монітор в головному потоці
 run_monitor_loop()

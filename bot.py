@@ -1564,6 +1564,10 @@ HELP_TEXT = """
 /ліки місяць — за місяць
 /ліки курс — весь курс (27.04–27.07)
 
+<b>🛒 Список покупок</b>
+/купити молоко, хліб — додати в список
+/список — переглянути список
+
 /допомога — цей список
 """
 
@@ -2054,6 +2058,70 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ {e}")
 
+    elif text.startswith("/купити") or text.startswith("купити "):
+        # ── Список покупок ──
+        try:
+            import shopping as _sh
+            # Витягуємо товари з команди
+            raw = text
+            for prefix in ["/купити", "купити"]:
+                if raw.startswith(prefix):
+                    raw = raw[len(prefix):]
+                    break
+            raw = raw.strip().lstrip(":").strip()
+
+            if not raw:
+                # Показати поточний список
+                items = _sh.get_items()
+                if not items:
+                    send(chat_id, "🛒 Список покупок порожній.\n\nНадішли: /купити молоко, хліб, яйця")
+                else:
+                    text_list = _sh.format_list(items)
+                    done_count = sum(1 for i in items if i["done"])
+                    kb = {"inline_keyboard": [
+                        [{"text": "✅ Все куплено", "callback_data": "shopping_all_done"},
+                         {"text": "📝 Відмітити", "callback_data": "shopping_mark"}],
+                        [{"text": "🗑 Очистити", "callback_data": "shopping_clear"}]
+                    ]}
+                    send(chat_id, f"🛒 <b>Список покупок</b> ({done_count}/{len(items)}):\n\n{text_list}", reply_markup=kb)
+            else:
+                added = _sh.add_items(raw)
+                items = _sh.get_items()
+                text_list = _sh.format_list(items)
+                done_count = sum(1 for i in items if i["done"])
+                if added:
+                    added_str = ", ".join(added)
+                    msg_top = f"🛒 Додано: <b>{added_str}</b>\n\n"
+                else:
+                    msg_top = "🛒 Ці пункти вже є в списку.\n\n"
+                kb = {"inline_keyboard": [
+                    [{"text": "✅ Все куплено", "callback_data": "shopping_all_done"},
+                     {"text": "📝 Відмітити", "callback_data": "shopping_mark"}],
+                    [{"text": "🗑 Очистити", "callback_data": "shopping_clear"}]
+                ]}
+                send(chat_id, f"{msg_top}<b>Список ({done_count}/{len(items)}):</b>\n{text_list}", reply_markup=kb)
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка списку покупок: {e}")
+
+    elif text in ["/список", "/кошик", "/shopping"]:
+        # Показати список покупок без додавання
+        try:
+            import shopping as _sh
+            items = _sh.get_items()
+            if not items:
+                send(chat_id, "🛒 Список покупок порожній.\n\nНадішли: /купити молоко, хліб, яйця")
+            else:
+                text_list = _sh.format_list(items)
+                done_count = sum(1 for i in items if i["done"])
+                kb = {"inline_keyboard": [
+                    [{"text": "✅ Все куплено", "callback_data": "shopping_all_done"},
+                     {"text": "📝 Відмітити", "callback_data": "shopping_mark"}],
+                    [{"text": "🗑 Очистити", "callback_data": "shopping_clear"}]
+                ]}
+                send(chat_id, f"🛒 <b>Список покупок</b> ({done_count}/{len(items)}):\n\n{text_list}", reply_markup=kb)
+        except Exception as e:
+            send(chat_id, f"⚠️ {e}")
+
     else:
         # Розпізнавання тексту QWatch Pro
         raw_text = original_text
@@ -2312,6 +2380,96 @@ def main():
                         elif data == "delete_self":
                             api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Закрито"})
                             api("deleteMessage", {"chat_id": chat_id, "message_id": cb["message"]["message_id"]})
+                        elif data.startswith("shopping_"):
+                            # ── Список покупок callbacks ──
+                            try:
+                                import shopping as _sh
+                                msg_id = cb["message"]["message_id"]
+
+                                if data == "shopping_all_done":
+                                    _sh.mark_all_done()
+                                    api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Чудово! Все куплено ✅"})
+                                    items = _sh.get_items()
+                                    text_list = _sh.format_list(items)
+                                    api("editMessageText", {
+                                        "chat_id": chat_id, "message_id": msg_id,
+                                        "text": f"🛒 <b>Список покупок</b> ({len(items)}/{len(items)}) — <b>Все куплено!</b>\n\n{text_list}",
+                                        "parse_mode": "HTML",
+                                        "reply_markup": {"inline_keyboard": [[{"text": "🗑 Очистити", "callback_data": "shopping_clear"}]]}
+                                    })
+
+                                elif data == "shopping_clear":
+                                    _sh.clear_list()
+                                    api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Список очищено"})
+                                    api("editMessageText", {
+                                        "chat_id": chat_id, "message_id": msg_id,
+                                        "text": "🛒 Список покупок очищено.",
+                                        "parse_mode": "HTML"
+                                    })
+
+                                elif data == "shopping_mark":
+                                    # Показуємо кожен пункт з кнопками ✅/❌
+                                    items = _sh.get_items()
+                                    if not items:
+                                        api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Список порожній"})
+                                    else:
+                                        api("answerCallbackQuery", {"callback_query_id": cb["id"]})
+                                        rows = []
+                                        for idx, item in enumerate(items):
+                                            mark = "✅" if item["done"] else "⬜"
+                                            rows.append([
+                                                {"text": f"{mark} {item['text']}", "callback_data": f"shopping_toggle_{idx}"},
+                                            ])
+                                        rows.append([{"text": "⬅️ Назад", "callback_data": "shopping_back"}])
+                                        kb = {"inline_keyboard": rows}
+                                        api("editMessageText", {
+                                            "chat_id": chat_id, "message_id": msg_id,
+                                            "text": "📝 <b>Відмітити пункти:</b>\nНатискай щоб перемикати ✅/⬜",
+                                            "parse_mode": "HTML",
+                                            "reply_markup": kb
+                                        })
+
+                                elif data.startswith("shopping_toggle_"):
+                                    idx = int(data.split("_")[2])
+                                    items = _sh.get_items()
+                                    if 0 <= idx < len(items):
+                                        new_done = not items[idx]["done"]
+                                        _sh.mark_item(idx, new_done)
+                                        items = _sh.get_items()
+                                        mark_text = "✅" if new_done else "⬜"
+                                        api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": f"{mark_text} {items[idx]['text']}"})
+                                        # Оновлюємо клавіатуру
+                                        rows = []
+                                        for i, item in enumerate(items):
+                                            mark = "✅" if item["done"] else "⬜"
+                                            rows.append([{"text": f"{mark} {item['text']}", "callback_data": f"shopping_toggle_{i}"}])
+                                        rows.append([{"text": "⬅️ Назад", "callback_data": "shopping_back"}])
+                                        api("editMessageReplyMarkup", {
+                                            "chat_id": chat_id, "message_id": msg_id,
+                                            "reply_markup": {"inline_keyboard": rows}
+                                        })
+
+                                elif data == "shopping_back":
+                                    api("answerCallbackQuery", {"callback_query_id": cb["id"]})
+                                    items = _sh.get_items()
+                                    text_list = _sh.format_list(items)
+                                    done_count = sum(1 for i in items if i["done"])
+                                    kb = {"inline_keyboard": [
+                                        [{"text": "✅ Все куплено", "callback_data": "shopping_all_done"},
+                                         {"text": "📝 Відмітити", "callback_data": "shopping_mark"}],
+                                        [{"text": "🗑 Очистити", "callback_data": "shopping_clear"}]
+                                    ]}
+                                    api("editMessageText", {
+                                        "chat_id": chat_id, "message_id": msg_id,
+                                        "text": f"🛒 <b>Список покупок</b> ({done_count}/{len(items)}):\n\n{text_list}",
+                                        "parse_mode": "HTML",
+                                        "reply_markup": kb
+                                    })
+
+                            except Exception as _she:
+                                print(f"shopping callback error: {_she}")
+                                api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Помилка"})
+
                         elif (data.startswith("email_describe_") or data.startswith("email_undescribe_") or
                               data.startswith("email_delete_") or
                               data.startswith("email_keep_") or data.startswith("email_star_") or

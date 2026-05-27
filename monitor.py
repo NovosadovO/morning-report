@@ -7549,3 +7549,63 @@ def check_email_deadlines():
 
     except Exception as e:
         print(f"check_email_deadlines error: {e}")
+
+
+def check_shopping_reminder():
+    """
+    Нагадування про список покупок о 12:45 і 19:15 (Košice UTC+2).
+    Надсилає тільки якщо є незавершені пункти.
+    """
+    try:
+        from datetime import datetime, timezone, timedelta
+        import sys, os
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        h, m = now_local.hour, now_local.minute
+
+        # Вікна: 12:44–12:46 і 19:14–19:16
+        is_noon    = (h == 12 and 44 <= m <= 46)
+        is_evening = (h == 19 and 14 <= m <= 16)
+
+        if not (is_noon or is_evening):
+            return
+
+        # Захист від дублів
+        date_str = now_local.strftime("%Y-%m-%d")
+        slot = "noon" if is_noon else "evening"
+        state_key = f"shopping_reminded_{date_str}_{slot}"
+
+        state = load_json_file(os.path.join(_DATA_DIR, "monitor_shopping_state.json"), default={})
+        if state.get(state_key):
+            return
+
+        # Перевіряємо список
+        import shopping as _sh
+        items = _sh.get_items()
+        uncompleted = [i for i in items if not i["done"]]
+
+        if not uncompleted:
+            return
+
+        text_list = "\n".join(f"⬜ {i['text']}" for i in uncompleted)
+        time_label = "обід" if is_noon else "вечір"
+        msg = (
+            f"🛒 <b>Список покупок</b> — нагадування ({time_label})\n\n"
+            f"{text_list}\n\n"
+            f"Є {len(uncompleted)} пункт(ів) не куплено."
+        )
+
+        kb = {"inline_keyboard": [
+            [{"text": "✅ Все куплено", "callback_data": "shopping_all_done"},
+             {"text": "📝 Відмітити", "callback_data": "shopping_mark"}]
+        ]}
+
+        send_message(msg, reply_markup=kb)
+
+        state[state_key] = True
+        save_json_file(os.path.join(_DATA_DIR, "monitor_shopping_state.json"), state)
+        print(f"check_shopping_reminder: sent ({slot}), {len(uncompleted)} items")
+
+    except Exception as e:
+        print(f"check_shopping_reminder error: {e}")
