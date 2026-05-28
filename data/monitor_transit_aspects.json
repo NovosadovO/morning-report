@@ -6,11 +6,11 @@
   },
   "moon__jupiter__120": {
     "orb": 1.41,
-    "sent": true,
-    "event": "enter"
+    "sent": false,
+    "exact_sent": false
   },
   "moon__saturn__60": {
-    "orb": 0.1,
+    "orb": 0.09,
     "sent": false,
     "exact_sent": true
   },
