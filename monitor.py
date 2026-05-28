@@ -2705,17 +2705,18 @@ def generate_weight_trend_chart(days: int = 30) -> bytes | None:
         if not raw:
             return None
 
-        today = _dt.utcnow().date()
-        cutoff = today - _td(days=days)
         entries = []
         for date_str, w in raw.items():
             try:
                 d = _dt.strptime(date_str, "%Y-%m-%d").date()
-                if d >= cutoff and w is not None:
+                if w is not None:
                     entries.append((d, float(w)))
             except Exception:
                 continue
         entries.sort(key=lambda x: x[0])
+
+        # Беремо останні N точок незалежно від дати
+        entries = entries[-days:]
 
         if len(entries) < 2:
             return None
@@ -2777,7 +2778,7 @@ def generate_weight_trend_chart(days: int = 30) -> bytes | None:
         sign    = "+" if delta > 0 else ""
         to_goal = round(weights[-1] - 78.0, 1)
         goal_txt = f"до 78 кг: -{to_goal} кг" if to_goal > 0 else "ціль досягнута!"
-        ax.set_title(f"Вага за {days} днів  ({sign}{delta} кг)  {goal_txt}",
+        ax.set_title(f"Вага: останні {len(entries)} вимірювань  ({sign}{delta} кг)  {goal_txt}",
                      color=TEXT, fontsize=14, fontweight="bold", pad=10)
 
         leg = ax.legend(fontsize=10, facecolor=PANEL, edgecolor=BORDER,
