@@ -1020,5 +1020,113 @@ def run_shopping_watcher():
 threading.Thread(target=run_shopping_watcher, daemon=True).start()
 print("=== Shopping reminder watcher thread started ===", flush=True)
 
+
+def run_evening_charts_watcher():
+    """Надсилає всі три графіки щовечора о 20:00 (UTC+2)."""
+    import os, json, urllib.request
+    from datetime import datetime, timezone, timedelta
+    print("=== Starting evening charts watcher (20:00 UTC+2) ===", flush=True)
+    time.sleep(200)
+
+    SENT_KEY_FILE = "evening_charts_sent.json"
+
+    def _already_sent(date_str):
+        try:
+            from storage import _load_github
+            d = _load_github(SENT_KEY_FILE) or {}
+            return bool(d.get(date_str))
+        except Exception:
+            return False
+
+    def _mark_sent(date_str):
+        try:
+            from storage import _load_github, _save_github
+            d = _load_github(SENT_KEY_FILE) or {}
+            d[date_str] = True
+            _save_github(SENT_KEY_FILE, d)
+        except Exception as e:
+            print(f"[evening_charts] mark_sent error: {e}")
+
+    def _send_photo(photo_bytes, caption):
+        token = os.environ.get("TELEGRAM_TOKEN", "")
+        chat  = os.environ.get("TELEGRAM_CHAT_ID", "")
+        if not token or not chat:
+            return
+        import io as _io
+        try:
+            req = urllib.request.Request(
+                f"https://api.telegram.org/bot{token}/sendPhoto",
+            )
+            import http.client, urllib.parse
+            boundary = "----FormBoundary"
+            body_parts = []
+            body_parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"chat_id\"\r\n\r\n{chat}".encode())
+            body_parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"caption\"\r\n\r\n{caption}".encode())
+            body_parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"parse_mode\"\r\n\r\nHTML".encode())
+            body_parts.append(
+                f"--{boundary}\r\nContent-Disposition: form-data; name=\"photo\"; filename=\"chart.png\"\r\nContent-Type: image/png\r\n\r\n".encode()
+                + photo_bytes
+            )
+            body_parts.append(f"--{boundary}--".encode())
+            body = b"\r\n".join(body_parts)
+            import requests as _req
+            _req.post(
+                f"https://api.telegram.org/bot{token}/sendPhoto",
+                data={"chat_id": chat, "caption": caption, "parse_mode": "HTML"},
+                files={"photo": ("chart.png", _io.BytesIO(photo_bytes), "image/png")},
+                timeout=30,
+            )
+        except Exception as e:
+            print(f"[evening_charts] send_photo error: {e}")
+
+    while True:
+        try:
+            now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+            h, m = now_local.hour, now_local.minute
+            date_str = now_local.strftime("%Y-%m-%d")
+
+            if h == 20 and 0 <= m < 5 and not _already_sent(date_str):
+                _mark_sent(date_str)
+                print(f"[evening_charts] sending charts for {date_str}", flush=True)
+
+                mon = _load_monitor()
+
+                # 1. Крипто
+                try:
+                    chart = mon.generate_crypto_trend_chart(30)
+                    if chart:
+                        _send_photo(chart, "📈 Крипто тренд 30д | BTC ETH AVAX ONDO")
+                        time.sleep(1)
+                except Exception as e:
+                    print(f"[evening_charts] crypto error: {e}")
+
+                # 2. Вага
+                try:
+                    chart = mon.generate_weight_trend_chart(30)
+                    if chart:
+                        _send_photo(chart, "⚖️ Тренд ваги — останні 30 вимірювань")
+                        time.sleep(1)
+                except Exception as e:
+                    print(f"[evening_charts] weight error: {e}")
+
+                # 3. Звички
+                try:
+                    chart = mon.generate_habits_chart(30)
+                    if chart:
+                        _send_photo(chart, "📊 Звички за 30 днів")
+                        time.sleep(1)
+                except Exception as e:
+                    print(f"[evening_charts] habits error: {e}")
+
+                print(f"[evening_charts] done for {date_str}", flush=True)
+
+        except Exception as e:
+            print(f"Evening charts watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+threading.Thread(target=run_evening_charts_watcher, daemon=True).start()
+print("=== Evening charts watcher thread started (20:00 UTC+2) ===", flush=True)
+
 # Основний монітор в головному потоці
 run_monitor_loop()
