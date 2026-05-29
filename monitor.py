@@ -2549,7 +2549,7 @@ def _format_prices_visual(prices_text, cal_events_text=""):
 def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
     """
     Генерує PNG з лінійними графіками цін BTC/ETH/AVAX/ONDO за N днів.
-    Читає з GitHub storage. Темна тема, 2×2, великі шрифти, чіткі числа.
+    Темна тема, 2×2, великі шрифти, чіткі дати і числа.
     """
     try:
         import matplotlib
@@ -2577,9 +2577,9 @@ def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
         hist   = storage.load_price_history()
         cutoff = _t.time() - days * 86400
 
-        fig, axes = plt.subplots(2, 2, figsize=(14, 9))
+        fig, axes = plt.subplots(2, 2, figsize=(20, 13))
         fig.patch.set_facecolor(BG)
-        fig.subplots_adjust(hspace=0.52, wspace=0.38, left=0.08, right=0.97, top=0.88, bottom=0.08)
+        fig.subplots_adjust(hspace=0.55, wspace=0.38, left=0.07, right=0.97, top=0.90, bottom=0.08)
 
         has_any_data = False
 
@@ -2587,8 +2587,8 @@ def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
             ax.set_facecolor(PANEL)
             for spine in ax.spines.values():
                 spine.set_edgecolor(BORDER)
-                spine.set_linewidth(0.8)
-            ax.tick_params(colors=MUTED, labelsize=9, length=3)
+                spine.set_linewidth(1.0)
+            ax.tick_params(colors=MUTED, labelsize=12, length=4)
             ax.xaxis.set_major_formatter(mdates.DateFormatter("%d.%m"))
             ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=1))
 
@@ -2597,8 +2597,8 @@ def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
 
             if len(pts) < 2:
                 ax.text(0.5, 0.5, "накопичується...", ha="center", va="center",
-                        color=MUTED, transform=ax.transAxes, fontsize=11)
-                ax.set_title(sym, color=color, fontsize=13, fontweight="bold", pad=8)
+                        color=MUTED, transform=ax.transAxes, fontsize=13)
+                ax.set_title(sym, color=color, fontsize=16, fontweight="bold", pad=10)
                 continue
 
             has_any_data = True
@@ -2607,41 +2607,44 @@ def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
             p_min, p_max = min(prices), max(prices)
 
             # Лінія + заливка
-            ax.plot(timestamps, prices, color=color, linewidth=2.2, zorder=3)
+            ax.plot(timestamps, prices, color=color, linewidth=2.8, zorder=3)
             ax.fill_between(timestamps, prices, p_min * 0.998,
-                            color=color, alpha=0.15, zorder=2)
+                            color=color, alpha=0.18, zorder=2)
 
             # Тренд-лінія
             x_num  = np.array([(t - timestamps[0]).total_seconds() for t in timestamps])
             coeffs = np.polyfit(x_num, prices, 1)
             t_color = "#3FB950" if coeffs[0] >= 0 else "#F85149"
             ax.plot(timestamps, np.polyval(coeffs, x_num), color=t_color,
-                    linewidth=1.4, linestyle="--", alpha=0.8, zorder=4)
+                    linewidth=2.0, linestyle="--", alpha=0.85, zorder=4)
 
-            # Мітка останньої ціни праворуч
-            ax.annotate(
-                f"${prices[-1]:,.2f}" if prices[-1] < 10 else f"${prices[-1]:,.0f}",
+            # Мітка першої і останньої ціни
+            def _fmt(v):
+                return f"${v:,.2f}" if v < 10 else f"${v:,.0f}"
+            ax.annotate(_fmt(prices[0]),
+                xy=(timestamps[0], prices[0]),
+                xytext=(6, 8), textcoords="offset points",
+                color=MUTED, fontsize=10, fontweight="bold", va="center")
+            ax.annotate(_fmt(prices[-1]),
                 xy=(timestamps[-1], prices[-1]),
-                xytext=(6, 0), textcoords="offset points",
-                color=color, fontsize=9, fontweight="bold", va="center",
-            )
+                xytext=(-6, 8), textcoords="offset points",
+                color=color, fontsize=13, fontweight="bold", va="center",
+                ha="right")
 
-            ax.grid(True, color=GRID, linewidth=0.6, zorder=1)
-            ax.set_ylim(p_min * 0.995, p_max * 1.025)
+            ax.grid(True, color=GRID, linewidth=0.8, zorder=1)
+            ax.set_ylim(p_min * 0.993, p_max * 1.03)
 
             ch   = (prices[-1] - prices[0]) / prices[0] * 100
             sign = "+" if ch >= 0 else ""
             ch_color = "#3FB950" if ch >= 0 else "#F85149"
-            p_fmt = f"${prices[-1]:,.2f}" if prices[-1] < 10 else f"${prices[-1]:,.0f}"
 
-            # Заголовок з кольоровою % зміною
-            ax.set_title(f"{sym}  {p_fmt}", color=TEXT, fontsize=13,
-                         fontweight="bold", pad=6, loc="left")
-            ax.text(0.99, 1.02, f"{sign}{ch:.1f}%", transform=ax.transAxes,
-                    color=ch_color, fontsize=12, fontweight="bold",
+            ax.set_title(f"{sym}  {_fmt(prices[-1])}", color=TEXT, fontsize=16,
+                         fontweight="bold", pad=8, loc="left")
+            ax.text(0.99, 1.03, f"{sign}{ch:.1f}%", transform=ax.transAxes,
+                    color=ch_color, fontsize=14, fontweight="bold",
                     ha="right", va="bottom")
 
-            # Y-вісь: компактні числа
+            # Y-вісь форматування
             if prices[-1] >= 1000:
                 ax.yaxis.set_major_formatter(mticker.FuncFormatter(
                     lambda v, _: f"${v/1000:.0f}k"))
@@ -2651,16 +2654,18 @@ def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
             else:
                 ax.yaxis.set_major_formatter(mticker.FuncFormatter(
                     lambda v, _: f"${v:.3f}"))
-            ax.yaxis.set_tick_params(labelcolor=MUTED, labelsize=8)
-            plt.setp(ax.get_xticklabels(), rotation=25, ha="right", fontsize=8)
+            ax.yaxis.set_tick_params(labelcolor=MUTED, labelsize=11)
+            plt.setp(ax.get_xticklabels(), rotation=30, ha="right", fontsize=11)
 
         if not has_any_data:
             print("[generate_crypto_trend_chart] no history data yet")
             plt.close(fig)
             return None
 
-        fig.suptitle(f"BTC / ETH / AVAX / ONDO  ·  {days}d", color=TEXT,
-                     fontsize=15, fontweight="bold", y=0.96)
+        from datetime import datetime as _dtnow
+        _now_label = (_dtnow.utcnow()).strftime("%d.%m.%Y %H:%M UTC")
+        fig.suptitle(f"BTC / ETH / AVAX / ONDO  ·  {days}d  ·  {_now_label}",
+                     color=TEXT, fontsize=17, fontweight="bold", y=0.96)
 
         buf = io.BytesIO()
         fig.savefig(buf, format="png", dpi=150, bbox_inches="tight",
@@ -2675,9 +2680,8 @@ def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
 
 def generate_weight_trend_chart(days: int = 30) -> bytes | None:
     """
-    Генерує PNG з тренд-лінією ваги за N днів.
-    Темна тема, одна панель, fill_between, ціль 78 кг пунктиром, тренд-лінія.
-    Повертає bytes або None при помилці.
+    Генерує PNG з тренд-лінією ваги (останні N точок).
+    Темна тема, великі шрифти, fill_between, ціль 78 кг пунктиром, тренд-лінія.
     """
     try:
         import matplotlib
@@ -2693,6 +2697,7 @@ def generate_weight_trend_chart(days: int = 30) -> bytes | None:
         GRID        = "#1E2530"
         BORDER      = "#30363D"
         TEXT        = "#E6EDF3"
+        MUTED       = "#8B949E"
         GOAL_COLOR  = "#58A6FF"
         LINE_COLOR  = "#3FB950"
 
@@ -2725,7 +2730,7 @@ def generate_weight_trend_chart(days: int = 30) -> bytes | None:
         weights = [e[1] for e in entries]
         x_dates = [_dt.combine(d, _dt.min.time()) for d in dates]
 
-        fig, ax = plt.subplots(figsize=(12, 5), facecolor=BG)
+        fig, ax = plt.subplots(figsize=(18, 7), facecolor=BG)
         ax.set_facecolor(PANEL)
         for spine in ax.spines.values():
             spine.set_edgecolor(BORDER)
@@ -2736,8 +2741,8 @@ def generate_weight_trend_chart(days: int = 30) -> bytes | None:
                         alpha=0.20, color=LINE_COLOR)
 
         # Лінія ваги
-        ax.plot(x_dates, weights, color=LINE_COLOR, linewidth=2.5,
-                marker="o", markersize=5, markerfacecolor=LINE_COLOR,
+        ax.plot(x_dates, weights, color=LINE_COLOR, linewidth=3.0,
+                marker="o", markersize=7, markerfacecolor=LINE_COLOR,
                 zorder=3, label="Вага")
 
         # Тренд-лінія
@@ -2747,44 +2752,54 @@ def generate_weight_trend_chart(days: int = 30) -> bytes | None:
             p  = np.poly1d(z)
             trend_col = "#F85149" if z[0] > 0 else "#3FB950"
             ax.plot(x_dates, p(xn), "--", color=trend_col,
-                    linewidth=1.8, alpha=0.85, label="Тренд")
+                    linewidth=2.2, alpha=0.85, label="Тренд")
 
         # Ціль 78 кг
-        ax.axhline(78.0, color=GOAL_COLOR, linewidth=1.5,
-                   linestyle=":", alpha=0.8, label="Ціль 78 кг")
+        ax.axhline(78.0, color=GOAL_COLOR, linewidth=2.0,
+                   linestyle=":", alpha=0.85, label="Ціль 78 кг")
 
-        # Мітки першої і останньої точки
+        # Мітки кожної точки
+        for xi, (xd, w) in enumerate(zip(x_dates, weights)):
+            ax.annotate(f"{w:.1f}",
+                        (xd, w),
+                        textcoords="offset points", xytext=(0, 10),
+                        color=TEXT, fontsize=9, ha="center")
+
+        # Мітки першої і останньої — великі
         ax.annotate(f"{weights[0]:.1f}",
                     (x_dates[0], weights[0]),
-                    textcoords="offset points", xytext=(5, 8),
-                    color=TEXT, fontsize=11)
+                    textcoords="offset points", xytext=(8, -14),
+                    color=MUTED, fontsize=13, fontweight="bold")
         ax.annotate(f"{weights[-1]:.1f}",
                     (x_dates[-1], weights[-1]),
-                    textcoords="offset points", xytext=(5, 8),
-                    color=TEXT, fontsize=12, fontweight="bold")
+                    textcoords="offset points", xytext=(-8, -14),
+                    color=LINE_COLOR, fontsize=15, fontweight="bold", ha="right")
 
         # Осі
-        ax.xaxis.set_major_formatter(mdates.DateFormatter("%d.%m"))
-        ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=1))
-        plt.setp(ax.xaxis.get_majorticklabels(), rotation=30,
-                 ha="right", color=TEXT, fontsize=10)
-        ax.yaxis.set_tick_params(labelcolor=TEXT, labelsize=10)
+        ax.xaxis.set_major_formatter(mdates.DateFormatter("%d.%m.%Y"))
+        ax.xaxis.set_major_locator(mdates.AutoDateLocator())
+        plt.setp(ax.xaxis.get_majorticklabels(), rotation=35,
+                 ha="right", color=TEXT, fontsize=12)
+        ax.yaxis.set_tick_params(labelcolor=TEXT, labelsize=12)
         ax.tick_params(colors=TEXT)
-        ax.grid(True, color=GRID, linewidth=0.7, alpha=0.7)
-        ax.set_ylabel("кг", color=TEXT, fontsize=11)
+        ax.grid(True, color=GRID, linewidth=0.8, alpha=0.8)
+        ax.set_ylabel("кг", color=TEXT, fontsize=13)
 
         # Заголовок
-        delta   = round(weights[-1] - weights[0], 1)
-        sign    = "+" if delta > 0 else ""
-        to_goal = round(weights[-1] - 78.0, 1)
-        goal_txt = f"до 78 кг: -{to_goal} кг" if to_goal > 0 else "ціль досягнута!"
-        ax.set_title(f"Вага: останні {len(entries)} вимірювань  ({sign}{delta} кг)  {goal_txt}",
-                     color=TEXT, fontsize=14, fontweight="bold", pad=10)
+        delta    = round(weights[-1] - weights[0], 1)
+        sign     = "+" if delta > 0 else ""
+        to_goal  = round(weights[-1] - 78.0, 1)
+        goal_txt = f"до 78 кг: -{to_goal} кг" if to_goal > 0 else "ціль досягнута! 🏆"
+        from datetime import datetime as _dtnow2
+        _now_label = _dtnow2.utcnow().strftime("%d.%m.%Y %H:%M")
+        ax.set_title(
+            f"Вага: останні {len(entries)} вимірювань  ({sign}{delta} кг)  {goal_txt}  ·  {_now_label}",
+            color=TEXT, fontsize=15, fontweight="bold", pad=12)
 
-        leg = ax.legend(fontsize=10, facecolor=PANEL, edgecolor=BORDER,
+        leg = ax.legend(fontsize=12, facecolor=PANEL, edgecolor=BORDER,
                         labelcolor=TEXT, framealpha=0.9)
 
-        fig.tight_layout(pad=1.0)
+        fig.tight_layout(pad=1.5)
 
         buf = io.BytesIO()
         fig.savefig(buf, format="png", dpi=150, facecolor=BG, bbox_inches="tight")
@@ -2795,6 +2810,212 @@ def generate_weight_trend_chart(days: int = 30) -> bytes | None:
     except Exception as e:
         print(f"[generate_weight_trend_chart] error: {e}")
         return None
+
+
+def generate_habits_chart(days: int = 30) -> bytes | None:
+    """
+    Генерує PNG з графіками звичок за останні N днів.
+    Теплова карта для булевих звичок + лінійний для сну.
+    Темна тема, великі шрифти, чіткі дати.
+    """
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        import matplotlib.dates as mdates
+        import numpy as np
+        import io
+        from datetime import datetime as _dt, timedelta as _td, date as _date
+
+        BG     = "#0D1117"
+        PANEL  = "#161B22"
+        GRID   = "#1E2530"
+        BORDER = "#30363D"
+        TEXT   = "#E6EDF3"
+        MUTED  = "#8B949E"
+
+        BOOL_HABITS = [
+            ("shower", "🚿 Душ",   "#58A6FF"),
+            ("run",    "🏃 Пробіжка", "#3FB950"),
+            ("water",  "💧 Вода",   "#1F6FEB"),
+            ("tea",    "🍵 Чай",    "#D29922"),
+            ("sauna",  "🧖 Сауна",  "#F85149"),
+        ]
+        SLEEP_COLOR = "#A371F7"
+
+        try:
+            from storage import load_habits as _lh
+            raw = _lh() or {}
+        except Exception:
+            return None
+
+        if not raw:
+            return None
+
+        # Будуємо масив дат (останні N днів)
+        today = _date.today()
+        all_dates = [today - _td(days=i) for i in range(days - 1, -1, -1)]
+
+        # ── Збираємо дані ───────────────────────────────────────────────────
+        bool_matrix = {}  # habit_key -> [0/1/None per day]
+        sleep_vals  = []  # float or None per day
+
+        for hkey, _, _ in BOOL_HABITS:
+            bool_matrix[hkey] = []
+
+        for d in all_dates:
+            ds = d.isoformat()
+            entry = raw.get(ds, None)
+            for hkey, _, _ in BOOL_HABITS:
+                if entry is None:
+                    bool_matrix[hkey].append(np.nan)
+                else:
+                    v = entry.get(hkey)
+                    if v is None:
+                        bool_matrix[hkey].append(np.nan)
+                    else:
+                        bool_matrix[hkey].append(1.0 if v else 0.0)
+            # Sleep
+            if entry is None:
+                sleep_vals.append(None)
+            else:
+                sv = entry.get("sleep")
+                sleep_vals.append(float(sv) if sv is not None else None)
+
+        # Перевіряємо чи є взагалі дані
+        has_data = any(
+            not np.isnan(v)
+            for vals in bool_matrix.values()
+            for v in vals
+        ) or any(v is not None for v in sleep_vals)
+
+        if not has_data:
+            return None
+
+        # ── Малюємо ─────────────────────────────────────────────────────────
+        n_bool = len(BOOL_HABITS)
+        has_sleep = any(v is not None for v in sleep_vals)
+        n_rows = n_bool + (1 if has_sleep else 0)
+
+        fig_h = 2.5 * n_rows + 1.5
+        fig, axes = plt.subplots(n_rows, 1, figsize=(20, fig_h), facecolor=BG)
+        if n_rows == 1:
+            axes = [axes]
+        fig.subplots_adjust(hspace=0.6, left=0.10, right=0.97, top=0.90, bottom=0.10)
+
+        x_pos = list(range(len(all_dates)))
+        date_labels = [d.strftime("%d.%m") for d in all_dates]
+
+        # ── Булеві звички (bar chart: зелений=✅, червоний=❌, сірий=нема даних)
+        for ax_i, (hkey, hlabel, hcolor) in enumerate(BOOL_HABITS):
+            ax = axes[ax_i]
+            ax.set_facecolor(PANEL)
+            for spine in ax.spines.values():
+                spine.set_edgecolor(BORDER)
+                spine.set_linewidth(0.8)
+
+            vals = bool_matrix[hkey]
+            colors_bar = []
+            for v in vals:
+                if np.isnan(v):
+                    colors_bar.append("#2D333B")
+                elif v == 1.0:
+                    colors_bar.append(hcolor)
+                else:
+                    colors_bar.append("#F85149")
+
+            bars = ax.bar(x_pos, [1 if not np.isnan(v) else 0.3 for v in vals],
+                          color=colors_bar, width=0.85, zorder=3)
+
+            # Рахунок виконання
+            done  = sum(1 for v in vals if not np.isnan(v) and v == 1.0)
+            total = sum(1 for v in vals if not np.isnan(v))
+            pct   = f"{done}/{total}" if total > 0 else "0/0"
+
+            ax.set_yticks([])
+            ax.set_xlim(-0.5, len(x_pos) - 0.5)
+            ax.set_ylim(0, 1.4)
+            ax.grid(False)
+
+            # Підписи дат кожні 3 дні
+            tick_pos  = [i for i in x_pos if i % 3 == 0]
+            tick_labs = [date_labels[i] for i in tick_pos]
+            ax.set_xticks(tick_pos)
+            ax.set_xticklabels(tick_labs, color=TEXT, fontsize=11, rotation=30, ha="right")
+
+            ax.set_ylabel(hlabel, color=hcolor, fontsize=13, fontweight="bold",
+                          rotation=0, labelpad=5, ha="right", va="center")
+            ax.yaxis.set_label_coords(-0.01, 0.5)
+
+            # Підказка зверху
+            ax.text(0.99, 1.18, f"✅ {pct}", transform=ax.transAxes,
+                    color=hcolor, fontsize=12, fontweight="bold",
+                    ha="right", va="top")
+
+        # ── Сон (лінійний графік)
+        if has_sleep:
+            ax = axes[n_bool]
+            ax.set_facecolor(PANEL)
+            for spine in ax.spines.values():
+                spine.set_edgecolor(BORDER)
+                spine.set_linewidth(0.8)
+
+            sx = [i for i, v in enumerate(sleep_vals) if v is not None]
+            sy = [v for v in sleep_vals if v is not None]
+
+            if len(sx) >= 2:
+                ax.plot(sx, sy, color=SLEEP_COLOR, linewidth=2.5,
+                        marker="o", markersize=7, zorder=3)
+                ax.fill_between(sx, sy, 0, color=SLEEP_COLOR, alpha=0.15, zorder=2)
+
+                # Лінія норми 8г
+                ax.axhline(8.0, color="#58A6FF", linewidth=1.5,
+                           linestyle=":", alpha=0.7, label="Норма 8г")
+
+                # Мітки значень
+                for xi, yi in zip(sx, sy):
+                    ax.annotate(f"{yi:.0f}г",
+                                (xi, yi), xytext=(0, 8),
+                                textcoords="offset points",
+                                color=TEXT, fontsize=10, ha="center")
+
+                avg_sleep = sum(sy) / len(sy)
+                ax.text(0.99, 1.18, f"Середнє: {avg_sleep:.1f}г",
+                        transform=ax.transAxes,
+                        color=SLEEP_COLOR, fontsize=12, fontweight="bold",
+                        ha="right", va="top")
+
+            ax.set_ylim(0, max(sy or [10]) * 1.3 + 1)
+            ax.set_xlim(-0.5, len(x_pos) - 0.5)
+            ax.tick_params(colors=TEXT, labelsize=11)
+            ax.set_ylabel("😴 Сон", color=SLEEP_COLOR, fontsize=13, fontweight="bold",
+                          rotation=0, labelpad=5, ha="right", va="center")
+            ax.yaxis.set_label_coords(-0.01, 0.5)
+            ax.yaxis.set_tick_params(labelcolor=TEXT, labelsize=11)
+
+            tick_pos  = [i for i in x_pos if i % 3 == 0]
+            tick_labs = [date_labels[i] for i in tick_pos]
+            ax.set_xticks(tick_pos)
+            ax.set_xticklabels(tick_labs, color=TEXT, fontsize=11, rotation=30, ha="right")
+            ax.grid(True, color=GRID, linewidth=0.6, alpha=0.7)
+
+        from datetime import datetime as _dtnow3
+        _now_label = _dtnow3.utcnow().strftime("%d.%m.%Y %H:%M UTC")
+        fig.suptitle(f"Звички за {days} днів  ·  {_now_label}",
+                     color=TEXT, fontsize=17, fontweight="bold", y=0.97)
+
+        buf = io.BytesIO()
+        fig.savefig(buf, format="png", dpi=150, bbox_inches="tight",
+                    facecolor=BG, edgecolor="none")
+        plt.close(fig)
+        buf.seek(0)
+        return buf.read()
+
+    except Exception as e:
+        print(f"[generate_habits_chart] error: {e}")
+        return None
+
+
 
 
 def main():
@@ -3106,6 +3327,18 @@ def main():
                 print(f"[weight chart inline] error: {_wci_e}")
     except Exception as _e_health:
         print(f"health block error: {_e_health}")
+
+    # PNG графік звичок — окремо після здоров'я
+    print("[chart] starting habits chart generation...")
+    try:
+        _hchart = generate_habits_chart(30)
+        print(f"[chart] habits generate result: {len(_hchart) if _hchart else None} bytes")
+        if _hchart:
+            parts.append({"photo": _hchart, "caption": "📊 Звички за 30 днів"})
+        else:
+            print("[habits chart inline] generate returned None")
+    except Exception as _hci_e:
+        print(f"[habits chart inline] error: {_hci_e}")
 
     # Блок 5: Email — заголовок + кожен лист окремо з кнопками
     if email_text:
