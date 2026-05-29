@@ -3328,17 +3328,7 @@ def main():
     except Exception as _e_health:
         print(f"health block error: {_e_health}")
 
-    # PNG графік звичок — окремо після здоров'я
-    print("[chart] starting habits chart generation...")
-    try:
-        _hchart = generate_habits_chart(30)
-        print(f"[chart] habits generate result: {len(_hchart) if _hchart else None} bytes")
-        if _hchart:
-            parts.append({"photo": _hchart, "caption": "📊 Звички за 30 днів"})
-        else:
-            print("[habits chart inline] generate returned None")
-    except Exception as _hci_e:
-        print(f"[habits chart inline] error: {_hci_e}")
+    # Графік звичок — тільки о 20:00 через evening_charts_watcher (не тут)
 
     # Блок 5: Email — заголовок + кожен лист окремо з кнопками
     if email_text:
