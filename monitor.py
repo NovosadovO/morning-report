@@ -2698,8 +2698,12 @@ def generate_weight_trend_chart(days: int = 30) -> bytes | None:
         LINE_COLOR  = "#3FB950"
 
         try:
-            from storage import load_weight as _lw_chart
-            raw = _lw_chart() or {}
+            import storage as _storage_chart
+            # weight_data.json — актуальний файл (weight.py зберігає сюди)
+            raw = _storage_chart.load("weight_data.json") or {}
+            if not raw:
+                # fallback на старий weight.json
+                raw = _storage_chart.load_weight() or {}
         except Exception:
             return None
 
@@ -4199,7 +4203,7 @@ def check_proactive_insights():
     # ── 5. Тижневий підсумок ваги (неділя 20:00) з AI аналізом ──────────────
     if dow == 6 and h == 20 and not already_sent("weekly_weight"):
         try:
-            weight_data = load_json_file(os.path.join(_DATA_DIR, "weight.json"), default={})
+            import storage as _ws; weight_data = _ws.load("weight_data.json") or _ws.load_weight() or {}
             if weight_data:
                 sorted_w = sorted(weight_data.items())
                 last_entries = sorted_w[-7:]
@@ -5690,7 +5694,7 @@ def check_fasting_reminder():
         return  # в робочий день режим інший
 
     # Поточна вага для мотивації
-    weight_data = load_json_file(os.path.join(_DATA_DIR, "weight.json"), default={})
+    import storage as _wm_s; weight_data = _wm_s.load("weight_data.json") or _wm_s.load_weight() or {}
     weight_note = ""
     if weight_data:
         last_w = sorted(weight_data.items())[-1][1]
