@@ -726,7 +726,7 @@ def _get_all_calendar_ids(headers):
             with urllib.request.urlopen(req, timeout=10) as r:
                 items = json.loads(r.read()).get("items", [])
         ids = [it["id"] for it in items if not it.get("deleted")]
-        print(f"[CAL] calendar_ids={ids}")
+        # debug removed
         return ids
     except Exception as e:
         print(f"_get_all_calendar_ids error: {e}")
@@ -749,7 +749,7 @@ def _fetch_events_all_calendars(headers, t_min, t_max, max_per_cal=20):
             if _HAS_REQUESTS:
                 r = _requests.get(url, headers=headers, timeout=10)
                 if r.status_code != 200:
-                    print(f"[CAL] cal={cal_id} status={r.status_code} body={r.text[:200]}")
+                    print(f"Calendar API error: cal={cal_id} status={r.status_code}")
                     continue
                 events = r.json().get("items", [])
             else:
@@ -786,7 +786,7 @@ def _calendar_access_token():
                 json.loads(creds_json),
                 "https://www.googleapis.com/auth/calendar.readonly")
         except Exception as e:
-            print(f"[CAL] service account token error: {e}")
+            print(f"Calendar service account token error: {e}")
     return None
 
 
@@ -813,12 +813,8 @@ def get_calendar():
         tomorrow_end   = tomorrow_start + timedelta(hours=24)
 
         # Читаємо ВСІ календарі
-        print(f"[CAL] today_start={today_start.isoformat()} today_end={today_end.isoformat()}")
         today_events    = _fetch_events_all_calendars(headers, today_start, today_end)
         tomorrow_events = _fetch_events_all_calendars(headers, tomorrow_start, tomorrow_end)
-        print(f"[CAL] today_events={len(today_events)} tomorrow_events={len(tomorrow_events)}")
-        for ev in today_events:
-            print(f"[CAL] TODAY ev: {ev.get('summary')} start={ev['start']}")
 
         def format_events(events):
             lines = []
