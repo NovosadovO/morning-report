@@ -37,7 +37,23 @@ PRICE_CACHE     = "/tmp/monitor_prices_3h.json"
 COINS = {
     "BTC":  "bitcoin",
     "ETH":  "ethereum",
+    "BNB":  "binancecoin",
+    "XRP":  "ripple",
+    "SOL":  "solana",
+    "DOGE": "dogecoin",
+    "ADA":  "cardano",
+    "TRX":  "tron",
+    "LINK": "chainlink",
     "AVAX": "avalanche-2",
+    "TON":  "the-open-network",
+    "XLM":  "stellar",
+    "HBAR": "hedera-hashgraph",
+    "SUI":  "sui",
+    "BCH":  "bitcoin-cash",
+    "LTC":  "litecoin",
+    "DOT":  "polkadot",
+    "HYPE": "hyperliquid",
+    "XMR":  "monero",
     "ONDO": "ondo-finance",
 }
 
@@ -415,13 +431,30 @@ def _yahoo_quote(sym: str) -> tuple[float | None, float | None]:
 
 
 def _get_etf_prices() -> str:
-    """Повертає рядок з цінами ETF (IBIT, ETHA, VAVA, GAVA) та S&P 500."""
+    """Повертає рядок з цінами ETF, індексів та топ акцій."""
     ETF_TICKERS = [
-        ("IBIT",  "IBIT",   "🟠"),
-        ("ETHA",  "ETHA",   "🔷"),
-        ("VAVA",  "VAVA.SW","🏔️"),
-        ("GAVA",  "GAVA",   "🟣"),
-        ("S&P500","^GSPC",  "📊"),
+        # ETF
+        ("IBIT",   "IBIT",    "🟠"),
+        ("ETHA",   "ETHA",    "🔷"),
+        ("VAVA",   "VAVA.SW", "🏔️"),
+        ("GAVA",   "GAVA",    "🟣"),
+        ("QQQ",    "QQQ",     "💻"),
+        ("SPY",    "SPY",     "📊"),
+        # Індекси
+        ("S&P500", "^GSPC",   "📈"),
+        ("NASDAQ", "^IXIC",   "📉"),
+        ("DOW",    "^DJI",    "🏦"),
+        # Акції
+        ("NVDA",   "NVDA",    "🟩"),
+        ("AAPL",   "AAPL",    "🍎"),
+        ("MSFT",   "MSFT",    "🪟"),
+        ("TSLA",   "TSLA",    "⚡"),
+        ("AMZN",   "AMZN",    "📦"),
+        ("GOOGL",  "GOOGL",   "🔍"),
+        ("META",   "META",    "👁️"),
+        ("BRK-B",  "BRK-B",   "💼"),
+        ("JPM",    "JPM",     "🏛️"),
+        ("COIN",   "COIN",    "🪙"),
     ]
     rows = []
     for name, sym, icon in ETF_TICKERS:
@@ -456,7 +489,7 @@ def _get_etf_prices() -> str:
             print(f"[etf prices {name}] {_e}")
             rows.append(f"⚪️ <b>{name}</b>  —")
     if rows:
-        return "📈 <b>ETF / ІНДЕКСИ</b>\n" + "\n".join(rows)
+        return "📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n" + "\n".join(rows)
     return ""
 
 
@@ -3812,13 +3845,13 @@ def check_morning_brief():
 
     # ── Крипто dashboard ────────────────────────────────────────────────────
     try:
-        ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
+        sym_map = list(COINS.items())
+        ids = ",".join(cg_id for _, cg_id in sym_map)
         url_c = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h,7d,30d"
         req_c = urllib.request.Request(url_c, headers={"User-Agent":"bot"})
         with urllib.request.urlopen(req_c, timeout=8) as r:
             raw_c = json.loads(r.read())
         data_c = {c["id"]: c for c in raw_c}
-        sym_map = [("BTC","bitcoin"),("ETH","ethereum"),("AVAX","avalanche-2"),("ONDO","ondo-finance")]
 
         def _trend_emoji(pct):
             """Емодзі тренду замість бару."""
@@ -4397,7 +4430,13 @@ ETF_ALERT_TICKERS = [
     ("ETHA",  "ETHA"),
     ("VAVA",  "VAVA.SW"),
     ("GAVA",  "GAVA"),
+    ("QQQ",   "QQQ"),
+    ("SPY",   "SPY"),
     ("S&P500","^GSPC"),
+    ("NVDA",  "NVDA"),
+    ("AAPL",  "AAPL"),
+    ("TSLA",  "TSLA"),
+    ("COIN",  "COIN"),
 ]
 ETF_ALERT_THRESHOLD = 3.0  # % зміна за ~1г для алерту
 
@@ -6271,7 +6310,7 @@ def check_morning_context():
         # ── КРОК 4: Крипто ───────────────────────────────────────────────────
         crypto_text = ""
         try:
-            ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
+            ids = ",".join(COINS.values())
             url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h"
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
             with urllib.request.urlopen(req, timeout=8) as r:
@@ -6707,14 +6746,13 @@ def check_crypto_morning():
         return
 
     try:
-        ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
+        coins_map = list(COINS.items())
+        ids = ",".join(cg_id for _, cg_id in coins_map)
         url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h,7d"
         req = urllib.request.Request(url, headers={"User-Agent": "bot"})
         with urllib.request.urlopen(req, timeout=10) as r:
             raw = json.loads(r.read())
         data = {c["id"]: c for c in raw}
-
-        coins_map = [("BTC","bitcoin"),("ETH","ethereum"),("AVAX","avalanche-2"),("ONDO","ondo-finance")]
 
         lines_out = []
         lines_out.append(f"💹 <b>КРИПТО ДАШБОРД</b> · {today[5:]}")
