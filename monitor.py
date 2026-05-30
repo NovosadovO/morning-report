@@ -3246,17 +3246,18 @@ def main():
     # Блок 3: Крипто (якщо активований)
     if prices_text:
         parts.append(prices_text)
-        # PNG графік цін — одразу після крипто тексту
-        print("[chart] starting crypto chart generation...")
-        try:
-            _cchart_inline = generate_crypto_trend_chart(30)
-            print(f"[chart] crypto generate result: {len(_cchart_inline) if _cchart_inline else None} bytes")
-            if _cchart_inline:
-                parts.append({"photo": _cchart_inline, "caption": "📈 Тренд 30д | BTC ETH AVAX ONDO"})
-            else:
-                print("[crypto chart inline] generate returned None")
-        except Exception as _cci_e:
-            print(f"[crypto chart inline] error: {_cci_e}")
+        # PNG графік цін — тільки о 12:00 і 20:00
+        if now_local.hour in (12, 20):
+            print("[chart] starting crypto chart generation...")
+            try:
+                _cchart_inline = generate_crypto_trend_chart(30)
+                print(f"[chart] crypto generate result: {len(_cchart_inline) if _cchart_inline else None} bytes")
+                if _cchart_inline:
+                    parts.append({"photo": _cchart_inline, "caption": "📈 Тренд 30д | BTC ETH AVAX ONDO"})
+                else:
+                    print("[crypto chart inline] generate returned None")
+            except Exception as _cci_e:
+                print(f"[crypto chart inline] error: {_cci_e}")
 
     # Блок 4: Календар (ЗАВЖДИ — основа всього)
     parts.append(cal_text)
@@ -3314,17 +3315,18 @@ def main():
 
         if len(_health_lines) > 1:
             parts.append("\n".join(_health_lines))
-            # PNG графік ваги — одразу після здоров'я тексту
-            print("[chart] starting weight chart generation...")
-            try:
-                _wchart_inline = generate_weight_trend_chart(30)
-                print(f"[chart] weight generate result: {len(_wchart_inline) if _wchart_inline else None} bytes")
-                if _wchart_inline:
-                    parts.append({"photo": _wchart_inline, "caption": "⚖️ Тренд ваги 30д"})
-                else:
-                    print("[weight chart inline] generate returned None")
-            except Exception as _wci_e:
-                print(f"[weight chart inline] error: {_wci_e}")
+            # PNG графік ваги — тільки о 12:00 і 20:00
+            if now_local.hour in (12, 20):
+                print("[chart] starting weight chart generation...")
+                try:
+                    _wchart_inline = generate_weight_trend_chart(30)
+                    print(f"[chart] weight generate result: {len(_wchart_inline) if _wchart_inline else None} bytes")
+                    if _wchart_inline:
+                        parts.append({"photo": _wchart_inline, "caption": "⚖️ Тренд ваги 30д"})
+                    else:
+                        print("[weight chart inline] generate returned None")
+                except Exception as _wci_e:
+                    print(f"[weight chart inline] error: {_wci_e}")
     except Exception as _e_health:
         print(f"health block error: {_e_health}")
 
