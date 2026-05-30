@@ -3146,9 +3146,9 @@ def main():
         try:
             prices_raw = get_prices()
             # Відокремлюємо ETF блок перед форматуванням (щоб не загубити)
-            etf_split = prices_raw.split("\n📈 <b>ETF / ІНДЕКСИ</b>", 1)
+            etf_split = prices_raw.split("\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>", 1)
             crypto_raw = etf_split[0]
-            etf_suffix = ("\n\n📈 <b>ETF / ІНДЕКСИ</b>" + etf_split[1]) if len(etf_split) > 1 else ""
+            etf_suffix = ("\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>" + etf_split[1]) if len(etf_split) > 1 else ""
             prices_text = (_format_prices_visual(crypto_raw, cal_events_text) or crypto_raw) + etf_suffix
         except Exception as e:
             print(f"get_prices error: {e}")
@@ -3303,8 +3303,8 @@ def main():
 
         # Вага
         try:
-            from storage import load_weight as _lw_h
-            _wd = _lw_h()
+            import storage as _st_h
+            _wd = _st_h.load("weight_data.json") or _st_h.load_weight() or {}
             if _wd:
                 _recent_keys = sorted(_wd.keys())[-7:]
                 _recent_vals = [_wd[d] for d in _recent_keys if _wd.get(d)]
