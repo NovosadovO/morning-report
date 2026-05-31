@@ -455,7 +455,9 @@ def run():
 
     while True:
         global _INMEM_SENT
-        _INMEM_SENT = None  # скидаємо кеш кожну ітерацію — завжди читаємо GitHub
+        # НЕ скидаємо кеш — in-memory є джерелом правди після старту.
+        # GitHub читаємо тільки один раз при старті через load_sent().
+        # Це усуває race condition: зберіг→читав→ще не оновилось→дубль.
         now  = now_local()
         sent = load_sent()
         today = today_key()
@@ -472,7 +474,7 @@ def run():
             if sent.get(key):
                 continue
             h_trigger = h["hour"] * 60 + h["minute"]
-            if h_trigger <= cur_min_abs <= h_trigger + 4:  # вікно 4 хв
+            if h_trigger <= cur_min_abs <= h_trigger + 1:  # вікно 1 хв (60 сек loop)
                 # Зберігаємо ПЕРЕД надсиланням — захист від дублювання
                 sent[key] = True
                 save_sent(sent)
