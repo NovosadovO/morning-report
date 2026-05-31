@@ -2753,8 +2753,9 @@ def generate_weight_trend_chart(days: int = 30) -> bytes | None:
                 continue
         entries.sort(key=lambda x: x[0])
 
-        # Беремо останні N точок незалежно від дати
-        entries = entries[-days:]
+        # Беремо всі записи за останні N днів (за датою, не за кількістю точок)
+        cutoff = (_dt.utcnow() - _td(days=days)).date()
+        entries = [(d, w) for d, w in entries if d >= cutoff]
 
         if len(entries) < 2:
             return None
@@ -2826,7 +2827,7 @@ def generate_weight_trend_chart(days: int = 30) -> bytes | None:
         from datetime import datetime as _dtnow2
         _now_label = _dtnow2.utcnow().strftime("%d.%m.%Y %H:%M")
         ax.set_title(
-            f"Вага: останні {len(entries)} вимірювань  ({sign}{delta} кг)  {goal_txt}  ·  {_now_label}",
+            f"Вага: {dates[0].strftime('%d.%m')}–{dates[-1].strftime('%d.%m.%Y')}  ({len(entries)} записів, {sign}{delta} кг)  {goal_txt}  ·  {_now_label}",
             color=TEXT, fontsize=15, fontweight="bold", pad=12)
 
         leg = ax.legend(fontsize=12, facecolor=PANEL, edgecolor=BORDER,
@@ -3352,7 +3353,7 @@ def main():
             if now_local.hour in (12, 20):
                 print("[chart] starting weight chart generation...")
                 try:
-                    _wchart_inline = generate_weight_trend_chart(30)
+                    _wchart_inline = generate_weight_trend_chart(60)
                     print(f"[chart] weight generate result: {len(_wchart_inline) if _wchart_inline else None} bytes")
                     if _wchart_inline:
                         parts.append({"photo": _wchart_inline, "caption": "⚖️ Тренд ваги 30д"})
