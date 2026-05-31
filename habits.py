@@ -222,6 +222,19 @@ def load_sent():
         _INMEM_SENT = {}
         return _INMEM_SENT
 
+def load_sent_fresh():
+    """Читає стан ЗАВЖДИ з GitHub (ігнорує in-memory кеш).
+    Використовується для weekly/monthly звітів — захист від race condition при rolling deploy."""
+    try:
+        import sys as _sys, os as _os
+        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+        from storage import _load_github
+        data = _load_github(_SENT_GH_KEY)
+        return data if data else {}
+    except Exception as _e:
+        print(f"[habits] load_sent_fresh error: {_e}")
+        return load_sent()  # fallback на in-memory
+
 def save_sent(sent):
     """Зберігає стан — в пам'яті (миттєво) + /tmp (кеш) + GitHub (persist)."""
     global _INMEM_SENT
@@ -546,7 +559,7 @@ def run():
         # Тижневий звіт ліків — щонеділі о 20:40
         meds_weekly_key = f"meds_weekly_{today}"
         if (now.weekday() == 6 and now.hour == 20 and now.minute == 40
-                and not sent.get(meds_weekly_key)):
+                and not load_sent_fresh().get(meds_weekly_key)):
             sent[meds_weekly_key] = True  # save ПЕРЕД send
             save_sent(sent)
             try:
@@ -565,7 +578,7 @@ def run():
         next_day2 = (now + timedelta(days=1))
         if next_day2.month != now.month and now.hour == 21 and now.minute == 5:
             mkey2 = f"meds_monthly_{now.strftime('%Y-%m')}"
-            if not sent.get(mkey2):
+            if not load_sent_fresh().get(mkey2):
                 sent[mkey2] = True  # save ПЕРЕД send
                 save_sent(sent)
                 try:
@@ -581,7 +594,7 @@ def run():
         # Тижневий звіт ваги — щонеділі о 20:35
         weight_weekly_key = f"weight_weekly_{today}"
         if (now.weekday() == 6 and now.hour == 20 and now.minute == 35
-                and not sent.get(weight_weekly_key)):
+                and not load_sent_fresh().get(weight_weekly_key)):
             sent[weight_weekly_key] = True  # save ПЕРЕД send
             save_sent(sent)
             try:
@@ -597,7 +610,7 @@ def run():
         # Недільний підсумок о 18:45 — повний звіт тижня
         if now.weekday() == 6 and now.hour == 18 and now.minute == 45:
             sunday_key = f"sunday_summary_{today}"
-            if not sent.get(sunday_key):
+            if not load_sent_fresh().get(sunday_key):
                 sent[sunday_key] = True  # save ПЕРЕД send
                 save_sent(sent)
                 try:
@@ -611,7 +624,7 @@ def run():
         # Тижневий звіт — щонеділі о 20:30
         if now.weekday() == 6 and now.hour == 20 and now.minute == 30:
             wkey = f"weekly_{today}"
-            if not sent.get(wkey):
+            if not load_sent_fresh().get(wkey):
                 sent[wkey] = True  # save ПЕРЕД send
                 save_sent(sent)
                 try:
@@ -623,7 +636,7 @@ def run():
         next_day = (now + timedelta(days=1))
         if next_day.month != now.month and now.hour == 21 and now.minute == 0:
             mkey = f"monthly_{now.strftime('%Y-%m')}"
-            if not sent.get(mkey):
+            if not load_sent_fresh().get(mkey):
                 sent[mkey] = True  # save ПЕРЕД send
                 save_sent(sent)
                 try:

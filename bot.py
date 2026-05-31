@@ -248,11 +248,14 @@ def get_meds_report(period="week"):
     """Звіт про прийом ліків за тиждень або місяць."""
     import json as _json
     from datetime import datetime, timezone, timedelta
-    meds_file = "/tmp/meds_data.json"
+    # Читаємо з GitHub (persistent) через meds.py
     try:
-        with open(meds_file) as f:
-            db = _json.load(f)
-    except:
+        import sys as _sys, os as _os
+        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+        from meds import load_meds as _load_meds
+        db = _load_meds() or {}
+    except Exception as _e:
+        print(f"get_meds_report load error: {_e}")
         db = {}
 
     now = datetime.now(timezone.utc) + timedelta(hours=2)
