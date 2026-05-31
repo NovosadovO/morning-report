@@ -1531,6 +1531,7 @@ HELP_TEXT = """
 /тиждень — тижневий дашборд (біг, вага, звички, кроки)
 /ціни — ціни BTC/ETH/AVAX/ONDO
 /курс — поточні курси EUR/USD/CZK/PLN/UAH
+/портфель — крипто-портфель з P&L
 /погода — погода Košice
 /календар — події на сьогодні
 /листи — останні email
@@ -1567,6 +1568,10 @@ HELP_TEXT = """
 /ліки — Armolopid Plus за тиждень
 /ліки місяць — за місяць
 /ліки курс — весь курс (27.04–27.07)
+
+<b>💰 Крипто-портфель</b>
+/портфель — повний портфель з P&L
+/купив BTC 0.01 по 60000 — записати ціну купівлі
 
 <b>🛒 Список покупок</b>
 /купити молоко, хліб — додати в список
@@ -1832,6 +1837,30 @@ def handle_command(chat_id, text):
             spec_cur.loader.exec_module(mod_cur)
             rates = mod_cur.get_currency_rates()
             send(chat_id, rates if rates else "⚠️ Не вдалося отримати курси")
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif text in ["/портфель", "портфель", "/portfolio"]:
+        try:
+            from portfolio import format_portfolio_block
+            send(chat_id, format_portfolio_block(short=False))
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка портфелю: {e}")
+
+    elif text.startswith("/купив ") or text.startswith("купив "):
+        try:
+            from portfolio import update_avg_buy
+            parts = text.replace("/купив ", "").replace("купив ", "").strip().split()
+            # Формат: /купив BTC 0.01 по 60000  або  /купив BTC 0.01 60000
+            if len(parts) >= 3:
+                sym = parts[0].upper()
+                qty = float(parts[1])
+                price_str = parts[-1]  # остання частина — ціна (після "по" або без)
+                price = float(price_str)
+                result = update_avg_buy(sym, qty, price)
+                send(chat_id, result)
+            else:
+                send(chat_id, "⚠️ Формат: /купив BTC 0.0042 по 60000")
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 

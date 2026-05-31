@@ -3383,6 +3383,17 @@ def main():
     except Exception as _e_curr:
         print(f"currency rates error: {_e_curr}")
 
+    # Блок Портфель — коротко в кожному звіті
+    try:
+        import sys as _sys_pf
+        _sys_pf.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from portfolio import format_portfolio_block
+        _pf_text = format_portfolio_block(short=True)
+        if _pf_text:
+            parts.append(_pf_text)
+    except Exception as _e_pf:
+        print(f"portfolio block error: {_e_pf}")
+
     # Графік звичок — тільки о 20:00 через evening_charts_watcher (не тут)
 
     # Блок 5: Email — заголовок + кожен лист окремо з кнопками
