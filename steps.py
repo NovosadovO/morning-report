@@ -76,6 +76,31 @@ def load_steps_data():
     data, _ = _gh_load("steps_daily.json")
     return data or {}
 
+def load_steps_data_merged():
+    """Мержить steps_daily.json + qwatch_data.json (кроки з QWatch).
+    QWatch дані мають пріоритет якщо є steps в обох."""
+    base = load_steps_data()
+    try:
+        import sys as _sys_q, os as _os_q
+        _sys_q.path.insert(0, _os_q.path.dirname(_os_q.path.abspath(__file__)))
+        from storage import load as _sl
+        qdata = _sl("qwatch_data.json", default={})
+        for date, qrec in qdata.items():
+            if not isinstance(qrec, dict):
+                continue
+            q_steps = qrec.get("steps")
+            if q_steps and q_steps > 0:
+                existing = base.get(date, {})
+                # QWatch кроки мають пріоритет
+                existing["steps"] = q_steps
+                # sleep як calories proxy якщо немає
+                if "calories" not in existing and qrec.get("calories"):
+                    existing["calories"] = qrec["calories"]
+                base[date] = existing
+    except Exception as _eq:
+        print(f"[steps merge qwatch] {_eq}")
+    return base
+
 def save_steps_data(data):
     _, sha = _gh_load("steps_daily.json")
     return _gh_save("steps_daily.json", data, sha)
@@ -268,7 +293,7 @@ def get_steps_summary() -> str:
 
 def get_weekly_report() -> tuple:
     """Повертає (text, chart_bytes або None)"""
-    daily = load_steps_data()
+    daily = load_steps_data_merged()  # QWatch + StepsApp
     now = _now_local()
     today = now.strftime("%Y-%m-%d")
 
@@ -338,7 +363,7 @@ def get_weekly_report() -> tuple:
 
 def get_monthly_report() -> tuple:
     """Повертає (text, chart_bytes або None)"""
-    daily = load_steps_data()
+    daily = load_steps_data_merged()  # QWatch + StepsApp
     now = _now_local()
 
     # Поточний місяць
