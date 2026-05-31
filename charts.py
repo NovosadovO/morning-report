@@ -200,8 +200,8 @@ def plot_habits_heatmap(days: int = 30) -> bytes | None:
 
 def plot_day_dashboard(today_str: str = None) -> bytes | None:
     """
-    Дашборд одного дня: звички + вага (міні).
-    Відправляється з підсумком дня (21:00).
+    Дашборд одного дня: звички + вага з трендом + аналіз.
+    Відправляється з підсумком дня (19/20:xx).
     """
     if not HAS_MPL:
         return None
@@ -216,85 +216,191 @@ def plot_day_dashboard(today_str: str = None) -> bytes | None:
         HABITS = ["shower", "run", "water", "tea", "sauna"]
         entry = raw.get(today_str, {}) or {}
 
+        # ── layout: 3 панелі ───────────────────────────────────────────────────
+        fig = plt.figure(figsize=(12, 7), facecolor=BG)
+        gs = gridspec.GridSpec(2, 2, figure=fig, hspace=0.5, wspace=0.35,
+                               height_ratios=[1.2, 1])
+
+        # ── TOP FULL: вага за 30 днів з трендом ───────────────────────────────
+        ax_w = fig.add_subplot(gs[0, :])
+        ax_w.set_facecolor(PANEL)
+
+        today_d = datetime.strptime(today_str, "%Y-%m-%d").date()
+        w_dates = [today_d - timedelta(days=i) for i in range(29, -1, -1)]
+        w_vals  = [wdata.get(d.isoformat()) for d in w_dates]
+        present = [(i, v) for i, v in enumerate(w_vals) if v is not None]
+
+        if len(present) >= 2:
+            xi = np.array([p[0] for p in present])
+            yi = np.array([p[1] for p in present])
+
+            # Зона цілі
+            ax_w.axhspan(77.0, 79.0, alpha=0.08, color=BLUE, label="зона цілі 77–79")
+
+            # Fill + лінія
+            ax_w.fill_between(xi, yi, min(yi) - 0.5, alpha=0.18, color=GREEN)
+            ax_w.plot(xi, yi, color=GREEN, linewidth=2.5, zorder=4, label="вага")
+            ax_w.scatter(xi, yi, color=GREEN, s=28, zorder=5, alpha=0.7)
+            # Останній маркер великий
+            ax_w.scatter([xi[-1]], [yi[-1]], color=GREEN, s=90, zorder=6)
+
+            # Ціль-лінія
+            ax_w.axhline(78.0, color=BLUE, linewidth=1.2, linestyle="--",
+                         alpha=0.9, label="ціль 78 кг")
+
+            # Лінія тренду (linear regression)
+            z    = np.polyfit(xi, yi, 1)
+            p    = np.poly1d(z)
+            trend_x = np.array([xi[0], xi[-1]])
+            trend_y = p(trend_x)
+            slope_per_week = z[0] * 7
+            trend_color = RED if z[0] > 0.02 else (GREEN if z[0] < -0.02 else MUTED)
+            ax_w.plot(trend_x, trend_y, color=trend_color, linewidth=1.8,
+                      linestyle=":", zorder=3, label=f"тренд")
+
+            # Маркер найкращої ваги за 30 днів
+            best_i = int(np.argmin(yi))
+            ax_w.scatter([xi[best_i]], [yi[best_i]], color=YELLOW, s=100,
+                         zorder=7, marker="D")
+            ax_w.annotate(f"мін {yi[best_i]:.1f}",
+                          xy=(xi[best_i], yi[best_i]),
+                          xytext=(6, -16), textcoords="offset points",
+                          color=YELLOW, fontsize=8)
+
+            # Підпис останнього значення
+            ax_w.annotate(f"{yi[-1]:.1f} кг",
+                          xy=(xi[-1], yi[-1]),
+                          xytext=(-38, 12), textcoords="offset points",
+                          color=GREEN, fontsize=11, fontweight="bold",
+                          arrowprops=dict(arrowstyle="-", color=GREEN, alpha=0.4))
+
+            # Підпис тренду
+            sign = "+" if slope_per_week > 0 else ""
+            ax_w.text(0.02, 0.93,
+                      f"{sign}{slope_per_week:.2f} кг/тижд",
+                      transform=ax_w.transAxes,
+                      fontsize=9, color=trend_color, fontweight="bold",
+                      va="top")
+
+            ax_w.set_ylim(min(yi) - 1.8, max(yi) + 1.8)
+
+            # X-тіки: дати кожні 7 днів
+            tick_ix = [0, 7, 14, 21, 29]
+            tick_ix = [t for t in tick_ix if t < len(w_dates)]
+            ax_w.set_xticks(tick_ix)
+            ax_w.set_xticklabels(
+                [w_dates[t].strftime("%d.%m") for t in tick_ix],
+                fontsize=8, color=MUTED
+            )
+
+            ax_w.legend(loc="upper right", fontsize=8, framealpha=0.3,
+                        facecolor=PANEL, edgecolor=BORDER, labelcolor=TEXT,
+                        ncol=4)
+        else:
+            ax_w.text(0.5, 0.5, "Немає даних по вазі",
+                      ha="center", va="center", color=MUTED, fontsize=11,
+                      transform=ax_w.transAxes)
+
+        ax_w.set_title("⚖️ Вага за 30 днів — тренд та ціль", color=TEXT,
+                       fontsize=11, fontweight="bold")
+        for spine in ax_w.spines.values():
+            spine.set_edgecolor(BORDER)
+        ax_w.tick_params(colors=MUTED)
+        ax_w.grid(axis="y", alpha=0.2)
+
+        # ── BOTTOM LEFT: звички сьогодні ──────────────────────────────────────
+        ax_h = fig.add_subplot(gs[1, 0])
+        ax_h.set_facecolor(PANEL)
+
+        y_pos  = list(range(len(HABITS)))
         values = []
-        colors = []
-        labels = []
+        colors_h = []
         for hkey in HABITS:
             v = entry.get(hkey)
-            labels.append(HABIT_LABELS[hkey])
             if v is True:
-                values.append(1)
-                colors.append(HABIT_COLORS[hkey])
+                values.append(1.0)
+                colors_h.append(HABIT_COLORS[hkey])
             else:
-                values.append(0.15)
-                colors.append("#21262D")
+                values.append(0.12)
+                colors_h.append("#21262D")
 
-        fig, axes = plt.subplots(1, 2, figsize=(10, 4),
-                                 gridspec_kw={"width_ratios": [2, 1]},
-                                 facecolor=BG)
-
-        # Ліво: горизонтальні бари звичок
-        ax_h = axes[0]
-        ax_h.set_facecolor(PANEL)
-        y_pos = range(len(HABITS))
-        bars = ax_h.barh(list(y_pos), values, height=0.6,
-                         color=colors, zorder=3)
-        ax_h.set_xlim(0, 1.15)
-        ax_h.set_yticks(list(y_pos))
-        ax_h.set_yticklabels(labels, fontsize=10, color=TEXT)
+        ax_h.barh(y_pos, values, height=0.6, color=colors_h, zorder=3)
+        ax_h.set_xlim(0, 1.2)
+        ax_h.set_yticks(y_pos)
+        ax_h.set_yticklabels([HABIT_LABELS[h] for h in HABITS],
+                              fontsize=9, color=TEXT)
         ax_h.set_xticks([])
         ax_h.invert_yaxis()
         ax_h.set_title("Звички сьогодні", color=TEXT, fontsize=11, pad=8)
         ax_h.grid(False)
         for spine in ax_h.spines.values():
             spine.set_visible(False)
-
-        # Підписи на барах
-        for i, (val, hkey) in enumerate(zip(values, HABITS)):
-            v = entry.get(hkey)
-            label = "✅" if v is True else "❌"
-            ax_h.text(1.08, i, label, va="center", ha="center",
+        for i, hkey in enumerate(HABITS):
+            label = "✅" if entry.get(hkey) is True else "❌"
+            ax_h.text(1.13, i, label, va="center", ha="center",
                       fontsize=11, color=TEXT)
 
-        # Право: мінi-графік ваги за 14 днів
-        ax_w = axes[1]
-        ax_w.set_facecolor(PANEL)
-
-        today_d = datetime.strptime(today_str, "%Y-%m-%d").date()
-        w_dates = [today_d - timedelta(days=i) for i in range(13, -1, -1)]
-        w_vals = [wdata.get(d.isoformat()) for d in w_dates]
-        present = [(i, v) for i, v in enumerate(w_vals) if v is not None]
-
-        if len(present) >= 2:
-            xi = [p[0] for p in present]
-            yi = [p[1] for p in present]
-            ax_w.fill_between(xi, yi, min(yi) - 0.5, alpha=0.2, color=GREEN)
-            ax_w.plot(xi, yi, color=GREEN, linewidth=2.5, zorder=4)
-            ax_w.scatter([xi[-1]], [yi[-1]], color=GREEN, s=60, zorder=5)
-            ax_w.axhline(78.0, color=BLUE, linewidth=1.2, linestyle="--",
-                         alpha=0.7, label="ціль 78")
-            ax_w.set_ylim(min(yi) - 1.5, max(yi) + 1.5)
-            ax_w.set_xticks([])
-            ax_w.set_title("Вага, кг", color=TEXT, fontsize=11, pad=8)
-            for spine in ax_w.spines.values():
-                spine.set_edgecolor(BORDER)
-            ax_w.tick_params(colors=MUTED)
-            ax_w.yaxis.tick_right()
-            # Останнє значення
-            ax_w.annotate(f"{yi[-1]:.1f} кг",
-                          xy=(xi[-1], yi[-1]),
-                          xytext=(-22, 10), textcoords="offset points",
-                          color=GREEN, fontsize=10, fontweight="bold")
-        else:
-            ax_w.text(0.5, 0.5, "Немає даних", ha="center", va="center",
-                      color=MUTED, fontsize=10, transform=ax_w.transAxes)
-            ax_w.set_title("Вага, кг", color=TEXT, fontsize=11, pad=8)
-            for spine in ax_w.spines.values():
-                spine.set_visible(False)
-
         done = sum(1 for hkey in HABITS if entry.get(hkey) is True)
-        fig.suptitle(f"📊 Підсумок дня  {today_str[8:]}.{today_str[5:7]}  ·  {done}/{len(HABITS)} звичок",
-                     fontsize=13, color=TEXT, fontweight="bold", y=1.02)
+
+        # ── BOTTOM RIGHT: стрік 7 днів по кожній звичці ───────────────────────
+        ax_s = fig.add_subplot(gs[1, 1])
+        ax_s.set_facecolor(PANEL)
+
+        # Стрік + % за 7 днів
+        week_dates_r = [today_d - timedelta(days=i) for i in range(6, -1, -1)]
+        streak_data = []
+        for hkey in HABITS:
+            streak = 0
+            for d in [today_d - timedelta(days=i) for i in range(30)]:
+                e = raw.get(d.isoformat(), {}) or {}
+                if e.get(hkey) is True:
+                    streak += 1
+                else:
+                    break
+            week_done = sum(
+                1 for d in week_dates_r
+                if (raw.get(d.isoformat(), {}) or {}).get(hkey) is True
+            )
+            pct = week_done / 7 * 100
+            streak_data.append((hkey, streak, pct))
+
+        # Grouped bar: стрік (normalized /30) vs % за тиждень
+        n = len(HABITS)
+        x = np.arange(n)
+        w = 0.38
+        streak_norm = [min(s / 30, 1.0) for _, s, _ in streak_data]
+        pct_norm    = [p / 100 for _, _, p in streak_data]
+        colors_streak = [HABIT_COLORS[h] for h in HABITS]
+
+        ax_s.bar(x - w/2, streak_norm, width=w, color=colors_streak,
+                 alpha=0.85, zorder=3, label="стрік /30д")
+        ax_s.bar(x + w/2, pct_norm, width=w,
+                 color=[PURPLE]*n, alpha=0.75, zorder=3, label="% тиждень")
+
+        ax_s.set_xticks(x)
+        ax_s.set_xticklabels([HABIT_LABELS[h].split()[-1] for h in HABITS],
+                              fontsize=8, color=TEXT)
+        ax_s.set_ylim(0, 1.2)
+        ax_s.set_yticks([0, 0.5, 1.0])
+        ax_s.set_yticklabels(["0", "50%", "100%"], fontsize=8, color=MUTED)
+        ax_s.set_title("Стрік vs тиждень", color=TEXT, fontsize=11, pad=8)
+        ax_s.legend(fontsize=7, framealpha=0.3, facecolor=PANEL,
+                    edgecolor=BORDER, labelcolor=TEXT)
+        for spine in ax_s.spines.values():
+            spine.set_edgecolor(BORDER)
+        ax_s.grid(axis="y", alpha=0.2)
+
+        # Підписи стріків над барами
+        for i, (hkey, streak, pct) in enumerate(streak_data):
+            ax_s.text(i - w/2, streak_norm[i] + 0.03, f"{streak}д",
+                      ha="center", fontsize=7.5, color=TEXT)
+            ax_s.text(i + w/2, pct_norm[i] + 0.03, f"{int(pct)}%",
+                      ha="center", fontsize=7.5, color=TEXT)
+
+        fig.suptitle(
+            f"📊 Підсумок {today_str[8:]}.{today_str[5:7]}  ·  {done}/{len(HABITS)} звичок",
+            fontsize=13, color=TEXT, fontweight="bold", y=1.02
+        )
 
         fig.tight_layout(pad=1.5)
         return _buf(fig)
@@ -390,10 +496,26 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
                             ha="center", va="bottom", color=TEXT,
                             fontsize=10, fontweight="bold")
 
-        legend = ax_top.legend(loc="upper left", fontsize=8,
+        # Лінія тренду звичок (рухома середня або polyfit)
+        if len(done_per_day) >= 3:
+            xi_t = np.arange(days)
+            yi_t = np.array(done_per_day, dtype=float)
+            z_t  = np.polyfit(xi_t, yi_t, 1)
+            p_t  = np.poly1d(z_t)
+            trend_y_t = p_t(xi_t)
+            t_color = GREEN if z_t[0] >= 0 else RED
+            ax_top.plot(xi_t, trend_y_t, color=t_color, linewidth=2,
+                        linestyle="--", zorder=5, label="тренд")
+            sign_t = "+" if z_t[0] >= 0 else ""
+            ax_top.text(0.02, 0.93,
+                        f"тренд: {sign_t}{z_t[0]:.2f} звич/день",
+                        transform=ax_top.transAxes,
+                        fontsize=8, color=t_color, va="top")
+
+        legend = ax_top.legend(loc="upper right", fontsize=8,
                                framealpha=0.4, facecolor=PANEL,
                                edgecolor=BORDER, labelcolor=TEXT,
-                               ncol=len(HABITS))
+                               ncol=len(HABITS) + 1)
 
         # ── BOTTOM LEFT: вага ─────────────────────────────────────────────────
         ax_w = fig.add_subplot(gs[1, 0])
@@ -401,13 +523,30 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
 
         present_w = [(i, v) for i, v in enumerate(w14_vals) if v is not None]
         if len(present_w) >= 2:
-            xi = [p[0] for p in present_w]
-            yi = [p[1] for p in present_w]
+            xi = np.array([p[0] for p in present_w])
+            yi = np.array([p[1] for p in present_w])
+
+            # Зона цілі
+            ax_w.axhspan(77.0, 79.0, alpha=0.08, color=BLUE)
+
             ax_w.fill_between(xi, yi, min(yi) - 0.5, alpha=0.18, color=GREEN)
             ax_w.plot(xi, yi, color=GREEN, linewidth=2.5, zorder=4)
             ax_w.scatter(xi, yi, color=GREEN, s=30, zorder=5, alpha=0.7)
-            ax_w.axhline(78.0, color=BLUE, linewidth=1.2, linestyle="--",
-                         alpha=0.7)
+            ax_w.axhline(78.0, color=BLUE, linewidth=1.2, linestyle="--", alpha=0.7)
+
+            # Лінія тренду
+            z_w = np.polyfit(xi, yi, 1)
+            p_w = np.poly1d(z_w)
+            trend_yw = p_w(np.array([xi[0], xi[-1]]))
+            t_col_w = RED if z_w[0] > 0.02 else (GREEN if z_w[0] < -0.02 else MUTED)
+            ax_w.plot([xi[0], xi[-1]], trend_yw, color=t_col_w,
+                      linewidth=1.8, linestyle=":", zorder=3)
+            slope_week = z_w[0] * 7
+            sign_w = "+" if slope_week > 0 else ""
+            ax_w.text(0.03, 0.06, f"{sign_w}{slope_week:.2f} кг/тижд",
+                      transform=ax_w.transAxes, fontsize=8, color=t_col_w,
+                      fontweight="bold")
+
             ax_w.set_ylim(min(yi) - 1.5, max(yi) + 1.5)
             # X-axis кожні 7 днів
             ax_w.set_xticks([0, 6, 13])
@@ -429,7 +568,7 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
             ax_w.text(0.5, 0.5, "Немає даних", ha="center", va="center",
                       color=MUTED, fontsize=10, transform=ax_w.transAxes)
 
-        ax_w.set_title("⚖️ Вага (14 днів)", color=TEXT, fontsize=11, fontweight="bold")
+        ax_w.set_title("⚖️ Вага (14 днів) + тренд", color=TEXT, fontsize=11, fontweight="bold")
         for spine in ax_w.spines.values():
             spine.set_edgecolor(BORDER)
         ax_w.grid(axis="y", alpha=0.2)
@@ -567,11 +706,32 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
         present_w = [(d, v) for d, v in w_vals if v is not None]
 
         if len(present_w) >= 2:
-            xi = [d.day for d, _ in present_w]
-            yi = [v for _, v in present_w]
+            xi = np.array([d.day for d, _ in present_w])
+            yi = np.array([v for _, v in present_w])
+
+            # Зона цілі
+            ax_w.axhspan(77.0, 79.0, alpha=0.08, color=BLUE)
+
             ax_w.fill_between(xi, yi, min(yi) - 0.5, alpha=0.18, color=GREEN)
-            ax_w.plot(xi, yi, color=GREEN, linewidth=2.8, zorder=4)
+            ax_w.plot(xi, yi, color=GREEN, linewidth=2.8, zorder=4, label="вага")
             ax_w.scatter(xi, yi, color=GREEN, s=35, zorder=5, alpha=0.8)
+
+            # Лінія тренду (polyfit)
+            z_m  = np.polyfit(xi, yi, 1)
+            p_m  = np.poly1d(z_m)
+            tx   = np.linspace(xi[0], xi[-1], 60)
+            ax_w.plot(tx, p_m(tx), color=RED if z_m[0] > 0.02 else (GREEN if z_m[0] < -0.02 else MUTED),
+                      linewidth=1.8, linestyle=":", zorder=3, label="тренд")
+
+            # Маркер мінімуму
+            best_mi = int(np.argmin(yi))
+            ax_w.scatter([xi[best_mi]], [yi[best_mi]], color=YELLOW, s=90,
+                         zorder=7, marker="D")
+            ax_w.annotate(f"мін {yi[best_mi]:.1f}",
+                          xy=(xi[best_mi], yi[best_mi]),
+                          xytext=(5, -14), textcoords="offset points",
+                          color=YELLOW, fontsize=8)
+
             ax_w.axhline(78.0, color=BLUE, linewidth=1.2, linestyle="--",
                          alpha=0.7, label="ціль 78 кг")
             ax_w.set_xlim(1, n_days)
@@ -579,14 +739,16 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
             ax_w.legend(fontsize=8, loc="upper right",
                         framealpha=0.3, facecolor=PANEL,
                         edgecolor=BORDER, labelcolor=TEXT)
+
             # Тренд тексту
-            diff = yi[-1] - yi[0]
+            diff = float(yi[-1] - yi[0])
+            slope_month = z_m[0] * 30
             sign = "+" if diff > 0 else ""
             trend_color = RED if diff > 0.5 else (GREEN if diff < -0.5 else MUTED)
-            ax_w.text(0.02, 0.9,
-                      f"Старт: {yi[0]:.1f} кг → Кінець: {yi[-1]:.1f} кг  ({sign}{diff:.1f} кг)",
-                      transform=ax_w.transAxes,
-                      fontsize=9, color=trend_color)
+            ax_w.text(0.02, 0.93,
+                      f"Старт: {yi[0]:.1f} → {yi[-1]:.1f} кг  ({sign}{diff:.1f})  |  тренд: {'+' if slope_month>0 else ''}{slope_month:.1f} кг/міс",
+                      transform=ax_w.transAxes, fontsize=8.5, color=trend_color,
+                      fontweight="bold", va="top")
         else:
             ax_w.text(0.5, 0.5, "Недостатньо даних",
                       ha="center", va="center", color=MUTED, fontsize=10,
