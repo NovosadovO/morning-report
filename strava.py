@@ -199,6 +199,18 @@ def get_week_stats():
         return None
 
 
+def _format_run_lines(last: dict) -> list:
+    """Форматує рядки для одного тренування (без заголовку)."""
+    type_emoji = {"Run": "🏃", "TrailRun": "🏔", "VirtualRun": "💻"}.get(last["type"], "🏃")
+    lines = []
+    lines.append(f"  {type_emoji} {last['distance_km']} км · {last['duration_min']} хв · {last['pace']}")
+    if last.get("elevation"):
+        lines.append(f"  ⛰ Набір висоти: {last['elevation']:.0f} м")
+    if last.get("hr"):
+        lines.append(f"  ❤️ ЧСС: {last['hr']:.0f} уд/хв")
+    return lines
+
+
 def format_strava_block():
     """Форматований блок для Telegram звіту"""
     last = get_last_activity()
@@ -207,13 +219,14 @@ def format_strava_block():
     lines = ["🏃 <b>БІГОВИЙ ТРЕКЕР</b>"]
 
     if last:
-        type_emoji = {"Run": "🏃", "TrailRun": "🏔", "VirtualRun": "💻"}.get(last["type"], "🏃")
-        lines.append(f"\n<b>Остання пробіжка</b> ({last['when']}):")
-        lines.append(f"  {type_emoji} {last['distance_km']} км · {last['duration_min']} хв · {last['pace']}")
-        if last["elevation"]:
-            lines.append(f"  ⛰ Набір висоти: {last['elevation']:.0f} м")
-        if last["hr"]:
-            lines.append(f"  ❤️ ЧСС: {last['hr']:.0f} уд/хв")
+        is_today = last.get("when") == "сьогодні"
+        if is_today:
+            lines.append(f"\n<b>Актуальне тренування:</b>")
+        else:
+            # Показуємо дату останнього тренування
+            date_short = last.get("date", "").split(" ")[0]  # "DD.MM"
+            lines.append(f"\n<b>Останнє тренування ({date_short}):</b>")
+        lines.extend(_format_run_lines(last))
     else:
         lines.append("\n  Немає даних про тренування")
 
