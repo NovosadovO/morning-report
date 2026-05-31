@@ -450,34 +450,10 @@ def _yahoo_quote(sym: str) -> tuple[float | None, float | None]:
     return None, None
 
 
-def _get_etf_prices() -> str:
-    """Повертає рядок з цінами ETF, індексів та топ акцій."""
-    ETF_TICKERS = [
-        # ETF
-        ("IBIT",   "IBIT",    "🟠"),
-        ("ETHA",   "ETHA",    "🔷"),
-        ("VAVA",   "VAVA.SW", "🏔️"),
-        ("GAVA",   "GAVA",    "🟣"),
-        ("QQQ",    "QQQ",     "💻"),
-        ("SPY",    "SPY",     "📊"),
-        # Індекси
-        ("S&P500", "^GSPC",   "📈"),
-        ("NASDAQ", "^IXIC",   "📉"),
-        ("DOW",    "^DJI",    "🏦"),
-        # Акції
-        ("NVDA",   "NVDA",    "🟩"),
-        ("AAPL",   "AAPL",    "🍎"),
-        ("MSFT",   "MSFT",    "🪟"),
-        ("TSLA",   "TSLA",    "⚡"),
-        ("AMZN",   "AMZN",    "📦"),
-        ("GOOGL",  "GOOGL",   "🔍"),
-        ("META",   "META",    "👁️"),
-        ("BRK-B",  "BRK-B",   "💼"),
-        ("JPM",    "JPM",     "🏛️"),
-        ("COIN",   "COIN",    "🪙"),
-    ]
+def _fetch_etf_rows(tickers: list) -> list:
+    """Завантажує ціни для списку тікерів, повертає рядки."""
     rows = []
-    for name, sym, icon in ETF_TICKERS:
+    for name, sym, icon in tickers:
         try:
             price, pct = _yahoo_quote(sym)
             if price is not None:
@@ -508,6 +484,52 @@ def _get_etf_prices() -> str:
         except Exception as _e:
             print(f"[etf prices {name}] {_e}")
             rows.append(f"⚪️ <b>{name}</b>  —")
+    return rows
+
+
+# 5 тікерів для двогодинного звіту
+_ETF_TICKERS_SHORT = [
+    ("IBIT",   "IBIT",    "🟠"),
+    ("ETHA",   "ETHA",    "🔷"),
+    ("VAVA",   "VAVA.SW", "🏔️"),
+    ("GAVA",   "GAVA",    "🟣"),
+    ("QQQ",    "QQQ",     "💻"),
+]
+
+# Повний список для тижневого/місячного звіту
+_ETF_TICKERS_FULL = [
+    # ETF
+    ("IBIT",   "IBIT",    "🟠"),
+    ("ETHA",   "ETHA",    "🔷"),
+    ("VAVA",   "VAVA.SW", "🏔️"),
+    ("GAVA",   "GAVA",    "🟣"),
+    ("QQQ",    "QQQ",     "💻"),
+    ("SPY",    "SPY",     "📊"),
+    # Індекси
+    ("S&P500", "^GSPC",   "📈"),
+    ("NASDAQ", "^IXIC",   "📉"),
+    ("DOW",    "^DJI",    "🏦"),
+    # Акції
+    ("NVDA",   "NVDA",    "🟩"),
+    ("AAPL",   "AAPL",    "🍎"),
+    ("MSFT",   "MSFT",    "🪟"),
+    ("TSLA",   "TSLA",    "⚡"),
+    ("AMZN",   "AMZN",    "📦"),
+    ("GOOGL",  "GOOGL",   "🔍"),
+    ("META",   "META",    "👁️"),
+    ("BRK-B",  "BRK-B",   "💼"),
+    ("JPM",    "JPM",     "🏛️"),
+    ("COIN",   "COIN",    "🪙"),
+]
+
+
+def _get_etf_prices(full: bool = False) -> str:
+    """Повертає рядок з цінами ETF/акцій.
+    full=False → 5 тікерів (двогодинний звіт)
+    full=True  → повний список (тижневий/місячний)
+    """
+    tickers = _ETF_TICKERS_FULL if full else _ETF_TICKERS_SHORT
+    rows = _fetch_etf_rows(tickers)
     if rows:
         return "📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n" + "\n".join(rows)
     return ""
@@ -5620,6 +5642,14 @@ def check_crypto_weekly_summary():
         if ai_comment:
             msg += f"\n\n🤖 <i>{ai_comment}</i>"
 
+        # Додаємо повний ETF/акції блок
+        try:
+            etf_full = _get_etf_prices(full=True)
+            if etf_full:
+                msg += f"\n\n{etf_full}"
+        except Exception as _e_etf_w:
+            print(f"[weekly etf block] {_e_etf_w}")
+
         send_telegram(msg)
         print("Crypto weekly summary sent")
         state["last"] = today
@@ -8467,6 +8497,14 @@ def check_monthly_summary():
             lines.append(f"\n💬 <i>{ai_text}</i>")
         except Exception:
             pass
+
+    # Додаємо повний ETF/акції блок
+    try:
+        etf_full = _get_etf_prices(full=True)
+        if etf_full:
+            lines.append(f"\n{etf_full}")
+    except Exception as _e_etf_m:
+        print(f"[monthly etf block] {_e_etf_m}")
 
     send_telegram("\n".join(lines))
     state["last"] = month_key
