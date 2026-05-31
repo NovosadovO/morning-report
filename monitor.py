@@ -2429,45 +2429,69 @@ def _build_report_header(now_local, slot_key, cal_events_raw):
         if ev_names:
             cal_hint = f"\n📌 <i>{esc(ev_names[0])}</i>" if len(ev_names) == 1 else f"\n📌 <i>{esc(ev_names[0])} +{len(ev_names)-1}</i>"
 
+    # Мотиваційні фрази залежно від часу доби
+    _morning_vibes = ["Ранок — найпродуктивніший час! 🚀", "Доброго ранку, Олег! ☕ Заряджаємось.", "Новий день — нові можливості 💪", "Ранок вирішує день! 🌅"]
+    _midday_vibes  = ["Половина дня позаду — тримаємо темп 🔥", "Обідній спринт! 💨", "Середина дня — перевіряємо пульс 📡", "Не забудь поїсти нормально 😄"]
+    _afternoon_vibes = ["Після обіду — фокус! 🎯", "Друга половина дня, Олег 💼", "Вже після обіду — час для справ 📋", "Фінальний відрізок дня 🏁"]
+    _evening_vibes = ["Вечір — підбиваємо підсумки 🌙", "Гарний день? Занотуй результати ✍️", "Вечірній огляд — всі показники ✅", "Завтра буде ще кращий день! 🌟"]
+    _night_vibes   = ["Вже пізно — не забудь відпочити 😴", "Нічний моніторинг 🦉", "Тихо навколо — час для себе 🌌", "Майже північ — зберігай сили 💤"]
+
+    _vibes = {"morning": _morning_vibes, "midday": _midday_vibes,
+              "afternoon": _afternoon_vibes, "evening": _evening_vibes, "night": _night_vibes}
+    _vibe_list = _vibes[period]
+    _vibe = _vibe_list[seed_int % len(_vibe_list)]
+
+    # Іконка часу доби
+    _period_icon = {"morning": "🌅", "midday": "☀️", "afternoon": "🌆", "evening": "🌙", "night": "🌃"}[period]
+    _city_icon = "🏙" if not is_weekend else "🏖"
+
     # 12 різних стилів заголовку
     headers = [
-        # 0
-        f"┌─────────────────────────┐\n"
-        f"│  🕐 <b>{time_str}</b>  ·  {date_str} ({weekday_ua})  │\n"
-        f"└─────────────────────────┘{cal_hint}",
-        # 1
-        f"⚡ <b>ЗВІТ {time_str}</b>  ·  {weekday_ua} {date_str}{cal_hint}\n"
-        f"{'─' * 28}",
-        # 2
-        f"🔔 <b>{time_str} — {'Вихідний' if is_weekend else weekday_full.capitalize()}</b>{cal_hint}\n"
-        f"<i>{'Перша' if slot_label=='00' else 'Друга'} перевірка цієї години</i>",
-        # 3
-        f"{'🌅' if period=='morning' else '☀️' if period=='midday' else '🌆' if period=='afternoon' else '🌙' if period=='evening' else '🌃'} "
-        f"<b>{time_str}  |  {date_str}</b>{cal_hint}\n"
-        f"<code>{'━'*24}</code>",
-        # 4
-        f"📡 <b>МОНІТОРИНГ</b>  {time_str} — {weekday_ua}{cal_hint}\n"
-        f"<i>{'Вихідний день' if is_weekend else 'Робочий день'}</i>",
-        # 5
-        f"<b>╔══ {time_str}  ·  {date_str} ══╗</b>{cal_hint}",
-        # 6
-        f"🗓 <b>{weekday_full.upper()}, {date_str}</b>  🕐 {time_str}{cal_hint}\n"
-        f"{'▬' * 22}",
-        # 7
-        f"{'🏙' if not is_weekend else '🏖'} <b>Кошіце, {time_str}</b>  ·  {date_str}{cal_hint}",
-        # 8
-        f"⏱ <b>Оновлення {time_str}</b>{cal_hint}\n"
-        f"<i>{weekday_full.capitalize()} — {'відпочиваємо' if is_weekend else 'продуктивний день'}</i>",
-        # 9
-        f"🔵 <b>{time_str}</b>  {weekday_ua} {date_str}{cal_hint}\n"
-        f"<code>• • • • • • • • • •</code>",
-        # 10
-        f"{'🌤' if period in ('morning','midday') else '🌇' if period=='afternoon' else '🌙'} "
-        f"<b>{time_str}  ·  {weekday_ua}</b>{cal_hint}\n"
-        f"<i>Слот {'1' if slot_label=='00' else '2'}/2</i>",
-        # 11
-        f"📊 <b>ДАШБОРД</b>  {time_str}  {date_str}{cal_hint}\n"
-        f"{'═' * 20}",
+        # 0 — класичний рамковий
+        f"┌────────────────────────────┐\n"
+        f"│ {_period_icon} <b>{time_str}</b>  ·  {date_str} ({weekday_ua}) │\n"
+        f"└────────────────────────────┘\n"
+        f"<i>{_vibe}</i>{cal_hint}",
+        # 1 — динамічний з вібою
+        f"⚡ <b>ЗВІТ {time_str}</b>  ·  {weekday_ua} {date_str}\n"
+        f"<i>{_vibe}</i>\n"
+        f"{'─' * 30}{cal_hint}",
+        # 2 — з контекстом дня
+        f"🔔 <b>{time_str} — {'Вихідний 🎉' if is_weekend else weekday_full.capitalize()}</b>\n"
+        f"<i>{_vibe}</i>{cal_hint}",
+        # 3 — мінімалістичний
+        f"{_period_icon} <b>{time_str}  |  {date_str}</b>\n"
+        f"<i>{_vibe}</i>\n"
+        f"<code>{'━'*26}</code>{cal_hint}",
+        # 4 — моніторинг стиль
+        f"📡 <b>МОНІТОРИНГ</b>  {time_str} — {weekday_ua}\n"
+        f"{'🎉 Вихідний!' if is_weekend else '💼 Робочий день'}\n"
+        f"<i>{_vibe}</i>{cal_hint}",
+        # 5 — з містом
+        f"{_city_icon} <b>Кошіце, {time_str}</b>  ·  {date_str}\n"
+        f"<i>{_vibe}</i>{cal_hint}\n"
+        f"<code>{'·'*28}</code>",
+        # 6 — повний день
+        f"🗓 <b>{weekday_full.upper()}, {date_str}</b>\n"
+        f"🕐 {time_str}  ·  {_vibe}{cal_hint}",
+        # 7 — дашборд стиль
+        f"📊 <b>ДАШБОРД  {time_str}</b>  ·  {date_str}\n"
+        f"{'═' * 22}\n"
+        f"<i>{_vibe}</i>{cal_hint}",
+        # 8 — оновлення стиль
+        f"⏱ <b>Оновлення {time_str}</b>  {_period_icon}\n"
+        f"{weekday_full.capitalize()} · <i>{_vibe}</i>{cal_hint}",
+        # 9 — пунктирний
+        f"🔵 <b>{time_str}  ·  {weekday_ua} {date_str}</b>\n"
+        f"<code>• • • • • • • • • • • •</code>\n"
+        f"<i>{_vibe}</i>{cal_hint}",
+        # 10 — з іконкою доби і вібою
+        f"{_period_icon} <b>{time_str}  ·  {weekday_ua}</b>  {date_str}\n"
+        f"<i>{_vibe}</i>{cal_hint}",
+        # 11 — енергійний
+        f"🚀 <b>{time_str}</b>  {date_str} ({weekday_ua})\n"
+        f"<i>{_vibe}</i>\n"
+        f"{'▬' * 22}{cal_hint}",
     ]
 
     return headers[style_idx]
@@ -3434,14 +3458,24 @@ def main():
     except Exception as _e_pf:
         print(f"portfolio block error: {_e_pf}")
 
-    # Графік звичок + вага — у вечірньому слоті (20:xx) або 19:xx
+    # Міні-дашборд — у КОЖНОМУ 30-хв звіті
+    try:
+        from charts import plot_mini_dashboard as _plot_mini
+        _today_str = now_local.strftime("%Y-%m-%d")
+        _mini_chart = _plot_mini(_today_str)
+        if _mini_chart:
+            parts.append({"photo": _mini_chart, "caption": f"📊 Вага + звички — {now_local.strftime('%d.%m %H:%M')}"})
+    except Exception as _e_mini:
+        print(f"mini dashboard chart error: {_e_mini}")
+
+    # Повний дашборд дня — тільки о 19/20:xx
     if now_local.hour in (19, 20):
         try:
             from charts import plot_day_dashboard as _plot_dd
             _today_str = now_local.strftime("%Y-%m-%d")
             _dchart = _plot_dd(_today_str)
             if _dchart:
-                parts.append({"photo": _dchart, "caption": f"📊 Дашборд дня — {now_local.strftime('%d.%m')}"})
+                parts.append({"photo": _dchart, "caption": f"📊 Повний дашборд дня — {now_local.strftime('%d.%m')}"})
         except Exception as _e_dd:
             print(f"day dashboard chart error: {_e_dd}")
 

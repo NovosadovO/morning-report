@@ -830,3 +830,149 @@ def plot_weight_anomaly(days: int = 14) -> bytes | None:
     except Exception as e:
         print(f"[charts] weight_anomaly error: {e}")
         return None
+
+# ── 6. МІНІ-ДАШБОРД (для кожного 30-хв звіту) ────────────────────────────────
+
+def plot_mini_dashboard(today_str: str = None) -> bytes | None:
+    """
+    Компактний графік для кожного 30-хв звіту:
+    - Ліво: вага за 14 днів + лінія тренду + зона цілі
+    - Право: звички сьогодні (горизонтальні бари з % тижня)
+    Розмір ~800×320px, легкий і швидкий.
+    """
+    if not HAS_MPL:
+        return None
+    try:
+        _rc()
+        raw    = _load_habits()
+        wdata  = _load_weight()
+
+        if today_str is None:
+            today_str = date.today().isoformat()
+
+        today_d   = datetime.strptime(today_str, "%Y-%m-%d").date()
+        HABITS    = ["shower", "run", "water", "tea", "sauna"]
+        entry     = raw.get(today_str, {}) or {}
+
+        fig, (ax_w, ax_h) = plt.subplots(1, 2, figsize=(10, 3.5),
+                                          gridspec_kw={"width_ratios": [1.6, 1]},
+                                          facecolor=BG)
+
+        # ── Ліво: вага 14 днів ─────────────────────────────────────────────────
+        ax_w.set_facecolor(PANEL)
+        w_dates = [today_d - timedelta(days=i) for i in range(13, -1, -1)]
+        w_vals  = [wdata.get(d.isoformat()) for d in w_dates]
+        present = [(i, v) for i, v in enumerate(w_vals) if v is not None]
+
+        if len(present) >= 2:
+            xi = np.array([p[0] for p in present])
+            yi = np.array([p[1] for p in present])
+
+            # Зона цілі
+            ax_w.axhspan(77.0, 79.0, alpha=0.10, color=BLUE, zorder=0)
+
+            # Fill + лінія
+            ax_w.fill_between(xi, yi, min(yi) - 0.3, alpha=0.20, color=GREEN, zorder=1)
+            ax_w.plot(xi, yi, color=GREEN, linewidth=2.2, zorder=4)
+            ax_w.scatter(xi, yi, color=GREEN, s=22, alpha=0.6, zorder=5)
+            ax_w.scatter([xi[-1]], [yi[-1]], color=GREEN, s=70, zorder=6)
+
+            # Ціль
+            ax_w.axhline(78.0, color=BLUE, linewidth=1.0, linestyle="--", alpha=0.8)
+
+            # Тренд
+            z = np.polyfit(xi, yi, 1)
+            p = np.poly1d(z)
+            ax_w.plot([xi[0], xi[-1]], [p(xi[0]), p(xi[-1])],
+                      color=RED if z[0] > 0.02 else (GREEN if z[0] < -0.02 else MUTED),
+                      linewidth=1.6, linestyle=":", zorder=3)
+
+            slope_week = z[0] * 7
+            sign = "+" if slope_week > 0 else ""
+            t_col = RED if z[0] > 0.02 else (GREEN if z[0] < -0.02 else MUTED)
+
+            ax_w.set_ylim(min(yi) - 1.2, max(yi) + 1.5)
+
+            # Підпис поточного значення
+            ax_w.annotate(f"{yi[-1]:.1f} кг",
+                          xy=(xi[-1], yi[-1]),
+                          xytext=(-40, 10), textcoords="offset points",
+                          color=GREEN, fontsize=10, fontweight="bold")
+
+            # Тренд підпис
+            ax_w.text(0.03, 0.96,
+                      f"тренд: {sign}{slope_week:.2f} кг/тижд",
+                      transform=ax_w.transAxes,
+                      fontsize=8, color=t_col, va="top", fontweight="bold")
+
+            # X-тіки
+            tick_ix = [0, 7, 13]
+            ax_w.set_xticks(tick_ix)
+            ax_w.set_xticklabels(
+                [w_dates[t].strftime("%d.%m") for t in tick_ix],
+                fontsize=7.5, color=MUTED
+            )
+        else:
+            ax_w.text(0.5, 0.5, "Немає даних", ha="center", va="center",
+                      color=MUTED, fontsize=10, transform=ax_w.transAxes)
+
+        ax_w.set_title("⚖️ Вага + тренд  (14 днів)", color=TEXT, fontsize=10, fontweight="bold", pad=6)
+        for spine in ax_w.spines.values():
+            spine.set_edgecolor(BORDER)
+        ax_w.tick_params(colors=MUTED)
+        ax_w.grid(axis="y", alpha=0.18)
+
+        # ── Право: звички + % тижня ────────────────────────────────────────────
+        ax_h.set_facecolor(PANEL)
+        week_dates = [today_d - timedelta(days=i) for i in range(6, -1, -1)]
+
+        y_pos    = list(range(len(HABITS)))
+        bar_vals = []
+        bar_cols = []
+        week_pct = []
+
+        for hkey in HABITS:
+            done_today = entry.get(hkey) is True
+            bar_vals.append(1.0 if done_today else 0.10)
+            bar_cols.append(HABIT_COLORS[hkey] if done_today else "#21262D")
+            wd = sum(1 for d in week_dates
+                     if (raw.get(d.isoformat(), {}) or {}).get(hkey) is True)
+            week_pct.append(wd / 7)
+
+        # Фонова смуга 7-денного %
+        ax_h.barh(y_pos, week_pct, height=0.55, color=[HABIT_COLORS[h] for h in HABITS],
+                  alpha=0.22, zorder=2)
+        # Бар сьогодні
+        ax_h.barh(y_pos, bar_vals, height=0.55, color=bar_cols, zorder=3)
+
+        ax_h.set_xlim(0, 1.18)
+        ax_h.set_yticks(y_pos)
+        ax_h.set_yticklabels([HABIT_LABELS[h] for h in HABITS], fontsize=8.5, color=TEXT)
+        ax_h.set_xticks([])
+        ax_h.invert_yaxis()
+        ax_h.grid(False)
+        for spine in ax_h.spines.values():
+            spine.set_visible(False)
+
+        # Емодзі + % тижня праворуч
+        for i, hkey in enumerate(HABITS):
+            icon  = "✅" if entry.get(hkey) is True else "❌"
+            pct_v = int(week_pct[i] * 100)
+            ax_h.text(1.02, i, f"{icon} {pct_v}%", va="center", ha="left",
+                      fontsize=8, color=TEXT)
+
+        done_today = sum(1 for h in HABITS if entry.get(h) is True)
+        ax_h.set_title(f"Звички  {done_today}/{len(HABITS)} сьогодні", color=TEXT,
+                       fontsize=10, fontweight="bold", pad=6)
+
+        # ── Загальний заголовок ─────────────────────────────────────────────────
+        fig.suptitle(
+            f"📊 Міні-дашборд  {today_str[8:]}.{today_str[5:7]}",
+            fontsize=11, color=TEXT, fontweight="bold", y=1.03
+        )
+
+        fig.tight_layout(pad=1.2)
+        return _buf(fig)
+    except Exception as e:
+        print(f"[charts] mini_dashboard error: {e}")
+        return None
