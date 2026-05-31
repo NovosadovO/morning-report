@@ -12,13 +12,13 @@ from datetime import datetime, timezone, timedelta
 # avg_buy = 0 якщо невідомо (тоді P&L не рахується, тільки поточна вартість)
 
 DEFAULT_POSITIONS = {
-    "ETH":   {"amount": 0.8831,    "avg_buy": 0,   "coingecko": "ethereum"},
-    "AVAX":  {"amount": 128.08,    "avg_buy": 0,   "coingecko": "avalanche-2"},
-    "USDC":  {"amount": 5.201,     "avg_buy": 1.0, "coingecko": "usd-coin"},
-    "ONDO":  {"amount": 1294.66,   "avg_buy": 0,   "coingecko": "ondo-finance"},
-    "AAVE":  {"amount": 4.587,     "avg_buy": 0,   "coingecko": "aave"},
+    "ETH":   {"amount": 0.8821,    "avg_buy": 0,   "coingecko": "ethereum"},
+    "AVAX":  {"amount": 115.08,    "avg_buy": 0,   "coingecko": "avalanche-2"},
+    "USDC":  {"amount": 196.07,    "avg_buy": 1.0, "coingecko": "usd-coin"},
+    "ONDO":  {"amount": 647.33,    "avg_buy": 0,   "coingecko": "ondo-finance"},
+    "AAVE":  {"amount": 5.392,     "avg_buy": 0,   "coingecko": "aave"},
     "BTC":   {"amount": 0.0042,    "avg_buy": 0,   "coingecko": "bitcoin"},
-    "LINK":  {"amount": 33.05,     "avg_buy": 0,   "coingecko": "chainlink"},
+    "LINK":  {"amount": 16.54,     "avg_buy": 0,   "coingecko": "chainlink"},
     "BNB":   {"amount": 0.1655,    "avg_buy": 0,   "coingecko": "binancecoin"},
     "NEAR":  {"amount": 22.91,     "avg_buy": 0,   "coingecko": "near"},
     "ARB":   {"amount": 212.41,    "avg_buy": 0,   "coingecko": "arbitrum"},
