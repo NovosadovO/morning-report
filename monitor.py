@@ -275,6 +275,26 @@ def _send_telegram_photo(photo_url: str, caption: str) -> bool:
         return send_telegram(caption)
 
 
+def _send_photo_bytes(photo_bytes: bytes, caption: str = "") -> bool:
+    """Відправляє PNG bytes як фото в Telegram."""
+    try:
+        import requests as _req_pb
+        import io as _io_pb
+        r = _req_pb.post(
+            f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
+            data={"chat_id": TELEGRAM_CHAT, "caption": caption[:1024], "parse_mode": "HTML"},
+            files={"photo": ("chart.png", _io_pb.BytesIO(photo_bytes), "image/png")},
+            timeout=25
+        )
+        ok = r.status_code == 200
+        if not ok:
+            print(f"_send_photo_bytes error: {r.status_code} {r.text[:200]}")
+        return ok
+    except Exception as e:
+        print(f"_send_photo_bytes exception: {e}")
+        return False
+
+
 def fetch_json(url, retries=3):
     for attempt in range(1, retries + 1):
         try:
@@ -8043,6 +8063,98 @@ def check_strava_new_activity():
     except Exception as e:
         print(f"check_strava_new_activity error: {e}")
 
+
+
+def check_strava_weekly_report():
+    """
+    Тижневий звіт бігу — відправляється по неділях в 20:00.
+    Повний аналіз + графік за останні 8 тижнів.
+    """
+    try:
+        import sys as _sys_sr
+        _sys_sr.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from strava import format_weekly_run_report
+        from strava_charts import plot_week_chart
+
+        text = format_weekly_run_report()
+        send_telegram(text)
+
+        # Графік
+        chart_bytes = plot_week_chart(weeks_back=8)
+        if chart_bytes:
+            _send_photo_bytes(chart_bytes, caption="📊 Прогрес по тижнях")
+
+        print("[Strava] Weekly run report sent")
+    except Exception as e:
+        print(f"check_strava_weekly_report error: {e}")
+
+
+def check_strava_monthly_report():
+    """
+    Місячний звіт бігу — відправляється 1-го числа о 09:00.
+    Повний аналіз + місячний графік + річний графік.
+    """
+    try:
+        import sys as _sys_mr
+        _sys_mr.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from strava import format_monthly_run_report
+        from strava_charts import plot_month_chart, plot_year_chart
+        from datetime import datetime as _dt_mr
+        now = _dt_mr.now()
+        # Звітуємо за попередній місяць
+        if now.month == 1:
+            report_year, report_month = now.year - 1, 12
+        else:
+            report_year, report_month = now.year, now.month - 1
+
+        text = format_monthly_run_report(report_year, report_month)
+        send_telegram(text)
+
+        # Місячний графік
+        month_chart = plot_month_chart(report_year, report_month)
+        if month_chart:
+            import calendar as _cal_mr
+            mnames = ["","Січень","Лютий","Березень","Квітень","Травень","Червень",
+                      "Липень","Серпень","Вересень","Жовтень","Листопад","Грудень"]
+            _send_photo_bytes(month_chart, caption=f"📊 {mnames[report_month]} — по днях")
+
+        # Річний графік
+        year_chart = plot_year_chart(now.year)
+        if year_chart:
+            _send_photo_bytes(year_chart, caption=f"📊 {now.year} рік — по місяцях")
+
+        print("[Strava] Monthly run report sent")
+    except Exception as e:
+        print(f"check_strava_monthly_report error: {e}")
+
+
+def send_strava_chart_daily():
+    """
+    Відправляє графік 2 рази на день (вранці та ввечері).
+    Ранок — місячний, вечір — тижневий прогрес.
+    """
+    try:
+        import sys as _sys_sc
+        _sys_sc.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from strava_charts import plot_month_chart, plot_week_chart
+        from datetime import datetime as _dt_sc
+        now = _dt_sc.now()
+
+        if now.hour < 14:
+            # Ранок — місячний
+            chart = plot_month_chart()
+            caption = f"📊 Біг — {now.strftime('%B %Y')}"
+        else:
+            # Вечір — тижневий
+            chart = plot_week_chart(weeks_back=8)
+            caption = "📊 Прогрес по тижнях"
+
+        if chart:
+            _send_photo_bytes(chart, caption=caption)
+
+        print(f"[Strava] Chart sent ({now.strftime('%H:%M')})")
+    except Exception as e:
+        print(f"send_strava_chart_daily error: {e}")
 
 # ─── 2. КУРС ВАЛЮТ — в кожен звіт ────────────────────────────────────────────
 

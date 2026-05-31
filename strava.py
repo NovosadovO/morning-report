@@ -233,3 +233,393 @@ def format_strava_block():
 
 if __name__ == "__main__":
     print(format_strava_block())
+
+
+# ─── РОЗШИРЕНІ ФУНКЦІЇ ────────────────────────────────────────────────────────
+
+def get_activities(days: int = 30) -> list:
+    """Повертає список активностей за останні N днів."""
+    try:
+        token = _get_access_token()
+        after_ts = int((datetime.now() - timedelta(days=days)).timestamp())
+        r = requests.get(
+            "https://www.strava.com/api/v3/athlete/activities",
+            headers={"Authorization": f"Bearer {token}"},
+            params={"per_page": 100, "after": after_ts},
+            timeout=15
+        )
+        r.raise_for_status()
+        return r.json()
+    except Exception as e:
+        print(f"get_activities error: {e}")
+        return []
+
+
+def get_runs(days: int = 30) -> list:
+    """Тільки пробіжки за N днів з розрахованими полями."""
+    acts = get_activities(days=days)
+    result = []
+    for a in acts:
+        if a.get("type") not in ("Run", "VirtualRun", "TrailRun"):
+            continue
+        dist_km = round(a["distance"] / 1000, 2)
+        dur_sec = a["moving_time"]
+        pace_sec = (dur_sec / dist_km) if dist_km > 0 else 0
+        dt = datetime.fromisoformat(a["start_date_local"].replace("Z", ""))
+        result.append({
+            "id":         a["id"],
+            "name":       a.get("name", "Пробіжка"),
+            "date":       dt,
+            "date_str":   dt.strftime("%d.%m"),
+            "dist_km":    dist_km,
+            "dur_sec":    dur_sec,
+            "dur_min":    dur_sec // 60,
+            "pace_sec":   round(pace_sec, 1),
+            "pace_str":   f"{int(pace_sec//60)}:{int(pace_sec%60):02d}" if pace_sec > 0 else "—",
+            "elev":       a.get("total_elevation_gain", 0),
+            "hr":         a.get("average_heartrate"),
+            "cadence":    a.get("average_cadence"),
+            "watts":      a.get("average_watts"),
+            "calories":   a.get("calories") or a.get("kilojoules", 0),
+            "type":       a.get("type", "Run"),
+        })
+    return sorted(result, key=lambda x: x["date"])
+
+
+def get_month_stats(year: int = None, month: int = None) -> dict:
+    """Повна статистика за місяць."""
+    now = datetime.now()
+    if year is None:
+        year = now.year
+    if month is None:
+        month = now.month
+
+    # Дні в місяці
+    import calendar
+    days_in_month = calendar.monthrange(year, month)[1]
+    month_start = datetime(year, month, 1)
+    days_ago = (now - month_start).days + 1
+
+    runs = get_runs(days=days_ago + 5)
+    # Фільтруємо тільки цей місяць
+    runs = [r for r in runs if r["date"].year == year and r["date"].month == month]
+
+    if not runs:
+        return {"runs": 0, "km": 0, "duration_min": 0, "year": year, "month": month, "runs_list": []}
+
+    total_km   = round(sum(r["dist_km"] for r in runs), 1)
+    total_min  = sum(r["dur_min"] for r in runs)
+    avg_pace_sec = sum(r["pace_sec"] * r["dist_km"] for r in runs if r["pace_sec"] > 0) / max(total_km, 0.01)
+    best_run   = max(runs, key=lambda x: x["dist_km"])
+    fastest    = min((r for r in runs if r["pace_sec"] > 0), key=lambda x: x["pace_sec"], default=None)
+    avg_hr     = None
+    hr_runs    = [r["hr"] for r in runs if r["hr"]]
+    if hr_runs:
+        avg_hr = round(sum(hr_runs) / len(hr_runs), 0)
+
+    return {
+        "year":       year,
+        "month":      month,
+        "runs":       len(runs),
+        "km":         total_km,
+        "duration_min": total_min,
+        "avg_pace_sec": round(avg_pace_sec, 1),
+        "avg_pace_str": f"{int(avg_pace_sec//60)}:{int(avg_pace_sec%60):02d}" if avg_pace_sec > 0 else "—",
+        "best_run":   best_run,
+        "fastest":    fastest,
+        "avg_hr":     avg_hr,
+        "runs_list":  runs,
+    }
+
+
+def get_year_stats(year: int = None) -> dict:
+    """Річна статистика по місяцях."""
+    now = datetime.now()
+    if year is None:
+        year = now.year
+
+    runs = get_runs(days=400)
+    runs = [r for r in runs if r["date"].year == year]
+
+    monthly = {}
+    for r in runs:
+        m = r["date"].month
+        if m not in monthly:
+            monthly[m] = {"runs": 0, "km": 0.0, "dur_min": 0}
+        monthly[m]["runs"] += 1
+        monthly[m]["km"]   += r["dist_km"]
+        monthly[m]["dur_min"] += r["dur_min"]
+
+    for m in monthly:
+        monthly[m]["km"] = round(monthly[m]["km"], 1)
+
+    total_km  = round(sum(r["dist_km"] for r in runs), 1)
+    total_min = sum(r["dur_min"] for r in runs)
+
+    return {
+        "year":       year,
+        "runs":       len(runs),
+        "km":         total_km,
+        "duration_min": total_min,
+        "monthly":    monthly,
+        "runs_list":  runs,
+    }
+
+
+def compare_weeks() -> dict:
+    """Порівняння поточного тижня з попереднім."""
+    now = datetime.now()
+    week_start = now - timedelta(days=now.weekday())
+    week_start = week_start.replace(hour=0, minute=0, second=0, microsecond=0)
+    prev_start = week_start - timedelta(days=7)
+
+    runs = get_runs(days=16)
+
+    this_week = [r for r in runs if r["date"] >= week_start]
+    prev_week = [r for r in runs if prev_start <= r["date"] < week_start]
+
+    def week_summary(week_runs):
+        if not week_runs:
+            return {"runs": 0, "km": 0, "dur_min": 0, "avg_pace_sec": 0}
+        km = round(sum(r["dist_km"] for r in week_runs), 1)
+        dur = sum(r["dur_min"] for r in week_runs)
+        total_km_for_pace = sum(r["dist_km"] for r in week_runs if r["pace_sec"] > 0)
+        avg_pace = (
+            sum(r["pace_sec"] * r["dist_km"] for r in week_runs if r["pace_sec"] > 0) / total_km_for_pace
+            if total_km_for_pace > 0 else 0
+        )
+        return {"runs": len(week_runs), "km": km, "dur_min": dur, "avg_pace_sec": round(avg_pace, 1)}
+
+    this = week_summary(this_week)
+    prev = week_summary(prev_week)
+
+    km_diff   = round(this["km"] - prev["km"], 1)
+    pace_diff = round(this["avg_pace_sec"] - prev["avg_pace_sec"], 1)
+
+    return {
+        "this_week": this,
+        "prev_week": prev,
+        "km_diff":   km_diff,
+        "pace_diff": pace_diff,  # від'ємне = швидший (добре)
+    }
+
+
+def compare_months() -> dict:
+    """Порівняння поточного місяця з попереднім."""
+    now = datetime.now()
+    this_m = get_month_stats(now.year, now.month)
+    # Попередній місяць
+    if now.month == 1:
+        prev_m = get_month_stats(now.year - 1, 12)
+    else:
+        prev_m = get_month_stats(now.year, now.month - 1)
+
+    km_diff   = round(this_m["km"] - prev_m["km"], 1)
+    runs_diff = this_m["runs"] - prev_m["runs"]
+
+    return {
+        "this_month": this_m,
+        "prev_month": prev_m,
+        "km_diff":    km_diff,
+        "runs_diff":  runs_diff,
+    }
+
+
+def format_run_analysis(short: bool = False) -> str:
+    """
+    Повний аналіз бігу для щоденного звіту або команди /біг.
+    short=True — компактний блок для ранкового звіту
+    """
+    try:
+        last  = get_last_activity()
+        week  = get_week_stats()
+        cw    = compare_weeks()
+
+        lines = ["🏃 <b>БІГ</b>"]
+
+        # Остання пробіжка
+        if last and last.get("type") in ("Run", "VirtualRun", "TrailRun", None):
+            type_emoji = {"Run": "🏃", "TrailRun": "🏔", "VirtualRun": "💻"}.get(last.get("type", "Run"), "🏃")
+            lines.append(f"\n<b>Остання</b> ({last['when']}):")
+            lines.append(f"  {type_emoji} {last['distance_km']} км · {last['duration_min']} хв · {last['pace']}")
+            if last.get("elevation"):
+                lines.append(f"  ⛰ Набір: {last['elevation']:.0f} м")
+            if last.get("hr"):
+                lines.append(f"  ❤️ ЧСС: {last['hr']:.0f} уд/хв")
+
+        # Тиждень з порівнянням
+        if week:
+            prev_km = cw["prev_week"]["km"]
+            km_diff = cw["km_diff"]
+            diff_str = ""
+            if prev_km > 0:
+                sign = "+" if km_diff >= 0 else ""
+                diff_str = f"  ({sign}{km_diff} vs минулий)"
+            lines.append(f"\n<b>Тиждень:</b> {week['runs']} пробіжок · {week['km']} км{diff_str}")
+
+            if not short:
+                # Темп порівняння
+                if cw["this_week"]["avg_pace_sec"] > 0 and cw["prev_week"]["avg_pace_sec"] > 0:
+                    ps = cw["this_week"]["avg_pace_sec"]
+                    pace_this = f"{int(ps//60)}:{int(ps%60):02d}"
+                    pp = cw["prev_week"]["avg_pace_sec"]
+                    pace_prev = f"{int(pp//60)}:{int(pp%60):02d}"
+                    faster = "🔼" if cw["pace_diff"] > 0 else "🔽"
+                    lines.append(f"  Темп: {pace_this} хв/км {faster} (було {pace_prev})")
+
+        if short:
+            return "\n".join(lines)
+
+        # Місяць
+        try:
+            cm = compare_months()
+            ms = cm["this_month"]
+            pm = cm["prev_month"]
+            import calendar as _cal
+            month_names = ["", "Січ", "Лют", "Бер", "Квіт", "Трав", "Черв",
+                           "Лип", "Серп", "Вер", "Жовт", "Лист", "Груд"]
+            mname = month_names[ms["month"]]
+            lines.append(f"\n<b>{mname}:</b> {ms['runs']} пробіжок · {ms['km']} км")
+            if ms.get("avg_pace_str") and ms["avg_pace_str"] != "—":
+                lines.append(f"  Середній темп: {ms['avg_pace_str']} хв/км")
+            if ms.get("avg_hr"):
+                lines.append(f"  Середній ЧСС: {ms['avg_hr']:.0f} уд/хв")
+            if ms.get("best_run"):
+                br = ms["best_run"]
+                lines.append(f"  🏆 Найдовша: {br['dist_km']} км ({br['date_str']})")
+            if pm["km"] > 0:
+                km_diff = cm["km_diff"]
+                sign = "+" if km_diff >= 0 else ""
+                lines.append(f"  vs {month_names[pm['month']]}: {sign}{km_diff} км")
+        except Exception:
+            pass
+
+        return "\n".join(lines)
+
+    except Exception as e:
+        return f"🏃 <b>БІГ</b>\n⚠️ Помилка: {e}"
+
+
+def format_weekly_run_report() -> str:
+    """Повний звіт за тиждень (для недільного резюме)."""
+    try:
+        cw  = compare_weeks()
+        this = cw["this_week"]
+        prev = cw["prev_week"]
+        runs  = get_runs(days=9)
+
+        import calendar as _cal
+        now = datetime.now()
+        week_start = now - timedelta(days=now.weekday())
+
+        month_names = ["", "Січня", "Лютого", "Березня", "Квітня", "Травня", "Червня",
+                       "Липня", "Серпня", "Вересня", "Жовтня", "Листопада", "Грудня"]
+
+        lines = [
+            f"🏃 <b>ТИЖНЕВИЙ ЗВІТ БІГУ</b>",
+            f"<i>{week_start.strftime('%d')} {month_names[week_start.month]}</i>",
+            "",
+            f"📊 <b>Підсумок тижня:</b>",
+            f"  Пробіжок:  {this['runs']}",
+            f"  Дистанція: {this['km']} км",
+            f"  Час:       {this['dur_min']} хв",
+        ]
+
+        if this["avg_pace_sec"] > 0:
+            ps = this["avg_pace_sec"]
+            lines.append(f"  Темп:      {int(ps//60)}:{int(ps%60):02d} хв/км")
+
+        # Порівняння
+        lines.append("")
+        lines.append(f"📈 <b>vs минулий тиждень:</b>")
+        km_sign = "+" if cw["km_diff"] >= 0 else ""
+        km_emoji = "📈" if cw["km_diff"] >= 0 else "📉"
+        lines.append(f"  {km_emoji} Дистанція: {km_sign}{cw['km_diff']} км")
+
+        if cw["pace_diff"] != 0 and this["avg_pace_sec"] > 0 and prev["avg_pace_sec"] > 0:
+            pace_emoji = "🔽" if cw["pace_diff"] < 0 else "🔼"
+            faster = "швидше" if cw["pace_diff"] < 0 else "повільніше"
+            abs_diff = abs(cw["pace_diff"])
+            lines.append(f"  {pace_emoji} Темп: на {int(abs_diff//60)}:{int(abs_diff%60):02d} {faster}")
+
+        # Список пробіжок
+        this_runs = [r for r in runs if r["date"] >= week_start.replace(hour=0, minute=0, second=0)]
+        if this_runs:
+            lines.append("")
+            lines.append(f"📋 <b>Пробіжки:</b>")
+            for r in this_runs:
+                hr_str = f" ❤️{r['hr']:.0f}" if r["hr"] else ""
+                lines.append(f"  {r['date_str']} — {r['dist_km']} км · {r['pace_str']} хв/км{hr_str}")
+
+        return "\n".join(lines)
+
+    except Exception as e:
+        return f"🏃 <b>ТИЖНЕВИЙ ЗВІТ БІГУ</b>\n⚠️ Помилка: {e}"
+
+
+def format_monthly_run_report(year: int = None, month: int = None) -> str:
+    """Повний звіт за місяць."""
+    try:
+        now = datetime.now()
+        if year is None: year = now.year
+        if month is None: month = now.month
+
+        ms = get_month_stats(year, month)
+        month_names = ["", "Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень",
+                       "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"]
+        mname = month_names[month]
+
+        lines = [
+            f"🏃 <b>МІСЯЧНИЙ ЗВІТ БІГУ — {mname} {year}</b>",
+            "",
+            f"📊 <b>Підсумок:</b>",
+            f"  Пробіжок:  {ms['runs']}",
+            f"  Дистанція: {ms['km']} км",
+            f"  Час:       {ms['duration_min']} хв ({ms['duration_min']//60}г {ms['duration_min']%60}хв)",
+        ]
+
+        if ms.get("avg_pace_str") and ms["avg_pace_str"] != "—":
+            lines.append(f"  Темп:      {ms['avg_pace_str']} хв/км")
+        if ms.get("avg_hr"):
+            lines.append(f"  Середній ЧСС: {ms['avg_hr']:.0f} уд/хв")
+
+        if ms.get("best_run"):
+            br = ms["best_run"]
+            lines.append(f"\n🏆 <b>Найдовша:</b> {br['dist_km']} км ({br['date_str']}, {br['pace_str']} хв/км)")
+
+        if ms.get("fastest"):
+            fr = ms["fastest"]
+            lines.append(f"⚡️ <b>Найшвидша:</b> {fr['dist_km']} км — темп {fr['pace_str']} хв/км ({fr['date_str']})")
+
+        # Порівняння з попереднім
+        try:
+            cm = compare_months()
+            pm = cm["prev_month"]
+            if pm["km"] > 0:
+                km_diff = cm["km_diff"]
+                sign = "+" if km_diff >= 0 else ""
+                emoji = "📈" if km_diff >= 0 else "📉"
+                prev_mname = month_names[pm["month"]]
+                lines.append(f"\n{emoji} <b>vs {prev_mname}:</b> {sign}{km_diff} км, {sign}{cm['runs_diff']} пробіжок")
+        except Exception:
+            pass
+
+        # Пробіжки по тижнях
+        if ms.get("runs_list"):
+            # Групуємо по тижнях
+            weeks = {}
+            for r in ms["runs_list"]:
+                wk = r["date"].isocalendar()[1]
+                if wk not in weeks:
+                    weeks[wk] = []
+                weeks[wk].append(r)
+            lines.append(f"\n📅 <b>По тижнях:</b>")
+            for wk_num in sorted(weeks):
+                wk_runs = weeks[wk_num]
+                wk_km = round(sum(r["dist_km"] for r in wk_runs), 1)
+                lines.append(f"  Тиждень {wk_num}: {len(wk_runs)} пробіжок · {wk_km} км")
+
+        return "\n".join(lines)
+
+    except Exception as e:
+        return f"🏃 <b>МІСЯЧНИЙ ЗВІТ БІГУ</b>\n⚠️ Помилка: {e}"

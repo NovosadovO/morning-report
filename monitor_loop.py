@@ -1037,6 +1037,75 @@ threading.Thread(target=run_strava_watcher, daemon=True).start()
 print("=== Strava watcher thread started ===", flush=True)
 
 
+def run_strava_charts_loop():
+    """
+    Графіки бігу 2 рази на день:
+    - 07:30 UTC+2 — місячний графік
+    - 21:00 UTC+2 — тижневий прогрес
+    Weekly report — неділя 20:00 UTC+2
+    Monthly report — 1-ше число 09:00 UTC+2
+    """
+    print("=== Starting Strava charts loop ===", flush=True)
+    _sent_morning  = None
+    _sent_evening  = None
+    _sent_weekly   = None
+    _sent_monthly  = None
+
+    while True:
+        try:
+            now = datetime.now(timezone.utc) + timedelta(hours=2)
+            h, m = now.hour, now.minute
+            day_str = now.strftime("%Y-%m-%d")
+            week_str = now.strftime("%Y-W%W")
+            month_str = now.strftime("%Y-%m")
+
+            mon = _load_monitor()
+
+            # Ранковий графік — 07:30
+            if h == 7 and 30 <= m < 35 and _sent_morning != day_str:
+                _sent_morning = day_str
+                print(f"[strava_charts] morning chart {day_str}", flush=True)
+                try:
+                    mon.send_strava_chart_daily()
+                except Exception as e:
+                    print(f"[strava_charts] morning error: {e}", flush=True)
+
+            # Вечірній графік — 21:00
+            if h == 21 and 0 <= m < 5 and _sent_evening != day_str:
+                _sent_evening = day_str
+                print(f"[strava_charts] evening chart {day_str}", flush=True)
+                try:
+                    mon.send_strava_chart_daily()
+                except Exception as e:
+                    print(f"[strava_charts] evening error: {e}", flush=True)
+
+            # Тижневий звіт — неділя о 20:00
+            if now.weekday() == 6 and h == 20 and 0 <= m < 5 and _sent_weekly != week_str:
+                _sent_weekly = week_str
+                print(f"[strava_charts] weekly report {week_str}", flush=True)
+                try:
+                    mon.check_strava_weekly_report()
+                except Exception as e:
+                    print(f"[strava_charts] weekly error: {e}", flush=True)
+
+            # Місячний звіт — 1-ше число о 09:00
+            if now.day == 1 and h == 9 and 0 <= m < 5 and _sent_monthly != month_str:
+                _sent_monthly = month_str
+                print(f"[strava_charts] monthly report {month_str}", flush=True)
+                try:
+                    mon.check_strava_monthly_report()
+                except Exception as e:
+                    print(f"[strava_charts] monthly error: {e}", flush=True)
+
+        except Exception as e:
+            print(f"[strava_charts_loop] error: {e}", flush=True)
+        time.sleep(60)
+
+
+threading.Thread(target=run_strava_charts_loop, daemon=True).start()
+print("=== Strava charts loop started ===", flush=True)
+
+
 def run_stress_alert_watcher():
     """Стрес-алерт о 11:00 — комбінація сигналів."""
     print("=== Starting stress alert watcher ===", flush=True)

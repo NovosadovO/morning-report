@@ -1538,8 +1538,11 @@ HELP_TEXT = """
 /астро — астрологічний прогноз
 /dd — DeFi дайджест 24h (зміни TVL, DEX, yields, stables)
 
-<b>🏃 Стrava / Біг</b>
-/біг — остання пробіжка + тижня статистика
+<b>🏃 Strava / Біг</b>
+/біг — аналіз + місячний графік
+/біг тиждень — тижневий звіт + графік прогресу
+/біг місяць — місячний звіт + 2 графіки
+/біг рік — річний звіт + графік по місяцях
 
 <b>💪 Здоров'я</b>
 /звички — відмітити звички
@@ -1821,11 +1824,73 @@ def handle_command(chat_id, text):
         try:
             import sys as _sys_run, os as _os_run
             _sys_run.path.insert(0, _os_run.path.dirname(_os_run.path.abspath(__file__)))
-            from strava import format_strava_block
-            result = format_strava_block()
+            from strava import format_run_analysis
+            from strava_charts import plot_month_chart
+            result = format_run_analysis(short=False)
             send(chat_id, result if result else "⚠️ Немає даних Strava")
+            chart = plot_month_chart()
+            if chart:
+                send_photo(chat_id, chart, caption="📊 Місяць по днях")
         except Exception as e:
             send(chat_id, f"⚠️ Помилка Strava: {e}")
+
+    elif text in ["/біг тиждень", "біг тиждень", "/бігтиждень"]:
+        send(chat_id, "⏳ Завантажую тижневий звіт...")
+        try:
+            from strava import format_weekly_run_report
+            from strava_charts import plot_week_chart
+            result = format_weekly_run_report()
+            send(chat_id, result)
+            chart = plot_week_chart(weeks_back=8)
+            if chart:
+                send_photo(chat_id, chart, caption="📊 Прогрес по тижнях")
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif text in ["/біг місяць", "біг місяць", "/бігмісяць"]:
+        send(chat_id, "⏳ Завантажую місячний звіт...")
+        try:
+            from strava import format_monthly_run_report
+            from strava_charts import plot_month_chart, plot_week_chart
+            result = format_monthly_run_report()
+            send(chat_id, result)
+            chart = plot_month_chart()
+            if chart:
+                send_photo(chat_id, chart, caption="📊 Місяць по днях")
+            chart2 = plot_week_chart(weeks_back=12)
+            if chart2:
+                send_photo(chat_id, chart2, caption="📊 Прогрес по тижнях")
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif text in ["/біг рік", "біг рік", "/біграік", "/бігрік"]:
+        send(chat_id, "⏳ Завантажую річний звіт...")
+        try:
+            from strava import get_year_stats
+            from strava_charts import plot_year_chart, plot_week_chart
+            ys = get_year_stats()
+            from datetime import datetime as _dtr
+            now_r = _dtr.now()
+            month_names = ["","Січ","Лют","Бер","Квіт","Трав","Черв","Лип","Сер","Вер","Жов","Лис","Груд"]
+            lines = [
+                f"🏃 <b>{ys['year']} РІК</b>",
+                f"",
+                f"  Пробіжок:  {ys['runs']}",
+                f"  Дистанція: {ys['km']} км",
+                f"  Час: {ys['duration_min']//60}г {ys['duration_min']%60}хв",
+                f"",
+                f"<b>По місяцях:</b>",
+            ]
+            for m in range(1, now_r.month + 1):
+                md = ys["monthly"].get(m, {})
+                if md:
+                    lines.append(f"  {month_names[m]:4}: {md['km']:5.1f} км · {md['runs']} пробіжок")
+            send(chat_id, "\n".join(lines))
+            chart = plot_year_chart()
+            if chart:
+                send_photo(chat_id, chart, caption=f"📊 {ys['year']} рік — по місяцях")
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
 
     elif text in ["/курс", "курс", "/валюта", "валюта", "/eur", "/usd"]:
         try:
