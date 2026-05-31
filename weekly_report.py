@@ -474,9 +474,40 @@ def block_health_score():
 
 # ─── ГОЛОВНА ФУНКЦІЯ ──────────────────────────────────────────────────────────
 
+def _send_photo(photo_bytes: bytes, caption: str = "") -> bool:
+    """Відправляє PNG bytes як фото в Telegram (multipart)."""
+    try:
+        import urllib.request, io
+        boundary = b"----TGBoundary"
+        def _part(name, value, fname=None, ctype=None):
+            cd = f'Content-Disposition: form-data; name="{name}"'
+            if fname:
+                cd += f'; filename="{fname}"'
+            ct = f"\r\nContent-Type: {ctype}" if ctype else ""
+            return (f"--{boundary.decode()}\r\n{cd}{ct}\r\n\r\n").encode() + (value if isinstance(value, bytes) else value.encode()) + b"\r\n"
+        body = (
+            _part("chat_id",    str(TELEGRAM_CHAT)) +
+            _part("caption",    caption[:1024]) +
+            _part("parse_mode", "HTML") +
+            _part("photo",      photo_bytes, fname="chart.png", ctype="image/png") +
+            f"--{boundary.decode()}--\r\n".encode()
+        )
+        req = urllib.request.Request(
+            f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
+            data=body,
+            headers={"Content-Type": f"multipart/form-data; boundary={boundary.decode()}"}
+        )
+        with urllib.request.urlopen(req, timeout=25) as r:
+            return r.status == 200
+    except Exception as e:
+        print(f"_send_photo error: {e}")
+        return False
+
+
 def send_weekly_report():
-    """Надсилає повний недільний підсумок."""
+    """Надсилає повний недільний підсумок + графіки + AI аналіз."""
     SEP = "\n" + "─" * 22 + "\n"
+    now = now_local()
 
     msg1 = (
         block_header() + "\n\n" +
@@ -500,6 +531,50 @@ def send_weekly_report():
 
     for msg in [msg1, msg2, msg3, msg4]:
         send(msg)
+
+    # ── Графіки тижня ─────────────────────────────────────────────────────────
+    try:
+        import sys as _sys_wr; _sys_wr.path.insert(0, _DIR)
+        from charts import plot_weekly_dashboard as _pwd
+        chart = _pwd(days=7)
+        if chart:
+            _send_photo(chart, f"📊 Тижневий дашборд — {now.strftime('%d.%m.%Y')}")
+    except Exception as _e_wc:
+        print(f"weekly chart error: {_e_wc}")
+
+    # ── AI аналіз тижня (Gemini) ──────────────────────────────────────────────
+    try:
+        import os as _os_wr, json as _json_wr, urllib.request as _ur_wr
+        gemini_key = _os_wr.environ.get("GEMINI_API_KEY", "")
+        if gemini_key:
+            # Збираємо компактний контекст
+            w_block = block_weight()
+            r_block = block_running()
+            h_block = block_habits()
+            hs_block = block_health_score()
+            summary_ctx = f"{w_block}\n{r_block}\n{h_block}\n{hs_block}"[:1200]
+
+            prompt = (
+                f"Ось результати Олега за тиждень:\n{summary_ctx}\n\n"
+                f"Ти особистий коуч і друг. Зроби живий аналіз (3-4 речення): "
+                f"що вдалось добре, де є слабке місце, і дай одну конкретну ціль на наступний тиждень. "
+                f"Тон: дружній, без пафосу, конкретний. Українською."
+            )
+            payload = _json_wr.dumps({
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"maxOutputTokens": 220, "temperature": 0.8}
+            }).encode()
+            req_ai = _ur_wr.Request(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
+                data=payload, headers={"Content-Type": "application/json"}
+            )
+            with _ur_wr.urlopen(req_ai, timeout=15) as _r_ai:
+                ai_data = _json_wr.loads(_r_ai.read())
+            ai_text = ai_data["candidates"][0]["content"]["parts"][0]["text"].strip()
+            if ai_text:
+                send(f"🤖 <b>AI-аналіз тижня:</b>\n<i>{ai_text}</i>")
+    except Exception as _e_ai:
+        print(f"weekly AI error: {_e_ai}")
 
     print("Weekly summary report sent.")
 

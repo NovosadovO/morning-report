@@ -5288,12 +5288,32 @@ def check_day_summary():
         print(f"day summary AI error: {e}")
 
     lines_out.append("━━━━━━━━━━━━━━━━━━━━━━")
-    lines_out.append("🌙 Гарного відпочинку!")
+
+    # Коуч-фраза залежно від результату
+    if pct == 100:
+        lines_out.append("🏆 Ідеальний день — так тримати! Олег, ти топ 💪")
+    elif pct >= 80:
+        lines_out.append("⭐️ Майже ідеально. Ще трохи — і буде серія! 🔥")
+    elif pct >= 60:
+        lines_out.append("👍 Непогано — але ти можеш краще, знаємо обидва.")
+    elif pct >= 40:
+        lines_out.append("😐 Середній день. Завтра з ранку — чіткіше!")
+    else:
+        lines_out.append("💤 Сьогодні не вийшло — завтра новий шанс. Без самобичування, просто зробимо.")
 
     # Save-before-send (GitHub) — prevents duplicate on Railway restart
     _day_summary_gh_mark(today)
     send_telegram("\n".join(lines_out))
     print(f"Day summary sent: {today}")
+
+    # ── Графік дня ──────────────────────────────────────────────────────────
+    try:
+        from charts import plot_day_dashboard as _plot_day
+        chart_bytes = _plot_day(today)
+        if chart_bytes:
+            _send_photo_bytes(chart_bytes, f"📊 {day_name} {now_local.strftime('%d.%m')} — дашборд дня")
+    except Exception as _e_chart_day:
+        print(f"day chart error: {_e_chart_day}")
 
     # ── Кнопка "Додати в календар" після підсумку дня ────────────────────────
     try:
@@ -8516,6 +8536,15 @@ def check_monthly_summary():
     state["last"] = month_key
     save_json_file(_MONTHLY_SUMMARY_FILE, state)
     print("[Monthly summary] sent")
+
+    # ── Графік місяця ──────────────────────────────────────────────────────────
+    try:
+        from charts import plot_monthly_dashboard as _plot_m
+        mchart = _plot_m(prev_month_end.year, prev_month_end.month)
+        if mchart:
+            _send_photo_bytes(mchart, f"📊 {month_name} {prev_month_end.year} — місячний дашборд")
+    except Exception as _e_mchart:
+        print(f"monthly chart error: {_e_mchart}")
 
 
 # ─── 5. ТИЖНЕВИЙ ДАШБОРД — команда /тиждень ──────────────────────────────────

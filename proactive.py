@@ -499,6 +499,10 @@ def check_proactive():
             f"Без загальних фраз — конкретно і по-дружньому."
         )
 
+    # ── Anomaly detection (вага/біг/сон) ────────────────────────────────────
+    if slot is None:
+        slot, prompt = _check_anomalies(ctx, state, now)
+
     # ── Якщо є подія в календарі за 2 год ────────────────────────────────────
     if slot is None:
         slot, prompt = _check_calendar_event_proactive(ctx, state, now)
@@ -511,6 +515,90 @@ def check_proactive():
             print(f"[proactive] sent slot={slot}")
         else:
             print(f"[proactive] gemini error for slot={slot}: {answer}")
+
+
+def _check_anomalies(ctx, state, now):
+    """
+    Anomaly detection:
+    - вага зростає 3+ дні поспіль → попередження
+    - не бігав 5+ днів → мотивація
+    - поганий сон 2+ ночі → порада
+    Повертає (slot, prompt) або (None, None).
+    """
+    import sys as _sys_an; _sys_an.path.insert(0, _DIR)
+    h = now.hour
+
+    # Тільки між 09:00–20:00 щоб не заважати вночі
+    if not (9 <= h < 20):
+        return None, None
+
+    # ── Аномалія ваги (3+ дні зростання) ─────────────────────────────────────
+    if not _already_sent("anomaly_weight_rising"):
+        try:
+            from storage import load as _st_an
+            wdata = _st_an("weight_data.json") or {}
+            sorted_w = sorted(wdata.keys())[-5:]
+            vals = [wdata[d] for d in sorted_w if wdata.get(d)]
+            if len(vals) >= 3:
+                # Перевіряємо 3 останні дні поспіль зростання
+                rising = all(vals[i] < vals[i+1] for i in range(len(vals)-3, len(vals)-1))
+                if rising:
+                    delta = round(vals[-1] - vals[-3], 1)
+                    return "anomaly_weight_rising", (
+                        f"Вага Олега зростала 3 дні поспіль: {vals[-3]}→{vals[-2]}→{vals[-1]} кг (+{delta} кг). "
+                        f"Зараз {now.strftime('%H:%M')}. "
+                        f"Як коуч і друг — скажи про це конкретно, але без паніки. "
+                        f"Нагадай про дієту 16:8, воду, біг. 2-3 речення, практичний тон."
+                    )
+        except Exception as _e_an_w:
+            print(f"anomaly weight check: {_e_an_w}")
+
+    # ── Аномалія бігу (5+ днів без пробіжки) ─────────────────────────────────
+    if not _already_sent("anomaly_no_run"):
+        try:
+            from storage import load_habits as _lh_an
+            hab_db = _lh_an()
+            today = now.strftime("%Y-%m-%d")
+            days_no_run = 0
+            from datetime import timedelta
+            for i in range(1, 10):
+                d = (now - timedelta(days=i)).strftime("%Y-%m-%d")
+                if hab_db.get(d, {}).get("run") is True:
+                    break
+                days_no_run += 1
+            if days_no_run >= 5:
+                return "anomaly_no_run", (
+                    f"Олег не бігав вже {days_no_run} днів. Зараз {now.strftime('%H:%M')}. "
+                    f"Погода: {ctx.get('weather_hint', 'невідома')}. "
+                    f"Як коуч — спонукай вийти на пробіжку, навіть коротку 20 хв. "
+                    f"Без занудства, з конкретним закликом. 2 речення."
+                )
+        except Exception as _e_an_r:
+            print(f"anomaly no_run check: {_e_an_r}")
+
+    # ── Аномалія сну (2+ ночі поганий сон < 6г) ──────────────────────────────
+    if not _already_sent("anomaly_bad_sleep"):
+        try:
+            from storage import load_habits as _lh_sl
+            hab_db = _lh_sl()
+            from datetime import timedelta
+            bad_nights = 0
+            for i in range(1, 4):
+                d = (now - timedelta(days=i)).strftime("%Y-%m-%d")
+                sl = hab_db.get(d, {}).get("sleep")
+                if sl and sl < 6:
+                    bad_nights += 1
+            if bad_nights >= 2:
+                return "anomaly_bad_sleep", (
+                    f"Олег спав менше 6 годин {bad_nights} ночі поспіль. "
+                    f"Зараз {now.strftime('%H:%M')}. "
+                    f"Як коуч і друг — напиши з турботою про важливість сну, "
+                    f"одну конкретну пораду (напр. відкласти телефон о 22:00). 2 речення."
+                )
+        except Exception as _e_an_sl:
+            print(f"anomaly bad_sleep check: {_e_an_sl}")
+
+    return None, None
 
 
 def _check_calendar_event_proactive(ctx, state, now):
