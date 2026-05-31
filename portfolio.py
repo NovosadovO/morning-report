@@ -29,8 +29,12 @@ DEFAULT_POSITIONS = {
     "G":     {"amount": 2612.40,   "avg_buy": 0,   "coingecko": "g-token"},
     "ADA":   {"amount": 28.44,     "avg_buy": 0,   "coingecko": "cardano"},
     "SWEAT": {"amount": 6131.94,   "avg_buy": 0,   "coingecko": "sweatcoin"},
+    "COQ":  {"amount": 16050000,       "avg_buy": 0, "coingecko": "coq-inu"},
+    "MEME": {"amount": 2938.65,        "avg_buy": 0, "coingecko": "memecoin-2"},
+    "SMTY": {"amount": 895.78,         "avg_buy": 0, "coingecko": "smoothy"},
+    "GRT":  {"amount": 26.21,          "avg_buy": 0, "coingecko": "the-graph"},
+    "OGGY": {"amount": 254540000000,   "avg_buy": 0, "coingecko": "oggy-inu"},
     # aBnbWBNB — DeFi LP, немає ціни на CoinGecko, пропускаємо
-    # COQ, MEME — кількість не видна на скрін (обрізано)
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "")
@@ -248,7 +252,7 @@ def update_position(symbol: str, amount: float = None, avg_buy: float = None) ->
         "CRO": "crypto-com-chain", "UNI": "uniswap",
         "ID": "space-id", "G": "g-token",
         "ADA": "cardano", "SWEAT": "sweatcoin",
-        "COQ": "coq-inu", "MEME": "memecoin-2",
+        "COQ": "coq-inu", "MEME": "memecoin-2", "SMTY": "smoothy", "GRT": "the-graph", "OGGY": "oggy-inu",
     }
 
     if sym not in positions:
@@ -278,7 +282,7 @@ def update_avg_buy(symbol: str, qty: float, price: float) -> str:
         "CRO": "crypto-com-chain", "UNI": "uniswap",
         "ID": "space-id", "G": "g-token",
         "ADA": "cardano", "SWEAT": "sweatcoin",
-        "COQ": "coq-inu", "MEME": "memecoin-2",
+        "COQ": "coq-inu", "MEME": "memecoin-2", "SMTY": "smoothy", "GRT": "the-graph", "OGGY": "oggy-inu",
     }
 
     if sym not in positions:
