@@ -26,9 +26,9 @@ DEFAULT_POSITIONS = {
     "CRO":   {"amount": 256.84,    "avg_buy": 0,   "coingecko": "crypto-com-chain"},
     "UNI":   {"amount": 4.584,     "avg_buy": 0,   "coingecko": "uniswap"},
     "ID":    {"amount": 340.68,    "avg_buy": 0,   "coingecko": "space-id"},
-    "G":     {"amount": 2612.40,   "avg_buy": 0,   "coingecko": "gravity-alpha"},
+    "G":     {"amount": 2612.40,   "avg_buy": 0,   "coingecko": "g-token"},
     "ADA":   {"amount": 28.44,     "avg_buy": 0,   "coingecko": "cardano"},
-    "SWEAT": {"amount": 6131.94,   "avg_buy": 0,   "coingecko": "sweat-economy"},
+    "SWEAT": {"amount": 6131.94,   "avg_buy": 0,   "coingecko": "sweatcoin"},
     # aBnbWBNB — DeFi LP, немає ціни на CoinGecko, пропускаємо
     # COQ, MEME — кількість не видна на скрін (обрізано)
 }
@@ -246,8 +246,8 @@ def update_position(symbol: str, amount: float = None, avg_buy: float = None) ->
         "LINEA": "linea", "XRP": "ripple", "DOT": "polkadot",
         "TON": "the-open-network", "SUI": "sui",
         "CRO": "crypto-com-chain", "UNI": "uniswap",
-        "ID": "space-id", "G": "gravity-alpha",
-        "ADA": "cardano", "SWEAT": "sweat-economy",
+        "ID": "space-id", "G": "g-token",
+        "ADA": "cardano", "SWEAT": "sweatcoin",
         "COQ": "coq-inu", "MEME": "memecoin-2",
     }
 
@@ -276,8 +276,8 @@ def update_avg_buy(symbol: str, qty: float, price: float) -> str:
         "LINEA": "linea", "XRP": "ripple", "DOT": "polkadot",
         "TON": "the-open-network", "SUI": "sui",
         "CRO": "crypto-com-chain", "UNI": "uniswap",
-        "ID": "space-id", "G": "gravity-alpha",
-        "ADA": "cardano", "SWEAT": "sweat-economy",
+        "ID": "space-id", "G": "g-token",
+        "ADA": "cardano", "SWEAT": "sweatcoin",
         "COQ": "coq-inu", "MEME": "memecoin-2",
     }
 
