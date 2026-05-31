@@ -5021,22 +5021,28 @@ DAY_SUMMARY_FILE = os.path.join(_DATA_DIR, "monitor_day_summary.json")
 _DAY_SUMMARY_GH_URL = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/day_summary_sent.json"
 
 def _day_summary_gh_check(date_str):
-    """Повертає True якщо підсумок вже надіслано сьогодні (GitHub dedup)."""
+    """Повертає True якщо підсумок вже надіслано сьогодні (GitHub dedup). З retry."""
     import base64
     gh_token = os.environ.get("GITHUB_TOKEN", "")
     if not gh_token:
         return False
-    req = urllib.request.Request(_DAY_SUMMARY_GH_URL, headers={
-        "Authorization": f"token {gh_token}",
-        "User-Agent": "morning-report-bot"
-    })
-    try:
-        with urllib.request.urlopen(req, timeout=8) as r:
-            d = json.loads(r.read())
-            content = json.loads(base64.b64decode(d["content"]).decode())
-            return content.get("last") == date_str
-    except Exception:
-        return False
+    # Читаємо з конкретної гілки щоб уникнути stale кешу GitHub CDN
+    url = _DAY_SUMMARY_GH_URL + f"?ref={_GH_DATA_BRANCH}&_ts={int(time.time())}"
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(url, headers={
+                "Authorization": f"token {gh_token}",
+                "Cache-Control": "no-cache",
+                "User-Agent": "morning-report-bot"
+            })
+            with urllib.request.urlopen(req, timeout=10) as r:
+                d = json.loads(r.read())
+                content = json.loads(base64.b64decode(d["content"]).decode())
+                return content.get("last") == date_str
+        except Exception as e:
+            if attempt < 2:
+                time.sleep(2)
+    return False
 
 def _day_summary_gh_mark(date_str):
     """Зберігає дату підсумку на GitHub."""
@@ -5082,11 +5088,11 @@ def check_day_summary():
     """
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
-    if not (h == 21 and 0 <= m < 3):
+    if not (h == 21 and m == 0):
         return
 
     today = now_local.strftime("%Y-%m-%d")
-    # GitHub dedup (survives Railway restarts)
+    # GitHub dedup (survives Railway restarts) — з retry проти race condition
     if _day_summary_gh_check(today):
         return
 
