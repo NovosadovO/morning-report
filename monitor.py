@@ -3436,7 +3436,16 @@ def main():
     except Exception as _e_pf:
         print(f"portfolio block error: {_e_pf}")
 
-    # Графік звичок — тільки о 20:00 через evening_charts_watcher (не тут)
+    # Графік звичок + вага — у вечірньому слоті (20:xx) або 19:xx
+    if now_local.hour in (19, 20):
+        try:
+            from charts import plot_day_dashboard as _plot_dd
+            _today_str = now_local.strftime("%Y-%m-%d")
+            _dchart = _plot_dd(_today_str)
+            if _dchart:
+                parts.append({"photo": _dchart, "caption": f"📊 Дашборд дня — {now_local.strftime('%d.%m')}"})
+        except Exception as _e_dd:
+            print(f"day dashboard chart error: {_e_dd}")
 
     # Блок 5: Email — заголовок + кожен лист окремо з кнопками
     if email_text:
@@ -5088,7 +5097,7 @@ def check_day_summary():
     """
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
-    if not (h == 21 and m == 0):
+    if not (h == 21 and 0 <= m < 5):
         return
 
     today = now_local.strftime("%Y-%m-%d")
