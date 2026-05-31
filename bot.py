@@ -1528,13 +1528,17 @@ HELP_TEXT = """
 
 <b>📊 Звіти</b>
 /звіт — повний звіт зараз
-/тиждень — тижневий підсумок
+/тиждень — тижневий дашборд (біг, вага, звички, кроки)
 /ціни — ціни BTC/ETH/AVAX/ONDO
+/курс — поточні курси EUR/USD/CZK/PLN/UAH
 /погода — погода Košice
 /календар — події на сьогодні
 /листи — останні email
 /астро — астрологічний прогноз
 /dd — DeFi дайджест 24h (зміни TVL, DEX, yields, stables)
+
+<b>🏃 Стrava / Біг</b>
+/біг — остання пробіжка + тижня статистика
 
 <b>💪 Здоров'я</b>
 /звички — відмітити звички
@@ -1794,12 +1798,40 @@ def handle_command(chat_id, text):
             send(chat_id, f"⚠️ Астро помилка: {e}")
 
     elif text in ["/тиждень", "тиждень", "/підсумок", "підсумок"]:
-        send(chat_id, "⏳ Готую тижневий підсумок...")
+        send(chat_id, "⏳ Готую тижневий дашборд...")
         try:
-            import sys, os as _os
-            sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-            from weekly_report import send_weekly_report
-            send_weekly_report()
+            import sys as _sys_tw, os as _os_tw
+            _sys_tw.path.insert(0, _os_tw.path.dirname(_os_tw.path.abspath(__file__)))
+            import importlib.util as _ilu
+            spec = _ilu.spec_from_file_location("monitor_tw", _os_tw.path.join(_os_tw.path.dirname(_os_tw.path.abspath(__file__)), "monitor.py"))
+            mod_tw = _ilu.module_from_spec(spec)
+            spec.loader.exec_module(mod_tw)
+            dashboard = mod_tw.get_weekly_dashboard()
+            send(chat_id, dashboard)
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif text in ["/біг", "біг", "/strava", "/пробіжка"]:
+        send(chat_id, "⏳ Завантажую дані Strava...")
+        try:
+            import sys as _sys_run, os as _os_run
+            _sys_run.path.insert(0, _os_run.path.dirname(_os_run.path.abspath(__file__)))
+            from strava import format_strava_block
+            result = format_strava_block()
+            send(chat_id, result if result else "⚠️ Немає даних Strava")
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка Strava: {e}")
+
+    elif text in ["/курс", "курс", "/валюта", "валюта", "/eur", "/usd"]:
+        try:
+            import sys as _sys_cur, os as _os_cur
+            _sys_cur.path.insert(0, _os_cur.path.dirname(_os_cur.path.abspath(__file__)))
+            import importlib.util as _ilu_cur
+            spec_cur = _ilu_cur.spec_from_file_location("monitor_cur", _os_cur.path.join(_os_cur.path.dirname(_os_cur.path.abspath(__file__)), "monitor.py"))
+            mod_cur = _ilu_cur.module_from_spec(spec_cur)
+            spec_cur.loader.exec_module(mod_cur)
+            rates = mod_cur.get_currency_rates()
+            send(chat_id, rates if rates else "⚠️ Не вдалося отримати курси")
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 

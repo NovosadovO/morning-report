@@ -1022,6 +1022,66 @@ threading.Thread(target=run_shopping_watcher, daemon=True).start()
 print("=== Shopping reminder watcher thread started ===", flush=True)
 
 
+def run_strava_watcher():
+    """Авто-сповіщення після нового тренування Strava — кожні 10 хв."""
+    print("=== Starting Strava activity watcher (every 10min) ===", flush=True)
+    time.sleep(90)
+    while True:
+        try:
+            _load_monitor().check_strava_new_activity()
+        except Exception as e:
+            print(f"Strava watcher error: {e}", flush=True)
+        time.sleep(600)
+
+threading.Thread(target=run_strava_watcher, daemon=True).start()
+print("=== Strava watcher thread started ===", flush=True)
+
+
+def run_stress_alert_watcher():
+    """Стрес-алерт о 11:00 — комбінація сигналів."""
+    print("=== Starting stress alert watcher ===", flush=True)
+    time.sleep(110)
+    while True:
+        try:
+            _load_monitor().check_stress_alert()
+        except Exception as e:
+            print(f"Stress alert watcher error: {e}", flush=True)
+        time.sleep(60)
+
+threading.Thread(target=run_stress_alert_watcher, daemon=True).start()
+print("=== Stress alert watcher thread started ===", flush=True)
+
+
+def run_monthly_summary_watcher():
+    """Місячний підсумок — 1-го числа о 09:00."""
+    print("=== Starting monthly summary watcher ===", flush=True)
+    time.sleep(115)
+    while True:
+        try:
+            _load_monitor().check_monthly_summary()
+        except Exception as e:
+            print(f"Monthly summary watcher error: {e}", flush=True)
+        time.sleep(60)
+
+threading.Thread(target=run_monthly_summary_watcher, daemon=True).start()
+print("=== Monthly summary watcher thread started ===", flush=True)
+
+
+def run_currency_watcher():
+    """Курс валют — алерт при різкому русі EUR/USD."""
+    print("=== Starting currency alert watcher (hourly) ===", flush=True)
+    time.sleep(120)
+    while True:
+        try:
+            _load_monitor().check_currency_alert()
+        except Exception as e:
+            print(f"Currency watcher error: {e}", flush=True)
+        time.sleep(3600)
+
+threading.Thread(target=run_currency_watcher, daemon=True).start()
+print("=== Currency watcher thread started ===", flush=True)
+
+
 def run_evening_charts_watcher():
     """Надсилає всі три графіки щовечора о 20:00 (UTC+2)."""
     import os, json, urllib.request

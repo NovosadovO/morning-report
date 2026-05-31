@@ -3375,6 +3375,14 @@ def main():
     except Exception as _e_strava:
         print(f"strava block error: {_e_strava}")
 
+    # Блок Курс валют — кожен звіт
+    try:
+        _currency_text = get_currency_rates()
+        if _currency_text:
+            parts.append(_currency_text)
+    except Exception as _e_curr:
+        print(f"currency rates error: {_e_curr}")
+
     # Графік звичок — тільки о 20:00 через evening_charts_watcher (не тут)
 
     # Блок 5: Email — заголовок + кожен лист окремо з кнопками
@@ -7895,3 +7903,607 @@ def check_shopping_reminder():
 
     except Exception as e:
         print(f"check_shopping_reminder error: {e}")
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# ▌ НОВІ ФУНКЦІЇ — АПГРЕЙД БОТА
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# ─── 1. STRAVA WATCHER — авто-сповіщення після тренування ────────────────────
+
+_STRAVA_LAST_ACT_FILE = os.path.join(_DATA_DIR, "strava_last_activity.json")
+
+def check_strava_new_activity():
+    """
+    Перевіряє кожні 10 хв: чи є нова активність у Strava.
+    Якщо є — надсилає результат + AI аналіз темпу і порівняння з попереднім.
+    """
+    try:
+        import sys as _sys_s
+        _sys_s.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from strava import _get_access_token
+
+        state = load_json_file(_STRAVA_LAST_ACT_FILE, default={})
+        last_id = state.get("last_id")
+
+        token = _get_access_token()
+        import requests as _req_s
+        r = _req_s.get(
+            "https://www.strava.com/api/v3/athlete/activities",
+            headers={"Authorization": f"Bearer {token}"},
+            params={"per_page": 1, "page": 1},
+            timeout=15
+        )
+        r.raise_for_status()
+        acts = r.json()
+        if not acts:
+            return
+
+        a = acts[0]
+        act_id = str(a["id"])
+
+        if act_id == str(last_id):
+            return  # не нова
+
+        # Нова активність!
+        state["last_id"] = act_id
+        save_json_file(_STRAVA_LAST_ACT_FILE, state)
+
+        dist_km  = round(a["distance"] / 1000, 2)
+        dur_sec  = a["moving_time"]
+        dur_min  = dur_sec // 60
+        act_type = a.get("type", "Run")
+        name     = a.get("name", "Тренування")
+        elev     = a.get("total_elevation_gain", 0)
+        hr       = a.get("average_heartrate")
+        kudos    = a.get("kudos_count", 0)
+        calories = a.get("calories") or a.get("kilojoules", 0)
+
+        type_emoji = {"Run": "🏃", "TrailRun": "🏔", "VirtualRun": "💻",
+                      "Ride": "🚴", "Swim": "🏊", "Walk": "🚶"}.get(act_type, "🏃")
+
+        # Темп
+        pace_str = "—"
+        if dist_km > 0:
+            pace_sec_per_km = dur_sec / dist_km
+            pace_str = f"{int(pace_sec_per_km//60)}:{int(pace_sec_per_km%60):02d} хв/км"
+
+        lines = [
+            f"{type_emoji} <b>Нова активність!</b>",
+            f"",
+            f"🏷 <b>{name}</b>",
+            f"📏 Дистанція:  <b>{dist_km} км</b>",
+            f"⏱ Час:         <b>{dur_min} хв</b>",
+            f"⚡️ Темп:        <b>{pace_str}</b>",
+        ]
+        if elev:
+            lines.append(f"⛰ Набір:       <b>{elev:.0f} м</b>")
+        if hr:
+            lines.append(f"❤️ ЧСС:        <b>{hr:.0f} уд/хв</b>")
+        if calories:
+            lines.append(f"🔥 Калорії:    <b>{int(calories)} ккал</b>")
+
+        # Тижнева статистика
+        try:
+            from strava import get_week_stats
+            wk = get_week_stats()
+            if wk:
+                goal_km = 40
+                pct = min(wk["km"] / goal_km, 1.0)
+                filled = int(pct * 10)
+                bar = "█" * filled + "░" * (10 - filled)
+                lines.append(f"")
+                lines.append(f"📅 <b>Тиждень:</b> {wk['runs']} пробіжок · {wk['km']} км")
+                lines.append(f"[{bar}] {wk['km']}/{goal_km} км")
+        except Exception:
+            pass
+
+        # AI коментар
+        gemini_key = os.environ.get("GEMINI_API_KEY", "")
+        if gemini_key and dist_km > 0:
+            try:
+                import json as _json_s
+                import urllib.request as _ur_s
+                prompt = (
+                    f"Я пробіг {dist_km} км за {dur_min} хв, темп {pace_str}."
+                    + (f" ЧСС {hr:.0f} уд/хв." if hr else "")
+                    + (f" Набір висоти {elev:.0f} м." if elev else "")
+                    + " Дай коротку (2-3 речення) мотивуючу оцінку тренування українською. "
+                    + "Будь конкретним: добре чи треба покращити темп, чи норм для відновлення? Без зайвих слів."
+                )
+                payload = _json_s.dumps({
+                    "contents": [{"parts": [{"text": prompt}]}],
+                    "generationConfig": {"maxOutputTokens": 120, "temperature": 0.7}
+                }).encode()
+                req_ai = _ur_s.Request(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
+                    data=payload, headers={"Content-Type": "application/json"}
+                )
+                with _ur_s.urlopen(req_ai, timeout=10) as _resp_ai:
+                    ai_data = _json_s.loads(_resp_ai.read())
+                ai_comment = ai_data["candidates"][0]["content"]["parts"][0]["text"].strip()
+                lines.append(f"\n💬 <i>{ai_comment}</i>")
+            except Exception as _ai_e:
+                print(f"strava AI comment error: {_ai_e}")
+
+        send_telegram("\n".join(lines))
+        print(f"[Strava] New activity sent: {act_id} — {dist_km}km")
+
+    except Exception as e:
+        print(f"check_strava_new_activity error: {e}")
+
+
+# ─── 2. КУРС ВАЛЮТ — в кожен звіт ────────────────────────────────────────────
+
+def get_currency_rates() -> str:
+    """Живі курси EUR/USD/CZK/PLN від exchangerate-api (безкоштовно)."""
+    try:
+        import urllib.request as _ur_c
+        import json as _json_c
+
+        # Безкоштовний endpoint — не потребує ключа
+        url = "https://open.er-api.com/v6/latest/EUR"
+        with _ur_c.urlopen(url, timeout=8) as _r:
+            data = _json_c.loads(_r.read())
+
+        if data.get("result") != "success":
+            return ""
+
+        rates = data.get("rates", {})
+        usd = rates.get("USD")
+        czk = rates.get("CZK")
+        pln = rates.get("PLN")
+        uah = rates.get("UAH")
+
+        if not all([usd, czk, pln]):
+            return ""
+
+        lines = ["💱 <b>КУРСИ ВАЛЮТ</b>"]
+        lines.append(f"  €1 = <b>{usd:.4f}</b> $ · <b>{czk:.2f}</b> Kč · <b>{pln:.4f}</b> zł")
+        if uah:
+            lines.append(f"  €1 = <b>{uah:.2f}</b> ₴  |  $1 = <b>{uah/usd:.2f}</b> ₴")
+
+        return "\n".join(lines)
+    except Exception as e:
+        print(f"get_currency_rates error: {e}")
+        return ""
+
+
+# ─── 3. СТРЕС-АЛЕРТ — комбінований сигнал ────────────────────────────────────
+
+_STRESS_ALERT_FILE = os.path.join(_DATA_DIR, "monitor_stress_alert.json")
+
+def check_stress_alert():
+    """
+    О 11:00 перевіряє комбінацію стрес-сигналів:
+    - 3+ дні без бігу
+    - вага росте 2+ дні
+    - менше 7 год сну 2+ дні поспіль
+    Якщо 2+ сигнали — надсилає AI мотивацію + конкретний план на сьогодні.
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+    if not (h == 11 and 0 <= m < 5):
+        return
+
+    today = now_local.strftime("%Y-%m-%d")
+    state = load_json_file(_STRESS_ALERT_FILE, default={})
+    if state.get("last") == today:
+        return
+
+    signals = []
+    details = []
+
+    # Сигнал 1: дні без бігу
+    try:
+        import sys as _sys_sa; _sys_sa.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from strava import get_last_activity
+        last_act = get_last_activity()
+        if last_act:
+            when = last_act.get("when", "")
+            # Парсимо кількість днів
+            days_no_run = 0
+            if "дн." in when:
+                import re as _re_sa
+                m_re = _re_sa.search(r"(\d+) дн\.", when)
+                if m_re:
+                    days_no_run = int(m_re.group(1))
+            elif when not in ("сьогодні", "вчора"):
+                days_no_run = 5  # давно
+            if days_no_run >= 3:
+                signals.append("no_run")
+                details.append(f"🏃 {days_no_run} дні без пробіжки")
+        else:
+            signals.append("no_run")
+            details.append("🏃 Немає записаних тренувань")
+    except Exception:
+        pass
+
+    # Сигнал 2: вага зростає
+    try:
+        from storage import load as _st_load_sa
+        wdata = _st_load_sa("weight_data.json") or {}
+        if wdata:
+            sorted_keys = sorted(wdata.keys())[-4:]
+            w_vals = [wdata[k] for k in sorted_keys if wdata.get(k)]
+            if len(w_vals) >= 3:
+                rising = sum(1 for i in range(len(w_vals)-1, 0, -1) if w_vals[i] > w_vals[i-1])
+                if rising >= 2:
+                    signals.append("weight_up")
+                    details.append(f"⚖️ Вага росте {rising} дні (+{round(w_vals[-1]-w_vals[-rising-1],1)} кг)")
+    except Exception:
+        pass
+
+    # Сигнал 3: звички (мало виконано)
+    try:
+        from habits import load_data as _hd_load_sa
+        hab_db = _hd_load_sa()
+        bad_days = 0
+        for i in range(1, 4):
+            day_k = (now_local - timedelta(days=i)).strftime("%Y-%m-%d")
+            day_data = hab_db.get(day_k, {})
+            done_count = sum(1 for v in day_data.values() if v is True)
+            if done_count < 2:
+                bad_days += 1
+        if bad_days >= 2:
+            signals.append("bad_habits")
+            details.append(f"📋 Мало звичок {bad_days} дні поспіль")
+    except Exception:
+        pass
+
+    if len(signals) < 2:
+        return  # недостатньо сигналів
+
+    # Відправляємо алерт
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    ai_plan = ""
+    if gemini_key:
+        try:
+            import json as _json_sa, urllib.request as _ur_sa
+            prompt = (
+                f"Мої показники сьогодні: {'; '.join(details)}. "
+                f"Це ознаки накопиченого стресу і зниженої енергії. "
+                f"Дай конкретний план на СЬОГОДНІ (3-4 пункти, коротко) що робити прямо зараз щоб відновитись. "
+                f"Реально і практично. Українською. Без зайвих слів і без привітань."
+            )
+            payload = _json_sa.dumps({
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"maxOutputTokens": 200, "temperature": 0.6}
+            }).encode()
+            req_ai = _ur_sa.Request(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
+                data=payload, headers={"Content-Type": "application/json"}
+            )
+            with _ur_sa.urlopen(req_ai, timeout=12) as _resp_ai:
+                ai_data = _json_sa.loads(_resp_ai.read())
+            ai_plan = ai_data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        except Exception:
+            pass
+
+    signal_text = "\n".join(f"  • {d}" for d in details)
+    msg = (
+        f"🔴 <b>СТРЕС-АЛЕРТ</b>\n\n"
+        f"Бот помітив одночасно кілька тривожних сигналів:\n{signal_text}\n\n"
+    )
+    if ai_plan:
+        msg += f"<b>План на сьогодні:</b>\n{ai_plan}"
+    else:
+        msg += (
+            f"<b>Що зробити сьогодні:</b>\n"
+            f"• Вийди на 20-хв прогулянку або пробіжку\n"
+            f"• Випий 2 склянки води прямо зараз\n"
+            f"• Лягай спати до 23:00\n"
+            f"• Відмов собі від пізньої їжі"
+        )
+
+    send_telegram(msg)
+    state["last"] = today
+    save_json_file(_STRESS_ALERT_FILE, state)
+    print(f"[Stress alert] sent: {signals}")
+
+
+# ─── 4. МІСЯЧНИЙ ПІДСУМОК ─────────────────────────────────────────────────────
+
+_MONTHLY_SUMMARY_FILE = os.path.join(_DATA_DIR, "monitor_monthly_summary.json")
+
+def check_monthly_summary():
+    """
+    1-го числа о 09:00: повний місячний підсумок.
+    Вага, km бігу, звички %, кроки, найкращі дні.
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+    if not (now_local.day == 1 and h == 9 and 0 <= m < 5):
+        return
+
+    month_key = now_local.strftime("%Y-%m")
+    state = load_json_file(_MONTHLY_SUMMARY_FILE, default={})
+    if state.get("last") == month_key:
+        return
+
+    # Минулий місяць
+    prev_month_end = now_local.replace(day=1) - timedelta(days=1)
+    prev_month_start = prev_month_end.replace(day=1)
+    month_names = {
+        1:"Січень",2:"Лютий",3:"Березень",4:"Квітень",5:"Травень",
+        6:"Червень",7:"Липень",8:"Серпень",9:"Вересень",10:"Жовтень",
+        11:"Листопад",12:"Грудень"
+    }
+    month_name = month_names[prev_month_end.month]
+
+    lines = [f"📆 <b>ПІДСУМОК МІСЯЦЯ — {month_name} {prev_month_end.year}</b>\n"]
+
+    # Вага
+    try:
+        from storage import load as _st_load_ms
+        wdata = _st_load_ms("weight_data.json") or {}
+        month_prefix = prev_month_end.strftime("%Y-%m")
+        month_weights = {k: v for k, v in wdata.items() if k.startswith(month_prefix) and v}
+        if month_weights:
+            sorted_w = sorted(month_weights.items())
+            w_start = sorted_w[0][1]
+            w_end   = sorted_w[-1][1]
+            w_delta = round(w_end - w_start, 1)
+            sign = "+" if w_delta > 0 else ""
+            trend = "📈 зросла" if w_delta > 0 else ("📉 знизилась" if w_delta < 0 else "➡️ без змін")
+            lines.append(f"⚖️ <b>Вага:</b> {w_start}→{w_end} кг ({sign}{w_delta} кг) {trend}")
+            to_goal = round(w_end - 78.0, 1)
+            if to_goal > 0:
+                lines.append(f"   До цілі 78 кг: ще <b>{to_goal} кг</b>")
+            else:
+                lines.append(f"   🏆 Ціль 78 кг досягнута!")
+    except Exception:
+        pass
+
+    # Strava — пробіжки за місяць
+    try:
+        import sys as _sys_ms; _sys_ms.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from strava import _get_access_token
+        import requests as _req_ms
+        token = _get_access_token()
+        import calendar as _cal
+        _, last_day = _cal.monthrange(prev_month_end.year, prev_month_end.month)
+        after_ts  = int(prev_month_start.replace(tzinfo=timezone.utc).timestamp())
+        before_ts = int((prev_month_end.replace(day=last_day, hour=23, minute=59) + timedelta(seconds=1)).replace(tzinfo=timezone.utc).timestamp())
+        r_ms = _req_ms.get(
+            "https://www.strava.com/api/v3/athlete/activities",
+            headers={"Authorization": f"Bearer {token}"},
+            params={"per_page": 100, "after": after_ts, "before": before_ts},
+            timeout=15
+        )
+        acts = r_ms.json() if r_ms.ok else []
+        runs = [a for a in acts if a.get("type") in ("Run","TrailRun","VirtualRun")]
+        total_km = round(sum(a["distance"] for a in runs) / 1000, 1)
+        total_min = sum(a["moving_time"] for a in runs) // 60
+        lines.append(f"\n🏃 <b>Біг:</b> {len(runs)} пробіжок · <b>{total_km} км</b> · {total_min} хв")
+        if total_km >= 100:
+            lines.append("   🏅 100+ км за місяць — феноменально!")
+        elif total_km >= 50:
+            lines.append("   💪 50+ км — відмінно!")
+        elif total_km >= 20:
+            lines.append("   👍 Непогано, є куди рости")
+        elif total_km > 0:
+            lines.append("   ⚠️ Менше 20 км — наступний місяць більше!")
+    except Exception as _e_ms_s:
+        print(f"monthly strava error: {_e_ms_s}")
+
+    # Звички
+    try:
+        from habits import load_data as _hd_ms, HABITS as _HABITS_MS
+        hab_db = _hd_ms()
+        month_prefix = prev_month_end.strftime("%Y-%m")
+        month_days = [k for k in hab_db.keys() if k.startswith(month_prefix)]
+        if month_days:
+            lines.append(f"\n📋 <b>Звички за {len(month_days)} днів:</b>")
+            all_habits = [{"id": "run", "name": "Біг", "emoji": "🏃"}] + _HABITS_MS
+            for hab in all_habits[:5]:  # топ 5
+                done = sum(1 for d in month_days if hab_db.get(d, {}).get(hab["id"]) is True)
+                pct = int(done / len(month_days) * 100)
+                bar = "█" * (pct // 10) + "░" * (10 - pct // 10)
+                lines.append(f"  {hab['emoji']} {hab['name']}: [{bar}] {pct}%")
+    except Exception:
+        pass
+
+    # Кроки
+    try:
+        from steps import load_steps_data as _lsd_ms
+        sdata = _lsd_ms()
+        month_prefix = prev_month_end.strftime("%Y-%m")
+        month_steps = [v.get("steps", 0) for k, v in sdata.items() if k.startswith(month_prefix) and isinstance(v, dict)]
+        if month_steps:
+            avg_steps = int(sum(month_steps) / len(month_steps))
+            total_steps = sum(month_steps)
+            best_day = max(month_steps)
+            lines.append(f"\n👟 <b>Кроки:</b> всього {total_steps:,} · середнє {avg_steps:,}/день")
+            lines.append(f"   Найкращий день: {best_day:,} кроків")
+    except Exception:
+        pass
+
+    # AI підсумок
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    if gemini_key and len(lines) > 2:
+        try:
+            import json as _json_ms, urllib.request as _ur_ms
+            summary_data = " | ".join(lines[1:6])
+            prompt = (
+                f"Ось мої результати за {month_name}: {summary_data}. "
+                f"Напиши коротку (2-3 речення) мотивуючу оцінку місяця і одну конкретну ціль на наступний місяць. "
+                f"Українською, без привітань."
+            )
+            payload = _json_ms.dumps({
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"maxOutputTokens": 150, "temperature": 0.7}
+            }).encode()
+            req_ai = _ur_ms.Request(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
+                data=payload, headers={"Content-Type": "application/json"}
+            )
+            with _ur_ms.urlopen(req_ai, timeout=12) as _resp_ai:
+                ai_ms = _json_ms.loads(_resp_ai.read())
+            ai_text = ai_ms["candidates"][0]["content"]["parts"][0]["text"].strip()
+            lines.append(f"\n💬 <i>{ai_text}</i>")
+        except Exception:
+            pass
+
+    send_telegram("\n".join(lines))
+    state["last"] = month_key
+    save_json_file(_MONTHLY_SUMMARY_FILE, state)
+    print("[Monthly summary] sent")
+
+
+# ─── 5. ТИЖНЕВИЙ ДАШБОРД — команда /тиждень ──────────────────────────────────
+
+def get_weekly_dashboard() -> str:
+    """
+    Зведений дашборд за поточний тиждень:
+    біг, вага, звички, кроки — одним повідомленням.
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    week_start = now_local - timedelta(days=now_local.weekday())
+    week_start = week_start.replace(hour=0, minute=0, second=0, microsecond=0)
+
+    lines = [
+        f"📊 <b>ТИЖДЕНЬ {week_start.strftime('%d.%m')}–{now_local.strftime('%d.%m.%Y')}</b>\n"
+    ]
+
+    # 1. Біг
+    try:
+        import sys as _sys_wd; _sys_wd.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from strava import get_week_stats, get_last_activity
+        wk = get_week_stats()
+        la = get_last_activity()
+        if wk:
+            goal = 40
+            pct = min(wk["km"] / goal, 1.0)
+            filled = int(pct * 10)
+            bar = "█" * filled + "░" * (10 - filled)
+            lines.append(f"🏃 <b>Біг:</b> {wk['runs']} пробіжок · {wk['km']} км")
+            lines.append(f"   [{bar}] {wk['km']}/{goal} км до цілі")
+            if la:
+                lines.append(f"   Остання: {la['distance_km']} км · {la['pace']} ({la['when']})")
+        else:
+            lines.append("🏃 <b>Біг:</b> немає даних")
+    except Exception as _e_wd_r:
+        lines.append(f"🏃 <b>Біг:</b> ⚠️ {_e_wd_r}")
+
+    # 2. Вага
+    try:
+        from storage import load as _st_load_wd
+        wdata = _st_load_wd("weight_data.json") or {}
+        week_prefix = week_start.strftime("%Y-%m")
+        week_weights = [(k, v) for k, v in sorted(wdata.items())
+                        if k >= week_start.strftime("%Y-%m-%d") and v]
+        if week_weights:
+            w_first = week_weights[0][1]
+            w_last  = week_weights[-1][1]
+            delta   = round(w_last - w_first, 1)
+            sign    = "+" if delta > 0 else ""
+            trend   = "📈" if delta > 0.1 else ("📉" if delta < -0.1 else "➡️")
+            lines.append(f"\n⚖️ <b>Вага:</b> {w_last} кг {trend} ({sign}{delta} кг за тиждень)")
+            to_goal = round(w_last - 78.0, 1)
+            if to_goal > 0:
+                lines.append(f"   До 78 кг: -{to_goal} кг")
+        else:
+            lines.append("\n⚖️ <b>Вага:</b> немає записів цього тижня")
+    except Exception:
+        pass
+
+    # 3. Звички
+    try:
+        from habits import load_data as _hd_wd, HABITS as _HAB_WD
+        hab_db = _hd_wd()
+        days_this_week = [(week_start + timedelta(days=i)).strftime("%Y-%m-%d")
+                          for i in range(now_local.weekday() + 1)]
+        days_done = {d: hab_db.get(d, {}) for d in days_this_week}
+
+        lines.append(f"\n📋 <b>Звички</b> ({len(days_this_week)} днів):")
+        all_habits = [{"id": "shower", "name": "Душ", "emoji": "🚿"}] + _HAB_WD
+        for hab in all_habits:
+            done  = sum(1 for d in days_this_week if days_done[d].get(hab["id"]) is True)
+            total = len(days_this_week)
+            icons = ""
+            for d in days_this_week:
+                v = days_done[d].get(hab["id"])
+                icons += "✅" if v is True else ("❌" if v is False else "⬜")
+            lines.append(f"  {hab['emoji']} {hab['name']}: {icons} {done}/{total}")
+    except Exception:
+        pass
+
+    # 4. Кроки
+    try:
+        from steps import load_steps_data as _lsd_wd
+        sdata = _lsd_wd()
+        week_days = [(week_start + timedelta(days=i)).strftime("%Y-%m-%d")
+                     for i in range(now_local.weekday() + 1)]
+        step_vals = [sdata.get(d, {}).get("steps", 0) for d in week_days if isinstance(sdata.get(d), dict)]
+        if step_vals:
+            avg = int(sum(step_vals) / len(step_vals))
+            total = sum(step_vals)
+            lines.append(f"\n👟 <b>Кроки:</b> всього {total:,} · середнє {avg:,}/день")
+    except Exception:
+        pass
+
+    return "\n".join(lines)
+
+
+# ─── 6. КУРС ВАЛЮТ — додати в регулярний звіт ────────────────────────────────
+# (функція get_currency_rates() вже визначена вище)
+# Додаємо автоматичний виклик у check_smart_notifications або окремий watcher
+
+_CURRENCY_ALERT_FILE = os.path.join(_DATA_DIR, "monitor_currency_alert.json")
+
+def check_currency_alert():
+    """
+    Якщо EUR/USD змінився більш ніж на 0.5% за добу — надсилає алерт.
+    Також щоранку о 08:00 надсилає поточні курси.
+    """
+    try:
+        import urllib.request as _ur_ca, json as _json_ca
+
+        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        h, m = now_local.hour, now_local.minute
+        today = now_local.strftime("%Y-%m-%d")
+
+        state = load_json_file(_CURRENCY_ALERT_FILE, default={})
+
+        # Щоранку о 08:00 — просто відправляємо курси
+        if h == 8 and 0 <= m < 5 and state.get("daily") != today:
+            rates_text = get_currency_rates()
+            if rates_text:
+                send_telegram(rates_text)
+                state["daily"] = today
+                save_json_file(_CURRENCY_ALERT_FILE, state)
+            return
+
+        # Перевірка значного руху — кожну годину
+        slot = f"{today}_{h}"
+        if state.get("alert_slot") == slot:
+            return
+
+        url = "https://open.er-api.com/v6/latest/EUR"
+        with _ur_ca.urlopen(url, timeout=8) as _r:
+            data = _json_ca.loads(_r.read())
+
+        if data.get("result") != "success":
+            return
+
+        rates = data.get("rates", {})
+        usd = rates.get("USD", 0)
+
+        last_usd = state.get("last_usd", usd)
+        if last_usd and abs(usd - last_usd) / last_usd > 0.005:  # 0.5%+
+            direction = "📈 зріс" if usd > last_usd else "📉 впав"
+            pct = abs(usd - last_usd) / last_usd * 100
+            send_telegram(
+                f"💱 <b>Різкий рух EUR/USD!</b>\n"
+                f"€1 = <b>{usd:.4f}$</b> ({direction} на {pct:.2f}%)\n"
+                f"Попередній: {last_usd:.4f}$"
+            )
+            state["alert_slot"] = slot
+
+        state["last_usd"] = usd
+        save_json_file(_CURRENCY_ALERT_FILE, state)
+
+    except Exception as e:
+        print(f"check_currency_alert error: {e}")
+
