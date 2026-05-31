@@ -12,17 +12,25 @@ from datetime import datetime, timezone, timedelta
 # avg_buy = 0 якщо невідомо (тоді P&L не рахується, тільки поточна вартість)
 
 DEFAULT_POSITIONS = {
-    "ETH":   {"amount": 0.8831,    "avg_buy": 0, "coingecko": "ethereum"},
-    "AVAX":  {"amount": 128.08,    "avg_buy": 0, "coingecko": "avalanche-2"},
-    "USDC":  {"amount": 501.78,    "avg_buy": 1.0, "coingecko": "usd-coin"},
-    "ONDO":  {"amount": 1294.66,   "avg_buy": 0, "coingecko": "ondo-finance"},
-    "AAVE":  {"amount": 4.587,     "avg_buy": 0, "coingecko": "aave"},
-    "BTC":   {"amount": 0.0042,    "avg_buy": 0, "coingecko": "bitcoin"},
-    "LINK":  {"amount": 33.05,     "avg_buy": 0, "coingecko": "chainlink"},
-    "BNB":   {"amount": 0.1655,    "avg_buy": 0, "coingecko": "binancecoin"},
-    "NEAR":  {"amount": 22.91,     "avg_buy": 0, "coingecko": "near"},
-    "ARB":   {"amount": 0,         "avg_buy": 0, "coingecko": "arbitrum"},  # уточнити
-    "LINEA": {"amount": 14565.43,  "avg_buy": 0, "coingecko": "linea"},
+    "ETH":   {"amount": 0.8831,    "avg_buy": 0,   "coingecko": "ethereum"},
+    "AVAX":  {"amount": 128.08,    "avg_buy": 0,   "coingecko": "avalanche-2"},
+    "USDC":  {"amount": 5.201,     "avg_buy": 1.0, "coingecko": "usd-coin"},
+    "ONDO":  {"amount": 1294.66,   "avg_buy": 0,   "coingecko": "ondo-finance"},
+    "AAVE":  {"amount": 4.587,     "avg_buy": 0,   "coingecko": "aave"},
+    "BTC":   {"amount": 0.0042,    "avg_buy": 0,   "coingecko": "bitcoin"},
+    "LINK":  {"amount": 33.05,     "avg_buy": 0,   "coingecko": "chainlink"},
+    "BNB":   {"amount": 0.1655,    "avg_buy": 0,   "coingecko": "binancecoin"},
+    "NEAR":  {"amount": 22.91,     "avg_buy": 0,   "coingecko": "near"},
+    "ARB":   {"amount": 212.41,    "avg_buy": 0,   "coingecko": "arbitrum"},
+    "LINEA": {"amount": 14565.43,  "avg_buy": 0,   "coingecko": "linea"},
+    "CRO":   {"amount": 256.84,    "avg_buy": 0,   "coingecko": "crypto-com-chain"},
+    "UNI":   {"amount": 4.584,     "avg_buy": 0,   "coingecko": "uniswap"},
+    "ID":    {"amount": 340.68,    "avg_buy": 0,   "coingecko": "space-id"},
+    "G":     {"amount": 2612.40,   "avg_buy": 0,   "coingecko": "gravity-alpha"},
+    "ADA":   {"amount": 28.44,     "avg_buy": 0,   "coingecko": "cardano"},
+    "SWEAT": {"amount": 6131.94,   "avg_buy": 0,   "coingecko": "sweat-economy"},
+    # aBnbWBNB — DeFi LP, немає ціни на CoinGecko, пропускаємо
+    # COQ, MEME — кількість не видна на скрін (обрізано)
 }
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "")
@@ -237,6 +245,10 @@ def update_position(symbol: str, amount: float = None, avg_buy: float = None) ->
         "USDC": "usd-coin", "USDT": "tether", "SOL": "solana",
         "LINEA": "linea", "XRP": "ripple", "DOT": "polkadot",
         "TON": "the-open-network", "SUI": "sui",
+        "CRO": "crypto-com-chain", "UNI": "uniswap",
+        "ID": "space-id", "G": "gravity-alpha",
+        "ADA": "cardano", "SWEAT": "sweat-economy",
+        "COQ": "coq-inu", "MEME": "memecoin-2",
     }
 
     if sym not in positions:
@@ -263,6 +275,10 @@ def update_avg_buy(symbol: str, qty: float, price: float) -> str:
         "USDC": "usd-coin", "USDT": "tether", "SOL": "solana",
         "LINEA": "linea", "XRP": "ripple", "DOT": "polkadot",
         "TON": "the-open-network", "SUI": "sui",
+        "CRO": "crypto-com-chain", "UNI": "uniswap",
+        "ID": "space-id", "G": "gravity-alpha",
+        "ADA": "cardano", "SWEAT": "sweat-economy",
+        "COQ": "coq-inu", "MEME": "memecoin-2",
     }
 
     if sym not in positions:
