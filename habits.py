@@ -542,7 +542,7 @@ def run():
 
         # Нагадування про невиконані звички — о 21:30
         undone_key = f"{today}_undone_remind"
-        if not sent.get(undone_key) and now.hour == 21 and 30 <= now.minute <= 34:
+        if not load_sent_fresh().get(undone_key) and now.hour == 21 and now.minute == 30:
             db_today = load_data().get(today, {})
             all_habits = [{"id": "shower", "name": "Холодний душ", "emoji": "🚿"}] + HABITS
             missed = [h for h in all_habits if db_today.get(h["id"]) is not True]
@@ -558,7 +558,7 @@ def run():
 
         # Тижневий звіт ліків — щонеділі о 20:40
         meds_weekly_key = f"meds_weekly_{today}"
-        if (now.weekday() == 6 and now.hour == 20 and now.minute in range(40, 45)
+        if (now.weekday() == 6 and now.hour == 20 and now.minute == 40
                 and not load_sent_fresh().get(meds_weekly_key)):
             sent[meds_weekly_key] = True  # save ПЕРЕД send
             save_sent(sent)
@@ -576,7 +576,7 @@ def run():
 
         # Місячний звіт ліків — останній день місяця о 21:05
         next_day2 = (now + timedelta(days=1))
-        if next_day2.month != now.month and now.hour == 21 and now.minute in range(5, 10):
+        if next_day2.month != now.month and now.hour == 21 and now.minute == 5:
             mkey2 = f"meds_monthly_{now.strftime('%Y-%m')}"
             if not load_sent_fresh().get(mkey2):
                 sent[mkey2] = True  # save ПЕРЕД send
@@ -593,7 +593,7 @@ def run():
 
         # Тижневий звіт ваги — щонеділі о 20:35
         weight_weekly_key = f"weight_weekly_{today}"
-        if (now.weekday() == 6 and now.hour == 20 and now.minute in range(35, 40)
+        if (now.weekday() == 6 and now.hour == 20 and now.minute == 35
                 and not load_sent_fresh().get(weight_weekly_key)):
             sent[weight_weekly_key] = True  # save ПЕРЕД send
             save_sent(sent)
@@ -608,7 +608,7 @@ def run():
                 print(f"Weight weekly report error: {e}")
 
         # Недільний підсумок о 18:45 — повний звіт тижня
-        if now.weekday() == 6 and now.hour == 18 and now.minute in range(45, 50):
+        if now.weekday() == 6 and now.hour == 18 and now.minute == 45:
             sunday_key = f"sunday_summary_{today}"
             if not load_sent_fresh().get(sunday_key):
                 sent[sunday_key] = True  # save ПЕРЕД send
@@ -622,7 +622,7 @@ def run():
                     print(f"Sunday summary error: {e}")
 
         # Тижневий звіт — щонеділі о 20:30
-        if now.weekday() == 6 and now.hour == 20 and now.minute in range(30, 35):
+        if now.weekday() == 6 and now.hour == 20 and now.minute == 30:
             wkey = f"weekly_{today}"
             if not load_sent_fresh().get(wkey):
                 sent[wkey] = True  # save ПЕРЕД send
@@ -634,7 +634,7 @@ def run():
 
         # Місячний звіт — останній день місяця о 21:00
         next_day = (now + timedelta(days=1))
-        if next_day.month != now.month and now.hour == 21 and now.minute in range(0, 5):
+        if next_day.month != now.month and now.hour == 21 and now.minute == 0:
             mkey = f"monthly_{now.strftime('%Y-%m')}"
             if not load_sent_fresh().get(mkey):
                 sent[mkey] = True  # save ПЕРЕД send
