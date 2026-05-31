@@ -7972,7 +7972,7 @@ def check_shopping_reminder():
 
 # ─── 1. STRAVA WATCHER — авто-сповіщення після тренування ────────────────────
 
-_STRAVA_LAST_ACT_FILE = os.path.join(_DATA_DIR, "strava_last_activity.json")
+_STRAVA_LAST_ACT_FILE = os.path.join(_DATA_DIR, "monitor_strava_last_activity.json")
 
 def check_strava_new_activity():
     """
