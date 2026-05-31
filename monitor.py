@@ -3363,6 +3363,17 @@ def main():
     except Exception as _e_health:
         print(f"health block error: {_e_health}")
 
+    # Блок Strava — біг
+    try:
+        import sys as _sys_strava
+        _sys_strava.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from strava import format_strava_block
+        _strava_text = format_strava_block()
+        if _strava_text:
+            parts.append(_strava_text)
+    except Exception as _e_strava:
+        print(f"strava block error: {_e_strava}")
+
     # Графік звичок — тільки о 20:00 через evening_charts_watcher (не тут)
 
     # Блок 5: Email — заголовок + кожен лист окремо з кнопками
