@@ -2398,13 +2398,11 @@ def _build_report_header(now_local, slot_key, cal_events_raw):
     date_str = now_local.strftime("%d.%m")
     is_weekend = now_local.weekday() >= 5
 
-    # Визначаємо слот (:00/:20/:40)
+    # Визначаємо слот (:00/:30)
     if ":00" in slot_key:
         slot_label = "00"
-    elif ":20" in slot_key:
-        slot_label = "20"
     else:
-        slot_label = "40"
+        slot_label = "30"
 
     # Час доби
     if 5 <= h < 9:
@@ -2442,7 +2440,7 @@ def _build_report_header(now_local, slot_key, cal_events_raw):
         f"{'─' * 28}",
         # 2
         f"🔔 <b>{time_str} — {'Вихідний' if is_weekend else weekday_full.capitalize()}</b>{cal_hint}\n"
-        f"<i>Твій {['перший','другий','третій'][['00','20','40'].index(slot_label)]} звіт цієї години</i>",
+        f"<i>{'Перша' if slot_label=='00' else 'Друга'} перевірка цієї години</i>",
         # 3
         f"{'🌅' if period=='morning' else '☀️' if period=='midday' else '🌆' if period=='afternoon' else '🌙' if period=='evening' else '🌃'} "
         f"<b>{time_str}  |  {date_str}</b>{cal_hint}\n"
@@ -2466,7 +2464,7 @@ def _build_report_header(now_local, slot_key, cal_events_raw):
         # 10
         f"{'🌤' if period in ('morning','midday') else '🌇' if period=='afternoon' else '🌙'} "
         f"<b>{time_str}  ·  {weekday_ua}</b>{cal_hint}\n"
-        f"<i>Слот #{['00','20','40'].index(slot_label)+1}/3</i>",
+        f"<i>Слот {'1' if slot_label=='00' else '2'}/2</i>",
         # 11
         f"📊 <b>ДАШБОРД</b>  {time_str}  {date_str}{cal_hint}\n"
         f"{'═' * 20}",
@@ -3452,8 +3450,10 @@ def main():
         if isinstance(email_text, dict) and email_text.get("__email_block__"):
             # Надсилаємо заголовок
             parts.append(email_text["header"])
-            # Кожен лист — окреме повідомлення з кнопками
-            for _em in email_text.get("items", []):
+            # Кожен лист — окреме повідомлення з кнопками (макс 3)
+            _all_items = email_text.get("items", [])
+            _remaining = max(0, len(_all_items) - 3)
+            for _em in _all_items[:3]:
                 _s   = _em["subject"]
                 _snd = _em["sender"]
                 _uid = _em["uid"]
@@ -3488,12 +3488,22 @@ def main():
                     ]
                 ]}
                 parts.append({"email_msg": True, "text": _text, "keyboard": _keyboard})
+            if _remaining > 0:
+                parts.append(f"📬 <i>і ще {_remaining} {'лист' if _remaining == 1 else 'листи' if _remaining < 5 else 'листів'} у вхідних</i>")
         else:
             parts.append(email_text)
 
-    # Блок 6: Астро (якщо завантажено)
+    # Блок 6: Астро (тільки раз на день)
     if astro_text:
-        parts.append(astro_text)
+        _astro_state_file = os.path.join(_DATA_DIR, "monitor_astro_sent.json")
+        _astro_state = load_json_file(_astro_state_file, default={})
+        _today_str = now_local.strftime("%Y-%m-%d")
+        if _astro_state.get("sent_date") != _today_str:
+            parts.append(astro_text)
+            _astro_state["sent_date"] = _today_str
+            save_json_file(_astro_state_file, _astro_state)
+        else:
+            print(f"astro: вже надіслано сьогодні ({_today_str}), пропускаємо")
 
     # Блок 7: AI-підсумок
     if summary_text:
