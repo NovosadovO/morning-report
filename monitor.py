@@ -3575,6 +3575,14 @@ def main():
                         parts.append({"photo": _cchart, "caption": "📈 Тренд 30д | BTC ETH AVAX ONDO"})
                 except Exception as _e_cc:
                     print(f"crypto chart error: {_e_cc}")
+
+            # ── ETF / ІНДЕКСИ ── завжди після крипто
+            try:
+                _etf_block = _get_etf_prices()
+                if _etf_block:
+                    parts.append(_etf_block)
+            except Exception as _e_etf:
+                print(f"etf block error: {_e_etf}")
         except Exception as _e_cb:
             parts.append(prices_text)
             print(f"crypto block error: {_e_cb}")

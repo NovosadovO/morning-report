@@ -98,6 +98,24 @@ def _get_access_token():
     return data["access_token"]
 
 
+_STRAVA_CACHE_KEY = "strava_last_activity.json"
+
+def _save_activity_cache(data: dict):
+    """Зберегти останню активність в локальний кеш."""
+    try:
+        import storage as _st
+        _st.save(_STRAVA_CACHE_KEY, data)
+    except Exception:
+        pass
+
+def _load_activity_cache() -> dict | None:
+    """Завантажити кешовану активність."""
+    try:
+        import storage as _st
+        return _st.load(_STRAVA_CACHE_KEY)
+    except Exception:
+        return None
+
 def get_last_activity():
     """Повертає dict з даними останнього тренування або None"""
     try:
@@ -112,7 +130,7 @@ def get_last_activity():
         activities = r.json()
 
         if not activities:
-            return None
+            return _load_activity_cache()
 
         a = activities[0]
         distance_km = a["distance"] / 1000
@@ -145,7 +163,7 @@ def get_last_activity():
             days_ago = (now.date() - start_dt.date()).days
             when = f"{days_ago} дн. тому"
 
-        return {
+        result = {
             "name": a.get("name", "Тренування"),
             "type": a.get("type", "Run"),
             "distance_km": round(distance_km, 2),
@@ -157,9 +175,15 @@ def get_last_activity():
             "hr": a.get("average_heartrate"),
             "kudos": a.get("kudos_count", 0),
         }
+        _save_activity_cache(result)
+        return result
     except Exception as e:
         print(f"Strava get_last_activity error: {e}")
-        return None
+        # Fallback: кешовані дані
+        cached = _load_activity_cache()
+        if cached:
+            print("Strava: using cached last activity")
+        return cached
 
 
 def get_week_stats():
