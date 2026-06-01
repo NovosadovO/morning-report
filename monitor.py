@@ -218,21 +218,36 @@ def _send_telegram_chunk(text: str) -> bool:
     except urllib.error.HTTPError as e:
         err_body = e.read().decode()
         print(f"Telegram HTTP error: {e.code} {err_body}")
-        # Спроба 2: без parse_mode (plain text) якщо HTML зламаний
+        # Спроба 2: екрануємо небезпечні символи і пробуємо ще раз
         if e.code == 400 and "parse" in err_body.lower():
             try:
                 import re as _re_tg
-                clean = _re_tg.sub(r'<[^>]+>', '', text)
+                # Зберігаємо дозволені теги, екрануємо решту < >
+                _allowed = re.compile(r'<(/?(b|i|code|pre|a|s|u)(\s[^>]*)?)>', re.I)
+                def _fix_tag(t):
+                    if _allowed.match(t):
+                        return t
+                    return t.replace('<','&lt;').replace('>','&gt;')
+                fixed = _re_tg.sub(r'<[^>]*>', _fix_tag, text)
                 payload2 = json.dumps({
                     "chat_id": TELEGRAM_CHAT,
-                    "text": clean,
+                    "text": fixed,
+                    "parse_mode": "HTML"
                 }).encode()
                 req2 = urllib.request.Request(url, data=payload2,
                       headers={"Content-Type": "application/json"})
                 with urllib.request.urlopen(req2, timeout=10) as r2:
                     return r2.status == 200
             except Exception as e2:
-                print(f"Telegram fallback error: {e2}")
+                # Остання спроба — plain text
+                try:
+                    clean = re.sub(r'<[^>]+>', '', text)
+                    payload3 = json.dumps({"chat_id": TELEGRAM_CHAT, "text": clean}).encode()
+                    req3 = urllib.request.Request(url, data=payload3, headers={"Content-Type": "application/json"})
+                    with urllib.request.urlopen(req3, timeout=10) as r3:
+                        return r3.status == 200
+                except Exception as e3:
+                    print(f"Telegram fallback error: {e3}")
         return False
     except Exception as e:
         print(f"Telegram error: {e}")
