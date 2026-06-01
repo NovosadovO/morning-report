@@ -3328,152 +3328,316 @@ def main():
             print(f"ai_insight error: {e}")
 
     # ── СКЛАДАЄМО ЗВІТ ────────────────────────────────────────────────────────
-    SEP = "\n┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\n"
+    import re as _re_rep
+    import hashlib as _hsh_rep
 
-    # Динамічний заголовок — різний для кожного слоту
+    _today_rep = now_local.strftime("%Y-%m-%d")
+    _yest_rep  = (now_local - timedelta(days=1)).strftime("%Y-%m-%d")
+
+    def _sparkline(vals, width=10):
+        """Текстовий спарклайн зі значень (list[float|None])."""
+        _chars = "▁▂▃▄▅▆▇█"
+        clean = [v for v in vals if v is not None]
+        if len(clean) < 2:
+            return "─" * width
+        lo, hi = min(clean), max(clean)
+        rng = hi - lo or 1
+        result = ""
+        for v in vals[-width:]:
+            if v is None:
+                result += "·"
+            else:
+                idx = int((v - lo) / rng * (len(_chars) - 1))
+                result += _chars[idx]
+        return result
+
+    def _pct_bar(pct, width=10, fill="█", empty="░"):
+        """Прогресбар від 0..100."""
+        filled = int(pct / 100 * width)
+        return fill * filled + empty * max(0, width - filled)
+
+    # ── Динамічний заголовок ───────────────────────────────────────────────────
     header = _build_report_header(now_local, hour_key, cal_text)
     parts = [header]
 
-    # Блок 1: Погода (завжди)
-    parts.append(weather_text)
-
-    # Блок 2: Трафік (якщо є)
-    if traffic_text:
-        parts.append(traffic_text)
-
-    # Блок 3: Крипто (якщо активований)
-    if prices_text:
-        parts.append(prices_text)
-        # PNG графік цін — тільки о 12:00 і 20:00
-        if now_local.hour in (12, 20):
-            print("[chart] starting crypto chart generation...")
-            try:
-                _cchart_inline = generate_crypto_trend_chart(30)
-                print(f"[chart] crypto generate result: {len(_cchart_inline) if _cchart_inline else None} bytes")
-                if _cchart_inline:
-                    parts.append({"photo": _cchart_inline, "caption": "📈 Тренд 30д | BTC ETH AVAX ONDO"})
-                else:
-                    print("[crypto chart inline] generate returned None")
-            except Exception as _cci_e:
-                print(f"[crypto chart inline] error: {_cci_e}")
-
-    # Блок 4: Календар (ЗАВЖДИ — основа всього)
-    parts.append(cal_text)
-
-    # Блок 4b: Здоров'я — вага, кроки, ліки
+    # ── Блок 1: ПОГОДА — розширений ───────────────────────────────────────────
     try:
-        _health_lines = ["🏥 <b>ЗДОРОВ'Я</b>"]
-        _today_h = now_local.strftime("%Y-%m-%d")
-        _yest_h  = (now_local - __import__("datetime").timedelta(days=1)).strftime("%Y-%m-%d")
+        _wl = weather_text.lower() if weather_text else ""
+        # Іконка умов
+        if "гроза" in _wl: _w_icon = "⛈️"
+        elif "злива" in _wl or "сильний дощ" in _wl: _w_icon = "🌧️"
+        elif "дощ" in _wl: _w_icon = "🌦️"
+        elif "сніг" in _wl: _w_icon = "❄️"
+        elif "туман" in _wl or "мряка" in _wl: _w_icon = "🌫️"
+        elif "ясно" in _wl or "сонячно" in _wl: _w_icon = "☀️"
+        elif "хмарно" in _wl: _w_icon = "☁️"
+        else: _w_icon = "🌤️"
 
-        # Вага
+        _temp_m  = _re_rep.search(r"([-−]?\d+)[°℃C]", weather_text or "")
+        _feel_m  = _re_rep.search(r"відчув[^\d]*([-−]?\d+)", weather_text or "", _re_rep.I)
+        _hum_m   = _re_rep.search(r"вологість[:\s]*(\d+)%", weather_text or "", _re_rep.I)
+        _wind_m  = _re_rep.search(r"вітер[:\s]*([\d.]+)", weather_text or "", _re_rep.I)
+        _uv_m    = _re_rep.search(r"УФ[^:]*:\s*(\d+)", weather_text or "", _re_rep.I)
+        _rain_m  = _re_rep.search(r"([\d.]+)\s*мм", weather_text or "")
+
+        _temp  = int(_temp_m.group(1).replace("−","-")) if _temp_m else None
+        _feel  = int(_feel_m.group(1).replace("−","-")) if _feel_m else _temp
+        _hum   = int(_hum_m.group(1)) if _hum_m else None
+        _wind  = float(_wind_m.group(1)) if _wind_m else None
+        _uv    = int(_uv_m.group(1)) if _uv_m else None
+        _rain  = float(_rain_m.group(1)) if _rain_m else None
+
+        # Комфортний індекс
+        _comfort = ""
+        if _temp is not None:
+            if _temp < 0: _comfort = "🥶 Мороз — одягайся тепло!"
+            elif _temp < 8: _comfort = "🧥 Прохолодно — куртка обов'язкова"
+            elif _temp < 16: _comfort = "😊 Свіжо — легка куртка"
+            elif _temp < 24: _comfort = "👌 Комфортно — ідеально для прогулянки"
+            elif _temp < 30: _comfort = "☀️ Тепло — сонцезахисний крем"
+            else: _comfort = "🥵 Спека — пий більше води!"
+
+        # Поради
+        _tips = []
+        if "дощ" in _wl or "злива" in _wl: _tips.append("☂️ парасолька")
+        if "гроза" in _wl: _tips.append("🏠 краще вдома")
+        if _wind and _wind > 10: _tips.append(f"💨 вітер {_wind:.0f} м/с")
+        if _uv and _uv >= 6: _tips.append(f"🕶️ УФ {_uv} — захист")
+        if _rain and _rain > 5: _tips.append(f"🌧️ {_rain:.1f} мм дощу")
+
+        # Вологість — прогресбар
+        _hum_bar = _pct_bar(_hum, 8) if _hum else ""
+
+        _weather_block = f"{'─'*28}\n"
+        _weather_block += f"{_w_icon} <b>ПОГОДА — Košice</b>\n"
+        if _temp is not None:
+            _feel_str = f"  <i>(відчув. {_feel}°)</i>" if _feel != _temp else ""
+            _weather_block += f"🌡️ <b>{_temp}°C</b>{_feel_str}"
+            if _hum: _weather_block += f"   💧 {_hum}% {_hum_bar}"
+            if _wind: _weather_block += f"   🌬️ {_wind:.0f} м/с"
+            _weather_block += "\n"
+        if _comfort:
+            _weather_block += f"<i>{_comfort}</i>\n"
+        if _tips:
+            _weather_block += f"<i>{'  ·  '.join(_tips)}</i>\n"
+
+        # Прогноз на сьогодні — витягуємо рядки з годинами
+        _forecast_lines = _re_rep.findall(r"\d{2}:\d{2}[^\n]+", weather_text or "")
+        _today_fc = [l for l in _forecast_lines if "00:" not in l][:5]
+        if _today_fc:
+            _weather_block += "\n📅 <b>Прогноз сьогодні:</b>\n"
+            _weather_block += "  ".join(_today_fc[:4])
+
+        parts.append(_weather_block)
+    except Exception as _e_wb:
+        parts.append(weather_text)
+        print(f"weather block format error: {_e_wb}")
+
+    # ── Блок 2: ТРАФІК ────────────────────────────────────────────────────────
+    if traffic_text:
+        parts.append(f"{'─'*28}\n{traffic_text}")
+
+    # ── Блок 3: КРИПТО — спарклайн + ринок ───────────────────────────────────
+    if prices_text:
         try:
-            import storage as _st_h
+            import storage as _st_c
+            _pdata = _st_c.load("prices_history.json") or {}
+
+            _up = prices_text.count("🔺")
+            _dn = prices_text.count("🔻")
+            if _up > _dn + 1:   _mkt = "🟢 БИЧАЧИЙ 🚀"
+            elif _dn > _up + 1: _mkt = "🔴 ВЕДМЕЖИЙ 📉"
+            else:                _mkt = "🟡 НЕЙТРАЛЬНИЙ 〰️"
+
+            _crypto_block = f"{'─'*28}\n💰 <b>КРИПТО</b>  ·  {_mkt}\n"
+
+            for _coin in ["BTC", "ETH", "AVAX", "ONDO"]:
+                _row_m = _re_rep.search(r"[^\n]*\b" + _coin + r"\b[^\n]*", prices_text)
+                if not _row_m: continue
+                _row = _row_m.group(0)
+                _pr_m  = _re_rep.search(r"\$([\d,]+(?:\.\d+)?)", _row)
+                _pct_m = _re_rep.search(r"([+\-−][\d.]+)%", _row)
+                if not _pr_m: continue
+                _price_str = _pr_m.group(1)
+                _pct_val = float(_pct_m.group(1).replace("−","-")) if _pct_m else 0
+                _arrow = "🔺" if _pct_val > 0.1 else ("🔻" if _pct_val < -0.1 else "➡️")
+                _pct_str = (("+" if _pct_val > 0 else "") + f"{_pct_val:.2f}%") if _pct_m else ""
+
+                # Спарклайн з history
+                _hist = _pdata.get(_coin, [])
+                _spark = ""
+                if len(_hist) >= 4:
+                    _spark = f"  <code>{_sparkline(_hist[-12:], 8)}</code>"
+
+                _crypto_block += f"{_arrow} <b>{_coin}</b> <code>${_price_str}</code>  {_pct_str}{_spark}\n"
+
+            parts.append(_crypto_block.rstrip())
+
+            # Графік крипто — кожні 4 год (o 8, 12, 16, 20)
+            if now_local.hour in (8, 12, 16, 20) and now_local.minute < 35:
+                try:
+                    _cchart = generate_crypto_trend_chart(30)
+                    if _cchart:
+                        parts.append({"photo": _cchart, "caption": "📈 Тренд 30д | BTC ETH AVAX ONDO"})
+                except Exception as _e_cc:
+                    print(f"crypto chart error: {_e_cc}")
+        except Exception as _e_cb:
+            parts.append(prices_text)
+            print(f"crypto block error: {_e_cb}")
+
+    # ── Блок 4: КАЛЕНДАР ──────────────────────────────────────────────────────
+    parts.append(f"{'─'*28}\n{cal_text}")
+
+    # ── Блок 5: ЗДОРОВ'Я — з прогресбарами і спарклайном ─────────────────────
+    try:
+        _health_lines = [f"{'─'*28}\n💪 <b>ЗДОРОВ'Я</b>"]
+        import storage as _st_h
+
+        # Вага — спарклайн 14 днів
+        try:
             _wd = _st_h.load("weight_data.json") or _st_h.load_weight() or {}
             if _wd:
-                _recent_keys = sorted(_wd.keys())[-7:]
-                _recent_vals = [_wd[d] for d in _recent_keys if _wd.get(d)]
-                _last_w = _wd.get(_today_h) or (_wd.get(_recent_keys[-1]) if _recent_keys else None)
+                _w_keys = sorted(_wd.keys())[-14:]
+                _w_vals = [_wd.get(k) for k in _w_keys]
+                _last_w = next((v for v in reversed(_w_vals) if v), None)
                 if _last_w:
                     _diff_goal = round(_last_w - 78.0, 1)
-                    _goal_str = f"до 78 кг: -{_diff_goal} кг" if _diff_goal > 0 else "🏆 ціль досягнута!"
-                    _trend_str = ""
-                    if len(_recent_vals) >= 2:
-                        _delta = round(_recent_vals[-1] - _recent_vals[-2], 1)
-                        _trend_str = f"  ({'↗️' if _delta > 0 else '↘️'}{abs(_delta):+.1f} кг)"
-                    _health_lines.append(f"⚖️ Вага: <b>{_last_w} кг</b>{_trend_str}  <i>{_goal_str}</i>")
-        except Exception as _e_w:
-            pass
+                    _goal_pct  = max(0, min(100, int((1 - _diff_goal / 10) * 100)))
+                    _goal_bar  = _pct_bar(_goal_pct, 10)
+                    _spark_w   = _sparkline(_w_vals, 10)
 
-        # Кроки (вчора)
+                    # Дельта від попереднього
+                    _prev_vals = [v for v in _w_vals if v]
+                    _delta_w = round(_prev_vals[-1] - _prev_vals[-2], 1) if len(_prev_vals) >= 2 else 0
+                    _d_icon = "📈" if _delta_w > 0.1 else ("📉" if _delta_w < -0.1 else "➡️")
+
+                    if _diff_goal > 0:
+                        _goal_str = f"до 78 кг: <b>{_diff_goal:+.1f} кг</b>"
+                    else:
+                        _goal_str = "🏆 <b>Ціль 78 кг досягнута!</b>"
+
+                    _health_lines.append(
+                        f"⚖️ <b>{_last_w} кг</b>  {_d_icon} {_delta_w:+.1f} кг  |  {_goal_str}\n"
+                        f"   <code>{_spark_w}</code>  прогрес: {_goal_bar} {_goal_pct}%"
+                    )
+        except Exception as _e_w: pass
+
+        # Кроки — прогресбар до цілі 8000
         try:
             from steps import load_steps_data as _lsd
             _sdata = _lsd()
-            _yest_steps = _sdata.get(_yest_h, {})
-            if _yest_steps:
-                _st = _yest_steps.get("steps", 0)
-                _km = _yest_steps.get("distance_m", 0) / 1000
-                _bar = "▓" * min(10, int(_st / 1000)) + "░" * max(0, 10 - int(_st / 1000))
-                _goal_icon = "✅" if _st >= 8000 else ("🟡" if _st >= 5000 else "🔴")
-                _health_lines.append(f"👟 Кроки вчора: <b>{_st:,}</b>  {_goal_icon}  {_bar}  ({_km:.1f} км)")
-        except Exception:
-            pass
+            _st_data = _sdata.get(_yest_rep, {})
+            if _st_data:
+                _st_n = _st_data.get("steps", 0)
+                _km_n = _st_data.get("distance_m", 0) / 1000
+                _st_pct = min(100, int(_st_n / 8000 * 100))
+                _st_bar = _pct_bar(_st_pct, 10)
+                _st_icon = "✅" if _st_n >= 8000 else ("🟡" if _st_n >= 5000 else "🔴")
+                # Спарклайн кроків за 7 днів
+                _step_keys = sorted(_sdata.keys())[-7:]
+                _step_spark = _sparkline([(_sdata.get(k) or {}).get("steps") for k in _step_keys], 7)
+                _health_lines.append(
+                    f"👟 Кроки вчора: <b>{_st_n:,}</b> {_st_icon}  ({_km_n:.1f} км)\n"
+                    f"   {_st_bar} {_st_pct}%  <code>{_step_spark}</code>"
+                )
+        except Exception: pass
 
         # Ліки
         try:
             from storage import load_meds as _lmeds_h
             _meds_db = _lmeds_h()
-            _taken = _meds_db.get(_today_h)
+            _taken = _meds_db.get(_today_rep)
             if _taken:
-                _health_lines.append("💊 Armolopid: ✅ прийнято")
+                _health_lines.append("💊 Armolopid: ✅ <b>прийнято</b>")
             else:
-                _health_lines.append("💊 Armolopid: ⬜ не відмічено — прийняв?")
-        except Exception:
-            pass
+                _health_lines.append("💊 Armolopid: ❌ <b>не відмічено</b> — прийняв?")
+        except Exception: pass
+
+        # Звички сьогодні — рядок іконок
+        try:
+            from storage import load_habits as _lhab
+            _habs = _lhab()
+            _hentry = _habs.get(_today_rep, {}) or {}
+            _HLIST = [("shower","🚿"),("run","🏃"),("water","💧"),("tea","🍵"),("sauna","🧖")]
+            _hab_line = "  ".join(
+                f"{ico}{'✅' if _hentry.get(k) is True else '⬜'}"
+                for k, ico in _HLIST
+            )
+            _done_h = sum(1 for k,_ in _HLIST if _hentry.get(k) is True)
+            _health_lines.append(f"🎯 Звички: {_hab_line}  <b>{_done_h}/5</b>")
+        except Exception: pass
 
         if len(_health_lines) > 1:
             parts.append("\n".join(_health_lines))
-            # PNG графік ваги — тільки о 12:00 і 20:00
-            if now_local.hour in (12, 20):
-                print("[chart] starting weight chart generation...")
+
+            # Графік ваги — кожні 6 год
+            if now_local.hour in (6, 12, 18, 21) and now_local.minute < 35:
                 try:
-                    _wchart_inline = generate_weight_trend_chart(60)
-                    print(f"[chart] weight generate result: {len(_wchart_inline) if _wchart_inline else None} bytes")
-                    if _wchart_inline:
-                        parts.append({"photo": _wchart_inline, "caption": "⚖️ Тренд ваги 30д"})
-                    else:
-                        print("[weight chart inline] generate returned None")
-                except Exception as _wci_e:
-                    print(f"[weight chart inline] error: {_wci_e}")
+                    _wchart = generate_weight_trend_chart(60)
+                    if _wchart:
+                        parts.append({"photo": _wchart, "caption": "⚖️ Тренд ваги 60д"})
+                except Exception as _e_wc:
+                    print(f"weight chart error: {_e_wc}")
     except Exception as _e_health:
         print(f"health block error: {_e_health}")
 
-    # Блок Strava — біг
+    # ── Блок 6: STRAVA ────────────────────────────────────────────────────────
     try:
         import sys as _sys_strava
         _sys_strava.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         from strava import format_strava_block
         _strava_text = format_strava_block()
         if _strava_text:
-            parts.append(_strava_text)
+            parts.append(f"{'─'*28}\n{_strava_text}")
     except Exception as _e_strava:
         print(f"strava block error: {_e_strava}")
 
-    # Блок Курс валют — кожен звіт
+    # ── Блок 7: КУРС ВАЛЮТ ────────────────────────────────────────────────────
     try:
         _currency_text = get_currency_rates()
         if _currency_text:
-            parts.append(_currency_text)
+            parts.append(f"{'─'*28}\n{_currency_text}")
     except Exception as _e_curr:
         print(f"currency rates error: {_e_curr}")
 
-    # Блок Портфель — коротко в кожному звіті
+    # ── Блок 8: ПОРТФЕЛЬ — з динамікою ───────────────────────────────────────
     try:
         import sys as _sys_pf
         _sys_pf.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         from portfolio import format_portfolio_block
         _pf_text = format_portfolio_block(short=True)
         if _pf_text:
-            parts.append(_pf_text)
+            # Збагачуємо заголовок портфелю
+            _pf_lines = _pf_text.split("\n")
+            _pf_header = f"{'─'*28}\n💼 <b>ПОРТФЕЛЬ</b>"
+            # шукаємо суму і P&L
+            _total_m = _re_rep.search(r"\$([\d,]+)", _pf_text)
+            _pnl_m   = _re_rep.search(r"P&L[:\s]*([+\-]?\$[\d,]+)", _pf_text, _re_rep.I)
+            _day_m   = _re_rep.search(r"За 24г[:\s]*([+\-]?\$[\d,]+)", _pf_text, _re_rep.I)
+            if _total_m:
+                _pf_header += f"  💰 <b>${_total_m.group(1)}</b>"
+            if _day_m:
+                _day_v = _day_m.group(1)
+                _day_icon = "📈" if "+" in _day_v else "📉"
+                _pf_header += f"  {_day_icon} {_day_v} сьогодні"
+            parts.append(_pf_header + "\n" + "\n".join(_pf_lines[1:] if len(_pf_lines) > 1 else _pf_lines))
     except Exception as _e_pf:
         print(f"portfolio block error: {_e_pf}")
 
-    # Міні-дашборд — у КОЖНОМУ 30-хв звіті
+    # ── Міні-дашборд — КОЖЕН звіт ─────────────────────────────────────────────
     try:
         from charts import plot_mini_dashboard as _plot_mini
-        _today_str = now_local.strftime("%Y-%m-%d")
-        _mini_chart = _plot_mini(_today_str)
+        _mini_chart = _plot_mini(_today_rep)
         if _mini_chart:
-            parts.append({"photo": _mini_chart, "caption": f"📊 Вага + звички — {now_local.strftime('%d.%m %H:%M')}"})
+            parts.append({"photo": _mini_chart, "caption": f"📊 Вага + звички  {now_local.strftime('%d.%m %H:%M')}"})
     except Exception as _e_mini:
         print(f"mini dashboard chart error: {_e_mini}")
 
-    # Повний дашборд дня — тільки о 19/20:xx
+    # ── Повний дашборд дня — тільки о 19/20:xx ────────────────────────────────
     if now_local.hour in (19, 20):
         try:
             from charts import plot_day_dashboard as _plot_dd
-            _today_str = now_local.strftime("%Y-%m-%d")
-            _dchart = _plot_dd(_today_str)
+            _dchart = _plot_dd(_today_rep)
             if _dchart:
                 parts.append({"photo": _dchart, "caption": f"📊 Повний дашборд дня — {now_local.strftime('%d.%m')}"})
         except Exception as _e_dd:
