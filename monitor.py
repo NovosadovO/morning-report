@@ -204,6 +204,7 @@ IGNORE_SUBJECTS = list(_SPAM_SUBJECTS)
 def _send_telegram_chunk(text: str) -> bool:
     """Надсилає одне повідомлення (до 4090 символів)."""
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+    # Спроба 1: з HTML
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,
         "text": text,
@@ -215,7 +216,23 @@ def _send_telegram_chunk(text: str) -> bool:
         with urllib.request.urlopen(req, timeout=10) as r:
             return r.status == 200
     except urllib.error.HTTPError as e:
-        print(f"Telegram HTTP error: {e.code} {e.read().decode()}")
+        err_body = e.read().decode()
+        print(f"Telegram HTTP error: {e.code} {err_body}")
+        # Спроба 2: без parse_mode (plain text) якщо HTML зламаний
+        if e.code == 400 and "parse" in err_body.lower():
+            try:
+                import re as _re_tg
+                clean = _re_tg.sub(r'<[^>]+>', '', text)
+                payload2 = json.dumps({
+                    "chat_id": TELEGRAM_CHAT,
+                    "text": clean,
+                }).encode()
+                req2 = urllib.request.Request(url, data=payload2,
+                      headers={"Content-Type": "application/json"})
+                with urllib.request.urlopen(req2, timeout=10) as r2:
+                    return r2.status == 200
+            except Exception as e2:
+                print(f"Telegram fallback error: {e2}")
         return False
     except Exception as e:
         print(f"Telegram error: {e}")
@@ -3247,7 +3264,8 @@ def main():
     try:
         summary_text = get_summary(prices_text or "", weather_raw if 'weather_raw' in dir() else weather_text, cal_text, email_text, astro_text)
     except Exception as e:
-        print(f"get_summary error: {e}")
+        import traceback as _tb
+        print(f"get_summary error: {e}\n{_tb.format_exc()}")
         summary_text = ""
 
     # ── КРОК 8: Calendar-aware AI секція (кожен звіт унікальна порада) ───────
