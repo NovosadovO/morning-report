@@ -3391,7 +3391,7 @@ def main():
 
     def _section_header(emoji, title):
         """Красивий заголовок секції."""
-        return f"\n{'═'*28}\n{emoji} <b>{title}</b>\n{'═'*28}"
+        return f"{'═'*28}\n{emoji} <b>{title}</b>\n{'═'*28}"
 
     # ── Динамічний заголовок ───────────────────────────────────────────────────
     header = _build_report_header(now_local, hour_key, cal_text)
@@ -3805,7 +3805,7 @@ def main():
             _time_main.sleep(0.4)
             continue
         # Текстова секція
-        SEP = "\n\n"
+        SEP = "\n"
         candidate = current_msg + (SEP if current_msg else "") + section
         if len(candidate) <= MAX_MSG:
             current_msg = candidate
