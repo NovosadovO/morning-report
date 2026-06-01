@@ -201,19 +201,91 @@ IGNORE_SUBJECTS = list(_SPAM_SUBJECTS)
 
 # ─── HELPERS ──────────────────────────────────────────────────────────────────
 
+def _html_to_markdown(text: str) -> str:
+    """Конвертує HTML теги в MarkdownV2 і екранує спецсимволи."""
+    import re as _re
+
+    # Спочатку витягуємо <code>...</code> блоки — їх не чіпаємо всередині
+    code_blocks = {}
+    def _save_code(m):
+        key = f"\x00CODE{len(code_blocks)}\x00"
+        inner = m.group(1)
+        code_blocks[key] = f"`{inner}`"
+        return key
+    text = _re.sub(r'<code>(.*?)</code>', _save_code, text, flags=_re.DOTALL)
+
+    # <pre>...</pre>
+    def _save_pre(m):
+        key = f"\x00PRE{len(code_blocks)}\x00"
+        inner = m.group(1)
+        code_blocks[key] = f"```\n{inner}\n```"
+        return key
+    text = _re.sub(r'<pre>(.*?)</pre>', _save_pre, text, flags=_re.DOTALL)
+
+    # <a href="...">text</a>
+    text = _re.sub(r'<a\s+href=["\']([^"\']*)["\'][^>]*>(.*?)</a>', r'[\2](\1)', text, flags=_re.I)
+
+    # <b>/<strong> → *...*
+    text = _re.sub(r'<b>(.*?)</b>', r'*\1*', text, flags=_re.I | _re.DOTALL)
+    text = _re.sub(r'<strong>(.*?)</strong>', r'*\1*', text, flags=_re.I | _re.DOTALL)
+
+    # <i>/<em> → _..._
+    text = _re.sub(r'<i>(.*?)</i>', r'_\1_', text, flags=_re.I | _re.DOTALL)
+    text = _re.sub(r'<em>(.*?)</em>', r'_\1_', text, flags=_re.I | _re.DOTALL)
+
+    # <s> → ~...~
+    text = _re.sub(r'<s>(.*?)</s>', r'~\1~', text, flags=_re.I | _re.DOTALL)
+
+    # Прибираємо решту тегів
+    text = _re.sub(r'<[^>]+>', '', text)
+
+    # Розкодуємо HTML entities
+    text = text.replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>').replace('&quot;', '"')
+
+    # Екрануємо спецсимволи MarkdownV2 (крім того що всередині * _ ` ~)
+    # Спецсимволи: _ * [ ] ( ) ~ ` > # + - = | { } . !
+    ESCAPE = r'\_[]()~`>#+=|{}.!'
+    result = []
+    i = 0
+    while i < len(text):
+        c = text[i]
+        if c == '\x00':
+            # Знаходимо кінець ключа
+            end = text.find('\x00', i + 1)
+            if end != -1:
+                key = text[i:end+1]
+                result.append(code_blocks.get(key, key))
+                i = end + 1
+                continue
+        elif c == '*':
+            result.append('*')
+        elif c == '_':
+            result.append('_')
+        elif c == '~':
+            result.append('~')
+        elif c == '[':
+            result.append('[')
+        elif c == ']':
+            result.append(']')
+        elif c == '(':
+            result.append('(')
+        elif c == ')':
+            result.append(')')
+        elif c in r'\`>#+=|{}.!':
+            result.append('\\' + c)
+        elif c == '-':
+            result.append('\\-')
+        else:
+            result.append(c)
+        i += 1
+    return ''.join(result)
+
+
 def _send_telegram_chunk(text: str) -> bool:
-    """Надсилає одне повідомлення (до 4090 символів)."""
+    """Надсилає одне повідомлення з HTML parse_mode."""
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-    print(f"[tg_chunk] len={len(text)} preview={repr(text[:120])}")
-    # Пре-санітайз: екрануємо < > що не є дозволеними тегами
-    _tg_allowed = re.compile(r'<(/?(b|i|code|pre|a|s|u)(\s[^>]*)?)>', re.I)
-    def _sanitize_html(t):
-        def _fix(m):
-            tag = m.group(0)
-            return tag if _tg_allowed.match(tag) else tag.replace('<','&lt;').replace('>','&gt;')
-        return re.sub(r'<[^>]*>', _fix, t)
-    text = _sanitize_html(text)
-    # Спроба 1: з HTML
+    print(f"[tg_chunk] len={len(text)} preview={repr(text[:80])}", flush=True)
+
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,
         "text": text,
@@ -226,40 +298,21 @@ def _send_telegram_chunk(text: str) -> bool:
             return r.status == 200
     except urllib.error.HTTPError as e:
         err_body = e.read().decode()
-        print(f"Telegram HTTP error: {e.code} {err_body}")
-        # Спроба 2: екрануємо небезпечні символи і пробуємо ще раз
-        if e.code == 400 and "parse" in err_body.lower():
-            try:
-                import re as _re_tg
-                # Зберігаємо дозволені теги, екрануємо решту < >
-                _allowed = re.compile(r'<(/?(b|i|code|pre|a|s|u)(\s[^>]*)?)>', re.I)
-                def _fix_tag(t):
-                    if _allowed.match(t):
-                        return t
-                    return t.replace('<','&lt;').replace('>','&gt;')
-                fixed = _re_tg.sub(r'<[^>]*>', _fix_tag, text)
-                payload2 = json.dumps({
-                    "chat_id": TELEGRAM_CHAT,
-                    "text": fixed,
-                    "parse_mode": "HTML"
-                }).encode()
-                req2 = urllib.request.Request(url, data=payload2,
-                      headers={"Content-Type": "application/json"})
-                with urllib.request.urlopen(req2, timeout=10) as r2:
-                    return r2.status == 200
-            except Exception as e2:
-                # Остання спроба — plain text
-                try:
-                    clean = re.sub(r'<[^>]+>', '', text)
-                    payload3 = json.dumps({"chat_id": TELEGRAM_CHAT, "text": clean}).encode()
-                    req3 = urllib.request.Request(url, data=payload3, headers={"Content-Type": "application/json"})
-                    with urllib.request.urlopen(req3, timeout=10) as r3:
-                        return r3.status == 200
-                except Exception as e3:
-                    print(f"Telegram fallback error: {e3}")
+        print(f"[tg_chunk] HTML error: {e.code} {err_body[:300]}", flush=True)
+        # Fallback: plain text (стрипаємо HTML теги)
+        try:
+            import re as _re
+            clean = _re.sub(r'<[^>]+>', '', text).replace('&amp;','&').replace('&lt;','<').replace('&gt;','>')
+            payload2 = json.dumps({"chat_id": TELEGRAM_CHAT, "text": clean}).encode()
+            req2 = urllib.request.Request(url, data=payload2, headers={"Content-Type": "application/json"})
+            with urllib.request.urlopen(req2, timeout=10) as r2:
+                print(f"[tg_chunk] plain fallback OK", flush=True)
+                return r2.status == 200
+        except Exception as e2:
+            print(f"[tg_chunk] plain fallback error: {e2}", flush=True)
         return False
     except Exception as e:
-        print(f"Telegram error: {e}")
+        print(f"[tg_chunk] error: {e}", flush=True)
         return False
 
 
@@ -3452,6 +3505,23 @@ def main():
             _weather_block += "\n📅 <b>Прогноз сьогодні:</b>\n"
             _weather_block += "  ".join(_today_fc[:4])
 
+        # Прогноз на завтра — витягуємо з weather_text
+        if weather_text and "Завтра:" in weather_text:
+            import re as _re_tmr
+            _tmr_match = _re_tmr.search(r"<b>Завтра:</b>[^\n]+", weather_text)
+            if _tmr_match:
+                _weather_block += f"\n\n{_tmr_match.group(0)}"
+            # Погодинний прогноз на завтра — рядок після "Завтра:" через \n
+            _tmr_idx = weather_text.find("Завтра:")
+            if _tmr_idx != -1:
+                _tmr_after = weather_text[_tmr_idx:]
+                _lines_tmr = _tmr_after.split("\n")
+                # Шукаємо рядок з <code>
+                for _tl in _lines_tmr[1:3]:
+                    if "<code>" in _tl and _tl.strip():
+                        _weather_block += f"\n{_tl.strip()}"
+                        break
+
         parts.append(_weather_block)
     except Exception as _e_wb:
         parts.append(weather_text)
@@ -5333,7 +5403,7 @@ def check_day_summary():
     """
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
-    if not (h == 21 and 0 <= m < 5):
+    if not (h == 21 and 0 <= m < 2):
         return
 
     today = now_local.strftime("%Y-%m-%d")
@@ -5345,8 +5415,7 @@ def check_day_summary():
     day_name = DAY_UA[now_local.weekday()]
 
     lines_out = []
-    lines_out.append(f"🌙 <b>ПІДСУМОК ДНЯ — {day_name} {now_local.strftime('%d.%m')}</b>")
-    lines_out.append("━━━━━━━━━━━━━━━━━━━━━━")
+    lines_out.append(f"🌙 <b>ПІДСУМОК ДНЯ — {day_name}, {now_local.strftime('%d.%m')}</b>")
     lines_out.append("")
 
     # ── Звички з візуалізацією ───────────────────────────────────────────────
@@ -5531,8 +5600,6 @@ def check_day_summary():
             lines_out.append("")
     except Exception as e:
         print(f"day summary AI error: {e}")
-
-    lines_out.append("━━━━━━━━━━━━━━━━━━━━━━")
 
     # Коуч-фраза залежно від результату
     if pct == 100:
