@@ -2390,7 +2390,7 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
                 lines_fb.append(f"{k}: {v}")
         ai_summary = "\n".join(lines_fb)
 
-    header = "━━━━━━━━━━━━━━━━━━━━━━\n🗂 <b>ПІДСУМОК</b>\n━━━━━━━━━━━━━━━━━━━━━━"
+    header = "🗂 <b>ПІДСУМОК</b>"
     return f"{header}\n\n{ai_summary}"
 
 
@@ -3866,7 +3866,7 @@ def main():
             _time_main.sleep(0.4)
             continue
         # Текстова секція
-        SEP = "\n"
+        SEP = "\n\n"
         candidate = current_msg + (SEP if current_msg else "") + section
         if len(candidate) <= MAX_MSG:
             current_msg = candidate
@@ -4965,7 +4965,6 @@ def check_weekly_habit_stats():
 
         header_row = "  " + " ".join(f"{d:>2}" for d in day_labels)
         lines_out = []
-        lines_out.append("━━━━━━━━━━━━━━━━━━━━━━")
         lines_out.append(f"📊 <b>ТИЖНЕВИЙ ДАШБОРД</b>")
         lines_out.append(f"<code>{header_row}</code>")
         lines_out.append("")
@@ -5066,7 +5065,6 @@ def check_weekly_habit_stats():
             except Exception as e:
                 print(f"habit stats AI error: {e}")
 
-        lines_out.append("━━━━━━━━━━━━━━━━━━━━━━")
         lines_out.append("💪 Новий тиждень — новий шанс!")
 
         send_telegram("\n".join(lines_out))
@@ -5739,9 +5737,7 @@ def check_weight_reminder():
             return
 
         msg = (
-            "━━━━━━━━━━━━━━━━━━━━━━\n"
-            "⚖️ <b>ЧАС ЗВАЖИТИСЬ</b>\n"
-            "━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            "⚖️ <b>ЧАС ЗВАЖИТИСЬ</b>\n\n"
             "Зваж себе зараз і запиши в Apple Health.\n\n"
             "Потім надішли мені свою вагу, наприклад:\n"
             "<code>82.5</code>"
@@ -7175,7 +7171,6 @@ def check_crypto_morning():
 
         lines_out = []
         lines_out.append(f"💹 <b>КРИПТО ДАШБОРД</b> · {today[5:]}")
-        lines_out.append("━━━━━━━━━━━━━━━━━━━━━━")
 
         summary_parts = []
         for sym, cg_id in coins_map:
@@ -7243,7 +7238,6 @@ def check_crypto_morning():
                 print(f"crypto morning AI error: {e}")
 
         lines_out.append("")
-        lines_out.append("━━━━━━━━━━━━━━━━━━━━━━")
 
         send_telegram("\n".join(lines_out))
         print(f"Crypto morning dashboard sent")
@@ -7627,7 +7621,6 @@ def check_friday_recap():
 
         lines_out = [
             f"🎉 <b>КІНЕЦЬ ТИЖНЯ — П'ятниця!</b>",
-            f"━━━━━━━━━━━━━━━━━━━━━━",
             f"",
         ]
 
@@ -7677,7 +7670,6 @@ def check_friday_recap():
             except Exception as e:
                 print(f"friday recap AI error: {e}")
 
-        lines_out.append("━━━━━━━━━━━━━━━━━━━━━━")
         lines_out.append("🎊 Хороших вихідних, Олеже!")
 
         send_telegram("\n".join(lines_out))
@@ -7745,7 +7737,6 @@ def check_weight_trend_alert():
 
         send_telegram(
             f"⚠️ <b>Вага зростає {rising_days} дні поспіль!</b>\n"
-            f"━━━━━━━━━━━━━━━━\n"
             f"<code>{''.join(bars)}</code>  ↗️ +{total_rise} кг\n"
             f"Зараз: <b>{w_vals[-1]} кг</b>  |  До 78 кг: -{to_goal}\n\n"
             f"🔍 Можливі причини:\n"
