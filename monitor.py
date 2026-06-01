@@ -3769,6 +3769,7 @@ def main():
             _time_main.sleep(0.4)
             continue
         # Текстова секція
+        SEP = "\n\n"
         candidate = current_msg + (SEP if current_msg else "") + section
         if len(candidate) <= MAX_MSG:
             current_msg = candidate
