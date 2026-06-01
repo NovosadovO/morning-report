@@ -1311,9 +1311,9 @@ def get_emails():
 
         # Заголовок блоку
         if unread_count > 0:
-            header = f"\n{'═'*28}\n📬 <b>ПОШТА</b>  🔴 {unread_count} непрочитаних\n{'═'*28}"
+            header = f"📬 <b>ПОШТА</b>  🔴 {unread_count} непрочитаних"
         else:
-            header = f"\n{'═'*28}\n📬 <b>ПОШТА</b>\n{'═'*28}"
+            header = f"📬 <b>ПОШТА</b>"
 
         if not primary:
             return header + "\n\n✅ Нових листів немає"
@@ -2486,53 +2486,32 @@ def _build_report_header(now_local, slot_key, cal_events_raw):
     _period_icon = {"morning": "🌅", "midday": "☀️", "afternoon": "🌆", "evening": "🌙", "night": "🌃"}[period]
     _city_icon = "🏙" if not is_weekend else "🏖"
 
-    # 12 різних стилів заголовку
+    # 12 стилів заголовку — без ліній, чистий текст
     headers = [
-        # 0 — класичний рамковий
-        f"┌────────────────────────────┐\n"
-        f"│ {_period_icon} <b>{time_str}</b>  ·  {date_str} ({weekday_ua}) │\n"
-        f"└────────────────────────────┘\n"
-        f"<i>{_vibe}</i>{cal_hint}",
-        # 1 — динамічний з вібою
-        f"⚡ <b>ЗВІТ {time_str}</b>  ·  {weekday_ua} {date_str}\n"
-        f"<i>{_vibe}</i>\n"
-        f"{'─' * 30}{cal_hint}",
-        # 2 — з контекстом дня
-        f"🔔 <b>{time_str} — {'Вихідний 🎉' if is_weekend else weekday_full.capitalize()}</b>\n"
-        f"<i>{_vibe}</i>{cal_hint}",
-        # 3 — мінімалістичний
-        f"{_period_icon} <b>{time_str}  |  {date_str}</b>\n"
-        f"<i>{_vibe}</i>\n"
-        f"<code>{'━'*26}</code>{cal_hint}",
-        # 4 — моніторинг стиль
-        f"📡 <b>МОНІТОРИНГ</b>  {time_str} — {weekday_ua}\n"
-        f"{'🎉 Вихідний!' if is_weekend else '💼 Робочий день'}\n"
-        f"<i>{_vibe}</i>{cal_hint}",
-        # 5 — з містом
-        f"{_city_icon} <b>Кошіце, {time_str}</b>  ·  {date_str}\n"
-        f"<i>{_vibe}</i>{cal_hint}\n"
-        f"<code>{'·'*28}</code>",
-        # 6 — повний день
-        f"🗓 <b>{weekday_full.upper()}, {date_str}</b>\n"
-        f"🕐 {time_str}  ·  {_vibe}{cal_hint}",
-        # 7 — дашборд стиль
-        f"📊 <b>ДАШБОРД  {time_str}</b>  ·  {date_str}\n"
-        f"{'═' * 22}\n"
-        f"<i>{_vibe}</i>{cal_hint}",
-        # 8 — оновлення стиль
-        f"⏱ <b>Оновлення {time_str}</b>  {_period_icon}\n"
-        f"{weekday_full.capitalize()} · <i>{_vibe}</i>{cal_hint}",
-        # 9 — пунктирний
-        f"🔵 <b>{time_str}  ·  {weekday_ua} {date_str}</b>\n"
-        f"<code>• • • • • • • • • • • •</code>\n"
-        f"<i>{_vibe}</i>{cal_hint}",
-        # 10 — з іконкою доби і вібою
-        f"{_period_icon} <b>{time_str}  ·  {weekday_ua}</b>  {date_str}\n"
-        f"<i>{_vibe}</i>{cal_hint}",
-        # 11 — енергійний
-        f"🚀 <b>{time_str}</b>  {date_str} ({weekday_ua})\n"
-        f"<i>{_vibe}</i>\n"
-        f"{'▬' * 22}{cal_hint}",
+        # 0
+        f"{_period_icon} <b>{time_str}  ·  {date_str} {weekday_ua}</b>\n<i>{_vibe}</i>{cal_hint}",
+        # 1
+        f"⚡ <b>ЗВІТ {time_str}</b>  ·  {weekday_ua} {date_str}\n<i>{_vibe}</i>{cal_hint}",
+        # 2
+        f"🔔 <b>{time_str} — {'Вихідний 🎉' if is_weekend else weekday_full.capitalize()}</b>\n<i>{_vibe}</i>{cal_hint}",
+        # 3
+        f"{_period_icon} <b>{time_str}  ·  {date_str}</b>\n<i>{_vibe}</i>{cal_hint}",
+        # 4
+        f"📡 <b>{time_str}</b>  {'🎉 Вихідний!' if is_weekend else '💼 ' + weekday_full.capitalize()}\n<i>{_vibe}</i>{cal_hint}",
+        # 5
+        f"{_city_icon} <b>Кошіце  {time_str}</b>  ·  {date_str}\n<i>{_vibe}</i>{cal_hint}",
+        # 6
+        f"🗓 <b>{weekday_full.upper()}  {date_str}</b>  🕐 {time_str}\n<i>{_vibe}</i>{cal_hint}",
+        # 7
+        f"📊 <b>ДАШБОРД  {time_str}</b>  ·  {date_str}\n<i>{_vibe}</i>{cal_hint}",
+        # 8
+        f"⏱ <b>{time_str}</b>  {_period_icon}  {weekday_full.capitalize()}\n<i>{_vibe}</i>{cal_hint}",
+        # 9
+        f"🔵 <b>{time_str}  ·  {weekday_ua} {date_str}</b>\n<i>{_vibe}</i>{cal_hint}",
+        # 10
+        f"{_period_icon} <b>{time_str}  ·  {weekday_ua}</b>  {date_str}\n<i>{_vibe}</i>{cal_hint}",
+        # 11
+        f"🚀 <b>{time_str}  {date_str}</b>  ({weekday_ua})\n<i>{_vibe}</i>{cal_hint}",
     ]
 
     return headers[style_idx]
@@ -3399,8 +3378,8 @@ def main():
         return fill * filled + empty * max(0, width - filled)
 
     def _section_header(emoji, title):
-        """Красивий заголовок секції."""
-        return f"{'═'*28}\n{emoji} <b>{title}</b>\n{'═'*28}"
+        """Заголовок секції — жирний, без ліній."""
+        return f"{emoji} <b>{title}</b>"
 
     # ── Динамічний заголовок ───────────────────────────────────────────────────
     header = _build_report_header(now_local, hour_key, cal_text)
