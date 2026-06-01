@@ -204,6 +204,15 @@ IGNORE_SUBJECTS = list(_SPAM_SUBJECTS)
 def _send_telegram_chunk(text: str) -> bool:
     """Надсилає одне повідомлення (до 4090 символів)."""
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+    print(f"[tg_chunk] len={len(text)} preview={repr(text[:120])}")
+    # Пре-санітайз: екрануємо < > що не є дозволеними тегами
+    _tg_allowed = re.compile(r'<(/?(b|i|code|pre|a|s|u)(\s[^>]*)?)>', re.I)
+    def _sanitize_html(t):
+        def _fix(m):
+            tag = m.group(0)
+            return tag if _tg_allowed.match(tag) else tag.replace('<','&lt;').replace('>','&gt;')
+        return re.sub(r'<[^>]*>', _fix, t)
+    text = _sanitize_html(text)
     # Спроба 1: з HTML
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,
