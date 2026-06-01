@@ -146,7 +146,18 @@ def run_monitor_loop():
         if m == 0 or m == 30:
             print(f"\n[{now.strftime('%Y-%m-%d %H:%M')} UTC] Running monitor (local {now_local.strftime('%H:%M')})...", flush=True)
             try:
-                subprocess.run([sys.executable, "monitor.py"], timeout=120)
+                result = subprocess.run(
+                    [sys.executable, "monitor.py"],
+                    timeout=300,
+                    capture_output=True, text=True
+                )
+                if result.stdout:
+                    print(f"[monitor stdout] {result.stdout[-2000:]}", flush=True)
+                if result.stderr:
+                    print(f"[monitor stderr] {result.stderr[-2000:]}", flush=True)
+                print(f"[monitor] exit code: {result.returncode}", flush=True)
+            except subprocess.TimeoutExpired:
+                print(f"Monitor TIMEOUT after 300s", flush=True)
             except Exception as e:
                 print(f"Monitor error: {e}", flush=True)
             # Після запуску чекаємо 60с щоб не запустити двічі в ту ж хвилину
