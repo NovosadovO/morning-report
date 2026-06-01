@@ -16,8 +16,8 @@
   },
   "mercury__mars__90": {
     "orb": 1.5,
-    "sent": true,
-    "event": "enter"
+    "sent": false,
+    "exact_sent": false
   },
   "mercury__uranus__180": {
     "orb": 1.38,
