@@ -1287,9 +1287,9 @@ def get_emails():
 
         # Заголовок блоку
         if unread_count > 0:
-            header = f"📬 <b>━━━ ПОШТА ━━━</b>  🔴 {unread_count} нових"
+            header = f"\n{'═'*28}\n📬 <b>ПОШТА</b>  🔴 {unread_count} непрочитаних\n{'═'*28}"
         else:
-            header = f"📬 <b>━━━ ПОШТА ━━━</b>"
+            header = f"\n{'═'*28}\n📬 <b>ПОШТА</b>\n{'═'*28}"
 
         if not primary:
             return header + "\n\n✅ Нових листів немає"
@@ -3369,10 +3369,14 @@ def main():
                 result += _chars[idx]
         return result
 
-    def _pct_bar(pct, width=10, fill="█", empty="░"):
-        """Прогресбар від 0..100."""
+    def _pct_bar(pct, width=10, fill="▬", empty="╌"):
+        """Прогресбар від 0..100 — лінійний стиль."""
         filled = int(pct / 100 * width)
         return fill * filled + empty * max(0, width - filled)
+
+    def _section_header(emoji, title):
+        """Красивий заголовок секції."""
+        return f"\n{'═'*28}\n{emoji} <b>{title}</b>\n{'═'*28}"
 
     # ── Динамічний заголовок ───────────────────────────────────────────────────
     header = _build_report_header(now_local, hour_key, cal_text)
@@ -3426,8 +3430,7 @@ def main():
         # Вологість — прогресбар
         _hum_bar = _pct_bar(_hum, 8) if _hum else ""
 
-        _weather_block = f"{'─'*28}\n"
-        _weather_block += f"{_w_icon} <b>ПОГОДА — Košice</b>\n"
+        _weather_block = _section_header(_w_icon, "ПОГОДА — Košice") + "\n"
         if _temp is not None:
             _feel_str = f"  <i>(відчув. {_feel}°)</i>" if _feel != _temp else ""
             _weather_block += f"🌡️ <b>{_temp}°C</b>{_feel_str}"
@@ -3453,7 +3456,7 @@ def main():
 
     # ── Блок 2: ТРАФІК ────────────────────────────────────────────────────────
     if traffic_text:
-        parts.append(f"{'─'*28}\n{traffic_text}")
+        parts.append(_section_header("🚦", "ТРАФІК — Košice") + "\n" + "\n".join(traffic_text.split("\n")[1:]) if "\n" in traffic_text else _section_header("🚦", "ТРАФІК") + "\n" + traffic_text)
 
     # ── Блок 3: КРИПТО — спарклайн + ринок ───────────────────────────────────
     if prices_text:
@@ -3467,7 +3470,7 @@ def main():
             elif _dn > _up + 1: _mkt = "🔴 ВЕДМЕЖИЙ 📉"
             else:                _mkt = "🟡 НЕЙТРАЛЬНИЙ 〰️"
 
-            _crypto_block = f"{'─'*28}\n💰 <b>КРИПТО</b>  ·  {_mkt}\n"
+            _crypto_block = _section_header("💰", f"КРИПТО  ·  {_mkt}") + "\n"
 
             for _coin in ["BTC", "ETH", "AVAX", "ONDO"]:
                 _row_m = _re_rep.search(r"[^\n]*\b" + _coin + r"\b[^\n]*", prices_text)
@@ -3504,11 +3507,11 @@ def main():
             print(f"crypto block error: {_e_cb}")
 
     # ── Блок 4: КАЛЕНДАР ──────────────────────────────────────────────────────
-    parts.append(f"{'─'*28}\n{cal_text}")
+    parts.append(_section_header("📅", "КАЛЕНДАР") + "\n" + "\n".join(cal_text.split("\n")[1:]) if isinstance(cal_text, str) and "\n" in cal_text else _section_header("📅", "КАЛЕНДАР") + "\n" + str(cal_text))
 
     # ── Блок 5: ЗДОРОВ'Я — з прогресбарами і спарклайном ─────────────────────
     try:
-        _health_lines = [f"{'─'*28}\n💪 <b>ЗДОРОВ'Я</b>"]
+        _health_lines = [_section_header("💪", "ЗДОРОВ'Я")]
         import storage as _st_h
 
         # Вага — спарклайн 14 днів
@@ -3606,7 +3609,7 @@ def main():
         from strava import format_strava_block
         _strava_text = format_strava_block()
         if _strava_text:
-            parts.append(f"{'─'*28}\n{_strava_text}")
+            parts.append(_section_header("🏃", "БІГОВИЙ ТРЕКЕР") + "\n" + "\n".join(_strava_text.split("\n")[1:]) if "\n" in _strava_text else _section_header("🏃", "БІГОВИЙ ТРЕКЕР") + "\n" + _strava_text)
     except Exception as _e_strava:
         print(f"strava block error: {_e_strava}")
 
@@ -3614,7 +3617,7 @@ def main():
     try:
         _currency_text = get_currency_rates()
         if _currency_text:
-            parts.append(f"{'─'*28}\n{_currency_text}")
+            parts.append(_section_header("💱", "КУРС ВАЛЮТ") + "\n" + "\n".join(_currency_text.split("\n")[1:]) if "\n" in _currency_text else _section_header("💱", "КУРС ВАЛЮТ") + "\n" + _currency_text)
     except Exception as _e_curr:
         print(f"currency rates error: {_e_curr}")
 
@@ -3627,7 +3630,7 @@ def main():
         if _pf_text:
             # Збагачуємо заголовок портфелю
             _pf_lines = _pf_text.split("\n")
-            _pf_header = f"{'─'*28}\n💼 <b>ПОРТФЕЛЬ</b>"
+            _pf_header = _section_header("💼", "ПОРТФЕЛЬ")
             # шукаємо суму і P&L
             _total_m = _re_rep.search(r"\$([\d,]+)", _pf_text)
             _pnl_m   = _re_rep.search(r"P&L[:\s]*([+\-]?\$[\d,]+)", _pf_text, _re_rep.I)
@@ -3668,8 +3671,8 @@ def main():
             parts.append(email_text["header"])
             # Кожен лист — окреме повідомлення з кнопками (макс 3)
             _all_items = email_text.get("items", [])
-            _remaining = max(0, len(_all_items) - 3)
-            for _em in _all_items[:3]:
+            _remaining = max(0, len(_all_items) - 7)
+            for _em in _all_items[:7]:
                 _s   = _em["subject"]
                 _snd = _em["sender"]
                 _uid = _em["uid"]
