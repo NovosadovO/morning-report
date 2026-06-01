@@ -2468,7 +2468,7 @@ def _build_report_header(now_local, slot_key, cal_events_raw):
         import re as _re
         ev_names = _re.findall(r"—\s*<b>(.{2,40}?)</b>", cal_events_raw)
         if ev_names:
-            cal_hint = f"\n📌 <i>{esc(ev_names[0])}</i>" if len(ev_names) == 1 else f"\n📌 <i>{esc(ev_names[0])} +{len(ev_names)-1}</i>"
+            cal_hint = f"\n📌 {esc(ev_names[0])}" if len(ev_names) == 1 else f"\n📌 {esc(ev_names[0])} +{len(ev_names)-1}"
 
     # Мотиваційні фрази залежно від часу доби
     _morning_vibes = ["Ранок — найпродуктивніший час! 🚀", "Доброго ранку, Олег! ☕ Заряджаємось.", "Новий день — нові можливості 💪", "Ранок вирішує день! 🌅"]
@@ -3736,17 +3736,20 @@ def main():
         else:
             parts.append(email_text)
 
-    # Блок 6: Астро (тільки раз на день)
+    # Блок 6: Астро (тільки раз на день, о ранньому слоті)
     if astro_text:
         _astro_state_file = os.path.join(_DATA_DIR, "monitor_astro_sent.json")
         _astro_state = load_json_file(_astro_state_file, default={})
         _today_str = now_local.strftime("%Y-%m-%d")
-        if _astro_state.get("sent_date") != _today_str:
+        _astro_slot = _astro_state.get("sent_slot", "")
+        if _astro_slot != hour_key:
             parts.append(astro_text)
             _astro_state["sent_date"] = _today_str
+            _astro_state["sent_slot"] = hour_key
             save_json_file(_astro_state_file, _astro_state)
+            print(f"astro: відправляємо (slot={hour_key})")
         else:
-            print(f"astro: вже надіслано сьогодні ({_today_str}), пропускаємо")
+            print(f"astro: вже надіслано в цьому слоті ({hour_key}), пропускаємо")
 
     # Блок 7: AI-підсумок
     if summary_text:
