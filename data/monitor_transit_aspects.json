@@ -6,11 +6,11 @@
   },
   "moon__sun__90": {
     "orb": 1.4,
-    "sent": true,
-    "event": "enter"
+    "sent": false,
+    "exact_sent": false
   },
   "moon__moon__180": {
-    "orb": 0.33,
+    "orb": 0.34,
     "sent": false,
     "exact_sent": true
   },
