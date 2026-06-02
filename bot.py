@@ -2509,14 +2509,19 @@ def main():
 
                         elif data == "shopping_add_item":
                             try:
-                                from planner import set_state as _set_st_sh, _send_force_reply as _sfr_sh
+                                from planner import set_state as _set_st_sh
                                 api("answerCallbackQuery", {"callback_query_id": cb["id"]})
                                 _set_st_sh("awaiting_shopping", {})
-                                _sfr_sh(
-                                    "🛒 <b>Що купити?</b>\n\n"
-                                    "<i>Напиши один або кілька пунктів через кому або з нового рядка</i>\n"
-                                    "<i>Наприклад: молоко, хліб, йогурт</i>"
-                                )
+                                api("sendMessage", {
+                                    "chat_id": chat_id,
+                                    "text": (
+                                        "🛒 <b>Що купити?</b>\n\n"
+                                        "<i>Напиши один або кілька пунктів через кому або з нового рядка</i>\n"
+                                        "<i>Наприклад: молоко, хліб, йогурт</i>"
+                                    ),
+                                    "parse_mode": "HTML",
+                                    "reply_markup": {"force_reply": True, "selective": False}
+                                })
                             except Exception as _shae:
                                 print(f"shopping_add_item error: {_shae}")
                         elif data == "delete_self":
