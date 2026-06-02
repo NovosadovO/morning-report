@@ -2499,7 +2499,7 @@ def _build_report_header(now_local, slot_key, cal_events_raw):
         slot_label = "30"
 
     # Час доби
-    if 5 <= h < 9:
+    if 4 <= h < 9:
         period = "morning"
     elif 9 <= h < 13:
         period = "midday"
@@ -2528,7 +2528,11 @@ def _build_report_header(now_local, slot_key, cal_events_raw):
     _midday_vibes  = ["Половина дня позаду — тримаємо темп 🔥", "Обідній спринт! 💨", "Середина дня — перевіряємо пульс 📡", "Не забудь поїсти нормально 😄"]
     _afternoon_vibes = ["Після обіду — фокус! 🎯", "Друга половина дня, Олег 💼", "Вже після обіду — час для справ 📋", "Фінальний відрізок дня 🏁"]
     _evening_vibes = ["Вечір — підбиваємо підсумки 🌙", "Гарний день? Занотуй результати ✍️", "Вечірній огляд — всі показники ✅", "Завтра буде ще кращий день! 🌟"]
-    _night_vibes   = ["Вже пізно — не забудь відпочити 😴", "Нічний моніторинг 🦉", "Тихо навколо — час для себе 🌌", "Майже північ — зберігай сили 💤"]
+    _night_vibes   = ["Вже пізно — не забудь відпочити 😴", "Нічний моніторинг 🦉", "Тихо навколо — час для себе 🌌", "Опівніч — зберігай сили 💤"]
+
+    # Якщо h==4 (04:xx) — рання зміна, спеціальні фрази
+    if period == "morning" and h == 4:
+        _morning_vibes = ["Ранній підйом 💪 Ранкова зміна!", "04:хх — рання зміна, вперед! ⚡", "Підйом! Ранкова зміна чекає 🏭", "Рано встав — день виграв 🌄"]
 
     _vibes = {"morning": _morning_vibes, "midday": _midday_vibes,
               "afternoon": _afternoon_vibes, "evening": _evening_vibes, "night": _night_vibes}
@@ -3425,8 +3429,8 @@ def main():
                 result += _chars[idx]
         return result
 
-    def _pct_bar(pct, width=10, fill="▬", empty="╌"):
-        """Прогресбар від 0..100 — лінійний стиль."""
+    def _pct_bar(pct, width=10, fill="●", empty="○"):
+        """Прогресбар від 0..100 — крапковий стиль."""
         filled = int(pct / 100 * width)
         return fill * filled + empty * max(0, width - filled)
 
