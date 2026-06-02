@@ -2359,7 +2359,9 @@ def main():
                 cb = update.get("callback_query")
                 if cb:
                     if str(cb["message"]["chat"]["id"]) == str(TELEGRAM_CHAT):
+                        chat_id = cb["message"]["chat"]["id"]
                         data = cb.get("data", "")
+                        print(f"[CB] data={data}", flush=True)
                         if data.startswith("evdone_"):
                             handle_event_done_callback(cb)
                         elif data.startswith("sleep_q_"):
