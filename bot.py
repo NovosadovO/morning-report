@@ -2506,6 +2506,18 @@ def main():
                                     send(chat_id, "👍 Добре, нічого не записую.")
                             except Exception as _ple:
                                 print(f"planner callback error: {_ple}")
+
+                        elif data == "shopping_add_item":
+                            try:
+                                api("answerCallbackQuery", {"callback_query_id": cb["id"]})
+                                set_state("awaiting_shopping", {})
+                                _send_force_reply(
+                                    "🛒 <b>Що купити?</b>\n\n"
+                                    "<i>Напиши один або кілька пунктів через кому або з нового рядка</i>\n"
+                                    "<i>Наприклад: молоко, хліб, йогурт</i>"
+                                )
+                            except Exception as _shae:
+                                print(f"shopping_add_item error: {_shae}")
                         elif data == "delete_self":
                             api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Закрито"})
                             api("deleteMessage", {"chat_id": chat_id, "message_id": cb["message"]["message_id"]})
@@ -2671,6 +2683,41 @@ def main():
                         continue
 
                 print(f"Message: {text}", flush=True)
+
+                # Shopping — якщо бот очікує список покупок
+                try:
+                    from planner import get_state as _gs, clear_state as _cs
+                    _st = _gs()
+                    if _st.get("mode") == "awaiting_shopping":
+                        import shopping as _sh_inp
+                        _cs()
+                        # Замінюємо переноси рядків на коми і передаємо в add_items
+                        import re as _re
+                        _normalized = _re.sub(r"[\n\r]+", ", ", text.strip())
+                        _added = _sh_inp.add_items(_normalized)
+                        if _added:
+                            _items_all = _sh_inp.get_items()
+                            _uncompleted = [i for i in _items_all if not i.get("done")]
+                            _list_text = _sh_inp.format_list(_items_all)
+                            api("sendMessage", {
+                                "chat_id": chat_id,
+                                "text": (
+                                    f"✅ Додано {len(_added)} пункт(ів)!\n\n"
+                                    f"🛒 <b>Список покупок</b> ({len(_uncompleted)} залишилось):\n\n{_list_text}"
+                                ),
+                                "parse_mode": "HTML",
+                                "reply_markup": {"inline_keyboard": [
+                                    [{"text": "✅ Все куплено", "callback_data": "shopping_all_done"},
+                                     {"text": "📝 Відмітити",  "callback_data": "shopping_mark"}],
+                                    [{"text": "➕ Додати ще",  "callback_data": "shopping_add_item"},
+                                     {"text": "🗑 Очистити",   "callback_data": "shopping_clear"}]
+                                ]}
+                            })
+                        else:
+                            send(chat_id, "⚠️ Не зміг розпізнати пункти. Спробуй ще раз.")
+                        continue
+                except Exception as _spe:
+                    print(f"shopping reply error: {_spe}")
 
                 # Planner — обробляємо першим якщо бот очікує відповідь
                 try:

@@ -3935,7 +3935,8 @@ def main():
             "parse_mode": "HTML",
             "reply_markup": {
                 "inline_keyboard": [
-                    [{"text": "✏️ Написати нагадування", "callback_data": "planner_write_today"}],
+                    [{"text": "✏️ Написати нагадування", "callback_data": "planner_write_today"},
+                     {"text": "🛒 Що купити",            "callback_data": "shopping_add_item"}],
                     [{"text": "👍 Нічого",               "callback_data": "planner_skip"}]
                 ]
             }
@@ -5668,8 +5669,9 @@ def check_day_summary():
             "parse_mode": "HTML",
             "reply_markup": {
                 "inline_keyboard": [
-                    [{"text": "✏️ Записати в календар", "callback_data": "planner_write"}],
-                    [{"text": "👍 Нічого",               "callback_data": "planner_skip"}]
+                    [{"text": "✏️ Записати в календар", "callback_data": "planner_write"},
+                     {"text": "🛒 Що купити",           "callback_data": "shopping_add_item"}],
+                    [{"text": "👍 Нічого",              "callback_data": "planner_skip"}]
                 ]
             }
         })

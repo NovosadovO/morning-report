@@ -44,7 +44,7 @@ def get_state():
     return _load_state()
 
 def set_state(mode, data=None):
-    """mode: None | 'awaiting_today' | 'awaiting_tomorrow' | 'awaiting_week' | 'awaiting_confirm' | 'awaiting_time' | 'awaiting_minutes'"""
+    """mode: None | 'awaiting_today' | 'awaiting_tomorrow' | 'awaiting_week' | 'awaiting_confirm' | 'awaiting_time' | 'awaiting_minutes' | 'awaiting_shopping'"""
     s = _load_state()
     s["mode"] = mode
     s["data"] = data or {}
