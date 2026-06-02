@@ -5,9 +5,9 @@
     "exact_sent": true
   },
   "moon__mercury__90": {
-    "orb": 1.34,
-    "sent": true,
-    "event": "enter"
+    "orb": 1.33,
+    "sent": false,
+    "exact_sent": false
   },
   "mercury__mars__90": {
     "orb": 0.06,
