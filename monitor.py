@@ -3599,53 +3599,72 @@ def main():
         _health_lines = [_section_header("💪", "ЗДОРОВ'Я")]
         import storage as _st_h
 
-        # Вага — спарклайн 14 днів
+        # Вага — таблиця останніх 7 днів
         try:
             _wd = _st_h.load("weight_data.json") or _st_h.load_weight() or {}
             if _wd:
-                _w_keys = sorted(_wd.keys())[-14:]
-                _w_vals = [_wd.get(k) for k in _w_keys]
-                _last_w = next((v for v in reversed(_w_vals) if v), None)
+                _w_keys = sorted(_wd.keys())[-7:]
+                _w_vals_raw = [(_k, _wd.get(_k)) for _k in _w_keys]
+                _w_vals_only = [v for _, v in _w_vals_raw if v]
+                _last_w = _w_vals_only[-1] if _w_vals_only else None
                 if _last_w:
                     _diff_goal = round(_last_w - 78.0, 1)
-                    _goal_pct  = max(0, min(100, int((1 - _diff_goal / 10) * 100)))
-                    _goal_bar  = _pct_bar(_goal_pct, 10)
-                    _spark_w   = _sparkline(_w_vals, 10)
-
-                    # Дельта від попереднього
-                    _prev_vals = [v for v in _w_vals if v]
+                    _prev_vals = _w_vals_only
                     _delta_w = round(_prev_vals[-1] - _prev_vals[-2], 1) if len(_prev_vals) >= 2 else 0
                     _d_icon = "📈" if _delta_w > 0.1 else ("📉" if _delta_w < -0.1 else "➡️")
-
                     if _diff_goal > 0:
                         _goal_str = f"до 78 кг: <b>{_diff_goal:+.1f} кг</b>"
                     else:
                         _goal_str = "🏆 <b>Ціль 78 кг досягнута!</b>"
 
-                    _health_lines.append(
-                        f"⚖️ <b>{_last_w} кг</b>  {_d_icon} {_delta_w:+.1f} кг  |  {_goal_str}\n"
-                        f"   <code>{_spark_w}</code>  прогрес: {_goal_bar} {_goal_pct}%"
-                    )
+                    # Заголовок рядка
+                    _w_header = f"⚖️ <b>{_last_w} кг</b>  {_d_icon} {_delta_w:+.1f} кг  |  {_goal_str}"
+                    # Таблиця 7 днів
+                    _w_rows = []
+                    for _wk, _wv in _w_vals_raw:
+                        # ключ може бути "2025-05-28" або "28.05"
+                        try:
+                            from datetime import datetime as _dt2
+                            if "-" in _wk:
+                                _wlabel = _dt2.strptime(_wk, "%Y-%m-%d").strftime("%d.%m")
+                            else:
+                                _wlabel = _wk[:5]
+                        except Exception:
+                            _wlabel = _wk[:5]
+                        _wval_str = f"<b>{_wv} кг</b>" if _wv else "—"
+                        _w_rows.append(f"  {_wlabel}  {_wval_str}")
+                    _health_lines.append(_w_header + "\n" + "\n".join(_w_rows))
         except Exception as _e_w: pass
 
-        # Кроки — прогресбар до цілі 8000
+        # Кроки — таблиця останніх 7 днів
         try:
             from steps import load_steps_data as _lsd
             _sdata = _lsd()
+            _step_keys = sorted(_sdata.keys())[-7:]
+            # Заголовок — вчорашній день
             _st_data = _sdata.get(_yest_rep, {})
-            if _st_data:
-                _st_n = _st_data.get("steps", 0)
-                _km_n = _st_data.get("distance_m", 0) / 1000
-                _st_pct = min(100, int(_st_n / 8000 * 100))
-                _st_bar = _pct_bar(_st_pct, 10)
-                _st_icon = "✅" if _st_n >= 8000 else ("🟡" if _st_n >= 5000 else "🔴")
-                # Спарклайн кроків за 7 днів
-                _step_keys = sorted(_sdata.keys())[-7:]
-                _step_spark = _sparkline([(_sdata.get(k) or {}).get("steps") for k in _step_keys], 7)
-                _health_lines.append(
-                    f"👟 Кроки вчора: <b>{_st_n:,}</b> {_st_icon}  ({_km_n:.1f} км)\n"
-                    f"   {_st_bar} {_st_pct}%  <code>{_step_spark}</code>"
-                )
+            _st_n = _st_data.get("steps", 0) if _st_data else 0
+            _km_n = (_st_data.get("distance_m", 0) / 1000) if _st_data else 0
+            _st_icon = "✅" if _st_n >= 8000 else ("🟡" if _st_n >= 5000 else "🔴")
+            _st_header = f"👟 Кроки вчора: <b>{_st_n:,}</b> {_st_icon}  ({_km_n:.1f} км)"
+            # Таблиця 7 днів
+            _st_rows = []
+            for _sk in _step_keys:
+                try:
+                    from datetime import datetime as _dt3
+                    if "-" in _sk:
+                        _slabel = _dt3.strptime(_sk, "%Y-%m-%d").strftime("%d.%m")
+                    else:
+                        _slabel = _sk[:5]
+                except Exception:
+                    _slabel = _sk[:5]
+                _sv = (_sdata.get(_sk) or {}).get("steps")
+                if _sv:
+                    _sicon = "✅" if _sv >= 8000 else ("🟡" if _sv >= 5000 else "🔴")
+                    _st_rows.append(f"  {_slabel}  <b>{_sv:,}</b> {_sicon}")
+                else:
+                    _st_rows.append(f"  {_slabel}  —")
+            _health_lines.append(_st_header + "\n" + "\n".join(_st_rows))
         except Exception: pass
 
         # Ліки

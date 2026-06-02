@@ -257,13 +257,17 @@ def format_strava_block():
     if week:
         lines.append(f"\n<b>Цей тиждень</b> (з {week['week_start']}):")
         lines.append(f"  📅 Пробіжок: {week['runs']} · {week['km']} км · {week['duration_min']} хв")
+        lines.append(f"  🎯 Ціль: {week['km']}/40 км")
 
-        # Прогрес-бар (ціль 40 км/тиждень)
-        goal_km = 40
-        pct = min(week["km"] / goal_km, 1.0)
-        filled = int(pct * 10)
-        bar = "█" * filled + "░" * (10 - filled)
-        lines.append(f"  [{bar}] {week['km']}/{goal_km} км")
+    # Таблиця останніх 5 пробіжок
+    try:
+        recent = get_runs(days=60)[-5:]
+        if recent:
+            lines.append("\n<b>Останні пробіжки:</b>")
+            for r in reversed(recent):
+                lines.append(f"  {r['date_str']}  <b>{r['dist_km']} км</b>  {r['pace_str']}/км  {r['dur_min']} хв")
+    except Exception:
+        pass
 
     return "\n".join(lines)
 
