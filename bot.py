@@ -2509,9 +2509,10 @@ def main():
 
                         elif data == "shopping_add_item":
                             try:
+                                from planner import set_state as _set_st_sh, _send_force_reply as _sfr_sh
                                 api("answerCallbackQuery", {"callback_query_id": cb["id"]})
-                                set_state("awaiting_shopping", {})
-                                _send_force_reply(
+                                _set_st_sh("awaiting_shopping", {})
+                                _sfr_sh(
                                     "🛒 <b>Що купити?</b>\n\n"
                                     "<i>Напиши один або кілька пунктів через кому або з нового рядка</i>\n"
                                     "<i>Наприклад: молоко, хліб, йогурт</i>"
