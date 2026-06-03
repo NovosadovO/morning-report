@@ -281,9 +281,21 @@ def _html_to_markdown(text: str) -> str:
     return ''.join(result)
 
 
+def _sanitize_html(text: str) -> str:
+    """
+    Екранує & що НЕ є частиною HTML entity (&amp; &lt; &gt; &quot; &#...;).
+    Залишає валідні HTML теги <b> <i> <code> <pre> <a> незайманими.
+    """
+    import re as _re
+    # Замінюємо тільки & які НЕ є початком entity
+    return _re.sub(r'&(?!amp;|lt;|gt;|quot;|#\d+;|#x[\da-fA-F]+;)', '&amp;', text)
+
+
 def _send_telegram_chunk(text: str) -> bool:
     """Надсилає одне повідомлення з HTML parse_mode."""
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+    # Автоматично фіксуємо голі & перед відправкою
+    text = _sanitize_html(text)
     print(f"[tg_chunk] len={len(text)} preview={repr(text[:80])}", flush=True)
 
     payload = json.dumps({
