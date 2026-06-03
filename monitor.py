@@ -3243,32 +3243,46 @@ def generate_habits_chart(days: int = 30) -> bytes | None:
 
 
 
+_FORCE_REPORT = False  # встановлюється в True для ручного виклику /звіт
+
+
 def main():
+    global _FORCE_REPORT
+    force = _FORCE_REPORT
+    _FORCE_REPORT = False  # скидаємо після використання
+
     now = datetime.now(timezone.utc)
     now_local = now + timedelta(hours=2)
     # 3 слоти на годину: :00, :20, :40
     hour_key = _get_report_slot(now_local)
     if hour_key is None:
-        print(f"=== Not in report window (m={now_local.minute}), skipping ===")
-        return
+        if force:
+            # При ручному виклику — генеруємо з поточною годиною
+            hour_key = now_local.strftime("%Y-%m-%d-%H")
+            print(f"=== FORCE report, using hour_key={hour_key} ===")
+        else:
+            print(f"=== Not in report window (m={now_local.minute}), skipping ===")
+            return
 
     # Захист від дублів — атомарний claim через SHA conflict
-    # Читаємо стан + SHA
-    gh_sent, gh_sha = _gh_get_sent()
-    if gh_sent is None:
-        gh_sent = load_json_file(MAIN_SENT_FILE, default={})
-        gh_sha = None
+    if not force:
+        gh_sent, gh_sha = _gh_get_sent()
+        if gh_sent is None:
+            gh_sent = load_json_file(MAIN_SENT_FILE, default={})
+            gh_sha = None
 
-    if gh_sent.get("last_slot") == hour_key:
-        print(f"=== Already sent this slot ({hour_key}), skipping ===")
-        return
+        if gh_sent.get("last_slot") == hour_key:
+            print(f"=== Already sent this slot ({hour_key}), skipping ===")
+            return
+    else:
+        gh_sent, gh_sha = {}, None
+        print(f"=== FORCE: skipping slot dedup check ===")
 
-    # Атомарно записуємо claim ПЕРЕД відправкою — якщо інший контейнер встиг,
-    # отримаємо 409 і вийдемо без відправки
+    # Атомарно записуємо claim ПЕРЕД відправкою (тільки не в force режимі)
     claim_data = dict(gh_sent)
     claim_data["last_slot"] = hour_key
     claim_data["claimed_at"] = now.isoformat()
-    if gh_sha:
+    if not force and gh_sha:
         try:
             import base64 as _b64
             gh_token = os.environ.get("GITHUB_TOKEN", "")
@@ -3296,7 +3310,7 @@ def main():
             print(f"=== GH claim error {_he.code} — proceeding anyway ===")
         except Exception as _ce:
             print(f"=== GH claim error: {_ce} — proceeding anyway ===")
-    else:
+    elif not force:
         # Немає SHA — локальна перевірка (один контейнер)
         _sent = load_json_file(MAIN_SENT_FILE, default={})
         _sent["last_slot"] = hour_key

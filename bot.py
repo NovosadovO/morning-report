@@ -1712,30 +1712,20 @@ def handle_command(chat_id, text):
 
     elif text in ["/звіт", "звіт"]:
         send(chat_id, "⏳ Збираю звіт...")
-        now = datetime.now(timezone.utc)
-        local_time = (now + timedelta(hours=2)).strftime("%H:%M")
-        local_date = (now + timedelta(hours=2)).strftime("%d.%m.%Y")
-        sections = []
-        for fn in [get_prices, get_weather, get_calendar, get_emails]:
-            try:
-                sections.append(fn())
-            except Exception as e:
-                print(f"Error in {fn.__name__}: {e}")
-        # Плани/нотатки — окрема секція
         try:
-            from planner import format_planner_for_report
-            sections.append(format_planner_for_report())
-        except Exception as e:
-            print(f"Error in format_planner_for_report: {e}")
-        report = f"🕐 <b>Звіт {local_time} · {local_date}</b>\n\n" + "\n\n".join(sections)
-        send(chat_id, report)
-        try:
-            from monitor import generate_crypto_trend_chart
-            _cchart = generate_crypto_trend_chart(30)
-            if _cchart:
-                send_photo(chat_id, _cchart, caption="📈 Тренд цін — 30 днів")
-        except Exception as _cce:
-            print(f"[crypto chart] {_cce}", flush=True)
+            import importlib, sys as _sys, os as _os
+            _monitor_path = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "monitor.py")
+            import importlib.util as _ilu
+            spec = _ilu.spec_from_file_location("monitor_run", _monitor_path)
+            mod = _ilu.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            # Bypass slot check — примусово запускаємо звіт
+            mod._FORCE_REPORT = True
+            mod.main()
+        except Exception as _e_rep:
+            import traceback
+            print(f"[/звіт] error: {_e_rep}\n{traceback.format_exc()}", flush=True)
+            send(chat_id, f"⚠️ Помилка звіту: {_e_rep}")
 
     elif text in ["/ціни", "ціни"]:
         try:
