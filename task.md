@@ -1,48 +1,40 @@
-# ВЕЛИКИЙ АПГРЕЙД БОТА
+# TASK: monitor.py fixes
 
-## Що робимо
+## Fixes needed
 
-### 1. ПІДСУМОК ДНЯ (21:00) — check_day_summary в monitor.py
-- [x] Поточний стан: тільки текст, без графіків
-- [ ] Додати: графік звичок за тиждень (generate_habits_chart, 7 днів)
-- [ ] Додати: графік ваги за 30 днів (generate_weight_trend_chart)
-- [ ] Покращити текст: тон друга/коуча, більше емодзі, мотивація
-- [ ] Додати: streak лічильник (скільки днів підряд виконував звички)
-- [ ] Додати: порівняння вчора vs сьогодні
+1. **Period/vibe fix** (~2502)
+   - `4<=h<9` → split: `4<=h<7` = early_morning, `7<=h<11` = morning, `11<=h<13` = midday
+   - Add `_early_morning_vibes` (4-7am) and proper `_morning_vibes` (7-11am)
+   - 9am should NOT get "Обідній спринт"
 
-### 2. ТИЖНЕВИЙ ЗВІТ (нд 18:45) — weekly_report.py
-- [x] Поточний стан: текст без графіків
-- [ ] Додати: plot_week_chart зі strava_charts (біг по тижнях)
-- [ ] Додати: generate_habits_chart 7 днів
-- [ ] Додати: generate_weight_trend_chart 14 днів
-- [ ] Покращити текст: тон друга/коуча + AI аналіз
-- [ ] Додати: топ-день тижня, найкращий і найгірший показник
+2. **Header redesign** (~2545)
+   - One fixed beautiful style (no 12 rotations)
+   - Show: period icon + time + date/weekday + location context + vibe
+   - Format:
+     ```
+     🌅 <b>09:00  ·  Ср 03.06</b>
+     🏠 Вдома  ·  Вихідний
+     <i>Ранок вирішує день! 🌅</i>
+     ```
+   - Location: if work day + shift active → "🏭 На роботі", else "🏠 Вдома"
+   - Weekend: 🏖 Вихідний
 
-### 3. МІСЯЧНИЙ ЗВІТ (останній день 21:00) — check_monthly_summary в monitor.py
-- [x] Поточний стан: текст, Strava місяць, звички %, AI
-- [ ] Додати: plot_month_chart (Strava місяць)
-- [ ] Додати: generate_habits_chart 30 днів
-- [ ] Додати: generate_weight_trend_chart 30 днів
-- [ ] Покращити текст: підсумок як коуч + конкретні цілі на наступний місяць
+3. **Armolopid dedup** (~3676)
+   - The duplication was analyzed: line 3676 is in `build_*` fn inside main()
+   - Line 5509 is in check_day_summary() (21:00) — separate, OK
+   - The "second" appearance is in morning_context (04:30/05:00 pre-shift message at ~6468)
+   - These are different messages sent at different times → NOT a bug actually
+   - User sees both because morning pre-shift AND main report both mention Armolopid
+   - FIX: In the main report health block (3676), only show Armolopid if h >= 7 
+     (not in pre-shift messages which are 04:30/05:00)
+   - Actually user said "ліки Armolopid з'являються двічі в одному повідомленні"
+   - Need to check if within single report text Armolopid appears twice
 
-### 4. ПРОАКТИВНІСТЬ — proactive.py
-- [x] Поточний стан: слоти по розкладу, Gemini
-- [ ] Anomaly detection: вага зросла 3+ дні → пише сам
-- [ ] No-run streak: не бігав 5+ днів → мотивує
-- [ ] Поганий сон 2+ ночі → питає/радить
-- [ ] Пам'ять на теми: ти казав X → через N днів повертається
-- [ ] Ситуативні поради: погода + зміна → попереджає з вечора
+4. **Context check before report** — location/shift context in header
+   Already handled in #2
 
-### 5. НОВІ ГРАФІКИ — новий файл charts.py
-- [ ] Комбінований дашборд: вага + біг + звички на одному полотні
-- [ ] Streak calendar (GitHub-style heatmap)
-- [ ] Тижневий порівняльний bar chart (цей тиждень vs минулий)
-
-## ПОРЯДОК ВИКОНАННЯ
-1. charts.py — нові функції графіків
-2. check_day_summary — апгрейд
-3. weekly_report.py — апгрейд
-4. check_monthly_summary — апгрейд
-5. proactive.py — anomaly detection + нові слоти
-6. Тест синтаксису всіх файлів
-7. Push
+## Status
+- [ ] Period split
+- [ ] Header
+- [ ] Armolopid dedup (need to verify actual duplication source)
+- [ ] Push to git

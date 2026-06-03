@@ -548,15 +548,17 @@ def _fetch_etf_rows(tickers: list) -> list:
     """Завантажує ціни для списку тікерів, повертає рядки."""
     rows = []
     for name, sym, icon in tickers:
+        # Escape HTML-спецсимволів в назві (S&P500 → S&amp;P500)
+        name_h = name.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         try:
             price, pct = _yahoo_quote(sym)
             if price is not None:
                 if pct is not None:
                     arrow = "🟢" if pct > 0 else "🔴"
                     sign  = "+" if pct > 0 else ""
-                    rows.append(f"{arrow} <b>{name}</b>  <code>${price:,.2f}</code>  <i>{sign}{pct:.2f}% за день</i>")
+                    rows.append(f"{arrow} <b>{name_h}</b>  <code>${price:,.2f}</code>  <i>{sign}{pct:.2f}% за день</i>")
                 else:
-                    rows.append(f"⚪️ <b>{name}</b>  <code>${price:,.2f}</code>")
+                    rows.append(f"⚪️ <b>{name_h}</b>  <code>${price:,.2f}</code>")
             else:
                 # fallback: yfinance
                 try:
@@ -568,16 +570,16 @@ def _fetch_etf_rows(tickers: list) -> list:
                         pct2 = (c - prev) / prev * 100
                         arrow = "🟢" if pct2 > 0 else "🔴"
                         sign  = "+" if pct2 > 0 else ""
-                        rows.append(f"{arrow} <b>{name}</b>  <code>${c:,.2f}</code>  <i>{sign}{pct2:.2f}% за день</i>")
+                        rows.append(f"{arrow} <b>{name_h}</b>  <code>${c:,.2f}</code>  <i>{sign}{pct2:.2f}% за день</i>")
                     elif len(h) == 1:
-                        rows.append(f"⚪️ <b>{name}</b>  <code>${h['Close'].iloc[-1]:,.2f}</code>")
+                        rows.append(f"⚪️ <b>{name_h}</b>  <code>${h['Close'].iloc[-1]:,.2f}</code>")
                     else:
-                        rows.append(f"⚪️ <b>{name}</b>  —")
+                        rows.append(f"⚪️ <b>{name_h}</b>  —")
                 except Exception:
-                    rows.append(f"⚪️ <b>{name}</b>  —")
+                    rows.append(f"⚪️ <b>{name_h}</b>  —")
         except Exception as _e:
             print(f"[etf prices {name}] {_e}")
-            rows.append(f"⚪️ <b>{name}</b>  —")
+            rows.append(f"⚪️ <b>{name_h}</b>  —")
     return rows
 
 
@@ -2600,7 +2602,9 @@ def _build_report_header(now_local, slot_key, cal_events_raw):
 
     # ── Єдиний стиль заголовку ─────────────────────────────────────────────
     header = (
-        f"{_period_icon} <b>{time_str}  ·  {weekday_ua} {date_str}</b>\n"
+        f"<b>╔══════════════════════╗</b>\n"
+        f"<b>{_period_icon}  ЗВІТ  ·  {weekday_ua} {date_str}  ·  {time_str}</b>\n"
+        f"<b>╚══════════════════════╝</b>\n"
         f"{_day_ctx}\n"
         f"<i>{_vibe}</i>"
         f"{cal_hint}"
@@ -3469,8 +3473,8 @@ def main():
         return fill * filled + empty * max(0, width - filled)
 
     def _section_header(emoji, title):
-        """Заголовок секції — жирний, без ліній."""
-        return f"{emoji} <b>{title}</b>"
+        """Заголовок секції — жирний, виділений роздільником."""
+        return f"<b>━━━━━━━━━━━━━━━━━━━━━━</b>\n{emoji}  <b>{title}</b>"
 
     # ── Динамічний заголовок ───────────────────────────────────────────────────
     header = _build_report_header(now_local, hour_key, cal_text)
