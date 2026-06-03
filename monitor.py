@@ -2318,7 +2318,7 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
 [аналіз ринку — настрій, тренд, порівняй з попередніми підсумками якщо є, своя думка]
 
 ⚖️ <b>ЗДОРОВ'Я</b>
-[вага + кроки + ліки + QWatch (сон, пульс, HRV, Health Score, стрес) — тренд, оцінка, конкретна порада]
+[вага + кроки + QWatch (сон, пульс, HRV, Health Score, стрес) — тренд, оцінка, конкретна порада. Ліки не згадуй — вони показані окремим блоком]
 
 ✅ <b>ЗВИЧКИ ТА ПРОДУКТИВНІСТЬ</b>
 [звички + календар — що виконано, що ні, рекомендація]
@@ -2480,98 +2480,132 @@ def _get_report_slot(now_local):
 
 def _build_report_header(now_local, slot_key, cal_events_raw):
     """
-    Різноманітний заголовок звіту залежно від часу та слоту.
-    Кожен слот — свій стиль.
+    Єдиний чистий стиль заголовку з контекстом дня:
+    - Іконка часу доби + час + дата/день
+    - Рядок локації/типу дня (вдома / на роботі / вихідний)
+    - Мотиваційна фраза відповідно до реального часу
+    - Подія з календаря (якщо є)
     """
-    import random as _rnd, hashlib as _hsh
+    import hashlib as _hsh
     h = now_local.hour
-    m = now_local.minute
-    weekday_ua = ["Пн","Вт","Ср","Чт","Пт","Сб","Нд"][now_local.weekday()]
+    weekday_ua   = ["Пн","Вт","Ср","Чт","Пт","Сб","Нд"][now_local.weekday()]
     weekday_full = ["понеділок","вівторок","середа","четвер","п'ятниця","субота","неділя"][now_local.weekday()]
     time_str = now_local.strftime("%H:%M")
     date_str = now_local.strftime("%d.%m")
     is_weekend = now_local.weekday() >= 5
 
-    # Визначаємо слот (:00/:30)
-    if ":00" in slot_key:
-        slot_label = "00"
+    # Seed для вибору фрази (стабільний для слоту, різний для кожного часу)
+    seed_int = int(_hsh.md5(slot_key.encode()).hexdigest(), 16)
+
+    # ── Час доби — правильно розбитий ──────────────────────────────────────
+    if 4 <= h < 7:
+        period = "early_morning"   # 04–07: рання зміна / дуже ранній підйом
+    elif 7 <= h < 11:
+        period = "morning"         # 07–11: звичайний ранок
+    elif 11 <= h < 14:
+        period = "midday"          # 11–14: обід
+    elif 14 <= h < 18:
+        period = "afternoon"       # 14–18: після обіду
+    elif 18 <= h < 22:
+        period = "evening"         # 18–22: вечір
     else:
-        slot_label = "30"
+        period = "night"           # 22–04: ніч
 
-    # Час доби
-    if 4 <= h < 9:
-        period = "morning"
-    elif 9 <= h < 13:
-        period = "midday"
-    elif 13 <= h < 17:
-        period = "afternoon"
-    elif 17 <= h < 21:
-        period = "evening"
+    # ── Іконка та фрази залежно від часу ───────────────────────────────────
+    _icons = {
+        "early_morning": "🌄",
+        "morning":       "🌅",
+        "midday":        "☀️",
+        "afternoon":     "🌆",
+        "evening":       "🌙",
+        "night":         "🌃",
+    }
+    _period_icon = _icons[period]
+
+    _vibes = {
+        "early_morning": [
+            "Ранній підйом — ти вже попереду 💪",
+            "04:хх — рання зміна, вперед! ⚡",
+            "Рано встав — день виграв 🌄",
+            "Підйом! Ранкова зміна чекає 🏭",
+        ],
+        "morning": [
+            "Ранок вирішує день! 🌅",
+            "Доброго ранку, Олег! ☕ Заряджаємось.",
+            "Новий день — нові можливості 💪",
+            "Ранок — найпродуктивніший час! 🚀",
+        ],
+        "midday": [
+            "Половина дня позаду — тримаємо темп 🔥",
+            "Середина дня — перевіряємо пульс 📡",
+            "Не забудь нормально поїсти 😄",
+            "11–14: найкращий час для складних рішень 🧠",
+        ],
+        "afternoon": [
+            "Після обіду — фокус! 🎯",
+            "Друга половина дня, Олег 💼",
+            "Час для справ 📋",
+            "Фінальний відрізок дня 🏁",
+        ],
+        "evening": [
+            "Вечір — підбиваємо підсумки 🌙",
+            "Гарний день? Занотуй результати ✍️",
+            "Вечірній огляд — всі показники ✅",
+            "Завтра буде ще кращий день! 🌟",
+        ],
+        "night": [
+            "Вже пізно — не забудь відпочити 😴",
+            "Нічний моніторинг 🦉",
+            "Тихо навколо — час для себе 🌌",
+            "Опівніч — зберігай сили 💤",
+        ],
+    }
+    _vibe = _vibes[period][seed_int % len(_vibes[period])]
+
+    # ── Контекст дня: де знаходиться і який тип дня ────────────────────────
+    try:
+        _sc = _get_current_shift_context(cal_events_raw or "")
+        _shift      = _sc.get("shift", "free")
+        _working    = _sc.get("is_working_now", False)
+    except Exception:
+        _shift, _working = "free", False
+
+    if is_weekend:
+        _day_ctx = "🏖 Вихідний"
+    elif _working:
+        if _shift == "early":
+            _day_ctx = "🏭 На роботі  ·  Рання зміна"
+        elif _shift == "night":
+            _day_ctx = "🏭 На роботі  ·  Нічна зміна"
+        else:
+            _day_ctx = "🏭 На роботі"
+    elif _shift == "early" and h < 6:
+        _day_ctx = "🏠 Вдома  ·  Готується до ранньої"
+    elif _shift == "night" and h < 18:
+        _day_ctx = "🏠 Вдома  ·  Нічна зміна сьогодні"
     else:
-        period = "night"
+        _day_ctx = "🏠 Вдома"
 
-    # Унікальний стиль на основі дати+слоту (стабільний, але різний кожен раз)
-    seed_str = f"{slot_key}"
-    seed_int = int(_hsh.md5(seed_str.encode()).hexdigest(), 16)
-    style_idx = seed_int % 12
-
-    # Виводимо контекст з календаря в заголовку
+    # ── Підказка з календаря ───────────────────────────────────────────────
     cal_hint = ""
     if cal_events_raw and "нічого не заплановано" not in cal_events_raw.lower():
         import re as _re
         ev_names = _re.findall(r"—\s*<b>(.{2,40}?)</b>", cal_events_raw)
         if ev_names:
-            cal_hint = f"\n📌 {esc(ev_names[0])}" if len(ev_names) == 1 else f"\n📌 {esc(ev_names[0])} +{len(ev_names)-1}"
+            cal_hint = (
+                f"\n📌 {esc(ev_names[0])}"
+                if len(ev_names) == 1
+                else f"\n📌 {esc(ev_names[0])} +{len(ev_names)-1}"
+            )
 
-    # Мотиваційні фрази залежно від часу доби
-    _morning_vibes = ["Ранок — найпродуктивніший час! 🚀", "Доброго ранку, Олег! ☕ Заряджаємось.", "Новий день — нові можливості 💪", "Ранок вирішує день! 🌅"]
-    _midday_vibes  = ["Половина дня позаду — тримаємо темп 🔥", "Обідній спринт! 💨", "Середина дня — перевіряємо пульс 📡", "Не забудь поїсти нормально 😄"]
-    _afternoon_vibes = ["Після обіду — фокус! 🎯", "Друга половина дня, Олег 💼", "Вже після обіду — час для справ 📋", "Фінальний відрізок дня 🏁"]
-    _evening_vibes = ["Вечір — підбиваємо підсумки 🌙", "Гарний день? Занотуй результати ✍️", "Вечірній огляд — всі показники ✅", "Завтра буде ще кращий день! 🌟"]
-    _night_vibes   = ["Вже пізно — не забудь відпочити 😴", "Нічний моніторинг 🦉", "Тихо навколо — час для себе 🌌", "Опівніч — зберігай сили 💤"]
-
-    # Якщо h==4 (04:xx) — рання зміна, спеціальні фрази
-    if period == "morning" and h == 4:
-        _morning_vibes = ["Ранній підйом 💪 Ранкова зміна!", "04:хх — рання зміна, вперед! ⚡", "Підйом! Ранкова зміна чекає 🏭", "Рано встав — день виграв 🌄"]
-
-    _vibes = {"morning": _morning_vibes, "midday": _midday_vibes,
-              "afternoon": _afternoon_vibes, "evening": _evening_vibes, "night": _night_vibes}
-    _vibe_list = _vibes[period]
-    _vibe = _vibe_list[seed_int % len(_vibe_list)]
-
-    # Іконка часу доби
-    _period_icon = {"morning": "🌅", "midday": "☀️", "afternoon": "🌆", "evening": "🌙", "night": "🌃"}[period]
-    _city_icon = "🏙" if not is_weekend else "🏖"
-
-    # 12 стилів заголовку — без ліній, чистий текст
-    headers = [
-        # 0
-        f"{_period_icon} <b>{time_str}  ·  {date_str} {weekday_ua}</b>\n<i>{_vibe}</i>{cal_hint}",
-        # 1
-        f"⚡ <b>ЗВІТ {time_str}</b>  ·  {weekday_ua} {date_str}\n<i>{_vibe}</i>{cal_hint}",
-        # 2
-        f"🔔 <b>{time_str} — {'Вихідний 🎉' if is_weekend else weekday_full.capitalize()}</b>\n<i>{_vibe}</i>{cal_hint}",
-        # 3
-        f"{_period_icon} <b>{time_str}  ·  {date_str}</b>\n<i>{_vibe}</i>{cal_hint}",
-        # 4
-        f"📡 <b>{time_str}</b>  {'🎉 Вихідний!' if is_weekend else '💼 ' + weekday_full.capitalize()}\n<i>{_vibe}</i>{cal_hint}",
-        # 5
-        f"{_city_icon} <b>Кошіце  {time_str}</b>  ·  {date_str}\n<i>{_vibe}</i>{cal_hint}",
-        # 6
-        f"🗓 <b>{weekday_full.upper()}  {date_str}</b>  🕐 {time_str}\n<i>{_vibe}</i>{cal_hint}",
-        # 7
-        f"📊 <b>ДАШБОРД  {time_str}</b>  ·  {date_str}\n<i>{_vibe}</i>{cal_hint}",
-        # 8
-        f"⏱ <b>{time_str}</b>  {_period_icon}  {weekday_full.capitalize()}\n<i>{_vibe}</i>{cal_hint}",
-        # 9
-        f"🔵 <b>{time_str}  ·  {weekday_ua} {date_str}</b>\n<i>{_vibe}</i>{cal_hint}",
-        # 10
-        f"{_period_icon} <b>{time_str}  ·  {weekday_ua}</b>  {date_str}\n<i>{_vibe}</i>{cal_hint}",
-        # 11
-        f"🚀 <b>{time_str}  {date_str}</b>  ({weekday_ua})\n<i>{_vibe}</i>{cal_hint}",
-    ]
-
-    return headers[style_idx]
+    # ── Єдиний стиль заголовку ─────────────────────────────────────────────
+    header = (
+        f"{_period_icon} <b>{time_str}  ·  {weekday_ua} {date_str}</b>\n"
+        f"{_day_ctx}\n"
+        f"<i>{_vibe}</i>"
+        f"{cal_hint}"
+    )
+    return header
 
 
 def _get_calendar_context_for_report():
