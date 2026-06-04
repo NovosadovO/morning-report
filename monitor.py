@@ -2614,9 +2614,8 @@ def _build_report_header(now_local, slot_key, cal_events_raw):
 
     # ── Єдиний стиль заголовку ─────────────────────────────────────────────
     header = (
-        f"<b>╔══════════════════════╗</b>\n"
-        f"<b>{_period_icon}  ЗВІТ  ·  {weekday_ua} {date_str}  ·  {time_str}</b>\n"
-        f"<b>╚══════════════════════╝</b>\n"
+        f"{_period_icon}\n"
+        f"<b>ЗВІТ  ·  {weekday_ua} {date_str}  ·  {time_str}</b>\n"
         f"{_day_ctx}\n"
         f"<i>{_vibe}</i>"
         f"{cal_hint}"
@@ -3499,8 +3498,8 @@ def main():
         return fill * filled + empty * max(0, width - filled)
 
     def _section_header(emoji, title):
-        """Заголовок секції — жирний, виділений роздільником."""
-        return f"<b>━━━━━━━━━━━━━━━━━━━━━━</b>\n{emoji}  <b>{title}</b>"
+        """Заголовок секції — емодзі окремо (великий), жирний текст."""
+        return f"{emoji}\n<b>{title}</b>"
 
     # ── Динамічний заголовок ───────────────────────────────────────────────────
     header = _build_report_header(now_local, hour_key, cal_text)
