@@ -283,12 +283,37 @@ def _html_to_markdown(text: str) -> str:
 
 def _sanitize_html(text: str) -> str:
     """
-    Екранує & що НЕ є частиною HTML entity (&amp; &lt; &gt; &quot; &#...;).
-    Залишає валідні HTML теги <b> <i> <code> <pre> <a> незайманими.
+    Екранує &, < і > що НЕ є частиною валідних HTML тегів/entities.
+    Дозволені теги: <b> <i> <u> <s> <code> <pre> <a href=...> та їх закриваючі.
     """
     import re as _re
-    # Замінюємо тільки & які НЕ є початком entity
-    return _re.sub(r'&(?!amp;|lt;|gt;|quot;|#\d+;|#x[\da-fA-F]+;)', '&amp;', text)
+
+    # Крок 1: витягуємо валідні HTML теги і entities — замінюємо на плейсхолдери
+    ALLOWED_TAG = r'</?(?:b|i|u|s|code|pre|a(?:\s+href="[^"]*")?)>'
+    ENTITY = r'&(?:amp|lt|gt|quot|#\d+|#x[\da-fA-F]+);'
+
+    placeholders = {}
+    counter = [0]
+
+    def save(m):
+        key = f'\x00PH{counter[0]}\x00'
+        placeholders[key] = m.group()
+        counter[0] += 1
+        return key
+
+    # Зберігаємо валідні теги і entities
+    protected = _re.sub(f'(?:{ALLOWED_TAG}|{ENTITY})', save, text)
+
+    # Крок 2: екрануємо голі &, <, >
+    protected = _re.sub(r'&', '&amp;', protected)
+    protected = _re.sub(r'<', '&lt;', protected)
+    protected = _re.sub(r'>', '&gt;', protected)
+
+    # Крок 3: відновлюємо плейсхолдери
+    for key, val in placeholders.items():
+        protected = protected.replace(key, val)
+
+    return protected
 
 
 def _send_telegram_chunk(text: str) -> bool:
