@@ -142,8 +142,8 @@ def run_monitor_loop():
         now = datetime.now(timezone.utc)
         now_local = now + timedelta(hours=2)
         m = now_local.minute
-        # Запускаємо ТІЛЬКИ точно на :00 або :30 — жодних вікон, жодних дублів
-        if m == 0 or m == 30:
+        # Запускаємо у вікні :00-:02 або :30-:32 (збігається з _get_report_slot)
+        if (0 <= m < 3) or (30 <= m < 33):
             print(f"\n[{now.strftime('%Y-%m-%d %H:%M')} UTC] Running monitor (local {now_local.strftime('%H:%M')})...", flush=True)
             try:
                 result = subprocess.run(
