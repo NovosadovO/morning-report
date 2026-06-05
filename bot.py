@@ -2202,7 +2202,7 @@ def handle_command(chat_id, text):
                          {"text": "📝 Відмітити", "callback_data": "shopping_mark"}],
                         [{"text": "🗑 Очистити", "callback_data": "shopping_clear"}]
                     ]}
-                    send(chat_id, f"🛒 <b>Список покупок</b> ({done_count}/{len(items)}):\n\n{text_list}", reply_markup=kb)
+                    send_with_keyboard(chat_id, f"🛒 <b>Список покупок</b> ({done_count}/{len(items)}):\n\n{text_list}", kb)
             else:
                 added = _sh.add_items(raw)
                 items = _sh.get_items()
@@ -2218,7 +2218,7 @@ def handle_command(chat_id, text):
                      {"text": "📝 Відмітити", "callback_data": "shopping_mark"}],
                     [{"text": "🗑 Очистити", "callback_data": "shopping_clear"}]
                 ]}
-                send(chat_id, f"{msg_top}<b>Список ({done_count}/{len(items)}):</b>\n{text_list}", reply_markup=kb)
+                send_with_keyboard(chat_id, f"{msg_top}<b>Список ({done_count}/{len(items)}):</b>\n{text_list}", kb)
         except Exception as e:
             send(chat_id, f"⚠️ Помилка списку покупок: {e}")
 
@@ -2237,7 +2237,7 @@ def handle_command(chat_id, text):
                      {"text": "📝 Відмітити", "callback_data": "shopping_mark"}],
                     [{"text": "🗑 Очистити", "callback_data": "shopping_clear"}]
                 ]}
-                send(chat_id, f"🛒 <b>Список покупок</b> ({done_count}/{len(items)}):\n\n{text_list}", reply_markup=kb)
+                send_with_keyboard(chat_id, f"🛒 <b>Список покупок</b> ({done_count}/{len(items)}):\n\n{text_list}", kb)
         except Exception as e:
             send(chat_id, f"⚠️ {e}")
 
