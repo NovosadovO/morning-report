@@ -5,12 +5,12 @@
     "exact_sent": true
   },
   "moon__venus__90": {
-    "orb": 1.45,
-    "sent": true,
-    "event": "enter"
+    "orb": 1.44,
+    "sent": false,
+    "exact_sent": false
   },
   "moon__jupiter__150": {
-    "orb": 0.79,
+    "orb": 0.8,
     "sent": false,
     "exact_sent": true
   },
