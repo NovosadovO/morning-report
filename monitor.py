@@ -322,10 +322,11 @@ def _sanitize_html(text: str) -> str:
 
 def _send_telegram_chunk(text: str) -> bool:
     """Надсилає одне повідомлення з HTML parse_mode."""
+    import re as _re
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     # Автоматично фіксуємо голі & перед відправкою
     text = _sanitize_html(text)
-    print(f"[tg_chunk] len={len(text)} preview={repr(text[:80])}", flush=True)
+    print(f"[tg_chunk] len={len(text)} preview={repr(text[:120])}", flush=True)
 
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,
@@ -340,10 +341,27 @@ def _send_telegram_chunk(text: str) -> bool:
     except urllib.error.HTTPError as e:
         err_body = e.read().decode()
         print(f"[tg_chunk] HTML error: {e.code} {err_body}", flush=True)
-        # Fallback: plain text (стрипаємо HTML теги)
+        # Лог перших і останніх 300 символів тексту для діагностики
+        print(f"[tg_chunk] TEXT START: {repr(text[:300])}", flush=True)
+        print(f"[tg_chunk] TEXT END:   {repr(text[-300:])}", flush=True)
+        # Fallback: агресивний whitelist - лишаємо тільки дозволені Telegram теги
         try:
-            import re as _re
-            clean = _re.sub(r'<[^>]+>', '', text).replace('&amp;','&').replace('&lt;','<').replace('&gt;','>')
+            ALLOWED = {'b', 'i', 'u', 's', 'code', 'pre'}
+            # Стрипаємо всі теги крім дозволених
+            def _strip_unknown(m):
+                tag_inner = m.group(1) or m.group(2)  # "b" / "/b" / "a href=..."
+                tag_name = tag_inner.lstrip('/').split()[0].lower()
+                if tag_name in ALLOWED:
+                    return m.group(0)  # зберігаємо
+                return ''  # видаляємо невідомий тег
+            clean = _re.sub(r'<(/?\w+[^>]*)>', _strip_unknown, text)
+            # Перевіримо баланс - якщо незакриті теги залишились, стрипуємо все
+            opens  = _re.findall(r'<(b|i|u|s|code|pre)>', clean)
+            closes = _re.findall(r'</(b|i|u|s|code|pre)>', clean)
+            if sorted(opens) != sorted(closes):
+                print(f"[tg_chunk] unbalanced tags, stripping all HTML", flush=True)
+                clean = _re.sub(r'<[^>]+>', '', clean)
+            clean = clean.replace('&amp;','&').replace('&lt;','<').replace('&gt;','>')
             payload2 = json.dumps({"chat_id": TELEGRAM_CHAT, "text": clean}).encode()
             req2 = urllib.request.Request(url, data=payload2, headers={"Content-Type": "application/json"})
             with urllib.request.urlopen(req2, timeout=10) as r2:
@@ -3595,8 +3613,12 @@ def main():
             _weather_block += f"<i>{'  ·  '.join(_tips)}</i>\n"
 
         # Прогноз на сьогодні — витягуємо рядки з годинами
-        _forecast_lines = _re_rep.findall(r"\d{2}:\d{2}[^\n]+", weather_text or "")
-        _today_fc = [l for l in _forecast_lines if "00:" not in l][:5]
+        # ВАЖЛИВО: шукаємо рядок що починається з <code>ЧЧ:ХХ (або просто ЧЧ:ХХ)
+        # щоб не зрізати відкриваючий <code> тег і не отримати orphan </code>
+        _forecast_lines = _re_rep.findall(r"(?:<code>)?\d{2}:\d{2}[^\n]+", weather_text or "")
+        # Стрипуємо будь-які теги з витягнутих рядків — показуємо як plain в блоці
+        _today_fc_raw = [_re_rep.sub(r'<[^>]+>', '', l) for l in _forecast_lines if "00:" not in l]
+        _today_fc = _today_fc_raw[:5]
         if _today_fc:
             _weather_block += "\n📅 <b>Прогноз сьогодні:</b>\n"
             _weather_block += "  ".join(_today_fc[:4])
