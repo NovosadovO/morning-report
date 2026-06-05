@@ -3863,39 +3863,49 @@ def main():
     except Exception as _e_pf:
         print(f"portfolio block error: {_e_pf}")
 
-    # ── Міні-дашборд — КОЖЕН звіт ─────────────────────────────────────────────
+    # ── Вага + звички за місяць — КОЖЕН звіт ─────────────────────────────────
     try:
-        print(f"[charts] generating mini dashboard for {_today_rep}...", flush=True)
-        from charts import plot_mini_dashboard as _plot_mini
-        _mini_chart = _plot_mini(_today_rep)
-        print(f"[charts] mini dashboard: {len(_mini_chart) if _mini_chart else 0} bytes", flush=True)
-        if _mini_chart:
-            parts.append({"photo": _mini_chart, "caption": f"📊 Вага + звички  {now_local.strftime('%d.%m %H:%M')}"})
-    except Exception as _e_mini:
-        import traceback as _tb_mini
-        print(f"mini dashboard chart error: {_e_mini}\n{_tb_mini.format_exc()}", flush=True)
+        print(f"[charts] generating monthly dashboard for {now_local.year}-{now_local.month}...", flush=True)
+        from charts import plot_monthly_dashboard as _plot_monthly
+        _month_chart = _plot_monthly()
+        print(f"[charts] monthly dashboard: {len(_month_chart) if _month_chart else 0} bytes", flush=True)
+        if _month_chart:
+            parts.append({"photo": _month_chart, "caption": f"📊 Вага + звички — {now_local.strftime('%B')}"})
+    except Exception as _e_monthly:
+        import traceback as _tb_monthly
+        print(f"monthly dashboard error: {_e_monthly}\n{_tb_monthly.format_exc()}", flush=True)
 
-    # ── Графік бігу — КОЖЕН звіт ──────────────────────────────────────────────
+    # ── Біг за місяць — КОЖЕН звіт ────────────────────────────────────────────
     try:
-        print(f"[charts] generating run chart...", flush=True)
-        from strava_charts import plot_week_chart as _plot_run
-        _run_chart = _plot_run(weeks_back=8)
-        print(f"[charts] run chart: {len(_run_chart) if _run_chart else 0} bytes", flush=True)
-        if _run_chart:
-            parts.append({"photo": _run_chart, "caption": f"🏃 Біг — останні 8 тижнів  {now_local.strftime('%d.%m')}"})
-    except Exception as _e_run:
-        import traceback as _tb_run
-        print(f"run chart error: {_e_run}\n{_tb_run.format_exc()}", flush=True)
+        print(f"[charts] generating run month chart for {now_local.year}-{now_local.month}...", flush=True)
+        from strava_charts import plot_month_chart as _plot_run_month
+        _run_month = _plot_run_month(now_local.year, now_local.month)
+        print(f"[charts] run month chart: {len(_run_month) if _run_month else 0} bytes", flush=True)
+        if _run_month:
+            parts.append({"photo": _run_month, "caption": f"🏃 Біг — {now_local.strftime('%B %Y')}"})
+    except Exception as _e_run_month:
+        import traceback as _tb_run_month
+        print(f"run month chart error: {_e_run_month}\n{_tb_run_month.format_exc()}", flush=True)
 
-    # ── Повний дашборд дня — тільки о 19/20:xx ────────────────────────────────
-    if now_local.hour in (19, 20):
+    # ── Тижневий підсумок — неділя о 20:20-20:29 ──────────────────────────────
+    if now_local.weekday() == 6 and now_local.hour == 20 and 20 <= now_local.minute <= 29:
         try:
-            from charts import plot_day_dashboard as _plot_dd
-            _dchart = _plot_dd(_today_rep)
-            if _dchart:
-                parts.append({"photo": _dchart, "caption": f"📊 Повний дашборд дня — {now_local.strftime('%d.%m')}"})
-        except Exception as _e_dd:
-            print(f"day dashboard chart error: {_e_dd}")
+            print(f"[charts] generating weekly dashboard...", flush=True)
+            from charts import plot_weekly_dashboard as _plot_weekly
+            _wchart = _plot_weekly()
+            print(f"[charts] weekly dashboard: {len(_wchart) if _wchart else 0} bytes", flush=True)
+            if _wchart:
+                parts.append({"photo": _wchart, "caption": "📅 Тижневий підсумок"})
+        except Exception as _e_weekly:
+            import traceback as _tb_weekly
+            print(f"weekly dashboard error: {_e_weekly}\n{_tb_weekly.format_exc()}", flush=True)
+
+    # ── Місячний підсумок — останній день місяця о 20:xx ──────────────────────
+    import calendar as _cal_check
+    _, _last_day = _cal_check.monthrange(now_local.year, now_local.month)
+    if now_local.day == _last_day and now_local.hour == 20:
+        # monthly_dashboard і run_month вже відправлені вище з підписом місяця
+        print(f"[charts] last day of month — monthly summary already sent above", flush=True)
 
     # Блок 5: Email — заголовок + кожен лист окремо з кнопками
     if email_text:
