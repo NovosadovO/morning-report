@@ -3809,14 +3809,14 @@ def main():
         if len(_health_lines) > 1:
             parts.append("\n".join(_health_lines))
 
-            # Графік ваги — кожні 6 год
-            if now_local.hour in (6, 12, 18, 21) and now_local.minute < 35:
-                try:
-                    _wchart = generate_weight_trend_chart(60)
-                    if _wchart:
-                        parts.append({"photo": _wchart, "caption": "⚖️ Тренд ваги 60д"})
-                except Exception as _e_wc:
-                    print(f"weight chart error: {_e_wc}")
+            # Графік місячний (вага + звички) — одразу після health block
+            try:
+                from charts import plot_monthly_dashboard as _plot_monthly_h
+                _monthly_h = _plot_monthly_h()
+                if _monthly_h:
+                    parts.append({"photo": _monthly_h, "caption": f"📊 Вага + звички — {now_local.strftime('%B')}"})
+            except Exception as _e_mh:
+                print(f"monthly chart after health error: {_e_mh}", flush=True)
     except Exception as _e_health:
         print(f"health block error: {_e_health}")
 
@@ -3828,6 +3828,14 @@ def main():
         _strava_text = format_strava_block()
         if _strava_text:
             parts.append(_section_header("🏃", "БІГОВИЙ ТРЕКЕР") + "\n" + "\n".join(_strava_text.split("\n")[1:]) if "\n" in _strava_text else _section_header("🏃", "БІГОВИЙ ТРЕКЕР") + "\n" + _strava_text)
+            # Графік бігу — одразу після strava block
+            try:
+                from strava_charts import plot_month_chart as _plot_run_h
+                _run_h = _plot_run_h(now_local.year, now_local.month)
+                if _run_h:
+                    parts.append({"photo": _run_h, "caption": f"🏃 Біг — {now_local.strftime('%B %Y')}"})
+            except Exception as _e_rh:
+                print(f"run chart after strava error: {_e_rh}", flush=True)
     except Exception as _e_strava:
         print(f"strava block error: {_e_strava}")
 
@@ -3864,36 +3872,6 @@ def main():
         print(f"portfolio block error: {_e_pf}")
 
     # ── Вага + звички за місяць — КОЖЕН звіт ─────────────────────────────────
-    try:
-        send_telegram(f"[DEBUG] chart block reached. HAS_MPL check...")
-        try:
-            import matplotlib
-            matplotlib.use("Agg")
-            import matplotlib.pyplot as _plt_test
-            send_telegram(f"[DEBUG] matplotlib import OK, version={matplotlib.__version__}")
-        except Exception as _mpl_e:
-            send_telegram(f"[DEBUG] matplotlib import FAILED: {type(_mpl_e).__name__}: {_mpl_e}")
-        from charts import plot_monthly_dashboard as _plot_monthly, HAS_MPL as _hmp
-        send_telegram(f"[DEBUG] HAS_MPL={_hmp}")
-        _month_chart = _plot_monthly()
-        send_telegram(f"[DEBUG] monthly dashboard: {len(_month_chart) if _month_chart else 0} bytes")
-        if _month_chart:
-            parts.append({"photo": _month_chart, "caption": f"📊 Вага + звички — {now_local.strftime('%B')}"})
-    except Exception as _e_monthly:
-        import traceback as _tb_monthly
-        send_telegram(f"[DEBUG] monthly dashboard ERROR: {_e_monthly}\n{_tb_monthly.format_exc()[:500]}")
-
-    # ── Біг за місяць — КОЖЕН звіт ────────────────────────────────────────────
-    try:
-        from strava_charts import plot_month_chart as _plot_run_month
-        _run_month = _plot_run_month(now_local.year, now_local.month)
-        send_telegram(f"[DEBUG] run month chart: {len(_run_month) if _run_month else 0} bytes")
-        if _run_month:
-            parts.append({"photo": _run_month, "caption": f"🏃 Біг — {now_local.strftime('%B %Y')}"})
-    except Exception as _e_run_month:
-        import traceback as _tb_run_month
-        send_telegram(f"[DEBUG] run month ERROR: {_e_run_month}\n{_tb_run_month.format_exc()[:500]}")
-
     # ── Тижневий підсумок — неділя о 20:20-20:29 ──────────────────────────────
     if now_local.weekday() == 6 and now_local.hour == 20 and 20 <= now_local.minute <= 29:
         try:

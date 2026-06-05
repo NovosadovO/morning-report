@@ -1,1 +1,8 @@
-# Intentionally empty — all deps are managed in nixpacks.toml
+matplotlib
+numpy
+requests
+cryptography
+google-auth
+google-auth-httplib2
+google-api-python-client
+yfinance
