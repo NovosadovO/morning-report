@@ -14,7 +14,7 @@ try:
     import matplotlib.dates as mdates
     from matplotlib.patches import FancyBboxPatch
     HAS_MPL = True
-except ImportError:
+except Exception:
     HAS_MPL = False
 
 # Стиль — темна тема

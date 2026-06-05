@@ -3866,6 +3866,13 @@ def main():
     # ── Вага + звички за місяць — КОЖЕН звіт ─────────────────────────────────
     try:
         send_telegram(f"[DEBUG] chart block reached. HAS_MPL check...")
+        try:
+            import matplotlib
+            matplotlib.use("Agg")
+            import matplotlib.pyplot as _plt_test
+            send_telegram(f"[DEBUG] matplotlib import OK, version={matplotlib.__version__}")
+        except Exception as _mpl_e:
+            send_telegram(f"[DEBUG] matplotlib import FAILED: {type(_mpl_e).__name__}: {_mpl_e}")
         from charts import plot_monthly_dashboard as _plot_monthly, HAS_MPL as _hmp
         send_telegram(f"[DEBUG] HAS_MPL={_hmp}")
         _month_chart = _plot_monthly()

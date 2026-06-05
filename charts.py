@@ -14,7 +14,7 @@ try:
     import matplotlib.gridspec as gridspec
     import numpy as np
     HAS_MPL = True
-except ImportError:
+except Exception:
     HAS_MPL = False
 
 # ── Палітра ───────────────────────────────────────────────────────────────────
