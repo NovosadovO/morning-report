@@ -3865,21 +3865,27 @@ def main():
 
     # ── Міні-дашборд — КОЖЕН звіт ─────────────────────────────────────────────
     try:
+        print(f"[charts] generating mini dashboard for {_today_rep}...", flush=True)
         from charts import plot_mini_dashboard as _plot_mini
         _mini_chart = _plot_mini(_today_rep)
+        print(f"[charts] mini dashboard: {len(_mini_chart) if _mini_chart else 0} bytes", flush=True)
         if _mini_chart:
             parts.append({"photo": _mini_chart, "caption": f"📊 Вага + звички  {now_local.strftime('%d.%m %H:%M')}"})
     except Exception as _e_mini:
-        print(f"mini dashboard chart error: {_e_mini}")
+        import traceback as _tb_mini
+        print(f"mini dashboard chart error: {_e_mini}\n{_tb_mini.format_exc()}", flush=True)
 
     # ── Графік бігу — КОЖЕН звіт ──────────────────────────────────────────────
     try:
+        print(f"[charts] generating run chart...", flush=True)
         from strava_charts import plot_week_chart as _plot_run
         _run_chart = _plot_run(weeks_back=8)
+        print(f"[charts] run chart: {len(_run_chart) if _run_chart else 0} bytes", flush=True)
         if _run_chart:
             parts.append({"photo": _run_chart, "caption": f"🏃 Біг — останні 8 тижнів  {now_local.strftime('%d.%m')}"})
     except Exception as _e_run:
-        print(f"run chart error: {_e_run}")
+        import traceback as _tb_run
+        print(f"run chart error: {_e_run}\n{_tb_run.format_exc()}", flush=True)
 
     # ── Повний дашборд дня — тільки о 19/20:xx ────────────────────────────────
     if now_local.hour in (19, 20):
