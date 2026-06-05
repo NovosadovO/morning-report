@@ -2153,7 +2153,12 @@ def handle_command(chat_id, text):
     elif text in ["/забути", "забути", "/clear", "/скинути"]:
         from context import clear_history
         clear_history()
-        send(chat_id, "🧹 Пам'ять розмови очищена. Починаємо з чистого аркуша!")
+        try:
+            from planner import clear_state as _cs
+            _cs()
+        except Exception:
+            pass
+        send(chat_id, "🧹 Пам'ять і стан очищені. Починаємо з чистого аркуша!")
 
     elif text in ["/статус_зараз", "/я", "я зараз", "де я"]:
         try:
