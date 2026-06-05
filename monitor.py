@@ -296,8 +296,12 @@ def _sanitize_html(text: str) -> str:
     counter = [0]
 
     def save(m):
+        tag = m.group()
+        # Екрануємо & всередині href що ще не є &amp; etc.
+        if tag.startswith('<a '):
+            tag = _re.sub(r'&(?!amp;|lt;|gt;|quot;|#)', '&amp;', tag)
         key = f'\x00PH{counter[0]}\x00'
-        placeholders[key] = m.group()
+        placeholders[key] = tag
         counter[0] += 1
         return key
 
@@ -335,7 +339,7 @@ def _send_telegram_chunk(text: str) -> bool:
             return r.status == 200
     except urllib.error.HTTPError as e:
         err_body = e.read().decode()
-        print(f"[tg_chunk] HTML error: {e.code} {err_body[:300]}", flush=True)
+        print(f"[tg_chunk] HTML error: {e.code} {err_body}", flush=True)
         # Fallback: plain text (стрипаємо HTML теги)
         try:
             import re as _re
