@@ -3865,27 +3865,27 @@ def main():
 
     # ── Вага + звички за місяць — КОЖЕН звіт ─────────────────────────────────
     try:
-        print(f"[charts] generating monthly dashboard for {now_local.year}-{now_local.month}...", flush=True)
-        from charts import plot_monthly_dashboard as _plot_monthly
+        send_telegram(f"[DEBUG] chart block reached. HAS_MPL check...")
+        from charts import plot_monthly_dashboard as _plot_monthly, HAS_MPL as _hmp
+        send_telegram(f"[DEBUG] HAS_MPL={_hmp}")
         _month_chart = _plot_monthly()
-        print(f"[charts] monthly dashboard: {len(_month_chart) if _month_chart else 0} bytes", flush=True)
+        send_telegram(f"[DEBUG] monthly dashboard: {len(_month_chart) if _month_chart else 0} bytes")
         if _month_chart:
             parts.append({"photo": _month_chart, "caption": f"📊 Вага + звички — {now_local.strftime('%B')}"})
     except Exception as _e_monthly:
         import traceback as _tb_monthly
-        print(f"monthly dashboard error: {_e_monthly}\n{_tb_monthly.format_exc()}", flush=True)
+        send_telegram(f"[DEBUG] monthly dashboard ERROR: {_e_monthly}\n{_tb_monthly.format_exc()[:500]}")
 
     # ── Біг за місяць — КОЖЕН звіт ────────────────────────────────────────────
     try:
-        print(f"[charts] generating run month chart for {now_local.year}-{now_local.month}...", flush=True)
         from strava_charts import plot_month_chart as _plot_run_month
         _run_month = _plot_run_month(now_local.year, now_local.month)
-        print(f"[charts] run month chart: {len(_run_month) if _run_month else 0} bytes", flush=True)
+        send_telegram(f"[DEBUG] run month chart: {len(_run_month) if _run_month else 0} bytes")
         if _run_month:
             parts.append({"photo": _run_month, "caption": f"🏃 Біг — {now_local.strftime('%B %Y')}"})
     except Exception as _e_run_month:
         import traceback as _tb_run_month
-        print(f"run month chart error: {_e_run_month}\n{_tb_run_month.format_exc()}", flush=True)
+        send_telegram(f"[DEBUG] run month ERROR: {_e_run_month}\n{_tb_run_month.format_exc()[:500]}")
 
     # ── Тижневий підсумок — неділя о 20:20-20:29 ──────────────────────────────
     if now_local.weekday() == 6 and now_local.hour == 20 and 20 <= now_local.minute <= 29:
