@@ -3846,6 +3846,15 @@ def main():
     except Exception as _e_mini:
         print(f"mini dashboard chart error: {_e_mini}")
 
+    # ── Графік бігу — КОЖЕН звіт ──────────────────────────────────────────────
+    try:
+        from strava_charts import plot_week_chart as _plot_run
+        _run_chart = _plot_run(weeks_back=8)
+        if _run_chart:
+            parts.append({"photo": _run_chart, "caption": f"🏃 Біг — останні 8 тижнів  {now_local.strftime('%d.%m')}"})
+    except Exception as _e_run:
+        print(f"run chart error: {_e_run}")
+
     # ── Повний дашборд дня — тільки о 19/20:xx ────────────────────────────────
     if now_local.hour in (19, 20):
         try:

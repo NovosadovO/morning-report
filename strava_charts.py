@@ -84,7 +84,7 @@ def plot_month_chart(year: int = None, month: int = None) -> bytes:
                    "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"]
 
     _setup_dark_style()
-    fig, ax1 = plt.subplots(figsize=(10, 4.5))
+    fig, ax1 = plt.subplots(figsize=(14, 6))
     fig.patch.set_facecolor(DARK_BG)
 
     # Bars
@@ -167,7 +167,7 @@ def plot_year_chart(year: int = None) -> bytes:
     x        = list(range(len(labels)))
 
     _setup_dark_style()
-    fig, ax1 = plt.subplots(figsize=(10, 4.5))
+    fig, ax1 = plt.subplots(figsize=(14, 6))
     fig.patch.set_facecolor(DARK_BG)
 
     # Cumulative line
@@ -248,7 +248,7 @@ def plot_week_chart(weeks_back: int = 8) -> bytes:
     x = list(range(len(weeks)))
 
     _setup_dark_style()
-    fig, ax1 = plt.subplots(figsize=(10, 4.5))
+    fig, ax1 = plt.subplots(figsize=(14, 6))
     fig.patch.set_facecolor(DARK_BG)
 
     # Поточний тиждень виділяємо
@@ -258,20 +258,21 @@ def plot_week_chart(weeks_back: int = 8) -> bytes:
     for bar, km, cnt in zip(bars, km_vals, run_cnt):
         if km > 0:
             ax1.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.3,
-                     f"{km}", ha="center", va="bottom", fontsize=8,
+                     f"{km}", ha="center", va="bottom", fontsize=12,
                      color=TEXT_COLOR, fontweight="bold")
             ax1.text(bar.get_x() + bar.get_width() / 2, bar.get_height() / 2,
-                     f"×{cnt}", ha="center", va="center", fontsize=7, color=DARK_BG)
+                     f"×{cnt}", ha="center", va="center", fontsize=10, color=DARK_BG)
 
-    ax1.set_ylabel("Км / тиждень", color=ACCENT, fontsize=9)
+    ax1.set_ylabel("Км / тиждень", color=ACCENT, fontsize=12)
     ax1.set_xticks(x)
-    ax1.set_xticklabels(labels, fontsize=8)
+    ax1.set_xticklabels(labels, fontsize=11)
+    ax1.tick_params(colors=TEXT_COLOR, labelsize=11)
     ax1.grid(axis="y", zorder=0)
 
     total_km = sum(km_vals)
     ax1.set_title(
         f"🏃 Останні {weeks_back} тижнів  ·  {total_km:.1f} км",
-        color=TEXT_COLOR, fontsize=10, pad=10
+        color=TEXT_COLOR, fontsize=13, pad=12
     )
 
     plt.tight_layout()

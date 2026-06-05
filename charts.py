@@ -854,7 +854,7 @@ def plot_mini_dashboard(today_str: str = None) -> bytes | None:
         HABITS    = ["shower", "run", "water", "tea", "sauna"]
         entry     = raw.get(today_str, {}) or {}
 
-        fig, (ax_w, ax_h) = plt.subplots(1, 2, figsize=(10, 3.5),
+        fig, (ax_w, ax_h) = plt.subplots(1, 2, figsize=(14, 6),
                                           gridspec_kw={"width_ratios": [1.6, 1]},
                                           facecolor=BG)
 
@@ -896,30 +896,30 @@ def plot_mini_dashboard(today_str: str = None) -> bytes | None:
             # Підпис поточного значення
             ax_w.annotate(f"{yi[-1]:.1f} кг",
                           xy=(xi[-1], yi[-1]),
-                          xytext=(-40, 10), textcoords="offset points",
-                          color=GREEN, fontsize=10, fontweight="bold")
+                          xytext=(-50, 12), textcoords="offset points",
+                          color=GREEN, fontsize=14, fontweight="bold")
 
             # Тренд підпис
             ax_w.text(0.03, 0.96,
                       f"тренд: {sign}{slope_week:.2f} кг/тижд",
                       transform=ax_w.transAxes,
-                      fontsize=8, color=t_col, va="top", fontweight="bold")
+                      fontsize=11, color=t_col, va="top", fontweight="bold")
 
             # X-тіки
             tick_ix = [0, 7, 13]
             ax_w.set_xticks(tick_ix)
             ax_w.set_xticklabels(
                 [w_dates[t].strftime("%d.%m") for t in tick_ix],
-                fontsize=7.5, color=MUTED
+                fontsize=11, color=MUTED
             )
         else:
             ax_w.text(0.5, 0.5, "Немає даних", ha="center", va="center",
-                      color=MUTED, fontsize=10, transform=ax_w.transAxes)
+                      color=MUTED, fontsize=13, transform=ax_w.transAxes)
 
-        ax_w.set_title("⚖️ Вага + тренд  (14 днів)", color=TEXT, fontsize=10, fontweight="bold", pad=6)
+        ax_w.set_title("⚖️ Вага + тренд  (14 днів)", color=TEXT, fontsize=13, fontweight="bold", pad=8)
         for spine in ax_w.spines.values():
             spine.set_edgecolor(BORDER)
-        ax_w.tick_params(colors=MUTED)
+        ax_w.tick_params(colors=MUTED, labelsize=11)
         ax_w.grid(axis="y", alpha=0.18)
 
         # ── Право: звички + % тижня ────────────────────────────────────────────
@@ -940,14 +940,14 @@ def plot_mini_dashboard(today_str: str = None) -> bytes | None:
             week_pct.append(wd / 7)
 
         # Фонова смуга 7-денного %
-        ax_h.barh(y_pos, week_pct, height=0.55, color=[HABIT_COLORS[h] for h in HABITS],
+        ax_h.barh(y_pos, week_pct, height=0.6, color=[HABIT_COLORS[h] for h in HABITS],
                   alpha=0.22, zorder=2)
         # Бар сьогодні
-        ax_h.barh(y_pos, bar_vals, height=0.55, color=bar_cols, zorder=3)
+        ax_h.barh(y_pos, bar_vals, height=0.6, color=bar_cols, zorder=3)
 
-        ax_h.set_xlim(0, 1.18)
+        ax_h.set_xlim(0, 1.35)
         ax_h.set_yticks(y_pos)
-        ax_h.set_yticklabels([HABIT_LABELS[h] for h in HABITS], fontsize=8.5, color=TEXT)
+        ax_h.set_yticklabels([HABIT_LABELS[h] for h in HABITS], fontsize=12, color=TEXT)
         ax_h.set_xticks([])
         ax_h.invert_yaxis()
         ax_h.grid(False)
@@ -958,20 +958,20 @@ def plot_mini_dashboard(today_str: str = None) -> bytes | None:
         for i, hkey in enumerate(HABITS):
             icon  = "✅" if entry.get(hkey) is True else "❌"
             pct_v = int(week_pct[i] * 100)
-            ax_h.text(1.02, i, f"{icon} {pct_v}%", va="center", ha="left",
-                      fontsize=8, color=TEXT)
+            ax_h.text(1.04, i, f"{icon} {pct_v}%", va="center", ha="left",
+                      fontsize=11, color=TEXT)
 
         done_today = sum(1 for h in HABITS if entry.get(h) is True)
         ax_h.set_title(f"Звички  {done_today}/{len(HABITS)} сьогодні", color=TEXT,
-                       fontsize=10, fontweight="bold", pad=6)
+                       fontsize=13, fontweight="bold", pad=8)
 
         # ── Загальний заголовок ─────────────────────────────────────────────────
         fig.suptitle(
             f"📊 Міні-дашборд  {today_str[8:]}.{today_str[5:7]}",
-            fontsize=11, color=TEXT, fontweight="bold", y=1.03
+            fontsize=14, color=TEXT, fontweight="bold", y=1.02
         )
 
-        fig.tight_layout(pad=1.2)
+        fig.tight_layout(pad=1.5)
         return _buf(fig)
     except Exception as e:
         print(f"[charts] mini_dashboard error: {e}")
