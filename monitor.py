@@ -4000,15 +4000,17 @@ def main():
 
     def _send_photo_inline(photo_bytes, caption):
         try:
+            print(f"[photo inline] sending: bytes={len(photo_bytes) if photo_bytes else 0} chat={str(TELEGRAM_CHAT)[:10]} token_ok={bool(TELEGRAM_TOKEN)} caption={caption[:40]!r}", flush=True)
             _r = _req_send.post(
                 f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
-                data={"chat_id": TELEGRAM_CHAT, "caption": caption},
+                data={"chat_id": TELEGRAM_CHAT, "caption": caption, "parse_mode": "HTML"},
                 files={"photo": ("chart.png", _io_send.BytesIO(photo_bytes), "image/png")},
                 timeout=25
             )
-            print(f"[photo inline] {caption[:30]} status={_r.status_code} resp={_r.text[:150]}")
+            print(f"[photo inline] status={_r.status_code} resp={_r.text[:200]}", flush=True)
         except Exception as _pe:
-            print(f"[photo inline] error: {_pe}")
+            import traceback as _tb_pi
+            print(f"[photo inline] error: {_pe}\n{_tb_pi.format_exc()}", flush=True)
 
     MAX_MSG = 4000
     ok = True
