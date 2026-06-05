@@ -2686,7 +2686,13 @@ def main():
                 try:
                     from planner import get_state as _gs, clear_state as _cs
                     _st = _gs()
-                    if _st.get("mode") == "awaiting_shopping":
+                    # QWatch/health текст — ніколи не йде в список покупок
+                    _is_qwatch = ("health score" in text.lower() or "оцінка здоров" in text.lower()
+                                  or ("hrv" in text.lower() and ("сон" in text.lower() or "кроки" in text.lower() or "пульс" in text.lower()))
+                                  or "qwatch" in text.lower())
+                    if _is_qwatch and _st.get("mode") == "awaiting_shopping":
+                        _cs()  # скидаємо shopping mode
+                    if _st.get("mode") == "awaiting_shopping" and not _is_qwatch:
                         import shopping as _sh_inp
                         _cs()
                         # Замінюємо переноси рядків на коми і передаємо в add_items
