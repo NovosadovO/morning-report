@@ -137,7 +137,7 @@ def run_monitor_loop():
     Основний звіт — перевіряє кожну хвилину чи ми точно на :00 або :30.
     Запускає monitor.py лише один раз на слот — дублів немає.
     """
-    print("=== Starting monitor loop (check every 1min, only at :00/:30) ===", flush=True)
+    print("=== Starting monitor loop v2026-06-06 (check every 1min, only at :00/:30) ===", flush=True)
     while True:
         now = datetime.now(timezone.utc)
         now_local = now + timedelta(hours=2)

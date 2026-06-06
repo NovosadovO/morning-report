@@ -4011,6 +4011,15 @@ def main():
             current_msg = ""
             _time_main.sleep(0.4)
 
+    # DBG: показати склад parts
+    _parts_summary = ", ".join(
+        f"photo({len(s.get('photo',b''))}b)" if isinstance(s, dict) and "photo" in s
+        else f"txt({len(s)})" if isinstance(s, str)
+        else "other"
+        for s in parts
+    )
+    send_telegram(f"[DBG] parts({len(parts)}): {_parts_summary[:300]}")
+
     for section in parts:
         # Фото-секція — спочатку надіслати накопичений текст, потім фото
         if isinstance(section, dict) and "photo" in section:
