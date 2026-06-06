@@ -3818,6 +3818,7 @@ def main():
             except Exception as _e_mh:
                 import traceback as _tb_mh
                 print(f"monthly chart error: {_e_mh}\n{_tb_mh.format_exc()}", flush=True)
+                send_telegram(f"[DBG chart] monthly: {_e_mh}")
     except Exception as _e_health:
         print(f"health block error: {_e_health}")
 
@@ -3838,6 +3839,7 @@ def main():
             except Exception as _e_rh:
                 import traceback as _tb_rh
                 print(f"run chart error: {_e_rh}\n{_tb_rh.format_exc()}", flush=True)
+                send_telegram(f"[DBG chart] run: {_e_rh}")
     except Exception as _e_strava:
         print(f"strava block error: {_e_strava}")
 
@@ -4018,7 +4020,15 @@ def main():
         else "other"
         for s in parts
     )
-    send_telegram(f"[DBG] parts({len(parts)}): {_parts_summary[:300]}")
+    try:
+        from charts import HAS_MPL as _hm1
+    except:
+        _hm1 = "err"
+    try:
+        from strava_charts import HAS_MPL as _hm2
+    except:
+        _hm2 = "err"
+    send_telegram(f"[DBG] parts({len(parts)}): {_parts_summary[:300]} | mpl={_hm1}/{_hm2}")
 
     for section in parts:
         # Фото-секція — спочатку надіслати накопичений текст, потім фото
