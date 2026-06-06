@@ -1,16 +1,15 @@
 providers = ["python"]
 
 [phases.setup]
-nixPkgs = ["gcc", "libffi", "openssl", "zlib", "freetype", "pkg-config"]
+nixPkgs = ["gcc", "libffi", "openssl", "zlib", "freetype", "pkg-config", "freetype2"]
 
 [phases.install]
 cmds = [
   "pip install --upgrade pip --no-cache-dir",
+  "pip install --no-cache-dir matplotlib numpy",
   "pip install --no-cache-dir cryptography",
   "pip install --no-cache-dir google-auth google-auth-httplib2 google-api-python-client",
   "pip install --no-cache-dir requests",
-  "pip install --no-cache-dir numpy",
-  "pip install --no-cache-dir matplotlib",
   "pip install --no-cache-dir kerykeion || echo 'kerykeion optional, skip'",
   "pip install --no-cache-dir yfinance"
 ]
