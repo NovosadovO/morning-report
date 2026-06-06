@@ -702,8 +702,7 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
             # Вертикальна лінія-роздільник між місяцями
             if cur != start_date:
                 ax_h.axvline(x=x_pos - GAP / 2, ymin=0.02, ymax=0.92,
-                             color=BORDER, linewidth=0.8, alpha=0.5,
-                             transform=ax_h.get_xaxis_transform())
+                             color=BORDER, linewidth=0.8, alpha=0.5)
             nxt_month = cur.month % 12 + 1
             nxt_year  = cur.year + (1 if cur.month == 12 else 0)
             cur = cur.replace(year=nxt_year, month=nxt_month, day=1)

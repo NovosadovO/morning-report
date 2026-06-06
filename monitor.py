@@ -3813,12 +3813,11 @@ def main():
             try:
                 from charts import plot_monthly_dashboard as _plot_monthly_h
                 _monthly_h = _plot_monthly_h()
-                send_telegram(f"[DBG] monthly chart: {len(_monthly_h) if _monthly_h else 0} bytes")
                 if _monthly_h:
                     parts.append({"photo": _monthly_h, "caption": f"📊 Вага + звички — {now_local.strftime('%B')}"})
             except Exception as _e_mh:
                 import traceback as _tb_mh
-                send_telegram(f"[DBG] monthly chart ERR: {_e_mh}\n{_tb_mh.format_exc()[-600:]}")
+                print(f"monthly chart error: {_e_mh}\n{_tb_mh.format_exc()}", flush=True)
     except Exception as _e_health:
         print(f"health block error: {_e_health}")
 
@@ -3834,12 +3833,11 @@ def main():
             try:
                 from strava_charts import plot_month_chart as _plot_run_h
                 _run_h = _plot_run_h(now_local.year, now_local.month)
-                send_telegram(f"[DBG] run chart: {len(_run_h) if _run_h else 0} bytes")
                 if _run_h:
                     parts.append({"photo": _run_h, "caption": f"🏃 Біг — {now_local.strftime('%B %Y')}"})
             except Exception as _e_rh:
                 import traceback as _tb_rh
-                send_telegram(f"[DBG] run chart ERR: {_e_rh}\n{_tb_rh.format_exc()[-600:]}")
+                print(f"run chart error: {_e_rh}\n{_tb_rh.format_exc()}", flush=True)
     except Exception as _e_strava:
         print(f"strava block error: {_e_strava}")
 
