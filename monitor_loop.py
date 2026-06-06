@@ -16,7 +16,17 @@ import time
 import subprocess
 import sys
 import threading
+import signal
+import os
 from datetime import datetime, timezone, timedelta
+
+# Graceful shutdown при SIGTERM (Railway деплой)
+def _handle_sigterm(signum, frame):
+    print("=== SIGTERM received — shutting down ===", flush=True)
+    sys.exit(0)
+
+signal.signal(signal.SIGTERM, _handle_sigterm)
+signal.signal(signal.SIGINT, _handle_sigterm)
 
 
 def run_bot():
