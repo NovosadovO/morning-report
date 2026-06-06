@@ -39,11 +39,11 @@ HABIT_COLORS = {
     "sauna":  RED,
 }
 HABIT_LABELS = {
-    "shower": "🚿 Душ",
-    "run":    "🏃 Біг",
-    "water":  "💧 Вода",
-    "tea":    "🍵 Чай",
-    "sauna":  "🧖 Сауна",
+    "shower": "Душ",
+    "run":    "Біг",
+    "water":  "Вода",
+    "tea":    "Чай",
+    "sauna":  "Сауна",
 }
 
 _DIR = os.path.dirname(os.path.abspath(__file__))
@@ -668,29 +668,45 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
                 entry = raw.get(d.isoformat(), {}) or {}
                 v = entry.get(hkey)
                 if v is True:
-                    fc, alpha = color, 0.92
+                    # Зелене коло з галочкою
+                    circle = plt.Circle(
+                        (di * (CELL + GAP) + CELL / 2, -(hi * 1.6) + 0.3),
+                        0.44, color=color, alpha=0.9, zorder=2
+                    )
+                    ax_h.add_patch(circle)
+                    ax_h.text(
+                        di * (CELL + GAP) + CELL / 2, -(hi * 1.6) + 0.3,
+                        "✓", fontsize=10, ha="center", va="center",
+                        color="white", fontweight="bold", zorder=3
+                    )
                 elif v is False:
-                    fc, alpha = "#21262D", 1.0
+                    # Темне коло з хрестиком
+                    circle = plt.Circle(
+                        (di * (CELL + GAP) + CELL / 2, -(hi * 1.6) + 0.3),
+                        0.44, color="#21262D", alpha=1.0, zorder=2
+                    )
+                    ax_h.add_patch(circle)
+                    ax_h.text(
+                        di * (CELL + GAP) + CELL / 2, -(hi * 1.6) + 0.3,
+                        "✗", fontsize=10, ha="center", va="center",
+                        color="#F85149", fontweight="bold", zorder=3
+                    )
                 else:
-                    fc, alpha = "#1C2128", 1.0
-                rect = mpatches.FancyBboxPatch(
-                    (di * (CELL + GAP), -(hi * 1.4)),
-                    CELL, CELL * 0.88,
-                    boxstyle="round,pad=0.04",
-                    linewidth=0,
-                    facecolor=fc, alpha=alpha,
-                    transform=ax_h.transData
-                )
-                ax_h.add_patch(rect)
+                    # Порожнє коло — немає даних
+                    circle = plt.Circle(
+                        (di * (CELL + GAP) + CELL / 2, -(hi * 1.6) + 0.3),
+                        0.44, color="#1C2128", alpha=1.0, zorder=2
+                    )
+                    ax_h.add_patch(circle)
 
             # Підпис звички ліворуч
-            ax_h.text(-2.2, -(hi * 1.4) + 0.38, HABIT_LABELS[hkey],
-                      fontsize=15, color=TEXT, va="center", ha="right",
+            ax_h.text(-2.2, -(hi * 1.6) + 0.3, HABIT_LABELS[hkey],
+                      fontsize=13, color=TEXT, va="center", ha="right",
                       fontweight="bold")
 
         total_w = len(all_dates) * (CELL + GAP)
         ax_h.set_xlim(-3.5, total_w + 0.5)
-        ax_h.set_ylim(-len(HABITS) * 1.4 - 0.4, 1.8)
+        ax_h.set_ylim(-len(HABITS) * 1.6 - 0.4, 1.8)
 
         # Місячні мітки по X
         cur = start_date.replace(day=1)
