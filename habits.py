@@ -111,6 +111,10 @@ def check_shower_reminder():
             cur_min = now.hour * 60 + now.minute
             if first_sent_time and cur_min >= first_sent_time + 60:
                 if db.get(today, {}).get("shower") is None:
+                    if not try_acquire_reminder_lock(remind2_key):
+                        print(f"[habits] skip duplicate shower2 (lock exists)", flush=True)
+                        sent[remind2_key] = True
+                        return
                     # Зберігаємо ПЕРЕД надсиланням — захист від дублювання
                     sent[remind2_key] = True
                     save_sent(sent)
@@ -128,6 +132,10 @@ def check_shower_reminder():
         trigger = 10 * 60       # 10:00
 
     if trigger <= cur_min <= trigger + 4:  # вікно 4 хвилини щоб не пропустити
+        if not try_acquire_reminder_lock(remind_key):
+            print(f"[habits] skip duplicate shower reminder (lock exists)", flush=True)
+            sent[remind_key] = True
+            return
         # Зберігаємо ПЕРЕД надсиланням — щоб не дублювати при паралельному запуску
         sent[remind_key] = True
         sent[f"{today}_shower_smart_time"] = cur_min
@@ -234,6 +242,26 @@ def load_sent_fresh():
     except Exception as _e:
         print(f"[habits] load_sent_fresh error: {_e}")
         return load_sent()  # fallback на in-memory
+
+def try_acquire_reminder_lock(key: str) -> bool:
+    """Атомарний міжпроцесний lock для нагадувань.
+    Повертає True якщо lock захоплено (цей процес перший).
+    Повертає False якщо інший процес вже надсилав це нагадування сьогодні.
+    Файл: /tmp/hs_{key} — існує до кінця дня (чиститься при перезапуску контейнера).
+    """
+    import os as _os
+    lock_path = f"/tmp/hs_{key.replace('/', '_').replace(' ', '_')}"
+    try:
+        # O_CREAT | O_EXCL — атомарне створення, fails якщо файл вже існує
+        fd = _os.open(lock_path, _os.O_CREAT | _os.O_EXCL | _os.O_WRONLY)
+        _os.write(fd, str(_os.getpid()).encode())
+        _os.close(fd)
+        return True  # ми перші — можна надсилати
+    except FileExistsError:
+        return False  # інший процес вже надіслав
+    except Exception as _e:
+        print(f"[habits] lock error for {key}: {_e}")
+        return True  # при помилці — дозволяємо (краще дубль ніж мовчання)
 
 def save_sent(sent):
     """Зберігає стан — в пам'яті (миттєво) + /tmp (кеш) + GitHub (persist)."""
@@ -488,6 +516,11 @@ def run():
                 continue
             h_trigger = h["hour"] * 60 + h["minute"]
             if h_trigger <= cur_min_abs <= h_trigger + 1:  # вікно 1 хв (60 сек loop)
+                # Атомарний lock між процесами — захист від дублювання при redeploy
+                if not try_acquire_reminder_lock(key):
+                    print(f"[habits] skip duplicate reminder (lock exists): {key}", flush=True)
+                    sent[key] = True  # оновлюємо in-memory щоб не перевіряти знову
+                    continue
                 # Зберігаємо ПЕРЕД надсиланням — захист від дублювання
                 sent[key] = True
                 save_sent(sent)
@@ -496,10 +529,14 @@ def run():
         # Питання про сон о 8:00
         sleep_key = f"{today}_sleep_q"
         if not sent.get(sleep_key) and now.hour == SLEEP_HOUR and now.minute == SLEEP_MINUTE:
-            # Зберігаємо ПЕРЕД надсиланням — захист від дублювання
-            sent[sleep_key] = True
-            save_sent(sent)
-            send_sleep_question()
+            if try_acquire_reminder_lock(sleep_key):
+                # Зберігаємо ПЕРЕД надсиланням — захист від дублювання
+                sent[sleep_key] = True
+                save_sent(sent)
+                send_sleep_question()
+            else:
+                print(f"[habits] skip duplicate sleep_q (lock exists)", flush=True)
+                sent[sleep_key] = True
 
         # Нагадування про біг — о 17:30 якщо ще не відмітив
         run_key_done = f"{today}_run"
@@ -507,14 +544,18 @@ def run():
         if (not sent.get(run_remind_key) and
                 now.hour == 17 and now.minute == 30 and
                 load_data().get(today, {}).get("run") is not True):
-            # Зберігаємо ПЕРЕД надсиланням
-            sent[run_remind_key] = True
-            save_sent(sent)
-            api("sendMessage", {
-                "chat_id": TELEGRAM_CHAT,
-                "text": "🏃 <b>Ще не бігав сьогодні!</b>\nЗалишилось кілька годин — саме час 💪",
-                "parse_mode": "HTML"
-            })
+            if try_acquire_reminder_lock(run_remind_key):
+                # Зберігаємо ПЕРЕД надсиланням
+                sent[run_remind_key] = True
+                save_sent(sent)
+                api("sendMessage", {
+                    "chat_id": TELEGRAM_CHAT,
+                    "text": "🏃 <b>Ще не бігав сьогодні!</b>\nЗалишилось кілька годин — саме час 💪",
+                    "parse_mode": "HTML"
+                })
+            else:
+                print(f"[habits] skip duplicate run_remind (lock exists)", flush=True)
+                sent[run_remind_key] = True
 
         # Нагадування перед нічною зміною — о 16:00 (за 2г до 18:00)
         # ТІЛЬКИ якщо сьогодні нічна зміна
@@ -522,19 +563,23 @@ def run():
         _today_shift = _get_shift_type()
         if (not sent.get(night_pre_key) and now.hour == 16 and now.minute == 0
                 and _today_shift == "night"):
-            sent[night_pre_key] = True  # save ПЕРЕД send
-            save_sent(sent)
-            api("sendMessage", {
-                "chat_id": TELEGRAM_CHAT,
-                "text": (
-                    "🌙 <b>Підготовка до нічної зміни</b>\n\n"
-                    "🚿 Прийми холодний душ\n"
-                    "💧 Випий воду зараз\n"
-                    "🍵 Завари чай з собою\n"
-                    "😴 Поспи 1-2 години якщо є час"
-                ),
-                "parse_mode": "HTML"
-            })
+            if try_acquire_reminder_lock(night_pre_key):
+                sent[night_pre_key] = True  # save ПЕРЕД send
+                save_sent(sent)
+                api("sendMessage", {
+                    "chat_id": TELEGRAM_CHAT,
+                    "text": (
+                        "🌙 <b>Підготовка до нічної зміни</b>\n\n"
+                        "🚿 Прийми холодний душ\n"
+                        "💧 Випий воду зараз\n"
+                        "🍵 Завари чай з собою\n"
+                        "😴 Поспи 1-2 години якщо є час"
+                    ),
+                    "parse_mode": "HTML"
+                })
+            else:
+                print(f"[habits] skip duplicate night_pre (lock exists)", flush=True)
+                sent[night_pre_key] = True
 
         # Нагадування після нічної зміни — ВИДАЛЕНО з habits.py
         # Тепер надсилається ТІЛЬКИ через monitor.py check_smart_notifications() post_night (06:15)
@@ -543,18 +588,22 @@ def run():
         # Нагадування про невиконані звички — о 21:30
         undone_key = f"{today}_undone_remind"
         if not load_sent_fresh().get(undone_key) and now.hour == 21 and now.minute == 30:
-            db_today = load_data().get(today, {})
-            all_habits = [{"id": "shower", "name": "Холодний душ", "emoji": "🚿"}] + HABITS
-            missed = [h for h in all_habits if db_today.get(h["id"]) is not True]
-            if missed:
-                lines = "\n".join(f"{h['emoji']} {h['name']}" for h in missed)
+            if try_acquire_reminder_lock(undone_key):
+                db_today = load_data().get(today, {})
+                all_habits = [{"id": "shower", "name": "Холодний душ", "emoji": "🚿"}] + HABITS
+                missed = [h for h in all_habits if db_today.get(h["id"]) is not True]
+                if missed:
+                    lines = "\n".join(f"{h['emoji']} {h['name']}" for h in missed)
+                    sent[undone_key] = True
+                    save_sent(sent)
+                    api("sendMessage", {
+                        "chat_id": TELEGRAM_CHAT,
+                        "text": f"⚠️ <b>Ще не відмічено сьогодні:</b>\n\n{lines}\n\nЩе є час виконати!",
+                        "parse_mode": "HTML"
+                    })
+            else:
+                print(f"[habits] skip duplicate undone_remind (lock exists)", flush=True)
                 sent[undone_key] = True
-                save_sent(sent)
-                api("sendMessage", {
-                    "chat_id": TELEGRAM_CHAT,
-                    "text": f"⚠️ <b>Ще не відмічено сьогодні:</b>\n\n{lines}\n\nЩе є час виконати!",
-                    "parse_mode": "HTML"
-                })
 
         # Тижневий звіт ліків — щонеділі о 20:40
         meds_weekly_key = f"meds_weekly_{today}"
