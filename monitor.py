@@ -4022,23 +4022,6 @@ def main():
             current_msg = ""
             _time_main.sleep(0.4)
 
-    # DBG: показати склад parts
-    _parts_summary = ", ".join(
-        f"photo({len(s.get('photo',b''))}b)" if isinstance(s, dict) and "photo" in s
-        else f"txt({len(s)})" if isinstance(s, str)
-        else "other"
-        for s in parts
-    )
-    try:
-        from charts import HAS_MPL as _hm1
-    except:
-        _hm1 = "err"
-    try:
-        from strava_charts import HAS_MPL as _hm2
-    except:
-        _hm2 = "err"
-    send_telegram(f"[DBG] parts({len(parts)}): {_parts_summary[:300]} | mpl={_hm1}/{_hm2}")
-
     for section in parts:
         # Фото-секція — спочатку надіслати накопичений текст, потім фото
         if isinstance(section, dict) and "photo" in section:
