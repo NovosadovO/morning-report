@@ -84,7 +84,7 @@ def plot_month_chart(year: int = None, month: int = None) -> bytes:
                    "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"]
 
     _setup_dark_style()
-    fig, ax1 = plt.subplots(figsize=(20, 8))
+    fig, ax1 = plt.subplots(figsize=(14, 7))
     fig.patch.set_facecolor(DARK_BG)
 
     # Bars
@@ -131,7 +131,7 @@ def plot_month_chart(year: int = None, month: int = None) -> bytes:
 
     plt.tight_layout()
     buf = io.BytesIO()
-    plt.savefig(buf, format="png", dpi=150, bbox_inches="tight", facecolor=DARK_BG)
+    plt.savefig(buf, format="png", dpi=200, bbox_inches="tight", facecolor=DARK_BG)
     plt.close()
     buf.seek(0)
     return buf.read()

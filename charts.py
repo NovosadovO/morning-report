@@ -69,7 +69,7 @@ def _rc():
 
 def _buf(fig) -> bytes:
     buf = io.BytesIO()
-    fig.savefig(buf, format="png", dpi=130, bbox_inches="tight",
+    fig.savefig(buf, format="png", dpi=200, bbox_inches="tight",
                 facecolor=BG, edgecolor="none")
     plt.close(fig)
     buf.seek(0)
@@ -650,8 +650,8 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
                           9:"Вересень",10:"Жовтень",11:"Листопад",12:"Грудень"}
 
         # ── Фігура: велика, читабельна ────────────────────────────────────────
-        fig = plt.figure(figsize=(22, 12), facecolor=BG)
-        gs = gridspec.GridSpec(2, 1, figure=fig, hspace=0.55,
+        fig = plt.figure(figsize=(14, 9), facecolor=BG)
+        gs = gridspec.GridSpec(2, 1, figure=fig, hspace=0.6,
                                height_ratios=[2, 1])
 
         # ── TOP: heatmap звичок за 6 місяців ─────────────────────────────────
@@ -659,8 +659,8 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
         ax_h.set_facecolor(BG)
         ax_h.axis("off")
 
-        CELL = 0.82
-        GAP  = 0.18   # зазор між клітинками
+        CELL = 1.0
+        GAP  = 0.22   # зазор між клітинками
 
         for hi, hkey in enumerate(HABITS):
             color = HABIT_COLORS[hkey]
@@ -674,7 +674,7 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
                 else:
                     fc, alpha = "#1C2128", 1.0
                 rect = mpatches.FancyBboxPatch(
-                    (di * (CELL + GAP), -(hi * 1.2)),
+                    (di * (CELL + GAP), -(hi * 1.4)),
                     CELL, CELL * 0.88,
                     boxstyle="round,pad=0.04",
                     linewidth=0,
@@ -684,21 +684,21 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
                 ax_h.add_patch(rect)
 
             # Підпис звички ліворуч
-            ax_h.text(-2.0, -(hi * 1.2) + 0.32, HABIT_LABELS[hkey],
-                      fontsize=13, color=TEXT, va="center", ha="right",
+            ax_h.text(-2.2, -(hi * 1.4) + 0.38, HABIT_LABELS[hkey],
+                      fontsize=15, color=TEXT, va="center", ha="right",
                       fontweight="bold")
 
         total_w = len(all_dates) * (CELL + GAP)
-        ax_h.set_xlim(-3, total_w + 0.5)
-        ax_h.set_ylim(-len(HABITS) * 1.2 - 0.4, 1.6)
+        ax_h.set_xlim(-3.5, total_w + 0.5)
+        ax_h.set_ylim(-len(HABITS) * 1.4 - 0.4, 1.8)
 
         # Місячні мітки по X
         cur = start_date.replace(day=1)
         while cur <= end_date:
             day_offset = (cur - start_date).days
             x_pos = day_offset * (CELL + GAP)
-            ax_h.text(x_pos, 1.3, f"{UA_MONTHS[cur.month]} {cur.year}",
-                      fontsize=11, color=MUTED, ha="left", fontweight="bold")
+            ax_h.text(x_pos, 1.5, f"{UA_MONTHS[cur.month]} {cur.year}",
+                      fontsize=13, color=MUTED, ha="left", fontweight="bold")
             # Вертикальна лінія-роздільник між місяцями
             if cur != start_date:
                 ax_h.axvline(x=x_pos - GAP / 2, ymin=0.02, ymax=0.92,
@@ -708,7 +708,7 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
             cur = cur.replace(year=nxt_year, month=nxt_month, day=1)
 
         ax_h.set_title("📋 Звички за 6 місяців",
-                       color=TEXT, fontsize=15, fontweight="bold", pad=18)
+                       color=TEXT, fontsize=17, fontweight="bold", pad=20)
 
         # ── BOTTOM: вага за 6 місяців ─────────────────────────────────────────
         ax_w = fig.add_subplot(gs[1])
