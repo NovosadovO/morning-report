@@ -339,9 +339,9 @@ def get_month_stats(year: int = None, month: int = None) -> dict:
     import calendar
     days_in_month = calendar.monthrange(year, month)[1]
     month_start = datetime(year, month, 1)
-    days_ago = (now - month_start).days + 1
-
-    runs = get_runs(days=days_ago + 5)
+    # Беремо з запасом — мінімум 90 днів щоб покрити попередній місяць
+    days_ago = max((now - month_start).days + 5, 90)
+    runs = get_runs(days=days_ago)
     # Фільтруємо тільки цей місяць
     runs = [r for r in runs if r["date"].year == year and r["date"].month == month]
 
