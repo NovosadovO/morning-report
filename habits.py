@@ -30,10 +30,11 @@ _INMEM_SENT: dict | None = None  # None = ще не завантажено
 
 HABITS = [
     # shower handled dynamically by check_shower_reminder()
-    {"id": "run",    "name": "Біг",           "emoji": "🏃", "hour": 19, "minute": 10},
-    {"id": "water",  "name": "Вода (2л+)",    "emoji": "💧", "hour": 19, "minute": 10},
-    {"id": "tea",    "name": "Трав'яний чай", "emoji": "🍵", "hour": 19, "minute": 10},
-    {"id": "sauna",  "name": "Сауна",          "emoji": "🧖", "hour": 19, "minute": 10},
+    {"id": "run",    "name": "Біг",              "emoji": "🏃", "hour": 19, "minute": 10},
+    {"id": "water",  "name": "Вода (2л+)",       "emoji": "💧", "hour": 19, "minute": 10},
+    {"id": "tea",    "name": "Трав'яний чай",    "emoji": "🍵", "hour": 19, "minute": 10},
+    {"id": "sauna",  "name": "Сауна",             "emoji": "🧖", "hour": 19, "minute": 10},
+    {"id": "spray",  "name": "Спрей для волосся","emoji": "💈", "hour": 19, "minute": 10},
 ]
 
 SLEEP_HOUR   = 8
@@ -334,6 +335,12 @@ HABIT_MESSAGES = {
         "━━━━━━━━━━━━━━━━━━━━━━\n\n"
         "<i>Був у сауні сьогодні?</i>"
     ),
+    "spray": (
+        "━━━━━━━━━━━━━━━━━━━━━━\n"
+        "💈 <b>СПРЕЙ ДЛЯ ВОЛОССЯ</b>\n"
+        "━━━━━━━━━━━━━━━━━━━━━━\n\n"
+        "<i>Використав спрей сьогодні?</i>"
+    ),
 }
 
 def send_question(habit):
@@ -590,7 +597,7 @@ def run():
         if not load_sent_fresh().get(undone_key) and now.hour == 21 and now.minute == 30:
             if try_acquire_reminder_lock(undone_key):
                 db_today = load_data().get(today, {})
-                all_habits = [{"id": "shower", "name": "Холодний душ", "emoji": "🚿"}] + HABITS
+                all_habits = [{"id": "shower", "name": "Холодний душ", "emoji": "🚿"}] + HABITS  # spray вже в HABITS
                 missed = [h for h in all_habits if db_today.get(h["id"]) is not True]
                 if missed:
                     lines = "\n".join(f"{h['emoji']} {h['name']}" for h in missed)
@@ -744,7 +751,7 @@ def check_persistent_reminders():
     changed = False
 
     # ── 1. ЗВИЧКИ ─────────────────────────────────────────────────────────────
-    all_habit_ids = ["shower", "run", "water", "tea", "sauna"]
+    all_habit_ids = ["shower", "run", "water", "tea", "sauna", "spray"]
     for hid in all_habit_ids:
         val = today_habits.get(hid)
         if val is True or val is False:
@@ -769,6 +776,7 @@ def check_persistent_reminders():
             "water":  "💧 Вода (2л+)",
             "tea":    "🍵 Трав'яний чай",
             "sauna":  "🧖 Сауна",
+            "spray":  "💈 Спрей для волосся",
         }
         name = name_map.get(hid, hid)
 

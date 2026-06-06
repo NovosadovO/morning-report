@@ -37,6 +37,7 @@ HABIT_COLORS = {
     "water":  "#1F6FEB",
     "tea":    YELLOW,
     "sauna":  RED,
+    "spray":  PURPLE,
 }
 HABIT_LABELS = {
     "shower": "Душ",
@@ -44,6 +45,7 @@ HABIT_LABELS = {
     "water":  "Вода",
     "tea":    "Чай",
     "sauna":  "Сауна",
+    "spray":  "Спрей",
 }
 # Emoji для підписів (відображаються через PIL overlay або якщо шрифт підтримує)
 HABIT_EMOJIS = {
@@ -52,6 +54,7 @@ HABIT_EMOJIS = {
     "water":  "💧",
     "tea":    "🍵",
     "sauna":  "🧖",
+    "spray":  "💈",
 }
 
 _DIR = os.path.dirname(os.path.abspath(__file__))

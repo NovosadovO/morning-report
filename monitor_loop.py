@@ -1312,5 +1312,72 @@ def run_evening_charts_watcher():
 threading.Thread(target=run_evening_charts_watcher, daemon=True).start()
 print("=== Evening charts watcher thread started (20:00 UTC+2) ===", flush=True)
 
+
+def run_report_card_watcher():
+    """Надсилає PNG-звіт о 09:00 (ранковий) і 20:00 (вечірній) UTC+2."""
+    import os, io, urllib.request
+    print("=== Starting report card watcher (09:00 + 20:00 UTC+2) ===", flush=True)
+    time.sleep(120)  # дати боту стартувати
+    sent = {"morning": None, "evening": None}
+
+    def _send_photo(photo_bytes, caption):
+        token = os.environ.get("TELEGRAM_TOKEN", "")
+        chat  = os.environ.get("TELEGRAM_CHAT_ID", "")
+        if not token or not chat:
+            return
+        try:
+            import requests as _req
+            _req.post(
+                f"https://api.telegram.org/bot{token}/sendPhoto",
+                data={"chat_id": chat, "caption": caption, "parse_mode": "HTML"},
+                files={"photo": ("report.png", io.BytesIO(photo_bytes), "image/png")},
+                timeout=30,
+            )
+            print(f"[report_card] photo sent: {caption}", flush=True)
+        except Exception as e:
+            print(f"[report_card] send_photo error: {e}", flush=True)
+
+    while True:
+        try:
+            now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+            h, m = now_local.hour, now_local.minute
+            ds = now_local.strftime("%Y-%m-%d")
+
+            # Ранковий звіт о 09:00
+            if h == 9 and 0 <= m < 5 and sent["morning"] != ds:
+                sent["morning"] = ds
+                print(f"[report_card] generating morning report for {ds}", flush=True)
+                try:
+                    import sys as _sys, os as _os
+                    _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+                    from report_card import generate_report_card
+                    img = generate_report_card("morning")
+                    if img:
+                        _send_photo(img, "☀️ <b>Ранковий звіт</b>")
+                except Exception as e:
+                    print(f"[report_card] morning error: {e}", flush=True)
+
+            # Вечірній звіт о 20:05 (після графіків о 20:00)
+            if h == 20 and 5 <= m < 10 and sent["evening"] != ds:
+                sent["evening"] = ds
+                print(f"[report_card] generating evening report for {ds}", flush=True)
+                try:
+                    import sys as _sys, os as _os
+                    _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+                    from report_card import generate_report_card
+                    img = generate_report_card("evening")
+                    if img:
+                        _send_photo(img, "🌙 <b>Вечірній звіт</b>")
+                except Exception as e:
+                    print(f"[report_card] evening error: {e}", flush=True)
+
+        except Exception as e:
+            print(f"[report_card] watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+threading.Thread(target=run_report_card_watcher, daemon=True).start()
+print("=== Report card watcher thread started (09:00 + 20:05 UTC+2) ===", flush=True)
+
 # Основний монітор в головному потоці
 run_monitor_loop()
