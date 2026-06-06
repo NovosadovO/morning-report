@@ -615,9 +615,9 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
 
 def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
     """
-    Місячний дашборд:
-    - Heatmap звичок за місяць
-    - Лінія ваги за місяць
+    6-місячний дашборд (до сьогодні):
+    - Heatmap звичок за 6 місяців
+    - Лінія ваги за 6 місяців
     """
     if not HAS_MPL:
         return None
@@ -626,149 +626,167 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
         import calendar as _cal
 
         now = datetime.now(timezone.utc) + timedelta(hours=2)
-        if year is None:
-            year = now.year
-        if month is None:
-            month = now.month
+        today = now.date()
 
-        # Попередній місяць якщо викликаємо 1-го числа
-        if now.day == 1 and year == now.year and month == now.month:
-            first = now.replace(day=1) - timedelta(days=1)
-            year, month = first.year, first.month
-
-        _, n_days = _cal.monthrange(year, month)
-        month_dates = [date(year, month, d) for d in range(1, n_days + 1)]
+        # 6 місяців до сьогодні включно
+        end_date = today
+        start_date = (today.replace(day=1) - timedelta(days=1)).replace(day=1)
+        # відмотуємо ще 5 місяців назад
+        tmp = start_date
+        for _ in range(5):
+            tmp = (tmp - timedelta(days=1)).replace(day=1)
+        start_date = tmp
+        all_dates = [start_date + timedelta(days=i)
+                     for i in range((end_date - start_date).days + 1)]
 
         raw = _load_habits()
         wdata = _load_weight()
         HABITS = ["shower", "run", "water", "tea", "sauna"]
 
-        fig = plt.figure(figsize=(14, 8), facecolor=BG)
-        gs = gridspec.GridSpec(2, 1, figure=fig, hspace=0.5,
-                               height_ratios=[1.8, 1])
+        UA_MONTHS = {1:"Січ",2:"Лют",3:"Бер",4:"Кві",5:"Тра",6:"Чер",
+                     7:"Лип",8:"Сер",9:"Вер",10:"Жов",11:"Лис",12:"Гру"}
+        UA_MONTHS_FULL = {1:"Січень",2:"Лютий",3:"Березень",4:"Квітень",
+                          5:"Травень",6:"Червень",7:"Липень",8:"Серпень",
+                          9:"Вересень",10:"Жовтень",11:"Листопад",12:"Грудень"}
 
-        # ── TOP: heatmap звичок за місяць ─────────────────────────────────────
+        # ── Фігура: велика, читабельна ────────────────────────────────────────
+        fig = plt.figure(figsize=(22, 12), facecolor=BG)
+        gs = gridspec.GridSpec(2, 1, figure=fig, hspace=0.55,
+                               height_ratios=[2, 1])
+
+        # ── TOP: heatmap звичок за 6 місяців ─────────────────────────────────
         ax_h = fig.add_subplot(gs[0])
         ax_h.set_facecolor(BG)
         ax_h.axis("off")
 
-        CELL = 0.85  # розмір клітинки
+        CELL = 0.82
+        GAP  = 0.18   # зазор між клітинками
+
         for hi, hkey in enumerate(HABITS):
             color = HABIT_COLORS[hkey]
-            for di, d in enumerate(month_dates):
+            for di, d in enumerate(all_dates):
                 entry = raw.get(d.isoformat(), {}) or {}
                 v = entry.get(hkey)
                 if v is True:
-                    fc = color
-                    alpha = 0.92
+                    fc, alpha = color, 0.92
                 elif v is False:
-                    fc = "#21262D"
-                    alpha = 1.0
+                    fc, alpha = "#21262D", 1.0
                 else:
-                    fc = "#1C2128"
-                    alpha = 1.0
+                    fc, alpha = "#1C2128", 1.0
                 rect = mpatches.FancyBboxPatch(
-                    (di * 1.0, -(hi * 1.15)),
-                    CELL, CELL * 0.9,
-                    boxstyle="round,pad=0.05",
+                    (di * (CELL + GAP), -(hi * 1.2)),
+                    CELL, CELL * 0.88,
+                    boxstyle="round,pad=0.04",
                     linewidth=0,
-                    facecolor=fc,
-                    alpha=alpha,
+                    facecolor=fc, alpha=alpha,
                     transform=ax_h.transData
                 )
                 ax_h.add_patch(rect)
 
             # Підпис звички ліворуч
-            ax_h.text(-1.5, -(hi * 1.15) + 0.35, HABIT_LABELS[hkey],
-                      fontsize=9, color=TEXT, va="center", ha="right")
+            ax_h.text(-2.0, -(hi * 1.2) + 0.32, HABIT_LABELS[hkey],
+                      fontsize=13, color=TEXT, va="center", ha="right",
+                      fontweight="bold")
 
-        # X-axis: номери днів кожні 5
-        ax_h.set_xlim(-2, n_days + 0.5)
-        ax_h.set_ylim(-len(HABITS) * 1.15 - 0.3, 1.2)
-        for di in range(0, n_days, 5):
-            ax_h.text(di + 0.4, 0.9, str(di + 1),
-                      fontsize=7.5, color=MUTED, ha="center")
-        # Останній день
-        ax_h.text(n_days - 0.6, 0.9, str(n_days),
-                  fontsize=7.5, color=MUTED, ha="center")
+        total_w = len(all_dates) * (CELL + GAP)
+        ax_h.set_xlim(-3, total_w + 0.5)
+        ax_h.set_ylim(-len(HABITS) * 1.2 - 0.4, 1.6)
 
-        UA_MONTHS = {1:"Січень",2:"Лютий",3:"Березень",4:"Квітень",
-                     5:"Травень",6:"Червень",7:"Липень",8:"Серпень",
-                     9:"Вересень",10:"Жовтень",11:"Листопад",12:"Грудень"}
-        ax_h.set_title(f"📋 Звички за {UA_MONTHS[month]} {year}",
-                       color=TEXT, fontsize=12, fontweight="bold", pad=14)
+        # Місячні мітки по X
+        cur = start_date.replace(day=1)
+        while cur <= end_date:
+            day_offset = (cur - start_date).days
+            x_pos = day_offset * (CELL + GAP)
+            ax_h.text(x_pos, 1.3, f"{UA_MONTHS[cur.month]} {cur.year}",
+                      fontsize=11, color=MUTED, ha="left", fontweight="bold")
+            # Вертикальна лінія-роздільник між місяцями
+            if cur != start_date:
+                ax_h.axvline(x=x_pos - GAP / 2, ymin=0.02, ymax=0.92,
+                             color=BORDER, linewidth=0.8, alpha=0.5,
+                             transform=ax_h.get_xaxis_transform())
+            nxt_month = cur.month % 12 + 1
+            nxt_year  = cur.year + (1 if cur.month == 12 else 0)
+            cur = cur.replace(year=nxt_year, month=nxt_month, day=1)
 
-        # ── BOTTOM: вага за місяць ─────────────────────────────────────────────
+        ax_h.set_title("📋 Звички за 6 місяців",
+                       color=TEXT, fontsize=15, fontweight="bold", pad=18)
+
+        # ── BOTTOM: вага за 6 місяців ─────────────────────────────────────────
         ax_w = fig.add_subplot(gs[1])
         ax_w.set_facecolor(PANEL)
 
-        w_vals = [(d, wdata.get(d.isoformat())) for d in month_dates]
-        present_w = [(d, v) for d, v in w_vals if v is not None]
+        present_w = [(d, wdata.get(d.isoformat()))
+                     for d in all_dates if wdata.get(d.isoformat()) is not None]
 
         if len(present_w) >= 2:
-            xi = np.array([d.day for d, _ in present_w])
+            import matplotlib.dates as _mdates
+            xd = [d for d, _ in present_w]
             yi = np.array([v for _, v in present_w])
 
-            # Зона цілі
             ax_w.axhspan(77.0, 79.0, alpha=0.08, color=BLUE)
+            ax_w.fill_between(xd, yi, min(yi) - 0.5, alpha=0.15, color=GREEN)
+            ax_w.plot(xd, yi, color=GREEN, linewidth=2.5, zorder=4, label="вага")
+            ax_w.scatter(xd, yi, color=GREEN, s=18, zorder=5, alpha=0.7)
 
-            ax_w.fill_between(xi, yi, min(yi) - 0.5, alpha=0.18, color=GREEN)
-            ax_w.plot(xi, yi, color=GREEN, linewidth=2.8, zorder=4, label="вага")
-            ax_w.scatter(xi, yi, color=GREEN, s=35, zorder=5, alpha=0.8)
+            # Тренд
+            xn = np.arange(len(yi))
+            z  = np.polyfit(xn, yi, 1)
+            p  = np.poly1d(z)
+            trend_color = RED if z[0] > 0.01 else (GREEN if z[0] < -0.01 else MUTED)
+            ax_w.plot(xd, p(xn), color=trend_color,
+                      linewidth=2.0, linestyle=":", zorder=3, label="тренд")
 
-            # Лінія тренду (polyfit)
-            z_m  = np.polyfit(xi, yi, 1)
-            p_m  = np.poly1d(z_m)
-            tx   = np.linspace(xi[0], xi[-1], 60)
-            ax_w.plot(tx, p_m(tx), color=RED if z_m[0] > 0.02 else (GREEN if z_m[0] < -0.02 else MUTED),
-                      linewidth=1.8, linestyle=":", zorder=3, label="тренд")
-
-            # Маркер мінімуму
-            best_mi = int(np.argmin(yi))
-            ax_w.scatter([xi[best_mi]], [yi[best_mi]], color=YELLOW, s=90,
+            # Мін/макс
+            best_i = int(np.argmin(yi))
+            ax_w.scatter([xd[best_i]], [yi[best_i]], color=YELLOW, s=80,
                          zorder=7, marker="D")
-            ax_w.annotate(f"мін {yi[best_mi]:.1f}",
-                          xy=(xi[best_mi], yi[best_mi]),
-                          xytext=(5, -14), textcoords="offset points",
-                          color=YELLOW, fontsize=8)
+            ax_w.annotate(f"мін {yi[best_i]:.1f}",
+                          xy=(xd[best_i], yi[best_i]),
+                          xytext=(6, -16), textcoords="offset points",
+                          color=YELLOW, fontsize=10, fontweight="bold")
 
-            ax_w.axhline(78.0, color=BLUE, linewidth=1.2, linestyle="--",
+            ax_w.axhline(78.0, color=BLUE, linewidth=1.4, linestyle="--",
                          alpha=0.7, label="ціль 78 кг")
-            ax_w.set_xlim(1, n_days)
+
+            ax_w.set_xlim(xd[0], xd[-1])
             ax_w.set_ylim(min(yi) - 2, max(yi) + 2)
-            ax_w.legend(fontsize=8, loc="upper right",
+            ax_w.xaxis.set_major_formatter(_mdates.DateFormatter("%d.%m"))
+            ax_w.xaxis.set_major_locator(_mdates.WeekdayLocator(interval=2))
+            plt.setp(ax_w.xaxis.get_majorticklabels(), rotation=45, ha="right")
+
+            ax_w.legend(fontsize=11, loc="upper right",
                         framealpha=0.3, facecolor=PANEL,
                         edgecolor=BORDER, labelcolor=TEXT)
 
-            # Тренд тексту
             diff = float(yi[-1] - yi[0])
-            slope_month = z_m[0] * 30
             sign = "+" if diff > 0 else ""
-            trend_color = RED if diff > 0.5 else (GREEN if diff < -0.5 else MUTED)
-            ax_w.text(0.02, 0.93,
-                      f"Старт: {yi[0]:.1f} → {yi[-1]:.1f} кг  ({sign}{diff:.1f})  |  тренд: {'+' if slope_month>0 else ''}{slope_month:.1f} кг/міс",
-                      transform=ax_w.transAxes, fontsize=8.5, color=trend_color,
-                      fontweight="bold", va="top")
+            slope6 = z[0] * 180
+            ax_w.text(0.01, 0.94,
+                      f"Старт: {yi[0]:.1f}  →  Зараз: {yi[-1]:.1f} кг  ({sign}{diff:.1f})   |   тренд за 6 міс: {'+' if slope6>0 else ''}{slope6:.1f} кг",
+                      transform=ax_w.transAxes, fontsize=11,
+                      color=trend_color, fontweight="bold", va="top")
         else:
             ax_w.text(0.5, 0.5, "Недостатньо даних",
-                      ha="center", va="center", color=MUTED, fontsize=10,
+                      ha="center", va="center", color=MUTED, fontsize=12,
                       transform=ax_w.transAxes)
 
-        ax_w.set_title(f"⚖️ Вага за {UA_MONTHS[month]}",
-                       color=TEXT, fontsize=11, fontweight="bold")
-        ax_w.tick_params(colors=MUTED)
+        ax_w.set_title("⚖️ Вага за 6 місяців",
+                       color=TEXT, fontsize=14, fontweight="bold")
+        ax_w.tick_params(colors=MUTED, labelsize=11)
         for spine in ax_w.spines.values():
             spine.set_edgecolor(BORDER)
         ax_w.grid(axis="y", alpha=0.2)
 
+        end_label = today.strftime("%d.%m.%Y")
         fig.suptitle(
-            f"📆 Місячний дашборд — {UA_MONTHS[month]} {year}",
-            fontsize=14, color=TEXT, fontweight="bold", y=1.02
+            f"📆 Дашборд за 6 місяців  —  до {end_label}",
+            fontsize=16, color=TEXT, fontweight="bold", y=1.01
         )
 
         return _buf(fig)
     except Exception as e:
-        print(f"[charts] monthly_dashboard error: {e}")
+        import traceback
+        print(f"[charts] monthly_dashboard error: {e}\n{traceback.format_exc()}")
         return None
 
 

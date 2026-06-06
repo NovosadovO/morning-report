@@ -84,7 +84,7 @@ def plot_month_chart(year: int = None, month: int = None) -> bytes:
                    "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"]
 
     _setup_dark_style()
-    fig, ax1 = plt.subplots(figsize=(14, 6))
+    fig, ax1 = plt.subplots(figsize=(20, 8))
     fig.patch.set_facecolor(DARK_BG)
 
     # Bars
@@ -94,15 +94,16 @@ def plot_month_chart(year: int = None, month: int = None) -> bytes:
     # Підпис на барах > 0
     for bar, km in zip(bars, km_vals):
         if km > 0:
-            ax1.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.1,
-                     f"{km:.1f}", ha="center", va="bottom", fontsize=7,
+            ax1.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.05,
+                     f"{km:.1f}", ha="center", va="bottom", fontsize=11,
                      color=TEXT_COLOR, fontweight="bold")
 
-    ax1.set_xlabel("День місяця", color=MUTED, fontsize=9)
-    ax1.set_ylabel("Км", color=ACCENT, fontsize=9)
+    ax1.set_xlabel("День місяця", color=MUTED, fontsize=13)
+    ax1.set_ylabel("Км", color=ACCENT, fontsize=13)
     ax1.set_xlim(0.5, days_in_month + 0.5)
     ax1.set_xticks(days)
-    ax1.tick_params(axis="x", labelsize=7)
+    ax1.tick_params(axis="x", labelsize=12)
+    ax1.tick_params(axis="y", labelsize=12)
     ax1.grid(axis="y", zorder=0)
 
     # Темп — права вісь
@@ -111,14 +112,14 @@ def plot_month_chart(year: int = None, month: int = None) -> bytes:
         ax2 = ax1.twinx()
         ax2.set_facecolor(CARD_BG)
         xs = [d for d, p in zip(days, pace_vals) if p is not None]
-        ys = [p / 60 for d, p in zip(days, pace_vals) if p is not None]  # в хвилинах
-        ax2.plot(xs, ys, color=ACCENT2, linewidth=1.5, marker="o", markersize=4, zorder=3, label="темп")
-        ax2.set_ylabel("Темп хв/км", color=ACCENT2, fontsize=9)
+        ys = [p / 60 for d, p in zip(days, pace_vals) if p is not None]
+        ax2.plot(xs, ys, color=ACCENT2, linewidth=2.2, marker="o", markersize=7, zorder=3, label="темп")
+        ax2.set_ylabel("Темп хв/км", color=ACCENT2, fontsize=13)
         ax2.yaxis.set_major_formatter(
             matplotlib.ticker.FuncFormatter(lambda v, _: f"{int(v)}:{int((v%1)*60):02d}")
         )
-        ax2.invert_yaxis()  # менший = швидший = вгорі
-        ax2.tick_params(axis="y", colors=ACCENT2, labelsize=8)
+        ax2.invert_yaxis()
+        ax2.tick_params(axis="y", colors=ACCENT2, labelsize=12)
 
     # Заголовок + статистика
     total_km = ms["km"]
@@ -126,11 +127,11 @@ def plot_month_chart(year: int = None, month: int = None) -> bytes:
     title = f"🏃 {month_names[month]} {year}  ·  {runs_count} пробіжок  ·  {total_km} км"
     if ms.get("avg_pace_str") and ms["avg_pace_str"] != "—":
         title += f"  ·  ∅ {ms['avg_pace_str']} хв/км"
-    ax1.set_title(title, color=TEXT_COLOR, fontsize=10, pad=10)
+    ax1.set_title(title, color=TEXT_COLOR, fontsize=14, pad=14, fontweight="bold")
 
     plt.tight_layout()
     buf = io.BytesIO()
-    plt.savefig(buf, format="png", dpi=130, bbox_inches="tight", facecolor=DARK_BG)
+    plt.savefig(buf, format="png", dpi=150, bbox_inches="tight", facecolor=DARK_BG)
     plt.close()
     buf.seek(0)
     return buf.read()
