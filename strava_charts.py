@@ -64,6 +64,10 @@ def plot_month_chart(year: int = None, month: int = None) -> bytes:
     ms = get_month_stats(year, month)
     runs = ms.get("runs_list", [])
 
+    # Якщо пробіжок немає — не малюємо пустий графік
+    if not runs:
+        return None
+
     # Будуємо дані по днях місяця
     days_in_month = calendar.monthrange(year, month)[1]
     days = list(range(1, days_in_month + 1))

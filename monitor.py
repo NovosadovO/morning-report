@@ -3832,17 +3832,25 @@ def main():
             parts.append(_section_header("🏃", "БІГОВИЙ ТРЕКЕР") + "\n" + "\n".join(_strava_text.split("\n")[1:]) if "\n" in _strava_text else _section_header("🏃", "БІГОВИЙ ТРЕКЕР") + "\n" + _strava_text)
             # Графік бігу — одразу після strava block
             try:
-                from strava_charts import plot_month_chart as _plot_run_h
+                from strava_charts import plot_month_chart as _plot_run_h, plot_year_chart as _plot_run_year
                 from strava import get_month_stats as _gms
                 _cy, _cm = now_local.year, now_local.month
+                _use_year = False
                 # якщо в поточному місяці немає пробіжок — беремо попередній
                 if _gms(_cy, _cm).get("runs", 0) == 0:
                     _cm -= 1
                     if _cm == 0:
                         _cm = 12
                         _cy -= 1
-                _run_h = _plot_run_h(_cy, _cm)
-                _run_label = datetime(_cy, _cm, 1).strftime("%B %Y")
+                    # якщо і попередній порожній — малюємо річний
+                    if _gms(_cy, _cm).get("runs", 0) == 0:
+                        _use_year = True
+                if _use_year:
+                    _run_h = _plot_run_year(_cy)
+                    _run_label = f"Річний підсумок {_cy}"
+                else:
+                    _run_h = _plot_run_h(_cy, _cm)
+                    _run_label = datetime(_cy, _cm, 1).strftime("%B %Y")
                 if _run_h:
                     parts.append({"photo": _run_h, "caption": f"🏃 Біг — {_run_label}"})
             except Exception as _e_rh:

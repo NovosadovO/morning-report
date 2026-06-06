@@ -45,11 +45,24 @@ HABIT_LABELS = {
     "tea":    "Чай",
     "sauna":  "Сауна",
 }
+# Emoji для підписів (відображаються через PIL overlay або якщо шрифт підтримує)
+HABIT_EMOJIS = {
+    "shower": "🚿",
+    "run":    "🏃",
+    "water":  "💧",
+    "tea":    "🍵",
+    "sauna":  "🧖",
+}
 
 _DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def _rc():
+    # Намагаємось підключити emoji-шрифт якщо є
+    import matplotlib.font_manager as _fm
+    _emoji_fonts = [f.name for f in _fm.fontManager.ttflist
+                    if "noto" in f.name.lower() and "emoji" in f.name.lower()]
+    _sans = ["DejaVu Sans"] + _emoji_fonts
     plt.rcParams.update({
         "figure.facecolor": BG,
         "axes.facecolor":   PANEL,
@@ -64,6 +77,8 @@ def _rc():
         "font.size":        9,
         "axes.titlesize":   11,
         "axes.titlepad":    10,
+        "font.family":      "sans-serif",
+        "font.sans-serif":  _sans,
     })
 
 
@@ -624,18 +639,14 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
     try:
         _rc()
         import calendar as _cal
+        from datetime import date as _date_cls2
 
         now = datetime.now(timezone.utc) + timedelta(hours=2)
         today = now.date()
 
-        # 6 місяців до сьогодні включно
+        # Від 1 січня 2026 до сьогодні
         end_date = today
-        start_date = (today.replace(day=1) - timedelta(days=1)).replace(day=1)
-        # відмотуємо ще 5 місяців назад
-        tmp = start_date
-        for _ in range(5):
-            tmp = (tmp - timedelta(days=1)).replace(day=1)
-        start_date = tmp
+        start_date = _date_cls2(2026, 1, 1)
         all_dates = [start_date + timedelta(days=i)
                      for i in range((end_date - start_date).days + 1)]
 
@@ -649,8 +660,10 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
                           5:"Травень",6:"Червень",7:"Липень",8:"Серпень",
                           9:"Вересень",10:"Жовтень",11:"Листопад",12:"Грудень"}
 
-        # ── Фігура: велика, читабельна ────────────────────────────────────────
-        fig = plt.figure(figsize=(14, 9), facecolor=BG)
+        # ── Фігура: широка під весь рік ──────────────────────────────────────
+        n_days = len(all_dates)
+        fig_w = max(20, n_days * 0.10)  # ~0.1 дюйм на день, мін 20
+        fig = plt.figure(figsize=(fig_w, 10), facecolor=BG)
         gs = gridspec.GridSpec(2, 1, figure=fig, hspace=0.6,
                                height_ratios=[2, 1])
 
@@ -705,7 +718,7 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
                       fontweight="bold")
 
         total_w = len(all_dates) * (CELL + GAP)
-        ax_h.set_xlim(-3.5, total_w + 0.5)
+        ax_h.set_xlim(-5.0, total_w + 0.5)  # більше місця зліва для emoji
         ax_h.set_ylim(-len(HABITS) * 1.6 - 0.4, 1.8)
 
         # Місячні мітки по X
@@ -723,7 +736,7 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
             nxt_year  = cur.year + (1 if cur.month == 12 else 0)
             cur = cur.replace(year=nxt_year, month=nxt_month, day=1)
 
-        ax_h.set_title("📋 Звички за 6 місяців",
+        ax_h.set_title("Звички з 1 січня 2026",
                        color=TEXT, fontsize=17, fontweight="bold", pad=20)
 
         # ── BOTTOM: вага за 6 місяців ─────────────────────────────────────────
@@ -785,7 +798,7 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
                       ha="center", va="center", color=MUTED, fontsize=12,
                       transform=ax_w.transAxes)
 
-        ax_w.set_title("⚖️ Вага за 6 місяців",
+        ax_w.set_title("Вага з 1 січня 2026",
                        color=TEXT, fontsize=14, fontweight="bold")
         ax_w.tick_params(colors=MUTED, labelsize=11)
         for spine in ax_w.spines.values():
@@ -794,11 +807,60 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
 
         end_label = today.strftime("%d.%m.%Y")
         fig.suptitle(
-            f"📆 Дашборд за 6 місяців  —  до {end_label}",
+            f"Дашборд 2026  —  до {end_label}",
             fontsize=16, color=TEXT, fontweight="bold", y=1.01
         )
 
-        return _buf(fig)
+        raw_bytes = _buf(fig)
+
+        # ── PIL: накласти emoji на підписи звичок ──────────────────────────
+        try:
+            from PIL import Image, ImageDraw, ImageFont as _IFont
+            import io as _io2
+
+            _EMOJI_FONT_PATH = "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf"
+            if os.path.exists(_EMOJI_FONT_PATH):
+                _pil_img = Image.open(_io2.BytesIO(raw_bytes)).convert("RGBA")
+                _iw, _ih = _pil_img.size
+                # NotoColorEmoji підтримує тільки розмір 109
+                _em_font = _IFont.truetype(_EMOJI_FONT_PATH, 109)
+                # Цільовий розмір emoji ~ 4% висоти зображення
+                _target_sz = max(30, int(_ih * 0.04))
+
+                _habits_order = ["shower", "run", "water", "tea", "sauna"]
+                _emoji_map = HABIT_EMOJIS
+                _heatmap_top    = 0.08
+                _heatmap_bottom = 0.60
+                _heatmap_h = _heatmap_bottom - _heatmap_top
+                _row_h = _heatmap_h / len(_habits_order)
+
+                for _hi, _hk in enumerate(_habits_order):
+                    _em = _emoji_map.get(_hk, "")
+                    if not _em:
+                        continue
+                    # Малюємо emoji в тимчасове зображення
+                    _tmp = Image.new("RGBA", (130, 130), (0, 0, 0, 0))
+                    _tmp_draw = ImageDraw.Draw(_tmp)
+                    _tmp_draw.text((5, 5), _em, font=_em_font, embedded_color=True)
+                    # Масштабуємо до target_sz
+                    _tmp = _tmp.resize((_target_sz, _target_sz), Image.LANCZOS)
+                    # y — центр ряду
+                    _y_rel = _heatmap_top + _row_h * _hi + _row_h * 0.35
+                    _y_px = int(_y_rel * _ih) - _target_sz // 2
+                    # x — ставимо emoji В КІНЕЦЬ підписів (після тексту)
+                    # Підписи закінчуються приблизно на 8.5% від лівого краю
+                    # Emoji ставимо на самому початку підпису (~6.5% від краю)
+                    _label_end_x = int(_iw * 0.085)
+                    _x_px = _label_end_x - _target_sz - 4
+                    _pil_img.paste(_tmp, (_x_px, _y_px), _tmp)
+
+                _out = _io2.BytesIO()
+                _pil_img.convert("RGB").save(_out, format="PNG")
+                raw_bytes = _out.getvalue()
+        except Exception as _pil_e:
+            print(f"[charts] PIL emoji overlay error: {_pil_e}")
+
+        return raw_bytes
     except Exception as e:
         import traceback
         print(f"[charts] monthly_dashboard error: {e}\n{traceback.format_exc()}")
