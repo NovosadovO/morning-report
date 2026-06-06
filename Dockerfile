@@ -4,7 +4,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir kerykeion google-auth google-api-python-client google-auth-httplib2 requests cryptography
+    pip install --no-cache-dir kerykeion google-auth google-api-python-client google-auth-httplib2 requests cryptography matplotlib numpy yfinance
 
 COPY . .
 
