@@ -627,16 +627,16 @@ def run_astro_watcher():
                     shift = "weekend"
                 send_hour = 8 if shift == "early" else 11
                 if h == send_hour and m < 5:
-                    _astro_gh_mark(morning_key)  # зберігаємо ДО надсилання
                     _send_astro(f"morning shift={shift}")
+                    _astro_gh_mark(morning_key)  # зберігаємо ПІСЛЯ успішного надсилання
                     time.sleep(360)
                     continue
 
             # ── Вечірній о 20:00 ──
             evening_key = f"{today}_evening"
             if not _astro_gh_sent(evening_key) and h == 20 and m < 5:
-                _astro_gh_mark(evening_key)  # зберігаємо ДО надсилання
                 _send_astro("evening 20:00")
+                _astro_gh_mark(evening_key)  # зберігаємо ПІСЛЯ успішного надсилання
                 time.sleep(360)
                 continue
 
