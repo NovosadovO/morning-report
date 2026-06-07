@@ -262,127 +262,107 @@ def _make_habits_photo(period, now, today, raw, HABITS):
 
     y += 20
 
-    # ── ТЕПЛОВА КАРТА ─────────────────────────────────────────────────────────
-    y = _section_header(img, draw, PAD, y, "ЗВИЧКИ — МІСЯЧНА ТЕПЛОВА КАРТА", f_sec)
+    # ── ТЕПЛОВА КАРТА — єдина таблиця ─────────────────────────────────────────
+    # Рядки = звички, стовпці = дні поточного місяця
+    y = _section_header(img, draw, PAD, y, f"ЗВИЧКИ — {UA_MON_SHORT[today.month].upper()} {today.year}", f_sec)
 
-    # Визначаємо місяці для показу
-    months_to_show = []
-    for i in range(HEATMAP_MONTHS - 1, -1, -1):
-        # i=2 -> 2 місяці тому, i=0 -> поточний
-        first_of_month = today.replace(day=1)
-        for _ in range(i):
-            first_of_month = (first_of_month - timedelta(days=1)).replace(day=1)
-        months_to_show.append(first_of_month)
+    days_in_month = _calendar.monthrange(today.year, today.month)[1]
+    month_start   = today.replace(day=1)
 
-    # Розраховуємо ширину колонки для кожного місяця
-    CELL_W = 22
-    CELL_H = 22
-    CELL_GAP = 3
-    LABEL_W = 140  # ширина лейблу звички
-    MONTH_LABEL_H = 24
+    # Геометрія
+    LABEL_W  = 210          # ширина колонки з назвою звички
+    grid_w   = W - PAD * 2 - LABEL_W - 8
+    CELL_W   = max(22, grid_w // days_in_month - 2)
+    CELL_H   = 42           # висота рядка (звички)
+    CELL_GAP = 2
+    # підганяємо під ширину
+    total_cell_w = days_in_month * (CELL_W + CELL_GAP)
+    if total_cell_w > grid_w:
+        CELL_W = max(16, (grid_w - days_in_month * CELL_GAP) // days_in_month)
 
-    # Скільки тижнів у кожному місяці (макс 6)
-    MAX_WEEKS = 6
+    DAY_HDR_H = 30   # висота рядка з номерами днів
 
-    # Розрахуємо загальну ширину для місяців
-    month_col_w = MAX_WEEKS * (CELL_W + CELL_GAP) + 16
-    total_months_w = LABEL_W + HEATMAP_MONTHS * month_col_w + PAD
+    # Фон всієї таблиці
+    table_h = DAY_HDR_H + len(HABITS) * (CELL_H + CELL_GAP) + 12
+    _rr(draw, PAD, y, W - PAD, y + table_h, 14, fill=_hex(CARD2), outline=_hex(BORDER))
 
-    # Масштаб щоб вміститися в W
-    scale = min(1.0, (W - PAD * 2) / total_months_w)
-    CELL_W_S  = max(14, int(CELL_W * scale))
-    CELL_H_S  = max(14, int(CELL_H * scale))
-    CELL_GAP_S = max(2, int(CELL_GAP * scale))
-    LABEL_W_S  = int(LABEL_W * scale)
-    month_col_w_s = MAX_WEEKS * (CELL_W_S + CELL_GAP_S) + 10
+    gx0 = PAD + LABEL_W  # початок колонок з клітинками
 
-    for h in HABITS:
-        hid    = h["id"]
-        hcolor = h["color"]
-        pct    = _month_pct(raw, hid, today)
+    # ── Заголовок: номери днів ──
+    for d_num in range(1, days_in_month + 1):
+        cx = gx0 + (d_num - 1) * (CELL_W + CELL_GAP)
+        d_date = month_start.replace(day=d_num)
+        is_weekend = d_date.weekday() >= 5
+        is_today   = d_date == today
+        col = TEXT if is_today else (MUTED if not is_weekend else ORANGE)
+        lbl = str(d_num)
+        lw  = draw.textlength(lbl, font=f_tiny)
+        draw.text((cx + CELL_W//2 - lw//2, y + 6), lbl, font=f_tiny, fill=_hex(col))
+        if is_today:
+            draw.line([(cx + 2, y + DAY_HDR_H - 3), (cx + CELL_W - 2, y + DAY_HDR_H - 3)],
+                      fill=_hex(BLUE), width=2)
+
+    ry = y + DAY_HDR_H
+
+    # ── Рядки звичок ──
+    for hi, h in enumerate(HABITS):
+        hid     = h["id"]
+        hcolor  = h["color"]
+        pct     = _month_pct(raw, hid, today)
         pct_col = GREEN if pct >= 0.8 else (ORANGE if pct >= 0.5 else RED)
+        cy_row  = ry + hi * (CELL_H + CELL_GAP)
 
-        row_total_h = MONTH_LABEL_H + 7 * (CELL_H_S + CELL_GAP_S) + 16
+        # Назва звички зліва
+        _draw_emoji(img, h["emoji"], PAD + 6, cy_row + CELL_H//2 - 14, size=26)
+        nm = h["name"]
+        # Скорочуємо якщо не вміщується
+        max_label_chars = 12
+        if len(nm) > max_label_chars:
+            nm = nm[:max_label_chars - 1] + "…"
+        draw.text((PAD + 38, cy_row + 4), nm, font=f_small, fill=_hex(TEXT))
+        pct_s = f"{int(pct*100)}%"
+        draw.text((PAD + 38, cy_row + 24), pct_s, font=f_tiny, fill=_hex(pct_col))
 
-        # Фон рядку
-        _rr(draw, PAD, y, W - PAD, y + row_total_h, 10, fill=_hex(CARD2), outline=_hex(BORDER))
+        # Клітинки по днях
+        for d_num in range(1, days_in_month + 1):
+            d_date = month_start.replace(day=d_num)
+            cx = gx0 + (d_num - 1) * (CELL_W + CELL_GAP)
+            v  = (raw.get(d_date.isoformat()) or {}).get(hid)
+            is_future = d_date > today
 
-        # Emoji + назва зліва
-        _draw_emoji(img, h["emoji"], PAD + 8, y + 4, size=24)
-        draw.text((PAD + 36, y + 6), h["name"], font=f_small, fill=_hex(TEXT))
-        draw.text((PAD + 36, y + 24), f"{int(pct*100)}%", font=f_tiny, fill=_hex(pct_col))
+            if is_future:
+                fill = _hex(CARD3)
+                outl = _hex(BORDER)
+            elif v is True:
+                fill = _hex(hcolor)
+                outl = None
+            elif v is False:
+                fill = _hex("#4A1515") if (today - d_date).days > 3 else _hex(RED)
+                outl = None
+            else:
+                fill = _hex(CARD3)
+                outl = _hex(BORDER)
 
-        # Місяці
-        mx0 = PAD + LABEL_W_S + 4
+            _rr(draw, cx + 1, cy_row + 2, cx + CELL_W - 1, cy_row + CELL_H - 2,
+                4, fill=fill, outline=outl, lw=1)
 
-        for mi, month_start in enumerate(months_to_show):
-            mx = mx0 + mi * month_col_w_s
+            # Обводка сьогодні
+            if d_date == today:
+                draw.rounded_rectangle(
+                    [cx + 1, cy_row + 2, cx + CELL_W - 1, cy_row + CELL_H - 2],
+                    radius=4, outline=_hex(TEXT), width=2)
 
-            # Назва місяця
-            year_str  = str(month_start.year)[2:]
-            mon_label = f"{UA_MON_SHORT[month_start.month]} '{year_str}"
-            draw.text((mx, y + 4), mon_label, font=f_tiny, fill=_hex(MUTED))
-
-            # Перший день тижня місяця (пн=0)
-            first_wd = month_start.weekday()  # 0=пн
-            days_in_m = _calendar.monthrange(month_start.year, month_start.month)[1]
-            last_of_month = month_start.replace(day=days_in_m)
-
-            # Малюємо клітинки по тижнях (стовпці) і днях тижня (рядки)
-            # Тиждень 0 = перший тиждень місяця
-            for day_num in range(1, days_in_m + 1):
-                d = month_start.replace(day=day_num)
-                wd = d.weekday()  # 0=пн
-                # Тиждень: який тиждень місяця
-                week_idx = (day_num + first_wd - 1) // 7
-
-                cx_cell = mx + week_idx * (CELL_W_S + CELL_GAP_S)
-                cy_cell = y + MONTH_LABEL_H + wd * (CELL_H_S + CELL_GAP_S)
-
-                v = (raw.get(d.isoformat()) or {}).get(hid)
-                is_future = d > today
-
-                if is_future:
-                    cell_fill = _hex(CARD3)
-                    cell_outline = _hex(BORDER)
-                elif v is True:
-                    cell_fill = _hex(hcolor)
-                    cell_outline = None
-                elif v is False:
-                    cell_fill = _hex(RED) if (today - d).days <= 7 else (*_hex(RED), )
-                    # Темніший червоний для старих пропусків
-                    cell_fill = _hex("#3D1A1A") if (today - d).days > 3 else _hex(RED)
-                    cell_outline = None
-                elif v is None:
-                    cell_fill = _hex(CARD3)
-                    cell_outline = _hex(BORDER)
-                else:
-                    cell_fill = _hex(CARD3)
-                    cell_outline = _hex(BORDER)
-
-                _rr(draw, cx_cell, cy_cell,
-                    cx_cell + CELL_W_S, cy_cell + CELL_H_S,
-                    3, fill=cell_fill,
-                    outline=cell_outline, lw=1)
-
-                # Підсвітка сьогодні
-                if d == today:
-                    draw.rounded_rectangle([cx_cell, cy_cell, cx_cell+CELL_W_S, cy_cell+CELL_H_S],
-                                           radius=3, outline=_hex(TEXT), width=2)
-
-        y += row_total_h + 8
-
-    y += 12
+    y += table_h + 14
 
     # Легенда
-    leg_items = [("✓ Виконано", GREEN), ("✗ Пропущено", RED), ("— Немає даних", MUTED2)]
+    leg_items = [("Виконано", GREEN), ("Пропущено", RED), ("Немає даних", MUTED2)]
     lx = PAD
     for leg_text, leg_col in leg_items:
-        draw.rounded_rectangle([lx, y+2, lx+14, y+14], radius=3, fill=_hex(leg_col))
-        draw.text((lx + 18, y), leg_text, font=f_tiny, fill=_hex(MUTED))
-        lx += int(draw.textlength(leg_text, font=f_tiny)) + 36
+        draw.rounded_rectangle([lx, y + 4, lx + 16, y + 16], radius=3, fill=_hex(leg_col))
+        draw.text((lx + 22, y), leg_text, font=f_tiny, fill=_hex(MUTED))
+        lx += int(draw.textlength(leg_text, font=f_tiny)) + 44
 
-    y += 28
+    y += 30
 
     # Footer
     draw.line([(PAD, y+4),(W-PAD, y+4)], fill=_hex(BORDER), width=2)
