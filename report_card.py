@@ -372,9 +372,71 @@ def _make_habits_photo(period, now, today, raw, HABITS):
 
     y += 30
 
+    # ── АСТРО БЛОК ────────────────────────────────────────────────────────────
+    try:
+        from astro import get_natal_transits_short
+        astro_raw = get_natal_transits_short(max_aspects=4)
+    except Exception:
+        astro_raw = None
+
+    if astro_raw:
+        import re as _re
+        # Фон блоку
+        _rr(draw, PAD, y, W - PAD, y + 20, 0, fill=_hex(BG))  # розпірка
+        y += 8
+        y = _section_header(img, draw, PAD, y, "АСТРО — ТРАНЗИТИ", f_sec)
+
+        # Парсимо рядки (прибираємо HTML теги)
+        def strip_html(s):
+            s = _re.sub(r"<b>|</b>|<i>|</i>", "", s)
+            return s.strip()
+
+        astro_lines = [strip_html(l) for l in astro_raw.split("\n") if strip_html(l)]
+
+        # Фон картки
+        astro_h = len(astro_lines) * 26 + 20
+        _rr(draw, PAD, y, W - PAD, y + astro_h, 12, fill=_hex(CARD2), outline=_hex(BORDER))
+
+        ay = y + 10
+        for line in astro_lines:
+            if not line:
+                continue
+            # Перший рядок — заголовок (пропускаємо, вже є в секції)
+            if "АСТРО" in line:
+                continue
+            # Колір рядка
+            if line.startswith("🟢"):
+                col = GREEN
+            elif line.startswith("🔴"):
+                col = RED
+            elif line.startswith("🟡"):
+                col = ORANGE
+            elif "·" in line and ("Місяць" in line or "Сонце" in line or "фаза" in line.lower() or any(c in line for c in ["♈","♉","♊","♋","♌","♍","♎","♏","♐","♑","♒","♓"])):
+                col = BLUE
+            else:
+                col = MUTED
+
+            # Перенос довгих рядків
+            max_w = W - PAD * 2 - 24
+            words = line.split()
+            cur_line = ""
+            for word in words:
+                test = (cur_line + " " + word).strip()
+                if draw.textlength(test, font=f_small) > max_w:
+                    draw.text((PAD + 12, ay), cur_line, font=f_small, fill=_hex(col))
+                    ay += 24
+                    cur_line = "    " + word  # відступ для продовження
+                else:
+                    cur_line = test
+            if cur_line:
+                draw.text((PAD + 12, ay), cur_line, font=f_small, fill=_hex(col))
+                ay += 24
+
+        y = ay + 16
+
     # Footer
     draw.line([(PAD, y+4),(W-PAD, y+4)], fill=_hex(BORDER), width=2)
-    ft = f"1/3  ·  {time_str}  ·  Олег Новосадов"
+    ft = f"1/2  ·  {time_str}  ·  Олег Новосадов"
     ftw = draw.textlength(ft, font=f_tiny)
     draw.text(((W-ftw)//2, y+10), ft, font=f_tiny, fill=_hex(MUTED2))
 
