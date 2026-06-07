@@ -123,7 +123,7 @@ def _save(img):
 
 def _section_header(img, draw, x, y, title, f_sec):
     draw.text((x, y), title, font=f_sec, fill=_hex(MUTED))
-    draw.line([(x, y + 18), (img.width - x, y + 18)], fill=_hex(BORDER), width=1)
+    draw.line([(x, y + 18), (img.width - x, y + 18)], fill=_hex(BORDER), width=2)
     return y + 28
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -143,15 +143,15 @@ def _make_habits_photo(period, now, today, raw, HABITS):
                     7:"Лип",8:"Сер",9:"Вер",10:"Жов",11:"Лис",12:"Гру"}
 
     # Шрифти
-    f_h1    = _font(_SANS_BOLD, 40)
-    f_h2    = _font(_SANS_BOLD, 26)
-    f_h3    = _font(_SANS_BOLD, 20)
-    f_label = _font(_SANS_BOLD, 17)
-    f_body  = _font(_SANS, 16)
-    f_small = _font(_SANS, 14)
-    f_tiny  = _font(_SANS, 12)
-    f_sec   = _font(_SANS_BOLD, 13)
-    f_num   = _font(_SANS_BOLD, 48)
+    f_h1    = _font(_SANS_BOLD, 52)
+    f_h2    = _font(_SANS_BOLD, 34)
+    f_h3    = _font(_SANS_BOLD, 28)
+    f_label = _font(_SANS_BOLD, 24)
+    f_body  = _font(_SANS, 22)
+    f_small = _font(_SANS, 20)
+    f_tiny  = _font(_SANS, 18)
+    f_sec   = _font(_SANS_BOLD, 18)
+    f_num   = _font(_SANS_BOLD, 64)
 
     period_emoji = "☀️" if period == "morning" else "🌙"
     period_text  = "Ранковий звіт" if period == "morning" else "Вечірній звіт"
@@ -385,7 +385,7 @@ def _make_habits_photo(period, now, today, raw, HABITS):
     y += 28
 
     # Footer
-    draw.line([(PAD, y+4),(W-PAD, y+4)], fill=_hex(BORDER), width=1)
+    draw.line([(PAD, y+4),(W-PAD, y+4)], fill=_hex(BORDER), width=2)
     ft = f"1/3  ·  {time_str}  ·  Олег Новосадов"
     ftw = draw.textlength(ft, font=f_tiny)
     draw.text(((W-ftw)//2, y+10), ft, font=f_tiny, fill=_hex(MUTED2))
@@ -409,16 +409,16 @@ def _make_run_weight_photo(now, today, wdata, run_data, last_run):
                  5:"Травня",6:"Червня",7:"Липня",8:"Серпня",
                  9:"Вересня",10:"Жовтня",11:"Листопада",12:"Грудня"}
 
-    f_h1    = _font(_SANS_BOLD, 36)
-    f_h2    = _font(_SANS_BOLD, 28)
-    f_h3    = _font(_SANS_BOLD, 22)
-    f_label = _font(_SANS_BOLD, 17)
-    f_body  = _font(_SANS, 16)
-    f_small = _font(_SANS, 14)
-    f_tiny  = _font(_SANS, 12)
-    f_sec   = _font(_SANS_BOLD, 13)
-    f_num   = _font(_SANS_BOLD, 52)
-    f_num2  = _font(_SANS_BOLD, 32)
+    f_h1    = _font(_SANS_BOLD, 48)
+    f_h2    = _font(_SANS_BOLD, 36)
+    f_h3    = _font(_SANS_BOLD, 28)
+    f_label = _font(_SANS_BOLD, 24)
+    f_body  = _font(_SANS, 22)
+    f_small = _font(_SANS, 20)
+    f_tiny  = _font(_SANS, 18)
+    f_sec   = _font(_SANS_BOLD, 18)
+    f_num   = _font(_SANS_BOLD, 68)
+    f_num2  = _font(_SANS_BOLD, 42)
 
     time_str = now.strftime("%H:%M")
     target_kg = 75.0
@@ -511,14 +511,14 @@ def _make_run_weight_photo(now, today, wdata, run_data, last_run):
             for gv in grid_vals:
                 gy_line = gy1 - int((gv - mn) / span * gh)
                 if gy0 < gy_line < gy1:
-                    draw.line([(gx0+8, gy_line), (gx1-8, gy_line)], fill=_hex(BORDER), width=1)
+                    draw.line([(gx0+8, gy_line), (gx1-8, gy_line)], fill=_hex(BORDER), width=2)
                     draw.text((gx0+10, gy_line - 14), f"{gv:.1f}", font=f_tiny, fill=_hex(MUTED2))
 
             # Лінія цілі
             target_y = gy1 - int((target_kg - mn) / span * gh)
             if gy0 < target_y < gy1:
                 for x_dash in range(gx0+8, gx1-8, 14):
-                    draw.line([(x_dash, target_y), (x_dash+8, target_y)], fill=_hex(GREEN2), width=2)
+                    draw.line([(x_dash, target_y), (x_dash+8, target_y)], fill=_hex(GREEN2), width=4)
                 draw.text((gx1 - 80, target_y - 16), f"Ціль {target_kg:.0f}кг", font=f_tiny, fill=_hex(GREEN))
 
             # Точки і лінія
@@ -539,7 +539,7 @@ def _make_run_weight_photo(now, today, wdata, run_data, last_run):
 
             # Лінія
             for i in range(len(pts)-1):
-                draw.line([pts[i], pts[i+1]], fill=_hex(BLUE), width=3)
+                draw.line([pts[i], pts[i+1]], fill=_hex(BLUE), width=5)
 
             # Точки
             for i, (px, py) in enumerate(pts):
@@ -672,7 +672,7 @@ def _make_run_weight_photo(now, today, wdata, run_data, last_run):
                     prev_r = recent[ri-1]
                     px0 = gx0 + int((ri-1) / max(len(recent)-1,1) * gw)
                     py0 = gy1 - int(prev_r["dist_km"] / max_km2 * (gh-40)) - 20
-                    draw.line([(px0,py0),(px,py)], fill=_hex(GREEN2), width=2)
+                    draw.line([(px0,py0),(px,py)], fill=_hex(GREEN2), width=4)
             draw.text((gx0+12, gy0+8), "км/пробіжка", font=f_tiny, fill=_hex(MUTED))
 
         y = gy1 + 8
@@ -681,7 +681,7 @@ def _make_run_weight_photo(now, today, wdata, run_data, last_run):
     if all_runs:
         y += 12
         draw.text((PAD, y), "ОСТАННІ ПРОБІЖКИ", font=f_sec, fill=_hex(MUTED))
-        draw.line([(PAD, y+18),(W-PAD, y+18)], fill=_hex(BORDER), width=1)
+        draw.line([(PAD, y+18),(W-PAD, y+18)], fill=_hex(BORDER), width=2)
         y += 28
 
         recent_runs = sorted(all_runs, key=lambda r: r["date"], reverse=True)[:5]
@@ -694,7 +694,7 @@ def _make_run_weight_photo(now, today, wdata, run_data, last_run):
             draw.text((hx, y), ch, font=f_tiny, fill=_hex(MUTED))
             hx += cw
         y += 18
-        draw.line([(PAD, y), (W-PAD, y)], fill=_hex(BORDER), width=1)
+        draw.line([(PAD, y), (W-PAD, y)], fill=_hex(BORDER), width=2)
         y += 6
 
         for ri, r in enumerate(recent_runs):
@@ -720,7 +720,7 @@ def _make_run_weight_photo(now, today, wdata, run_data, last_run):
     y += 16
 
     # Footer
-    draw.line([(PAD, y+4),(W-PAD, y+4)], fill=_hex(BORDER), width=1)
+    draw.line([(PAD, y+4),(W-PAD, y+4)], fill=_hex(BORDER), width=2)
     ft = f"2/3  ·  {time_str}  ·  Олег Новосадов"
     ftw = draw.textlength(ft, font=f_tiny)
     draw.text(((W-ftw)//2, y+10), ft, font=f_tiny, fill=_hex(MUTED2))
@@ -823,7 +823,7 @@ def _make_portfolio_photo(now, today, portfolio):
     for ch, cx, cc in cols:
         draw.text((cx, y), ch, font=f_tiny, fill=_hex(cc))
     y += 18
-    draw.line([(PAD, y),(W-PAD,y)], fill=_hex(BORDER), width=1)
+    draw.line([(PAD, y),(W-PAD,y)], fill=_hex(BORDER), width=2)
     y += 6
 
     COIN_COLORS2 = [BLUE, GREEN, ORANGE, PURPLE, RED, TEAL, "#F7CC44", BLUE2,
@@ -879,7 +879,7 @@ def _make_portfolio_photo(now, today, portfolio):
     y += 12
 
     # Footer
-    draw.line([(PAD, y+4),(W-PAD, y+4)], fill=_hex(BORDER), width=1)
+    draw.line([(PAD, y+4),(W-PAD, y+4)], fill=_hex(BORDER), width=2)
     ft = f"3/3  ·  {time_str}  ·  Олег Новосадов  ·  Кошіце, Словаччина"
     ftw = draw.textlength(ft, font=f_tiny)
     draw.text(((W-ftw)//2, y+10), ft, font=f_tiny, fill=_hex(MUTED2))
@@ -959,15 +959,6 @@ def generate_report_album(period: str = "morning") -> list[bytes]:
     except Exception as e:
         print(f"[report_card] photo2 error: {e}")
         import traceback; traceback.print_exc()
-
-    # Фото 3: Портфель
-    if portfolio:
-        try:
-            p3 = _make_portfolio_photo(now, today, portfolio)
-            results.append(p3)
-        except Exception as e:
-            print(f"[report_card] photo3 error: {e}")
-            import traceback; traceback.print_exc()
 
     return results
 
