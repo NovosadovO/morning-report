@@ -104,11 +104,19 @@ def _last_weight(wdata, today):
     return None, None
 
 def _weight_series(wdata, today, days=60):
+    """Повертає реальні записи (без пропуску порожніх днів) за останні N днів."""
+    cutoff = today - timedelta(days=days)
     result = []
-    for i in range(days - 1, -1, -1):
-        d = today - timedelta(days=i)
-        v = wdata.get(d.isoformat())
-        if v: result.append((d, float(v)))
+    for k, v in sorted(wdata.items()):
+        try:
+            from datetime import date as _date
+            d = _date.fromisoformat(k)
+        except Exception:
+            continue
+        if d < cutoff or d > today:
+            continue
+        if v:
+            result.append((d, float(v)))
     return result
 
 def _new_img(w, h):
