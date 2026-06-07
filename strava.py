@@ -8,8 +8,8 @@ CLIENT_SECRET = "48f5fe81c418ea39328fa88a1d4a82a37c3fc3fe"
 REFRESH_TOKEN_ENV = "STRAVA_REFRESH_TOKEN"
 
 # GitHub storage для refresh token
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-GITHUB_REPO = os.getenv("GITHUB_REPO", "")
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "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")
+GITHUB_REPO = os.getenv("GITHUB_REPO", "NovosadovO/morning-report")
 STRAVA_TOKEN_FILE = "strava_token.json"
 
 
@@ -25,7 +25,7 @@ def _get_refresh_token():
         try:
             url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{STRAVA_TOKEN_FILE}"
             headers = {"Authorization": f"token {GITHUB_TOKEN}"}
-            r = requests.get(url, headers=headers, timeout=10)
+            r = requests.get(url, headers=headers, params={"ref": "data"}, timeout=10)
             if r.status_code == 200:
                 import base64
                 content = base64.b64decode(r.json()["content"]).decode()

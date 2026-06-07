@@ -179,7 +179,7 @@ def generate_report_card(period: str = "morning") -> bytes | None:
     try:
         from strava import get_month_stats, get_runs
         run_data = get_month_stats(today.year, today.month)
-        runs_list = get_runs(days=14)
+        runs_list = get_runs(days=60)
         if runs_list:
             last_run = sorted(runs_list, key=lambda r: r["date"], reverse=True)[0]
     except Exception as e:
@@ -484,8 +484,19 @@ def generate_report_card(period: str = "morning") -> bytes | None:
                       f"Остання: {lr_km:.1f} км ({age_s}){lr_pace}{lr_hr}",
                       font=f_small, fill=_hex(MUTED))
     else:
-        draw.text((rx + 42, ry + 8),  f"0 пробіжок — {UA_MONTHS2[today.month]}", font=f_h2, fill=_hex(MUTED))
-        draw.text((rx + 42, ry + 40), "Запиши пробіжку або підключи Strava", font=f_small, fill=_hex(BORDER))
+        draw.text((rx + 42, ry + 8), f"0 пробіжок — {UA_MONTHS2[today.month]}", font=f_h2, fill=_hex(MUTED))
+        if last_run:
+            lr_date = last_run["date"]
+            age_d = (today - (lr_date.date() if hasattr(lr_date, "date") else lr_date)).days
+            age_s = f"{age_d}д тому"
+            lr_km = last_run.get("dist_km", 0)
+            lr_pace = ""
+            if last_run.get("pace_sec", 0) > 0:
+                ps = last_run["pace_sec"]
+                lr_pace = f"  {int(ps//60)}:{int(ps%60):02d}/км"
+            draw.text((rx + 42, ry + 38), f"Остання: {lr_km:.1f} км ({age_s}){lr_pace}", font=f_small, fill=_hex(MUTED))
+        else:
+            draw.text((rx + 42, ry + 40), "Підключи Strava або запиши пробіжку", font=f_small, fill=_hex(BORDER))
 
     y += run_h + 16
 
@@ -498,7 +509,7 @@ def generate_report_card(period: str = "morning") -> bytes | None:
         if "positions" in portfolio:
             positions = portfolio["positions"]
         total_val   = portfolio.get("total_value", sum(p.get("value", 0) for p in positions.values()))
-        change24    = portfolio.get("change_24h_usd", 0)
+        change24    = portfolio.get("change_24h", portfolio.get("change_24h_usd", 0))
         total_pnl   = portfolio.get("total_pnl")
 
         draw.text((PAD, y), "ПОРТФЕЛЬ", font=f_sec, fill=_hex(MUTED))
@@ -541,7 +552,7 @@ def generate_report_card(period: str = "morning") -> bytes | None:
             val    = pos.get("value", 0)
             price  = pos.get("price", 0)
             pct    = pos.get("pct_of_total", val / total_val * 100 if total_val else 0)
-            chg24  = pos.get("change_24h_pct", 0)
+            chg24  = pos.get("change24", pos.get("change_24h_pct", 0)) or 0
 
             # Назва монети
             draw.text((PAD + 18, y + 10), sym, font=f_label, fill=_hex(TEXT))
