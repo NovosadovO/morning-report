@@ -1206,7 +1206,12 @@ print("=== Currency watcher thread started ===", flush=True)
 
 
 def run_evening_charts_watcher():
-    """Надсилає всі три графіки щовечора о 20:00 (UTC+2)."""
+    """ВИМКНЕНО: замінено на run_report_card_watcher (один великий PNG-звіт)."""
+    return  # вимкнено — всі дані тепер в report_card
+
+
+def _run_evening_charts_watcher_DISABLED():
+    """Надсилає всі три графіки щовечора о 20:00 (UTC+2). ВИМКНЕНО."""
     import os, json, urllib.request
     from datetime import datetime, timezone, timedelta
     print("=== Starting evening charts watcher (20:00 UTC+2) ===", flush=True)
