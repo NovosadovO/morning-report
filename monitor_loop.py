@@ -1319,28 +1319,40 @@ print("=== Evening charts watcher thread started (20:00 UTC+2) ===", flush=True)
 
 
 def run_report_card_watcher():
-    """Надсилає PNG-звіт о 09:00 (ранковий) і 20:00 (вечірній) UTC+2."""
-    import os, io, urllib.request
-    print("=== Starting report card watcher (09:00 + 20:00 UTC+2) ===", flush=True)
+    """Надсилає 3-фото album о 09:00 (ранковий) і 20:05 (вечірній) UTC+2."""
+    import os, io, json
+    print("=== Starting report card watcher (09:00 + 20:05 UTC+2) ===", flush=True)
     time.sleep(120)  # дати боту стартувати
     sent = {"morning": None, "evening": None}
 
-    def _send_photo(photo_bytes, caption):
+    def _send_album(photos, caption):
+        """Надсилає список байтів як Telegram media group."""
         token = os.environ.get("TELEGRAM_TOKEN", "")
         chat  = os.environ.get("TELEGRAM_CHAT_ID", "")
         if not token or not chat:
             return
         try:
             import requests as _req
-            _req.post(
-                f"https://api.telegram.org/bot{token}/sendPhoto",
-                data={"chat_id": chat, "caption": caption, "parse_mode": "HTML"},
-                files={"photo": ("report.png", io.BytesIO(photo_bytes), "image/png")},
-                timeout=30,
+            media = []
+            files = {}
+            for i, p in enumerate(photos):
+                key = f"photo{i}"
+                media.append({
+                    "type": "photo",
+                    "media": f"attach://{key}",
+                    "caption": caption if i == 0 else "",
+                    "parse_mode": "HTML",
+                })
+                files[key] = (f"report{i}.png", io.BytesIO(p), "image/png")
+            resp = _req.post(
+                f"https://api.telegram.org/bot{token}/sendMediaGroup",
+                data={"chat_id": chat, "media": json.dumps(media)},
+                files=files,
+                timeout=60,
             )
-            print(f"[report_card] photo sent: {caption}", flush=True)
+            print(f"[report_card] album sent ({len(photos)} photos): {caption} → {resp.status_code}", flush=True)
         except Exception as e:
-            print(f"[report_card] send_photo error: {e}", flush=True)
+            print(f"[report_card] send_album error: {e}", flush=True)
 
     while True:
         try:
@@ -1351,28 +1363,28 @@ def run_report_card_watcher():
             # Ранковий звіт о 09:00
             if h == 9 and 0 <= m < 5 and sent["morning"] != ds:
                 sent["morning"] = ds
-                print(f"[report_card] generating morning report for {ds}", flush=True)
+                print(f"[report_card] generating morning album for {ds}", flush=True)
                 try:
                     import sys as _sys, os as _os
                     _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-                    from report_card import generate_report_card
-                    img = generate_report_card("morning")
-                    if img:
-                        _send_photo(img, "☀️ <b>Ранковий звіт</b>")
+                    from report_card import generate_report_album
+                    photos = generate_report_album("morning")
+                    if photos:
+                        _send_album(photos, "☀️ <b>Ранковий звіт</b>")
                 except Exception as e:
                     print(f"[report_card] morning error: {e}", flush=True)
 
             # Вечірній звіт о 20:05 (після графіків о 20:00)
             if h == 20 and 5 <= m < 10 and sent["evening"] != ds:
                 sent["evening"] = ds
-                print(f"[report_card] generating evening report for {ds}", flush=True)
+                print(f"[report_card] generating evening album for {ds}", flush=True)
                 try:
                     import sys as _sys, os as _os
                     _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-                    from report_card import generate_report_card
-                    img = generate_report_card("evening")
-                    if img:
-                        _send_photo(img, "🌙 <b>Вечірній звіт</b>")
+                    from report_card import generate_report_album
+                    photos = generate_report_album("evening")
+                    if photos:
+                        _send_album(photos, "🌙 <b>Вечірній звіт</b>")
                 except Exception as e:
                     print(f"[report_card] evening error: {e}", flush=True)
 

@@ -1,13 +1,15 @@
 """
-report_card.py — Великий PNG-звіт для Telegram (одне повідомлення).
-Секції: заголовок, звички×6, вага+sparkline, біг (Strava), портфель (крипто).
-PIL-based: повна підтримка кольорових emoji через NotoColorEmoji.
-Надсилається двічі на день: 09:00 і 20:00 (UTC+2).
+report_card.py — Великий фото-репорт для Telegram (album з 3 фото).
+Фото 1: Заголовок + Звички (місячна теплова карта)
+Фото 2: Вага (великий графік) + Біг (графік + статистика)
+Фото 3: Портфель (монети + PnL)
 """
 
 import io
 import os
+import math
 from datetime import datetime, timedelta, date, timezone
+import calendar as _calendar
 
 try:
     from PIL import Image, ImageDraw, ImageFont
@@ -25,19 +27,30 @@ _EMOJI_FONT = f"{_FONT_DIR}/noto/NotoColorEmoji.ttf"
 BG      = "#0D1117"
 CARD    = "#161B22"
 CARD2   = "#1C2128"
+CARD3   = "#21262D"
 BORDER  = "#30363D"
 TEXT    = "#E6EDF3"
 MUTED   = "#8B949E"
+MUTED2  = "#6E7681"
 GREEN   = "#3FB950"
+GREEN2  = "#238636"
 RED     = "#F85149"
 BLUE    = "#58A6FF"
+BLUE2   = "#1F6FEB"
 PURPLE  = "#A371F7"
 ORANGE  = "#D29922"
 YELLOW  = "#F0E040"
+TEAL    = "#39D353"
 
 def _hex(h):
     h = h.lstrip("#")
+    if len(h) == 3:
+        h = h[0]*2 + h[1]*2 + h[2]*2
     return tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
+
+def _hex_alpha(h, a=255):
+    r, g, b = _hex(h)
+    return (r, g, b, a)
 
 def _font(path, size):
     try:
@@ -52,7 +65,6 @@ def _emoji_font():
         return None
 
 def _draw_emoji(canvas: Image.Image, emoji: str, x: int, y: int, size: int = 32):
-    """Малює кольоровий emoji через PIL overlay (NotoColorEmoji)."""
     ef = _emoji_font()
     if not ef:
         return
@@ -62,564 +74,909 @@ def _draw_emoji(canvas: Image.Image, emoji: str, x: int, y: int, size: int = 32)
     tmp = tmp.resize((size, size), Image.LANCZOS)
     canvas.paste(tmp, (x, y), tmp)
 
-# ═══════════════════════════════════════════════════════════════════════════════
-# Допоміжні функції
-# ═══════════════════════════════════════════════════════════════════════════════
+def _rr(draw, x0, y0, x1, y1, r, fill, outline=None, lw=1):
+    draw.rounded_rectangle([x0, y0, x1, y1], radius=r, fill=fill, outline=outline, width=lw)
 
-def _streak(raw: dict, habit_key: str, today: date) -> int:
-    streak = 0
-    d = today
-    while True:
-        v = (raw.get(d.isoformat()) or {}).get(habit_key)
-        if v is True:
-            streak += 1
-            d -= timedelta(days=1)
-        else:
-            break
-    return streak
+# ── Допоміжні дані ─────────────────────────────────────────────────────────────
 
-def _month_pct(raw: dict, habit_key: str, today: date) -> float:
-    start = today.replace(day=1)
+def _streak(raw, hid, today):
+    s, d = 0, today
+    while (raw.get(d.isoformat()) or {}).get(hid) is True:
+        s += 1; d -= timedelta(days=1)
+    return s
+
+def _month_pct(raw, hid, today):
+    d = today.replace(day=1)
     total = done = 0
-    d = start
     while d <= today:
-        v = (raw.get(d.isoformat()) or {}).get(habit_key)
+        v = (raw.get(d.isoformat()) or {}).get(hid)
         if v is not None:
             total += 1
-            if v is True:
-                done += 1
+            if v is True: done += 1
         d += timedelta(days=1)
-    return done / total if total > 0 else 0.0
+    return done / total if total else 0.0
 
-def _week_history(raw: dict, habit_key: str, today: date, days: int = 7):
-    return [(raw.get((today - timedelta(days=i)).isoformat()) or {}).get(habit_key)
-            for i in range(days - 1, -1, -1)]
-
-def _last_weight(wdata: dict, today: date):
-    for i in range(120):
-        d = (today - timedelta(days=i)).isoformat()
-        v = wdata.get(d)
-        if v:
-            return float(v), (today - timedelta(days=i))
+def _last_weight(wdata, today):
+    for i in range(180):
+        d = today - timedelta(days=i)
+        v = wdata.get(d.isoformat())
+        if v: return float(v), d
     return None, None
 
-def _weight_trend(wdata: dict, today: date, days: int = 30):
+def _weight_series(wdata, today, days=60):
     result = []
     for i in range(days - 1, -1, -1):
         d = today - timedelta(days=i)
         v = wdata.get(d.isoformat())
-        if v:
-            result.append((d, float(v)))
+        if v: result.append((d, float(v)))
     return result
 
-def _rounded_rect(draw: ImageDraw.Draw, x0, y0, x1, y1, r, fill, outline=None, lw=1):
-    draw.rounded_rectangle([x0, y0, x1, y1], radius=r, fill=fill, outline=outline, width=lw)
+def _new_img(w, h):
+    img = Image.new("RGB", (w, h), _hex(BG))
+    return img, ImageDraw.Draw(img)
+
+def _save(img):
+    buf = io.BytesIO()
+    img.save(buf, format="PNG", optimize=True)
+    buf.seek(0)
+    return buf.read()
+
+def _section_header(img, draw, x, y, title, f_sec):
+    draw.text((x, y), title, font=f_sec, fill=_hex(MUTED))
+    draw.line([(x, y + 18), (img.width - x, y + 18)], fill=_hex(BORDER), width=1)
+    return y + 28
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# ГОЛОВНА ФУНКЦІЯ
+# ФОТО 1 — Заголовок + Звички
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def generate_report_card(period: str = "morning") -> bytes | None:
-    """Генерує великий PNG-банер. Повертає bytes."""
-    if not HAS_PIL:
-        return None
-
-    try:
-        from storage import load_habits, load_weight
-    except ImportError:
-        return None
-
-    now   = datetime.now(timezone.utc) + timedelta(hours=2)
-    today = now.date()
-
-    raw   = load_habits() or {}
-    wdata = load_weight() or {}
-
-    # ── Звички ───────────────────────────────────────────────────────────────
-    HABITS = [
-        {"id": "shower", "name": "Холодний душ",     "emoji": "🚿", "color": BLUE},
-        {"id": "run",    "name": "Пробіжка",          "emoji": "🏃", "color": GREEN},
-        {"id": "water",  "name": "Вода (2л+)",         "emoji": "💧", "color": "#1F6FEB"},
-        {"id": "tea",    "name": "Трав'яний чай",     "emoji": "🍵", "color": ORANGE},
-        {"id": "sauna",  "name": "Сауна",              "emoji": "🧖", "color": RED},
-        {"id": "spray",  "name": "Спрей для волосся",  "emoji": "💈", "color": PURPLE},
-    ]
-
-    today_entry = raw.get(today.isoformat()) or {}
-
-    # ── Вага ─────────────────────────────────────────────────────────────────
-    last_kg, last_kg_date = _last_weight(wdata, today)
-    weight_trend = _weight_trend(wdata, today, 30)
-    target_kg = 75.0
-
-    # ── Стрік / % місяць / 7-денна ───────────────────────────────────────────
-    streaks    = {h["id"]: _streak(raw, h["id"], today)      for h in HABITS}
-    month_pcts = {h["id"]: _month_pct(raw, h["id"], today)   for h in HABITS}
-    histories  = {h["id"]: _week_history(raw, h["id"], today) for h in HABITS}
-
-    # ── Стрік ─────────────────────────────────────────────────────────────────
-    # Загальний стрік: скільки днів поспіль виконано ВСІ звички
-    def _total_streak():
-        s = 0
-        d = today
-        while True:
-            entry = raw.get(d.isoformat()) or {}
-            if all(entry.get(h["id"]) is True for h in HABITS):
-                s += 1
-                d -= timedelta(days=1)
-            else:
-                break
-        return s
-
-    total_streak = _total_streak()
-
-    # ── Біг (Strava) ─────────────────────────────────────────────────────────
-    run_data = None
-    last_run = None
-    try:
-        from strava import get_month_stats, get_runs
-        run_data = get_month_stats(today.year, today.month)
-        runs_list = get_runs(days=60)
-        if runs_list:
-            last_run = sorted(runs_list, key=lambda r: r["date"], reverse=True)[0]
-    except Exception as e:
-        print(f"[report_card] strava error: {e}")
-
-    # ── Портфель ─────────────────────────────────────────────────────────────
-    portfolio = None
-    try:
-        from portfolio import get_portfolio_summary
-        portfolio = get_portfolio_summary()
-    except Exception as e:
-        print(f"[report_card] portfolio error: {e}")
-
-    # ═══════════════════════════════════════════════════════════════════════════
-    # РОЗМІРИ
-    # ═══════════════════════════════════════════════════════════════════════════
-    W     = 900
-    PAD   = 28
-    R     = 14   # радіус карточки
-
-    # Висота секцій (приблизна, потім кроп)
-    H_HEADER  = 90
-    H_HABITS  = 30 + len(HABITS) * 70 + 20    # заголовок + рядки
-    H_WEIGHT  = 30 + 160 + 20
-    H_RUN     = 30 + 130 + 20
-    H_DIVIDER = 30
-    H_PORTFOLIO = 30 + 60 + len(portfolio or {}) * 52 + 30 if portfolio else 0
-    H_FOOTER  = 50
-    H = H_HEADER + H_HABITS + H_WEIGHT + H_RUN + H_PORTFOLIO + H_FOOTER + 60
-
-    img  = Image.new("RGB", (W, H), _hex(BG))
-    draw = ImageDraw.Draw(img)
-
-    # ── Шрифти ───────────────────────────────────────────────────────────────
-    f_h1    = _font(_SANS_BOLD, 30)
-    f_h2    = _font(_SANS_BOLD, 20)
-    f_label = _font(_SANS_BOLD, 16)
-    f_body  = _font(_SANS, 15)
-    f_small = _font(_SANS, 13)
-    f_tiny  = _font(_SANS, 11)
-    f_num   = _font(_SANS_BOLD, 24)
-    f_sec   = _font(_SANS_BOLD, 12)
+def _make_habits_photo(period, now, today, raw, HABITS):
+    W = 1080
+    PAD = 32
 
     UA_MONTHS = {1:"Січня",2:"Лютого",3:"Березня",4:"Квітня",
                  5:"Травня",6:"Червня",7:"Липня",8:"Серпня",
                  9:"Вересня",10:"Жовтня",11:"Листопада",12:"Грудня"}
     UA_DAYS   = {0:"Понеділок",1:"Вівторок",2:"Середа",3:"Четвер",
                  4:"П'ятниця",5:"Субота",6:"Неділя"}
-    UA_MONTHS2 = {1:"Січень",2:"Лютий",3:"Березень",4:"Квітень",
-                  5:"Травень",6:"Червень",7:"Липень",8:"Серпень",
-                  9:"Вересень",10:"Жовтень",11:"Листопад",12:"Грудень"}
+    UA_MON_SHORT = {1:"Січ",2:"Лют",3:"Бер",4:"Кві",5:"Тра",6:"Чер",
+                    7:"Лип",8:"Сер",9:"Вер",10:"Жов",11:"Лис",12:"Гру"}
+
+    # Шрифти
+    f_h1    = _font(_SANS_BOLD, 40)
+    f_h2    = _font(_SANS_BOLD, 26)
+    f_h3    = _font(_SANS_BOLD, 20)
+    f_label = _font(_SANS_BOLD, 17)
+    f_body  = _font(_SANS, 16)
+    f_small = _font(_SANS, 14)
+    f_tiny  = _font(_SANS, 12)
+    f_sec   = _font(_SANS_BOLD, 13)
+    f_num   = _font(_SANS_BOLD, 48)
 
     period_emoji = "☀️" if period == "morning" else "🌙"
     period_text  = "Ранковий звіт" if period == "morning" else "Вечірній звіт"
-    date_str     = f"{UA_DAYS[today.weekday()]}, {today.day} {UA_MONTHS[today.month]} {today.year}"
-    time_str     = now.strftime("%H:%M")
+    date_str = f"{UA_DAYS[today.weekday()]}, {today.day} {UA_MONTHS[today.month]} {today.year}"
+    time_str = now.strftime("%H:%M")
+
+    today_entry = raw.get(today.isoformat()) or {}
+    done_today  = sum(1 for h in HABITS if today_entry.get(h["id"]) is True)
+
+    # Теплова карта: скільки місяців показувати
+    # Показуємо поточний місяць + 2 попередніх (3 місяці)
+    HEATMAP_MONTHS = 3
+    # Дні для теплової карти
+    heatmap_start = (today.replace(day=1) - timedelta(days=1)).replace(day=1)
+    heatmap_start = (heatmap_start.replace(day=1) - timedelta(days=1)).replace(day=1)
+
+    # Оцінка висоти
+    # Заголовок: 180px
+    # Зведення звичок (6 рядків): 6 * 54 + 40 = 364px
+    # Теплова карта (6 звичок × місяць): 6 * 80 + 60 = 540px
+    # Footer: 60px
+    # Виділяємо з запасом, кропнемо в кінці
+    H = 180 + 40 + len(HABITS) * 56 + 50 + len(HABITS) * 200 + 120 + 60
+    img, draw = _new_img(W, H)
 
     y = PAD
 
-    # ═══════════════════════════════════════════════════════════════════════════
-    # 1. ЗАГОЛОВОК
-    # ═══════════════════════════════════════════════════════════════════════════
-    _rounded_rect(draw, PAD, y, W - PAD, y + 80, R, fill=_hex(CARD), outline=_hex(BORDER))
+    # ── ЗАГОЛОВОК ─────────────────────────────────────────────────────────────
+    # Градієнтна смуга зверху
+    for i in range(6):
+        alpha = int(255 * (1 - i / 6))
+        grad_col = (*_hex(BLUE if period == "morning" else PURPLE), alpha)
+        draw.rectangle([0, i, W, i+1], fill=grad_col[:3])
 
-    _draw_emoji(img, period_emoji, PAD + 18, y + 14, size=36)
-    draw.text((PAD + 62, y + 14), period_text, font=f_h1, fill=_hex(TEXT))
-    draw.text((PAD + 18, y + 52), date_str + f"  ·  {time_str}", font=f_small, fill=_hex(MUTED))
+    _rr(draw, 0, 0, W, 140, 0, fill=_hex(CARD))
+    # Тонка кольорова лінія зверху
+    accent = BLUE if period == "morning" else PURPLE
+    draw.line([(0, 0), (W, 0)], fill=_hex(accent), width=4)
 
-    # Загальний стрік справа
-    if total_streak > 0:
-        ts_str = f"{total_streak}д"
-        _draw_emoji(img, "🔥", W - PAD - 80, y + 12, size=32)
-        draw.text((W - PAD - 44, y + 14), ts_str, font=f_num, fill=_hex(ORANGE))
-        lbl = "загальний"
-        lw = draw.textlength(lbl, font=f_tiny)
-        draw.text((W - PAD - 44 - (lw - draw.textlength(ts_str, font=f_num))//2 + 4, y + 50),
-                  lbl, font=f_tiny, fill=_hex(MUTED))
+    _draw_emoji(img, period_emoji, PAD, 28, size=52)
+    draw.text((PAD + 66, 26), period_text, font=f_h1, fill=_hex(TEXT))
+    draw.text((PAD + 66, 80), date_str + f"  ·  {time_str}", font=f_body, fill=_hex(MUTED))
 
-    # Виконано сьогодні
-    done_today   = sum(1 for h in HABITS if today_entry.get(h["id"]) is True)
-    total_habits = len(HABITS)
-    done_str     = f"{done_today}/{total_habits}"
-    done_color   = GREEN if done_today == total_habits else (ORANGE if done_today >= total_habits // 2 else RED)
-    ds_w = draw.textlength(done_str, font=f_num)
-    right_x = W - PAD - 100 - 60 if total_streak > 0 else W - PAD - 18
-    draw.text((right_x - ds_w, y + 14), done_str, font=f_num, fill=_hex(done_color))
-    lbl2 = "виконано"
-    lbl2_w = draw.textlength(lbl2, font=f_tiny)
-    draw.text((right_x - lbl2_w, y + 50), lbl2, font=f_tiny, fill=_hex(MUTED))
+    # Велике число виконаних справа
+    done_s = f"{done_today}/{len(HABITS)}"
+    done_col = GREEN if done_today == len(HABITS) else (ORANGE if done_today >= len(HABITS)//2 else RED)
+    dw = draw.textlength(done_s, font=f_num)
+    draw.text((W - PAD - dw, 24), done_s, font=f_num, fill=_hex(done_col))
+    lbl = "сьогодні"
+    lw = draw.textlength(lbl, font=f_small)
+    draw.text((W - PAD - lw, 94), lbl, font=f_small, fill=_hex(MUTED))
 
-    y += 80 + 16
+    y = 152
 
-    # ═══════════════════════════════════════════════════════════════════════════
-    # 2. ЗВИЧКИ
-    # ═══════════════════════════════════════════════════════════════════════════
-    draw.text((PAD, y), "ЗВИЧКИ", font=f_sec, fill=_hex(MUTED))
+    # ── ЗВЕДЕННЯ ЗВИЧОК ───────────────────────────────────────────────────────
+    y = _section_header(img, draw, PAD, y, "ЗВИЧКИ — СЬОГОДНІ", f_sec)
+
+    ROW_H = 54
+    for h in HABITS:
+        hid    = h["id"]
+        hcolor = h["color"]
+        status = today_entry.get(hid)
+        streak = _streak(raw, hid, today)
+        pct    = _month_pct(raw, hid, today)
+
+        # Фон
+        bg = _hex(CARD) if status is True else _hex(CARD2)
+        _rr(draw, PAD, y, W - PAD, y + ROW_H - 4, 12, fill=bg, outline=_hex(BORDER))
+
+        # Статус
+        cx, cy, rc = PAD + 22, y + ROW_H//2 - 2, 16
+        if status is True:
+            draw.ellipse([cx-rc,cy-rc,cx+rc,cy+rc], fill=_hex(hcolor))
+            draw.line([(cx-8,cy),(cx-2,cy+8),(cx+9,cy-8)], fill=_hex("#FFF"), width=3)
+        elif status is False:
+            draw.ellipse([cx-rc,cy-rc,cx+rc,cy+rc], fill=_hex(RED))
+            draw.line([(cx-7,cy-7),(cx+7,cy+7)], fill=_hex("#FFF"), width=3)
+            draw.line([(cx+7,cy-7),(cx-7,cy+7)], fill=_hex("#FFF"), width=3)
+        else:
+            draw.ellipse([cx-rc,cy-rc,cx+rc,cy+rc], outline=_hex(BORDER), width=2)
+
+        # Emoji + назва
+        _draw_emoji(img, h["emoji"], PAD + 46, y + ROW_H//2 - 16, size=30)
+        nc = TEXT if status is True else (MUTED if status is None else RED)
+        draw.text((PAD + 84, y + ROW_H//2 - 10), h["name"], font=f_label, fill=_hex(nc))
+
+        # Стрік
+        if streak > 0:
+            _draw_emoji(img, "🔥", W - PAD - 240, y + 10, size=24)
+            draw.text((W - PAD - 212, y + 13), f"{streak}д", font=f_label, fill=_hex(ORANGE))
+
+        # % місяця + бар
+        pct_s   = f"{int(pct*100)}%"
+        pct_col = GREEN if pct >= 0.8 else (ORANGE if pct >= 0.5 else RED)
+        pw = draw.textlength(pct_s, font=f_h3)
+        draw.text((W - PAD - 20 - pw, y + 10), pct_s, font=f_h3, fill=_hex(pct_col))
+        draw.text((W - PAD - 20 - pw, y + 36), "місяць", font=f_tiny, fill=_hex(MUTED))
+
+        # Прогрес бар
+        bx0, bx1 = W - PAD - 190, W - PAD - 80
+        by = y + 24
+        draw.rounded_rectangle([bx0, by, bx1, by+6], radius=3, fill=_hex(BORDER))
+        fw = int((bx1-bx0)*pct)
+        if fw > 0:
+            draw.rounded_rectangle([bx0, by, bx0+fw, by+6], radius=3, fill=_hex(pct_col))
+
+        y += ROW_H
+
     y += 20
 
-    ROW_H  = 66
-    DOT_R  = 7   # радіус мінікрапки
+    # ── ТЕПЛОВА КАРТА ─────────────────────────────────────────────────────────
+    y = _section_header(img, draw, PAD, y, "ЗВИЧКИ — МІСЯЧНА ТЕПЛОВА КАРТА", f_sec)
+
+    # Визначаємо місяці для показу
+    months_to_show = []
+    for i in range(HEATMAP_MONTHS - 1, -1, -1):
+        # i=2 -> 2 місяці тому, i=0 -> поточний
+        first_of_month = today.replace(day=1)
+        for _ in range(i):
+            first_of_month = (first_of_month - timedelta(days=1)).replace(day=1)
+        months_to_show.append(first_of_month)
+
+    # Розраховуємо ширину колонки для кожного місяця
+    CELL_W = 22
+    CELL_H = 22
+    CELL_GAP = 3
+    LABEL_W = 140  # ширина лейблу звички
+    MONTH_LABEL_H = 24
+
+    # Скільки тижнів у кожному місяці (макс 6)
+    MAX_WEEKS = 6
+
+    # Розрахуємо загальну ширину для місяців
+    month_col_w = MAX_WEEKS * (CELL_W + CELL_GAP) + 16
+    total_months_w = LABEL_W + HEATMAP_MONTHS * month_col_w + PAD
+
+    # Масштаб щоб вміститися в W
+    scale = min(1.0, (W - PAD * 2) / total_months_w)
+    CELL_W_S  = max(14, int(CELL_W * scale))
+    CELL_H_S  = max(14, int(CELL_H * scale))
+    CELL_GAP_S = max(2, int(CELL_GAP * scale))
+    LABEL_W_S  = int(LABEL_W * scale)
+    month_col_w_s = MAX_WEEKS * (CELL_W_S + CELL_GAP_S) + 10
 
     for h in HABITS:
         hid    = h["id"]
         hcolor = h["color"]
-        status = today_entry.get(hid)    # True / False / None
-        streak = streaks[hid]
-        pct    = month_pcts[hid]
-        hist   = histories[hid]
+        pct    = _month_pct(raw, hid, today)
+        pct_col = GREEN if pct >= 0.8 else (ORANGE if pct >= 0.5 else RED)
 
-        row_bg = _hex(CARD) if status is True else _hex(CARD2)
-        _rounded_rect(draw, PAD, y, W - PAD, y + ROW_H - 4, 12,
-                      fill=row_bg, outline=_hex(BORDER))
+        row_total_h = MONTH_LABEL_H + 7 * (CELL_H_S + CELL_GAP_S) + 16
 
-        # Статус кружечок
-        cx = PAD + 20
-        cy = y + ROW_H // 2 - 2
-        rc = 15
-        if status is True:
-            draw.ellipse([cx - rc, cy - rc, cx + rc, cy + rc], fill=_hex(hcolor))
-            draw.line([(cx-7, cy), (cx-2, cy+7), (cx+8, cy-7)], fill=_hex("#FFFFFF"), width=3)
-        elif status is False:
-            draw.ellipse([cx - rc, cy - rc, cx + rc, cy + rc], fill=_hex(RED))
-            draw.line([(cx-7, cy-7), (cx+7, cy+7)], fill=_hex("#FFFFFF"), width=3)
-            draw.line([(cx+7, cy-7), (cx-7, cy+7)], fill=_hex("#FFFFFF"), width=3)
-        else:
-            draw.ellipse([cx - rc, cy - rc, cx + rc, cy + rc], outline=_hex(BORDER), width=2)
+        # Фон рядку
+        _rr(draw, PAD, y, W - PAD, y + row_total_h, 10, fill=_hex(CARD2), outline=_hex(BORDER))
 
-        # Emoji + назва
-        ex = PAD + 42
-        ey = y + ROW_H // 2 - 18
-        _draw_emoji(img, h["emoji"], ex, ey, size=30)
+        # Emoji + назва зліва
+        _draw_emoji(img, h["emoji"], PAD + 8, y + 4, size=24)
+        draw.text((PAD + 36, y + 6), h["name"], font=f_small, fill=_hex(TEXT))
+        draw.text((PAD + 36, y + 24), f"{int(pct*100)}%", font=f_tiny, fill=_hex(pct_col))
 
-        nx = ex + 36
-        nc = TEXT if status is True else (MUTED if status is None else RED)
-        draw.text((nx, y + 10), h["name"], font=f_label, fill=_hex(nc))
+        # Місяці
+        mx0 = PAD + LABEL_W_S + 4
 
-        # 7-денна міні-карта
-        dot_x0 = nx
-        dot_y  = y + 38
-        for di, dv in enumerate(hist):
-            dx = dot_x0 + di * (DOT_R * 2 + 5)
-            dy = dot_y
-            if dv is True:
-                draw.ellipse([dx, dy, dx + DOT_R*2, dy + DOT_R*2], fill=_hex(hcolor))
-            elif dv is False:
-                draw.ellipse([dx, dy, dx + DOT_R*2, dy + DOT_R*2], fill=_hex(RED))
-            else:
-                draw.ellipse([dx, dy, dx + DOT_R*2, dy + DOT_R*2], outline=_hex(BORDER), width=1)
-        week_x = dot_x0 + 7 * (DOT_R * 2 + 5) + 6
-        draw.text((week_x, dot_y + 1), "7д", font=f_tiny, fill=_hex(MUTED))
+        for mi, month_start in enumerate(months_to_show):
+            mx = mx0 + mi * month_col_w_s
 
-        # Стрік 🔥
-        sk_x = W - PAD - 200
-        if streak > 0:
-            _draw_emoji(img, "🔥", sk_x, y + 6, size=22)
-            draw.text((sk_x + 26, y + 10), f"{streak}д", font=f_label, fill=_hex(ORANGE))
-        else:
-            draw.text((sk_x + 4, y + 10), "—", font=f_label, fill=_hex(BORDER))
+            # Назва місяця
+            year_str  = str(month_start.year)[2:]
+            mon_label = f"{UA_MON_SHORT[month_start.month]} '{year_str}"
+            draw.text((mx, y + 4), mon_label, font=f_tiny, fill=_hex(MUTED))
 
-        # % місяця
-        pct_str  = f"{int(pct * 100)}%"
-        pct_col  = GREEN if pct >= 0.8 else (ORANGE if pct >= 0.5 else RED)
-        px       = W - PAD - 72
-        draw.text((px, y + 10), pct_str, font=f_h2, fill=_hex(pct_col))
-        draw.text((px, y + 36), "місяць", font=f_tiny, fill=_hex(MUTED))
+            # Перший день тижня місяця (пн=0)
+            first_wd = month_start.weekday()  # 0=пн
+            days_in_m = _calendar.monthrange(month_start.year, month_start.month)[1]
+            last_of_month = month_start.replace(day=days_in_m)
 
-        # Progress bar
-        bx0 = px - 8
-        bx1 = W - PAD - 16
-        by  = y + 54
-        draw.rounded_rectangle([bx0, by, bx1, by + 4], radius=2, fill=_hex(BORDER))
-        fw = int((bx1 - bx0) * pct)
-        if fw > 0:
-            draw.rounded_rectangle([bx0, by, bx0 + fw, by + 4], radius=2, fill=_hex(pct_col))
+            # Малюємо клітинки по тижнях (стовпці) і днях тижня (рядки)
+            # Тиждень 0 = перший тиждень місяця
+            for day_num in range(1, days_in_m + 1):
+                d = month_start.replace(day=day_num)
+                wd = d.weekday()  # 0=пн
+                # Тиждень: який тиждень місяця
+                week_idx = (day_num + first_wd - 1) // 7
 
-        y += ROW_H
+                cx_cell = mx + week_idx * (CELL_W_S + CELL_GAP_S)
+                cy_cell = y + MONTH_LABEL_H + wd * (CELL_H_S + CELL_GAP_S)
 
-    y += 16
+                v = (raw.get(d.isoformat()) or {}).get(hid)
+                is_future = d > today
 
-    # ═══════════════════════════════════════════════════════════════════════════
-    # 3. ВАГА
-    # ═══════════════════════════════════════════════════════════════════════════
-    draw.text((PAD, y), "ВАГА", font=f_sec, fill=_hex(MUTED))
-    y += 20
+                if is_future:
+                    cell_fill = _hex(CARD3)
+                    cell_outline = _hex(BORDER)
+                elif v is True:
+                    cell_fill = _hex(hcolor)
+                    cell_outline = None
+                elif v is False:
+                    cell_fill = _hex(RED) if (today - d).days <= 7 else (*_hex(RED), )
+                    # Темніший червоний для старих пропусків
+                    cell_fill = _hex("#3D1A1A") if (today - d).days > 3 else _hex(RED)
+                    cell_outline = None
+                elif v is None:
+                    cell_fill = _hex(CARD3)
+                    cell_outline = _hex(BORDER)
+                else:
+                    cell_fill = _hex(CARD3)
+                    cell_outline = _hex(BORDER)
 
-    card_h = 155
-    _rounded_rect(draw, PAD, y, W - PAD, y + card_h, R, fill=_hex(CARD), outline=_hex(BORDER))
+                _rr(draw, cx_cell, cy_cell,
+                    cx_cell + CELL_W_S, cy_cell + CELL_H_S,
+                    3, fill=cell_fill,
+                    outline=cell_outline, lw=1)
 
-    iy = y + 18
-    ix = PAD + 20
+                # Підсвітка сьогодні
+                if d == today:
+                    draw.rounded_rectangle([cx_cell, cy_cell, cx_cell+CELL_W_S, cy_cell+CELL_H_S],
+                                           radius=3, outline=_hex(TEXT), width=2)
+
+        y += row_total_h + 8
+
+    y += 12
+
+    # Легенда
+    leg_items = [("✓ Виконано", GREEN), ("✗ Пропущено", RED), ("— Немає даних", MUTED2)]
+    lx = PAD
+    for leg_text, leg_col in leg_items:
+        draw.rounded_rectangle([lx, y+2, lx+14, y+14], radius=3, fill=_hex(leg_col))
+        draw.text((lx + 18, y), leg_text, font=f_tiny, fill=_hex(MUTED))
+        lx += int(draw.textlength(leg_text, font=f_tiny)) + 36
+
+    y += 28
+
+    # Footer
+    draw.line([(PAD, y+4),(W-PAD, y+4)], fill=_hex(BORDER), width=1)
+    ft = f"1/3  ·  {time_str}  ·  Олег Новосадов"
+    ftw = draw.textlength(ft, font=f_tiny)
+    draw.text(((W-ftw)//2, y+10), ft, font=f_tiny, fill=_hex(MUTED2))
+
+    img = img.crop((0, 0, W, y + 36))
+    return _save(img)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# ФОТО 2 — Вага + Біг
+# ═══════════════════════════════════════════════════════════════════════════════
+
+def _make_run_weight_photo(now, today, wdata, run_data, last_run):
+    W = 1080
+    PAD = 32
+
+    UA_MONTHS2 = {1:"Січень",2:"Лютий",3:"Березень",4:"Квітень",
+                  5:"Травень",6:"Червень",7:"Липень",8:"Серпень",
+                  9:"Вересень",10:"Жовтень",11:"Листопад",12:"Грудень"}
+    UA_MONTHS = {1:"Січня",2:"Лютого",3:"Березня",4:"Квітня",
+                 5:"Травня",6:"Червня",7:"Липня",8:"Серпня",
+                 9:"Вересня",10:"Жовтня",11:"Листопада",12:"Грудня"}
+
+    f_h1    = _font(_SANS_BOLD, 36)
+    f_h2    = _font(_SANS_BOLD, 28)
+    f_h3    = _font(_SANS_BOLD, 22)
+    f_label = _font(_SANS_BOLD, 17)
+    f_body  = _font(_SANS, 16)
+    f_small = _font(_SANS, 14)
+    f_tiny  = _font(_SANS, 12)
+    f_sec   = _font(_SANS_BOLD, 13)
+    f_num   = _font(_SANS_BOLD, 52)
+    f_num2  = _font(_SANS_BOLD, 32)
+
+    time_str = now.strftime("%H:%M")
+    target_kg = 75.0
+    last_kg, last_kg_date = _last_weight(wdata, today)
+    weight_series = _weight_series(wdata, today, 60)
+
+    # Висота
+    H_TITLE   = 80
+    H_WEIGHT  = 420
+    H_RUN     = 480
+    H_FOOTER  = 60
+    H = H_TITLE + H_WEIGHT + H_RUN + H_FOOTER + 80
+    img, draw = _new_img(W, H)
+
+    y = PAD
+
+    # ── Акцент лінія ──────────────────────────────────────────────────────────
+    draw.line([(0,0),(W,0)], fill=_hex(GREEN), width=4)
+    _rr(draw, 0, 0, W, 70, 0, fill=_hex(CARD))
+    _draw_emoji(img, "⚖️", PAD, 14, size=42)
+    _draw_emoji(img, "🏃", PAD + 300, 14, size=42)
+    draw.text((PAD + 50, 18), "Вага та біг", font=f_h1, fill=_hex(TEXT))
+    draw.text((W - PAD - draw.textlength("2 / 3", font=f_small) - 4, 26), "2 / 3", font=f_small, fill=_hex(MUTED))
+    y = 82
+
+    # ══════════════════════════════════════════
+    # СЕКЦІЯ ВАГА
+    # ══════════════════════════════════════════
+    y = _section_header(img, draw, PAD, y, "ВАГА", f_sec)
 
     if last_kg is not None:
-        _draw_emoji(img, "⚖️", ix, iy, size=36)
-        draw.text((ix + 44, iy + 2),  f"{last_kg:.1f} кг",  font=f_num, fill=_hex(TEXT))
+        # Великі цифри
+        kg_s = f"{last_kg:.1f}"
+        kgw = draw.textlength(kg_s, font=f_num)
+        draw.text((PAD, y), kg_s, font=f_num, fill=_hex(TEXT))
+        draw.text((PAD + kgw + 8, y + 30), "кг", font=f_h2, fill=_hex(MUTED))
+
+        diff = last_kg - target_kg
+        diff_col = GREEN if diff <= 0 else (ORANGE if diff < 3 else RED)
+        diff_s = f"{diff:+.1f} кг від цілі {target_kg:.0f} кг"
+        draw.text((PAD, y + 60), diff_s, font=f_body, fill=_hex(diff_col))
 
         if last_kg_date:
             age = (today - last_kg_date).days
             age_s = "сьогодні" if age == 0 else ("вчора" if age == 1 else f"{age}д тому")
-            draw.text((ix + 44, iy + 34), age_s, font=f_tiny, fill=_hex(MUTED))
+            draw.text((PAD + kgw + draw.textlength("  кг", font=f_h2) + 8, y + 30),
+                      age_s, font=f_small, fill=_hex(MUTED))
 
-        diff = last_kg - target_kg
-        diff_col = GREEN if diff <= 0 else (ORANGE if diff < 5 else RED)
-        draw.text((ix, iy + 58), f"До цілі ({target_kg:.0f} кг): {diff:+.1f} кг",
-                  font=f_body, fill=_hex(diff_col))
+        # Статистика справа
+        if len(weight_series) >= 5:
+            kgs = [v for _, v in weight_series]
+            mn_kg = min(kgs)
+            mx_kg = max(kgs)
+            avg_kg = sum(kgs) / len(kgs)
+            td = weight_series[-1][1] - weight_series[0][1]
+            td_col = GREEN if td < 0 else RED
 
-        # Sparkline
-        if len(weight_trend) >= 2:
-            sx0 = ix
-            sx1 = W - PAD - 20
-            sy0 = iy + 84
-            sy1 = iy + 126
-            sw  = sx1 - sx0
-            sh  = sy1 - sy0
+            stats = [
+                (f"{mn_kg:.1f} кг", "Мін за 60д", BLUE),
+                (f"{mx_kg:.1f} кг", "Макс за 60д", RED),
+                (f"{avg_kg:.1f} кг", "Середнє", MUTED),
+                (f"{td:+.1f} кг", "Тренд 60д", td_col),
+            ]
+            sx = W - PAD - 280
+            for si, (val, lbl, col) in enumerate(stats):
+                bx = sx + (si % 2) * 140
+                by = y + (si // 2) * 56
+                _rr(draw, bx, by, bx+130, by+50, 8, fill=_hex(CARD2), outline=_hex(BORDER))
+                draw.text((bx+10, by+6), val, font=f_label, fill=_hex(col))
+                draw.text((bx+10, by+28), lbl, font=f_tiny, fill=_hex(MUTED))
 
-            kgs   = [v for _, v in weight_trend]
-            mn    = min(kgs) - 0.5
-            mx    = max(kgs) + 0.5
-            span  = mx - mn or 1.0
+        y += 90
 
-            draw.rounded_rectangle([sx0, sy0, sx1, sy1], radius=6, fill=_hex(CARD2))
+        # Великий графік ваги
+        if len(weight_series) >= 2:
+            gx0, gx1 = PAD, W - PAD
+            gy0, gy1 = y, y + 240
+            gw, gh = gx1 - gx0, gy1 - gy0
 
+            kgs = [v for _, v in weight_series]
+            mn = min(kgs) - 0.8
+            mx = max(kgs) + 0.8
+            span = mx - mn or 1.0
+
+            # Фон графіка
+            _rr(draw, gx0, gy0, gx1, gy1, 12, fill=_hex(CARD), outline=_hex(BORDER))
+
+            # Сітка горизонтальна
+            grid_vals = [mn + (mx - mn) * i / 4 for i in range(5)]
+            for gv in grid_vals:
+                gy_line = gy1 - int((gv - mn) / span * gh)
+                if gy0 < gy_line < gy1:
+                    draw.line([(gx0+8, gy_line), (gx1-8, gy_line)], fill=_hex(BORDER), width=1)
+                    draw.text((gx0+10, gy_line - 14), f"{gv:.1f}", font=f_tiny, fill=_hex(MUTED2))
+
+            # Лінія цілі
+            target_y = gy1 - int((target_kg - mn) / span * gh)
+            if gy0 < target_y < gy1:
+                for x_dash in range(gx0+8, gx1-8, 14):
+                    draw.line([(x_dash, target_y), (x_dash+8, target_y)], fill=_hex(GREEN2), width=2)
+                draw.text((gx1 - 80, target_y - 16), f"Ціль {target_kg:.0f}кг", font=f_tiny, fill=_hex(GREEN))
+
+            # Точки і лінія
             pts = []
-            for i, (_, v) in enumerate(weight_trend):
-                px_i = sx0 + int(i / (len(weight_trend) - 1) * sw)
-                py_i = sy1 - int((v - mn) / span * sh)
-                pts.append((px_i, py_i))
+            for i, (_, v) in enumerate(weight_series):
+                px = gx0 + int(i / (len(weight_series)-1) * gw)
+                py = gy1 - int((v - mn) / span * gh)
+                pts.append((px, py))
 
-            # Тінь під лінією
-            fill_pts = pts + [(pts[-1][0], sy1), (pts[0][0], sy1)]
-            shadow = Image.new("RGBA", img.size, (0, 0, 0, 0))
-            sd = ImageDraw.Draw(shadow)
-            sd.polygon(fill_pts, fill=(*_hex(BLUE), 40))
-            img.paste(shadow, mask=shadow.split()[3])
-            draw = ImageDraw.Draw(img)
+            # Заливка під лінією
+            if len(pts) >= 2:
+                fill_pts = [(gx0+8, gy1-2)] + pts + [(gx1-8, gy1-2)]
+                overlay = Image.new("RGBA", img.size, (0,0,0,0))
+                od = ImageDraw.Draw(overlay)
+                od.polygon(fill_pts, fill=_hex_alpha(BLUE, 35))
+                img.paste(Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB"))
+                draw = ImageDraw.Draw(img)
 
-            for i in range(len(pts) - 1):
-                draw.line([pts[i], pts[i+1]], fill=_hex(BLUE), width=2)
+            # Лінія
+            for i in range(len(pts)-1):
+                draw.line([pts[i], pts[i+1]], fill=_hex(BLUE), width=3)
 
             # Точки
-            for px_i, py_i in pts[::max(1, len(pts)//8)]:
-                draw.ellipse([px_i-3, py_i-3, px_i+3, py_i+3], fill=_hex(BLUE))
+            for i, (px, py) in enumerate(pts):
+                if i % max(1, len(pts)//12) == 0 or i == len(pts)-1:
+                    draw.ellipse([px-5, py-5, px+5, py+5], fill=_hex(BLUE))
+                    if i == len(pts)-1:
+                        draw.ellipse([px-7, py-7, px+7, py+7], outline=_hex(TEXT), width=2)
 
-            draw.text((sx0, sy1 + 3), f"{weight_trend[0][1]:.1f}", font=f_tiny, fill=_hex(MUTED))
-            draw.text((sx1 - 30, sy1 + 3), f"{weight_trend[-1][1]:.1f}", font=f_tiny, fill=_hex(TEXT))
+            # Підписи дат (кожні 10 днів)
+            for i, (d, _) in enumerate(weight_series):
+                if i % max(1, len(weight_series)//6) == 0 or i == len(weight_series)-1:
+                    lbl = f"{d.day} {UA_MONTHS[d.month][:3]}"
+                    lw2 = draw.textlength(lbl, font=f_tiny)
+                    px = gx0 + int(i / (len(weight_series)-1) * gw)
+                    draw.text((px - lw2//2, gy1 + 4), lbl, font=f_tiny, fill=_hex(MUTED))
 
-            td = weight_trend[-1][1] - weight_trend[0][1]
-            tc = GREEN if td < 0 else RED
-            ts = f"30д: {td:+.1f} кг"
-            tw = draw.textlength(ts, font=f_tiny)
-            draw.text((sx1 - tw, iy + 2), ts, font=f_tiny, fill=_hex(tc))
+            y = gy1 + 22
+        else:
+            draw.text((PAD, y+20), "Недостатньо даних для графіка", font=f_body, fill=_hex(MUTED))
+            y += 60
     else:
-        draw.text((ix, iy + 40), "Немає даних про вагу", font=f_body, fill=_hex(MUTED))
+        draw.text((PAD, y+20), "Немає даних про вагу", font=f_body, fill=_hex(MUTED))
+        y += 80
 
-    y += card_h + 16
-
-    # ═══════════════════════════════════════════════════════════════════════════
-    # 4. БІГ (STRAVA)
-    # ═══════════════════════════════════════════════════════════════════════════
-    draw.text((PAD, y), "БІГ — STRAVA", font=f_sec, fill=_hex(MUTED))
     y += 20
 
-    run_h = 120
-    _rounded_rect(draw, PAD, y, W - PAD, y + run_h, R, fill=_hex(CARD), outline=_hex(BORDER))
+    # ══════════════════════════════════════════
+    # СЕКЦІЯ БІГ
+    # ══════════════════════════════════════════
+    y = _section_header(img, draw, PAD, y, "БІГ — STRAVA", f_sec)
 
-    rx = PAD + 20
-    ry = y + 16
+    # Місячні бари якщо є дані за кілька місяців
+    try:
+        from strava import get_year_stats, get_runs
+        year_data = get_year_stats(today.year)
+        monthly = year_data.get("monthly", {})
+        all_runs = get_runs(days=120)
+    except Exception:
+        year_data = None
+        monthly = {}
+        all_runs = []
 
-    _draw_emoji(img, "🏃", rx, ry, size=34)
+    run_month = run_data or {}
+    runs_cnt = run_month.get("runs", 0)
+    km_total = run_month.get("km", 0)
 
-    if run_data and run_data.get("runs", 0) > 0:
-        runs_cnt = run_data["runs"]
-        km_total = run_data.get("km", 0)
-        pace_str = run_data.get("avg_pace_str", "—")
-        avg_hr   = run_data.get("avg_hr")
-
-        draw.text((rx + 42, ry + 2),  f"{km_total:.1f} км", font=f_num, fill=_hex(GREEN))
-        draw.text((rx + 42, ry + 32), f"{runs_cnt} пробіжок — {UA_MONTHS2[today.month]}", font=f_small, fill=_hex(MUTED))
-
-        parts = []
-        if pace_str and pace_str != "—":
-            parts.append(f"∅ темп {pace_str} хв/км")
-        best = run_data.get("best_run")
-        if best:
-            parts.append(f"Найдовша {best.get('dist_km', 0):.1f} км")
-        if avg_hr:
-            parts.append(f"ЧСС {int(avg_hr)} уд/хв")
-        if parts:
-            draw.text((rx, ry + 56), "  ·  ".join(parts), font=f_small, fill=_hex(TEXT))
-
-        # Остання пробіжка
-        if last_run:
-            lr_date = last_run["date"]
-            age_d   = (today - lr_date.date() if hasattr(lr_date, "date") else today - lr_date).days
-            age_s   = "сьогодні" if age_d == 0 else ("вчора" if age_d == 1 else f"{age_d}д тому")
-            lr_km   = last_run.get("dist_km", 0)
-            lr_pace = ""
-            if last_run.get("pace_sec", 0) > 0:
-                ps = last_run["pace_sec"]
-                lr_pace = f"  {int(ps//60)}:{int(ps%60):02d}/км"
-            lr_hr = f"  ❤️ {int(last_run['hr'])}" if last_run.get("hr") else ""
-            draw.text((rx, ry + 82),
-                      f"Остання: {lr_km:.1f} км ({age_s}){lr_pace}{lr_hr}",
-                      font=f_small, fill=_hex(MUTED))
-    else:
-        draw.text((rx + 42, ry + 8), f"0 пробіжок — {UA_MONTHS2[today.month]}", font=f_h2, fill=_hex(MUTED))
-        if last_run:
-            lr_date = last_run["date"]
-            age_d = (today - (lr_date.date() if hasattr(lr_date, "date") else lr_date)).days
-            age_s = f"{age_d}д тому"
+    # Статистика місяця
+    if last_run or runs_cnt > 0:
+        # Топ метрики
+        stats_run = []
+        if runs_cnt > 0:
+            stats_run.append((f"{km_total:.1f}", "км цього місяця", GREEN))
+            stats_run.append((f"{runs_cnt}", "пробіжок", BLUE))
+            if run_month.get("avg_pace_str"):
+                stats_run.append((run_month["avg_pace_str"], "хв/км темп", ORANGE))
+            if run_month.get("avg_hr"):
+                stats_run.append((f"{int(run_month['avg_hr'])}", "уд/хв ЧСС", RED))
+        elif last_run:
             lr_km = last_run.get("dist_km", 0)
-            lr_pace = ""
-            if last_run.get("pace_sec", 0) > 0:
-                ps = last_run["pace_sec"]
-                lr_pace = f"  {int(ps//60)}:{int(ps%60):02d}/км"
-            draw.text((rx + 42, ry + 38), f"Остання: {lr_km:.1f} км ({age_s}){lr_pace}", font=f_small, fill=_hex(MUTED))
-        else:
-            draw.text((rx + 42, ry + 40), "Підключи Strava або запиши пробіжку", font=f_small, fill=_hex(BORDER))
+            lr_ps = last_run.get("pace_sec", 0)
+            lr_hr = last_run.get("hr")
+            stats_run.append((f"{lr_km:.1f}", "км остання", GREEN))
+            if lr_ps > 0:
+                stats_run.append((f"{int(lr_ps//60)}:{int(lr_ps%60):02d}", "хв/км темп", ORANGE))
+            if lr_hr:
+                stats_run.append((f"{int(lr_hr)}", "уд/хв ЧСС", RED))
 
-    y += run_h + 16
+        # Карточки статистики
+        STAT_W = 200
+        for si, (val, lbl, col) in enumerate(stats_run[:4]):
+            bx = PAD + si * (STAT_W + 12)
+            _rr(draw, bx, y, bx+STAT_W, y+72, 10, fill=_hex(CARD), outline=_hex(BORDER))
+            _rr(draw, bx, y, bx+STAT_W, y+5, 0, fill=_hex(col))
+            draw.text((bx+12, y+12), val, font=f_num2, fill=_hex(col))
+            draw.text((bx+12, y+50), lbl, font=f_small, fill=_hex(MUTED))
 
-    # ═══════════════════════════════════════════════════════════════════════════
-    # 5. ПОРТФЕЛЬ
-    # ═══════════════════════════════════════════════════════════════════════════
+        y += 84
+
+    # Графік пробіжок (барчарт по місяцях + точки)
+    if monthly or all_runs:
+        gx0, gx1 = PAD, W - PAD
+        gy0, gy1 = y, y + 200
+        gw, gh = gx1 - gx0, gy1 - gy0
+
+        _rr(draw, gx0, gy0, gx1, gy1, 12, fill=_hex(CARD), outline=_hex(BORDER))
+
+        if monthly:
+            # Місячний барчарт
+            months_shown = sorted(monthly.keys())[-6:]  # останні 6 місяців
+            max_km = max(monthly[m]["km"] for m in months_shown) if months_shown else 1
+            max_km = max(max_km, 1)
+
+            bar_w = int(gw / (len(months_shown) + 1))
+            for bi, m in enumerate(months_shown):
+                km = monthly[m]["km"]
+                bh = int((km / max_km) * (gh - 50))
+                bx_bar = gx0 + int((bi + 0.5) * gw / len(months_shown)) - bar_w//3
+                by_bar = gy1 - bh - 8
+
+                is_current = (m == today.month)
+                bar_col = GREEN if is_current else CARD3
+                bar_outline = GREEN if is_current else MUTED2
+
+                _rr(draw, bx_bar, by_bar, bx_bar + bar_w//1.5, gy1-8, 6,
+                    fill=_hex(bar_col), outline=_hex(bar_outline))
+
+                # Підпис
+                m_lbl = UA_MONTHS2.get(m, str(m))[:3]
+                lw2 = draw.textlength(m_lbl, font=f_tiny)
+                draw.text((bx_bar + bar_w//3 - lw2//2, gy1-22), m_lbl, font=f_tiny, fill=_hex(MUTED))
+
+                # км над баром
+                if km > 0:
+                    km_s = f"{km:.0f}"
+                    kmw = draw.textlength(km_s, font=f_tiny)
+                    draw.text((bx_bar + bar_w//3 - kmw//2, by_bar - 16), km_s, font=f_tiny,
+                              fill=_hex(GREEN if is_current else MUTED))
+
+            draw.text((gx0+12, gy0+8), "км/місяць", font=f_tiny, fill=_hex(MUTED))
+
+        elif all_runs:
+            # Точкова діаграма останніх пробіжок
+            recent = sorted(all_runs, key=lambda r: r["date"])[-20:]
+            max_km2 = max(r["dist_km"] for r in recent) if recent else 1
+            for ri, r in enumerate(recent):
+                px = gx0 + int(ri / max(len(recent)-1, 1) * gw)
+                py = gy1 - int(r["dist_km"] / max_km2 * (gh - 40)) - 20
+                draw.ellipse([px-6,py-6,px+6,py+6], fill=_hex(GREEN))
+                if ri > 0:
+                    prev_r = recent[ri-1]
+                    px0 = gx0 + int((ri-1) / max(len(recent)-1,1) * gw)
+                    py0 = gy1 - int(prev_r["dist_km"] / max_km2 * (gh-40)) - 20
+                    draw.line([(px0,py0),(px,py)], fill=_hex(GREEN2), width=2)
+            draw.text((gx0+12, gy0+8), "км/пробіжка", font=f_tiny, fill=_hex(MUTED))
+
+        y = gy1 + 8
+
+    # Список останніх пробіжок
+    if all_runs:
+        y += 12
+        draw.text((PAD, y), "ОСТАННІ ПРОБІЖКИ", font=f_sec, fill=_hex(MUTED))
+        draw.line([(PAD, y+18),(W-PAD, y+18)], fill=_hex(BORDER), width=1)
+        y += 28
+
+        recent_runs = sorted(all_runs, key=lambda r: r["date"], reverse=True)[:5]
+        col_widths = [120, 110, 110, 110, 110]  # дата, км, темп, ЧСС, тривалість
+        headers = ["Дата", "Відстань", "Темп", "ЧСС", "Тривалість"]
+        hx = PAD
+
+        # Заголовки
+        for ci, (ch, cw) in enumerate(zip(headers, col_widths)):
+            draw.text((hx, y), ch, font=f_tiny, fill=_hex(MUTED))
+            hx += cw
+        y += 18
+        draw.line([(PAD, y), (W-PAD, y)], fill=_hex(BORDER), width=1)
+        y += 6
+
+        for ri, r in enumerate(recent_runs):
+            row_bg = CARD if ri % 2 == 0 else CARD2
+            _rr(draw, PAD, y, W-PAD, y+32, 6, fill=_hex(row_bg))
+
+            rd = r["date"]
+            date_s = f"{rd.day:02d}.{rd.month:02d}" if hasattr(rd, 'day') else str(rd)[:10]
+            pace_sec = r.get("pace_sec", 0)
+            pace_s = f"{int(pace_sec//60)}:{int(pace_sec%60):02d}" if pace_sec > 0 else "—"
+            hr_s = f"{int(r['hr'])}" if r.get("hr") else "—"
+            dur_s = f"{int(r.get('dur_min', 0))} хв"
+
+            row_vals = [date_s, f"{r['dist_km']:.2f} км", f"{pace_s} /км", f"{hr_s} bpm", dur_s]
+            row_cols = [MUTED, GREEN, ORANGE, RED, BLUE]
+
+            rx = PAD + 8
+            for ci, (rv, cw, rc2) in enumerate(zip(row_vals, col_widths, row_cols)):
+                draw.text((rx, y + 8), rv, font=f_small, fill=_hex(rc2))
+                rx += cw
+            y += 34
+
+    y += 16
+
+    # Footer
+    draw.line([(PAD, y+4),(W-PAD, y+4)], fill=_hex(BORDER), width=1)
+    ft = f"2/3  ·  {time_str}  ·  Олег Новосадов"
+    ftw = draw.textlength(ft, font=f_tiny)
+    draw.text(((W-ftw)//2, y+10), ft, font=f_tiny, fill=_hex(MUTED2))
+
+    img = img.crop((0, 0, W, y+36))
+    return _save(img)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# ФОТО 3 — Портфель
+# ═══════════════════════════════════════════════════════════════════════════════
+
+def _make_portfolio_photo(now, today, portfolio):
+    W = 1080
+    PAD = 32
+
+    f_h1    = _font(_SANS_BOLD, 36)
+    f_h2    = _font(_SANS_BOLD, 26)
+    f_h3    = _font(_SANS_BOLD, 20)
+    f_label = _font(_SANS_BOLD, 17)
+    f_body  = _font(_SANS, 16)
+    f_small = _font(_SANS, 14)
+    f_tiny  = _font(_SANS, 12)
+    f_sec   = _font(_SANS_BOLD, 13)
+    f_num   = _font(_SANS_BOLD, 56)
+    f_num2  = _font(_SANS_BOLD, 30)
+
+    time_str = now.strftime("%H:%M")
+
+    positions = portfolio.get("positions", {})
+    total_val  = portfolio.get("total_value", 0)
+    change24   = portfolio.get("change_24h", 0)
+    total_pnl  = portfolio.get("total_pnl")
+
+    all_pos = sorted(
+        [(sym, p) for sym, p in positions.items() if p.get("value", 0) > 0],
+        key=lambda x: x[1].get("value", 0), reverse=True
+    )
+
+    H = 100 + 180 + len(all_pos) * 66 + 120
+    img, draw = _new_img(W, H)
+
+    y = 0
+
+    # Акцент
+    draw.line([(0,0),(W,0)], fill=_hex(PURPLE), width=4)
+    _rr(draw, 0, 0, W, 70, 0, fill=_hex(CARD))
+    _draw_emoji(img, "💼", PAD, 14, size=42)
+    draw.text((PAD + 52, 18), "Портфель", font=f_h1, fill=_hex(TEXT))
+    draw.text((W-PAD-draw.textlength("3/3",font=f_small)-4, 26), "3/3", font=f_small, fill=_hex(MUTED))
+    y = 82
+
+    # ── ПІДСУМОК ──────────────────────────────────────────────────────────────
+    _rr(draw, PAD, y, W-PAD, y+120, 14, fill=_hex(CARD), outline=_hex(BORDER))
+
+    tv_s = f"${total_val:,.0f}"
+    tvw = draw.textlength(tv_s, font=f_num)
+    draw.text((PAD+20, y+12), tv_s, font=f_num, fill=_hex(TEXT))
+    draw.text((PAD+20+tvw+8, y+48), "USD", font=f_h2, fill=_hex(MUTED))
+
+    ch_col = GREEN if change24 >= 0 else RED
+    ch_s = f"{'+' if change24>=0 else ''}{change24:,.0f}$ за 24г"
+    draw.text((PAD+20, y+80), ch_s, font=f_label, fill=_hex(ch_col))
+
+    if total_pnl is not None:
+        pnl_col = GREEN if total_pnl >= 0 else RED
+        pnl_s = f"P&L: {'+' if total_pnl>=0 else ''}{total_pnl:,.0f}$"
+        pnl_w = draw.textlength(pnl_s, font=f_h3)
+        draw.text((W-PAD-20-pnl_w, y+40), pnl_s, font=f_h3, fill=_hex(pnl_col))
+
+    # Доnut mini: розподіл портфелю (прямокутний бар)
+    if all_pos:
+        bx0, bx1 = PAD+20, W-PAD-20
+        bar_y = y + 104
+        bar_h = 10
+        bx_cur = bx0
+        COIN_COLORS = [BLUE, GREEN, ORANGE, PURPLE, RED, TEAL, YELLOW, BLUE2]
+        for ci, (sym, pos) in enumerate(all_pos[:8]):
+            share = pos.get("value", 0) / total_val if total_val > 0 else 0
+            seg_w = int((bx1-bx0) * share)
+            if seg_w > 0:
+                col = COIN_COLORS[ci % len(COIN_COLORS)]
+                _rr(draw, bx_cur, bar_y, bx_cur+seg_w, bar_y+bar_h, 0, fill=_hex(col))
+                bx_cur += seg_w
+        draw.rounded_rectangle([bx0, bar_y, bx1, bar_y+bar_h], radius=5, outline=_hex(BORDER), width=1)
+
+    y += 130
+
+    # ── СПИСОК МОНЕТ ──────────────────────────────────────────────────────────
+    y = _section_header(img, draw, PAD, y, f"ПОЗИЦІЇ ({len(all_pos)} монет)", f_sec)
+
+    # Заголовки колонок
+    cols = [("Монета", PAD+8, TEXT),
+            ("Ціна", PAD+200, MUTED),
+            ("К-сть", PAD+340, MUTED),
+            ("Вартість", PAD+490, MUTED),
+            ("24г %", PAD+650, MUTED),
+            ("Частка", PAD+780, MUTED)]
+
+    for ch, cx, cc in cols:
+        draw.text((cx, y), ch, font=f_tiny, fill=_hex(cc))
+    y += 18
+    draw.line([(PAD, y),(W-PAD,y)], fill=_hex(BORDER), width=1)
+    y += 6
+
+    COIN_COLORS2 = [BLUE, GREEN, ORANGE, PURPLE, RED, TEAL, "#F7CC44", BLUE2,
+                    "#DB61A2", "#00CED1", "#FF6B6B", "#95E75C"]
+
+    for ci, (sym, pos) in enumerate(all_pos):
+        row_h = 60
+        row_bg = CARD if ci % 2 == 0 else CARD2
+        _rr(draw, PAD, y, W-PAD, y+row_h, 6, fill=_hex(row_bg))
+
+        val    = pos.get("value", 0)
+        price  = pos.get("price", 0)
+        amount = pos.get("amount", 0)
+        chg24  = pos.get("change24", pos.get("change_24h_pct", 0)) or 0
+        share  = val / total_val * 100 if total_val else 0
+        coin_col = COIN_COLORS2[ci % len(COIN_COLORS2)]
+
+        chg_col = GREEN if chg24 >= 0 else RED
+        chg_s   = f"{'+' if chg24>=0 else ''}{chg24:.1f}%"
+        price_s = f"${price:,.2f}" if price < 1000 else f"${price:,.0f}"
+        val_s   = f"${val:,.0f}"
+        amt_s   = f"{amount:.4f}" if amount < 1 else (f"{amount:.2f}" if amount < 100 else f"{amount:,.0f}")
+        share_s = f"{share:.1f}%"
+
+        # Кольоровий маркер
+        draw.rounded_rectangle([PAD+4, y+10, PAD+10, y+row_h-10], radius=3, fill=_hex(coin_col))
+
+        # Назва + ціна
+        draw.text((PAD+18, y+8), sym, font=f_label, fill=_hex(coin_col))
+        draw.text((PAD+18, y+34), price_s, font=f_small, fill=_hex(MUTED))
+
+        draw.text((PAD+200, y+18), price_s, font=f_small, fill=_hex(TEXT))
+        draw.text((PAD+340, y+18), amt_s, font=f_small, fill=_hex(TEXT))
+        draw.text((PAD+490, y+12), val_s, font=f_label, fill=_hex(TEXT))
+
+        # 24г % з кольоровим фоном
+        chg_bg = _hex(GREEN2) if chg24 >= 0 else _hex("#3D0D0D")
+        chgw = draw.textlength(chg_s, font=f_label)
+        _rr(draw, PAD+645, y+12, PAD+650+chgw+12, y+40, 6, fill=chg_bg)
+        draw.text((PAD+652, y+15), chg_s, font=f_label, fill=_hex(chg_col))
+
+        # Частка + мінібар
+        draw.text((PAD+780, y+8), share_s, font=f_label, fill=_hex(TEXT))
+        bar_w_max = W - PAD - 20 - (PAD+790+50)
+        bar_w_max = max(bar_w_max, 100)
+        bw = int(bar_w_max * min(share / 100, 1.0))
+        _rr(draw, PAD+790+50, y+22, PAD+790+50+bar_w_max, y+34, 4, fill=_hex(BORDER))
+        if bw > 0:
+            _rr(draw, PAD+790+50, y+22, PAD+790+50+bw, y+34, 4, fill=_hex(coin_col))
+
+        y += row_h + 4
+
+    y += 12
+
+    # Footer
+    draw.line([(PAD, y+4),(W-PAD, y+4)], fill=_hex(BORDER), width=1)
+    ft = f"3/3  ·  {time_str}  ·  Олег Новосадов  ·  Кошіце, Словаччина"
+    ftw = draw.textlength(ft, font=f_tiny)
+    draw.text(((W-ftw)//2, y+10), ft, font=f_tiny, fill=_hex(MUTED2))
+
+    img = img.crop((0, 0, W, y+36))
+    return _save(img)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# ГОЛОВНА ФУНКЦІЯ
+# ═══════════════════════════════════════════════════════════════════════════════
+
+HABITS_DEF = [
+    {"id": "shower", "name": "Холодний душ",     "emoji": "🚿", "color": BLUE},
+    {"id": "run",    "name": "Пробіжка",          "emoji": "🏃", "color": GREEN},
+    {"id": "water",  "name": "Вода (2л+)",         "emoji": "💧", "color": BLUE2},
+    {"id": "tea",    "name": "Трав'яний чай",     "emoji": "🍵", "color": ORANGE},
+    {"id": "sauna",  "name": "Сауна",              "emoji": "🧖", "color": RED},
+    {"id": "spray",  "name": "Спрей для волосся",  "emoji": "💈", "color": PURPLE},
+]
+
+def generate_report_card(period: str = "morning") -> bytes | None:
+    """Генерує перше фото (сумісність зі старим кодом) — фото 1 зі звичками."""
+    result = generate_report_album(period)
+    return result[0] if result else None
+
+
+def generate_report_album(period: str = "morning") -> list[bytes]:
+    """Генерує album з 3 фото. Повертає список bytes."""
+    if not HAS_PIL:
+        return []
+
+    try:
+        from storage import load_habits, load_weight
+    except ImportError:
+        return []
+
+    now   = datetime.now(timezone.utc) + timedelta(hours=2)
+    today = now.date()
+    raw   = load_habits() or {}
+    wdata = load_weight() or {}
+
+    # Strava
+    run_data = None
+    last_run = None
+    try:
+        from strava import get_month_stats, get_runs
+        run_data = get_month_stats(today.year, today.month)
+        runs_list = get_runs(days=90)
+        if runs_list:
+            last_run = sorted(runs_list, key=lambda r: r["date"], reverse=True)[0]
+    except Exception as e:
+        print(f"[report_card] strava: {e}")
+
+    # Портфель
+    portfolio = None
+    try:
+        from portfolio import get_portfolio_summary
+        portfolio = get_portfolio_summary()
+    except Exception as e:
+        print(f"[report_card] portfolio: {e}")
+
+    results = []
+
+    # Фото 1: Звички
+    try:
+        p1 = _make_habits_photo(period, now, today, raw, HABITS_DEF)
+        results.append(p1)
+    except Exception as e:
+        print(f"[report_card] photo1 error: {e}")
+        import traceback; traceback.print_exc()
+
+    # Фото 2: Вага + Біг
+    try:
+        p2 = _make_run_weight_photo(now, today, wdata, run_data, last_run)
+        results.append(p2)
+    except Exception as e:
+        print(f"[report_card] photo2 error: {e}")
+        import traceback; traceback.print_exc()
+
+    # Фото 3: Портфель
     if portfolio:
-        positions  = portfolio.get("positions", portfolio)  # dict sym→data
-        # Якщо get_portfolio_summary повертає dict з positions або dict монет напряму
-        if "positions" in portfolio:
-            positions = portfolio["positions"]
-        total_val   = portfolio.get("total_value", sum(p.get("value", 0) for p in positions.values()))
-        change24    = portfolio.get("change_24h", portfolio.get("change_24h_usd", 0))
-        total_pnl   = portfolio.get("total_pnl")
+        try:
+            p3 = _make_portfolio_photo(now, today, portfolio)
+            results.append(p3)
+        except Exception as e:
+            print(f"[report_card] photo3 error: {e}")
+            import traceback; traceback.print_exc()
 
-        draw.text((PAD, y), "ПОРТФЕЛЬ", font=f_sec, fill=_hex(MUTED))
-        y += 20
-
-        # Підсумковий заголовок
-        ph = 64
-        _rounded_rect(draw, PAD, y, W - PAD, y + ph, R, fill=_hex(CARD), outline=_hex(BORDER))
-
-        _draw_emoji(img, "💼", PAD + 18, y + 14, size=32)
-        draw.text((PAD + 58, y + 12), f"${total_val:,.0f}", font=f_num, fill=_hex(TEXT))
-
-        # 24г зміна
-        ch_col = GREEN if change24 >= 0 else RED
-        ch_s   = f"24г: {'+' if change24>=0 else ''}{change24:,.0f}$"
-        draw.text((PAD + 58, y + 42), ch_s, font=f_small, fill=_hex(ch_col))
-
-        # P&L якщо є
-        if total_pnl is not None:
-            pnl_col = GREEN if total_pnl >= 0 else RED
-            pnl_s   = f"P&L: {'+' if total_pnl>=0 else ''}{total_pnl:,.0f}$"
-            pnl_w   = draw.textlength(pnl_s, font=f_body)
-            draw.text((W - PAD - 20 - pnl_w, y + 20), pnl_s, font=f_body, fill=_hex(pnl_col))
-
-        y += ph + 10
-
-        # Монети
-        all_pos = sorted(
-            [(sym, p) for sym, p in positions.items() if p.get("value", 0) > 0],
-            key=lambda x: x[1].get("value", 0), reverse=True
-        )
-        MAX_COINS = 8
-        sorted_pos = all_pos[:MAX_COINS]
-        hidden_cnt = len(all_pos) - MAX_COINS
-
-        for sym, pos in sorted_pos:
-            row_h = 50
-            _rounded_rect(draw, PAD, y, W - PAD, y + row_h, 10, fill=_hex(CARD2), outline=_hex(BORDER))
-
-            val    = pos.get("value", 0)
-            price  = pos.get("price", 0)
-            pct    = pos.get("pct_of_total", val / total_val * 100 if total_val else 0)
-            chg24  = pos.get("change24", pos.get("change_24h_pct", 0)) or 0
-
-            # Назва монети
-            draw.text((PAD + 18, y + 10), sym, font=f_label, fill=_hex(TEXT))
-
-            # Ціна
-            price_s = f"${price:,.2f}" if price < 1000 else f"${price:,.0f}"
-            draw.text((PAD + 18, y + 32), price_s, font=f_tiny, fill=_hex(MUTED))
-
-            # % 24г
-            chg_col = GREEN if chg24 >= 0 else RED
-            chg_s   = f"{'+' if chg24>=0 else ''}{chg24:.1f}%"
-            draw.text((PAD + 120, y + 16), chg_s, font=f_label, fill=_hex(chg_col))
-
-            # Вартість
-            val_s = f"${val:,.0f}"
-            val_w = draw.textlength(val_s, font=f_label)
-            draw.text((W - PAD - 20 - val_w, y + 10), val_s, font=f_label, fill=_hex(TEXT))
-
-            # % портфелю
-            pct_s = f"{pct:.0f}%"
-            pct_w = draw.textlength(pct_s, font=f_small)
-            draw.text((W - PAD - 20 - pct_w, y + 32), pct_s, font=f_small, fill=_hex(MUTED))
-
-            # Мінібар частки
-            bar_x0 = PAD + 200
-            bar_x1 = W - PAD - 90
-            bar_y  = y + 23
-            draw.rounded_rectangle([bar_x0, bar_y, bar_x1, bar_y + 5], radius=2, fill=_hex(BORDER))
-            fw_bar = int((bar_x1 - bar_x0) * min(pct / 100, 1.0))
-            if fw_bar > 0:
-                draw.rounded_rectangle([bar_x0, bar_y, bar_x0 + fw_bar, bar_y + 5], radius=2, fill=_hex(chg_col))
-
-            y += row_h + 6
-
-        # "та ще X монет"
-        if hidden_cnt > 0:
-            rest_val = sum(p.get("value", 0) for _, p in all_pos[MAX_COINS:])
-            rest_s = f"+ ще {hidden_cnt} монет  (${rest_val:,.0f})"
-            draw.text((PAD + 18, y + 4), rest_s, font=f_small, fill=_hex(MUTED))
-            y += 24
-
-        y += 10
-
-    # ═══════════════════════════════════════════════════════════════════════════
-    # 6. FOOTER
-    # ═══════════════════════════════════════════════════════════════════════════
-    draw.line([(PAD, y + 4), (W - PAD, y + 4)], fill=_hex(BORDER), width=1)
-    footer = f"Оновлено {time_str}  ·  Олег Новосадов  ·  Кошіце, Словаччина"
-    fw_txt = draw.textlength(footer, font=f_tiny)
-    draw.text(((W - fw_txt) // 2, y + 12), footer, font=f_tiny, fill=_hex(MUTED))
-
-    # ── Обрізаємо ────────────────────────────────────────────────────────────
-    final_h = y + 40
-    img     = img.crop((0, 0, W, final_h))
-
-    buf = io.BytesIO()
-    img.save(buf, format="PNG", optimize=True)
-    buf.seek(0)
-    return buf.read()
+    return results
 
 
 # ── Локальний тест ────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    data = generate_report_card("morning")
-    if data:
-        with open("/tmp/report_card_test.png", "wb") as f:
+    photos = generate_report_album("morning")
+    for i, data in enumerate(photos, 1):
+        path = f"/tmp/report_photo_{i}.png"
+        with open(path, "wb") as f:
             f.write(data)
-        print(f"Saved {len(data):,} bytes → /tmp/report_card_test.png")
-    else:
-        print("Failed (PIL not available?)")
+        print(f"Photo {i}: {len(data):,} bytes → {path}")
