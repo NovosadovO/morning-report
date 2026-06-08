@@ -3423,12 +3423,15 @@ def main():
     # ── КРОК 6: Астро ────────────────────────────────────────────────────────
     astro_text = None
     try:
-        import sys as _sys
+        import sys as _sys, importlib as _importlib
         _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from astro import get_natal_transits_short
-        astro_text = get_natal_transits_short(max_aspects=5)
+        import astro as _astro_module
+        _importlib.reload(_astro_module)
+        astro_text = _astro_module.get_natal_transits_short(max_aspects=5)
+        print(f"get_astro ok, len={len(astro_text) if astro_text else 0}")
     except Exception as e:
-        print(f"get_astro error: {e}")
+        import traceback as _atb
+        print(f"get_astro error: {e}\n{_atb.format_exc()}")
 
     # ── КРОК 7: AI-підсумок — знає про календар ──────────────────────────────
     try:
@@ -3961,20 +3964,10 @@ def main():
         else:
             parts.append(email_text)
 
-    # Блок 6: Астро (тільки раз на день, о ранньому слоті)
+    # Блок 6: Астро — додається в кожен звіт
     if astro_text:
-        _astro_state_file = os.path.join(_DATA_DIR, "monitor_astro_sent.json")
-        _astro_state = load_json_file(_astro_state_file, default={})
-        _today_str = now_local.strftime("%Y-%m-%d")
-        _astro_slot = _astro_state.get("sent_slot", "")
-        if _astro_slot != hour_key:
-            parts.append(astro_text)
-            _astro_state["sent_date"] = _today_str
-            _astro_state["sent_slot"] = hour_key
-            save_json_file(_astro_state_file, _astro_state)
-            print(f"astro: відправляємо (slot={hour_key})")
-        else:
-            print(f"astro: вже надіслано в цьому слоті ({hour_key}), пропускаємо")
+        parts.append(astro_text)
+        print(f"astro: додано в звіт (slot={hour_key})")
 
     # Блок 7: AI-підсумок
     if summary_text:
