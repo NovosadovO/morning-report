@@ -3711,6 +3711,9 @@ def main():
     # ── Блок 4: КАЛЕНДАР ──────────────────────────────────────────────────────
     parts.append(_section_header("📅", "КАЛЕНДАР") + "\n" + "\n".join(cal_text.split("\n")[1:]) if isinstance(cal_text, str) and "\n" in cal_text else _section_header("📅", "КАЛЕНДАР") + "\n" + str(cal_text))
 
+    # ── SPLIT: тут ділимо на 2 повідомлення ──────────────────────────────────
+    parts.append("SPLIT_HERE")
+
     # ── Блок 5: ЗДОРОВ'Я — з прогресбарами і спарклайном ─────────────────────
     try:
         _health_lines = [_section_header("💪", "ЗДОРОВ'Я")]
@@ -4001,24 +4004,16 @@ def main():
     import requests as _req_send
     import io as _io_send
 
-    # Знаходимо індекс першого блоку "другої половини" (здоров'я / біг / портфоліо)
-    # Шукаємо перший текстовий part що містить ключові слова другої частини
-    _SECOND_HALF_MARKERS = ("ЗДОРОВ", "ВАГА", "WEIGHT", "БІГ", "STRAVA", "PORTF", "ПОРТФЕЛ", "ПОШТА", "📬", "🏃", "⚖️", "💊", "🩺")
-    _split_idx = None
-    for _si, _sp in enumerate(parts):
-        if isinstance(_sp, str):
-            _sp_up = _sp.upper()
-            if any(m in _sp_up for m in _SECOND_HALF_MARKERS):
-                _split_idx = _si
-                break
-
-    # Якщо маркер не знайдено — ділимо навпіл по кількості елементів
-    if _split_idx is None:
-        _text_parts = [i for i, p in enumerate(parts) if isinstance(p, str)]
-        _split_idx = _text_parts[len(_text_parts) // 2] if _text_parts else len(parts) // 2
-
-    parts_1 = parts[:_split_idx]
-    parts_2 = parts[_split_idx:]
+    # Ділимо по явному маркеру SPLIT_HERE
+    _split_idx = next((i for i, p in enumerate(parts) if p == "SPLIT_HERE"), None)
+    if _split_idx is not None:
+        parts_1 = parts[:_split_idx]
+        parts_2 = parts[_split_idx + 1:]  # +1 щоб не включати сам маркер
+    else:
+        # Fallback — ділимо навпіл
+        mid = len(parts) // 2
+        parts_1 = parts[:mid]
+        parts_2 = parts[mid:]
 
     def _send_photo_inline(photo_bytes, caption):
         try:
