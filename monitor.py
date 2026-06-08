@@ -3992,74 +3992,103 @@ def main():
     if is_weekend and not include_learning_blocks and not _sc_main["is_working_now"]:
         parts.append("💤 <i>Вихідний — крипто/пошта з 11:00</i>")
 
-    # Розбиваємо текстові секції на повідомлення, фото-секції надсилаємо одразу між ними
+    # ── Надсилаємо звіт рівно 2 повідомленнями ───────────────────────────────
+    # Повідомлення 1: заголовок + погода + трафік + крипто + ETF + курс + календар
+    # Повідомлення 2: здоров'я + біг + портфоліо + пошта + астро + AI + підсумок
+    # Фото (dict з "photo") надсилаються одразу після свого блоку тексту.
+    # "SPLIT_HERE" — маркер між двома повідомленнями.
     import time as _time_main
     import requests as _req_send
     import io as _io_send
 
+    # Знаходимо індекс першого блоку "другої половини" (здоров'я / біг / портфоліо)
+    # Шукаємо перший текстовий part що містить ключові слова другої частини
+    _SECOND_HALF_MARKERS = ("ЗДОРОВ", "ВАГА", "WEIGHT", "БІГ", "STRAVA", "PORTF", "ПОРТФЕЛ", "ПОШТА", "📬", "🏃", "⚖️", "💊", "🩺")
+    _split_idx = None
+    for _si, _sp in enumerate(parts):
+        if isinstance(_sp, str):
+            _sp_up = _sp.upper()
+            if any(m in _sp_up for m in _SECOND_HALF_MARKERS):
+                _split_idx = _si
+                break
+
+    # Якщо маркер не знайдено — ділимо навпіл по кількості елементів
+    if _split_idx is None:
+        _text_parts = [i for i, p in enumerate(parts) if isinstance(p, str)]
+        _split_idx = _text_parts[len(_text_parts) // 2] if _text_parts else len(parts) // 2
+
+    parts_1 = parts[:_split_idx]
+    parts_2 = parts[_split_idx:]
+
     def _send_photo_inline(photo_bytes, caption):
         try:
-            print(f"[photo inline] sending: bytes={len(photo_bytes) if photo_bytes else 0} chat={str(TELEGRAM_CHAT)[:10]} token_ok={bool(TELEGRAM_TOKEN)} caption={caption[:40]!r}", flush=True)
+            print(f"[photo inline] sending: bytes={len(photo_bytes) if photo_bytes else 0} caption={caption[:40]!r}", flush=True)
             _r = _req_send.post(
                 f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
                 data={"chat_id": TELEGRAM_CHAT, "caption": caption, "parse_mode": "HTML"},
                 files={"photo": ("chart.png", _io_send.BytesIO(photo_bytes), "image/png")},
                 timeout=25
             )
-            print(f"[photo inline] status={_r.status_code} resp={_r.text[:200]}", flush=True)
+            print(f"[photo inline] status={_r.status_code}", flush=True)
         except Exception as _pe:
-            import traceback as _tb_pi
-            print(f"[photo inline] error: {_pe}\n{_tb_pi.format_exc()}", flush=True)
+            print(f"[photo inline] error: {_pe}", flush=True)
 
     MAX_MSG = 4000
     ok = True
-    current_msg = ""
 
-    def _flush_text():
-        nonlocal current_msg, ok
-        if current_msg:
-            if not send_telegram(current_msg):
-                ok = False
-            current_msg = ""
-            _time_main.sleep(0.4)
+    def _send_parts_as_one(plist):
+        """Об'єднує текстові секції з plist в одне (або мінімум) повідомлень, фото між ними."""
+        nonlocal ok
+        current = ""
 
-    for section in parts:
-        # Фото-секція — спочатку надіслати накопичений текст, потім фото
-        if isinstance(section, dict) and "photo" in section:
-            _flush_text()
-            _send_photo_inline(section["photo"], section.get("caption", ""))
-            _time_main.sleep(0.4)
-            continue
-        # Email лист з кнопками
-        if isinstance(section, dict) and section.get("email_msg"):
-            _flush_text()
-            _send_telegram_text_with_keyboard(section["text"], section["keyboard"])
-            _time_main.sleep(0.4)
-            continue
-        # Текстова секція
-        SEP = "\n\n"
-        candidate = current_msg + (SEP if current_msg else "") + section
-        if len(candidate) <= MAX_MSG:
-            current_msg = candidate
-        else:
-            _flush_text()
-            if len(section) > MAX_MSG:
-                chunk = ""
-                for line in section.split("\n"):
-                    c2 = chunk + ("\n" if chunk else "") + line
-                    if len(c2) <= MAX_MSG:
-                        chunk = c2
-                    else:
-                        if chunk:
-                            if not send_telegram(chunk):
-                                ok = False
-                            _time_main.sleep(0.4)
-                        chunk = line
-                current_msg = chunk
+        def _flush():
+            nonlocal current, ok
+            if current:
+                if not send_telegram(current):
+                    ok = False
+                current = ""
+                _time_main.sleep(0.5)
+
+        for sec in plist:
+            if isinstance(sec, dict) and "photo" in sec:
+                _flush()
+                _send_photo_inline(sec["photo"], sec.get("caption", ""))
+                _time_main.sleep(0.5)
+                continue
+            if isinstance(sec, dict) and sec.get("email_msg"):
+                _flush()
+                _send_telegram_text_with_keyboard(sec["text"], sec["keyboard"])
+                _time_main.sleep(0.5)
+                continue
+            SEP = "\n\n"
+            candidate = current + (SEP if current else "") + sec
+            if len(candidate) <= MAX_MSG:
+                current = candidate
             else:
-                current_msg = section
+                _flush()
+                if len(sec) > MAX_MSG:
+                    chunk = ""
+                    for line in sec.split("\n"):
+                        c2 = chunk + ("\n" if chunk else "") + line
+                        if len(c2) <= MAX_MSG:
+                            chunk = c2
+                        else:
+                            if chunk:
+                                if not send_telegram(chunk):
+                                    ok = False
+                                _time_main.sleep(0.5)
+                            chunk = line
+                    current = chunk
+                else:
+                    current = sec
+        _flush()
 
-    _flush_text()
+    print(f"[report] sending part 1 ({len(parts_1)} sections, split_idx={_split_idx})", flush=True)
+    _send_parts_as_one(parts_1)
+    _time_main.sleep(1.0)
+    print(f"[report] sending part 2 ({len(parts_2)} sections)", flush=True)
+    _send_parts_as_one(parts_2)
+
     print(f"=== Report {'sent' if ok else 'FAILED'} ===")
 
     # ── Астро — надсилаємо окремим повідомленням після звіту ─────────────────
