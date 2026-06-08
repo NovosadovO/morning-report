@@ -565,6 +565,76 @@ def _transit_aspects(natal_lons, transit_lons, natal_names, transit_names, orb=3
     aspects.sort(key=lambda x: x[4])
     return aspects[:12]
 
+# ─── FALLBACK через ephem (якщо kerykeion/pyswisseph не встановлений) ─────────
+
+def _get_natal_transits_fallback(max_aspects=5):
+    """Простий астро-звіт через ephem — не потребує C-залежностей."""
+    try:
+        import ephem
+        from datetime import datetime, timezone, timedelta
+
+        now_utc = datetime.now(timezone.utc)
+        now_local = now_utc + timedelta(hours=2)
+        date_str = now_local.strftime("%d.%m.%Y")
+        weekday_ua = ["Понеділок","Вівторок","Середа","Четвер","П'ятниця","Субота","Неділя"][now_local.weekday()]
+
+        # Поточні позиції планет
+        obs = ephem.Observer()
+        obs.lat, obs.lon = '48.7136', '21.2581'
+        obs.date = now_utc.strftime("%Y/%m/%d %H:%M:%S")
+
+        planets = [
+            ("☀️ Сонце",    ephem.Sun()),
+            ("🌙 Місяць",   ephem.Moon()),
+            ("☿ Меркурій", ephem.Mercury()),
+            ("♀ Венера",   ephem.Venus()),
+            ("♂ Марс",     ephem.Mars()),
+            ("♃ Юпітер",  ephem.Jupiter()),
+            ("♄ Сатурн",  ephem.Saturn()),
+        ]
+
+        SIGNS_UA = ["Овен ♈","Телець ♉","Близнюки ♊","Рак ♋","Лев ♌","Діва ♍",
+                    "Терези ♎","Скорпіон ♏","Стрілець ♐","Козеріг ♑","Водолій ♒","Риби ♓"]
+
+        lines = []
+        moon_phase_pct = ephem.Moon(obs).phase
+        if moon_phase_pct < 7:   moon_icon = "🌑 Новолуння"
+        elif moon_phase_pct < 30: moon_icon = "🌒 Молодий Місяць"
+        elif moon_phase_pct < 50: moon_icon = "🌓 Перша чверть"
+        elif moon_phase_pct < 70: moon_icon = "🌔 Зростаючий гіббус"
+        elif moon_phase_pct < 93: moon_icon = "🌕 Повний Місяць"
+        elif moon_phase_pct < 99: moon_icon = "🌖 Спадний гіббус"
+        else:                     moon_icon = "🌗 Остання чверть"
+
+        moon = ephem.Moon(obs)
+        moon_sign_idx = int(moon.hlong * 180 / ephem.pi / 30) % 12
+        moon_sign = SIGNS_UA[moon_sign_idx]
+
+        lines.append(f"🔮 <b>АСТРО — транзити до натальних планет</b>")
+        lines.append(f"{moon_icon}  ·  Місяць у <b>{moon_sign}</b>")
+        lines.append("")
+        lines.append("🌍 <b>ПЛАНЕТИ СЬОГОДНІ</b>")
+        lines.append("")
+
+        for name, planet in planets:
+            planet.compute(obs)
+            lon_deg = float(planet.hlong) * 180 / ephem.pi
+            sign_idx = int(lon_deg / 30) % 12
+            deg_in_sign = lon_deg % 30
+            lines.append(f"{name}  →  {SIGNS_UA[sign_idx]} {deg_in_sign:.0f}°")
+
+        return "\n".join(lines)
+    except Exception as e:
+        # Якщо ephem теж не встановлений — повертаємо мінімальний текст
+        from datetime import datetime, timezone, timedelta
+        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        return (
+            f"🔮 <b>АСТРО</b>\n"
+            f"📅 {now_local.strftime('%d.%m.%Y')}\n"
+            f"<i>⚠️ Детальні транзити недоступні: {e}</i>"
+        )
+
+
 # ─── КОРОТКИЙ БЛОК ДЛЯ ГОДИННОГО ЗВІТУ ───────────────────────────────────────
 
 def get_natal_transits_short(max_aspects=5):
@@ -573,7 +643,7 @@ def get_natal_transits_short(max_aspects=5):
     Використовується в годинному звіті monitor.py.
     """
     if not _KERYKEION_OK:
-        return None
+        return _get_natal_transits_fallback(max_aspects)
     try:
         from datetime import datetime, timezone, timedelta
         now_utc = datetime.now(timezone.utc)
