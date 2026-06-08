@@ -6080,7 +6080,7 @@ def check_health_data_reminder():
         _shift_hr = _gst_hr()
     except Exception:
         _shift_hr = "weekend"
-    send_hour, send_min = (23, 30) if _shift_hr == "night" else (21, 30)
+    send_hour, send_min = (23, 50) if _shift_hr == "night" else (21, 30)
 
     if not (h == send_hour and send_min <= m < send_min + 5):
         return
