@@ -1333,7 +1333,7 @@ print("=== Evening charts watcher thread started (20:00 UTC+2) ===", flush=True)
 
 
 def run_report_card_watcher():
-    """Надсилає 3-фото album о 09:00 (ранковий) і 20:05 (вечірній) UTC+2."""
+    """Надсилає 3-фото album о 09:00 (ранковий) і 20:05 (вечірній) UTC+2 + астро-текст після альбому."""
     import os, io, json
     print("=== Starting report card watcher (09:00 + 20:05 UTC+2) ===", flush=True)
     time.sleep(120)  # дати боту стартувати
@@ -1368,6 +1368,28 @@ def run_report_card_watcher():
         except Exception as e:
             print(f"[report_card] send_album error: {e}", flush=True)
 
+    def _send_astro_text():
+        """Надсилає астро-звіт текстом після альбому."""
+        token = os.environ.get("TELEGRAM_TOKEN", "")
+        chat  = os.environ.get("TELEGRAM_CHAT_ID", "")
+        if not token or not chat:
+            return
+        try:
+            import sys as _sys, importlib, urllib.request as _url
+            _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            import astro as _astro_mod
+            importlib.reload(_astro_mod)
+            report = _astro_mod.get_astro_report()
+            chunks = [report[i:i+4000] for i in range(0, len(report), 4000)]
+            msg_url = f"https://api.telegram.org/bot{token}/sendMessage"
+            for chunk in chunks:
+                payload = json.dumps({"chat_id": chat, "text": chunk, "parse_mode": "HTML"}).encode()
+                req = _url.Request(msg_url, data=payload, headers={"Content-Type": "application/json"})
+                _url.urlopen(req, timeout=15)
+            print("[report_card] astro text sent", flush=True)
+        except Exception as e:
+            print(f"[report_card] astro text error: {e}", flush=True)
+
     while True:
         try:
             now_local = datetime.now(timezone.utc) + timedelta(hours=2)
@@ -1385,6 +1407,7 @@ def run_report_card_watcher():
                     photos = generate_report_album("morning")
                     if photos:
                         _send_album(photos, "☀️ <b>Ранковий звіт</b>")
+                        _send_astro_text()
                 except Exception as e:
                     print(f"[report_card] morning error: {e}", flush=True)
 
@@ -1399,6 +1422,7 @@ def run_report_card_watcher():
                     photos = generate_report_album("evening")
                     if photos:
                         _send_album(photos, "🌙 <b>Вечірній звіт</b>")
+                        _send_astro_text()
                 except Exception as e:
                     print(f"[report_card] evening error: {e}", flush=True)
 
