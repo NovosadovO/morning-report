@@ -660,7 +660,7 @@ def send_confirmation(record: dict):
     if wt:    lines.append(f"  ⚖️ Вага: {wt} кг")
     if bp_s and bp_d: lines.append(f"  🩺 Тиск: {bp_s}/{bp_d}")
     elif bp_r: lines.append(f"  🩺 Тиск: {bp_r}")
-    lines.append("\n<i>Включено в денний підсумок о 21:00</i>")
+    lines.append("\n<i>Включено в денний підсумок сьогодні ввечері</i>")
     _send("\n".join(lines))
 
 def _send_photo(photo_bytes: bytes, caption: str = ""):

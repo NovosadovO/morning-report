@@ -5576,7 +5576,17 @@ def check_day_summary():
     """
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
-    if not (h == 21 and 0 <= m < 2):
+
+    # Час відправки залежить від зміни: нічна → 23:30, рання/вихідний → 21:30
+    try:
+        import sys as _sys; _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from meds import _get_today_shift_type as _gts
+        _shift = _gts()
+    except Exception:
+        _shift = "weekend"
+    send_hour, send_min = (23, 30) if _shift == "night" else (21, 30)
+
+    if not (h == send_hour and send_min <= m < send_min + 5):
         return
 
     today = now_local.strftime("%Y-%m-%d")
