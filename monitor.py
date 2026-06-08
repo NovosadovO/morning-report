@@ -4062,6 +4062,21 @@ def main():
     _flush_text()
     print(f"=== Report {'sent' if ok else 'FAILED'} ===")
 
+    # ── Астро — надсилаємо окремим повідомленням після звіту ─────────────────
+    if not astro_text:
+        # Спроба ще раз якщо в parts не потрапило
+        try:
+            import importlib as _imp2
+            import astro as _astro2
+            _imp2.reload(_astro2)
+            astro_text = _astro2.get_natal_transits_short(max_aspects=5)
+            print(f"astro retry ok, len={len(astro_text) if astro_text else 0}")
+        except Exception as _ae2:
+            print(f"astro retry error: {_ae2}")
+    if astro_text:
+        send_telegram(astro_text)
+        print("astro: надіслано окремим повідомленням")
+
     # ── Кнопка "Додати в календар" після підсумку ────────────────────────────
     try:
         from planner import _tg as _planner_tg, set_state as _planner_set_state
