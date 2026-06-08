@@ -1407,7 +1407,7 @@ def run_report_card_watcher():
                     photos = generate_report_album("morning")
                     if photos:
                         _send_album(photos, "☀️ <b>Ранковий звіт</b>")
-                        _send_astro_text()
+                        # астро надсилається окремо через run_astro_watcher
                 except Exception as e:
                     print(f"[report_card] morning error: {e}", flush=True)
 
@@ -1422,7 +1422,7 @@ def run_report_card_watcher():
                     photos = generate_report_album("evening")
                     if photos:
                         _send_album(photos, "🌙 <b>Вечірній звіт</b>")
-                        _send_astro_text()
+                        # астро надсилається окремо через run_astro_watcher
                 except Exception as e:
                     print(f"[report_card] evening error: {e}", flush=True)
 

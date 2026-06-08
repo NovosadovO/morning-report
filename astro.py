@@ -568,71 +568,115 @@ def _transit_aspects(natal_lons, transit_lons, natal_names, transit_names, orb=3
 # ─── FALLBACK через ephem (якщо kerykeion/pyswisseph не встановлений) ─────────
 
 def _get_natal_transits_fallback(max_aspects=5):
-    """Простий астро-звіт через ephem — не потребує C-залежностей."""
-    try:
-        import ephem
-        from datetime import datetime, timezone, timedelta
+    """Астро-звіт на чистому Python — без зовнішніх бібліотек."""
+    from datetime import datetime, timezone, timedelta
+    import math
 
-        now_utc = datetime.now(timezone.utc)
-        now_local = now_utc + timedelta(hours=2)
-        date_str = now_local.strftime("%d.%m.%Y")
-        weekday_ua = ["Понеділок","Вівторок","Середа","Четвер","П'ятниця","Субота","Неділя"][now_local.weekday()]
+    now_utc = datetime.now(timezone.utc)
+    now_local = now_utc + timedelta(hours=2)
+    weekday_ua = ["Понеділок","Вівторок","Середа","Четвер","П'ятниця","Субота","Неділя"][now_local.weekday()]
+    date_str = now_local.strftime("%d.%m.%Y")
 
-        # Поточні позиції планет
-        obs = ephem.Observer()
-        obs.lat, obs.lon = '48.7136', '21.2581'
-        obs.date = now_utc.strftime("%Y/%m/%d %H:%M:%S")
+    SIGNS_UA = ["Овен ♈","Телець ♉","Близнюки ♊","Рак ♋","Лев ♌","Діва ♍",
+                "Терези ♎","Скорпіон ♏","Стрілець ♐","Козеріг ♑","Водолій ♒","Риби ♓"]
+    SIGN_TIPS = {
+        "Овен ♈": "🔥 Енергія, ініціатива — дій рішуче",
+        "Телець ♉": "🌿 Стабільність, матеріальне — час планувати фінанси",
+        "Близнюки ♊": "💨 Комунікація, ідеї — спілкуйся та вчись",
+        "Рак ♋": "🌊 Емоції, дім — дбай про близьких",
+        "Лев ♌": "☀️ Творчість, лідерство — покажи себе",
+        "Діва ♍": "🌾 Деталі, здоров'я — аналізуй і впорядковуй",
+        "Терези ♎": "⚖️ Баланс, стосунки — шукай гармонію",
+        "Скорпіон ♏": "🦂 Трансформація, глибина — копай глибше",
+        "Стрілець ♐": "🏹 Розширення, оптимізм — думай масштабно",
+        "Козеріг ♑": "🏔️ Дисципліна, кар'єра — будуй довгострокове",
+        "Водолій ♒": "⚡ Інновації, свобода — думай нестандартно",
+        "Риби ♓": "🌊 Мрії, духовність, творчість — обережно з реальністю",
+    }
 
-        planets = [
-            ("☀️ Сонце",    ephem.Sun()),
-            ("🌙 Місяць",   ephem.Moon()),
-            ("☿ Меркурій", ephem.Mercury()),
-            ("♀ Венера",   ephem.Venus()),
-            ("♂ Марс",     ephem.Mars()),
-            ("♃ Юпітер",  ephem.Jupiter()),
-            ("♄ Сатурн",  ephem.Saturn()),
-        ]
+    def _jd(dt):
+        """Julian Day Number."""
+        y, m, d = dt.year, dt.month, dt.day
+        h = dt.hour + dt.minute/60 + dt.second/3600
+        if m <= 2:
+            y -= 1; m += 12
+        A = int(y/100); B = 2 - A + int(A/4)
+        return int(365.25*(y+4716)) + int(30.6001*(m+1)) + d + h/24 + B - 1524.5
 
-        SIGNS_UA = ["Овен ♈","Телець ♉","Близнюки ♊","Рак ♋","Лев ♌","Діва ♍",
-                    "Терези ♎","Скорпіон ♏","Стрілець ♐","Козеріг ♑","Водолій ♒","Риби ♓"]
+    def _sun_lon(jd):
+        n = jd - 2451545.0
+        L = (280.460 + 0.9856474*n) % 360
+        g = math.radians((357.528 + 0.9856003*n) % 360)
+        return (L + 1.915*math.sin(g) + 0.020*math.sin(2*g)) % 360
 
-        lines = []
-        moon_phase_pct = ephem.Moon(obs).phase
-        if moon_phase_pct < 7:   moon_icon = "🌑 Новолуння"
-        elif moon_phase_pct < 30: moon_icon = "🌒 Молодий Місяць"
-        elif moon_phase_pct < 50: moon_icon = "🌓 Перша чверть"
-        elif moon_phase_pct < 70: moon_icon = "🌔 Зростаючий гіббус"
-        elif moon_phase_pct < 93: moon_icon = "🌕 Повний Місяць"
-        elif moon_phase_pct < 99: moon_icon = "🌖 Спадний гіббус"
-        else:                     moon_icon = "🌗 Остання чверть"
+    def _moon_lon(jd):
+        n = jd - 2451545.0
+        L = (218.316 + 13.176396*n) % 360
+        M = math.radians((134.963 + 13.064993*n) % 360)
+        F = math.radians((93.272  + 13.229350*n) % 360)
+        return (L + 6.289*math.sin(M) - 1.274*math.sin(2*F - M)) % 360
 
-        moon = ephem.Moon(obs)
-        moon_sign_idx = int(moon.hlong * 180 / ephem.pi / 30) % 12
-        moon_sign = SIGNS_UA[moon_sign_idx]
+    def _planet_lon(jd, a, e, i_deg, o_deg, w_deg, M0, n_mot):
+        """Спрощена геліоцентрична довгота → екліптична."""
+        n = jd - 2451545.0
+        M = math.radians((M0 + n_mot*n) % 360)
+        E = M + e*math.sin(M)*(1 + e*math.cos(M))
+        for _ in range(5):
+            E = E - (E - e*math.sin(E) - M)/(1 - e*math.cos(E))
+        v = 2*math.atan2(math.sqrt(1+e)*math.sin(E/2), math.sqrt(1-e)*math.cos(E/2))
+        return (math.degrees(v) + w_deg) % 360
 
-        lines.append(f"🔮 <b>АСТРО — транзити до натальних планет</b>")
-        lines.append(f"{moon_icon}  ·  Місяць у <b>{moon_sign}</b>")
-        lines.append("")
-        lines.append("🌍 <b>ПЛАНЕТИ СЬОГОДНІ</b>")
-        lines.append("")
+    jd = _jd(now_utc)
 
-        for name, planet in planets:
-            planet.compute(obs)
-            lon_deg = float(planet.hlong) * 180 / ephem.pi
-            sign_idx = int(lon_deg / 30) % 12
-            deg_in_sign = lon_deg % 30
-            lines.append(f"{name}  →  {SIGNS_UA[sign_idx]} {deg_in_sign:.0f}°")
+    # Позиції планет (спрощено)
+    sun_l   = _sun_lon(jd)
+    moon_l  = _moon_lon(jd)
+    merc_l  = _planet_lon(jd, 0.387, 0.2056, 7.0,  48.3,  29.1, 174.8, 4.0923)
+    ven_l   = _planet_lon(jd, 0.723, 0.0068, 3.4,  76.7,  54.9, 50.4,  1.6021)
+    mars_l  = _planet_lon(jd, 1.524, 0.0934, 1.8,  49.6,  286.5, 19.4, 0.5240)
+    jup_l   = _planet_lon(jd, 5.203, 0.0489, 1.3,  100.5, 273.9, 20.0, 0.0831)
+    sat_l   = _planet_lon(jd, 9.537, 0.0565, 2.5,  113.7, 339.4, 317.0,0.0335)
 
-        return "\n".join(lines)
-    except Exception as e:
-        # Якщо ephem теж не встановлений — повертаємо мінімальний текст
-        from datetime import datetime, timezone, timedelta
-        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
-        return (
-            f"🔮 <b>АСТРО</b>\n"
-            f"📅 {now_local.strftime('%d.%m.%Y')}\n"
-            f"<i>⚠️ Детальні транзити недоступні: {e}</i>"
-        )
+    def _sign(lon): return SIGNS_UA[int(lon/30) % 12]
+    def _deg(lon):  return int(lon % 30)
+
+    moon_sign = _sign(moon_l)
+
+    # Фаза місяця
+    phase_angle = (moon_l - sun_l) % 360
+    if phase_angle < 22.5:    moon_phase = "🌑 Новолуння"
+    elif phase_angle < 67.5:  moon_phase = "🌒 Молодий Місяць"
+    elif phase_angle < 112.5: moon_phase = "🌓 Перша чверть"
+    elif phase_angle < 157.5: moon_phase = "🌔 Зростаючий гіббус"
+    elif phase_angle < 202.5: moon_phase = "🌕 Повний Місяць"
+    elif phase_angle < 247.5: moon_phase = "🌖 Спадний гіббус"
+    elif phase_angle < 292.5: moon_phase = "🌗 Остання чверть"
+    else:                      moon_phase = "🌘 Спадний Місяць"
+
+    tip = SIGN_TIPS.get(moon_sign, "")
+
+    lines = [
+        f"🔮 <b>АСТРО — транзити</b>",
+        f"📅 {weekday_ua}, {date_str}",
+        "",
+        f"━━━━━━━━━━━━━━━━━━━━",
+        "",
+        f"{moon_phase}  ·  Місяць у <b>{moon_sign}</b>",
+        f"<i>{tip}</i>",
+        "",
+        f"━━━━━━━━━━━━━━━━━━━━",
+        "",
+        "🌍 <b>ПЛАНЕТИ СЬОГОДНІ</b>",
+        "",
+        f"☀️ Сонце      →  {_sign(sun_l)} {_deg(sun_l)}°",
+        f"🌙 Місяць     →  {_sign(moon_l)} {_deg(moon_l)}°",
+        f"☿ Меркурій  →  {_sign(merc_l)} {_deg(merc_l)}°",
+        f"♀ Венера     →  {_sign(ven_l)} {_deg(ven_l)}°",
+        f"♂ Марс       →  {_sign(mars_l)} {_deg(mars_l)}°",
+        f"♃ Юпітер    →  {_sign(jup_l)} {_deg(jup_l)}°",
+        f"♄ Сатурн    →  {_sign(sat_l)} {_deg(sat_l)}°",
+    ]
+    return "\n".join(lines)
 
 
 # ─── КОРОТКИЙ БЛОК ДЛЯ ГОДИННОГО ЗВІТУ ───────────────────────────────────────
@@ -706,7 +750,7 @@ def get_natal_transits_short(max_aspects=5):
 
 def get_astro_report():
     if not _KERYKEION_OK:
-        return "♈ <b>Астро</b>\n⚠️ kerykeion не встановлений"
+        return _get_natal_transits_fallback()
     now_utc = datetime.now(timezone.utc)
     now_local = now_utc + timedelta(hours=2)
     today_str = now_local.strftime("%d.%m.%Y")
