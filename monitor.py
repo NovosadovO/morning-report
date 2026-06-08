@@ -3919,12 +3919,11 @@ def main():
         # monthly_dashboard і run_month вже відправлені вище з підписом місяця
         print(f"[charts] last day of month — monthly summary already sent above", flush=True)
 
-    # Блок 5: Email — заголовок + кожен лист окремо з кнопками
+    # Блок 5: Email — збираємо окремо, надсилаємо ПІСЛЯ основного звіту
+    email_parts = []
     if email_text:
         if isinstance(email_text, dict) and email_text.get("__email_block__"):
-            # Надсилаємо заголовок
-            parts.append(email_text["header"])
-            # Кожен лист — окреме повідомлення з кнопками (макс 3)
+            email_parts.append(email_text["header"])
             _all_items = email_text.get("items", [])
             _remaining = max(0, len(_all_items) - 7)
             for _em in _all_items[:7]:
@@ -3961,11 +3960,11 @@ def main():
                         {"text": "🗑 Видалити",     "callback_data": f"email_delete_{_uid}"},
                     ]
                 ]}
-                parts.append({"email_msg": True, "text": _text, "keyboard": _keyboard})
+                email_parts.append({"email_msg": True, "text": _text, "keyboard": _keyboard})
             if _remaining > 0:
-                parts.append(f"📬 <i>і ще {_remaining} {'лист' if _remaining == 1 else 'листи' if _remaining < 5 else 'листів'} у вхідних</i>")
+                email_parts.append(f"📬 <i>і ще {_remaining} {'лист' if _remaining == 1 else 'листи' if _remaining < 5 else 'листів'} у вхідних</i>")
         else:
-            parts.append(email_text)
+            email_parts.append(email_text)
 
     # Блок 6: Астро — додається в кожен звіт
     if astro_text:
@@ -4083,6 +4082,12 @@ def main():
     _time_main.sleep(1.0)
     print(f"[report] sending part 2 ({len(parts_2)} sections)", flush=True)
     _send_parts_as_one(parts_2)
+
+    # Листи — окремо після основного звіту
+    if email_parts:
+        _time_main.sleep(1.0)
+        print(f"[report] sending email parts ({len(email_parts)} items)", flush=True)
+        _send_parts_as_one(email_parts)
 
     print(f"=== Report {'sent' if ok else 'FAILED'} ===")
 
