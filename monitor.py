@@ -2402,6 +2402,9 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
     }
 
     sections_str = "\n".join(f"{k}: {v}" for k, v in sections_data.items() if v and v != "—")
+    print(f"[get_summary DEBUG] sections_data:")
+    for _k, _v in sections_data.items():
+        print(f"  {_k}: {repr(_v)[:120]}")
 
     prev_ctx_block = ""
     if prev_summaries_ctx:
