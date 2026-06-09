@@ -1244,7 +1244,7 @@ def _parse_gmail_msg(msg_data, full=False):
 
 def _gemini_summarize(text, max_input=3000):
     """Робить короткий actionable summary через Gemini API."""
-    api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+    api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDRXcGERTNILIEDKbmgTKSXUuiwt1oKeGM")
     if not api_key or not text or text == "—":
         return None
     try:
@@ -1502,7 +1502,7 @@ def _email_save_ids(sent_ids: set):
 def _gemini_email_analysis(full_text: str) -> dict:
     """Аналізує лист через Gemini: детальний переказ + думка."""
     import re as _re
-    api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+    api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDRXcGERTNILIEDKbmgTKSXUuiwt1oKeGM")
 
     prompt = (
         "Проаналізуй цей email. Відповідь — ТІЛЬКИ валідний JSON, без markdown, без коментарів:\n"
@@ -3442,7 +3442,7 @@ def main():
 
     # ── КРОК 8: Calendar-aware AI секція (кожен звіт унікальна порада) ───────
     ai_insight = None
-    gemini_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+    gemini_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDRXcGERTNILIEDKbmgTKSXUuiwt1oKeGM")
     shift_hint = ""
     weight_hint = ""
     if gemini_key:
@@ -3502,7 +3502,7 @@ def main():
             )
             ai_payload = json.dumps({
                 "contents": [{"parts": [{"text": ai_prompt}]}],
-                "generationConfig": {"maxOutputTokens": 200, "temperature": 0.9},
+                "generationConfig": {"maxOutputTokens": 512, "temperature": 0.9},
             }).encode()
             ai_req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -3575,7 +3575,7 @@ def main():
             )
             _brief_payload = json.dumps({
                 "contents": [{"parts": [{"text": _brief_prompt}]}],
-                "generationConfig": {"maxOutputTokens": 150, "temperature": 0.85}
+                "generationConfig": {"maxOutputTokens": 512, "temperature": 0.85}
             }).encode()
             _brief_req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -4687,7 +4687,7 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
     - реальні дані (вага, звички, здоров'я, крипто)
     """
     import uuid as _uuid
-    gemini_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+    gemini_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDRXcGERTNILIEDKbmgTKSXUuiwt1oKeGM")
 
     # Збираємо реальний контекст
     ctx_parts = []
@@ -8932,7 +8932,7 @@ def check_stress_alert():
             )
             payload = _json_sa.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 200, "temperature": 0.6}
+                "generationConfig": {"maxOutputTokens": 512, "temperature": 0.6}
             }).encode()
             req_ai = _ur_sa.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
@@ -9096,7 +9096,7 @@ def check_monthly_summary():
             )
             payload = _json_ms.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 150, "temperature": 0.7}
+                "generationConfig": {"maxOutputTokens": 512, "temperature": 0.7}
             }).encode()
             req_ai = _ur_ms.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
