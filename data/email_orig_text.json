@@ -214,5 +214,32 @@
         ]
       ]
     }
+  },
+  "2100366814_21177": {
+    "text": "📩 ✉️\n📌 The biggest IPO ever found a home onchain\n👤 DefiLlama Newsletter <defillama@mail.beehiiv.com>",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_74267"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_74267"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_74267"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_74267"
+          }
+        ]
+      ]
+    }
   }
 }
