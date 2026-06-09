@@ -2406,7 +2406,6 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
             body_ai = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
                 "generationConfig": {"maxOutputTokens": 900, "temperature": 0.8},
-                "thinkingConfig": {"thinkingBudget": 0}
             }).encode()
             req_ai = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -3506,7 +3505,6 @@ def main():
             ai_payload = json.dumps({
                 "contents": [{"parts": [{"text": ai_prompt}]}],
                 "generationConfig": {"maxOutputTokens": 120, "temperature": 0.9},
-                "thinkingConfig": {"thinkingBudget": 0}
             }).encode()
             ai_req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -3578,8 +3576,7 @@ def main():
             )
             _brief_payload = json.dumps({
                 "contents": [{"parts": [{"text": _brief_prompt}]}],
-                "generationConfig": {"maxOutputTokens": 80, "temperature": 0.85},
-                "thinkingConfig": {"thinkingBudget": 0}
+                "generationConfig": {"maxOutputTokens": 80, "temperature": 0.85}
             }).encode()
             _brief_req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -4780,7 +4777,6 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
                 "maxOutputTokens": max(max_tokens, 300),
                 "temperature": 0.95
             },
-            "thinkingConfig": {"thinkingBudget": 0}
         }).encode()
         req = urllib.request.Request(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
