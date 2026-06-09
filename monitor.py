@@ -1820,6 +1820,7 @@ def check_weather_alert():
         return
 
     state = load_json_file(WEATHER_ALERT_FILE, default={})
+    gh_weather, gh_weather_sha = _gh_get_json("monitor_weather_alert.json")
     alerts = []
 
     WMO_BAD = {
@@ -1837,7 +1838,7 @@ def check_weather_alert():
     # ── Вечірній алерт про завтра (шлемо між 19:00-21:00) ──
     if 19 <= now_local.hour < 21:
         today_str = now_local.strftime("%Y-%m-%d")
-        last_evening = state.get("last_evening_alert", "")
+        last_evening = gh_weather.get("last_evening_alert", state.get("last_evening_alert", ""))
         if last_evening != today_str:
             daily = data.get("daily", {})
             times = daily.get("time", [])
@@ -1869,6 +1870,8 @@ def check_weather_alert():
                     )
                     alerts.append(msg)
                     state["last_evening_alert"] = today_str
+                    gh_weather["last_evening_alert"] = today_str
+                    _gh_save_json("monitor_weather_alert.json", gh_weather, gh_weather_sha)
 
     # ── Різка зміна температури (>6° за останні 3г) ──
     current = data.get("current", {})
@@ -2495,6 +2498,52 @@ def _gh_get_sent():
             return content, d["sha"]
     except Exception:
         return {}, None
+
+def _gh_get_json(filename):
+    """Читає довільний JSON-файл з GitHub гілки data. Повертає (dict, sha)."""
+    import base64
+    gh_token = os.environ.get("GITHUB_TOKEN", "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")
+    if not gh_token:
+        return {}, None
+    url = f"https://api.github.com/repos/NovosadovO/morning-report/contents/data/{filename}?ref={_GH_DATA_BRANCH}"
+    req = urllib.request.Request(url, headers={
+        "Authorization": f"token {gh_token}",
+        "User-Agent": "morning-report-bot"
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=8) as r:
+            d = json.loads(r.read())
+            content = json.loads(base64.b64decode(d["content"]).decode())
+            return content, d["sha"]
+    except Exception:
+        return {}, None
+
+def _gh_save_json(filename, data, sha):
+    """Зберігає довільний JSON-файл на GitHub гілку data."""
+    import base64
+    gh_token = os.environ.get("GITHUB_TOKEN", "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")
+    if not gh_token:
+        return
+    url = f"https://api.github.com/repos/NovosadovO/morning-report/contents/data/{filename}"
+    content = base64.b64encode(json.dumps(data, indent=2).encode()).decode()
+    body_dict = {
+        "message": f"dedup: update {filename}",
+        "content": content,
+        "branch": _GH_DATA_BRANCH,
+    }
+    if sha:
+        body_dict["sha"] = sha
+    body = json.dumps(body_dict).encode()
+    req = urllib.request.Request(url, data=body, headers={
+        "Authorization": f"token {gh_token}",
+        "Content-Type": "application/json",
+        "User-Agent": "morning-report-bot"
+    }, method="PUT")
+    try:
+        with urllib.request.urlopen(req, timeout=10) as r:
+            pass
+    except Exception as e:
+        print(f"_gh_save_json({filename}) error: {e}")
 
 def _gh_save_sent(data, sha):
     """Зберігає monitor_main_sent.json на GitHub гілку data."""
@@ -6975,6 +7024,11 @@ def check_morning_context():
     today = now_local.strftime("%Y-%m-%d")
 
     state = load_json_file(MORNING_CTX_FILE, default={})
+    # GitHub dedup — стійкий до Railway restarts
+    gh_morning, gh_morning_sha = _gh_get_json("monitor_morning_ctx.json")
+    if gh_morning.get("last") == today:
+        print(f"Morning context already sent today ({today}), skipping.")
+        return
     if state.get("last") == today:
         return
 
@@ -7025,7 +7079,7 @@ def check_morning_context():
             pass
 
         # ── КРОК 5: AI-порада з урахуванням КАЛЕНДАРЯ ────────────────────────
-        gemini_key = os.environ.get("GEMINI_API_KEY", "")
+        gemini_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDRXcGERTNILIEDKbmgTKSXUuiwt1oKeGM")
         ai_tip = ""
         if gemini_key:
             try:
@@ -7097,7 +7151,7 @@ def check_morning_context():
                 )
                 payload = json.dumps({
                     "contents": [{"parts": [{"text": prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 180, "temperature": 0.95}
+                    "generationConfig": {"maxOutputTokens": 1024, "temperature": 0.95}
                 }).encode()
                 req2 = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -7137,6 +7191,9 @@ def check_morning_context():
         # ── КРОК 7: Зберігаємо ПЕРЕД відправкою (dedup) ──────────────────────
         state["last"] = today
         save_json_file(MORNING_CTX_FILE, state)
+        # GitHub dedup — стійкий до Railway restarts
+        gh_morning["last"] = today
+        _gh_save_json("monitor_morning_ctx.json", gh_morning, gh_morning_sha)
 
         if len(msg) > 4090:
             msg = msg[:4087] + "..."
