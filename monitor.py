@@ -2336,12 +2336,65 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
     except Exception as _qe:
         print(f"get_summary qwatch error: {_qe}")
 
+    # ── Портфель ──────────────────────────────────────────────────────────────
+    portfolio_facts = ""
+    try:
+        from portfolio import get_portfolio_summary as _get_pf
+        _pf = _get_pf()
+        if _pf:
+            _tv = _pf.get("total_value", 0)
+            _pnl = _pf.get("total_pnl")
+            _ch24 = _pf.get("total_change24", 0)
+            _pf_parts = [f"Загальна вартість: ${_tv:,.0f}"]
+            if _pnl is not None:
+                _pf_parts.append(f"P&L: ${_pnl:+,.0f}")
+            _pf_parts.append(f"Зміна 24г: ${_ch24:+,.0f}")
+            _pos = _pf.get("positions", [])
+            if _pos:
+                _top = sorted(_pos, key=lambda x: x.get("value", 0), reverse=True)[:5]
+                _pos_str = ", ".join(
+                    f"{p['symbol']} ${p.get('value',0):,.0f} ({p.get('pct_portfolio',0):.0f}%)"
+                    + (f" P&L:{p['pnl_pct']:+.1f}%" if p.get('pnl_pct') is not None else "")
+                    for p in _top
+                )
+                _pf_parts.append(f"Топ позиції: {_pos_str}")
+            portfolio_facts = ". ".join(_pf_parts)
+    except Exception as _pfe:
+        print(f"get_summary portfolio error: {_pfe}")
+
+    # ── Біг (Strava) ──────────────────────────────────────────────────────────
+    run_facts = ""
+    try:
+        from strava import get_month_stats as _gms_s, get_recent_runs as _grr
+        import datetime as _dt_s
+        _now_s = datetime.now(timezone.utc) + timedelta(hours=2)
+        _ms = _gms_s(_now_s.year, _now_s.month)
+        _runs_cnt = _ms.get("runs", 0)
+        _runs_km = _ms.get("distance_km", 0)
+        _run_parts = [f"Цей місяць: {_runs_cnt} пробіжок, {_runs_km:.1f} км"]
+        # Остання пробіжка
+        try:
+            _recent = _grr(limit=1)
+            if _recent:
+                _lr = _recent[0]
+                _run_parts.append(
+                    f"Остання: {_lr.get('distance_km',0):.1f} км "
+                    f"темп {_lr.get('pace_str','?')} "
+                    f"({_lr.get('date','')})"
+                )
+        except Exception: pass
+        run_facts = ". ".join(_run_parts)
+    except Exception as _rfe:
+        print(f"get_summary run error: {_rfe}")
+
     # ── Будуємо промпт для Gemini ─────────────────────────────────────────────
     sections_data = {
         "🌤 ПОГОДА": weather_facts,
         "💹 КРИПТО": crypto_facts,
+        "💼 ПОРТФЕЛЬ": portfolio_facts or "—",
         "⚖️ ВАГА": weight_facts or "—",
-        "🏃 АКТИВНІСТЬ": steps_facts or "—",
+        "🏃 БІГ": run_facts or "—",
+        "🏃 АКТИВНІСТЬ (кроки)": steps_facts or "—",
         "💊 ЛІКИ": meds_facts or "—",
         "✅ ЗВИЧКИ": habits_facts or "—",
         "📅 КАЛЕНДАР": cal_facts or "Нічого",
@@ -2367,39 +2420,45 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
 Листи:
 {email_drafts_context}"""
 
-    prompt = f"""Ти персональний AI-асистент Олега (Кошіце, Словаччина).
+    prompt = f"""Ти персональний AI-асистент Олега Новосадова (Кошіце, Словаччина).
 Зараз {now_local.strftime('%H:%M')}, {today_str_s}, {shift_desc}.
+Цілі Олега: схуднення до 78 кг (зараз ~83 кг), регулярний біг (ціль 40 км/міс), фінансова незалежність через крипто+ETF інвестиції.
 
-Поточні дані:
+═══ ПОВНІ ДАНІ ЗВІТУ ═══
 {sections_str}
 {prev_ctx_block}
-Завдання: напиши структурований підсумок з розділами. ФОРМАТ ВІДПОВІДІ:
+═══════════════════════
 
-🌤 <b>ПОГОДА</b>
-[аналіз погоди — що це означає для дня, чи варто виходити, чи брати парасолю]
+Завдання: проаналізуй ВСІ дані вище і напиши ГЛИБОКИЙ персональний аналіз по кожному блоку.
+Використовуй тільки реальні числа з даних — не вигадуй. Якщо даних нема — пропусти блок.
 
-💹 <b>КРИПТО</b>
-[аналіз ринку — настрій, тренд, порівняй з попередніми підсумками якщо є, своя думка]
+ФОРМАТ ВІДПОВІДІ (тільки ці блоки, кожен 3-5 речень):
 
-⚖️ <b>ЗДОРОВ'Я</b>
-[вага + кроки + QWatch (сон, пульс, HRV, Health Score, стрес) — тренд, оцінка, конкретна порада. Ліки не згадуй — вони показані окремим блоком]
+🌤 <b>ПОГОДА — що це означає сьогодні</b>
+[Конкретно: температура, умови — чи підходить для бігу/виходу на вулицю, що взяти, як погода впливає на день з урахуванням зміни роботи]
+
+💹 <b>КРИПТО ТА ПОРТФЕЛЬ</b>
+[BTC/ETH/AVAX/ONDO — конкретні ціни і зміни. Портфель: загальна вартість, P&L, які позиції ростуть/падають. Порівняй з попередніми підсумками — тренд. Чи варто щось робити прямо зараз чи тримати?]
+
+⚖️ <b>ЗДОРОВ'Я ТА ТІЛО</b>
+[Вага: конкретне число, тренд за тиждень, скільки до цілі 78 кг, реальна оцінка прогресу. Сон/HRV/кроки з QWatch якщо є. Біг: остання пробіжка, місячний прогрес, коли наступна? Конкретна порада що зробити сьогодні для схуднення.]
 
 ✅ <b>ЗВИЧКИ ТА ПРОДУКТИВНІСТЬ</b>
-[звички + календар — що виконано, що ні, рекомендація]
+[Які звички виконані/ні сьогодні. Календар — що важливо. Що потрібно зробити в найближчі 2 години виходячи з зміни і часу.]
 
 📧 <b>ПОШТА</b>
-[що треба зробити з листами, пріоритети]
+[Конкретно які листи прийшли, що важливо, що треба відповісти або зробити]
 {drafts_block}
 
-🎯 <b>МОЯ ДУМКА</b>
-[загальна оцінка дня від бота — порівняй з попередніми підсумками, що змінилось, що турбує або радує, 1-2 особисті рекомендації САМЕ ЗАРАЗ]
+🎯 <b>ВИСНОВОК І ПРІОРИТЕТИ</b>
+[1-й пріоритет прямо зараз. Що добре — що погано. Порівняй з вчорашнім/позавчорашнім підсумком якщо є — що змінилось. Один конкретний крок що Олег має зробити ЗАРАЗ.]
 
 Правила:
-- Тільки конкретні факти і числа — ніяких загальних слів
-- Кожен розділ — 2-4 речення, стисло
-- Якщо даних нема — пиши "немає даних" і не вигадуй
+- ТІЛЬКИ конкретні факти і числа з даних вище — ніяких загальних фраз типу "важливо дбати про здоров'я"
+- Кожен блок — реальний аналіз на основі цифр
+- Якщо даних нема — пропусти блок повністю
 - Порівнюй з попередніми підсумками де є дані
-- По-українськи, без markdown крім <b>
+- Мова: українська, без markdown крім <b>
 - Seed: {slot_seed}"""
 
     gemini_key = os.environ.get("GEMINI_API_KEY", "")
@@ -2408,13 +2467,14 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
         try:
             body_ai = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.8},
+                "generationConfig": {"maxOutputTokens": 3000, "temperature": 0.8},
+                "thinkingConfig": {"thinkingBudget": 0},
             }).encode()
             req_ai = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
                 data=body_ai, headers={"Content-Type": "application/json"}, method="POST"
             )
-            with urllib.request.urlopen(req_ai, timeout=30) as r_ai:
+            with urllib.request.urlopen(req_ai, timeout=45) as r_ai:
                 resp_ai = json.loads(r_ai.read())
             ai_summary = resp_ai["candidates"][0]["content"]["parts"][0]["text"].strip()
         except Exception as e:
