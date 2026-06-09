@@ -3997,41 +3997,59 @@ def main():
     # ── Надсилаємо звіт рівно 2 повідомленнями ───────────────────────────────
     # Повідомлення 1: заголовок + погода + трафік + крипто + ETF + курс + календар
     # Повідомлення 2: здоров'я + біг + портфоліо + пошта + астро + AI + підсумок
-    # Фото (dict з "photo") надсилаються одразу після свого блоку тексту.
-    # "SPLIT_HERE" — маркер між двома повідомленнями.
+    # Фото збираємо окремо в album, текст об'єднуємо в 2 повідомлення.
+    # "SPLIT_HERE" — маркер між двома текстовими повідомленнями.
     import time as _time_main
     import requests as _req_send
     import io as _io_send
+    import json as _json_send
+
+    # Витягуємо всі фото з parts в окремий список
+    photo_parts = [p for p in parts if isinstance(p, dict) and "photo" in p]
+    parts_no_photo = [p for p in parts if not (isinstance(p, dict) and "photo" in p)]
 
     # Ділимо по явному маркеру SPLIT_HERE
-    _split_idx = next((i for i, p in enumerate(parts) if p == "SPLIT_HERE"), None)
+    _split_idx = next((i for i, p in enumerate(parts_no_photo) if p == "SPLIT_HERE"), None)
     if _split_idx is not None:
-        parts_1 = parts[:_split_idx]
-        parts_2 = parts[_split_idx + 1:]  # +1 щоб не включати сам маркер
+        parts_1 = parts_no_photo[:_split_idx]
+        parts_2 = parts_no_photo[_split_idx + 1:]
     else:
-        # Fallback — ділимо навпіл
-        mid = len(parts) // 2
-        parts_1 = parts[:mid]
-        parts_2 = parts[mid:]
+        mid = len(parts_no_photo) // 2
+        parts_1 = parts_no_photo[:mid]
+        parts_2 = parts_no_photo[mid:]
 
-    def _send_photo_inline(photo_bytes, caption):
+    def _send_album(photos):
+        """Надсилає список фото як Telegram media group (album)."""
+        if not photos:
+            return
         try:
-            print(f"[photo inline] sending: bytes={len(photo_bytes) if photo_bytes else 0} caption={caption[:40]!r}", flush=True)
-            _r = _req_send.post(
-                f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
-                data={"chat_id": TELEGRAM_CHAT, "caption": caption, "parse_mode": "HTML"},
-                files={"photo": ("chart.png", _io_send.BytesIO(photo_bytes), "image/png")},
-                timeout=25
+            media = []
+            files = {}
+            for i, p in enumerate(photos):
+                key = f"photo{i}"
+                caption = p.get("caption", "")
+                media.append({
+                    "type": "photo",
+                    "media": f"attach://{key}",
+                    "caption": caption if i == 0 else "",
+                    "parse_mode": "HTML",
+                })
+                files[key] = (f"chart{i}.png", _io_send.BytesIO(p["photo"]), "image/png")
+            r = _req_send.post(
+                f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMediaGroup",
+                data={"chat_id": TELEGRAM_CHAT, "media": _json_send.dumps(media)},
+                files=files,
+                timeout=60,
             )
-            print(f"[photo inline] status={_r.status_code}", flush=True)
-        except Exception as _pe:
-            print(f"[photo inline] error: {_pe}", flush=True)
+            print(f"[album] sent {len(photos)} photos: {r.status_code}", flush=True)
+        except Exception as e:
+            print(f"[album] error: {e}", flush=True)
 
-    MAX_MSG = 4000
+    MAX_MSG = 4090
     ok = True
 
     def _send_parts_as_one(plist):
-        """Об'єднує текстові секції з plist в одне (або мінімум) повідомлень, фото між ними."""
+        """Об'єднує текстові секції в одне повідомлення (або мінімум шматків)."""
         nonlocal ok
         current = ""
 
@@ -4044,11 +4062,6 @@ def main():
                 _time_main.sleep(0.5)
 
         for sec in plist:
-            if isinstance(sec, dict) and "photo" in sec:
-                _flush()
-                _send_photo_inline(sec["photo"], sec.get("caption", ""))
-                _time_main.sleep(0.5)
-                continue
             if isinstance(sec, dict) and sec.get("email_msg"):
                 _flush()
                 _send_telegram_text_with_keyboard(sec["text"], sec["keyboard"])
@@ -4077,15 +4090,21 @@ def main():
                     current = sec
         _flush()
 
-    print(f"[report] sending part 1 ({len(parts_1)} sections, split_idx={_split_idx})", flush=True)
+    print(f"[report] sending part 1 ({len(parts_1)} sections)", flush=True)
     _send_parts_as_one(parts_1)
-    _time_main.sleep(1.0)
+    _time_main.sleep(0.8)
     print(f"[report] sending part 2 ({len(parts_2)} sections)", flush=True)
     _send_parts_as_one(parts_2)
 
-    # Листи — окремо після основного звіту
+    # Album з усіма фото після тексту
+    if photo_parts:
+        _time_main.sleep(0.8)
+        print(f"[report] sending album ({len(photo_parts)} photos)", flush=True)
+        _send_album(photo_parts)
+
+    # Листи — окремо після всього
     if email_parts:
-        _time_main.sleep(1.0)
+        _time_main.sleep(0.8)
         print(f"[report] sending email parts ({len(email_parts)} items)", flush=True)
         _send_parts_as_one(email_parts)
 
