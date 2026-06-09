@@ -201,37 +201,44 @@ def get_shift_from_calendar():
                     break
 
         for offset, key in [(0, "today"), (1, "tomorrow")]:
-            events = _fetch_events_for_day(token, offset)
-            for ev in events:
-                s = ev.get("summary", "").lower()
-                start_str = ev["start"].get("dateTime") or ev["start"].get("date")
-                try:
-                    dt_start = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
-                    dt_local = dt_start + timedelta(hours=2)
-                except Exception:
-                    dt_local = None
+            # If today's status was already determined from yesterday's night shift
+            # (after_night = resting at home after night shift), don't overwrite with
+            # tonight's upcoming night shift event.
+            if key == "today" and result["today"] == "after_night":
+                # Still fetch today's events to get tomorrow data, but skip today key
+                pass
+            else:
+                events = _fetch_events_for_day(token, offset)
+                for ev in events:
+                    s = ev.get("summary", "").lower()
+                    start_str = ev["start"].get("dateTime") or ev["start"].get("date")
+                    try:
+                        dt_start = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
+                        dt_local = dt_start + timedelta(hours=2)
+                    except Exception:
+                        dt_local = None
 
-                if dt_local:
-                    day_local_date = (_now_local() + timedelta(days=offset)).date()
-                    if dt_local.date() != day_local_date:
-                        continue
+                    if dt_local:
+                        day_local_date = (_now_local() + timedelta(days=offset)).date()
+                        if dt_local.date() != day_local_date:
+                            continue
 
-                if any(x in s for x in ["рання", "early"]):
-                    result[key] = "early"
-                    if key == "today":
-                        result["today_start"] = dt_local
-                        result["today_end"] = dt_local + timedelta(hours=12) if dt_local else None
-                    else:
-                        result["tomorrow_start"] = dt_local
-                    break
-                elif any(x in s for x in ["нічна", "night"]):
-                    result[key] = "night"
-                    if key == "today":
-                        result["today_start"] = dt_local
-                        result["today_end"] = dt_local + timedelta(hours=12) if dt_local else None
-                    else:
-                        result["tomorrow_start"] = dt_local
-                    break
+                    if any(x in s for x in ["рання", "early"]):
+                        result[key] = "early"
+                        if key == "today":
+                            result["today_start"] = dt_local
+                            result["today_end"] = dt_local + timedelta(hours=12) if dt_local else None
+                        else:
+                            result["tomorrow_start"] = dt_local
+                        break
+                    elif any(x in s for x in ["нічна", "night"]):
+                        result[key] = "night"
+                        if key == "today":
+                            result["today_start"] = dt_local
+                            result["today_end"] = dt_local + timedelta(hours=12) if dt_local else None
+                        else:
+                            result["tomorrow_start"] = dt_local
+                        break
 
     except Exception as e:
         print(f"get_shift_from_calendar error: {e}")

@@ -2407,9 +2407,6 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
     }
 
     sections_str = "\n".join(f"{k}: {v}" for k, v in sections_data.items() if v and v != "—")
-    print(f"[get_summary DEBUG] sections_data:")
-    for _k, _v in sections_data.items():
-        print(f"  {_k}: {repr(_v)[:120]}")
 
     prev_ctx_block = ""
     if prev_summaries_ctx:
@@ -4081,13 +4078,13 @@ def main():
             from storage import load_habits as _lhab
             _habs = _lhab()
             _hentry = _habs.get(_today_rep, {}) or {}
-            _HLIST = [("shower","🚿"),("run","🏃"),("water","💧"),("tea","🍵"),("sauna","🧖")]
+            _HLIST = [("shower","🚿","Душ"),("run","🏃","Біг"),("water","💧","Вода"),("tea","🍵","Чай"),("sauna","🧖","Сауна"),("spray","💈","Спрей")]
             _hab_line = "  ".join(
-                f"{ico}{'✅' if _hentry.get(k) is True else '⬜'}"
-                for k, ico in _HLIST
+                f"{ico} {name} {'✅' if _hentry.get(k) is True else '⬜'}"
+                for k, ico, name in _HLIST
             )
-            _done_h = sum(1 for k,_ in _HLIST if _hentry.get(k) is True)
-            _health_lines.append(f"🎯 Звички: {_hab_line}  <b>{_done_h}/5</b>")
+            _done_h = sum(1 for k,_,__ in _HLIST if _hentry.get(k) is True)
+            _health_lines.append(f"🎯 Звички: {_hab_line}  <b>{_done_h}/6</b>")
         except Exception: pass
 
         if len(_health_lines) > 1:
