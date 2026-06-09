@@ -3504,7 +3504,7 @@ def main():
             )
             ai_payload = json.dumps({
                 "contents": [{"parts": [{"text": ai_prompt}]}],
-                "generationConfig": {"maxOutputTokens": 120, "temperature": 0.9},
+                "generationConfig": {"maxOutputTokens": 200, "temperature": 0.9},
             }).encode()
             ai_req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -3567,16 +3567,16 @@ def main():
                 _wt_lines = [l for l in weather_text.split("\n") if l.strip()]
                 _w_short = _wt_lines[0] if _wt_lines else ""
             _brief_prompt = (
-                f"Олег, {shift_hint.rstrip('.')}. "
+                f"Зміна: {shift_hint.rstrip('.')}. "
                 f"Погода: {_w_short}. "
-                f"Сьогодні в календарі: {cal_events_text}. "
+                f"Календар: {cal_events_text}. "
                 f"{weight_hint} "
-                f"Напиши ОДНЕ речення українською — персональний брифінг початку дня. "
-                f"Починай звернення з 'Олеже,'. Конкретно, без загальних слів. [seed:{_seed_b}]"
+                f"Напиши одне ПОВНЕ закінчене речення українською — персональний брифінг дня для Олега. "
+                f"Починай з 'Олеже,' і завершуй крапкою. Конкретно, без загальних фраз. [seed:{_seed_b}]"
             )
             _brief_payload = json.dumps({
                 "contents": [{"parts": [{"text": _brief_prompt}]}],
-                "generationConfig": {"maxOutputTokens": 80, "temperature": 0.85}
+                "generationConfig": {"maxOutputTokens": 150, "temperature": 0.85}
             }).encode()
             _brief_req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
