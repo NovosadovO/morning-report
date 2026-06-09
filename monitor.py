@@ -3711,6 +3711,128 @@ def main():
     else:
         print("[briefing] skipped — no result from Gemini")
 
+    # ── ДЕНЬ-РЕЙТИНГ ⭐ ────────────────────────────────────────────────────────
+    try:
+        def _calc_day_score():
+            score = 0
+            breakdown = {}
+
+            # Сон (25 балів): з QWatch
+            try:
+                qw_all = storage.load("qwatch_data.json", default={})
+                qw = qw_all.get(_today_rep) or qw_all.get(_yest_rep) or {}
+                sleep_min = qw.get("sleep_total_min", 0) or 0
+                sleep_h = sleep_min / 60
+                if sleep_h >= 7.5:   s = 25
+                elif sleep_h >= 6.5: s = 20
+                elif sleep_h >= 5.5: s = 13
+                elif sleep_h >= 4.5: s = 7
+                else:                s = 0
+                score += s
+                breakdown["Сон"] = s
+                # HRV (15 балів)
+                hrv = qw.get("hrv", 0) or 0
+                if hrv >= 60:   h = 15
+                elif hrv >= 45: h = 10
+                elif hrv >= 30: h = 5
+                else:           h = 0
+                score += h
+                breakdown["HRV"] = h
+            except: pass
+
+            # Звички (20 балів): всі рівноцінні
+            try:
+                hd = storage.load_habits()
+                today_h = hd.get(_today_rep, {})
+                HAB_IDS = ["shower","run","water","tea","sauna","spray"]
+                done = sum(1 for k in HAB_IDS if today_h.get(k) is True)
+                total = len(HAB_IDS)
+                h_pts = round(done / total * 20) if total else 0
+                score += h_pts
+                breakdown["Звички"] = h_pts
+            except: pass
+
+            # Кроки (15 балів)
+            try:
+                qw_all2 = storage.load("qwatch_data.json", default={})
+                qw2 = qw_all2.get(_today_rep) or qw_all2.get(_yest_rep) or {}
+                steps = qw2.get("steps", 0) or 0
+                if steps >= 12000:  k = 15
+                elif steps >= 8000: k = 12
+                elif steps >= 5000: k = 7
+                elif steps >= 2000: k = 3
+                else:               k = 0
+                score += k
+                breakdown["Кроки"] = k
+            except: pass
+
+            # Ліки (10 балів)
+            try:
+                mdb = storage.load_meds()
+                if mdb.get(_today_rep) is True:
+                    score += 10
+                    breakdown["Ліки"] = 10
+                else:
+                    breakdown["Ліки"] = 0
+            except: pass
+
+            # Біг сьогодні або вчора (10 балів)
+            try:
+                from strava import get_last_activity as _gla_sc
+                _lr = _gla_sc()
+                if _lr and _lr.get("when") in ("сьогодні", "вчора"):
+                    score += 10
+                    breakdown["Біг"] = 10
+                else:
+                    breakdown["Біг"] = 0
+            except: pass
+
+            # Крипто портфель 24г (5 балів)
+            try:
+                from portfolio import get_portfolio_summary as _gps_sc
+                _pf = _gps_sc()
+                _ch = _pf.get("change_24h", 0) or 0
+                _tv = _pf.get("total_value", 1) or 1
+                _pct = _ch / _tv * 100
+                if _pct >= 2:    p = 5
+                elif _pct >= 0:  p = 3
+                elif _pct >= -2: p = 1
+                else:            p = 0
+                score += p
+                breakdown["Крипто"] = p
+            except: pass
+
+            return min(score, 100), breakdown
+
+        _score, _breakdown = _calc_day_score()
+
+        # Зірки: 5 зірок, кожна = 20 балів
+        _full = _score // 20
+        _half = 1 if (_score % 20) >= 10 else 0
+        _empty = 5 - _full - _half
+        _stars = "⭐" * _full + ("✨" if _half else "") + "☆" * _empty
+
+        # Тренд vs вчора
+        _trend_str = ""
+        try:
+            _scores_hist = storage.load("day_scores.json", default={})
+            _yest_score = _scores_hist.get(_yest_rep)
+            if _yest_score is not None:
+                _diff = _score - int(_yest_score)
+                _trend_str = f"  {'↑' if _diff >= 0 else '↓'}{abs(_diff):+d} vs вчора".replace("+-","+")
+                _trend_str = f"  {'↑+' if _diff >= 0 else '↓'}{abs(_diff)} vs вчора"
+            # Зберігаємо сьогоднішній скор
+            _scores_hist[_today_rep] = _score
+            _scores_hist = {k: v for k, v in sorted(_scores_hist.items())[-60:]}
+            storage.save("day_scores.json", _scores_hist)
+        except: pass
+
+        _score_line = f"⚡ <b>День: {_stars} {_score}/100</b>{_trend_str}"
+        parts.insert(2 if _ai_briefing else 1, _score_line)
+        print(f"[day_score] {_score}/100 — {_breakdown}")
+    except Exception as _dse:
+        print(f"[day_score] error: {_dse}")
+
     # ── Блок 1: ПОГОДА — розширений ───────────────────────────────────────────
     try:
         _wl = weather_text.lower() if weather_text else ""
