@@ -4676,9 +4676,6 @@ def check_morning_brief():
     state["last"] = today
     save_json_file(MORNING_BRIEF_FILE, state)
     msg_out = "\n".join(lines_out)
-    # Обрізаємо до ліміту Telegram (4096 символів)
-    if len(msg_out) > 4090:
-        msg_out = msg_out[:4087] + "..."
     send_telegram(msg_out)
     print(f"Morning brief sent: {today} shift={shift}")
 
@@ -4825,7 +4822,7 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
         payload = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": max(max_tokens, 300),
+                "maxOutputTokens": max(max_tokens, 400),
                 "temperature": 0.95
             },
         }).encode()
@@ -7195,8 +7192,6 @@ def check_morning_context():
         gh_morning["last"] = today
         _gh_save_json("monitor_morning_ctx.json", gh_morning, gh_morning_sha)
 
-        if len(msg) > 4090:
-            msg = msg[:4087] + "..."
         send_telegram(msg)
         print(f"Morning context sent: shift={shift}, hour={h}")
 
