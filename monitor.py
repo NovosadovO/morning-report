@@ -2408,7 +2408,7 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
         try:
             body_ai = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 900, "temperature": 0.8},
+                "generationConfig": {"maxOutputTokens": 1200, "temperature": 0.8},
             }).encode()
             req_ai = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -4657,7 +4657,7 @@ def check_morning_brief():
                 f"Ціль: схуднення до 78 кг, регулярний біг, крипто-інвестиції. "
                 f"1-2 речення, бадьоро, тільки конкретика. Українська."
             )
-            payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":130,"temperature":0.95}}).encode()
+            payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":300,"temperature":0.95}}).encode()
             req_ai = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
                 data=payload, headers={"Content-Type":"application/json"}, method="POST"
@@ -5363,7 +5363,7 @@ def check_weekly_habit_stats():
                     f"Дай 1-2 речення: що вийшло добре і що покращити наступного тижня. "
                     f"Конкретно, без загальних слів."
                 )
-                payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":150,"temperature":0.7}}).encode()
+                payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":300,"temperature":0.7}}).encode()
                 req = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
                     data=payload, headers={"Content-Type":"application/json"}, method="POST"
@@ -6870,7 +6870,7 @@ def check_smart_notifications():
                         cal_ev = _get_calendar_events_text()
                         cal_hint = f" Календар: {cal_ev}." if cal_ev and cal_ev != "нічого не заплановано" else ""
                         full_prompt = f"{prompt_text}{w_context}{cal_hint} [id:{slot_seed}]"
-                        payload = json.dumps({"contents":[{"parts":[{"text":full_prompt}]}],"generationConfig":{"maxOutputTokens":150,"temperature":0.95}}).encode()
+                        payload = json.dumps({"contents":[{"parts":[{"text":full_prompt}]}],"generationConfig":{"maxOutputTokens":300,"temperature":0.95}}).encode()
                         req_ai = urllib.request.Request(
                             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
                             data=payload, headers={"Content-Type":"application/json"}, method="POST"
@@ -7563,7 +7563,7 @@ def check_crypto_morning():
                     f"Дай 1-2 речення аналіз для довгострокового HODLera: "
                     f"що це означає, чи варто щось робити? Без фінансових порад, просто аналіз."
                 )
-                payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":150,"temperature":0.7}}).encode()
+                payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":300,"temperature":0.7}}).encode()
                 req2 = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
                     data=payload, headers={"Content-Type":"application/json"}, method="POST"
@@ -7996,7 +7996,7 @@ def check_friday_recap():
                     f"2) одна конкретна пропозиція чим зайнятись на вихідних для здоров'я. "
                     f"Коротко, по-дружньому."
                 )
-                payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":150,"temperature":0.8}}).encode()
+                payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":300,"temperature":0.8}}).encode()
                 req = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
                     data=payload, headers={"Content-Type":"application/json"}, method="POST"
@@ -8742,7 +8742,7 @@ def check_strava_new_activity():
                 )
                 payload = _json_s.dumps({
                     "contents": [{"parts": [{"text": prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 120, "temperature": 0.7}
+                    "generationConfig": {"maxOutputTokens": 300, "temperature": 0.7}
                 }).encode()
                 req_ai = _ur_s.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
