@@ -3444,6 +3444,8 @@ def main():
     # ── КРОК 8: Calendar-aware AI секція (кожен звіт унікальна порада) ───────
     ai_insight = None
     gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    shift_hint = ""
+    weight_hint = ""
     if gemini_key:
         try:
             import uuid as _uuid_r, re as _re_r
@@ -3554,6 +3556,45 @@ def main():
     # ── Динамічний заголовок ───────────────────────────────────────────────────
     header = _build_report_header(now_local, hour_key, cal_text)
     parts = [header]
+
+    # ── AI-брифінг: 1 речення на початку звіту ────────────────────────────────
+    _ai_briefing = None
+    if gemini_key:
+        try:
+            import uuid as _uuid_b
+            _seed_b = str(_uuid_b.uuid4())[:8]
+            # Коротко: зміна + погода + календар + вага
+            _w_short = ""
+            if weather_text:
+                _wt_lines = [l for l in weather_text.split("\n") if l.strip()]
+                _w_short = _wt_lines[0] if _wt_lines else ""
+            _brief_prompt = (
+                f"Олег, {shift_hint.rstrip('.')}. "
+                f"Погода: {_w_short}. "
+                f"Сьогодні в календарі: {cal_events_text}. "
+                f"{weight_hint} "
+                f"Напиши ОДНЕ речення українською — персональний брифінг початку дня. "
+                f"Починай звернення з 'Олеже,'. Конкретно, без загальних слів. [seed:{_seed_b}]"
+            )
+            _brief_payload = json.dumps({
+                "contents": [{"parts": [{"text": _brief_prompt}]}],
+                "generationConfig": {"maxOutputTokens": 80, "temperature": 0.85},
+                "thinkingConfig": {"thinkingBudget": 0}
+            }).encode()
+            _brief_req = urllib.request.Request(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                data=_brief_payload, headers={"Content-Type": "application/json"}, method="POST"
+            )
+            with urllib.request.urlopen(_brief_req, timeout=15) as _r_b:
+                _brief_resp = json.loads(_r_b.read())
+            _ai_briefing = _brief_resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+            if _ai_briefing and _ai_briefing[-1] not in ".!?»":
+                _ai_briefing += "."
+        except Exception as _e_b:
+            print(f"ai_briefing error: {_e_b}")
+
+    if _ai_briefing:
+        parts.insert(1, f"🤖 <i>{esc(_ai_briefing)}</i>")
 
     # ── Блок 1: ПОГОДА — розширений ───────────────────────────────────────────
     try:
