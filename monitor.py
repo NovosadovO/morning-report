@@ -2344,16 +2344,21 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
         if _pf:
             _tv = _pf.get("total_value", 0)
             _pnl = _pf.get("total_pnl")
-            _ch24 = _pf.get("total_change24", 0)
+            _ch24 = _pf.get("change_24h", _pf.get("total_change24", 0))
             _pf_parts = [f"Загальна вартість: ${_tv:,.0f}"]
             if _pnl is not None:
                 _pf_parts.append(f"P&L: ${_pnl:+,.0f}")
             _pf_parts.append(f"Зміна 24г: ${_ch24:+,.0f}")
-            _pos = _pf.get("positions", [])
-            if _pos:
-                _top = sorted(_pos, key=lambda x: x.get("value", 0), reverse=True)[:5]
+            _pos_raw = _pf.get("positions", {})
+            # positions може бути dict {sym: {...}} або list
+            if isinstance(_pos_raw, dict):
+                _pos_list = [{"symbol": sym, **data} for sym, data in _pos_raw.items()]
+            else:
+                _pos_list = list(_pos_raw)
+            if _pos_list:
+                _top = sorted(_pos_list, key=lambda x: x.get("value", 0), reverse=True)[:5]
                 _pos_str = ", ".join(
-                    f"{p['symbol']} ${p.get('value',0):,.0f} ({p.get('pct_portfolio',0):.0f}%)"
+                    f"{p.get('symbol','?')} ${p.get('value',0):,.0f}"
                     + (f" P&L:{p['pnl_pct']:+.1f}%" if p.get('pnl_pct') is not None else "")
                     for p in _top
                 )
@@ -2369,7 +2374,7 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
         _now_s = datetime.now(timezone.utc) + timedelta(hours=2)
         _ms = _gms_s(_now_s.year, _now_s.month)
         _runs_cnt = _ms.get("runs", 0)
-        _runs_km = _ms.get("distance_km", 0)
+        _runs_km = _ms.get("km", _ms.get("distance_km", 0))
         _run_parts = [f"Цей місяць: {_runs_cnt} пробіжок, {_runs_km:.1f} км"]
         # Остання пробіжка
         try:
