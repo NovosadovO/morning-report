@@ -3589,9 +3589,13 @@ def main():
                 _ai_briefing += "."
         except Exception as _e_b:
             print(f"ai_briefing error: {_e_b}")
+            _ai_briefing = f"[briefing error: {_e_b}]"
 
     if _ai_briefing:
-        parts.insert(1, f"🤖 <i>{esc(_ai_briefing)}</i>")
+        if _ai_briefing.startswith("[briefing error"):
+            parts.insert(1, f"🤖 <i>{esc(_ai_briefing)}</i>")
+        else:
+            parts.insert(1, f"🤖 <i>{esc(_ai_briefing)}</i>")
 
     # ── Блок 1: ПОГОДА — розширений ───────────────────────────────────────────
     try:
