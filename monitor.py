@@ -3502,7 +3502,7 @@ def main():
             )
             ai_payload = json.dumps({
                 "contents": [{"parts": [{"text": ai_prompt}]}],
-                "generationConfig": {"maxOutputTokens": 512, "temperature": 0.9},
+                "generationConfig": {"maxOutputTokens": 1024, "temperature": 0.9},
             }).encode()
             ai_req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -3575,7 +3575,7 @@ def main():
             )
             _brief_payload = json.dumps({
                 "contents": [{"parts": [{"text": _brief_prompt}]}],
-                "generationConfig": {"maxOutputTokens": 512, "temperature": 0.85}
+                "generationConfig": {"maxOutputTokens": 1024, "temperature": 0.85}
             }).encode()
             _brief_req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -8932,7 +8932,7 @@ def check_stress_alert():
             )
             payload = _json_sa.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 512, "temperature": 0.6}
+                "generationConfig": {"maxOutputTokens": 1024, "temperature": 0.6}
             }).encode()
             req_ai = _ur_sa.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
@@ -9096,7 +9096,7 @@ def check_monthly_summary():
             )
             payload = _json_ms.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 512, "temperature": 0.7}
+                "generationConfig": {"maxOutputTokens": 1024, "temperature": 0.7}
             }).encode()
             req_ai = _ur_ms.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
