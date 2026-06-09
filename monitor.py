@@ -2365,8 +2365,7 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
     # ── Біг (Strava) ──────────────────────────────────────────────────────────
     run_facts = ""
     try:
-        from strava import get_month_stats as _gms_s, get_recent_runs as _grr
-        import datetime as _dt_s
+        from strava import get_month_stats as _gms_s, get_last_activity as _gla_s
         _now_s = datetime.now(timezone.utc) + timedelta(hours=2)
         _ms = _gms_s(_now_s.year, _now_s.month)
         _runs_cnt = _ms.get("runs", 0)
@@ -2374,13 +2373,12 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
         _run_parts = [f"Цей місяць: {_runs_cnt} пробіжок, {_runs_km:.1f} км"]
         # Остання пробіжка
         try:
-            _recent = _grr(limit=1)
-            if _recent:
-                _lr = _recent[0]
+            _lr = _gla_s()
+            if _lr:
                 _run_parts.append(
                     f"Остання: {_lr.get('distance_km',0):.1f} км "
-                    f"темп {_lr.get('pace_str','?')} "
-                    f"({_lr.get('date','')})"
+                    f"темп {_lr.get('pace','?')} "
+                    f"({_lr.get('when','?')}, {_lr.get('date','')})"
                 )
         except Exception: pass
         run_facts = ". ".join(_run_parts)
