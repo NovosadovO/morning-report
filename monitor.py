@@ -2111,7 +2111,10 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h = now_local.hour
     today_str_s = now_local.strftime("%Y-%m-%d")
-    slot_seed = now_local.strftime("%Y-%m-%d-%H") + str(now_local.minute // 30)
+    # Seed змінюється кожен звіт — з точного часу + хешу переданих даних
+    import hashlib as _hsh_seed
+    _raw_seed = (prices_text or "") + (calendar_text or "") + (email_text or "") + now_local.strftime("%Y-%m-%d-%H-%M")
+    slot_seed = _hsh_seed.md5(_raw_seed.encode()).hexdigest()[:12]
 
     shift_ctx = _get_current_shift_context(calendar_text)
     shift = shift_ctx.get("shift", "free")
@@ -2163,6 +2166,15 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
             last_key = keys[-1]
             last_w = wd[last_key]
             diff = round(last_w - 78.0, 1)
+            # Показуємо останні 7 записів з датами (прочерк якщо нема)
+            _w_rows = []
+            _check_days = 7
+            for _di in range(_check_days - 1, -1, -1):
+                _dk = (now_local - timedelta(days=_di)).strftime("%Y-%m-%d")
+                _dv = wd.get(_dk)
+                _row = f"{_dk}: {_dv} кг" if _dv else f"{_dk}: —"
+                _w_rows.append(_row)
+            weight_facts = f"Остання: {last_w} кг ({last_key}). Ціль 78 кг — залишилось {diff} кг.\n" + " | ".join(_w_rows)
             if len(keys) >= 7:
                 week_ago = wd.get(keys[-7], wd.get(keys[0]))
                 delta_week = round(last_w - week_ago, 1)
@@ -2171,20 +2183,33 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
                 month_ago_val = wd.get(keys[-30], wd.get(keys[0]))
                 delta_month = round(last_w - month_ago_val, 1)
                 weight_trend += f", за місяць: {'+' if delta_month > 0 else ''}{delta_month} кг"
-            weight_facts = f"Остання: {last_w} кг. Ціль 78 кг — залишилось {diff} кг. {weight_trend}"
+            if weight_trend:
+                weight_facts += f". {weight_trend}"
     except: pass
 
-    # Кроки
+    # Кроки — з QWatch (основне джерело) або StepsApp
     steps_facts = ""
     try:
         yest = (now_local - timedelta(days=1)).strftime("%Y-%m-%d")
-        from steps import load_steps_data as _lsd_s
-        sd = _lsd_s()
-        if sd and sd.get(yest):
-            st = sd[yest].get("steps", 0)
-            km = sd[yest].get("distance_m", 0) / 1000
-            goal_ok = "ціль ✅" if st >= 8000 else "ціль 8000 ❌"
-            steps_facts = f"Вчора: {st:,} кроків ({km:.1f} км) — {goal_ok}"
+        # Спочатку пробуємо QWatch
+        _qw_all_s = storage.load("qwatch_data.json", default={})
+        _st_today = (_qw_all_s.get(today_str_s) or {}).get("steps", 0) or 0
+        _st_yest  = (_qw_all_s.get(yest) or {}).get("steps", 0) or 0
+        if _st_today > 0:
+            goal_ok = "ціль ✅" if _st_today >= 8000 else f"ціль 8000 {'✅' if _st_today >= 8000 else '❌'}"
+            steps_facts = f"Сьогодні: {_st_today:,} кроків — {'✅ ціль' if _st_today >= 8000 else '❌ ціль 8000'}"
+        elif _st_yest > 0:
+            steps_facts = f"Вчора: {_st_yest:,} кроків — {'✅ ціль' if _st_yest >= 8000 else '❌ ціль 8000'}"
+        else:
+            # Fallback: StepsApp
+            from steps import load_steps_data as _lsd_s
+            sd = _lsd_s()
+            if sd and sd.get(yest):
+                st = sd[yest].get("steps", 0)
+                km = sd[yest].get("distance_m", 0) / 1000
+                steps_facts = f"Вчора: {st:,} кроків ({km:.1f} км) — {'✅ ціль' if st >= 8000 else '❌ ціль 8000'}"
+            else:
+                steps_facts = "Дані кроків відсутні (QWatch не синхронізовано?)"
     except: pass
 
     # Ліки
@@ -2470,7 +2495,7 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
         try:
             body_ai = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 3000, "temperature": 0.8},
+                "generationConfig": {"maxOutputTokens": 3000, "temperature": 1.0},
                 "thinkingConfig": {"thinkingBudget": 0},
             }).encode()
             req_ai = urllib.request.Request(
@@ -4008,71 +4033,52 @@ def main():
         _health_lines = [_section_header("💪", "ЗДОРОВ'Я")]
         import storage as _st_h
 
-        # Вага — таблиця останніх 7 днів
+        # Вага — таблиця останніх 7 ДНІВ (з прочерком якщо нема запису)
         try:
             _wd = _st_h.load("weight_data.json") or _st_h.load_weight() or {}
             if _wd:
-                _w_keys = sorted(_wd.keys())[-7:]
-                _w_vals_raw = [(_k, _wd.get(_k)) for _k in _w_keys]
-                _w_vals_only = [v for _, v in _w_vals_raw if v]
-                _last_w = _w_vals_only[-1] if _w_vals_only else None
+                _all_w_keys = sorted(_wd.keys())
+                _last_w_key = _all_w_keys[-1] if _all_w_keys else None
+                _last_w = _wd.get(_last_w_key) if _last_w_key else None
                 if _last_w:
                     _diff_goal = round(_last_w - 78.0, 1)
-                    _prev_vals = _w_vals_only
-                    _delta_w = round(_prev_vals[-1] - _prev_vals[-2], 1) if len(_prev_vals) >= 2 else 0
+                    _all_w_vals = [_wd[k] for k in _all_w_keys if _wd.get(k)]
+                    _delta_w = round(_all_w_vals[-1] - _all_w_vals[-2], 1) if len(_all_w_vals) >= 2 else 0
                     _d_icon = "📈" if _delta_w > 0.1 else ("📉" if _delta_w < -0.1 else "➡️")
-                    if _diff_goal > 0:
-                        _goal_str = f"до 78 кг: <b>{_diff_goal:+.1f} кг</b>"
-                    else:
-                        _goal_str = "🏆 <b>Ціль 78 кг досягнута!</b>"
-
-                    # Заголовок рядка
+                    _goal_str = f"до 78 кг: <b>{_diff_goal:+.1f} кг</b>" if _diff_goal > 0 else "🏆 <b>Ціль 78 кг досягнута!</b>"
                     _w_header = f"⚖️ <b>{_last_w} кг</b>  {_d_icon} {_delta_w:+.1f} кг  |  {_goal_str}"
-                    # Таблиця 7 днів
+                    # Останні 7 ДНІВ з прочерком де нема запису
                     _w_rows = []
-                    for _wk, _wv in _w_vals_raw:
-                        # ключ може бути "2025-05-28" або "28.05"
-                        try:
-                            from datetime import datetime as _dt2
-                            if "-" in _wk:
-                                _wlabel = _dt2.strptime(_wk, "%Y-%m-%d").strftime("%d.%m")
-                            else:
-                                _wlabel = _wk[:5]
-                        except Exception:
-                            _wlabel = _wk[:5]
-                        _wval_str = f"<b>{_wv} кг</b>" if _wv else "—"
-                        _w_rows.append(f"  {_wlabel}  {_wval_str}")
+                    for _di in range(6, -1, -1):
+                        _dk = (now_local - timedelta(days=_di)).strftime("%Y-%m-%d")
+                        _dv = _wd.get(_dk)
+                        _dlabel = (now_local - timedelta(days=_di)).strftime("%d.%m")
+                        _dstr = f"<b>{_dv} кг</b>" if _dv else "—"
+                        _w_rows.append(f"  {_dlabel}  {_dstr}")
                     _health_lines.append(_w_header + "\n" + "\n".join(_w_rows))
         except Exception as _e_w: pass
 
         # Кроки — таблиця останніх 7 днів
+        # Кроки — з QWatch (основне), fallback StepsApp
         try:
-            from steps import load_steps_data as _lsd
-            _sdata = _lsd()
-            _step_keys = sorted(_sdata.keys())[-7:]
-            # Заголовок — вчорашній день
-            _st_data = _sdata.get(_yest_rep, {})
-            _st_n = _st_data.get("steps", 0) if _st_data else 0
-            _km_n = (_st_data.get("distance_m", 0) / 1000) if _st_data else 0
-            _st_icon = "✅" if _st_n >= 8000 else ("🟡" if _st_n >= 5000 else "🔴")
-            _st_header = f"👟 Кроки вчора: <b>{_st_n:,}</b> {_st_icon}  ({_km_n:.1f} км)"
-            # Таблиця 7 днів
+            _qw_s = _st_h.load("qwatch_data.json", default={})
+            _st_today_n = (_qw_s.get(_today_rep) or {}).get("steps", 0) or 0
+            _st_yest_n  = (_qw_s.get(_yest_rep) or {}).get("steps", 0) or 0
+            _show_steps = _st_today_n if _st_today_n > 0 else _st_yest_n
+            _steps_label = "Сьогодні" if _st_today_n > 0 else "Вчора"
+            _st_icon = "✅" if _show_steps >= 8000 else ("🟡" if _show_steps >= 5000 else "🔴")
+            _st_header = f"👟 Кроки ({_steps_label}): <b>{_show_steps:,}</b> {_st_icon}"
+            # Таблиця 7 ДНІВ з прочерком
             _st_rows = []
-            for _sk in _step_keys:
-                try:
-                    from datetime import datetime as _dt3
-                    if "-" in _sk:
-                        _slabel = _dt3.strptime(_sk, "%Y-%m-%d").strftime("%d.%m")
-                    else:
-                        _slabel = _sk[:5]
-                except Exception:
-                    _slabel = _sk[:5]
-                _sv = (_sdata.get(_sk) or {}).get("steps")
+            for _di in range(6, -1, -1):
+                _dk = (now_local - timedelta(days=_di)).strftime("%Y-%m-%d")
+                _dlabel = (now_local - timedelta(days=_di)).strftime("%d.%m")
+                _sv = (_qw_s.get(_dk) or {}).get("steps", 0) or 0
                 if _sv:
                     _sicon = "✅" if _sv >= 8000 else ("🟡" if _sv >= 5000 else "🔴")
-                    _st_rows.append(f"  {_slabel}  <b>{_sv:,}</b> {_sicon}")
+                    _st_rows.append(f"  {_dlabel}  <b>{_sv:,}</b> {_sicon}")
                 else:
-                    _st_rows.append(f"  {_slabel}  —")
+                    _st_rows.append(f"  {_dlabel}  —")
             _health_lines.append(_st_header + "\n" + "\n".join(_st_rows))
         except Exception: pass
 
