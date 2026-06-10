@@ -346,7 +346,7 @@ def get_status(shift_info=None):
 
 STATUS_LABELS = {
     "working_early": "на ранній зміні (06:00–18:00)",
-    "working_night": "на нічній зміні (18:00–06:00)",
+    "working_night": "на нічній зміні (17:00–05:00)",
     "sleeping":      "спить / нічний відпочинок",
     "home":          "вдома, вільний час",
     "pre_shift":     "готується до зміни",
@@ -496,7 +496,7 @@ def get_system_prompt(ctx=None):
     now = ctx["now"]
     shift_labels = {
         "early": "рання (06:00–18:00)",
-        "night": "нічна (18:00–06:00)",
+        "night": "нічна (17:00–05:00)",
         "free":  "вихідний / вільний",
     }
 
