@@ -228,16 +228,16 @@
   },
   "2026-06-10": {
     "date": "2026-06-10",
-    "steps": 1425,
-    "sleep_quality": 1,
-    "hr_avg": 84,
-    "calories": 306000,
-    "hrv": 33,
+    "steps": 14341,
+    "sleep_total_min": 35,
+    "hr_avg": 68,
+    "hrv": 37,
     "weight_kg": 83.0,
     "age": 36,
     "height_cm": 175,
+    "gender": "male",
     "spo2": null,
     "source": "qwatch",
-    "saved_at": "2026-06-10 00:53"
+    "saved_at": "2026-06-10 23:27"
   }
 }
