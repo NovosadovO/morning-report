@@ -1117,12 +1117,12 @@ def plot_combined_dashboard() -> bytes | None:
 
         # ── Фігура ────────────────────────────────────────────────────────────
         n_days = len(all_dates)
-        fig_w  = max(28, n_days * 0.105)
-        fig    = plt.figure(figsize=(fig_w, 20), facecolor=BG)
+        fig_w  = max(32, n_days * 0.12)
+        fig    = plt.figure(figsize=(fig_w, 26), facecolor=BG)
         outer_gs = _gs.GridSpec(3, 1, figure=fig,
-                                hspace=0.55,
-                                height_ratios=[2.5, 2.5, 2.0],
-                                left=0.06, right=0.98,
+                                hspace=0.60,
+                                height_ratios=[3.0, 2.5, 2.5],
+                                left=0.07, right=0.98,
                                 top=0.95, bottom=0.04)
 
         # ══════════════════════════════════════════════════════════════════════
@@ -1132,8 +1132,8 @@ def plot_combined_dashboard() -> bytes | None:
         ax_h.set_facecolor(BG)
         ax_h.axis("off")
 
-        CELL = 1.0
-        GAP  = 0.20
+        CELL = 1.4
+        GAP  = 0.25
 
         for hi, hkey in enumerate(HABITS):
             color = HABIT_COLORS.get(hkey, MUTED)
@@ -1143,36 +1143,36 @@ def plot_combined_dashboard() -> bytes | None:
                 cx = di * (CELL + GAP) + CELL / 2
                 cy = -(hi * 1.7) + 0.3
                 if v is True:
-                    circ = plt.Circle((cx, cy), 0.46, color=color, alpha=0.9, zorder=2)
+                    circ = plt.Circle((cx, cy), 0.58, color=color, alpha=0.9, zorder=2)
                     ax_h.add_patch(circ)
-                    ax_h.text(cx, cy, "✓", fontsize=11, ha="center", va="center",
+                    ax_h.text(cx, cy, "✓", fontsize=14, ha="center", va="center",
                               color="white", fontweight="bold", zorder=3)
                 elif v is False:
-                    circ = plt.Circle((cx, cy), 0.46, color="#21262D", alpha=1.0, zorder=2)
+                    circ = plt.Circle((cx, cy), 0.58, color="#21262D", alpha=1.0, zorder=2)
                     ax_h.add_patch(circ)
-                    ax_h.text(cx, cy, "✗", fontsize=11, ha="center", va="center",
+                    ax_h.text(cx, cy, "✗", fontsize=14, ha="center", va="center",
                               color=RED, fontweight="bold", zorder=3)
                 else:
-                    circ = plt.Circle((cx, cy), 0.46, color="#1C2128", alpha=1.0, zorder=2)
+                    circ = plt.Circle((cx, cy), 0.58, color="#1C2128", alpha=1.0, zorder=2)
                     ax_h.add_patch(circ)
 
             # Підпис зліва
-            ax_h.text(-2.5, -(hi * 1.7) + 0.3,
+            ax_h.text(-3.0, -(hi * 1.7) + 0.3,
                       HABIT_LABELS.get(hkey, hkey),
-                      fontsize=14, color=TEXT, va="center", ha="right",
+                      fontsize=18, color=TEXT, va="center", ha="right",
                       fontweight="bold")
 
         total_w_heat = len(all_dates) * (CELL + GAP)
-        ax_h.set_xlim(-6.0, total_w_heat + 0.5)
-        ax_h.set_ylim(-len(HABITS) * 1.7 - 0.5, 2.2)
+        ax_h.set_xlim(-8.0, total_w_heat + 1.5)
+        ax_h.set_ylim(-len(HABITS) * 1.7 - 0.5, 2.5)
 
         # Місячні мітки
         cur = start_date.replace(day=1)
         while cur <= today:
             day_off = (cur - start_date).days
             xp = day_off * (CELL + GAP)
-            ax_h.text(xp, 1.9, f"{UA_MONTHS[cur.month]} {cur.year}",
-                      fontsize=14, color=MUTED, ha="left", fontweight="bold")
+            ax_h.text(xp, 2.2, f"{UA_MONTHS[cur.month]} {cur.year}",
+                      fontsize=16, color=MUTED, ha="left", fontweight="bold")
             if cur != start_date:
                 ax_h.axvline(x=xp - GAP / 2, ymin=0.02, ymax=0.93,
                              color=BORDER, linewidth=1.0, alpha=0.6)
@@ -1187,23 +1187,17 @@ def plot_combined_dashboard() -> bytes | None:
                 if (raw.get(d.isoformat()) or {}).get(hkey) is True
             )
             pct = done_cnt * 100 // max(len(all_dates), 1)
-            ax_h.text(total_w_heat + 1.0, -(hi * 1.7) + 0.3,
-                      f"{pct}%", fontsize=13, color=MUTED,
+            ax_h.text(total_w_heat + 1.5, -(hi * 1.7) + 0.3,
+                      f"{pct}%", fontsize=16, color=MUTED,
                       va="center", ha="left")
 
         ax_h.set_title("Звички з 1 січня 2026",
-                       color=TEXT, fontsize=18, fontweight="bold", pad=18)
+                       color=TEXT, fontsize=24, fontweight="bold", pad=22)
 
         # ══════════════════════════════════════════════════════════════════════
-        # ROW 2: Вага + Надходження (два підграфіки)
+        # ROW 2: Вага (на всю ширину)
         # ══════════════════════════════════════════════════════════════════════
-        inner_gs2 = _gs.GridSpecFromSubplotSpec(
-            1, 2, subplot_spec=outer_gs[1], wspace=0.35,
-            width_ratios=[1.5, 1.0]
-        )
-
-        # ── ROW 2L: Вага ──────────────────────────────────────────────────────
-        ax_w = fig.add_subplot(inner_gs2[0])
+        ax_w = fig.add_subplot(outer_gs[1])
         ax_w.set_facecolor(PANEL)
 
         present_w = [(d, wdata.get(d.isoformat()))
@@ -1231,7 +1225,7 @@ def plot_combined_dashboard() -> bytes | None:
             ax_w.annotate(f"мін {yi[best_i]:.1f}",
                           xy=(xd[best_i], yi[best_i]),
                           xytext=(6, -18), textcoords="offset points",
-                          color=YELLOW, fontsize=11, fontweight="bold")
+                          color=YELLOW, fontsize=14, fontweight="bold")
 
             ax_w.axhline(78.0, color=BLUE, linewidth=1.4, linestyle="--",
                          alpha=0.7, label="ціль 78 кг")
@@ -1239,11 +1233,11 @@ def plot_combined_dashboard() -> bytes | None:
             ax_w.set_xlim(xd[0], xd[-1])
             ax_w.set_ylim(min(yi) - 2, max(yi) + 2)
             ax_w.xaxis.set_major_formatter(_mdates.DateFormatter("%d.%m"))
-            ax_w.xaxis.set_major_locator(_mdates.WeekdayLocator(interval=2))
-            plt.setp(ax_w.xaxis.get_majorticklabels(), rotation=45, ha="right", fontsize=11)
-            ax_w.tick_params(colors=MUTED, labelsize=12)
+            ax_w.xaxis.set_major_locator(_mdates.WeekdayLocator(interval=1))
+            plt.setp(ax_w.xaxis.get_majorticklabels(), rotation=45, ha="right", fontsize=14)
+            ax_w.tick_params(colors=MUTED, labelsize=14)
 
-            ax_w.legend(fontsize=12, loc="upper right",
+            ax_w.legend(fontsize=14, loc="upper right",
                         framealpha=0.3, facecolor=PANEL,
                         edgecolor=BORDER, labelcolor=TEXT)
 
@@ -1251,107 +1245,18 @@ def plot_combined_dashboard() -> bytes | None:
             sign = "+" if diff > 0 else ""
             ax_w.text(0.01, 0.97,
                       f"Старт: {yi[0]:.1f}  →  Зараз: {yi[-1]:.1f} кг  ({sign}{diff:.1f} кг)",
-                      transform=ax_w.transAxes, fontsize=12,
+                      transform=ax_w.transAxes, fontsize=16,
                       color=tc, fontweight="bold", va="top")
         else:
             ax_w.text(0.5, 0.5, "Немає даних ваги",
-                      ha="center", va="center", color=MUTED, fontsize=13,
+                      ha="center", va="center", color=MUTED, fontsize=16,
                       transform=ax_w.transAxes)
 
         ax_w.set_title("⚖️ Вага з 1 січня 2026",
-                       color=TEXT, fontsize=15, fontweight="bold")
+                       color=TEXT, fontsize=22, fontweight="bold")
         for spine in ax_w.spines.values():
             spine.set_edgecolor(BORDER)
         ax_w.grid(axis="y", alpha=0.2)
-
-        # ── ROW 2R: Місячні надходження ───────────────────────────────────────
-        ax_fin = fig.add_subplot(inner_gs2[1])
-        ax_fin.set_facecolor(PANEL)
-
-        # Базова зарплата Minebea Mitsumi (EUR) — приблизна сума
-        # Дані можна розширити через бота (/income add)
-        try:
-            from storage import _load_github as _lgh
-            _fin_data = _lgh("finance_monthly.json") or {}
-        except Exception:
-            _fin_data = {}
-
-        # Генеруємо місяці з початку 2026
-        _months_list = []
-        _cur_m = _date_cls(2026, 1, 1)
-        while _cur_m <= today:
-            _months_list.append(_cur_m.strftime("%Y-%m"))
-            nxt_m2 = _cur_m.month % 12 + 1
-            nxt_y2 = _cur_m.year + (1 if _cur_m.month == 12 else 0)
-            _cur_m = _cur_m.replace(year=nxt_y2, month=nxt_m2, day=1)
-
-        _income_vals  = []
-        _expense_vals = []
-        _m_labels     = []
-        UA_M_SHORT = {1:"Січ",2:"Лют",3:"Бер",4:"Кві",5:"Тра",6:"Чер",
-                      7:"Лип",8:"Сер",9:"Вер",10:"Жов",11:"Лис",12:"Гру"}
-
-        for _mk in _months_list:
-            _y, _mo = int(_mk[:4]), int(_mk[5:7])
-            _entry = _fin_data.get(_mk, {})
-            _income_vals.append(float(_entry.get("income", 0)))
-            _expense_vals.append(float(_entry.get("expenses", 0)))
-            _m_labels.append(UA_M_SHORT[_mo])
-
-        _x_fin = np.arange(len(_months_list))
-        _bar_w = 0.38
-
-        if any(v > 0 for v in _income_vals) or any(v > 0 for v in _expense_vals):
-            _b1 = ax_fin.bar(_x_fin - _bar_w/2, _income_vals, _bar_w,
-                             color=GREEN, alpha=0.85, label="Надходження €")
-            _b2 = ax_fin.bar(_x_fin + _bar_w/2, _expense_vals, _bar_w,
-                             color=RED, alpha=0.75, label="Витрати €")
-
-            # Підписи на барах
-            for bar in _b1:
-                h = bar.get_height()
-                if h > 0:
-                    ax_fin.text(bar.get_x() + bar.get_width()/2, h + 10,
-                                f"€{int(h)}", ha="center", va="bottom",
-                                fontsize=10, color=GREEN, fontweight="bold")
-            for bar in _b2:
-                h = bar.get_height()
-                if h > 0:
-                    ax_fin.text(bar.get_x() + bar.get_width()/2, h + 10,
-                                f"€{int(h)}", ha="center", va="bottom",
-                                fontsize=10, color=RED, fontweight="bold")
-
-            ax_fin.set_xticks(_x_fin)
-            ax_fin.set_xticklabels(_m_labels, fontsize=12, color=TEXT)
-            ax_fin.tick_params(colors=MUTED, labelsize=12)
-            ax_fin.legend(fontsize=11, framealpha=0.3, facecolor=PANEL,
-                          edgecolor=BORDER, labelcolor=TEXT)
-        else:
-            # Немає даних — показуємо інструкцію
-            ax_fin.text(0.5, 0.60,
-                        "Дані відсутні",
-                        ha="center", va="center", color=MUTED, fontsize=14,
-                        transform=ax_fin.transAxes)
-            ax_fin.text(0.5, 0.42,
-                        "Введи через бота:",
-                        ha="center", va="center", color=MUTED, fontsize=12,
-                        transform=ax_fin.transAxes)
-            ax_fin.text(0.5, 0.28,
-                        "/income 2026-06 1200",
-                        ha="center", va="center", color=BLUE, fontsize=12,
-                        fontweight="bold", transform=ax_fin.transAxes,
-                        fontfamily="monospace")
-            ax_fin.text(0.5, 0.14,
-                        "/expenses 2026-06 850",
-                        ha="center", va="center", color=ORANGE, fontsize=12,
-                        fontweight="bold", transform=ax_fin.transAxes,
-                        fontfamily="monospace")
-
-        ax_fin.set_title("💶 Надходження / Витрати",
-                         color=TEXT, fontsize=15, fontweight="bold")
-        for spine in ax_fin.spines.values():
-            spine.set_edgecolor(BORDER)
-        ax_fin.grid(axis="y", alpha=0.2)
 
         # ══════════════════════════════════════════════════════════════════════
         # ROW 3: Бігові км по місяцях + поточний місяць по тижнях
@@ -1396,19 +1301,19 @@ def plot_combined_dashboard() -> bytes | None:
                     ax_run_m.text(bar.get_x() + bar.get_width()/2,
                                   bar.get_height() + 0.3,
                                   f"{km:.0f}", ha="center", va="bottom",
-                                  fontsize=12, color=ORANGE, fontweight="bold")
+                                  fontsize=15, color=ORANGE, fontweight="bold")
 
             # Ціль 40 км/місяць
             ax_run_m.axhline(40, color=GREEN, linewidth=1.5, linestyle="--",
                              alpha=0.7, label="ціль 40 км")
             ax_run_m.set_xticks(_xr)
-            ax_run_m.set_xticklabels(_run_labels_m, fontsize=12, color=TEXT)
-            ax_run_m.tick_params(colors=MUTED, labelsize=12)
-            ax_run_m.legend(fontsize=11, framealpha=0.3, facecolor=PANEL,
+            ax_run_m.set_xticklabels(_run_labels_m, fontsize=15, color=TEXT)
+            ax_run_m.tick_params(colors=MUTED, labelsize=14)
+            ax_run_m.legend(fontsize=13, framealpha=0.3, facecolor=PANEL,
                             edgecolor=BORDER, labelcolor=TEXT)
             ax_run_m.grid(axis="y", alpha=0.2)
             ax_run_m.set_title("🏃 Км по місяцях 2026",
-                               color=TEXT, fontsize=15, fontweight="bold")
+                               color=TEXT, fontsize=20, fontweight="bold")
             for spine in ax_run_m.spines.values():
                 spine.set_edgecolor(BORDER)
 
@@ -1430,7 +1335,7 @@ def plot_combined_dashboard() -> bytes | None:
                     ax_run_d.text(bar.get_x() + bar.get_width()/2,
                                   bar.get_height() + 0.05,
                                   f"{km:.1f}", ha="center", va="bottom",
-                                  fontsize=11, color=GREEN, fontweight="bold")
+                                  fontsize=14, color=GREEN, fontweight="bold")
 
             # Сьогодні — вертикальна мітка
             ax_run_d.axvline(today.day, color=YELLOW, linewidth=1.5,
@@ -1443,28 +1348,28 @@ def plot_combined_dashboard() -> bytes | None:
             _runs_cnt   = _cur_ms.get("runs", 0) or 0
             ax_run_d.set_title(
                 f"🏃 {_month_names_ua[today.month]} {today.year}  —  {_runs_cnt} пробіжок  /  {_total_km_m} км",
-                color=TEXT, fontsize=15, fontweight="bold"
+                color=TEXT, fontsize=20, fontweight="bold"
             )
             ax_run_d.set_xlim(0.5, _days_in_m + 0.5)
             ax_run_d.set_xticks([1, 5, 10, 15, 20, 25, _days_in_m])
-            ax_run_d.tick_params(colors=MUTED, labelsize=12)
+            ax_run_d.tick_params(colors=MUTED, labelsize=14)
             ax_run_d.grid(axis="y", alpha=0.2)
-            ax_run_d.legend(fontsize=11, framealpha=0.3, facecolor=PANEL,
+            ax_run_d.legend(fontsize=13, framealpha=0.3, facecolor=PANEL,
                             edgecolor=BORDER, labelcolor=TEXT)
             for spine in ax_run_d.spines.values():
                 spine.set_edgecolor(BORDER)
 
         except Exception as _e_run:
             ax_run_m.text(0.5, 0.5, f"Strava: {_e_run}", ha="center", va="center",
-                          color=MUTED, fontsize=11, transform=ax_run_m.transAxes)
+                          color=MUTED, fontsize=14, transform=ax_run_m.transAxes)
             ax_run_d.text(0.5, 0.5, "Немає даних",
-                          ha="center", va="center", color=MUTED, fontsize=11,
+                          ha="center", va="center", color=MUTED, fontsize=14,
                           transform=ax_run_d.transAxes)
 
         # ── Загальний заголовок ──────────────────────────────────────────────
         fig.suptitle(
             f"📊 Дашборд 2026  —  до {today.strftime('%d.%m.%Y')}",
-            fontsize=20, color=TEXT, fontweight="bold", y=0.98
+            fontsize=26, color=TEXT, fontweight="bold", y=0.98
         )
 
         # ── Зберігаємо ────────────────────────────────────────────────────────
