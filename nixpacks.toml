@@ -1,5 +1,8 @@
 providers = ["python"]
 
+[variables]
+NIXPACKS_PYTHON_VERSION = "3.11"
+
 [phases.setup]
 aptPkgs = ["libfreetype6-dev", "libpng-dev", "pkg-config", "gcc", "python3-dev", "fonts-noto-color-emoji"]
 
