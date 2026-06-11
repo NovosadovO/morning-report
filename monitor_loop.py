@@ -626,15 +626,9 @@ def run_astro_watcher():
                 except Exception:
                     shift = "weekend"
                 send_hour = 8 if shift == "early" else 11
-                # Надсилати якщо час настав (з вікном до +2 год для catch-up після Railway restart)
-                if h == send_hour and m < 30:
-                    _send_astro(f"morning shift={shift}")
-                    _astro_gh_mark(morning_key)
-                    time.sleep(360)
-                    continue
-                elif h > send_hour and h < send_hour + 2:
-                    # catch-up: Railway міг пропустити вікно
-                    _send_astro(f"morning shift={shift} catch-up")
+                # Вікно: від send_hour до 17:00 (широкий catch-up після Railway restart)
+                if h >= send_hour and h < 17:
+                    _send_astro(f"morning shift={shift} h={h}")
                     _astro_gh_mark(morning_key)
                     time.sleep(360)
                     continue
@@ -642,14 +636,9 @@ def run_astro_watcher():
             # ── Вечірній о 20:00 ──
             evening_key = f"{today}_evening"
             if not _astro_gh_sent(evening_key):
-                # Вікно 20:00–21:59 для catch-up після Railway restart
-                if h == 20 and m < 30:
-                    _send_astro("evening 20:00")
-                    _astro_gh_mark(evening_key)
-                    time.sleep(360)
-                    continue
-                elif h == 21:
-                    _send_astro("evening 20:00 catch-up")
+                # Вікно 20:00–23:59 для catch-up після Railway restart
+                if h >= 20:
+                    _send_astro(f"evening h={h}")
                     _astro_gh_mark(evening_key)
                     time.sleep(360)
                     continue

@@ -2246,6 +2246,67 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ {e}")
 
+    elif text.startswith("/income") or text.startswith("/надходження"):
+        # ── Фінансові надходження: /income 2026-06 1200 ─────────────────────
+        try:
+            parts_cmd = text.split()
+            if len(parts_cmd) >= 3:
+                _month_key = parts_cmd[1]   # 2026-06
+                _amount    = float(parts_cmd[2])
+                import sys, os; sys.path.insert(0, os.path.dirname(__file__))
+                from storage import _load_github as _lgh_fin, _save_github as _sgh_fin
+                _fin = _lgh_fin("finance_monthly.json") or {}
+                if _month_key not in _fin:
+                    _fin[_month_key] = {}
+                _fin[_month_key]["income"] = _amount
+                _sgh_fin("finance_monthly.json", _fin)
+                send(chat_id, f"✅ Надходження за <b>{_month_key}</b>: €{_amount:.0f} збережено")
+            else:
+                send(chat_id, "ℹ️ Формат: <code>/income 2026-06 1200</code>\nДе 2026-06 — місяць, 1200 — сума в EUR")
+        except Exception as e:
+            send(chat_id, f"⚠️ {e}")
+
+    elif text.startswith("/expenses") or text.startswith("/витрати"):
+        # ── Фінансові витрати: /expenses 2026-06 850 ────────────────────────
+        try:
+            parts_cmd = text.split()
+            if len(parts_cmd) >= 3:
+                _month_key = parts_cmd[1]
+                _amount    = float(parts_cmd[2])
+                import sys, os; sys.path.insert(0, os.path.dirname(__file__))
+                from storage import _load_github as _lgh_ex, _save_github as _sgh_ex
+                _fin2 = _lgh_ex("finance_monthly.json") or {}
+                if _month_key not in _fin2:
+                    _fin2[_month_key] = {}
+                _fin2[_month_key]["expenses"] = _amount
+                _sgh_ex("finance_monthly.json", _fin2)
+                send(chat_id, f"✅ Витрати за <b>{_month_key}</b>: €{_amount:.0f} збережено")
+            else:
+                send(chat_id, "ℹ️ Формат: <code>/expenses 2026-06 850</code>\nДе 2026-06 — місяць, 850 — сума в EUR")
+        except Exception as e:
+            send(chat_id, f"⚠️ {e}")
+
+    elif text.startswith("/finance") or text.startswith("/фінанси"):
+        # ── Перегляд фінансів ────────────────────────────────────────────────
+        try:
+            import sys, os; sys.path.insert(0, os.path.dirname(__file__))
+            from storage import _load_github as _lgh_fv
+            _fin3 = _lgh_fv("finance_monthly.json") or {}
+            if not _fin3:
+                send(chat_id, "ℹ️ Даних ще немає.\n\nВведи:\n<code>/income 2026-06 1200</code>\n<code>/expenses 2026-06 850</code>")
+            else:
+                lines = ["💶 <b>Фінанси по місяцях:</b>\n"]
+                for mk in sorted(_fin3.keys()):
+                    _e = _fin3[mk]
+                    _inc = _e.get("income", 0)
+                    _exp = _e.get("expenses", 0)
+                    _bal = _inc - _exp
+                    _sign = "+" if _bal >= 0 else ""
+                    lines.append(f"📅 <b>{mk}</b>  Надходж: €{_inc:.0f}  Витрати: €{_exp:.0f}  Баланс: <b>{_sign}€{_bal:.0f}</b>")
+                send(chat_id, "\n".join(lines))
+        except Exception as e:
+            send(chat_id, f"⚠️ {e}")
+
     else:
         # Розпізнавання тексту QWatch Pro
         raw_text = original_text

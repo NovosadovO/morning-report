@@ -1074,3 +1074,442 @@ def plot_mini_dashboard(today_str: str = None) -> bytes | None:
     except Exception as e:
         print(f"[charts] mini_dashboard error: {e}")
         return None
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 6. COMBINED DASHBOARD — одна велика картинка: звички + вага + біг + фінанси
+# ═══════════════════════════════════════════════════════════════════════════════
+
+def plot_combined_dashboard() -> bytes | None:
+    """
+    Одна велика картинка (1800x2200):
+    ┌─────────────────────────────────────────────────┐
+    │  ROW 1: Heatmap звичок з 1 січня 2026 (повна ш) │
+    ├──────────────────┬──────────────────────────────┤
+    │  ROW 2L: Вага    │  ROW 2R: Місячні надходження │
+    │  з 1 січня 2026  │  (зарплата Minebea + інше)   │
+    ├──────────────────┴──────────────────────────────┤
+    │  ROW 3: Бігові км по тижнях (поточний місяць)   │
+    └─────────────────────────────────────────────────┘
+    """
+    if not HAS_MPL:
+        return None
+    try:
+        _rc()
+        import calendar as _cal
+        import matplotlib.gridspec as _gs
+        import matplotlib.dates as _mdates
+        import matplotlib.patches as _mpatch
+        from datetime import date as _date_cls
+
+        now = datetime.now(timezone.utc) + timedelta(hours=2)
+        today = now.date()
+        start_date = _date_cls(2026, 1, 1)
+        all_dates = [start_date + timedelta(days=i)
+                     for i in range((today - start_date).days + 1)]
+
+        raw = _load_habits()
+        wdata = _load_weight()
+        HABITS = ["shower", "run", "water", "tea", "sauna", "spray"]
+
+        UA_MONTHS = {1:"Січ",2:"Лют",3:"Бер",4:"Кві",5:"Тра",6:"Чер",
+                     7:"Лип",8:"Сер",9:"Вер",10:"Жов",11:"Лис",12:"Гру"}
+
+        # ── Фігура ────────────────────────────────────────────────────────────
+        n_days = len(all_dates)
+        fig_w  = max(28, n_days * 0.105)
+        fig    = plt.figure(figsize=(fig_w, 20), facecolor=BG)
+        outer_gs = _gs.GridSpec(3, 1, figure=fig,
+                                hspace=0.55,
+                                height_ratios=[2.5, 2.5, 2.0],
+                                left=0.06, right=0.98,
+                                top=0.95, bottom=0.04)
+
+        # ══════════════════════════════════════════════════════════════════════
+        # ROW 1: Heatmap звичок
+        # ══════════════════════════════════════════════════════════════════════
+        ax_h = fig.add_subplot(outer_gs[0])
+        ax_h.set_facecolor(BG)
+        ax_h.axis("off")
+
+        CELL = 1.0
+        GAP  = 0.20
+
+        for hi, hkey in enumerate(HABITS):
+            color = HABIT_COLORS.get(hkey, MUTED)
+            for di, d in enumerate(all_dates):
+                entry = raw.get(d.isoformat(), {}) or {}
+                v = entry.get(hkey)
+                cx = di * (CELL + GAP) + CELL / 2
+                cy = -(hi * 1.7) + 0.3
+                if v is True:
+                    circ = plt.Circle((cx, cy), 0.46, color=color, alpha=0.9, zorder=2)
+                    ax_h.add_patch(circ)
+                    ax_h.text(cx, cy, "✓", fontsize=11, ha="center", va="center",
+                              color="white", fontweight="bold", zorder=3)
+                elif v is False:
+                    circ = plt.Circle((cx, cy), 0.46, color="#21262D", alpha=1.0, zorder=2)
+                    ax_h.add_patch(circ)
+                    ax_h.text(cx, cy, "✗", fontsize=11, ha="center", va="center",
+                              color=RED, fontweight="bold", zorder=3)
+                else:
+                    circ = plt.Circle((cx, cy), 0.46, color="#1C2128", alpha=1.0, zorder=2)
+                    ax_h.add_patch(circ)
+
+            # Підпис зліва
+            ax_h.text(-2.5, -(hi * 1.7) + 0.3,
+                      HABIT_LABELS.get(hkey, hkey),
+                      fontsize=14, color=TEXT, va="center", ha="right",
+                      fontweight="bold")
+
+        total_w_heat = len(all_dates) * (CELL + GAP)
+        ax_h.set_xlim(-6.0, total_w_heat + 0.5)
+        ax_h.set_ylim(-len(HABITS) * 1.7 - 0.5, 2.2)
+
+        # Місячні мітки
+        cur = start_date.replace(day=1)
+        while cur <= today:
+            day_off = (cur - start_date).days
+            xp = day_off * (CELL + GAP)
+            ax_h.text(xp, 1.9, f"{UA_MONTHS[cur.month]} {cur.year}",
+                      fontsize=14, color=MUTED, ha="left", fontweight="bold")
+            if cur != start_date:
+                ax_h.axvline(x=xp - GAP / 2, ymin=0.02, ymax=0.93,
+                             color=BORDER, linewidth=1.0, alpha=0.6)
+            nxt_m = cur.month % 12 + 1
+            nxt_y = cur.year + (1 if cur.month == 12 else 0)
+            cur = cur.replace(year=nxt_y, month=nxt_m, day=1)
+
+        # Статистика по кожній звичці
+        for hi, hkey in enumerate(HABITS):
+            done_cnt = sum(
+                1 for d in all_dates
+                if (raw.get(d.isoformat()) or {}).get(hkey) is True
+            )
+            pct = done_cnt * 100 // max(len(all_dates), 1)
+            ax_h.text(total_w_heat + 1.0, -(hi * 1.7) + 0.3,
+                      f"{pct}%", fontsize=13, color=MUTED,
+                      va="center", ha="left")
+
+        ax_h.set_title("Звички з 1 січня 2026",
+                       color=TEXT, fontsize=18, fontweight="bold", pad=18)
+
+        # ══════════════════════════════════════════════════════════════════════
+        # ROW 2: Вага + Надходження (два підграфіки)
+        # ══════════════════════════════════════════════════════════════════════
+        inner_gs2 = _gs.GridSpecFromSubplotSpec(
+            1, 2, subplot_spec=outer_gs[1], wspace=0.35,
+            width_ratios=[1.5, 1.0]
+        )
+
+        # ── ROW 2L: Вага ──────────────────────────────────────────────────────
+        ax_w = fig.add_subplot(inner_gs2[0])
+        ax_w.set_facecolor(PANEL)
+
+        present_w = [(d, wdata.get(d.isoformat()))
+                     for d in all_dates if wdata.get(d.isoformat()) is not None]
+
+        if len(present_w) >= 2:
+            xd = [d for d, _ in present_w]
+            yi = np.array([v for _, v in present_w])
+
+            ax_w.axhspan(77.0, 79.0, alpha=0.08, color=BLUE)
+            ax_w.fill_between(xd, yi, min(yi) - 0.5, alpha=0.15, color=GREEN)
+            ax_w.plot(xd, yi, color=GREEN, linewidth=2.5, zorder=4)
+            ax_w.scatter(xd, yi, color=GREEN, s=20, zorder=5, alpha=0.7)
+
+            xn = np.arange(len(yi))
+            z  = np.polyfit(xn, yi, 1)
+            p  = np.poly1d(z)
+            tc = RED if z[0] > 0.01 else (GREEN if z[0] < -0.01 else MUTED)
+            ax_w.plot(xd, p(xn), color=tc, linewidth=2.0, linestyle=":", zorder=3,
+                      label="тренд")
+
+            best_i = int(np.argmin(yi))
+            ax_w.scatter([xd[best_i]], [yi[best_i]], color=YELLOW, s=100,
+                         zorder=7, marker="D")
+            ax_w.annotate(f"мін {yi[best_i]:.1f}",
+                          xy=(xd[best_i], yi[best_i]),
+                          xytext=(6, -18), textcoords="offset points",
+                          color=YELLOW, fontsize=11, fontweight="bold")
+
+            ax_w.axhline(78.0, color=BLUE, linewidth=1.4, linestyle="--",
+                         alpha=0.7, label="ціль 78 кг")
+
+            ax_w.set_xlim(xd[0], xd[-1])
+            ax_w.set_ylim(min(yi) - 2, max(yi) + 2)
+            ax_w.xaxis.set_major_formatter(_mdates.DateFormatter("%d.%m"))
+            ax_w.xaxis.set_major_locator(_mdates.WeekdayLocator(interval=2))
+            plt.setp(ax_w.xaxis.get_majorticklabels(), rotation=45, ha="right", fontsize=11)
+            ax_w.tick_params(colors=MUTED, labelsize=12)
+
+            ax_w.legend(fontsize=12, loc="upper right",
+                        framealpha=0.3, facecolor=PANEL,
+                        edgecolor=BORDER, labelcolor=TEXT)
+
+            diff = float(yi[-1] - yi[0])
+            sign = "+" if diff > 0 else ""
+            ax_w.text(0.01, 0.97,
+                      f"Старт: {yi[0]:.1f}  →  Зараз: {yi[-1]:.1f} кг  ({sign}{diff:.1f} кг)",
+                      transform=ax_w.transAxes, fontsize=12,
+                      color=tc, fontweight="bold", va="top")
+        else:
+            ax_w.text(0.5, 0.5, "Немає даних ваги",
+                      ha="center", va="center", color=MUTED, fontsize=13,
+                      transform=ax_w.transAxes)
+
+        ax_w.set_title("⚖️ Вага з 1 січня 2026",
+                       color=TEXT, fontsize=15, fontweight="bold")
+        for spine in ax_w.spines.values():
+            spine.set_edgecolor(BORDER)
+        ax_w.grid(axis="y", alpha=0.2)
+
+        # ── ROW 2R: Місячні надходження ───────────────────────────────────────
+        ax_fin = fig.add_subplot(inner_gs2[1])
+        ax_fin.set_facecolor(PANEL)
+
+        # Базова зарплата Minebea Mitsumi (EUR) — приблизна сума
+        # Дані можна розширити через бота (/income add)
+        try:
+            from storage import _load_github as _lgh
+            _fin_data = _lgh("finance_monthly.json") or {}
+        except Exception:
+            _fin_data = {}
+
+        # Генеруємо місяці з початку 2026
+        _months_list = []
+        _cur_m = _date_cls(2026, 1, 1)
+        while _cur_m <= today:
+            _months_list.append(_cur_m.strftime("%Y-%m"))
+            nxt_m2 = _cur_m.month % 12 + 1
+            nxt_y2 = _cur_m.year + (1 if _cur_m.month == 12 else 0)
+            _cur_m = _cur_m.replace(year=nxt_y2, month=nxt_m2, day=1)
+
+        _income_vals  = []
+        _expense_vals = []
+        _m_labels     = []
+        UA_M_SHORT = {1:"Січ",2:"Лют",3:"Бер",4:"Кві",5:"Тра",6:"Чер",
+                      7:"Лип",8:"Сер",9:"Вер",10:"Жов",11:"Лис",12:"Гру"}
+
+        for _mk in _months_list:
+            _y, _mo = int(_mk[:4]), int(_mk[5:7])
+            _entry = _fin_data.get(_mk, {})
+            _income_vals.append(float(_entry.get("income", 0)))
+            _expense_vals.append(float(_entry.get("expenses", 0)))
+            _m_labels.append(UA_M_SHORT[_mo])
+
+        _x_fin = np.arange(len(_months_list))
+        _bar_w = 0.38
+
+        if any(v > 0 for v in _income_vals) or any(v > 0 for v in _expense_vals):
+            _b1 = ax_fin.bar(_x_fin - _bar_w/2, _income_vals, _bar_w,
+                             color=GREEN, alpha=0.85, label="Надходження €")
+            _b2 = ax_fin.bar(_x_fin + _bar_w/2, _expense_vals, _bar_w,
+                             color=RED, alpha=0.75, label="Витрати €")
+
+            # Підписи на барах
+            for bar in _b1:
+                h = bar.get_height()
+                if h > 0:
+                    ax_fin.text(bar.get_x() + bar.get_width()/2, h + 10,
+                                f"€{int(h)}", ha="center", va="bottom",
+                                fontsize=10, color=GREEN, fontweight="bold")
+            for bar in _b2:
+                h = bar.get_height()
+                if h > 0:
+                    ax_fin.text(bar.get_x() + bar.get_width()/2, h + 10,
+                                f"€{int(h)}", ha="center", va="bottom",
+                                fontsize=10, color=RED, fontweight="bold")
+
+            ax_fin.set_xticks(_x_fin)
+            ax_fin.set_xticklabels(_m_labels, fontsize=12, color=TEXT)
+            ax_fin.tick_params(colors=MUTED, labelsize=12)
+            ax_fin.legend(fontsize=11, framealpha=0.3, facecolor=PANEL,
+                          edgecolor=BORDER, labelcolor=TEXT)
+        else:
+            # Немає даних — показуємо інструкцію
+            ax_fin.text(0.5, 0.60,
+                        "Дані відсутні",
+                        ha="center", va="center", color=MUTED, fontsize=14,
+                        transform=ax_fin.transAxes)
+            ax_fin.text(0.5, 0.42,
+                        "Введи через бота:",
+                        ha="center", va="center", color=MUTED, fontsize=12,
+                        transform=ax_fin.transAxes)
+            ax_fin.text(0.5, 0.28,
+                        "/income 2026-06 1200",
+                        ha="center", va="center", color=BLUE, fontsize=12,
+                        fontweight="bold", transform=ax_fin.transAxes,
+                        fontfamily="monospace")
+            ax_fin.text(0.5, 0.14,
+                        "/expenses 2026-06 850",
+                        ha="center", va="center", color=ORANGE, fontsize=12,
+                        fontweight="bold", transform=ax_fin.transAxes,
+                        fontfamily="monospace")
+
+        ax_fin.set_title("💶 Надходження / Витрати",
+                         color=TEXT, fontsize=15, fontweight="bold")
+        for spine in ax_fin.spines.values():
+            spine.set_edgecolor(BORDER)
+        ax_fin.grid(axis="y", alpha=0.2)
+
+        # ══════════════════════════════════════════════════════════════════════
+        # ROW 3: Бігові км по місяцях + поточний місяць по тижнях
+        # ══════════════════════════════════════════════════════════════════════
+        inner_gs3 = _gs.GridSpecFromSubplotSpec(
+            1, 2, subplot_spec=outer_gs[2], wspace=0.35,
+            width_ratios=[1.0, 1.5]
+        )
+
+        ax_run_m = fig.add_subplot(inner_gs3[0])  # км по місяцях
+        ax_run_d = fig.add_subplot(inner_gs3[1])  # км по днях поточного місяця
+
+        ax_run_m.set_facecolor(PANEL)
+        ax_run_d.set_facecolor(PANEL)
+
+        try:
+            import sys as _sys_r; _sys_r.path.insert(0, _DIR)
+            from strava import get_month_stats as _gms_r
+
+            # Місяці з 2026-01 до поточного
+            _run_months = []
+            _cm2 = _date_cls(2026, 1, 1)
+            while _cm2 <= today:
+                _run_months.append((_cm2.year, _cm2.month))
+                nxm3 = _cm2.month % 12 + 1
+                nxy3 = _cm2.year + (1 if _cm2.month == 12 else 0)
+                _cm2 = _cm2.replace(year=nxy3, month=nxm3, day=1)
+
+            _run_km = []
+            _run_labels_m = []
+            for _ry, _rm in _run_months:
+                _ms = _gms_r(_ry, _rm)
+                _run_km.append(_ms.get("km", 0) or 0)
+                _run_labels_m.append(UA_M_SHORT[_rm])
+
+            _xr = np.arange(len(_run_months))
+            _colors_r = [ORANGE if km > 0 else "#21262D" for km in _run_km]
+            _bars_r = ax_run_m.bar(_xr, _run_km, color=_colors_r, width=0.65, zorder=2)
+
+            for bar, km in zip(_bars_r, _run_km):
+                if km > 0:
+                    ax_run_m.text(bar.get_x() + bar.get_width()/2,
+                                  bar.get_height() + 0.3,
+                                  f"{km:.0f}", ha="center", va="bottom",
+                                  fontsize=12, color=ORANGE, fontweight="bold")
+
+            # Ціль 40 км/місяць
+            ax_run_m.axhline(40, color=GREEN, linewidth=1.5, linestyle="--",
+                             alpha=0.7, label="ціль 40 км")
+            ax_run_m.set_xticks(_xr)
+            ax_run_m.set_xticklabels(_run_labels_m, fontsize=12, color=TEXT)
+            ax_run_m.tick_params(colors=MUTED, labelsize=12)
+            ax_run_m.legend(fontsize=11, framealpha=0.3, facecolor=PANEL,
+                            edgecolor=BORDER, labelcolor=TEXT)
+            ax_run_m.grid(axis="y", alpha=0.2)
+            ax_run_m.set_title("🏃 Км по місяцях 2026",
+                               color=TEXT, fontsize=15, fontweight="bold")
+            for spine in ax_run_m.spines.values():
+                spine.set_edgecolor(BORDER)
+
+            # Поточний місяць по днях
+            _cur_ms = _gms_r(today.year, today.month)
+            _runs_list = _cur_ms.get("runs_list", [])
+            _days_in_m = _cal.monthrange(today.year, today.month)[1]
+            _km_by_day = {d: 0.0 for d in range(1, _days_in_m + 1)}
+            for _run in _runs_list:
+                _km_by_day[_run["date"].day] += _run["dist_km"]
+
+            _dd = list(range(1, _days_in_m + 1))
+            _kk = [_km_by_day[d] for d in _dd]
+            _cc = [GREEN if k > 0 else "#21262D" for k in _kk]
+            _bars_d = ax_run_d.bar(_dd, _kk, color=_cc, width=0.7, zorder=2)
+
+            for bar, km in zip(_bars_d, _kk):
+                if km > 0:
+                    ax_run_d.text(bar.get_x() + bar.get_width()/2,
+                                  bar.get_height() + 0.05,
+                                  f"{km:.1f}", ha="center", va="bottom",
+                                  fontsize=11, color=GREEN, fontweight="bold")
+
+            # Сьогодні — вертикальна мітка
+            ax_run_d.axvline(today.day, color=YELLOW, linewidth=1.5,
+                             linestyle="--", alpha=0.7, label="сьогодні")
+
+            _month_names_ua = ["", "Січень", "Лютий", "Березень", "Квітень",
+                               "Травень", "Червень", "Липень", "Серпень",
+                               "Вересень", "Жовтень", "Листопад", "Грудень"]
+            _total_km_m = _cur_ms.get("km", 0) or 0
+            _runs_cnt   = _cur_ms.get("runs", 0) or 0
+            ax_run_d.set_title(
+                f"🏃 {_month_names_ua[today.month]} {today.year}  —  {_runs_cnt} пробіжок  /  {_total_km_m} км",
+                color=TEXT, fontsize=15, fontweight="bold"
+            )
+            ax_run_d.set_xlim(0.5, _days_in_m + 0.5)
+            ax_run_d.set_xticks([1, 5, 10, 15, 20, 25, _days_in_m])
+            ax_run_d.tick_params(colors=MUTED, labelsize=12)
+            ax_run_d.grid(axis="y", alpha=0.2)
+            ax_run_d.legend(fontsize=11, framealpha=0.3, facecolor=PANEL,
+                            edgecolor=BORDER, labelcolor=TEXT)
+            for spine in ax_run_d.spines.values():
+                spine.set_edgecolor(BORDER)
+
+        except Exception as _e_run:
+            ax_run_m.text(0.5, 0.5, f"Strava: {_e_run}", ha="center", va="center",
+                          color=MUTED, fontsize=11, transform=ax_run_m.transAxes)
+            ax_run_d.text(0.5, 0.5, "Немає даних",
+                          ha="center", va="center", color=MUTED, fontsize=11,
+                          transform=ax_run_d.transAxes)
+
+        # ── Загальний заголовок ──────────────────────────────────────────────
+        fig.suptitle(
+            f"📊 Дашборд 2026  —  до {today.strftime('%d.%m.%Y')}",
+            fontsize=20, color=TEXT, fontweight="bold", y=0.98
+        )
+
+        # ── Зберігаємо ────────────────────────────────────────────────────────
+        raw_bytes = _buf(fig)
+
+        # PIL: накласти emoji на підписи звичок
+        try:
+            from PIL import Image, ImageDraw, ImageFont as _IFont
+            import io as _io2
+
+            _EMOJI_FONT = "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf"
+            if os.path.exists(_EMOJI_FONT):
+                _pil = Image.open(_io2.BytesIO(raw_bytes)).convert("RGBA")
+                _iw, _ih = _pil.size
+                _em_font = _IFont.truetype(_EMOJI_FONT, 109)
+                _tsz = max(28, int(_ih * 0.022))
+                _HABITS_EMOJI = HABIT_EMOJIS
+
+                # Приблизна висота heatmap-секції: ~33% від загальної висоти
+                _hmap_top    = 0.04
+                _hmap_bottom = 0.36
+                _hmap_h = _hmap_bottom - _hmap_top
+                _row_h  = _hmap_h / len(HABITS)
+
+                for _hi, _hk in enumerate(HABITS):
+                    _em = _HABITS_EMOJI.get(_hk, "")
+                    if not _em:
+                        continue
+                    _tmp = Image.new("RGBA", (130, 130), (0, 0, 0, 0))
+                    ImageDraw.Draw(_tmp).text((5, 5), _em, font=_em_font, embedded_color=True)
+                    _tmp = _tmp.resize((_tsz, _tsz), Image.LANCZOS)
+                    _y_rel = _hmap_top + _row_h * _hi + _row_h * 0.4
+                    _y_px  = int(_y_rel * _ih) - _tsz // 2
+                    _x_px  = max(0, int(_iw * 0.055) - _tsz - 2)
+                    _pil.paste(_tmp, (_x_px, _y_px), _tmp)
+
+                _out = _io2.BytesIO()
+                _pil.convert("RGB").save(_out, format="PNG")
+                raw_bytes = _out.getvalue()
+        except Exception as _pil_e:
+            print(f"[combined] PIL emoji error: {_pil_e}")
+
+        return raw_bytes
+
+    except Exception as e:
+        import traceback
+        print(f"[charts] combined_dashboard error: {e}\n{traceback.format_exc()}")
+        return None

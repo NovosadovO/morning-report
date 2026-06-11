@@ -4069,17 +4069,6 @@ def main():
 
         if len(_health_lines) > 1:
             parts.append("\n".join(_health_lines))
-
-            # Графік місячний (вага + звички) — одразу після health block
-            try:
-                from charts import plot_monthly_dashboard as _plot_monthly_h
-                _monthly_h = _plot_monthly_h()
-                if _monthly_h:
-                    parts.append({"photo": _monthly_h, "caption": f"📊 Вага + звички — {now_local.strftime('%B')}"})
-            except Exception as _e_mh:
-                import traceback as _tb_mh
-                print(f"monthly chart error: {_e_mh}\n{_tb_mh.format_exc()}", flush=True)
-                send_telegram(f"[DBG chart] monthly: {_e_mh}")
     except Exception as _e_health:
         print(f"health block error: {_e_health}")
 
@@ -4091,35 +4080,22 @@ def main():
         _strava_text = format_strava_block()
         if _strava_text:
             parts.append(_section_header("🏃", "БІГОВИЙ ТРЕКЕР") + "\n" + "\n".join(_strava_text.split("\n")[1:]) if "\n" in _strava_text else _section_header("🏃", "БІГОВИЙ ТРЕКЕР") + "\n" + _strava_text)
-            # Графік бігу — одразу після strava block
-            try:
-                from strava_charts import plot_month_chart as _plot_run_h, plot_year_chart as _plot_run_year
-                from strava import get_month_stats as _gms
-                _cy, _cm = now_local.year, now_local.month
-                _use_year = False
-                # якщо в поточному місяці немає пробіжок — беремо попередній
-                if _gms(_cy, _cm).get("runs", 0) == 0:
-                    _cm -= 1
-                    if _cm == 0:
-                        _cm = 12
-                        _cy -= 1
-                    # якщо і попередній порожній — малюємо річний
-                    if _gms(_cy, _cm).get("runs", 0) == 0:
-                        _use_year = True
-                if _use_year:
-                    _run_h = _plot_run_year(_cy)
-                    _run_label = f"Річний підсумок {_cy}"
-                else:
-                    _run_h = _plot_run_h(_cy, _cm)
-                    _run_label = datetime(_cy, _cm, 1).strftime("%B %Y")
-                if _run_h:
-                    parts.append({"photo": _run_h, "caption": f"🏃 Біг — {_run_label}"})
-            except Exception as _e_rh:
-                import traceback as _tb_rh
-                print(f"run chart error: {_e_rh}\n{_tb_rh.format_exc()}", flush=True)
-                send_telegram(f"[DBG chart] run: {_e_rh}")
     except Exception as _e_strava:
         print(f"strava block error: {_e_strava}")
+
+    # ── Комбінований дашборд (звички + вага + біг + фінанси) — ОДНА картинка ─
+    try:
+        from charts import plot_combined_dashboard as _plot_combined
+        print("[combined chart] generating...", flush=True)
+        _combined_chart = _plot_combined()
+        if _combined_chart:
+            parts.append({"photo": _combined_chart, "caption": f"📊 Дашборд 2026 — до {now_local.strftime('%d.%m.%Y')}"})
+            print(f"[combined chart] done, {len(_combined_chart)} bytes", flush=True)
+        else:
+            print("[combined chart] returned None", flush=True)
+    except Exception as _e_combined:
+        import traceback as _tb_comb
+        print(f"combined chart error: {_e_combined}\n{_tb_comb.format_exc()}", flush=True)
 
     # ── Блок 7: КУРС ВАЛЮТ ────────────────────────────────────────────────────
     try:
