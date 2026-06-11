@@ -3704,48 +3704,8 @@ def main():
     header = _build_report_header(now_local, hour_key, cal_text)
     parts = [header]
 
-    # ── AI-брифінг: 1 речення на початку звіту ────────────────────────────────
-    _ai_briefing = None
-    if gemini_key:
-        try:
-            import uuid as _uuid_b
-            _seed_b = str(_uuid_b.uuid4())[:8]
-            # Коротко: зміна + погода + календар + вага
-            _w_short = ""
-            if weather_text:
-                _wt_lines = [l for l in weather_text.split("\n") if l.strip()]
-                _w_short = _wt_lines[0] if _wt_lines else ""
-            _brief_prompt = (
-                f"Зміна: {shift_hint.rstrip('.')}. "
-                f"Погода: {_w_short}. "
-                f"Календар: {cal_events_text}. "
-                f"{weight_hint} "
-                f"Напиши 3-4 речення українською — персональний брифінг дня для Олега. "
-                f"Без вступу, без 'Звичайно', без 'Ось'. Починай з 'Олег,'. "
-                f"Включи: зміну/розклад (використовуй ТОЧНО той статус зміни що вказано вище, не вигадуй час), погоду, пораду по здоров'ю/активності, мотивацію. "
-                f"ВАЖЛИВО: якщо зміна 'ЗАРАЗ йде' — пиши 'ти зараз на зміні', НЕ 'сьогодні на тебе чекає'. [seed:{_seed_b}]"
-            )
-            _brief_payload = json.dumps({
-                "contents": [{"parts": [{"text": _brief_prompt}]}],
-                "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.85}
-            }).encode()
-            _brief_req = urllib.request.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-                data=_brief_payload, headers={"Content-Type": "application/json"}, method="POST"
-            )
-            with urllib.request.urlopen(_brief_req, timeout=15) as _r_b:
-                _brief_resp = json.loads(_r_b.read())
-            _ai_briefing = _brief_resp["candidates"][0]["content"]["parts"][0]["text"].strip()
-            if _ai_briefing and _ai_briefing[-1] not in ".!?»":
-                _ai_briefing += "."
-        except Exception as _e_b:
-            print(f"ai_briefing error: {_e_b}")
-            _ai_briefing = None
-
-    if _ai_briefing:
-        parts.insert(1, f"🤖 <i>{esc(_ai_briefing)}</i>")
-    else:
-        print("[briefing] skipped — no result from Gemini")
+    # ── AI-брифінг генерується ПІЗНІШЕ — після збору всіх даних ─────────────
+    _ai_briefing = None  # буде заповнено після всіх блоків
 
     # ── ДЕНЬ-РЕЙТИНГ ⭐ ────────────────────────────────────────────────────────
     try:
@@ -4288,6 +4248,58 @@ def main():
     _sc_main = _get_current_shift_context(cal_events_text)
     if is_weekend and not include_learning_blocks and not _sc_main["is_working_now"]:
         parts.append("💤 <i>Вихідний — крипто/пошта з 11:00</i>")
+
+    # ── AI-брифінг: генерується з ПОВНИХ даних звіту ─────────────────────────
+    if gemini_key:
+        try:
+            import uuid as _uuid_b
+            _seed_b = str(_uuid_b.uuid4())[:8]
+
+            # Збираємо всі текстові частини звіту (без фото)
+            _all_report_text_parts = []
+            for _p in parts:
+                if isinstance(_p, str) and _p != "SPLIT_HERE":
+                    _all_report_text_parts.append(_p)
+            # Додаємо email окремо якщо є
+            if email_text:
+                if isinstance(email_text, dict):
+                    _all_report_text_parts.append(email_text.get("header", ""))
+                elif isinstance(email_text, str):
+                    _all_report_text_parts.append(email_text)
+
+            _full_report_ctx = "\n\n".join(_all_report_text_parts)[:4000]  # обрізаємо до 4000 символів
+
+            _brief_prompt = (
+                f"Ти персональний AI-асистент Олега (Кошіце, Словаччина).\n"
+                f"Зараз {now_local.strftime('%H:%M')}, {now_local.strftime('%d.%m.%Y')}.\n"
+                f"{shift_hint}\n\n"
+                f"=== ПОВНИЙ ЗВІТ ===\n{_full_report_ctx}\n===================\n\n"
+                f"Прочитай ВЕСЬ звіт вище і напиши персональний брифінг 3-5 речень.\n"
+                f"Починай з 'Олег,'. Без вступів, без 'Ось', без 'Звичайно'.\n"
+                f"Використовуй ТІЛЬКИ реальні факти зі звіту: конкретні ціни крипто, вагу, "
+                f"події з календаря, важливі листи, кроки, погоду.\n"
+                f"Зроби акцент на найважливішому: що зробити ЗАРАЗ і чому.\n"
+                f"ВАЖЛИВО: якщо зміна вже йде — пиши 'ти зараз на зміні', не 'чекає'. [seed:{_seed_b}]"
+            )
+            _brief_payload = json.dumps({
+                "contents": [{"parts": [{"text": _brief_prompt}]}],
+                "generationConfig": {"maxOutputTokens": 512, "temperature": 1.0},
+                "thinkingConfig": {"thinkingBudget": 0},
+            }).encode()
+            _brief_req = urllib.request.Request(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                data=_brief_payload, headers={"Content-Type": "application/json"}, method="POST"
+            )
+            with urllib.request.urlopen(_brief_req, timeout=20) as _r_b:
+                _brief_resp = json.loads(_r_b.read())
+            _ai_briefing = _brief_resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+            if _ai_briefing and _ai_briefing[-1] not in ".!?»":
+                _ai_briefing += "."
+            # Вставляємо після заголовку (позиція 1)
+            parts.insert(1, f"🤖 <i>{esc(_ai_briefing)}</i>")
+            print(f"[briefing] OK — {len(_ai_briefing)} chars")
+        except Exception as _e_b:
+            print(f"ai_briefing error: {_e_b}")
 
     # ── Надсилаємо звіт рівно 2 повідомленнями ───────────────────────────────
     # Повідомлення 1: заголовок + погода + трафік + крипто + ETF + курс + календар
