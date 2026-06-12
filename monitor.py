@@ -2496,7 +2496,6 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
             body_ai = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
                 "generationConfig": {"maxOutputTokens": 3000, "temperature": 1.0},
-                "thinkingConfig": {"thinkingBudget": 0},
             }).encode()
             req_ai = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -3653,7 +3652,6 @@ def main():
             ai_payload = json.dumps({
                 "contents": [{"parts": [{"text": ai_prompt}]}],
                 "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.9},
-                "thinkingConfig": {"thinkingBudget": 0},
             }).encode()
             ai_req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -4244,7 +4242,6 @@ def main():
                 _brief_payload = json.dumps({
                     "contents": [{"parts": [{"text": _brief_prompt}]}],
                     "generationConfig": {"maxOutputTokens": 512, "temperature": 1.0},
-                    "thinkingConfig": {"thinkingBudget": 0},
                 }).encode()
                 _brief_req = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -7334,7 +7331,6 @@ def check_morning_context():
                 payload = json.dumps({
                     "contents": [{"parts": [{"text": prompt}]}],
                     "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.95},
-                    "thinkingConfig": {"thinkingBudget": 0},
                 }).encode()
                 req2 = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
