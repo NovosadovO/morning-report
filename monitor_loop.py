@@ -530,11 +530,12 @@ threading.Thread(target=run_health_remind_watcher, daemon=True).start()
 
 
 def run_astro_watcher():
-    """Астрологічний звіт — 2 рази на день:
-       Ранок: рання зміна о 08:00, вихідний/нічна о 11:00
-       Вечір: завжди о 20:00
+    """Астрологічний звіт — 3 рази на день:
+       Ранок:  рання зміна о 08:00, інші о 11:00 (вікно до 12:59)
+       Обід:   завжди о 13:00 (вікно 13:00–16:59)
+       Вечір:  завжди о 20:00 (вікно 20:00–23:59)
     """
-    print("=== Starting astro watcher (morning + 20:00 evening) ===", flush=True)
+    print("=== Starting astro watcher (morning + afternoon + evening) ===", flush=True)
     import os, sys
     sys.path.insert(0, os.path.dirname(__file__))
 
@@ -626,17 +627,27 @@ def run_astro_watcher():
                 except Exception:
                     shift = "weekend"
                 send_hour = 8 if shift == "early" else 11
-                # Вікно: від send_hour до 17:00 (широкий catch-up після Railway restart)
-                if h >= send_hour and h < 17:
+                # Вікно: від send_hour до 12:59
+                if h >= send_hour and h < 13:
                     _send_astro(f"morning shift={shift} h={h}")
                     _astro_gh_mark(morning_key)
+                    time.sleep(360)
+                    continue
+
+            # ── Обідній о 13:00 ──
+            afternoon_key = f"{today}_afternoon"
+            if not _astro_gh_sent(afternoon_key):
+                # Вікно 13:00–16:59
+                if h >= 13 and h < 17:
+                    _send_astro(f"afternoon h={h}")
+                    _astro_gh_mark(afternoon_key)
                     time.sleep(360)
                     continue
 
             # ── Вечірній о 20:00 ──
             evening_key = f"{today}_evening"
             if not _astro_gh_sent(evening_key):
-                # Вікно 20:00–23:59 для catch-up після Railway restart
+                # Вікно 20:00–23:59
                 if h >= 20:
                     _send_astro(f"evening h={h}")
                     _astro_gh_mark(evening_key)
