@@ -4241,7 +4241,7 @@ def main():
                 )
                 _brief_payload = json.dumps({
                     "contents": [{"parts": [{"text": _brief_prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 512, "temperature": 1.0},
+                    "generationConfig": {"maxOutputTokens": 2048, "temperature": 1.0},
                 }).encode()
                 _brief_req = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
