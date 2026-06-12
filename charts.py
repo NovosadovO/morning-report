@@ -1290,7 +1290,7 @@ def plot_combined_dashboard() -> bytes | None:
             for _ry, _rm in _run_months:
                 _ms = _gms_r(_ry, _rm)
                 _run_km.append(_ms.get("km", 0) or 0)
-                _run_labels_m.append(UA_M_SHORT[_rm])
+                _run_labels_m.append(UA_MONTHS[_rm])
 
             _xr = np.arange(len(_run_months))
             _colors_r = [ORANGE if km > 0 else "#21262D" for km in _run_km]
@@ -1388,9 +1388,9 @@ def plot_combined_dashboard() -> bytes | None:
                 _tsz = max(28, int(_ih * 0.022))
                 _HABITS_EMOJI = HABIT_EMOJIS
 
-                # Приблизна висота heatmap-секції: ~33% від загальної висоти
-                _hmap_top    = 0.04
-                _hmap_bottom = 0.36
+                # Точна висота heatmap-секції в PNG (ax_h: top=0.050, bottom=0.294)
+                _hmap_top    = 0.08   # трохи відступ від верху (заголовок)
+                _hmap_bottom = 0.29
                 _hmap_h = _hmap_bottom - _hmap_top
                 _row_h  = _hmap_h / len(HABITS)
 
