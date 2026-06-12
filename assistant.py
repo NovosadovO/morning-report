@@ -150,15 +150,25 @@ def _gemini(prompt, max_tokens=400):
 
 # ─── STORAGE (GitHub data branch) ─────────────────────────────────────────────
 
+# In-memory cache для швидкого dedup (захист від race condition між хвилинними викликами)
+_STATE_CACHE: dict = {}
+
 def _load_state(key, default=None):
+    # Спочатку перевіряємо in-memory cache
+    if key in _STATE_CACHE:
+        return _STATE_CACHE[key]
     try:
         import sys; sys.path.insert(0, os.path.dirname(__file__))
         from storage import _load_github
-        return _load_github(key) or default
+        val = _load_github(key) or default
+        _STATE_CACHE[key] = val
+        return val
     except Exception:
         return default
 
 def _save_state(key, data):
+    # Одразу оновлюємо in-memory cache щоб наступний виклик не надіслав дубль
+    _STATE_CACHE[key] = data
     try:
         import sys; sys.path.insert(0, os.path.dirname(__file__))
         from storage import _save_github

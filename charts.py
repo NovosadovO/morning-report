@@ -235,8 +235,8 @@ def plot_day_dashboard(today_str: str = None) -> bytes | None:
         entry = raw.get(today_str, {}) or {}
 
         # ── layout: 3 панелі ───────────────────────────────────────────────────
-        fig = plt.figure(figsize=(12, 7), facecolor=BG)
-        gs = gridspec.GridSpec(2, 2, figure=fig, hspace=0.5, wspace=0.35,
+        fig = plt.figure(figsize=(20, 12), facecolor=BG)
+        gs = gridspec.GridSpec(2, 2, figure=fig, hspace=0.55, wspace=0.38,
                                height_ratios=[1.2, 1])
 
         # ── TOP FULL: вага за 30 днів з трендом ───────────────────────────────
@@ -283,13 +283,13 @@ def plot_day_dashboard(today_str: str = None) -> bytes | None:
             ax_w.annotate(f"мін {yi[best_i]:.1f}",
                           xy=(xi[best_i], yi[best_i]),
                           xytext=(6, -16), textcoords="offset points",
-                          color=YELLOW, fontsize=8)
+                          color=YELLOW, fontsize=14)
 
             # Підпис останнього значення
             ax_w.annotate(f"{yi[-1]:.1f} кг",
                           xy=(xi[-1], yi[-1]),
                           xytext=(-38, 12), textcoords="offset points",
-                          color=GREEN, fontsize=11, fontweight="bold",
+                          color=GREEN, fontsize=17, fontweight="bold",
                           arrowprops=dict(arrowstyle="-", color=GREEN, alpha=0.4))
 
             # Підпис тренду
@@ -297,7 +297,7 @@ def plot_day_dashboard(today_str: str = None) -> bytes | None:
             ax_w.text(0.02, 0.93,
                       f"{sign}{slope_per_week:.2f} кг/тижд",
                       transform=ax_w.transAxes,
-                      fontsize=9, color=trend_color, fontweight="bold",
+                      fontsize=15, color=trend_color, fontweight="bold",
                       va="top")
 
             ax_w.set_ylim(min(yi) - 1.8, max(yi) + 1.8)
@@ -308,19 +308,19 @@ def plot_day_dashboard(today_str: str = None) -> bytes | None:
             ax_w.set_xticks(tick_ix)
             ax_w.set_xticklabels(
                 [w_dates[t].strftime("%d.%m") for t in tick_ix],
-                fontsize=8, color=MUTED
+                fontsize=14, color=MUTED
             )
 
-            ax_w.legend(loc="upper right", fontsize=8, framealpha=0.3,
+            ax_w.legend(loc="upper right", fontsize=14, framealpha=0.3,
                         facecolor=PANEL, edgecolor=BORDER, labelcolor=TEXT,
                         ncol=4)
         else:
             ax_w.text(0.5, 0.5, "Немає даних по вазі",
-                      ha="center", va="center", color=MUTED, fontsize=11,
+                      ha="center", va="center", color=MUTED, fontsize=17,
                       transform=ax_w.transAxes)
 
         ax_w.set_title("⚖️ Вага за 30 днів — тренд та ціль", color=TEXT,
-                       fontsize=11, fontweight="bold")
+                       fontsize=17, fontweight="bold")
         for spine in ax_w.spines.values():
             spine.set_edgecolor(BORDER)
         ax_w.tick_params(colors=MUTED)
@@ -346,17 +346,17 @@ def plot_day_dashboard(today_str: str = None) -> bytes | None:
         ax_h.set_xlim(0, 1.2)
         ax_h.set_yticks(y_pos)
         ax_h.set_yticklabels([HABIT_LABELS[h] for h in HABITS],
-                              fontsize=9, color=TEXT)
+                              fontsize=15, color=TEXT)
         ax_h.set_xticks([])
         ax_h.invert_yaxis()
-        ax_h.set_title("Звички сьогодні", color=TEXT, fontsize=11, pad=8)
+        ax_h.set_title("Звички сьогодні", color=TEXT, fontsize=17, pad=8)
         ax_h.grid(False)
         for spine in ax_h.spines.values():
             spine.set_visible(False)
         for i, hkey in enumerate(HABITS):
             label = "✅" if entry.get(hkey) is True else "❌"
             ax_h.text(1.13, i, label, va="center", ha="center",
-                      fontsize=11, color=TEXT)
+                      fontsize=17, color=TEXT)
 
         done = sum(1 for hkey in HABITS if entry.get(hkey) is True)
 
@@ -397,12 +397,12 @@ def plot_day_dashboard(today_str: str = None) -> bytes | None:
 
         ax_s.set_xticks(x)
         ax_s.set_xticklabels([HABIT_LABELS[h].split()[-1] for h in HABITS],
-                              fontsize=8, color=TEXT)
+                              fontsize=14, color=TEXT)
         ax_s.set_ylim(0, 1.2)
         ax_s.set_yticks([0, 0.5, 1.0])
-        ax_s.set_yticklabels(["0", "50%", "100%"], fontsize=8, color=MUTED)
-        ax_s.set_title("Стрік vs тиждень", color=TEXT, fontsize=11, pad=8)
-        ax_s.legend(fontsize=7, framealpha=0.3, facecolor=PANEL,
+        ax_s.set_yticklabels(["0", "50%", "100%"], fontsize=14, color=MUTED)
+        ax_s.set_title("Стрік vs тиждень", color=TEXT, fontsize=17, pad=8)
+        ax_s.legend(fontsize=12, framealpha=0.3, facecolor=PANEL,
                     edgecolor=BORDER, labelcolor=TEXT)
         for spine in ax_s.spines.values():
             spine.set_edgecolor(BORDER)
@@ -411,13 +411,13 @@ def plot_day_dashboard(today_str: str = None) -> bytes | None:
         # Підписи стріків над барами
         for i, (hkey, streak, pct) in enumerate(streak_data):
             ax_s.text(i - w/2, streak_norm[i] + 0.03, f"{streak}д",
-                      ha="center", fontsize=7.5, color=TEXT)
+                      ha="center", fontsize=13, color=TEXT)
             ax_s.text(i + w/2, pct_norm[i] + 0.03, f"{int(pct)}%",
-                      ha="center", fontsize=7.5, color=TEXT)
+                      ha="center", fontsize=13, color=TEXT)
 
         fig.suptitle(
             f"📊 Підсумок {today_str[8:]}.{today_str[5:7]}  ·  {done}/{len(HABITS)} звичок",
-            fontsize=13, color=TEXT, fontweight="bold", y=1.02
+            fontsize=19, color=TEXT, fontweight="bold", y=1.02
         )
 
         fig.tight_layout(pad=1.5)
@@ -477,8 +477,8 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
                     break
             streaks[hkey] = s
 
-        fig = plt.figure(figsize=(12, 8), facecolor=BG)
-        gs = gridspec.GridSpec(2, 2, figure=fig, hspace=0.45, wspace=0.35)
+        fig = plt.figure(figsize=(20, 14), facecolor=BG)
+        gs = gridspec.GridSpec(2, 2, figure=fig, hspace=0.50, wspace=0.38)
 
         # ── TOP: звички по дням (stacked bar) ────────────────────────────────
         ax_top = fig.add_subplot(gs[0, :])
@@ -496,11 +496,11 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
             bottom += np.array(vals, dtype=float)
 
         ax_top.set_xticks(x)
-        ax_top.set_xticklabels(day_labels, fontsize=9, color=TEXT)
+        ax_top.set_xticklabels(day_labels, fontsize=15, color=TEXT)
         ax_top.set_yticks(range(HABIT_N + 1))
         ax_top.set_ylim(0, HABIT_N + 0.5)
-        ax_top.set_ylabel("Звичок виконано", color=MUTED, fontsize=9)
-        ax_top.set_title("📅 Звички по днях тижня", color=TEXT, fontsize=11, fontweight="bold")
+        ax_top.set_ylabel("Звичок виконано", color=MUTED, fontsize=15)
+        ax_top.set_title("📅 Звички по днях тижня", color=TEXT, fontsize=17, fontweight="bold")
         ax_top.grid(axis="y", alpha=0.3, zorder=0)
         ax_top.set_axisbelow(True)
         for spine in ax_top.spines.values():
@@ -512,7 +512,7 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
             if val > 0:
                 ax_top.text(i, val + 0.05, str(val),
                             ha="center", va="bottom", color=TEXT,
-                            fontsize=10, fontweight="bold")
+                            fontsize=15, fontweight="bold")
 
         # Лінія тренду звичок (рухома середня або polyfit)
         if len(done_per_day) >= 3:
@@ -528,9 +528,9 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
             ax_top.text(0.02, 0.93,
                         f"тренд: {sign_t}{z_t[0]:.2f} звич/день",
                         transform=ax_top.transAxes,
-                        fontsize=8, color=t_color, va="top")
+                        fontsize=14, color=t_color, va="top")
 
-        legend = ax_top.legend(loc="upper right", fontsize=8,
+        legend = ax_top.legend(loc="upper right", fontsize=14,
                                framealpha=0.4, facecolor=PANEL,
                                edgecolor=BORDER, labelcolor=TEXT,
                                ncol=len(HABITS) + 1)
@@ -562,7 +562,7 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
             slope_week = z_w[0] * 7
             sign_w = "+" if slope_week > 0 else ""
             ax_w.text(0.03, 0.06, f"{sign_w}{slope_week:.2f} кг/тижд",
-                      transform=ax_w.transAxes, fontsize=8, color=t_col_w,
+                      transform=ax_w.transAxes, fontsize=14, color=t_col_w,
                       fontweight="bold")
 
             ax_w.set_ylim(min(yi) - 1.5, max(yi) + 1.5)
@@ -571,22 +571,22 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
             ax_w.set_xticklabels([w14_dates[0].strftime("%d.%m"),
                                    w14_dates[6].strftime("%d.%m"),
                                    w14_dates[13].strftime("%d.%m")],
-                                  fontsize=8, color=MUTED)
+                                  fontsize=14, color=MUTED)
             ax_w.tick_params(colors=MUTED)
             # Текст останньої ваги
             ax_w.annotate(f"{yi[-1]:.1f} кг",
                           xy=(xi[-1], yi[-1]),
                           xytext=(-30, 12), textcoords="offset points",
-                          color=GREEN, fontsize=11, fontweight="bold",
+                          color=GREEN, fontsize=17, fontweight="bold",
                           arrowprops=dict(arrowstyle="-", color=GREEN, alpha=0.5))
             # Ціль
             ax_w.text(1, 78.0 + 0.15, "ціль 78 кг",
-                      color=BLUE, fontsize=8, alpha=0.8)
+                      color=BLUE, fontsize=14, alpha=0.8)
         else:
             ax_w.text(0.5, 0.5, "Немає даних", ha="center", va="center",
-                      color=MUTED, fontsize=10, transform=ax_w.transAxes)
+                      color=MUTED, fontsize=15, transform=ax_w.transAxes)
 
-        ax_w.set_title("⚖️ Вага (14 днів) + тренд", color=TEXT, fontsize=11, fontweight="bold")
+        ax_w.set_title("⚖️ Вага (14 днів) + тренд", color=TEXT, fontsize=17, fontweight="bold")
         for spine in ax_w.spines.values():
             spine.set_edgecolor(BORDER)
         ax_w.grid(axis="y", alpha=0.2)
@@ -595,7 +595,7 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
         ax_s = fig.add_subplot(gs[1, 1])
         ax_s.set_facecolor(PANEL)
         ax_s.axis("off")
-        ax_s.set_title("🔥 Стрік (днів поспіль)", color=TEXT, fontsize=11, fontweight="bold")
+        ax_s.set_title("🔥 Стрік (днів поспіль)", color=TEXT, fontsize=17, fontweight="bold")
 
         streak_items = [(HABIT_LABELS[h], streaks[h], HABIT_COLORS[h]) for h in HABITS]
         for i, (label, streak, color) in enumerate(streak_items):
@@ -610,12 +610,12 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
             )
             ax_s.add_patch(rect)
             ax_s.text(0.08, y + 0.01, label, transform=ax_s.transAxes,
-                      fontsize=10, color=TEXT, va="center")
+                      fontsize=15, color=TEXT, va="center")
             streak_color = color if streak > 0 else MUTED
             flame = "🔥" if streak >= 3 else ("✅" if streak >= 1 else "💤")
             ax_s.text(0.88, y + 0.01, f"{flame} {streak}д",
                       transform=ax_s.transAxes,
-                      fontsize=10, color=streak_color,
+                      fontsize=15, color=streak_color,
                       va="center", ha="right", fontweight="bold")
 
         fig.suptitle(
@@ -1117,10 +1117,10 @@ def plot_combined_dashboard() -> bytes | None:
 
         # ── Фігура ────────────────────────────────────────────────────────────
         n_days = len(all_dates)
-        fig_w  = max(32, n_days * 0.12)
-        fig    = plt.figure(figsize=(fig_w, 26), facecolor=BG)
+        fig_w  = max(40, n_days * 0.15)
+        fig    = plt.figure(figsize=(fig_w, 34), facecolor=BG)
         outer_gs = _gs.GridSpec(3, 1, figure=fig,
-                                hspace=0.60,
+                                hspace=0.70,
                                 height_ratios=[3.0, 2.5, 2.5],
                                 left=0.07, right=0.98,
                                 top=0.95, bottom=0.04)
