@@ -4317,31 +4317,23 @@ def main():
         parts_2 = parts_no_photo[mid:]
 
     def _send_album(photos):
-        """Надсилає список фото як Telegram media group (album)."""
+        """Надсилає кожне фото ОКРЕМИМ повідомленням — максимальний розмір на екрані."""
         if not photos:
             return
-        try:
-            media = []
-            files = {}
-            for i, p in enumerate(photos):
-                key = f"photo{i}"
+        for i, p in enumerate(photos):
+            try:
                 caption = p.get("caption", "")
-                media.append({
-                    "type": "photo",
-                    "media": f"attach://{key}",
-                    "caption": caption if i == 0 else "",
-                    "parse_mode": "HTML",
-                })
-                files[key] = (f"chart{i}.png", _io_send.BytesIO(p["photo"]), "image/png")
-            r = _req_send.post(
-                f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMediaGroup",
-                data={"chat_id": TELEGRAM_CHAT, "media": _json_send.dumps(media)},
-                files=files,
-                timeout=60,
-            )
-            print(f"[album] sent {len(photos)} photos: {r.status_code}", flush=True)
-        except Exception as e:
-            print(f"[album] error: {e}", flush=True)
+                files = {"photo": (f"chart{i}.png", _io_send.BytesIO(p["photo"]), "image/png")}
+                r = _req_send.post(
+                    f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
+                    data={"chat_id": TELEGRAM_CHAT, "caption": caption, "parse_mode": "HTML"},
+                    files=files,
+                    timeout=60,
+                )
+                print(f"[photo] sent photo {i+1}/{len(photos)}: {r.status_code}", flush=True)
+                _time_main.sleep(0.5)
+            except Exception as e:
+                print(f"[photo] error photo {i}: {e}", flush=True)
 
     MAX_MSG = 4090
     ok = True
