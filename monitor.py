@@ -2302,15 +2302,24 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
         if good: parts_a.append(_re.sub(r"<[^>]+>","",good[0]).strip())
         if parts_a: astro_facts = "; ".join(parts_a)
 
-    # Зміна
+    # Зміна — точний опис з реальним статусом "зараз"
+    is_working_now = shift_ctx.get("is_working_now", False)
     if shift == "early":
-        shift_desc = "рання зміна 06:00–18:00"
+        if 6 <= h < 18:
+            shift_desc = "рання зміна 06:00–18:00 (ЗАРАЗ НА РОБОТІ)"
+        elif h >= 18:
+            shift_desc = "рання зміна вже закінчилась (06:00–18:00), вдома"
+        else:
+            shift_desc = "рання зміна сьогодні (06:00–18:00), ще не почалась"
     elif shift == "night":
-        shift_desc = "нічна зміна 17:00–05:00"
+        if h >= 17 or h < 6:
+            shift_desc = "нічна зміна 17:00–05:00 (ЗАРАЗ НА РОБОТІ)"
+        else:
+            shift_desc = "нічна зміна сьогодні ввечері (17:00–05:00), вдома"
     elif shift == "after_night":
-        shift_desc = "вихідний після нічної"
+        shift_desc = "вдома після нічної зміни (зміна закінчилась, відпочиває)"
     else:
-        shift_desc = "вільний день"
+        shift_desc = "вільний день, вдома"
 
     # ── Завантажуємо попередні підсумки (останні 5) ───────────────────────────
     prev_summaries_ctx = ""
@@ -2449,7 +2458,9 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
 {email_drafts_context}"""
 
     prompt = f"""Ти персональний AI-асистент Олега Новосадова (Кошіце, Словаччина).
-Час: {now_local.strftime('%H:%M')}, {today_str_s}, {shift_desc}.
+Час: {now_local.strftime('%H:%M')}, {today_str_s}.
+Статус: {shift_desc}.
+ВАЖЛИВО: якщо в статусі написано "НА РОБОТІ" — Олег зараз фізично на роботі. Якщо "вдома" — вдома. Ніколи не плутай це і не суперечь статусу.
 
 КРИТИЧНО ВАЖЛИВО — ЗАЛІЗНІ ПРАВИЛА:
 1. Пиши ТІЛЬКИ те що є в даних нижче. Жодних припущень ("мабуть", "можливо", "сподіваюся", "судячи з", "напевно", "схоже").
