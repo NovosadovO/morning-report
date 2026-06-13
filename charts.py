@@ -1117,7 +1117,7 @@ def plot_combined_dashboard() -> bytes | None:
 
         # ── Фігура ────────────────────────────────────────────────────────────
         n_days = len(all_dates)
-        fig_w  = max(40, n_days * 0.15)
+        fig_w  = max(40, min(n_days * 0.15, 80))
         fig    = plt.figure(figsize=(fig_w, 34), facecolor=BG)
         outer_gs = _gs.GridSpec(3, 1, figure=fig,
                                 hspace=0.70,
