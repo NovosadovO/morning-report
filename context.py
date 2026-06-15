@@ -674,7 +674,7 @@ def ask_ai(user_message: str, include_calendar: bool = True) -> str:
     Якщо Gemini хоче створити подію — створює її автоматично.
     Повертає текст відповіді.
     """
-    api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+    api_key = os.environ.get("GEMINI_API_KEY", "")
     if not api_key:
         return "⚠️ Gemini API key не налаштований."
 

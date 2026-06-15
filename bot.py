@@ -309,7 +309,7 @@ def handle_email_callback(callback_query):
         _cid = chat_id
         _uid = uid_str
         _mid = msg_id
-        GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+        GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
 
         try:
             print(f"[email_describe] uid={_uid}", flush=True)
@@ -562,7 +562,7 @@ def handle_email_callback(callback_query):
             sender  = _imap_decode_header(msg.get("From", ""))
             body    = _imap_get_body(msg)
 
-            api_key = _os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+            api_key = _os.environ.get("GEMINI_API_KEY", "")
             today = _dt3.date.today().isoformat()
             prompt = (
                 f"Сьогодні {today}. Проаналізуй цей лист і знайди всі важливі дати, події, дедлайни, зустрічі.\n"
@@ -741,7 +741,7 @@ def handle_email_callback(callback_query):
                 body    = _imap_get_body(msg)
 
                 # AI draft
-                api_key = _os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+                api_key = _os.environ.get("GEMINI_API_KEY", "")
                 prompt = (
                     f"Ти пишеш від імені Олега Новосадова (novosadovoleg@gmail.com).\n"
                     f"Напиши КОРОТКИЙ і природній draft відповіді на цей лист.\n"

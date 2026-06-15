@@ -18,7 +18,7 @@ from datetime import datetime, timezone, timedelta
 # ─── ENV ─────────────────────────────────────────────────────────────────────
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "8374312425:AAHqrQCEqrgtVdl5Te5WhWblM2ESCnqhpfk")
 TELEGRAM_CHAT  = os.environ.get("TELEGRAM_CHAT_ID", "2100366814")
-GEMINI_KEY     = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+GEMINI_KEY     = os.environ.get("GEMINI_API_KEY", "")
 
 _DIR       = os.path.dirname(os.path.abspath(__file__))
 _DATA_DIR  = os.path.join(_DIR, "data")

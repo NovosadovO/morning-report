@@ -132,7 +132,7 @@ def _esc(t):
     return (t.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;"))
 
 def _gemini(prompt, max_tokens=400):
-    key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+    key = os.environ.get("GEMINI_API_KEY", "")
     payload = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.8}

@@ -15,7 +15,7 @@ from datetime import datetime, timezone, timedelta
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT  = os.environ.get("TELEGRAM_CHAT_ID", "2100366814")
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 
 def _now_local():
     return datetime.now(timezone.utc) + timedelta(hours=2)

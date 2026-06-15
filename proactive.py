@@ -265,7 +265,7 @@ def _send(text: str):
 # ─── GEMINI ───────────────────────────────────────────────────────────────────
 
 def _ask_gemini(prompt: str, system: str, max_tokens: int = 500) -> str:
-    api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDQYOrsPPLZxXdChAG1SlGh1nzPmiJBHSs")
+    api_key = os.environ.get("GEMINI_API_KEY", "")
     contents = [
         {"role": "user",  "parts": [{"text": f"[SYSTEM]\n{system}"}]},
         {"role": "model", "parts": [{"text": "Зрозумів, готовий."}]},

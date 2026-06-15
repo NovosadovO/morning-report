@@ -1247,7 +1247,7 @@ def _parse_gmail_msg(msg_data, full=False):
 
 def _gemini_summarize(text, max_input=3000):
     """Робить короткий actionable summary через Gemini API."""
-    api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDRXcGERTNILIEDKbmgTKSXUuiwt1oKeGM")
+    api_key = os.environ.get("GEMINI_API_KEY", "")
     if not api_key or not text or text == "—":
         return None
     try:
@@ -1505,7 +1505,7 @@ def _email_save_ids(sent_ids: set):
 def _gemini_email_analysis(full_text: str) -> dict:
     """Аналізує лист через Gemini: детальний переказ + думка."""
     import re as _re
-    api_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDRXcGERTNILIEDKbmgTKSXUuiwt1oKeGM")
+    api_key = os.environ.get("GEMINI_API_KEY", "")
 
     prompt = (
         "Проаналізуй цей email. Відповідь — ТІЛЬКИ валідний JSON, без markdown, без коментарів:\n"
@@ -3631,7 +3631,7 @@ def main():
 
     # ── КРОК 8: Calendar-aware AI секція (кожен звіт унікальна порада) ───────
     ai_insight = None
-    gemini_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDRXcGERTNILIEDKbmgTKSXUuiwt1oKeGM")
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
     shift_hint = ""
     weight_hint = ""
     if gemini_key:
@@ -5064,7 +5064,7 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
     - реальні дані (вага, звички, здоров'я, крипто)
     """
     import uuid as _uuid
-    gemini_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDRXcGERTNILIEDKbmgTKSXUuiwt1oKeGM")
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
 
     # Збираємо реальний контекст
     ctx_parts = []
@@ -7419,7 +7419,7 @@ def check_morning_context():
             pass
 
         # ── КРОК 5: AI-порада з урахуванням КАЛЕНДАРЯ ────────────────────────
-        gemini_key = os.environ.get("GEMINI_API_KEY", "AIzaSyDRXcGERTNILIEDKbmgTKSXUuiwt1oKeGM")
+        gemini_key = os.environ.get("GEMINI_API_KEY", "")
         ai_tip = ""
         if gemini_key:
             try:
