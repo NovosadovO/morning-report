@@ -2581,7 +2581,7 @@ _GH_DATA_BRANCH = "data"  # окрема гілка для даних — не �
 def _gh_get_sent():
     """Читає monitor_main_sent.json з GitHub гілки data."""
     import base64
-    gh_token = os.environ.get("GITHUB_TOKEN", "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")
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
     if not gh_token:
         return None, None
     url = f"https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_main_sent.json?ref={_GH_DATA_BRANCH}"
@@ -2600,7 +2600,7 @@ def _gh_get_sent():
 def _gh_get_json(filename):
     """Читає довільний JSON-файл з GitHub гілки data. Повертає (dict, sha)."""
     import base64
-    gh_token = os.environ.get("GITHUB_TOKEN", "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")
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
     if not gh_token:
         return {}, None
     url = f"https://api.github.com/repos/NovosadovO/morning-report/contents/data/{filename}?ref={_GH_DATA_BRANCH}"
@@ -2619,7 +2619,7 @@ def _gh_get_json(filename):
 def _gh_save_json(filename, data, sha):
     """Зберігає довільний JSON-файл на GitHub гілку data."""
     import base64
-    gh_token = os.environ.get("GITHUB_TOKEN", "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")
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
     if not gh_token:
         return
     url = f"https://api.github.com/repos/NovosadovO/morning-report/contents/data/{filename}"
@@ -2646,7 +2646,7 @@ def _gh_save_json(filename, data, sha):
 def _gh_save_sent(data, sha):
     """Зберігає monitor_main_sent.json на GitHub гілку data."""
     import base64
-    gh_token = os.environ.get("GITHUB_TOKEN", "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")
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
     if not gh_token:
         return
     url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_main_sent.json"
@@ -3519,7 +3519,7 @@ def main():
     if not force and gh_sha:
         try:
             import base64 as _b64
-            gh_token = os.environ.get("GITHUB_TOKEN", "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")
+            gh_token = os.environ.get("GITHUB_TOKEN", "")
             _url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_main_sent.json"
             _content = _b64.b64encode(json.dumps(claim_data, indent=2).encode()).decode()
             _body = json.dumps({
@@ -5987,7 +5987,7 @@ _DAY_SUMMARY_GH_URL = "https://api.github.com/repos/NovosadovO/morning-report/co
 def _day_summary_gh_check(date_str):
     """Повертає True якщо підсумок вже надіслано сьогодні (GitHub dedup). З retry."""
     import base64
-    gh_token = os.environ.get("GITHUB_TOKEN", "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")
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
     if not gh_token:
         return False
     # Читаємо з конкретної гілки щоб уникнути stale кешу GitHub CDN
@@ -6011,7 +6011,7 @@ def _day_summary_gh_check(date_str):
 def _day_summary_gh_mark(date_str):
     """Зберігає дату підсумку на GitHub."""
     import base64
-    gh_token = os.environ.get("GITHUB_TOKEN", "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")
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
     if not gh_token:
         return
     # Get current SHA
@@ -7312,7 +7312,7 @@ def check_smart_notifications():
                 pass
 
             if not already_done:
-                _tg_token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+                _tg_token = os.environ.get("TELEGRAM_TOKEN", os.environ.get("TELEGRAM_BOT_TOKEN", ""))
                 _tg_chat  = os.environ.get("TELEGRAM_CHAT_ID", "")
                 if _tg_token and _tg_chat:
                     _shower_payload = json.dumps({
@@ -8775,7 +8775,7 @@ def check_important_emails_followup():
     import base64 as _b64i, urllib.request as _uri
     gh_url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/important_emails.json"
     gh_headers = {
-        "Authorization": f"token {os.environ.get('GITHUB_TOKEN','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')}",
+        "Authorization": f"token {os.environ.get("GITHUB_TOKEN", "")}",
         "User-Agent": "bot"
     }
 
@@ -8856,7 +8856,7 @@ def check_email_deadlines():
         return
 
     try:
-        gh_token = os.environ.get("GITHUB_TOKEN", "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")
+        gh_token = os.environ.get("GITHUB_TOKEN", "")
         gh_url   = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/email_deadlines.json"
         gh_hdrs  = {"Authorization": f"token {gh_token}", "User-Agent": "monitor"}
 

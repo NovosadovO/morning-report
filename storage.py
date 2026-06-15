@@ -7,7 +7,7 @@ Persistent storage через GitHub repository.
 
 import os, json, time, base64, urllib.request, urllib.parse
 
-GITHUB_TOKEN = "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"
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 GITHUB_REPO  = "NovosadovO/morning-report"
 GITHUB_API   = "https://api.github.com"
 

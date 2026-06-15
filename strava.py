@@ -8,7 +8,7 @@ CLIENT_SECRET = "48f5fe81c418ea39328fa88a1d4a82a37c3fc3fe"
 REFRESH_TOKEN_ENV = "STRAVA_REFRESH_TOKEN"
 
 # GitHub storage для refresh token
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "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")
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 GITHUB_REPO = os.getenv("GITHUB_REPO", "NovosadovO/morning-report")
 STRAVA_TOKEN_FILE = "strava_token.json"
 

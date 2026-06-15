@@ -409,7 +409,7 @@ def run_reminders_watcher():
     """Нагадування з data/reminders.json — кожну хвилину. Підтримка repeat: daily."""
     import urllib.request, urllib.parse, base64, json, os
     from datetime import datetime, timezone, timedelta
-    GITHUB_TOKEN = "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"
+    GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
     TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN","")
     TELEGRAM_CHAT  = os.environ.get("TELEGRAM_CHAT_ID","")
 

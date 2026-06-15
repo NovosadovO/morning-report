@@ -27,7 +27,7 @@ OFFSET_FILE    = "/tmp/bot_offset.json"
 _INSTANCE_ID = str(uuid.uuid4())[:12]
 _DRAFT_STORE: dict = {}  # uid_str -> {to, subject, body} — тимчасовий store для email drafts
 _IMPORTANT_EMAILS_FILE = "data/important_emails.json"  # важливі листи (GitHub)
-_GH_TOKEN    = os.environ.get("GITHUB_TOKEN", "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")
+_GH_TOKEN    = os.environ.get("GITHUB_TOKEN", "")
 _GH_LOCK_URL = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_lock.json"
 _GH_OFF_URL  = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_offset.json"
 
