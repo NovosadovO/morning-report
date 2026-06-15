@@ -1,40 +1,45 @@
-# TASK: monitor.py fixes
+# Оновлення бота 2.0
 
-## Fixes needed
+## Завдання
+1. **AI брифінг** — не одинокий, середній розмір (30-40 речень), вбудований в звіт природно
+2. **Астро AI** — після астро: AI аналіз аспектів + поради + рекомендації (детальніший)
+3. **Нові функції** — все що корисно для Олега (крипто, здоров'я, спорт, фінанси, робота)
+4. **Графіки** — більше візуалізації у звіті
 
-1. **Period/vibe fix** (~2502)
-   - `4<=h<9` → split: `4<=h<7` = early_morning, `7<=h<11` = morning, `11<=h<13` = midday
-   - Add `_early_morning_vibes` (4-7am) and proper `_morning_vibes` (7-11am)
-   - 9am should NOT get "Обідній спринт"
+## Файли
+- monitor.py (9694 рядки) — основний звіт
+- bot.py (2808) — команди
+- monitor_loop.py (1459) — треди
+- astro.py (1032) — астро
 
-2. **Header redesign** (~2545)
-   - One fixed beautiful style (no 12 rotations)
-   - Show: period icon + time + date/weekday + location context + vibe
-   - Format:
-     ```
-     🌅 <b>09:00  ·  Ср 03.06</b>
-     🏠 Вдома  ·  Вихідний
-     <i>Ранок вирішує день! 🌅</i>
-     ```
-   - Location: if work day + shift active → "🏭 На роботі", else "🏠 Вдома"
-   - Weekend: 🏖 Вихідний
+## Зміни
 
-3. **Armolopid dedup** (~3676)
-   - The duplication was analyzed: line 3676 is in `build_*` fn inside main()
-   - Line 5509 is in check_day_summary() (21:00) — separate, OK
-   - The "second" appearance is in morning_context (04:30/05:00 pre-shift message at ~6468)
-   - These are different messages sent at different times → NOT a bug actually
-   - User sees both because morning pre-shift AND main report both mention Armolopid
-   - FIX: In the main report health block (3676), only show Armolopid if h >= 7 
-     (not in pre-shift messages which are 04:30/05:00)
-   - Actually user said "ліки Armolopid з'являються двічі в одному повідомленні"
-   - Need to check if within single report text Armolopid appears twice
+### 1. AI брифінг (monitor.py)
+- Зменшити з 100 до 35 речень
+- Прибрати "суцільний текст" — зробити структурований з емодзі секціями
+- Вбудувати в звіт між заголовком і score, НЕ окремим повідомленням
 
-4. **Context check before report** — location/shift context in header
-   Already handled in #2
+### 2. Астро AI аналіз (monitor.py — _get_astro_ai_analysis)
+- Розширити з 15-20 до 25-30 речень
+- Додати детальний опис кожного активного аспекту
+- Додати конкретні поради по кожному транзиту
+- Додати рекомендації: фінанси, здоров'я, стосунки, робота
 
-## Status
-- [ ] Period split
-- [ ] Header
-- [ ] Armolopid dedup (need to verify actual duplication source)
-- [ ] Push to git
+### 3. Нові функції
+- Крипто Fear & Greed Index в звіті
+- Новини BTC/ETH/AVAX/ONDO щодня
+- Трекер ваги — авто нагадування якщо 3+ дні без запису
+- Мотиваційне повідомлення зранку (7:00) персоналізоване
+- Щотижневий прогрес-звіт (неділя 20:00) — вага, біг, звички, крипто
+
+### 4. Графіки
+- Графік ваги автоматично в щотижневому звіті
+- Графік крипто (7 днів) в звіті по понеділках
+
+## Статус
+- [ ] AI брифінг
+- [ ] Астро AI
+- [ ] Fear & Greed
+- [ ] Мотивація 7:00
+- [ ] Авто нагадування ваги
+- [ ] Тижневий прогрес

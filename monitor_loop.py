@@ -1032,6 +1032,8 @@ def run_assistant_watcher():
                 mod.check_important_emails_followup()
             if hasattr(mod, 'check_email_deadlines'):
                 mod.check_email_deadlines()
+            if hasattr(mod, 'check_motivation_7am'):
+                mod.check_motivation_7am()
         except Exception as e:
             print(f"Assistant watcher error: {e}", flush=True)
         time.sleep(60)
