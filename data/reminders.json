@@ -13,7 +13,7 @@
   },
   {
     "id": "health_data_daily",
-    "datetime_utc": "2026-05-13T19:15:00",
+    "datetime_utc": "2026-05-14T19:15:00",
     "text": "🍎 <b>Health дані за сьогодні!</b>\n\nВідкрий Apple Health і:\n\n📸 Надішли фото скріну — бот прочитає автоматично\n\nабо введи вручну:\n<code>/зд [кроки] [сон] [ЧСС] [кал] [score]</code>\n\n<i>Приклад: /зд 12500 7.5 68 2800 78</i>",
     "sent": false,
     "repeat": "daily"
@@ -28,7 +28,7 @@
     "id": "ruslana_birthday_reminder",
     "datetime_utc": "2026-05-17T09:00:00",
     "text": "🎂 <b>Нагадування!</b>\n\nПіслязавтра — день народження Руслани (20 травня) 🎉\nНе забудь привітати! 🌷",
-    "sent": false
+    "sent": true
   },
   {
     "id": "buy_rackets_balls",
