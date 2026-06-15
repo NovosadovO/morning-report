@@ -2473,7 +2473,7 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
 {prev_ctx_block}
 ════════════════════════════════════
 
-Напиши аналіз рівно 30 речень. Тон: прямий, як хороший тренер і фінансовий партнер — без води.
+Напиши аналіз рівно 100 речень. Тон: прямий, як хороший тренер і фінансовий партнер — без води.
 
 БЛОКИ (пиши тільки якщо є реальні дані, інакше пропускай):
 
@@ -2507,7 +2507,7 @@ BTC/ETH/AVAX/ONDO — точна ціна і % за 24г з даних. Зага
         try:
             body_ai = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 4096, "temperature": 0.7},
+                "generationConfig": {"maxOutputTokens": 8192, "temperature": 0.7},
             }).encode()
             req_ai = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -2672,17 +2672,15 @@ def _gh_save_sent(data, sha):
 
 def _get_report_slot(now_local):
     """
-    2 слоти на годину: :00, :30
+    1 слот на годину: тільки :00
     Повертає ключ слоту або None якщо ми не у вікні.
-    Вікна: 0-2хв, 30-32хв
+    Вікно: 0-4хв кожної години
     """
     m = now_local.minute
     h = now_local.hour
     date_str = now_local.strftime("%Y-%m-%d")
-    if 0 <= m < 3:
+    if 0 <= m < 5:
         return f"{date_str}T{h:02d}:00"
-    elif 30 <= m < 33:
-        return f"{date_str}T{h:02d}:30"
     return None
 
 
@@ -4207,7 +4205,34 @@ def main():
         import shopping as _sh_rep
         _uncompleted = _sh_rep.get_uncompleted()
         if _uncompleted:
-            _shop_lines = "\n".join(f"⬜ {x}" for x in _uncompleted)
+            def _shop_emoji(item_text):
+                t = item_text.lower()
+                if any(k in t for k in ["молоко","кефір","йогурт","сир","масло","яйц","вершк","сметан"]):
+                    return "🥛"
+                if any(k in t for k in ["хліб","булк","батон","рогалик","тіст","борошн"]):
+                    return "🍞"
+                if any(k in t for k in ["м'яс","куряч","свинин","яловичин","філе","фарш","ковбас","шинк"]):
+                    return "🥩"
+                if any(k in t for k in ["риб","лосос","тунец","оселедец","морепродукт"]):
+                    return "🐟"
+                if any(k in t for k in ["яблук","банан","апельсин","лимон","груш","виноград","полуниц","фрукт"]):
+                    return "🍎"
+                if any(k in t for k in ["помідор","огірок","перець","цибул","часник","морков","картопл","броккол","салат","овоч"]):
+                    return "🥦"
+                if any(k in t for k in ["вод","сік","чай","кав","напій","пиво","вино"]):
+                    return "🥤"
+                if any(k in t for k in ["шоколад","цукерк","торт","печив","солодощ","мед","варен"]):
+                    return "🍫"
+                if any(k in t for k in ["гречк","рис","макарон","паст","крупа","вівсян","вермішель"]):
+                    return "🌾"
+                if any(k in t for k in ["мило","шампун","гель","зубн","туалет","паперов","косметик","крем","дезодорант"]):
+                    return "🧴"
+                if any(k in t for k in ["ліки","таблетк","вітамін","аптек","препарат","armolopid","армолопід"]):
+                    return "💊"
+                if any(k in t for k in ["спорт","протеїн","добавк","bcaa","омег"]):
+                    return "💪"
+                return "🛍️"
+            _shop_lines = "\n".join(f"{_shop_emoji(x)} {x}" for x in _uncompleted)
             parts.append(f"🛒 <b>Список покупок</b>\n{_shop_lines}")
     except Exception as _sh_err:
         print(f"shopping in report error: {_sh_err}")
@@ -4256,7 +4281,7 @@ def main():
                     f"=== АСТРОЛОГІЧНИЙ ЗВІТ ===\n"
                     f"{_astro_full_ctx[:2000]}\n"
                     f"==========================================\n\n"
-                    f"Прочитай ВСЕ і напиши живий персональний брифінг — РІВНО 25 речень.\n"
+                    f"Прочитай ВСЕ і напиши живий персональний брифінг — РІВНО 100 речень.\n"
                     f"Починай з 'Олег,'. БЕЗ вступів, БЕЗ 'Ось', БЕЗ 'Звичайно', БЕЗ нумерації, БЕЗ заголовків.\n"
                     f"Пиши суцільним живим текстом, як близький друг-тренер який знає про тебе все.\n\n"
                     f"ОБОВ'ЯЗКОВО охопи ВСІ ці теми (кожна — 2-3 речення):\n"
@@ -4280,7 +4305,7 @@ def main():
                 )
                 _brief_payload = json.dumps({
                     "contents": [{"parts": [{"text": _brief_prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 4096, "temperature": 1.0},
+                    "generationConfig": {"maxOutputTokens": 8192, "temperature": 1.0},
                 }).encode()
                 _brief_req = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -4411,6 +4436,34 @@ def main():
         _send_parts_as_one(email_parts)
 
     print(f"=== Report {'sent' if ok else 'FAILED'} ===")
+
+    # ── Графіки після звіту ───────────────────────────────────────────────────
+    try:
+        import charts as _charts_mod
+        _time_main.sleep(0.8)
+        print("[charts] generating combined dashboard...", flush=True)
+        _chart_bytes = _charts_mod.plot_combined_dashboard()
+        if _chart_bytes:
+            _req_send.post(
+                f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
+                data={"chat_id": TELEGRAM_CHAT, "caption": "📊 <b>Дашборд здоров'я</b>", "parse_mode": "HTML"},
+                files={"photo": ("dashboard.png", _io_send.BytesIO(_chart_bytes), "image/png")},
+                timeout=60,
+            )
+            print("[charts] combined dashboard sent", flush=True)
+            _time_main.sleep(0.5)
+        # Додатково: графік дня (трекінг за сьогодні)
+        _day_chart = _charts_mod.plot_day_dashboard()
+        if _day_chart:
+            _req_send.post(
+                f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
+                data={"chat_id": TELEGRAM_CHAT, "caption": "📈 <b>Трекінг за сьогодні</b>", "parse_mode": "HTML"},
+                files={"photo": ("day_chart.png", _io_send.BytesIO(_day_chart), "image/png")},
+                timeout=60,
+            )
+            print("[charts] day dashboard sent", flush=True)
+    except Exception as _e_charts:
+        print(f"[charts] error: {_e_charts}", flush=True)
 
     # ── Астро — надсилаємо окремим повідомленням після звіту ─────────────────
     # Астро вже є в parts (блок 6) — окреме надсилання прибрано щоб не дублювати
