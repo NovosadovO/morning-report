@@ -637,3 +637,181 @@ def _check_calendar_event_proactive(ctx, state, now):
     except Exception as e:
         print(f"_check_calendar_event_proactive error: {e}")
     return None, None
+
+
+# ─── AI ВЛАСНІ СПОСТЕРЕЖЕННЯ ─────────────────────────────────────────────────
+
+def check_ai_observations():
+    """
+    Раз на день (о 15:00 або 16:00 якщо на роботі) AI сам аналізує
+    всі дані за останні 7-14 днів, знаходить патерни і надсилає
+    власні спостереження + задає питання.
+    """
+    now = _now_local()
+    h, m = now.hour, now.minute
+    today = now.strftime("%Y-%m-%d")
+
+    # Вікно: 15:00–15:05 або 16:00–16:05 (якщо о 15:00 на ранній зміні)
+    if not ((h == 15 and 0 <= m < 6) or (h == 16 and 0 <= m < 6)):
+        return
+
+    if _already_sent("ai_observations"):
+        return
+
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    if not gemini_key:
+        return
+
+    # ── Збираємо всі доступні дані ───────────────────────────────────────────
+    import sys
+    sys.path.insert(0, _DIR)
+
+    data_parts = []
+
+    # Вага — 14 днів
+    try:
+        import storage as _st
+        wd = _st.load("weight_data.json") or {}
+        cutoff = (now - timedelta(days=14)).strftime("%Y-%m-%d")
+        w14 = {k: v for k, v in sorted(wd.items()) if k >= cutoff}
+        if w14:
+            entries = [f"{k}: {v} кг" for k, v in list(w14.items())[-14:]]
+            data_parts.append("ВАГА (14 днів):\n" + "\n".join(entries))
+    except Exception as e:
+        print(f"[ai_obs] weight error: {e}")
+
+    # Звички — 14 днів
+    try:
+        from habits import load_data as _lhab
+        hab_db = _lhab()
+        hab_lines = []
+        for i in range(13, -1, -1):
+            d = (now - timedelta(days=i)).strftime("%Y-%m-%d")
+            day_data = hab_db.get(d, {})
+            if day_data:
+                done = [k for k, v in day_data.items() if v is True]
+                missed = [k for k, v in day_data.items() if v is False]
+                hab_lines.append(f"{d}: виконано={','.join(done) or '-'} | пропущено={','.join(missed) or '-'}")
+        if hab_lines:
+            data_parts.append("ЗВИЧКИ (14 днів):\n" + "\n".join(hab_lines))
+    except Exception as e:
+        print(f"[ai_obs] habits error: {e}")
+
+    # Біг — Strava
+    try:
+        from strava import get_month_stats as _gms, get_last_activity as _gla
+        ms = _gms(now.year, now.month)
+        la = _gla()
+        run_str = f"Цей місяць: {ms.get('runs',0)} пробіжок, {ms.get('km',0):.1f} км (ціль 40 км)"
+        if la:
+            run_str += f"\nОстання: {la.get('distance_km',0):.1f} км, темп {la.get('pace','?')}, {la.get('date','?')}"
+        data_parts.append("БІГ:\n" + run_str)
+    except Exception as e:
+        print(f"[ai_obs] strava error: {e}")
+
+    # QWatch (здоров'я)
+    try:
+        from storage import load_health as _lhh
+        hd = _lhh()
+        cutoff = (now - timedelta(days=7)).strftime("%Y-%m-%d")
+        h7 = {k: v for k, v in sorted(hd.items()) if k >= cutoff}
+        if h7:
+            h_lines = []
+            for d, vals in h7.items():
+                parts = []
+                if vals.get("steps"): parts.append(f"кроки {vals['steps']}")
+                if vals.get("sleep_hours"): parts.append(f"сон {vals['sleep_hours']}г")
+                if vals.get("hrv"): parts.append(f"HRV {vals['hrv']}")
+                if vals.get("hr_avg"): parts.append(f"ЧСС {vals['hr_avg']}")
+                if parts:
+                    h_lines.append(f"{d}: {', '.join(parts)}")
+            if h_lines:
+                data_parts.append("ЗДОРОВ'Я/QWATCH (7 днів):\n" + "\n".join(h_lines))
+    except Exception as e:
+        print(f"[ai_obs] health error: {e}")
+
+    # Крипто — поточні ціни + портфель
+    try:
+        from context import get_context as _gctx
+        ctx = _gctx(include_crypto=True, include_calendar=False)
+        crypto_str = ctx.get("crypto", "")
+        portfolio_str = ctx.get("portfolio", "")
+        if crypto_str:
+            data_parts.append("КРИПТО ЗАРАЗ:\n" + crypto_str)
+        if portfolio_str:
+            data_parts.append("ПОРТФЕЛЬ:\n" + portfolio_str)
+    except Exception as e:
+        print(f"[ai_obs] crypto error: {e}")
+
+    # Попередні підсумки (для розуміння трендів)
+    try:
+        prev = _st.load("summaries_history.json", default=[])
+        if prev and isinstance(prev, list):
+            recent7 = [p for p in prev if p.get("date", "") >= (now - timedelta(days=7)).strftime("%Y-%m-%d")]
+            if recent7:
+                prev_lines = [f"[{p['date']} {p.get('time','')}]: {p['text'][:300]}" for p in recent7[-5:]]
+                data_parts.append("ПОПЕРЕДНІ ПІДСУМКИ (останній тиждень):\n" + "\n---\n".join(prev_lines))
+    except Exception as e:
+        print(f"[ai_obs] summaries error: {e}")
+
+    if not data_parts:
+        print("[ai_obs] no data available, skipping")
+        return
+
+    all_data = "\n\n".join(data_parts)
+
+    # ── Промпт — AI аналізує як незалежний аналітик ─────────────────────────
+    import uuid as _uuid
+    seed = str(_uuid.uuid4())[:8]
+
+    prompt = f"""Ти — персональний AI-аналітик і коуч Олега Новосадова (Кошіце, Словаччина, {now.strftime('%d.%m.%Y')}).
+Профіль: заводський робітник Minebea Mitsumi (змінний графік), цілі — схуднути до 78 кг, бігати 40 км/міс, фінансова незалежність через крипто+ETF.
+
+Ось всі дані за останні 7-14 днів:
+
+{all_data}
+
+Твоє завдання — САМОСТІЙНО проаналізувати ці дані і написати повідомлення у такому форматі:
+
+🔍 <b>Що я помітив</b>
+[3-5 конкретних спостережень на основі реальних чисел і патернів в даних.
+Приклади: "Вага зростає щопонеділка після вихідних", "Ти не бігав вже 5 днів — це найдовша пауза за місяць",
+"HRV падає в дні після нічних змін", "ONDO впав на 12% — найбільше в портфелі"]
+
+📈 <b>Тренди</b>
+[2-3 тренди — що покращується, що погіршується. Тільки якщо дані підтверджують.]
+
+❓ <b>Питання до тебе</b>
+[2-3 питання які AI реально хоче знати щоб краще допомагати.
+НЕ загальні ("як ти?") — а конкретні виходячи з даних:
+"Чому ти пропустив біг в четвер — зайнятість чи погода?",
+"Ти відмітив душ як не виконаний — це через зміну чи щось інше?"]
+
+Правила:
+- Тільки реальні числа і факти з даних вище — нічого не вигадувати
+- Кожне спостереження = конкретний факт або число
+- Питання мають бути такими щоб Олег захотів відповісти
+- Мова: українська, неформально як близький друг
+- Seed: {seed}"""
+
+    try:
+        payload = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"maxOutputTokens": 1024, "temperature": 0.85},
+        }).encode()
+        req = urllib.request.Request(
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            data=payload,
+            headers={"Content-Type": "application/json"},
+            method="POST"
+        )
+        with urllib.request.urlopen(req, timeout=30) as r:
+            resp = json.loads(r.read())
+        text = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+
+        if text:
+            _mark_sent("ai_observations")
+            _send(text)
+            print(f"[ai_obs] sent observations for {today}")
+    except Exception as e:
+        print(f"[ai_obs] gemini error: {e}")

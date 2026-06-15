@@ -892,6 +892,10 @@ def run_proactive_watcher():
             _proactive_mod.check_proactive()
         except Exception as e:
             print(f"Proactive watcher error: {e}", flush=True)
+        try:
+            _proactive_mod.check_ai_observations()
+        except Exception as e:
+            print(f"AI observations watcher error: {e}", flush=True)
         time.sleep(1800)  # 30 хвилин
 
 
