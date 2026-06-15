@@ -1151,7 +1151,7 @@ def run_strava_charts_loop():
                 except Exception as e:
                     print(f"[strava_charts] evening error: {e}", flush=True)
 
-            # Тижневий звіт — неділя о 20:00
+            # Тижневий звіт Strava — неділя о 20:00
             if now.weekday() == 6 and h == 20 and 0 <= m < 5 and _sent_weekly != week_str:
                 _sent_weekly = week_str
                 print(f"[strava_charts] weekly report {week_str}", flush=True)
@@ -1159,6 +1159,23 @@ def run_strava_charts_loop():
                     mon.check_strava_weekly_report()
                 except Exception as e:
                     print(f"[strava_charts] weekly error: {e}", flush=True)
+
+            # ── AI Тижневий Коуч — неділя о 20:30 ──
+            if now.weekday() == 6 and h == 20 and 30 <= m < 35:
+                coach_key = f"coach_{week_str}"
+                # Перевіряємо in-memory щоб не запускати кілька разів за 5 хв
+                if not getattr(run_strava_charts_loop, '_sent_coach', None) or \
+                   getattr(run_strava_charts_loop, '_sent_coach', None) != coach_key:
+                    run_strava_charts_loop._sent_coach = coach_key
+                    print(f"[WeeklyCoach] Triggering weekly AI coach {week_str}", flush=True)
+                    try:
+                        import threading as _wct
+                        import sys as _wcs
+                        _wcs.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                        from weekly_coach import run_weekly_coach
+                        _wct.Thread(target=run_weekly_coach, daemon=True).start()
+                    except Exception as e:
+                        print(f"[WeeklyCoach] trigger error: {e}", flush=True)
 
             # Місячний звіт — 1-ше число о 09:00
             if now.day == 1 and h == 9 and 0 <= m < 5 and _sent_monthly != month_str:

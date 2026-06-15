@@ -434,6 +434,35 @@ def _get_meds_context():
     except Exception:
         return "ліки: невідомо"
 
+def _get_strava_context():
+    """Повертає рядок з останнім тренуванням і тижневою статистикою."""
+    try:
+        import sys
+        sys.path.insert(0, os.path.dirname(__file__))
+        from strava import get_last_activity, get_week_stats
+        last = get_last_activity()
+        week = get_week_stats()
+        parts = []
+        if last:
+            parts.append(
+                f"Останнє тренування {last.get('when','')}: "
+                f"{last.get('distance_km',0)} км за {last.get('duration_min',0)} хв "
+                f"({last.get('pace','')})"
+            )
+            if last.get("hr"):
+                parts[-1] += f", ЧСС {last['hr']:.0f}"
+        else:
+            parts.append("Останнє тренування: немає даних")
+        if week:
+            parts.append(
+                f"Тиждень: {week.get('runs',0)} пробіжок, "
+                f"{week.get('km',0)} км, {week.get('duration_min',0)} хв"
+            )
+        return " | ".join(parts)
+    except Exception as e:
+        return f"Strava: недоступно ({e})"
+
+
 def _get_crypto_context():
     try:
         ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
@@ -475,6 +504,7 @@ def get_context(include_calendar=True, include_crypto=False):
         "weight":         _get_weight_context(),
         "habits":         _get_habits_context(),
         "meds":           _get_meds_context(),
+        "strava":         _get_strava_context(),
         "calendar_today":    cal["today_text"],
         "calendar_tomorrow": cal["tomorrow_text"],
     }
@@ -529,6 +559,7 @@ def get_system_prompt(ctx=None):
         f"Здоров'я: {ctx['health']}",
         f"Звички: {ctx['habits']}",
         f"Ліки: {ctx['meds']}",
+        f"Біг/Strava: {ctx.get('strava', 'немає даних')}",
     ]
 
     if ctx.get("crypto"):
@@ -577,25 +608,33 @@ def get_system_prompt(ctx=None):
 
 # ─── AI ЧАТ ───────────────────────────────────────────────────────────────────
 
-_CHAT_HISTORY_FILE = os.path.join(os.path.dirname(__file__), "data", "chat_history.json")
-MAX_HISTORY = 12
+MAX_HISTORY = 20  # зберігаємо останні 20 повідомлень (10 пар)
 
 
 def _load_history():
+    """Завантажує історію розмови з GitHub storage (персистентно між рестартами)."""
     try:
-        with open(_CHAT_HISTORY_FILE) as f:
-            return json.load(f)
-    except Exception:
+        import sys
+        sys.path.insert(0, os.path.dirname(__file__))
+        from storage import load
+        data = load("chat_history.json", default=[])
+        return data if isinstance(data, list) else []
+    except Exception as e:
+        print(f"_load_history error: {e}")
         return []
 
 
 def _save_history(history):
-    os.makedirs(os.path.dirname(_CHAT_HISTORY_FILE), exist_ok=True)
+    """Зберігає останні MAX_HISTORY*2 повідомлень у GitHub storage."""
     try:
-        with open(_CHAT_HISTORY_FILE, "w") as f:
-            json.dump(history[-MAX_HISTORY * 2:], f, ensure_ascii=False, indent=2)
-    except Exception:
-        pass
+        import sys, threading
+        sys.path.insert(0, os.path.dirname(__file__))
+        from storage import save
+        trimmed = history[-(MAX_HISTORY * 2):]
+        # Зберігаємо асинхронно щоб не блокувати відповідь
+        threading.Thread(target=save, args=("chat_history.json", trimmed), daemon=True).start()
+    except Exception as e:
+        print(f"_save_history error: {e}")
 
 
 def _try_parse_create_event(text: str):
@@ -734,5 +773,11 @@ def _handle_create_event(intent: dict, now: datetime) -> str:
 
 
 def clear_history():
-    """Очищає пам'ять розмови."""
-    _save_history([])
+    """Очищає пам'ять розмови (GitHub + local)."""
+    try:
+        import sys
+        sys.path.insert(0, os.path.dirname(__file__))
+        from storage import save
+        save("chat_history.json", [])
+    except Exception as e:
+        print(f"clear_history error: {e}")
