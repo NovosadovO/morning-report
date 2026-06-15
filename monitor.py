@@ -57,6 +57,9 @@ COINS = {
     "ONDO": "ondo-finance",
 }
 
+# Алерти >5% ТІЛЬКИ для монет Олега
+ALERT_COINS = {"BTC", "ETH", "AVAX", "ONDO"}
+
 # ─── EMAIL CLASSIFICATION ─────────────────────────────────────────────────────
 # Рівні: SPAM (викинути) → PROMO (показати в "Інші") → REAL (основні)
 
@@ -3654,14 +3657,34 @@ def main():
             else:
                 tip_ctx = "Пізній вечір. Що треба підготувати перед сном виходячи з завтрашнього розкладу."
 
+            # Зберемо реальні дані: Strava, звички, вага
+            _ai_real_ctx = ""
+            try:
+                from strava import get_last_activity as _gla
+                _la = _gla()
+                if _la and _la.get("when") == "сьогодні" and _la.get("distance_km", 0) >= 0.5:
+                    _ai_real_ctx += f"Сьогодні вже пробіг: {_la['distance_km']} км за {_la.get('duration_min',0)} хв (темп {_la.get('pace','—')}). "
+                else:
+                    _ai_real_ctx += "Сьогодні пробіжки ще не було. "
+            except: pass
+            try:
+                from storage import load_habits as _lh_ai
+                _hdb = _lh_ai()
+                _today_h = _hdb.get(now_local.strftime("%Y-%m-%d"), {})
+                _done_h = [k for k,v in _today_h.items() if v is True]
+                _ai_real_ctx += f"Виконані звички: {', '.join(_done_h) if _done_h else 'жодної'}. "
+            except: pass
+            _ai_real_ctx += weight_hint + " "
+
             ai_prompt = (
-                f"Контекст: {shift_hint} {weight_hint} Календар: {cal_events_text}. {tip_ctx} "
+                f"Контекст: {shift_hint} {_ai_real_ctx}Календар: {cal_events_text}. {tip_ctx} "
                 f"Напиши 3-5 речень українською без вступу, без 'Звичайно', без 'Привіт'. "
-                f"Конкретні поради для Олега: харчування, активність, енергія, продуктивність — на основі реального розкладу. [seed:{seed}]"
+                f"ТІЛЬКИ реальні дані — якщо Олег вже пробіг сьогодні, НЕ раджи бігти. "
+                f"Конкретні поради для Олега на основі РЕАЛЬНОГО стану зараз. [seed:{seed}]"
             )
             ai_payload = json.dumps({
                 "contents": [{"parts": [{"text": ai_prompt}]}],
-                "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.9},
+                "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.7},
             }).encode()
             ai_req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -4270,7 +4293,7 @@ def main():
                 except Exception as _e_ab:
                     _astro_full_ctx = astro_text or ""
 
-                _full_report_ctx = "\n\n".join(_all_report_text_parts)[:5000]
+                _full_report_ctx = "\n\n".join(_all_report_text_parts)[:15000]
 
                 _brief_prompt = (
                     f"Ти — персональний тренер, асистент, нутриціолог і астролог Олега Новосадова (Кошіце, Словаччина).\n"
@@ -4305,7 +4328,7 @@ def main():
                 )
                 _brief_payload = json.dumps({
                     "contents": [{"parts": [{"text": _brief_prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 8192, "temperature": 1.0},
+                    "generationConfig": {"maxOutputTokens": 8192, "temperature": 0.8},
                 }).encode()
                 _brief_req = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -5324,6 +5347,18 @@ def check_crypto_price_alert():
     alert_key_prefix = f"alerted_{now_str}"
 
     for symbol, cg_id in COINS.items():
+        # Алерти ТІЛЬКИ для монет Олега: BTC/ETH/AVAX/ONDO
+        if symbol not in ALERT_COINS:
+            # Все одно зберігаємо snapshot для майбутнього використання
+            price = current.get(cg_id)
+            if price:
+                pts = snapshots.get(cg_id, [])
+                if not pts or (now_ts - pts[-1][0]) >= 600:
+                    pts.append([now_ts, price])
+                pts = [[ts, p] for ts, p in pts if (now_ts - ts) <= 7200]
+                snapshots[cg_id] = pts
+            continue
+
         price = current.get(cg_id)
         if not price:
             continue
@@ -8935,12 +8970,21 @@ def check_strava_new_activity():
         if act_id == str(last_id):
             return  # не нова
 
-        # Нова активність!
+        # Перевірити що активність повністю синхронізована (не 0 даних)
+        dist_km_raw = round(a.get("distance", 0) / 1000, 2)
+        dur_sec_raw = a.get("moving_time", 0)
+        if dist_km_raw < 0.3 or dur_sec_raw < 60:
+            # Активність ще синхронізується — НЕ зберігаємо last_id
+            # Щоб перевірити знову наступного разу
+            print(f"[Strava] Activity {act_id} incomplete (dist={dist_km_raw}km, dur={dur_sec_raw}s) — skipping, will retry")
+            return
+
+        # Нова повна активність!
         state["last_id"] = act_id
         save_json_file(_STRAVA_LAST_ACT_FILE, state)
 
-        dist_km  = round(a["distance"] / 1000, 2)
-        dur_sec  = a["moving_time"]
+        dist_km  = dist_km_raw
+        dur_sec  = dur_sec_raw
         dur_min  = dur_sec // 60
         act_type = a.get("type", "Run")
         name     = a.get("name", "Тренування")
