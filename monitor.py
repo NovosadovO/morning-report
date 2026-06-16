@@ -3467,7 +3467,12 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str) -> str:
             f"🌙 МІСЯЦЬ\n"
             f"[Знак + фаза + 2 речення: яка енергія дня, для чого сприятливо]\n\n"
             f"⚡ АСПЕКТИ\n"
-            f"[Кожен активний аспект — ОКРЕМИЙ рядок: «Планета1 аспект Планета2 → конкретний вплив на Олега прямо зараз» — 1 речення. Перелічи ВСІ аспекти з звіту.]\n\n"
+            f"[Для КОЖНОГО аспекту з звіту окремий блок:\n"
+            f"• Назва: «Планета1 аспект Планета2»\n"
+            f"• Що це означає астрологічно (загальне значення цього типу аспекту)\n"
+            f"• Як це впливає на Олега КОНКРЕТНО сьогодні — фінанси, тіло, рішення, енергія\n"
+            f"• Чи це сприятливо чи напружено + що рекомендується\n"
+            f"Перелічи ВСІ аспекти з звіту, по 3-4 речення кожен.]\n\n"
             f"💰 ФІНАНСИ/КРИПТО\n"
             f"[2-3 речення: чи сприятливо для BTC/ETH/AVAX/ONDO сьогодні + конкретна порада: діяти чи чекати]\n\n"
             f"🏃 ТІЛО/БІГ\n"
@@ -3478,7 +3483,7 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str) -> str:
         )
         body = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"maxOutputTokens": 900, "temperature": 0.7},
+            "generationConfig": {"maxOutputTokens": 1800, "temperature": 0.7},
         }).encode()
         req = urllib.request.Request(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
