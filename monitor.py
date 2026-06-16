@@ -2088,7 +2088,7 @@ def _get_current_shift_context(calendar_text=""):
     h = now_local.hour
 
     is_working_now = False
-    if shift == "night" and (h >= 17 or h < 6):
+    if shift == "night" and (h >= 18 or h < 6):
         is_working_now = True
     elif shift == "early" and (6 <= h < 18):
         is_working_now = True
@@ -2103,7 +2103,7 @@ def _get_current_shift_context(calendar_text=""):
         else:
             greeting_override = "🌤 <b>Після нічної — прокидаєшся.</b> Плавний старт дня."
     elif shift == "night":
-        if h >= 17 or h < 6:
+        if h >= 18 or h < 6:
             greeting_override = "🌙 <b>Нічна зміна.</b> Олег зараз на роботі — тримайся!"
         elif 6 <= h < 10:
             greeting_override = "😴 <b>Після нічної зміни.</b> Час відпочити — заслужено!"
@@ -2327,10 +2327,10 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
         else:
             shift_desc = "рання зміна сьогодні (06:00–18:00), ще не почалась"
     elif shift == "night":
-        if h >= 17 or h < 6:
-            shift_desc = "нічна зміна 17:00–05:00 (ЗАРАЗ НА РОБОТІ)"
+        if h >= 18 or h < 6:
+            shift_desc = "нічна зміна 18:00–06:00 (ЗАРАЗ НА РОБОТІ)"
         else:
-            shift_desc = "нічна зміна сьогодні ввечері (17:00–05:00), вдома"
+            shift_desc = "нічна зміна сьогодні ввечері (18:00–06:00), вдома"
     elif shift == "after_night":
         shift_desc = "вдома після нічної зміни (зміна закінчилась, відпочиває)"
     else:
@@ -3673,14 +3673,14 @@ def main():
                 else:
                     shift_hint = "Рання зміна сьогодні вже закінчилась (06:00–18:00)."
             elif _shift == "night":
-                if _h_now >= 17 or _h_now < 5:
-                    shift_hint = "Олег ЗАРАЗ на нічній зміні (17:00–05:00). Зміна вже йде."
-                elif 5 <= _h_now < 15:
-                    shift_hint = "Нічна зміна щойно закінчилась (17:00–05:00), Олег вдома відпочиває."
+                if _h_now >= 18 or _h_now < 6:
+                    shift_hint = "Олег ЗАРАЗ на нічній зміні (18:00–06:00). Зміна вже йде."
+                elif 6 <= _h_now < 15:
+                    shift_hint = "Нічна зміна щойно закінчилась (18:00–06:00), Олег вдома відпочиває."
                 else:
-                    shift_hint = "Нічна зміна сьогодні ввечері (17:00–05:00), ще не почалась."
+                    shift_hint = "Нічна зміна сьогодні ввечері (18:00–06:00), ще не почалась."
             elif _shift == "after_night":
-                shift_hint = "Нічна зміна щойно закінчилась (17:00–05:00), Олег вдома відпочиває."
+                shift_hint = "Нічна зміна щойно закінчилась (18:00–06:00), Олег вдома відпочиває."
             else:
                 shift_hint = "Сьогодні вихідний/вільний день."
 
@@ -3696,11 +3696,11 @@ def main():
 
             # Час-специфічна порада з урахуванням зміни
             if _working_now and _shift == "night":
-                tip_ctx = "Олег ЗАРАЗ на нічній зміні (17:00–05:00). Дай пораду що допоможе пережити ніч: енергія, концентрація, безпека. НЕ пиши про сон чи відпочинок."
+                tip_ctx = "Олег ЗАРАЗ на нічній зміні (18:00–06:00). Дай пораду що допоможе пережити ніч: енергія, концентрація, безпека. НЕ пиши про сон чи відпочинок."
             elif _shift == "night" and 6 <= h_val < 14:
                 tip_ctx = "Олег щойно повернувся з нічної зміни. Пора спати і відновитися. Порада про якісний відпочинок після нічної."
             elif _shift == "night" and 14 <= h_val < 17:
-                tip_ctx = "Олег прокинувся після нічної зміни. Підготовка до наступної зміни о 17:00. Що важливо зробити за ці 3 години?"
+                tip_ctx = "Олег прокинувся після нічної зміни. Підготовка до наступної зміни о 18:00. Що важливо зробити за ці 3 години?"
             elif _working_now and _shift == "early":
                 tip_ctx = "Олег ЗАРАЗ на ранній зміні (06:00–18:00). Порада для продуктивності на роботі прямо зараз."
             elif _shift == "early" and h_val >= 18:
@@ -4385,6 +4385,22 @@ def main():
 
                 _full_report_ctx = "\n\n".join(_all_report_text_parts)[:15000]
 
+                # user_state — де Олег зараз, що казав
+                _user_state_ctx = ""
+                try:
+                    import sys as _sys_br
+                    _sys_br.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                    from proactive import load_user_state as _lu_st
+                    _ust = _lu_st()
+                    _ust_parts = []
+                    if _ust.get("location"): _ust_parts.append(f"Де зараз: {_ust['location']}")
+                    if _ust.get("activity"): _ust_parts.append(f"Активність: {_ust['activity']}")
+                    if _ust.get("mood"): _ust_parts.append(f"Настрій: {_ust['mood']}")
+                    if _ust.get("last_message_from_oleg"): _ust_parts.append(f"Останнє від Олега: «{_ust['last_message_from_oleg'][:100]}»")
+                    if _ust_parts: _user_state_ctx = "\n".join(_ust_parts)
+                except Exception as _e_ust:
+                    pass
+
                 _brief_prompt = (
                     f"Ти — персональний AI-асистент Олега Новосадова (Кошіце, Словаччина).\n"
                     f"Зараз {now_local.strftime('%H:%M')}, {now_local.strftime('%d.%m.%Y')}.\n"
@@ -4403,11 +4419,12 @@ def main():
                     f"[2-3 речення: погода Кошіце + важливі події + критична пошта якщо є]\n\n"
                     f"🎯 ЦІЛЬ\n"
                     f"[2 речення: 1 конкретна дія сьогодні — без кліше, без загальних слів. Або схуднення, або крипто, або нова робота — вибери найактуальніше]\n\n"
+                    f"ПОТОЧНИЙ СТАН ОЛЕГА (якщо є): {_user_state_ctx}\n\n"
                     f"ПРАВИЛА: тільки реальні числа зі звіту. Якщо даних немає — пропусти пункт. БЕЗ астро в цьому блоці. БЕЗ вступів. Тон: прямий, конкретний. ОБОВ'ЯЗКОВО завершуй кожне речення повністю — не обривай на середині. [seed:{_seed_b}]"
                 )
                 _brief_payload = json.dumps({
                     "contents": [{"parts": [{"text": _brief_prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 1500, "temperature": 0.8},
+                    "generationConfig": {"maxOutputTokens": 2000, "temperature": 0.8},
                 }).encode()
                 _brief_req = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -5007,7 +5024,7 @@ def check_morning_brief():
     if gemini_key:
         try:
             import uuid as _uuid_brief
-            shift_labels = {"early":"рання зміна 06:00–18:00","night":"нічна зміна 17:00–05:00","free":"вихідний"}
+            shift_labels = {"early":"рання зміна 06:00–18:00","night":"нічна зміна 18:00–06:00","free":"вихідний"}
             # Отримуємо події календаря
             cal_events_for_ai = _get_calendar_events_text()
             cal_ctx_brief = (
@@ -5155,6 +5172,19 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
     cal_events = _get_calendar_events_text()
     if cal_events:
         ctx_parts.append(f"Календар сьогодні: {cal_events}")
+
+    # НЕПРОЧИТАНІ ЛИСТИ — завжди читаємо
+    try:
+        emails_data = get_emails()
+        if emails_data:
+            email_lines = []
+            for _em in emails_data[:4]:
+                _subj = _em.get("subject", "")[:60]
+                _sndr = _em.get("sender_name", _em.get("sender", ""))[:30]
+                email_lines.append(f"{_sndr}: {_subj}")
+            ctx_parts.append(f"Непрочитані листи: {'; '.join(email_lines)}")
+    except Exception as _em_e:
+        pass
 
     # Додаткові дані з параметра
     if context:
@@ -5769,7 +5799,7 @@ def check_water_reminder():
     Нагадування пити воду кожні 3 години — час залежить від зміни:
       Вихідний:    08:00 11:00 14:00 17:00 20:00
       Рання зміна: 05:00 08:00 11:00 14:00 17:00 (на роботі з 06:00)
-      Нічна зміна: 14:00 17:00 20:00 23:00 02:00 (на роботі з 17:00)
+      Нічна зміна: 15:00 18:00 21:00 00:00 03:00 (на роботі з 18:00)
     """
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
@@ -5796,7 +5826,7 @@ def check_water_reminder():
     water_hours = {
         "free":  [8, 11, 14, 17, 20],
         "early": [5, 8, 11, 14, 17],
-        "night": [14, 17, 20, 23, 2],
+        "night": [15, 18, 21, 0, 3],
     }
     if h not in water_hours.get(shift, []):
         return
@@ -6363,7 +6393,7 @@ def check_traffic_before_shift():
         from traffic_kosice import format_traffic_report
         report = format_traffic_report()
 
-        shift = "☀️ Рання зміна (06:00)" if h == 5 else "🌙 Нічна зміна (17:00)"
+        shift = "☀️ Рання зміна (06:00)" if h == 5 else "🌙 Нічна зміна (18:00)"
         msg = f"🚗 <b>Трафік перед зміною</b>\n{shift}\n\n{report}"
         send_telegram(msg)
         print(f"Traffic before shift sent at {h}:00")
@@ -7181,7 +7211,7 @@ def check_smart_notifications():
         # ── 3. ПІДГОТОВКА ДО НІЧНОЇ (16:30) ──────────────────────────────
         elif today_shift == "night" and h == 16 and 30 <= m < 35 and not sent("pre_night"):
             ai_txt = _ai_personal_message(
-                "Олег готується до нічної зміни (17:00–05:00), старт через 1.5 години. "
+                "Олег готується до нічної зміни (18:00–06:00), старт через 1.5 години. "
                 "Нагадай поїсти зараз (до 06:00 не буде можливості), прийняти Armolopid, "
                 "коротко підбадьори. Дуже конкретно, 2-3 речення.",
                 None,
@@ -7190,8 +7220,8 @@ def check_smart_notifications():
             header = (
                 f"🌙 <b>НІЧНА ЗМІНА — ЧЕРЕЗ 1.5 ГОДИНИ</b>\n"
                 f"{'═' * 28}\n"
-                f"  🕕 Старт: 17:00  ·  🕕 Фініш: 05:00\n"
-                f"  🚶 Вихід о 17:25–17:30\n"
+                f"  🕕 Старт: 18:00  ·  🕕 Фініш: 06:00\n"
+                f"  🚶 Вихід о 17:50–18:00\n"
                 f"{'─' * 28}\n"
                 f"☑️ Поїж зараз  ·  💊 Armolopid  ·  ☕ Термос\n\n"
             )
@@ -7201,7 +7231,7 @@ def check_smart_notifications():
         # ── 4. ПІСЛЯ НІЧНОЇ (06:15) ───────────────────────────────────────
         elif today_shift == "night" and h == 6 and 15 <= m < 20 and not sent("post_night"):
             ai_txt = _ai_personal_message(
-                "Олег тільки що закінчив нічну зміну (17:00–05:00) і йде додому. "
+                "Олег тільки що закінчив нічну зміну (18:00–06:00) і йде додому. "
                 "Скажи йому легко поїсти, лягти спати, не гортати телефон — конкретно і коротко. "
                 "Оціни його зусилля на основі реальних даних (вага, звички). 2-3 речення.",
                 None,
@@ -7281,11 +7311,11 @@ def check_smart_notifications():
                     f"🌙 <b>ВЕЧІРНІЙ ЧЕКЛІСТ</b>\n"
                     f"╔══════════════════════╗\n"
                     f"║  🌙 Завтра НІЧНА зміна  ║\n"
-                    f"║      17:00 → 05:00      ║\n"
+                    f"║      18:00 → 06:00      ║\n"
                     f"╚══════════════════════╝\n\n"
                     f"Підготовка:\n"
                     f"  😴 Поспи вдень якщо зможеш\n"
-                    f"  🍽 Поїж о 16:30–17:00 (до 06:00 більше не буде)\n"
+                    f"  🍽 Поїж о 17:00–17:30 (до 06:00 більше не буде)\n"
                     f"  ☕ Підготуй термос з чаєм\n"
                     f"  💊 Armolopid після обіду\n\n"
                     f"<i>Ти впораєшся, нічна — твій режим 💪</i>"
@@ -7462,7 +7492,7 @@ def check_morning_context():
             try:
                 shift_labels = {
                     "early": "рання зміна (06:00–18:00) — сьогодні на роботу",
-                    "night": "нічна зміна (17:00–05:00) — сьогодні ввечері на роботу",
+                    "night": "нічна зміна (18:00–06:00) — сьогодні ввечері на роботу",
                     "after_night": "після нічної зміни — вчора ніч відпрацював, сьогодні відновлення і відпочинок",
                     "free":  "вихідний день — вільний графік"
                 }

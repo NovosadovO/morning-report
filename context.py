@@ -346,7 +346,7 @@ def get_status(shift_info=None):
 
 STATUS_LABELS = {
     "working_early": "на ранній зміні (06:00–18:00)",
-    "working_night": "на нічній зміні (17:00–05:00)",
+    "working_night": "на нічній зміні (18:00–06:00)",
     "sleeping":      "спить / нічний відпочинок",
     "home":          "вдома, вільний час",
     "pre_shift":     "готується до зміни",
@@ -463,6 +463,25 @@ def _get_strava_context():
         return f"Strava: недоступно ({e})"
 
 
+def _get_recent_emails_context() -> str:
+    """Повертає короткий текст з останніх непрочитаних листів для AI."""
+    try:
+        import sys
+        sys.path.insert(0, os.path.dirname(__file__))
+        from monitor import get_emails
+        emails = get_emails()
+        if not emails:
+            return "непрочитані листи: немає"
+        items = []
+        for e in emails[:5]:
+            subj = e.get("subject", "")[:60]
+            sender = e.get("sender_name", e.get("sender", ""))[:30]
+            items.append(f"· {sender}: {subj}")
+        return "непрочитані листи:\n" + "\n".join(items)
+    except Exception as _e:
+        return f"пошта: недоступна"
+
+
 def _get_crypto_context():
     try:
         ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
@@ -512,6 +531,12 @@ def get_context(include_calendar=True, include_crypto=False):
     if include_crypto:
         ctx["crypto"] = _get_crypto_context()
 
+    # Email контекст — завжди включаємо в систем промпт
+    try:
+        ctx["email"] = _get_recent_emails_context()
+    except Exception:
+        ctx["email"] = "пошта: недоступна"
+
     return ctx
 
 # ─── SYSTEM PROMPT ────────────────────────────────────────────────────────────
@@ -526,7 +551,7 @@ def get_system_prompt(ctx=None):
     now = ctx["now"]
     shift_labels = {
         "early": "рання (06:00–18:00)",
-        "night": "нічна (17:00–05:00)",
+        "night": "нічна (18:00–06:00)",
         "free":  "вихідний / вільний",
     }
 
@@ -564,6 +589,9 @@ def get_system_prompt(ctx=None):
 
     if ctx.get("crypto"):
         lines += ["", "══ КРИПТО ══", ctx["crypto"]]
+
+    if ctx.get("email"):
+        lines += ["", "══ НЕПРОЧИТАНА ПОШТА ══", ctx["email"]]
 
     # user_state — що Олег казав нещодавно
     try:

@@ -1360,7 +1360,25 @@ def run_report_card_watcher():
     import os, io, json
     print("=== Starting report card watcher (09:00 + 20:05 UTC+2) ===", flush=True)
     time.sleep(120)  # дати боту стартувати
+    # In-memory dedup (захист від дублів якщо watcher перезапускається)
     sent = {"morning": None, "evening": None}
+    # Persistent dedup через файл (захист між деплоями)
+    _SENT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "report_card_sent.json")
+
+    def _load_sent_persistent():
+        try:
+            with open(_SENT_FILE) as _f:
+                return json.load(_f)
+        except:
+            return {}
+
+    def _save_sent_persistent(data):
+        try:
+            os.makedirs(os.path.dirname(_SENT_FILE), exist_ok=True)
+            with open(_SENT_FILE, "w") as _f:
+                json.dump(data, _f)
+        except Exception as _e:
+            print(f"[report_card] dedup save error: {_e}", flush=True)
 
     def _send_album(photos, caption):
         """Надсилає список байтів як Telegram media group."""
@@ -1420,8 +1438,11 @@ def run_report_card_watcher():
             ds = now_local.strftime("%Y-%m-%d")
 
             # Ранковий звіт о 09:00
-            if h == 9 and 0 <= m < 5 and sent["morning"] != ds:
+            _p_sent = _load_sent_persistent()
+            if h == 9 and 0 <= m < 5 and sent["morning"] != ds and _p_sent.get("morning") != ds:
                 sent["morning"] = ds
+                _p_sent["morning"] = ds
+                _save_sent_persistent(_p_sent)
                 print(f"[report_card] generating morning album for {ds}", flush=True)
                 try:
                     import sys as _sys, os as _os
@@ -1435,8 +1456,11 @@ def run_report_card_watcher():
                     print(f"[report_card] morning error: {e}", flush=True)
 
             # Вечірній звіт о 20:05 (після графіків о 20:00)
-            if h == 20 and 5 <= m < 10 and sent["evening"] != ds:
+            _p_sent = _load_sent_persistent()
+            if h == 20 and 5 <= m < 10 and sent["evening"] != ds and _p_sent.get("evening") != ds:
                 sent["evening"] = ds
+                _p_sent["evening"] = ds
+                _save_sent_persistent(_p_sent)
                 print(f"[report_card] generating evening album for {ds}", flush=True)
                 try:
                     import sys as _sys, os as _os
