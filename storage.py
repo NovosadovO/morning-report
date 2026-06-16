@@ -5,7 +5,7 @@ Persistent storage через GitHub repository.
 Дані не зникають між редеплоями.
 """
 
-import os, json, time, base64, urllib.request, urllib.parse
+import os, json, time, base64, urllib.request, urllib.parse, threading
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 GITHUB_REPO  = "NovosadovO/morning-report"
@@ -17,6 +17,17 @@ _DIR = os.path.dirname(os.path.abspath(__file__))
 _CACHE = {}
 _CACHE_TIME = {}
 CACHE_TTL = 30  # секунд
+
+# Глобальний лок для атомарного read-modify-write по файлах
+_FILE_LOCKS: dict = {}
+_FILE_LOCKS_LOCK = threading.Lock()
+
+def _get_file_lock(filename: str) -> threading.Lock:
+    """Повертає Lock для конкретного файлу (singleton per filename)."""
+    with _FILE_LOCKS_LOCK:
+        if filename not in _FILE_LOCKS:
+            _FILE_LOCKS[filename] = threading.Lock()
+        return _FILE_LOCKS[filename]
 
 DATA_BRANCH = "data"  # окрема гілка для даних — не тригерить Railway редеплой
 
@@ -48,34 +59,38 @@ def _gh_request(method, path, body=None):
         return None
 
 def _load_github(filename):
-    """Читає JSON файл з GitHub repo."""
-    cache_key = filename
-    now = time.time()
-    if cache_key in _CACHE and now - _CACHE_TIME.get(cache_key, 0) < CACHE_TTL:
-        return _CACHE[cache_key]
+    """Читає JSON файл з GitHub repo. Thread-safe через file lock."""
+    lock = _get_file_lock(filename)
+    with lock:
+        cache_key = filename
+        now = time.time()
+        if cache_key in _CACHE and now - _CACHE_TIME.get(cache_key, 0) < CACHE_TTL:
+            return _CACHE[cache_key]
 
-    result = _gh_request("GET", f"data/{filename}")
-    if not result:
-        return _load_local(filename)
+        result = _gh_request("GET", f"data/{filename}")
+        if not result:
+            return _load_local(filename)
 
-    try:
-        content = base64.b64decode(result["content"]).decode()
-        data = json.loads(content)
-        _CACHE[cache_key] = data
-        _CACHE_TIME[cache_key] = now
-        print(f"storage: loaded {filename} from GitHub ({len(data)} keys)")
-        return data
-    except Exception as e:
-        print(f"storage parse error {filename}: {e}")
-        return _load_local(filename)
+        try:
+            content = base64.b64decode(result["content"]).decode()
+            data = json.loads(content)
+            _CACHE[cache_key] = data
+            _CACHE_TIME[cache_key] = now
+            print(f"storage: loaded {filename} from GitHub ({len(data)} keys)")
+            return data
+        except Exception as e:
+            print(f"storage parse error {filename}: {e}")
+            return _load_local(filename)
 
 def _save_github(filename, data):
-    """Зберігає JSON файл в GitHub repo. Retry при 409 conflict."""
-    _CACHE[filename] = data
-    _CACHE_TIME[filename] = time.time()
+    """Зберігає JSON файл в GitHub repo. Retry при 409 conflict. Thread-safe."""
+    lock = _get_file_lock(filename)
+    with lock:
+        _CACHE[filename] = data
+        _CACHE_TIME[filename] = time.time()
 
-    # Також локально
-    _save_local(filename, data)
+        # Також локально
+        _save_local(filename, data)
 
     content = base64.b64encode(json.dumps(data, ensure_ascii=False, indent=2).encode()).decode()
 

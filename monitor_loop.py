@@ -44,13 +44,25 @@ def run_bot():
         time.sleep(30)
 
 
+_MONITOR_MODULE = None
+_MONITOR_LOCK   = threading.Lock()
+
 def _load_monitor():
-    import importlib.util, os
-    spec = importlib.util.spec_from_file_location(
-        "monitor", os.path.join(os.path.dirname(__file__), "monitor.py"))
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    return mod
+    """Singleton — завантажує monitor.py лише раз щоб всі потоки ділили той самий storage._CACHE."""
+    global _MONITOR_MODULE
+    if _MONITOR_MODULE is not None:
+        return _MONITOR_MODULE
+    with _MONITOR_LOCK:
+        if _MONITOR_MODULE is not None:
+            return _MONITOR_MODULE
+        import importlib.util, os
+        spec = importlib.util.spec_from_file_location(
+            "monitor", os.path.join(os.path.dirname(__file__), "monitor.py"))
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        _MONITOR_MODULE = mod
+        print("=== monitor.py loaded as singleton ===", flush=True)
+        return mod
 
 
 def run_email_watcher():
@@ -252,15 +264,9 @@ def run_habits_loop():
 
 
 def run_shift_reminder_watcher():
-    """Нагадування за 2г до зміни — кожні 5 хвилин."""
-    print("=== Starting shift reminder watcher (every 5min) ===", flush=True)
-    time.sleep(50)
-    while True:
-        try:
-            _load_monitor().check_shift_reminders()
-        except Exception as e:
-            print(f"Shift reminder watcher error: {e}", flush=True)
-        time.sleep(300)
+    """ВИМКНЕНО — дублює check_calendar_reminders (1г) і check_smart_notifications (1.5г).
+    Залишено як no-op щоб не ламати Thread запуск нижче (але thread не стартує — закоментований)."""
+    return
 
 
 def run_morning_brief_watcher():
