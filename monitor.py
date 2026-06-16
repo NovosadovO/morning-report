@@ -9703,3 +9703,358 @@ def check_currency_alert():
     except Exception as e:
         print(f"check_currency_alert error: {e}")
 
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 🎓 ІНВЕСТ-КОУЧ (щодня о 9:00)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+_INVEST_COACH_FILE = os.path.join(_DATA_DIR, "monitor_invest_coach.json")
+
+# База уроків — 30 тем по інвестиціях, ETF, крипто, фінансах
+_INVEST_LESSONS = [
+    ("ETF — що це?", "Exchange Traded Fund — кошик активів який торгується на біржі як акція. Купуючи 1 ETF ти одночасно інвестуєш у десятки або сотні компаній."),
+    ("DCA стратегія", "Dollar Cost Averaging — купуєш фіксовану суму щомісяця незалежно від ціни. Знижує ризик «купити на піку'. Найпростіша стратегія для початківця."),
+    ("P/E ratio", "Price-to-Earnings — ціна акції ділена на прибуток. P/E=20 означає що ти платиш €20 за €1 прибутку. Чим нижче — тим дешевша компанія відносно прибутку."),
+    ("Диверсифікація", "Не кладь усе в одне. Якщо 100% в BTC і він падає 50% — ти втрачаєш половину. Розподіл між акціями, облігаціями, крипто, ETF зменшує ризик."),
+    ("Ринкова капіталізація", "Ціна монети × кількість монет в обігу. BTC з cap $1T набагато стабільніший ніж ONDO з cap $500M. Менша капіталізація = більша волатильність."),
+    ("Волатильність", "Наскільки різко рухається ціна. BTC може впасти 20% за тиждень — це нормально для крипто. S&P500 рідко падає більше 5% за тиждень. Висока волатильність = більший ризик і потенційний прибуток."),
+    ("Індексний ETF", "Слідкує за індексом (S&P500, MSCI World). Не намагається 'обіграти ринок' — просто копіює його. 90% активних менеджерів програють індексу на довгому горизонті."),
+    ("HODL стратегія", "Hold On for Dear Life — купив і тримаєш роками незалежно від коливань. Підходить для BTC і якісних ETF. Вимагає витримки але історично дає кращий результат ніж трейдинг."),
+    ("Стоп-лос", "Автоматичний продаж якщо ціна падає до певного рівня. Захищає від великих втрат. Наприклад: купив BTC по $60k — стоп по $50k (-16%). Фіксує максимальний збиток."),
+    ("Ребалансування портфеля", "Раз на квартал перевіряй розподіл активів. Якщо крипто виросла з 20% до 35% — продай частину і купи акції/ETF. Автоматично реалізує прибуток."),
+    ("Складний відсоток", "Якщо інвестуєш €100/міс з 10% річних — через 20 років маєш €76k. Через 30 років — €226k. Секрет в тому що відсотки нараховуються на відсотки. Починай раніше."),
+    ("Ліквідність", "Наскільки швидко можна продати актив за ринковою ціною. BTC — дуже ліквідний. Нерухомість — низька ліквідність. ETF на біржі — висока ліквідність."),
+    ("Fundamentals vs Technical", "Fundamental — аналізуєш реальний бізнес (прибуток, ріст). Technical — аналізуєш графік і патерни. Більшість успішних інвесторів використовують обидва підходи."),
+    ("Fear & Greed Index", "Індекс страху і жадібності 0-100. При 20 (страх) — ринок панікує, часто гарний момент купити. При 80 (жадібність) — всі куплять, часто варто зафіксувати прибуток."),
+    ("Оподаткування в Словаччині", "Доходи від крипто оподатковуються як звичайний дохід (19-25%). ETF тримані більше 1 року — пільговий режим. Збитки можна компенсувати прибутками в одному році."),
+    ("Секторні ETF", "ETF що інвестує в конкретний сектор — технології, охорона здоров'я, енергетика. Більший ризик ніж широкий індекс але більший потенціал при правильному виборі сектору."),
+    ("Ринок биків і ведмедів", "Бичачий (bull) ринок — ціни ростуть 20%+ від дна. Ведмежий (bear) — падають 20%+ від піку. BTC зараз: якщо вище MA200 — бичачий тренд."),
+    ("Токеноміка", "Економіка крипто-токена: скільки монет існує, скільки випустять, яке спалення, чи є стейкінг. ONDO — токен реального активу. Дивись на utility і tokenomics перед купівлею."),
+    ("Середня вартість позиції", "Якщо купив BTC по $60k і $40k — середня $50k. Якщо ціна $55k — ти в плюсі навіть якщо перша покупка в мінусі. DCA автоматично усереднює позицію."),
+    ("ROI і P&L", "ROI (Return on Investment) = (прибуток / вкладено) × 100%. P&L (Profit & Loss) — абсолютна сума в грошах. ROI 50% може бути €50 або €50000 — залежить від суми входу."),
+    ("Ризик-менеджмент", "Ніколи не вкладай більше ніж можеш дозволити собі втратити. Правило 1%: на 1 угоду ризикуй не більше 1% портфеля. При портфелі €10k — ризик €100 на угоду."),
+    ("Довгострокові vs короткострокові інвестиції", "Довгострокові (3+ роки) — менший стрес, менший податок, краща статистика. Короткострокові (трейдинг) — вимагає часу і досвіду. 80% трейдерів програють ринку."),
+    ("Staking у крипто", "Заморожуєш монети і отримуєш % нагороду (ETH ~4% річних, AVAX ~8%). Пасивний дохід але монети заблоковані на певний час. AVAX і ETH мають нативний стейкінг."),
+    ("Real World Assets (RWA)", "ONDO — один з лідерів цього сектору. RWA токенізує реальні активи (казначейські облігації, нерухомість) на блокчейні. Ринок RWA може вирости з $10B до $10T до 2030."),
+    ("Психологія інвестора", "FOMO (страх пропустити) і FUD (страх, невизначеність, сумніви) — головні вороги. Ринок маніпулює емоціями. Плани і стратегія до входу — єдиний захист."),
+    ("Ліквідний стейкінг", "stETH (Lido) — отримуєш токен поки ETH в стейкінгу. Можна використовувати stETH в DeFi. Ризик: смарт-контракт і депег від ETH."),
+    ("Час на ринку vs Таймінг ринку", "'Time in the market beats timing the market.' Ніхто не знає дно і пік. Той хто інвестує регулярно роками обганяє тих хто намагається зловити момент."),
+    ("Кореляція активів", "BTC і акції зараз корелюють (~0.6). Коли S&P500 падає — BTC теж часто падає. AVAX корелює з BTC (~0.85). Справжня диверсифікація — активи з низькою кореляцією."),
+    ("Whitepaper і Due Diligence", "Перед інвестицією в будь-який крипто-проект читай whitepaper: що вирішує, хто команда, tokenomics, roadmap. ONDO — перевіряй прогрес tokenization партнерств."),
+    ("Фінансова незалежність (FIRE)", "Financial Independence Retire Early. Ціль: пасивний дохід ≥ витрати. Правило 4%: при портфелі €500k можна знімати €20k/рік нескінченно. Твій шлях: інвестиції + крипто + зниження витрат."),
+]
+
+def check_invest_coach():
+    """
+    🎓 Щодня о 9:00 — урок по інвестиціях з AI поясненням та питанням.
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+    today = now_local.strftime("%Y-%m-%d")
+
+    if not (h == 9 and 0 <= m < 10):
+        return
+
+    state = load_json_file(_INVEST_COACH_FILE, default={"sent": {}, "lesson_idx": 0})
+    if state.get("sent", {}).get(today):
+        return
+
+    # Вибираємо урок — циклічно
+    idx = state.get("lesson_idx", 0) % len(_INVEST_LESSONS)
+    lesson_title, lesson_base = _INVEST_LESSONS[idx]
+
+    # AI розширює урок і додає питання
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    lesson_text = lesson_base
+    question = ""
+
+    if gemini_key:
+        try:
+            prompt = (
+                f"Ти — фінансовий коуч Олега Новосадова (Кошіце, Словаччина).\n"
+                f"Сьогодні урок #{idx+1}: «{lesson_title}»\n\n"
+                f"Базова інформація: {lesson_base}\n\n"
+                f"Напиши:\n"
+                f"1. Розширене пояснення (3-4 речення) — конкретно і зрозуміло для початківця\n"
+                f"2. Реальний приклад з цифрами (1-2 речення)\n"
+                f"3. Як це стосується Олега особисто (BTC/ETH/AVAX/ONDO або ETF) — 1-2 речення\n"
+                f"4. Одне конкретне питання для перевірки розуміння (починай з «Питання:»)\n\n"
+                f"БЕЗ вступів. Тільки 4 пункти. Мова: українська."
+            )
+            body = json.dumps({
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"maxOutputTokens": 600, "temperature": 0.7},
+            }).encode()
+            req = urllib.request.Request(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                data=body, headers={"Content-Type": "application/json"}, method="POST"
+            )
+            with urllib.request.urlopen(req, timeout=20) as r:
+                resp = json.loads(r.read())
+            ai_text = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+            lesson_text = ai_text
+        except Exception as e:
+            print(f"invest_coach AI error: {e}")
+
+    msg = (
+        f"🎓 <b>УРОК ДНЯ #{idx+1} — {esc(lesson_title)}</b>\n\n"
+        f"{esc(lesson_text)}\n\n"
+        f"<i>💡 Відповідай прямо в чат — я збережу твою відповідь</i>"
+    )
+
+    send_telegram(msg)
+    state.setdefault("sent", {})[today] = True
+    state["lesson_idx"] = (idx + 1) % len(_INVEST_LESSONS)
+    save_json_file(_INVEST_COACH_FILE, state)
+    print(f"[invest_coach] урок #{idx+1} надіслано: {lesson_title}")
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 📔 AI ЩОДЕННИК (о 21:00 — 3 питання, щонеділі аналіз)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+_DIARY_FILE = os.path.join(_DATA_DIR, "monitor_diary.json")
+
+def check_diary_evening():
+    """
+    📔 О 21:00 бот ставить 3 питання про день.
+    Щонеділі о 20:00 — AI аналіз тижня.
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+    today = now_local.strftime("%Y-%m-%d")
+    weekday = now_local.weekday()  # 6 = неділя
+
+    diary = load_json_file(_DIARY_FILE, default={"entries": {}, "weekly_sent": {}})
+
+    # Щонеділі о 20:00 — тижневий AI аналіз
+    if weekday == 6 and h == 20 and 0 <= m < 10:
+        week_key = now_local.strftime("%Y-W%W")
+        if not diary.get("weekly_sent", {}).get(week_key):
+            _send_diary_weekly_analysis(diary)
+            diary.setdefault("weekly_sent", {})[week_key] = True
+            save_json_file(_DIARY_FILE, diary)
+        return
+
+    # Щодня о 21:00 — 3 питання
+    if not (h == 21 and 0 <= m < 10):
+        return
+    if diary.get("entries", {}).get(today, {}).get("asked"):
+        return
+
+    questions = [
+        "⚡️ Яка була твоя енергія сьогодні? (1-10)",
+        "✅ Що вдалось зробити сьогодні? (1-2 речення)",
+        "🚧 Що заважало або не вийшло? (чесно)"
+    ]
+
+    msg = (
+        f"📔 <b>ЩОДЕННИК</b> — {now_local.strftime('%d.%m.%Y')}\n\n"
+        f"3 питання про твій день:\n\n"
+        + "\n".join(f"{i+1}. {q}" for i, q in enumerate(questions))
+        + "\n\n<i>Відповідай одним повідомленням через кому або по рядку</i>"
+    )
+
+    send_telegram(msg)
+    diary.setdefault("entries", {})[today] = {"asked": True, "date": today}
+    save_json_file(_DIARY_FILE, diary)
+    print(f"[diary] питання надіслано за {today}")
+
+
+def _send_diary_weekly_analysis(diary: dict):
+    """AI аналіз щоденника за тиждень."""
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    entries = diary.get("entries", {})
+
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    week_days = [(now_local - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(6, -1, -1)]
+    week_entries = {d: entries[d] for d in week_days if d in entries and entries[d].get("answers")}
+
+    if not week_entries:
+        send_telegram("📔 <b>Тижневий щоденник</b>\n\n<i>Цього тижня записів не було. Спробуй відповідати на вечірні питання щодня!</i>")
+        return
+
+    entries_text = ""
+    for date, entry in week_entries.items():
+        answers = entry.get("answers", "")
+        entries_text += f"\n{date}: {answers}"
+
+    if gemini_key:
+        try:
+            prompt = (
+                f"Ти — персональний коуч Олега Новосадова.\n"
+                f"Ось його записи щоденника за цей тиждень:\n{entries_text}\n\n"
+                f"Напиши тижневий аналіз:\n"
+                f"1. Загальний тренд енергії (зросла/впала/стабільна) — 2 речення\n"
+                f"2. Що добре вийшло цього тижня — 2-3 речення\n"
+                f"3. Головний патерн що заважав — 2 речення\n"
+                f"4. 1 конкретна рекомендація на наступний тиждень — чітко і без кліше\n\n"
+                f"БЕЗ вступів. Конкретно. Мова: українська."
+            )
+            body = json.dumps({
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"maxOutputTokens": 600, "temperature": 0.7},
+            }).encode()
+            req = urllib.request.Request(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                data=body, headers={"Content-Type": "application/json"}, method="POST"
+            )
+            with urllib.request.urlopen(req, timeout=20) as r:
+                resp = json.loads(r.read())
+            analysis = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+        except Exception as e:
+            analysis = f"AI аналіз недоступний: {e}"
+    else:
+        analysis = "Gemini key не знайдено."
+
+    msg = (
+        f"📔 <b>ТИЖНЕВИЙ АНАЛІЗ ЩОДЕННИКА</b>\n\n"
+        f"{esc(analysis)}\n\n"
+        f"<i>Записів за тиждень: {len(week_entries)}/7</i>"
+    )
+    send_telegram(msg)
+    print("[diary] тижневий аналіз надіслано")
+
+
+def save_diary_answer(text: str):
+    """Зберігає відповідь Олега на щоденник."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    today = now_local.strftime("%Y-%m-%d")
+    diary = load_json_file(_DIARY_FILE, default={"entries": {}})
+    entry = diary.setdefault("entries", {}).setdefault(today, {"asked": True, "date": today})
+    entry["answers"] = text
+    entry["answered_at"] = now_local.isoformat()
+    save_json_file(_DIARY_FILE, diary)
+    print(f"[diary] відповідь збережена: {text[:50]}")
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 💪 ЗДОРОВ'Я-ТРЕКЕР (щонеділі о 19:00 — AI аналіз тижня)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+_HEALTH_TRACKER_FILE = os.path.join(_DATA_DIR, "monitor_health_tracker.json")
+
+def check_health_weekly_tracker():
+    """
+    💪 Щонеділі о 19:00 — AI аналіз здоров'я за тиждень.
+    Вага, кроки, біг, звички — тренди + конкретні рекомендації.
+    """
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    h, m = now_local.hour, now_local.minute
+    weekday = now_local.weekday()  # 6 = неділя
+
+    if not (weekday == 6 and h == 19 and 0 <= m < 10):
+        return
+
+    week_key = now_local.strftime("%Y-W%W")
+    state = load_json_file(_HEALTH_TRACKER_FILE, default={})
+    if state.get(week_key):
+        return
+
+    # Збираємо дані за 7 днів
+    try:
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from storage import load_health
+        health_data = load_health()
+    except Exception as e:
+        health_data = {}
+        print(f"[health_tracker] load health error: {e}")
+
+    now = now_local
+    week_days = [(now - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(6, -1, -1)]
+
+    weight_vals = []
+    steps_vals = []
+    days_with_data = 0
+
+    for d in week_days:
+        day_data = health_data.get(d, {})
+        if day_data:
+            days_with_data += 1
+            if "weight" in day_data:
+                weight_vals.append(float(day_data["weight"]))
+            if "steps" in day_data:
+                steps_vals.append(int(day_data["steps"]))
+
+    # Будуємо контекст
+    ctx_lines = [f"Тиждень: {week_days[0]} — {week_days[-1]}", f"Днів з даними: {days_with_data}/7"]
+
+    if weight_vals:
+        w_start = weight_vals[0]
+        w_end = weight_vals[-1]
+        w_avg = round(sum(weight_vals) / len(weight_vals), 1)
+        w_diff = round(w_end - w_start, 1)
+        trend = "↘️ -" if w_diff < 0 else ("↗️ +" if w_diff > 0 else "→")
+        ctx_lines.append(f"Вага: початок {w_start}кг → кінець {w_end}кг ({trend}{abs(w_diff)}кг), середня {w_avg}кг, ціль 78кг (залишилось {round(w_end-78,1)}кг)")
+    else:
+        ctx_lines.append("Вага: даних немає (нагадую вносити вагу щодня)")
+
+    if steps_vals:
+        s_avg = round(sum(steps_vals) / len(steps_vals))
+        s_max = max(steps_vals)
+        ctx_lines.append(f"Кроки: середні {s_avg}/день, максимум {s_max}, ціль 10000/день")
+    else:
+        ctx_lines.append("Кроки: даних немає")
+
+    # Звички з habits.json
+    try:
+        from storage import get_flag
+        habits_data = load_json_file(os.path.join(_DATA_DIR, "habits.json"), default={})
+        if habits_data:
+            week_habits = {}
+            for d in week_days:
+                day_h = habits_data.get(d, {})
+                for h_name, done in day_h.items():
+                    week_habits[h_name] = week_habits.get(h_name, 0) + (1 if done else 0)
+            if week_habits:
+                habits_str = ", ".join(f"{k}: {v}/7" for k, v in week_habits.items())
+                ctx_lines.append(f"Звички: {habits_str}")
+    except Exception:
+        pass
+
+    health_ctx = "\n".join(ctx_lines)
+
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    analysis = ""
+
+    if gemini_key:
+        try:
+            prompt = (
+                f"Ти — персональний health-коуч Олега Новосадова.\n"
+                f"Ціль: схуднення до 78 кг, регулярний біг, здорові звички.\n\n"
+                f"=== ДАНІ ТИЖНЯ ===\n{health_ctx}\n=================\n\n"
+                f"Напиши тижневий аналіз здоров'я:\n\n"
+                f"⚖️ ВАГА\n[2-3 речення: тренд за тиждень, темп схуднення, чи вкладається в план -0.5кг/тиждень]\n\n"
+                f"👟 АКТИВНІСТЬ\n[2 речення: оцінка кроків/руху за тиждень, чи достатньо]\n\n"
+                f"✅ ЗВИЧКИ\n[2 речення: які звички тримались добре, які провалились]\n\n"
+                f"🎯 ПЛАН НА НАСТУПНИЙ ТИЖДЕНЬ\n[3 конкретні дії — без кліше. Одна по харчуванню, одна по активності, одна по звичках]\n\n"
+                f"ПРАВИЛА: тільки реальні дані. Якщо даних мало — скажи прямо і дай пораду як почати трекати. "
+                f"Тон: чесний тренер. Мова: українська."
+            )
+            body = json.dumps({
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"maxOutputTokens": 700, "temperature": 0.7},
+            }).encode()
+            req = urllib.request.Request(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                data=body, headers={"Content-Type": "application/json"}, method="POST"
+            )
+            with urllib.request.urlopen(req, timeout=20) as r:
+                resp = json.loads(r.read())
+            analysis = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+        except Exception as e:
+            analysis = f"AI аналіз недоступний: {e}"
+    else:
+        analysis = health_ctx
+
+    msg = (
+        f"💪 <b>ТИЖНЕВИЙ АНАЛІЗ ЗДОРОВ'Я</b>\n"
+        f"<i>{week_days[0]} — {week_days[-1]}</i>\n\n"
+        f"{esc(analysis)}"
+    )
+    send_telegram(msg)
+    state[week_key] = True
+    save_json_file(_HEALTH_TRACKER_FILE, state)
+    print(f"[health_tracker] тижневий аналіз надіслано ({week_key})")

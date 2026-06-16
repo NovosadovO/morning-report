@@ -2337,6 +2337,26 @@ def handle_command(chat_id, text):
         except ValueError:
             pass
 
+        # Перевіряємо чи це відповідь на щоденник (о 21:00 ±30 хв)
+        _now_l = datetime.now(timezone.utc) + timedelta(hours=2)
+        _h_now = _now_l.hour
+        if 20 <= _h_now <= 22 and len(text) > 3:
+            try:
+                import importlib as _il_d, monitor as _mon_d
+                _il_d.reload(_mon_d)
+                _diary_data = _mon_d.load_json_file(
+                    os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "monitor_diary.json"),
+                    default={"entries": {}}
+                )
+                _today_d = _now_l.strftime("%Y-%m-%d")
+                _entry_d = _diary_data.get("entries", {}).get(_today_d, {})
+                if _entry_d.get("asked") and not _entry_d.get("answers"):
+                    _mon_d.save_diary_answer(text)
+                    send(chat_id, "📔 <b>Збережено в щоденник!</b> ✅\n<i>Дякую — аналіз побачиш щонеділі.</i>")
+                    return
+            except Exception as _e_d:
+                print(f"diary answer save error: {_e_d}")
+
         # Зберігаємо контекст з відповіді Олега (локація, активність, настрій)
         try:
             from proactive import update_user_state_from_message

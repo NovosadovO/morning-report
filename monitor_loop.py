@@ -1457,5 +1457,47 @@ def run_report_card_watcher():
 threading.Thread(target=run_report_card_watcher, daemon=True).start()
 print("=== Report card watcher thread started (09:00 + 20:05 UTC+2) ===", flush=True)
 
+
+def run_invest_coach_watcher():
+    """🎓 Інвест-коуч — урок щодня о 9:00."""
+    print("=== Starting invest coach watcher ===", flush=True)
+    time.sleep(200)
+    while True:
+        try:
+            _load_monitor().check_invest_coach()
+        except Exception as e:
+            print(f"Invest coach watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+def run_diary_watcher():
+    """📔 AI щоденник — о 21:00 щодня + аналіз щонеділі о 20:00."""
+    print("=== Starting diary watcher ===", flush=True)
+    time.sleep(205)
+    while True:
+        try:
+            _load_monitor().check_diary_evening()
+        except Exception as e:
+            print(f"Diary watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+def run_health_tracker_watcher():
+    """💪 Тижневий health трекер — щонеділі о 19:00."""
+    print("=== Starting health tracker watcher ===", flush=True)
+    time.sleep(210)
+    while True:
+        try:
+            _load_monitor().check_health_weekly_tracker()
+        except Exception as e:
+            print(f"Health tracker watcher error: {e}", flush=True)
+        time.sleep(60)
+
+
+threading.Thread(target=run_invest_coach_watcher,   daemon=True).start()
+threading.Thread(target=run_diary_watcher,           daemon=True).start()
+threading.Thread(target=run_health_tracker_watcher,  daemon=True).start()
+print("=== Invest coach + Diary + Health tracker watchers started ===", flush=True)
+
 # Основний монітор в головному потоці
 run_monitor_loop()
