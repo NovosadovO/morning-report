@@ -1028,5 +1028,111 @@ def get_astro_report():
     return "\n".join(lines)
 
 
+def get_astro_alerts():
+    """
+    Порівнює поточні аспекти + позиції планет (знак/дім) з попереднім збереженим станом.
+    Повертає список рядків-алертів (порожній список = нічого нового).
+    Стан зберігається в data/astro_last_aspects.json.
+    """
+    import json as _json, os as _os
+    if not _KERYKEION_OK:
+        return []
+
+    STATE_FILE = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "data", "astro_last_aspects.json")
+    _os.makedirs(_os.path.dirname(STATE_FILE), exist_ok=True)
+
+    try:
+        now_utc = datetime.now(timezone.utc)
+        natal = AstrologicalSubject(
+            "natal",
+            BIRTH_YEAR, BIRTH_MONTH, BIRTH_DAY, BIRTH_HOUR, BIRTH_MIN,
+            lat=BIRTH_LAT, lng=BIRTH_LON, tz_str=BIRTH_TZ,
+            zodiac_type="Tropic", houses_system_identifier="P", online=False,
+        )
+        transit = AstrologicalSubject(
+            "transit",
+            now_utc.year, now_utc.month, now_utc.day,
+            now_utc.hour, now_utc.minute,
+            lat=CURRENT_LAT, lng=CURRENT_LON, tz_str="UTC",
+            zodiac_type="Tropic", houses_system_identifier="P", online=False,
+        )
+
+        natal_cusps = [
+            natal.first_house.abs_pos,  natal.second_house.abs_pos,  natal.third_house.abs_pos,
+            natal.fourth_house.abs_pos, natal.fifth_house.abs_pos,   natal.sixth_house.abs_pos,
+            natal.seventh_house.abs_pos,natal.eighth_house.abs_pos,  natal.ninth_house.abs_pos,
+            natal.tenth_house.abs_pos,  natal.eleventh_house.abs_pos, natal.twelfth_house.abs_pos,
+        ]
+
+        # Збираємо поточний стан
+        current_state = {}
+        transit_lons = []
+        transit_names = []
+        for key, name_ua in PLANETS_LIST:
+            tp = _get_planet(transit, key)
+            if tp:
+                house_n = _get_natal_house(tp.abs_pos, natal_cusps)
+                current_state[name_ua] = {"sign": _sign_ua(tp.sign), "house": house_n}
+                transit_lons.append(tp.abs_pos)
+                transit_names.append(name_ua)
+
+        t_aspects = _get_aspects(transit_lons, transit_names)
+        current_aspects = set()
+        for p1, p2, asp, emoji, exact in t_aspects:
+            current_aspects.add(f"{p1}_{asp}_{p2}")
+
+        # Завантажуємо попередній стан
+        try:
+            with open(STATE_FILE, "r", encoding="utf-8") as f:
+                old_data = _json.load(f)
+        except Exception:
+            old_data = {}
+
+        old_state   = old_data.get("planets", {})
+        old_aspects = set(old_data.get("aspects", []))
+
+        alerts = []
+
+        # 1. Перевіряємо зміну знаку або дому у планет
+        for name_ua, info in current_state.items():
+            old_info = old_state.get(name_ua, {})
+            if old_info.get("sign") and old_info["sign"] != info["sign"]:
+                alerts.append(
+                    f"🪐 <b>АСТРО-АЛЕРТ:</b> <b>{name_ua}</b> увійшов у <b>{info['sign']}</b>"
+                )
+            if old_info.get("house") and old_info["house"] != info["house"]:
+                alerts.append(
+                    f"🏠 <b>АСТРО-АЛЕРТ:</b> <b>{name_ua}</b> перейшов у <b>{info['house']}-й дім</b>"
+                )
+
+        # 2. Нові аспекти (яких не було)
+        new_aspects = current_aspects - old_aspects
+        if new_aspects:
+            # Знаходимо деталі нових аспектів
+            for p1, p2, asp, emoji, exact in t_aspects:
+                key = f"{p1}_{asp}_{p2}"
+                if key in new_aspects:
+                    desc = get_aspect_description(p1, asp, p2)
+                    line = f"{emoji} <b>АСТРО-АЛЕРТ:</b> {p1} {asp} {p2}  <i>(орб {exact:.1f}°)</i>"
+                    if desc:
+                        line += f"\n    <i>↳ {desc}</i>"
+                    alerts.append(line)
+
+        # 3. Зберігаємо поточний стан
+        new_data = {
+            "planets": current_state,
+            "aspects": list(current_aspects),
+            "updated": now_utc.isoformat(),
+        }
+        with open(STATE_FILE, "w", encoding="utf-8") as f:
+            _json.dump(new_data, f, ensure_ascii=False, indent=2)
+
+        return alerts
+
+    except Exception as e:
+        print(f"get_astro_alerts error: {e}", flush=True)
+        return []
+
+
 if __name__ == "__main__":
     print(get_astro_report())

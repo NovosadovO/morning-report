@@ -530,11 +530,8 @@ threading.Thread(target=run_health_remind_watcher, daemon=True).start()
 
 
 def run_astro_watcher():
-    """Астрологічний звіт — 3 рази на день:
-       Ранок:  рання зміна о 08:00, інші о 11:00 (вікно до 12:59)
-       Обід:   завжди о 13:00 (вікно 13:00–16:59)
-       Вечір:  завжди о 20:00 (вікно 20:00–23:59)
-    """
+    """ВИМКНЕНО — астро вбудовано в годинний звіт. Залишено лише алерти (run_astro_alert_watcher)."""
+    return
     print("=== Starting astro watcher (morning + afternoon + evening) ===", flush=True)
     import os, sys
     sys.path.insert(0, os.path.dirname(__file__))
@@ -659,9 +656,53 @@ def run_astro_watcher():
         time.sleep(60)
 
 
-threading.Thread(target=run_astro_watcher, daemon=True).start()
+threading.Thread(target=run_astro_watcher, daemon=True).start()  # no-op — вимкнено
 
 
+def run_astro_alert_watcher():
+    """
+    Кожні 30 хв перевіряє нові астро-події:
+    - планета змінила знак або натальний дім
+    - з'явився новий аспект між транзитними планетами
+    Надсилає короткий алерт у Telegram тільки якщо є щось нове.
+    """
+    print("=== Starting astro alert watcher (every 30 min) ===", flush=True)
+    import os as _os, sys as _sys, importlib, json as _json, urllib.request as _url
+
+    _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    time.sleep(180)  # чекаємо 3 хв після старту
+
+    token = _os.environ.get("TELEGRAM_TOKEN", "")
+    chat  = _os.environ.get("TELEGRAM_CHAT_ID", "")
+
+    while True:
+        try:
+            import astro as _astro_mod
+            importlib.reload(_astro_mod)
+            alerts = _astro_mod.get_astro_alerts()
+
+            if alerts and token and chat:
+                header = "🔮 <b>АСТРО-АЛЕРТ</b>\n━━━━━━━━━━━━━━━━━━━━\n"
+                text = header + "\n\n".join(alerts)
+                chunks = [text[i:i+4000] for i in range(0, len(text), 4000)]
+                msg_url = f"https://api.telegram.org/bot{token}/sendMessage"
+                for chunk in chunks:
+                    payload = _json.dumps({
+                        "chat_id": chat, "text": chunk, "parse_mode": "HTML"
+                    }).encode()
+                    req = _url.Request(msg_url, data=payload, headers={"Content-Type": "application/json"})
+                    _url.urlopen(req, timeout=15)
+                print(f"[astro_alert] sent {len(alerts)} alerts", flush=True)
+            else:
+                print("[astro_alert] no new events", flush=True)
+
+        except Exception as e:
+            print(f"[astro_alert] error: {e}", flush=True)
+
+        time.sleep(1800)  # 30 хвилин
+
+
+threading.Thread(target=run_astro_alert_watcher, daemon=True).start()
 
 
 def run_extra_watchers():
@@ -1410,26 +1451,8 @@ def run_report_card_watcher():
             print(f"[report_card] send_album error: {e}", flush=True)
 
     def _send_astro_text():
-        """Надсилає астро-звіт текстом після альбому."""
-        token = os.environ.get("TELEGRAM_TOKEN", "")
-        chat  = os.environ.get("TELEGRAM_CHAT_ID", "")
-        if not token or not chat:
-            return
-        try:
-            import sys as _sys, importlib, urllib.request as _url
-            _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-            import astro as _astro_mod
-            importlib.reload(_astro_mod)
-            report = _astro_mod.get_astro_report()
-            chunks = [report[i:i+4000] for i in range(0, len(report), 4000)]
-            msg_url = f"https://api.telegram.org/bot{token}/sendMessage"
-            for chunk in chunks:
-                payload = json.dumps({"chat_id": chat, "text": chunk, "parse_mode": "HTML"}).encode()
-                req = _url.Request(msg_url, data=payload, headers={"Content-Type": "application/json"})
-                _url.urlopen(req, timeout=15)
-            print("[report_card] astro text sent", flush=True)
-        except Exception as e:
-            print(f"[report_card] astro text error: {e}", flush=True)
+        """ВИМКНЕНО — астро вбудовано в годинний звіт."""
+        pass
 
     while True:
         try:
