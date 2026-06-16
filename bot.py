@@ -189,7 +189,7 @@ def handle_meds_callback(callback_query):
     if answer == "yes":
         reply = "💊 <b>ARMOLOPID PLUS</b>\n\n✅ <b>Прийнято!</b> Молодець 💪\nПродовжуй в тому ж дусі."
     else:
-        reply = "💊 <b>ARMOLOPID PLUS</b>\n\n❌ <b>Не прийнято</b> — прийми при першій нагоді!"
+        reply = "💊 <b>ARMOLOPID PLUS</b>\n\n❌ <b>Не прийнято</b> — записано.\n🔕 Нагадувань на сьогодні більше не буде."
 
     try:
         api("editMessageText", {

@@ -343,8 +343,8 @@ def check_meds_reminder():
     sent = load_sent()
     meds = load_meds()
 
-    # Вже підтвердив сьогодні ✅ — нічого не робимо
-    if meds.get(today) is True:
+    # Вже підтвердив ✅ АБО натиснув «Не прийняв» ❌ — більше не нагадуємо
+    if meds.get(today) is not None:  # True = прийняв, False = відмовив — обидва зупиняють
         _check_analysis_alerts(today)
         return
 
