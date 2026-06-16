@@ -1155,17 +1155,22 @@ print("=== Webhook server thread started ===", flush=True)
 
 
 def run_persistent_reminders_watcher():
-    """Persistent нагадування — звички/planner/календар кожну годину поки не відмічено."""
+    """Persistent нагадування — звички/planner/календар кожну годину поки не відмічено.
+    ВАЖЛИВО: використовуємо sys.modules singleton щоб НЕ скидати _INMEM_SENT при кожному виклику.
+    Якщо перезавантажувати habits через exec_module — _INMEM_SENT скидається і виникають дублі."""
     print("=== Starting persistent reminders watcher (every 15min check) ===", flush=True)
+    import importlib.util, sys as _sys, os as _os
+    # Завантажуємо habits один раз і тримаємо в sys.modules
+    _habits_path = _os.path.join(_os.path.dirname(__file__), "habits.py")
+    spec = importlib.util.spec_from_file_location("habits_persist", _habits_path)
+    _habits_persist_mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(_habits_persist_mod)
+    _sys.modules["habits_persist"] = _habits_persist_mod
+    print("=== habits_persist module loaded (singleton) ===", flush=True)
     time.sleep(120)
     while True:
         try:
-            import importlib.util, os as _os
-            spec = importlib.util.spec_from_file_location(
-                "habits", _os.path.join(_os.path.dirname(__file__), "habits.py"))
-            mod = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(mod)
-            mod.check_persistent_reminders()
+            _habits_persist_mod.check_persistent_reminders()
         except Exception as e:
             print(f"Persistent reminders watcher error: {e}", flush=True)
         time.sleep(900)  # перевіряємо кожні 15 хв, але шлемо раз на годину (логіка всередині)

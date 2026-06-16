@@ -4,7 +4,7 @@ assistant.py — серце персонального асистента Оле
 
 Функції:
   check_calendar_day_ahead()   — вечірнє нагадування про завтра (20:00)
-  check_calendar_1h()          — нагадування за 1 годину (вже є в monitor.py, тут дублюємо з розширенням)
+  check_calendar_1h()          — ВИМКНЕНО (дублює monitor.check_calendar_reminders)
   check_calendar_10min()       — нагадування за 10 хвилин
   check_email_proactive()      — нові важливі листи → стислий опис + кнопки
   propose_calendar_events()    — бот сам пропонує корисні події
@@ -359,80 +359,13 @@ def check_calendar_10min():
     if changed:
         _save_state("assistant_10min.json", state)
 
-# ─── 3. НАГАДУВАННЯ ЗА 1 ГОДИНУ (розширене) ──────────────────────────────────
+# ─── 3. НАГАДУВАННЯ ЗА 1 ГОДИНУ (ВИМКНЕНО — дублює monitor.check_calendar_reminders) ───
 
 def check_calendar_1h():
-    """Нагадування за 1 годину — з кнопкою 'Позначити виконаним'."""
-    now = _now()
-    if not (7 <= now.hour <= 23):
-        return
-
-    token = _token()
-    if not token:
-        return
-
-    state = _load_state("assistant_1h.json", {})
-
-    now_utc = datetime.now(timezone.utc)
-    win_start = now_utc + timedelta(minutes=58)
-    win_end   = now_utc + timedelta(minutes=62)
-    events = _fetch_events(token, win_start, win_end)
-
-    changed = False
-    for ev in events:
-        ev_id   = ev.get("id", "")
-        summary = ev.get("summary", "(без назви)")
-        start_str = ev["start"].get("dateTime") or ev["start"].get("date")
-        key = f"1h_{ev_id}_{start_str}"
-
-        # Подвійний захист: in-process set + persistent state
-        if _already_sent(key):
-            continue
-        if state.get(key):
-            _mark_sent(key)
-            continue
-
-        # Пропускаємо якщо вже минула
-        try:
-            dt = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
-            if dt < now_utc:
-                state[key] = True
-                _mark_sent(key)
-                changed = True
-                continue
-            t = (dt + timedelta(hours=2)).strftime("%H:%M")
-        except Exception:
-            t = "—"
-
-        emoji = _event_emoji(summary)
-        s = summary.lower()
-        tips = []
-        if "рання" in s:   tips = ["Приготуй одяг", "Сніданок", "Armolopid"]
-        elif "нічна" in s: tips = ["Поїж перед виходом", "Armolopid", "Термос"]
-        elif "лікар" in s: tips = ["Документи / страховка", "Запиши питання лікарю"]
-        elif "зустріч" in s: tips = ["Підготуй матеріали до зустрічі"]
-        elif "тренув" in s or "біг" in s: tips = ["Вода", "Спорядження"]
-
-        tip_text = "  ·  ".join(tips)
-        msg = (
-            f"{emoji} <b>Через 1 годину:</b> {_esc(summary)}\n"
-            f"🕐 о <b>{t}</b>"
-        )
-        if tip_text:
-            msg += f"\n\n<i>{_esc(tip_text)}</i>"
-
-        keyboard = {"inline_keyboard": [[
-            {"text": "✅ Виконано / скасовано",
-             "callback_data": f"cal_done_{ev_id}"},
-        ]]}
-        _mark_sent(key)   # СПОЧАТКУ позначаємо
-        state[key] = True
-        changed = True
-        _send(msg, keyboard)
-        print(f"[assistant] 1h reminder: {summary} at {t}")
-
-    if changed:
-        _save_state("assistant_1h.json", state)
+    """ВИМКНЕНО: нагадування за 1 год вже обробляє monitor.check_calendar_reminders()
+    через run_calendar_reminder_watcher (кожні 5хв).
+    Залишено як no-op щоб не ламати виклики з run_assistant_watcher."""
+    return
 
 # ─── 4. ВИДАЛЕННЯ ПОДІЇ З CALENDAR ────────────────────────────────────────────
 

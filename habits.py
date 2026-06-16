@@ -26,6 +26,10 @@ _SENT_GH_KEY = "habits_sent.json"  # GitHub persistent storage
 # При рестарті процесу — перечитує GitHub (1 запит), після чого знову в пам'яті.
 _INMEM_SENT: dict | None = None  # None = ще не завантажено
 
+# In-memory кеш для persist_state (timestamp нагадувань звичок/планера)
+# Захист від race condition при паралельних викликах check_persistent_reminders
+_INMEM_PERSIST_STATE: dict | None = None
+
 # ─── КОНФІГ ЗВИЧОК ────────────────────────────────────────────────────────────
 
 HABITS = [
@@ -713,15 +717,22 @@ if __name__ == "__main__":
 _PERSIST_GH_KEY = "habits_persist_remind.json"
 
 def _load_persist_state() -> dict:
+    global _INMEM_PERSIST_STATE
+    if _INMEM_PERSIST_STATE is not None:
+        return _INMEM_PERSIST_STATE  # in-memory — без GitHub запиту
     try:
         import sys as _sys; _sys.path.insert(0, _DIR)
         from storage import load as _st_load
         d = _st_load(_PERSIST_GH_KEY)
-        return d if d else {}
+        _INMEM_PERSIST_STATE = d if d else {}
+        return _INMEM_PERSIST_STATE
     except:
-        return {}
+        _INMEM_PERSIST_STATE = {}
+        return _INMEM_PERSIST_STATE
 
 def _save_persist_state(data: dict):
+    global _INMEM_PERSIST_STATE
+    _INMEM_PERSIST_STATE = data  # оновлюємо in-memory ПЕРЕД GitHub
     try:
         import sys as _sys; _sys.path.insert(0, _DIR)
         from storage import save as _st_save
