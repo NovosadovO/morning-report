@@ -1002,13 +1002,18 @@ def generate_report_album(period: str = "morning") -> list[bytes]:
         print(f"[report_card] photo1 error: {e}")
         import traceback; traceback.print_exc()
 
-    # Фото 2: Вага + Біг
-    try:
-        p2 = _make_run_weight_photo(now, today, wdata, run_data, last_run)
-        results.append(p2)
-    except Exception as e:
-        print(f"[report_card] photo2 error: {e}")
-        import traceback; traceback.print_exc()
+    # Фото 2: Вага + Біг — надсилаємо тільки якщо є реальні дані
+    _has_weight = bool(wdata and any(wdata.values()))
+    _has_run    = bool(run_data and (run_data.get("runs", 0) > 0 or run_data.get("km", 0) > 0)) or bool(last_run)
+    if _has_weight or _has_run:
+        try:
+            p2 = _make_run_weight_photo(now, today, wdata, run_data, last_run)
+            results.append(p2)
+        except Exception as e:
+            print(f"[report_card] photo2 error: {e}")
+            import traceback; traceback.print_exc()
+    else:
+        print("[report_card] photo2 skipped — no weight/run data available")
 
     return results
 

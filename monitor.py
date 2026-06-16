@@ -4078,40 +4078,66 @@ def main():
                     _delta_w = round(_all_w_vals[-1] - _all_w_vals[-2], 1) if len(_all_w_vals) >= 2 else 0
                     _d_icon = "📈" if _delta_w > 0.1 else ("📉" if _delta_w < -0.1 else "➡️")
                     _goal_str = f"до 78 кг: <b>{_diff_goal:+.1f} кг</b>" if _diff_goal > 0 else "🏆 <b>Ціль 78 кг досягнута!</b>"
-                    _w_header = f"⚖️ <b>{_last_w} кг</b>  {_d_icon} {_delta_w:+.1f} кг  |  {_goal_str}"
+                    # Дата останнього запису
+                    _last_w_ago = (now_local.date() - __import__('datetime').date.fromisoformat(_last_w_key)).days if _last_w_key else 999
+                    _w_age_str = "" if _last_w_ago == 0 else (f" <i>(дані за {_last_w_ago}д тому)</i>" if _last_w_ago <= 30 else f" <i>(⚠️ дані за {_last_w_ago}д тому — надішли вагу!)</i>")
+                    _w_header = f"⚖️ <b>{_last_w} кг</b>  {_d_icon} {_delta_w:+.1f} кг  |  {_goal_str}{_w_age_str}"
                     # Останні 7 ДНІВ з прочерком де нема запису
                     _w_rows = []
+                    _w_empty_count = 0
                     for _di in range(6, -1, -1):
                         _dk = (now_local - timedelta(days=_di)).strftime("%Y-%m-%d")
                         _dv = _wd.get(_dk)
                         _dlabel = (now_local - timedelta(days=_di)).strftime("%d.%m")
                         _dstr = f"<b>{_dv} кг</b>" if _dv else "—"
+                        if not _dv: _w_empty_count += 1
                         _w_rows.append(f"  {_dlabel}  {_dstr}")
                     _health_lines.append(_w_header + "\n" + "\n".join(_w_rows))
+                    if _w_empty_count == 7:
+                        _health_lines.append("  <i>📲 Надішли /weight або /health_export щоб оновити дані</i>")
+            else:
+                _health_lines.append("⚖️ Вага: <i>немає даних — надішли /weight 83.5</i>")
         except Exception as _e_w: pass
 
-        # Кроки — таблиця останніх 7 днів
-        # Кроки — з QWatch (основне), fallback StepsApp
+        # Кроки — з QWatch (основне), fallback Apple Health (health.json)
         try:
             _qw_s = _st_h.load("qwatch_data.json", default={})
-            _st_today_n = (_qw_s.get(_today_rep) or {}).get("steps", 0) or 0
-            _st_yest_n  = (_qw_s.get(_yest_rep) or {}).get("steps", 0) or 0
+            # Fallback: якщо qwatch_data пустий — беремо кроки з health.json
+            _health_s = {}
+            if not _qw_s:
+                try:
+                    _raw_health = _st_h.load_health() or {}
+                    _health_s = {k: {"steps": v.get("steps", 0)} for k, v in _raw_health.items() if isinstance(v, dict)}
+                except Exception: pass
+
+            def _get_steps(date_str):
+                v = (_qw_s.get(date_str) or {}).get("steps", 0) or 0
+                if not v:
+                    v = (_health_s.get(date_str) or {}).get("steps", 0) or 0
+                return v
+
+            _st_today_n = _get_steps(_today_rep)
+            _st_yest_n  = _get_steps(_yest_rep)
             _show_steps = _st_today_n if _st_today_n > 0 else _st_yest_n
             _steps_label = "Сьогодні" if _st_today_n > 0 else "Вчора"
             _st_icon = "✅" if _show_steps >= 8000 else ("🟡" if _show_steps >= 5000 else "🔴")
             _st_header = f"👟 Кроки ({_steps_label}): <b>{_show_steps:,}</b> {_st_icon}"
             # Таблиця 7 ДНІВ з прочерком
             _st_rows = []
+            _st_empty = 0
             for _di in range(6, -1, -1):
                 _dk = (now_local - timedelta(days=_di)).strftime("%Y-%m-%d")
                 _dlabel = (now_local - timedelta(days=_di)).strftime("%d.%m")
-                _sv = (_qw_s.get(_dk) or {}).get("steps", 0) or 0
+                _sv = _get_steps(_dk)
                 if _sv:
                     _sicon = "✅" if _sv >= 8000 else ("🟡" if _sv >= 5000 else "🔴")
                     _st_rows.append(f"  {_dlabel}  <b>{_sv:,}</b> {_sicon}")
                 else:
                     _st_rows.append(f"  {_dlabel}  —")
+                    _st_empty += 1
             _health_lines.append(_st_header + "\n" + "\n".join(_st_rows))
+            if _st_empty == 7:
+                _health_lines.append("  <i>📲 Синхронізуй QWatch або надішли /health_export</i>")
         except Exception: pass
 
         # Ліки
@@ -4377,11 +4403,11 @@ def main():
                     f"[2-3 речення: погода Кошіце + важливі події + критична пошта якщо є]\n\n"
                     f"🎯 ЦІЛЬ\n"
                     f"[2 речення: 1 конкретна дія сьогодні — без кліше, без загальних слів. Або схуднення, або крипто, або нова робота — вибери найактуальніше]\n\n"
-                    f"ПРАВИЛА: тільки реальні числа зі звіту. Якщо даних немає — пропусти пункт. БЕЗ астро в цьому блоці. БЕЗ вступів. Тон: прямий, конкретний. [seed:{_seed_b}]"
+                    f"ПРАВИЛА: тільки реальні числа зі звіту. Якщо даних немає — пропусти пункт. БЕЗ астро в цьому блоці. БЕЗ вступів. Тон: прямий, конкретний. ОБОВ'ЯЗКОВО завершуй кожне речення повністю — не обривай на середині. [seed:{_seed_b}]"
                 )
                 _brief_payload = json.dumps({
                     "contents": [{"parts": [{"text": _brief_prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 1000, "temperature": 0.8},
+                    "generationConfig": {"maxOutputTokens": 1500, "temperature": 0.8},
                 }).encode()
                 _brief_req = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",

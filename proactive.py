@@ -214,22 +214,39 @@ def _already_sent(slot: str) -> bool:
 # ─── TELEGRAM ─────────────────────────────────────────────────────────────────
 
 def _send_chunk(text: str):
-    """Надсилає один шматок тексту (до 4090 символів). Без parse_mode — Gemini може генерувати невалідний HTML."""
+    """Надсилає один шматок тексту (до 4090 символів). HTML parse_mode з fallback на plain text."""
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT:
         print(f"[proactive] {text}")
         return
-    payload = json.dumps({
-        "chat_id": TELEGRAM_CHAT,
-        "text": text,
-    }).encode()
-    req = urllib.request.Request(
-        f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage",
-        data=payload,
-        headers={"Content-Type": "application/json"}
-    )
-    try:
+
+    def _do_request(payload_bytes):
+        req = urllib.request.Request(
+            f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage",
+            data=payload_bytes,
+            headers={"Content-Type": "application/json"}
+        )
         with urllib.request.urlopen(req, timeout=10) as r:
-            pass
+            return r.read()
+
+    # Спочатку пробуємо з HTML parse_mode
+    try:
+        payload = json.dumps({
+            "chat_id": TELEGRAM_CHAT,
+            "text": text,
+            "parse_mode": "HTML",
+        }).encode()
+        _do_request(payload)
+        return
+    except Exception as e:
+        print(f"_send HTML error: {e} — retrying without parse_mode")
+
+    # Fallback: без parse_mode (якщо Gemini згенерував невалідний HTML)
+    try:
+        payload = json.dumps({
+            "chat_id": TELEGRAM_CHAT,
+            "text": text,
+        }).encode()
+        _do_request(payload)
     except Exception as e:
         print(f"_send error: {e}")
 
