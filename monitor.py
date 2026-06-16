@@ -5964,7 +5964,15 @@ def check_event_done():
                 events = json.loads(r.read()).get("items", [])
 
         # Фільтруємо зміни і нічні — не питати про них
-        SKIP_KEYWORDS = {"нічна", "рання зміна", "night shift", "early shift", "відпустка", "вихідний"}
+        # armolopid/ліки — є окремий /ліки функціонал, recurring events → не питати через event_done
+        SKIP_KEYWORDS = {
+            "нічна", "рання зміна", "night shift", "early shift", "відпустка", "вихідний",
+            "armolopid", "ліки", "таблетк", "medication", "pill", "навчання", "чек крипто",
+            "пошта", "📈", "💹", "📬"
+        }
+
+        # Dedup по summary в межах одного запуску — уникаємо питати один і той же захід 5 разів
+        _seen_summaries_today = set()
 
         new_asked = list(asked)
         for ev in events:
@@ -5992,6 +6000,15 @@ def check_event_done():
             key = f"done_{ev_id}_{today_str}"
             if key in asked:
                 continue
+
+            # Dedup по summary — не питати одну і ту ж назву двічі за один запуск
+            # (захищає від recurring events з однаковою назвою)
+            summary_key = summary.strip().lower()
+            if summary_key in _seen_summaries_today:
+                # Додаємо до asked щоб не питати в майбутніх запусках
+                new_asked.append(key)
+                continue
+            _seen_summaries_today.add(summary_key)
 
             local_end = end_dt + timedelta(hours=2)
             t = local_end.strftime("%H:%M")
