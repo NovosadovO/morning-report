@@ -44,8 +44,27 @@ def run_bot():
         time.sleep(30)
 
 
-_MONITOR_MODULE = None
-_MONITOR_LOCK   = threading.Lock()
+_MONITOR_MODULE   = None
+_MONITOR_LOCK     = threading.Lock()
+_ASSISTANT_MODULE = None
+_ASSISTANT_LOCK   = threading.Lock()
+
+def _load_assistant():
+    """Singleton — завантажує assistant.py лише раз щоб _STATE_CACHE жив між викликами."""
+    global _ASSISTANT_MODULE
+    if _ASSISTANT_MODULE is not None:
+        return _ASSISTANT_MODULE
+    with _ASSISTANT_LOCK:
+        if _ASSISTANT_MODULE is not None:
+            return _ASSISTANT_MODULE
+        import importlib.util, os
+        spec = importlib.util.spec_from_file_location(
+            "assistant", os.path.join(os.path.dirname(__file__), "assistant.py"))
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        _ASSISTANT_MODULE = mod
+        print("=== assistant.py loaded as singleton ===", flush=True)
+        return mod
 
 def _load_monitor():
     """Singleton — завантажує monitor.py лише раз щоб всі потоки ділили той самий storage._CACHE."""
@@ -1052,16 +1071,13 @@ threading.Thread(target=run_qwatch_watcher, daemon=True).start()
 
 # ─── Assistant watcher (10хв/1г нагадування + вечір завтра + пропозиції) ─────
 def run_assistant_watcher():
-    """assistant.py: нагадування за 10хв/1г, вечірній огляд завтра, пропозиції."""
+    """assistant.py: нагадування за 10хв/1г, вечірній огляд завтра, пропозиції.
+    Використовує singleton щоб _STATE_CACHE зберігався між викликами — немає дублів."""
     print("=== Starting assistant watcher ===", flush=True)
     time.sleep(70)  # затримка щоб уникнути старту разом з іншими
     while True:
         try:
-            import importlib.util, os as _os
-            spec = importlib.util.spec_from_file_location(
-                "assistant", _os.path.join(_os.path.dirname(__file__), "assistant.py"))
-            mod = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(mod)
+            mod = _load_assistant()  # singleton — кеш не скидається кожну хвилину
             mod.check_calendar_10min()
             mod.check_calendar_1h()
             mod.check_calendar_day_ahead()

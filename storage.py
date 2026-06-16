@@ -16,7 +16,7 @@ _DIR = os.path.dirname(os.path.abspath(__file__))
 # Кеш в пам'яті
 _CACHE = {}
 _CACHE_TIME = {}
-CACHE_TTL = 30  # секунд
+CACHE_TTL = 300  # секунд (5 хвилин — зменшує дублі при GitHub помилках)
 
 # Глобальний лок для атомарного read-modify-write по файлах
 _FILE_LOCKS: dict = {}
