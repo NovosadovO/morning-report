@@ -381,11 +381,13 @@ def check_meds_reminder():
 
     # ── Перше нагадування ──────────────────────────────────────────────
     first_key = f"meds_remind_{today}"
+    hourly_key_now = f"meds_hourly_{today}_{h}"
     if not sent.get(first_key):
         _send_meds_question(today)
         sent[first_key] = True
+        sent[hourly_key_now] = True  # щоб погодинний повтор не дублював цю годину
         save_sent(sent)
-        print(f"Meds first reminder sent for {today} (shift={shift})")
+        print(f"Meds first reminder sent for {today} (shift={shift}, blocked hour={h})")
         _check_analysis_alerts(today)
         return
 
