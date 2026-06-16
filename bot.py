@@ -881,17 +881,21 @@ def handle_event_done_callback(callback_query):
     except Exception as e:
         print(f"event_done editMessage error: {e}")
 
-    # Зберігаємо статус у файл для підсумку дня
+    # Зберігаємо статус + оновлюємо список "вже питали" в GitHub щоб monitor не питав знову
     try:
-        results_file = os.path.join(os.path.dirname(__file__), "monitor_event_results.json")
-        if os.path.exists(results_file):
-            with open(results_file) as f:
-                results = _json.load(f)
-        else:
-            results = {}
+        import sys as _sys_bot
+        _sys_bot.path.insert(0, os.path.dirname(__file__))
+        import storage as _storage_bot
+        # Зберігаємо результат
+        results = _storage_bot.load("monitor_event_results.json", default={})
         results[key] = answer
-        with open(results_file, "w") as f:
-            _json.dump(results, f)
+        _storage_bot.save("monitor_event_results.json", results)
+        # Також відзначаємо в monitor_event_done щоб більше не питали
+        done_list = _storage_bot.load("monitor_event_done.json", default=[])
+        if key not in done_list:
+            done_list.append(key)
+        _storage_bot.save("monitor_event_done.json", done_list[-500:])
+        print(f"[event_done] saved answer={answer} for key={key[:40]}")
     except Exception as e:
         print(f"event results save error: {e}")
 

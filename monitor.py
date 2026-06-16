@@ -6045,12 +6045,22 @@ def check_event_done():
             if key in asked:
                 continue
 
-            # Dedup по summary — не питати одну і ту ж назву двічі за один запуск
-            # (захищає від recurring events з однаковою назвою)
+            # Dedup по summary+date — головний захист від повторів
+            # (recurring events можуть мати різний ev_id при кожному запиті!)
             summary_key = summary.strip().lower()
+            summary_date_key = f"asked_{summary_key}_{today_str}"
+            if summary_date_key in asked:
+                # Вже питали про цю назву сьогодні — пропускаємо і додаємо key щоб не питати знову
+                if key not in new_asked:
+                    new_asked.append(key)
+                continue
+
             if summary_key in _seen_summaries_today:
-                # Додаємо до asked щоб не питати в майбутніх запусках
-                new_asked.append(key)
+                # Деdup в межах цього запуску
+                if key not in new_asked:
+                    new_asked.append(key)
+                if summary_date_key not in new_asked:
+                    new_asked.append(summary_date_key)
                 continue
             _seen_summaries_today.add(summary_key)
 
@@ -6100,6 +6110,9 @@ def check_event_done():
 
             print(f"[event_done] asked: {summary} (ended {t})")
             new_asked.append(key)
+            # Зберігаємо і по summary+date щоб не питати навіть якщо ev_id зміниться
+            if summary_date_key not in new_asked:
+                new_asked.append(summary_date_key)
 
         save_json_file(EVENT_DONE_FILE, new_asked[-500:])
 
