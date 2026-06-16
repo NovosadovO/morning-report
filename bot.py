@@ -894,6 +894,22 @@ def handle_event_done_callback(callback_query):
         done_list = _storage_bot.load("monitor_event_done.json", default=[])
         if key not in done_list:
             done_list.append(key)
+        # Також додаємо asked_{summary}_{date} ключ — захист від recurring events з різним ev_id
+        try:
+            import re as _re
+            from datetime import datetime as _dt, timezone as _tz, timedelta as _td
+            now_local = _dt.now(_tz.utc) + _td(hours=2)
+            today_str = now_local.strftime("%Y-%m-%d")
+            # Витягуємо summary з тексту повідомлення (перший рядок без emoji і тегів)
+            first_line = orig.split("\n")[0] if orig else ""
+            clean = _re.sub(r'<[^>]+>', '', first_line).strip()
+            clean = _re.sub(r'^[^\w\u0400-\u04ff]+', '', clean).strip()
+            if clean:
+                summary_date_key = f"asked_{clean.lower()}_{today_str}"
+                if summary_date_key not in done_list:
+                    done_list.append(summary_date_key)
+        except Exception:
+            pass
         _storage_bot.save("monitor_event_done.json", done_list[-500:])
         print(f"[event_done] saved answer={answer} for key={key[:40]}")
     except Exception as e:

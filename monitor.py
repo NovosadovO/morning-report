@@ -6113,6 +6113,8 @@ def check_event_done():
             # Зберігаємо і по summary+date щоб не питати навіть якщо ev_id зміниться
             if summary_date_key not in new_asked:
                 new_asked.append(summary_date_key)
+            # ВАЖЛИВО: зберігаємо одразу після кожного питання (захист від crash між питаннями)
+            save_json_file(EVENT_DONE_FILE, new_asked[-500:])
 
         save_json_file(EVENT_DONE_FILE, new_asked[-500:])
 
