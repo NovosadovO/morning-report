@@ -175,16 +175,19 @@ def run_defi_report_loop():
 
 def run_monitor_loop():
     """
-    Основний звіт — перевіряє кожну хвилину чи ми точно на :00 або :30.
-    Запускає monitor.py лише один раз на слот — дублів немає.
+    Основний звіт — перевіряє кожну хвилину чи ми точно на :00.
+    Запускає monitor.py лише ОДИН РАЗ на годину — дублів немає.
+
+    АНТИДУБЛЬ: після запуску спимо 180с (3 хв) — виходимо за вікно m < 3.
     """
-    print("=== Starting monitor loop v2026-06-15 (check every 1min, only at :00) ===", flush=True)
+    print("=== Starting monitor loop v2026-06-16 (check every 1min, only at :00, sleep 180s after run) ===", flush=True)
     while True:
         now = datetime.now(timezone.utc)
         now_local = now + timedelta(hours=2)
         m = now_local.minute
-        # Запускаємо ТІЛЬКИ у вікні :00-:02 — раз на годину
-        if 0 <= m < 3:
+        # Запускаємо ТІЛЬКИ на першій хвилині години (:00)
+        # Вікно звужено до m == 0 щоб виключити дублі при m=1,2
+        if m == 0:
             print(f"\n[{now.strftime('%Y-%m-%d %H:%M')} UTC] Running monitor (local {now_local.strftime('%H:%M')})...", flush=True)
             try:
                 result = subprocess.run(
@@ -201,8 +204,10 @@ def run_monitor_loop():
                 print(f"Monitor TIMEOUT after 300s", flush=True)
             except Exception as e:
                 print(f"Monitor error: {e}", flush=True)
-            # Після запуску чекаємо 60с щоб не запустити двічі в ту ж хвилину
-            time.sleep(60)
+            # АНТИДУБЛЬ: спимо 3 хв щоб ГАРАНТОВАНО вийти за вікно m==0
+            # (якщо subprocess займає <60с → без цього loop повернеться при m=1,2)
+            print(f"[monitor] sleeping 180s after run (anti-dup guard)", flush=True)
+            time.sleep(180)
         else:
             time.sleep(60)
 

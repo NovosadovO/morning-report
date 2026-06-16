@@ -2685,12 +2685,12 @@ def _get_report_slot(now_local):
     """
     1 слот на годину: тільки :00
     Повертає ключ слоту або None якщо ми не у вікні.
-    Вікно: 0-4хв кожної години
+    Вікно: 0-2хв кожної години (звужено з 5 до 3 — антидубль)
     """
     m = now_local.minute
     h = now_local.hour
     date_str = now_local.strftime("%Y-%m-%d")
-    if 0 <= m < 5:
+    if 0 <= m < 3:
         return f"{date_str}T{h:02d}:00"
     return None
 
