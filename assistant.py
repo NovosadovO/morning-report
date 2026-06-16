@@ -153,6 +153,18 @@ def _gemini(prompt, max_tokens=400):
 # In-memory cache для швидкого dedup (захист від race condition між хвилинними викликами)
 _STATE_CACHE: dict = {}
 
+# Жорсткий in-process dedup — ключі які вже надіслані в цьому процесі
+# Ніколи не скидається — захист навіть якщо GitHub недоступний
+_SENT_KEYS: set = set()
+
+def _already_sent(key: str) -> bool:
+    """Перевіряє чи вже надіслано в цьому процесі."""
+    return key in _SENT_KEYS
+
+def _mark_sent(key: str):
+    """Позначає як надіслане — назавжди в цьому процесі."""
+    _SENT_KEYS.add(key)
+
 def _load_state(key, default=None):
     # Спочатку перевіряємо in-memory cache
     if key in _STATE_CACHE:
@@ -218,9 +230,10 @@ def check_calendar_day_ahead():
         return
 
     state = _load_state("assistant_day_ahead.json", {})
-    today_key = now.strftime("%Y-%m-%d")
-    if state.get(today_key):
+    today_key = f"day_ahead_{now.strftime('%Y-%m-%d')}"
+    if _already_sent(today_key) or state.get(today_key):
         return
+    _mark_sent(today_key)
     state[today_key] = True
     _save_state("assistant_day_ahead.json", state)
 
@@ -307,7 +320,12 @@ def check_calendar_10min():
         summary = ev.get("summary", "(без назви)")
         start_str = ev["start"].get("dateTime") or ev["start"].get("date")
         key = f"10min_{ev_id}_{start_str}"
+
+        # Подвійний захист: in-process set + persistent state
+        if _already_sent(key):
+            continue
         if state.get(key):
+            _mark_sent(key)  # синхронізуємо in-process set
             continue
 
         try:
@@ -328,13 +346,14 @@ def check_calendar_10min():
         elif "нічна" in s:
             tip = "\n🌙 Поїж перед виходом, термос"
 
+        _mark_sent(key)   # СПОЧАТКУ позначаємо — потім надсилаємо
+        state[key] = True
+        changed = True
         _send(
             f"{emoji} <b>Через 10 хвилин:</b> {_esc(summary)}\n"
             f"🕐 о <b>{t}</b>{tip}\n\n"
             f"<i>Готовий?</i>"
         )
-        state[key] = True
-        changed = True
         print(f"[assistant] 10min reminder: {summary} at {t}")
 
     if changed:
@@ -365,7 +384,12 @@ def check_calendar_1h():
         summary = ev.get("summary", "(без назви)")
         start_str = ev["start"].get("dateTime") or ev["start"].get("date")
         key = f"1h_{ev_id}_{start_str}"
+
+        # Подвійний захист: in-process set + persistent state
+        if _already_sent(key):
+            continue
         if state.get(key):
+            _mark_sent(key)
             continue
 
         # Пропускаємо якщо вже минула
@@ -373,6 +397,7 @@ def check_calendar_1h():
             dt = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
             if dt < now_utc:
                 state[key] = True
+                _mark_sent(key)
                 changed = True
                 continue
             t = (dt + timedelta(hours=2)).strftime("%H:%M")
@@ -400,9 +425,10 @@ def check_calendar_1h():
             {"text": "✅ Виконано / скасовано",
              "callback_data": f"cal_done_{ev_id}"},
         ]]}
-        _send(msg, keyboard)
+        _mark_sent(key)   # СПОЧАТКУ позначаємо
         state[key] = True
         changed = True
+        _send(msg, keyboard)
         print(f"[assistant] 1h reminder: {summary} at {t}")
 
     if changed:
