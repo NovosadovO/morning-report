@@ -73,6 +73,11 @@ def _gh(url, headers=None, method="GET", data=None):
 _CAL_CACHE: dict = {}
 _CAL_CACHE_TTL = 300  # 5 хвилин
 
+# Кеш останнього успішного результату get_shift_from_calendar
+# Якщо Google Calendar впав — повертаємо останній відомий результат
+_SHIFT_CACHE: dict = {}
+_SHIFT_CACHE_TTL = 600  # 10 хвилин
+
 def _fetch_events_for_day(token: str, day_offset: int = 0) -> list:
     """Завантажує події Google Calendar для дня (offset=0 сьогодні, 1 завтра)."""
     now_utc = datetime.now(timezone.utc)
@@ -164,12 +169,27 @@ def get_shift_from_calendar():
     Returns: {"today": "early"|"night"|"free", "tomorrow": ...,
               "today_start": datetime|None, "today_end": datetime|None}
     """
+    import time as _time
+    now_ts = _time.time()
+    cache_hour = _now_local().strftime("%Y-%m-%d-%H")
+
+    # Перевіряємо свіжий кеш (10 хвилин)
+    if cache_hour in _SHIFT_CACHE:
+        ts, cached_result = _SHIFT_CACHE[cache_hour]
+        if now_ts - ts < _SHIFT_CACHE_TTL:
+            return cached_result
+
     result = {"today": "free", "tomorrow": "free",
               "today_start": None, "today_end": None,
               "tomorrow_start": None}
 
     token = _get_token()
     if not token:
+        # Повертаємо останній кешований результат якщо є
+        if _SHIFT_CACHE:
+            last = max(_SHIFT_CACHE.values(), key=lambda x: x[0])
+            print("get_shift_from_calendar: no token, returning cached result")
+            return last[1]
         return result
 
     try:
@@ -243,6 +263,9 @@ def get_shift_from_calendar():
     except Exception as e:
         print(f"get_shift_from_calendar error: {e}")
 
+    # Зберігаємо в кеш перед поверненням
+    import time as _time2
+    _SHIFT_CACHE[cache_hour] = (_time2.time(), result)
     return result
 
 # ─── CALENDAR: СТВОРЕННЯ ПОДІЙ ────────────────────────────────────────────────

@@ -433,6 +433,9 @@ threading.Thread(target=run_event_done_watcher,       daemon=True).start()
 def run_reminders_watcher():
     """Нагадування з data/reminders.json — кожну хвилину. Підтримка repeat: daily."""
     import urllib.request, urllib.parse, base64, json, os
+
+    # In-process dedup — ніколи не надсилати один id двічі в одну хвилину
+    _sent_this_process: set = set()  # зберігається поки процес живий
     from datetime import datetime, timezone, timedelta
     GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
     TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN","")
@@ -498,22 +501,51 @@ def run_reminders_watcher():
     while True:
         try:
             reminders, sha = gh_get()
-            now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M")
+            now_local = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%dT%H:%M")
             changed = False
             for r in reminders:
+                rid = r.get("id", "")
                 if r.get("sent"):
                     continue
-                if r.get("datetime_utc","")[:16] <= now_utc:
-                    tg_send_with_buttons(r["text"], r["id"])
-                    print(f"Reminder sent: {r['id']}", flush=True)
-                    changed = True
-                    if r.get("repeat") == "daily":
-                        # Зсуваємо на наступний день, не ставимо sent=True
-                        old_dt = datetime.fromisoformat(r["datetime_utc"])
-                        r["datetime_utc"] = (old_dt + timedelta(days=1)).strftime("%Y-%m-%dT%H:%M:%S")
-                        print(f"  repeat:daily → next: {r['datetime_utc']}", flush=True)
-                    else:
+
+                r_dt_utc = r.get("datetime_utc", "")
+                # Конвертуємо час нагадування з UTC в локальний для порівняння
+                r_dt_local = r_dt_utc[:16]
+                try:
+                    _rdt = datetime.fromisoformat(r_dt_utc)
+                    r_dt_local = (_rdt + timedelta(hours=2)).strftime("%Y-%m-%dT%H:%M")
+                except Exception:
+                    pass
+
+                if r_dt_local > now_local:
+                    continue  # ще не час
+
+                # In-process dedup: ключ = id + хвилина запуску (для repeat:daily — id+дата)
+                if r.get("repeat") == "daily":
+                    dedup_key = f"{rid}__{now_local[:10]}"  # раз на день
+                else:
+                    dedup_key = rid  # одноразове — ніколи більше
+
+                if dedup_key in _sent_this_process:
+                    # Якщо gh_save не спрацювала — примусово позначаємо
+                    if not r.get("repeat"):
                         r["sent"] = True
+                        changed = True
+                    continue
+
+                _sent_this_process.add(dedup_key)
+                tg_send_with_buttons(r["text"], rid)
+                print(f"Reminder sent: {rid}", flush=True)
+                changed = True
+
+                if r.get("repeat") == "daily":
+                    # Зсуваємо на наступний день
+                    old_dt = datetime.fromisoformat(r_dt_utc)
+                    r["datetime_utc"] = (old_dt + timedelta(days=1)).strftime("%Y-%m-%dT%H:%M:%S")
+                    print(f"  repeat:daily → next: {r['datetime_utc']}", flush=True)
+                else:
+                    r["sent"] = True
+
             if changed and sha:
                 gh_save(reminders, sha)
         except Exception as e:
