@@ -241,5 +241,32 @@
         ]
       ]
     }
+  },
+  "2100366814_27142": {
+    "text": "📩 ✉️\n📌 Events for Oleg, new recommendations\n👤 AllEvents <updates@allevents.in>",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_74689"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_74689"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_74689"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_74689"
+          }
+        ]
+      ]
+    }
   }
 }
