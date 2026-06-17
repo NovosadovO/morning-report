@@ -3486,19 +3486,17 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
 
     try:
         now_local = datetime.now(timezone.utc) + timedelta(hours=2)
-        # Витягуємо повний астро звіт (не скорочений)
+        # Отримуємо ПОВНИЙ звіт через astro.get_astro_report() (без reload)
         try:
-            import astro as _astro_mod_ai, importlib as _il_ai, traceback as _tb_ai
-            print(f"[astro_ai] reloading astro module...", flush=True)
-            _il_ai.reload(_astro_mod_ai)
-            print(f"[astro_ai] calling get_astro_report()...", flush=True)
+            import astro as _astro_mod_ai
             _full_astro = _astro_mod_ai.get_astro_report()
             print(f"[astro_ai] get_astro_report OK, len={len(_full_astro) if _full_astro else 0}", flush=True)
-        except Exception as _e_astro_reload:
-            import traceback as _tb_ai2
-            print(f"[astro_ai] get_astro_report FAILED: {_e_astro_reload}", flush=True)
-            print(_tb_ai2.format_exc(), flush=True)
+            if not _full_astro:
+                _full_astro = astro_text
+        except Exception as _e_full:
+            print(f"[astro_ai] get_astro_report failed: {_e_full}, using astro_text fallback", flush=True)
             _full_astro = astro_text
+        print(f"[astro_ai] final astro len={len(_full_astro) if _full_astro else 0}", flush=True)
         prompt = (
             f"Ти — персональний астролог Олега Новосадова (Кошіце, Словаччина).\n"
             f"Зараз {now_local.strftime('%H:%M')}, {now_local.strftime('%d.%m.%Y')}.\n"
@@ -3553,8 +3551,8 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
             data=body, headers={"Content-Type": "application/json"}, method="POST"
         )
-        print(f"[astro_ai] sending request to Gemini (timeout=60)...", flush=True)
-        with urllib.request.urlopen(req, timeout=60) as r:
+        print(f"[astro_ai] sending request to Gemini (timeout=90)...", flush=True)
+        with urllib.request.urlopen(req, timeout=90) as r:
             resp = json.loads(r.read())
         _astro_finish = resp.get("candidates", [{}])[0].get("finishReason", "UNKNOWN")
         print(f"[astro_ai] finishReason={_astro_finish}", flush=True)
@@ -4392,9 +4390,18 @@ def main():
 
         # Блок 6б: Окремий AI астро-аналіз — одразу після астро (повний, з shift_hint)
         _gemini_key_astro = os.environ.get("GEMINI_API_KEY", "")
-        _astro_ai = _get_astro_ai_analysis(astro_text, _gemini_key_astro, shift_hint=shift_hint)
+        _astro_ai = ""
+        for _astro_attempt in range(2):  # 2 спроби
+            _astro_ai = _get_astro_ai_analysis(astro_text, _gemini_key_astro, shift_hint=shift_hint)
+            if _astro_ai:
+                break
+            if _astro_attempt == 0:
+                import time as _t_astro; _t_astro.sleep(3)
+                print(f"[astro_ai] retry attempt 2...", flush=True)
         if _astro_ai:
             parts.append(f"🔮🤖 <b>АСТРО-АНАЛІЗ ВСІ АСПЕКТИ</b>\n\n{_astro_ai}")
+        else:
+            print(f"[astro_ai] FAILED after 2 attempts — skipping block", flush=True)
 
     # Блок 7: AI-підсумок
     if summary_text:
@@ -4520,7 +4527,7 @@ def main():
                 )
                 _brief_payload = json.dumps({
                     "contents": [{"parts": [{"text": _brief_prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 3000, "temperature": 0.8},
+                    "generationConfig": {"maxOutputTokens": 2000, "temperature": 0.8},
                 }).encode()
                 _brief_req = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
