@@ -1,4 +1,9 @@
 {
+  "74708": {
+    "subject": "[NovosadovO/morning-report] Run failed: Monitor — Telegram Alerts - main (1f296f7)",
+    "sender": "\"NovosadovO\" <notifications@github.com>",
+    "body": "[NovosadovO/morning-report] Monitor — Telegram Alerts workflow run\r\n\r\nRepository: NovosadovO/morning-report\r\nWorkflow: Monitor — Telegram Alerts\r\nDuration: 15.0 seconds\r\nFinished: 2026-06-17 21:57:14 UTC\r\n\r\nView results: https://github.com/NovosadovO/morning-report/actions/runs/27722354654\r\n\r\nJobs:\r\n  * monitor failed (2 annotations)\r\n\r\n-- \r\nYou are receiving this because you are subscribed to this thread.\r\nManage your GitHub Actions notifications: https://github.com/settings/notifications?email_source=notifications&email_token=BBOHUQKGBMTYJDEPLGVG2EL5AMH47A5CNFSNUACCM5UWIORPF5TWS5BNNB2WEL2DNBSWG22TOVUXIZKFOZSW45CON52GSZTJMNQXI2LPNYXTONBWG44DKNRUHAZTSJJTIIYTOOBRG4ZTGNBTGSTHEZLBONXW5IFFMV3GK3TUWFRXGX3TMV2HI2LOM5ZV6Y3MNFRWW\r\n"
+  },
   "74707": {
     "subject": "Build failed for vigilant-bravery",
     "sender": "Railway <hello@notify.railway.app>",
@@ -28,10 +33,5 @@
     "subject": "Build failed for vigilant-bravery",
     "sender": "Railway <hello@notify.railway.app>",
     "body": "Railway Logo\r\n\r\nBuild failed for project: vigilant-bravery\r\n\r\n*************\r\nBuild failed!\r\n*************\r\n\r\nThis is awkward. One of your builds failed to leave the wheelhouse. Details:\r\n\r\n* Project: vigilant-bravery\r\n* Service: morning-report\r\n* Environment: production\r\n\r\nView build logs ( https://railway.com/project/1c4de079-85e2-4ba0-ba2a-1fb502b48219/service/89de62c3-3da4-4c8e-a635-fe5e61ab3a56?id=fae69a91-27ce-4343-ba14-4c5193130414&environmentId=0f1480b0-10e4-4355-a30b-94a76dfcfffb&utm_campaign=Build+failed+email&utm_content=Build+failed+email&utm_medium=email_action&utm_source=customer.io )\r\n\r\nIt might help to look at the docs ( https://docs.railway.app/?utm_campaign=Build+failed+email&utm_content=Build+failed+email&utm_medium=email_action&utm_source=customer.io ) and if you're still stuck and think we can help, feel free to reach out to us on our Discord ( https://discord.com/invite/xAm2w6g?utm_campaign=Build+failed+email&utm_content=Build+failed+email&utm_medium=email_action&utm_source=customer.io ).\r\n\r\nRegards,\r\n\r\nThe Railway Team\r\n\r\nManage email preferences ( https://railway.com/preferences?token=4c2e4edf-bffd-4b7a-ad7d-a802198020ea&preference=buildFailedEmail&utm_campaign=Build+failed+email&utm_content=Build+failed+email&utm_medium=email_action&utm_source=customer.io )\r\n\r\n© 2026 Railway Corp. All rights reserved."
-  },
-  "74701": {
-    "subject": "Build failed for vigilant-bravery",
-    "sender": "Railway <hello@notify.railway.app>",
-    "body": "Railway Logo\r\n\r\nBuild failed for project: vigilant-bravery\r\n\r\n*************\r\nBuild failed!\r\n*************\r\n\r\nThis is awkward. One of your builds failed to leave the wheelhouse. Details:\r\n\r\n* Project: vigilant-bravery\r\n* Service: morning-report\r\n* Environment: production\r\n\r\nView build logs ( https://railway.com/project/1c4de079-85e2-4ba0-ba2a-1fb502b48219/service/89de62c3-3da4-4c8e-a635-fe5e61ab3a56?id=722d4ff8-8d89-445b-bd98-9028aeea9d62&environmentId=0f1480b0-10e4-4355-a30b-94a76dfcfffb&utm_campaign=Build+failed+email&utm_content=Build+failed+email&utm_medium=email_action&utm_source=customer.io )\r\n\r\nIt might help to look at the docs ( https://docs.railway.app/?utm_campaign=Build+failed+email&utm_content=Build+failed+email&utm_medium=email_action&utm_source=customer.io ) and if you're still stuck and think we can help, feel free to reach out to us on our Discord ( https://discord.com/invite/xAm2w6g?utm_campaign=Build+failed+email&utm_content=Build+failed+email&utm_medium=email_action&utm_source=customer.io ).\r\n\r\nRegards,\r\n\r\nThe Railway Team\r\n\r\nManage email preferences ( https://railway.com/preferences?token=4c2e4edf-bffd-4b7a-ad7d-a802198020ea&preference=buildFailedEmail&utm_campaign=Build+failed+email&utm_content=Build+failed+email&utm_medium=email_action&utm_source=customer.io )\r\n\r\n© 2026 Railway Corp. All rights reserved."
   }
 }
