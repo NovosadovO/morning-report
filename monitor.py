@@ -9003,7 +9003,7 @@ def check_important_emails_followup():
     import base64 as _b64i, urllib.request as _uri
     gh_url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/important_emails.json"
     gh_headers = {
-        "Authorization": f"token {os.environ.get("GITHUB_TOKEN", "")}",
+        "Authorization": f"token {os.environ.get('GITHUB_TOKEN', '')}",
         "User-Agent": "bot"
     }
 
