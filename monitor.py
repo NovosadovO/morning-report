@@ -3453,7 +3453,9 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
     Генерує окремий AI аналіз астро-блоку.
     Повертає текст аналізу або порожній рядок.
     """
+    print(f"[astro_ai] called: astro_len={len(astro_text) if astro_text else 0}, key={'YES' if gemini_key else 'NO'}", flush=True)
     if not astro_text or not gemini_key:
+        print(f"[astro_ai] skipped: no astro_text or no gemini_key", flush=True)
         return ""
 
     # Статична натальна карта Олега (22.09.1989, 02:52, Львів)
@@ -3486,10 +3488,16 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
         now_local = datetime.now(timezone.utc) + timedelta(hours=2)
         # Витягуємо повний астро звіт (не скорочений)
         try:
-            import astro as _astro_mod_ai, importlib as _il_ai
+            import astro as _astro_mod_ai, importlib as _il_ai, traceback as _tb_ai
+            print(f"[astro_ai] reloading astro module...", flush=True)
             _il_ai.reload(_astro_mod_ai)
+            print(f"[astro_ai] calling get_astro_report()...", flush=True)
             _full_astro = _astro_mod_ai.get_astro_report()
-        except Exception:
+            print(f"[astro_ai] get_astro_report OK, len={len(_full_astro) if _full_astro else 0}", flush=True)
+        except Exception as _e_astro_reload:
+            import traceback as _tb_ai2
+            print(f"[astro_ai] get_astro_report FAILED: {_e_astro_reload}", flush=True)
+            print(_tb_ai2.format_exc(), flush=True)
             _full_astro = astro_text
         prompt = (
             f"Ти — персональний астролог Олега Новосадова (Кошіце, Словаччина).\n"
@@ -3545,8 +3553,11 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
             data=body, headers={"Content-Type": "application/json"}, method="POST"
         )
-        with urllib.request.urlopen(req, timeout=30) as r:
+        print(f"[astro_ai] sending request to Gemini (timeout=60)...", flush=True)
+        with urllib.request.urlopen(req, timeout=60) as r:
             resp = json.loads(r.read())
+        _astro_finish = resp.get("candidates", [{}])[0].get("finishReason", "UNKNOWN")
+        print(f"[astro_ai] finishReason={_astro_finish}", flush=True)
         result = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
         # Конвертуємо markdown → plain text (Gemini може повернути **bold** або *italic*)
         import re as _re_ai
@@ -3555,10 +3566,12 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
         result = _re_ai.sub(r'#{1,6}\s*', '', result)
         # Прибираємо будь-які HTML теги що міг додати Gemini (ми не використовуємо HTML від AI)
         result = _re_ai.sub(r'<[^>]+>', '', result)
-        print(f"[astro_ai] OK — {len(result)} chars")
+        print(f"[astro_ai] OK — {len(result)} chars", flush=True)
         return result
     except Exception as e:
-        print(f"[astro_ai] error: {e}")
+        import traceback as _tb_astro
+        print(f"[astro_ai] ERROR: {e}", flush=True)
+        print(_tb_astro.format_exc(), flush=True)
         return ""
 
 
@@ -4507,7 +4520,7 @@ def main():
                 )
                 _brief_payload = json.dumps({
                     "contents": [{"parts": [{"text": _brief_prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 2000, "temperature": 0.8},
+                    "generationConfig": {"maxOutputTokens": 3000, "temperature": 0.8},
                 }).encode()
                 _brief_req = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -4515,13 +4528,19 @@ def main():
                 )
                 with urllib.request.urlopen(_brief_req, timeout=45) as _r_b:
                     _brief_resp = json.loads(_r_b.read())
+                _finish_reason = _brief_resp.get("candidates", [{}])[0].get("finishReason", "UNKNOWN")
+                print(f"[briefing] finishReason={_finish_reason}", flush=True)
                 _ai_briefing = _brief_resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+                if _finish_reason == "MAX_TOKENS":
+                    print(f"[briefing] WARNING: response truncated by MAX_TOKENS!", flush=True)
                 if _ai_briefing and _ai_briefing[-1] not in ".!?»":
                     _ai_briefing += "."
-                print(f"[briefing] OK (attempt {_attempt_b+1}) — {len(_ai_briefing)} chars")
+                print(f"[briefing] OK (attempt {_attempt_b+1}) — {len(_ai_briefing)} chars", flush=True)
                 break  # успіх — виходимо з циклу
             except Exception as _e_b:
-                print(f"ai_briefing error (attempt {_attempt_b+1}): {_e_b}")
+                import traceback as _tb_brief
+                print(f"ai_briefing error (attempt {_attempt_b+1}): {_e_b}", flush=True)
+                print(_tb_brief.format_exc(), flush=True)
                 if _attempt_b < 2:
                     import time as _t_b; _t_b.sleep(3)
 
