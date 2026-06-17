@@ -1,4 +1,10 @@
 {
   "$schema": "https://schema.railpack.com",
-  "provider": "python"
+  "provider": "python",
+  "packages": {
+    "python": "3.11"
+  },
+  "build": {
+    "aptPackages": ["libsqlite3-0"]
+  }
 }

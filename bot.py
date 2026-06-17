@@ -1477,10 +1477,13 @@ def _try_become_leader():
     # Перевіряємо чи є живий лідер (не старший 30с)
     existing_id = lock.get("instance", "")
     existing_ts = lock.get("ts", 0)
-    if existing_id and existing_id != _INSTANCE_ID and (now_ts - existing_ts) < 60:
+    _force = os.environ.get("FORCE_LEADER", "") == "1"
+    if (not _force) and existing_id and existing_id != _INSTANCE_ID and (now_ts - existing_ts) < 60:
         print(f"[Leader] Another leader alive: {existing_id} (age {int(now_ts-existing_ts)}s)", flush=True)
         _is_leader = False
         return False
+    if _force and existing_id and existing_id != _INSTANCE_ID:
+        print(f"[Leader] FORCE takeover from {existing_id}", flush=True)
 
     # Записуємо себе як лідера
     new_lock = {"instance": _INSTANCE_ID, "ts": now_ts}
