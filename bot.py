@@ -1730,7 +1730,51 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка дайджесту: {e}")
 
-    elif text in ["/звіт", "звіт"]:
+    elif text in ["/diag", "/діаг", "діаг", "diag"]:
+        send(chat_id, "🔍 Діагностика середовища...")
+        try:
+            import os as _do
+            lines = ["🔍 <b>ДІАГНОСТИКА</b>\n"]
+            # 1. GEMINI_API_KEY
+            gk = _do.environ.get("GEMINI_API_KEY", "")
+            lines.append(f"GEMINI_API_KEY: {'✅ є (' + str(len(gk)) + ' симв)' if gk else '❌ НЕМАЄ'}")
+            # 2. kerykeion
+            try:
+                import astro as _da
+                import importlib as _di; _di.reload(_da)
+                lines.append(f"kerykeion: {'✅ OK' if getattr(_da, '_KERYKEION_OK', False) else '❌ FALLBACK (ephem)'}")
+                # 3. короткий astro_text (той що в звіті)
+                _at = _da.get_natal_transits_short(max_aspects=5)
+                lines.append(f"astro_text (звіт): {'✅ ' + str(len(_at)) + ' симв' if _at else '❌ ПОРОЖНІЙ → AI-блок пропускається!'}")
+                # 4. повний звіт (для AI)
+                _full = _da.get_astro_report()
+                lines.append(f"astro повний (для AI): {'✅ ' + str(len(_full)) + ' симв' if _full else '❌ ПОРОЖНІЙ'}")
+            except Exception as _de:
+                import traceback as _dtb
+                lines.append(f"astro: ❌ {type(_de).__name__}: {str(_de)[:200]}")
+                lines.append(f"<i>{_dtb.format_exc()[-400:]}</i>")
+            # 5. тест Gemini виклику
+            if gk:
+                try:
+                    import requests as _dr
+                    _resp = _dr.post(
+                        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gk}",
+                        json={"contents": [{"parts": [{"text": "Скажи 'ок' одним словом"}]}]},
+                        timeout=30,
+                    )
+                    if _resp.status_code == 200:
+                        _txt = _resp.json().get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "")
+                        lines.append(f"Gemini API: ✅ {_resp.status_code} → '{_txt.strip()[:40]}'")
+                    else:
+                        lines.append(f"Gemini API: ❌ {_resp.status_code} → {_resp.text[:200]}")
+                except Exception as _ge:
+                    lines.append(f"Gemini API: ❌ {type(_ge).__name__}: {str(_ge)[:200]}")
+            send(chat_id, "\n".join(lines))
+        except Exception as _e_diag:
+            import traceback
+            send(chat_id, f"⚠️ Помилка діагностики: {_e_diag}\n{traceback.format_exc()[-500:]}")
+
+    elif text in ["/звіт", "звіт", "/force", "force", "/report", "/zvit"]:
         send(chat_id, "⏳ Збираю звіт...")
         try:
             import importlib, sys as _sys, os as _os
