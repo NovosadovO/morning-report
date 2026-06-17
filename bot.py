@@ -25,6 +25,7 @@ OFFSET_FILE    = "/tmp/bot_offset.json"
 
 # Унікальний ідентифікатор цього інстансу бота (leader election)
 _INSTANCE_ID = str(uuid.uuid4())[:12]
+_conflict_count = 0  # лічильник 409 Conflict поспіль
 _DRAFT_STORE: dict = {}  # uid_str -> {to, subject, body} — тимчасовий store для email drafts
 _IMPORTANT_EMAILS_FILE = "data/important_emails.json"  # важливі листи (GitHub)
 _GH_TOKEN    = os.environ.get("GITHUB_TOKEN", "")
@@ -52,6 +53,9 @@ def api(method, data=None):
     except urllib.error.HTTPError as e:
         body = e.read().decode()
         print(f"[API] {method} HTTP {e.code}: {body[:300]}")
+        # 409 Conflict — інший інстанс бота polling-ить. Прокидаємо сигнал нагору.
+        if e.code == 409:
+            return {"ok": False, "error_code": 409, "description": body[:200]}
         return {}
     except Exception as e:
         print(f"[API] {method} error: {e}")
@@ -1398,9 +1402,13 @@ def handle_health_photo(chat_id, msg):
         ))
 
 
+_CONFLICT_409 = object()  # маркер: інший інстанс polling-ить
+
 def get_updates(offset=0):
     result = api("getUpdates", {"offset": offset, "timeout": 30, "limit": 10,
                                 "allowed_updates": ["message", "callback_query"]})
+    if isinstance(result, dict) and result.get("error_code") == 409:
+        return _CONFLICT_409
     return result.get("result", [])
 
 
@@ -2441,6 +2449,8 @@ def handle_command(chat_id, text):
 # ─── MAIN LOOP ────────────────────────────────────────────────────────────────
 
 def main():
+    global _conflict_count
+    _conflict_count = 0
     import threading as _threading
     print(f"=== Bot started [{_INSTANCE_ID}] ===", flush=True)
 
@@ -2485,6 +2495,28 @@ def main():
 
         try:
             updates = get_updates(offset)
+            # 409 Conflict — інший інстанс бота активно polling-ить.
+            # Робимо backoff і перевіряємо лідерство; не спамимо Telegram.
+            if updates is _CONFLICT_409:
+                _conflict_count += 1
+                print(f"[Bot] 409 Conflict #{_conflict_count} — інший інстанс polling-ить. Backoff 20s, перевіряю лідерство...", flush=True)
+                # Перевіряємо чи ми досі лідер за GitHub-локом
+                try:
+                    _lock_now, _ = _gh_read(_GH_LOCK_URL)
+                    if _lock_now.get("instance") and _lock_now.get("instance") != _INSTANCE_ID:
+                        print(f"[Bot] Лок належить іншому ({_lock_now.get('instance')}) — step down [{_INSTANCE_ID}]", flush=True)
+                        return
+                except Exception:
+                    pass
+                # Якщо ми лідер за локом але все одно 409 — старий інстанс-зомбі.
+                # Чекаємо: зомбі без heartbeat зрештою впаде, ми перехопимо.
+                if _conflict_count >= 8:
+                    print(f"[Bot] 8 конфліктів поспіль — рестарт процесу для чистого захоплення токена", flush=True)
+                    return
+                time.sleep(20)
+                continue
+            else:
+                _conflict_count = 0
             for update in updates:
                 uid = update["update_id"]
                 offset = uid + 1
