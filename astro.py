@@ -554,16 +554,21 @@ def _get_aspects(lons, names):
     aspects.sort(key=lambda x: x[4])
     return aspects
 
-def _transit_aspects(natal_lons, transit_lons, natal_names, transit_names, orb=3.0):
+def _transit_aspects(natal_lons, transit_lons, natal_names, transit_names, orb=None):
+    """Аспекти транзит→натал з ІНДИВІДУАЛЬНИМ орбом для кожного типу аспекту.
+    orb=None → беремо орб з ASPECTS_UA (8° для мажорних, 3° для квінконксу).
+    """
     aspects = []
     for ti, t_lon in enumerate(transit_lons):
         for ni, n_lon in enumerate(natal_lons):
             diff = _angle_diff(t_lon, n_lon)
-            for angle, (asp_name, emoji, _) in ASPECTS_UA.items():
-                if abs(diff - angle) <= orb:
+            for angle, (asp_name, emoji, asp_orb) in ASPECTS_UA.items():
+                use_orb = orb if orb is not None else asp_orb
+                if abs(diff - angle) <= use_orb:
                     aspects.append((transit_names[ti], natal_names[ni], asp_name, emoji, abs(diff - angle)))
+    # Сортуємо: спочатку точніші (менший орб)
     aspects.sort(key=lambda x: x[4])
-    return aspects[:12]
+    return aspects[:14]
 
 # ─── FALLBACK через ephem (якщо kerykeion/pyswisseph не встановлений) ─────────
 
@@ -980,7 +985,7 @@ def get_astro_report():
         lines.append(f"\n━━━━━━━━━━━━━━━━━━━━")
         lines.append(f"\n🎯 <b>ТРАНЗИТИ ДО НАТАЛЬНИХ ПЛАНЕТ</b>")
         lines.append(f"<i>(як небо впливає особисто на тебе)</i>\n")
-        for t_planet, n_planet, asp, emoji, exact in n_aspects[:8]:
+        for t_planet, n_planet, asp, emoji, exact in n_aspects[:14]:
             lines.append(f"{emoji} Транзитний {t_planet} {asp} натальний {n_planet}  <i>({exact:.1f}°)</i>")
             desc = get_aspect_description(t_planet, asp, n_planet)
             if desc:
@@ -1000,7 +1005,7 @@ def get_astro_report():
         m_sign = _sign_ua(m.moon.sign)
         day_name = ["Пн","Вт","Ср","Чт","Пт","Сб","Нд"][future_local.weekday()]
         date_str = future_local.strftime("%d.%m")
-        tip = MOON_SIGN_TIPS.get(m_sign, "")[:40]
+        tip = MOON_SIGN_TIPS.get(m_sign, "")
         lines.append(f"  {day_name} {date_str}  {m_sign}  <i>{tip}</i>")
 
     # Сонце в знаку

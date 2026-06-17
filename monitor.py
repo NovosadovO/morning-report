@@ -3541,6 +3541,12 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
         result = _re_ai.sub(r'#{1,6}\s*', '', result)
         # Прибираємо будь-які HTML теги що міг додати Gemini (ми не використовуємо HTML від AI)
         result = _re_ai.sub(r'<[^>]+>', '', result)
+        # Якщо Gemini обрізав текст по MAX_TOKENS — відрізаємо незавершене останнє речення
+        if _astro_finish == "MAX_TOKENS":
+            print(f"[astro_ai] WARNING: MAX_TOKENS — обрізаю незавершене речення", flush=True)
+            _last_dot = max(result.rfind(". "), result.rfind(".\n"), result.rfind("!"), result.rfind("?"))
+            if _last_dot > len(result) // 2:
+                result = result[:_last_dot + 1].rstrip()
         print(f"[astro_ai] OK — {len(result)} chars", flush=True)
         return result
     except Exception as e:
