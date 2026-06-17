@@ -4383,6 +4383,8 @@ def main():
         else:
             email_parts.append(email_text)
 
+    _astro_ai_full = ""  # ініціалізація — астро AI надсилається окремо після звіту
+
     # Блок 6: Астро — додається в кожен звіт
     if astro_text:
         parts.append(astro_text)
@@ -4399,8 +4401,10 @@ def main():
                 import time as _t_astro; _t_astro.sleep(3)
                 print(f"[astro_ai] retry attempt 2...", flush=True)
         if _astro_ai:
-            parts.append(f"🔮🤖 <b>АСТРО-АНАЛІЗ ВСІ АСПЕКТИ</b>\n\n{_astro_ai}")
+            # Зберігаємо для окремої надсилки після звіту (щоб не обрізалось)
+            _astro_ai_full = _astro_ai
         else:
+            _astro_ai_full = ""
             print(f"[astro_ai] FAILED after 2 attempts — skipping block", flush=True)
 
     # Блок 7: AI-підсумок
@@ -4662,6 +4666,31 @@ def main():
         _time_main.sleep(0.8)
         print(f"[report] sending email parts ({len(email_parts)} items)", flush=True)
         _send_parts_as_one(email_parts)
+
+    # Астро AI — надсилаємо окремо після звіту, розбиваємо на частини по 4090 символів
+    if _astro_ai_full:
+        _time_main.sleep(0.8)
+        print(f"[astro_ai] sending astro AI ({len(_astro_ai_full)} chars) as separate messages...", flush=True)
+        # Заголовок першої частини
+        _astro_header = "🔮🤖 <b>АСТРО-АНАЛІЗ ВСІ АСПЕКТИ</b>\n\n"
+        _astro_full_text = _astro_header + _astro_ai_full
+        # Розбиваємо на частини по 4090 символів, по межах рядків
+        _astro_chunks = []
+        _astro_chunk = ""
+        for _astro_line in _astro_full_text.split("\n"):
+            _candidate = _astro_chunk + ("\n" if _astro_chunk else "") + _astro_line
+            if len(_candidate) <= 4090:
+                _astro_chunk = _candidate
+            else:
+                if _astro_chunk:
+                    _astro_chunks.append(_astro_chunk)
+                _astro_chunk = _astro_line
+        if _astro_chunk:
+            _astro_chunks.append(_astro_chunk)
+        print(f"[astro_ai] split into {len(_astro_chunks)} messages", flush=True)
+        for _ci, _chunk_text in enumerate(_astro_chunks):
+            send_telegram(_chunk_text)
+            _time_main.sleep(0.5)
 
     print(f"=== Report {'sent' if ok else 'FAILED'} ===")
 
