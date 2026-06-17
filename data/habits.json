@@ -376,6 +376,10 @@
   },
   "2026-06-17": {
     "shower": true,
+    "run": false,
+    "tea": true,
+    "sauna": false,
+    "spray": false,
     "water": true
   }
 }
