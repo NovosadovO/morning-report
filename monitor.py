@@ -3548,6 +3548,13 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
         with urllib.request.urlopen(req, timeout=30) as r:
             resp = json.loads(r.read())
         result = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+        # Конвертуємо markdown → plain text (Gemini може повернути **bold** або *italic*)
+        import re as _re_ai
+        result = _re_ai.sub(r'\*\*(.+?)\*\*', r'\1', result)
+        result = _re_ai.sub(r'\*(.+?)\*', r'\1', result)
+        result = _re_ai.sub(r'#{1,6}\s*', '', result)
+        # Прибираємо будь-які HTML теги що міг додати Gemini (ми не використовуємо HTML від AI)
+        result = _re_ai.sub(r'<[^>]+>', '', result)
         print(f"[astro_ai] OK — {len(result)} chars")
         return result
     except Exception as e:
@@ -4371,11 +4378,10 @@ def main():
         print(f"astro: додано в звіт (slot={hour_key})")
 
         # Блок 6б: Окремий AI астро-аналіз — одразу після астро (повний, з shift_hint)
-        _astro_ai = _get_astro_ai_analysis(astro_text, gemini_key, shift_hint=shift_hint)
+        _gemini_key_astro = os.environ.get("GEMINI_API_KEY", "")
+        _astro_ai = _get_astro_ai_analysis(astro_text, _gemini_key_astro, shift_hint=shift_hint)
         if _astro_ai:
-            # Розбиваємо по секціях щоб не ламати <i> теги при розбивці на chunks
-            _astro_ai_clean = esc(_astro_ai)
-            parts.append(f"🔮🤖 <b>АСТРО-АНАЛІЗ ВСІ АСПЕКТИ</b>\n\n{_astro_ai_clean}")
+            parts.append(f"🔮🤖 <b>АСТРО-АНАЛІЗ ВСІ АСПЕКТИ</b>\n\n{_astro_ai}")
 
     # Блок 7: AI-підсумок
     if summary_text:
