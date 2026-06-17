@@ -8676,7 +8676,7 @@ def check_planet_ingress():
             BIRTH_LAT, BIRTH_LON, BIRTH_TZ,
             _get_natal_house, _sign_ua, MOON_SIGN_TIPS
         )
-    except ImportError as e:
+    except Exception as e:
         print(f"check_planet_ingress import error: {e}")
         return
 

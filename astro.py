@@ -12,8 +12,10 @@ from datetime import datetime, timezone, timedelta
 try:
     from kerykeion import AstrologicalSubject
     _KERYKEION_OK = True
-except ImportError:
+except Exception as _kery_err:
     _KERYKEION_OK = False
+    import sys as _sys_k
+    print(f"[astro] KERYKEION IMPORT FAILED: {type(_kery_err).__name__}: {_kery_err}", file=_sys_k.stderr, flush=True)
 
 # ─── Дані народження ──────────────────────────────────────────────────────────
 BIRTH_YEAR, BIRTH_MONTH, BIRTH_DAY = 1989, 9, 22

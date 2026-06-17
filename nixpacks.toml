@@ -13,8 +13,9 @@ cmds = [
   "pip install --no-cache-dir cryptography",
   "pip install --no-cache-dir google-auth google-auth-httplib2 google-api-python-client",
   "pip install --no-cache-dir requests",
-  "pip install --no-cache-dir kerykeion || echo 'kerykeion optional, skip'",
-  "pip install --no-cache-dir yfinance"
+  "pip install --no-cache-dir kerykeion==5.12.8",
+  "pip install --no-cache-dir yfinance",
+  "pip install --no-cache-dir -r requirements.txt"
 ]
 
 [start]
