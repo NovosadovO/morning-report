@@ -3539,7 +3539,7 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
         )
         body = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"maxOutputTokens": 3500, "temperature": 0.7},
+            "generationConfig": {"maxOutputTokens": 6000, "temperature": 0.7},
         }).encode()
         req = urllib.request.Request(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -4373,7 +4373,9 @@ def main():
         # Блок 6б: Окремий AI астро-аналіз — одразу після астро (повний, з shift_hint)
         _astro_ai = _get_astro_ai_analysis(astro_text, gemini_key, shift_hint=shift_hint)
         if _astro_ai:
-            parts.append(f"🔮🤖 <b>АСТРО-АНАЛІЗ ВСІ АСПЕКТИ</b>\n<i>{esc(_astro_ai)}</i>")
+            # Розбиваємо по секціях щоб не ламати <i> теги при розбивці на chunks
+            _astro_ai_clean = esc(_astro_ai)
+            parts.append(f"🔮🤖 <b>АСТРО-АНАЛІЗ ВСІ АСПЕКТИ</b>\n\n{_astro_ai_clean}")
 
     # Блок 7: AI-підсумок
     if summary_text:
