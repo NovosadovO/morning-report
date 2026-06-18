@@ -1318,16 +1318,26 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
             except urllib.error.HTTPError as e:
                 last_exc = e
                 if e.code == 429:
-                    # rate limit / quota — довший backoff. Спробуємо прочитати retryDelay з тіла.
-                    wait = [6, 14, 28][min(attempt, 2)]
+                    # rate limit / quota. Читаємо retryDelay з тіла (Gemini підказує скільки чекати).
+                    wait = [6, 12][min(attempt, 1)]
+                    _retry_delay = 0
                     try:
                         _err_body = e.read().decode("utf-8", "ignore")
                         import re as _re
                         _m = _re.search(r'"retryDelay"\s*:\s*"(\d+)s"', _err_body)
                         if _m:
-                            wait = max(wait, int(_m.group(1)) + 2)
+                            _retry_delay = int(_m.group(1))
                     except Exception:
                         pass
+                    # КЛЮЧОВЕ: якщо Gemini просить чекати ДОВГО (>25с) — НЕ чекаємо,
+                    # одразу перемикаємось на ІНШУ модель (свій quota-pool). Це рятує дедлайн.
+                    _has_next = _mi < len(_models) - 1
+                    if _retry_delay > 25 and _has_next:
+                        print(f"[{tag}] 429 on {_model} (retryDelay {_retry_delay}s занадто довго) — миттєвий switch до {_models[_mi+1]}", flush=True)
+                        _exhausted_429 = True
+                        break
+                    if _retry_delay:
+                        wait = max(wait, min(_retry_delay + 2, 18))  # чекаємо макс 18с на одній моделі
                     print(f"[{tag}] 429 on {_model} — backoff {wait}s (attempt {attempt+1}/{max_retries})", flush=True)
                     if attempt < max_retries - 1:
                         _t.sleep(wait)
