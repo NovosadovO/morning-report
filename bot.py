@@ -2466,10 +2466,11 @@ def main():
     import threading as _threading
     print(f"=== Bot started [{_INSTANCE_ID}] ===", flush=True)
 
-    # Скидаємо webhook (якщо був) і очищуємо pending updates
+    # Скидаємо webhook (якщо був), АЛЕ зберігаємо pending updates —
+    # щоб команди (/звіт тощо) не губились при рестарті бота
     try:
-        api("deleteWebhook", {"drop_pending_updates": True})
-        print("[Bot] Webhook deleted, pending updates dropped", flush=True)
+        api("deleteWebhook", {"drop_pending_updates": False})
+        print("[Bot] Webhook deleted, pending updates KEPT", flush=True)
     except Exception as e:
         print(f"[Bot] deleteWebhook error: {e}", flush=True)
 
