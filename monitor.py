@@ -2657,6 +2657,11 @@ MAIN_SENT_FILE = os.path.join(_DATA_DIR, "monitor_main_sent.json")
 
 _GH_DATA_BRANCH = "data"  # окрема гілка для даних — не тригерить Railway
 
+# Версія коду цього інстансу. Підвищуй при кожному значущому фіксі звіту.
+# Якщо слот claimed старішою версією — свіжий інстанс ПЕРЕХОПЛЮЄ слот і робить звіт.
+# Це гасить ситуацію "старий інстанс claim-ить слот першим" коли він живий десь поза Railway.
+_CODE_VERSION = 20260618_2
+
 def _gh_get_sent():
     """Читає monitor_main_sent.json з GitHub гілки data."""
     import base64
@@ -3763,16 +3768,30 @@ def main():
             gh_sha = None
 
         if gh_sent.get("last_slot") == hour_key:
-            print(f"=== Already sent this slot ({hour_key}), skipping ===")
-            return
+            _claimed_ver = gh_sent.get("code_version", 0)
+            try:
+                _claimed_ver = int(_claimed_ver)
+            except Exception:
+                _claimed_ver = 0
+            if _claimed_ver >= _CODE_VERSION:
+                print(f"=== Already sent this slot ({hour_key}) by v{_claimed_ver} >= me v{_CODE_VERSION}, skipping ===")
+                return
+            # Слот зайнятий СТАРІШОЮ версією коду (живий старий інстанс) — ПЕРЕХОПЛЮЄМО.
+            _slot_override = True
+            print(f"=== Slot ({hour_key}) claimed by OLD v{_claimed_ver} < me v{_CODE_VERSION} — OVERRIDING and re-sending ===")
     else:
         gh_sent, gh_sha = {}, None
         print(f"=== FORCE: skipping slot dedup check ===")
+    try:
+        _slot_override
+    except NameError:
+        _slot_override = False
 
     # Атомарно записуємо claim ПЕРЕД відправкою (тільки не в force режимі)
     claim_data = dict(gh_sent)
     claim_data["last_slot"] = hour_key
     claim_data["claimed_at"] = now.isoformat()
+    claim_data["code_version"] = _CODE_VERSION
     if not force and gh_sha:
         try:
             import base64 as _b64
@@ -3796,9 +3815,24 @@ def main():
             print(f"=== Claimed slot {hour_key} ===")
         except urllib.error.HTTPError as _he:
             if _he.code in (409, 422):
-                print(f"=== Slot {hour_key} already claimed by another instance, skipping ===")
-                return
-            print(f"=== GH claim error {_he.code} — proceeding anyway ===")
+                if _slot_override:
+                    # Override-режим: SHA застарів бо старий інстанс перезаписав.
+                    # Перечитуємо; якщо досі стара версія — продовжуємо звіт попри claim-конфлікт.
+                    _re_sent, _re_sha = _gh_get_sent()
+                    _rv = 0
+                    try:
+                        _rv = int((_re_sent or {}).get("code_version", 0))
+                    except Exception:
+                        _rv = 0
+                    if _rv >= _CODE_VERSION:
+                        print(f"=== Override aborted: slot now claimed by v{_rv} >= me, skipping ===")
+                        return
+                    print(f"=== Override: claim-conflict ignored (slot still old v{_rv}), proceeding to send ===")
+                else:
+                    print(f"=== Slot {hour_key} already claimed by another instance, skipping ===")
+                    return
+            else:
+                print(f"=== GH claim error {_he.code} — proceeding anyway ===")
         except Exception as _ce:
             print(f"=== GH claim error: {_ce} — proceeding anyway ===")
     elif not force:
