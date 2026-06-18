@@ -1138,7 +1138,7 @@ def plot_combined_dashboard() -> bytes | None:
                                 hspace=0.70,
                                 height_ratios=[3.0, 2.5, 2.5],
                                 left=0.07, right=0.98,
-                                top=0.95, bottom=0.04)
+                                top=0.915, bottom=0.04)
 
         # ══════════════════════════════════════════════════════════════════════
         # ROW 1: Heatmap звичок
@@ -1207,7 +1207,7 @@ def plot_combined_dashboard() -> bytes | None:
                       va="center", ha="left")
 
         ax_h.set_title("Звички з 1 січня 2026",
-                       color=TEXT, fontsize=36, fontweight="bold", pad=22)
+                       color=TEXT, fontsize=34, fontweight="bold", pad=58)
 
         # ══════════════════════════════════════════════════════════════════════
         # ROW 2: Вага (на всю ширину)
@@ -1384,49 +1384,13 @@ def plot_combined_dashboard() -> bytes | None:
         # ── Загальний заголовок ──────────────────────────────────────────────
         fig.suptitle(
             f"Дашборд 2026  —  до {today.strftime('%d.%m.%Y')}",
-            fontsize=38, color=TEXT, fontweight="bold", y=0.98
+            fontsize=40, color=TEXT, fontweight="bold", y=0.985
         )
 
         # ── Зберігаємо ────────────────────────────────────────────────────────
+        # БЕЗ PIL-overlay емодзі — він налазив і давав квадрати.
+        # Назви звичок = чистий текст, ідентифікація по кольору кружечків.
         raw_bytes = _buf(fig)
-
-        # PIL: накласти emoji на підписи звичок
-        try:
-            from PIL import Image, ImageDraw, ImageFont as _IFont
-            import io as _io2
-
-            _EMOJI_FONT = "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf"
-            if os.path.exists(_EMOJI_FONT):
-                _pil = Image.open(_io2.BytesIO(raw_bytes)).convert("RGBA")
-                _iw, _ih = _pil.size
-                _em_font = _IFont.truetype(_EMOJI_FONT, 109)
-                _tsz = max(28, int(_ih * 0.022))
-                _HABITS_EMOJI = HABIT_EMOJIS
-
-                # Точна висота heatmap-секції в PNG (ax_h: top=0.050, bottom=0.294)
-                _hmap_top    = 0.08   # трохи відступ від верху (заголовок)
-                _hmap_bottom = 0.29
-                _hmap_h = _hmap_bottom - _hmap_top
-                _row_h  = _hmap_h / len(HABITS)
-
-                for _hi, _hk in enumerate(HABITS):
-                    _em = _HABITS_EMOJI.get(_hk, "")
-                    if not _em:
-                        continue
-                    _tmp = Image.new("RGBA", (130, 130), (0, 0, 0, 0))
-                    ImageDraw.Draw(_tmp).text((5, 5), _em, font=_em_font, embedded_color=True)
-                    _tmp = _tmp.resize((_tsz, _tsz), Image.LANCZOS)
-                    _y_rel = _hmap_top + _row_h * _hi + _row_h * 0.4
-                    _y_px  = int(_y_rel * _ih) - _tsz // 2
-                    _x_px  = max(0, int(_iw * 0.055) - _tsz - 2)
-                    _pil.paste(_tmp, (_x_px, _y_px), _tmp)
-
-                _out = _io2.BytesIO()
-                _pil.convert("RGB").save(_out, format="PNG")
-                raw_bytes = _out.getvalue()
-        except Exception as _pil_e:
-            print(f"[combined] PIL emoji error: {_pil_e}")
-
         return raw_bytes
 
     except Exception as e:

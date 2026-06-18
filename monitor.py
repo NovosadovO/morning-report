@@ -1258,7 +1258,7 @@ def _parse_gmail_msg(msg_data, full=False):
 
 
 _GEM_LAST_CALL = [0.0]
-_GEM_MIN_GAP = 2.0  # мін. секунд між викликами Gemini (легкий throttle проти 429)
+_GEM_MIN_GAP = 4.0  # мін. секунд між викликами Gemini. Free-tier = 15 req/min → 4s gap тримає <15/хв
 _REPORT_AI_DEADLINE = 0.0  # monotonic-час, до якого можна робити AI-блоки (ставиться в main())
 
 def _ai_time_left(min_needed=20):
@@ -1268,10 +1268,11 @@ def _ai_time_left(min_needed=20):
         return True
     return (_REPORT_AI_DEADLINE - _t.monotonic()) >= min_needed
 
-def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
+def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=4):
     """
     Централізований POST до Gemini з retry на 429 (Too Many Requests).
-    Backoff коротший щоб вкластись у timeout монітора: 8s, 20s. + throttle між викликами.
+    Free-tier Gemini = 15 req/min. Глобальний throttle (_GEM_MIN_GAP) + довгий backoff на 429.
+    На 429 читаємо retryDelay з тіла відповіді (Gemini підказує скільки чекати).
     Повертає dict (parsed JSON) або кидає виняток.
     """
     import time as _t
@@ -1292,23 +1293,32 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
         except urllib.error.HTTPError as e:
             last_exc = e
             if e.code == 429:
-                # rate limit / quota — короткий backoff (не більше 20s щоб не з'їсти timeout монітора)
-                wait = [8, 20][min(attempt, 1)]
+                # rate limit / quota — довший backoff. Спробуємо прочитати retryDelay з тіла.
+                wait = [6, 16, 36, 60][min(attempt, 3)]
+                try:
+                    _err_body = e.read().decode("utf-8", "ignore")
+                    import re as _re
+                    _m = _re.search(r'"retryDelay"\s*:\s*"(\d+)s"', _err_body)
+                    if _m:
+                        wait = max(wait, int(_m.group(1)) + 2)
+                except Exception:
+                    pass
                 print(f"[{tag}] 429 Too Many Requests — backoff {wait}s (attempt {attempt+1}/{max_retries})", flush=True)
                 if attempt < max_retries - 1:
                     _t.sleep(wait)
+                    _GEM_LAST_CALL[0] = _t.time()
                     continue
-            # інші HTTP помилки — retry лише на 500/503 (коротко)
+            # інші HTTP помилки — retry лише на 500/503
             if e.code in (500, 503) and attempt < max_retries - 1:
-                print(f"[{tag}] {e.code} — retry in 5s (attempt {attempt+1})", flush=True)
-                _t.sleep(5)
+                print(f"[{tag}] {e.code} — retry in 8s (attempt {attempt+1})", flush=True)
+                _t.sleep(8)
                 continue
             raise
         except Exception as e:
             last_exc = e
             if attempt < max_retries - 1:
-                print(f"[{tag}] error {e} — retry in 4s (attempt {attempt+1})", flush=True)
-                _t.sleep(4)
+                print(f"[{tag}] error {e} — retry in 5s (attempt {attempt+1})", flush=True)
+                _t.sleep(5)
                 continue
             raise
     if last_exc:
@@ -1330,9 +1340,7 @@ def _gemini_summarize(text, max_input=3000):
         )
         url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
         body = json.dumps({"contents": [{"parts": [{"text": prompt}]}]}).encode()
-        req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=15) as r:
-            data = json.loads(r.read())
+        data = _gem_post(url, body, timeout=20, tag="email_summary", max_retries=2)
         summary = data["candidates"][0]["content"]["parts"][0]["text"].strip()
         return summary[:200]
     except Exception as e:
@@ -3320,12 +3328,14 @@ def generate_habits_chart(days: int = 30) -> bytes | None:
         TEXT   = "#E6EDF3"
         MUTED  = "#8B949E"
 
+        # Без емодзі у назвах — matplotlib не має emoji-шрифту (рендерить квадрати).
+        # Колір бару = ідентифікатор звички.
         BOOL_HABITS = [
-            ("shower", "🚿 Душ",   "#58A6FF"),
-            ("run",    "🏃 Пробіжка", "#3FB950"),
-            ("water",  "💧 Вода",   "#1F6FEB"),
-            ("tea",    "🍵 Чай",    "#D29922"),
-            ("sauna",  "🧖 Сауна",  "#F85149"),
+            ("shower", "Душ",      "#58A6FF"),
+            ("run",    "Пробіжка", "#3FB950"),
+            ("water",  "Вода",     "#1F6FEB"),
+            ("tea",    "Чай",      "#D29922"),
+            ("sauna",  "Сауна",    "#F85149"),
         ]
         SLEEP_COLOR = "#A371F7"
 
@@ -3434,7 +3444,7 @@ def generate_habits_chart(days: int = 30) -> bytes | None:
             ax.yaxis.set_label_coords(-0.01, 0.5)
 
             # Підказка зверху
-            ax.text(0.99, 1.18, f"✅ {pct}", transform=ax.transAxes,
+            ax.text(0.99, 1.18, f"{pct}", transform=ax.transAxes,
                     color=hcolor, fontsize=12, fontweight="bold",
                     ha="right", va="top")
 
@@ -3474,7 +3484,7 @@ def generate_habits_chart(days: int = 30) -> bytes | None:
             ax.set_ylim(0, max(sy or [10]) * 1.3 + 1)
             ax.set_xlim(-0.5, len(x_pos) - 0.5)
             ax.tick_params(colors=TEXT, labelsize=11)
-            ax.set_ylabel("😴 Сон", color=SLEEP_COLOR, fontsize=13, fontweight="bold",
+            ax.set_ylabel("Сон", color=SLEEP_COLOR, fontsize=13, fontweight="bold",
                           rotation=0, labelpad=5, ha="right", va="center")
             ax.yaxis.set_label_coords(-0.01, 0.5)
             ax.yaxis.set_tick_params(labelcolor=TEXT, labelsize=11)
@@ -4632,15 +4642,10 @@ def main():
         except Exception:
             _th_ctx["day_score"] = "немає даних"
 
-        for _th_attempt in range(2):
-            _themes_ai_full = _get_themes_ai_analysis(_gem_key_th, _th_ctx)
-            if _themes_ai_full:
-                break
-            if _th_attempt == 0:
-                import time as _t_th; _t_th.sleep(3)
-                print(f"[themes_ai] retry attempt 2...", flush=True)
+        # один прохід — _gem_post всередині вже робить 4 retry з backoff на 429
+        _themes_ai_full = _get_themes_ai_analysis(_gem_key_th, _th_ctx)
         if not _themes_ai_full:
-            print(f"[themes_ai] FAILED after 2 attempts — skipping block", flush=True)
+            print(f"[themes_ai] FAILED — skipping block", flush=True)
     except Exception as _e_th:
         print(f"[themes_ai] outer error: {_e_th}", flush=True)
         _themes_ai_full = ""
@@ -4704,7 +4709,7 @@ def main():
         gemini_key_for_brief = gemini_key
     if gemini_key_for_brief:
         _ai_briefing = None
-        for _attempt_b in range(2):  # 2 спроби
+        for _attempt_b in range(1):  # 1 прохід — _gem_post всередині ретраїть на 429
             try:
                 import uuid as _uuid_b
                 _seed_b = str(_uuid_b.uuid4())[:8]
