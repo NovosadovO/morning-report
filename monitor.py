@@ -1258,7 +1258,7 @@ def _parse_gmail_msg(msg_data, full=False):
 
 
 _GEM_LAST_CALL = [0.0]
-_GEM_MIN_GAP = 4.0  # мін. секунд між викликами Gemini. Free-tier = 15 req/min → 4s gap тримає <15/хв
+_GEM_MIN_GAP = 7.0  # мін. секунд між викликами Gemini. Free-tier=15/хв; 7s тримає запас навіть якщо паралельний інстанс теж палить квоту
 _REPORT_AI_DEADLINE = 0.0  # monotonic-час, до якого можна робити AI-блоки (ставиться в main())
 
 def _ai_time_left(min_needed=20):
@@ -2423,7 +2423,6 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
             qw_today = qw_all.get(today_str_s)
             if not qw_today:
                 # беремо останній доступний запис (не старіше 2 днів)
-                from datetime import timedelta
                 yesterday = (now_local - timedelta(days=1)).strftime("%Y-%m-%d")
                 qw_today = qw_all.get(yesterday)
             if qw_today:
