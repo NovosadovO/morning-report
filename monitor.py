@@ -1258,8 +1258,16 @@ def _parse_gmail_msg(msg_data, full=False):
 
 
 _GEM_LAST_CALL = [0.0]
-_GEM_MIN_GAP = 7.0  # мін. секунд між викликами Gemini. Free-tier=15/хв; 7s тримає запас навіть якщо паралельний інстанс теж палить квоту
+_GEM_MIN_GAP = 9.0  # мін. секунд між викликами Gemini. Free-tier=15/хв; 9s тримає запас навіть якщо паралельний інстанс теж палить квоту
 _REPORT_AI_DEADLINE = 0.0  # monotonic-час, до якого можна робити AI-блоки (ставиться в main())
+
+# Моделі для fallback на 429: коли основна вичерпала квоту — пробуємо наступну (інший quota-pool)
+_GEM_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.5-flash-lite"]
+
+def _gem_swap_model(url, model):
+    """Підставляє іншу модель у Gemini-URL (.../models/MODEL:generateContent?...)."""
+    import re as _re
+    return _re.sub(r'/models/[^:]+:generateContent', f'/models/{model}:generateContent', url)
 
 def _ai_time_left(min_needed=20):
     """True якщо до дедлайну AI лишилось >= min_needed секунд. Якщо дедлайн не заданий — True."""
@@ -1268,62 +1276,87 @@ def _ai_time_left(min_needed=20):
         return True
     return (_REPORT_AI_DEADLINE - _t.monotonic()) >= min_needed
 
-def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=4):
+def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     """
-    Централізований POST до Gemini з retry на 429 (Too Many Requests).
-    Free-tier Gemini = 15 req/min. Глобальний throttle (_GEM_MIN_GAP) + довгий backoff на 429.
-    На 429 читаємо retryDelay з тіла відповіді (Gemini підказує скільки чекати).
+    Централізований POST до Gemini з retry на 429 (Too Many Requests) +
+    АВТОМАТИЧНИЙ FALLBACK на іншу модель коли квота вичерпана.
+    Free-tier Gemini = 15 req/min ПЕР-МОДЕЛЬ. Якщо gemini-2.5-flash дає 429 —
+    перемикаємось на gemini-2.0-flash (інший quota-pool), потім 2.5-flash-lite.
+    Це остаточно вбиває 429 навіть коли паралельний інстанс палить квоту 2.5-flash.
     Повертає dict (parsed JSON) або кидає виняток.
     """
     import time as _t
-    # throttle: тримаємо мін. інтервал між будь-якими викликами Gemini
-    _since = _t.time() - _GEM_LAST_CALL[0]
-    if _since < _GEM_MIN_GAP:
-        _t.sleep(_GEM_MIN_GAP - _since)
+    # визначаємо порядок моделей: поточна (з url) перша, далі решта зі списку
+    import re as _re0
+    _cur_m = None
+    _mm = _re0.search(r'/models/([^:]+):generateContent', url)
+    if _mm:
+        _cur_m = _mm.group(1)
+    _models = ([_cur_m] if _cur_m else []) + [m for m in _GEM_MODELS if m != _cur_m]
+    if not _models:
+        _models = list(_GEM_MODELS)
+
     last_exc = None
-    for attempt in range(max_retries):
-        _GEM_LAST_CALL[0] = _t.time()
-        try:
-            req = urllib.request.Request(
-                url, data=body_bytes,
-                headers={"Content-Type": "application/json"}, method="POST"
-            )
-            with urllib.request.urlopen(req, timeout=timeout) as r:
-                return json.loads(r.read())
-        except urllib.error.HTTPError as e:
-            last_exc = e
-            if e.code == 429:
-                # rate limit / quota — довший backoff. Спробуємо прочитати retryDelay з тіла.
-                wait = [6, 16, 36, 60][min(attempt, 3)]
-                try:
-                    _err_body = e.read().decode("utf-8", "ignore")
-                    import re as _re
-                    _m = _re.search(r'"retryDelay"\s*:\s*"(\d+)s"', _err_body)
-                    if _m:
-                        wait = max(wait, int(_m.group(1)) + 2)
-                except Exception:
-                    pass
-                print(f"[{tag}] 429 Too Many Requests — backoff {wait}s (attempt {attempt+1}/{max_retries})", flush=True)
-                if attempt < max_retries - 1:
-                    _t.sleep(wait)
-                    _GEM_LAST_CALL[0] = _t.time()
+    for _mi, _model in enumerate(_models):
+        _url = _gem_swap_model(url, _model)
+        # throttle: тримаємо мін. інтервал між будь-якими викликами Gemini
+        _since = _t.time() - _GEM_LAST_CALL[0]
+        if _since < _GEM_MIN_GAP:
+            _t.sleep(_GEM_MIN_GAP - _since)
+        _exhausted_429 = False
+        for attempt in range(max_retries):
+            _GEM_LAST_CALL[0] = _t.time()
+            try:
+                req = urllib.request.Request(
+                    _url, data=body_bytes,
+                    headers={"Content-Type": "application/json"}, method="POST"
+                )
+                with urllib.request.urlopen(req, timeout=timeout) as r:
+                    if _mi > 0:
+                        print(f"[{tag}] OK via FALLBACK model {_model}", flush=True)
+                    return json.loads(r.read())
+            except urllib.error.HTTPError as e:
+                last_exc = e
+                if e.code == 429:
+                    # rate limit / quota — довший backoff. Спробуємо прочитати retryDelay з тіла.
+                    wait = [6, 14, 28][min(attempt, 2)]
+                    try:
+                        _err_body = e.read().decode("utf-8", "ignore")
+                        import re as _re
+                        _m = _re.search(r'"retryDelay"\s*:\s*"(\d+)s"', _err_body)
+                        if _m:
+                            wait = max(wait, int(_m.group(1)) + 2)
+                    except Exception:
+                        pass
+                    print(f"[{tag}] 429 on {_model} — backoff {wait}s (attempt {attempt+1}/{max_retries})", flush=True)
+                    if attempt < max_retries - 1:
+                        _t.sleep(wait)
+                        _GEM_LAST_CALL[0] = _t.time()
+                        continue
+                    # вичерпали retry на цій моделі — пробуємо наступну модель
+                    _exhausted_429 = True
+                    break
+                # інші HTTP помилки — retry лише на 500/503
+                if e.code in (500, 503) and attempt < max_retries - 1:
+                    print(f"[{tag}] {e.code} on {_model} — retry in 8s (attempt {attempt+1})", flush=True)
+                    _t.sleep(8)
                     continue
-            # інші HTTP помилки — retry лише на 500/503
-            if e.code in (500, 503) and attempt < max_retries - 1:
-                print(f"[{tag}] {e.code} — retry in 8s (attempt {attempt+1})", flush=True)
-                _t.sleep(8)
-                continue
-            raise
-        except Exception as e:
-            last_exc = e
-            if attempt < max_retries - 1:
-                print(f"[{tag}] error {e} — retry in 5s (attempt {attempt+1})", flush=True)
-                _t.sleep(5)
-                continue
-            raise
+                raise
+            except Exception as e:
+                last_exc = e
+                if attempt < max_retries - 1:
+                    print(f"[{tag}] error {e} on {_model} — retry in 5s (attempt {attempt+1})", flush=True)
+                    _t.sleep(5)
+                    continue
+                # неретрайабельна помилка на останній спробі — пробуємо іншу модель теж
+                _exhausted_429 = True
+                break
+        if _exhausted_429 and _mi < len(_models) - 1:
+            print(f"[{tag}] model {_model} вичерпана — switch to {_models[_mi+1]}", flush=True)
+            continue
     if last_exc:
         raise last_exc
-    raise RuntimeError(f"[{tag}] _gem_post exhausted retries")
+    raise RuntimeError(f"[{tag}] _gem_post exhausted all models")
 
 
 def _gemini_summarize(text, max_input=3000):
