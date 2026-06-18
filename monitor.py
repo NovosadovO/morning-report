@@ -3448,6 +3448,93 @@ def generate_habits_chart(days: int = 30) -> bytes | None:
 _FORCE_REPORT = False  # встановлюється в True для ручного виклику /звіт
 
 
+def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
+    """
+    Глибокий тематичний AI-аналіз по 7 темах (фінанси, біг, здоров'я/вага,
+    звички, пошта, календар, підсумок+мотивація). Стиль: теплий, мотивуючий,
+    з підтримкою. Аналізує ТІЛЬКИ реальні дані з ctx.
+    Повертає текст або порожній рядок.
+    """
+    print(f"[themes_ai] called: key={'YES' if gemini_key else 'NO'}", flush=True)
+    if not gemini_key:
+        print(f"[themes_ai] skipped: no gemini_key", flush=True)
+        return ""
+    try:
+        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+
+        # Збираємо реальний контекст у текст
+        def _g(k, default="немає даних"):
+            v = ctx.get(k)
+            if v is None or v == "":
+                return default
+            return str(v)
+
+        data_block = (
+            f"ЧАС: {now_local.strftime('%H:%M %d.%m.%Y')} (Кошице, UTC+2)\n"
+            f"ЗМІНА/СТАТУС: {_g('shift_hint')}\n"
+            f"--- ФІНАНСИ/ІНВЕСТИЦІЇ ---\n{_g('finance')}\n"
+            f"--- БІГ / STRAVA ---\n{_g('running')}\n"
+            f"--- ЗДОРОВ'Я + ВАГА ---\n{_g('health')}\n"
+            f"--- ЗВИЧКИ (дисципліна) ---\n{_g('habits')}\n"
+            f"--- ПОШТА ---\n{_g('emails')}\n"
+            f"--- КАЛЕНДАР / ЗМІНИ ---\n{_g('calendar')}\n"
+            f"--- ДЕНЬ-РЕЙТИНГ ---\n{_g('day_score')}\n"
+        )
+
+        prompt = (
+            f"Ти — особистий AI-наставник Олега Новосадова з Кошице (Словаччина). "
+            f"Працює на заводі Minebea Mitsumi позмінно. Цілі: фінансова незалежність, "
+            f"схуднення (зараз ~83-84 кг, ціль 78 кг), нова робота у сфері інвестицій, "
+            f"здоровий спосіб життя. Інтереси: інвестиції, біг, спорт.\n\n"
+            f"Ось РЕАЛЬНІ дані Олега ПРЯМО ЗАРАЗ:\n{data_block}\n"
+            f"Напиши теплий, мотивуючий аналіз з підтримкою — як друг-наставник який вірить у нього. "
+            f"Структура (кожна секція 2-3 речення, ТІЛЬКИ якщо є реальні дані по темі — інакше пропусти):\n\n"
+            f"💰 ФІНАНСИ — оціни поточний стан, дай 1 конкретну дію на сьогодні для руху до фін. незалежності.\n\n"
+            f"🏃 БІГ — проаналізуй прогрес. Якщо вже бігав — похвали і дай пораду на відновлення; якщо ні і є час — мотивуй.\n\n"
+            f"⚖️ ЗДОРОВ'Я + ВАГА — на основі ваги і звичок дай 1 практичну пораду для схуднення (харчування/рух).\n\n"
+            f"✅ ЗВИЧКИ — оціни дисципліну сьогодні, підтримай за виконане, м'яко нагадай про невиконане.\n\n"
+            f"📬 ПОШТА — якщо є важливі листи, виділи що пріоритетне і що зробити.\n\n"
+            f"📅 ДЕНЬ — на основі календаря/зміни дай 1 пораду як оптимізувати наступні години.\n\n"
+            f"🌟 МОТИВАЦІЯ — 1-2 теплі речення підтримки, нагадай що кожен крок наближає до цілей.\n\n"
+            f"ПРАВИЛА:\n"
+            f"- Звертайся до Олега на 'ти', тепло і по-дружньому.\n"
+            f"- ТІЛЬКИ реальні дані — НЕ вигадуй цифри. Якщо по темі 'немає даних' — пропусти секцію.\n"
+            f"- Враховуй зміну: якщо Олег ЗАРАЗ на роботі — не пропонуй те що неможливо зробити на заводі.\n"
+            f"- Без вступів типу 'Привіт' чи 'Звичайно'. Українська мова. Кожне речення завершуй повністю.\n"
+            f"- Емодзі-заголовки залишай як вказано. Без markdown (**) і без HTML."
+        )
+        body = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"maxOutputTokens": 4000, "temperature": 0.75},
+        }).encode()
+        req = urllib.request.Request(
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            data=body, headers={"Content-Type": "application/json"}, method="POST"
+        )
+        print(f"[themes_ai] sending request to Gemini (timeout=90)...", flush=True)
+        with urllib.request.urlopen(req, timeout=90) as r:
+            resp = json.loads(r.read())
+        _finish = resp.get("candidates", [{}])[0].get("finishReason", "UNKNOWN")
+        print(f"[themes_ai] finishReason={_finish}", flush=True)
+        result = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+        import re as _re_t
+        result = _re_t.sub(r'\*\*(.+?)\*\*', r'\1', result)
+        result = _re_t.sub(r'\*(.+?)\*', r'\1', result)
+        result = _re_t.sub(r'#{1,6}\s*', '', result)
+        result = _re_t.sub(r'<[^>]+>', '', result)
+        if _finish == "MAX_TOKENS":
+            _last_dot = max(result.rfind(". "), result.rfind(".\n"), result.rfind("!"), result.rfind("?"))
+            if _last_dot > len(result) // 2:
+                result = result[:_last_dot + 1].rstrip()
+        print(f"[themes_ai] OK — {len(result)} chars", flush=True)
+        return result
+    except Exception as e:
+        import traceback as _tb_t
+        print(f"[themes_ai] ERROR: {e}", flush=True)
+        print(_tb_t.format_exc(), flush=True)
+        return ""
+
+
 def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "") -> str:
     """
     Генерує окремий AI аналіз астро-блоку.
@@ -4390,6 +4477,92 @@ def main():
             _astro_ai_full = ""
             print(f"[astro_ai] FAILED after 2 attempts — skipping block", flush=True)
 
+    # ── Блок 6в: ТЕМАТИЧНИЙ AI-АНАЛІЗ (1 раз у кожному звіті) ────────────────
+    _themes_ai_full = ""
+    try:
+        _gem_key_th = os.environ.get("GEMINI_API_KEY", "")
+        # Збираємо РЕАЛЬНІ дані по 7 темах
+        _th_ctx = {"shift_hint": shift_hint}
+        # Фінанси/портфель
+        try:
+            _pf_t = get_portfolio_text() if "get_portfolio_text" in dir() else None
+            _th_ctx["finance"] = (_pf_t or "")[:600] if _pf_t else "немає даних"
+        except Exception:
+            _th_ctx["finance"] = "немає даних"
+        # Біг / Strava
+        try:
+            from strava import get_last_activity as _gla_th
+            _la_th = _gla_th()
+            if _la_th and _la_th.get("distance_km", 0) >= 0.3:
+                _th_ctx["running"] = (f"Остання пробіжка ({_la_th.get('when','?')}): "
+                                      f"{_la_th.get('distance_km')} км за {_la_th.get('duration_min','?')} хв, "
+                                      f"темп {_la_th.get('pace','—')}.")
+            else:
+                _th_ctx["running"] = "Сьогодні пробіжки ще не було."
+        except Exception:
+            _th_ctx["running"] = "немає даних"
+        # Здоров'я + вага
+        try:
+            from storage import load_weight as _lw_th
+            _wd_th = _lw_th()
+            if _wd_th:
+                _lk = sorted(_wd_th.keys())[-1]
+                _vals = [_wd_th[k] for k in sorted(_wd_th.keys())[-5:]]
+                _trend = ""
+                if len(_vals) >= 2:
+                    _d = _vals[-1] - _vals[0]
+                    _trend = f" (тренд {_d:+.1f} кг за останні {len(_vals)} замірів)"
+                _th_ctx["health"] = f"Остання вага: {_wd_th[_lk]} кг, ціль 78 кг{_trend}."
+            else:
+                _th_ctx["health"] = "немає даних про вагу"
+        except Exception:
+            _th_ctx["health"] = "немає даних"
+        # Звички
+        try:
+            from storage import load_habits as _lh_th
+            _hdb_th = _lh_th()
+            _today_th = _hdb_th.get(now_local.strftime("%Y-%m-%d"), {})
+            _HAB = ["shower","run","water","tea","sauna","spray"]
+            _done_th = [k for k in _HAB if _today_th.get(k) is True]
+            _miss_th = [k for k in _HAB if _today_th.get(k) is not True]
+            _th_ctx["habits"] = (f"Виконано сьогодні: {', '.join(_done_th) if _done_th else 'жодної'} "
+                                 f"({len(_done_th)}/6). Ще не виконано: {', '.join(_miss_th) if _miss_th else '—'}.")
+        except Exception:
+            _th_ctx["habits"] = "немає даних"
+        # Пошта
+        try:
+            if isinstance(email_text, dict):
+                _th_ctx["emails"] = (email_text.get("header", "") or "")[:400]
+            elif isinstance(email_text, str):
+                _th_ctx["emails"] = email_text[:400]
+            else:
+                _th_ctx["emails"] = "немає нових важливих листів"
+        except Exception:
+            _th_ctx["emails"] = "немає даних"
+        # Календар / зміни
+        try:
+            _th_ctx["calendar"] = (str(cal_events_text) or "")[:500] if cal_events_text else "вільний день / немає подій"
+        except Exception:
+            _th_ctx["calendar"] = "немає даних"
+        # День-рейтинг
+        try:
+            _th_ctx["day_score"] = f"{_score}/100 балів" if "_score" in dir() else "немає даних"
+        except Exception:
+            _th_ctx["day_score"] = "немає даних"
+
+        for _th_attempt in range(2):
+            _themes_ai_full = _get_themes_ai_analysis(_gem_key_th, _th_ctx)
+            if _themes_ai_full:
+                break
+            if _th_attempt == 0:
+                import time as _t_th; _t_th.sleep(3)
+                print(f"[themes_ai] retry attempt 2...", flush=True)
+        if not _themes_ai_full:
+            print(f"[themes_ai] FAILED after 2 attempts — skipping block", flush=True)
+    except Exception as _e_th:
+        print(f"[themes_ai] outer error: {_e_th}", flush=True)
+        _themes_ai_full = ""
+
     # Блок 7: AI-підсумок
     if summary_text:
         parts.append(summary_text)
@@ -4649,6 +4822,35 @@ def main():
         _time_main.sleep(0.8)
         print(f"[report] sending email parts ({len(email_parts)} items)", flush=True)
         _send_parts_as_one(email_parts)
+
+    def _split_safe_msg(text, limit=3800):
+        """Розбиває текст по межах речень/рядків, жоден шматок не перевищує limit."""
+        chunks = []
+        while len(text) > limit:
+            cut = -1
+            for sep in ["\n\n", "\n", ". ", "! ", "? "]:
+                idx = text.rfind(sep, 0, limit)
+                if idx > limit // 2:
+                    cut = idx + len(sep)
+                    break
+            if cut <= 0:
+                cut = limit
+            chunks.append(text[:cut].rstrip())
+            text = text[cut:].lstrip()
+        if text:
+            chunks.append(text)
+        return chunks
+
+    # Тематичний AI-аналіз — надсилаємо окремо після звіту
+    if _themes_ai_full:
+        _time_main.sleep(0.8)
+        print(f"[themes_ai] sending themes AI ({len(_themes_ai_full)} chars) as separate messages...", flush=True)
+        _themes_header = "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n"
+        _themes_chunks = _split_safe_msg(_themes_header + _themes_ai_full, 3800)
+        print(f"[themes_ai] split into {len(_themes_chunks)} messages", flush=True)
+        for _tci, _tchunk in enumerate(_themes_chunks):
+            send_telegram(_tchunk)
+            _time_main.sleep(0.6)
 
     # Астро AI — надсилаємо окремо після звіту, розбиваємо безпечно по 3800 символів
     if _astro_ai_full:
