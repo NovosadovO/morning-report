@@ -192,7 +192,7 @@ def run_monitor_loop():
             try:
                 result = subprocess.run(
                     [sys.executable, "monitor.py"],
-                    timeout=300,
+                    timeout=600,
                     capture_output=True, text=True
                 )
                 if result.stdout:

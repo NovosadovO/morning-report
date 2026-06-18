@@ -1258,12 +1258,20 @@ def _parse_gmail_msg(msg_data, full=False):
 
 
 _GEM_LAST_CALL = [0.0]
-_GEM_MIN_GAP = 4.0  # мін. секунд між викликами Gemini (free tier ~15/min)
+_GEM_MIN_GAP = 2.0  # мін. секунд між викликами Gemini (легкий throttle проти 429)
+_REPORT_AI_DEADLINE = 0.0  # monotonic-час, до якого можна робити AI-блоки (ставиться в main())
 
-def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=4):
+def _ai_time_left(min_needed=20):
+    """True якщо до дедлайну AI лишилось >= min_needed секунд. Якщо дедлайн не заданий — True."""
+    import time as _t
+    if not _REPORT_AI_DEADLINE:
+        return True
+    return (_REPORT_AI_DEADLINE - _t.monotonic()) >= min_needed
+
+def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     """
     Централізований POST до Gemini з retry на 429 (Too Many Requests).
-    Exponential backoff: 6s, 16s, 36s, 60s. + throttle між викликами.
+    Backoff коротший щоб вкластись у timeout монітора: 8s, 20s. + throttle між викликами.
     Повертає dict (parsed JSON) або кидає виняток.
     """
     import time as _t
@@ -1284,32 +1292,23 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=4):
         except urllib.error.HTTPError as e:
             last_exc = e
             if e.code == 429:
-                # rate limit / quota — backoff і пробуємо знову
-                wait = [6, 16, 36, 60][min(attempt, 3)]
-                # спробуємо дістати retryDelay з тіла відповіді
-                try:
-                    _err = json.loads(e.read())
-                    for d in _err.get("error", {}).get("details", []):
-                        rd = d.get("retryDelay", "")
-                        if rd.endswith("s"):
-                            wait = max(wait, int(float(rd[:-1])) + 2)
-                except Exception:
-                    pass
+                # rate limit / quota — короткий backoff (не більше 20s щоб не з'їсти timeout монітора)
+                wait = [8, 20][min(attempt, 1)]
                 print(f"[{tag}] 429 Too Many Requests — backoff {wait}s (attempt {attempt+1}/{max_retries})", flush=True)
                 if attempt < max_retries - 1:
                     _t.sleep(wait)
                     continue
-            # інші HTTP помилки — не ретраїмо (крім 500/503)
+            # інші HTTP помилки — retry лише на 500/503 (коротко)
             if e.code in (500, 503) and attempt < max_retries - 1:
-                print(f"[{tag}] {e.code} — retry in 8s (attempt {attempt+1})", flush=True)
-                _t.sleep(8)
+                print(f"[{tag}] {e.code} — retry in 5s (attempt {attempt+1})", flush=True)
+                _t.sleep(5)
                 continue
             raise
         except Exception as e:
             last_exc = e
             if attempt < max_retries - 1:
-                print(f"[{tag}] error {e} — retry in 5s (attempt {attempt+1})", flush=True)
-                _t.sleep(5)
+                print(f"[{tag}] error {e} — retry in 4s (attempt {attempt+1})", flush=True)
+                _t.sleep(4)
                 continue
             raise
     if last_exc:
@@ -3727,6 +3726,12 @@ def main():
 
     now = datetime.now(timezone.utc)
     now_local = now + timedelta(hours=2)
+    # Дедлайн збору AI-блоків: монітор має timeout 600s. Лишаємо запас на надсилання.
+    # Усі AI-блоки разом не повинні перетягнути за цей дедлайн — інакше пропускаємо їх,
+    # АЛЕ звіт усе одно надсилається (краще без AI, ніж зовсім без звіту).
+    import time as _time_dl
+    global _REPORT_AI_DEADLINE
+    _REPORT_AI_DEADLINE = _time_dl.monotonic() + 360  # 360s на всі AI, ще ~240s на решту
     # 3 слоти на годину: :00, :20, :40
     hour_key = _get_report_slot(now_local)
     if hour_key is None:
@@ -4538,13 +4543,10 @@ def main():
         # Блок 6б: Окремий AI астро-аналіз — одразу після астро (повний, з shift_hint)
         _gemini_key_astro = os.environ.get("GEMINI_API_KEY", "")
         _astro_ai = ""
-        for _astro_attempt in range(2):  # 2 спроби
+        if not _ai_time_left(40):
+            print("[astro_ai] SKIP — мало часу до дедлайну", flush=True)
+        else:
             _astro_ai = _get_astro_ai_analysis(astro_text, _gemini_key_astro, shift_hint=shift_hint)
-            if _astro_ai:
-                break
-            if _astro_attempt == 0:
-                import time as _t_astro; _t_astro.sleep(3)
-                print(f"[astro_ai] retry attempt 2...", flush=True)
         if _astro_ai:
             # Зберігаємо для окремої надсилки після звіту (щоб не обрізалось)
             _astro_ai_full = _astro_ai
@@ -4556,6 +4558,9 @@ def main():
     _themes_ai_full = ""
     try:
         _gem_key_th = os.environ.get("GEMINI_API_KEY", "")
+        if not _ai_time_left(40):
+            print("[themes_ai] SKIP — мало часу до дедлайну, звіт надсилаємо без themes AI", flush=True)
+            raise RuntimeError("ai_deadline")
         # Збираємо РЕАЛЬНІ дані по 7 темах
         _th_ctx = {"shift_hint": shift_hint}
         # Фінанси/портфель
@@ -4690,9 +4695,14 @@ def main():
         parts.append("💤 <i>Вихідний — крипто/пошта з 11:00</i>")
 
     # ── AI-брифінг: генерується з ПОВНИХ даних звіту ─────────────────────────
-    if gemini_key:
+    if gemini_key and not _ai_time_left(30):
+        print("[briefing] SKIP — мало часу до дедлайну", flush=True)
+        gemini_key_for_brief = ""
+    else:
+        gemini_key_for_brief = gemini_key
+    if gemini_key_for_brief:
         _ai_briefing = None
-        for _attempt_b in range(3):  # 3 спроби
+        for _attempt_b in range(2):  # 2 спроби
             try:
                 import uuid as _uuid_b
                 _seed_b = str(_uuid_b.uuid4())[:8]
