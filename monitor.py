@@ -3505,7 +3505,11 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
         )
         body = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"maxOutputTokens": 4000, "temperature": 0.75},
+            "generationConfig": {
+                "maxOutputTokens": 8000,
+                "temperature": 0.75,
+                "thinkingConfig": {"thinkingBudget": 0},
+            },
         }).encode()
         req = urllib.request.Request(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -3514,9 +3518,16 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
         print(f"[themes_ai] sending request to Gemini (timeout=90)...", flush=True)
         with urllib.request.urlopen(req, timeout=90) as r:
             resp = json.loads(r.read())
-        _finish = resp.get("candidates", [{}])[0].get("finishReason", "UNKNOWN")
+        _cand = (resp.get("candidates") or [{}])[0]
+        _finish = _cand.get("finishReason", "UNKNOWN")
         print(f"[themes_ai] finishReason={_finish}", flush=True)
-        result = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+        # БЕЗПЕЧНИЙ парсинг: якщо немає parts (напр. MAX_TOKENS на thinking) — не падаємо
+        _parts = (_cand.get("content") or {}).get("parts") or []
+        if not _parts:
+            _um = resp.get("usageMetadata", {})
+            print(f"[themes_ai] EMPTY parts! finish={_finish} usage={_um}", flush=True)
+            return ""
+        result = (_parts[0].get("text") or "").strip()
         import re as _re_t
         result = _re_t.sub(r'\*\*(.+?)\*\*', r'\1', result)
         result = _re_t.sub(r'\*(.+?)\*', r'\1', result)
@@ -3609,7 +3620,11 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
         )
         body = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"maxOutputTokens": 4000, "temperature": 0.7},
+            "generationConfig": {
+                "maxOutputTokens": 8000,
+                "temperature": 0.7,
+                "thinkingConfig": {"thinkingBudget": 0},
+            },
         }).encode()
         req = urllib.request.Request(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -3618,9 +3633,15 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
         print(f"[astro_ai] sending request to Gemini (timeout=90)...", flush=True)
         with urllib.request.urlopen(req, timeout=90) as r:
             resp = json.loads(r.read())
-        _astro_finish = resp.get("candidates", [{}])[0].get("finishReason", "UNKNOWN")
+        _astro_cand = (resp.get("candidates") or [{}])[0]
+        _astro_finish = _astro_cand.get("finishReason", "UNKNOWN")
         print(f"[astro_ai] finishReason={_astro_finish}", flush=True)
-        result = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+        _astro_parts = (_astro_cand.get("content") or {}).get("parts") or []
+        if not _astro_parts:
+            _um_a = resp.get("usageMetadata", {})
+            print(f"[astro_ai] EMPTY parts! finish={_astro_finish} usage={_um_a}", flush=True)
+            return ""
+        result = (_astro_parts[0].get("text") or "").strip()
         # Конвертуємо markdown → plain text (Gemini може повернути **bold** або *italic*)
         import re as _re_ai
         result = _re_ai.sub(r'\*\*(.+?)\*\*', r'\1', result)
@@ -4687,7 +4708,11 @@ def main():
                 )
                 _brief_payload = json.dumps({
                     "contents": [{"parts": [{"text": _brief_prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 2000, "temperature": 0.8},
+                    "generationConfig": {
+                        "maxOutputTokens": 4000,
+                        "temperature": 0.8,
+                        "thinkingConfig": {"thinkingBudget": 0},
+                    },
                 }).encode()
                 _brief_req = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -4695,9 +4720,14 @@ def main():
                 )
                 with urllib.request.urlopen(_brief_req, timeout=45) as _r_b:
                     _brief_resp = json.loads(_r_b.read())
-                _finish_reason = _brief_resp.get("candidates", [{}])[0].get("finishReason", "UNKNOWN")
+                _brief_cand = (_brief_resp.get("candidates") or [{}])[0]
+                _finish_reason = _brief_cand.get("finishReason", "UNKNOWN")
                 print(f"[briefing] finishReason={_finish_reason}", flush=True)
-                _ai_briefing = _brief_resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+                _brief_parts = (_brief_cand.get("content") or {}).get("parts") or []
+                if not _brief_parts:
+                    print(f"[briefing] EMPTY parts! finish={_finish_reason} usage={_brief_resp.get('usageMetadata',{})}", flush=True)
+                    raise RuntimeError("briefing empty parts")
+                _ai_briefing = (_brief_parts[0].get("text") or "").strip()
                 if _finish_reason == "MAX_TOKENS":
                     print(f"[briefing] WARNING: response truncated by MAX_TOKENS!", flush=True)
                 if _ai_briefing and _ai_briefing[-1] not in ".!?»":
