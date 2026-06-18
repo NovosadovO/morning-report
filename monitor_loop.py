@@ -188,24 +188,19 @@ def run_monitor_loop():
         # Запускаємо ТІЛЬКИ на першій хвилині години (:00)
         # Вікно звужено до m == 0 щоб виключити дублі при m=1,2
         if m == 0:
-            print(f"\n[{now.strftime('%Y-%m-%d %H:%M')} UTC] Running monitor (local {now_local.strftime('%H:%M')})...", flush=True)
+            print(f"\n[{now.strftime('%Y-%m-%d %H:%M')} UTC] Running monitor INLINE (local {now_local.strftime('%H:%M')})...", flush=True)
             try:
-                result = subprocess.run(
-                    [sys.executable, "monitor.py"],
-                    timeout=600,
-                    capture_output=True, text=True
-                )
-                if result.stdout:
-                    print(f"[monitor stdout] {result.stdout[-2000:]}", flush=True)
-                if result.stderr:
-                    print(f"[monitor stderr] {result.stderr[-2000:]}", flush=True)
-                print(f"[monitor] exit code: {result.returncode}", flush=True)
-            except subprocess.TimeoutExpired:
-                print(f"Monitor TIMEOUT after 600s", flush=True)
+                # INLINE замість subprocess: логи AI-блоків видно в реальному часі,
+                # без timeout/capture_output (які різали AI у автозвіті).
+                # Той самий шлях що й ручний /звіт, який працює коректно.
+                _mon = _load_monitor()
+                _mon._FORCE_REPORT = False  # авто-режим: slot dedup активний
+                _mon.main()
+                print(f"[monitor] inline run done", flush=True)
             except Exception as e:
-                print(f"Monitor error: {e}", flush=True)
+                import traceback
+                print(f"Monitor error: {e}\n{traceback.format_exc()}", flush=True)
             # АНТИДУБЛЬ: спимо 3 хв щоб ГАРАНТОВАНО вийти за вікно m==0
-            # (якщо subprocess займає <60с → без цього loop повернеться при m=1,2)
             print(f"[monitor] sleeping 180s after run (anti-dup guard)", flush=True)
             time.sleep(180)
         else:
