@@ -44,8 +44,17 @@ def api(method, data=None):
     payload = json.dumps(data or {}).encode()
     req = urllib.request.Request(url, data=payload,
           headers={"Content-Type": "application/json"})
+    # HTTP read timeout МУСИТЬ бути > long-polling timeout, інакше read обривається
+    # раніше і команди губляться ("read operation timed out").
+    _http_to = 15
     try:
-        with urllib.request.urlopen(req, timeout=15) as r:
+        _poll_to = (data or {}).get("timeout")
+        if _poll_to:
+            _http_to = int(_poll_to) + 15
+    except Exception:
+        pass
+    try:
+        with urllib.request.urlopen(req, timeout=_http_to) as r:
             resp = json.loads(r.read().decode())
             if not resp.get("ok"):
                 print(f"[API] {method} not ok: {resp.get('description','?')} | data={str(data)[:200]}")
