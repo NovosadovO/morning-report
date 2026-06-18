@@ -1,45 +1,28 @@
-# Оновлення бота 2.0
+# Bot Fix Status [2026-06-17]
 
-## Завдання
-1. **AI брифінг** — не одинокий, середній розмір (30-40 речень), вбудований в звіт природно
-2. **Астро AI** — після астро: AI аналіз аспектів + поради + рекомендації (детальніший)
-3. **Нові функції** — все що корисно для Олега (крипто, здоров'я, спорт, фінанси, робота)
-4. **Графіки** — більше візуалізації у звіті
+## ВИРІШЕНО
+- root cause "мовчав": f-string unmatched '(' monitor.py:9006 (вкладені " у f-string, Python 3.11) → Bot crashed loop. ВИПРАВЛЕНО (одинарні лапки).
+- Railway mise-баг "secret ID missing for ''": причина = змінна " GEMINI_API_KEY" з ПРОБІЛОМ на початку імені. Новий сервіс resourceful-alignment створено без неї.
+- 8 змінних перенесено в новий сервіс через GraphQL API (Project-Access-Token, inline mutation).
+- FORCE_LEADER=1 на новому сервісі → відібрав lock у старого (c716e066) → "I am leader: 45ed4aae".
+- libsqlite3-0 додано в railpack.json (aptPackages) для kerykeion.
 
-## Файли
-- monitor.py (9694 рядки) — основний звіт
-- bot.py (2808) — команди
-- monitor_loop.py (1459) — треди
-- astro.py (1032) — астро
+## СЕРВІСИ (project vigilant-bravery, id 1c4de079-85e2-4ba0-ba2a-1fb502b48219)
+- resourceful-alignment (ac269393-...) = НОВИЙ РОБОЧИЙ, FORCE_LEADER=1, Railpack, SUCCESS
+- morning-report (89de62c3-...) = СТАРИЙ, всі деплої FAILED, треба видалити вручну (project token не може serviceDelete)
 
-## Зміни
+## TODO
+- [ ] Користувач пише /diag → підтвердити GEMINI_API_KEY ✅ + Gemini API ✅ 200
+- [ ] getUpdates timed out часто — перевірити чи команди реально обробляються (HTTP read timeout vs polling timeout)
+- [ ] Видалити старий сервіс morning-report (user робить у UI: Settings → Delete Service)
+- [ ] Прибрати FORCE_LEADER=1 після підтвердження (щоб не ламало майбутню leader-логіку) — АБО лишити бо сервіс один
+- [ ] Перевірити GEMINI ключ: значення AQ.Ab8... (не AIza...) — можливо OAuth, не API key. /diag покаже Gemini API 200 чи ні.
 
-### 1. AI брифінг (monitor.py)
-- Зменшити з 100 до 35 речень
-- Прибрати "суцільний текст" — зробити структурований з емодзі секціями
-- Вбудувати в звіт між заголовком і score, НЕ окремим повідомленням
+## API доступ
+Railway project token: f03f6f22-91f4-4ad6-b19b-89b013652804 (тільки read+variables+deploy, НЕ serviceDelete)
+backboard.railway.com/graphql/v2 з header "Project-Access-Token"
 
-### 2. Астро AI аналіз (monitor.py — _get_astro_ai_analysis)
-- Розширити з 15-20 до 25-30 речень
-- Додати детальний опис кожного активного аспекту
-- Додати конкретні поради по кожному транзиту
-- Додати рекомендації: фінанси, здоров'я, стосунки, робота
-
-### 3. Нові функції
-- Крипто Fear & Greed Index в звіті
-- Новини BTC/ETH/AVAX/ONDO щодня
-- Трекер ваги — авто нагадування якщо 3+ дні без запису
-- Мотиваційне повідомлення зранку (7:00) персоналізоване
-- Щотижневий прогрес-звіт (неділя 20:00) — вага, біг, звички, крипто
-
-### 4. Графіки
-- Графік ваги автоматично в щотижневому звіті
-- Графік крипто (7 днів) в звіті по понеділках
-
-## Статус
-- [ ] AI брифінг
-- [ ] Астро AI
-- [ ] Fear & Greed
-- [ ] Мотивація 7:00
-- [ ] Авто нагадування ваги
-- [ ] Тижневий прогрес
+## [2026-06-18 онов.] СТАТУС
+- ✅ Тематичний AI-аналіз (7 сфер) — функція + контекст + надсилання ДОДАНО, запушено (commit ce0286d).
+- ✅ FIX getUpdates timed out: HTTP read timeout тепер = polling+15с (bot.py api()), commit 86a48131. Деплой 77ed775b SUCCESS — "getUpdates timed out" ЗНИК у логах.
+- ⏳ Перевіряю чи /звіт тригерить themes_ai+astro_ai (надіслав команду, чекаю логи [themes_ai] OK).
