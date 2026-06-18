@@ -1089,6 +1089,81 @@ def get_calendar():
         return f"📅 <b>Календар</b>\n⚠️ Помилка: {esc(str(e)[:120])}"
 
 
+# Рутинні/повторювані події, які НЕ показуємо у блоці "Найближчі події"
+_ROUTINE_EVENT_KEYS = [
+    "біг", "вода", "чай", "сауна", "зміна", "рання", "нічна",
+    "armolopid", "армолопід", "навчання інвест", "чек крипто", "пошта",
+    "медитац", "розтяж", "сон", "крок", "вправ", "прокидан", "відбій",
+    "💧", "🍵", "🏃", "🧖", "💊", "📈", "💹", "📬",
+]
+
+
+def _is_routine_event(summary):
+    s = (summary or "").lower()
+    return any(k in s for k in _ROUTINE_EVENT_KEYS)
+
+
+def get_upcoming_events(days_ahead=7):
+    """Блок «📌 Найближчі події» — справжні події на N днів вперед (рутина відфільтрована).
+    Те, що завтра — підсвічуємо ⏰."""
+    token = _calendar_access_token()
+    if not token:
+        return ""
+    try:
+        headers = {"Authorization": f"Bearer {token}"}
+        tz_local = timezone(timedelta(hours=2))
+        now = datetime.now(timezone.utc)
+        now_local = now.astimezone(tz_local)
+        # Починаємо з ПІСЛЯЗАВТРА (сьогодні+завтра вже в основному блоці КАЛЕНДАР)
+        day_after = (now_local.replace(hour=0, minute=0, second=0, microsecond=0)
+                     + timedelta(days=2)).astimezone(timezone.utc)
+        t_end = day_after + timedelta(days=max(0, days_ahead - 2))
+        # Межа "завтра" — для позначки ⏰ (за 1 день)
+        tomorrow_date = (now_local + timedelta(days=1)).date()
+
+        events = _fetch_events_all_calendars(headers, day_after, t_end, max_per_cal=50)
+        # Додаємо ще й "завтра", щоб мати змогу позначити ⏰ важливі події завтра
+        tomorrow_start = (now_local.replace(hour=0, minute=0, second=0, microsecond=0)
+                          + timedelta(days=1)).astimezone(timezone.utc)
+        tomorrow_events = _fetch_events_all_calendars(headers, tomorrow_start, day_after, max_per_cal=50)
+
+        all_ev = tomorrow_events + events
+        lines = []
+        seen = set()
+        for ev in all_ev:
+            summary = ev.get("summary", "")
+            if _is_routine_event(summary):
+                continue
+            start = ev["start"].get("dateTime") or ev["start"].get("date")
+            if not start:
+                continue
+            try:
+                if "T" in start:
+                    dt = datetime.fromisoformat(start.replace("Z", "+00:00")).astimezone(tz_local)
+                    when = dt.strftime("%d.%m %H:%M")
+                    ev_date = dt.date()
+                else:
+                    dt = datetime.fromisoformat(start)
+                    when = dt.strftime("%d.%m") + " (весь день)"
+                    ev_date = dt.date()
+            except Exception:
+                when = start
+                ev_date = None
+            key = (summary, when)
+            if key in seen:
+                continue
+            seen.add(key)
+            mark = " ⏰ <b>ЗАВТРА</b>" if ev_date == tomorrow_date else ""
+            lines.append(f"• {when} — <b>{esc(summary)}</b>{mark}")
+
+        if not lines:
+            return ""
+        return "📌 <b>НАЙБЛИЖЧІ ПОДІЇ</b> (7 днів)\n" + "\n".join(lines[:15])
+    except Exception as e:
+        print(f"get_upcoming_events error: {e}")
+        return ""
+
+
 # ─── 4. EMAIL (Gmail API) ────────────────────────────────────────────────────
 
 def decode_header_str(h):
@@ -4397,6 +4472,14 @@ def main():
 
     # ── Блок 4: КАЛЕНДАР ──────────────────────────────────────────────────────
     parts.append(_section_header("📅", "КАЛЕНДАР") + "\n" + "\n".join(cal_text.split("\n")[1:]) if isinstance(cal_text, str) and "\n" in cal_text else _section_header("📅", "КАЛЕНДАР") + "\n" + str(cal_text))
+
+    # ── Блок 4b: НАЙБЛИЖЧІ ПОДІЇ (7 днів, рутина відфільтрована) ──────────────
+    try:
+        _upcoming = get_upcoming_events(days_ahead=7)
+        if _upcoming:
+            parts.append(_upcoming)
+    except Exception as _e_up:
+        print(f"upcoming events block error: {_e_up}")
 
     # ── SPLIT: тут ділимо на 2 повідомлення ──────────────────────────────────
     parts.append("SPLIT_HERE")

@@ -1,24 +1,30 @@
-# Bot 2.0 — задача активна
+# Годинний автозвіт — FIX
+
+## ROOT CAUSE (знайдено 2026-06-18)
+Звіт claim-нув слот ПЕРЕД відправкою (last_slot+code_version на GitHub гілку `data`).
+Якщо інстанс рестартиться між claim і send → слот "зайнятий" своєю ж version →
+наступний інстанс бачить `Already sent ... v>=me → skipping` і НЕ шле звіт.
+Лог: `19:00:33 === Already sent this slot (2026-06-18T21:00) by v202606182 >= me v202606182, skipping ===`
+
+ВАЖЛИВО: dedup-файл на гілці `data` (?ref=data), НЕ main.
+
+## FIX (dedup v3)
+- `sent_slot` пишеться ТІЛЬКИ ПІСЛЯ успішної відправки (ok=True), після `=== Report sent ===`.
+- Перед send — лише `lock_slot`+`lock_at` з TTL 600s (захист від паралелі).
+- Якщо ok=False або краш — sent_slot НЕ пишеться → наступний запуск пере-надсилає.
+- GitHub-стан скинуто на чисто.
+- commit pushed, deploy 5b358826.
+
+## TODO
+- [ ] Дочекатись deploy 5b358826 SUCCESS
+- [ ] Дочекатись 20:00 UTC (22:00 локал) → перевірити лог: Running INLINE → Locked slot → Report sent → Marked slot SENT
+- [ ] Підтвердити юзеру що звіт прийшов
 
 ## DONE
-- timedelta UnboundLocalError у get_summary — fixed (commit a21c65930d)
-- email_text dict→str краш — fixed (17dcee8cce)
-- 429 model-fallback у _gem_post: 2.5-flash→2.0-flash→2.5-flash-lite (96580d44b1)
-- 429 миттєвий switch при retryDelay>25s, макс 18s/модель (88fe2cf45f) deploy 0c184d7e
-- _GEM_MIN_GAP 7→9s
-
-## ПЕРЕВІРИТИ
-- deploy 0c184d7e SUCCESS?
-- /звіт у логах: всі AI-блоки OK (можливо via FALLBACK), без "skipping block"
-- get_summary без error
-
-## ВІДКЛАДЕНО
-- get_summary _gemini_summarize (email) НЕ юзає _gem_post fallback — окремий 429 шлях (некритично, email-summary)
-- ГРАФІКИ: збільшити, дашборд звичок, емодзі→текст, налазящі підписи
-- Старий інстанс десь в ІНШОМУ Railway-проєкті (project-token не бачить). Юзер каже "тільки Railway" → треба щоб ВІН зайшов у railway.app і видалив старий проєкт/сервіс. Поки fallback робить це безпечним.
+- check_shopping_reminder NameError fix (send_message → _send_telegram_text_with_keyboard)
 
 ## ENV
-- dir /home/user/morning-report, service ac269393, env 0f1480b0, proj 1c4de079
-- /tmp/deploy.py /tmp/getdep.py /tmp/logs2.py <id> <n> /tmp/railway.env
-- TG token 8374312425:AAH..., chat 2100366814
-- GEMINI key AQ.Ab8... (rate-limited бо старий інстанс палить)
+- deploy active: чекаю 5b358826
+- service ac269393, env 0f1480b0, proj 1c4de079
+- TG token 8374312425:AAFcSmsGfPacUVqNvSwrFe6McLeWBbCVWZ0, chat 2100366814
+- scripts /tmp/deploy.py /tmp/getdep.py /tmp/logs2.py, source /tmp/railway.env
