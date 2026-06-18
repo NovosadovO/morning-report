@@ -85,13 +85,28 @@ def _rc():
     })
 
 
-def _buf(fig) -> bytes:
+def _buf(fig, dpi: int = 200) -> bytes:
     buf = io.BytesIO()
-    fig.savefig(buf, format="png", dpi=150, bbox_inches="tight",
-                facecolor=BG, edgecolor="none")
+    fig.savefig(buf, format="png", dpi=dpi, bbox_inches="tight",
+                facecolor=BG, edgecolor="none", pad_inches=0.25)
     plt.close(fig)
     buf.seek(0)
-    return buf.read()
+    data = buf.read()
+    # Telegram стискає фото > ~5 МБ або сторону > 1280px надмірно — даунскейлимо до якісного 2000px max
+    try:
+        from PIL import Image as _PILImg
+        import io as _io2
+        _im = _PILImg.open(_io2.BytesIO(data))
+        _maxside = 2200
+        if max(_im.size) > _maxside:
+            _ratio = _maxside / max(_im.size)
+            _im = _im.resize((int(_im.size[0]*_ratio), int(_im.size[1]*_ratio)), _PILImg.LANCZOS)
+            _out = _io2.BytesIO()
+            _im.convert("RGB").save(_out, format="PNG", optimize=True)
+            data = _out.getvalue()
+    except Exception:
+        pass
+    return data
 
 
 def _load_habits():
@@ -204,7 +219,7 @@ def plot_habits_heatmap(days: int = 30) -> bytes | None:
                   facecolor=PANEL, edgecolor=BORDER,
                   labelcolor=TEXT)
 
-        ax.set_title(f"📋 Звички — останні {days} днів", fontsize=24,
+        ax.set_title(f"Звички — останні {days} днів", fontsize=24,
                      color=TEXT, pad=12, fontweight="bold")
 
         fig.tight_layout(pad=1.2)
@@ -319,7 +334,7 @@ def plot_day_dashboard(today_str: str = None) -> bytes | None:
                       ha="center", va="center", color=MUTED, fontsize=30,
                       transform=ax_w.transAxes)
 
-        ax_w.set_title("⚖️ Вага за 30 днів — тренд та ціль", color=TEXT,
+        ax_w.set_title("Вага за 30 днів — тренд та ціль", color=TEXT,
                        fontsize=30, fontweight="bold")
         for spine in ax_w.spines.values():
             spine.set_edgecolor(BORDER)
@@ -354,7 +369,7 @@ def plot_day_dashboard(today_str: str = None) -> bytes | None:
         for spine in ax_h.spines.values():
             spine.set_visible(False)
         for i, hkey in enumerate(HABITS):
-            label = "✅" if entry.get(hkey) is True else "❌"
+            label = "✓" if entry.get(hkey) is True else "✗"
             ax_h.text(1.13, i, label, va="center", ha="center",
                       fontsize=30, color=TEXT)
 
@@ -416,7 +431,7 @@ def plot_day_dashboard(today_str: str = None) -> bytes | None:
                       ha="center", fontsize=26, color=TEXT)
 
         fig.suptitle(
-            f"📊 Підсумок {today_str[8:]}.{today_str[5:7]}  ·  {done}/{len(HABITS)} звичок",
+            f"Підсумок {today_str[8:]}.{today_str[5:7]}  ·  {done}/{len(HABITS)} звичок",
             fontsize=32, color=TEXT, fontweight="bold", y=1.02
         )
 
@@ -500,7 +515,7 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
         ax_top.set_yticks(range(HABIT_N + 1))
         ax_top.set_ylim(0, HABIT_N + 0.5)
         ax_top.set_ylabel("Звичок виконано", color=MUTED, fontsize=28)
-        ax_top.set_title("📅 Звички по днях тижня", color=TEXT, fontsize=30, fontweight="bold")
+        ax_top.set_title("Звички по днях тижня", color=TEXT, fontsize=30, fontweight="bold")
         ax_top.grid(axis="y", alpha=0.3, zorder=0)
         ax_top.set_axisbelow(True)
         for spine in ax_top.spines.values():
@@ -586,7 +601,7 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
             ax_w.text(0.5, 0.5, "Немає даних", ha="center", va="center",
                       color=MUTED, fontsize=28, transform=ax_w.transAxes)
 
-        ax_w.set_title("⚖️ Вага (14 днів) + тренд", color=TEXT, fontsize=30, fontweight="bold")
+        ax_w.set_title("Вага (14 днів) + тренд", color=TEXT, fontsize=30, fontweight="bold")
         for spine in ax_w.spines.values():
             spine.set_edgecolor(BORDER)
         ax_w.grid(axis="y", alpha=0.2)
@@ -595,7 +610,7 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
         ax_s = fig.add_subplot(gs[1, 1])
         ax_s.set_facecolor(PANEL)
         ax_s.axis("off")
-        ax_s.set_title("🔥 Стрік (днів поспіль)", color=TEXT, fontsize=30, fontweight="bold")
+        ax_s.set_title("Стрік (днів поспіль)", color=TEXT, fontsize=30, fontweight="bold")
 
         streak_items = [(HABIT_LABELS[h], streaks[h], HABIT_COLORS[h]) for h in HABITS]
         for i, (label, streak, color) in enumerate(streak_items):
@@ -612,14 +627,14 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
             ax_s.text(0.08, y + 0.01, label, transform=ax_s.transAxes,
                       fontsize=28, color=TEXT, va="center")
             streak_color = color if streak > 0 else MUTED
-            flame = "🔥" if streak >= 3 else ("✅" if streak >= 1 else "💤")
+            flame = "🔥" if streak >= 3 else ("✓" if streak >= 1 else "💤")
             ax_s.text(0.88, y + 0.01, f"{flame} {streak}д",
                       transform=ax_s.transAxes,
                       fontsize=28, color=streak_color,
                       va="center", ha="right", fontweight="bold")
 
         fig.suptitle(
-            f"📊 Тижневий дашборд  {week_dates[0].strftime('%d.%m')}–{week_dates[-1].strftime('%d.%m.%Y')}",
+            f"Тижневий дашборд  {week_dates[0].strftime('%d.%m')}–{week_dates[-1].strftime('%d.%m.%Y')}",
             fontsize=26, color=TEXT, fontweight="bold", y=1.01
         )
 
@@ -920,7 +935,7 @@ def plot_weight_anomaly(days: int = 14) -> bytes | None:
 
         diff = yi[-1] - yi[0]
         sign = "+" if diff > 0 else ""
-        ax.set_title(f"⚖️ Вага  {sign}{diff:.1f} кг за {len(present)} днів  ·  Зараз: {yi[-1]:.1f} кг",
+        ax.set_title(f"Вага  {sign}{diff:.1f} кг за {len(present)} днів  ·  Зараз: {yi[-1]:.1f} кг",
                      color=TEXT, fontsize=24, fontweight="bold")
 
         fig.tight_layout(pad=1.2)
@@ -1014,7 +1029,7 @@ def plot_mini_dashboard(today_str: str = None) -> bytes | None:
             ax_w.text(0.5, 0.5, "Немає даних", ha="center", va="center",
                       color=MUTED, fontsize=26, transform=ax_w.transAxes)
 
-        ax_w.set_title("⚖️ Вага + тренд  (14 днів)", color=TEXT, fontsize=26, fontweight="bold", pad=8)
+        ax_w.set_title("Вага + тренд  (14 днів)", color=TEXT, fontsize=26, fontweight="bold", pad=8)
         for spine in ax_w.spines.values():
             spine.set_edgecolor(BORDER)
         ax_w.tick_params(colors=MUTED, labelsize=24)
@@ -1054,7 +1069,7 @@ def plot_mini_dashboard(today_str: str = None) -> bytes | None:
 
         # Емодзі + % тижня праворуч
         for i, hkey in enumerate(HABITS):
-            icon  = "✅" if entry.get(hkey) is True else "❌"
+            icon  = "✓" if entry.get(hkey) is True else "✗"
             pct_v = int(week_pct[i] * 100)
             ax_h.text(1.04, i, f"{icon} {pct_v}%", va="center", ha="left",
                       fontsize=24, color=TEXT)
@@ -1065,7 +1080,7 @@ def plot_mini_dashboard(today_str: str = None) -> bytes | None:
 
         # ── Загальний заголовок ─────────────────────────────────────────────────
         fig.suptitle(
-            f"📊 Міні-дашборд  {today_str[8:]}.{today_str[5:7]}",
+            f"Міні-дашборд  {today_str[8:]}.{today_str[5:7]}",
             fontsize=26, color=TEXT, fontweight="bold", y=1.02
         )
 
@@ -1252,7 +1267,7 @@ def plot_combined_dashboard() -> bytes | None:
                       ha="center", va="center", color=MUTED, fontsize=28,
                       transform=ax_w.transAxes)
 
-        ax_w.set_title("⚖️ Вага з 1 січня 2026",
+        ax_w.set_title("Вага з 1 січня 2026",
                        color=TEXT, fontsize=34, fontweight="bold")
         for spine in ax_w.spines.values():
             spine.set_edgecolor(BORDER)
@@ -1312,7 +1327,7 @@ def plot_combined_dashboard() -> bytes | None:
             ax_run_m.legend(fontsize=26, framealpha=0.3, facecolor=PANEL,
                             edgecolor=BORDER, labelcolor=TEXT)
             ax_run_m.grid(axis="y", alpha=0.2)
-            ax_run_m.set_title("🏃 Км по місяцях 2026",
+            ax_run_m.set_title("Км по місяцях 2026",
                                color=TEXT, fontsize=32, fontweight="bold")
             for spine in ax_run_m.spines.values():
                 spine.set_edgecolor(BORDER)
@@ -1347,7 +1362,7 @@ def plot_combined_dashboard() -> bytes | None:
             _total_km_m = _cur_ms.get("km", 0) or 0
             _runs_cnt   = _cur_ms.get("runs", 0) or 0
             ax_run_d.set_title(
-                f"🏃 {_month_names_ua[today.month]} {today.year}  —  {_runs_cnt} пробіжок  /  {_total_km_m} км",
+                f"{_month_names_ua[today.month]} {today.year}  —  {_runs_cnt} пробіжок  /  {_total_km_m} км",
                 color=TEXT, fontsize=32, fontweight="bold"
             )
             ax_run_d.set_xlim(0.5, _days_in_m + 0.5)
@@ -1368,7 +1383,7 @@ def plot_combined_dashboard() -> bytes | None:
 
         # ── Загальний заголовок ──────────────────────────────────────────────
         fig.suptitle(
-            f"📊 Дашборд 2026  —  до {today.strftime('%d.%m.%Y')}",
+            f"Дашборд 2026  —  до {today.strftime('%d.%m.%Y')}",
             fontsize=38, color=TEXT, fontweight="bold", y=0.98
         )
 
