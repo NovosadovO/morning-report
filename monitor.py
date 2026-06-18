@@ -1257,6 +1257,66 @@ def _parse_gmail_msg(msg_data, full=False):
     return subject, sender_clean, preview, is_unread
 
 
+_GEM_LAST_CALL = [0.0]
+_GEM_MIN_GAP = 4.0  # мін. секунд між викликами Gemini (free tier ~15/min)
+
+def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=4):
+    """
+    Централізований POST до Gemini з retry на 429 (Too Many Requests).
+    Exponential backoff: 6s, 16s, 36s, 60s. + throttle між викликами.
+    Повертає dict (parsed JSON) або кидає виняток.
+    """
+    import time as _t
+    # throttle: тримаємо мін. інтервал між будь-якими викликами Gemini
+    _since = _t.time() - _GEM_LAST_CALL[0]
+    if _since < _GEM_MIN_GAP:
+        _t.sleep(_GEM_MIN_GAP - _since)
+    last_exc = None
+    for attempt in range(max_retries):
+        _GEM_LAST_CALL[0] = _t.time()
+        try:
+            req = urllib.request.Request(
+                url, data=body_bytes,
+                headers={"Content-Type": "application/json"}, method="POST"
+            )
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            last_exc = e
+            if e.code == 429:
+                # rate limit / quota — backoff і пробуємо знову
+                wait = [6, 16, 36, 60][min(attempt, 3)]
+                # спробуємо дістати retryDelay з тіла відповіді
+                try:
+                    _err = json.loads(e.read())
+                    for d in _err.get("error", {}).get("details", []):
+                        rd = d.get("retryDelay", "")
+                        if rd.endswith("s"):
+                            wait = max(wait, int(float(rd[:-1])) + 2)
+                except Exception:
+                    pass
+                print(f"[{tag}] 429 Too Many Requests — backoff {wait}s (attempt {attempt+1}/{max_retries})", flush=True)
+                if attempt < max_retries - 1:
+                    _t.sleep(wait)
+                    continue
+            # інші HTTP помилки — не ретраїмо (крім 500/503)
+            if e.code in (500, 503) and attempt < max_retries - 1:
+                print(f"[{tag}] {e.code} — retry in 8s (attempt {attempt+1})", flush=True)
+                _t.sleep(8)
+                continue
+            raise
+        except Exception as e:
+            last_exc = e
+            if attempt < max_retries - 1:
+                print(f"[{tag}] error {e} — retry in 5s (attempt {attempt+1})", flush=True)
+                _t.sleep(5)
+                continue
+            raise
+    if last_exc:
+        raise last_exc
+    raise RuntimeError(f"[{tag}] _gem_post exhausted retries")
+
+
 def _gemini_summarize(text, max_input=3000):
     """Робить короткий actionable summary через Gemini API."""
     api_key = os.environ.get("GEMINI_API_KEY", "")
@@ -3511,13 +3571,11 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
                 "thinkingConfig": {"thinkingBudget": 0},
             },
         }).encode()
-        req = urllib.request.Request(
+        print(f"[themes_ai] sending request to Gemini (timeout=90, retry-on-429)...", flush=True)
+        resp = _gem_post(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-            data=body, headers={"Content-Type": "application/json"}, method="POST"
+            body, timeout=90, tag="themes_ai"
         )
-        print(f"[themes_ai] sending request to Gemini (timeout=90)...", flush=True)
-        with urllib.request.urlopen(req, timeout=90) as r:
-            resp = json.loads(r.read())
         _cand = (resp.get("candidates") or [{}])[0]
         _finish = _cand.get("finishReason", "UNKNOWN")
         print(f"[themes_ai] finishReason={_finish}", flush=True)
@@ -3626,13 +3684,11 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
                 "thinkingConfig": {"thinkingBudget": 0},
             },
         }).encode()
-        req = urllib.request.Request(
+        print(f"[astro_ai] sending request to Gemini (timeout=90, retry-on-429)...", flush=True)
+        resp = _gem_post(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-            data=body, headers={"Content-Type": "application/json"}, method="POST"
+            body, timeout=90, tag="astro_ai"
         )
-        print(f"[astro_ai] sending request to Gemini (timeout=90)...", flush=True)
-        with urllib.request.urlopen(req, timeout=90) as r:
-            resp = json.loads(r.read())
         _astro_cand = (resp.get("candidates") or [{}])[0]
         _astro_finish = _astro_cand.get("finishReason", "UNKNOWN")
         print(f"[astro_ai] finishReason={_astro_finish}", flush=True)
@@ -3924,12 +3980,10 @@ def main():
                 "contents": [{"parts": [{"text": ai_prompt}]}],
                 "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.7},
             }).encode()
-            ai_req = urllib.request.Request(
+            ai_resp = _gem_post(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-                data=ai_payload, headers={"Content-Type": "application/json"}, method="POST"
+                ai_payload, timeout=30, tag="personal_ai"
             )
-            with urllib.request.urlopen(ai_req, timeout=20) as r_ai:
-                ai_resp = json.loads(r_ai.read())
             ai_insight = ai_resp["candidates"][0]["content"]["parts"][0]["text"].strip()
             if ai_insight and ai_insight[-1] not in ".!?»":
                 ai_insight += "."
@@ -4714,12 +4768,10 @@ def main():
                         "thinkingConfig": {"thinkingBudget": 0},
                     },
                 }).encode()
-                _brief_req = urllib.request.Request(
+                _brief_resp = _gem_post(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-                    data=_brief_payload, headers={"Content-Type": "application/json"}, method="POST"
+                    _brief_payload, timeout=60, tag="briefing"
                 )
-                with urllib.request.urlopen(_brief_req, timeout=45) as _r_b:
-                    _brief_resp = json.loads(_r_b.read())
                 _brief_cand = (_brief_resp.get("candidates") or [{}])[0]
                 _finish_reason = _brief_cand.get("finishReason", "UNKNOWN")
                 print(f"[briefing] finishReason={_finish_reason}", flush=True)
