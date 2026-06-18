@@ -9584,7 +9584,7 @@ def check_shopping_reminder():
              {"text": "📝 Відмітити", "callback_data": "shopping_mark"}]
         ]}
 
-        send_message(msg, reply_markup=kb)
+        _send_telegram_text_with_keyboard(msg, kb)
 
         state[state_key] = True
         save_json_file(os.path.join(_DATA_DIR, "monitor_shopping_state.json"), state)
