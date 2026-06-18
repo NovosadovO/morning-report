@@ -3807,86 +3807,96 @@ def main():
             print(f"=== Not in report window (m={now_local.minute}), skipping ===")
             return
 
-    # Захист від дублів — атомарний claim через SHA conflict
+    # ── Захист від дублів v3 ──────────────────────────────────────────────
+    # ВАЖЛИВО: dedup за полем `sent_slot`, яке записується ТІЛЬКИ ПІСЛЯ
+    # успішної відправки звіту (наприкінці main). Claim ПЕРЕД send — це лише
+    # короткий lock (`lock_slot` + `lock_at`) з TTL, щоб два паралельні
+    # інстанси не слали одночасно. Якщо інстанс впав між lock і send, lock
+    # протухає через TTL і наступний інстанс пере-надсилає звіт.
+    # _slot_sent_done — прапор для фінального запису sent_slot нижче.
+    _slot_sent_done = False
+    gh_sent, gh_sha = ({}, None)
     if not force:
         gh_sent, gh_sha = _gh_get_sent()
         if gh_sent is None:
             gh_sent = load_json_file(MAIN_SENT_FILE, default={})
             gh_sha = None
+        gh_sent = gh_sent or {}
 
-        if gh_sent.get("last_slot") == hour_key:
-            _claimed_ver = gh_sent.get("code_version", 0)
+        # 1) Вже НАДІСЛАНО цей слот? — пропускаємо.
+        if gh_sent.get("sent_slot") == hour_key:
+            print(f"=== Already SENT this slot ({hour_key}), skipping ===")
+            return
+
+        # 2) Активний lock іншого інстансу (не протух)? — пропускаємо.
+        _lock_slot = gh_sent.get("lock_slot")
+        _lock_at = gh_sent.get("lock_at")
+        if _lock_slot == hour_key and _lock_at:
             try:
-                _claimed_ver = int(_claimed_ver)
+                _lt = datetime.fromisoformat(_lock_at)
+                _age = (now - _lt).total_seconds()
             except Exception:
-                _claimed_ver = 0
-            if _claimed_ver >= _CODE_VERSION:
-                print(f"=== Already sent this slot ({hour_key}) by v{_claimed_ver} >= me v{_CODE_VERSION}, skipping ===")
+                _age = 9999
+            _LOCK_TTL = 600  # 10 хв — більше ніж max час генерації звіту
+            if 0 <= _age < _LOCK_TTL:
+                print(f"=== Slot ({hour_key}) locked {int(_age)}s ago by another instance (TTL {_LOCK_TTL}s), skipping ===")
                 return
-            # Слот зайнятий СТАРІШОЮ версією коду (живий старий інстанс) — ПЕРЕХОПЛЮЄМО.
-            _slot_override = True
-            print(f"=== Slot ({hour_key}) claimed by OLD v{_claimed_ver} < me v{_CODE_VERSION} — OVERRIDING and re-sending ===")
-    else:
-        gh_sent, gh_sha = {}, None
-        print(f"=== FORCE: skipping slot dedup check ===")
-    try:
-        _slot_override
-    except NameError:
-        _slot_override = False
-
-    # Атомарно записуємо claim ПЕРЕД відправкою (тільки не в force режимі)
-    claim_data = dict(gh_sent)
-    claim_data["last_slot"] = hour_key
-    claim_data["claimed_at"] = now.isoformat()
-    claim_data["code_version"] = _CODE_VERSION
-    if not force and gh_sha:
-        try:
-            import base64 as _b64
-            gh_token = os.environ.get("GITHUB_TOKEN", "")
-            _url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_main_sent.json"
-            _content = _b64.b64encode(json.dumps(claim_data, indent=2).encode()).decode()
-            _body = json.dumps({
-                "message": f"claim slot {hour_key}",
-                "content": _content,
-                "sha": gh_sha,
-                "branch": _GH_DATA_BRANCH,
-            }).encode()
-            _req = urllib.request.Request(_url, data=_body, headers={
-                "Authorization": f"token {gh_token}",
-                "Content-Type": "application/json",
-                "User-Agent": "morning-report-bot"
-            }, method="PUT")
-            with urllib.request.urlopen(_req, timeout=8) as _r:
-                _resp = json.loads(_r.read())
-                gh_sha = _resp.get("content", {}).get("sha", gh_sha)
-            print(f"=== Claimed slot {hour_key} ===")
-        except urllib.error.HTTPError as _he:
-            if _he.code in (409, 422):
-                if _slot_override:
-                    # Override-режим: SHA застарів бо старий інстанс перезаписав.
-                    # Перечитуємо; якщо досі стара версія — продовжуємо звіт попри claim-конфлікт.
-                    _re_sent, _re_sha = _gh_get_sent()
-                    _rv = 0
-                    try:
-                        _rv = int((_re_sent or {}).get("code_version", 0))
-                    except Exception:
-                        _rv = 0
-                    if _rv >= _CODE_VERSION:
-                        print(f"=== Override aborted: slot now claimed by v{_rv} >= me, skipping ===")
-                        return
-                    print(f"=== Override: claim-conflict ignored (slot still old v{_rv}), proceeding to send ===")
-                else:
-                    print(f"=== Slot {hour_key} already claimed by another instance, skipping ===")
-                    return
             else:
-                print(f"=== GH claim error {_he.code} — proceeding anyway ===")
-        except Exception as _ce:
-            print(f"=== GH claim error: {_ce} — proceeding anyway ===")
-    elif not force:
-        # Немає SHA — локальна перевірка (один контейнер)
-        _sent = load_json_file(MAIN_SENT_FILE, default={})
-        _sent["last_slot"] = hour_key
-        save_json_file(MAIN_SENT_FILE, _sent)
+                print(f"=== Stale lock ({hour_key}) age {int(_age)}s >= TTL — taking over ===")
+
+        # 3) Ставимо свій lock (best-effort, не блокує звіт при помилці).
+        lock_data = dict(gh_sent)
+        lock_data["lock_slot"] = hour_key
+        lock_data["lock_at"] = now.isoformat()
+        lock_data["code_version"] = _CODE_VERSION
+        if gh_sha:
+            try:
+                import base64 as _b64
+                gh_token = os.environ.get("GITHUB_TOKEN", "")
+                _url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_main_sent.json"
+                _content = _b64.b64encode(json.dumps(lock_data, indent=2).encode()).decode()
+                _body = json.dumps({
+                    "message": f"lock slot {hour_key}",
+                    "content": _content,
+                    "sha": gh_sha,
+                    "branch": _GH_DATA_BRANCH,
+                }).encode()
+                _req = urllib.request.Request(_url, data=_body, headers={
+                    "Authorization": f"token {gh_token}",
+                    "Content-Type": "application/json",
+                    "User-Agent": "morning-report-bot"
+                }, method="PUT")
+                with urllib.request.urlopen(_req, timeout=8) as _r:
+                    _resp = json.loads(_r.read())
+                    gh_sha = _resp.get("content", {}).get("sha", gh_sha)
+                gh_sent = lock_data
+                print(f"=== Locked slot {hour_key} ===")
+            except urllib.error.HTTPError as _he:
+                if _he.code in (409, 422):
+                    # Хтось щойно записав — перечитуємо й перевіряємо sent_slot.
+                    _re_sent, _re_sha = _gh_get_sent()
+                    _re_sent = _re_sent or {}
+                    if _re_sent.get("sent_slot") == hour_key:
+                        print(f"=== Slot {hour_key} just SENT by another instance, skipping ===")
+                        return
+                    gh_sent, gh_sha = _re_sent, _re_sha
+                    print(f"=== Lock conflict on {hour_key}, but not yet sent — proceeding ===")
+                else:
+                    print(f"=== GH lock error {_he.code} — proceeding anyway ===")
+            except Exception as _ce:
+                print(f"=== GH lock error: {_ce} — proceeding anyway ===")
+        else:
+            # Немає SHA — локальна перевірка (один контейнер)
+            _sent = load_json_file(MAIN_SENT_FILE, default={})
+            if _sent.get("sent_slot") == hour_key:
+                print(f"=== Already SENT this slot ({hour_key}) [local], skipping ===")
+                return
+            _sent["lock_slot"] = hour_key
+            _sent["lock_at"] = now.isoformat()
+            save_json_file(MAIN_SENT_FILE, _sent)
+            gh_sent = _sent
+    else:
+        print(f"=== FORCE: skipping slot dedup check ===")
 
     local_time = now_local.strftime("%H:%M")
     local_date = now_local.strftime("%d.%m.%Y")
@@ -5066,6 +5076,46 @@ def main():
             _time_main.sleep(0.6)
 
     print(f"=== Report {'sent' if ok else 'FAILED'} ===")
+
+    # ── Фіксуємо слот як НАДІСЛАНИЙ (тільки після успішної відправки) ──────────
+    # Це і є справжній dedup-маркер. Якщо ok=False — НЕ пишемо, щоб наступний
+    # запуск пере-надіслав звіт.
+    if not force and ok and not _slot_sent_done:
+        try:
+            import base64 as _b64s
+            gh_token = os.environ.get("GITHUB_TOKEN", "")
+            _cur, _cur_sha = _gh_get_sent()
+            _cur = dict(_cur or {})
+            _cur["sent_slot"] = hour_key
+            _cur["sent_at"] = datetime.now(timezone.utc).isoformat()
+            _cur["last_slot"] = hour_key  # сумісність зі старим полем
+            _cur["code_version"] = _CODE_VERSION
+            _cur.pop("lock_slot", None)
+            _cur.pop("lock_at", None)
+            if gh_token and _cur_sha:
+                _url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_main_sent.json"
+                _content = _b64s.b64encode(json.dumps(_cur, indent=2).encode()).decode()
+                _body = json.dumps({
+                    "message": f"sent slot {hour_key}",
+                    "content": _content,
+                    "sha": _cur_sha,
+                    "branch": _GH_DATA_BRANCH,
+                }).encode()
+                _req = urllib.request.Request(_url, data=_body, headers={
+                    "Authorization": f"token {gh_token}",
+                    "Content-Type": "application/json",
+                    "User-Agent": "morning-report-bot"
+                }, method="PUT")
+                with urllib.request.urlopen(_req, timeout=8) as _r:
+                    _r.read()
+            # локальна копія теж
+            _ls = load_json_file(MAIN_SENT_FILE, default={})
+            _ls.update({"sent_slot": hour_key, "last_slot": hour_key})
+            save_json_file(MAIN_SENT_FILE, _ls)
+            _slot_sent_done = True
+            print(f"=== Marked slot {hour_key} as SENT ===")
+        except Exception as _se:
+            print(f"=== mark-sent error: {_se} (non-fatal) ===")
 
     # ── Графіки після звіту ───────────────────────────────────────────────────
     try:
