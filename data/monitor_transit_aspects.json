@@ -1,16 +1,21 @@
 {
   "sun__moon__0": {
-    "orb": 0.26,
+    "orb": 0.24,
     "sent": false,
     "exact_sent": true
   },
+  "moon__venus__90": {
+    "orb": 1.37,
+    "sent": true,
+    "event": "enter"
+  },
   "moon__neptune__150": {
-    "orb": 0.33,
+    "orb": 0.03,
     "sent": false,
     "exact_sent": true
   },
   "venus__mercury__60": {
-    "orb": 0.41,
+    "orb": 0.43,
     "sent": false,
     "exact_sent": true
   },
@@ -20,7 +25,7 @@
     "exact_sent": false
   },
   "saturn__pluto__150": {
-    "orb": 0.13,
+    "orb": 0.14,
     "sent": false,
     "exact_sent": true
   },
