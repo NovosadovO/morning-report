@@ -201,7 +201,7 @@ def run_monitor_loop():
                     print(f"[monitor stderr] {result.stderr[-2000:]}", flush=True)
                 print(f"[monitor] exit code: {result.returncode}", flush=True)
             except subprocess.TimeoutExpired:
-                print(f"Monitor TIMEOUT after 300s", flush=True)
+                print(f"Monitor TIMEOUT after 600s", flush=True)
             except Exception as e:
                 print(f"Monitor error: {e}", flush=True)
             # АНТИДУБЛЬ: спимо 3 хв щоб ГАРАНТОВАНО вийти за вікно m==0

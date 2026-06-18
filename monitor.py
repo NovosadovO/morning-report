@@ -3731,7 +3731,9 @@ def main():
     # АЛЕ звіт усе одно надсилається (краще без AI, ніж зовсім без звіту).
     import time as _time_dl
     global _REPORT_AI_DEADLINE
-    _REPORT_AI_DEADLINE = _time_dl.monotonic() + 360  # 360s на всі AI, ще ~240s на решту
+    # Дедлайн AI = з запасом до subprocess timeout (600s у monitor_loop.py).
+    # Ручний /звіт (force) запускається inline у боті без timeout — даємо дуже багато часу.
+    _REPORT_AI_DEADLINE = _time_dl.monotonic() + (900 if force else 540)  # авто: 540s (60s запасу до 600s timeout)
     # 3 слоти на годину: :00, :20, :40
     hour_key = _get_report_slot(now_local)
     if hour_key is None:
