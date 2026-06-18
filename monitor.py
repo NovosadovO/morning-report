@@ -2190,6 +2190,11 @@ def get_summary(prices_text, weather_text, calendar_text, email_text=None, astro
     Живий підсумок дня — розділений по темах, з аналізом попередніх підсумків.
     """
     import re as _re, hashlib as _hsh
+    # email_text може прийти як dict (зі структурованого блоку пошти) — нормалізуємо до str
+    if isinstance(email_text, dict):
+        email_text = email_text.get("header", "") or ""
+    elif email_text is not None and not isinstance(email_text, str):
+        email_text = str(email_text)
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h = now_local.hour
     today_str_s = now_local.strftime("%Y-%m-%d")
