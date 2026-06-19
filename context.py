@@ -691,16 +691,28 @@ def _save_history(history):
 def _try_parse_create_event(text: str):
     """
     Шукає JSON з action=create_event у відповіді Gemini.
+    Стійкий до markdown-обгортки ```json``` і вкладених фігурних дужок.
     Повертає dict або None.
     """
     import re
-    m = re.search(r'\{[^{}]*"action"\s*:\s*"create_event"[^{}]*\}', text, re.DOTALL)
-    if not m:
+    if not text or "create_event" not in text:
         return None
-    try:
-        return json.loads(m.group())
-    except Exception:
-        return None
+    candidates = []
+    # 1) JSON у markdown-блоці
+    for m in re.finditer(r'```(?:json)?\s*(\{.*?\})\s*```', text, re.DOTALL):
+        candidates.append(m.group(1))
+    # 2) Будь-який збалансований {...} що містить "create_event"
+    for m in re.finditer(r'\{(?:[^{}]|\{[^{}]*\})*\}', text, re.DOTALL):
+        if "create_event" in m.group():
+            candidates.append(m.group())
+    for cand in candidates:
+        try:
+            obj = json.loads(cand)
+            if isinstance(obj, dict) and obj.get("action") == "create_event":
+                return obj
+        except Exception:
+            continue
+    return None
 
 
 def _fetch_week_calendar(token: str) -> str:
@@ -719,86 +731,260 @@ def _fetch_week_calendar(token: str) -> str:
     return "\n".join(lines) if lines else "нічого не заплановано на тижень"
 
 
+_GEM_MODELS_CHAT = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.5-flash-lite"]
+
+
+def _gemini_generate(api_key, contents, max_tokens=900, temperature=0.7):
+    """Надійний виклик Gemini: thinkingBudget=0 (щоб не з'їдало токени на reasoning),
+    безпечний парсинг parts, авто model-fallback при 429/порожній відповіді, retry.
+    Повертає (text, error) — error=None при успіху."""
+    import time as _t
+    body = {
+        "contents": contents,
+        "generationConfig": {
+            "maxOutputTokens": max_tokens,
+            "temperature": temperature,
+            "thinkingConfig": {"thinkingBudget": 0},
+        },
+    }
+    payload = json.dumps(body).encode()
+    last_err = "невідома помилка"
+    for model in _GEM_MODELS_CHAT:
+        url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
+               f"{model}:generateContent?key={api_key}")
+        for attempt in range(3):
+            try:
+                req = urllib.request.Request(
+                    url, data=payload,
+                    headers={"Content-Type": "application/json"}, method="POST")
+                with urllib.request.urlopen(req, timeout=40) as r:
+                    resp = json.loads(r.read())
+                cands = resp.get("candidates") or []
+                if not cands:
+                    last_err = f"{model}: no candidates ({resp.get('promptFeedback', '')})"
+                    break  # інша модель не допоможе при блокуванні промпту
+                parts = (cands[0].get("content") or {}).get("parts") or []
+                texts = [p.get("text", "") for p in parts if p.get("text")]
+                text = "".join(texts).strip()
+                if text:
+                    return text, None
+                # Порожня відповідь (часто MAX_TOKENS на reasoning) → пробуємо наступну модель
+                fr = cands[0].get("finishReason", "")
+                last_err = f"{model}: empty parts (finishReason={fr})"
+                break
+            except urllib.error.HTTPError as he:
+                code = he.code
+                try:
+                    err_body = he.read().decode("utf-8", "replace")
+                except Exception:
+                    err_body = ""
+                last_err = f"{model}: HTTP {code} {err_body[:120]}"
+                if code == 429:
+                    # квота вичерпана → одразу інша модель (інший пул), без довгого чекання
+                    break
+                if code in (500, 503):
+                    _t.sleep(4 * (attempt + 1))
+                    continue
+                break  # 400/403 тощо — інша модель не врятує цей виклик
+            except Exception as e:
+                last_err = f"{model}: {e}"
+                _t.sleep(3)
+                continue
+    return "", last_err
+
+
 def ask_ai(user_message: str, include_calendar: bool = True) -> str:
     """
     Відправляє повідомлення в Gemini з повним контекстом (Calendar завжди).
     Якщо Gemini хоче створити подію — створює її автоматично.
-    Повертає текст відповіді.
+    Повертає текст відповіді. Ніколи не повертає порожній рядок.
     """
     api_key = os.environ.get("GEMINI_API_KEY", "")
     if not api_key:
         return "⚠️ Gemini API key не налаштований."
 
-    ctx = get_context(include_crypto=True, include_calendar=True)
-    system_prompt = get_system_prompt(ctx)
+    try:
+        ctx = get_context(include_crypto=True, include_calendar=True)
+        system_prompt = get_system_prompt(ctx)
+    except Exception as e:
+        print(f"ask_ai get_context error: {e}")
+        ctx = {"now": _now_local()}
+        system_prompt = "Ти персональний AI-асистент Олега. Мова: українська. Коротко і по суті."
 
     # Якщо запит про тиждень — додаємо розширений Calendar контекст
     week_keywords = ["тиждень", "наступний тиждень", "week", "7 днів", "7 дні", "на тижні"]
-    extra_calendar = ""
     if any(kw in user_message.lower() for kw in week_keywords):
         try:
             token = _get_token()
             if token:
                 week_text = _fetch_week_calendar(token)
-                extra_calendar = f"\n\n══ КАЛЕНДАР НА НАСТУПНІ 7 ДНІВ ══\n{week_text}"
+                system_prompt += f"\n\n══ КАЛЕНДАР НА НАСТУПНІ 7 ДНІВ ══\n{week_text}"
         except Exception:
             pass
-    system_prompt += extra_calendar
 
     history = _load_history()
 
-    contents = []
-    contents.append({
-        "role": "user",
-        "parts": [{"text": f"[SYSTEM — прийми до відома, не відповідай]\n{system_prompt}"}]
-    })
-    contents.append({
-        "role": "model",
-        "parts": [{"text": "Зрозумів. Я твій персональний асистент, знаю час, дату і що в Calendar. Готовий!"}]
-    })
-
+    contents = [
+        {"role": "user", "parts": [{"text": f"[SYSTEM — прийми до відома, не відповідай]\n{system_prompt}"}]},
+        {"role": "model", "parts": [{"text": "Зрозумів. Я твій персональний асистент, знаю час, дату і що в Calendar. Готовий!"}]},
+    ]
     for turn in history:
         contents.append({"role": turn["role"], "parts": [{"text": turn["text"]}]})
-
     contents.append({"role": "user", "parts": [{"text": user_message}]})
 
-    payload = json.dumps({
-        "contents": contents,
-        "generationConfig": {
-            "maxOutputTokens": 700,
-            "temperature": 0.8,
-        }
-    }).encode()
+    text, err = _gemini_generate(api_key, contents, max_tokens=900, temperature=0.8)
 
-    req = urllib.request.Request(
-        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}",
-        data=payload,
-        headers={"Content-Type": "application/json"},
-        method="POST"
-    )
+    if not text:
+        print(f"ask_ai: empty answer, err={err}")
+        # Остання спроба — напряму обробити intent створення події навіть без AI
+        local_intent = _local_event_intent(user_message, ctx.get("now", _now_local()))
+        if local_intent:
+            return _handle_create_event(local_intent, ctx.get("now", _now_local()))
+        return ("🤔 Не зміг обробити запит зараз (AI тимчасово недоступний). "
+                "Спробуй ще раз за хвилину або напиши конкретніше, напр.: "
+                "«додай зустріч 21.06 о 11:00 — STK».")
+
+    answer = text
+
+    # Перевіряємо чи Gemini хоче створити подію
+    event_intent = _try_parse_create_event(answer)
+    if not event_intent:
+        # Якщо AI не повернув JSON, але користувач явно просив нагадування — парсимо самі
+        if _looks_like_reminder_request(user_message):
+            event_intent = _local_event_intent(user_message, ctx.get("now", _now_local()))
+
+    if event_intent:
+        result_text = _handle_create_event(event_intent, ctx.get("now", _now_local()))
+        # Прибираємо будь-який JSON-блок з відповіді
+        import re
+        clean_answer = re.sub(r'```(?:json)?\s*\{.*?\}\s*```', '', answer, flags=re.DOTALL)
+        clean_answer = re.sub(r'\{.*?"action".*?"create_event".*?\}', '', clean_answer, flags=re.DOTALL).strip()
+        answer = f"{clean_answer}\n\n{result_text}".strip() if clean_answer else result_text
 
     try:
-        with urllib.request.urlopen(req, timeout=30) as r:
-            resp = json.loads(r.read())
-        answer = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
-
-        # Перевіряємо чи Gemini хоче створити подію
-        event_intent = _try_parse_create_event(answer)
-        if event_intent:
-            result_text = _handle_create_event(event_intent, ctx["now"])
-            # Прибираємо JSON з відповіді, додаємо результат
-            import re
-            clean_answer = re.sub(r'\{[^{}]*"action"\s*:\s*"create_event"[^{}]*\}', '', answer, flags=re.DOTALL).strip()
-            answer = f"{clean_answer}\n\n{result_text}".strip()
-
         history.append({"role": "user",  "text": user_message})
         history.append({"role": "model", "text": answer})
         _save_history(history)
-
-        return answer
-
     except Exception as e:
-        return f"⚠️ AI помилка: {e}"
+        print(f"ask_ai save history error: {e}")
+
+    return answer
+
+
+def _looks_like_reminder_request(text: str) -> bool:
+    t = (text or "").lower()
+    keys = ["нагада", "нагадув", "додай", "додати", "створи подію", "створити подію",
+            "запиши", "постав", "заплануй", "запланувати", "in calendar", "в календар",
+            "до календар", "reminder", "remind", "нагадай"]
+    return any(k in t for k in keys)
+
+
+_UA_MONTHS = {
+    "січ": 1, "лют": 2, "бер": 3, "квіт": 4, "трав": 5, "черв": 6,
+    "лип": 7, "серп": 8, "вер": 9, "жовт": 10, "лист": 11, "груд": 12,
+}
+
+
+def _local_event_intent(text: str, now: datetime):
+    """Fallback-парсер нагадувань без AI. Розуміє:
+    'додай нагадування STK на 21.06 о 11:00', 'нагадай завтра о 14:00 лікар',
+    'постав подію 28.06.2026 STK'. Повертає intent dict або None."""
+    import re
+    t = (text or "").strip()
+    tl = t.lower()
+    if not _looks_like_reminder_request(t):
+        return None
+
+    work = t  # робоча копія, з якої поступово вирізаємо розпізнане
+    date_obj = None
+    time_str = None
+
+    # ── 1. Час (ПЕРШИМ — щоб не сплутати з датою) ──
+    # 1a. HH:MM з обов'язковим маркером "о/об/at" АБО двокрапкою
+    mt = re.search(r'(?:\b(?:о|об|at)\s*)(\d{1,2})[:.](\d{2})\b', tl)
+    if not mt:
+        mt = re.search(r'\b(\d{1,2}):(\d{2})\b', tl)  # лише з двокрапкою (крапка = дата)
+    if mt:
+        hh, mm = int(mt.group(1)), int(mt.group(2))
+        if 0 <= hh < 24 and 0 <= mm < 60:
+            time_str = f"{hh:02d}:{mm:02d}"
+            work = work[:mt.start()] + " " + work[mt.end():]
+            tl = work.lower()
+    # 1b. "о 11" / "об 9" (година без хвилин)
+    if time_str is None:
+        mt2 = re.search(r'\b(?:о|об)\s+(\d{1,2})\b(?!\s*[:.]\d)', tl)
+        if mt2:
+            hh = int(mt2.group(1))
+            if 0 <= hh < 24:
+                time_str = f"{hh:02d}:00"
+                work = work[:mt2.start()] + " " + work[mt2.end():]
+                tl = work.lower()
+
+    # ── 2. Дата ──
+    # 2a. 21.06 / 21.06.2026 / 21/06
+    m = re.search(r'\b(\d{1,2})[.\/](\d{1,2})(?:[.\/](\d{2,4}))?\b', work)
+    if m:
+        d, mo = int(m.group(1)), int(m.group(2))
+        y = m.group(3)
+        year = now.year
+        if y:
+            year = int(y) if len(y) == 4 else 2000 + int(y)
+        try:
+            date_obj = now.replace(year=year, month=mo, day=d).date()
+            work = work[:m.start()] + " " + work[m.end():]
+            tl = work.lower()
+        except Exception:
+            date_obj = None
+    # 2b. словесні
+    if date_obj is None:
+        for word, days in [("післязавтра", 2), ("завтра", 1), ("сьогодні", 0)]:
+            if word in tl:
+                date_obj = (now + timedelta(days=days)).date()
+                work = re.sub(word, " ", work, flags=re.IGNORECASE)
+                tl = work.lower()
+                break
+    # 2c. "22 червня"
+    if date_obj is None:
+        m2 = re.search(r'\b(\d{1,2})\s+([а-яіїєґ]{3,})', tl)
+        if m2:
+            d = int(m2.group(1))
+            mon_word = m2.group(2)
+            for pref, mo in _UA_MONTHS.items():
+                if mon_word.startswith(pref):
+                    try:
+                        date_obj = now.replace(month=mo, day=d).date()
+                        work = work[:m2.start()] + " " + work[m2.end():]
+                        tl = work.lower()
+                    except Exception:
+                        pass
+                    break
+
+    if date_obj is None:
+        return None  # без дати не створюємо — нехай AI/користувач уточнить
+    if time_str is None:
+        time_str = "10:00"
+
+    # ── 3. Назва події (з того, що лишилось) ──
+    summary = work
+    for w in ["додай нагадування", "додай нагадуван", "нагадування про", "нагадай мені",
+              "нагадай", "нагадування", "додай подію", "створи подію", "створити подію",
+              "додати подію", "запланувати подію", "додай", "додати", "постав",
+              "заплануй", "запланувати", "запиши", "до календаря", "у календар",
+              "в календар", "подію", "про"]:
+        summary = re.sub(r'\b' + re.escape(w) + r'\b', " ", summary, flags=re.IGNORECASE)
+    summary = re.sub(r'\b(сьогодні|завтра|післязавтра|на|о|об|в|у)\b', ' ', summary, flags=re.IGNORECASE)
+    summary = re.sub(r'\s+', ' ', summary).strip(" -—:,.")
+    if not summary or len(summary) < 2:
+        summary = "Нагадування"
+
+    return {
+        "action": "create_event",
+        "summary": summary,
+        "date": date_obj.strftime("%Y-%m-%d"),
+        "time": time_str,
+        "duration_hours": 1,
+        "description": "Створено асистентом за запитом Олега",
+    }
 
 
 def _handle_create_event(intent: dict, now: datetime) -> str:
@@ -815,10 +1001,14 @@ def _handle_create_event(intent: dict, now: datetime) -> str:
 
         res = create_calendar_event(summary, start_dt, end_dt, description)
         if res["ok"]:
+            wd = ["понеділок","вівторок","середа","четвер","п'ятниця","субота","неділя"][start_dt.weekday()]
             date_fmt = start_dt.strftime("%d.%m.%Y")
-            return f"✅ Подію додано в Calendar: <b>{summary}</b> — {date_fmt} о {time_str}"
+            return (f"✅ <b>Додано в Google Calendar</b>\n"
+                    f"📌 {summary}\n"
+                    f"🗓 {date_fmt} ({wd}) о {time_str}")
         else:
-            return f"❌ Не вдалось створити подію: {res['error']}"
+            return (f"❌ Не вдалось створити подію «{summary}»: {res['error']}\n"
+                    f"Спробуй ще раз або перевір підключення Google Calendar.")
     except Exception as e:
         return f"❌ Помилка при створенні події: {e}"
 
