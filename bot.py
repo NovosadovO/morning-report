@@ -45,6 +45,11 @@ import sys
 sys.path.insert(0, os.path.dirname(__file__))
 from monitor import get_prices, get_weather, get_calendar, get_emails
 
+# ─── WRAPPER для проактивних повідомлень ─────────────────────────────────────
+def _send_telegram_text(text):
+    """Wrapper — надсилає текст в основний чат без необхідності передавати chat_id"""
+    send(TELEGRAM_CHAT, text)
+
 # ─── TELEGRAM API ─────────────────────────────────────────────────────────────
 
 def api(method, data=None):
@@ -2939,7 +2944,7 @@ def main():
             # Проактивний помічник — кожні ~5-10 хвилин (якщо користувач неактивний)
             try:
                 if _ASSISTANT_AVAILABLE and should_send_proactive_message(_PROACTIVE_LAST_MESSAGE_TIME):
-                    send_proactive_message(send)
+                    send_proactive_message(_send_telegram_text)
                     _PROACTIVE_LAST_MESSAGE_TIME = time.time()
             except Exception as _pa:
                 print(f"⚠️ Proactive message error: {_pa}", flush=True)
