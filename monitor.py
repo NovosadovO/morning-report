@@ -2303,7 +2303,1294 @@ def _get_current_shift_context(calendar_text=""):
     return {"shift": shift, "is_working_now": is_working_now, "greeting_override": greeting_override}
 
 
-    # ── КРОК 7: AI-підсумок — знає про календар ─────────────────────────────
+def get_city_traffic():
+    """Ситуація на дорогах Košice через TomTom — інциденти."""
+    try:
+        import sys, os as _os
+        sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+        from traffic_kosice import format_traffic_report
+        return format_traffic_report()
+    except Exception as e:
+        print(f"Traffic error: {e}")
+        return None
+
+
+# ─── MAIN ─────────────────────────────────────────────────────────────────────
+
+MAIN_SENT_FILE = os.path.join(_DATA_DIR, "monitor_main_sent.json")
+
+_GH_DATA_BRANCH = "data"  # окрема гілка для даних — не тригерить Railway
+
+# Версія коду цього інстансу. Підвищуй при кожному значущому фіксі звіту.
+# Якщо слот claimed старішою версією — свіжий інстанс ПЕРЕХОПЛЮЄ слот і робить звіт.
+# Це гасить ситуацію "старий інстанс claim-ить слот першим" коли він живий десь поза Railway.
+_CODE_VERSION = 20260618_2
+
+def _gh_get_sent():
+    """Читає monitor_main_sent.json з GitHub гілки data."""
+    import base64
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
+    if not gh_token:
+        return None, None
+    url = f"https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_main_sent.json?ref={_GH_DATA_BRANCH}"
+    req = urllib.request.Request(url, headers={
+        "Authorization": f"token {gh_token}",
+        "User-Agent": "morning-report-bot"
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=8) as r:
+            d = json.loads(r.read())
+            content = json.loads(base64.b64decode(d["content"]).decode())
+            return content, d["sha"]
+    except Exception:
+        return {}, None
+
+def _gh_get_json(filename):
+    """Читає довільний JSON-файл з GitHub гілки data. Повертає (dict, sha)."""
+    import base64
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
+    if not gh_token:
+        return {}, None
+    url = f"https://api.github.com/repos/NovosadovO/morning-report/contents/data/{filename}?ref={_GH_DATA_BRANCH}"
+    req = urllib.request.Request(url, headers={
+        "Authorization": f"token {gh_token}",
+        "User-Agent": "morning-report-bot"
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=8) as r:
+            d = json.loads(r.read())
+            content = json.loads(base64.b64decode(d["content"]).decode())
+            return content, d["sha"]
+    except Exception:
+        return {}, None
+
+def _gh_save_json(filename, data, sha):
+    """Зберігає довільний JSON-файл на GitHub гілку data."""
+    import base64
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
+    if not gh_token:
+        return
+    url = f"https://api.github.com/repos/NovosadovO/morning-report/contents/data/{filename}"
+    content = base64.b64encode(json.dumps(data, indent=2).encode()).decode()
+    body_dict = {
+        "message": f"dedup: update {filename}",
+        "content": content,
+        "branch": _GH_DATA_BRANCH,
+    }
+    if sha:
+        body_dict["sha"] = sha
+    body = json.dumps(body_dict).encode()
+    req = urllib.request.Request(url, data=body, headers={
+        "Authorization": f"token {gh_token}",
+        "Content-Type": "application/json",
+        "User-Agent": "morning-report-bot"
+    }, method="PUT")
+    try:
+        with urllib.request.urlopen(req, timeout=10) as r:
+            pass
+    except Exception as e:
+        print(f"_gh_save_json({filename}) error: {e}")
+
+def _gh_save_sent(data, sha):
+    """Зберігає monitor_main_sent.json на GitHub гілку data."""
+    import base64
+    gh_token = os.environ.get("GITHUB_TOKEN", "")
+    if not gh_token:
+        return
+    url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_main_sent.json"
+    content = base64.b64encode(json.dumps(data, indent=2).encode()).decode()
+    body_dict = {
+        "message": "dedup: mark slot sent",
+        "content": content,
+        "branch": _GH_DATA_BRANCH,
+    }
+    if sha:
+        body_dict["sha"] = sha
+    body = json.dumps(body_dict).encode()
+    req = urllib.request.Request(url, data=body, headers={
+        "Authorization": f"token {gh_token}",
+        "Content-Type": "application/json",
+        "User-Agent": "morning-report-bot"
+    }, method="PUT")
+    try:
+        urllib.request.urlopen(req, timeout=8)
+    except Exception as e:
+        print(f"_gh_save_sent error: {e}")
+
+def _get_report_slot(now_local):
+    """
+    1 слот на годину: тільки :00
+    Повертає ключ слоту або None якщо ми не у вікні.
+    Вікно: 0-2хв кожної години (звужено з 5 до 3 — антидубль)
+    """
+    m = now_local.minute
+    h = now_local.hour
+    date_str = now_local.strftime("%Y-%m-%d")
+    if 0 <= m < 3:
+        return f"{date_str}T{h:02d}:00"
+    return None
+
+
+def _build_report_header(now_local, slot_key, cal_events_raw):
+    """
+    Єдиний чистий стиль заголовку з контекстом дня:
+    - Іконка часу доби + час + дата/день
+    - Рядок локації/типу дня (вдома / на роботі / вихідний)
+    - Мотиваційна фраза відповідно до реального часу
+    - Подія з календаря (якщо є)
+    """
+    import hashlib as _hsh
+    h = now_local.hour
+    weekday_ua   = ["Пн","Вт","Ср","Чт","Пт","Сб","Нд"][now_local.weekday()]
+    weekday_full = ["понеділок","вівторок","середа","четвер","п'ятниця","субота","неділя"][now_local.weekday()]
+    time_str = now_local.strftime("%H:%M")
+    date_str = now_local.strftime("%d.%m")
+    is_weekend = now_local.weekday() >= 5
+
+    # Seed для вибору фрази (стабільний для слоту, різний для кожного часу)
+    seed_int = int(_hsh.md5(slot_key.encode()).hexdigest(), 16)
+
+    # ── Час доби — правильно розбитий ──────────────────────────────────────
+    if 4 <= h < 7:
+        period = "early_morning"   # 04–07: рання зміна / дуже ранній підйом
+    elif 7 <= h < 11:
+        period = "morning"         # 07–11: звичайний ранок
+    elif 11 <= h < 14:
+        period = "midday"          # 11–14: обід
+    elif 14 <= h < 18:
+        period = "afternoon"       # 14–18: після обіду
+    elif 18 <= h < 22:
+        period = "evening"         # 18–22: вечір
+    else:
+        period = "night"           # 22–04: ніч
+
+    # ── Іконка та фрази залежно від часу ───────────────────────────────────
+    _icons = {
+        "early_morning": "🌄",
+        "morning":       "🌅",
+        "midday":        "☀️",
+        "afternoon":     "🌆",
+        "evening":       "🌙",
+        "night":         "🌃",
+    }
+    _period_icon = _icons[period]
+
+    _vibes = {
+        "early_morning": [
+            "Ранній підйом — ти вже попереду 💪",
+            "04:хх — рання зміна, вперед! ⚡",
+            "Рано встав — день виграв 🌄",
+            "Підйом! Ранкова зміна чекає 🏭",
+        ],
+        "morning": [
+            "Ранок вирішує день! 🌅",
+            "Доброго ранку, Олег! ☕ Заряджаємось.",
+            "Новий день — нові можливості 💪",
+            "Ранок — найпродуктивніший час! 🚀",
+        ],
+        "midday": [
+            "Половина дня позаду — тримаємо темп 🔥",
+            "Середина дня — перевіряємо пульс 📡",
+            "Не забудь нормально поїсти 😄",
+            "11–14: найкращий час для складних рішень 🧠",
+        ],
+        "afternoon": [
+            "Після обіду — фокус! 🎯",
+            "Друга половина дня, Олег 💼",
+            "Час для справ 📋",
+            "Фінальний відрізок дня 🏁",
+        ],
+        "evening": [
+            "Вечір — підбиваємо підсумки 🌙",
+            "Гарний день? Занотуй результати ✍️",
+            "Вечірній огляд — всі показники ✅",
+            "Завтра буде ще кращий день! 🌟",
+        ],
+        "night": [
+            "Вже пізно — не забудь відпочити 😴",
+            "Нічний моніторинг 🦉",
+            "Тихо навколо — час для себе 🌌",
+            "Опівніч — зберігай сили 💤",
+        ],
+    }
+    _vibe = _vibes[period][seed_int % len(_vibes[period])]
+
+    # ── Контекст дня: де знаходиться і який тип дня ────────────────────────
+    try:
+        _sc = _get_current_shift_context(cal_events_raw or "")
+        _shift      = _sc.get("shift", "free")
+        _working    = _sc.get("is_working_now", False)
+    except Exception:
+        _shift, _working = "free", False
+
+    if is_weekend:
+        _day_ctx = "🏖 Вихідний"
+    elif _working:
+        if _shift == "early":
+            _day_ctx = "🏭 На роботі  ·  Рання зміна"
+        elif _shift == "night":
+            _day_ctx = "🏭 На роботі  ·  Нічна зміна"
+        else:
+            _day_ctx = "🏭 На роботі"
+    elif _shift == "early" and h < 6:
+        _day_ctx = "🏠 Вдома  ·  Готується до ранньої"
+    elif _shift == "night" and h < 18:
+        _day_ctx = "🏠 Вдома  ·  Нічна зміна сьогодні"
+    else:
+        _day_ctx = "🏠 Вдома"
+
+    # ── Підказка з календаря ───────────────────────────────────────────────
+    cal_hint = ""
+    if cal_events_raw and "нічого не заплановано" not in cal_events_raw.lower():
+        import re as _re
+        ev_names = _re.findall(r"—\s*<b>(.{2,40}?)</b>", cal_events_raw)
+        if ev_names:
+            cal_hint = (
+                f"\n📌 {esc(ev_names[0])}"
+                if len(ev_names) == 1
+                else f"\n📌 {esc(ev_names[0])} +{len(ev_names)-1}"
+            )
+
+    # ── Єдиний стиль заголовку ─────────────────────────────────────────────
+    header = (
+        f"{_period_icon}\n"
+        f"<b>ЗВІТ  ·  {weekday_ua} {date_str}  ·  {time_str}</b>\n"
+        f"{_day_ctx}\n"
+        f"<i>{_vibe}</i>"
+        f"{cal_hint}"
+    )
+    return header
+
+
+def _get_calendar_context_for_report():
+    """Витягує події з УСІХ календарів (включно з нагадуваннями, завданнями, ДН)."""
+    token = _calendar_access_token()
+    if not token:
+        return [], "нічого не заплановано"
+    try:
+        headers = {"Authorization": f"Bearer {token}"}
+        now = datetime.now(timezone.utc)
+        now_local = now + timedelta(hours=2)
+        today_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        today_end = today_start + timedelta(hours=48)
+        # Читаємо ВСІ календарі
+        events = _fetch_events_all_calendars(headers, today_start, today_end, max_per_cal=20)
+        result = []
+        for ev in events:
+            start = ev["start"].get("dateTime") or ev["start"].get("date")
+            summary = ev.get("summary", "")
+            try:
+                dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
+                tz_local = timezone(timedelta(hours=2))
+                t = dt.astimezone(tz_local).strftime("%H:%M") if "T" in start else "весь день"
+                ev_date = dt.astimezone(tz_local).strftime("%Y-%m-%d")
+            except:
+                t = start; ev_date = ""
+            result.append({"summary": summary, "time": t, "date": ev_date, "raw_start": start})
+        text_parts = [f"{e['time']} {e['summary']}" for e in result if e['date'] == now_local.strftime("%Y-%m-%d")]
+        return result, (", ".join(text_parts) if text_parts else "нічого не заплановано")
+    except Exception as e:
+        print(f"_get_calendar_context_for_report error: {e}")
+        return [], "нічого не заплановано"
+
+
+def _format_weather_visual(weather_text):
+    """Форматує погоду з мінімалістичним візуальним стилем."""
+    import re as _re
+    if not weather_text:
+        return None
+    # Витягуємо ключові дані
+    temp_m = _re.search(r"([-−]?\d+)[°℃]", weather_text)
+    feels_m = _re.search(r"(?:відчув|feels)[^\d]*([-−]?\d+)", weather_text, _re.I)
+    humid_m = _re.search(r"вологість[:\s]*([\d]+)%", weather_text, _re.I)
+    wind_m = _re.search(r"вітер[:\s]*([\d.]+)", weather_text, _re.I)
+    desc_m = _re.search(r"(?:Опис|desc|:)\s*([а-яА-ЯіїєёІЇЄ ,а-я]+?)(?:\n|$)", weather_text)
+
+    if not temp_m:
+        return weather_text  # fallback
+
+    temp = int(temp_m.group(1).replace("−", "-"))
+    feels = int(feels_m.group(1).replace("−", "-")) if feels_m else temp
+
+    # Погодний емоджі
+    wl = weather_text.lower()
+    if "гроза" in wl: w_icon = "⛈"
+    elif "злива" in wl or "сильний дощ" in wl: w_icon = "🌧"
+    elif "дощ" in wl: w_icon = "🌦"
+    elif "хмарно" in wl and "хмарно без опадів" not in wl: w_icon = "☁️"
+    elif "ясно" in wl or "сонячно" in wl: w_icon = "☀️"
+    elif "туман" in wl: w_icon = "🌫"
+    elif "сніг" in wl: w_icon = "❄️"
+    elif "мряка" in wl: w_icon = "🌧"
+    else: w_icon = "🌤"
+
+    # Температурний колір
+    if temp < 0: t_style = "❄️"
+    elif temp < 10: t_style = "🥶"
+    elif temp < 20: t_style = "😊"
+    elif temp < 28: t_style = "☀️"
+    else: t_style = "🥵"
+
+    # Поради
+    advice = []
+    if "дощ" in wl or "злива" in wl: advice.append("☂️ парасолька")
+    if "гроза" in wl: advice.append("🏠 краще вдома")
+    if temp < 0: advice.append("🧣 мороз!")
+    elif temp < 8: advice.append("🧥 куртка")
+    elif temp > 28: advice.append("💧 пий воду")
+    if "туман" in wl: advice.append("🚗 обережно на дорозі")
+
+    result = f"🌡 <b>ПОГОДА ЗАРАЗ</b>\n"
+    result += f"{w_icon} <b>{temp}°C</b>"
+    if feels != temp:
+        result += f"  (відчув. {feels}°)"
+    if humid_m: result += f"  💧{humid_m.group(1)}%"
+    if wind_m: result += f"  🌬{wind_m.group(1)} м/с"
+    if advice:
+        result += f"\n<i>{'  ·  '.join(advice)}</i>"
+    return result
+
+
+def _format_prices_visual(prices_text, cal_events_text=""):
+    """Форматує крипто з акцентом на зміні + calendar-aware порада."""
+    import re as _re
+    if not prices_text:
+        return None
+
+    up = prices_text.count("🔺")
+    dn = prices_text.count("🔻")
+
+    if up > dn + 1:
+        market = "🟢 БИЧАЧИЙ"
+        market_tip = "Ринок зелений — гарний час переглянути портфель."
+    elif dn > up + 1:
+        market = "🔴 ВЕДМЕЖИЙ"
+        market_tip = "Ринок падає — не панікуй, стеж за стоп-лосами."
+    else:
+        market = "🟡 НЕЙТРАЛЬНИЙ"
+        market_tip = "Бокова торгівля — жодних різких рухів."
+
+    # Якщо є вільний час — додаємо контекстну пораду
+    if "вихідний" in cal_events_text.lower() or not cal_events_text or "нічого" in cal_events_text:
+        tip_line = f"\n<i>💡 {market_tip}</i>"
+    else:
+        tip_line = ""
+
+    # Витягуємо монети
+    coins = []
+    for coin in ["BTC", "ETH", "AVAX", "ONDO"]:
+        row_m = _re.search(r"[^\n]*" + coin + r"[^\n]*", prices_text)
+        if not row_m: continue
+        row = row_m.group(0)
+        price_m = _re.search(r"\$([\d,]+(?:\.\d+)?)", row)
+        pct_m = _re.search(r"([+\-−\+][\d.]+)%", row)
+        pct3h_m = _re.search(r"\[pct3h:([+\-][\d.]+)\]", row)
+        if not price_m: continue
+        price = price_m.group(1)
+        pct_val = float(pct_m.group(1).replace("−", "-")) if pct_m else 0
+        trend_icon = "🔺" if pct_val > 0 else ("🔻" if pct_val < 0 else "➡️")
+        pct_str = (("+" if pct_val > 0 else "") + f"{pct_val:.2f}%") if pct_m else ""
+        # % від попереднього звіту
+        if pct3h_m:
+            p3h = float(pct3h_m.group(1))
+            sign3h = "+" if p3h >= 0 else ""
+            prev_str = f"  <i>({sign3h}{p3h:.2f}% від попер.)</i>"
+        else:
+            prev_str = ""
+        coins.append(f"{trend_icon} <b>{coin}</b> <code>${price}</code>  {pct_str}{prev_str}")
+
+    header = f"💰 <b>КРИПТО</b>  ·  {market}"
+    body = "\n".join(coins) if coins else prices_text[:300]
+    return f"{header}\n{body}{tip_line}"
+
+
+def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
+    """
+    Генерує PNG з лінійними графіками цін BTC/ETH/AVAX/ONDO за N днів.
+    Темна тема, 2×2, великі шрифти, чіткі дати і числа.
+    """
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        import matplotlib.dates as mdates
+        import matplotlib.ticker as mticker
+        import numpy as np
+        from datetime import datetime as dt
+        import io, time as _t
+
+        COINS_MAP = [
+            ("BTC", "bitcoin",      "#F7931A"),
+            ("ETH", "ethereum",     "#627EEA"),
+            ("AVAX","avalanche-2",  "#E84142"),
+            ("ONDO","ondo-finance", "#00C6A2"),
+        ]
+        BG    = "#0D1117"
+        PANEL = "#161B22"
+        GRID  = "#1E2530"
+        TEXT  = "#E6EDF3"
+        MUTED = "#8B949E"
+        BORDER= "#30363D"
+
+        hist   = storage.load_price_history()
+        cutoff = _t.time() - days * 86400
+
+        fig, axes = plt.subplots(2, 2, figsize=(20, 13))
+        fig.patch.set_facecolor(BG)
+        fig.subplots_adjust(hspace=0.55, wspace=0.38, left=0.07, right=0.97, top=0.90, bottom=0.08)
+
+        has_any_data = False
+
+        for ax, (sym, cid, color) in zip(axes.flat, COINS_MAP):
+            ax.set_facecolor(PANEL)
+            for spine in ax.spines.values():
+                spine.set_edgecolor(BORDER)
+                spine.set_linewidth(1.0)
+            ax.tick_params(colors=MUTED, labelsize=12, length=4)
+            ax.xaxis.set_major_formatter(mdates.DateFormatter("%d.%m"))
+            ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=1))
+
+            pts = [p for p in hist.get(cid, []) if p[0] >= cutoff]
+            pts.sort(key=lambda x: x[0])
+
+            if len(pts) < 2:
+                ax.text(0.5, 0.5, "накопичується...", ha="center", va="center",
+                        color=MUTED, transform=ax.transAxes, fontsize=13)
+                ax.set_title(sym, color=color, fontsize=16, fontweight="bold", pad=10)
+                continue
+
+            has_any_data = True
+            timestamps = [dt.utcfromtimestamp(p[0]) for p in pts]
+            prices     = [p[1] for p in pts]
+            p_min, p_max = min(prices), max(prices)
+
+            # Лінія + заливка
+            ax.plot(timestamps, prices, color=color, linewidth=2.8, zorder=3)
+            ax.fill_between(timestamps, prices, p_min * 0.998,
+                            color=color, alpha=0.18, zorder=2)
+
+            # Тренд-лінія
+            x_num  = np.array([(t - timestamps[0]).total_seconds() for t in timestamps])
+            coeffs = np.polyfit(x_num, prices, 1)
+            t_color = "#3FB950" if coeffs[0] >= 0 else "#F85149"
+            ax.plot(timestamps, np.polyval(coeffs, x_num), color=t_color,
+                    linewidth=2.0, linestyle="--", alpha=0.85, zorder=4)
+
+            # Мітка першої і останньої ціни
+            def _fmt(v):
+                return f"${v:,.2f}" if v < 10 else f"${v:,.0f}"
+            ax.annotate(_fmt(prices[0]),
+                xy=(timestamps[0], prices[0]),
+                xytext=(6, 8), textcoords="offset points",
+                color=MUTED, fontsize=10, fontweight="bold", va="center")
+            ax.annotate(_fmt(prices[-1]),
+                xy=(timestamps[-1], prices[-1]),
+                xytext=(-6, 8), textcoords="offset points",
+                color=color, fontsize=13, fontweight="bold", va="center",
+                ha="right")
+
+            ax.grid(True, color=GRID, linewidth=0.8, zorder=1)
+            ax.set_ylim(p_min * 0.993, p_max * 1.03)
+
+            ch   = (prices[-1] - prices[0]) / prices[0] * 100
+            sign = "+" if ch >= 0 else ""
+            ch_color = "#3FB950" if ch >= 0 else "#F85149"
+
+            ax.set_title(f"{sym}  {_fmt(prices[-1])}", color=TEXT, fontsize=16,
+                         fontweight="bold", pad=8, loc="left")
+            ax.text(0.99, 1.03, f"{sign}{ch:.1f}%", transform=ax.transAxes,
+                    color=ch_color, fontsize=14, fontweight="bold",
+                    ha="right", va="bottom")
+
+            # Y-вісь форматування
+            if prices[-1] >= 1000:
+                ax.yaxis.set_major_formatter(mticker.FuncFormatter(
+                    lambda v, _: f"${v/1000:.0f}k"))
+            elif prices[-1] >= 10:
+                ax.yaxis.set_major_formatter(mticker.FuncFormatter(
+                    lambda v, _: f"${v:.0f}"))
+            else:
+                ax.yaxis.set_major_formatter(mticker.FuncFormatter(
+                    lambda v, _: f"${v:.3f}"))
+            ax.yaxis.set_tick_params(labelcolor=MUTED, labelsize=11)
+            plt.setp(ax.get_xticklabels(), rotation=30, ha="right", fontsize=11)
+
+        if not has_any_data:
+            print("[generate_crypto_trend_chart] no history data yet")
+            plt.close(fig)
+            return None
+
+        from datetime import datetime as _dtnow
+        _now_label = (_dtnow.utcnow()).strftime("%d.%m.%Y %H:%M UTC")
+        fig.suptitle(f"BTC / ETH / AVAX / ONDO  ·  {days}d  ·  {_now_label}",
+                     color=TEXT, fontsize=17, fontweight="bold", y=0.96)
+
+        buf = io.BytesIO()
+        fig.savefig(buf, format="png", dpi=150, bbox_inches="tight",
+                    facecolor=BG, edgecolor="none")
+        plt.close(fig)
+        buf.seek(0)
+        return buf.read()
+    except Exception as e:
+        print(f"[generate_crypto_trend_chart] error: {e}")
+        return None
+
+
+def generate_weight_trend_chart(days: int = 30) -> bytes | None:
+    """
+    Генерує PNG з тренд-лінією ваги (останні N точок).
+    Темна тема, великі шрифти, fill_between, ціль 78 кг пунктиром, тренд-лінія.
+    """
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        import matplotlib.dates as mdates
+        import numpy as np
+        import io
+        from datetime import datetime as _dt, timedelta as _td
+
+        BG          = "#0D1117"
+        PANEL       = "#161B22"
+        GRID        = "#1E2530"
+        BORDER      = "#30363D"
+        TEXT        = "#E6EDF3"
+        MUTED       = "#8B949E"
+        GOAL_COLOR  = "#58A6FF"
+        LINE_COLOR  = "#3FB950"
+
+        try:
+            import storage as _storage_chart
+            # weight_data.json — актуальний файл (weight.py зберігає сюди)
+            raw = _storage_chart.load("weight_data.json") or {}
+            if not raw:
+                # fallback на старий weight.json
+                raw = _storage_chart.load_weight() or {}
+        except Exception:
+            return None
+
+        if not raw:
+            return None
+
+        entries = []
+        for date_str, w in raw.items():
+            try:
+                d = _dt.strptime(date_str, "%Y-%m-%d").date()
+                if w is not None:
+                    entries.append((d, float(w)))
+            except Exception:
+                continue
+        entries.sort(key=lambda x: x[0])
+
+        # Беремо всі записи за останні N днів (за датою, не за кількістю точок)
+        cutoff = (_dt.utcnow() - _td(days=days)).date()
+        entries = [(d, w) for d, w in entries if d >= cutoff]
+
+        if len(entries) < 2:
+            return None
+
+        dates   = [e[0] for e in entries]
+        weights = [e[1] for e in entries]
+        x_dates = [_dt.combine(d, _dt.min.time()) for d in dates]
+
+        fig, ax = plt.subplots(figsize=(18, 7), facecolor=BG)
+        ax.set_facecolor(PANEL)
+        for spine in ax.spines.values():
+            spine.set_edgecolor(BORDER)
+            spine.set_linewidth(1.2)
+
+        # Fill between
+        ax.fill_between(x_dates, weights, min(weights) - 0.5,
+                        alpha=0.20, color=LINE_COLOR)
+
+        # Лінія ваги
+        ax.plot(x_dates, weights, color=LINE_COLOR, linewidth=3.0,
+                marker="o", markersize=7, markerfacecolor=LINE_COLOR,
+                zorder=3, label="Вага")
+
+        # Тренд-лінія
+        if len(weights) >= 4:
+            xn = np.arange(len(weights))
+            z  = np.polyfit(xn, weights, 1)
+            p  = np.poly1d(z)
+            trend_col = "#F85149" if z[0] > 0 else "#3FB950"
+            ax.plot(x_dates, p(xn), "--", color=trend_col,
+                    linewidth=2.2, alpha=0.85, label="Тренд")
+
+        # Ціль 78 кг
+        ax.axhline(78.0, color=GOAL_COLOR, linewidth=2.0,
+                   linestyle=":", alpha=0.85, label="Ціль 78 кг")
+
+        # Мітки кожної точки
+        for xi, (xd, w) in enumerate(zip(x_dates, weights)):
+            ax.annotate(f"{w:.1f}",
+                        (xd, w),
+                        textcoords="offset points", xytext=(0, 10),
+                        color=TEXT, fontsize=9, ha="center")
+
+        # Мітки першої і останньої — великі
+        ax.annotate(f"{weights[0]:.1f}",
+                    (x_dates[0], weights[0]),
+                    textcoords="offset points", xytext=(8, -14),
+                    color=MUTED, fontsize=13, fontweight="bold")
+        ax.annotate(f"{weights[-1]:.1f}",
+                    (x_dates[-1], weights[-1]),
+                    textcoords="offset points", xytext=(-8, -14),
+                    color=LINE_COLOR, fontsize=15, fontweight="bold", ha="right")
+
+        # Осі
+        ax.xaxis.set_major_formatter(mdates.DateFormatter("%d.%m.%Y"))
+        ax.xaxis.set_major_locator(mdates.AutoDateLocator())
+        plt.setp(ax.xaxis.get_majorticklabels(), rotation=35,
+                 ha="right", color=TEXT, fontsize=12)
+        ax.yaxis.set_tick_params(labelcolor=TEXT, labelsize=12)
+        ax.tick_params(colors=TEXT)
+        ax.grid(True, color=GRID, linewidth=0.8, alpha=0.8)
+        ax.set_ylabel("кг", color=TEXT, fontsize=13)
+
+        # Заголовок
+        delta    = round(weights[-1] - weights[0], 1)
+        sign     = "+" if delta > 0 else ""
+        to_goal  = round(weights[-1] - 78.0, 1)
+        goal_txt = f"до 78 кг: -{to_goal} кг" if to_goal > 0 else "ціль досягнута! 🏆"
+        from datetime import datetime as _dtnow2
+        _now_label = _dtnow2.utcnow().strftime("%d.%m.%Y %H:%M")
+        ax.set_title(
+            f"Вага: {dates[0].strftime('%d.%m')}–{dates[-1].strftime('%d.%m.%Y')}  ({len(entries)} записів, {sign}{delta} кг)  {goal_txt}  ·  {_now_label}",
+            color=TEXT, fontsize=15, fontweight="bold", pad=12)
+
+        leg = ax.legend(fontsize=12, facecolor=PANEL, edgecolor=BORDER,
+                        labelcolor=TEXT, framealpha=0.9)
+
+        fig.tight_layout(pad=1.5)
+
+        buf = io.BytesIO()
+        fig.savefig(buf, format="png", dpi=150, facecolor=BG, bbox_inches="tight")
+        plt.close(fig)
+        buf.seek(0)
+        return buf.read()
+
+    except Exception as e:
+        print(f"[generate_weight_trend_chart] error: {e}")
+        return None
+
+
+def generate_habits_chart(days: int = 30) -> bytes | None:
+    """
+    Генерує PNG з графіками звичок за останні N днів.
+    Теплова карта для булевих звичок + лінійний для сну.
+    Темна тема, великі шрифти, чіткі дати.
+    """
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        import matplotlib.dates as mdates
+        import numpy as np
+        import io
+        from datetime import datetime as _dt, timedelta as _td, date as _date
+
+        BG     = "#0D1117"
+        PANEL  = "#161B22"
+        GRID   = "#1E2530"
+        BORDER = "#30363D"
+        TEXT   = "#E6EDF3"
+        MUTED  = "#8B949E"
+
+        # Без емодзі у назвах — matplotlib не має emoji-шрифту (рендерить квадрати).
+        # Колір бару = ідентифікатор звички.
+        BOOL_HABITS = [
+            ("shower", "Душ",      "#58A6FF"),
+            ("run",    "Пробіжка", "#3FB950"),
+            ("water",  "Вода",     "#1F6FEB"),
+            ("tea",    "Чай",      "#D29922"),
+            ("sauna",  "Сауна",    "#F85149"),
+        ]
+        SLEEP_COLOR = "#A371F7"
+
+        try:
+            from storage import load_habits as _lh
+            raw = _lh() or {}
+        except Exception:
+            return None
+
+        if not raw:
+            return None
+
+        # Будуємо масив дат (останні N днів)
+        today = _date.today()
+        all_dates = [today - _td(days=i) for i in range(days - 1, -1, -1)]
+
+        # ── Збираємо дані ───────────────────────────────────────────────────
+        bool_matrix = {}  # habit_key -> [0/1/None per day]
+        sleep_vals  = []  # float or None per day
+
+        for hkey, _, _ in BOOL_HABITS:
+            bool_matrix[hkey] = []
+
+        for d in all_dates:
+            ds = d.isoformat()
+            entry = raw.get(ds, None)
+            for hkey, _, _ in BOOL_HABITS:
+                if entry is None:
+                    bool_matrix[hkey].append(np.nan)
+                else:
+                    v = entry.get(hkey)
+                    if v is None:
+                        bool_matrix[hkey].append(np.nan)
+                    else:
+                        bool_matrix[hkey].append(1.0 if v else 0.0)
+            # Sleep
+            if entry is None:
+                sleep_vals.append(None)
+            else:
+                sv = entry.get("sleep")
+                sleep_vals.append(float(sv) if sv is not None else None)
+
+        # Перевіряємо чи є взагалі дані
+        has_data = any(
+            not np.isnan(v)
+            for vals in bool_matrix.values()
+            for v in vals
+        ) or any(v is not None for v in sleep_vals)
+
+        if not has_data:
+            return None
+
+        # ── Малюємо ─────────────────────────────────────────────────────────
+        n_bool = len(BOOL_HABITS)
+        has_sleep = any(v is not None for v in sleep_vals)
+        n_rows = n_bool + (1 if has_sleep else 0)
+
+        fig_h = 2.5 * n_rows + 1.5
+        fig, axes = plt.subplots(n_rows, 1, figsize=(20, fig_h), facecolor=BG)
+        if n_rows == 1:
+            axes = [axes]
+        fig.subplots_adjust(hspace=0.6, left=0.10, right=0.97, top=0.90, bottom=0.10)
+
+        x_pos = list(range(len(all_dates)))
+        date_labels = [d.strftime("%d.%m") for d in all_dates]
+
+        # ── Булеві звички (bar chart: зелений=✅, червоний=❌, сірий=нема даних)
+        for ax_i, (hkey, hlabel, hcolor) in enumerate(BOOL_HABITS):
+            ax = axes[ax_i]
+            ax.set_facecolor(PANEL)
+            for spine in ax.spines.values():
+                spine.set_edgecolor(BORDER)
+                spine.set_linewidth(0.8)
+
+            vals = bool_matrix[hkey]
+            colors_bar = []
+            for v in vals:
+                if np.isnan(v):
+                    colors_bar.append("#2D333B")
+                elif v == 1.0:
+                    colors_bar.append(hcolor)
+                else:
+                    colors_bar.append("#F85149")
+
+            bars = ax.bar(x_pos, [1 if not np.isnan(v) else 0.3 for v in vals],
+                          color=colors_bar, width=0.85, zorder=3)
+
+            # Рахунок виконання
+            done  = sum(1 for v in vals if not np.isnan(v) and v == 1.0)
+            total = sum(1 for v in vals if not np.isnan(v))
+            pct   = f"{done}/{total}" if total > 0 else "0/0"
+
+            ax.set_yticks([])
+            ax.set_xlim(-0.5, len(x_pos) - 0.5)
+            ax.set_ylim(0, 1.4)
+            ax.grid(False)
+
+            # Підписи дат кожні 3 дні
+            tick_pos  = [i for i in x_pos if i % 3 == 0]
+            tick_labs = [date_labels[i] for i in tick_pos]
+            ax.set_xticks(tick_pos)
+            ax.set_xticklabels(tick_labs, color=TEXT, fontsize=11, rotation=30, ha="right")
+
+            ax.set_ylabel(hlabel, color=hcolor, fontsize=13, fontweight="bold",
+                          rotation=0, labelpad=5, ha="right", va="center")
+            ax.yaxis.set_label_coords(-0.01, 0.5)
+
+            # Підказка зверху
+            ax.text(0.99, 1.18, f"{pct}", transform=ax.transAxes,
+                    color=hcolor, fontsize=12, fontweight="bold",
+                    ha="right", va="top")
+
+        # ── Сон (лінійний графік)
+        if has_sleep:
+            ax = axes[n_bool]
+            ax.set_facecolor(PANEL)
+            for spine in ax.spines.values():
+                spine.set_edgecolor(BORDER)
+                spine.set_linewidth(0.8)
+
+            sx = [i for i, v in enumerate(sleep_vals) if v is not None]
+            sy = [v for v in sleep_vals if v is not None]
+
+            if len(sx) >= 2:
+                ax.plot(sx, sy, color=SLEEP_COLOR, linewidth=2.5,
+                        marker="o", markersize=7, zorder=3)
+                ax.fill_between(sx, sy, 0, color=SLEEP_COLOR, alpha=0.15, zorder=2)
+
+                # Лінія норми 8г
+                ax.axhline(8.0, color="#58A6FF", linewidth=1.5,
+                           linestyle=":", alpha=0.7, label="Норма 8г")
+
+                # Мітки значень
+                for xi, yi in zip(sx, sy):
+                    ax.annotate(f"{yi:.0f}г",
+                                (xi, yi), xytext=(0, 8),
+                                textcoords="offset points",
+                                color=TEXT, fontsize=10, ha="center")
+
+                avg_sleep = sum(sy) / len(sy)
+                ax.text(0.99, 1.18, f"Середнє: {avg_sleep:.1f}г",
+                        transform=ax.transAxes,
+                        color=SLEEP_COLOR, fontsize=12, fontweight="bold",
+                        ha="right", va="top")
+
+            ax.set_ylim(0, max(sy or [10]) * 1.3 + 1)
+            ax.set_xlim(-0.5, len(x_pos) - 0.5)
+            ax.tick_params(colors=TEXT, labelsize=11)
+            ax.set_ylabel("Сон", color=SLEEP_COLOR, fontsize=13, fontweight="bold",
+                          rotation=0, labelpad=5, ha="right", va="center")
+            ax.yaxis.set_label_coords(-0.01, 0.5)
+            ax.yaxis.set_tick_params(labelcolor=TEXT, labelsize=11)
+
+            tick_pos  = [i for i in x_pos if i % 3 == 0]
+            tick_labs = [date_labels[i] for i in tick_pos]
+            ax.set_xticks(tick_pos)
+            ax.set_xticklabels(tick_labs, color=TEXT, fontsize=11, rotation=30, ha="right")
+            ax.grid(True, color=GRID, linewidth=0.6, alpha=0.7)
+
+        from datetime import datetime as _dtnow3
+        _now_label = _dtnow3.utcnow().strftime("%d.%m.%Y %H:%M UTC")
+        fig.suptitle(f"Звички за {days} днів  ·  {_now_label}",
+                     color=TEXT, fontsize=17, fontweight="bold", y=0.97)
+
+        buf = io.BytesIO()
+        fig.savefig(buf, format="png", dpi=150, bbox_inches="tight",
+                    facecolor=BG, edgecolor="none")
+        plt.close(fig)
+        buf.seek(0)
+        return buf.read()
+
+    except Exception as e:
+        print(f"[generate_habits_chart] error: {e}")
+        return None
+
+
+
+
+_FORCE_REPORT = False  # встановлюється в True для ручного виклику /звіт
+
+
+def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
+    """
+    Глибокий тематичний AI-аналіз по 7 темах (фінанси, біг, здоров'я/вага,
+    звички, пошта, календар, підсумок+мотивація). Стиль: теплий, мотивуючий,
+    з підтримкою. Аналізує ТІЛЬКИ реальні дані з ctx.
+    Повертає текст або порожній рядок.
+    """
+    print(f"[themes_ai] called: key={'YES' if gemini_key else 'NO'}", flush=True)
+    if not gemini_key:
+        print(f"[themes_ai] skipped: no gemini_key", flush=True)
+        return ""
+    try:
+        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+
+        # Збираємо реальний контекст у текст
+        def _g(k, default="немає даних"):
+            v = ctx.get(k)
+            if v is None or v == "":
+                return default
+            return str(v)
+
+        data_block = (
+            f"ЧАС: {now_local.strftime('%H:%M %d.%m.%Y')} (Кошице, UTC+2)\n"
+            f"ЗМІНА/СТАТУС: {_g('shift_hint')}\n"
+            f"--- ФІНАНСИ/ІНВЕСТИЦІЇ ---\n{_g('finance')}\n"
+            f"--- БІГ / STRAVA ---\n{_g('running')}\n"
+            f"--- ЗДОРОВ'Я + ВАГА ---\n{_g('health')}\n"
+            f"--- ЗВИЧКИ (дисципліна) ---\n{_g('habits')}\n"
+            f"--- ПОШТА ---\n{_g('emails')}\n"
+            f"--- КАЛЕНДАР / ЗМІНИ ---\n{_g('calendar')}\n"
+            f"--- ДЕНЬ-РЕЙТИНГ ---\n{_g('day_score')}\n"
+        )
+
+        prompt = (
+            f"Ти — особистий AI-наставник Олега Новосадова з Кошице (Словаччина). "
+            f"Працює на заводі Minebea Mitsumi позмінно. Цілі: фінансова незалежність, "
+            f"схуднення (зараз ~83-84 кг, ціль 78 кг), нова робота у сфері інвестицій, "
+            f"здоровий спосіб життя. Інтереси: інвестиції, біг, спорт.\n\n"
+            f"Ось РЕАЛЬНІ дані Олега ПРЯМО ЗАРАЗ:\n{data_block}\n"
+            f"Напиши теплий, мотивуючий аналіз з підтримкою — як друг-наставник який вірить у нього. "
+            f"Структура (кожна секція 2-3 речення, ТІЛЬКИ якщо є реальні дані по темі — інакше пропусти):\n\n"
+            f"💰 ФІНАНСИ — оціни поточний стан, дай 1 конкретну дію на сьогодні для руху до фін. незалежності.\n\n"
+            f"🏃 БІГ — проаналізуй прогрес. Якщо вже бігав — похвали і дай пораду на відновлення; якщо ні і є час — мотивуй.\n\n"
+            f"⚖️ ЗДОРОВ'Я + ВАГА — на основі ваги і звичок дай 1 практичну пораду для схуднення (харчування/рух).\n\n"
+            f"✅ ЗВИЧКИ — оціни дисципліну сьогодні, підтримай за виконане, м'яко нагадай про невиконане.\n\n"
+            f"📬 ПОШТА — якщо є важливі листи, виділи що пріоритетне і що зробити.\n\n"
+            f"📅 ДЕНЬ — на основі календаря/зміни дай 1 пораду як оптимізувати наступні години.\n\n"
+            f"🌟 МОТИВАЦІЯ — 1-2 теплі речення підтримки, нагадай що кожен крок наближає до цілей.\n\n"
+            f"ПРАВИЛА:\n"
+            f"- Звертайся до Олега на 'ти', тепло і по-дружньому.\n"
+            f"- ТІЛЬКИ реальні дані — НЕ вигадуй цифри. Якщо по темі 'немає даних' — пропусти секцію.\n"
+            f"- Враховуй зміну: якщо Олег ЗАРАЗ на роботі — не пропонуй те що неможливо зробити на заводі.\n"
+            f"- Без вступів типу 'Привіт' чи 'Звичайно'. Українська мова. Кожне речення завершуй повністю.\n"
+            f"- Емодзі-заголовки залишай як вказано. Без markdown (**) і без HTML."
+        )
+        body = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": 8000,
+                "temperature": 0.75,
+                "thinkingConfig": {"thinkingBudget": 0},
+            },
+        }).encode()
+        print(f"[themes_ai] sending request to Gemini (timeout=90, retry-on-429)...", flush=True)
+        resp = _gem_post(
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            body, timeout=90, tag="themes_ai"
+        )
+        _cand = (resp.get("candidates") or [{}])[0]
+        _finish = _cand.get("finishReason", "UNKNOWN")
+        print(f"[themes_ai] finishReason={_finish}", flush=True)
+        # БЕЗПЕЧНИЙ парсинг: якщо немає parts (напр. MAX_TOKENS на thinking) — не падаємо
+        _parts = (_cand.get("content") or {}).get("parts") or []
+        if not _parts:
+            _um = resp.get("usageMetadata", {})
+            print(f"[themes_ai] EMPTY parts! finish={_finish} usage={_um}", flush=True)
+            return ""
+        result = (_parts[0].get("text") or "").strip()
+        import re as _re_t
+        result = _re_t.sub(r'\*\*(.+?)\*\*', r'\1', result)
+        result = _re_t.sub(r'\*(.+?)\*', r'\1', result)
+        result = _re_t.sub(r'#{1,6}\s*', '', result)
+        result = _re_t.sub(r'<[^>]+>', '', result)
+        if _finish == "MAX_TOKENS":
+            _last_dot = max(result.rfind(". "), result.rfind(".\n"), result.rfind("!"), result.rfind("?"))
+            if _last_dot > len(result) // 2:
+                result = result[:_last_dot + 1].rstrip()
+        print(f"[themes_ai] OK — {len(result)} chars", flush=True)
+        return result
+    except Exception as e:
+        import traceback as _tb_t
+        print(f"[themes_ai] ERROR: {e}", flush=True)
+        print(_tb_t.format_exc(), flush=True)
+        return ""
+
+
+def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "") -> str:
+    """
+    Генерує окремий AI аналіз астро-блоку.
+    Повертає текст аналізу або порожній рядок.
+    """
+    print(f"[astro_ai] called: astro_len={len(astro_text) if astro_text else 0}, key={'YES' if gemini_key else 'NO'}", flush=True)
+    if not astro_text or not gemini_key:
+        print(f"[astro_ai] skipped: no astro_text or no gemini_key", flush=True)
+        return ""
+
+    # Статична натальна карта Олега (22.09.1989, 02:52, Львів)
+    NATAL_CHART = """=== НАТАЛЬНА КАРТА ОЛЕГА НОВОСАДОВА ===
+Дата народження: 22 вересня 1989, 02:52, Львів (Україна)
+Система домів: Placidus
+
+Асцендент (AC): Лев ♌ 1.0° — 1-й дім
+Сонце ☉: Діва ♍ 28.9° — 3-й дім
+Місяць ☽: Близнюки ♊ 27.2° — 11-й дім
+Меркурій ☿ ℞: Терези ♎ 5.0° — 3-й дім (ретроградний натально)
+Венера ♀: Скорпіон ♏ 10.9° — 4-й дім
+Марс ♂: Терези ♎ 1.5° — 3-й дім
+Юпітер ♃: Рак ♋ 8.7° — 12-й дім
+Сатурн ♄: Козеріг ♑ 7.4° — 6-й дім
+Уран ♅: Козеріг ♑ 1.4° — 6-й дім
+Нептун ♆: Козеріг ♑ 9.6° — 6-й дім
+Плутон ♇: Скорпіон ♏ 13.4° — 4-й дім
+
+Ключові натальні особливості:
+- Стелій у 6-му домі (Сатурн+Уран+Нептун у Козерозі) → тема роботи, здоров'я, дисципліни
+- Стелій у 3-му домі (Сонце+Меркурій+Марс) → аналітичний розум, комунікація, навчання
+- Венера+Плутон у 4-му домі (Скорпіон) → глибокі трансформації у особистому/сімейному
+- Юпітер у 12-му домі (Рак) → прихована удача, духовність, інтуїція
+- Місяць у 11-му домі (Близнюки) → соціальні зв'язки, друзі, нестандартне мислення
+- AC Лев → потреба у визнанні, лідерстві, виразності
+"""
+
+    try:
+        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        # Отримуємо ПОВНИЙ звіт через astro.get_astro_report() (без reload)
+        try:
+            import astro as _astro_mod_ai
+            _full_astro = _astro_mod_ai.get_astro_report()
+            print(f"[astro_ai] get_astro_report OK, len={len(_full_astro) if _full_astro else 0}", flush=True)
+            if not _full_astro:
+                _full_astro = astro_text
+        except Exception as _e_full:
+            print(f"[astro_ai] get_astro_report failed: {_e_full}, using astro_text fallback", flush=True)
+            _full_astro = astro_text
+        print(f"[astro_ai] final astro len={len(_full_astro) if _full_astro else 0}", flush=True)
+        prompt = (
+            f"Ти — астролог Олега Новосадова. Зараз {now_local.strftime('%H:%M %d.%m.%Y')}. СТАТУС: {shift_hint}\n\n"
+            f"{NATAL_CHART}\n"
+            f"=== АСТРО ЗВІТ ===\n{_full_astro[:4000]}\n=================\n\n"
+            f"Напиши персональний астро-аналіз. Структура:\n\n"
+            f"🌙 МІСЯЦЬ\n"
+            f"Транзитний Місяць ({now_local.strftime('%d.%m')}), його фаза і знак. "
+            f"Вплив на натальний Місяць Олега (Близнюки, 11-й дім). 2-3 речення + порада.\n\n"
+            f"⚡ АСПЕКТИ ДО НАТАЛЬНИХ ПЛАНЕТ\n"
+            f"Для кожного аспекту з розділу ТРАНЗИТИ ДО НАТАЛЬНИХ ПЛАНЕТ:\n"
+            f"«[emoji транзитна] [транзитна планета] [аспект] [emoji натальна] натальний [натальна] ([знак], [дім]-й дім)»\n"
+            f"• тип: гармонійний/напружений/нейтральний\n"
+            f"• вплив на Олега сьогодні: 2-3 речення конкретно (крипто/робота/тіло/цілі)\n"
+            f"• порада\n\n"
+            f"💰 КРИПТО/ФІНАНСИ — 2-3 речення: які аспекти впливають на 2-й/8-й дім, порада BTC/ETH/AVAX/ONDO\n\n"
+            f"🏃 ТІЛО/БІГ — 2 речення: 6-й дім, чи варто тренуватись\n\n"
+            f"🏭 РОБОТА — 2 речення: 6-й/10-й дім, концентрація на заводі\n\n"
+            f"📌 ПОРАДА ДНЯ — 2 речення, конкретно\n\n"
+            f"ПРАВИЛА:\n"
+            f"- Аналізуй ТІЛЬКИ аспекти які є в розділі ТРАНЗИТИ ДО НАТАЛЬНИХ ПЛАНЕТ — не вигадуй\n"
+            f"- Прив'язуй до натальної карти (знак, дім, натальна планета)\n"
+            f"- БЕЗ вступів. Мова: українська. Кожне речення завершуй повністю."
+        )
+        body = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": 8000,
+                "temperature": 0.7,
+                "thinkingConfig": {"thinkingBudget": 0},
+            },
+        }).encode()
+        print(f"[astro_ai] sending request to Gemini (timeout=90, retry-on-429)...", flush=True)
+        resp = _gem_post(
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            body, timeout=90, tag="astro_ai"
+        )
+        _astro_cand = (resp.get("candidates") or [{}])[0]
+        _astro_finish = _astro_cand.get("finishReason", "UNKNOWN")
+        print(f"[astro_ai] finishReason={_astro_finish}", flush=True)
+        _astro_parts = (_astro_cand.get("content") or {}).get("parts") or []
+        if not _astro_parts:
+            _um_a = resp.get("usageMetadata", {})
+            print(f"[astro_ai] EMPTY parts! finish={_astro_finish} usage={_um_a}", flush=True)
+            return ""
+        result = (_astro_parts[0].get("text") or "").strip()
+        # Конвертуємо markdown → plain text (Gemini може повернути **bold** або *italic*)
+        import re as _re_ai
+        result = _re_ai.sub(r'\*\*(.+?)\*\*', r'\1', result)
+        result = _re_ai.sub(r'\*(.+?)\*', r'\1', result)
+        result = _re_ai.sub(r'#{1,6}\s*', '', result)
+        # Прибираємо будь-які HTML теги що міг додати Gemini (ми не використовуємо HTML від AI)
+        result = _re_ai.sub(r'<[^>]+>', '', result)
+        # Якщо Gemini обрізав текст по MAX_TOKENS — відрізаємо незавершене останнє речення
+        if _astro_finish == "MAX_TOKENS":
+            print(f"[astro_ai] WARNING: MAX_TOKENS — обрізаю незавершене речення", flush=True)
+            _last_dot = max(result.rfind(". "), result.rfind(".\n"), result.rfind("!"), result.rfind("?"))
+            if _last_dot > len(result) // 2:
+                result = result[:_last_dot + 1].rstrip()
+        print(f"[astro_ai] OK — {len(result)} chars", flush=True)
+        return result
+    except Exception as e:
+        import traceback as _tb_astro
+        print(f"[astro_ai] ERROR: {e}", flush=True)
+        print(_tb_astro.format_exc(), flush=True)
+        return ""
+
+
+def main():
+    global _FORCE_REPORT
+    force = _FORCE_REPORT
+    _FORCE_REPORT = False  # скидаємо після використання
+
+    now = datetime.now(timezone.utc)
+    now_local = now + timedelta(hours=2)
+    # Дедлайн збору AI-блоків: монітор має timeout 600s. Лишаємо запас на надсилання.
+    # Усі AI-блоки разом не повинні перетягнути за цей дедлайн — інакше пропускаємо їх,
+    # АЛЕ звіт усе одно надсилається (краще без AI, ніж зовсім без звіту).
+    import time as _time_dl
+    global _REPORT_AI_DEADLINE
+    # Дедлайн AI = з запасом до subprocess timeout (600s у monitor_loop.py).
+    # Ручний /звіт (force) запускається inline у боті без timeout — даємо дуже багато часу.
+    _REPORT_AI_DEADLINE = _time_dl.monotonic() + (900 if force else 540)  # авто: 540s (60s запасу до 600s timeout)
+    # 3 слоти на годину: :00, :20, :40
+    hour_key = _get_report_slot(now_local)
+    if hour_key is None:
+        if force:
+            # При ручному виклику — генеруємо з поточною годиною
+            hour_key = now_local.strftime("%Y-%m-%d-%H")
+            print(f"=== FORCE report, using hour_key={hour_key} ===")
+        else:
+            print(f"=== Not in report window (m={now_local.minute}), skipping ===")
+            return
+
+    # ── Захист від дублів v3 ──────────────────────────────────────────────
+    # ВАЖЛИВО: dedup за полем `sent_slot`, яке записується ТІЛЬКИ ПІСЛЯ
+    # успішної відправки звіту (наприкінці main). Claim ПЕРЕД send — це лише
+    # короткий lock (`lock_slot` + `lock_at`) з TTL, щоб два паралельні
+    # інстанси не слали одночасно. Якщо інстанс впав між lock і send, lock
+    # протухає через TTL і наступний інстанс пере-надсилає звіт.
+    # _slot_sent_done — прапор для фінального запису sent_slot нижче.
+    _slot_sent_done = False
+    gh_sent, gh_sha = ({}, None)
+    if not force:
+        gh_sent, gh_sha = _gh_get_sent()
+        if gh_sent is None:
+            gh_sent = load_json_file(MAIN_SENT_FILE, default={})
+            gh_sha = None
+        gh_sent = gh_sent or {}
+
+        # 1) Вже НАДІСЛАНО цей слот? — пропускаємо.
+        if gh_sent.get("sent_slot") == hour_key:
+            print(f"=== Already SENT this slot ({hour_key}), skipping ===")
+            return
+
+        # 2) Активний lock іншого інстансу (не протух)? — пропускаємо.
+        _lock_slot = gh_sent.get("lock_slot")
+        _lock_at = gh_sent.get("lock_at")
+        if _lock_slot == hour_key and _lock_at:
+            try:
+                _lt = datetime.fromisoformat(_lock_at)
+                _age = (now - _lt).total_seconds()
+            except Exception:
+                _age = 9999
+            _LOCK_TTL = 600  # 10 хв — більше ніж max час генерації звіту
+            if 0 <= _age < _LOCK_TTL:
+                print(f"=== Slot ({hour_key}) locked {int(_age)}s ago by another instance (TTL {_LOCK_TTL}s), skipping ===")
+                return
+            else:
+                print(f"=== Stale lock ({hour_key}) age {int(_age)}s >= TTL — taking over ===")
+
+        # 3) Ставимо свій lock (best-effort, не блокує звіт при помилці).
+        lock_data = dict(gh_sent)
+        lock_data["lock_slot"] = hour_key
+        lock_data["lock_at"] = now.isoformat()
+        lock_data["code_version"] = _CODE_VERSION
+        if gh_sha:
+            try:
+                import base64 as _b64
+                gh_token = os.environ.get("GITHUB_TOKEN", "")
+                _url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/monitor_main_sent.json"
+                _content = _b64.b64encode(json.dumps(lock_data, indent=2).encode()).decode()
+                _body = json.dumps({
+                    "message": f"lock slot {hour_key}",
+                    "content": _content,
+                    "sha": gh_sha,
+                    "branch": _GH_DATA_BRANCH,
+                }).encode()
+                _req = urllib.request.Request(_url, data=_body, headers={
+                    "Authorization": f"token {gh_token}",
+                    "Content-Type": "application/json",
+                    "User-Agent": "morning-report-bot"
+                }, method="PUT")
+                with urllib.request.urlopen(_req, timeout=8) as _r:
+                    _resp = json.loads(_r.read())
+                    gh_sha = _resp.get("content", {}).get("sha", gh_sha)
+                gh_sent = lock_data
+                print(f"=== Locked slot {hour_key} ===")
+            except urllib.error.HTTPError as _he:
+                if _he.code in (409, 422):
+                    # Хтось щойно записав — перечитуємо й перевіряємо sent_slot.
+                    _re_sent, _re_sha = _gh_get_sent()
+                    _re_sent = _re_sent or {}
+                    if _re_sent.get("sent_slot") == hour_key:
+                        print(f"=== Slot {hour_key} just SENT by another instance, skipping ===")
+                        return
+                    gh_sent, gh_sha = _re_sent, _re_sha
+                    print(f"=== Lock conflict on {hour_key}, but not yet sent — proceeding ===")
+                else:
+                    print(f"=== GH lock error {_he.code} — proceeding anyway ===")
+            except Exception as _ce:
+                print(f"=== GH lock error: {_ce} — proceeding anyway ===")
+        else:
+            # Немає SHA — локальна перевірка (один контейнер)
+            _sent = load_json_file(MAIN_SENT_FILE, default={})
+            if _sent.get("sent_slot") == hour_key:
+                print(f"=== Already SENT this slot ({hour_key}) [local], skipping ===")
+                return
+            _sent["lock_slot"] = hour_key
+            _sent["lock_at"] = now.isoformat()
+            save_json_file(MAIN_SENT_FILE, _sent)
+            gh_sent = _sent
+    else:
+        print(f"=== FORCE: skipping slot dedup check ===")
+
+    local_time = now_local.strftime("%H:%M")
+    local_date = now_local.strftime("%d.%m.%Y")
+    weekday = now_local.weekday()
+    local_hour = now_local.hour
+
+    is_weekend = weekday >= 5
+    include_learning_blocks = True  # крипто/ціни — завжди
+
+    print(f"=== Monitor run at {now.isoformat()} slot={hour_key} (weekend={is_weekend}) ===")
+
+    # ── КРОК 1: СПОЧАТКУ КАЛЕНДАР — він визначає контекст ────────────────────
+    cal_events_list, cal_events_text = _get_calendar_context_for_report()
+    print(f"Calendar context: {cal_events_text[:80]}")
+
+    # Повний блок календаря для звіту
+    try:
+        cal_text = get_calendar()
+    except Exception as e:
+        print(f"get_calendar error: {e}")
+        cal_text = "📅 <b>Календар</b>\n⚠️ Помилка"
+
+    # ── КРОК 2: Погода ───────────────────────────────────────────────────────
+    try:
+        weather_raw = get_weather()
+        weather_text = weather_raw  # повний вивід з прогнозом по годинах
+    except Exception as e:
+        print(f"get_weather error: {e}")
+        weather_text = "🌤 <b>Погода</b>\n⚠️ Помилка"
+        weather_raw = ""
+
+    # ── КРОК 3: Крипто (тільки якщо не раннє ранкове в будень) ───────────────
+    prices_text = None
+    if include_learning_blocks:
+        try:
+            prices_raw = get_prices()
+            # Відокремлюємо ETF блок перед форматуванням (щоб не загубити)
+            etf_split = prices_raw.split("\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>", 1)
+            crypto_raw = etf_split[0]
+            etf_suffix = ("\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>" + etf_split[1]) if len(etf_split) > 1 else ""
+            prices_text = (_format_prices_visual(crypto_raw, cal_events_text) or crypto_raw) + etf_suffix
+        except Exception as e:
+            print(f"get_prices error: {e}")
+            prices_text = None
+
+    # ── КРОК 4: Email — завжди включаємо в звіт (незалежно від дня/часу) ──────
+    try:
+        email_text = get_emails()
+    except Exception as e:
+        print(f"get_emails error: {e}")
+        email_text = None
+
+    # ── КРОК 5: Трафік ───────────────────────────────────────────────────────
+    try:
+        traffic_text = get_city_traffic()
+    except Exception as e:
+        print(f"get_traffic error: {e}")
+        traffic_text = None
+
+    # ── КРОК 6: Астро ────────────────────────────────────────────────────────
+    astro_text = None
+    try:
+        import sys as _sys, importlib as _importlib
+        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import astro as _astro_module
+        _importlib.reload(_astro_module)
+        astro_text = _astro_module.get_natal_transits_short(max_aspects=5)
+        print(f"get_astro ok, len={len(astro_text) if astro_text else 0}")
+    except Exception as e:
+        import traceback as _atb
+        print(f"get_astro error: {e}\n{_atb.format_exc()}")
+
+    # ── КРОК 7: AI-підсумок — знає про календар ──────────────────────────────
+    try:
+        pass  # removed get_summary
+    except Exception:
+        summary_text = ""  # removed
     # ── КРОК 8: Calendar-aware AI секція (кожен звіт унікальна порада) ───────
     ai_insight = None
     gemini_key = os.environ.get("GEMINI_API_KEY", "")
@@ -3127,7 +4414,118 @@ def _get_current_shift_context(calendar_text=""):
     if is_weekend and not include_learning_blocks and not _sc_main["is_working_now"]:
         parts.append("💤 <i>Вихідний — крипто/пошта з 11:00</i>")
 
-    # ── Надсилаємо звіт рівно 2 повідомленнями ───────────────────────────────
+    # ── AI-брифінг: генерується з ПОВНИХ даних звіту ─────────────────────────
+    if gemini_key and not _ai_time_left(30):
+        print("[briefing] SKIP — мало часу до дедлайну", flush=True)
+        gemini_key_for_brief = ""
+    else:
+        gemini_key_for_brief = gemini_key
+    if gemini_key_for_brief:
+        _ai_briefing = None
+        for _attempt_b in range(1):  # 1 прохід — _gem_post всередині ретраїть на 429
+            try:
+                import uuid as _uuid_b
+                _seed_b = str(_uuid_b.uuid4())[:8]
+
+                # Збираємо всі текстові частини звіту (без фото)
+                _all_report_text_parts = []
+                for _p in parts:
+                    if isinstance(_p, str) and _p != "SPLIT_HERE":
+                        _all_report_text_parts.append(_p)
+                # Додаємо email окремо якщо є
+                if email_text:
+                    if isinstance(email_text, dict):
+                        _all_report_text_parts.append(email_text.get("header", ""))
+                    elif isinstance(email_text, str):
+                        _all_report_text_parts.append(email_text)
+                # Додаємо ПОВНИЙ астро звіт окремо
+                _astro_full_ctx = ""
+                try:
+                    import astro as _astro_brief_mod, importlib as _il_b
+                    _il_b.reload(_astro_brief_mod)
+                    _astro_full_ctx = _astro_brief_mod.get_astro_report()
+                except Exception as _e_ab:
+                    _astro_full_ctx = astro_text or ""
+
+                _full_report_ctx = "\n\n".join(_all_report_text_parts)[:15000]
+
+                # user_state — де Олег зараз, що казав
+                _user_state_ctx = ""
+                try:
+                    import sys as _sys_br
+                    _sys_br.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                    from proactive import load_user_state as _lu_st
+                    _ust = _lu_st()
+                    _ust_parts = []
+                    if _ust.get("location"): _ust_parts.append(f"Де зараз: {_ust['location']}")
+                    if _ust.get("activity"): _ust_parts.append(f"Активність: {_ust['activity']}")
+                    if _ust.get("mood"): _ust_parts.append(f"Настрій: {_ust['mood']}")
+                    if _ust.get("last_message_from_oleg"): _ust_parts.append(f"Останнє від Олега: «{_ust['last_message_from_oleg'][:100]}»")
+                    if _ust_parts: _user_state_ctx = "\n".join(_ust_parts)
+                except Exception as _e_ust:
+                    pass
+
+                _brief_prompt = (
+                    f"Ти — персональний AI-асистент Олега Новосадова (Кошіце, Словаччина).\n"
+                    f"Зараз {now_local.strftime('%H:%M')}, {now_local.strftime('%d.%m.%Y')}.\n"
+                    f"СТАТУС ЗМІНИ: {shift_hint}\n\n"
+                    f"КРИТИЧНО ВАЖЛИВО: якщо в статусі зміни написано 'НА РОБОТІ' або 'нічна зміна йде' або 'рання зміна' — "
+                    f"Олег ЗАРАЗ ФІЗИЧНО НА ЗАВОДІ Minebea Mitsumi. НЕ ПИШИ що він вдома. "
+                    f"Якщо статус 'недоступні' або 'невідомий' — пиши нейтрально, БЕЗ слів 'вдома' чи 'відпочиваєш'.\n\n"
+                    f"=== ДАНІ ЗВІТУ ===\n"
+                    f"{_full_report_ctx}\n"
+                    f"=================\n\n"
+                    f"Напиши стислий персональний AI-аналіз. Структура ТОЧНО така:\n\n"
+                    f"⚡ ЗАРАЗ\n"
+                    f"[2-3 речення: точний статус (на роботі/вдома/готується до зміни) + головний пріоритет на найближчу годину. "
+                    f"Якщо нічна зміна — говори про роботу/завод, НЕ про сон і відпочинок.]\n\n"
+                    f"💹 КРИПТО\n"
+                    f"[3-4 речення: точні ціни BTC/ETH/AVAX/ONDO зі звіту + % рух + стан ринку + конкретна порада: тримати/докупити/зафіксувати і чому]\n\n"
+                    f"⚖️ ТІЛО\n"
+                    f"[3 речення: поточна вага + відстань до цілі 78 кг + кроки/біг + прийнято чи ні Armolopid]\n\n"
+                    f"🌤 ДЕНЬ\n"
+                    f"[2-3 речення: погода Кошіце + важливі події + критична пошта якщо є]\n\n"
+                    f"🎯 ЦІЛЬ\n"
+                    f"[2 речення: 1 конкретна дія сьогодні — без кліше, без загальних слів. Або схуднення, або крипто, або нова робота — вибери найактуальніше]\n\n"
+                    f"ПОТОЧНИЙ СТАН ОЛЕГА (якщо є): {_user_state_ctx}\n\n"
+                    f"ПРАВИЛА: тільки реальні числа зі звіту. Якщо даних немає — пропусти пункт. БЕЗ астро в цьому блоці. БЕЗ вступів. Тон: прямий, конкретний. ОБОВ'ЯЗКОВО завершуй кожне речення повністю — не обривай на середині. [seed:{_seed_b}]"
+                )
+                _brief_payload = json.dumps({
+                    "contents": [{"parts": [{"text": _brief_prompt}]}],
+                    "generationConfig": {
+                        "maxOutputTokens": 4000,
+                        "temperature": 0.8,
+                        "thinkingConfig": {"thinkingBudget": 0},
+                    },
+                }).encode()
+                _brief_resp = _gem_post(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                    _brief_payload, timeout=60, tag="briefing"
+                )
+                _brief_cand = (_brief_resp.get("candidates") or [{}])[0]
+                _finish_reason = _brief_cand.get("finishReason", "UNKNOWN")
+                print(f"[briefing] finishReason={_finish_reason}", flush=True)
+                _brief_parts = (_brief_cand.get("content") or {}).get("parts") or []
+                if not _brief_parts:
+                    print(f"[briefing] EMPTY parts! finish={_finish_reason} usage={_brief_resp.get('usageMetadata',{})}", flush=True)
+                    raise RuntimeError("briefing empty parts")
+                _ai_briefing = (_brief_parts[0].get("text") or "").strip()
+                if _finish_reason == "MAX_TOKENS":
+                    print(f"[briefing] WARNING: response truncated by MAX_TOKENS!", flush=True)
+                if _ai_briefing and _ai_briefing[-1] not in ".!?»":
+                    _ai_briefing += "."
+                print(f"[briefing] OK (attempt {_attempt_b+1}) — {len(_ai_briefing)} chars", flush=True)
+                break  # успіх — виходимо з циклу
+            except Exception as _e_b:
+                import traceback as _tb_brief
+                print(f"ai_briefing error (attempt {_attempt_b+1}): {_e_b}", flush=True)
+                print(_tb_brief.format_exc(), flush=True)
+                if _attempt_b < 2:
+                    import time as _t_b; _t_b.sleep(3)
+
+        # Вставляємо на позицію 1 — завжди перед score (позиція 0 = заголовок)
+        if _ai_briefing:
+            parts.insert(1, f"🤖 <i>{esc(_ai_briefing)}</i>")
     # Повідомлення 1: заголовок + погода + трафік + крипто + ETF + курс + календар
     # Повідомлення 2: здоров'я + біг + портфоліо + пошта + астро + AI + підсумок
     # Фото збираємо окремо в album, текст об'єднуємо в 2 повідомлення.
@@ -3140,27 +4538,6 @@ def _get_current_shift_context(calendar_text=""):
     # Витягуємо всі фото з parts в окремий список
     photo_parts = [p for p in parts if isinstance(p, dict) and "photo" in p]
     parts_no_photo = [p for p in parts if not (isinstance(p, dict) and "photo" in p)]
-
-    # ── Додаємо графіки (вага + біг) ──────────────────────────────────────────
-    _graph_files = [
-        ("/home/user/weight_chart_month.png", "📊 Вага (останні 30 днів)"),
-        ("/home/user/weight_chart_all.png", "📊 Вага (вся історія)"),
-        ("/home/user/running_chart_month.png", "🏃 Біг (останній місяць)"),
-    ]
-    for _graph_path, _graph_caption in _graph_files:
-        if os.path.isfile(_graph_path):
-            try:
-                with open(_graph_path, 'rb') as _gf:
-                    _graph_bytes = _gf.read()
-                photo_parts.append({
-                    "photo": _graph_bytes,
-                    "caption": _graph_caption
-                })
-                print(f"[graphs] added {os.path.basename(_graph_path)}", flush=True)
-            except Exception as _ge:
-                print(f"[graphs] error loading {_graph_path}: {_ge}", flush=True)
-        else:
-            print(f"[graphs] {_graph_path} not found", flush=True)
 
     # Ділимо по явному маркеру SPLIT_HERE
     _split_idx = next((i for i, p in enumerate(parts_no_photo) if p == "SPLIT_HERE"), None)
