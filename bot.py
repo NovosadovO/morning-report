@@ -2936,6 +2936,14 @@ def main():
 
                 handle_command(chat_id, text)
 
+            # Проактивний помічник — кожні ~5-10 хвилин (якщо користувач неактивний)
+            try:
+                if _ASSISTANT_AVAILABLE and should_send_proactive_message(_PROACTIVE_LAST_MESSAGE_TIME):
+                    send_proactive_message(send)
+                    _PROACTIVE_LAST_MESSAGE_TIME = time.time()
+            except Exception as _pa:
+                print(f"⚠️ Proactive message error: {_pa}", flush=True)
+
         except Exception as e:
             print(f"Loop error: {e}", flush=True)
             time.sleep(5)
