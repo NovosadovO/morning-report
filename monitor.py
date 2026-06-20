@@ -4364,8 +4364,6 @@ def main():
         _themes_ai_full = ""
 
     # Блок 7: AI-підсумок
-    if summary_text:
-        parts.append(summary_text)
 
     # Блок 8: Calendar-aware AI порада — показується тільки якщо брифінг відключений
     # (брифінг на початку вже покриває пораду, тому тут не дублюємо)
