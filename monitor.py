@@ -3141,6 +3141,27 @@ def _get_current_shift_context(calendar_text=""):
     photo_parts = [p for p in parts if isinstance(p, dict) and "photo" in p]
     parts_no_photo = [p for p in parts if not (isinstance(p, dict) and "photo" in p)]
 
+    # ── Додаємо графіки (вага + біг) ──────────────────────────────────────────
+    _graph_files = [
+        ("/home/user/weight_chart_month.png", "📊 Вага (останні 30 днів)"),
+        ("/home/user/weight_chart_all.png", "📊 Вага (вся історія)"),
+        ("/home/user/running_chart_month.png", "🏃 Біг (останній місяць)"),
+    ]
+    for _graph_path, _graph_caption in _graph_files:
+        if os.path.isfile(_graph_path):
+            try:
+                with open(_graph_path, 'rb') as _gf:
+                    _graph_bytes = _gf.read()
+                photo_parts.append({
+                    "photo": _graph_bytes,
+                    "caption": _graph_caption
+                })
+                print(f"[graphs] added {os.path.basename(_graph_path)}", flush=True)
+            except Exception as _ge:
+                print(f"[graphs] error loading {_graph_path}: {_ge}", flush=True)
+        else:
+            print(f"[graphs] {_graph_path} not found", flush=True)
+
     # Ділимо по явному маркеру SPLIT_HERE
     _split_idx = next((i for i, p in enumerate(parts_no_photo) if p == "SPLIT_HERE"), None)
     if _split_idx is not None:
