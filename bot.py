@@ -19,6 +19,13 @@ import urllib.request
 import urllib.error
 from datetime import datetime, timezone, timedelta
 
+try:
+    from intelligent_assistant_v2 import send_proactive_message, should_send_proactive_message
+    _ASSISTANT_AVAILABLE = True
+except ImportError:
+    _ASSISTANT_AVAILABLE = False
+    print("⚠️ intelligent_assistant_v2 not available")
+
 TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
 TELEGRAM_CHAT  = os.environ["TELEGRAM_CHAT_ID"]
 OFFSET_FILE    = "/tmp/bot_offset.json"
@@ -26,6 +33,7 @@ OFFSET_FILE    = "/tmp/bot_offset.json"
 # Унікальний ідентифікатор цього інстансу бота (leader election)
 _INSTANCE_ID = str(uuid.uuid4())[:12]
 _conflict_count = 0  # лічильник 409 Conflict поспіль
+_PROACTIVE_LAST_MESSAGE_TIME = time.time()  # таймування проактивних повідомлень
 _DRAFT_STORE: dict = {}  # uid_str -> {to, subject, body} — тимчасовий store для email drafts
 _IMPORTANT_EMAILS_FILE = "data/important_emails.json"  # важливі листи (GitHub)
 _GH_TOKEN    = os.environ.get("GITHUB_TOKEN", "")
