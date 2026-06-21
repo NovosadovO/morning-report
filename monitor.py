@@ -2729,8 +2729,11 @@ def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
         PANEL = "#0F1629"        # Панель — трохи світліший темний синій
         GRID  = "#1A2847"        # Сітка — блакитний відтінок
         TEXT  = "#64B5F6"        # Світло-синій текст
-        MUTED = "#42A5F5"        # Мuted — світло-синій (трохи яскравіший)
+        MUTED = "#42A5F5"        # Muted — світло-синій (трохи яскравіший)
         BORDER= "#1E3A5F"        # Рамка — темний синій
+        
+        # DEBUG: переконатися що нові кольори використовуються
+        print(f"[CHART] Using colors: BG={BG}, TEXT={TEXT}, GREEN lines (crypto)", flush=True)
 
         hist   = storage.load_price_history()
         cutoff = _t.time() - days * 86400
