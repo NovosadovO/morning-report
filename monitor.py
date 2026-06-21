@@ -4259,56 +4259,74 @@ def main():
             email_parts.append(email_text)
 
 
-    # ── EMAIL AI-АНАЛІЗ: аналіз листів, рекомендації як відповісти ──────────
+    # ── EMAIL AI-АНАЛІЗ: аналіз ЛИШЕ листів з Gmail (без календаря) ────────────
     _email_ai_text = ""
-    if email_text and email_parts:  # якщо є листи
-        try:
+    try:
+        # Читаємо листи БЕЗПОСЕРЕДНЬО з Gmail (не з email_text що може мати інше)
+        _mail = _imap_connect()
+        _, _p_unseen = _mail.uid('search', None, 'X-GM-RAW "category:primary is:unread"')
+        _primary_unread_uids = set(u.decode() for u in _p_unseen[0].split()) if _p_unseen[0] else set()
+        
+        # Збираємо ТЕКСТ листів для аналізу
+        _emails_for_analysis = []
+        _uid_list = list(_primary_unread_uids)[:10]  # макс 10 листів для аналізу
+        
+        if _uid_list:
+            for _uid in _uid_list:
+                try:
+                    _, _msg_data = _mail.uid('fetch', _uid, '(RFC822)')
+                    _msg_bytes = _msg_data[0][1]
+                    _msg = email.message_from_bytes(_msg_bytes)
+                    _subject = _imap_decode_header(_msg.get("Subject", "(без теми)"))
+                    _from = _imap_decode_header(_msg.get("From", ""))
+                    _body = _imap_get_body(_msg)
+                    _emails_for_analysis.append(f"Від: {_from}\nТема: {_subject}\n{_body[:500]}")
+                except Exception:
+                    pass
+        
+        _mail.logout()
+        
+        # Якщо є листи — аналізуємо їх
+        if _emails_for_analysis:
             import uuid as _uuid_e
             _seed_e = str(_uuid_e.uuid4())[:8]
+            _emails_text = "\n\n---\n\n".join(_emails_for_analysis)[:3000]
             
-            # Збираємо контекст листів для аналізу
-            _email_context = ""
-            if isinstance(email_text, dict) and email_text.get("header"):
-                _email_context = email_text["header"]
-            elif isinstance(email_text, str):
-                _email_context = email_text
-            
-            if _email_context and len(_email_context) > 50:  # лише якщо є реальні листи
-                _gem_key_email = os.environ.get("GEMINI_API_KEY", "")
-                if _gem_key_email and _ai_time_left(30):
-                    _email_prompt = (
-                        f"Ти — персональний асистент Олега Новосадова. Проаналізуй його листи.\n\n"
-                        f"=== ЛИСТИ ===\n{_email_context[:3000]}\n===============\n\n"
-                        f"Напиши КОРОТКО (5-7 речень):\n"
-                        f"1. 🔴 КРИТИЧНІ листи (потребують негайної відповіді чи дій)\n"
-                        f"2. 🟡 ВАЖЛИВІ листи (почитати сьогодні, відповісти може завтра)\n"
-                        f"3. 🟢 ІНФОРМАЦІЙНІ листи (можна пропустити, але корисна інформація)\n"
-                        f"4. 💡 РЕКОМЕНДАЦІЯ: як найшвидше обробити пошту сьогодні\n\n"
-                        f"Тон: прямий, конкретний. Лише факти. [seed:{_seed_e}]"
-                    )
-                    _email_payload = json.dumps({
-                        "contents": [{"parts": [{"text": _email_prompt}]}],
-                        "generationConfig": {
-                            "maxOutputTokens": 1500,
-                            "temperature": 0.7,
-                            "thinkingConfig": {"thinkingBudget": 0},
-                        },
-                    }).encode()
-                    _email_resp = _gem_post(
-                        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={_gem_key_email}",
-                        _email_payload, timeout=60, tag="email_ai"
-                    )
-                    _email_cand = (_email_resp.get("candidates") or [{}])[0]
-                    _email_parts_list = (_email_cand.get("content") or {}).get("parts") or []
-                    if _email_parts_list:
-                        _email_ai_text = (_email_parts_list[0].get("text") or "").strip()
-                        if _email_ai_text:
-                            print(f"[email_ai] OK — {len(_email_ai_text)} chars", flush=True)
-        except Exception as _e_email:
-            print(f"[email_ai] error: {_e_email}", flush=True)
-            _email_ai_text = ""
+            _gem_key_email = os.environ.get("GEMINI_API_KEY", "")
+            if _gem_key_email and _ai_time_left(30):
+                _email_prompt = (
+                    f"Проаналізуй листи Олега (gmail.com). ЛИШЕ листи, БЕЗ календаря або нагадувань.\n\n"
+                    f"=== ЛИСТИ З GMAIL ===\n{_emails_text}\n====================\n\n"
+                    f"Напиши КОРОТКО (4-6 речень):\n"
+                    f"1. 🔴 КРИТИЧНІ (потребують негайної дії сьогодні)\n"
+                    f"2. 🟡 ВАЖЛИВІ (прочитати/відповісти сьогодні)\n"
+                    f"3. 🟢 ІНФОРМАЦІЙНІ (можна пізніше)\n"
+                    f"4. 💡 ДІЯ: як швидко обробити пошту\n\n"
+                    f"Тон: конкретно, без розповідей. Лише факти з листів. [seed:{_seed_e}]"
+                )
+                _email_payload = json.dumps({
+                    "contents": [{"parts": [{"text": _email_prompt}]}],
+                    "generationConfig": {
+                        "maxOutputTokens": 1200,
+                        "temperature": 0.6,
+                        "thinkingConfig": {"thinkingBudget": 0},
+                    },
+                }).encode()
+                _email_resp = _gem_post(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={_gem_key_email}",
+                    _email_payload, timeout=60, tag="email_ai"
+                )
+                _email_cand = (_email_resp.get("candidates") or [{}])[0]
+                _email_parts_list = (_email_cand.get("content") or {}).get("parts") or []
+                if _email_parts_list:
+                    _email_ai_text = (_email_parts_list[0].get("text") or "").strip()
+                    if _email_ai_text:
+                        print(f"[email_ai] OK — {len(_email_ai_text)} chars", flush=True)
+    except Exception as _e_email:
+        print(f"[email_ai] error: {_e_email}", flush=True)
+        _email_ai_text = ""
     
-    # Додаємо email_ai у parts якщо успішно зібрали
+    # Додаємо email_ai у parts
     if _email_ai_text:
         parts.append(f"📧 <b>Аналіз листів: рекомендації</b>\n<i>{esc(_email_ai_text)}</i>")
         print(f"[email_ai] добавлено в звіт", flush=True)
