@@ -4258,6 +4258,61 @@ def main():
         else:
             email_parts.append(email_text)
 
+
+    # ── EMAIL AI-АНАЛІЗ: аналіз листів, рекомендації як відповісти ──────────
+    _email_ai_text = ""
+    if email_text and email_parts:  # якщо є листи
+        try:
+            import uuid as _uuid_e
+            _seed_e = str(_uuid_e.uuid4())[:8]
+            
+            # Збираємо контекст листів для аналізу
+            _email_context = ""
+            if isinstance(email_text, dict) and email_text.get("header"):
+                _email_context = email_text["header"]
+            elif isinstance(email_text, str):
+                _email_context = email_text
+            
+            if _email_context and len(_email_context) > 50:  # лише якщо є реальні листи
+                _gem_key_email = os.environ.get("GEMINI_API_KEY", "")
+                if _gem_key_email and _ai_time_left(30):
+                    _email_prompt = (
+                        f"Ти — персональний асистент Олега Новосадова. Проаналізуй його листи.\n\n"
+                        f"=== ЛИСТИ ===\n{_email_context[:3000]}\n===============\n\n"
+                        f"Напиши КОРОТКО (5-7 речень):\n"
+                        f"1. 🔴 КРИТИЧНІ листи (потребують негайної відповіді чи дій)\n"
+                        f"2. 🟡 ВАЖЛИВІ листи (почитати сьогодні, відповісти може завтра)\n"
+                        f"3. 🟢 ІНФОРМАЦІЙНІ листи (можна пропустити, але корисна інформація)\n"
+                        f"4. 💡 РЕКОМЕНДАЦІЯ: як найшвидше обробити пошту сьогодні\n\n"
+                        f"Тон: прямий, конкретний. Лише факти. [seed:{_seed_e}]"
+                    )
+                    _email_payload = json.dumps({
+                        "contents": [{"parts": [{"text": _email_prompt}]}],
+                        "generationConfig": {
+                            "maxOutputTokens": 1500,
+                            "temperature": 0.7,
+                            "thinkingConfig": {"thinkingBudget": 0},
+                        },
+                    }).encode()
+                    _email_resp = _gem_post(
+                        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={_gem_key_email}",
+                        _email_payload, timeout=60, tag="email_ai"
+                    )
+                    _email_cand = (_email_resp.get("candidates") or [{}])[0]
+                    _email_parts_list = (_email_cand.get("content") or {}).get("parts") or []
+                    if _email_parts_list:
+                        _email_ai_text = (_email_parts_list[0].get("text") or "").strip()
+                        if _email_ai_text:
+                            print(f"[email_ai] OK — {len(_email_ai_text)} chars", flush=True)
+        except Exception as _e_email:
+            print(f"[email_ai] error: {_e_email}", flush=True)
+            _email_ai_text = ""
+    
+    # Додаємо email_ai у parts якщо успішно зібрали
+    if _email_ai_text:
+        parts.append(f"📧 <b>Аналіз листів: рекомендації</b>\n<i>{esc(_email_ai_text)}</i>")
+        print(f"[email_ai] добавлено в звіт", flush=True)
+
     _astro_ai_full = ""  # ініціалізація — астро AI надсилається окремо після звіту
 
     # Блок 6: Астро — додається в кожен звіт
