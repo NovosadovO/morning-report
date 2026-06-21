@@ -4331,6 +4331,104 @@ def main():
         parts.append(f"📧 <b>Аналіз листів: рекомендації</b>\n<i>{esc(_email_ai_text)}</i>")
         print(f"[email_ai] добавлено в звіт", flush=True)
 
+
+    # ── HEALTH AI-АНАЛІЗ: аналіз всіх даних здоров'я за день ─────────────────
+    _health_ai_text = ""
+    try:
+        import uuid as _uuid_h
+        _seed_h = str(_uuid_h.uuid4())[:8]
+        
+        # Збираємо дані здоров'я за сьогодні
+        _now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        _today_str = _now_local.strftime("%Y-%m-%d")
+        
+        _health_context_parts = []
+        
+        # Вага
+        try:
+            import json as _jh
+            _weight_file = os.path.join(_DATA_DIR, "weight_data_initial.json")
+            if os.path.exists(_weight_file):
+                with open(_weight_file) as _wf:
+                    _weight_data = _jh.load(_wf)
+                    _today_weight = _weight_data.get(_today_str)
+                    if _today_weight:
+                        _health_context_parts.append(f"Вага: {_today_weight}кг (ціль ≤70кг)")
+        except Exception:
+            pass
+        
+        # Кроки (зі steps.py чи tracking)
+        try:
+            _steps_file = os.path.join(_DATA_DIR, "steps_data.json")
+            if os.path.exists(_steps_file):
+                import json as _js
+                with open(_steps_file) as _sf:
+                    _steps_data = _js.load(_sf)
+                    _today_steps = _steps_data.get(_today_str, 0)
+                    if _today_steps:
+                        _health_context_parts.append(f"Кроки: {_today_steps} (ціль ≥25000)")
+        except Exception:
+            pass
+        
+        # Біг (з Strava)
+        try:
+            _strava_file = os.path.join(_DATA_DIR, "strava_runs.json")
+            if os.path.exists(_strava_file):
+                import json as _jst
+                with open(_strava_file) as _stf:
+                    _strava_data = _jst.load(_stf)
+                    _today_runs = [r for r in _strava_data if r.get("date") == _today_str]
+                    if _today_runs:
+                        _total_km = sum(r.get("distance", 0) for r in _today_runs)
+                        _health_context_parts.append(f"Біг: {_total_km:.1f}км (ціль >4 рази/тиж)")
+        except Exception:
+            pass
+        
+        # Загальна інформація
+        _health_context_parts.append(f"Дата: {_today_str}")
+        
+        if _health_context_parts:
+            _health_text = "\n".join(_health_context_parts)
+            
+            _gem_key_health = os.environ.get("GEMINI_API_KEY", "")
+            if _gem_key_health and _ai_time_left(25):
+                _health_prompt = (
+                    f"Ти — health-коуч Олега. Проаналізуй його дані здоров'я за сьогодні.\n\n"
+                    f"=== ДАНІ ЗДОРОВ'Я ===\n{_health_text}\n====================\n\n"
+                    f"Напиши КОРОТКО (4-5 речень):\n"
+                    f"1. ⚖️ ВАГА: поточна, тренд, прогрес до цілі 70кг\n"
+                    f"2. 🚶 АКТИВНІСТЬ: кроки, біг, оцінка фізичних нагрузок\n"
+                    f"3. 💪 ОЦІНКА ДНЯ: чи вкладається в план, що добре, що погано\n"
+                    f"4. 🎯 ПОРАДА: 1 конкретна дія для покращення сьогодні\n\n"
+                    f"Тон: мотивуючий, чесний. Без кліше. [seed:{_seed_h}]"
+                )
+                _health_payload = json.dumps({
+                    "contents": [{"parts": [{"text": _health_prompt}]}],
+                    "generationConfig": {
+                        "maxOutputTokens": 1000,
+                        "temperature": 0.7,
+                        "thinkingConfig": {"thinkingBudget": 0},
+                    },
+                }).encode()
+                _health_resp = _gem_post(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={_gem_key_health}",
+                    _health_payload, timeout=60, tag="health_ai"
+                )
+                _health_cand = (_health_resp.get("candidates") or [{}])[0]
+                _health_parts_list = (_health_cand.get("content") or {}).get("parts") or []
+                if _health_parts_list:
+                    _health_ai_text = (_health_parts_list[0].get("text") or "").strip()
+                    if _health_ai_text:
+                        print(f"[health_ai] OK — {len(_health_ai_text)} chars", flush=True)
+    except Exception as _e_health:
+        print(f"[health_ai] error: {_e_health}", flush=True)
+        _health_ai_text = ""
+    
+    # Додаємо health_ai у parts
+    if _health_ai_text:
+        parts.append(f"💪 <b>Аналіз здоров'я</b>\n<i>{esc(_health_ai_text)}</i>")
+        print(f"[health_ai] добавлено в звіт", flush=True)
+
     _astro_ai_full = ""  # ініціалізація — астро AI надсилається окремо після звіту
 
     # Блок 6: Астро — додається в кожен звіт
