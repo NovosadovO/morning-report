@@ -2943,6 +2943,7 @@ def main():
 
             # Проактивний помічник — кожні ~5-10 хвилин (якщо користувач неактивний)
             try:
+                global _PROACTIVE_LAST_MESSAGE_TIME
                 if _ASSISTANT_AVAILABLE and should_send_proactive_message(_PROACTIVE_LAST_MESSAGE_TIME):
                     send_proactive_message(_send_telegram_text)
                     _PROACTIVE_LAST_MESSAGE_TIME = time.time()
