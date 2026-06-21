@@ -17,15 +17,15 @@ try:
 except Exception:
     HAS_MPL = False
 
-# Стиль — темна тема
-DARK_BG    = "#0d1117"
-CARD_BG    = "#161b22"
-ACCENT     = "#3FB950"   # зелений
-ACCENT2    = "#58a6ff"   # синій
-ORANGE     = "#f0883e"
-RED        = "#f85149"
-TEXT_COLOR = "#e6edf3"
-MUTED      = "#8b949e"
+# Стиль — темна тема з новим дизайном
+DARK_BG    = "#0A0E27"    # Глибокий синій
+CARD_BG    = "#0F1629"    # Панель — світліший синій
+ACCENT     = "#00FF00"    # Зелений
+ACCENT2    = "#64B5F6"    # Світло-синій
+ORANGE     = "#90CAF9"    # Світло-синій замість помаранчу
+RED        = "#64B5F6"    # Світло-синій замість червоного
+TEXT_COLOR = "#64B5F6"    # Світло-синій текст
+MUTED      = "#42A5F5"    # Мuted — світло-синій
 
 
 def _setup_dark_style():
@@ -38,7 +38,7 @@ def _setup_dark_style():
         "xtick.color":       MUTED,
         "ytick.color":       MUTED,
         "text.color":        TEXT_COLOR,
-        "grid.color":        "#21262d",
+        "grid.color":        "#2E5090",  # Світло-синій сітка
         "grid.linewidth":    0.8,
         "font.size":         9,
         "axes.titlesize":    11,

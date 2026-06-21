@@ -2995,23 +2995,23 @@ def generate_habits_chart(days: int = 30) -> bytes | None:
         import io
         from datetime import datetime as _dt, timedelta as _td, date as _date
 
-        BG     = "#0D1117"
-        PANEL  = "#161B22"
-        GRID   = "#1E2530"
-        BORDER = "#30363D"
-        TEXT   = "#E6EDF3"
-        MUTED  = "#8B949E"
+        BG     = "#0A0E27"        # Темна тема — глибокий синій
+        PANEL  = "#0F1629"        # Панель — трохи світліший
+        GRID   = "#1A2847"        # Сітка — блакитний
+        BORDER = "#1E3A5F"        # Рамка — темний синій
+        TEXT   = "#64B5F6"        # Світло-синій текст
+        MUTED  = "#42A5F5"        # Мuted — світло-синій
 
         # Без емодзі у назвах — matplotlib не має emoji-шрифту (рендерить квадрати).
-        # Колір бару = ідентифікатор звички.
+        # Колір бару = ідентифікатор звички — все зелене!
         BOOL_HABITS = [
-            ("shower", "Душ",      "#58A6FF"),
-            ("run",    "Пробіжка", "#3FB950"),
-            ("water",  "Вода",     "#1F6FEB"),
-            ("tea",    "Чай",      "#D29922"),
-            ("sauna",  "Сауна",    "#F85149"),
+            ("shower", "Душ",      "#00FF00"),  # Зелений
+            ("run",    "Пробіжка", "#00FF00"),  # Зелений
+            ("water",  "Вода",     "#00FF00"),  # Зелений
+            ("tea",    "Чай",      "#00FF00"),  # Зелений
+            ("sauna",  "Сауна",    "#00FF00"),  # Зелений
         ]
-        SLEEP_COLOR = "#A371F7"
+        SLEEP_COLOR = "#64B5F6"  # Світло-синій для сну
 
         try:
             from storage import load_habits as _lh
