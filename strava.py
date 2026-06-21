@@ -188,39 +188,53 @@ def get_last_activity():
 
 def get_week_stats():
     """Статистика за поточний тиждень (Пн-Нд)"""
-    try:
-        token = _get_access_token()
+    import time
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            token = _get_access_token()
 
-        # Початок тижня (Понеділок)
-        now = datetime.now()
-        week_start = now - timedelta(days=now.weekday())
-        week_start = week_start.replace(hour=0, minute=0, second=0, microsecond=0)
-        after_ts = int(week_start.timestamp())
+            # Початок тижня (Понеділок)
+            now = datetime.now()
+            week_start = now - timedelta(days=now.weekday())
+            week_start = week_start.replace(hour=0, minute=0, second=0, microsecond=0)
+            after_ts = int(week_start.timestamp())
 
-        r = requests.get(
-            "https://www.strava.com/api/v3/athlete/activities",
-            headers={"Authorization": f"Bearer {token}"},
-            params={"per_page": 30, "after": after_ts},
-            timeout=15
-        )
-        r.raise_for_status()
-        activities = r.json()
+            r = requests.get(
+                "https://www.strava.com/api/v3/athlete/activities",
+                headers={"Authorization": f"Bearer {token}"},
+                params={"per_page": 30, "after": after_ts},
+                timeout=15
+            )
+            r.raise_for_status()
+            activities = r.json()
 
-        runs = [a for a in activities if a.get("type") in ("Run", "VirtualRun", "TrailRun")]
+            runs = [a for a in activities if a.get("type") in ("Run", "VirtualRun", "TrailRun")]
 
-        total_km = sum(a["distance"] for a in runs) / 1000
-        total_min = sum(a["moving_time"] for a in runs) // 60
-        count = len(runs)
+            total_km = sum(a["distance"] for a in runs) / 1000
+            total_min = sum(a["moving_time"] for a in runs) // 60
+            count = len(runs)
 
-        return {
-            "runs": count,
-            "km": round(total_km, 1),
-            "duration_min": total_min,
-            "week_start": week_start.strftime("%d.%m"),
-        }
-    except Exception as e:
-        print(f"Strava get_week_stats error: {e}")
-        return None
+            return {
+                "runs": count,
+                "km": round(total_km, 1),
+                "duration_min": total_min,
+                "week_start": week_start.strftime("%d.%m"),
+            }
+        except requests.exceptions.HTTPError as e:
+            if e.response.status_code == 429:
+                wait_time = (attempt + 1) * 10  # 10, 20, 30 sec
+                print(f"Strava 429 (attempt {attempt+1}/{max_retries}), waiting {wait_time}s...")
+                time.sleep(wait_time)
+                continue
+            else:
+                print(f"Strava HTTP error (status {e.response.status_code}): {e}")
+                return None
+        except Exception as e:
+            print(f"Strava get_week_stats error: {e}")
+            return None
+    print(f"Strava get_week_stats failed after {max_retries} retries on 429")
+    return None
 
 
 def _format_run_lines(last: dict) -> list:
@@ -280,20 +294,34 @@ if __name__ == "__main__":
 
 def get_activities(days: int = 30) -> list:
     """Повертає список активностей за останні N днів."""
-    try:
-        token = _get_access_token()
-        after_ts = int((datetime.now() - timedelta(days=days)).timestamp())
-        r = requests.get(
-            "https://www.strava.com/api/v3/athlete/activities",
-            headers={"Authorization": f"Bearer {token}"},
-            params={"per_page": 100, "after": after_ts},
-            timeout=15
-        )
-        r.raise_for_status()
-        return r.json()
-    except Exception as e:
-        print(f"get_activities error: {e}")
-        return []
+    import time
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            token = _get_access_token()
+            after_ts = int((datetime.now() - timedelta(days=days)).timestamp())
+            r = requests.get(
+                "https://www.strava.com/api/v3/athlete/activities",
+                headers={"Authorization": f"Bearer {token}"},
+                params={"per_page": 100, "after": after_ts},
+                timeout=15
+            )
+            r.raise_for_status()
+            return r.json()
+        except requests.exceptions.HTTPError as e:
+            if e.response.status_code == 429:
+                wait_time = (attempt + 1) * 10  # 10, 20, 30 sec
+                print(f"Strava 429 in get_activities (attempt {attempt+1}/{max_retries}), waiting {wait_time}s...")
+                time.sleep(wait_time)
+                continue
+            else:
+                print(f"get_activities HTTP error (status {e.response.status_code}): {e}")
+                return []
+        except Exception as e:
+            print(f"get_activities error: {e}")
+            return []
+    print(f"get_activities failed after {max_retries} retries on 429")
+    return []
 
 
 def get_runs(days: int = 30) -> list:
