@@ -1500,9 +1500,9 @@ def format_email_item(subject, sender, preview, is_unread=False, ai_summary=None
 def _imap_connect():
     """Підключення до Gmail через IMAP."""
     import socket as _s
-    _s.setdefaulttimeout(20)
+    _s.setdefaulttimeout(40)
     app_password = os.environ.get("GMAIL_APP_PASSWORD", "zbzlkvxjspuekbuk")
-    mail = imaplib.IMAP4_SSL("imap.gmail.com", timeout=20)
+    mail = imaplib.IMAP4_SSL("imap.gmail.com", timeout=40)
     mail.login(GMAIL_USER, app_password)
     return mail
 
