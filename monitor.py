@@ -2720,17 +2720,17 @@ def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
         import io, time as _t
 
         COINS_MAP = [
-            ("BTC", "bitcoin",      "#F7931A"),
-            ("ETH", "ethereum",     "#627EEA"),
-            ("AVAX","avalanche-2",  "#E84142"),
-            ("ONDO","ondo-finance", "#00C6A2"),
+            ("BTC", "bitcoin",      "#00FF00"),  # Зелений
+            ("ETH", "ethereum",     "#00FF00"),  # Зелений
+            ("AVAX","avalanche-2",  "#00FF00"),  # Зелений
+            ("ONDO","ondo-finance", "#00FF00"),  # Зелений
         ]
-        BG    = "#0D1117"
-        PANEL = "#161B22"
-        GRID  = "#1E2530"
-        TEXT  = "#E6EDF3"
-        MUTED = "#8B949E"
-        BORDER= "#30363D"
+        BG    = "#0A0E27"        # Темна тема — глибокий синій
+        PANEL = "#0F1629"        # Панель — трохи світліший темний синій
+        GRID  = "#1A2847"        # Сітка — блакитний відтінок
+        TEXT  = "#64B5F6"        # Світло-синій текст
+        MUTED = "#42A5F5"        # Мuted — світло-синій (трохи яскравіший)
+        BORDER= "#1E3A5F"        # Рамка — темний синій
 
         hist   = storage.load_price_history()
         cutoff = _t.time() - days * 86400
@@ -2749,6 +2749,8 @@ def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
             ax.tick_params(colors=MUTED, labelsize=12, length=4)
             ax.xaxis.set_major_formatter(mdates.DateFormatter("%d.%m"))
             ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=1))
+            # Сітка світло-синього кольору для красивого вигляду
+            ax.grid(True, color="#2E5090", alpha=0.3, linestyle="-", linewidth=0.8, zorder=0)
 
             pts = [p for p in hist.get(cid, []) if p[0] >= cutoff]
             pts.sort(key=lambda x: x[0])
@@ -2769,12 +2771,12 @@ def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
             ax.fill_between(timestamps, prices, p_min * 0.998,
                             color=color, alpha=0.18, zorder=2)
 
-            # Тренд-лінія
+            # Тренд-лінія (світло-синій для обох напрямків, для гармонії)
             x_num  = np.array([(t - timestamps[0]).total_seconds() for t in timestamps])
             coeffs = np.polyfit(x_num, prices, 1)
-            t_color = "#3FB950" if coeffs[0] >= 0 else "#F85149"
+            t_color = "#64B5F6" if coeffs[0] >= 0 else "#90CAF9"  # Світло-синій
             ax.plot(timestamps, np.polyval(coeffs, x_num), color=t_color,
-                    linewidth=2.0, linestyle="--", alpha=0.85, zorder=4)
+                    linewidth=2.5, linestyle="--", alpha=0.9, zorder=4)
 
             # Мітка першої і останньої ціни
             def _fmt(v):
@@ -2850,14 +2852,14 @@ def generate_weight_trend_chart(days: int = 30) -> bytes | None:
         import io
         from datetime import datetime as _dt, timedelta as _td
 
-        BG          = "#0D1117"
-        PANEL       = "#161B22"
-        GRID        = "#1E2530"
-        BORDER      = "#30363D"
-        TEXT        = "#E6EDF3"
-        MUTED       = "#8B949E"
-        GOAL_COLOR  = "#58A6FF"
-        LINE_COLOR  = "#3FB950"
+        BG          = "#0A0E27"        # Темна тема — глибокий синій
+        PANEL       = "#0F1629"        # Панель — трохи світліший темний синій
+        GRID        = "#1A2847"        # Сітка — блакитний відтінок
+        BORDER      = "#1E3A5F"        # Рамка — темний синій
+        TEXT        = "#64B5F6"        # Світло-синій текст
+        MUTED       = "#42A5F5"        # Мuted — світло-синій
+        GOAL_COLOR  = "#90CAF9"        # Ціль — світло-синій
+        LINE_COLOR  = "#00FF00"        # Графік — зелений
 
         try:
             import storage as _storage_chart
@@ -2908,14 +2910,14 @@ def generate_weight_trend_chart(days: int = 30) -> bytes | None:
                 marker="o", markersize=7, markerfacecolor=LINE_COLOR,
                 zorder=3, label="Вага")
 
-        # Тренд-лінія
+        # Тренд-лінія (світло-синій для гармонії з крипто)
         if len(weights) >= 4:
             xn = np.arange(len(weights))
             z  = np.polyfit(xn, weights, 1)
             p  = np.poly1d(z)
-            trend_col = "#F85149" if z[0] > 0 else "#3FB950"
+            trend_col = "#90CAF9"  # Завжди світло-синій для консистентності
             ax.plot(x_dates, p(xn), "--", color=trend_col,
-                    linewidth=2.2, alpha=0.85, label="Тренд")
+                    linewidth=2.2, alpha=0.9, label="Тренд")
 
         # Ціль 78 кг
         ax.axhline(78.0, color=GOAL_COLOR, linewidth=2.0,
@@ -2945,7 +2947,7 @@ def generate_weight_trend_chart(days: int = 30) -> bytes | None:
                  ha="right", color=TEXT, fontsize=12)
         ax.yaxis.set_tick_params(labelcolor=TEXT, labelsize=12)
         ax.tick_params(colors=TEXT)
-        ax.grid(True, color=GRID, linewidth=0.8, alpha=0.8)
+        ax.grid(True, color="#2E5090", linewidth=0.8, alpha=0.4)
         ax.set_ylabel("кг", color=TEXT, fontsize=13)
 
         # Заголовок
