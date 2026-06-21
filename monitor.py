@@ -2733,7 +2733,9 @@ def generate_crypto_trend_chart(days: int = 30) -> bytes | None:
         BORDER= "#1E3A5F"        # Рамка — темний синій
         
         # DEBUG: переконатися що нові кольори використовуються
-        print(f"[CHART] Using colors: BG={BG}, TEXT={TEXT}, GREEN lines (crypto)", flush=True)
+        import sys as _dsys
+        print(f"[CHART-CRYPTO] LOADED from: {__file__}", file=_dsys.stderr, flush=True)
+        print(f"[CHART-CRYPTO] Using colors: BG={BG}, TEXT={TEXT}, GREEN=#00FF00", file=_dsys.stderr, flush=True)
 
         hist   = storage.load_price_history()
         cutoff = _t.time() - days * 86400
