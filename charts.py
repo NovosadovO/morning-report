@@ -1397,3 +1397,131 @@ def plot_combined_dashboard() -> bytes | None:
         import traceback
         print(f"[charts] combined_dashboard error: {e}\n{traceback.format_exc()}")
         return None
+
+
+# ── 2х2 ДАШБОРД ЗДОРОВ'Я (місяць) ────────────────────────────────────────────
+
+def plot_health_2x2_dashboard(year: int = None, month: int = None) -> bytes | None:
+    """
+    2х2 таблиця дашборду здоров'я за місяць:
+    [Біг][Кроки]
+    [Сон][HRV/HR/Стрес]
+    """
+    if not HAS_MPL:
+        return None
+    
+    try:
+        import sys
+        sys.path.insert(0, _DIR)
+        from health_parser import load_daily_health
+        import calendar as _cal
+        
+        _rc()
+        
+        # Дата
+        now = datetime.now(timezone.utc) + timedelta(hours=2)
+        if year is None:
+            year = now.year
+        if month is None:
+            month = now.month
+        
+        # Завантажу дані здоров'я
+        health_data = load_daily_health(os.path.join(_DIR, "daily_health.json"))
+        
+        # Фільтрую дані за місяць
+        month_data = {}
+        for date_str, data in health_data.items():
+            try:
+                d = datetime.strptime(date_str, "%Y-%m-%d").date()
+                if d.year == year and d.month == month:
+                    month_data[date_str] = data
+            except:
+                pass
+        
+        if not month_data:
+            return None
+        
+        # Сортую по датам
+        dates = sorted(month_data.keys())
+        
+        # Готую дані для 4 графіків
+        running_km_list = [month_data.get(d, {}).get("running_km", 0) for d in dates]
+        steps_list = [month_data.get(d, {}).get("steps", 0) for d in dates]
+        sleep_list = [month_data.get(d, {}).get("sleep_hours", 0) for d in dates]
+        hrv_list = [month_data.get(d, {}).get("hrv", 0) for d in dates]
+        hr_list = [month_data.get(d, {}).get("hr", 0) for d in dates]
+        stress_list = [month_data.get(d, {}).get("stress", 0) for d in dates]
+        
+        # Створюю 2х2 фігуру
+        fig = plt.figure(figsize=(14, 10))
+        gs = gridspec.GridSpec(2, 2, figure=fig, hspace=0.3, wspace=0.3)
+        
+        day_nums = list(range(1, len(dates) + 1))
+        
+        # ── График 1: БІГ (км) ──
+        ax1 = fig.add_subplot(gs[0, 0])
+        ax1.bar(day_nums, running_km_list, color=GREEN, alpha=0.8, edgecolor=BORDER, linewidth=1.5)
+        ax1.axhline(y=5, color=ORANGE, linestyle="--", linewidth=2, label="Мета: 5км")
+        ax1.set_title("🏃 БІГ (км)", fontsize=12, fontweight="bold", pad=10)
+        ax1.set_ylabel("км", fontsize=10)
+        ax1.set_ylim(0, max(running_km_list + [5]) * 1.2)
+        ax1.grid(True, alpha=0.3)
+        ax1.legend(loc="upper left", fontsize=9)
+        
+        # ── Graph 2: КРОКИ ──
+        ax2 = fig.add_subplot(gs[0, 1])
+        ax2.bar(day_nums, [s/1000 for s in steps_list], color=BLUE, alpha=0.8, edgecolor=BORDER, linewidth=1.5)
+        ax2.axhline(y=25, color=ORANGE, linestyle="--", linewidth=2, label="Мета: 25k")
+        ax2.set_title("🚶 КРОКИ (тисячі)", fontsize=12, fontweight="bold", pad=10)
+        ax2.set_ylabel("k", fontsize=10)
+        ax2.set_ylim(0, max([s/1000 for s in steps_list] + [25]) * 1.2)
+        ax2.grid(True, alpha=0.3)
+        ax2.legend(loc="upper left", fontsize=9)
+        
+        # ── Graph 3: СОН (години) ──
+        ax3 = fig.add_subplot(gs[1, 0])
+        ax3.bar(day_nums, sleep_list, color=PURPLE, alpha=0.8, edgecolor=BORDER, linewidth=1.5)
+        ax3.axhline(y=8, color=ORANGE, linestyle="--", linewidth=2, label="Мета: 8ч")
+        ax3.set_title("😴 СОН (години)", fontsize=12, fontweight="bold", pad=10)
+        ax3.set_ylabel("ч", fontsize=10)
+        ax3.set_ylim(0, max(sleep_list + [8]) * 1.2)
+        ax3.grid(True, alpha=0.3)
+        ax3.legend(loc="upper left", fontsize=9)
+        
+        # ── Graph 4: HRV / HR / СТРЕС ──
+        ax4 = fig.add_subplot(gs[1, 1])
+        
+        # Нормалізую для порівняння (0-100 масштаб)
+        hrv_norm = [min(100, v * 2) if v else 0 for v in hrv_list]  # HRV 0-50 → 0-100
+        stress_norm = stress_list  # Стрес вже 0-100
+        hr_norm = [(v - 60) * 2 if v else 0 for v in hr_list]  # HR 60-110 → 0-100
+        
+        ax4.plot(day_nums, hrv_norm, marker="o", linestyle="-", linewidth=2, 
+                label="HRV (норм)", color=GREEN, markersize=4)
+        ax4.plot(day_nums, stress_norm, marker="s", linestyle="-", linewidth=2,
+                label="Стрес", color=RED, markersize=4)
+        ax4.plot(day_nums, hr_norm, marker="^", linestyle="-", linewidth=2,
+                label="ПУльс (норм)", color=YELLOW, markersize=4)
+        
+        ax4.set_title("❤️ HRV / ПУЛЬС / СТРЕС", fontsize=12, fontweight="bold", pad=10)
+        ax4.set_ylabel("Значення (норм 0-100)", fontsize=10)
+        ax4.set_ylim(0, 120)
+        ax4.grid(True, alpha=0.3)
+        ax4.legend(loc="upper left", fontsize=9)
+        
+        # Загальні налаштування
+        month_name = _cal.month_name[month]
+        fig.suptitle(f"📊 Дашборд здоров'я — {month_name} {year}", 
+                    fontsize=14, fontweight="bold", y=0.98)
+        
+        # Додаю дату оновлення
+        ax1.text(0.5, -0.25, f"Оновлено: {now.strftime('%d.%m.%Y %H:%M')}", 
+                ha="center", transform=ax1.transAxes, fontsize=8, style="italic", color=MUTED)
+        
+        return _buf(fig, dpi=150)
+    
+    except Exception as e:
+        print(f"[health_2x2_dashboard] error: {e}")
+        import traceback
+        traceback.print_exc()
+        return None
