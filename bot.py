@@ -44,6 +44,11 @@ _GH_OFF_URL  = "https://api.github.com/repos/NovosadovO/morning-report/contents/
 import sys
 sys.path.insert(0, os.path.dirname(__file__))
 from monitor import get_prices, get_weather, get_calendar, get_emails
+try:
+    from health_parser import parse_health_text, save_daily_health
+except ImportError:
+    parse_health_text = None
+    save_daily_health = None
 
 # ─── WRAPPER для проактивних повідомлень ─────────────────────────────────────
 def _send_telegram_text(text):
@@ -1824,7 +1829,34 @@ def handle_command(chat_id, text):
             print(f"[/звіт] error: {_e_rep}\n{traceback.format_exc()}", flush=True)
             send(chat_id, f"⚠️ Помилка звіту: {_e_rep}")
 
-    elif text in ["/ціни", "ціни"]:
+        # ── ОБРОБНИК ЗДОРОВ'Я ────────────────────────────────────────────────────────────
+    # Якщо текст містить показники здоров'я (кроки, сон, пульс, тощо) — парсимо і зберігаємо
+    elif parse_health_text and any(keyword in text.lower() for keyword in 
+        ['кроки', 'сон', 'пульс', 'heart rate', 'hrv', 'стрес', 'stress', 'калорії']):
+        try:
+            parsed = parse_health_text(text)
+            if parsed:
+                # Зберігаємо на GitHub або локально
+                import os as _os_health
+                _health_file = os.path.join(_os_health.path.dirname(_os_health.path.abspath(__file__)), 
+                                            "daily_health.json")
+                save_daily_health(parsed, _health_file)
+                
+                # Відповідаємо
+                _summary = []
+                if parsed.get("steps"): _summary.append(f"🚶 Кроки: {parsed['steps']}")
+                if parsed.get("sleep_hours"): _summary.append(f"😴 Сон: {parsed['sleep_hours']:.1f}ч")
+                if parsed.get("hr"): _summary.append(f"❤️ ПУльс: {parsed['hr']}")
+                if parsed.get("hrv"): _summary.append(f"📊 HRV: {parsed['hrv']}")
+                if parsed.get("stress"): _summary.append(f"😰 Стрес: {parsed['stress']}")
+                
+                msg = "✅ Дані здоров'я збережені:\n" + "\n".join(_summary)
+                send(chat_id, msg)
+        except Exception as _e_health:
+            print(f"[health] parse error: {_e_health}")
+            send(chat_id, f"⚠️ Помилка парсингу здоров'я: {_e_health}")
+    
+elif text in ["/ціни", "ціни"]:
         try:
             send(chat_id, get_prices())
             from monitor import generate_crypto_trend_chart
