@@ -16,6 +16,10 @@ import urllib.parse
 import time
 from datetime import datetime, timezone, timedelta
 import storage
+try:
+    import charts as _charts_health
+except ImportError:
+    _charts_health = None
 
 try:
     import requests as _requests
@@ -478,7 +482,11 @@ def load_json_file(path, default=None):
     filename = os.path.basename(path)
     if filename.startswith("monitor_") and filename.endswith(".json"):
         try:
-            import storage as _storage
+            import storage
+try:
+    import charts as _charts_health
+except ImportError:
+    _charts_health = None as _storage
             return _storage.load(filename, default=default if default is not None else {})
         except Exception:
             pass
@@ -494,7 +502,11 @@ def save_json_file(path, data):
     filename = os.path.basename(path)
     if filename.startswith("monitor_") and filename.endswith(".json"):
         try:
-            import storage as _storage
+            import storage
+try:
+    import charts as _charts_health
+except ImportError:
+    _charts_health = None as _storage
             _storage.save(filename, data)
             return
         except Exception:
@@ -1681,7 +1693,11 @@ def _email_sent_ids():
     """Повертає set вже надісланих IMAP UID (з GitHub data branch — persistent, без кешу)."""
     # Використовуємо storage.py (hardcoded token + data branch) — той самий шлях що й _email_save_ids
     try:
-        import storage as _st
+        import storage
+try:
+    import charts as _charts_health
+except ImportError:
+    _charts_health = None as _st
         from storage import invalidate_cache
         invalidate_cache("monitor_alert_emails.json")
         data = _st.load("monitor_alert_emails.json", default={})
@@ -1693,7 +1709,11 @@ def _email_sent_ids():
 def _email_save_ids(sent_ids: set):
     """Зберігає sent UID в GitHub. Тримає останні 1000."""
     try:
-        import storage as _st
+        import storage
+try:
+    import charts as _charts_health
+except ImportError:
+    _charts_health = None as _st
         lst = sorted(int(x) for x in sent_ids if str(x).isdigit())[-1000:]
         _st.save("monitor_alert_emails.json", {"sent_ids": [str(x) for x in lst]})
     except Exception as e:
@@ -2860,7 +2880,11 @@ def generate_weight_trend_chart(days: int = 30) -> bytes | None:
         LINE_COLOR  = "#3FB950"
 
         try:
-            import storage as _storage_chart
+            import storage
+try:
+    import charts as _charts_health
+except ImportError:
+    _charts_health = None as _storage_chart
             # weight_data.json — актуальний файл (weight.py зберігає сюди)
             raw = _storage_chart.load("weight_data.json") or {}
             if not raw:
@@ -3956,7 +3980,11 @@ def main():
     # ── Блок 3: КРИПТО — спарклайн + ринок ───────────────────────────────────
     if prices_text:
         try:
-            import storage as _st_c
+            import storage
+try:
+    import charts as _charts_health
+except ImportError:
+    _charts_health = None as _st_c
             _pdata = _st_c.load("prices_history.json") or {}
 
             _up = prices_text.count("🔺")
@@ -4026,7 +4054,11 @@ def main():
     # ── Блок 5: ЗДОРОВ'Я — з прогресбарами і спарклайном ─────────────────────
     try:
         _health_lines = [_section_header("💪", "ЗДОРОВ'Я")]
-        import storage as _st_h
+        import storage
+try:
+    import charts as _charts_health
+except ImportError:
+    _charts_health = None as _st_h
 
         # Вага — таблиця останніх 7 ДНІВ (з прочерком якщо нема запису)
         try:
@@ -5680,7 +5712,11 @@ def check_proactive_insights():
     # ── 5. Тижневий підсумок ваги (неділя 20:00) з AI аналізом ──────────────
     if dow == 6 and h == 20 and not already_sent("weekly_weight"):
         try:
-            import storage as _ws; weight_data = _ws.load("weight_data.json") or _ws.load_weight() or {}
+            import storage
+try:
+    import charts as _charts_health
+except ImportError:
+    _charts_health = None as _ws; weight_data = _ws.load("weight_data.json") or _ws.load_weight() or {}
             if weight_data:
                 sorted_w = sorted(weight_data.items())
                 last_entries = sorted_w[-7:]
@@ -7268,7 +7304,11 @@ def check_fasting_reminder():
         return  # в робочий день режим інший
 
     # Поточна вага для мотивації
-    import storage as _wm_s; weight_data = _wm_s.load("weight_data.json") or _wm_s.load_weight() or {}
+    import storage
+try:
+    import charts as _charts_health
+except ImportError:
+    _charts_health = None as _wm_s; weight_data = _wm_s.load("weight_data.json") or _wm_s.load_weight() or {}
     weight_note = ""
     if weight_data:
         last_w = sorted(weight_data.items())[-1][1]
@@ -8491,14 +8531,22 @@ def check_calendar_live():
 
     # Стан зберігаємо в GitHub щоб не дублювати після редеплою
     try:
-        import storage as _storage
+        import storage
+try:
+    import charts as _charts_health
+except ImportError:
+    _charts_health = None as _storage
         state = _storage.load("calendar_context.json", default={})
     except Exception:
         state = load_json_file(CALENDAR_CONTEXT_FILE, default={})
 
     def _save_state(s):
         try:
-            import storage as _storage
+            import storage
+try:
+    import charts as _charts_health
+except ImportError:
+    _charts_health = None as _storage
             _storage.save("calendar_context.json", s)
         except Exception:
             save_json_file(CALENDAR_CONTEXT_FILE, s)
