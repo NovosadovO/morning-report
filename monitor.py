@@ -4267,16 +4267,17 @@ def main():
 
 
     # ── EMAIL AI-АНАЛІЗ: аналіз ЛИШЕ листів з Gmail (без календаря) ────────────
+    # ── EMAIL AI-АНАЛІЗ: детальна обробка листів з Gmail ──────────────────
     _email_ai_text = ""
     try:
-        # Читаємо листи БЕЗПОСЕРЕДНЬО з Gmail (не з email_text що може мати інше)
+        # Читаємо листи БЕЗПОСЕРЕДНЬО з Gmail (unread з primary)
         _mail = _imap_connect()
         _, _p_unseen = _mail.uid('search', None, 'X-GM-RAW "category:primary is:unread"')
         _primary_unread_uids = set(u.decode() for u in _p_unseen[0].split()) if _p_unseen[0] else set()
         
-        # Збираємо ТЕКСТ листів для аналізу
+        # Збираємо ПОВНУ ІНФОРМАЦІЮ листів для аналізу
         _emails_for_analysis = []
-        _uid_list = list(_primary_unread_uids)[:10]  # макс 10 листів для аналізу
+        _uid_list = list(_primary_unread_uids)[:15]  # макс 15 листів
         
         if _uid_list:
             for _uid in _uid_list:
@@ -4287,35 +4288,49 @@ def main():
                     _subject = _imap_decode_header(_msg.get("Subject", "(без теми)"))
                     _from = _imap_decode_header(_msg.get("From", ""))
                     _body = _imap_get_body(_msg)
-                    _emails_for_analysis.append(f"Від: {_from}\nТема: {_subject}\n{_body[:500]}")
-                except Exception:
-                    pass
+                    _date_header = _msg.get("Date", "")
+                    
+                    # Форматуємо для аналізу
+                    _email_formatted = f"📬 Від: {_from}\n📋 Тема: {_subject}\n📅 Дата: {_date_header}\n\n✉️ ТЕКСТ:\n{_body[:600]}"
+                    _emails_for_analysis.append(_email_formatted)
+                except Exception as _e_fetch:
+                    print(f"[email_ai] fetch error: {_e_fetch}")
         
         _mail.logout()
         
-        # Якщо є листи — аналізуємо їх
+        # Якщо є листи — глибокий AI-аналіз
         if _emails_for_analysis:
             import uuid as _uuid_e
             _seed_e = str(_uuid_e.uuid4())[:8]
-            _emails_text = "\n\n---\n\n".join(_emails_for_analysis)[:3000]
+            _emails_text = "\n\n" + "="*50 + "\n\n".join(_emails_for_analysis)[:4000]
             
             _gem_key_email = os.environ.get("GEMINI_API_KEY", "")
-            if _gem_key_email and _ai_time_left(30):
+            if _gem_key_email and _ai_time_left(35):
                 _email_prompt = (
-                    f"Проаналізуй листи Олега (gmail.com). ЛИШЕ листи, БЕЗ календаря або нагадувань.\n\n"
-                    f"=== ЛИСТИ З GMAIL ===\n{_emails_text}\n====================\n\n"
-                    f"Напиши КОРОТКО (4-6 речень):\n"
-                    f"1. 🔴 КРИТИЧНІ (потребують негайної дії сьогодні)\n"
-                    f"2. 🟡 ВАЖЛИВІ (прочитати/відповісти сьогодні)\n"
-                    f"3. 🟢 ІНФОРМАЦІЙНІ (можна пізніше)\n"
-                    f"4. 💡 ДІЯ: як швидко обробити пошту\n\n"
-                    f"Тон: конкретно, без розповідей. Лише факти з листів. [seed:{_seed_e}]"
+                    f"Ти — email-асистент Олега. Проаналізуй його НЕВІДПОВІДАНІ листи в Gmail.\n\n"
+                    f"=== ЛИСТИ ===\n{_emails_text}\n\n==================\n\n"
+                    f"ДАЙТЕ ГЛИБОКИЙ АНАЛІЗ (250-350 слів):\n\n"
+                    f"1️⃣ КРИТИЧНІСТЬ:\n"
+                    f"   🔴 НЕГАЙНІ — потребують дії СЬОГОДНІ\n"
+                    f"   🟡 ВАЖЛИВІ — до кінця тижня\n"
+                    f"   🟢 ІНФОРМАЦІЙНІ — можна чекати\n\n"
+                    f"2️⃣ АНАЛІЗ КОЖНОГО ЛИСТА:\n"
+                    f"   • Від кого / компанія?\n"
+                    f"   • Про що (основна идея)?\n"
+                    f"   • Потребує відповіді? Яку дію?\n\n"
+                    f"3️⃣ РЕКОМЕНДАЦІЇ ДІЇ:\n"
+                    f"   • Яким листам відповісти першим?\n"
+                    f"   • Які можна помітити як прочитані?\n"
+                    f"   • Яким потрібен phone call замість email?\n\n"
+                    f"4️⃣ ШАБЛОНИ ВІДПОВІДЕЙ:\n"
+                    f"   • Для кожного критичного листа дай ГОТОВИЙ 1-2 рядка як відповісти\n\n"
+                    f"Тон: конкретно, професійно, без воды. Лише факти та дії. [seed:{_seed_e}]"
                 )
                 _email_payload = json.dumps({
                     "contents": [{"parts": [{"text": _email_prompt}]}],
                     "generationConfig": {
-                        "maxOutputTokens": 1200,
-                        "temperature": 0.6,
+                        "maxOutputTokens": 3000,
+                        "temperature": 0.7,
                         "thinkingConfig": {"thinkingBudget": 0},
                     },
                 }).encode()
@@ -4333,10 +4348,10 @@ def main():
         print(f"[email_ai] error: {_e_email}", flush=True)
         _email_ai_text = ""
     
-    # Додаємо email_ai у parts
+    # Додаємо email_ai у parts (коротка версія для звіту)
     if _email_ai_text:
-        parts.append(f"📧 <b>Аналіз листів: рекомендації</b>\n<i>{esc(_email_ai_text)}</i>")
-        print(f"[email_ai] добавлено в звіт", flush=True)
+        parts.append(f"📧 <b>Аналіз листів: дії і рекомендації</b>\n<i>{esc(_email_ai_text)}</i>")
+        print(f"[email_ai] добавлено в звіт ({len(_email_ai_text)} символів)", flush=True)
 
 
     # ── HEALTH AI-АНАЛІЗ: справжні дані з qwatch, які надсилав Олег ──
