@@ -382,7 +382,9 @@ def send_telegram(text: str) -> bool:
     """Надсилає текст, автоматично розбиваючи на частини якщо > 4090 символів."""
     MAX = 4090
     if len(text) <= MAX:
-        return _send_telegram_chunk(text)
+        result = _send_telegram_chunk(text)
+        print(f"[send_telegram] single chunk returned {result}", flush=True)
+        return result
 
     # Розбиваємо по рядках, не ріжемо слова
     parts = []
@@ -402,13 +404,17 @@ def send_telegram(text: str) -> bool:
     if current:
         parts.append(current)
 
+    print(f"[send_telegram] split into {len(parts)} parts", flush=True)
     import time as _time
     ok = True
     for i, part in enumerate(parts):
         if i > 0:
             _time.sleep(0.5)
-        if not _send_telegram_chunk(part):
+        chunk_result = _send_telegram_chunk(part)
+        print(f"[send_telegram] part {i+1}/{len(parts)} returned {chunk_result}", flush=True)
+        if not chunk_result:
             ok = False
+    print(f"[send_telegram] final result: {ok}", flush=True)
     return ok
 
 
@@ -4889,23 +4895,32 @@ def main():
                     current = sec
         _flush()
 
+    print(f"[report] ========== STARTING REPORT SEND ==========", flush=True)
     print(f"[report] sending part 1 ({len(parts_1)} sections)", flush=True)
     _send_parts_as_one(parts_1)
+    print(f"[report] part 1 done, ok={ok}", flush=True)
     _time_main.sleep(0.8)
     print(f"[report] sending part 2 ({len(parts_2)} sections)", flush=True)
     _send_parts_as_one(parts_2)
+    print(f"[report] part 2 done, ok={ok}", flush=True)
 
     # Album з усіма фото після тексту
     if photo_parts:
         _time_main.sleep(0.8)
         print(f"[report] sending album ({len(photo_parts)} photos)", flush=True)
         _send_album(photo_parts)
+        print(f"[report] album done, ok={ok}", flush=True)
+    else:
+        print(f"[report] no photos to send", flush=True)
 
     # Листи — окремо після всього
     if email_parts:
         _time_main.sleep(0.8)
         print(f"[report] sending email parts ({len(email_parts)} items)", flush=True)
         _send_parts_as_one(email_parts)
+        print(f"[report] email parts done, ok={ok}", flush=True)
+    else:
+        print(f"[report] no email parts to send", flush=True)
 
     def _split_safe_msg(text, limit=3800):
         """Розбиває текст по межах речень/рядків, жоден шматок не перевищує limit."""

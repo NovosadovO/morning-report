@@ -1860,13 +1860,18 @@ def handle_command(chat_id, text):
         try:
             import importlib, sys as _sys, os as _os
             _monitor_path = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "monitor.py")
+            print(f"[/звіт] Loading monitor from {_monitor_path}", flush=True)
             import importlib.util as _ilu
             spec = _ilu.spec_from_file_location("monitor_run", _monitor_path)
             mod = _ilu.module_from_spec(spec)
             spec.loader.exec_module(mod)
+            print(f"[/звіт] Monitor loaded, TELEGRAM_TOKEN available: {bool(mod.TELEGRAM_TOKEN)}", flush=True)
+            print(f"[/звіт] Monitor loaded, TELEGRAM_CHAT available: {bool(mod.TELEGRAM_CHAT)}", flush=True)
             # Bypass slot check — примусово запускаємо звіт
             mod._FORCE_REPORT = True
+            print(f"[/звіт] Starting mod.main() with _FORCE_REPORT=True...", flush=True)
             mod.main()
+            print(f"[/звіт] mod.main() completed", flush=True)
         except Exception as _e_rep:
             import traceback
             print(f"[/звіт] error: {_e_rep}\n{traceback.format_exc()}", flush=True)
