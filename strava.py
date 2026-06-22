@@ -189,7 +189,7 @@ def get_last_activity():
 def get_week_stats():
     """Статистика за поточний тиждень (Пн-Нд)"""
     import time
-    max_retries = 3
+    max_retries = 6  # Збільшено з 3 на 6
     for attempt in range(max_retries):
         try:
             token = _get_access_token()
@@ -223,7 +223,8 @@ def get_week_stats():
             }
         except requests.exceptions.HTTPError as e:
             if e.response.status_code == 429:
-                wait_time = (attempt + 1) * 10  # 10, 20, 30 sec
+                # Більший backoff: 10, 20, 30, 40, 50, 60 sec
+                wait_time = (attempt + 1) * 10
                 print(f"Strava 429 (attempt {attempt+1}/{max_retries}), waiting {wait_time}s...")
                 time.sleep(wait_time)
                 continue
@@ -295,7 +296,7 @@ if __name__ == "__main__":
 def get_activities(days: int = 30) -> list:
     """Повертає список активностей за останні N днів."""
     import time
-    max_retries = 3
+    max_retries = 6  # Збільшено з 3 на 6
     for attempt in range(max_retries):
         try:
             token = _get_access_token()
@@ -310,7 +311,8 @@ def get_activities(days: int = 30) -> list:
             return r.json()
         except requests.exceptions.HTTPError as e:
             if e.response.status_code == 429:
-                wait_time = (attempt + 1) * 10  # 10, 20, 30 sec
+                # Більший backoff: 10, 20, 30, 40, 50, 60 sec
+                wait_time = (attempt + 1) * 10
                 print(f"Strava 429 in get_activities (attempt {attempt+1}/{max_retries}), waiting {wait_time}s...")
                 time.sleep(wait_time)
                 continue
