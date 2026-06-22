@@ -1768,6 +1768,11 @@ def handle_command(chat_id, text):
         try:
             import os as _do
             lines = ["🔍 <b>ДІАГНОСТИКА</b>\n"]
+            # 0. TELEGRAM Credentials
+            tk = _do.environ.get("TELEGRAM_TOKEN", "")
+            ch = _do.environ.get("TELEGRAM_CHAT_ID", "")
+            lines.append(f"TELEGRAM_TOKEN: {'✅ ' + tk[:20] + '...' if tk else '❌ НЕМАЄ'}")
+            lines.append(f"TELEGRAM_CHAT_ID: {'✅ ' + str(ch) if ch else '❌ НЕМАЄ'}")
             # 1. GEMINI_API_KEY
             gk = _do.environ.get("GEMINI_API_KEY", "")
             lines.append(f"GEMINI_API_KEY: {'✅ є (' + str(len(gk)) + ' симв)' if gk else '❌ НЕМАЄ'}")
@@ -1861,12 +1866,15 @@ def handle_command(chat_id, text):
             import importlib, sys as _sys, os as _os
             _monitor_path = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "monitor.py")
             print(f"[/звіт] Loading monitor from {_monitor_path}", flush=True)
+            print(f"[/звіт] TELEGRAM_TOKEN from bot env: {TELEGRAM_TOKEN[:20]}...", flush=True)
+            print(f"[/звіт] TELEGRAM_CHAT from bot env: {TELEGRAM_CHAT}", flush=True)
             import importlib.util as _ilu
             spec = _ilu.spec_from_file_location("monitor_run", _monitor_path)
             mod = _ilu.module_from_spec(spec)
             spec.loader.exec_module(mod)
             print(f"[/звіт] Monitor loaded, TELEGRAM_TOKEN available: {bool(mod.TELEGRAM_TOKEN)}", flush=True)
-            print(f"[/звіт] Monitor loaded, TELEGRAM_CHAT available: {bool(mod.TELEGRAM_CHAT)}", flush=True)
+            print(f"[/звіт] Monitor token starts with: {str(mod.TELEGRAM_TOKEN)[:20] if mod.TELEGRAM_TOKEN else 'NONE'}...", flush=True)
+            print(f"[/звіт] Monitor TELEGRAM_CHAT: {mod.TELEGRAM_CHAT}", flush=True)
             # Bypass slot check — примусово запускаємо звіт
             mod._FORCE_REPORT = True
             print(f"[/звіт] Starting mod.main() with _FORCE_REPORT=True...", flush=True)
