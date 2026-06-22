@@ -2,25 +2,31 @@
 Графіки для Strava / біг-модуль.
 Повертає bytes (PNG) для відправки через Telegram sendPhoto.
 
-ДИЗАЙН: 🎨 Яскравий з емодзі + Moving Average тренд-лінії + 1 місяць
+ДИЗАЙН: 🎨 Яскравий з емодзі + Moving Average тренд-лінії
+АДАПТОВАНО: get_activities(days=N) — беремо днів від минулого
 """
 import io
 import os
 from datetime import datetime, timedelta
 import calendar
-import numpy as np
+
+try:
+    import numpy as np
+    HAS_NUMPY = True
+except ImportError:
+    HAS_NUMPY = False
+    np = None
 
 try:
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     import matplotlib.dates as mdates
-    from matplotlib.patches import FancyBboxPatch
     HAS_MPL = True
 except Exception:
     HAS_MPL = False
 
-# 🎨 ЯСКРАВИЙ ДИЗАЙН з ЕМОДЗІ
+# 🎨 ЯСКРАВИЙ ДИЗАЙН
 BRIGHT_BG    = "#FFFFFF"      # Білий фон
 BRIGHT_CARD  = "#F5F7FA"      # Світло-сіра панель
 BRIGHT_GREEN = "#00D084"      # Яскравий зелений ✅
@@ -29,7 +35,7 @@ BRIGHT_ORANGE = "#FF9500"     # Яскравий помаранчевий 🔥
 BRIGHT_PINK  = "#FF006E"      # Яскравий рожевий 💪
 TREND_LINE   = "#FF6B35"      # Помаранчева лінія тренду
 TEXT_DARK    = "#333333"      # Темний текст
-TEXT_MUTED   = "#666666"      # Мuted текст
+TEXT_MUTED   = "#666666"      # Muted текст
 
 # DEBUG
 import sys as _debug_sys
@@ -37,245 +43,296 @@ print(f"[STRAVA_CHARTS] LOADED (BRIGHT DESIGN)", file=_debug_sys.stderr, flush=T
 
 
 def _moving_average(data, window=7):
-    """Ковзаюча середня"""
-    if len(data) < window:
-        return data
-    ma = np.convolve(data, np.ones(window)/window, mode='valid')
-    # Pad з нулями на початку
-    return np.concatenate([np.full(window-1, np.nan), ma])
+    """Ковзаюча середня з numpy"""
+    if not HAS_NUMPY or np is None:
+        return None
+    try:
+        if len(data) < window:
+            return data
+        ma = np.convolve(data, np.ones(window)/window, mode='valid')
+        # Pad з NaN на початку
+        return np.concatenate([np.full(window-1, np.nan), ma])
+    except:
+        return None
 
 
 def _setup_bright_style():
     """Налаштування яскравого стилю"""
+    if not HAS_MPL:
+        return
     plt.rcParams.update({
-        "figure.facecolor":  BRIGHT_BG,
-        "axes.facecolor":    BRIGHT_CARD,
-        "axes.edgecolor":    "#CCCCCC",
-        "axes.labelcolor":   TEXT_DARK,
-        "axes.titlecolor":   TEXT_DARK,
-        "xtick.color":       TEXT_MUTED,
-        "ytick.color":       TEXT_MUTED,
-        "text.color":        TEXT_DARK,
-        "grid.color":        "#E0E0E0",
-        "grid.linewidth":    0.6,
-        "font.size":         10,
-        "axes.titlesize":    13,
-        "legend.framealpha": 0.95,
+        'figure.facecolor': BRIGHT_BG,
+        'axes.facecolor': BRIGHT_CARD,
+        'axes.edgecolor': '#CCCCCC',
+        'text.color': TEXT_DARK,
+        'axes.labelcolor': TEXT_DARK,
+        'xtick.color': TEXT_MUTED,
+        'ytick.color': TEXT_MUTED,
+        'grid.color': '#EEEEEE',
+        'grid.alpha': 0.3,
+        'font.size': 11,
+        'font.family': 'sans-serif',
     })
 
 
-def _buf(fig, dpi: int = 200) -> bytes:
-    """Рендер фігури у bytes PNG"""
-    buf = io.BytesIO()
-    fig.savefig(buf, format="png", dpi=dpi, bbox_inches="tight", facecolor=BRIGHT_BG)
-    buf.seek(0)
-    plt.close(fig)
-    return buf.getvalue()
-
-
-def plot_month_chart(year: int = None, month: int = None) -> bytes:
+def plot_week_chart(weeks_back=8):
     """
-    🏃 Місячний графік Strava (1 місяць):
-    - 📊 Bar chart: км по днях (яскравий зелений)
-    - 📈 Line overlay: Moving Average (тренд помаранчевий)
-    - 🎯 Загальний тренд за місяць
+    Тижневий прогрес за останні N тижнів (N*7 днів).
+    Повертає PNG bytes або None.
     """
     if not HAS_MPL:
-        return b""
-
-    from strava import get_month_stats
-
-    now = datetime.now()
-    if year is None: year = now.year
-    if month is None: month = now.month
-
-    ms = get_month_stats(year, month)
-    runs = ms.get("runs_list", [])
-
-    if not runs:
+        return None
+    
+    try:
+        from strava import get_activities
+        
+        # Беремо діяльність за weeks_back * 7 днів
+        days_back = weeks_back * 7
+        activities = get_activities(days=days_back)
+        if not activities:
+            return None
+        
+        # Групуємо по дням
+        daily_km = {}
+        for act in activities:
+            if 'start_date' not in act:
+                continue
+            
+            # Парсимо дату
+            start_date_str = act['start_date']
+            if isinstance(start_date_str, str):
+                date_str = start_date_str[:10]  # YYYY-MM-DD
+            else:
+                date_str = str(start_date_str.date()) if hasattr(start_date_str, 'date') else str(start_date_str)[:10]
+            
+            km = act.get('distance', 0) / 1000  # meters -> km
+            if date_str not in daily_km:
+                daily_km[date_str] = 0
+            daily_km[date_str] += km
+        
+        if not daily_km:
+            return None
+        
+        # Сортуємо по датам
+        sorted_dates = sorted(daily_km.keys())
+        km_values = np.array([daily_km[d] for d in sorted_dates]) if HAS_NUMPY else [daily_km[d] for d in sorted_dates]
+        
+        # Побудова графіка
+        _setup_bright_style()
+        fig, ax = plt.subplots(figsize=(14, 8), facecolor=BRIGHT_BG)
+        
+        # Стовпці
+        ax.bar(range(len(km_values)), km_values, color=BRIGHT_BLUE, alpha=0.7, label="км/день", edgecolor=BRIGHT_BLUE, linewidth=1)
+        
+        # MA 7-day тренд
+        if HAS_NUMPY:
+            ma = _moving_average(km_values, window=7)
+            if ma is not None:
+                ax.plot(range(len(ma)), ma, color=TREND_LINE, linewidth=3, label="7-day Moving Avg", zorder=10)
+        
+        # Оформлення
+        ax.set_xlabel("Дата", fontsize=12, color=TEXT_DARK, weight='bold')
+        ax.set_ylabel("км", fontsize=12, color=TEXT_DARK, weight='bold')
+        ax.set_title(f"📊 Біг — Тижневий Прогрес ({weeks_back}w)", fontsize=16, color=TEXT_DARK, weight='bold', pad=20)
+        
+        # Часові мітки
+        tick_step = max(1, len(sorted_dates) // 10)
+        ax.set_xticks(range(0, len(sorted_dates), tick_step))
+        ax.set_xticklabels([sorted_dates[i] for i in range(0, len(sorted_dates), tick_step)], rotation=45, ha='right')
+        
+        ax.grid(True, alpha=0.3, linestyle='--', axis='y')
+        ax.legend(loc='upper left', fontsize=10, framealpha=0.95)
+        ax.set_facecolor(BRIGHT_CARD)
+        
+        # Збереження в bytes
+        buf = io.BytesIO()
+        plt.savefig(buf, format='png', dpi=100, bbox_inches='tight', facecolor=BRIGHT_BG)
+        buf.seek(0)
+        plt.close(fig)
+        return buf.getvalue()
+        
+    except Exception as e:
+        print(f"[STRAVA_CHARTS] plot_week_chart error: {e}", file=_debug_sys.stderr, flush=True)
+        import traceback
+        traceback.print_exc(file=_debug_sys.stderr)
         return None
 
-    # Будуємо дані по днях
-    days_in_month = calendar.monthrange(year, month)[1]
-    days = list(range(1, days_in_month + 1))
-    km_by_day = {d: 0.0 for d in days}
-    pace_by_day = {d: None for d in days}
 
-    for r in runs:
-        d = r["date"].day
-        km_by_day[d] += r["dist_km"]
-        if r["pace_sec"] > 0:
-            pace_by_day[d] = r["pace_sec"]
-
-    km_vals = np.array([km_by_day[d] for d in days])
-    pace_vals = [pace_by_day[d] for d in days]
-
-    month_names = ["", "Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень",
-                   "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"]
-    
-    total_km = ms.get("total_km", 0)
-    total_runs = ms.get("total_runs", 0)
-    avg_pace = ms.get("avg_pace_sec", 0)
-
-    _setup_bright_style()
-    fig = plt.figure(figsize=(14, 8))
-    
-    # Заголовок з емодзі
-    fig.suptitle(f"🏃 {month_names[month]} {year} • {total_runs} пробіжок • {total_km:.1f} км", 
-                 fontsize=16, fontweight='bold', color=TEXT_DARK, y=0.98)
-
-    # Основний графік
-    ax1 = plt.subplot(111)
-    
-    # Bars (км по днях)
-    colors = [BRIGHT_GREEN if k > 0 else BRIGHT_CARD for k in km_vals]
-    bars = ax1.bar(days, km_vals, color=colors, alpha=0.85, label="Км за день", edgecolor=BRIGHT_GREEN, linewidth=1.5)
-    
-    # Moving Average (7-day)
-    ma_7 = _moving_average(km_vals, window=7)
-    ax1.plot(days, ma_7, color=TREND_LINE, linewidth=3, label="📈 Тренд (7-day MA)", marker='o', markersize=5, alpha=0.9)
-    
-    ax1.set_xlabel("День місяця", fontsize=11, color=TEXT_DARK, fontweight='bold')
-    ax1.set_ylabel("Км 🏃", fontsize=11, color=TEXT_DARK, fontweight='bold')
-    ax1.set_xticks(days[::2])  # Кожен другий день
-    ax1.legend(loc='upper left', fontsize=10, framealpha=0.95)
-    ax1.grid(True, alpha=0.3, linestyle='--')
-    ax1.set_ylim(bottom=0)
-
-    plt.tight_layout()
-    return _buf(fig, dpi=200)
-
-
-def plot_week_chart(weeks_back: int = 4) -> bytes:
+def plot_month_chart(year=None, month=None):
     """
-    📅 Тижневий графік (останні 4 тижні = 1 місяць):
-    - Км по днях тижня
-    - Moving Average
-    - Статистика
+    Місячний графік (День → км).
+    Якщо year/month не задані, використовує попередній місяць.
+    Повертає PNG bytes або None.
     """
     if not HAS_MPL:
-        return b""
-
-    from strava import get_week_stats, get_activities
-
-    # Беремо останні 30 днів
-    today = datetime.now().date()
-    start_date = today - timedelta(days=30)
+        return None
     
-    activities = get_activities(start_date=start_date, end_date=today)
-    
-    if not activities:
+    try:
+        from strava import get_activities
+        
+        # Визначаємо період (поточний або заданий місяць)
+        now = datetime.now()
+        if year is None or month is None:
+            if now.month == 1:
+                year, month = now.year - 1, 12
+            else:
+                year, month = now.year, now.month - 1
+        
+        # Дати початку й кінця місяця
+        first_day = datetime(year, month, 1)
+        if month == 12:
+            last_day = datetime(year + 1, 1, 1) - timedelta(days=1)
+        else:
+            last_day = datetime(year, month + 1, 1) - timedelta(days=1)
+        
+        days_in_month = (last_day - first_day).days + 1
+        
+        # Беремо діяльність за останні 90 днів (безпека)
+        activities = get_activities(days=90)
+        if not activities:
+            return None
+        
+        # Групуємо по дням ЦЬОГО місяця
+        daily_km = {}
+        for day_num in range(1, days_in_month + 1):
+            daily_km[day_num] = 0.0
+        
+        for act in activities:
+            if 'start_date' not in act:
+                continue
+            
+            # Парсимо дату
+            start_date_str = act['start_date']
+            if isinstance(start_date_str, str):
+                act_date = datetime.fromisoformat(start_date_str[:10])
+            else:
+                act_date = start_date_str if isinstance(start_date_str, datetime) else datetime.fromisoformat(str(start_date_str)[:10])
+            
+            # Фільтруємо по місяцю
+            if act_date.year == year and act_date.month == month:
+                day_num = act_date.day
+                km = act.get('distance', 0) / 1000
+                daily_km[day_num] += km
+        
+        km_values = np.array([daily_km[d] for d in range(1, days_in_month + 1)]) if HAS_NUMPY else [daily_km[d] for d in range(1, days_in_month + 1)]
+        
+        if not HAS_NUMPY:
+            km_values = np.array(km_values)
+        
+        # Побудова графіка
+        _setup_bright_style()
+        fig, ax = plt.subplots(figsize=(14, 8), facecolor=BRIGHT_BG)
+        
+        # Стовпці
+        ax.bar(range(1, days_in_month + 1), km_values, color=BRIGHT_GREEN, alpha=0.8, label="км/день", edgecolor=BRIGHT_GREEN, linewidth=1)
+        
+        # MA 7-day тренд
+        if HAS_NUMPY:
+            ma = _moving_average(km_values, window=7)
+            if ma is not None:
+                ax.plot(range(len(ma)), ma, color=TREND_LINE, linewidth=3, label="7-day Moving Avg", zorder=10)
+        
+        # Оформлення
+        mnames = ["","Січень","Лютий","Березень","Квітень","Травень","Червень",
+                  "Липень","Серпень","Вересень","Жовтень","Листопад","Грудень"]
+        ax.set_xlabel("День місяця", fontsize=12, color=TEXT_DARK, weight='bold')
+        ax.set_ylabel("км", fontsize=12, color=TEXT_DARK, weight='bold')
+        ax.set_title(f"📊 {mnames[month]} {year}", fontsize=16, color=TEXT_DARK, weight='bold', pad=20)
+        
+        ax.set_xticks(range(1, days_in_month + 1, max(1, days_in_month // 10)))
+        ax.grid(True, alpha=0.3, linestyle='--', axis='y')
+        ax.legend(loc='upper left', fontsize=10, framealpha=0.95)
+        ax.set_facecolor(BRIGHT_CARD)
+        
+        # Збереження в bytes
+        buf = io.BytesIO()
+        plt.savefig(buf, format='png', dpi=100, bbox_inches='tight', facecolor=BRIGHT_BG)
+        buf.seek(0)
+        plt.close(fig)
+        return buf.getvalue()
+        
+    except Exception as e:
+        print(f"[STRAVA_CHARTS] plot_month_chart error: {e}", file=_debug_sys.stderr, flush=True)
+        import traceback
+        traceback.print_exc(file=_debug_sys.stderr)
         return None
 
-    # Сортуємо по датам
-    activities.sort(key=lambda x: x["start_date"])
-    
-    # Будуємо дані по днях (за останні 30)
-    dates = []
-    km_vals = []
-    current_date = start_date
-    daily_km = {}
-    
-    while current_date <= today:
-        daily_km[current_date] = 0.0
-        current_date += timedelta(days=1)
-    
-    for act in activities:
-        act_date = act["start_date"].date() if hasattr(act["start_date"], 'date') else act["start_date"]
-        if act_date in daily_km:
-            daily_km[act_date] += act.get("distance", 0) / 1000  # meters to km
-    
-    for d in sorted(daily_km.keys()):
-        dates.append(d)
-        km_vals.append(daily_km[d])
-    
-    km_vals = np.array(km_vals)
-    total_km = km_vals.sum()
-    total_runs = len(activities)
 
-    _setup_bright_style()
-    fig = plt.figure(figsize=(14, 8))
-    
-    # Заголовок
-    fig.suptitle(f"📅 Останні 30 днів • {total_runs} пробіжок • {total_km:.1f} км", 
-                 fontsize=16, fontweight='bold', color=TEXT_DARK, y=0.98)
-
-    ax = plt.subplot(111)
-    
-    # Bars (яскравий синій)
-    colors = [BRIGHT_BLUE if k > 0 else BRIGHT_CARD for k in km_vals]
-    ax.bar(range(len(km_vals)), km_vals, color=colors, alpha=0.85, label="Км", edgecolor=BRIGHT_BLUE, linewidth=1.5)
-    
-    # Moving Average (7-day)
-    ma_7 = _moving_average(km_vals, window=7)
-    ax.plot(range(len(km_vals)), ma_7, color=TREND_LINE, linewidth=3, label="📈 Тренд (7-day MA)", 
-            marker='o', markersize=5, alpha=0.9)
-    
-    # X-axis (дати)
-    date_strs = [d.strftime("%d.%m") for d in dates]
-    ax.set_xticks(range(0, len(dates), 5))
-    ax.set_xticklabels([date_strs[i] for i in range(0, len(dates), 5)], fontsize=9)
-    
-    ax.set_xlabel("Дата", fontsize=11, color=TEXT_DARK, fontweight='bold')
-    ax.set_ylabel("Км 🏃", fontsize=11, color=TEXT_DARK, fontweight='bold')
-    ax.legend(loc='upper left', fontsize=10, framealpha=0.95)
-    ax.grid(True, alpha=0.3, linestyle='--')
-    ax.set_ylim(bottom=0)
-
-    plt.tight_layout()
-    return _buf(fig, dpi=200)
-
-
-def plot_year_chart(year: int = None) -> bytes:
+def plot_year_chart(year=None):
     """
-    📊 Річний графік (12 місяців):
-    - Км по місяцях
-    - Moving Average
+    Річний графік (місяц → км).
+    Якщо year не задан, використовує поточний рік.
+    Повертає PNG bytes або None.
     """
     if not HAS_MPL:
-        return b""
-
-    from strava import get_year_stats
-
-    if year is None:
-        year = datetime.now().year
-
-    ys = get_year_stats(year)
-    months = list(range(1, 13))
-    km_by_month = [ys.get(m, {}).get("total_km", 0) for m in months]
-    km_vals = np.array(km_by_month)
-
-    month_names = ["Січ", "Лют", "Бер", "Кві", "Тра", "Чер", "Лип", "Сер", "Вер", "Жов", "Лис", "Гру"]
-    total_km = km_vals.sum()
-
-    _setup_bright_style()
-    fig = plt.figure(figsize=(14, 8))
+        return None
     
-    fig.suptitle(f"📊 {year} рік • {total_km:.1f} км", 
-                 fontsize=16, fontweight='bold', color=TEXT_DARK, y=0.98)
-
-    ax = plt.subplot(111)
-    
-    # Bars (помаранчевий)
-    colors = [BRIGHT_ORANGE if k > 0 else BRIGHT_CARD for k in km_vals]
-    ax.bar(months, km_vals, color=colors, alpha=0.85, label="Км", edgecolor=BRIGHT_ORANGE, linewidth=1.5, width=0.7)
-    
-    # Moving Average (3-month)
-    ma_3 = _moving_average(km_vals, window=3)
-    ax.plot(months, ma_3, color=TREND_LINE, linewidth=3, label="📈 Тренд (3-month MA)", 
-            marker='o', markersize=6, alpha=0.9)
-    
-    ax.set_xticks(months)
-    ax.set_xticklabels(month_names, fontsize=10)
-    ax.set_xlabel("Місяць", fontsize=11, color=TEXT_DARK, fontweight='bold')
-    ax.set_ylabel("Км 🏃", fontsize=11, color=TEXT_DARK, fontweight='bold')
-    ax.legend(loc='upper left', fontsize=10, framealpha=0.95)
-    ax.grid(True, alpha=0.3, linestyle='--', axis='y')
-    ax.set_ylim(bottom=0)
-
-    plt.tight_layout()
-    return _buf(fig, dpi=200)
-
-
-if __name__ == "__main__":
-    print("✅ strava_charts.py loaded")
+    try:
+        from strava import get_activities
+        
+        if year is None:
+            year = datetime.now().year
+        
+        # Беремо діяльність за останні 400 днів (1+ року)
+        activities = get_activities(days=400)
+        if not activities:
+            return None
+        
+        # Групуємо по місяцях ЦЬОГО року
+        monthly_km = {}
+        for month_num in range(1, 13):
+            monthly_km[month_num] = 0.0
+        
+        for act in activities:
+            if 'start_date' not in act:
+                continue
+            
+            # Парсимо дату
+            start_date_str = act['start_date']
+            if isinstance(start_date_str, str):
+                act_date = datetime.fromisoformat(start_date_str[:10])
+            else:
+                act_date = start_date_str if isinstance(start_date_str, datetime) else datetime.fromisoformat(str(start_date_str)[:10])
+            
+            # Фільтруємо по року
+            if act_date.year == year:
+                month_num = act_date.month
+                km = act.get('distance', 0) / 1000
+                monthly_km[month_num] += km
+        
+        km_values = np.array([monthly_km[m] for m in range(1, 13)]) if HAS_NUMPY else [monthly_km[m] for m in range(1, 13)]
+        
+        if not HAS_NUMPY:
+            km_values = np.array(km_values)
+        
+        # Побудова графіка
+        _setup_bright_style()
+        fig, ax = plt.subplots(figsize=(15, 8), facecolor=BRIGHT_BG)
+        
+        # Стовпці
+        ax.bar(range(1, 13), km_values, color=BRIGHT_ORANGE, alpha=0.8, label="км/місяць", edgecolor=BRIGHT_ORANGE, linewidth=1.5)
+        
+        # Оформлення
+        mnames = ["Січ","Лют","Бер","Кві","Тра","Чер","Лип","Сер","Вер","Жов","Лис","Гру"]
+        ax.set_xlabel("Місяць", fontsize=12, color=TEXT_DARK, weight='bold')
+        ax.set_ylabel("км", fontsize=12, color=TEXT_DARK, weight='bold')
+        ax.set_title(f"📊 Біг — Річний Звіт {year}", fontsize=16, color=TEXT_DARK, weight='bold', pad=20)
+        
+        ax.set_xticks(range(1, 13))
+        ax.set_xticklabels(mnames, rotation=0)
+        ax.grid(True, alpha=0.3, linestyle='--', axis='y')
+        ax.legend(loc='upper left', fontsize=10, framealpha=0.95)
+        ax.set_facecolor(BRIGHT_CARD)
+        
+        # Збереження в bytes
+        buf = io.BytesIO()
+        plt.savefig(buf, format='png', dpi=100, bbox_inches='tight', facecolor=BRIGHT_BG)
+        buf.seek(0)
+        plt.close(fig)
+        return buf.getvalue()
+        
+    except Exception as e:
+        print(f"[STRAVA_CHARTS] plot_year_chart error: {e}", file=_debug_sys.stderr, flush=True)
+        import traceback
+        traceback.print_exc(file=_debug_sys.stderr)
+        return None
