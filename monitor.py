@@ -457,28 +457,24 @@ def _send_photo_bytes(photo_bytes: bytes, caption: str = "") -> bool:
         return False
 
 
-def fetch_json(url, retries=6):
-    """Fetch JSON с retry на 429 (rate limit). retries=6 с backoff 5/10/15/20/25/30 sec"""
-    for attempt in range(1, retries + 1):
-        try:
-            if _HAS_REQUESTS:
-                r = _requests.get(url, headers={"User-Agent": "monitor/1.0"}, timeout=20)
-                r.raise_for_status()
-                return r.json()
-            else:
-                req = urllib.request.Request(url, headers={"User-Agent": "monitor/1.0"})
-                with urllib.request.urlopen(req, timeout=20) as r:
-                    return json.loads(r.read().decode())
-        except Exception as e:
-            # Більший backoff для 429: 5, 10, 15, 20, 25, 30 sec
-            is_429 = "429" in str(e)
-            wait_time = 5 * attempt if is_429 else 2 * attempt
-            
-            print(f"fetch_json attempt {attempt}/{retries} error [{url[:60]}]: {e}")
-            if attempt < retries:
-                print(f"  → waiting {wait_time}s before retry...")
-                time.sleep(wait_time)
-    return None
+def fetch_json(url, retries=1):
+    """Fetch JSON с timeout 10s. БЕЗ retry loop з sleep (блокує report). На 429: return None."""
+    try:
+        if _HAS_REQUESTS:
+            r = _requests.get(url, headers={"User-Agent": "monitor/1.0"}, timeout=10)
+            r.raise_for_status()
+            return r.json()
+        else:
+            req = urllib.request.Request(url, headers={"User-Agent": "monitor/1.0"})
+            with urllib.request.urlopen(req, timeout=10) as r:
+                return json.loads(r.read().decode())
+    except Exception as e:
+        is_429 = "429" in str(e)
+        if is_429:
+            print(f"⚠️ fetch_json 429 rate limit [{url[:50]}] — skipping (no retry sleep)")
+        else:
+            print(f"fetch_json error [{url[:50]}]: {e}")
+        return None
 
 
 def esc(s):
