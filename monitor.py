@@ -3432,11 +3432,13 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
 
 
 def main():
+    print(f"🔥 [monitor.main()] START", flush=True)
     global _FORCE_REPORT
     force = _FORCE_REPORT
     _FORCE_REPORT = False  # скидаємо після використання
 
     now = datetime.now(timezone.utc)
+    print(f"🔥 [monitor.main()] force={force}, now={now}", flush=True)
     now_local = now + timedelta(hours=2)
     # Дедлайн збору AI-блоків: монітор має timeout 600s. Лишаємо запас на надсилання.
     # Усі AI-блоки разом не повинні перетягнути за цей дедлайн — інакше пропускаємо їх,
