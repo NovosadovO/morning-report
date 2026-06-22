@@ -1806,6 +1806,37 @@ def handle_command(chat_id, text):
         except Exception as _e_diag:
             import traceback
             send(chat_id, f"⚠️ Помилка діагностики: {_e_diag}\n{traceback.format_exc()[-500:]}")
+    
+    elif text in ["/diag_email", "/diag_mail", "/email_diag"]:
+        send(chat_id, "📧 Діагностика email_ai...")
+        try:
+            lines = ["📧 <b>EMAIL ДІАГНОСТИКА</b>\n"]
+            # 1. Спробуємо підключитись до Gmail
+            try:
+                from monitor import _imap_connect
+                _mail = _imap_connect()
+                lines.append("✅ Gmail IMAP: підключено")
+                # 2. Підрахуємо невідповідені листи
+                _, _unseen = _mail.uid('search', None, 'X-GM-RAW "category:primary is:unread"')
+                _unread_uids = set(u.decode() for u in _unseen[0].split()) if _unseen[0] else set()
+                lines.append(f"📥 Невідповідені листи (primary): {len(_unread_uids)}")
+                if _unread_uids:
+                    lines.append("✅ Листи ЗНАЙДЕНІ → email_ai буде аналізувати")
+                else:
+                    lines.append("⚠️ Невідповідених листів НЕ ЗНАЙДЕНО → email_ai блок пропуститься")
+                _mail.logout()
+            except Exception as _e_imap:
+                lines.append(f"❌ Gmail IMAP помилка: {_e_imap}")
+            
+            # 3. Перевіримо Gemini key
+            import os as _eo
+            _gk = _eo.environ.get("GEMINI_API_KEY", "")
+            lines.append(f"🔑 Gemini API key: {'✅ є' if _gk else '❌ НЕМАЄ'}")
+            
+            send(chat_id, "\n".join(lines))
+        except Exception as _e_mail_diag:
+            import traceback
+            send(chat_id, f"⚠️ Email діагностика помилка: {_e_mail_diag}\n{traceback.format_exc()[-500:]}")
 
     elif text in ["/звіт", "звіт", "/force", "force", "/report", "/zvit"]:
         send(chat_id, "⏳ Збираю звіт...")
