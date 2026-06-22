@@ -1764,7 +1764,7 @@ def handle_command(chat_id, text):
             send(chat_id, f"⚠️ Помилка дайджесту: {e}")
 
     elif text in ["/diag", "/діаг", "діаг", "diag"]:
-        print(f"🔥 [COMMAND] /діаг triggered by {user_id} in chat {chat_id}", flush=True)
+        print(f"🔥 [COMMAND] /діаг triggered in chat {chat_id}", flush=True)
         send(chat_id, "🔍 Діагностика середовища...")
         try:
             import os as _do
@@ -1864,7 +1864,7 @@ def handle_command(chat_id, text):
             send(chat_id, f"⚠️ Email діагностика помилка: {_e_mail_diag}\n{traceback.format_exc()[-500:]}")
 
     elif text in ["/звіт", "звіт", "/force", "force", "/report", "/zvit"]:
-        print(f"🔥 [COMMAND] /звіт triggered by {user_id} in chat {chat_id}", flush=True)
+        print(f"🔥 [COMMAND] /звіт triggered in chat {chat_id}", flush=True)
         send(chat_id, "⏳ Збираю звіт...")
         try:
             import importlib, sys as _sys, os as _os
