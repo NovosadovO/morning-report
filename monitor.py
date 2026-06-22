@@ -4270,10 +4270,12 @@ def main():
     # ── EMAIL AI-АНАЛІЗ: детальна обробка листів з Gmail ──────────────────
     _email_ai_text = ""
     try:
+        print(f"[email_ai] starting email analysis...", flush=True)
         # Читаємо листи БЕЗПОСЕРЕДНЬО з Gmail (unread з primary)
         _mail = _imap_connect()
         _, _p_unseen = _mail.uid('search', None, 'X-GM-RAW "category:primary is:unread"')
         _primary_unread_uids = set(u.decode() for u in _p_unseen[0].split()) if _p_unseen[0] else set()
+        print(f"[email_ai] found {len(_primary_unread_uids)} unread emails in primary", flush=True)
         
         # Збираємо ПОВНУ ІНФОРМАЦІЮ листів для аналізу
         _emails_for_analysis = []
@@ -4293,10 +4295,12 @@ def main():
                     # Форматуємо для аналізу
                     _email_formatted = f"📬 Від: {_from}\n📋 Тема: {_subject}\n📅 Дата: {_date_header}\n\n✉️ ТЕКСТ:\n{_body[:600]}"
                     _emails_for_analysis.append(_email_formatted)
+                    print(f"[email_ai] fetched email from {_from[:30]}", flush=True)
                 except Exception as _e_fetch:
-                    print(f"[email_ai] fetch error: {_e_fetch}")
+                    print(f"[email_ai] fetch error: {_e_fetch}", flush=True)
         
         _mail.logout()
+        print(f"[email_ai] collected {len(_emails_for_analysis)} emails for analysis", flush=True)
         
         # Якщо є листи — глибокий AI-аналіз
         if _emails_for_analysis:
@@ -4305,6 +4309,9 @@ def main():
             _emails_text = "\n\n" + "="*50 + "\n\n".join(_emails_for_analysis)[:4000]
             
             _gem_key_email = os.environ.get("GEMINI_API_KEY", "")
+            print(f"[email_ai] gemini key available: {bool(_gem_key_email)}", flush=True)
+            print(f"[email_ai] ai_time_left: {_ai_time_left(35)}", flush=True)
+            
             if _gem_key_email and _ai_time_left(35):
                 _email_prompt = (
                     f"Ти — email-асистент Олега. Проаналізуй його НЕВІДПОВІДАНІ листи в Gmail.\n\n"
@@ -4326,6 +4333,7 @@ def main():
                     f"   • Для кожного критичного листа дай ГОТОВИЙ 1-2 рядка як відповісти\n\n"
                     f"Тон: конкретно, професійно, без воды. Лише факти та дії. [seed:{_seed_e}]"
                 )
+                print(f"[email_ai] sending to gemini (prompt size: {len(_email_prompt)})", flush=True)
                 _email_payload = json.dumps({
                     "contents": [{"parts": [{"text": _email_prompt}]}],
                     "generationConfig": {
@@ -4338,20 +4346,29 @@ def main():
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={_gem_key_email}",
                     _email_payload, timeout=60, tag="email_ai"
                 )
+                print(f"[email_ai] gemini response received", flush=True)
                 _email_cand = (_email_resp.get("candidates") or [{}])[0]
                 _email_parts_list = (_email_cand.get("content") or {}).get("parts") or []
                 if _email_parts_list:
                     _email_ai_text = (_email_parts_list[0].get("text") or "").strip()
                     if _email_ai_text:
                         print(f"[email_ai] OK — {len(_email_ai_text)} chars", flush=True)
+                else:
+                    print(f"[email_ai] NO parts in response: {_email_resp}", flush=True)
+        else:
+            print(f"[email_ai] no emails to analyze", flush=True)
     except Exception as _e_email:
         print(f"[email_ai] error: {_e_email}", flush=True)
+        import traceback
+        traceback.print_exc()
         _email_ai_text = ""
     
     # Додаємо email_ai у parts (коротка версія для звіту)
     if _email_ai_text:
         parts.append(f"📧 <b>Аналіз листів: дії і рекомендації</b>\n<i>{esc(_email_ai_text)}</i>")
-        print(f"[email_ai] добавлено в звіт ({len(_email_ai_text)} символів)", flush=True)
+        print(f"[email_ai] added to report ({len(_email_ai_text)} symbols)", flush=True)
+    else:
+        print(f"[email_ai] NO TEXT TO ADD", flush=True)
 
 
     # ── HEALTH AI-АНАЛІЗ: справжні дані з qwatch, які надсилав Олег ──
