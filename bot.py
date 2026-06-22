@@ -1764,6 +1764,7 @@ def handle_command(chat_id, text):
             send(chat_id, f"⚠️ Помилка дайджесту: {e}")
 
     elif text in ["/diag", "/діаг", "діаг", "diag"]:
+        print(f"🔥 [COMMAND] /діаг triggered by {user_id} in chat {chat_id}", flush=True)
         send(chat_id, "🔍 Діагностика середовища...")
         try:
             import os as _do
@@ -1810,6 +1811,8 @@ def handle_command(chat_id, text):
             send(chat_id, "\n".join(lines))
         except Exception as _e_diag:
             import traceback
+            tb = traceback.format_exc()
+            print(f"🔥 [/діаг] CRASH: {_e_diag}\n{tb}", flush=True)
             send(chat_id, f"⚠️ Помилка діагностики: {_e_diag}\n{traceback.format_exc()[-500:]}")
     
     elif text in ["/diag_email", "/diag_mail", "/email_diag"]:
@@ -1861,6 +1864,7 @@ def handle_command(chat_id, text):
             send(chat_id, f"⚠️ Email діагностика помилка: {_e_mail_diag}\n{traceback.format_exc()[-500:]}")
 
     elif text in ["/звіт", "звіт", "/force", "force", "/report", "/zvit"]:
+        print(f"🔥 [COMMAND] /звіт triggered by {user_id} in chat {chat_id}", flush=True)
         send(chat_id, "⏳ Збираю звіт...")
         try:
             import importlib, sys as _sys, os as _os
@@ -1882,7 +1886,8 @@ def handle_command(chat_id, text):
             print(f"[/звіт] mod.main() completed", flush=True)
         except Exception as _e_rep:
             import traceback
-            print(f"[/звіт] error: {_e_rep}\n{traceback.format_exc()}", flush=True)
+            tb = traceback.format_exc()
+            print(f"🔥 [/звіт] CRASH: {_e_rep}\n{tb}", flush=True)
             send(chat_id, f"⚠️ Помилка звіту: {_e_rep}")
 
     elif text in ["/ціни", "ціни"]:
