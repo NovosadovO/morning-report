@@ -2898,6 +2898,29 @@ def main():
                     _is_qwatch = ("health score" in text.lower() or "оцінка здоров" in text.lower()
                                   or ("hrv" in text.lower() and ("сон" in text.lower() or "кроки" in text.lower() or "пульс" in text.lower()))
                                   or "qwatch" in text.lower())
+                    
+                    # ── ПАРСИМО ЗДОРОВ'Я ТЕКСТ ──
+                    if _is_qwatch:
+                        try:
+                            from health_parser import parse_health_text, save_daily_health
+                            _parsed = parse_health_text(text)
+                            if _parsed:
+                                _date_key = save_daily_health(_parsed, os.path.join(_DATA_DIR, "daily_health.json"))
+                                print(f"[Health] Saved health data for {_date_key}: {_parsed}", flush=True)
+                                # Дамо юзеру фідбек про кілька найважливіших метрик
+                                _feedback_parts = []
+                                if "steps" in _parsed:
+                                    _feedback_parts.append(f"🚶 Кроки: {_parsed['steps']}")
+                                if "sleep_hours" in _parsed:
+                                    _feedback_parts.append(f"😴 Сон: {_parsed['sleep_hours']:.1f}г")
+                                if "hr" in _parsed:
+                                    _feedback_parts.append(f"❤️ Пульс: {_parsed['hr']}")
+                                if _feedback_parts:
+                                    _feedback = " · ".join(_feedback_parts)
+                                    send(chat_id, f"✅ Записано: {_feedback}")
+                        except Exception as _hp_err:
+                            print(f"[Health] Parse error: {_hp_err}")
+                    
                     if _is_qwatch and _st.get("mode") == "awaiting_shopping":
                         _cs()  # скидаємо shopping mode
                     if _st.get("mode") == "awaiting_shopping" and not _is_qwatch:

@@ -4339,7 +4339,79 @@ def main():
         print(f"[email_ai] добавлено в звіт", flush=True)
 
 
-    # ВИДАЛЕНО: неправильний health-аналіз (потребує справжніх даних з qwatch)
+    # ── HEALTH AI-АНАЛІЗ: справжні дані з qwatch, які надсилав Олег ──
+    _health_ai_text = ""
+    try:
+        from health_parser import load_daily_health
+        _now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+        _today_str = _now_local.strftime("%Y-%m-%d")
+        
+        _health_data = load_daily_health(os.path.join(_DATA_DIR, "daily_health.json"))
+        _today_health = _health_data.get(_today_str)
+        
+        if _today_health:
+            # Будуємо контекст для Gemini
+            _health_context_parts = []
+            if _today_health.get("steps"):
+                _health_context_parts.append(f"Кроки: {_today_health['steps']}")
+            if _today_health.get("sleep_hours"):
+                _health_context_parts.append(f"Сон: {_today_health['sleep_hours']:.1f} годин")
+            if _today_health.get("sleep_deep"):
+                _health_context_parts.append(f"Глибокий сон: {_today_health['sleep_deep']:.1f}г")
+            if _today_health.get("sleep_light"):
+                _health_context_parts.append(f"Легкий сон: {_today_health['sleep_light']:.1f}г")
+            if _today_health.get("hr"):
+                _health_context_parts.append(f"Пульс: {_today_health['hr']} уд/хв")
+            if _today_health.get("hrv"):
+                _health_context_parts.append(f"HRV: {_today_health['hrv']}")
+            if _today_health.get("stress"):
+                _health_context_parts.append(f"Стрес: {_today_health['stress']}/100")
+            if _today_health.get("calories"):
+                _health_context_parts.append(f"Калорії: {_today_health['calories']}")
+            if _today_health.get("running_km"):
+                _health_context_parts.append(f"Біг: {_today_health['running_km']}км")
+            
+            if _health_context_parts and _ai_time_left(25):
+                _health_text = " | ".join(_health_context_parts)
+                _gem_key_h = os.environ.get("GEMINI_API_KEY", "")
+                
+                if _gem_key_h:
+                    _health_prompt = (
+                        f"Ти — personal health coach Олега. Проаналізуй його дані здоров'я за сьогодні.\n\n"
+                        f"ДАНІ: {_health_text}\n\n"
+                        f"Напиши КОРОТКО (100-150 слів):\n"
+                        f"• ⚖️ ОЦІНКА: які метрики гарні, які потребують уваги\n"
+                        f"• 💡 ПОРАДИ: конкретні дії для покращення\n"
+                        f"• 🎯 МОТИВАЦІЯ: чесна підтримка\n\n"
+                        f"Тон: теплий, мотивуючий, без кліше."
+                    )
+                    _health_payload = json.dumps({
+                        "contents": [{"parts": [{"text": _health_prompt}]}],
+                        "generationConfig": {
+                            "maxOutputTokens": 2000,
+                            "temperature": 0.7,
+                            "thinkingConfig": {"thinkingBudget": 0},
+                        },
+                    }).encode()
+                    
+                    _health_resp = _gem_post(
+                        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={_gem_key_h}",
+                        _health_payload, timeout=60, tag="health_ai"
+                    )
+                    _health_cand = (_health_resp.get("candidates") or [{}])[0]
+                    _health_parts = (_health_cand.get("content") or {}).get("parts") or []
+                    if _health_parts:
+                        _health_ai_text = (_health_parts[0].get("text") or "").strip()
+                        if _health_ai_text:
+                            print(f"[health_ai] OK — {len(_health_ai_text)} chars", flush=True)
+    except Exception as _e_health:
+        print(f"[health_ai] error: {_e_health}", flush=True)
+        _health_ai_text = ""
+    
+    # Додаємо у звіт
+    if _health_ai_text:
+        parts.append(f"💪 <b>Аналіз здоров'я</b>\n<i>{esc(_health_ai_text)}</i>")
+        print(f"[health_ai] added to report", flush=True)
     
     _astro_ai_full = ""  # ініціалізація — астро AI надсилається окремо після звіту
 
