@@ -4172,45 +4172,47 @@ def main():
         print(f"combined chart error: {_e_combined}\n{_tb_comb.format_exc()}", flush=True)
 
     # ── 🎨 НОВИЙ: HEALTH MONTH BRIGHT (вага, біг, кроки, сон) ────────────────
-    try:
-        from charts import plot_health_month_bright
-        print("[health month bright] generating...", flush=True)
-        _health_bright = plot_health_month_bright()
-        if _health_bright:
-            parts.append({"photo": _health_bright, "caption": f"💪 Здоров'я за місяць (Moving Average)"})
-            print(f"[health month bright] done, {len(_health_bright)} bytes", flush=True)
-        else:
-            print("[health month bright] returned None", flush=True)
-    except Exception as _e_health_bright:
-        import traceback as _tb_hb
-        print(f"health month bright error: {_e_health_bright}\n{_tb_hb.format_exc()}", flush=True)
+    # ТИМЧАСОВО ВІДКЛЮЧЕНО для діагностики
+    # try:
+    #     from charts import plot_health_month_bright
+    #     print("[health month bright] generating...", flush=True)
+    #     _health_bright = plot_health_month_bright()
+    #     if _health_bright:
+    #         parts.append({"photo": _health_bright, "caption": f"💪 Здоров'я за місяць (Moving Average)"})
+    #         print(f"[health month bright] done, {len(_health_bright)} bytes", flush=True)
+    #     else:
+    #         print("[health month bright] returned None", flush=True)
+    # except Exception as _e_health_bright:
+    #     import traceback as _tb_hb
+    #     print(f"health month bright error: {_e_health_bright}\n{_tb_hb.format_exc()}", flush=True)
 
     # ── 🎨 НОВИЙ: STRAVA BRIGHT CHARTS (місяць, неділі, рік) ────────────────
-    try:
-        from strava_charts import plot_month_chart, plot_week_chart, plot_year_chart
-        print("[strava bright charts] generating...", flush=True)
-        
-        # Місячний
-        _strava_month = plot_month_chart()
-        if _strava_month:
-            parts.append({"photo": _strava_month, "caption": f"🏃 Біг за місяць (Moving Average)"})
-            print(f"[strava month] done, {len(_strava_month)} bytes", flush=True)
-        
-        # Тижневий (30 днів)
-        _strava_week = plot_week_chart()
-        if _strava_week:
-            parts.append({"photo": _strava_week, "caption": f"📅 Останні 30 днів (Moving Average)"})
-            print(f"[strava week] done, {len(_strava_week)} bytes", flush=True)
-        
-        # Річний
-        _strava_year = plot_year_chart()
-        if _strava_year:
-            parts.append({"photo": _strava_year, "caption": f"📊 Біг за рік (3-month Moving Average)"})
-            print(f"[strava year] done, {len(_strava_year)} bytes", flush=True)
-            
-    except Exception as _e_strava_bright:
-        import traceback as _tb_sb
-        print(f"strava bright charts error: {_e_strava_bright}\n{_tb_sb.format_exc()}", flush=True)
+    # ТИМЧАСОВО ВІДКЛЮЧЕНО для діагностики
+    # try:
+    #     from strava_charts import plot_month_chart, plot_week_chart, plot_year_chart
+    #     print("[strava bright charts] generating...", flush=True)
+    #     
+    #     # Місячний
+    #     _strava_month = plot_month_chart()
+    #     if _strava_month:
+    #         parts.append({"photo": _strava_month, "caption": f"🏃 Біг за місяць (Moving Average)"})
+    #         print(f"[strava month] done, {len(_strava_month)} bytes", flush=True)
+    #     
+    #     # Тижневий (30 днів)
+    #     _strava_week = plot_week_chart()
+    #     if _strava_week:
+    #         parts.append({"photo": _strava_week, "caption": f"📅 Останні 30 днів (Moving Average)"})
+    #         print(f"[strava week] done, {len(_strava_week)} bytes", flush=True)
+    #     
+    #     # Річний
+    #     _strava_year = plot_year_chart()
+    #     if _strava_year:
+    #         parts.append({"photo": _strava_year, "caption": f"📊 Біг за рік (3-month Moving Average)"})
+    #         print(f"[strava year] done, {len(_strava_year)} bytes", flush=True)
+    #         
+    # except Exception as _e_strava_bright:
+    #     import traceback as _tb_sb
+    #     print(f"strava bright charts error: {_e_strava_bright}\n{_tb_sb.format_exc()}", flush=True)
 
     # ── Блок 7: КУРС ВАЛЮТ ────────────────────────────────────────────────────
     try:
