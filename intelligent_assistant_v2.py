@@ -180,31 +180,58 @@ def generate_contextual_insight(crypto_info, emails, calendar_events, user_state
 # ============ MAIN: Проактивне повідомлення ============
 
 def should_send_proactive_message(last_message_time, user_activity_idle_minutes=120):
-    """Вирішує чи потреба писати першим (динамічно)
+    """Вирішує чи потреба писати першим (динамічно, 1 РАЗ НА ГОДИНУ)
     
     Критерії:
-    - Якщо останнє повідомлення > 120 хв тому
+    - Якщо останнє повідомлення > 120 хв тому (idle)
     - Або ранок (07:00-09:00) 
     - Або після роботи (18:00-19:00)
+    
+    ВАЖЛИВО: Гарантує МАКСИМУМ 1 повідомлення на годину (dedup по годині)
     """
     
+    import os
+    import json
+    
     current_time = time.time()
+    current_hour = datetime.now().strftime("%Y-%m-%d %H:00:00")  # Формат: "2026-06-22 19:00:00"
+    
+    # 1. Перевіряємо чи вже надіслали повідомлення у ЦІЙ годині (GitHub dedup)
+    try:
+        _proactive_dedup_file = os.path.join(os.path.dirname(__file__), "data", "proactive_sent_hours.json")
+        if os.path.exists(_proactive_dedup_file):
+            with open(_proactive_dedup_file, "r") as f:
+                _sent_hours = json.load(f) or {}
+                if current_hour in _sent_hours:
+                    print(f"[proactive] Already sent in hour {current_hour}, skipping", flush=True)
+                    return False
+    except Exception as e:
+        print(f"[proactive] dedup file read error: {e}", flush=True)
+    
+    # 2. Перевіряємо timing-критерії
     time_since_last = current_time - last_message_time
-    
-    # Якщо останнє повідомлення давніше за N хвилин
-    if time_since_last > (user_activity_idle_minutes * 60):
-        return True
-    
-    # Спец часи
     hour = datetime.now().hour
-    # Ранок (07:00-09:00) — Олег прокидається
-    if 7 <= hour <= 9:
-        return True
-    # Після роботи (18:00-19:00) — вихід на нічну або обід
-    if 17 <= hour <= 19:
-        return True
     
-    return False
+    should_send = False
+    reason = ""
+    
+    # Якщо користувач неактивний > 120 хвилин
+    if time_since_last > (user_activity_idle_minutes * 60):
+        should_send = True
+        reason = "idle>120m"
+    # Ранок (07:00-09:00) — Олег прокидається
+    elif 7 <= hour <= 9:
+        should_send = True
+        reason = "morning"
+    # Після роботи (17:00-19:00) — вихід на нічну
+    elif 17 <= hour <= 19:
+        should_send = True
+        reason = "after-work"
+    
+    if should_send:
+        print(f"[proactive] Should send: {reason}, time_since_last={int(time_since_last/60)}m", flush=True)
+    
+    return should_send
 
 def send_proactive_message(telegram_send_func):
     """Основна функція проактивного повідомлення
@@ -253,10 +280,37 @@ def send_proactive_message(telegram_send_func):
     # Надсилаємо
     try:
         telegram_send_func(message)
-        print(f"✅ Повідомлення надіслано о {datetime.now().strftime('%H:%M')}")
+        
+        # ВАЖЛИВО: Записуємо що у ЦІЙ ГОДИНІ повідомлення вже надіслане
+        import os
+        import json
+        current_hour = datetime.now().strftime("%Y-%m-%d %H:00:00")
+        _proactive_dedup_file = os.path.join(os.path.dirname(__file__), "data", "proactive_sent_hours.json")
+        
+        try:
+            os.makedirs(os.path.dirname(_proactive_dedup_file), exist_ok=True)
+            _sent_hours = {}
+            if os.path.exists(_proactive_dedup_file):
+                with open(_proactive_dedup_file, "r") as f:
+                    _sent_hours = json.load(f) or {}
+            
+            # Записуємо поточну годину
+            _sent_hours[current_hour] = datetime.now().isoformat()
+            
+            # Очищуємо старі записи (старші за 25 годин)
+            _cutoff = (datetime.now() - timedelta(hours=25)).strftime("%Y-%m-%d %H:00:00")
+            _sent_hours = {k: v for k, v in _sent_hours.items() if k >= _cutoff}
+            
+            with open(_proactive_dedup_file, "w") as f:
+                json.dump(_sent_hours, f, indent=2)
+            
+            print(f"✅ Повідомлення надіслано о {datetime.now().strftime('%H:%M')}, dedup recorded", flush=True)
+        except Exception as _de:
+            print(f"⚠️ Dedup record error: {_de}", flush=True)
+        
         return True
     except Exception as e:
-        print(f"❌ Помилка при відправці: {e}")
+        print(f"❌ Помилка при відправці: {e}", flush=True)
         return False
 
 # ============ EXPORTS ============
