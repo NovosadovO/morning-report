@@ -1818,14 +1818,29 @@ def handle_command(chat_id, text):
                 lines.append("✅ Gmail IMAP: підключено")
                 # 2. Обираємо INBOX (обов'язково перед SEARCH)
                 _mail.select('INBOX')
-                # 3. Підрахуємо невідповідені листи
-                _, _unseen = _mail.uid('search', None, 'X-GM-RAW "category:primary is:unread"')
-                _unread_uids = set(u.decode() for u in _unseen[0].split()) if _unseen[0] else set()
-                lines.append(f"📥 Невідповідені листи (primary): {len(_unread_uids)}")
-                if _unread_uids:
-                    lines.append("✅ Листи ЗНАЙДЕНІ → email_ai буде аналізувати")
+                
+                # 3. Детальна діагностика листів
+                _, _p_unseen = _mail.uid('search', None, 'X-GM-RAW "category:primary is:unread"')
+                _primary_unread = set(u.decode() for u in _p_unseen[0].split()) if _p_unseen[0] else set()
+                
+                _, _all_unseen = _mail.uid('search', None, 'UNSEEN')
+                _all_unread = set(u.decode() for u in _all_unseen[0].split()) if _all_unseen[0] else set()
+                
+                _, _p_all = _mail.uid('search', None, 'X-GM-RAW "category:primary"')
+                _primary_all = set(u.decode() for u in _p_all[0].split()) if _p_all[0] else set()
+                
+                lines.append(f"📥 PRIMARY unread: {len(_primary_unread)}")
+                lines.append(f"📥 ALL unread: {len(_all_unread)}")
+                lines.append(f"📥 PRIMARY total: {len(_primary_all)}")
+                
+                # 4. Визначаємо які листи буде аналізувати email_ai
+                if _primary_unread:
+                    lines.append("✅ Листи ЗНАЙДЕНІ (primary unread) → email_ai буде аналізувати")
+                elif _all_unread:
+                    lines.append("⚠️ PRIMARY unread=0, але є загальні UNREAD → fallback буде аналізувати")
                 else:
-                    lines.append("⚠️ Невідповідених листів НЕ ЗНАЙДЕНО → email_ai блок пропуститься")
+                    lines.append("❌ НЕМАЄ unread листів → email_ai блок НЕ з'явиться")
+                
                 _mail.logout()
             except Exception as _e_imap:
                 lines.append(f"❌ Gmail IMAP помилка: {_e_imap}")

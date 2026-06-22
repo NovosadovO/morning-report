@@ -4274,9 +4274,18 @@ def main():
         # Читаємо листи БЕЗПОСЕРЕДНЬО з Gmail (unread з primary)
         _mail = _imap_connect()
         _mail.select("INBOX")  # ОБОВ'ЯЗКОВО: обираємо mailbox перед SEARCH
+        
+        # ПОШУК 1: primary unread (найважливіше)
         _, _p_unseen = _mail.uid('search', None, 'X-GM-RAW "category:primary is:unread"')
         _primary_unread_uids = set(u.decode() for u in _p_unseen[0].split()) if _p_unseen[0] else set()
         print(f"[email_ai] found {len(_primary_unread_uids)} unread emails in primary", flush=True)
+        
+        # FALLBACK: якщо primary=0, то беремо ВСІ unread листи (незалежно від категорії)
+        if not _primary_unread_uids:
+            _, _all_unseen = _mail.uid('search', None, 'UNSEEN')
+            _all_unread_uids = set(u.decode() for u in _all_unseen[0].split()) if _all_unseen[0] else set()
+            print(f"[email_ai] primary=0, fallback: found {len(_all_unread_uids)} unread emails (all categories)", flush=True)
+            _primary_unread_uids = _all_unread_uids
         
         # Збираємо ПОВНУ ІНФОРМАЦІЮ листів для аналізу
         _emails_for_analysis = []
