@@ -1816,7 +1816,9 @@ def handle_command(chat_id, text):
                 from monitor import _imap_connect
                 _mail = _imap_connect()
                 lines.append("✅ Gmail IMAP: підключено")
-                # 2. Підрахуємо невідповідені листи
+                # 2. Обираємо INBOX (обов'язково перед SEARCH)
+                _mail.select('INBOX')
+                # 3. Підрахуємо невідповідені листи
                 _, _unseen = _mail.uid('search', None, 'X-GM-RAW "category:primary is:unread"')
                 _unread_uids = set(u.decode() for u in _unseen[0].split()) if _unseen[0] else set()
                 lines.append(f"📥 Невідповідені листи (primary): {len(_unread_uids)}")

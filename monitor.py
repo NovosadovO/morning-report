@@ -4273,6 +4273,7 @@ def main():
         print(f"[email_ai] starting email analysis...", flush=True)
         # Читаємо листи БЕЗПОСЕРЕДНЬО з Gmail (unread з primary)
         _mail = _imap_connect()
+        _mail.select("INBOX")  # ОБОВ'ЯЗКОВО: обираємо mailbox перед SEARCH
         _, _p_unseen = _mail.uid('search', None, 'X-GM-RAW "category:primary is:unread"')
         _primary_unread_uids = set(u.decode() for u in _p_unseen[0].split()) if _p_unseen[0] else set()
         print(f"[email_ai] found {len(_primary_unread_uids)} unread emails in primary", flush=True)
@@ -4362,9 +4363,10 @@ def main():
         traceback.print_exc()
         _email_ai_text = ""
     
-    # Додаємо email_ai у parts (коротка версія для звіту)
+    # Додаємо email_ai у parts — структурований формат
     if _email_ai_text:
-        parts.append(f"📧 <b>Аналіз листів: дії і рекомендації</b>\n<i>{esc(_email_ai_text)}</i>")
+        _email_formatted = f"📧 <b>АНАЛІЗ ЛИСТІВ: ДІЇ І РЕКОМЕНДАЦІЇ</b>\n\n{esc(_email_ai_text)}"
+        parts.append(_email_formatted)
         print(f"[email_ai] added to report ({len(_email_ai_text)} symbols)", flush=True)
     else:
         print(f"[email_ai] NO TEXT TO ADD", flush=True)
@@ -4408,13 +4410,18 @@ def main():
                 
                 if _gem_key_h:
                     _health_prompt = (
-                        f"Аналіз здоров'я Олега на {_today_str}.\n\n"
-                        f"ДАНІ: {_health_text}\n\n"
-                        f"НАПИШИ (max 200 слів, НЕ ПОВТОРЮЙ текст, ОДИН раз):\n"
-                        f"1) Оцінка метрик (які гарні, які потребують уваги)\n"
-                        f"2) Конкретні дії для покращення\n"
-                        f"3) Одна мотивуюча думка\n\n"
-                        f"Без дублів, без переліків, природна мова."
+                        f"Детальний аналіз здоров'я Олега ({_today_str}).\n\n"
+                        f"МЕТРИКИ: {_health_text}\n\n"
+                        f"Розбери СТРУКТУРОВАНИМ текстом (max 250 слів, БЕЗ повторів):\n\n"
+                        f"🎯 ОЦІНКА ДНЯ\n"
+                        f"[Дай оцінку як Олег робив сьогодні: відмінно/добре/задовільно?]\n\n"
+                        f"⚠️ ЧТО ПОТРЕБУЄ УВАГИ\n"
+                        f"[Які метрики вишли за норму? Що робити?]\n\n"
+                        f"✅ ЧТО ВИЙШЛО ДОБРЕ\n"
+                        f"[Які досягнення, що вдалось сьогодні?]\n\n"
+                        f"🚀 ДІЇ НА ЗАВТРА\n"
+                        f"[1-2 конкретні дії для покращення]\n\n"
+                        f"Природна мова, без переліків, прямо та мотивуюче."
                     )
                     _health_payload = json.dumps({
                         "contents": [{"parts": [{"text": _health_prompt}]}],
@@ -4450,9 +4457,11 @@ def main():
         print(f"[health_ai] error: {_e_health}", flush=True)
         _health_ai_text = ""
     
-    # Додаємо у звіт
+    # Додаємо у звіт — структурований формат
     if _health_ai_text:
-        parts.append(f"💪 <b>Аналіз здоров'я</b>\n<i>{esc(_health_ai_text)}</i>")
+        # Розбиваємо на параграфи й додаємо емодзі
+        _health_formatted = f"💪 <b>АНАЛІЗ ЗДОРОВ'Я</b>\n\n{esc(_health_ai_text)}"
+        parts.append(_health_formatted)
         print(f"[health_ai] added to report", flush=True)
     
     _astro_ai_full = ""  # ініціалізація — астро AI надсилається окремо після звіту
