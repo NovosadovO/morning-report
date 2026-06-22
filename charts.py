@@ -132,6 +132,160 @@ def _load_weight():
 
 # ── 1. HEATMAP ЗВИЧОК (GitHub-style) ─────────────────────────────────────────
 
+
+def plot_health_month_bright(year: int = None, month: int = None) -> bytes | None:
+    """
+    🎨 ЯСКРАВИЙ дизайн: Здоров'я за 1 місяць
+    - 📊 4 графіки: вага, біг, кроки, сон
+    - 📈 Moving Average (7-day trend lines)
+    - 🎯 Цілі + норми
+    """
+    if not HAS_MPL:
+        return None
+
+    import numpy as np
+    from datetime import datetime, timedelta, date
+    import calendar
+    
+    # ЯСКРАВИЯ ПАЛІТРА
+    BRIGHT_BG = "#FFFFFF"
+    BRIGHT_CARD = "#F5F7FA"
+    BRIGHT_GREEN = "#00D084"
+    BRIGHT_BLUE = "#0080FF"
+    BRIGHT_ORANGE = "#FF9500"
+    BRIGHT_RED = "#FF0080"
+    TREND_COLOR = "#FF6B35"
+    TEXT_DARK = "#333333"
+    TEXT_MUTED = "#666666"
+    
+    def moving_avg(arr, w=7):
+        """7-day moving average"""
+        if len(arr) < w:
+            return arr
+        ma = np.convolve(arr, np.ones(w)/w, mode='valid')
+        return np.concatenate([np.full(w-1, np.nan), ma])
+    
+    try:
+        # Визначаємо період (1 місяц)
+        now = datetime.now()
+        if year is None: year = now.year
+        if month is None: month = now.month
+        
+        # Завантажуємо дані
+        try:
+            from health_parser import load_health_data
+            health_data = load_health_data() or {}
+        except:
+            health_data = {}
+        
+        # Будуємо дані по днях місяця
+        days_in_month = calendar.monthrange(year, month)[1]
+        day_range = [(date(year, month, d)) for d in range(1, days_in_month + 1)]
+        
+        weight_list = []
+        run_list = []
+        steps_list = []
+        sleep_list = []
+        
+        for d in day_range:
+            d_str = d.strftime("%Y-%m-%d")
+            d_data = health_data.get(d_str, {})
+            
+            weight_list.append(d_data.get("weight", np.nan))
+            run_list.append(d_data.get("run_km", 0))
+            steps_list.append(d_data.get("steps", 0))
+            sleep_list.append(d_data.get("sleep_hours", 0))
+        
+        # Масивы для Moving Average
+        weight_arr = np.array(weight_list, dtype=float)
+        run_arr = np.array(run_list, dtype=float)
+        steps_arr = np.array(steps_list, dtype=float)
+        sleep_arr = np.array(sleep_list, dtype=float)
+        
+        weight_ma = moving_avg(weight_arr)
+        run_ma = moving_avg(run_arr)
+        steps_ma = moving_avg(steps_arr)
+        sleep_ma = moving_avg(sleep_arr)
+        
+        day_nums = np.arange(1, days_in_month + 1)
+        
+        # ── РИС ФІЛЬМ ──
+        plt.rcParams.update({
+            "figure.facecolor": BRIGHT_BG,
+            "axes.facecolor": BRIGHT_CARD,
+            "axes.edgecolor": "#CCCCCC",
+            "axes.labelcolor": TEXT_DARK,
+            "axes.titlecolor": TEXT_DARK,
+            "text.color": TEXT_DARK,
+            "grid.color": "#E0E0E0",
+            "font.size": 10,
+        })
+        
+        fig = plt.figure(figsize=(15, 10))
+        fig.suptitle(f"💪 Здоров'я за {calendar.month_name[month]} {year}", 
+                    fontsize=18, fontweight='bold', y=0.98)
+        
+        # 1️⃣ ВАГА (кг)
+        ax1 = plt.subplot(2, 2, 1)
+        ax1.bar(day_nums, weight_arr, color=BRIGHT_BLUE, alpha=0.6, label="Вага (кг)", edgecolor=BRIGHT_BLUE, linewidth=1)
+        ax1.plot(day_nums, weight_ma, color=TREND_COLOR, linewidth=3, marker='o', markersize=4, label="📈 Тренд (7-day)")
+        ax1.axhline(y=78, color=BRIGHT_GREEN, linestyle='--', linewidth=2, label="🎯 Ціль: 78 кг")
+        ax1.set_title("⚖️ ВАГА", fontsize=13, fontweight='bold')
+        ax1.set_ylabel("кг", fontsize=11, fontweight='bold')
+        ax1.legend(fontsize=9)
+        ax1.grid(True, alpha=0.3, linestyle='--')
+        ax1.set_ylim(76, 86)
+        
+        # 2️⃣ БІГ (км)
+        ax2 = plt.subplot(2, 2, 2)
+        ax2.bar(day_nums, run_arr, color=BRIGHT_GREEN, alpha=0.6, label="Км", edgecolor=BRIGHT_GREEN, linewidth=1)
+        ax2.plot(day_nums, run_ma, color=TREND_COLOR, linewidth=3, marker='o', markersize=4, label="📈 Тренд (7-day)")
+        ax2.axhline(y=5, color=BRIGHT_ORANGE, linestyle='--', linewidth=2, label="🎯 Ціль: 5 км/день")
+        ax2.set_title("🏃 БІГ", fontsize=13, fontweight='bold')
+        ax2.set_ylabel("км", fontsize=11, fontweight='bold')
+        ax2.legend(fontsize=9)
+        ax2.grid(True, alpha=0.3, linestyle='--')
+        ax2.set_ylim(0, max(run_arr) * 1.2 if any(run_arr > 0) else 10)
+        
+        # 3️⃣ КРОКИ (тисячі)
+        ax3 = plt.subplot(2, 2, 3)
+        steps_k = steps_arr / 1000  # Convert to thousands
+        steps_ma_k = steps_ma / 1000
+        ax3.bar(day_nums, steps_k, color=BRIGHT_ORANGE, alpha=0.6, label="Кроки (тис)", edgecolor=BRIGHT_ORANGE, linewidth=1)
+        ax3.plot(day_nums, steps_ma_k, color=TREND_COLOR, linewidth=3, marker='o', markersize=4, label="📈 Тренд (7-day)")
+        ax3.axhline(y=10, color=BRIGHT_GREEN, linestyle='--', linewidth=2, label="🎯 Ціль: 10K кроків")
+        ax3.set_title("👟 КРОКИ", fontsize=13, fontweight='bold')
+        ax3.set_ylabel("тисяч", fontsize=11, fontweight='bold')
+        ax3.legend(fontsize=9)
+        ax3.grid(True, alpha=0.3, linestyle='--')
+        ax3.set_ylim(0, 20)
+        
+        # 4️⃣ СОН (години)
+        ax4 = plt.subplot(2, 2, 4)
+        ax4.bar(day_nums, sleep_arr, color=BRIGHT_RED, alpha=0.6, label="Сон (ч)", edgecolor=BRIGHT_RED, linewidth=1)
+        ax4.plot(day_nums, sleep_ma, color=TREND_COLOR, linewidth=3, marker='o', markersize=4, label="📈 Тренд (7-day)")
+        ax4.axhline(y=8, color=BRIGHT_GREEN, linestyle='--', linewidth=2, label="🎯 Ціль: 8 годин")
+        ax4.set_title("😴 СОН", fontsize=13, fontweight='bold')
+        ax4.set_ylabel("годин", fontsize=11, fontweight='bold')
+        ax4.legend(fontsize=9)
+        ax4.grid(True, alpha=0.3, linestyle='--')
+        ax4.set_ylim(0, 12)
+        
+        # X-axis для всіх
+        for ax in [ax1, ax2, ax3, ax4]:
+            ax.set_xlabel("День місяця", fontsize=10, fontweight='bold')
+            ax.set_xticks(day_nums[::5])
+        
+        plt.tight_layout()
+        return _buf(fig, dpi=200)
+        
+    except Exception as e:
+        print(f"[plot_health_month_bright] error: {e}")
+        import traceback
+        traceback.print_exc()
+        return None
+
+
 def plot_habits_heatmap(days: int = 30) -> bytes | None:
     """
     GitHub-style heatmap звичок за останні N днів.
