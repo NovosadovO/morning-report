@@ -24,8 +24,8 @@ except ImportError:
     _HAS_REQUESTS = False
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
-TELEGRAM_TOKEN  = os.environ["TELEGRAM_TOKEN"]
-TELEGRAM_CHAT   = os.environ["TELEGRAM_CHAT_ID"]
+TELEGRAM_TOKEN  = os.environ.get("TELEGRAM_TOKEN", "")
+TELEGRAM_CHAT   = os.environ.get("TELEGRAM_CHAT_ID", "2100366814")
 GMAIL_USER      = "novosadovoleg@gmail.com"
 GMAIL_PASSWORD  = os.environ.get("GMAIL_APP_PASSWORD", "")
 _DATA_DIR       = os.path.dirname(os.path.abspath(__file__))

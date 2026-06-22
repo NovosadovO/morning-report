@@ -26,8 +26,8 @@ except ImportError:
     _ASSISTANT_AVAILABLE = False
     print("⚠️ intelligent_assistant_v2 not available")
 
-TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
-TELEGRAM_CHAT  = os.environ["TELEGRAM_CHAT_ID"]
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
+TELEGRAM_CHAT  = os.environ.get("TELEGRAM_CHAT_ID", "2100366814")
 OFFSET_FILE    = "/tmp/bot_offset.json"
 
 # Унікальний ідентифікатор цього інстансу бота (leader election)
