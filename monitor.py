@@ -3206,6 +3206,11 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
     з підтримкою. Аналізує ТІЛЬКИ реальні дані з ctx.
     Повертає текст або порожній рядок.
     """
+    # ── ПРОАКТИВНИЙ CHECK: якщо дедлайну близькорі — не геніруємо, повертаємо порожнину ──
+    if not _ai_time_left(min_needed=25):
+        print(f"[themes_ai] deadline approaching — skipping (time_left < 25s)", flush=True)
+        return ""
+    
     print(f"[themes_ai] called: key={'YES' if gemini_key else 'NO'}", flush=True)
     if not gemini_key:
         print(f"[themes_ai] skipped: no gemini_key", flush=True)
@@ -3262,10 +3267,12 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
                 "thinkingConfig": {"thinkingBudget": 0},
             },
         }).encode()
-        print(f"[themes_ai] sending request to Gemini (timeout=90, retry-on-429)...", flush=True)
+        # ── ТАЙМАУТ ЗАХИСТ: макс 15s за одну AI-відповідь (не залипати) ──
+        _timeout_themes = max(5, min(15, int(_ai_time_left() * 0.8)))  # 80% від залишку часу, мін 5s
+        print(f"[themes_ai] sending request to Gemini (timeout={_timeout_themes}s, retry-on-429)...", flush=True)
         resp = _gem_post(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-            body, timeout=90, tag="themes_ai"
+            body, timeout=_timeout_themes, tag="themes_ai"
         )
         _cand = (resp.get("candidates") or [{}])[0]
         _finish = _cand.get("finishReason", "UNKNOWN")
@@ -3300,6 +3307,11 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
     Генерує окремий AI аналіз астро-блоку.
     Повертає текст аналізу або порожній рядок.
     """
+    # ── ПРОАКТИВНИЙ CHECK: якщо дедлайну близькорі — не геніруємо, повертаємо порожнину ──
+    if not _ai_time_left(min_needed=20):
+        print(f"[astro_ai] deadline approaching — skipping (time_left < 20s)", flush=True)
+        return ""
+    
     print(f"[astro_ai] called: astro_len={len(astro_text) if astro_text else 0}, key={'YES' if gemini_key else 'NO'}", flush=True)
     if not astro_text or not gemini_key:
         print(f"[astro_ai] skipped: no astro_text or no gemini_key", flush=True)
@@ -3375,10 +3387,12 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
                 "thinkingConfig": {"thinkingBudget": 0},
             },
         }).encode()
-        print(f"[astro_ai] sending request to Gemini (timeout=90, retry-on-429)...", flush=True)
+        # ── ТАЙМАУТ ЗАХИСТ: макс 15s за одну AI-відповідь (не залипати) ──
+        _timeout_ai = max(5, min(15, int(_ai_time_left() * 0.8)))  # 80% від залишку часу, мін 5s
+        print(f"[astro_ai] sending request to Gemini (timeout={_timeout_ai}s, retry-on-429)...", flush=True)
         resp = _gem_post(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-            body, timeout=90, tag="astro_ai"
+            body, timeout=_timeout_ai, tag="astro_ai"
         )
         _astro_cand = (resp.get("candidates") or [{}])[0]
         _astro_finish = _astro_cand.get("finishReason", "UNKNOWN")
@@ -4389,9 +4403,11 @@ def main():
                         "thinkingConfig": {"thinkingBudget": 0},
                     },
                 }).encode()
+                # ── ТАЙМАУТ ЗАХИСТ: макс 12s за email AI (не залипати) ──
+                _timeout_email = max(5, min(12, int(_ai_time_left() * 0.75)))  # 75% від залишку часу, мін 5s
                 _email_resp = _gem_post(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={_gem_key_email}",
-                    _email_payload, timeout=60, tag="email_ai"
+                    _email_payload, timeout=_timeout_email, tag="email_ai"
                 )
                 print(f"[email_ai] gemini response received", flush=True)
                 _email_cand = (_email_resp.get("candidates") or [{}])[0]
