@@ -4314,31 +4314,21 @@ def main():
             
             if _gem_key_email and _ai_time_left(35):
                 _email_prompt = (
-                    f"Ти — email-асистент Олега. Проаналізуй його НЕВІДПОВІДАНІ листи в Gmail.\n\n"
+                    f"Аналіз невідповідених листів Олега.\n\n"
                     f"=== ЛИСТИ ===\n{_emails_text}\n\n==================\n\n"
-                    f"ДАЙТЕ ГЛИБОКИЙ АНАЛІЗ (250-350 слів):\n\n"
-                    f"1️⃣ КРИТИЧНІСТЬ:\n"
-                    f"   🔴 НЕГАЙНІ — потребують дії СЬОГОДНІ\n"
-                    f"   🟡 ВАЖЛИВІ — до кінця тижня\n"
-                    f"   🟢 ІНФОРМАЦІЙНІ — можна чекати\n\n"
-                    f"2️⃣ АНАЛІЗ КОЖНОГО ЛИСТА:\n"
-                    f"   • Від кого / компанія?\n"
-                    f"   • Про що (основна идея)?\n"
-                    f"   • Потребує відповіді? Яку дію?\n\n"
-                    f"3️⃣ РЕКОМЕНДАЦІЇ ДІЇ:\n"
-                    f"   • Яким листам відповісти першим?\n"
-                    f"   • Які можна помітити як прочитані?\n"
-                    f"   • Яким потрібен phone call замість email?\n\n"
-                    f"4️⃣ ШАБЛОНИ ВІДПОВІДЕЙ:\n"
-                    f"   • Для кожного критичного листа дай ГОТОВИЙ 1-2 рядка як відповісти\n\n"
-                    f"Тон: конкретно, професійно, без воды. Лише факти та дії. [seed:{_seed_e}]"
+                    f"НАПИШИ (max 300 слів, БЕЗ ПОВТОРІВ):\n"
+                    f"1) КРИТИЧНІСТЬ листів (🔴 негайні, 🟡 важливі, 🟢 інформаційні)\n"
+                    f"2) ПО КОЖНОМУ: від кого, про що, потребує дії\n"
+                    f"3) РЕКОМЕНДАЦІЇ: яким відповісти першим, які помітити прочитаними\n"
+                    f"4) ШАБЛОНИ: готові відповіді (1-2 рядка) для критичних\n\n"
+                    f"Без дублів, стисло, професійно."
                 )
-                print(f"[email_ai] sending to gemini (prompt size: {len(_email_prompt)})", flush=True)
+                print(f"[email_ai] sending to gemini", flush=True)
                 _email_payload = json.dumps({
                     "contents": [{"parts": [{"text": _email_prompt}]}],
                     "generationConfig": {
-                        "maxOutputTokens": 3000,
-                        "temperature": 0.7,
+                        "maxOutputTokens": 2500,
+                        "temperature": 0.6,
                         "thinkingConfig": {"thinkingBudget": 0},
                     },
                 }).encode()
@@ -4352,7 +4342,16 @@ def main():
                 if _email_parts_list:
                     _email_ai_text = (_email_parts_list[0].get("text") or "").strip()
                     if _email_ai_text:
-                        print(f"[email_ai] OK — {len(_email_ai_text)} chars", flush=True)
+                        _lines = _email_ai_text.split('\n')
+                        _seen = set()
+                        _dedup = []
+                        for _l in _lines:
+                            _c = _l.strip()
+                            if _c and _c not in _seen:
+                                _dedup.append(_l)
+                                _seen.add(_c)
+                        _email_ai_text = '\n'.join(_dedup).strip()
+                        print(f"[email_ai] OK — {len(_email_ai_text)} chars (dedup)", flush=True)
                 else:
                     print(f"[email_ai] NO parts in response: {_email_resp}", flush=True)
         else:
@@ -4409,19 +4408,19 @@ def main():
                 
                 if _gem_key_h:
                     _health_prompt = (
-                        f"Ти — personal health coach Олега. Проаналізуй його дані здоров'я за сьогодні.\n\n"
+                        f"Аналіз здоров'я Олега на {_today_str}.\n\n"
                         f"ДАНІ: {_health_text}\n\n"
-                        f"Напиши КОРОТКО (100-150 слів):\n"
-                        f"• ⚖️ ОЦІНКА: які метрики гарні, які потребують уваги\n"
-                        f"• 💡 ПОРАДИ: конкретні дії для покращення\n"
-                        f"• 🎯 МОТИВАЦІЯ: чесна підтримка\n\n"
-                        f"Тон: теплий, мотивуючий, без кліше."
+                        f"НАПИШИ (max 200 слів, НЕ ПОВТОРЮЙ текст, ОДИН раз):\n"
+                        f"1) Оцінка метрик (які гарні, які потребують уваги)\n"
+                        f"2) Конкретні дії для покращення\n"
+                        f"3) Одна мотивуюча думка\n\n"
+                        f"Без дублів, без переліків, природна мова."
                     )
                     _health_payload = json.dumps({
                         "contents": [{"parts": [{"text": _health_prompt}]}],
                         "generationConfig": {
-                            "maxOutputTokens": 2000,
-                            "temperature": 0.7,
+                            "maxOutputTokens": 1500,
+                            "temperature": 0.6,
                             "thinkingConfig": {"thinkingBudget": 0},
                         },
                     }).encode()
@@ -4434,8 +4433,19 @@ def main():
                     _health_parts = (_health_cand.get("content") or {}).get("parts") or []
                     if _health_parts:
                         _health_ai_text = (_health_parts[0].get("text") or "").strip()
+                        # Дедублікація — якщо текст містить повтори, беремо першу половину
                         if _health_ai_text:
-                            print(f"[health_ai] OK — {len(_health_ai_text)} chars", flush=True)
+                            _lines = _health_ai_text.split('\n')
+                            _seen = set()
+                            _dedup_lines = []
+                            for _line in _lines:
+                                _clean = _line.strip()
+                                if _clean and _clean not in _seen:
+                                    _dedup_lines.append(_line)
+                                    _seen.add(_clean)
+                            _health_ai_text = '\n'.join(_dedup_lines).strip()
+                            if _health_ai_text:
+                                print(f"[health_ai] OK — {len(_health_ai_text)} chars (dedup)", flush=True)
     except Exception as _e_health:
         print(f"[health_ai] error: {_e_health}", flush=True)
         _health_ai_text = ""
