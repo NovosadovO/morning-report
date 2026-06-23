@@ -1,24 +1,24 @@
 """
-Intelligent Assistant v2.0 — Проактивний помічник Олега
-Сам читає: пошту, календар, крипто
-Пише першим: 2-3 рази на день + при подіях (алерти)
-Аналіз: контекстна Gemini-аналітика
+Intelligent Assistant v2.1 — Проактивний помічник Олега
+Сам читає: пошту, календар, крипто, здоров'я, звички, графік, астро
+Пише першим: 2-3 рази на день з РЕАЛЬНИМИ аналітиками + контекстом
+Gemini-аналіз: персоналізований з точними даними
 """
 
 import os
 import json
 import time
 import sys
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import urllib.request
 import urllib.error
 
-# Імпортуємо функції з monitor.py
+# Імпортуємо функції
 sys.path.insert(0, os.path.dirname(__file__))
 try:
-    from monitor import get_emails, get_calendar, get_prices
+    from monitor import get_emails, get_calendar, get_prices, _gem_post
 except ImportError:
-    get_emails = get_calendar = get_prices = None
+    get_emails = get_calendar = get_prices = _gem_post = None
     print("⚠️ Could not import monitor functions")
 
 # ============ CONFIG ============
@@ -53,111 +53,331 @@ def get_coingecko_top20():
         print(f"❌ CoinGecko error: {e}")
         return []
 
-def analyze_crypto_changes(crypto_data):
-    """Аналізує важливі зміни у крипто"""
+def get_user_watch_list():
+    """Отримує монети що стежить Олег (BTC, ETH, AVAX, ONDO)"""
+    watch_ids = ["bitcoin", "ethereum", "avalanche-2", "ondo"]
+    watch_symbols = ["BTC", "ETH", "AVAX", "ONDO"]
+    
+    try:
+        url = "https://api.coingecko.com/api/v3/coins/markets"
+        params = {
+            "vs_currency": "usd",
+            "ids": ",".join(watch_ids),
+            "sparkline": False,
+            "price_change_percentage": "24h,7d,30d"
+        }
+        
+        query_string = "&".join(f"{k}={v}" for k, v in params.items())
+        full_url = f"{url}?{query_string}"
+        
+        req = urllib.request.Request(full_url, method="GET")
+        with urllib.request.urlopen(req, timeout=10) as response:
+            data = json.loads(response.read().decode('utf-8'))
+            result = {}
+            for coin in data:
+                sym = coin.get('symbol', '').upper()
+                result[sym] = {
+                    "name": coin.get('name'),
+                    "price": coin.get('current_price', 0),
+                    "change_24h": coin.get('price_change_percentage_24h', 0),
+                    "change_7d": coin.get('price_change_percentage_7d', 0),
+                    "market_cap": coin.get('market_cap', 0)
+                }
+            return result
+    except Exception as e:
+        print(f"❌ Watch list error: {e}")
+        return {}
+
+def analyze_crypto_changes(watch_list):
+    """Аналізує зміни в крипто портфелі Олега"""
     important = []
     
-    for coin in crypto_data:
-        name = coin.get('name', 'Unknown')
-        symbol = coin.get('symbol', '').upper()
-        price = coin.get('current_price', 0)
-        change_24h = coin.get('price_change_percentage_24h', 0)
+    for symbol, data in watch_list.items():
+        change_24h = data.get('change_24h', 0)
+        change_7d = data.get('change_7d', 0)
+        price = data.get('price', 0)
         
-        # Алерти
-        if abs(change_24h) >= TRIGGER_BTC_THRESHOLD:
-            direction = "📈 РІСТ" if change_24h > 0 else "📉 ПАДІННЯ"
+        # Алерти на значні зміни
+        if abs(change_24h) >= TRIGGER_BTC_THRESHOLD or abs(change_7d) >= 15:
+            direction_24h = "📈" if change_24h > 0 else "📉"
+            direction_7d = "📈" if change_7d > 0 else "📉"
             important.append({
-                "coin": f"{name} ({symbol})",
-                "price": f"${price:,.2f}",
-                "change": f"{change_24h:+.2f}%",
-                "direction": direction,
-                "alert": True
+                "symbol": symbol,
+                "price": f"${price:,.0f}" if price > 1 else f"${price:.4f}",
+                "change_24h": f"{change_24h:+.1f}%",
+                "change_7d": f"{change_7d:+.1f}%",
+                "direction_24h": direction_24h,
+                "direction_7d": direction_7d
             })
     
     return important
 
+# ============ HEALTH: Вага, кроки, сон ============
+
+def get_health_data():
+    """Витягує поточні дані про здоров'я"""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    today_str = now_local.strftime("%Y-%m-%d")
+    yest_str = (now_local - timedelta(days=1)).strftime("%Y-%m-%d")
+    
+    health = {
+        "weight": None,
+        "weight_trend": None,
+        "steps": None,
+        "steps_goal": 8000,
+        "sleep": None,
+        "sleep_goal": 7
+    }
+    
+    try:
+        # Вага
+        import storage as _st
+        weight_data = _st.load("weight_data.json") or _st.load_weight() or {}
+        if weight_data:
+            last_weight_key = sorted(weight_data.keys())[-1] if weight_data else None
+            if last_weight_key:
+                health["weight"] = weight_data[last_weight_key]
+                # Тренд (різниця з вчора)
+                yest_weight = weight_data.get(yest_str)
+                if yest_weight:
+                    health["weight_trend"] = round(health["weight"] - yest_weight, 1)
+        
+        # Кроки (QWatch + Apple Health)
+        qwatch = _st.load("qwatch_data.json", default={})
+        health_json = _st.load("health_data.json", default={})
+        
+        today_steps = (qwatch.get(today_str) or {}).get("steps", 0) or (health_json.get(today_str) or {}).get("steps", 0) or 0
+        health["steps"] = today_steps if today_steps > 0 else None
+        
+        # Сон (QWatch)
+        today_sleep = (qwatch.get(today_str) or {}).get("sleep_hours", 0) or 0
+        health["sleep"] = round(today_sleep, 1) if today_sleep > 0 else None
+    
+    except Exception as e:
+        print(f"❌ Health data error: {e}")
+    
+    return health
+
+# ============ HABITS: Холодний душ, біг, вода ============
+
+def get_habits_data():
+    """Витягує дані про звички сьогодні"""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    today_str = now_local.strftime("%Y-%m-%d")
+    
+    habits = {
+        "shower": None,  # cold shower
+        "running": None,  # біг
+        "water": None  # вода
+    }
+    
+    try:
+        import storage as _st
+        habits_data = _st.load("habits.json") or {}
+        today_habits = habits_data.get(today_str, {})
+        
+        habits["shower"] = today_habits.get("shower")
+        habits["running"] = today_habits.get("running")
+        habits["water"] = today_habits.get("water")
+    
+    except Exception as e:
+        print(f"❌ Habits data error: {e}")
+    
+    return habits
+
+# ============ WORK SHIFT: Графік Олега ============
+
+def get_work_shift():
+    """Визначає чи Олег на ранній чи нічній зміні"""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    hour = now_local.hour
+    
+    # Рання: 06:00-18:00, Нічна: 18:00-06:00
+    if 6 <= hour < 18:
+        shift = "Рання зміна ☀️"
+        status = "Олег на роботі"
+    else:
+        shift = "Нічна зміна 🌙"
+        status = "Олег на роботі" if 18 <= hour < 23 else "Олег вдома"
+    
+    return {"shift": shift, "status": status}
+
 # ============ EMAIL: Важливі листи ============
 
 def get_important_emails():
-    """Отримує важливі нові листи (через monitor.get_emails)"""
+    """Отримує важливі нові листи"""
     try:
         if not get_emails:
-            return []
+            return {"count": 0, "items": []}
         email_block = get_emails()
-        # Повертає строку HTML або dict з items
+        
+        # Рахуємо листи
+        count = 0
+        items = []
+        
         if isinstance(email_block, dict) and "items" in email_block:
-            return email_block["items"][:5]
-        return []
+            items = email_block["items"][:5]
+            count = len(items)
+        
+        return {"count": count, "items": items}
     except Exception as e:
         print(f"❌ Email error: {e}")
-        return []
+        return {"count": 0, "items": []}
 
-# ============ CALENDAR: Найближчі события ============
+# ============ CALENDAR: События ============
 
-def get_upcoming_calendar_events():
-    """Отримує события з календаря на наступні 48 годин"""
+def get_calendar_events():
+    """Отримує найближчі события на 48 годин"""
     try:
         if not get_calendar:
             return []
-        # get_calendar повертає HTML-блок на сьогодні+завтра
-        # Для проактивного помічника просто отримуємо інформацію
-        calendar_block = get_calendar()
-        # Це текстовий блок, не стуктуровані данные
-        # Для справжньої роботи потребуємо _fetch_events_all_calendars з monitor.py
-        return calendar_block
+        
+        cal_text = get_calendar()
+        if isinstance(cal_text, str):
+            # Парсимо текст
+            events = [line.strip() for line in cal_text.split('\n') if line.strip() and '🔔' in line or '📍' in line]
+            return events[:5]
+        return []
     except Exception as e:
         print(f"❌ Calendar error: {e}")
-        return ""
+        return []
 
-# ============ AI ANALYSIS: Gemini контекстна аналітика ============
+# ============ ASTRO: Проста астрологія ============
 
-def _gem_post(url, body, tag="gem"):
-    """POST запит до Gemini з обробкою помилок"""
+def get_astro_brief():
+    """Получає коротку астро-прогноз"""
     try:
-        headers = {"Content-Type": "application/json"}
-        data = json.dumps(body).encode('utf-8')
-        
-        req = urllib.request.Request(url, data=data, headers=headers, method="POST")
-        with urllib.request.urlopen(req, timeout=30) as response:
-            return json.loads(response.read().decode('utf-8'))
-    except urllib.error.HTTPError as e:
-        error_data = json.loads(e.read().decode('utf-8'))
-        return {"error": error_data.get('error', {}).get('message', str(e))}
+        import astro
+        report = astro.get_astro_report()
+        if report:
+            # Витягуємо перший параграф
+            lines = report.split('\n')
+            brief = ' '.join(lines[:3])
+            return brief[:200]
+        return "🔮 Астро-дані недоступні"
     except Exception as e:
-        return {"error": str(e)}
+        print(f"⚠️ Astro error: {e}")
+        return "🔮 Астро-дані недоступні"
 
-def generate_contextual_insight(crypto_info, emails, calendar_events, user_state):
-    """Генерує контекстну аналітику через Gemini"""
+# ============ GEMINI: Контекстна Gemini-аналітика ============
+
+def _gem_post_local(url, body, tag, max_retries=2):
+    """Спрощена версія _gem_post для proactive messages"""
+    for attempt in range(max_retries):
+        try:
+            import urllib.request, json as _json
+            data = _json.dumps(body).encode('utf-8')
+            req = urllib.request.Request(url, data=data, method="POST", headers={"Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                response = _json.loads(resp.read().decode())
+                
+                # Перевіряємо finish_reason
+                try:
+                    finish_reason = response['candidates'][0]['content'].get('finishReason', 'UNKNOWN')
+                    if finish_reason == 'MAX_TOKENS':
+                        print(f"⚠️ [{tag}] MAX_TOKENS reached, retrying...")
+                        time.sleep(2)
+                        continue
+                    
+                    text = response['candidates'][0]['content']['parts'][0].get('text', '')
+                    return text if text else None
+                except (KeyError, IndexError) as e:
+                    print(f"⚠️ [{tag}] Parse error: {e}")
+                    return None
+        
+        except Exception as e:
+            if '429' in str(e):
+                print(f"⚠️ [{tag}] Rate limited, waiting...")
+                time.sleep(5)
+            else:
+                print(f"❌ [{tag}] error: {e}")
+                return None
     
-    # Готуємо контекст для AI
-    context = f"""
-Профіль користувача: Олег (Kosice, SK)
-Час: {datetime.now().strftime('%Y-%m-%d %H:%M')}
-Статус: {user_state.get('status', 'active')}
+    return None
 
-📊 КРИПТО (CoinGecko TOP-20):
-{json.dumps(crypto_info, indent=2, ensure_ascii=False)}
+def generate_contextual_insight(crypto_data, health_data, habits_data, work_shift, emails, calendar, astro):
+    """Генеріує КОНТЕКСТНУ аналітику через Gemini з РЕАЛЬНИМИ даними"""
+    
+    if not GEMINI_API_KEY:
+        return "🔮 AI недоступний (мало ключа)"
+    
+    # Формуємо детальний контекст
+    context_lines = []
+    
+    # 1. КРИПТО
+    if crypto_data:
+        context_lines.append("💰 КРИПТО ПОРТФЕЛЬ:")
+        for coin in crypto_data:
+            context_lines.append(f"  {coin['symbol']}: {coin['price']} ({coin['change_24h']}) | 7д: {coin['change_7d']}")
+    else:
+        context_lines.append("💰 КРИПТО: Стабільно, немає резких змін")
+    
+    # 2. ЗДОРОВ'Я
+    context_lines.append("\n💪 ЗДОРОВ'Я СЬОГОДНІ:")
+    if health_data["weight"]:
+        trend_str = f"({health_data['weight_trend']:+.1f} від вчора)" if health_data['weight_trend'] else ""
+        context_lines.append(f"  Вага: {health_data['weight']} кг {trend_str}")
+    if health_data["steps"]:
+        pct = int(health_data['steps'] / health_data['steps_goal'] * 100)
+        context_lines.append(f"  Кроки: {health_data['steps']:,} (мета: {health_data['steps_goal']}) {pct}%")
+    if health_data["sleep"]:
+        context_lines.append(f"  Сон: {health_data['sleep']}г (мета: {health_data['sleep_goal']}г)")
+    
+    # 3. ЗВИЧКИ
+    context_lines.append("\n🎯 ЗВИЧКИ:")
+    shower_str = "✅ Холодний душ" if habits_data["shower"] is True else ("❌ Забув душ" if habits_data["shower"] is False else "⏳ Ще не давав про душ")
+    running_str = "✅ Біг" if habits_data["running"] is True else ("❌ Без бігу" if habits_data["running"] is False else "⏳ Ще не біг")
+    water_str = "✅ Вода" if habits_data["water"] is True else ("❌ Забув пити" if habits_data["water"] is False else "⏳ Невідомо")
+    context_lines.extend([f"  {shower_str}", f"  {running_str}", f"  {water_str}"])
+    
+    # 4. ГРАФІК
+    context_lines.append(f"\n📅 ГРАФІК: {work_shift['shift']}")
+    context_lines.append(f"   {work_shift['status']}")
+    
+    # 5. ЛИСТИ
+    if emails["count"] > 0:
+        context_lines.append(f"\n📧 ПОШТА: {emails['count']} нові листи")
+        for item in emails["items"][:3]:
+            if isinstance(item, str):
+                context_lines.append(f"  • {item[:60]}...")
+    else:
+        context_lines.append("\n📧 ПОШТА: Немає нових листів")
+    
+    # 6. СОБЫТИЯ
+    if calendar:
+        context_lines.append(f"\n📍 СОБЫТИЯ:")
+        for event in calendar[:3]:
+            context_lines.append(f"  • {event[:70]}")
+    
+    # 7. АСТРО
+    context_lines.append(f"\n🔮 АСТРО: {astro}")
+    
+    context = "\n".join(context_lines)
+    
+    # Генеруємо Gemini-аналітику
+    prompt = f"""Ти — персональний помічник Олега. РОЗБЕРИ його дні детально (200-250 слів, три параграфи):
 
-📧 ПОШТА (Важливі нові листи):
-{json.dumps(emails, indent=2, ensure_ascii=False)}
+{context}
 
-📅 КАЛЕНДАР (Найближчі события):
-{json.dumps(calendar_events, indent=2, ensure_ascii=False)}
+СТИЛЬ: Теплий, мотивуючий, з конкретними діями. 
+СТРУКТУРА:
+1️⃣ ПОТОЧНИЙ СТАН: Як він робить сьогодні? (крипто, здоров'я, роботу)
+2️⃣ ЧТО ВДАЛОСЬ: Позитивні моменти, досягнення
+3️⃣ РЕКОМЕНДАЦІЇ: 1-2 конкретні дії на сьогодні
 
-Аналізуючи всю цю інформацію — дай мені ОДН цілісний висновок на українській мові.
-Стиль: теплий, персональний, як розумний друг ("Привіт Олег, я сам проаналізував...").
-Максимум 150 слів, але змістовно.
-"""
+МОВА: Українська, неформальна, с емодзі
+
+Піши чітко, без повторів."""
     
     body = {
         "contents": [{
             "parts": [{
-                "text": context
+                "text": prompt
             }]
         }],
         "generationConfig": {
             "temperature": 1,
-            "maxOutputTokens": 500,
+            "maxOutputTokens": 1000,
             "thinkingConfig": {
                 "thinkingBudget": 0
             }
@@ -166,108 +386,88 @@ def generate_contextual_insight(crypto_info, emails, calendar_events, user_state
     
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
     
-    response = _gem_post(url, body, "contextual_insight")
+    text = _gem_post_local(url, body, "proactive_insight")
     
-    if 'error' in response:
-        return f"⚠️ AI аналіз недоступний: {response['error']}"
-    
-    try:
-        text = response['candidates'][0]['content']['parts'][0]['text']
+    if text:
         return text
-    except (KeyError, IndexError):
-        return "⚠️ AI не спрацювало"
+    else:
+        return "⚠️ AI нема часу, але твій день буде цікавим! 🚀"
 
 # ============ MAIN: Проактивне повідомлення ============
 
 def should_send_proactive_message(last_message_time, user_activity_idle_minutes=120):
-    """Вирішує чи потреба писати першим (динамічно, 1 РАЗ НА ГОДИНУ)
-    
-    Критерії:
-    - Якщо останнє повідомлення > 120 хв тому (idle)
-    - Або ранок (07:00-09:00) 
-    - Або після роботи (18:00-19:00)
-    
-    ВАЖЛИВО: Гарантує МАКСИМУМ 1 повідомлення на годину (dedup по годині)
-    """
-    
-    import os
-    import json
+    """Вирішує чи потреба писати першим (1 РАЗ НА ГОДИНУ)"""
     
     current_time = time.time()
-    current_hour = datetime.now().strftime("%Y-%m-%d %H:00:00")  # Формат: "2026-06-22 19:00:00"
+    current_hour = datetime.now().strftime("%Y-%m-%d %H:00:00")
     
-    # 1. Перевіряємо чи вже надіслали повідомлення у ЦІЙ годині (GitHub dedup)
+    # 1. Перевіряємо деdup — чи вже надіслали у ЦІЙ ГОДИНІ
     try:
-        _proactive_dedup_file = os.path.join(os.path.dirname(__file__), "data", "proactive_sent_hours.json")
-        if os.path.exists(_proactive_dedup_file):
-            with open(_proactive_dedup_file, "r") as f:
-                _sent_hours = json.load(f) or {}
-                if current_hour in _sent_hours:
-                    print(f"[proactive] Already sent in hour {current_hour}, skipping", flush=True)
+        dedup_file = os.path.join(os.path.dirname(__file__), "data", "proactive_sent_hours.json")
+        if os.path.exists(dedup_file):
+            with open(dedup_file, "r") as f:
+                sent_hours = json.load(f) or {}
+                if current_hour in sent_hours:
+                    print(f"[proactive] Already sent in {current_hour}, skipping", flush=True)
                     return False
     except Exception as e:
-        print(f"[proactive] dedup file read error: {e}", flush=True)
+        print(f"[proactive] dedup error: {e}", flush=True)
     
-    # 2. Перевіряємо timing-критерії
+    # 2. Timing-критерії
     time_since_last = current_time - last_message_time
     hour = datetime.now().hour
     
     should_send = False
     reason = ""
     
-    # Якщо користувач неактивний > 120 хвилин
+    # Idle > 120 хвилин
     if time_since_last > (user_activity_idle_minutes * 60):
         should_send = True
         reason = "idle>120m"
-    # Ранок (07:00-09:00) — Олег прокидається
+    # Ранок (07:00-09:00)
     elif 7 <= hour <= 9:
         should_send = True
         reason = "morning"
-    # Після роботи (17:00-19:00) — вихід на нічну
+    # Після роботи (17:00-19:00)
     elif 17 <= hour <= 19:
         should_send = True
         reason = "after-work"
     
     if should_send:
-        print(f"[proactive] Should send: {reason}, time_since_last={int(time_since_last/60)}m", flush=True)
+        print(f"[proactive] Should send: {reason}", flush=True)
     
     return should_send
 
 def send_proactive_message(telegram_send_func):
-    """Основна функція проактивного повідомлення
+    """Основна функція проактивного повідомлення — З РЕАЛЬНИМИ ДАНИМИ"""
     
-    Args:
-        telegram_send_func: функція для надсилання Telegram-повідомлень
+    print("\n🤖 [Intelligent Assistant v2.1] Generating proactive message...", flush=True)
     
-    Збирає: крипто (CoinGecko), пошту (monitor), календар (monitor)
-    Генерує одну контекстну Gemini-аналітику + надсилає
-    """
+    # Збираємо ВСІ дані
+    crypto_watch = get_user_watch_list()
+    crypto_changes = analyze_crypto_changes(crypto_watch)
     
-    print("\n🤖 [Intelligent Assistant] Generating proactive message...")
-    
-    # Збираємо всю інформацію
-    crypto_top20 = get_coingecko_top20()
-    crypto_changes = analyze_crypto_changes(crypto_top20)
+    health_data = get_health_data()
+    habits_data = get_habits_data()
+    work_shift = get_work_shift()
     
     emails = get_important_emails()
+    calendar = get_calendar_events()
+    astro = get_astro_brief()
     
-    calendar_info = get_upcoming_calendar_events()
-    
-    user_state = {
-        "status": "active",
-        "current_time": datetime.now().strftime("%H:%M"),
-        "work_shift": "morning" if 6 <= datetime.now().hour < 18 else "night"
-    }
-    
-    # Генеруємо контекстну аналітику
+    # Генеруємо аналітику
     insight = generate_contextual_insight(
-        crypto_changes if crypto_changes else {"status": "Стабільно"},
+        crypto_changes,
+        health_data,
+        habits_data,
+        work_shift,
         emails,
-        calendar_info,
-        user_state
+        calendar,
+        astro
     )
     
     # Формуємо повідомлення
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     message = f"""👋 Привіт Олег! 
 
 Я сам проаналізував твою ситуацію:
@@ -275,45 +475,42 @@ def send_proactive_message(telegram_send_func):
 {insight}
 
 ---
-🤖 Проактивний аналіз | {datetime.now().strftime('%H:%M')}"""
+🤖 Проактивний аналіз | {now_local.strftime('%H:%M')}"""
     
     # Надсилаємо
     try:
         telegram_send_func(message)
         
-        # ВАЖЛИВО: Записуємо що у ЦІЙ ГОДИНІ повідомлення вже надіслане
-        import os
-        import json
+        # Записуємо dedup
         current_hour = datetime.now().strftime("%Y-%m-%d %H:00:00")
-        _proactive_dedup_file = os.path.join(os.path.dirname(__file__), "data", "proactive_sent_hours.json")
+        dedup_file = os.path.join(os.path.dirname(__file__), "data", "proactive_sent_hours.json")
         
         try:
-            os.makedirs(os.path.dirname(_proactive_dedup_file), exist_ok=True)
-            _sent_hours = {}
-            if os.path.exists(_proactive_dedup_file):
-                with open(_proactive_dedup_file, "r") as f:
-                    _sent_hours = json.load(f) or {}
+            os.makedirs(os.path.dirname(dedup_file), exist_ok=True)
+            sent_hours = {}
+            if os.path.exists(dedup_file):
+                with open(dedup_file, "r") as f:
+                    sent_hours = json.load(f) or {}
             
-            # Записуємо поточну годину
-            _sent_hours[current_hour] = datetime.now().isoformat()
+            sent_hours[current_hour] = datetime.now().isoformat()
             
-            # Очищуємо старі записи (старші за 25 годин)
-            _cutoff = (datetime.now() - timedelta(hours=25)).strftime("%Y-%m-%d %H:00:00")
-            _sent_hours = {k: v for k, v in _sent_hours.items() if k >= _cutoff}
+            # Очищуємо старі (>25 годин)
+            cutoff = (datetime.now() - timedelta(hours=25)).strftime("%Y-%m-%d %H:00:00")
+            sent_hours = {k: v for k, v in sent_hours.items() if k >= cutoff}
             
-            with open(_proactive_dedup_file, "w") as f:
-                json.dump(_sent_hours, f, indent=2)
+            with open(dedup_file, "w") as f:
+                json.dump(sent_hours, f, indent=2)
             
-            print(f"✅ Повідомлення надіслано о {datetime.now().strftime('%H:%M')}, dedup recorded", flush=True)
+            print(f"✅ Проактивне повідомлення надіслано о {now_local.strftime('%H:%M')}", flush=True)
         except Exception as _de:
-            print(f"⚠️ Dedup record error: {_de}", flush=True)
+            print(f"⚠️ Dedup error: {_de}", flush=True)
         
         return True
     except Exception as e:
-        print(f"❌ Помилка при відправці: {e}", flush=True)
+        print(f"❌ Send error: {e}", flush=True)
         return False
 
 # ============ EXPORTS ============
 
 if __name__ == "__main__":
-    print("✅ intelligent_assistant_v2.py loaded")
+    print("✅ intelligent_assistant_v2.1 loaded")
