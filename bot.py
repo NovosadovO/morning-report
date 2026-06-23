@@ -2570,14 +2570,6 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Вага помилка: {e}")
     
-    elif text in ["/план", "план", "/план тижня"]:
-        """План тижня з таймбоксом"""
-        try:
-            import week_planner as _wp
-            block = _wp.get_week_planner_block()
-            send(chat_id, block)
-        except Exception as e:
-            send(chat_id, f"⚠️ План помилка: {e}")
 
 
 # ─── MAIN LOOP ────────────────────────────────────────────────────────────────

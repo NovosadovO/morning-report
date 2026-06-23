@@ -4561,6 +4561,16 @@ def main():
             _astro_ai_full = ""
             print(f"[astro_ai] FAILED after 2 attempts — skipping block", flush=True)
 
+    # ── Блок 6г: ПЛАН ТИЖНЯ (тільки у звіт) ─────────────────────────────────────
+    try:
+        import week_planner as _wp_rep
+        _wp_block = _wp_rep.get_week_planner_block()
+        if _wp_block:
+            parts.append(_section_header("📅", "ПЛАН ТИЖНЯ") + "\n" + _wp_block)
+            print(f"[week_planner] додано в звіт (len={len(_wp_block)})", flush=True)
+    except Exception as _e_wp:
+        print(f"[week_planner] error: {_e_wp}", flush=True)
+
     # ── Блок 6в: ТЕМАТИЧНИЙ AI-АНАЛІЗ (1 раз у кожному звіті) ────────────────
     _themes_ai_full = ""
     try:

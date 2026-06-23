@@ -188,7 +188,7 @@ def format_week_plan():
         lines.append("🟢 Багато вільного часу! Час на розвиток.")
         status = "RELAXED"
     
-    return "\n".join(lines), status
+    return "\n".join(lines)
 
 
 def generate_week_recommendations():
@@ -264,7 +264,7 @@ def generate_week_recommendations():
 def get_week_planner_block():
     """Повертає блок для звіту"""
     
-    plan, status = format_week_plan()
+    plan = format_week_plan()
     
     recommendations = generate_week_recommendations()
     
