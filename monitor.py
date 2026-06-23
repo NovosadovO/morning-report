@@ -4830,23 +4830,57 @@ def main():
         parts_2 = parts_no_photo[mid:]
 
     def _send_album(photos):
-        """Надсилає кожне фото ОКРЕМИМ повідомленням — максимальний розмір на екрані."""
+        """Надсилає ВСІ фото ОДНИМ медіа-альбомом в Telegram."""
         if not photos:
             return
-        for i, p in enumerate(photos):
-            try:
+        try:
+            # Будуємо media_group з усіма фото
+            media_group = []
+            for i, p in enumerate(photos):
+                photo_bytes = p["photo"]
                 caption = p.get("caption", "")
-                files = {"photo": (f"chart{i}.png", _io_send.BytesIO(p["photo"]), "image/png")}
-                r = _req_send.post(
-                    f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
-                    data={"chat_id": TELEGRAM_CHAT, "caption": caption, "parse_mode": "HTML"},
-                    files=files,
-                    timeout=60,
-                )
-                print(f"[photo] sent photo {i+1}/{len(photos)}: {r.status_code}", flush=True)
-                _time_main.sleep(0.5)
-            except Exception as e:
-                print(f"[photo] error photo {i}: {e}", flush=True)
+                media_item = {
+                    "type": "photo",
+                    "media": "attach://photo" + str(i),
+                    "caption": caption if i == 0 else "",  # Caption тільки на першому фото
+                    "parse_mode": "HTML"
+                }
+                media_group.append((photo_bytes, caption, i))
+            
+            # Готуємо files dict для multipart
+            files = {}
+            for photo_bytes, caption, i in media_group:
+                files[f"photo{i}"] = (f"chart{i}.png", _io_send.BytesIO(photo_bytes), "image/png")
+            
+            # JSON для sendMediaGroup (без photo bytes, вони в files)
+            media_json = []
+            all_captions = " | ".join(p.get("caption", "") for p in photos)
+            for i, p in enumerate(photos):
+                media_json.append({
+                    "type": "photo",
+                    "media": f"attach://photo{i}",
+                    "caption": all_captions if i == 0 else "",
+                    "parse_mode": "HTML"
+                })
+            
+            payload = {
+                "chat_id": TELEGRAM_CHAT,
+                "media": json.dumps(media_json)
+            }
+            
+            r = _req_send.post(
+                f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMediaGroup",
+                data=payload,
+                files=files,
+                timeout=60,
+            )
+            
+            if r.status_code == 200:
+                print(f"[photo_album] ✅ sent {len(photos)} photos in ONE message: {r.status_code}", flush=True)
+            else:
+                print(f"[photo_album] ❌ error {r.status_code}: {r.text[:200]}", flush=True)
+        except Exception as e:
+            print(f"[photo_album] exception: {e}", flush=True)
 
     MAX_MSG = 4090
     ok = True
