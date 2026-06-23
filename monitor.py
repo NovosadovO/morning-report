@@ -4540,26 +4540,29 @@ def main():
         parts.append(_health_formatted)
         print(f"[health_ai] added to report", flush=True)
     
-    _astro_ai_full = ""  # ініціалізація — астро AI надсилається окремо після звіту
+    _astro_ai_full = ""  # ініціалізація
 
-    # Блок 6: Астро — додається в кожен звіт
+    # Блок 6: Астро — додається в кожен звіт + AI-аналіз активних транзитів
     if astro_text:
         parts.append(astro_text)
         print(f"astro: додано в звіт (slot={hour_key})")
 
-        # Блок 6б: Окремий AI астро-аналіз — одразу після астро (повний, з shift_hint)
+        # Блок 6б: AI-аналіз активних транзитів до натальної карти (ВСередину звіту)
         _gemini_key_astro = os.environ.get("GEMINI_API_KEY", "")
         _astro_ai = ""
         if not _ai_time_left(40):
             print("[astro_ai] SKIP — мало часу до дедлайну", flush=True)
         else:
             _astro_ai = _get_astro_ai_analysis(astro_text, _gemini_key_astro, shift_hint=shift_hint)
+        
         if _astro_ai:
-            # Зберігаємо для окремої надсилки після звіту (щоб не обрізалось)
-            _astro_ai_full = _astro_ai
+            # Додаємо AI-аналіз ПРЯМО У ЗВІТ (під астро блоком)
+            parts.append("\n" + _section_header("🤖", "AI-АНАЛІЗ АКТИВНИХ АСПЕКТІВ") + "\n" + _astro_ai)
+            print(f"[astro_ai] додано в звіт (len={len(_astro_ai)})", flush=True)
+            _astro_ai_full = _astro_ai  # зберігаємо на випадок
         else:
             _astro_ai_full = ""
-            print(f"[astro_ai] FAILED after 2 attempts — skipping block", flush=True)
+            print(f"[astro_ai] FAILED — skipping AI analysis", flush=True)
 
     # ── Блок 6г: ПЛАН ТИЖНЯ (тільки у звіт) ─────────────────────────────────────
     try:
