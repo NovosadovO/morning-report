@@ -201,11 +201,21 @@ def save_data(data):
     try:
         import sys as _sys; _sys.path.insert(0, _DIR)
         from storage import save_habits
-        save_habits(data)
+        ok = save_habits(data)
+        if ok:
+            print(f"✅ [habits] SAVED to GitHub")
+        else:
+            print(f"⚠️ [habits] GitHub save failed, saving to /tmp fallback")
+            with open(HABITS_FILE, "w") as f:
+                json.dump(data, f)
     except Exception as e:
-        print(f"save_data error: {e}")
-        with open(HABITS_FILE, "w") as f:
-            json.dump(data, f)
+        print(f"❌ [habits] save_data error: {e}")
+        try:
+            with open(HABITS_FILE, "w") as f:
+                json.dump(data, f)
+            print(f"✅ [habits] saved to /tmp fallback")
+        except Exception as e2:
+            print(f"❌ [habits] FAILED to save anywhere: {e2}")
 
 def load_sent():
     """Завантажує стан з in-memory кешу. При першому виклику — GitHub → /tmp."""

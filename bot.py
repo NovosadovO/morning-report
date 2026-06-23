@@ -243,10 +243,14 @@ def handle_meds_callback(callback_query):
         from storage import load_meds as _lm, save_meds as _sm
         meds_db = _lm()
         meds_db[date] = (answer == "yes")
-        _sm(meds_db)
-        print(f"meds saved: {date} = {answer}")
+        ok = _sm(meds_db)
+        if ok:
+            print(f"✅ [meds] SAVED to GitHub: {date} = {answer}")
+        else:
+            print(f"⚠️ [meds] FAILED to save to GitHub, trying local fallback...")
+            raise Exception("GitHub save returned False")
     except Exception as _se:
-        print(f"meds save error (storage): {_se}")
+        print(f"❌ [meds] storage error: {_se}")
         # Fallback: локальний файл
         try:
             meds_file = "/tmp/meds_data.json"
@@ -258,8 +262,18 @@ def handle_meds_callback(callback_query):
             meds_db[date] = (answer == "yes")
             with open(meds_file, "w") as f:
                 _json.dump(meds_db, f)
+            print(f"✅ [meds] SAVED to /tmp (fallback): {date} = {answer}")
         except Exception as _fe:
-            print(f"meds save error (file): {_fe}")
+            print(f"❌ [meds] FAILED to save anywhere: {_fe}")
+            # Останнім — повідомимо юзеру що помилка
+            try:
+                api("sendMessage", {
+                    "chat_id": chat_id,
+                    "text": f"⚠️ Помилка при збереженні даних про ліки. Спробуй ще раз.",
+                    "parse_mode": "HTML"
+                })
+            except:
+                pass
 
     # ЧЕТВЕРТИМ — логуємо в Google Calendar (не критично)
     try:

@@ -94,7 +94,7 @@ def _save_github(filename, data):
 
     content = base64.b64encode(json.dumps(data, ensure_ascii=False, indent=2).encode()).decode()
 
-    for attempt in range(3):
+    for attempt in range(5):  # 5 спроб з exponential backoff
         # Отримуємо поточний SHA (потрібен для update) — завжди свіжий
         existing = _gh_request("GET", f"data/{filename}")
         sha = existing["sha"] if existing else None
@@ -108,13 +108,14 @@ def _save_github(filename, data):
 
         result = _gh_request("PUT", f"data/{filename}", body)
         if result:
-            print(f"storage: saved {filename} to GitHub (attempt {attempt+1})")
+            print(f"✅ [storage] SAVED {filename} to GitHub (attempt {attempt+1}/5)")
             return True
         else:
-            print(f"storage: failed to save {filename} to GitHub (attempt {attempt+1}), retrying...")
-            time.sleep(0.5)
+            wait_time = 0.5 * (2 ** attempt)  # 0.5s, 1s, 2s, 4s, 8s
+            print(f"⚠️ [storage] failed to save {filename} (attempt {attempt+1}/5), waiting {wait_time}s before retry...")
+            time.sleep(wait_time)
 
-    print(f"storage: gave up saving {filename} to GitHub after 3 attempts")
+    print(f"❌ [storage] GAVE UP saving {filename} after 5 attempts")
     return False
 
 def _load_local(filename):

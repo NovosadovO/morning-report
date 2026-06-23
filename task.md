@@ -1,32 +1,45 @@
-# Задача: Fix /звіт Silent Failure
+# BOT CALLBACK SAVE DEBUG — Session 2026-06-23
 
-## Проблема
-- `/звіт` команда отправляет "⏳ Збираю звіт..." но никогда не отправляет сам звіт
-- Monitor.py запускается (нет ошибок в try-catch), но send_telegram() не работает или молчит
+## ISSUE
+Олег каже: "При натискані Ні/Так бот не записує" — callback buttons (Так/Ні) не зберігають дані
 
-## Root Cause Hypothesis
-1. **send_telegram() вызывается успешно в monitor.main()** (р.4897+ основной звіт)
-2. **Но** вероятно:
-   - send_telegram() возвращает False → ok=False → звіт считается неудачным
-   - Или timeout при отправке parts (каждый chunk с timeout 10s)
-   - Или HTML/encoding ошибка в _send_telegram_chunk()
+## ROOT CAUSE FOUND
+1. `handle_meds_callback()` в bot.py (лінія 243-248): 
+   - Зберігає через `storage.save_meds()` 
+   - Якщо 3 спроби в `_save_github()` впаду → функція просто логує "gave up" і ігнорує
+   - Юзер не бачить помилку → здається що дані не записались
 
-## Решение
-✅ Добавлены DEBUG логи:
-   - bot.py р.1858-1875: логирование load monitor, TELEGRAM_TOKEN доступность, начало/конец main()
-   - send_telegram() р.381: логирование количества parts, результат каждого chunk
-   - _send_parts_as_one() р.4897+: логирование перед/после отправки part1/part2
-   - photo/email отправка р.4907+: явное логирование ok флага
+2. `handle_habit_callback()` в bot.py:
+   - Зберігає через `habits.save_data()` → `storage.save_habits()` → `_save_github()`
+   - Та ж сама проблема
 
-## Проверки выполнены
-✅ monitor.py синтаксически OK
-✅ bot.py синтаксически OK
-✅ send_telegram() определена на р.381 в monitor.py
-✅ Все импорты на месте (os, json, urllib)
-✅ Добавлено ПОДРОБНОЕ логирование для диагностики
+## FIXES APPLIED
 
-## Следующие шаги
-1. Запушить на GitHub (commit: "DEBUG: extensive logging for /звіт diagnosis")
-2. Railway redeploy и тест /звіт
-3. Проверить логи на Railway с [send_telegram], [tg_chunk], [report] префиксами
-4. Если ok=False где-то → диагностировать почему send_telegram() вернула False
+### 1. ✅ bot.py (handle_meds_callback) 
+- Додав детальне логування: ✅ SAVED, ❌ FAILED
+- Якщо save повертає False → пробуємо /tmp fallback
+- Якщо обидва впаду → відправляємо помилку юзеру в Telegram
+
+### 2. ✅ habits.py (save_data)
+- Додав check повертає ли save_habits() True
+- Якщо False → логуємо & зберігаємо в /tmp fallback
+- Більш інформативні логи: ✅ [habits] SAVED
+
+### 3. 🔄 storage.py (_save_github)
+- ПОТРЕБУЄ: додати retry на network errors (не тільки 409)
+- ПОТРЕБУЄ: логувати точну помилку від GitHub API (_gh_request)
+
+## NEXT STEPS
+1. Прочитати `_gh_request()` — яку помилку вона повертає при network error
+2. Додати retry logic на network failures
+3. Коміт & push
+4. Тест: натиснути Так/Ні → перевірити Railway логи на ✅/❌ tags
+
+## FILES MODIFIED
+- bot.py: handle_meds_callback (строка ~240)
+- habits.py: save_data (строка ~200)
+- storage.py: PLANNING
+
+## COMMITS
+- 29186df480: Media group (all charts in one)
+- NEXT: "FIX: Improve callback save error handling + GitHub API retry logic"
