@@ -4662,6 +4662,15 @@ def main():
     # if ai_insight:
     #     parts.append(f"🤖 <b>AI-порада</b>\n<i>{esc(ai_insight)}</i>")
 
+    # Блок: План тижня (ТІЛЬКИ У ЗВІТІ, не як окремий /plan)
+    try:
+        import week_planner as _wp
+        _wp_block = _wp.get_week_planner_block()
+        if _wp_block:
+            parts.append(_section_header("📅", "ПЛАН ТИЖНЯ") + "\n" + _wp_block)
+    except Exception as _e_wp:
+        print(f"[week_planner] error: {_e_wp}", flush=True)
+
     # Блок: Список покупок (тільки незакуплені, тільки якщо є)
     try:
         import shopping as _sh_rep

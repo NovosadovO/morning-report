@@ -2549,26 +2549,6 @@ def handle_command(chat_id, text):
             send(chat_id, answer)
         except Exception as e:
             send(chat_id, f"⚠️ AI помилка: {e}")
-
-    # ─── НОВІ ОКРЕМІ КОМАНДИ ──────────────────────────────────────────────────
-    
-    elif text in ["/портфель", "портфель"]:
-        """Фінансова мета трекер"""
-        try:
-            import financial_goal as _fg
-            block = _fg.get_financial_goal_block()
-            send(chat_id, block)
-        except Exception as e:
-            send(chat_id, f"⚠️ Портфель помилка: {e}")
-    
-    elif text in ["/вага", "вага", "/вес"]:
-        """Вага-коуч"""
-        try:
-            import weight_coach as _wc
-            block = _wc.get_weight_coach_block()
-            send(chat_id, block)
-        except Exception as e:
-            send(chat_id, f"⚠️ Вага помилка: {e}")
     
 
 
