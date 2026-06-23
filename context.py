@@ -644,8 +644,16 @@ def get_system_prompt(ctx=None):
         "Ти можеш СТВОРЮВАТИ події в Google Calendar.",
         "Якщо Олег просить щось додати в Calendar — відповідай JSON:",
         '{"action":"create_event","summary":"...","date":"YYYY-MM-DD","time":"HH:MM","duration_hours":1,"description":"..."}',
-        "Наприклад: 'додай лікар завтра о 14:00' → поверни JSON вище + підтвердження.",
-        "Якщо не впевнений в даті/часі — перепитай.",
+        "",
+        "ПРИКЛАДИ розпізнавання нагадувань (ТИ вже їх розумієш!):",
+        "• 'додай нагадування STK на понеділок 25 о 11' → {summary:'STK', date:'2026-06-29', time:'11:00'}",
+        "• 'запиши мені на вівторок 9' → {summary:'Нагадування', date:'2026-06-30', time:'10:00'}",
+        "• 'на середу без 15 хв на 14:45 лікар' → {summary:'Лікар', date:'2026-07-01', time:'14:30'}",
+        "• 'постав на 21.06 о 11:00 лікар' → {summary:'Лікар', date:'2026-06-21', time:'11:00'}",
+        "• 'нагадай завтра о 7 в спорт' → {summary:'Спорт', date:'ЗАВТРА', time:'07:00'}",
+        "• 'запиши на 22 червня о 19:30 зустріч' → {summary:'Зустріч', date:'2026-06-22', time:'19:30'}",
+        "",
+        "Якщо не впевнений в даті/часі — перепитай дуже лаконічно: 'Яка дата?'",
         "",
         "Важливо:",
         "• Завжди знаєш поточний час, день, що в Calendar — враховуй це в кожній відповіді.",
@@ -886,64 +894,118 @@ _UA_MONTHS = {
 
 
 def _local_event_intent(text: str, now: datetime):
-    """Fallback-парсер нагадувань без AI. Розуміє:
-    'додай нагадування STK на 21.06 о 11:00', 'нагадай завтра о 14:00 лікар',
-    'постав подію 28.06.2026 STK'. Повертає intent dict або None."""
+    """Покращений fallback-парсер нагадувань. Розуміє:
+    - Дати: '21.06', '21 червня', 'завтра', 'сьогодні'
+    - Дні тижня: 'понеділок', 'вівторок', 'понеділок 25' (дата + день)
+    - Час: 'о 11:00', 'о 11', '11:00'
+    - Приклади: 'нагадай STK на понеділок 25 о 11', 'запиши на вівторок 9'
+    """
     import re
     t = (text or "").strip()
     tl = t.lower()
     if not _looks_like_reminder_request(t):
         return None
 
-    work = t  # робоча копія, з якої поступово вирізаємо розпізнане
+    work = t  # робоча копія
     date_obj = None
     time_str = None
 
-    # ── 1. Час (ПЕРШИМ — щоб не сплутати з датою) ──
-    # 1a. HH:MM з обов'язковим маркером "о/об/at" АБО двокрапкою
-    mt = re.search(r'(?:\b(?:о|об|at)\s*)(\d{1,2})[:.](\d{2})\b', tl)
-    if not mt:
-        mt = re.search(r'\b(\d{1,2}):(\d{2})\b', tl)  # лише з двокрапкою (крапка = дата)
+    # ─────────────────────────────────────────────────────────────────────────
+    # 1. ЧАС (спочатку, щоб не сплутати з датою)
+    # ─────────────────────────────────────────────────────────────────────────
+    # 1a. HH:MM з "о/об" ("о 11:30", "об 14:45")
+    mt = re.search(r'\b(?:о|об)\s+(\d{1,2})[:.:](\d{2})\b', tl)
     if mt:
         hh, mm = int(mt.group(1)), int(mt.group(2))
         if 0 <= hh < 24 and 0 <= mm < 60:
             time_str = f"{hh:02d}:{mm:02d}"
             work = work[:mt.start()] + " " + work[mt.end():]
             tl = work.lower()
-    # 1b. "о 11" / "об 9" (година без хвилин)
+    # 1b. Лише година ("о 11", "об 9")
     if time_str is None:
-        mt2 = re.search(r'\b(?:о|об)\s+(\d{1,2})\b(?!\s*[:.]\d)', tl)
+        mt2 = re.search(r'\b(?:о|об)\s+(\d{1,2})\b(?!\s*[:.]?\d)', tl)
         if mt2:
             hh = int(mt2.group(1))
             if 0 <= hh < 24:
                 time_str = f"{hh:02d}:00"
                 work = work[:mt2.start()] + " " + work[mt2.end():]
                 tl = work.lower()
+    # 1c. HH:MM без маркера (рискує сплутатися з датою, тому останнім)
+    if time_str is None:
+        mt3 = re.search(r'\b(\d{1,2}):(\d{2})\b', tl)
+        if mt3:
+            hh, mm = int(mt3.group(1)), int(mt3.group(2))
+            if 0 <= hh < 24 and 0 <= mm < 60:
+                time_str = f"{hh:02d}:{mm:02d}"
+                work = work[:mt3.start()] + " " + work[mt3.end():]
+                tl = work.lower()
 
-    # ── 2. Дата ──
-    # 2a. 21.06 / 21.06.2026 / 21/06
-    m = re.search(r'\b(\d{1,2})[.\/](\d{1,2})(?:[.\/](\d{2,4}))?\b', work)
-    if m:
-        d, mo = int(m.group(1)), int(m.group(2))
-        y = m.group(3)
-        year = now.year
-        if y:
-            year = int(y) if len(y) == 4 else 2000 + int(y)
-        try:
-            date_obj = now.replace(year=year, month=mo, day=d).date()
-            work = work[:m.start()] + " " + work[m.end():]
-            tl = work.lower()
-        except Exception:
-            date_obj = None
-    # 2b. словесні
+    # ─────────────────────────────────────────────────────────────────────────
+    # 2. ДАТА
+    # ─────────────────────────────────────────────────────────────────────────
+    # 2a. Дні тижня + число: "понеділок 25" → encuenttra 25.06 (знаходимо наступний понеділок з числом 25)
+    ua_weekdays = {
+        "пн|понед": 0, "вт|вівт": 1, "ср|серед": 2, "чт|четв": 3,
+        "пт|п'ят": 4, "сб|суб": 5, "нд|неділ": 6
+    }
+    for weekday_patterns, target_weekday in ua_weekdays.items():
+        patterns = weekday_patterns.split("|")
+        for pattern in patterns:
+            # "понеділок 25" або просто "понеділок"
+            m_wd = re.search(rf'\b{pattern}[а-я]*(?: (\d{{1,2}}))?', tl)
+            if m_wd:
+                day_num = m_wd.group(1)
+                # Якщо є число — спробуємо знайти дату (число + місяць)
+                if day_num:
+                    d = int(day_num)
+                    # Спробуємо цей місяць, потім наступний
+                    for month_offset in range(0, 2):
+                        try_date = (now + timedelta(days=30 * month_offset)).replace(day=d, hour=0, minute=0, second=0)
+                        if try_date.weekday() == target_weekday and try_date >= now.replace(hour=0, minute=0, second=0):
+                            date_obj = try_date.date()
+                            break
+                    if date_obj:
+                        work = work[:m_wd.start()] + " " + work[m_wd.end():]
+                        tl = work.lower()
+                        break
+                else:
+                    # Просто день тижня без числа — наступний такий день
+                    days_ahead = (target_weekday - now.weekday()) % 7
+                    if days_ahead == 0:
+                        days_ahead = 7
+                    date_obj = (now + timedelta(days=days_ahead)).date()
+                    work = work[:m_wd.start()] + " " + work[m_wd.end():]
+                    tl = work.lower()
+                    break
+        if date_obj:
+            break
+
+    # 2b. Числова дата: "21.06" або "21/06" або "21.06.2026"
+    if date_obj is None:
+        m = re.search(r'\b(\d{1,2})[.\/](\d{1,2})(?:[.\/](\d{2,4}))?\b', work)
+        if m:
+            d, mo = int(m.group(1)), int(m.group(2))
+            y = m.group(3)
+            year = now.year
+            if y:
+                year = int(y) if len(y) == 4 else 2000 + int(y)
+            try:
+                date_obj = now.replace(year=year, month=mo, day=d).date()
+                work = work[:m.start()] + " " + work[m.end():]
+                tl = work.lower()
+            except Exception:
+                date_obj = None
+
+    # 2c. Словесні дати: "сьогодні", "завтра", "післязавтра"
     if date_obj is None:
         for word, days in [("післязавтра", 2), ("завтра", 1), ("сьогодні", 0)]:
             if word in tl:
                 date_obj = (now + timedelta(days=days)).date()
-                work = re.sub(word, " ", work, flags=re.IGNORECASE)
+                work = re.sub(r'\b' + word + r'\b', " ", work, flags=re.IGNORECASE)
                 tl = work.lower()
                 break
-    # 2c. "22 червня"
+
+    # 2d. "22 червня" або "22 черв"
     if date_obj is None:
         m2 = re.search(r'\b(\d{1,2})\s+([а-яіїєґ]{3,})', tl)
         if m2:
@@ -959,20 +1021,35 @@ def _local_event_intent(text: str, now: datetime):
                         pass
                     break
 
+    # Без дати — не створюємо
     if date_obj is None:
-        return None  # без дати не створюємо — нехай AI/користувач уточнить
+        return None
     if time_str is None:
         time_str = "10:00"
 
-    # ── 3. Назва події (з того, що лишилось) ──
+    # ─────────────────────────────────────────────────────────────────────────
+    # 3. НАЗВА ПОДІЇ (з того, що лишилось після вирізання дати/часу)
+    # ─────────────────────────────────────────────────────────────────────────
     summary = work
-    for w in ["додай нагадування", "додай нагадуван", "нагадування про", "нагадай мені",
-              "нагадай", "нагадування", "додай подію", "створи подію", "створити подію",
-              "додати подію", "запланувати подію", "додай", "додати", "постав",
-              "заплануй", "запланувати", "запиши", "до календаря", "у календар",
-              "в календар", "подію", "про"]:
+    # Видаляємо всі командні слова
+    stop_words = [
+        "додай нагадування", "додай нагадуван", "нагадування про", "нагадай мені",
+        "нагадай", "нагадування", "додай подію", "створи подію", "створити подію",
+        "додати подію", "запланувати подію", "додай", "додати", "постав",
+        "заплануй", "запланувати", "запиши", "до календаря", "у календар",
+        "в календар", "на календар", "подію", "про", "мені"
+    ]
+    for w in stop_words:
         summary = re.sub(r'\b' + re.escape(w) + r'\b', " ", summary, flags=re.IGNORECASE)
-    summary = re.sub(r'\b(сьогодні|завтра|післязавтра|на|о|об|в|у)\b', ' ', summary, flags=re.IGNORECASE)
+
+    # Видаляємо дні тижня, дати, часові маркери
+    summary = re.sub(r'\b(сьогодні|завтра|післязавтра|на|о|об|в|у|до|в)\b', ' ', summary, flags=re.IGNORECASE)
+    for weekday_patterns in ua_weekdays.keys():
+        patterns = weekday_patterns.split("|")
+        for pattern in patterns:
+            summary = re.sub(rf'\b{pattern}[а-я]*\b', ' ', summary, flags=re.IGNORECASE)
+
+    # Очищаємо
     summary = re.sub(r'\s+', ' ', summary).strip(" -—:,.")
     if not summary or len(summary) < 2:
         summary = "Нагадування"
