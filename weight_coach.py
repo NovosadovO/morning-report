@@ -23,7 +23,7 @@ except ImportError:
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
 # ─── КОНФІГ ──────────────────────────────────────────────────────────────────
-WEIGHT_GOAL = 78.0  # кг
+WEIGHT_GOAL = 75.0  # кг (ОЛЕГОВА МЕТА)
 WEIGHT_CURRENT_APPROX = 83.0  # орієнтовна поточна
 DEFICIT_PER_WEEK = 0.5  # кг/тиждень (здорова швидкість)
 
