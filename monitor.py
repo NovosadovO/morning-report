@@ -5077,33 +5077,23 @@ def main():
         except Exception as _se:
             print(f"=== mark-sent error: {_se} (non-fatal) ===")
 
-    # ── Графіки після звіту ───────────────────────────────────────────────────
+    # ── ДЕШБОРД після звіту ───────────────────────────────────────────────────
     try:
-        import charts as _charts_mod
+        import dashboard as _dashboard_mod
         _time_main.sleep(0.8)
-        print("[charts] generating combined dashboard...", flush=True)
-        _chart_bytes = _charts_mod.plot_combined_dashboard()
-        if _chart_bytes:
+        print("[dashboard] generating ultra HD dashboard...", flush=True)
+        _dash_bytes = _dashboard_mod.get_dashboard_bytes()
+        if _dash_bytes:
             _req_send.post(
                 f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
-                data={"chat_id": TELEGRAM_CHAT, "caption": "📊 <b>Дашборд здоров'я</b>", "parse_mode": "HTML"},
-                files={"photo": ("dashboard.png", _io_send.BytesIO(_chart_bytes), "image/png")},
+                data={"chat_id": TELEGRAM_CHAT, "caption": "📊 <b>Дешборд Олега</b>\nЗдоров'я • Strava • Звички", "parse_mode": "HTML"},
+                files={"photo": ("dashboard.png", _io_send.BytesIO(_dash_bytes), "image/png")},
                 timeout=60,
             )
-            print("[charts] combined dashboard sent", flush=True)
+            print("[dashboard] ultra HD sent", flush=True)
             _time_main.sleep(0.5)
-        # Додатково: графік дня (трекінг за сьогодні)
-        _day_chart = _charts_mod.plot_day_dashboard()
-        if _day_chart:
-            _req_send.post(
-                f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
-                data={"chat_id": TELEGRAM_CHAT, "caption": "📈 <b>Трекінг за сьогодні</b>", "parse_mode": "HTML"},
-                files={"photo": ("day_chart.png", _io_send.BytesIO(_day_chart), "image/png")},
-                timeout=60,
-            )
-            print("[charts] day dashboard sent", flush=True)
-    except Exception as _e_charts:
-        print(f"[charts] error: {_e_charts}", flush=True)
+    except Exception as _e_dash:
+        print(f"[dashboard] error: {_e_dash}", flush=True)
 
     # ── Астро — надсилаємо окремим повідомленням після звіту ─────────────────
     # Астро вже є в parts (блок 6) — окреме надсилання прибрано щоб не дублювати
