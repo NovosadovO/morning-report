@@ -4645,40 +4645,6 @@ def main():
         print(f"[themes_ai] outer error: {_e_th}", flush=True)
         _themes_ai_full = ""
 
-    # ──────────────────────────────────────────────────────────────────────────────
-    # НОВІ МОДУЛІ: Фінансова мета, Вага-коуч, Тиждень-плaner
-    # ──────────────────────────────────────────────────────────────────────────────
-    
-    # Блок 6.5: Фінансова мета (щоденно)
-    try:
-        import financial_goal as _fg
-        _fg_block = _fg.get_financial_goal_block()
-        if _fg_block:
-            parts.append(_section_header("💎", "ФІНАНСОВА МЕТА") + "\n" + _fg_block)
-            print(f"[financial_goal] added ({len(_fg_block)} chars)", flush=True)
-    except Exception as _e_fg:
-        print(f"[financial_goal] error: {_e_fg}", flush=True)
-    
-    # Блок 6.6: Вага-коуч (щоденно)
-    try:
-        import weight_coach as _wc
-        _wc_block = _wc.get_weight_coach_block()
-        if _wc_block:
-            parts.append(_section_header("🏋️", "СХУДНЕННЯ-КОУЧ") + "\n" + _wc_block)
-            print(f"[weight_coach] added ({len(_wc_block)} chars)", flush=True)
-    except Exception as _e_wc:
-        print(f"[weight_coach] error: {_e_wc}", flush=True)
-    
-    # Блок 6.7: Тиждень-планер (що вихідні, або щоденно якщо просить)
-    try:
-        import week_planner as _wp
-        _wp_block = _wp.get_week_planner_block()
-        if _wp_block:
-            parts.append(_section_header("📅", "ПЛАН ТИЖНЯ") + "\n" + _wp_block)
-            print(f"[week_planner] added ({len(_wp_block)} chars)", flush=True)
-    except Exception as _e_wp:
-        print(f"[week_planner] error: {_e_wp}", flush=True)
-
     # Блок 7: AI-підсумок
 
     # Блок 8: Calendar-aware AI порада — показується тільки якщо брифінг відключений
