@@ -3309,11 +3309,6 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
     Генерує окремий AI аналіз астро-блоку.
     Повертає текст аналізу або порожній рядок.
     """
-    # ── ПРОАКТИВНИЙ CHECK: якщо дедлайну близькорі — не геніруємо, повертаємо порожнину ──
-    if not _ai_time_left(min_needed=20):
-        print(f"[astro_ai] deadline approaching — skipping (time_left < 20s)", flush=True)
-        return ""
-    
     print(f"[astro_ai] called: astro_len={len(astro_text) if astro_text else 0}, key={'YES' if gemini_key else 'NO'}", flush=True)
     if not astro_text or not gemini_key:
         print(f"[astro_ai] skipped: no astro_text or no gemini_key", flush=True)
@@ -3386,8 +3381,8 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
                 "thinkingConfig": {"thinkingBudget": 0},
             },
         }).encode()
-        # ── ТАЙМАУТ ЗАХИСТ: макс 15s за одну AI-відповідь (не залипати) ──
-        _timeout_ai = max(5, min(15, int(_ai_time_left() * 0.8)))  # 80% від залишку часу, мін 5s
+        # ── ТАЙМАУТ ЗАХИСТ: макс 10s за одну AI-відповідь (не залипати) ──
+        _timeout_ai = 10
         print(f"[astro_ai] sending request to Gemini (timeout={_timeout_ai}s, retry-on-429)...", flush=True)
         resp = _gem_post(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -4186,46 +4181,8 @@ def main():
         import traceback as _tb_comb
         print(f"combined chart error: {_e_combined}\n{_tb_comb.format_exc()}", flush=True)
 
-    # ── 🎨 НОВИЙ: HEALTH MONTH BRIGHT (вага, біг, кроки, сон) ────────────────
-    try:
-        from charts import plot_health_month_bright
-        print("[health month bright] generating...", flush=True)
-        _health_bright = plot_health_month_bright()
-        if _health_bright:
-            parts.append({"photo": _health_bright, "caption": f"💪 Здоров'я за місяць (Moving Average)"})
-            print(f"[health month bright] done, {len(_health_bright)} bytes", flush=True)
-        else:
-            print("[health month bright] returned None", flush=True)
-    except Exception as _e_health_bright:
-        import traceback as _tb_hb
-        print(f"health month bright error: {_e_health_bright}\n{_tb_hb.format_exc()}", flush=True)
-
-    # ── 🎨 НОВИЙ: STRAVA BRIGHT CHARTS (місяць, неділі, рік) ────────────────
-    try:
-        from strava_charts import plot_month_chart, plot_week_chart, plot_year_chart
-        print("[strava bright charts] generating...", flush=True)
-        
-        # Місячний
-        _strava_month = plot_month_chart()
-        if _strava_month:
-            parts.append({"photo": _strava_month, "caption": f"🏃 Біг за місяць (Moving Average)"})
-            print(f"[strava month] done, {len(_strava_month)} bytes", flush=True)
-        
-        # Тижневий (30 днів)
-        _strava_week = plot_week_chart(weeks_back=4)
-        if _strava_week:
-            parts.append({"photo": _strava_week, "caption": f"📅 Останні 30 днів (Moving Average)"})
-            print(f"[strava week] done, {len(_strava_week)} bytes", flush=True)
-        
-        # Річний
-        _strava_year = plot_year_chart()
-        if _strava_year:
-            parts.append({"photo": _strava_year, "caption": f"📊 Біг за рік"})
-            print(f"[strava year] done, {len(_strava_year)} bytes", flush=True)
-            
-    except Exception as _e_strava_bright:
-        import traceback as _tb_sb
-        print(f"strava bright charts error: {_e_strava_bright}\n{_tb_sb.format_exc()}", flush=True)
+    # ── 🎨 ГРАФІКИ ВИДАЛЕНІ — залишається ТІЛЬКИ дашборд! ────────────────────
+    # (health_month_bright, strava charts — все видалено за запитом Олега)
 
     # ── Блок 7: КУРС ВАЛЮТ ────────────────────────────────────────────────────
     try:
