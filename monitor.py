@@ -3305,48 +3305,61 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
 
 
 def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "") -> str:
-    """AI аналіз астро-аспектів натальної карти."""
+    """AI аналіз астро-аспектів натальної карти Олега."""
     if not astro_text or not gemini_key:
         return ""
     
     print(f"[astro_ai] generating analysis...", flush=True)
     
-    # Простий, безпечний prompt
-    prompt = "Analyze these astro aspects for Oleg. Give detailed analysis of influence on life, work, health, relationships. Answer in Ukrainian, 300-400 words.\n\n" + astro_text[:1500]
+    # Структурований prompt для натальної карти: Дива/Стрільця/Козерога
+    prompt = f"""Ти астрологічний асистент Олега (Діва-Сонце, Стрілець-Місяць, Козеріг-Асцендент, народж. 22.09.1989, Львів, 02:52).
+
+Дай КОМПАКТНИЙ астро-аналіз на 250-300 слів, структурований в 4 СЕКЦІЇ (по 1-2 реченнях кожна):
+
+🌟 ХАРАКТЕР: Як твоя натальна карта впливає на твою особистість, стиль роботи, спілкування?
+💼 РОБОТА & УСПІХ: Які планети допомагають тобі досягати цілей? Де твої сильні сторони?
+❤️ ВІДНОСИНИ & ЗДОРОВ'Я: На що звернути увагу у стосунках та здоров'ї?
+🎯 СЬОГОДНІ: Коротко — що сьогодні особливого для тебе по астро?
+
+Відповідай УКРАЇНСЬКОЮ, без лишніх слів, прямо до суті.
+
+Дані натальної карти:
+{astro_text[:1000]}
+Контекст дня: {shift_hint[:200]}"""
     
     try:
         body = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 3000,
-                "temperature": 0.7
+                "maxOutputTokens": 2000,
+                "temperature": 0.6,
+                "thinkingConfig": {"thinkingBudget": 0}
             }
         }).encode()
         
-        print(f"[astro_ai] calling Gemini...", flush=True)
+        print(f"[astro_ai] calling Gemini (timeout=20s)...", flush=True)
         resp = _gem_post(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-            body, timeout=15, tag="astro_ai"
+            body, timeout=20, tag="astro_ai", max_retries=3
         )
         
         if not resp:
-            print(f"[astro_ai] empty response", flush=True)
+            print(f"[astro_ai] empty response from Gemini", flush=True)
             return ""
         
         parts = resp.get("candidates", [{}])[0].get("content", {}).get("parts", [])
-        if not parts:
-            print(f"[astro_ai] no parts", flush=True)
+        if not parts or not parts[0].get("text", "").strip():
+            print(f"[astro_ai] no text in response", flush=True)
             return ""
         
         text = parts[0].get("text", "").strip()
-        if not text:
-            return ""
-        
         print(f"[astro_ai] OK - {len(text)} chars", flush=True)
         return text
         
     except Exception as e:
-        print(f"[astro_ai] ERROR: {e}", flush=True)
+        import traceback as _tb
+        print(f"[astro_ai] EXCEPTION: {type(e).__name__}: {e}", flush=True)
+        print(_tb.format_exc(), flush=True)
         return ""
 
 
