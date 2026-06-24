@@ -3306,7 +3306,10 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
 
 def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "") -> str:
     """AI аналіз РЕАЛЬНИХ астро-аспектів натальної карти Олега (28 аспектів розраховано)."""
+    print(f"[astro_ai] START: astro_text={bool(astro_text)}, gemini_key={'***' if gemini_key else 'NONE'}, shift_hint={shift_hint[:30] if shift_hint else 'NONE'}", flush=True)
+    
     if not astro_text or not gemini_key:
+        print(f"[astro_ai] SKIP: missing astro_text or gemini_key", flush=True)
         return ""
     
     print(f"[astro_ai] generating analysis...", flush=True)
@@ -9422,17 +9425,21 @@ def main():
 
         # Блок 6б: Окремий AI астро-аналіз — одразу після астро (повний, з shift_hint)
         _gemini_key_astro = os.environ.get("GEMINI_API_KEY", "")
+        print(f"[main] GEMINI_API_KEY={'***' if _gemini_key_astro else 'NOT_SET'}, shift_hint={shift_hint[:40]}", flush=True)
         _astro_ai = ""
         if not _ai_time_left(40):
             print("[astro_ai] SKIP — мало часу до дедлайну", flush=True)
         else:
+            print(f"[main] Calling _get_astro_ai_analysis with astro_text={len(astro_text)} chars, key={'***' if _gemini_key_astro else 'NONE'}", flush=True)
             _astro_ai = _get_astro_ai_analysis(astro_text, _gemini_key_astro, shift_hint=shift_hint)
+            print(f"[main] _get_astro_ai_analysis returned: {len(_astro_ai) if _astro_ai else 0} chars", flush=True)
         if _astro_ai:
             # Зберігаємо для окремої надсилки після звіту (щоб не обрізалось)
             _astro_ai_full = _astro_ai
+            print(f"[main] ✅ _astro_ai_full set to {len(_astro_ai)} chars", flush=True)
         else:
             _astro_ai_full = ""
-            print(f"[astro_ai] FAILED after 2 attempts — skipping block", flush=True)
+            print(f"[astro_ai] RESULT: empty or None — skipping block", flush=True)
 
     # ── Блок 6в: ТЕМАТИЧНИЙ AI-АНАЛІЗ (1 раз у кожному звіті) ────────────────
     _themes_ai_full = ""
