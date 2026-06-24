@@ -4866,37 +4866,7 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
             _time_main.sleep(0.6)
 
     # Астро AI — надсилаємо окремо після звіту, розбиваємо безпечно по 3800 символів
-    if _astro_ai_full:
-        _time_main.sleep(0.8)
-        print(f"[astro_ai] sending astro AI ({len(_astro_ai_full)} chars) as separate messages...", flush=True)
-        _astro_header = "🔮🤖 <b>АСТРО-АНАЛІЗ ВСІ АСПЕКТИ</b>\n\n"
-        _astro_full_text = _astro_header + _astro_ai_full
-        _ALIMIT = 3800  # безпечний ліміт (Telegram 4096, з запасом)
-
-        def _split_safe(text, limit):
-            """Розбиває текст по межах речень/рядків, жоден шматок не перевищує limit."""
-            chunks = []
-            while len(text) > limit:
-                # Шукаємо місце розрізу: спочатку \n\n, потім \n, потім '. '
-                cut = -1
-                for sep in ["\n\n", "\n", ". ", "! ", "? "]:
-                    idx = text.rfind(sep, 0, limit)
-                    if idx > limit // 2:
-                        cut = idx + len(sep)
-                        break
-                if cut <= 0:
-                    cut = limit  # примусовий розріз
-                chunks.append(text[:cut].rstrip())
-                text = text[cut:].lstrip()
-            if text:
-                chunks.append(text)
-            return chunks
-
-        _astro_chunks = _split_safe(_astro_full_text, _ALIMIT)
-        print(f"[astro_ai] split into {len(_astro_chunks)} messages", flush=True)
-        for _ci, _chunk_text in enumerate(_astro_chunks):
-            send_telegram(_chunk_text)
-            _time_main.sleep(0.6)
+    # Астро-AI більше не надсилається окремо - йде в основному звіті як АСТРО-АНАЛІЗ блок
 
     print(f"=== Report {'sent' if ok else 'FAILED'} ===")
 
