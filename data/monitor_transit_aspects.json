@@ -5,17 +5,18 @@
     "exact_sent": true
   },
   "sun__uranus__180": {
-    "orb": 1.13,
+    "orb": 1.14,
     "sent": false,
     "exact_sent": true
   },
   "moon__moon__120": {
-    "orb": 0.56,
-    "sent": false,
-    "exact_sent": false
+    "orb": 0.5,
+    "sent": true,
+    "event": "exact",
+    "exact_sent": true
   },
   "venus__venus__90": {
-    "orb": 1.26,
+    "orb": 1.27,
     "sent": false,
     "exact_sent": true
   },
