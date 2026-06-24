@@ -4435,18 +4435,22 @@ def main():
         # Спробуємо додати AI-аналіз астро (якщо час дозволяє)
         try:
             _gemini_key = os.environ.get("GEMINI_API_KEY", "")
+            print(f"[astro_ai_debug] GEMINI_API_KEY presence: {'YES' if _gemini_key else 'NO'} (len={len(_gemini_key) if _gemini_key else 0})", flush=True)
             if _gemini_key:
+                print(f"[astro_ai_debug] Key starts with: {_gemini_key[:20]}...", flush=True)
                 _astro_ai_text = _get_astro_ai_analysis(astro_text, _gemini_key, shift_hint=calendar_context)
                 if _astro_ai_text:
                     _astro_ai_full = _astro_ai_text
                     parts.append(_section_header("🔮", "АСТРО-АНАЛІЗ") + "\n" + esc(_astro_ai_text))
                     print(f"[astro_ai] додано в звіт ({len(_astro_ai_text)} chars)", flush=True)
                 else:
-                    print(f"[astro_ai] не вдалось отримати аналіз", flush=True)
+                    print(f"[astro_ai] не вдалось отримати аналіз (function returned empty)", flush=True)
             else:
-                print(f"[astro_ai] пропущено (no GEMINI_API_KEY)", flush=True)
+                print(f"[astro_ai] SKIPPED — no GEMINI_API_KEY in environment!", flush=True)
         except Exception as _e_astro_ai:
-            print(f"[astro_ai] exception: {_e_astro_ai}", flush=True)
+            import traceback as _tb_ai
+            print(f"[astro_ai] EXCEPTION: {_e_astro_ai}", flush=True)
+            print(_tb_ai.format_exc(), flush=True)
 
     # ── Блок 6г: ПЛАН ТИЖНЯ (тільки у звіт) ─────────────────────────────────────
     try:
