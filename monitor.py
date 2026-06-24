@@ -4438,7 +4438,7 @@ def main():
             print(f"[astro_ai_debug] GEMINI_API_KEY presence: {'YES' if _gemini_key else 'NO'} (len={len(_gemini_key) if _gemini_key else 0})", flush=True)
             if _gemini_key:
                 print(f"[astro_ai_debug] Key starts with: {_gemini_key[:20]}...", flush=True)
-                _astro_ai_text = _get_astro_ai_analysis(astro_text, _gemini_key, shift_hint=calendar_context)
+                _astro_ai_text = _get_astro_ai_analysis(astro_text, _gemini_key, shift_hint=cal_events_text)
                 if _astro_ai_text:
                     _astro_ai_full = _astro_ai_text
                     parts.append(_section_header("🔮", "АСТРО-АНАЛІЗ") + "\n" + esc(_astro_ai_text))
