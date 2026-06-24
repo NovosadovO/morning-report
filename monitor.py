@@ -3306,117 +3306,52 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
 
 def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "") -> str:
     """
-    Генерує окремий AI аналіз астро-блоку.
+    Простий AI аналіз астро-блоку.
     Повертає текст аналізу або порожній рядок.
     """
-    print(f"[astro_ai] called: astro_len={len(astro_text) if astro_text else 0}, key={'YES' if gemini_key else 'NO'}", flush=True)
     if not astro_text or not gemini_key:
-        print(f"[astro_ai] skipped: no astro_text or no gemini_key", flush=True)
+        print(f"[astro_ai] skipped: no astro_text or no key", flush=True)
         return ""
-
-    # Статична натальна карта Олега (22.09.1989, 02:52, Львів)
-    NATAL_CHART = """=== НАТАЛЬНА КАРТА ОЛЕГА НОВОСАДОВА ===
-Дата народження: 22 вересня 1989, 02:52, Львів (Україна)
-Система домів: Placidus
-
-Асцендент (AC): Лев ♌ 1.0° — 1-й дім
-Сонце ☉: Діва ♍ 28.9° — 3-й дім
-Місяць ☽: Близнюки ♊ 27.2° — 11-й дім
-Меркурій ☿ ℞: Терези ♎ 5.0° — 3-й дім (ретроградний натально)
-Венера ♀: Скорпіон ♏ 10.9° — 4-й дім
-Марс ♂: Терези ♎ 1.5° — 3-й дім
-Юпітер ♃: Рак ♋ 8.7° — 12-й дім
-Сатурн ♄: Козеріг ♑ 7.4° — 6-й дім
-Уран ♅: Козеріг ♑ 1.4° — 6-й дім
-Нептун ♆: Козеріг ♑ 9.6° — 6-й дім
-Плутон ♇: Скорпіон ♏ 13.4° — 4-й дім
-
-Ключові натальні особливості:
-- Стелій у 6-му домі (Сатурн+Уран+Нептун у Козерозі) → тема роботи, здоров'я, дисципліни
-- Стелій у 3-му домі (Сонце+Меркурій+Марс) → аналітичний розум, комунікація, навчання
-- Венера+Плутон у 4-му домі (Скорпіон) → глибокі трансформації у особистому/сімейному
-- Юпітер у 12-му домі (Рак) → прихована удача, духовність, інтуїція
-- Місяць у 11-му домі (Близнюки) → соціальні зв'язки, друзі, нестандартне мислення
-- AC Лев → потреба у визнанні, лідерстві, виразності
-"""
-
+    
+    print(f"[astro_ai] generating analysis...", flush=True)
+    
+    # ПРОСТИЙ prompt
+    prompt = (
+        f"Ты астролог для Олега. Вот его астро на сегодня. "
+        f"Дай краткий анализ: что главное, как это влияет на жизнь, что делать. "
+        f"Ответь на украинском, 80-120 слов.\n\n"
+        f"{astro_text[:1500]}"
+    )
+    
     try:
-        now_local = datetime.now(timezone.utc) + timedelta(hours=2)
-        # Отримуємо ПОВНИЙ звіт через astro.get_astro_report() (без reload)
-        try:
-            import astro as _astro_mod_ai
-            _full_astro = _astro_mod_ai.get_astro_report()
-            print(f"[astro_ai] get_astro_report OK, len={len(_full_astro) if _full_astro else 0}", flush=True)
-            if not _full_astro:
-                _full_astro = astro_text
-        except Exception as _e_full:
-            print(f"[astro_ai] get_astro_report failed: {_e_full}, using astro_text fallback", flush=True)
-            _full_astro = astro_text
-        print(f"[astro_ai] final astro len={len(_full_astro) if _full_astro else 0}", flush=True)
-        prompt = (
-            f"Ти — астролог Олега Новосадова. Зараз {now_local.strftime('%H:%M %d.%m.%Y')}. СТАТУС: {shift_hint}\n\n"
-            f"{NATAL_CHART}\n"
-            f"=== АСТРО ЗВІТ ===\n{_full_astro[:4000]}\n=================\n\n"
-            f"Напиши персональний астро-аналіз АКТИВНИХ АСПЕКТІВ. Для КОЖНОГО аспекту в розділі ТРАНЗИТИ ДО НАТАЛЬНИХ ПЛАНЕТ:\n\n"
-            f"**[Транзитна планета] [аспект] [Натальна планета]** ([натальний знак], [натальний дім]-й дім)\n"
-            f"• Тип: гармонійний/нейтральний/напружений\n"
-            f"• Вплив у ЖИТТІ: 2-3 речення про те, ЯК це впливає на повсякденне життя Олега\n"
-            f"• Чого очікувати: 2 речення про конкретні наслідки, ситуації що можуть статись\n"
-            f"• Сфера життя: які домі натальної карти це торкається (любов/гроші/кар'єра/здоров'я/особистість тощо)\n"
-            f"• Порада: конкретна рекомендація для цього дня\n\n"
-            f"Після всіх аспектів, напиши:\n"
-            f"🔮 ЗАГАЛЬНА ТЕМА ДНЯ (одне речення) — яка енергія домінує\n"
-            f"💡 КЛЮЧОВА ПОРАДА — одне конкретне, що зробити сьогодні\n\n"
-            f"ПРАВИЛА:\n"
-            f"• Аналізуй ТІЛЬКИ аспекти з розділу ТРАНЗИТИ ДО НАТАЛЬНИХ ПЛАНЕТ\n"
-            f"• Розповідай про ЗАГАЛЬНИЙ вплив в ЖИТТІ, не розбивай по категоріях\n"
-            f"• Вказуй номер дому (1-й дім = особистість, 2-й = гроші, 4-й = сім'я, 6-й = робота/здоров'я, 8-й = спільні ресурси, 10-й = кар'єра, 11-й = бажання/друзі тощо)\n"
-            f"• БЕЗ вступу, вісюськів, лишень аспекти. Мова: українська."
-        )
         body = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 8000,
+                "maxOutputTokens": 1500,
                 "temperature": 0.7,
                 "thinkingConfig": {"thinkingBudget": 0},
             },
         }).encode()
-        # ── ТАЙМАУТ ЗАХИСТ: макс 10s за одну AI-відповідь (не залипати) ──
-        _timeout_ai = 10
-        print(f"[astro_ai] sending request to Gemini (timeout={_timeout_ai}s, retry-on-429)...", flush=True)
+        
+        print(f"[astro_ai] calling Gemini...", flush=True)
         resp = _gem_post(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-            body, timeout=_timeout_ai, tag="astro_ai"
+            body, timeout=10, tag="astro_ai"
         )
-        _astro_cand = (resp.get("candidates") or [{}])[0]
-        _astro_finish = _astro_cand.get("finishReason", "UNKNOWN")
-        print(f"[astro_ai] finishReason={_astro_finish}", flush=True)
-        _astro_parts = (_astro_cand.get("content") or {}).get("parts") or []
-        if not _astro_parts:
-            _um_a = resp.get("usageMetadata", {})
-            print(f"[astro_ai] EMPTY parts! finish={_astro_finish} usage={_um_a}", flush=True)
+        
+        parts = (resp.get("candidates", [{}])[0].get("content", {}).get("parts") or [])
+        if not parts:
+            print(f"[astro_ai] no parts in response", flush=True)
             return ""
-        result = (_astro_parts[0].get("text") or "").strip()
-        # Конвертуємо markdown → plain text (Gemini може повернути **bold** або *italic*)
-        import re as _re_ai
-        result = _re_ai.sub(r'\*\*(.+?)\*\*', r'\1', result)
-        result = _re_ai.sub(r'\*(.+?)\*', r'\1', result)
-        result = _re_ai.sub(r'#{1,6}\s*', '', result)
-        # Прибираємо будь-які HTML теги що міг додати Gemini (ми не використовуємо HTML від AI)
-        result = _re_ai.sub(r'<[^>]+>', '', result)
-        # Якщо Gemini обрізав текст по MAX_TOKENS — відрізаємо незавершене останнє речення
-        if _astro_finish == "MAX_TOKENS":
-            print(f"[astro_ai] WARNING: MAX_TOKENS — обрізаю незавершене речення", flush=True)
-            _last_dot = max(result.rfind(". "), result.rfind(".\n"), result.rfind("!"), result.rfind("?"))
-            if _last_dot > len(result) // 2:
-                result = result[:_last_dot + 1].rstrip()
+        
+        result = (parts[0].get("text") or "").strip()
         print(f"[astro_ai] OK — {len(result)} chars", flush=True)
         return result
+        
     except Exception as e:
-        import traceback as _tb_astro
-        print(f"[astro_ai] ERROR: {e}", flush=True)
-        print(_tb_astro.format_exc(), flush=True)
+        print(f"[astro_ai] ERROR: {type(e).__name__}: {e}", flush=True)
         return ""
+
 
 
 def main():
