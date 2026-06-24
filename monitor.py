@@ -3305,76 +3305,54 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
 
 
 def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "") -> str:
-    """
-    ГЛИБОКИЙ AI-аналіз астро-аспектів натальної карти Олега.
-    Генерує розгорнутий текст (400-600 слів) про вплив транзитів на його життя.
-    """
+    """AI аналіз астро-аспектів."""
     if not astro_text or not gemini_key:
-        print(f"[astro_ai] skipped: no astro_text or no key", flush=True)
         return ""
     
-    print(f"[astro_ai] generating DEEP analysis...", flush=True)
+    print(f"[astro_ai] generating analysis...", flush=True)
     
-    # НАТАЛЬНА КАРТА ОЛЕГА
-    natal = """Натальна карта Олега Новосадова (22.09.1989, 02:52, Львів):
-- Асцендент: Лев (потреба в визнанні, лідерстві)
-- Сонце: Діва 28.9° (3-й дім) — аналітичність, комунікація, вчення
-- Місяць: Близнюки (11-й дім) — соціальність, друзі, нестійкість емоцій
-- Марс: Терези (3-й дім) — дипломатія в спілкуванні
-- Венера: Скорпіон (4-й дім) — глибокі трансформації в особистому
-- Сатурн+Уран+Нептун: Козеріг (6-й дім) — робота, здоров'я, дисципліна
-"""
-    
-    prompt = (
-        f"Ти — астролог Олега. Вот його натальна карта та поточні транзити. "
-        f"Напиши ГЛИБОКИЙ (400+ слів) аналіз активних аспектів:\n\n"
-        f"{natal}\n"
-        f"=== ПОТОЧНІ ТРАНЗИТИ ==={astro_text[:2500]}\n\n"
-        f"АНАЛІЗ повинен містити:\n"
-        f"1. ОСНОВНІ АКТИВНІ АСПЕКТИ — які планети, які аспекти, до яких натальних планет\n"
-        f"2. ВПЛИВ на ЖИТТЯ — конкретно: робота, гроші, здоров'я, відносини, особистий розвиток\n"
-        f"3. МОЖЛИВОСТІ та ВИКЛИКИ — що Олегу дають ці аспекти, з чим може бути важко\n"
-        f"4. РЕКОМЕНДАЦІЇ — конкретні дії для максимізації позитиву, мінімізації ризиків\n"
-        f"5. ЕНЕРГІЯ ДНЯ — одне речення про загальний тон цього дня\n\n"
-        f"Пиши ДЕТАЛЬНО, персонально для Олега, без вступу. Мова: українська."
-    )
+    # Максимально простий prompt
+    prompt = "Analyze these astro aspects for Oleg. Give detailed analysis of influence on life, work, health. Answer in Ukrainian, 300-400 words. " + astro_text[:1500]
     
     try:
+        # Простий JSON без thinkingConfig
         body = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 3500,
-                "temperature": 0.8,
-                "thinkingConfig": {"thinkingBudget": 0},
-            },
+                "maxOutputTokens": 3000,
+                "temperature": 0.7
+            }
         }).encode()
         
-        print(f"[astro_ai] calling Gemini (deep analysis)...", flush=True)
+        print(f"[astro_ai] sending to Gemini (body size: {len(body)} bytes)...", flush=True)
+        
         resp = _gem_post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" + gemini_key,
             body, timeout=15, tag="astro_ai"
         )
         
-        parts = (resp.get("candidates", [{}])[0].get("content", {}).get("parts") or [])
+        if not resp:
+            print(f"[astro_ai] empty response from Gemini", flush=True)
+            return ""
+        
+        parts = resp.get("candidates", [{}])[0].get("content", {}).get("parts", [])
         if not parts:
             print(f"[astro_ai] no parts in response", flush=True)
             return ""
         
-        result = (parts[0].get("text") or "").strip()
-        print(f"[astro_ai] OK — {len(result)} chars", flush=True)
-        return result
+        text = parts[0].get("text", "").strip()
+        if not text:
+            print(f"[astro_ai] empty text from Gemini", flush=True)
+            return ""
+        
+        print(f"[astro_ai] OK - {len(text)} chars", flush=True)
+        return text
         
     except Exception as e:
-        print(f"[astro_ai] ERROR: {type(e).__name__}: {e}", flush=True)
+        print(f"[astro_ai] ERROR: {type(e).__name__}: {str(e)[:100]}", flush=True)
         return ""
 
 
-
-
-
-def main():
-    print(f"🔥 [monitor.main()] START", flush=True)
-    global _FORCE_REPORT
     force = _FORCE_REPORT
     _FORCE_REPORT = False  # скидаємо після використання
 
