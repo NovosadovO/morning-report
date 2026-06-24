@@ -3305,17 +3305,16 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
 
 
 def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "") -> str:
-    """AI аналіз астро-аспектів."""
+    """AI аналіз астро-аспектів натальної карти."""
     if not astro_text or not gemini_key:
         return ""
     
     print(f"[astro_ai] generating analysis...", flush=True)
     
-    # Максимально простий prompt
-    prompt = "Analyze these astro aspects for Oleg. Give detailed analysis of influence on life, work, health. Answer in Ukrainian, 300-400 words. " + astro_text[:1500]
+    # Простий, безпечний prompt
+    prompt = "Analyze these astro aspects for Oleg. Give detailed analysis of influence on life, work, health, relationships. Answer in Ukrainian, 300-400 words.\n\n" + astro_text[:1500]
     
     try:
-        # Простий JSON без thinkingConfig
         body = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
@@ -3324,35 +3323,36 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
             }
         }).encode()
         
-        print(f"[astro_ai] sending to Gemini (body size: {len(body)} bytes)...", flush=True)
-        
+        print(f"[astro_ai] calling Gemini...", flush=True)
         resp = _gem_post(
-            "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" + gemini_key,
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
             body, timeout=15, tag="astro_ai"
         )
         
         if not resp:
-            print(f"[astro_ai] empty response from Gemini", flush=True)
+            print(f"[astro_ai] empty response", flush=True)
             return ""
         
         parts = resp.get("candidates", [{}])[0].get("content", {}).get("parts", [])
         if not parts:
-            print(f"[astro_ai] no parts in response", flush=True)
+            print(f"[astro_ai] no parts", flush=True)
             return ""
         
         text = parts[0].get("text", "").strip()
         if not text:
-            print(f"[astro_ai] empty text from Gemini", flush=True)
             return ""
         
         print(f"[astro_ai] OK - {len(text)} chars", flush=True)
         return text
         
     except Exception as e:
-        print(f"[astro_ai] ERROR: {type(e).__name__}: {str(e)[:100]}", flush=True)
+        print(f"[astro_ai] ERROR: {e}", flush=True)
         return ""
 
 
+def main():
+    print(f"🔥 [monitor.main()] START", flush=True)
+    global _FORCE_REPORT
     force = _FORCE_REPORT
     _FORCE_REPORT = False  # скидаємо після використання
 
@@ -4866,7 +4866,37 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
             _time_main.sleep(0.6)
 
     # Астро AI — надсилаємо окремо після звіту, розбиваємо безпечно по 3800 символів
-    # Астро-AI більше не надсилається окремо - йде в основному звіті як АСТРО-АНАЛІЗ блок
+    if _astro_ai_full:
+        _time_main.sleep(0.8)
+        print(f"[astro_ai] sending astro AI ({len(_astro_ai_full)} chars) as separate messages...", flush=True)
+        _astro_header = "🔮🤖 <b>АСТРО-АНАЛІЗ ВСІ АСПЕКТИ</b>\n\n"
+        _astro_full_text = _astro_header + _astro_ai_full
+        _ALIMIT = 3800  # безпечний ліміт (Telegram 4096, з запасом)
+
+        def _split_safe(text, limit):
+            """Розбиває текст по межах речень/рядків, жоден шматок не перевищує limit."""
+            chunks = []
+            while len(text) > limit:
+                # Шукаємо місце розрізу: спочатку \n\n, потім \n, потім '. '
+                cut = -1
+                for sep in ["\n\n", "\n", ". ", "! ", "? "]:
+                    idx = text.rfind(sep, 0, limit)
+                    if idx > limit // 2:
+                        cut = idx + len(sep)
+                        break
+                if cut <= 0:
+                    cut = limit  # примусовий розріз
+                chunks.append(text[:cut].rstrip())
+                text = text[cut:].lstrip()
+            if text:
+                chunks.append(text)
+            return chunks
+
+        _astro_chunks = _split_safe(_astro_full_text, _ALIMIT)
+        print(f"[astro_ai] split into {len(_astro_chunks)} messages", flush=True)
+        for _ci, _chunk_text in enumerate(_astro_chunks):
+            send_telegram(_chunk_text)
+            _time_main.sleep(0.6)
 
     print(f"=== Report {'sent' if ok else 'FAILED'} ===")
 
@@ -4910,7 +4940,23 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
         except Exception as _se:
             print(f"=== mark-sent error: {_se} (non-fatal) ===")
 
-    # ── ДЕШБОРД ВИДАЛЕНИЙ — замість нього йде глибокий AI-аналіз астро ────────
+    # ── ДЕШБОРД після звіту ───────────────────────────────────────────────────
+    try:
+        import dashboard as _dashboard_mod
+        _time_main.sleep(0.8)
+        print("[dashboard] generating ultra HD dashboard...", flush=True)
+        _dash_bytes = _dashboard_mod.get_dashboard_bytes()
+        if _dash_bytes:
+            _req_send.post(
+                f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
+                data={"chat_id": TELEGRAM_CHAT, "caption": "📊 <b>Дешборд Олега</b>\nЗдоров'я • Strava • Звички", "parse_mode": "HTML"},
+                files={"photo": ("dashboard.png", _io_send.BytesIO(_dash_bytes), "image/png")},
+                timeout=60,
+            )
+            print("[dashboard] ultra HD sent", flush=True)
+            _time_main.sleep(0.5)
+    except Exception as _e_dash:
+        print(f"[dashboard] error: {_e_dash}", flush=True)
 
     # ── Астро — надсилаємо окремим повідомленням після звіту ─────────────────
     # Астро вже є в parts (блок 6) — окреме надсилання прибрано щоб не дублювати
