@@ -3306,37 +3306,53 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
 
 def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "") -> str:
     """
-    Простий AI аналіз астро-блоку.
-    Повертає текст аналізу або порожній рядок.
+    ГЛИБОКИЙ AI-аналіз астро-аспектів натальної карти Олега.
+    Генерує розгорнутий текст (400-600 слів) про вплив транзитів на його життя.
     """
     if not astro_text or not gemini_key:
         print(f"[astro_ai] skipped: no astro_text or no key", flush=True)
         return ""
     
-    print(f"[astro_ai] generating analysis...", flush=True)
+    print(f"[astro_ai] generating DEEP analysis...", flush=True)
     
-    # ПРОСТИЙ prompt
+    # НАТАЛЬНА КАРТА ОЛЕГА
+    natal = """Натальна карта Олега Новосадова (22.09.1989, 02:52, Львів):
+- Асцендент: Лев (потреба в визнанні, лідерстві)
+- Сонце: Діва 28.9° (3-й дім) — аналітичність, комунікація, вчення
+- Місяць: Близнюки (11-й дім) — соціальність, друзі, нестійкість емоцій
+- Марс: Терези (3-й дім) — дипломатія в спілкуванні
+- Венера: Скорпіон (4-й дім) — глибокі трансформації в особистому
+- Сатурн+Уран+Нептун: Козеріг (6-й дім) — робота, здоров'я, дисципліна
+"""
+    
     prompt = (
-        f"Ты астролог для Олега. Вот его астро на сегодня. "
-        f"Дай краткий анализ: что главное, как это влияет на жизнь, что делать. "
-        f"Ответь на украинском, 80-120 слов.\n\n"
-        f"{astro_text[:1500]}"
+        f"Ти — астролог Олега. Вот його натальна карта та поточні транзити. "
+        f"Напиши ГЛИБОКИЙ (400+ слів) аналіз активних аспектів:\n\n"
+        f"{natal}\n"
+        f"=== ПОТОЧНІ ТРАНЗИТИ ==={astro_text[:2500]}\n\n"
+        f"АНАЛІЗ повинен містити:\n"
+        f"1. ОСНОВНІ АКТИВНІ АСПЕКТИ — які планети, які аспекти, до яких натальних планет\n"
+        f"2. ВПЛИВ на ЖИТТЯ — конкретно: робота, гроші, здоров'я, відносини, особистий розвиток\n"
+        f"3. МОЖЛИВОСТІ та ВИКЛИКИ — що Олегу дають ці аспекти, з чим може бути важко\n"
+        f"4. РЕКОМЕНДАЦІЇ — конкретні дії для максимізації позитиву, мінімізації ризиків\n"
+        f"5. ЕНЕРГІЯ ДНЯ — одне речення про загальний тон цього дня\n\n"
+        f"Пиши ДЕТАЛЬНО, персонально для Олега, без вступу. Мова: українська."
     )
     
     try:
         body = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 1500,
-                "temperature": 0.7,
+                "maxOutputTokens": 3500,
+                "temperature": 0.8,
                 "thinkingConfig": {"thinkingBudget": 0},
             },
         }).encode()
         
-        print(f"[astro_ai] calling Gemini...", flush=True)
+        print(f"[astro_ai] calling Gemini (deep analysis)...", flush=True)
         resp = _gem_post(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-            body, timeout=10, tag="astro_ai"
+            body, timeout=15, tag="astro_ai"
         )
         
         parts = (resp.get("candidates", [{}])[0].get("content", {}).get("parts") or [])
@@ -3351,6 +3367,8 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
     except Exception as e:
         print(f"[astro_ai] ERROR: {type(e).__name__}: {e}", flush=True)
         return ""
+
+
 
 
 
@@ -4944,23 +4962,7 @@ def main():
         except Exception as _se:
             print(f"=== mark-sent error: {_se} (non-fatal) ===")
 
-    # ── ДЕШБОРД після звіту ───────────────────────────────────────────────────
-    try:
-        import dashboard as _dashboard_mod
-        _time_main.sleep(0.8)
-        print("[dashboard] generating ultra HD dashboard...", flush=True)
-        _dash_bytes = _dashboard_mod.get_dashboard_bytes()
-        if _dash_bytes:
-            _req_send.post(
-                f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
-                data={"chat_id": TELEGRAM_CHAT, "caption": "📊 <b>Дешборд Олега</b>\nЗдоров'я • Strava • Звички", "parse_mode": "HTML"},
-                files={"photo": ("dashboard.png", _io_send.BytesIO(_dash_bytes), "image/png")},
-                timeout=60,
-            )
-            print("[dashboard] ultra HD sent", flush=True)
-            _time_main.sleep(0.5)
-    except Exception as _e_dash:
-        print(f"[dashboard] error: {_e_dash}", flush=True)
+    # ── ДЕШБОРД ВИДАЛЕНИЙ — замість нього йде глибокий AI-аналіз астро ────────
 
     # ── Астро — надсилаємо окремим повідомленням після звіту ─────────────────
     # Астро вже є в parts (блок 6) — окреме надсилання прибрано щоб не дублювати
