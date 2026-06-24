@@ -8734,7 +8734,7 @@ def main():
     try:
         pass  # removed get_summary
     except Exception:
-        summary_text = ""  # removed
+        pass  # removed
     # ── КРОК 8: Calendar-aware AI секція (кожен звіт унікальна порада) ───────
     ai_insight = None
     gemini_key = os.environ.get("GEMINI_API_KEY", "")
@@ -9507,9 +9507,7 @@ def main():
         print(f"[themes_ai] outer error: {_e_th}", flush=True)
         _themes_ai_full = ""
 
-    # Блок 7: AI-підсумок
-    if summary_text:
-        parts.append(summary_text)
+    # Блок 7: AI-підсумок (видалено за запитом Олега)
 
     # Блок 8: Calendar-aware AI порада — показується тільки якщо брифінг відключений
     # (брифінг на початку вже покриває пораду, тому тут не дублюємо)
