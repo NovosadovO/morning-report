@@ -4539,10 +4539,26 @@ def main():
     
     _astro_ai_full = ""  # ініціалізація
 
-    # Блок 6: Астро — додається в кожен звіт (БЕЗ AI аналізу для надійності)
+    # Блок 6: Астро — додається в кожен звіт З AI-аналізом
     if astro_text:
         parts.append(astro_text)
         print(f"astro: додано в звіт (slot={hour_key})", flush=True)
+        
+        # Спробуємо додати AI-аналіз астро (якщо час дозволяє)
+        try:
+            _gemini_key = os.environ.get("GEMINI_API_KEY", "")
+            if _gemini_key and _ai_time_left(25):
+                _astro_ai_text = _get_astro_ai_analysis(astro_text, _gemini_key, shift_hint=calendar_context)
+                if _astro_ai_text:
+                    _astro_ai_full = _astro_ai_text
+                    parts.append(_section_header("🔮", "АСТРО-АНАЛІЗ") + "\n" + esc(_astro_ai_text))
+                    print(f"[astro_ai] додано в звіт ({len(_astro_ai_text)} chars)", flush=True)
+                else:
+                    print(f"[astro_ai] не вдалось отримати аналіз", flush=True)
+            else:
+                print(f"[astro_ai] пропущено (key={'NO' if not _gemini_key else 'YES'}, time_left={_ai_time_left(25)})", flush=True)
+        except Exception as _e_astro_ai:
+            print(f"[astro_ai] exception: {_e_astro_ai}", flush=True)
 
     # ── Блок 6г: ПЛАН ТИЖНЯ (тільки у звіт) ─────────────────────────────────────
     try:
