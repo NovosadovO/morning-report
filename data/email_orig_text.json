@@ -268,5 +268,32 @@
         ]
       ]
     }
+  },
+  "2100366814_32054": {
+    "text": "📩 ✉️\n📌 📰 AI-curated Daily Crypto Digest — June 24\n👤 CryptoBeholder.com через LinkedIn<newsletters-nore",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_75023"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_75023"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_75023"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_75023"
+          }
+        ]
+      ]
+    }
   }
 }
