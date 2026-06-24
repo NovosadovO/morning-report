@@ -3460,17 +3460,18 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
     # Генеруємо AI-аналіз через Gemini API
     for attempt in range(2):
         try:
+            body = json.dumps({
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {
+                    "maxOutputTokens": 4000,
+                    "temperature": 0.8,
+                    "thinkingConfig": {"thinkingBudget": 0}  # Вимикаємо reasoning
+                }
+            }).encode()
             response = _gem_post(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-                {
-                    "contents": [{"parts": [{"text": prompt}]}],
-                    "generationConfig": {
-                        "maxOutputTokens": 4000,
-                        "temperature": 0.8,
-                        "thinkingConfig": {"thinkingBudget": 0}  # Вимикаємо reasoning
-                    }
-                },
-                timeout=12,
+                body,
+                timeout=30,
                 tag=f"astro_ai_attempt_{attempt+1}"
             )
             
@@ -10413,17 +10414,18 @@ def _get_calendar_events_text() -> str:
     # Генеруємо AI-аналіз через Gemini API
     for attempt in range(2):
         try:
+            body = json.dumps({
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {
+                    "maxOutputTokens": 4000,
+                    "temperature": 0.8,
+                    "thinkingConfig": {"thinkingBudget": 0}  # Вимикаємо reasoning
+                }
+            }).encode()
             response = _gem_post(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-                {
-                    "contents": [{"parts": [{"text": prompt}]}],
-                    "generationConfig": {
-                        "maxOutputTokens": 4000,
-                        "temperature": 0.8,
-                        "thinkingConfig": {"thinkingBudget": 0}  # Вимикаємо reasoning
-                    }
-                },
-                timeout=12,
+                body,
+                timeout=30,
                 tag=f"astro_ai_attempt_{attempt+1}"
             )
             
