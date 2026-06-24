@@ -4504,7 +4504,7 @@ def main():
         # Спробуємо додати AI-аналіз астро (якщо час дозволяє)
         try:
             _gemini_key = os.environ.get("GEMINI_API_KEY", "")
-            if _gemini_key and _ai_time_left(25):
+            if _gemini_key:
                 _astro_ai_text = _get_astro_ai_analysis(astro_text, _gemini_key, shift_hint=calendar_context)
                 if _astro_ai_text:
                     _astro_ai_full = _astro_ai_text
@@ -4513,7 +4513,7 @@ def main():
                 else:
                     print(f"[astro_ai] не вдалось отримати аналіз", flush=True)
             else:
-                print(f"[astro_ai] пропущено (key={'NO' if not _gemini_key else 'YES'}, time_left={_ai_time_left(25)})", flush=True)
+                print(f"[astro_ai] пропущено (no GEMINI_API_KEY)", flush=True)
         except Exception as _e_astro_ai:
             print(f"[astro_ai] exception: {_e_astro_ai}", flush=True)
 
