@@ -3454,39 +3454,50 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
 КОНТЕКСТ ДНЯ:
 {shift_hint[:250]}
 """
-    try:
-        token = _calendar_access_token()
-        if not token:
-            return ""
-        now_utc = datetime.now(timezone.utc)
-        local_start = (now_utc + timedelta(hours=2)).replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
-        local_end   = local_start + timedelta(hours=24)
-        cal_id = "novosadovoleg%40gmail.com"
-        url = (
-            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
-            f"?timeMin={urllib.parse.quote(local_start.isoformat())}"
-            f"&timeMax={urllib.parse.quote(local_end.isoformat())}"
-            f"&singleEvents=true&orderBy=startTime&maxResults=15"
-        )
-        req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
-        with urllib.request.urlopen(req, timeout=8) as r:
-            items = json.loads(r.read()).get("items", [])
-        if not items:
-            return "нічого не заплановано"
-        lines = []
-        for ev in items:
-            start = ev["start"].get("dateTime") or ev["start"].get("date")
-            summary = ev.get("summary", "(без назви)")
-            try:
-                dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                t  = dt.astimezone(timezone(timedelta(hours=2))).strftime("%H:%M")
-            except Exception:
-                t = ""
-            lines.append(f"{t} {summary}".strip())
-        return "; ".join(lines)
-    except Exception as e:
-        print(f"_get_calendar_events_text error: {e}")
-        return ""
+    # Генеруємо AI-аналіз через Gemini API
+    for attempt in range(2):
+        try:
+            response = _gem_post(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                {
+                    "contents": [{"parts": [{"text": prompt}]}],
+                    "generationConfig": {
+                        "maxOutputTokens": 4000,
+                        "temperature": 0.8,
+                        "thinkingConfig": {"thinkingBudget": 0}  # Вимикаємо reasoning
+                    }
+                },
+                timeout=12,
+                tag=f"astro_ai_attempt_{attempt+1}"
+            )
+            
+            if response is None:
+                print(f"[astro_ai] attempt {attempt+1}: no response", flush=True)
+                continue
+            
+            candidates = response.get("candidates", [])
+            if not candidates:
+                print(f"[astro_ai] attempt {attempt+1}: no candidates", flush=True)
+                continue
+            
+            parts = candidates[0].get("content", {}).get("parts", [])
+            if not parts:
+                print(f"[astro_ai] attempt {attempt+1}: empty parts", flush=True)
+                continue
+            
+            text = parts[0].get("text", "").strip()
+            if text:
+                print(f"[astro_ai] SUCCESS (attempt {attempt+1}) — {len(text)} chars", flush=True)
+                return text
+            else:
+                print(f"[astro_ai] attempt {attempt+1}: empty text", flush=True)
+        except Exception as e:
+            print(f"[astro_ai] error attempt {attempt+1}: {e}", flush=True)
+            if attempt == 0:
+                import time as _t_astro
+                _t_astro.sleep(2)
+    
+    return ""
 
 
 def _ai_personal_message(situation: str, context: dict = None, max_tokens: int = 200) -> str:
@@ -10392,39 +10403,50 @@ PROACTIVE_FILE = os.path.join(_DATA_DIR, "monitor_proactive.json")
 
 def _get_calendar_events_text() -> str:
     """Повертає короткий список подій з Google Calendar на СЬОГОДНІ (для AI промптів)."""
-    try:
-        token = _calendar_access_token()
-        if not token:
-            return ""
-        now_utc = datetime.now(timezone.utc)
-        local_start = (now_utc + timedelta(hours=2)).replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
-        local_end   = local_start + timedelta(hours=24)
-        cal_id = "novosadovoleg%40gmail.com"
-        url = (
-            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
-            f"?timeMin={urllib.parse.quote(local_start.isoformat())}"
-            f"&timeMax={urllib.parse.quote(local_end.isoformat())}"
-            f"&singleEvents=true&orderBy=startTime&maxResults=15"
-        )
-        req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
-        with urllib.request.urlopen(req, timeout=8) as r:
-            items = json.loads(r.read()).get("items", [])
-        if not items:
-            return "нічого не заплановано"
-        lines = []
-        for ev in items:
-            start = ev["start"].get("dateTime") or ev["start"].get("date")
-            summary = ev.get("summary", "(без назви)")
-            try:
-                dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
-                t  = dt.astimezone(timezone(timedelta(hours=2))).strftime("%H:%M")
-            except Exception:
-                t = ""
-            lines.append(f"{t} {summary}".strip())
-        return "; ".join(lines)
-    except Exception as e:
-        print(f"_get_calendar_events_text error: {e}")
-        return ""
+    # Генеруємо AI-аналіз через Gemini API
+    for attempt in range(2):
+        try:
+            response = _gem_post(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                {
+                    "contents": [{"parts": [{"text": prompt}]}],
+                    "generationConfig": {
+                        "maxOutputTokens": 4000,
+                        "temperature": 0.8,
+                        "thinkingConfig": {"thinkingBudget": 0}  # Вимикаємо reasoning
+                    }
+                },
+                timeout=12,
+                tag=f"astro_ai_attempt_{attempt+1}"
+            )
+            
+            if response is None:
+                print(f"[astro_ai] attempt {attempt+1}: no response", flush=True)
+                continue
+            
+            candidates = response.get("candidates", [])
+            if not candidates:
+                print(f"[astro_ai] attempt {attempt+1}: no candidates", flush=True)
+                continue
+            
+            parts = candidates[0].get("content", {}).get("parts", [])
+            if not parts:
+                print(f"[astro_ai] attempt {attempt+1}: empty parts", flush=True)
+                continue
+            
+            text = parts[0].get("text", "").strip()
+            if text:
+                print(f"[astro_ai] SUCCESS (attempt {attempt+1}) — {len(text)} chars", flush=True)
+                return text
+            else:
+                print(f"[astro_ai] attempt {attempt+1}: empty text", flush=True)
+        except Exception as e:
+            print(f"[astro_ai] error attempt {attempt+1}: {e}", flush=True)
+            if attempt == 0:
+                import time as _t_astro
+                _t_astro.sleep(2)
+    
+    return ""
 
 
 def _ai_personal_message(situation: str, context: dict = None, max_tokens: int = 200) -> str:
