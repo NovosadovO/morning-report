@@ -1707,16 +1707,19 @@ def _email_save_ids(sent_ids: set):
     except Exception as e:
         print(f"_email_save_ids error: {e}")
 
-def _gemini_email_analysis(full_text: str) -> dict:
+def _gemini_email_analysis(full_text: str, health_context: str = "") -> dict:
     """Аналізує лист через Gemini: детальний переказ + думка."""
     import re as _re
     api_key = os.environ.get("GEMINI_API_KEY", "")
 
+    health_note = f"Контекст здоров'я користувача: {health_context}\n" if health_context else ""
+    
     prompt = (
         "Проаналізуй цей email. Відповідь — ТІЛЬКИ валідний JSON, без markdown, без коментарів:\n"
         '{"description": "...", "opinion": "..."}\n\n'
         "description: переказ змісту — про що лист, ключові цифри/дати/суми, що очікується від одержувача (2-4 речення українською).\n"
         "opinion: твоя коротка думка — чи реагувати і що зробити (1 речення українською).\n\n"
+        f"{health_note}"
         f"Лист:\n{full_text[:2000]}"
     )
     req_body = json.dumps({
@@ -1755,10 +1758,11 @@ def _gemini_email_analysis(full_text: str) -> dict:
         print(f"[email AI] error: {type(e).__name__}: {e}")
         return None
 
-def _get_email_ai_analysis_for_report(email_items_dict: dict) -> str:
+def _get_email_ai_analysis_for_report(email_items_dict: dict, health_context: str = "") -> str:
     """
     Аналізує КЛЮЧЕВІ листи з email блока для звіту.
     Проглядає найважливіші листи (без реклами/newsletter), робить глибокий AI аналіз.
+    health_context: додатковий контекст про здоров'я (кроки, сон, вага) для AI аналізу
     Повертає форматований текстовий блок для звіту або порожну строку.
     """
     if not email_items_dict or not email_items_dict.get("items"):
@@ -1809,7 +1813,7 @@ def _get_email_ai_analysis_for_report(email_items_dict: dict) -> str:
         analysis_lines = [f"📧 <b>AI АНАЛІЗ ПОШТИ</b>  ({len(to_analyze)} важливих листів)"]
         
         for subject, sender, full_text in to_analyze:
-            ai_result = _gemini_email_analysis(full_text)
+            ai_result = _gemini_email_analysis(full_text, health_context)
             
             if ai_result:
                 desc = ai_result.get("description", "").strip()
@@ -8914,6 +8918,25 @@ def main():
                     weight_hint = f"Остання вага: {wd_r[lk]} кг (ціль 78 кг)."
             except: pass
 
+            # Контекст кроків і сну
+            steps_hint = ""
+            sleep_hint = ""
+            steps_val = 0
+            sleep_val = 0
+            try:
+                from storage import load_health as _lh_r
+                hd_r = _lh_r()
+                if hd_r:
+                    lk_h = sorted(hd_r.keys())[-1]
+                    h_data = hd_r[lk_h]
+                    steps_val = h_data.get("steps", 0)
+                    sleep_val = h_data.get("sleep_hours", 0)
+                    if steps_val > 0:
+                        steps_hint = f"Кроки сьогодні: {steps_val} (ціль 10000). "
+                    if sleep_val > 0:
+                        sleep_hint = f"Сон учора: {sleep_val}г. "
+            except: pass
+
             # Час-специфічна порада з урахуванням зміни
             if _working_now and _shift == "night":
                 tip_ctx = "Олег ЗАРАЗ на нічній зміні (18:00–06:00). Дай пораду що допоможе пережити ніч: енергія, концентрація, безпека. НЕ пиши про сон чи відпочинок."
@@ -8953,7 +8976,7 @@ def main():
                 _done_h = [k for k,v in _today_h.items() if v is True]
                 _ai_real_ctx += f"Виконані звички: {', '.join(_done_h) if _done_h else 'жодної'}. "
             except: pass
-            _ai_real_ctx += weight_hint + " "
+            _ai_real_ctx += weight_hint + " " + steps_hint + sleep_hint
 
             ai_prompt = (
                 f"Контекст: {shift_hint} {_ai_real_ctx}Календар: {cal_events_text}. {tip_ctx} "
@@ -9525,7 +9548,16 @@ def main():
     _email_ai_full = ""
     if isinstance(email_text, dict) and email_text.get("items"):
         print(f"[email_ai] generating analysis for {len(email_text.get('items', []))} emails", flush=True)
-        _email_ai_analysis = _get_email_ai_analysis_for_report(email_text)
+        # Контекст здоров'я для email AI
+        _health_ctx_email = ""
+        if steps_val > 0 or sleep_val > 0:
+            _health_parts_email = []
+            if steps_val > 0:
+                _health_parts_email.append(f"кроки {steps_val} (ціль 10000)")
+            if sleep_val > 0:
+                _health_parts_email.append(f"сон {sleep_val}г")
+            _health_ctx_email = ", ".join(_health_parts_email)
+        _email_ai_analysis = _get_email_ai_analysis_for_report(email_text, _health_ctx_email)
         if _email_ai_analysis:
             _email_ai_full = _email_ai_analysis
             print(f"[email_ai] analysis done: {len(_email_ai_analysis)} chars", flush=True)
@@ -9544,8 +9576,17 @@ def main():
         if not _ai_time_left(40):
             print("[astro_ai] SKIP — мало часу до дедлайну", flush=True)
         else:
+            # Додаємо контекст здоров'я до shift_hint для астро AI
+            _astro_shift_hint = shift_hint
+            if steps_val > 0 or sleep_val > 0:
+                _health_parts_astro = []
+                if steps_val > 0:
+                    _health_parts_astro.append(f"кроки {steps_val}")
+                if sleep_val > 0:
+                    _health_parts_astro.append(f"сон {sleep_val}г")
+                _astro_shift_hint += f" Здоров'я: {', '.join(_health_parts_astro)}."
             print(f"[main] Calling _get_astro_ai_analysis with astro_text={len(astro_text)} chars, key={'***' if _gemini_key_astro else 'NONE'}", flush=True)
-            _astro_ai = _get_astro_ai_analysis(astro_text, _gemini_key_astro, shift_hint=shift_hint)
+            _astro_ai = _get_astro_ai_analysis(astro_text, _gemini_key_astro, shift_hint=_astro_shift_hint)
             print(f"[main] _get_astro_ai_analysis returned: {len(_astro_ai) if _astro_ai else 0} chars", flush=True)
         if _astro_ai:
             # Зберігаємо для окремої надсилки після звіту (щоб не обрізалось)
@@ -9582,10 +9623,11 @@ def main():
                 _th_ctx["running"] = "Сьогодні пробіжки ще не було."
         except Exception:
             _th_ctx["running"] = "немає даних"
-        # Здоров'я + вага
+        # Здоров'я + вага + кроки + сон
         try:
             from storage import load_weight as _lw_th
             _wd_th = _lw_th()
+            _health_parts = []
             if _wd_th:
                 _lk = sorted(_wd_th.keys())[-1]
                 _vals = [_wd_th[k] for k in sorted(_wd_th.keys())[-5:]]
@@ -9593,9 +9635,15 @@ def main():
                 if len(_vals) >= 2:
                     _d = _vals[-1] - _vals[0]
                     _trend = f" (тренд {_d:+.1f} кг за останні {len(_vals)} замірів)"
-                _th_ctx["health"] = f"Остання вага: {_wd_th[_lk]} кг, ціль 78 кг{_trend}."
+                _health_parts.append(f"Вага: {_wd_th[_lk]} кг, ціль 78 кг{_trend}")
+            if steps_val > 0:
+                _health_parts.append(f"Кроки: {steps_val} (ціль 10000)")
+            if sleep_val > 0:
+                _health_parts.append(f"Сон: {sleep_val}г")
+            if _health_parts:
+                _th_ctx["health"] = ". ".join(_health_parts) + "."
             else:
-                _th_ctx["health"] = "немає даних про вагу"
+                _th_ctx["health"] = "немає даних про здоров'я"
         except Exception:
             _th_ctx["health"] = "немає даних"
         # Звички
