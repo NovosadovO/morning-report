@@ -8665,6 +8665,110 @@ def check_health_weekly_tracker():
     save_json_file(_HEALTH_TRACKER_FILE, state)
     print(f"[health_tracker] тижневий аналіз надіслано ({week_key})")
 
+
+# ═══════════ PHASE 1: AI ALERT ANALYSIS FUNCTIONS ═════════════════════════════
+
+def _get_crypto_ai_analysis(crypto_alert: dict, gemini_key: str = None) -> str:
+    """
+    AI-аналіз КРИПТО-ALERT: чому це сталось, це купівля чи продаж, тренд портфеля
+    Формат: 100-150 слів, гібридний стиль (офіційний + мотивуючий)
+    """
+    if not gemini_key:
+        gemini_key = os.getenv("GEMINI_API_KEY", "")
+    if not gemini_key:
+        return ""
+    
+    try:
+        coins = crypto_alert.get('coins', [])
+        coins_desc = "\n".join(
+            f"• {c['symbol']}: {c['change']:+.1f}% ({c['name']}) — ${c['price']:,.0f}"
+            for c in coins
+        )
+        
+        prompt = (
+            f"Олег інвестує у крипто (BTC, ETH, AVAX, ONDO). Сталась раптова зміна:\n\n{coins_desc}\n\n"
+            f"Дай КОРОТКО (100-150 слів, українська):\n"
+            f"1. Чому це сталось? (вона на ринку, мікро-новини, обсяги?)\n"
+            f"2. Це купівля чи продаж? (рекомендація дії)\n"
+            f"3. Портфель статус (ризик/можливість?)\n\n"
+            f"Тон: офіційний аналіз + мотивуюча підтримка. Без спекуляцій."
+        )
+        
+        body = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": 300,
+                "temperature": 0.6,
+                "thinkingConfig": {"thinkingBudget": 0}
+            },
+        }).encode()
+        
+        resp = _gem_post(
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            body, timeout=15, tag="crypto_ai", max_retries=2
+        )
+        
+        if isinstance(resp, dict) and "candidates" in resp:
+            parts = resp.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+            if parts:
+                return parts[0].get("text", "").strip()
+    
+    except Exception as e:
+        print(f"[CRYPTO_AI] error: {e}", flush=True)
+    
+    return ""
+
+
+def _get_health_ai_analysis(health_alert: dict, gemini_key: str = None) -> str:
+    """
+    AI-аналіз HEALTH-ALERT: вага, сон, біг + практичні поради
+    Формат: 80-120 слів, мотивуючий стиль (тренер, не лікар)
+    """
+    if not gemini_key:
+        gemini_key = os.getenv("GEMINI_API_KEY", "")
+    if not gemini_key:
+        return ""
+    
+    try:
+        issues = health_alert.get('issues', [])
+        issues_desc = "\n".join(i.get('message', '?') for i in issues)
+        
+        prompt = (
+            f"Олег відслідковує здоров'я і мав проблеми:\n\n{issues_desc}\n\n"
+            f"Дай МОТИВУЮЧУ ПОРАДУ (80-120 слів, українська):\n"
+            f"1. Чому це важливо? (зв'язок з цілями?)\n"
+            f"2. Конкретна дія (не cлова, а дійства)\n"
+            f"3. Короткостроковий результат (за 3-7 днів)\n\n"
+            f"Тон: теплий тренер, який вірить в тебе. Мова: українська."
+        )
+        
+        body = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": 250,
+                "temperature": 0.7,
+                "thinkingConfig": {"thinkingBudget": 0}
+            },
+        }).encode()
+        
+        resp = _gem_post(
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            body, timeout=15, tag="health_ai", max_retries=2
+        )
+        
+        if isinstance(resp, dict) and "candidates" in resp:
+            parts = resp.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+            if parts:
+                return parts[0].get("text", "").strip()
+    
+    except Exception as e:
+        print(f"[HEALTH_AI] error: {e}", flush=True)
+    
+    return ""
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+
 def main():
     global _FORCE_REPORT
     force = _FORCE_REPORT

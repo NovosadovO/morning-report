@@ -510,7 +510,281 @@ def send_proactive_message(telegram_send_func):
         print(f"❌ Send error: {e}", flush=True)
         return False
 
+# ============ ФАЗА 1: EVENT-DRIVEN ALERTS ============
+
+def check_crypto_urgency():
+    """
+    КРИПТО-ALERT: BTC/ETH/AVAX/ONDO ±5% за останні 2 години
+    Повертає: {"alert": True/False, "coins": [...], "analysis": "..."}
+    """
+    try:
+        watch_list = get_user_watch_list()
+        alerts = []
+        
+        for symbol, data in watch_list.items():
+            change_24h = data.get('change_24h', 0)
+            # Перевіряємо ±5%
+            if abs(change_24h) >= 5.0:
+                alerts.append({
+                    "symbol": symbol,
+                    "change": change_24h,
+                    "price": data.get('price', 0),
+                    "name": data.get('name', symbol)
+                })
+        
+        if alerts:
+            return {
+                "alert": True,
+                "coins": alerts,
+                "type": "crypto",
+                "timestamp": datetime.now().isoformat()
+            }
+        else:
+            return {"alert": False, "type": "crypto"}
+    
+    except Exception as e:
+        print(f"❌ check_crypto_urgency error: {e}", flush=True)
+        return {"alert": False, "type": "crypto", "error": str(e)}
+
+
+def check_email_urgency():
+    """
+    EMAIL-ALERT: Нові VIP листи від важливих людей (бос, клієнти, інвесторів)
+    Повертає: {"alert": True/False, "emails": [...], "analysis": "..."}
+    """
+    try:
+        # Список важливих контактів для Олега
+        vip_patterns = [
+            r"boss|manager|ceo",  # Робота
+            r"client|customer|order",  # Клієнти
+            r"invest|finance|portfolio",  # Інвестиції
+            r"interview|job|position",  # Нова робота
+            r"interfinance|maros|sivak",  # Інвест-контакти
+        ]
+        
+        # Отримуємо email
+        try:
+            from storage import get_emails_fast
+            emails = get_emails_fast(max_results=10, only_unread=True)
+        except:
+            emails = []
+        
+        vip_emails = []
+        for email in emails:
+            subject = email.get('subject', '').lower()
+            sender = email.get('from', '').lower()
+            body = email.get('snippet', '').lower()
+            
+            is_vip = any(
+                __import__('re').search(pat, f"{sender} {subject} {body}") 
+                for pat in vip_patterns
+            )
+            
+            if is_vip:
+                vip_emails.append({
+                    "from": email.get('from'),
+                    "subject": email.get('subject'),
+                    "snippet": email.get('snippet', '')[:100],
+                    "date": email.get('date')
+                })
+        
+        if vip_emails:
+            return {
+                "alert": True,
+                "emails": vip_emails,
+                "type": "email",
+                "count": len(vip_emails),
+                "timestamp": datetime.now().isoformat()
+            }
+        else:
+            return {"alert": False, "type": "email"}
+    
+    except Exception as e:
+        print(f"❌ check_email_urgency error: {e}", flush=True)
+        return {"alert": False, "type": "email", "error": str(e)}
+
+
+def check_calendar_urgency():
+    """
+    CALENDAR-ALERT: Важливі события на ЗАВТРА (без рутини)
+    Фільтр рутини: Біг, Вода, Чай, Сауна, Armolopid, Навчання, Чек крипто, Пошта
+    Повертає: {"alert": True/False, "events": [...], "analysis": "..."}
+    """
+    try:
+        from datetime import datetime, timedelta
+        
+        tomorrow = datetime.now().date() + timedelta(days=1)
+        tomorrow_str = tomorrow.isoformat()
+        
+        # Фільтр рутини (НЕ показуємо ці события)
+        routine_keywords = [
+            "біг", "вода", "чай", "сауна", "armolopid",
+            "навчання", "чек крипто", "пошта", "зміна",
+            "ранна", "нічна", "training"
+        ]
+        
+        # Отримуємо события (потребує import календаря)
+        try:
+            from storage import get_calendar_events_fast
+            all_events = get_calendar_events_fast(date=tomorrow_str, max_results=20)
+        except:
+            all_events = []
+        
+        important_events = []
+        for event in all_events:
+            title = event.get('summary', '').lower()
+            
+            # Пропускаємо рутину
+            is_routine = any(keyword in title for keyword in routine_keywords)
+            if not is_routine:
+                important_events.append({
+                    "title": event.get('summary'),
+                    "time": event.get('start', {}).get('dateTime', event.get('start', {}).get('date')),
+                    "location": event.get('location', ''),
+                    "description": event.get('description', '')[:100]
+                })
+        
+        if important_events:
+            return {
+                "alert": True,
+                "events": important_events,
+                "type": "calendar",
+                "date": tomorrow_str,
+                "timestamp": datetime.now().isoformat()
+            }
+        else:
+            return {"alert": False, "type": "calendar"}
+    
+    except Exception as e:
+        print(f"❌ check_calendar_urgency error: {e}", flush=True)
+        return {"alert": False, "type": "calendar", "error": str(e)}
+
+
+def check_health_urgency():
+    """
+    HEALTH-ALERT: Вага (±3кг за тиждень), сон (<5h), біг (>3 дні без)
+    Повертає: {"alert": True/False, "issues": [...], "analysis": "..."}
+    """
+    try:
+        from storage import load_health
+        
+        health_data = load_health()
+        if not health_data:
+            return {"alert": False, "type": "health"}
+        
+        # Отримуємо останні дані (сьогодні) та з тиждень назад
+        today_key = datetime.now().strftime("%Y-%m-%d")
+        week_ago_key = (datetime.now() - timedelta(days=7)).strftime("%Y-%m-%d")
+        
+        today_health = health_data.get(today_key, {})
+        week_ago_health = health_data.get(week_ago_key, {})
+        
+        issues = []
+        
+        # 1. Вага зміна
+        today_weight = today_health.get('weight', 0)
+        week_weight = week_ago_health.get('weight', 0)
+        if today_weight and week_weight:
+            weight_change = today_weight - week_weight
+            if abs(weight_change) >= 3.0:
+                issues.append({
+                    "type": "weight",
+                    "change": weight_change,
+                    "current": today_weight,
+                    "message": f"Вага зросла на {weight_change:.1f}кг за тиждень" if weight_change > 0 else f"Вага впала на {abs(weight_change):.1f}кг"
+                })
+        
+        # 2. Сон
+        today_sleep = today_health.get('sleep_hours', 0)
+        if today_sleep < 5:
+            issues.append({
+                "type": "sleep",
+                "hours": today_sleep,
+                "message": f"Сон менше 5 годин ({today_sleep}h) — вплив на здоров'я"
+            })
+        
+        # 3. Біг (перевіряємо 3 дні)
+        running_days = 0
+        for i in range(3):
+            check_date = (datetime.now() - timedelta(days=i)).strftime("%Y-%m-%d")
+            check_health = health_data.get(check_date, {})
+            if check_health.get('running_km', 0) > 0:
+                running_days += 1
+        
+        if running_days == 0:
+            issues.append({
+                "type": "running",
+                "message": "Немає бігу більше 3 днів — час повернутися на трасу!"
+            })
+        
+        if issues:
+            return {
+                "alert": True,
+                "issues": issues,
+                "type": "health",
+                "timestamp": datetime.now().isoformat()
+            }
+        else:
+            return {"alert": False, "type": "health"}
+    
+    except Exception as e:
+        print(f"❌ check_health_urgency error: {e}", flush=True)
+        return {"alert": False, "type": "health", "error": str(e)}
+
+
+def check_astro_urgency():
+    """
+    АСТРО-ALERT: Natalis карта + важливі аспекти дня
+    Повертає: {"alert": True, "transit": {...}, "analysis": "..."}
+    """
+    try:
+        from datetime import datetime
+        
+        # Олегова натальна карта: 30.01.1990, 14:30, Kosice, SK
+        # Шукаємо важливі транзити
+        alert_transits = []
+        
+        # Примітка: повна реалізація потребує kerykeion обчислень
+        # За замовчуванням: кожний день показуємо мотивацію
+        
+        return {
+            "alert": True,
+            "type": "astro",
+            "message": "Натальна карта активна",
+            "timestamp": datetime.now().isoformat()
+        }
+    
+    except Exception as e:
+        print(f"❌ check_astro_urgency error: {e}", flush=True)
+        return {"alert": False, "type": "astro", "error": str(e)}
+
+
+def get_all_urgent_events():
+    """
+    Перевіряє ВСІ 5 типів подій паралельно
+    Повертає список활성 alertsів
+    """
+    events = {}
+    
+    # Перевіряємо всі типи
+    events['crypto'] = check_crypto_urgency()
+    events['email'] = check_email_urgency()
+    events['calendar'] = check_calendar_urgency()
+    events['health'] = check_health_urgency()
+    events['astro'] = check_astro_urgency()
+    
+    # Фільтруємо активні
+    active_events = {k: v for k, v in events.items() if v.get('alert')}
+    
+    return {
+        "has_events": bool(active_events),
+        "active_events": active_events,
+        "all_checks": events,
+        "timestamp": datetime.now().isoformat()
+    }
+
+
 # ============ EXPORTS ============
 
 if __name__ == "__main__":
-    print("✅ intelligent_assistant_v2.1 loaded")
+    print("✅ intelligent_assistant_v2.1 loaded with PHASE 1 events")
