@@ -1755,6 +1755,83 @@ def _gemini_email_analysis(full_text: str) -> dict:
         print(f"[email AI] error: {type(e).__name__}: {e}")
         return None
 
+def _get_email_ai_analysis_for_report(email_items_dict: dict) -> str:
+    """
+    Аналізує КЛЮЧЕВІ листи з email блока для звіту.
+    Проглядає найважливіші листи (без реклами/newsletter), робить глибокий AI аналіз.
+    Повертає форматований текстовий блок для звіту або порожну строку.
+    """
+    if not email_items_dict or not email_items_dict.get("items"):
+        return ""
+    
+    try:
+        mail = _imap_connect()
+        mail.select("INBOX")
+        
+        # Витягуємо ОСНОВНІ листи (непрочитані + від люди, не від newsletter)
+        to_analyze = []
+        for item in email_items_dict.get("items", [])[:5]:  # макс 5 листів для аналізу
+            uid = item.get("uid", "")
+            subject = item.get("subject", "")
+            sender = item.get("sender", "")
+            
+            # Пропускаємо очевидні newsletter/реклама
+            subject_lower = subject.lower()
+            sender_lower = sender.lower()
+            
+            _skip_patterns = [
+                "unsubscribe", "newsletter", "marketing", "promotional",
+                "no-reply", "noreply", "donotreply", "sales@", "info@",
+                "promo", "discount", "offer", "deal", "special",
+                "subscribe", "signup", "verify"
+            ]
+            
+            if any(p in subject_lower or p in sender_lower for p in _skip_patterns):
+                continue
+            
+            # Це РЕАЛЬНИЙ лист, а не розсилка — аналізуємо
+            _, msg_data = mail.uid('fetch', uid.encode(), "(RFC822)")
+            if msg_data and msg_data[0]:
+                raw = msg_data[0][1]
+                msg = email.message_from_bytes(raw)
+                body = _imap_get_body(msg)
+                
+                if body:  # Тільки якщо є тіло листа
+                    full_text = f"Від: {sender}\nТема: {subject}\n\n{body}"
+                    to_analyze.append((subject, sender, full_text))
+        
+        mail.logout()
+        
+        if not to_analyze:
+            return ""
+        
+        # Робимо AI аналіз для кожного листа
+        analysis_lines = [f"📧 <b>AI АНАЛІЗ ПОШТИ</b>  ({len(to_analyze)} важливих листів)"]
+        
+        for subject, sender, full_text in to_analyze:
+            ai_result = _gemini_email_analysis(full_text)
+            
+            if ai_result:
+                desc = ai_result.get("description", "").strip()
+                opinion = ai_result.get("opinion", "").strip()
+                
+                sender_short = sender.split("<")[0].strip() if "<" in sender else sender.split("@")[0]
+                
+                analysis_lines.append(f"\n👤 {esc(sender_short)}")
+                analysis_lines.append(f"📋 {esc(subject[:60])}")
+                
+                if desc:
+                    analysis_lines.append(f"📝 {esc(desc)}")
+                if opinion:
+                    analysis_lines.append(f"💭 {esc(opinion)}")
+        
+        return "\n".join(analysis_lines)
+    
+    except Exception as e:
+        print(f"[email_ai_report] error: {e}", flush=True)
+        return ""
+
+
 def _send_telegram_gif_only():
     """Надсилає тільки GIF без тексту."""
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendAnimation"
@@ -9444,6 +9521,15 @@ def main():
         else:
             email_parts.append(email_text)
 
+    # Email AI аналіз — аналізуємо тільки КЛЮЧЕВІ листи (без реклами)
+    _email_ai_full = ""
+    if isinstance(email_text, dict) and email_text.get("items"):
+        print(f"[email_ai] generating analysis for {len(email_text.get('items', []))} emails", flush=True)
+        _email_ai_analysis = _get_email_ai_analysis_for_report(email_text)
+        if _email_ai_analysis:
+            _email_ai_full = _email_ai_analysis
+            print(f"[email_ai] analysis done: {len(_email_ai_analysis)} chars", flush=True)
+
     _astro_ai_full = ""  # ініціалізація — астро AI надсилається окремо після звіту
 
     # Блок 6: Астро — додається в кожен звіт
@@ -9847,6 +9933,13 @@ def main():
         for _tci, _tchunk in enumerate(_themes_chunks):
             send_telegram(_tchunk)
             _time_main.sleep(0.6)
+
+    # Email AI аналіз — надсилаємо окремо після звіту
+    if _email_ai_full:
+        _time_main.sleep(0.8)
+        print(f"[email_ai] sending email AI ({len(_email_ai_full)} chars) as separate message...", flush=True)
+        send_telegram(_email_ai_full)
+        _time_main.sleep(0.6)
 
     # Астро AI — надсилаємо окремо після звіту, розбиваємо безпечно по 3800 символів
     if _astro_ai_full:
