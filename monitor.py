@@ -8913,6 +8913,159 @@ def _should_send_daily_recommendations(active_events: dict) -> bool:
 
 # ═════════════════════════════════════════════════════════════════════════════
 
+# ═══════════ PHASE 3: EVENT REMINDERS + REPLY BUTTONS ═════════════════════════
+
+def _check_event_reminders(gmail_service, gemini_key: str = None) -> list:
+    """
+    Перевіряє календар на события розташовані за 1 або 3 години
+    Повертає список: [{"title": "...", "time": "...", "in_hours": 1, "type": "1hour"}]
+    Дедупліцирує: max 1 нагадування на событие на день
+    """
+    if not gmail_service:
+        return []
+    
+    reminders = []
+    dedup_file = os.path.join(_DATA_DIR, "data", "event_reminders_sent.json")
+    
+    try:
+        # Завантажимо деду по
+        dedup_map = {}
+        if os.path.exists(dedup_file):
+            try:
+                with open(dedup_file, "r", encoding="utf-8") as f:
+                    dedup_map = json.load(f) or {}
+            except:
+                pass
+        
+        now = datetime.now(timezone.utc) + timedelta(hours=2)
+        today_str = now.strftime("%Y-%m-%d")
+        
+        # Отримуємо события з календаря на наступні 4 години
+        try:
+            events_result = gmail_service.events().list(
+                calendarId='primary',
+                timeMin=now.isoformat(),
+                timeMax=(now + timedelta(hours=4)).isoformat(),
+                singleEvents=True,
+                orderBy='startTime'
+            ).execute()
+        except Exception as e:
+            print(f"[CALENDAR_REMINDER] list error: {e}", flush=True)
+            return []
+        
+        events = events_result.get('items', [])
+        
+        for event in events:
+            title = event.get('summary', 'Без назви')
+            
+            # Фільтруємо рутину
+            routine_keywords = ['біг', 'вода', 'чай', 'сауна', 'зміна', 'armolopid', 'ванна', 'душ']
+            if any(kw.lower() in title.lower() for kw in routine_keywords):
+                continue
+            
+            start = event.get('start', {})
+            start_time_str = start.get('dateTime') or start.get('date')
+            
+            if not start_time_str:
+                continue
+            
+            # Парсимо час
+            try:
+                if 'T' in start_time_str:  # ISO datetime
+                    event_time = datetime.fromisoformat(start_time_str.replace('Z', '+00:00'))
+                else:
+                    event_time = datetime.fromisoformat(start_time_str)
+                    event_time = event_time.replace(tzinfo=timezone.utc)
+            except:
+                continue
+            
+            time_delta = event_time - now
+            hours_left = time_delta.total_seconds() / 3600
+            
+            event_id = event.get('id', '')
+            
+            # Перевіряємо 1-годинний нагадок
+            if 0.5 <= hours_left <= 1.5:
+                key = f"{event_id}_1h_{today_str}"
+                if key not in dedup_map:
+                    reminders.append({
+                        "title": title,
+                        "time": event_time.strftime("%H:%M"),
+                        "in_hours": 1,
+                        "type": "1hour",
+                        "dedup_key": key
+                    })
+                    dedup_map[key] = True
+            
+            # Перевіряємо 3-годинний нагадок
+            if 2.5 <= hours_left <= 3.5:
+                key = f"{event_id}_3h_{today_str}"
+                if key not in dedup_map:
+                    reminders.append({
+                        "title": title,
+                        "time": event_time.strftime("%H:%M"),
+                        "in_hours": 3,
+                        "type": "3hour",
+                        "dedup_key": key
+                    })
+                    dedup_map[key] = True
+        
+        # Зберігаємо дедуп-карту
+        os.makedirs(os.path.dirname(dedup_file), exist_ok=True)
+        with open(dedup_file, "w", encoding="utf-8") as f:
+            json.dump(dedup_map, f, indent=2, ensure_ascii=False)
+    
+    except Exception as e:
+        print(f"[EVENT_REMINDERS] error: {e}", flush=True)
+    
+    return reminders
+
+
+def _send_gmail_reply(gmail_service, email_message_id: str, reply_text: str, sender: str) -> bool:
+    """
+    Надсилає reply на лист через Gmail API
+    email_message_id: Message ID у Gmail (повинен мати In-Reply-To header)
+    """
+    if not gmail_service or not email_message_id or not reply_text:
+        return False
+    
+    try:
+        # Отримуємо оригінальний лист щоб дістати thread_id
+        msg = gmail_service.users().messages().get(
+            userId='me', id=email_message_id, format='full'
+        ).execute()
+        
+        headers = msg['payload'].get('headers', [])
+        message_id = next((h['value'] for h in headers if h['name'] == 'Message-ID'), None)
+        in_reply_to = next((h['value'] for h in headers if h['name'] == 'In-Reply-To'), None)
+        
+        # Складаємо reply
+        reply_msg = f"""To: {sender}
+Subject: Re: {next((h['value'] for h in headers if h['name'] == 'Subject'), '(без теми)')}
+In-Reply-To: {in_reply_to or message_id}
+References: {message_id}
+
+{reply_text}
+"""
+        
+        # Надсилаємо
+        body = {
+            'raw': base64.urlsafe_b64encode(reply_msg.encode()).decode(),
+            'threadId': msg['threadId']
+        }
+        
+        gmail_service.users().messages().send(userId='me', body=body).execute()
+        print(f"[GMAIL_REPLY] sent to {sender}", flush=True)
+        return True
+    
+    except Exception as e:
+        print(f"[GMAIL_REPLY] error: {e}", flush=True)
+    
+    return False
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+
 def main():
     global _FORCE_REPORT
     force = _FORCE_REPORT
@@ -10236,6 +10389,23 @@ def main():
         print(f"[email_ai] sending email AI ({len(_email_ai_full)} chars) as separate message...", flush=True)
         send_telegram(_email_ai_full)
         _time_main.sleep(0.6)
+
+    # PHASE 3: Event Reminders — перевірка календаря на наступні события за 1-3 години
+    if gmail_service:
+        try:
+            event_reminders = _check_event_reminders(gmail_service)
+            if event_reminders:
+                _time_main.sleep(0.8)
+                print(f"[event_reminders] found {len(event_reminders)} reminders", flush=True)
+                for reminder in event_reminders:
+                    title = reminder.get("title", "?")
+                    in_hours = reminder.get("in_hours", 1)
+                    emoji = "⏰" if in_hours == 1 else "🔔"
+                    msg = f"{emoji} <b>НАПОМІНЕННЯ</b> — {title} через {in_hours}h\n(о {reminder.get('time', '?')})"
+                    send_telegram(msg)
+                    _time_main.sleep(0.5)
+        except Exception as _er:
+            print(f"[event_reminders] error: {_er}", flush=True)
 
     # Астро AI — надсилаємо окремо після звіту, розбиваємо безпечно по 3800 символів
     if _astro_ai_full:

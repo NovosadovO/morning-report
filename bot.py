@@ -2782,6 +2782,73 @@ def _handle_event_based_alerts():
         print(f"[PHASE1] Event dispatch error: {e}", flush=True)
 
 
+# ═════════════════════════════════════════════════════════════════════════════
+
+# ═══════════ PHASE 3: EMAIL REPLY BUTTONS ══════════════════════════════════════
+
+def _send_email_with_reply_buttons(emails_data: list):
+    """
+    Надсилає кожен лист з кнопками reply (AI-варіанти коротких відповідей)
+    emails_data: [{"from": "...", "subject": "...", "body": "...", "message_id": "..."}]
+    """
+    if not emails_data:
+        return
+    
+    try:
+        from monitor import _generate_email_reply_templates
+        import os
+        gemini_key = os.getenv("GEMINI_API_KEY", "")
+        
+        for email_data in emails_data[:5]:  # Max 5 листів з кнопками
+            sender = email_data.get('from', '?')
+            subject = email_data.get('subject', '?')
+            body = email_data.get('body', '')[:300]
+            msg_id = email_data.get('message_id', '')
+            
+            # Генеруємо reply-варіанти через Gemini
+            templates = _generate_email_reply_templates(body, sender, subject, gemini_key)
+            
+            # Формуємо повідомлення з кнопками
+            msg = f"📧 <b>От:</b> {sender}\n<b>Тема:</b> {subject}\n\n{body}\n"
+            
+            keyboard = []
+            if templates:
+                for i, template in enumerate(templates[:3]):
+                    reply_text = template.get('reply', '')[50:50]  # 50 символів
+                    keyboard.append([{
+                        "text": f"Reply {i+1}",
+                        "callback_data": f"reply_email_{msg_id}_{i}"
+                    }])
+            else:
+                keyboard.append([{
+                    "text": "✏️ Manual Reply",
+                    "callback_data": f"reply_manual_{msg_id}"
+                }])
+            
+            keyboard.append([{
+                "text": "❌ Dismiss",
+                "callback_data": f"dismiss_email_{msg_id}"
+            }])
+            
+            reply_markup = {
+                "inline_keyboard": keyboard
+            }
+            
+            try:
+                api("sendMessage", {
+                    "chat_id": TELEGRAM_CHAT,
+                    "text": msg,
+                    "parse_mode": "HTML",
+                    "reply_markup": reply_markup
+                })
+                print(f"[REPLY_BUTTONS] sent for {sender}", flush=True)
+            except Exception as e:
+                print(f"[REPLY_BUTTONS] error: {e}", flush=True)
+    
+    except Exception as e:
+        print(f"[REPLY_BUTTONS] dispatch error: {e}", flush=True)
+
+
 # ─── MAIN LOOP ────────────────────────────────────────────────────────────────
 
 def main():
@@ -2950,6 +3017,43 @@ def main():
                             except Exception as _e:
                                 print(f"cal_all_done_today state error: {_e}")
 
+                        elif data.startswith("reply_email_"):
+                            # PHASE 3: Email reply button clicked
+                            # Format: reply_email_{msg_id}_{template_idx}
+                            parts = data.split("_")
+                            if len(parts) >= 4:
+                                msg_id = parts[2]
+                                template_idx = int(parts[3]) if parts[3].isdigit() else 0
+                                
+                                api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "✍️ Підготовляю...", "show_alert": False})
+                                
+                                try:
+                                    from monitor import _generate_email_reply_templates
+                                    import os as _os
+                                    
+                                    # TODO: Retrieve email text from cache/storage using msg_id
+                                    # For now, show generic reply prompt
+                                    gemini_key = _os.getenv("GEMINI_API_KEY", "")
+                                    
+                                    reply_msg = f"📧 <b>Готуюся до відповіді на лист...</b>\n\n"
+                                    reply_msg += "Виберіть варіант або напишіть свій:\n"
+                                    reply_msg += "[У розробці — reply templates integration]"
+                                    
+                                    send(chat_id, reply_msg)
+                                    
+                                except Exception as _e:
+                                    send(chat_id, f"⚠️ Помилка: {_e}")
+                        
+                        elif data.startswith("dismiss_email_"):
+                            # Dismiss email (remove reply buttons)
+                            msg_id = data[len("dismiss_email_"):]
+                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Виконано"})
+                            api("editMessageReplyMarkup", {
+                                "chat_id": chat_id,
+                                "message_id": cb["message"]["message_id"],
+                                "reply_markup": {"inline_keyboard": []}
+                            })
+                        
                         elif data.startswith("cal_done_"):
                             # Видалити подію з Google Calendar після натискання "✅ Зроблено"
                             ev_id = data[len("cal_done_"):]
