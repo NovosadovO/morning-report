@@ -1684,7 +1684,11 @@ HELP_TEXT = """
 <b>🤖 Інтелектуальний асистент (v2.0)</b>
 /listener_status — статус event listener
 /set_location doma — встановити локацію (doma/robota)
-/schedule_test — тест всіх 4 розкладів
+/schedule_test — тест всіх 4 розкладів (ранок/обід/після/вечір)
+/force_morning — примусово запустити ранковий розклад
+/force_lunch — примусово запустити обіднім розклад
+/force_afternoon — примусово запуститиAfternoon розклад
+/force_evening — примусово запустити вечірній розклад
 /диаг — діагностика всіх систем
 
 /допомога — цей список
@@ -1905,6 +1909,42 @@ def handle_command(chat_id, text):
         except Exception as _st_e:
             import traceback
             send(chat_id, f"⚠️ Помилка тесту: {_st_e}\n{traceback.format_exc()[-500:]}")
+
+    elif text in ["/force_schedule", "/force_morning", "/force_lunch", "/force_afternoon", "/force_evening"]:
+        # Force-run one of the 4 schedules immediately
+        schedule_to_run = text.replace("/force_", "").lower()
+        if schedule_to_run not in ["morning", "lunch", "afternoon", "evening"]:
+            schedule_to_run = "morning"
+        
+        send(chat_id, f"⚡ Примусово запускаю {schedule_to_run} розклад...\n")
+        try:
+            if _SCHEDULER_AVAILABLE:
+                from smart_notifications_v3 import handle_morning_schedule, handle_lunch_schedule, handle_afternoon_schedule, handle_evening_schedule
+                from datetime import datetime
+                from zoneinfo import ZoneInfo
+                
+                tz = ZoneInfo("Europe/Bratislava")
+                now_tz = datetime.now(tz)
+                
+                handlers = {
+                    "morning": handle_morning_schedule,
+                    "lunch": handle_lunch_schedule,
+                    "afternoon": handle_afternoon_schedule,
+                    "evening": handle_evening_schedule,
+                }
+                
+                handler = handlers.get(schedule_to_run)
+                if handler:
+                    print(f"[FORCE_SCHEDULE] Running {schedule_to_run}...", flush=True)
+                    msg = handler(schedule_to_run, now_tz)
+                    send(chat_id, f"✅ {schedule_to_run.upper()} запущено!\n\n{len(msg)} символів\n{msg[:500]}..." if msg else f"❌ Помилка: порожнє повідомлення")
+                else:
+                    send(chat_id, f"❌ Невідомий розклад: {schedule_to_run}")
+            else:
+                send(chat_id, "❌ Scheduler не доступний")
+        except Exception as _fs_e:
+            import traceback
+            send(chat_id, f"⚠️ Помилка: {_fs_e}\n{traceback.format_exc()[-500:]}")
 
     elif text in ["/listener_status", "/listener", "listener"]:
         send(chat_id, "👁️ Статус Event Listener...\n")

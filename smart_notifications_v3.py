@@ -473,68 +473,90 @@ def handle_morning_schedule(schedule_name, now_tz):
     """Called by scheduler at 6:00 AM"""
     _log(f"=== {schedule_name.upper()} ANALYSIS START ===")
     
-    emails = _get_important_emails(5)
-    crypto = _get_crypto_prices()
-    health = _get_health_summary()
-    events = _get_upcoming_events(1)
-    
-    message = _analyze_morning(emails, crypto, health, events)
-    _log(f"Generated: {len(message)} chars")
-    
-    if message:
-        _send_to_telegram(message)
-    
-    return message
+    try:
+        emails = _get_important_emails(5)
+        crypto = _get_crypto_prices()
+        health = _get_health_summary()
+        events = _get_upcoming_events(1)
+        
+        message = _analyze_morning(emails, crypto, health, events)
+        _log(f"Generated: {len(message)} chars")
+        
+        if message:
+            ok = _send_to_telegram(message)
+            _log(f"Sent to Telegram: {ok}")
+        
+        return message
+    except Exception as e:
+        _log(f"❌ ERROR in handle_morning_schedule: {e}")
+        return ""
 
 def handle_lunch_schedule(schedule_name, now_tz):
     """Called by scheduler at 12:00 PM"""
     _log(f"=== {schedule_name.upper()} ANALYSIS START ===")
     
-    emails = _get_important_emails(5)
-    crypto = _get_crypto_prices()
-    health = _get_health_summary()
-    
-    message = _analyze_lunch(emails, crypto, health)
-    _log(f"Generated: {len(message)} chars")
-    
-    if message:
-        _send_to_telegram(message)
-    
-    return message
+    try:
+        emails = _get_important_emails(5)
+        crypto = _get_crypto_prices()
+        health = _get_health_summary()
+        
+        message = _analyze_lunch(emails, crypto, health)
+        _log(f"Generated: {len(message)} chars")
+        
+        if message:
+            ok = _send_to_telegram(message)
+            _log(f"Sent to Telegram: {ok}")
+        
+        return message
+    except Exception as e:
+        _log(f"❌ ERROR in handle_lunch_schedule: {e}")
+        return ""
 
 def handle_afternoon_schedule(schedule_name, now_tz):
     """Called by scheduler at 3:00 PM"""
     _log(f"=== {schedule_name.upper()} ANALYSIS START ===")
     
-    emails = _get_important_emails(3)
-    crypto = _get_crypto_prices()
-    health = _get_health_summary()
-    events = _get_upcoming_events(1)
-    
-    message = _analyze_afternoon(emails, crypto, health, events)
-    _log(f"Generated: {len(message)} chars")
-    
-    if message:
-        _send_to_telegram(message)
-    
-    return message
+    try:
+        emails = _get_important_emails(3)
+        crypto = _get_crypto_prices()
+        health = _get_health_summary()
+        events = _get_upcoming_events(1)
+        
+        message = _analyze_afternoon(emails, crypto, health, events)
+        _log(f"Generated: {len(message)} chars")
+        
+        if message:
+            ok = _send_to_telegram(message)
+            _log(f"Sent to Telegram: {ok}")
+        
+        return message
+    except Exception as e:
+        _log(f"❌ ERROR in handle_afternoon_schedule: {e}")
+        return ""
 
 def handle_evening_schedule(schedule_name, now_tz):
     """Called by scheduler at 8:00 PM"""
     _log(f"=== {schedule_name.upper()} ANALYSIS START ===")
     
-    emails = _get_important_emails(7)
-    crypto = _get_crypto_prices()
-    health = _get_health_summary()
-    
-    # TODO: Load astro brief from astro.py
-    astro = "Твоя натальна карта показує силу і потенціал."
-    
-    message = _analyze_evening(emails, crypto, health, astro)
-    _log(f"Generated: {len(message)} chars")
-    
-    if message:
-        _send_to_telegram(message)
+    try:
+        emails = _get_important_emails(7)
+        crypto = _get_crypto_prices()
+        health = _get_health_summary()
+        
+        # TODO: Load astro brief from astro.py
+        astro = "Твоя натальна карта показує силу і потенціал."
+        
+        message = _analyze_evening(emails, crypto, health, astro)
+        _log(f"Generated: {len(message)} chars")
+        
+        if message:
+            ok = _send_to_telegram(message)
+            _log(f"Sent to Telegram: {ok}")
+        
+        return message
+    except Exception as e:
+        _log(f"❌ ERROR in handle_evening_schedule: {e}")
+        return ""
     
     return message
 
