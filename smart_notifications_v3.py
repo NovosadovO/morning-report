@@ -36,7 +36,7 @@ VIP_KEYWORDS = {
 
 def _log(msg):
     """Log з timestamp"""
-    ts = datetime.now(_TZ).strftime("%H:%M:%S")
+    ts = datetime.now(tz=_TZ).strftime("%H:%M:%S")
     print(f"[SMART_NOTIF {ts}] {msg}")
 
 def _send_to_telegram(text):
@@ -195,7 +195,7 @@ def _get_health_summary():
     health = _load_json(health_file)
     weight_data = _load_json(weight_file)
     
-    today_str = datetime.now(_TZ).strftime("%Y-%m-%d")
+    today_str = datetime.now(tz=_TZ).strftime("%Y-%m-%d")
     
     steps = 0
     sleep_hours = 0
