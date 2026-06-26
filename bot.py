@@ -1849,6 +1849,43 @@ def handle_command(chat_id, text):
             print(f"🔥 [/діаг] CRASH: {_e_diag}\n{tb}", flush=True)
             send(chat_id, f"⚠️ Помилка діагностики: {_e_diag}\n{traceback.format_exc()[-500:]}")
     
+    elif text in ["/schedule_test", "schedule_test", "/scheduler_test"]:
+        send(chat_id, "⏰ Тест розкладу...\n")
+        try:
+            if _SCHEDULER_AVAILABLE:
+                from smart_notifications_v3 import handle_morning_schedule, handle_lunch_schedule, handle_afternoon_schedule, handle_evening_schedule
+                from datetime import datetime
+                from zoneinfo import ZoneInfo
+                
+                tz = ZoneInfo("Europe/Bratislava")
+                now_tz = datetime.now(tz)
+                
+                # Test all 4 schedules
+                results = []
+                
+                print("[SCHEDULE_TEST] Testing morning...", flush=True)
+                msg_morning = handle_morning_schedule("morning", now_tz)
+                results.append(f"🌅 Ранок: {len(msg_morning)} симв\n{msg_morning[:300]}...\n")
+                
+                print("[SCHEDULE_TEST] Testing lunch...", flush=True)
+                msg_lunch = handle_lunch_schedule("lunch", now_tz)
+                results.append(f"☀️ Обід: {len(msg_lunch)} симв\n{msg_lunch[:300]}...\n")
+                
+                print("[SCHEDULE_TEST] Testing afternoon...", flush=True)
+                msg_afternoon = handle_afternoon_schedule("afternoon", now_tz)
+                results.append(f"⚡ Полудень: {len(msg_afternoon)} симв\n{msg_afternoon[:300]}...\n")
+                
+                print("[SCHEDULE_TEST] Testing evening...", flush=True)
+                msg_evening = handle_evening_schedule("evening", now_tz)
+                results.append(f"🌙 Вечір: {len(msg_evening)} симв\n{msg_evening[:300]}...\n")
+                
+                send(chat_id, "✅ Всі розклади протестовані:\n\n" + "\n".join(results))
+            else:
+                send(chat_id, "❌ Scheduler не доступний")
+        except Exception as _st_e:
+            import traceback
+            send(chat_id, f"⚠️ Помилка тесту: {_st_e}\n{traceback.format_exc()[-500:]}")
+
     elif text in ["/diag_email", "/diag_mail", "/email_diag"]:
         send(chat_id, "📧 Діагностика email_ai...")
         try:
