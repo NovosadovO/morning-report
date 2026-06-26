@@ -271,12 +271,18 @@ class IntelligentListener:
                     for ttype, tdata in triggers:
                         self._log(f"Processing trigger: {ttype}")
                         # Генеруємо та надсилаємо message через message_generator.py
-                        success = process_and_send_trigger(ttype, tdata)
-                        if success:
-                            self._mark_trigger_sent(ttype)
-                            self._log(f"✅ Message sent for: {ttype}")
-                        else:
-                            self._log(f"⚠️ Failed to send for: {ttype}")
+                        try:
+                            success = process_and_send_trigger(ttype, tdata)
+                            if success:
+                                self._mark_trigger_sent(ttype)
+                                self._log(f"✅ Message sent for: {ttype}")
+                            else:
+                                self._log(f"⚠️ Failed to send for: {ttype}")
+                        except Exception as e:
+                            self._log(f"❌ Exception in process_and_send_trigger: {e}")
+                else:
+                    # DEBUG: покажемо що трігери НЕ активні
+                    pass
                 
                 time.sleep(1)
                 

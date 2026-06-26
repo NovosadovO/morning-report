@@ -359,27 +359,39 @@ def process_trigger(trigger_type: str, trigger_data, location: str = "doma", idl
     """
     _log(f"Processing trigger: {trigger_type}")
     
-    # 1. Запитаємо AI чи писати
-    if not _should_send_message(trigger_type, trigger_data):
-        _log(f"AI decided NOT to send for {trigger_type}")
+    # Перевіримо credentials
+    if not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
+        _log(f"❌ Missing TELEGRAM credentials (TOKEN={bool(TELEGRAM_TOKEN)}, CHAT={bool(TELEGRAM_CHAT_ID)})")
         return False
     
-    # 2. Генеруємо message
-    _log(f"Generating message for {trigger_type}...")
-    message = _generate_message(trigger_type, trigger_data, location, idle_hours)
+    if not GEMINI_API_KEY:
+        _log(f"⚠️ Missing GEMINI_API_KEY")
     
-    if not message:
-        _log(f"Failed to generate message")
+    try:
+        # 1. Запитаємо AI чи писати
+        if not _should_send_message(trigger_type, trigger_data):
+            _log(f"AI decided NOT to send for {trigger_type}")
+            return False
+        
+        # 2. Генеруємо message
+        _log(f"Generating message for {trigger_type}...")
+        message = _generate_message(trigger_type, trigger_data, location, idle_hours)
+        
+        if not message:
+            _log(f"Failed to generate message")
+            return False
+        
+        # 3. Надсилаємо на Telegram
+        _log(f"Sending to Telegram...")
+        success = _send_to_telegram(message)
+        
+        if success:
+            _log_message(trigger_type, trigger_data, message, location)
+        
+        return success
+    except Exception as e:
+        _log(f"❌ process_trigger error: {e}")
         return False
-    
-    # 3. Надсилаємо на Telegram
-    _log(f"Sending to Telegram...")
-    success = _send_to_telegram(message)
-    
-    if success:
-        _log_message(trigger_type, trigger_data, message, location)
-    
-    return success
 
 if __name__ == "__main__":
     # TEST
