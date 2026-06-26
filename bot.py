@@ -34,6 +34,17 @@ except ImportError:
     _SCHEDULER_AVAILABLE = False
     print("⚠️ proactive_scheduler/smart_notifications_v3 not available")
 
+try:
+    from intelligent_listener import start_listener, mark_user_active, set_user_location, get_listener_status
+    _LISTENER_AVAILABLE = True
+except ImportError:
+    _LISTENER_AVAILABLE = False
+    print("⚠️ intelligent_listener not available")
+    def mark_user_active():
+        pass
+    def set_user_location(loc):
+        pass
+
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT  = os.environ.get("TELEGRAM_CHAT_ID", "2100366814")
 OFFSET_FILE    = "/tmp/bot_offset.json"
@@ -1675,6 +1686,9 @@ HELP_TEXT = """
 
 
 def handle_command(chat_id, text):
+    # Mark user as active (для intelligent_listener)
+    mark_user_active()
+    
     # Зберігаємо оригінальний текст для парсерів (QWatch тощо)
     original_text = text.strip()
     # Нормалізуємо апострофи (Telegram може надсилати різні варіанти)
@@ -1885,6 +1899,38 @@ def handle_command(chat_id, text):
         except Exception as _st_e:
             import traceback
             send(chat_id, f"⚠️ Помилка тесту: {_st_e}\n{traceback.format_exc()[-500:]}")
+
+    elif text in ["/listener_status", "/listener", "listener"]:
+        send(chat_id, "👁️ Статус Event Listener...\n")
+        try:
+            if _LISTENER_AVAILABLE:
+                status = get_listener_status()
+                lines = [
+                    f"✅ Запущений: {status['running']}",
+                    f"📍 Локація: {status['location']}",
+                    f"⏱️ Простій: {status['idle_hours']:.1f}h",
+                    f"📨 Останні повідомлення:",
+                ]
+                for ttype, ts in status['last_messages'].items():
+                    lines.append(f"  - {ttype}: {ts}")
+                send(chat_id, "\n".join(lines))
+            else:
+                send(chat_id, "❌ Listener не доступний")
+        except Exception as _le:
+            import traceback
+            send(chat_id, f"⚠️ Помилка: {_le}\n{traceback.format_exc()[-300:]}")
+
+    elif text.startswith("/set_location ") or text.startswith("location: "):
+        try:
+            loc = text.replace("/set_location ", "").replace("location: ", "").strip().lower()
+            if loc in ["doma", "робота", "robota", "работа", "work"]:
+                loc = "robota" if loc != "doma" else "doma"
+                set_user_location(loc)
+                send(chat_id, f"✅ Локація встановлена: {loc}")
+            else:
+                send(chat_id, "❌ Введи: /set_location doma або /set_location robota")
+        except Exception as _lle:
+            send(chat_id, f"⚠️ Помилка: {_lle}")
 
     elif text in ["/diag_email", "/diag_mail", "/email_diag"]:
         send(chat_id, "📧 Діагностика email_ai...")
@@ -2948,6 +2994,17 @@ def main():
             print(f"[Scheduler] Error starting: {e}", flush=True)
     else:
         print("[Scheduler] Not available or already running", flush=True)
+
+    # Запускаємо Intelligent Listener (event-driven triggers)
+    if _LISTENER_AVAILABLE:
+        print("[Listener] Starting intelligent event listener...", flush=True)
+        try:
+            start_listener()
+            print("[Listener] Started successfully", flush=True)
+        except Exception as e:
+            print(f"[Listener] Error starting: {e}", flush=True)
+    else:
+        print("[Listener] Not available", flush=True)
 
     # Print service account email for Google Sheets setup
     try:
