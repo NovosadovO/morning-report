@@ -419,46 +419,66 @@ def generate_contextual_insight(crypto_data, health_data, habits_data, work_shif
 
 # ============ MAIN: Проактивне повідомлення ============
 
-def should_send_proactive_message(last_message_time, user_activity_idle_minutes=120):
-    """Вирішує чи потреба писати першим (1 РАЗ НА ГОДИНУ)"""
+def should_send_proactive_message(unused_param=None, user_activity_idle_minutes=120):
+    """Вирішує чи потреба писати першим (1 РАЗ НА ГОДИНУ)
     
-    current_time = time.time()
-    current_hour = datetime.now().strftime("%Y-%m-%d %H:00:00")
+    ВАЖЛИВО: Замінено на деdup ЧЕРЕЗ ЧАС (за файлом).
+    Ігнорує параметр last_message_time (залишиш для сумісності).
+    Дозволяє мах 1 сповіщення на годину.
+    """
     
-    # 1. Перевіряємо деdup — чи вже надіслали у ЦІЙ ГОДИНІ
+    # ☠️ НЕ ВІРИТИ current_time — перезавантаження обнулює!
+    # Замість того: витягаємо ОСТАННЮ відправку з файлу
+    dedup_file = os.path.join(os.path.dirname(__file__), "data", "proactive_last_send.json")
+    
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)  # UTC+2 (Київ/Кошіце)
+    current_hour = now_local.strftime("%Y-%m-%d %H")  # 2026-06-26 14
+    
+    last_send_ts = 0.0
+    last_send_hour = ""
+    
+    # 1. Читаємо останній час
     try:
-        dedup_file = os.path.join(os.path.dirname(__file__), "data", "proactive_sent_hours.json")
         if os.path.exists(dedup_file):
             with open(dedup_file, "r") as f:
-                sent_hours = json.load(f) or {}
-                if current_hour in sent_hours:
-                    print(f"[proactive] Already sent in {current_hour}, skipping", flush=True)
-                    return False
+                data = json.load(f) or {}
+                last_send_ts = data.get("last_sent_timestamp", 0.0)
+                last_send_hour = data.get("last_sent_hour", "")
     except Exception as e:
-        print(f"[proactive] dedup error: {e}", flush=True)
+        print(f"[proactive] dedup read error: {e}", flush=True)
     
-    # 2. Timing-критерії
-    time_since_last = current_time - last_message_time
-    hour = datetime.now().hour
+    # 2. Якщо вже надіслали ЦІЇ ЖЕ ГОДИНИ — НІ
+    if last_send_hour == current_hour:
+        print(f"[proactive] Already sent in hour {current_hour}, skipping", flush=True)
+        return False
     
+    # 3. Перевіряємо timing-критерії
+    now_ts = now_local.timestamp()
+    time_since_last_send = now_ts - last_send_ts
+    
+    hour = now_local.hour
     should_send = False
     reason = ""
     
-    # Idle > 120 хвилин
-    if time_since_last > (user_activity_idle_minutes * 60):
+    # Idle > 60 хвилин від ОСТАННЬОГО СПОВІЩЕННЯ
+    if last_send_ts > 0 and time_since_last_send > 3600:  # 1 годину
         should_send = True
-        reason = "idle>120m"
-    # Ранок (07:00-09:00)
-    elif 7 <= hour <= 9:
+        reason = f"idle>{int(time_since_last_send/60)}m"
+    # Якщо НІКОЛИ не слали — дозвільте при ранку
+    elif last_send_ts == 0 and 6 <= hour <= 10:
         should_send = True
-        reason = "morning"
-    # Після роботи (17:00-19:00)
-    elif 17 <= hour <= 19:
+        reason = "first_time_morning"
+    # Ранок (06:00-10:00) — одне сповіщення
+    elif 6 <= hour < 10 and (last_send_ts == 0 or time_since_last_send > 3600):
         should_send = True
-        reason = "after-work"
+        reason = "morning_window"
+    # Після роботи (17:30-20:00) — одне сповіщення
+    elif 17 <= hour <= 20 and time_since_last_send > 3600:
+        should_send = True
+        reason = "after_work_window"
     
     if should_send:
-        print(f"[proactive] Should send: {reason}", flush=True)
+        print(f"[proactive] Should send: {reason} (hour={hour}, since_last={int(time_since_last_send/60) if last_send_ts else 'never'}m)", flush=True)
     
     return should_send
 
@@ -503,31 +523,29 @@ def send_proactive_message(telegram_send_func):
     
     # Надсилаємо
     try:
-        telegram_send_func(message)
+        ok = telegram_send_func(message)
+        if not ok:
+            print(f"❌ Telegram send failed", flush=True)
+            return False
         
-        # Записуємо dedup
-        current_hour = datetime.now().strftime("%Y-%m-%d %H:00:00")
-        dedup_file = os.path.join(os.path.dirname(__file__), "data", "proactive_sent_hours.json")
+        # Записуємо dedup — ТІЛЬКИ ПІСЛЯ успішної відправки!
+        now_local_ts = datetime.now(timezone.utc) + timedelta(hours=2)
+        current_hour = now_local_ts.strftime("%Y-%m-%d %H")
+        dedup_file = os.path.join(os.path.dirname(__file__), "data", "proactive_last_send.json")
         
         try:
             os.makedirs(os.path.dirname(dedup_file), exist_ok=True)
-            sent_hours = {}
-            if os.path.exists(dedup_file):
-                with open(dedup_file, "r") as f:
-                    sent_hours = json.load(f) or {}
-            
-            sent_hours[current_hour] = datetime.now().isoformat()
-            
-            # Очищуємо старі (>25 годин)
-            cutoff = (datetime.now() - timedelta(hours=25)).strftime("%Y-%m-%d %H:00:00")
-            sent_hours = {k: v for k, v in sent_hours.items() if k >= cutoff}
-            
+            dedup_data = {
+                "last_sent_timestamp": now_local_ts.timestamp(),
+                "last_sent_hour": current_hour,
+                "last_sent_iso": now_local_ts.isoformat()
+            }
             with open(dedup_file, "w") as f:
-                json.dump(sent_hours, f, indent=2)
+                json.dump(dedup_data, f, indent=2)
             
-            print(f"✅ Проактивне повідомлення надіслано о {now_local.strftime('%H:%M')}", flush=True)
+            print(f"✅ Проактивне повідомлення надіслано о {now_local_ts.strftime('%H:%M')} | dedup recorded", flush=True)
         except Exception as _de:
-            print(f"⚠️ Dedup error: {_de}", flush=True)
+            print(f"⚠️ Dedup write error: {_de}", flush=True)
         
         return True
     except Exception as e:

@@ -33,7 +33,19 @@ OFFSET_FILE    = "/tmp/bot_offset.json"
 # Унікальний ідентифікатор цього інстансу бота (leader election)
 _INSTANCE_ID = str(uuid.uuid4())[:12]
 _conflict_count = 0  # лічильник 409 Conflict поспіль
-_PROACTIVE_LAST_MESSAGE_TIME = time.time()  # таймування проактивних повідомлень
+# Не оніціалізуємо _PROACTIVE_LAST_MESSAGE_TIME тут!
+# Замість того деdup буде гілеред у intelligent_assistant_v2.should_send_proactive_message()
+# як файл з timestamp. Це дозволяє пережити перезавантаження.
+_PROACTIVE_LAST_MESSAGE_TIME = 0  # placeholder, не використовується
+
+# RATE-LIMIT for event-based alerts: max 1 check per 60 seconds (не кожну мілісекунду!)
+_PHASE1_ALERTS_LAST_CHECK = 0.0
+_PHASE1_ALERTS_INTERVAL = 60.0  # перевіряємо кожні 60 сек
+
+# RATE-LIMIT for Phase 2 (daily recommendations): max 1 check per 120 seconds
+_PHASE2_RECS_LAST_CHECK = 0.0
+_PHASE2_RECS_INTERVAL = 120.0  # перевіряємо кожні 2 хвилини
+
 _DRAFT_STORE: dict = {}  # uid_str -> {to, subject, body} — тимчасовий store для email drafts
 _IMPORTANT_EMAILS_FILE = "data/important_emails.json"  # важливі листи (GitHub)
 _GH_TOKEN    = os.environ.get("GITHUB_TOKEN", "")
@@ -3380,47 +3392,62 @@ def main():
                 handle_command(chat_id, text)
 
             # ФАЗА 1: Event-based alerts (крипто, email, календар, здоров'я, астро)
+            # ⚠️ RATE-LIMIT: max 1 перевірка на 60 сек (не кожну мілісекунду в getUpdates-лупі!)
             try:
-                _handle_event_based_alerts()
+                global _PHASE1_ALERTS_LAST_CHECK, _PHASE1_ALERTS_INTERVAL
+                now = time.time()
+                if now - _PHASE1_ALERTS_LAST_CHECK > _PHASE1_ALERTS_INTERVAL:
+                    _PHASE1_ALERTS_LAST_CHECK = now
+                    _handle_event_based_alerts()
+                    print(f"[PHASE1] Alerts checked (next check in {_PHASE1_ALERTS_INTERVAL}s)", flush=True)
+                else:
+                    pass  # Skip this iteration
             except Exception as _ph1:
                 print(f"⚠️ Phase 1 alerts error: {_ph1}", flush=True)
 
             # ФАЗА 2: Daily recommendations (інтелектуальне таймування)
+            # ⚠️ RATE-LIMIT: max 1 check per 120 secs (не перегорювати Gemini quota)
             try:
-                from monitor import _should_send_daily_recommendations, _get_daily_recommendations
-                from intelligent_assistant_v2 import get_all_urgent_events
-                
-                events = get_all_urgent_events()
-                active = events.get('active_events', {})
-                
-                if _should_send_daily_recommendations(active):
-                    # Збираємо контекст для рекомендацій
-                    context = {
-                        "emails_summary": f"Активні листи: {len(active.get('email', {}).get('emails', []))}",
-                        "events_summary": "Є события на завтра" if active.get('calendar', {}).get('events') else "Без подій",
-                        "health_summary": "Проблеми зі здоров'ям" if active.get('health', {}).get('issues') else "Здоров'я OK",
-                        "crypto_summary": active.get('crypto', {}).get('coins', []),
-                        "astro_summary": active.get('astro', {}).get('message', ''),
-                        "work_shift": "невідомо"  # TODO: infer від calendar
-                    }
+                global _PHASE2_RECS_LAST_CHECK, _PHASE2_RECS_INTERVAL
+                now = time.time()
+                if now - _PHASE2_RECS_LAST_CHECK > _PHASE2_RECS_INTERVAL:
+                    _PHASE2_RECS_LAST_CHECK = now
                     
-                    gemini_key = os.getenv("GEMINI_API_KEY", "")
-                    recommendation = _get_daily_recommendations(context, gemini_key)
+                    from monitor import _should_send_daily_recommendations, _get_daily_recommendations
+                    from intelligent_assistant_v2 import get_all_urgent_events
                     
-                    if recommendation:
-                        msg = f"💡 <b>РЕКОМЕНДАЦІЯ ДНЯ</b>\n\n{recommendation}"
-                        send(TELEGRAM_CHAT, msg)
-                        print(f"[PHASE2] Daily recommendation sent", flush=True)
+                    events = get_all_urgent_events()
+                    active = events.get('active_events', {})
+                    
+                    if _should_send_daily_recommendations(active):
+                        # Збираємо контекст для рекомендацій
+                        context = {
+                            "emails_summary": f"Активні листи: {len(active.get('email', {}).get('emails', []))}",
+                            "events_summary": "Є события на завтра" if active.get('calendar', {}).get('events') else "Без подій",
+                            "health_summary": "Проблеми зі здоров'ям" if active.get('health', {}).get('issues') else "Здоров'я OK",
+                            "crypto_summary": active.get('crypto', {}).get('coins', []),
+                            "astro_summary": active.get('astro', {}).get('message', ''),
+                            "work_shift": "невідомо"  # TODO: infer від calendar
+                        }
+                        
+                        gemini_key = os.getenv("GEMINI_API_KEY", "")
+                        recommendation = _get_daily_recommendations(context, gemini_key)
+                        
+                        if recommendation:
+                            msg = f"💡 <b>РЕКОМЕНДАЦІЯ ДНЯ</b>\n\n{recommendation}"
+                            send(TELEGRAM_CHAT, msg)
+                            print(f"[PHASE2] Daily recommendation sent", flush=True)
+                else:
+                    pass  # Skip Phase 2 this iteration
             
             except Exception as _ph2:
                 print(f"⚠️ Phase 2 recommendations error: {_ph2}", flush=True)
 
-            # Проактивний помічник — кожні ~5-10 хвилин (якщо користувач неактивний)
+            # Проактивний помічник — максимум 1x на годину
+            # should_send_proactive_message тепер використовує деdup-файл (не залежить від перезавантажень)
             try:
-                global _PROACTIVE_LAST_MESSAGE_TIME
-                if _ASSISTANT_AVAILABLE and should_send_proactive_message(_PROACTIVE_LAST_MESSAGE_TIME):
+                if _ASSISTANT_AVAILABLE and should_send_proactive_message():
                     send_proactive_message(_send_telegram_text)
-                    _PROACTIVE_LAST_MESSAGE_TIME = time.time()
             except Exception as _pa:
                 print(f"⚠️ Proactive message error: {_pa}", flush=True)
 
