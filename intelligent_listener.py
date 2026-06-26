@@ -53,7 +53,7 @@ class IntelligentListener:
     
     def _log(self, msg):
         """Log з timestamp"""
-        ts = datetime.now(_TZ).strftime("%H:%M:%S")
+        ts = datetime.now(tz=_TZ).strftime("%H:%M:%S")
         print(f"[LISTENER {ts}] {msg}", flush=True)
     
     def _load_state(self):
@@ -77,7 +77,7 @@ class IntelligentListener:
                 json.dump({
                     "location": self.user_location,
                     "last_messages": self.last_message_time,
-                    "updated": datetime.now(_TZ).isoformat(),
+                    "updated": datetime.now(tz=_TZ).isoformat(),
                 }, f, indent=2)
         except Exception as e:
             self._log(f"Save state error: {e}")
@@ -176,7 +176,7 @@ class IntelligentListener:
     
     def _check_time_based(self) -> str or None:
         """Ранок (6-7am) чи Вечір (20-21)?"""
-        now = datetime.now(_TZ)
+        now = datetime.now(tz=_TZ)
         hour = now.hour
         
         if 6 <= hour < 7:

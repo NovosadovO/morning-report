@@ -29,7 +29,7 @@ _GEM_MIN_GAP = 4.0
 
 def _log(msg):
     """Log з timestamp"""
-    ts = datetime.now(_TZ).strftime("%H:%M:%S")
+    ts = datetime.now(tz=_TZ).strftime("%H:%M:%S")
     print(f"[MESSAGE_GEN {ts}] {msg}", flush=True)
 
 def _gemini_post(url, body, timeout=20, tag="", max_retries=3):
@@ -328,7 +328,7 @@ def _log_message(trigger_type: str, trigger_data, message_text: str, location: s
             with open(log_file, "r") as f:
                 logs = json.load(f)
         
-        timestamp = datetime.now(_TZ).isoformat()
+        timestamp = datetime.now(tz=_TZ).isoformat()
         logs[timestamp] = {
             "trigger": trigger_type,
             "location": location,
