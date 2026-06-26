@@ -3444,26 +3444,12 @@ def main():
             #     print(f"⚠️ Phase 2 recommendations error: {_ph2}", flush=True)
 
             # SMART NOTIFICATIONS — окремі, розумні сповіщення без спаму
-            # AI слідкує за ВСІМ і пише ОКРЕМО коли реально потрібно
+            # AI слідкує за ВСІМ (email, календар, крипто, здоров'я) і пише ОКРЕМО коли реально потрібно
             try:
                 from smart_notifications import get_next_important_event, format_notification, _mark_notified
-                from monitor import get_emails, get_calendar, get_prices
-                import storage
                 
-                # Функція для завантаження здоров'я
-                def load_health():
-                    try:
-                        return storage.load("health.json") or {}
-                    except:
-                        return {}
-                
-                # Знаходимо наступну важливу подію
-                event = get_next_important_event(
-                    get_emails_func=get_emails,
-                    get_calendar_func=get_calendar,
-                    load_health_func=load_health,
-                    get_prices_func=get_prices
-                )
+                # Знаходимо наступну важливу подію (функція сама бере дані з API)
+                event = get_next_important_event()
                 
                 if event:
                     # Форматуємо красивий текст
