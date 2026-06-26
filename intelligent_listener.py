@@ -266,11 +266,17 @@ class IntelligentListener:
                     triggers.append((time_trigger, None))
                     self._log(f"TRIGGER: {time_trigger}")
                 
-                # Процесувати тригери (поки просто логуємо)
+                # Процесувати тригери (генеруємо & надсилаємо messages)
                 if triggers:
                     for ttype, tdata in triggers:
-                        self._mark_trigger_sent(ttype)
-                        self._log(f"Would send message for: {ttype}")
+                        self._log(f"Processing trigger: {ttype}")
+                        # Генеруємо та надсилаємо message через message_generator.py
+                        success = process_and_send_trigger(ttype, tdata)
+                        if success:
+                            self._mark_trigger_sent(ttype)
+                            self._log(f"✅ Message sent for: {ttype}")
+                        else:
+                            self._log(f"⚠️ Failed to send for: {ttype}")
                 
                 time.sleep(1)
                 
@@ -342,6 +348,26 @@ def get_listener_status() -> dict:
         "last_messages": {k: datetime.fromtimestamp(v, _TZ).strftime("%H:%M") 
                          for k, v in listener.last_message_time.items()},
     }
+
+def process_and_send_trigger(trigger_type: str, trigger_data):
+    """
+    Обробити тригер через message_generator
+    Викликається з intelligent_listener при активному тригері
+    """
+    try:
+        from message_generator import process_trigger
+        
+        listener = get_listener()
+        idle = listener._check_idle_timeout()
+        location = listener.user_location
+        
+        return process_trigger(trigger_type, trigger_data, location, idle)
+    except ImportError:
+        print("[LISTENER] message_generator not available", flush=True)
+        return False
+    except Exception as e:
+        print(f"[LISTENER] process_and_send_trigger error: {e}", flush=True)
+        return False
 
 if __name__ == "__main__":
     # TEST
