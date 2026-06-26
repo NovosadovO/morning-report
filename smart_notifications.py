@@ -73,11 +73,11 @@ def _mark_notified(notification_id: str):
 # ============ EMAIL ============
 
 def _gmail_connect():
-    """Підключення до Gmail IMAP"""
+    """Підключення до Gmail IMAP (з більшим timeout)"""
     try:
-        imap = imaplib.IMAP4_SSL("imap.gmail.com", 993)
-        imap.login(GMAIL_USER, GMAIL_APP_PASSWORD)
-        return imap
+        mail = imaplib.IMAP4_SSL("imap.gmail.com", 993, timeout=10)
+        mail.login(GMAIL_USER, GMAIL_APP_PASSWORD)
+        return mail
     except Exception as e:
         print(f"[SMART_NOTIF] Gmail connect error: {e}")
         return None

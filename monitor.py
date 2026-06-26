@@ -10390,22 +10390,22 @@ def main():
         send_telegram(_email_ai_full)
         _time_main.sleep(0.6)
 
-    # PHASE 3: Event Reminders — перевірка календаря на наступні события за 1-3 години
-    if gmail_service:
-        try:
-            event_reminders = _check_event_reminders(gmail_service)
-            if event_reminders:
-                _time_main.sleep(0.8)
-                print(f"[event_reminders] found {len(event_reminders)} reminders", flush=True)
-                for reminder in event_reminders:
-                    title = reminder.get("title", "?")
-                    in_hours = reminder.get("in_hours", 1)
-                    emoji = "⏰" if in_hours == 1 else "🔔"
-                    msg = f"{emoji} <b>НАПОМІНЕННЯ</b> — {title} через {in_hours}h\n(о {reminder.get('time', '?')})"
-                    send_telegram(msg)
-                    _time_main.sleep(0.5)
-        except Exception as _er:
-            print(f"[event_reminders] error: {_er}", flush=True)
+    # PHASE 3: Event Reminders — DISABLED (replaced by smart_notifications)
+    # if gmail_service:
+    #     try:
+    #         event_reminders = _check_event_reminders(gmail_service)
+    #         if event_reminders:
+    #             _time_main.sleep(0.8)
+    #             print(f"[event_reminders] found {len(event_reminders)} reminders", flush=True)
+    #             for reminder in event_reminders:
+    #                 title = reminder.get("title", "?")
+    #                 in_hours = reminder.get("in_hours", 1)
+    #                 emoji = "⏰" if in_hours == 1 else "🔔"
+    #                 msg = f"{emoji} <b>НАПОМІНЕННЯ</b> — {title} через {in_hours}h\n(о {reminder.get('time', '?')})"
+    #                 send_telegram(msg)
+    #                 _time_main.sleep(0.5)
+    #     except Exception as _er:
+    #         print(f"[event_reminders] error: {_er}", flush=True)
 
     # Астро AI — надсилаємо окремо після звіту, розбиваємо безпечно по 3800 символів
     if _astro_ai_full:
