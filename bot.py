@@ -3443,13 +3443,41 @@ def main():
             # except Exception as _ph2:
             #     print(f"⚠️ Phase 2 recommendations error: {_ph2}", flush=True)
 
-            # Проактивний помічник — максимум 1x на годину
-            # ⚠️ ТИМЧАСОВО ВИМКНЕНО — діагностуємо проблему з частим сповіщеннями
-            # try:
-            #     if _ASSISTANT_AVAILABLE and should_send_proactive_message():
-            #         send_proactive_message(_send_telegram_text)
-            # except Exception as _pa:
-            #     print(f"⚠️ Proactive message error: {_pa}", flush=True)
+            # SMART NOTIFICATIONS — окремі, розумні сповіщення без спаму
+            # AI слідкує за ВСІМ і пише ОКРЕМО коли реально потрібно
+            try:
+                from smart_notifications import get_next_important_event, format_notification, _mark_notified
+                from monitor import get_emails, get_calendar, get_prices
+                import storage
+                
+                # Функція для завантаження здоров'я
+                def load_health():
+                    try:
+                        return storage.load("health.json") or {}
+                    except:
+                        return {}
+                
+                # Знаходимо наступну важливу подію
+                event = get_next_important_event(
+                    get_emails_func=get_emails,
+                    get_calendar_func=get_calendar,
+                    load_health_func=load_health,
+                    get_prices_func=get_prices
+                )
+                
+                if event:
+                    # Форматуємо красивий текст
+                    notification_text = format_notification(event)
+                    
+                    if notification_text:
+                        send(TELEGRAM_CHAT, notification_text)
+                        print(f"[SMART_NOTIF] Sent: {event.get('type')} | priority={event.get('priority')}", flush=True)
+                        
+                        # Позначаємо що відправили (деdup)
+                        _mark_notified(event.get("notification_id", ""))
+            
+            except Exception as _sn:
+                print(f"⚠️ Smart notifications error: {_sn}", flush=True)
 
         except Exception as e:
             print(f"Loop error: {e}", flush=True)
