@@ -549,51 +549,77 @@ def check_crypto_urgency():
 
 def check_email_urgency():
     """
-    EMAIL-ALERT: Нові VIP листи від важливих людей (бос, клієнти, інвесторів)
-    Повертає: {"alert": True/False, "emails": [...], "analysis": "..."}
+    EMAIL-ALERT: ВСІ нові листи (НЕ тільки VIP), з категоріями
+    Повертає: {"alert": True/False, "emails": [...], "categories": {...}}
     """
     try:
-        # Список важливих контактів для Олега
-        vip_patterns = [
-            r"boss|manager|ceo",  # Робота
-            r"client|customer|order",  # Клієнти
-            r"invest|finance|portfolio",  # Інвестиції
-            r"interview|job|position",  # Нова робота
-            r"interfinance|maros|sivak",  # Інвест-контакти
-        ]
+        # Категорії листів
+        categories = {
+            "work": {"patterns": [r"boss|manager|ceo|project|meeting"], "emoji": "💼"},
+            "invest": {"patterns": [r"invest|finance|portfolio|trading|market"], "emoji": "💹"},
+            "job": {"patterns": [r"interview|job|position|hire|resume|application"], "emoji": "🎯"},
+            "personal": {"patterns": [r"friend|family|event|birthday"], "emoji": "👤"},
+            "health": {"patterns": [r"doctor|health|medical|appointment|clinic"], "emoji": "🏥"},
+            "other": {"patterns": [], "emoji": "📌"}
+        }
         
-        # Отримуємо email
         try:
-            from storage import get_emails_fast
-            emails = get_emails_fast(max_results=10, only_unread=True)
+            # Спроба отримати emails
+            from monitor import get_emails as _get_emails_monitor
+            emails = _get_emails_monitor(max_results=15, only_unread=True) or []
         except:
-            emails = []
+            try:
+                from storage import get_emails_fast
+                emails = get_emails_fast(max_results=15, only_unread=True) or []
+            except:
+                emails = []
         
-        vip_emails = []
+        if not emails:
+            return {"alert": False, "type": "email"}
+        
+        # Категоризуємо листи
+        categorized = {cat: [] for cat in categories}
+        
         for email in emails:
             subject = email.get('subject', '').lower()
             sender = email.get('from', '').lower()
             body = email.get('snippet', '').lower()
+            full_text = f"{sender} {subject} {body}"
             
-            is_vip = any(
-                __import__('re').search(pat, f"{sender} {subject} {body}") 
-                for pat in vip_patterns
-            )
+            categorized_flag = False
+            for cat, cat_data in categories.items():
+                if cat == "other":
+                    continue
+                for pattern in cat_data.get('patterns', []):
+                    if __import__('re').search(pattern, full_text):
+                        categorized[cat].append({
+                            "from": email.get('from'),
+                            "subject": email.get('subject'),
+                            "snippet": email.get('snippet', '')[:80],
+                            "date": email.get('date')
+                        })
+                        categorized_flag = True
+                        break
+                if categorized_flag:
+                    break
             
-            if is_vip:
-                vip_emails.append({
+            if not categorized_flag:
+                categorized["other"].append({
                     "from": email.get('from'),
                     "subject": email.get('subject'),
-                    "snippet": email.get('snippet', '')[:100],
+                    "snippet": email.get('snippet', '')[:80],
                     "date": email.get('date')
                 })
         
-        if vip_emails:
+        # Якщо є листи
+        all_emails = [e for emails_list in categorized.values() for e in emails_list]
+        if all_emails:
             return {
                 "alert": True,
-                "emails": vip_emails,
+                "emails": all_emails,
+                "categorized": categorized,
                 "type": "email",
-                "count": len(vip_emails),
+                "count": len(all_emails),
                 "timestamp": datetime.now().isoformat()
             }
         else:
@@ -606,9 +632,9 @@ def check_email_urgency():
 
 def check_calendar_urgency():
     """
-    CALENDAR-ALERT: Важливі события на ЗАВТРА (без рутини)
-    Фільтр рутини: Біг, Вода, Чай, Сауна, Armolopid, Навчання, Чек крипто, Пошта
-    Повертає: {"alert": True/False, "events": [...], "analysis": "..."}
+    CALENDAR-ALERT: События + ЗАВДАННЯ на ЗАВТРА (без рутини)
+    Фільтр рутини: Біг, Вода, Чай, Сауна, Armolopid, Навчання, Чек крипто, Пошта, зміни
+    Повертає: {"alert": True/False, "events": [...], "tasks": [...], "analysis": "..."}
     """
     try:
         from datetime import datetime, timedelta
@@ -620,34 +646,51 @@ def check_calendar_urgency():
         routine_keywords = [
             "біг", "вода", "чай", "сауна", "armolopid",
             "навчання", "чек крипто", "пошта", "зміна",
-            "ранна", "нічна", "training"
+            "ранна", "нічна", "training", "гімнастика", "розтяжка"
         ]
         
-        # Отримуємо события (потребує import календаря)
+        # Отримуємо события й завдання
         try:
-            from storage import get_calendar_events_fast
-            all_events = get_calendar_events_fast(date=tomorrow_str, max_results=20)
+            from monitor import get_calendar as _get_cal_monitor
+            all_cal = _get_cal_monitor() or []
         except:
-            all_events = []
+            try:
+                from storage import get_calendar_events_fast
+                all_cal = get_calendar_events_fast(date=tomorrow_str, max_results=20) or []
+            except:
+                all_cal = []
         
-        important_events = []
-        for event in all_events:
+        events = []
+        tasks = []
+        
+        for event in all_cal:
             title = event.get('summary', '').lower()
             
             # Пропускаємо рутину
             is_routine = any(keyword in title for keyword in routine_keywords)
-            if not is_routine:
-                important_events.append({
-                    "title": event.get('summary'),
-                    "time": event.get('start', {}).get('dateTime', event.get('start', {}).get('date')),
-                    "location": event.get('location', ''),
-                    "description": event.get('description', '')[:100]
-                })
+            if is_routine:
+                continue
+            
+            event_data = {
+                "title": event.get('summary'),
+                "time": event.get('start', {}).get('dateTime', event.get('start', {}).get('date')),
+                "location": event.get('location', ''),
+                "description": event.get('description', '')[:100]
+            }
+            
+            # Розрізняємо tasks (мітки, чек-листи) від обичайних событий
+            is_task = "task" in title.lower() or "todo" in title.lower() or "☐" in event.get('summary', '')
+            
+            if is_task:
+                tasks.append(event_data)
+            else:
+                events.append(event_data)
         
-        if important_events:
+        if events or tasks:
             return {
                 "alert": True,
-                "events": important_events,
+                "events": events,
+                "tasks": tasks,
                 "type": "calendar",
                 "date": tomorrow_str,
                 "timestamp": datetime.now().isoformat()

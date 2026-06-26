@@ -2554,9 +2554,30 @@ def handle_command(chat_id, text):
 
 # ─── PHASE 1: EVENT-DRIVEN ALERTS ─────────────────────────────────────────────
 
+def _load_alerts_dedup():
+    """Завантажити dedup-стан для alertsів"""
+    try:
+        dedup_file = os.path.join(_DATA_DIR, "alerts_sent_dedup.json")
+        if os.path.exists(dedup_file):
+            with open(dedup_file, "r") as f:
+                return json.load(f) or {}
+    except:
+        pass
+    return {}
+
+def _save_alerts_dedup(dedup_state):
+    """Зберегти dedup-стан"""
+    try:
+        dedup_file = os.path.join(_DATA_DIR, "alerts_sent_dedup.json")
+        with open(dedup_file, "w") as f:
+            json.dump(dedup_state, f, indent=2)
+    except:
+        pass
+
 def _handle_event_based_alerts():
     """
     ФАЗА 1: Перевіряємо ВСІ 5 типів alertsів та надсилаємо миттєві сповіщення
+    DEDUP: max 1 alert per type per day (уникнення дублювання)
     """
     try:
         from intelligent_assistant_v2 import get_all_urgent_events
@@ -2567,92 +2588,159 @@ def _handle_event_based_alerts():
         if not active:
             return
         
+        # Завантажити dedup
+        dedup = _load_alerts_dedup()
+        today_key = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        
         print(f"[PHASE1] Active events: {list(active.keys())}", flush=True)
         
-        # Крипто-alert
+        # Крипто-alert (dedup: max 1 per day)
         if 'crypto' in active:
-            try:
-                coins = active['crypto'].get('coins', [])
-                msg_lines = ["🔴 <b>КРИПТО-ALERT</b>\n"]
-                for coin in coins:
-                    symbol = coin.get('symbol', '?')
-                    change = coin.get('change', 0)
-                    price = coin.get('price', 0)
-                    emoji = "📈" if change > 0 else "📉"
-                    msg_lines.append(f"{emoji} <b>{symbol}</b>: {change:+.1f}% | ${price:,.0f}\n")
-                send(TELEGRAM_CHAT, "".join(msg_lines))
-                
-                # AI-аналіз (опціонально, за часу дозволу)
+            dedup_key = f"crypto_{today_key}"
+            if dedup_key not in dedup:
                 try:
-                    from monitor import _get_crypto_ai_analysis
-                    import os
-                    gemini_key = os.getenv("GEMINI_API_KEY", "")
-                    analysis = _get_crypto_ai_analysis(active['crypto'], gemini_key)
-                    if analysis:
-                        send(TELEGRAM_CHAT, f"<b>💡 АНАЛІЗ</b>\n{analysis}")
-                except Exception as _ai_e:
-                    print(f"[PHASE1-CRYPTO-AI] skip: {_ai_e}", flush=True)
-            
-            except Exception as e:
-                print(f"[PHASE1-CRYPTO] error: {e}", flush=True)
+                    coins = active['crypto'].get('coins', [])
+                    msg_lines = ["🔴 <b>КРИПТО-ALERT</b>\n"]
+                    for coin in coins:
+                        symbol = coin.get('symbol', '?')
+                        change = coin.get('change', 0)
+                        price = coin.get('price', 0)
+                        emoji = "📈" if change > 0 else "📉"
+                        msg_lines.append(f"{emoji} <b>{symbol}</b>: {change:+.1f}% | ${price:,.0f}\n")
+                    send(TELEGRAM_CHAT, "".join(msg_lines))
+                    
+                    # AI-аналіз (опціонально)
+                    try:
+                        from monitor import _get_crypto_ai_analysis
+                        import os
+                        gemini_key = os.getenv("GEMINI_API_KEY", "")
+                        analysis = _get_crypto_ai_analysis(active['crypto'], gemini_key)
+                        if analysis:
+                            send(TELEGRAM_CHAT, f"<b>💡 АНАЛІЗ</b>\n{analysis}")
+                    except Exception as _ai_e:
+                        print(f"[PHASE1-CRYPTO-AI] skip: {_ai_e}", flush=True)
+                    
+                    dedup[dedup_key] = time.time()
+                
+                except Exception as e:
+                    print(f"[PHASE1-CRYPTO] error: {e}", flush=True)
+            else:
+                print(f"[PHASE1] crypto alert already sent today, skipping", flush=True)
         
-        # Email-alert
+        # Email-alert (dedup: max 1 per day)
         if 'email' in active:
-            try:
-                emails = active['email'].get('emails', [])
-                msg_lines = ["📧 <b>EMAIL-ALERT (VIP)</b>\n"]
-                for email in emails:
-                    sender = email.get('from', '?')
-                    subject = email.get('subject', '?')[:60]
-                    msg_lines.append(f"👤 {sender}\n📋 {subject}\n\n")
-                send(TELEGRAM_CHAT, "".join(msg_lines))
-            except Exception as e:
-                print(f"[PHASE1-EMAIL] error: {e}", flush=True)
-        
-        # Calendar-alert
-        if 'calendar' in active:
-            try:
-                events_list = active['calendar'].get('events', [])
-                msg_lines = ["📌 <b>КАЛЕНДАР: ЗАВТРА</b>\n"]
-                for event in events_list:
-                    title = event.get('title', '?')
-                    time_str = event.get('time', '?')
-                    msg_lines.append(f"⏰ {title} о {time_str}\n")
-                send(TELEGRAM_CHAT, "".join(msg_lines))
-            except Exception as e:
-                print(f"[PHASE1-CALENDAR] error: {e}", flush=True)
-        
-        # Health-alert
-        if 'health' in active:
-            try:
-                issues = active['health'].get('issues', [])
-                msg_lines = ["⚠️ <b>ЗДОРОВ'Я-ALERT</b>\n"]
-                for issue in issues:
-                    msg = issue.get('message', '?')
-                    msg_lines.append(f"• {msg}\n")
-                send(TELEGRAM_CHAT, "".join(msg_lines))
-                
-                # AI-аналіз з мотивацією
+            dedup_key = f"email_{today_key}"
+            if dedup_key not in dedup:
                 try:
-                    from monitor import _get_health_ai_analysis
-                    import os
-                    gemini_key = os.getenv("GEMINI_API_KEY", "")
-                    analysis = _get_health_ai_analysis(active['health'], gemini_key)
-                    if analysis:
-                        send(TELEGRAM_CHAT, f"<b>💪 РЕКОМЕНДАЦІЯ</b>\n{analysis}")
-                except Exception as _ai_e:
-                    print(f"[PHASE1-HEALTH-AI] skip: {_ai_e}", flush=True)
-            
-            except Exception as e:
-                print(f"[PHASE1-HEALTH] error: {e}", flush=True)
+                    categorized = active['email'].get('categorized', {})
+                    msg_lines = ["📧 <b>ЛИСТИ</b> (нові)\n\n"]
+                    
+                    # Показуємо по категоріях
+                    category_emojis = {
+                        "work": "💼",
+                        "invest": "💹",
+                        "job": "🎯",
+                        "health": "🏥",
+                        "personal": "👤",
+                        "other": "📌"
+                    }
+                    
+                    for cat, cat_emails in categorized.items():
+                        if cat_emails:
+                            emoji = category_emojis.get(cat, "📧")
+                            msg_lines.append(f"{emoji} <b>{cat.upper()}</b> ({len(cat_emails)})\n")
+                            for email in cat_emails[:2]:  # Показуємо топ 2 на категорію
+                                sender = email.get('from', '?').split('@')[0]
+                                subject = email.get('subject', '?')[:50]
+                                msg_lines.append(f"  • {sender}: {subject}\n")
+                            msg_lines.append("\n")
+                    
+                    send(TELEGRAM_CHAT, "".join(msg_lines))
+                    dedup[dedup_key] = time.time()
+                
+                except Exception as e:
+                    print(f"[PHASE1-EMAIL] error: {e}", flush=True)
+            else:
+                print(f"[PHASE1] email alert already sent today, skipping", flush=True)
         
-        # Astro-alert
+        # Calendar-alert (dedup: max 1 per day)
+        if 'calendar' in active:
+            dedup_key = f"calendar_{today_key}"
+            if dedup_key not in dedup:
+                try:
+                    events_list = active['calendar'].get('events', [])
+                    tasks_list = active['calendar'].get('tasks', [])
+                    
+                    msg_lines = []
+                    
+                    if events_list:
+                        msg_lines.append("📌 <b>СОБЫТИЯ НА ЗАВТРА</b>\n")
+                        for event in events_list:
+                            title = event.get('title', '?')
+                            time_str = event.get('time', '?')
+                            msg_lines.append(f"⏰ {title} о {time_str}\n")
+                        msg_lines.append("\n")
+                    
+                    if tasks_list:
+                        msg_lines.append("✅ <b>ЗАВДАННЯ НА ЗАВТРА</b>\n")
+                        for task in tasks_list:
+                            title = task.get('title', '?')
+                            msg_lines.append(f"☐ {title}\n")
+                    
+                    if msg_lines:
+                        send(TELEGRAM_CHAT, "".join(msg_lines))
+                        dedup[dedup_key] = time.time()
+                
+                except Exception as e:
+                    print(f"[PHASE1-CALENDAR] error: {e}", flush=True)
+            else:
+                print(f"[PHASE1] calendar alert already sent today, skipping", flush=True)
+        
+        # Health-alert (dedup: max 1 per day)
+        if 'health' in active:
+            dedup_key = f"health_{today_key}"
+            if dedup_key not in dedup:
+                try:
+                    issues = active['health'].get('issues', [])
+                    msg_lines = ["⚠️ <b>ЗДОРОВ'Я-ALERT</b>\n"]
+                    for issue in issues:
+                        msg = issue.get('message', '?')
+                        msg_lines.append(f"• {msg}\n")
+                    send(TELEGRAM_CHAT, "".join(msg_lines))
+                    
+                    # AI-аналіз з мотивацією
+                    try:
+                        from monitor import _get_health_ai_analysis
+                        import os
+                        gemini_key = os.getenv("GEMINI_API_KEY", "")
+                        analysis = _get_health_ai_analysis(active['health'], gemini_key)
+                        if analysis:
+                            send(TELEGRAM_CHAT, f"<b>💪 РЕКОМЕНДАЦІЯ</b>\n{analysis}")
+                    except Exception as _ai_e:
+                        print(f"[PHASE1-HEALTH-AI] skip: {_ai_e}", flush=True)
+                    
+                    dedup[dedup_key] = time.time()
+                
+                except Exception as e:
+                    print(f"[PHASE1-HEALTH] error: {e}", flush=True)
+            else:
+                print(f"[PHASE1] health alert already sent today, skipping", flush=True)
+        
+        # Astro-alert (dedup: max 1 per day)
         if 'astro' in active:
-            try:
-                msg = active['astro'].get('message', 'Натальна карта активна')
-                send(TELEGRAM_CHAT, f"🌙 <b>АСТРО-ALERT</b>\n{msg}")
-            except Exception as e:
-                print(f"[PHASE1-ASTRO] error: {e}", flush=True)
+            dedup_key = f"astro_{today_key}"
+            if dedup_key not in dedup:
+                try:
+                    msg = active['astro'].get('message', 'Натальна карта активна')
+                    send(TELEGRAM_CHAT, f"🌙 <b>АСТРО-ALERT</b>\n{msg}")
+                    dedup[dedup_key] = time.time()
+                except Exception as e:
+                    print(f"[PHASE1-ASTRO] error: {e}", flush=True)
+            else:
+                print(f"[PHASE1] astro alert already sent today, skipping", flush=True)
+        
+        # Зберегти dedup
+        _save_alerts_dedup(dedup)
         
     except Exception as e:
         print(f"[PHASE1] Event dispatch error: {e}", flush=True)
