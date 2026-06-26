@@ -3392,64 +3392,64 @@ def main():
                 handle_command(chat_id, text)
 
             # ФАЗА 1: Event-based alerts (крипто, email, календар, здоров'я, астро)
-            # ⚠️ RATE-LIMIT: max 1 перевірка на 60 сек (не кожну мілісекунду в getUpdates-лупі!)
-            try:
-                global _PHASE1_ALERTS_LAST_CHECK, _PHASE1_ALERTS_INTERVAL
-                now = time.time()
-                if now - _PHASE1_ALERTS_LAST_CHECK > _PHASE1_ALERTS_INTERVAL:
-                    _PHASE1_ALERTS_LAST_CHECK = now
-                    _handle_event_based_alerts()
-                    print(f"[PHASE1] Alerts checked (next check in {_PHASE1_ALERTS_INTERVAL}s)", flush=True)
-                else:
-                    pass  # Skip this iteration
-            except Exception as _ph1:
-                print(f"⚠️ Phase 1 alerts error: {_ph1}", flush=True)
+            # ⚠️ ТИМЧАСОВО ВИМКНЕНО — занадто частим сповіщення
+            # try:
+            #     global _PHASE1_ALERTS_LAST_CHECK, _PHASE1_ALERTS_INTERVAL
+            #     now = time.time()
+            #     if now - _PHASE1_ALERTS_LAST_CHECK > _PHASE1_ALERTS_INTERVAL:
+            #         _PHASE1_ALERTS_LAST_CHECK = now
+            #         _handle_event_based_alerts()
+            #         print(f"[PHASE1] Alerts checked (next check in {_PHASE1_ALERTS_INTERVAL}s)", flush=True)
+            #     else:
+            #         pass  # Skip this iteration
+            # except Exception as _ph1:
+            #     print(f"⚠️ Phase 1 alerts error: {_ph1}", flush=True)
 
             # ФАЗА 2: Daily recommendations (інтелектуальне таймування)
-            # ⚠️ RATE-LIMIT: max 1 check per 120 secs (не перегорювати Gemini quota)
-            try:
-                global _PHASE2_RECS_LAST_CHECK, _PHASE2_RECS_INTERVAL
-                now = time.time()
-                if now - _PHASE2_RECS_LAST_CHECK > _PHASE2_RECS_INTERVAL:
-                    _PHASE2_RECS_LAST_CHECK = now
-                    
-                    from monitor import _should_send_daily_recommendations, _get_daily_recommendations
-                    from intelligent_assistant_v2 import get_all_urgent_events
-                    
-                    events = get_all_urgent_events()
-                    active = events.get('active_events', {})
-                    
-                    if _should_send_daily_recommendations(active):
-                        # Збираємо контекст для рекомендацій
-                        context = {
-                            "emails_summary": f"Активні листи: {len(active.get('email', {}).get('emails', []))}",
-                            "events_summary": "Є события на завтра" if active.get('calendar', {}).get('events') else "Без подій",
-                            "health_summary": "Проблеми зі здоров'ям" if active.get('health', {}).get('issues') else "Здоров'я OK",
-                            "crypto_summary": active.get('crypto', {}).get('coins', []),
-                            "astro_summary": active.get('astro', {}).get('message', ''),
-                            "work_shift": "невідомо"  # TODO: infer від calendar
-                        }
-                        
-                        gemini_key = os.getenv("GEMINI_API_KEY", "")
-                        recommendation = _get_daily_recommendations(context, gemini_key)
-                        
-                        if recommendation:
-                            msg = f"💡 <b>РЕКОМЕНДАЦІЯ ДНЯ</b>\n\n{recommendation}"
-                            send(TELEGRAM_CHAT, msg)
-                            print(f"[PHASE2] Daily recommendation sent", flush=True)
-                else:
-                    pass  # Skip Phase 2 this iteration
-            
-            except Exception as _ph2:
-                print(f"⚠️ Phase 2 recommendations error: {_ph2}", flush=True)
+            # ⚠️ ТИМЧАСОВО ВИМКНЕНО — занадто частим сповіщення
+            # try:
+            #     global _PHASE2_RECS_LAST_CHECK, _PHASE2_RECS_INTERVAL
+            #     now = time.time()
+            #     if now - _PHASE2_RECS_LAST_CHECK > _PHASE2_RECS_INTERVAL:
+            #         _PHASE2_RECS_LAST_CHECK = now
+            #         
+            #         from monitor import _should_send_daily_recommendations, _get_daily_recommendations
+            #         from intelligent_assistant_v2 import get_all_urgent_events
+            #         
+            #         events = get_all_urgent_events()
+            #         active = events.get('active_events', {})
+            #         
+            #         if _should_send_daily_recommendations(active):
+            #             # Збираємо контекст для рекомендацій
+            #             context = {
+            #                 "emails_summary": f"Активні листи: {len(active.get('email', {}).get('emails', []))}",
+            #                 "events_summary": "Є события на завтра" if active.get('calendar', {}).get('events') else "Без подій",
+            #                 "health_summary": "Проблеми зі здоров'ям" if active.get('health', {}).get('issues') else "Здоров'я OK",
+            #                 "crypto_summary": active.get('crypto', {}).get('coins', []),
+            #                 "astro_summary": active.get('astro', {}).get('message', ''),
+            #                 "work_shift": "невідомо"  # TODO: infer від calendar
+            #             }
+            #             
+            #             gemini_key = os.getenv("GEMINI_API_KEY", "")
+            #             recommendation = _get_daily_recommendations(context, gemini_key)
+            #             
+            #             if recommendation:
+            #                 msg = f"💡 <b>РЕКОМЕНДАЦІЯ ДНЯ</b>\n\n{recommendation}"
+            #                 send(TELEGRAM_CHAT, msg)
+            #                 print(f"[PHASE2] Daily recommendation sent", flush=True)
+            #     else:
+            #         pass  # Skip Phase 2 this iteration
+            # 
+            # except Exception as _ph2:
+            #     print(f"⚠️ Phase 2 recommendations error: {_ph2}", flush=True)
 
             # Проактивний помічник — максимум 1x на годину
-            # should_send_proactive_message тепер використовує деdup-файл (не залежить від перезавантажень)
-            try:
-                if _ASSISTANT_AVAILABLE and should_send_proactive_message():
-                    send_proactive_message(_send_telegram_text)
-            except Exception as _pa:
-                print(f"⚠️ Proactive message error: {_pa}", flush=True)
+            # ⚠️ ТИМЧАСОВО ВИМКНЕНО — діагностуємо проблему з частим сповіщеннями
+            # try:
+            #     if _ASSISTANT_AVAILABLE and should_send_proactive_message():
+            #         send_proactive_message(_send_telegram_text)
+            # except Exception as _pa:
+            #     print(f"⚠️ Proactive message error: {_pa}", flush=True)
 
         except Exception as e:
             print(f"Loop error: {e}", flush=True)
