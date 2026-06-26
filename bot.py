@@ -2627,15 +2627,51 @@ def _handle_event_based_alerts():
             else:
                 print(f"[PHASE1] crypto alert already sent today, skipping", flush=True)
         
-        # Email-alert (dedup: max 1 per day)
+        # Email-alert (dedup: max 1 per day) + VIP маркування
         if 'email' in active:
             dedup_key = f"email_{today_key}"
             if dedup_key not in dedup:
                 try:
+                    from intelligent_assistant_v2 import VIP_CONTACTS
+                    import re as _re
+                    
                     categorized = active['email'].get('categorized', {})
                     msg_lines = ["📧 <b>ЛИСТИ</b> (нові)\n\n"]
                     
-                    # Показуємо по категоріях
+                    # VIP листи окремо
+                    vip_emails = []
+                    all_emails = []
+                    for emails_list in categorized.values():
+                        all_emails.extend(emails_list)
+                    
+                    for email in all_emails:
+                        sender = email.get('from', '').lower()
+                        subject = email.get('subject', '').lower()
+                        is_vip = False
+                        vip_label = ""
+                        
+                        for vip_type, vip_data in VIP_CONTACTS.items():
+                            for pattern in vip_data.get('patterns', []):
+                                if _re.search(pattern, f"{sender} {subject}"):
+                                    is_vip = True
+                                    vip_label = vip_data['emoji']
+                                    break
+                            if is_vip:
+                                break
+                        
+                        if is_vip:
+                            vip_emails.append((email, vip_label))
+                    
+                    # Показуємо VIP першими
+                    if vip_emails:
+                        msg_lines.append("🔴 <b>VIP (ВАЖНО)</b>\n")
+                        for email, vip_emoji in vip_emails[:3]:
+                            sender = email.get('from', '?').split('@')[0]
+                            subject = email.get('subject', '?')[:50]
+                            msg_lines.append(f"{vip_emoji} {sender}: {subject}\n")
+                        msg_lines.append("\n")
+                    
+                    # Потім решта по категоріях
                     category_emojis = {
                         "work": "💼",
                         "invest": "💹",
@@ -2649,7 +2685,7 @@ def _handle_event_based_alerts():
                         if cat_emails:
                             emoji = category_emojis.get(cat, "📧")
                             msg_lines.append(f"{emoji} <b>{cat.upper()}</b> ({len(cat_emails)})\n")
-                            for email in cat_emails[:2]:  # Показуємо топ 2 на категорію
+                            for email in cat_emails[:2]:
                                 sender = email.get('from', '?').split('@')[0]
                                 subject = email.get('subject', '?')[:50]
                                 msg_lines.append(f"  • {sender}: {subject}\n")
@@ -3244,6 +3280,36 @@ def main():
                 _handle_event_based_alerts()
             except Exception as _ph1:
                 print(f"⚠️ Phase 1 alerts error: {_ph1}", flush=True)
+
+            # ФАЗА 2: Daily recommendations (інтелектуальне таймування)
+            try:
+                from monitor import _should_send_daily_recommendations, _get_daily_recommendations
+                from intelligent_assistant_v2 import get_all_urgent_events
+                
+                events = get_all_urgent_events()
+                active = events.get('active_events', {})
+                
+                if _should_send_daily_recommendations(active):
+                    # Збираємо контекст для рекомендацій
+                    context = {
+                        "emails_summary": f"Активні листи: {len(active.get('email', {}).get('emails', []))}",
+                        "events_summary": "Є события на завтра" if active.get('calendar', {}).get('events') else "Без подій",
+                        "health_summary": "Проблеми зі здоров'ям" if active.get('health', {}).get('issues') else "Здоров'я OK",
+                        "crypto_summary": active.get('crypto', {}).get('coins', []),
+                        "astro_summary": active.get('astro', {}).get('message', ''),
+                        "work_shift": "невідомо"  # TODO: infer від calendar
+                    }
+                    
+                    gemini_key = os.getenv("GEMINI_API_KEY", "")
+                    recommendation = _get_daily_recommendations(context, gemini_key)
+                    
+                    if recommendation:
+                        msg = f"💡 <b>РЕКОМЕНДАЦІЯ ДНЯ</b>\n\n{recommendation}"
+                        send(TELEGRAM_CHAT, msg)
+                        print(f"[PHASE2] Daily recommendation sent", flush=True)
+            
+            except Exception as _ph2:
+                print(f"⚠️ Phase 2 recommendations error: {_ph2}", flush=True)
 
             # Проактивний помічник — кожні ~5-10 хвилин (якщо користувач неактивний)
             try:

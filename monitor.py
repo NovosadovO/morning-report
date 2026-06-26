@@ -8769,6 +8769,150 @@ def _get_health_ai_analysis(health_alert: dict, gemini_key: str = None) -> str:
 
 # ═════════════════════════════════════════════════════════════════════════════
 
+# ═══════════ PHASE 2: AI EMAIL REPLY TEMPLATES + DAILY RECOMMENDATIONS ════════
+
+def _generate_email_reply_templates(email_text: str, sender: str, subject: str, gemini_key: str = None) -> list:
+    """
+    AI генерує 2-3 варіанти коротких відповідей на лист (50-80 слів)
+    Повертає список: [{"reply": "текст", "tone": "professional/friendly/brief"}]
+    """
+    if not gemini_key:
+        gemini_key = os.getenv("GEMINI_API_KEY", "")
+    if not gemini_key:
+        return []
+    
+    try:
+        prompt = (
+            f"Лист від: {sender}\n"
+            f"Тема: {subject}\n"
+            f"Текст:\n{email_text[:500]}\n\n"
+            f"Згенеруй 2-3 варіанти КОРОТКИХ відповідей (50-80 слів кожен).\n"
+            f"Формат JSON:\n"
+            f'[{{"reply": "текст відповіді", "tone": "professional"}}, '
+            f'{{"reply": "текст", "tone": "friendly"}}]\n\n'
+            f"Відповідь ТІЛЬКИ JSON, без коментарів. Мова: українська."
+        )
+        
+        body = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": 400,
+                "temperature": 0.7,
+                "thinkingConfig": {"thinkingBudget": 0}
+            },
+        }).encode()
+        
+        resp = _gem_post(
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            body, timeout=15, tag="email_reply", max_retries=2
+        )
+        
+        if isinstance(resp, dict) and "candidates" in resp:
+            parts = resp.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+            if parts:
+                text = parts[0].get("text", "").strip()
+                # Парсимо JSON
+                try:
+                    templates = json.loads(text)
+                    if isinstance(templates, list) and len(templates) > 0:
+                        return templates[:3]  # Max 3 варіанти
+                except json.JSONDecodeError:
+                    pass
+    
+    except Exception as e:
+        print(f"[EMAIL_REPLY] error: {e}", flush=True)
+    
+    return []
+
+
+def _get_daily_recommendations(context: dict, gemini_key: str = None) -> str:
+    """
+    AI рекомендація дня: 350-400 слів аналізу + рекомендацій
+    Контекст: листи, события, здоров'я, крипто, астро
+    """
+    if not gemini_key:
+        gemini_key = os.getenv("GEMINI_API_KEY", "")
+    if not gemini_key:
+        return ""
+    
+    try:
+        # Збираємо контекст
+        emails_ctx = context.get("emails_summary", "Немає нових листів")
+        events_ctx = context.get("events_summary", "Немає запланованих подій")
+        health_ctx = context.get("health_summary", "Дані про здоров'я недоступні")
+        crypto_ctx = context.get("crypto_summary", "")
+        astro_ctx = context.get("astro_summary", "")
+        work_shift = context.get("work_shift", "невідомо")
+        
+        prompt = (
+            f"КОНТЕКСТ ДОШКА ОЛЕГА НА СЬОГОДНІ:\n\n"
+            f"📧 ЛИСТИ:\n{emails_ctx}\n\n"
+            f"📅 СОБЫТИЯ:\n{events_ctx}\n\n"
+            f"⚖️ ЗДОРОВ'Я:\n{health_ctx}\n\n"
+            f"💼 РОБОЧИЙ ГРАФІК: {work_shift}\n\n"
+            f"💹 КРИПТО: {crypto_ctx}\n\n"
+            f"🌙 АСТРО: {astro_ctx}\n\n"
+            f"ТВОЯ ЗАДАЧА:\n"
+            f"Напиши ГЛИБОКИЙ аналіз дня для Олега (350-400 слів, українська):\n"
+            f"1. Де його фокус мав бути СЬОГОДНІ? (листи/события/здоров'я/інвестиції)\n"
+            f"2. Яка стратегія на день? (порядок дій, пріоритети)\n"
+            f"3. На що звернути увагу? (ризики, можливості)\n"
+            f"4. Мотивація & закритя. Що зроблено добре?\n\n"
+            f"Тон: теплий коуч, вірить в тебе. Конкретні рекомендації, не загальні слова."
+        )
+        
+        body = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": 600,
+                "temperature": 0.8,
+                "thinkingConfig": {"thinkingBudget": 0}
+            },
+        }).encode()
+        
+        resp = _gem_post(
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            body, timeout=20, tag="daily_rec", max_retries=2
+        )
+        
+        if isinstance(resp, dict) and "candidates" in resp:
+            parts = resp.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+            if parts:
+                return parts[0].get("text", "").strip()
+    
+    except Exception as e:
+        print(f"[DAILY_REC] error: {e}", flush=True)
+    
+    return ""
+
+
+def _should_send_daily_recommendations(active_events: dict) -> bool:
+    """
+    Інтелектуальне таймування: коли надсилати рекомендацію дня
+    Критерії:
+    - Коли є активні листи (3+)
+    - Коли є события на завтра
+    - Коли здоров'я alert
+    - Ранок 06:00-07:00
+    - Після роботи 18:00-19:00
+    """
+    now = datetime.now(timezone.utc) + timedelta(hours=2)
+    hour = now.hour
+    
+    # Перевіряємо активні события
+    has_emails = len(active_events.get("email", {}).get("emails", [])) >= 3
+    has_events = bool(active_events.get("calendar", {}).get("events"))
+    has_health = bool(active_events.get("health", {}).get("issues"))
+    
+    # Таймування
+    is_morning = 6 <= hour <= 7
+    is_after_work = 18 <= hour <= 19
+    
+    return (has_emails or has_events or has_health) or is_morning or is_after_work
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+
 def main():
     global _FORCE_REPORT
     force = _FORCE_REPORT

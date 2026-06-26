@@ -27,6 +27,30 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 TRIGGER_BTC_THRESHOLD = 5.0  # 5% зміна = алерт
 TRIGGER_EMAIL_THRESHOLD = 3  # 3+ нові листи = алерт
 
+# VIP КОНТАКТИ (пріоритизація)
+VIP_CONTACTS = {
+    "boss": {
+        "patterns": [r"boss|manager|ceo|director", r"minebea|mitsumi"],
+        "emoji": "🔴",
+        "priority": "critical"
+    },
+    "investors": {
+        "patterns": [r"interfinance|interfin|maros|sivak|invest", r"maroš|sváč"],
+        "emoji": "💰",
+        "priority": "high"
+    },
+    "hr": {
+        "patterns": [r"hr|recruit|interview|job offer|position"],
+        "emoji": "🎯",
+        "priority": "high"
+    },
+    "important_clients": {
+        "patterns": [r"client|customer|contract|deal"],
+        "emoji": "⭐",
+        "priority": "high"
+    }
+}
+
 # ============ CRYPTO: CoinGecko TOP-20 ============
 
 def get_coingecko_top20():
@@ -549,8 +573,8 @@ def check_crypto_urgency():
 
 def check_email_urgency():
     """
-    EMAIL-ALERT: ВСІ нові листи (НЕ тільки VIP), з категоріями
-    Повертає: {"alert": True/False, "emails": [...], "categories": {...}}
+    EMAIL-ALERT: ВСІ нові листи (НЕ тільки VIP), з категоріями + VIP маркування
+    Повертає: {"alert": True/False, "emails": [...], "categorized": {...}, "vip_emails": [...]}
     """
     try:
         # Категорії листів
