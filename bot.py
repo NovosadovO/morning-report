@@ -26,6 +26,14 @@ except ImportError:
     _ASSISTANT_AVAILABLE = False
     print("⚠️ intelligent_assistant_v2 not available")
 
+try:
+    from proactive_scheduler import start_scheduler, is_running
+    from smart_notifications_v3 import CALLBACKS as SCHEDULER_CALLBACKS
+    _SCHEDULER_AVAILABLE = True
+except ImportError:
+    _SCHEDULER_AVAILABLE = False
+    print("⚠️ proactive_scheduler/smart_notifications_v3 not available")
+
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT  = os.environ.get("TELEGRAM_CHAT_ID", "2100366814")
 OFFSET_FILE    = "/tmp/bot_offset.json"
@@ -2889,6 +2897,20 @@ def main():
 
     # Запускаємо heartbeat в background
     _threading.Thread(target=_heartbeat_leader, daemon=True).start()
+
+    # Запускаємо Proactive Scheduler (6am, 12pm, 3pm, 8pm UTC+2)
+    if _SCHEDULER_AVAILABLE and not is_running():
+        print("[Scheduler] Starting proactive scheduler...", flush=True)
+        try:
+            # CALLBACKS мають сигнатуру (schedule_name, datetime_tz)
+            # Але вони повертають text, не надсилають самі. Потребує інтеграції.
+            # TODO: Додати send_to_telegram_with_retry() обгортку
+            start_scheduler(SCHEDULER_CALLBACKS)
+            print("[Scheduler] Started successfully", flush=True)
+        except Exception as e:
+            print(f"[Scheduler] Error starting: {e}", flush=True)
+    else:
+        print("[Scheduler] Not available or already running", flush=True)
 
     # Print service account email for Google Sheets setup
     try:
