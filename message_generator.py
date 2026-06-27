@@ -11,6 +11,13 @@ import urllib.error
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
+try:
+    from recommendations_engine import get_recommendations_for_schedule
+    _RECOMMENDATIONS_AVAILABLE = True
+except ImportError:
+    _RECOMMENDATIONS_AVAILABLE = False
+    print("⚠️ recommendations_engine not available", flush=True)
+
 # ============ CONFIG ============
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
@@ -268,6 +275,19 @@ LANGUAGE: Ukrainian.""",
     
     if not message:
         message = f"📝 Тригер: {trigger_type}\n⏱️ Локація: {location}\n💭 Деталі: {str(trigger_data)[:200]}..."
+    
+    # 🎯 Add AI recommendations if available
+    if _RECOMMENDATIONS_AVAILABLE and trigger_type in ["morning", "evening", "lunch", "afternoon"]:
+        try:
+            # Map trigger type to schedule type for recommendations
+            schedule_map = {"morning": "morning", "lunch": "lunch", "afternoon": "afternoon", "evening": "evening"}
+            if trigger_type in schedule_map:
+                recs = get_recommendations_for_schedule(schedule_map[trigger_type])
+                if recs:
+                    message += "\n\n🎯 МОЇ РЕКОМЕНДАЦІЇ:\n" + recs
+                    _log(f"Added recommendations ({len(recs)} chars)")
+        except Exception as e:
+            _log(f"⚠️ Recommendations failed: {e}")
     
     return message
 
