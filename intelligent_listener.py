@@ -230,28 +230,42 @@ class IntelligentListener:
                 now = time.time()
                 triggers = []
                 
-                # 1. EMAIL (кожні 2 хвилини)
-                if now - self.last_email_check > 120:
+                # 1. EMAIL (кожні 30 сек для DEBUG)
+                if now - self.last_email_check > 30:
+                    self._log("[EMAIL CHECK]")
                     vip_emails = self._check_vip_emails()
-                    if vip_emails and self._should_send_trigger("vip_email"):
-                        triggers.append(("vip_email", vip_emails))
-                        self._log(f"TRIGGER: vip_email ({len(vip_emails)} листів)")
+                    if vip_emails:
+                        self._log(f"  Found {len(vip_emails)} VIP листів")
+                        if self._should_send_trigger("vip_email"):
+                            triggers.append(("vip_email", vip_emails))
+                            self._log(f"✅ TRIGGER: vip_email")
+                        else:
+                            self._log(f"  Skip: already sent recently")
+                    else:
+                        self._log(f"  No VIP emails")
                     self.last_email_check = now
                 
-                # 2. CALENDAR (кожні 5 хвилин)
-                if now - self.last_calendar_check > 300:
+                # 2. CALENDAR (кожні 40 сек для DEBUG)
+                if now - self.last_calendar_check > 40:
                     events = self._check_upcoming_events()
                     if events and self._should_send_trigger("event_soon", 2.0):
                         triggers.append(("event_soon", events))
                         self._log(f"TRIGGER: event_soon ({len(events)} подій)")
                     self.last_calendar_check = now
                 
-                # 3. CRYPTO (кожні 5 хвилин)
-                if now - self.last_crypto_check > 300:
+                # 3. CRYPTO (кожні 35 сек для DEBUG)
+                if now - self.last_crypto_check > 35:
+                    self._log("[CRYPTO CHECK]")
                     moves = self._check_crypto_moves()
-                    if moves and self._should_send_trigger("crypto_move"):
-                        triggers.append(("crypto_move", moves))
-                        self._log(f"TRIGGER: crypto_move ({list(moves.keys())})")
+                    if moves:
+                        self._log(f"  Found moves: {moves}")
+                        if self._should_send_trigger("crypto_move"):
+                            triggers.append(("crypto_move", moves))
+                            self._log(f"✅ TRIGGER: crypto_move")
+                        else:
+                            self._log(f"  Skip: already sent recently")
+                    else:
+                        self._log(f"  No big moves (±5%+)")
                     self.last_crypto_check = now
                 
                 # 4. IDLE TIMEOUT (кожну хвилину)

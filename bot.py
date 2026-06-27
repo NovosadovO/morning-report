@@ -1946,6 +1946,42 @@ def handle_command(chat_id, text):
             import traceback
             send(chat_id, f"⚠️ Помилка: {_fs_e}\n{traceback.format_exc()[-500:]}")
 
+    elif text in ["/trigger_test", "/test_triggers", "trigger"]:
+        send(chat_id, "🧪 TEST TRIGGERS (примусово активую)...\n")
+        try:
+            from intelligent_listener import process_and_send_trigger
+            
+            results = []
+            
+            # 1. Test VIP email trigger
+            results.append("📧 VIP Email...")
+            try:
+                ok = process_and_send_trigger("vip_email", {"from": "test@minebea.com", "subject": "Test message"})
+                results.append(f"  {'✅' if ok else '❌'} Result: {ok}")
+            except Exception as e:
+                results.append(f"  ❌ Error: {e}")
+            
+            # 2. Test crypto move trigger
+            results.append("\n💹 Crypto Move...")
+            try:
+                ok = process_and_send_trigger("crypto_move", {"BTC": 5.5, "ETH": 3.2})
+                results.append(f"  {'✅' if ok else '❌'} Result: {ok}")
+            except Exception as e:
+                results.append(f"  ❌ Error: {e}")
+            
+            # 3. Test idle trigger
+            results.append("\n⏱️ Idle Timeout...")
+            try:
+                ok = process_and_send_trigger("idle_timeout", 3.5)
+                results.append(f"  {'✅' if ok else '❌'} Result: {ok}")
+            except Exception as e:
+                results.append(f"  ❌ Error: {e}")
+            
+            send(chat_id, "\n".join(results))
+        except Exception as _te_e:
+            import traceback
+            send(chat_id, f"⚠️ Помилка: {_te_e}\n{traceback.format_exc()[-300:]}")
+
     elif text in ["/listener_status", "/listener", "listener"]:
         send(chat_id, "👁️ Статус Event Listener...\n")
         try:
