@@ -18,6 +18,13 @@ except ImportError:
     _RECOMMENDATIONS_AVAILABLE = False
     print("⚠️ recommendations_engine not available", flush=True)
 
+try:
+    from contextual_briefing_engine import get_contextual_briefing
+    _BRIEFING_AVAILABLE = True
+except ImportError:
+    _BRIEFING_AVAILABLE = False
+    print("⚠️ contextual_briefing_engine not available", flush=True)
+
 # ============ CONFIG ============
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
@@ -142,6 +149,20 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
     """
     Gemini генерує 300-400 слів message на основі тригеру
     """
+    
+    # 🎯 Special case: contextual briefing
+    if trigger_type == "briefing":
+        if _BRIEFING_AVAILABLE:
+            try:
+                briefing, themes = get_contextual_briefing(location, idle_hours)
+                if briefing:
+                    _log(f"Generated contextual briefing ({len(briefing)} chars)")
+                    return briefing
+            except Exception as e:
+                _log(f"⚠️ Briefing failed: {e}")
+        
+        # Fallback
+        return "📝 Контекстний аналіз недоступний, але тримай себе у тонусі! 💪"
     
     # Формуємо контекст
     context_lines = [

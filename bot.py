@@ -1982,6 +1982,28 @@ def handle_command(chat_id, text):
             import traceback
             send(chat_id, f"⚠️ Помилка: {_te_e}\n{traceback.format_exc()[-300:]}")
 
+    elif text in ["/test_briefing", "/briefing_test", "briefing"]:
+        send(chat_id, "📋 TEST CONTEXTUAL BRIEFING...\n")
+        try:
+            from contextual_briefing_engine import get_contextual_briefing
+            from intelligent_listener import get_listener
+            
+            listener = get_listener()
+            location = listener.user_location
+            idle = listener._check_idle_timeout()
+            
+            _log(f"Testing briefing (location={location}, idle={idle:.1f}h)")
+            
+            briefing, themes = get_contextual_briefing(location, idle)
+            
+            if briefing:
+                send(chat_id, f"✅ BRIEFING GENERATED\n\n{briefing}\n\nThemes: {themes}")
+            else:
+                send(chat_id, "⚠️ No briefing triggered (context not sufficient)")
+        except Exception as _be_e:
+            import traceback
+            send(chat_id, f"❌ Помилка: {_be_e}\n{traceback.format_exc()[-400:]}")
+
     elif text in ["/listener_status", "/listener", "listener"]:
         send(chat_id, "👁️ Статус Event Listener...\n")
         try:
