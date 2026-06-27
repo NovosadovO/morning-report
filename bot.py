@@ -1992,8 +1992,6 @@ def handle_command(chat_id, text):
             location = listener.user_location
             idle = listener._check_idle_timeout()
             
-            _log(f"Testing briefing (location={location}, idle={idle:.1f}h)")
-            
             briefing, themes = get_contextual_briefing(location, idle)
             
             if briefing:
