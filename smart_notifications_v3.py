@@ -15,6 +15,13 @@ from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 from email.header import decode_header
 
+try:
+    from recommendations_engine import get_recommendations_for_schedule
+    _RECOMMENDATIONS_AVAILABLE = True
+except ImportError:
+    _RECOMMENDATIONS_AVAILABLE = False
+    print("⚠️ recommendations_engine not available", flush=True)
+
 # ============ CONFIG ============
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
@@ -482,6 +489,16 @@ def handle_morning_schedule(schedule_name, now_tz):
         message = _analyze_morning(emails, crypto, health, events)
         _log(f"Generated: {len(message)} chars")
         
+        # Add recommendations
+        if _RECOMMENDATIONS_AVAILABLE:
+            try:
+                recs = get_recommendations_for_schedule("morning")
+                if recs:
+                    message += "\n\n🎯 МОЇ РЕКОМЕНДАЦІЇ:\n" + recs
+                    _log(f"Added recommendations: {len(recs)} chars")
+            except Exception as e:
+                _log(f"⚠️ Recommendations failed: {e}")
+        
         if message:
             ok = _send_to_telegram(message)
             _log(f"Sent to Telegram: {ok}")
@@ -502,6 +519,16 @@ def handle_lunch_schedule(schedule_name, now_tz):
         
         message = _analyze_lunch(emails, crypto, health)
         _log(f"Generated: {len(message)} chars")
+        
+        # Add recommendations
+        if _RECOMMENDATIONS_AVAILABLE:
+            try:
+                recs = get_recommendations_for_schedule("lunch")
+                if recs:
+                    message += "\n\n🎯 МОЇ РЕКОМЕНДАЦІЇ:\n" + recs
+                    _log(f"Added recommendations: {len(recs)} chars")
+            except Exception as e:
+                _log(f"⚠️ Recommendations failed: {e}")
         
         if message:
             ok = _send_to_telegram(message)
@@ -524,6 +551,16 @@ def handle_afternoon_schedule(schedule_name, now_tz):
         
         message = _analyze_afternoon(emails, crypto, health, events)
         _log(f"Generated: {len(message)} chars")
+        
+        # Add recommendations
+        if _RECOMMENDATIONS_AVAILABLE:
+            try:
+                recs = get_recommendations_for_schedule("afternoon")
+                if recs:
+                    message += "\n\n🎯 МОЇ РЕКОМЕНДАЦІЇ:\n" + recs
+                    _log(f"Added recommendations: {len(recs)} chars")
+            except Exception as e:
+                _log(f"⚠️ Recommendations failed: {e}")
         
         if message:
             ok = _send_to_telegram(message)
@@ -548,6 +585,16 @@ def handle_evening_schedule(schedule_name, now_tz):
         
         message = _analyze_evening(emails, crypto, health, astro)
         _log(f"Generated: {len(message)} chars")
+        
+        # Add recommendations
+        if _RECOMMENDATIONS_AVAILABLE:
+            try:
+                recs = get_recommendations_for_schedule("evening")
+                if recs:
+                    message += "\n\n🎯 МОЇ РЕКОМЕНДАЦІЇ:\n" + recs
+                    _log(f"Added recommendations: {len(recs)} chars")
+            except Exception as e:
+                _log(f"⚠️ Recommendations failed: {e}")
         
         if message:
             ok = _send_to_telegram(message)
