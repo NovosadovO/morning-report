@@ -482,3 +482,41 @@ if __name__ == "__main__":
         _log(f"Would process: {ttype}")
     
     print("\n✅ Message generator ready")
+
+def get_tone_variation(trigger_type: str, hour: int) -> dict:
+    """
+    Повертає варіації тону і стилю в залежності від часу дня і тригеру
+    """
+    variations = {
+        "morning": [
+            {"tone": "енергійний", "emoji": "🌅", "goal": "мотивація на день"},
+            {"tone": "аналітичний", "emoji": "📊", "goal": "план на день"},
+            {"tone": "натхненний", "emoji": "✨", "goal": "позитивний настрій"},
+        ],
+        "vip_email": [
+            {"tone": "офіційний", "emoji": "📧", "goal": "дія негайна"},
+            {"tone": "дипломатичний", "emoji": "🤝", "goal": "добрі стосунки"},
+            {"tone": "стратегічний", "emoji": "🎯", "goal": "довгострокове рішення"},
+        ],
+        "crypto_move": [
+            {"tone": "спокійний", "emoji": "📈", "goal": "раціональна оцінка"},
+            {"tone": "інформативний", "emoji": "💹", "goal": "освітити рішення"},
+            {"tone": "обережний", "emoji": "⚠️", "goal": "мінімізувати ризик"},
+        ],
+        "health": [
+            {"tone": "підтримуючий", "emoji": "💪", "goal": "мотивація"},
+            {"tone": "аналітичний", "emoji": "📉", "goal": "розуміння тренду"},
+            {"tone": "практичний", "emoji": "🎯", "goal": "конкретні дії"},
+        ],
+    }
+    
+    base = variations.get(trigger_type, [{"tone": "дружелюбний", "emoji": "👋", "goal": "інформування"}])
+    idx = (hour + hash(trigger_type)) % len(base)
+    return base[idx]
+
+if __name__ == "__main__":
+    # TEST tone variations
+    for ttype in ["morning", "vip_email", "crypto_move", "health"]:
+        for h in [6, 12, 18, 23]:
+            var = get_tone_variation(ttype, h)
+            print(f"{ttype:15} at {h:2}h → {var['tone']:12} {var['emoji']}")

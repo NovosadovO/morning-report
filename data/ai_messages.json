@@ -5,5 +5,26 @@
     "data_summary": "{}",
     "message_len": 3813,
     "sent": true
+  },
+  "2026-06-28T10:05:51.511204+02:00": {
+    "trigger": "morning",
+    "location": "doma",
+    "data_summary": "{}",
+    "message_len": 3430,
+    "sent": true
+  },
+  "2026-06-28T10:05:53.785065+02:00": {
+    "trigger": "vip_email",
+    "location": "doma",
+    "data_summary": "{'from': 'boss@company.com', 'subject': 'Important update'}",
+    "message_len": 699,
+    "sent": true
+  },
+  "2026-06-28T10:06:01.194321+02:00": {
+    "trigger": "crypto_move",
+    "location": "doma",
+    "data_summary": "{'BTC': 8.5}",
+    "message_len": 1499,
+    "sent": true
   }
 }
