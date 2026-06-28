@@ -1982,6 +1982,26 @@ def handle_command(chat_id, text):
             import traceback
             send(chat_id, f"⚠️ Помилка: {_te_e}\n{traceback.format_exc()[-300:]}")
 
+    elif text in ["/deep_analysis", "/test_deep", "deep"]:
+        send(chat_id, "🔍 DEEP ANALYSIS v4.0...\n")
+        try:
+            from deep_analysis_engine import build_deep_analysis
+            from intelligent_listener import get_listener
+            
+            listener = get_listener()
+            location = listener.user_location
+            idle = listener._check_idle_timeout()
+            
+            analysis = build_deep_analysis(location, idle)
+            
+            if analysis:
+                send(chat_id, analysis)
+            else:
+                send(chat_id, "⚠️ Аналіз недоступний")
+        except Exception as _de_e:
+            import traceback
+            send(chat_id, f"❌ Помилка: {_de_e}\n{traceback.format_exc()[-400:]}")
+
     elif text in ["/test_briefing", "/briefing_test", "briefing"]:
         send(chat_id, "📋 TEST AGGRESSIVE BRIEFING v3...\n")
         try:

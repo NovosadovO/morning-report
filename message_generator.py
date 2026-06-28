@@ -32,6 +32,13 @@ except ImportError:
     _BRIEFING_V3_AVAILABLE = False
     print("⚠️ aggressive_briefing_v3 not available", flush=True)
 
+try:
+    from deep_analysis_engine import build_deep_analysis
+    _DEEP_ANALYSIS_AVAILABLE = True
+except ImportError:
+    _DEEP_ANALYSIS_AVAILABLE = False
+    print("⚠️ deep_analysis_engine not available", flush=True)
+
 # ============ CONFIG ============
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
@@ -156,6 +163,18 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
     """
     Gemini генерує 300-400 слів message на основі тригеру
     """
+    
+    # 🎯 Special case: deep analysis (новий!)
+    if trigger_type == "deep_analysis":
+        if _DEEP_ANALYSIS_AVAILABLE:
+            try:
+                analysis = build_deep_analysis(location, idle_hours)
+                if analysis:
+                    _log(f"Generated deep analysis ({len(analysis)} chars)")
+                    return analysis
+            except Exception as e:
+                _log(f"⚠️ Deep analysis failed: {e}")
+        return "📝 Глибокий аналіз у розробці! 💭"
     
     # 🎯 Special case: contextual briefing (use v3 if available)
     if trigger_type == "briefing" or trigger_type == "contextual_briefing":
