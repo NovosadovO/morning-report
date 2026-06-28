@@ -1,18 +1,82 @@
 {
   "bitcoin": {
-    "price": 59519.4,
-    "ts": 1782673242
+    "price": 59398,
+    "ts": 1782676839
   },
   "ethereum": {
-    "price": 1569.39,
-    "ts": 1782673242
+    "price": 1562.39,
+    "ts": 1782676839
+  },
+  "binancecoin": {
+    "price": 547.68,
+    "ts": 1782676839
+  },
+  "ripple": {
+    "price": 1.042,
+    "ts": 1782676839
+  },
+  "solana": {
+    "price": 70.54,
+    "ts": 1782676839
+  },
+  "dogecoin": {
+    "price": 0.072794,
+    "ts": 1782676839
+  },
+  "cardano": {
+    "price": 0.142625,
+    "ts": 1782676839
+  },
+  "tron": {
+    "price": 0.322444,
+    "ts": 1782676839
+  },
+  "chainlink": {
+    "price": 7.21,
+    "ts": 1782676839
   },
   "avalanche-2": {
-    "price": 6.338,
-    "ts": 1782673242
+    "price": 6.32,
+    "ts": 1782676839
+  },
+  "the-open-network": {
+    "price": 1.56,
+    "ts": 1782676839
+  },
+  "stellar": {
+    "price": 0.170149,
+    "ts": 1782676839
+  },
+  "hedera-hashgraph": {
+    "price": 0.070775,
+    "ts": 1782676839
+  },
+  "sui": {
+    "price": 0.677789,
+    "ts": 1782676839
+  },
+  "bitcoin-cash": {
+    "price": 190.17,
+    "ts": 1782676839
+  },
+  "litecoin": {
+    "price": 42.45,
+    "ts": 1782676839
+  },
+  "polkadot": {
+    "price": 0.805967,
+    "ts": 1782676839
+  },
+  "hyperliquid": {
+    "price": 61.91,
+    "ts": 1782676839
+  },
+  "monero": {
+    "price": 314.09,
+    "ts": 1782676839
   },
   "ondo-finance": {
-    "price": 0.3081,
-    "ts": 1782673242
+    "price": 0.306811,
+    "ts": 1782676839
   }
 }
