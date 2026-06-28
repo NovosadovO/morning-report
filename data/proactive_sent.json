@@ -1,9 +1,4 @@
 {
-  "2026-06-24": {
-    "morning_greet": true,
-    "midday_checkin": true,
-    "night_summary": true
-  },
   "2026-06-25": {
     "morning_greet": true,
     "anomaly_no_run": true,
@@ -19,6 +14,9 @@
   "2026-06-27": {
     "morning_greet": true,
     "run_question": true,
+    "post_shift_checkin": true
+  },
+  "2026-06-28": {
     "post_shift_checkin": true
   }
 }
