@@ -411,3 +411,49 @@ if __name__ == "__main__":
     stop_listener()
     
     print("✅ Test complete")
+
+# ========== LIFE OS INTEGRATION ==========
+try:
+    from life_os_tracker import LifeOSTracker
+    _LIFE_OS_AVAILABLE = True
+except (ImportError, ModuleNotFoundError):
+    _LIFE_OS_AVAILABLE = False
+
+def _check_life_os_sphere(sphere: str) -> bool:
+    """
+    Перевіряє одну сферу життя.
+    Повертає True якщо потребує оповіщення
+    """
+    if not _LIFE_OS_AVAILABLE:
+        return False
+    
+    try:
+        tracker = LifeOSTracker()
+        status = tracker.get_life_status()
+        sphere_status = status.get(sphere)
+        
+        if sphere_status:
+            msg, should_alert = sphere_status
+            return should_alert
+    except Exception as e:
+        print(f"[LISTENER] Life OS check error: {e}", flush=True)
+    
+    return False
+
+def _get_life_os_message(sphere: str) -> str:
+    """Повертає повідомлення про сферу"""
+    if not _LIFE_OS_AVAILABLE:
+        return ""
+    
+    try:
+        tracker = LifeOSTracker()
+        status = tracker.get_life_status()
+        sphere_status = status.get(sphere)
+        
+        if sphere_status:
+            msg, _ = sphere_status
+            return msg
+    except:
+        pass
+    
+    return ""
