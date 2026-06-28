@@ -280,11 +280,11 @@ class IntelligentListener:
                     triggers.append((time_trigger, None))
                     self._log(f"TRIGGER: {time_trigger}")
                 
-                # 6. CONTEXTUAL BRIEFING (динамічна актуальність)
+                # 6. DEEP ANALYSIS (динамічна актуальність з local fallback)
                 idle = self._check_idle_timeout()
-                if self._should_send_trigger("contextual_briefing", 4.0):  # Макс 1x на 4h
-                    triggers.append(("contextual_briefing", idle))
-                    self._log(f"TRIGGER: contextual_briefing (idle={idle:.1f}h)")
+                if self._should_send_trigger("deep_analysis", 4.0):  # Макс 1x на 4h
+                    triggers.append(("deep_analysis", idle))
+                    self._log(f"TRIGGER: deep_analysis (idle={idle:.1f}h)")
                 
                 # Процесувати тригери (генеруємо & надсилаємо messages)
                 if triggers:

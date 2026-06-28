@@ -115,49 +115,46 @@ def _gemini_post(url, body, timeout=20, tag="", max_retries=3):
 
 def _should_send_message(trigger_type: str, trigger_data) -> bool:
     """
-    AI вирішує чи ДІЙСНО потребує цей тригер написати
-    (уникаємо spam)
+    LOCAL LOGIC - не робимо Gemini запит!
+    Вирішуємо локально на основі тригеру
     """
-    prompt = f"""You are Oleh's smart assistant. Analyze this trigger and decide if it REALLY needs a message NOW.
-
-TRIGGER TYPE: {trigger_type}
-DATA: {json.dumps(trigger_data, default=str)}
-
-RULES:
-1. VIP email from boss/investors → ALWAYS YES (critical)
-2. Crypto ±5% → YES if > 7% move or interesting pattern
-3. Event in 1h → YES if not a routine (not "shower", "water", "tea")
-4. Idle 2h+ → YES if it's morning (6-9am) or evening (19-22)
-5. Morning/Evening routine → YES
-6. Health update → YES if weight changed >0.5kg or sleep <5h
-
-RESPOND WITH ONLY:
-YES (one word)
-OR
-NO (one word)
-
-NO explanation, NO extra text."""
-
-    body = {
-        "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-        "generationConfig": {
-            "maxOutputTokens": 10,
-            "temperature": 0.5,
-            "thinkingConfig": {"thinkingBudget": 0}
-        }
-    }
+    # ЗАВЖДИ надсилаємо ці типи
+    if trigger_type in ["vip_email", "deep_analysis", "briefing", "contextual_briefing"]:
+        return True
     
-    response = _gemini_post(
-        "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
-        body,
-        timeout=10,
-        tag="SHOULD_SEND"
-    )
+    # Крипто — якщо значна зміна
+    if trigger_type == "crypto_move":
+        if isinstance(trigger_data, dict):
+            for coin, change in trigger_data.items():
+                if abs(change) > 7:
+                    return True
     
-    decision = response.strip().upper()
-    _log(f"Should send '{trigger_type}'? → {decision}")
+    # События — якщо не рутина
+    if trigger_type == "event_soon":
+        routine_keywords = ["shower", "water", "tea", "чай", "душ", "вода", "сауна", "armolopid"]
+        if isinstance(trigger_data, list):
+            for event in trigger_data:
+                title = str(event).lower()
+                if not any(kw in title for kw in routine_keywords):
+                    return True
     
-    return decision == "YES"
+    # Idle timeout — якщо ранок/вечір
+    if trigger_type == "idle_timeout":
+        now = datetime.now(tz=_TZ)
+        hour = now.hour
+        if 6 <= hour < 9 or 19 <= hour < 23:  # Ранок або вечір
+            return True
+    
+    # Ранок/Вечір — ЗАВЖДИ
+    if trigger_type in ["morning", "evening"]:
+        return True
+    
+    # Здоров'я — якщо критичне
+    if trigger_type == "health":
+        return True
+    
+    _log(f"Local decision: SKIP '{trigger_type}'")
+    return False
 
 def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours: float) -> str:
     """
