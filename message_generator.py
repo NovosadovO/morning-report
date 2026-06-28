@@ -25,6 +25,13 @@ except ImportError:
     _BRIEFING_AVAILABLE = False
     print("⚠️ contextual_briefing_engine not available", flush=True)
 
+try:
+    from aggressive_briefing_v3 import get_brief_v3
+    _BRIEFING_V3_AVAILABLE = True
+except ImportError:
+    _BRIEFING_V3_AVAILABLE = False
+    print("⚠️ aggressive_briefing_v3 not available", flush=True)
+
 # ============ CONFIG ============
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
@@ -150,19 +157,30 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
     Gemini генерує 300-400 слів message на основі тригеру
     """
     
-    # 🎯 Special case: contextual briefing
-    if trigger_type == "briefing":
+    # 🎯 Special case: contextual briefing (use v3 if available)
+    if trigger_type == "briefing" or trigger_type == "contextual_briefing":
+        # Try v3 first (more aggressive)
+        if _BRIEFING_V3_AVAILABLE:
+            try:
+                briefing = get_brief_v3(location, idle_hours)
+                if briefing:
+                    _log(f"Generated aggressive briefing v3 ({len(briefing)} chars)")
+                    return briefing
+            except Exception as e:
+                _log(f"⚠️ Briefing v3 failed: {e}")
+        
+        # Fallback to v1
         if _BRIEFING_AVAILABLE:
             try:
                 briefing, themes = get_contextual_briefing(location, idle_hours)
                 if briefing:
-                    _log(f"Generated contextual briefing ({len(briefing)} chars)")
+                    _log(f"Generated contextual briefing v1 ({len(briefing)} chars)")
                     return briefing
             except Exception as e:
-                _log(f"⚠️ Briefing failed: {e}")
+                _log(f"⚠️ Briefing v1 failed: {e}")
         
-        # Fallback
-        return "📝 Контекстний аналіз недоступний, але тримай себе у тонусі! 💪"
+        # Last resort fallback
+        return "📝 Аналіз у розробці, але я тримаю вас в курсі! 💪"
     
     # Формуємо контекст
     context_lines = [

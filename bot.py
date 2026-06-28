@@ -1983,21 +1983,28 @@ def handle_command(chat_id, text):
             send(chat_id, f"⚠️ Помилка: {_te_e}\n{traceback.format_exc()[-300:]}")
 
     elif text in ["/test_briefing", "/briefing_test", "briefing"]:
-        send(chat_id, "📋 TEST CONTEXTUAL BRIEFING...\n")
+        send(chat_id, "📋 TEST AGGRESSIVE BRIEFING v3...\n")
         try:
-            from contextual_briefing_engine import get_contextual_briefing
+            from aggressive_briefing_v3 import get_brief_v3
             from intelligent_listener import get_listener
             
             listener = get_listener()
             location = listener.user_location
             idle = listener._check_idle_timeout()
             
-            briefing, themes = get_contextual_briefing(location, idle)
+            briefing = get_brief_v3(location, idle)
             
             if briefing:
-                send(chat_id, f"✅ BRIEFING GENERATED\n\n{briefing}\n\nThemes: {themes}")
+                send(chat_id, f"✅ BRIEFING v3 GENERATED\n\n{briefing}")
             else:
-                send(chat_id, "⚠️ No briefing triggered (context not sufficient)")
+                send(chat_id, "⚠️ Briefing not triggered (wrong time)")
+                
+                # Try force
+                send(chat_id, "🔥 FORCE: Using fallback...")
+                from contextual_briefing_engine import get_contextual_briefing
+                brief2, themes = get_contextual_briefing(location, idle)
+                if brief2:
+                    send(chat_id, f"✅ FALLBACK v1\n\n{brief2}")
         except Exception as _be_e:
             import traceback
             send(chat_id, f"❌ Помилка: {_be_e}\n{traceback.format_exc()[-400:]}")
