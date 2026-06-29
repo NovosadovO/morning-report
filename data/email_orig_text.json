@@ -322,5 +322,32 @@
         ]
       ]
     }
+  },
+  "2100366814_35062": {
+    "text": "📩 ✉️\n📌 Cenová po(sh)nuka\n👤 Posh Posh Weddings <info@poshposh.sk>",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_75191"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_75191"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_75191"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_75191"
+          }
+        ]
+      ]
+    }
   }
 }
