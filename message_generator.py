@@ -1,522 +1,579 @@
 """
-Message Generator v1.0 — AI генерує & надсилає messages на основі тригерів
-Інтегрується з intelligent_listener.py
+Message Generator v2.0 — Live data injection + anti-repeat
+Pulls real CoinGecko / Gmail / Health / Calendar data into every Gemini prompt.
+Anti-repeat: tracks last 5 topics, forbids repeating same angle.
 """
 
 import os
 import json
 import time
+import imaplib
+import email as email_lib
 import urllib.request
 import urllib.error
-from datetime import datetime
+from datetime import datetime, timedelta
+from email.header import decode_header as _decode_hdr
 from zoneinfo import ZoneInfo
 
-try:
-    from recommendations_engine import get_recommendations_for_schedule
-    _RECOMMENDATIONS_AVAILABLE = True
-except ImportError:
-    _RECOMMENDATIONS_AVAILABLE = False
-    print("⚠️ recommendations_engine not available", flush=True)
-
-try:
-    from contextual_briefing_engine import get_contextual_briefing
-    _BRIEFING_AVAILABLE = True
-except ImportError:
-    _BRIEFING_AVAILABLE = False
-    print("⚠️ contextual_briefing_engine not available", flush=True)
-
+# ─── Optional engine imports ─────────────────────────────────────────────────
 try:
     from aggressive_briefing_v3 import get_brief_v3
     _BRIEFING_V3_AVAILABLE = True
 except ImportError:
     _BRIEFING_V3_AVAILABLE = False
-    print("⚠️ aggressive_briefing_v3 not available", flush=True)
 
 try:
     from deep_analysis_engine import build_deep_analysis
     _DEEP_ANALYSIS_AVAILABLE = True
 except ImportError:
     _DEEP_ANALYSIS_AVAILABLE = False
-    print("⚠️ deep_analysis_engine not available", flush=True)
 
-# ============ CONFIG ============
+try:
+    from contextual_briefing_engine import get_contextual_briefing
+    _BRIEFING_AVAILABLE = True
+except ImportError:
+    _BRIEFING_AVAILABLE = False
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "")
+# ─── Config ──────────────────────────────────────────────────────────────────
+GEMINI_API_KEY  = os.getenv("GEMINI_API_KEY", "")
+TELEGRAM_TOKEN  = os.getenv("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "2100366814")
+GMAIL_USER      = os.getenv("GMAIL_USER", "novosadovoleg@gmail.com")
+GMAIL_APP_PASS  = os.getenv("GMAIL_APP_PASSWORD", "")
 
 _DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 _TZ = ZoneInfo("Europe/Bratislava")
+_HISTORY_FILE = os.path.join(_DATA_DIR, "message_history.json")
+_HISTORY_MAX  = 8   # remember last N messages for anti-repeat
 
-_GEM_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.5-flash-lite"]
+_GEM_MODELS   = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.5-flash-lite"]
 _GEM_MODEL_IDX = 0
-_GEM_LAST_CALL = 0
-_GEM_MIN_GAP = 4.0
+_GEM_LAST_CALL = 0.0
+_GEM_MIN_GAP   = 4.0
 
-# ============ GEMINI HELPERS ============
-
-def _log(msg):
-    """Log з timestamp"""
+# ─── Logging ─────────────────────────────────────────────────────────────────
+def _log(msg: str):
     ts = datetime.now(tz=_TZ).strftime("%H:%M:%S")
-    print(f"[MESSAGE_GEN {ts}] {msg}", flush=True)
+    print(f"[MSG_GEN {ts}] {msg}", flush=True)
 
-def _gemini_post(url, body, timeout=20, tag="", max_retries=3):
-    """Надійний Gemini запит з retry та fallback моделей"""
+# ─── Gemini ──────────────────────────────────────────────────────────────────
+def _gemini_post(body: dict, timeout: int = 25, tag: str = "") -> str:
     global _GEM_MODEL_IDX, _GEM_LAST_CALL
-    
-    # Rate limit
     now = time.time()
     gap = now - _GEM_LAST_CALL
     if gap < _GEM_MIN_GAP:
         time.sleep(_GEM_MIN_GAP - gap)
     _GEM_LAST_CALL = time.time()
-    
-    for attempt in range(max_retries):
+
+    for attempt in range(4):
+        model = _GEM_MODELS[_GEM_MODEL_IDX % len(_GEM_MODELS)]
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
         try:
-            model = _GEM_MODELS[_GEM_MODEL_IDX % len(_GEM_MODELS)]
-            gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
-            
-            req = urllib.request.Request(
-                gemini_url,
-                data=json.dumps(body).encode(),
-                headers={"Content-Type": "application/json"},
-                method="POST"
-            )
-            
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                response = json.loads(resp.read())
-                
-                if response.get("candidates"):
-                    cand = response["candidates"][0]
-                    content = cand.get("content", {})
-                    parts = content.get("parts", [])
-                    
-                    if parts and parts[0].get("text"):
-                        _GEM_LAST_CALL = time.time()
-                        return parts[0]["text"]
-                
-                # Fallback на наступну модель
-                _log(f"{tag}: Empty response, trying next model...")
-                _GEM_MODEL_IDX += 1
-                
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                _log(f"{tag}: 429 rate limit, switching model")
-                _GEM_MODEL_IDX += 1
-                time.sleep(5 + attempt * 3)
-            else:
-                _log(f"{tag}: HTTP {e.code}")
-                time.sleep(2 + attempt * 2)
-        except Exception as e:
-            _log(f"{tag}: Error {e}")
-            time.sleep(2 + attempt * 2)
-    
-    return ""
-
-def _should_send_message(trigger_type: str, trigger_data) -> bool:
-    """
-    LOCAL LOGIC - не робимо Gemini запит!
-    Вирішуємо локально на основі тригеру
-    """
-    # ЗАВЖДИ надсилаємо ці типи
-    if trigger_type in ["vip_email", "deep_analysis", "briefing", "contextual_briefing"]:
-        return True
-    
-    # Крипто — якщо значна зміна
-    if trigger_type == "crypto_move":
-        if isinstance(trigger_data, dict):
-            for coin, change in trigger_data.items():
-                if abs(change) > 7:
-                    return True
-    
-    # События — якщо не рутина
-    if trigger_type == "event_soon":
-        routine_keywords = ["shower", "water", "tea", "чай", "душ", "вода", "сауна", "armolopid"]
-        if isinstance(trigger_data, list):
-            for event in trigger_data:
-                title = str(event).lower()
-                if not any(kw in title for kw in routine_keywords):
-                    return True
-    
-    # Idle timeout — якщо ранок/вечір
-    if trigger_type == "idle_timeout":
-        now = datetime.now(tz=_TZ)
-        hour = now.hour
-        if 6 <= hour < 9 or 19 <= hour < 23:  # Ранок або вечір
-            return True
-    
-    # Ранок/Вечір — ЗАВЖДИ
-    if trigger_type in ["morning", "evening"]:
-        return True
-    
-    # Здоров'я — якщо критичне
-    if trigger_type == "health":
-        return True
-    
-    _log(f"Local decision: SKIP '{trigger_type}'")
-    return False
-
-def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours: float) -> str:
-    """
-    Gemini генерує 300-400 слів message на основі тригеру
-    """
-    
-    # 🎯 Special case: deep analysis (новий!)
-    if trigger_type == "deep_analysis":
-        if _DEEP_ANALYSIS_AVAILABLE:
-            try:
-                analysis = build_deep_analysis(location, idle_hours)
-                if analysis:
-                    _log(f"Generated deep analysis ({len(analysis)} chars)")
-                    return analysis
-            except Exception as e:
-                _log(f"⚠️ Deep analysis failed: {e}")
-        return "📝 Глибокий аналіз у розробці! 💭"
-    
-    # 🎯 Special case: contextual briefing (use v3 if available)
-    if trigger_type == "briefing" or trigger_type == "contextual_briefing":
-        # Try v3 first (more aggressive)
-        if _BRIEFING_V3_AVAILABLE:
-            try:
-                briefing = get_brief_v3(location, idle_hours)
-                if briefing:
-                    _log(f"Generated aggressive briefing v3 ({len(briefing)} chars)")
-                    return briefing
-            except Exception as e:
-                _log(f"⚠️ Briefing v3 failed: {e}")
-        
-        # Fallback to v1
-        if _BRIEFING_AVAILABLE:
-            try:
-                briefing, themes = get_contextual_briefing(location, idle_hours)
-                if briefing:
-                    _log(f"Generated contextual briefing v1 ({len(briefing)} chars)")
-                    return briefing
-            except Exception as e:
-                _log(f"⚠️ Briefing v1 failed: {e}")
-        
-        # Last resort fallback
-        return "📝 Аналіз у розробці, але я тримаю вас в курсі! 💪"
-    
-    # Формуємо контекст
-    context_lines = [
-        f"Trigger: {trigger_type}",
-        f"Location: {location}",
-        f"Idle: {idle_hours:.1f}h",
-        f"Data: {json.dumps(trigger_data, default=str)[:500]}",
-    ]
-    context = "\n".join(context_lines)
-    
-    # Генеруємо промпт
-    prompts = {
-        "vip_email": f"""Write a brief professional response to Oleh about incoming VIP emails (300 words, Ukrainian).
-
-CONTEXT:
-{context}
-
-INCLUDE:
-1. Who sent the email (from field)
-2. What's the subject (summary)
-3. Recommended action (reply urgency, what to do)
-4. Any follow-up needed
-
-TONE: Professional, helpful, action-oriented.
-LANGUAGE: Ukrainian.""",
-
-        "crypto_move": f"""Write a brief crypto market analysis message for Oleh (250 words, Ukrainian).
-
-CONTEXT:
-{context}
-
-INCLUDE:
-1. Which coins moved and by how much
-2. Market interpretation (bullish/bearish)
-3. Risk assessment
-4. Recommended action (watch, hold, rebalance?)
-
-TONE: Analytical, calm, educational.
-LANGUAGE: Ukrainian.""",
-
-        "event_soon": f"""Write a brief reminder about an upcoming event (200 words, Ukrainian).
-
-CONTEXT:
-{context}
-
-INCLUDE:
-1. What event is coming
-2. How much time left
-3. Preparation tips
-4. What to bring/do
-
-TONE: Helpful, encouraging.
-LANGUAGE: Ukrainian.""",
-
-        "idle_timeout": f"""Write an encouraging message to Oleh about taking a break (250 words, Ukrainian).
-
-CONTEXT:
-He's been inactive for {idle_hours:.1f} hours.
-Current location: {location}
-
-INCLUDE:
-1. Acknowledge the work he's done
-2. Suggest a break activity (walk, stretch, drink water)
-3. If morning: energizing tips
-4. If evening: relaxation tips
-
-TONE: Warm, supportive, motivating.
-LANGUAGE: Ukrainian.""",
-
-        "morning": f"""Write a warm morning greeting & daily briefing for Oleh (300 words, Ukrainian).
-
-CONTEXT:
-{context}
-
-INCLUDE:
-1. Greeting (Привіт Олеже!)
-2. Today's focus areas
-3. Motivation
-4. Quick checklist (3 things to do today)
-
-TONE: Energizing, motivating, personal.
-LANGUAGE: Ukrainian.""",
-
-        "evening": f"""Write an evening summary & reflection for Oleh (300 words, Ukrainian).
-
-CONTEXT:
-{context}
-
-INCLUDE:
-1. Acknowledgement of today's work
-2. Highlights (what went well)
-3. Learnings or reflections
-4. Tomorrow's outlook
-5. Evening relaxation tips
-
-TONE: Reflective, warm, closure-focused.
-LANGUAGE: Ukrainian.""",
-
-        "health": f"""Write a brief health analysis message for Oleh (250 words, Ukrainian).
-
-CONTEXT:
-{context}
-
-INCLUDE:
-1. What health data changed
-2. Assessment (good/needs attention)
-3. Personalized advice
-4. Motivation for goals
-
-TONE: Supportive, motivating, non-judgmental.
-LANGUAGE: Ukrainian.""",
-    }
-    
-    prompt = prompts.get(trigger_type, f"Write a helpful message to Oleh about {trigger_type}.")
-    
-    body = {
-        "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-        "generationConfig": {
-            "maxOutputTokens": 600,
-            "temperature": 0.8,
-            "thinkingConfig": {"thinkingBudget": 0}
-        }
-    }
-    
-    message = _gemini_post(
-        "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
-        body,
-        timeout=20,
-        tag=f"MESSAGE_{trigger_type.upper()}"
-    )
-    
-    if not message:
-        message = f"📝 Тригер: {trigger_type}\n⏱️ Локація: {location}\n💭 Деталі: {str(trigger_data)[:200]}..."
-    
-    # 🎯 Add AI recommendations if available
-    if _RECOMMENDATIONS_AVAILABLE and trigger_type in ["morning", "evening", "lunch", "afternoon"]:
-        try:
-            # Map trigger type to schedule type for recommendations
-            schedule_map = {"morning": "morning", "lunch": "lunch", "afternoon": "afternoon", "evening": "evening"}
-            if trigger_type in schedule_map:
-                recs = get_recommendations_for_schedule(schedule_map[trigger_type])
-                if recs:
-                    message += "\n\n🎯 МОЇ РЕКОМЕНДАЦІЇ:\n" + recs
-                    _log(f"Added recommendations ({len(recs)} chars)")
-        except Exception as e:
-            _log(f"⚠️ Recommendations failed: {e}")
-    
-    return message
-
-# ============ TELEGRAM SENDING ============
-
-def _send_to_telegram(text: str, parse_mode: str = "HTML") -> bool:
-    """Надішліть message до Telegram з retry"""
-    if not text or not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
-        _log("Telegram credentials missing")
-        return False
-    
-    max_retries = 3
-    for attempt in range(max_retries):
-        try:
-            url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-            body = {
-                "chat_id": TELEGRAM_CHAT_ID,
-                "text": text,
-                "parse_mode": parse_mode
-            }
-            
             req = urllib.request.Request(
                 url,
                 data=json.dumps(body).encode(),
                 headers={"Content-Type": "application/json"},
                 method="POST"
             )
-            
-            with urllib.request.urlopen(req, timeout=10) as resp:
-                result = json.loads(resp.read())
-                if result.get("ok"):
-                    _log(f"✅ Sent {len(text)} chars to Telegram")
-                    return True
-                else:
-                    desc = result.get("description", "unknown")
-                    _log(f"⚠️ Telegram error: {desc}")
-                    if attempt < max_retries - 1:
-                        time.sleep(2 + attempt * 2)
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                data = json.loads(resp.read())
+                cands = data.get("candidates", [])
+                if cands:
+                    parts = cands[0].get("content", {}).get("parts", [])
+                    if parts and parts[0].get("text"):
+                        _GEM_LAST_CALL = time.time()
+                        return parts[0]["text"]
+                _log(f"{tag}: empty response, trying next model")
+                _GEM_MODEL_IDX += 1
         except urllib.error.HTTPError as e:
-            _log(f"⚠️ HTTP {e.code}, retrying...")
-            time.sleep(2 + attempt * 2)
+            if e.code == 429:
+                _log(f"{tag}: 429 → switching model")
+                _GEM_MODEL_IDX += 1
+                time.sleep(6 + attempt * 4)
+            else:
+                _log(f"{tag}: HTTP {e.code}")
+                time.sleep(3)
         except Exception as e:
-            _log(f"⚠️ Send error: {e}")
-            time.sleep(2 + attempt * 2)
-    
-    return False
+            _log(f"{tag}: {e}")
+            time.sleep(3)
+    return ""
 
-# ============ MESSAGE LOG ============
+# ─── Live Data ────────────────────────────────────────────────────────────────
+def _get_live_crypto() -> dict:
+    """CoinGecko free API — BTC/ETH/AVAX/ONDO."""
+    try:
+        ids = "bitcoin,ethereum,avalanche-2,ondo"
+        url = (f"https://api.coingecko.com/api/v3/simple/price"
+               f"?ids={ids}&vs_currencies=usd"
+               f"&include_24h_change=true&include_7d_change=true")
+        req = urllib.request.Request(url, headers={"User-Agent": "SmartAssistantBot/2.0"})
+        with urllib.request.urlopen(req, timeout=8) as resp:
+            raw = json.loads(resp.read())
+        mapping = {"bitcoin": "BTC", "ethereum": "ETH", "avalanche-2": "AVAX", "ondo": "ONDO"}
+        result = {}
+        for cid, cname in mapping.items():
+            if cid in raw:
+                coin = raw[cid]
+                result[cname] = {
+                    "price":       round(coin.get("usd", 0), 2),
+                    "change_24h":  round(coin.get("usd_24h_change", 0), 2),
+                    "change_7d":   round(coin.get("usd_7d_change", 0), 2),
+                }
+        summary = ", ".join(f"{k}=${v['price']}({v['change_24h']:+.1f}%)" for k, v in result.items())
+        _log(f"Crypto: {summary}")
+        return result
+    except Exception as e:
+        _log(f"CoinGecko error: {e}")
+        return {}
 
-def _log_message(trigger_type: str, trigger_data, message_text: str, location: str):
-    """Зберегти記錄 відправленого message"""
+def _get_live_health() -> dict:
+    """Latest weight, steps, sleep from data files."""
+    result = {}
+    try:
+        # Weight
+        wfile = os.path.join(_DATA_DIR, "weight.json")
+        if os.path.exists(wfile):
+            with open(wfile) as f:
+                wdata = json.load(f)
+            if wdata:
+                latest = sorted(wdata.keys())[-1]
+                result["weight"] = wdata[latest]
+                result["weight_date"] = latest
+                # Trend: compare with 7 days ago
+                week_ago = (datetime.now(tz=_TZ) - timedelta(days=7)).strftime("%Y-%m-%d")
+                old_keys = [k for k in sorted(wdata.keys()) if k <= week_ago]
+                if old_keys:
+                    old_w = wdata[old_keys[-1]]
+                    result["weight_7d_delta"] = round(result["weight"] - old_w, 1)
+    except Exception as e:
+        _log(f"Weight read error: {e}")
+
+    try:
+        # Health (steps, sleep)
+        hfile = os.path.join(_DATA_DIR, "daily_health.json")
+        if os.path.exists(hfile):
+            with open(hfile) as f:
+                hdata = json.load(f)
+            entries = hdata.get("entries", hdata) if isinstance(hdata, dict) else {}
+            if entries:
+                today_str = datetime.now(tz=_TZ).strftime("%Y-%m-%d")
+                yesterday = (datetime.now(tz=_TZ) - timedelta(days=1)).strftime("%Y-%m-%d")
+                for day in [today_str, yesterday]:
+                    if day in entries:
+                        e = entries[day]
+                        result["steps"]       = e.get("steps", 0)
+                        result["sleep"]       = e.get("sleep_hours", 0)
+                        result["health_date"] = day
+                        break
+    except Exception as e:
+        _log(f"Health read error: {e}")
+
+    return result
+
+def _get_live_emails(max_emails: int = 5) -> list:
+    """Last important emails via IMAP."""
+    if not GMAIL_APP_PASS:
+        return []
+    try:
+        mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
+        mail.login(GMAIL_USER, GMAIL_APP_PASS)
+        mail.select("INBOX")
+        since = (datetime.now() - timedelta(days=3)).strftime("%d-%b-%Y")
+        _, msgs = mail.search(None, f"SINCE {since}")
+        if not msgs[0]:
+            return []
+        ids = msgs[0].split()[-max_emails:]
+        result = []
+        skip_kw = ["unsubscribe", "newsletter", "noreply", "no-reply",
+                   "marketing", "promo", "notification", "доставка"]
+        for eid in reversed(ids):
+            _, data = mail.fetch(eid, "(RFC822)")
+            msg = email_lib.message_from_bytes(data[0][1])
+            sender  = _decode_str(msg.get("From", ""))
+            subject = _decode_str(msg.get("Subject", ""))
+            date    = msg.get("Date", "")
+            if any(k in (sender + subject).lower() for k in skip_kw):
+                continue
+            result.append({"from": sender[:60], "subject": subject[:80], "date": date[:30]})
+        mail.close(); mail.logout()
+        return result
+    except Exception as e:
+        _log(f"Gmail error: {e}")
+        return []
+
+def _decode_str(s: str) -> str:
+    try:
+        parts = _decode_hdr(s)
+        out = []
+        for part, charset in parts:
+            if isinstance(part, bytes):
+                out.append(part.decode(charset or "utf-8", errors="ignore"))
+            else:
+                out.append(str(part))
+        return "".join(out)
+    except:
+        return str(s)
+
+def _get_live_calendar() -> list:
+    """Try to get upcoming events via monitor.get_upcoming_events()."""
+    try:
+        import monitor as _mon
+        raw = _mon.get_upcoming_events(days_ahead=3)
+        if raw:
+            # raw is HTML text — strip tags for plain text
+            import re
+            clean = re.sub(r"<[^>]+>", "", raw)
+            return [line.strip() for line in clean.splitlines() if line.strip() and "•" in line]
+    except Exception as e:
+        _log(f"Calendar error: {e}")
+    return []
+
+def _get_live_data() -> dict:
+    """Collect all live data sources in parallel-ish."""
+    _log("Collecting live data...")
+    crypto   = _get_live_crypto()
+    health   = _get_live_health()
+    emails   = _get_live_emails(max_emails=4)
+    calendar = _get_live_calendar()
+    now      = datetime.now(tz=_TZ)
+    return {
+        "crypto":   crypto,
+        "health":   health,
+        "emails":   emails,
+        "calendar": calendar,
+        "now_str":  now.strftime("%d.%m.%Y %H:%M"),
+        "weekday":  ["Пн","Вт","Ср","Чт","Пт","Сб","Нд"][now.weekday()],
+        "hour":     now.hour,
+    }
+
+# ─── Anti-repeat ─────────────────────────────────────────────────────────────
+def _load_history() -> list:
     try:
         os.makedirs(_DATA_DIR, exist_ok=True)
-        log_file = os.path.join(_DATA_DIR, "ai_messages.json")
-        
-        logs = {}
-        if os.path.exists(log_file):
-            with open(log_file, "r") as f:
-                logs = json.load(f)
-        
-        timestamp = datetime.now(tz=_TZ).isoformat()
-        logs[timestamp] = {
-            "trigger": trigger_type,
-            "location": location,
-            "data_summary": str(trigger_data)[:200],
-            "message_len": len(message_text),
-            "sent": True,
-        }
-        
-        with open(log_file, "w") as f:
-            json.dump(logs, f, indent=2)
-    except Exception as e:
-        _log(f"Log error: {e}")
+        if os.path.exists(_HISTORY_FILE):
+            with open(_HISTORY_FILE) as f:
+                return json.load(f)
+    except:
+        pass
+    return []
 
-# ============ MAIN ============
-
-def process_trigger(trigger_type: str, trigger_data, location: str = "doma", idle_hours: float = 0):
-    """
-    Основна функція — інтегрується з intelligent_listener.py
-    
-    Args:
-        trigger_type: "vip_email", "crypto_move", "event_soon", "idle_timeout", "morning", "evening", "health"
-        trigger_data: дані тригеру (emails, moves, etc)
-        location: "doma" або "robota"
-        idle_hours: скільки часу неактивності
-    
-    Returns:
-        bool: True якщо message надіслан
-    """
-    _log(f"Processing trigger: {trigger_type}")
-    
-    # Перевіримо credentials
-    if not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
-        _log(f"❌ Missing TELEGRAM credentials (TOKEN={bool(TELEGRAM_TOKEN)}, CHAT={bool(TELEGRAM_CHAT_ID)})")
-        return False
-    
-    if not GEMINI_API_KEY:
-        _log(f"⚠️ Missing GEMINI_API_KEY")
-    
+def _save_to_history(trigger_type: str, topic_summary: str):
+    hist = _load_history()
+    hist.append({
+        "ts":      datetime.now(tz=_TZ).isoformat(),
+        "trigger": trigger_type,
+        "topic":   topic_summary[:120],
+    })
+    hist = hist[-_HISTORY_MAX:]
     try:
-        # 1. Запитаємо AI чи писати
-        if not _should_send_message(trigger_type, trigger_data):
-            _log(f"AI decided NOT to send for {trigger_type}")
-            return False
-        
-        # 2. Генеруємо message
-        _log(f"Generating message for {trigger_type}...")
-        message = _generate_message(trigger_type, trigger_data, location, idle_hours)
-        
-        if not message:
-            _log(f"Failed to generate message")
-            return False
-        
-        # 3. Надсилаємо на Telegram
-        _log(f"Sending to Telegram...")
-        success = _send_to_telegram(message)
-        
-        if success:
-            _log_message(trigger_type, trigger_data, message, location)
-        
-        return success
-    except Exception as e:
-        _log(f"❌ process_trigger error: {e}")
-        return False
+        with open(_HISTORY_FILE, "w") as f:
+            json.dump(hist, f, indent=2)
+    except:
+        pass
 
-if __name__ == "__main__":
-    # TEST
-    test_triggers = [
-        ("vip_email", {"from": "boss@minebea.com", "subject": "Important project"}, "robota", 0),
-        ("crypto_move", {"BTC": 7.2, "ETH": 3.1}, "doma", 2.5),
-        ("morning", {}, "doma", 0),
+def _build_anti_repeat_block() -> str:
+    hist = _load_history()
+    if not hist:
+        return ""
+    lines = [f"- [{h['trigger']}] {h['topic']}" for h in hist[-5:]]
+    return (
+        "\n⚠️ ЗАБОРОНА ПОВТОРЕНЬ — ці теми вже надсилались. НЕ повторюй той самий кут зору:\n"
+        + "\n".join(lines)
+        + "\nОбери ІНШИЙ кут, ІНШИЙ акцент або ІНШУ деталь.\n"
+    )
+
+# ─── Data → Text ─────────────────────────────────────────────────────────────
+def _crypto_text(crypto: dict) -> str:
+    if not crypto:
+        return "Крипто: дані недоступні (CoinGecko)"
+    lines = []
+    for coin, d in crypto.items():
+        c24 = d["change_24h"]
+        c7  = d["change_7d"]
+        arrow = "📈" if c24 > 0 else "📉"
+        lines.append(f"  {arrow} {coin}: ${d['price']:,.2f} ({c24:+.1f}% за 24г, {c7:+.1f}% за тиж)")
+    return "Крипто ЗАРАЗ:\n" + "\n".join(lines)
+
+def _health_text(health: dict) -> str:
+    if not health:
+        return "Здоров'я: даних немає — надішли дані текстом (кроки/сон/вага)"
+    parts = []
+    if "weight" in health:
+        delta_str = ""
+        if "weight_7d_delta" in health:
+            d = health["weight_7d_delta"]
+            delta_str = f" ({d:+.1f} кг за тиж)"
+        parts.append(f"Вага: {health['weight']} кг{delta_str}")
+    if "steps" in health:
+        parts.append(f"Кроки: {health['steps']:,}")
+    if "sleep" in health:
+        parts.append(f"Сон: {health['sleep']} год")
+    return "Здоров'я: " + " | ".join(parts)
+
+def _emails_text(emails: list) -> str:
+    if not emails:
+        return "Листи: нових важливих листів немає"
+    lines = [f"  • {e['from'][:40]} — {e['subject']}" for e in emails[:4]]
+    return "Нові листи:\n" + "\n".join(lines)
+
+def _calendar_text(events: list) -> str:
+    if not events:
+        return "Календар: найближчих подій немає"
+    return "Найближчі події:\n" + "\n".join(f"  {e}" for e in events[:5])
+
+def _build_live_context(data: dict) -> str:
+    parts = [
+        f"📅 {data['weekday']}, {data['now_str']}",
+        "",
+        _crypto_text(data.get("crypto", {})),
+        "",
+        _health_text(data.get("health", {})),
+        "",
+        _emails_text(data.get("emails", [])),
+        "",
+        _calendar_text(data.get("calendar", [])),
     ]
-    
-    for ttype, tdata, tloc, tidle in test_triggers:
-        print(f"\n=== Testing {ttype} ===")
-        # process_trigger(ttype, tdata, tloc, tidle)  # Uncomment to test with real API
-        _log(f"Would process: {ttype}")
-    
-    print("\n✅ Message generator ready")
+    return "\n".join(parts)
 
+# ─── Tone variation ──────────────────────────────────────────────────────────
 def get_tone_variation(trigger_type: str, hour: int) -> dict:
-    """
-    Повертає варіації тону і стилю в залежності від часу дня і тригеру
-    """
     variations = {
         "morning": [
-            {"tone": "енергійний", "emoji": "🌅", "goal": "мотивація на день"},
-            {"tone": "аналітичний", "emoji": "📊", "goal": "план на день"},
-            {"tone": "натхненний", "emoji": "✨", "goal": "позитивний настрій"},
+            {"tone": "енергійний + конкретний план", "emoji": "🌅"},
+            {"tone": "аналітичний + огляд можливостей", "emoji": "📊"},
+            {"tone": "натхненний + мотиваційний", "emoji": "✨"},
+            {"tone": "стратегічний + фокус на цілях", "emoji": "🎯"},
         ],
         "vip_email": [
-            {"tone": "офіційний", "emoji": "📧", "goal": "дія негайна"},
-            {"tone": "дипломатичний", "emoji": "🤝", "goal": "добрі стосунки"},
-            {"tone": "стратегічний", "emoji": "🎯", "goal": "довгострокове рішення"},
+            {"tone": "офіційний, чіткий, дії першочергові", "emoji": "📧"},
+            {"tone": "дипломатичний, відносини важливі", "emoji": "🤝"},
+            {"tone": "стратегічний, довгострокове бачення", "emoji": "🏹"},
         ],
         "crypto_move": [
-            {"tone": "спокійний", "emoji": "📈", "goal": "раціональна оцінка"},
-            {"tone": "інформативний", "emoji": "💹", "goal": "освітити рішення"},
-            {"tone": "обережний", "emoji": "⚠️", "goal": "мінімізувати ризик"},
+            {"tone": "спокійний аналітик, факти без паніки", "emoji": "📈"},
+            {"tone": "обережний інвестор, ризик-менеджмент", "emoji": "⚠️"},
+            {"tone": "освітній, пояснити причину руху", "emoji": "💹"},
+        ],
+        "event_soon": [
+            {"tone": "нагадування + підготовка", "emoji": "⏰"},
+            {"tone": "мотивуючий + що взяти/зробити", "emoji": "✅"},
         ],
         "health": [
-            {"tone": "підтримуючий", "emoji": "💪", "goal": "мотивація"},
-            {"tone": "аналітичний", "emoji": "📉", "goal": "розуміння тренду"},
-            {"tone": "практичний", "emoji": "🎯", "goal": "конкретні дії"},
+            {"tone": "підтримуючий + конкретні поради", "emoji": "💪"},
+            {"tone": "аналітичний + тренд за тиждень", "emoji": "📉"},
+            {"tone": "практичний + план покращення", "emoji": "🎯"},
+        ],
+        "idle_timeout": [
+            {"tone": "турботливий + пропозиція активності", "emoji": "🚶"},
+            {"tone": "енергетичний + короткий заряд", "emoji": "⚡"},
+        ],
+        "evening": [
+            {"tone": "рефлексивний + підсумок дня", "emoji": "🌙"},
+            {"tone": "планувальний + завтра починається сьогодні", "emoji": "📋"},
+            {"tone": "відновлювальний + релакс і сон", "emoji": "😌"},
         ],
     }
-    
-    base = variations.get(trigger_type, [{"tone": "дружелюбний", "emoji": "👋", "goal": "інформування"}])
-    idx = (hour + hash(trigger_type)) % len(base)
+    base = variations.get(trigger_type, [{"tone": "дружелюбний, особистий", "emoji": "👋"}])
+    idx = (hour + abs(hash(trigger_type))) % len(base)
     return base[idx]
 
+# ─── Decision ────────────────────────────────────────────────────────────────
+def _should_send_message(trigger_type: str, trigger_data) -> bool:
+    always = {"vip_email", "deep_analysis", "briefing", "contextual_briefing",
+              "morning", "evening", "health"}
+    if trigger_type in always:
+        return True
+    if trigger_type == "crypto_move":
+        if isinstance(trigger_data, dict):
+            return any(abs(v) > 5 for v in trigger_data.values())
+    if trigger_type == "event_soon":
+        routine = ["shower","water","tea","чай","душ","вода","сауна","armolopid","армолопід"]
+        if isinstance(trigger_data, list):
+            return any(not any(r in str(e).lower() for r in routine) for e in trigger_data)
+    if trigger_type == "idle_timeout":
+        h = datetime.now(tz=_TZ).hour
+        return 6 <= h < 9 or 19 <= h < 23
+    return False
+
+# ─── Generate ────────────────────────────────────────────────────────────────
+def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours: float) -> str:
+    """Main generation: collect live data → build prompt with context → Gemini."""
+
+    # ── Special engines ──────────────────────────────────────────────────────
+    if trigger_type == "deep_analysis" and _DEEP_ANALYSIS_AVAILABLE:
+        try:
+            result = build_deep_analysis(location, idle_hours)
+            if result:
+                return result
+        except Exception as e:
+            _log(f"deep_analysis failed: {e}")
+
+    if trigger_type in ("briefing", "contextual_briefing"):
+        if _BRIEFING_V3_AVAILABLE:
+            try:
+                result = get_brief_v3(location, idle_hours)
+                if result:
+                    return result
+            except Exception as e:
+                _log(f"briefing_v3 failed: {e}")
+        if _BRIEFING_AVAILABLE:
+            try:
+                result, _ = get_contextual_briefing(location, idle_hours)
+                if result:
+                    return result
+            except Exception as e:
+                _log(f"briefing_v1 failed: {e}")
+
+    # ── Collect live data ─────────────────────────────────────────────────────
+    live = _get_live_data()
+    live_ctx = _build_live_context(live)
+    anti_repeat = _build_anti_repeat_block()
+    tone = get_tone_variation(trigger_type, live["hour"])
+
+    # ── Build trigger-specific context ───────────────────────────────────────
+    trigger_extra = ""
+    if trigger_type == "crypto_move" and isinstance(trigger_data, dict):
+        pairs = [f"{k}: {v:+.1f}%" for k, v in trigger_data.items()]
+        trigger_extra = f"\n🚨 ПОШТОВХ: Ринок рухнувся — {', '.join(pairs)}"
+    elif trigger_type == "vip_email" and isinstance(trigger_data, dict):
+        trigger_extra = f"\n📬 VIP ЛИСТ: від «{trigger_data.get('from','?')}» — тема: «{trigger_data.get('subject','?')}»"
+    elif trigger_type == "event_soon":
+        if isinstance(trigger_data, list) and trigger_data:
+            evts = "; ".join(str(e) for e in trigger_data[:3])
+            trigger_extra = f"\n⏰ НЕЗАБАРОМ: {evts}"
+    elif trigger_type == "idle_timeout":
+        trigger_extra = f"\n😴 Олег неактивний {idle_hours:.1f} год | Локація: {location}"
+
+    # ── Shift context ─────────────────────────────────────────────────────────
+    h = live["hour"]
+    if 6 <= h < 12:
+        period = "РАНОК — заряди на день"
+    elif 12 <= h < 17:
+        period = "ОБІД — перевір прогрес"
+    elif 17 <= h < 22:
+        period = "ВЕЧІР — підсумуй і відпочинь"
+    else:
+        period = "НІЧ — спокій і відновлення"
+
+    # ── Prompt ────────────────────────────────────────────────────────────────
+    prompt = f"""Ти персональний AI-асистент Олега Новосадова (36р, Кошіце SK, Minebea Mitsumi, крипто-інвестор, бігун, ціль: фінансова незалежність + схуднення до 78 кг).
+
+ТРИГЕР: {trigger_type} | ЧАС: {period}
+СТИЛЬ: {tone['emoji']} {tone['tone']}
+ЛОКАЦІЯ: {location}{trigger_extra}
+
+━━━━━━━━━━━━━━━━━━ ПОТОЧНІ ЖИВІ ДАНІ ━━━━━━━━━━━━━━━━━━
+{live_ctx}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{anti_repeat}
+
+ЗАВДАННЯ:
+Напиши ЖИВЕ, ОСОБИСТЕ повідомлення 250-350 слів УКРАЇНСЬКОЮ.
+
+Вимоги:
+1. ВИКОРИСТАЙ реальні цифри з "ПОТОЧНІ ЖИВІ ДАНІ" — ціни, вагу, кроки, листи, події
+2. НЕ пиши "Даних немає" — якщо дані є, використай; якщо немає — зроби розумний висновок без цієї фрази
+3. Стиль ЖИВИЙ і ОСОБИСТИЙ — як старший друг, не корпоративний бот
+4. Конкретні рекомендації — не "відпочинь", а "зроби X зараз"
+5. Структура: 1 яскраве вступне речення → основний аналіз → 2-3 конкретні дії
+6. НЕ повторюй попередні теми (анти-репіт вище)
+7. Максимум 400 слів — якість важливіша за кількість
+
+ПОЧНИ З: "Привіт Олеже! {tone['emoji']}"
+"""
+
+    body = {
+        "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+        "generationConfig": {
+            "maxOutputTokens": 700,
+            "temperature": 0.85,
+            "thinkingConfig": {"thinkingBudget": 0}
+        }
+    }
+    message = _gemini_post(body, timeout=25, tag=f"MSG_{trigger_type.upper()}")
+
+    # ── Fallback if Gemini fails ──────────────────────────────────────────────
+    if not message:
+        crypto = live.get("crypto", {})
+        health = live.get("health", {})
+        now_str = live["now_str"]
+        parts = [f"Привіт Олеже! {tone['emoji']}\n"]
+        if crypto:
+            btc = crypto.get("BTC", {})
+            if btc:
+                parts.append(f"💹 BTC зараз: ${btc['price']:,.0f} ({btc['change_24h']:+.1f}% за 24г)")
+        if health.get("weight"):
+            delta = health.get("weight_7d_delta", 0)
+            parts.append(f"⚖️ Вага: {health['weight']} кг ({delta:+.1f} кг за тиж)")
+        parts.append(f"\n⏰ {now_str} | {location}")
+        message = "\n".join(parts)
+
+    return message
+
+# ─── Telegram sender ─────────────────────────────────────────────────────────
+def _send_to_telegram(text: str) -> bool:
+    if not text or not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
+        return False
+    for attempt in range(3):
+        try:
+            url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+            body = {"chat_id": TELEGRAM_CHAT_ID, "text": text, "parse_mode": "HTML"}
+            req = urllib.request.Request(
+                url, data=json.dumps(body).encode(),
+                headers={"Content-Type": "application/json"}, method="POST"
+            )
+            with urllib.request.urlopen(req, timeout=12) as resp:
+                r = json.loads(resp.read())
+                if r.get("ok"):
+                    _log(f"✅ Sent {len(text)} chars")
+                    return True
+                _log(f"TG error: {r.get('description','?')}")
+        except Exception as e:
+            _log(f"TG send {attempt+1}: {e}")
+            time.sleep(2 + attempt * 2)
+    return False
+
+# ─── Main API ─────────────────────────────────────────────────────────────────
+def process_trigger(trigger_type: str, trigger_data, location: str = "doma", idle_hours: float = 0) -> bool:
+    _log(f"Processing: {trigger_type}")
+    if not TELEGRAM_TOKEN:
+        _log("❌ No TELEGRAM_TOKEN")
+        return False
+    if not GEMINI_API_KEY:
+        _log("⚠️ No GEMINI_API_KEY — fallback only")
+
+    try:
+        if not _should_send_message(trigger_type, trigger_data):
+            _log(f"Skipping {trigger_type}")
+            return False
+
+        message = _generate_message(trigger_type, trigger_data, location, idle_hours)
+        if not message:
+            return False
+
+        success = _send_to_telegram(message)
+        if success:
+            # Save first 100 chars as "topic" for anti-repeat
+            topic = message[:100].replace("\n", " ")
+            _save_to_history(trigger_type, topic)
+        return success
+    except Exception as e:
+        _log(f"❌ process_trigger: {e}")
+        return False
+
+
 if __name__ == "__main__":
-    # TEST tone variations
-    for ttype in ["morning", "vip_email", "crypto_move", "health"]:
-        for h in [6, 12, 18, 23]:
-            var = get_tone_variation(ttype, h)
-            print(f"{ttype:15} at {h:2}h → {var['tone']:12} {var['emoji']}")
+    print("=== Message Generator v2.0 ===")
+    live = _get_live_data()
+    print("\n--- LIVE DATA ---")
+    print(_build_live_context(live))
+    print("\n--- HISTORY ---")
+    hist = _load_history()
+    for h in hist:
+        print(f"  {h.get('ts','')[:16]} [{h.get('trigger','')}] {h.get('topic','')[:60]}")
+    print("\n--- TONE VARIATIONS ---")
+    for ttype in ["morning", "crypto_move", "vip_email", "health", "evening"]:
+        for hr in [7, 13, 20]:
+            v = get_tone_variation(ttype, hr)
+            print(f"  {ttype:15} @{hr:02d}h → {v['emoji']} {v['tone']}")
