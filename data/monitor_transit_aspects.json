@@ -1,31 +1,31 @@
 {
   "sun__jupiter__0": {
-    "orb": 0.05,
+    "orb": 0.03,
     "sent": false,
     "exact_sent": true
   },
   "sun__saturn__180": {
-    "orb": 1.27,
+    "orb": 1.29,
     "sent": false,
     "exact_sent": true
   },
   "sun__neptune__180": {
-    "orb": 0.94,
+    "orb": 0.92,
     "sent": false,
     "exact_sent": false
   },
   "moon__pluto__60": {
-    "orb": 0.1,
+    "orb": 0.35,
     "sent": false,
     "exact_sent": true
   },
   "mars__mars__120": {
-    "orb": 0.36,
+    "orb": 0.34,
     "sent": false,
     "exact_sent": true
   },
   "mars__uranus__150": {
-    "orb": 0.24,
+    "orb": 0.23,
     "sent": false,
     "exact_sent": true
   },
@@ -35,12 +35,12 @@
     "exact_sent": true
   },
   "jupiter__mars__60": {
-    "orb": 1.48,
+    "orb": 1.47,
     "sent": false,
     "exact_sent": false
   },
   "jupiter__uranus__150": {
-    "orb": 1.36,
+    "orb": 1.35,
     "sent": false,
     "exact_sent": false
   },
