@@ -100,26 +100,35 @@ def _gemini_post(body: dict, timeout: int = 25, tag: str = "") -> str:
 
 # ─── Live Data ────────────────────────────────────────────────────────────────
 def _get_live_crypto() -> dict:
-    """CoinGecko free API — BTC/ETH/AVAX/ONDO."""
+    """CoinGecko free API — BTC/ETH/AVAX/ONDO via /coins/markets for real 24h change."""
     try:
-        ids = "bitcoin,ethereum,avalanche-2,ondo"
-        url = (f"https://api.coingecko.com/api/v3/simple/price"
-               f"?ids={ids}&vs_currencies=usd"
-               f"&include_24h_change=true&include_7d_change=true")
+        ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
+        url = (
+            "https://api.coingecko.com/api/v3/coins/markets"
+            "?vs_currency=usd&ids=" + ids +
+            "&order=market_cap_desc&per_page=10&page=1&sparkline=false"
+            "&price_change_percentage=24h,7d"
+        )
         req = urllib.request.Request(url, headers={"User-Agent": "SmartAssistantBot/2.0"})
-        with urllib.request.urlopen(req, timeout=8) as resp:
+        with urllib.request.urlopen(req, timeout=12) as resp:
             raw = json.loads(resp.read())
-        mapping = {"bitcoin": "BTC", "ethereum": "ETH", "avalanche-2": "AVAX", "ondo": "ONDO"}
+        mapping = {
+            "bitcoin": "BTC", "ethereum": "ETH",
+            "avalanche-2": "AVAX", "ondo-finance": "ONDO"
+        }
         result = {}
-        for cid, cname in mapping.items():
-            if cid in raw:
-                coin = raw[cid]
+        for coin in raw:
+            cid = coin.get("id", "")
+            if cid in mapping:
+                cname = mapping[cid]
                 result[cname] = {
-                    "price":       round(coin.get("usd", 0), 2),
-                    "change_24h":  round(coin.get("usd_24h_change", 0), 2),
-                    "change_7d":   round(coin.get("usd_7d_change", 0), 2),
+                    "price":      round(coin.get("current_price") or 0, 4),
+                    "change_24h": round(coin.get("price_change_percentage_24h") or 0, 2),
+                    "change_7d":  round(coin.get("price_change_percentage_7d_in_currency") or 0, 2),
                 }
-        summary = ", ".join(f"{k}=${v['price']}({v['change_24h']:+.1f}%)" for k, v in result.items())
+        summary = ", ".join(
+            f"{k}=${v['price']}({v['change_24h']:+.1f}%)" for k, v in result.items()
+        )
         _log(f"Crypto: {summary}")
         return result
     except Exception as e:
@@ -127,10 +136,13 @@ def _get_live_crypto() -> dict:
         return {}
 
 def _get_live_health() -> dict:
-    """Latest weight, steps, sleep from data files."""
+    """Latest weight, steps, sleep from data files (weight.json, daily_health.json, health.json)."""
     result = {}
+    today_str = datetime.now(tz=_TZ).strftime("%Y-%m-%d")
+    yesterday = (datetime.now(tz=_TZ) - timedelta(days=1)).strftime("%Y-%m-%d")
+
+    # 1) Weight from weight.json
     try:
-        # Weight
         wfile = os.path.join(_DATA_DIR, "weight.json")
         if os.path.exists(wfile):
             with open(wfile) as f:
@@ -139,35 +151,68 @@ def _get_live_health() -> dict:
                 latest = sorted(wdata.keys())[-1]
                 result["weight"] = wdata[latest]
                 result["weight_date"] = latest
-                # Trend: compare with 7 days ago
                 week_ago = (datetime.now(tz=_TZ) - timedelta(days=7)).strftime("%Y-%m-%d")
                 old_keys = [k for k in sorted(wdata.keys()) if k <= week_ago]
                 if old_keys:
-                    old_w = wdata[old_keys[-1]]
-                    result["weight_7d_delta"] = round(result["weight"] - old_w, 1)
+                    result["weight_7d_delta"] = round(result["weight"] - wdata[old_keys[-1]], 1)
     except Exception as e:
         _log(f"Weight read error: {e}")
 
+    # 2) Steps/sleep from daily_health.json
     try:
-        # Health (steps, sleep)
         hfile = os.path.join(_DATA_DIR, "daily_health.json")
         if os.path.exists(hfile):
             with open(hfile) as f:
                 hdata = json.load(f)
             entries = hdata.get("entries", hdata) if isinstance(hdata, dict) else {}
-            if entries:
-                today_str = datetime.now(tz=_TZ).strftime("%Y-%m-%d")
-                yesterday = (datetime.now(tz=_TZ) - timedelta(days=1)).strftime("%Y-%m-%d")
+            for day in [today_str, yesterday]:
+                if day in entries:
+                    e = entries[day]
+                    if not result.get("steps"):
+                        result["steps"] = e.get("steps") or e.get("steps_count")
+                    if not result.get("sleep"):
+                        result["sleep"] = e.get("sleep_hours") or e.get("sleep")
+                    result["health_date"] = day
+                    break
+    except Exception as e:
+        _log(f"daily_health read error: {e}")
+
+    # 3) Fallback: health.json (older format with steps)
+    try:
+        hfile2 = os.path.join(_DATA_DIR, "health.json")
+        if os.path.exists(hfile2):
+            with open(hfile2) as f:
+                hdata2 = json.load(f)
+            if isinstance(hdata2, dict):
                 for day in [today_str, yesterday]:
-                    if day in entries:
-                        e = entries[day]
-                        result["steps"]       = e.get("steps", 0)
-                        result["sleep"]       = e.get("sleep_hours", 0)
-                        result["health_date"] = day
+                    if day in hdata2:
+                        e = hdata2[day]
+                        if isinstance(e, dict):
+                            if not result.get("steps") and e.get("steps"):
+                                result["steps"] = e["steps"]
+                            if not result.get("weight") and e.get("weight"):
+                                result["weight"] = e["weight"]
+                                result["weight_date"] = day
                         break
     except Exception as e:
-        _log(f"Health read error: {e}")
+        _log(f"health.json read error: {e}")
 
+    # 4) Fallback: monitor_day_summary.json for today's stats
+    try:
+        dsfile = os.path.join(_DATA_DIR, "monitor_day_summary.json")
+        if os.path.exists(dsfile):
+            with open(dsfile) as f:
+                ds = json.load(f)
+            if isinstance(ds, dict):
+                if not result.get("weight") and ds.get("weight"):
+                    result["weight"] = ds["weight"]
+                    result["weight_date"] = ds.get("date", today_str)
+                if not result.get("steps") and ds.get("steps"):
+                    result["steps"] = ds["steps"]
+    except Exception as e:
+        _log(f"day_summary read error: {e}")
+
+    _log(f"Health: weight={result.get('weight')}, steps={result.get('steps')}, sleep={result.get('sleep')}")
     return result
 
 def _get_live_emails(max_emails: int = 5) -> list:
@@ -400,13 +445,8 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
     """Main generation: collect live data → build prompt with context → Gemini."""
 
     # ── Special engines ──────────────────────────────────────────────────────
-    if trigger_type == "deep_analysis" and _DEEP_ANALYSIS_AVAILABLE:
-        try:
-            result = build_deep_analysis(location, idle_hours)
-            if result:
-                return result
-        except Exception as e:
-            _log(f"deep_analysis failed: {e}")
+    # deep_analysis: use live-data Gemini (same as other triggers) for accurate data
+    # No longer delegates to deep_analysis_engine which had stale crypto/health data
 
     if trigger_type in ("briefing", "contextual_briefing"):
         if _BRIEFING_V3_AVAILABLE:

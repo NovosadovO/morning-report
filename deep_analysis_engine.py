@@ -117,7 +117,35 @@ def _load_health():
         }
     except Exception as e:
         _log(f"Health load error: {e}")
-        return {}
+
+    # Fallback: weight.json
+    try:
+        wfile = os.path.join(_DATA_DIR, "weight.json")
+        if os.path.exists(wfile):
+            with open(wfile) as f:
+                wdata = json.load(f)
+            if wdata:
+                latest_key = sorted(wdata.keys())[-1]
+                latest_w = wdata[latest_key]
+                # Build minimal health dict if empty
+                result = {
+                    "weight_current": latest_w,
+                    "weight_start_month": latest_w,
+                    "weight_trend": 0,
+                    "runs_month": 0,
+                    "sleep_avg": 0,
+                    "entries_30d": 1,
+                }
+                week_ago = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
+                old_keys = [k for k in sorted(wdata.keys()) if k <= week_ago]
+                if old_keys:
+                    result["weight_start_month"] = wdata[old_keys[-1]]
+                    result["weight_trend"] = round(latest_w - wdata[old_keys[-1]], 1)
+                _log(f"Weight fallback: {latest_w}kg from {latest_key}")
+                return result
+    except Exception as e2:
+        _log(f"Weight fallback error: {e2}")
+    return {}
 
 def _load_emails():
     """Важливі листи за 24h"""
@@ -199,24 +227,31 @@ def _load_socials():
     return {"facebook_last_post": None, "youtube_last_post": None}
 
 def _load_crypto():
-    """BTC/ETH цінові дані"""
+    """BTC/ETH/AVAX/ONDO via /coins/markets (real 24h change)"""
     try:
-        url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,avalanche-2,ondo&vs_currencies=usd&include_24h_change=true"
-        req = urllib.request.Request(url, headers={"User-Agent": "OlegBot"})
-        
-        with urllib.request.urlopen(req, timeout=5) as resp:
-            data = json.loads(resp.read())
-            
-            return {
-                "BTC": {
-                    "price": data.get("bitcoin", {}).get("usd"),
-                    "change_24h": data.get("bitcoin", {}).get("usd_24h_change", 0),
-                },
-                "ETH": {
-                    "price": data.get("ethereum", {}).get("usd"),
-                    "change_24h": data.get("ethereum", {}).get("usd_24h_change", 0),
-                },
-            }
+        ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
+        url = (
+            "https://api.coingecko.com/api/v3/coins/markets"
+            "?vs_currency=usd&ids=" + ids +
+            "&order=market_cap_desc&per_page=10&page=1&sparkline=false"
+            "&price_change_percentage=24h"
+        )
+        req = urllib.request.Request(url, headers={"User-Agent": "OlegBot/2.0"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            raw = json.loads(resp.read())
+        mapping = {
+            "bitcoin": "BTC", "ethereum": "ETH",
+            "avalanche-2": "AVAX", "ondo-finance": "ONDO"
+        }
+        result = {}
+        for coin in raw:
+            cid = coin.get("id", "")
+            if cid in mapping:
+                result[mapping[cid]] = {
+                    "price":      round(coin.get("current_price") or 0, 4),
+                    "change_24h": round(coin.get("price_change_percentage_24h") or 0, 2),
+                }
+        return result
     except Exception as e:
         _log(f"Crypto load error: {e}")
         return {}
