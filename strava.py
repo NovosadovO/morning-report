@@ -116,8 +116,29 @@ def _load_activity_cache() -> dict | None:
     except Exception:
         return None
 
+def _compute_when(start_date_local_iso: str) -> str:
+    """Рахує 'сьогодні/вчора/N дн. тому' ЗАВЖДИ динамічно від поточного моменту —
+    ніколи не бере застаріле значення з кешу."""
+    try:
+        start_dt = datetime.fromisoformat(start_date_local_iso.replace("Z", ""))
+        now = datetime.now()
+        is_today = start_dt.date() == now.date()
+        is_yesterday = start_dt.date() == (now - timedelta(days=1)).date()
+        if is_today:
+            return "сьогодні"
+        elif is_yesterday:
+            return "вчора"
+        else:
+            days_ago = (now.date() - start_dt.date()).days
+            return f"{days_ago} дн. тому"
+    except Exception:
+        return "невідомо коли"
+
+
 def get_last_activity():
-    """Повертає dict з даними останнього тренування або None"""
+    """Повертає dict з даними останнього тренування або None.
+    ЗАВЖДИ перераховує 'when' (сьогодні/вчора/N днів тому) від АКТУАЛЬНОГО часу,
+    навіть якщо дані беруться зі старого кешу — щоб не показувати застарілу дату."""
     try:
         token = _get_access_token()
         r = requests.get(
@@ -130,7 +151,10 @@ def get_last_activity():
         activities = r.json()
 
         if not activities:
-            return _load_activity_cache()
+            cached = _load_activity_cache()
+            if cached and cached.get("start_date_local"):
+                cached["when"] = _compute_when(cached["start_date_local"])
+            return cached
 
         a = activities[0]
         distance_km = a["distance"] / 1000
@@ -147,21 +171,10 @@ def get_last_activity():
             pace_str = "—"
 
         # Дата
-        start_dt = datetime.fromisoformat(a["start_date_local"].replace("Z", ""))
+        start_date_local_iso = a["start_date_local"]
+        start_dt = datetime.fromisoformat(start_date_local_iso.replace("Z", ""))
         date_str = start_dt.strftime("%d.%m %H:%M")
-
-        # Чи сьогодні
-        now = datetime.now()
-        is_today = start_dt.date() == now.date()
-        is_yesterday = start_dt.date() == (now - timedelta(days=1)).date()
-
-        if is_today:
-            when = "сьогодні"
-        elif is_yesterday:
-            when = "вчора"
-        else:
-            days_ago = (now.date() - start_dt.date()).days
-            when = f"{days_ago} дн. тому"
+        when = _compute_when(start_date_local_iso)
 
         result = {
             "name": a.get("name", "Тренування"),
@@ -171,6 +184,7 @@ def get_last_activity():
             "pace": pace_str,
             "date": date_str,
             "when": when,
+            "start_date_local": start_date_local_iso,
             "elevation": a.get("total_elevation_gain", 0),
             "hr": a.get("average_heartrate"),
             "kudos": a.get("kudos_count", 0),
@@ -179,10 +193,15 @@ def get_last_activity():
         return result
     except Exception as e:
         print(f"Strava get_last_activity error: {e}")
-        # Fallback: кешовані дані
+        # Fallback: кешовані дані — але 'when' ЗАВЖДИ перераховуємо від поточного часу
         cached = _load_activity_cache()
         if cached:
             print("Strava: using cached last activity")
+            if cached.get("start_date_local"):
+                cached["when"] = _compute_when(cached["start_date_local"])
+            else:
+                # Старий кеш без start_date_local — не довіряємо статичному 'when'
+                cached["when"] = "дата невідома (старий кеш)"
         return cached
 
 

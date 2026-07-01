@@ -448,8 +448,26 @@ def _strava_text(strava: dict) -> str:
     if not strava:
         return ""
     s = strava
+    # Рахуємо "коли" ЗАВЖДИ динамічно від поточної дати — щоб AI не плутав "4 дні тому" з учора
+    when_str = ""
+    try:
+        _lrd = s.get("last_run_date", "")
+        if _lrd:
+            _rd = datetime.strptime(_lrd, "%Y-%m-%d").date()
+            _today = datetime.now().date()
+            _diff = (_today - _rd).days
+            if _diff == 0:
+                when_str = "СЬОГОДНІ"
+            elif _diff == 1:
+                when_str = "ВЧОРА"
+            elif _diff > 1:
+                when_str = f"{_diff} ДНІВ ТОМУ"
+            else:
+                when_str = _lrd
+    except Exception:
+        when_str = ""
     lines = [
-        f"🏃 Остання пробіжка ({s.get('last_run_date','?')}): {s.get('last_run_km','?')} км"
+        f"🏃 Остання пробіжка — {when_str} ({s.get('last_run_date','?')}): {s.get('last_run_km','?')} км"
         f" за {s.get('last_run_min','?')} хв, темп {s.get('last_run_pace','?')}",
         f"   За тиждень: {s.get('weekly_runs','?')} пробіжок = {s.get('weekly_km','?')} км",
     ]
@@ -612,6 +630,7 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
 
 Вимоги:
 1. ВИКОРИСТАЙ реальні цифри з "ПОТОЧНІ ЖИВІ ДАНІ" — ціни, вагу, кроки, листи, події
+0. КРИТИЧНО: для дат (пробіжка, події) використовуй ТІЛЬКИ слово СЬОГОДНІ/ВЧОРА/N ДНІВ ТОМУ, яке вказане в даних нижче — НІКОЛИ не вигадуй і не змінюй цю інформацію, навіть якщо здається що дата стара
 2. НЕ пиши "Даних немає" — якщо дані є, використай; якщо немає — зроби розумний висновок без цієї фрази
 3. Стиль ЖИВИЙ і ОСОБИСТИЙ — як старший друг, не корпоративний бот
 4. Конкретні рекомендації — не "відпочинь", а "зроби X зараз"

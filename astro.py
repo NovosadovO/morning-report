@@ -855,13 +855,36 @@ def get_natal_transits_short(max_aspects=5):
             if np:
                 natal_data.append((name_ua, np.abs_pos))
 
+        # Додаємо Асцендент (ASC) до натальних точок — важливо для транзитів!
+        natal_asc_pos = None
+        try:
+            natal_asc_pos = natal.ascendant.abs_pos
+            natal_data.append(("Асцендент (ASC)", natal_asc_pos))
+        except Exception:
+            pass
+
         transit_lons  = [lon for _, lon in transit_data]
         transit_names = [n   for n, _   in transit_data]
         natal_lons    = [lon for _, lon in natal_data]
         natal_names   = [n   for n, _   in natal_data]
 
         aspects = _transit_aspects(natal_lons, transit_lons, natal_names, transit_names, orb=3.0)
-        if not aspects:
+
+        # ── Перевірка: чи транзитна планета ЩОЙНО перейшла у знак натального Асценденту ──
+        ingress_lines = []
+        try:
+            asc_sign = natal.ascendant.sign
+            for key, name_ua in PLANETS_LIST:
+                tp = getattr(transit, key, None)
+                if tp and tp.sign == asc_sign and key in ("jupiter", "saturn", "uranus", "neptune", "pluto"):
+                    ingress_lines.append(
+                        f"🌟 <b>{name_ua} увійшов у знак твого Асценденту ({_sign_ua(asc_sign) if '_sign_ua' in dir() else asc_sign})!</b> "
+                        f"Це РІДКІСНИЙ і ВАЖЛИВИЙ транзит — торкається особистості, зовнішнього вигляду, нового циклу в житті."
+                    )
+        except Exception:
+            pass
+
+        if not aspects and not ingress_lines:
             return None
 
         # Фаза місяця
@@ -873,6 +896,10 @@ def get_natal_transits_short(max_aspects=5):
         lines = [f"🔮 <b>АСТРО — транзити до натальних планет</b>"]
         lines.append(f"{moon_phase_name}  ·  Місяць у <b>{moon_sign_ua}</b>")
         lines.append(f"<i>{MOON_SIGN_TIPS.get(moon_sign_ua, '')}</i>\n")
+        if ingress_lines:
+            for il in ingress_lines:
+                lines.append(il)
+            lines.append("")
         for t_planet, n_planet, asp, emoji, exact in aspects[:max_aspects]:
             lines.append(f"{emoji} {t_planet} {asp} натальний {n_planet}  <i>({exact:.1f}°)</i>")
             desc = get_aspect_description(t_planet, asp, n_planet)
