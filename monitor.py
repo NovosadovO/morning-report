@@ -2574,40 +2574,40 @@ def _build_report_header(now_local, slot_key, cal_events_raw):
 
     _vibes = {
         "early_morning": [
-            "Ранній підйом — ти вже попереду 💪",
-            "04:хх — рання зміна, вперед! ⚡",
-            "Рано встав — день виграв 🌄",
-            "Підйом! Ранкова зміна чекає 🏭",
+            "Ранній старт — поки інші сплять, ти вже в грі 🏆",
+            "Бігун і трейдер прокидається першим — вперед до мети! 🌄",
+            "Рання зміна: Minebea чекає, BTC вже торгує 🏭⚡",
+            "Дисципліна бігуна — щоденний старт 05:00 → 78кг ближче 🏃",
         ],
         "morning": [
-            "Ранок вирішує день! 🌅",
-            "Доброго ранку, Олег! ☕ Заряджаємось.",
-            "Новий день — нові можливості 💪",
-            "Ранок — найпродуктивніший час! 🚀",
+            "Ранок — перевірив BTC, поїв, побіг. Це і є фінансова свобода 🚀",
+            "Кожен кілометр бігу — крок до 78кг і нової версії себе 🏃💰",
+            "Сонце над Кошіце — хороший знак для крипто і для бігу 🌅",
+            "Ранок Олега: Strava + CoinGecko + кава. Ідеальна комбінація ☕📈",
         ],
         "midday": [
-            "Половина дня позаду — тримаємо темп 🔥",
-            "Середина дня — перевіряємо пульс 📡",
-            "Не забудь нормально поїсти 😄",
-            "11–14: найкращий час для складних рішень 🧠",
+            "Середина дня — час перевірити ONDO і з'їсти щось нормальне 🥗",
+            "Якщо AVAX рухається — ти вже знаєш. Якщо ні — їж і відпочинь 💪",
+            "Обід у Кошіце: 500 ккал максимум, портфель моніториться 🎯",
+            "Денний чекап: тіло, крипто, пошта — і назад до роботи 🔥",
         ],
         "afternoon": [
-            "Після обіду — фокус! 🎯",
-            "Друга половина дня, Олег 💼",
-            "Час для справ 📋",
-            "Фінальний відрізок дня 🏁",
+            "Фінальний відрізок дня — зроби 1 річ яку відкладав 🏁",
+            "15:хх: AVAX і ONDO готуються до вечірньої волатильності 📊",
+            "Після обіду мозок на піку — ідеально для аналізу InterFin 🧠",
+            "Кошіце вдень: якщо не на роботі — час для пробіжки! 🏃",
         ],
         "evening": [
-            "Вечір — підбиваємо підсумки 🌙",
-            "Гарний день? Занотуй результати ✍️",
-            "Вечірній огляд — всі показники ✅",
-            "Завтра буде ще кращий день! 🌟",
+            "Вечір — підбиваємо: скільки кг скинув, скільки % заробив? 🌙",
+            "Зірки Кошіце і ONDO обидва в русі — вечір для стратегії 🌟",
+            "Вечірній аналіз: 1 добрий лист InterFin > 10 поганих рішень 💼",
+            "Завтра бігти? Тоді зараз лягати. Дисципліна — це і є свобода ✍️",
         ],
         "night": [
-            "Вже пізно — не забудь відпочити 😴",
-            "Нічний моніторинг 🦉",
-            "Тихо навколо — час для себе 🌌",
-            "Опівніч — зберігай сили 💤",
+            "Нічний сторож: BTC не спить, і ти теж моніториш 🦉",
+            "Опівніч у Кошіце — ринок ніколи не закривається, але ти маєш право на сон 🌌",
+            "Нічна стратегія: переглянути графіки, скласти план на ранок 🌙",
+            "Тихо навколо — найкращий час для глибоких думок про майбутнє 💤",
         ],
     }
     _vibe = _vibes[period][seed_int % len(_vibes[period])]
@@ -5118,7 +5118,7 @@ def check_crypto_weekly_summary():
             try:
                 payload = json.dumps({
                     "contents": [{"parts": [{"text": prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 800, "temperature": 0.7}
+                    "generationConfig": {"maxOutputTokens": 1400, "temperature": 0.7}
                 }).encode()
                 req = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -5247,7 +5247,7 @@ def check_investment_news_digest():
 
         payload = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"maxOutputTokens": 800, "temperature": 0.6}
+            "generationConfig": {"maxOutputTokens": 1400, "temperature": 0.6}
         }).encode()
         req = urllib.request.Request(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -6474,7 +6474,7 @@ def check_week_goals():
 
         payload = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"maxOutputTokens": 800, "temperature": 0.8}
+            "generationConfig": {"maxOutputTokens": 1400, "temperature": 0.8}
         }).encode()
         req = urllib.request.Request(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -7591,7 +7591,7 @@ def check_strava_new_activity():
                 )
                 payload = _json_s.dumps({
                     "contents": [{"parts": [{"text": prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 600, "temperature": 0.7}
+                    "generationConfig": {"maxOutputTokens": 1000, "temperature": 0.7}
                 }).encode()
                 req_ai = _ur_s.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
@@ -8275,7 +8275,7 @@ def check_invest_coach():
             )
             body = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 600, "temperature": 0.7},
+                "generationConfig": {"maxOutputTokens": 1000, "temperature": 0.7},
             }).encode()
             req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -8385,7 +8385,7 @@ def _send_diary_weekly_analysis(diary: dict):
             )
             body = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 600, "temperature": 0.7},
+                "generationConfig": {"maxOutputTokens": 1000, "temperature": 0.7},
             }).encode()
             req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -8526,7 +8526,7 @@ def check_health_weekly_tracker():
             )
             body = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 700, "temperature": 0.7},
+                "generationConfig": {"maxOutputTokens": 1200, "temperature": 0.7},
             }).encode()
             req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -8582,7 +8582,7 @@ def _get_crypto_ai_analysis(crypto_alert: dict, gemini_key: str = None) -> str:
         body = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 300,
+                "maxOutputTokens": 600,
                 "temperature": 0.6,
                 "thinkingConfig": {"thinkingBudget": 0}
             },
@@ -8630,7 +8630,7 @@ def _get_health_ai_analysis(health_alert: dict, gemini_key: str = None) -> str:
         body = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 250,
+                "maxOutputTokens": 500,
                 "temperature": 0.7,
                 "thinkingConfig": {"thinkingBudget": 0}
             },
@@ -8681,7 +8681,7 @@ def _generate_email_reply_templates(email_text: str, sender: str, subject: str, 
         body = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 400,
+                "maxOutputTokens": 800,
                 "temperature": 0.7,
                 "thinkingConfig": {"thinkingBudget": 0}
             },
@@ -8749,7 +8749,7 @@ def _get_daily_recommendations(context: dict, gemini_key: str = None) -> str:
         body = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "maxOutputTokens": 600,
+                "maxOutputTokens": 1000,
                 "temperature": 0.8,
                 "thinkingConfig": {"thinkingBudget": 0}
             },
@@ -9730,37 +9730,9 @@ def main():
         import traceback as _tb_comb
         print(f"combined chart error: {_e_combined}\n{_tb_comb.format_exc()}", flush=True)
 
-    # ── Блок 7: КУРС ВАЛЮТ ────────────────────────────────────────────────────
-    try:
-        _currency_text = get_currency_rates()
-        if _currency_text:
-            parts.append(_section_header("💱", "КУРС ВАЛЮТ") + "\n" + "\n".join(_currency_text.split("\n")[1:]) if "\n" in _currency_text else _section_header("💱", "КУРС ВАЛЮТ") + "\n" + _currency_text)
-    except Exception as _e_curr:
-        print(f"currency rates error: {_e_curr}")
+    # ── Блок 7: КУРС ВАЛЮТ — ВИДАЛЕНО ─────────────────────────────────────────
 
-    # ── Блок 8: ПОРТФЕЛЬ — з динамікою ───────────────────────────────────────
-    try:
-        import sys as _sys_pf
-        _sys_pf.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from portfolio import format_portfolio_block
-        _pf_text = format_portfolio_block(short=True)
-        if _pf_text:
-            # Збагачуємо заголовок портфелю
-            _pf_lines = _pf_text.split("\n")
-            _pf_header = _section_header("💼", "ПОРТФЕЛЬ")
-            # шукаємо суму і P&L
-            _total_m = _re_rep.search(r"\$([\d,]+)", _pf_text)
-            _pnl_m   = _re_rep.search(r"P&L[:\s]*([+\-]?\$[\d,]+)", _pf_text, _re_rep.I)
-            _day_m   = _re_rep.search(r"За 24г[:\s]*([+\-]?\$[\d,]+)", _pf_text, _re_rep.I)
-            if _total_m:
-                _pf_header += f"  💰 <b>${_total_m.group(1)}</b>"
-            if _day_m:
-                _day_v = _day_m.group(1)
-                _day_icon = "📈" if "+" in _day_v else "📉"
-                _pf_header += f"  {_day_icon} {_day_v} сьогодні"
-            parts.append(_pf_header + "\n" + "\n".join(_pf_lines[1:] if len(_pf_lines) > 1 else _pf_lines))
-    except Exception as _e_pf:
-        print(f"portfolio block error: {_e_pf}")
+    # ── Блок 8: ПОРТФЕЛЬ — ВИДАЛЕНО ────────────────────────────────────────────
 
     # ── Вага + звички за місяць — КОЖЕН звіт ─────────────────────────────────
     # ── Тижневий підсумок — неділя о 20:20-20:29 ──────────────────────────────
@@ -10083,26 +10055,33 @@ def main():
                     f"=== ДАНІ ЗВІТУ ===\n"
                     f"{_full_report_ctx}\n"
                     f"=================\n\n"
-                    f"Напиши стислий персональний AI-аналіз. Структура ТОЧНО така:\n\n"
-                    f"⚡ ЗАРАЗ\n"
-                    f"[2-3 речення: точний статус (на роботі/вдома/готується до зміни) + головний пріоритет на найближчу годину. "
-                    f"Якщо нічна зміна — говори про роботу/завод, НЕ про сон і відпочинок.]\n\n"
-                    f"💹 КРИПТО\n"
-                    f"[3-4 речення: точні ціни BTC/ETH/AVAX/ONDO зі звіту + % рух + стан ринку + конкретна порада: тримати/докупити/зафіксувати і чому]\n\n"
-                    f"⚖️ ТІЛО\n"
-                    f"[3 речення: поточна вага + відстань до цілі 78 кг + кроки/біг + прийнято чи ні Armolopid]\n\n"
-                    f"🌤 ДЕНЬ\n"
-                    f"[2-3 речення: погода Кошіце + важливі події + критична пошта якщо є]\n\n"
-                    f"🎯 ЦІЛЬ\n"
-                    f"[2 речення: 1 конкретна дія сьогодні — без кліше, без загальних слів. Або схуднення, або крипто, або нова робота — вибери найактуальніше]\n\n"
+                    f"ВАЖЛИВО: Звіт вже містить окремі детальні блоки (крипто, тіло, пошта тощо). НЕ ПОВТОРЮЙ їхні цифри — зроби УНІКАЛЬНИЙ персональний вступ.\n\n"
+                    f"Напиши ЛАЙФ-КОУЧ вступ до звіту. Структура ТОЧНО така:\n\n"
+                    f"🧭 ВЕКТОР ДНЯ\n"
+                    f"[3-4 речення: що НАЙВАЖЛИВІШЕ для Олега прямо зараз з точки зору його 3 цілей: "
+                    f"(1) фінансова незалежність через крипто і InterFin, (2) схуднення до 78 кг, (3) нова робота в інвестиціях. "
+                    f"Яка ціль найближча до прориву? Що блокує прогрес? Яка 1 дія дасть максимальний ефект сьогодні? "
+                    f"Враховуй зміну — якщо на заводі пиши що реально зробити на роботі або після.]\n\n"
+                    f"💡 ІНСАЙТ ДНЯ\n"
+                    f"[3-4 речення: ОДИН глибокий нестандартний інсайт. Вибери найактуальніше з:\n"
+                    f"- Астрологічне: яка транзитна планета СЬОГОДНІ впливає на Олега (натальна: Сонце+Меркурій+Марс в Дівах, Венера+Плутон в IV Скорпіоні, Місяць в Близнюках, Юпітер+Сатурн+Уран в VI Козерозі)\n"
+                    f"- Стратегічне крипто: нетиповий кут погляду на AVAX або ONDO позицію — не просто тримати\n"
+                    f"- Бігун і метаболізм: як пробіжка сьогодні впливає на вагу і жироспалення за тиждень\n"
+                    f"- Психологічне: патерн дисципліни або мотивації який допоможе Олегу прямо зараз]\n\n"
+                    f"🎯 3 КОНКРЕТНІ ДІЇ ЗАРАЗ\n"
+                    f"[Точно 3 дії. Формат: 1. [що зробити] — [чому саме зараз, яку ціль наближає]\n"
+                    f"Дії РЕАЛЬНО ВИКОНУВАНІ: якщо Олег на заводі — дія для роботи або після. Якщо вдома — домашня. "
+                    f"Привязуй до реального контексту звіту (наявні листи, події, погода, стан вага/кроки).]\n\n"
                     f"ПОТОЧНИЙ СТАН ОЛЕГА (якщо є): {_user_state_ctx}\n\n"
-                    f"ПРАВИЛА: тільки реальні числа зі звіту. Якщо даних немає — пропусти пункт. БЕЗ астро в цьому блоці. БЕЗ вступів. Тон: прямий, конкретний. ОБОВ'ЯЗКОВО завершуй кожне речення повністю — не обривай на середині. [seed:{_seed_b}]"
+                    f"ПРАВИЛА: БЕЗ вступу типу Привіт. НЕ повторюй цифри крипто і вагу — вони в звіті нижче. "
+                    f"Стиль: розумний особистий коуч, не корпоративний бот. Тон мотивуючий але конкретний. "
+                    f"Мінімум 500 слів. Кожне речення завершувати повністю. [seed:{_seed_b}]"
                 )
                 _brief_payload = json.dumps({
                     "contents": [{"parts": [{"text": _brief_prompt}]}],
                     "generationConfig": {
-                        "maxOutputTokens": 4000,
-                        "temperature": 0.8,
+                        "maxOutputTokens": 8000,
+                        "temperature": 0.85,
                         "thinkingConfig": {"thinkingBudget": 0},
                     },
                 }).encode()
@@ -12550,7 +12529,7 @@ def check_crypto_weekly_summary():
             try:
                 payload = json.dumps({
                     "contents": [{"parts": [{"text": prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 800, "temperature": 0.7}
+                    "generationConfig": {"maxOutputTokens": 1400, "temperature": 0.7}
                 }).encode()
                 req = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -12679,7 +12658,7 @@ def check_investment_news_digest():
 
         payload = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"maxOutputTokens": 800, "temperature": 0.6}
+            "generationConfig": {"maxOutputTokens": 1400, "temperature": 0.6}
         }).encode()
         req = urllib.request.Request(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -13906,7 +13885,7 @@ def check_week_goals():
 
         payload = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"maxOutputTokens": 800, "temperature": 0.8}
+            "generationConfig": {"maxOutputTokens": 1400, "temperature": 0.8}
         }).encode()
         req = urllib.request.Request(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -15023,7 +15002,7 @@ def check_strava_new_activity():
                 )
                 payload = _json_s.dumps({
                     "contents": [{"parts": [{"text": prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 600, "temperature": 0.7}
+                    "generationConfig": {"maxOutputTokens": 1000, "temperature": 0.7}
                 }).encode()
                 req_ai = _ur_s.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
@@ -15707,7 +15686,7 @@ def check_invest_coach():
             )
             body = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 600, "temperature": 0.7},
+                "generationConfig": {"maxOutputTokens": 1000, "temperature": 0.7},
             }).encode()
             req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -15817,7 +15796,7 @@ def _send_diary_weekly_analysis(diary: dict):
             )
             body = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 600, "temperature": 0.7},
+                "generationConfig": {"maxOutputTokens": 1000, "temperature": 0.7},
             }).encode()
             req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
@@ -15958,7 +15937,7 @@ def check_health_weekly_tracker():
             )
             body = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 700, "temperature": 0.7},
+                "generationConfig": {"maxOutputTokens": 1200, "temperature": 0.7},
             }).encode()
             req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
