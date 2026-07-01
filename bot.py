@@ -1876,6 +1876,15 @@ def handle_command(chat_id, text):
                 _ds.path.insert(0, _dos.path.dirname(__file__))
                 import strava as _dstr
                 import importlib as _dim; _dim.reload(_dstr)
+                # Перевіряємо refresh token і access token окремо, щоб бачити ТОЧНУ причину
+                _rt = _dstr._get_refresh_token()
+                lines.append(f"Strava refresh_token: {'✅ знайдено (' + str(len(_rt)) + ' симв)' if _rt else '❌ НЕМАЄ (ні в env, ні в GitHub)'}")
+                if _rt:
+                    try:
+                        _at = _dstr._get_access_token()
+                        lines.append(f"Strava access_token: ✅ отримано ({_at[:15]}...)")
+                    except Exception as _ate:
+                        lines.append(f"Strava access_token: ❌ {type(_ate).__name__}: {str(_ate)[:250]}")
                 _dla = _dstr.get_last_activity()
                 if _dla:
                     _stale_tag = " ⚠️ STALE (API недоступне, старий кеш!)" if _dla.get("stale") else " ✅ LIVE (свіжі дані з API)"
