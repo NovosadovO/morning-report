@@ -1870,6 +1870,20 @@ def handle_command(chat_id, text):
                         lines.append(f"Gemini API: ❌ {_resp.status_code} → {_resp.text[:200]}")
                 except Exception as _ge:
                     lines.append(f"Gemini API: ❌ {type(_ge).__name__}: {str(_ge)[:200]}")
+            # 6. Strava live-перевірка (щоб бачити чи дані актуальні, чи stale-кеш)
+            try:
+                import sys as _ds, os as _dos
+                _ds.path.insert(0, _dos.path.dirname(__file__))
+                import strava as _dstr
+                import importlib as _dim; _dim.reload(_dstr)
+                _dla = _dstr.get_last_activity()
+                if _dla:
+                    _stale_tag = " ⚠️ STALE (API недоступне, старий кеш!)" if _dla.get("stale") else " ✅ LIVE (свіжі дані з API)"
+                    lines.append(f"Strava: {_dla.get('when','?')} ({_dla.get('date','?')}) — {_dla.get('distance_km','?')} км{_stale_tag}")
+                else:
+                    lines.append("Strava: ❌ немає даних (ні API, ні кешу)")
+            except Exception as _se:
+                lines.append(f"Strava: ❌ {type(_se).__name__}: {str(_se)[:150]}")
             send(chat_id, "\n".join(lines))
         except Exception as _e_diag:
             import traceback
