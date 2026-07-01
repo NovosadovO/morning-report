@@ -5,8 +5,8 @@
 """
 import os, json, urllib.parse, urllib.request
 
-CLIENT_ID     = os.environ.get("GMAIL_CLIENT_ID", "878341164164-4qki4apv3mmo2s8006v9ks10q61sf5uk.apps.googleusercontent.com")
-CLIENT_SECRET = os.environ.get("GMAIL_CLIENT_SECRET", "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")
+CLIENT_ID     = os.environ.get("GMAIL_CLIENT_ID", "")
+CLIENT_SECRET = os.environ.get("GMAIL_CLIENT_SECRET", "")
 
 SCOPES = " ".join([
     "https://www.googleapis.com/auth/gmail.readonly",

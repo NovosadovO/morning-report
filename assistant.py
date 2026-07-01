@@ -85,9 +85,9 @@ def _token():
         return None
 
 def _gmail_token():
-    cid  = os.environ.get("GMAIL_CLIENT_ID", "878341164164-4qki4apv3mmo2s8006v9ks10q61sf5uk.apps.googleusercontent.com")
-    csec = os.environ.get("GMAIL_CLIENT_SECRET", "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")
-    rtok = os.environ.get("GMAIL_REFRESH_TOKEN", "1//06Fo6TgMdtzM6CgYIARAAGAYSNwF-L9IrUgnpTv2b_BQ8dszP9vpdAU5ejStbBW6CQ39FIvKOd-SIpOL_JPMC7cgxWV8dHJwJ8x8")
+    cid  = os.environ.get("GMAIL_CLIENT_ID", "")
+    csec = os.environ.get("GMAIL_CLIENT_SECRET", "")
+    rtok = os.environ.get("GMAIL_REFRESH_TOKEN", "")
     try:
         body = urllib.parse.urlencode({
             "client_id": cid, "client_secret": csec,

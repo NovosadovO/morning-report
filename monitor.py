@@ -1192,9 +1192,9 @@ def is_spam(sender, subject):
 
 def _gmail_access_token():
     """Отримує Gmail access token через refresh token."""
-    client_id     = os.environ.get("GMAIL_CLIENT_ID", "878341164164-mm5q8t2kuk26dj44prkjvl1k27q15026.apps.googleusercontent.com")
-    client_secret = os.environ.get("GMAIL_CLIENT_SECRET", "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")
-    refresh_token = os.environ.get("GMAIL_REFRESH_TOKEN", "1//06mfG58ga3PC6CgYIARAAGAYSNwF-L9IrEkVK67K4DHR4Dj2icDG1OA2q1BlKaRUeJHBv49mbgbhA8SaZCdpBmClcnEtFnGUsCkE")
+    client_id     = os.environ.get("GMAIL_CLIENT_ID", "")
+    client_secret = os.environ.get("GMAIL_CLIENT_SECRET", "")
+    refresh_token = os.environ.get("GMAIL_REFRESH_TOKEN", "")
     if not all([client_id, client_secret, refresh_token]):
         return None
     try:
