@@ -138,7 +138,9 @@ def _compute_when(start_date_local_iso: str) -> str:
 def get_last_activity():
     """Повертає dict з даними останнього тренування або None.
     ЗАВЖДИ перераховує 'when' (сьогодні/вчора/N днів тому) від АКТУАЛЬНОГО часу,
-    навіть якщо дані беруться зі старого кешу — щоб не показувати застарілу дату."""
+    навіть якщо дані беруться зі старого кешу — щоб не показувати застарілу дату.
+    Якщо API недоступне і використовується кеш — ставить прапор 'stale': True,
+    щоб інші частини системи (AI-промпти) НЕ видавали ці дані за live-актуальні."""
     try:
         token = _get_access_token()
         r = requests.get(
@@ -154,6 +156,7 @@ def get_last_activity():
             cached = _load_activity_cache()
             if cached and cached.get("start_date_local"):
                 cached["when"] = _compute_when(cached["start_date_local"])
+                cached["stale"] = False  # API відповіло успішно, просто немає активностей
             return cached
 
         a = activities[0]
@@ -188,20 +191,21 @@ def get_last_activity():
             "elevation": a.get("total_elevation_gain", 0),
             "hr": a.get("average_heartrate"),
             "kudos": a.get("kudos_count", 0),
+            "stale": False,  # свіжі дані напряму з API
         }
         _save_activity_cache(result)
         return result
     except Exception as e:
         print(f"Strava get_last_activity error: {e}")
-        # Fallback: кешовані дані — але 'when' ЗАВЖДИ перераховуємо від поточного часу
+        # Fallback: кешовані дані — але 'when' ЗАВЖДИ перераховуємо, і СТАВИМО ПРАПОР stale
         cached = _load_activity_cache()
         if cached:
-            print("Strava: using cached last activity")
+            print("Strava: using cached last activity (API failed — marking as STALE)")
             if cached.get("start_date_local"):
                 cached["when"] = _compute_when(cached["start_date_local"])
             else:
-                # Старий кеш без start_date_local — не довіряємо статичному 'when'
                 cached["when"] = "дата невідома (старий кеш)"
+            cached["stale"] = True  # API недоступне — це НЕ гарантовано свіжі дані
         return cached
 
 
@@ -263,7 +267,10 @@ def format_strava_block():
 
     if last:
         is_today = last.get("when") == "сьогодні"
-        if is_today:
+        is_stale = last.get("stale", False)
+        if is_stale:
+            lines.append(f"\n⚠️ <b>Strava API недоступне — показані ОСТАННІ ВІДОМІ дані (можуть бути неактуальні):</b>")
+        elif is_today:
             lines.append(f"\n<b>Актуальне тренування:</b>")
         else:
             # Показуємо дату останнього тренування

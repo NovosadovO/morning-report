@@ -9882,9 +9882,10 @@ def main():
             from strava import get_last_activity as _gla_th
             _la_th = _gla_th()
             if _la_th and _la_th.get("distance_km", 0) >= 0.3:
+                _stale_warn = " ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні!" if _la_th.get("stale") else ""
                 _th_ctx["running"] = (f"Остання пробіжка — {_la_th.get('when','?').upper()} ({_la_th.get('date','?')}): "
                                       f"{_la_th.get('distance_km')} км за {_la_th.get('duration_min','?')} хв, "
-                                      f"темп {_la_th.get('pace','—')}. "
+                                      f"темп {_la_th.get('pace','—')}.{_stale_warn} "
                                       f"ВАЖЛИВО: довіряй лише слову '{_la_th.get('when','?')}' — це актуальний розрахунок, не вигадуй іншу дату.")
             else:
                 _th_ctx["running"] = "Сьогодні пробіжки ще не було."
