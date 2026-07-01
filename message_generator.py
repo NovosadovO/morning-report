@@ -215,31 +215,67 @@ def _get_live_health() -> dict:
     _log(f"Health: weight={result.get('weight')}, steps={result.get('steps')}, sleep={result.get('sleep')}")
     return result
 
-def _get_live_emails(max_emails: int = 5) -> list:
-    """Last important emails via IMAP."""
+def _get_live_emails(max_emails: int = 8) -> list:
+    """Last important emails via IMAP — includes STARRED + recent 3 days."""
     if not GMAIL_APP_PASS:
         return []
     try:
         mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
         mail.login(GMAIL_USER, GMAIL_APP_PASS)
         mail.select("INBOX")
+
+        # Recent 3 days
         since = (datetime.now() - timedelta(days=3)).strftime("%d-%b-%Y")
-        _, msgs = mail.search(None, f"SINCE {since}")
-        if not msgs[0]:
-            return []
-        ids = msgs[0].split()[-max_emails:]
+        _, msgs_recent = mail.search(None, f"SINCE {since}")
+        recent_ids = set(msgs_recent[0].split()) if msgs_recent[0] else set()
+
+        # STARRED (Flagged) — ALWAYS include regardless of date
+        try:
+            _, msgs_star = mail.search(None, "FLAGGED")
+            starred_ids = set(msgs_star[0].split()) if msgs_star[0] else set()
+        except Exception:
+            starred_ids = set()
+
+        # starred first, then recent
+        starred_list = sorted(starred_ids, key=lambda x: int(x))
+        recent_list  = [i for i in sorted(recent_ids, key=lambda x: int(x)) if i not in starred_ids]
+        starred_to_use = starred_list[-4:]
+        recent_to_use  = recent_list[-(max_emails - len(starred_to_use)):]
+        final_ids = list(dict.fromkeys(starred_to_use + recent_to_use))
+
         result = []
-        skip_kw = ["unsubscribe", "newsletter", "noreply", "no-reply",
-                   "marketing", "promo", "notification", "доставка"]
-        for eid in reversed(ids):
-            _, data = mail.fetch(eid, "(RFC822)")
-            msg = email_lib.message_from_bytes(data[0][1])
-            sender  = _decode_str(msg.get("From", ""))
-            subject = _decode_str(msg.get("Subject", ""))
-            date    = msg.get("Date", "")
-            if any(k in (sender + subject).lower() for k in skip_kw):
+        skip_kw = ["noreply@youtube", "no-reply@youtube",
+                   "noreply@duolingo", "no-reply@duolingo", "maps-timeline",
+                   "noreply@medium", "notification@facebookmail"]
+        seen_subjects = set()
+
+        for eid in reversed(final_ids):
+            if len(result) >= max_emails:
+                break
+            try:
+                _, data = mail.fetch(eid, "(RFC822)")
+                if not data or not data[0]:
+                    continue
+                msg = email_lib.message_from_bytes(data[0][1])
+                sender  = _decode_str(msg.get("From", ""))
+                subject = _decode_str(msg.get("Subject", ""))
+                date    = msg.get("Date", "")
+                is_starred = eid in starred_ids
+                if any(k in (sender + subject).lower() for k in skip_kw):
+                    continue
+                key = subject[:40].lower()
+                if key in seen_subjects:
+                    continue
+                seen_subjects.add(key)
+                result.append({
+                    "from":    sender[:60],
+                    "subject": subject[:80],
+                    "date":    date[:30],
+                    "starred": is_starred,
+                })
+            except Exception:
                 continue
-            result.append({"from": sender[:60], "subject": subject[:80], "date": date[:30]})
+
         mail.close(); mail.logout()
         return result
     except Exception as e:
@@ -258,6 +294,48 @@ def _decode_str(s: str) -> str:
         return "".join(out)
     except:
         return str(s)
+
+def _get_live_strava() -> dict:
+    """Fetch recent Strava activities (last 7 days)."""
+    try:
+        import sys, os as _os
+        sys.path.insert(0, _os.path.dirname(__file__))
+        from strava import _get_access_token
+        import urllib.request as _ur2, json as _j2
+        token = _get_access_token()
+        if not token:
+            return {}
+        # Last 7 days activities
+        after_ts = int((datetime.now() - timedelta(days=7)).timestamp())
+        url = f"https://www.strava.com/api/v3/athlete/activities?after={after_ts}&per_page=10"
+        req = _ur2.Request(url, headers={"Authorization": f"Bearer {token}"})
+        with _ur2.urlopen(req, timeout=8) as r:
+            acts = _j2.loads(r.read())
+        if not acts:
+            return {}
+        runs = [a for a in acts if a.get("type") in ("Run", "VirtualRun")]
+        if not runs:
+            return {}
+        last = runs[0]
+        km = round(last.get("distance", 0) / 1000, 2)
+        duration_min = round(last.get("moving_time", 0) / 60, 1)
+        pace_sec = (last.get("moving_time", 0) / (last.get("distance", 1) / 1000)) if last.get("distance") else 0
+        pace_str = f"{int(pace_sec//60)}:{int(pace_sec%60):02d}/км" if pace_sec else "—"
+        date_str = last.get("start_date_local", "")[:10]
+        weekly_km = round(sum(a.get("distance", 0) for a in runs) / 1000, 1)
+        total_runs = len(runs)
+        return {
+            "last_run_km":    km,
+            "last_run_date":  date_str,
+            "last_run_pace":  pace_str,
+            "last_run_min":   duration_min,
+            "last_run_name":  last.get("name", "Пробіжка"),
+            "weekly_km":      weekly_km,
+            "weekly_runs":    total_runs,
+        }
+    except Exception as e:
+        _log(f"Strava error: {e}")
+        return {}
 
 def _get_live_calendar() -> list:
     """Try to get upcoming events via monitor.get_upcoming_events()."""
@@ -278,12 +356,14 @@ def _get_live_data() -> dict:
     _log("Collecting live data...")
     crypto   = _get_live_crypto()
     health   = _get_live_health()
-    emails   = _get_live_emails(max_emails=4)
+    strava   = _get_live_strava()
+    emails   = _get_live_emails(max_emails=8)
     calendar = _get_live_calendar()
     now      = datetime.now(tz=_TZ)
     return {
         "crypto":   crypto,
         "health":   health,
+        "strava":   strava,
         "emails":   emails,
         "calendar": calendar,
         "now_str":  now.strftime("%d.%m.%Y %H:%M"),
@@ -358,8 +438,22 @@ def _health_text(health: dict) -> str:
 def _emails_text(emails: list) -> str:
     if not emails:
         return "Листи: нових важливих листів немає"
-    lines = [f"  • {e['from'][:40]} — {e['subject']}" for e in emails[:4]]
-    return "Нові листи:\n" + "\n".join(lines)
+    lines = []
+    for e in emails[:6]:
+        star = "⭐" if e.get("starred") else "•"
+        lines.append(f"  {star} {e['from'][:40]} — {e['subject']}")
+    return "Нові листи (включно із зірочками):\n" + "\n".join(lines)
+
+def _strava_text(strava: dict) -> str:
+    if not strava:
+        return ""
+    s = strava
+    lines = [
+        f"🏃 Остання пробіжка ({s.get('last_run_date','?')}): {s.get('last_run_km','?')} км"
+        f" за {s.get('last_run_min','?')} хв, темп {s.get('last_run_pace','?')}",
+        f"   За тиждень: {s.get('weekly_runs','?')} пробіжок = {s.get('weekly_km','?')} км",
+    ]
+    return "\n".join(lines)
 
 def _calendar_text(events: list) -> str:
     if not events:
@@ -367,12 +461,17 @@ def _calendar_text(events: list) -> str:
     return "Найближчі події:\n" + "\n".join(f"  {e}" for e in events[:5])
 
 def _build_live_context(data: dict) -> str:
+    strava_str = _strava_text(data.get("strava", {}))
     parts = [
         f"📅 {data['weekday']}, {data['now_str']}",
         "",
         _crypto_text(data.get("crypto", {})),
         "",
         _health_text(data.get("health", {})),
+    ]
+    if strava_str:
+        parts += ["", strava_str]
+    parts += [
         "",
         _emails_text(data.get("emails", [])),
         "",

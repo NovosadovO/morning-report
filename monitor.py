@@ -1590,11 +1590,19 @@ def get_emails():
             primary_all_uids = [u.decode() for u in fallback[0].split()]
             primary_unread_uids = set(primary_all_uids)
 
-        # Об'єднуємо: всі непрочитані + останні 15 прочитаних, від нових до старих
+        # Starred emails — ALWAYS include (user starred them = important)
+        try:
+            _, p_starred = mail.uid('search', None, 'FLAGGED')
+            starred_uids = set(u.decode() for u in p_starred[0].split()) if p_starred[0].strip() else set()
+        except Exception:
+            starred_uids = set()
+
+        # Об'єднуємо: starred + непрочитані + останні 15 прочитаних, від нових до старих
         combined = list(dict.fromkeys(
-            list(primary_unread_uids) + primary_all_uids[-15:]
+            list(starred_uids) + list(primary_unread_uids) + primary_all_uids[-15:]
         ))
         combined = sorted(combined, key=lambda x: int(x))[::-1]
+        primary_unread_uids = primary_unread_uids | starred_uids  # starred shown as important
 
         # Мінімальний чорний список — тільки явні системні нотифікації
         # (YouTube, Duolingo, Maps тощо що Gmail іноді кладе в Primary)
@@ -9808,11 +9816,11 @@ def main():
                 )
                 _keyboard = {"inline_keyboard": [
                     [
+                        {"text": "✍️ Відповісти",  "callback_data": f"email_reply_{_uid}"},
                         {"text": "📖 Описати лист", "callback_data": f"email_describe_{_uid}"},
-                        {"text": "📅 В календар",   "callback_data": f"email_cal_{_uid}"},
                     ],
                     [
-                        {"text": "📥 Залишити",     "callback_data": f"email_keep_{_uid}"},
+                        {"text": "📅 В календар",   "callback_data": f"email_cal_{_uid}"},
                         {"text": "🗑 Видалити",     "callback_data": f"email_delete_{_uid}"},
                     ]
                 ]}
