@@ -9796,7 +9796,7 @@ def main():
                 )
                 _keyboard = {"inline_keyboard": [
                     [
-                        {"text": "✍️ Відповісти",  "callback_data": f"email_reply_{_uid}"},
+                        {"text": "🤖✍️ AI-Draft відповіді", "callback_data": f"email_reply_{_uid}"},
                         {"text": "📖 Описати лист", "callback_data": f"email_describe_{_uid}"},
                     ],
                     [

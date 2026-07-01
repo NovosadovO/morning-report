@@ -793,7 +793,7 @@ def handle_email_callback(callback_query):
     elif data.startswith("email_reply_"):
         # Генеруємо AI draft відповіді + кнопки [Надіслати] [Скасувати]
         uid_str = data[len("email_reply_"):]
-        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "✍️ Готую draft..."})
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "🤖 AI готує варіант відповіді..."})
         try:
             import sys, os as _os, urllib.request as _ur
             sys.path.insert(0, _os.path.dirname(__file__))
@@ -840,12 +840,16 @@ def handle_email_callback(callback_query):
                 _DRAFT_STORE[uid_str] = {"to": to_addr, "subject": f"Re: {subject}", "body": draft}
 
                 send_with_keyboard(chat_id,
-                    f"✍️ <b>Draft відповіді</b>\n"
-                    f"<i>Кому: {to_addr[:60]}\nТема: Re: {subject[:50]}</i>\n\n"
-                    f"{draft}\n\n"
-                    f"<i>Надіслати цей draft?</i>",
+                    f"🤖 <b>AI підготував варіант відповіді</b> — перевір і відредагуй за потреби 👇\n\n"
+                    f"┌─────────────────────\n"
+                    f"│ 📤 <b>Кому:</b> {to_addr[:60]}\n"
+                    f"│ 📌 <b>Тема:</b> Re: {subject[:50]}\n"
+                    f"└─────────────────────\n\n"
+                    f"✏️ <b>Текст листа (запропоновано AI):</b>\n"
+                    f"<i>«{draft}»</i>\n\n"
+                    f"👉 Натисни <b>Надіслати</b> щоб відправити як є, або напиши мені свій варіант текстом.",
                     [[
-                        {"text": "✉️ Надіслати", "callback_data": f"email_send_{uid_str}"},
+                        {"text": "✅ Надіслати як є", "callback_data": f"email_send_{uid_str}"},
                         {"text": "❌ Скасувати", "callback_data": f"email_cancel_{uid_str}"}
                     ]]
                 )
