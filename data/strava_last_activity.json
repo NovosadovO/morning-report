@@ -1,12 +1,14 @@
 {
-  "name": "Nike Run Club: Friday Evening Run",
+  "name": "Nike Run Club: Tuesday Evening Run",
   "type": "Run",
-  "distance_km": 7.0,
-  "duration_min": 46,
-  "pace": "6:35 хв/км",
-  "date": "26.06 19:56",
-  "when": "4 дн. тому",
-  "elevation": 19.0,
-  "hr": 157.6,
-  "kudos": 0
+  "distance_km": 7.01,
+  "duration_min": 47,
+  "pace": "6:45 хв/км",
+  "date": "30.06 18:45",
+  "when": "2 дн. тому",
+  "start_date_local": "2026-06-30T18:45:01Z",
+  "elevation": 25.0,
+  "hr": 162.5,
+  "kudos": 0,
+  "stale": false
 }
