@@ -7,4 +7,6 @@ google-auth-httplib2
 google-api-python-client
 yfinance
 kerykeion==5.12.8
+pypdf==4.3.1
+python-docx==1.1.2
 # Force rebuild 1782077042

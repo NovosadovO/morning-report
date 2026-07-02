@@ -1571,6 +1571,105 @@ def _imap_get_body(msg):
             pass
     return body[:3000]
 
+
+def _imap_get_attachments(msg, max_files=3, max_chars_each=3000):
+    """
+    Витягує ВКЛАДЕНІ файли листа (PDF/DOCX/TXT) і повертає їх текст.
+    Повертає список: [{"filename": "...", "text": "...", "error": None|"..."}]
+    Для форматів що не вдалось розпарсити — повертає filename + error,
+    щоб AI знав що вкладення БУЛО, навіть якщо зміст не витягли.
+    """
+    results = []
+    if not msg.is_multipart():
+        return results
+
+    for part in msg.walk():
+        cd = str(part.get("Content-Disposition", ""))
+        filename = part.get_filename()
+        if not filename or "attachment" not in cd.lower():
+            continue
+        if len(results) >= max_files:
+            break
+
+        try:
+            filename = _imap_decode_header(filename)
+        except Exception:
+            pass
+
+        fname_low = filename.lower()
+        entry = {"filename": filename, "text": "", "error": None}
+
+        try:
+            raw_bytes = part.get_payload(decode=True)
+            if not raw_bytes:
+                entry["error"] = "порожній вкладений файл"
+                results.append(entry)
+                continue
+
+            if fname_low.endswith(".pdf"):
+                try:
+                    import io as _io
+                    from pypdf import PdfReader
+                    reader = PdfReader(_io.BytesIO(raw_bytes))
+                    text_pages = []
+                    for page in reader.pages[:10]:
+                        try:
+                            text_pages.append(page.extract_text() or "")
+                        except Exception:
+                            pass
+                    entry["text"] = "\n".join(text_pages).strip()[:max_chars_each]
+                    if not entry["text"]:
+                        entry["error"] = "PDF без текстового шару (можливо скан/зображення)"
+                except Exception as _pe:
+                    entry["error"] = f"не вдалось прочитати PDF: {_pe}"
+
+            elif fname_low.endswith(".docx"):
+                try:
+                    import io as _io
+                    from docx import Document
+                    doc = Document(_io.BytesIO(raw_bytes))
+                    entry["text"] = "\n".join(p.text for p in doc.paragraphs).strip()[:max_chars_each]
+                    if not entry["text"]:
+                        entry["error"] = "DOCX порожній або без тексту"
+                except Exception as _de:
+                    entry["error"] = f"не вдалось прочитати DOCX: {_de}"
+
+            elif fname_low.endswith((".txt", ".csv", ".json", ".log", ".md")):
+                try:
+                    entry["text"] = raw_bytes.decode("utf-8", errors="replace").strip()[:max_chars_each]
+                except Exception as _te:
+                    entry["error"] = f"не вдалось прочитати текстовий файл: {_te}"
+
+            elif fname_low.endswith((".png", ".jpg", ".jpeg", ".gif", ".heic", ".webp")):
+                entry["error"] = "зображення — текстовий зміст недоступний без OCR"
+
+            elif fname_low.endswith((".xlsx", ".xls")):
+                entry["error"] = "Excel-файл — текстовий зміст не витягнуто (потрібен окремий парсер)"
+
+            else:
+                entry["error"] = f"формат файлу не підтримується для читання ({fname_low.rsplit('.', 1)[-1] if '.' in fname_low else '?'})"
+
+        except Exception as _e:
+            entry["error"] = f"помилка обробки вкладення: {_e}"
+
+        results.append(entry)
+
+    return results
+
+
+def _format_attachments_for_ai(attachments):
+    """Форматує список вкладень у текстовий блок для промпту AI."""
+    if not attachments:
+        return ""
+    lines = ["\n\n📎 ВКЛАДЕНІ ФАЙЛИ ДО ЛИСТА:"]
+    for a in attachments:
+        lines.append(f"\n— Файл: {a['filename']}")
+        if a.get("text"):
+            lines.append(f"Зміст файлу:\n{a['text']}")
+        else:
+            lines.append(f"(зміст не вдалось прочитати: {a.get('error', 'невідома причина')})")
+    return "\n".join(lines)
+
 def get_emails():
     try:
         mail = _imap_connect()

@@ -393,58 +393,61 @@ def handle_email_callback(callback_query):
             orig_text = callback_query["message"].get("text", "")
             orig_kb   = callback_query["message"].get("reply_markup", {})
 
-            # ── Читаємо з кешу ───────────────────────────────────────────────
-            cache = _storage.load("email_body_cache.json") or {}
-            entry = cache.get(_uid)
-            print(f"[email_describe] cache entry={'found' if entry else 'MISS'}", flush=True)
-
-            if not entry:
+            # ── Завжди підключаємось напряму до IMAP (не лише з кешу) щоб дістати ПОВНИЙ текст + вкладення ──
+            attachments_block = ""
+            try:
+                from monitor import _imap_connect, _imap_get_body, _imap_decode_header, _imap_get_attachments, _format_attachments_for_ai
+                import email as _email_lib
+                _mail = _imap_connect()
+                _mail.select("INBOX")
+                _, _md = _mail.uid('fetch', _uid.encode(), "(RFC822)")
+                _mail.logout()
+                _msg = _email_lib.message_from_bytes(_md[0][1])
+                subject = _imap_decode_header(_msg.get("Subject", "(без теми)"))
+                sender  = _imap_decode_header(_msg.get("From", ""))
+                body    = _imap_get_body(_msg)
                 try:
-                    import imaplib, email as _email_lib, socket
-                    socket.setdefaulttimeout(25)
-                    _mail = imaplib.IMAP4_SSL(os.environ.get("IMAP_HOST", "imap.gmail.com"), timeout=25)
-                    _mail.login(os.environ.get("EMAIL_USER", ""), os.environ.get("EMAIL_PASS", ""))
-                    _mail.select("INBOX")
-                    _, _md = _mail.uid('fetch', _uid.encode(), "(RFC822)")
-                    _mail.logout()
-                    _msg = _email_lib.message_from_bytes(_md[0][1])
-                    import email.header as _eh
-                    def _dh(v):
-                        if not v: return ""
-                        parts = _eh.decode_header(v)
-                        return " ".join(p.decode(e or "utf-8", errors="replace") if isinstance(p, bytes) else str(p) for p, e in parts)
-                    subject = _dh(_msg.get("Subject", "(без теми)"))
-                    sender  = _dh(_msg.get("From", ""))
-                    body = ""
-                    if _msg.is_multipart():
-                        for _part in _msg.walk():
-                            if _part.get_content_type() == "text/plain":
-                                body = _part.get_payload(decode=True).decode(_part.get_content_charset() or "utf-8", errors="replace")
-                                break
-                    else:
-                        body = _msg.get_payload(decode=True).decode(_msg.get_content_charset() or "utf-8", errors="replace")
-                    entry = {"subject": subject, "sender": sender, "body": body[:2000]}
-                except Exception as _fe:
+                    _attachments = _imap_get_attachments(_msg)
+                except Exception as _ae:
+                    print(f"[email_describe] attachments error: {_ae}", flush=True)
+                    _attachments = []
+                attachments_block = _format_attachments_for_ai(_attachments)
+                entry = {"subject": subject, "sender": sender, "body": body}
+            except Exception as _fe:
+                print(f"[email_describe] direct fetch failed: {_fe}, falling back to cache", flush=True)
+                cache = _storage.load("email_body_cache.json") or {}
+                entry = cache.get(_uid)
+                if not entry:
                     api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"⚠️ Лист не знайдено"})
                     return
 
             subject = entry.get("subject", "(без теми)")
             sender  = entry.get("sender", "")
             body    = entry.get("body", "")
+            body_is_empty = not body.strip()
 
             # ── Gemini ───────────────────────────────────────────────────────
+            _empty_note = ""
+            if body_is_empty and attachments_block:
+                _empty_note = (
+                    "\n\nВАЖЛИВО: текст самого листа ПОРОЖНІЙ, але є вкладені файли — аналізуй саме їх зміст "
+                    "(розділ 📎 ВКЛАДЕНІ ФАЙЛИ нижче), а не пиши generic опис порожнього листа."
+                )
+            elif body_is_empty and not attachments_block:
+                _empty_note = "\n\nВАЖЛИВО: лист порожній і без вкладень — чесно напиши це у розділі СУТЬ, не вигадуй зміст."
             prompt = (
                 "Проаналізуй цей email і відповідай ТІЛЬКИ українською. Без зірочок, без markdown.\n"
                 "Формат — 4 розділи. Пиши стисло але повно — кожен розділ завершуй повністю:\n\n"
                 "ВІДПРАВНИК\n"
                 "1-2 речення: хто це, компанія, роль.\n\n"
                 "СУТЬ\n"
-                "4-5 речень: що пропонують/повідомляють, контекст, головне послання.\n\n"
+                "4-5 речень: що пропонують/повідомляють, контекст, головне послання (враховуючи і вкладені файли якщо є).\n\n"
                 "ДЕТАЛІ\n"
                 "2-3 речення: факти, дати, суми, умови, посилання.\n\n"
                 "ДІЇ\n"
                 "2-3 речення: що конкретно зробити, в який термін, пріоритет.\n\n"
-                f"Лист:\nВід: {sender}\nТема: {subject}\n\n{body[:3000]}"
+                f"Лист:\nВід: {sender}\nТема: {subject}\n\nТекст листа:\n{body[:3000] if body.strip() else '(порожньо)'}"
+                f"{attachments_block}{_empty_note}"
             )
             req_body = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
@@ -797,7 +800,7 @@ def handle_email_callback(callback_query):
         try:
             import sys, os as _os, urllib.request as _ur
             sys.path.insert(0, _os.path.dirname(__file__))
-            from monitor import _imap_connect, _imap_get_body, _imap_decode_header
+            from monitor import _imap_connect, _imap_get_body, _imap_decode_header, _imap_get_attachments, _format_attachments_for_ai
             import email as _email_lib
 
             mail = _imap_connect()
@@ -811,19 +814,40 @@ def handle_email_callback(callback_query):
                 sender  = _imap_decode_header(msg.get("From", ""))
                 body    = _imap_get_body(msg)
 
+                # Читаємо вкладені файли (PDF/DOCX/TXT) — щоб AI бачив ПОВНИЙ контекст листа
+                try:
+                    attachments = _imap_get_attachments(msg)
+                except Exception as _ae:
+                    print(f"email_reply attachments error: {_ae}")
+                    attachments = []
+                attachments_block = _format_attachments_for_ai(attachments)
+
+                body_is_empty = not body.strip()
+
                 # AI draft
                 api_key = _os.environ.get("GEMINI_API_KEY", "")
+                if body_is_empty and attachments:
+                    _empty_note = (
+                        f"\n\nВАЖЛИВО: текст самого листа ПОРОЖНІЙ, але до листа прикріплено файл(и) — "
+                        f"дивись розділ '📎 ВКЛАДЕНІ ФАЙЛИ' нижче. Проаналізуй саме ЇХ зміст і відповідай по суті вкладення, "
+                        f"а не generic привітанням."
+                    )
+                else:
+                    _empty_note = ""
                 prompt = (
                     f"Ти пишеш від імені Олега Новосадова (novosadovoleg@gmail.com).\n"
-                    f"Напиши КОРОТКИЙ і природній draft відповіді на цей лист.\n"
-                    f"Від: {sender}\nТема: {subject}\n\n{body[:2000]}\n\n"
-                    f"ВАЖЛИВО: відповідай ТІЄЮ САМОЮ МОВОЮ на якій написаний оригінальний лист. "
+                    f"Уважно прочитай ПОВНИЙ текст листа і всі вкладені файли нижче, і напиши ЗМІСТОВНИЙ draft відповіді "
+                    f"по суті (не generic привітання).\n"
+                    f"Від: {sender}\nТема: {subject}\n\nТекст листа:\n{body[:3000] if body.strip() else '(порожньо)'}"
+                    f"{attachments_block}{_empty_note}\n\n"
+                    f"ВАЖЛИВО: відповідай ТІЄЮ САМОЮ МОВОЮ на якій написаний оригінальний лист (або вкладення, якщо лист порожній). "
                     f"Якщо лист словацькою — відповідь словацькою. Якщо англійською — англійською. Якщо українською — українською. "
-                    f"По-людськи, не формально. 3-6 речень максимум."
+                    f"По-людськи, не формально, по суті деталей з листа/вкладення. Якщо реально нема на що відповісти по суті — "
+                    f"чесно напиши про це замість порожнього привітання. 3-8 речень максимум."
                 )
                 payload = _json.dumps({
                     "contents": [{"parts": [{"text": prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 300, "temperature": 0.85}
+                    "generationConfig": {"maxOutputTokens": 500, "temperature": 0.7, "thinkingConfig": {"thinkingBudget": 0}}
                 }).encode()
                 req = _ur.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}",
