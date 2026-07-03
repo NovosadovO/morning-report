@@ -452,5 +452,19 @@
     "spo2": null,
     "source": "qwatch",
     "saved_at": "2026-07-02 23:53"
+  },
+  "2026-07-03": {
+    "date": "2026-07-03",
+    "health_score": 78,
+    "steps": 17283,
+    "sleep_quality": 100,
+    "hr_avg": 65,
+    "calories": 363,
+    "weight_kg": 83.0,
+    "height_cm": 175,
+    "gender": "male",
+    "spo2": null,
+    "source": "qwatch",
+    "saved_at": "2026-07-03 23:58"
   }
 }
