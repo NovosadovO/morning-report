@@ -2172,30 +2172,35 @@ def handle_command(chat_id, text):
 
     elif text in ["/звіт", "звіт", "/force", "force", "/report", "/zvit"]:
         print(f"🔥 [COMMAND] /звіт triggered in chat {chat_id}", flush=True)
-        send(chat_id, "⏳ Збираю звіт...")
-        try:
-            import importlib, sys as _sys, os as _os
-            _monitor_path = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "monitor.py")
-            print(f"[/звіт] Loading monitor from {_monitor_path}", flush=True)
-            print(f"[/звіт] TELEGRAM_TOKEN from bot env: {TELEGRAM_TOKEN[:20]}...", flush=True)
-            print(f"[/звіт] TELEGRAM_CHAT from bot env: {TELEGRAM_CHAT}", flush=True)
-            import importlib.util as _ilu
-            spec = _ilu.spec_from_file_location("monitor_run", _monitor_path)
-            mod = _ilu.module_from_spec(spec)
-            spec.loader.exec_module(mod)
-            print(f"[/звіт] Monitor loaded, TELEGRAM_TOKEN available: {bool(mod.TELEGRAM_TOKEN)}", flush=True)
-            print(f"[/звіт] Monitor token starts with: {str(mod.TELEGRAM_TOKEN)[:20] if mod.TELEGRAM_TOKEN else 'NONE'}...", flush=True)
-            print(f"[/звіт] Monitor TELEGRAM_CHAT: {mod.TELEGRAM_CHAT}", flush=True)
-            # Bypass slot check — примусово запускаємо звіт
-            mod._FORCE_REPORT = True
-            print(f"[/звіт] Starting mod.main() with _FORCE_REPORT=True...", flush=True)
-            mod.main()
-            print(f"[/звіт] mod.main() completed", flush=True)
-        except Exception as _e_rep:
-            import traceback
-            tb = traceback.format_exc()
-            print(f"🔥 [/звіт] CRASH: {_e_rep}\n{tb}", flush=True)
-            send(chat_id, f"⚠️ Помилка звіту: {_e_rep}")
+        send(chat_id, "⏳ Збираю звіт... (в фоні, бот далі відповідає на команди)")
+
+        def _run_report_bg(_chat_id):
+            try:
+                import importlib.util as _ilu, os as _os
+                _monitor_path = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "monitor.py")
+                print(f"[/звіт][bg] Loading monitor from {_monitor_path}", flush=True)
+                spec = _ilu.spec_from_file_location("monitor_run", _monitor_path)
+                mod = _ilu.module_from_spec(spec)
+                spec.loader.exec_module(mod)
+                print(f"[/звіт][bg] Monitor loaded, TELEGRAM_TOKEN available: {bool(mod.TELEGRAM_TOKEN)}", flush=True)
+                mod._FORCE_REPORT = True
+                print(f"[/звіт][bg] Starting mod.main() with _FORCE_REPORT=True...", flush=True)
+                mod.main()
+                print(f"[/звіт][bg] mod.main() completed", flush=True)
+            except Exception as _e_rep:
+                import traceback
+                tb = traceback.format_exc()
+                print(f"🔥 [/звіт][bg] CRASH: {_e_rep}\n{tb}", flush=True)
+                try:
+                    send(_chat_id, f"⚠️ Помилка звіту: {_e_rep}")
+                except Exception:
+                    pass
+
+        import threading as _th_report
+        # ВАЖЛИВО: /звіт запускається в ОКРЕМОМУ потоці, а не inline в polling-циклі —
+        # раніше mod.main() блокував ВЕСЬ бот (навіть /diag не відповідав) поки звіт
+        # генерувався (могло тривати кілька хвилин через AI-дедлайн force=900s).
+        _th_report.Thread(target=_run_report_bg, args=(chat_id,), daemon=True).start()
 
     elif text in ["/ціни", "ціни"]:
         try:
