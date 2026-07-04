@@ -1831,15 +1831,20 @@ def _gemini_email_analysis(full_text: str, health_context: str = "") -> dict:
     )
     req_body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.3}
+        "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.3, "thinkingConfig": {"thinkingBudget": 0}}
     }).encode()
 
     try:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
-        req = urllib.request.Request(url, data=req_body, headers={"Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=40) as r:
-            resp_data = json.loads(r.read())
-        raw = resp_data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        resp_data = _gem_post(url, req_body, timeout=30, tag="email_ai_item", max_retries=3)
+        if not isinstance(resp_data, dict) or "candidates" not in resp_data:
+            print(f"[email AI] error: empty/invalid response")
+            return None
+        _parts = resp_data.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+        if not _parts:
+            print(f"[email AI] error: no parts in response")
+            return None
+        raw = _parts[0].get("text", "").strip()
         # Прибираємо markdown огорожі якщо є
         raw = _re.sub(r"^```(?:json)?\s*", "", raw, flags=_re.MULTILINE)
         raw = _re.sub(r"\s*```\s*$", "", raw, flags=_re.MULTILINE)
