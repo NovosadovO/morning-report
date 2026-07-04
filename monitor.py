@@ -11101,52 +11101,50 @@ PROACTIVE_FILE = os.path.join(_DATA_DIR, "monitor_proactive.json")
 
 
 def _get_calendar_events_text() -> str:
-    """Повертає короткий список подій з Google Calendar на СЬОГОДНІ (для AI промптів)."""
-    # Генеруємо AI-аналіз через Gemini API
-    for attempt in range(2):
-        try:
-            body = json.dumps({
-                "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {
-                    "maxOutputTokens": 4000,
-                    "temperature": 0.8,
-                    "thinkingConfig": {"thinkingBudget": 0}  # Вимикаємо reasoning
-                }
-            }).encode()
-            response = _gem_post(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-                body,
-                timeout=30,
-                tag=f"astro_ai_attempt_{attempt+1}"
-            )
-            
-            if response is None:
-                print(f"[astro_ai] attempt {attempt+1}: no response", flush=True)
+    """Повертає короткий список подій з Google Calendar на СЬОГОДНІ у форматі
+    'HH:MM Подія; HH:MM Подія2' (для AI промптів). Раніше тут стояв зіпсований
+    шматок коду з astro_ai (copy-paste баг) який завжди кидав NameError 'prompt'
+    is not defined і мовчки повертав "" — тепер реальна реалізація через Calendar API.
+    """
+    token = _calendar_access_token()
+    if not token:
+        return "нічого не заплановано"
+    try:
+        headers = {"Authorization": f"Bearer {token}"}
+        tz_local = timezone(timedelta(hours=2))
+        now = datetime.now(timezone.utc)
+        now_local = now.astimezone(tz_local)
+        day_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0).astimezone(timezone.utc)
+        day_end = day_start + timedelta(hours=24)
+
+        events = _fetch_events_all_calendars(headers, day_start, day_end, max_per_cal=20)
+        if not events:
+            return "нічого не заплановано"
+
+        items = []
+        for ev in events:
+            summary = ev.get("summary", "(без назви)")
+            if _is_routine_event(summary):
                 continue
-            
-            candidates = response.get("candidates", [])
-            if not candidates:
-                print(f"[astro_ai] attempt {attempt+1}: no candidates", flush=True)
+            start_v = ev["start"].get("dateTime") or ev["start"].get("date")
+            if not start_v:
                 continue
-            
-            parts = candidates[0].get("content", {}).get("parts", [])
-            if not parts:
-                print(f"[astro_ai] attempt {attempt+1}: empty parts", flush=True)
-                continue
-            
-            text = parts[0].get("text", "").strip()
-            if text:
-                print(f"[astro_ai] SUCCESS (attempt {attempt+1}) — {len(text)} chars", flush=True)
-                return text
-            else:
-                print(f"[astro_ai] attempt {attempt+1}: empty text", flush=True)
-        except Exception as e:
-            print(f"[astro_ai] error attempt {attempt+1}: {e}", flush=True)
-            if attempt == 0:
-                import time as _t_astro
-                _t_astro.sleep(2)
-    
-    return ""
+            try:
+                if "T" in start_v:
+                    dt = datetime.fromisoformat(start_v.replace("Z", "+00:00")).astimezone(tz_local)
+                    when = dt.strftime("%H:%M")
+                else:
+                    when = "весь день"
+            except Exception:
+                when = "?"
+            items.append(f"{when} {summary}")
+
+        if not items:
+            return "нічого не заплановано"
+        return "; ".join(items[:10])
+    except Exception as e:
+        print(f"_get_calendar_events_text error: {e}", flush=True)
+        return "нічого не заплановано"
 
 
 def _ai_personal_message(situation: str, context: dict = None, max_tokens: int = 200) -> str:
