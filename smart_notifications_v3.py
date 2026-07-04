@@ -169,25 +169,29 @@ def _get_important_emails(max_emails=5):
 # ============ CRYPTO DATA ============
 
 def _get_crypto_prices():
-    """CoinGecko: BTC, ETH, AVAX, ONDO"""
+    """CoinGecko: BTC, ETH, AVAX, ONDO. Кешується через monitor.fetch_json_cached (60с)
+    — уникає burst 429 коли 4 щоденні розклади + event-listener дзвонять паралельно."""
     try:
-        url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,avalanche-2,ondo&vs_currencies=usd&include_24h_change=true&include_market_cap=true"
-        req = urllib.request.Request(url, headers={"User-Agent": "Oleh-Bot"})
-        
-        with urllib.request.urlopen(req, timeout=5) as resp:
-            data = json.loads(resp.read())
-            
-            result = {}
-            for coin_id, coin_name in [("bitcoin", "BTC"), ("ethereum", "ETH"), ("avalanche-2", "AVAX"), ("ondo", "ONDO")]:
-                if coin_id in data:
-                    coin = data[coin_id]
-                    result[coin_name] = {
-                        "price": coin.get("usd", 0),
-                        "change_24h": coin.get("usd_24h_change", 0),
-                        "market_cap": coin.get("usd_market_cap", 0),
-                    }
-            
-            return result
+        import sys as _sys_cp
+        _sys_cp.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from monitor import fetch_json_cached
+
+        url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,avalanche-2,ondo-finance&vs_currencies=usd&include_24h_change=true&include_market_cap=true"
+        data = fetch_json_cached(url, ttl=60)
+        if not data:
+            return {}
+
+        result = {}
+        for coin_id, coin_name in [("bitcoin", "BTC"), ("ethereum", "ETH"), ("avalanche-2", "AVAX"), ("ondo-finance", "ONDO")]:
+            if coin_id in data:
+                coin = data[coin_id]
+                result[coin_name] = {
+                    "price": coin.get("usd", 0),
+                    "change_24h": coin.get("usd_24h_change", 0),
+                    "market_cap": coin.get("usd_market_cap", 0),
+                }
+
+        return result
     except Exception as e:
         _log(f"CoinGecko error: {e}")
         return {}

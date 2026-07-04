@@ -477,6 +477,33 @@ def fetch_json(url, retries=1):
         return None
 
 
+# СПІЛЬНИЙ TTL-кеш для CoinGecko — ~25 місць у коді (monitor.py, message_generator.py,
+# intelligent_listener.py, smart_notifications_v3.py, portfolio.py тощо) незалежно
+# смикають CoinGecko free API (30 req/хв ліміт) без координації → burst 429,
+# особливо intelligent_listener який перевіряє крипто-рух кожні ~35с.
+# Кеш на 60с: усі виклики в межах цього вікна з ОДНАКОВИМ url отримують один результат.
+_COINGECKO_CACHE: dict = {}
+_COINGECKO_TTL = 60
+
+def fetch_json_cached(url, ttl=_COINGECKO_TTL):
+    """Як fetch_json, але з TTL-кешем по url — для CoinGecko-подібних API з жорстким
+    rate-limit, куди дзвонять багато незалежних модулів. При 429 повертає протухлий
+    кеш якщо він є (краще старі дані, ніж нічого)."""
+    import time as _t_cg
+    now_ts = _t_cg.time()
+    entry = _COINGECKO_CACHE.get(url)
+    if entry and (now_ts - entry["ts"]) < ttl:
+        return entry["data"]
+    data = fetch_json(url)
+    if data is not None:
+        _COINGECKO_CACHE[url] = {"data": data, "ts": now_ts}
+        return data
+    if entry:
+        print(f"fetch_json_cached: returning STALE cache for [{url[:60]}] (age {now_ts - entry['ts']:.0f}s)")
+        return entry["data"]
+    return None
+
+
 def esc(s):
     return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
@@ -1955,6 +1982,16 @@ def _get_email_ai_analysis_for_report(email_items_dict: dict, health_context: st
         analysis_lines = [f"📧 <b>AI АНАЛІЗ ПОШТИ</b>  ({len(to_analyze)} важливих листів)"]
         
         for subject, sender, full_text in to_analyze:
+            # Захист дедлайну: якщо AI-часу лишилось замало (5+ листів × throttle
+            # можуть з'їсти весь бюджет) — зупиняємось і показуємо решту листів
+            # без AI-аналізу замість того щоб пропустити ВЕСЬ блок мовчки.
+            if not _ai_time_left(min_needed=25):
+                sender_short = sender.split("<")[0].strip() if "<" in sender else sender.split("@")[0]
+                analysis_lines.append(f"\n👤 {esc(sender_short)}")
+                analysis_lines.append(f"📋 {esc(subject[:60])}")
+                analysis_lines.append("⏱ (AI-час вичерпано — без аналізу)")
+                continue
+
             ai_result = _gemini_email_analysis(full_text, health_context)
             
             if ai_result:
@@ -1970,6 +2007,12 @@ def _get_email_ai_analysis_for_report(email_items_dict: dict, health_context: st
                     analysis_lines.append(f"📝 {esc(desc)}")
                 if opinion:
                     analysis_lines.append(f"💭 {esc(opinion)}")
+            else:
+                # Fallback: коротка деталь без AI, замість повного пропуску листа
+                sender_short = sender.split("<")[0].strip() if "<" in sender else sender.split("@")[0]
+                analysis_lines.append(f"\n👤 {esc(sender_short)}")
+                analysis_lines.append(f"📋 {esc(subject[:60])}")
+                analysis_lines.append("📝 (AI-аналіз тимчасово недоступний)")
         
         return "\n".join(analysis_lines)
     
@@ -3424,6 +3467,24 @@ def generate_habits_chart(days: int = 30) -> bytes | None:
 _FORCE_REPORT = False  # встановлюється в True для ручного виклику /звіт
 
 
+def _themes_local_fallback(ctx: dict) -> str:
+    """Локальний fallback коли Gemini недоступна (429 на всіх моделях) —
+    формує короткий текстовий блок з РЕАЛЬНИХ даних без AI, щоб звіт ніколи
+    не був повністю порожнім по цій темі."""
+    lines = ["💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)"]
+    labels = {
+        "finance": "💰 Фінанси", "running": "🏃 Біг", "health": "⚖️ Здоров'я",
+        "habits": "✅ Звички", "emails": "📬 Пошта", "calendar": "📅 Календар",
+    }
+    for key, label in labels.items():
+        val = ctx.get(key)
+        if val and val not in ("немає даних", "немає даних про здоров'я"):
+            lines.append(f"{label}: {val}")
+    if len(lines) == 1:
+        return ""
+    return "\n".join(lines)
+
+
 def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
     """
     Глибокий тематичний AI-аналіз по 7 темах (фінанси, біг, здоров'я/вага,
@@ -3462,25 +3523,37 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
             f"--- ДЕНЬ-РЕЙТИНГ ---\n{_g('day_score')}\n"
         )
 
+        # Ротація стилю за годиною доби + днем тижня — щоб текст НЕ звучав як
+        # шаблон, а щоразу трохи по-іншому (тон, персона, темп подачі).
+        _STYLE_VARIANTS = [
+            {"persona": "старший друг-наставник, тепло і по-дружньому", "pace": "спокійний, без поспіху"},
+            {"persona": "прямий коуч-практик, менше емоцій, більше конкретики", "pace": "енергійний, стислий"},
+            {"persona": "аналітик-стратег, дивиться на цифри і тренди", "pace": "структурований, по фактах"},
+            {"persona": "мотиваційний тренер, вірить у результат", "pace": "заряджений, з наголосом на дію"},
+        ]
+        _style = _STYLE_VARIANTS[(now_local.hour + now_local.day) % len(_STYLE_VARIANTS)]
+
         prompt = (
             f"Ти — особистий AI-наставник Олега Новосадова з Кошице (Словаччина). "
             f"Працює на заводі Minebea Mitsumi позмінно. Цілі: фінансова незалежність, "
             f"схуднення (зараз ~83-84 кг, ціль 75 кг), нова робота у сфері інвестицій, "
             f"здоровий спосіб життя. Інтереси: інвестиції, біг, спорт.\n\n"
+            f"СЬОГОДНІШНІЙ ТОН: {_style['persona']}. Темп подачі: {_style['pace']}.\n\n"
             f"Ось РЕАЛЬНІ дані Олега ПРЯМО ЗАРАЗ:\n{data_block}\n"
-            f"Напиши теплий, мотивуючий аналіз з підтримкою — як друг-наставник який вірить у нього. "
-            f"Структура (кожна секція 2-3 речення, ТІЛЬКИ якщо є реальні дані по темі — інакше пропусти):\n\n"
+            f"Напиши аналіз у зазначеному сьогодні тоні. "
+            f"Структура (кожна секція 2-3 речення, ТІЛЬКИ якщо є реальні дані по темі — інакше пропусти повністю, без \"немає даних\"):\n\n"
             f"💰 ФІНАНСИ — оціни поточний стан, дай 1 конкретну дію на сьогодні для руху до фін. незалежності.\n\n"
             f"🏃 БІГ — проаналізуй прогрес. Якщо вже бігав — похвали і дай пораду на відновлення; якщо ні і є час — мотивуй.\n\n"
             f"⚖️ ЗДОРОВ'Я + ВАГА — на основі ваги і звичок дай 1 практичну пораду для схуднення (харчування/рух).\n\n"
             f"✅ ЗВИЧКИ — оціни дисципліну сьогодні, підтримай за виконане, м'яко нагадай про невиконане.\n\n"
             f"📬 ПОШТА — якщо є важливі листи, виділи що пріоритетне і що зробити.\n\n"
             f"📅 ДЕНЬ — на основі календаря/зміни дай 1 пораду як оптимізувати наступні години.\n\n"
-            f"🌟 МОТИВАЦІЯ — 1-2 теплі речення підтримки, нагадай що кожен крок наближає до цілей.\n\n"
+            f"🌟 ПІДСУМОК — 1-2 речення у сьогоднішньому тоні, не шаблонні, різні щоразу.\n\n"
             f"ПРАВИЛА:\n"
-            f"- Звертайся до Олега на 'ти', тепло і по-дружньому.\n"
-            f"- ТІЛЬКИ реальні дані — НЕ вигадуй цифри. Якщо по темі 'немає даних' — пропусти секцію.\n"
+            f"- Звертайся до Олега на 'ти'. Дотримуйся зазначеного сьогодні тону — це має відчуватись у стилі.\n"
+            f"- ТІЛЬКИ реальні дані — НЕ вигадуй цифри. Якщо по темі 'немає даних' — пропусти секцію ПОВНІСТЮ (без слів типу 'дані відсутні').\n"
             f"- Враховуй зміну: якщо Олег ЗАРАЗ на роботі — не пропонуй те що неможливо зробити на заводі.\n"
+            f"- Уникай шаблонних фраз ('кожен крок наближає до цілей', 'ти на правильному шляху') — знайди свіже формулювання щоразу.\n"
             f"- Без вступів типу 'Привіт' чи 'Звичайно'. Українська мова. Кожне речення завершуй повністю.\n"
             f"- Емодзі-заголовки залишай як вказано. Без markdown (**) і без HTML."
         )
@@ -3492,13 +3565,19 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
                 "thinkingConfig": {"thinkingBudget": 0},
             },
         }).encode()
-        # ── ТАЙМАУТ ЗАХИСТ: макс 15s за одну AI-відповідь (не залипати) ──
-        _timeout_themes = max(5, min(15, int(_ai_time_left() * 0.8)))  # 80% від залишку часу, мін 5s
-        print(f"[themes_ai] sending request to Gemini (timeout={_timeout_themes}s, retry-on-429)...", flush=True)
+        # Timeout HTTP-запиту (макс 20s на ОДНУ спробу) — саму загальну тривалість
+        # retry+model-fallback контролює _ai_time_left/дедлайн репорту, не цей timeout.
+        # Раніше тут стояло int(_ai_time_left()*0.8) обмежене max 15s — цього НЕ вистачало
+        # _gem_post щоб дійти до 2-3 моделі при 429, тому themes_ai часто повертав "" мовчки.
+        _timeout_themes = 20
+        print(f"[themes_ai] sending request to Gemini (timeout={_timeout_themes}s/attempt, retry-on-429)...", flush=True)
         resp = _gem_post(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-            body, timeout=_timeout_themes, tag="themes_ai"
+            body, timeout=_timeout_themes, tag="themes_ai", max_retries=3
         )
+        if not isinstance(resp, dict):
+            print(f"[themes_ai] EMPTY/invalid response from _gem_post — {_themes_local_fallback(ctx)!r}", flush=True)
+            return _themes_local_fallback(ctx)
         _cand = (resp.get("candidates") or [{}])[0]
         _finish = _cand.get("finishReason", "UNKNOWN")
         print(f"[themes_ai] finishReason={_finish}", flush=True)
@@ -3506,8 +3585,8 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
         _parts = (_cand.get("content") or {}).get("parts") or []
         if not _parts:
             _um = resp.get("usageMetadata", {})
-            print(f"[themes_ai] EMPTY parts! finish={_finish} usage={_um}", flush=True)
-            return ""
+            print(f"[themes_ai] EMPTY parts! finish={_finish} usage={_um} — using local fallback", flush=True)
+            return _themes_local_fallback(ctx)
         result = (_parts[0].get("text") or "").strip()
         import re as _re_t
         result = _re_t.sub(r'\*\*(.+?)\*\*', r'\1', result)
@@ -3522,9 +3601,12 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
         return result
     except Exception as e:
         import traceback as _tb_t
-        print(f"[themes_ai] ERROR: {e}", flush=True)
+        print(f"[themes_ai] ERROR: {e} — using local fallback", flush=True)
         print(_tb_t.format_exc(), flush=True)
-        return ""
+        try:
+            return _themes_local_fallback(ctx)
+        except Exception:
+            return ""
 
 
 def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "") -> str:
@@ -3592,51 +3674,62 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
 - Якщо транзитних даних немає — дай загальну астро-погоду тижня без вигадки
 - НЕ пропускай жодного значного транзиту зі списку (особливо ingress-переходи і аспекти з орбом <1.5°)
 """
-    # Генеруємо AI-аналіз через Gemini API
-    for attempt in range(2):
-        try:
-            body = json.dumps({
-                "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {
-                    "maxOutputTokens": 4000,
-                    "temperature": 0.8,
-                    "thinkingConfig": {"thinkingBudget": 0}  # Вимикаємо reasoning
-                }
-            }).encode()
-            response = _gem_post(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-                body,
-                timeout=30,
-                tag=f"astro_ai_attempt_{attempt+1}"
-            )
-            
-            if response is None:
-                print(f"[astro_ai] attempt {attempt+1}: no response", flush=True)
-                continue
-            
-            candidates = response.get("candidates", [])
-            if not candidates:
-                print(f"[astro_ai] attempt {attempt+1}: no candidates", flush=True)
-                continue
-            
-            parts = candidates[0].get("content", {}).get("parts", [])
-            if not parts:
-                print(f"[astro_ai] attempt {attempt+1}: empty parts", flush=True)
-                continue
-            
-            text = parts[0].get("text", "").strip()
-            if text:
-                print(f"[astro_ai] SUCCESS (attempt {attempt+1}) — {len(text)} chars", flush=True)
-                return text
-            else:
-                print(f"[astro_ai] attempt {attempt+1}: empty text", flush=True)
-        except Exception as e:
-            print(f"[astro_ai] error attempt {attempt+1}: {e}", flush=True)
-            if attempt == 0:
-                import time as _t_astro
-                _t_astro.sleep(2)
-    
-    return ""
+    # Генеруємо AI-аналіз через Gemini. _gem_post вже робить внутрішній
+    # retry+model-fallback (2.5-flash->2.0-flash->2.5-flash-lite), тому зовнішній
+    # цикл attempts тут був зайвим дублюванням - прибрано, лишається 1 виклик
+    # з достатнім timeout щоб retry встиг дійти до резервної моделі.
+    try:
+        body = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": 4000,
+                "temperature": 0.8,
+                "thinkingConfig": {"thinkingBudget": 0}  # Вимикаємо reasoning
+            }
+        }).encode()
+        response = _gem_post(
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            body,
+            timeout=20,
+            tag="astro_ai",
+            max_retries=3
+        )
+
+        if not isinstance(response, dict):
+            print(f"[astro_ai] invalid response — using local fallback", flush=True)
+            return _astro_local_fallback(transit_data, shift_hint)
+
+        candidates = response.get("candidates", [])
+        if not candidates:
+            print(f"[astro_ai] no candidates — using local fallback", flush=True)
+            return _astro_local_fallback(transit_data, shift_hint)
+
+        parts = candidates[0].get("content", {}).get("parts", [])
+        if not parts:
+            print(f"[astro_ai] empty parts — using local fallback", flush=True)
+            return _astro_local_fallback(transit_data, shift_hint)
+
+        text = parts[0].get("text", "").strip()
+        if text:
+            print(f"[astro_ai] SUCCESS — {len(text)} chars", flush=True)
+            return text
+        print(f"[astro_ai] empty text — using local fallback", flush=True)
+        return _astro_local_fallback(transit_data, shift_hint)
+    except Exception as e:
+        print(f"[astro_ai] error: {e} — using local fallback", flush=True)
+        return _astro_local_fallback(transit_data, shift_hint)
+
+
+def _astro_local_fallback(transit_data: str, shift_hint: str = "") -> str:
+    """Локальний fallback для астро-блоку коли Gemini недоступна —
+    показує РЕАЛЬНІ транзитні дані без AI-інтерпретації, замість порожнього блоку."""
+    if not transit_data:
+        return ""
+    lines = ["🌙 <b>ТРАНЗИТИ СЬОГОДНІ</b> (AI тимчасово перевантажена, без інтерпретації)"]
+    lines.append(transit_data[:800])
+    if shift_hint:
+        lines.append(f"\n📌 {shift_hint[:150]}")
+    return "\n".join(lines)
 
 
 def _ai_personal_message(situation: str, context: dict = None, max_tokens: int = 200) -> str:

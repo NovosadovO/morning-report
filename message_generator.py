@@ -82,8 +82,14 @@ def _gemini_post(body: dict, timeout: int = 25, tag: str = "") -> str:
 def _get_live_crypto() -> dict:
     """CoinGecko free API — розширений watchlist + TOP-мувери за 24г.
     Основні монети Олега (BTC/ETH/AVAX/ONDO) + додаткові (SOL/BNB/XRP/DOGE)
-    для ширшого контексту крипто-огляду, плюс окремий TOP-3 gainers/losers з ринку."""
+    для ширшого контексту крипто-огляду, плюс окремий TOP-3 gainers/losers з ринку.
+    Кешується через monitor.fetch_json_cached (60с) — уникає burst 429 коли
+    кілька тригерів/щоденних звітів дзвонять цю функцію майже одночасно."""
     try:
+        import sys as _sys_lc
+        _sys_lc.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from monitor import fetch_json_cached
+
         ids = "bitcoin,ethereum,avalanche-2,ondo-finance,solana,binancecoin,ripple,dogecoin"
         url = (
             "https://api.coingecko.com/api/v3/coins/markets"
@@ -91,9 +97,9 @@ def _get_live_crypto() -> dict:
             "&order=market_cap_desc&per_page=10&page=1&sparkline=false"
             "&price_change_percentage=24h,7d"
         )
-        req = urllib.request.Request(url, headers={"User-Agent": "SmartAssistantBot/2.0"})
-        with urllib.request.urlopen(req, timeout=12) as resp:
-            raw = json.loads(resp.read())
+        raw = fetch_json_cached(url, ttl=60)
+        if not raw:
+            return {}
         mapping = {
             "bitcoin": "BTC", "ethereum": "ETH",
             "avalanche-2": "AVAX", "ondo-finance": "ONDO",
@@ -122,16 +128,15 @@ def _get_live_crypto() -> dict:
                 "?vs_currency=usd&order=market_cap_desc&per_page=100&page=1"
                 "&sparkline=false&price_change_percentage=24h"
             )
-            top_req = urllib.request.Request(top_url, headers={"User-Agent": "SmartAssistantBot/2.0"})
-            with urllib.request.urlopen(top_req, timeout=10) as tresp:
-                top_raw = json.loads(tresp.read())
-            movers = [
-                (c.get("symbol", "").upper(), round(c.get("price_change_percentage_24h") or 0, 2))
-                for c in top_raw if c.get("price_change_percentage_24h") is not None
-            ]
-            movers.sort(key=lambda x: x[1], reverse=True)
-            result["_top_gainers"] = movers[:3]
-            result["_top_losers"] = movers[-3:][::-1]
+            top_raw = fetch_json_cached(top_url, ttl=120)
+            if top_raw:
+                movers = [
+                    (c.get("symbol", "").upper(), round(c.get("price_change_percentage_24h") or 0, 2))
+                    for c in top_raw if c.get("price_change_percentage_24h") is not None
+                ]
+                movers.sort(key=lambda x: x[1], reverse=True)
+                result["_top_gainers"] = movers[:3]
+                result["_top_losers"] = movers[-3:][::-1]
         except Exception as e:
             _log(f"CoinGecko top-movers error: {e}")
 
