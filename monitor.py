@@ -1371,7 +1371,7 @@ def _parse_gmail_msg(msg_data, full=False):
 
 
 _GEM_LAST_CALL = [0.0]
-_GEM_MIN_GAP = 9.0  # мін. секунд між викликами Gemini. Free-tier=15/хв; 9s тримає запас навіть якщо паралельний інстанс теж палить квоту
+_GEM_MIN_GAP = 11.0  # мін. секунд між викликами Gemini. Тепер усі модулі (включно з новими тригерами event_prep/weekly_run_compare/habit_checkin) діляться цим лічильником — 11s тримає запас під більшим сумарним навантаженням
 _REPORT_AI_DEADLINE = 0.0  # monotonic-час, до якого можна робити AI-блоки (ставиться в main())
 
 # Моделі для fallback на 429: коли основна вичерпала квоту — пробуємо наступну (інший quota-pool)
@@ -7632,21 +7632,14 @@ def check_strava_new_activity():
     try:
         import sys as _sys_s
         _sys_s.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import _get_access_token
+        from strava import get_activities
 
         state = load_json_file(_STRAVA_LAST_ACT_FILE, default={})
         last_id = state.get("last_id")
 
-        token = _get_access_token()
-        import requests as _req_s
-        r = _req_s.get(
-            "https://www.strava.com/api/v3/athlete/activities",
-            headers={"Authorization": f"Bearer {token}"},
-            params={"per_page": 1, "page": 1},
-            timeout=15
-        )
-        r.raise_for_status()
-        acts = r.json()
+        # Централізована get_activities() з TTL-кешем (10 хв) — уникає прямого
+        # HTTP запиту в обхід кешу кожні 10 хв (watcher) → менше Strava 429
+        acts = get_activities(days=3)
         if not acts:
             return
 
@@ -8070,20 +8063,18 @@ def check_monthly_summary():
     # Strava — пробіжки за місяць
     try:
         import sys as _sys_ms; _sys_ms.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import _get_access_token
-        import requests as _req_ms
-        token = _get_access_token()
+        from strava import get_activities
         import calendar as _cal
         _, last_day = _cal.monthrange(prev_month_end.year, prev_month_end.month)
         after_ts  = int(prev_month_start.replace(tzinfo=timezone.utc).timestamp())
         before_ts = int((prev_month_end.replace(day=last_day, hour=23, minute=59) + timedelta(seconds=1)).replace(tzinfo=timezone.utc).timestamp())
-        r_ms = _req_ms.get(
-            "https://www.strava.com/api/v3/athlete/activities",
-            headers={"Authorization": f"Bearer {token}"},
-            params={"per_page": 100, "after": after_ts, "before": before_ts},
-            timeout=15
-        )
-        acts = r_ms.json() if r_ms.ok else []
+        # Централізована get_activities() з TTL-кешем — тягнемо ширше вікно (60 днів)
+        # і фільтруємо потрібний місяць локально, замість прямого HTTP запиту з after/before
+        _days_span = max(31, int((datetime.now(timezone.utc).timestamp() - after_ts) / 86400) + 1)
+        acts_all = get_activities(days=min(_days_span, 90))
+        acts = [a for a in acts_all if after_ts <= _cal.timegm(datetime.fromisoformat(
+                    a.get("start_date", "1970-01-01T00:00:00Z").replace("Z", "+00:00")
+                ).utctimetuple()) < before_ts] if acts_all else []
         runs = [a for a in acts if a.get("type") in ("Run","TrailRun","VirtualRun")]
         total_km = round(sum(a["distance"] for a in runs) / 1000, 1)
         total_min = sum(a["moving_time"] for a in runs) // 60
@@ -15058,21 +15049,14 @@ def check_strava_new_activity():
     try:
         import sys as _sys_s
         _sys_s.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import _get_access_token
+        from strava import get_activities
 
         state = load_json_file(_STRAVA_LAST_ACT_FILE, default={})
         last_id = state.get("last_id")
 
-        token = _get_access_token()
-        import requests as _req_s
-        r = _req_s.get(
-            "https://www.strava.com/api/v3/athlete/activities",
-            headers={"Authorization": f"Bearer {token}"},
-            params={"per_page": 1, "page": 1},
-            timeout=15
-        )
-        r.raise_for_status()
-        acts = r.json()
+        # Централізована get_activities() з TTL-кешем (10 хв) — уникає прямого
+        # HTTP запиту в обхід кешу кожні 10 хв (watcher) → менше Strava 429
+        acts = get_activities(days=3)
         if not acts:
             return
 
@@ -15496,20 +15480,18 @@ def check_monthly_summary():
     # Strava — пробіжки за місяць
     try:
         import sys as _sys_ms; _sys_ms.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import _get_access_token
-        import requests as _req_ms
-        token = _get_access_token()
+        from strava import get_activities
         import calendar as _cal
         _, last_day = _cal.monthrange(prev_month_end.year, prev_month_end.month)
         after_ts  = int(prev_month_start.replace(tzinfo=timezone.utc).timestamp())
         before_ts = int((prev_month_end.replace(day=last_day, hour=23, minute=59) + timedelta(seconds=1)).replace(tzinfo=timezone.utc).timestamp())
-        r_ms = _req_ms.get(
-            "https://www.strava.com/api/v3/athlete/activities",
-            headers={"Authorization": f"Bearer {token}"},
-            params={"per_page": 100, "after": after_ts, "before": before_ts},
-            timeout=15
-        )
-        acts = r_ms.json() if r_ms.ok else []
+        # Централізована get_activities() з TTL-кешем — тягнемо ширше вікно (60 днів)
+        # і фільтруємо потрібний місяць локально, замість прямого HTTP запиту з after/before
+        _days_span = max(31, int((datetime.now(timezone.utc).timestamp() - after_ts) / 86400) + 1)
+        acts_all = get_activities(days=min(_days_span, 90))
+        acts = [a for a in acts_all if after_ts <= _cal.timegm(datetime.fromisoformat(
+                    a.get("start_date", "1970-01-01T00:00:00Z").replace("Z", "+00:00")
+                ).utctimetuple()) < before_ts] if acts_all else []
         runs = [a for a in acts if a.get("type") in ("Run","TrailRun","VirtualRun")]
         total_km = round(sum(a["distance"] for a in runs) / 1000, 1)
         total_min = sum(a["moving_time"] for a in runs) // 60

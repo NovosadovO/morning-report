@@ -305,17 +305,10 @@ def _get_live_strava() -> dict:
     try:
         import sys, os as _os
         sys.path.insert(0, _os.path.dirname(__file__))
-        from strava import _get_access_token
-        import urllib.request as _ur2, json as _j2
-        token = _get_access_token()
-        if not token:
-            return {}
-        # Last 7 days activities
-        after_ts = int((datetime.now() - timedelta(days=7)).timestamp())
-        url = f"https://www.strava.com/api/v3/athlete/activities?after={after_ts}&per_page=10"
-        req = _ur2.Request(url, headers={"Authorization": f"Bearer {token}"})
-        with _ur2.urlopen(req, timeout=8) as r:
-            acts = _j2.loads(r.read())
+        from strava import get_activities
+        # Використовуємо централізовану get_activities() з TTL-кешем (10 хв) —
+        # уникає прямого HTTP запиту в обхід кешу і зайвого Strava 429 burst
+        acts = get_activities(days=7)
         if not acts:
             return {}
         runs = [a for a in acts if a.get("type") in ("Run", "VirtualRun")]
