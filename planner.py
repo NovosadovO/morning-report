@@ -110,15 +110,19 @@ def _send_force_reply(text):
 # ─── GEMINI ──────────────────────────────────────────────────────────────────
 
 def _gemini(prompt):
+    """Делегує до monitor._gem_post — СПІЛЬНИЙ rate-limiter на весь процес."""
+    from monitor import _gem_post
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"temperature": 0.2, "maxOutputTokens": 1024}
+        "generationConfig": {"temperature": 0.2, "maxOutputTokens": 1024, "thinkingConfig": {"thinkingBudget": 0}}
     }).encode()
-    req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        data = json.loads(r.read())
-    return data["candidates"][0]["content"]["parts"][0]["text"].strip()
+    resp = _gem_post(url, body, timeout=30, tag="planner", max_retries=3)
+    if isinstance(resp, dict) and resp.get("candidates"):
+        parts = resp["candidates"][0].get("content", {}).get("parts", [])
+        if parts and parts[0].get("text"):
+            return parts[0]["text"].strip()
+    raise Exception("empty/invalid response from _gem_post")
 
 # ─── ПАРСИНГ ПОДІЙ ───────────────────────────────────────────────────────────
 

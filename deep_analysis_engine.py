@@ -32,43 +32,19 @@ def _log(msg):
     print(f"[DEEP {ts}] {msg}", flush=True)
 
 def _gemini_post(body, timeout=12, max_retries=2):
-    """Gemini запит з fallback"""
-    global _GEM_MODEL_IDX, _GEM_LAST_CALL
-    
-    now = time.time()
-    gap = now - _GEM_LAST_CALL
-    if gap < _GEM_MIN_GAP:
-        time.sleep(_GEM_MIN_GAP - gap)
-    _GEM_LAST_CALL = time.time()
-    
-    for attempt in range(max_retries):
-        try:
-            model = _GEM_MODELS[_GEM_MODEL_IDX % len(_GEM_MODELS)]
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
-            
-            req = urllib.request.Request(
-                url,
-                data=json.dumps(body).encode(),
-                headers={"Content-Type": "application/json"},
-                method="POST"
-            )
-            
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                data = json.loads(resp.read())
-                if "candidates" not in data or not data["candidates"]:
-                    _GEM_MODEL_IDX += 1
-                    continue
-                
-                parts = data["candidates"][0].get("content", {}).get("parts", [])
-                if not parts or "text" not in parts[0]:
-                    _GEM_MODEL_IDX += 1
-                    continue
-                
+    """Делегує до monitor._gem_post — СПІЛЬНИЙ rate-limiter на весь процес."""
+    try:
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from monitor import _gem_post
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{_GEM_MODELS[0]}:generateContent?key={GEMINI_API_KEY}"
+        resp = _gem_post(url, json.dumps(body).encode(), timeout=timeout, tag="deep_analysis", max_retries=max(max_retries, 3))
+        if isinstance(resp, dict) and resp.get("candidates"):
+            parts = resp["candidates"][0].get("content", {}).get("parts", [])
+            if parts and parts[0].get("text"):
                 return parts[0]["text"]
-        except Exception as e:
-            _GEM_MODEL_IDX += 1
-            time.sleep(2)
-    
+    except Exception as e:
+        _log(f"Gemini error: {e}")
     return None
 
 # ============ DATA LOADERS ============

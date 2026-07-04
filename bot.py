@@ -3182,6 +3182,18 @@ def main():
     else:
         print("[Listener] Not available", flush=True)
 
+    # Запускаємо Proactive Scheduler (4 щоденні розклади: 6:00/12:00/15:00/20:00 UTC+2)
+    if _SCHEDULER_AVAILABLE:
+        print("[Scheduler] Starting proactive scheduler (4 daily schedules)...", flush=True)
+        try:
+            from proactive_scheduler import start_scheduler
+            start_scheduler(SCHEDULER_CALLBACKS)
+            print("[Scheduler] Started successfully", flush=True)
+        except Exception as e:
+            print(f"[Scheduler] Error starting: {e}", flush=True)
+    else:
+        print("[Scheduler] Not available", flush=True)
+
     # Print service account email for Google Sheets setup
     try:
         _creds = json.loads(os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "{}"))

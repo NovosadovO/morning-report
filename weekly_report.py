@@ -562,15 +562,18 @@ def send_weekly_report():
             )
             payload = _json_wr.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 220, "temperature": 0.8}
+                "generationConfig": {"maxOutputTokens": 220, "temperature": 0.8, "thinkingConfig": {"thinkingBudget": 0}}
             }).encode()
-            req_ai = _ur_wr.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
-                data=payload, headers={"Content-Type": "application/json"}
+            from monitor import _gem_post
+            ai_data = _gem_post(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                payload, timeout=25, tag="weekly_report", max_retries=3
             )
-            with _ur_wr.urlopen(req_ai, timeout=15) as _r_ai:
-                ai_data = _json_wr.loads(_r_ai.read())
-            ai_text = ai_data["candidates"][0]["content"]["parts"][0]["text"].strip()
+            ai_text = ""
+            if isinstance(ai_data, dict) and ai_data.get("candidates"):
+                _parts_wr = ai_data["candidates"][0].get("content", {}).get("parts", [])
+                if _parts_wr:
+                    ai_text = _parts_wr[0].get("text", "").strip()
             if ai_text:
                 send(f"🤖 <b>AI-аналіз тижня:</b>\n<i>{ai_text}</i>")
     except Exception as _e_ai:

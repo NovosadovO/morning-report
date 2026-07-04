@@ -743,10 +743,9 @@ _GEM_MODELS_CHAT = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.5-flash-li
 
 
 def _gemini_generate(api_key, contents, max_tokens=900, temperature=0.7):
-    """Надійний виклик Gemini: thinkingBudget=0 (щоб не з'їдало токени на reasoning),
-    безпечний парсинг parts, авто model-fallback при 429/порожній відповіді, retry.
+    """Надійний виклик Gemini через СПІЛЬНИЙ rate-limiter monitor._gem_post
+    (thinkingBudget=0, model-fallback+retry на 429 вже вбудовані там).
     Повертає (text, error) — error=None при успіху."""
-    import time as _t
     body = {
         "contents": contents,
         "generationConfig": {
@@ -756,49 +755,25 @@ def _gemini_generate(api_key, contents, max_tokens=900, temperature=0.7):
         },
     }
     payload = json.dumps(body).encode()
-    last_err = "невідома помилка"
-    for model in _GEM_MODELS_CHAT:
+    try:
+        from monitor import _gem_post
         url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
-               f"{model}:generateContent?key={api_key}")
-        for attempt in range(3):
-            try:
-                req = urllib.request.Request(
-                    url, data=payload,
-                    headers={"Content-Type": "application/json"}, method="POST")
-                with urllib.request.urlopen(req, timeout=40) as r:
-                    resp = json.loads(r.read())
-                cands = resp.get("candidates") or []
-                if not cands:
-                    last_err = f"{model}: no candidates ({resp.get('promptFeedback', '')})"
-                    break  # інша модель не допоможе при блокуванні промпту
+               f"{_GEM_MODELS_CHAT[0]}:generateContent?key={api_key}")
+        resp = _gem_post(url, payload, timeout=40, tag="context_ask_ai", max_retries=3)
+        if isinstance(resp, dict):
+            cands = resp.get("candidates") or []
+            if cands:
                 parts = (cands[0].get("content") or {}).get("parts") or []
                 texts = [p.get("text", "") for p in parts if p.get("text")]
                 text = "".join(texts).strip()
                 if text:
                     return text, None
-                # Порожня відповідь (часто MAX_TOKENS на reasoning) → пробуємо наступну модель
                 fr = cands[0].get("finishReason", "")
-                last_err = f"{model}: empty parts (finishReason={fr})"
-                break
-            except urllib.error.HTTPError as he:
-                code = he.code
-                try:
-                    err_body = he.read().decode("utf-8", "replace")
-                except Exception:
-                    err_body = ""
-                last_err = f"{model}: HTTP {code} {err_body[:120]}"
-                if code == 429:
-                    # квота вичерпана → одразу інша модель (інший пул), без довгого чекання
-                    break
-                if code in (500, 503):
-                    _t.sleep(4 * (attempt + 1))
-                    continue
-                break  # 400/403 тощо — інша модель не врятує цей виклик
-            except Exception as e:
-                last_err = f"{model}: {e}"
-                _t.sleep(3)
-                continue
-    return "", last_err
+                return "", f"empty parts (finishReason={fr})"
+            return "", f"no candidates ({resp.get('promptFeedback', '')})"
+        return "", "empty/invalid response from _gem_post"
+    except Exception as e:
+        return "", str(e)
 
 
 def ask_ai(user_message: str, include_calendar: bool = True) -> str:

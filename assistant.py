@@ -132,18 +132,23 @@ def _esc(t):
     return (t.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;"))
 
 def _gemini(prompt, max_tokens=400):
+    """Делегує до monitor._gem_post — СПІЛЬНИЙ rate-limiter на весь процес."""
     key = os.environ.get("GEMINI_API_KEY", "")
     payload = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.8}
+        "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.8, "thinkingConfig": {"thinkingBudget": 0}}
     }).encode()
-    req = urllib.request.Request(
-        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={key}",
-        data=payload, headers={"Content-Type": "application/json"})
     try:
-        with urllib.request.urlopen(req, timeout=25) as r:
-            resp = json.loads(r.read())
-        return resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+        from monitor import _gem_post
+        resp = _gem_post(
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={key}",
+            payload, timeout=25, tag="assistant", max_retries=3
+        )
+        if isinstance(resp, dict) and resp.get("candidates"):
+            parts = resp["candidates"][0].get("content", {}).get("parts", [])
+            if parts and parts[0].get("text"):
+                return parts[0]["text"].strip()
+        return None
     except Exception as e:
         print(f"[assistant] gemini error: {e}")
         return None

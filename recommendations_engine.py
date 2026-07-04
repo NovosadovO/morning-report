@@ -32,57 +32,20 @@ def _log(msg):
     print(f"[RECOMMENDATIONS {ts}] {msg}", flush=True)
 
 def _gemini_post(body, timeout=20, tag="", max_retries=3):
-    """Надійний Gemini запит з retry та fallback моделей"""
-    global _GEM_MODEL_IDX, _GEM_LAST_CALL
-    
-    # Rate limit
-    now = time.time()
-    gap = now - _GEM_LAST_CALL
-    if gap < _GEM_MIN_GAP:
-        time.sleep(_GEM_MIN_GAP - gap)
-    _GEM_LAST_CALL = time.time()
-    
-    for attempt in range(max_retries):
-        try:
-            model = _GEM_MODELS[_GEM_MODEL_IDX % len(_GEM_MODELS)]
-            gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
-            
-            req = urllib.request.Request(
-                gemini_url,
-                data=json.dumps(body).encode(),
-                headers={"Content-Type": "application/json"},
-                method="POST"
-            )
-            
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                response = json.loads(resp.read())
-                
-                if response.get("candidates"):
-                    cand = response["candidates"][0]
-                    content = cand.get("content", {})
-                    parts = content.get("parts", [])
-                    
-                    if parts and parts[0].get("text"):
-                        _GEM_LAST_CALL = time.time()
-                        return parts[0]["text"]
-                
-                # Fallback на наступну модель
-                _log(f"{tag}: Empty response, trying next model...")
-                _GEM_MODEL_IDX += 1
-                
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                _log(f"{tag}: 429 rate limit, switching model")
-                _GEM_MODEL_IDX += 1
-                time.sleep(5 + attempt * 3)
-            else:
-                _log(f"{tag}: HTTP {e.code}")
-                time.sleep(2 + attempt * 2)
-        except Exception as e:
-            _log(f"{tag}: Error {e}")
-            time.sleep(2 + attempt * 2)
-    
-    _log(f"{tag}: Failed after {max_retries} retries")
+    """Делегує до monitor._gem_post — СПІЛЬНИЙ rate-limiter на весь процес."""
+    try:
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from monitor import _gem_post
+        gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/{_GEM_MODELS[0]}:generateContent?key={GEMINI_API_KEY}"
+        resp = _gem_post(gemini_url, json.dumps(body).encode(), timeout=timeout, tag=tag or "recommendations", max_retries=max_retries)
+        if isinstance(resp, dict) and resp.get("candidates"):
+            parts = resp["candidates"][0].get("content", {}).get("parts", [])
+            if parts and parts[0].get("text"):
+                return parts[0]["text"]
+        _log(f"{tag}: empty response from _gem_post")
+    except Exception as e:
+        _log(f"{tag}: Error {e}")
     return ""
 
 # ============ DATA LOADERS ============

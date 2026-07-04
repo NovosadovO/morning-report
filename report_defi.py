@@ -539,12 +539,15 @@ def _gemini_digest_summary(context: str) -> str:
         )
         payload = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"maxOutputTokens": 200, "temperature": 0.7}
+            "generationConfig": {"maxOutputTokens": 200, "temperature": 0.7, "thinkingConfig": {"thinkingBudget": 0}}
         }).encode()
-        req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=20) as r:
-            resp = json.loads(r.read())
-            return resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+        from monitor import _gem_post
+        resp = _gem_post(url, payload, timeout=20, tag="defi_digest", max_retries=3)
+        if isinstance(resp, dict) and resp.get("candidates"):
+            parts = resp["candidates"][0].get("content", {}).get("parts", [])
+            if parts and parts[0].get("text"):
+                return parts[0]["text"].strip()
+        return ""
     except Exception as e:
         print(f"Gemini digest error: {e}")
         return ""
