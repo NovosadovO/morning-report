@@ -349,5 +349,32 @@
         ]
       ]
     }
+  },
+  "2100366814_38198": {
+    "text": "📩 ✉️\n📌 Weekly Recap: Saylor Starts Selling as Wall Street Races Onc\n👤 The Defiant <no-reply@mail.thedefiant.io>",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_75464"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_75464"
+          }
+        ],
+        [
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_75464"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_75464"
+          }
+        ]
+      ]
+    }
   }
 }
