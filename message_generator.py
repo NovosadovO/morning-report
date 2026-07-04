@@ -80,9 +80,11 @@ def _gemini_post(body: dict, timeout: int = 25, tag: str = "") -> str:
 
 # ─── Live Data ────────────────────────────────────────────────────────────────
 def _get_live_crypto() -> dict:
-    """CoinGecko free API — BTC/ETH/AVAX/ONDO via /coins/markets for real 24h change."""
+    """CoinGecko free API — розширений watchlist + TOP-мувери за 24г.
+    Основні монети Олега (BTC/ETH/AVAX/ONDO) + додаткові (SOL/BNB/XRP/DOGE)
+    для ширшого контексту крипто-огляду, плюс окремий TOP-3 gainers/losers з ринку."""
     try:
-        ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
+        ids = "bitcoin,ethereum,avalanche-2,ondo-finance,solana,binancecoin,ripple,dogecoin"
         url = (
             "https://api.coingecko.com/api/v3/coins/markets"
             "?vs_currency=usd&ids=" + ids +
@@ -94,7 +96,9 @@ def _get_live_crypto() -> dict:
             raw = json.loads(resp.read())
         mapping = {
             "bitcoin": "BTC", "ethereum": "ETH",
-            "avalanche-2": "AVAX", "ondo-finance": "ONDO"
+            "avalanche-2": "AVAX", "ondo-finance": "ONDO",
+            "solana": "SOL", "binancecoin": "BNB",
+            "ripple": "XRP", "dogecoin": "DOGE",
         }
         result = {}
         for coin in raw:
@@ -110,6 +114,27 @@ def _get_live_crypto() -> dict:
             f"{k}=${v['price']}({v['change_24h']:+.1f}%)" for k, v in result.items()
         )
         _log(f"Crypto: {summary}")
+
+        # TOP-3 mовери за 24h із топ-100 монет за market cap (ширший контекст ринку)
+        try:
+            top_url = (
+                "https://api.coingecko.com/api/v3/coins/markets"
+                "?vs_currency=usd&order=market_cap_desc&per_page=100&page=1"
+                "&sparkline=false&price_change_percentage=24h"
+            )
+            top_req = urllib.request.Request(top_url, headers={"User-Agent": "SmartAssistantBot/2.0"})
+            with urllib.request.urlopen(top_req, timeout=10) as tresp:
+                top_raw = json.loads(tresp.read())
+            movers = [
+                (c.get("symbol", "").upper(), round(c.get("price_change_percentage_24h") or 0, 2))
+                for c in top_raw if c.get("price_change_percentage_24h") is not None
+            ]
+            movers.sort(key=lambda x: x[1], reverse=True)
+            result["_top_gainers"] = movers[:3]
+            result["_top_losers"] = movers[-3:][::-1]
+        except Exception as e:
+            _log(f"CoinGecko top-movers error: {e}")
+
         return result
     except Exception as e:
         _log(f"CoinGecko error: {e}")
@@ -393,11 +418,20 @@ def _crypto_text(crypto: dict) -> str:
         return "Крипто: дані недоступні (CoinGecko)"
     lines = []
     for coin, d in crypto.items():
+        if coin.startswith("_"):
+            continue
         c24 = d["change_24h"]
         c7  = d["change_7d"]
         arrow = "📈" if c24 > 0 else "📉"
         lines.append(f"  {arrow} {coin}: ${d['price']:,.2f} ({c24:+.1f}% за 24г, {c7:+.1f}% за тиж)")
-    return "Крипто ЗАРАЗ:\n" + "\n".join(lines)
+    result = "Крипто ЗАРАЗ (портфель Олега + ширший контекст):\n" + "\n".join(lines)
+    gainers = crypto.get("_top_gainers")
+    losers = crypto.get("_top_losers")
+    if gainers:
+        result += "\n  🚀 ТОП-3 gainers ринку (24г): " + ", ".join(f"{s} {c:+.1f}%" for s, c in gainers)
+    if losers:
+        result += "\n  🔻 ТОП-3 losers ринку (24г): " + ", ".join(f"{s} {c:+.1f}%" for s, c in losers)
+    return result
 
 def _health_text(health: dict) -> str:
     if not health:
@@ -514,6 +548,14 @@ def get_tone_variation(trigger_type: str, hour: int) -> dict:
             {"tone": "планувальний + завтра починається сьогодні", "emoji": "📋"},
             {"tone": "відновлювальний + релакс і сон", "emoji": "😌"},
         ],
+        "weekly_run_compare": [
+            {"tone": "тренер-аналітик, факти + прогрес", "emoji": "🏃"},
+            {"tone": "мотивуючий тренер, фокус на покращенні", "emoji": "📊"},
+        ],
+        "habit_checkin": [
+            {"tone": "теплий друг, без нотацій", "emoji": "🌙"},
+            {"tone": "підтримуючий, коротко і по-людськи", "emoji": "💬"},
+        ],
     }
     base = variations.get(trigger_type, [{"tone": "дружелюбний, особистий", "emoji": "👋"}])
     idx = (hour + abs(hash(trigger_type))) % len(base)
@@ -522,7 +564,7 @@ def get_tone_variation(trigger_type: str, hour: int) -> dict:
 # ─── Decision ────────────────────────────────────────────────────────────────
 def _should_send_message(trigger_type: str, trigger_data) -> bool:
     always = {"vip_email", "deep_analysis", "briefing", "contextual_briefing",
-              "morning", "evening", "health"}
+              "morning", "evening", "health", "weekly_run_compare", "habit_checkin"}
     if trigger_type in always:
         return True
     if trigger_type == "crypto_move":
@@ -577,9 +619,27 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
     elif trigger_type == "event_soon":
         if isinstance(trigger_data, list) and trigger_data:
             evts = "; ".join(str(e) for e in trigger_data[:3])
-            trigger_extra = f"\n⏰ НЕЗАБАРОМ: {evts}"
+            trigger_extra = f"\n⏰ НЕЗАБАРОМ (30-90 хв): {evts} — дай КОРОТКИЙ підготовчий брифінг: що взяти з собою, на чому зфокусуватись, чи є пов'язані листи/дедлайни."
     elif trigger_type == "idle_timeout":
         trigger_extra = f"\n😴 Олег неактивний {idle_hours:.1f} год | Локація: {location}"
+    elif trigger_type == "weekly_run_compare":
+        try:
+            from strava import compare_weeks
+            cmp = compare_weeks()
+            tw, pw = cmp.get("this_week", {}), cmp.get("prev_week", {})
+            trigger_extra = (
+                f"\n🏃 ПОРІВНЯННЯ ТИЖНІВ: цей тиждень {tw.get('km',0)} км/{tw.get('runs',0)} пробіжок, "
+                f"попередній {pw.get('km',0)} км/{pw.get('runs',0)} пробіжок. "
+                f"Різниця дистанції: {cmp.get('km_diff',0):+.1f} км, темп: {cmp.get('pace_diff',0):+.1f} с/км "
+                f"(від'ємне = швидше). Дай коротку оцінку прогресу тренера (як друг-тренер) і одну конкретну пораду на цей тиждень."
+            )
+        except Exception as e:
+            trigger_extra = f"\n🏃 Порівняння тижнів недоступне: {e}"
+    elif trigger_type == "habit_checkin":
+        trigger_extra = (
+            "\n🌙 ВЕЧІРНІЙ CHECK-IN: запитай як минув день (настрій/звички/дисципліна), "
+            "нагадай відмітити звички якщо ще не зробив, дай коротку теплу підтримку без нотацій."
+        )
 
     # ── Shift context ─────────────────────────────────────────────────────────
     h = live["hour"]
@@ -591,6 +651,24 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
         period = "ВЕЧІР — підсумуй і відпочинь"
     else:
         period = "НІЧ — спокій і відновлення"
+
+    # ── Довжина/структура залежно від теми: короткі алерти vs довгі звіти ─────
+    SHORT_TRIGGERS = {"event_soon", "habit_checkin", "idle_timeout"}
+    MEDIUM_TRIGGERS = {"crypto_move", "vip_email", "weekly_run_compare", "health"}
+    # решта (morning/evening/deep_analysis/briefing тощо) — LONG за замовчуванням
+
+    if trigger_type in SHORT_TRIGGERS:
+        max_tokens = 350
+        length_instruction = "Напиши КОРОТКЕ, чітке повідомлення 80-150 слів УКРАЇНСЬКОЮ — по суті, без води."
+        structure_instruction = "Структура: 1 вступне речення → суть тригера → 1-2 конкретні дії. Коротко і ясно."
+    elif trigger_type in MEDIUM_TRIGGERS:
+        max_tokens = 700
+        length_instruction = "Напиши ЗМІСТОВНЕ повідомлення 250-350 слів УКРАЇНСЬКОЮ — конкретний аналіз без зайвої води."
+        structure_instruction = "Структура: 1 яскраве вступне речення → аналіз ключової теми тригера (2-3 абзаци) → 2-3 конкретні дії."
+    else:
+        max_tokens = 1400
+        length_instruction = "Напиши ЖИВЕ, ОСОБИСТЕ повідомлення 500-650 слів УКРАЇНСЬКОЮ — повний розгорнутий аналіз."
+        structure_instruction = "Структура: 1 яскраве вступне речення → РОЗГОРНУТИЙ аналіз кожного блоку (крипто, здоров'я, пошта, астро, календар) → 3-5 конкретних дій. Кожен блок аналізу — мінімум 3-4 речення з деталями та порадами."
 
     # ── Prompt ────────────────────────────────────────────────────────────────
     prompt = f"""Ти персональний AI-асистент Олега Новосадова (36р, Кошіце SK, Minebea Mitsumi, крипто-інвестор, бігун, ціль: фінансова незалежність + схуднення до 78 кг).
@@ -606,7 +684,7 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
 {anti_repeat}
 
 ЗАВДАННЯ:
-Напиши ЖИВЕ, ОСОБИСТЕ повідомлення 500-650 слів УКРАЇНСЬКОЮ.
+{length_instruction}
 
 Вимоги:
 1. ВИКОРИСТАЙ реальні цифри з "ПОТОЧНІ ЖИВІ ДАНІ" — ціни, вагу, кроки, листи, події
@@ -614,10 +692,9 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
 2. НЕ пиши "Даних немає" — якщо дані є, використай; якщо немає — зроби розумний висновок без цієї фрази
 3. Стиль ЖИВИЙ і ОСОБИСТИЙ — як старший друг, не корпоративний бот
 4. Конкретні рекомендації — не "відпочинь", а "зроби X зараз"
-5. Структура: 1 яскраве вступне речення → РОЗГОРНУТИЙ аналіз кожного блоку (крипто, здоров'я, пошта, астро, календар) → 3-5 конкретних дій
+5. {structure_instruction}
 6. НЕ повторюй попередні теми (анти-репіт вище)
-7. Кожен блок аналізу — мінімум 3-4 речення з деталями та порадами
-8. НЕ скорочуй — пиши повний, завершений текст
+7. НЕ скорочуй штучно — пиши повний, завершений текст у вказаному обсязі
 
 ПОЧНИ З: "Привіт Олеже! {tone['emoji']}"
 """
@@ -625,7 +702,7 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
     body = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {
-            "maxOutputTokens": 1400,
+            "maxOutputTokens": max_tokens,
             "temperature": 0.85,
             "thinkingConfig": {"thinkingBudget": 0}
         }

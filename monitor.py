@@ -1097,6 +1097,36 @@ def get_calendar():
         return f"📅 <b>Календар</b>\n⚠️ Помилка: {esc(str(e)[:120])}"
 
 
+def get_calendar_events_upcoming(minutes_ahead=90):
+    """Повертає список рядків "HH:MM — Назва" для подій у наступні N хвилин
+    (для event_prep тригера — коротке вікно підготовки до зустрічі/події)."""
+    token = _calendar_access_token()
+    if not token:
+        return []
+    try:
+        headers = {"Authorization": f"Bearer {token}"}
+        tz_local = timezone(timedelta(hours=2))
+        now = datetime.now(timezone.utc)
+        t_end = now + timedelta(minutes=minutes_ahead)
+        events = _fetch_events_all_calendars(headers, now, t_end, max_per_cal=20)
+        result = []
+        for ev in events:
+            summary = ev.get("summary", "(без назви)")
+            start = ev["start"].get("dateTime") or ev["start"].get("date")
+            if not start or "T" not in start:
+                continue
+            try:
+                dt = datetime.fromisoformat(start.replace("Z", "+00:00")).astimezone(tz_local)
+                when = dt.strftime("%H:%M")
+            except Exception:
+                when = "?"
+            result.append(f"{when} — {summary}")
+        return result
+    except Exception as e:
+        print(f"get_calendar_events_upcoming error: {e}")
+        return []
+
+
 # Рутинні/повторювані події, які НЕ показуємо у блоці "Найближчі події"
 _ROUTINE_EVENT_KEYS = [
     "біг", "вода", "чай", "сауна", "зміна", "рання", "нічна",
@@ -9845,6 +9875,19 @@ def main():
     # ── Блок 7: КУРС ВАЛЮТ — ВИДАЛЕНО ─────────────────────────────────────────
 
     # ── Блок 8: ПОРТФЕЛЬ — ВИДАЛЕНО ────────────────────────────────────────────
+
+    # ── Крипто-тренд графік — щовечора о 20:xx (BTC/ETH/AVAX/ONDO/SOL за 30 днів) ──
+    if now_local.hour == 20 and now_local.minute < 30:
+        try:
+            print(f"[charts] generating crypto trend chart...", flush=True)
+            from charts import plot_crypto_trend as _plot_crypto_trend
+            _cchart = _plot_crypto_trend(days=30)
+            print(f"[charts] crypto trend: {len(_cchart) if _cchart else 0} bytes", flush=True)
+            if _cchart:
+                parts.append({"photo": _cchart, "caption": "💹 Динаміка портфеля за 30 днів"})
+        except Exception as _e_crypto_chart:
+            import traceback as _tb_cc
+            print(f"crypto trend chart error: {_e_crypto_chart}\n{_tb_cc.format_exc()}", flush=True)
 
     # ── Вага + звички за місяць — КОЖЕН звіт ─────────────────────────────────
     # ── Тижневий підсумок — неділя о 20:20-20:29 ──────────────────────────────

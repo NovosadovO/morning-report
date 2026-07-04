@@ -301,33 +301,54 @@ FORMAT: Plain text, no markdown."""
     
     return result
 
+def _get_portfolio_hint() -> str:
+    """Короткий контекст портфеля для lunch/evening промптів."""
+    try:
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from portfolio import get_portfolio_summary
+        s = get_portfolio_summary()
+        tv = s.get("total_value", 0)
+        pnl = s.get("total_pnl")
+        ch = s.get("change_24h", 0)
+        parts = [f"Портфель: ${tv:,.0f}"]
+        if pnl is not None:
+            parts.append(f"P&L: {pnl:+,.0f} USD")
+        parts.append(f"Зміна 24г: {ch:+,.0f} USD")
+        return ", ".join(parts)
+    except Exception:
+        return "Портфель: дані недоступні"
+
 def _analyze_lunch(emails, crypto, health):
-    """Обід (12pm): Email VIP, крипто, здоровя обід"""
+    """Обід (12pm): Email VIP, крипто, здоровя обід, фінанси/портфель"""
     vip_summary = "\n".join([f"- {e['from']}: {e['subject']}" for e in emails if e['vip']][:3])
+    portfolio_hint = _get_portfolio_hint()
     
-    prompt = f"""You are Oleh's smart midday assistant. Write a brief update message (250 words, Ukrainian).
+    prompt = f"""You are Oleh's smart midday assistant. Write a brief update message (250-300 words, Ukrainian).
 
 CONTEXT:
 - Time: 12:00 PM (lunch time)
 - VIP emails today:
 {vip_summary or "- No VIP emails"}
 - Crypto updates: {json.dumps(crypto, indent=2)}
+- Portfolio: {portfolio_hint}
 - Steps so far: {health.get('steps', 0)}
 
 WRITE A MESSAGE THAT:
 1. Summarizes important emails (focus on VIP/boss/investors)
 2. Highlights crypto movements worth watching
-3. Encourages lunch & hydration break
-4. Suggests 1 quick action if needed
+3. Gives a quick portfolio/finance progress note (toward financial independence goal)
+4. Encourages lunch & hydration break
+5. Suggests 1 quick action if needed
 
-TONE: Professional, helpful, brief.
+TONE: Professional, helpful, brief but informative.
 LANGUAGE: Ukrainian.
 FORMAT: Plain text."""
 
     body = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {
-            "maxOutputTokens": 400,
+            "maxOutputTokens": 550,
             "temperature": 0.7,
             "thinkingConfig": {"thinkingBudget": 0}
         }
@@ -345,22 +366,49 @@ FORMAT: Plain text."""
     
     return result
 
+def _get_shift_hint() -> str:
+    """Контекст зміни (рання/нічна/вихідний) для afternoon/evening промптів."""
+    try:
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from habits import _get_shift_type
+        shift = _get_shift_type()
+        labels = {"early": "рання зміна (06:00-18:00)", "night": "нічна зміна (18:00-06:00)", "weekend": "вихідний/без зміни"}
+        return labels.get(shift, "невідомо")
+    except Exception:
+        return "невідомо"
+
+def _get_traffic_hint() -> str:
+    """Короткий контекст трафіку/погоди Кошице для afternoon промпту."""
+    try:
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from traffic_kosice import format_traffic_report
+        return (format_traffic_report() or "")[:300]
+    except Exception:
+        return "дані про трафік недоступні"
+
 def _analyze_afternoon(emails, crypto, health, events):
-    """Після обід (3pm): Рекомендації, планування"""
-    prompt = f"""You are Oleh's smart afternoon assistant. Write a brief recommendations message (250 words, Ukrainian).
+    """Після обід (3pm): Рекомендації, планування, робота/зміни, погода/трафік"""
+    shift_hint = _get_shift_hint()
+    traffic_hint = _get_traffic_hint()
+    prompt = f"""You are Oleh's smart afternoon assistant. Write a brief recommendations message (250-300 words, Ukrainian).
 
 CONTEXT:
 - Time: 3:00 PM (afternoon productivity window)
+- Work shift today: {shift_hint}
 - Progress today: {health.get('steps', 0)} steps
 - Unread VIP emails: {len([e for e in emails if e['vip']])}
 - Upcoming events: {len(events)} scheduled
 - Crypto trend: {'Up' if all(crypto.get(c, {}).get('change_24h', 0) > 0 for c in ['BTC', 'ETH']) else 'Mixed'}
+- Traffic/weather Košice: {traffic_hint}
 
 WRITE A MESSAGE THAT:
-1. Encourages afternoon productivity
-2. Suggests 2-3 priority actions for the rest of the day
+1. Encourages afternoon productivity, accounting for his work shift (early/night/off)
+2. Suggests 2-3 priority actions for the rest of the day, balanced with the shift
 3. Reminds about crypto price points to watch
-4. Promotes activity goal (10k steps)
+4. Mentions traffic/weather if relevant to his commute
+5. Promotes activity goal (10k steps)
 
 TONE: Practical, motivating, action-oriented.
 LANGUAGE: Ukrainian.
@@ -369,7 +417,7 @@ FORMAT: Plain text."""
     body = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {
-            "maxOutputTokens": 400,
+            "maxOutputTokens": 550,
             "temperature": 0.7,
             "thinkingConfig": {"thinkingBudget": 0}
         }
@@ -388,8 +436,9 @@ FORMAT: Plain text."""
     return result
 
 def _analyze_evening(emails, crypto, health, astro_brief=""):
-    """Вечір (8pm): День summary, астро, мотивація"""
-    prompt = f"""You are Oleh's smart evening assistant. Write a reflective summary message (300 words, Ukrainian).
+    """Вечір (8pm): День summary, астро, мотивація, фінансовий підсумок"""
+    portfolio_hint = _get_portfolio_hint()
+    prompt = f"""You are Oleh's smart evening assistant. Write a reflective summary message (300-400 words, Ukrainian).
 
 CONTEXT:
 - Time: 8:00 PM (end of work shift / evening)
@@ -398,14 +447,16 @@ CONTEXT:
 - Weight: {health.get('current_weight', 'N/A')} kg
 - Processed emails: {len(emails)} total, {len([e for e in emails if e['vip']])} VIP
 - Crypto 24h changes: {json.dumps({k: v.get('change_24h', 0) for k, v in crypto.items()}, indent=2)}
+- Portfolio/finance: {portfolio_hint}
 - Astro brief: {astro_brief or "Use your knowledge of his birth chart"}
 
 WRITE A MESSAGE THAT:
 1. Reflects on the day's achievements
 2. Acknowledges crypto movements (winners/losers)
-3. Celebrates progress (steps, email management, etc.)
-4. Gives 1-2 evening/next-day tips
-5. Ends with an astrological insight or motivation
+3. Gives a short finance/portfolio progress note (toward financial independence goal)
+4. Celebrates progress (steps, email management, etc.)
+5. Gives 1-2 evening/next-day tips
+6. Ends with an astrological insight or motivation
 
 TONE: Reflective, supportive, closing-the-day vibe.
 LANGUAGE: Ukrainian.
@@ -414,7 +465,7 @@ FORMAT: Plain text with emojis."""
     body = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {
-            "maxOutputTokens": 500,
+            "maxOutputTokens": 700,
             "temperature": 0.7,
             "thinkingConfig": {"thinkingBudget": 0}
         }
