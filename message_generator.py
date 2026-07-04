@@ -708,18 +708,52 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
     message = _gemini_post(body, timeout=25, tag=f"MSG_{trigger_type.upper()}")
 
     # ── Fallback if Gemini fails ──────────────────────────────────────────────
+    # Розширений fallback — використовує ВСІ доступні живі дані (не тільки BTC+вага),
+    # щоб навіть без AI повідомлення було змістовним, а не голим шматком інформації.
     if not message:
+        _log(f"⚠️ Gemini unavailable for {trigger_type} — using EXPANDED local fallback")
         crypto = live.get("crypto", {})
         health = live.get("health", {})
+        strava = live.get("strava", {})
+        emails = live.get("emails", [])
+        calendar = live.get("calendar", [])
         now_str = live["now_str"]
-        parts = [f"Привіт Олеже! {tone['emoji']}\n"]
+        parts = [f"Привіт Олеже! {tone['emoji']} (AI зараз перевантажена — коротка версія на реальних даних)\n"]
+
         if crypto:
-            btc = crypto.get("BTC", {})
-            if btc:
-                parts.append(f"💹 BTC зараз: ${btc['price']:,.0f} ({btc['change_24h']:+.1f}% за 24г)")
+            crypto_lines = []
+            for sym in ["BTC", "ETH", "AVAX", "ONDO", "SOL"]:
+                d = crypto.get(sym)
+                if d:
+                    arrow = "📈" if d["change_24h"] > 0 else "📉"
+                    crypto_lines.append(f"{arrow} {sym}: ${d['price']:,.2f} ({d['change_24h']:+.1f}%)")
+            if crypto_lines:
+                parts.append("💹 Крипто:\n" + "\n".join(f"  {l}" for l in crypto_lines))
+
+        health_lines = []
         if health.get("weight"):
             delta = health.get("weight_7d_delta", 0)
-            parts.append(f"⚖️ Вага: {health['weight']} кг ({delta:+.1f} кг за тиж)")
+            health_lines.append(f"⚖️ Вага: {health['weight']} кг ({delta:+.1f} кг за тиж)")
+        if health.get("steps"):
+            health_lines.append(f"🚶 Кроки: {health['steps']:,}")
+        if health.get("sleep"):
+            health_lines.append(f"😴 Сон: {health['sleep']} год")
+        if health_lines:
+            parts.append("\n" + "\n".join(health_lines))
+
+        if strava and strava.get("last_run_km"):
+            parts.append(f"\n🏃 Остання пробіжка: {strava['last_run_km']} км ({strava.get('last_run_date','?')}), темп {strava.get('last_run_pace','—')}")
+
+        if emails:
+            vip = [e for e in emails if e.get("starred")]
+            if vip:
+                parts.append(f"\n📬 Важливі листи: {len(vip)} (перевір Telegram-кнопки нижче)")
+            elif emails:
+                parts.append(f"\n📬 Нових листів: {len(emails)}")
+
+        if calendar:
+            parts.append(f"\n📅 Найближчі події: {'; '.join(str(e) for e in calendar[:2])}")
+
         parts.append(f"\n⏰ {now_str} | {location}")
         message = "\n".join(parts)
 
