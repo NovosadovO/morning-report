@@ -165,19 +165,31 @@ def save_meds_sent(data):
     return _save_github("meds_sent.json", data)
 
 def load_weight():
-    data = _load_github("weight.json")
-    if not data:
+    """
+    Канонічне джерело — weight_data.json (сюди пише weight.py при кожному /вазі
+    від Олега, тут завжди АКТУАЛЬНІ дані). weight.json — старий/покинутий файл
+    (востаннє оновлювався у квітні) і використовується лише як довіджерело для
+    ДАТ, яких немає у weight_data.json (щоб не втратити стару історію).
+    Раніше 14+ місць у monitor.py читали weight.json напряму → AI бачив вагу
+    3-місячної давності. Фікс тут виправляє це одразу для всіх викликів.
+    """
+    canonical = _load_github("weight_data.json") or {}
+    legacy = _load_github("weight.json") or {}
+    if not canonical and not legacy:
         initial = os.path.join(_DIR, "weight_data_initial.json")
         try:
             with open(initial) as f:
-                data = json.load(f)
-            save_weight(data)
+                canonical = json.load(f)
+            save_weight(canonical)
         except:
             pass
-    return data
+    merged = dict(legacy)
+    merged.update(canonical)  # canonical (weight_data.json) виграє при перетині дат
+    return merged
 
 def save_weight(data):
-    return _save_github("weight.json", data)
+    """Пише в weight_data.json — канонічний файл, який читає load_weight()."""
+    return _save_github("weight_data.json", data)
 
 def load_health():
     """Завантажує щоденні health дані. Структура: {"2026-04-29": {steps, sleep_hours, ...}}"""
