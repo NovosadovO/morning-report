@@ -451,18 +451,20 @@ def handle_email_callback(callback_query):
             )
             req_body = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 1500, "temperature": 0.3}
+                "generationConfig": {"maxOutputTokens": 1500, "temperature": 0.3, "thinkingConfig": {"thinkingBudget": 0}}
             }).encode()
             url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
-            req = urllib.request.Request(url, data=req_body, headers={"Content-Type": "application/json"})
 
             ai_text = None
             try:
-                with urllib.request.urlopen(req, timeout=40) as r:
-                    resp_data = json.loads(r.read())
-                ai_text = resp_data["candidates"][0]["content"]["parts"][0]["text"].strip()
-                ai_text = ai_text.replace("**", "").replace("*", "")
-                print(f"[email_describe] gemini ok, len={len(ai_text)}", flush=True)
+                from monitor import _gem_post as _gem_post_describe
+                resp_data = _gem_post_describe(url, req_body, timeout=45, tag="email_describe", max_retries=3)
+                if isinstance(resp_data, dict) and "candidates" in resp_data:
+                    _dparts = resp_data.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+                    if _dparts:
+                        ai_text = _dparts[0].get("text", "").strip()
+                        ai_text = ai_text.replace("**", "").replace("*", "")
+                print(f"[email_describe] gemini ok, len={len(ai_text) if ai_text else 0}", flush=True)
             except Exception as _ge:
                 print(f"[email_describe] gemini error: {_ge}", flush=True)
 
@@ -800,7 +802,7 @@ def handle_email_callback(callback_query):
         try:
             import sys, os as _os, urllib.request as _ur
             sys.path.insert(0, _os.path.dirname(__file__))
-            from monitor import _imap_connect, _imap_get_body, _imap_decode_header, _imap_get_attachments, _format_attachments_for_ai
+            from monitor import _imap_connect, _imap_get_body, _imap_decode_header, _imap_get_attachments, _format_attachments_for_ai, _gem_post
             import email as _email_lib
 
             mail = _imap_connect()
@@ -849,13 +851,21 @@ def handle_email_callback(callback_query):
                     "contents": [{"parts": [{"text": prompt}]}],
                     "generationConfig": {"maxOutputTokens": 500, "temperature": 0.7, "thinkingConfig": {"thinkingBudget": 0}}
                 }).encode()
-                req = _ur.Request(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}",
-                    data=payload, headers={"Content-Type": "application/json"}
-                )
-                with _ur.urlopen(req, timeout=20) as r:
-                    resp = _json.loads(r.read())
-                draft = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+                draft = ""
+                try:
+                    resp = _gem_post(
+                        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}",
+                        payload, timeout=30, tag="email_reply_draft", max_retries=3
+                    )
+                    if isinstance(resp, dict) and "candidates" in resp:
+                        _rparts = resp.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+                        if _rparts:
+                            draft = _rparts[0].get("text", "").strip()
+                except Exception as _ge:
+                    print(f"email_reply gemini error: {_ge}", flush=True)
+                if not draft:
+                    send(chat_id, "⚠️ AI зараз перевантажений (ліміт запитів) і не зміг згенерувати draft. Спробуй ще раз через хвилину.")
+                    return
 
                 # Зберігаємо draft + метадані для подальшого надсилання
                 import re as _re
