@@ -376,5 +376,32 @@
         ]
       ]
     }
+  },
+  "2100366814_38796": {
+    "text": "📩 ✉️\n📌 Your next adventure is closer than you think!\n👤 \"Saily\" <media@mail.saily.com>",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_75507"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_75507"
+          }
+        ],
+        [
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_75507"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_75507"
+          }
+        ]
+      ]
+    }
   }
 }
