@@ -430,5 +430,32 @@
         ]
       ]
     }
+  },
+  "2100366814_39444": {
+    "text": "📩 ✉️\n📌 The world’s most liveable cities in 2026\n👤 \"The Economist Today\" <newsletters@e.economist.com",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_75554"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_75554"
+          }
+        ],
+        [
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_75554"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_75554"
+          }
+        ]
+      ]
+    }
   }
 }
