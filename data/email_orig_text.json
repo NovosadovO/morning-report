@@ -403,5 +403,32 @@
         ]
       ]
     }
+  },
+  "2100366814_39047": {
+    "text": "📩 ✉️\n📌 Your Project: My Roport is at risk of suspension\n👤 \"Google Cloud Platform, Firebase, and APIs\" <Cloud",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_75516"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_75516"
+          }
+        ],
+        [
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_75516"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_75516"
+          }
+        ]
+      ]
+    }
   }
 }
