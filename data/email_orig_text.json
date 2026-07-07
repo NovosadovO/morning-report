@@ -457,5 +457,32 @@
         ]
       ]
     }
+  },
+  "2100366814_39590": {
+    "text": "📩 ✉️\n📌 Claude has cheat codes\n👤 GenAI Works через LinkedIn<newsletters-noreply@lin",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_75559"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_75559"
+          }
+        ],
+        [
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_75559"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_75559"
+          }
+        ]
+      ]
+    }
   }
 }
