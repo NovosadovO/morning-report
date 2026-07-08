@@ -1825,6 +1825,34 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка дайджесту: {e}")
 
+    elif text in ["/test_astro", "/astro_test", "тест астро"]:
+        send(chat_id, "🔮 Тестую AI-астро окремо (без повного звіту)...")
+        try:
+            import sys as _sys, os as _os
+            _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+            import importlib as _il
+            import astro as _amod
+            _il.reload(_amod)
+            import monitor as _mmod
+            _il.reload(_mmod)
+
+            gemini_key = _os.environ.get("GEMINI_API_KEY", "")
+            _astro_text = _amod.get_natal_transits_short(max_aspects=5)
+            send(chat_id, f"1️⃣ get_natal_transits_short: {'✅ ' + str(len(_astro_text)) + ' симв' if _astro_text else '❌ ПОРОЖНЬО'}")
+
+            if not gemini_key:
+                send(chat_id, "❌ GEMINI_API_KEY немає в env — AI-астро НЕ МОЖЕ працювати")
+            else:
+                send(chat_id, f"2️⃣ Викликаю _get_astro_ai_analysis (може зайняти 10-30с)...")
+                _result = _mmod._get_astro_ai_analysis(_astro_text or "немає даних", gemini_key, shift_hint="тест")
+                if _result:
+                    send(chat_id, f"✅ AI-астро ПРАЦЮЄ ({len(_result)} симв):\n\n{_result[:3500]}")
+                else:
+                    send(chat_id, "❌ AI-астро повернув ПОРОЖНІЙ результат — дивись Railway Logs за тегом [astro_ai] для точної причини")
+        except Exception as e:
+            import traceback as _tb
+            send(chat_id, f"⚠️ CRASH у тесті астро: {type(e).__name__}: {str(e)[:300]}\n\n{_tb.format_exc()[-800:]}")
+
     elif text in ["/diag", "/діаг", "діаг", "diag"]:
         print(f"🔥 [COMMAND] /діаг triggered in chat {chat_id}", flush=True)
         send(chat_id, "🔍 Діагностика середовища...")
