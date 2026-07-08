@@ -2096,24 +2096,27 @@ def _imap_delete_email(uid_str: str):
 
 
 def check_new_emails():
-    """Перевіряє непрочитані листи (Primary + Updates де ховаються share-нотифікації
-    від реальних людей типу 'поділились документом') — шле сповіщення ОДИН РАЗ на кожен лист (dedup по UID)."""
+    """Перевіряє ВСІ непрочитані листи (Primary + Updates + Promotions + Social) —
+    шле сповіщення з AI-аналізом + кнопкою відповіді на КОЖЕН новий лист (dedup по UID).
+    Пропускаються ТІЛЬКИ явні системні нотифікації з _SKIP_EMAILS (youtube/duolingo/medium тощо)."""
     try:
         mail = _imap_connect()
         mail.select("INBOX")
 
-        # UID-based пошук (sequence numbers не persistent між IMAP сесіями!)
-        # Primary — основний потік
-        _, data = mail.uid('search', None, 'X-GM-RAW "category:primary is:unread"')
-        all_unread = list(data[0].split())
-        # Updates — тут Gmail часто ховає share-нотифікації Google Docs/Sheets/Drive
-        # від РЕАЛЬНИХ людей (наприклад "Ім'я (через Google Таблиці)") — не пропускаємо їх
-        try:
-            _, data_upd = mail.uid('search', None, 'X-GM-RAW "category:updates is:unread"')
-            upd_unread = list(data_upd[0].split())
-            all_unread = list(dict.fromkeys(all_unread + upd_unread))  # union без дублів
-        except Exception as _e_upd:
-            print(f"[email] updates category search failed: {_e_upd}")
+        # UID-based пошук по ВСІХ категоріях Gmail — Олег хоче знати про ВСІ листи
+        all_unread = []
+        for _cat_query in [
+            'X-GM-RAW "category:primary is:unread"',
+            'X-GM-RAW "category:updates is:unread"',
+            'X-GM-RAW "category:promotions is:unread"',
+            'X-GM-RAW "category:social is:unread"',
+        ]:
+            try:
+                _, _cd = mail.uid('search', None, _cat_query)
+                _uids = list(_cd[0].split())
+                all_unread = list(dict.fromkeys(all_unread + _uids))  # union без дублів
+            except Exception as _e_cat:
+                print(f"[email] category search failed ({_cat_query}): {_e_cat}")
 
         if not all_unread:
             mail.logout()
@@ -2151,12 +2154,13 @@ def check_new_emails():
             _EMAIL_SENT_INMEM.add(uid_str)
             newly_seen.add(uid_str)
 
+            # Пропускаємо ТІЛЬКИ явний системний список (youtube/duolingo/medium тощо).
+            # Олег хоче знати про ВСІ інші листи — навіть промо/рекламу — з AI-аналізом.
             if ea not in _SKIP_EMAILS:
                 category = _classify_email(sender, subject)
-                if category in ("spam", "promo"):
-                    print(f"[email] skip {category}: {sender[:50]} / {subject[:40]}")
-                else:
-                    to_alert.append((uid_str, subject, sender, body, category))
+                to_alert.append((uid_str, subject, sender, body, category))
+            else:
+                print(f"[email] skip system junk: {sender[:50]} / {subject[:40]}")
 
         mail.logout()
 
@@ -2165,13 +2169,13 @@ def check_new_emails():
             sent_ids.update(newly_seen)
             _email_save_ids(sent_ids)
 
-        # Сортуємо: 'real' першими
+        # Сортуємо: 'real' першими, потім promo/spam
         to_alert.sort(key=lambda x: 0 if x[4] == "real" else 1)
 
         for uid_str, subject, sender, body, category in to_alert:
-            # AI аналіз листа
+            # AI аналіз листа — ЗАВЖДИ, для КОЖНОГО листа (не тільки 'real')
             full_text = f"Від: {sender}\nТема: {subject}\n\n{body}"
-            print(f"[email] analyzing uid={uid_str} subject={subject[:40]}")
+            print(f"[email] analyzing uid={uid_str} subject={subject[:40]} category={category}")
             ai = _gemini_email_analysis(full_text)
             if not ai:
                 print(f"[email] AI returned None for uid={uid_str}")
@@ -2180,8 +2184,9 @@ def check_new_emails():
             _send_telegram_gif_only()
 
             # 2. Текст з AI аналізом + кнопки окремим повідомленням
+            _cat_tag = {"real": "", "promo": " 📢<i>(промо)</i>", "spam": " 🗑<i>(схоже на розсилку)</i>"}.get(category, "")
             text = (
-                f"📩 <b>━━ НОВИЙ ЛИСТ ━━</b>\n\n"
+                f"📩 <b>━━ НОВИЙ ЛИСТ ━━</b>{_cat_tag}\n\n"
                 f"👤 <b>Від:</b> {esc(sender[:60])}\n"
                 f"📋 <b>Тема:</b> {esc(subject[:70])}\n"
             )
@@ -2200,7 +2205,7 @@ def check_new_emails():
 
             keyboard = {"inline_keyboard": [
                 [
-                    {"text": "✍️ Відповісти", "callback_data": f"email_reply_{uid_str}"},
+                    {"text": "🤖✍️ AI-Draft відповіді", "callback_data": f"email_reply_{uid_str}"},
                     {"text": "⭐ Важливий",   "callback_data": f"email_star_{uid_str}"},
                 ],
                 [
