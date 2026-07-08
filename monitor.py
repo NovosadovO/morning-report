@@ -112,6 +112,24 @@ def _classify_email(sender: str, subject: str) -> str:
     s = sender.lower()
     sub = subject.lower()
 
+    # ── 0. GOOGLE SHARE-НОТИФІКАЦІЇ З ІМ'ЯМ РЕАЛЬНОЇ ЛЮДИНИ — завжди 'real' ──
+    # Приклад: "Michaela Bravčoková (через Google Таблиці)" <drive-shares-dm-noreply@google.com>
+    # Це від реальної людини яка поділилась документом — НЕ спам, навіть якщо
+    # технічна адреса відправника містить "noreply"/"google".
+    _SHARE_NAME_PATTERN = re.compile(
+        r'\((через|via|cez|prostredníctvom)\s+google\s+(табл|sheets|docs|drive|forms|calendar|документ|slides|diapozit)',
+        re.IGNORECASE
+    )
+    if _SHARE_NAME_PATTERN.search(sender):
+        return "real"
+    _SHARE_SUBJECT_PATTERN = re.compile(
+        r'(поділил\w*|подели\w*|shared|zdieľal|надал\w* доступ|udelil\w* prístup|запросил\w*|invited you)',
+        re.IGNORECASE
+    )
+    if _SHARE_SUBJECT_PATTERN.search(subject) and re.search(r'[a-zа-яіїєё]+\s+[a-zа-яіїєё]+', sender.lower()):
+        # Є ім'я+прізвище в sender І тема про "поділились/надали доступ" → реальна людина
+        return "real"
+
     # WHITELIST — завжди 'real' незалежно від інших правил
     _WHITELIST_DOMAINS = {
         "theblock.co", "blockworks.co",
@@ -2078,14 +2096,24 @@ def _imap_delete_email(uid_str: str):
 
 
 def check_new_emails():
-    """Перевіряє непрочитані Primary листи — шле сповіщення ОДИН РАЗ на кожен лист (dedup по UID)."""
+    """Перевіряє непрочитані листи (Primary + Updates де ховаються share-нотифікації
+    від реальних людей типу 'поділились документом') — шле сповіщення ОДИН РАЗ на кожен лист (dedup по UID)."""
     try:
         mail = _imap_connect()
         mail.select("INBOX")
 
         # UID-based пошук (sequence numbers не persistent між IMAP сесіями!)
+        # Primary — основний потік
         _, data = mail.uid('search', None, 'X-GM-RAW "category:primary is:unread"')
-        all_unread = data[0].split()
+        all_unread = list(data[0].split())
+        # Updates — тут Gmail часто ховає share-нотифікації Google Docs/Sheets/Drive
+        # від РЕАЛЬНИХ людей (наприклад "Ім'я (через Google Таблиці)") — не пропускаємо їх
+        try:
+            _, data_upd = mail.uid('search', None, 'X-GM-RAW "category:updates is:unread"')
+            upd_unread = list(data_upd[0].split())
+            all_unread = list(dict.fromkeys(all_unread + upd_unread))  # union без дублів
+        except Exception as _e_upd:
+            print(f"[email] updates category search failed: {_e_upd}")
 
         if not all_unread:
             mail.logout()
