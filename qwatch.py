@@ -245,17 +245,19 @@ def _gemini_parse(text: str) -> dict:
     )
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"maxOutputTokens": 500, "temperature": 0}
+        "generationConfig": {"maxOutputTokens": 500, "temperature": 0, "thinkingConfig": {"thinkingBudget": 0}}
     }).encode()
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
-    req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
     try:
-        with urllib.request.urlopen(req, timeout=30) as r:
-            resp = json.loads(r.read())
-        raw = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
-        m = re.search(r'\{.*\}', raw, re.DOTALL)
-        if m:
-            return json.loads(m.group(0))
+        from monitor import _gem_post
+        resp = _gem_post(url, body, timeout=30, tag="qwatch_parse", max_retries=3)
+        if isinstance(resp, dict) and resp.get("candidates"):
+            parts = resp["candidates"][0].get("content", {}).get("parts", [])
+            if parts and parts[0].get("text"):
+                raw = parts[0]["text"].strip()
+                m = re.search(r'\{.*\}', raw, re.DOTALL)
+                if m:
+                    return json.loads(m.group(0))
     except Exception as e:
         print(f"qwatch gemini parse error: {e}")
     return {}

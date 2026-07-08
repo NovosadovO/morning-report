@@ -149,23 +149,30 @@ class IntelligentListener:
         return []
     
     def _check_crypto_moves(self) -> dict:
-        """Перевірити BTC/ETH/AVAX/ONDO за 1 годину"""
+        """Перевірити BTC/ETH/AVAX/ONDO/SOL/BNB/XRP за 1 годину (розширений watchlist).
+        Використовує спільний TTL-кеш monitor.fetch_json_cached (60с) — цей чек
+        іде кожні ~35с, тому без кешу швидко впирається в CoinGecko rate-limit (30/хв)."""
         try:
-            url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,avalanche-2,ondo&vs_currencies=usd&include_24h_change=true"
-            req = urllib.request.Request(url, headers={"User-Agent": "OlegBot"})
-            
-            with urllib.request.urlopen(req, timeout=5) as resp:
-                data = json.loads(resp.read())
-                
-                moves = {}
-                for coin_id, coin_name in [("bitcoin", "BTC"), ("ethereum", "ETH"), 
-                                          ("avalanche-2", "AVAX"), ("ondo", "ONDO")]:
-                    if coin_id in data:
-                        change = data[coin_id].get("usd_24h_change", 0)
-                        if abs(change) >= 5:  # 5% move
-                            moves[coin_name] = change
-                
-                return moves
+            ids = "bitcoin,ethereum,avalanche-2,ondo-finance,solana,binancecoin,ripple"
+            url = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd&include_24h_change=true"
+
+            import sys as _sys
+            _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            from monitor import fetch_json_cached
+            data = fetch_json_cached(url, ttl=60)
+            if not data:
+                return {}
+
+            moves = {}
+            for coin_id, coin_name in [("bitcoin", "BTC"), ("ethereum", "ETH"),
+                                      ("avalanche-2", "AVAX"), ("ondo-finance", "ONDO"),
+                                      ("solana", "SOL"), ("binancecoin", "BNB"), ("ripple", "XRP")]:
+                if coin_id in data:
+                    change = data[coin_id].get("usd_24h_change", 0)
+                    if abs(change) >= 5:  # 5% move
+                        moves[coin_name] = change
+
+            return moves
         except Exception as e:
             self._log(f"Crypto check error: {e}")
             return {}
@@ -173,6 +180,30 @@ class IntelligentListener:
     def _check_idle_timeout(self) -> float:
         """Скільки годин неактивності"""
         return (time.time() - self.last_user_activity) / 3600
+
+    def _check_weekly_run_compare(self) -> bool:
+        """Понеділок вранці (7-10) — час порівняти минулий тиждень з попереднім"""
+        now = datetime.now(tz=_TZ)
+        return now.weekday() == 0 and 7 <= now.hour < 10
+
+    def _check_habit_checkin(self) -> bool:
+        """Ввечері (21-22) — нагадати відмітити звички/настрій, якщо ще не робив"""
+        now = datetime.now(tz=_TZ)
+        return 21 <= now.hour < 22
+
+    def _check_event_prep(self) -> list:
+        """Реальні (не рутинні) события за 30-90 хв — підготовчий брифінг"""
+        try:
+            import sys as _sys
+            _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            from monitor import get_calendar_events_upcoming
+            events = get_calendar_events_upcoming(minutes_ahead=90)
+            routine = ["shower", "water", "tea", "чай", "душ", "вода", "сауна",
+                       "armolopid", "армолопід", "run", "біг"]
+            real_events = [e for e in events if not any(r in str(e).lower() for r in routine)]
+            return real_events
+        except Exception:
+            return []
     
     def _check_time_based(self) -> str or None:
         """Ранок (6-7am) чи Вечір (20-21)?"""
@@ -245,10 +276,10 @@ class IntelligentListener:
                         self._log(f"  No VIP emails")
                     self.last_email_check = now
                 
-                # 2. CALENDAR (кожні 40 сек для DEBUG)
-                if now - self.last_calendar_check > 40:
-                    events = self._check_upcoming_events()
-                    if events and self._should_send_trigger("event_soon", 2.0):
+                # 2. CALENDAR — реальні події за 30-90 хв (event_prep, підготовчий брифінг)
+                if now - self.last_calendar_check > 60:
+                    events = self._check_event_prep()
+                    if events and self._should_send_trigger("event_soon", 1.5):
                         triggers.append(("event_soon", events))
                         self._log(f"TRIGGER: event_soon ({len(events)} подій)")
                     self.last_calendar_check = now
@@ -285,7 +316,17 @@ class IntelligentListener:
                 if self._should_send_trigger("deep_analysis", 4.0):  # Макс 1x на 4h
                     triggers.append(("deep_analysis", idle))
                     self._log(f"TRIGGER: deep_analysis (idle={idle:.1f}h)")
-                
+
+                # 7. WEEKLY RUN COMPARE (понеділок вранці, 1x/тиждень)
+                if self._check_weekly_run_compare() and self._should_send_trigger("weekly_run_compare", 24.0 * 6):
+                    triggers.append(("weekly_run_compare", None))
+                    self._log("TRIGGER: weekly_run_compare")
+
+                # 8. HABIT/MOOD CHECKIN (ввечері, 1x/день)
+                if self._check_habit_checkin() and self._should_send_trigger("habit_checkin", 20.0):
+                    triggers.append(("habit_checkin", None))
+                    self._log("TRIGGER: habit_checkin")
+
                 # Процесувати тригери (генеруємо & надсилаємо messages)
                 if triggers:
                     for ttype, tdata in triggers:

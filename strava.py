@@ -209,8 +209,16 @@ def get_last_activity():
         return cached
 
 
+_WEEK_STATS_CACHE: dict = {"data": None, "ts": 0}
+_WEEK_STATS_TTL = 600  # 10 хвилин — той самий burst-protect що і get_activities
+
 def get_week_stats():
-    """Статистика за поточний тиждень (Пн-Нд)"""
+    """Статистика за поточний тиждень (Пн-Нд). Кешується на 10 хв."""
+    import time as _time_cache
+    now_ts = _time_cache.time()
+    if _WEEK_STATS_CACHE["data"] is not None and (now_ts - _WEEK_STATS_CACHE["ts"]) < _WEEK_STATS_TTL:
+        return _WEEK_STATS_CACHE["data"]
+
     try:
         token = _get_access_token()
 
@@ -235,14 +243,20 @@ def get_week_stats():
         total_min = sum(a["moving_time"] for a in runs) // 60
         count = len(runs)
 
-        return {
+        result = {
             "runs": count,
             "km": round(total_km, 1),
             "duration_min": total_min,
             "week_start": week_start.strftime("%d.%m"),
         }
+        _WEEK_STATS_CACHE["data"] = result
+        _WEEK_STATS_CACHE["ts"] = now_ts
+        return result
     except Exception as e:
         print(f"Strava get_week_stats error (timeout 5s): {e}")
+        if _WEEK_STATS_CACHE["data"] is not None:
+            print(f"Strava get_week_stats: returning STALE cache (age {now_ts - _WEEK_STATS_CACHE['ts']:.0f}s)")
+            return _WEEK_STATS_CACHE["data"]
         return None
 
 
@@ -304,8 +318,23 @@ if __name__ == "__main__":
 
 # ─── РОЗШИРЕНІ ФУНКЦІЇ ────────────────────────────────────────────────────────
 
+# In-process TTL кеш — уникає burst-запитів до Strava (кілька watcher-ів/report
+# blocks дзвонять get_activities()/get_week_stats() майже одночасно з різними
+# days= в межах одного циклу звіту → без кешу це N окремих HTTP запитів підряд
+# → Strava rate-limit 429. TTL 10 хв: усі виклики в межах одного "сплеску"
+# отримують один і той самий результат замість N запитів.
+_ACT_CACHE: dict = {}
+_ACT_CACHE_TTL = 600  # 10 хвилин
+
 def get_activities(days: int = 30) -> list:
-    """Повертає список активностей за останні N днів."""
+    """Повертає список активностей за останні N днів. Кешується на 10 хв per-days,
+    щоб уникнути burst 429 коли кілька частин звіту дзвонять цю функцію одночасно."""
+    import time as _time_cache
+    now_ts = _time_cache.time()
+    cached = _ACT_CACHE.get(days)
+    if cached and (now_ts - cached["ts"]) < _ACT_CACHE_TTL:
+        return cached["data"]
+
     try:
         token = _get_access_token()
         after_ts = int((datetime.now() - timedelta(days=days)).timestamp())
@@ -316,9 +345,15 @@ def get_activities(days: int = 30) -> list:
             timeout=5  # Жорсткий timeout 5s
         )
         r.raise_for_status()
-        return r.json()
+        data = r.json()
+        _ACT_CACHE[days] = {"data": data, "ts": now_ts}
+        return data
     except Exception as e:
         print(f"get_activities error (timeout 5s): {e}")
+        # Якщо є хоч трохи протухлий кеш — краще повернути його, ніж порожньо
+        if cached:
+            print(f"get_activities: returning STALE cache for days={days} (age {now_ts - cached['ts']:.0f}s)")
+            return cached["data"]
         return []
 
 

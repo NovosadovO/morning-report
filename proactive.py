@@ -290,18 +290,21 @@ def _ask_gemini(prompt: str, system: str, max_tokens: int = 500) -> str:
     ]
     payload = json.dumps({
         "contents": contents,
-        "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.85}
+        "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.85, "thinkingConfig": {"thinkingBudget": 0}}
     }).encode()
-    req = urllib.request.Request(
-        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}",
-        data=payload,
-        headers={"Content-Type": "application/json"},
-        method="POST"
-    )
     try:
-        with urllib.request.urlopen(req, timeout=20) as r:
-            resp = json.loads(r.read())
-        return resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from monitor import _gem_post
+        resp = _gem_post(
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}",
+            payload, timeout=25, tag="proactive_ai", max_retries=3
+        )
+        if isinstance(resp, dict) and "candidates" in resp:
+            parts = resp.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+            if parts:
+                return parts[0].get("text", "").strip()
+        return "⚠️ Gemini error: empty response"
     except Exception as e:
         return f"⚠️ Gemini error: {e}"
 

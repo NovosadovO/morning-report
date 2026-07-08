@@ -23,20 +23,16 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
 
 def _gem_post(url, body, tag):
-    """Простий запит до Gemini"""
-    import urllib.request
+    """Делегує до monitor._gem_post — СПІЛЬНИЙ rate-limiter на весь процес."""
     import json as _json
-    
     try:
-        data = _json.dumps(body).encode('utf-8')
-        req = urllib.request.Request(url, data=data, method="POST", headers={"Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            response = _json.loads(resp.read().decode())
-            try:
-                text = response['candidates'][0]['content']['parts'][0].get('text', '')
-                return text if text else None
-            except (KeyError, IndexError):
-                return None
+        from monitor import _gem_post as _shared_gem_post
+        resp = _shared_gem_post(url, _json.dumps(body).encode('utf-8'), timeout=30, tag=tag or "week_planner", max_retries=3)
+        if isinstance(resp, dict) and resp.get('candidates'):
+            parts = resp['candidates'][0].get('content', {}).get('parts', [])
+            if parts and parts[0].get('text'):
+                return parts[0]['text']
+        return None
     except Exception as e:
         print(f"⚠️ Gemini error [{tag}]: {e}")
         return None

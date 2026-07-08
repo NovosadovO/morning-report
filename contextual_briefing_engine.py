@@ -39,72 +39,20 @@ def _log(msg):
     print(f"[BRIEFING {ts}] {msg}", flush=True)
 
 def _gemini_post(body, timeout=20, tag="", max_retries=3):
-    """Надійний Gemini запит"""
-    global _GEM_MODEL_IDX, _GEM_LAST_CALL
-    
-    now = time.time()
-    gap = now - _GEM_LAST_CALL
-    if gap < _GEM_MIN_GAP:
-        time.sleep(_GEM_MIN_GAP - gap)
-    _GEM_LAST_CALL = time.time()
-    
-    for attempt in range(max_retries):
-        try:
-            model = _GEM_MODELS[_GEM_MODEL_IDX % len(_GEM_MODELS)]
-            gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
-            
-            req = urllib.request.Request(
-                gemini_url,
-                data=json.dumps(body).encode(),
-                headers={"Content-Type": "application/json"},
-                method="POST"
-            )
-            
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                data = json.loads(resp.read())
-                
-                if "candidates" not in data or not data["candidates"]:
-                    _log(f"⚠️ Empty response from {model}")
-                    _GEM_MODEL_IDX += 1
-                    continue
-                
-                candidate = data["candidates"][0]
-                if "content" not in candidate or "parts" not in candidate["content"]:
-                    _log(f"⚠️ No content in {model}")
-                    _GEM_MODEL_IDX += 1
-                    continue
-                
-                parts = candidate["content"]["parts"]
-                if not parts or "text" not in parts[0]:
-                    _log(f"⚠️ Empty text from {model}")
-                    _GEM_MODEL_IDX += 1
-                    continue
-                
+    """Делегує до monitor._gem_post — СПІЛЬНИЙ rate-limiter на весь процес."""
+    try:
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from monitor import _gem_post
+        gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/{_GEM_MODELS[0]}:generateContent?key={GEMINI_API_KEY}"
+        resp = _gem_post(gemini_url, json.dumps(body).encode(), timeout=timeout, tag=tag or "contextual_briefing", max_retries=max_retries)
+        if isinstance(resp, dict) and resp.get("candidates"):
+            parts = resp["candidates"][0].get("content", {}).get("parts", [])
+            if parts and parts[0].get("text"):
                 return parts[0]["text"]
-        
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                retry_delay = 25
-                if hasattr(e, "headers") and "retry-after" in e.headers:
-                    try:
-                        retry_delay = int(e.headers["retry-after"])
-                    except:
-                        pass
-                
-                if retry_delay > 20:
-                    _log(f"429 Too Many Requests, switching model ({attempt+1}/{max_retries})")
-                    _GEM_MODEL_IDX += 1
-                    time.sleep(min(retry_delay, 10))
-                    continue
-            
-            _log(f"HTTP {e.code}: {e.reason}")
-            _GEM_MODEL_IDX += 1
-            time.sleep(5)
-        
-        except Exception as e:
-            _log(f"Gemini error ({attempt+1}/{max_retries}): {e}")
-            time.sleep(5)
-    
+        _log("⚠️ Empty response from _gem_post")
+    except Exception as e:
+        _log(f"Gemini error: {e}")
     return None
 
 # ============ DATA LOADERS ============

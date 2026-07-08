@@ -286,38 +286,19 @@ def get_astro_brief():
 # ============ GEMINI: Контекстна Gemini-аналітика ============
 
 def _gem_post_local(url, body, tag, max_retries=2):
-    """Спрощена версія _gem_post для proactive messages"""
-    for attempt in range(max_retries):
-        try:
-            import urllib.request, json as _json
-            data = _json.dumps(body).encode('utf-8')
-            req = urllib.request.Request(url, data=data, method="POST", headers={"Content-Type": "application/json"})
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                response = _json.loads(resp.read().decode())
-                
-                # Перевіряємо finish_reason
-                try:
-                    finish_reason = response['candidates'][0]['content'].get('finishReason', 'UNKNOWN')
-                    if finish_reason == 'MAX_TOKENS':
-                        print(f"⚠️ [{tag}] MAX_TOKENS reached, retrying...")
-                        time.sleep(2)
-                        continue
-                    
-                    text = response['candidates'][0]['content']['parts'][0].get('text', '')
-                    return text if text else None
-                except (KeyError, IndexError) as e:
-                    print(f"⚠️ [{tag}] Parse error: {e}")
-                    return None
-        
-        except Exception as e:
-            if '429' in str(e):
-                print(f"⚠️ [{tag}] Rate limited, waiting...")
-                time.sleep(5)
-            else:
-                print(f"❌ [{tag}] error: {e}")
-                return None
-    
-    return None
+    """Делегує до monitor._gem_post — СПІЛЬНИЙ rate-limiter на весь процес."""
+    try:
+        import json as _json
+        from monitor import _gem_post
+        resp = _gem_post(url, _json.dumps(body).encode('utf-8'), timeout=30, tag=tag or "intelligent_assistant", max_retries=max(max_retries, 3))
+        if isinstance(resp, dict) and resp.get('candidates'):
+            parts = resp['candidates'][0].get('content', {}).get('parts', [])
+            if parts and parts[0].get('text'):
+                return parts[0]['text']
+        return None
+    except Exception as e:
+        print(f"❌ [{tag}] error: {e}")
+        return None
 
 def generate_contextual_insight(crypto_data, health_data, habits_data, work_shift, emails, calendar, astro):
     """Генеріує КОНТЕКСТНУ аналітику через Gemini з РЕАЛЬНИМИ даними"""

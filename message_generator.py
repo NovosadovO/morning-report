@@ -58,63 +58,53 @@ def _log(msg: str):
 
 # ─── Gemini ──────────────────────────────────────────────────────────────────
 def _gemini_post(body: dict, timeout: int = 25, tag: str = "") -> str:
-    global _GEM_MODEL_IDX, _GEM_LAST_CALL
-    now = time.time()
-    gap = now - _GEM_LAST_CALL
-    if gap < _GEM_MIN_GAP:
-        time.sleep(_GEM_MIN_GAP - gap)
-    _GEM_LAST_CALL = time.time()
-
-    for attempt in range(4):
-        model = _GEM_MODELS[_GEM_MODEL_IDX % len(_GEM_MODELS)]
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
-        try:
-            req = urllib.request.Request(
-                url,
-                data=json.dumps(body).encode(),
-                headers={"Content-Type": "application/json"},
-                method="POST"
-            )
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                data = json.loads(resp.read())
-                cands = data.get("candidates", [])
-                if cands:
-                    parts = cands[0].get("content", {}).get("parts", [])
-                    if parts and parts[0].get("text"):
-                        _GEM_LAST_CALL = time.time()
-                        return parts[0]["text"]
-                _log(f"{tag}: empty response, trying next model")
-                _GEM_MODEL_IDX += 1
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                _log(f"{tag}: 429 → switching model")
-                _GEM_MODEL_IDX += 1
-                time.sleep(6 + attempt * 4)
-            else:
-                _log(f"{tag}: HTTP {e.code}")
-                time.sleep(3)
-        except Exception as e:
-            _log(f"{tag}: {e}")
-            time.sleep(3)
+    """Делегує до monitor._gem_post — СПІЛЬНИЙ rate-limiter на весь процес
+    (усі потоки/модулі рахують ліміт Gemini в ОДНЕ і те саме місце,
+    щоб сумарно не перевищувати 15 req/хв навіть при 60+ паралельних watcher-ах)."""
+    try:
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from monitor import _gem_post
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{_GEM_MODELS[0]}:generateContent?key={GEMINI_API_KEY}"
+        resp = _gem_post(url, json.dumps(body).encode(), timeout=timeout, tag=tag or "msg_gen", max_retries=3)
+        if isinstance(resp, dict) and "candidates" in resp:
+            cands = resp.get("candidates", [])
+            if cands:
+                parts = cands[0].get("content", {}).get("parts", [])
+                if parts and parts[0].get("text"):
+                    return parts[0]["text"]
+        _log(f"{tag}: empty response from _gem_post")
+    except Exception as e:
+        _log(f"{tag}: {e}")
     return ""
 
 # ─── Live Data ────────────────────────────────────────────────────────────────
 def _get_live_crypto() -> dict:
-    """CoinGecko free API — BTC/ETH/AVAX/ONDO via /coins/markets for real 24h change."""
+    """CoinGecko free API — розширений watchlist + TOP-мувери за 24г.
+    Основні монети Олега (BTC/ETH/AVAX/ONDO) + додаткові (SOL/BNB/XRP/DOGE)
+    для ширшого контексту крипто-огляду, плюс окремий TOP-3 gainers/losers з ринку.
+    Кешується через monitor.fetch_json_cached (60с) — уникає burst 429 коли
+    кілька тригерів/щоденних звітів дзвонять цю функцію майже одночасно."""
     try:
-        ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
+        import sys as _sys_lc
+        _sys_lc.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from monitor import fetch_json_cached
+
+        ids = "bitcoin,ethereum,avalanche-2,ondo-finance,solana,binancecoin,ripple,dogecoin"
         url = (
             "https://api.coingecko.com/api/v3/coins/markets"
             "?vs_currency=usd&ids=" + ids +
             "&order=market_cap_desc&per_page=10&page=1&sparkline=false"
             "&price_change_percentage=24h,7d"
         )
-        req = urllib.request.Request(url, headers={"User-Agent": "SmartAssistantBot/2.0"})
-        with urllib.request.urlopen(req, timeout=12) as resp:
-            raw = json.loads(resp.read())
+        raw = fetch_json_cached(url, ttl=60)
+        if not raw:
+            return {}
         mapping = {
             "bitcoin": "BTC", "ethereum": "ETH",
-            "avalanche-2": "AVAX", "ondo-finance": "ONDO"
+            "avalanche-2": "AVAX", "ondo-finance": "ONDO",
+            "solana": "SOL", "binancecoin": "BNB",
+            "ripple": "XRP", "dogecoin": "DOGE",
         }
         result = {}
         for coin in raw:
@@ -130,6 +120,26 @@ def _get_live_crypto() -> dict:
             f"{k}=${v['price']}({v['change_24h']:+.1f}%)" for k, v in result.items()
         )
         _log(f"Crypto: {summary}")
+
+        # TOP-3 mовери за 24h із топ-100 монет за market cap (ширший контекст ринку)
+        try:
+            top_url = (
+                "https://api.coingecko.com/api/v3/coins/markets"
+                "?vs_currency=usd&order=market_cap_desc&per_page=100&page=1"
+                "&sparkline=false&price_change_percentage=24h"
+            )
+            top_raw = fetch_json_cached(top_url, ttl=120)
+            if top_raw:
+                movers = [
+                    (c.get("symbol", "").upper(), round(c.get("price_change_percentage_24h") or 0, 2))
+                    for c in top_raw if c.get("price_change_percentage_24h") is not None
+                ]
+                movers.sort(key=lambda x: x[1], reverse=True)
+                result["_top_gainers"] = movers[:3]
+                result["_top_losers"] = movers[-3:][::-1]
+        except Exception as e:
+            _log(f"CoinGecko top-movers error: {e}")
+
         return result
     except Exception as e:
         _log(f"CoinGecko error: {e}")
@@ -300,17 +310,10 @@ def _get_live_strava() -> dict:
     try:
         import sys, os as _os
         sys.path.insert(0, _os.path.dirname(__file__))
-        from strava import _get_access_token
-        import urllib.request as _ur2, json as _j2
-        token = _get_access_token()
-        if not token:
-            return {}
-        # Last 7 days activities
-        after_ts = int((datetime.now() - timedelta(days=7)).timestamp())
-        url = f"https://www.strava.com/api/v3/athlete/activities?after={after_ts}&per_page=10"
-        req = _ur2.Request(url, headers={"Authorization": f"Bearer {token}"})
-        with _ur2.urlopen(req, timeout=8) as r:
-            acts = _j2.loads(r.read())
+        from strava import get_activities
+        # Використовуємо централізовану get_activities() з TTL-кешем (10 хв) —
+        # уникає прямого HTTP запиту в обхід кешу і зайвого Strava 429 burst
+        acts = get_activities(days=7)
         if not acts:
             return {}
         runs = [a for a in acts if a.get("type") in ("Run", "VirtualRun")]
@@ -413,11 +416,20 @@ def _crypto_text(crypto: dict) -> str:
         return "Крипто: дані недоступні (CoinGecko)"
     lines = []
     for coin, d in crypto.items():
+        if coin.startswith("_"):
+            continue
         c24 = d["change_24h"]
         c7  = d["change_7d"]
         arrow = "📈" if c24 > 0 else "📉"
         lines.append(f"  {arrow} {coin}: ${d['price']:,.2f} ({c24:+.1f}% за 24г, {c7:+.1f}% за тиж)")
-    return "Крипто ЗАРАЗ:\n" + "\n".join(lines)
+    result = "Крипто ЗАРАЗ (портфель Олега + ширший контекст):\n" + "\n".join(lines)
+    gainers = crypto.get("_top_gainers")
+    losers = crypto.get("_top_losers")
+    if gainers:
+        result += "\n  🚀 ТОП-3 gainers ринку (24г): " + ", ".join(f"{s} {c:+.1f}%" for s, c in gainers)
+    if losers:
+        result += "\n  🔻 ТОП-3 losers ринку (24г): " + ", ".join(f"{s} {c:+.1f}%" for s, c in losers)
+    return result
 
 def _health_text(health: dict) -> str:
     if not health:
@@ -534,6 +546,14 @@ def get_tone_variation(trigger_type: str, hour: int) -> dict:
             {"tone": "планувальний + завтра починається сьогодні", "emoji": "📋"},
             {"tone": "відновлювальний + релакс і сон", "emoji": "😌"},
         ],
+        "weekly_run_compare": [
+            {"tone": "тренер-аналітик, факти + прогрес", "emoji": "🏃"},
+            {"tone": "мотивуючий тренер, фокус на покращенні", "emoji": "📊"},
+        ],
+        "habit_checkin": [
+            {"tone": "теплий друг, без нотацій", "emoji": "🌙"},
+            {"tone": "підтримуючий, коротко і по-людськи", "emoji": "💬"},
+        ],
     }
     base = variations.get(trigger_type, [{"tone": "дружелюбний, особистий", "emoji": "👋"}])
     idx = (hour + abs(hash(trigger_type))) % len(base)
@@ -542,7 +562,7 @@ def get_tone_variation(trigger_type: str, hour: int) -> dict:
 # ─── Decision ────────────────────────────────────────────────────────────────
 def _should_send_message(trigger_type: str, trigger_data) -> bool:
     always = {"vip_email", "deep_analysis", "briefing", "contextual_briefing",
-              "morning", "evening", "health"}
+              "morning", "evening", "health", "weekly_run_compare", "habit_checkin"}
     if trigger_type in always:
         return True
     if trigger_type == "crypto_move":
@@ -597,9 +617,27 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
     elif trigger_type == "event_soon":
         if isinstance(trigger_data, list) and trigger_data:
             evts = "; ".join(str(e) for e in trigger_data[:3])
-            trigger_extra = f"\n⏰ НЕЗАБАРОМ: {evts}"
+            trigger_extra = f"\n⏰ НЕЗАБАРОМ (30-90 хв): {evts} — дай КОРОТКИЙ підготовчий брифінг: що взяти з собою, на чому зфокусуватись, чи є пов'язані листи/дедлайни."
     elif trigger_type == "idle_timeout":
         trigger_extra = f"\n😴 Олег неактивний {idle_hours:.1f} год | Локація: {location}"
+    elif trigger_type == "weekly_run_compare":
+        try:
+            from strava import compare_weeks
+            cmp = compare_weeks()
+            tw, pw = cmp.get("this_week", {}), cmp.get("prev_week", {})
+            trigger_extra = (
+                f"\n🏃 ПОРІВНЯННЯ ТИЖНІВ: цей тиждень {tw.get('km',0)} км/{tw.get('runs',0)} пробіжок, "
+                f"попередній {pw.get('km',0)} км/{pw.get('runs',0)} пробіжок. "
+                f"Різниця дистанції: {cmp.get('km_diff',0):+.1f} км, темп: {cmp.get('pace_diff',0):+.1f} с/км "
+                f"(від'ємне = швидше). Дай коротку оцінку прогресу тренера (як друг-тренер) і одну конкретну пораду на цей тиждень."
+            )
+        except Exception as e:
+            trigger_extra = f"\n🏃 Порівняння тижнів недоступне: {e}"
+    elif trigger_type == "habit_checkin":
+        trigger_extra = (
+            "\n🌙 ВЕЧІРНІЙ CHECK-IN: запитай як минув день (настрій/звички/дисципліна), "
+            "нагадай відмітити звички якщо ще не зробив, дай коротку теплу підтримку без нотацій."
+        )
 
     # ── Shift context ─────────────────────────────────────────────────────────
     h = live["hour"]
@@ -611,6 +649,24 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
         period = "ВЕЧІР — підсумуй і відпочинь"
     else:
         period = "НІЧ — спокій і відновлення"
+
+    # ── Довжина/структура залежно від теми: короткі алерти vs довгі звіти ─────
+    SHORT_TRIGGERS = {"event_soon", "habit_checkin", "idle_timeout"}
+    MEDIUM_TRIGGERS = {"crypto_move", "vip_email", "weekly_run_compare", "health"}
+    # решта (morning/evening/deep_analysis/briefing тощо) — LONG за замовчуванням
+
+    if trigger_type in SHORT_TRIGGERS:
+        max_tokens = 350
+        length_instruction = "Напиши КОРОТКЕ, чітке повідомлення 80-150 слів УКРАЇНСЬКОЮ — по суті, без води."
+        structure_instruction = "Структура: 1 вступне речення → суть тригера → 1-2 конкретні дії. Коротко і ясно."
+    elif trigger_type in MEDIUM_TRIGGERS:
+        max_tokens = 700
+        length_instruction = "Напиши ЗМІСТОВНЕ повідомлення 250-350 слів УКРАЇНСЬКОЮ — конкретний аналіз без зайвої води."
+        structure_instruction = "Структура: 1 яскраве вступне речення → аналіз ключової теми тригера (2-3 абзаци) → 2-3 конкретні дії."
+    else:
+        max_tokens = 1400
+        length_instruction = "Напиши ЖИВЕ, ОСОБИСТЕ повідомлення 500-650 слів УКРАЇНСЬКОЮ — повний розгорнутий аналіз."
+        structure_instruction = "Структура: 1 яскраве вступне речення → РОЗГОРНУТИЙ аналіз кожного блоку (крипто, здоров'я, пошта, астро, календар) → 3-5 конкретних дій. Кожен блок аналізу — мінімум 3-4 речення з деталями та порадами."
 
     # ── Prompt ────────────────────────────────────────────────────────────────
     prompt = f"""Ти персональний AI-асистент Олега Новосадова (36р, Кошіце SK, Minebea Mitsumi, крипто-інвестор, бігун, ціль: фінансова незалежність + схуднення до 78 кг).
@@ -626,7 +682,7 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
 {anti_repeat}
 
 ЗАВДАННЯ:
-Напиши ЖИВЕ, ОСОБИСТЕ повідомлення 500-650 слів УКРАЇНСЬКОЮ.
+{length_instruction}
 
 Вимоги:
 1. ВИКОРИСТАЙ реальні цифри з "ПОТОЧНІ ЖИВІ ДАНІ" — ціни, вагу, кроки, листи, події
@@ -634,10 +690,9 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
 2. НЕ пиши "Даних немає" — якщо дані є, використай; якщо немає — зроби розумний висновок без цієї фрази
 3. Стиль ЖИВИЙ і ОСОБИСТИЙ — як старший друг, не корпоративний бот
 4. Конкретні рекомендації — не "відпочинь", а "зроби X зараз"
-5. Структура: 1 яскраве вступне речення → РОЗГОРНУТИЙ аналіз кожного блоку (крипто, здоров'я, пошта, астро, календар) → 3-5 конкретних дій
+5. {structure_instruction}
 6. НЕ повторюй попередні теми (анти-репіт вище)
-7. Кожен блок аналізу — мінімум 3-4 речення з деталями та порадами
-8. НЕ скорочуй — пиши повний, завершений текст
+7. НЕ скорочуй штучно — пиши повний, завершений текст у вказаному обсязі
 
 ПОЧНИ З: "Привіт Олеже! {tone['emoji']}"
 """
@@ -645,7 +700,7 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
     body = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {
-            "maxOutputTokens": 1400,
+            "maxOutputTokens": max_tokens,
             "temperature": 0.85,
             "thinkingConfig": {"thinkingBudget": 0}
         }
@@ -653,18 +708,52 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
     message = _gemini_post(body, timeout=25, tag=f"MSG_{trigger_type.upper()}")
 
     # ── Fallback if Gemini fails ──────────────────────────────────────────────
+    # Розширений fallback — використовує ВСІ доступні живі дані (не тільки BTC+вага),
+    # щоб навіть без AI повідомлення було змістовним, а не голим шматком інформації.
     if not message:
+        _log(f"⚠️ Gemini unavailable for {trigger_type} — using EXPANDED local fallback")
         crypto = live.get("crypto", {})
         health = live.get("health", {})
+        strava = live.get("strava", {})
+        emails = live.get("emails", [])
+        calendar = live.get("calendar", [])
         now_str = live["now_str"]
-        parts = [f"Привіт Олеже! {tone['emoji']}\n"]
+        parts = [f"Привіт Олеже! {tone['emoji']} (AI зараз перевантажена — коротка версія на реальних даних)\n"]
+
         if crypto:
-            btc = crypto.get("BTC", {})
-            if btc:
-                parts.append(f"💹 BTC зараз: ${btc['price']:,.0f} ({btc['change_24h']:+.1f}% за 24г)")
+            crypto_lines = []
+            for sym in ["BTC", "ETH", "AVAX", "ONDO", "SOL"]:
+                d = crypto.get(sym)
+                if d:
+                    arrow = "📈" if d["change_24h"] > 0 else "📉"
+                    crypto_lines.append(f"{arrow} {sym}: ${d['price']:,.2f} ({d['change_24h']:+.1f}%)")
+            if crypto_lines:
+                parts.append("💹 Крипто:\n" + "\n".join(f"  {l}" for l in crypto_lines))
+
+        health_lines = []
         if health.get("weight"):
             delta = health.get("weight_7d_delta", 0)
-            parts.append(f"⚖️ Вага: {health['weight']} кг ({delta:+.1f} кг за тиж)")
+            health_lines.append(f"⚖️ Вага: {health['weight']} кг ({delta:+.1f} кг за тиж)")
+        if health.get("steps"):
+            health_lines.append(f"🚶 Кроки: {health['steps']:,}")
+        if health.get("sleep"):
+            health_lines.append(f"😴 Сон: {health['sleep']} год")
+        if health_lines:
+            parts.append("\n" + "\n".join(health_lines))
+
+        if strava and strava.get("last_run_km"):
+            parts.append(f"\n🏃 Остання пробіжка: {strava['last_run_km']} км ({strava.get('last_run_date','?')}), темп {strava.get('last_run_pace','—')}")
+
+        if emails:
+            vip = [e for e in emails if e.get("starred")]
+            if vip:
+                parts.append(f"\n📬 Важливі листи: {len(vip)} (перевір Telegram-кнопки нижче)")
+            elif emails:
+                parts.append(f"\n📬 Нових листів: {len(emails)}")
+
+        if calendar:
+            parts.append(f"\n📅 Найближчі події: {'; '.join(str(e) for e in calendar[:2])}")
+
         parts.append(f"\n⏰ {now_str} | {location}")
         message = "\n".join(parts)
 

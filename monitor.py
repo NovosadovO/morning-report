@@ -477,6 +477,33 @@ def fetch_json(url, retries=1):
         return None
 
 
+# СПІЛЬНИЙ TTL-кеш для CoinGecko — ~25 місць у коді (monitor.py, message_generator.py,
+# intelligent_listener.py, smart_notifications_v3.py, portfolio.py тощо) незалежно
+# смикають CoinGecko free API (30 req/хв ліміт) без координації → burst 429,
+# особливо intelligent_listener який перевіряє крипто-рух кожні ~35с.
+# Кеш на 60с: усі виклики в межах цього вікна з ОДНАКОВИМ url отримують один результат.
+_COINGECKO_CACHE: dict = {}
+_COINGECKO_TTL = 60
+
+def fetch_json_cached(url, ttl=_COINGECKO_TTL):
+    """Як fetch_json, але з TTL-кешем по url — для CoinGecko-подібних API з жорстким
+    rate-limit, куди дзвонять багато незалежних модулів. При 429 повертає протухлий
+    кеш якщо він є (краще старі дані, ніж нічого)."""
+    import time as _t_cg
+    now_ts = _t_cg.time()
+    entry = _COINGECKO_CACHE.get(url)
+    if entry and (now_ts - entry["ts"]) < ttl:
+        return entry["data"]
+    data = fetch_json(url)
+    if data is not None:
+        _COINGECKO_CACHE[url] = {"data": data, "ts": now_ts}
+        return data
+    if entry:
+        print(f"fetch_json_cached: returning STALE cache for [{url[:60]}] (age {now_ts - entry['ts']:.0f}s)")
+        return entry["data"]
+    return None
+
+
 def esc(s):
     return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
@@ -1097,6 +1124,36 @@ def get_calendar():
         return f"📅 <b>Календар</b>\n⚠️ Помилка: {esc(str(e)[:120])}"
 
 
+def get_calendar_events_upcoming(minutes_ahead=90):
+    """Повертає список рядків "HH:MM — Назва" для подій у наступні N хвилин
+    (для event_prep тригера — коротке вікно підготовки до зустрічі/події)."""
+    token = _calendar_access_token()
+    if not token:
+        return []
+    try:
+        headers = {"Authorization": f"Bearer {token}"}
+        tz_local = timezone(timedelta(hours=2))
+        now = datetime.now(timezone.utc)
+        t_end = now + timedelta(minutes=minutes_ahead)
+        events = _fetch_events_all_calendars(headers, now, t_end, max_per_cal=20)
+        result = []
+        for ev in events:
+            summary = ev.get("summary", "(без назви)")
+            start = ev["start"].get("dateTime") or ev["start"].get("date")
+            if not start or "T" not in start:
+                continue
+            try:
+                dt = datetime.fromisoformat(start.replace("Z", "+00:00")).astimezone(tz_local)
+                when = dt.strftime("%H:%M")
+            except Exception:
+                when = "?"
+            result.append(f"{when} — {summary}")
+        return result
+    except Exception as e:
+        print(f"get_calendar_events_upcoming error: {e}")
+        return []
+
+
 # Рутинні/повторювані події, які НЕ показуємо у блоці "Найближчі події"
 _ROUTINE_EVENT_KEYS = [
     "біг", "вода", "чай", "сауна", "зміна", "рання", "нічна",
@@ -1341,7 +1398,7 @@ def _parse_gmail_msg(msg_data, full=False):
 
 
 _GEM_LAST_CALL = [0.0]
-_GEM_MIN_GAP = 9.0  # мін. секунд між викликами Gemini. Free-tier=15/хв; 9s тримає запас навіть якщо паралельний інстанс теж палить квоту
+_GEM_MIN_GAP = 11.0  # мін. секунд між викликами Gemini. Тепер усі модулі (включно з новими тригерами event_prep/weekly_run_compare/habit_checkin) діляться цим лічильником — 11s тримає запас під більшим сумарним навантаженням
 _REPORT_AI_DEADLINE = 0.0  # monotonic-час, до якого можна робити AI-блоки (ставиться в main())
 
 # Моделі для fallback на 429: коли основна вичерпала квоту — пробуємо наступну (інший quota-pool)
@@ -1571,6 +1628,105 @@ def _imap_get_body(msg):
             pass
     return body[:3000]
 
+
+def _imap_get_attachments(msg, max_files=3, max_chars_each=3000):
+    """
+    Витягує ВКЛАДЕНІ файли листа (PDF/DOCX/TXT) і повертає їх текст.
+    Повертає список: [{"filename": "...", "text": "...", "error": None|"..."}]
+    Для форматів що не вдалось розпарсити — повертає filename + error,
+    щоб AI знав що вкладення БУЛО, навіть якщо зміст не витягли.
+    """
+    results = []
+    if not msg.is_multipart():
+        return results
+
+    for part in msg.walk():
+        cd = str(part.get("Content-Disposition", ""))
+        filename = part.get_filename()
+        if not filename or "attachment" not in cd.lower():
+            continue
+        if len(results) >= max_files:
+            break
+
+        try:
+            filename = _imap_decode_header(filename)
+        except Exception:
+            pass
+
+        fname_low = filename.lower()
+        entry = {"filename": filename, "text": "", "error": None}
+
+        try:
+            raw_bytes = part.get_payload(decode=True)
+            if not raw_bytes:
+                entry["error"] = "порожній вкладений файл"
+                results.append(entry)
+                continue
+
+            if fname_low.endswith(".pdf"):
+                try:
+                    import io as _io
+                    from pypdf import PdfReader
+                    reader = PdfReader(_io.BytesIO(raw_bytes))
+                    text_pages = []
+                    for page in reader.pages[:10]:
+                        try:
+                            text_pages.append(page.extract_text() or "")
+                        except Exception:
+                            pass
+                    entry["text"] = "\n".join(text_pages).strip()[:max_chars_each]
+                    if not entry["text"]:
+                        entry["error"] = "PDF без текстового шару (можливо скан/зображення)"
+                except Exception as _pe:
+                    entry["error"] = f"не вдалось прочитати PDF: {_pe}"
+
+            elif fname_low.endswith(".docx"):
+                try:
+                    import io as _io
+                    from docx import Document
+                    doc = Document(_io.BytesIO(raw_bytes))
+                    entry["text"] = "\n".join(p.text for p in doc.paragraphs).strip()[:max_chars_each]
+                    if not entry["text"]:
+                        entry["error"] = "DOCX порожній або без тексту"
+                except Exception as _de:
+                    entry["error"] = f"не вдалось прочитати DOCX: {_de}"
+
+            elif fname_low.endswith((".txt", ".csv", ".json", ".log", ".md")):
+                try:
+                    entry["text"] = raw_bytes.decode("utf-8", errors="replace").strip()[:max_chars_each]
+                except Exception as _te:
+                    entry["error"] = f"не вдалось прочитати текстовий файл: {_te}"
+
+            elif fname_low.endswith((".png", ".jpg", ".jpeg", ".gif", ".heic", ".webp")):
+                entry["error"] = "зображення — текстовий зміст недоступний без OCR"
+
+            elif fname_low.endswith((".xlsx", ".xls")):
+                entry["error"] = "Excel-файл — текстовий зміст не витягнуто (потрібен окремий парсер)"
+
+            else:
+                entry["error"] = f"формат файлу не підтримується для читання ({fname_low.rsplit('.', 1)[-1] if '.' in fname_low else '?'})"
+
+        except Exception as _e:
+            entry["error"] = f"помилка обробки вкладення: {_e}"
+
+        results.append(entry)
+
+    return results
+
+
+def _format_attachments_for_ai(attachments):
+    """Форматує список вкладень у текстовий блок для промпту AI."""
+    if not attachments:
+        return ""
+    lines = ["\n\n📎 ВКЛАДЕНІ ФАЙЛИ ДО ЛИСТА:"]
+    for a in attachments:
+        lines.append(f"\n— Файл: {a['filename']}")
+        if a.get("text"):
+            lines.append(f"Зміст файлу:\n{a['text']}")
+        else:
+            lines.append(f"(зміст не вдалось прочитати: {a.get('error', 'невідома причина')})")
+    return "\n".join(lines)
+
 def get_emails():
     try:
         mail = _imap_connect()
@@ -1732,15 +1888,20 @@ def _gemini_email_analysis(full_text: str, health_context: str = "") -> dict:
     )
     req_body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.3}
+        "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.3, "thinkingConfig": {"thinkingBudget": 0}}
     }).encode()
 
     try:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
-        req = urllib.request.Request(url, data=req_body, headers={"Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=40) as r:
-            resp_data = json.loads(r.read())
-        raw = resp_data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        resp_data = _gem_post(url, req_body, timeout=30, tag="email_ai_item", max_retries=3)
+        if not isinstance(resp_data, dict) or "candidates" not in resp_data:
+            print(f"[email AI] error: empty/invalid response")
+            return None
+        _parts = resp_data.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+        if not _parts:
+            print(f"[email AI] error: no parts in response")
+            return None
+        raw = _parts[0].get("text", "").strip()
         # Прибираємо markdown огорожі якщо є
         raw = _re.sub(r"^```(?:json)?\s*", "", raw, flags=_re.MULTILINE)
         raw = _re.sub(r"\s*```\s*$", "", raw, flags=_re.MULTILINE)
@@ -1821,6 +1982,16 @@ def _get_email_ai_analysis_for_report(email_items_dict: dict, health_context: st
         analysis_lines = [f"📧 <b>AI АНАЛІЗ ПОШТИ</b>  ({len(to_analyze)} важливих листів)"]
         
         for subject, sender, full_text in to_analyze:
+            # Захист дедлайну: якщо AI-часу лишилось замало (5+ листів × throttle
+            # можуть з'їсти весь бюджет) — зупиняємось і показуємо решту листів
+            # без AI-аналізу замість того щоб пропустити ВЕСЬ блок мовчки.
+            if not _ai_time_left(min_needed=25):
+                sender_short = sender.split("<")[0].strip() if "<" in sender else sender.split("@")[0]
+                analysis_lines.append(f"\n👤 {esc(sender_short)}")
+                analysis_lines.append(f"📋 {esc(subject[:60])}")
+                analysis_lines.append("⏱ (AI-час вичерпано — без аналізу)")
+                continue
+
             ai_result = _gemini_email_analysis(full_text, health_context)
             
             if ai_result:
@@ -1836,6 +2007,12 @@ def _get_email_ai_analysis_for_report(email_items_dict: dict, health_context: st
                     analysis_lines.append(f"📝 {esc(desc)}")
                 if opinion:
                     analysis_lines.append(f"💭 {esc(opinion)}")
+            else:
+                # Fallback: коротка деталь без AI, замість повного пропуску листа
+                sender_short = sender.split("<")[0].strip() if "<" in sender else sender.split("@")[0]
+                analysis_lines.append(f"\n👤 {esc(sender_short)}")
+                analysis_lines.append(f"📋 {esc(subject[:60])}")
+                analysis_lines.append("📝 (AI-аналіз тимчасово недоступний)")
         
         return "\n".join(analysis_lines)
     
@@ -3290,6 +3467,24 @@ def generate_habits_chart(days: int = 30) -> bytes | None:
 _FORCE_REPORT = False  # встановлюється в True для ручного виклику /звіт
 
 
+def _themes_local_fallback(ctx: dict) -> str:
+    """Локальний fallback коли Gemini недоступна (429 на всіх моделях) —
+    формує короткий текстовий блок з РЕАЛЬНИХ даних без AI, щоб звіт ніколи
+    не був повністю порожнім по цій темі."""
+    lines = ["💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)"]
+    labels = {
+        "finance": "💰 Фінанси", "running": "🏃 Біг", "health": "⚖️ Здоров'я",
+        "habits": "✅ Звички", "emails": "📬 Пошта", "calendar": "📅 Календар",
+    }
+    for key, label in labels.items():
+        val = ctx.get(key)
+        if val and val not in ("немає даних", "немає даних про здоров'я"):
+            lines.append(f"{label}: {val}")
+    if len(lines) == 1:
+        return ""
+    return "\n".join(lines)
+
+
 def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
     """
     Глибокий тематичний AI-аналіз по 7 темах (фінанси, біг, здоров'я/вага,
@@ -3328,25 +3523,37 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
             f"--- ДЕНЬ-РЕЙТИНГ ---\n{_g('day_score')}\n"
         )
 
+        # Ротація стилю за годиною доби + днем тижня — щоб текст НЕ звучав як
+        # шаблон, а щоразу трохи по-іншому (тон, персона, темп подачі).
+        _STYLE_VARIANTS = [
+            {"persona": "старший друг-наставник, тепло і по-дружньому", "pace": "спокійний, без поспіху"},
+            {"persona": "прямий коуч-практик, менше емоцій, більше конкретики", "pace": "енергійний, стислий"},
+            {"persona": "аналітик-стратег, дивиться на цифри і тренди", "pace": "структурований, по фактах"},
+            {"persona": "мотиваційний тренер, вірить у результат", "pace": "заряджений, з наголосом на дію"},
+        ]
+        _style = _STYLE_VARIANTS[(now_local.hour + now_local.day) % len(_STYLE_VARIANTS)]
+
         prompt = (
             f"Ти — особистий AI-наставник Олега Новосадова з Кошице (Словаччина). "
             f"Працює на заводі Minebea Mitsumi позмінно. Цілі: фінансова незалежність, "
             f"схуднення (зараз ~83-84 кг, ціль 75 кг), нова робота у сфері інвестицій, "
             f"здоровий спосіб життя. Інтереси: інвестиції, біг, спорт.\n\n"
+            f"СЬОГОДНІШНІЙ ТОН: {_style['persona']}. Темп подачі: {_style['pace']}.\n\n"
             f"Ось РЕАЛЬНІ дані Олега ПРЯМО ЗАРАЗ:\n{data_block}\n"
-            f"Напиши теплий, мотивуючий аналіз з підтримкою — як друг-наставник який вірить у нього. "
-            f"Структура (кожна секція 2-3 речення, ТІЛЬКИ якщо є реальні дані по темі — інакше пропусти):\n\n"
+            f"Напиши аналіз у зазначеному сьогодні тоні. "
+            f"Структура (кожна секція 2-3 речення, ТІЛЬКИ якщо є реальні дані по темі — інакше пропусти повністю, без \"немає даних\"):\n\n"
             f"💰 ФІНАНСИ — оціни поточний стан, дай 1 конкретну дію на сьогодні для руху до фін. незалежності.\n\n"
             f"🏃 БІГ — проаналізуй прогрес. Якщо вже бігав — похвали і дай пораду на відновлення; якщо ні і є час — мотивуй.\n\n"
             f"⚖️ ЗДОРОВ'Я + ВАГА — на основі ваги і звичок дай 1 практичну пораду для схуднення (харчування/рух).\n\n"
             f"✅ ЗВИЧКИ — оціни дисципліну сьогодні, підтримай за виконане, м'яко нагадай про невиконане.\n\n"
             f"📬 ПОШТА — якщо є важливі листи, виділи що пріоритетне і що зробити.\n\n"
             f"📅 ДЕНЬ — на основі календаря/зміни дай 1 пораду як оптимізувати наступні години.\n\n"
-            f"🌟 МОТИВАЦІЯ — 1-2 теплі речення підтримки, нагадай що кожен крок наближає до цілей.\n\n"
+            f"🌟 ПІДСУМОК — 1-2 речення у сьогоднішньому тоні, не шаблонні, різні щоразу.\n\n"
             f"ПРАВИЛА:\n"
-            f"- Звертайся до Олега на 'ти', тепло і по-дружньому.\n"
-            f"- ТІЛЬКИ реальні дані — НЕ вигадуй цифри. Якщо по темі 'немає даних' — пропусти секцію.\n"
+            f"- Звертайся до Олега на 'ти'. Дотримуйся зазначеного сьогодні тону — це має відчуватись у стилі.\n"
+            f"- ТІЛЬКИ реальні дані — НЕ вигадуй цифри. Якщо по темі 'немає даних' — пропусти секцію ПОВНІСТЮ (без слів типу 'дані відсутні').\n"
             f"- Враховуй зміну: якщо Олег ЗАРАЗ на роботі — не пропонуй те що неможливо зробити на заводі.\n"
+            f"- Уникай шаблонних фраз ('кожен крок наближає до цілей', 'ти на правильному шляху') — знайди свіже формулювання щоразу.\n"
             f"- Без вступів типу 'Привіт' чи 'Звичайно'. Українська мова. Кожне речення завершуй повністю.\n"
             f"- Емодзі-заголовки залишай як вказано. Без markdown (**) і без HTML."
         )
@@ -3358,13 +3565,19 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
                 "thinkingConfig": {"thinkingBudget": 0},
             },
         }).encode()
-        # ── ТАЙМАУТ ЗАХИСТ: макс 15s за одну AI-відповідь (не залипати) ──
-        _timeout_themes = max(5, min(15, int(_ai_time_left() * 0.8)))  # 80% від залишку часу, мін 5s
-        print(f"[themes_ai] sending request to Gemini (timeout={_timeout_themes}s, retry-on-429)...", flush=True)
+        # Timeout HTTP-запиту (макс 20s на ОДНУ спробу) — саму загальну тривалість
+        # retry+model-fallback контролює _ai_time_left/дедлайн репорту, не цей timeout.
+        # Раніше тут стояло int(_ai_time_left()*0.8) обмежене max 15s — цього НЕ вистачало
+        # _gem_post щоб дійти до 2-3 моделі при 429, тому themes_ai часто повертав "" мовчки.
+        _timeout_themes = 20
+        print(f"[themes_ai] sending request to Gemini (timeout={_timeout_themes}s/attempt, retry-on-429)...", flush=True)
         resp = _gem_post(
             f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-            body, timeout=_timeout_themes, tag="themes_ai"
+            body, timeout=_timeout_themes, tag="themes_ai", max_retries=3
         )
+        if not isinstance(resp, dict):
+            print(f"[themes_ai] EMPTY/invalid response from _gem_post — {_themes_local_fallback(ctx)!r}", flush=True)
+            return _themes_local_fallback(ctx)
         _cand = (resp.get("candidates") or [{}])[0]
         _finish = _cand.get("finishReason", "UNKNOWN")
         print(f"[themes_ai] finishReason={_finish}", flush=True)
@@ -3372,8 +3585,8 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
         _parts = (_cand.get("content") or {}).get("parts") or []
         if not _parts:
             _um = resp.get("usageMetadata", {})
-            print(f"[themes_ai] EMPTY parts! finish={_finish} usage={_um}", flush=True)
-            return ""
+            print(f"[themes_ai] EMPTY parts! finish={_finish} usage={_um} — using local fallback", flush=True)
+            return _themes_local_fallback(ctx)
         result = (_parts[0].get("text") or "").strip()
         import re as _re_t
         result = _re_t.sub(r'\*\*(.+?)\*\*', r'\1', result)
@@ -3388,9 +3601,12 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
         return result
     except Exception as e:
         import traceback as _tb_t
-        print(f"[themes_ai] ERROR: {e}", flush=True)
+        print(f"[themes_ai] ERROR: {e} — using local fallback", flush=True)
         print(_tb_t.format_exc(), flush=True)
-        return ""
+        try:
+            return _themes_local_fallback(ctx)
+        except Exception:
+            return ""
 
 
 def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "") -> str:
@@ -3458,51 +3674,62 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
 - Якщо транзитних даних немає — дай загальну астро-погоду тижня без вигадки
 - НЕ пропускай жодного значного транзиту зі списку (особливо ingress-переходи і аспекти з орбом <1.5°)
 """
-    # Генеруємо AI-аналіз через Gemini API
-    for attempt in range(2):
-        try:
-            body = json.dumps({
-                "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {
-                    "maxOutputTokens": 4000,
-                    "temperature": 0.8,
-                    "thinkingConfig": {"thinkingBudget": 0}  # Вимикаємо reasoning
-                }
-            }).encode()
-            response = _gem_post(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-                body,
-                timeout=30,
-                tag=f"astro_ai_attempt_{attempt+1}"
-            )
-            
-            if response is None:
-                print(f"[astro_ai] attempt {attempt+1}: no response", flush=True)
-                continue
-            
-            candidates = response.get("candidates", [])
-            if not candidates:
-                print(f"[astro_ai] attempt {attempt+1}: no candidates", flush=True)
-                continue
-            
-            parts = candidates[0].get("content", {}).get("parts", [])
-            if not parts:
-                print(f"[astro_ai] attempt {attempt+1}: empty parts", flush=True)
-                continue
-            
-            text = parts[0].get("text", "").strip()
-            if text:
-                print(f"[astro_ai] SUCCESS (attempt {attempt+1}) — {len(text)} chars", flush=True)
-                return text
-            else:
-                print(f"[astro_ai] attempt {attempt+1}: empty text", flush=True)
-        except Exception as e:
-            print(f"[astro_ai] error attempt {attempt+1}: {e}", flush=True)
-            if attempt == 0:
-                import time as _t_astro
-                _t_astro.sleep(2)
-    
-    return ""
+    # Генеруємо AI-аналіз через Gemini. _gem_post вже робить внутрішній
+    # retry+model-fallback (2.5-flash->2.0-flash->2.5-flash-lite), тому зовнішній
+    # цикл attempts тут був зайвим дублюванням - прибрано, лишається 1 виклик
+    # з достатнім timeout щоб retry встиг дійти до резервної моделі.
+    try:
+        body = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "maxOutputTokens": 4000,
+                "temperature": 0.8,
+                "thinkingConfig": {"thinkingBudget": 0}  # Вимикаємо reasoning
+            }
+        }).encode()
+        response = _gem_post(
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            body,
+            timeout=20,
+            tag="astro_ai",
+            max_retries=3
+        )
+
+        if not isinstance(response, dict):
+            print(f"[astro_ai] invalid response — using local fallback", flush=True)
+            return _astro_local_fallback(transit_data, shift_hint)
+
+        candidates = response.get("candidates", [])
+        if not candidates:
+            print(f"[astro_ai] no candidates — using local fallback", flush=True)
+            return _astro_local_fallback(transit_data, shift_hint)
+
+        parts = candidates[0].get("content", {}).get("parts", [])
+        if not parts:
+            print(f"[astro_ai] empty parts — using local fallback", flush=True)
+            return _astro_local_fallback(transit_data, shift_hint)
+
+        text = parts[0].get("text", "").strip()
+        if text:
+            print(f"[astro_ai] SUCCESS — {len(text)} chars", flush=True)
+            return text
+        print(f"[astro_ai] empty text — using local fallback", flush=True)
+        return _astro_local_fallback(transit_data, shift_hint)
+    except Exception as e:
+        print(f"[astro_ai] error: {e} — using local fallback", flush=True)
+        return _astro_local_fallback(transit_data, shift_hint)
+
+
+def _astro_local_fallback(transit_data: str, shift_hint: str = "") -> str:
+    """Локальний fallback для астро-блоку коли Gemini недоступна —
+    показує РЕАЛЬНІ транзитні дані без AI-інтерпретації, замість порожнього блоку."""
+    if not transit_data:
+        return ""
+    lines = ["🌙 <b>ТРАНЗИТИ СЬОГОДНІ</b> (AI тимчасово перевантажена, без інтерпретації)"]
+    lines.append(transit_data[:800])
+    if shift_hint:
+        lines.append(f"\n📌 {shift_hint[:150]}")
+    return "\n".join(lines)
 
 
 def _ai_personal_message(situation: str, context: dict = None, max_tokens: int = 200) -> str:
@@ -7498,21 +7725,14 @@ def check_strava_new_activity():
     try:
         import sys as _sys_s
         _sys_s.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import _get_access_token
+        from strava import get_activities
 
         state = load_json_file(_STRAVA_LAST_ACT_FILE, default={})
         last_id = state.get("last_id")
 
-        token = _get_access_token()
-        import requests as _req_s
-        r = _req_s.get(
-            "https://www.strava.com/api/v3/athlete/activities",
-            headers={"Authorization": f"Bearer {token}"},
-            params={"per_page": 1, "page": 1},
-            timeout=15
-        )
-        r.raise_for_status()
-        acts = r.json()
+        # Централізована get_activities() з TTL-кешем (10 хв) — уникає прямого
+        # HTTP запиту в обхід кешу кожні 10 хв (watcher) → менше Strava 429
+        acts = get_activities(days=3)
         if not acts:
             return
 
@@ -7936,20 +8156,18 @@ def check_monthly_summary():
     # Strava — пробіжки за місяць
     try:
         import sys as _sys_ms; _sys_ms.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import _get_access_token
-        import requests as _req_ms
-        token = _get_access_token()
+        from strava import get_activities
         import calendar as _cal
         _, last_day = _cal.monthrange(prev_month_end.year, prev_month_end.month)
         after_ts  = int(prev_month_start.replace(tzinfo=timezone.utc).timestamp())
         before_ts = int((prev_month_end.replace(day=last_day, hour=23, minute=59) + timedelta(seconds=1)).replace(tzinfo=timezone.utc).timestamp())
-        r_ms = _req_ms.get(
-            "https://www.strava.com/api/v3/athlete/activities",
-            headers={"Authorization": f"Bearer {token}"},
-            params={"per_page": 100, "after": after_ts, "before": before_ts},
-            timeout=15
-        )
-        acts = r_ms.json() if r_ms.ok else []
+        # Централізована get_activities() з TTL-кешем — тягнемо ширше вікно (60 днів)
+        # і фільтруємо потрібний місяць локально, замість прямого HTTP запиту з after/before
+        _days_span = max(31, int((datetime.now(timezone.utc).timestamp() - after_ts) / 86400) + 1)
+        acts_all = get_activities(days=min(_days_span, 90))
+        acts = [a for a in acts_all if after_ts <= _cal.timegm(datetime.fromisoformat(
+                    a.get("start_date", "1970-01-01T00:00:00Z").replace("Z", "+00:00")
+                ).utctimetuple()) < before_ts] if acts_all else []
         runs = [a for a in acts if a.get("type") in ("Run","TrailRun","VirtualRun")]
         total_km = round(sum(a["distance"] for a in runs) / 1000, 1)
         total_min = sum(a["moving_time"] for a in runs) // 60
@@ -9742,6 +9960,19 @@ def main():
 
     # ── Блок 8: ПОРТФЕЛЬ — ВИДАЛЕНО ────────────────────────────────────────────
 
+    # ── Крипто-тренд графік — щовечора о 20:xx (BTC/ETH/AVAX/ONDO/SOL за 30 днів) ──
+    if now_local.hour == 20 and now_local.minute < 30:
+        try:
+            print(f"[charts] generating crypto trend chart...", flush=True)
+            from charts import plot_crypto_trend as _plot_crypto_trend
+            _cchart = _plot_crypto_trend(days=30)
+            print(f"[charts] crypto trend: {len(_cchart) if _cchart else 0} bytes", flush=True)
+            if _cchart:
+                parts.append({"photo": _cchart, "caption": "💹 Динаміка портфеля за 30 днів"})
+        except Exception as _e_crypto_chart:
+            import traceback as _tb_cc
+            print(f"crypto trend chart error: {_e_crypto_chart}\n{_tb_cc.format_exc()}", flush=True)
+
     # ── Вага + звички за місяць — КОЖЕН звіт ─────────────────────────────────
     # ── Тижневий підсумок — неділя о 20:20-20:29 ──────────────────────────────
     if now_local.weekday() == 6 and now_local.hour == 20 and 20 <= now_local.minute <= 29:
@@ -10870,52 +11101,50 @@ PROACTIVE_FILE = os.path.join(_DATA_DIR, "monitor_proactive.json")
 
 
 def _get_calendar_events_text() -> str:
-    """Повертає короткий список подій з Google Calendar на СЬОГОДНІ (для AI промптів)."""
-    # Генеруємо AI-аналіз через Gemini API
-    for attempt in range(2):
-        try:
-            body = json.dumps({
-                "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {
-                    "maxOutputTokens": 4000,
-                    "temperature": 0.8,
-                    "thinkingConfig": {"thinkingBudget": 0}  # Вимикаємо reasoning
-                }
-            }).encode()
-            response = _gem_post(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-                body,
-                timeout=30,
-                tag=f"astro_ai_attempt_{attempt+1}"
-            )
-            
-            if response is None:
-                print(f"[astro_ai] attempt {attempt+1}: no response", flush=True)
+    """Повертає короткий список подій з Google Calendar на СЬОГОДНІ у форматі
+    'HH:MM Подія; HH:MM Подія2' (для AI промптів). Раніше тут стояв зіпсований
+    шматок коду з astro_ai (copy-paste баг) який завжди кидав NameError 'prompt'
+    is not defined і мовчки повертав "" — тепер реальна реалізація через Calendar API.
+    """
+    token = _calendar_access_token()
+    if not token:
+        return "нічого не заплановано"
+    try:
+        headers = {"Authorization": f"Bearer {token}"}
+        tz_local = timezone(timedelta(hours=2))
+        now = datetime.now(timezone.utc)
+        now_local = now.astimezone(tz_local)
+        day_start = now_local.replace(hour=0, minute=0, second=0, microsecond=0).astimezone(timezone.utc)
+        day_end = day_start + timedelta(hours=24)
+
+        events = _fetch_events_all_calendars(headers, day_start, day_end, max_per_cal=20)
+        if not events:
+            return "нічого не заплановано"
+
+        items = []
+        for ev in events:
+            summary = ev.get("summary", "(без назви)")
+            if _is_routine_event(summary):
                 continue
-            
-            candidates = response.get("candidates", [])
-            if not candidates:
-                print(f"[astro_ai] attempt {attempt+1}: no candidates", flush=True)
+            start_v = ev["start"].get("dateTime") or ev["start"].get("date")
+            if not start_v:
                 continue
-            
-            parts = candidates[0].get("content", {}).get("parts", [])
-            if not parts:
-                print(f"[astro_ai] attempt {attempt+1}: empty parts", flush=True)
-                continue
-            
-            text = parts[0].get("text", "").strip()
-            if text:
-                print(f"[astro_ai] SUCCESS (attempt {attempt+1}) — {len(text)} chars", flush=True)
-                return text
-            else:
-                print(f"[astro_ai] attempt {attempt+1}: empty text", flush=True)
-        except Exception as e:
-            print(f"[astro_ai] error attempt {attempt+1}: {e}", flush=True)
-            if attempt == 0:
-                import time as _t_astro
-                _t_astro.sleep(2)
-    
-    return ""
+            try:
+                if "T" in start_v:
+                    dt = datetime.fromisoformat(start_v.replace("Z", "+00:00")).astimezone(tz_local)
+                    when = dt.strftime("%H:%M")
+                else:
+                    when = "весь день"
+            except Exception:
+                when = "?"
+            items.append(f"{when} {summary}")
+
+        if not items:
+            return "нічого не заплановано"
+        return "; ".join(items[:10])
+    except Exception as e:
+        print(f"_get_calendar_events_text error: {e}", flush=True)
+        return "нічого не заплановано"
 
 
 def _ai_personal_message(situation: str, context: dict = None, max_tokens: int = 200) -> str:
@@ -14911,21 +15140,14 @@ def check_strava_new_activity():
     try:
         import sys as _sys_s
         _sys_s.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import _get_access_token
+        from strava import get_activities
 
         state = load_json_file(_STRAVA_LAST_ACT_FILE, default={})
         last_id = state.get("last_id")
 
-        token = _get_access_token()
-        import requests as _req_s
-        r = _req_s.get(
-            "https://www.strava.com/api/v3/athlete/activities",
-            headers={"Authorization": f"Bearer {token}"},
-            params={"per_page": 1, "page": 1},
-            timeout=15
-        )
-        r.raise_for_status()
-        acts = r.json()
+        # Централізована get_activities() з TTL-кешем (10 хв) — уникає прямого
+        # HTTP запиту в обхід кешу кожні 10 хв (watcher) → менше Strava 429
+        acts = get_activities(days=3)
         if not acts:
             return
 
@@ -15349,20 +15571,18 @@ def check_monthly_summary():
     # Strava — пробіжки за місяць
     try:
         import sys as _sys_ms; _sys_ms.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import _get_access_token
-        import requests as _req_ms
-        token = _get_access_token()
+        from strava import get_activities
         import calendar as _cal
         _, last_day = _cal.monthrange(prev_month_end.year, prev_month_end.month)
         after_ts  = int(prev_month_start.replace(tzinfo=timezone.utc).timestamp())
         before_ts = int((prev_month_end.replace(day=last_day, hour=23, minute=59) + timedelta(seconds=1)).replace(tzinfo=timezone.utc).timestamp())
-        r_ms = _req_ms.get(
-            "https://www.strava.com/api/v3/athlete/activities",
-            headers={"Authorization": f"Bearer {token}"},
-            params={"per_page": 100, "after": after_ts, "before": before_ts},
-            timeout=15
-        )
-        acts = r_ms.json() if r_ms.ok else []
+        # Централізована get_activities() з TTL-кешем — тягнемо ширше вікно (60 днів)
+        # і фільтруємо потрібний місяць локально, замість прямого HTTP запиту з after/before
+        _days_span = max(31, int((datetime.now(timezone.utc).timestamp() - after_ts) / 86400) + 1)
+        acts_all = get_activities(days=min(_days_span, 90))
+        acts = [a for a in acts_all if after_ts <= _cal.timegm(datetime.fromisoformat(
+                    a.get("start_date", "1970-01-01T00:00:00Z").replace("Z", "+00:00")
+                ).utctimetuple()) < before_ts] if acts_all else []
         runs = [a for a in acts if a.get("type") in ("Run","TrailRun","VirtualRun")]
         total_km = round(sum(a["distance"] for a in runs) / 1000, 1)
         total_min = sum(a["moving_time"] for a in runs) // 60

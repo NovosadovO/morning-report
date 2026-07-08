@@ -1679,3 +1679,76 @@ def plot_health_2x2_dashboard(year: int = None, month: int = None) -> bytes | No
         import traceback
         traceback.print_exc()
         return None
+
+
+def plot_crypto_trend(days: int = 30) -> bytes | None:
+    """Графік динаміки цін BTC/ETH/AVAX/ONDO/SOL за останні N днів (нормалізовано % від старту),
+    щоб порівняти відносний перформанс монет портфеля на одному графіку.
+    Дані з CoinGecko market_chart (безкоштовний ендпоінт, без ключа)."""
+    if not HAS_MPL:
+        return None
+    try:
+        import urllib.request as _ur
+        import json as _json_ct
+
+        coins = [
+            ("bitcoin", "BTC", "#F7931A"),
+            ("ethereum", "ETH", "#627EEA"),
+            ("avalanche-2", "AVAX", "#E84142"),
+            ("ondo-finance", "ONDO", "#5B8DEF"),
+            ("solana", "SOL", "#14F195"),
+        ]
+
+        fig, ax = plt.subplots(figsize=(13, 7))
+        fig.patch.set_facecolor(BG)
+        ax.set_facecolor(PANEL)
+
+        any_data = False
+        for cid, sym, color in coins:
+            try:
+                url = (
+                    f"https://api.coingecko.com/api/v3/coins/{cid}/market_chart"
+                    f"?vs_currency=usd&days={days}"
+                )
+                req = _ur.Request(url, headers={"User-Agent": "SmartAssistantBot/2.0"})
+                with _ur.urlopen(req, timeout=12) as resp:
+                    data = _json_ct.loads(resp.read())
+                prices = data.get("prices", [])
+                if not prices:
+                    continue
+                ts = [datetime.fromtimestamp(p[0] / 1000) for p in prices]
+                vals = [p[1] for p in prices]
+                base = vals[0] if vals[0] else 1
+                norm = [(v / base - 1) * 100 for v in vals]
+                ax.plot(ts, norm, label=sym, color=color, linewidth=2.2)
+                any_data = True
+            except Exception as _ce:
+                print(f"[crypto_trend] {sym} error: {_ce}")
+                continue
+
+        if not any_data:
+            plt.close(fig)
+            return None
+
+        ax.axhline(0, color=MUTED, linewidth=1, linestyle="--", alpha=0.6)
+        ax.set_title(f"💹 Динаміка портфеля за {days} днів (% від старту періоду)",
+                     fontsize=14, fontweight="bold", color=TEXT, pad=12)
+        ax.set_ylabel("% зміна", fontsize=11, color=TEXT)
+        ax.tick_params(colors=TEXT)
+        for spine in ax.spines.values():
+            spine.set_color(BORDER)
+        ax.grid(True, alpha=0.25, color=BORDER)
+        legend = ax.legend(loc="upper left", fontsize=10, facecolor=PANEL, edgecolor=BORDER)
+        for text in legend.get_texts():
+            text.set_color(TEXT)
+
+        now = datetime.now()
+        ax.text(0.99, -0.08, f"Оновлено: {now.strftime('%d.%m.%Y %H:%M')}",
+                ha="right", transform=ax.transAxes, fontsize=8, style="italic", color=MUTED)
+
+        return _buf(fig, dpi=150)
+    except Exception as e:
+        print(f"[crypto_trend] error: {e}")
+        import traceback
+        traceback.print_exc()
+        return None
