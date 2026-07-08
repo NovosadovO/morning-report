@@ -7,8 +7,8 @@
   },
   "moon": {
     "name": "🌙 Місяць",
-    "sign": "Риби ♓",
-    "house": 8,
+    "sign": "Овен ♈",
+    "house": 10,
     "retro": false
   },
   "mercury": {
@@ -32,7 +32,7 @@
   "jupiter": {
     "name": "♃ Юпітер",
     "sign": "Лев ♌",
-    "house": 12,
+    "house": 1,
     "retro": false
   },
   "saturn": {
@@ -51,7 +51,7 @@
     "name": "♆ Нептун",
     "sign": "Овен ♈",
     "house": 9,
-    "retro": false
+    "retro": true
   },
   "pluto": {
     "name": "♇ Плутон",
