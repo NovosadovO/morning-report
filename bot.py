@@ -1624,6 +1624,25 @@ def _heartbeat_leader():
             print(f"[Leader] Heartbeat error: {e}", flush=True)
 
 
+def _email_checker_loop():
+    """Фоновий цикл: перевіряє ВСІ нові листи (Primary+Updates+Promotions+Social)
+    кожні 2 хвилини і шле AI-аналіз + кнопку відповіді на КОЖЕН новий лист.
+    Раніше check_new_emails() існувала в коді, але НІКОЛИ не викликалась — тому
+    сповіщення про нові листи взагалі не працювали."""
+    import time as _t
+    print("[EmailChecker] Started — checking every 120s", flush=True)
+    while True:
+        try:
+            if _is_leader:
+                import sys as _s, os as _o
+                _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))
+                from monitor import check_new_emails
+                check_new_emails()
+        except Exception as e:
+            print(f"[EmailChecker] error: {e}", flush=True)
+        _t.sleep(120)
+
+
 def load_offset():
     """Читає offset з GitHub, fallback до /tmp."""
     data, _ = _gh_read(_GH_OFF_URL)
@@ -3203,6 +3222,10 @@ def main():
 
     # Запускаємо heartbeat в background
     _threading.Thread(target=_heartbeat_leader, daemon=True).start()
+
+    # Запускаємо перевірку нових листів (ВСІ категорії, AI-аналіз + reply button)
+    print("[EmailChecker] Starting background email checker (every 2 min)...", flush=True)
+    _threading.Thread(target=_email_checker_loop, daemon=True).start()
 
     # Запускаємо Intelligent Listener (event-driven triggers, САМ вирішує коли писати)
     if _LISTENER_AVAILABLE:
