@@ -580,6 +580,17 @@ def get_tone_variation(trigger_type: str, hour: int) -> dict:
             {"tone": "теплий друг, без нотацій", "emoji": "🌙"},
             {"tone": "підтримуючий, коротко і по-людськи", "emoji": "💬"},
         ],
+        "nutrition_tip": [
+            {"tone": "дружній нутриціолог, конкретні продукти/час", "emoji": "🍽"},
+            {"tone": "практичний коуч по схудненню, без води", "emoji": "⚖️"},
+        ],
+        "day_plan": [
+            {"tone": "чіткий стратег, тайм-блоки під зміну", "emoji": "🗓"},
+            {"tone": "спокійний організатор, пріоритети дня", "emoji": "🧭"},
+        ],
+        "interview_practice": [
+            {"tone": "досвідчений інвестиційний рекрутер, конкретне питання", "emoji": "🎤"},
+        ],
     }
     base = variations.get(trigger_type, [{"tone": "дружелюбний, особистий", "emoji": "👋"}])
     idx = (hour + abs(hash(trigger_type))) % len(base)
@@ -588,7 +599,8 @@ def get_tone_variation(trigger_type: str, hour: int) -> dict:
 # ─── Decision ────────────────────────────────────────────────────────────────
 def _should_send_message(trigger_type: str, trigger_data) -> bool:
     always = {"vip_email", "deep_analysis", "briefing", "contextual_briefing",
-              "morning", "evening", "health", "weekly_run_compare", "habit_checkin"}
+              "morning", "evening", "health", "weekly_run_compare", "habit_checkin",
+              "nutrition_tip", "day_plan", "interview_practice"}
     if trigger_type in always:
         return True
     if trigger_type == "crypto_move":
@@ -678,6 +690,28 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
             "\n🌙 ВЕЧІРНІЙ CHECK-IN: запитай як минув день (настрій/звички/дисципліна), "
             "нагадай відмітити звички якщо ще не зробив, дай коротку теплу підтримку без нотацій."
         )
+    elif trigger_type == "nutrition_tip":
+        trigger_extra = (
+            f"\n🍽 ХАРЧУВАННЯ ПІД ЗМІНУ: реальний статус зараз — {real_status}. "
+            "Дай КОНКРЕТНУ пораду по харчуванню під цей режим дня (що і коли їсти з урахуванням "
+            "поточної/наступної зміни, як не зірватись на фастфуд на роботі, як тримати дефіцит калорій "
+            "для цілі 78 кг). Використай вагу з живих даних. Без загальних фраз типу 'їж здорову їжу' — "
+            "тільки конкретні продукти/час прийому їжі під ЦЕЙ конкретний режим."
+        )
+    elif trigger_type == "day_plan":
+        trigger_extra = (
+            f"\n🗓 ПЛАН ДНЯ ПІД ЗМІНУ: реальний статус зараз — {real_status}. "
+            "Склади короткий тайм-блок плану на сьогодні з урахуванням цього режиму (коли працювати над цілями/"
+            "інвестиціями, коли бігати/тренуватись, коли відпочивати), 3-4 конкретні тайм-слоти, не абстрактно."
+        )
+    elif trigger_type == "interview_practice":
+        trigger_extra = (
+            "\n🎤 ПРАКТИКА СПІВБЕСІДИ (кар'єра в інвестиціях): постав ОДНЕ конкретне питання, яке реально "
+            "задають на співбесіді на позицію в investments/financial analyst (напр. про оцінку активів, "
+            "макроекономіку, крипто-ринок, ризик-менеджмент, конкретний кейс). Питання має бути changing "
+            "щоразу — не повторюй попередні (дивись анти-репіт). Після питання напиши: "
+            "'Відповідай прямо тут — я оціню твою відповідь.' НЕ давай відповідь сам, тільки питання + це речення."
+        )
 
     # ── Shift context ─────────────────────────────────────────────────────────
     h = live["hour"]
@@ -691,8 +725,8 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
         period = "НІЧ — спокій і відновлення"
 
     # ── Довжина/структура залежно від теми: короткі алерти vs довгі звіти ─────
-    SHORT_TRIGGERS = {"event_soon", "habit_checkin", "idle_timeout"}
-    MEDIUM_TRIGGERS = {"crypto_move", "vip_email", "weekly_run_compare", "health"}
+    SHORT_TRIGGERS = {"event_soon", "habit_checkin", "idle_timeout", "nutrition_tip", "interview_practice"}
+    MEDIUM_TRIGGERS = {"crypto_move", "vip_email", "weekly_run_compare", "health", "day_plan"}
     # решта (morning/evening/deep_analysis/briefing тощо) — LONG за замовчуванням
 
     if trigger_type in SHORT_TRIGGERS:
@@ -846,6 +880,20 @@ def process_trigger(trigger_type: str, trigger_data, location: str = "doma", idl
             # Save first 100 chars as "topic" for anti-repeat
             topic = message[:100].replace("\n", " ")
             _save_to_history(trigger_type, topic)
+
+            # Interview practice: запам'ятовуємо питання, щоб оцінити наступну відповідь Олега
+            if trigger_type == "interview_practice":
+                try:
+                    state_path = os.path.join(os.path.dirname(__file__), "data", "interview_state.json")
+                    os.makedirs(os.path.dirname(state_path), exist_ok=True)
+                    with open(state_path, "w") as f:
+                        json.dump({
+                            "awaiting": True,
+                            "question": message,
+                            "asked_at": datetime.now(ZoneInfo("Europe/Bratislava")).isoformat(),
+                        }, f, ensure_ascii=False, indent=2)
+                except Exception as e:
+                    _log(f"⚠️ interview_state save failed: {e}")
         return success
     except Exception as e:
         _log(f"❌ process_trigger: {e}")

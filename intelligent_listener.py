@@ -191,6 +191,42 @@ class IntelligentListener:
         now = datetime.now(tz=_TZ)
         return 21 <= now.hour < 22
 
+    def _get_shift_status(self):
+        """Реальний статус (working_early/working_night/home/sleeping/...) за календарем."""
+        try:
+            import context as _ctx_mod
+            return _ctx_mod.get_status()
+        except Exception:
+            return None
+
+    def _check_day_plan_window(self) -> bool:
+        """Час для плану дня, залежно від зміни: рання ~04:30-05:30, нічна ~15:30-16:30, вихідний ~08:00-09:00."""
+        now = datetime.now(tz=_TZ)
+        status = self._get_shift_status()
+        if status == "working_early" or status == "pre_shift":
+            return 4 <= now.hour < 6
+        if status == "working_night":
+            return 15 <= now.hour < 17
+        return 8 <= now.hour < 10
+
+    def _check_nutrition_window(self) -> bool:
+        """Час для поради по харчуванню, зсунутий відносно day_plan щоб не збігались."""
+        now = datetime.now(tz=_TZ)
+        status = self._get_shift_status()
+        if status == "working_early" or status == "pre_shift":
+            return 5 <= now.hour < 7
+        if status == "working_night":
+            return 16 <= now.hour < 18
+        return 12 <= now.hour < 14
+
+    def _check_interview_window(self) -> bool:
+        """Вечірнє вікно для практики співбесіди (не в нічну зміну — тоді він на роботі)."""
+        now = datetime.now(tz=_TZ)
+        status = self._get_shift_status()
+        if status == "working_night":
+            return False
+        return 19 <= now.hour < 22
+
     def _check_event_prep(self) -> list:
         """Реальні (не рутинні) события за 30-90 хв — підготовчий брифінг"""
         try:
@@ -326,6 +362,21 @@ class IntelligentListener:
                 if self._check_habit_checkin() and self._should_send_trigger("habit_checkin", 20.0):
                     triggers.append(("habit_checkin", None))
                     self._log("TRIGGER: habit_checkin")
+
+                # 9. DAY PLAN (1x/день, вікно залежить від зміни)
+                if self._check_day_plan_window() and self._should_send_trigger("day_plan", 20.0):
+                    triggers.append(("day_plan", None))
+                    self._log("TRIGGER: day_plan")
+
+                # 10. NUTRITION TIP (1x/день, вікно залежить від зміни)
+                if self._check_nutrition_window() and self._should_send_trigger("nutrition_tip", 20.0):
+                    triggers.append(("nutrition_tip", None))
+                    self._log("TRIGGER: nutrition_tip")
+
+                # 11. INTERVIEW PRACTICE (2-3x/тиждень, вечірнє вікно, не в нічну зміну)
+                if self._check_interview_window() and self._should_send_trigger("interview_practice", 60.0):
+                    triggers.append(("interview_practice", None))
+                    self._log("TRIGGER: interview_practice")
 
                 # Процесувати тригери (генеруємо & надсилаємо messages)
                 if triggers:

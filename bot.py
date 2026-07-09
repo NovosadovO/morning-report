@@ -81,6 +81,272 @@ def _send_telegram_text(text):
     """Wrapper — надсилає текст в основний чат без необхідності передавати chat_id"""
     send(TELEGRAM_CHAT, text)
 
+# ═══════════════════════════════════════════════════════════════════════════
+# НОВІ ФУНКЦІЇ: чернетки повідомлень, пояснення/переклад документів,
+# оцінка відповіді на питання співбесіди
+# ═══════════════════════════════════════════════════════════════════════════
+
+_INTERVIEW_STATE_FILE = os.path.join(os.path.dirname(__file__), "data", "interview_state.json")
+
+
+def _gemini_simple(prompt: str, max_tokens: int = 700, temperature: float = 0.5) -> str:
+    """Простий одноразовий виклик Gemini (з fallback-моделями) без залежності від monitor._gem_post."""
+    api_key = os.environ.get("GEMINI_API_KEY", "")
+    if not api_key:
+        return ""
+    models = ["gemini-flash-latest", "gemini-3.5-flash", "gemini-flash-lite-latest"]
+    payload = json.dumps({
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"maxOutputTokens": max_tokens, "temperature": temperature}
+    }).encode()
+    for model in models:
+        try:
+            req = urllib.request.Request(
+                f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}",
+                data=payload, headers={"Content-Type": "application/json"}
+            )
+            with urllib.request.urlopen(req, timeout=30) as r:
+                resp = json.loads(r.read())
+            return resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+        except Exception as e:
+            print(f"[gemini_simple] {model} failed: {e}", flush=True)
+            continue
+    return ""
+
+
+_DRAFT_KEYWORDS = [
+    "напиши лист", "напиши повідомлення", "склади лист", "склади повідомлення",
+    "чернетка", "допоможи написати", "допоможи скласти", "напиши відповідь",
+    "як відповісти", "як написати", "склади текст",
+]
+
+
+def _looks_like_draft_request(text: str) -> bool:
+    t = text.lower().strip()
+    if not t or t.startswith("/"):
+        return False
+    return any(k in t for k in _DRAFT_KEYWORDS)
+
+
+def handle_draft_request(chat_id, text: str) -> bool:
+    """Чернетка особистого повідомлення/листа (не email) — банк, HR, друзі тощо."""
+    if not _looks_like_draft_request(text):
+        return False
+    try:
+        prompt = (
+            "Олег просить допомогти скласти текст повідомлення/листа (не email-відповідь, а особисте "
+            "спілкування — може бути банку, HR, знайомим тощо).\n"
+            f"Запит Олега: «{text}»\n\n"
+            "Напиши ГОТОВИЙ текст повідомлення українською (або мовою що явно вказана в запиті), "
+            "ввічливий, чіткий, по суті, без зайвої води. Якщо не вистачає деталей (кому, про що конкретно) — "
+            "зроби розумні припущення і познач одне коротке уточнююче запитання в кінці, окремим рядком "
+            "після '---'.\n"
+            "Формат відповіді: спочатку сам текст у лапках, без пояснень навколо."
+        )
+        draft = _gemini_simple(prompt, max_tokens=500, temperature=0.6)
+        if not draft:
+            send(chat_id, "⚠️ Не вдалось згенерувати чернетку зараз (AI недоступна). Спробуй ще раз трохи пізніше.")
+            return True
+        send(chat_id, f"✍️ <b>Чернетка:</b>\n\n{draft}")
+    except Exception as e:
+        print(f"handle_draft_request error: {e}", flush=True)
+        send(chat_id, f"⚠️ Помилка генерації чернетки: {e}")
+    return True
+
+
+def _load_interview_state() -> dict:
+    try:
+        if os.path.exists(_INTERVIEW_STATE_FILE):
+            with open(_INTERVIEW_STATE_FILE, "r") as f:
+                return json.load(f)
+    except Exception:
+        pass
+    return {}
+
+
+def _clear_interview_state():
+    try:
+        with open(_INTERVIEW_STATE_FILE, "w") as f:
+            json.dump({"awaiting": False}, f)
+    except Exception:
+        pass
+
+
+def handle_interview_answer(chat_id, text: str) -> bool:
+    """Якщо бот щойно задав питання для практики співбесіди — оцінюємо відповідь Олега."""
+    if not text or text.startswith("/"):
+        return False
+    state = _load_interview_state()
+    if not state.get("awaiting"):
+        return False
+    try:
+        asked_at = datetime.fromisoformat(state.get("asked_at", ""))
+        hours_passed = (datetime.now(asked_at.tzinfo) - asked_at).total_seconds() / 3600
+        if hours_passed > 12:
+            # Питання застаріло — не плутаємо звичайне повідомлення з відповіддю
+            _clear_interview_state()
+            return False
+    except Exception:
+        pass
+
+    if len(text.strip()) < 8:
+        return False  # надто коротко, це не серйозна відповідь
+
+    _clear_interview_state()
+    try:
+        prompt = (
+            "Ти досвідчений інтерв'юер на позиції в investments/financial analyst. "
+            f"Ти щойно поставив Олегу таке питання (повне повідомлення):\n«{state.get('question','')}»\n\n"
+            f"Олег відповів:\n«{text}»\n\n"
+            "Оціни відповідь українською: (1) що добре у відповіді, (2) що можна покращити/чого не вистачає "
+            "(конкретика, терміни, структура), (3) короткий орієнтир як відповів би сильний кандидат. "
+            "Тон — підтримуючий коуч, не суворий екзаменатор. 150-250 слів, без вступних фраз типу 'дякую за відповідь'."
+        )
+        feedback = _gemini_simple(prompt, max_tokens=600, temperature=0.6)
+        if not feedback:
+            send(chat_id, "⚠️ Не вдалось оцінити відповідь зараз (AI недоступна), але відповідь записана.")
+            return True
+        send(chat_id, f"🎤 <b>Фідбек на твою відповідь:</b>\n\n{feedback}")
+    except Exception as e:
+        print(f"handle_interview_answer error: {e}", flush=True)
+        send(chat_id, f"⚠️ Помилка оцінки відповіді: {e}")
+    return True
+
+
+def _download_telegram_file(file_id: str) -> bytes:
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/getFile?file_id={file_id}"
+    req = urllib.request.Request(url)
+    with urllib.request.urlopen(req, timeout=15) as r:
+        file_info = json.loads(r.read())
+    file_path = file_info["result"]["file_path"]
+    file_url = f"https://api.telegram.org/file/bot{TELEGRAM_TOKEN}/{file_path}"
+    req2 = urllib.request.Request(file_url)
+    with urllib.request.urlopen(req2, timeout=60) as r:
+        return r.read()
+
+
+_DOC_EXPLAIN_CAPTION_KEYWORDS = ["поясни", "переклад", "перекласти", "що тут", "що написано", "розкажи що", "документ"]
+
+
+def handle_document_explain_photo(chat_id, msg) -> bool:
+    """Фото документа (напр. словацький папір) з підписом-проханням пояснити/перекласти."""
+    caption = (msg.get("caption") or "").lower()
+    if not any(k in caption for k in _DOC_EXPLAIN_CAPTION_KEYWORDS):
+        return False
+    try:
+        send(chat_id, "📄 Читаю та аналізую документ...")
+        photos = msg.get("photo", [])
+        if not photos:
+            return False
+        file_id = photos[-1]["file_id"]  # найбільша версія
+        img_bytes = _download_telegram_file(file_id)
+
+        import base64 as _b64img
+        api_key = os.environ.get("GEMINI_API_KEY", "")
+        b64 = _b64img.b64encode(img_bytes).decode()
+        prompt = (
+            "На фото — документ (можливо словацькою чи іншою мовою). Прочитай текст на фото і зроби для Олега "
+            "українською: (1) короткий переклад/суть змісту (2-4 речення), (2) що конкретно від нього вимагається "
+            "чи важливо знати (дії, дедлайни, суми, підписи), (3) якщо є ризики/незрозумілі пункти — познач окремо. "
+            "Стисло і по суті."
+        )
+        payload = json.dumps({
+            "contents": [{"parts": [
+                {"text": prompt},
+                {"inline_data": {"mime_type": "image/jpeg", "data": b64}}
+            ]}],
+            "generationConfig": {"maxOutputTokens": 700, "temperature": 0.4}
+        }).encode()
+        explanation = ""
+        for model in ["gemini-flash-latest", "gemini-3.5-flash"]:
+            try:
+                req = urllib.request.Request(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}",
+                    data=payload, headers={"Content-Type": "application/json"}
+                )
+                with urllib.request.urlopen(req, timeout=40) as r:
+                    resp = json.loads(r.read())
+                explanation = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+                break
+            except Exception as e:
+                print(f"[doc_explain_photo] {model} failed: {e}", flush=True)
+                continue
+
+        if not explanation:
+            send(chat_id, "⚠️ Не вдалось прочитати документ на фото зараз (AI недоступна).")
+            return True
+        send(chat_id, f"📄 <b>Пояснення документа:</b>\n\n{explanation}")
+    except Exception as e:
+        print(f"handle_document_explain_photo error: {e}", flush=True)
+        send(chat_id, f"⚠️ Помилка обробки фото документа: {e}")
+    return True
+
+
+def handle_document_explain_file(chat_id, doc) -> bool:
+    """PDF/DOCX/TXT документ — витягуємо текст і пояснюємо/перекладаємо."""
+    fname = doc.get("file_name", "") or "документ"
+    fname_low = fname.lower()
+    if not fname_low.endswith((".pdf", ".docx", ".txt", ".csv", ".md")):
+        return False
+    try:
+        send(chat_id, f"📄 Читаю {fname}...")
+        raw_bytes = _download_telegram_file(doc["file_id"])
+        text_content = ""
+
+        if fname_low.endswith(".pdf"):
+            import io as _io
+            from pypdf import PdfReader
+            reader = PdfReader(_io.BytesIO(raw_bytes))
+            pages = []
+            for page in reader.pages[:15]:
+                try:
+                    pages.append(page.extract_text() or "")
+                except Exception:
+                    pass
+            text_content = "\n".join(pages).strip()
+            if not text_content:
+                send(chat_id, "⚠️ PDF без текстового шару (можливо скан) — надішли як фото замість файлу, і додай підпис 'поясни'.")
+                return True
+
+        elif fname_low.endswith(".docx"):
+            import io as _io
+            from docx import Document
+            d = Document(_io.BytesIO(raw_bytes))
+            text_content = "\n".join(p.text for p in d.paragraphs).strip()
+
+        else:  # txt/csv/md
+            text_content = raw_bytes.decode("utf-8", errors="replace").strip()
+
+        handle_document_explain(chat_id, text_content, fname)
+    except Exception as e:
+        print(f"handle_document_explain_file error: {e}", flush=True)
+        send(chat_id, f"⚠️ Помилка читання файлу: {e}")
+    return True
+
+
+def handle_document_explain(chat_id, text_content: str, filename: str = "") -> bool:
+    """Пояснення/переклад документа (напр. словацькі папери) українською."""
+    if not text_content or not text_content.strip():
+        send(chat_id, "⚠️ Не вдалось прочитати текст з документа.")
+        return True
+    try:
+        prompt = (
+            f"Ось текст документа{' (' + filename + ')' if filename else ''}, можливо іншою мовою (напр. словацька):\n\n"
+            f"{text_content[:6000]}\n\n"
+            "Зроби для Олега українською: (1) короткий переклад/суть змісту (2-4 речення), "
+            "(2) що конкретно від нього вимагається чи важливо знати (дії, дедлайни, суми, підписи), "
+            "(3) якщо є ризики/незрозумілі пункти — познач окремо. Пиши стисло і по суті, без води."
+        )
+        explanation = _gemini_simple(prompt, max_tokens=700, temperature=0.4)
+        if not explanation:
+            send(chat_id, "⚠️ AI зараз недоступна, не вдалось пояснити документ.")
+            return True
+        send(chat_id, f"📄 <b>Пояснення документа:</b>\n\n{explanation}")
+    except Exception as e:
+        print(f"handle_document_explain error: {e}", flush=True)
+        send(chat_id, f"⚠️ Помилка пояснення документа: {e}")
+    return True
+
 # ─── TELEGRAM API ─────────────────────────────────────────────────────────────
 
 def api(method, data=None):
@@ -3744,20 +4010,32 @@ def main():
                     send(chat_id, "⛔ Немає доступу.")
                     continue
 
-                # Обробка фото (скрін Health Score)
+                # Обробка фото (документ з підписом "поясни"/"переклад" АБО скрін Health Score за замовчуванням)
                 if msg.get("photo"):
+                    if handle_document_explain_photo(chat_id, msg):
+                        continue
                     handle_health_photo(chat_id, msg)
                     continue
 
-                # Обробка ZIP файлу (Health Auto Export)
+                # Обробка ZIP файлу (Health Auto Export) або PDF/DOCX/TXT документа (пояснити/перекласти)
                 if msg.get("document"):
                     doc = msg["document"]
                     fname = doc.get("file_name", "")
                     if fname.endswith(".zip") or "export" in fname.lower():
                         handle_health_zip(chat_id, doc)
                         continue
+                    if handle_document_explain_file(chat_id, doc):
+                        continue
 
                 print(f"Message: {text}", flush=True)
+
+                # Практика співбесіди — якщо бот щойно поставив питання, це відповідь Олега
+                if handle_interview_answer(chat_id, text):
+                    continue
+
+                # Чернетка повідомлення/листа за проханням у вільній формі
+                if handle_draft_request(chat_id, text):
+                    continue
 
                 # Shopping — якщо бот очікує список покупок
                 try:
