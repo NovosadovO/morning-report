@@ -34,6 +34,32 @@ try:
 except ImportError:
     _BRIEFING_AVAILABLE = False
 
+try:
+    import context as _ctx_mod
+    _CONTEXT_AVAILABLE = True
+except ImportError:
+    _CONTEXT_AVAILABLE = False
+
+
+def _get_real_status(location_fallback: str = "doma") -> str:
+    """
+    ЄДИНЕ ДЖЕРЕЛО ПРАВДИ про те, де зараз Олег.
+    Завжди перевіряє Google Calendar (рання/нічна зміна) ПЕРЕД тим як AI щось стверджує.
+    Manual location (/set_location) використовується ЛИШЕ якщо календар недоступний.
+    Повертає готовий текстовий лейбл українською.
+    """
+    if _CONTEXT_AVAILABLE:
+        try:
+            shift_info = _ctx_mod.get_shift_from_calendar()
+            status = _ctx_mod.get_status(shift_info)
+            label = _ctx_mod.STATUS_LABELS.get(status, status)
+            if status in ("working_early", "working_night"):
+                label += " — ФІЗИЧНО НА РОБОТІ ЗАРАЗ, НЕ ВДОМА"
+            return label
+        except Exception as e:
+            _log(f"⚠️ _get_real_status: calendar check failed ({e}), falling back to manual location")
+    return "вдома (невизначено з календаря)" if location_fallback == "doma" else "на роботі (невизначено з календаря)"
+
 # ─── Config ──────────────────────────────────────────────────────────────────
 GEMINI_API_KEY  = os.getenv("GEMINI_API_KEY", "")
 TELEGRAM_TOKEN  = os.getenv("TELEGRAM_TOKEN", "")
@@ -586,16 +612,27 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
     # No longer delegates to deep_analysis_engine which had stale crypto/health data
 
     if trigger_type in ("briefing", "contextual_briefing"):
+        # Перевірка календаря ПЕРЕД briefing — не довіряємо ручному/застарілому location
+        verified_location = location
+        if _CONTEXT_AVAILABLE:
+            try:
+                _status = _ctx_mod.get_status()
+                if _status in ("working_early", "working_night"):
+                    verified_location = "robota"
+                elif _status in ("home", "sleeping", "post_shift"):
+                    verified_location = "doma"
+            except Exception as e:
+                _log(f"⚠️ briefing location check failed: {e}")
         if _BRIEFING_V3_AVAILABLE:
             try:
-                result = get_brief_v3(location, idle_hours)
+                result = get_brief_v3(verified_location, idle_hours)
                 if result:
                     return result
             except Exception as e:
                 _log(f"briefing_v3 failed: {e}")
         if _BRIEFING_AVAILABLE:
             try:
-                result, _ = get_contextual_briefing(location, idle_hours)
+                result, _ = get_contextual_briefing(verified_location, idle_hours)
                 if result:
                     return result
             except Exception as e:
@@ -606,6 +643,9 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
     live_ctx = _build_live_context(live)
     anti_repeat = _build_anti_repeat_block()
     tone = get_tone_variation(trigger_type, live["hour"])
+
+    # ── REAL status (calendar-verified) — НІКОЛИ не довіряємо застарілому/ручному location ──
+    real_status = _get_real_status(location)
 
     # ── Build trigger-specific context ───────────────────────────────────────
     trigger_extra = ""
@@ -619,7 +659,7 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
             evts = "; ".join(str(e) for e in trigger_data[:3])
             trigger_extra = f"\n⏰ НЕЗАБАРОМ (30-90 хв): {evts} — дай КОРОТКИЙ підготовчий брифінг: що взяти з собою, на чому зфокусуватись, чи є пов'язані листи/дедлайни."
     elif trigger_type == "idle_timeout":
-        trigger_extra = f"\n😴 Олег неактивний {idle_hours:.1f} год | Локація: {location}"
+        trigger_extra = f"\n😴 Олег неактивний {idle_hours:.1f} год | Реальний статус: {real_status}"
     elif trigger_type == "weekly_run_compare":
         try:
             from strava import compare_weeks
@@ -673,7 +713,7 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
 
 ТРИГЕР: {trigger_type} | ЧАС: {period}
 СТИЛЬ: {tone['emoji']} {tone['tone']}
-ЛОКАЦІЯ: {location}{trigger_extra}
+РЕАЛЬНИЙ СТАТУС ОЛЕГА (перевірено за Google Calendar щойно, ЄДИНЕ джерело правди): {real_status}{trigger_extra}
 
 ━━━━━━━━━━━━━━━━━━ ПОТОЧНІ ЖИВІ ДАНІ ━━━━━━━━━━━━━━━━━━
 {live_ctx}
@@ -687,6 +727,7 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
 Вимоги:
 1. ВИКОРИСТАЙ реальні цифри з "ПОТОЧНІ ЖИВІ ДАНІ" — ціни, вагу, кроки, листи, події
 0. КРИТИЧНО: для дат (пробіжка, події) використовуй ТІЛЬКИ слово СЬОГОДНІ/ВЧОРА/N ДНІВ ТОМУ, яке вказане в даних нижче — НІКОЛИ не вигадуй і не змінюй цю інформацію, навіть якщо здається що дата стара
+00. НАЙВАЖЛИВІШЕ: де зараз Олег і що робить — визначається ВИКЛЮЧНО полем "РЕАЛЬНИЙ СТАТУС ОЛЕГА" вище. ЗАБОРОНЕНО стверджувати що він "вдома", "відпочиває", "розслабляється" чи "має вільний час", якщо статус показує роботу/зміну (наприклад "на нічній зміні", "на ранній зміні"). Якщо статус — робота, звертайся до нього як до людини НА РОБОТІ (підтримка під час зміни), а не як до людини вдома.
 2. НЕ пиши "Даних немає" — якщо дані є, використай; якщо немає — зроби розумний висновок без цієї фрази
 3. Стиль ЖИВИЙ і ОСОБИСТИЙ — як старший друг, не корпоративний бот
 4. Конкретні рекомендації — не "відпочинь", а "зроби X зараз"
@@ -754,7 +795,7 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
         if calendar:
             parts.append(f"\n📅 Найближчі події: {'; '.join(str(e) for e in calendar[:2])}")
 
-        parts.append(f"\n⏰ {now_str} | {location}")
+        parts.append(f"\n⏰ {now_str} | {real_status}")
         message = "\n".join(parts)
 
     return message

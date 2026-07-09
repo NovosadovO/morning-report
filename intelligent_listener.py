@@ -427,6 +427,18 @@ def process_and_send_trigger(trigger_type: str, trigger_data):
         listener = get_listener()
         idle = listener._check_idle_timeout()
         location = listener.user_location
+
+        # Перевіряємо реальний статус за Google Calendar (рання/нічна зміна) —
+        # manual /set_location більше НЕ є єдиним джерелом правди, лише fallback.
+        try:
+            import context as _ctx_mod
+            _status = _ctx_mod.get_status()
+            if _status in ("working_early", "working_night"):
+                location = "robota"
+            elif _status in ("home", "sleeping", "post_shift"):
+                location = "doma"
+        except Exception as e:
+            print(f"[LISTENER] calendar status check failed, using manual location: {e}", flush=True)
         
         return process_trigger(trigger_type, trigger_data, location, idle)
     except ImportError:
