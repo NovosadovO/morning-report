@@ -389,7 +389,7 @@ def generate_contextual_insight(crypto_data, health_data, habits_data, work_shif
         }
     }
     
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={GEMINI_API_KEY}"
     
     text = _gem_post_local(url, body, "proactive_insight")
     

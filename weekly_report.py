@@ -566,7 +566,7 @@ def send_weekly_report():
             }).encode()
             from monitor import _gem_post
             ai_data = _gem_post(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                 payload, timeout=25, tag="weekly_report", max_retries=3
             )
             ai_text = ""

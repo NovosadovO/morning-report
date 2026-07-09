@@ -247,7 +247,7 @@ def _gemini_parse(text: str) -> dict:
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"maxOutputTokens": 500, "temperature": 0, "thinkingConfig": {"thinkingBudget": 0}}
     }).encode()
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={GEMINI_KEY}"
     try:
         from monitor import _gem_post
         resp = _gem_post(url, body, timeout=30, tag="qwatch_parse", max_retries=3)

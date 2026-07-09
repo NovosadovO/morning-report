@@ -238,7 +238,7 @@ def _get_upcoming_events(days_ahead=7):
 
 # ============ GEMINI ANALYSIS ============
 
-_GEM_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.5-flash-lite"]
+_GEM_MODELS = ["gemini-flash-latest", "gemini-flash-latest", "gemini-flash-lite-latest"]
 _GEM_MODEL_IDX = 0
 _GEM_LAST_CALL = 0
 _GEM_MIN_GAP = 4.0
@@ -294,7 +294,7 @@ FORMAT: Plain text, no markdown."""
     }
     
     result = _gemini_post(
-        "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+        "generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent",
         body,
         timeout=15,
         tag="MORNING_AI"
@@ -359,7 +359,7 @@ FORMAT: Plain text."""
     }
     
     result = _gemini_post(
-        "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+        "generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent",
         body,
         timeout=15,
         tag="LUNCH_AI"
@@ -428,7 +428,7 @@ FORMAT: Plain text."""
     }
     
     result = _gemini_post(
-        "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+        "generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent",
         body,
         timeout=15,
         tag="AFTERNOON_AI"
@@ -476,7 +476,7 @@ FORMAT: Plain text with emojis."""
     }
     
     result = _gemini_post(
-        "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+        "generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent",
         body,
         timeout=15,
         tag="EVENING_AI"

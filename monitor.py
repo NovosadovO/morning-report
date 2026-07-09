@@ -1420,7 +1420,7 @@ _GEM_MIN_GAP = 11.0  # мін. секунд між викликами Gemini. Т
 _REPORT_AI_DEADLINE = 0.0  # monotonic-час, до якого можна робити AI-блоки (ставиться в main())
 
 # Моделі для fallback на 429: коли основна вичерпала квоту — пробуємо наступну (інший quota-pool)
-_GEM_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.5-flash-lite"]
+_GEM_MODELS = ["gemini-flash-latest", "gemini-3.5-flash", "gemini-flash-lite-latest"]
 
 def _gem_swap_model(url, model):
     """Підставляє іншу модель у Gemini-URL (.../models/MODEL:generateContent?...)."""
@@ -1438,8 +1438,8 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     """
     Централізований POST до Gemini з retry на 429 (Too Many Requests) +
     АВТОМАТИЧНИЙ FALLBACK на іншу модель коли квота вичерпана.
-    Free-tier Gemini = 15 req/min ПЕР-МОДЕЛЬ. Якщо gemini-2.5-flash дає 429 —
-    перемикаємось на gemini-2.0-flash (інший quota-pool), потім 2.5-flash-lite.
+    Free-tier Gemini = 15 req/min ПЕР-МОДЕЛЬ. Якщо gemini-flash-latest дає 429 —
+    перемикаємось на gemini-flash-latest (інший quota-pool), потім 2.5-flash-lite.
     Це остаточно вбиває 429 навіть коли паралельний інстанс палить квоту 2.5-flash.
     Повертає dict (parsed JSON) або кидає виняток.
     """
@@ -1539,7 +1539,7 @@ def _gemini_summarize(text, max_input=3000):
             "Формат: якщо потрібна дія — почни з емодзі дії (⚠️ помилка, 📋 інфо, 💰 фінанси, ✅ підтвердження, 📩 відповідь потрібна). "
             "Тільки суть і що робити. Без 'Лист про', без 'Повідомлення про'.\n\nЛист:\n" + text_trimmed
         )
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={api_key}"
         body = json.dumps({"contents": [{"parts": [{"text": prompt}]}]}).encode()
         data = _gem_post(url, body, timeout=20, tag="email_summary", max_retries=2)
         summary = data["candidates"][0]["content"]["parts"][0]["text"].strip()
@@ -1910,7 +1910,7 @@ def _gemini_email_analysis(full_text: str, health_context: str = "") -> dict:
     }).encode()
 
     try:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={api_key}"
         resp_data = _gem_post(url, req_body, timeout=30, tag="email_ai_item", max_retries=3)
         if not isinstance(resp_data, dict) or "candidates" not in resp_data:
             print(f"[email AI] error: empty/invalid response")
@@ -3605,7 +3605,7 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
         _timeout_themes = 20
         print(f"[themes_ai] sending request to Gemini (timeout={_timeout_themes}s/attempt, retry-on-429)...", flush=True)
         resp = _gem_post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
             body, timeout=_timeout_themes, tag="themes_ai", max_retries=3
         )
         if not isinstance(resp, dict):
@@ -3721,7 +3721,7 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
             }
         }).encode()
         response = _gem_post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
             body,
             timeout=20,
             tag="astro_ai",
@@ -3884,7 +3884,7 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
             },
         }).encode()
         req = urllib.request.Request(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
             data=payload, headers={"Content-Type": "application/json"}, method="POST"
         )
         with urllib.request.urlopen(req, timeout=25) as r:
@@ -4431,7 +4431,7 @@ def check_weekly_habit_stats():
                 )
                 payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":600,"temperature":0.7}}).encode()
                 req = urllib.request.Request(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                     data=payload, headers={"Content-Type":"application/json"}, method="POST"
                 )
                 with urllib.request.urlopen(req, timeout=15) as r:
@@ -5389,7 +5389,7 @@ def check_crypto_weekly_summary():
                     "generationConfig": {"maxOutputTokens": 1400, "temperature": 0.7}
                 }).encode()
                 req = urllib.request.Request(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                     data=payload,
                     headers={"Content-Type": "application/json"},
                     method="POST"
@@ -5518,7 +5518,7 @@ def check_investment_news_digest():
             "generationConfig": {"maxOutputTokens": 1400, "temperature": 0.6}
         }).encode()
         req = urllib.request.Request(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
             data=payload,
             headers={"Content-Type": "application/json"},
             method="POST"
@@ -5970,7 +5970,7 @@ def check_smart_notifications():
                         full_prompt = f"{prompt_text}{w_context}{cal_hint} [id:{slot_seed}]"
                         payload = json.dumps({"contents":[{"parts":[{"text":full_prompt}]}],"generationConfig":{"maxOutputTokens":600,"temperature":0.95}}).encode()
                         req_ai = urllib.request.Request(
-                            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                             data=payload, headers={"Content-Type":"application/json"}, method="POST"
                         )
                         with urllib.request.urlopen(req_ai, timeout=20) as r:
@@ -6252,7 +6252,7 @@ def check_morning_context():
                     "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.95},
                 }).encode()
                 req2 = urllib.request.Request(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                     data=payload, headers={"Content-Type": "application/json"}, method="POST"
                 )
                 with urllib.request.urlopen(req2, timeout=15) as r:
@@ -6661,7 +6661,7 @@ def check_crypto_morning():
                 )
                 payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":600,"temperature":0.7}}).encode()
                 req2 = urllib.request.Request(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                     data=payload, headers={"Content-Type":"application/json"}, method="POST"
                 )
                 with urllib.request.urlopen(req2, timeout=15) as r:
@@ -6745,7 +6745,7 @@ def check_week_goals():
             "generationConfig": {"maxOutputTokens": 1400, "temperature": 0.8}
         }).encode()
         req = urllib.request.Request(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
             data=payload, headers={"Content-Type": "application/json"}, method="POST"
         )
         with urllib.request.urlopen(req, timeout=20) as r:
@@ -7094,7 +7094,7 @@ def check_friday_recap():
                 )
                 payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":600,"temperature":0.8}}).encode()
                 req = urllib.request.Request(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                     data=payload, headers={"Content-Type":"application/json"}, method="POST"
                 )
                 with urllib.request.urlopen(req, timeout=15) as r:
@@ -7855,7 +7855,7 @@ def check_strava_new_activity():
                     "generationConfig": {"maxOutputTokens": 1000, "temperature": 0.7}
                 }).encode()
                 req_ai = _ur_s.Request(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                     data=payload, headers={"Content-Type": "application/json"}
                 )
                 with _ur_s.urlopen(req_ai, timeout=10) as _resp_ai:
@@ -8102,7 +8102,7 @@ def check_stress_alert():
                 "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.6}
             }).encode()
             req_ai = _ur_sa.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                 data=payload, headers={"Content-Type": "application/json"}
             )
             with _ur_sa.urlopen(req_ai, timeout=12) as _resp_ai:
@@ -8264,7 +8264,7 @@ def check_monthly_summary():
                 "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.7}
             }).encode()
             req_ai = _ur_ms.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                 data=payload, headers={"Content-Type": "application/json"}
             )
             with _ur_ms.urlopen(req_ai, timeout=12) as _resp_ai:
@@ -8537,7 +8537,7 @@ def check_invest_coach():
                 "generationConfig": {"maxOutputTokens": 1000, "temperature": 0.7},
             }).encode()
             req = urllib.request.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                 data=body, headers={"Content-Type": "application/json"}, method="POST"
             )
             with urllib.request.urlopen(req, timeout=20) as r:
@@ -8647,7 +8647,7 @@ def _send_diary_weekly_analysis(diary: dict):
                 "generationConfig": {"maxOutputTokens": 1000, "temperature": 0.7},
             }).encode()
             req = urllib.request.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                 data=body, headers={"Content-Type": "application/json"}, method="POST"
             )
             with urllib.request.urlopen(req, timeout=20) as r:
@@ -8788,7 +8788,7 @@ def check_health_weekly_tracker():
                 "generationConfig": {"maxOutputTokens": 1200, "temperature": 0.7},
             }).encode()
             req = urllib.request.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                 data=body, headers={"Content-Type": "application/json"}, method="POST"
             )
             with urllib.request.urlopen(req, timeout=20) as r:
@@ -8848,7 +8848,7 @@ def _get_crypto_ai_analysis(crypto_alert: dict, gemini_key: str = None) -> str:
         }).encode()
         
         resp = _gem_post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
             body, timeout=15, tag="crypto_ai", max_retries=2
         )
         
@@ -8896,7 +8896,7 @@ def _get_health_ai_analysis(health_alert: dict, gemini_key: str = None) -> str:
         }).encode()
         
         resp = _gem_post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
             body, timeout=15, tag="health_ai", max_retries=2
         )
         
@@ -8947,7 +8947,7 @@ def _generate_email_reply_templates(email_text: str, sender: str, subject: str, 
         }).encode()
         
         resp = _gem_post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
             body, timeout=15, tag="email_reply", max_retries=2
         )
         
@@ -9015,7 +9015,7 @@ def _get_daily_recommendations(context: dict, gemini_key: str = None) -> str:
         }).encode()
         
         resp = _gem_post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
             body, timeout=20, tag="daily_rec", max_retries=2
         )
         
@@ -9534,7 +9534,7 @@ def main():
                 "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.7},
             }).encode()
             ai_resp = _gem_post(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                 ai_payload, timeout=30, tag="personal_ai"
             )
             ai_insight = ai_resp["candidates"][0]["content"]["parts"][0]["text"].strip()
@@ -10360,7 +10360,7 @@ def main():
                     },
                 }).encode()
                 _brief_resp = _gem_post(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                     _brief_payload, timeout=60, tag="briefing"
                 )
                 _brief_cand = (_brief_resp.get("candidates") or [{}])[0]
@@ -11108,7 +11108,7 @@ def check_morning_brief():
             )
             payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":600,"temperature":0.95}}).encode()
             req_ai = urllib.request.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                 data=payload, headers={"Content-Type":"application/json"}, method="POST"
             )
             with urllib.request.urlopen(req_ai, timeout=15) as r:
@@ -11299,7 +11299,7 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
             },
         }).encode()
         req = urllib.request.Request(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
             data=payload, headers={"Content-Type": "application/json"}, method="POST"
         )
         with urllib.request.urlopen(req, timeout=25) as r:
@@ -11846,7 +11846,7 @@ def check_weekly_habit_stats():
                 )
                 payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":600,"temperature":0.7}}).encode()
                 req = urllib.request.Request(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                     data=payload, headers={"Content-Type":"application/json"}, method="POST"
                 )
                 with urllib.request.urlopen(req, timeout=15) as r:
@@ -12804,7 +12804,7 @@ def check_crypto_weekly_summary():
                     "generationConfig": {"maxOutputTokens": 1400, "temperature": 0.7}
                 }).encode()
                 req = urllib.request.Request(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                     data=payload,
                     headers={"Content-Type": "application/json"},
                     method="POST"
@@ -12933,7 +12933,7 @@ def check_investment_news_digest():
             "generationConfig": {"maxOutputTokens": 1400, "temperature": 0.6}
         }).encode()
         req = urllib.request.Request(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
             data=payload,
             headers={"Content-Type": "application/json"},
             method="POST"
@@ -13385,7 +13385,7 @@ def check_smart_notifications():
                         full_prompt = f"{prompt_text}{w_context}{cal_hint} [id:{slot_seed}]"
                         payload = json.dumps({"contents":[{"parts":[{"text":full_prompt}]}],"generationConfig":{"maxOutputTokens":600,"temperature":0.95}}).encode()
                         req_ai = urllib.request.Request(
-                            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                             data=payload, headers={"Content-Type":"application/json"}, method="POST"
                         )
                         with urllib.request.urlopen(req_ai, timeout=20) as r:
@@ -13667,7 +13667,7 @@ def check_morning_context():
                     "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.95},
                 }).encode()
                 req2 = urllib.request.Request(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                     data=payload, headers={"Content-Type": "application/json"}, method="POST"
                 )
                 with urllib.request.urlopen(req2, timeout=15) as r:
@@ -14076,7 +14076,7 @@ def check_crypto_morning():
                 )
                 payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":600,"temperature":0.7}}).encode()
                 req2 = urllib.request.Request(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                     data=payload, headers={"Content-Type":"application/json"}, method="POST"
                 )
                 with urllib.request.urlopen(req2, timeout=15) as r:
@@ -14160,7 +14160,7 @@ def check_week_goals():
             "generationConfig": {"maxOutputTokens": 1400, "temperature": 0.8}
         }).encode()
         req = urllib.request.Request(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
             data=payload, headers={"Content-Type": "application/json"}, method="POST"
         )
         with urllib.request.urlopen(req, timeout=20) as r:
@@ -14509,7 +14509,7 @@ def check_friday_recap():
                 )
                 payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":600,"temperature":0.8}}).encode()
                 req = urllib.request.Request(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                     data=payload, headers={"Content-Type":"application/json"}, method="POST"
                 )
                 with urllib.request.urlopen(req, timeout=15) as r:
@@ -15270,7 +15270,7 @@ def check_strava_new_activity():
                     "generationConfig": {"maxOutputTokens": 1000, "temperature": 0.7}
                 }).encode()
                 req_ai = _ur_s.Request(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                     data=payload, headers={"Content-Type": "application/json"}
                 )
                 with _ur_s.urlopen(req_ai, timeout=10) as _resp_ai:
@@ -15517,7 +15517,7 @@ def check_stress_alert():
                 "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.6}
             }).encode()
             req_ai = _ur_sa.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                 data=payload, headers={"Content-Type": "application/json"}
             )
             with _ur_sa.urlopen(req_ai, timeout=12) as _resp_ai:
@@ -15679,7 +15679,7 @@ def check_monthly_summary():
                 "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.7}
             }).encode()
             req_ai = _ur_ms.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}",
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                 data=payload, headers={"Content-Type": "application/json"}
             )
             with _ur_ms.urlopen(req_ai, timeout=12) as _resp_ai:
@@ -15952,7 +15952,7 @@ def check_invest_coach():
                 "generationConfig": {"maxOutputTokens": 1000, "temperature": 0.7},
             }).encode()
             req = urllib.request.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                 data=body, headers={"Content-Type": "application/json"}, method="POST"
             )
             with urllib.request.urlopen(req, timeout=20) as r:
@@ -16062,7 +16062,7 @@ def _send_diary_weekly_analysis(diary: dict):
                 "generationConfig": {"maxOutputTokens": 1000, "temperature": 0.7},
             }).encode()
             req = urllib.request.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                 data=body, headers={"Content-Type": "application/json"}, method="POST"
             )
             with urllib.request.urlopen(req, timeout=20) as r:
@@ -16203,7 +16203,7 @@ def check_health_weekly_tracker():
                 "generationConfig": {"maxOutputTokens": 1200, "temperature": 0.7},
             }).encode()
             req = urllib.request.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
                 data=body, headers={"Content-Type": "application/json"}, method="POST"
             )
             with urllib.request.urlopen(req, timeout=20) as r:

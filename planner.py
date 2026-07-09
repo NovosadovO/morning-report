@@ -112,7 +112,7 @@ def _send_force_reply(text):
 def _gemini(prompt):
     """Делегує до monitor._gem_post — СПІЛЬНИЙ rate-limiter на весь процес."""
     from monitor import _gem_post
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={GEMINI_KEY}"
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"temperature": 0.2, "maxOutputTokens": 1024, "thinkingConfig": {"thinkingBudget": 0}}

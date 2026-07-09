@@ -297,7 +297,7 @@ def _ask_gemini(prompt: str, system: str, max_tokens: int = 500) -> str:
         _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         from monitor import _gem_post
         resp = _gem_post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={api_key}",
             payload, timeout=25, tag="proactive_ai", max_retries=3
         )
         if isinstance(resp, dict) and "candidates" in resp:
@@ -820,7 +820,7 @@ def check_ai_observations():
             "generationConfig": {"maxOutputTokens": 1024, "temperature": 0.85},
         }).encode()
         req = urllib.request.Request(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gemini_key}",
             data=payload,
             headers={"Content-Type": "application/json"},
             method="POST"

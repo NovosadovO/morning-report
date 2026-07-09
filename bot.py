@@ -453,7 +453,7 @@ def handle_email_callback(callback_query):
                 "contents": [{"parts": [{"text": prompt}]}],
                 "generationConfig": {"maxOutputTokens": 1500, "temperature": 0.3, "thinkingConfig": {"thinkingBudget": 0}}
             }).encode()
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={GEMINI_KEY}"
 
             ai_text = None
             try:
@@ -657,7 +657,7 @@ def handle_email_callback(callback_query):
                 "generationConfig": {"maxOutputTokens": 500, "temperature": 0.3}
             }).encode()
             req = _ur3.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}",
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={api_key}",
                 data=payload, headers={"Content-Type": "application/json"}
             )
             with _ur3.urlopen(req, timeout=25) as r:
@@ -935,7 +935,7 @@ def handle_email_callback(callback_query):
                 draft = ""
                 try:
                     resp = _gem_post(
-                        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}",
+                        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={api_key}",
                         payload, timeout=30, tag="email_reply_draft", max_retries=3
                     )
                     if isinstance(resp, dict) and "candidates" in resp:
@@ -2021,7 +2021,7 @@ def handle_command(chat_id, text):
                 try:
                     import requests as _dr
                     _resp = _dr.post(
-                        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gk}",
+                        f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={gk}",
                         json={"contents": [{"parts": [{"text": "Скажи 'ок' одним словом"}]}]},
                         timeout=30,
                     )
