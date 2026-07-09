@@ -268,7 +268,48 @@ def get_shift_from_calendar():
     _SHIFT_CACHE[cache_hour] = (_time2.time(), result)
     return result
 
-# ─── CALENDAR: СТВОРЕННЯ ПОДІЙ ────────────────────────────────────────────────
+# ─── CALENDAR: НАЙБЛИЖЧИЙ ВИХІДНИЙ ────────────────────────────────────────────
+
+_SHIFT_KEYWORDS = ["рання", "early", "нічна", "night"]
+
+def _is_shift_event(summary: str) -> bool:
+    s = (summary or "").lower()
+    return any(x in s for x in _SHIFT_KEYWORDS)
+
+def get_next_day_off(start_offset: int = 1, max_days: int = 14):
+    """
+    Шукає найближчий вихідний (день БЕЗ рання/нічна зміна в календарі),
+    починаючи з start_offset днів від сьогодні (за замовчуванням — з завтра).
+    Використовується для нагадувань, які не прив'язані до конкретної дати
+    (напр. "лист потребує відповіді" — нагадати саме у вільний день).
+
+    Returns: {"date": "YYYY-MM-DD", "offset": int, "weekday": str} або None якщо
+    не знайдено вихідного в межах max_days (наприклад немає доступу до календаря).
+    """
+    token = _get_token()
+    if not token:
+        return None
+
+    weekdays_ua = ["понеділок", "вівторок", "середа", "четвер", "п'ятниця", "субота", "неділя"]
+
+    try:
+        for offset in range(start_offset, start_offset + max_days):
+            events = _fetch_events_for_day(token, offset)
+            if any(_is_shift_event(ev.get("summary", "")) for ev in events):
+                continue
+            day = (_now_local() + timedelta(days=offset)).date()
+            return {
+                "date": day.isoformat(),
+                "offset": offset,
+                "weekday": weekdays_ua[day.weekday()],
+            }
+    except Exception as e:
+        print(f"get_next_day_off error: {e}")
+        return None
+
+    return None
+
+
 
 def create_calendar_event(summary: str, start_dt: datetime, end_dt: datetime = None,
                            description: str = "", location: str = "") -> dict:

@@ -641,11 +641,15 @@ def handle_email_callback(callback_query):
             api_key = _os.environ.get("GEMINI_API_KEY", "")
             today = _dt3.date.today().isoformat()
             prompt = (
-                f"Сьогодні {today}. Проаналізуй цей лист і знайди всі важливі дати, події, дедлайни, зустрічі.\n"
+                f"Сьогодні {today}. Проаналізуй цей лист.\n"
                 f"Від: {sender}\nТема: {subject}\n\n{body[:3000]}\n\n"
+                f"1. Знайди всі КОНКРЕТНІ дати/події/дедлайни/зустрічі, явно вказані в листі.\n"
+                f"2. Якщо конкретної дати немає, але лист вимагає дії від Олега (відповісти, заповнити файл, "
+                f"підтвердити участь, надати інформацію тощо) — коротко опиши суть цієї дії.\n"
                 f"Відповідь ТІЛЬКИ у форматі JSON (без markdown):\n"
-                f"{{\"events\": [{{\"title\": \"назва події\", \"date\": \"YYYY-MM-DD\", \"time\": \"HH:MM або null\", \"description\": \"деталі\"}}]}}\n"
-                f"Якщо дат немає — {{\"events\": []}}\n"
+                f"{{\"events\": [{{\"title\": \"назва події\", \"date\": \"YYYY-MM-DD\", \"time\": \"HH:MM або null\", \"description\": \"деталі\"}}], "
+                f"\"needs_action\": true/false, \"task_summary\": \"короткий опис що треба зробити, або пусто\"}}\n"
+                f"Якщо дат немає — \"events\": [].\n"
                 f"Мова полів: українська."
             )
             payload = _json.dumps({
@@ -666,7 +670,34 @@ def handle_email_callback(callback_query):
 
             parsed = _json.loads(m.group(0))
             events = parsed.get("events", [])
+            needs_action = parsed.get("needs_action", False)
+            task_summary = (parsed.get("task_summary") or "").strip()
+
             if not events:
+                # Немає явної дати. Якщо лист все ж вимагає дії — пропонуємо
+                # нагадування у найближчий ВИХІДНИЙ (AI читає графік змін у календарі).
+                if needs_action and task_summary:
+                    import context as _ctx_cal
+                    day_off = _ctx_cal.get_next_day_off()
+                    if day_off:
+                        _DRAFT_STORE[f"calrem_{uid_str}"] = {
+                            "subject": subject, "sender": sender,
+                            "task_summary": task_summary, "date": day_off["date"],
+                        }
+                        send_with_keyboard(chat_id,
+                            f"📅 У листі немає конкретної дати, але потрібна дія:\n"
+                            f"<i>«{task_summary}»</i>\n\n"
+                            f"Найближчий вихідний за твоїм графіком — <b>{day_off['weekday']} {day_off['date']}</b>.\n"
+                            f"Поставити нагадування «Лист від {sender.split('<')[0].strip()} потребує відповіді» на цей день?",
+                            [[
+                                {"text": "✅ Поставити нагадування", "callback_data": f"calrem_add_{uid_str}"},
+                                {"text": "❌ Скасувати", "callback_data": f"calrem_skip_{uid_str}"}
+                            ]]
+                        )
+                        return
+                    else:
+                        send(chat_id, f"📅 Лист вимагає дії («{task_summary}»), але не вдалось визначити найближчий вихідний за календарем.")
+                        return
                 send(chat_id, "📅 У листі не знайдено жодних дат або подій.")
                 return
 
@@ -792,6 +823,56 @@ def handle_email_callback(callback_query):
             send(chat_id, f"⚠️ Помилка: {e}")
 
     elif data.startswith("cal_skip_"):
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Скасовано"})
+        api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+
+    elif data.startswith("calrem_add_"):
+        # Ставимо нагадування (без конкретної дати в листі) на найближчий ВИХІДНИЙ
+        uid_str = data[len("calrem_add_"):]
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📅 Додаю нагадування..."})
+        try:
+            import sys, os as _os, datetime as _dt5, json as _j5
+            sys.path.insert(0, _os.path.dirname(__file__))
+            from monitor import _get_google_token
+
+            store_key = f"calrem_{uid_str}"
+            rem_data = _DRAFT_STORE.pop(store_key, None)
+            if not rem_data:
+                send(chat_id, "⚠️ Дані не знайдено. Спробуй ще раз через кнопку 📅 В календар.")
+                return
+
+            creds_json = _os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+            if not creds_json:
+                send(chat_id, "⚠️ Google Calendar не налаштовано.")
+                return
+
+            creds_data = _j5.loads(creds_json)
+            token = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar")
+            headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+            cal_id = "novosadovoleg%40gmail.com"
+
+            sender_short = rem_data["sender"].split("<")[0].strip() or rem_data["sender"]
+            title = f"🔔 Лист від {sender_short} потребує відповіді"
+            body_ev = _j5.dumps({
+                "summary": title,
+                "description": f"{rem_data['task_summary']}\n\n📧 Тема листа: {rem_data['subject']}",
+                "start": {"date": rem_data["date"]},
+                "end": {"date": rem_data["date"]},
+            }).encode()
+            url = f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+            req = urllib.request.Request(url, data=body_ev, headers=headers, method="POST")
+            with urllib.request.urlopen(req, timeout=15) as r:
+                r.read()
+
+            api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+            send(chat_id, f"📅 <b>Нагадування додано</b>\n{title}\n📆 {rem_data['date']}")
+        except Exception as e:
+            print(f"calrem_add error: {e}")
+            send(chat_id, f"⚠️ Помилка додавання нагадування: {e}")
+
+    elif data.startswith("calrem_skip_"):
+        uid_str = data[len("calrem_skip_"):]
+        _DRAFT_STORE.pop(f"calrem_{uid_str}", None)
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Скасовано"})
         api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
 
@@ -3609,7 +3690,8 @@ def main():
                               data.startswith("email_keep_") or data.startswith("email_star_") or
                               data.startswith("email_cal_") or data.startswith("email_reply_") or
                               data.startswith("email_send_") or data.startswith("email_cancel_") or
-                              data.startswith("cal_add_") or data.startswith("cal_skip_")):
+                              data.startswith("cal_add_") or data.startswith("cal_skip_") or
+                              data.startswith("calrem_add_") or data.startswith("calrem_skip_")):
                             handle_email_callback(cb)
                         elif data.startswith("reminder_"):
                             handle_reminder_callback(cb)
