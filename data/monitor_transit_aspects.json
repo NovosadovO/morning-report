@@ -1,17 +1,21 @@
 {
+  "moon__venus__180": {
+    "orb": 1.34,
+    "sent": true,
+    "event": "enter"
+  },
   "moon__jupiter__60": {
-    "orb": 0.6,
+    "orb": 0.9,
     "sent": false,
     "exact_sent": true
   },
   "moon__neptune__120": {
-    "orb": 0.3,
-    "sent": true,
-    "event": "exact",
+    "orb": 0.0,
+    "sent": false,
     "exact_sent": true
   },
   "mars__saturn__150": {
-    "orb": 0.18,
+    "orb": 0.2,
     "sent": false,
     "exact_sent": true
   },
