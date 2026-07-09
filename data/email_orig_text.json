@@ -484,5 +484,32 @@
         ]
       ]
     }
+  },
+  "2100366814_41262": {
+    "text": "📩 ✉️\n📌 📰 AI-curated Daily Crypto Digest — July 9\n👤 CryptoBeholder.com через LinkedIn<newsletters-nore",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_75709"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_75709"
+          }
+        ],
+        [
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_75709"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_75709"
+          }
+        ]
+      ]
+    }
   }
 }
