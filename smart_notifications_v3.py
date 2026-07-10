@@ -263,11 +263,15 @@ def _gemini_post(url, body, timeout=20, tag=""):
 def _analyze_morning(emails, crypto, health, events):
     """Ранок (6am): Обзор дня, крипто, здоровя"""
     health_hint = f"Current weight: {health.get('current_weight', 'N/A')} kg, Yesterday sleep: {health.get('sleep_hours', 0)}h"
-    
+    real_status = _get_real_status_context()
+
     prompt = f"""You are Oleh's smart morning assistant. Write a brief, motivating morning message (250 words, Ukrainian).
 
+РЕАЛЬНИЙ СТАТУС (перевірено щойно за Google Calendar, ЄДИНЕ джерело правди): {real_status['label']}
+Найближчі події сьогодні: {real_status['next_events']}
+{_STATUS_HARD_RULE}
+
 CONTEXT:
-- Time: 6:00 AM (start of day in Kosice)
 - Health: {health_hint}
 - Upcoming events: {len(events)} events
 - Important emails: {len([e for e in emails if e['vip']])} VIP emails
@@ -275,10 +279,11 @@ CONTEXT:
 
 WRITE A MESSAGE THAT:
 1. Greets Oleh warmly (Привіт Олеже!)
-2. Summarizes key events for today
-3. Highlights key cryptocurrency moves (BTC, ETH, AVAX, ONDO)
-4. Gives 1-2 health/fitness tips based on yesterday's data
-5. Sets positive tone for the day
+2. Opens by acknowledging his REAL current status above (e.g. if he's finishing/on a night shift right now, greet him accordingly — NOT as if his day is just starting at home)
+3. Summarizes key events for today
+4. Highlights key cryptocurrency moves (BTC, ETH, AVAX, ONDO)
+5. Gives 1-2 health/fitness tips based on yesterday's data
+6. Sets positive tone for the day
 
 TONE: Motivating, professional, supportive. Use emojis appropriately.
 LANGUAGE: Ukrainian (Українська)
@@ -301,8 +306,10 @@ FORMAT: Plain text, no markdown."""
     )
     
     if not result:
-        result = f"🌅 Привіт Олеже! Новий день для нових можливостей.\n💪 Крипто: BTC ${crypto.get('BTC', {}).get('price', 'N/A')} (сьогодні буде цікаво)\n✅ Разом ми досягнемо цілей!"
-    
+        result = (f"🌅 Привіт Олеже! Реальний статус зараз: {real_status['label']}.\n"
+                  f"💪 Крипто: BTC ${crypto.get('BTC', {}).get('price', 'N/A')} (сьогодні буде цікаво)\n"
+                  f"✅ Разом ми досягнемо цілей!")
+
     return result
 
 def _get_portfolio_hint() -> str:
@@ -327,11 +334,15 @@ def _analyze_lunch(emails, crypto, health):
     """Обід (12pm): Email VIP, крипто, здоровя обід, фінанси/портфель"""
     vip_summary = "\n".join([f"- {e['from']}: {e['subject']}" for e in emails if e['vip']][:3])
     portfolio_hint = _get_portfolio_hint()
-    
+    real_status = _get_real_status_context()
+
     prompt = f"""You are Oleh's smart midday assistant. Write a brief update message (250-300 words, Ukrainian).
 
+РЕАЛЬНИЙ СТАТУС (перевірено щойно за Google Calendar, ЄДИНЕ джерело правди): {real_status['label']}
+Найближчі події сьогодні: {real_status['next_events']}
+{_STATUS_HARD_RULE}
+
 CONTEXT:
-- Time: 12:00 PM (lunch time)
 - VIP emails today:
 {vip_summary or "- No VIP emails"}
 - Crypto updates: {json.dumps(crypto, indent=2)}
@@ -339,11 +350,12 @@ CONTEXT:
 - Steps so far: {health.get('steps', 0)}
 
 WRITE A MESSAGE THAT:
-1. Summarizes important emails (focus on VIP/boss/investors)
-2. Highlights crypto movements worth watching
-3. Gives a quick portfolio/finance progress note (toward financial independence goal)
-4. Encourages lunch & hydration break
-5. Suggests 1 quick action if needed
+1. Acknowledges his REAL current status above (e.g. if he's on a night shift right now, this "lunch" check-in should read as a mid-shift break, NOT a normal midday-at-home lunch)
+2. Summarizes important emails (focus on VIP/boss/investors)
+3. Highlights crypto movements worth watching
+4. Gives a quick portfolio/finance progress note (toward financial independence goal)
+5. Encourages a lunch/break & hydration moment appropriate to his real status
+6. Suggests 1 quick action if needed
 
 TONE: Professional, helpful, brief but informative.
 LANGUAGE: Ukrainian.
@@ -366,21 +378,54 @@ FORMAT: Plain text."""
     )
     
     if not result:
-        result = f"☀️ Полудень! Час на обід.\n📧 Важливі листи: {len([e for e in emails if e['vip']])} VIP\n💵 Крипто: все на місці"
-    
+        result = (f"☀️ Полудень! Реальний статус: {real_status['label']}.\n"
+                  f"📧 Важливі листи: {len([e for e in emails if e['vip']])} VIP\n"
+                  f"💵 Крипто: все на місці")
+
     return result
 
-def _get_shift_hint() -> str:
-    """Контекст зміни (рання/нічна/вихідний) для afternoon/evening промптів."""
+def _get_real_status_context() -> dict:
+    """
+    ЄДИНЕ джерело правди про те, де зараз Олег і що робить.
+    Читає Google Calendar через context.py (той самий, calendar-verified, midnight-safe
+    механізм, що вже використовується в message_generator.py / intelligent_listener.py).
+    Повертає:
+      {"status": "working_night"|"working_early"|"sleeping"|"home"|"pre_shift"|"post_shift",
+       "label": "на нічній зміні (18:00–06:00)" ...,
+       "next_events": "текст найближчих подій з календаря"}
+    НІКОЛИ не використовує habits._get_shift_type() (не обробляє нічну зміну після півночі).
+    """
     try:
         import sys as _sys
         _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from habits import _get_shift_type
-        shift = _get_shift_type()
-        labels = {"early": "рання зміна (06:00-18:00)", "night": "нічна зміна (18:00-06:00)", "weekend": "вихідний/без зміни"}
-        return labels.get(shift, "невідомо")
-    except Exception:
-        return "невідомо"
+        import context as _ctx
+        shift_info = _ctx.get_shift_from_calendar()
+        status = _ctx.get_status(shift_info)
+        label = _ctx.STATUS_LABELS.get(status, status)
+        try:
+            cal = _ctx.get_calendar_events()
+            next_events = cal.get("today_text", "нічого не заплановано")
+        except Exception:
+            next_events = "дані календаря недоступні"
+        return {"status": status, "label": label, "next_events": next_events}
+    except Exception as e:
+        _log(f"⚠️ _get_real_status_context failed: {e}")
+        return {"status": "unknown", "label": "невідомо (календар недоступний)",
+                "next_events": "дані календаря недоступні"}
+
+
+def _get_shift_hint() -> str:
+    """Backward-compatible short label — тепер calendar-verified через context.py."""
+    return _get_real_status_context()["label"]
+
+
+_STATUS_HARD_RULE = (
+    "НАЙВАЖЛИВІШЕ ПРАВИЛО: де зараз Олег і що робить — визначається ВИКЛЮЧНО полем "
+    "'РЕАЛЬНИЙ СТАТУС' нижче (перевірено щойно за Google Calendar). ЗАБОРОНЕНО стверджувати "
+    "що він 'спить', 'вдома', 'відпочиває', 'розслабляється' чи 'має вільний час', якщо статус "
+    "показує роботу/зміну (working_night/working_early/pre_shift). Якщо статус — робота, "
+    "звертайся до нього як до людини НА РОБОТІ (підтримка під час зміни), а не як до людини вдома чи сплячої."
+)
 
 def _get_traffic_hint() -> str:
     """Короткий контекст трафіку/погоди Кошице для afternoon промпту."""
@@ -394,13 +439,15 @@ def _get_traffic_hint() -> str:
 
 def _analyze_afternoon(emails, crypto, health, events):
     """Після обід (3pm): Рекомендації, планування, робота/зміни, погода/трафік"""
-    shift_hint = _get_shift_hint()
+    real_status = _get_real_status_context()
     traffic_hint = _get_traffic_hint()
     prompt = f"""You are Oleh's smart afternoon assistant. Write a brief recommendations message (250-300 words, Ukrainian).
 
+РЕАЛЬНИЙ СТАТУС (перевірено щойно за Google Calendar, ЄДИНЕ джерело правди): {real_status['label']}
+Найближчі події сьогодні: {real_status['next_events']}
+{_STATUS_HARD_RULE}
+
 CONTEXT:
-- Time: 3:00 PM (afternoon productivity window)
-- Work shift today: {shift_hint}
 - Progress today: {health.get('steps', 0)} steps
 - Unread VIP emails: {len([e for e in emails if e['vip']])}
 - Upcoming events: {len(events)} scheduled
@@ -435,17 +482,24 @@ FORMAT: Plain text."""
     )
     
     if not result:
-        result = f"⚡ Полудень крок! Ще {10000 - health.get('steps', 0)} кроків до цілі.\n📌 Крипто на радарі: ONDO, AVAX\n🎯 Ви на правильному шляху!"
-    
+        result = (f"⚡ Реальний статус: {real_status['label']}. "
+                  f"Ще {10000 - health.get('steps', 0)} кроків до цілі.\n"
+                  f"📌 Крипто на радарі: ONDO, AVAX\n🎯 Ви на правильному шляху!")
+
     return result
 
 def _analyze_evening(emails, crypto, health, astro_brief=""):
     """Вечір (8pm): День summary, астро, мотивація, фінансовий підсумок"""
     portfolio_hint = _get_portfolio_hint()
+    real_status = _get_real_status_context()
     prompt = f"""You are Oleh's smart evening assistant. Write a reflective summary message (300-400 words, Ukrainian).
 
+РЕАЛЬНИЙ СТАТУС (перевірено щойно за Google Calendar, ЄДИНЕ джерело правди): {real_status['label']}
+Найближчі події сьогодні: {real_status['next_events']}
+{_STATUS_HARD_RULE}
+КРИТИЧНО: якщо статус показує "working_night" — це НЕ "кінець зміни/вечір відпочинку", а САМА СЕРЕДИНА нічної зміни. Пиши як до людини, яка ЗАРАЗ працює вночі, а не готується спати.
+
 CONTEXT:
-- Time: 8:00 PM (end of work shift / evening)
 - Daily steps: {health.get('steps', 0)}
 - Daily sleep goal: 7-8h (last night: {health.get('sleep_hours', 0)}h)
 - Weight: {health.get('current_weight', 'N/A')} kg
@@ -455,12 +509,13 @@ CONTEXT:
 - Astro brief: {astro_brief or "Use your knowledge of his birth chart"}
 
 WRITE A MESSAGE THAT:
-1. Reflects on the day's achievements
-2. Acknowledges crypto movements (winners/losers)
-3. Gives a short finance/portfolio progress note (toward financial independence goal)
-4. Celebrates progress (steps, email management, etc.)
-5. Gives 1-2 evening/next-day tips
-6. Ends with an astrological insight or motivation
+1. Opens by acknowledging his REAL current status above accurately (night-shift work vs. actual evening at home are very different messages — never assume he's resting/sleeping if he's working)
+2. Reflects on the day's achievements
+3. Acknowledges crypto movements (winners/losers)
+4. Gives a short finance/portfolio progress note (toward financial independence goal)
+5. Celebrates progress (steps, email management, etc.)
+6. Gives 1-2 tips appropriate to his REAL status (e.g. night-shift energy/food tips if working nights, wind-down tips only if actually evening at home)
+7. Ends with an astrological insight or motivation
 
 TONE: Reflective, supportive, closing-the-day vibe.
 LANGUAGE: Ukrainian.
@@ -483,11 +538,17 @@ FORMAT: Plain text with emojis."""
     )
     
     if not result:
-        result = f"""🌙 Вечір приходить...
-День фінішу! Ви досягли {health.get('steps', 0)} кроків.
-💵 Крипто: BTC ${crypto.get('BTC', {}).get('price', 'N/A')}
-✨ Завтра буде краще. Спокійної ночі! 🌟"""
-    
+        if real_status["status"] == "working_night":
+            result = (f"🌙 Реальний статус: {real_status['label']} — ти зараз на роботі, не спиш.\n"
+                      f"Сьогодні {health.get('steps', 0)} кроків.\n"
+                      f"💵 Крипто: BTC ${crypto.get('BTC', {}).get('price', 'N/A')}\n"
+                      f"💪 Тримайся, ще трохи до кінця зміни!")
+        else:
+            result = (f"🌙 Реальний статус: {real_status['label']}.\n"
+                      f"День фінішу! Ви досягли {health.get('steps', 0)} кроків.\n"
+                      f"💵 Крипто: BTC ${crypto.get('BTC', {}).get('price', 'N/A')}\n"
+                      f"✨ Завтра буде краще. Спокійної ночі! 🌟")
+
     return result
 
 # ============ MAIN CALLBACKS ============
