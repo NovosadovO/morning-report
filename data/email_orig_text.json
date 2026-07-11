@@ -538,5 +538,32 @@
         ]
       ]
     }
+  },
+  "2100366814_42395": {
+    "text": "📩 ✉️\n📌 📰 AI-curated Daily Crypto Digest — July 11\n👤 Oleh Bezuhlyi через LinkedIn<newsletters-noreply@l",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_75802"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_75802"
+          }
+        ],
+        [
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_75802"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_75802"
+          }
+        ]
+      ]
+    }
   }
 }
