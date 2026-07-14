@@ -211,6 +211,32 @@ def _collect_week_data():
         print(f"[WeeklyCoach] crypto error: {e}")
         data["crypto"] = []
 
+    # ── Пошта (важливі листи, чи є нерозглянуті) ──
+    try:
+        gh_url = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/important_emails.json"
+        gh_headers = {"Authorization": f"token {os.environ.get('GITHUB_TOKEN', '')}", "User-Agent": "weekly_coach"}
+        req = urllib.request.Request(gh_url, headers=gh_headers)
+        with urllib.request.urlopen(req, timeout=10) as r:
+            gh_data = json.loads(r.read())
+        import base64 as _b64
+        important = json.loads(_b64.b64decode(gh_data["content"]).decode())
+        pending = [e for e in important if not e.get("replied")]
+        data["emails"] = {"important_total": len(important), "pending": len(pending),
+                           "pending_subjects": [e.get("subject", "?") for e in pending[:5]]}
+    except Exception as e:
+        print(f"[WeeklyCoach] emails error: {e}")
+        data["emails"] = {"important_total": 0, "pending": 0, "pending_subjects": []}
+
+    # ── Астро (поточні домінуючі транзити тижня) ──
+    try:
+        import sys
+        sys.path.insert(0, os.path.dirname(__file__))
+        from astro import get_natal_transits_short
+        data["astro_text"] = get_natal_transits_short(max_aspects=4) or ""
+    except Exception as e:
+        print(f"[WeeklyCoach] astro error: {e}")
+        data["astro_text"] = ""
+
     return data
 
 
@@ -301,7 +327,26 @@ def _build_coach_prompt(week_data: dict) -> str:
             sign = "+" if c["change_7d"] > 0 else ""
             lines.append(f"  {c['symbol']}: ${c['price']:,.0f} ({sign}{c['change_7d']}%)")
 
-    lines += ["", "Дай глибокий тижневий аналіз і конкретний план. Будь конструктивним і підтримуючим."]
+    # Пошта
+    emails = week_data.get("emails", {})
+    if emails.get("important_total", 0) or emails.get("pending", 0):
+        lines += [
+            "",
+            "📧 ПОШТА:",
+            f"  Важливих листів на контролі: {emails.get('important_total', 0)}",
+            f"  Досі без відповіді: {emails.get('pending', 0)}",
+        ]
+        if emails.get("pending_subjects"):
+            for s in emails["pending_subjects"]:
+                lines.append(f"    — {s}")
+
+    # Астро
+    astro_text = week_data.get("astro_text", "")
+    if astro_text:
+        lines += ["", "🔮 АСТРО (домінуючі транзити зараз):", astro_text[:600]]
+
+    lines += ["", "Дай глибокий тижневий аналіз і конкретний план. Враховуй ТАКОЖ пошту (чи не забув відповісти на важливе) "
+              "і астро (чи є щось що варто врахувати цього тижня). Будь конструктивним і підтримуючим."]
     return "\n".join(lines)
 
 

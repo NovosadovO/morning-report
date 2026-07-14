@@ -1480,6 +1480,12 @@ def handle_habit_callback(callback_query):
             day_data[hab_id] = False if current is True else True
             save_data(db)
 
+            try:
+                from habit_streaks import check_and_celebrate_milestone
+                check_and_celebrate_milestone()
+            except Exception as _se:
+                print(f"habit_streaks check error: {_se}")
+
             # Оновлюємо весь список кнопок
             keyboard = []
             for h in all_habits:
@@ -1510,6 +1516,13 @@ def handle_habit_callback(callback_query):
         db       = load_data()
         db.setdefault(today, {})[hab_id] = (answer == "yes")
         save_data(db)
+
+        # Стрік-гейміфікація: святкуємо новий мілстоун (3/5/7/14/21/30... днів поспіль без зривів)
+        try:
+            from habit_streaks import check_and_celebrate_milestone
+            check_and_celebrate_milestone()
+        except Exception as _se:
+            print(f"habit_streaks check error: {_se}")
 
         if answer == "yes":
             reply = f"✅ <b>{habit['name']}</b> — зараховано! 💪"

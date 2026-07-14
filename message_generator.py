@@ -591,6 +591,10 @@ def get_tone_variation(trigger_type: str, hour: int) -> dict:
         "interview_practice": [
             {"tone": "досвідчений інвестиційний рекрутер, конкретне питання", "emoji": "🎤"},
         ],
+        "workout_plan": [
+            {"tone": "енергійний тренер, конкретні вправи/підходи", "emoji": "🏋️"},
+            {"tone": "спокійний фізіотерапевт, розтяжка і відновлення", "emoji": "🧘"},
+        ],
     }
     base = variations.get(trigger_type, [{"tone": "дружелюбний, особистий", "emoji": "👋"}])
     idx = (hour + abs(hash(trigger_type))) % len(base)
@@ -600,7 +604,7 @@ def get_tone_variation(trigger_type: str, hour: int) -> dict:
 def _should_send_message(trigger_type: str, trigger_data) -> bool:
     always = {"vip_email", "deep_analysis", "briefing", "contextual_briefing",
               "morning", "evening", "health", "weekly_run_compare", "habit_checkin",
-              "nutrition_tip", "day_plan", "interview_practice"}
+              "nutrition_tip", "day_plan", "interview_practice", "workout_plan"}
     if trigger_type in always:
         return True
     if trigger_type == "crypto_move":
@@ -712,6 +716,15 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
             "щоразу — не повторюй попередні (дивись анти-репіт). Після питання напиши: "
             "'Відповідай прямо тут — я оціню твою відповідь.' НЕ давай відповідь сам, тільки питання + це речення."
         )
+    elif trigger_type == "workout_plan":
+        wtype = trigger_data if isinstance(trigger_data, str) else "strength"
+        wtype_ua = {"strength": "СИЛОВЕ тренування", "stretch": "РОЗТЯЖКА/мобільність", "rest": "АКТИВНЕ ВІДНОВЛЕННЯ"}.get(wtype, "тренування")
+        trigger_extra = (
+            f"\n🏋️ ПЛАН ТРЕНУВАННЯ: реальний статус зараз — {real_status}. Тип на сьогодні: {wtype_ua}. "
+            "Дай КОНКРЕТНИЙ короткий план (вправи, підходи/повторення або хвилини, орієнтовний час виконання), "
+            "адаптований під те що він щойно закінчив/скоро на зміну (не виснажливо перед/після роботи). "
+            "Врахуй що біг у нього окремо (Strava) — це ДОДАТКОВО до бігу, не заміна."
+        )
 
     # ── Shift context ─────────────────────────────────────────────────────────
     h = live["hour"]
@@ -726,7 +739,7 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
 
     # ── Довжина/структура залежно від теми: короткі алерти vs довгі звіти ─────
     SHORT_TRIGGERS = {"event_soon", "habit_checkin", "idle_timeout", "nutrition_tip", "interview_practice"}
-    MEDIUM_TRIGGERS = {"crypto_move", "vip_email", "weekly_run_compare", "health", "day_plan"}
+    MEDIUM_TRIGGERS = {"crypto_move", "vip_email", "weekly_run_compare", "health", "day_plan", "workout_plan"}
     # решта (morning/evening/deep_analysis/briefing тощо) — LONG за замовчуванням
 
     if trigger_type in SHORT_TRIGGERS:

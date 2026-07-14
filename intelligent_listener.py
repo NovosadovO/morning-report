@@ -227,6 +227,29 @@ class IntelligentListener:
             return False
         return 19 <= now.hour < 22
 
+    def _check_workout_window(self):
+        """Пн/Ср/Пт — силове, Вт/Чт — розтяжка, вихідні — активне відновлення.
+        Не в нічну зміну (тоді відпочиває вдень, тренування може завадити сну).
+        Повертає тип тренування (str) або None якщо не час."""
+        now = datetime.now(tz=_TZ)
+        status = self._get_shift_status()
+        if status == "working_night":
+            return None
+        # Вікно: після ранньої зміни (18-20) або на вихідному (17-19)
+        if status == "working_early" or status == "post_shift":
+            window_ok = 18 <= now.hour < 20
+        else:
+            window_ok = 17 <= now.hour < 19
+        if not window_ok:
+            return None
+        wd = now.weekday()  # 0=Пн
+        if wd in (0, 2, 4):
+            return "strength"
+        elif wd in (1, 3):
+            return "stretch"
+        else:
+            return "rest"
+
     def _check_event_prep(self) -> list:
         """Реальні (не рутинні) события за 30-90 хв — підготовчий брифінг"""
         try:
@@ -377,6 +400,12 @@ class IntelligentListener:
                 if self._check_interview_window() and self._should_send_trigger("interview_practice", 60.0):
                     triggers.append(("interview_practice", None))
                     self._log("TRIGGER: interview_practice")
+
+                # 12. WORKOUT PLAN (1x/день, тип ротується по дню тижня, не в нічну зміну)
+                _workout_type = self._check_workout_window()
+                if _workout_type and self._should_send_trigger("workout_plan", 20.0):
+                    triggers.append(("workout_plan", _workout_type))
+                    self._log(f"TRIGGER: workout_plan ({_workout_type})")
 
                 # Процесувати тригери (генеруємо & надсилаємо messages)
                 if triggers:

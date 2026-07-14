@@ -340,6 +340,11 @@ def run_weekly_plan_watcher():
             m.check_weekly_habit_stats()
         except Exception as e:
             print(f"Weekly plan watcher error: {e}", flush=True)
+        try:
+            from habit_streaks import check_streak_risk
+            check_streak_risk()
+        except Exception as e:
+            print(f"Habit streak risk check error: {e}", flush=True)
         time.sleep(60)
 
 
@@ -1287,6 +1292,22 @@ def run_strava_charts_loop():
                     mon.check_strava_monthly_report()
                 except Exception as e:
                     print(f"[strava_charts] monthly error: {e}", flush=True)
+
+            # ── AI Місячний Коуч — 1-ше число о 20:30 ──
+            if now.day == 1 and h == 20 and 30 <= m < 35:
+                coach_month_key = f"mcoach_{month_str}"
+                if not getattr(run_strava_charts_loop, '_sent_mcoach', None) or \
+                   getattr(run_strava_charts_loop, '_sent_mcoach', None) != coach_month_key:
+                    run_strava_charts_loop._sent_mcoach = coach_month_key
+                    print(f"[MonthlyCoach] Triggering monthly AI coach {month_str}", flush=True)
+                    try:
+                        import threading as _mct
+                        import sys as _mcs
+                        _mcs.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                        from monthly_coach import run_monthly_coach
+                        _mct.Thread(target=run_monthly_coach, daemon=True).start()
+                    except Exception as e:
+                        print(f"[MonthlyCoach] trigger error: {e}", flush=True)
 
         except Exception as e:
             print(f"[strava_charts_loop] error: {e}", flush=True)
