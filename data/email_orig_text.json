@@ -565,5 +565,32 @@
         ]
       ]
     }
+  },
+  "2100366814_44022": {
+    "text": "📦 ✉️\n📌 Delivery Status Notification (Delay)\n👤 Mail Delivery Subsystem <mailer-daemon@googlemail.",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_75900"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_75900"
+          }
+        ],
+        [
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_75900"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_75900"
+          }
+        ]
+      ]
+    }
   }
 }
