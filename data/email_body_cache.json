@@ -1,4 +1,9 @@
 {
+  "75961": {
+    "subject": "[NovosadovO/morning-report] Run failed: Monitor — Telegram Alerts - main (eced32e)",
+    "sender": "\"NovosadovO\" <notifications@github.com>",
+    "body": "[NovosadovO/morning-report] Monitor — Telegram Alerts workflow run\r\n\r\nRepository: NovosadovO/morning-report\r\nWorkflow: Monitor — Telegram Alerts\r\nDuration: 2 minutes and 10.0 seconds\r\nFinished: 2026-07-15 02:02:55 UTC\r\n\r\nView results: https://github.com/NovosadovO/morning-report/actions/runs/29383038671\r\n\r\nJobs:\r\n  * monitor failed (2 annotations)\r\n\r\n-- \r\nYou are receiving this because you are subscribed to this thread.\r\nManage your GitHub Actions notifications: https://github.com/settings/notifications?email_source=notifications&email_token=BBOHUQOKKHRWIDRJMQSNXI35E3Q6HA5CNFSNUACCM5UWIORPF5TWS5BNNB2WEL2DNBSWG22TOVUXIZKFOZSW45CON52GSZTJMNQXI2LPNYXTOOJVGM2TCOJYGMYTQJJTIIYTOOBUGA4DAOJXGWTHEZLBONXW5IFFMV3GK3TUWFRXGX3TMV2HI2LOM5ZV6Y3MNFRWW\r\n"
+  },
   "75960": {
     "subject": "Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk",
     "sender": "\"Profesia.sk\" <support@profesia.sk>",
@@ -28,10 +33,5 @@
     "subject": "€91.04 payment to Runable was unsuccessful again",
     "sender": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
     "body": "Runable\r\n\r\n€91.04 payment to Runable was unsuccessful We attempted to charge your Mastercard ending in 2803 for your Runable subscription again, but were unsuccessful. Please update your billing information to continue your subscription. Update payment method (https://billing.stripe.com/p/subscription/recovery/live_YWNjdF8xUmFYZ1VKazNVUlBMa0FPLF9Vc0FXemVJSDdYdW1JdnliSzdETmlWNUdzQUpLNkpF0100GigH4S7V?referer=failed_payment) Questions? Contact us at support@runable.com (support@runable.com).\r\n\r\nPowered by    stripe logo (https://stripe.com)"
-  },
-  "75953": {
-    "subject": "Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD",
-    "sender": "Google Payments <payments-noreply@google.com>",
-    "body": "\r\nGoogle Cloud Platform & APIs\r\n\r\n\r\nПлатіж отримано\r\n\r\nВаш платіж у розмірі 10,00 EUR (призначення платежу: CLOUD MBWV6G,  \r\nMastercard  • • • • 5159) додано в обліковий запис Google Cloud Platform &  \r\nAPIs 14 лип. 2026 р..\r\n\r\n\r\n------------------------------------------------------------------------------------\r\n\r\nДовідковий центр<https://support.google.com/cloud/#topic=6288636>\r\n\r\nЗв’язатися з  \r\nнами<https://support.google.com/cloud/contact/cloud_platform_billing>\r\n\r\nІдентифікатор клієнта Google Cloud Platform:  01FB74-1CEEDC-1297AD\r\nІдентифікатор платіжного профілю:  5477-1873-1527\r\n\r\nGoogle LLC 1600 Amphitheatre Parkway, Mountain View, CA 94043\r\n\r\nМи надіслали Вам це обов’язкове службове сповіщення, щоб повідомити про  \r\nважливі зміни в Google Cloud Platform & APIs або Вашому обліковому записі.\r\n\r\nGoogle\r\n\r\n  \t\r\n"
   }
 }
