@@ -2183,29 +2183,29 @@ def check_new_emails():
             # 1. GIF окремо (без тексту)
             _send_telegram_gif_only()
 
-            # 2. Текст з AI аналізом + кнопки окремим повідомленням
+            # 2. Текст з AI аналізом + кнопки окремим повідомленням (розмовний, "живий" стиль)
             _cat_tag = {"real": "", "promo": " 📢<i>(промо)</i>", "spam": " 🗑<i>(схоже на розсилку)</i>"}.get(category, "")
-            text = (
-                f"📩 <b>━━ НОВИЙ ЛИСТ ━━</b>{_cat_tag}\n\n"
-                f"👤 <b>Від:</b> {esc(sender[:60])}\n"
-                f"📋 <b>Тема:</b> {esc(subject[:70])}\n"
-            )
+            sender_short = esc(sender.split("<")[0].strip().strip('"') or sender[:40])
+            text = f"Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>{sender_short}</b>{_cat_tag}\n"
+            text += f"📋 Тема: «{esc(subject[:70])}»\n"
+
             if ai:
                 description = ai.get('description', ai.get('summary', '')).strip()
                 opinion = ai.get('opinion', '').strip()
                 if description:
-                    text += f"\n📝 <b>Опис:</b> {esc(description)}\n"
+                    text += f"\n{esc(description)}\n"
                 if opinion:
-                    text += f"\n🤖 <b>Моя думка:</b> {esc(opinion)}"
+                    text += f"\n🤖 {esc(opinion)}\n"
             else:
-                # Fallback — тіло листа перші 300 символів
                 preview = body[:300].strip() if body else ""
                 if preview:
-                    text += f"\n📄 <b>Початок:</b> <i>{esc(preview)}...</i>"
+                    text += f"\n<i>«{esc(preview)}...»</i>\n"
+
+            text += "\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇"
 
             keyboard = {"inline_keyboard": [
                 [
-                    {"text": "🤖✍️ AI-Draft відповіді", "callback_data": f"email_reply_{uid_str}"},
+                    {"text": "🤖✍️ Відповідь", "callback_data": f"email_reply_{uid_str}"},
                     {"text": "⭐ Важливий",   "callback_data": f"email_star_{uid_str}"},
                 ],
                 [
@@ -7584,12 +7584,12 @@ def check_important_emails_followup():
 
     if reminders:
         for em in reminders:
+            sender_short = esc(em.get('sender','').split("<")[0].strip().strip('"') or em.get('sender','')[:40])
             msg = (
-                f"⭐ <b>Нагадування: важливий лист без відповіді</b>\n\n"
-                f"👤 <b>Від:</b> {esc(em.get('sender','')[:60])}\n"
-                f"📋 <b>Тема:</b> {esc(em.get('subject','')[:70])}\n"
+                f"Олеже, нагадую 🔔 Лист від <b>{sender_short}</b> — «{esc(em.get('subject','')[:70])}» — "
+                f"досі без відповіді (вже більше доби).\n\n"
                 f"<i>{esc(em.get('preview','')[:200])}</i>\n\n"
-                f"⏰ Збережено більше 24 годин тому. Не забув відповісти?"
+                f"Хочеш я підготую варіант відповіді зараз?"
             )
             send_telegram(msg)
 
@@ -14999,12 +14999,12 @@ def check_important_emails_followup():
 
     if reminders:
         for em in reminders:
+            sender_short = esc(em.get('sender','').split("<")[0].strip().strip('"') or em.get('sender','')[:40])
             msg = (
-                f"⭐ <b>Нагадування: важливий лист без відповіді</b>\n\n"
-                f"👤 <b>Від:</b> {esc(em.get('sender','')[:60])}\n"
-                f"📋 <b>Тема:</b> {esc(em.get('subject','')[:70])}\n"
+                f"Олеже, нагадую 🔔 Лист від <b>{sender_short}</b> — «{esc(em.get('subject','')[:70])}» — "
+                f"досі без відповіді (вже більше доби).\n\n"
                 f"<i>{esc(em.get('preview','')[:200])}</i>\n\n"
-                f"⏰ Збережено більше 24 годин тому. Не забув відповісти?"
+                f"Хочеш я підготую варіант відповіді зараз?"
             )
             send_telegram(msg)
 
