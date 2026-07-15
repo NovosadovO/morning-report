@@ -399,6 +399,15 @@ def _generate_charts(week_data: dict) -> list:
     except Exception as e:
         print(f"[WeeklyCoach] weight chart error: {e}")
 
+    # Графік настрою/енергії
+    try:
+        from charts import plot_mood_energy
+        img = plot_mood_energy(days=30)
+        if img:
+            charts.append(("😊 Настрій/енергія", img))
+    except Exception as e:
+        print(f"[WeeklyCoach] mood chart error: {e}")
+
     return charts
 
 

@@ -595,6 +595,13 @@ def get_tone_variation(trigger_type: str, hour: int) -> dict:
             {"tone": "енергійний тренер, конкретні вправи/підходи", "emoji": "🏋️"},
             {"tone": "спокійний фізіотерапевт, розтяжка і відновлення", "emoji": "🧘"},
         ],
+        "daily_astro": [
+            {"tone": "містичний астролог, конкретний транзит дня", "emoji": "🔮"},
+        ],
+        "health_pulse": [
+            {"tone": "уважний друг, швидкий чек-ін", "emoji": "❤️"},
+            {"tone": "турботливий коуч, конкретна дія зараз", "emoji": "🩺"},
+        ],
     }
     base = variations.get(trigger_type, [{"tone": "дружелюбний, особистий", "emoji": "👋"}])
     idx = (hour + abs(hash(trigger_type))) % len(base)
@@ -604,7 +611,8 @@ def get_tone_variation(trigger_type: str, hour: int) -> dict:
 def _should_send_message(trigger_type: str, trigger_data) -> bool:
     always = {"vip_email", "deep_analysis", "briefing", "contextual_briefing",
               "morning", "evening", "health", "weekly_run_compare", "habit_checkin",
-              "nutrition_tip", "day_plan", "interview_practice", "workout_plan"}
+              "nutrition_tip", "day_plan", "interview_practice", "workout_plan",
+              "daily_astro", "health_pulse"}
     if trigger_type in always:
         return True
     if trigger_type == "crypto_move":
@@ -725,6 +733,19 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
             "адаптований під те що він щойно закінчив/скоро на зміну (не виснажливо перед/після роботи). "
             "Врахуй що біг у нього окремо (Strava) — це ДОДАТКОВО до бігу, не заміна."
         )
+    elif trigger_type == "daily_astro":
+        astro_text = trigger_data if isinstance(trigger_data, str) else ""
+        trigger_extra = (
+            f"\n🔮 ЩОДЕННИЙ АСТРО-ТРАНЗИТ (окреме повідомлення, не частина звіту):\n{astro_text[:800]}\n"
+            "Поясни ЛЮДСЬКОЮ мовою що це означає для Олега сьогодні конкретно (не загальні фрази), "
+            "1 практична порада на основі цього транзиту."
+        )
+    elif trigger_type == "health_pulse":
+        trigger_extra = (
+            f"\n❤️ ШВИДКИЙ HEALTH-ПУЛЬС: реальний статус — {real_status}. "
+            "Короткий чек-ін на основі поточних даних (кроки/вода/сон з живих даних нижче) — "
+            "чи вкладається в норму на цей момент дня, і ОДНА конкретна дія зараз якщо ні."
+        )
 
     # ── Shift context ─────────────────────────────────────────────────────────
     h = live["hour"]
@@ -738,8 +759,8 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
         period = "НІЧ — спокій і відновлення"
 
     # ── Довжина/структура залежно від теми: короткі алерти vs довгі звіти ─────
-    SHORT_TRIGGERS = {"event_soon", "habit_checkin", "idle_timeout", "nutrition_tip", "interview_practice"}
-    MEDIUM_TRIGGERS = {"crypto_move", "vip_email", "weekly_run_compare", "health", "day_plan", "workout_plan"}
+    SHORT_TRIGGERS = {"event_soon", "habit_checkin", "idle_timeout", "nutrition_tip", "interview_practice", "health_pulse"}
+    MEDIUM_TRIGGERS = {"crypto_move", "vip_email", "weekly_run_compare", "health", "day_plan", "workout_plan", "daily_astro"}
     # решта (morning/evening/deep_analysis/briefing тощо) — LONG за замовчуванням
 
     if trigger_type in SHORT_TRIGGERS:

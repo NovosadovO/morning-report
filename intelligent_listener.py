@@ -219,6 +219,19 @@ class IntelligentListener:
             return 16 <= now.hour < 18
         return 12 <= now.hour < 14
 
+    def _check_daily_astro_window(self) -> bool:
+        """Раз на день окреме астро-повідомлення (не в звіті) — вранці 08:00-09:00."""
+        now = datetime.now(tz=_TZ)
+        return 8 <= now.hour < 9
+
+    def _check_health_pulse_window(self) -> bool:
+        """2x/день короткий health-пульс: ~11:00-12:00 і ~16:00-17:00, не в нічну зміну (тоді на роботі)."""
+        now = datetime.now(tz=_TZ)
+        status = self._get_shift_status()
+        if status == "working_night":
+            return False
+        return (11 <= now.hour < 12) or (16 <= now.hour < 17)
+
     def _check_interview_window(self) -> bool:
         """Вечірнє вікно для практики співбесіди (не в нічну зміну — тоді він на роботі)."""
         now = datetime.now(tz=_TZ)
@@ -372,7 +385,7 @@ class IntelligentListener:
                 
                 # 6. DEEP ANALYSIS (динамічна актуальність з local fallback)
                 idle = self._check_idle_timeout()
-                if self._should_send_trigger("deep_analysis", 4.0):  # Макс 1x на 4h
+                if self._should_send_trigger("deep_analysis", 3.0):  # Макс 1x на 3h (було 4h — Олег просив частіше)
                     triggers.append(("deep_analysis", idle))
                     self._log(f"TRIGGER: deep_analysis (idle={idle:.1f}h)")
 
@@ -406,6 +419,24 @@ class IntelligentListener:
                 if _workout_type and self._should_send_trigger("workout_plan", 20.0):
                     triggers.append(("workout_plan", _workout_type))
                     self._log(f"TRIGGER: workout_plan ({_workout_type})")
+
+                # 13. DAILY ASTRO (1x/день, окреме повідомлення, не тільки в звіті)
+                if self._check_daily_astro_window() and self._should_send_trigger("daily_astro", 20.0):
+                    try:
+                        import sys as _sys3
+                        _sys3.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                        from astro import get_natal_transits_short
+                        _astro_txt = get_natal_transits_short(max_aspects=4) or ""
+                    except Exception as _ae:
+                        _astro_txt = ""
+                    if _astro_txt:
+                        triggers.append(("daily_astro", _astro_txt))
+                        self._log("TRIGGER: daily_astro")
+
+                # 14. HEALTH PULSE (2x/день, короткий чек-ін)
+                if self._check_health_pulse_window() and self._should_send_trigger("health_pulse", 4.0):
+                    triggers.append(("health_pulse", None))
+                    self._log("TRIGGER: health_pulse")
 
                 # Процесувати тригери (генеруємо & надсилаємо messages)
                 if triggers:

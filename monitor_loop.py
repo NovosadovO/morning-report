@@ -345,6 +345,10 @@ def run_weekly_plan_watcher():
             check_streak_risk()
         except Exception as e:
             print(f"Habit streak risk check error: {e}", flush=True)
+        try:
+            _load_monitor().check_unread_digest()
+        except Exception as e:
+            print(f"Unread digest check error: {e}", flush=True)
         time.sleep(60)
 
 

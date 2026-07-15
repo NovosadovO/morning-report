@@ -1752,3 +1752,113 @@ def plot_crypto_trend(days: int = 30) -> bytes | None:
         import traceback
         traceback.print_exc()
         return None
+
+
+def _load_mood():
+    try:
+        import sys; sys.path.insert(0, _DIR)
+        from monitor import load_json_file, MOOD_FILE
+        return load_json_file(MOOD_FILE, default={}) or {}
+    except Exception:
+        return {}
+
+
+def plot_mood_energy(days: int = 30) -> bytes | None:
+    """Графік настрою/енергії за N днів (1-5 балів)."""
+    if not HAS_MPL:
+        return None
+    try:
+        _rc()
+        mood_db = _load_mood()
+        today = date.today()
+        day_list = [today - timedelta(days=i) for i in range(days - 1, -1, -1)]
+
+        xs, ys = [], []
+        for d in day_list:
+            key = d.isoformat()
+            if key in mood_db:
+                v = mood_db[key]
+                v = v.get("score", v) if isinstance(v, dict) else v
+                try:
+                    xs.append(d)
+                    ys.append(float(v))
+                except Exception:
+                    pass
+
+        if len(ys) < 2:
+            return None
+
+        fig, ax = plt.subplots(figsize=(12, 5))
+        ax.plot(xs, ys, marker="o", color=PURPLE, linewidth=2, markersize=5, label="Настрій")
+
+        if len(ys) >= 7:
+            import numpy as _np
+            ma = _np.convolve(ys, _np.ones(7) / 7, mode="valid")
+            ax.plot(xs[6:], ma, color=ORANGE, linewidth=2, linestyle="--", label="Тренд (7д)")
+
+        ax.set_ylim(0.5, 5.5)
+        ax.set_yticks([1, 2, 3, 4, 5])
+        ax.set_yticklabels(["1 😩", "2 😐", "3 🙂", "4 😊", "5 🌟"])
+        ax.set_title(f"Настрій/енергія — останні {days} днів", fontsize=15, fontweight="bold", color=TEXT, pad=14)
+        ax.grid(True, alpha=0.25, color=BORDER)
+        for spine in ax.spines.values():
+            spine.set_color(BORDER)
+        legend = ax.legend(loc="upper left", fontsize=9, facecolor=PANEL, edgecolor=BORDER)
+        for text in legend.get_texts():
+            text.set_color(TEXT)
+        fig.autofmt_xdate()
+
+        return _buf(fig, dpi=180)
+    except Exception as e:
+        print(f"[plot_mood_energy] error: {e}")
+        return None
+
+
+def plot_goals_progress(days: int = 90) -> bytes | None:
+    """Прогрес до цілі: вага -> 78кг."""
+    if not HAS_MPL:
+        return None
+    try:
+        _rc()
+        weight_db = _load_weight()
+        today = date.today()
+        day_list = [today - timedelta(days=i) for i in range(days - 1, -1, -1)]
+
+        w_xs, w_ys = [], []
+        for d in day_list:
+            key = d.isoformat()
+            if key in weight_db:
+                v = weight_db[key]
+                v = v.get("weight", v) if isinstance(v, dict) else v
+                try:
+                    w_xs.append(d)
+                    w_ys.append(float(v))
+                except Exception:
+                    pass
+
+        if len(w_ys) < 2:
+            return None
+
+        fig, ax = plt.subplots(figsize=(12, 5))
+        ax.plot(w_xs, w_ys, marker="o", color=BLUE, linewidth=2, markersize=4, label="Вага (кг)")
+        ax.axhline(y=78, color=GREEN, linestyle="--", linewidth=1.5, label="Ціль: 78 кг")
+
+        last_w = w_ys[-1]
+        to_go = round(last_w - 78, 1)
+        status = f"Залишилось: -{to_go} кг" if to_go > 0 else "Ціль досягнута!"
+
+        ax.set_title(f"Прогрес до цілі — вага ({days} днів)\n{status}",
+                     fontsize=14, fontweight="bold", color=TEXT, pad=14)
+        ax.set_ylabel("кг", color=TEXT)
+        ax.grid(True, alpha=0.25, color=BORDER)
+        for spine in ax.spines.values():
+            spine.set_color(BORDER)
+        legend = ax.legend(loc="upper right", fontsize=9, facecolor=PANEL, edgecolor=BORDER)
+        for text in legend.get_texts():
+            text.set_color(TEXT)
+        fig.autofmt_xdate()
+
+        return _buf(fig, dpi=180)
+    except Exception as e:
+        print(f"[plot_goals_progress] error: {e}")
+        return None

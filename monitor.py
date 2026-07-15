@@ -16224,3 +16224,39 @@ def check_health_weekly_tracker():
     save_json_file(_HEALTH_TRACKER_FILE, state)
     print(f"[health_tracker] тижневий аналіз надіслано ({week_key})")
 
+
+
+# ─── UNREAD EMAIL DIGEST (легкий, без Gemini) ────────────────────────────────
+
+UNREAD_DIGEST_FILE = os.path.join(_DATA_DIR, "monitor_unread_digest.json")
+
+def check_unread_digest():
+    """Раз/день (19:00-19:10) — коротке нагадування скільки листів досі непрочитано
+    (БЕЗ Gemini, просто підрахунок IMAP), щоб Олег стежив за поштою довше."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    if not (19 <= now_local.hour < 20 and now_local.minute < 10):
+        return
+    today_key = now_local.strftime("%Y-%m-%d")
+    state = load_json_file(UNREAD_DIGEST_FILE, default={})
+    if state.get("last_sent") == today_key:
+        return
+
+    try:
+        mail = _imap_connect()
+        mail.select("INBOX")
+        _, data_primary = mail.uid('search', None, 'X-GM-RAW "category:primary is:unread"')
+        unread_primary = len(data_primary[0].split()) if data_primary and data_primary[0] else 0
+        mail.logout()
+    except Exception as e:
+        print(f"check_unread_digest error: {e}")
+        return
+
+    if unread_primary >= 3:
+        send_telegram(
+            f"📬 <b>Непрочитана пошта</b>\n\n"
+            f"У тебе {unread_primary} непрочитаних листів у Primary. "
+            f"Якщо серед них щось важливе — не забудь заглянути 👀"
+        )
+
+    state["last_sent"] = today_key
+    save_json_file(UNREAD_DIGEST_FILE, state)

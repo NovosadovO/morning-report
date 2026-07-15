@@ -299,12 +299,29 @@ def _generate_charts():
     try:
         import sys
         sys.path.insert(0, os.path.dirname(__file__))
-        from charts import plot_monthly_dashboard
+        from charts import plot_monthly_dashboard, plot_mood_energy, plot_goals_progress
         img = plot_monthly_dashboard()
         if img:
             charts.append(("📊 Місячний дашборд", img))
     except Exception as e:
         print(f"[MonthlyCoach] monthly dashboard chart error: {e}")
+
+    try:
+        from charts import plot_mood_energy
+        img = plot_mood_energy(days=30)
+        if img:
+            charts.append(("😊 Настрій/енергія за місяць", img))
+    except Exception as e:
+        print(f"[MonthlyCoach] mood chart error: {e}")
+
+    try:
+        from charts import plot_goals_progress
+        img = plot_goals_progress(days=90)
+        if img:
+            charts.append(("🎯 Прогрес до цілі (вага)", img))
+    except Exception as e:
+        print(f"[MonthlyCoach] goals chart error: {e}")
+
     return charts
 
 
