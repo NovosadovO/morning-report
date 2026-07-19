@@ -1,8 +1,4 @@
 {
-  "2026-07-15": {
-    "post_shift_checkin": true,
-    "night_summary": true
-  },
   "2026-07-16": {
     "morning_greet": true,
     "run_question": true,
@@ -19,5 +15,8 @@
   "2026-07-18": {
     "morning_greet": true,
     "evening_checkin": true
+  },
+  "2026-07-19": {
+    "morning_greet": true
   }
 }
