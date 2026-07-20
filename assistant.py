@@ -926,27 +926,20 @@ def check_user_silent():
     if state.get(today_key):
         return
 
-    # Читаємо останнє повідомлення від Олега через getUpdates
+    # Читаємо час останньої активності Олега — раніше тут був ОКРЕМИЙ прямий
+    # виклик getUpdates до Telegram API, повністю незалежний від головного
+    # polling-циклу бота (bot.py) і його leader-lock. Це зайвий другий
+    # споживач getUpdates для того самого токена — ризик конфліктів.
+    # Тепер читаємо ту ж інформацію з intelligent_listener (той самий процес,
+    # той самий стан, без жодного зайвого HTTP-виклику до Telegram).
     try:
-        url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/getUpdates?limit=20&offset=-20"
-        req = urllib.request.Request(url)
-        with urllib.request.urlopen(req, timeout=10) as r:
-            data = json.loads(r.read())
-        updates = data.get("result", [])
-        last_user_ts = None
-        for u in reversed(updates):
-            msg = u.get("message", {})
-            if msg.get("from", {}).get("id") and str(msg.get("chat", {}).get("id")) == TELEGRAM_CHAT:
-                last_user_ts = msg.get("date")
-                break
-
-        if last_user_ts is None:
-            return  # немає даних
-
-        hours_silent = (datetime.now(timezone.utc).timestamp() - last_user_ts) / 3600
+        import sys as _sys_sil
+        _sys_sil.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from intelligent_listener import get_listener
+        _listener = get_listener()
+        hours_silent = (datetime.now(timezone.utc).timestamp() - _listener.last_user_activity) / 3600
         if hours_silent < 12:
             return
-
     except Exception as e:
         print(f"[assistant] silent check error: {e}")
         return

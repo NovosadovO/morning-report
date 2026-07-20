@@ -1929,6 +1929,17 @@ def get_updates(offset=0):
     result = api("getUpdates", {"offset": offset, "timeout": 30, "limit": 10,
                                 "allowed_updates": ["message", "callback_query"]})
     if isinstance(result, dict) and result.get("error_code") == 409:
+        _desc = result.get("description", "")
+        if "webhook is active" in _desc:
+            # Хтось (зовнішній сервіс/старий деплой) встановив webhook під час
+            # роботи бота — deleteWebhook() при старті main() спрацював лише
+            # один раз і цього недостатньо, якщо webhook з'являється знову.
+            # Видаляємо його одразу тут же, при кожному такому конфлікті.
+            print(f"[Bot] Webhook re-appeared mid-run ({_desc[:80]}) — deleting again", flush=True)
+            try:
+                api("deleteWebhook", {"drop_pending_updates": False})
+            except Exception as _e:
+                print(f"[Bot] deleteWebhook (mid-run) error: {_e}", flush=True)
         return _CONFLICT_409
     return result.get("result", [])
 
