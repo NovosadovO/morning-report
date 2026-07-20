@@ -3637,11 +3637,26 @@ def main():
         time.sleep(5)
 
     # Запускаємо heartbeat в background
-    _threading.Thread(target=_heartbeat_leader, daemon=True).start()
+    # ── Захист від дублікатів: якщо main() рестартує через conflict-return
+    # (без завершення всього OS-процесу), importlib.reload скидає локальні
+    # флаги, але вже запущені daemon-потоки НЕ зупиняються — накопичувались
+    # дублікати heartbeat/email-checker/listener/scheduler з кожним рестартом.
+    # threading.enumerate() бачить старі потоки навіть після reload (сам модуль
+    # threading не перезавантажується) — перевіряємо по імені перед стартом.
+    def _thread_already_running(name: str) -> bool:
+        return any(t.name == name and t.is_alive() for t in _threading.enumerate())
+
+    if not _thread_already_running("heartbeat_leader"):
+        _threading.Thread(target=_heartbeat_leader, daemon=True, name="heartbeat_leader").start()
+    else:
+        print("[Leader] heartbeat_leader thread already running — skip duplicate", flush=True)
 
     # Запускаємо перевірку нових листів (ВСІ категорії, AI-аналіз + reply button)
-    print("[EmailChecker] Starting background email checker (every 2 min)...", flush=True)
-    _threading.Thread(target=_email_checker_loop, daemon=True).start()
+    if not _thread_already_running("email_checker_loop"):
+        print("[EmailChecker] Starting background email checker (every 2 min)...", flush=True)
+        _threading.Thread(target=_email_checker_loop, daemon=True, name="email_checker_loop").start()
+    else:
+        print("[EmailChecker] already running — skip duplicate", flush=True)
 
     # Запускаємо Intelligent Listener (event-driven triggers, САМ вирішує коли писати)
     if _LISTENER_AVAILABLE:
