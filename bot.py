@@ -3286,13 +3286,18 @@ def handle_command(chat_id, text):
         except ValueError:
             pass
 
-        # Перевіряємо чи це відповідь на щоденник (о 21:00 ±30 хв)
-        _now_l = datetime.now(timezone.utc) + timedelta(hours=2)
-        _h_now = _now_l.hour
-        if 20 <= _h_now <= 22 and len(text) > 3:
+        # Перевіряємо чи це відповідь на щоденник (питання за СЬОГОДНІ вже
+        # задане, але відповіді ще нема). Раніше тут була жорстка перевірка
+        # "тільки 20:00-22:00" — але Олег часто на нічній зміні (18:00-06:00)
+        # саме о 21:00 і бачить питання й відповідає значно пізніше, тому
+        # відповідь ніколи не зберігалась (просто йшла в генерал AI-чат).
+        # Тепер приймаємо відповідь будь-коли того ж дня, поки є незакрите
+        # питання — не прив'язано до конкретної години.
+        if len(text) > 3:
             try:
                 import importlib as _il_d, monitor as _mon_d
                 _il_d.reload(_mon_d)
+                _now_l = datetime.now(timezone.utc) + timedelta(hours=2)
                 _diary_data = _mon_d.load_json_file(
                     os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "monitor_diary.json"),
                     default={"entries": {}}
