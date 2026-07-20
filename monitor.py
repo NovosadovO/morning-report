@@ -5348,7 +5348,7 @@ def check_crypto_weekly_summary():
             f"https://api.coingecko.com/api/v3/coins/markets"
             f"?vs_currency=usd&ids={ids}&price_change_percentage=7d,24h"
         )
-        raw = fetch_json(url)
+        raw = fetch_json_cached(url)
         if not raw:
             return
         # convert list → dict by id
@@ -6164,9 +6164,7 @@ def check_morning_context():
         try:
             ids = ",".join(COINS.values())
             url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h"
-            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=8) as r:
-                raw = json.loads(r.read())
+            raw = fetch_json_cached(url)
             crypto_lines = []
             for c in raw:
                 sym = c["symbol"].upper()
@@ -6602,9 +6600,7 @@ def check_crypto_morning():
         coins_map = list(COINS.items())
         ids = ",".join(cg_id for _, cg_id in coins_map)
         url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h,7d"
-        req = urllib.request.Request(url, headers={"User-Agent": "bot"})
-        with urllib.request.urlopen(req, timeout=10) as r:
-            raw = json.loads(r.read())
+        raw = fetch_json_cached(url)
         data = {c["id"]: c for c in raw}
 
         lines_out = []
@@ -11004,9 +11000,7 @@ def check_morning_brief():
         sym_map = list(COINS.items())
         ids = ",".join(cg_id for _, cg_id in sym_map)
         url_c = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h,7d,30d"
-        req_c = urllib.request.Request(url_c, headers={"User-Agent":"bot"})
-        with urllib.request.urlopen(req_c, timeout=8) as r:
-            raw_c = json.loads(r.read())
+        raw_c = fetch_json_cached(url_c)
         data_c = {c["id"]: c for c in raw_c}
 
         def _trend_emoji(pct):
@@ -12767,7 +12761,7 @@ def check_crypto_weekly_summary():
             f"https://api.coingecko.com/api/v3/coins/markets"
             f"?vs_currency=usd&ids={ids}&price_change_percentage=7d,24h"
         )
-        raw = fetch_json(url)
+        raw = fetch_json_cached(url)
         if not raw:
             return
         # convert list → dict by id
@@ -13583,9 +13577,7 @@ def check_morning_context():
         try:
             ids = ",".join(COINS.values())
             url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h"
-            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=8) as r:
-                raw = json.loads(r.read())
+            raw = fetch_json_cached(url)
             crypto_lines = []
             for c in raw:
                 sym = c["symbol"].upper()
@@ -14021,9 +14013,7 @@ def check_crypto_morning():
         coins_map = list(COINS.items())
         ids = ",".join(cg_id for _, cg_id in coins_map)
         url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h,7d"
-        req = urllib.request.Request(url, headers={"User-Agent": "bot"})
-        with urllib.request.urlopen(req, timeout=10) as r:
-            raw = json.loads(r.read())
+        raw = fetch_json_cached(url)
         data = {c["id"]: c for c in raw}
 
         lines_out = []
