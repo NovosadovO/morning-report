@@ -26,6 +26,21 @@ NEWS_SEEN_FILE = os.path.join(_DATA_DIR, "report2_news_seen.json")
 
 # ─── HELPERS ──────────────────────────────────────────────────────────────────
 
+def _maybe_suggest_action(text: str):
+    """Той самий універсальний хук проактивних пропозицій (календар/покупки) —
+    покриває і цей окремий report2.py sender, не тільки monitor.send_telegram()."""
+    try:
+        if len(text.strip()) < 40:
+            return
+        import sys as _sys_r2
+        _sys_r2.path.insert(0, _DATA_DIR)
+        from monitor import suggest_action_from_text
+        import threading as _th_r2
+        _th_r2.Thread(target=suggest_action_from_text, args=(text, f"report2_{int(time.time()*1000)}"), daemon=True).start()
+    except Exception as e:
+        print(f"[report2] action suggestion error: {e}")
+
+
 def send_telegram(text: str) -> bool:
     url     = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     payload = json.dumps({
@@ -38,7 +53,10 @@ def send_telegram(text: str) -> bool:
           headers={"Content-Type": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=10) as r:
-            return r.status == 200
+            ok = r.status == 200
+            if ok:
+                _maybe_suggest_action(text)
+            return ok
     except Exception as e:
         print(f"Telegram error: {e}")
         return False

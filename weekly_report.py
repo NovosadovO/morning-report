@@ -26,12 +26,29 @@ def api(method, data=None):
         print(f"API error {method}: {e}")
         return {}
 
+def _maybe_suggest_action(text: str):
+    """Універсальний хук проактивних пропозицій (календар/покупки) для
+    недільного тижневого звіту — той самий механізм що й в email/monitor.py."""
+    try:
+        if len(text.strip()) < 40:
+            return
+        import sys as _sys_wr
+        _sys_wr.path.insert(0, _DIR)
+        from monitor import suggest_action_from_text
+        import threading as _th_wr, time as _time_wr
+        _th_wr.Thread(target=suggest_action_from_text, args=(text, f"weeklyrep_{int(_time_wr.time()*1000)}"), daemon=True).start()
+    except Exception as e:
+        print(f"[weekly_report] action suggestion error: {e}")
+
+
 def send(text):
-    return api("sendMessage", {
+    result = api("sendMessage", {
         "chat_id": TELEGRAM_CHAT,
         "text": text[:4090],
         "parse_mode": "HTML"
     })
+    _maybe_suggest_action(text)
+    return result
 
 def now_local():
     return datetime.now(timezone.utc) + timedelta(hours=2)

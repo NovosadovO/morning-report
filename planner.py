@@ -91,11 +91,29 @@ def _tg(method, params):
     with urllib.request.urlopen(req, timeout=15) as r:
         return json.loads(r.read())
 
+def _maybe_suggest_action(text: str):
+    """Універсальний хук проактивних пропозицій — той самий механізм що й
+    в email/monitor.py. Пропускаємо якщо повідомлення вже має власну клавіатуру
+    (вже інтерактивне, не треба дублювати пропозицію)."""
+    try:
+        if len(text.strip()) < 40:
+            return
+        import os as _os_pl, sys as _sys_pl, time as _time_pl
+        _sys_pl.path.insert(0, _os_pl.path.dirname(_os_pl.path.abspath(__file__)))
+        from monitor import suggest_action_from_text
+        import threading as _th_pl
+        _th_pl.Thread(target=suggest_action_from_text, args=(text, f"planner_{int(_time_pl.time()*1000)}"), daemon=True).start()
+    except Exception as e:
+        print(f"[planner] action suggestion error: {e}")
+
+
 def send(text, keyboard=None):
     params = {"chat_id": TELEGRAM_CHAT, "text": text, "parse_mode": "HTML"}
     if keyboard:
         params["reply_markup"] = {"inline_keyboard": keyboard}
     _tg("sendMessage", params)
+    if not keyboard:
+        _maybe_suggest_action(text)
 
 def _send_force_reply(text):
     """Надсилає повідомлення з force_reply — Telegram відкриє поле вводу."""

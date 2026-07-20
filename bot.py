@@ -428,12 +428,40 @@ def api(method, data=None):
         return {}
 
 
+def _maybe_suggest_action_bot(text: str):
+    """Той самий універсальний хук що й у monitor.send_telegram(), але для
+    повідомлень що йдуть через bot.py send() (AI-чат відповіді, опис листів,
+    чернетки відповідей тощо) — інший шлях відправки, окрема функція."""
+    try:
+        if len(text.strip()) < 40:
+            return
+        # Захист від зациклення: не аналізуємо власні підтвердження дій
+        # (інакше "🛒 Додано в список покупок: молоко" саме себе перезапустить)
+        _skip_markers = ["Додано в список покупок", "Додано в Google Calendar",
+                         "Збережено як важливий", "Нагадування додано", "Записано ✓",
+                         "Дякую, що поділився", "Збережено в щоденник"]
+        if any(m in text for m in _skip_markers):
+            return
+        import threading as _th_act_bot
+        import sys as _sys_act_bot, os as _os_act_bot
+        _sys_act_bot.path.insert(0, _os_act_bot.path.dirname(_os_act_bot.path.abspath(__file__)))
+        from monitor import suggest_action_from_text
+        _th_act_bot.Thread(
+            target=suggest_action_from_text,
+            args=(text, f"botsend_{int(time.time()*1000)}"),
+            daemon=True
+        ).start()
+    except Exception as e:
+        print(f"[_maybe_suggest_action_bot] error: {e}")
+
+
 def send(chat_id, text):
     api("sendMessage", {
         "chat_id": chat_id,
         "text": text[:4090],
         "parse_mode": "HTML"
     })
+    _maybe_suggest_action_bot(text)
 
 def send_reply(chat_id, reply_to_msg_id, text):
     api("sendMessage", {
