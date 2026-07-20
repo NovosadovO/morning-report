@@ -133,26 +133,34 @@ def check_calendar_traffic():
     """
     Перевіряє події в Calendar наступні 2 години.
     Якщо знаходить подію з відомим містом — за 1 годину до виїзду надсилає маршрут.
+
+    ПРИМІТКА: раніше тут викликався зовнішній CLI 'connector', якого немає
+    в Railway-оточенні бота (це sandbox-only інструмент) — функція завжди
+    падала з "No such file or directory: 'connector'" і НІКОЛИ не працювала
+    в проді. Тепер читає Calendar напряму через Google API (service account),
+    так само як get_calendar() у monitor.py.
     """
-    import subprocess
+    import sys, os as _os
+    sys.path.insert(0, _os.path.dirname(__file__))
+    try:
+        from monitor import _calendar_access_token, _fetch_events_all_calendars
+    except Exception as e:
+        print(f"Traffic watcher error: import from monitor failed: {e}")
+        return
 
     now   = datetime.now(timezone.utc)
-    t_min = now.isoformat()
-    t_max = (now + timedelta(hours=2)).isoformat()
+    t_min = now
+    t_max = now + timedelta(hours=2)
 
-    result = subprocess.run(
-        ["connector", "run", "google_calendar", "google_calendar-list-events",
-         json.dumps({"timeMin": t_min, "timeMax": t_max, "singleEvents": True, "maxResults": 10})],
-        capture_output=True, text=True, timeout=30
-    )
-    if result.returncode != 0:
+    token = _calendar_access_token()
+    if not token:
         return
 
     try:
-        events = json.loads(result.stdout)
-        if isinstance(events, dict):
-            events = events.get("items", [])
-    except:
+        headers = {"Authorization": f"Bearer {token}"}
+        events = _fetch_events_all_calendars(headers, t_min, t_max)
+    except Exception as e:
+        print(f"Traffic watcher error: calendar fetch failed: {e}")
         return
 
     for ev in events:
