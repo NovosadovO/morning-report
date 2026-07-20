@@ -85,8 +85,19 @@ def _load_monitor():
 
 
 def run_email_watcher():
-    """Нові листи — кожні 5 хвилин."""
-    print("=== Starting email watcher (every 5min) ===", flush=True)
+    """Нові листи — кожні 5 хвилин.
+
+    ВИМКНЕНО (нижче не запускається): bot.py вже має власний
+    _email_checker_loop() (кожні 2 хв, стартує в main()). Обидва цикли
+    викликали check_new_emails() на ОКРЕМИХ інстансах модуля monitor.py
+    (тут через importlib.util singleton, у bot.py — через звичайний import),
+    кожен зі своїм in-memory dedup-кешем (_EMAIL_SENT_INMEM). Якщо обидва
+    цикли перевіряли пошту близько одночасно — обидва могли встигнути
+    прочитати старий sent_ids ДО того як інший запише новий → дублікат
+    AI-аналізу + кнопки відповіді на той самий лист. Лишаємо тільки один
+    (bot.py, частіший — 2 хв).
+    """
+    print("=== Email watcher (5min) — DISABLED, handled by bot.py _email_checker_loop instead ===", flush=True)
     time.sleep(30)
     while True:
         try:
@@ -418,7 +429,7 @@ def run_event_done_watcher():
 
 
 threading.Thread(target=run_bot,                      daemon=True).start()
-threading.Thread(target=run_email_watcher,            daemon=True).start()
+# threading.Thread(target=run_email_watcher, daemon=True).start()  # DISABLED — duplicate of bot.py _email_checker_loop, was causing occasional duplicate email notifications
 threading.Thread(target=run_weather_watcher,          daemon=True).start()
 threading.Thread(target=run_news_watcher,             daemon=True).start()
 threading.Thread(target=run_report2_loop,             daemon=True).start()
