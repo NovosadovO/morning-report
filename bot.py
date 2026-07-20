@@ -65,7 +65,54 @@ _PHASE1_ALERTS_INTERVAL = 60.0  # перевіряємо кожні 60 сек
 _PHASE2_RECS_LAST_CHECK = 0.0
 _PHASE2_RECS_INTERVAL = 120.0  # перевіряємо кожні 2 хвилини
 
-_DRAFT_STORE: dict = {}  # uid_str -> {to, subject, body} — тимчасовий store для email drafts
+class _PersistentDraftStore:
+    """
+    Заміна звичайного dict для email/calendar drafts.
+    Раніше _DRAFT_STORE був простим dict в пам'яті процесу — якщо Railway
+    перезапускав бота (redeploy, crash) між показом кнопки і натисканням,
+    дані губились і кнопка відповідала "Дані не знайдено" (виглядало як
+    "кнопка не працює"). Тепер зберігаємо у storage.py (GitHub data-гілка,
+    не тригерить редеплой) — переживає рестарти процесу.
+    """
+    _FILE = "draft_store.json"
+
+    def _read(self) -> dict:
+        try:
+            import storage as _storage
+            return _storage.load(self._FILE, default={}) or {}
+        except Exception as _e:
+            print(f"[_DRAFT_STORE] read error: {_e}")
+            return {}
+
+    def _write(self, data: dict):
+        try:
+            import storage as _storage
+            _storage.save(self._FILE, data)
+        except Exception as _e:
+            print(f"[_DRAFT_STORE] write error: {_e}")
+
+    def __setitem__(self, key, value):
+        data = self._read()
+        data[key] = value
+        self._write(data)
+
+    def __getitem__(self, key):
+        return self._read()[key]
+
+    def get(self, key, default=None):
+        return self._read().get(key, default)
+
+    def pop(self, key, default=None):
+        data = self._read()
+        value = data.pop(key, default)
+        self._write(data)
+        return value
+
+    def __contains__(self, key):
+        return key in self._read()
+
+
+_DRAFT_STORE = _PersistentDraftStore()  # uid_str -> {to, subject, body} — persistent store для email/calendar drafts (переживає редеплой)
 _IMPORTANT_EMAILS_FILE = "data/important_emails.json"  # важливі листи (GitHub)
 _GH_TOKEN    = os.environ.get("GITHUB_TOKEN", "")
 _GH_LOCK_URL = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_lock.json"
@@ -632,12 +679,13 @@ def get_meds_report(period="week"):
 
 
 def handle_email_callback(callback_query):
-    """Обробляє кнопки листів: Описати / Видалити / Залишити / В календар."""
+    """Обробляє кнопки листів: Описати / Видалити / Залишити / В календар / Важливий / Відповідь."""
     import json as _json
     data    = callback_query.get("data", "")
     msg_id  = callback_query["message"]["message_id"]
     chat_id = callback_query["message"]["chat"]["id"]
     cb_id   = callback_query["id"]
+    print(f"[email_callback] received: data={data}", flush=True)
 
     if data.startswith("email_describe_"):
         uid_str = data[len("email_describe_"):]
@@ -1268,6 +1316,14 @@ def handle_email_callback(callback_query):
     elif data.startswith("email_cancel_"):
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Скасовано"})
         api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+
+    else:
+        # Якщо сюди дійшли — значить дата не потрапила в жоден if/elif вище,
+        # хоча дispatcher вважав що це email-related callback. Раніше це
+        # мовчки нічого не робило (кнопка "не реагувала"). Тепер відповідаємо
+        # явно, щоб було видно проблему одразу в Telegram, а не тільки в логах.
+        print(f"[email_callback] UNHANDLED data={data}", flush=True)
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"⚠️ Невідома дія кнопки: {data[:30]}"})
 
 
 def handle_reminder_callback(callback_query):

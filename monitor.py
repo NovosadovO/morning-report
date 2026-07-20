@@ -2206,10 +2206,13 @@ def check_new_emails():
             keyboard = {"inline_keyboard": [
                 [
                     {"text": "🤖✍️ Відповідь", "callback_data": f"email_reply_{uid_str}"},
-                    {"text": "⭐ Важливий",   "callback_data": f"email_star_{uid_str}"},
+                    {"text": "📖 Описати лист", "callback_data": f"email_describe_{uid_str}"},
                 ],
                 [
+                    {"text": "⭐ Важливий",   "callback_data": f"email_star_{uid_str}"},
                     {"text": "📅 В календар", "callback_data": f"email_cal_{uid_str}"},
+                ],
+                [
                     {"text": "📥 Залишити",   "callback_data": f"email_keep_{uid_str}"},
                     {"text": "🗑 Видалити",   "callback_data": f"email_delete_{uid_str}"},
                 ]
@@ -10064,7 +10067,11 @@ def main():
                         {"text": "📖 Описати лист", "callback_data": f"email_describe_{_uid}"},
                     ],
                     [
+                        {"text": "⭐ Важливий",   "callback_data": f"email_star_{_uid}"},
                         {"text": "📅 В календар",   "callback_data": f"email_cal_{_uid}"},
+                    ],
+                    [
+                        {"text": "📥 Залишити",   "callback_data": f"email_keep_{_uid}"},
                         {"text": "🗑 Видалити",     "callback_data": f"email_delete_{_uid}"},
                     ]
                 ]}
