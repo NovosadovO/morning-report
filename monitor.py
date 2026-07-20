@@ -396,12 +396,28 @@ def _send_telegram_chunk(text: str) -> bool:
         return False
 
 
+def _maybe_suggest_action(text: str):
+    """Викликається ПІСЛЯ будь-якого send_telegram() — АІ перевіряє чи щойно
+    надіслане повідомлення (крипто/health/coach/щоденник/будь-яка тема) містить
+    дію яку варто занотувати, і проактивно пропонує календар/список покупок.
+    Це універсальний хук — покриває ВСІ теми бота, не тільки email."""
+    try:
+        if len(text.strip()) < 40:
+            return  # надто короткий системний текст — не варто витрачати Gemini-запит
+        import threading as _th_act
+        _th_act.Thread(target=suggest_action_from_text, args=(text, f"gen_{int(time.time()*1000)}"), daemon=True).start()
+    except Exception as e:
+        print(f"[_maybe_suggest_action] error: {e}")
+
+
 def send_telegram(text: str) -> bool:
     """Надсилає текст, автоматично розбиваючи на частини якщо > 4090 символів."""
     MAX = 4090
     if len(text) <= MAX:
         result = _send_telegram_chunk(text)
         print(f"[send_telegram] single chunk returned {result}", flush=True)
+        if result:
+            _maybe_suggest_action(text)
         return result
 
     # Розбиваємо по рядках, не ріжемо слова
@@ -433,6 +449,8 @@ def send_telegram(text: str) -> bool:
         if not chunk_result:
             ok = False
     print(f"[send_telegram] final result: {ok}", flush=True)
+    if ok:
+        _maybe_suggest_action(text)
     return ok
 
 
@@ -2109,6 +2127,136 @@ def _imap_delete_email(uid_str: str):
         return False
 
 
+def detect_actionable_item(text: str) -> dict:
+    """Лаконічний Gemini-виклик: чи є в тексті конкретна дія що варто занотувати
+    (календар/нагадування/список покупок). Спільна утиліта для ВСІХ тем бота —
+    email, крипто-аналіз, health, звички, чат тощо. Повертає dict або {}."""
+    import re as _re_act
+    api_key = os.environ.get("GEMINI_API_KEY", "")
+    if not api_key or not text or len(text.strip()) < 15:
+        return {}
+
+    prompt = (
+        "Проаналізуй цей текст (повідомлення/аналіз від AI-асистента). Відповідь — "
+        "ТІЛЬКИ валідний JSON, без markdown:\n"
+        '{"action_type": "calendar|shopping|none", "action_title": "...", '
+        '"action_date": "YYYY-MM-DD або null", "action_time": "HH:MM або null", "action_summary": "..."}\n\n'
+        "action_type:\n"
+        "- 'calendar' якщо є КОНКРЕТНА дія з дедлайном/датою/подією яку варто занотувати "
+        "(оплатити щось, зустріч, дедлайн, важлива подія, щось зробити найближчим часом).\n"
+        "- 'shopping' якщо згадано конкретний товар/продукт який треба купити.\n"
+        "- 'none' якщо це просто інформація/аналіз без конкретної дії (більшість випадків!).\n"
+        "БУДЬ СУВОРИМ — 'none' якщо не абсолютно очевидно що потрібна дія. Не вигадуй дій.\n"
+        "action_title: коротка назва дії.\n"
+        "action_date: YYYY-MM-DD якщо явно згадано, інакше null.\n"
+        "action_time: HH:MM якщо є, інакше null.\n"
+        "action_summary: 1 речення що саме зробити.\n\n"
+        f"Текст:\n{text[:1500]}"
+    )
+    req_body = json.dumps({
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"maxOutputTokens": 300, "temperature": 0.2, "thinkingConfig": {"thinkingBudget": 0}}
+    }).encode()
+    try:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={api_key}"
+        resp_data = _gem_post(url, req_body, timeout=20, tag="action_detect", max_retries=2)
+        if not isinstance(resp_data, dict) or "candidates" not in resp_data:
+            return {}
+        parts = resp_data.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+        if not parts:
+            return {}
+        raw = parts[0].get("text", "").strip()
+        raw = _re_act.sub(r"^```(?:json)?\s*", "", raw, flags=_re_act.MULTILINE)
+        raw = _re_act.sub(r"\s*```\s*$", "", raw, flags=_re_act.MULTILINE)
+        result = json.loads(raw.strip())
+        return result if isinstance(result, dict) else {}
+    except Exception as e:
+        print(f"[action_detect] error: {e}")
+        return {}
+
+
+def suggest_action_from_text(text: str, source_id: str, sender: str = "", subject: str = ""):
+    """Виявляє дію в довільному тексті (AI-повідомлення/чат/крипто-аналіз тощо)
+    і делегує в apply_action_suggestion(). Для email краще одразу викликати
+    apply_action_suggestion() з готовим ai-dict (без зайвого Gemini-запиту)."""
+    ai = detect_actionable_item(text)
+    apply_action_suggestion(ai, source_id, sender, subject)
+
+
+def apply_action_suggestion(ai: dict, source_id: str, sender: str = "", subject: str = ""):
+    """Приймає ВЖЕ готовий action_* dict (з detect_actionable_item АБО з email AI-аналізу,
+    де ці поля вже включені в основний Gemini-виклик щоб не робити зайвий запит) і,
+    якщо є дія — надсилає проактивну пропозицію з кнопками ✅/❌.
+    source_id — унікальний ключ (email UID або trigger_type+timestamp тощо)."""
+    try:
+        action_type = (ai or {}).get("action_type", "none")
+        action_title = (ai or {}).get("action_title", "").strip()
+        action_summary = (ai or {}).get("action_summary", "").strip()
+        action_date = (ai or {}).get("action_date")
+        action_time = (ai or {}).get("action_time")
+        if action_date in ("null", "None", ""):
+            action_date = None
+        if action_time in ("null", "None", ""):
+            action_time = None
+        if not action_title or action_type == "none":
+            return
+
+        import storage as _storage_act3
+
+        if action_type == "calendar":
+            if action_date:
+                draft = _storage_act3.load("draft_store.json", default={})
+                draft[f"cal_{source_id}"] = {
+                    "events": [{"title": action_title, "date": action_date,
+                                "time": action_time, "description": action_summary}],
+                    "subject": subject or action_title,
+                }
+                _storage_act3.save("draft_store.json", draft)
+                t_str = f" о {action_time}" if action_time else ""
+                _send_telegram_text_with_keyboard(
+                    f"📅 <b>АІ помітив дію:</b>\n«{esc(action_title)}»{t_str}, {action_date}\n"
+                    f"<i>{esc(action_summary)}</i>\n\nДодати в Google Calendar?",
+                    {"inline_keyboard": [[
+                        {"text": "✅ Додати", "callback_data": f"cal_add_{source_id}"},
+                        {"text": "❌ Не треба", "callback_data": f"cal_skip_{source_id}"}
+                    ]]}
+                )
+            else:
+                import context as _ctx_act3
+                day_off = _ctx_act3.get_next_day_off()
+                if day_off:
+                    draft = _storage_act3.load("draft_store.json", default={})
+                    draft[f"calrem_{source_id}"] = {
+                        "subject": subject or action_title, "sender": sender,
+                        "task_summary": action_summary or action_title, "date": day_off["date"],
+                    }
+                    _storage_act3.save("draft_store.json", draft)
+                    _send_telegram_text_with_keyboard(
+                        f"📅 <b>АІ помітив дію:</b>\n«{esc(action_title)}»\n"
+                        f"<i>{esc(action_summary)}</i>\n\n"
+                        f"Конкретної дати нема — поставити нагадування на найближчий вихідний "
+                        f"({day_off['weekday']} {day_off['date']})?",
+                        {"inline_keyboard": [[
+                            {"text": "✅ Поставити", "callback_data": f"calrem_add_{source_id}"},
+                            {"text": "❌ Не треба", "callback_data": f"calrem_skip_{source_id}"}
+                        ]]}
+                    )
+        elif action_type == "shopping":
+            draft = _storage_act3.load("draft_store.json", default={})
+            draft[f"shop_{source_id}"] = {"item": action_title}
+            _storage_act3.save("draft_store.json", draft)
+            _send_telegram_text_with_keyboard(
+                f"🛒 <b>АІ помітив щось на купити:</b>\n«{esc(action_title)}»\n"
+                f"<i>{esc(action_summary)}</i>\n\nДодати в список покупок?",
+                {"inline_keyboard": [[
+                    {"text": "✅ Додати", "callback_data": f"shop_add_{source_id}"},
+                    {"text": "❌ Не треба", "callback_data": f"shop_skip_{source_id}"}
+                ]]}
+            )
+    except Exception as e:
+        print(f"[suggest_action_from_text] error: {e}")
+
+
 def check_new_emails():
     """Перевіряє ВСІ непрочитані листи (Primary + Updates + Promotions + Social) —
     шле сповіщення з AI-аналізом + кнопкою відповіді на КОЖЕН новий лист (dedup по UID).
@@ -2237,76 +2385,9 @@ def check_new_emails():
 
             # ── ПРОАКТИВНА ПРОПОЗИЦІЯ: АІ сам виявив дію в листі (оплата/дедлайн/
             # покупка тощо) — пропонує нагадування/список покупок БЕЗ натискання
-            # кнопки "📅 В календар" вручну. Приклад: лист про оплату страховки авто
-            # → АІ сам пропонує "Додати нагадування?" одразу.
-            try:
-                _action_type = (ai or {}).get("action_type", "none")
-                _action_title = (ai or {}).get("action_title", "").strip()
-                _action_summary = (ai or {}).get("action_summary", "").strip()
-                _action_date = (ai or {}).get("action_date")
-                _action_time = (ai or {}).get("action_time")
-                if _action_date in ("null", "None", ""):
-                    _action_date = None
-                if _action_time in ("null", "None", ""):
-                    _action_time = None
-
-                if _action_type == "calendar" and _action_title:
-                    import storage as _storage_act
-                    if _action_date:
-                        # Є конкретна дата — пропонуємо одразу додати подію
-                        _draft = _storage_act.load("draft_store.json", default={})
-                        _draft[f"cal_{uid_str}"] = {
-                            "events": [{"title": _action_title, "date": _action_date,
-                                        "time": _action_time, "description": _action_summary}],
-                            "subject": subject,
-                        }
-                        _storage_act.save("draft_store.json", _draft)
-                        _t_str = f" о {_action_time}" if _action_time else ""
-                        _send_telegram_text_with_keyboard(
-                            f"📅 <b>АІ помітив дію в листі:</b>\n«{esc(_action_title)}»{_t_str}, {_action_date}\n"
-                            f"<i>{esc(_action_summary)}</i>\n\nДодати в Google Calendar?",
-                            {"inline_keyboard": [[
-                                {"text": "✅ Додати", "callback_data": f"cal_add_{uid_str}"},
-                                {"text": "❌ Не треба", "callback_data": f"cal_skip_{uid_str}"}
-                            ]]}
-                        )
-                    else:
-                        # Без чіткої дати — пропонуємо на найближчий вихідний (як у email_cal_ фолбеку)
-                        import context as _ctx_act
-                        day_off = _ctx_act.get_next_day_off()
-                        if day_off:
-                            _draft = _storage_act.load("draft_store.json", default={})
-                            _draft[f"calrem_{uid_str}"] = {
-                                "subject": subject, "sender": sender,
-                                "task_summary": _action_summary or _action_title, "date": day_off["date"],
-                            }
-                            _storage_act.save("draft_store.json", _draft)
-                            _send_telegram_text_with_keyboard(
-                                f"📅 <b>АІ помітив дію в листі:</b>\n«{esc(_action_title)}»\n"
-                                f"<i>{esc(_action_summary)}</i>\n\n"
-                                f"Конкретної дати нема — поставити нагадування на найближчий вихідний "
-                                f"({day_off['weekday']} {day_off['date']})?",
-                                {"inline_keyboard": [[
-                                    {"text": "✅ Поставити", "callback_data": f"calrem_add_{uid_str}"},
-                                    {"text": "❌ Не треба", "callback_data": f"calrem_skip_{uid_str}"}
-                                ]]}
-                            )
-
-                elif _action_type == "shopping" and _action_title:
-                    import storage as _storage_act2
-                    _draft2 = _storage_act2.load("draft_store.json", default={})
-                    _draft2[f"shop_{uid_str}"] = {"item": _action_title}
-                    _storage_act2.save("draft_store.json", _draft2)
-                    _send_telegram_text_with_keyboard(
-                        f"🛒 <b>АІ помітив у листі щось на купити:</b>\n«{esc(_action_title)}»\n"
-                        f"<i>{esc(_action_summary)}</i>\n\nДодати в список покупок?",
-                        {"inline_keyboard": [[
-                            {"text": "✅ Додати", "callback_data": f"shop_add_{uid_str}"},
-                            {"text": "❌ Не треба", "callback_data": f"shop_skip_{uid_str}"}
-                        ]]}
-                    )
-            except Exception as _e_act:
-                print(f"[email] proactive action suggestion error: {_e_act}")
+            # кнопки "📅 В календар" вручну. Спільна функція apply_action_suggestion()
+            # використовується так само для крипто/health/чат-повідомлень (див. message_generator.py).
+            apply_action_suggestion(ai or {}, uid_str, sender=sender, subject=subject)
 
     except Exception as e:
         print(f"check_new_emails error: {e}")

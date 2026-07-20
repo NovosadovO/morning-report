@@ -996,6 +996,19 @@ def process_trigger(trigger_type: str, trigger_data, location: str = "doma", idl
                     })
                 except Exception as e:
                     _log(f"⚠️ micro_checkin pending save failed: {e}")
+
+            # ── ПРОАКТИВНА ПРОПОЗИЦІЯ (по ВСІХ темах, не тільки email) ──────────
+            # АІ сам перевіряє чи є в щойно надісланому повідомленні конкретна дія
+            # (оплата/дедлайн/подія/покупка) і, якщо так, одразу пропонує додати
+            # в календар/список покупок з кнопками ✅/❌ — без ручного пошуку кнопки.
+            try:
+                import sys as _sys_act
+                _sys_act.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                from monitor import suggest_action_from_text
+                _src_id = f"{trigger_type}_{int(time.time())}"
+                suggest_action_from_text(message, _src_id)
+            except Exception as e:
+                _log(f"⚠️ action suggestion (all-topics) failed: {e}")
         return success
     except Exception as e:
         _log(f"❌ process_trigger: {e}")
