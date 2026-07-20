@@ -1890,7 +1890,9 @@ def _email_save_ids(sent_ids: set):
         print(f"_email_save_ids error: {e}")
 
 def _gemini_email_analysis(full_text: str, health_context: str = "") -> dict:
-    """Аналізує лист через Gemini: детальний переказ + думка."""
+    """Аналізує лист через Gemini: детальний переказ + думка + автовиявлення дії
+    (треба щось зробити: оплатити/записати в календар/купити тощо) — АІ сам
+    пропонує нагадування ПРОАКТИВНО, без натискання окремої кнопки '📅 В календар'."""
     import re as _re
     api_key = os.environ.get("GEMINI_API_KEY", "")
 
@@ -1898,9 +1900,21 @@ def _gemini_email_analysis(full_text: str, health_context: str = "") -> dict:
     
     prompt = (
         "Проаналізуй цей email. Відповідь — ТІЛЬКИ валідний JSON, без markdown, без коментарів:\n"
-        '{"description": "...", "opinion": "..."}\n\n'
+        '{"description": "...", "opinion": "...", "action_type": "calendar|shopping|none", '
+        '"action_title": "...", "action_date": "YYYY-MM-DD або null", "action_time": "HH:MM або null", '
+        '"action_summary": "..."}\n\n'
         "description: переказ змісту — про що лист, ключові цифри/дати/суми, що очікується від одержувача (2-4 речення українською).\n"
         "opinion: твоя коротка думка — чи реагувати і що зробити (1 речення українською).\n\n"
+        "action_type — ОБОВ'ЯЗКОВО визнач:\n"
+        "- 'calendar' якщо в листі є КОНКРЕТНА дія з дедлайном/датою (оплатити рахунок/страховку, "
+        "з'явитись на зустріч, подати документи, продовжити підписку, тощо) — навіть якщо точної дати "
+        "немає, але зрозуміло що треба зробити найближчим часом.\n"
+        "- 'shopping' якщо лист явно згадує щось конкретне що треба КУПИТИ (товар, продукт, засіб).\n"
+        "- 'none' якщо нема жодної конкретної дії (просто інформація, реклама, новини).\n"
+        "action_title: коротка назва дії (напр. 'Оплатити страховку авто').\n"
+        "action_date: якщо є явна дата в листі — YYYY-MM-DD, інакше null.\n"
+        "action_time: якщо є час — HH:MM, інакше null.\n"
+        "action_summary: 1 речення що саме зробити.\n\n"
         f"{health_note}"
         f"Лист:\n{full_text[:2000]}"
     )
@@ -2220,6 +2234,79 @@ def check_new_emails():
 
             _send_telegram_text_with_keyboard(text, keyboard)
             print(f"[email] alert sent: uid={uid_str} subject={subject[:50]}")
+
+            # ── ПРОАКТИВНА ПРОПОЗИЦІЯ: АІ сам виявив дію в листі (оплата/дедлайн/
+            # покупка тощо) — пропонує нагадування/список покупок БЕЗ натискання
+            # кнопки "📅 В календар" вручну. Приклад: лист про оплату страховки авто
+            # → АІ сам пропонує "Додати нагадування?" одразу.
+            try:
+                _action_type = (ai or {}).get("action_type", "none")
+                _action_title = (ai or {}).get("action_title", "").strip()
+                _action_summary = (ai or {}).get("action_summary", "").strip()
+                _action_date = (ai or {}).get("action_date")
+                _action_time = (ai or {}).get("action_time")
+                if _action_date in ("null", "None", ""):
+                    _action_date = None
+                if _action_time in ("null", "None", ""):
+                    _action_time = None
+
+                if _action_type == "calendar" and _action_title:
+                    import storage as _storage_act
+                    if _action_date:
+                        # Є конкретна дата — пропонуємо одразу додати подію
+                        _draft = _storage_act.load("draft_store.json", default={})
+                        _draft[f"cal_{uid_str}"] = {
+                            "events": [{"title": _action_title, "date": _action_date,
+                                        "time": _action_time, "description": _action_summary}],
+                            "subject": subject,
+                        }
+                        _storage_act.save("draft_store.json", _draft)
+                        _t_str = f" о {_action_time}" if _action_time else ""
+                        _send_telegram_text_with_keyboard(
+                            f"📅 <b>АІ помітив дію в листі:</b>\n«{esc(_action_title)}»{_t_str}, {_action_date}\n"
+                            f"<i>{esc(_action_summary)}</i>\n\nДодати в Google Calendar?",
+                            {"inline_keyboard": [[
+                                {"text": "✅ Додати", "callback_data": f"cal_add_{uid_str}"},
+                                {"text": "❌ Не треба", "callback_data": f"cal_skip_{uid_str}"}
+                            ]]}
+                        )
+                    else:
+                        # Без чіткої дати — пропонуємо на найближчий вихідний (як у email_cal_ фолбеку)
+                        import context as _ctx_act
+                        day_off = _ctx_act.get_next_day_off()
+                        if day_off:
+                            _draft = _storage_act.load("draft_store.json", default={})
+                            _draft[f"calrem_{uid_str}"] = {
+                                "subject": subject, "sender": sender,
+                                "task_summary": _action_summary or _action_title, "date": day_off["date"],
+                            }
+                            _storage_act.save("draft_store.json", _draft)
+                            _send_telegram_text_with_keyboard(
+                                f"📅 <b>АІ помітив дію в листі:</b>\n«{esc(_action_title)}»\n"
+                                f"<i>{esc(_action_summary)}</i>\n\n"
+                                f"Конкретної дати нема — поставити нагадування на найближчий вихідний "
+                                f"({day_off['weekday']} {day_off['date']})?",
+                                {"inline_keyboard": [[
+                                    {"text": "✅ Поставити", "callback_data": f"calrem_add_{uid_str}"},
+                                    {"text": "❌ Не треба", "callback_data": f"calrem_skip_{uid_str}"}
+                                ]]}
+                            )
+
+                elif _action_type == "shopping" and _action_title:
+                    import storage as _storage_act2
+                    _draft2 = _storage_act2.load("draft_store.json", default={})
+                    _draft2[f"shop_{uid_str}"] = {"item": _action_title}
+                    _storage_act2.save("draft_store.json", _draft2)
+                    _send_telegram_text_with_keyboard(
+                        f"🛒 <b>АІ помітив у листі щось на купити:</b>\n«{esc(_action_title)}»\n"
+                        f"<i>{esc(_action_summary)}</i>\n\nДодати в список покупок?",
+                        {"inline_keyboard": [[
+                            {"text": "✅ Додати", "callback_data": f"shop_add_{uid_str}"},
+                            {"text": "❌ Не треба", "callback_data": f"shop_skip_{uid_str}"}
+                        ]]}
+                    )
+            except Exception as _e_act:
+                print(f"[email] proactive action suggestion error: {_e_act}")
 
     except Exception as e:
         print(f"check_new_emails error: {e}")

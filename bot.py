@@ -1317,6 +1317,33 @@ def handle_email_callback(callback_query):
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Скасовано"})
         api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
 
+    elif data.startswith("shop_add_"):
+        # АІ проактивно виявив у листі щось на купити — Олег підтвердив
+        uid_str = data[len("shop_add_"):]
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "🛒 Додаю..."})
+        try:
+            store_key = f"shop_{uid_str}"
+            shop_data = _DRAFT_STORE.pop(store_key, None)
+            if not shop_data or not shop_data.get("item"):
+                send(chat_id, "⚠️ Дані не знайдено. Спробуй ще раз.")
+                return
+            import shopping as _shopping_mod
+            added = _shopping_mod.add_items(shop_data["item"])
+            api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+            if added:
+                send(chat_id, f"🛒 <b>Додано в список покупок:</b>\n" + "\n".join(f"• {a}" for a in added))
+            else:
+                send(chat_id, "🛒 Вже було в списку покупок ✅")
+        except Exception as e:
+            print(f"shop_add error: {e}")
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif data.startswith("shop_skip_"):
+        uid_str = data[len("shop_skip_"):]
+        _DRAFT_STORE.pop(f"shop_{uid_str}", None)
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Скасовано"})
+        api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+
     else:
         # Якщо сюди дійшли — значить дата не потрапила в жоден if/elif вище,
         # хоча дispatcher вважав що це email-related callback. Раніше це
@@ -4080,7 +4107,8 @@ def main():
                               data.startswith("email_cal_") or data.startswith("email_reply_") or
                               data.startswith("email_send_") or data.startswith("email_cancel_") or
                               data.startswith("cal_add_") or data.startswith("cal_skip_") or
-                              data.startswith("calrem_add_") or data.startswith("calrem_skip_")):
+                              data.startswith("calrem_add_") or data.startswith("calrem_skip_") or
+                              data.startswith("shop_add_") or data.startswith("shop_skip_")):
                             handle_email_callback(cb)
                         elif data.startswith("reminder_"):
                             handle_reminder_callback(cb)
