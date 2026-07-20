@@ -224,6 +224,19 @@ class IntelligentListener:
         now = datetime.now(tz=_TZ)
         return 8 <= now.hour < 9
 
+    def _check_micro_checkin_window(self) -> bool:
+        """Широке 'мікро-опитування' (настрій/ціль-вага/крипто-рішення/сон/усе особисте) —
+        адаптивно, коли є трохи неактивності (не заважати посеред задачі), не в нічну зміну
+        і не вночі (00:00-07:00). Часте, але не спамить (dedup у _should_send_trigger)."""
+        now = datetime.now(tz=_TZ)
+        status = self._get_shift_status()
+        if status == "working_night":
+            return False
+        if not (7 <= now.hour < 23):
+            return False
+        idle = self._check_idle_timeout()
+        return idle >= 0.75  # трохи неактивності — гарний момент запитати, не переривати
+
     def _check_health_pulse_window(self) -> bool:
         """2x/день короткий health-пульс: ~11:00-12:00 і ~16:00-17:00, не в нічну зміну (тоді на роботі)."""
         now = datetime.now(tz=_TZ)
@@ -437,6 +450,12 @@ class IntelligentListener:
                 if self._check_health_pulse_window() and self._should_send_trigger("health_pulse", 4.0):
                     triggers.append(("health_pulse", None))
                     self._log("TRIGGER: health_pulse")
+
+                # 15. MICRO CHECKIN (широке опитування — настрій/ціль/крипто/сон/усе особисте,
+                # адаптивно на idle, кілька разів на день, тема ротується)
+                if self._check_micro_checkin_window() and self._should_send_trigger("micro_checkin", 5.0):
+                    triggers.append(("micro_checkin", None))
+                    self._log("TRIGGER: micro_checkin")
 
                 # Процесувати тригери (генеруємо & надсилаємо messages)
                 if triggers:

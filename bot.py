@@ -3311,6 +3311,29 @@ def handle_command(chat_id, text):
             except Exception as _e_d:
                 print(f"diary answer save error: {_e_d}")
 
+        # Перевіряємо чи це відповідь на мікро-опитування (широкі особисті питання
+        # від intelligent_listener: настрій/ціль-вага/крипто-рішення/сон/загальне).
+        # Спрацьовує будь-коли, поки є непідтверджена відповідь (awaiting=True).
+        if len(text) > 3:
+            try:
+                import sys as _sys_mc2
+                _sys_mc2.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                import storage as _storage_mc2
+                _mc_pending = _storage_mc2.load("monitor_micro_checkin_pending.json", default={})
+                if _mc_pending.get("awaiting"):
+                    _mc_log = _storage_mc2.load("monitor_micro_checkin_log.json", default={"entries": []})
+                    _mc_log.setdefault("entries", []).append({
+                        "question": _mc_pending.get("question", ""),
+                        "answer": text,
+                        "answered_at": datetime.now(timezone.utc).isoformat(),
+                    })
+                    _storage_mc2.save("monitor_micro_checkin_log.json", _mc_log)
+                    _storage_mc2.save("monitor_micro_checkin_pending.json", {"awaiting": False})
+                    send(chat_id, "💭 <b>Дякую, що поділився!</b> ✅")
+                    return
+            except Exception as _e_mc2:
+                print(f"micro_checkin answer save error: {_e_mc2}")
+
         # Зберігаємо контекст з відповіді Олега (локація, активність, настрій)
         try:
             from proactive import update_user_state_from_message

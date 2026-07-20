@@ -7502,11 +7502,14 @@ def check_transit_aspects():
                             f"Транзитний {tr_name}{retro_s} у {tr_sign} формує {asp_name_ua} "
                             f"({asp_sym}{exact_s}) до натального {nt_name} у {nt_sign} ({nt_house}-й дім). "
                             f"Натальний {nt_name}: {ASP_PLANET_MEANING.get(nt_key,'')}. "
-                            f"Дім {nt_house}: {ASP_HOUSE_MEANING.get(nt_house,'')}."
+                            f"Дім {nt_house}: {ASP_HOUSE_MEANING.get(nt_house,'')}.\n\n"
+                            f"Дай КОРОТКЕ тлумачення (3-4 речення разом): 1) що це означає для Олега "
+                            f"конкретно сьогодні (не загальна астрологія), 2) ОДНА чітка практична "
+                            f"рекомендація що робити/на що звернути увагу. Без води, без 'можливо'."
                         )
                         ai_text = _ai_personal_message(
                             situation=situation,
-                            max_tokens=150
+                            max_tokens=220
                         )
 
                         event_label = "🎯 ТОЧНИЙ АСПЕКТ" if is_exact else "🔭 Новий транзит"
@@ -14915,11 +14918,14 @@ def check_transit_aspects():
                             f"Транзитний {tr_name}{retro_s} у {tr_sign} формує {asp_name_ua} "
                             f"({asp_sym}{exact_s}) до натального {nt_name} у {nt_sign} ({nt_house}-й дім). "
                             f"Натальний {nt_name}: {ASP_PLANET_MEANING.get(nt_key,'')}. "
-                            f"Дім {nt_house}: {ASP_HOUSE_MEANING.get(nt_house,'')}."
+                            f"Дім {nt_house}: {ASP_HOUSE_MEANING.get(nt_house,'')}.\n\n"
+                            f"Дай КОРОТКЕ тлумачення (3-4 речення разом): 1) що це означає для Олега "
+                            f"конкретно сьогодні (не загальна астрологія), 2) ОДНА чітка практична "
+                            f"рекомендація що робити/на що звернути увагу. Без води, без 'можливо'."
                         )
                         ai_text = _ai_personal_message(
                             situation=situation,
-                            max_tokens=150
+                            max_tokens=220
                         )
 
                         event_label = "🎯 ТОЧНИЙ АСПЕКТ" if is_exact else "🔭 Новий транзит"

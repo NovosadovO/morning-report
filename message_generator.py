@@ -639,6 +639,11 @@ def get_tone_variation(trigger_type: str, hour: int) -> dict:
             {"tone": "уважний друг, швидкий чек-ін", "emoji": "❤️"},
             {"tone": "турботливий коуч, конкретна дія зараз", "emoji": "🩺"},
         ],
+        "micro_checkin": [
+            {"tone": "щирий друг, живий інтерес до тебе особисто", "emoji": "💭"},
+            {"tone": "теплий коуч, коротке особисте питання", "emoji": "🫂"},
+            {"tone": "цікавий співрозмовник, без формальності", "emoji": "✨"},
+        ],
     }
     base = variations.get(trigger_type, [{"tone": "дружелюбний, особистий", "emoji": "👋"}])
     idx = (hour + abs(hash(trigger_type))) % len(base)
@@ -649,7 +654,7 @@ def _should_send_message(trigger_type: str, trigger_data) -> bool:
     always = {"vip_email", "deep_analysis", "briefing", "contextual_briefing",
               "morning", "evening", "health", "weekly_run_compare", "habit_checkin",
               "nutrition_tip", "day_plan", "interview_practice", "workout_plan",
-              "daily_astro", "health_pulse"}
+              "daily_astro", "health_pulse", "micro_checkin"}
     if trigger_type in always:
         return True
     if trigger_type == "crypto_move":
@@ -783,6 +788,17 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
             "Короткий чек-ін на основі поточних даних (кроки/вода/сон з живих даних нижче) — "
             "чи вкладається в норму на цей момент дня, і ОДНА конкретна дія зараз якщо ні."
         )
+    elif trigger_type == "micro_checkin":
+        _mc_themes = [
+            ("настрій", "Запитай як він себе почуває просто зараз — настрій, енергія, чи щось турбує. Одне тепле, конкретне питання, без загальних фраз."),
+            ("ціль_вага", "Запитай як просувається ціль схуднення до 78кг — чи тримається плану сьогодні/цього тижня, що заважає якщо є труднощі. Одне конкретне питання."),
+            ("крипто_рішення", "Запитай чи діяв він сьогодні за своїм крипто-планом (чи були імпульсивні рішення, чи стримався), коротко і без нотацій. Одне конкретне питання."),
+            ("сон", "Запитай як спав минулої ночі — якість сну, скільки годин, чи відчуває бадьорість зараз. Одне конкретне питання."),
+            ("загальне", "Запитай щось особисте про нього прямо зараз — як справи в цілому, що на думці, чи є щось про що хоче поговорити. Живий інтерес до нього як до людини, не формально."),
+        ]
+        _mc_idx = (live["hour"] + datetime.now(ZoneInfo("Europe/Bratislava")).timetuple().tm_yday) % len(_mc_themes)
+        _mc_key, _mc_instruction = _mc_themes[_mc_idx]
+        trigger_extra = f"\n💭 МІКРО-ОПИТУВАННЯ ({_mc_key}): {_mc_instruction} Закінчи фразою що чекаєш відповідь тут же в чаті."
 
     # ── Shift context ─────────────────────────────────────────────────────────
     h = live["hour"]
@@ -965,6 +981,21 @@ def process_trigger(trigger_type: str, trigger_data, location: str = "doma", idl
                         }, f, ensure_ascii=False, indent=2)
                 except Exception as e:
                     _log(f"⚠️ interview_state save failed: {e}")
+
+            # Micro checkin: позначаємо очікування відповіді (persistent, GitHub data-гілка —
+            # переживає редеплой, на відміну від interview_state.json який лежить локально)
+            if trigger_type == "micro_checkin":
+                try:
+                    import sys as _sys_mc
+                    _sys_mc.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                    import storage as _storage_mc
+                    _storage_mc.save("monitor_micro_checkin_pending.json", {
+                        "awaiting": True,
+                        "question": message,
+                        "asked_at": datetime.now(ZoneInfo("Europe/Bratislava")).isoformat(),
+                    })
+                except Exception as e:
+                    _log(f"⚠️ micro_checkin pending save failed: {e}")
         return success
     except Exception as e:
         _log(f"❌ process_trigger: {e}")
