@@ -619,5 +619,32 @@
         ]
       ]
     }
+  },
+  "2100366814_48708": {
+    "text": "📩 ✉️\n📌 [Party-ohnostroje.sk] Objednávka 2026000263\n👤 \"Party-ohnostroje.sk\" <info@party-ohnostroje.sk>",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_76127"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_76127"
+          }
+        ],
+        [
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_76127"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_76127"
+          }
+        ]
+      ]
+    }
   }
 }
