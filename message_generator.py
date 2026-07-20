@@ -172,46 +172,83 @@ def _get_live_crypto() -> dict:
         return {}
 
 def _get_live_health() -> dict:
-    """Latest weight, steps, sleep from data files (weight.json, daily_health.json, health.json)."""
+    """Latest weight, steps, sleep — canonical source is storage.py (GitHub 'data'
+    branch, always current). Раніше читало локальні data/*.json файли з main branch
+    checkout — ті ніколи не оновлювались після initial commit (реальні апдейти йдуть
+    в окрему 'data' гілку через storage.py), тому steps/sleep завжди були None і weight
+    показувала застарілі дані. Локальні файли лишились як last-resort fallback."""
     result = {}
     today_str = datetime.now(tz=_TZ).strftime("%Y-%m-%d")
     yesterday = (datetime.now(tz=_TZ) - timedelta(days=1)).strftime("%Y-%m-%d")
 
-    # 1) Weight from weight.json
+    # 1) Weight — canonical: storage.load_weight() (GitHub data branch)
     try:
-        wfile = os.path.join(_DATA_DIR, "weight.json")
-        if os.path.exists(wfile):
-            with open(wfile) as f:
-                wdata = json.load(f)
-            if wdata:
-                latest = sorted(wdata.keys())[-1]
-                result["weight"] = wdata[latest]
-                result["weight_date"] = latest
-                week_ago = (datetime.now(tz=_TZ) - timedelta(days=7)).strftime("%Y-%m-%d")
-                old_keys = [k for k in sorted(wdata.keys()) if k <= week_ago]
-                if old_keys:
-                    result["weight_7d_delta"] = round(result["weight"] - wdata[old_keys[-1]], 1)
+        import sys as _sys_h
+        _sys_h.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import storage as _storage_h
+        wdata = _storage_h.load_weight()
+        if wdata:
+            latest = sorted(wdata.keys())[-1]
+            result["weight"] = wdata[latest]
+            result["weight_date"] = latest
+            week_ago = (datetime.now(tz=_TZ) - timedelta(days=7)).strftime("%Y-%m-%d")
+            old_keys = [k for k in sorted(wdata.keys()) if k <= week_ago]
+            if old_keys:
+                result["weight_7d_delta"] = round(result["weight"] - wdata[old_keys[-1]], 1)
     except Exception as e:
-        _log(f"Weight read error: {e}")
+        _log(f"storage.load_weight error: {e}")
 
-    # 2) Steps/sleep from daily_health.json
+    # 2) Steps/sleep — canonical: storage.load_health() (GitHub data branch)
     try:
-        hfile = os.path.join(_DATA_DIR, "daily_health.json")
-        if os.path.exists(hfile):
-            with open(hfile) as f:
-                hdata = json.load(f)
-            entries = hdata.get("entries", hdata) if isinstance(hdata, dict) else {}
-            for day in [today_str, yesterday]:
-                if day in entries:
-                    e = entries[day]
-                    if not result.get("steps"):
-                        result["steps"] = e.get("steps") or e.get("steps_count")
-                    if not result.get("sleep"):
-                        result["sleep"] = e.get("sleep_hours") or e.get("sleep")
-                    result["health_date"] = day
-                    break
+        import sys as _sys_h2
+        _sys_h2.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import storage as _storage_h2
+        entries = _storage_h2.load_health()
+        for day in [today_str, yesterday]:
+            if day in entries:
+                e = entries[day]
+                if not result.get("steps"):
+                    result["steps"] = e.get("steps") or e.get("steps_count")
+                if not result.get("sleep"):
+                    result["sleep"] = e.get("sleep_hours") or e.get("sleep")
+                result["health_date"] = day
+                break
     except Exception as e:
-        _log(f"daily_health read error: {e}")
+        _log(f"storage.load_health error: {e}")
+
+    # 3) Fallback: local weight.json (only if storage.py gave nothing)
+    if not result.get("weight"):
+        try:
+            wfile = os.path.join(_DATA_DIR, "weight.json")
+            if os.path.exists(wfile):
+                with open(wfile) as f:
+                    wdata = json.load(f)
+                if wdata:
+                    latest = sorted(wdata.keys())[-1]
+                    result["weight"] = wdata[latest]
+                    result["weight_date"] = latest
+        except Exception as e:
+            _log(f"Weight local fallback error: {e}")
+
+    # 4) Fallback: local daily_health.json (only if storage.py gave nothing)
+    if not result.get("steps") or not result.get("sleep"):
+        try:
+            hfile = os.path.join(_DATA_DIR, "daily_health.json")
+            if os.path.exists(hfile):
+                with open(hfile) as f:
+                    hdata = json.load(f)
+                entries = hdata.get("entries", hdata) if isinstance(hdata, dict) else {}
+                for day in [today_str, yesterday]:
+                    if day in entries:
+                        e = entries[day]
+                        if not result.get("steps"):
+                            result["steps"] = e.get("steps") or e.get("steps_count")
+                        if not result.get("sleep"):
+                            result["sleep"] = e.get("sleep_hours") or e.get("sleep")
+                        result["health_date"] = day
+                        break
+        except Exception as e:
+            _log(f"daily_health read error: {e}")
 
     # 3) Fallback: health.json (older format with steps)
     try:
