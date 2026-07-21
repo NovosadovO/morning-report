@@ -464,12 +464,27 @@ class IntelligentListener:
                         # Генеруємо та надсилаємо message через message_generator.py
                         try:
                             success = process_and_send_trigger(ttype, tdata)
-                            if success:
+                            # ВАЖЛИВО: позначаємо спробу НЕЗАЛЕЖНО від успіху для
+                            # часо-залежних тригерів (idle_timeout, day_plan тощо).
+                            # Раніше mark_trigger_sent викликався тільки при success=True —
+                            # якщо _should_send_message legit блокував (напр. idle_timeout
+                            # дозволений лише о 6-9/19-23, а зараз інша година), тригер
+                            # спрацьовував ЩОСЕКУНДИ нескінченно (лічильник ніколи не скидався),
+                            # забиваючи логи і довбаючи GitHub API щосекунди (ризик гонки
+                            # даних у draft_store.json/кнопках). Виняток — crypto_move: там
+                            # skip може означати "рух є, але <5%", і ми НЕ хочемо глушити
+                            # виявлення реального різкого руху протягом cooldown.
+                            if ttype != "crypto_move":
                                 self._mark_trigger_sent(ttype)
+                            elif success:
+                                self._mark_trigger_sent(ttype)
+                            if success:
                                 self._log(f"✅ Message sent for: {ttype}")
                             else:
                                 self._log(f"⚠️ Failed to send for: {ttype}")
                         except Exception as e:
+                            if ttype != "crypto_move":
+                                self._mark_trigger_sent(ttype)
                             self._log(f"❌ Exception in process_and_send_trigger: {e}")
                 else:
                     # DEBUG: покажемо що трігери НЕ активні
