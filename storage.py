@@ -221,3 +221,79 @@ def load(filename, default=None):
 def save(filename, data):
     """Generic save — зберігає будь-який JSON файл в GitHub data/."""
     return _save_github(filename, data)
+
+def update_key(filename, key, value, default=None):
+    """Атомарно ставить data[key] = value для JSON-файлу (load+modify+save під
+    ОДНИМ file lock, з re-fetch+re-apply на кожній спробі — без цього кілька
+    фонових потоків, що одночасно додають СВОЇ ключі в один файл (напр.
+    draft_store.json — кнопки календаря/покупок), могли губити записи одне
+    одного (read-modify-write race: A і B обидва читають стару версію, A
+    зберігає, B зберігає БЕЗ бачення зміни A — зміна A губиться)."""
+    lock = _get_file_lock(filename)
+    with lock:
+        for attempt in range(5):
+            existing = _gh_request("GET", f"data/{filename}")
+            if existing:
+                try:
+                    data = json.loads(base64.b64decode(existing["content"]).decode())
+                except Exception:
+                    data = {}
+                sha = existing["sha"]
+            else:
+                data = _load_local(filename) or {}
+                sha = None
+            if not isinstance(data, dict):
+                data = {}
+            data[key] = value
+
+            _CACHE[filename] = data
+            _CACHE_TIME[filename] = time.time()
+            _save_local(filename, data)
+
+            body = {
+                "message": f"update {filename}",
+                "content": base64.b64encode(json.dumps(data, ensure_ascii=False, indent=2).encode()).decode(),
+            }
+            if sha:
+                body["sha"] = sha
+            result = _gh_request("PUT", f"data/{filename}", body)
+            if result:
+                return True
+            time.sleep(0.5 * (2 ** attempt))
+        return False
+
+def remove_key(filename, key):
+    """Атомарно видаляє data[key] (симетрично до update_key) — той самий
+    захист від гонки при видаленні ключа одночасно з додаванням іншого."""
+    lock = _get_file_lock(filename)
+    with lock:
+        for attempt in range(5):
+            existing = _gh_request("GET", f"data/{filename}")
+            if existing:
+                try:
+                    data = json.loads(base64.b64decode(existing["content"]).decode())
+                except Exception:
+                    data = {}
+                sha = existing["sha"]
+            else:
+                data = _load_local(filename) or {}
+                sha = None
+            if not isinstance(data, dict):
+                data = {}
+            removed = data.pop(key, None)
+
+            _CACHE[filename] = data
+            _CACHE_TIME[filename] = time.time()
+            _save_local(filename, data)
+
+            body = {
+                "message": f"update {filename}",
+                "content": base64.b64encode(json.dumps(data, ensure_ascii=False, indent=2).encode()).decode(),
+            }
+            if sha:
+                body["sha"] = sha
+            result = _gh_request("PUT", f"data/{filename}", body)
+            if result:
+                return removed
+            time.sleep(0.5 * (2 ** attempt))
+        return None

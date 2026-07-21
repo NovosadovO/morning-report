@@ -92,9 +92,11 @@ class _PersistentDraftStore:
             print(f"[_DRAFT_STORE] write error: {_e}")
 
     def __setitem__(self, key, value):
-        data = self._read()
-        data[key] = value
-        self._write(data)
+        try:
+            import storage as _storage
+            _storage.update_key(self._FILE, key, value)
+        except Exception as _e:
+            print(f"[_DRAFT_STORE] setitem error: {_e}")
 
     def __getitem__(self, key):
         return self._read()[key]
@@ -103,10 +105,13 @@ class _PersistentDraftStore:
         return self._read().get(key, default)
 
     def pop(self, key, default=None):
-        data = self._read()
-        value = data.pop(key, default)
-        self._write(data)
-        return value
+        try:
+            import storage as _storage
+            value = _storage.remove_key(self._FILE, key)
+            return value if value is not None else default
+        except Exception as _e:
+            print(f"[_DRAFT_STORE] pop error: {_e}")
+            return default
 
     def __contains__(self, key):
         return key in self._read()

@@ -2205,13 +2205,11 @@ def apply_action_suggestion(ai: dict, source_id: str, sender: str = "", subject:
 
         if action_type == "calendar":
             if action_date:
-                draft = _storage_act3.load("draft_store.json", default={})
-                draft[f"cal_{source_id}"] = {
+                _storage_act3.update_key("draft_store.json", f"cal_{source_id}", {
                     "events": [{"title": action_title, "date": action_date,
                                 "time": action_time, "description": action_summary}],
                     "subject": subject or action_title,
-                }
-                _storage_act3.save("draft_store.json", draft)
+                })
                 t_str = f" о {action_time}" if action_time else ""
                 _send_telegram_text_with_keyboard(
                     f"📅 <b>АІ помітив дію:</b>\n«{esc(action_title)}»{t_str}, {action_date}\n"
@@ -2225,12 +2223,10 @@ def apply_action_suggestion(ai: dict, source_id: str, sender: str = "", subject:
                 import context as _ctx_act3
                 day_off = _ctx_act3.get_next_day_off()
                 if day_off:
-                    draft = _storage_act3.load("draft_store.json", default={})
-                    draft[f"calrem_{source_id}"] = {
+                    _storage_act3.update_key("draft_store.json", f"calrem_{source_id}", {
                         "subject": subject or action_title, "sender": sender,
                         "task_summary": action_summary or action_title, "date": day_off["date"],
-                    }
-                    _storage_act3.save("draft_store.json", draft)
+                    })
                     _send_telegram_text_with_keyboard(
                         f"📅 <b>АІ помітив дію:</b>\n«{esc(action_title)}»\n"
                         f"<i>{esc(action_summary)}</i>\n\n"
@@ -2242,9 +2238,7 @@ def apply_action_suggestion(ai: dict, source_id: str, sender: str = "", subject:
                         ]]}
                     )
         elif action_type == "shopping":
-            draft = _storage_act3.load("draft_store.json", default={})
-            draft[f"shop_{source_id}"] = {"item": action_title}
-            _storage_act3.save("draft_store.json", draft)
+            _storage_act3.update_key("draft_store.json", f"shop_{source_id}", {"item": action_title})
             _send_telegram_text_with_keyboard(
                 f"🛒 <b>АІ помітив щось на купити:</b>\n«{esc(action_title)}»\n"
                 f"<i>{esc(action_summary)}</i>\n\nДодати в список покупок?",
