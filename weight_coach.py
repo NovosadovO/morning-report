@@ -216,11 +216,11 @@ def generate_daily_motivation():
         "generationConfig": {
             "temperature": 1,
             "maxOutputTokens": 400,
-            "thinkingConfig": {"thinkingBudget": -1}
+            "thinkingConfig": {"thinkingBudget": 0}
         }
     }
     
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={GEMINI_API_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
     
     text = _gem_post(url, body, "weight_motivation")
     

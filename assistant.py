@@ -136,12 +136,12 @@ def _gemini(prompt, max_tokens=400):
     key = os.environ.get("GEMINI_API_KEY", "")
     payload = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.8, "thinkingConfig": {"thinkingBudget": -1}}
+        "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.8, "thinkingConfig": {"thinkingBudget": 0}}
     }).encode()
     try:
         from monitor import _gem_post
         resp = _gem_post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={key}",
             payload, timeout=25, tag="assistant", max_retries=3
         )
         if isinstance(resp, dict) and resp.get("candidates"):

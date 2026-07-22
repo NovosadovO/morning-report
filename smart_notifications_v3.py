@@ -238,7 +238,7 @@ def _get_upcoming_events(days_ahead=7):
 
 # ============ GEMINI ANALYSIS ============
 
-_GEM_MODELS = ["gemini-flash-latest", "gemini-flash-latest", "gemini-flash-lite-latest"]
+_GEM_MODELS = ["gemini-2.5-flash", "gemini-2.5-flash", "gemini-flash-lite-latest"]
 _GEM_MODEL_IDX = 0
 _GEM_LAST_CALL = 0
 _GEM_MIN_GAP = 4.0
@@ -294,12 +294,12 @@ FORMAT: Plain text, no markdown."""
         "generationConfig": {
             "maxOutputTokens": 500,
             "temperature": 0.7,
-            "thinkingConfig": {"thinkingBudget": -1}
+            "thinkingConfig": {"thinkingBudget": 0}
         }
     }
     
     result = _gemini_post(
-        "generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent",
+        "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
         body,
         timeout=15,
         tag="MORNING_AI"
@@ -366,12 +366,12 @@ FORMAT: Plain text."""
         "generationConfig": {
             "maxOutputTokens": 550,
             "temperature": 0.7,
-            "thinkingConfig": {"thinkingBudget": -1}
+            "thinkingConfig": {"thinkingBudget": 0}
         }
     }
     
     result = _gemini_post(
-        "generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent",
+        "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
         body,
         timeout=15,
         tag="LUNCH_AI"
@@ -470,12 +470,12 @@ FORMAT: Plain text."""
         "generationConfig": {
             "maxOutputTokens": 550,
             "temperature": 0.7,
-            "thinkingConfig": {"thinkingBudget": -1}
+            "thinkingConfig": {"thinkingBudget": 0}
         }
     }
     
     result = _gemini_post(
-        "generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent",
+        "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
         body,
         timeout=15,
         tag="AFTERNOON_AI"
@@ -526,12 +526,12 @@ FORMAT: Plain text with emojis."""
         "generationConfig": {
             "maxOutputTokens": 700,
             "temperature": 0.7,
-            "thinkingConfig": {"thinkingBudget": -1}
+            "thinkingConfig": {"thinkingBudget": 0}
         }
     }
     
     result = _gemini_post(
-        "generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent",
+        "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
         body,
         timeout=15,
         tag="EVENING_AI"

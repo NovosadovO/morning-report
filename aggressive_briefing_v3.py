@@ -15,7 +15,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 _DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 _TZ = ZoneInfo("Europe/Bratislava")
 
-_GEM_MODELS = ["gemini-flash-latest", "gemini-flash-latest", "gemini-flash-lite-latest"]
+_GEM_MODELS = ["gemini-2.5-flash", "gemini-2.5-flash", "gemini-flash-lite-latest"]
 _GEM_MODEL_IDX = 0
 _GEM_LAST_CALL = 0
 _GEM_MIN_GAP = 4.0
@@ -194,7 +194,7 @@ Include: current time relevant message, health status, calendar, any recommendat
         "generationConfig": {
             "maxOutputTokens": 400,
             "temperature": 0.8,
-            "thinkingConfig": {"thinkingBudget": -1}
+            "thinkingConfig": {"thinkingBudget": 0}
         }
     }
     

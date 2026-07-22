@@ -276,13 +276,13 @@ def _ask_gemini_coach(prompt: str) -> str:
         "generationConfig": {
             "maxOutputTokens": 1400,
             "temperature": 0.75,
-            "thinkingConfig": {"thinkingBudget": -1},
+            "thinkingConfig": {"thinkingBudget": 0},
         }
     }).encode()
     try:
         from monitor import _gem_post
         resp = _gem_post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={GEMINI_API_KEY}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}",
             payload, timeout=45, tag="monthly_coach", max_retries=3
         )
         if isinstance(resp, dict) and resp.get("candidates"):

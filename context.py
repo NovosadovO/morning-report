@@ -780,7 +780,7 @@ def _fetch_week_calendar(token: str) -> str:
     return "\n".join(lines) if lines else "нічого не заплановано на тижень"
 
 
-_GEM_MODELS_CHAT = ["gemini-flash-latest", "gemini-flash-latest", "gemini-flash-lite-latest"]
+_GEM_MODELS_CHAT = ["gemini-2.5-flash", "gemini-2.5-flash", "gemini-flash-lite-latest"]
 
 
 def _gemini_generate(api_key, contents, max_tokens=900, temperature=0.7):
@@ -792,7 +792,7 @@ def _gemini_generate(api_key, contents, max_tokens=900, temperature=0.7):
         "generationConfig": {
             "maxOutputTokens": max_tokens,
             "temperature": temperature,
-            "thinkingConfig": {"thinkingBudget": -1},
+            "thinkingConfig": {"thinkingBudget": 0},
         },
     }
     payload = json.dumps(body).encode()

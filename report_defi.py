@@ -531,7 +531,7 @@ def _gemini_digest_summary(context: str) -> str:
     if not key:
         return ""
     try:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={key}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={key}"
         prompt = (
             "На основі цих DeFi даних за останні 24 години напиши 2-3 речення українською: "
             "що найважливіше змінилось, які тренди варто відстежити, чи є ризики.\n\n"
@@ -539,7 +539,7 @@ def _gemini_digest_summary(context: str) -> str:
         )
         payload = json.dumps({
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"maxOutputTokens": 200, "temperature": 0.7, "thinkingConfig": {"thinkingBudget": -1}}
+            "generationConfig": {"maxOutputTokens": 200, "temperature": 0.7, "thinkingConfig": {"thinkingBudget": 0}}
         }).encode()
         from monitor import _gem_post
         resp = _gem_post(url, payload, timeout=20, tag="defi_digest", max_retries=3)

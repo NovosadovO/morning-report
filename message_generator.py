@@ -72,7 +72,7 @@ _TZ = ZoneInfo("Europe/Bratislava")
 _HISTORY_FILE = os.path.join(_DATA_DIR, "message_history.json")
 _HISTORY_MAX  = 8   # remember last N messages for anti-repeat
 
-_GEM_MODELS   = ["gemini-flash-latest", "gemini-flash-latest", "gemini-flash-lite-latest"]
+_GEM_MODELS   = ["gemini-2.5-flash", "gemini-2.5-flash", "gemini-flash-lite-latest"]
 _GEM_MODEL_IDX = 0
 _GEM_LAST_CALL = 0.0
 _GEM_MIN_GAP   = 4.0
@@ -864,7 +864,7 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
         "generationConfig": {
             "maxOutputTokens": max_tokens,
             "temperature": 0.85,
-            "thinkingConfig": {"thinkingBudget": -1}
+            "thinkingConfig": {"thinkingBudget": 0}
         }
     }
     message = _gemini_post(body, timeout=25, tag=f"MSG_{trigger_type.upper()}")
