@@ -70,9 +70,9 @@ GMAIL_APP_PASS  = os.getenv("GMAIL_APP_PASSWORD", "")
 _DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 _TZ = ZoneInfo("Europe/Bratislava")
 _HISTORY_FILE = os.path.join(_DATA_DIR, "message_history.json")
-_HISTORY_MAX  = 8   # remember last N messages for anti-repeat
+_HISTORY_MAX  = 20   # remember last N messages for anti-repeat (було 8 — замало для різноманітності по всіх темах)
 
-_GEM_MODELS   = ["gemini-2.5-flash", "gemini-2.5-flash", "gemini-flash-lite-latest"]
+_GEM_MODELS   = ["gemini-2.5-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite"]
 _GEM_MODEL_IDX = 0
 _GEM_LAST_CALL = 0.0
 _GEM_MIN_GAP   = 4.0
@@ -439,6 +439,20 @@ def _get_live_data() -> dict:
 
 # ─── Anti-repeat ─────────────────────────────────────────────────────────────
 def _load_history() -> list:
+    """Читає anti-repeat історію. Раніше зберігалась ТІЛЬКИ локально (data/message_history.json)
+    у git checkout — на кожному Railway редеплої (а вони трапляються часто) цей файл скидався
+    до стану останнього коміту, і anti-repeat 'забував' недавні повідомлення, дозволяючи
+    повторення одразу після деплою. Тепер канонічне джерело — storage.py (GitHub data-гілка,
+    переживає редеплой), локальний файл лишився як швидкий fallback."""
+    try:
+        import sys as _sys_h3
+        _sys_h3.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import storage as _storage_h3
+        hist = _storage_h3.load("message_history.json", default=None)
+        if isinstance(hist, list):
+            return hist
+    except Exception as e:
+        _log(f"history storage.load error: {e}")
     try:
         os.makedirs(_DATA_DIR, exist_ok=True)
         if os.path.exists(_HISTORY_FILE):
@@ -456,6 +470,13 @@ def _save_to_history(trigger_type: str, topic_summary: str):
         "topic":   topic_summary[:120],
     })
     hist = hist[-_HISTORY_MAX:]
+    try:
+        import sys as _sys_h4
+        _sys_h4.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import storage as _storage_h4
+        _storage_h4.save("message_history.json", hist)
+    except Exception as e:
+        _log(f"history storage.save error: {e}")
     try:
         with open(_HISTORY_FILE, "w") as f:
             json.dump(hist, f, indent=2)

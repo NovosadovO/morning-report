@@ -238,7 +238,7 @@ def _get_upcoming_events(days_ahead=7):
 
 # ============ GEMINI ANALYSIS ============
 
-_GEM_MODELS = ["gemini-2.5-flash", "gemini-2.5-flash", "gemini-flash-lite-latest"]
+_GEM_MODELS = ["gemini-2.5-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite"]
 _GEM_MODEL_IDX = 0
 _GEM_LAST_CALL = 0
 _GEM_MIN_GAP = 4.0

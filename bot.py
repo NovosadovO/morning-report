@@ -146,7 +146,7 @@ def _gemini_simple(prompt: str, max_tokens: int = 700, temperature: float = 0.5)
     api_key = os.environ.get("GEMINI_API_KEY", "")
     if not api_key:
         return ""
-    models = ["gemini-2.5-flash", "gemini-3.5-flash", "gemini-flash-lite-latest"]
+    models = ["gemini-2.5-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite"]
     payload = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"maxOutputTokens": max_tokens, "temperature": temperature}
@@ -310,7 +310,7 @@ def handle_document_explain_photo(chat_id, msg) -> bool:
             "generationConfig": {"maxOutputTokens": 700, "temperature": 0.4}
         }).encode()
         explanation = ""
-        for model in ["gemini-2.5-flash", "gemini-3.5-flash"]:
+        for model in ["gemini-2.5-flash", "gemini-2.5-flash"]:
             try:
                 req = urllib.request.Request(
                     f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}",
