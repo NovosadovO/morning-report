@@ -216,7 +216,7 @@ def generate_daily_motivation():
         "generationConfig": {
             "temperature": 1,
             "maxOutputTokens": 400,
-            "thinkingConfig": {"thinkingBudget": 0}
+            "thinkingConfig": {"thinkingBudget": -1}
         }
     }
     

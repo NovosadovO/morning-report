@@ -294,7 +294,7 @@ FORMAT: Plain text, no markdown."""
         "generationConfig": {
             "maxOutputTokens": 500,
             "temperature": 0.7,
-            "thinkingConfig": {"thinkingBudget": 0}
+            "thinkingConfig": {"thinkingBudget": -1}
         }
     }
     
@@ -366,7 +366,7 @@ FORMAT: Plain text."""
         "generationConfig": {
             "maxOutputTokens": 550,
             "temperature": 0.7,
-            "thinkingConfig": {"thinkingBudget": 0}
+            "thinkingConfig": {"thinkingBudget": -1}
         }
     }
     
@@ -470,7 +470,7 @@ FORMAT: Plain text."""
         "generationConfig": {
             "maxOutputTokens": 550,
             "temperature": 0.7,
-            "thinkingConfig": {"thinkingBudget": 0}
+            "thinkingConfig": {"thinkingBudget": -1}
         }
     }
     
@@ -526,7 +526,7 @@ FORMAT: Plain text with emojis."""
         "generationConfig": {
             "maxOutputTokens": 700,
             "temperature": 0.7,
-            "thinkingConfig": {"thinkingBudget": 0}
+            "thinkingConfig": {"thinkingBudget": -1}
         }
     }
     

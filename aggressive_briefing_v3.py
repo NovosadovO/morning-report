@@ -194,7 +194,7 @@ Include: current time relevant message, health status, calendar, any recommendat
         "generationConfig": {
             "maxOutputTokens": 400,
             "temperature": 0.8,
-            "thinkingConfig": {"thinkingBudget": 0}
+            "thinkingConfig": {"thinkingBudget": -1}
         }
     }
     

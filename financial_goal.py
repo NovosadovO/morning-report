@@ -225,7 +225,7 @@ def generate_gemini_motivation():
         "generationConfig": {
             "temperature": 1,
             "maxOutputTokens": 500,
-            "thinkingConfig": {"thinkingBudget": 0}
+            "thinkingConfig": {"thinkingBudget": -1}
         }
     }
     

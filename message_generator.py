@@ -864,7 +864,7 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
         "generationConfig": {
             "maxOutputTokens": max_tokens,
             "temperature": 0.85,
-            "thinkingConfig": {"thinkingBudget": 0}
+            "thinkingConfig": {"thinkingBudget": -1}
         }
     }
     message = _gemini_post(body, timeout=25, tag=f"MSG_{trigger_type.upper()}")

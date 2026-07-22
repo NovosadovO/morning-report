@@ -245,7 +245,7 @@ def _gemini_parse(text: str) -> dict:
     )
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"maxOutputTokens": 500, "temperature": 0, "thinkingConfig": {"thinkingBudget": 0}}
+        "generationConfig": {"maxOutputTokens": 500, "temperature": 0, "thinkingConfig": {"thinkingBudget": -1}}
     }).encode()
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={GEMINI_KEY}"
     try:

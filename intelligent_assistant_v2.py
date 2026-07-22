@@ -384,7 +384,7 @@ def generate_contextual_insight(crypto_data, health_data, habits_data, work_shif
             "temperature": 1,
             "maxOutputTokens": 1000,
             "thinkingConfig": {
-                "thinkingBudget": 0
+                "thinkingBudget": -1
             }
         }
     }

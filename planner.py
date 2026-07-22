@@ -133,7 +133,7 @@ def _gemini(prompt):
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={GEMINI_KEY}"
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"temperature": 0.2, "maxOutputTokens": 1024, "thinkingConfig": {"thinkingBudget": 0}}
+        "generationConfig": {"temperature": 0.2, "maxOutputTokens": 1024, "thinkingConfig": {"thinkingBudget": -1}}
     }).encode()
     resp = _gem_post(url, body, timeout=30, tag="planner", max_retries=3)
     if isinstance(resp, dict) and resp.get("candidates"):

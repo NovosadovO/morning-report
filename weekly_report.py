@@ -579,7 +579,7 @@ def send_weekly_report():
             )
             payload = _json_wr.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 220, "temperature": 0.8, "thinkingConfig": {"thinkingBudget": 0}}
+                "generationConfig": {"maxOutputTokens": 220, "temperature": 0.8, "thinkingConfig": {"thinkingBudget": -1}}
             }).encode()
             from monitor import _gem_post
             ai_data = _gem_post(

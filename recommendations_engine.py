@@ -315,7 +315,7 @@ GENERATE RECOMMENDATIONS NOW:"""
         "generationConfig": {
             "maxOutputTokens": 2000,
             "temperature": 0.7,
-            "thinkingConfig": {"thinkingBudget": 0}
+            "thinkingConfig": {"thinkingBudget": -1}
         }
     }
     

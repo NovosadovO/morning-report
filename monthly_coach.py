@@ -276,7 +276,7 @@ def _ask_gemini_coach(prompt: str) -> str:
         "generationConfig": {
             "maxOutputTokens": 1400,
             "temperature": 0.75,
-            "thinkingConfig": {"thinkingBudget": 0},
+            "thinkingConfig": {"thinkingBudget": -1},
         }
     }).encode()
     try:

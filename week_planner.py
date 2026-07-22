@@ -240,7 +240,7 @@ def generate_week_recommendations():
         "generationConfig": {
             "temperature": 1,
             "maxOutputTokens": 400,
-            "thinkingConfig": {"thinkingBudget": 0}
+            "thinkingConfig": {"thinkingBudget": -1}
         }
     }
     

@@ -792,7 +792,7 @@ def _gemini_generate(api_key, contents, max_tokens=900, temperature=0.7):
         "generationConfig": {
             "maxOutputTokens": max_tokens,
             "temperature": temperature,
-            "thinkingConfig": {"thinkingBudget": 0},
+            "thinkingConfig": {"thinkingBudget": -1},
         },
     }
     payload = json.dumps(body).encode()

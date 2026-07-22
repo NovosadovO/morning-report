@@ -798,7 +798,7 @@ def handle_email_callback(callback_query):
             )
             req_body = json.dumps({
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 1500, "temperature": 0.3, "thinkingConfig": {"thinkingBudget": 0}}
+                "generationConfig": {"maxOutputTokens": 1500, "temperature": 0.3, "thinkingConfig": {"thinkingBudget": -1}}
             }).encode()
             url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={GEMINI_KEY}"
 
@@ -1277,7 +1277,7 @@ def handle_email_callback(callback_query):
                 )
                 payload = _json.dumps({
                     "contents": [{"parts": [{"text": prompt}]}],
-                    "generationConfig": {"maxOutputTokens": 500, "temperature": 0.7, "thinkingConfig": {"thinkingBudget": 0}}
+                    "generationConfig": {"maxOutputTokens": 500, "temperature": 0.7, "thinkingConfig": {"thinkingBudget": -1}}
                 }).encode()
                 draft = ""
                 try:

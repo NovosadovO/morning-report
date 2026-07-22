@@ -290,7 +290,7 @@ def _ask_gemini(prompt: str, system: str, max_tokens: int = 500) -> str:
     ]
     payload = json.dumps({
         "contents": contents,
-        "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.85, "thinkingConfig": {"thinkingBudget": 0}}
+        "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.85, "thinkingConfig": {"thinkingBudget": -1}}
     }).encode()
     try:
         import sys as _sys

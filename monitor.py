@@ -1938,7 +1938,7 @@ def _gemini_email_analysis(full_text: str, health_context: str = "") -> dict:
     )
     req_body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.3, "thinkingConfig": {"thinkingBudget": 0}}
+        "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.3, "thinkingConfig": {"thinkingBudget": -1}}
     }).encode()
 
     try:
@@ -2155,7 +2155,7 @@ def detect_actionable_item(text: str) -> dict:
     )
     req_body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"maxOutputTokens": 300, "temperature": 0.2, "thinkingConfig": {"thinkingBudget": 0}}
+        "generationConfig": {"maxOutputTokens": 300, "temperature": 0.2, "thinkingConfig": {"thinkingBudget": -1}}
     }).encode()
     try:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={api_key}"
@@ -3760,7 +3760,7 @@ def _get_themes_ai_analysis(gemini_key: str, ctx: dict) -> str:
             "generationConfig": {
                 "maxOutputTokens": 8000,
                 "temperature": 0.75,
-                "thinkingConfig": {"thinkingBudget": 0},
+                "thinkingConfig": {"thinkingBudget": -1},
             },
         }).encode()
         # Timeout HTTP-запиту (макс 20s на ОДНУ спробу) — саму загальну тривалість
@@ -3882,7 +3882,7 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
             "generationConfig": {
                 "maxOutputTokens": 4000,
                 "temperature": 0.8,
-                "thinkingConfig": {"thinkingBudget": 0}  # Вимикаємо reasoning
+                "thinkingConfig": {"thinkingBudget": -1}  # Вимикаємо reasoning
             }
         }).encode()
         response = _gem_post(
@@ -9007,7 +9007,7 @@ def _get_crypto_ai_analysis(crypto_alert: dict, gemini_key: str = None) -> str:
             "generationConfig": {
                 "maxOutputTokens": 600,
                 "temperature": 0.6,
-                "thinkingConfig": {"thinkingBudget": 0}
+                "thinkingConfig": {"thinkingBudget": -1}
             },
         }).encode()
         
@@ -9055,7 +9055,7 @@ def _get_health_ai_analysis(health_alert: dict, gemini_key: str = None) -> str:
             "generationConfig": {
                 "maxOutputTokens": 500,
                 "temperature": 0.7,
-                "thinkingConfig": {"thinkingBudget": 0}
+                "thinkingConfig": {"thinkingBudget": -1}
             },
         }).encode()
         
@@ -9106,7 +9106,7 @@ def _generate_email_reply_templates(email_text: str, sender: str, subject: str, 
             "generationConfig": {
                 "maxOutputTokens": 800,
                 "temperature": 0.7,
-                "thinkingConfig": {"thinkingBudget": 0}
+                "thinkingConfig": {"thinkingBudget": -1}
             },
         }).encode()
         
@@ -9174,7 +9174,7 @@ def _get_daily_recommendations(context: dict, gemini_key: str = None) -> str:
             "generationConfig": {
                 "maxOutputTokens": 1000,
                 "temperature": 0.8,
-                "thinkingConfig": {"thinkingBudget": 0}
+                "thinkingConfig": {"thinkingBudget": -1}
             },
         }).encode()
         
@@ -10524,7 +10524,7 @@ def main():
                     "generationConfig": {
                         "maxOutputTokens": 8000,
                         "temperature": 0.85,
-                        "thinkingConfig": {"thinkingBudget": 0},
+                        "thinkingConfig": {"thinkingBudget": -1},
                     },
                 }).encode()
                 _brief_resp = _gem_post(
