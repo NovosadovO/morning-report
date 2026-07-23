@@ -2203,8 +2203,11 @@ def apply_action_suggestion(ai: dict, source_id: str, sender: str = "", subject:
     source_id — унікальний ключ (email UID або trigger_type+timestamp тощо)."""
     try:
         action_type = (ai or {}).get("action_type", "none")
-        action_title = (ai or {}).get("action_title", "").strip()
-        action_summary = (ai or {}).get("action_summary", "").strip()
+        # ВАЖЛИВО: .get(key, "") НЕ захищає якщо Gemini поверне явний null для ключа
+        # (ключ Є, значення None) — тоді "" не підставляється і .strip() падає з
+        # AttributeError. Тому "or ''" — страхує і від None, і від відсутнього ключа.
+        action_title = ((ai or {}).get("action_title") or "").strip()
+        action_summary = ((ai or {}).get("action_summary") or "").strip()
         action_date = (ai or {}).get("action_date")
         action_time = (ai or {}).get("action_time")
         if action_date in ("null", "None", ""):
