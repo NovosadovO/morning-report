@@ -1378,6 +1378,55 @@ threading.Thread(target=run_currency_watcher, daemon=True).start()
 print("=== Currency watcher thread started ===", flush=True)
 
 
+def run_self_diagnostics_watcher():
+    """Самодіагностика бота — перевіряє чи Gemini/email-checker не зламані,
+    пише Олегу зрозумілим текстом (не трейсбек) якщо так. Кожні 15 хв."""
+    print("=== Starting self-diagnostics watcher (every 15min) ===", flush=True)
+    time.sleep(180)
+    while True:
+        try:
+            import self_diagnostics as _sd
+            _sd.check_self_health()
+        except Exception as e:
+            print(f"Self-diagnostics watcher error: {e}", flush=True)
+        time.sleep(900)
+
+threading.Thread(target=run_self_diagnostics_watcher, daemon=True).start()
+print("=== Self-diagnostics watcher thread started ===", flush=True)
+
+
+def run_behavior_patterns_watcher():
+    """Активне відстеження патернів поведінки (напр. хронічні затримки з
+    відповідями конкретним людям) — перевірка раз на день."""
+    print("=== Starting behavior patterns watcher (daily) ===", flush=True)
+    time.sleep(240)
+    while True:
+        try:
+            import behavior_patterns as _bp
+            _bp.analyze_patterns()
+        except Exception as e:
+            print(f"Behavior patterns watcher error: {e}", flush=True)
+        time.sleep(86400)
+
+threading.Thread(target=run_behavior_patterns_watcher, daemon=True).start()
+print("=== Behavior patterns watcher thread started ===", flush=True)
+
+
+def run_ai_weekly_accuracy_watcher():
+    """Щотижневий AI-звіт про власну точність/корисність — неділя ввечері."""
+    print("=== Starting AI weekly accuracy watcher (Sunday) ===", flush=True)
+    time.sleep(300)
+    while True:
+        try:
+            _load_monitor().check_ai_weekly_accuracy()
+        except Exception as e:
+            print(f"AI weekly accuracy watcher error: {e}", flush=True)
+        time.sleep(3600)
+
+threading.Thread(target=run_ai_weekly_accuracy_watcher, daemon=True).start()
+print("=== AI weekly accuracy watcher thread started ===", flush=True)
+
+
 def run_evening_charts_watcher():
     """ВИМКНЕНО: замінено на run_report_card_watcher (один великий PNG-звіт)."""
     return  # вимкнено — всі дані тепер в report_card

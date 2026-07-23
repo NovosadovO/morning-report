@@ -1490,6 +1490,11 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
                 with urllib.request.urlopen(req, timeout=timeout) as r:
                     if _mi > 0:
                         print(f"[{tag}] OK via FALLBACK model {_model}", flush=True)
+                    try:
+                        import self_diagnostics as _sd_ok
+                        _sd_ok.record_gemini_result(True)
+                    except Exception:
+                        pass
                     return json.loads(r.read())
             except urllib.error.HTTPError as e:
                 last_exc = e
@@ -1540,6 +1545,11 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
         if _exhausted_429 and _mi < len(_models) - 1:
             print(f"[{tag}] model {_model} вичерпана — switch to {_models[_mi+1]}", flush=True)
             continue
+    try:
+        import self_diagnostics as _sd_fail
+        _sd_fail.record_gemini_result(False)
+    except Exception:
+        pass
     if last_exc:
         raise last_exc
     raise RuntimeError(f"[{tag}] _gem_post exhausted all models")
@@ -2279,6 +2289,11 @@ def check_new_emails():
 
         if not all_unread:
             mail.logout()
+            try:
+                import self_diagnostics as _sd_email0
+                _sd_email0.record_email_check_ok()
+            except Exception:
+                pass
             return
 
         # Завантажуємо вже надіслані з GitHub + in-memory
@@ -2342,6 +2357,13 @@ def check_new_emails():
             # 1. GIF окремо (без тексту)
             _send_telegram_gif_only()
 
+            # Відстеження патернів поведінки: фіксуємо коли лист вперше показано
+            try:
+                import behavior_patterns as _bp
+                _bp.record_email_seen(uid_str, sender)
+            except Exception as _e_bp:
+                print(f"[email] behavior_patterns record error: {_e_bp}")
+
             # 2. Текст з AI аналізом + кнопки окремим повідомленням (розмовний, "живий" стиль)
             _cat_tag = {"real": "", "promo": " 📢<i>(промо)</i>", "spam": " 🗑<i>(схоже на розсилку)</i>"}.get(category, "")
             sender_short = esc(sender.split("<")[0].strip().strip('"') or sender[:40])
@@ -2379,6 +2401,15 @@ def check_new_emails():
 
             _send_telegram_text_with_keyboard(text, keyboard)
             print(f"[email] alert sent: uid={uid_str} subject={subject[:50]}")
+
+        # Самодіагностика: позначаємо що перевірка пошти успішно відпрацювала
+        # (навіть якщо нових листів не було) — self_diagnostics стежить за тим,
+        # щоб цей цикл не завис мовчки.
+        try:
+            import self_diagnostics as _sd_email
+            _sd_email.record_email_check_ok()
+        except Exception:
+            pass
 
             # ── ПРОАКТИВНА ПРОПОЗИЦІЯ: АІ сам виявив дію в листі (оплата/дедлайн/
             # покупка тощо) — пропонує нагадування/список покупок БЕЗ натискання
@@ -16428,3 +16459,93 @@ def check_unread_digest():
 
     state["last_sent"] = today_key
     save_json_file(UNREAD_DIGEST_FILE, state)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 🧠 ЩОТИЖНЕВИЙ AI-ЗВІТ ПРО ВЛАСНУ ТОЧНІСТЬ (неділя ввечері)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+_AI_ACCURACY_FILE = os.path.join(_DATA_DIR, "monitor_ai_accuracy.json")
+
+def check_ai_weekly_accuracy():
+    """Щонеділі о 19:30 — AI чесно оцінює себе: наскільки точними/корисними
+    були його поради/прогнози цього тижня (крипто-заклики vs реальна ціна,
+    рекомендації vs що Олег реально зробив, чи не було занадто generic-порад)."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    if not (now_local.weekday() == 6 and now_local.hour == 19 and 30 <= now_local.minute < 40):
+        return
+
+    state = load_json_file(_AI_ACCURACY_FILE, default={"sent_weeks": []})
+    week_key = now_local.strftime("%Y-W%W")
+    if week_key in state.get("sent_weeks", []):
+        return
+
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    if not gemini_key:
+        return
+
+    try:
+        import message_generator as _mg
+        hist = _mg._load_history() if hasattr(_mg, "_load_history") else []
+    except Exception:
+        hist = []
+
+    week_ago = (now_local - timedelta(days=7))
+    recent = []
+    for h in hist:
+        try:
+            ts = datetime.fromisoformat(h["ts"])
+            if ts.replace(tzinfo=None) >= week_ago.replace(tzinfo=None):
+                recent.append(h)
+        except Exception:
+            continue
+
+    if not recent:
+        return  # нема даних — нема сенсу оцінювати
+
+    topics_summary = "\n".join(f"- [{h['trigger']}] {h['topic']}" for h in recent[-30:])
+
+    # Реальні дані для порівняння з тим що радилось
+    try:
+        from storage import load_weight as _lw2
+        wd = _lw2()
+        weight_trend = ""
+        if wd:
+            keys = sorted(wd.keys())
+            if len(keys) >= 2:
+                weight_trend = f"Вага: було {wd[keys[-min(8,len(keys))]]} кг → зараз {wd[keys[-1]]} кг"
+    except Exception:
+        weight_trend = ""
+
+    prompt = (
+        "Ти AI-асистент, який щотижня надсилає користувачу (Олегу) поради, аналізи, "
+        "нагадування по темах: крипто, здоров'я, звички, астро, робота, email. "
+        "Ось список ТЕМ повідомлень які ти надіслав за останній тиждень:\n"
+        f"{topics_summary}\n\n"
+        f"Реальні дані для перевірки: {weight_trend or 'недоступні'}\n\n"
+        "Дай ЧЕСНУ самооцінку (не хвались просто так, будь критичним де треба):\n"
+        "1. Чи були поради РІЗНОМАНІТНІ чи повторювались одні й ті самі теми/фрази?\n"
+        "2. Чи були вони КОНКРЕТНИМИ (дати, цифри, дії) чи занадто generic?\n"
+        "3. Що можна покращити наступного тижня?\n"
+        "Формат: 4-5 речень, українською, чесно і по-дружньому, без самобичування "
+        "але й без хвальби. Звертайся до Олега напряму."
+    )
+    req_body = json.dumps({
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"maxOutputTokens": 500, "temperature": 0.5, "thinkingConfig": {"thinkingBudget": 0}}
+    }).encode()
+    try:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}"
+        resp_data = _gem_post(url, req_body, timeout=25, tag="ai_weekly_accuracy", max_retries=2)
+        text = resp_data["candidates"][0]["content"]["parts"][0]["text"].strip()
+    except Exception as e:
+        print(f"[ai_weekly_accuracy] error: {e}")
+        return
+
+    msg = f"🧠 <b>Щотижнева самооцінка АІ</b> — {now_local.strftime('%d.%m.%Y')}\n\n{text}"
+    send_telegram(msg)
+
+    state.setdefault("sent_weeks", []).append(week_key)
+    state["sent_weeks"] = state["sent_weeks"][-12:]
+    save_json_file(_AI_ACCURACY_FILE, state)
+    print(f"[ai_weekly_accuracy] звіт надіслано за тиждень {week_key}")

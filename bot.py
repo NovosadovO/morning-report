@@ -1340,6 +1340,11 @@ def handle_email_callback(callback_query):
             if ok.get("ok"):
                 api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
                 send(chat_id, f"✅ Лист надіслано → {draft_info['to']}")
+                try:
+                    import behavior_patterns as _bp2
+                    _bp2.record_email_replied(uid_str)
+                except Exception as _e_bp2:
+                    print(f"behavior_patterns record_replied error: {_e_bp2}")
             else:
                 send(chat_id, f"⚠️ Помилка надсилання: {ok.get('error', 'невідома помилка')}")
         except Exception as e:
@@ -1384,6 +1389,69 @@ def handle_email_callback(callback_query):
         # явно, щоб було видно проблему одразу в Telegram, а не тільки в логах.
         print(f"[email_callback] UNHANDLED data={data}", flush=True)
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"⚠️ Невідома дія кнопки: {data[:30]}"})
+
+
+def handle_quick_reply_callback(callback_query):
+    """Обробляє швидкі кнопки під AI-повідомленнями: 👍 Ок / ❓ Розкажи більше / 📝 Занотувати."""
+    data    = callback_query.get("data", "")
+    msg_id  = callback_query["message"]["message_id"]
+    chat_id = callback_query["message"]["chat"]["id"]
+    cb_id   = callback_query["id"]
+
+    try:
+        import sys as _sys_qr2, os as _os_qr2
+        _sys_qr2.path.insert(0, _os_qr2.path.dirname(_os_qr2.path.abspath(__file__)))
+        import storage as _storage_qr2
+
+        if data.startswith("qr_ok_"):
+            qr_id = data[len("qr_ok_"):]
+            api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "👍 Записав, дякую!"})
+            api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+
+        elif data.startswith("qr_more_"):
+            qr_id = data[len("qr_more_"):]
+            api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "🤔 Розширюю..."})
+            store = _storage_qr2.load("quick_reply_store.json", default={})
+            entry = store.get(qr_id)
+            if not entry:
+                send(chat_id, "⚠️ Оригінал повідомлення не знайдено (застаріло).")
+                return
+            api("sendChatAction", {"chat_id": chat_id, "action": "typing"})
+            gemini_key = os.environ.get("GEMINI_API_KEY", "")
+            prompt = (
+                "Ось повідомлення яке ти щойно написав Олегу:\n\n"
+                f"{entry['text'][:1500]}\n\n"
+                "Олег попросив розказати більше деталей/контексту по цій темі. "
+                "Дай розширену версію — більше конкретики, деталей, чисел, наступних кроків. "
+                "4-6 речень, українською, без вступних фраз типу 'звісно, ось деталі'."
+            )
+            try:
+                import urllib.request as _ur_qr
+                req_body = json.dumps({
+                    "contents": [{"parts": [{"text": prompt}]}],
+                    "generationConfig": {"maxOutputTokens": 500, "temperature": 0.5, "thinkingConfig": {"thinkingBudget": 0}}
+                }).encode()
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}"
+                req = _ur_qr.Request(url, data=req_body, headers={"Content-Type": "application/json"})
+                with _ur_qr.urlopen(req, timeout=20) as r:
+                    resp = json.loads(r.read())
+                more_text = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
+                send(chat_id, f"🔍 <b>Детальніше:</b>\n\n{more_text}")
+            except Exception as e:
+                send(chat_id, f"⚠️ Не вдалось розширити: {e}")
+
+        elif data.startswith("qr_note_"):
+            qr_id = data[len("qr_note_"):]
+            api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📝 Занотовано!"})
+            store = _storage_qr2.load("quick_reply_store.json", default={})
+            entry = store.get(qr_id)
+            if entry:
+                import ai_notes as _ai_notes
+                _ai_notes.add_note(entry["text"][:300], source="qr_note")
+            api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+    except Exception as e:
+        print(f"[quick_reply] error: {e}", flush=True)
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"⚠️ Помилка: {str(e)[:100]}"})
 
 
 def handle_reminder_callback(callback_query):
@@ -4143,6 +4211,8 @@ def main():
                               data.startswith("calrem_add_") or data.startswith("calrem_skip_") or
                               data.startswith("shop_add_") or data.startswith("shop_skip_")):
                             handle_email_callback(cb)
+                        elif (data.startswith("qr_ok_") or data.startswith("qr_more_") or data.startswith("qr_note_")):
+                            handle_quick_reply_callback(cb)
                         elif data.startswith("reminder_"):
                             handle_reminder_callback(cb)
                         elif data.startswith("mood_"):

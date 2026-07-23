@@ -944,12 +944,23 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
 
 # ─── Telegram sender ─────────────────────────────────────────────────────────
 def _send_to_telegram(text: str) -> bool:
+    """Надсилає AI-повідомлення + швидкі кнопки-відповіді (👍 Ок / ❓ Розкажи більше /
+    📝 Занотувати) під кожним. Кнопки дають миттєвий фідбек без набору тексту."""
     if not text or not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
         return False
+    import uuid as _uuid_qr
+    qr_id = _uuid_qr.uuid4().hex[:10]
+    keyboard = {
+        "inline_keyboard": [[
+            {"text": "👍 Ок", "callback_data": f"qr_ok_{qr_id}"},
+            {"text": "❓ Розкажи більше", "callback_data": f"qr_more_{qr_id}"},
+            {"text": "📝 Занотувати", "callback_data": f"qr_note_{qr_id}"},
+        ]]
+    }
     for attempt in range(3):
         try:
             url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-            body = {"chat_id": TELEGRAM_CHAT_ID, "text": text, "parse_mode": "HTML"}
+            body = {"chat_id": TELEGRAM_CHAT_ID, "text": text, "parse_mode": "HTML", "reply_markup": keyboard}
             req = urllib.request.Request(
                 url, data=json.dumps(body).encode(),
                 headers={"Content-Type": "application/json"}, method="POST"
@@ -958,6 +969,17 @@ def _send_to_telegram(text: str) -> bool:
                 r = json.loads(resp.read())
                 if r.get("ok"):
                     _log(f"✅ Sent {len(text)} chars")
+                    # Зберігаємо повний текст під qr_id — треба для "Розкажи більше" і "Занотувати"
+                    try:
+                        import sys as _sys_qr
+                        _sys_qr.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                        import storage as _storage_qr
+                        _storage_qr.update_key("quick_reply_store.json", qr_id, {
+                            "text": text[:2000],
+                            "ts": datetime.now(tz=_TZ).isoformat(),
+                        })
+                    except Exception as _e_qr:
+                        _log(f"quick_reply store error: {_e_qr}")
                     return True
                 _log(f"TG error: {r.get('description','?')}")
         except Exception as e:

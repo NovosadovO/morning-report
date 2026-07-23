@@ -846,6 +846,17 @@ def ask_ai(user_message: str, include_calendar: bool = True) -> str:
         except Exception:
             pass
 
+    # AI-нотатки з попередніх розмов — щоб бот не питав повторно те що вже знає
+    try:
+        import sys as _sys_ctx_notes, os as _os_ctx_notes
+        _sys_ctx_notes.path.insert(0, _os_ctx_notes.path.dirname(_os_ctx_notes.path.abspath(__file__)))
+        import ai_notes as _ai_notes_ctx
+        notes_ctx = _ai_notes_ctx.get_notes_context()
+        if notes_ctx:
+            system_prompt += f"\n{notes_ctx}"
+    except Exception as e:
+        print(f"ask_ai notes context error: {e}")
+
     history = _load_history()
 
     contents = [
@@ -891,6 +902,16 @@ def ask_ai(user_message: str, include_calendar: bool = True) -> str:
         _save_history(history)
     except Exception as e:
         print(f"ask_ai save history error: {e}")
+
+    # AI-нотатки: автоматично витягуємо важливі факти з розмови у фоні
+    # (уподобання, плани, рішення тощо) — щоб бот пам'ятав це в майбутніх розмовах.
+    try:
+        import sys as _sys_notes, os as _os_notes, threading as _th_notes
+        _sys_notes.path.insert(0, _os_notes.path.dirname(_os_notes.path.abspath(__file__)))
+        import ai_notes as _ai_notes_mod
+        _th_notes.Thread(target=_ai_notes_mod.auto_note_from_conversation, args=(user_message, answer), daemon=True).start()
+    except Exception as e:
+        print(f"ask_ai auto-note error: {e}")
 
     return answer
 
