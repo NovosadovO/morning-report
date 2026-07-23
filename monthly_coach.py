@@ -367,6 +367,26 @@ def run_monthly_coach():
             except Exception as e:
                 print(f"[MonthlyCoach] send chart error: {e}")
 
+        # ── Активність відповідей за місяць (response_log) ──────────────────
+        try:
+            import response_log as _rl_mo
+            summary = _rl_mo.summarize_by_category(days=30)
+            if summary:
+                _cat_names = {
+                    "diary": "📔 Щоденник", "micro_checkin": "💭 Мікро-опитування",
+                    "mood": "✨ Настрій", "habit_sleep": "🌙 Звички/сон",
+                    "event_done": "✅ Виконання подій", "email_reply": "📧 Відповіді на листи",
+                    "calendar_confirm": "📅 Підтвердження календаря", "calendar_reminder_confirm": "📅 Нагадування",
+                    "shopping_confirm": "🛒 Покупки", "quick_reply_ok": "👍 Швидкі Ок",
+                    "quick_reply_more": "❓ Розкажи більше", "quick_reply_note": "📝 Занотовано",
+                    "chat": "💬 Чат з АІ",
+                }
+                lines = [f"• {_cat_names.get(k, k)}: {v}" for k, v in sorted(summary.items(), key=lambda x: -x[1])]
+                total = sum(summary.values())
+                _send(f"📊 <b>ТВОЯ АКТИВНІСТЬ ЗА МІСЯЦЬ</b>\n\nВсього {total} взаємодій з ботом:\n" + "\n".join(lines))
+        except Exception as _e_rl_mo:
+            print(f"[MonthlyCoach] response_log summary error: {_e_rl_mo}")
+
         try:
             from storage import save
             coach_state["last_sent_month"] = month_key

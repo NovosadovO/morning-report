@@ -1427,6 +1427,21 @@ threading.Thread(target=run_ai_weekly_accuracy_watcher, daemon=True).start()
 print("=== AI weekly accuracy watcher thread started ===", flush=True)
 
 
+def run_yearly_summary_watcher():
+    """Річний звіт активності — 1 січня."""
+    print("=== Starting yearly summary watcher (Jan 1) ===", flush=True)
+    time.sleep(360)
+    while True:
+        try:
+            _load_monitor().check_yearly_summary()
+        except Exception as e:
+            print(f"Yearly summary watcher error: {e}", flush=True)
+        time.sleep(3600)
+
+threading.Thread(target=run_yearly_summary_watcher, daemon=True).start()
+print("=== Yearly summary watcher thread started ===", flush=True)
+
+
 def run_evening_charts_watcher():
     """ВИМКНЕНО: замінено на run_report_card_watcher (один великий PNG-звіт)."""
     return  # вимкнено — всі дані тепер в report_card

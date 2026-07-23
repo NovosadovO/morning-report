@@ -549,6 +549,27 @@ def send_weekly_report():
     for msg in [msg1, msg2, msg3, msg4]:
         send(msg)
 
+    # ── Активність відповідей за тиждень (response_log) ────────────────────────
+    try:
+        import sys as _sys_rl; _sys_rl.path.insert(0, _DIR)
+        import response_log as _rl_wk
+        summary = _rl_wk.summarize_by_category(days=7)
+        if summary:
+            _cat_names = {
+                "diary": "📔 Щоденник", "micro_checkin": "💭 Мікро-опитування",
+                "mood": "✨ Настрій", "habit_sleep": "🌙 Звички/сон",
+                "event_done": "✅ Виконання подій", "email_reply": "📧 Відповіді на листи",
+                "calendar_confirm": "📅 Підтвердження календаря", "calendar_reminder_confirm": "📅 Нагадування",
+                "shopping_confirm": "🛒 Покупки", "quick_reply_ok": "👍 Швидкі Ок",
+                "quick_reply_more": "❓ Розкажи більше", "quick_reply_note": "📝 Занотовано",
+                "chat": "💬 Чат з АІ",
+            }
+            lines = [f"• {_cat_names.get(k, k)}: {v}" for k, v in sorted(summary.items(), key=lambda x: -x[1])]
+            total = sum(summary.values())
+            send(f"📊 <b>ТВОЯ АКТИВНІСТЬ ЦЬОГО ТИЖНЯ</b>\n\nВсього {total} взаємодій з ботом:\n" + "\n".join(lines))
+    except Exception as _e_rl_wk:
+        print(f"weekly response_log summary error: {_e_rl_wk}")
+
     # ── Графіки тижня ─────────────────────────────────────────────────────────
     try:
         import sys as _sys_wr; _sys_wr.path.insert(0, _DIR)

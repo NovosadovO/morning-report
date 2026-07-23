@@ -16549,3 +16549,55 @@ def check_ai_weekly_accuracy():
     state["sent_weeks"] = state["sent_weeks"][-12:]
     save_json_file(_AI_ACCURACY_FILE, state)
     print(f"[ai_weekly_accuracy] звіт надіслано за тиждень {week_key}")
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 📊 РІЧНИЙ ЗВІТ АКТИВНОСТІ (1 січня)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+_YEARLY_SUMMARY_FILE = os.path.join(_DATA_DIR, "monitor_yearly_summary.json")
+
+def check_yearly_summary():
+    """1 січня — річний підсумок активності: скільки і чого Олег відповідав
+    боту за весь рік (з response_log.py), + AI-рефлексія про рік."""
+    now_local = datetime.now(timezone.utc) + timedelta(hours=2)
+    if not (now_local.month == 1 and now_local.day == 1 and now_local.hour == 12):
+        return
+
+    state = load_json_file(_YEARLY_SUMMARY_FILE, default={"sent_years": []})
+    year_key = str(now_local.year)
+    if year_key in state.get("sent_years", []):
+        return
+
+    try:
+        import response_log as _rl_year
+        summary = _rl_year.summarize_by_category(days=366)
+    except Exception as e:
+        print(f"[yearly_summary] response_log error: {e}")
+        summary = {}
+
+    if not summary:
+        return
+
+    cat_names = {
+        "diary": "📔 Щоденник", "micro_checkin": "💭 Мікро-опитування",
+        "mood": "✨ Настрій", "habit_sleep": "🌙 Звички/сон",
+        "event_done": "✅ Виконання подій", "email_reply": "📧 Відповіді на листи",
+        "calendar_confirm": "📅 Підтвердження календаря", "calendar_reminder_confirm": "📅 Нагадування",
+        "shopping_confirm": "🛒 Покупки", "quick_reply_ok": "👍 Швидкі Ок",
+        "quick_reply_more": "❓ Розкажи більше", "quick_reply_note": "📝 Занотовано",
+        "chat": "💬 Чат з АІ",
+    }
+    lines = [f"• {cat_names.get(k, k)}: {v}" for k, v in sorted(summary.items(), key=lambda x: -x[1])]
+    total = sum(summary.values())
+
+    msg = (
+        f"🎉 <b>РІЧНИЙ ЗВІТ АКТИВНОСТІ — {now_local.year - 1}</b>\n\n"
+        f"Всього {total} взаємодій з ботом за рік:\n" + "\n".join(lines) +
+        f"\n\n<i>Дякую що був активним весь рік! Наступний рік буде ще кращим 🚀</i>"
+    )
+    send_telegram(msg)
+
+    state.setdefault("sent_years", []).append(year_key)
+    save_json_file(_YEARLY_SUMMARY_FILE, state)
+    print(f"[yearly_summary] звіт надіслано за {year_key}")

@@ -913,6 +913,13 @@ def ask_ai(user_message: str, include_calendar: bool = True) -> str:
     except Exception as e:
         print(f"ask_ai auto-note error: {e}")
 
+    # Централізований лог усіх відповідей (для тижневих/місячних/річних звітів)
+    try:
+        import response_log as _rl_chat
+        _rl_chat.log_response("chat", user_message[:200], answer[:400])
+    except Exception as e:
+        print(f"ask_ai response_log error: {e}")
+
     return answer
 
 

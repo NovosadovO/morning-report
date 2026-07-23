@@ -1122,6 +1122,11 @@ def handle_email_callback(callback_query):
 
             api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
             send(chat_id, "📅 <b>Додано в Google Calendar:</b>\n" + "\n".join(added))
+            try:
+                import response_log as _rl_cal
+                _rl_cal.log_response("calendar_confirm", cal_data.get("subject", ""), "✅ Додано", {"events": [e.get("title") for e in cal_data.get("events", [])]})
+            except Exception:
+                pass
 
             # ── Зберігаємо дедлайни в GitHub для нагадування -24г ──────────
             try:
@@ -1213,6 +1218,11 @@ def handle_email_callback(callback_query):
 
             api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
             send(chat_id, f"📅 <b>Нагадування додано</b>\n{title}\n📆 {rem_data['date']}")
+            try:
+                import response_log as _rl_calrem
+                _rl_calrem.log_response("calendar_reminder_confirm", rem_data.get("subject", ""), "✅ Поставлено", {"date": rem_data.get("date")})
+            except Exception:
+                pass
         except Exception as e:
             print(f"calrem_add error: {e}")
             send(chat_id, f"⚠️ Помилка додавання нагадування: {e}")
@@ -1345,6 +1355,11 @@ def handle_email_callback(callback_query):
                     _bp2.record_email_replied(uid_str)
                 except Exception as _e_bp2:
                     print(f"behavior_patterns record_replied error: {_e_bp2}")
+                try:
+                    import response_log as _rl_email
+                    _rl_email.log_response("email_reply", draft_info.get("subject", ""), draft_info.get("body", "")[:300], {"to": draft_info.get("to", "")})
+                except Exception:
+                    pass
             else:
                 send(chat_id, f"⚠️ Помилка надсилання: {ok.get('error', 'невідома помилка')}")
         except Exception as e:
@@ -1370,6 +1385,11 @@ def handle_email_callback(callback_query):
             api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
             if added:
                 send(chat_id, f"🛒 <b>Додано в список покупок:</b>\n" + "\n".join(f"• {a}" for a in added))
+                try:
+                    import response_log as _rl_shop
+                    _rl_shop.log_response("shopping_confirm", shop_data.get("item", ""), "✅ Додано", {"items": added})
+                except Exception:
+                    pass
             else:
                 send(chat_id, "🛒 Вже було в списку покупок ✅")
         except Exception as e:
@@ -1407,6 +1427,13 @@ def handle_quick_reply_callback(callback_query):
             qr_id = data[len("qr_ok_"):]
             api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "👍 Записав, дякую!"})
             api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+            try:
+                import response_log as _rl_qr
+                store0 = _storage_qr2.load("quick_reply_store.json", default={})
+                entry0 = store0.get(qr_id, {})
+                _rl_qr.log_response("quick_reply_ok", entry0.get("text", "")[:200], "👍 Ок")
+            except Exception:
+                pass
 
         elif data.startswith("qr_more_"):
             qr_id = data[len("qr_more_"):]
@@ -1437,6 +1464,11 @@ def handle_quick_reply_callback(callback_query):
                     resp = json.loads(r.read())
                 more_text = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
                 send(chat_id, f"🔍 <b>Детальніше:</b>\n\n{more_text}")
+                try:
+                    import response_log as _rl_qr2
+                    _rl_qr2.log_response("quick_reply_more", entry.get("text", "")[:200], more_text[:300])
+                except Exception:
+                    pass
             except Exception as e:
                 send(chat_id, f"⚠️ Не вдалось розширити: {e}")
 
@@ -1448,6 +1480,11 @@ def handle_quick_reply_callback(callback_query):
             if entry:
                 import ai_notes as _ai_notes
                 _ai_notes.add_note(entry["text"][:300], source="qr_note")
+                try:
+                    import response_log as _rl_qr3
+                    _rl_qr3.log_response("quick_reply_note", entry.get("text", "")[:200], "📝 Занотовано")
+                except Exception:
+                    pass
             api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
     except Exception as e:
         print(f"[quick_reply] error: {e}", flush=True)
@@ -1501,6 +1538,11 @@ def handle_event_done_callback(callback_query):
     # evdone_yes_<key> або evdone_no_<key>
     parts  = data.split("_", 2)
     answer = parts[1] if len(parts) > 1 else "?"
+    try:
+        import response_log as _rl_evdone
+        _rl_evdone.log_response("event_done", orig[:200], answer)
+    except Exception:
+        pass
     key    = parts[2] if len(parts) > 2 else ""
 
     if answer == "yes":
@@ -1619,6 +1661,11 @@ def handle_habit_callback(callback_query):
 
     # ПЕРШИМ — підтверджуємо callback, щоб Telegram прибрав годинник
     api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Збережено ✓"})
+    try:
+        import response_log as _rl_habit
+        _rl_habit.log_response("habit_sleep", "Звичка/сон", data)
+    except Exception:
+        pass
 
     # Обробка сну
     if data.startswith("sleep_"):
@@ -3435,6 +3482,11 @@ def handle_command(chat_id, text):
                 if _entry_d.get("asked") and not _entry_d.get("answers"):
                     _mon_d.save_diary_answer(text)
                     send(chat_id, "📔 <b>Збережено в щоденник!</b> ✅\n<i>Дякую — аналіз побачиш щонеділі.</i>")
+                    try:
+                        import response_log as _rl_diary
+                        _rl_diary.log_response("diary", "3 питання про день", text)
+                    except Exception:
+                        pass
                     return
             except Exception as _e_d:
                 print(f"diary answer save error: {_e_d}")
@@ -3458,6 +3510,11 @@ def handle_command(chat_id, text):
                     _storage_mc2.save("monitor_micro_checkin_log.json", _mc_log)
                     _storage_mc2.save("monitor_micro_checkin_pending.json", {"awaiting": False})
                     send(chat_id, "💭 <b>Дякую, що поділився!</b> ✅")
+                    try:
+                        import response_log as _rl_mc
+                        _rl_mc.log_response("micro_checkin", _mc_pending.get("question", ""), text)
+                    except Exception:
+                        pass
                     return
             except Exception as _e_mc2:
                 print(f"micro_checkin answer save error: {_e_mc2}")
@@ -4246,6 +4303,11 @@ def main():
                                     f"{reactions.get(score, '')}\n\n"
                                     f"<i>Записано для тижневого аналізу</i>"
                                 )
+                                try:
+                                    import response_log as _rl_mood
+                                    _rl_mood.log_response("mood", "Оцінка настрою", label, {"score": score})
+                                except Exception:
+                                    pass
                             except Exception as _e:
                                 print(f"mood callback error: {_e}")
                         else:
