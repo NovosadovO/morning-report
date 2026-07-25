@@ -1,10 +1,4 @@
 {
-  "2026-07-21": {
-    "morning_greet": true,
-    "run_question": true,
-    "anomaly_no_run": true,
-    "midday_checkin": true
-  },
   "2026-07-22": {
     "run_question": true,
     "anomaly_no_run": true,
@@ -25,5 +19,8 @@
     "anomaly_no_run": true,
     "midday_checkin": true,
     "evening_checkin": true
+  },
+  "2026-07-25": {
+    "morning_greet": true
   }
 }
