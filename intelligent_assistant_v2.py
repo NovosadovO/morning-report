@@ -69,17 +69,17 @@ def get_coingecko_top20():
         query_string = "&".join(f"{k}={v}" for k, v in params.items())
         full_url = f"{url}?{query_string}"
         
-        req = urllib.request.Request(full_url, method="GET")
-        with urllib.request.urlopen(req, timeout=10) as response:
-            data = json.loads(response.read().decode('utf-8'))
-            return data
+        import sys as _s, os as _o
+        _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))
+        from monitor import fetch_json
+        return fetch_json(full_url) or []
     except Exception as e:
         print(f"❌ CoinGecko error: {e}")
         return []
 
 def get_user_watch_list():
     """Отримує монети що стежить Олег (BTC, ETH, AVAX, ONDO)"""
-    watch_ids = ["bitcoin", "ethereum", "avalanche-2", "ondo"]
+    watch_ids = ["bitcoin", "ethereum", "avalanche-2", "ondo-finance"]
     watch_symbols = ["BTC", "ETH", "AVAX", "ONDO"]
     
     try:
@@ -94,9 +94,11 @@ def get_user_watch_list():
         query_string = "&".join(f"{k}={v}" for k, v in params.items())
         full_url = f"{url}?{query_string}"
         
-        req = urllib.request.Request(full_url, method="GET")
-        with urllib.request.urlopen(req, timeout=10) as response:
-            data = json.loads(response.read().decode('utf-8'))
+        import sys as _s, os as _o
+        _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))
+        from monitor import fetch_json
+        data = fetch_json(full_url) or []
+        if True:
             result = {}
             for coin in data:
                 sym = coin.get('symbol', '').upper()

@@ -90,13 +90,22 @@ def save_positions(positions):
 
 
 def get_prices_coingecko(coin_ids: list) -> dict:
-    """Отримує ціни з CoinGecko для списку id."""
+    """Отримує ціни з CoinGecko через спільний кеш monitor.fetch_json
+    (throttle + 429-cooldown + stale-fallback), щоб не ловити rate limit."""
     try:
         ids_str = ",".join(coin_ids)
         url = f"https://api.coingecko.com/api/v3/simple/price?ids={ids_str}&vs_currencies=usd&include_24hr_change=true"
-        r = requests.get(url, timeout=15)
-        r.raise_for_status()
-        return r.json()
+        try:
+            import sys as _s
+            import os as _o
+            _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))
+            from monitor import fetch_json
+            data = fetch_json(url)
+            return data or {}
+        except ImportError:
+            r = requests.get(url, timeout=15)
+            r.raise_for_status()
+            return r.json()
     except Exception as e:
         print(f"CoinGecko error: {e}")
         return {}
