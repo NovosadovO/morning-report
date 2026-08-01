@@ -683,5 +683,42 @@
         ]
       ]
     }
+  },
+  "2100366814_58483": {
+    "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від The Economist Today 🗑(схоже на розсилку)\n📋 Тема: «San Francisco makes a comeback»\n\nЦей лист від The Economist Today є щоденною розсилкою, що містить підбірку найкращих статей. Тема листа - \"San Francisco makes a comeback\". Лист датований 1 серпня 2026 року.\n\n🤖 Це інформаційний лист, який не вимагає негайної реакції.\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ Відповідь",
+            "callback_data": "email_reply_76817"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_76817"
+          }
+        ],
+        [
+          {
+            "text": "⭐ Важливий",
+            "callback_data": "email_star_76817"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_76817"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_76817"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_76817"
+          }
+        ]
+      ]
+    }
   }
 }
