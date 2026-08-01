@@ -198,21 +198,27 @@ def _get_live_health() -> dict:
     except Exception as e:
         _log(f"storage.load_weight error: {e}")
 
-    # 2) Steps/sleep — canonical: storage.load_health() (GitHub data branch)
+    # 2) Steps/sleep — canonical: storage.load_health() тепер сам мерджить
+    # свіжі qwatch_data.json поверх застарілого health.json (див. storage.py).
     try:
         import sys as _sys_h2
         _sys_h2.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         import storage as _storage_h2
         entries = _storage_h2.load_health()
-        for day in [today_str, yesterday]:
-            if day in entries:
-                e = entries[day]
-                if not result.get("steps"):
-                    result["steps"] = e.get("steps") or e.get("steps_count")
-                if not result.get("sleep"):
-                    result["sleep"] = e.get("sleep_hours") or e.get("sleep")
+        entry_days = sorted(entries.keys()) if isinstance(entries, dict) else []
+        candidates = [d for d in [today_str, yesterday] if d in entries] or entry_days[-1:]
+        for day in candidates:
+            e = entries.get(day) or {}
+            if not result.get("steps"):
+                result["steps"] = e.get("steps") or e.get("steps_count")
+            if not result.get("sleep"):
+                result["sleep"] = e.get("sleep_hours") or e.get("sleep")
+            if not result.get("weight") and e.get("weight_kg"):
+                result["weight"] = e["weight_kg"]
+                result["weight_date"] = day
+            if result.get("steps") or result.get("sleep"):
                 result["health_date"] = day
-                break
+            break
     except Exception as e:
         _log(f"storage.load_health error: {e}")
 

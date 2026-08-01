@@ -192,11 +192,37 @@ def save_weight(data):
     return _save_github("weight_data.json", data)
 
 def load_health():
-    """Завантажує щоденні health дані. Структура: {"2026-04-29": {steps, sleep_hours, ...}}"""
-    data = _load_github("health.json")
-    if not data:
-        return {}
-    return data
+    """
+    Завантажує щоденні health дані. Структура: {"2026-04-29": {steps, sleep_hours, ...}}
+
+    Канонічне джерело кроків/сну — qwatch_data.json (пише годинник, оновлюється
+    щодня). health.json — старий Apple Health формат, востаннє оновлювався
+    2026-05-11 і більше не пишеться, тому раніше steps/sleep завжди виходили
+    None у звітах/AI-контекстах. Тут мерджимо qwatch поверх health.json
+    (qwatch виграє при перетині дат), конвертуючи поля під очікувану схему
+    (sleep_total_min -> sleep_hours, weight_kg лишається як є).
+    """
+    legacy = _load_github("health.json") or {}
+    qwatch = _load_github("qwatch_data.json") or {}
+    merged = dict(legacy)
+    for day, e in qwatch.items():
+        if not isinstance(e, dict):
+            continue
+        conv = dict(merged.get(day) or {})
+        if e.get("steps"):
+            conv["steps"] = e["steps"]
+        if e.get("sleep_total_min"):
+            conv["sleep_hours"] = round(e["sleep_total_min"] / 60, 1)
+        if e.get("weight_kg"):
+            conv["weight_kg"] = e["weight_kg"]
+        if e.get("hr_avg"):
+            conv["hr_avg"] = e["hr_avg"]
+        if e.get("hrv"):
+            conv["hrv"] = e["hrv"]
+        if e.get("spo2"):
+            conv["spo2"] = e["spo2"]
+        merged[day] = conv
+    return merged
 
 def save_health(data):
     """Зберігає щоденні health дані."""

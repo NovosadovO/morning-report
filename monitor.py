@@ -1440,6 +1440,29 @@ _REPORT_AI_DEADLINE = 0.0  # monotonic-час, до якого можна роб
 # Моделі для fallback на 429: коли основна вичерпала квоту — пробуємо наступну (інший quota-pool)
 _GEM_MODELS = ["gemini-2.5-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite"]
 
+# "Prepayment credits depleted" — це НЕ per-model rate-limit, а вичерпаний
+# баланс акаунта: усі моделі впадуть з тим самим 429, тому ретраї/model-switch
+# лише марно тратять час і забивають логи. Детектуємо окремо і фейлимось
+# миттєво + шлемо ОДИН алерт у Telegram з cooldown 6 год, щоб не заспамити.
+_GEM_BILLING_DEAD_UNTIL = [0.0]      # monotonic ts, до якого вважаємо білінг мертвим (щоб не бити API дарма)
+_GEM_BILLING_ALERT_SENT_AT = [0.0]   # monotonic ts останнього алерту
+_GEM_BILLING_ALERT_COOLDOWN = 6 * 3600
+
+def _gem_billing_dead() -> bool:
+    import time as _t
+    return _t.monotonic() < _GEM_BILLING_DEAD_UNTIL[0]
+
+def _gem_handle_billing_depleted():
+    """Позначає білінг мертвим на 30 хв і шле один алерт (не частіше ніж раз на 6 год)."""
+    import time as _t
+    _GEM_BILLING_DEAD_UNTIL[0] = _t.monotonic() + 1800
+    if _t.monotonic() - _GEM_BILLING_ALERT_SENT_AT[0] >= _GEM_BILLING_ALERT_COOLDOWN:
+        _GEM_BILLING_ALERT_SENT_AT[0] = _t.monotonic()
+        try:
+            send_telegram("⚠️ <b>Gemini: закінчились prepayment credits.</b> Весь AI-аналіз вимкнено, бот працює на локальних fallback'ах без AI-інтерпретації. Поповни баланс на https://ai.studio → Billing.")
+        except Exception:
+            pass
+
 def _gem_swap_model(url, model):
     """Підставляє іншу модель у Gemini-URL (.../models/MODEL:generateContent?...)."""
     import re as _re
@@ -1462,6 +1485,8 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     Повертає dict (parsed JSON) або кидає виняток.
     """
     import time as _t
+    if _gem_billing_dead():
+        raise RuntimeError(f"[{tag}] Gemini billing depleted (cooldown active) — skip call")
     # визначаємо порядок моделей: поточна (з url) перша, далі решта зі списку
     import re as _re0
     _cur_m = None
@@ -1504,10 +1529,21 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
                     _retry_delay = 0
                     try:
                         _err_body = e.read().decode("utf-8", "ignore")
+                        if "prepayment credits are depleted" in _err_body.lower() or "credits are depleted" in _err_body.lower():
+                            # Білінг мертвий — не per-model, ретраї/switch безглузді.
+                            _gem_handle_billing_depleted()
+                            try:
+                                import self_diagnostics as _sd_bill
+                                _sd_bill.record_gemini_result(False)
+                            except Exception:
+                                pass
+                            raise RuntimeError(f"[{tag}] Gemini billing depleted") from e
                         import re as _re
                         _m = _re.search(r'"retryDelay"\s*:\s*"(\d+)s"', _err_body)
                         if _m:
                             _retry_delay = int(_m.group(1))
+                    except RuntimeError:
+                        raise
                     except Exception:
                         pass
                     # КЛЮЧОВЕ: якщо Gemini просить чекати ДОВГО (>25с) — НЕ чекаємо,

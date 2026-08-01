@@ -2522,6 +2522,13 @@ def handle_command(chat_id, text):
             # 1. GEMINI_API_KEY
             gk = _do.environ.get("GEMINI_API_KEY", "")
             lines.append(f"GEMINI_API_KEY: {'✅ є (' + str(len(gk)) + ' симв)' if gk else '❌ НЕМАЄ'}")
+            # 1b. Gemini billing status (prepayment credits)
+            try:
+                import monitor as _mon_diag
+                _billing_dead = _mon_diag._gem_billing_dead()
+                lines.append(f"Gemini billing: {'❌ DEPLETED (кредити закінчились, чекаємо поповнення)' if _billing_dead else '✅ OK'}")
+            except Exception as _dbe:
+                lines.append(f"Gemini billing: ⚠️ невідомо ({str(_dbe)[:100]})")
             # 2. kerykeion
             try:
                 import astro as _da

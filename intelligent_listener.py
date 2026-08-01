@@ -346,8 +346,9 @@ class IntelligentListener:
                 now = time.time()
                 triggers = []
                 
-                # 1. EMAIL (кожні 30 сек для DEBUG)
-                if now - self.last_email_check > 30:
+                # 1. EMAIL (раз на 5 хв — раніше було 30с "для DEBUG" і лишилось у проді,
+                # через що Gmail API дьоргався сотні разів/год і кожен VIP-хіт тягнув Gemini)
+                if now - self.last_email_check > 300:
                     self._log("[EMAIL CHECK]")
                     vip_emails = self._check_vip_emails()
                     if vip_emails:
@@ -369,8 +370,9 @@ class IntelligentListener:
                         self._log(f"TRIGGER: event_soon ({len(events)} подій)")
                     self.last_calendar_check = now
                 
-                # 3. CRYPTO (кожні 35 сек для DEBUG)
-                if now - self.last_crypto_check > 35:
+                # 3. CRYPTO (раз на 10 хв — узгоджено з TTL кешу CoinGecko,
+                # раніше 35с "для DEBUG" лишилось у проді й дьоргало API дарма)
+                if now - self.last_crypto_check > 600:
                     self._log("[CRYPTO CHECK]")
                     moves = self._check_crypto_moves()
                     if moves:
