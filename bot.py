@@ -1302,8 +1302,24 @@ def handle_email_callback(callback_query):
                 except Exception as _ge:
                     print(f"email_reply gemini error: {_ge}", flush=True)
                 if not draft:
-                    send(chat_id, "⚠️ AI зараз перевантажений (ліміт запитів) і не зміг згенерувати draft. Спробуй ще раз через хвилину.")
-                    return
+                    # AI недоступний (ліміт/вичерпані кредити) — НЕ лишаємо кнопку мертвою.
+                    # Будуємо локальний чернетковий шаблон мовою листа, показуємо ті самі
+                    # кнопки [Надіслати]/[Скасувати] і даємо дописати свій текст.
+                    _lang_src = f"{subject} {body}".lower()
+                    if any(_w in _lang_src for _w in ("ďakuj", "prosím", "dobrý deň", "faktúr", "objednáv", "zásiel")):
+                        draft = ("Dobrý deň,\n\nďakujem za Vašu správu. Prezrel som si ju a ozvem sa Vám "
+                                 "s podrobnou odpoveďou čo najskôr.\n\nS pozdravom,\nOleh Novosadov")
+                    elif any(_w in _lang_src for _w in ("thank", "please", "hello", "regards", "invoice", "order")):
+                        draft = ("Hello,\n\nThank you for your message. I have received it and will get back to you "
+                                 "with a detailed reply shortly.\n\nBest regards,\nOleh Novosadov")
+                    else:
+                        draft = ("Доброго дня,\n\nдякую за ваш лист. Ознайомився — повернуся з детальною "
+                                 "відповіддю найближчим часом.\n\nЗ повагою,\nОлег Новосадов")
+                    _ai_warn = ("⚠️ <b>AI зараз недоступний</b> (вичерпані кредити Gemini), тому це "
+                                "<b>базовий шаблон</b>, а не персональна відповідь.\n"
+                                "Можеш надіслати як є, або напиши мені свій текст — я відправлю його.\n\n")
+                else:
+                    _ai_warn = ""
 
                 # Зберігаємо draft + метадані для подальшого надсилання
                 import re as _re
@@ -1312,6 +1328,7 @@ def handle_email_callback(callback_query):
                 _DRAFT_STORE[uid_str] = {"to": to_addr, "subject": f"Re: {subject}", "body": draft}
 
                 send_with_keyboard(chat_id,
+                    f"{_ai_warn}"
                     f"🤖 <b>AI підготував варіант відповіді</b> — перевір і відредагуй за потреби 👇\n\n"
                     f"┌─────────────────────\n"
                     f"│ 📤 <b>Кому:</b> {to_addr[:60]}\n"
@@ -1453,15 +1470,16 @@ def handle_quick_reply_callback(callback_query):
                 "4-6 речень, українською, без вступних фраз типу 'звісно, ось деталі'."
             )
             try:
-                import urllib.request as _ur_qr
+                # Через централізований _gem_post: retry + fallback-моделі + детект
+                # вичерпаних кредитів. Раніше тут був прямий urllib-виклик без retry,
+                # тому при 429 кнопка просто вивалювала "HTTP Error 429" і виглядала мертвою.
+                from monitor import _gem_post as _gem_post_qr
                 req_body = json.dumps({
                     "contents": [{"parts": [{"text": prompt}]}],
                     "generationConfig": {"maxOutputTokens": 500, "temperature": 0.5, "thinkingConfig": {"thinkingBudget": 0}}
                 }).encode()
                 url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}"
-                req = _ur_qr.Request(url, data=req_body, headers={"Content-Type": "application/json"})
-                with _ur_qr.urlopen(req, timeout=20) as r:
-                    resp = json.loads(r.read())
+                resp = _gem_post_qr(url, req_body, timeout=25, tag="qr_more", max_retries=2)
                 more_text = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
                 send(chat_id, f"🔍 <b>Детальніше:</b>\n\n{more_text}")
                 try:
@@ -1470,7 +1488,13 @@ def handle_quick_reply_callback(callback_query):
                 except Exception:
                     pass
             except Exception as e:
-                send(chat_id, f"⚠️ Не вдалось розширити: {e}")
+                # Не лишаємо кнопку без відповіді — показуємо оригінал і чесно кажемо чому без AI
+                _reason = ("вичерпані кредити Gemini" if "billing depleted" in str(e)
+                           else f"AI недоступний ({str(e)[:80]})")
+                send(chat_id,
+                     f"⚠️ Не можу розширити — {_reason}.\n\n"
+                     f"📄 <b>Ось оригінальне повідомлення повністю:</b>\n\n{entry['text'][:3000]}\n\n"
+                     f"<i>Як тільки AI запрацює — натисни кнопку ще раз, дам розгорнутий розбір.</i>")
 
         elif data.startswith("qr_note_"):
             qr_id = data[len("qr_note_"):]
@@ -1659,7 +1683,12 @@ def handle_habit_callback(callback_query):
     chat_id = callback_query["message"]["chat"]["id"]
     cb_id   = callback_query["id"]
 
-    # ПЕРШИМ — підтверджуємо callback, щоб Telegram прибрав годинник
+    # Відповідаємо Telegram ТІЛЬКИ якщо це справді наша кнопка (звичка/сон).
+    # Раніше відповідь "Збережено ✓" йшла беззастережно навіть для чужих/невідомих
+    # callback-ів — Олег бачив підтвердження, хоча нічого не зберігалось.
+    if not (data.startswith("sleep_") or data.startswith("habit_")):
+        return False
+
     api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Збережено ✓"})
     try:
         import response_log as _rl_habit
@@ -3806,19 +3835,22 @@ def _send_email_with_reply_buttons(emails_data: list):
             keyboard = []
             if templates:
                 for i, template in enumerate(templates[:3]):
-                    reply_text = template.get('reply', '')[50:50]  # 50 символів
+                    # Раніше було [50:50] — завжди порожній рядок, тому підпис кнопки
+                    # був безлике "Reply 1". Тепер показуємо початок самої відповіді.
+                    reply_text = (template.get('reply', '') or '').strip().replace("\n", " ")[:40]
+                    _label = f"✍️ {reply_text}…" if reply_text else f"✍️ Варіант {i+1}"
                     keyboard.append([{
-                        "text": f"Reply {i+1}",
+                        "text": _label[:64],
                         "callback_data": f"reply_email_{msg_id}_{i}"
                     }])
             else:
                 keyboard.append([{
-                    "text": "✏️ Manual Reply",
+                    "text": "🤖✍️ AI-Draft відповіді",
                     "callback_data": f"reply_manual_{msg_id}"
                 }])
-            
+
             keyboard.append([{
-                "text": "❌ Dismiss",
+                "text": "❌ Прибрати",
                 "callback_data": f"dismiss_email_{msg_id}"
             }])
             
@@ -4051,32 +4083,21 @@ def main():
                             except Exception as _e:
                                 print(f"cal_all_done_today state error: {_e}")
 
-                        elif data.startswith("reply_email_"):
-                            # PHASE 3: Email reply button clicked
-                            # Format: reply_email_{msg_id}_{template_idx}
-                            parts = data.split("_")
-                            if len(parts) >= 4:
-                                msg_id = parts[2]
-                                template_idx = int(parts[3]) if parts[3].isdigit() else 0
-                                
-                                api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "✍️ Підготовляю...", "show_alert": False})
-                                
-                                try:
-                                    from monitor import _generate_email_reply_templates
-                                    import os as _os
-                                    
-                                    # TODO: Retrieve email text from cache/storage using msg_id
-                                    # For now, show generic reply prompt
-                                    gemini_key = _os.getenv("GEMINI_API_KEY", "")
-                                    
-                                    reply_msg = f"📧 <b>Готуюся до відповіді на лист...</b>\n\n"
-                                    reply_msg += "Виберіть варіант або напишіть свій:\n"
-                                    reply_msg += "[У розробці — reply templates integration]"
-                                    
-                                    send(chat_id, reply_msg)
-                                    
-                                except Exception as _e:
-                                    send(chat_id, f"⚠️ Помилка: {_e}")
+                        elif data.startswith("reply_email_") or data.startswith("reply_manual_"):
+                            # Раніше reply_email_ був заглушкою ("[У розробці]"), а
+                            # reply_manual_ взагалі не був змаршрутизований — обидві кнопки
+                            # були мертві. Тепер обидві ведуть у РОБОЧИЙ флоу email_reply_
+                            # (IMAP → draft → кнопки Надіслати/Скасувати).
+                            if data.startswith("reply_manual_"):
+                                _uid_rr = data[len("reply_manual_"):]
+                            else:
+                                # reply_email_{msg_id}_{idx} — відрізаємо хвостовий індекс
+                                _rest_rr = data[len("reply_email_"):]
+                                _uid_rr = _rest_rr.rsplit("_", 1)[0] if "_" in _rest_rr else _rest_rr
+                            _cb_proxy = dict(cb)
+                            _cb_proxy["data"] = f"email_reply_{_uid_rr}"
+                            handle_email_callback(_cb_proxy)
+
                         
                         elif data.startswith("dismiss_email_"):
                             # Dismiss email (remove reply buttons)
@@ -4318,7 +4339,25 @@ def main():
                             except Exception as _e:
                                 print(f"mood callback error: {_e}")
                         else:
-                            handle_habit_callback(cb)
+                            # handle_habit_callback повертає False якщо це НЕ звичка/сон.
+                            # Раніше такі кнопки мовчки вмирали (і навіть відповідали
+                            # "Збережено ✓", хоча нічого не зберігали) — тепер даємо
+                            # явний фідбек і пишемо в лог, щоб більше не було "мертвих" кнопок.
+                            _handled = False
+                            try:
+                                _handled = handle_habit_callback(cb)
+                            except Exception as _hbe:
+                                print(f"[CB] habit handler error for data={data}: {_hbe}", flush=True)
+                            if not _handled:
+                                print(f"[CB] ⚠️ UNHANDLED callback data={data}", flush=True)
+                                try:
+                                    api("answerCallbackQuery", {
+                                        "callback_query_id": cb["id"],
+                                        "text": "⚠️ Ця кнопка застаріла (повідомлення старе). Виклич команду заново.",
+                                        "show_alert": True
+                                    })
+                                except Exception:
+                                    pass
                     continue
 
                 msg = update.get("message") or update.get("edited_message")
