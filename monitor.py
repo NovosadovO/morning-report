@@ -493,8 +493,34 @@ def _send_photo_bytes(photo_bytes: bytes, caption: str = "") -> bool:
         return False
 
 
-def fetch_json(url, retries=1):
-    """Fetch JSON с timeout 10s. БЕЗ retry loop з sleep (блокує report). На 429: return None."""
+# ── Глобальний throttle + 429-cooldown для rate-limited API (CoinGecko free: 30 req/хв) ──
+_RL_HOSTS = ("api.coingecko.com", "api.open-meteo.com", "api.alternative.me")
+_RL_LAST_CALL: dict = {}
+_RL_MIN_GAP = 2.5          # мін. пауза між запитами до одного хоста
+_RL_COOLDOWN_UNTIL: dict = {}
+_RL_COOLDOWN_SEC = 120     # після 429 — 2 хв не турбувати хост, віддавати кеш
+
+
+def _rl_host(url: str) -> str:
+    for h in _RL_HOSTS:
+        if h in url:
+            return h
+    return ""
+
+
+def _fetch_json_raw(url, retries=1):
+    """Реальний HTTP-запит. Timeout 10s, без retry-sleep. На 429: return None."""
+    import time as _t_rl
+    host = _rl_host(url)
+    if host:
+        until = _RL_COOLDOWN_UNTIL.get(host, 0)
+        if _t_rl.time() < until:
+            print(f"⏸ {host} rate-limit cooldown ще {int(until - _t_rl.time())}с — запит пропущено")
+            return None
+        gap = _t_rl.time() - _RL_LAST_CALL.get(host, 0)
+        if gap < _RL_MIN_GAP:
+            _t_rl.sleep(_RL_MIN_GAP - gap)
+        _RL_LAST_CALL[host] = _t_rl.time()
     try:
         if _HAS_REQUESTS:
             r = _requests.get(url, headers={"User-Agent": "monitor/1.0"}, timeout=10)
@@ -507,10 +533,20 @@ def fetch_json(url, retries=1):
     except Exception as e:
         is_429 = "429" in str(e)
         if is_429:
-            print(f"⚠️ fetch_json 429 rate limit [{url[:50]}] — skipping (no retry sleep)")
+            if host:
+                _RL_COOLDOWN_UNTIL[host] = _t_rl.time() + _RL_COOLDOWN_SEC
+            print(f"⚠️ fetch_json 429 rate limit [{url[:50]}] — cooldown {_RL_COOLDOWN_SEC}с")
         else:
             print(f"fetch_json error [{url[:50]}]: {e}")
         return None
+
+
+def fetch_json(url, retries=1):
+    """Публічний вхід. Запити до rate-limited хостів автоматично йдуть через TTL-кеш,
+    щоб десятки незалежних модулів не робили дублюючих викликів."""
+    if _rl_host(url):
+        return fetch_json_cached(url)
+    return _fetch_json_raw(url, retries)
 
 
 # СПІЛЬНИЙ TTL-кеш для CoinGecko — ~25 місць у коді (monitor.py, message_generator.py,
@@ -519,7 +555,7 @@ def fetch_json(url, retries=1):
 # особливо intelligent_listener який перевіряє крипто-рух кожні ~35с.
 # Кеш на 60с: усі виклики в межах цього вікна з ОДНАКОВИМ url отримують один результат.
 _COINGECKO_CACHE: dict = {}
-_COINGECKO_TTL = 60
+_COINGECKO_TTL = 180
 
 def fetch_json_cached(url, ttl=_COINGECKO_TTL):
     """Як fetch_json, але з TTL-кешем по url — для CoinGecko-подібних API з жорстким
@@ -530,7 +566,7 @@ def fetch_json_cached(url, ttl=_COINGECKO_TTL):
     entry = _COINGECKO_CACHE.get(url)
     if entry and (now_ts - entry["ts"]) < ttl:
         return entry["data"]
-    data = fetch_json(url)
+    data = _fetch_json_raw(url)
     if data is not None:
         _COINGECKO_CACHE[url] = {"data": data, "ts": now_ts}
         return data
