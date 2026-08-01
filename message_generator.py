@@ -6,6 +6,7 @@ Anti-repeat: tracks last 5 topics, forbids repeating same angle.
 
 import os
 import json
+import re
 import time
 import imaplib
 import email as email_lib
@@ -949,9 +950,74 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
     return message
 
 # ─── Telegram sender ─────────────────────────────────────────────────────────
+_ALLOWED_TAGS = ("b", "strong", "i", "em", "u", "s", "code", "pre", "a", "blockquote")
+
+
+def _sanitize_html(text: str) -> str:
+    """Прибирає markdown-артефакти та невалідні для Telegram HTML-теги."""
+    if not text:
+        return text
+    text = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", text, flags=re.S)
+    text = re.sub(r"(?<![\w*])\*(?!\s)(.+?)(?<!\s)\*(?![\w*])", r"<i>\1</i>", text, flags=re.S)
+
+    def _keep(m):
+        name = re.sub(r"[^a-zA-Z]", "", m.group(1).split()[0] if m.group(1).strip() else "")
+        return m.group(0) if name.lower() in _ALLOWED_TAGS else ""
+
+    text = re.sub(r"<\s*/?\s*([^<>]*)>", _keep, text)
+    text = re.sub(r"<(?![/a-zA-Z])", "&lt;", text)
+    for tag in ("b", "i", "u", "s", "code", "pre"):
+        opens = len(re.findall(rf"<{tag}>", text, flags=re.I))
+        closes = len(re.findall(rf"</{tag}>", text, flags=re.I))
+        if opens > closes:
+            text += f"</{tag}>" * (opens - closes)
+        elif closes > opens:
+            text = re.sub(rf"</{tag}>", "", text, count=closes - opens, flags=re.I)
+    return text
+
+
+def _chunk_text(text: str, limit: int = 3800):
+    """Ріже текст на частини по межах абзаців/рядків."""
+    parts, cur = [], ""
+    for block in text.split("\n"):
+        if len(cur) + len(block) + 1 > limit:
+            if cur:
+                parts.append(cur)
+                cur = ""
+            while len(block) > limit:
+                parts.append(block[:limit])
+                block = block[limit:]
+        cur += (("\n" if cur else "") + block)
+    if cur:
+        parts.append(cur)
+    return parts or [text[:limit]]
+
+
+def _tg_api(method: str, body: dict):
+    """POST у Telegram API. Повертає (ok, payload_or_error_text)."""
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/{method}"
+    req = urllib.request.Request(
+        url, data=json.dumps(body).encode(),
+        headers={"Content-Type": "application/json"}, method="POST"
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            r = json.loads(resp.read())
+            return bool(r.get("ok")), r
+    except urllib.error.HTTPError as e:
+        try:
+            err = e.read().decode()[:400]
+        except Exception:
+            err = str(e)
+        return False, err
+    except Exception as e:
+        return False, str(e)
+
+
 def _send_to_telegram(text: str) -> bool:
     """Надсилає AI-повідомлення + швидкі кнопки-відповіді (👍 Ок / ❓ Розкажи більше /
-    📝 Занотувати) під кожним. Кнопки дають миттєвий фідбек без набору тексту."""
+    📝 Занотувати) під останньою частиною. Довгі тексти ріже на частини,
+    при 400 від HTML — повторює без parse_mode."""
     if not text or not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
         return False
     import uuid as _uuid_qr
@@ -963,35 +1029,47 @@ def _send_to_telegram(text: str) -> bool:
             {"text": "📝 Занотувати", "callback_data": f"qr_note_{qr_id}"},
         ]]
     }
-    for attempt in range(3):
+    clean = _sanitize_html(text)
+    chunks = _chunk_text(clean)
+    _log(f"Sending {len(text)} chars in {len(chunks)} chunk(s)")
+
+    sent_any = False
+    for idx, chunk in enumerate(chunks):
+        last = (idx == len(chunks) - 1)
+        body = {"chat_id": TELEGRAM_CHAT_ID, "text": chunk, "parse_mode": "HTML",
+                "disable_web_page_preview": True}
+        if last:
+            body["reply_markup"] = keyboard
+        ok = False
+        for attempt in range(3):
+            ok, res = _tg_api("sendMessage", body)
+            if ok:
+                break
+            _log(f"TG send chunk{idx+1} try{attempt+1} failed: {str(res)[:200]}")
+            if "can't parse entities" in str(res) or "parse" in str(res).lower():
+                # HTML зламаний — шлемо як звичайний текст
+                body.pop("parse_mode", None)
+                body["text"] = re.sub(r"<[^>]+>", "", chunk)
+            time.sleep(1 + attempt * 2)
+        if ok:
+            sent_any = True
+            _log(f"✅ Sent chunk {idx+1}/{len(chunks)} ({len(chunk)} chars)")
+        else:
+            _log(f"❌ Chunk {idx+1}/{len(chunks)} FAILED permanently")
+
+    if sent_any:
         try:
-            url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-            body = {"chat_id": TELEGRAM_CHAT_ID, "text": text, "parse_mode": "HTML", "reply_markup": keyboard}
-            req = urllib.request.Request(
-                url, data=json.dumps(body).encode(),
-                headers={"Content-Type": "application/json"}, method="POST"
-            )
-            with urllib.request.urlopen(req, timeout=12) as resp:
-                r = json.loads(resp.read())
-                if r.get("ok"):
-                    _log(f"✅ Sent {len(text)} chars")
-                    # Зберігаємо повний текст під qr_id — треба для "Розкажи більше" і "Занотувати"
-                    try:
-                        import sys as _sys_qr
-                        _sys_qr.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-                        import storage as _storage_qr
-                        _storage_qr.update_key("quick_reply_store.json", qr_id, {
-                            "text": text[:2000],
-                            "ts": datetime.now(tz=_TZ).isoformat(),
-                        })
-                    except Exception as _e_qr:
-                        _log(f"quick_reply store error: {_e_qr}")
-                    return True
-                _log(f"TG error: {r.get('description','?')}")
-        except Exception as e:
-            _log(f"TG send {attempt+1}: {e}")
-            time.sleep(2 + attempt * 2)
-    return False
+            import sys as _sys_qr
+            _sys_qr.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            import storage as _storage_qr
+            _storage_qr.update_key("quick_reply_store.json", qr_id, {
+                "text": text[:2000],
+                "ts": datetime.now(tz=_TZ).isoformat(),
+            })
+        except Exception as _e_qr:
+            _log(f"quick_reply store error: {_e_qr}")
+    return sent_any
+
 
 # ─── Main API ─────────────────────────────────────────────────────────────────
 def process_trigger(trigger_type: str, trigger_data, location: str = "doma", idle_hours: float = 0) -> bool:

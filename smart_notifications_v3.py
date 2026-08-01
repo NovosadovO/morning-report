@@ -47,70 +47,20 @@ def _log(msg):
     print(f"[SMART_NOTIF {ts}] {msg}")
 
 def _send_to_telegram(text):
-    """Надішліть повідомлення до Telegram + швидкі кнопки-відповіді.
-
-    Раніше 4 щоденні звіти (morning/lunch/afternoon/evening) йшли ВЗАГАЛІ БЕЗ кнопок —
-    тому у частини сповіщень 'клавіші не працювали' просто через їх відсутність.
-    Тепер під кожним ті самі робочі кнопки, що й у message_generator
-    (👍 Ок / ❓ Розкажи більше / 📝 Занотувати) з тим самим quick_reply_store.
-    """
+    """Надсилає повідомлення в Telegram через єдиний надійний шлях
+    (message_generator._send_to_telegram): санітизація HTML, розбиття довгих
+    текстів на частини, ретраї, quick-reply кнопки + quick_reply_store."""
     if not text:
         return False
-    
-    TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "")
-    if not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
-        _log("Telegram credentials missing")
-        return False
-
-    import uuid as _uuid_qr
-    qr_id = _uuid_qr.uuid4().hex[:10]
-    keyboard = {
-        "inline_keyboard": [[
-            {"text": "👍 Ок", "callback_data": f"qr_ok_{qr_id}"},
-            {"text": "❓ Розкажи більше", "callback_data": f"qr_more_{qr_id}"},
-            {"text": "📝 Занотувати", "callback_data": f"qr_note_{qr_id}"},
-        ]]
-    }
-
     try:
-        url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-        body = {
-            "chat_id": TELEGRAM_CHAT_ID,
-            "text": text,
-            "parse_mode": "HTML",
-            "reply_markup": keyboard
-        }
-        
-        req = urllib.request.Request(
-            url,
-            data=json.dumps(body).encode(),
-            headers={"Content-Type": "application/json"},
-            method="POST"
-        )
-        
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            result = json.loads(resp.read())
-            if result.get("ok"):
-                _log(f"Sent {len(text)} chars to Telegram")
-                # Зберігаємо текст під qr_id — інакше кнопки "Розкажи більше"/"Занотувати"
-                # не знайдуть оригінал і скажуть "застаріло".
-                try:
-                    import sys as _sys_qr
-                    _sys_qr.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-                    import storage as _storage_qr
-                    _storage_qr.update_key("quick_reply_store.json", qr_id, {
-                        "text": text[:2000],
-                        "ts": datetime.now(tz=_TZ).isoformat(),
-                    })
-                except Exception as _e_qr:
-                    _log(f"quick_reply store error: {_e_qr}")
-                return True
-            else:
-                _log(f"Telegram error: {result.get('description', 'unknown')}")
-                return False
+        import sys as _sys_mg
+        _sys_mg.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import message_generator as _mg
+        return _mg._send_to_telegram(text)
     except Exception as e:
-        _log(f"Telegram send error: {e}")
+        _log(f"Telegram send error (delegate): {e}")
         return False
+
 
 def _load_json(path):
     """Завантажити JSON файл"""
