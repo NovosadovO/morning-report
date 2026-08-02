@@ -423,7 +423,15 @@ def api(method, data=None):
             return resp
     except urllib.error.HTTPError as e:
         body = e.read().decode()
-        print(f"[API] {method} HTTP {e.code}: {body[:300]}")
+        # Повторний answerCallbackQuery після миттєвого ack — очікувано і не є помилкою.
+        _benign = (
+            method == "answerCallbackQuery" and "query is too old" in body
+        ) or (
+            method in ("editMessageReplyMarkup", "editMessageText")
+            and "message is not modified" in body
+        )
+        if not _benign:
+            print(f"[API] {method} HTTP {e.code}: {body[:300]}")
         # 409 Conflict — інший інстанс бота polling-ить. Прокидаємо сигнал нагору.
         if e.code == 409:
             return {"ok": False, "error_code": 409, "description": body[:200]}
@@ -711,6 +719,28 @@ def get_meds_report(period="week"):
     return "\n".join(lines)
 
 
+def cb_notify(cb_id, chat_id, text, alert=False):
+    """Показує користувачу результат натискання кнопки.
+    Callback вже підтверджено миттєвим ack у _dispatch_callback_async, тому
+    повторний toast Telegram відкидає ("query is too old") — важливі
+    повідомлення (помилки, «не знайдено») дублюємо звичайним message,
+    щоб жодна кнопка не виглядала «мертвою».
+    """
+    ok = False
+    try:
+        r = api("answerCallbackQuery", {
+            "callback_query_id": cb_id, "text": text[:190], "show_alert": alert})
+        ok = bool(r and r.get("ok"))
+    except Exception:
+        ok = False
+    if not ok:
+        try:
+            send(chat_id, text)
+        except Exception as _e:
+            print(f"cb_notify fallback failed: {_e}", flush=True)
+    return ok
+
+
 def handle_email_callback(callback_query):
     """Обробляє кнопки листів: Описати / Видалити / Залишити / В календар / Важливий / Відповідь."""
     import json as _json
@@ -765,7 +795,7 @@ def handle_email_callback(callback_query):
                 cache = _storage.load("email_body_cache.json") or {}
                 entry = cache.get(_uid)
                 if not entry:
-                    api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"⚠️ Лист не знайдено"})
+                    cb_notify(cb_id, chat_id, "⚠️ Лист не знайдено в поштовій скриньці — можливо його вже видалено.")
                     return
 
             subject = entry.get("subject", "(без теми)")
@@ -876,7 +906,7 @@ def handle_email_callback(callback_query):
                 "reply_markup": orig["keyboard"]
             })
         else:
-            api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "⚠️ Оригінал не знайдено"})
+            cb_notify(cb_id, chat_id, "⚠️ Оригінал листа не знайдено.")
 
     elif data.startswith("email_delete_"):
         uid_str = data[len("email_delete_"):]
@@ -888,7 +918,7 @@ def handle_email_callback(callback_query):
             if ok:
                 api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "🗑 Лист видалено"})
             else:
-                api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "⚠️ Не вдалось видалити"})
+                cb_notify(cb_id, chat_id, "⚠️ Не вдалось видалити лист.")
             api("editMessageReplyMarkup", {
                 "chat_id": chat_id,
                 "message_id": msg_id,
@@ -1425,7 +1455,7 @@ def handle_email_callback(callback_query):
         # мовчки нічого не робило (кнопка "не реагувала"). Тепер відповідаємо
         # явно, щоб було видно проблему одразу в Telegram, а не тільки в логах.
         print(f"[email_callback] UNHANDLED data={data}", flush=True)
-        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"⚠️ Невідома дія кнопки: {data[:30]}"})
+        cb_notify(cb_id, chat_id, f"⚠️ Невідома дія кнопки: {data[:30]}")
 
 
 def handle_quick_reply_callback(callback_query):
@@ -1442,8 +1472,14 @@ def handle_quick_reply_callback(callback_query):
 
         if data.startswith("qr_ok_"):
             qr_id = data[len("qr_ok_"):]
-            api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "👍 Записав, дякую!"})
-            api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+            # Замість зникнення кнопок — лишаємо видиму позначку, щоб було ясно,
+            # що натискання зареєстровано (toast після миттєвого ack не долітає).
+            api("editMessageReplyMarkup", {
+                "chat_id": chat_id, "message_id": msg_id,
+                "reply_markup": {"inline_keyboard": [[
+                    {"text": "✅ Прочитано — дякую!", "callback_data": "noop"}
+                ]]}
+            })
             try:
                 import response_log as _rl_qr
                 store0 = _storage_qr2.load("quick_reply_store.json", default={})
@@ -1454,7 +1490,6 @@ def handle_quick_reply_callback(callback_query):
 
         elif data.startswith("qr_more_"):
             qr_id = data[len("qr_more_"):]
-            api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "🤔 Розширюю..."})
             store = _storage_qr2.load("quick_reply_store.json", default={})
             entry = store.get(qr_id)
             if not entry:
@@ -1498,21 +1533,33 @@ def handle_quick_reply_callback(callback_query):
 
         elif data.startswith("qr_note_"):
             qr_id = data[len("qr_note_"):]
-            api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📝 Занотовано!"})
             store = _storage_qr2.load("quick_reply_store.json", default={})
             entry = store.get(qr_id)
-            if entry:
-                import ai_notes as _ai_notes
-                _ai_notes.add_note(entry["text"][:300], source="qr_note")
-                try:
-                    import response_log as _rl_qr3
-                    _rl_qr3.log_response("quick_reply_note", entry.get("text", "")[:200], "📝 Занотовано")
-                except Exception:
-                    pass
-            api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+            if not entry:
+                send(chat_id, "⚠️ Оригінал повідомлення не знайдено (застаріло) — нотатку не збережено.")
+                return
+            import ai_notes as _ai_notes
+            _ai_notes.add_note(entry["text"][:300], source="qr_note")
+            try:
+                import response_log as _rl_qr3
+                _rl_qr3.log_response("quick_reply_note", entry.get("text", "")[:200], "📝 Занотовано")
+            except Exception:
+                pass
+            api("editMessageReplyMarkup", {
+                "chat_id": chat_id, "message_id": msg_id,
+                "reply_markup": {"inline_keyboard": [[
+                    {"text": "📝 Збережено в нотатки", "callback_data": "noop"}
+                ]]}
+            })
+            # Видиме підтвердження: що саме збережено і де подивитись
+            _preview_note = entry["text"][:200].replace("<", "&lt;")
+            send(chat_id,
+                 "📝 <b>Збережено в нотатки</b>\n\n"
+                 f"<i>{_preview_note}...</i>\n\n"
+                 "Переглянути всі: /нотатки")
     except Exception as e:
         print(f"[quick_reply] error: {e}", flush=True)
-        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"⚠️ Помилка: {str(e)[:100]}"})
+        cb_notify(cb_id, chat_id, f"⚠️ Помилка обробки кнопки: {str(e)[:150]}")
 
 
 def handle_reminder_callback(callback_query):
@@ -2536,6 +2583,24 @@ def handle_command(chat_id, text):
         except Exception as e:
             import traceback as _tb
             send(chat_id, f"⚠️ CRASH у тесті астро: {type(e).__name__}: {str(e)[:300]}\n\n{_tb.format_exc()[-800:]}")
+
+    elif text in ["/нотатки", "/notes", "нотатки", "/zametki"]:
+        # Кнопка "📝 Занотувати" посилається на цю команду — вона мусить існувати.
+        try:
+            import ai_notes as _an
+            _notes = _an.load_notes()
+            if not _notes:
+                send(chat_id, "📝 Нотаток поки немає.\n\nНатисни «📝 Занотувати» під будь-яким повідомленням від AI.")
+            else:
+                _out = ["📝 <b>ТВОЇ НОТАТКИ</b> (останні 15)\n"]
+                for _n in _notes[-15:][::-1]:
+                    _ts = str(_n.get("ts", ""))[:16].replace("T", " ")
+                    _txt = str(_n.get("text", "")).replace("<", "&lt;")[:220]
+                    _src = _n.get("source", "")
+                    _out.append(f"🔹 <b>{_ts}</b> <i>({_src})</i>\n{_txt}\n")
+                send(chat_id, "\n".join(_out)[:3900])
+        except Exception as _ne:
+            send(chat_id, f"⚠️ Не вдалось прочитати нотатки: {str(_ne)[:200]}")
 
     elif text in ["/diag", "/діаг", "діаг", "diag"]:
         print(f"🔥 [COMMAND] /діаг triggered in chat {chat_id}", flush=True)
@@ -3875,6 +3940,425 @@ def _send_email_with_reply_buttons(emails_data: list):
 
 # ─── MAIN LOOP ────────────────────────────────────────────────────────────────
 
+# ─── Роутер кнопок: виконується у ФОНОВОМУ потоці ────────────────────────────
+# Раніше вся обробка йшла прямо в polling-циклі. Важкі кнопки (email_describe →
+# IMAP + Gemini, 15-30с) блокували цикл, callback_query_id встигав протухнути
+# ("query is too old") — юзер бачив вічний спіннер і думав, що кнопка мертва.
+# Тепер: миттєвий ack у циклі → реальна робота тут, у окремому потоці.
+_CB_SEEN = {}
+
+
+def _route_callback(cb):
+    data = cb.get("data", "")
+    chat_id = cb["message"]["chat"]["id"]
+    try:
+        if data == "noop":
+            # Візуальна позначка стану ("✅ Прочитано", "📝 Збережено") — дії не потребує.
+            return
+        elif data.startswith("evdone_"):
+            handle_event_done_callback(cb)
+        elif data.startswith("sleep_q_"):
+            scores = {
+                "sleep_q_1": "😩 Погано",
+                "sleep_q_2": "😐 Нормально",
+                "sleep_q_3": "😊 Добре",
+                "sleep_q_4": "🌟 Відмінно"
+            }
+            label = scores.get(data, data)
+            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": f"Записано: {label}"})
+            # Зберегти в health data
+            try:
+                from datetime import date
+                today_str = date.today().isoformat()
+                try:
+                    from storage import load_health, save_health
+                    health = load_health()
+                    if today_str not in health:
+                        health[today_str] = {}
+                    health[today_str]["sleep_quality"] = data.replace("sleep_q_", "")
+                    health[today_str]["sleep_quality_label"] = label
+                    save_health(health)
+                except Exception:
+                    pass
+            except Exception:
+                pass
+            send(chat_id, f"✅ Сон записано: <b>{label}</b>")
+        elif data.startswith("meds_"):
+            handle_meds_callback(cb)
+        elif data == "reminder_health_photo":
+            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Надішли фото 📸"})
+            send(chat_id, "📸 Надішли скрін Apple Health — прочитаю автоматично!")
+        elif data == "reminder_health_view":
+            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": ""})
+            try:
+                from storage import load_health
+                health = load_health()
+                if health:
+                    sorted_days = sorted(health.keys(), reverse=True)[:7]
+                    reply = "💚 <b>Health (7 днів)</b>\n\n"
+                    for d in sorted_days:
+                        h = health[d]
+                        score = f" 💚{h['health_score']}" if h.get("health_score") else ""
+                        steps = f"👟{h['steps']//1000}к" if h.get("steps") else ""
+                        sleep = f"😴{h.get('sleep_hours','')}г" if h.get("sleep_hours") else ""
+                        hr = f"❤️{h['heart_rate']}" if h.get("heart_rate") else ""
+                        parts = [x for x in [steps, sleep, hr] if x]
+                        reply += f"<b>{d[5:]}</b>  {' '.join(parts)}{score}\n"
+                    send(chat_id, reply)
+                else:
+                    send(chat_id, "Немає даних. Введи /зд [кроки] [сон] [ЧСС] [кал] [score]")
+            except Exception as e:
+                send(chat_id, f"⚠️ {e}")
+        elif data == "cal_all_done_today":
+            # Persistent reminder — підтвердження що всі події виконано
+            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "✅ Чудово!"})
+            try:
+                api("editMessageReplyMarkup", {
+                    "chat_id": chat_id, "message_id": cb["message"]["message_id"],
+                    "reply_markup": {"inline_keyboard": []}
+                })
+            except: pass
+            send(chat_id, "✅ Відмічено — всі події сьогодні виконані!")
+            # Записуємо в persist state щоб більше не нагадувало сьогодні
+            try:
+                import sys as _sys, os as _os
+                _sys.path.insert(0, _os.path.dirname(__file__))
+                from storage import load as _st_load, save as _st_save
+                from datetime import datetime, timezone, timedelta
+                today_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
+                ps = _st_load("habits_persist_remind.json") or {}
+                import time as _time
+                # Виставляємо timestamp далеко в майбутнє — щоб не нагадувало сьогодні
+                ps[f"persist_calendar_{today_str}_ts"] = int(_time.time()) + 86400
+                _st_save("habits_persist_remind.json", ps)
+            except Exception as _e:
+                print(f"cal_all_done_today state error: {_e}")
+
+        elif data.startswith("reply_email_") or data.startswith("reply_manual_"):
+            # Раніше reply_email_ був заглушкою ("[У розробці]"), а
+            # reply_manual_ взагалі не був змаршрутизований — обидві кнопки
+            # були мертві. Тепер обидві ведуть у РОБОЧИЙ флоу email_reply_
+            # (IMAP → draft → кнопки Надіслати/Скасувати).
+            if data.startswith("reply_manual_"):
+                _uid_rr = data[len("reply_manual_"):]
+            else:
+                # reply_email_{msg_id}_{idx} — відрізаємо хвостовий індекс
+                _rest_rr = data[len("reply_email_"):]
+                _uid_rr = _rest_rr.rsplit("_", 1)[0] if "_" in _rest_rr else _rest_rr
+            _cb_proxy = dict(cb)
+            _cb_proxy["data"] = f"email_reply_{_uid_rr}"
+            handle_email_callback(_cb_proxy)
+
+
+        elif data.startswith("dismiss_email_"):
+            # Dismiss email (remove reply buttons)
+            msg_id = data[len("dismiss_email_"):]
+            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Виконано"})
+            api("editMessageReplyMarkup", {
+                "chat_id": chat_id,
+                "message_id": cb["message"]["message_id"],
+                "reply_markup": {"inline_keyboard": []}
+            })
+
+        elif data.startswith("cal_done_"):
+            # Видалити подію з Google Calendar після натискання "✅ Зроблено"
+            ev_id = data[len("cal_done_"):]
+            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "🗑 Видаляю подію..."})
+            try:
+                import importlib.util, os as _os
+                spec = importlib.util.spec_from_file_location(
+                    "assistant", _os.path.join(_os.path.dirname(__file__), "assistant.py"))
+                mod = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(mod)
+                ok = mod.delete_calendar_event(ev_id)
+                api("editMessageReplyMarkup", {
+                    "chat_id": chat_id, "message_id": cb["message"]["message_id"],
+                    "reply_markup": {"inline_keyboard": []}
+                })
+                if ok.get("ok"):
+                    send(chat_id, "✅ Подію видалено з Google Calendar")
+                else:
+                    send(chat_id, f"⚠️ Не вдалось видалити: {ok.get('error', 'невідома помилка')}")
+            except Exception as e:
+                print(f"cal_done error: {e}")
+                send(chat_id, f"⚠️ Помилка: {e}")
+        elif data.startswith("planner_"):
+            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": ""})
+            try:
+                from planner import (
+                    handle_planner_confirm, handle_planner_cancel,
+                    handle_planner_edit, clear_state, _send_force_reply,
+                    set_state, get_state,
+                    handle_planner_hour, handle_planner_minute,
+                    handle_planner_time_back
+                )
+                if data == "planner_confirm":
+                    handle_planner_confirm()
+                elif data == "planner_cancel":
+                    handle_planner_cancel()
+                elif data == "planner_edit":
+                    handle_planner_edit()
+                elif data == "planner_time_back":
+                    handle_planner_time_back()
+                elif data.startswith("planner_hour_"):
+                    hour_val = data[len("planner_hour_"):]
+                    handle_planner_hour(hour_val)
+                elif data.startswith("planner_min_"):
+                    # planner_min_09_30
+                    parts = data.split("_")  # ['planner','min','09','30']
+                    if len(parts) == 4:
+                        handle_planner_minute(parts[2], parts[3])
+                elif data == "planner_write":
+                    # Якщо немає активного стану — ставимо awaiting_tomorrow
+                    st = get_state()
+                    if not st.get("mode"):
+                        from datetime import datetime, timezone, timedelta
+                        now = datetime.now(timezone.utc) + timedelta(hours=2)
+                        set_state("awaiting_tomorrow", {"base_date": now.strftime("%Y-%m-%d")})
+                    _send_force_reply("✏️ <b>Напиши свої плани:</b>\n\n<i>Наприклад: спортзал о 8, лікар о 14, зателефонувати Максиму</i>")
+                elif data == "planner_write_today":
+                    # Кнопка "записати" в денному нагадуванні — ставимо стан today
+                    from datetime import datetime, timezone, timedelta
+                    now = datetime.now(timezone.utc) + timedelta(hours=2)
+                    set_state("awaiting_today", {"base_date": now.strftime("%Y-%m-%d"), "context": "today"})
+                    _send_force_reply("✏️ <b>Що занотуємо?</b>\n\n<i>Зустріч, ідея, завдання — будь що</i>")
+                elif data == "planner_skip":
+                    clear_state()
+                    send(chat_id, "👍 Добре, нічого не записую.")
+            except Exception as _ple:
+                print(f"planner callback error: {_ple}")
+
+        elif data == "shopping_add_item":
+            try:
+                from planner import set_state as _set_st_sh
+                api("answerCallbackQuery", {"callback_query_id": cb["id"]})
+                _set_st_sh("awaiting_shopping", {})
+                api("sendMessage", {
+                    "chat_id": chat_id,
+                    "text": (
+                        "🛒 <b>Що купити?</b>\n\n"
+                        "<i>Напиши один або кілька пунктів через кому або з нового рядка</i>\n"
+                        "<i>Наприклад: молоко, хліб, йогурт</i>"
+                    ),
+                    "parse_mode": "HTML",
+                    "reply_markup": {"force_reply": True, "selective": False}
+                })
+            except Exception as _shae:
+                print(f"shopping_add_item error: {_shae}")
+        elif data == "delete_self":
+            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Закрито"})
+            api("deleteMessage", {"chat_id": chat_id, "message_id": cb["message"]["message_id"]})
+        elif data.startswith("shopping_"):
+            # ── Список покупок callbacks ──
+            try:
+                import shopping as _sh
+                msg_id = cb["message"]["message_id"]
+
+                if data == "shopping_all_done":
+                    _sh.mark_all_done()
+                    api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Чудово! Все куплено ✅"})
+                    items = _sh.get_items()
+                    text_list = _sh.format_list(items)
+                    api("editMessageText", {
+                        "chat_id": chat_id, "message_id": msg_id,
+                        "text": f"🛒 <b>Список покупок</b> ({len(items)}/{len(items)}) — <b>Все куплено!</b>\n\n{text_list}",
+                        "parse_mode": "HTML",
+                        "reply_markup": {"inline_keyboard": [[{"text": "🗑 Очистити", "callback_data": "shopping_clear"}]]}
+                    })
+
+                elif data == "shopping_clear":
+                    _sh.clear_list()
+                    api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Список очищено"})
+                    api("editMessageText", {
+                        "chat_id": chat_id, "message_id": msg_id,
+                        "text": "🛒 Список покупок очищено.",
+                        "parse_mode": "HTML"
+                    })
+
+                elif data == "shopping_mark":
+                    # Показуємо кожен пункт з кнопками ✅/❌
+                    items = _sh.get_items()
+                    if not items:
+                        api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Список порожній"})
+                    else:
+                        api("answerCallbackQuery", {"callback_query_id": cb["id"]})
+                        rows = []
+                        for idx, item in enumerate(items):
+                            mark = "✅" if item["done"] else "⬜"
+                            rows.append([
+                                {"text": f"{mark} {item['text']}", "callback_data": f"shopping_toggle_{idx}"},
+                            ])
+                        rows.append([{"text": "⬅️ Назад", "callback_data": "shopping_back"}])
+                        kb = {"inline_keyboard": rows}
+                        api("editMessageText", {
+                            "chat_id": chat_id, "message_id": msg_id,
+                            "text": "📝 <b>Відмітити пункти:</b>\nНатискай щоб перемикати ✅/⬜",
+                            "parse_mode": "HTML",
+                            "reply_markup": kb
+                        })
+
+                elif data.startswith("shopping_toggle_"):
+                    idx = int(data.split("_")[2])
+                    items = _sh.get_items()
+                    if 0 <= idx < len(items):
+                        new_done = not items[idx]["done"]
+                        _sh.mark_item(idx, new_done)
+                        items = _sh.get_items()
+                        mark_text = "✅" if new_done else "⬜"
+                        api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": f"{mark_text} {items[idx]['text']}"})
+                        # Оновлюємо клавіатуру
+                        rows = []
+                        for i, item in enumerate(items):
+                            mark = "✅" if item["done"] else "⬜"
+                            rows.append([{"text": f"{mark} {item['text']}", "callback_data": f"shopping_toggle_{i}"}])
+                        rows.append([{"text": "⬅️ Назад", "callback_data": "shopping_back"}])
+                        api("editMessageReplyMarkup", {
+                            "chat_id": chat_id, "message_id": msg_id,
+                            "reply_markup": {"inline_keyboard": rows}
+                        })
+
+                elif data == "shopping_back":
+                    api("answerCallbackQuery", {"callback_query_id": cb["id"]})
+                    items = _sh.get_items()
+                    text_list = _sh.format_list(items)
+                    done_count = sum(1 for i in items if i["done"])
+                    kb = {"inline_keyboard": [
+                        [{"text": "✅ Все куплено", "callback_data": "shopping_all_done"},
+                         {"text": "📝 Відмітити", "callback_data": "shopping_mark"}],
+                        [{"text": "🗑 Очистити", "callback_data": "shopping_clear"}]
+                    ]}
+                    api("editMessageText", {
+                        "chat_id": chat_id, "message_id": msg_id,
+                        "text": f"🛒 <b>Список покупок</b> ({done_count}/{len(items)}):\n\n{text_list}",
+                        "parse_mode": "HTML",
+                        "reply_markup": kb
+                    })
+
+            except Exception as _she:
+                print(f"shopping callback error: {_she}")
+                api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Помилка"})
+
+        elif (data.startswith("email_describe_") or data.startswith("email_undescribe_") or
+              data.startswith("email_delete_") or
+              data.startswith("email_keep_") or data.startswith("email_star_") or
+              data.startswith("email_cal_") or data.startswith("email_reply_") or
+              data.startswith("email_send_") or data.startswith("email_cancel_") or
+              data.startswith("cal_add_") or data.startswith("cal_skip_") or
+              data.startswith("calrem_add_") or data.startswith("calrem_skip_") or
+              data.startswith("shop_add_") or data.startswith("shop_skip_")):
+            handle_email_callback(cb)
+        elif (data.startswith("qr_ok_") or data.startswith("qr_more_") or data.startswith("qr_note_")):
+            handle_quick_reply_callback(cb)
+        elif data.startswith("reminder_"):
+            handle_reminder_callback(cb)
+        elif data.startswith("mood_"):
+            # Обробка оцінки настрою 1-5
+            try:
+                score = int(data.split("_")[1])
+                api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Записано ✓"})
+                labels = {1: "😩 Важкий день", 2: "😕 Нижче норми", 3: "😐 Нормально", 4: "😊 Добре", 5: "🤩 Чудово"}
+                label = labels.get(score, str(score))
+                # Зберігаємо в monitor_mood.json
+                try:
+                    from datetime import date
+                    today_str = date.today().isoformat()
+                    import sys; sys.path.insert(0, os.path.dirname(__file__))
+                    from monitor import load_json_file, save_json_file, MOOD_FILE
+                    state = load_json_file(MOOD_FILE, default={})
+                    state[today_str] = score
+                    save_json_file(MOOD_FILE, state)
+                except Exception as _e:
+                    print(f"mood save error: {_e}")
+                # AI реакція
+                reactions = {
+                    1: "Важкий день буває у кожного. Завтра буде краще 💙",
+                    2: "Нічого — відпочинь, завтра нова сторінка 🌙",
+                    3: "Стабільно — і це вже добре 👌",
+                    4: "Гарний день! Так тримати 💪",
+                    5: "Відмінно! Ось це день 🔥"
+                }
+                send(chat_id,
+                    f"✨ <b>Настрій: {label}</b>\n\n"
+                    f"{reactions.get(score, '')}\n\n"
+                    f"<i>Записано для тижневого аналізу</i>"
+                )
+                try:
+                    import response_log as _rl_mood
+                    _rl_mood.log_response("mood", "Оцінка настрою", label, {"score": score})
+                except Exception:
+                    pass
+            except Exception as _e:
+                print(f"mood callback error: {_e}")
+        else:
+            # handle_habit_callback повертає False якщо це НЕ звичка/сон.
+            # Раніше такі кнопки мовчки вмирали (і навіть відповідали
+            # "Збережено ✓", хоча нічого не зберігали) — тепер даємо
+            # явний фідбек і пишемо в лог, щоб більше не було "мертвих" кнопок.
+            _handled = False
+            try:
+                _handled = handle_habit_callback(cb)
+            except Exception as _hbe:
+                print(f"[CB] habit handler error for data={data}: {_hbe}", flush=True)
+            if not _handled:
+                print(f"[CB] ⚠️ UNHANDLED callback data={data}", flush=True)
+                cb_notify(cb["id"], chat_id,
+                    "⚠️ Ця кнопка застаріла (повідомлення старе). Виклич команду заново.",
+                    alert=True)
+    except Exception as _rce:
+        import traceback as _tb_rc
+        print(f"[CB] handler crashed for data={data}: {_rce}", flush=True)
+        _tb_rc.print_exc()
+        try:
+            send(chat_id, "⚠️ Кнопка впала з помилкою:\n<code>" + str(_rce)[:200] + "</code>")
+        except Exception:
+            pass
+
+
+def _dispatch_callback_async(cb):
+    """Миттєво підтверджує натискання (щоб зник спіннер) і віддає роботу в потік."""
+    data = cb.get("data", "")
+    cb_id = cb.get("id", "")
+
+    import time as _t_cb
+    _now_cb = _t_cb.time()
+    for _k in [k for k, v in list(_CB_SEEN.items()) if _now_cb - v > 300]:
+        _CB_SEEN.pop(_k, None)
+    if cb_id in _CB_SEEN:
+        print(f"[CB] duplicate {data} - skip", flush=True)
+        return
+    _CB_SEEN[cb_id] = _now_cb
+
+    _acks = [
+        ("email_describe_", "📖 Читаю лист..."),
+        ("email_reply_",    "✍️ Готую відповідь..."),
+        ("reply_email_",    "✍️ Готую відповідь..."),
+        ("reply_manual_",   "✍️ Готую відповідь..."),
+        ("email_send_",     "📤 Надсилаю..."),
+        ("email_delete_",   "🗑 Видаляю..."),
+        ("email_star_",     "⭐ Позначаю..."),
+        ("email_cal_",      "📅 Додаю в календар..."),
+        ("qr_more_",        "🤔 Думаю..."),
+        ("qr_note_",        "📝 Записую..."),
+        ("qr_ok_",          "👍"),
+        ("cal_add_",        "📅 Додаю..."),
+        ("calrem_add_",     "📅 Додаю..."),
+        ("cal_done_",       "🗑 Видаляю подію..."),
+    ]
+    _ack_text = "⏳ Обробляю..."
+    for _p, _t in _acks:
+        if data.startswith(_p):
+            _ack_text = _t
+            break
+    try:
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": _ack_text})
+    except Exception:
+        pass
+
+    import threading as _th_cb
+    _th_cb.Thread(target=_route_callback, args=(cb,), daemon=True,
+                  name=f"cb-{data[:20]}").start()
+
+
 def main():
     global _conflict_count
     _conflict_count = 0
@@ -4004,360 +4488,7 @@ def main():
                         chat_id = cb["message"]["chat"]["id"]
                         data = cb.get("data", "")
                         print(f"[CB] data={data}", flush=True)
-                        if data.startswith("evdone_"):
-                            handle_event_done_callback(cb)
-                        elif data.startswith("sleep_q_"):
-                            scores = {
-                                "sleep_q_1": "😩 Погано",
-                                "sleep_q_2": "😐 Нормально",
-                                "sleep_q_3": "😊 Добре",
-                                "sleep_q_4": "🌟 Відмінно"
-                            }
-                            label = scores.get(data, data)
-                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": f"Записано: {label}"})
-                            # Зберегти в health data
-                            try:
-                                from datetime import date
-                                today_str = date.today().isoformat()
-                                try:
-                                    from storage import load_health, save_health
-                                    health = load_health()
-                                    if today_str not in health:
-                                        health[today_str] = {}
-                                    health[today_str]["sleep_quality"] = data.replace("sleep_q_", "")
-                                    health[today_str]["sleep_quality_label"] = label
-                                    save_health(health)
-                                except Exception:
-                                    pass
-                            except Exception:
-                                pass
-                            send(chat_id, f"✅ Сон записано: <b>{label}</b>")
-                        elif data.startswith("meds_"):
-                            handle_meds_callback(cb)
-                        elif data == "reminder_health_photo":
-                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Надішли фото 📸"})
-                            send(chat_id, "📸 Надішли скрін Apple Health — прочитаю автоматично!")
-                        elif data == "reminder_health_view":
-                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": ""})
-                            try:
-                                from storage import load_health
-                                health = load_health()
-                                if health:
-                                    sorted_days = sorted(health.keys(), reverse=True)[:7]
-                                    reply = "💚 <b>Health (7 днів)</b>\n\n"
-                                    for d in sorted_days:
-                                        h = health[d]
-                                        score = f" 💚{h['health_score']}" if h.get("health_score") else ""
-                                        steps = f"👟{h['steps']//1000}к" if h.get("steps") else ""
-                                        sleep = f"😴{h.get('sleep_hours','')}г" if h.get("sleep_hours") else ""
-                                        hr = f"❤️{h['heart_rate']}" if h.get("heart_rate") else ""
-                                        parts = [x for x in [steps, sleep, hr] if x]
-                                        reply += f"<b>{d[5:]}</b>  {' '.join(parts)}{score}\n"
-                                    send(chat_id, reply)
-                                else:
-                                    send(chat_id, "Немає даних. Введи /зд [кроки] [сон] [ЧСС] [кал] [score]")
-                            except Exception as e:
-                                send(chat_id, f"⚠️ {e}")
-                        elif data == "cal_all_done_today":
-                            # Persistent reminder — підтвердження що всі події виконано
-                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "✅ Чудово!"})
-                            try:
-                                api("editMessageReplyMarkup", {
-                                    "chat_id": chat_id, "message_id": cb["message"]["message_id"],
-                                    "reply_markup": {"inline_keyboard": []}
-                                })
-                            except: pass
-                            send(chat_id, "✅ Відмічено — всі події сьогодні виконані!")
-                            # Записуємо в persist state щоб більше не нагадувало сьогодні
-                            try:
-                                import sys as _sys, os as _os
-                                _sys.path.insert(0, _os.path.dirname(__file__))
-                                from storage import load as _st_load, save as _st_save
-                                from datetime import datetime, timezone, timedelta
-                                today_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d")
-                                ps = _st_load("habits_persist_remind.json") or {}
-                                import time as _time
-                                # Виставляємо timestamp далеко в майбутнє — щоб не нагадувало сьогодні
-                                ps[f"persist_calendar_{today_str}_ts"] = int(_time.time()) + 86400
-                                _st_save("habits_persist_remind.json", ps)
-                            except Exception as _e:
-                                print(f"cal_all_done_today state error: {_e}")
-
-                        elif data.startswith("reply_email_") or data.startswith("reply_manual_"):
-                            # Раніше reply_email_ був заглушкою ("[У розробці]"), а
-                            # reply_manual_ взагалі не був змаршрутизований — обидві кнопки
-                            # були мертві. Тепер обидві ведуть у РОБОЧИЙ флоу email_reply_
-                            # (IMAP → draft → кнопки Надіслати/Скасувати).
-                            if data.startswith("reply_manual_"):
-                                _uid_rr = data[len("reply_manual_"):]
-                            else:
-                                # reply_email_{msg_id}_{idx} — відрізаємо хвостовий індекс
-                                _rest_rr = data[len("reply_email_"):]
-                                _uid_rr = _rest_rr.rsplit("_", 1)[0] if "_" in _rest_rr else _rest_rr
-                            _cb_proxy = dict(cb)
-                            _cb_proxy["data"] = f"email_reply_{_uid_rr}"
-                            handle_email_callback(_cb_proxy)
-
-                        
-                        elif data.startswith("dismiss_email_"):
-                            # Dismiss email (remove reply buttons)
-                            msg_id = data[len("dismiss_email_"):]
-                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Виконано"})
-                            api("editMessageReplyMarkup", {
-                                "chat_id": chat_id,
-                                "message_id": cb["message"]["message_id"],
-                                "reply_markup": {"inline_keyboard": []}
-                            })
-                        
-                        elif data.startswith("cal_done_"):
-                            # Видалити подію з Google Calendar після натискання "✅ Зроблено"
-                            ev_id = data[len("cal_done_"):]
-                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "🗑 Видаляю подію..."})
-                            try:
-                                import importlib.util, os as _os
-                                spec = importlib.util.spec_from_file_location(
-                                    "assistant", _os.path.join(_os.path.dirname(__file__), "assistant.py"))
-                                mod = importlib.util.module_from_spec(spec)
-                                spec.loader.exec_module(mod)
-                                ok = mod.delete_calendar_event(ev_id)
-                                api("editMessageReplyMarkup", {
-                                    "chat_id": chat_id, "message_id": cb["message"]["message_id"],
-                                    "reply_markup": {"inline_keyboard": []}
-                                })
-                                if ok.get("ok"):
-                                    send(chat_id, "✅ Подію видалено з Google Calendar")
-                                else:
-                                    send(chat_id, f"⚠️ Не вдалось видалити: {ok.get('error', 'невідома помилка')}")
-                            except Exception as e:
-                                print(f"cal_done error: {e}")
-                                send(chat_id, f"⚠️ Помилка: {e}")
-                        elif data.startswith("planner_"):
-                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": ""})
-                            try:
-                                from planner import (
-                                    handle_planner_confirm, handle_planner_cancel,
-                                    handle_planner_edit, clear_state, _send_force_reply,
-                                    set_state, get_state,
-                                    handle_planner_hour, handle_planner_minute,
-                                    handle_planner_time_back
-                                )
-                                if data == "planner_confirm":
-                                    handle_planner_confirm()
-                                elif data == "planner_cancel":
-                                    handle_planner_cancel()
-                                elif data == "planner_edit":
-                                    handle_planner_edit()
-                                elif data == "planner_time_back":
-                                    handle_planner_time_back()
-                                elif data.startswith("planner_hour_"):
-                                    hour_val = data[len("planner_hour_"):]
-                                    handle_planner_hour(hour_val)
-                                elif data.startswith("planner_min_"):
-                                    # planner_min_09_30
-                                    parts = data.split("_")  # ['planner','min','09','30']
-                                    if len(parts) == 4:
-                                        handle_planner_minute(parts[2], parts[3])
-                                elif data == "planner_write":
-                                    # Якщо немає активного стану — ставимо awaiting_tomorrow
-                                    st = get_state()
-                                    if not st.get("mode"):
-                                        from datetime import datetime, timezone, timedelta
-                                        now = datetime.now(timezone.utc) + timedelta(hours=2)
-                                        set_state("awaiting_tomorrow", {"base_date": now.strftime("%Y-%m-%d")})
-                                    _send_force_reply("✏️ <b>Напиши свої плани:</b>\n\n<i>Наприклад: спортзал о 8, лікар о 14, зателефонувати Максиму</i>")
-                                elif data == "planner_write_today":
-                                    # Кнопка "записати" в денному нагадуванні — ставимо стан today
-                                    from datetime import datetime, timezone, timedelta
-                                    now = datetime.now(timezone.utc) + timedelta(hours=2)
-                                    set_state("awaiting_today", {"base_date": now.strftime("%Y-%m-%d"), "context": "today"})
-                                    _send_force_reply("✏️ <b>Що занотуємо?</b>\n\n<i>Зустріч, ідея, завдання — будь що</i>")
-                                elif data == "planner_skip":
-                                    clear_state()
-                                    send(chat_id, "👍 Добре, нічого не записую.")
-                            except Exception as _ple:
-                                print(f"planner callback error: {_ple}")
-
-                        elif data == "shopping_add_item":
-                            try:
-                                from planner import set_state as _set_st_sh
-                                api("answerCallbackQuery", {"callback_query_id": cb["id"]})
-                                _set_st_sh("awaiting_shopping", {})
-                                api("sendMessage", {
-                                    "chat_id": chat_id,
-                                    "text": (
-                                        "🛒 <b>Що купити?</b>\n\n"
-                                        "<i>Напиши один або кілька пунктів через кому або з нового рядка</i>\n"
-                                        "<i>Наприклад: молоко, хліб, йогурт</i>"
-                                    ),
-                                    "parse_mode": "HTML",
-                                    "reply_markup": {"force_reply": True, "selective": False}
-                                })
-                            except Exception as _shae:
-                                print(f"shopping_add_item error: {_shae}")
-                        elif data == "delete_self":
-                            api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Закрито"})
-                            api("deleteMessage", {"chat_id": chat_id, "message_id": cb["message"]["message_id"]})
-                        elif data.startswith("shopping_"):
-                            # ── Список покупок callbacks ──
-                            try:
-                                import shopping as _sh
-                                msg_id = cb["message"]["message_id"]
-
-                                if data == "shopping_all_done":
-                                    _sh.mark_all_done()
-                                    api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Чудово! Все куплено ✅"})
-                                    items = _sh.get_items()
-                                    text_list = _sh.format_list(items)
-                                    api("editMessageText", {
-                                        "chat_id": chat_id, "message_id": msg_id,
-                                        "text": f"🛒 <b>Список покупок</b> ({len(items)}/{len(items)}) — <b>Все куплено!</b>\n\n{text_list}",
-                                        "parse_mode": "HTML",
-                                        "reply_markup": {"inline_keyboard": [[{"text": "🗑 Очистити", "callback_data": "shopping_clear"}]]}
-                                    })
-
-                                elif data == "shopping_clear":
-                                    _sh.clear_list()
-                                    api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Список очищено"})
-                                    api("editMessageText", {
-                                        "chat_id": chat_id, "message_id": msg_id,
-                                        "text": "🛒 Список покупок очищено.",
-                                        "parse_mode": "HTML"
-                                    })
-
-                                elif data == "shopping_mark":
-                                    # Показуємо кожен пункт з кнопками ✅/❌
-                                    items = _sh.get_items()
-                                    if not items:
-                                        api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Список порожній"})
-                                    else:
-                                        api("answerCallbackQuery", {"callback_query_id": cb["id"]})
-                                        rows = []
-                                        for idx, item in enumerate(items):
-                                            mark = "✅" if item["done"] else "⬜"
-                                            rows.append([
-                                                {"text": f"{mark} {item['text']}", "callback_data": f"shopping_toggle_{idx}"},
-                                            ])
-                                        rows.append([{"text": "⬅️ Назад", "callback_data": "shopping_back"}])
-                                        kb = {"inline_keyboard": rows}
-                                        api("editMessageText", {
-                                            "chat_id": chat_id, "message_id": msg_id,
-                                            "text": "📝 <b>Відмітити пункти:</b>\nНатискай щоб перемикати ✅/⬜",
-                                            "parse_mode": "HTML",
-                                            "reply_markup": kb
-                                        })
-
-                                elif data.startswith("shopping_toggle_"):
-                                    idx = int(data.split("_")[2])
-                                    items = _sh.get_items()
-                                    if 0 <= idx < len(items):
-                                        new_done = not items[idx]["done"]
-                                        _sh.mark_item(idx, new_done)
-                                        items = _sh.get_items()
-                                        mark_text = "✅" if new_done else "⬜"
-                                        api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": f"{mark_text} {items[idx]['text']}"})
-                                        # Оновлюємо клавіатуру
-                                        rows = []
-                                        for i, item in enumerate(items):
-                                            mark = "✅" if item["done"] else "⬜"
-                                            rows.append([{"text": f"{mark} {item['text']}", "callback_data": f"shopping_toggle_{i}"}])
-                                        rows.append([{"text": "⬅️ Назад", "callback_data": "shopping_back"}])
-                                        api("editMessageReplyMarkup", {
-                                            "chat_id": chat_id, "message_id": msg_id,
-                                            "reply_markup": {"inline_keyboard": rows}
-                                        })
-
-                                elif data == "shopping_back":
-                                    api("answerCallbackQuery", {"callback_query_id": cb["id"]})
-                                    items = _sh.get_items()
-                                    text_list = _sh.format_list(items)
-                                    done_count = sum(1 for i in items if i["done"])
-                                    kb = {"inline_keyboard": [
-                                        [{"text": "✅ Все куплено", "callback_data": "shopping_all_done"},
-                                         {"text": "📝 Відмітити", "callback_data": "shopping_mark"}],
-                                        [{"text": "🗑 Очистити", "callback_data": "shopping_clear"}]
-                                    ]}
-                                    api("editMessageText", {
-                                        "chat_id": chat_id, "message_id": msg_id,
-                                        "text": f"🛒 <b>Список покупок</b> ({done_count}/{len(items)}):\n\n{text_list}",
-                                        "parse_mode": "HTML",
-                                        "reply_markup": kb
-                                    })
-
-                            except Exception as _she:
-                                print(f"shopping callback error: {_she}")
-                                api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Помилка"})
-
-                        elif (data.startswith("email_describe_") or data.startswith("email_undescribe_") or
-                              data.startswith("email_delete_") or
-                              data.startswith("email_keep_") or data.startswith("email_star_") or
-                              data.startswith("email_cal_") or data.startswith("email_reply_") or
-                              data.startswith("email_send_") or data.startswith("email_cancel_") or
-                              data.startswith("cal_add_") or data.startswith("cal_skip_") or
-                              data.startswith("calrem_add_") or data.startswith("calrem_skip_") or
-                              data.startswith("shop_add_") or data.startswith("shop_skip_")):
-                            handle_email_callback(cb)
-                        elif (data.startswith("qr_ok_") or data.startswith("qr_more_") or data.startswith("qr_note_")):
-                            handle_quick_reply_callback(cb)
-                        elif data.startswith("reminder_"):
-                            handle_reminder_callback(cb)
-                        elif data.startswith("mood_"):
-                            # Обробка оцінки настрою 1-5
-                            try:
-                                score = int(data.split("_")[1])
-                                api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Записано ✓"})
-                                labels = {1: "😩 Важкий день", 2: "😕 Нижче норми", 3: "😐 Нормально", 4: "😊 Добре", 5: "🤩 Чудово"}
-                                label = labels.get(score, str(score))
-                                # Зберігаємо в monitor_mood.json
-                                try:
-                                    from datetime import date
-                                    today_str = date.today().isoformat()
-                                    import sys; sys.path.insert(0, os.path.dirname(__file__))
-                                    from monitor import load_json_file, save_json_file, MOOD_FILE
-                                    state = load_json_file(MOOD_FILE, default={})
-                                    state[today_str] = score
-                                    save_json_file(MOOD_FILE, state)
-                                except Exception as _e:
-                                    print(f"mood save error: {_e}")
-                                # AI реакція
-                                reactions = {
-                                    1: "Важкий день буває у кожного. Завтра буде краще 💙",
-                                    2: "Нічого — відпочинь, завтра нова сторінка 🌙",
-                                    3: "Стабільно — і це вже добре 👌",
-                                    4: "Гарний день! Так тримати 💪",
-                                    5: "Відмінно! Ось це день 🔥"
-                                }
-                                send(chat_id,
-                                    f"✨ <b>Настрій: {label}</b>\n\n"
-                                    f"{reactions.get(score, '')}\n\n"
-                                    f"<i>Записано для тижневого аналізу</i>"
-                                )
-                                try:
-                                    import response_log as _rl_mood
-                                    _rl_mood.log_response("mood", "Оцінка настрою", label, {"score": score})
-                                except Exception:
-                                    pass
-                            except Exception as _e:
-                                print(f"mood callback error: {_e}")
-                        else:
-                            # handle_habit_callback повертає False якщо це НЕ звичка/сон.
-                            # Раніше такі кнопки мовчки вмирали (і навіть відповідали
-                            # "Збережено ✓", хоча нічого не зберігали) — тепер даємо
-                            # явний фідбек і пишемо в лог, щоб більше не було "мертвих" кнопок.
-                            _handled = False
-                            try:
-                                _handled = handle_habit_callback(cb)
-                            except Exception as _hbe:
-                                print(f"[CB] habit handler error for data={data}: {_hbe}", flush=True)
-                            if not _handled:
-                                print(f"[CB] ⚠️ UNHANDLED callback data={data}", flush=True)
-                                try:
-                                    api("answerCallbackQuery", {
-                                        "callback_query_id": cb["id"],
-                                        "text": "⚠️ Ця кнопка застаріла (повідомлення старе). Виклич команду заново.",
-                                        "show_alert": True
-                                    })
-                                except Exception:
-                                    pass
+                        _dispatch_callback_async(cb)
                     continue
 
                 msg = update.get("message") or update.get("edited_message")
