@@ -7,8 +7,10 @@ Health Webhook Server:
 """
 
 import os, json, csv, io, zipfile, tempfile
+import time
+import threading
 from datetime import datetime, timezone, timedelta
-from http.server import HTTPServer, BaseHTTPRequestHandler
+from http.server import HTTPServer, ThreadingHTTPServer, BaseHTTPRequestHandler
 import urllib.request
 
 TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
@@ -375,6 +377,10 @@ def read_body(handler):
     return data
 
 
+# Дедуп апдейтів webhook (update_id -> час отримання)
+_WH_SEEN = {}
+
+
 class HealthHandler(BaseHTTPRequestHandler):
     def log_message(self, format, *args):
         print(f"[Health] {format % args}", flush=True)
@@ -390,12 +396,81 @@ class HealthHandler(BaseHTTPRequestHandler):
         content_length = self.headers.get("Content-Length", "0")
         print(f"[POST] path={path} ct={content_type} len={content_length}", flush=True)
 
+        # ── Telegram webhook ─────────────────────────────────────────────────
+        if path == "/telegram":
+            self._handle_telegram_webhook()
+            return
+
         # Route: /upload або ZIP/multipart/octet/csv → HAE handler (без time window)
         # JSON → Healthy Widgets handler (з time window)
         if path == "/upload" or "multipart" in content_type or "octet" in content_type or "zip" in content_type or "csv" in content_type or "text/plain" in content_type:
             self._handle_zip_upload()
         else:
             self._handle_widgets_json()
+
+    def _handle_telegram_webhook(self):
+        """Приймає апдейти від Telegram і віддає їх у ту саму обробку, що й polling.
+
+        Telegram вимагає ШВИДКУ відповідь 200, інакше повторює апдейт і зрештою
+        призупиняє доставку. Тому: спершу віддаємо 200, потім обробляємо у потоці.
+        Захист — секретний заголовок, щоб ніхто сторонній не міг слати апдейти.
+        """
+        try:
+            length = int(self.headers.get("Content-Length", "0") or 0)
+            raw = self.rfile.read(length) if length else b"{}"
+        except Exception as e:
+            print(f"[TG-WH] read error: {e}", flush=True)
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(b"OK")
+            return
+
+        secret_expected = os.environ.get("TELEGRAM_WEBHOOK_SECRET", "")
+        secret_got = self.headers.get("X-Telegram-Bot-Api-Secret-Token", "")
+        if secret_expected and secret_got != secret_expected:
+            print("[TG-WH] REJECTED: bad secret token", flush=True)
+            self.send_response(403)
+            self.end_headers()
+            self.wfile.write(b"forbidden")
+            return
+
+        # 200 одразу — до обробки
+        self.send_response(200)
+        self.send_header("Content-Type", "text/plain")
+        self.end_headers()
+        try:
+            self.wfile.write(b"OK")
+        except Exception:
+            pass
+
+        def _work():
+            try:
+                update = json.loads(raw.decode("utf-8"))
+            except Exception as e:
+                print(f"[TG-WH] bad JSON: {e}", flush=True)
+                return
+            uid = update.get("update_id")
+            # Дедуп: Telegram повторює апдейт, якщо не отримав 200 вчасно
+            global _WH_SEEN
+            now = time.time()
+            for k in [k for k, v in list(_WH_SEEN.items()) if now - v > 600]:
+                _WH_SEEN.pop(k, None)
+            if uid in _WH_SEEN:
+                print(f"[TG-WH] duplicate update_id={uid} — skip", flush=True)
+                return
+            _WH_SEEN[uid] = now
+            kind = ("callback_query" if update.get("callback_query")
+                    else "message" if update.get("message") else "other")
+            print(f"[TG-WH] update_id={uid} type={kind}", flush=True)
+            try:
+                import bot as _bot
+                _bot.process_update(update)
+            except Exception as e:
+                import traceback
+                print(f"[TG-WH] process_update failed: {e}", flush=True)
+                traceback.print_exc()
+
+        threading.Thread(target=_work, daemon=True, name="tg-webhook").start()
 
     def _handle_zip_upload(self):
         """Приймає ZIP від Health Auto Export і надсилає розширений звіт."""
@@ -638,7 +713,9 @@ def extract_zip_from_multipart(body, content_type):
 
 def run_server():
     port = int(os.environ.get("PORT", 8080))
-    server = HTTPServer(("0.0.0.0", port), HealthHandler)
+    # ThreadingHTTPServer, а не HTTPServer: Telegram шле апдейти пачками, а
+    # однопотоковий сервер обробляв би їх послідовно і ловив таймаути.
+    server = ThreadingHTTPServer(("0.0.0.0", port), HealthHandler)
     print(f"=== Health Webhook Server on port {port} ===", flush=True)
     print("Endpoints: GET / | POST / (Widgets) | POST /upload (HAE ZIP)", flush=True)
     server.serve_forever()

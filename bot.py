@@ -118,7 +118,16 @@ class _PersistentDraftStore:
 
 
 _DRAFT_STORE = _PersistentDraftStore()  # uid_str -> {to, subject, body} — persistent store для email/calendar drafts (переживає редеплой)
-_IMPORTANT_EMAILS_FILE = "data/important_emails.json"  # важливі листи (GitHub)
+_IMPORTANT_EMAILS_FILE = "data/important_emails.json"
+
+# Локальна тека для даних. Була використана у 3 місцях (alerts_sent_dedup,
+# daily_health) БЕЗ визначення — кожне таке місце падало з NameError,
+# зокрема парсер даних здоров'я з тексту Qwatch.
+_DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+try:
+    os.makedirs(_DATA_DIR, exist_ok=True)
+except Exception:
+    pass  # важливі листи (GitHub)
 _GH_TOKEN    = os.environ.get("GITHUB_TOKEN", "")
 _GH_LOCK_URL = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_lock.json"
 _GH_OFF_URL  = "https://api.github.com/repos/NovosadovO/morning-report/contents/data/bot_offset.json"
@@ -2186,14 +2195,23 @@ def get_updates(offset=0):
             # роботи бота — deleteWebhook() при старті main() спрацював лише
             # один раз і цього недостатньо, якщо webhook з'являється знову.
             # Видаляємо його одразу тут же, при кожному такому конфлікті.
-            print(f"[Bot] Webhook re-appeared mid-run ({_desc[:80]}) — deleting again", flush=True)
-            try:
-                api("deleteWebhook", {"drop_pending_updates": False})
-            except Exception as _e:
-                print(f"[Bot] deleteWebhook (mid-run) error: {_e}", flush=True)
+            if USE_WEBHOOK:
+                print("[Bot] Webhook активний (WEBHOOK MODE) — це очікувано, polling не потрібен", flush=True)
+            else:
+                print(f"[Bot] Webhook re-appeared mid-run ({_desc[:80]}) — deleting again", flush=True)
+                try:
+                    api("deleteWebhook", {"drop_pending_updates": False})
+                except Exception as _e:
+                    print(f"[Bot] deleteWebhook (mid-run) error: {_e}", flush=True)
         return _CONFLICT_409
     return result.get("result", [])
 
+
+# Режим доставки апдейтів. USE_WEBHOOK=1 → Telegram сам штовхає апдейти на
+# /telegram (швидше, без getUpdates). Інакше — класичний polling.
+# Обидва режими одночасно Telegram не дозволяє: увімкнений webhook робить
+# getUpdates недійсним (409), тому polling у webhook-режимі не запускається.
+USE_WEBHOOK = os.environ.get("USE_WEBHOOK", "").strip() in ("1", "true", "yes", "on")
 
 _GH_DATA_BRANCH = "data"  # окрема гілка для lock/offset — не тригерить Railway
 
@@ -4359,6 +4377,139 @@ def _dispatch_callback_async(cb):
                   name=f"cb-{data[:20]}").start()
 
 
+# ─── Єдина обробка одного апдейта: спільна для polling І webhook ─────────────
+# Раніше вся логіка жила прямо в polling-циклі, тому webhook було неможливо
+# підключити без дублювання коду. Тепер обидва входи викликають цю функцію.
+def process_update(update):
+    try:
+        # Обробка кнопок (callback_query)
+        cb = update.get("callback_query")
+        if cb:
+            if str(cb["message"]["chat"]["id"]) == str(TELEGRAM_CHAT):
+                chat_id = cb["message"]["chat"]["id"]
+                data = cb.get("data", "")
+                print(f"[CB] data={data}", flush=True)
+                _dispatch_callback_async(cb)
+            return
+
+        msg = update.get("message") or update.get("edited_message")
+        if not msg:
+            return
+
+        chat_id = msg["chat"]["id"]
+        text = msg.get("text", "")
+
+        # Тільки від авторизованого користувача
+        if str(chat_id) != str(TELEGRAM_CHAT):
+            send(chat_id, "⛔ Немає доступу.")
+            return
+
+        # Обробка фото (документ з підписом "поясни"/"переклад" АБО скрін Health Score за замовчуванням)
+        if msg.get("photo"):
+            if handle_document_explain_photo(chat_id, msg):
+                return
+            handle_health_photo(chat_id, msg)
+            return
+
+        # Обробка ZIP файлу (Health Auto Export) або PDF/DOCX/TXT документа (пояснити/перекласти)
+        if msg.get("document"):
+            doc = msg["document"]
+            fname = doc.get("file_name", "")
+            if fname.endswith(".zip") or "export" in fname.lower():
+                handle_health_zip(chat_id, doc)
+                return
+            if handle_document_explain_file(chat_id, doc):
+                return
+
+        print(f"Message: {text}", flush=True)
+
+        # Практика співбесіди — якщо бот щойно поставив питання, це відповідь Олега
+        if handle_interview_answer(chat_id, text):
+            return
+
+        # Чернетка повідомлення/листа за проханням у вільній формі
+        if handle_draft_request(chat_id, text):
+            return
+
+        # Shopping — якщо бот очікує список покупок
+        try:
+            from planner import get_state as _gs, clear_state as _cs
+            _st = _gs()
+            # QWatch/health текст — ніколи не йде в список покупок
+            _is_qwatch = ("health score" in text.lower() or "оцінка здоров" in text.lower()
+                          or ("hrv" in text.lower() and ("сон" in text.lower() or "кроки" in text.lower() or "пульс" in text.lower()))
+                          or "qwatch" in text.lower())
+
+            # ── ПАРСИМО ЗДОРОВ'Я ТЕКСТ ──
+            if _is_qwatch:
+                try:
+                    from health_parser import parse_health_text, save_daily_health
+                    _parsed = parse_health_text(text)
+                    if _parsed:
+                        _date_key = save_daily_health(_parsed, os.path.join(_DATA_DIR, "daily_health.json"))
+                        print(f"[Health] Saved health data for {_date_key}: {_parsed}", flush=True)
+                        # Дамо юзеру фідбек про кілька найважливіших метрик
+                        _feedback_parts = []
+                        if "steps" in _parsed:
+                            _feedback_parts.append(f"🚶 Кроки: {_parsed['steps']}")
+                        if "sleep_hours" in _parsed:
+                            _feedback_parts.append(f"😴 Сон: {_parsed['sleep_hours']:.1f}г")
+                        if "hr" in _parsed:
+                            _feedback_parts.append(f"❤️ Пульс: {_parsed['hr']}")
+                        if _feedback_parts:
+                            _feedback = " · ".join(_feedback_parts)
+                            send(chat_id, f"✅ Записано: {_feedback}")
+                except Exception as _hp_err:
+                    print(f"[Health] Parse error: {_hp_err}")
+
+            if _is_qwatch and _st.get("mode") == "awaiting_shopping":
+                _cs()  # скидаємо shopping mode
+            if _st.get("mode") == "awaiting_shopping" and not _is_qwatch:
+                import shopping as _sh_inp
+                _cs()
+                # Замінюємо переноси рядків на коми і передаємо в add_items
+                import re as _re
+                _normalized = _re.sub(r"[\n\r]+", ", ", text.strip())
+                _added = _sh_inp.add_items(_normalized)
+                if _added:
+                    _items_all = _sh_inp.get_items()
+                    _uncompleted = [i for i in _items_all if not i.get("done")]
+                    _list_text = _sh_inp.format_list(_items_all)
+                    api("sendMessage", {
+                        "chat_id": chat_id,
+                        "text": (
+                            f"✅ Додано {len(_added)} пункт(ів)!\n\n"
+                            f"🛒 <b>Список покупок</b> ({len(_uncompleted)} залишилось):\n\n{_list_text}"
+                        ),
+                        "parse_mode": "HTML",
+                        "reply_markup": {"inline_keyboard": [
+                            [{"text": "✅ Все куплено", "callback_data": "shopping_all_done"},
+                             {"text": "📝 Відмітити",  "callback_data": "shopping_mark"}],
+                            [{"text": "➕ Додати ще",  "callback_data": "shopping_add_item"},
+                             {"text": "🗑 Очистити",   "callback_data": "shopping_clear"}]
+                        ]}
+                    })
+                else:
+                    send(chat_id, "⚠️ Не зміг розпізнати пункти. Спробуй ще раз.")
+                return
+        except Exception as _spe:
+            print(f"shopping reply error: {_spe}")
+
+        # Planner — обробляємо першим якщо бот очікує відповідь
+        try:
+            from planner import handle_planner_reply
+            if handle_planner_reply(text):
+                return
+        except Exception as _pe:
+            print(f"planner reply error: {_pe}")
+
+        handle_command(chat_id, text)
+    except Exception as _pue:
+        import traceback as _tb_pu
+        print(f"[process_update] error: {_pue}", flush=True)
+        _tb_pu.print_exc()
+
+
 def main():
     global _conflict_count
     _conflict_count = 0
@@ -4367,11 +4518,23 @@ def main():
 
     # Скидаємо webhook (якщо був), АЛЕ зберігаємо pending updates —
     # щоб команди (/звіт тощо) не губились при рестарті бота
-    try:
-        api("deleteWebhook", {"drop_pending_updates": False})
-        print("[Bot] Webhook deleted, pending updates KEPT", flush=True)
-    except Exception as e:
-        print(f"[Bot] deleteWebhook error: {e}", flush=True)
+    if USE_WEBHOOK:
+        print("[Bot] WEBHOOK MODE — webhook НЕ видаляється, polling не запускається", flush=True)
+        try:
+            _wi = api("getWebhookInfo", {})
+            _wurl = (_wi or {}).get("result", {}).get("url", "")
+            print(f"[Bot] Webhook URL: {_wurl or '(не встановлено!)'}", flush=True)
+            if not _wurl:
+                print("[Bot] ⚠️ USE_WEBHOOK=1, але webhook не встановлений — "
+                      "апдейти НЕ надходитимуть. Виконай setWebhook.", flush=True)
+        except Exception as e:
+            print(f"[Bot] getWebhookInfo error: {e}", flush=True)
+    else:
+        try:
+            api("deleteWebhook", {"drop_pending_updates": False})
+            print("[Bot] Webhook deleted, pending updates KEPT", flush=True)
+        except Exception as e:
+            print(f"[Bot] deleteWebhook error: {e}", flush=True)
 
     # Чекаємо стати лідером (до 180с)
     waited = 0
@@ -4438,6 +4601,15 @@ def main():
     except Exception as _e:
         print(f"=== Could not read service account: {_e} ===", flush=True)
 
+    if USE_WEBHOOK:
+        print("[Bot] WEBHOOK MODE активний — апдейти приходять на /telegram. "
+              "Тримаю лідерство + фонові воркери, getUpdates не викликаю.", flush=True)
+        while True:
+            if not _is_leader:
+                print(f"[Bot] Not leader anymore [{_INSTANCE_ID}] — stopping", flush=True)
+                return
+            time.sleep(30)
+
     offset = load_offset()
     print(f"[Bot] Starting polling from offset {offset}", flush=True)
 
@@ -4481,128 +4653,7 @@ def main():
                     print(f"[Bot] Lost leadership mid-loop — stopping", flush=True)
                     return
 
-                # Обробка кнопок (callback_query)
-                cb = update.get("callback_query")
-                if cb:
-                    if str(cb["message"]["chat"]["id"]) == str(TELEGRAM_CHAT):
-                        chat_id = cb["message"]["chat"]["id"]
-                        data = cb.get("data", "")
-                        print(f"[CB] data={data}", flush=True)
-                        _dispatch_callback_async(cb)
-                    continue
-
-                msg = update.get("message") or update.get("edited_message")
-                if not msg:
-                    continue
-
-                chat_id = msg["chat"]["id"]
-                text = msg.get("text", "")
-
-                # Тільки від авторизованого користувача
-                if str(chat_id) != str(TELEGRAM_CHAT):
-                    send(chat_id, "⛔ Немає доступу.")
-                    continue
-
-                # Обробка фото (документ з підписом "поясни"/"переклад" АБО скрін Health Score за замовчуванням)
-                if msg.get("photo"):
-                    if handle_document_explain_photo(chat_id, msg):
-                        continue
-                    handle_health_photo(chat_id, msg)
-                    continue
-
-                # Обробка ZIP файлу (Health Auto Export) або PDF/DOCX/TXT документа (пояснити/перекласти)
-                if msg.get("document"):
-                    doc = msg["document"]
-                    fname = doc.get("file_name", "")
-                    if fname.endswith(".zip") or "export" in fname.lower():
-                        handle_health_zip(chat_id, doc)
-                        continue
-                    if handle_document_explain_file(chat_id, doc):
-                        continue
-
-                print(f"Message: {text}", flush=True)
-
-                # Практика співбесіди — якщо бот щойно поставив питання, це відповідь Олега
-                if handle_interview_answer(chat_id, text):
-                    continue
-
-                # Чернетка повідомлення/листа за проханням у вільній формі
-                if handle_draft_request(chat_id, text):
-                    continue
-
-                # Shopping — якщо бот очікує список покупок
-                try:
-                    from planner import get_state as _gs, clear_state as _cs
-                    _st = _gs()
-                    # QWatch/health текст — ніколи не йде в список покупок
-                    _is_qwatch = ("health score" in text.lower() or "оцінка здоров" in text.lower()
-                                  or ("hrv" in text.lower() and ("сон" in text.lower() or "кроки" in text.lower() or "пульс" in text.lower()))
-                                  or "qwatch" in text.lower())
-                    
-                    # ── ПАРСИМО ЗДОРОВ'Я ТЕКСТ ──
-                    if _is_qwatch:
-                        try:
-                            from health_parser import parse_health_text, save_daily_health
-                            _parsed = parse_health_text(text)
-                            if _parsed:
-                                _date_key = save_daily_health(_parsed, os.path.join(_DATA_DIR, "daily_health.json"))
-                                print(f"[Health] Saved health data for {_date_key}: {_parsed}", flush=True)
-                                # Дамо юзеру фідбек про кілька найважливіших метрик
-                                _feedback_parts = []
-                                if "steps" in _parsed:
-                                    _feedback_parts.append(f"🚶 Кроки: {_parsed['steps']}")
-                                if "sleep_hours" in _parsed:
-                                    _feedback_parts.append(f"😴 Сон: {_parsed['sleep_hours']:.1f}г")
-                                if "hr" in _parsed:
-                                    _feedback_parts.append(f"❤️ Пульс: {_parsed['hr']}")
-                                if _feedback_parts:
-                                    _feedback = " · ".join(_feedback_parts)
-                                    send(chat_id, f"✅ Записано: {_feedback}")
-                        except Exception as _hp_err:
-                            print(f"[Health] Parse error: {_hp_err}")
-                    
-                    if _is_qwatch and _st.get("mode") == "awaiting_shopping":
-                        _cs()  # скидаємо shopping mode
-                    if _st.get("mode") == "awaiting_shopping" and not _is_qwatch:
-                        import shopping as _sh_inp
-                        _cs()
-                        # Замінюємо переноси рядків на коми і передаємо в add_items
-                        import re as _re
-                        _normalized = _re.sub(r"[\n\r]+", ", ", text.strip())
-                        _added = _sh_inp.add_items(_normalized)
-                        if _added:
-                            _items_all = _sh_inp.get_items()
-                            _uncompleted = [i for i in _items_all if not i.get("done")]
-                            _list_text = _sh_inp.format_list(_items_all)
-                            api("sendMessage", {
-                                "chat_id": chat_id,
-                                "text": (
-                                    f"✅ Додано {len(_added)} пункт(ів)!\n\n"
-                                    f"🛒 <b>Список покупок</b> ({len(_uncompleted)} залишилось):\n\n{_list_text}"
-                                ),
-                                "parse_mode": "HTML",
-                                "reply_markup": {"inline_keyboard": [
-                                    [{"text": "✅ Все куплено", "callback_data": "shopping_all_done"},
-                                     {"text": "📝 Відмітити",  "callback_data": "shopping_mark"}],
-                                    [{"text": "➕ Додати ще",  "callback_data": "shopping_add_item"},
-                                     {"text": "🗑 Очистити",   "callback_data": "shopping_clear"}]
-                                ]}
-                            })
-                        else:
-                            send(chat_id, "⚠️ Не зміг розпізнати пункти. Спробуй ще раз.")
-                        continue
-                except Exception as _spe:
-                    print(f"shopping reply error: {_spe}")
-
-                # Planner — обробляємо першим якщо бот очікує відповідь
-                try:
-                    from planner import handle_planner_reply
-                    if handle_planner_reply(text):
-                        continue
-                except Exception as _pe:
-                    print(f"planner reply error: {_pe}")
-
-                handle_command(chat_id, text)
+                process_update(update)
 
             # ФАЗА 1: Event-based alerts (крипто, email, календар, здоров'я, астро)
             # ⚠️ ТИМЧАСОВО ВИМКНЕНО — занадто частим сповіщення
