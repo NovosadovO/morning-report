@@ -22,11 +22,18 @@ CACHE_TTL = 300  # секунд (5 хвилин — зменшує дублі п
 _FILE_LOCKS: dict = {}
 _FILE_LOCKS_LOCK = threading.Lock()
 
-def _get_file_lock(filename: str) -> threading.Lock:
-    """Повертає Lock для конкретного файлу (singleton per filename)."""
+def _get_file_lock(filename: str):
+    """Повертає RLock для конкретного файлу (singleton per filename).
+
+    RLock, а НЕ Lock: раніше був звичайний Lock, і будь-який read-modify-write
+    вигляду `with _get_file_lock(f): _load_github(f); _save_github(f, ...)`
+    (response_log.log_response і подібні) намертво вішав потік — _load_github
+    брав ТОЙ САМИЙ лок повторно. Через це кнопки під сповіщеннями "вмирали":
+    потік висів у дедлоці, ні результату, ні помилки в логах.
+    """
     with _FILE_LOCKS_LOCK:
         if filename not in _FILE_LOCKS:
-            _FILE_LOCKS[filename] = threading.Lock()
+            _FILE_LOCKS[filename] = threading.RLock()
         return _FILE_LOCKS[filename]
 
 DATA_BRANCH = "data"  # окрема гілка для даних — не тригерить Railway редеплой

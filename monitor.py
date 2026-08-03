@@ -774,7 +774,7 @@ def _fetch_etf_rows(tickers: list) -> list:
 _ETF_TICKERS_SHORT = [
     ("IBIT",   "IBIT",    "🟠"),
     ("ETHA",   "ETHA",    "🔷"),
-    ("VAVA",   "VAVA.SW", "🏔️"),
+    ("VAVA",   "VAVA.DE", "🏔️"),
     ("GAVA",   "GAVA",    "🟣"),
     ("QQQ",    "QQQ",     "💻"),
 ]
@@ -784,7 +784,7 @@ _ETF_TICKERS_FULL = [
     # ETF
     ("IBIT",   "IBIT",    "🟠"),
     ("ETHA",   "ETHA",    "🔷"),
-    ("VAVA",   "VAVA.SW", "🏔️"),
+    ("VAVA",   "VAVA.DE", "🏔️"),
     ("GAVA",   "GAVA",    "🟣"),
     ("QQQ",    "QQQ",     "💻"),
     ("SPY",    "SPY",     "📊"),
@@ -4473,7 +4473,7 @@ def check_crypto_price_alert():
 ETF_ALERT_TICKERS = [
     ("IBIT",  "IBIT"),
     ("ETHA",  "ETHA"),
-    ("VAVA",  "VAVA.SW"),
+    ("VAVA",  "VAVA.DE"),
     ("GAVA",  "GAVA"),
     ("QQQ",   "QQQ"),
     ("SPY",   "SPY"),
@@ -11889,7 +11889,7 @@ def check_crypto_price_alert():
 ETF_ALERT_TICKERS = [
     ("IBIT",  "IBIT"),
     ("ETHA",  "ETHA"),
-    ("VAVA",  "VAVA.SW"),
+    ("VAVA",  "VAVA.DE"),
     ("GAVA",  "GAVA"),
     ("QQQ",   "QQQ"),
     ("SPY",   "SPY"),

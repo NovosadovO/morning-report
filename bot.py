@@ -1860,7 +1860,9 @@ def handle_habit_callback(callback_query):
         from datetime import datetime, timezone, timedelta
         now_l = datetime.now(timezone.utc) + timedelta(hours=2)
         mark = "✅" if answer == "yes" else "❌"
-        log_to_calendar(f"{habit['emoji']} {habit['name']} {mark}", now_l.strftime("%Y-%m-%d"), habit["hour"], habit["minute"])
+        # shower не має hour/minute у конфізі — раніше тут летів KeyError: 'hour'
+        log_to_calendar(f"{habit['emoji']} {habit['name']} {mark}", now_l.strftime("%Y-%m-%d"),
+                        habit.get("hour", 9), habit.get("minute", 0))
     except Exception as e:
         print(f"habit log_to_calendar error: {e}")
 
@@ -4373,8 +4375,28 @@ def _dispatch_callback_async(cb):
         pass
 
     import threading as _th_cb
-    _th_cb.Thread(target=_route_callback, args=(cb,), daemon=True,
-                  name=f"cb-{data[:20]}").start()
+    _done_ev = _th_cb.Event()
+
+    def _runner():
+        try:
+            _route_callback(cb)
+        finally:
+            _done_ev.set()
+
+    def _watchdog():
+        # Захист від "мертвих" кнопок: якщо обробник завис (мережа/лок/GitHub),
+        # користувач має дізнатись про це, а не дивитись у пустоту.
+        if not _done_ev.wait(75):
+            print(f"[CB] ⏱ WATCHDOG: обробник {data} висить >75с", flush=True)
+            try:
+                send(cb["message"]["chat"]["id"],
+                     f"⏱ Кнопка <code>{data[:40]}</code> обробляється надто довго — "
+                     f"мережа/GitHub гальмує. Спробуй ще раз через хвилину.")
+            except Exception:
+                pass
+
+    _th_cb.Thread(target=_runner, daemon=True, name=f"cb-{data[:20]}").start()
+    _th_cb.Thread(target=_watchdog, daemon=True, name=f"cbwd-{data[:16]}").start()
 
 
 # ─── Єдина обробка одного апдейта: спільна для polling І webhook ─────────────

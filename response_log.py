@@ -26,36 +26,41 @@ def _storage():
 
 def log_response(category: str, question: str, answer: str, extra: dict = None):
     """Записує одну відповідь. category — тип (diary/micro_checkin/mood/habit/
-    email_reply/quick_reply/calendar_confirm/shopping_confirm/chat тощо)."""
+    email_reply/quick_reply/calendar_confirm/shopping_confirm/chat тощо).
+
+    НЕ блокує викликача: запис у GitHub (до 5 retry з backoff, ~30с) робиться
+    у фоновому потоці. Раніше цей виклик стояв першим у кожному обробнику
+    кнопки й міг вішати весь колбек.
+    """
+    entry = {
+        "ts": (datetime.now(timezone.utc) + _TZ_OFFSET).isoformat(),
+        "category": category,
+        "question": (question or "")[:300],
+        "answer": (answer or "")[:500],
+    }
+    if extra:
+        entry["extra"] = extra
+
+    def _writer():
+        try:
+            import storage as _st
+            lock = _st._get_file_lock(LOG_FILE)
+            with lock:  # RLock — вкладені _load/_save всередині безпечні
+                data = _st._load_github(LOG_FILE) or {"entries": []}
+                if not isinstance(data, dict):
+                    data = {"entries": []}
+                data.setdefault("entries", []).append(entry)
+                data["entries"] = data["entries"][-2000:]
+                _st._save_github(LOG_FILE, data)
+        except Exception as e:
+            print(f"[response_log] error: {e}", flush=True)
+
     try:
-        s = _storage()
-        entry = {
-            "ts": (datetime.now(timezone.utc) + _TZ_OFFSET).isoformat(),
-            "category": category,
-            "question": (question or "")[:300],
-            "answer": (answer or "")[:500],
-        }
-        if extra:
-            entry["extra"] = extra
-
-        def _append(data):
-            if not isinstance(data, dict):
-                data = {"entries": []}
-            data.setdefault("entries", []).append(entry)
-            # Тримаємо останні 2000 записів — досить на рік+ активного використання
-            data["entries"] = data["entries"][-2000:]
-            return data
-
-        # Атомарний append через update_key на "entries" неможливий напряму (список, не ключ),
-        # тому робимо власний lock-safe read-modify-write через internal storage lock.
-        import storage as _st
-        lock = _st._get_file_lock(LOG_FILE)
-        with lock:
-            data = _st._load_github(LOG_FILE) or {"entries": []}
-            data = _append(data)
-            _st._save_github(LOG_FILE, data)
+        import threading
+        threading.Thread(target=_writer, daemon=True,
+                         name=f"rlog-{category[:12]}").start()
     except Exception as e:
-        print(f"[response_log] error: {e}", flush=True)
+        print(f"[response_log] thread error: {e}", flush=True)
 
 
 def get_responses(days: int = 7, category: str = None) -> list:
