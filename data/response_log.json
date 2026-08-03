@@ -5,6 +5,16 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-08-04T00:35:29.027296+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист про весілля",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-08-04"
+      }
     }
   ]
 }
