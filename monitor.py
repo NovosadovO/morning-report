@@ -309,6 +309,12 @@ def _sanitize_html(text: str) -> str:
     """
     import re as _re
 
+    # Крок 0: markdown → HTML. Gemini час від часу віддає **жирний** попри інструкції,
+    # а Telegram у parse_mode=HTML показує зірочки як текст ("**Плутон Трин**").
+    text = _re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', text, flags=_re.S)
+    text = _re.sub(r'(?<![\w*])\*(?!\s)([^*\n]+?)(?<!\s)\*(?![\w*])', r'<i>\1</i>', text)
+    text = _re.sub(r'^\s*#{1,6}\s*(.+)$', r'<b>\1</b>', text, flags=_re.M)
+
     # Крок 1: витягуємо валідні HTML теги і entities — замінюємо на плейсхолдери
     ALLOWED_TAG = r'</?(?:b|i|u|s|code|pre|a(?:\s+href="[^"]*")?)>'
     ENTITY = r'&(?:amp|lt|gt|quot|#\d+|#x[\da-fA-F]+);'
