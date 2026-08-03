@@ -171,13 +171,29 @@ def _calendar_context() -> str:
 
 
 def _email_context() -> tuple:
-    """Повертає (текст для AI, список листів [{uid, from, subject}])."""
+    """Повертає (текст для AI, список листів [{uid, from, subject}]).
+
+    monitor.get_emails() повертає dict {"__email_block__":True,"header":...,"items":[...]}
+    (а при помилці — рядок). Раніше тут був emails[:12] по dict -> TypeError
+    "unhashable type: 'slice'" і скан падав щосекунди.
+    """
     try:
         import monitor as _m
-        emails = _m.get_emails()
+        raw = _m.get_emails()
     except Exception as e:
         _log(f"email_context error: {e}")
         return ("пошта недоступна", [])
+
+    if isinstance(raw, dict):
+        emails = raw.get("items") or []
+    elif isinstance(raw, list):
+        emails = raw
+    else:
+        # рядок = або "Нових листів немає", або текст помилки
+        txt = str(raw or "")
+        if "Помилка" in txt or "error" in txt.lower():
+            return ("пошта недоступна", [])
+        return ("нових листів немає", [])
 
     if not emails:
         return ("нових листів немає", [])
@@ -188,14 +204,15 @@ def _email_context() -> tuple:
     for e in emails[:12]:
         if not isinstance(e, dict):
             continue
-        sender = str(e.get("from") or e.get("sender") or "")
+        sender = str(e.get("sender") or e.get("from") or "")
         subject = str(e.get("subject") or "")
         low = (sender + " " + subject).lower()
         if any(j in low for j in _JUNK):
             continue
         uid = str(e.get("uid") or e.get("id") or "")
+        unread = " [НЕПРОЧИТАНИЙ]" if e.get("unread") else ""
         items.append({"uid": uid, "from": sender, "subject": subject})
-        lines.append(f"- від {sender[:60]} | тема: {subject[:90]}")
+        lines.append(f"- uid={uid} | від {sender[:60]} | тема: {subject[:90]}{unread}")
         if len(items) >= 6:
             break
     return ("\n".join(lines) or "важливих листів немає", items)
@@ -236,7 +253,7 @@ _PROMPT = """Ти — особистий AI-асистент Олега (Кош�
    - "calendar" — створити подію (є конкретна дата+час; підготовка, візит, дедлайн)
    - "reminder" — нагадування на дату (дія без точного часу: відповісти на лист, оплатити, подзвонити)
    - "note"     — важливий факт/деталь, яку варто зберегти в нотатки
-   - "reply"    — лист потребує відповіді (тоді обовʼязково вкажи email_uid з даних)
+   - "reply"    — лист потребує відповіді (тоді обовʼязково скопіюй ЧИСЛОВИЙ uid=... з блоку пошти в поле email_uid)
 5. date — завжди YYYY-MM-DD, не в минулому. time — "HH:MM" або "" якщо весь день.
 6. Врахуй зміни: під час зміни (06:00-18:00 рання / 18:00-06:00 нічна) Олег не може нічого робити.
 7. message — 2-4 живих речення українською, звертайся "Олеже", поясни ЧОМУ це важливо.
@@ -429,13 +446,16 @@ def scan_and_offer(force: bool = False) -> int:
     if not force and not should_scan():
         return 0
 
+    # Позначаємо спробу ВІДРАЗУ: якщо далі щось упаде, listener не буде
+    # запускати скан щосекунди (так було з TypeError у _email_context).
+    _mark_scanned()
+
     cal = _calendar_context()
     emails_text, email_items = _email_context()
     notes = _notes_context()
 
     if ("недоступ" in cal and "недоступ" in emails_text):
         _log("немає жодних живих даних — скан скасовано (не вигадуємо)")
-        _mark_scanned()
         return 0
 
     prompt = _PROMPT.format(
@@ -444,7 +464,6 @@ def scan_and_offer(force: bool = False) -> int:
         notes=notes[:1200], maxn=MAX_PER_SCAN,
     )
     items = _gemini_json(prompt)
-    _mark_scanned()
 
     if not items:
         _log("AI не знайшов причин писати — тиша (це нормально)")
