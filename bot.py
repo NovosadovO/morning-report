@@ -2604,6 +2604,26 @@ def handle_command(chat_id, text):
             import traceback as _tb
             send(chat_id, f"⚠️ CRASH у тесті астро: {type(e).__name__}: {str(e)[:300]}\n\n{_tb.format_exc()[-800:]}")
 
+    elif text.lower().strip() in ["/пропозиції", "/proposals", "пропозиції", "/pa_scan"]:
+        # Ручний запуск проактивного скану: календар + пошта + нотатки →
+        # AI сам формує карточки з робочими кнопками (в календар / нагадати / занотувати).
+        send(chat_id, "🔍 Сканую календар, пошту й нотатки — зараз запропоную дії...")
+
+        def _run_pa_scan():
+            try:
+                import sys as _sp, os as _op
+                _sp.path.insert(0, _op.path.dirname(__file__))
+                import proactive_actions as _pa_cmd
+                n = _pa_cmd.scan_and_offer(force=True)
+                if not n:
+                    send(chat_id, "✅ Перевірив — зараз немає нічого, що варто запропонувати.\n"
+                                  "<i>Ні нових подій, ні листів, що потребують дії.</i>")
+            except Exception as _e_pas:
+                send(chat_id, f"⚠️ Помилка скану пропозицій: {str(_e_pas)[:300]}")
+
+        import threading as _th_pa
+        _th_pa.Thread(target=_run_pa_scan, daemon=True, name="pa-scan").start()
+
     elif text in ["/нотатки", "/notes", "нотатки", "/zametki"]:
         # Кнопка "📝 Занотувати" посилається на цю команду — вона мусить існувати.
         try:
@@ -3968,6 +3988,83 @@ def _send_email_with_reply_buttons(emails_data: list):
 _CB_SEEN = {}
 
 
+def handle_proactive_action_callback(cb):
+    """Кнопки під проактивними пропозиціями AI (📅 В календар / ⏰ Нагадати /
+    📝 Занотувати / ❌ Не треба). Payload лежить у storage — кнопки живі
+    навіть після рестарту сервісу."""
+    data = cb.get("data", "")
+    chat_id = cb["message"]["chat"]["id"]
+    msg_id = cb["message"]["message_id"]
+    try:
+        import sys as _s_pa, os as _o_pa
+        _s_pa.path.insert(0, _o_pa.path.dirname(__file__))
+        import proactive_actions as _pa
+    except Exception as e:
+        send(chat_id, f"⚠️ Модуль пропозицій не завантажився: {e}")
+        return
+
+    def _clear_kb():
+        try:
+            api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id,
+                                           "reply_markup": {"inline_keyboard": []}})
+        except Exception:
+            pass
+
+    if data.startswith("pa_cal_"):
+        pid = data[len("pa_cal_"):]
+        r = _pa.do_calendar(pid)
+        if r.get("ok"):
+            _clear_kb()
+            send(chat_id, f"📅 <b>Додано в Google Calendar</b>\n"
+                          f"{r['title']}\n📆 {r['date']}  🕐 {r['time']}")
+        elif r.get("error") == "payload_missing":
+            _clear_kb()
+            send(chat_id, "⚠️ Ця пропозиція вже опрацьована або застаріла.")
+        else:
+            send(chat_id, f"⚠️ Не вдалось додати в календар: {r.get('error')}")
+
+    elif data.startswith("pa_rem_"):
+        pid = data[len("pa_rem_"):]
+        r = _pa.do_reminder(pid)
+        if r.get("ok"):
+            _clear_kb()
+            send(chat_id, f"⏰ <b>Нагадування поставлено</b>\n"
+                          f"🔔 {r['title']}\n📆 {r['date']}  🕐 {r['time']}")
+        elif r.get("error") == "payload_missing":
+            _clear_kb()
+            send(chat_id, "⚠️ Ця пропозиція вже опрацьована або застаріла.")
+        else:
+            send(chat_id, f"⚠️ Не вдалось поставити нагадування: {r.get('error')}")
+
+    elif data.startswith("pa_note_"):
+        pid = data[len("pa_note_"):]
+        r = _pa.do_note(pid)
+        if r.get("ok"):
+            _clear_kb()
+            send(chat_id, f"📝 <b>Записав у нотатки</b>\n{r['text']}\n\n"
+                          f"<i>Переглянути всі: /нотатки</i>")
+        elif r.get("error") == "payload_missing":
+            _clear_kb()
+            send(chat_id, "⚠️ Ця пропозиція вже опрацьована або застаріла.")
+        else:
+            send(chat_id, f"⚠️ Не вдалось зберегти нотатку: {r.get('error')}")
+
+    elif data.startswith("pa_skip_"):
+        pid = data[len("pa_skip_"):]
+        _pa.do_skip(pid)
+        _clear_kb()
+        cb_notify(cb["id"], chat_id, "Ок, не турбую 👌")
+
+    else:
+        cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
+    try:
+        import response_log as _rl_pa
+        _rl_pa.log_response("proactive_action", "Кнопка пропозиції", data)
+    except Exception:
+        pass
+
+
 def _route_callback(cb):
     data = cb.get("data", "")
     chat_id = cb["message"]["chat"]["id"]
@@ -4267,6 +4364,10 @@ def _route_callback(cb):
               data.startswith("calrem_add_") or data.startswith("calrem_skip_") or
               data.startswith("shop_add_") or data.startswith("shop_skip_")):
             handle_email_callback(cb)
+        elif data.startswith("pa_"):
+            # Проактивні пропозиції AI (proactive_actions.py):
+            # pa_cal_ / pa_rem_ / pa_note_ / pa_skip_
+            handle_proactive_action_callback(cb)
         elif (data.startswith("qr_ok_") or data.startswith("qr_more_") or data.startswith("qr_note_")):
             handle_quick_reply_callback(cb)
         elif data.startswith("reminder_"):
@@ -4360,6 +4461,10 @@ def _dispatch_callback_async(cb):
         ("qr_more_",        "🤔 Думаю..."),
         ("qr_note_",        "📝 Записую..."),
         ("qr_ok_",          "👍"),
+        ("pa_cal_",         "📅 Додаю в календар..."),
+        ("pa_rem_",         "⏰ Ставлю нагадування..."),
+        ("pa_note_",        "📝 Записую в нотатки..."),
+        ("pa_skip_",        "Ок, прибрав"),
         ("cal_add_",        "📅 Додаю..."),
         ("calrem_add_",     "📅 Додаю..."),
         ("cal_done_",       "🗑 Видаляю подію..."),

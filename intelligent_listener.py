@@ -459,6 +459,20 @@ class IntelligentListener:
                     triggers.append(("micro_checkin", None))
                     self._log("TRIGGER: micro_checkin")
 
+                # 16. ПРОАКТИВНІ ПРОПОЗИЦІЇ ДІЙ (AI сам ініціює:
+                # "Олеже, пропоную додати це в календар / занотувати / нагадати").
+                # Модуль сам тримає свій rate-limit (90 хв між сканами, max 8/добу)
+                # і сам вирішує, чи є реальна причина писати.
+                try:
+                    import proactive_actions as _pa_scan
+                    if _pa_scan.should_scan():
+                        self._log("[PROACTIVE ACTIONS] scan")
+                        _n_pa = _pa_scan.scan_and_offer()
+                        if _n_pa:
+                            self._log(f"✅ Надіслано {_n_pa} пропозицій з кнопками")
+                except Exception as _e_pa:
+                    self._log(f"proactive_actions error: {_e_pa}")
+
                 # Процесувати тригери (генеруємо & надсилаємо messages)
                 if triggers:
                     for ttype, tdata in triggers:
