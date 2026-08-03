@@ -143,10 +143,18 @@ class IntelligentListener:
             return []
     
     def _check_upcoming_events(self) -> list:
-        """Отримати события за 1-2 години"""
-        # TODO: Google Calendar API
-        # Поки повертаємо порожній list
-        return []
+        """Реальні події у наступні 2 години (Google Calendar через monitor)."""
+        try:
+            import sys as _sys
+            _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            from monitor import get_calendar_events_upcoming
+            events = get_calendar_events_upcoming(minutes_ahead=120)
+            routine = ["shower", "water", "tea", "чай", "душ", "вода", "сауна",
+                       "armolopid", "армолопід", "run", "біг"]
+            return [e for e in events if not any(r in str(e).lower() for r in routine)]
+        except Exception as e:
+            self._log(f"Calendar check error: {e}")
+            return []
     
     def _check_crypto_moves(self) -> dict:
         """Перевірити BTC/ETH/AVAX/ONDO/SOL/BNB/XRP за 1 годину (розширений watchlist).
