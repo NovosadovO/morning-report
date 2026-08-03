@@ -693,5 +693,25 @@
     "spo2": 99,
     "source": "qwatch",
     "saved_at": "2026-08-01 21:38"
+  },
+  "2026-08-03": {
+    "date": "2026-08-03",
+    "sleep_quality": 1,
+    "hr_avg": 58,
+    "calories": 9,
+    "hrv": 45,
+    "weight_kg": 83.0,
+    "age": 36,
+    "height_cm": 175,
+    "gender": "male",
+    "spo2": 96,
+    "source": "qwatch",
+    "saved_at": "2026-08-03 23:51",
+    "health_score": null,
+    "steps": 13967,
+    "sleep_total_min": 540,
+    "sleep_deep_min": 145,
+    "sleep_light_min": 232,
+    "stress": 37
   }
 }
