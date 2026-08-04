@@ -655,6 +655,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "gx_note_08e2b0d48c"
+    },
+    {
+      "ts": "2026-08-05T01:53:02.857855+00:00",
+      "category": "ai_button",
+      "question": "email",
+      "answer": "noted",
+      "extra": {
+        "trigger": "vip_email",
+        "note": "12.08. Страховка авто"
+      }
     }
   ]
 }
