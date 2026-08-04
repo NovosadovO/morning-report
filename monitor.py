@@ -11434,8 +11434,7 @@ def _get_calendar_events_text() -> str:
         day_end = day_start + timedelta(hours=24)
 
         events = _fetch_events_all_calendars(headers, day_start, day_end, max_per_cal=20)
-        if not events:
-            return "нічого не заплановано"
+        events = events or []   # порожньо сьогодні -> все одно віддаємо тиждень нижче
 
         items = []
         for ev in events:
@@ -11455,9 +11454,17 @@ def _get_calendar_events_text() -> str:
                 when = "?"
             items.append(f"{when} {summary}")
 
-        if not items:
-            return "нічого не заплановано"
-        return "; ".join(items[:10])
+        # Додаємо горизонт на тиждень вперед — щоб AI бачив не тільки сьогодні
+        ahead = ""
+        try:
+            import calendar_watch as _cw
+            ahead = _cw.upcoming_text(days=7) or ""
+        except Exception:
+            ahead = ""
+        today_part = "; ".join(items[:10]) if items else "нічого не заплановано"
+        if ahead:
+            return f"СЬОГОДНІ: {today_part} | НАЙБЛИЖЧІ 7 ДНІВ: {ahead}"
+        return today_part
     except Exception as e:
         print(f"_get_calendar_events_text error: {e}", flush=True)
         return "нічого не заплановано"

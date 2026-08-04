@@ -42,6 +42,7 @@ SENT_FILE = "calendar_sent.json"         # дедуп event_id|stage -> ISO
 ACK_FILE = "calendar_ack.json"           # збережені відповіді
 SNOOZE_FILE = "calendar_snooze.json"     # відкладені нагадування
 DAILY_FILE = "calendar_daily.json"       # агенда/прев'ю: 1 раз на день
+WEEKLY_FILE = "calendar_weekly.json"     # огляд тижня: 1 раз на тиждень
 
 _store = K.PayloadStore(STORE_FILE)
 
@@ -61,17 +62,23 @@ SHIFT_WORDS = ["зміна", "рання", "нічна", "shift", "☀️", "�
 # але буває лаг/рестарт — тому вікно, а не точна секунда).
 WINDOW_MIN = 12
 
-_cache = {"ts": None, "events": []}
+_cache = {"ts": None, "events": [], "h": 0}
 _CACHE_SEC = 240
+
+# Горизонт за замовчуванням — 8 днів вперед (а не тільки сьогодні):
+# бот має бачити тиждень і попереджати заздалегідь.
+DEFAULT_HOURS = 192
 
 
 # ─── КАЛЕНДАР ────────────────────────────────────────────────────────────────
 
-def _raw_events(hours_ahead: int = 30):
-    """Події з УСІХ календарів на N годин вперед + 3 години назад (для «як пройшло»).
-    In-process кеш 4 хв — щоб не дьоргати Google API щохвилини."""
+def _raw_events(hours_ahead: int = DEFAULT_HOURS):
+    """Події з УСІХ календарів на N годин вперед (типово 8 днів) + 4 години назад
+    (для «як пройшло»). In-process кеш 4 хв — щоб не дьоргати Google API щосекунди.
+    Кеш враховує горизонт: запит на більший горизонт не віддає короткий кеш."""
     n = K.now().replace(tzinfo=None)
-    if _cache["ts"] and (n - _cache["ts"]).total_seconds() < _CACHE_SEC:
+    if (_cache["ts"] and (n - _cache["ts"]).total_seconds() < _CACHE_SEC
+            and _cache.get("h", 0) >= hours_ahead):
         return _cache["events"]
     try:
         import monitor as M
@@ -94,7 +101,7 @@ def _raw_events(hours_ahead: int = 30):
             try:
                 import context as _ctx
                 seen = set()
-                for _off in (0, 1):
+                for _off in range(0, max(2, int(hours_ahead / 24) + 1)):
                     for _e in (_ctx._fetch_events_for_day(token, _off) or []):
                         _u = _e.get("id", "")
                         if _u and _u not in seen:
@@ -113,6 +120,7 @@ def _raw_events(hours_ahead: int = 30):
     out.sort(key=lambda x: x["start"])
     _cache["ts"] = n
     _cache["events"] = out
+    _cache["h"] = hours_ahead
     # Діагностика: видно чи «0 реальних подій» — правда, чи наслідок фільтрів
     try:
         _r = sum(1 for e in out if e["routine"])
@@ -222,6 +230,26 @@ _HINT_T30 = [
     "Останні хвилини — перевір, чи все взяв.",
     "Час вирушати.",
 ]
+_T24 = [
+    "📅 <b>Завтра у тебе</b>",
+    "📅 <b>Це вже завтра</b>",
+    "🗓 <b>Нагадую про завтра</b>",
+]
+_HINT_T24 = [
+    "Сьогодні ще є час підготуватись — документи, дорога, час виїзду.",
+    "Подивись, чи не конфліктує зі зміною, і сплануй сон.",
+    "Заплануй, коли виїжджаєш — щоб завтра не поспішати.",
+]
+_T3D = [
+    "🗓 <b>Попереджаю заздалегідь</b>",
+    "🗓 <b>На горизонті</b>",
+    "📆 <b>Наперед: скоро подія</b>",
+]
+_HINT_T3D = [
+    "Ще є кілька днів — встигаєш підготуватись без нервів.",
+    "Якщо потрібні документи або запис — краще зробити зараз.",
+    "Внеси в план тижня, щоб не накладалось на зміну.",
+]
 
 
 def _pick(arr, seed: str):
@@ -265,14 +293,25 @@ def _send_event(ev, stage: str) -> bool:
                       "start": ev["start"].isoformat(), "when": _fmt_when(ev),
                       "location": ev["location"]})
     loc = f"\n📍 {K.esc(ev['location'])}" if ev["location"] else ""
-    if stage == "t2h":
+    if stage == "t3d":
+        head, hint = _pick(_T3D, ev["id"]), _pick(_HINT_T3D, ev["id"])
+    elif stage == "t24h":
+        head, hint = _pick(_T24, ev["id"]), _pick(_HINT_T24, ev["id"])
+    elif stage == "t2h":
         head, hint = _pick(_T2H, ev["id"]), _pick(_HINT_T2H, ev["id"])
     elif stage == "t30":
         head, hint = _pick(_T30, ev["id"]), _pick(_HINT_T30, ev["id"])
     else:  # after
         head, hint = "✅ <b>Як пройшло?</b>", "Відповідь збережу — це піде в аналітику тижня."
+    dline = ""
+    if stage in ("t3d", "t24h"):
+        _days = (ev["start"].date() - K.now().replace(tzinfo=None).date()).days
+        _dw = ["сьогодні", "завтра", "післязавтра"]
+        _human = _dw[_days] if 0 <= _days <= 2 else f"через {_days} дн."
+        dline = f"📅 {ev['start'].strftime('%d.%m (%a)')} — {_human}\n"
     text = (f"{head}\n━━━━━━━━━━━━━━━━━━━━\n"
             f"📌 <b>{K.esc(ev['title'])}</b>\n"
+            f"{dline}"
             f"🕐 {_fmt_when(ev)}{loc}\n\n"
             f"<i>{hint}</i>")
     ok = K.send_card(text, _kb_event(pid, stage), tag=TAG)
@@ -295,6 +334,18 @@ def tick() -> int:
         if ev["allday"] or ev["routine"] or ev["shift"]:
             continue
         mins = (ev["start"] - n).total_seconds() / 60
+
+        # 2-4 дні до події — завчасне попередження (щоб нічого не було раптом)
+        if 2880 <= mins <= 5760 and not _sent(ev["id"], "t3d"):
+            if _send_event(ev, "t3d"):
+                sent += 1
+                continue
+
+        # 24 години до події
+        if 1440 - 45 <= mins <= 1440 + 45 and not _sent(ev["id"], "t24h"):
+            if _send_event(ev, "t24h"):
+                sent += 1
+                continue
 
         # 2 години до
         if 120 - WINDOW_MIN <= mins <= 120 + WINDOW_MIN and not _sent(ev["id"], "t2h"):
@@ -437,6 +488,100 @@ def tomorrow(force: bool = False) -> bool:
     return ok
 
 
+# ─── ТИЖДЕНЬ ВПЕРЕД ──────────────────────────────────────────────────────────
+
+_WD = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд"]
+
+
+def week_text(days: int = 7) -> str:
+    """Огляд на N днів вперед: день за днем, зміни + реальні події."""
+    events = _raw_events(hours_ahead=max(48, days * 24 + 12))
+    if events is None:
+        return ""
+    n = K.now().replace(tzinfo=None)
+    lines = ["🗓 <b>ТИЖДЕНЬ ВПЕРЕД</b>", "━━━━━━━━━━━━━━━━━━━━",
+             f"📅 {n.strftime('%d.%m')} – {(n + timedelta(days=days - 1)).strftime('%d.%m.%Y')}"]
+    total = 0
+    for off in range(days):
+        day = n + timedelta(days=off)
+        dev = _day_events(off, events)
+        real = [e for e in dev if not e["routine"] and not e["shift"]]
+        sh = K.classify_shift([{"summary": e["title"]} for e in dev])
+        sh_ico = {"early": "☀️", "night": "🌙", "free": "🏠"}.get(sh, "")
+        head = ("сьогодні" if off == 0 else "завтра" if off == 1
+                else f"{_WD[day.weekday()]} {day.strftime('%d.%m')}")
+        lines.append("")
+        lines.append(f"<b>{_WD[day.weekday()]} {day.strftime('%d.%m')}</b> {sh_ico} "
+                     f"<i>({head})</i>" if off < 2 else
+                     f"<b>{_WD[day.weekday()]} {day.strftime('%d.%m')}</b> {sh_ico}")
+        if real:
+            for e in real[:6]:
+                loc = f" · 📍 {K.esc(e['location'])}" if e["location"] else ""
+                lines.append(f"  • <b>{_fmt_when(e)}</b> — {K.esc(e['title'])}{loc}")
+            total += len(real)
+        else:
+            lines.append("  — порожньо")
+    lines.append("")
+    if total:
+        lines.append(f"📊 Разом реальних подій: <b>{total}</b>. "
+                     f"По кожній нагадаю за 2-4 дні, за добу, за 2 год і за 30 хв.")
+    else:
+        lines.append("📊 Реальних подій у календарі на цей період немає.")
+    return "\n".join(lines)[:3900]
+
+
+def _weekly_done() -> bool:
+    data = K.load(WEEKLY_FILE, default={}) or {}
+    n = K.now().replace(tzinfo=None)
+    return data.get("week") == f"{n.isocalendar()[0]}-{n.isocalendar()[1]}"
+
+
+def _weekly_mark():
+    n = K.now().replace(tzinfo=None)
+    K.update_key(WEEKLY_FILE, "week", f"{n.isocalendar()[0]}-{n.isocalendar()[1]}")
+
+
+def week(force: bool = False) -> bool:
+    """Огляд тижня — 1 раз на тиждень: нд 18:00-22:00 або пн 06:00-11:00."""
+    n = K.now().replace(tzinfo=None)
+    if not force:
+        ok_time = (n.weekday() == 6 and 18 <= n.hour < 23) or (n.weekday() == 0 and 6 <= n.hour < 11)
+        if _weekly_done() or not ok_time:
+            return False
+    text = week_text(7)
+    if not text:
+        K.log(TAG, "тиждень: календар недоступний — не вигадую")
+        return False
+    pid = _store.put({"stage": "week", "day": K.today_str()})
+    kb = [[{"text": "👍 Бачу тиждень", "callback_data": f"cw_ack_{pid}"},
+           {"text": "📝 Нотатка", "callback_data": f"cw_note_{pid}"}]]
+    ok = K.send_card(text, kb, tag=TAG)
+    if ok and not force:
+        _weekly_mark()
+    if ok:
+        K.log(TAG, "✅ огляд тижня надіслано")
+    return ok
+
+
+def upcoming_text(days: int = 7, limit: int = 14) -> str:
+    """Компактний рядок для AI-промптів: що заплановано на найближчі дні.
+    Формат: «05.08 17:00 Тренування; 07.08 09:30 Лікар». Без AI-викликів."""
+    events = _raw_events(hours_ahead=max(48, days * 24 + 12))
+    if not events:
+        return ""
+    n = K.now().replace(tzinfo=None)
+    limit_dt = n + timedelta(days=days)
+    out = []
+    for e in events:
+        if e["routine"] or e["shift"] or e["start"] < n or e["start"] > limit_dt:
+            continue
+        when = "весь день" if e["allday"] else e["start"].strftime("%H:%M")
+        out.append(f"{e['start'].strftime('%d.%m')} {when} {e['title']}")
+        if len(out) >= limit:
+            break
+    return "; ".join(out)
+
+
 # ─── КНОПКИ ──────────────────────────────────────────────────────────────────
 
 def _ack(pid: str, answer: str, extra: dict = None) -> dict:
@@ -462,7 +607,7 @@ def do_cancel(pid):
     p = _store.get(pid)
     if p and p.get("evid"):
         # більше не нагадуємо по цій події
-        for stage in ("t2h", "t30", "after"):
+        for stage in ("t3d", "t24h", "t2h", "t30", "after"):
             _mark(p["evid"], stage)
     return _ack(pid, "cancelled")
 
@@ -512,7 +657,7 @@ def do_note(pid, note: str = "") -> dict:
 
 # ─── ЗВІТ ────────────────────────────────────────────────────────────────────
 
-_LABEL = {"remembered": "✅ пам'ятав", "cancelled": "🚫 скасовано",
+_LABEL = {"remembered": "✅ пам'ятав", "week": "🗓 огляд тижня", "cancelled": "🚫 скасовано",
           "done": "✅ було", "missed": "❌ не було", "moved": "⏭ перенесено",
           "accepted": "👍 прийняв план", "noted": "📝 нотатка"}
 
@@ -578,6 +723,10 @@ if __name__ == "__main__":
         print(_agenda_text(_day_events(0, _raw_events() or []), 0))
     elif "--tick" in sys.argv:
         print("sent:", tick())
+    elif "--week" in sys.argv:
+        print(week_text(7))
+    elif "--upcoming" in sys.argv:
+        print(upcoming_text(7))
     elif "--report" in sys.argv:
         print(report())
     else:

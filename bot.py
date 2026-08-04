@@ -2459,6 +2459,7 @@ HELP_TEXT = """
 /енергія_тренд — як зміни впливають на твою енергію
 /листи_постачальникам — історія листів постачальникам
 /події — план на сьогодні + що чекає завтра
+/тиждень_план (/наперед) — календар на 7 днів вперед
 /події_відповіді — що ти відповідав на нагадування
 /нагадай_тест — прогнати перевірку календаря зараз\n/нагадай_демо — демо-нагадування з кнопками (перевірка)
 /пропозиції — скан календаря/пошти → пропозиції дій
@@ -2798,6 +2799,20 @@ def handle_command(chat_id, text):
                 send(chat_id, f"⚠️ Помилка агенди: {str(_e_cw)[:300]}")
         import threading as _th_cw
         _th_cw.Thread(target=_run_cw_ev, daemon=True, name="calendar-agenda").start()
+
+    elif text.lower().strip() in ["/тиждень_план", "/календар_тиждень", "/наперед", "/week_plan"]:
+        # Огляд календаря на 7 днів вперед. БЕЗ AI — 0 кредитів.
+        def _run_cw_week():
+            try:
+                import sys as _scw, os as _ocw
+                _scw.path.insert(0, _ocw.path.dirname(__file__))
+                import calendar_watch as _cw_w
+                if not _cw_w.week(force=True):
+                    send(chat_id, "⚠️ Календар зараз недоступний — не вигадую події.")
+            except Exception as _e_cww:
+                send(chat_id, f"⚠️ Помилка огляду тижня: {str(_e_cww)[:300]}")
+        import threading as _th_cww
+        _th_cww.Thread(target=_run_cw_week, daemon=True, name="calendar-week").start()
 
     elif text.lower().strip() in ["/події_відповіді", "/event_acks", "/нагадування_звіт"]:
         try:

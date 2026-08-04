@@ -593,6 +593,9 @@ class IntelligentListener:
                         self._log("✅ Ранкова агенда дня надіслана")
                     if _due("cw_tomorrow", 900) and _cw_l.tomorrow():
                         self._log("✅ Прев'ю на завтра надіслано")
+                    # Огляд тижня вперед (нд ввечері / пн зранку, 1 раз на тиждень)
+                    if _due("cw_week", 1800) and _cw_l.week():
+                        self._log("✅ Огляд тижня надіслано")
                     if _due("cw_gc", 86400):
                         _cw_l.gc_sent()
                 except Exception as _e_cw:
