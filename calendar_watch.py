@@ -75,12 +75,31 @@ def _raw_events(hours_ahead: int = 30):
         import monitor as M
         token = M._calendar_access_token()
         if not token:
+            try:
+                import context as _ctx
+                token = _ctx._get_token()
+            except Exception:
+                token = None
+        if not token:
             K.log(TAG, "календар недоступний (немає токена)")
             return None
         headers = {"Authorization": f"Bearer {token}"}
         t_min = datetime.now(timezone.utc) - timedelta(hours=4)
         t_max = datetime.now(timezone.utc) + timedelta(hours=hours_ahead)
         evs = M._fetch_events_all_calendars(headers, t_min, t_max, max_per_cal=40) or []
+        if not evs:
+            # резервний шлях: прямий календар Олега (той, що працює в context.py)
+            try:
+                import context as _ctx
+                seen = set()
+                for _off in (0, 1):
+                    for _e in (_ctx._fetch_events_for_day(token, _off) or []):
+                        _u = _e.get("id", "")
+                        if _u and _u not in seen:
+                            seen.add(_u)
+                            evs.append(_e)
+            except Exception as e2:
+                K.log(TAG, f"fallback fetch error: {e2}")
     except Exception as e:
         K.log(TAG, f"fetch error: {e}")
         return None

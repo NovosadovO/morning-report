@@ -1084,7 +1084,9 @@ def _get_all_calendar_ids(headers):
             with urllib.request.urlopen(req, timeout=10) as r:
                 items = json.loads(r.read()).get("items", [])
         ids = [it["id"] for it in items if not it.get("deleted")]
-        # debug removed
+        if not ids:
+            # service-account токен не має власного calendarList -> прямий календар Олега
+            return ["novosadovoleg@gmail.com"]
         return ids
     except Exception as e:
         print(f"_get_all_calendar_ids error: {e}")
