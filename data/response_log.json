@@ -315,6 +315,15 @@
         "kind": "calendar",
         "date": "2026-08-05"
       }
+    },
+    {
+      "ts": "2026-08-04T16:29:19.161111+00:00",
+      "category": "deadline_found",
+      "question": "Зміни торгових комісій Bybit EU",
+      "answer": "2026-10-05",
+      "extra": {
+        "kind": "other"
+      }
     }
   ]
 }
