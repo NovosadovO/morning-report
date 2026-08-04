@@ -596,6 +596,9 @@ class IntelligentListener:
                     # Огляд тижня вперед (нд ввечері / пн зранку, 1 раз на тиждень)
                     if _due("cw_week", 1800) and _cw_l.week():
                         self._log("✅ Огляд тижня надіслано")
+                    # Огляд місяця (1-е число зранку, 1 раз на місяць)
+                    if _due("cw_month", 3600) and _cw_l.month():
+                        self._log("✅ Огляд місяця надіслано")
                     if _due("cw_gc", 86400):
                         _cw_l.gc_sent()
                 except Exception as _e_cw:

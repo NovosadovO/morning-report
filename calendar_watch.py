@@ -43,6 +43,7 @@ ACK_FILE = "calendar_ack.json"           # збережені відповіді
 SNOOZE_FILE = "calendar_snooze.json"     # відкладені нагадування
 DAILY_FILE = "calendar_daily.json"       # агенда/прев'ю: 1 раз на день
 WEEKLY_FILE = "calendar_weekly.json"     # огляд тижня: 1 раз на тиждень
+MONTHLY_FILE = "calendar_monthly.json"   # огляд місяця: 1 раз на місяць
 AI_CACHE_FILE = "calendar_ai_cache.json"  # AI-коментар: 1 на подію, перевикористовується
 AI_BUDGET_FILE = "calendar_ai_budget.json"  # лічильник AI-коментарів (лише статистика)
 
@@ -390,7 +391,8 @@ def _ai_digest(text_block: str, kind: str) -> str:
     if not K.GEMINI_KEY or not text_block:
         return ""
     what = ("план на день" if kind == "agenda"
-            else "план на завтра" if kind == "tomorrow" else "план на тиждень")
+            else "план на завтра" if kind == "tomorrow"
+            else "план на місяць" if kind == "month" else "план на тиждень")
     prompt = (
         "Ти — особистий асистент і коуч Олега (Кошице; змінна робота на Minebea Mitsumi; "
         "цілі: фінансова незалежність, схуднення до 78 кг, біг, інвестиції).\n"
@@ -720,6 +722,90 @@ def week(force: bool = False) -> bool:
     return ok
 
 
+def month_text(days: int = 31) -> str:
+    """Огляд на місяць вперед: згруповано по тижнях, тільки реальні події.
+    День-за-днем тут не влазить у ліміт Telegram, тому — по тижнях."""
+    events = _raw_events(hours_ahead=days * 24 + 12)
+    if events is None:
+        return ""
+    n = K.now().replace(tzinfo=None)
+    limit_dt = n + timedelta(days=days)
+    real = [e for e in events
+            if not e["routine"] and not e["shift"]
+            and e["start"].date() >= n.date() and e["start"] <= limit_dt]
+    lines = ["📆 <b>МІСЯЦЬ ВПЕРЕД</b>", "━━━━━━━━━━━━━━━━━━━━",
+             f"📅 {n.strftime('%d.%m')} – {limit_dt.strftime('%d.%m.%Y')}"]
+
+    # групуємо по ISO-тижнях
+    buckets = {}
+    for e in real:
+        wk = e["start"].isocalendar()[1]
+        buckets.setdefault(wk, []).append(e)
+
+    if not real:
+        lines.append("")
+        lines.append("📌 Реальних подій на цей місяць у календарі немає.")
+    else:
+        cur_wk = n.isocalendar()[1]
+        for wk in sorted(buckets):
+            evs = buckets[wk]
+            mon = evs[0]["start"] - timedelta(days=evs[0]["start"].weekday())
+            sun = mon + timedelta(days=6)
+            tag = " <i>(цей тиждень)</i>" if wk == cur_wk else ""
+            lines.append("")
+            lines.append(f"<b>🗓 {mon.strftime('%d.%m')}–{sun.strftime('%d.%m')}</b>{tag}")
+            for e in evs[:8]:
+                loc = f" · 📍 {K.esc(e['location'])}" if e["location"] else ""
+                when = "весь день" if e["allday"] else e["start"].strftime("%H:%M")
+                lines.append(f"  • <b>{_WD[e['start'].weekday()]} {e['start'].strftime('%d.%m')}</b> "
+                             f"{when} — {K.esc(e['title'])}{loc}")
+            if len(evs) > 8:
+                lines.append(f"  <i>… і ще {len(evs) - 8}</i>")
+
+    # завантаження по тижнях — щоб було видно, де густо
+    lines.append("")
+    lines.append(f"📊 Разом реальних подій: <b>{len(real)}</b> за {days} дн.")
+    if buckets:
+        busiest = max(buckets.items(), key=lambda kv: len(kv[1]))
+        bm = busiest[1][0]["start"] - timedelta(days=busiest[1][0]["start"].weekday())
+        lines.append(f"🔥 Найщільніший тиждень: {bm.strftime('%d.%m')} "
+                     f"({len(busiest[1])} подій)")
+    return "\n".join(lines)[:3900]
+
+
+def _monthly_done() -> bool:
+    data = K.load(MONTHLY_FILE, default={}) or {}
+    return data.get("month") == K.now().replace(tzinfo=None).strftime("%Y-%m")
+
+
+def _monthly_mark():
+    K.update_key(MONTHLY_FILE, "month", K.now().replace(tzinfo=None).strftime("%Y-%m"))
+
+
+def month(force: bool = False) -> bool:
+    """Огляд місяця — 1 раз на місяць: 1-е число, 06:00–12:00."""
+    n = K.now().replace(tzinfo=None)
+    if not force:
+        if _monthly_done() or not (n.day == 1 and 6 <= n.hour < 12):
+            return False
+    text = month_text(31)
+    if not text:
+        K.log(TAG, "місяць: календар недоступний — не вигадую")
+        return False
+    ai = _ai_digest(text, "month")
+    if ai:
+        text = f"{text}\n\n━━━━━━━━━━━━━━━━━━━━\n🤖 <b>AI-план на місяць</b>\n{K.esc(ai)}"[:3900]
+    pid = _store.put({"stage": "month", "day": K.today_str()})
+    kb = [[{"text": "👍 Бачу місяць", "callback_data": f"cw_ack_{pid}"},
+           {"text": "📝 Нотатка", "callback_data": f"cw_note_{pid}"}]]
+    ok = K.send_card(text, kb, tag=TAG)
+    if ok and not force:
+        _monthly_mark()
+    if ok:
+        K.log(TAG, "✅ огляд місяця надіслано")
+    return ok
+
+
 def upcoming_text(days: int = 7, limit: int = 14) -> str:
     """Компактний рядок для AI-промптів: що заплановано на найближчі дні.
     Формат: «05.08 17:00 Тренування; 07.08 09:30 Лікар». Без AI-викликів."""
@@ -851,6 +937,7 @@ def do_note(pid, note: str = "") -> dict:
 # ─── ЗВІТ ────────────────────────────────────────────────────────────────────
 
 _LABEL = {"remembered": "✅ пам'ятав", "week": "🗓 огляд тижня",
+          "month": "📆 огляд місяця",
           "ai_prep": "🤖 AI-підготовка", "cancelled": "🚫 скасовано",
           "done": "✅ було", "missed": "❌ не було", "moved": "⏭ перенесено",
           "accepted": "👍 прийняв план", "noted": "📝 нотатка"}
@@ -921,6 +1008,8 @@ if __name__ == "__main__":
         print("AI-коментарів згенеровано сьогодні:", _ai_used_today(), "(лімітів немає)")
     elif "--week" in sys.argv:
         print(week_text(7))
+    elif "--month" in sys.argv:
+        print(month_text(31))
     elif "--upcoming" in sys.argv:
         print(upcoming_text(7))
     elif "--report" in sys.argv:

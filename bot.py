@@ -2460,6 +2460,7 @@ HELP_TEXT = """
 /листи_постачальникам — історія листів постачальникам
 /події — план на сьогодні + що чекає завтра
 /тиждень_план (/наперед) — календар на 7 днів вперед
+/місяць_план — календар на місяць вперед (по тижнях) + AI-план
 /ai_бюджет — статистика AI по календарю (лімітів немає)
 /події_відповіді — що ти відповідав на нагадування
 /нагадай_тест — прогнати перевірку календаря зараз\n/нагадай_демо — демо-нагадування з кнопками (перевірка)
@@ -2814,6 +2815,20 @@ def handle_command(chat_id, text):
                 send(chat_id, f"⚠️ Помилка огляду тижня: {str(_e_cww)[:300]}")
         import threading as _th_cww
         _th_cww.Thread(target=_run_cw_week, daemon=True, name="calendar-week").start()
+
+    elif text.lower().strip() in ["/місяць_план", "/календар_місяць", "/month_plan"]:
+        # Огляд календаря на місяць вперед (по тижнях) + AI-план.
+        def _run_cw_month():
+            try:
+                import sys as _scm, os as _ocm
+                _scm.path.insert(0, _ocm.path.dirname(__file__))
+                import calendar_watch as _cw_m
+                if not _cw_m.month(force=True):
+                    send(chat_id, "⚠️ Календар зараз недоступний — не вигадую події.")
+            except Exception as _e_cwm:
+                send(chat_id, f"⚠️ Помилка огляду місяця: {str(_e_cwm)[:300]}")
+        import threading as _th_cwm
+        _th_cwm.Thread(target=_run_cw_month, daemon=True, name="calendar-month").start()
 
     elif text.lower().strip() in ["/ai_бюджет", "/ai_budget", "/бюджет_ai"]:
         try:

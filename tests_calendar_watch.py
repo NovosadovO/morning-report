@@ -146,6 +146,15 @@ ok(r.get("ok"), "нотатка збережена")
 ok(len(NOTES) == 1 and "лікаря" in NOTES[0], "нотатка містить подію")
 
 print("=== 10. Агенда дня ===")
+# ВАЖЛИВО: події з фіксованим часом СЬОГОДНІ (а не NOW+хвилини) — інакше пізно
+# ввечері вони перетікають за полуніч і агенда справедливо їх не показує,
+# і тест падав залежно від години запуску.
+_D = NOW.replace(hour=9, minute=0, second=0, microsecond=0)
+EVENTS.append(mk("a1", "🌙 Нічна зміна (агенда)", _D, 720))
+EVENTS.append(mk("a2", "Зустріч Maroš — агенда", _D.replace(hour=10)))
+EVENTS.append(mk("a3", "Дзвінок Michaela — агенда", _D.replace(hour=11)))
+EVENTS.append(mk("a4", "🍵 Трав'яний чай", _D.replace(hour=8)))
+C._cache["ts"] = None
 SENT.clear()
 ok(C.agenda(force=True), "агенда надіслана")
 a = SENT[0]["text"]
@@ -165,7 +174,8 @@ SENT.clear()
 ok(C.agenda(force=False) is False, "повторно за день не надсилає")
 
 print("=== 12. Прев'ю на завтра ===")
-EVENTS.append(mk("e8", "Весілля — фінальна зустріч", NOW + timedelta(days=1, hours=2)))
+EVENTS.append(mk("e8", "Весілля — фінальна зустріч",
+                 (NOW + timedelta(days=1)).replace(hour=14, minute=0, second=0, microsecond=0)))
 C._cache["ts"] = None
 SENT.clear()
 ok(C.tomorrow(force=True), "прев'ю надіслано")

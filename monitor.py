@@ -11456,15 +11456,24 @@ def _get_calendar_events_text() -> str:
 
         # Додаємо горизонт на тиждень вперед — щоб AI бачив не тільки сьогодні
         ahead = ""
+        far = ""
         try:
             import calendar_watch as _cw
             ahead = _cw.upcoming_text(days=7) or ""
+            # ще й далі по місяцю — щоб AI планував наперед, а не тільки тиждень
+            _all30 = _cw.upcoming_text(days=31, limit=40) or ""
+            _seen = set(x.strip() for x in ahead.split(";"))
+            far = "; ".join(x.strip() for x in _all30.split(";")
+                            if x.strip() and x.strip() not in _seen)[:600]
         except Exception:
-            ahead = ""
+            pass
         today_part = "; ".join(items[:10]) if items else "нічого не заплановано"
+        out = f"СЬОГОДНІ: {today_part}"
         if ahead:
-            return f"СЬОГОДНІ: {today_part} | НАЙБЛИЖЧІ 7 ДНІВ: {ahead}"
-        return today_part
+            out += f" | НАЙБЛИЖЧІ 7 ДНІВ: {ahead}"
+        if far:
+            out += f" | ДАЛІ В МІСЯЦІ: {far}"
+        return out if (ahead or far) else today_part
     except Exception as e:
         print(f"_get_calendar_events_text error: {e}", flush=True)
         return "нічого не заплановано"
