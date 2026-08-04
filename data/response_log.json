@@ -623,6 +623,16 @@
         "kind": "reminder",
         "date": "2026-08-05"
       }
+    },
+    {
+      "ts": "2026-08-05T01:30:15.760220+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти Dekoračný servis",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-08-05"
+      }
     }
   ]
 }
