@@ -135,6 +135,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "rp_all_6326b02713"
+    },
+    {
+      "ts": "2026-08-04T02:49:39.547874+00:00",
+      "category": "calendar_confirm",
+      "question": "Тренування",
+      "answer": "✅ Додано",
+      "extra": {
+        "events": [
+          "Тренування"
+        ]
+      }
     }
   ]
 }
