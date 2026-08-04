@@ -643,6 +643,12 @@
         "kind": "reminder",
         "date": "2026-08-05"
       }
+    },
+    {
+      "ts": "2026-08-05T01:52:17.157397+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "pm_skip_aeece2488c"
     }
   ]
 }
