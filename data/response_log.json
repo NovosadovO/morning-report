@@ -587,6 +587,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "gx_note_4283d29b79"
+    },
+    {
+      "ts": "2026-08-04T23:44:18.768567+00:00",
+      "category": "ai_button",
+      "question": "email",
+      "answer": "noted",
+      "extra": {
+        "trigger": "vip_email",
+        "note": "перевірка нотатки: тримати BTC до 120k"
+      }
     }
   ]
 }
