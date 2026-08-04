@@ -132,14 +132,51 @@ def parse_schedule(text: str) -> list:
                                 year=now.year, text=text[:900])
         items = K.gemini_json(prompt, max_tokens=1400, temperature=0.1, tag=TAG)
 
+    # Горизонт: від сьогодні до +75 днів. AI іноді дає дурні роки (2022) —
+    # такі дати НЕ викидаємо, а перебудовуємо з номера дня в найближчий
+    # відповідний місяць; якщо все одно поза горизонтом — відкидаємо.
+    today = now.replace(tzinfo=None).date()
+    horizon = today + timedelta(days=75)
+
+    def _fix(d: str):
+        try:
+            y, mo, dd = (int(x) for x in d.split("-"))
+        except Exception:
+            return None
+        from datetime import date as _date
+        try:
+            cand = _date(y, mo, dd)
+        except Exception:
+            cand = None
+        if cand and today <= cand <= horizon:
+            return cand.strftime("%Y-%m-%d")
+        # рік/місяць зламані → шукаємо цей номер дня у поточному або наступних місяцях
+        ym = (today.year, today.month)
+        for _ in range(3):
+            try:
+                c2 = _date(ym[0], ym[1], dd)
+            except Exception:
+                c2 = None
+            if c2 and today <= c2 <= horizon:
+                return c2.strftime("%Y-%m-%d")
+            ym = (ym[0] + 1, 1) if ym[1] == 12 else (ym[0], ym[1] + 1)
+        return None
+
     clean = {}
     for it in items or []:
         if not isinstance(it, dict):
             continue
         d = str(it.get("date", "")).strip()
         t = _norm_type(it.get("type"))
-        if re.match(r"^\d{4}-\d{2}-\d{2}$", d) and t:
-            clean[d] = t
+        if not (re.match(r"^\d{4}-\d{2}-\d{2}$", d) and t):
+            continue
+        fixed = _fix(d)
+        if not fixed:
+            K.log(TAG, f"дата поза горизонтом, відкинуто: {d}")
+            continue
+        if fixed != d:
+            K.log(TAG, f"виправив дату від AI: {d} -> {fixed}")
+        clean[fixed] = t
 
     if not clean:
         K.log(TAG, "AI не розпарсив — локальний regex")
