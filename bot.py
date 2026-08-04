@@ -2446,6 +2446,14 @@ HELP_TEXT = """
 /force_evening — примусово запустити вечірній розклад
 /диаг — діагностика всіх систем
 
+<b>⚙️ АВТОМАТИЗАЦІЯ ЖИТТЯ</b>
+/рахунки — місячний звіт по рахунках + скан пошти
+/план_бігу — план пробіжок під графік змін
+/зміни нічні 5-9, рання 12-16 — графік у календар + блоки сну
+/чекаю — на які твої листи не відповіли 3+ дні
+/огляд — тижневий огляд + 3 цілі на наступний тиждень
+/пропозиції — скан календаря/пошти → пропозиції дій
+
 /допомога — цей список
 """
 
@@ -2603,6 +2611,88 @@ def handle_command(chat_id, text):
         except Exception as e:
             import traceback as _tb
             send(chat_id, f"⚠️ CRASH у тесті астро: {type(e).__name__}: {str(e)[:300]}\n\n{_tb.format_exc()[-800:]}")
+
+    elif text.lower().strip() in ["/рахунки", "/bills", "рахунки"]:
+        # Місячний звіт по рахунках + свіжий скан пошти
+        def _run_bills():
+            try:
+                import sys as _sb, os as _ob
+                _sb.path.insert(0, _ob.path.dirname(__file__))
+                import bills_watcher as _bw_cmd
+                send(chat_id, _bw_cmd.monthly_report())
+                n = _bw_cmd.scan(force=True)
+                if n:
+                    send(chat_id, f"🔍 Знайшов у пошті нових рахунків: {n}")
+            except Exception as _e_b:
+                send(chat_id, f"⚠️ Помилка звіту по рахунках: {str(_e_b)[:300]}")
+        import threading as _th_b
+        _th_b.Thread(target=_run_bills, daemon=True, name="bills-cmd").start()
+
+    elif text.lower().strip() in ["/план_бігу", "/runplan", "план бігу", "/біг_план"]:
+        send(chat_id, "🏃 Дивлюсь графік змін і Strava — складаю план...")
+        def _run_rp():
+            try:
+                import sys as _sr, os as _or
+                _sr.path.insert(0, _or.path.dirname(__file__))
+                import run_planner as _rp_cmd
+                if not _rp_cmd.offer(force=True):
+                    send(chat_id, "⚠️ План не склався — немає даних календаря/Strava. Дивись логи [run_planner].")
+            except Exception as _e_r:
+                send(chat_id, f"⚠️ Помилка плану бігу: {str(_e_r)[:300]}")
+        import threading as _th_r
+        _th_r.Thread(target=_run_rp, daemon=True, name="runplan-cmd").start()
+
+    elif text.lower().strip() in ["/огляд", "/review", "тижневий огляд", "/weekly"]:
+        send(chat_id, "📊 Збираю дані за тиждень (біг, вага, звички, рахунки, крипто)...")
+        def _run_wr():
+            try:
+                import sys as _sw, os as _ow
+                _sw.path.insert(0, _ow.path.dirname(__file__))
+                import weekly_review as _wr_cmd
+                if not _wr_cmd.offer(force=True):
+                    send(chat_id, "⚠️ Огляд не склався — живих даних немає. Дивись логи [weekly_review].")
+            except Exception as _e_w:
+                send(chat_id, f"⚠️ Помилка огляду: {str(_e_w)[:300]}")
+        import threading as _th_w
+        _th_w.Thread(target=_run_wr, daemon=True, name="review-cmd").start()
+
+    elif text.lower().strip() in ["/чекаю", "/followup", "чекаю відповідь"]:
+        send(chat_id, "📭 Перевіряю, на які твої листи ще не відповіли...")
+        def _run_fu():
+            try:
+                import sys as _sf, os as _of
+                _sf.path.insert(0, _of.path.dirname(__file__))
+                import followup_watcher as _fw_cmd
+                n = _fw_cmd.check(force=True)
+                if not n:
+                    send(chat_id, "✅ Усі твої листи або отримали відповідь, або ще свіжі (менше 3 днів).")
+            except Exception as _e_f:
+                send(chat_id, f"⚠️ Помилка follow-up: {str(_e_f)[:300]}")
+        import threading as _th_f
+        _th_f.Thread(target=_run_fu, daemon=True, name="followup-cmd").start()
+
+    elif text.lower().strip().startswith(("/зміни", "/графік", "зміни:", "графік:", "/shifts")):
+        import re as _re_sh
+        _sched_txt = _re_sh.sub(r"^\s*(/зміни|/графік|/shifts|зміни:|графік:)\s*", "",
+                                text.strip(), flags=_re_sh.IGNORECASE)
+        if not _sched_txt.strip():
+            send(chat_id, "📋 <b>ГРАФІК ЗМІН</b>\n\nНапиши так:\n"
+                          "<code>/зміни нічні 5-9, рання 12-16</code>\n"
+                          "<code>/зміни рання 1-5, нічна 8-12 серпня</code>\n\n"
+                          "Я покажу превʼю, і лише після твого «Створити» додам у календар "
+                          "зміни + блоки сну + виїзд на роботу.")
+        else:
+            send(chat_id, "📋 Розбираю графік...")
+            def _run_ss(_t=_sched_txt):
+                try:
+                    import sys as _ss1, os as _os1
+                    _ss1.path.insert(0, _os1.path.dirname(__file__))
+                    import shift_schedule as _ss_cmd
+                    _ss_cmd.offer(_t, chat_id=chat_id)
+                except Exception as _e_s:
+                    send(chat_id, f"⚠️ Помилка графіка: {str(_e_s)[:300]}")
+            import threading as _th_s
+            _th_s.Thread(target=_run_ss, daemon=True, name="shifts-cmd").start()
 
     elif text.lower().strip() in ["/пропозиції", "/proposals", "пропозиції", "/pa_scan"]:
         # Ручний запуск проактивного скану: календар + пошта + нотатки →
@@ -4065,6 +4155,210 @@ def handle_proactive_action_callback(cb):
         pass
 
 
+def handle_automation_callback(cb):
+    """Кнопки модулів автоматизації життя:
+      bill_*  — рахунки з пошти (bills_watcher)
+      rp_*    — план бігу під зміни (run_planner)
+      shf_*   — графік змін + блоки сну (shift_schedule)
+      fu_*    — follow-up залиплих листів (followup_watcher)
+      wr_*    — тижневий огляд і цілі (weekly_review)
+    Payload лежить у storage (гілка data) — кнопки живі після рестарту."""
+    data = cb.get("data", "")
+    chat_id = cb["message"]["chat"]["id"]
+    msg_id = cb["message"]["message_id"]
+
+    def _clear_kb():
+        try:
+            api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id,
+                                           "reply_markup": {"inline_keyboard": []}})
+        except Exception:
+            pass
+
+    def _stale():
+        _clear_kb()
+        send(chat_id, "⚠️ Ця пропозиція вже опрацьована або застаріла.")
+
+    def _fail(r, what):
+        send(chat_id, f"⚠️ Не вдалось {what}: {r.get('error')}")
+
+    try:
+        import sys as _s_au, os as _o_au
+        _s_au.path.insert(0, _o_au.path.dirname(__file__))
+    except Exception:
+        pass
+
+    try:
+        # ─── РАХУНКИ ────────────────────────────────────────────────────────
+        if data.startswith("bill_"):
+            import bills_watcher as _bw
+            if data.startswith("bill_cal_"):
+                r = _bw.do_calendar(data[len("bill_cal_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"📅 <b>В календарі</b>\n{r['title']}\n📆 {r['date']}  🕐 {r['time']}")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "додати в календар")
+            elif data.startswith("bill_rem_"):
+                r = _bw.do_reminder(data[len("bill_rem_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"⏰ <b>Нагадування поставлено</b>\n{r['title']}\n📆 {r['date']}  🕐 {r['time']}")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "поставити нагадування")
+            elif data.startswith("bill_due_paid_") or data.startswith("bill_paid_"):
+                pref = "bill_due_paid_" if data.startswith("bill_due_paid_") else "bill_paid_"
+                r = _bw.do_paid(data[len(pref):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"✅ <b>Позначив оплаченим</b>\n{r['vendor']} — {r['amount']}\n\n<i>Місячний звіт: /рахунки</i>")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "позначити оплаченим")
+            elif data.startswith("bill_due_snooze_"):
+                r = _bw.do_snooze(data[len("bill_due_snooze_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"⏰ Ок, нагадаю завтра про {r['vendor']}.")
+                else: _stale()
+            elif data.startswith("bill_skip_"):
+                r = _bw.do_skip(data[len("bill_skip_"):])
+                _clear_kb()
+                cb_notify(cb["id"], chat_id, "Ок, це не рахунок 👌")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
+        # ─── ПЛАН БІГУ ──────────────────────────────────────────────────────
+        elif data.startswith("rp_"):
+            import run_planner as _rp
+            if data.startswith("rp_all_"):
+                r = _rp.do_all(data[len("rp_all_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    lines = "\n".join("• " + i for i in r["items"])
+                    extra = f"\n⚠️ {r['failed']} не вдалось створити" if r.get("failed") else ""
+                    send(chat_id, f"📅 <b>Тренування в календарі ({r['created']})</b>\n{lines}{extra}")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "поставити тренування")
+            elif data.startswith("rp_one_"):
+                r = _rp.do_one(data[len("rp_one_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"📅 <b>Перше тренування в календарі</b>\n• {r['items'][0]}")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "поставити тренування")
+            elif data.startswith("rp_skip_"):
+                _rp.do_skip(data[len("rp_skip_"):])
+                _clear_kb()
+                cb_notify(cb["id"], chat_id, "Ок, план не ставлю 👌")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
+        # ─── ГРАФІК ЗМІН ────────────────────────────────────────────────────
+        elif data.startswith("shf_"):
+            import shift_schedule as _ss
+            if data.startswith("shf_ok_") or data.startswith("shf_only_"):
+                with_sleep = data.startswith("shf_ok_")
+                pref = "shf_ok_" if with_sleep else "shf_only_"
+                r = _ss.do_ok(data[len(pref):]) if with_sleep else _ss.do_only(data[len(pref):])
+                if r.get("ok"):
+                    _clear_kb()
+                    extra = f"\n⚠️ {r['failed']} подій не створились" if r.get("failed") else ""
+                    sl = " + блоки сну" if r.get("sleep") else " (без сну)"
+                    send(chat_id, f"✅ <b>Графік у календарі</b>\n"
+                                  f"📋 {r['shifts']} змін{sl}\n"
+                                  f"📅 Створено {r['created']} подій{extra}")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "створити графік")
+            elif data.startswith("shf_no_"):
+                _ss.do_no(data[len("shf_no_"):])
+                _clear_kb()
+                cb_notify(cb["id"], chat_id, "Скасовано 👌")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
+        # ─── FOLLOW-UP ──────────────────────────────────────────────────────
+        elif data.startswith("fu_"):
+            import followup_watcher as _fw
+            if data.startswith("fu_draft_"):
+                r = _fw.do_draft(data[len("fu_draft_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    body = str(r["draft"]).replace("<", "&lt;").replace(">", "&gt;")
+                    api("sendMessage", {
+                        "chat_id": chat_id,
+                        "text": (f"✍️ <b>ЧЕРНОВИК ПІНГА</b>\n━━━━━━━━━━━━━━━━━━━━\n"
+                                 f"📧 Кому: {r['to']}\n📋 Тема: {r['subject']}\n\n"
+                                 f"<code>{body[:2500]}</code>\n\n"
+                                 f"<i>Надіслати як є?</i>"),
+                        "parse_mode": "HTML",
+                        "reply_markup": {"inline_keyboard": [
+                            [{"text": "📤 Надіслати", "callback_data": f"fu_send_{r['pid']}"}],
+                            [{"text": "❌ Не надсилати", "callback_data": f"fu_skip_{r['pid']}"}]]},
+                    })
+                elif r.get("error") == "payload_missing": _stale()
+                elif r.get("error") == "ai_unavailable":
+                    send(chat_id, "⚠️ Gemini зараз недоступний — черновик не склався. Спробуй за пару хвилин.")
+                else: _fail(r, "скласти пінг")
+            elif data.startswith("fu_send_"):
+                r = _fw.do_send(data[len("fu_send_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"📤 <b>Надіслано</b> — {r['name']} ({r['to']})")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "надіслати лист")
+            elif data.startswith("fu_rem_"):
+                r = _fw.do_remind(data[len("fu_rem_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"⏰ <b>Нагадаю {r['date']} о {r['time']}</b>\n{r['title']}")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "поставити нагадування")
+            elif data.startswith("fu_skip_"):
+                _fw.do_skip(data[len("fu_skip_"):])
+                _clear_kb()
+                cb_notify(cb["id"], chat_id, "Ок, не турбую 👌")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
+        # ─── ТИЖНЕВИЙ ОГЛЯД ─────────────────────────────────────────────────
+        elif data.startswith("wr_"):
+            import weekly_review as _wr
+            if data.startswith("wr_goals_"):
+                r = _wr.do_goals(data[len("wr_goals_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    lines = "\n".join("🎯 " + str(i) for i in r["items"])
+                    send(chat_id, f"📝 <b>Цілі збережено ({r['count']})</b>\n{lines}\n\n<i>Всі нотатки: /нотатки</i>")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "зберегти цілі")
+            elif data.startswith("wr_cal_"):
+                r = _wr.do_calendar(data[len("wr_cal_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    lines = "\n".join("🎯 " + str(i) for i in r["items"])
+                    send(chat_id, f"📅 <b>Цілі в календарі на {r['date']}</b>\n{lines}")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "додати цілі в календар")
+            elif data.startswith("wr_skip_"):
+                _wr.do_skip(data[len("wr_skip_"):])
+                _clear_kb()
+                cb_notify(cb["id"], chat_id, "Ок 👌")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+        else:
+            cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
+    except Exception as _e_au:
+        import traceback as _tb_au
+        _tb_au.print_exc()
+        send(chat_id, f"⚠️ Кнопка впала: <code>{str(_e_au)[:200]}</code>")
+
+    try:
+        import response_log as _rl_au
+        _rl_au.log_response("automation", "Кнопка автоматизації", data)
+    except Exception:
+        pass
+
+
 def _route_callback(cb):
     data = cb.get("data", "")
     chat_id = cb["message"]["chat"]["id"]
@@ -4364,6 +4658,12 @@ def _route_callback(cb):
               data.startswith("calrem_add_") or data.startswith("calrem_skip_") or
               data.startswith("shop_add_") or data.startswith("shop_skip_")):
             handle_email_callback(cb)
+        elif (data.startswith("bill_") or data.startswith("rp_") or
+              data.startswith("shf_") or data.startswith("fu_") or
+              data.startswith("wr_")):
+            # Модулі автоматизації: рахунки / план бігу / графік змін /
+            # follow-up листів / тижневий огляд
+            handle_automation_callback(cb)
         elif data.startswith("pa_"):
             # Проактивні пропозиції AI (proactive_actions.py):
             # pa_cal_ / pa_rem_ / pa_note_ / pa_skip_
@@ -4461,6 +4761,25 @@ def _dispatch_callback_async(cb):
         ("qr_more_",        "🤔 Думаю..."),
         ("qr_note_",        "📝 Записую..."),
         ("qr_ok_",          "👍"),
+        ("bill_cal_",       "📅 Додаю в календар..."),
+        ("bill_rem_",       "⏰ Ставлю нагадування..."),
+        ("bill_paid_",      "✅ Позначаю оплаченим..."),
+        ("bill_due_paid_",  "✅ Позначаю оплаченим..."),
+        ("bill_due_snooze_","⏰ Нагадаю завтра"),
+        ("bill_skip_",      "Ок, прибрав"),
+        ("rp_all_",         "📅 Ставлю тренування..."),
+        ("rp_one_",         "📅 Ставлю тренування..."),
+        ("rp_skip_",        "Ок, прибрав"),
+        ("shf_ok_",         "📅 Створюю графік + сон..."),
+        ("shf_only_",       "📅 Створюю зміни..."),
+        ("shf_no_",         "Скасовано"),
+        ("fu_draft_",       "✍️ Складаю пінг..."),
+        ("fu_send_",        "📤 Надсилаю..."),
+        ("fu_rem_",         "⏰ Ставлю нагадування..."),
+        ("fu_skip_",        "Ок, прибрав"),
+        ("wr_goals_",       "📝 Зберігаю цілі..."),
+        ("wr_cal_",         "📅 Додаю цілі в календар..."),
+        ("wr_skip_",        "Ок, прибрав"),
         ("pa_cal_",         "📅 Додаю в календар..."),
         ("pa_rem_",         "⏰ Ставлю нагадування..."),
         ("pa_note_",        "📝 Записую в нотатки..."),

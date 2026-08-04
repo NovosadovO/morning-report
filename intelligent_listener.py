@@ -481,6 +481,50 @@ class IntelligentListener:
                 except Exception as _e_pa:
                     self._log(f"proactive_actions error: {_e_pa}")
 
+                # 17. АВТОМАТИЗАЦІЯ ЖИТТЯ (кожен модуль сам тримає свій rate-limit
+                # і сам вирішує, чи є реальна причина писати; без даних — молчить).
+                #   💸 рахунки з пошти (кожні 2 год) + дедлайни оплати (раз на день)
+                #   📭 залиплі листи без відповіді 3+ дні (2 рази на добу)
+                #   🏃 план бігу під зміни (раз на ~20 год, зазвичай нд/пн)
+                #   📊 тижневий огляд + 3 цілі (нд 19:00-22:00)
+                try:
+                    import bills_watcher as _bw_l
+                    if _bw_l.should_scan():
+                        self._log("[BILLS] scan пошти на рахунки")
+                        _n = _bw_l.scan()
+                        if _n:
+                            self._log(f"✅ Рахунків знайдено: {_n}")
+                    _nd = _bw_l.check_due_soon()
+                    if _nd:
+                        self._log(f"✅ Нагадувань про оплату: {_nd}")
+                except Exception as _e_bw:
+                    self._log(f"bills_watcher error: {_e_bw}")
+
+                try:
+                    import followup_watcher as _fw_l
+                    _nf = _fw_l.check()
+                    if _nf:
+                        self._log(f"✅ Follow-up карточок: {_nf}")
+                except Exception as _e_fw:
+                    self._log(f"followup_watcher error: {_e_fw}")
+
+                try:
+                    import run_planner as _rp_l
+                    _hh = (datetime.now(timezone.utc) + timedelta(hours=2))
+                    # план бігу пропонуємо ввечері (18-21), коли він точно не на зміні
+                    if _hh.weekday() in (0, 6) and 18 <= _hh.hour < 22:
+                        if _rp_l.offer():
+                            self._log("✅ План бігу запропоновано")
+                except Exception as _e_rp:
+                    self._log(f"run_planner error: {_e_rp}")
+
+                try:
+                    import weekly_review as _wr_l
+                    if _wr_l.is_time() and _wr_l.offer():
+                        self._log("✅ Тижневий огляд надіслано")
+                except Exception as _e_wr:
+                    self._log(f"weekly_review error: {_e_wr}")
+
                 # Процесувати тригери (генеруємо & надсилаємо messages)
                 if triggers:
                     for ttype, tdata in triggers:
