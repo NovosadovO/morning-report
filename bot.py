@@ -2460,6 +2460,7 @@ HELP_TEXT = """
 /листи_постачальникам — історія листів постачальникам
 /події — план на сьогодні + що чекає завтра
 /тиждень_план (/наперед) — календар на 7 днів вперед
+/ai_бюджет — скільки AI-викликів по календарю лишилось сьогодні
 /події_відповіді — що ти відповідав на нагадування
 /нагадай_тест — прогнати перевірку календаря зараз\n/нагадай_демо — демо-нагадування з кнопками (перевірка)
 /пропозиції — скан календаря/пошти → пропозиції дій
@@ -2813,6 +2814,18 @@ def handle_command(chat_id, text):
                 send(chat_id, f"⚠️ Помилка огляду тижня: {str(_e_cww)[:300]}")
         import threading as _th_cww
         _th_cww.Thread(target=_run_cw_week, daemon=True, name="calendar-week").start()
+
+    elif text.lower().strip() in ["/ai_бюджет", "/ai_budget", "/бюджет_ai"]:
+        try:
+            import sys as _scb, os as _ocb
+            _scb.path.insert(0, _ocb.path.dirname(__file__))
+            import calendar_watch as _cw_b
+            send(chat_id, f"🤖 <b>AI-БЮДЖЕТ КАЛЕНДАРЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n"
+                          f"Лишилось сьогодні: <b>{_cw_b._ai_budget_left()}</b> / {_cw_b.AI_MAX_PER_DAY}\n\n"
+                          f"<i>Коментар генерується 1 раз на подію і кешується — 5 нагадувань "
+                          f"по одній події = 1 виклик. Вичерпається — працюють локальні тексти.</i>")
+        except Exception as _e_cwb:
+            send(chat_id, f"⚠️ Помилка: {str(_e_cwb)[:300]}")
 
     elif text.lower().strip() in ["/події_відповіді", "/event_acks", "/нагадування_звіт"]:
         try:
@@ -4777,6 +4790,23 @@ def handle_automation_callback(cb):
                     cb_notify(cb["id"], chat_id, "⏭ Записав: перенесли")
                 elif r.get("error") == "payload_missing": _stale()
                 else: _fail(r, "зберегти відповідь")
+            elif data.startswith("cw_ai_"):
+                # 🤖 AI-підготовка до конкретної події (1 виклик Gemini, з бюджетом)
+                r = _cw.do_ai(data[len("cw_ai_"):])
+                if r.get("ok"):
+                    send(chat_id,
+                         f"🤖 <b>AI-ПІДГОТОВКА</b>\n━━━━━━━━━━━━━━━━━━━━\n"
+                         f"📌 <b>{_cw.K.esc(str(r.get('title') or ''))}</b>\n"
+                         f"🕐 {_cw.K.esc(str(r.get('when') or ''))}\n\n"
+                         f"{_cw.K.esc(r.get('text') or '')}")
+                elif r.get("error") == "payload_missing": _stale()
+                elif r.get("error") == "budget":
+                    cb_notify(cb["id"], chat_id,
+                              "🤖 AI-бюджет на сьогодні вичерпано — щоб не палити кредити. "
+                              "Спробуй завтра.", alert=True)
+                elif r.get("error") == "no_ai":
+                    cb_notify(cb["id"], chat_id, "🤖 AI зараз недоступний (немає ключа).", alert=True)
+                else: _fail(r, "згенерувати AI-підготовку")
             elif data.startswith("cw_ack_"):
                 r = _cw.do_agenda_ack(data[len("cw_ack_"):])
                 if r.get("ok"):
@@ -5256,6 +5286,7 @@ def _dispatch_callback_async(cb):
         ("cw_miss_",        "❌ Записую: не було"),
         ("cw_moved_",       "⏭ Записую: перенесли"),
         ("cw_ack_",         "👍 Прийнято"),
+        ("cw_ai_",          "🤖 Готую AI-підготовку..."),
         ("pa_cal_",         "📅 Додаю в календар..."),
         ("pa_rem_",         "⏰ Ставлю нагадування..."),
         ("pa_note_",        "📝 Записую в нотатки..."),

@@ -43,6 +43,8 @@ ACK_FILE = "calendar_ack.json"           # збережені відповіді
 SNOOZE_FILE = "calendar_snooze.json"     # відкладені нагадування
 DAILY_FILE = "calendar_daily.json"       # агенда/прев'ю: 1 раз на день
 WEEKLY_FILE = "calendar_weekly.json"     # огляд тижня: 1 раз на тиждень
+AI_CACHE_FILE = "calendar_ai_cache.json"  # AI-коментар: 1 на подію, перевикористовується
+AI_BUDGET_FILE = "calendar_ai_budget.json"  # денний ліміт AI-викликів
 
 _store = K.PayloadStore(STORE_FILE)
 
@@ -270,6 +272,145 @@ def _shift_line(events) -> str:
             "free": "🏠 Вільний день"}.get(sh, "")
 
 
+# ─── AI-КОМЕНТАР (жорсткий бюджет кредитів) ──────────────────────────────────
+#
+# Логіка економії:
+#   1) AI-коментар генерується ОДИН РАЗ на подію і кешується (calendar_ai_cache).
+#      Стадії t3d / t24h / t2h / t30 / after переюзають той самий коментар —
+#      тобто 5 нагадувань = 1 виклик Gemini, а не 5.
+#   2) Денний ліміт AI_MAX_PER_DAY викликів. Вичерпався — тихо працюють
+#      локальні шаблони (як раніше), нічого не ламається.
+#   3) Рутина і зміни AI не отримують взагалі.
+#   4) Немає ключа / Gemini впав / порожня відповідь -> локальний шаблон.
+
+AI_MAX_PER_DAY = 14          # максимум AI-викликів на добу по календарю
+AI_MAX_CHARS = 420           # обрізаємо, щоб карточка не роздувалась
+
+
+def _ai_budget_left() -> int:
+    data = K.load(AI_BUDGET_FILE, default={}) or {}
+    day = K.today_str()
+    used = int(data.get(day) or 0)
+    return max(0, AI_MAX_PER_DAY - used)
+
+
+def _ai_budget_use():
+    data = K.load(AI_BUDGET_FILE, default={}) or {}
+    day = K.today_str()
+    K.update_key(AI_BUDGET_FILE, day, int(data.get(day) or 0) + 1)
+
+
+def _ai_cache_get(evid: str) -> str:
+    data = K.load(AI_CACHE_FILE, default={}) or {}
+    rec = data.get(str(evid))
+    if isinstance(rec, dict):
+        return str(rec.get("text") or "")
+    return ""
+
+
+def _ai_cache_put(evid: str, text: str):
+    K.update_key(AI_CACHE_FILE, str(evid),
+                 {"text": text[:AI_MAX_CHARS], "ts": K.now().isoformat()})
+
+
+def _day_ctx(ev, events) -> str:
+    """Реальний контекст навколо події — щоб AI не вигадував."""
+    if not events:
+        return ""
+    same = [e for e in events
+            if e["start"].date() == ev["start"].date() and e["id"] != ev["id"]
+            and not e["routine"]]
+    sh = K.classify_shift([{"summary": e["title"]} for e in events
+                           if e["start"].date() == ev["start"].date()])
+    sh_txt = {"early": "рання зміна 06:00-18:00",
+              "night": "нічна зміна 18:00-06:00",
+              "free": "зміни немає (вільний день)"}.get(sh, "")
+    parts = []
+    if sh_txt:
+        parts.append(f"того дня: {sh_txt}")
+    if same:
+        parts.append("інші події того дня: "
+                     + "; ".join(f"{e['start'].strftime('%H:%M')} {e['title']}" for e in same[:4]))
+    return ". ".join(parts)
+
+
+def _ai_note(ev, stage: str, events=None) -> str:
+    """Короткий персональний коментар до події. '' якщо AI недоступний/бюджет вичерпано."""
+    if ev.get("routine") or ev.get("shift"):
+        return ""
+    cached = _ai_cache_get(ev["id"])
+    if cached:
+        return cached
+    if not K.GEMINI_KEY or _ai_budget_left() <= 0:
+        return ""
+    n = K.now().replace(tzinfo=None)
+    days = (ev["start"].date() - n.date()).days
+    when_h = ("сьогодні" if days == 0 else "завтра" if days == 1
+              else "післязавтра" if days == 2 else f"через {days} днів")
+    ctx = _day_ctx(ev, events)
+    prompt = (
+        "Ти — особистий асистент і коуч Олега (Кошице, Словаччина; працює на Minebea Mitsumi "
+        "у зміни; цілі: фінансова незалежність, схуднення до 78 кг, біг, інвестиції).\n"
+        "Напиши КОРОТКИЙ коментар українською до події з його календаря: 2-3 речення, "
+        "макс 55 слів, тепло і по-дружньому, з 1-2 емодзі.\n"
+        "ПРАВИЛА: використовуй ТІЛЬКИ дані нижче, НЕ вигадуй деталей, часу, людей чи місць. "
+        "Якщо даних мало — дай практичну пораду з підготовки. Без вступів і без заголовків, "
+        "тільки сам текст.\n\n"
+        f"ПОДІЯ: {ev['title']}\n"
+        f"КОЛИ: {when_h}, {_fmt_when(ev)}\n"
+        f"МІСЦЕ: {ev.get('location') or 'не вказано'}\n"
+        f"КОНТЕКСТ: {ctx or 'додаткових даних немає'}\n"
+        f"ЕТАП НАГАДУВАННЯ: " + {
+            "t3d": "попередження за кілька днів — про підготовку наперед",
+            "t24h": "за добу — що зробити сьогодні, щоб завтра пройшло гладко",
+            "t2h": "за 2 години — коротка підготовка",
+            "t30": "за 30 хвилин — час виходити",
+            "after": "подія завершилась — коротке підбадьорення і питання як пройшло",
+        }.get(stage, "нагадування")
+    )
+    try:
+        txt = (K.gemini_text(prompt, max_tokens=220, temperature=0.85, tag=TAG) or "").strip()
+    except Exception as e:
+        K.log(TAG, f"ai_note error: {e}")
+        return ""
+    if not txt:
+        return ""
+    txt = re.sub(r"^[*#>\s-]+", "", txt).strip()[:AI_MAX_CHARS]
+    _ai_budget_use()
+    _ai_cache_put(ev["id"], txt)
+    K.log(TAG, f"🤖 AI-коментар: {ev['title'][:30]} (бюджет лишилось {_ai_budget_left()})")
+    return txt
+
+
+def _ai_digest(text_block: str, kind: str) -> str:
+    """AI-висновок до агенди дня / огляду тижня. 1 виклик на день/тиждень."""
+    if not K.GEMINI_KEY or _ai_budget_left() <= 0 or not text_block:
+        return ""
+    what = ("план на день" if kind == "agenda"
+            else "план на завтра" if kind == "tomorrow" else "план на тиждень")
+    prompt = (
+        "Ти — особистий асистент і коуч Олега (Кошице; змінна робота на Minebea Mitsumi; "
+        "цілі: фінансова незалежність, схуднення до 78 кг, біг, інвестиції).\n"
+        f"Нижче — його реальний {what} з Google Calendar.\n"
+        "Напиши висновок українською: 3-5 речень (макс 90 слів), тепло і мотивуюче, "
+        "з 2-3 емодзі. Дай 1-2 КОНКРЕТНІ дії/пріоритети саме з цього списку.\n"
+        "ПРАВИЛА: тільки дані зі списку, НЕ вигадуй подій, часу і людей. Якщо список "
+        "порожній — скажи, як використати вільний час (біг, інвестиції, відпочинок). "
+        "Без заголовків, тільки текст.\n\n"
+        + re.sub(r"<[^>]+>", "", text_block)[:1800]
+    )
+    try:
+        txt = (K.gemini_text(prompt, max_tokens=300, temperature=0.85, tag=TAG) or "").strip()
+    except Exception as e:
+        K.log(TAG, f"ai_digest error: {e}")
+        return ""
+    if not txt:
+        return ""
+    _ai_budget_use()
+    K.log(TAG, f"🤖 AI-висновок ({kind}), бюджет лишилось {_ai_budget_left()}")
+    return re.sub(r"^[*#>\s-]+", "", txt).strip()[:900]
+
+
 # ─── НАГАДУВАННЯ ПО ГОДИНАХ ──────────────────────────────────────────────────
 
 def _kb_event(pid: str, stage: str):
@@ -283,12 +424,13 @@ def _kb_event(pid: str, stage: str):
     return [
         [{"text": "✅ Пам'ятаю", "callback_data": f"cw_ok_{pid}"},
          {"text": "🔔 +15 хв", "callback_data": f"cw_sn_{pid}"}],
+        [{"text": "🤖 AI-підготовка", "callback_data": f"cw_ai_{pid}"}],
         [{"text": "📝 Нотатка", "callback_data": f"cw_note_{pid}"},
          {"text": "🚫 Скасовано", "callback_data": f"cw_cancel_{pid}"}],
     ]
 
 
-def _send_event(ev, stage: str) -> bool:
+def _send_event(ev, stage: str, events=None) -> bool:
     pid = _store.put({"evid": ev["id"], "title": ev["title"], "stage": stage,
                       "start": ev["start"].isoformat(), "when": _fmt_when(ev),
                       "location": ev["location"]})
@@ -309,11 +451,13 @@ def _send_event(ev, stage: str) -> bool:
         _dw = ["сьогодні", "завтра", "післязавтра"]
         _human = _dw[_days] if 0 <= _days <= 2 else f"через {_days} дн."
         dline = f"📅 {ev['start'].strftime('%d.%m (%a)')} — {_human}\n"
+    ai = _ai_note(ev, stage, events)
+    body = f"🤖 {K.esc(ai)}" if ai else f"<i>{hint}</i>"
     text = (f"{head}\n━━━━━━━━━━━━━━━━━━━━\n"
             f"📌 <b>{K.esc(ev['title'])}</b>\n"
             f"{dline}"
             f"🕐 {_fmt_when(ev)}{loc}\n\n"
-            f"<i>{hint}</i>")
+            f"{body}")
     ok = K.send_card(text, _kb_event(pid, stage), tag=TAG)
     if ok:
         _mark(ev["id"], stage)
@@ -337,32 +481,32 @@ def tick() -> int:
 
         # 2-4 дні до події — завчасне попередження (щоб нічого не було раптом)
         if 2880 <= mins <= 5760 and not _sent(ev["id"], "t3d"):
-            if _send_event(ev, "t3d"):
+            if _send_event(ev, "t3d", events):
                 sent += 1
                 continue
 
         # 24 години до події
         if 1440 - 45 <= mins <= 1440 + 45 and not _sent(ev["id"], "t24h"):
-            if _send_event(ev, "t24h"):
+            if _send_event(ev, "t24h", events):
                 sent += 1
                 continue
 
         # 2 години до
         if 120 - WINDOW_MIN <= mins <= 120 + WINDOW_MIN and not _sent(ev["id"], "t2h"):
-            if _send_event(ev, "t2h"):
+            if _send_event(ev, "t2h", events):
                 sent += 1
                 continue
 
         # 30 хвилин до
         if 30 - WINDOW_MIN <= mins <= 30 + WINDOW_MIN and not _sent(ev["id"], "t30"):
-            if _send_event(ev, "t30"):
+            if _send_event(ev, "t30", events):
                 sent += 1
                 continue
 
         # після завершення (+15..+40 хв) — «як пройшло?»
         after = (n - ev["end"]).total_seconds() / 60
         if 15 <= after <= 45 and not _sent(ev["id"], "after"):
-            if _send_event(ev, "after"):
+            if _send_event(ev, "after", events):
                 sent += 1
 
     sent += _fire_snoozed()
@@ -459,6 +603,9 @@ def agenda(force: bool = False) -> bool:
                       "titles": [e["title"] for e in real][:10]})
     kb = [[{"text": "👍 Прийняв план", "callback_data": f"cw_ack_{pid}"},
            {"text": "📝 Додати нотатку", "callback_data": f"cw_note_{pid}"}]]
+    ai = _ai_digest(text, "agenda")
+    if ai:
+        text = f"{text}\n\n━━━━━━━━━━━━━━━━━━━━\n🤖 <b>AI-висновок</b>\n{K.esc(ai)}"[:3900]
     ok = K.send_card(text, kb, tag=TAG)
     if ok and not force:
         _daily_mark("agenda")
@@ -480,6 +627,9 @@ def tomorrow(force: bool = False) -> bool:
     pid = _store.put({"stage": "tomorrow", "day": (n + timedelta(days=1)).strftime("%Y-%m-%d")})
     kb = [[{"text": "👍 Готовий", "callback_data": f"cw_ack_{pid}"},
            {"text": "📝 Нотатка", "callback_data": f"cw_note_{pid}"}]]
+    ai = _ai_digest(text, "tomorrow")
+    if ai:
+        text = f"{text}\n\n━━━━━━━━━━━━━━━━━━━━\n🤖 <b>AI-погляд на завтра</b>\n{K.esc(ai)}"[:3900]
     ok = K.send_card(text, kb, tag=TAG)
     if ok and not force:
         _daily_mark("tomorrow")
@@ -555,6 +705,9 @@ def week(force: bool = False) -> bool:
     pid = _store.put({"stage": "week", "day": K.today_str()})
     kb = [[{"text": "👍 Бачу тиждень", "callback_data": f"cw_ack_{pid}"},
            {"text": "📝 Нотатка", "callback_data": f"cw_note_{pid}"}]]
+    ai = _ai_digest(text, "week")
+    if ai:
+        text = f"{text}\n\n━━━━━━━━━━━━━━━━━━━━\n🤖 <b>AI-стратегія тижня</b>\n{K.esc(ai)}"[:3900]
     ok = K.send_card(text, kb, tag=TAG)
     if ok and not force:
         _weekly_mark()
@@ -641,6 +794,44 @@ def do_snooze(pid, minutes: int = 15) -> dict:
             "at": due.strftime("%H:%M")}
 
 
+def do_ai(pid) -> dict:
+    """Кнопка «🤖 AI-підготовка» — розгорнутий план підготовки до конкретної події.
+    Один виклик Gemini на клік, у межах денного бюджету."""
+    p = _store.get(pid)
+    if not p:
+        return {"ok": False, "error": "payload_missing"}
+    if not K.GEMINI_KEY:
+        return {"ok": False, "error": "no_ai"}
+    if _ai_budget_left() <= 0:
+        return {"ok": False, "error": "budget"}
+    events = _raw_events() or []
+    ev = next((e for e in events if e["id"] == p.get("evid")), None)
+    ctx = _day_ctx(ev, events) if ev else ""
+    prompt = (
+        "Ти — особистий асистент Олега (Кошице, Словаччина; змінна робота на Minebea Mitsumi; "
+        "цілі: фінансова незалежність, схуднення до 78 кг, біг, інвестиції).\n"
+        "Зроби КОНКРЕТНИЙ план підготовки до події з календаря, українською.\n"
+        "Формат: 4-6 пунктів списком з емодзі, кожен — коротка дія. В кінці 1 речення "
+        "про головний ризик або що не забути.\n"
+        "ПРАВИЛА: тільки дані нижче, НЕ вигадуй часу, людей, адрес і деталей.\n\n"
+        f"ПОДІЯ: {p.get('title')}\n"
+        f"КОЛИ: {p.get('when')}\n"
+        f"МІСЦЕ: {p.get('location') or 'не вказано'}\n"
+        f"КОНТЕКСТ ДНЯ: {ctx or 'додаткових даних немає'}"
+    )
+    try:
+        txt = (K.gemini_text(prompt, max_tokens=520, temperature=0.8, tag=TAG) or "").strip()
+    except Exception as e:
+        K.log(TAG, f"do_ai error: {e}")
+        return {"ok": False, "error": "ai_failed"}
+    if not txt:
+        return {"ok": False, "error": "ai_failed"}
+    _ai_budget_use()
+    _ack(pid, "ai_prep", {"note": txt[:300]})
+    return {"ok": True, "title": p.get("title"), "when": p.get("when"),
+            "text": re.sub(r"^[*#>\s-]+", "", txt).strip()[:2500]}
+
+
 def do_note(pid, note: str = "") -> dict:
     p = _store.get(pid)
     if not p:
@@ -657,7 +848,8 @@ def do_note(pid, note: str = "") -> dict:
 
 # ─── ЗВІТ ────────────────────────────────────────────────────────────────────
 
-_LABEL = {"remembered": "✅ пам'ятав", "week": "🗓 огляд тижня", "cancelled": "🚫 скасовано",
+_LABEL = {"remembered": "✅ пам'ятав", "week": "🗓 огляд тижня",
+          "ai_prep": "🤖 AI-підготовка", "cancelled": "🚫 скасовано",
           "done": "✅ було", "missed": "❌ не було", "moved": "⏭ перенесено",
           "accepted": "👍 прийняв план", "noted": "📝 нотатка"}
 
@@ -723,6 +915,8 @@ if __name__ == "__main__":
         print(_agenda_text(_day_events(0, _raw_events() or []), 0))
     elif "--tick" in sys.argv:
         print("sent:", tick())
+    elif "--budget" in sys.argv:
+        print("AI-бюджет на сьогодні лишилось:", _ai_budget_left(), "/", AI_MAX_PER_DAY)
     elif "--week" in sys.argv:
         print(week_text(7))
     elif "--upcoming" in sys.argv:
