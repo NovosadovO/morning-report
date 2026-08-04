@@ -2457,7 +2457,7 @@ HELP_TEXT = """
 /люди_онови — перебудувати картки з листування
 /день — «як ти сьогодні» → план дня під самопочуття
 /енергія_тренд — як зміни впливають на твою енергію
-/листи_постачальникам — історія листів по рахунках
+/листи_постачальникам (/рахунки) — рахунки + історія листів постачальникам
 /пропозиції — скан календаря/пошти → пропозиції дій
 
 /допомога — цей список
@@ -2770,14 +2770,25 @@ def handle_command(chat_id, text):
         import threading as _th_m2
         _th_m2.Thread(target=_run_dmt, daemon=True, name="daymode-trend").start()
 
-    elif text.lower().strip() in ["/листи_постачальникам", "/vendor_log"]:
-        try:
-            import sys as _sv, os as _ov
-            _sv.path.insert(0, _ov.path.dirname(__file__))
-            import vendor_reply as _vr_cmd
-            send(chat_id, _vr_cmd.history())
-        except Exception as _e_v:
-            send(chat_id, f"⚠️ Помилка історії листів: {str(_e_v)[:300]}")
+    elif text.lower().strip() in ["/листи_постачальникам", "/vendor_log", "/рахунки", "/bills"]:
+        def _run_vr_cmd():
+            try:
+                import sys as _sv, os as _ov
+                _sv.path.insert(0, _ov.path.dirname(__file__))
+                import vendor_reply as _vr_cmd
+                send(chat_id, _vr_cmd.history())
+                cards = _vr_cmd.bills_cards()
+                if not cards:
+                    send(chat_id, "🧾 Рахунків у базі немає (або в них немає email постачальника).")
+                    return
+                send(chat_id, f"🧾 <b>РАХУНКИ</b> ({len(cards)}) — під кожним робоча кнопка листа:")
+                import ai_kit as _K_vr
+                for _c in cards:
+                    _K_vr.send_card(_c["text"], _c["keyboard"], tag="vendor_cmd", chat_id=chat_id)
+            except Exception as _e_v:
+                send(chat_id, f"⚠️ Помилка листів постачальникам: {str(_e_v)[:300]}")
+        import threading as _th_vr
+        _th_vr.Thread(target=_run_vr_cmd, daemon=True, name="vendor-cmd").start()
 
     elif text.lower().strip() in ["/пропозиції", "/proposals", "пропозиції", "/pa_scan"]:
         # Ручний запуск проактивного скану: календар + пошта + нотатки →

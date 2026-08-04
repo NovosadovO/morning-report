@@ -242,6 +242,56 @@ def do_skip(pid: str) -> dict:
     return {"ok": True}
 
 
+def bills_cards(limit: int = 6) -> list:
+    """Живий список рахунків з bills.json зі СВІЖИМ payload під кожним.
+
+    Потрібно, бо payload карточки рахунку (bills_store.json) підчищається
+    після натискання кнопок — і стара кнопка «✍️ Написати постачальнику»
+    ставала мертвою. Тут payload створюється заново, тому кнопка завжди робоча.
+    """
+    try:
+        import bills_watcher as B
+        bills = B.load_bills() or {}
+    except Exception as e:
+        print(f"[{TAG}] bills load error: {e}", flush=True)
+        return []
+    if not bills:
+        return []
+
+    def _key(item):
+        b = item[1] or {}
+        return (bool(b.get("paid")), str(b.get("created") or ""))
+
+    rows = sorted(bills.items(), key=_key, reverse=True)
+    # неоплачені — першими, потім найсвіжіші оплачені
+    rows = sorted(rows, key=lambda it: bool((it[1] or {}).get("paid")))
+    cards = []
+    for bid, b in rows[:limit]:
+        if not isinstance(b, dict):
+            continue
+        pay = {"bid": bid, "vendor": b.get("vendor"), "amount": b.get("amount"),
+               "currency": b.get("currency"), "invoice_no": b.get("invoice_no"),
+               "due": b.get("due"), "uid": b.get("uid"), "note": b.get("note"),
+               "sender": b.get("sender"), "subject": b.get("subject")}
+        to = _sender_email(pay)
+        if not to:
+            continue
+        pay["to"] = to
+        pid = _store.put(pay)
+        status = "✅ оплачено" if b.get("paid") else "⏳ не оплачено"
+        due = f"\n📅 до {K.esc(b.get('due'))}" if b.get("due") else ""
+        inv = f"\n🧾 {K.esc(b.get('invoice_no'))}" if b.get("invoice_no") else ""
+        text = (f"🧾 <b>{K.esc(b.get('vendor') or 'постачальник')}</b>\n"
+                f"━━━━━━━━━━━━━━━━━━━━\n"
+                f"💰 {K.esc(_fmt_amount(pay))}{inv}{due}\n"
+                f"📧 {K.esc(to)}\n"
+                f"📌 {status}")
+        cards.append({"text": text, "pid": pid, "vendor": b.get("vendor"),
+                      "keyboard": [[{"text": "✍️ Написати постачальнику",
+                                     "callback_data": f"vr_menu_{pid}"}]]})
+    return cards
+
+
 def history(limit: int = 15) -> str:
     log = K.load(LOG_FILE, default={}) or {}
     if not log:
@@ -261,5 +311,8 @@ if __name__ == "__main__":
     import sys
     if "--history" in sys.argv:
         print(history())
+    elif "--bills" in sys.argv:
+        for c in bills_cards():
+            print(c["pid"], "|", c["vendor"])
     else:
         print("модуль викликається з кнопок під рахунком (bills_watcher)")
