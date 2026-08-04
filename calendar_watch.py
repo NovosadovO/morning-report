@@ -529,6 +529,21 @@ def report(days: int = 7) -> str:
     return "\n".join(out)[:3900]
 
 
+def demo(stage: str = "t30") -> bool:
+    """Демо-нагадування (без Google Calendar і без AI) — щоб перевірити,
+    що карточка і всі кнопки живі. Подія синтетична, календар не змінюється."""
+    n = K.now().replace(tzinfo=None)
+    ev = {
+        "id": "demo_" + n.strftime("%Y%m%d%H%M"),
+        "title": "Демо-подія (перевірка кнопок)",
+        "start": n + timedelta(minutes=30),
+        "end": n + timedelta(minutes=90),
+        "allday": False, "routine": False, "shift": False,
+        "location": "Košice",
+    }
+    return _send_event(ev, stage)
+
+
 def today_cards(force: bool = True) -> bool:
     """/події — агенда сьогодні + завтра одразу (ручний виклик)."""
     a = agenda(force=True)

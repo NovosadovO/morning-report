@@ -2460,7 +2460,7 @@ HELP_TEXT = """
 /листи_постачальникам — історія листів постачальникам
 /події — план на сьогодні + що чекає завтра
 /події_відповіді — що ти відповідав на нагадування
-/нагадай_тест — прогнати перевірку календаря зараз
+/нагадай_тест — прогнати перевірку календаря зараз\n/нагадай_демо — демо-нагадування з кнопками (перевірка)
 /пропозиції — скан календаря/пошти → пропозиції дій
 
 /допомога — цей список
@@ -2821,6 +2821,21 @@ def handle_command(chat_id, text):
                 send(chat_id, f"⚠️ Помилка проходу: {str(_e_cwt)[:300]}")
         import threading as _th_cwt
         _th_cwt.Thread(target=_run_cw_tick, daemon=True, name="calendar-tick").start()
+
+    elif text.lower().strip() in ["/нагадай_демо", "/cw_demo"]:
+        def _run_cw_demo():
+            try:
+                import sys as _sc4, os as _oc4
+                _sc4.path.insert(0, _oc4.path.dirname(__file__))
+                import calendar_watch as _cw_d
+                ok1 = _cw_d.demo("t30")
+                ok2 = _cw_d.demo("after")
+                send(chat_id, f"🧪 Демо надіслано: нагадування={ok1}, «як пройшло»={ok2}.\n"
+                              f"<i>Натисни кнопки — відповіді збережуться, перевір /події_відповіді.</i>")
+            except Exception as _e_cwd:
+                send(chat_id, f"⚠️ Помилка демо: {str(_e_cwd)[:300]}")
+        import threading as _th_cwd
+        _th_cwd.Thread(target=_run_cw_demo, daemon=True, name="calendar-demo").start()
 
     elif text.lower().strip() in ["/листи_постачальникам", "/vendor_log", "/листи_рахунки"]:
         def _run_vr_cmd():
