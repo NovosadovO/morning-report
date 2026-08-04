@@ -26,3 +26,14 @@
 - ai_buttons._ack + calendar_watch._ack тепер пишуть у response_log (категорії ai_button / calendar_button) → єдиний лог.
 - bot.py: команда /пам_ять_аі (/ai_memory, /що_знає_аі) — показує сирий блок + статистику. Webhook 200, "Message: /пам_ять_аі" у логах.
 - tests_feedback_ctx.py (=/tmp/fb_test.py): 15 перевірок, ❌=0. Решта 4 набори теж ❌=0. lint311 bad:0.
+
+## Верифікація 04.08 (деплой b6d2664a SUCCESS, 0 помилок у логах)
+Перевірено НЕ тестами, а реальними callback через webhook. Знайдено і виправлено 4 справжні баги:
+1. `_ask_note` → NameError: TELEGRAM_CHAT_ID (константа зветься TELEGRAM_CHAT) — кнопка нотатки НЕ питала текст, тихо падала у fallback. Тепер приймає chat_id.
+2. Автонотатка-fallback зберігала все тіло сповіщення ("Привіт Олеже! 👋...") → нове _auto_note(): без вітання, [тема] + 160 симв.
+3. calendar_watch.do_note писав "Подія: None (None)" при payload без title.
+4. feedback_ctx тягнув це сміття в промпт → _is_junk() + _note_of() + _useful_resp() (сирі callback_data з response_log відсіяно).
+Почищено прод: ai_notes 9 → 4 записи (видалено 5 сміттєвих).
+E2E підтверджено в логах: [CB] gx_note_ → force-reply без помилки → "перевірка нотатки: тримати BTC до 120k" → [ai_notes] added (gx_email).
+Тести: fb_test, note_test, cw_test, cw_week_test, cw_ai_test, cw_month_test — усі ❌=0. lint311 bad:0.
+Нове в репо: tests_feedback_ctx.py, tests_notes_regression.py.
