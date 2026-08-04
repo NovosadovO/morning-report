@@ -330,6 +330,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-08-04T16:49:33.226718+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dl_skip_06f8937feb"
     }
   ]
 }
