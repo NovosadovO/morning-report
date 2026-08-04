@@ -40,5 +40,22 @@
     "subject": null,
     "to": "faktury@superfaktura.sk",
     "ts": "2026-08-04T04:18:59.352731+00:00"
+  },
+  "95dc720257": {
+    "bid": "gastromila_spol_s_r_o_|4680_00|",
+    "vendor": "GASTROMILA, spol. s r.o.",
+    "amount": "4680.00",
+    "currency": "EUR",
+    "invoice_no": "B2026046",
+    "due": "",
+    "uid": "76543",
+    "note": "Виставлений рахунок за послуги від GASTROMILA, spol. s r.o.",
+    "sender": null,
+    "subject": null,
+    "to": "faktury@superfaktura.sk",
+    "ts": "2026-08-04T04:19:38.472404+00:00",
+    "draft": "Dobrý deň,\n\nPíšem Vám ohľadom vystavenej faktúry B2026046 zo dňa [дата, якщо відома, інакше пропустити] na sumu 4680.00 EUR za služby od GASTROMILA, spol. s r.o.\n\nRád by som Vás požiadal o podrobnejšiu špecifikáciu tejto faktúry. Konkrétne by som potreboval vedieť, za aké obdobie boli služby poskytnuté, aké konkrétne položky tvoria uvedenú sumu a na základe akého dojednania alebo zmluvy bolo toto vyúčtovanie vystavené.\n\nĎakujem Vám vopred za skorú odpoveď a spoluprácu.\n\nS pozdravom,\n\nOleh Novosadov\nnovosadovoleg@gmail.com",
+    "subject_out": "Žiadosť o detail faktúry č. B2026046",
+    "kind": "info"
   }
 }
