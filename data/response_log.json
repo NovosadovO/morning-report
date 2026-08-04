@@ -204,6 +204,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "vr_menu_deadbeef04"
+    },
+    {
+      "ts": "2026-08-04T04:08:27.160032+00:00",
+      "category": "day_energy",
+      "question": "Як ти сьогодні",
+      "answer": "Втома",
+      "extra": {
+        "shift": "night"
+      }
     }
   ]
 }
