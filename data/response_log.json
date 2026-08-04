@@ -613,6 +613,16 @@
         "kind": "reminder",
         "date": "2026-08-05"
       }
+    },
+    {
+      "ts": "2026-08-05T01:30:11.697562+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Оновити платіжну інформацію Strava",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-05"
+      }
     }
   ]
 }
