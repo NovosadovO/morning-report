@@ -565,6 +565,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "gx_later_3dc0610c57"
+    },
+    {
+      "ts": "2026-08-04T23:37:22.832086+00:00",
+      "category": "ai_button",
+      "question": "crypto",
+      "answer": "muted_7d",
+      "extra": {
+        "trigger": "deep_analysis",
+        "note": null
+      }
     }
   ]
 }
