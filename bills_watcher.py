@@ -123,9 +123,12 @@ _PROMPT = """Ти — фінансовий асистент Олега (Коши
 def _extract(cands):
     lines = []
     for c in cands:
+        # Пробіли чистимо ЗОВНІ f-string: Python 3.11 забороняє backslash
+        # у виразі f-string ("f-string expression part cannot include a backslash").
+        body_clean = re.sub(r"[ \t]+", " ", c["body"])[:1400]
         lines.append(
             f"--- uid={c['uid']}\nВІД: {c['sender'][:80]}\nТЕМА: {c['subject'][:120]}\n"
-            f"ТЕКСТ: {re.sub(r'[ \t]+', ' ', c['body'])[:1400]}\n"
+            f"ТЕКСТ: {body_clean}\n"
         )
     prompt = _PROMPT.format(now=K.now().strftime("%Y-%m-%d %H:%M"),
                             emails="\n".join(lines)[:9000])

@@ -11,6 +11,10 @@ import email as email_lib
 import urllib.request
 import threading
 from datetime import datetime, timedelta, timezone
+from time import monotonic as _t_mono
+
+# останній запуск модулів автоматизації (in-process, ключ -> monotonic)
+_AUTO_LAST = {}
 from zoneinfo import ZoneInfo
 from email.header import decode_header
 
@@ -487,14 +491,23 @@ class IntelligentListener:
                 #   📭 залиплі листи без відповіді 3+ дні (2 рази на добу)
                 #   🏃 план бігу під зміни (раз на ~20 год, зазвичай нд/пн)
                 #   📊 тижневий огляд + 3 цілі (нд 19:00-22:00)
+                # In-process throttle: loop крутиться раз на секунду, а ці модулі
+                # читають storage/GitHub — без цього був би шквал запитів щосекунди.
+                _mono = _t_mono()
+                def _due(_key, _gap, _m=_mono):
+                    if _m - _AUTO_LAST.get(_key, 0) < _gap:
+                        return False
+                    _AUTO_LAST[_key] = _m
+                    return True
+
                 try:
                     import bills_watcher as _bw_l
-                    if _bw_l.should_scan():
+                    if _due("bills_scan", 900) and _bw_l.should_scan():
                         self._log("[BILLS] scan пошти на рахунки")
                         _n = _bw_l.scan()
                         if _n:
                             self._log(f"✅ Рахунків знайдено: {_n}")
-                    _nd = _bw_l.check_due_soon()
+                    _nd = _bw_l.check_due_soon() if _due("bills_due", 3600) else 0
                     if _nd:
                         self._log(f"✅ Нагадувань про оплату: {_nd}")
                 except Exception as _e_bw:
@@ -502,7 +515,7 @@ class IntelligentListener:
 
                 try:
                     import followup_watcher as _fw_l
-                    _nf = _fw_l.check()
+                    _nf = _fw_l.check() if _due("followup", 3600) else 0
                     if _nf:
                         self._log(f"✅ Follow-up карточок: {_nf}")
                 except Exception as _e_fw:
@@ -512,7 +525,7 @@ class IntelligentListener:
                     import run_planner as _rp_l
                     _hh = (datetime.now(timezone.utc) + timedelta(hours=2))
                     # план бігу пропонуємо ввечері (18-21), коли він точно не на зміні
-                    if _hh.weekday() in (0, 6) and 18 <= _hh.hour < 22:
+                    if _hh.weekday() in (0, 6) and 18 <= _hh.hour < 22 and _due("runplan", 3600):
                         if _rp_l.offer():
                             self._log("✅ План бігу запропоновано")
                 except Exception as _e_rp:
@@ -520,7 +533,7 @@ class IntelligentListener:
 
                 try:
                     import weekly_review as _wr_l
-                    if _wr_l.is_time() and _wr_l.offer():
+                    if _wr_l.is_time() and _due("review", 1800) and _wr_l.offer():
                         self._log("✅ Тижневий огляд надіслано")
                 except Exception as _e_wr:
                     self._log(f"weekly_review error: {_e_wr}")
