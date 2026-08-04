@@ -98,19 +98,21 @@
     "pinged_at": ""
   },
   "dtp_keg@faxcopy.sk": {
-    "name": "Faxcopy",
+    "name": "dtp_keg@faxcopy.sk",
     "relation": "сервіс",
     "vip": false,
     "topics": [
       "весільні знаки",
-      "друк"
+      "Wedding_signs_150x100",
+      "Wedding"
     ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Надіслати повторний запит щодо весільних знаків та друку.",
+    "next_step": "Написати dtp_keg@faxcopy.sk, щоб дізнатися про статус замовлення весільних знаків.",
     "ping_in_days": 0,
     "last_in": "",
+    "last_subject": "",
     "last_out": "2026-07-25",
     "updated": "2026-08-04",
     "pinged_at": ""
