@@ -1467,6 +1467,79 @@ def handle_email_callback(callback_query):
         cb_notify(cb_id, chat_id, f"⚠️ Невідома дія кнопки: {data[:30]}")
 
 
+def _ask_note(kind: str, pid: str, title: str = "") -> bool:
+    """Кнопка «✍️ Нотатка»: просить Олега написати СВІЙ текст замість автозапису.
+    kind: 'cw' (подія календаря) або 'gx' (будь-яке AI-сповіщення).
+    Повертає False, якщо стан/force_reply не вдалось поставити — тоді викликач
+    зберігає автонотатку, щоб кнопка не залишилась мертвою."""
+    try:
+        from planner import set_state as _sst
+        set_note_state = _sst
+    except Exception as e:
+        print(f"[note] state import error: {e}", flush=True)
+        return False
+    try:
+        set_note_state("awaiting_note", {"kind": kind, "pid": pid, "title": title})
+        head = f"✍️ <b>Що записати{(' про «' + title + '»') if title else ''}?</b>"
+        api("sendMessage", {
+            "chat_id": TELEGRAM_CHAT_ID,
+            "text": (f"{head}\n\n<i>Напиши текст нотатки одним повідомленням.</i>\n"
+                     "<i>Не потрібно — напиши «-» або «скасувати».</i>"),
+            "parse_mode": "HTML",
+            "reply_markup": {"force_reply": True, "selective": False,
+                             "input_field_placeholder": "Текст нотатки..."},
+        })
+        return True
+    except Exception as e:
+        print(f"[note] ask error: {e}", flush=True)
+        try:
+            from planner import clear_state as _cst
+            _cst()
+        except Exception:
+            pass
+        return False
+
+
+def _handle_note_reply(chat_id, text: str) -> bool:
+    """Ловить відповідь на запит нотатки (стан awaiting_note). True = оброблено."""
+    try:
+        from planner import get_state as _gst, clear_state as _cst
+        st = _gst() or {}
+        if st.get("mode") != "awaiting_note":
+            return False
+        d = st.get("data") or {}
+        _cst()
+        kind, pid = d.get("kind"), d.get("pid")
+        body = (text or "").strip()
+        if body.lower() in ("-", "ні", "нема", "немає", "скасувати", "cancel", "skip"):
+            send(chat_id, "👍 Ок, нотатку не зберігаю.")
+            return True
+        if kind == "cw":
+            import calendar_watch as _cwn
+            r = _cwn.do_note(pid, note=body)
+        else:
+            import ai_buttons as _gxn
+            r = _gxn.do_note(pid, note=body)
+        if r.get("ok"):
+            _prev = (r.get("note") or body)[:300].replace("<", "&lt;")
+            send(chat_id, f"✍️ <b>Записав твою нотатку</b>\n\n<i>{_prev}</i>\n\nВсі нотатки: /нотатки")
+        elif r.get("error") == "payload_missing":
+            send(chat_id, "⚠️ Повідомлення застаріло — нотатку прив'язати не вдалось. "
+                          "Зберігаю як звичайну нотатку.")
+            try:
+                import ai_notes as _an
+                _an.add_note(body[:500], source="manual_note")
+                send(chat_id, "✍️ Збережено в /нотатки")
+            except Exception:
+                pass
+        else:
+            send(chat_id, f"⚠️ Не зміг зберегти нотатку: {str(r.get('error'))[:80]}")
+        return True
+    except Exception as e:
+        print(f"[note] reply error: {e}", flush=True)
+        return False
+
+
 def handle_quick_reply_callback(callback_query):
     """Обробляє швидкі кнопки під AI-повідомленнями: 👍 Ок / ❓ Розкажи більше / 📝 Занотувати."""
     data    = callback_query.get("data", "")
@@ -2463,6 +2536,10 @@ HELP_TEXT = """
 /місяць_план — календар на місяць вперед (по тижнях) + AI-план
 /ai_бюджет — статистика AI по календарю (лімітів немає)
 /події_відповіді — що ти відповідав на нагадування
+/кнопки — що ти натискав під сповіщеннями
+/відкладені — що бот ще нагадає (кнопка «🔔 Нагадай пізніше»)
+/приховані_теми — теми, які ти приховав («🚫 Не цікавить»)
+/увімкни_теми — повернути всі приховані теми
 /нагадай_тест — прогнати перевірку календаря зараз\n/нагадай_демо — демо-нагадування з кнопками (перевірка)
 /пропозиції — скан календаря/пошти → пропозиції дій
 
@@ -2921,6 +2998,35 @@ def handle_command(chat_id, text):
 
         import threading as _th_pa
         _th_pa.Thread(target=_run_pa_scan, daemon=True, name="pa-scan").start()
+
+    elif text.lower().strip() in ["/кнопки", "/buttons", "кнопки"]:
+        try:
+            import ai_buttons as _gxc
+            send(chat_id, _gxc.report(7))
+        except Exception as _e:
+            send(chat_id, f"⚠️ Не зміг показати натискання: {str(_e)[:120]}")
+
+    elif text.lower().strip() in ["/відкладені", "/pending", "відкладені"]:
+        try:
+            import ai_buttons as _gxp
+            send(chat_id, _gxp.pending())
+        except Exception as _e:
+            send(chat_id, f"⚠️ Не зміг показати відкладені: {str(_e)[:120]}")
+
+    elif text.lower().strip() in ["/приховані_теми", "/muted", "приховані теми"]:
+        try:
+            import ai_buttons as _gxm
+            send(chat_id, _gxm.mute_status())
+        except Exception as _e:
+            send(chat_id, f"⚠️ Не зміг показати теми: {str(_e)[:120]}")
+
+    elif text.lower().strip() in ["/увімкни_теми", "/unmute", "увімкни теми"]:
+        try:
+            import ai_buttons as _gxu
+            _n = _gxu.unmute_all()
+            send(chat_id, f"🔔 Готово — усі теми знову увімкнені (скинуто: {_n}).")
+        except Exception as _e:
+            send(chat_id, f"⚠️ Не зміг увімкнути теми: {str(_e)[:120]}")
 
     elif text in ["/нотатки", "/notes", "нотатки", "/zametki"]:
         # Кнопка "📝 Занотувати" посилається на цю команду — вона мусить існувати.
@@ -4773,12 +4879,118 @@ def handle_automation_callback(cb):
                 elif r.get("error") == "payload_missing": _stale()
                 else: _fail(r, "відкласти нагадування")
             elif data.startswith("cw_note_"):
-                r = _cw.do_note(data[len("cw_note_"):])
+                # Спочатку питаємо ТВІЙ текст; якщо не вийшло — автозапис (кнопка жива завжди)
+                _pid_note = data[len("cw_note_"):]
+                r = _cw.ask_note_text(_pid_note)
                 if r.get("ok"):
-                    _clear_kb()
-                    send(chat_id, "📝 <b>Записав у нотатки</b>\n\n<i>Всі нотатки: /нотатки</i>")
+                    if not _ask_note("cw", _pid_note, str(r.get("title") or "")):
+                        r2 = _cw.do_note(_pid_note)
+                        if r2.get("ok"):
+                            send(chat_id, "📝 <b>Записав у нотатки</b>\n\n<i>Всі нотатки: /нотатки</i>")
+                        else:
+                            _fail(r2, "записати нотатку")
                 elif r.get("error") == "payload_missing": _stale()
                 else: _fail(r, "записати нотатку")
+            elif data.startswith("cw_sn60_"):
+                r = _cw.do_snooze(data[len("cw_sn60_"):], minutes=60)
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"⏰ Нагадаю ще раз о <b>{r['at']}</b>\n{r.get('title') or ''}")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "відкласти на годину")
+            elif data.startswith("cw_go_"):
+                r = _cw.do_go(data[len("cw_go_"):])
+                if r.get("ok"):
+                    _left = r.get("left")
+                    _lt = (f"\n⏳ До початку ще <b>{_left} хв</b>" if isinstance(_left, int) and _left > 0
+                           else ("\n⚠️ Подія вже почалась" if isinstance(_left, int) else ""))
+                    _lc = f"\n📍 {_cw.K.esc(str(r.get('location') or ''))}" if r.get("location") else ""
+                    send(chat_id, f"🚗 <b>Записав: виїхав о {r.get('at')}</b>\n"
+                                  f"📌 {_cw.K.esc(str(r.get('title') or ''))}{_lc}{_lt}\n\n"
+                                  f"<i>Гарної дороги! Після події спитаю, як пройшло.</i>")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "зафіксувати виїзд")
+            elif data.startswith("cw_map_"):
+                r = _cw.do_map(data[len("cw_map_"):])
+                if r.get("ok"):
+                    if r.get("location"):
+                        send(chat_id, f"📍 <b>{_cw.K.esc(str(r.get('title') or ''))}</b>\n"
+                                      f"🕐 {_cw.K.esc(str(r.get('when') or ''))}\n"
+                                      f"📍 {_cw.K.esc(str(r.get('location')))}\n\n"
+                                      f"🗺 <a href=\"{r.get('url')}\">Маршрут у Google Maps</a>")
+                    else:
+                        send(chat_id, f"📍 <b>{_cw.K.esc(str(r.get('title') or ''))}</b>\n"
+                                      f"🕐 {_cw.K.esc(str(r.get('when') or ''))}\n\n"
+                                      "<i>У цієї події в календарі не вказано місце — "
+                                      "нічого не вигадую. Додай локацію в Google Calendar, "
+                                      "і я дам маршрут.</i>")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "показати деталі")
+            elif data.startswith("cw_day_"):
+                r = _cw.do_day(data[len("cw_day_"):])
+                if r.get("ok"):
+                    send(chat_id, r.get("text") or "")
+                elif r.get("error") == "payload_missing": _stale()
+                elif r.get("error") == "no_calendar":
+                    cb_notify(cb["id"], chat_id, "📅 Календар зараз недоступний — не вигадую.", alert=True)
+                else: _fail(r, "показати план дня")
+            elif data.startswith("cw_refresh_"):
+                r = _cw.do_refresh(data[len("cw_refresh_"):])
+                if r.get("ok"):
+                    send(chat_id, r.get("text") or "")
+                elif r.get("error") == "payload_missing": _stale()
+                elif r.get("error") == "no_calendar":
+                    cb_notify(cb["id"], chat_id, "📅 Календар зараз недоступний — не вигадую.", alert=True)
+                else: _fail(r, "оновити огляд")
+            elif data.startswith("cw_focus_"):
+                r = _cw.do_focus(data[len("cw_focus_"):])
+                if r.get("ok"):
+                    send(chat_id, f"{r.get('head')}\n━━━━━━━━━━━━━━━━━━━━\n{_cw.K.esc(r.get('text') or '')}")
+                elif r.get("error") == "payload_missing": _stale()
+                elif r.get("error") == "no_ai":
+                    cb_notify(cb["id"], chat_id, "🤖 AI зараз недоступний (немає ключа).", alert=True)
+                elif r.get("error") == "no_calendar":
+                    cb_notify(cb["id"], chat_id, "📅 Календар зараз недоступний — не вигадую.", alert=True)
+                else: _fail(r, "обрати головне")
+            elif data.startswith("cw_run_"):
+                r = _cw.do_run(data[len("cw_run_"):])
+                if r.get("ok"):
+                    send(chat_id, f"🏃 <b>КУДИ ВПИСАТИ БІГ</b>\n━━━━━━━━━━━━━━━━━━━━\n{_cw.K.esc(r.get('text') or '')}")
+                elif r.get("error") == "payload_missing": _stale()
+                elif r.get("error") == "no_ai":
+                    cb_notify(cb["id"], chat_id, "🤖 AI зараз недоступний (немає ключа).", alert=True)
+                elif r.get("error") == "no_calendar":
+                    cb_notify(cb["id"], chat_id, "📅 Календар зараз недоступний — не вигадую.", alert=True)
+                else: _fail(r, "вписати біг")
+            elif data.startswith("cw_next_"):
+                r = _cw.do_next(data[len("cw_next_"):])
+                if r.get("ok"):
+                    send(chat_id, f"🤖 <b>ЩО ДАЛІ</b> — {_cw.K.esc(str(r.get('title') or ''))}\n"
+                                  f"━━━━━━━━━━━━━━━━━━━━\n{_cw.K.esc(r.get('text') or '')}")
+                elif r.get("error") == "payload_missing": _stale()
+                elif r.get("error") == "no_ai":
+                    cb_notify(cb["id"], chat_id, "🤖 AI зараз недоступний (немає ключа).", alert=True)
+                else: _fail(r, "порадити наступні кроки")
+            elif data.startswith("cw_bills_"):
+                r = _cw.do_bills(data[len("cw_bills_"):])
+                if r.get("ok"):
+                    send(chat_id, r.get("text") or "")
+                elif r.get("error") == "payload_missing": _stale()
+                elif r.get("error") == "no_data":
+                    send(chat_id, "💰 Активних рахунків і дедлайнів не бачу — нічого не вигадую.")
+                else: _fail(r, "показати гроші/дедлайни")
+            elif data.startswith("cw_showweek_"):
+                _txt_w = _cw.week_text(7)
+                if _txt_w:
+                    send(chat_id, _txt_w)
+                else:
+                    cb_notify(cb["id"], chat_id, "📅 Календар зараз недоступний.", alert=True)
+            elif data.startswith("cw_showmonth_"):
+                _txt_m = _cw.month_text(31)
+                if _txt_m:
+                    send(chat_id, _txt_m)
+                else:
+                    cb_notify(cb["id"], chat_id, "📅 Календар зараз недоступний.", alert=True)
             elif data.startswith("cw_cancel_"):
                 r = _cw.do_cancel(data[len("cw_cancel_"):])
                 if r.get("ok"):
@@ -4827,6 +5039,148 @@ def handle_automation_callback(cb):
                     cb_notify(cb["id"], chat_id, "👍 Прийнято")
                 elif r.get("error") == "payload_missing": _stale()
                 else: _fail(r, "зберегти відповідь")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
+        # ─── УНІВЕРСАЛЬНІ КНОПКИ ПІД УСІМА AI-СПОВІЩЕННЯМИ ──────────────────
+        elif data.startswith("gx_"):
+            import ai_buttons as _gx
+            _pid = data.split("_")[-1]
+            if data.startswith("gx_more_"):
+                r = _gx.do_more(_pid)
+                if r.get("ok"):
+                    send(chat_id, "🤖 <b>ДЕТАЛЬНІШЕ</b>\n━━━━━━━━━━━━━━━━━━━━\n"
+                                  + _gx.K.esc(r.get("text") or ""))
+                elif r.get("error") == "payload_missing": _stale()
+                elif r.get("error") == "ai_failed":
+                    _src = _gx.K.esc(str(r.get("source") or ""))[:3000]
+                    send(chat_id, "⚠️ AI зараз не відповідає — не вигадую нічого.\n\n"
+                                  + (f"📄 <b>Оригінал повідомлення:</b>\n\n{_src}" if _src else "")
+                                  + "\n\n<i>Натисни кнопку ще раз пізніше.</i>")
+                else: _fail(r, "розгорнути повідомлення")
+            elif data.startswith("gx_note_"):
+                r = _gx.ask_note_text(_pid)
+                if r.get("ok"):
+                    if not _ask_note("gx", _pid, ""):
+                        r2 = _gx.do_note(_pid)
+                        if r2.get("ok"):
+                            send(chat_id, "✍️ <b>Записав у нотатки</b>\n\n<i>Всі нотатки: /нотатки</i>")
+                        else:
+                            _fail(r2, "записати нотатку")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "записати нотатку")
+            elif data.startswith("gx_later_"):
+                r = _gx.do_later(_pid)
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"🔔 Ок — нагадаю про це о <b>{r.get('at')}</b>.\n"
+                                  "<i>Усі відкладені: /відкладені</i>")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "відкласти повідомлення")
+            elif data.startswith("gx_mute_"):
+                r = _gx.do_mute(_pid)
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"🚫 Тема «{_gx.K.esc(str(r.get('label')))}» прихована до "
+                                  f"<b>{r.get('until')}</b>.\n"
+                                  "<i>Повернути раніше: /увімкни_теми</i>")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "приховати тему")
+            elif data.startswith("gx_done_"):
+                r = _gx.do_done(_pid)
+                if r.get("ok"):
+                    _clear_kb()
+                    cb_notify(cb["id"], chat_id, "✅ Записав: зроблено")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "зберегти відповідь")
+            elif data.startswith("gx_chart_"):
+                _p = _gx.payload(_pid)
+                if not _p:
+                    _stale()
+                else:
+                    _tp = _p.get("topic") or "general"
+                    _gx.do_ack(_pid, "chart")
+                    _img, _cap = None, ""
+                    try:
+                        if _tp == "run":
+                            import strava_charts as _sc
+                            _img, _cap = _sc.plot_month_chart(), "🏃 Біг — місяць"
+                        elif _tp == "health":
+                            import charts as _ch
+                            _img, _cap = _ch.plot_health_2x2_dashboard(), "📊 Здоров'я — місяць"
+                        elif _tp == "habits":
+                            import charts as _ch
+                            _img, _cap = _ch.plot_habits_heatmap(30), "📊 Звички — 30 днів"
+                        else:
+                            import charts as _ch
+                            _img, _cap = _ch.plot_crypto_trend(30), "📈 Крипто — 30 днів"
+                    except Exception as _ce:
+                        print(f"[gx_chart] error: {_ce}", flush=True)
+                    if _img:
+                        send_photo(chat_id, _img, caption=_cap)
+                    else:
+                        send(chat_id, "📊 Даних для графіка поки мало — намалюю, коли "
+                                      "з'явиться історія. Нічого не вигадую.")
+            elif data.startswith("gx_weight_"):
+                _gx.do_ack(_pid, "weight_prompt")
+                send(chat_id, "⚖️ <b>Скинь вагу одним повідомленням</b>\n\n"
+                              "<i>Наприклад: вага 83.2</i>")
+            elif data.startswith("gx_runplan_"):
+                _gx.do_ack(_pid, "run_plan")
+                send(chat_id, "🏃 Складаю план бігу під твій графік змін...")
+                try:
+                    handle_command(chat_id, "/план_бігу")
+                except Exception as _rpe:
+                    print(f"[gx_runplan] error: {_rpe}", flush=True)
+                    send(chat_id, "⚠️ Не зміг скласти план — спробуй /план_бігу.")
+            elif data.startswith("gx_astro_"):
+                _gx.do_ack(_pid, "astro")
+                try:
+                    import astro as _as
+                    _txt = _as.get_natal_transits_short() if hasattr(_as, "get_natal_transits_short") else ""
+                except Exception as _ae:
+                    print(f"[gx_astro] error: {_ae}", flush=True)
+                    _txt = ""
+                send(chat_id, _txt if _txt else "🔮 Транзити зараз недоступні — напиши /астро.")
+            elif data.startswith("gx_mail_"):
+                _gx.do_ack(_pid, "mail")
+                send(chat_id, "📬 Дивлюсь пошту — напиши /листи для повного списку.")
+                try:
+                    handle_command(chat_id, "/листи")
+                except Exception as _me:
+                    print(f"[gx_mail] error: {_me}", flush=True)
+            elif data.startswith("gx_bills_"):
+                _gx.do_ack(_pid, "bills")
+                import calendar_watch as _cwb
+                _txt = ""
+                try:
+                    import deadlines_watcher as _dlb
+                    _txt = _dlb.upcoming(180) or ""
+                except Exception as _be:
+                    print(f"[gx_bills] error: {_be}", flush=True)
+                send(chat_id, _txt if _txt else "💰 Активних рахунків і дедлайнів не бачу.")
+            elif data.startswith("gx_shift_"):
+                _gx.do_ack(_pid, "shift")
+                import calendar_watch as _cws
+                _txt = _cws.upcoming_text(7, 14) if hasattr(_cws, "upcoming_text") else ""
+                send(chat_id, ("🗓 <b>НАЙБЛИЖЧІ ДНІ</b>\n━━━━━━━━━━━━━━━━━━━━\n" + _gx.K.esc(_txt))
+                     if _txt else "🗓 Календар зараз недоступний — не вигадую графік.")
+            elif data.startswith("gx_agenda_"):
+                _gx.do_ack(_pid, "agenda")
+                import calendar_watch as _cwa
+                _ev = _cwa._raw_events()
+                if _ev is None:
+                    cb_notify(cb["id"], chat_id, "📅 Календар зараз недоступний.", alert=True)
+                else:
+                    send(chat_id, _cwa._agenda_text(_cwa._day_events(0, _ev), 0))
+            elif data.startswith("gx_week_"):
+                _gx.do_ack(_pid, "week")
+                import calendar_watch as _cww
+                _txt = _cww.week_text(7)
+                if _txt:
+                    send(chat_id, _txt)
+                else:
+                    cb_notify(cb["id"], chat_id, "📅 Календар зараз недоступний.", alert=True)
             else:
                 cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
         else:
@@ -5147,7 +5501,8 @@ def _route_callback(cb):
               data.startswith("shf_") or data.startswith("fu_") or
               data.startswith("wr_") or data.startswith("dl_") or
               data.startswith("vr_") or data.startswith("pm_") or
-              data.startswith("dm_") or data.startswith("cw_")):
+              data.startswith("dm_") or data.startswith("cw_") or
+              data.startswith("gx_")):
             # Модулі автоматизації: рахунки / план бігу / графік змін /
             # follow-up листів / тижневий огляд
             handle_automation_callback(cb)
@@ -5293,7 +5648,32 @@ def _dispatch_callback_async(cb):
         ("dm_skip_",        "Ок 👌"),
         ("cw_ok_",          "✅ Записую..."),
         ("cw_sn_",          "🔔 Відкладаю на 15 хв..."),
-        ("cw_note_",        "📝 Записую в нотатки..."),
+        ("cw_note_",        "✍️ Питаю текст нотатки..."),
+        ("cw_sn60_",        "⏰ Відкладаю на годину..."),
+        ("cw_go_",          "🚗 Фіксую виїзд..."),
+        ("cw_map_",         "📍 Дивлюсь місце..."),
+        ("cw_day_",         "📅 Дивлюсь день..."),
+        ("cw_refresh_",     "🔁 Оновлюю..."),
+        ("cw_focus_",       "🎯 Обираю головне..."),
+        ("cw_run_",         "🏃 Шукаю вікно для бігу..."),
+        ("cw_next_",        "🤖 Думаю, що далі..."),
+        ("cw_bills_",       "💰 Дивлюсь гроші..."),
+        ("cw_showweek_",    "🗓 Готую тиждень..."),
+        ("cw_showmonth_",   "📆 Готую місяць..."),
+        ("gx_more_",        "🤖 Розбираю детально..."),
+        ("gx_note_",        "✍️ Питаю текст нотатки..."),
+        ("gx_later_",       "🔔 Відкладаю..."),
+        ("gx_mute_",        "🚫 Приховую тему..."),
+        ("gx_chart_",       "📊 Малюю графік..."),
+        ("gx_weight_",      "⚖️ Чекаю вагу..."),
+        ("gx_runplan_",     "🏃 Складаю план..."),
+        ("gx_astro_",       "🔮 Дивлюсь транзити..."),
+        ("gx_mail_",        "📬 Дивлюсь пошту..."),
+        ("gx_bills_",       "💰 Дивлюсь дедлайни..."),
+        ("gx_shift_",       "🗓 Дивлюсь зміни..."),
+        ("gx_agenda_",      "📅 Готую план дня..."),
+        ("gx_week_",        "🗓 Готую тиждень..."),
+        ("gx_done_",        "✅"),
         ("cw_cancel_",      "🚫 Прибираю нагадування..."),
         ("cw_done_",        "✅ Записую: було"),
         ("cw_miss_",        "❌ Записую: не було"),
@@ -5396,6 +5776,13 @@ def process_update(update):
         # Чернетка повідомлення/листа за проханням у вільній формі
         if handle_draft_request(chat_id, text):
             return
+
+        # Нотатка з кнопки «✍️ Нотатка» — бот чекає ТВІЙ текст
+        try:
+            if _handle_note_reply(chat_id, text):
+                return
+        except Exception as _nre:
+            print(f"[note] intercept error: {_nre}", flush=True)
 
         # Shopping — якщо бот очікує список покупок
         try:

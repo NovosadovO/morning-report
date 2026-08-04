@@ -1014,21 +1014,35 @@ def _tg_api(method: str, body: dict):
         return False, str(e)
 
 
-def _send_to_telegram(text: str) -> bool:
-    """Надсилає AI-повідомлення + швидкі кнопки-відповіді (👍 Ок / ❓ Розкажи більше /
-    📝 Занотувати) під останньою частиною. Довгі тексти ріже на частини,
-    при 400 від HTML — повторює без parse_mode."""
+def _send_to_telegram(text: str, topic: str = "", trigger_type: str = "") -> bool:
+    """Надсилає AI-повідомлення + повний набір живих кнопок під темою повідомлення.
+    Ряд 1: 👍 Ок / ❓ Розкажи більше
+    Ряд 2-4: універсальні кнопки з ai_buttons (детальніше, нотатка, графік по темі,
+    нагадай пізніше, не цікавить). Довгі тексти ріже на частини, при 400 від HTML —
+    повторює без parse_mode."""
     if not text or not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
         return False
     import uuid as _uuid_qr
     qr_id = _uuid_qr.uuid4().hex[:10]
-    keyboard = {
-        "inline_keyboard": [[
-            {"text": "👍 Ок", "callback_data": f"qr_ok_{qr_id}"},
-            {"text": "❓ Розкажи більше", "callback_data": f"qr_more_{qr_id}"},
-            {"text": "📝 Занотувати", "callback_data": f"qr_note_{qr_id}"},
-        ]]
-    }
+    rows = [[
+        {"text": "👍 Ок", "callback_data": f"qr_ok_{qr_id}"},
+        {"text": "❓ Розкажи більше", "callback_data": f"qr_more_{qr_id}"},
+    ]]
+    _topic = topic
+    try:
+        import sys as _sys_gx
+        _sys_gx.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import ai_buttons as _gx
+        _topic = topic or _gx.detect_topic(text, trigger_type)
+        if _gx.is_muted(_topic):
+            _log(f"⏸ Тема '{_topic}' прихована кнопкою «Не цікавить» — не надсилаю")
+            return False
+        _gx_pid, _gx_rows = _gx.keyboard(text, topic=_topic, trigger_type=trigger_type)
+        rows.extend(_gx_rows)
+    except Exception as _e_gx:
+        _log(f"ai_buttons keyboard error: {_e_gx}")
+        rows[0].append({"text": "📝 Занотувати", "callback_data": f"qr_note_{qr_id}"})
+    keyboard = {"inline_keyboard": rows}
     clean = _sanitize_html(text)
     chunks = _chunk_text(clean)
     _log(f"Sending {len(text)} chars in {len(chunks)} chunk(s)")
@@ -1089,7 +1103,7 @@ def process_trigger(trigger_type: str, trigger_data, location: str = "doma", idl
         if not message:
             return False
 
-        success = _send_to_telegram(message)
+        success = _send_to_telegram(message, trigger_type=trigger_type)
         if success:
             # Save first 100 chars as "topic" for anti-repeat
             topic = message[:100].replace("\n", " ")

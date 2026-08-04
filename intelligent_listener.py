@@ -604,6 +604,18 @@ class IntelligentListener:
                 except Exception as _e_cw:
                     self._log(f"calendar_watch error: {_e_cw}")
 
+                # ─── 17d. ВІДКЛАДЕНІ КНОПКОЮ «🔔 Нагадай пізніше» ──────────
+                try:
+                    import ai_buttons as _gx_l
+                    if _due("gx_tick", 60):
+                        _n_gx = _gx_l.tick()
+                        if _n_gx:
+                            self._log(f"🔔 Відкладених повідомлень надіслано: {_n_gx}")
+                    if _due("gx_gc", 86400):
+                        _gx_l.gc()
+                except Exception as _e_gx:
+                    self._log(f"ai_buttons error: {_e_gx}")
+
                 # Процесувати тригери (генеруємо & надсилаємо messages)
                 if triggers:
                     for ttype, tdata in triggers:

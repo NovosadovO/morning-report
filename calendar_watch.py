@@ -26,7 +26,9 @@ Calendar API не дьоргається щосекунди.
 
 Усі відповіді на кнопки зберігаються в calendar_ack.json (гілка data).
 
-Callback-префікси: cw_ok_ / cw_sn_ / cw_note_ / cw_cancel_ /
+Callback-префікси: cw_ok_ / cw_sn_ / cw_sn60_ / cw_note_ / cw_cancel_ /
+cw_go_ / cw_map_ / cw_day_ / cw_refresh_ / cw_focus_ / cw_run_ / cw_next_ /
+cw_bills_ / cw_showweek_ / cw_showmonth_ /
                    cw_done_ / cw_miss_ / cw_moved_ / cw_ack_
 """
 
@@ -420,20 +422,31 @@ def _ai_digest(text_block: str, kind: str) -> str:
 # ─── НАГАДУВАННЯ ПО ГОДИНАХ ──────────────────────────────────────────────────
 
 def _kb_event(pid: str, stage: str):
+    """Кнопки під нагадуванням. Набір залежить від того, наскільки близько подія."""
     if stage == "after":
         return [
             [{"text": "✅ Було", "callback_data": f"cw_done_{pid}"},
              {"text": "❌ Не було", "callback_data": f"cw_miss_{pid}"}],
             [{"text": "⏭ Перенесли", "callback_data": f"cw_moved_{pid}"},
-             {"text": "📝 Нотатка", "callback_data": f"cw_note_{pid}"}],
+             {"text": "✍️ Нотатка", "callback_data": f"cw_note_{pid}"}],
+            [{"text": "🤖 Що далі?", "callback_data": f"cw_next_{pid}"}],
         ]
-    return [
+    kb = [
         [{"text": "✅ Пам'ятаю", "callback_data": f"cw_ok_{pid}"},
-         {"text": "🔔 +15 хв", "callback_data": f"cw_sn_{pid}"}],
-        [{"text": "🤖 AI-підготовка", "callback_data": f"cw_ai_{pid}"}],
-        [{"text": "📝 Нотатка", "callback_data": f"cw_note_{pid}"},
-         {"text": "🚫 Скасовано", "callback_data": f"cw_cancel_{pid}"}],
+         {"text": "🔔 +15 хв", "callback_data": f"cw_sn_{pid}"},
+         {"text": "⏰ +1 год", "callback_data": f"cw_sn60_{pid}"}],
+        [{"text": "🤖 AI-підготовка", "callback_data": f"cw_ai_{pid}"},
+         {"text": "📍 Деталі/маршрут", "callback_data": f"cw_map_{pid}"}],
     ]
+    if stage in ("t2h", "t30", "snooze"):
+        # Подія вже близько — має сенс кнопка «виїжджаю»
+        kb.append([{"text": "🚗 Виїжджаю", "callback_data": f"cw_go_{pid}"},
+                   {"text": "✍️ Нотатка", "callback_data": f"cw_note_{pid}"}])
+    else:
+        kb.append([{"text": "✍️ Нотатка", "callback_data": f"cw_note_{pid}"},
+                   {"text": "📅 План дня", "callback_data": f"cw_day_{pid}"}])
+    kb.append([{"text": "🚫 Скасовано", "callback_data": f"cw_cancel_{pid}"}])
+    return kb
 
 
 def _send_event(ev, stage: str, events=None) -> bool:
@@ -608,7 +621,11 @@ def agenda(force: bool = False) -> bool:
                       "count": len(real),
                       "titles": [e["title"] for e in real][:10]})
     kb = [[{"text": "👍 Прийняв план", "callback_data": f"cw_ack_{pid}"},
-           {"text": "📝 Додати нотатку", "callback_data": f"cw_note_{pid}"}]]
+           {"text": "🎯 Головне на день", "callback_data": f"cw_focus_{pid}"}],
+          [{"text": "🏃 Вписати біг", "callback_data": f"cw_run_{pid}"},
+           {"text": "💰 Гроші/дедлайни", "callback_data": f"cw_bills_{pid}"}],
+          [{"text": "✍️ Нотатка", "callback_data": f"cw_note_{pid}"},
+           {"text": "🔁 Оновити", "callback_data": f"cw_refresh_{pid}"}]]
     ai = _ai_digest(text, "agenda")
     if ai:
         text = f"{text}\n\n━━━━━━━━━━━━━━━━━━━━\n🤖 <b>AI-висновок</b>\n{K.esc(ai)}"[:3900]
@@ -632,7 +649,11 @@ def tomorrow(force: bool = False) -> bool:
     text = _agenda_text(_day_events(1, events), 1)
     pid = _store.put({"stage": "tomorrow", "day": (n + timedelta(days=1)).strftime("%Y-%m-%d")})
     kb = [[{"text": "👍 Готовий", "callback_data": f"cw_ack_{pid}"},
-           {"text": "📝 Нотатка", "callback_data": f"cw_note_{pid}"}]]
+           {"text": "🎯 Головне на завтра", "callback_data": f"cw_focus_{pid}"}],
+          [{"text": "🏃 Вписати біг", "callback_data": f"cw_run_{pid}"},
+           {"text": "🗓 Тиждень", "callback_data": f"cw_showweek_{pid}"}],
+          [{"text": "✍️ Нотатка", "callback_data": f"cw_note_{pid}"},
+           {"text": "🔁 Оновити", "callback_data": f"cw_refresh_{pid}"}]]
     ai = _ai_digest(text, "tomorrow")
     if ai:
         text = f"{text}\n\n━━━━━━━━━━━━━━━━━━━━\n🤖 <b>AI-погляд на завтра</b>\n{K.esc(ai)}"[:3900]
@@ -710,7 +731,11 @@ def week(force: bool = False) -> bool:
         return False
     pid = _store.put({"stage": "week", "day": K.today_str()})
     kb = [[{"text": "👍 Бачу тиждень", "callback_data": f"cw_ack_{pid}"},
-           {"text": "📝 Нотатка", "callback_data": f"cw_note_{pid}"}]]
+           {"text": "🎯 Пріоритети тижня", "callback_data": f"cw_focus_{pid}"}],
+          [{"text": "🏃 План бігу", "callback_data": f"cw_run_{pid}"},
+           {"text": "📆 Місяць", "callback_data": f"cw_showmonth_{pid}"}],
+          [{"text": "✍️ Нотатка", "callback_data": f"cw_note_{pid}"},
+           {"text": "🔁 Оновити", "callback_data": f"cw_refresh_{pid}"}]]
     ai = _ai_digest(text, "week")
     if ai:
         text = f"{text}\n\n━━━━━━━━━━━━━━━━━━━━\n🤖 <b>AI-стратегія тижня</b>\n{K.esc(ai)}"[:3900]
@@ -797,7 +822,11 @@ def month(force: bool = False) -> bool:
         text = f"{text}\n\n━━━━━━━━━━━━━━━━━━━━\n🤖 <b>AI-план на місяць</b>\n{K.esc(ai)}"[:3900]
     pid = _store.put({"stage": "month", "day": K.today_str()})
     kb = [[{"text": "👍 Бачу місяць", "callback_data": f"cw_ack_{pid}"},
-           {"text": "📝 Нотатка", "callback_data": f"cw_note_{pid}"}]]
+           {"text": "🎯 Головні цілі місяця", "callback_data": f"cw_focus_{pid}"}],
+          [{"text": "🗓 Тиждень", "callback_data": f"cw_showweek_{pid}"},
+           {"text": "💰 Гроші/дедлайни", "callback_data": f"cw_bills_{pid}"}],
+          [{"text": "✍️ Нотатка", "callback_data": f"cw_note_{pid}"},
+           {"text": "🔁 Оновити", "callback_data": f"cw_refresh_{pid}"}]]
     ok = K.send_card(text, kb, tag=TAG)
     if ok and not force:
         _monthly_mark()
@@ -921,17 +950,248 @@ def do_ai(pid) -> dict:
 
 
 def do_note(pid, note: str = "") -> dict:
+    """✍️ Нотатка. Якщо note передано — зберігає ТВІЙ текст, інакше автозапис про подію."""
     p = _store.get(pid)
     if not p:
         return {"ok": False, "error": "payload_missing"}
-    text = note or f"Подія: {p.get('title')} ({p.get('when')})"
+    own = bool((note or "").strip())
+    if own:
+        title = p.get("title") or p.get("stage") or ""
+        text = f"{note.strip()}" + (f" (подія: {title})" if title else "")
+    else:
+        text = f"Подія: {p.get('title')} ({p.get('when')})"
     try:
         import ai_notes
         ai_notes.add_note(text, source="calendar_watch")
+    except Exception as e:
+        K.log(TAG, f"note save error: {e}")
+        return {"ok": False, "error": "save_failed"}
+    _ack(pid, "noted", {"note": text[:300]})
+    return {"ok": True, "title": p.get("title"), "own": own, "note": text[:300]}
+
+
+def ask_note_text(pid) -> dict:
+    """Перевіряє payload перед тим, як бот попросить текст нотатки."""
+    p = _store.get(pid)
+    if not p:
+        return {"ok": False, "error": "payload_missing"}
+    return {"ok": True, "title": p.get("title") or p.get("stage") or "",
+            "when": p.get("when") or ""}
+
+
+def do_go(pid) -> dict:
+    """🚗 Виїжджаю — фіксує час виїзду і каже, скільки лишилось до початку."""
+    p = _store.get(pid)
+    if not p:
+        return {"ok": False, "error": "payload_missing"}
+    n = K.now().replace(tzinfo=None)
+    left = None
+    try:
+        st = datetime.fromisoformat(str(p.get("start"))).replace(tzinfo=None)
+        left = int((st - n).total_seconds() // 60)
     except Exception:
         pass
-    _ack(pid, "noted", {"note": text[:300]})
-    return {"ok": True, "title": p.get("title")}
+    _ack(pid, "leaving", {"note": f"виїхав о {n.strftime('%H:%M')}"})
+    return {"ok": True, "title": p.get("title"), "when": p.get("when"),
+            "left": left, "at": n.strftime("%H:%M"),
+            "location": p.get("location") or ""}
+
+
+def do_map(pid) -> dict:
+    """📍 Деталі/маршрут — місце події + посилання на Google Maps (без вигадок)."""
+    p = _store.get(pid)
+    if not p:
+        return {"ok": False, "error": "payload_missing"}
+    loc = (p.get("location") or "").strip()
+    url = ""
+    if loc:
+        from urllib.parse import quote_plus
+        url = "https://www.google.com/maps/dir/?api=1&destination=" + quote_plus(loc)
+    _ack(pid, "details")
+    return {"ok": True, "title": p.get("title"), "when": p.get("when"),
+            "location": loc, "url": url}
+
+
+def do_day(pid) -> dict:
+    """📅 План дня — решта подій цього дня (без AI, тільки календар)."""
+    p = _store.get(pid)
+    if not p:
+        return {"ok": False, "error": "payload_missing"}
+    events = _raw_events()
+    if events is None:
+        return {"ok": False, "error": "no_calendar"}
+    offset = 0
+    try:
+        st = datetime.fromisoformat(str(p.get("start"))).replace(tzinfo=None)
+        offset = (st.date() - K.now().replace(tzinfo=None).date()).days
+    except Exception:
+        offset = 0
+    offset = max(0, min(offset, 7))
+    return {"ok": True, "text": _agenda_text(_day_events(offset, events), offset)}
+
+
+def do_refresh(pid) -> dict:
+    """🔁 Оновити — перечитує календар і віддає свіжий огляд того ж масштабу."""
+    p = _store.get(pid)
+    if not p:
+        return {"ok": False, "error": "payload_missing"}
+    stage = p.get("stage") or "agenda"
+    if stage == "week":
+        text = week_text(7)
+    elif stage == "month":
+        text = month_text(31)
+    elif stage == "tomorrow":
+        events = _raw_events(hours_ahead=54)
+        text = _agenda_text(_day_events(1, events), 1) if events is not None else ""
+    else:
+        events = _raw_events()
+        text = _agenda_text(_day_events(0, events), 0) if events is not None else ""
+    if not text:
+        return {"ok": False, "error": "no_calendar"}
+    _ack(pid, "refreshed")
+    return {"ok": True, "text": text[:3900], "stage": stage}
+
+
+def _focus_scope(stage: str):
+    """(заголовок, текст-контекст) для AI під кнопкою «Головне»."""
+    if stage == "week":
+        return "🎯 ПРІОРИТЕТИ ТИЖНЯ", week_text(7)
+    if stage == "month":
+        return "🎯 ГОЛОВНІ ЦІЛІ МІСЯЦЯ", month_text(31)
+    if stage == "tomorrow":
+        events = _raw_events(hours_ahead=54)
+        return "🎯 ГОЛОВНЕ НА ЗАВТРА", (_agenda_text(_day_events(1, events), 1)
+                                        if events is not None else "")
+    events = _raw_events()
+    return "🎯 ГОЛОВНЕ НА ДЕНЬ", (_agenda_text(_day_events(0, events), 0)
+                                  if events is not None else "")
+
+
+def do_focus(pid) -> dict:
+    """🎯 Головне — AI обирає 3 головні речі з РЕАЛЬНОГО календаря."""
+    p = _store.get(pid)
+    if not p:
+        return {"ok": False, "error": "payload_missing"}
+    head, ctx = _focus_scope(p.get("stage") or "agenda")
+    if not ctx:
+        return {"ok": False, "error": "no_calendar"}
+    if not K.GEMINI_KEY:
+        return {"ok": False, "error": "no_ai"}
+    prompt = (
+        "Ти — особистий асистент Олега (Кошице, змінна робота Minebea Mitsumi; цілі: "
+        "фінансова незалежність, схуднення до 78 кг, біг, інвестиції).\n"
+        f"Завдання: з переліку нижче обери ГОЛОВНЕ ({head}).\n"
+        "Формат: 3 пункти «1️⃣ / 2️⃣ / 3️⃣», кожен — що саме і чому це головне "
+        "(1-2 речення). В кінці 1 речення: від чого сьогодні можна відмовитись.\n"
+        "ПРАВИЛА: бери ТІЛЬКИ те, що є в переліку. НЕ вигадуй подій, часу і людей.\n\n"
+        + re.sub(r"<[^>]+>", "", ctx)[:1800]
+    )
+    try:
+        txt = (K.gemini_text(prompt, max_tokens=700, temperature=0.8, tag=TAG) or "").strip()
+    except Exception as e:
+        K.log(TAG, f"do_focus error: {e}")
+        return {"ok": False, "error": "ai_failed"}
+    if not txt:
+        return {"ok": False, "error": "ai_failed"}
+    _ack(pid, "focus", {"note": txt[:300]})
+    return {"ok": True, "head": head,
+            "text": re.sub(r"^[*#>\s-]+", "", txt).strip()[:2000]}
+
+
+def do_run(pid) -> dict:
+    """🏃 Вписати біг — AI шукає реальне вікно для пробіжки між подіями/змінами."""
+    p = _store.get(pid)
+    if not p:
+        return {"ok": False, "error": "payload_missing"}
+    stage = p.get("stage") or "agenda"
+    if stage in ("week", "month"):
+        ctx = week_text(7)
+        horizon = "на найближчий тиждень"
+    else:
+        events = _raw_events(hours_ahead=54)
+        if events is None:
+            return {"ok": False, "error": "no_calendar"}
+        off = 1 if stage == "tomorrow" else 0
+        ctx = _agenda_text(_day_events(off, events), off)
+        horizon = "на завтра" if off else "на сьогодні"
+    if not ctx:
+        return {"ok": False, "error": "no_calendar"}
+    if not K.GEMINI_KEY:
+        return {"ok": False, "error": "no_ai"}
+    prompt = (
+        "Ти — тренер з бігу Олега (Кошице; змінна робота: рання 06:00-18:00, нічна "
+        "18:00-06:00; вага ~83 кг, цiль 78 кг).\n"
+        f"Знайди конкретне вікно для пробіжки {horizon}, враховуючи розклад нижче.\n"
+        "Формат: 1) 🕐 конкретний час-вікно і чому воно найкраще; 2) 🏃 що саме бігти "
+        "(тривалість/темп простими словами); 3) ⚠️ що може зірвати і план Б. "
+        "4-6 речень, тепло, українською.\n"
+        "ПРАВИЛА: після нічної зміни біг не пропонуй раніше сну. Бери ТІЛЬКИ розклад "
+        "нижче, НЕ вигадуй подій.\n\n"
+        + re.sub(r"<[^>]+>", "", ctx)[:1600]
+    )
+    try:
+        txt = (K.gemini_text(prompt, max_tokens=700, temperature=0.85, tag=TAG) or "").strip()
+    except Exception as e:
+        K.log(TAG, f"do_run error: {e}")
+        return {"ok": False, "error": "ai_failed"}
+    if not txt:
+        return {"ok": False, "error": "ai_failed"}
+    _ack(pid, "run_plan", {"note": txt[:300]})
+    return {"ok": True, "text": re.sub(r"^[*#>\s-]+", "", txt).strip()[:2000]}
+
+
+def do_next(pid) -> dict:
+    """🤖 Що далі? — після події: наступні крoки саме по цій події."""
+    p = _store.get(pid)
+    if not p:
+        return {"ok": False, "error": "payload_missing"}
+    if not K.GEMINI_KEY:
+        return {"ok": False, "error": "no_ai"}
+    prompt = (
+        "Ти — особистий асистент Олега. Подія щойно закінчилась.\n"
+        f"ПОДІЯ: {p.get('title')}\nКОЛИ: {p.get('when')}\n"
+        f"МІСЦЕ: {p.get('location') or 'не вказано'}\n\n"
+        "Напиши, що логічно зробити далі: 4-6 пунктів з емодзі (перевірити, "
+        "написати, записати, запланувати наступний крок). В кінці 1 речення — "
+        "що зафіксувати, щоб не забути.\n"
+        "ПРАВИЛА: тільки дані вище, НЕ вигадуй людей, сум і домовленостей."
+    )
+    try:
+        txt = (K.gemini_text(prompt, max_tokens=700, temperature=0.85, tag=TAG) or "").strip()
+    except Exception as e:
+        K.log(TAG, f"do_next error: {e}")
+        return {"ok": False, "error": "ai_failed"}
+    if not txt:
+        return {"ok": False, "error": "ai_failed"}
+    _ack(pid, "next_steps", {"note": txt[:300]})
+    return {"ok": True, "title": p.get("title"),
+            "text": re.sub(r"^[*#>\s-]+", "", txt).strip()[:2000]}
+
+
+def do_bills(pid) -> dict:
+    """💰 Гроші/дедлайни — реальні рахунки і дедлайни з уже наявних модулів."""
+    p = _store.get(pid)
+    if not p:
+        return {"ok": False, "error": "payload_missing"}
+    parts = []
+    try:
+        import deadlines_watcher as _dl
+        t = _dl.upcoming(180)
+        if t:
+            parts.append(t)
+    except Exception as e:
+        K.log(TAG, f"bills: deadlines error: {e}")
+    try:
+        import bills_watcher as _bl
+        t = _bl.monthly_report()
+        if t:
+            parts.append(t)
+    except Exception as e:
+        K.log(TAG, f"bills: bills error: {e}")
+    if not parts:
+        return {"ok": False, "error": "no_data"}
+    _ack(pid, "bills")
+    return {"ok": True, "text": "\n\n".join(parts)[:3900]}
 
 
 # ─── ЗВІТ ────────────────────────────────────────────────────────────────────
@@ -940,7 +1200,12 @@ _LABEL = {"remembered": "✅ пам'ятав", "week": "🗓 огляд тижн
           "month": "📆 огляд місяця",
           "ai_prep": "🤖 AI-підготовка", "cancelled": "🚫 скасовано",
           "done": "✅ було", "missed": "❌ не було", "moved": "⏭ перенесено",
-          "accepted": "👍 прийняв план", "noted": "📝 нотатка"}
+          "accepted": "👍 прийняв план", "noted": "✍️ нотатка",
+          "leaving": "🚗 виїхав", "details": "📍 дивився маршрут",
+          "refreshed": "🔁 оновив огляд", "focus": "🎯 головне на період",
+          "run_plan": "🏃 план бігу", "next_steps": "🤖 що далі",
+          "bills": "💰 гроші/дедлайни", "snooze_60": "⏰ +1 год",
+          "snooze_15": "🔔 +15 хв"}
 
 
 def report(days: int = 7) -> str:
