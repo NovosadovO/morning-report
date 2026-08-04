@@ -80,21 +80,25 @@ print("=== 2. AI не для рутини/змін ===")
 prompts = " ".join(GEM)
 ck("Чай" not in prompts and "Нічна зміна" not in prompts, "рутина/зміна не йдуть в AI")
 
-print("=== 3. кеш: 1 виклик на подію ===")
+print("=== 3. кеш per event|stage: різні тексти на різні етапи ===")
 before = len(GEM)
 e0 = C._raw_events()[0]
 a = C._ai_note(e0, "t30")
 b = C._ai_note(e0, "t2h")
-ck(a == b and len(GEM) == before, "повторно AI не викликався (було %d, зараз %d)" % (before, len(GEM)))
+ck(a != b, "різні етапи -> різні AI-коментарі")
+ck(len(GEM) - before == 2, "2 нові етапи -> 2 виклики (got %d)" % (len(GEM) - before))
+a2 = C._ai_note(e0, "t30")
+ck(a2 == a and len(GEM) - before == 2, "той самий етап переюзує кеш (без нового виклику)")
 
-print("=== 4. бюджет ===")
-print("   лишилось:", C._ai_budget_left(), "/", C.AI_MAX_PER_DAY)
-STORE.setdefault(C.AI_BUDGET_FILE, {})[K.today_str()] = C.AI_MAX_PER_DAY
-ck(C._ai_budget_left() == 0, "бюджет вичерпується")
+print("=== 4. лімітів немає ===")
+print("   згенеровано сьогодні:", C._ai_used_today())
+before4 = len(GEM)
 ev_new = dict(C._raw_events()[0])
-ev_new["id"] = "brand_new"
-ck(C._ai_note(ev_new, "t30") == "", "при вичерпаному бюджеті AI не викликається")
-STORE[C.AI_BUDGET_FILE][K.today_str()] = 0
+for i in range(25):
+    ev_new = dict(C._raw_events()[0]); ev_new["id"] = "many_%d" % i
+    C._ai_note(ev_new, "t30")
+ck(len(GEM) - before4 == 25, "25 подій -> 25 AI-викликів без блокування (got %d)" % (len(GEM) - before4))
+ck(C._ai_used_today() >= 25, "лічильник статистики рахує (%d)" % C._ai_used_today())
 
 print("=== 5. fallback без ключа ===")
 C.K.GEMINI_KEY = ""
