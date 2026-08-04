@@ -434,6 +434,27 @@ def find_event_by_summary(summary_query: str) -> list:
 
 # ─── 5. EMAIL: ВІДПРАВКА ВІДПОВІДІ ────────────────────────────────────────────
 
+def _smtp_send_email(to: str, subject: str, body: str) -> dict:
+    """Фолбек надсилання через SMTP (GMAIL_APP_PASSWORD)."""
+    import smtplib, email.mime.text
+    pwd = os.environ.get("GMAIL_APP_PASSWORD", "")
+    if not pwd:
+        return {"ok": False, "error": "Gmail не підключений (немає APP_PASSWORD)"}
+    try:
+        msg = email.mime.text.MIMEText(body, "plain", "utf-8")
+        msg["From"] = _GMAIL_USER
+        msg["To"] = to
+        msg["Subject"] = subject
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=30) as srv:
+            srv.login(_GMAIL_USER, pwd)
+            srv.sendmail(_GMAIL_USER, [to], msg.as_string())
+        print(f"[assistant] SMTP sent -> {to}")
+        return {"ok": True, "via": "smtp"}
+    except Exception as e:
+        print(f"[assistant] SMTP error: {e}")
+        return {"ok": False, "error": str(e)}
+
+
 def send_email_reply(to: str, subject: str, body: str) -> dict:
     """
     Надсилає email від імені Олега через Gmail API.
@@ -441,7 +462,9 @@ def send_email_reply(to: str, subject: str, body: str) -> dict:
     """
     token = _gmail_token()
     if not token:
-        return {"ok": False, "error": "Gmail не підключений"}
+        # Gmail API не налаштований (немає CLIENT_ID/REFRESH_TOKEN) →
+        # надсилаємо через SMTP з app-password
+        return _smtp_send_email(to, subject, body)
 
     import email.mime.text, email.mime.multipart
     msg = email.mime.multipart.MIMEMultipart()

@@ -72,18 +72,166 @@ def _hdr(msg, name):
     return ""
 
 
+
+# ─── IMAP-ФОЛБЕК (Gmail API не налаштований у проді) ─────────────────────────
+
+def _norm_subj(s: str) -> str:
+    s = re.sub(r"^\s*(re|re\[\d+\]|fwd|fw|відп|відповідь)\s*:\s*", "",
+               (s or ""), flags=re.I)
+    for _ in range(3):
+        s2 = re.sub(r"^\s*(re|fwd|fw)\s*:\s*", "", s, flags=re.I)
+        if s2 == s:
+            break
+        s = s2
+    return re.sub(r"\s+", " ", s).strip().lower()[:120]
+
+
+def _stuck_threads_imap(limit=MAX_CARDS * 3):
+    """Те саме, але через IMAP: [Gmail]/Sent Mail + INBOX для перевірки відповіді."""
+    import imaplib
+    import email as _email
+    import email.utils as _eu
+    pwd = __import__("os").environ.get("GMAIL_APP_PASSWORD", "")
+    if not pwd:
+        K.log(TAG, "немає GMAIL_APP_PASSWORD")
+        return None
+
+    now = K.now().replace(tzinfo=None)
+    since = (now - timedelta(days=21)).strftime("%d-%b-%Y")
+
+    def _dec(raw):
+        try:
+            parts = _email.header.decode_header(raw or "")
+            return "".join(
+                (b.decode(enc or "utf-8", "ignore") if isinstance(b, bytes) else b)
+                for b, enc in parts)
+        except Exception:
+            return raw or ""
+
+    mail = None
+    try:
+        mail = imaplib.IMAP4_SSL("imap.gmail.com", timeout=40)
+        mail.login(MY_EMAIL, pwd)
+
+        # 1. відправлені — шукаємо теку з флагом \\Sent (назва локалізована)
+        sent_box = None
+        try:
+            _, boxes = mail.list()
+            for b in boxes or []:
+                line = b.decode("utf-8", "ignore") if isinstance(b, bytes) else str(b)
+                if "\\Sent" in line:
+                    sent_box = line.split(' "/" ')[-1].strip()
+                    break
+        except Exception:
+            sent_box = None
+        if not sent_box:
+            sent_box = '"[Gmail]/Sent Mail"'
+        if not sent_box.startswith('"'):
+            sent_box = '"' + sent_box.strip('"') + '"'
+        ok, _ = mail.select(sent_box, readonly=True)
+        if ok != "OK":
+            K.log(TAG, f"не вдалось відкрити теку відправлених {sent_box}")
+            return None
+        _, data = mail.search(None, f'(SINCE {since})')
+        uids = (data[0].split() if data and data[0] else [])[-60:]
+
+        sent_map = {}   # (addr, norm_subject) -> {...}
+        for uid in reversed(uids):
+            _, md = mail.fetch(uid, "(BODY.PEEK[HEADER.FIELDS (TO SUBJECT DATE)])")
+            raw = b""
+            for part in md or []:
+                if isinstance(part, tuple):
+                    raw = part[1]
+            if not raw:
+                continue
+            msg = _email.message_from_bytes(raw)
+            to = _dec(msg.get("To", ""))
+            subject = _dec(msg.get("Subject", "")) or "(без теми)"
+            try:
+                ts = _eu.parsedate_to_datetime(msg.get("Date", "")).replace(tzinfo=None)
+            except Exception:
+                continue
+            days = (now - ts).days
+            if days < SILENCE_DAYS or days > 21:
+                continue
+            low = f"{to} {subject}".lower()
+            if any(x in low for x in _SKIP_TO):
+                continue
+            mm = re.search(r"[\w.+%-]+@[\w.-]+\.[a-z]{2,}", to.lower())
+            addr = mm.group(0) if mm else ""
+            if not addr or addr == MY_EMAIL:
+                continue
+            key = (addr, _norm_subj(subject))
+            if key in sent_map:
+                continue
+            name = re.sub(r"<[^>]+>", "", to).strip(' "') or addr.split("@")[0]
+            sent_map[key] = {
+                "thread_id": f"imap:{addr}:{_norm_subj(subject)[:40]}",
+                "to": addr, "name": name[:60], "subject": subject[:140],
+                "days": days, "snippet": "", "sent_at": ts.strftime("%Y-%m-%d"),
+                "_ts": ts,
+            }
+
+        if not sent_map:
+            return []
+
+        # 2. чи є відповідь у INBOX після нашого листа
+        mail.select("INBOX", readonly=True)
+        replied = set()
+        addrs = {k[0] for k in sent_map}
+        for addr in addrs:
+            _, d2 = mail.search(None, f'(SINCE {since} FROM "{addr}")')
+            u2 = (d2[0].split() if d2 and d2[0] else [])[-20:]
+            for uid in u2:
+                _, md = mail.fetch(uid, "(BODY.PEEK[HEADER.FIELDS (SUBJECT DATE)])")
+                raw = b""
+                for part in md or []:
+                    if isinstance(part, tuple):
+                        raw = part[1]
+                if not raw:
+                    continue
+                m2 = _email.message_from_bytes(raw)
+                subj = _norm_subj(_dec(m2.get("Subject", "")))
+                try:
+                    ts2 = _eu.parsedate_to_datetime(m2.get("Date", "")).replace(tzinfo=None)
+                except Exception:
+                    continue
+                rec = sent_map.get((addr, subj))
+                if rec and ts2 > rec["_ts"]:
+                    replied.add((addr, subj))
+
+        out = []
+        for key, rec in sent_map.items():
+            if key in replied:
+                continue
+            rec.pop("_ts", None)
+            out.append(rec)
+        out.sort(key=lambda x: -x["days"])
+        return out[:limit]
+
+    except Exception as e:
+        K.log(TAG, f"imap error: {e}")
+        return None
+    finally:
+        try:
+            if mail:
+                mail.logout()
+        except Exception:
+            pass
+
+
 def _stuck_threads(limit=MAX_CARDS * 3):
     """Треди, де останній писав Олег і відповіді немає SILENCE_DAYS+ днів."""
     token = _token()
     if not token:
-        return None  # None = Gmail недоступний
+        return _stuck_threads_imap(limit)   # Gmail API не налаштований → IMAP
 
     try:
         import monitor as _m
         sent = _m._gmail_list(token, ["SENT"], max_results=30, q="newer_than:21d")
     except Exception as e:
         K.log(TAG, f"list sent error: {e}")
-        return None
+        return _stuck_threads_imap(limit)
     if not sent:
         return []
 
