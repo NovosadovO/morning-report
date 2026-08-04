@@ -18,6 +18,7 @@ AI-промпти їх майже не читали. Тобто Олег тис�
 Ніколи не падає: будь-яка помилка джерела → цей блок просто коротший.
 """
 import os
+import re
 import sys
 from datetime import datetime, timedelta, timezone
 
@@ -159,6 +160,27 @@ def _clean(s, n=140):
     return " ".join(str(s or "").split())[:n]
 
 
+def _note_of(rec) -> str:
+    """Поле note з ack-запису, але тільки якщо це справжня нотатка Олега.
+    Старі записи (до фіксу 04.08) містять усе тіло повідомлення / 'Подія: None'."""
+    n = rec.get("note")
+    return "" if (not n or _is_junk(n)) else _clean(n, 90)
+
+
+def _useful_resp(r) -> bool:
+    """Відсіює службовий шум із response_log: сирі callback-дані і записи,
+    які вже показані в блоці кнопок (щоб не дублювати той самий факт двічі)."""
+    cat = str(r.get("category") or "")
+    ans = " ".join(str(r.get("answer") or "").split())
+    if not ans or len(ans) < 2:
+        return False
+    if cat in ("ai_button", "calendar_button"):
+        return False           # вже є в блоках КНОПКИ / ПО ПОДІЯХ
+    if re.match(r"^(gx|cw|calrem|cal|qr|pm|vr)_[a-z]+_", ans):
+        return False           # сирий callback_data, не відповідь людини
+    return True
+
+
 def build(days: int = 7, max_chars: int = MAX_CHARS) -> str:
     """Короткий блок «як Олег реагував» — для вставки в будь-який AI-промпт."""
     now = _now()
@@ -204,7 +226,7 @@ def build(days: int = 7, max_chars: int = MAX_CHARS) -> str:
         for t, r in btn[:6]:
             topic = r.get("topic") or ""
             rows.append(f"{t.strftime('%d.%m %H:%M')} {topic}: {_clean(r.get('answer'), 40)}"
-                        + (f" — «{_clean(r.get('note'), 90)}»" if r.get("note") else ""))
+                        + (f" — «{_note_of(r)}»" if _note_of(r) else ""))
         lines.append("ОСТАННІ КНОПКИ: " + " | ".join(rows))
 
     cal = _calendar(cutoff)
@@ -213,15 +235,16 @@ def build(days: int = 7, max_chars: int = MAX_CHARS) -> str:
         for t, r in cal[:6]:
             rows.append(f"{t.strftime('%d.%m')} {_clean(r.get('title'), 40)}: "
                         f"{_clean(r.get('answer'), 30)}"
-                        + (f" — «{_clean(r.get('note'), 90)}»" if r.get("note") else ""))
+                        + (f" — «{_note_of(r)}»" if _note_of(r) else ""))
         lines.append("ПО ПОДІЯХ: " + " | ".join(rows))
 
     resp = _responses(days)
     if resp:
         rows = []
-        for r in resp[-5:]:
+        for r in [x for x in resp if _useful_resp(x)][-5:]:
             rows.append(f"{_clean(r.get('category'), 24)}: {_clean(r.get('answer'), 80)}")
-        lines.append("ЙОГО ВІДПОВІДІ ТЕКСТОМ: " + " | ".join(rows))
+        if rows:
+            lines.append("ЙОГО ВІДПОВІДІ ТЕКСТОМ: " + " | ".join(rows))
 
     nts = _notes()
     if nts:
