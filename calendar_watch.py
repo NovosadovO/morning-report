@@ -339,6 +339,17 @@ def _day_ctx(ev, events) -> str:
     return ". ".join(parts)
 
 
+def _fb_block() -> str:
+    """Реакції Олега на попередні нагадування — щоб AI не повторював те саме."""
+    try:
+        import feedback_ctx
+        txt = feedback_ctx.build(days=7)
+        return (txt.strip() + "\n") if txt else ""
+    except Exception as e:
+        K.log(TAG, f"feedback_ctx error: {e}")
+        return ""
+
+
 def _ai_note(ev, stage: str, events=None) -> str:
     """Короткий персональний коментар до події. '' якщо AI недоступний/бюджет вичерпано."""
     if ev.get("routine") or ev.get("shift"):
@@ -366,6 +377,7 @@ def _ai_note(ev, stage: str, events=None) -> str:
         f"КОЛИ: {when_h}, {_fmt_when(ev)}\n"
         f"МІСЦЕ: {ev.get('location') or 'не вказано'}\n"
         f"КОНТЕКСТ: {ctx or 'додаткових даних немає'}\n"
+        f"{_fb_block()}"
         f"ЕТАП НАГАДУВАННЯ: " + {
             "t3d": "попередження за кілька днів — про підготовку наперед",
             "t24h": "за добу — що зробити сьогодні, щоб завтра пройшло гладко",
@@ -404,7 +416,8 @@ def _ai_digest(text_block: str, kind: str) -> str:
         "зваж навантаження і зміни, згадай його цілі (біг, вага 78 кг, інвестиції).\n"
         "ПРАВИЛА: тільки дані зі списку, НЕ вигадуй подій, часу і людей. Якщо список "
         "порожній — скажи, як використати вільний час (біг, інвестиції, відпочинок). "
-        "Без заголовків, тільки текст.\n\n"
+        "Без заголовків, тільки текст.\n"
+        + _fb_block() + "\n"
         + re.sub(r"<[^>]+>", "", text_block)[:1800]
     )
     try:
@@ -868,6 +881,13 @@ def _ack(pid: str, answer: str, extra: dict = None) -> dict:
     if extra:
         rec.update(extra)
     K.update_key(ACK_FILE, K.Dedup.key(key), rec)
+    try:
+        import response_log
+        response_log.log_response("calendar_button", rec["title"], answer,
+                                  {"stage": rec.get("stage"), "when": rec.get("when"),
+                                   "note": rec.get("note")})
+    except Exception as e:
+        K.log(TAG, f"response_log error: {e}")
     return {"ok": True, "title": rec["title"], "when": rec["when"], "answer": answer}
 
 

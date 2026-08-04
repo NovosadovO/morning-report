@@ -2537,6 +2537,7 @@ HELP_TEXT = """
 /ai_бюджет — статистика AI по календарю (лімітів немає)
 /події_відповіді — що ти відповідав на нагадування
 /кнопки — що ти натискав під сповіщеннями
+/пам_ять_аі — що AI знає про твої реакції
 /відкладені — що бот ще нагадає (кнопка «🔔 Нагадай пізніше»)
 /приховані_теми — теми, які ти приховав («🚫 Не цікавить»)
 /увімкни_теми — повернути всі приховані теми
@@ -3005,6 +3006,28 @@ def handle_command(chat_id, text):
             send(chat_id, _gxc.report(7))
         except Exception as _e:
             send(chat_id, f"⚠️ Не зміг показати натискання: {str(_e)[:120]}")
+
+    elif text.lower().strip() in ["/пам_ять_аі", "/память_аі", "/ai_memory",
+                                  "/що_знає_аі", "що знає аі"]:
+        try:
+            import feedback_ctx as _fbc
+            _st = _fbc.stats(7)
+            _txt = _fbc.build(days=7)
+            _head = ("🧠 <b>ЩО AI ЗНАЄ ПРО ТВОЇ РЕАКЦІЇ</b>\n"
+                     "━━━━━━━━━━━━━━━━━━━━\n"
+                     f"Натискань за 7 дн.: <b>{_st.get('total', 0)}</b> "
+                     f"(✅ {_st.get('done', 0)} · 🤖 {_st.get('more', 0)} · "
+                     f"🔔 {_st.get('later', 0)} · 🚫 {_st.get('muted', 0)} · "
+                     f"✍️ {_st.get('noted', 0)})\n\n"
+                     "Саме цей блок підмішується в кожен AI-промпт "
+                     "(чат, проактивні, календар):\n\n")
+            if not _txt:
+                send(chat_id, _head + "<i>Поки порожньо — натисни будь-яку кнопку "
+                                      "під сповіщенням або напиши нотатку.</i>")
+            else:
+                send(chat_id, (_head + "<code>" + _cw_esc_fb(_txt) + "</code>")[:3900])
+        except Exception as _e:
+            send(chat_id, f"⚠️ Не зміг показати память AI: {str(_e)[:200]}")
 
     elif text.lower().strip() in ["/відкладені", "/pending", "відкладені"]:
         try:
@@ -5861,6 +5884,12 @@ def process_update(update):
         import traceback as _tb_pu
         print(f"[process_update] error: {_pue}", flush=True)
         _tb_pu.print_exc()
+
+
+
+def _cw_esc_fb(t: str) -> str:
+    """HTML-escape для показу сирого AI-контексту в <code>."""
+    return (str(t or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
 
 
 def main():

@@ -194,6 +194,12 @@ def _ack(pid: str, answer: str, extra: dict = None) -> dict:
     if extra:
         rec.update(extra)
     K.update_key(ACK_FILE, K.Dedup.key(f"{pid}|{answer}"), rec)
+    try:
+        import response_log
+        response_log.log_response("ai_button", str(p.get("topic") or "general"), answer,
+                                  {"trigger": p.get("trigger"), "note": rec.get("note")})
+    except Exception as e:
+        K.log(TAG, f"response_log error: {e}")
     return {"ok": True, "topic": p.get("topic"), "answer": answer}
 
 

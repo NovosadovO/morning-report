@@ -857,6 +857,16 @@ def ask_ai(user_message: str, include_calendar: bool = True) -> str:
     except Exception as e:
         print(f"ask_ai notes context error: {e}")
 
+    # Реакції на кнопки (gx_ack/calendar_ack/response_log) — щоб AI пам'ятав,
+    # що Олег уже позначив зробленим / приховав / занотував
+    try:
+        import feedback_ctx as _fb_ctx
+        fb_txt = _fb_ctx.build(days=7)
+        if fb_txt:
+            system_prompt += f"\n{fb_txt}"
+    except Exception as e:
+        print(f"ask_ai feedback context error: {e}")
+
     history = _load_history()
 
     contents = [
