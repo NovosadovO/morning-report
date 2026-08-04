@@ -578,6 +578,26 @@ class IntelligentListener:
                 except Exception as _e_dm:
                     self._log(f"day_mode error: {_e_dm}")
 
+                # 17c. КАЛЕНДАРНИЙ ВАРТОВИЙ (0 AI-кредитів, локальні шаблони).
+                #   Раніше нагадувань з календаря було майже нуль: єдиний тригер
+                #   event_soon мав дедуп ПО ТИПУ (1 раз на 1.5 год), а не по
+                #   кожній події, а monitor._check_event_reminders() взагалі
+                #   закоментований. Тут дедуп per-event|stage.
+                try:
+                    import calendar_watch as _cw_l
+                    if _due("cw_tick", 60):
+                        _n_cw = _cw_l.tick()
+                        if _n_cw:
+                            self._log(f"✅ Календарних нагадувань: {_n_cw}")
+                    if _due("cw_agenda", 900) and _cw_l.agenda():
+                        self._log("✅ Ранкова агенда дня надіслана")
+                    if _due("cw_tomorrow", 900) and _cw_l.tomorrow():
+                        self._log("✅ Прев'ю на завтра надіслано")
+                    if _due("cw_gc", 86400):
+                        _cw_l.gc_sent()
+                except Exception as _e_cw:
+                    self._log(f"calendar_watch error: {_e_cw}")
+
                 # Процесувати тригери (генеруємо & надсилаємо messages)
                 if triggers:
                     for ttype, tdata in triggers:

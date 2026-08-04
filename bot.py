@@ -2458,6 +2458,9 @@ HELP_TEXT = """
 /день — «як ти сьогодні» → план дня під самопочуття
 /енергія_тренд — як зміни впливають на твою енергію
 /листи_постачальникам — історія листів постачальникам
+/події — план на сьогодні + що чекає завтра
+/події_відповіді — що ти відповідав на нагадування
+/нагадай_тест — прогнати перевірку календаря зараз
 /пропозиції — скан календаря/пошти → пропозиції дій
 
 /допомога — цей список
@@ -2781,6 +2784,43 @@ def handle_command(chat_id, text):
                 send(chat_id, f"⚠️ Помилка тренду: {str(_e_m2)[:300]}")
         import threading as _th_m2
         _th_m2.Thread(target=_run_dmt, daemon=True, name="daymode-trend").start()
+
+    elif text.lower().strip() in ["/події", "/events", "події", "/агенда"]:
+        # Агенда сьогодні + завтра одразу. БЕЗ AI — локальні шаблони, 0 кредитів.
+        def _run_cw_ev():
+            try:
+                import sys as _sc, os as _oc
+                _sc.path.insert(0, _oc.path.dirname(__file__))
+                import calendar_watch as _cw_cmd
+                if not _cw_cmd.today_cards():
+                    send(chat_id, "⚠️ Календар зараз недоступний — не вигадую події.")
+            except Exception as _e_cw:
+                send(chat_id, f"⚠️ Помилка агенди: {str(_e_cw)[:300]}")
+        import threading as _th_cw
+        _th_cw.Thread(target=_run_cw_ev, daemon=True, name="calendar-agenda").start()
+
+    elif text.lower().strip() in ["/події_відповіді", "/event_acks", "/нагадування_звіт"]:
+        try:
+            import sys as _sc2, os as _oc2
+            _sc2.path.insert(0, _oc2.path.dirname(__file__))
+            import calendar_watch as _cw_r
+            send(chat_id, _cw_r.report())
+        except Exception as _e_cwr:
+            send(chat_id, f"⚠️ Помилка звіту: {str(_e_cwr)[:300]}")
+
+    elif text.lower().strip() in ["/нагадай_тест", "/cw_tick"]:
+        def _run_cw_tick():
+            try:
+                import sys as _sc3, os as _oc3
+                _sc3.path.insert(0, _oc3.path.dirname(__file__))
+                import calendar_watch as _cw_t
+                n = _cw_t.tick()
+                send(chat_id, f"⏰ Прохід по календарю: надіслано {n} нагадувань.\n"
+                              f"<i>Якщо 0 — значить зараз немає подій у вікнах 2 год / 30 хв / після.</i>")
+            except Exception as _e_cwt:
+                send(chat_id, f"⚠️ Помилка проходу: {str(_e_cwt)[:300]}")
+        import threading as _th_cwt
+        _th_cwt.Thread(target=_run_cw_tick, daemon=True, name="calendar-tick").start()
 
     elif text.lower().strip() in ["/листи_постачальникам", "/vendor_log", "/листи_рахунки"]:
         def _run_vr_cmd():
@@ -4274,6 +4314,7 @@ def handle_automation_callback(cb):
       vr_*    — лист постачальнику по рахунку (vendor_reply)
       pm_*    — пам'ять про людей (people_memory)
       dm_*    — енергія дня і план під самопочуття (day_mode)
+      cw_*    — нагадування з календаря: до події / після / snooze (calendar_watch)
     Payload лежить у storage (гілка data) — кнопки живі після рестарту."""
     data = cb.get("data", "")
     chat_id = cb["message"]["chat"]["id"]
@@ -4653,6 +4694,68 @@ def handle_automation_callback(cb):
                 cb_notify(cb["id"], chat_id, "Ок 👌")
             else:
                 cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
+        # ─── КАЛЕНДАРНІ НАГАДУВАННЯ ─────────────────────────────────────────
+        elif data.startswith("cw_"):
+            import calendar_watch as _cw
+            if data.startswith("cw_ok_"):
+                r = _cw.do_ok(data[len("cw_ok_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    cb_notify(cb["id"], chat_id, "✅ Записав, що пам'ятаєш")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "зберегти відповідь")
+            elif data.startswith("cw_sn_"):
+                r = _cw.do_snooze(data[len("cw_sn_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"🔔 Нагадаю ще раз о <b>{r['at']}</b>\n{r.get('title') or ''}")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "відкласти нагадування")
+            elif data.startswith("cw_note_"):
+                r = _cw.do_note(data[len("cw_note_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, "📝 <b>Записав у нотатки</b>\n\n<i>Всі нотатки: /нотатки</i>")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "записати нотатку")
+            elif data.startswith("cw_cancel_"):
+                r = _cw.do_cancel(data[len("cw_cancel_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"🚫 Ок — по «{r.get('title')}» більше не нагадую.")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "скасувати нагадування")
+            elif data.startswith("cw_done_"):
+                r = _cw.do_done(data[len("cw_done_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    cb_notify(cb["id"], chat_id, "✅ Записав: було")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "зберегти відповідь")
+            elif data.startswith("cw_miss_"):
+                r = _cw.do_miss(data[len("cw_miss_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    cb_notify(cb["id"], chat_id, "❌ Записав: не відбулось")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "зберегти відповідь")
+            elif data.startswith("cw_moved_"):
+                r = _cw.do_moved(data[len("cw_moved_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    cb_notify(cb["id"], chat_id, "⏭ Записав: перенесли")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "зберегти відповідь")
+            elif data.startswith("cw_ack_"):
+                r = _cw.do_agenda_ack(data[len("cw_ack_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    cb_notify(cb["id"], chat_id, "👍 Прийнято")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "зберегти відповідь")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
         else:
             cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
 
@@ -4971,7 +5074,7 @@ def _route_callback(cb):
               data.startswith("shf_") or data.startswith("fu_") or
               data.startswith("wr_") or data.startswith("dl_") or
               data.startswith("vr_") or data.startswith("pm_") or
-              data.startswith("dm_")):
+              data.startswith("dm_") or data.startswith("cw_")):
             # Модулі автоматизації: рахунки / план бігу / графік змін /
             # follow-up листів / тижневий огляд
             handle_automation_callback(cb)
@@ -5115,6 +5218,14 @@ def _dispatch_callback_async(cb):
         ("dm_apply_",       "📅 Ставлю блоки в календар..."),
         ("dm_note_",        "📝 Записую в нотатки..."),
         ("dm_skip_",        "Ок 👌"),
+        ("cw_ok_",          "✅ Записую..."),
+        ("cw_sn_",          "🔔 Відкладаю на 15 хв..."),
+        ("cw_note_",        "📝 Записую в нотатки..."),
+        ("cw_cancel_",      "🚫 Прибираю нагадування..."),
+        ("cw_done_",        "✅ Записую: було"),
+        ("cw_miss_",        "❌ Записую: не було"),
+        ("cw_moved_",       "⏭ Записую: перенесли"),
+        ("cw_ack_",         "👍 Прийнято"),
         ("pa_cal_",         "📅 Додаю в календар..."),
         ("pa_rem_",         "⏰ Ставлю нагадування..."),
         ("pa_note_",        "📝 Записую в нотатки..."),
