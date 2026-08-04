@@ -575,6 +575,12 @@
         "trigger": "deep_analysis",
         "note": null
       }
+    },
+    {
+      "ts": "2026-08-04T23:37:23.927580+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "gx_mute_cd343fa74e"
     }
   ]
 }
