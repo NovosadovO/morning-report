@@ -757,5 +757,42 @@
         ]
       ]
     }
+  },
+  "2100366814_61168": {
+    "text": "📩 ✉️\n📌 This protocol added a billion in a down week\n👤 DefiLlama Newsletter <defillama@mail.beehiiv.com>",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_76972"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_76972"
+          }
+        ],
+        [
+          {
+            "text": "⭐ Важливий",
+            "callback_data": "email_star_76972"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_76972"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_76972"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_76972"
+          }
+        ]
+      ]
+    }
   }
 }
