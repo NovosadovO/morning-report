@@ -2457,7 +2457,7 @@ HELP_TEXT = """
 /люди_онови — перебудувати картки з листування
 /день — «як ти сьогодні» → план дня під самопочуття
 /енергія_тренд — як зміни впливають на твою енергію
-/листи_постачальникам (/рахунки) — рахунки + історія листів постачальникам
+/листи_постачальникам — історія листів постачальникам
 /пропозиції — скан календаря/пошти → пропозиції дій
 
 /допомога — цей список
@@ -2629,6 +2629,18 @@ def handle_command(chat_id, text):
                 n = _bw_cmd.scan(force=True)
                 if n:
                     send(chat_id, f"🔍 Знайшов у пошті нових рахунків: {n}")
+                # Живі карточки рахунків зі СВІЖИМ payload — кнопка листа
+                # постачальнику завжди робоча (стара могла бути мертвою).
+                try:
+                    import vendor_reply as _vr_b
+                    import ai_kit as _K_b
+                    _cards = _vr_b.bills_cards()
+                    if _cards:
+                        send(chat_id, f"🧾 <b>РАХУНКИ В БАЗІ</b> ({len(_cards)}) — під кожним робоча кнопка листа:")
+                        for _c in _cards:
+                            _K_b.send_card(_c["text"], _c["keyboard"], tag="bills_cmd", chat_id=chat_id)
+                except Exception as _e_vc:
+                    print(f"[bills-cmd] vendor cards error: {_e_vc}", flush=True)
             except Exception as _e_b:
                 send(chat_id, f"⚠️ Помилка звіту по рахунках: {str(_e_b)[:300]}")
         import threading as _th_b
@@ -2770,7 +2782,7 @@ def handle_command(chat_id, text):
         import threading as _th_m2
         _th_m2.Thread(target=_run_dmt, daemon=True, name="daymode-trend").start()
 
-    elif text.lower().strip() in ["/листи_постачальникам", "/vendor_log", "/рахунки", "/bills"]:
+    elif text.lower().strip() in ["/листи_постачальникам", "/vendor_log", "/листи_рахунки"]:
         def _run_vr_cmd():
             try:
                 import sys as _sv, os as _ov
