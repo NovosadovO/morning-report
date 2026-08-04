@@ -243,13 +243,27 @@ def do_more(pid: str) -> dict:
             "text": re.sub(r"^[*#>\s-]+", "", txt).strip()[:2500]}
 
 
+def _auto_note(p: dict) -> str:
+    """Автонотатка-fallback, якщо Олег не написав свій текст. Без вітання і без
+    усього тіла повідомлення — інакше ai_notes засмічується "Привіт Олеже!" і це
+    потім повертається в AI-контекст як нібито факт про Олега."""
+    import re as _re
+    raw = _re.sub(r"<[^>]+>", " ", str(p.get("text") or ""))
+    lines = [l.strip() for l in raw.split("\n") if l.strip()]
+    lines = [l for l in lines if not _re.match(r"^(привіт|вітаю|доброго|добрий)", l.lower())]
+    body = " ".join(lines)
+    body = _re.sub(r"\s+", " ", body).strip()[:160]
+    topic = TOPIC_LABEL.get(p.get("topic"), p.get("topic") or "сповіщення")
+    return f"[{topic}] відмічено без коментаря: {body}" if body else f"[{topic}] відмічено без коментаря"
+
+
 def do_note(pid: str, note: str = "") -> dict:
     """✍️ Нотатка — зберігає ТВІЙ текст (або сам зміст повідомлення, якщо тексту немає)."""
     p = _store.get(pid)
     if not p:
         return {"ok": False, "error": "payload_missing"}
     own = bool((note or "").strip())
-    text = (note or "").strip() or (p.get("text") or "")[:300]
+    text = (note or "").strip() or _auto_note(p)
     try:
         import ai_notes
         ai_notes.add_note(text, source=f"gx_{p.get('topic') or 'general'}")

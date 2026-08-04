@@ -979,7 +979,12 @@ def do_note(pid, note: str = "") -> dict:
         title = p.get("title") or p.get("stage") or ""
         text = f"{note.strip()}" + (f" (подія: {title})" if title else "")
     else:
-        text = f"Подія: {p.get('title')} ({p.get('when')})"
+        title = str(p.get("title") or "").strip()
+        when = str(p.get("when") or "").strip()
+        if title and title.lower() != "none":
+            text = f"Подія: {title}" + (f" ({when})" if when and when.lower() != "none" else "")
+        else:
+            text = f"Відмічено нагадування без коментаря (етап {p.get('stage') or '?'})"
     try:
         import ai_notes
         ai_notes.add_note(text, source="calendar_watch")

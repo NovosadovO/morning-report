@@ -1467,7 +1467,7 @@ def handle_email_callback(callback_query):
         cb_notify(cb_id, chat_id, f"⚠️ Невідома дія кнопки: {data[:30]}")
 
 
-def _ask_note(kind: str, pid: str, title: str = "") -> bool:
+def _ask_note(kind: str, pid: str, title: str = "", chat_id=None) -> bool:
     """Кнопка «✍️ Нотатка»: просить Олега написати СВІЙ текст замість автозапису.
     kind: 'cw' (подія календаря) або 'gx' (будь-яке AI-сповіщення).
     Повертає False, якщо стан/force_reply не вдалось поставити — тоді викликач
@@ -1482,7 +1482,7 @@ def _ask_note(kind: str, pid: str, title: str = "") -> bool:
         set_note_state("awaiting_note", {"kind": kind, "pid": pid, "title": title})
         head = f"✍️ <b>Що записати{(' про «' + title + '»') if title else ''}?</b>"
         api("sendMessage", {
-            "chat_id": TELEGRAM_CHAT_ID,
+            "chat_id": chat_id or TELEGRAM_CHAT,
             "text": (f"{head}\n\n<i>Напиши текст нотатки одним повідомленням.</i>\n"
                      "<i>Не потрібно — напиши «-» або «скасувати».</i>"),
             "parse_mode": "HTML",
@@ -1621,7 +1621,16 @@ def handle_quick_reply_callback(callback_query):
                 send(chat_id, "⚠️ Оригінал повідомлення не знайдено (застаріло) — нотатку не збережено.")
                 return
             import ai_notes as _ai_notes
-            _ai_notes.add_note(entry["text"][:300], source="qr_note")
+            # НЕ зберігаємо все тіло повідомлення (з "Привіт Олеже!") — інакше
+            # ai_notes засмічується і це повертається в AI-контекст як "факт".
+            try:
+                import ai_buttons as _gx_an
+                _qr_txt = _gx_an._auto_note({"text": entry.get("text", ""),
+                                             "topic": "general"})
+            except Exception:
+                _qr_txt = ("[сповіщення] відмічено без коментаря: "
+                           + " ".join(str(entry.get("text", "")).split())[:160])
+            _ai_notes.add_note(_qr_txt, source="qr_note")
             try:
                 import response_log as _rl_qr3
                 _rl_qr3.log_response("quick_reply_note", entry.get("text", "")[:200], "📝 Занотовано")
@@ -4906,7 +4915,7 @@ def handle_automation_callback(cb):
                 _pid_note = data[len("cw_note_"):]
                 r = _cw.ask_note_text(_pid_note)
                 if r.get("ok"):
-                    if not _ask_note("cw", _pid_note, str(r.get("title") or "")):
+                    if not _ask_note("cw", _pid_note, str(r.get("title") or ""), chat_id):
                         r2 = _cw.do_note(_pid_note)
                         if r2.get("ok"):
                             send(chat_id, "📝 <b>Записав у нотатки</b>\n\n<i>Всі нотатки: /нотатки</i>")
@@ -5084,7 +5093,7 @@ def handle_automation_callback(cb):
             elif data.startswith("gx_note_"):
                 r = _gx.ask_note_text(_pid)
                 if r.get("ok"):
-                    if not _ask_note("gx", _pid, ""):
+                    if not _ask_note("gx", _pid, "", chat_id):
                         r2 = _gx.do_note(_pid)
                         if r2.get("ok"):
                             send(chat_id, "✍️ <b>Записав у нотатки</b>\n\n<i>Всі нотатки: /нотатки</i>")

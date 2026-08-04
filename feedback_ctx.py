@@ -87,12 +87,30 @@ def _responses(days):
         return []
 
 
+_JUNK = ("привіт олеже", "привіт олег", "подія: none", "none (none)",
+         "відмічено без коментаря", "вітаю, олеже")
+
+
+def _is_junk(t: str) -> bool:
+    """Відсіює нотатки-сміття: тіло AI-повідомлення, "Подія: None" тощо.
+    Такі записи не є фактами про Олега і не мають повертатись у промпт."""
+    low = " ".join(str(t or "").split()).lower()
+    if len(low) < 8:
+        return True
+    return any(low.startswith(j) or j in low[:40] for j in _JUNK)
+
+
 def _notes(limit=8):
-    """ai_notes.json — нотатки (останні)."""
+    """ai_notes.json — нотатки (останні), без сміття."""
     try:
         import ai_notes
         notes = ai_notes.load_notes() or []
-        return notes[-limit:]
+        clean = []
+        for n in notes:
+            t = n.get("text") if isinstance(n, dict) else n
+            if not _is_junk(t):
+                clean.append(n)
+        return clean[-limit:]
     except Exception as e:
         print(f"[feedback_ctx] notes: {e}", flush=True)
         return []
