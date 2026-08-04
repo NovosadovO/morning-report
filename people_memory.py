@@ -243,11 +243,13 @@ def refresh(force: bool = False) -> int:
     old = load_people()
     # факт останнього контакту беремо з листів, а не з AI
     last_seen = {}
+    last_subj = {}
     for it in items:
         _, email = _split_addr(it["sender"])
         d = _parse_date(it["date"])
         if email and d and d > last_seen.get(email, ""):
             last_seen[email] = d
+            last_subj[email] = str(it.get("subject") or "")[:120]
     my_last = {}
     for r in sent_rows:
         e = str(r.get("to") or "").lower()
@@ -279,6 +281,7 @@ def refresh(force: bool = False) -> int:
             "next_step": str(c.get("next_step") or "")[:220],
             "ping_in_days": ping,
             "last_in": last_seen.get(email, prev.get("last_in", "")),
+            "last_subject": last_subj.get(email, prev.get("last_subject", "")),
             "last_out": my_last.get(email, prev.get("last_out", "")),
             "updated": K.today_str(),
             "pinged_at": prev.get("pinged_at", ""),
@@ -453,6 +456,23 @@ _DRAFT_PROMPT = """Напиши короткий email від Олега Нов�
 6. Поверни ТІЛЬКИ текст листа, без теми і без markdown."""
 
 
+def _subject_for(p) -> str:
+    """Тема — МОВОЮ листування: «Re: <остання тема>», інакше нейтральна по домену.
+    Раніше бралась перша тема з topics — а вони українською, тож словацький лист
+    приходив з українською темою."""
+    last = str(p.get("last_subject") or "").strip()
+    if last:
+        return last if re.match(r"^(re|odp|fwd)\s*:", last, re.I) else f"Re: {last[:66]}"
+    dom = str(p.get("email") or "").split("@")[-1].lower()
+    if dom.endswith(".sk") or dom.endswith(".cz"):
+        return "Dobrý deň"
+    if dom.endswith(".ua") or dom.endswith(".ru"):
+        return "Доброго дня"
+    if dom.endswith(".hu"):
+        return "Hello"
+    return "Hello"
+
+
 def do_draft(pid: str) -> dict:
     p = _store.get(pid)
     if not p:
@@ -470,8 +490,7 @@ def do_draft(pid: str) -> dict:
         return {"ok": False, "error": "ai_unavailable"}
     body = re.sub(r"^```.*?\n|```$", "", body.strip(), flags=re.DOTALL).strip()
     body = re.sub(r"^(?:Subject|Тема|Predmet)\s*:.*\n+", "", body, flags=re.I)
-    topics = p.get("topics") or []
-    subject = (topics[0][:70] if topics else f"Ahoj {p.get('name')}")
+    subject = _subject_for(p)
     pid2 = _store.put({**p, "draft": body[:2200], "subject_out": subject})
     return {"ok": True, "pid": pid2, "to": p.get("email"), "name": p.get("name"),
             "subject": subject, "draft": body[:2200]}
