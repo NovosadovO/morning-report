@@ -164,6 +164,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "fu_skip_b25bce3513"
+    },
+    {
+      "ts": "2026-08-04T03:38:52.497205+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Відповісти Dekoračný Servis",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-04"
+      }
     }
   ]
 }
