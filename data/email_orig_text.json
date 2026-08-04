@@ -794,5 +794,42 @@
         ]
       ]
     }
+  },
+  "2100366814_61169": {
+    "text": "📩 ✉️\n📌 📰 Daily Crypto Digest — August 4\n👤 Oleh Bezuhlyi через LinkedIn<newsletters-noreply@l",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_76971"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_76971"
+          }
+        ],
+        [
+          {
+            "text": "⭐ Важливий",
+            "callback_data": "email_star_76971"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_76971"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_76971"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_76971"
+          }
+        ]
+      ]
+    }
   }
 }
