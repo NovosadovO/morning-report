@@ -549,6 +549,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "gx_note_d7453802fb"
+    },
+    {
+      "ts": "2026-08-04T23:37:16.657132+00:00",
+      "category": "ai_button",
+      "question": "email",
+      "answer": "later_120",
+      "extra": {
+        "trigger": "vip_email",
+        "note": null
+      }
     }
   ]
 }
