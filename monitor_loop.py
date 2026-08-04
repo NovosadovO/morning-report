@@ -222,13 +222,12 @@ def run_monitor_loop():
 
 def run_calendar_reminder_watcher():
     """Нагадування за 30хв до подій — кожні 5 хвилин."""
-    print("=== Starting calendar reminder watcher (every 5min) ===", flush=True)
+    print("=== Starting planner trigger watcher (every 5min) ===", flush=True)
+    print("[calendar] старі нагадування (1 год) вимкнено — працює calendar_watch", flush=True)
     time.sleep(45)
     while True:
-        try:
-            _load_monitor().check_calendar_reminders()
-        except Exception as e:
-            print(f"Calendar reminder watcher error: {e}", flush=True)
+        # check_calendar_reminders() ВИМКНЕНО: дублювало calendar_watch.tick()
+        # (t2h / t30 / after + кнопки). Єдине джерело нагадувань — calendar_watch.
         try:
             import sys, os as _os
             sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
@@ -891,14 +890,10 @@ def run_week_goals_watcher():
 
 def run_calendar_live_watcher():
     """Живий календар — сповіщення за 15хв і при старті події кожні 5 хв."""
-    print("=== Starting calendar live watcher (every 5min) ===", flush=True)
-    time.sleep(160)
-    while True:
-        try:
-            _load_monitor().check_calendar_live()
-        except Exception as e:
-            print(f"Calendar live watcher error: {e}", flush=True)
-        time.sleep(300)
+    # ВИМКНЕНО: check_calendar_live() (15 хв + "починається зараз") дублювало
+    # calendar_watch.tick(). Єдине джерело календарних нагадувань — calendar_watch.
+    print("=== calendar live watcher DISABLED (calendar_watch active) ===", flush=True)
+    return
 
 
 threading.Thread(target=run_morning_context_watcher,  daemon=True).start()

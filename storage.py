@@ -65,6 +65,41 @@ def _gh_request(method, path, body=None):
         print(f"GitHub error [{method} {path}]: {e}")
         return None
 
+def _gh_get(path, tries=3):
+    """GET з розрізненням «файлу немає» і «GET впав».
+
+    Повертає ("ok", json) | ("missing", None) | ("error", None).
+    Було: будь-яка помилка GET -> None -> PUT без sha -> 422 «"sha" wasn't
+    supplied» і перезапис/шум у логах. Тепер при transient-помилці ми НЕ
+    робимо PUT без sha, а повторюємо спробу.
+    """
+    url = f"{GITHUB_API}/repos/{GITHUB_REPO}/contents/{path}?ref={DATA_BRANCH}"
+    headers = {
+        "Authorization": f"token {GITHUB_TOKEN}",
+        "Content-Type": "application/json",
+        "Accept": "application/vnd.github.v3+json",
+        "User-Agent": "morning-report-bot",
+    }
+    for i in range(tries):
+        try:
+            req = urllib.request.Request(url, headers=headers, method="GET")
+            with urllib.request.urlopen(req, timeout=15) as r:
+                return "ok", json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                return "missing", None
+            if e.code in (403, 408, 429) or e.code >= 500:
+                time.sleep(0.4 * (2 ** i))
+                continue
+            print(f"GitHub GET {path} error {e.code}")
+            return "error", None
+        except Exception as e:
+            if i == tries - 1:
+                print(f"GitHub GET {path} failed: {e}")
+            time.sleep(0.4 * (2 ** i))
+    return "error", None
+
+
 def _load_github(filename):
     """Читає JSON файл з GitHub repo. Thread-safe через file lock."""
     lock = _get_file_lock(filename)
@@ -103,7 +138,11 @@ def _save_github(filename, data):
 
     for attempt in range(5):  # 5 спроб з exponential backoff
         # Отримуємо поточний SHA (потрібен для update) — завжди свіжий
-        existing = _gh_request("GET", f"data/{filename}")
+        state, existing = _gh_get(f"data/{filename}")
+        if state == "error":
+            # GET впав — PUT без sha перезаписав би файл / дав 422. Пробуємо ще.
+            time.sleep(0.5 * (2 ** attempt))
+            continue
         sha = existing["sha"] if existing else None
 
         body = {
@@ -265,7 +304,10 @@ def update_key(filename, key, value, default=None):
     lock = _get_file_lock(filename)
     with lock:
         for attempt in range(5):
-            existing = _gh_request("GET", f"data/{filename}")
+            state, existing = _gh_get(f"data/{filename}")
+            if state == "error":
+                time.sleep(0.5 * (2 ** attempt))
+                continue
             if existing:
                 try:
                     data = json.loads(base64.b64decode(existing["content"]).decode())
@@ -301,7 +343,10 @@ def remove_key(filename, key):
     lock = _get_file_lock(filename)
     with lock:
         for attempt in range(5):
-            existing = _gh_request("GET", f"data/{filename}")
+            state, existing = _gh_get(f"data/{filename}")
+            if state == "error":
+                time.sleep(0.5 * (2 ** attempt))
+                continue
             if existing:
                 try:
                     data = json.loads(base64.b64decode(existing["content"]).decode())

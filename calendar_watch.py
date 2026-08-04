@@ -92,6 +92,18 @@ def _raw_events(hours_ahead: int = 30):
     out.sort(key=lambda x: x["start"])
     _cache["ts"] = n
     _cache["events"] = out
+    # Діагностика: видно чи «0 реальних подій» — правда, чи наслідок фільтрів
+    try:
+        _r = sum(1 for e in out if e["routine"])
+        _s = sum(1 for e in out if e["shift"])
+        _a = sum(1 for e in out if e["allday"])
+        _real = [e for e in out if not e["routine"] and not e["shift"] and not e["allday"]]
+        K.log(TAG, f"fetch: raw={len(evs)} norm={len(out)} real={len(_real)} "
+                   f"routine={_r} shift={_s} allday={_a}"
+                   + (" | " + "; ".join(f"{e['start'].strftime('%d.%m %H:%M')} {e['title'][:28]}"
+                                        for e in _real[:5]) if _real else ""))
+    except Exception:
+        pass
     return out
 
 
