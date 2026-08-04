@@ -491,6 +491,9 @@ class IntelligentListener:
                 #   📭 залиплі листи без відповіді 3+ дні (2 рази на добу)
                 #   🏃 план бігу під зміни (раз на ~20 год, зазвичай нд/пн)
                 #   📊 тижневий огляд + 3 цілі (нд 19:00-22:00)
+                #   📄 дедлайни з пошти (кожні 3 год) + попередження 14/7/3/1/0 днів
+                #   🧠 картки людей + «хтось чекає на твій крок»
+                #   ⚡ «як ти сьогодні» → план дня під енергію (вікно під зміну)
                 # In-process throttle: loop крутиться раз на секунду, а ці модулі
                 # читають storage/GitHub — без цього був би шквал запитів щосекунди.
                 _mono = _t_mono()
@@ -537,6 +540,43 @@ class IntelligentListener:
                         self._log("✅ Тижневий огляд надіслано")
                 except Exception as _e_wr:
                     self._log(f"weekly_review error: {_e_wr}")
+
+                # 17b. ДОКУМЕНТИ / ЛЮДИ / ЕНЕРГІЯ ДНЯ
+                #   📄 дедлайни з пошти: скан кожні 30 хв (модуль сам тримає 3 год),
+                #      нагадування про терміни — раз на годину
+                #   🧠 картки людей: оновлення раз на 4 год (модуль сам — 8 год),
+                #      карточка «хтось чекає на крок» — раз на 2 год (модуль — 20 год)
+                #   ⚡ питання про енергію дня: перевірка вікна раз на 5 хв
+                try:
+                    import deadlines_watcher as _dl_l
+                    if _due("dl_scan", 1800) and _dl_l.should_scan():
+                        self._log("[DEADLINES] scan пошти на терміни")
+                        _n_dl = _dl_l.scan()
+                        if _n_dl:
+                            self._log(f"✅ Дедлайнів знайдено: {_n_dl}")
+                    _ndd = _dl_l.check_due_soon() if _due("dl_due", 3600) else 0
+                    if _ndd:
+                        self._log(f"✅ Нагадувань про дедлайни: {_ndd}")
+                except Exception as _e_dl:
+                    self._log(f"deadlines_watcher error: {_e_dl}")
+
+                try:
+                    import people_memory as _pm_l
+                    if _due("pm_refresh", 14400):
+                        _n_pm = _pm_l.refresh()
+                        if _n_pm:
+                            self._log(f"✅ Карток людей оновлено: {_n_pm}")
+                    if _due("pm_offer", 7200) and _pm_l.offer():
+                        self._log("✅ Картка «людина чекає на крок» надіслана")
+                except Exception as _e_pm:
+                    self._log(f"people_memory error: {_e_pm}")
+
+                try:
+                    import day_mode as _dm_l
+                    if _due("day_mode", 300) and _dm_l.ask():
+                        self._log("✅ Питання про енергію дня надіслано")
+                except Exception as _e_dm:
+                    self._log(f"day_mode error: {_e_dm}")
 
                 # Процесувати тригери (генеруємо & надсилаємо messages)
                 if triggers:

@@ -168,6 +168,8 @@ def _save_bill(b: dict) -> str:
         "invoice_no": str(b.get("invoice_no") or "")[:40],
         "due": K.valid_future_date(b.get("due") or "") or (b.get("due") or ""),
         "uid": str(b.get("uid") or ""),
+        "sender": str(b.get("sender") or "")[:120],
+        "subject": str(b.get("subject") or "")[:140],
         "note": (b.get("note") or "")[:300],
         "paid": bool(b.get("already_paid")),
         "paid_at": K.today_str() if b.get("already_paid") else "",
@@ -206,6 +208,8 @@ def _offer(b: dict, bid: str) -> bool:
 
     pid = _store.put({"bid": bid, "vendor": vendor, "amount": b.get("amount"),
                       "currency": b.get("currency"), "due": due,
+                      "invoice_no": b.get("invoice_no"),
+                      "sender": b.get("sender"), "subject": b.get("subject"),
                       "note": b.get("note"), "uid": b.get("uid")})
 
     text = (
@@ -233,6 +237,7 @@ def _offer(b: dict, bid: str) -> bool:
     if str(b.get("uid") or "").isdigit():
         row.append({"text": "📖 Показати лист", "callback_data": f"email_describe_{b['uid']}"})
     kb.append(row)
+    kb.append([{"text": "✍️ Написати постачальнику", "callback_data": f"vr_menu_{pid}"}])
     kb.append([{"text": "❌ Це не рахунок", "callback_data": f"bill_skip_{pid}"}])
 
     ok = K.send_card(text, kb, tag=TAG)
@@ -276,6 +281,7 @@ def scan(force: bool = False) -> int:
         return 0
 
     existing = load_bills()
+    by_uid = {str(c["uid"]): c for c in cands}
     sent = 0
     for b in found:
         if not isinstance(b, dict):
@@ -283,6 +289,9 @@ def scan(force: bool = False) -> int:
         vendor = (b.get("vendor") or "").strip()
         if not vendor:
             continue
+        src = by_uid.get(str(b.get("uid") or "")) or {}
+        b.setdefault("sender", src.get("sender") or "")
+        b.setdefault("subject", src.get("subject") or "")
         bid = _bill_id(vendor, b.get("amount"), b.get("due"))
         if bid in existing:
             continue
@@ -333,7 +342,9 @@ def check_due_soon() -> int:
 
         pid = _store.put({"bid": bid, "vendor": b.get("vendor"),
                           "amount": b.get("amount"), "currency": b.get("currency"),
-                          "due": due, "note": b.get("note"), "uid": b.get("uid")})
+                          "due": due, "invoice_no": b.get("invoice_no"),
+                          "sender": b.get("sender"), "subject": b.get("subject"),
+                          "note": b.get("note"), "uid": b.get("uid")})
         text = (f"{head}\n━━━━━━━━━━━━━━━━━━━━\n"
                 f"🏢 <b>{K.esc(b.get('vendor'))}</b>\n"
                 f"💰 {K.esc(_fmt_money(b))}\n📆 до <b>{due}</b>")
@@ -343,6 +354,7 @@ def check_due_soon() -> int:
             [{"text": "✅ Оплатив", "callback_data": f"bill_due_paid_{pid}"}],
             [{"text": "⏰ Нагадати завтра", "callback_data": f"bill_due_snooze_{pid}"},
              {"text": "📅 В календар", "callback_data": f"bill_cal_{pid}"}],
+            [{"text": "✍️ Написати постачальнику", "callback_data": f"vr_menu_{pid}"}],
         ]
         if K.send_card(text, kb, tag=TAG):
             _due_dedup.mark("due", bid, str(left))

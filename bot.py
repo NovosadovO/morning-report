@@ -2452,6 +2452,12 @@ HELP_TEXT = """
 /зміни нічні 5-9, рання 12-16 — графік у календар + блоки сну
 /чекаю — на які твої листи не відповіли 3+ дні
 /огляд — тижневий огляд + 3 цілі на наступний тиждень
+/дедлайни — страховки, техогляд, договори, терміни подачі документів
+/люди — картки контактів: про що говорили, що обіцяв, коли пінгувати
+/люди_онови — перебудувати картки з листування
+/день — «як ти сьогодні» → план дня під самопочуття
+/енергія_тренд — як зміни впливають на твою енергію
+/листи_постачальникам — історія листів по рахунках
 /пропозиції — скан календаря/пошти → пропозиції дій
 
 /допомога — цей список
@@ -2693,6 +2699,85 @@ def handle_command(chat_id, text):
                     send(chat_id, f"⚠️ Помилка графіка: {str(_e_s)[:300]}")
             import threading as _th_s
             _th_s.Thread(target=_run_ss, daemon=True, name="shifts-cmd").start()
+
+
+    elif text.lower().strip() in ["/дедлайни", "/deadlines", "дедлайни", "/терміни"]:
+        def _run_dl():
+            try:
+                import sys as _sd, os as _od
+                _sd.path.insert(0, _od.path.dirname(__file__))
+                import deadlines_watcher as _dl_cmd
+                send(chat_id, _dl_cmd.upcoming())
+                n = _dl_cmd.scan(force=True)
+                if n:
+                    send(chat_id, f"🔍 Нових дедлайнів у пошті: {n}")
+            except Exception as _e_d:
+                send(chat_id, f"⚠️ Помилка дедлайнів: {str(_e_d)[:300]}")
+        import threading as _th_d
+        _th_d.Thread(target=_run_dl, daemon=True, name="deadlines-cmd").start()
+
+    elif text.lower().strip() in ["/люди", "/people", "люди", "/контакти"]:
+        def _run_pm():
+            try:
+                import sys as _sp, os as _op
+                _sp.path.insert(0, _op.path.dirname(__file__))
+                import people_memory as _pm_cmd
+                send(chat_id, _pm_cmd.digest())
+                if not _pm_cmd.offer(force=True):
+                    send(chat_id, "✅ Ніхто зараз не чекає на твій крок.")
+            except Exception as _e_p:
+                send(chat_id, f"⚠️ Помилка пам'яті про людей: {str(_e_p)[:300]}")
+        import threading as _th_p
+        _th_p.Thread(target=_run_pm, daemon=True, name="people-cmd").start()
+
+    elif text.lower().strip() in ["/люди_онови", "/people_refresh", "онови людей"]:
+        send(chat_id, "🧠 Перечитую листування і перебудовую картки людей...")
+        def _run_pmr():
+            try:
+                import sys as _sp2, os as _op2
+                _sp2.path.insert(0, _op2.path.dirname(__file__))
+                import people_memory as _pm_r
+                n = _pm_r.refresh(force=True)
+                send(chat_id, f"🧠 Карток оновлено: <b>{n}</b>\n\n<i>Подивитись: /люди</i>"
+                     if n else "⚠️ Не вдалось оновити — пошта недоступна або листів від людей немає.")
+            except Exception as _e_p2:
+                send(chat_id, f"⚠️ Помилка оновлення карток: {str(_e_p2)[:300]}")
+        import threading as _th_p2
+        _th_p2.Thread(target=_run_pmr, daemon=True, name="people-refresh").start()
+
+    elif text.lower().strip() in ["/день", "/day", "як я сьогодні", "/енергія"]:
+        def _run_dm():
+            try:
+                import sys as _sm, os as _om
+                _sm.path.insert(0, _om.path.dirname(__file__))
+                import day_mode as _dm_cmd
+                if not _dm_cmd.ask(force=True):
+                    send(chat_id, "⚠️ Не вдалось надіслати питання — дивись логи [day_mode].")
+            except Exception as _e_m:
+                send(chat_id, f"⚠️ Помилка плану дня: {str(_e_m)[:300]}")
+        import threading as _th_m
+        _th_m.Thread(target=_run_dm, daemon=True, name="daymode-cmd").start()
+
+    elif text.lower().strip() in ["/енергія_тренд", "/energy", "тренд енергії"]:
+        def _run_dmt():
+            try:
+                import sys as _sm2, os as _om2
+                _sm2.path.insert(0, _om2.path.dirname(__file__))
+                import day_mode as _dm_t
+                send(chat_id, _dm_t.trend())
+            except Exception as _e_m2:
+                send(chat_id, f"⚠️ Помилка тренду: {str(_e_m2)[:300]}")
+        import threading as _th_m2
+        _th_m2.Thread(target=_run_dmt, daemon=True, name="daymode-trend").start()
+
+    elif text.lower().strip() in ["/листи_постачальникам", "/vendor_log"]:
+        try:
+            import sys as _sv, os as _ov
+            _sv.path.insert(0, _ov.path.dirname(__file__))
+            import vendor_reply as _vr_cmd
+            send(chat_id, _vr_cmd.history())
+        except Exception as _e_v:
+            send(chat_id, f"⚠️ Помилка історії листів: {str(_e_v)[:300]}")
 
     elif text.lower().strip() in ["/пропозиції", "/proposals", "пропозиції", "/pa_scan"]:
         # Ручний запуск проактивного скану: календар + пошта + нотатки →
@@ -4162,6 +4247,10 @@ def handle_automation_callback(cb):
       shf_*   — графік змін + блоки сну (shift_schedule)
       fu_*    — follow-up залиплих листів (followup_watcher)
       wr_*    — тижневий огляд і цілі (weekly_review)
+      dl_*    — документи/дедлайни з пошти (deadlines_watcher)
+      vr_*    — лист постачальнику по рахунку (vendor_reply)
+      pm_*    — пам'ять про людей (people_memory)
+      dm_*    — енергія дня і план під самопочуття (day_mode)
     Payload лежить у storage (гілка data) — кнопки живі після рестарту."""
     data = cb.get("data", "")
     chat_id = cb["message"]["chat"]["id"]
@@ -4340,6 +4429,203 @@ def handle_automation_callback(cb):
                 else: _fail(r, "додати цілі в календар")
             elif data.startswith("wr_skip_"):
                 _wr.do_skip(data[len("wr_skip_"):])
+                _clear_kb()
+                cb_notify(cb["id"], chat_id, "Ок 👌")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
+        # ─── ДОКУМЕНТИ / ДЕДЛАЙНИ ───────────────────────────────────────────
+        elif data.startswith("dl_"):
+            import deadlines_watcher as _dl
+            if data.startswith("dl_cal_"):
+                r = _dl.do_calendar(data[len("dl_cal_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"📅 <b>В календарі</b>\n{r['title']}\n📆 {r['date']}  🕐 {r['time']}")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "додати в календар")
+            elif data.startswith("dl_rem_"):
+                r = _dl.do_reminder(data[len("dl_rem_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"⏰ <b>Нагадаю заздалегідь</b>\n{r['title']}\n"
+                                  f"📆 {r['date']}  🕐 {r['time']}\n<i>дедлайн: {r.get('deadline')}</i>")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "поставити нагадування")
+            elif data.startswith("dl_note_"):
+                r = _dl.do_note(data[len("dl_note_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"📝 <b>Записав у нотатки</b>\n{r['title']} — до {r['deadline']}\n\n<i>Всі нотатки: /нотатки</i>")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "записати в нотатки")
+            elif data.startswith("dl_due_done_"):
+                r = _dl.do_done(data[len("dl_due_done_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"✅ <b>Закрив дедлайн</b>\n{r['title']}\n\n<i>Список: /дедлайни</i>")
+                else: _stale()
+            elif data.startswith("dl_due_snooze_"):
+                r = _dl.do_snooze(data[len("dl_due_snooze_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    cb_notify(cb["id"], chat_id, "Ок, нагадаю завтра 👌")
+                else: _stale()
+            elif data.startswith("dl_skip_"):
+                _dl.do_skip(data[len("dl_skip_"):])
+                _clear_kb()
+                cb_notify(cb["id"], chat_id, "Ок, прибрав 👌")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
+        # ─── ЛИСТ ПОСТАЧАЛЬНИКУ ─────────────────────────────────────────────
+        elif data.startswith("vr_"):
+            import vendor_reply as _vr
+            def _vr_draft(kind, pid):
+                r = _vr.draft(pid, kind)
+                if r.get("ok"):
+                    _clear_kb()
+                    body = str(r["draft"]).replace("<", "&lt;").replace(">", "&gt;")
+                    api("sendMessage", {
+                        "chat_id": chat_id,
+                        "text": (f"{r['icon']} <b>ЧЕРНОВИК: {r['label'].upper()}</b>\n"
+                                 f"━━━━━━━━━━━━━━━━━━━━\n"
+                                 f"🏢 {r.get('vendor')}\n📧 Кому: {r['to']}\n"
+                                 f"📋 Тема: {r['subject']}\n\n"
+                                 f"<code>{body[:2500]}</code>\n\n<i>Надіслати як є?</i>"),
+                        "parse_mode": "HTML",
+                        "reply_markup": {"inline_keyboard": [
+                            [{"text": "📤 Надіслати", "callback_data": f"vr_send_{r['pid']}"}],
+                            [{"text": "❌ Не надсилати", "callback_data": f"vr_skip_{r['pid']}"}]]},
+                    })
+                elif r.get("error") == "payload_missing": _stale()
+                elif r.get("error") == "no_vendor_email":
+                    send(chat_id, "⚠️ У цьому рахунку немає email постачальника — писати нема куди.")
+                elif r.get("error") == "ai_unavailable":
+                    send(chat_id, "⚠️ Gemini зараз недоступний — черновик не склався. Спробуй за пару хвилин.")
+                else: _fail(r, "скласти листа")
+
+            if data.startswith("vr_menu_"):
+                r = _vr.menu(data[len("vr_menu_"):])
+                if r.get("ok"):
+                    api("sendMessage", {"chat_id": chat_id, "text": r["text"],
+                                        "parse_mode": "HTML",
+                                        "reply_markup": {"inline_keyboard": r["keyboard"]}})
+                elif r.get("error") == "no_vendor_email":
+                    send(chat_id, "⚠️ Email постачальника невідомий — цей рахунок прийшов без адреси відправника.")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "відкрити варіанти листа")
+            elif data.startswith("vr_info_"):     _vr_draft("info", data[len("vr_info_"):])
+            elif data.startswith("vr_delay_"):    _vr_draft("delay", data[len("vr_delay_"):])
+            elif data.startswith("vr_paid_"):     _vr_draft("paid", data[len("vr_paid_"):])
+            elif data.startswith("vr_dispute_"):  _vr_draft("dispute", data[len("vr_dispute_"):])
+            elif data.startswith("vr_send_"):
+                r = _vr.send(data[len("vr_send_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"📤 <b>Надіслано постачальнику</b>\n{r.get('vendor')} — {r['to']}\n\n<i>Історія: /листи_постачальникам</i>")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "надіслати листа")
+            elif data.startswith("vr_skip_"):
+                _vr.do_skip(data[len("vr_skip_"):])
+                _clear_kb()
+                cb_notify(cb["id"], chat_id, "Ок, не пишу 👌")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
+        # ─── ПАМ'ЯТЬ ПРО ЛЮДЕЙ ──────────────────────────────────────────────
+        elif data.startswith("pm_"):
+            import people_memory as _pm
+            if data.startswith("pm_draft_"):
+                r = _pm.do_draft(data[len("pm_draft_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    body = str(r["draft"]).replace("<", "&lt;").replace(">", "&gt;")
+                    api("sendMessage", {
+                        "chat_id": chat_id,
+                        "text": (f"✍️ <b>ЧЕРНОВИК ЛИСТА</b>\n━━━━━━━━━━━━━━━━━━━━\n"
+                                 f"👤 {r['name']}\n📧 Кому: {r['to']}\n"
+                                 f"📋 Тема: {r['subject']}\n\n"
+                                 f"<code>{body[:2500]}</code>\n\n<i>Надіслати як є?</i>"),
+                        "parse_mode": "HTML",
+                        "reply_markup": {"inline_keyboard": [
+                            [{"text": "📤 Надіслати", "callback_data": f"pm_send_{r['pid']}"}],
+                            [{"text": "❌ Не надсилати", "callback_data": f"pm_skip_{r['pid']}"}]]},
+                    })
+                elif r.get("error") == "payload_missing": _stale()
+                elif r.get("error") == "ai_unavailable":
+                    send(chat_id, "⚠️ Gemini зараз недоступний — черновик не склався. Спробуй за пару хвилин.")
+                else: _fail(r, "скласти листа")
+            elif data.startswith("pm_send_"):
+                r = _pm.do_send(data[len("pm_send_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"📤 <b>Надіслано</b> — {r['name']} ({r['to']})")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "надіслати листа")
+            elif data.startswith("pm_rem_"):
+                r = _pm.do_remind(data[len("pm_rem_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"⏰ <b>Нагадаю {r['date']} о {r['time']}</b>\n{r['title']}")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "поставити нагадування")
+            elif data.startswith("pm_note_"):
+                r = _pm.do_note(data[len("pm_note_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"📝 <b>Записав у нотатки</b> — {r['name']}\n\n<i>Всі нотатки: /нотатки</i>")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "записати в нотатки")
+            elif data.startswith("pm_skip_"):
+                _pm.do_skip(data[len("pm_skip_"):])
+                _clear_kb()
+                cb_notify(cb["id"], chat_id, "Ок 👌")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
+        # ─── ЕНЕРГІЯ ДНЯ ────────────────────────────────────────────────────
+        elif data.startswith("dm_"):
+            import day_mode as _dm
+            def _dm_answer(energy, pid):
+                r = _dm.answer(pid, energy)
+                if r.get("ok"):
+                    _clear_kb()
+                    kb2 = []
+                    if r.get("blocks"):
+                        kb2.append([{"text": "📅 Поставити блоки в календар",
+                                     "callback_data": f"dm_apply_{r['pid']}"}])
+                    kb2.append([{"text": "📝 В нотатки", "callback_data": f"dm_note_{r['pid']}"},
+                                {"text": "❌ Не треба", "callback_data": f"dm_skip_{r['pid']}"}])
+                    api("sendMessage", {"chat_id": chat_id, "text": r["text"],
+                                        "parse_mode": "HTML",
+                                        "reply_markup": {"inline_keyboard": kb2}})
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "скласти план дня")
+
+            if data.startswith("dm_low_"):    _dm_answer("low", data[len("dm_low_"):])
+            elif data.startswith("dm_ok_"):   _dm_answer("ok", data[len("dm_ok_"):])
+            elif data.startswith("dm_high_"): _dm_answer("high", data[len("dm_high_"):])
+            elif data.startswith("dm_apply_"):
+                r = _dm.do_apply(data[len("dm_apply_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    lines = "\n".join("• " + str(i) for i in r["items"])
+                    extra = f"\n⚠️ {r['failed']} не створились" if r.get("failed") else ""
+                    send(chat_id, f"📅 <b>Блоки в календарі ({r['created']})</b>\n{lines}{extra}")
+                elif r.get("error") == "payload_missing": _stale()
+                elif r.get("error") == "no_blocks":
+                    send(chat_id, "⚠️ У цьому плані немає блоків часу для календаря.")
+                else: _fail(r, "поставити блоки")
+            elif data.startswith("dm_note_"):
+                r = _dm.do_note(data[len("dm_note_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, "📝 <b>План дня записав у нотатки</b>\n\n<i>Всі нотатки: /нотатки</i>")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "записати в нотатки")
+            elif data.startswith("dm_skip_"):
+                _dm.do_skip(data[len("dm_skip_"):])
                 _clear_kb()
                 cb_notify(cb["id"], chat_id, "Ок 👌")
             else:
@@ -4660,7 +4946,9 @@ def _route_callback(cb):
             handle_email_callback(cb)
         elif (data.startswith("bill_") or data.startswith("rp_") or
               data.startswith("shf_") or data.startswith("fu_") or
-              data.startswith("wr_")):
+              data.startswith("wr_") or data.startswith("dl_") or
+              data.startswith("vr_") or data.startswith("pm_") or
+              data.startswith("dm_")):
             # Модулі автоматизації: рахунки / план бігу / графік змін /
             # follow-up листів / тижневий огляд
             handle_automation_callback(cb)
@@ -4780,6 +5068,30 @@ def _dispatch_callback_async(cb):
         ("wr_goals_",       "📝 Зберігаю цілі..."),
         ("wr_cal_",         "📅 Додаю цілі в календар..."),
         ("wr_skip_",        "Ок, прибрав"),
+        ("dl_cal_",         "📅 Додаю в календар..."),
+        ("dl_rem_",         "⏰ Ставлю нагадування..."),
+        ("dl_note_",        "📝 Записую в нотатки..."),
+        ("dl_due_done_",    "✅ Позначаю зробленим..."),
+        ("dl_due_snooze_",  "⏰ Нагадаю завтра"),
+        ("dl_skip_",        "Ок, прибрав"),
+        ("vr_menu_",        "✍️ Готую варіанти..."),
+        ("vr_info_",        "✍️ Складаю листа..."),
+        ("vr_delay_",       "✍️ Складаю листа..."),
+        ("vr_paid_",        "✍️ Складаю листа..."),
+        ("vr_dispute_",     "✍️ Складаю листа..."),
+        ("vr_send_",        "📤 Надсилаю..."),
+        ("vr_skip_",        "Ок, прибрав"),
+        ("pm_draft_",       "✍️ Складаю листа..."),
+        ("pm_send_",        "📤 Надсилаю..."),
+        ("pm_rem_",         "⏰ Ставлю нагадування..."),
+        ("pm_note_",        "📝 Записую в нотатки..."),
+        ("pm_skip_",        "Ок 👌"),
+        ("dm_low_",         "😴 Перебудовую день під втому..."),
+        ("dm_ok_",          "😐 Складаю план дня..."),
+        ("dm_high_",        "💪 Складаю сильний день..."),
+        ("dm_apply_",       "📅 Ставлю блоки в календар..."),
+        ("dm_note_",        "📝 Записую в нотатки..."),
+        ("dm_skip_",        "Ок 👌"),
         ("pa_cal_",         "📅 Додаю в календар..."),
         ("pa_rem_",         "⏰ Ставлю нагадування..."),
         ("pa_note_",        "📝 Записую в нотатки..."),
