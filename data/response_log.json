@@ -676,6 +676,15 @@
           "Страховка авто"
         ]
       }
+    },
+    {
+      "ts": "2026-08-05T02:47:17.682146+00:00",
+      "category": "bill_found",
+      "question": "GASTROMILA, spol. s r.o.",
+      "answer": "4680.00 EUR",
+      "extra": {
+        "due": ""
+      }
     }
   ]
 }
