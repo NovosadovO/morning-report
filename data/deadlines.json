@@ -22,5 +22,17 @@
     "sender": "\"Socios.com\" <service@support.socios.com>",
     "done": false,
     "created": "2026-08-05"
+  },
+  "продовження_підписки_strava|2026-08-05": {
+    "kind": "contract",
+    "title": "Продовження підписки Strava",
+    "org": "Strava",
+    "deadline": "2026-08-05",
+    "action": "Оновити платіжну інформацію для поновлення підписки Strava.",
+    "why": "Без оновлення платіжної інформації підписка Strava не буде поновлена.",
+    "uid": "77022",
+    "sender": "Strava <no-reply@strava.com>",
+    "done": false,
+    "created": "2026-08-05"
   }
 }
