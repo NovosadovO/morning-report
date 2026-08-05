@@ -743,6 +743,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "fu_skip_16bb2fb4e5"
+    },
+    {
+      "ts": "2026-08-05T07:51:47.031310+00:00",
+      "category": "calendar_confirm",
+      "question": "Завдання на сьогодні",
+      "answer": "✅ Додано",
+      "extra": {
+        "events": [
+          "Завдання на сьогодні"
+        ]
+      }
     }
   ]
 }
