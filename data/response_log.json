@@ -775,6 +775,16 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_skip_6d93a719d5"
+    },
+    {
+      "ts": "2026-08-05T07:53:22.685288+00:00",
+      "category": "ai_button",
+      "question": "health",
+      "answer": "later_120",
+      "extra": {
+        "trigger": "idle_timeout",
+        "note": null
+      }
     }
   ]
 }
