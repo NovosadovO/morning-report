@@ -691,6 +691,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "bill_paid_ab56b1e219"
+    },
+    {
+      "ts": "2026-08-05T04:30:13.825369+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист від Вероні",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-08-05"
+      }
     }
   ]
 }
