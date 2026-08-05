@@ -785,6 +785,12 @@
         "trigger": "idle_timeout",
         "note": null
       }
+    },
+    {
+      "ts": "2026-08-05T07:53:23.763225+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "gx_later_3c8174f582"
     }
   ]
 }
