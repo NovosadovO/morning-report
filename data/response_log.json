@@ -869,6 +869,17 @@
       "extra": {
         "kind": "submit"
       }
+    },
+    {
+      "ts": "2026-08-05T21:52:26.390516+00:00",
+      "category": "calendar_confirm",
+      "question": "Presov meeting",
+      "answer": "✅ Додано",
+      "extra": {
+        "events": [
+          "Presov meeting"
+        ]
+      }
     }
   ]
 }
