@@ -1,20 +1,16 @@
 {
   "info@dekoracnyservis.sk": {
-    "name": "Lucia Ortutová",
+    "name": "Dekoračný servis",
     "relation": "сервіс",
     "vip": false,
     "topics": [
-      "виставлення рахунку",
-      "оплата послуг",
-      "весільні послуги"
+      "попередня калькуляція"
     ],
     "my_promises": [],
-    "their_promises": [
-      "інформувати про отримання оплати"
-    ],
+    "their_promises": [],
     "open_question": "",
-    "next_step": "Перевірити, чи Олег відповів на лист щодо попередньої калькуляції, надісланий 15 днів тому.",
-    "ping_in_days": -1,
+    "next_step": "Написати Dekoračný servis, щоб дізнатися статус попередньої калькуляції.",
+    "ping_in_days": 0,
     "last_in": "",
     "last_subject": "",
     "last_out": "2026-07-20",
