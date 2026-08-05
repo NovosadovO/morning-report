@@ -10,5 +10,17 @@
     "sender": "Strava <no-reply@strava.com>",
     "done": false,
     "created": "2026-08-04"
+  },
+  "socios_com_зміна_способу_входу|2026-08-27": {
+    "kind": "other",
+    "title": "Socios.com: зміна способу входу",
+    "org": "Socios.com",
+    "deadline": "2026-08-27",
+    "action": "Переконатися, що обліковий запис Socios.com налаштований на вхід за допомогою Passkey, і перевірити електронну пошту.",
+    "why": "Після цієї дати вхід за номером телефону та SMS буде недоступний, і без Passkey або підтвердженої електронної пошти Олег може втратити доступ до свого облікового запису Socios.com.",
+    "uid": "77008",
+    "sender": "\"Socios.com\" <service@support.socios.com>",
+    "done": false,
+    "created": "2026-08-05"
   }
 }
