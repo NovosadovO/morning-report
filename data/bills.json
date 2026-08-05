@@ -22,5 +22,19 @@
     "paid": true,
     "paid_at": "2026-08-04",
     "created": "2026-08-04"
+  },
+  "gastromila_spol_s_r_o_|4680|": {
+    "vendor": "GASTROMILA, spol. s r.o.",
+    "amount": "4680",
+    "currency": "EUR",
+    "invoice_no": "B2026046",
+    "due": "",
+    "uid": "76543",
+    "sender": "\"GASTROMILA, spol. s r.o.\" <faktury@superfaktura.sk>",
+    "subject": "Vyúčtovacia faktúra B2026046",
+    "note": "Виставлений рахунок за послуги від GASTROMILA.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-08-05"
   }
 }
