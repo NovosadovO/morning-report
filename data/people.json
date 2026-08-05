@@ -1,20 +1,24 @@
 {
   "info@dekoracnyservis.sk": {
-    "name": "Dekoračný Servis",
+    "name": "Lucia Ortutová",
     "relation": "сервіс",
     "vip": false,
     "topics": [
-      "виставлення рахунку"
+      "виставлення рахунку",
+      "оплата послуг",
+      "весільні послуги"
     ],
     "my_promises": [],
-    "their_promises": [],
+    "their_promises": [
+      "інформувати про отримання оплати"
+    ],
     "open_question": "",
-    "next_step": "Написати Dekoračný Servis, щоб дізнатися про статус виставлення рахунку.",
-    "ping_in_days": 0,
+    "next_step": "Перевірити, чи Олег відповів на лист щодо попередньої калькуляції, надісланий 15 днів тому.",
+    "ping_in_days": -1,
     "last_in": "",
     "last_subject": "",
-    "last_out": "2026-07-28",
-    "updated": "2026-08-04",
+    "last_out": "2026-07-20",
+    "updated": "2026-08-05",
     "pinged_at": ""
   },
   "faktury@superfaktura.sk": {
