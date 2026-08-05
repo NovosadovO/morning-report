@@ -731,6 +731,12 @@
         "kind": "reminder",
         "date": "2026-08-05"
       }
+    },
+    {
+      "ts": "2026-08-05T07:49:53.594156+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "fu_skip_f309622f0c"
     }
   ]
 }
