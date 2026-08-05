@@ -825,6 +825,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ai_9c67ebde94"
+    },
+    {
+      "ts": "2026-08-05T16:41:29.602738+00:00",
+      "category": "calendar_button",
+      "question": "Тренування",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t30",
+        "when": "17:00–18:00",
+        "note": null
+      }
     }
   ]
 }
