@@ -886,6 +886,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "pm_skip_876f7f3513"
+    },
+    {
+      "ts": "2026-08-05T21:52:52.194730+00:00",
+      "category": "mood",
+      "question": "Оцінка настрою",
+      "answer": "😐 Нормально",
+      "extra": {
+        "score": 3
+      }
     }
   ]
 }
