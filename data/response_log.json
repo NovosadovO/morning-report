@@ -1137,6 +1137,12 @@
       "extra": {
         "kind": "vehicle"
       }
+    },
+    {
+      "ts": "2026-08-06T12:01:41.063361+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_note_d8341e82fc"
     }
   ]
 }
