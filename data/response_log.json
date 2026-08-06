@@ -1076,6 +1076,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "gx_note_a823045378"
+    },
+    {
+      "ts": "2026-08-06T10:30:40.264738+00:00",
+      "category": "calendar_confirm",
+      "question": "Оплата страховки авто",
+      "answer": "✅ Додано",
+      "extra": {
+        "events": [
+          "Оплата страховки авто"
+        ]
+      }
     }
   ]
 }
