@@ -1059,6 +1059,17 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-08-06T10:27:14.332164+00:00",
+      "category": "calendar_confirm",
+      "question": "Оплата страховки Kooperativa",
+      "answer": "✅ Додано",
+      "extra": {
+        "events": [
+          "Оплата страховки Kooperativa"
+        ]
+      }
     }
   ]
 }
