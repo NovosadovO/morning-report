@@ -1103,6 +1103,15 @@
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-06T10:31:17.033273+00:00",
+      "category": "calendar_reminder_confirm",
+      "question": "Записати вагу в Apple Health",
+      "answer": "✅ Поставлено",
+      "extra": {
+        "date": "2026-08-09"
+      }
     }
   ]
 }
