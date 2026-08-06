@@ -1254,6 +1254,16 @@
         "kind": "reminder",
         "date": "2026-08-07"
       }
+    },
+    {
+      "ts": "2026-08-07T01:30:17.070752+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист від AUTOVIGNET",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-08-07"
+      }
     }
   ]
 }
