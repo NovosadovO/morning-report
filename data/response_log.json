@@ -1023,6 +1023,16 @@
       "extra": {
         "kind": "submit"
       }
+    },
+    {
+      "ts": "2026-08-06T03:00:13.571109+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Відповісти Dekoračný Servis",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-06"
+      }
     }
   ]
 }
