@@ -831,5 +831,42 @@
         ]
       ]
     }
+  },
+  "2100366814_63004": {
+    "text": "📩 ✉️\n📌 Governments are making a dangerous bet on the AI boom\n👤 \"The Economist Today\" <newsletters@e.economist.com",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_77081"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_77081"
+          }
+        ],
+        [
+          {
+            "text": "⭐ Важливий",
+            "callback_data": "email_star_77081"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_77081"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_77081"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_77081"
+          }
+        ]
+      ]
+    }
   }
 }
