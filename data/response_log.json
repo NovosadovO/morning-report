@@ -1112,6 +1112,16 @@
       "extra": {
         "date": "2026-08-09"
       }
+    },
+    {
+      "ts": "2026-08-06T10:33:22.558048+00:00",
+      "category": "ai_button",
+      "question": "calendar",
+      "answer": "later_120",
+      "extra": {
+        "trigger": "event_soon",
+        "note": null
+      }
     }
   ]
 }
