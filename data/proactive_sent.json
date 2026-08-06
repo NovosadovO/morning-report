@@ -23,6 +23,7 @@
     "morning_greet": true,
     "run_question": true,
     "anomaly_no_run": true,
-    "anomaly_weight_rising": true
+    "anomaly_weight_rising": true,
+    "midday_checkin": true
   }
 }
