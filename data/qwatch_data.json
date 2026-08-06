@@ -741,5 +741,20 @@
     "sleep_light_min": null,
     "sleep_quality": null,
     "stress": 31
+  },
+  "2026-08-06": {
+    "date": "2026-08-06",
+    "health_score": 90,
+    "steps": 5123,
+    "sleep_total_min": 501,
+    "hr_avg": 66,
+    "calories": 214,
+    "hrv": 45,
+    "weight_kg": 83.0,
+    "age": 36,
+    "height_cm": 175,
+    "spo2": 96,
+    "source": "qwatch",
+    "saved_at": "2026-08-06 22:36"
   }
 }
