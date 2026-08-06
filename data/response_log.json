@@ -1143,6 +1143,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_note_d8341e82fc"
+    },
+    {
+      "ts": "2026-08-06T12:01:53.354469+00:00",
+      "category": "calendar_button",
+      "question": "Оплата страховки Kooperativa",
+      "answer": "noted",
+      "extra": {
+        "stage": "t3d",
+        "when": "12:00–13:00",
+        "note": "15.08 страховка (подія: Оплата страховки Kooperativa)"
+      }
     }
   ]
 }
