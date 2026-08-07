@@ -1319,6 +1319,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dm_ok_98b198dc51"
+    },
+    {
+      "ts": "2026-08-07T08:53:58.730844+00:00",
+      "category": "calendar_reminder_confirm",
+      "question": "Хімчистка",
+      "answer": "✅ Поставлено",
+      "extra": {
+        "date": "2026-08-09"
+      }
     }
   ]
 }
