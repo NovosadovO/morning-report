@@ -1328,6 +1328,17 @@
       "extra": {
         "date": "2026-08-09"
       }
+    },
+    {
+      "ts": "2026-08-07T08:55:04.699715+00:00",
+      "category": "calendar_button",
+      "question": "agenda",
+      "answer": "accepted",
+      "extra": {
+        "stage": "agenda",
+        "when": "",
+        "note": null
+      }
     }
   ]
 }
