@@ -2546,6 +2546,8 @@ HELP_TEXT = """
 /ai_бюджет — статистика AI по календарю (лімітів немає)
 /події_відповіді — що ти відповідав на нагадування
 /кнопки — що ти натискав під сповіщеннями
+/вимкнені_нагадування — що я перестав нагадувати
+/підтвердження — історія вимкнень
 /пам_ять_аі — що AI знає про твої реакції
 /відкладені — що бот ще нагадає (кнопка «🔔 Нагадай пізніше»)
 /приховані_теми — теми, які ти приховав («🚫 Не цікавить»)
@@ -3044,6 +3046,30 @@ def handle_command(chat_id, text):
             send(chat_id, _gxp.pending())
         except Exception as _e:
             send(chat_id, f"⚠️ Не зміг показати відкладені: {str(_e)[:120]}")
+
+    elif text.lower().strip() in ["/вимкнені_нагадування", "/вимкнені", "/blocked",
+                                  "вимкнені нагадування"]:
+        try:
+            import calendar_watch as _cwb
+            send(chat_id, _cwb.blocked_list())
+        except Exception as _e:
+            send(chat_id, f"⚠️ Не зміг показати список: {str(_e)[:120]}")
+
+    elif text.lower().strip() in ["/увімкни_нагадування", "/unblock",
+                                  "увімкни нагадування"]:
+        try:
+            import calendar_watch as _cwu
+            _n = _cwu.unblock_all()
+            send(chat_id, f"🔔 Готово — нагадування повернуто (розблоковано: {_n}).")
+        except Exception as _e:
+            send(chat_id, f"⚠️ Не зміг повернути: {str(_e)[:120]}")
+
+    elif text.lower().strip() in ["/підтвердження", "/confirms", "підтвердження"]:
+        try:
+            import confirm as _cfmr
+            send(chat_id, _cfmr.report(14))
+        except Exception as _e:
+            send(chat_id, f"⚠️ Не зміг показати: {str(_e)[:120]}")
 
     elif text.lower().strip() in ["/приховані_теми", "/muted", "приховані теми"]:
         try:
@@ -5024,12 +5050,18 @@ def handle_automation_callback(cb):
                 else:
                     cb_notify(cb["id"], chat_id, "📅 Календар зараз недоступний.", alert=True)
             elif data.startswith("cw_cancel_"):
-                r = _cw.do_cancel(data[len("cw_cancel_"):])
-                if r.get("ok"):
-                    _clear_kb()
-                    send(chat_id, f"🚫 Ок — по «{r.get('title')}» більше не нагадую.")
-                elif r.get("error") == "payload_missing": _stale()
-                else: _fail(r, "скасувати нагадування")
+                # НЕ вимикаємо одразу — спершу перепитуємо (confirm.py)
+                _pid_c = data[len("cw_cancel_"):]
+                _pl = _cw.payload(_pid_c) if hasattr(_cw, "payload") else None
+                if not _pl:
+                    _stale()
+                else:
+                    import confirm as _cfm
+                    q = _cfm.ask("cw_cancel", _pid_c, str(_pl.get("title") or ""))
+                    if q.get("ok"):
+                        send_with_keyboard(chat_id, q["text"], q["keyboard"])
+                    else:
+                        _fail(q, "запитати підтвердження")
             elif data.startswith("cw_done_"):
                 r = _cw.do_done(data[len("cw_done_"):])
                 if r.get("ok"):
@@ -5074,6 +5106,41 @@ def handle_automation_callback(cb):
             else:
                 cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
 
+        # ─── ПІДТВЕРДЖЕННЯ НЕЗВОРОТНИХ ДІЙ (confirm.py) ─────────────────────
+        elif data.startswith("cfm_"):
+            import confirm as _cfm3
+            _cid = data.split("_")[-1]
+            if data.startswith("cfm_y_"):
+                r = _cfm3.yes(_cid)
+                if r.get("ok"):
+                    _clear_kb()
+                    _subj = _cfm3.K.esc(str(r.get("subject") or ""))
+                    _extra = ""
+                    if r.get("until"):
+                        _extra = (f"\nПовернути раніше: /увімкни_теми "
+                                  f"(автоматично {r.get('until')})")
+                    else:
+                        _extra = "\nПовернути: /увімкни_нагадування"
+                    send(chat_id, f"{r.get('done_text')}\n\n"
+                                  f"<b>{_subj}</b>{_extra}")
+                elif r.get("error") == "payload_missing": _stale()
+                elif r.get("error") == "expired":
+                    _clear_kb()
+                    send(chat_id, "⏳ Питання застаріло (більше доби) — <b>нічого не змінив</b>. "
+                                  "Натисни кнопку ще раз, якщо це досі актуально.")
+                else: _fail(r, "виконати підтверджену дію")
+            elif data.startswith("cfm_n_"):
+                r = _cfm3.no(_cid)
+                if r.get("ok"):
+                    _clear_kb()
+                    _subj = _cfm3.K.esc(str(r.get("subject") or ""))
+                    send(chat_id, f"👍 Ок, залишаю як було — <b>{_subj}</b> без змін. "
+                                  "Нагадування працюють далі.")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "скасувати дію")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
         # ─── УНІВЕРСАЛЬНІ КНОПКИ ПІД УСІМА AI-СПОВІЩЕННЯМИ ──────────────────
         elif data.startswith("gx_"):
             import ai_buttons as _gx
@@ -5110,14 +5177,18 @@ def handle_automation_callback(cb):
                 elif r.get("error") == "payload_missing": _stale()
                 else: _fail(r, "відкласти повідомлення")
             elif data.startswith("gx_mute_"):
-                r = _gx.do_mute(_pid)
-                if r.get("ok"):
-                    _clear_kb()
-                    send(chat_id, f"🚫 Тема «{_gx.K.esc(str(r.get('label')))}» прихована до "
-                                  f"<b>{r.get('until')}</b>.\n"
-                                  "<i>Повернути раніше: /увімкни_теми</i>")
-                elif r.get("error") == "payload_missing": _stale()
-                else: _fail(r, "приховати тему")
+                _pl_m = _gx.payload(_pid)
+                if not _pl_m:
+                    _stale()
+                else:
+                    import confirm as _cfm2
+                    _tp = _pl_m.get("topic") or "general"
+                    _lbl = _gx.TOPIC_LABEL.get(_tp, _tp)
+                    q = _cfm2.ask("gx_mute", _pid, str(_lbl))
+                    if q.get("ok"):
+                        send_with_keyboard(chat_id, q["text"], q["keyboard"])
+                    else:
+                        _fail(q, "запитати підтвердження")
             elif data.startswith("gx_done_"):
                 r = _gx.do_done(_pid)
                 if r.get("ok"):
@@ -5534,7 +5605,7 @@ def _route_callback(cb):
               data.startswith("wr_") or data.startswith("dl_") or
               data.startswith("vr_") or data.startswith("pm_") or
               data.startswith("dm_") or data.startswith("cw_") or
-              data.startswith("gx_")):
+              data.startswith("gx_") or data.startswith("cfm_")):
             # Модулі автоматизації: рахунки / план бігу / графік змін /
             # follow-up листів / тижневий огляд
             handle_automation_callback(cb)
@@ -5695,7 +5766,9 @@ def _dispatch_callback_async(cb):
         ("gx_more_",        "🤖 Розбираю детально..."),
         ("gx_note_",        "✍️ Питаю текст нотатки..."),
         ("gx_later_",       "🔔 Відкладаю..."),
-        ("gx_mute_",        "🚫 Приховую тему..."),
+        ("gx_mute_",        "❓ Перепитую..."),
+        ("cfm_y_",          "✅ Підтверджено"),
+        ("cfm_n_",          "↩️ Залишаю як є"),
         ("gx_chart_",       "📊 Малюю графік..."),
         ("gx_weight_",      "⚖️ Чекаю вагу..."),
         ("gx_runplan_",     "🏃 Складаю план..."),
@@ -5706,7 +5779,7 @@ def _dispatch_callback_async(cb):
         ("gx_agenda_",      "📅 Готую план дня..."),
         ("gx_week_",        "🗓 Готую тиждень..."),
         ("gx_done_",        "✅"),
-        ("cw_cancel_",      "🚫 Прибираю нагадування..."),
+        ("cw_cancel_",      "❓ Перепитую..."),
         ("cw_done_",        "✅ Записую: було"),
         ("cw_miss_",        "❌ Записую: не було"),
         ("cw_moved_",       "⏭ Записую: перенесли"),

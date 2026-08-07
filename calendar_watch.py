@@ -41,6 +41,7 @@ TAG = "calendar"
 
 STORE_FILE = "calendar_store.json"       # payload кнопок
 SENT_FILE = "calendar_sent.json"         # дедуп event_id|stage -> ISO
+BLOCK_FILE = "calendar_blocked.json"     # події, по яких Олег сказав НЕ нагадувати
 ACK_FILE = "calendar_ack.json"           # збережені відповіді
 SNOOZE_FILE = "calendar_snooze.json"     # відкладені нагадування
 DAILY_FILE = "calendar_daily.json"       # агенда/прев'ю: 1 раз на день
@@ -195,6 +196,55 @@ def _sent(evid: str, stage: str) -> bool:
 
 def _mark(evid: str, stage: str):
     K.update_key(SENT_FILE, f"{evid}|{stage}", K.now().isoformat())
+
+
+def is_blocked(evid: str) -> bool:
+    """Олег підтвердив «не нагадуй» по цій події. Постійно: на відміну від
+    міток у SENT_FILE, цей список НЕ чиститься gc_sent, тож нагадування
+    не «воскресають» через 5 днів."""
+    if not evid:
+        return False
+    data = K.load(BLOCK_FILE, default={}) or {}
+    return str(evid) in data
+
+
+def block_event(evid: str, title: str = "") -> bool:
+    if not evid:
+        return False
+    K.update_key(BLOCK_FILE, str(evid), {"title": title or "",
+                                         "ts": K.now().isoformat()})
+    K.log(TAG, f"🚫 більше не нагадую: {title or evid}")
+    return True
+
+
+def unblock_event(evid: str) -> bool:
+    if not evid:
+        return False
+    K.remove_key(BLOCK_FILE, str(evid))
+    K.log(TAG, f"🔔 нагадування повернуто: {evid}")
+    return True
+
+
+def blocked_list() -> str:
+    """/вимкнені_нагадування — що саме заглушено, з можливістю повернути."""
+    data = K.load(BLOCK_FILE, default={}) or {}
+    if not data:
+        return ("🔕 <b>ВИМКНЕНІ НАГАДУВАННЯ</b>\n\nПорожньо — я нагадую про все.")
+    out = ["🔕 <b>ВИМКНЕНІ НАГАДУВАННЯ</b>", "━━━━━━━━━━━━━━━━━━━━"]
+    for evid, rec in list(data.items())[:20]:
+        t = (rec or {}).get("title") or evid
+        ts = str((rec or {}).get("ts") or "")[:10]
+        out.append(f"🚫 {K.esc(str(t))} <i>({ts})</i>")
+    out.append("\n<i>Повернути все: /увімкни_нагадування</i>")
+    return "\n".join(out)[:3900]
+
+
+def unblock_all() -> int:
+    data = K.load(BLOCK_FILE, default={}) or {}
+    n = len(data)
+    K.save(BLOCK_FILE, {})
+    K.log(TAG, f"🔔 повернуто нагадувань: {n}")
+    return n
 
 
 def gc_sent(days: int = 5):
@@ -509,6 +559,8 @@ def tick() -> int:
     for ev in events:
         if ev["allday"] or ev["routine"] or ev["shift"]:
             continue
+        if is_blocked(ev["id"]):
+            continue          # Олег підтвердив «не нагадуй» — мовчимо назавжди
         mins = (ev["start"] - n).total_seconds() / 60
 
         # 2-4 дні до події — завчасне попередження (щоб нічого не було раптом)
@@ -559,6 +611,9 @@ def _fire_snoozed() -> int:
             K.remove_key(SNOOZE_FILE, key)
             continue
         if due > n:
+            continue
+        if is_blocked(rec.get("evid")):
+            K.remove_key(SNOOZE_FILE, key)   # скасували подію — знімаємо і відкладене
             continue
         pid = _store.put({"evid": rec.get("evid"), "title": rec.get("title"),
                           "stage": "snooze", "when": rec.get("when")})
@@ -891,16 +946,30 @@ def _ack(pid: str, answer: str, extra: dict = None) -> dict:
     return {"ok": True, "title": rec["title"], "when": rec["when"], "answer": answer}
 
 
+def payload(pid):
+    """Сирий payload кнопки — щоб bot.py міг показати назву події в питанні."""
+    return _store.get(pid)
+
+
 def do_ok(pid):
     return _ack(pid, "remembered")
 
 
 def do_cancel(pid):
+    """🚫 Більше не нагадувати. Викликається ТІЛЬКИ після підтвердження (confirm.py)."""
     p = _store.get(pid)
-    if p and p.get("evid"):
-        # більше не нагадуємо по цій події
+    if not p:
+        return {"ok": False, "error": "payload_missing"}
+    evid = p.get("evid")
+    if evid:
+        block_event(evid, str(p.get("title") or ""))
         for stage in ("t3d", "t24h", "t2h", "t30", "after"):
-            _mark(p["evid"], stage)
+            _mark(evid, stage)
+        # прибираємо вже поставлені «+15 хв» / «+1 год» по цій події
+        snz = K.load(SNOOZE_FILE, default={}) or {}
+        for k, rec in list(snz.items()):
+            if str((rec or {}).get("evid")) == str(evid):
+                K.remove_key(SNOOZE_FILE, k)
     return _ack(pid, "cancelled")
 
 
