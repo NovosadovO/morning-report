@@ -1304,6 +1304,15 @@
         "kind": "reminder",
         "date": "2026-08-07"
       }
+    },
+    {
+      "ts": "2026-08-07T08:50:50.223577+00:00",
+      "category": "day_energy",
+      "question": "Як ти сьогодні",
+      "answer": "Норма",
+      "extra": {
+        "shift": "early"
+      }
     }
   ]
 }
