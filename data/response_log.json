@@ -1546,6 +1546,16 @@
         "kind": "reminder",
         "date": "2026-08-08"
       }
+    },
+    {
+      "ts": "2026-08-08T01:30:15.821205+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти Pelikan.sk щодо некоректної оплати Ryanair",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-08-08"
+      }
     }
   ]
 }
