@@ -868,5 +868,42 @@
         ]
       ]
     }
+  },
+  "2100366814_63502": {
+    "text": "📩 ✉️\n📌 a16z Says Anti-CLARITY Bank Lobby Keeps Stablecoin Yield Ali\n👤 The Defiant <no-reply@mail.thedefiant.io>",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_77091"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_77091"
+          }
+        ],
+        [
+          {
+            "text": "⭐ Важливий",
+            "callback_data": "email_star_77091"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_77091"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_77091"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_77091"
+          }
+        ]
+      ]
+    }
   }
 }
