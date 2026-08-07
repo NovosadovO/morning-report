@@ -1414,6 +1414,12 @@
       "category": "confirm",
       "question": "cw_cancel: Демо-подія (перевірка кнопок)",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-07T10:00:05.422701+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_e64f1b9b2d"
     }
   ]
 }
