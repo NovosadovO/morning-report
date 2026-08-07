@@ -1351,6 +1351,16 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-08-07T08:55:36.865382+00:00",
+      "category": "ai_button",
+      "question": "general",
+      "answer": "muted_7d",
+      "extra": {
+        "trigger": "morning",
+        "note": null
+      }
     }
   ]
 }
