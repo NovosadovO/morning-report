@@ -1783,6 +1783,15 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_tea"
+    },
+    {
+      "ts": "2026-08-08T19:51:08.199366+00:00",
+      "category": "calendar_reminder_confirm",
+      "question": "Ліки для обличчя",
+      "answer": "✅ Поставлено",
+      "extra": {
+        "date": "2026-08-09"
+      }
     }
   ]
 }
