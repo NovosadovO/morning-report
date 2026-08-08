@@ -1695,6 +1695,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "gx_mute_4283d29b79"
+    },
+    {
+      "ts": "2026-08-08T07:00:32.387990+00:00",
+      "category": "ai_button",
+      "question": "email",
+      "answer": "muted_7d",
+      "extra": {
+        "trigger": "vip_email",
+        "note": null
+      }
     }
   ]
 }
