@@ -1711,6 +1711,12 @@
       "category": "confirm",
       "question": "gx_mute: листи",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-08T07:00:35.461344+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_5430f4893d"
     }
   ]
 }
