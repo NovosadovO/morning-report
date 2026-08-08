@@ -37,3 +37,12 @@
 E2E підтверджено в логах: [CB] gx_note_ → force-reply без помилки → "перевірка нотатки: тримати BTC до 120k" → [ai_notes] added (gx_email).
 Тести: fb_test, note_test, cw_test, cw_week_test, cw_ai_test, cw_month_test — усі ❌=0. lint311 bad:0.
 Нове в репо: tests_feedback_ctx.py, tests_notes_regression.py.
+
+## Confirm-шар (двокрокове підтвердження) — 08.08.2026
+- `confirm.py`: register/ask/yes/no/report/gc, TTL 24 год, префікси `cfm_y_`/`cfm_n_`, store `confirm_store.json`, лог `confirm_log.json`.
+- Деструктивні кнопки `🚫 Скасовано` (`cw_cancel_`) і `🔇 Не нагадувати` (`gx_mute_`) НЕ виконують дію одразу — лише питають.
+- Постійний блок нагадувань: `calendar_blocked.json` (НЕ чиститься `gc_sent`), `tick()` і `_fire_snoozed()` його поважають.
+- Команди: `/вимкнені_нагадування`, `/увімкни_нагадування`, `/підтвердження`.
+- Перевірено в прод (deploy f6476bba, SUCCESS): cw_cancel → питання → cfm_n (нічого) → cfm_y → запис у calendar_blocked; gx_mute → cfm_y → запис у gx_mute; `/увімкни_нагадування` → "повернуто нагадувань: 1". Traceback/NameError у логах немає.
+- Тести: tests_confirm.py (34 перевірки, ❌=0) + fb/note/cw/cw_week/cw_ai/cw_month — усі 0. Лінт 3.11 bad: 0.
+- ⚠️ Відкрито: Strava API 403 Forbidden на всіх запитах (get_activities / get_last_activity / get_week_stats) — потрібен новий refresh_token або перевірка підписки.
