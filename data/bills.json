@@ -50,5 +50,19 @@
     "paid": false,
     "paid_at": "",
     "created": "2026-08-08"
+  },
+  "booking_com|1454_78|2026-08-08": {
+    "vendor": "Booking.com",
+    "amount": "1454.78",
+    "currency": "EUR",
+    "invoice_no": "",
+    "due": "2026-08-08",
+    "uid": "77194",
+    "sender": "\"Booking.com\" <noreply-payments@booking.com>",
+    "subject": "Ось ваша квитанція",
+    "note": "Квитанція про оплату бронювання в Avia. Це не рахунок, дійсний рахунок може видати тільки помешкання.",
+    "paid": true,
+    "paid_at": "2026-08-09",
+    "created": "2026-08-09"
   }
 }
