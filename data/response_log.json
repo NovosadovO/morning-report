@@ -1585,6 +1585,16 @@
         "kind": "reminder",
         "date": "2026-08-09"
       }
+    },
+    {
+      "ts": "2026-08-08T03:00:18.064592+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Записати поточну вагу (84.2 кг) в Apple Health",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-09"
+      }
     }
   ]
 }
