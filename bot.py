@@ -3171,6 +3171,12 @@ def handle_command(chat_id, text):
                         lines.append(f"Strava access_token: ✅ отримано ({_at[:15]}...)")
                     except Exception as _ate:
                         lines.append(f"Strava access_token: ❌ {type(_ate).__name__}: {str(_ate)[:250]}")
+                try:
+                    _reason = _dstr.app_inactive_reason()
+                except Exception:
+                    _reason = ""
+                if _reason:
+                    lines.append(f"Strava API: ⛔ {_reason}")
                 _dla = _dstr.get_last_activity()
                 if _dla:
                     _stale_tag = " ⚠️ STALE (API недоступне, старий кеш!)" if _dla.get("stale") else " ✅ LIVE (свіжі дані з API)"

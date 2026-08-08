@@ -98,6 +98,55 @@ def _get_access_token():
     return data["access_token"]
 
 
+# ─── ДІАГНОСТИКА ДОСТУПУ ДО API ──────────────────────────────────────────────
+# Strava може віддавати 403 {"resource":"Application","code":"Inactive"} —
+# це НЕ протухлий токен, а неактивний застосунок (ID 228739) у профілі Strava.
+# У такому разі немає сенсу довбати API кожні кілька секунд: ставимо паузу
+# і один раз пишемо зрозумілу причину, а дані беремо з кешу.
+_APP_INACTIVE_UNTIL = 0.0
+_APP_INACTIVE_LOGGED = False
+_INACTIVE_PAUSE_SEC = 1800  # 30 хв
+
+
+def api_blocked() -> bool:
+    """True — застосунок Strava визнано неактивним, API поки не турбуємо."""
+    import time as _t
+    return _t.time() < _APP_INACTIVE_UNTIL
+
+
+def app_inactive_reason() -> str:
+    """Текст для /diag і звітів — чому немає свіжих даних Strava."""
+    if not api_blocked():
+        return ""
+    return ("Strava-застосунок (ID 228739) неактивний — API віддає 403 "
+            "Application/Inactive. Треба реактивувати застосунок у налаштуваннях "
+            "Strava (developer settings / API-підписка). Токен справний.")
+
+
+def _note_api_error(e, where: str = "") -> None:
+    """Розпізнає 403 Application/Inactive і ставить паузу замість спаму в логах."""
+    global _APP_INACTIVE_UNTIL, _APP_INACTIVE_LOGGED
+    txt = str(e)
+    try:
+        resp = getattr(e, "response", None)
+        if resp is not None:
+            txt += " | " + str(resp.text)[:200]
+    except Exception:
+        pass
+    if "403" in txt and ("Inactive" in txt or "Forbidden" in txt):
+        import time as _t
+        _APP_INACTIVE_UNTIL = _t.time() + _INACTIVE_PAUSE_SEC
+        if not _APP_INACTIVE_LOGGED:
+            _APP_INACTIVE_LOGGED = True
+            print("Strava: ⛔ застосунок НЕАКТИВНИЙ (403 Application/Inactive). "
+                  "Токен ок, але API закритий — працюю з кешу. "
+                  "Реактивуй застосунок 228739 у налаштуваннях Strava.")
+        else:
+            print(f"Strava: API закритий (Application/Inactive), пауза 30 хв [{where}]")
+        return
+    print(f"Strava {where} error: {txt[:200]}")
+
+
 _STRAVA_CACHE_KEY = "strava_last_activity.json"
 
 def _save_activity_cache(data: dict):
@@ -115,6 +164,19 @@ def _load_activity_cache() -> dict | None:
         return _st.load(_STRAVA_CACHE_KEY)
     except Exception:
         return None
+
+def _last_activity_from_cache() -> dict | None:
+    """Кешована активність з перерахованим 'when' і прапором stale."""
+    cached = _load_activity_cache()
+    if not cached:
+        return None
+    if cached.get("start_date_local"):
+        cached["when"] = _compute_when(cached["start_date_local"])
+    else:
+        cached["when"] = "дата невідома (старий кеш)"
+    cached["stale"] = True
+    return cached
+
 
 def _compute_when(start_date_local_iso: str) -> str:
     """Рахує 'сьогодні/вчора/N дн. тому' ЗАВЖДИ динамічно від поточного моменту —
@@ -141,6 +203,8 @@ def get_last_activity():
     навіть якщо дані беруться зі старого кешу — щоб не показувати застарілу дату.
     Якщо API недоступне і використовується кеш — ставить прапор 'stale': True,
     щоб інші частини системи (AI-промпти) НЕ видавали ці дані за live-актуальні."""
+    if api_blocked():
+        return _last_activity_from_cache()
     try:
         token = _get_access_token()
         r = requests.get(
@@ -196,16 +260,11 @@ def get_last_activity():
         _save_activity_cache(result)
         return result
     except Exception as e:
-        print(f"Strava get_last_activity error: {e}")
-        # Fallback: кешовані дані — але 'when' ЗАВЖДИ перераховуємо, і СТАВИМО ПРАПОР stale
-        cached = _load_activity_cache()
+        _note_api_error(e, "get_last_activity")
+        # Fallback: кешовані дані — 'when' ЗАВЖДИ перераховуємо, прапор stale
+        cached = _last_activity_from_cache()
         if cached:
             print("Strava: using cached last activity (API failed — marking as STALE)")
-            if cached.get("start_date_local"):
-                cached["when"] = _compute_when(cached["start_date_local"])
-            else:
-                cached["when"] = "дата невідома (старий кеш)"
-            cached["stale"] = True  # API недоступне — це НЕ гарантовано свіжі дані
         return cached
 
 
@@ -253,7 +312,7 @@ def get_week_stats():
         _WEEK_STATS_CACHE["ts"] = now_ts
         return result
     except Exception as e:
-        print(f"Strava get_week_stats error (timeout 5s): {e}")
+        _note_api_error(e, "get_week_stats")
         if _WEEK_STATS_CACHE["data"] is not None:
             print(f"Strava get_week_stats: returning STALE cache (age {now_ts - _WEEK_STATS_CACHE['ts']:.0f}s)")
             return _WEEK_STATS_CACHE["data"]
@@ -335,6 +394,8 @@ def get_activities(days: int = 30) -> list:
     if cached and (now_ts - cached["ts"]) < _ACT_CACHE_TTL:
         return cached["data"]
 
+    if api_blocked() and cached:
+        return cached["data"]
     try:
         token = _get_access_token()
         after_ts = int((datetime.now() - timedelta(days=days)).timestamp())
@@ -349,7 +410,7 @@ def get_activities(days: int = 30) -> list:
         _ACT_CACHE[days] = {"data": data, "ts": now_ts}
         return data
     except Exception as e:
-        print(f"get_activities error (timeout 5s): {e}")
+        _note_api_error(e, "get_activities")
         # Якщо є хоч трохи протухлий кеш — краще повернути його, ніж порожньо
         if cached:
             print(f"get_activities: returning STALE cache for days={days} (age {now_ts - cached['ts']:.0f}s)")
