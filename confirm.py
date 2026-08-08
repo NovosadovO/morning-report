@@ -38,10 +38,12 @@ _ACTIONS = {}
 
 
 def register(name: str, handler, question: str, yes: str = "✅ Так",
-             no: str = "↩️ Ні, залиш", done: str = "Готово."):
+             no: str = "↩️ Ні, залиш", done: str = "Готово.",
+             revert: str = "Повернути: /увімкни_нагадування"):
     """Реєструє дію, яка вимагає підтвердження."""
     _ACTIONS[name] = {"handler": handler, "question": question,
-                      "yes": yes, "no": no, "done": done}
+                      "yes": yes, "no": no, "done": done,
+                      "revert": revert}
 
 
 def is_registered(name: str) -> bool:
@@ -125,6 +127,7 @@ def yes(cid: str) -> dict:
     r.setdefault("ok", True)
     r["confirmed"] = True
     r["done_text"] = a["done"]
+    r["revert_hint"] = a.get("revert") or ""
     r["subject"] = p.get("subject")
     K.log(TAG, f"✅ підтверджено: {p.get('action')} / {str(p.get('subject'))[:30]}")
     return r
@@ -196,12 +199,41 @@ register(
     done="🚫 Ок — більше не нагадую.",
 )
 
+def _h_cw_miss(pid):
+    import calendar_watch as cw
+    return cw.do_miss(pid)
+
+
+def _h_gx_later(pid):
+    import ai_buttons as gx
+    return gx.do_later(pid)
+
+
 register(
     "gx_mute", _h_gx_mute,
     question=("Я на <b>7 днів</b> замовкну по темі {subject} — ні сповіщень, "
               "ні аналізу, ні згадок у звітах."),
     yes="✅ Так, приховай тему", no="↩️ Ні, залиш",
     done="🚫 Тему приховано.",
+    revert="Повернути: /увімкни_теми",
+)
+
+register(
+    "cw_miss", _h_cw_miss,
+    question=("Записую, що <b>{subject}</b> не відбулась. Це піде в мою "
+              "статистику й AI-аналіз як пропущена подія."),
+    yes="✅ Так, не було", no="↩️ Ні, я помилився",
+    done="❌ Записав: не відбулось.",
+    revert="Побачити всі відповіді: /пам_ять_аі",
+)
+
+register(
+    "gx_later", _h_gx_later,
+    question=("Відкладу це повідомлення (<b>{subject}</b>) — повторю його "
+              "через 2 години."),
+    yes="✅ Так, відклади", no="↩️ Ні, залиш зараз",
+    done="🔔 Ок — нагадаю пізніше.",
+    revert="Усі відкладені: /відкладені",
 )
 
 

@@ -46,7 +46,7 @@ ACK_FILE = "calendar_ack.json"           # збережені відповіді
 SNOOZE_FILE = "calendar_snooze.json"     # відкладені нагадування
 DAILY_FILE = "calendar_daily.json"       # агенда/прев'ю: 1 раз на день
 WEEKLY_FILE = "calendar_weekly.json"     # огляд тижня: 1 раз на тиждень
-MONTHLY_FILE = "calendar_monthly.json"   # огляд місяця: 1 раз на місяць
+MONTHLY_FILE = "calendar_monthly.json"   # огляд 31 дня: щотижня (пн)
 AI_CACHE_FILE = "calendar_ai_cache.json"  # AI-коментар: 1 на подію, перевикористовується
 AI_BUDGET_FILE = "calendar_ai_budget.json"  # лічильник AI-коментарів (лише статистика)
 
@@ -866,20 +866,31 @@ def month_text(days: int = 31) -> str:
     return "\n".join(lines)[:3900]
 
 
+def _monthly_tag() -> str:
+    """Мітка періоду: щотижня (понеділок) — рік+номер ISO-тижня."""
+    n = K.now().replace(tzinfo=None)
+    iso = n.isocalendar()
+    return f"{iso[0]}-W{iso[1]:02d}"
+
+
 def _monthly_done() -> bool:
     data = K.load(MONTHLY_FILE, default={}) or {}
-    return data.get("month") == K.now().replace(tzinfo=None).strftime("%Y-%m")
+    return data.get("month") == _monthly_tag()
 
 
 def _monthly_mark():
-    K.update_key(MONTHLY_FILE, "month", K.now().replace(tzinfo=None).strftime("%Y-%m"))
+    K.update_key(MONTHLY_FILE, "month", _monthly_tag())
 
 
 def month(force: bool = False) -> bool:
-    """Огляд місяця — 1 раз на місяць: 1-е число, 06:00–12:00."""
+    """Огляд 31 дня вперед — ЩОТИЖНЯ: понеділок 12:00–17:00.
+
+    (раніше було 1 раз на місяць 1-го числа — Олег попросив щотижня.
+    Час обраний після огляду тижня пн 06:00–11:00, щоб не злітались.)
+    """
     n = K.now().replace(tzinfo=None)
     if not force:
-        if _monthly_done() or not (n.day == 1 and 6 <= n.hour < 12):
+        if _monthly_done() or not (n.weekday() == 0 and 12 <= n.hour < 17):
             return False
     text = month_text(31)
     if not text:

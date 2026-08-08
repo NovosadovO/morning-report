@@ -5070,12 +5070,17 @@ def handle_automation_callback(cb):
                 elif r.get("error") == "payload_missing": _stale()
                 else: _fail(r, "зберегти відповідь")
             elif data.startswith("cw_miss_"):
-                r = _cw.do_miss(data[len("cw_miss_"):])
-                if r.get("ok"):
-                    _clear_kb()
-                    cb_notify(cb["id"], chat_id, "❌ Записав: не відбулось")
-                elif r.get("error") == "payload_missing": _stale()
-                else: _fail(r, "зберегти відповідь")
+                _pid_m = data[len("cw_miss_"):]
+                _pl_m2 = _cw.payload(_pid_m)
+                if not _pl_m2:
+                    _stale()
+                else:
+                    import confirm as _cfm4
+                    q = _cfm4.ask("cw_miss", _pid_m, str(_pl_m2.get("title") or ""))
+                    if q.get("ok"):
+                        send_with_keyboard(chat_id, q["text"], q["keyboard"])
+                    else:
+                        _fail(q, "запитати підтвердження")
             elif data.startswith("cw_moved_"):
                 r = _cw.do_moved(data[len("cw_moved_"):])
                 if r.get("ok"):
@@ -5116,11 +5121,13 @@ def handle_automation_callback(cb):
                     _clear_kb()
                     _subj = _cfm3.K.esc(str(r.get("subject") or ""))
                     _extra = ""
+                    _hint = str(r.get("revert_hint") or "")
+                    if r.get("at"):
+                        _extra = f"\n🕐 Нагадаю о <b>{r.get('at')}</b>"
                     if r.get("until"):
-                        _extra = (f"\nПовернути раніше: /увімкни_теми "
-                                  f"(автоматично {r.get('until')})")
-                    else:
-                        _extra = "\nПовернути: /увімкни_нагадування"
+                        _extra += f"\n(автоматично до {r.get('until')})"
+                    if _hint:
+                        _extra += "\n" + _hint
                     send(chat_id, f"{r.get('done_text')}\n\n"
                                   f"<b>{_subj}</b>{_extra}")
                 elif r.get("error") == "already_answered":
@@ -5138,7 +5145,7 @@ def handle_automation_callback(cb):
                     _clear_kb()
                     _subj = _cfm3.K.esc(str(r.get("subject") or ""))
                     send(chat_id, f"👍 Ок, залишаю як було — <b>{_subj}</b> без змін. "
-                                  "Нагадування працюють далі.")
+                                  "Нічого не вимкнув і не записав.")
                 elif r.get("error") == "already_answered":
                     _clear_kb()
                     send(chat_id, "☑️ На це питання ти вже відповів — <b>нічого не змінив</b> повторно.")
@@ -5175,13 +5182,18 @@ def handle_automation_callback(cb):
                 elif r.get("error") == "payload_missing": _stale()
                 else: _fail(r, "записати нотатку")
             elif data.startswith("gx_later_"):
-                r = _gx.do_later(_pid)
-                if r.get("ok"):
-                    _clear_kb()
-                    send(chat_id, f"🔔 Ок — нагадаю про це о <b>{r.get('at')}</b>.\n"
-                                  "<i>Усі відкладені: /відкладені</i>")
-                elif r.get("error") == "payload_missing": _stale()
-                else: _fail(r, "відкласти повідомлення")
+                _pl_l = _gx.payload(_pid)
+                if not _pl_l:
+                    _stale()
+                else:
+                    import confirm as _cfm5
+                    _tpl = _pl_l.get("topic") or "general"
+                    _lbll = _gx.TOPIC_LABEL.get(_tpl, _tpl)
+                    q = _cfm5.ask("gx_later", _pid, str(_lbll))
+                    if q.get("ok"):
+                        send_with_keyboard(chat_id, q["text"], q["keyboard"])
+                    else:
+                        _fail(q, "запитати підтвердження")
             elif data.startswith("gx_mute_"):
                 _pl_m = _gx.payload(_pid)
                 if not _pl_m:
@@ -5771,7 +5783,7 @@ def _dispatch_callback_async(cb):
         ("cw_showmonth_",   "📆 Готую місяць..."),
         ("gx_more_",        "🤖 Розбираю детально..."),
         ("gx_note_",        "✍️ Питаю текст нотатки..."),
-        ("gx_later_",       "🔔 Відкладаю..."),
+        ("gx_later_",       "❓ Перепитую..."),
         ("gx_mute_",        "❓ Перепитую..."),
         ("cfm_y_",          "✅ Підтверджено"),
         ("cfm_n_",          "↩️ Залишаю як є"),
@@ -5787,7 +5799,7 @@ def _dispatch_callback_async(cb):
         ("gx_done_",        "✅"),
         ("cw_cancel_",      "❓ Перепитую..."),
         ("cw_done_",        "✅ Записую: було"),
-        ("cw_miss_",        "❌ Записую: не було"),
+        ("cw_miss_",        "❓ Перепитую..."),
         ("cw_moved_",       "⏭ Записую: перенесли"),
         ("cw_ack_",         "👍 Прийнято"),
         ("cw_ai_",          "🤖 Готую AI-підготовку..."),
