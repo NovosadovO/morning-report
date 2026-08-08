@@ -1566,6 +1566,15 @@
         "kind": "reminder",
         "date": "2026-08-08"
       }
+    },
+    {
+      "ts": "2026-08-08T02:58:15.946054+00:00",
+      "category": "bill_found",
+      "question": "Pelikan.sk",
+      "answer": "422.16 EUR",
+      "extra": {
+        "due": ""
+      }
     }
   ]
 }
