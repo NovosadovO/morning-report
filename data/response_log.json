@@ -1666,6 +1666,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_n_e64f1b9b2d"
+    },
+    {
+      "ts": "2026-08-08T07:00:10.034167+00:00",
+      "category": "calendar_button",
+      "question": "Демо-подія (перевірка кнопок)",
+      "answer": "cancelled",
+      "extra": {
+        "stage": "t30",
+        "when": "17:50–18:50",
+        "note": null
+      }
     }
   ]
 }
