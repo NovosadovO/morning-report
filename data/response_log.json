@@ -1637,6 +1637,17 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-08-08T06:52:03.482608+00:00",
+      "category": "calendar_confirm",
+      "question": "Перевірити смарт-гаманці",
+      "answer": "✅ Додано",
+      "extra": {
+        "events": [
+          "Перевірити смарт-гаманці"
+        ]
+      }
     }
   ]
 }
