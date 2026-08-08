@@ -36,5 +36,19 @@
     "paid": true,
     "paid_at": "2026-08-05",
     "created": "2026-08-05"
+  },
+  "pelikan_sk|422_16|": {
+    "vendor": "Pelikan.sk",
+    "amount": "422.16",
+    "currency": "EUR",
+    "invoice_no": "",
+    "due": "",
+    "uid": "77142",
+    "sender": "✈ Pelikan.sk <mailing@pelikan.sk>",
+    "subject": "Nezaplatená rezervácia",
+    "note": "Незапланована резервація авіаквитків на Корфу, потрібно оплатити, щоб зафіксувати ціну та доступність.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-08-08"
   }
 }
