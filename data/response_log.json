@@ -1595,6 +1595,16 @@
         "kind": "reminder",
         "date": "2026-08-09"
       }
+    },
+    {
+      "ts": "2026-08-08T03:00:21.864647+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на листи від Pelikan.sk",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-08-09"
+      }
     }
   ]
 }
