@@ -5123,6 +5123,9 @@ def handle_automation_callback(cb):
                         _extra = "\nПовернути: /увімкни_нагадування"
                     send(chat_id, f"{r.get('done_text')}\n\n"
                                   f"<b>{_subj}</b>{_extra}")
+                elif r.get("error") == "already_answered":
+                    _clear_kb()
+                    send(chat_id, "☑️ На це питання ти вже відповів — <b>нічого не змінив</b> повторно.")
                 elif r.get("error") == "payload_missing": _stale()
                 elif r.get("error") == "expired":
                     _clear_kb()
@@ -5136,6 +5139,9 @@ def handle_automation_callback(cb):
                     _subj = _cfm3.K.esc(str(r.get("subject") or ""))
                     send(chat_id, f"👍 Ок, залишаю як було — <b>{_subj}</b> без змін. "
                                   "Нагадування працюють далі.")
+                elif r.get("error") == "already_answered":
+                    _clear_kb()
+                    send(chat_id, "☑️ На це питання ти вже відповів — <b>нічого не змінив</b> повторно.")
                 elif r.get("error") == "payload_missing": _stale()
                 else: _fail(r, "скасувати дію")
             else:

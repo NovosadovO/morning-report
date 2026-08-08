@@ -91,11 +91,23 @@ def _log(action: str, subject: str, answer: str):
         K.log(TAG, f"response_log error: {e}")
 
 
+def _mark_answered(cid: str, p: dict, answer: str):
+    """Питання вже має відповідь — повторний клік не має нічого змінювати."""
+    try:
+        q = dict(p)
+        q["answered"] = answer
+        K.update_key(STORE_FILE, cid, q)
+    except Exception as e:
+        K.log(TAG, f"mark_answered error: {e}")
+
+
 def yes(cid: str) -> dict:
     """Олег підтвердив — виконуємо реальну дію."""
     p = _store.get(cid)
     if not p:
         return {"ok": False, "error": "payload_missing"}
+    if p.get("answered"):
+        return {"ok": False, "error": "already_answered"}
     if _expired(p):
         return {"ok": False, "error": "expired"}
     a = _ACTIONS.get(p.get("action"))
@@ -108,6 +120,7 @@ def yes(cid: str) -> dict:
         return {"ok": False, "error": f"handler: {str(e)[:80]}"}
     if not isinstance(r, dict):
         r = {"ok": bool(r)}
+    _mark_answered(cid, p, "yes")
     _log(str(p.get("action")), str(p.get("subject") or ""), "yes")
     r.setdefault("ok", True)
     r["confirmed"] = True
@@ -122,6 +135,9 @@ def no(cid: str) -> dict:
     p = _store.get(cid)
     if not p:
         return {"ok": False, "error": "payload_missing"}
+    if p.get("answered"):
+        return {"ok": False, "error": "already_answered"}
+    _mark_answered(cid, p, "no")
     _log(str(p.get("action")), str(p.get("subject") or ""), "no")
     K.log(TAG, f"↩️ скасовано користувачем: {p.get('action')}")
     return {"ok": True, "cancelled": True, "subject": p.get("subject")}
