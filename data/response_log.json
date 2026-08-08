@@ -1654,6 +1654,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_cancel_67d55377ca"
+    },
+    {
+      "ts": "2026-08-08T06:59:59.254371+00:00",
+      "category": "confirm",
+      "question": "cw_cancel: Демо-подія (перевірка кнопок)",
+      "answer": "no"
     }
   ]
 }
