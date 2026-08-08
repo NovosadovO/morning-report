@@ -1876,6 +1876,17 @@
       "category": "event_done",
       "question": "📅 🧖 Сауна ❌\nПланувалась до 20:40 — виконано?",
       "answer": "no"
+    },
+    {
+      "ts": "2026-08-08T22:31:17.215429+00:00",
+      "category": "calendar_button",
+      "question": "Ліки для обличчя",
+      "answer": "done",
+      "extra": {
+        "stage": "after",
+        "when": "20:45–21:45",
+        "note": null
+      }
     }
   ]
 }
