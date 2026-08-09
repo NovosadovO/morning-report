@@ -2006,6 +2006,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_a9a0b9a361"
+    },
+    {
+      "ts": "2026-08-09T11:56:40.275265+00:00",
+      "category": "calendar_reminder_confirm",
+      "question": "Зважитись",
+      "answer": "✅ Поставлено",
+      "extra": {
+        "date": "2026-08-10"
+      }
     }
   ]
 }
