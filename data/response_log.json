@@ -2110,6 +2110,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_miss_a9a0b9a361"
+    },
+    {
+      "ts": "2026-08-09T12:08:22.779209+00:00",
+      "category": "calendar_button",
+      "question": "Оплата страховки Kooperativa",
+      "answer": "missed",
+      "extra": {
+        "stage": "t24h",
+        "when": "12:00–13:00",
+        "note": null
+      }
     }
   ]
 }
