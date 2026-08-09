@@ -2240,6 +2240,17 @@
           "Заплатити страховку Kooperativa"
         ]
       }
+    },
+    {
+      "ts": "2026-08-09T19:08:48.210550+00:00",
+      "category": "calendar_button",
+      "question": "tomorrow",
+      "answer": "accepted",
+      "extra": {
+        "stage": "tomorrow",
+        "when": "",
+        "note": null
+      }
     }
   ]
 }
