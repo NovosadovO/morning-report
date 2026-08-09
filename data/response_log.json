@@ -2189,6 +2189,16 @@
       "extra": {
         "date": "2026-08-10"
       }
+    },
+    {
+      "ts": "2026-08-09T18:59:22.852318+00:00",
+      "category": "ai_button",
+      "question": "crypto",
+      "answer": "chart",
+      "extra": {
+        "trigger": "deep_analysis",
+        "note": null
+      }
     }
   ]
 }
