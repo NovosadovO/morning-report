@@ -2047,6 +2047,12 @@
       "category": "confirm",
       "question": "gx_later: здоров'я і вага",
       "answer": "no"
+    },
+    {
+      "ts": "2026-08-09T12:03:59.071691+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_n_a3167cb42b"
     }
   ]
 }
