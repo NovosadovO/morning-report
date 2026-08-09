@@ -100,5 +100,12 @@
     "when": "12:00–13:00",
     "stage": "t24h",
     "ts": "2026-08-09T12:08:20.502620+00:00"
+  },
+  "tomorrow|tomorrow|2026-08-09": {
+    "answer": "accepted",
+    "title": "tomorrow",
+    "when": "",
+    "stage": "tomorrow",
+    "ts": "2026-08-09T19:08:47.312006+00:00"
   }
 }
