@@ -46,3 +46,9 @@ E2E підтверджено в логах: [CB] gx_note_ → force-reply без
 - Перевірено в прод (deploy f6476bba, SUCCESS): cw_cancel → питання → cfm_n (нічого) → cfm_y → запис у calendar_blocked; gx_mute → cfm_y → запис у gx_mute; `/увімкни_нагадування` → "повернуто нагадувань: 1". Traceback/NameError у логах немає.
 - Тести: tests_confirm.py (34 перевірки, ❌=0) + fb/note/cw/cw_week/cw_ai/cw_month — усі 0. Лінт 3.11 bad: 0.
 - ⚠️ Відкрито: Strava API 403 Forbidden на всіх запитах (get_activities / get_last_activity / get_week_stats) — потрібен новий refresh_token або перевірка підписки.
+
+## Оновлення 09.08.2026
+- Підтвердження додано ще під 2 кнопки: `❌ Не було` (cw_miss) і `🔔 Нагадай пізніше` (gx_later). Перевірено в проді: питання → cfm_y → запис `missed` у calendar_ack; cfm_n → нічого.
+- `confirm.register()` має поле `revert` — після «Так» бот пише, як повернути назад.
+- Огляд «місяць вперед» тепер ЩОТИЖНЯ: понеділок 12:00–17:00 (`_monthly_tag()` = рік+ISO-тиждень). Огляд тижня лишився пн 06:00–11:00.
+- Strava 403: причина НЕ токен, а `Application/Inactive` (застосунок 228739 деактивовано Strava). Додано `api_blocked()`, `app_inactive_reason()`, `_note_api_error()` — пауза 30 хв замість спаму, зрозумілий рядок у /diag, дані з кешу.
