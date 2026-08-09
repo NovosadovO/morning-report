@@ -2342,6 +2342,16 @@
         "kind": "reminder",
         "date": "2026-08-10"
       }
+    },
+    {
+      "ts": "2026-08-10T00:00:15.364280+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Оплатити страховку Kooperativa",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-10"
+      }
     }
   ]
 }
