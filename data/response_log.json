@@ -2088,6 +2088,16 @@
       "category": "event_done",
       "question": "📅 Біг\nПланувалась до 11:30 — виконано?",
       "answer": "no"
+    },
+    {
+      "ts": "2026-08-09T12:06:25.804219+00:00",
+      "category": "ai_button",
+      "question": "health",
+      "answer": "chart",
+      "extra": {
+        "trigger": "deep_analysis",
+        "note": null
+      }
     }
   ]
 }
