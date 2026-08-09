@@ -2199,6 +2199,12 @@
         "trigger": "deep_analysis",
         "note": null
       }
+    },
+    {
+      "ts": "2026-08-09T18:59:24.591468+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "gx_chart_56bc5cd1f9"
     }
   ]
 }
