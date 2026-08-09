@@ -2145,6 +2145,17 @@
       "category": "chat",
       "question": "10.08 стрижка",
       "answer": "✅ <b>Додано в Google Calendar</b>\n📌 Стрижка\n🗓 10.08.2026 (понеділок) о 10:00"
+    },
+    {
+      "ts": "2026-08-09T12:26:36.857648+00:00",
+      "category": "calendar_confirm",
+      "question": "Поїздка на Корфу",
+      "answer": "✅ Додано",
+      "extra": {
+        "events": [
+          "Поїздка на Корфу"
+        ]
+      }
     }
   ]
 }
