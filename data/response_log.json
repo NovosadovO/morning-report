@@ -2024,6 +2024,17 @@
       "extra": {
         "date": "2026-08-10"
       }
+    },
+    {
+      "ts": "2026-08-09T12:02:01.113597+00:00",
+      "category": "calendar_confirm",
+      "question": "Біг",
+      "answer": "✅ Додано",
+      "extra": {
+        "events": [
+          "Біг"
+        ]
+      }
     }
   ]
 }
