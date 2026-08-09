@@ -1969,6 +1969,16 @@
         "kind": "reminder",
         "date": "2026-08-09"
       }
+    },
+    {
+      "ts": "2026-08-09T03:00:21.222142+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти на лист від letenky@pelikan.sk",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-08-09"
+      }
     }
   ]
 }
