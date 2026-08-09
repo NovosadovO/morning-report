@@ -2332,6 +2332,16 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_spray"
+    },
+    {
+      "ts": "2026-08-10T00:00:11.456559+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Онлайн реєстрація на рейс",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-10"
+      }
     }
   ]
 }
