@@ -1423,8 +1423,13 @@ def handle_email_callback(callback_query):
             send(chat_id, f"⚠️ Помилка: {e}")
 
     elif data.startswith("email_cancel_"):
+        try:
+            _DRAFT_STORE.pop(data[len("email_cancel_"):], None)
+        except Exception as _de:
+            print(f"email_cancel drop draft error: {_de}")
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Скасовано"})
         api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+        send(chat_id, "❌ Чернетку скасовано — <b>нічого не надіслано</b>.")
 
     elif data.startswith("shop_add_"):
         # АІ проактивно виявив у листі щось на купити — Олег підтвердив
