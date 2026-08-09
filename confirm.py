@@ -107,13 +107,17 @@ def yes(cid: str) -> dict:
     """Олег підтвердив — виконуємо реальну дію."""
     p = _store.get(cid)
     if not p:
+        K.log(TAG, f"yes: payload_missing cid={cid}")
         return {"ok": False, "error": "payload_missing"}
     if p.get("answered"):
+        K.log(TAG, f"yes: already_answered {p.get('action')}")
         return {"ok": False, "error": "already_answered"}
     if _expired(p):
+        K.log(TAG, f"yes: expired {p.get('action')}")
         return {"ok": False, "error": "expired"}
     a = _ACTIONS.get(p.get("action"))
     if not a:
+        K.log(TAG, f"yes: unknown_action {p.get('action')} (є: {sorted(_ACTIONS)})")
         return {"ok": False, "error": "unknown_action"}
     try:
         r = a["handler"](p.get("pid")) or {}
