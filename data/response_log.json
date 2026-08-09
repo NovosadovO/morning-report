@@ -2174,6 +2174,12 @@
       "category": "confirm",
       "question": "cw_cancel: Оплата страховки Kooperativa",
       "answer": "no"
+    },
+    {
+      "ts": "2026-08-09T14:12:12.772573+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_n_9f85c92c10"
     }
   ]
 }
