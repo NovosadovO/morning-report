@@ -2573,6 +2573,16 @@
         "kind": "reminder",
         "date": "2026-08-11"
       }
+    },
+    {
+      "ts": "2026-08-11T01:30:24.533004+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Зробити онлайн check-in на рейс",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-11"
+      }
     }
   ]
 }
