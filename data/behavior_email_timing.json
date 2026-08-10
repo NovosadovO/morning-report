@@ -1,9 +1,4 @@
 {
-  "76817": {
-    "sender": "newsletters@e.economist.com",
-    "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
-    "seen_ts": "2026-08-01T16:35:11.120837+00:00"
-  },
   "76818": {
     "sender": "ben@startengine.com",
     "sender_raw": "Ben at StartEngine <ben@startengine.com>",
@@ -1498,5 +1493,10 @@
     "sender": "parking@bud.hu",
     "sender_raw": "Parkoló Üzemeltetés <parking@bud.hu>",
     "seen_ts": "2026-08-10T12:25:03.015729+00:00"
+  },
+  "77247": {
+    "sender": "notifications@link.com",
+    "sender_raw": "Link <notifications@link.com>",
+    "seen_ts": "2026-08-10T12:29:11.305945+00:00"
   }
 }
