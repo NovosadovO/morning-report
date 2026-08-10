@@ -106,5 +106,19 @@
     "paid": true,
     "paid_at": "2026-08-10",
     "created": "2026-08-10"
+  },
+  "eznamka_sk||": {
+    "vendor": "eznamka.sk",
+    "amount": "",
+    "currency": "EUR",
+    "invoice_no": "",
+    "due": "",
+    "uid": "77253",
+    "sender": "<noreply@eznamka.sk>",
+    "subject": "Automatická správa: Notifikácia o úhrade diaľničnej známky",
+    "note": "Підтвердження оплати словацької електронної віньєтки для автомобіля LE066BI, дійсної 10.08.2026.",
+    "paid": true,
+    "paid_at": "2026-08-10",
+    "created": "2026-08-10"
   }
 }
