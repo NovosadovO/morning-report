@@ -1,9 +1,4 @@
 {
-  "76800": {
-    "sender": "googlepay-noreply@google.com",
-    "sender_raw": "Google Pay <googlepay-noreply@google.com>",
-    "seen_ts": "2026-08-01T10:36:42.821941+00:00"
-  },
   "76805": {
     "sender": "noreply@travel.mail.flixbus.com",
     "sender_raw": "\"FlixBus\" <noreply@travel.mail.flixbus.com>",
@@ -1498,5 +1493,10 @@
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
     "seen_ts": "2026-08-10T08:24:31.744340+00:00"
+  },
+  "77235": {
+    "sender": "newsletter@biedronka.pl",
+    "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
+    "seen_ts": "2026-08-10T10:02:21.266979+00:00"
   }
 }
