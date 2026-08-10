@@ -2439,6 +2439,17 @@
           "Оплатити страховку Kooperativa"
         ]
       }
+    },
+    {
+      "ts": "2026-08-10T11:38:18.176697+00:00",
+      "category": "calendar_button",
+      "question": "Оплата страховки Kooperativa",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t30",
+        "when": "12:00–13:00",
+        "note": null
+      }
     }
   ]
 }
