@@ -1,9 +1,4 @@
 {
-  "76843": {
-    "sender": "noreply@e.economist.com",
-    "sender_raw": "\"The Economist\" <noreply@e.economist.com>",
-    "seen_ts": "2026-08-02T12:13:40.662877+00:00"
-  },
   "76845": {
     "sender": "mail@update.strava.com",
     "sender_raw": "\"Strava\" <mail@update.strava.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-08-10T21:27:04.422047+00:00"
+  },
+  "77274": {
+    "sender": "no-reply@mail.thedefiant.io",
+    "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
+    "seen_ts": "2026-08-10T21:55:39.385538+00:00"
   }
 }
