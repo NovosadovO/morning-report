@@ -1,9 +1,4 @@
 {
-  "76842": {
-    "sender": "newsletter@mail.dailybones.com",
-    "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
-    "seen_ts": "2026-08-02T12:01:27.143276+00:00"
-  },
   "76843": {
     "sender": "noreply@e.economist.com",
     "sender_raw": "\"The Economist\" <noreply@e.economist.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobs-noreply@linkedin.com",
     "sender_raw": "LinkedIn <jobs-noreply@linkedin.com>",
     "seen_ts": "2026-08-10T21:12:47.059806+00:00"
+  },
+  "77273": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-10T21:27:04.422047+00:00"
   }
 }
