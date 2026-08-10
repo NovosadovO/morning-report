@@ -1,9 +1,4 @@
 {
-  "76832": {
-    "sender": "news@mail.lidlplus.sk",
-    "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
-    "seen_ts": "2026-08-02T05:50:56.354473+00:00"
-  },
   "76833": {
     "sender": "novinky@aboutyou.com",
     "sender_raw": "Výpredaj na ABOUT YOU <novinky@aboutyou.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
     "seen_ts": "2026-08-10T16:45:32.807166+00:00"
+  },
+  "77265": {
+    "sender": "newsletter@myclaw.ai",
+    "sender_raw": "MyClaw Newsletter <newsletter@myclaw.ai>",
+    "seen_ts": "2026-08-10T17:10:09.401692+00:00"
   }
 }
