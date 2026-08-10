@@ -134,7 +134,7 @@ def _save_github(filename, data):
         # Також локально
         _save_local(filename, data)
 
-    content = base64.b64encode(json.dumps(data, ensure_ascii=False, indent=2).encode()).decode()
+    payload = data
 
     for attempt in range(5):  # 5 спроб з exponential backoff
         # Отримуємо поточний SHA (потрібен для update) — завжди свіжий
@@ -144,6 +144,32 @@ def _save_github(filename, data):
             time.sleep(0.5 * (2 ** attempt))
             continue
         sha = existing["sha"] if existing else None
+
+        # ─── MERGE-ON-CONFLICT ────────────────────────────────────────────
+        # Раніше при 409 (інший потік записав файл між нашим GET і PUT) ми
+        # просто перезаписували файл своїм знімком — і ключі, які встиг
+        # додати інший потік, ЗНИКАЛИ. Саме так губились відповіді на кнопки.
+        # Тепер на повторній спробі беремо свіжий стан як базу і накладаємо
+        # свої ключі поверх — нічиї дані не втрачаються.
+        if attempt > 0 and isinstance(data, dict) and existing:
+            try:
+                remote = json.loads(base64.b64decode(existing["content"]).decode())
+                if isinstance(remote, dict):
+                    merged = dict(remote)
+                    merged.update(data)
+                    if merged != payload:
+                        print(f"🔀 [storage] merge {filename}: "
+                              f"+{len(set(remote) - set(data))} чужих ключів збережено")
+                    payload = merged
+                    lock2 = _get_file_lock(filename)
+                    with lock2:
+                        _CACHE[filename] = payload
+                        _CACHE_TIME[filename] = time.time()
+            except Exception as _me:
+                print(f"[storage] merge {filename} skipped: {_me}")
+
+        content = base64.b64encode(
+            json.dumps(payload, ensure_ascii=False, indent=2).encode()).decode()
 
         body = {
             "message": f"update {filename}",
@@ -158,7 +184,8 @@ def _save_github(filename, data):
             return True
         else:
             wait_time = 0.5 * (2 ** attempt)  # 0.5s, 1s, 2s, 4s, 8s
-            print(f"⚠️ [storage] failed to save {filename} (attempt {attempt+1}/5), waiting {wait_time}s before retry...")
+            if attempt >= 2:
+                print(f"⚠️ [storage] {filename}: спроба {attempt+1}/5, чекаю {wait_time}s")
             time.sleep(wait_time)
 
     print(f"❌ [storage] GAVE UP saving {filename} after 5 attempts")
