@@ -1,9 +1,4 @@
 {
-  "76841": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "Temu <temu@eu.temuemail.com>",
-    "seen_ts": "2026-08-02T11:53:16.053597+00:00"
-  },
   "76842": {
     "sender": "newsletter@mail.dailybones.com",
     "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply-accounts@google.com",
     "sender_raw": "Google <noreply-accounts@google.com>",
     "seen_ts": "2026-08-10T20:15:52.148117+00:00"
+  },
+  "77272": {
+    "sender": "jobs-noreply@linkedin.com",
+    "sender_raw": "LinkedIn <jobs-noreply@linkedin.com>",
+    "seen_ts": "2026-08-10T21:12:47.059806+00:00"
   }
 }
