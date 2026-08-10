@@ -1,9 +1,4 @@
 {
-  "76845": {
-    "sender": "mail@update.strava.com",
-    "sender_raw": "\"Strava\" <mail@update.strava.com>",
-    "seen_ts": "2026-08-02T12:27:55.505989+00:00"
-  },
   "76847": {
     "sender": "noreplybpgo@bkk.hu",
     "sender_raw": "\"Budapesti Közlekedési Központ\" <noreplybpgo@bkk.hu>",
@@ -1498,5 +1493,10 @@
     "sender": "no-reply@mail.thedefiant.io",
     "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
     "seen_ts": "2026-08-10T21:55:39.385538+00:00"
+  },
+  "77275": {
+    "sender": "newsletter@blockworks.com",
+    "sender_raw": "The Breakdown <newsletter@blockworks.com>",
+    "seen_ts": "2026-08-10T22:01:50.650082+00:00"
   }
 }
