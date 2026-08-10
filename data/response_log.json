@@ -2402,6 +2402,16 @@
         "kind": "reminder",
         "date": "2026-08-10"
       }
+    },
+    {
+      "ts": "2026-08-10T04:30:13.404982+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Онлайн check-in на Корфу",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-08-10"
+      }
     }
   ]
 }
