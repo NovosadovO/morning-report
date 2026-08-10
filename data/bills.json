@@ -64,5 +64,19 @@
     "paid": true,
     "paid_at": "2026-08-09",
     "created": "2026-08-09"
+  },
+  "sk_autovignet_hu|20_36|": {
+    "vendor": "SK.AUTOVIGNET.HU",
+    "amount": "20.36",
+    "currency": "EUR",
+    "invoice_no": "RSK-2026-33205",
+    "due": "",
+    "uid": "77249",
+    "sender": "SK.AUTOVIGNET.HU <info@autovignet.hu>",
+    "subject": "Potvrdenie objednávky — #AVI40730194 — 2026.08.10",
+    "note": "Підтвердження оплати за 1-денну електронну віньєтку для Угорщини.",
+    "paid": true,
+    "paid_at": "2026-08-10",
+    "created": "2026-08-10"
   }
 }
