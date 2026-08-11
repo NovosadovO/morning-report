@@ -21,6 +21,7 @@
     "run_question": true,
     "anomaly_no_run": true,
     "midday_checkin": true,
-    "ai_observations": true
+    "ai_observations": true,
+    "evening_checkin": true
   }
 }
