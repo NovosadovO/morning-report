@@ -94,5 +94,17 @@
     "sender": "<noreply@eznamka.sk>",
     "done": false,
     "created": "2026-08-10"
+  },
+  "реєстрація_заїзду_в_avia|2026-08-11": {
+    "kind": "appointment",
+    "title": "Реєстрація заїзду в Avia",
+    "org": "Booking.com",
+    "deadline": "2026-08-11",
+    "action": "Зареєструватися в помешканні Avia",
+    "why": "Це дата початку проживання, потрібно вчасно заїхати в готель.",
+    "uid": "77194",
+    "sender": "\"Booking.com\" <noreply-payments@booking.com>",
+    "done": false,
+    "created": "2026-08-11"
   }
 }
