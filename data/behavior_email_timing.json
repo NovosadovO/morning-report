@@ -1,9 +1,4 @@
 {
-  "76858": {
-    "sender": "jobalerts-noreply@linkedin.com",
-    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
-    "seen_ts": "2026-08-02T18:14:52.773390+00:00"
-  },
   "76859": {
     "sender": "no-reply@strava.com",
     "sender_raw": "Strava <no-reply@strava.com>",
@@ -1498,5 +1493,10 @@
     "sender": "no-reply@transak.com",
     "sender_raw": "Trust Wallet via Transak <no-reply@transak.com>",
     "seen_ts": "2026-08-11T02:28:39.067392+00:00"
+  },
+  "77284": {
+    "sender": "noreply-accounts@google.com",
+    "sender_raw": "Google <noreply-accounts@google.com>",
+    "seen_ts": "2026-08-11T02:32:46.745849+00:00"
   }
 }
