@@ -1,9 +1,4 @@
 {
-  "76850": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "Temu <temu@eu.temuemail.com>",
-    "seen_ts": "2026-08-02T14:51:50.254263+00:00"
-  },
   "76852": {
     "sender": "email.campaign@sg.booking.com",
     "sender_raw": "\"Booking.com\" <email.campaign@sg.booking.com>",
@@ -1498,5 +1493,10 @@
     "sender": "email@inbox.fox.com",
     "sender_raw": "\"FOX\" <email@inbox.fox.com>",
     "seen_ts": "2026-08-10T22:46:44.663707+00:00"
+  },
+  "77278": {
+    "sender": "support@profesia.sk",
+    "sender_raw": "\"Profesia.sk\" <support@profesia.sk>",
+    "seen_ts": "2026-08-11T01:33:22.197959+00:00"
   }
 }
