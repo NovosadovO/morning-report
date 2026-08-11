@@ -1,9 +1,4 @@
 {
-  "76893": {
-    "sender": "hello@news.sorare.com",
-    "sender_raw": "\"Sorare\" <hello@news.sorare.com>",
-    "seen_ts": "2026-08-03T12:46:27.332042+00:00"
-  },
   "76894": {
     "sender": "updates@okx.com",
     "sender_raw": "OKX <updates@okx.com>",
@@ -1498,5 +1493,10 @@
     "sender": "googleaistudio-noreply@google.com",
     "sender_raw": "Google AI Studio <googleaistudio-noreply@google.com>",
     "seen_ts": "2026-08-11T15:18:15.703372+00:00"
+  },
+  "77326": {
+    "sender": "googleaistudio-noreply@google.com",
+    "sender_raw": "Google AI Studio <googleaistudio-noreply@google.com>",
+    "seen_ts": "2026-08-11T15:24:32.557217+00:00"
   }
 }
