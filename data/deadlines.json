@@ -106,5 +106,17 @@
     "sender": "\"Booking.com\" <noreply-payments@booking.com>",
     "done": false,
     "created": "2026-08-11"
+  },
+  "підтвердити_пропозицію_temu|2026-08-12": {
+    "kind": "other",
+    "title": "Підтвердити пропозицію Temu",
+    "org": "Temu",
+    "deadline": "2026-08-12",
+    "action": "Перейти за посиланням та підтвердити пропозицію Temu",
+    "why": "Пропозиція Temu вичерпає свою дію після 12 серпня 2026 року.",
+    "uid": "77360",
+    "sender": "Temu <temu@eu.temuemail.com>",
+    "done": false,
+    "created": "2026-08-12"
   }
 }
