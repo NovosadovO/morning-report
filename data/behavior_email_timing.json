@@ -1,9 +1,4 @@
 {
-  "76938": {
-    "sender": "hello@team.emergent.sh",
-    "sender_raw": "Emergent <hello@team.emergent.sh>",
-    "seen_ts": "2026-08-04T09:28:21.144164+00:00"
-  },
   "76939": {
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@myclaw.ai",
     "sender_raw": "MyClaw Newsletter <newsletter@myclaw.ai>",
     "seen_ts": "2026-08-12T11:21:05.241613+00:00"
+  },
+  "77367": {
+    "sender": "news@msk.marionnaud.com",
+    "sender_raw": "\"Marionnaud\" <news@msk.marionnaud.com>",
+    "seen_ts": "2026-08-12T11:31:47.402525+00:00"
   }
 }
