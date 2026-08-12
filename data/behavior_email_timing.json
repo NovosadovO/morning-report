@@ -1,9 +1,4 @@
 {
-  "76964": {
-    "sender": "email.campaign@sg.booking.com",
-    "sender_raw": "\"Booking.com\" <email.campaign@sg.booking.com>",
-    "seen_ts": "2026-08-04T15:52:19.252489+00:00"
-  },
   "76966": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "support@pixoryofficial.com",
     "sender_raw": "\"Pixory\" <support@pixoryofficial.com>",
     "seen_ts": "2026-08-12T18:17:35.383817+00:00"
+  },
+  "77391": {
+    "sender": "noreply@e.economist.com",
+    "sender_raw": "\"Zanny Minton Beddoes at The Economist\" <noreply@e.economist.com>",
+    "seen_ts": "2026-08-12T18:46:38.820657+00:00"
   }
 }
