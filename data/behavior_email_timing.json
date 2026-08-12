@@ -1,14 +1,4 @@
 {
-  "76914": {
-    "sender": "hello@news.paysend.com",
-    "sender_raw": "\"Paysend\" <hello@news.paysend.com>",
-    "seen_ts": "2026-08-03T17:39:56.120792+00:00"
-  },
-  "76920": {
-    "sender": "jobalerts-noreply@linkedin.com",
-    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
-    "seen_ts": "2026-08-03T17:56:19.343645+00:00"
-  },
   "76922": {
     "sender": "newsletter@mail.theblock.co",
     "sender_raw": "The Block <newsletter@mail.theblock.co>",
@@ -1503,5 +1493,10 @@
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
     "seen_ts": "2026-08-12T08:11:19.807203+00:00"
+  },
+  "77355": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-08-12T08:15:31.229442+00:00"
   }
 }
