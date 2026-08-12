@@ -1,9 +1,4 @@
 {
-  "76940": {
-    "sender": "news@msk.marionnaud.com",
-    "sender_raw": "\"Marionnaud\" <news@msk.marionnaud.com>",
-    "seen_ts": "2026-08-04T09:32:40.918378+00:00"
-  },
   "76941": {
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
@@ -1498,5 +1493,10 @@
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
     "seen_ts": "2026-08-12T11:48:28.906974+00:00"
+  },
+  "77370": {
+    "sender": "newsletter@mail.dailybones.com",
+    "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
+    "seen_ts": "2026-08-12T12:45:13.369643+00:00"
   }
 }
