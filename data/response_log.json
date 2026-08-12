@@ -2963,6 +2963,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "gx_more_ee59e76987"
+    },
+    {
+      "ts": "2026-08-13T00:00:14.611921+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти Sam from Runable",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-08-13"
+      }
     }
   ]
 }
