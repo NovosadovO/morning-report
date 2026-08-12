@@ -1,9 +1,4 @@
 {
-  "76907": {
-    "sender": "newsletters@e.economist.com",
-    "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
-    "seen_ts": "2026-08-03T16:16:10.007307+00:00"
-  },
   "76908": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "news@mail.lidlplus.sk",
     "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
     "seen_ts": "2026-08-12T05:24:49.358059+00:00"
+  },
+  "77348": {
+    "sender": "news@flights.airbaltic.com",
+    "sender_raw": "SALE at airBaltic <news@flights.airbaltic.com>",
+    "seen_ts": "2026-08-12T05:35:32.253735+00:00"
   }
 }
