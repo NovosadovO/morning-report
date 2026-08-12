@@ -1,14 +1,4 @@
 {
-  "76941": {
-    "sender": "onboarding@resend.dev",
-    "sender_raw": "Morning Report <onboarding@resend.dev>",
-    "seen_ts": "2026-08-04T09:36:58.401604+00:00"
-  },
-  "76943": {
-    "sender": "hello@news.footshop.sk",
-    "sender_raw": "Footshop <hello@news.footshop.sk>",
-    "seen_ts": "2026-08-04T10:27:59.904483+00:00"
-  },
   "76944": {
     "sender": "linas@substack.com",
     "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
@@ -1503,5 +1493,10 @@
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
     "seen_ts": "2026-08-12T12:51:36.411677+00:00"
+  },
+  "77373": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-12T14:03:16.092735+00:00"
   }
 }
