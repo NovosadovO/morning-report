@@ -1,9 +1,4 @@
 {
-  "76967": {
-    "sender": "newsletters@e.economist.com",
-    "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
-    "seen_ts": "2026-08-04T16:39:11.621954+00:00"
-  },
   "76968": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Google через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@blockworks.com",
     "sender_raw": "The Breakdown <newsletter@blockworks.com>",
     "seen_ts": "2026-08-12T22:01:18.045279+00:00"
+  },
+  "77393": {
+    "sender": "no-reply@mail.thedefiant.io",
+    "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
+    "seen_ts": "2026-08-12T22:05:27.139942+00:00"
   }
 }
