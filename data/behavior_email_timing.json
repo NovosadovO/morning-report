@@ -1,9 +1,4 @@
 {
-  "76925": {
-    "sender": "no-reply@mail.thedefiant.io",
-    "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
-    "seen_ts": "2026-08-03T21:36:35.010372+00:00"
-  },
   "76926": {
     "sender": "invoice+statements+acct_1raxgujk3urplkao@stripe.com",
     "sender_raw": "Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com>",
@@ -1498,5 +1493,10 @@
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
     "seen_ts": "2026-08-12T09:51:17.773469+00:00"
+  },
+  "77361": {
+    "sender": "newsletter@biedronka.pl",
+    "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
+    "seen_ts": "2026-08-12T10:03:33.033664+00:00"
   }
 }
