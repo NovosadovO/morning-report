@@ -2111,7 +2111,7 @@ def _get_email_ai_analysis_for_report(email_items_dict: dict, health_context: st
                 
                 if body:  # Тільки якщо є тіло листа
                     full_text = f"Від: {sender}\nТема: {subject}\n\n{body}"
-                    to_analyze.append((subject, sender, full_text))
+                    to_analyze.append((subject, sender, full_text, uid))
         
         mail.logout()
         
@@ -2121,7 +2121,9 @@ def _get_email_ai_analysis_for_report(email_items_dict: dict, health_context: st
         # Робимо AI аналіз для кожного листа
         analysis_lines = [f"📧 <b>AI АНАЛІЗ ПОШТИ</b>  ({len(to_analyze)} важливих листів)"]
         
-        for subject, sender, full_text in to_analyze:
+        _analyzed_uids = []
+        for subject, sender, full_text, _uid_a in to_analyze:
+            _analyzed_uids.append((_uid_a, subject, sender))
             # Захист дедлайну: якщо AI-часу лишилось замало (5+ листів × throttle
             # можуть з'їсти весь бюджет) — зупиняємось і показуємо решту листів
             # без AI-аналізу замість того щоб пропустити ВЕСЬ блок мовчки.
@@ -2154,10 +2156,14 @@ def _get_email_ai_analysis_for_report(email_items_dict: dict, health_context: st
                 analysis_lines.append(f"📋 {esc(subject[:60])}")
                 analysis_lines.append("📝 (AI-аналіз тимчасово недоступний)")
         
+        # Кнопки відповіді формуються з цього списку — щоб під AI-аналізом
+        # пошти були РОБОЧІ клавіші, а не просто текст.
+        _get_email_ai_analysis_for_report.last_uids = _analyzed_uids
         return "\n".join(analysis_lines)
     
     except Exception as e:
         print(f"[email_ai_report] error: {e}", flush=True)
+        _get_email_ai_analysis_for_report.last_uids = []
         return ""
 
 
@@ -10810,7 +10816,30 @@ def main():
     if _email_ai_full:
         _time_main.sleep(0.8)
         print(f"[email_ai] sending email AI ({len(_email_ai_full)} chars) as separate message...", flush=True)
-        send_telegram(_email_ai_full)
+        # Кнопки відповіді під AI-аналізом пошти: раніше цей блок йшов ЧИСТИМ
+        # текстом, тому Олег не мав жодної клавіші відповіді під аналізом.
+        _ai_uids = list(getattr(_get_email_ai_analysis_for_report, "last_uids", []) or [])
+        if _ai_uids:
+            _rows = []
+            for _u_btn, _s_btn, _snd_btn in _ai_uids[:5]:
+                _who = _snd_btn.split("<")[0].strip().strip('"')
+                if not _who or "@" in _who:      # немає імені — беремо логін
+                    _who = _snd_btn.split("@")[0].split("<")[-1].strip()
+                _who = _who[:18] or "лист"
+                _rows.append([{"text": f"🤖✍️ Відповісти: {_who}",
+                               "callback_data": f"email_reply_{_u_btn}"}])
+            _rows.append([{"text": "📖 Описати перший",
+                           "callback_data": f"email_describe_{_ai_uids[0][0]}"},
+                          {"text": "⭐ Важливий",
+                           "callback_data": f"email_star_{_ai_uids[0][0]}"}])
+            _ok_kb = _send_telegram_text_with_keyboard(
+                _email_ai_full + "\n\n👉 Тисни, щоб я підготував відповідь 👇",
+                {"inline_keyboard": _rows})
+            print(f"[email_ai] sent with {len(_rows)} button rows (ok={_ok_kb})", flush=True)
+            if not _ok_kb:
+                send_telegram(_email_ai_full)
+        else:
+            send_telegram(_email_ai_full)
         _time_main.sleep(0.6)
 
     # PHASE 3: Event Reminders — DISABLED (replaced by smart_notifications)
