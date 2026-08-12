@@ -1,9 +1,4 @@
 {
-  "76913": {
-    "sender": "no-reply@strava.com",
-    "sender_raw": "Strava <no-reply@strava.com>",
-    "seen_ts": "2026-08-03T17:19:29.383583+00:00"
-  },
   "76914": {
     "sender": "hello@news.paysend.com",
     "sender_raw": "\"Paysend\" <hello@news.paysend.com>",
@@ -1498,5 +1493,10 @@
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
     "seen_ts": "2026-08-12T07:28:11.432471+00:00"
+  },
+  "77353": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Startitup через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-12T08:00:56.918309+00:00"
   }
 }
