@@ -2941,6 +2941,12 @@
         "trigger": "event_soon",
         "note": null
       }
+    },
+    {
+      "ts": "2026-08-12T21:05:13.829710+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "gx_week_ee59e76987"
     }
   ]
 }
