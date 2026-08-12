@@ -1,9 +1,4 @@
 {
-  "76923": {
-    "sender": "newsletters-noreply@linkedin.com",
-    "sender_raw": "Dan Held через LinkedIn<newsletters-noreply@linkedin.com>",
-    "seen_ts": "2026-08-03T20:14:52.195802+00:00"
-  },
   "76924": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@email.hm.com",
     "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
     "seen_ts": "2026-08-12T08:25:50.079523+00:00"
+  },
+  "77358": {
+    "sender": "newsletter@genai.works",
+    "sender_raw": "Generative AI <newsletter@genai.works>",
+    "seen_ts": "2026-08-12T08:58:22.418770+00:00"
   }
 }
