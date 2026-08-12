@@ -1,9 +1,4 @@
 {
-  "76933": {
-    "sender": "news@flights.airbaltic.com",
-    "sender_raw": "airBaltic <news@flights.airbaltic.com>",
-    "seen_ts": "2026-08-04T06:02:47.219348+00:00"
-  },
   "76936": {
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "linas@substack.com",
     "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
     "seen_ts": "2026-08-12T10:32:18.520986+00:00"
+  },
+  "77365": {
+    "sender": "streetguide@sizeer.sk",
+    "sender_raw": "Sizeer Street guide <streetguide@sizeer.sk>",
+    "seen_ts": "2026-08-12T11:10:45.586734+00:00"
   }
 }
