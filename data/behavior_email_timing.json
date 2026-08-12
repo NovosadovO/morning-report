@@ -1,9 +1,4 @@
 {
-  "76912": {
-    "sender": "info@myasteria.com",
-    "sender_raw": "Asteria Network <info@myasteria.com>",
-    "seen_ts": "2026-08-03T17:05:11.833712+00:00"
-  },
   "76913": {
     "sender": "no-reply@strava.com",
     "sender_raw": "Strava <no-reply@strava.com>",
@@ -1498,5 +1493,10 @@
     "sender": "slovakia@delivery-marketing.bolt.eu",
     "sender_raw": "\"Bolt Food\" <slovakia@delivery-marketing.bolt.eu>",
     "seen_ts": "2026-08-12T07:07:43.976309+00:00"
+  },
+  "77352": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-08-12T07:28:11.432471+00:00"
   }
 }
