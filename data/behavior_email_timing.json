@@ -1,9 +1,4 @@
 {
-  "77025": {
-    "sender": "ben@startengine.com",
-    "sender_raw": "Ben at StartEngine <ben@startengine.com>",
-    "seen_ts": "2026-08-05T17:22:46.421425+00:00"
-  },
   "77026": {
     "sender": "hello@metamask.io",
     "sender_raw": "MetaMask Team <hello@metamask.io>",
@@ -1498,5 +1493,10 @@
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
     "seen_ts": "2026-08-13T16:53:22.093724+00:00"
+  },
+  "77445": {
+    "sender": "newsletter@mail.theblock.co",
+    "sender_raw": "The Block <newsletter@mail.theblock.co>",
+    "seen_ts": "2026-08-13T17:01:36.158995+00:00"
   }
 }
