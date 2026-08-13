@@ -1,9 +1,4 @@
 {
-  "77001": {
-    "sender": "newsletters-noreply@linkedin.com",
-    "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
-    "seen_ts": "2026-08-05T11:26:11.381947+00:00"
-  },
   "77003": {
     "sender": "info@notifikacie.allegro.sk",
     "sender_raw": "Allegro <info@notifikacie.allegro.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Cointelegraph через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-08-13T12:19:26.870601+00:00"
+  },
+  "77423": {
+    "sender": "newsletter@ticketportal.sk",
+    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
+    "seen_ts": "2026-08-13T12:31:43.768710+00:00"
   }
 }
