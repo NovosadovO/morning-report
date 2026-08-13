@@ -120,5 +120,19 @@
     "paid": true,
     "paid_at": "2026-08-10",
     "created": "2026-08-10"
+  },
+  "kooperativa_pois_ov_a|67_22|": {
+    "vendor": "KOOPERATIVA poisťovňa",
+    "amount": "67.22",
+    "currency": "EUR",
+    "invoice_no": "6641172176",
+    "due": "",
+    "uid": "77289",
+    "sender": "KOOPERATIVA poisťovňa, a.s. VIG<info@koop.sk>",
+    "subject": "Potvrdenie transakcie (6641172176) – Platobná brána",
+    "note": "Підтвердження успішної оплати страхового внеску.",
+    "paid": true,
+    "paid_at": "2026-08-13",
+    "created": "2026-08-13"
   }
 }
