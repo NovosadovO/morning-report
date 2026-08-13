@@ -1,9 +1,4 @@
 {
-  "76975": {
-    "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
-    "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
-    "seen_ts": "2026-08-04T18:50:14.842397+00:00"
-  },
   "76976": {
     "sender": "invoice+statements+acct_1raxgujk3urplkao@stripe.com",
     "sender_raw": "Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com>",
@@ -1498,5 +1493,10 @@
     "sender": "no-reply@substack.com",
     "sender_raw": "Substack <no-reply@substack.com>",
     "seen_ts": "2026-08-13T05:30:13.750511+00:00"
+  },
+  "77400": {
+    "sender": "newsletter@message.reserved.com",
+    "sender_raw": "Reserved <newsletter@message.reserved.com>",
+    "seen_ts": "2026-08-13T06:12:59.933915+00:00"
   }
 }
