@@ -1,9 +1,4 @@
 {
-  "76985": {
-    "sender": "slovakia@delivery-marketing.bolt.eu",
-    "sender_raw": "\"Bolt Food\" <slovakia@delivery-marketing.bolt.eu>",
-    "seen_ts": "2026-08-05T07:08:13.685984+00:00"
-  },
   "76986": {
     "sender": "info@notifikacie.allegro.sk",
     "sender_raw": "Allegro <info@notifikacie.allegro.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "googleplay-noreply@google.com",
     "sender_raw": "Google Play <googleplay-noreply@google.com>",
     "seen_ts": "2026-08-13T09:55:32.433801+00:00"
+  },
+  "77411": {
+    "sender": "newsletter@genai.works",
+    "sender_raw": "Generative AI <newsletter@genai.works>",
+    "seen_ts": "2026-08-13T10:09:48.211507+00:00"
   }
 }
