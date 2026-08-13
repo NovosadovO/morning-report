@@ -1,9 +1,4 @@
 {
-  "76982": {
-    "sender": "news@mail.lidlplus.sk",
-    "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
-    "seen_ts": "2026-08-05T05:47:02.020175+00:00"
-  },
   "76985": {
     "sender": "slovakia@delivery-marketing.bolt.eu",
     "sender_raw": "\"Bolt Food\" <slovakia@delivery-marketing.bolt.eu>",
@@ -1498,5 +1493,10 @@
     "sender": "info@myasteria.com",
     "sender_raw": "Asteria Network <info@myasteria.com>",
     "seen_ts": "2026-08-13T09:49:20.963850+00:00"
+  },
+  "77410": {
+    "sender": "googleplay-noreply@google.com",
+    "sender_raw": "Google Play <googleplay-noreply@google.com>",
+    "seen_ts": "2026-08-13T09:55:32.433801+00:00"
   }
 }
