@@ -227,5 +227,24 @@
     "last_out": "",
     "updated": "2026-08-13",
     "pinged_at": ""
+  },
+  "parking@bud.hu": {
+    "name": "Parkoló Üzemeltetés",
+    "relation": "сервіс",
+    "vip": false,
+    "topics": [
+      "Parking Super Flex",
+      "зміна часу заїзду"
+    ],
+    "my_promises": [],
+    "their_promises": [],
+    "open_question": "",
+    "next_step": "Написати Parkoló Üzemeltetés, щоб дізнатися про можливість зміни часу заїзду для Parking Super Flex.",
+    "ping_in_days": 0,
+    "last_in": "",
+    "last_subject": "",
+    "last_out": "2026-08-10",
+    "updated": "2026-08-13",
+    "pinged_at": ""
   }
 }
