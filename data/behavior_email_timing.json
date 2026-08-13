@@ -1,9 +1,4 @@
 {
-  "76998": {
-    "sender": "newsletter@investingmail.com",
-    "sender_raw": "Investing.com <newsletter@investingmail.com>",
-    "seen_ts": "2026-08-05T10:53:20.053615+00:00"
-  },
   "76999": {
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-08-13T12:15:12.597162+00:00"
+  },
+  "77420": {
+    "sender": "hello@team.emergent.sh",
+    "sender_raw": "Emergent <hello@team.emergent.sh>",
+    "seen_ts": "2026-08-13T12:17:19.245484+00:00"
   }
 }
