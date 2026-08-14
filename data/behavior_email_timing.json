@@ -1,9 +1,4 @@
 {
-  "77071": {
-    "sender": "events@blockworks.com",
-    "sender_raw": "Blockworks <events@blockworks.com>",
-    "seen_ts": "2026-08-06T13:59:08.109180+00:00"
-  },
   "77073": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "events@myasteria.com",
     "sender_raw": "Asteria Events <events@myasteria.com>",
     "seen_ts": "2026-08-14T15:08:30.448543+00:00"
+  },
+  "77492": {
+    "sender": "noreply@mailing.fifa.com",
+    "sender_raw": "FIFA <noreply@mailing.fifa.com>",
+    "seen_ts": "2026-08-14T15:22:45.803014+00:00"
   }
 }
