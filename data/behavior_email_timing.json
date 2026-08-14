@@ -1,9 +1,4 @@
 {
-  "77039": {
-    "sender": "card@kcard.kaufland.sk",
-    "sender_raw": "Kaufland Card XTRA <card@kcard.kaufland.sk>",
-    "seen_ts": "2026-08-06T05:40:42.302880+00:00"
-  },
   "77041": {
     "sender": "no-reply@ubian.sk",
     "sender_raw": "Ubian Eshop <no-reply@ubian.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "news@mail.lidlplus.sk",
     "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
     "seen_ts": "2026-08-14T06:06:58.220156+00:00"
+  },
+  "77459": {
+    "sender": "noreply@newsletter.austrian.com",
+    "sender_raw": "\"Austrian Airlines\" <noreply@newsletter.austrian.com>",
+    "seen_ts": "2026-08-14T06:09:04.413393+00:00"
   }
 }
