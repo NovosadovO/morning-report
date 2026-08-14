@@ -120,6 +120,42 @@ class _PersistentDraftStore:
 _DRAFT_STORE = _PersistentDraftStore()  # uid_str -> {to, subject, body} — persistent store для email/calendar drafts (переживає редеплой)
 _IMPORTANT_EMAILS_FILE = "data/important_emails.json"
 
+# ─── ПІДТВЕРДЖЕННЯ НЕЗВОРОТНИХ EMAIL/НАГАДУВАННЯ-КНОПОК ──────────────────────
+# Олег: «коли я натискаю клавішу відповіді, наприклад "не потрібно нагадувати"
+# чи "записувати" — бот питає чи точно, і тільки після підтвердження робить».
+# Дії calendar_watch/ai_buttons реєструються у confirm.py, а ці дві живуть тут,
+# бо їм потрібен _DRAFT_STORE і IMAP з bot.py.
+def _cfm_h_email_delete(uid_str):
+    from monitor import _imap_delete_email
+    return {"ok": bool(_imap_delete_email(uid_str))}
+
+
+def _cfm_h_calrem_skip(uid_str):
+    _DRAFT_STORE.pop(f"calrem_{uid_str}", None)
+    return {"ok": True}
+
+
+try:
+    import confirm as _cfm_reg
+    _cfm_reg.register(
+        "email_delete", _cfm_h_email_delete,
+        question=("Видалю лист {subject} з твоєї пошти. Це <b>назавжди</b> — "
+                  "повернути я його не зможу."),
+        yes="✅ Так, видали", no="↩️ Ні, залиш лист",
+        done="🗑 Лист видалено.",
+        revert="Скасувати вже не можу — лист видалено з пошти.",
+    )
+    _cfm_reg.register(
+        "calrem_skip", _cfm_h_calrem_skip,
+        question=("Не буду ставити нагадування {subject} — воно не потрапить "
+                  "ні в календар, ні в мої сповіщення."),
+        yes="✅ Так, не нагадуй", no="↩️ Ні, постав нагадування",
+        done="🚫 Нагадування не поставив.",
+        revert="Скажи мені текстом — поставлю нагадування вручну.",
+    )
+except Exception as _cfm_reg_err:
+    print(f"[confirm] register error: {_cfm_reg_err}")
+
 # Локальна тека для даних. Була використана у 3 місцях (alerts_sent_dedup,
 # daily_health) БЕЗ визначення — кожне таке місце падало з NameError,
 # зокрема парсер даних здоров'я з тексту Qwatch.
@@ -919,23 +955,24 @@ def handle_email_callback(callback_query):
 
     elif data.startswith("email_delete_"):
         uid_str = data[len("email_delete_"):]
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "❓ Перепитую..."})
         try:
-            import sys, os as _os
-            sys.path.insert(0, _os.path.dirname(__file__))
-            from monitor import _imap_delete_email
-            ok = _imap_delete_email(uid_str)
-            if ok:
-                api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "🗑 Лист видалено"})
+            import confirm as _cfm_d
+            _subj_d = ""
+            try:
+                import storage as _st_d
+                _bc = _st_d.load("email_body_cache.json") or {}
+                _subj_d = str((_bc.get(uid_str) or {}).get("subject") or "")
+            except Exception as _se:
+                print(f"email_delete subject lookup: {_se}")
+            q = _cfm_d.ask("email_delete", uid_str, _subj_d)
+            if q.get("ok"):
+                send_with_keyboard(chat_id, q["text"], q["keyboard"])
             else:
-                cb_notify(cb_id, chat_id, "⚠️ Не вдалось видалити лист.")
-            api("editMessageReplyMarkup", {
-                "chat_id": chat_id,
-                "message_id": msg_id,
-                "reply_markup": {"inline_keyboard": []}
-            })
+                cb_notify(cb_id, chat_id, "⚠️ Не вдалось запитати підтвердження.")
         except Exception as e:
-            print(f"email_delete error: {e}")
-            api("answerCallbackQuery", {"callback_query_id": cb_id, "text": f"Помилка: {e}"})
+            print(f"email_delete ask error: {e}")
+            cb_notify(cb_id, chat_id, f"⚠️ Помилка: {e}")
 
     elif data.startswith("email_keep_"):
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📥 Залишено в скриньці"})
@@ -1268,9 +1305,19 @@ def handle_email_callback(callback_query):
 
     elif data.startswith("calrem_skip_"):
         uid_str = data[len("calrem_skip_"):]
-        _DRAFT_STORE.pop(f"calrem_{uid_str}", None)
-        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Скасовано"})
-        api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "❓ Перепитую..."})
+        try:
+            import confirm as _cfm_s
+            _rem = _DRAFT_STORE.get(f"calrem_{uid_str}") if hasattr(_DRAFT_STORE, "get") else None
+            _subj_s = str((_rem or {}).get("subject") or "") if isinstance(_rem, dict) else ""
+            q = _cfm_s.ask("calrem_skip", uid_str, _subj_s)
+            if q.get("ok"):
+                send_with_keyboard(chat_id, q["text"], q["keyboard"])
+            else:
+                cb_notify(cb_id, chat_id, "⚠️ Не вдалось запитати підтвердження.")
+        except Exception as e:
+            print(f"calrem_skip ask error: {e}")
+            cb_notify(cb_id, chat_id, f"⚠️ Помилка: {e}")
 
     elif data.startswith("email_reply_"):
         # Генеруємо AI draft відповіді + кнопки [Надіслати] [Скасувати]
