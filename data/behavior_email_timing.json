@@ -1,9 +1,4 @@
 {
-  "77057": {
-    "sender": "info@emails.tesco.sk",
-    "sender_raw": "\"Tesco Clubcard\" <info@emails.tesco.sk>",
-    "seen_ts": "2026-08-06T11:41:36.154862+00:00"
-  },
   "77058": {
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "marketpulse@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Market Pulse\" <marketpulse@newsletters.coinmarketcap.com>",
     "seen_ts": "2026-08-14T09:36:02.119503+00:00"
+  },
+  "77474": {
+    "sender": "support@pixoryofficial.com",
+    "sender_raw": "\"Pixory\" <support@pixoryofficial.com>",
+    "seen_ts": "2026-08-14T09:46:50.734753+00:00"
   }
 }
