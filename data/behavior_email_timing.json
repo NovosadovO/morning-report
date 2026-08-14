@@ -1,9 +1,4 @@
 {
-  "77044": {
-    "sender": "hello@wexopay.com",
-    "sender_raw": "Wexo Cashback <hello@wexopay.com>",
-    "seen_ts": "2026-08-06T08:17:25.175416+00:00"
-  },
   "77045": {
     "sender": "noreply@eznamka.sk",
     "sender_raw": "<noreply@eznamka.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "notification@service.tiktok.com",
     "sender_raw": "TikTok <notification@service.tiktok.com>",
     "seen_ts": "2026-08-14T06:44:09.649508+00:00"
+  },
+  "77463": {
+    "sender": "discover@airbnb.com",
+    "sender_raw": "Airbnb <discover@airbnb.com>",
+    "seen_ts": "2026-08-14T07:47:08.142394+00:00"
   }
 }
