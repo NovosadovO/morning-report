@@ -1,9 +1,4 @@
 {
-  "77054": {
-    "sender": "newsletter@biedronka.pl",
-    "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
-    "seen_ts": "2026-08-06T10:54:49.726284+00:00"
-  },
   "77057": {
     "sender": "info@emails.tesco.sk",
     "sender_raw": "\"Tesco Clubcard\" <info@emails.tesco.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
     "seen_ts": "2026-08-14T09:33:56.851715+00:00"
+  },
+  "77473": {
+    "sender": "marketpulse@newsletters.coinmarketcap.com",
+    "sender_raw": "\"CMC Market Pulse\" <marketpulse@newsletters.coinmarketcap.com>",
+    "seen_ts": "2026-08-14T09:36:02.119503+00:00"
   }
 }
