@@ -52,5 +52,11 @@
     "subject": "",
     "answer": "yes",
     "ts": "2026-08-14T12:46:26.007443+00:00"
+  },
+  "email_delete|50_of_budget_reached|2026-08-14t12_46_32_25486": {
+    "action": "email_delete",
+    "subject": "50% of budget reached",
+    "answer": "no",
+    "ts": "2026-08-14T12:46:32.254905+00:00"
   }
 }
