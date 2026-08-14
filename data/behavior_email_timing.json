@@ -1,9 +1,4 @@
 {
-  "77051": {
-    "sender": "notification@service.tiktok.com",
-    "sender_raw": "TikTok <notification@service.tiktok.com>",
-    "seen_ts": "2026-08-06T09:49:21.554264+00:00"
-  },
   "77052": {
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
     "seen_ts": "2026-08-14T08:19:53.599528+00:00"
+  },
+  "77468": {
+    "sender": "info@nws.tesco.sk",
+    "sender_raw": "\"Tesco\" <info@nws.tesco.sk>",
+    "seen_ts": "2026-08-14T08:24:03.706983+00:00"
   }
 }
