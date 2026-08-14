@@ -1,9 +1,4 @@
 {
-  "77087": {
-    "sender": "email.campaign@sg.booking.com",
-    "sender_raw": "\"Booking.com\" <email.campaign@sg.booking.com>",
-    "seen_ts": "2026-08-06T18:51:06.932066+00:00"
-  },
   "77088": {
     "sender": "noreply@e.economist.com",
     "sender_raw": "\"Edward Carr at The Economist\" <noreply@e.economist.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@blockworks.com",
     "sender_raw": "The Breakdown <newsletter@blockworks.com>",
     "seen_ts": "2026-08-14T21:02:31.961465+00:00"
+  },
+  "77507": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-14T21:26:59.965147+00:00"
   }
 }
