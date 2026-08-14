@@ -1,9 +1,4 @@
 {
-  "77052": {
-    "sender": "newsletter@genai.works",
-    "sender_raw": "Generative AI <newsletter@genai.works>",
-    "seen_ts": "2026-08-06T09:55:32.521389+00:00"
-  },
   "77053": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "info@nws.tesco.sk",
     "sender_raw": "\"Tesco\" <info@nws.tesco.sk>",
     "seen_ts": "2026-08-14T08:24:03.706983+00:00"
+  },
+  "77471": {
+    "sender": "cloudplatform-noreply@google.com",
+    "sender_raw": "Google Cloud Billing Alerts <CloudPlatform-noreply@google.com>",
+    "seen_ts": "2026-08-14T09:25:19.960722+00:00"
   }
 }
