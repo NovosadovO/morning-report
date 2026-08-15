@@ -3217,6 +3217,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_7021c67354"
+    },
+    {
+      "ts": "2026-08-15T10:27:10.639864+00:00",
+      "category": "confirm",
+      "question": "gate_calrem_add: Постав нагадування",
+      "answer": "no"
     }
   ]
 }
