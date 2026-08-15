@@ -1,9 +1,4 @@
 {
-  "77095": {
-    "sender": "noreply@newsletter.austrian.com",
-    "sender_raw": "\"Austrian Airlines\" <noreply@newsletter.austrian.com>",
-    "seen_ts": "2026-08-07T06:08:29.338627+00:00"
-  },
   "77097": {
     "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
     "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply@discord.com",
     "sender_raw": "Discord <noreply@discord.com>",
     "seen_ts": "2026-08-15T08:32:12.517403+00:00"
+  },
+  "77514": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "AI NOW & BEYOND через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-15T09:02:54.867161+00:00"
   }
 }
