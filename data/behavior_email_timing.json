@@ -1,9 +1,4 @@
 {
-  "77100": {
-    "sender": "onboarding@resend.dev",
-    "sender_raw": "Morning Report <onboarding@resend.dev>",
-    "seen_ts": "2026-08-07T08:10:13.146461+00:00"
-  },
   "77103": {
     "sender": "googleaistudio-noreply@google.com",
     "sender_raw": "Google AI Studio <googleaistudio-noreply@google.com>",
@@ -1498,5 +1493,10 @@
     "sender": "googleaistudio-noreply@google.com",
     "sender_raw": "Google AI Studio <googleaistudio-noreply@google.com>",
     "seen_ts": "2026-08-15T09:21:16.319201+00:00"
+  },
+  "77518": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-08-15T10:14:06.335869+00:00"
   }
 }
