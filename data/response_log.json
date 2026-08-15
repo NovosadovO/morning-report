@@ -3205,6 +3205,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-08-15T10:26:27.886736+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Не нагадуй",
+      "answer": "yes"
     }
   ]
 }
