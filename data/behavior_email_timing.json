@@ -1,9 +1,4 @@
 {
-  "77141": {
-    "sender": "letenky@pelikan.sk",
-    "sender_raw": "letenky@pelikan.sk",
-    "seen_ts": "2026-08-07T19:59:28.457383+00:00"
-  },
   "77142": {
     "sender": "mailing@pelikan.sk",
     "sender_raw": "✈ Pelikan.sk <mailing@pelikan.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "googleaistudio-noreply@google.com",
     "sender_raw": "Google AI Studio <googleaistudio-noreply@google.com>",
     "seen_ts": "2026-08-16T11:18:07.474491+00:00"
+  },
+  "77554": {
+    "sender": "cru.notifier@3s-api.eu",
+    "sender_raw": "Ionian Cruises <cru.notifier@3s-api.eu>",
+    "seen_ts": "2026-08-16T12:13:01.917584+00:00"
   }
 }
