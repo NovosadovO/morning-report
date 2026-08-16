@@ -1,9 +1,4 @@
 {
-  "77144": {
-    "sender": "mailing@pelikan.sk",
-    "sender_raw": "✈ Pelikan.sk <mailing@pelikan.sk>",
-    "seen_ts": "2026-08-07T20:20:12.100661+00:00"
-  },
   "77145": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Securitize через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@team.emergent.sh",
     "sender_raw": "Emergent <hello@team.emergent.sh>",
     "seen_ts": "2026-08-16T12:35:27.766821+00:00"
+  },
+  "77559": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-08-16T14:15:11.147411+00:00"
   }
 }
