@@ -1,9 +1,4 @@
 {
-  "77132": {
-    "sender": "updates@okx.com",
-    "sender_raw": "OKX <updates@okx.com>",
-    "seen_ts": "2026-08-07T15:26:22.091300+00:00"
-  },
   "77133": {
     "sender": "email.campaign@sg.booking.com",
     "sender_raw": "\"Booking.com\" <email.campaign@sg.booking.com>",
@@ -1498,5 +1493,10 @@
     "sender": "offers@travel.wizznews.com",
     "sender_raw": "\"Wizz Air\" <offers@travel.wizznews.com>",
     "seen_ts": "2026-08-16T08:19:12.915255+00:00"
+  },
+  "77546": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Linas Beliūnas через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-16T09:07:52.647101+00:00"
   }
 }
