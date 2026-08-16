@@ -1,9 +1,4 @@
 {
-  "77124": {
-    "sender": "media@mail.saily.com",
-    "sender_raw": "\"Saily\" <media@mail.saily.com>",
-    "seen_ts": "2026-08-07T13:10:03.231598+00:00"
-  },
   "77126": {
     "sender": "groups-noreply@linkedin.com",
     "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply@discord.com",
     "sender_raw": "Discord <noreply@discord.com>",
     "seen_ts": "2026-08-16T07:50:29.300040+00:00"
+  },
+  "77540": {
+    "sender": "info@notifikacie.allegro.sk",
+    "sender_raw": "Allegro <info@notifikacie.allegro.sk>",
+    "seen_ts": "2026-08-16T08:04:46.885393+00:00"
   }
 }
