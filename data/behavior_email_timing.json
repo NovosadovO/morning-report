@@ -1,9 +1,4 @@
 {
-  "77133": {
-    "sender": "email.campaign@sg.booking.com",
-    "sender_raw": "\"Booking.com\" <email.campaign@sg.booking.com>",
-    "seen_ts": "2026-08-07T15:38:36.418858+00:00"
-  },
   "77135": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Linas Beliūnas через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-08-16T09:07:52.647101+00:00"
+  },
+  "77547": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-08-16T10:14:47.159894+00:00"
   }
 }
