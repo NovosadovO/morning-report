@@ -1,14 +1,4 @@
 {
-  "77156": {
-    "sender": "newsletter@pelikan.sk",
-    "sender_raw": "Pavol z Pelikána <newsletter@pelikan.sk>",
-    "seen_ts": "2026-08-08T04:47:19.137121+00:00"
-  },
-  "77158": {
-    "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
-    "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
-    "seen_ts": "2026-08-08T04:57:09.996756+00:00"
-  },
   "77159": {
     "sender": "letenky@pelikan.sk",
     "sender_raw": "letenky@pelikan.sk",
@@ -1503,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "TREND.sk через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-08-17T07:01:58.810875+00:00"
+  },
+  "77571": {
+    "sender": "noreply@discord.com",
+    "sender_raw": "Discord <noreply@discord.com>",
+    "seen_ts": "2026-08-17T07:16:14.031460+00:00"
   }
 }
