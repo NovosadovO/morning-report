@@ -1,9 +1,4 @@
 {
-  "77177": {
-    "sender": "newsletter@investingmail.com",
-    "sender_raw": "Investing.com <newsletter@investingmail.com>",
-    "seen_ts": "2026-08-08T14:23:39.203581+00:00"
-  },
   "77179": {
     "sender": "ben@startengine.com",
     "sender_raw": "Ben at StartEngine <ben@startengine.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-08-17T16:20:26.221756+00:00"
+  },
+  "77598": {
+    "sender": "newsletter@data.theblock.co",
+    "sender_raw": "The Block <newsletter@data.theblock.co>",
+    "seen_ts": "2026-08-17T16:20:28.742477+00:00"
   }
 }
