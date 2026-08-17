@@ -1,9 +1,4 @@
 {
-  "77179": {
-    "sender": "ben@startengine.com",
-    "sender_raw": "Ben at StartEngine <ben@startengine.com>",
-    "seen_ts": "2026-08-08T15:08:33.880460+00:00"
-  },
   "77181": {
     "sender": "email.campaign@sg.booking.com",
     "sender_raw": "\"Booking.com\" <email.campaign@sg.booking.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@data.theblock.co",
     "sender_raw": "The Block <newsletter@data.theblock.co>",
     "seen_ts": "2026-08-17T16:20:28.742477+00:00"
+  },
+  "77600": {
+    "sender": "pullandbear@news.pullandbear.com",
+    "sender_raw": "Pull&Bear <pullandbear@news.pullandbear.com>",
+    "seen_ts": "2026-08-17T16:22:35.717142+00:00"
   }
 }
