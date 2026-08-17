@@ -89,6 +89,15 @@ def extract_facts_from_conversation(user_message: str, ai_answer: str, gemini_ke
         '["факт 1", "факт 2"] АБО [] якщо нема нічого важливого.\n\n'
         f"{combined[:1500]}"
     )
+    # quiet-guard: режим сну — жодних AI-викликів (кредити)
+    try:
+        import quiet as _q_n
+        if _q_n.blocked("ai"):
+            print("[quiet] 🌙 сон: ai_notes AI-виклик пропущено", flush=True)
+            return []
+    except Exception:
+        pass
+
     req_body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"maxOutputTokens": 300, "temperature": 0.2, "thinkingConfig": {"thinkingBudget": 0}}

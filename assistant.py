@@ -108,6 +108,14 @@ def _gh(url, headers=None, method="GET", data=None, timeout=15):
         return json.loads(r.read())
 
 def _tg(method, data):
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _tg придушено", flush=True)
+            return False
+    except Exception:
+        pass
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/{method}"
     req = urllib.request.Request(url,
         data=json.dumps(data).encode(),

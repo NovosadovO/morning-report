@@ -51,6 +51,14 @@ def _now_local():
 
 def _send_telegram(text: str):
     """Відправляє повідомлення в Telegram."""
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _send_telegram придушено", flush=True)
+            return False
+    except Exception:
+        pass
     try:
         token = os.environ.get("TELEGRAM_TOKEN", "")
         if not token:

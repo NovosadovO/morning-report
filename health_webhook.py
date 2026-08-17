@@ -18,6 +18,14 @@ TELEGRAM_CHAT  = os.environ["TELEGRAM_CHAT_ID"]
 
 
 def send_telegram(text):
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: send_telegram придушено", flush=True)
+            return False
+    except Exception:
+        pass
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,
         "text": text[:4090],

@@ -215,6 +215,14 @@ def _already_sent(slot: str) -> bool:
 
 def _send_chunk(text: str):
     """Надсилає один шматок тексту (до 4090 символів). HTML parse_mode з fallback на plain text."""
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _send_chunk придушено", flush=True)
+            return False
+    except Exception:
+        pass
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT:
         print(f"[proactive] {text}")
         return

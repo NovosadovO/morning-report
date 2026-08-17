@@ -45,6 +45,14 @@ TOPIC_IMAGES = {
 
 def send_post(text, topic):
     """Надсилає пост з картинкою."""
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: send_post придушено", flush=True)
+            return False
+    except Exception:
+        pass
     img_url = TOPIC_IMAGES.get(topic)
     if img_url:
         url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto"

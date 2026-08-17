@@ -493,6 +493,14 @@ def block_health_score():
 
 def _send_photo(photo_bytes: bytes, caption: str = "") -> bool:
     """Відправляє PNG bytes як фото в Telegram (multipart)."""
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _send_photo придушено", flush=True)
+            return False
+    except Exception:
+        pass
     try:
         import urllib.request, io
         boundary = b"----TGBoundary"

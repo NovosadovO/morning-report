@@ -182,6 +182,14 @@ def rate_mark(state_file: str):
 # ─── TELEGRAM ────────────────────────────────────────────────────────────────
 
 def tg(method: str, body: dict, tag="ai_kit"):
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: tg придушено", flush=True)
+            return False
+    except Exception:
+        pass
     if not TELEGRAM_TOKEN:
         log(tag, "TELEGRAM_TOKEN відсутній")
         return None

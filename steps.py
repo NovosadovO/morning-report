@@ -600,6 +600,14 @@ def _make_run_history_chart(run_days_data: dict) -> bytes | None:
 # ─── СПОВІЩЕННЯ ──────────────────────────────────────────────────────────────
 
 def _tg_send_text(text: str):
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _tg_send_text придушено", flush=True)
+            return False
+    except Exception:
+        pass
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT:
         return
     payload = json.dumps({
@@ -617,6 +625,14 @@ def _tg_send_text(text: str):
         print(f"tg_send error: {e}")
 
 def _tg_send_photo(photo_bytes: bytes, caption: str = ""):
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _tg_send_photo придушено", flush=True)
+            return False
+    except Exception:
+        pass
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT or not photo_bytes:
         return
     boundary = "----FormBoundary7Ma4YWxkTrZu0gW"

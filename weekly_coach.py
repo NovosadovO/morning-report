@@ -23,6 +23,14 @@ def _now_local():
 
 def _tg(method, params=None, files=None):
     """Telegram API call."""
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _tg придушено", flush=True)
+            return False
+    except Exception:
+        pass
     base = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/{method}"
     if files:
         import urllib.parse

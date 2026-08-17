@@ -349,6 +349,14 @@ def _sanitize_html(text: str) -> str:
 
 def _send_telegram_chunk(text: str) -> bool:
     """Надсилає одне повідомлення з HTML parse_mode."""
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _send_telegram_chunk придушено", flush=True)
+            return False
+    except Exception:
+        pass
     import re as _re
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     # Автоматично фіксуємо голі & перед відправкою
@@ -462,6 +470,14 @@ def send_telegram(text: str) -> bool:
 
 def _send_telegram_photo(photo_url: str, caption: str) -> bool:
     # Шлемо як анімацію (GIF)
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _send_telegram_photo придушено", flush=True)
+            return False
+    except Exception:
+        pass
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendAnimation"
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,
@@ -481,6 +497,14 @@ def _send_telegram_photo(photo_url: str, caption: str) -> bool:
 
 def _send_photo_bytes(photo_bytes: bytes, caption: str = "") -> bool:
     """Відправляє PNG bytes як фото в Telegram."""
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _send_photo_bytes придушено", flush=True)
+            return False
+    except Exception:
+        pass
     try:
         import requests as _req_pb
         import io as _io_pb
@@ -1529,6 +1553,16 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     Повертає dict (parsed JSON) або кидає виняток.
     """
     import time as _t
+    # quiet-guard: у режимі сну (/сон) AI не викликаємо взагалі — нуль кредитів.
+    # Команди Олега (його потік) не блокуються: захоче звіт вночі — отримає.
+    try:
+        import quiet as _q_gem
+        if _q_gem.blocked("ai"):
+            raise RuntimeError(f"[{tag}] режим сну (/сон) — AI-виклик пропущено")
+    except RuntimeError:
+        raise
+    except Exception:
+        pass
     if _gem_billing_dead():
         raise RuntimeError(f"[{tag}] Gemini billing depleted (cooldown active) — skip call")
     # визначаємо порядок моделей: поточна (з url) перша, далі решта зі списку
@@ -2169,6 +2203,14 @@ def _get_email_ai_analysis_for_report(email_items_dict: dict, health_context: st
 
 def _send_telegram_gif_only():
     """Надсилає тільки GIF без тексту."""
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _send_telegram_gif_only придушено", flush=True)
+            return False
+    except Exception:
+        pass
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendAnimation"
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,
@@ -2185,6 +2227,14 @@ def _send_telegram_gif_only():
 
 def _send_telegram_text_with_keyboard(text: str, keyboard: dict):
     """Надсилає текстове повідомлення з inline keyboard."""
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _send_telegram_text_with_keyboard придушено", flush=True)
+            return False
+    except Exception:
+        pass
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,
@@ -10703,6 +10753,14 @@ def main():
 
     def _send_album(photos):
         """Надсилає кожне фото ОКРЕМИМ повідомленням — максимальний розмір на екрані."""
+        # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+        try:
+            import quiet as _q_g
+            if _q_g.blocked("msg"):
+                print("[quiet] 🌙 сон: _send_album придушено", flush=True)
+                return False
+        except Exception:
+            pass
         if not photos:
             return
         for i, p in enumerate(photos):

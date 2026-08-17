@@ -85,6 +85,14 @@ def _has_recorded_today(date_str):
 # ─── TELEGRAM ────────────────────────────────────────────────────────────────
 
 def _tg(method, params):
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _tg придушено", flush=True)
+            return False
+    except Exception:
+        pass
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/{method}"
     body = json.dumps(params).encode()
     req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})

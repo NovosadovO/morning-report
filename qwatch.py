@@ -621,6 +621,14 @@ def make_qwatch_chart(records: list, title: str = "QWatch") -> bytes | None:
 # ─── SEND ─────────────────────────────────────────────────────────────────────
 
 def _send(text):
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _send придушено", flush=True)
+            return False
+    except Exception:
+        pass
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     body = json.dumps({"chat_id": TELEGRAM_CHAT, "text": text, "parse_mode": "HTML"}).encode()
     req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
@@ -667,6 +675,14 @@ def send_confirmation(record: dict):
 
 def _send_photo(photo_bytes: bytes, caption: str = ""):
     """Відправляє фото з підписом в Telegram."""
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _send_photo придушено", flush=True)
+            return False
+    except Exception:
+        pass
     boundary = "----QWatchBoundary7Ma4"
 
     def field(name, value):

@@ -96,6 +96,14 @@ def _save_state(state):
 
 
 def _send(text):
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _send придушено", flush=True)
+            return False
+    except Exception:
+        pass
     if not TELEGRAM_TOKEN:
         return
     try:

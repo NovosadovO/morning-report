@@ -461,6 +461,14 @@ def run_reminders_watcher():
     TELEGRAM_CHAT  = os.environ.get("TELEGRAM_CHAT_ID","")
 
     def tg_send_with_buttons(text, reminder_id):
+        # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+        try:
+            import quiet as _q_g
+            if _q_g.blocked("msg"):
+                print("[quiet] 🌙 сон: tg_send_with_buttons придушено", flush=True)
+                return False
+        except Exception:
+            pass
         url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
         safe_id = reminder_id.replace("/","_").replace("@","_")[:50]
 
@@ -634,6 +642,14 @@ def run_astro_watcher():
     time.sleep(120)
 
     def _send_astro(label):
+        # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+        try:
+            import quiet as _q_g
+            if _q_g.blocked("msg"):
+                print("[quiet] 🌙 сон: _send_astro придушено", flush=True)
+                return False
+        except Exception:
+            pass
         import importlib, urllib.request, urllib.parse, json as _json, os as _os, tempfile
         import astro as _astro_mod, astro_chart as _chart_mod
         importlib.reload(_astro_mod)
@@ -1469,6 +1485,14 @@ def _run_evening_charts_watcher_DISABLED():
             print(f"[evening_charts] mark_sent error: {e}")
 
     def _send_photo(photo_bytes, caption):
+        # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+        try:
+            import quiet as _q_g
+            if _q_g.blocked("msg"):
+                print("[quiet] 🌙 сон: _send_photo придушено", flush=True)
+                return False
+        except Exception:
+            pass
         token = os.environ.get("TELEGRAM_TOKEN", "")
         chat  = os.environ.get("TELEGRAM_CHAT_ID", "")
         if not token or not chat:
@@ -1577,6 +1601,14 @@ def run_report_card_watcher():
 
     def _send_album(photos, caption):
         """Надсилає список байтів як Telegram media group."""
+        # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+        try:
+            import quiet as _q_g
+            if _q_g.blocked("msg"):
+                print("[quiet] 🌙 сон: _send_album придушено", flush=True)
+                return False
+        except Exception:
+            pass
         token = os.environ.get("TELEGRAM_TOKEN", "")
         chat  = os.environ.get("TELEGRAM_CHAT_ID", "")
         if not token or not chat:

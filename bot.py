@@ -310,6 +310,14 @@ from monitor import get_prices, get_weather, get_calendar, get_emails
 # ─── WRAPPER для проактивних повідомлень ─────────────────────────────────────
 def _send_telegram_text(text):
     """Wrapper — надсилає текст в основний чат без необхідності передавати chat_id"""
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: _send_telegram_text придушено", flush=True)
+            return False
+    except Exception:
+        pass
     send(TELEGRAM_CHAT, text)
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -648,6 +656,14 @@ def _maybe_suggest_action_bot(text: str):
 
 
 def send(chat_id, text):
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: send придушено", flush=True)
+            return False
+    except Exception:
+        pass
     api("sendMessage", {
         "chat_id": chat_id,
         "text": text[:4090],
@@ -665,6 +681,14 @@ def send_reply(chat_id, reply_to_msg_id, text):
 
 
 def send_photo(chat_id, photo_bytes, caption=None):
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: send_photo придушено", flush=True)
+            return False
+    except Exception:
+        pass
     try:
         import requests as _rq
         import io as _io
@@ -685,6 +709,14 @@ def send_photo(chat_id, photo_bytes, caption=None):
 
 
 def send_with_keyboard(chat_id, text, keyboard):
+    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 сон: send_with_keyboard придушено", flush=True)
+            return False
+    except Exception:
+        pass
     api("sendMessage", {
         "chat_id": chat_id,
         "text": text,
@@ -2672,7 +2704,12 @@ HELP_TEXT = """
 /звички — відмітити звички
 /статус — статус звичок (7 днів)
 /вага — динаміка ваги
-/сон — аналіз сну
+/аналіз_сну — аналіз сну (Apple Health)
+
+<b>🌙 Режим сну</b>
+/сон — тиша: без сповіщень, без нагадувань, без витрат AI
+/прокинувся — вийти з режиму сну раніше
+/режим_сну — чи зараз тиша і скільки ще
 /зд — health дані (7 днів)
 /зд т — тижневий health звіт
 /зд м — місячний health звіт
@@ -2748,6 +2785,12 @@ HELP_TEXT = """
 def handle_command(chat_id, text):
     # Mark user as active (для intelligent_listener)
     mark_user_active()
+    # Це потік самого Олега → режим сну (/сон) не глушить відповіді на команди.
+    try:
+        import quiet as _q_cmd
+        _q_cmd.mark_user_thread()
+    except Exception:
+        pass
     
     # Зберігаємо оригінальний текст для парсерів (QWatch тощо)
     original_text = text.strip()
@@ -3841,7 +3884,34 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
-    elif text in ["/сон", "сон"]:
+    # ─── РЕЖИМ СНУ ───────────────────────────────────────────────────────────
+    # Олег: «/сон → тиша без сповіщень і без витрат AI, з 04:00 сам вертайся».
+    # Аналіз сну переїхав на /аналіз_сну (раніше був на /сон).
+    elif text in ["/сон", "сон", "/добраніч", "добраніч", "/спати", "спати"]:
+        try:
+            import quiet as _q
+            r = _q.sleep_on()
+            send(chat_id, _q.sleep_text(r))
+        except Exception as e:
+            send(chat_id, f"⚠️ Не вдалось увімкнути режим сну: {e}")
+
+    elif text in ["/прокинувся", "прокинувся", "/підйом", "підйом",
+                  "/добрий_ранок", "/wake"]:
+        try:
+            import quiet as _q
+            r = _q.sleep_off()
+            send(chat_id, _q.wake_text(r))
+        except Exception as e:
+            send(chat_id, f"⚠️ Не вдалось вийти з режиму сну: {e}")
+
+    elif text in ["/режим_сну", "режим_сну", "/сон_статус"]:
+        try:
+            import quiet as _q
+            send(chat_id, _q.status_text())
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif text in ["/аналіз_сну", "аналіз_сну", "/сон_аналіз"]:
         try:
             from sleep import get_last_night_sleep, format_sleep_week_block
             last = get_last_night_sleep()
@@ -5582,6 +5652,12 @@ def _confirm_gate(cb, data: str) -> bool:
 def _route_callback(cb, confirmed: bool = False):
     data = cb.get("data", "")
     chat_id = cb["message"]["chat"]["id"]
+    # Натиск кнопки = дія Олега → режим сну не глушить реакцію на неї.
+    try:
+        import quiet as _q_cb
+        _q_cb.mark_user_thread()
+    except Exception:
+        pass
     if not confirmed and _confirm_gate(cb, data):
         return
     try:
