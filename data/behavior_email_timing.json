@@ -1,9 +1,4 @@
 {
-  "77235": {
-    "sender": "newsletter@biedronka.pl",
-    "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
-    "seen_ts": "2026-08-10T10:02:21.266979+00:00"
-  },
   "77237": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "zara@news.zara.com",
     "sender_raw": "Zara <zara@news.zara.com>",
     "seen_ts": "2026-08-18T18:11:13.930478+00:00"
+  },
+  "77654": {
+    "sender": "mailer-daemon@googlemail.com",
+    "sender_raw": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+    "seen_ts": "2026-08-18T18:17:28.915501+00:00"
   }
 }
