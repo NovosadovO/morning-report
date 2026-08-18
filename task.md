@@ -89,3 +89,27 @@ E2E підтверджено в логах: [CB] gx_note_ → force-reply без
 - AI-кредити: guard у `monitor._gem_post` (усі модулі ходять через нього) + `ai_notes.py` (єдиний, що бив у Gemini напряму).
 - Команди: `/сон` (=/добраніч,/спати), `/прокинувся` (=/підйом), `/режим_сну`. Аналіз сну переїхав з `/сон` на `/аналіз_сну`; /help оновлено.
 - Тести: `tests_quiet.py` — 40 асертів → fails: 0.
+
+## Режим сну — ФІКС ДІРОК (18.08)
+Олег: «ввів команду, а сповіщення далі приходили».
+Причини (дві реальні, обидві закриті):
+1. 8 фонових функцій шлють sendMessage НАПРЯМУ, минаючи покриті сендери:
+   monitor.check_smart_notifications / check_event_done / check_sleep_quality /
+   check_mood_evening, monitor_loop.run_astro_alert_watcher, proactive._do_request,
+   habits.api, meds.api, weekly_report.api → guard додано в кожну.
+2. Стан читався через storage (GitHub) з CACHE_TTL=300s → фонові чекери й
+   subprocess-и (report2/report_defi/report_social) до 5 хв не бачили /сон.
+   Тепер quiet._load читає /tmp/quiet_mode.json (спільний для всіх процесів
+   контейнера) + memcache 10 c; GitHub лишився лише для переживання редеплою.
+3. Плюс: /звіт та інші команди виконуються у фоновому потоці, куди
+   threading.local не наслідується → його ж звіт було б заглушено. Додано
+   вікно активності (`touch_user`, ACTIVE_MIN=5): Олег писав <5 хв тому → нічого
+   не глушимо. sleep_on() скидає це вікно в 0, щоб тиша починалась НЕГАЙНО.
+Тест: у tests_quiet.py додано anti-leak перевірку — обхід усіх *.py, будь-яка
+функція з api.telegram.org без quiet-guard = ❌ (whitelist лише реакції на дії
+Олега: bot.api/handle_command/_download_telegram_file/handle_health_zip,
+health_ocr.download_telegram_photo). fails: 0.
+Прод-перевірка (деплой fcf2d2f2): /сон → 6 хв тиші → у логах 0 надісланих
+повідомлень, натомість `[quiet] 🌙 сон: check_* пропущено` × багато і
+`режим сну — AI-виклик пропущено` для action_detect/proactive_ai.
+Станом на кінець: режим сну ВИКЛЮЧЕНО на прохання Олега (until: null).
