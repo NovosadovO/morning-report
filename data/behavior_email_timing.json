@@ -1,9 +1,4 @@
 {
-  "77204": {
-    "sender": "info@notifikacie.allegro.sk",
-    "sender_raw": "Allegro <info@notifikacie.allegro.sk>",
-    "seen_ts": "2026-08-09T08:25:01.346007+00:00"
-  },
   "77205": {
     "sender": "news@flights.airbaltic.com",
     "sender_raw": "\"SALE at airBaltic\" <news@flights.airbaltic.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
     "seen_ts": "2026-08-18T09:43:00.020775+00:00"
+  },
+  "77626": {
+    "sender": "info@thermalsirava.sk",
+    "sender_raw": "\"Thermal ŠÍRAVA SPA RESORT\" <info@thermalsirava.sk>",
+    "seen_ts": "2026-08-18T10:05:30.557697+00:00"
   }
 }
