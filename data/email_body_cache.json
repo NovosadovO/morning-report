@@ -1,4 +1,9 @@
 {
+  "77654": {
+    "subject": "Delivery Status Notification (Failure)",
+    "sender": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+    "body": "\n** Адресу не знайдено **\n\nВашого листа на адресу noreply@booking.com не доставлено, оскільки цю адресу не знайдено або на неї не приймається пошта.\n\n\n\nВідповідь віддаленого сервера:\n550 5.1.1 User Unknown\n"
+  },
   "77643": {
     "subject": "Ionian Cruises - Cancellation Cruise",
     "sender": "info@ionian-cruises.com",
@@ -28,10 +33,5 @@
     "subject": "🚦Vaša cesta cez Maďarsko začína správnou e-známkou",
     "sender": "AUTOVIGNET <info@autovignet.eu>",
     "body": "https://mailservice.autovignet.eu/srv/w/nk5XF05XONBAQ7qEuGVtzw/tFXj978rZzzx0r5Toks9hw/TVQvdC7Kp5GlKaaXuqY9qg\r\n\r\n"
-  },
-  "77307": {
-    "subject": "У вас є повідомлення від Avia",
-    "sender": "Avia через Booking.com <noreply@booking.com>",
-    "body": "Ви отримали повідомлення від помешкання Avia .ExternalClass { width: 100%; } .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100% !important; } body { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; } body { margin: 0; padding: 0; } table td { border-collapse: collapse; } u + .body { min-width: 420px; margin: 0; padding: 0; } p { margin: 0; padding: 0; margin-bottom: 0; } h1, h2, h3, h4, h5, h6 { color: black; line-height: 100%; } a, a:link { color: #0071C2; text-decoration: underline; } body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; } table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; } img { -ms-interpolation-mode: bicubic; } img { border: 0; outline: none; text-decoration: none; } .hidden { display: none !important; } * [lang=\"container-table\"] { max-width: 420px; } @media only screen and (max-width: 500px ) { .mobile-grid { margin: 0 auto !important; width: 100% !important; display: block !important; } .mobile-1-col { width: 100% !important; display: block !important; padding-left: 20px !important; padding-right: 20px !important; min-width: 210px !important; } } /*body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -webkit-font-smoothing: antialiased;} table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;} table{border-collapse: collapse !important;} body{font-family:BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; font-size: 14px; line-height: 20px;} div[style*=\"margin: 16px 0;\"] { margin:0 !important; } a {color: #0071C2;} p {margin: 0;} a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; } .font-sm {font-size: 12px; line-height: 18px;} .pulsepromo {background-color: #F5F5F5;} .pulsepromo__badge {width: 119px; height: 35px;} @media only screen and (min-width: 480px ) { body[body] .mobilecontent{display: table-cell !important; max-height: none !important;} .booking-details {text-align: right;} .message__legal {padding: 0 0 16px;} } @media only screen and (max-width: 479px ) { body[body] .m-hide{width:0;display:none!important;} body[body] .m-show{display:block!important;} body[body] .deviceWidth{width:95%!important;padding:0!important;} body[body] .m-100p {width:100%!important;padding:0!important;} body[body] .m-50p{width:49%!important;padding:0!important;} .header td {display: block;} .m-100p {width:90%!important;padding:0!important;} .m-centre {float: none !important; text-align: center !important;} .m-left {float: none !important; text-align: left !important; padding-top:2"
   }
 }
