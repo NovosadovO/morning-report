@@ -32,6 +32,7 @@ def _save(d):
 
 
 quiet._save = _save
+quiet._last_user_action["ts"] = 0.0
 
 NOW = datetime(2026, 8, 17, 23, 30)
 quiet._now = lambda: NOW
@@ -151,6 +152,74 @@ for cmd in ['"/сон"', '"/прокинувся"', '"/режим_сну"', '"/�
     ok(cmd in bsrc, f"команда {cmd} є в bot.py")
 ok("_q_cmd.mark_user_thread()" in bsrc, "handle_command позначає потік Олега")
 ok("_q_cb.mark_user_thread()" in bsrc, "_route_callback позначає потік Олега")
+
+
+# ── 12. дірки, через які сповіщення пролітали (фікс 18.08) ────────────────────
+DIRECT = {
+    "monitor.py": ["check_smart_notifications", "check_event_done",
+                   "check_sleep_quality", "check_mood_evening"],
+    "monitor_loop.py": ["run_astro_alert_watcher"],
+    "proactive.py": ["_do_request"],
+    "habits.py": ["api"],
+    "meds.py": ["api"],
+    "weekly_report.py": ["api"],
+}
+for f, funcs in DIRECT.items():
+    src = open(os.path.join(here, f), encoding="utf-8").read()
+    tree = ast.parse(src)
+    for fn in funcs:
+        segs = [ast.get_source_segment(src, n) or "" for n in ast.walk(tree)
+                if isinstance(n, ast.FunctionDef) and n.name == fn]
+        ok(bool(segs) and all("quiet-guard" in s for s in segs),
+           f"quiet-guard закриває пряму відправку {f}:{fn}()")
+
+# жодна функція з api.telegram.org не лишилась без guard (крім реакцій на Олега)
+ALLOWED = {("bot.py", "api"), ("bot.py", "handle_command"),
+           ("bot.py", "_download_telegram_file"), ("bot.py", "handle_health_zip"),
+           ("health_ocr.py", "download_telegram_photo")}
+import glob  # noqa: E402
+leaks = []
+for path in glob.glob(os.path.join(here, "*.py")):
+    f = os.path.basename(path)
+    if f.startswith("tests_"):
+        continue
+    src = open(path, encoding="utf-8").read()
+    if "api.telegram.org" not in src:
+        continue
+    for n in ast.walk(ast.parse(src)):
+        if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            seg = ast.get_source_segment(src, n) or ""
+            if "api.telegram.org" in seg and "quiet-guard" not in seg:
+                if (f, n.name) not in ALLOWED:
+                    leaks.append(f"{f}:{n.name}")
+ok(not leaks, f"немає незакритих відправників (знайдено: {leaks})")
+
+# ── 13. стан читається локально (щоб діяв у всіх процесах негайно) ───────────
+qsrc = open(os.path.join(here, "quiet.py"), encoding="utf-8").read()
+ok("LOCAL_FILE" in qsrc and "/tmp/quiet_mode.json" in qsrc,
+   "стан дублюється в локальний файл (спільний для subprocess-ів)")
+ok("invalidate_cache" in qsrc, "GitHub-кеш інвалідується (не 5-хвилинна дірка)")
+
+# ── 14. вікно активності Олега ──────────────────────────────────────────────
+import time as _tt
+quiet._now = lambda: datetime(2026, 8, 18, 23, 0)
+quiet._last_user_action["ts"] = 0.0
+quiet.sleep_on()
+quiet.clear_user_thread()
+ok(quiet.blocked("msg") is True, "після /сон фонове сповіщення блокується одразу")
+ok(quiet._last_user_action["ts"] == 0.0,
+   "/сон скидає вікно активності (інакше 5 хв пролітали сповіщення)")
+quiet.touch_user()
+ok(quiet.blocked("msg") is False,
+   "Олег написав → фоновий потік його команди (напр. /звіт) НЕ глушиться")
+quiet._last_user_action["ts"] = _tt.time() - (quiet.ACTIVE_MIN * 60 + 10)
+ok(quiet.blocked("msg") is True, "через 5 хв тишина знову діє")
+quiet._last_user_action["ts"] = 0.0
+quiet.sleep_off()
+
+bsrc2 = open(os.path.join(here, "bot.py"), encoding="utf-8").read()
+ok("_q_cmd.touch_user()" in bsrc2, "handle_command оновлює вікно активності")
+ok("_q_cb.touch_user()" in bsrc2, "_route_callback оновлює вікно активності")
 
 print(f"\nfails: {FAILS}")
 sys.exit(1 if FAILS else 0)

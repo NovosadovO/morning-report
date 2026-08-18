@@ -4928,6 +4928,14 @@ def check_event_done():
     """Кожні 5 хвилин: питає 'Виконано?' для ВСІХ подій що закінчились сьогодні
     і ще не отримали відповідь. Стійко до перезавантажень — dedup по event_id."""
     # Не питати вночі (00:00–07:00 місцевого)
+    # quiet-guard: режим сну (/сон) — фонові сповіщення не шлемо до 04:00
+    try:
+        import quiet as _q_g2
+        if _q_g2.blocked("msg"):
+            print("[quiet] 🌙 сон: check_event_done пропущено", flush=True)
+            return
+    except Exception:
+        pass
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     if now_local.hour < 7:
         return
@@ -6136,6 +6144,14 @@ def check_smart_notifications():
     ПРАВИЛО: спочатку читаємо КАЛЕНДАР — і тільки тоді вирішуємо що і коли писати.
     Якщо Олег спить — нічого не надсилаємо (крім pre_early о 04:30).
     """
+    # quiet-guard: режим сну (/сон) — фонові сповіщення не шлемо до 04:00
+    try:
+        import quiet as _q_g2
+        if _q_g2.blocked("msg"):
+            print("[quiet] 🌙 сон: check_smart_notifications пропущено", flush=True)
+            return
+    except Exception:
+        pass
     import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
     try:
@@ -6844,6 +6860,14 @@ def check_sleep_quality():
       Після нічної (о 07:00): як перенесли нічну?
       Вихідний (о 08:00): як спалось?
     """
+    # quiet-guard: режим сну (/сон) — фонові сповіщення не шлемо до 04:00
+    try:
+        import quiet as _q_g2
+        if _q_g2.blocked("msg"):
+            print("[quiet] 🌙 сон: check_sleep_quality пропущено", flush=True)
+            return
+    except Exception:
+        pass
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
@@ -7219,6 +7243,14 @@ def check_mood_evening():
     😊 О 21:30 питає про настрій дня — 1-5 зірок.
     Зберігає для тижневого аналізу + AI реакція.
     """
+    # quiet-guard: режим сну (/сон) — фонові сповіщення не шлемо до 04:00
+    try:
+        import quiet as _q_g2
+        if _q_g2.blocked("msg"):
+            print("[quiet] 🌙 сон: check_mood_evening пропущено", flush=True)
+            return
+    except Exception:
+        pass
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
@@ -12391,6 +12423,14 @@ def check_event_done():
     """Кожні 5 хвилин: питає 'Виконано?' для ВСІХ подій що закінчились сьогодні
     і ще не отримали відповідь. Стійко до перезавантажень — dedup по event_id."""
     # Не питати вночі (00:00–07:00 місцевого)
+    # quiet-guard: режим сну (/сон) — фонові сповіщення не шлемо до 04:00
+    try:
+        import quiet as _q_g2
+        if _q_g2.blocked("msg"):
+            print("[quiet] 🌙 сон: check_event_done пропущено", flush=True)
+            return
+    except Exception:
+        pass
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     if now_local.hour < 7:
         return
@@ -13599,6 +13639,14 @@ def check_smart_notifications():
     ПРАВИЛО: спочатку читаємо КАЛЕНДАР — і тільки тоді вирішуємо що і коли писати.
     Якщо Олег спить — нічого не надсилаємо (крім pre_early о 04:30).
     """
+    # quiet-guard: режим сну (/сон) — фонові сповіщення не шлемо до 04:00
+    try:
+        import quiet as _q_g2
+        if _q_g2.blocked("msg"):
+            print("[quiet] 🌙 сон: check_smart_notifications пропущено", flush=True)
+            return
+    except Exception:
+        pass
     import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
     try:
@@ -14307,6 +14355,14 @@ def check_sleep_quality():
       Після нічної (о 07:00): як перенесли нічну?
       Вихідний (о 08:00): як спалось?
     """
+    # quiet-guard: режим сну (/сон) — фонові сповіщення не шлемо до 04:00
+    try:
+        import quiet as _q_g2
+        if _q_g2.blocked("msg"):
+            print("[quiet] 🌙 сон: check_sleep_quality пропущено", flush=True)
+            return
+    except Exception:
+        pass
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")
@@ -14682,6 +14738,14 @@ def check_mood_evening():
     😊 О 21:30 питає про настрій дня — 1-5 зірок.
     Зберігає для тижневого аналізу + AI реакція.
     """
+    # quiet-guard: режим сну (/сон) — фонові сповіщення не шлемо до 04:00
+    try:
+        import quiet as _q_g2
+        if _q_g2.blocked("msg"):
+            print("[quiet] 🌙 сон: check_mood_evening пропущено", flush=True)
+            return
+    except Exception:
+        pass
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     h, m = now_local.hour, now_local.minute
     today = now_local.strftime("%Y-%m-%d")

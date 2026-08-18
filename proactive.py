@@ -228,6 +228,14 @@ def _send_chunk(text: str):
         return
 
     def _do_request(payload_bytes):
+        # quiet-guard: режим сну (/сон) — фонові сповіщення не шлемо до 04:00
+        try:
+            import quiet as _q_g2
+            if _q_g2.blocked("msg"):
+                print("[quiet] 🌙 сон: _do_request пропущено", flush=True)
+                return None
+        except Exception:
+            pass
         req = urllib.request.Request(
             f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage",
             data=payload_bytes,

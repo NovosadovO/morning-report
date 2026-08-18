@@ -758,6 +758,14 @@ def run_astro_alert_watcher():
     - з'явився новий аспект між транзитними планетами
     Надсилає короткий алерт у Telegram тільки якщо є щось нове.
     """
+    # quiet-guard: режим сну (/сон) — фонові сповіщення не шлемо до 04:00
+    try:
+        import quiet as _q_g2
+        if _q_g2.blocked("msg"):
+            print("[quiet] 🌙 сон: run_astro_alert_watcher пропущено", flush=True)
+            return
+    except Exception:
+        pass
     print("=== Starting astro alert watcher (every 30 min) ===", flush=True)
     import os as _os, sys as _sys, importlib, json as _json, urllib.request as _url
 

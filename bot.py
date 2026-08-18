@@ -2789,6 +2789,7 @@ def handle_command(chat_id, text):
     try:
         import quiet as _q_cmd
         _q_cmd.mark_user_thread()
+        _q_cmd.touch_user()
     except Exception:
         pass
     
@@ -5656,6 +5657,7 @@ def _route_callback(cb, confirmed: bool = False):
     try:
         import quiet as _q_cb
         _q_cb.mark_user_thread()
+        _q_cb.touch_user()
     except Exception:
         pass
     if not confirmed and _confirm_gate(cb, data):

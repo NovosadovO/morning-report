@@ -27,11 +27,16 @@ from datetime import datetime, timedelta
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 STATE_FILE = "quiet_mode.json"
+LOCAL_FILE = "/tmp/quiet_mode.json"   # першоджерело: спільний для всіх процесів контейнера
 WAKE_HOUR = 4          # о 04:00 бот сам вертається до роботи
 TAG = "quiet"
+_CACHE_TTL = 10        # с — щоб кожен send не бив по файлу/GitHub
 
 # Потік, що обслуговує запит Олега → для нього режим сну не діє
 _local = threading.local()
+
+# memcache стану: (дані, час)
+_mem = {"data": None, "ts": 0.0}
 
 # Скільки повідомлень/AI-викликів придушили за цю ніч (для звіту при пробудженні)
 _muted_counter = {"msg": 0, "ai": 0}
@@ -50,22 +55,60 @@ def _now():
 
 
 def _load():
+    """Читаємо ЛОКАЛЬНИЙ файл першим — він спільний для bot.py і для
+    subprocess-ів (report2/report_defi/report_social), тому режим сну діє
+    миттєво в усіх процесах. GitHub — тільки якщо локального ще немає
+    (перший запуск після редеплою), бо його кеш живе 5 хв і давав дірку,
+    через яку фонові сповіщення пролітали після /сон."""
+    import json as _json
+    import time as _t
+    if _mem["data"] is not None and (_t.time() - _mem["ts"]) < _CACHE_TTL:
+        return dict(_mem["data"])
+    data = None
     try:
-        import storage
-        return storage.load(STATE_FILE, default={}) or {}
-    except Exception as e:
-        _log(f"load error: {e}")
-        return {}
+        with open(LOCAL_FILE) as f:
+            data = _json.load(f)
+    except Exception:
+        data = None
+    if data is None:
+        try:
+            import storage
+            storage.invalidate_cache(STATE_FILE)
+            data = storage.load(STATE_FILE, default={}) or {}
+            try:
+                with open(LOCAL_FILE, "w") as f:
+                    _json.dump(data, f)
+            except Exception:
+                pass
+        except Exception as e:
+            _log(f"load error: {e}")
+            data = {}
+    _mem["data"] = dict(data)
+    _mem["ts"] = _t.time()
+    return dict(data)
 
 
 def _save(data):
+    """Локально — синхронно (щоб діяло негайно), у GitHub — для переживання
+    редеплою."""
+    import json as _json
+    import time as _t
+    _mem["data"] = dict(data)
+    _mem["ts"] = _t.time()
+    ok_local = False
+    try:
+        with open(LOCAL_FILE, "w") as f:
+            _json.dump(data, f)
+        ok_local = True
+    except Exception as e:
+        _log(f"local save error: {e}")
     try:
         import storage
         storage.save(STATE_FILE, data)
-        return True
+        storage.invalidate_cache(STATE_FILE)
     except Exception as e:
-        _log(f"save error: {e}")
-        return False
+        _log(f"github save error: {e}")
+    return ok_local
 
 
 # ─── ПОЗНАЧКА «ЦЕ ПОТІК ОЛЕГА» ───────────────────────────────────────────────
@@ -81,6 +124,25 @@ def clear_user_thread():
 
 def is_user_thread() -> bool:
     return bool(getattr(_local, "user", False))
+
+
+# Багато команд Олега (/звіт, /рахунки...) виконуються у фоновому потоці, а
+# threading.local туди не наслідується — і його ж звіт було б заглушено.
+# Тому додаємо вікно: якщо Олег писав/тиснув менш ніж ACTIVE_MIN хв тому,
+# бот вважає, що він не спить, і не глушить нічого.
+ACTIVE_MIN = 5
+_last_user_action = {"ts": 0.0}
+
+
+def touch_user():
+    """Викликається на КОЖНЕ повідомлення/кнопку від Олега."""
+    import time as _t
+    _last_user_action["ts"] = _t.time()
+
+
+def user_recently_active() -> bool:
+    import time as _t
+    return (_t.time() - _last_user_action["ts"]) < ACTIVE_MIN * 60
 
 
 # ─── СТАН ────────────────────────────────────────────────────────────────────
@@ -120,7 +182,7 @@ def is_quiet() -> bool:
 
 def blocked(kind: str = "msg") -> bool:
     """Головна перевірка для викликів у коді. kind: msg | ai."""
-    if is_user_thread():
+    if is_user_thread() or user_recently_active():
         return False
     if not is_quiet():
         return False
@@ -163,6 +225,9 @@ def sleep_on(wake_hour: int = None) -> dict:
     u = _next_wake(n)
     _muted_counter["msg"] = 0
     _muted_counter["ai"] = 0
+    # /сон сам приходить від Олега → вікно активності щойно оновилось і
+    # 5 хв пропускало б сповіщення. Скидаємо: тиша має початись НЕГАЙНО.
+    _last_user_action["ts"] = 0.0
     ok = _save({"until": u.isoformat(), "since": n.isoformat(),
                 "wake_hour": WAKE_HOUR})
     hrs = (u - n).total_seconds() / 3600.0
