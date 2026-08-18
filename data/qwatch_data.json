@@ -888,5 +888,18 @@
     "spo2": null,
     "source": "qwatch",
     "saved_at": "2026-08-16 21:52"
+  },
+  "2026-08-18": {
+    "date": "2026-08-18",
+    "steps": 7642,
+    "sleep_total_min": 650,
+    "hr_avg": 65,
+    "calories": 347,
+    "hrv": 36,
+    "weight_kg": 83.0,
+    "height_cm": 175,
+    "spo2": 97,
+    "source": "qwatch",
+    "saved_at": "2026-08-18 22:08"
   }
 }
