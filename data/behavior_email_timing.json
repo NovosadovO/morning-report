@@ -1,9 +1,4 @@
 {
-  "77201": {
-    "sender": "news@mail.lidlplus.sk",
-    "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
-    "seen_ts": "2026-08-09T05:47:51.001619+00:00"
-  },
   "77202": {
     "sender": "info@message.cropp.com",
     "sender_raw": "\"Cropp\" <info@message.cropp.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Jake ₿artolo через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-08-18T08:02:50.923281+00:00"
+  },
+  "77620": {
+    "sender": "info@mail.uefa.com",
+    "sender_raw": "\"UEFA Champions League\" <info@mail.uefa.com>",
+    "seen_ts": "2026-08-18T08:13:04.683271+00:00"
   }
 }
