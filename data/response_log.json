@@ -3463,6 +3463,12 @@
       "category": "confirm",
       "question": "email_delete: ",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-19T11:01:36.329668+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_b2988103af"
     }
   ]
 }
