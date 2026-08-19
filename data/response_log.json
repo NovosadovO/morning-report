@@ -3487,6 +3487,12 @@
       "category": "confirm",
       "question": "email_delete: Digitálna transformácia nezačína novým systémom. Začína dátami",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-19T11:02:15.844398+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_780dae5c8a"
     }
   ]
 }
