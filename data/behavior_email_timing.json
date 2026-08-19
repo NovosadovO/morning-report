@@ -1,9 +1,4 @@
 {
-  "77285": {
-    "sender": "noreply@email-service.bybit.com",
-    "sender_raw": "Bybit <noreply@email-service.bybit.com>",
-    "seen_ts": "2026-08-11T02:32:57.832713+00:00"
-  },
   "77287": {
     "sender": "savings@mp1.tripadvisor.com",
     "sender_raw": "\"Tripadvisor\" <savings@mp1.tripadvisor.com>",
@@ -1498,5 +1493,10 @@
     "sender": "researchteam@blockworks.com",
     "sender_raw": "0xResearch <researchteam@blockworks.com>",
     "seen_ts": "2026-08-19T14:03:23.620909+00:00"
+  },
+  "77699": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-19T14:23:47.473079+00:00"
   }
 }
