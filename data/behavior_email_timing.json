@@ -1,9 +1,4 @@
 {
-  "77295": {
-    "sender": "newsletter@email.hm.com",
-    "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
-    "seen_ts": "2026-08-11T08:14:17.655479+00:00"
-  },
   "77297": {
     "sender": "groupupdates@facebookmail.com",
     "sender_raw": "\"Facebook Groups\" <groupupdates@facebookmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-08-19T16:47:37.825693+00:00"
+  },
+  "77707": {
+    "sender": "whaletales@mail.beehiiv.com",
+    "sender_raw": "WhaleTales <whaletales@mail.beehiiv.com>",
+    "seen_ts": "2026-08-19T17:04:43.771324+00:00"
   }
 }
