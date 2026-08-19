@@ -3451,6 +3451,12 @@
       "category": "confirm",
       "question": "email_delete: ",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-19T11:01:26.531037+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_b0d8a77d08"
     }
   ]
 }
