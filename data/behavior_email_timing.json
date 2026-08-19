@@ -1,9 +1,4 @@
 {
-  "77282": {
-    "sender": "no-reply@transak.com",
-    "sender_raw": "Trust Wallet via Transak <no-reply@transak.com>",
-    "seen_ts": "2026-08-11T02:28:39.067392+00:00"
-  },
   "77284": {
     "sender": "noreply-accounts@google.com",
     "sender_raw": "Google <noreply-accounts@google.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@news.sorare.com",
     "sender_raw": "\"Sorare\" <hello@news.sorare.com>",
     "seen_ts": "2026-08-19T13:18:28.014827+00:00"
+  },
+  "77696": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-19T13:34:50.557724+00:00"
   }
 }
