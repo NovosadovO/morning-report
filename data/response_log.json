@@ -3481,6 +3481,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_68c26b3e66"
+    },
+    {
+      "ts": "2026-08-19T11:02:14.878737+00:00",
+      "category": "confirm",
+      "question": "email_delete: Digitálna transformácia nezačína novým systémom. Začína dátami",
+      "answer": "yes"
     }
   ]
 }
