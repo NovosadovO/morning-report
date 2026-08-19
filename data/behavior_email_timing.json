@@ -1,9 +1,4 @@
 {
-  "77279": {
-    "sender": "discover@airbnb.com",
-    "sender_raw": "Airbnb <discover@airbnb.com>",
-    "seen_ts": "2026-08-11T02:26:30.750970+00:00"
-  },
   "77282": {
     "sender": "no-reply@transak.com",
     "sender_raw": "Trust Wallet via Transak <no-reply@transak.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@team.emergent.sh",
     "sender_raw": "Emergent <hello@team.emergent.sh>",
     "seen_ts": "2026-08-19T12:54:03.925378+00:00"
+  },
+  "77695": {
+    "sender": "hello@news.sorare.com",
+    "sender_raw": "\"Sorare\" <hello@news.sorare.com>",
+    "seen_ts": "2026-08-19T13:18:28.014827+00:00"
   }
 }
