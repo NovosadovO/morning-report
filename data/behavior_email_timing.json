@@ -1,9 +1,4 @@
 {
-  "77311": {
-    "sender": "info@notifikacie.allegro.sk",
-    "sender_raw": "Allegro <info@notifikacie.allegro.sk>",
-    "seen_ts": "2026-08-11T12:08:10.842487+00:00"
-  },
   "77312": {
     "sender": "newsletter@mail.dailybones.com",
     "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-08-19T21:26:07.349589+00:00"
+  },
+  "77715": {
+    "sender": "no-reply@mail.thedefiant.io",
+    "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
+    "seen_ts": "2026-08-19T22:07:01.795554+00:00"
   }
 }
