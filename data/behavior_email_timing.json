@@ -1,9 +1,4 @@
 {
-  "77275": {
-    "sender": "newsletter@blockworks.com",
-    "sender_raw": "The Breakdown <newsletter@blockworks.com>",
-    "seen_ts": "2026-08-10T22:01:50.650082+00:00"
-  },
   "77276": {
     "sender": "noreply@booking.com",
     "sender_raw": "\"Booking.com\" <noreply@booking.com>",
@@ -1498,5 +1493,10 @@
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
     "seen_ts": "2026-08-19T11:16:01.674599+00:00"
+  },
+  "77689": {
+    "sender": "newsletter@myclaw.ai",
+    "sender_raw": "MyClaw Newsletter <newsletter@myclaw.ai>",
+    "seen_ts": "2026-08-19T11:24:15.822404+00:00"
   }
 }
