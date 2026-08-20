@@ -88,5 +88,53 @@
     "note": "confirm",
     "ts": "2026-08-20T21:25:48.352919+00:00",
     "norm": "переглянути стратегію ondo avax"
+  },
+  "k:cal_skip|veronika_wedding": {
+    "kind": "cal_skip",
+    "key": "veronika_wedding",
+    "title": "Відповісти на лист від Вероні щодо весілля",
+    "note": "manual 20.08",
+    "ts": "2026-08-20T19:35:17.848618+00:00"
+  },
+  "t:baa5bb8b7b48": {
+    "kind": "cal_skip",
+    "key": "veronika_wedding",
+    "title": "Відповісти на лист від Вероні щодо весілля",
+    "note": "manual 20.08",
+    "ts": "2026-08-20T19:35:17.848618+00:00",
+    "norm": "відповісти на лист від вероні щодо весілля"
+  },
+  "w:ea1755667b45": {
+    "kind": "cal_skip",
+    "key": "veronika_wedding",
+    "title": "Відповісти на лист від Вероні щодо весілля",
+    "note": "manual 20.08",
+    "ts": "2026-08-20T19:35:17.848618+00:00",
+    "norm": "вероні",
+    "keyword": "вероні"
+  },
+  "k:cal_skip|kooperativa_ins": {
+    "kind": "cal_skip",
+    "key": "kooperativa_ins",
+    "title": "Оплатити страховку Kooperativa",
+    "note": "manual 20.08",
+    "ts": "2026-08-20T19:35:17.848618+00:00"
+  },
+  "t:cbb1fd1656ff": {
+    "kind": "cal_skip",
+    "key": "kooperativa_ins",
+    "title": "Оплатити страховку Kooperativa",
+    "note": "manual 20.08",
+    "ts": "2026-08-20T19:35:17.848618+00:00",
+    "norm": "оплатити страховку kooperativa"
+  },
+  "w:8e37bd19da3b": {
+    "kind": "cal_skip",
+    "key": "kooperativa_ins",
+    "title": "Оплатити страховку Kooperativa",
+    "note": "manual 20.08",
+    "ts": "2026-08-20T19:35:17.848618+00:00",
+    "norm": "страховку kooperativa",
+    "keyword": "страховку kooperativa"
   }
 }
