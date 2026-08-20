@@ -1,4 +1,9 @@
 {
+  "msg_vip_email|2026-08-20t22_18_46_015711": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Сподіваюся, нічна зміна проходить спокійно, і ти маєш",
+    "ts": "2026-08-20T22:18:46.015711"
+  },
   "action_detect|2026-08-20t22_15_33_074043": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від The Economist є інформаційним бюлетенем з основними моментами останнього випуску, датований 20 серпня 2026 року. Він містить статт",
     "ts": "2026-08-20T20:46:45.130296"
-  },
-  "action_detect|2026-08-20t20_29_47_947522": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення інформує Олега про його поточний відпочи",
-    "ts": "2026-08-20T20:29:47.947522"
   }
 }
