@@ -3589,6 +3589,12 @@
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-20T16:36:56.660457+00:00",
+      "category": "confirm",
+      "question": "email_delete: ",
+      "answer": "yes"
     }
   ]
 }
