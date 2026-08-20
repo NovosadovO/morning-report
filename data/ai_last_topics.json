@@ -1,4 +1,9 @@
 {
+  "personal_ai|2026-08-21t01_00_44_459244": {
+    "topic": "personal_ai",
+    "gist": "Зараз вечір четверга, 20 серпня 2026 року. Олег на нічній зміні, яка триває з 18:00 до 06:00, тому він, ймовірно, зараз на роботі. Його відпустка на острові Кор",
+    "ts": "2026-08-21T01:00:44.459244"
+  },
   "email_ai_item|2026-08-21t00_54_25_645916": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від Railway повідомляє про збій сервера, що впливає на сервіс 'vigilant-bravery' та 'resourceful-alignment'. Очікуване вирішення п",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Провести ментальний перегляд криптостратегії\", \"action_date\": \"2024-08-20\", \"action_time\": \"22:00\", \"action_summary",
     "ts": "2026-08-20T22:01:53.782251"
-  },
-  "action_detect|2026-08-20t22_01_53_755535": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страховку Kooperativa\", \"action_date\": \"2024-08-15\", \"action_time\": null, \"action_summary\": \"Оплатити стра",
-    "ts": "2026-08-20T22:01:53.755535"
   }
 }
