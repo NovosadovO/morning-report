@@ -1,4 +1,29 @@
 {
+  "action_detect|2026-08-21t01_07_12_444431": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний транзит та інформацію про",
+    "ts": "2026-08-21T01:07:12.444431"
+  },
+  "action_detect|2026-08-21t01_04_32_808810": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
+    "ts": "2026-08-21T01:04:32.808810"
+  },
+  "action_detect|2026-08-21t01_03_01_386915": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-21T01:03:01.386915"
+  },
+  "msg_deep_analysis|2026-08-21t01_02_55_101615": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋 Наразі ніч, і ти заслужено відновлюєш сили після насиченого тижня, адже повноцінний сон — це фундамент для всіх твоїх досягнень, чи то у крипті,",
+    "ts": "2026-08-21T01:02:55.101615"
+  },
+  "action_detect|2026-08-21t01_02_32_249741": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити лист від Philips\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити лист від Phil",
+    "ts": "2026-08-21T01:02:32.249741"
+  },
   "msg_vip_email|2026-08-21t01_02_25_253305": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 📧  Цієї ночі, поки ти відновлюєш сили, є кілька важливих моментів, на які варто звернути увагу. Відпочинок зараз критично важливий для твого відно",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити лист від Pelika",
     "ts": "2026-08-20T22:10:52.851487"
-  },
-  "msg_vip_email|2026-08-20t22_10_44_439565": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 📧  Сподіваюся, нічна зміна проходить спокійно і продуктивно, адже бачу, що ти зараз фізично на роботі. Це важливий час для фокусу, тому моє повідо",
-    "ts": "2026-08-20T22:10:44.439565"
-  },
-  "proactive_ai|2026-08-20t22_09_06_202513": {
-    "topic": "proactive_ai",
-    "gist": "Привіт, Олеже! Бачу, ти вдома і настрій у тебе добрий. Гарного тобі відпочинку та солодкої ночі.  Завтра у тебе вихідний, тож можеш гарненько виспатися перед ти",
-    "ts": "2026-08-20T22:09:06.202513"
-  },
-  "action_detect|2026-08-20t22_02_16_782635": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Стрижка\", \"action_date\": \"2026-08-10\", \"action_time\": \"10:00\", \"action_summary\": \"Олегу потрібно зробити нову зачіс",
-    "ts": "2026-08-20T22:02:16.782635"
-  },
-  "action_detect|2026-08-20t22_02_16_632076": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-20T22:02:16.632076"
-  },
-  "action_detect|2026-08-20t22_02_05_785617": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути непрочитане повідомлення\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути одн",
-    "ts": "2026-08-20T22:02:05.785617"
   }
 }
