@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-20t19_26_37_919526": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від About You інформує про розпродаж до кінця сезону. Він містить рекламні матеріали та заклики до дії, щоб переглянути пропозиції на ",
+    "ts": "2026-08-20T19:26:37.919526"
+  },
   "bills|2026-08-20t19_17_56_345024": {
     "topic": "bills",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
     "ts": "2026-08-20T16:57:08.701291"
-  },
-  "action_detect|2026-08-20t16_57_08_576018": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-20T16:57:08.576018"
   }
 }
