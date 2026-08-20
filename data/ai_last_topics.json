@@ -1,4 +1,9 @@
 {
+  "personal_ai|2026-08-20t23_00_46_406114": {
+    "topic": "personal_ai",
+    "gist": "Щоб підтримати енергію та концентрацію під час нічної зміни, обов'язково пий достатньо води, адже гідратація є ключовою для бадьорості. Також, щоб залишатися ув",
+    "ts": "2026-08-20T23:00:46.406114"
+  },
   "action_detect|2026-08-20t22_38_07_127336": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-20T20:50:30.845853"
-  },
-  "action_detect|2026-08-20t20_50_20_241143": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страховку Kooperativa\", \"action_date\": \"2026-08-15\", \"action_time\": null, \"action_summary\": \"Оплатити стра",
-    "ts": "2026-08-20T20:50:20.241143"
   }
 }
