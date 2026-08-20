@@ -1,4 +1,59 @@
 {
+  "proactive_ai|2026-08-20t22_09_06_202513": {
+    "topic": "proactive_ai",
+    "gist": "Привіт, Олеже! Бачу, ти вдома і настрій у тебе добрий. Гарного тобі відпочинку та солодкої ночі.  Завтра у тебе вихідний, тож можеш гарненько виспатися перед ти",
+    "ts": "2026-08-20T22:09:06.202513"
+  },
+  "action_detect|2026-08-20t22_02_16_782635": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Стрижка\", \"action_date\": \"2026-08-10\", \"action_time\": \"10:00\", \"action_summary\": \"Олегу потрібно зробити нову зачіс",
+    "ts": "2026-08-20T22:02:16.782635"
+  },
+  "action_detect|2026-08-20t22_02_16_632076": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-20T22:02:16.632076"
+  },
+  "action_detect|2026-08-20t22_02_05_785617": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути непрочитане повідомлення\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути одн",
+    "ts": "2026-08-20T22:02:05.785617"
+  },
+  "action_detect|2026-08-20t22_01_53_782251": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Провести ментальний перегляд криптостратегії\", \"action_date\": \"2024-08-20\", \"action_time\": \"22:00\", \"action_summary",
+    "ts": "2026-08-20T22:01:53.782251"
+  },
+  "action_detect|2026-08-20t22_01_53_755535": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страховку Kooperativa\", \"action_date\": \"2024-08-15\", \"action_time\": null, \"action_summary\": \"Оплатити стра",
+    "ts": "2026-08-20T22:01:53.755535"
+  },
+  "action_detect|2026-08-20t22_01_53_583616": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-20T22:01:53.583616"
+  },
+  "briefing|2026-08-20t22_01_47_727453": {
+    "topic": "briefing",
+    "gist": "🧭 **ВЕКТОР ДНЯ**  Олеже, ти зараз на нічній зміні, і це чудовий час для стратегічного планування та аналізу, адже навколо тиша дозволяє зосередитися. Найважливі",
+    "ts": "2026-08-20T22:01:47.727453"
+  },
+  "themes_ai|2026-08-20t22_01_33_731156": {
+    "topic": "themes_ai",
+    "gist": "Олеже, проаналізуємо твої поточні показники.  🏃 БІГ — Остання пробіжка була 18 днів тому, що свідчить про значний спад активності. Для відновлення форми та підт",
+    "ts": "2026-08-20T22:01:33.731156"
+  },
+  "astro_ai|2026-08-20t22_01_29_855580": {
+    "topic": "astro_ai",
+    "gist": "Привіт, Олеже! Чудово, що ти дбаєш про себе і свій сон, 10.8 годин – це дуже солідний показник, особливо перед нічною зміною. Зараз, коли ти в розпалі роботи, д",
+    "ts": "2026-08-20T22:01:29.855580"
+  },
+  "email_ai_item|2026-08-20t22_01_10_423110": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є автоматичним підписом від Олега Новосадова, керівника лінії в Minebea Slovakia s.r.o. Він містить контактні дані компанії та",
+    "ts": "2026-08-20T22:01:10.423110"
+  },
   "personal_ai|2026-08-20t22_00_46_661293": {
     "topic": "personal_ai",
     "gist": "Продовжуй рухатися, щоб досягти цілі у 10 000 кроків – це допоможе зберегти енергію та концентрацію. Для підвищення пильності та безпеки, регулярно пий воду та,",
@@ -243,60 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-20T20:04:41.069097"
-  },
-  "action_detect|2026-08-20t20_04_25_876994": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити листи Pelikan та Ionian Cruises\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірит",
-    "ts": "2026-08-20T20:04:25.876994"
-  },
-  "msg_event_soon|2026-08-20t20_04_16_198061": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ⏰ Бачу, ти вже на нічній зміні, як і домовлялись, і зараз 20:04, тож ми вже пройшли майже чверть шляху.  Крипто-ринки сьогодні порадували: XRP зро",
-    "ts": "2026-08-20T20:04:16.198061"
-  },
-  "action_detect|2026-08-20t20_04_03_634107": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення інформує Олега про стан крипторинку та й",
-    "ts": "2026-08-20T20:04:03.634107"
-  },
-  "msg_deep_analysis|2026-08-20t20_03_55_530677": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋 Напружений вечір у тебе, бачу, що ти зараз на нічній зміні, і це, мабуть, вимагає особливої концентрації. Але навіть у такі моменти важливо трим",
-    "ts": "2026-08-20T20:03:55.530677"
-  },
-  "action_detect|2026-08-20t20_02_33_317535": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-20T20:02:33.317535"
-  },
-  "action_detect|2026-08-20t20_02_22_466133": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зафіксувати витрати\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Спробуй хоча б коротко зафіксува",
-    "ts": "2026-08-20T20:02:22.466133"
-  },
-  "action_detect|2026-08-20t20_02_06_647862": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є аналізом поточної ситуації Олега, його ці",
-    "ts": "2026-08-20T20:02:06.647862"
-  },
-  "action_detect|2026-08-20t20_02_06_445320": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Відмітити, чи прийнято ліки Armol",
-    "ts": "2026-08-20T20:02:06.445320"
-  },
-  "action_detect|2026-08-20t20_02_06_202936": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-20T20:02:06.202936"
-  },
-  "briefing|2026-08-20t20_02_00_202719": {
-    "topic": "briefing",
-    "gist": "Олеже, добрий вечір! Бачу, нічна зміна вже в розпалі. Сфокусуємось на тому, що ти можеш контролювати, перебуваючи на заводі, та підготуємо ґрунт для проривів.  ",
-    "ts": "2026-08-20T20:02:00.202719"
-  },
-  "themes_ai|2026-08-20t20_01_47_211426": {
-    "topic": "themes_ai",
-    "gist": "Привіт, Олеже! Бачу, ти вже в роботі на нічній зміні. Давай подивимось, що там у тебе відбувається.  💰 ФІНАНСИ Наразі не маю свіжих даних про твої фінанси, тому",
-    "ts": "2026-08-20T20:01:47.211426"
   }
 }
