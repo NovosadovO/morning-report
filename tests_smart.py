@@ -67,12 +67,14 @@ ok(gr.has_tools(b), "tools додані")
 ok(json.loads(b.decode())["tools"] == [{"google_search": {}}], "саме google_search")
 ok(gr.inject(b, "crypto_ai") == b, "повторний inject нічого не дублює")
 ok(not gr.has_tools(gr.strip(b)), "strip знімає tools (аварійний відкат)")
-b2 = gr.inject(body("Аналіз ринку", maxOutputTokens=500,
+b2 = gr.inject(body("Аналіз ринку", maxOutputTokens=500, temperature=0.9,
                     thinkingConfig={"thinkingBudget": 0}), "crypto_ai")
-ok("thinkingConfig" not in json.loads(b2.decode()).get("generationConfig", {}),
-   "нульовий thinkingBudget знято (він ріже пошук)")
-ok(json.loads(b2.decode())["generationConfig"]["maxOutputTokens"] == 500,
-   "решта конфігу не зачеплена")
+_gc2 = json.loads(b2.decode())["generationConfig"]
+ok(_gc2.get("thinkingConfig", {}).get("thinkingBudget") == gr.THINK_BUDGET,
+   "нульовий thinkingBudget замінено на обмежений (0 ріже пошук)")
+ok(_gc2["maxOutputTokens"] >= 3000,
+   "низьку стелю виводу піднято (інакше думання з'їдає весь текст)")
+ok(_gc2.get("temperature") == 0.9, "решта конфігу не зачеплена")
 
 print("\n1d) Чистка маркерів цитат і джерела")
 ok(gr.clean_text("TVL зріс [cite: 1, 3] удвічі.") == "TVL зріс удвічі.",
@@ -96,6 +98,22 @@ ok("_gr2.strip(body_bytes)" in seg, "є аварійний відкат при 4
 ok("clean_text" in seg, "маркери цитат чистяться у відповіді")
 ok(seg.find("ai_brain") < seg.find("_gr.inject"),
    "grounding після ai_brain (пам'ять не втрачається)")
+
+print("\n1b) Пошук не має з'їдати вивід (обрізані повідомлення)")
+_b = json.dumps({"contents": [{"parts": [{"text": "Що нового по BTC цього тижня?"}]}],
+                 "generationConfig": {"temperature": 0.9, "maxOutputTokens": 1400,
+                                      "thinkingConfig": {"thinkingBudget": 0}}}).encode()
+_o = json.loads(gr.inject(_b, "MSG_DEEP_ANALYSIS").decode())
+_gc = _o.get("generationConfig") or {}
+ok(_o.get("tools") == [{"google_search": {}}], "пошук увімкнено")
+ok(_gc.get("thinkingConfig", {}).get("thinkingBudget") == gr.THINK_BUDGET,
+   f"думання обмежене ({_gc.get('thinkingConfig')})")
+ok(_gc.get("maxOutputTokens") >= 3000,
+   f"стеля виводу піднята ({_gc.get('maxOutputTokens')})")
+_b2 = json.dumps({"contents": [{"parts": [{"text": "Що нового по BTC?"}]}],
+                  "generationConfig": {"maxOutputTokens": 8000}}).encode()
+ok(json.loads(gr.inject(_b2, "MSG_DEEP_ANALYSIS").decode())["generationConfig"]["maxOutputTokens"] == 8000,
+   "більшу стелю не занижуємо")
 
 # ── 2. РЕЖИМ ТИШІ (ТІЛЬКИ ВРУЧНУ) ────────────────────────────────────────────
 print("\n2) Тиша тільки після /тиша, авто-вихід о 04:00")

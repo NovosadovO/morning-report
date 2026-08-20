@@ -54,6 +54,12 @@ _JSON_HINTS = (
 )
 
 
+# Бюджет «думання» при пошуку. 0 — ріже пошук, без ліміту — з'їдає весь вивід.
+THINK_BUDGET = 512
+# Стеля виводу при пошуку: думання + текст мають поміститись разом.
+MIN_OUT_TOKENS = 3000
+
+
 def is_json_prompt(prompt: str) -> bool:
     p = str(prompt or "").lower()
     return any(h in p for h in _JSON_HINTS)
@@ -80,12 +86,19 @@ def inject(body_bytes: bytes, tag: str) -> bytes:
         if not wanted(tag, prompt):
             return body_bytes
         b["tools"] = [{"google_search": {}}]
-        # З інструментами модель має право «подумати» — нульовий thinkingBudget
-        # інколи ріже пошук, тому знімаємо саме його (решту конфігу не чіпаємо).
+        # ВАЖЛИВО (перевірено живим викликом 20.08): якщо просто зняти
+        # thinkingBudget:0, модель витрачає на «думання» ~1750 токенів із
+        # maxOutputTokens=1400 — і на текст лишається 180 токенів (156 симв.).
+        # Саме через це проактивні повідомлення приходили обрізаними.
+        # Тому: думання дозволяємо, але ОБМЕЖЕНЕ, і піднімаємо стелю виводу.
         gc = b.get("generationConfig") or {}
-        if isinstance(gc.get("thinkingConfig"), dict) and gc["thinkingConfig"].get("thinkingBudget") == 0:
-            gc.pop("thinkingConfig", None)
-            b["generationConfig"] = gc
+        gc["thinkingConfig"] = {"thinkingBudget": THINK_BUDGET}
+        try:
+            cur = int(gc.get("maxOutputTokens") or 0)
+        except Exception:
+            cur = 0
+        gc["maxOutputTokens"] = max(cur, MIN_OUT_TOKENS)
+        b["generationConfig"] = gc
         return json.dumps(b).encode()
     except Exception:
         return body_bytes
