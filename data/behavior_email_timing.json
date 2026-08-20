@@ -1,9 +1,4 @@
 {
-  "77367": {
-    "sender": "news@msk.marionnaud.com",
-    "sender_raw": "\"Marionnaud\" <news@msk.marionnaud.com>",
-    "seen_ts": "2026-08-12T11:31:47.402525+00:00"
-  },
   "77368": {
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-08-20T21:40:18.039546+00:00"
+  },
+  "77772": {
+    "sender": "newsletter@blockworks.com",
+    "sender_raw": "The Breakdown <newsletter@blockworks.com>",
+    "seen_ts": "2026-08-20T22:00:51.955965+00:00"
   }
 }
