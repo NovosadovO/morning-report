@@ -1,4 +1,14 @@
 {
+  "bills|2026-08-20t19_17_56_345024": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-08-20T19:17:56.345024"
+  },
+  "action_detect|2026-08-20t19_05_38_319135": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс до Корфу\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь зробити",
+    "ts": "2026-08-20T19:05:38.319135"
+  },
   "msg_idle_timeout|2026-08-20t19_05_28_751673": {
     "topic": "MSG_IDLE_TIMEOUT",
     "gist": "Привіт Олеже! 🚶  Бачу, ти вже на нічній зміні, як і домовлялись. Пам'ятаю, що ти переносиш біг на суботу, щоб краще відновитись. Хочу нагадати про онлайн-реєстр",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-20T16:57:08.576018"
-  },
-  "msg_health_pulse|2026-08-20t16_56_58_805998": {
-    "topic": "MSG_HEALTH_PULSE",
-    "gist": "Привіт Олеже! 🩺  Бачу, що ти зараз готуєшся до зміни – це важливий період, і я тут, щоб підтримати тебе. З твоїми 8,855 кроками на цей момент дня ти вже молодец",
-    "ts": "2026-08-20T16:56:58.805998"
-  },
-  "action_detect|2026-08-20t16_56_46_520079": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-20T16:56:46.520079"
   }
 }
