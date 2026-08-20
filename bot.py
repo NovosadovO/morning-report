@@ -2710,6 +2710,9 @@ HELP_TEXT = """
 /сон — тиша: без сповіщень, без нагадувань, без витрат AI
 /прокинувся — вийти з режиму сну раніше
 /режим_сну — чи зараз тиша і скільки ще
+
+<b>🧠 AI</b>
+/мозок — що AI про тебе пам'ятає (йде в кожен його запит)
 /зд — health дані (7 днів)
 /зд т — тижневий health звіт
 /зд м — місячний health звіт
@@ -2792,6 +2795,16 @@ def handle_command(chat_id, text):
         _q_cmd.touch_user()
     except Exception:
         pass
+    # ЄДИНИЙ МОЗОК: запам'ятовуємо кожне ЗВИЧАЙНЕ (не командне) повідомлення
+    # Олега як його відповідь — щоб AI посилався на його слова потім.
+    try:
+        _t_raw = (text or "").strip()
+        if _t_raw and not _t_raw.startswith("/") and len(_t_raw) >= 3:
+            import ai_brain as _brain_cmd
+            _brain_cmd.remember_answer("вільне повідомлення", _t_raw,
+                                       topic="чат", source="text")
+    except Exception as _be_cmd:
+        print(f"[ai_brain] remember error: {_be_cmd}", flush=True)
     
     # Зберігаємо оригінальний текст для парсерів (QWatch тощо)
     original_text = text.strip()
@@ -3909,6 +3922,13 @@ def handle_command(chat_id, text):
         try:
             import quiet as _q
             send(chat_id, _q.status_text())
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка: {e}")
+
+    elif text in ["/мозок", "мозок", "/пам_ять", "/память_аі_повна"]:
+        try:
+            import ai_brain as _brain_rep
+            send(chat_id, _brain_rep.report())
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 

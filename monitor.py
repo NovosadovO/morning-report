@@ -1565,6 +1565,26 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
         pass
     if _gem_billing_dead():
         raise RuntimeError(f"[{tag}] Gemini billing depleted (cooldown active) — skip call")
+
+    # ─── ЄДИНИЙ МОЗОК: пам'ять + свобода в КОЖЕН AI-виклик ───────────────────
+    # Раніше feedback_ctx підмішувався лише у 3 промпти з ~24 — тому AI не
+    # пам'ятав відповідей Олега і повторював відхилене. Інжект тут накриває всі
+    # модулі одразу (усі ходять через _gem_post). Ідемпотентно (маркер AIBRAIN).
+    try:
+        import json as _js_b
+        import ai_brain as _brain
+        _b = _js_b.loads(body_bytes.decode())
+        _pp = _b["contents"][0]["parts"][0]["text"]
+        if _brain.MARK not in _pp:
+            _newp = _brain.wrap(_pp, freedom=not _brain.is_json_prompt(_pp))
+            if _newp != _pp:
+                _b["contents"][0]["parts"][0]["text"] = _newp
+                body_bytes = _js_b.dumps(_b).encode()
+                print(f"[ai_brain] +{len(_newp) - len(_pp)} симв. пам'яті/свободи → {tag}",
+                      flush=True)
+    except Exception as _be:
+        print(f"[ai_brain] inject skipped for {tag}: {_be}", flush=True)
+
     # визначаємо порядок моделей: поточна (з url) перша, далі решта зі списку
     import re as _re0
     _cur_m = None
@@ -1598,7 +1618,16 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
                         _sd_ok.record_gemini_result(True)
                     except Exception:
                         pass
-                    return json.loads(r.read())
+                    _resp = json.loads(r.read())
+                    # мозок: запам'ятовуємо про що AI щойно написав → наступні
+                    # промпти бачать це і не повторюють ту саму думку.
+                    try:
+                        import ai_brain as _brain_n
+                        _out = _resp["candidates"][0]["content"]["parts"][0]["text"]
+                        _brain_n.note_topic(tag, _out)
+                    except Exception:
+                        pass
+                    return _resp
             except urllib.error.HTTPError as e:
                 last_exc = e
                 if e.code == 429:
