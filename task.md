@@ -217,3 +217,12 @@ context_ask_ai, weekly/monthly_coach, defi_digest). Раніше AI знав л�
 monitor._send_telegram_text_with_keyboard; flush у run_assistant_watcher.
 Команди: /тиша, /покажи_відкладене.
 Тест: tests_smart.py (fails: 0).
+
+## Тиша тільки вручну (20.08)
+Олег: «Режим тиші має працювати ТІЛЬКИ коли я введу /тиша, і бот о 04:00 сам відновиться».
+- autoquiet.py: викинуто автоматичне визначення сну за графіком змін. state()/sleeping() тепер = quiet.is_quiet() (ручний режим, until = найближчі 04:00, авто-пробудження при спливанні дедлайну). should_hold() під час тиші відкладає ВСЕ (навіть термінове) — тиша це тиша, нічого не губиться.
+- Порядок у відправниках змінено: autoquiet-черга ПЕРЕД quiet-guard (ai_kit.tg, monitor._send_telegram_chunk, monitor._send_telegram_text_with_keyboard) — раніше guard викидав повідомлення, тепер воно чекає до 04:00.
+- bot.py: /тиша (+/розумна_тиша) = quiet.sleep_on() з карткою «РЕЖИМ ТИШІ УВІМКНЕНО … до 04:00». Статус переїхав на /тиша_статус (+/quiet_status). /help оновлено.
+- Флаш черги: monitor_loop.run_assistant_watcher (not sleeping() and pending() -> flush()).
+- tests_smart.py розділ 2 переписано під ручний режим: fails: 0. Лінт 3.11 bad: 0, AST ok. Решта тестів 0.
+- Коміт b5af9e1479d, деплой 29edc532-8c4c-4834-b403-b81e19425044 SUCCESS (Traceback/NameError/ImportError = 0). /тиша_статус у проді → HTTP 200, у логах "Message: /тиша_статус" без помилок.
