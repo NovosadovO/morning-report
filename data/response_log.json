@@ -3771,6 +3771,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_e79d50deae"
+    },
+    {
+      "ts": "2026-08-20T21:03:01.990594+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти Unstoppable Domains",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-08-21"
+      }
     }
   ]
 }
