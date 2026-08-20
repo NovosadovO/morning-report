@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-20t23_50_51_922102": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Надіслати дані з QWatch Pro\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Відкрити додаток QWatch ",
+    "ts": "2026-08-20T23:50:51.922102"
+  },
   "email_ai_item|2026-08-20t23_40_16_095304": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Forbes через LinkedIn є інформаційною розсилкою, що містить статтю про Швейцарію як банківський хаб для мільярдерів, а так",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
     "ts": "2026-08-20T21:24:50.686840"
-  },
-  "proactive_actions|2026-08-20t21_02_59_137029": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reply\",     \"title\": \"Відповісти Unstoppable Domains\",     \"date\": \"2026-08-21\",     \"time\": \"\",     \"message\": \"Олеже, бачу, що у по",
-    "ts": "2026-08-20T21:02:59.137029"
   }
 }
