@@ -1166,6 +1166,13 @@ def run_assistant_watcher():
                 mod.check_important_emails_followup()
             if hasattr(mod, 'check_email_deadlines'):
                 mod.check_email_deadlines()
+            # Реєстр справ: страховка/підписка/бронювання закінчується ≤14 днів
+            # → попереджаємо ЗАРАНІ, з датами (lifecycle.py, дедуп усередині).
+            try:
+                import lifecycle as _lc_w
+                _lc_w.check_expiring()
+            except Exception as _e_lcw:
+                print(f"[lifecycle] watcher error: {_e_lcw}", flush=True)
             if hasattr(mod, 'check_motivation_7am'):
                 mod.check_motivation_7am()
         except Exception as e:

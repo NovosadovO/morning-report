@@ -92,6 +92,39 @@ def _kkey(kind: str, key: str) -> str:
     return f"k:{kind}|{key}"
 
 
+def _wkey(norm: str) -> str:
+    return "w:" + hashlib.md5(norm.encode("utf-8")).hexdigest()[:12]
+
+
+def _kw_ok(norm: str) -> bool:
+    """Keyword глушить ВСЕ, що його містить, — тому вимоги суворіші за назву:
+    мінімум 4 символи і не службове слово. Інакше одне «так» вимкнуло б усе."""
+    return _title_ok(norm) and len(norm) >= 4
+
+
+def _stem(word: str) -> str:
+    """Українські відмінки: «страховка» / «страховку» / «страховки» мають дати
+    один корінь, інакше keyword не спрацював би на реальному тексті."""
+    w = str(word or "")
+    return w[:-2] if len(w) >= 7 else (w[:-1] if len(w) >= 5 else w)
+
+
+def _kw_hit(kw: str, title_norm: str) -> bool:
+    """Чи стосується заглушене ключове слово цієї назви. Кожне слово keyword-а
+    мусить знайтись у назві (за коренем) — тоді «страховка авто» ловить
+    «Оплатити страховку авто», але не «Страховка квартири»."""
+    if not kw or not title_norm:
+        return False
+    t_words = title_norm.split()
+    for kwd in kw.split():
+        st = _stem(kwd)
+        if not st:
+            continue
+        if not any(w.startswith(st) for w in t_words):
+            return False
+    return True
+
+
 def _load(force: bool = False) -> dict:
     import time
     if not force and _CACHE["data"] is not None and (time.time() - _CACHE["ts"]) < _CACHE_TTL:
@@ -113,10 +146,13 @@ def _put(store_key: str, rec: dict):
 
 # ─── ЗАГЛУШИТИ ───────────────────────────────────────────────────────────────
 
-def mute(kind: str, key=None, title=None, note: str = "") -> dict:
-    """Записує «більше не нагадувати». Повертає, що саме заглушено."""
+def mute(kind: str, key=None, title=None, note: str = "", keyword=None) -> dict:
+    """Записує «більше не нагадувати». Повертає, що саме заглушено.
+
+    keyword — ширший матч: заглушує все, у назві чого це слово трапляється
+    («Корфу» → жодних нагадувань про поїздку, хоч би як вони називались)."""
     kind = str(kind or "other").strip("_") or "other"
-    out = {"by_key": None, "by_title": None}
+    out = {"by_key": None, "by_title": None, "by_keyword": None}
     rec = {"kind": kind, "key": str(key or ""), "title": str(title or "")[:120],
            "note": note[:120], "ts": K.now().isoformat()}
     if key not in (None, ""):
@@ -128,7 +164,11 @@ def mute(kind: str, key=None, title=None, note: str = "") -> dict:
         tk = _tkey(n)
         _put(tk, dict(rec, norm=n))
         out["by_title"] = n
-    if out["by_key"] or out["by_title"]:
+    kw = _norm(keyword)
+    if _kw_ok(kw):
+        _put(_wkey(kw), dict(rec, norm=kw, keyword=kw))
+        out["by_keyword"] = kw
+    if out["by_key"] or out["by_title"] or out["by_keyword"]:
         K.log(TAG, f"🚫 більше не нагадую: {kind} / {str(title or key)[:40]}")
     else:
         K.log(TAG, f"⚠️ нічого не заглушив — ні ключа, ні назви ({kind})")
@@ -152,6 +192,13 @@ def is_muted(kind=None, key=None, title=None) -> bool:
         n = _norm(title)
         if _title_ok(n) and _tkey(n) in data:
             return True
+        # keyword-и: заглушено все, що містить це слово
+        if n:
+            for sk, rec in data.items():
+                if not sk.startswith("w:"):
+                    continue
+                if _kw_hit(str((rec or {}).get("keyword") or ""), n):
+                    return True
         return False
     except Exception as e:
         # Блок-лист ніколи не має ламати відправку: не змогли прочитати —
@@ -168,6 +215,10 @@ def why(kind=None, key=None, title=None) -> str:
     n = _norm(title)
     if _title_ok(n) and _tkey(n) in data:
         return f"назва «{n}»"
+    for sk, rec in data.items():
+        kw = str((rec or {}).get("keyword") or "")
+        if sk.startswith("w:") and _kw_hit(kw, n):
+            return f"ключове слово «{kw}»"
     return "?"
 
 
@@ -224,6 +275,9 @@ def unmute(kind: str = None, key: str = None, title: str = None) -> int:
     nt = _norm(title)
     if _title_ok(nt) and _tkey(nt) in _load():
         K.remove_key(FILE, _tkey(nt))
+        n += 1
+    if _kw_ok(nt) and _wkey(nt) in _load():
+        K.remove_key(FILE, _wkey(nt))
         n += 1
     if n:
         _CACHE["data"] = None

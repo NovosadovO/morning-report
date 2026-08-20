@@ -282,6 +282,9 @@ _CONFIRM_GATE = {
     "fu_rem_":       ("Поставлю нагадування повернутись до листа {subject}.",
                       "✅ Так, постав", "↩️ Ні, не треба",
                       "⏰ Поставив.", "Вимкнути: /вимкнені_нагадування"),
+    "lc_add_":       ("Запишу в календар строк дії та наступну оплату: {subject}.",
+                      "✅ Так, запиши", "↩️ Ні, не треба",
+                      "📅 Записав у календар.", "Видалити можна в Google Calendar."),
     "shop_add_":     ("Додам {subject} у список покупок.",
                       "✅ Так, додай", "↩️ Ні, не треба",
                       "🛒 Додав у список.", "Прибрати: /покупки"),
@@ -2771,6 +2774,8 @@ HELP_TEXT = """
 
 <b>🧠 AI</b>
 /мозок — що AI про тебе пам'ятає (йде в кожен його запит)
+/справи — що оплачено, до якого числа діє, коли наступна оплата
+/перевір_справи — перевірити реєстр і попередити про закінчення
 /зд — health дані (7 днів)
 /зд т — тижневий health звіт
 /зд м — місячний health звіт
@@ -3347,6 +3352,23 @@ def handle_command(chat_id, text):
             send(chat_id, _gxp.pending())
         except Exception as _e:
             send(chat_id, f"⚠️ Не зміг показати відкладені: {str(_e)[:120]}")
+
+    elif text.lower().strip() in ["/справи", "/статус_справ", "справи",
+                                  "/lifecycle"]:
+        # Реєстр: що оплачено, до якого числа діє, коли наступна оплата.
+        try:
+            import lifecycle as _lcc
+            send(chat_id, _lcc.report())
+        except Exception as _e:
+            send(chat_id, f"⚠️ Не зміг показати справи: {str(_e)[:120]}")
+
+    elif text.lower().strip() in ["/перевір_справи", "/check_lifecycle"]:
+        try:
+            import lifecycle as _lcch
+            _n = _lcch.check_expiring(force=True)
+            send(chat_id, f"⏳ Перевірив реєстр справ. Попереджень надіслано: <b>{_n}</b>.")
+        except Exception as _e:
+            send(chat_id, f"⚠️ Помилка перевірки: {str(_e)[:120]}")
 
     elif text.lower().strip() in ["/вимкнені_нагадування", "/вимкнені", "/blocked",
                                   "вимкнені нагадування"]:
@@ -5051,6 +5073,28 @@ def handle_automation_callback(cb):
             else:
                 cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
 
+        # ─── СТАН СПРАВ: оплачено / вже позаду (lifecycle.py) ───────────────
+        elif data.startswith("lc_"):
+            import lifecycle as _lc
+            if data.startswith("lc_add_"):
+                r = _lc.do_add(data[len("lc_add_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, r.get("text") or "📅 Записав у календар.")
+                elif r.get("error") == "payload_missing":
+                    _stale()
+                elif r.get("error") == "nothing_to_add":
+                    _clear_kb()
+                    cb_notify(cb["id"], chat_id, "Тут нема чого записувати — дат у листі не було.")
+                else:
+                    _fail(r, "записати в календар")
+            elif data.startswith("lc_skip_"):
+                _lc.do_skip(data[len("lc_skip_"):])
+                _clear_kb()
+                cb_notify(cb["id"], chat_id, "Ок 👌 Тема закрита, більше не турбую.")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
         # ─── ТИЖНЕВИЙ ОГЛЯД ─────────────────────────────────────────────────
         elif data.startswith("wr_"):
             import weekly_review as _wr
@@ -6067,7 +6111,8 @@ def _route_callback(cb, confirmed: bool = False):
               data.startswith("wr_") or data.startswith("dl_") or
               data.startswith("vr_") or data.startswith("pm_") or
               data.startswith("dm_") or data.startswith("cw_") or
-              data.startswith("gx_") or data.startswith("cfm_")):
+              data.startswith("gx_") or data.startswith("cfm_") or
+              data.startswith("lc_")):
             # Модулі автоматизації: рахунки / план бігу / графік змін /
             # follow-up листів / тижневий огляд
             handle_automation_callback(cb)
@@ -6184,6 +6229,8 @@ def _dispatch_callback_async(cb):
         ("fu_send_",        "📤 Надсилаю..."),
         ("fu_rem_",         "⏰ Ставлю нагадування..."),
         ("fu_skip_",        "Ок, прибрав"),
+        ("lc_add_",         "📅 Записую в календар..."),
+        ("lc_skip_",        "Ок 👌"),
         ("wr_goals_",       "📝 Зберігаю цілі..."),
         ("wr_cal_",         "📅 Додаю цілі в календар..."),
         ("wr_skip_",        "Ок, прибрав"),

@@ -2073,7 +2073,10 @@ def _gemini_email_analysis(full_text: str, health_context: str = "") -> dict:
         "Проаналізуй цей email. Відповідь — ТІЛЬКИ валідний JSON, без markdown, без коментарів:\n"
         '{"description": "...", "opinion": "...", "action_type": "calendar|shopping|none", '
         '"action_title": "...", "action_date": "YYYY-MM-DD або null", "action_time": "HH:MM або null", '
-        '"action_summary": "..."}\n\n'
+        '"action_summary": "...", "state": "todo|paid|completed|info", "entity": "...", '
+        '"entity_kind": "insurance|subscription|bill|trip|booking|appointment|other", '
+        '"valid_from": "YYYY-MM-DD або null", "valid_to": "YYYY-MM-DD або null", '
+        '"next_due": "YYYY-MM-DD або null", "keyword": "..."}\n\n'
         "description: переказ змісту — про що лист, ключові цифри/дати/суми, що очікується від одержувача (2-4 речення українською).\n"
         "opinion: твоя коротка думка — чи реагувати і що зробити (1 речення українською).\n\n"
         "action_type — ОБОВ'ЯЗКОВО визнач:\n"
@@ -2086,6 +2089,24 @@ def _gemini_email_analysis(full_text: str, health_context: str = "") -> dict:
         "action_date: якщо є явна дата в листі — YYYY-MM-DD, інакше null.\n"
         "action_time: якщо є час — HH:MM, інакше null.\n"
         "action_summary: 1 речення що саме зробити.\n\n"
+        "ТЕПЕР НАЙВАЖЛИВІШЕ — СТАН СПРАВИ (щоб я не нагадував про вже закрите):\n"
+        "state:\n"
+        "- 'paid' — лист ПІДТВЕРДЖУЄ що вже оплачено/оформлено (підтвердження платежу, "
+        "поліс, квитанція, 'дякуємо за оплату', 'платіж отримано', активована підписка).\n"
+        "- 'completed' — подія/поїздка/зустріч УЖЕ ВІДБУЛАСЬ (лист після повернення, "
+        "'дякуємо що подорожували з нами', відгук про перебування, чек після візиту).\n"
+        "- 'todo' — ще треба щось зробити/оплатити.\n"
+        "- 'info' — просто інформація, реклама, новини.\n"
+        "entity: НАЗВА самої справи, а не листа (напр. 'Страховка авто Allianz', "
+        "'Поїздка на Корфу', 'Підписка Netflix'). Якщо не про конкретну справу — \"\".\n"
+        "entity_kind: тип справи зі списку.\n"
+        "valid_from / valid_to: якщо в листі є ПЕРІОД ДІЇ (поліс/підписка/бронювання) — "
+        "точні дати YYYY-MM-DD. Не вигадуй: немає в листі — null.\n"
+        "next_due: дата НАСТУПНОЇ оплати/продовження, якщо вона є в листі або "
+        "очевидна з періоду дії (день після valid_to). Інакше null.\n"
+        "keyword: 1-2 слова для пошуку інших листів і нагадувань про цю саму справу "
+        "(напр. 'Корфу', 'страховка авто'). Тільки суть, без службових слів.\n"
+        "ЖОДНИХ ВИГАДАНИХ ДАТ І СУМ. Чого немає в листі — null.\n\n"
         f"{health_note}"
         f"Лист:\n{full_text[:2000]}"
     )
@@ -2581,6 +2602,27 @@ def check_new_emails():
             _send_telegram_text_with_keyboard(text, keyboard)
             print(f"[email] alert sent: uid={uid_str} subject={subject[:50]}")
 
+            # ── ЩО ЦЕ ЗА ЛИСТ ПО СУТІ: дія попереду чи щось УЖЕ закрито? ──────
+            # Олег: «страховку я оплатив — не нагадуй, а запиши до якого числа
+            # діє і коли наступна оплата», «поїздка вже пройшла».
+            # lifecycle читає ті самі поля з ai (без зайвого Gemini-виклику).
+            try:
+                import lifecycle as _lc_em
+                _closed = _lc_em.from_email_ai(ai or {}, uid_str, sender=sender,
+                                               subject=subject)
+            except Exception as _e_lc:
+                _closed = False
+                print(f"[lifecycle] email error: {_e_lc}", flush=True)
+
+            # ── ПРОАКТИВНА ПРОПОЗИЦІЯ: АІ сам виявив дію в листі (оплата/дедлайн/
+            # покупка тощо) — пропонує нагадування/список покупок БЕЗ натискання
+            # кнопки "📅 В календар" вручну. Спільна функція apply_action_suggestion()
+            # використовується так само для крипто/health/чат-повідомлень.
+            # Якщо lifecycle вже закрив тему (оплачено/пройшло) — нагадування
+            # про «оплати» більше не пропонуємо, це і був баг.
+            if not _closed:
+                apply_action_suggestion(ai or {}, uid_str, sender=sender, subject=subject)
+
         # Самодіагностика: позначаємо що перевірка пошти успішно відпрацювала
         # (навіть якщо нових листів не було) — self_diagnostics стежить за тим,
         # щоб цей цикл не завис мовчки.
@@ -2589,12 +2631,6 @@ def check_new_emails():
             _sd_email.record_email_check_ok()
         except Exception:
             pass
-
-            # ── ПРОАКТИВНА ПРОПОЗИЦІЯ: АІ сам виявив дію в листі (оплата/дедлайн/
-            # покупка тощо) — пропонує нагадування/список покупок БЕЗ натискання
-            # кнопки "📅 В календар" вручну. Спільна функція apply_action_suggestion()
-            # використовується так само для крипто/health/чат-повідомлень (див. message_generator.py).
-            apply_action_suggestion(ai or {}, uid_str, sender=sender, subject=subject)
 
     except Exception as e:
         print(f"check_new_emails error: {e}")
