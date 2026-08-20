@@ -130,5 +130,17 @@
     "sender": "Generative AI <newsletter@genai.works>",
     "done": false,
     "created": "2026-08-12"
+  },
+  "видалення_неактивного_облікового_запису_philips|": {
+    "kind": "other",
+    "title": "Видалення неактивного облікового запису Philips",
+    "org": "Philips",
+    "deadline": "2026-09-04",
+    "action": "Увійти в обліковий запис MyPhilips, щоб він залишався активним",
+    "why": "Якщо не увійти, обліковий запис буде автоматично видалено, і всі дані облікового запису буде стерто.",
+    "uid": "77773",
+    "sender": "\"Philips\" <noreply@apac.ph.mc.philips.com>",
+    "done": false,
+    "created": "2026-08-21"
   }
 }
