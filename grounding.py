@@ -36,7 +36,15 @@ GROUND_TAGS = {
     "context_ask_ai",   # прямі питання Олега боту
     "assistant",
     "weekly_coach", "monthly_coach", "weekly_report",
+    # Реальні теги проактивних генераторів у проді (message_generator шле
+    # tag=f"MSG_{trigger}", smart_notifications_v3 — свої 4). Без них
+    # grounding не спрацьовував на найчастіших повідомленнях.
+    "MORNING_AI", "LUNCH_AI", "AFTERNOON_AI", "EVENING_AI",
+    "msg_gen",
 }
+
+# Префікси тегів — MSG_CRYPTO_MOVE, MSG_DEEP_ANALYSIS, MSG_VIP_EMAIL тощо.
+GROUND_PREFIXES = ("MSG_",)
 
 _JSON_HINTS = (
     "тільки валідний json", "валідний json", "json-масив", "json масив",
@@ -53,7 +61,8 @@ def is_json_prompt(prompt: str) -> bool:
 
 def wanted(tag: str, prompt: str) -> bool:
     """Чи давати цьому виклику інтернет."""
-    if str(tag or "") not in GROUND_TAGS:
+    t = str(tag or "")
+    if t not in GROUND_TAGS and not t.startswith(GROUND_PREFIXES):
         return False
     if is_json_prompt(prompt):
         return False

@@ -47,6 +47,11 @@ ok(gr.wanted("crypto_ai", "Проаналізуй ринок ONDO"), "crypto_ai 
 ok(gr.wanted("context_ask_ai", "Що там з Minebea?"), "пряме питання Олега → інтернет")
 ok(not gr.wanted("action_detect", "Знайди дію"), "action_detect → БЕЗ інтернету")
 ok(not gr.wanted("email_ai_item", "Опиши лист"), "email_ai_item → БЕЗ інтернету")
+ok(gr.wanted("MSG_DEEP_ANALYSIS", "Проаналізуй день Олега"),
+   "MSG_* (проактивні у проді) → інтернет")
+ok(gr.wanted("MSG_CRYPTO_MOVE", "BTC різко змінився, поясни"),
+   "MSG_CRYPTO_MOVE → інтернет")
+ok(gr.wanted("MORNING_AI", "Ранкове повідомлення"), "MORNING_AI → інтернет")
 
 print("\n1b) JSON-промпти не грунтуються (інакше парсер падає)")
 ok(not gr.wanted("crypto_ai", "Поверни тільки валідний JSON: {\"a\":1}"),
