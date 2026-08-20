@@ -1,4 +1,29 @@
 {
+  "deadlines|2026-08-21t00_32_20_654548": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"77773\",     \"kind\": \"other\",     \"title\": \"Видалення неактивного облікового запису Philips\",     \"org\": \"Philips\",     \"deadline\": \"20",
+    "ts": "2026-08-21T00:32:20.654548"
+  },
+  "proactive_actions|2026-08-21t00_03_21_633845": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн-реєстрація на рейс\",     \"date\": \"2026-08-21\",     \"time\": \"\",     \"message\": \"Олеже, бачу важливий н",
+    "ts": "2026-08-21T00:03:21.633845"
+  },
+  "action_detect|2026-08-21t00_03_03_546951": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-21T00:03:03.546951"
+  },
+  "msg_deep_analysis|2026-08-21t00_02_58_446768": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Ти зараз заслужено відпочиваєш, дозволяючи організму повністю відновитися після насиченого періоду. Ніч — це твій час для глибокого спокою, і в",
+    "ts": "2026-08-21T00:02:58.446768"
+  },
+  "action_detect|2026-08-21t00_02_40_482150": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-21T00:02:40.482150"
+  },
   "msg_vip_email|2026-08-21t00_02_32_816828": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🤝**  Наразі ніч, і ти заслужено відпочиваєш, що є над",
@@ -273,30 +298,5 @@
     "topic": "personal_ai",
     "gist": "Продовжуй рухатися, щоб досягти цілі у 10 000 кроків – це допоможе зберегти енергію та концентрацію. Для підвищення пильності та безпеки, регулярно пий воду та,",
     "ts": "2026-08-20T22:00:46.661293"
-  },
-  "action_detect|2026-08-20t21_41_10_970577": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
-    "ts": "2026-08-20T21:41:10.970577"
-  },
-  "action_detect|2026-08-20t21_36_53_949480": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути Daily Crypto Digest\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути лист 'Da",
-    "ts": "2026-08-20T21:36:53.949480"
-  },
-  "msg_habit_checkin|2026-08-20t21_36_45_077950": {
-    "topic": "MSG_HABIT_CHECKIN",
-    "gist": "Привіт Олеже! 🌙  Бачу, що ти зараз у розпалі нічної зміни. Сподіваюся, все проходить спокійно, і ти знаходиш час для коротких перерв. Як твій настрій сьогодні? ",
-    "ts": "2026-08-20T21:36:45.077950"
-  },
-  "action_detect|2026-08-20t21_36_29_198015": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути стратегію ONDO/AVAX\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"З огляду на ріст OND",
-    "ts": "2026-08-20T21:36:29.198015"
-  },
-  "msg_deep_analysis|2026-08-20t21_36_22_413193": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋  Ого, бачу, ти зараз у самому розпалі нічної зміни, адже за календарем ти фізично на роботі. Це, звісно, не найлегший час для глибоких роздумів,",
-    "ts": "2026-08-20T21:36:22.413193"
   }
 }
