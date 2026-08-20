@@ -3657,6 +3657,12 @@
         "kind": "reminder",
         "date": "2026-08-21"
       }
+    },
+    {
+      "ts": "2026-08-20T20:18:04.228235+00:00",
+      "category": "confirm",
+      "question": "email_delete: ",
+      "answer": "yes"
     }
   ]
 }
