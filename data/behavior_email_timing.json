@@ -1,9 +1,4 @@
 {
-  "77352": {
-    "sender": "message@message.reserved.com",
-    "sender_raw": "Reserved <message@message.reserved.com>",
-    "seen_ts": "2026-08-12T07:28:11.432471+00:00"
-  },
   "77353": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Startitup через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@news.sorare.com",
     "sender_raw": "\"Sorare\" <hello@news.sorare.com>",
     "seen_ts": "2026-08-20T14:38:19.409018+00:00"
+  },
+  "77754": {
+    "sender": "info@mail.uefa.com",
+    "sender_raw": "\"UEFA Champions League\" <info@mail.uefa.com>",
+    "seen_ts": "2026-08-20T14:50:39.215122+00:00"
   }
 }
