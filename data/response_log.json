@@ -3753,6 +3753,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_d623f7e64c"
+    },
+    {
+      "ts": "2026-08-20T20:51:54.455019+00:00",
+      "category": "confirm",
+      "question": "gate_lc_add: Страховка авто (тест маршруту)",
+      "answer": "yes"
     }
   ]
 }
