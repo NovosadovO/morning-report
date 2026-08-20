@@ -226,3 +226,12 @@ monitor._send_telegram_text_with_keyboard; flush у run_assistant_watcher.
 - Флаш черги: monitor_loop.run_assistant_watcher (not sleeping() and pending() -> flush()).
 - tests_smart.py розділ 2 переписано під ручний режим: fails: 0. Лінт 3.11 bad: 0, AST ok. Решта тестів 0.
 - Коміт b5af9e1479d, деплой 29edc532-8c4c-4834-b403-b81e19425044 SUCCESS (Traceback/NameError/ImportError = 0). /тиша_статус у проді → HTTP 200, у логах "Message: /тиша_статус" без помилок.
+
+## Питання «Точно?» і видалення — під своїм сповіщенням (20.08)
+Олег: «Запитування Точно і видаляння потрібно поставити під тим сповіщенням, до якого стосується».
+- bot.py: нові `_btn_row()`, `_ask_confirm_inline(cb,q)`, `_cfm_origin(r)`, `_cfm_close_inline(cb,r,status,keep_kb)`.
+- Гейт `_confirm_gate` більше НЕ шле нове повідомлення: редагує reply_markup ТОГО САМОГО сповіщення → рядок-підпис «⚠️ Точно? <тема>» (callback noop) + [Так][Ні]. Fallback, якщо edit не вдався: sendMessage з reply_to_message_id (не в кінець чату), далі старий send_with_keyboard.
+- confirm.py: `ask()` повертає subject/question; новий `attach_origin(cid, chat_id, msg_id, orig_kb)` — запам'ятовує, під яким сповіщенням стоїть питання і які кнопки там були; `yes()`/`no()` повертають `extra`.
+- «Ні» → повертає початкові кнопки на місце + підпис «👍 Залишив як було», без нового повідомлення. «Так» → підпис-результат (done_text) замість кнопок; окреме повідомлення тільки якщо є хвіст (час/як повернути) і теж reply на те сповіщення.
+- Інлайн також для гілок, що питають самі: `email_delete_` (видалення листа) і `calrem_skip_`, `cw_miss_`.
+- tests_inline_confirm.py — НОВИЙ, fails: 0. Решта тестів 0, лінт 3.11 bad: 0, AST ok.

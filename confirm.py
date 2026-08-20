@@ -69,7 +69,27 @@ def ask(name: str, pid: str, subject: str = "", extra: dict = None) -> dict:
     kb = [[{"text": a["yes"], "callback_data": f"cfm_y_{cid}"},
            {"text": a["no"], "callback_data": f"cfm_n_{cid}"}]]
     K.log(TAG, f"питаю підтвердження: {name} / {subject[:30]}")
-    return {"ok": True, "cid": cid, "text": text, "keyboard": kb}
+    return {"ok": True, "cid": cid, "text": text, "keyboard": kb,
+            "subject": subject, "question": q}
+
+
+def attach_origin(cid: str, chat_id, msg_id, orig_kb):
+    """Запам'ятовує, ПІД ЯКИМ сповіщенням стоїть питання і які кнопки там були
+    до нього. Потрібно, щоб «Ні» повернуло сповіщення в початковий вигляд, а
+    відповідь з'явилась там само, а не окремим повідомленням у кінці чату."""
+    try:
+        p = _store.get(cid)
+        if not p:
+            return False
+        ex = dict(p.get("extra") or {})
+        ex["origin"] = {"chat_id": chat_id, "msg_id": msg_id,
+                        "kb": orig_kb or []}
+        p["extra"] = ex
+        K.update_key(STORE_FILE, cid, p)
+        return True
+    except Exception as e:
+        K.log(TAG, f"attach_origin error: {e}")
+        return False
 
 
 # ─── КРОК 2: ВІДПОВІДЬ ───────────────────────────────────────────────────────
@@ -142,6 +162,7 @@ def yes(cid: str) -> dict:
     r["done_text"] = a["done"]
     r["revert_hint"] = a.get("revert") or ""
     r["subject"] = p.get("subject")
+    r["extra"] = p.get("extra") or {}
     K.log(TAG, f"✅ підтверджено: {p.get('action')} / {str(p.get('subject'))[:30]}")
     return r
 
@@ -156,7 +177,8 @@ def no(cid: str) -> dict:
     _mark_answered(cid, p, "no")
     _log(str(p.get("action")), str(p.get("subject") or ""), "no")
     K.log(TAG, f"↩️ скасовано користувачем: {p.get('action')}")
-    return {"ok": True, "cancelled": True, "subject": p.get("subject")}
+    return {"ok": True, "cancelled": True, "subject": p.get("subject"),
+            "extra": p.get("extra") or {}}
 
 
 # ─── ЗВІТ ────────────────────────────────────────────────────────────────────

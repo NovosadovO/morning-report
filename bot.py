@@ -1206,7 +1206,9 @@ def handle_email_callback(callback_query):
                 print(f"email_delete subject lookup: {_se}")
             q = _cfm_d.ask("email_delete", uid_str, _subj_d)
             if q.get("ok"):
-                send_with_keyboard(chat_id, q["text"], q["keyboard"])
+                # питання про видалення — під тим самим листом
+                if not _ask_confirm_inline(callback_query, q):
+                    send_with_keyboard(chat_id, q["text"], q["keyboard"])
             else:
                 cb_notify(cb_id, chat_id, "⚠️ Не вдалось запитати підтвердження.")
         except Exception as e:
@@ -1562,7 +1564,8 @@ def handle_email_callback(callback_query):
             _subj_s = str((_rem or {}).get("subject") or "") if isinstance(_rem, dict) else ""
             q = _cfm_s.ask("calrem_skip", uid_str, _subj_s)
             if q.get("ok"):
-                send_with_keyboard(chat_id, q["text"], q["keyboard"])
+                if not _ask_confirm_inline(callback_query, q):
+                    send_with_keyboard(chat_id, q["text"], q["keyboard"])
             else:
                 cb_notify(cb_id, chat_id, "⚠️ Не вдалось запитати підтвердження.")
         except Exception as e:
@@ -5546,7 +5549,9 @@ def handle_automation_callback(cb):
                     import confirm as _cfm4
                     q = _cfm4.ask("cw_miss", _pid_m, str(_pl_m2.get("title") or ""))
                     if q.get("ok"):
-                        send_with_keyboard(chat_id, q["text"], q["keyboard"])
+                        # питання — під тим самим нагадуванням
+                        if not _ask_confirm_inline(cb, q):
+                            send_with_keyboard(chat_id, q["text"], q["keyboard"])
                     else:
                         _fail(q, "запитати підтвердження")
             elif data.startswith("cw_moved_"):
@@ -5596,6 +5601,10 @@ def handle_automation_callback(cb):
                         _extra += f"\n(автоматично до {r.get('until')})"
                     if _hint:
                         _extra += "\n" + _hint
+                    # Результат — ПІД тим самим сповіщенням, а не новим
+                    # повідомленням у кінці чату.
+                    _done = str(r.get("done_text") or "Готово.")
+                    _inline_ok = _cfm_close_inline(cb, r, _done)
                     if r.get("redispatch"):
                         # Гейт: сама дія виконується тільки тут, після «Так».
                         try:
@@ -5607,9 +5616,21 @@ def handle_automation_callback(cb):
                             print(f"[confirm] redispatch error: {_rde}", flush=True)
                             send(chat_id, "⚠️ Підтвердив, але дія впала:\n<code>"
                                           + str(_rde)[:200] + "</code>")
-                    else:
-                        send(chat_id, f"{r.get('done_text')}\n\n"
-                                      f"<b>{_subj}</b>{_extra}")
+                    elif not _inline_ok:
+                        send(chat_id, f"{_done}\n\n<b>{_subj}</b>{_extra}")
+                    elif _extra.strip():
+                        # Є що додати (час, підказка як повернути) — коротким
+                        # хвостиком, теж прив'язаним до того сповіщення.
+                        _oc, _om, _ = _cfm_origin(r)
+                        try:
+                            api("sendMessage", {
+                                "chat_id": _oc or chat_id,
+                                "text": f"{_done} <b>{_subj}</b>{_extra}",
+                                "parse_mode": "HTML",
+                                "reply_to_message_id": _om,
+                                "allow_sending_without_reply": True})
+                        except Exception:
+                            send(chat_id, f"{_done}\n\n<b>{_subj}</b>{_extra}")
                 elif r.get("error") == "already_answered":
                     _clear_kb()
                     send(chat_id, "☑️ На це питання ти вже відповів — <b>нічого не змінив</b> повторно.")
@@ -5622,10 +5643,21 @@ def handle_automation_callback(cb):
             elif data.startswith("cfm_n_"):
                 r = _cfm3.no(_cid)
                 if r.get("ok"):
-                    _clear_kb()
                     _subj = _cfm3.K.esc(str(r.get("subject") or ""))
-                    send(chat_id, f"👍 Ок, залишаю як було — <b>{_subj}</b> без змін. "
-                                  "Нічого не вимкнув і не записав.")
+                    # «Ні» → повертаємо сповіщенню його початкові кнопки.
+                    _, _, _orig_kb = _cfm_origin(r)
+                    if _cfm_close_inline(cb, r, "👍 Залишив як було — без змін",
+                                         keep_kb=_orig_kb):
+                        try:
+                            api("answerCallbackQuery",
+                                {"callback_query_id": cb.get("id", ""),
+                                 "text": "👍 Нічого не змінив"})
+                        except Exception:
+                            pass
+                    else:
+                        _clear_kb()
+                        send(chat_id, f"👍 Ок, залишаю як було — <b>{_subj}</b> без змін. "
+                                      "Нічого не вимкнув і не записав.")
                 elif r.get("error") == "already_answered":
                     _clear_kb()
                     send(chat_id, "☑️ На це питання ти вже відповів — <b>нічого не змінив</b> повторно.")
@@ -5831,6 +5863,84 @@ def _gate_subject(cb, data: str) -> str:
         return ""
 
 
+def _btn_row(text: str):
+    """Рядок-підпис у клавіатурі (не кнопка-дія). Telegram обмежує 64 симв."""
+    t = str(text or "").strip()
+    if len(t) > 60:
+        t = t[:59] + "…"
+    return [{"text": t, "callback_data": "noop"}]
+
+
+def _ask_confirm_inline(cb, q) -> bool:
+    """Ставить «Точно?» ПІД ТИМ САМИМ сповіщенням, якого воно стосується.
+
+    Олег: питання і видалення мають бути під відповідним сповіщенням, а не
+    окремим повідомленням у кінці чату. Тому не шлемо нове повідомлення, а
+    підміняємо кнопки того сповіщення на питання + [Так][Ні]. «Ні» повертає
+    початкові кнопки (для цього запам'ятовуємо їх у payload).
+    Повертає True, якщо вдалось поставити питання на місці.
+    """
+    try:
+        msg = cb.get("message") or {}
+        chat_id = (msg.get("chat") or {}).get("id")
+        msg_id = msg.get("message_id")
+        if not chat_id or not msg_id:
+            return False
+        orig_kb = (msg.get("reply_markup") or {}).get("inline_keyboard") or []
+        try:
+            import confirm as _cfi
+            _cfi.attach_origin(q.get("cid"), chat_id, msg_id, orig_kb)
+        except Exception as _ae:
+            print(f"[confirm] attach_origin failed: {_ae}", flush=True)
+        subj = str(q.get("subject") or "").strip()
+        head = f"⚠️ Точно? {subj}" if subj else "⚠️ Точно?"
+        kb = [_btn_row(head)] + [list(row) for row in (q.get("keyboard") or [])]
+        r = api("editMessageReplyMarkup", {
+            "chat_id": chat_id, "message_id": msg_id,
+            "reply_markup": {"inline_keyboard": kb}})
+        if not (isinstance(r, dict) and r.get("ok")):
+            return False
+        try:
+            api("answerCallbackQuery", {"callback_query_id": cb.get("id", ""),
+                                        "text": "❓ Перепитую — підтверди нижче"})
+        except Exception:
+            pass
+        return True
+    except Exception as e:
+        print(f"[confirm] inline ask error: {e}", flush=True)
+        return False
+
+
+def _cfm_origin(r):
+    """Де стоїть питання: (chat_id, msg_id, початкові кнопки)."""
+    o = ((r or {}).get("extra") or {}).get("origin") or {}
+    return o.get("chat_id"), o.get("msg_id"), (o.get("kb") or [])
+
+
+def _cfm_close_inline(cb, r, status: str, keep_kb=None) -> bool:
+    """Показує результат ТАМ САМО — підміняє кнопки сповіщення на підпис
+    (або повертає початкові кнопки при «Ні»). True → окреме повідомлення
+    вже не потрібне."""
+    try:
+        chat_id, msg_id, orig_kb = _cfm_origin(r)
+        if not chat_id or not msg_id:
+            msg = cb.get("message") or {}
+            chat_id = (msg.get("chat") or {}).get("id")
+            msg_id = msg.get("message_id")
+        if not chat_id or not msg_id:
+            return False
+        kb = list(keep_kb) if keep_kb is not None else []
+        if status:
+            kb = [_btn_row(status)] + kb
+        res = api("editMessageReplyMarkup", {
+            "chat_id": chat_id, "message_id": msg_id,
+            "reply_markup": {"inline_keyboard": kb}})
+        return bool(isinstance(res, dict) and res.get("ok"))
+    except Exception as e:
+        print(f"[confirm] inline close error: {e}", flush=True)
+        return False
+
+
 def _confirm_gate(cb, data: str) -> bool:
     """Перепитує перед незворотною кнопкою. True → дію відкладено до «Так»."""
     if not data or any(data.startswith(p) for p in _CONFIRM_GATE_SKIP):
@@ -5853,12 +5963,27 @@ def _confirm_gate(cb, data: str) -> bool:
         if not q.get("ok"):
             return False
         chat_id = cb["message"]["chat"]["id"]
-        send_with_keyboard(chat_id, q["text"], {"inline_keyboard": q["keyboard"]})
-        try:
-            api("answerCallbackQuery", {"callback_query_id": cb.get("id", ""),
-                                        "text": "❓ Перепитую..."})
-        except Exception:
-            pass
+        # Питання — ПІД тим сповіщенням, якого воно стосується.
+        if not _ask_confirm_inline(cb, q):
+            # Не вдалось відредагувати (старе повідомлення) → як раніше,
+            # але хоча б відповіддю на нього, а не в кінець чату.
+            _rid = (cb.get("message") or {}).get("message_id")
+            _sent = False
+            try:
+                _sent = bool(api("sendMessage", {
+                    "chat_id": chat_id, "text": q["text"], "parse_mode": "HTML",
+                    "reply_to_message_id": _rid,
+                    "allow_sending_without_reply": True,
+                    "reply_markup": {"inline_keyboard": q["keyboard"]}}).get("ok"))
+            except Exception:
+                _sent = False
+            if not _sent:
+                send_with_keyboard(chat_id, q["text"], q["keyboard"])
+            try:
+                api("answerCallbackQuery", {"callback_query_id": cb.get("id", ""),
+                                            "text": "❓ Перепитую..."})
+            except Exception:
+                pass
         print(f"[confirm] gate: перепитую перед {data}", flush=True)
         return True
     except Exception as e:
