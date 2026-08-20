@@ -3711,6 +3711,12 @@
       "category": "confirm",
       "question": "calrem_skip: Перевірити листи Pelikan та Ionian Cruises",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-20T20:18:48.915764+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_4caf862471"
     }
   ]
 }
