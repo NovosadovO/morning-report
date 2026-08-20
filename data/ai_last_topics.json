@@ -1,4 +1,14 @@
 {
+  "msg_vip_email|2026-08-20t23_34_15_120506": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 📧  Бачу, ти зараз на нічній зміні у Minebea Mitsumi, і в цей",
+    "ts": "2026-08-20T23:34:15.120506"
+  },
+  "action_detect|2026-08-20t23_31_07_347420": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважитись\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно зважитись, оскільки останнє",
+    "ts": "2026-08-20T23:31:07.347420"
+  },
   "bills|2026-08-20t23_28_38_128762": {
     "topic": "bills",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз для Олега, що опис",
     "ts": "2026-08-20T21:02:33.444464"
-  },
-  "action_detect|2026-08-20t21_02_22_259686": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити пошту\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити нові листи, коли буде ві",
-    "ts": "2026-08-20T21:02:22.259686"
-  },
-  "action_detect|2026-08-20t21_02_09_650543": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути стратегію ONDO/AVAX\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути стратегі",
-    "ts": "2026-08-20T21:02:09.650543"
   }
 }
