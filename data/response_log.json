@@ -4023,6 +4023,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_c09f9143b5"
+    },
+    {
+      "ts": "2026-08-21T00:03:24.163686+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Біг",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-08-22"
+      }
     }
   ]
 }
