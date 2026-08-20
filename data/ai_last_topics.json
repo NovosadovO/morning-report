@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-08-20t23_40_16_095304": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Forbes через LinkedIn є інформаційною розсилкою, що містить статтю про Швейцарію як банківський хаб для мільярдерів, а так",
+    "ts": "2026-08-20T23:40:16.095304"
+  },
+  "action_detect|2026-08-20t23_34_22_987347": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
+    "ts": "2026-08-20T23:34:22.987347"
+  },
   "msg_vip_email|2026-08-20t23_34_15_120506": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 📧  Бачу, ти зараз на нічній зміні у Minebea Mitsumi, і в цей",
@@ -288,15 +298,5 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reply\",     \"title\": \"Відповісти Unstoppable Domains\",     \"date\": \"2026-08-21\",     \"time\": \"\",     \"message\": \"Олеже, бачу, що у по",
     "ts": "2026-08-20T21:02:59.137029"
-  },
-  "action_detect|2026-08-20t21_02_33_490957": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти Вероні щодо весілля\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Завтра, 10.08",
-    "ts": "2026-08-20T21:02:33.490957"
-  },
-  "action_detect|2026-08-20t21_02_33_444464": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз для Олега, що опис",
-    "ts": "2026-08-20T21:02:33.444464"
   }
 }
