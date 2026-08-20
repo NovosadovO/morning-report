@@ -4043,6 +4043,15 @@
         "kind": "calendar",
         "date": "2026-08-22"
       }
+    },
+    {
+      "ts": "2026-08-21T00:32:25.869921+00:00",
+      "category": "deadline_found",
+      "question": "Видалення неактивного облікового запису Philips",
+      "answer": "2026-09-04",
+      "extra": {
+        "kind": "other"
+      }
     }
   ]
 }
