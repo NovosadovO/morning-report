@@ -113,3 +113,14 @@ health_ocr.download_telegram_photo). fails: 0.
 повідомлень, натомість `[quiet] 🌙 сон: check_* пропущено` × багато і
 `режим сну — AI-виклик пропущено` для action_detect/proactive_ai.
 Станом на кінець: режим сну ВИКЛЮЧЕНО на прохання Олега (until: null).
+
+## Єдиний мозок AI — ai_brain.py (20.08)
+- Коміти: 6269501ae22 (ai_brain + /мозок + tests_ai_brain.py), + фікс UnboundLocalError. Деплої a86aadb3 і 0733467b — SUCCESS.
+- ai_brain.wrap() інжектиться ЦЕНТРАЛЬНО в monitor._gem_post → пам'ять+свобода в КОЖЕН AI-виклик (раніше feedback_ctx був лише в 3 з ~24 промптів).
+- Прод-лог підтвердив: [ai_brain] +1670..+3176 симв. пам'яті/свободи → action_detect / context_ask_ai / email_ai_item.
+- Пам'ять: ai_answers.json (кожне текстове повідомлення Олега, щоденник, мікро-опитування), ai_last_topics.json (про що AI вже писав, 36 год → не повторюватись; буфер, запис у storage не частіше 240 с).
+- JSON-промпти НЕ отримують блок свободи (is_json_prompt) — парсери не ламаються.
+- Команда /мозок (мозок, /пам_ять_аі) — показує все, що AI пам'ятає.
+- ФІКС: у handle_command блоки щоденника і мікро-опитування падали з UnboundLocalError (datetime/os шадовились локальними import) — відповіді НЕ зберігались взагалі. Тепер аліаси _dtc_d/_os_d/_dtc_mc2 + запис у пам'ять AI.
+- Тести: tests_ai_brain.py fails: 0 (44 асерти). Регресія: gate_test 0, email_btn_test 0, tests_quiet 0, confirm_test 0, cw_test 0.
+- Gemini білінг ЖИВИЙ (0 "billing depleted" у логах, реальні AI-тексти). Strava 228739 досі Inactive.
