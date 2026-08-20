@@ -844,16 +844,23 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
     MEDIUM_TRIGGERS = {"crypto_move", "vip_email", "weekly_run_compare", "health", "day_plan", "workout_plan", "daily_astro"}
     # решта (morning/evening/deep_analysis/briefing тощо) — LONG за замовчуванням
 
+    # УВАГА про стелю токенів: українська кирилиця токенізується дорого —
+    # приблизно 2.5-3 токени на слово. Тому 650 слів це ~1800 токенів, а не
+    # 1400. Старі ліміти (350/700/1400) різали текст на півслові
+    # (finishReason=MAX_TOKENS) — саме тому повідомлення приходили обірваними
+    # («…використовувати його максимально ефективно, ад»).
+    # Даємо ×2.5 запасу: модель усе одно пише скільки просимо словами, зайві
+    # токени не витрачаються, але й обриву більше немає.
     if trigger_type in SHORT_TRIGGERS:
-        max_tokens = 350
+        max_tokens = 900
         length_instruction = "Напиши КОРОТКЕ, чітке повідомлення 80-150 слів УКРАЇНСЬКОЮ — по суті, без води."
         structure_instruction = "Структура: 1 вступне речення → суть тригера → 1-2 конкретні дії. Коротко і ясно."
     elif trigger_type in MEDIUM_TRIGGERS:
-        max_tokens = 700
+        max_tokens = 1800
         length_instruction = "Напиши ЗМІСТОВНЕ повідомлення 250-350 слів УКРАЇНСЬКОЮ — конкретний аналіз без зайвої води."
         structure_instruction = "Структура: 1 яскраве вступне речення → аналіз ключової теми тригера (2-3 абзаци) → 2-3 конкретні дії."
     else:
-        max_tokens = 1400
+        max_tokens = 3500
         length_instruction = "Напиши ЖИВЕ, ОСОБИСТЕ повідомлення 500-650 слів УКРАЇНСЬКОЮ — повний розгорнутий аналіз."
         structure_instruction = "Структура: 1 яскраве вступне речення → РОЗГОРНУТИЙ аналіз кожного блоку (крипто, здоров'я, пошта, астро, календар) → 3-5 конкретних дій. Кожен блок аналізу — мінімум 3-4 речення з деталями та порадами."
 
@@ -995,8 +1002,12 @@ def _chunk_text(text: str, limit: int = 3800):
                 parts.append(cur)
                 cur = ""
             while len(block) > limit:
-                parts.append(block[:limit])
-                block = block[limit:]
+                # Ріжемо по пробілу, а не посеред слова.
+                cut = block.rfind(" ", int(limit * 0.7), limit)
+                if cut <= 0:
+                    cut = limit
+                parts.append(block[:cut].rstrip())
+                block = block[cut:].lstrip()
         cur += (("\n" if cur else "") + block)
     if cur:
         parts.append(cur)

@@ -91,7 +91,7 @@ ok(gr.footer({"candidates": [{}]}) == "", "без grounding — футера н�
 print("\n1e) monitor._gem_post під'єднаний правильно")
 msrc = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "monitor.py")).read()
 i = msrc.find("def _gem_post")
-seg = msrc[i:i + 9000]
+seg = msrc[i:i + 14000]
 ok("grounding as _gr" in seg, "grounding імпортується в _gem_post")
 ok(seg.find("_gr.inject") < seg.find("for _mi, _model"), "inject ДО циклу моделей")
 ok("_gr2.strip(body_bytes)" in seg, "є аварійний відкат при 400/403")

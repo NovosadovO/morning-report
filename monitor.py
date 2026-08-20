@@ -1617,6 +1617,8 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
         _models = list(_GEM_MODELS)
 
     last_exc = None
+    # Стелю токенів піднімаємо максимум один раз за виклик (див. notrunc).
+    _retried_cap = False
     for _mi, _model in enumerate(_models):
         _url = _gem_swap_model(url, _model)
         # throttle: тримаємо мін. інтервал між будь-якими викликами Gemini
@@ -1653,6 +1655,25 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
                                 print(f"[grounding] 🌐 {tag}: {', '.join(_src)}", flush=True)
                     except Exception:
                         pass
+                    # ─── ОБРИВ НА ПІВСЛОВІ ───────────────────────────────
+                    # finishReason=MAX_TOKENS → модель не договорила. Спершу
+                    # добираємо стелю і перепитуємо (1 раз), і лише якщо це не
+                    # допомогло — ріжемо до останнього цілого речення.
+                    try:
+                        import notrunc as _nt
+                        if _nt.truncated(_resp):
+                            _new_body, _new_cap = (None, 0)
+                            if not _retried_cap:
+                                _new_body, _new_cap = _nt.bump(body_bytes)
+                            if _new_body:
+                                print(f"[notrunc] ✂️ {tag}: обірвано на стелі — "
+                                      f"перепитую з {_new_cap} токенів", flush=True)
+                                body_bytes = _new_body
+                                _retried_cap = True
+                                continue
+                            _nt.fix_response(_resp)
+                    except Exception as _nte:
+                        print(f"[notrunc] skipped for {tag}: {_nte}", flush=True)
                     # мозок: запам'ятовуємо про що AI щойно написав → наступні
                     # промпти бачать це і не повторюють ту саму думку.
                     try:
