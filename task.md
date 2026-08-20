@@ -194,3 +194,26 @@ cal_skip/calrem_skip/shop_skip) закриває пропозицію; «не т
 Add-кнопки НЕ mute-ляться (щоб calendar_watch міг нагадати про саму подію).
 Тест: `tests_no_repeat.py` (fails: 0). Деплой b0e9863c SUCCESS.
 Вручну закрито в data/dismissed.json: «Вероні/весілля», «страховка Kooperativa».
+
+## Інтернет для AI + розумна тиша (20.08)
+**grounding.py** — Gemini отримує google_search для обраних тегів (crypto_ai,
+personal_ai, themes_ai, daily_rec, deep_analysis, briefing, proactive_ai,
+context_ask_ai, weekly/monthly_coach, defi_digest). Раніше AI знав лише те, що
+дають наші API, і спирався на знання 2024 р.
+Захисти: JSON-промпти НЕ грунтуються (парсер зламався б); при 400/403 з tools
+`strip()` знімає їх і виклик повторюється без інтернету; маркери `[cite: ...]`
+чистяться з тексту; `footer()` дає рядок «🌐 Джерела: ...».
+Вплетено в `monitor._gem_post` ПІСЛЯ ai_brain-інжекту.
+
+**autoquiet.py** — тиша за реальним графіком змін (не вручну /сон):
+нічна зміна → спить 07:00–14:00; рання → 22:00–05:00; вихідний → 23:00–07:00.
+На зміні НЕ вважається сплячим (стара скарга «пише що я сплю, а я на нічній»).
+Джерело: context.get_shift_from_calendar(); без календаря fallback 23:00–07:00.
+Несрочне кладеться в чергу `held_msgs.json` і після пробудження приходить
+дайджестом «☀️ Поки ти спав»; повідомлення з кнопками віддаються окремо, щоб
+кнопки лишились робочими. Термінове (VIP/крипто-алерт/подія за годину/аварія)
+проходить одразу — URGENT_HINTS. Черга старша за 10 год не шлеться.
+Точки входу: ai_kit.tg, monitor._send_telegram_chunk,
+monitor._send_telegram_text_with_keyboard; flush у run_assistant_watcher.
+Команди: /тиша, /покажи_відкладене.
+Тест: tests_smart.py (fails: 0).

@@ -357,6 +357,14 @@ def _send_telegram_chunk(text: str) -> bool:
             return False
     except Exception:
         pass
+    # autoquiet: тиша за графіком змін (несрочне → черга)
+    try:
+        import autoquiet as _aq_c
+        if _aq_c.should_hold(text):
+            _aq_c.hold(text, kind="chunk")
+            return False
+    except Exception as _aqe:
+        print(f"[autoquiet] chunk skipped: {_aqe}", flush=True)
     import re as _re
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     # Автоматично фіксуємо голі & перед відправкою
@@ -1585,6 +1593,18 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     except Exception as _be:
         print(f"[ai_brain] inject skipped for {tag}: {_be}", flush=True)
 
+    # ─── ДОСТУП ДО ІНТЕРНЕТУ (Google Search grounding) ───────────────────────
+    # Обраним тегам даємо живий пошук, щоб AI не спирався на знання 2024 року.
+    # JSON-промпти не грунтуються (зламався б парсер) — це вирішує grounding.wanted().
+    try:
+        import grounding as _gr
+        _b4 = body_bytes
+        body_bytes = _gr.inject(body_bytes, tag)
+        if body_bytes is not _b4 and _gr.has_tools(body_bytes):
+            print(f"[grounding] 🌐 інтернет увімкнено для {tag}", flush=True)
+    except Exception as _gre:
+        print(f"[grounding] skipped for {tag}: {_gre}", flush=True)
+
     # визначаємо порядок моделей: поточна (з url) перша, далі решта зі списку
     import re as _re0
     _cur_m = None
@@ -1619,6 +1639,19 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
                     except Exception:
                         pass
                     _resp = json.loads(r.read())
+                    # grounding: прибираємо технічні маркери цитат з тексту
+                    try:
+                        import grounding as _gr3
+                        if _gr3.has_tools(body_bytes):
+                            _pt = _resp["candidates"][0]["content"]["parts"]
+                            for _pi, _p in enumerate(_pt):
+                                if isinstance(_p.get("text"), str):
+                                    _pt[_pi]["text"] = _gr3.clean_text(_p["text"])
+                            _src = _gr3.sources(_resp)
+                            if _src:
+                                print(f"[grounding] 🌐 {tag}: {', '.join(_src)}", flush=True)
+                    except Exception:
+                        pass
                     # мозок: запам'ятовуємо про що AI щойно написав → наступні
                     # промпти бачать це і не повторюють ту саму думку.
                     try:
@@ -1670,6 +1703,18 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
                     # вичерпали retry на цій моделі — пробуємо наступну модель
                     _exhausted_429 = True
                     break
+                # Модель/акаунт не прийняли google_search → знімаємо інструменти
+                # і повторюємо БЕЗ інтернету. Нова фіча не має права зламати
+                # те, що працювало раніше.
+                if e.code in (400, 403):
+                    try:
+                        import grounding as _gr2
+                        if _gr2.has_tools(body_bytes):
+                            body_bytes = _gr2.strip(body_bytes)
+                            print(f"[grounding] ⚠️ {e.code} з tools — повторюю без інтернету ({tag})", flush=True)
+                            continue
+                    except Exception:
+                        pass
                 # інші HTTP помилки — retry лише на 500/503
                 if e.code in (500, 503) and attempt < max_retries - 1:
                     print(f"[{tag}] {e.code} on {_model} — retry in 8s (attempt {attempt+1})", flush=True)
@@ -2285,6 +2330,15 @@ def _send_telegram_text_with_keyboard(text: str, keyboard: dict):
             return False
     except Exception:
         pass
+    # autoquiet: тиша за графіком змін. Кнопки зберігаємо разом з текстом,
+    # щоб після пробудження пропозиція прийшла робочою.
+    try:
+        import autoquiet as _aq_k
+        if _aq_k.should_hold(text):
+            _aq_k.hold(text, kind="offer", keyboard=keyboard)
+            return False
+    except Exception as _aqe:
+        print(f"[autoquiet] kb skipped: {_aqe}", flush=True)
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,

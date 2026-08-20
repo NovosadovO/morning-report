@@ -190,6 +190,17 @@ def tg(method: str, body: dict, tag="ai_kit"):
             return False
     except Exception:
         pass
+    # autoquiet: Олег спить за графіком змін → несрочне чекає в черзі,
+    # термінове проходить. Так бот не будить його вдень після нічної.
+    try:
+        import autoquiet as _aq
+        if method == "sendMessage":
+            _txt = str((body or {}).get("text") or "")
+            if _aq.should_hold(_txt):
+                _aq.hold(_txt, kind=tag)
+                return False
+    except Exception as _aqe:
+        print(f"[autoquiet] tg skipped: {_aqe}", flush=True)
     if not TELEGRAM_TOKEN:
         log(tag, "TELEGRAM_TOKEN відсутній")
         return None

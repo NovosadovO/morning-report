@@ -1173,6 +1173,14 @@ def run_assistant_watcher():
                 _lc_w.check_expiring()
             except Exception as _e_lcw:
                 print(f"[lifecycle] watcher error: {_e_lcw}", flush=True)
+            # Розумна тиша: Олег прокинувся → віддаємо відкладене одним
+            # дайджестом. flush() сам перевіряє, що сон уже скінчився.
+            try:
+                import autoquiet as _aq_w
+                if not _aq_w.sleeping() and _aq_w.pending():
+                    _aq_w.flush()
+            except Exception as _e_aqw:
+                print(f"[autoquiet] watcher error: {_e_aqw}", flush=True)
             if hasattr(mod, 'check_motivation_7am'):
                 mod.check_motivation_7am()
         except Exception as e:
