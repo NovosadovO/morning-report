@@ -3759,6 +3759,12 @@
       "category": "confirm",
       "question": "gate_lc_add: Страховка авто (тест маршруту)",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-20T20:51:56.024628+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "lc_add_zzz404"
     }
   ]
 }
