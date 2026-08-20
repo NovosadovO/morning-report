@@ -1,9 +1,4 @@
 {
-  "77366": {
-    "sender": "newsletter@myclaw.ai",
-    "sender_raw": "MyClaw Newsletter <newsletter@myclaw.ai>",
-    "seen_ts": "2026-08-12T11:21:05.241613+00:00"
-  },
   "77367": {
     "sender": "news@msk.marionnaud.com",
     "sender_raw": "\"Marionnaud\" <news@msk.marionnaud.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"Robert Guest at The Economist\" <newsletters@e.economist.com>",
     "seen_ts": "2026-08-20T18:46:47.154928+00:00"
+  },
+  "77771": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-20T21:40:18.039546+00:00"
   }
 }
