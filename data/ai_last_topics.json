@@ -1,4 +1,9 @@
 {
+  "evening_ai|2026-08-20t20_28_27_801899": {
+    "topic": "EVENING_AI",
+    "gist": "Привіт, Олеже! 👋  Бачу, ти зараз у самій гущі нічної зміни (18:00-06:00). Це вимагає особливої витримки та концентрації, тому мої думки з тобою, поки ти працюєш",
+    "ts": "2026-08-20T20:28:27.801899"
+  },
   "action_detect|2026-08-20t20_18_11_793809": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить аналіз різних сфер життя, але не вказує",
     "ts": "2026-08-20T18:02:41.083455"
-  },
-  "action_detect|2026-08-20t18_02_30_000620": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати режим сну\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Запланувати чіткий режим сну п",
-    "ts": "2026-08-20T18:02:30.000620"
   }
 }
