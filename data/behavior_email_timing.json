@@ -1,9 +1,4 @@
 {
-  "77357": {
-    "sender": "newsletter@email.hm.com",
-    "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
-    "seen_ts": "2026-08-12T08:25:50.079523+00:00"
-  },
   "77358": {
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@maple.finance",
     "sender_raw": "Maple <hello@maple.finance>",
     "seen_ts": "2026-08-20T15:35:47.884791+00:00"
+  },
+  "77759": {
+    "sender": "newsletter@ticketportal.sk",
+    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
+    "seen_ts": "2026-08-20T16:14:38.575962+00:00"
   }
 }
