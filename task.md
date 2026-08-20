@@ -139,3 +139,40 @@ email_keep_ → _drop_important_email() прибирає лист з important_e
 /вимкнені_нагадування показує і dismissed; /увімкни_нагадування чистить обидва.
 Тести: tests_dismissed.py → fails: 0. Прод: деплой 39322aa7 SUCCESS, живий клік
 cal_skip → cfm_y_ → запис у data/dismissed.json (ключ+назва), 0 Traceback.
+
+## Розуміння стану справ — lifecycle.py (20.08)
+Проблема: бот нагадував про те, що вже зроблено. Приклади Олега: «поїздка на Корфу
+вже пройшла — сьогодні прилетів», «страховку оплатив — не нагадуй, а напиши з якого
+по яке число діє і запиши наступну оплату в календар».
+Рішення: lifecycle.py — реєстр справ у data/lifecycle.json.
+- Промпт monitor._gemini_email_analysis розширений полями: state (paid/completed/
+  pending/unknown), entity, entity_kind (insurance/subscription/booking/trip/bill/doc),
+  valid_from, valid_to, next_due, keyword. ОКРЕМОГО Gemini-виклику НЕМА (економія білінгу).
+- Жорстке правило в промпті: «ЖОДНИХ ВИГАДАНИХ ДАТ І СУМ. Чого немає в листі — null».
+  Немає дат → пропозиції про календар немає взагалі.
+- state=paid/completed → lifecycle.remember() закриває тему: _close_reminders()
+  глушить нагадування через dismissed (keyword-матчинг з урахуванням укр. відмінків,
+  _stem: ≥7 симв → -2, ≥5 → -1; потрібні ВСІ слова keyword-а, keyword ≥4 симв).
+  Далі apply_action_suggestion для цього листа не викликається (if not _closed).
+- Замість нагадування — картка «✅ Бачу — вже оплачено» з періодом дії і кнопкою
+  «📅 Записати все» (lc_add_) / «Не треба» (lc_skip_). Кнопки під confirm-гейтом
+  (gate_lc_add), payload через ai_kit.PayloadStore → мертвих кнопок нема.
+- next_due виводиться як valid_to + 1 день лише для insurance/subscription/booking.
+  Нагадування про оплату ставиться за RENEW_LEAD_DAYS=14 до next_due (якщо дата вже
+  минула — на сам next_due). check_expiring() у monitor_loop.run_assistant_watcher.
+- Захист від поспішного AI: state=completed з датою в майбутньому тему НЕ закриває.
+- Команди: /справи (/статус_справ, /lifecycle) — реєстр; /перевір_справи
+  (/check_lifecycle) — ручна перевірка термінів.
+- ФІКС (критичний): apply_action_suggestion(...) у check_new_emails стояв УСЕРЕДИНІ
+  except Exception: pass блоку self_diagnostics → проактивні пропозиції з листів не
+  працювали взагалі (лише при падінні імпорту, і з даними ОСТАННЬОГО листа).
+  Перенесено в тіло циклу for; позиція перевіряється AST-тестом у tests_lifecycle.py.
+- Тести: tests_lifecycle.py → fails: 0 (7 блоків: Корфу, страховка, без дат, поспішний
+  AI, попередження, /справи, інтеграція+AST). Регресія: tests_dismissed 0, tests_quiet 0,
+  gate_test 0, email_btn_test 0, cw_test 0, confirm_test 0, dm_test 0.
+- Прод: коміт c6a52930fe7, деплой cb8e6f11 SUCCESS. /справи і /перевір_справи → 200,
+  0 Traceback / 0 NameError / 0 ImportError. Маршрут кнопки перевірено живим кліком:
+  lc_add_ → gate_lc_add → cfm_y_ → «виконую lc_add».
+- Дані: lifecycle.json, lifecycle_sent.json, lifecycle_store.json (гілка data).
+- ЗАЛЕЖНІСТЬ: реєстр наповнюється лише коли Gemini живий — без AI поля state/valid_to/
+  next_due не заповнюються і lifecycle нічого не бачить.
