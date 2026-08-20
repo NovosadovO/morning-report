@@ -313,6 +313,13 @@ def check(force: bool = False) -> int:
     for t in threads:
         if _dedup.seen("fu", t["thread_id"], str(t["days"] // 3)):
             continue
+        try:
+            import dismissed as _dm_fu
+            if _dm_fu.is_muted(key=t.get("thread_id"), title=t.get("subject")):
+                K.log(TAG, f"🚫 заглушено: {str(t.get('subject'))[:40]}")
+                continue
+        except Exception as _e_fu:
+            K.log(TAG, f"dismissed check error: {_e_fu}")
         pid = _store.put(t)
         text = (
             f"📭 <b>ЧЕКАЄШ ВІДПОВІДЬ {t['days']} дн.</b>\n"
@@ -413,6 +420,14 @@ def do_remind(pid: str) -> dict:
 
 
 def do_skip(pid: str) -> dict:
+    """❌ Не треба — тема закривається НАЗАВЖДИ (а не до наступної перевірки)."""
+    p = _store.get(pid) or {}
+    try:
+        import dismissed as _dm_sk
+        _dm_sk.mute("fu_skip", key=p.get("thread_id"), title=p.get("subject"),
+                    note="followup")
+    except Exception as e:
+        K.log(TAG, f"dismissed mute error: {e}")
     _store.drop(pid)
     return {"ok": True}
 

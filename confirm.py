@@ -128,6 +128,15 @@ def yes(cid: str) -> dict:
         r = {"ok": bool(r)}
     _mark_answered(cid, p, "yes")
     _log(str(p.get("action")), str(p.get("subject") or ""), "yes")
+    # ГОЛОВНЕ: підтверджене «не нагадуй» має ЗБЕРЕГТИСЬ назавжди, інакше та сама
+    # подія/лист приходять знову. Пишемо в постійний блок-лист.
+    try:
+        import dismissed as _dm_y
+        _dm_y.remember_confirm(str(p.get("action")), str(p.get("pid") or ""),
+                               str(p.get("subject") or ""),
+                               str((p.get("extra") or {}).get("msg") or ""))
+    except Exception as e:
+        K.log(TAG, f"dismissed hook error: {e}")
     r.setdefault("ok", True)
     r["confirmed"] = True
     r["done_text"] = a["done"]

@@ -125,6 +125,57 @@ _IMPORTANT_EMAILS_FILE = "data/important_emails.json"
 # чи "записувати" — бот питає чи точно, і тільки після підтвердження робить».
 # Дії calendar_watch/ai_buttons реєструються у confirm.py, а ці дві живуть тут,
 # бо їм потрібен _DRAFT_STORE і IMAP з bot.py.
+def _drop_important_email(uid_str: str) -> int:
+    """Прибирає лист зі data/important_emails.json — щоб followup «досі без
+    відповіді» по закритій темі більше не приходив. Повертає скільки прибрав."""
+    import json as _j_di, base64 as _b64di, urllib.request as _urdi
+    uid_str = str(uid_str or "")
+    if not uid_str:
+        return 0
+    gh_url = ("https://api.github.com/repos/NovosadovO/morning-report/"
+              "contents/data/important_emails.json")
+    gh_headers = {"Authorization": f"token {os.environ.get('GITHUB_TOKEN', '')}",
+                  "User-Agent": "bot"}
+    try:
+        req = _urdi.Request(gh_url, headers=gh_headers)
+        with _urdi.urlopen(req, timeout=10) as r:
+            gh_data = _j_di.loads(r.read())
+            items = _j_di.loads(_b64di.b64decode(gh_data["content"]).decode())
+            sha = gh_data["sha"]
+    except Exception as e:
+        print(f"[email_keep] important_emails read: {e}", flush=True)
+        return 0
+    if not isinstance(items, list):
+        return 0
+    left, dropped, subj = [], 0, ""
+    for it in items:
+        if isinstance(it, dict) and str(it.get("uid")) == uid_str:
+            dropped += 1
+            subj = str(it.get("subject") or "")
+            continue
+        left.append(it)
+    if not dropped:
+        return 0
+    try:
+        content = _b64di.b64encode(_j_di.dumps(left, ensure_ascii=False, indent=2).encode()).decode()
+        body_gh = _j_di.dumps({"message": "email keep — close topic",
+                               "content": content, "sha": sha}).encode()
+        req2 = _urdi.Request(gh_url, data=body_gh,
+                             headers={**gh_headers, "Content-Type": "application/json"},
+                             method="PUT")
+        _urdi.urlopen(req2, timeout=15)
+    except Exception as e:
+        print(f"[email_keep] important_emails save: {e}", flush=True)
+        return 0
+    try:
+        import dismissed as _dm_ke
+        _dm_ke.mute("email", key=uid_str, title=subj, note="email_keep")
+    except Exception as e:
+        print(f"[email_keep] dismissed mute: {e}", flush=True)
+    print(f"[email_keep] 🚫 тему закрито: {subj[:50]} (uid {uid_str})", flush=True)
+    return dropped
+
+
 def _cfm_h_email_delete(uid_str):
     from monitor import _imap_delete_email
     return {"ok": bool(_imap_delete_email(uid_str))}
@@ -1141,6 +1192,13 @@ def handle_email_callback(callback_query):
             cb_notify(cb_id, chat_id, f"⚠️ Помилка: {e}")
 
     elif data.startswith("email_keep_"):
+        # Тема листа закрита назавжди: прибираємо його зі списку важливих, щоб
+        # followup («досі без відповіді») більше не спрацював.
+        _uid_keep = data[len("email_keep_"):]
+        try:
+            _drop_important_email(_uid_keep)
+        except Exception as _e_keep:
+            print(f"email_keep drop error: {_e_keep}", flush=True)
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "📥 Залишено в скриньці"})
         api("editMessageReplyMarkup", {
             "chat_id": chat_id,
@@ -5632,6 +5690,15 @@ def _gate_subject(cb, data: str) -> str:
     """Про що саме питаємо — беремо текст самої натиснутої кнопки, потім
     перший рядок повідомлення. Нічого не вигадуємо: немає тексту — питаємо
     без назви."""
+    # Спершу — сама тема з тексту повідомлення («...»): вона інформативніша за
+    # текст кнопки («Не треба») і саме за нею потім працює блок-лист.
+    try:
+        import dismissed as _dm_gs
+        _q = _dm_gs.extract_title(str((cb.get("message") or {}).get("text") or ""))
+        if _q and len(_q) >= 4:
+            return _q[:60]
+    except Exception:
+        pass
     try:
         kb = (cb.get("message") or {}).get("reply_markup", {}).get("inline_keyboard") or []
         for row in kb:
@@ -5666,7 +5733,10 @@ def _confirm_gate(cb, data: str) -> bool:
         name = _gate_name(pref)
         if not _cfmg.is_registered(name):
             return False
-        q = _cfmg.ask(name, data, _gate_subject(cb, data))
+        # extra.msg — текст повідомлення, з якого потім беремо НАЗВУ теми для
+        # постійного блок-листа (текст кнопки «Не треба» назвою бути не може).
+        _msg_txt = str((cb.get("message") or {}).get("text") or "")[:400]
+        q = _cfmg.ask(name, data, _gate_subject(cb, data), extra={"msg": _msg_txt})
         if not q.get("ok"):
             return False
         chat_id = cb["message"]["chat"]["id"]

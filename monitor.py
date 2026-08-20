@@ -2382,6 +2382,17 @@ def apply_action_suggestion(ai: dict, source_id: str, sender: str = "", subject:
         if not action_title or action_type == "none":
             return
 
+        # Олег уже підтвердив «не треба» по цій темі → не пропонуємо вдруге.
+        try:
+            import dismissed as _dm_act
+            if _dm_act.is_muted(key=source_id, title=action_title) or \
+               _dm_act.is_muted(key=source_id, title=subject):
+                print(f"[action] 🚫 заглушено ({_dm_act.why(key=source_id, title=action_title)}) "
+                      f"— пропозицію «{action_title[:40]}» не надсилаю", flush=True)
+                return
+        except Exception as _dm_e:
+            print(f"[action] dismissed check error: {_dm_e}", flush=True)
+
         import storage as _storage_act3
 
         if action_type == "calendar":
@@ -7973,6 +7984,19 @@ def check_important_emails_followup():
 
         age_hours = (now_utc - saved_at).total_seconds() / 3600
         reminded = em.get("reminded", False)
+
+        _muted_em = False
+        try:
+            import dismissed as _dm_em
+            _muted_em = _dm_em.is_muted(key=em.get("uid"), title=em.get("subject")) or \
+                _dm_em.is_muted(title=f"Лист від {em.get('sender', '')}")
+        except Exception as _dm_eme:
+            print(f"[followup] dismissed check error: {_dm_eme}", flush=True)
+        if _muted_em:
+            # Олег підтвердив «більше не нагадуй» по цьому листу — закриваємо тему.
+            print(f"[followup] 🚫 заглушено: {str(em.get('subject'))[:50]}", flush=True)
+            em["reminded"] = True
+            continue
 
         if age_hours >= 24 and not reminded:
             reminders.append(em)
@@ -15468,6 +15492,19 @@ def check_important_emails_followup():
 
         age_hours = (now_utc - saved_at).total_seconds() / 3600
         reminded = em.get("reminded", False)
+
+        _muted_em = False
+        try:
+            import dismissed as _dm_em
+            _muted_em = _dm_em.is_muted(key=em.get("uid"), title=em.get("subject")) or \
+                _dm_em.is_muted(title=f"Лист від {em.get('sender', '')}")
+        except Exception as _dm_eme:
+            print(f"[followup] dismissed check error: {_dm_eme}", flush=True)
+        if _muted_em:
+            # Олег підтвердив «більше не нагадуй» по цьому листу — закриваємо тему.
+            print(f"[followup] 🚫 заглушено: {str(em.get('subject'))[:50]}", flush=True)
+            em["reminded"] = True
+            continue
 
         if age_hours >= 24 and not reminded:
             reminders.append(em)

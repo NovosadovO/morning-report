@@ -198,14 +198,26 @@ def _mark(evid: str, stage: str):
     K.update_key(SENT_FILE, f"{evid}|{stage}", K.now().isoformat())
 
 
-def is_blocked(evid: str) -> bool:
+def is_blocked(evid: str, title: str = "") -> bool:
     """Олег підтвердив «не нагадуй» по цій події. Постійно: на відміну від
     міток у SENT_FILE, цей список НЕ чиститься gc_sent, тож нагадування
-    не «воскресають» через 5 днів."""
-    if not evid:
-        return False
-    data = K.load(BLOCK_FILE, default={}) or {}
-    return str(evid) in data
+    не «воскресають» через 5 днів.
+
+    Додатково перевіряємо загальний блок-лист dismissed.py ЗА НАЗВОЮ — бо
+    повторювана подія щоразу має новий id, і матчинг лише по id не спрацював би.
+    """
+    if evid:
+        data = K.load(BLOCK_FILE, default={}) or {}
+        if str(evid) in data:
+            return True
+    try:
+        import dismissed as _dm_cw
+        if _dm_cw.is_muted(key=evid, title=title):
+            K.log(TAG, f"🚫 заглушено ({_dm_cw.why(key=evid, title=title)}): {str(title)[:40]}")
+            return True
+    except Exception as e:
+        K.log(TAG, f"dismissed check error: {e}")
+    return False
 
 
 def block_event(evid: str, title: str = "") -> bool:
@@ -213,6 +225,11 @@ def block_event(evid: str, title: str = "") -> bool:
         return False
     K.update_key(BLOCK_FILE, str(evid), {"title": title or "",
                                          "ts": K.now().isoformat()})
+    try:
+        import dismissed as _dm_be
+        _dm_be.mute("event", key=evid, title=title, note="calendar")
+    except Exception as e:
+        K.log(TAG, f"dismissed mute error: {e}")
     K.log(TAG, f"🚫 більше не нагадую: {title or evid}")
     return True
 
@@ -221,6 +238,11 @@ def unblock_event(evid: str) -> bool:
     if not evid:
         return False
     K.remove_key(BLOCK_FILE, str(evid))
+    try:
+        import dismissed as _dm_ub
+        _dm_ub.unmute("event", key=evid)
+    except Exception as e:
+        K.log(TAG, f"dismissed unmute error: {e}")
     K.log(TAG, f"🔔 нагадування повернуто: {evid}")
     return True
 
@@ -229,12 +251,25 @@ def blocked_list() -> str:
     """/вимкнені_нагадування — що саме заглушено, з можливістю повернути."""
     data = K.load(BLOCK_FILE, default={}) or {}
     if not data:
+        try:
+            import dismissed as _dm_e0
+            if _dm_e0.count():
+                return _dm_e0.report(limit=25)
+        except Exception as e:
+            K.log(TAG, f"dismissed report error: {e}")
         return ("🔕 <b>ВИМКНЕНІ НАГАДУВАННЯ</b>\n\nПорожньо — я нагадую про все.")
     out = ["🔕 <b>ВИМКНЕНІ НАГАДУВАННЯ</b>", "━━━━━━━━━━━━━━━━━━━━"]
     for evid, rec in list(data.items())[:20]:
         t = (rec or {}).get("title") or evid
         ts = str((rec or {}).get("ts") or "")[:10]
         out.append(f"🚫 {K.esc(str(t))} <i>({ts})</i>")
+    try:
+        import dismissed as _dm_bl
+        if _dm_bl.count():
+            out.append("")
+            out.append(_dm_bl.report(limit=15))
+    except Exception as e:
+        K.log(TAG, f"dismissed report error: {e}")
     out.append("\n<i>Повернути все: /увімкни_нагадування</i>")
     return "\n".join(out)[:3900]
 
@@ -243,6 +278,11 @@ def unblock_all() -> int:
     data = K.load(BLOCK_FILE, default={}) or {}
     n = len(data)
     K.save(BLOCK_FILE, {})
+    try:
+        import dismissed as _dm_ua
+        n += _dm_ua.unmute_all()
+    except Exception as e:
+        K.log(TAG, f"dismissed unmute_all error: {e}")
     K.log(TAG, f"🔔 повернуто нагадувань: {n}")
     return n
 
@@ -559,7 +599,7 @@ def tick() -> int:
     for ev in events:
         if ev["allday"] or ev["routine"] or ev["shift"]:
             continue
-        if is_blocked(ev["id"]):
+        if is_blocked(ev["id"], ev.get("title") or ""):
             continue          # Олег підтвердив «не нагадуй» — мовчимо назавжди
         mins = (ev["start"] - n).total_seconds() / 60
 
@@ -612,7 +652,7 @@ def _fire_snoozed() -> int:
             continue
         if due > n:
             continue
-        if is_blocked(rec.get("evid")):
+        if is_blocked(rec.get("evid"), str(rec.get("title") or "")):
             K.remove_key(SNOOZE_FILE, key)   # скасували подію — знімаємо і відкладене
             continue
         pid = _store.put({"evid": rec.get("evid"), "title": rec.get("title"),
