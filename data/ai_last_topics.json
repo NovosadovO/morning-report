@@ -1,4 +1,84 @@
 {
+  "action_detect|2026-08-20t21_24_50_686840": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
+    "ts": "2026-08-20T21:24:50.686840"
+  },
+  "proactive_actions|2026-08-20t21_02_59_137029": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reply\",     \"title\": \"Відповісти Unstoppable Domains\",     \"date\": \"2026-08-21\",     \"time\": \"\",     \"message\": \"Олеже, бачу, що у по",
+    "ts": "2026-08-20T21:02:59.137029"
+  },
+  "action_detect|2026-08-20t21_02_33_490957": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти Вероні щодо весілля\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Завтра, 10.08",
+    "ts": "2026-08-20T21:02:33.490957"
+  },
+  "action_detect|2026-08-20t21_02_33_444464": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз для Олега, що опис",
+    "ts": "2026-08-20T21:02:33.444464"
+  },
+  "action_detect|2026-08-20t21_02_22_259686": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити пошту\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити нові листи, коли буде ві",
+    "ts": "2026-08-20T21:02:22.259686"
+  },
+  "action_detect|2026-08-20t21_02_09_650543": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути стратегію ONDO/AVAX\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути стратегі",
+    "ts": "2026-08-20T21:02:09.650543"
+  },
+  "action_detect|2026-08-20t21_02_09_576277": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-20T21:02:09.576277"
+  },
+  "action_detect|2026-08-20t21_02_09_562234": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Відмітити, чи прийняв Олег ліки A",
+    "ts": "2026-08-20T21:02:09.562234"
+  },
+  "briefing|2026-08-20t21_02_03_623968": {
+    "topic": "briefing",
+    "gist": "<b>ЗВІТ  ·  Чт 20.08  ·  21:00</b>  🧭 ВЕКТОР ДНЯ Олеже, зараз ти на нічній зміні, і цей час можна використати для внутрішньої стратегії. Твоя фінансова незалежн",
+    "ts": "2026-08-20T21:02:03.623968"
+  },
+  "themes_ai|2026-08-20t21_01_48_957889": {
+    "topic": "themes_ai",
+    "gist": "Олеже, час аналізу.  🏃 БІГ — Останній забіг був 18 днів тому. Ти чітко сказав, що біг переносиш на суботу. Це правильний підхід, коли на нічній зміні.  ⚖️ ЗДОРО",
+    "ts": "2026-08-20T21:01:48.957889"
+  },
+  "astro_ai|2026-08-20t21_01_46_592941": {
+    "topic": "astro_ai",
+    "gist": "Привіт, Олеже! 👋 Бачу, ти зараз на нічній зміні в Косіце, і хоч це не найдинамічніший час для астрологічних прогнозів, енергії дня все одно дуже цікаві й насиче",
+    "ts": "2026-08-20T21:01:46.592941"
+  },
+  "email_ai_item|2026-08-20t21_01_26_236206": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Unstoppable Domains є інформаційним і рекламує їхні продукти та послуги, пов'язані зі штучним інтелектом, такі як Unstoppa",
+    "ts": "2026-08-20T21:01:26.236206"
+  },
+  "personal_ai|2026-08-20t21_01_13_325502": {
+    "topic": "personal_ai",
+    "gist": "Для підтримання енергії та концентрації на нічній зміні, спробуй досягти цілі 10000 кроків, рухаючись по робочому місцю – тобі залишилось зовсім небагато. Регул",
+    "ts": "2026-08-20T21:01:13.325502"
+  },
+  "action_detect|2026-08-20t21_00_30_771631": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-20T21:00:30.771631"
+  },
+  "action_detect|2026-08-20t21_00_25_700386": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-20T21:00:25.700386"
+  },
+  "msg_habit_checkin|2026-08-20t21_00_21_731661": {
+    "topic": "MSG_HABIT_CHECKIN",
+    "gist": "Привіт Олеже! 🌙  Бачу, що ти зараз у розпалі нічної зміни, адже за календарем фізично на роботі. Сподіваюся, зміна проходить спокійно, і ти знаходиш час для кор",
+    "ts": "2026-08-20T21:00:21.731661"
+  },
   "action_detect|2026-08-20t21_00_14_695299": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення надає рекомендації щодо легкого перекусу",
@@ -218,85 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
     "ts": "2026-08-20T19:37:57.781923"
-  },
-  "action_detect|2026-08-20t19_34_35_908719": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
-    "ts": "2026-08-20T19:34:35.908719"
-  },
-  "proactive_actions|2026-08-20t19_33_01_213349": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн-реєстрація на рейс\",     \"date\": \"2026-08-21\",     \"time\": \"\",     \"message\": \"Олеже, бачу важливий л",
-    "ts": "2026-08-20T19:33:01.213349"
-  },
-  "action_detect|2026-08-20t19_28_10_416059": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Звернути увагу на лист від",
-    "ts": "2026-08-20T19:28:10.416059"
-  },
-  "msg_vip_email|2026-08-20t19_28_02_048030": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 🤝  Цього вечора, поки ти на нічній зміні, хочу відзначити твою стійкість та фокус, адже працювати в такий час – це справжній виклик. Радий бачити,",
-    "ts": "2026-08-20T19:28:02.048030"
-  },
-  "email_ai_item|2026-08-20t19_26_37_919526": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Цей лист від About You інформує про розпродаж до кінця сезону. Він містить рекламні матеріали та заклики до дії, щоб переглянути пропозиції на ",
-    "ts": "2026-08-20T19:26:37.919526"
-  },
-  "bills|2026-08-20t19_17_56_345024": {
-    "topic": "bills",
-    "gist": "[]",
-    "ts": "2026-08-20T19:17:56.345024"
-  },
-  "action_detect|2026-08-20t19_05_38_319135": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс до Корфу\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь зробити",
-    "ts": "2026-08-20T19:05:38.319135"
-  },
-  "msg_idle_timeout|2026-08-20t19_05_28_751673": {
-    "topic": "MSG_IDLE_TIMEOUT",
-    "gist": "Привіт Олеже! 🚶  Бачу, ти вже на нічній зміні, як і домовлялись. Пам'ятаю, що ти переносиш біг на суботу, щоб краще відновитись. Хочу нагадати про онлайн-реєстр",
-    "ts": "2026-08-20T19:05:28.751673"
-  },
-  "action_detect|2026-08-20t19_03_38_398003": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-20T19:03:38.398003"
-  },
-  "calendar|2026-08-20t19_02_48_138179": {
-    "topic": "calendar",
-    "gist": "Привіт, Олеже! Чудово бачити, що завтрашній день, 21 серпня, абсолютно вільний від будь-яких запланованих подій у календарі. Це просто ідеальна можливість насол",
-    "ts": "2026-08-20T19:02:48.138179"
-  },
-  "action_detect|2026-08-20t19_02_17_899570": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зафіксувати ідеї\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Тримати блокнот або додаток для нот",
-    "ts": "2026-08-20T19:02:17.899570"
-  },
-  "action_detect|2026-08-20t19_02_06_882467": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз для Олега на 20 се",
-    "ts": "2026-08-20T19:02:06.882467"
-  },
-  "action_detect|2026-08-20t19_02_06_732128": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути непрочитаний лист\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Швидко переглянути оди",
-    "ts": "2026-08-20T19:02:06.732128"
-  },
-  "action_detect|2026-08-20t19_01_55_792624": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-08-20\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має нічну зміну з 18:00 ",
-    "ts": "2026-08-20T19:01:55.792624"
-  },
-  "action_detect|2026-08-20t19_01_55_710262": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надіслати /weight або /health_",
-    "ts": "2026-08-20T19:01:55.710262"
-  },
-  "action_detect|2026-08-20t19_01_44_888461": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Сформулювати питання для дослідження ONDO або AVAX\", \"action_date\": \"2026-08-20\", \"action_time\": null, \"action_summ",
-    "ts": "2026-08-20T19:01:44.888461"
   }
 }
