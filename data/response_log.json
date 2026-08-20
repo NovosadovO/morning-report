@@ -3999,6 +3999,12 @@
       "category": "confirm",
       "question": "calrem_skip: Надіслати дані з QWatch Pro",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-20T23:54:06.484022+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_28b0b3902b"
     }
   ]
 }
