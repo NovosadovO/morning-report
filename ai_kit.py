@@ -182,16 +182,7 @@ def rate_mark(state_file: str):
 # ─── TELEGRAM ────────────────────────────────────────────────────────────────
 
 def tg(method: str, body: dict, tag="ai_kit"):
-    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
-    try:
-        import quiet as _q_g
-        if _q_g.blocked("msg"):
-            print("[quiet] 🌙 сон: tg придушено", flush=True)
-            return False
-    except Exception:
-        pass
-    # autoquiet: Олег спить за графіком змін → несрочне чекає в черзі,
-    # термінове проходить. Так бот не будить його вдень після нічної.
+    # ЧЕРГА ПЕРЕД GUARD-ом: під час /тиша нічого не губиться — чекає до 04:00.
     try:
         import autoquiet as _aq
         if method == "sendMessage":
@@ -201,6 +192,14 @@ def tg(method: str, body: dict, tag="ai_kit"):
                 return False
     except Exception as _aqe:
         print(f"[autoquiet] tg skipped: {_aqe}", flush=True)
+    # quiet-guard: режим тиші (/тиша) — жодних сповіщень до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 тиша: tg придушено", flush=True)
+            return False
+    except Exception:
+        pass
     if not TELEGRAM_TOKEN:
         log(tag, "TELEGRAM_TOKEN відсутній")
         return None

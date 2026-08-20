@@ -97,64 +97,65 @@ ok("clean_text" in seg, "маркери цитат чистяться у від�
 ok(seg.find("ai_brain") < seg.find("_gr.inject"),
    "grounding після ai_brain (пам'ять не втрачається)")
 
-# ── 2. AUTOQUIET ─────────────────────────────────────────────────────────────
-print("\n2) Розумна тиша: НЕ спить, коли на зміні")
-aq._cache["data"] = None
+# ── 2. РЕЖИМ ТИШІ (ТІЛЬКИ ВРУЧНУ) ────────────────────────────────────────────
+print("\n2) Тиша тільки після /тиша, авто-вихід о 04:00")
+import quiet as q  # noqa: E402
+
+QSTATE = {}
+q._load = lambda: dict(QSTATE)
 
 
-def fake_shift(today):
-    import context as _c
-    _c.get_shift_from_calendar = lambda: {"today": today}
+def _qsave(d):
+    QSTATE.clear()
+    QSTATE.update(d)
+    return True
+
+
+q._save = _qsave
+
+
+def at(h, d=20):
+    now = datetime(2026, 8, d, h, 0)
+    aq._now = lambda: now
+    q._now = lambda: now
     aq._cache["data"] = None
     aq._cache["ts"] = 0.0
 
 
-def at(h):
-    aq._now = lambda: datetime(2026, 8, 20, h, 0)
-    aq._cache["data"] = None
-    aq._cache["ts"] = 0.0
-
-
-fake_shift("night")
-for h in (19, 23, 2, 5):
+# без команди — жодної тиші, у будь-яку годину
+QSTATE.clear()
+for h in (2, 4, 9, 13, 23):
     at(h)
-    ok(not aq.sleeping(), f"нічна зміна, {h:02d}:00 — НЕ спить (він на роботі)")
+    ok(not aq.sleeping(), f"{h:02d}:00 без команди — тиші НЕМА")
 
-print("\n2b) Нічна зміна: спить ДНЕМ після неї")
-for h in (8, 11, 13):
-    at(h)
-    ok(aq.sleeping(), f"після нічної, {h:02d}:00 — спить")
-at(15)
-ok(not aq.sleeping(), "після нічної, 15:00 — прокинувся")
+print("\n2b) /тиша вмикає тишу до найближчих 04:00")
+at(22)
+r = q.sleep_on()
+ok(r["until"].hour == 4 and r["until"].day == 21, f"until = 21.08 04:00 ({r['until']})")
+ok(aq.sleeping(), "22:00 після /тиша — тиша")
+at(2, 21)
+ok(aq.sleeping(), "02:00 — ще тиша")
+st = aq.state()
+ok(str(st.get("until"))[11:16] == "04:00", "стан показує пробудження о 04:00")
 
-print("\n2c) Рання зміна")
-fake_shift("early")
-at(10)
-ok(not aq.sleeping(), "рання зміна, 10:00 — на роботі")
+print("\n2c) О 04:00 бот сам виходить із тиші")
+at(4, 21)
+ok(not aq.sleeping(), "04:00 — тиша знята автоматично")
+ok(not QSTATE.get("until"), "стан очищено (авто-пробудження)")
+
+print("\n2d) /прокинувся — ручний вихід раніше")
 at(23)
-ok(aq.sleeping(), "рання зміна, 23:00 — спить")
-at(4)
-ok(aq.sleeping(), "рання зміна, 04:00 — спить")
-at(6)
-ok(not aq.sleeping(), "рання зміна, 06:00 — вже на зміні")
+q.sleep_on()
+ok(aq.sleeping(), "тиша увімкнена")
+q.sleep_off()
+ok(not aq.sleeping(), "після /прокинувся — тиші нема")
 
-print("\n2d) Вихідний")
-fake_shift("free")
-at(2)
-ok(aq.sleeping(), "вихідний, 02:00 — спить")
-at(12)
-ok(not aq.sleeping(), "вихідний, 12:00 — не спить")
-
-print("\n2e) Термінове проходить попри сон")
-fake_shift("night")
-at(9)  # спить
-ok(aq.sleeping(), "контроль: зараз спить")
-ok(not aq.should_hold("🔴 ВАЖЛИВО: лист від Michaela"), "VIP-лист шлемо одразу")
-ok(not aq.should_hold("🚨 BTC обвалився на 7%"), "крипто-алерт шлемо одразу")
-ok(not aq.should_hold("Подія почнеться через годину"), "подія за годину — шлемо")
-ok(aq.should_hold("🔮 Астро-прогноз на день"), "астро — відкладаємо")
-ok(aq.should_hold("📰 Дайджест новин крипти"), "дайджест — відкладаємо")
-ok(aq.should_hold("Мотивація: ти на правильному шляху"), "мотивація — відкладаємо")
+print("\n2e) Під час тиші відкладаємо ВСЕ (нічого не губиться)")
+at(23)
+q.sleep_on()
+q._last_user_action["ts"] = 0.0
+ok(aq.should_hold("🔮 Астро-прогноз на день"), "астро — у чергу")
+ok(aq.should_hold("🔴 ВАЖЛИВО: лист від Michaela"), "навіть важливе — у чергу, не будимо")
 
 print("\n2f) Черга: нічого не губиться, кнопки виживають")
 MEM = {}
@@ -167,10 +168,10 @@ aq.hold("🔮 Астро-прогноз", kind="astro")
 aq.hold("📅 АІ помітив дію: «Оплатити VSE»", kind="offer",
         keyboard={"inline_keyboard": [[{"text": "✅", "callback_data": "cal_add_1"}]]})
 ok(aq.pending() == 2, "два повідомлення в черзі")
-ok(aq.flush() == 0, "поки спить — не віддаємо")
+ok(aq.flush() == 0, "поки тиша — не віддаємо")
 
-at(16)  # прокинувся
-ok(not aq.sleeping(), "контроль: вже не спить")
+at(4, 21)  # авто-пробудження
+ok(not aq.sleeping(), "контроль: тиші вже нема")
 n = aq.flush()
 ok(n == 2, f"віддано обидва ({n})")
 ok(aq.pending() == 0, "черга очищена")
@@ -189,10 +190,10 @@ ok(aq.flush() == 0, "старше 10 год — не віддаємо")
 ok(not SENT, "нічого не надіслано")
 
 print("\n2h) Активність Олега скасовує тишу")
-at(9)
-fake_shift("night")
+at(23)
+q.sleep_on()
+q._last_user_action["ts"] = 0.0
 MEM.clear()
-import quiet as q  # noqa: E402
 q.mark_user_thread()
 ok(not aq.should_hold("🔮 Астро-прогноз"), "його потік — відповідаємо негайно")
 q.clear_user_thread()
@@ -201,13 +202,20 @@ ok(aq.should_hold("🔮 Астро-прогноз"), "фоновий потік 
 print("\n2i) Під'єднано до відправників")
 ak = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "ai_kit.py")).read()
 ok("autoquiet as _aq" in ak and "_aq.hold" in ak, "ai_kit.tg тримає чергу")
+ok(ak.index("_aq.hold") < ak.index('_q_g.blocked("msg")'),
+   "у ai_kit черга ПЕРЕД quiet-guard (нічого не губиться)")
 ok("import autoquiet as _aq_c" in msrc, "monitor._send_telegram_chunk")
+ok(msrc.index("_aq_c.hold") < msrc.index('_q_g.blocked("msg")'),
+   "у monitor черга ПЕРЕД quiet-guard")
 ok("_aq_k.hold(text, kind=\"offer\", keyboard=keyboard)" in msrc,
    "monitor keyboard-sender зберігає кнопки")
 ml = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "monitor_loop.py")).read()
 ok("_aq_w.flush()" in ml, "воркер віддає відкладене після пробудження")
 bs = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "bot.py")).read()
 ok('"/тиша"' in bs and '"/покажи_відкладене"' in bs, "команди /тиша і /покажи_відкладене")
+ok("_q.sleep_on()" in bs.split('elif text in ["/тиша"')[1][:600],
+   "/тиша вмикає режим тиші (а не просто показує стан)")
+ok('"/тиша_статус"' in bs, "статус переїхав на /тиша_статус")
 
 print(f"\nfails: {FAILS}")
 sys.exit(1 if FAILS else 0)

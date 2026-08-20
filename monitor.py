@@ -349,15 +349,8 @@ def _sanitize_html(text: str) -> str:
 
 def _send_telegram_chunk(text: str) -> bool:
     """Надсилає одне повідомлення з HTML parse_mode."""
-    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
-    try:
-        import quiet as _q_g
-        if _q_g.blocked("msg"):
-            print("[quiet] 🌙 сон: _send_telegram_chunk придушено", flush=True)
-            return False
-    except Exception:
-        pass
-    # autoquiet: тиша за графіком змін (несрочне → черга)
+    # ЧЕРГА ПЕРЕД GUARD-ом: під час /тиша повідомлення не губиться, а чекає
+    # до 04:00 (раніше quiet-guard просто викидав його).
     try:
         import autoquiet as _aq_c
         if _aq_c.should_hold(text):
@@ -365,6 +358,14 @@ def _send_telegram_chunk(text: str) -> bool:
             return False
     except Exception as _aqe:
         print(f"[autoquiet] chunk skipped: {_aqe}", flush=True)
+    # quiet-guard: режим тиші (/тиша) — жодних сповіщень і нагадувань до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 тиша: _send_telegram_chunk придушено", flush=True)
+            return False
+    except Exception:
+        pass
     import re as _re
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     # Автоматично фіксуємо голі & перед відправкою
@@ -2322,16 +2323,8 @@ def _send_telegram_gif_only():
 
 def _send_telegram_text_with_keyboard(text: str, keyboard: dict):
     """Надсилає текстове повідомлення з inline keyboard."""
-    # quiet-guard: режим сну (/сон) — жодних сповіщень і нагадувань до 04:00
-    try:
-        import quiet as _q_g
-        if _q_g.blocked("msg"):
-            print("[quiet] 🌙 сон: _send_telegram_text_with_keyboard придушено", flush=True)
-            return False
-    except Exception:
-        pass
-    # autoquiet: тиша за графіком змін. Кнопки зберігаємо разом з текстом,
-    # щоб після пробудження пропозиція прийшла робочою.
+    # ЧЕРГА ПЕРЕД GUARD-ом. Кнопки зберігаємо разом з текстом, щоб після
+    # пробудження пропозиція прийшла робочою.
     try:
         import autoquiet as _aq_k
         if _aq_k.should_hold(text):
@@ -2339,6 +2332,14 @@ def _send_telegram_text_with_keyboard(text: str, keyboard: dict):
             return False
     except Exception as _aqe:
         print(f"[autoquiet] kb skipped: {_aqe}", flush=True)
+    # quiet-guard: режим тиші (/тиша) — жодних сповіщень до 04:00
+    try:
+        import quiet as _q_g
+        if _q_g.blocked("msg"):
+            print("[quiet] 🌙 тиша: _send_telegram_text_with_keyboard придушено", flush=True)
+            return False
+    except Exception:
+        pass
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     payload = json.dumps({
         "chat_id": TELEGRAM_CHAT,

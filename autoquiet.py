@@ -1,31 +1,25 @@
 #!/usr/bin/env python3
 """
-autoquiet.py — РОЗУМНА ТИША за графіком змін (без /сон вручну).
+autoquiet.py — ЧЕРГА ВІДКЛАДЕНИХ ПОВІДОМЛЕНЬ під час режиму тиші.
 
-Скарга Олега: бот писав «ти зараз спиш» коли він був на нічній зміні, і будив
-його вдень, коли він відпочивав після нічної. `/сон` це лікує тільки вручну.
+Олег (20.08): «Режим тиші має працювати ТІЛЬКИ коли я введу /тиша, і бот о
+04:00 сам відновиться і вимкне режим тиші».
 
-Тепер бот сам знає, коли Олег спить:
-  • нічна зміна   → спить приблизно 07:00–14:00 (день після зміни)
-  • рання зміна   → спить 22:00–05:00
-  • вихідний      → спить 23:00–07:00
-Джерело правди — Google Calendar через context.get_shift_from_calendar()
-(там уже враховано, що нічна зміна почалась ВЧОРА). Немає календаря →
-fallback 23:00–06:00, тобто поводимось як раніше, не гірше.
+Тому автоматичного визначення сну за графіком змін тут БІЛЬШЕ НЕМА. Єдине
+джерело правди — ручний режим тиші з quiet.py (/тиша → до найближчих 04:00,
+о 04:00 авто-пробудження).
 
-Головне: несрочне не втрачається, а ЧЕКАЄ. Придушені повідомлення складаються
-в чергу і після пробудження приходять одним дайджестом «поки ти спав».
-
-Термінове проходить завжди: VIP-лист, крипто-алерт ±5%, подія за годину,
-технічна аварія. Список ознак — URGENT_HINTS.
+Роль цього модуля: поки тиша увімкнена, несрочне не губиться, а ЧЕКАЄ в черзі
+і після пробудження приходить дайджестом «поки ти спав». Термінове проходить
+одразу (URGENT_HINTS).
 
 API:
-    sleeping()          -> bool
+    sleeping()          -> bool          # = ручний режим тиші увімкнено
     state()             -> {"sleeping","reason","until","shift"}
     should_hold(text)   -> bool          # True → не шли, поклади в чергу
     hold(text, kind)                     # покласти в чергу
-    flush()             -> int           # віддати дайджест після пробудження
-    status_text()       -> str           # /тиша
+    flush()             -> int           # віддати після пробудження
+    status_text()       -> str           # /тиша_статус
 """
 import os
 import sys
@@ -65,63 +59,27 @@ def _now():
         return datetime.now()
 
 
-def _sleep_window(shift_today: str, h: int):
-    """(спить?, підпис, година пробудження) для конкретної зміни й години."""
-    if shift_today in ("night",):
-        # Нічна: працює 18:00–06:00 → спить після зміни вдень.
-        if 7 <= h < 14:
-            return True, "відпочиває після нічної зміни", 14
-        return False, "", 0
-    if shift_today in ("after_night",):
-        if h < 14:
-            return True, "відпочиває після нічної зміни", 14
-        return False, "", 0
-    if shift_today == "early":
-        # Рання: 06:00–18:00 → лягає раніше.
-        if h >= 22 or h < 5:
-            return True, "спить перед ранньою зміною", 5
-        return False, "", 0
-    # вихідний / невідомо
-    if h >= 23 or h < 7:
-        return True, "нічний сон", 7
-    return False, "", 0
-
-
 def state(force: bool = False) -> dict:
-    """Спить чи ні + чому. Кешується на 5 хв."""
-    import time as _t
-    if not force and _cache["data"] is not None and (_t.time() - _cache["ts"]) < _CACHE_TTL:
-        return dict(_cache["data"])
-
+    """Спить чи ні. ТІЛЬКИ ручний режим тиші (/тиша) — жодної автоматики.
+    force залишено для сумісності з викликами."""
     now = _now()
-    h = now.hour
-    shift = "unknown"
     try:
-        import context as _ctx
-        info = _ctx.get_shift_from_calendar() or {}
-        shift = str(info.get("today") or "free")
+        import quiet as _q
+        on = bool(_q.is_quiet())
+        u = _q.until_dt()
     except Exception as e:
-        print(f"[{TAG}] календар недоступний ({e}) — fallback 23:00–07:00", flush=True)
-
-    # На зміні Олег НЕ спить — навіть якщо година «нічна».
-    working_night = (shift == "night" and (h >= 18 or h < 6))
-    working_early = (shift == "early" and 6 <= h < 18)
-
-    if working_night or working_early:
-        res = {"sleeping": False, "reason": "на зміні", "until": None, "shift": shift}
-    else:
-        slp, why, wake_h = _sleep_window(shift, h)
-        until = None
-        if slp:
-            until = now.replace(hour=wake_h % 24, minute=0, second=0, microsecond=0)
-            if until <= now:
-                until += timedelta(days=1)
-        res = {"sleeping": slp, "reason": why or "активний час",
-               "until": until.isoformat() if until else None, "shift": shift}
-
-    _cache["data"] = res
-    _cache["ts"] = _t.time()
-    return dict(res)
+        print(f"[{TAG}] quiet недоступний ({e}) — вважаю що тиші нема", flush=True)
+        return {"sleeping": False, "reason": "тиша вимкнена", "until": None,
+                "shift": "manual"}
+    if not on:
+        return {"sleeping": False, "reason": "тиша вимкнена", "until": None,
+                "shift": "manual"}
+    if u is None:
+        u = now.replace(hour=4, minute=0, second=0, microsecond=0)
+        if u <= now:
+            u += timedelta(days=1)
+    return {"sleeping": True, "reason": "режим тиші (/тиша)",
+            "until": u.isoformat(), "shift": "manual"}
 
 
 def sleeping() -> bool:
@@ -149,9 +107,8 @@ def should_hold(text: str = "") -> bool:
         pass
     if not sleeping():
         return False
-    if is_urgent(text):
-        print(f"[{TAG}] ⚡ термінове — шлю попри сон", flush=True)
-        return False
+    # Тиша — це тиша: під час /тиша відкладаємо ВСЕ, навіть термінове.
+    # Нічого не губиться — о 04:00 прийде дайджестом.
     return True
 
 
@@ -246,14 +203,15 @@ def flush(force: bool = False) -> int:
 def status_text() -> str:
     st = state(force=True)
     n = pending()
-    lines = ["🤫 <b>РОЗУМНА ТИША</b>", "━━━━━━━━━━━━━━━━━━━━"]
-    lines.append(f"Зміна сьогодні: <b>{st.get('shift')}</b>")
+    lines = ["\U0001f92b <b>РЕЖИМ ТИШІ</b>", "━" * 20]
     if st.get("sleeping"):
-        lines.append(f"Стан: 💤 {st.get('reason')}")
-        lines.append(f"Прокидаюсь: <b>{str(st.get('until'))[11:16]}</b>")
+        lines.append("Стан: \U0001f4a4 увімкнено вручну (/тиша)")
+        lines.append(f"Прокидаюсь сам: <b>{str(st.get('until'))[11:16]}</b>")
         lines.append("Несрочне складаю в чергу, термінове шлю одразу.")
+        lines.append("<i>Вийти раніше: /прокинувся</i>")
     else:
-        lines.append(f"Стан: ✅ {st.get('reason')} — пишу як звично")
+        lines.append("Стан: ✅ вимкнено — пишу як звично")
+        lines.append("<i>Увімкнути: /тиша (до 04:00)</i>")
     lines.append(f"У черзі: <b>{n}</b>")
     if n:
         lines.append("<i>Віддати зараз: /покажи_відкладене</i>")
