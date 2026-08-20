@@ -1006,6 +1006,24 @@ def cb_notify(cb_id, chat_id, text, alert=False):
     return ok
 
 
+def _close_offer(kind: str, key: str, msg_text: str = "", mute: bool = False):
+    """Пропозицію опрацьовано — більше її не показувати.
+
+    Це і був баг, на який скаржився Олег: він натискав кнопку, а через годину
+    та сама пропозиція приходила знову (id щоразу новий, назва від AI трохи
+    інша). Тепер кожне натискання пишеться в журнал пропозицій (60 днів), а
+    «не треба» ще й у постійний блок-лист."""
+    try:
+        import dismissed as _dm_off
+        title = _dm_off.extract_title(msg_text)
+        _dm_off.mark_offered(kind, key=key, title=title, decided=True)
+        if mute:
+            _dm_off.mute(kind, key=key, title=title, note="button")
+        print(f"[offer] закрито {kind}|{key} «{title[:45]}» (mute={mute})", flush=True)
+    except Exception as e:
+        print(f"[offer] close error: {e}", flush=True)
+
+
 def handle_email_callback(callback_query):
     """Обробляє кнопки листів: Описати / Видалити / Залишити / В календар / Важливий / Відповідь."""
     import json as _json
@@ -1013,6 +1031,7 @@ def handle_email_callback(callback_query):
     msg_id  = callback_query["message"]["message_id"]
     chat_id = callback_query["message"]["chat"]["id"]
     cb_id   = callback_query["id"]
+    _cb_txt = str((callback_query.get("message") or {}).get("text") or "")[:400]
     print(f"[email_callback] received: data={data}", flush=True)
 
     if data.startswith("email_describe_"):
@@ -1476,10 +1495,12 @@ def handle_email_callback(callback_query):
         except Exception as e:
             print(f"cal_add error: {e}")
             send(chat_id, f"⚠️ Помилка: {e}")
+        _close_offer("cal_add", uid_str, _cb_txt, mute=False)
 
     elif data.startswith("cal_skip_"):
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Скасовано"})
         api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+        _close_offer("cal_skip", data[len("cal_skip_"):], _cb_txt, mute=True)
 
     elif data.startswith("calrem_add_"):
         # Ставимо нагадування (без конкретної дати в листі) на найближчий ВИХІДНИЙ
@@ -1529,10 +1550,12 @@ def handle_email_callback(callback_query):
         except Exception as e:
             print(f"calrem_add error: {e}")
             send(chat_id, f"⚠️ Помилка додавання нагадування: {e}")
+        _close_offer("calrem_add", uid_str, _cb_txt, mute=False)
 
     elif data.startswith("calrem_skip_"):
         uid_str = data[len("calrem_skip_"):]
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "❓ Перепитую..."})
+        _close_offer("calrem_skip", uid_str, _cb_txt, mute=False)
         try:
             import confirm as _cfm_s
             _rem = _DRAFT_STORE.get(f"calrem_{uid_str}") if hasattr(_DRAFT_STORE, "get") else None
@@ -1730,12 +1753,14 @@ def handle_email_callback(callback_query):
         except Exception as e:
             print(f"shop_add error: {e}")
             send(chat_id, f"⚠️ Помилка: {e}")
+        _close_offer("shop_add", uid_str, _cb_txt, mute=False)
 
     elif data.startswith("shop_skip_"):
         uid_str = data[len("shop_skip_"):]
         _DRAFT_STORE.pop(f"shop_{uid_str}", None)
         api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Скасовано"})
         api("editMessageReplyMarkup", {"chat_id": chat_id, "message_id": msg_id, "reply_markup": {"inline_keyboard": []}})
+        _close_offer("shop_skip", uid_str, _cb_txt, mute=True)
 
     else:
         # Якщо сюди дійшли — значить дата не потрапила в жоден if/elif вище,

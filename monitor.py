@@ -2403,6 +2403,18 @@ def apply_action_suggestion(ai: dict, source_id: str, sender: str = "", subject:
         if not action_title or action_type == "none":
             return
 
+        # Дата в минулому — подія вже позаду, пропонувати запис нема сенсу
+        # («поїздка на Корфу вже пройшла», «страховка до 15.08» коли вже 20.08).
+        if action_date:
+            try:
+                import datetime as _dt_pa
+                if str(action_date) < _dt_pa.date.today().isoformat():
+                    print(f"[action] ⏮ дата {action_date} у минулому "
+                          f"— «{action_title[:40]}» не пропоную", flush=True)
+                    return
+            except Exception:
+                pass
+
         # Олег уже підтвердив «не треба» по цій темі → не пропонуємо вдруге.
         try:
             import dismissed as _dm_act
@@ -2410,6 +2422,11 @@ def apply_action_suggestion(ai: dict, source_id: str, sender: str = "", subject:
                _dm_act.is_muted(key=source_id, title=subject):
                 print(f"[action] 🚫 заглушено ({_dm_act.why(key=source_id, title=action_title)}) "
                       f"— пропозицію «{action_title[:40]}» не надсилаю", flush=True)
+                return
+            # Ту саму пропозицію (навіть інакше названу) двічі не показуємо.
+            _seen = _dm_act.already_offered(action_title, key=source_id)
+            if _seen:
+                print(f"[action] 🔁 {_seen} — «{action_title[:40]}» не дублюю", flush=True)
                 return
         except Exception as _dm_e:
             print(f"[action] dismissed check error: {_dm_e}", flush=True)
@@ -2460,6 +2477,12 @@ def apply_action_suggestion(ai: dict, source_id: str, sender: str = "", subject:
                     {"text": "❌ Не треба", "callback_data": f"shop_skip_{source_id}"}
                 ]]}
             )
+        # Показали — фіксуємо, щоб та сама пропозиція не прийшла вдруге.
+        try:
+            import dismissed as _dm_mk
+            _dm_mk.mark_offered(action_type, key=source_id, title=action_title)
+        except Exception as _mk_e:
+            print(f"[action] mark_offered error: {_mk_e}", flush=True)
     except Exception as e:
         print(f"[suggest_action_from_text] error: {e}")
 

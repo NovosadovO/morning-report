@@ -125,6 +125,39 @@ def _kw_hit(kw: str, title_norm: str) -> bool:
     return True
 
 
+# Слова, які нічого не кажуть про тему (є майже в кожній назві) — для нечіткого
+# порівняння їх не враховуємо, інакше «Оплатити X» і «Оплатити Y» здавались би
+# однією темою.
+_SIG_STOP = {
+    "щодо", "лист", "листа", "лист;", "треба", "потрібно", "мене", "мені",
+    "олег", "олега", "олегу", "сьогодні", "завтра", "цього", "цьому", "нове",
+    "нова", "новий", "після", "перед", "разом", "буде", "було", "тому",
+}
+
+
+def _sig(norm: str) -> set:
+    """Набір значущих коренів назви — «підпис» теми."""
+    out = set()
+    for w in str(norm or "").split():
+        if len(w) < 4 or w in _SIG_STOP:
+            continue
+        out.add(_stem(w))
+    return out
+
+
+def _fuzzy(a_norm: str, b_norm: str) -> bool:
+    """Чи це та сама тема, названа інакше. AI щоразу формулює по-своєму
+    («Відповісти на лист від Вероні» / «...від Вероні щодо весілля»), тому
+    точного збігу назви мало. Умова: ≥2 спільних кореня і ≥75% коренів
+    коротшої назви — «Страховка Kooperativa» і «Страховка квартири» НЕ
+    злипаються."""
+    sa, sb = _sig(a_norm), _sig(b_norm)
+    if len(sa) < 2 or len(sb) < 2:
+        return False
+    inter = len(sa & sb)
+    return inter >= 2 and inter >= 0.75 * min(len(sa), len(sb))
+
+
 def _load(force: bool = False) -> dict:
     import time
     if not force and _CACHE["data"] is not None and (time.time() - _CACHE["ts"]) < _CACHE_TTL:
@@ -199,6 +232,13 @@ def is_muted(kind=None, key=None, title=None) -> bool:
                     continue
                 if _kw_hit(str((rec or {}).get("keyword") or ""), n):
                     return True
+        # нечіткий збіг: та сама тема, але AI назвав її інакше
+        if _title_ok(n):
+            for sk, rec in data.items():
+                if not sk.startswith("t:"):
+                    continue
+                if _fuzzy(n, str((rec or {}).get("norm") or _norm((rec or {}).get("title")))):
+                    return True
         return False
     except Exception as e:
         # Блок-лист ніколи не має ламати відправку: не змогли прочитати —
@@ -219,7 +259,108 @@ def why(kind=None, key=None, title=None) -> str:
         kw = str((rec or {}).get("keyword") or "")
         if sk.startswith("w:") and _kw_hit(kw, n):
             return f"ключове слово «{kw}»"
+    for sk, rec in data.items():
+        if not sk.startswith("t:"):
+            continue
+        rn = str((rec or {}).get("norm") or _norm((rec or {}).get("title")))
+        if _fuzzy(n, rn):
+            return f"схожа тема «{rn}»"
     return "?"
+
+
+# ─── ЖУРНАЛ ПРОПОЗИЦІЙ (щоб не пропонувати те саме двічі) ────────────────────
+# Окрема від блок-листа річ: тут не «не нагадуй ніколи», а «цю пропозицію я вже
+# показував / ти вже вирішив» — тому з терміном дії.
+OFFERS_FILE = "offer_log.json"
+OFFER_DAYS = 7      # показав і Олег проігнорував → не повторювати тиждень
+DECIDED_DAYS = 60   # натиснув кнопку (додати/не треба) → тема вирішена
+_OCACHE = {"data": None, "ts": 0.0}
+
+
+def _oload(force: bool = False) -> dict:
+    import time
+    if not force and _OCACHE["data"] is not None and (time.time() - _OCACHE["ts"]) < _CACHE_TTL:
+        return _OCACHE["data"]
+    data = K.load(OFFERS_FILE, default={}) or {}
+    if not isinstance(data, dict):
+        data = {}
+    _OCACHE["data"] = data
+    _OCACHE["ts"] = time.time()
+    return data
+
+
+def _oput(store_key: str, rec: dict):
+    K.update_key(OFFERS_FILE, store_key, rec)
+    d = dict(_OCACHE["data"] or {})
+    d[store_key] = rec
+    _OCACHE["data"] = d
+
+
+def _okey(norm: str) -> str:
+    return "o:" + hashlib.md5(norm.encode("utf-8")).hexdigest()[:12]
+
+
+def _alive(rec: dict) -> bool:
+    try:
+        until = str((rec or {}).get("until") or "")
+        if not until:
+            return False
+        return datetime.fromisoformat(until) > K.now()
+    except Exception:
+        return False
+
+
+def already_offered(title, key=None) -> str:
+    """'' → можна пропонувати. Інакше — причина, чому не треба."""
+    try:
+        n = _norm(title)
+        if not _title_ok(n):
+            return ""
+        data = _oload()
+        if key not in (None, ""):
+            rec = data.get(_okey(f"key:{key}"))
+            if _alive(rec):
+                return f"той самий джерело-id {key}"
+        rec = data.get(_okey(n))
+        if _alive(rec):
+            return ("вже вирішено" if (rec or {}).get("decided") else "вже пропонував") + f" «{n}»"
+        for sk, rec in data.items():
+            if not sk.startswith("o:") or not _alive(rec):
+                continue
+            rn = str((rec or {}).get("norm") or "")
+            if rn and _fuzzy(n, rn):
+                return ("вже вирішено" if rec.get("decided") else "вже пропонував") + f" схоже «{rn}»"
+        return ""
+    except Exception as e:
+        K.log(TAG, f"already_offered error: {e}")
+        return ""
+
+
+def mark_offered(kind: str, key=None, title=None, decided: bool = False):
+    """Запам'ятати, що пропозицію показано (decided=True — Олег натиснув кнопку)."""
+    try:
+        from datetime import timedelta
+        days = DECIDED_DAYS if decided else OFFER_DAYS
+        until = (K.now() + timedelta(days=days)).isoformat()
+        rec = {"kind": str(kind or ""), "key": str(key or ""),
+               "title": str(title or "")[:120], "decided": bool(decided),
+               "ts": K.now().isoformat(), "until": until}
+        n = _norm(title)
+        if _title_ok(n):
+            _oput(_okey(n), dict(rec, norm=n))
+        if key not in (None, ""):
+            _oput(_okey(f"key:{key}"), dict(rec, norm=n))
+    except Exception as e:
+        K.log(TAG, f"mark_offered error: {e}")
+
+
+def offers_clear() -> int:
+    data = _oload(force=True)
+    n = len(data)
+    K.save(OFFERS_FILE, {})
+    _OCACHE["data"] = {}
+    K.log(TAG, f"журнал пропозицій очищено ({n})")
+    return n
 
 
 # ─── ХУК З confirm.yes() ─────────────────────────────────────────────────────
