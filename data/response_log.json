@@ -3723,6 +3723,12 @@
       "category": "confirm",
       "question": "calrem_skip: Перевірити лист від Pelikan.sk",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-20T20:18:58.408126+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_740b16b31a"
     }
   ]
 }
