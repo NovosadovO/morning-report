@@ -4357,10 +4357,16 @@ def handle_command(chat_id, text):
         if len(text) > 3:
             try:
                 import importlib as _il_d, monitor as _mon_d
+                # ВАЖЛИВО: власні аліаси. datetime/os вище в цій функції
+                # імпортуються локально (from datetime import datetime), тому
+                # звертання до глобальних тут давало UnboundLocalError і
+                # відповіді на щоденник НІКОЛИ не зберігались.
+                import os as _os_d
+                from datetime import datetime as _dtc_d, timezone as _tzc_d, timedelta as _tdc_d
                 _il_d.reload(_mon_d)
-                _now_l = datetime.now(timezone.utc) + timedelta(hours=2)
+                _now_l = _dtc_d.now(_tzc_d.utc) + _tdc_d(hours=2)
                 _diary_data = _mon_d.load_json_file(
-                    os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "monitor_diary.json"),
+                    _os_d.path.join(_os_d.path.dirname(_os_d.path.abspath(__file__)), "data", "monitor_diary.json"),
                     default={"entries": {}}
                 )
                 _today_d = _now_l.strftime("%Y-%m-%d")
@@ -4371,6 +4377,9 @@ def handle_command(chat_id, text):
                     try:
                         import response_log as _rl_diary
                         _rl_diary.log_response("diary", "3 питання про день", text)
+                        import ai_brain as _brain_d
+                        _brain_d.remember_answer("щоденник: 3 питання про день", text,
+                                                 topic="щоденник", source="diary")
                     except Exception:
                         pass
                     return
@@ -4383,7 +4392,9 @@ def handle_command(chat_id, text):
         if len(text) > 3:
             try:
                 import sys as _sys_mc2
-                _sys_mc2.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                import os as _os_mc2
+                from datetime import datetime as _dtc_mc2, timezone as _tzc_mc2
+                _sys_mc2.path.insert(0, _os_mc2.path.dirname(_os_mc2.path.abspath(__file__)))
                 import storage as _storage_mc2
                 _mc_pending = _storage_mc2.load("monitor_micro_checkin_pending.json", default={})
                 if _mc_pending.get("awaiting"):
@@ -4391,7 +4402,7 @@ def handle_command(chat_id, text):
                     _mc_log.setdefault("entries", []).append({
                         "question": _mc_pending.get("question", ""),
                         "answer": text,
-                        "answered_at": datetime.now(timezone.utc).isoformat(),
+                        "answered_at": _dtc_mc2.now(_tzc_mc2.utc).isoformat(),
                     })
                     _storage_mc2.save("monitor_micro_checkin_log.json", _mc_log)
                     _storage_mc2.save("monitor_micro_checkin_pending.json", {"awaiting": False})
@@ -4399,6 +4410,9 @@ def handle_command(chat_id, text):
                     try:
                         import response_log as _rl_mc
                         _rl_mc.log_response("micro_checkin", _mc_pending.get("question", ""), text)
+                        import ai_brain as _brain_mc
+                        _brain_mc.remember_answer(_mc_pending.get("question", ""), text,
+                                                  topic="мікро-опитування", source="checkin")
                     except Exception:
                         pass
                     return
