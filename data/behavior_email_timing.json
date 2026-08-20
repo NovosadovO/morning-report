@@ -1,9 +1,4 @@
 {
-  "77351": {
-    "sender": "slovakia@delivery-marketing.bolt.eu",
-    "sender_raw": "\"Bolt Food\" <slovakia@delivery-marketing.bolt.eu>",
-    "seen_ts": "2026-08-12T07:07:43.976309+00:00"
-  },
   "77352": {
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
@@ -1498,5 +1493,10 @@
     "sender": "payments-noreply@google.com",
     "sender_raw": "Google Payments <payments-noreply@google.com>",
     "seen_ts": "2026-08-20T14:36:11.415846+00:00"
+  },
+  "77753": {
+    "sender": "hello@news.sorare.com",
+    "sender_raw": "\"Sorare\" <hello@news.sorare.com>",
+    "seen_ts": "2026-08-20T14:38:19.409018+00:00"
   }
 }
