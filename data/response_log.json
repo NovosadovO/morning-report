@@ -3901,6 +3901,12 @@
       "category": "confirm",
       "question": "calrem_skip: Перевірити пошту",
       "answer": "no"
+    },
+    {
+      "ts": "2026-08-20T21:25:26.061109+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_n_5be693de5a"
     }
   ]
 }
