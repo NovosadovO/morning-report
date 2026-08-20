@@ -3925,6 +3925,12 @@
       "category": "confirm",
       "question": "calrem_skip: Переглянути стратегію ONDO/AVAX",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-20T21:25:52.880496+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_ce6282b22c"
     }
   ]
 }
