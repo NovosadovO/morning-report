@@ -3847,6 +3847,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-08-20T21:24:57.921310+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_n_b4528b296e"
     }
   ]
 }
