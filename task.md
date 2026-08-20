@@ -124,3 +124,18 @@ health_ocr.download_telegram_photo). fails: 0.
 - ФІКС: у handle_command блоки щоденника і мікро-опитування падали з UnboundLocalError (datetime/os шадовились локальними import) — відповіді НЕ зберігались взагалі. Тепер аліаси _dtc_d/_os_d/_dtc_mc2 + запис у пам'ять AI.
 - Тести: tests_ai_brain.py fails: 0 (44 асерти). Регресія: gate_test 0, email_btn_test 0, tests_quiet 0, confirm_test 0, cw_test 0.
 - Gemini білінг ЖИВИЙ (0 "billing depleted" у логах, реальні AI-тексти). Strava 228739 досі Inactive.
+
+## Постійний блок-лист «не нагадувати» (20.08)
+Проблема: підтверджене «не треба» ніде не зберігалось (cal_skip_/calrem_skip_/email_keep_
+лише прибирали клавіатуру) → та сама подія/лист приходили знову.
+Рішення: dismissed.py — блок-лист у data/dismissed.json, матчинг ЗА КЛЮЧЕМ (kind|id)
+І ЗА НОРМАЛІЗОВАНОЮ НАЗВОЮ (без емодзі/регістру/Re:), бо id пропозицій щоразу нові.
+Хук один: confirm.yes() → dismissed.remember_confirm() для MUTE_ACTIONS (15 gate_* + cw_cancel,
+cw_miss, calrem_skip, gx_mute, email_delete). Текст кнопки («Не треба») назвою НЕ стає —
+_BAD_TITLES + fallback на тему з тексту повідомлення (extra.msg із гейту).
+Перевірки перед відправкою: monitor.apply_action_suggestion, monitor.check_important_emails_followup
+(×2 копії), calendar_watch.is_blocked(evid, title), followup_watcher.check.
+email_keep_ → _drop_important_email() прибирає лист з important_emails.json + mute.
+/вимкнені_нагадування показує і dismissed; /увімкни_нагадування чистить обидва.
+Тести: tests_dismissed.py → fails: 0. Прод: деплой 39322aa7 SUCCESS, живий клік
+cal_skip → cfm_y_ → запис у data/dismissed.json (ключ+назва), 0 Traceback.
