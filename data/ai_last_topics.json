@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-08-20t23_55_18_490516": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скласти план на ранок\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Скласти план на ранок.\"}",
+    "ts": "2026-08-20T23:55:18.490516"
+  },
+  "action_detect|2026-08-20t23_54_07_236794": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
+    "ts": "2026-08-20T23:54:07.236794"
+  },
+  "action_detect|2026-08-20t23_53_55_684484": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страховку Kooperativa\", \"action_date\": \"2026-08-15\", \"action_time\": null, \"action_summary\": \"Страховку Koo",
+    "ts": "2026-08-20T23:53:55.684484"
+  },
   "action_detect|2026-08-20t23_50_51_922102": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Надіслати дані з QWatch Pro\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Відкрити додаток QWatch ",
@@ -283,20 +298,5 @@
     "topic": "MSG_EVENT_SOON",
     "gist": "Привіт Олеже! ✅  Бачу, що ти зараз у розпалі нічної зміни. Це чудово, що ти на зв'язку, навіть працюючи. Цей вечір виявився досить динамічним для крипти: BTC зр",
     "ts": "2026-08-20T21:35:53.764800"
-  },
-  "action_detect|2026-08-20t21_35_39_929999": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити онлайн-реєстрац",
-    "ts": "2026-08-20T21:35:39.929999"
-  },
-  "msg_vip_email|2026-08-20t21_35_32_352591": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 🤝  Сподіваюся, нічна зміна проходить продуктивно, адже бачу, що ти зараз фізично на роботі. Знаю, що вечір у тебе сьогодні досить робочий, але це ",
-    "ts": "2026-08-20T21:35:32.352591"
-  },
-  "action_detect|2026-08-20t21_24_50_686840": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
-    "ts": "2026-08-20T21:24:50.686840"
   }
 }
