@@ -1524,7 +1524,44 @@
     "action": "email_delete",
     "pid": "77818",
     "subject": "📰 AI-curated Daily Crypto Digest - August 21",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 74896,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77818"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77818"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77818"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77818"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77818"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77818"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-21T22:02:32.705727+00:00"
   }
 }
