@@ -1,4 +1,9 @@
 {
+  "msg_deep_analysis|2026-08-22t01_49_36_161192": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋 Навіть коли ніч огортає Кошіце, а ти працюєш на зміні, криптосвіт не спить, та й твої справи теж киплять! Сподіваюся, зміна проходить продуктивн",
+    "ts": "2026-08-22T01:49:36.161192"
+  },
   "proactive_actions|2026-08-22t01_30_19_560866": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reply\",     \"title\": \"Онлайн реєстрація на рейс\",     \"date\": \"2026-08-22\",     \"time\": \"\",     \"message\": \"Олеже, тобі прийшов лист ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято ліки Armo",
     "ts": "2026-08-21T22:01:45.943986"
-  },
-  "action_detect|2026-08-21t22_01_45_838038": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"День народження Олі 1 ве",
-    "ts": "2026-08-21T22:01:45.838038"
   }
 }
