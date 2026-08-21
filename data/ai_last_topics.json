@@ -1,4 +1,64 @@
 {
+  "email_ai_item|2026-08-21t04_38_49_217866": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист є автоматичним підписом електронної пошти від Олега Новосадова, керівника лінії в Minebea Slovakia s.r.o. Він містить контактні дані к",
+    "ts": "2026-08-21T04:38:49.217866"
+  },
+  "personal_ai|2026-08-21t04_38_17_915806": {
+    "topic": "personal_ai",
+    "gist": "Для підтримки енергії та концентрації на нічній зміні, спробуй зробити короткі перерви для легких фізичних вправ, що допоможе розігнати кров. Оскільки ти вже пр",
+    "ts": "2026-08-21T04:38:17.915806"
+  },
+  "action_detect|2026-08-21t04_37_55_747302": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
+    "ts": "2026-08-21T04:37:55.747302"
+  },
+  "action_detect|2026-08-21t04_36_24_734567": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
+    "ts": "2026-08-21T04:36:24.734567"
+  },
+  "action_detect|2026-08-21t04_36_13_682123": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Тест\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Записано подію 'тест' на 25 серпня 2026",
+    "ts": "2026-08-21T04:36:13.682123"
+  },
+  "action_detect|2026-08-21t04_36_02_701660": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
+    "ts": "2026-08-21T04:36:02.701660"
+  },
+  "action_detect|2026-08-21t04_35_51_649974": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страховку Kooperativa\", \"action_date\": \"2026-08-15\", \"action_time\": null, \"action_summary\": \"Оплатити стра",
+    "ts": "2026-08-21T04:35:51.649974"
+  },
+  "action_detect|2026-08-21t04_35_51_529460": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-21T04:35:51.529460"
+  },
+  "msg_rwa|2026-08-21t04_35_45_582458": {
+    "topic": "MSG_RWA",
+    "gist": "Привіт, Олеже! Бачу, ти на нічній зміні, тож тримай короткий апдейт по RWA сектору, як ти й просив. Твій ONDO, звісно, під пильним оком.  ### Загальний огляд RW",
+    "ts": "2026-08-21T04:35:45.582458"
+  },
+  "action_detect|2026-08-21t04_35_29_776066": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страховку Kooperativa\", \"action_date\": \"2026-08-15\", \"action_time\": \"13:00\", \"action_summary\": \"Оплатити с",
+    "ts": "2026-08-21T04:35:29.776066"
+  },
+  "action_detect|2026-08-21t04_35_04_331946": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-21T04:35:04.331946"
+  },
+  "msg_deep_analysis|2026-08-21t04_34_56_456599": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Ого, бачу, ти зараз у самому розпалі нічної зміни, віддаєш себе роботі, а час невпинно наближається до ранку. Знаю, що це справжній виклик, щоб",
+    "ts": "2026-08-21T04:34:56.456599"
+  },
   "msg_rwa|2026-08-21t04_34_19_882544": {
     "topic": "MSG_RWA",
     "gist": "Привіт, Олег! Бачу, ти на нічній зміні, тож коротко по суті.  ### 📈 Стрибок XLM у RWA-секторі  1. **Що сталося?** Сьогодні XLM показав значне зростання на 8.7% ",
@@ -238,65 +298,5 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн-реєстрація на рейс\",     \"date\": \"2026-08-21\",     \"time\": \"\",     \"message\": \"Олеже, бачу важливий н",
     "ts": "2026-08-21T00:03:21.633845"
-  },
-  "action_detect|2026-08-21t00_03_03_546951": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-21T00:03:03.546951"
-  },
-  "msg_deep_analysis|2026-08-21t00_02_58_446768": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋  Ти зараз заслужено відпочиваєш, дозволяючи організму повністю відновитися після насиченого періоду. Ніч — це твій час для глибокого спокою, і в",
-    "ts": "2026-08-21T00:02:58.446768"
-  },
-  "action_detect|2026-08-21t00_02_40_482150": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-21T00:02:40.482150"
-  },
-  "msg_vip_email|2026-08-21t00_02_32_816828": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 🤝**  Наразі ніч, і ти заслужено відпочиваєш, що є над",
-    "ts": "2026-08-21T00:02:32.816828"
-  },
-  "personal_ai|2026-08-21t00_00_42_287370": {
-    "topic": "personal_ai",
-    "gist": "Олеже, оскільки ти на нічній зміні, твій \"перед сном\" буде вже вранці 21 серпня. Враховуючи, що на завтрашній день у календарі нічого не заплановано, ти можеш з",
-    "ts": "2026-08-21T00:00:42.287370"
-  },
-  "action_detect|2026-08-20t23_55_18_490516": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скласти план на ранок\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Скласти план на ранок.\"}",
-    "ts": "2026-08-20T23:55:18.490516"
-  },
-  "action_detect|2026-08-20t23_54_07_236794": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
-    "ts": "2026-08-20T23:54:07.236794"
-  },
-  "action_detect|2026-08-20t23_53_55_684484": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страховку Kooperativa\", \"action_date\": \"2026-08-15\", \"action_time\": null, \"action_summary\": \"Страховку Koo",
-    "ts": "2026-08-20T23:53:55.684484"
-  },
-  "action_detect|2026-08-20t23_50_51_922102": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Надіслати дані з QWatch Pro\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Відкрити додаток QWatch ",
-    "ts": "2026-08-20T23:50:51.922102"
-  },
-  "email_ai_item|2026-08-20t23_40_16_095304": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від Forbes через LinkedIn є інформаційною розсилкою, що містить статтю про Швейцарію як банківський хаб для мільярдерів, а так",
-    "ts": "2026-08-20T23:40:16.095304"
-  },
-  "action_detect|2026-08-20t23_34_22_987347": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
-    "ts": "2026-08-20T23:34:22.987347"
-  },
-  "msg_vip_email|2026-08-20t23_34_15_120506": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 📧  Бачу, ти зараз на нічній зміні у Minebea Mitsumi, і в цей",
-    "ts": "2026-08-20T23:34:15.120506"
   }
 }
