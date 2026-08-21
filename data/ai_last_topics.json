@@ -1,4 +1,14 @@
 {
+  "proactive_actions|2026-08-22t00_00_23_753107": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн реєстрація на рейс\",     \"date\": \"2026-08-22\",     \"time\": \"00:00\",     \"message\": \"Олеже, у тебе є н",
+    "ts": "2026-08-22T00:00:23.753107"
+  },
+  "bills|2026-08-21t23_49_30_980336": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-08-21T23:49:30.980336"
+  },
   "msg_rwa|2026-08-21t23_46_23_265662": {
     "topic": "MSG_RWA",
     "gist": "Привіт, Олеже! Бачу, ти вже не на Корфу, сподіваюсь, відпочинок був чудовий. Дивимось, що там на крипторинку.  ### 📈 Що сталося?  Сьогоднішній день приніс позит",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-21T20:02:11.409133"
-  },
-  "action_detect|2026-08-21t20_02_00_522835": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є астрологічним аналізом для Олега на 21 се",
-    "ts": "2026-08-21T20:02:00.522835"
-  },
-  "action_detect|2026-08-21t20_02_00_393913": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": \"2026-08-23\", \"action_time\": null, \"action_summary\": \"Підготуватися до пробіжки в суботу.\"}",
-    "ts": "2026-08-21T20:02:00.393913"
   }
 }
