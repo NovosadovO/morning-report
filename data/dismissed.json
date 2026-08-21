@@ -217,5 +217,13 @@
     "title": "[NOTICE] Server Outage Affecting Your Service",
     "note": "confirm",
     "ts": "2026-08-21T03:50:50.820778+00:00"
+  },
+  "t:ef40a28d65b9": {
+    "kind": "email_delete",
+    "key": "77774",
+    "title": "[NOTICE] Server Outage Affecting Your Service",
+    "note": "confirm",
+    "ts": "2026-08-21T03:50:50.820778+00:00",
+    "norm": "notice server outage affecting your service"
   }
 }
