@@ -1,9 +1,4 @@
 {
-  "77405": {
-    "sender": "info@sk.edenred.info",
-    "sender_raw": "Edenred Slovakia <info@sk.edenred.info>",
-    "seen_ts": "2026-08-13T08:21:48.942795+00:00"
-  },
   "77407": {
     "sender": "newsletter@email.hm.com",
     "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
     "seen_ts": "2026-08-21T16:21:19.436749+00:00"
+  },
+  "77818": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-21T16:25:38.629877+00:00"
   }
 }
