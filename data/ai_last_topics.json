@@ -1,4 +1,59 @@
 {
+  "personal_ai|2026-08-21t03_00_37_877949": {
+    "topic": "personal_ai",
+    "gist": "Олеже, щоб підтримати енергію та концентрацію під час нічної зміни, забезпеч яскраве освітлення на робочому місці, адже світло допомагає регулювати циркадні рит",
+    "ts": "2026-08-21T03:00:37.877949"
+  },
+  "action_detect|2026-08-21t02_02_59_100154": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є астрологічним аналізом для Олега на 21 се",
+    "ts": "2026-08-21T02:02:59.100154"
+  },
+  "action_detect|2026-08-21t02_02_59_059515": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічні рекомендації та інформацію",
+    "ts": "2026-08-21T02:02:59.059515"
+  },
+  "action_detect|2026-08-21t02_02_59_000478": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути непрочитаний лист\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянь непрочитаний",
+    "ts": "2026-08-21T02:02:59.000478"
+  },
+  "action_detect|2026-08-21t02_02_50_636809": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Відмітити, чи прийняв Олег ліки A",
+    "ts": "2026-08-21T02:02:50.636809"
+  },
+  "action_detect|2026-08-21t02_02_39_275968": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути непрочитаний лист\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути непрочитан",
+    "ts": "2026-08-21T02:02:39.275968"
+  },
+  "briefing|2026-08-21t02_02_35_384842": {
+    "topic": "briefing",
+    "gist": "Сьогоднішня нічна зміна — це не просто робочі години, а цінний час для стратегічного переосмислення, адже ти зараз фізично на заводі Minebea Mitsumi. Твій \"Вект",
+    "ts": "2026-08-21T02:02:35.384842"
+  },
+  "themes_ai|2026-08-21t02_02_19_072246": {
+    "topic": "themes_ai",
+    "gist": "🏃 БІГ — минуло 19 днів з твоєї останньої пробіжки, це забагато для підтримки форми! Пам'ятай, як ти кайфував від 7 кілометрів і темпу 6:23 хв/км. Це була сильна",
+    "ts": "2026-08-21T02:02:19.072246"
+  },
+  "astro_ai|2026-08-21t02_02_13_540083": {
+    "topic": "astro_ai",
+    "gist": "Привіт, Олеже! Сьогодні 21 серпня 2026 року, ти зараз на нічній зміні у Кошице, і енергія цього дня досить насичена та багатогранна. Твої 14732 кроки вже свідча",
+    "ts": "2026-08-21T02:02:13.540083"
+  },
+  "email_ai_item|2026-08-21t02_01_51_904731": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є автоматичним підтвердженням отримання електронного листа від Олега Новосадова, керівника лінії Minebea Slovakia s.r.o. Він м",
+    "ts": "2026-08-21T02:01:51.904731"
+  },
+  "email_ai_item|2026-08-21t02_01_41_135619": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Railway повідомляє про збій обладнання на сервері, що впливає на роботу сервісу vigilant-bravery та resourceful-alignment. Ком",
+    "ts": "2026-08-21T02:01:41.135619"
+  },
   "personal_ai|2026-08-21t02_01_13_964488": {
     "topic": "personal_ai",
     "gist": "Для підтримки енергії та концентрації протягом нічної зміни зосередься на невеликих, частих перекусах, що містять білок та складні вуглеводи, щоб уникнути різки",
@@ -243,60 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення вітає Олега і відзначає його фокус на ці",
     "ts": "2026-08-20T22:29:48.563922"
-  },
-  "msg_deep_analysis|2026-08-20t22_29_42_622137": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋 Бачу, ти зараз на нічній зміні у Minebea Mitsumi – це завжди виклик, але твій фокус на цілях фінансової незалежності та схуднення, попри все, ва",
-    "ts": "2026-08-20T22:29:42.622137"
-  },
-  "action_detect|2026-08-20t22_29_23_559168": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
-    "ts": "2026-08-20T22:29:23.559168"
-  },
-  "msg_event_soon|2026-08-20t22_29_14_069890": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ⏰  Бачу,",
-    "ts": "2026-08-20T22:29:14.069890"
-  },
-  "action_detect|2026-08-20t22_28_59_476195": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-20T22:28:59.476195"
-  },
-  "msg_vip_email|2026-08-20t22_28_49_841993": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 🏹  Бачу, нічна зміна у Minebea Mitsumi зараз у самому розпалі, і",
-    "ts": "2026-08-20T22:28:49.841993"
-  },
-  "msg_vip_email|2026-08-20t22_18_46_015711": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 🤝  Сподіваюся, нічна зміна проходить спокійно, і ти маєш",
-    "ts": "2026-08-20T22:18:46.015711"
-  },
-  "action_detect|2026-08-20t22_15_33_074043": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
-    "ts": "2026-08-20T22:15:33.074043"
-  },
-  "action_detect|2026-08-20t22_12_45_712024": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
-    "ts": "2026-08-20T22:12:45.712024"
-  },
-  "action_detect|2026-08-20t22_12_34_450936": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
-    "ts": "2026-08-20T22:12:34.450936"
-  },
-  "action_detect|2026-08-20t22_11_48_977233": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення містить аналіз стану здоров'я та фізично",
-    "ts": "2026-08-20T22:11:48.977233"
-  },
-  "msg_deep_analysis|2026-08-20t22_11_40_039209": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋  Ого, нічна зміна в Minebea Mitsumi – це завжди виклик, особливо коли на годиннику вже 22:11. Знаю, що ти зараз повністю зосереджений на роботі,",
-    "ts": "2026-08-20T22:11:40.039209"
   }
 }
