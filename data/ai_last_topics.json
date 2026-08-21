@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-08-21t10_33_25_585089": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн-реєстрація на рейс\",     \"date\": \"2026-08-21\",     \"time\": \"\",     \"message\": \"Олеже, бачу непрочитан",
+    "ts": "2026-08-21T10:33:25.585089"
+  },
   "email_ai_item|2026-08-21t10_21_45_715947": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від Allegro інформує про фінальний вікенд акції \\\"Allegro дні\\\", під час якого можна отримати купон на 10 євро для вигідних покупо",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від Profesia.sk містить 5 нових пропозицій роботи в Кошицях за типом «на догоду (бригади)». Це автоматична розсилка, яка ін",
     "ts": "2026-08-21T07:48:32.399041"
-  },
-  "action_detect|2026-08-21t07_46_54_751289": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-21T07:46:54.751289"
   }
 }
