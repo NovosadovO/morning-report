@@ -1466,7 +1466,44 @@
     "action": "email_delete",
     "pid": "77822",
     "subject": "🔷 The Daily: Is bitcoin's rally the real turnaround? Bernstein thinks so",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 74894,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77822"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77822"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77822"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77822"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77822"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77822"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-21T22:02:29.925951+00:00"
   },
   "3f0f0ba6d8": {
