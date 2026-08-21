@@ -4223,6 +4223,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_5a2bae1f3b"
+    },
+    {
+      "ts": "2026-08-21T07:51:10.357002+00:00",
+      "category": "confirm",
+      "question": "calrem_skip: Зафіксувати доходи та витрати",
+      "answer": "yes"
     }
   ]
 }
