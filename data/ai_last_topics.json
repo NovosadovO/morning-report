@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-08-21t03_32_29_193436": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"77773\",     \"kind\": \"other\",     \"title\": \"Видалення облікового запису Philips\",     \"org\": \"Philips\",     \"deadline\": \"2026-09-04\",  ",
+    "ts": "2026-08-21T03:32:29.193436"
+  },
   "action_detect|2026-08-21t03_07_41_410812": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Відмітити прийняття ліків Armolop",
     "ts": "2026-08-20T23:02:47.655875"
-  },
-  "action_detect|2026-08-20t23_02_36_717301": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скласти план на ранок\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Скласти план на ранок після ні",
-    "ts": "2026-08-20T23:02:36.717301"
   }
 }
