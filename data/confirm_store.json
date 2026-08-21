@@ -1222,7 +1222,44 @@
     "action": "email_delete",
     "pid": "77814",
     "subject": "@Oleg Novosadov,Prosím prijmite čo najskôr...",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 74848,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77814"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77814"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77814"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77814"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77814"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77814"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-21T21:45:03.417516+00:00"
   },
   "0c95e28c00": {
