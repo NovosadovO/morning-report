@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-21t15_36_49_857881": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від GenAI Works через LinkedIn є інформаційним бюлетенем «The Atlas», який обговорює потенційне IPO компанії Anthropic, її оці",
+    "ts": "2026-08-21T15:36:49.857881"
+  },
   "action_detect|2026-08-21t15_30_57_100712": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страховку Kooperativa\", \"action_date\": \"2026-08-15\", \"action_time\": null, \"action_summary\": \"Оплатити стра",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від LinkedIn є сповіщенням про нові вакансії за запитом 'Cryptocurrency' у Словаччині. Зокрема, пропонується вакансія 'Vedú",
     "ts": "2026-08-21T12:15:54.128010"
-  },
-  "proactive_actions|2026-08-21t12_03_15_713061": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"note\",     \"title\": \"Подорож до Будапешта та Корфу\",     \"date\": \"\",     \"time\": \"\",     \"message\": \"Олеже, нагадую, що ти з дружиною",
-    "ts": "2026-08-21T12:03:15.713061"
   }
 }
