@@ -1018,7 +1018,44 @@
     "action": "email_delete",
     "pid": "77811",
     "subject": "Technology Operations Specialist в ExxonMobil",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 74683,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77811"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77811"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77811"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77811"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77811"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77811"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-21T16:48:51.814687+00:00"
   }
 }
