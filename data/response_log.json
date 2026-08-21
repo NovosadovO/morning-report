@@ -4305,6 +4305,12 @@
       "category": "confirm",
       "question": "email_delete: ",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-21T14:41:39.426562+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_16a7182a92"
     }
   ]
 }
