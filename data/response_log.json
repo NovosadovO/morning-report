@@ -4141,6 +4141,12 @@
       "category": "confirm",
       "question": "gate_dl_skip: 📌 ДЕДЛАЙН У ПОШТІ — ТЕРМІН",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-21T03:52:01.497469+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dl_skip_a1c487d769"
     }
   ]
 }
