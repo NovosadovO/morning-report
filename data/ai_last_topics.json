@@ -1,4 +1,9 @@
 {
+  "personal_ai|2026-08-21t04_01_21_035415": {
+    "topic": "personal_ai",
+    "gist": "Щоб зберегти енергію та концентрацію до кінця зміни, спробуй зробити кілька коротких перерв на легку розминку, враховуючи, що кроки сьогодні вже перевищили ціль",
+    "ts": "2026-08-21T04:01:21.035415"
+  },
   "action_detect|2026-08-21t03_54_44_245524": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страховку Kooperativa\", \"action_date\": \"2026-08-15\", \"action_time\": null, \"action_summary\": \"Оплатити стра",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
     "ts": "2026-08-20T23:02:58.703845"
-  },
-  "action_detect|2026-08-20t23_02_58_693673": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст є астрологічним аналізом для Олега на 20 серпня",
-    "ts": "2026-08-20T23:02:58.693673"
   }
 }
