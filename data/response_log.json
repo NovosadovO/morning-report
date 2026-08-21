@@ -4111,6 +4111,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_d8a7de594c"
+    },
+    {
+      "ts": "2026-08-21T03:50:38.944969+00:00",
+      "category": "confirm",
+      "question": "calrem_skip: Переглянути непрочитаний лист",
+      "answer": "yes"
     }
   ]
 }
