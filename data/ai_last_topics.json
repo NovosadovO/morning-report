@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-21t11_16_25_562187": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від Pixory рекламує послугу створення персоналізованих журналів подорожей, зокрема \\\"the pixory travel edit\\\". Він містить посилання н",
+    "ts": "2026-08-21T11:16:25.562187"
+  },
   "action_detect|2026-08-21t11_11_08_005683": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і за",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити лист від Pelikan.sk\", \"action_date\": \"2026-08-21\", \"action_time\": null, \"action_summary\": \"Звернути уваг",
     "ts": "2026-08-21T08:45:45.360155"
-  },
-  "msg_idle_timeout|2026-08-21t08_45_37_664787": {
-    "topic": "MSG_IDLE_TIMEOUT",
-    "gist": "Привіт Олеже! ⚡ Ранок п'ятниці, 21 серпня, зустрічає тебе вдома і з вільним часом – ідеально, щоб набратися енергії! Крипторинок просто палає: твій XRP злетів н",
-    "ts": "2026-08-21T08:45:37.664787"
   }
 }
