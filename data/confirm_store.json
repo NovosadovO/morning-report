@@ -1310,7 +1310,44 @@
     "action": "email_delete",
     "pid": "77817",
     "subject": "The search for consciousness inside AI",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 74846,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77817"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77817"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77817"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77817"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77817"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77817"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-21T21:45:08.050537+00:00"
   }
 }
