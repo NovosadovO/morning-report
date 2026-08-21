@@ -4425,6 +4425,12 @@
       "category": "confirm",
       "question": "email_delete: ",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-21T21:44:39.180869+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_130116006f"
     }
   ]
 }
