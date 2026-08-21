@@ -1,4 +1,9 @@
 {
+  "msg_deep_analysis|2026-08-21t13_47_36_137135": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Ого, який динамічний обід п'ятниці, 21 серпня, застав тебе вдома у вільний час! Це чудово, адже можна спокійно проаналізувати всі події та прог",
+    "ts": "2026-08-21T13:47:36.137135"
+  },
   "email_ai_item|2026-08-21t13_32_09_100777": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист є інформаційним бюлетенем від MyClaw Newsletter з темою \\\"Agentic AI Raises Liability Questions\\\". Він не містить жодних конкр",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страховку Kooperativa\", \"action_date\": \"2026-08-15\", \"action_time\": null, \"action_summary\": \"Оплатити стра",
     "ts": "2026-08-21T11:00:42.478741"
-  },
-  "action_detect|2026-08-21t11_00_28_187583": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відновлювальний сон\", \"action_date\": \"2026-08-21\", \"action_time\": null, \"action_summary\": \"Знайди 20-30 хвилин для ",
-    "ts": "2026-08-21T11:00:28.187583"
   }
 }
