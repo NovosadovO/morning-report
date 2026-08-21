@@ -883,7 +883,44 @@
     "action": "email_delete",
     "pid": "77802",
     "subject": "Head of Operations (Gibraltar) в Confidential",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 74618,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77802"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77802"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77802"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77802"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77802"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77802"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-21T14:41:52.068187+00:00"
   }
 }
