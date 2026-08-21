@@ -4611,6 +4611,12 @@
       "category": "confirm",
       "question": "calrem_skip: Вивчити динаміку ONDO та LINK",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-21T22:03:34.045142+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_7c6dfa63e5"
     }
   ]
 }
