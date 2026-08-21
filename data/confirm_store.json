@@ -768,7 +768,44 @@
     "action": "email_delete",
     "pid": "77780",
     "subject": "5 nových pracovných ponúk",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 74400,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77780"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77780"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77780"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77780"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77780"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77780"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-21T07:49:16.570212+00:00"
   }
 }
