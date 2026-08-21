@@ -1,9 +1,4 @@
 {
-  "77400": {
-    "sender": "newsletter@message.reserved.com",
-    "sender_raw": "Reserved <newsletter@message.reserved.com>",
-    "seen_ts": "2026-08-13T06:12:59.933915+00:00"
-  },
   "77401": {
     "sender": "support@profesia.sk",
     "sender_raw": "\"Profesia.sk\" <support@profesia.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-08-21T14:15:59.713841+00:00"
+  },
+  "77812": {
+    "sender": "paula@carvertical.com",
+    "sender_raw": "carVertical <paula@carvertical.com>",
+    "seen_ts": "2026-08-21T14:20:09.633155+00:00"
   }
 }
