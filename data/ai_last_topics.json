@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-21t03_54_44_245524": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страховку Kooperativa\", \"action_date\": \"2026-08-15\", \"action_time\": null, \"action_summary\": \"Оплатити стра",
+    "ts": "2026-08-21T03:54:44.245524"
+  },
   "deadlines|2026-08-21t03_32_29_193436": {
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"77773\",     \"kind\": \"other\",     \"title\": \"Видалення облікового запису Philips\",     \"org\": \"Philips\",     \"deadline\": \"2026-09-04\",  ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст є астрологічним аналізом для Олега на 20 серпня",
     "ts": "2026-08-20T23:02:58.693673"
-  },
-  "action_detect|2026-08-20t23_02_47_655875": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Відмітити прийняття ліків Armolop",
-    "ts": "2026-08-20T23:02:47.655875"
   }
 }
