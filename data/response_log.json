@@ -4443,6 +4443,12 @@
       "category": "confirm",
       "question": "email_delete: Vedúci oddelenia digitálnych aktív a custody služieb v Tatra banke (M/Ž) в Tatra banka",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-21T21:45:26.752351+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_edcbf921c6"
     }
   ]
 }
