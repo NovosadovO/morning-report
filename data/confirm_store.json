@@ -1266,7 +1266,44 @@
     "action": "email_delete",
     "pid": "77816",
     "subject": "Vedúci oddelenia digitálnych aktív a custody služieb v Tatra banke (M/Ž) в Tatra banka",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 74847,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77816"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77816"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77816"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77816"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77816"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77816"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-21T21:45:05.277945+00:00"
   },
   "edcbf921c6": {
