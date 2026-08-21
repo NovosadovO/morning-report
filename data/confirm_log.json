@@ -262,5 +262,11 @@
     "subject": "[NOTICE] Server Outage Affecting Your Service",
     "answer": "yes",
     "ts": "2026-08-21T03:50:49.620357+00:00"
+  },
+  "gate_dl_skip|_дедлайн_у_пошті_термін|2026-08-21t03_51_53_": {
+    "action": "gate_dl_skip",
+    "subject": "📌 ДЕДЛАЙН У ПОШТІ — ТЕРМІН",
+    "answer": "yes",
+    "ts": "2026-08-21T03:51:53.933218+00:00"
   }
 }
