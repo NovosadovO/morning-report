@@ -1,4 +1,19 @@
 {
+  "email_ai_item|2026-08-21t14_37_42_659221": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від iStores Apple Premium Partner є інформаційним бюлетенем, який пропонує продовжену гарантію до 3 років для підприємців. Він",
+    "ts": "2026-08-21T14:37:42.659221"
+  },
+  "action_detect|2026-08-21t14_17_31_065975": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-21T14:17:31.065975"
+  },
+  "msg_vip_email|2026-08-21t14_17_24_862559": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Цей обідній час п'ятниці, 21 серпня, застав тебе вдома у вільний час, і це чудова нагода переглянути поточний прогрес та спланувати наступні кр",
+    "ts": "2026-08-21T14:17:24.862559"
+  },
   "email_ai_item|2026-08-21t14_15_06_477381": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від LinkedIn є сповіщенням про вакансії, що відповідають запиту 'Директор з операцій в European Union'. Він містить одну конкретну вак",
@@ -283,20 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист є інформаційним бюлетенем від Generative AI, який повідомляє про оновлення в ChatGPT, Anthropic, Meta та Claude. Зокрема, Chat",
     "ts": "2026-08-21T11:32:56.562202"
-  },
-  "email_ai_item|2026-08-21t11_20_35_937238": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Цей лист є рекламною розсилкою від туристичної компанії Pelikan.sk, яка пропонує авіаквитки та путівки, зокрема на Філіппіни. Лист не містить к",
-    "ts": "2026-08-21T11:20:35.937238"
-  },
-  "email_ai_item|2026-08-21t11_16_25_562187": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Цей лист від Pixory рекламує послугу створення персоналізованих журналів подорожей, зокрема \\\"the pixory travel edit\\\". Він містить посилання н",
-    "ts": "2026-08-21T11:16:25.562187"
-  },
-  "action_detect|2026-08-21t11_11_08_005683": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і за",
-    "ts": "2026-08-21T11:11:08.005683"
   }
 }
