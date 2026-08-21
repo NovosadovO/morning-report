@@ -1,9 +1,4 @@
 {
-  "77409": {
-    "sender": "info@myasteria.com",
-    "sender_raw": "Asteria Network <info@myasteria.com>",
-    "seen_ts": "2026-08-13T09:49:20.963850+00:00"
-  },
   "77410": {
     "sender": "googleplay-noreply@google.com",
     "sender_raw": "Google Play <googleplay-noreply@google.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-08-21T16:33:56.329310+00:00"
+  },
+  "77822": {
+    "sender": "newsletter@mail.theblock.co",
+    "sender_raw": "The Block <newsletter@mail.theblock.co>",
+    "seen_ts": "2026-08-21T18:04:55.676809+00:00"
   }
 }
