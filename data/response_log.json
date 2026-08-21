@@ -4317,6 +4317,12 @@
       "category": "confirm",
       "question": "email_delete: Head of Operations (Gibraltar) в Confidential",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-21T14:42:06.427670+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_f6fba0552f"
     }
   ]
 }
