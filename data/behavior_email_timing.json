@@ -1,9 +1,4 @@
 {
-  "77411": {
-    "sender": "newsletter@genai.works",
-    "sender_raw": "Generative AI <newsletter@genai.works>",
-    "seen_ts": "2026-08-13T10:09:48.211507+00:00"
-  },
   "77412": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "sam@hey.runable.com",
     "sender_raw": "Sam from Runable <sam@hey.runable.com>",
     "seen_ts": "2026-08-21T19:03:49.581714+00:00"
+  },
+  "77824": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Securitize через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-21T19:28:25.469500+00:00"
   }
 }
