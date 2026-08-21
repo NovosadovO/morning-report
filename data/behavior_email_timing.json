@@ -1,9 +1,4 @@
 {
-  "77387": {
-    "sender": "sam@hey.runable.com",
-    "sender_raw": "Sam from Runable <Sam@hey.runable.com>",
-    "seen_ts": "2026-08-12T17:30:22.705749+00:00"
-  },
   "77388": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
     "seen_ts": "2026-08-21T09:32:59.115469+00:00"
+  },
+  "77794": {
+    "sender": "info@myasteria.com",
+    "sender_raw": "Asteria Network <info@myasteria.com>",
+    "seen_ts": "2026-08-21T09:53:24.059196+00:00"
   }
 }
