@@ -4340,6 +4340,37 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
         ctx_parts.append(f"Крипто зараз: BTC {btc_ch:+.1f}%, ETH {eth_ch:+.1f}% за 24г")
     except: pass
 
+    # RWA / ПІДПИСКИ / ВАЖЛИВІ ДАТИ — щоб AI говорив і про це, з живими цифрами
+    try:
+        import rwa_radar as _rw_ctx
+        _rw_top = _rw_ctx.top_coins(6)
+        if _rw_top:
+            _rw_line = ", ".join(
+                f"{c['sym']} {c.get('ch24') or 0:+.1f}%" for c in _rw_top)
+            ctx_parts.append(f"Сектор RWA за 24г: {_rw_line}")
+    except Exception:
+        pass
+    try:
+        import subs_watcher as _sb_ctx
+        _sb_tot = _sb_ctx.monthly_total()
+        if _sb_tot["count"]:
+            _sb_next = [i for i in _sb_tot["items"] if i.get("next_due")][:3]
+            _sb_txt = ", ".join(f"{i['vendor']} {i['next_due']}" for i in _sb_next)
+            ctx_parts.append(
+                f"Підписки: {_sb_tot['count']} активних, {_sb_tot['month']:.2f} EUR/міс "
+                f"({_sb_tot['year']:.0f} EUR/рік). Найближчі списання: {_sb_txt or 'невідомо'}")
+    except Exception:
+        pass
+    try:
+        import dates_book as _db_ctx
+        _db_up = _db_ctx.upcoming(14)
+        if _db_up:
+            _db_txt = ", ".join(
+                f"{i['rec'].get('name')} за {i['days_left']} дн." for i in _db_up[:4])
+            ctx_parts.append(f"Важливі дати: {_db_txt}")
+    except Exception:
+        pass
+
     # КАЛЕНДАР — ключова нова частина
     cal_events = _get_calendar_events_text()
     if cal_events:
@@ -10396,6 +10427,33 @@ def main():
         except Exception as _e_cb:
             parts.append(prices_text)
             print(f"crypto block error: {_e_cb}")
+
+    # ── Блок 3c: RWA ТОП-10 (сектор ONDO) ────────────────────────────────────
+    try:
+        import rwa_radar as _rw_rep
+        _rwa_block = _rw_rep.report_block()
+        if _rwa_block:
+            parts.append(_rwa_block)
+    except Exception as _e_rwa:
+        print(f"rwa block error: {_e_rwa}", flush=True)
+
+    # ── Блок 3d: ПІДПИСКИ (скільки з'їдають щомісяця) ────────────────────────
+    try:
+        import subs_watcher as _sb_rep
+        _subs_block = _sb_rep.report_block()
+        if _subs_block:
+            parts.append(_subs_block)
+    except Exception as _e_subs:
+        print(f"subs block error: {_e_subs}", flush=True)
+
+    # ── Блок 3e: ВАЖЛИВІ ДАТИ (дні народження на 30 днів) ────────────────────
+    try:
+        import dates_book as _db_rep
+        _dates_block = _db_rep.report_block()
+        if _dates_block:
+            parts.append(_dates_block)
+    except Exception as _e_dates:
+        print(f"dates block error: {_e_dates}", flush=True)
 
     # ── Блок 4: КАЛЕНДАР ──────────────────────────────────────────────────────
     parts.append(_section_header("📅", "КАЛЕНДАР") + "\n" + "\n".join(cal_text.split("\n")[1:]) if isinstance(cal_text, str) and "\n" in cal_text else _section_header("📅", "КАЛЕНДАР") + "\n" + str(cal_text))

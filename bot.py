@@ -3160,6 +3160,96 @@ def handle_command(chat_id, text):
         import threading as _th_d
         _th_d.Thread(target=_run_dl, daemon=True, name="deadlines-cmd").start()
 
+    elif text.lower().strip() in ["/rwa", "/рва", "rwa", "/ондо", "/ondo"]:
+        send(chat_id, "🏦 Дивлюсь сектор RWA (CoinGecko + DeFiLlama)...")
+        def _run_rwa():
+            try:
+                import sys as _sr, os as _or
+                _sr.path.insert(0, _or.path.dirname(__file__))
+                import rwa_radar as _rw_cmd
+                send(chat_id, _rw_cmd.full_text())
+            except Exception as _e_r:
+                send(chat_id, f"⚠️ Помилка RWA-радара: {str(_e_r)[:300]}")
+        import threading as _th_r
+        _th_r.Thread(target=_run_rwa, daemon=True, name="rwa-cmd").start()
+
+    elif text.lower().strip() in ["/підписки", "/subs", "підписки",
+                                  "/платежі", "/регулярні"]:
+        def _run_sb():
+            try:
+                import sys as _ss, os as _os_s
+                _ss.path.insert(0, _os_s.path.dirname(__file__))
+                import subs_watcher as _sb_cmd
+                send(chat_id, _sb_cmd.overview_text())
+                n = _sb_cmd.scan(force=True)
+                if n:
+                    send(chat_id, f"🔍 Нових регулярних платежів у пошті: {n}")
+                m = _sb_cmd.check_renewals()
+                if m:
+                    send(chat_id, f"⏳ Попереджень про скоре списання: {m}")
+            except Exception as _e_s:
+                send(chat_id, f"⚠️ Помилка підписок: {str(_e_s)[:300]}")
+        import threading as _th_s
+        _th_s.Thread(target=_run_sb, daemon=True, name="subs-cmd").start()
+
+    elif text.lower().strip() in ["/дати", "/dates", "дати", "/дн", "/birthdays"]:
+        try:
+            import sys as _sd2, os as _od2
+            _sd2.path.insert(0, _od2.path.dirname(__file__))
+            import dates_book as _db_cmd
+            send(chat_id, _db_cmd.list_text())
+            n = _db_cmd.check_upcoming()
+            if n:
+                send(chat_id, f"🎂 Актуальних нагадувань: {n}")
+        except Exception as _e_db:
+            send(chat_id, f"⚠️ Помилка реєстру дат: {str(_e_db)[:300]}")
+
+    elif text.lower().strip().startswith(("/дата", "/date ", "/дн_дод")):
+        try:
+            import sys as _sd3, os as _od3
+            _sd3.path.insert(0, _od3.path.dirname(__file__))
+            import dates_book as _db_add
+            r = _db_add.add_from_text(text)
+            if r.get("ok"):
+                rec = r["rec"]
+                icon = _db_add.KINDS.get(rec.get("kind"), ("📌", ""))[0]
+                extra = f"\n📝 {rec['note']}" if rec.get("note") else ""
+                send(chat_id,
+                     f"✅ <b>Записав</b>\n{icon} <b>{rec['name']}</b> — "
+                     f"{rec['md'][3:]}.{rec['md'][:2]}"
+                     f"{(' · ' + rec['year']) if rec.get('year') else ''}\n"
+                     f"⏳ Найближче: {r.get('when') or '?'} "
+                     f"(за {r.get('days')} дн.){extra}\n\n"
+                     f"<i>Нагадаю за 7, 3, 1 день і в сам день. Список: /дати</i>")
+            elif r.get("error") == "bad_date":
+                send(chat_id, "⚠️ Не побачив дату. Приклад: <code>/дата Міхаела 14.03</code>")
+            else:
+                send(chat_id, "⚠️ Потрібне ім'я і дата: <code>/дата Мама 02.11</code>")
+        except Exception as _e_da:
+            send(chat_id, f"⚠️ Помилка: {str(_e_da)[:300]}")
+
+    elif text.lower().strip() in ["/дати_імпорт", "/dates_import", "імпорт дат"]:
+        send(chat_id, "📥 Читаю календар на рік вперед — шукаю дні народження...")
+        def _run_dbi():
+            try:
+                import sys as _sd4, os as _od4
+                _sd4.path.insert(0, _od4.path.dirname(__file__))
+                import dates_book as _db_i
+                r = _db_i.import_from_calendar()
+                if not r.get("ok"):
+                    send(chat_id, f"⚠️ Календар недоступний: {r.get('error')}")
+                elif r.get("added"):
+                    lines = "\n".join("• " + x for x in r["added"][:20])
+                    send(chat_id, f"✅ <b>Додав з календаря ({len(r['added'])})</b>\n{lines}"
+                                  f"\n\n<i>Список: /дати</i>")
+                else:
+                    send(chat_id, "📭 У календарі нових дат не знайшов "
+                                  f"(перевірив {r.get('scanned', 0)} подій).")
+            except Exception as _e_dbi:
+                send(chat_id, f"⚠️ Помилка імпорту: {str(_e_dbi)[:300]}")
+        import threading as _th_dbi
+        _th_dbi.Thread(target=_run_dbi, daemon=True, name="dates-import").start()
+
     elif text.lower().strip() in ["/люди", "/people", "люди", "/контакти"]:
         def _run_pm():
             try:
@@ -4988,6 +5078,9 @@ def handle_automation_callback(cb):
       pm_*    — пам'ять про людей (people_memory)
       dm_*    — енергія дня і план під самопочуття (day_mode)
       cw_*    — нагадування з календаря: до події / після / snooze (calendar_watch)
+      sb_*    — підписки і регулярні платежі (subs_watcher)
+      db_*    — дні народження і важливі дати (dates_book)
+      rw_*    — RWA-радар топ-10 (rwa_radar)
     Payload лежить у storage (гілка data) — кнопки живі після рестарту."""
     data = cb.get("data", "")
     chat_id = cb["message"]["chat"]["id"]
@@ -5164,6 +5257,127 @@ def handle_automation_callback(cb):
                 _lc.do_skip(data[len("lc_skip_"):])
                 _clear_kb()
                 cb_notify(cb["id"], chat_id, "Ок 👌 Тема закрита, більше не турбую.")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
+        # ─── ПІДПИСКИ І РЕГУЛЯРНІ ПЛАТЕЖІ (subs_watcher.py) ─────────────────
+        elif data.startswith("sb_"):
+            import subs_watcher as _sb
+            if data.startswith("sb_ok_"):
+                r = _sb.do_ok(data[len("sb_ok_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"✅ <b>Записав як активну підписку</b>\n"
+                                  f"{r['vendor']}\n\n🧾 Разом: {r['count']} підписок — "
+                                  f"<b>{r['month']:.2f}€/міс</b>\n<i>Список: /підписки</i>")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "зберегти підписку")
+            elif data.startswith("sb_rem_"):
+                r = _sb.do_reminder(data[len("sb_rem_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"⏰ <b>Нагадаю перед списанням</b>\n{r['title']}\n"
+                                  f"📆 {r['date']}  🕐 {r['time']}")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "поставити нагадування")
+            elif data.startswith("sb_cancel_"):
+                r = _sb.do_cancel(data[len("sb_cancel_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"🚫 <b>Задача в календарі</b>\n{r['title']}\n"
+                                  f"📆 {r['date']}  🕐 {r['time']}\n\n"
+                                  f"<i>Скасувати треба ДО {r.get('due') or 'списання'} — "
+                                  f"інакше спишуть ще раз.</i>")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "поставити задачу на скасування")
+            elif data.startswith("sb_stop_"):
+                r = _sb.do_stop(data[len("sb_stop_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    saved = r.get("saved_year") or 0
+                    extra = (f"\n💰 Економія: <b>{saved:.0f}€/рік</b>" if saved else "")
+                    send(chat_id, f"🗑 <b>Прибрав з активних</b>\n{r['vendor']}{extra}\n\n"
+                                  f"🧾 Лишилось: {r['count']} — {r['month']:.2f}€/міс")
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "прибрати підписку")
+            elif data.startswith("sb_skip_"):
+                _sb.do_skip(data[len("sb_skip_"):])
+                _clear_kb()
+                cb_notify(cb["id"], chat_id, "Ок, це не підписка 👌")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
+        # ─── ВАЖЛИВІ ДАТИ / ДНІ НАРОДЖЕННЯ (dates_book.py) ──────────────────
+        elif data.startswith("db_"):
+            import dates_book as _db
+            if data.startswith("db_wish_"):
+                cb_notify(cb["id"], chat_id, "✍️ Пишу привітання...")
+                _pid_w = data[len("db_wish_"):]
+                def _run_wish(_pid=_pid_w, _cid=chat_id):
+                    r = _db.do_wish(_pid)
+                    if r.get("ok"):
+                        send(_cid, f"✍️ <b>ПРИВІТАННЯ ДЛЯ {_db.K.esc(r['name']).upper()}</b>\n"
+                                   f"━━━━━━━━━━━━━━━━━━━━\n{r['text']}")
+                    elif r.get("error") == "payload_missing":
+                        send(_cid, "⚠️ Ця карточка застаріла — відкрий /дати.")
+                    else:
+                        send(_cid, "⚠️ AI зараз недоступний, спробуй за пару хвилин.")
+                import threading as _th_w
+                _th_w.Thread(target=_run_wish, daemon=True, name="db-wish").start()
+            elif data.startswith("db_gift_"):
+                cb_notify(cb["id"], chat_id, "🎁 Підбираю ідеї...")
+                _pid_g = data[len("db_gift_"):]
+                def _run_gift(_pid=_pid_g, _cid=chat_id):
+                    r = _db.do_gift(_pid)
+                    if r.get("ok"):
+                        send(_cid, f"🎁 <b>ІДЕЇ ПОДАРУНКА — {_db.K.esc(r['name']).upper()}</b>\n"
+                                   f"━━━━━━━━━━━━━━━━━━━━\n{r['text']}")
+                    elif r.get("error") == "payload_missing":
+                        send(_cid, "⚠️ Ця карточка застаріла — відкрий /дати.")
+                    else:
+                        send(_cid, "⚠️ AI зараз недоступний, спробуй за пару хвилин.")
+                import threading as _th_g
+                _th_g.Thread(target=_run_gift, daemon=True, name="db-gift").start()
+            elif data.startswith("db_cal_"):
+                r = _db.do_calendar(data[len("db_cal_"):])
+                if r.get("ok"):
+                    _clear_kb()
+                    send(chat_id, f"📅 <b>У календарі на 3 роки</b>\n{r['title']}\n"
+                                  + "\n".join("• " + d for d in r["dates"]))
+                elif r.get("error") == "payload_missing": _stale()
+                else: _fail(r, "додати в календар")
+            elif data.startswith("db_snooze_"):
+                r = _db.do_snooze(data[len("db_snooze_"):])
+                _clear_kb()
+                cb_notify(cb["id"], chat_id, "Ок, нагадаю ближче до дати 👌")
+            elif data.startswith("db_skip_"):
+                _db.do_skip(data[len("db_skip_"):])
+                _clear_kb()
+                cb_notify(cb["id"], chat_id, "Ок, більше не нагадую про цю дату 👌")
+            else:
+                cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
+
+        # ─── RWA-РАДАР (rwa_radar.py) ───────────────────────────────────────
+        elif data.startswith("rw_"):
+            import rwa_radar as _rw
+            if data.startswith("rw_top_"):
+                cb_notify(cb["id"], chat_id, "📊 Збираю топ-10...")
+                def _run_rwtop(_cid=chat_id):
+                    send(_cid, _rw.report_block())
+                import threading as _th_rw
+                _th_rw.Thread(target=_run_rwtop, daemon=True, name="rw-top").start()
+            elif data.startswith("rw_note_"):
+                try:
+                    import ai_notes as _an_rw
+                    _an_rw.add_note(_rw.note_text() or "RWA-радар")
+                    _clear_kb()
+                    cb_notify(cb["id"], chat_id, "📝 Записав у нотатки")
+                except Exception as _e_rn:
+                    cb_notify(cb["id"], chat_id, f"⚠️ {str(_e_rn)[:60]}", alert=True)
+            elif data.startswith("rw_mute_"):
+                _rw.mute_today()
+                _clear_kb()
+                cb_notify(cb["id"], chat_id, "🔕 Сьогодні по RWA не турбую")
             else:
                 cb_notify(cb["id"], chat_id, f"⚠️ Невідома дія: {data[:30]}", alert=True)
 
@@ -6306,7 +6520,8 @@ def _route_callback(cb, confirmed: bool = False):
               data.startswith("vr_") or data.startswith("pm_") or
               data.startswith("dm_") or data.startswith("cw_") or
               data.startswith("gx_") or data.startswith("cfm_") or
-              data.startswith("lc_")):
+              data.startswith("lc_") or data.startswith("sb_") or
+              data.startswith("db_") or data.startswith("rw_")):
             # Модулі автоматизації: рахунки / план бігу / графік змін /
             # follow-up листів / тижневий огляд
             handle_automation_callback(cb)

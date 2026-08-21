@@ -604,6 +604,42 @@ class IntelligentListener:
                 except Exception as _e_cw:
                     self._log(f"calendar_watch error: {_e_cw}")
 
+                # ─── 17c-bis. ПІДПИСКИ / ДАТИ / RWA ────────────────────────
+                #   🔄 регулярні платежі з пошти: скан раз на 30 хв (модуль
+                #      сам тримає 3 год), попередження про списання — раз на год
+                #   🎂 важливі дати: перевірка раз на 2 год (дедуп по порогах)
+                #   🏦 RWA-радар: перевірка рухів раз на 30 хв (модуль — 1.5 год)
+                try:
+                    import subs_watcher as _sb_l
+                    if _due("subs_scan", 1800) and _sb_l.should_scan():
+                        self._log("[SUBS] scan пошти на регулярні платежі")
+                        _n_sb = _sb_l.scan()
+                        if _n_sb:
+                            self._log(f"✅ Підписок знайдено: {_n_sb}")
+                    _n_sbd = _sb_l.check_renewals() if _due("subs_due", 3600) else 0
+                    if _n_sbd:
+                        self._log(f"✅ Попереджень про списання: {_n_sbd}")
+                except Exception as _e_sb:
+                    self._log(f"subs_watcher error: {_e_sb}")
+
+                try:
+                    import dates_book as _db_l
+                    if _due("dates_check", 7200):
+                        _n_db = _db_l.check_upcoming()
+                        if _n_db:
+                            self._log(f"✅ Нагадувань про важливі дати: {_n_db}")
+                except Exception as _e_db:
+                    self._log(f"dates_book error: {_e_db}")
+
+                try:
+                    import rwa_radar as _rw_l
+                    if _due("rwa_moves", 1800):
+                        _n_rw = _rw_l.check_moves()
+                        if _n_rw:
+                            self._log("✅ RWA-радар: сповіщення надіслано")
+                except Exception as _e_rw:
+                    self._log(f"rwa_radar error: {_e_rw}")
+
                 # ─── 17d. ВІДКЛАДЕНІ КНОПКОЮ «🔔 Нагадай пізніше» ──────────
                 try:
                     import ai_buttons as _gx_l
