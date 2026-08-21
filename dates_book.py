@@ -521,6 +521,74 @@ def add_from_text(text) -> dict:
     return add(name, date_raw, kind=kind, note=note)
 
 
+# ─── ВІЛЬНИЙ ТЕКСТ БЕЗ КОМАНДИ ───────────────────────────────────────────────
+# Олег часто пише просто «01.09. День народження Олі» — без /дата.
+# Ловимо такі фрази: має бути дата + слово-маркер свята.
+
+_HINT_RE = re.compile(
+    r"(день\s+народж|день\s+рожд|днюх|іменин|річниц|годовщин|весіл|ювіле)", re.I)
+_KIND_RE = re.compile(
+    r"(день\s+народж\w*|день\s+рожд\w*|днюх\w*|іменин\w*|річниц\w*|годовщин\w*|"
+    r"весіл\w*|ювіле\w*)", re.I)
+_DATE_RE = re.compile(r"(\d{1,2}[.\s/-]\d{1,2}(?:[.\s/-]\d{2,4})?|\d{4}-\d{2}-\d{2})")
+
+
+def looks_like_date_note(text) -> bool:
+    """True, якщо у вільному тексті є і дата, і згадка про свято."""
+    s = str(text or "")
+    if s.strip().startswith("/"):
+        return False
+    if not _DATE_RE.search(s):
+        return False
+    return bool(_HINT_RE.search(s))
+
+
+def add_from_free_text(text) -> dict:
+    """«01.09. День народження Олі» → запис у реєстр. Слова-маркери прибираємо з імені."""
+    s = str(text or "")
+    low = s.lower()
+    kind = "birthday"
+    if "річниц" in low or "весіл" in low or "годовщин" in low or "ювіле" in low:
+        kind = "anniversary"
+    cleaned = _KIND_RE.sub(" ", s)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip(" .,;:-–—")
+    m = _DATE_RE.search(cleaned)
+    if not m:
+        return {"ok": False, "error": "bad_date"}
+    date_raw = m.group(1)
+    rest = (cleaned[:m.start()] + " " + cleaned[m.end():])
+    rest = re.sub(r"\s+", " ", rest).strip(" .,;:-–—")
+    words = [w for w in rest.split() if len(w) > 1 or w.isalpha()]
+    if not words:
+        return {"ok": False, "error": "no_name"}
+    name = " ".join(words[:2]) if len(words) > 2 else " ".join(words)
+    note = " ".join(words[2:]) if len(words) > 2 else ""
+    return add(name, date_raw, kind=kind, note=note)
+
+
+def added_card(r):
+    """(text, keyboard) для щойно доданої дати — з кнопками календаря й привітання."""
+    rec = (r or {}).get("rec") or {}
+    icon, label = KINDS.get(rec.get("kind"), KINDS["other"])
+    pid = _store.put({"did": r.get("did"), "name": rec.get("name"),
+                      "md": rec.get("md"), "kind": rec.get("kind"),
+                      "when": r.get("when") or "", "age": None})
+    md = rec.get("md") or ""
+    when_s = f"{md[3:]}.{md[:2]}" if len(md) == 5 else md
+    days = r.get("days")
+    days_s = f" (за {days} дн.)" if isinstance(days, int) else ""
+    note = f"\n📝 {K.esc(rec.get('note'))}" if rec.get("note") else ""
+    text = (f"✅ <b>Записав у реєстр дат</b>\n"
+            f"{icon} <b>{K.esc(rec.get('name'))}</b> — {when_s} · {label}{note}\n"
+            f"⏳ Найближче: {r.get('when') or '?'}{days_s}\n\n"
+            f"<i>Нагадаю за 7, 3, 1 день і в сам день. Список: /дати</i>")
+    kb = [[{"text": "📅 В календар щороку", "callback_data": f"db_cal_{pid}"}],
+          [{"text": "✍️ Текст привітання", "callback_data": f"db_wish_{pid}"},
+           {"text": "🎁 Ідеї подарунка", "callback_data": f"db_gift_{pid}"}],
+          [{"text": "❌ Не нагадувати", "callback_data": f"db_skip_{pid}"}]]
+    return text, kb
+
+
 if __name__ == "__main__":
     import sys
     if "--check" in sys.argv:

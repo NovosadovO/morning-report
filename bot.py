@@ -6871,6 +6871,19 @@ def process_update(update):
         except Exception as _spe:
             print(f"shopping reply error: {_spe}")
 
+        # Дата свята у вільному тексті («01.09. День народження Олі») —
+        # ловимо ДО планувальника, інакше воно піде в календар і не в реєстр дат.
+        try:
+            import dates_book as _db_free
+            if _db_free.looks_like_date_note(text):
+                _r_free = _db_free.add_from_free_text(text)
+                if _r_free.get("ok"):
+                    _t_free, _kb_free = _db_free.added_card(_r_free)
+                    send_with_keyboard(chat_id, _t_free, _kb_free)
+                    return
+        except Exception as _dfe:
+            print(f"[dates] free-text error: {_dfe}")
+
         # Planner — обробляємо першим якщо бот очікує відповідь
         try:
             from planner import handle_planner_reply
