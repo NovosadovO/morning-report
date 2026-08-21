@@ -4241,6 +4241,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "db_cal_33efe39f9b"
+    },
+    {
+      "ts": "2026-08-21T09:03:23.094798+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Онлайн реєстрація на рейс",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-21"
+      }
     }
   ]
 }
