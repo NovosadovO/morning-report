@@ -1,4 +1,14 @@
 {
+  "personal_ai|2026-08-22t01_01_09_173495": {
+    "topic": "personal_ai",
+    "gist": "На нічній зміні зосередься на підтримці енергії та концентрації. Оскільки ти вже пройшов понад 21 тисячу кроків, уникай додаткового фізичного навантаження, яке ",
+    "ts": "2026-08-22T01:01:09.173495"
+  },
+  "deadlines|2026-08-22t00_46_23_029313": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-08-22T00:46:23.029313"
+  },
   "people|2026-08-22t00_45_12_527206": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"info@ionian-cruises.com\",     \"name\": \"Ionian Cruises\",     \"relation\": \"сервіс\",     \"topics\": [\"скасування круїзу\"],     \"my_promi",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-21T21:01:53.317344"
-  },
-  "action_detect|2026-08-21t21_01_53_238295": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-21T21:01:53.238295"
-  },
-  "action_detect|2026-08-21t21_01_42_440657": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження тест\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Нагадування про день на",
-    "ts": "2026-08-21T21:01:42.440657"
   }
 }
