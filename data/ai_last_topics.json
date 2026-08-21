@@ -1,4 +1,19 @@
 {
+  "msg_micro_checkin|2026-08-21t07_00_22_651995": {
+    "topic": "MSG_MICRO_CHECKIN",
+    "gist": "Привіт Олеже! 🫂  Який чудовий ранок! Бачу, ти вдома і маєш вільний час, це чудова можливість зарядитися на повну. Дуже цікаво, як ти себе почуваєш просто зараз ",
+    "ts": "2026-08-21T07:00:22.651995"
+  },
+  "deadlines|2026-08-21t06_45_39_581287": {
+    "topic": "deadlines",
+    "gist": "```json [] ```",
+    "ts": "2026-08-21T06:45:39.581287"
+  },
+  "action_detect|2026-08-21t06_45_19_555711": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Pelikan.sk\", \"action_date\": \"2026-08-21\", \"action_time\": null, \"action_summary\": \"Перевір",
+    "ts": "2026-08-21T06:45:19.555711"
+  },
   "msg_idle_timeout|2026-08-21t06_45_12_160108": {
     "topic": "MSG_IDLE_TIMEOUT",
     "gist": "Привіт Олеже! ⚡  Ранок п'ятниці, 21 серпня, зустрічає тебе заслуженим відпочинком. Ти зараз у режимі відновлення, і це чудово! Крипторинок тим часом розриває: X",
@@ -283,20 +298,5 @@
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"77773\",     \"kind\": \"other\",     \"title\": \"Видалення облікового запису Philips\",     \"org\": \"Philips\",     \"deadline\": \"2026-09-04\",  ",
     "ts": "2026-08-21T03:32:29.193436"
-  },
-  "action_detect|2026-08-21t03_07_41_410812": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-21T03:07:41.410812"
-  },
-  "proactive_actions|2026-08-21t03_03_18_159729": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн-реєстрація на рейс\",     \"date\": \"2026-08-21\",     \"time\": \"06:00\",     \"message\": \"Олеже, лист від P",
-    "ts": "2026-08-21T03:03:18.159729"
-  },
-  "action_detect|2026-08-21t03_02_18_009826": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візуалізація нового початку\", \"action_date\": \"2026-08-21\", \"action_time\": null, \"action_summary\": \"Почни день з віз",
-    "ts": "2026-08-21T03:02:18.009826"
   }
 }
