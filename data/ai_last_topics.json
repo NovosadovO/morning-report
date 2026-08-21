@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-08-22t01_30_19_560866": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reply\",     \"title\": \"Онлайн реєстрація на рейс\",     \"date\": \"2026-08-22\",     \"time\": \"\",     \"message\": \"Олеже, тобі прийшов лист ",
+    "ts": "2026-08-22T01:30:19.560866"
+  },
   "msg_rwa|2026-08-22t01_16_23_470688": {
     "topic": "MSG_RWA",
     "gist": "Привіт, Олеже! Бачу, що ти вже не на Корфу, сподіваюсь, відпочинок був чудовий. Дивись, що у нас по RWA за останні 24 години:  ### 🚀 Що сталося? Сьогодні сектор",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"День народження Олі 1 ве",
     "ts": "2026-08-21T22:01:45.838038"
-  },
-  "action_detect|2026-08-21t22_01_43_144223": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-21T22:01:43.144223"
   }
 }
