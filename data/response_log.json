@@ -4527,6 +4527,12 @@
       "category": "confirm",
       "question": "gate_fu_skip: 📭 ЧЕКАЄШ ВІДПОВІДЬ 3 дн.",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-21T21:47:29.573293+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "fu_skip_67761c2faf"
     }
   ]
 }
