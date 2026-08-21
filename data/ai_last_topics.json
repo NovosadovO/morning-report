@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-21t11_32_56_562202": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є інформаційним бюлетенем від Generative AI, який повідомляє про оновлення в ChatGPT, Anthropic, Meta та Claude. Зокрема, Chat",
+    "ts": "2026-08-21T11:32:56.562202"
+  },
   "email_ai_item|2026-08-21t11_20_35_937238": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист є рекламною розсилкою від туристичної компанії Pelikan.sk, яка пропонує авіаквитки та путівки, зокрема на Філіппіни. Лист не містить к",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-21T09:00:11.387419"
-  },
-  "email_ai_item|2026-08-21t08_47_44_177018": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Цей лист є сповіщенням від Discord про пропущені повідомлення в каналі VenomBridge. Лист містить внутрішні нотатки та історію взаємодії з корис",
-    "ts": "2026-08-21T08:47:44.177018"
   }
 }
