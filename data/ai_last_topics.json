@@ -1,4 +1,79 @@
 {
+  "action_detect|2026-08-21t09_10_31_803603": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить крипто дашборд з поточними цінами та зм",
+    "ts": "2026-08-21T09:10:31.803603"
+  },
+  "action_detect|2026-08-21t09_03_39_764683": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Стрижка\", \"action_date\": \"2026-08-10\", \"action_time\": \"10:00\", \"action_summary\": \"Завтра, 10.08.2026, Олег має стри",
+    "ts": "2026-08-21T09:03:39.764683"
+  },
+  "action_detect|2026-08-21t09_03_39_628196": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є астрологічним аналізом для Олега на 21 се",
+    "ts": "2026-08-21T09:03:39.628196"
+  },
+  "action_detect|2026-08-21t09_03_39_523849": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
+    "ts": "2026-08-21T09:03:39.523849"
+  },
+  "action_detect|2026-08-21t09_03_28_407285": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Відмітити, чи прийнято ліки Armol",
+    "ts": "2026-08-21T09:03:28.407285"
+  },
+  "proactive_actions|2026-08-21t09_03_20_431159": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн реєстрація на рейс\",     \"date\": \"2026-08-21\",     \"time\": \"18:00\",     \"message\": \"Олеже, надійшов н",
+    "ts": "2026-08-21T09:03:20.431159"
+  },
+  "action_detect|2026-08-21t09_03_17_591746": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страховку Kooperativa\", \"action_date\": \"2026-08-21\", \"action_time\": \"13:00\", \"action_summary\": \"Оплатити с",
+    "ts": "2026-08-21T09:03:17.591746"
+  },
+  "action_detect|2026-08-21t09_03_17_557288": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження тест\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"День народження 'тест' ",
+    "ts": "2026-08-21T09:03:17.557288"
+  },
+  "briefing|2026-08-21t09_03_13_850648": {
+    "topic": "briefing",
+    "gist": "Доброго ранку, Олеже! Нічна зміна позаду, і ти вдома відпочиваєш — це чудово. Ранок почався з хорошої комбінації Strava, CoinGecko та кави, і це вже задає проду",
+    "ts": "2026-08-21T09:03:13.850648"
+  },
+  "themes_ai|2026-08-21t09_02_59_743740": {
+    "topic": "themes_ai",
+    "gist": "💰 ФІНАНСИ — немає даних.  🏃 БІГ — твоя остання активність зафіксована 19 днів тому, що створює помітну паузу у тренді бігових показників. Для відновлення регуля",
+    "ts": "2026-08-21T09:02:59.743740"
+  },
+  "astro_ai|2026-08-21t09_02_52_721115": {
+    "topic": "astro_ai",
+    "gist": "Привіт, Олеже!   Сьогодні, 21 серпня 2026 року, у Косіце для тебе розгортається надзвичайно динамічна і багатообіцяюча астрологічна картина. Нічна зміна щойно з",
+    "ts": "2026-08-21T09:02:52.721115"
+  },
+  "email_ai_item|2026-08-21t09_02_34_636349": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Pelikan.sk нагадує Олегу про необхідність онлайн-реєстрації на рейс Ryanair, використовуючи код бронювання Y9SB5U та елект",
+    "ts": "2026-08-21T09:02:34.636349"
+  },
+  "email_ai_item|2026-08-21t09_02_23_115524": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є автоматичним підтвердженням від Олега Новосадова з Minebea Slovakia s.r.o., що містить лише його підпис та контактні дані. Л",
+    "ts": "2026-08-21T09:02:23.115524"
+  },
+  "personal_ai|2026-08-21t09_01_20_579860": {
+    "topic": "personal_ai",
+    "gist": "Наразі, згідно з календарем, у тебе немає запланованих завдань на сьогодні, 21 серпня. Враховуючи, що нічна зміна щойно закінчилася і ти відпочиваєш, зараз найв",
+    "ts": "2026-08-21T09:01:20.579860"
+  },
+  "action_detect|2026-08-21t09_00_23_738287": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити страховку Kooperativa\", \"action_date\": \"2026-08-15\", \"action_time\": \"13:00\", \"action_summary\": \"Оплатити с",
+    "ts": "2026-08-21T09:00:23.738287"
+  },
   "action_detect|2026-08-21t09_00_11_387419": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -223,80 +298,5 @@
     "topic": "personal_ai",
     "gist": "Олег, ти щойно закінчив нічну зміну і відпочиваєш вдома. Враховуючи, що біг ти переніс на суботу, зосередься на відновленні. Сьогодні вже зроблено 14732 кроки, ",
     "ts": "2026-08-21T07:01:19.390541"
-  },
-  "assistant|2026-08-21t07_00_55_157544": {
-    "topic": "assistant",
-    "gist": "Сьогодні п'ятниця, і ти вже повернувся з відпочинку, готовий до нових звершень. Пам'ятай, що кожен крок, навіть найменший, наближає тебе до фінансової незалежно",
-    "ts": "2026-08-21T07:00:55.157544"
-  },
-  "action_detect|2026-08-21t07_00_31_126621": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"Олег має відпо",
-    "ts": "2026-08-21T07:00:31.126621"
-  },
-  "msg_micro_checkin|2026-08-21t07_00_22_651995": {
-    "topic": "MSG_MICRO_CHECKIN",
-    "gist": "Привіт Олеже! 🫂  Який чудовий ранок! Бачу, ти вдома і маєш вільний час, це чудова можливість зарядитися на повну. Дуже цікаво, як ти себе почуваєш просто зараз ",
-    "ts": "2026-08-21T07:00:22.651995"
-  },
-  "deadlines|2026-08-21t06_45_39_581287": {
-    "topic": "deadlines",
-    "gist": "```json [] ```",
-    "ts": "2026-08-21T06:45:39.581287"
-  },
-  "action_detect|2026-08-21t06_45_19_555711": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Pelikan.sk\", \"action_date\": \"2026-08-21\", \"action_time\": null, \"action_summary\": \"Перевір",
-    "ts": "2026-08-21T06:45:19.555711"
-  },
-  "msg_idle_timeout|2026-08-21t06_45_12_160108": {
-    "topic": "MSG_IDLE_TIMEOUT",
-    "gist": "Привіт Олеже! ⚡  Ранок п'ятниці, 21 серпня, зустрічає тебе заслуженим відпочинком. Ти зараз у режимі відновлення, і це чудово! Крипторинок тим часом розриває: X",
-    "ts": "2026-08-21T06:45:12.160108"
-  },
-  "msg_rwa|2026-08-21t06_15_03_023665": {
-    "topic": "MSG_RWA",
-    "gist": "Привіт, Олеже! 👋  Ось мій ранковий огляд крипторинку для тебе:  ### 📈 Що сталося? За останні 24 години твій ONDO виріс на 5.7%, досягнувши $0.36295. Це приємно,",
-    "ts": "2026-08-21T06:15:03.023665"
-  },
-  "proactive_actions|2026-08-21t06_03_21_884126": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн-реєстрація на рейс\",     \"date\": \"2026-08-21\",     \"time\": \"\",     \"message\": \"Олеже, бачу важливий н",
-    "ts": "2026-08-21T06:03:21.884126"
-  },
-  "action_detect|2026-08-21t06_02_44_889822": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є астрологічним аналізом для Олега на 21 се",
-    "ts": "2026-08-21T06:02:44.889822"
-  },
-  "action_detect|2026-08-21t06_02_44_666344": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-21T06:02:44.666344"
-  },
-  "action_detect|2026-08-21t06_02_33_710853": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути непрочитаний лист\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Знайди хвилину, щоб пе",
-    "ts": "2026-08-21T06:02:33.710853"
-  },
-  "action_detect|2026-08-21t06_02_27_017523": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надіслати /weight або /health_",
-    "ts": "2026-08-21T06:02:27.017523"
-  },
-  "action_detect|2026-08-21t06_02_26_394228": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Тест\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Занотувати подію 'тест' на 25 серпня 20",
-    "ts": "2026-08-21T06:02:26.394228"
-  },
-  "action_detect|2026-08-21t06_02_21_698227": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути непрочитаний лист\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути непрочитан",
-    "ts": "2026-08-21T06:02:21.698227"
-  },
-  "briefing|2026-08-21t06_02_16_524261": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ Олеже, твоя нічна зміна завершилася, і зараз ідеальний час для відновлення та стратегічного планування, що максимально наблизить тебе до цілей. Сьо",
-    "ts": "2026-08-21T06:02:16.524261"
   }
 }
