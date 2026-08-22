@@ -1,9 +1,4 @@
 {
-  "77424": {
-    "sender": "events@blockworks.com",
-    "sender_raw": "Blockworks <events@blockworks.com>",
-    "seen_ts": "2026-08-13T13:02:11.404393+00:00"
-  },
   "77425": {
     "sender": "newsletter.sk@email.pepco.eu",
     "sender_raw": "\"Pepco\" <newsletter.sk@email.pepco.eu>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply-accounts@google.com",
     "sender_raw": "Google <noreply-accounts@google.com>",
     "seen_ts": "2026-08-22T08:06:39.538346+00:00"
+  },
+  "77840": {
+    "sender": "temu@eu.temuemail.com",
+    "sender_raw": "Temu <temu@eu.temuemail.com>",
+    "seen_ts": "2026-08-22T10:52:31.636867+00:00"
   }
 }
