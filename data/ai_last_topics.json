@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-22t14_18_36_760237": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Apple підтверджує успішну підписку. Деталі щодо типу підписки, її вартості та періоду дії в листі відсутні. Лист є лише пі",
+    "ts": "2026-08-22T14:18:36.760237"
+  },
   "email_ai_item|2026-08-22t14_14_26_686117": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист від LinkedIn містить сповіщення про нову вакансію 'Head of Consumer Financial Operations' у компанії Blockchain.com, розташован",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-08-22\", \"action_time\": null, \"action_summary\": \"Олег має ранню зміну сьогодні, з",
     "ts": "2026-08-22T12:03:07.349078"
-  },
-  "action_detect|2026-08-22t12_03_07_310629": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Тест\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Нагадування про тест 25 серпня.\"}",
-    "ts": "2026-08-22T12:03:07.310629"
   }
 }
