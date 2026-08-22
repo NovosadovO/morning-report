@@ -1,4 +1,9 @@
 {
+  "proactive_ai|2026-08-22t09_33_44_212285": {
+    "topic": "proactive_ai",
+    "gist": "Привіт, Олеже! Бачу, вага трохи підросла за останні три дні: 83.2 → 84.2 → 84.3 кг. Можливо, варто знову звернути увагу на дієту 16:8, адже це ефективний спосіб",
+    "ts": "2026-08-22T09:33:44.212285"
+  },
   "email_ai_item|2026-08-22t09_20_45_641478": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Douglas є рекламною розсилкою, що пропонує базові засоби для літнього догляду за шкірою. Він містить посилання на різні ка",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-22T07:02:30.295828"
-  },
-  "action_detect|2026-08-22t07_02_19_444965": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Легка пробіжка\", \"action_date\": \"2026-08-22\", \"action_time\": null, \"action_summary\": \"Вийти на легку пробіжку сього",
-    "ts": "2026-08-22T07:02:19.444965"
   }
 }
