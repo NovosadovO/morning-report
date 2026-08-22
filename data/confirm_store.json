@@ -2043,7 +2043,44 @@
     "action": "email_delete",
     "pid": "77843",
     "subject": "Head of Consumer Financial Operations в Blockchain.com",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 75443,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77843"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77843"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77843"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77843"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77843"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77843"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-22T14:47:36.242414+00:00"
   }
 }
