@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-22t13_19_11_964846": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відповісти на лист від Вероні щодо весілля\", \"action_date\": \"2026-08-10\", \"action_time\": null, \"action_summary\": \"О",
+    "ts": "2026-08-22T13:19:11.964846"
+  },
   "email_ai_item|2026-08-22t13_04_46_854739": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від TikTok інформує Олега про те, що користувач Audrey зробив репост його відео. У листі зазначено, що у Олега є 1 новий репос",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Google інформує Олега про те, що він використав функцію \\\"Вхід через Google\\\" для авторизації в сервісі CapCut 22 серпня о",
     "ts": "2026-08-22T10:06:27.800268"
-  },
-  "action_detect|2026-08-22t10_02_53_222700": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візуалізація/медитація\", \"action_date\": \"2026-08-22\", \"action_time\": null, \"action_summary\": \"Сьогодні, коли поверн",
-    "ts": "2026-08-22T10:02:53.222700"
   }
 }
