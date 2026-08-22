@@ -2223,7 +2223,44 @@
     "action": "email_delete",
     "pid": "77839",
     "subject": "Field Support Specialist (m/w/d) в Deutsche Telekom",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 75495,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77839"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77839"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77839"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77839"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77839"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77839"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-22T16:36:38.029989+00:00"
   },
   "650769d3b3": {
