@@ -2267,7 +2267,44 @@
     "action": "email_delete",
     "pid": "77842",
     "subject": "How big is America’s “obesity penalty”?",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 75493,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77842"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77842"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77842"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77842"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77842"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77842"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-22T16:36:39.675400+00:00"
   },
   "980a4fcfe4": {
