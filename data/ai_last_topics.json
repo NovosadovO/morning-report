@@ -1,4 +1,14 @@
 {
+  "context_ask_ai|2026-08-22t21_40_50_571602": {
+    "topic": "context_ask_ai",
+    "gist": "Дякую за ці нотатки, Олег! Я їх врахую.  Це дуже слушні поради для підтримки самопочуття, особливо з твоїм графіком змін та цілями по вазі. Зазначив собі про: *",
+    "ts": "2026-08-22T21:40:50.571602"
+  },
+  "action_detect|2026-08-22t21_31_08_768399": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Нагадати Олегу ска",
+    "ts": "2026-08-22T21:31:08.768399"
+  },
   "action_detect|2026-08-22t21_30_47_995174": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Надіслати дані з QWatch Pro\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надішли дані з QWatch Pr",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-22T18:03:41.571671"
-  },
-  "action_detect|2026-08-22t18_03_31_376658": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Нагадати Олегу ска",
-    "ts": "2026-08-22T18:03:31.376658"
-  },
-  "action_detect|2026-08-22t18_03_19_778886": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Спланувати перегляд новин по RWA сектору\", \"action_date\": \"2026-08-22\", \"action_time\": null, \"action_summary\": \"Спл",
-    "ts": "2026-08-22T18:03:19.778886"
   }
 }
