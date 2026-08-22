@@ -1,4 +1,9 @@
 {
+  "context_ask_ai|2026-08-22t14_48_34_451249": {
+    "topic": "context_ask_ai",
+    "gist": "Зрозумів, Олег!  ✅ <b>Додано в Google Calendar</b> 📌 Скасувати підписку CapCut 🗓 22.09.2026 (вівторок) о 10:00",
+    "ts": "2026-08-22T14:48:34.451249"
+  },
   "action_detect|2026-08-22t14_35_34_832544": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-08-22\", \"action_time\": null, \"action_summary\": \"Олег має ранню зміну сьогодні, з",
     "ts": "2026-08-22T12:03:29.398938"
-  },
-  "action_detect|2026-08-22t12_03_18_290044": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-08-22\", \"action_time\": null, \"action_summary\": \"Олег має ранню зміну сьогодні, з",
-    "ts": "2026-08-22T12:03:18.290044"
   }
 }
