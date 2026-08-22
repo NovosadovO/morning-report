@@ -1671,7 +1671,24 @@
     "action": "calrem_skip",
     "pid": "gen_1787378589146",
     "subject": "Внести витрати",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 75179,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1787378589146"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1787378589146"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-22T08:13:43.864121+00:00"
   }
 }
