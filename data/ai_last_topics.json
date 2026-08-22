@@ -1,4 +1,9 @@
 {
+  "people|2026-08-22t20_29_48_316727": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"info@ionian-cruises.com\",     \"name\": \"Ionian Cruises\",     \"relation\": \"сервіс\",     \"topics\": [       \"скасування круїзу\"     ],  ",
+    "ts": "2026-08-22T20:29:48.316727"
+  },
   "action_detect|2026-08-22t20_06_39_823436": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Нагадати Олегу ска",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати RWA звіт\", \"action_date\": null, \"action_time\": \"19:30\", \"action_summary\": \"Приготуватися проаналізув",
     "ts": "2026-08-22T17:03:45.251572"
-  },
-  "action_detect|2026-08-22t17_03_45_216566": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Нагадати Олегу ска",
-    "ts": "2026-08-22T17:03:45.216566"
   }
 }
