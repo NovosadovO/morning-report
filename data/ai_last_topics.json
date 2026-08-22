@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-22t14_35_34_832544": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-22T14:35:34.832544"
+  },
   "email_ai_item|2026-08-22t14_18_36_760237": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Apple підтверджує успішну підписку. Деталі щодо типу підписки, її вартості та періоду дії в листі відсутні. Лист є лише пі",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-08-22\", \"action_time\": null, \"action_summary\": \"Олег має ранню зміну сьогодні, з",
     "ts": "2026-08-22T12:03:18.290044"
-  },
-  "action_detect|2026-08-22t12_03_07_349078": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-08-22\", \"action_time\": null, \"action_summary\": \"Олег має ранню зміну сьогодні, з",
-    "ts": "2026-08-22T12:03:07.349078"
   }
 }
