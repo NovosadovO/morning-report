@@ -1,4 +1,19 @@
 {
+  "email_ai_item|2026-08-22t18_24_07_130191": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є щоденним дайджестом новин про криптовалюти від CryptoBeholder.com, який був надісланий через LinkedIn. У ньому йдеться про з",
+    "ts": "2026-08-22T18:24:07.130191"
+  },
+  "email_ai_item|2026-08-22t18_15_53_079509": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про нову вакансію 'Operational Specialist' у компанії Viola в Празі, Чехія. Вакансія відповіда",
+    "ts": "2026-08-22T18:15:53.079509"
+  },
+  "defi_digest|2026-08-22t18_15_35_719626": {
+    "topic": "defi_digest",
+    "gist": "Спостерігається значна волатильність: Dolomite виріс на 57.7%, тоді як Moonwell Lending втратив 5.6% за останні 24 години, що вказує на високі ризики та можливо",
+    "ts": "2026-08-22T18:15:35.719626"
+  },
   "email_ai_item|2026-08-22t18_13_39_874707": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Google AI Studio інформує про те, що білінговий акаунт Gemini API було переведено на нижчий рівень (paid Tier 1). Це призв",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це астрологічний аналіз для Олега на 22 серпня 2026 р",
     "ts": "2026-08-22T15:02:33.214760"
-  },
-  "action_detect|2026-08-22t15_02_33_213655": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Підготовка до навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Запиши ду",
-    "ts": "2026-08-22T15:02:33.213655"
-  },
-  "action_detect|2026-08-22t15_02_22_190464": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Випити 2 літри води\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Спробуй протягом наступних 24 го",
-    "ts": "2026-08-22T15:02:22.190464"
-  },
-  "action_detect|2026-08-22t15_02_09_986299": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти до річниці 25.0",
-    "ts": "2026-08-22T15:02:09.986299"
   }
 }
