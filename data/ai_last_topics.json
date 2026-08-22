@@ -1,4 +1,14 @@
 {
+  "assistant|2026-08-22t09_00_11_047084": {
+    "topic": "assistant",
+    "gist": "Олеже, привіт! Бачу, що ти сьогодні на ранній зміні. Розклад на тиждень теж є: сьогодні, завтра і в понеділок — ранні зміни (06:00-18:00), а далі дві нічні (18:",
+    "ts": "2026-08-22T09:00:11.047084"
+  },
+  "action_detect|2026-08-22t08_53_13_166653": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-08-22\", \"action_time\": null, \"action_summary\": \"Сьогодні у Олега рання зміна.\"}",
+    "ts": "2026-08-22T08:53:13.166653"
+  },
   "context_ask_ai|2026-08-22t08_53_04_566434": {
     "topic": "context_ask_ai",
     "gist": "Зрозумів, Олег. Я не веду списку твоїх покупок, тому не можу нічого \"видалити\". Якщо ти мав на увазі щось конкретне, уточни, будь ласка.  А поки що, пам'ятай, с",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийняв Олег ліки ",
     "ts": "2026-08-22T06:02:28.177725"
-  },
-  "action_detect|2026-08-22t06_02_17_168022": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid та пройтися на свіжому повітрі\", \"action_date\": \"2026-08-22\", \"action_time\": null, \"action_summa",
-    "ts": "2026-08-22T06:02:17.168022"
-  },
-  "action_detect|2026-08-22t06_02_17_143592": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження тест\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"День народження 'тест' ",
-    "ts": "2026-08-22T06:02:17.143592"
   }
 }
