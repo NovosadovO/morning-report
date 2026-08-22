@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-22T22:30:51.046152",
-      "kind": "followup",
-      "text": "📭 <b>ЧЕКАЄШ ВІДПОВІДЬ 3 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n👤 <b>Booking.com Customer Service\"\r\n</b>\n📋 Re: Re: other\n📤 Твій лист від 2026-08-19\n\n<i></i>\n\nОлеже, тиша вже 3 дні. Хочеш, складу короткий делікатний пінг?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-22T22:30:52.053966",
       "kind": "followup",
       "text": "📭 ЧЕКАЄШ ВІДПОВІДЬ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n👤 Booking.com Customer Service\"\r\n\n📋 Re: Re: other\n📤 Твій лист від 2026-08-19\n\n\n\nОлеже, тиша вже 3 дні. Хочеш, складу короткий делікатний пінг?",
@@ -485,6 +479,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_77769"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-23T00:01:05.700713",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Online check-in for a smooth take-off. ATTENTION! Don’t forg</b>\n👤 letenky@pelikan.sk",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77664"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77664"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77664"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77664"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77664"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77664"
             }
           ]
         ]
