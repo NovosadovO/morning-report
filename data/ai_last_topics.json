@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-22t13_00_05_443955": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-22T13:00:05.443955"
+  },
   "email_ai_item|2026-08-22t12_52_28_508150": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від Temu інформує Олега про те, що йому було надіслано повернення кредиту, і закликає його прийняти його якомога швидше. У листі т",
@@ -293,10 +298,5 @@
     "topic": "bills",
     "gist": "[]",
     "ts": "2026-08-22T10:00:16.948789"
-  },
-  "deadlines|2026-08-22t09_59_55_912701": {
-    "topic": "deadlines",
-    "gist": "[]",
-    "ts": "2026-08-22T09:59:55.912701"
   }
 }
