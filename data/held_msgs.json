@@ -29,6 +29,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-22T23:01:34.115597",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>BRZDA</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77847"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77847"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77847"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77847"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77847"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77847"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
