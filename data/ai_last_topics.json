@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-22t12_52_28_508150": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Temu інформує Олега про те, що йому було надіслано повернення кредиту, і закликає його прийняти його якомога швидше. У листі т",
+    "ts": "2026-08-22T12:52:28.508150"
+  },
   "people|2026-08-22t12_29_54_189383": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"info@ionian-cruises.com\",     \"name\": \"Ionian Cruises\",     \"relation\": \"сервіс\",     \"topics\": [\"скасування круїзу\"],     \"my_promi",
@@ -293,10 +298,5 @@
     "topic": "deadlines",
     "gist": "[]",
     "ts": "2026-08-22T09:59:55.912701"
-  },
-  "action_detect|2026-08-22t09_43_49_720132": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": \"2026-08-24\", \"action_time\": null, \"action_summary\": \"Олег планував біг на суботу, сьогодні су",
-    "ts": "2026-08-22T09:43:49.720132"
   }
 }
