@@ -1,9 +1,4 @@
 {
-  "77425": {
-    "sender": "newsletter.sk@email.pepco.eu",
-    "sender_raw": "\"Pepco\" <newsletter.sk@email.pepco.eu>",
-    "seen_ts": "2026-08-13T13:04:18.057472+00:00"
-  },
   "77426": {
     "sender": "newsletter@mail.dailybones.com",
     "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
@@ -1498,5 +1493,10 @@
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
     "seen_ts": "2026-08-22T10:52:31.636867+00:00"
+  },
+  "77841": {
+    "sender": "notification@service.tiktok.com",
+    "sender_raw": "TikTok <notification@service.tiktok.com>",
+    "seen_ts": "2026-08-22T11:04:49.702769+00:00"
   }
 }
