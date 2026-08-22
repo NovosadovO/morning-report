@@ -1,4 +1,9 @@
 {
+  "msg_rwa|2026-08-22t07_16_29_237238": {
+    "topic": "MSG_RWA",
+    "gist": "Привіт, Олеже! Бачу, що ти на зв'язку. Давай подивимось, що там на ринку RWA.  ### 🔥 Що сталося на ринку RWA? За останні 24 години твій ONDO показав значний ріс",
+    "ts": "2026-08-22T07:16:29.237238"
+  },
   "email_ai_item|2026-08-22t07_06_44_146800": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від Profesia.sk містить 5 нових пропозицій роботи за критеріями, які були встановлені раніше: Кошице, на договірній основі (бригади). ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-22T04:02:32.683294"
-  },
-  "action_detect|2026-08-22t04_02_21_754141": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Збір фінансових даних\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зафіксувати поточні доходи та ",
-    "ts": "2026-08-22T04:02:21.754141"
   }
 }
