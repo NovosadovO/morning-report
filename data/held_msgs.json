@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-23T00:01:12.079898",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Re: Re: other</b>\n👤 \"Booking.com Customer Service\" &lt;24-25523139647_88c",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77662"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77662"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77662"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77662"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77662"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77662"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-23T00:01:13.759724",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Paxos and Antipaxos Boat Tour from Corfu — бронювання скасов</b>\n👤 noreply@booking.com",
@@ -564,6 +525,12 @@
       "ts": "2026-08-23T01:08:06.510872",
       "kind": "chunk",
       "text": "🎯 ТОЧНИЙ АСПЕКТ\n☽ <b>Місяць</b> ☌ ⛢ <b>Натальний Уран</b> <b>(ТОЧНИЙ!)</b>\n📍 Місяць у <b>Козеріг ♑</b> | Натальний Уран у Козеріг ♑, 6-й дім\n<i>Кон'юнкція · Здоров'я</i>\n\n📖 <b>Що означає Кон'юнкція:</b>\n🔴 Злиття енергій — два начала діють як одне. Потужний старт, нові починання, але можлива надмірна концентрація на одній темі.\n\nПривіт, друже Олеже!\n\nТранзитний Місяць у Козерозі, що точно з.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-23T01:30:55.026045",
+      "kind": "deadlines",
+      "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 1 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📨 <b>Пояснення OpenAI та Anthropic</b>\n📆 до <b>2026-08-24</b>\n🏢 OpenAI and Anthropic\n\n➡️ Надати пояснення щодо моделей OpenAI та Anthropic",
       "keyboard": null
     }
   ]
