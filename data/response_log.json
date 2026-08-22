@@ -4901,6 +4901,12 @@
       "category": "chat",
       "question": "біг заплануй на вівторок і також постав нагадуванняна 9:00 до дерматолога",
       "answer": "❌ Помилка при створенні події: time data '2026-08-25 morning' does not match format '%Y-%m-%d %H:%M'"
+    },
+    {
+      "ts": "2026-08-22T13:30:03.559121+00:00",
+      "category": "confirm",
+      "question": "gate_cal_add: Біг та дерматолог",
+      "answer": "yes"
     }
   ]
 }
