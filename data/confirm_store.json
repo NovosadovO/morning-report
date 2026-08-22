@@ -1928,7 +1928,44 @@
     "action": "email_delete",
     "pid": "77841",
     "subject": "Audrey зробив(-ла) репост твого відео",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 75389,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77841"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77841"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77841"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77841"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77841"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77841"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-22T13:19:09.889041+00:00"
   }
 }
