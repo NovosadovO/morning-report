@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-08-22t16_00_49_277703": {
+    "topic": "deadlines",
+    "gist": "```json [] ```",
+    "ts": "2026-08-22T16:00:49.277703"
+  },
   "email_ai_item|2026-08-22t15_47_53_485587": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від Олега Новосадова з Minebea Slovakia s.r.o. містить лише посилання на ChatGPT та стандартний підпис з контактною інформацією та",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Астро-аналіз вказує на знакові транзити Юпітера та Мі",
     "ts": "2026-08-22T13:03:16.770570"
-  },
-  "action_detect|2026-08-22t13_03_05_336743": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити непрочитаний лист\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевір 1 непрочитаний ",
-    "ts": "2026-08-22T13:03:05.336743"
   }
 }
