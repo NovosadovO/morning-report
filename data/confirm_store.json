@@ -2312,7 +2312,43 @@
     "pid": "email_cal_77846",
     "subject": "📌 🐶📰Weekend Update",
     "extra": {
-      "msg": "📩 ✉️\n📌 🐶📰Weekend Update\n👤 The Daily Bone <newsletter@mail.dailybones.com>"
+      "msg": "📩 ✉️\n📌 🐶📰Weekend Update\n👤 The Daily Bone <newsletter@mail.dailybones.com>",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 75492,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77846"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77846"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77846"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77846"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77846"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77846"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-08-22T16:36:40.759654+00:00"
   },
