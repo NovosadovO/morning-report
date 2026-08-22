@@ -1,4 +1,14 @@
 {
+  "msg_micro_checkin|2026-08-22t07_00_23_890348": {
+    "topic": "MSG_MICRO_CHECKIN",
+    "gist": "Привіт Олеже! 🫂  Ранок суботи — чудовий час, щоб набратися сил і зарядитися позитивом на вихідні! Бачу, ти зараз вдома і маєш вільний час, це чудово, щоб зосере",
+    "ts": "2026-08-22T07:00:23.890348"
+  },
+  "action_detect|2026-08-22t06_51_56_394615": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн check-in на рейс\", \"action_date\": \"2026-08-22\", \"action_time\": null, \"action_summary\": \"Зробити онлайн check",
+    "ts": "2026-08-22T06:51:56.394615"
+  },
   "msg_idle_timeout|2026-08-22t06_51_48_877896": {
     "topic": "MSG_IDLE_TIMEOUT",
     "gist": "Привіт Олеже! ⚡  Поки ти міцно спиш, відновлюючи сили, твій криптопортфель показує потужний рух: BTC злетів на +5.4% за 24 години до $78,558.00, а XRP взагалі р",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-22T03:02:44.382869"
-  },
-  "action_detect|2026-08-22t03_02_33_628840": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято ліки Armo",
-    "ts": "2026-08-22T03:02:33.628840"
-  },
-  "action_detect|2026-08-22t03_02_33_605915": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Тест\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Занотувати тест на 25.08.2026.\"}",
-    "ts": "2026-08-22T03:02:33.605915"
   }
 }
