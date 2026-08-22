@@ -938,5 +938,19 @@
     "spo2": 96,
     "source": "qwatch",
     "saved_at": "2026-08-21 22:10"
+  },
+  "2026-08-22": {
+    "date": "2026-08-22",
+    "health_score": 95,
+    "steps": 21273,
+    "sleep_total_min": 351,
+    "sleep_deep_min": 134,
+    "sleep_quality": 100,
+    "hr_avg": 89,
+    "calories": 49,
+    "hrv": 47,
+    "spo2": 99,
+    "source": "qwatch",
+    "saved_at": "2026-08-22 21:40"
   }
 }
