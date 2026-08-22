@@ -1,9 +1,4 @@
 {
-  "77420": {
-    "sender": "hello@team.emergent.sh",
-    "sender_raw": "Emergent <hello@team.emergent.sh>",
-    "seen_ts": "2026-08-13T12:17:19.245484+00:00"
-  },
   "77422": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Cointelegraph через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "info@beautynews.douglas.sk",
     "sender_raw": "\"Douglas\" <info@beautynews.douglas.sk>",
     "seen_ts": "2026-08-22T07:20:49.004340+00:00"
+  },
+  "77834": {
+    "sender": "updates@okx.com",
+    "sender_raw": "OKX <updates@okx.com>",
+    "seen_ts": "2026-08-22T08:02:16.636333+00:00"
   }
 }
