@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-23T00:01:01.235619",
-      "kind": "rwa",
-      "text": "🏦 <b>RWA-РАДАР</b>\n━━━━━━━━━━━━━━━━━━━━\n• ONDO (твоя позиція) впав на 5.6% за 24 години (зараз $0.36524)\n\n<i>AI-коментар недоступний — вище тільки живі цифри.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-23T00:01:02.554350",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>BRZDA</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
@@ -654,6 +648,55 @@
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 20 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '20 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 84.3 кг, ціль 78 кг (тренд +0.0 кг за останні 5 замірів). Кроки: 21273 (ціль 10000). Сон: 5.8г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 1 непрочитаних\n📅 Календар: 10:00 і ранні зміни!!",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-23T01:01:45.020152",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (5 важливих листів)\n\n👤 Oleg Novosadov\n📋 BRZDA\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 letenky\n📋 Online check-in for a smooth take-off. ATTENTION! Don’t forg\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Booking.com Customer Service\"\n📋 Re: Re: other\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Booking.com Customer Service\"\n📋 Re: Re: other\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_77847"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_77769"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: letenky",
+              "callback_data": "email_reply_77664"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Booking.com Custom",
+              "callback_data": "email_reply_77663"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Booking.com Custom",
+              "callback_data": "email_reply_77662"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_77847"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77847"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
