@@ -619,5 +619,13 @@
     "title": "Your Subscription is Confirmed",
     "note": "confirm",
     "ts": "2026-08-22T14:47:41.214885+00:00"
+  },
+  "t:b61d74bbb8f7": {
+    "kind": "email_delete",
+    "key": "77844",
+    "title": "Your Subscription is Confirmed",
+    "note": "confirm",
+    "ts": "2026-08-22T14:47:41.214885+00:00",
+    "norm": "your subscription is confirmed"
   }
 }
