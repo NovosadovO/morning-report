@@ -263,6 +263,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-22T23:01:43.220112",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Re: other</b>\n👤 \"Booking.com Customer Service\" &lt;24-25523139647_88c",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77657"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77657"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77657"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77657"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77657"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77657"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
