@@ -1,4 +1,14 @@
 {
+  "msg_vip_email|2026-08-22t21_46_45_330739": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 📧  Завершення тижня зустрічає тебе вдома, із вільним часом, що є чудовою нагодою для короткого підсумку та планування відпочинку після динамічних ",
+    "ts": "2026-08-22T21:46:45.330739"
+  },
+  "action_detect|2026-08-22t21_41_00_413286": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Нагадування про біг, перенесений на вівт",
+    "ts": "2026-08-22T21:41:00.413286"
+  },
   "context_ask_ai|2026-08-22t21_40_50_571602": {
     "topic": "context_ask_ai",
     "gist": "Дякую за ці нотатки, Олег! Я їх врахую.  Це дуже слушні поради для підтримки самопочуття, особливо з твоїм графіком змін та цілями по вазі. Зазначив собі про: *",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити непрочитане повідомлення\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити одне ",
     "ts": "2026-08-22T18:03:41.764003"
-  },
-  "action_detect|2026-08-22t18_03_41_727244": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Заплановано навчання",
-    "ts": "2026-08-22T18:03:41.727244"
-  },
-  "action_detect|2026-08-22t18_03_41_571671": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-22T18:03:41.571671"
   }
 }
