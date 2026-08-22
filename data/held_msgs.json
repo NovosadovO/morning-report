@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-23T00:01:02.554350",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>BRZDA</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77847"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77847"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77847"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77847"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77847"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77847"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-23T00:01:04.089184",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
@@ -697,6 +658,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-23T01:01:45.994230",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (5 важливих листів)\n\n👤 Oleg Novosadov\n📋 BRZDA\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 letenky\n📋 Online check-in for a smooth take-off. ATTENTION! Don’t forg\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Booking.com Customer Service\"\n📋 Re: Re: other\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Booking.com Customer Service\"\n📋 Re: Re: other\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
