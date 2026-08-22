@@ -1,0 +1,411 @@
+#!/usr/bin/env python3
+"""
+variety.py — щоб КОЖНЕ повідомлення бота було інше, живе й спиралось на факти.
+
+Скарга Олега (22.08):
+  «Зроби звіти та сповіщення завжди іншими, щоб відповідали дійсності,
+   цікавими та інформативними. Щоб не були такі як попередні. Мають бути живі.
+   Все що надсилають АІ та бот»
+
+Реальний приклад проблеми (лог прода, деплой 7cba8af8) — блок themes_ai у /звіт:
+  «💰 ФІНАНСИ / Зараз немає даних для аналізу.
+    🏃 БІГ / Остання пробіжка була 19 днів тому.»
+Мертвий шаблон, який повторюється зі звіту в звіт.
+
+ЧОМУ ЦЕ ТРАПЛЯЛОСЬ
+  Анти-повтор існував ЛИШЕ в message_generator.py (_build_anti_repeat_block).
+  Десятки інших точок AI-тексту (звіт monitor.py, themes_ai, astro_ai, email_ai,
+  rwa_radar, dates_book, weekly_*, day_mode, deep_analysis...) історії не бачили
+  і спокійно видавали те саме тими самими словами.
+
+РІШЕННЯ — лікуємо централізовано в monitor._gem_post, через який ходять УСІ
+модулі (той самий підхід, що вже працює для ai_brain, grounding, notrunc):
+
+  1. inject()   — у кожен НЕ-JSON промпт додає: кут подачі + тон + форму
+                  (ротація), список уже використаних зачинів, банліст мертвих
+                  фраз і вимогу спиратись на конкретні числа.
+                  Плюс піднімає temperature — без цього модель тяготіє
+                  до однакових формулювань навіть з іншим промптом.
+  2. check()    — після відповіді ловить near-duplicate (minhash по 3-грамах)
+                  і мертві фрази з банліста.
+  3. escalate() — якщо зловили, ОДИН раз перепитуємо з жорсткішою вимогою.
+                  Це головне: не просто просимо «не повторюйся», а реально
+                  відкидаємо повтор і беремо іншу відповідь.
+  4. note()     — запам'ятовує відпечаток відправленого, щоб наступні виклики
+                  його бачили. Стан у storage (data-гілка) → переживає редеплой.
+
+JSON-промпти не чіпаємо взагалі (зламали б парсер) — рівно як у notrunc.
+
+API:
+    inject(body_bytes, tag)        -> body_bytes
+    check(tag, text)               -> "" | причина повтору
+    escalate(body_bytes, reason)   -> body_bytes | None
+    note(tag, text, force=False)   -> bool
+    report()                       -> str   # /різне
+"""
+import json
+import os
+import re
+import sys
+import time
+import zlib
+from datetime import datetime, timedelta
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+TAG = "variety"
+MARK = "⁣VARIETY⁣"      # невидимий маркер: захист від подвійного інжекту
+LOG_FILE = "variety_log.json"     # відпечатки надісланого, по тегах
+KEEP_PER_TAG = 8                  # скільки останніх повідомлень пам'ятаємо на тег
+FP_SIZE = 48                      # розмір minhash-відпечатку
+TOO_SIM = 0.50                    # Jaccard вище → вважаємо повтором
+MIN_LEN_FOR_SIM = 220             # короткі алерти на схожість не перевіряємо
+TEMP_MIN = 0.85                   # нижче не опускаємо для живого тексту
+TEMP_MAX = 1.10
+_FLUSH_GAP = 240                  # с між записами в storage (звіт = 20+ викликів)
+
+_BUF = []
+_BUF_TS = [0.0]
+_CACHE = {"ts": 0.0, "data": None}
+_CACHE_TTL = 90
+
+
+def _log(m):
+    print("[" + TAG + "] " + str(m), flush=True)
+
+
+# ─── РОТАЦІЯ: КУТ / ТОН / ФОРМА ──────────────────────────────────────────────
+# Не «пиши інакше» (модель це ігнорує), а конкретна інструкція, ЯК саме інакше.
+
+ANGLES = [
+    "почни з найнеочікуванішої цифри дня і розкрути, що вона означає для Олега",
+    "порівняй сьогодні з тим, що було тиждень тому — що зрушило, що застрягло",
+    "візьми ОДНУ тему, найважливішу зараз, і копни глибоко, решту не згадуй",
+    "подивись наперед: що з нинішніх даних вилізе через 3-7 днів",
+    "знайди суперечність у даних (наприклад слова vs факти) і назви її прямо",
+    "почни з питання Олегу, на яке відповідь змінить його наступний крок",
+    "розберись у причині: чому показник саме такий, а не констатуй факт",
+    "покажи ціну бездіяльності — що конкретно він втрачає, якщо не рухається",
+    "відзнач те, що вийшло, конкретно й без лестощів, і скажи що з цим робити далі",
+    "дай один практичний крок на найближчі 2 години і поясни, чому саме він",
+    "з'єднай дві різні сфери (гроші й здоров'я, зміна й біг) — де вони впливають одна на одну",
+    "почни з того, що змінилось з моменту останнього повідомлення, і тільки з цього",
+]
+
+TONES = [
+    "спокійний аналітик — сухо, цифрами, без емоцій",
+    "прямий тренер — коротко, вимогливо, по суті",
+    "друг за кавою — тепло, простими словами, з гумором",
+    "скептик — став під сумнів очевидне, шукай слабке місце",
+    "стратег — дивись на місяць уперед, а не на сьогодні",
+    "спостерігач — просто опиши, що бачиш, і хай Олег сам вирішує",
+    "напарник по зміні — по-робочому, без пафосу",
+]
+
+SHAPES = [
+    "суцільний абзац живого тексту, без списків і заголовків",
+    "3-4 короткі рядки, кожен — окрема закінчена думка",
+    "один сильний рядок-висновок, далі 2-3 факти, що його доводять",
+    "діалог: питання — і твоя ж коротка відповідь на нього",
+    "структура з заголовками, але тільки для тих сфер, де СПРАВДІ є дані",
+    "історія: що сталось → чим це загрожує/допомагає → що зробити",
+]
+
+# Мертві фрази, які реально спливали в проді. Побачили у відповіді → перепит.
+BANNED = [
+    "зараз немає даних для аналізу",
+    "немає даних для аналізу",
+    "наразі немає даних",
+    "дані відсутні",
+    "недостатньо даних для аналізу",
+    "на жаль, я не можу",
+    "як я вже казав",
+    "продовжуй у тому ж дусі",
+    "тримай темп",
+    "все під контролем",
+    "не забувай про себе",
+    "бажаю продуктивного дня",
+    "гарного дня",
+    "успіхів",
+]
+
+FACTS = (
+    "ФАКТИ, А НЕ ВОДА:\n"
+    "• кожне твердження підпирай конкретикою з даних вище — число, дата, назва, "
+    "сума, відсоток. Немає конкретики — не пиши це твердження взагалі;\n"
+    "• нічого не вигадуй: ні цін, ні дат, ні подій, ні пробіжок. Вигадана цифра "
+    "гірша за відсутність цифри;\n"
+    "• якщо по якійсь сфері даних немає — НЕ пиши шаблон «немає даних для "
+    "аналізу». Або пропусти сферу зовсім, або скажи це щоразу іншими живими "
+    "словами і додай, що натомість відомо (напр. коли були останні дані);\n"
+    "• без порожніх підбадьорень і канцеляриту. Один конкретний факт коштує "
+    "більше за абзац мотивації."
+)
+
+
+def _pick(seq, salt):
+    """Детермінований, але різний вибір: тег + півгодинний слот + лічильник."""
+    slot = int(time.time() // 1800)
+    h = zlib.crc32((str(salt) + "|" + str(slot)).encode("utf-8", "ignore"))
+    return seq[h % len(seq)]
+
+
+# ─── ВІДПЕЧАТКИ ──────────────────────────────────────────────────────────────
+
+_EMOJI = re.compile("[\U0001F000-\U0001FAFF☀-➿️⁣]")
+
+
+def _norm(s):
+    s = re.sub(r"<[^>]+>", " ", str(s or ""))
+    s = _EMOJI.sub(" ", s)
+    s = re.sub(r"[^\w\s]", " ", s, flags=re.UNICODE)
+    return re.sub(r"\s+", " ", s).strip().lower()
+
+
+def fingerprint(text, size=FP_SIZE):
+    """minhash-подібний відпечаток: найменші crc32 від 3-грам слів.
+    Стійкий до різної довжини, дешевий, і в storage важить ~300 байт."""
+    w = _norm(text).split()
+    if len(w) < 3:
+        return []
+    hs = set()
+    for i in range(len(w) - 2):
+        hs.add(zlib.crc32((" ".join(w[i:i + 3])).encode("utf-8", "ignore")))
+    return sorted(hs)[:size]
+
+
+def similarity(a, b):
+    sa, sb = set(a or []), set(b or [])
+    if not sa or not sb:
+        return 0.0
+    return len(sa & sb) / float(len(sa | sb))
+
+
+def opening(text, n=90):
+    """Перше речення — саме зачини повторюються найпомітніше."""
+    t = re.sub(r"<[^>]+>", " ", str(text or "")).strip()
+    t = re.sub(r"\s+", " ", t)
+    m = re.split(r"(?<=[.!?…])\s", t, maxsplit=1)
+    return (m[0] if m else t)[:n]
+
+
+# ─── СТАН ────────────────────────────────────────────────────────────────────
+
+def _load():
+    now = time.time()
+    if _CACHE["data"] is not None and (now - _CACHE["ts"]) < _CACHE_TTL:
+        return _CACHE["data"]
+    data = {}
+    try:
+        import storage
+        data = storage.load(LOG_FILE, default={}) or {}
+    except Exception as e:
+        _log("load error: " + str(e))
+    if not isinstance(data, dict):
+        data = {}
+    _CACHE.update({"ts": now, "data": data})
+    return data
+
+
+def _rows(tag=None):
+    data = _load()
+    if tag:
+        r = data.get(str(tag)) or []
+        return r if isinstance(r, list) else []
+    out = []
+    for v in data.values():
+        if isinstance(v, list):
+            out.extend(v)
+    out.sort(key=lambda r: str(r.get("ts")), reverse=True)
+    return out
+
+
+def note(tag, text, force=False):
+    """Запам'ятати відправлене. Буферизуємо: один звіт не має давати 20 комітів."""
+    try:
+        txt = str(text or "")
+        if len(_norm(txt)) < 40:
+            return False
+        _BUF.append({"tag": str(tag or "gem")[:40], "open": opening(txt),
+                     "fp": fingerprint(txt),
+                     "ts": datetime.now().isoformat(timespec="seconds")})
+        if not force and (time.time() - _BUF_TS[0]) < _FLUSH_GAP:
+            return True
+        _BUF_TS[0] = time.time()
+        import storage
+        data = storage.load(LOG_FILE, default={}) or {}
+        if not isinstance(data, dict):
+            data = {}
+        while _BUF:
+            r = _BUF.pop(0)
+            k = r["tag"]
+            lst = data.get(k) or []
+            if not isinstance(lst, list):
+                lst = []
+            lst.append({"open": r["open"], "fp": r["fp"], "ts": r["ts"]})
+            data[k] = lst[-KEEP_PER_TAG:]
+        if len(data) > 60:
+            items = sorted(data.items(),
+                           key=lambda kv: str((kv[1] or [{}])[-1].get("ts")),
+                           reverse=True)
+            data = dict(items[:60])
+        storage.save(LOG_FILE, data)
+        _CACHE["ts"] = 0.0
+        return True
+    except Exception as e:
+        _log("note error: " + str(e))
+        return False
+
+
+# ─── ПЕРЕВІРКА ПОВТОРУ ───────────────────────────────────────────────────────
+
+def check(tag, text):
+    """Повертає причину, чому це повтор/шаблон, або '' якщо все добре."""
+    try:
+        txt = str(text or "")
+        low = _norm(txt)
+        if not low:
+            return ""
+        for b in BANNED:
+            if b in low:
+                return "мертва шаблонна фраза «" + b + "»"
+        _hist = _rows(tag) + [x for x in _BUF if x.get("tag") == str(tag)]
+        # однаковий зачин помітний навіть у короткому алерті — перевіряємо завжди
+        op = _norm(opening(txt))
+        if op and len(op) > 12:
+            for r in _hist:
+                if _norm(r.get("open") or "")[:len(op)] == op:
+                    return "такий самий зачин, як минулого разу"
+        if len(low) < MIN_LEN_FOR_SIM:
+            return ""
+        fp = fingerprint(txt)
+        if not fp:
+            return ""
+        for r in _hist:
+            s = similarity(fp, r.get("fp"))
+            if s >= TOO_SIM:
+                return ("майже дослівний повтор попереднього (схожість "
+                        + str(int(s * 100)) + "%): «" + str(r.get("open"))[:60] + "…»")
+        return ""
+    except Exception as e:
+        _log("check error: " + str(e))
+        return ""
+
+
+# ─── БЛОК ДЛЯ ПРОМПТУ ────────────────────────────────────────────────────────
+
+def block(tag):
+    opens = []
+    for r in _rows(tag)[-4:]:
+        o = str(r.get("open") or "").strip()
+        if o:
+            opens.append(o)
+    for r in _rows()[:6]:
+        o = str(r.get("open") or "").strip()
+        if o and o not in opens:
+            opens.append(o)
+    parts = [
+        "\n\n━━━ ЖИВЕ Й НЕ ЯК МИНУЛОГО РАЗУ ━━━",
+        "Це повідомлення мусить відчуватись написаним заново, а не з шаблону.",
+        "• КУТ ПОДАЧІ саме зараз: " + _pick(ANGLES, tag),
+        "• ТОН: " + _pick(TONES, str(tag) + "t"),
+        "• ФОРМА: " + _pick(SHAPES, str(tag) + "s"),
+    ]
+    if opens:
+        parts.append("• ТАК ТИ ВЖЕ ПОЧИНАВ — почни інакше, іншим словом і іншою "
+                     "думкою:\n" + "\n".join("   – «" + o[:90] + "»" for o in opens[:8]))
+    parts.append("• НІКОЛИ не пиши цих мертвих фраз: "
+                 + "; ".join("«" + b + "»" for b in BANNED[:9]) + ".")
+    parts.append(FACTS)
+    return "\n".join(parts)
+
+
+HARDER = (
+    "\n\n⚠ УВАГА: попередня твоя спроба була "
+    "{reason}. Це неприйнятно. Напиши З НУЛЯ: інший зачин, інша структура, "
+    "інші слова, інший кут. Візьми ІНШУ деталь з даних, ніж узяв би за звичкою. "
+    "Жодної фрази з попередньої спроби."
+)
+
+
+# ─── ІНЖЕКТ У ТІЛО ЗАПИТУ ────────────────────────────────────────────────────
+
+def _is_json_prompt(prompt):
+    try:
+        import ai_brain
+        return ai_brain.is_json_prompt(prompt)
+    except Exception:
+        p = str(prompt or "").lower()
+        return ("json" in p and ("тільки" in p or "поверни" in p or "format" in p))
+
+
+def inject(body_bytes, tag="gem"):
+    """Додає блок варіативності і піднімає temperature. Ідемпотентно."""
+    try:
+        b = json.loads(body_bytes.decode())
+        p = b["contents"][0]["parts"][0]["text"]
+        if MARK in p:
+            return body_bytes
+        if _is_json_prompt(p):
+            return body_bytes
+        b["contents"][0]["parts"][0]["text"] = p + block(tag) + MARK
+        # температура: без неї модель повторює формулювання навіть з новим промптом
+        gc = b.get("generationConfig")
+        if isinstance(gc, dict):
+            cur = gc.get("temperature")
+            slot = int(time.time() // 1800)
+            drift = ((zlib.crc32((str(tag) + str(slot)).encode()) % 21) / 100.0)
+            want = TEMP_MIN + drift
+            if not isinstance(cur, (int, float)) or cur < want:
+                gc["temperature"] = round(min(want, TEMP_MAX), 2)
+        return json.dumps(b).encode()
+    except Exception as e:
+        _log("inject skipped for " + str(tag) + ": " + str(e))
+        return body_bytes
+
+
+def escalate(body_bytes, reason):
+    """Жорсткіша вимога після зловленого повтору. None → вже було, не дублюємо."""
+    try:
+        b = json.loads(body_bytes.decode())
+        p = b["contents"][0]["parts"][0]["text"]
+        if "⚠ УВАГА: попередня твоя спроба" in p:
+            return None
+        b["contents"][0]["parts"][0]["text"] = p + HARDER.format(reason=reason)
+        gc = b.get("generationConfig")
+        if isinstance(gc, dict):
+            gc["temperature"] = TEMP_MAX
+        return json.dumps(b).encode()
+    except Exception as e:
+        _log("escalate error: " + str(e))
+        return None
+
+
+# ─── ЗВІТ ────────────────────────────────────────────────────────────────────
+
+def report():
+    rows = _rows()
+    if not rows:
+        return ("\U0001F3B2 <b>РІЗНОМАНІТНІСТЬ</b>\n\nЖурнал ще порожній — "
+                "заповниться після наступних AI-повідомлень.")
+    dup = 0
+    for i, r in enumerate(rows[:40]):
+        for r2 in rows[i + 1:40]:
+            if similarity(r.get("fp"), r2.get("fp")) >= TOO_SIM:
+                dup += 1
+                break
+    day = datetime.now() - timedelta(hours=24)
+    fresh = [r for r in rows if str(r.get("ts")) >= day.isoformat(timespec="seconds")]
+    out = ["\U0001F3B2 <b>РІЗНОМАНІТНІСТЬ ПОВІДОМЛЕНЬ</b>",
+           "━" * 10,
+           "Записів у журналі: " + str(len(rows)),
+           "За 24 год: " + str(len(fresh)),
+           "Схожих між собою: " + str(dup),
+           "", "<b>Останні зачини:</b>"]
+    for r in rows[:8]:
+        out.append("• " + str(r.get("open") or "")[:80])
+    return "\n".join(out)
+
+
+if __name__ == "__main__":
+    print(report())

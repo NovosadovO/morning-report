@@ -1594,6 +1594,20 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     except Exception as _be:
         print(f"[ai_brain] inject skipped for {tag}: {_be}", flush=True)
 
+    # ─── ЖИВІ, РІЗНІ ПОВІДОМЛЕННЯ ────────────────────────────────────────────
+    # Скарга Олега: звіти й сповіщення однакові, шаблонні, мертві. Анти-повтор
+    # був лише в message_generator — решта ~24 точок AI-тексту його не бачила.
+    # Тут інжект накриває ВСІ модулі: кут подачі + тон + форма (ротація),
+    # список уже використаних зачинів, банліст мертвих фраз, вимога цифр.
+    try:
+        import variety as _var
+        _b5 = body_bytes
+        body_bytes = _var.inject(body_bytes, tag)
+        if body_bytes is not _b5:
+            print(f"[variety] 🎲 варіативність увімкнено для {tag}", flush=True)
+    except Exception as _vre:
+        print(f"[variety] skipped for {tag}: {_vre}", flush=True)
+
     # ─── ДОСТУП ДО ІНТЕРНЕТУ (Google Search grounding) ───────────────────────
     # Обраним тегам даємо живий пошук, щоб AI не спирався на знання 2024 року.
     # JSON-промпти не грунтуються (зламався б парсер) — це вирішує grounding.wanted().
@@ -1619,6 +1633,8 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     last_exc = None
     # Стелю токенів піднімаємо максимум один раз за виклик (див. notrunc).
     _retried_cap = False
+    # Повтор/шаблон перепитуємо теж максимум один раз (див. variety).
+    _retried_var = False
     for _mi, _model in enumerate(_models):
         _url = _gem_swap_model(url, _model)
         # throttle: тримаємо мін. інтервал між будь-якими викликами Gemini
@@ -1674,12 +1690,41 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
                             _nt.fix_response(_resp)
                     except Exception as _nte:
                         print(f"[notrunc] skipped for {tag}: {_nte}", flush=True)
+                    # ─── ПОВТОР / МЕРТВИЙ ШАБЛОН ─────────────────────────
+                    # Не просто просимо «не повторюйся» в промпті (модель це
+                    # ігнорує), а РЕАЛЬНО відкидаємо відповідь і перепитуємо
+                    # один раз із жорсткішою вимогою. Ловимо два випадки:
+                    # near-duplicate попереднього (minhash по 3-грамах) і
+                    # мертві фрази («Зараз немає даних для аналізу»).
+                    try:
+                        import variety as _var2
+                        _out_v = _resp["candidates"][0]["content"]["parts"][0]["text"]
+                        _why = _var2.check(tag, _out_v)
+                        if _why and not _retried_var:
+                            _harder = _var2.escalate(body_bytes, _why)
+                            if _harder:
+                                print(f"[variety] ♻️ {tag}: {_why} — перепитую", flush=True)
+                                body_bytes = _harder
+                                _retried_var = True
+                                continue
+                        if _why:
+                            print(f"[variety] ⚠️ {tag}: {_why} (перепит не допоміг)",
+                                  flush=True)
+                    except Exception as _vce:
+                        print(f"[variety] check skipped for {tag}: {_vce}", flush=True)
+
                     # мозок: запам'ятовуємо про що AI щойно написав → наступні
                     # промпти бачать це і не повторюють ту саму думку.
                     try:
                         import ai_brain as _brain_n
                         _out = _resp["candidates"][0]["content"]["parts"][0]["text"]
                         _brain_n.note_topic(tag, _out)
+                    except Exception:
+                        pass
+                    # відпечаток відправленого → наступні виклики його побачать
+                    try:
+                        import variety as _var3
+                        _var3.note(tag, _resp["candidates"][0]["content"]["parts"][0]["text"])
                     except Exception:
                         pass
                     return _resp
