@@ -1,4 +1,14 @@
 {
+  "deadlines|2026-08-22t22_01_03_786404": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-08-22T22:01:03.786404"
+  },
+  "action_detect|2026-08-22t21_46_53_766123": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Онлайн-реєстрація на рейс ",
+    "ts": "2026-08-22T21:46:53.766123"
+  },
   "msg_vip_email|2026-08-22t21_46_45_330739": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 📧  Завершення тижня зустрічає тебе вдома, із вільним часом, що є чудовою нагодою для короткого підсумку та планування відпочинку після динамічних ",
@@ -288,15 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист є квитанцією від Apple за покупку. Він підтверджує, що платіж за підписку CapCut був успішно здійснений. Лист не містить інформації пр",
     "ts": "2026-08-22T18:08:44.451419"
-  },
-  "action_detect|2026-08-22t18_06_24_321080": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Нагадати Олегу ска",
-    "ts": "2026-08-22T18:06:24.321080"
-  },
-  "action_detect|2026-08-22t18_03_41_764003": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити непрочитане повідомлення\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити одне ",
-    "ts": "2026-08-22T18:03:41.764003"
   }
 }
