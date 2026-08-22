@@ -364,6 +364,20 @@ def inject(body_bytes, tag="gem"):
         return body_bytes
 
 
+def applies(body_bytes):
+    """True → у цей промпт inject() реально втрутився, отже відповідь є живим
+    текстом і її має сенс перевіряти на повтор.
+
+    Без цієї перевірки check() ловив JSON-відповіді (напр. action_detect, який
+    законно завжди починається з '{"action_type": ...') і марно палив перепити.
+    """
+    try:
+        b = json.loads(body_bytes.decode())
+        return MARK in b["contents"][0]["parts"][0]["text"]
+    except Exception:
+        return False
+
+
 def escalate(body_bytes, reason):
     """Жорсткіша вимога після зловленого повтору. None → вже було, не дублюємо."""
     try:

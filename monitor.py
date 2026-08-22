@@ -1699,7 +1699,10 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
                     try:
                         import variety as _var2
                         _out_v = _resp["candidates"][0]["content"]["parts"][0]["text"]
-                        _why = _var2.check(tag, _out_v)
+                        # перевіряємо ЛИШЕ живий текст, у який inject втрутився.
+                        # JSON-відповіді (action_detect тощо) законно мають
+                        # однаковий зачин '{"...' — там повтор не є проблемою.
+                        _why = _var2.check(tag, _out_v) if _var2.applies(body_bytes) else ""
                         if _why and not _retried_var:
                             _harder = _var2.escalate(body_bytes, _why)
                             if _harder:

@@ -355,3 +355,23 @@ JSON-промпти не чіпаються взагалі (зламався б 
 
 Тести: tests_variety.py (12 блоків, ~55 перевірок) — fails: 0.
 Регресія 14 наборів — усі 0. Лінт 3.11 bad: 0.
+
+### Перевірка в проді (22.08)
+Деплой e957a16d = SUCCESS. Логи: Traceback 0 / NameError 0 / ImportError 0.
+Реальний /звіт через webhook підтвердив:
+  [variety] 🎲 варіативність увімкнено для personal_ai
+  [variety] 🎲 варіативність увімкнено для astro_ai
+  [variety] 🎲 варіативність увімкнено для themes_ai
+  [variety] 🎲 варіативність увімкнено для briefing
+  [variety] ♻️ action_detect: такий самий зачин — перепитую
+  ✅ [storage] SAVED variety_log.json to GitHub
+ГОЛОВНЕ: «немає даних для аналізу» у логах звіту — 0 разів (було в themes_ai).
+Журнал variety_log.json реально є в origin/data.
+
+БАГ, знайдений цими ж логами, і фікс:
+  action_detect — JSON-промпт. inject його (правильно) не чіпав, але check()
+  усе одно перевіряв відповідь і бачив однаковий зачин '{"action_type": ...',
+  законний для JSON → два марних перепити Gemini + сміття в журналі.
+  Фікс: variety.applies(body_bytes) — перевіряємо на повтор ЛИШЕ те, у що
+  inject реально втрутився (є MARK). У monitor: check викликається під applies.
+  Тест: блок 13 у tests_variety.py.

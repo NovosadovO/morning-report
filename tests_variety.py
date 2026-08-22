@@ -198,6 +198,25 @@ ok(V.fingerprint(None) == [], "fingerprint(None) не падає")
 ok(V.similarity(None, None) == 0.0, "similarity(None) не падає")
 ok(not V.note("t", "коротко"), "надкороткий текст не пишеться в журнал")
 
+
+print("\n─── 13. applies(): JSON-відповіді не перевіряємо ───")
+jb2 = body("Проаналізуй лист. Поверни ТІЛЬКИ валідний JSON.", 0.2)
+ok(not V.applies(jb2), "JSON-промпт (без MARK) -> applies=False")
+lb = V.inject(body("Напиши живий коментар про день."), "report")
+ok(V.applies(lb), "живий промпт (з MARK) -> applies=True")
+ok(not V.applies(b"not json"), "сміття -> applies=False без падіння")
+src2 = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "monitor.py")).read()
+i2 = src2.find("def _gem_post(")
+seg2 = src2[i2:src2.find("\ndef ", i2 + 10)]
+ok("_var2.applies(body_bytes)" in seg2, "monitor перевіряє applies перед check")
+# те, що ловилось помилково: JSON action_detect із однаковим зачином
+jresp = '{"action_type": "calendar", "action_title": "Оплатити страховку", "action_date": "2026-08-25"}'
+_MEM.clear(); V._BUF.clear(); V._CACHE["ts"] = 0.0
+V.note("action_detect", jresp, force=True)
+V._CACHE["ts"] = 0.0
+ok(bool(V.check("action_detect", jresp)), "сам check ще ловить JSON (тому й потрібен applies)")
+ok(not V.applies(jb2), "але applies відсікає його до перевірки")
+
 print("\n" + "=" * 40)
 print("fails: " + str(len(fails)))
 for f in fails:
