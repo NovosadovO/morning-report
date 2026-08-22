@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-22t11_30_26_871248": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-22T11:30:26.871248"
+  },
   "action_detect|2026-08-22t11_11_50_567330": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зваж себе зараз і запиши в Apple Health",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить інформацію про індексний ETF.\"}",
     "ts": "2026-08-22T09:01:00.142328"
-  },
-  "personal_ai|2026-08-22t09_00_51_957079": {
-    "topic": "personal_ai",
-    "gist": "Сьогоднішня вага 84.3 кг, що на 0.1 кг більше, ніж вчора, і все ще далеко від цілі у 78 кг. Оскільки сьогодні пробіжки ще не було, а звички не виконані, це може",
-    "ts": "2026-08-22T09:00:51.957079"
   }
 }
