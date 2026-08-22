@@ -4497,24 +4497,28 @@
   "2026-05-17": {
     "sleep_quality": "2",
     "sleep_quality_label": "😐 Нормально",
-    "steps": 57607,
+    "steps": 19498,
     "heart_rate": 70,
     "calories_active": 2167,
     "calories": 4007,
     "distance_km": 0.02,
     "flights_climbed": 5,
-    "water_ml": 1950
+    "water_ml": 1950,
+    "hr_avg": 61,
+    "hrv": 40
   },
   "2026-05-21": {
     "sleep_quality": "3",
     "sleep_quality_label": "😊 Добре",
-    "steps": 21284,
+    "steps": 10000,
     "heart_rate": 65,
     "calories_active": 876,
     "calories": 2503,
     "distance_km": 0.01,
     "flights_climbed": 2,
-    "water_ml": 2300
+    "water_ml": 2300,
+    "weight_kg": 83.0,
+    "hr_avg": 83
   },
   "2026-05-12": {
     "steps": 91293,
@@ -4571,15 +4575,27 @@
   },
   "2026-05-23": {
     "sleep_quality": "2",
-    "sleep_quality_label": "😐 Нормально"
+    "sleep_quality_label": "😐 Нормально",
+    "steps": 21334,
+    "sleep_hours": 4.3,
+    "weight_kg": 83.0,
+    "hr_avg": 67,
+    "hrv": 38
   },
   "2026-05-25": {
     "sleep_quality": "2",
-    "sleep_quality_label": "😐 Нормально"
+    "sleep_quality_label": "😐 Нормально",
+    "steps": 10000,
+    "weight_kg": 83.0,
+    "hr_avg": 66,
+    "hrv": 34
   },
   "2026-05-29": {
     "sleep_quality": "2",
-    "sleep_quality_label": "😐 Нормально"
+    "sleep_quality_label": "😐 Нормально",
+    "weight_kg": 83.0,
+    "hr_avg": 87,
+    "hrv": 5
   },
   "2026-05-30": {
     "sleep_quality": "3",
@@ -4591,7 +4607,11 @@
   },
   "2026-06-07": {
     "sleep_quality": "4",
-    "sleep_quality_label": "🌟 Відмінно"
+    "sleep_quality_label": "🌟 Відмінно",
+    "steps": 7217,
+    "weight_kg": 83.0,
+    "hr_avg": 66,
+    "hrv": 33
   },
   "2026-06-09": {
     "sleep_quality": "2",
@@ -4599,22 +4619,423 @@
   },
   "2026-06-11": {
     "sleep_quality": "1",
-    "sleep_quality_label": "😩 Погано"
+    "sleep_quality_label": "😩 Погано",
+    "steps": 15000,
+    "sleep_hours": 7.6,
+    "hr_avg": 94,
+    "hrv": 48
   },
   "2026-06-14": {
     "sleep_quality": "4",
-    "sleep_quality_label": "🌟 Відмінно"
+    "sleep_quality_label": "🌟 Відмінно",
+    "steps": 7787,
+    "sleep_hours": 6.0,
+    "hr_avg": 72,
+    "hrv": 44
   },
   "2026-06-15": {
     "sleep_quality": "3",
-    "sleep_quality_label": "😊 Добре"
+    "sleep_quality_label": "😊 Добре",
+    "steps": 17831,
+    "sleep_hours": 8.6,
+    "hr_avg": 73,
+    "hrv": 73
   },
   "2026-06-17": {
     "sleep_quality": "3",
-    "sleep_quality_label": "😊 Добре"
+    "sleep_quality_label": "😊 Добре",
+    "steps": 16284,
+    "hr_avg": 86,
+    "hrv": 86
   },
   "2026-06-27": {
     "sleep_quality": "1",
-    "sleep_quality_label": "😩 Погано"
+    "sleep_quality_label": "😩 Погано",
+    "steps": 21689,
+    "hr_avg": 65,
+    "hrv": 38
+  },
+  "2026-05-22": {
+    "steps": 5948,
+    "weight_kg": 83.0,
+    "hr_avg": 57,
+    "hrv": 40
+  },
+  "2026-05-24": {
+    "steps": 16693,
+    "weight_kg": 83.0,
+    "hr_avg": 88,
+    "hrv": 39
+  },
+  "2026-05-26": {
+    "steps": 29851,
+    "weight_kg": 83.0,
+    "hr_avg": 63,
+    "hrv": 40
+  },
+  "2026-05-27": {
+    "weight_kg": 83.0,
+    "hr_avg": 77,
+    "hrv": 27
+  },
+  "2026-05-31": {
+    "sleep_hours": 10.1,
+    "hr_avg": 84,
+    "hrv": 35
+  },
+  "2026-06-02": {
+    "steps": 11038,
+    "weight_kg": 83.0,
+    "hr_avg": 66,
+    "hrv": 44
+  },
+  "2026-06-05": {
+    "sleep_hours": 6.4,
+    "weight_kg": 83.0,
+    "hr_avg": 73,
+    "hrv": 23
+  },
+  "2026-06-06": {
+    "steps": 20359,
+    "sleep_hours": 5.4,
+    "hr_avg": 67,
+    "hrv": 41
+  },
+  "2026-06-08": {
+    "steps": 14377,
+    "sleep_hours": 5.9,
+    "weight_kg": 83.0,
+    "hr_avg": 90,
+    "hrv": 47
+  },
+  "2026-06-10": {
+    "steps": 14341,
+    "sleep_hours": 0.6,
+    "weight_kg": 83.0,
+    "hr_avg": 68,
+    "hrv": 37
+  },
+  "2026-06-12": {
+    "steps": 22717,
+    "hr_avg": 67,
+    "hrv": 45
+  },
+  "2026-06-13": {
+    "steps": 21570,
+    "sleep_hours": 5.4,
+    "weight_kg": 83.0,
+    "hr_avg": 70,
+    "hrv": 44
+  },
+  "2026-06-18": {
+    "steps": 10084,
+    "hr_avg": 85,
+    "hrv": 85
+  },
+  "2026-06-19": {
+    "steps": 21570,
+    "sleep_hours": 5.4,
+    "hr_avg": 64,
+    "hrv": 44
+  },
+  "2026-06-20": {
+    "steps": 23063,
+    "hr_avg": 77,
+    "hrv": 39
+  },
+  "2026-06-21": {
+    "steps": 4839,
+    "sleep_hours": 7.2,
+    "hr_avg": 64,
+    "hrv": 43
+  },
+  "2026-06-23": {
+    "steps": 16311,
+    "sleep_hours": 7.7,
+    "hr_avg": 61,
+    "hrv": 48
+  },
+  "2026-06-24": {
+    "steps": 13638,
+    "hr_avg": 91,
+    "hrv": 49
+  },
+  "2026-06-25": {
+    "steps": 16067,
+    "weight_kg": 83.0,
+    "hr_avg": 61,
+    "hrv": 61
+  },
+  "2026-06-26": {
+    "steps": 16751,
+    "sleep_hours": 4.6,
+    "weight_kg": 83.0,
+    "hr_avg": 99,
+    "hrv": 44
+  },
+  "2026-06-29": {
+    "steps": 23131,
+    "sleep_hours": 5.2,
+    "hr_avg": 77,
+    "hrv": 30
+  },
+  "2026-06-30": {
+    "steps": 13646,
+    "hr_avg": 56,
+    "hrv": 84
+  },
+  "2026-07-02": {
+    "steps": 16751,
+    "hr_avg": 74,
+    "hrv": 44
+  },
+  "2026-07-03": {
+    "steps": 17283,
+    "weight_kg": 83.0,
+    "hr_avg": 65
+  },
+  "2026-07-04": {
+    "steps": 25468,
+    "weight_kg": 83.0,
+    "hr_avg": 65,
+    "hrv": 34
+  },
+  "2026-07-05": {
+    "steps": 11453,
+    "hr_avg": 80,
+    "hrv": 45
+  },
+  "2026-07-06": {
+    "steps": 27915,
+    "weight_kg": 83.0,
+    "hr_avg": 74,
+    "hrv": 41
+  },
+  "2026-07-07": {
+    "steps": 26512,
+    "hr_avg": 78,
+    "hrv": 42
+  },
+  "2026-07-08": {
+    "steps": 6077,
+    "hr_avg": 72,
+    "hrv": 49
+  },
+  "2026-07-09": {
+    "steps": 10102,
+    "hr_avg": 84,
+    "hrv": 50
+  },
+  "2026-07-10": {
+    "steps": 16063,
+    "hr_avg": 95,
+    "hrv": 42
+  },
+  "2026-07-11": {
+    "steps": 17168,
+    "weight_kg": 83.0,
+    "hr_avg": 73,
+    "hrv": 47
+  },
+  "2026-07-12": {
+    "steps": 27915,
+    "hr_avg": 63,
+    "hrv": 30
+  },
+  "2026-07-13": {
+    "steps": 14499,
+    "sleep_hours": 8.9,
+    "hr_avg": 89,
+    "hrv": 50
+  },
+  "2026-07-14": {
+    "steps": 20609,
+    "sleep_hours": 4.6,
+    "weight_kg": 83.0,
+    "hr_avg": 111,
+    "hrv": 48
+  },
+  "2026-07-15": {
+    "steps": 21464,
+    "sleep_hours": 5.7,
+    "hr_avg": 60,
+    "hrv": 60
+  },
+  "2026-07-17": {
+    "steps": 8115,
+    "sleep_hours": 10.1,
+    "weight_kg": 83.0,
+    "hr_avg": 83,
+    "hrv": 44
+  },
+  "2026-07-18": {
+    "steps": 10920,
+    "weight_kg": 83.0,
+    "hr_avg": 60,
+    "hrv": 46
+  },
+  "2026-07-21": {
+    "steps": 4578,
+    "weight_kg": 83.0,
+    "hr_avg": 70,
+    "hrv": 44
+  },
+  "2026-07-22": {
+    "steps": 10920,
+    "weight_kg": 83.0,
+    "hr_avg": 68,
+    "hrv": 39
+  },
+  "2026-07-31": {
+    "steps": 5131,
+    "sleep_hours": 10.2,
+    "weight_kg": 83.0,
+    "hr_avg": 68,
+    "hrv": 46,
+    "spo2": 96
+  },
+  "2026-08-01": {
+    "steps": 7123,
+    "weight_kg": 83.0,
+    "hr_avg": 64,
+    "hrv": 40,
+    "spo2": 99
+  },
+  "2026-08-03": {
+    "steps": 13967,
+    "sleep_hours": 9.0,
+    "weight_kg": 83.0,
+    "hr_avg": 58,
+    "hrv": 45,
+    "spo2": 96
+  },
+  "2026-08-04": {
+    "steps": 17973,
+    "hr_avg": 72,
+    "hrv": 43,
+    "spo2": 96
+  },
+  "2026-08-05": {
+    "steps": 11729,
+    "weight_kg": 83.0,
+    "hr_avg": 61,
+    "hrv": 38,
+    "spo2": 96
+  },
+  "2026-08-06": {
+    "steps": 5123,
+    "sleep_hours": 8.3,
+    "weight_kg": 83.0,
+    "hr_avg": 66,
+    "hrv": 45,
+    "spo2": 96
+  },
+  "2026-08-07": {
+    "steps": 25306,
+    "sleep_hours": 6.0,
+    "weight_kg": 83.0,
+    "hr_avg": 83,
+    "hrv": 32,
+    "spo2": 96
+  },
+  "2026-08-08": {
+    "steps": 21173,
+    "sleep_hours": 6.2,
+    "weight_kg": 83.0,
+    "hr_avg": 66,
+    "hrv": 34,
+    "spo2": 96
+  },
+  "2026-08-09": {
+    "steps": 10225,
+    "weight_kg": 83.0,
+    "hr_avg": 56,
+    "hrv": 48,
+    "spo2": 96
+  },
+  "2026-08-10": {
+    "steps": 9115,
+    "sleep_hours": 9.1,
+    "weight_kg": 83.0,
+    "hr_avg": 70,
+    "hrv": 34,
+    "spo2": 96
+  },
+  "2026-08-11": {
+    "steps": 12344,
+    "weight_kg": 83.0,
+    "hr_avg": 74,
+    "hrv": 42,
+    "spo2": 96
+  },
+  "2026-08-12": {
+    "steps": 10788,
+    "sleep_hours": 8.7,
+    "weight_kg": 83.0,
+    "hr_avg": 69,
+    "hrv": 32,
+    "spo2": 96
+  },
+  "2026-08-13": {
+    "steps": 9663,
+    "sleep_hours": 11.2,
+    "weight_kg": 83.0,
+    "hr_avg": 75,
+    "hrv": 43,
+    "spo2": 96
+  },
+  "2026-08-14": {
+    "steps": 15286,
+    "sleep_hours": 10.7,
+    "weight_kg": 83.0,
+    "hr_avg": 66,
+    "hrv": 37,
+    "spo2": 96
+  },
+  "2026-08-15": {
+    "steps": 12194,
+    "sleep_hours": 9.3,
+    "hr_avg": 82,
+    "hrv": 35,
+    "spo2": 96
+  },
+  "2026-08-16": {
+    "steps": 11127,
+    "weight_kg": 83.0,
+    "hr_avg": 62,
+    "hrv": 45
+  },
+  "2026-08-18": {
+    "steps": 7642,
+    "sleep_hours": 10.8,
+    "weight_kg": 83.0,
+    "hr_avg": 65,
+    "hrv": 36,
+    "spo2": 97
+  },
+  "2026-08-19": {
+    "steps": 8855,
+    "sleep_hours": 10.8,
+    "hr_avg": 73,
+    "hrv": 42,
+    "spo2": 96
+  },
+  "2026-08-20": {
+    "steps": 14732,
+    "weight_kg": 83.0,
+    "hr_avg": 78,
+    "hrv": 40,
+    "spo2": 96
+  },
+  "2026-08-21": {
+    "steps": 21025,
+    "weight_kg": 83.0,
+    "hr_avg": 91,
+    "hrv": 39,
+    "spo2": 96
+  },
+  "2026-08-22": {
+    "sleep_quality": "2",
+    "sleep_quality_label": "😐 Нормально"
   }
 }
