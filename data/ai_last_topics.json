@@ -1,4 +1,64 @@
 {
+  "msg_rwa|2026-08-22t02_46_26_871954": {
+    "topic": "MSG_RWA",
+    "gist": "Привіт, Олеже! Бачу, ти на нічній зміні, тому коротко і по суті.  ### 📈 Що сталося?  Сьогодні LINK значно виріс, показавши зростання на 13.1% за останні 24 годи",
+    "ts": "2026-08-22T02:46:26.871954"
+  },
+  "action_detect|2026-08-22t02_02_26_717834": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-22T02:02:26.717834"
+  },
+  "action_detect|2026-08-22t02_02_26_717106": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити непрочитаний лист\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити один непрочи",
+    "ts": "2026-08-22T02:02:26.717106"
+  },
+  "action_detect|2026-08-22t02_02_26_701397": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-22T02:02:26.701397"
+  },
+  "action_detect|2026-08-22t02_02_15_915297": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти ліки Armolopid, оскільки",
+    "ts": "2026-08-22T02:02:15.915297"
+  },
+  "action_detect|2026-08-22t02_02_04_902274": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Тест\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Тест заплановано на 25 серпня.\"}",
+    "ts": "2026-08-22T02:02:04.902274"
+  },
+  "action_detect|2026-08-22t02_02_04_794674": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-22T02:02:04.794674"
+  },
+  "briefing|2026-08-22t02_02_00_461167": {
+    "topic": "briefing",
+    "gist": "🧭 ВЕКТОР ДНЯ Сьогоднішній вихідний дає тобі простір для стратегічного планування, що є ключовим для досягнення фінансової незалежності. Твій прогрес у кроках на",
+    "ts": "2026-08-22T02:02:00.461167"
+  },
+  "themes_ai|2026-08-22t02_01_48_137369": {
+    "topic": "themes_ai",
+    "gist": "🏃 БІГ Олеже, бачу, що остання твоя пробіжка була 20 днів тому, ще 2 серпня. Пам'ятаю, ти казав, що переносиш біг на суботу через нічні зміни цього тижня. Сьогод",
+    "ts": "2026-08-22T02:01:48.137369"
+  },
+  "astro_ai|2026-08-22t02_01_40_272971": {
+    "topic": "astro_ai",
+    "gist": "Привіт, Олеже! Бачу, сьогоднішній день 22 серпня 2026 року в Кошицях обіцяє бути дуже насиченим та важливим, адже астрологічні транзити вказують на значні зміни",
+    "ts": "2026-08-22T02:01:40.272971"
+  },
+  "email_ai_item|2026-08-22t02_01_21_384031": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист є автоматичним підписом електронної пошти від Олега Новосадова, керівника лінії в Minebea Slovakia s.r.o. Він містить контактну інформ",
+    "ts": "2026-08-22T02:01:21.384031"
+  },
+  "email_ai_item|2026-08-22t02_01_10_529402": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від Railway є щотижневим оновленням продукту, що містить інформацію про нові функції, випущені цього тижня: Railway для всі",
+    "ts": "2026-08-22T02:01:10.529402"
+  },
   "personal_ai|2026-08-22t02_00_45_373419": {
     "topic": "personal_ai",
     "gist": "Олеже, враховуючи, що сьогодні пробіжки ще не було, а завтра у тебе стрижка о 10:00 і потрібно відповісти на лист від Вероні щодо весілля, варто підготувати все",
@@ -238,65 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Booking.com повідомляє про скасування заброньованої активності через непередбачені обставини з боку постачальника. Компанія обіцяє п",
     "ts": "2026-08-21T23:01:40.811060"
-  },
-  "email_ai_item|2026-08-21t23_01_29_792963": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Booking.com повідомляє про скасування активності через непередбачені обставини та просить вибачення за незручності. Вони скасують броню",
-    "ts": "2026-08-21T23:01:29.792963"
-  },
-  "email_ai_item|2026-08-21t23_01_19_218793": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від Pelikan.sk нагадує Олегу про необхідність онлайн-реєстрації на рейс Ryanair з кодом бронювання Y9SB5U. Реєстрація відкр",
-    "ts": "2026-08-21T23:01:19.218793"
-  },
-  "email_ai_item|2026-08-21t23_01_07_614752": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист є автоматичним повідомленням від Олега Новосадова, Line Leader у Minebea Slovakia s.r.o., що містить лише його підпис, контакт",
-    "ts": "2026-08-21T23:01:07.614752"
-  },
-  "personal_ai|2026-08-21t23_00_45_932874": {
-    "topic": "personal_ai",
-    "gist": "Виходячи з наявних даних, у твоєму розкладі на завтра, 22 серпня 2026 року, немає конкретних подій, які потребують підготовки перед сном. Є згадки про стрижку т",
-    "ts": "2026-08-21T23:00:45.932874"
-  },
-  "action_detect|2026-08-21t22_50_49_430364": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-21T22:50:49.430364"
-  },
-  "action_detect|2026-08-21t22_49_16_226273": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-21T22:49:16.226273"
-  },
-  "msg_deep_analysis|2026-08-21t22_49_07_159944": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋 Спиш міцно, і це просто чудово, адже нічний відпочинок — це фундамент для всього, особливо після насичених днів та ймовірно інтенсивних крипто-п",
-    "ts": "2026-08-21T22:49:07.159944"
-  },
-  "action_detect|2026-08-21t22_10_24_944307": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-21T22:10:24.944307"
-  },
-  "action_detect|2026-08-21t22_02_10_587571": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати робочі зміни в календар\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записати всі робочі",
-    "ts": "2026-08-21T22:02:10.587571"
-  },
-  "action_detect|2026-08-21t22_02_10_532955": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Астрологічний аналіз для Олега на 21 серпня 2026 року",
-    "ts": "2026-08-21T22:02:10.532955"
-  },
-  "action_detect|2026-08-21t22_02_09_414772": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст надає інформацію про важливість якісного сну пі",
-    "ts": "2026-08-21T22:02:09.414772"
-  },
-  "action_detect|2026-08-21t22_01_59_544607": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити непрочитаний лист\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити 1 непрочитан",
-    "ts": "2026-08-21T22:01:59.544607"
   }
 }
