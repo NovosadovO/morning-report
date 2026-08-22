@@ -1855,7 +1855,24 @@
     "action": "calrem_skip",
     "pid": "gen_1787389347527",
     "subject": "Запланувати пробіжку",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 75327,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1787389347527"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1787389347527"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-22T11:44:55.107800+00:00"
   }
 }
