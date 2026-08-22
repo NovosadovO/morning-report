@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-22T23:01:32.781852",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-22T23:01:34.115597",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>BRZDA</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
@@ -617,6 +611,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_77660"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-23T00:01:15.606000",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Re: other</b>\n👤 \"Booking.com Customer Service\" &lt;24-25523139647_88c",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77657"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77657"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77657"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77657"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77657"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77657"
             }
           ]
         ]
