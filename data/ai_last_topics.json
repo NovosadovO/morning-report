@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-22t16_47_40_761998": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від Adrian Pape через LinkedIn є інформаційним бюлетенем про ринок криптовалют. Автор аналізує нещодавнє зростання біткойна на 25% за ",
+    "ts": "2026-08-22T16:47:40.761998"
+  },
   "action_detect|2026-08-22t16_35_58_607580": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Нагадати Олегу ска",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Купити квіти на річницю.\"}",
     "ts": "2026-08-22T13:31:07.682775"
-  },
-  "action_detect|2026-08-22t13_29_45_970579": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг та дерматолог\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Запланувати біг на вівт",
-    "ts": "2026-08-22T13:29:45.970579"
   }
 }
