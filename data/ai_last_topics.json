@@ -1,4 +1,9 @@
 {
+  "calendar|2026-08-22t09_16_03_339703": {
+    "topic": "calendar",
+    "gist": "Привіт, Олеже! Чудово, що ти сьогодні на ранній зміні, адже завтра в тебе вихідний. Це дає гарну нагоду перевести подих і відновитися після робочого тижня. Пам'",
+    "ts": "2026-08-22T09:16:03.339703"
+  },
   "action_detect|2026-08-22t09_11_05_580129": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-08-22\", \"action_time\": null, \"action_summary\": \"Олег має ранню зміну сьогодні, з",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати зростання XLM та LINK\", \"action_date\": \"2026-08-22\", \"action_time\": null, \"action_summary\": \"Проанал",
     "ts": "2026-08-22T07:02:07.436614"
-  },
-  "action_detect|2026-08-22t07_02_07_413099": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийняв Олег ліки ",
-    "ts": "2026-08-22T07:02:07.413099"
   }
 }
