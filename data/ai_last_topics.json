@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-22t16_35_58_607580": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Нагадати Олегу ска",
+    "ts": "2026-08-22T16:35:58.607580"
+  },
   "email_ai_item|2026-08-22t16_23_07_677047": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Investing.com є інформаційним бюлетенем, який обговорює інвестиційні можливості в галузі охорони здоров'я, зокрема, що нас",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг та дерматолог\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Запланувати біг на вівт",
     "ts": "2026-08-22T13:29:45.970579"
-  },
-  "context_ask_ai|2026-08-22t13_29_35_664518": {
-    "topic": "context_ask_ai",
-    "gist": "{\"action\":\"create_event\",\"summary\":\"Біг\",\"date\":\"2026-08-25\",\"time\":\"morning\",\"description\":\"Біг, згідно з планом Олега.\"} {\"action\":\"create_event\",\"summary\":\"Д",
-    "ts": "2026-08-22T13:29:35.664518"
   }
 }
