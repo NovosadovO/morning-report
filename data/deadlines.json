@@ -142,5 +142,17 @@
     "sender": "\"Philips\" <noreply@apac.ph.mc.philips.com>",
     "done": false,
     "created": "2026-08-21"
+  },
+  "підписка_railway_corporation_оплата|2026-08-23": {
+    "kind": "contract",
+    "title": "Підписка Railway Corporation — оплата",
+    "org": "Railway Corporation",
+    "deadline": "2026-08-23",
+    "action": "Оновити платіжну інформацію для продовження підписки Railway Corporation",
+    "why": "Без оновлення платіжних даних підписка буде призупинена, і ви втратите доступ до сервісу.",
+    "uid": "77868",
+    "sender": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
+    "done": false,
+    "created": "2026-08-23"
   }
 }
