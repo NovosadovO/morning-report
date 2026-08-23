@@ -3248,6 +3248,35 @@ def handle_command(chat_id, text):
         import threading as _th_s
         _th_s.Thread(target=_run_sb, daemon=True, name="subs-cmd").start()
 
+    elif text.lower().strip() in ["/листкал", "/mailcal", "/зкалендаря", "/події_з_листів"]:
+        def _run_mc():
+            try:
+                import sys as _smc, os as _omc
+                _smc.path.insert(0, _omc.path.dirname(__file__))
+                import mailcal as _mc_cmd
+                send(chat_id, _mc_cmd.report())
+                n = _mc_cmd.run(force=True)
+                if n:
+                    send(chat_id, f"📅 Нових подій з листів створено: {n}")
+                else:
+                    send(chat_id, "📅 Нових дат у листах не знайшов.")
+            except Exception as _e_mc:
+                send(chat_id, f"⚠️ Помилка mailcal: {str(_e_mc)[:300]}")
+        import threading as _th_mc
+        _th_mc.Thread(target=_run_mc, daemon=True, name="mailcal-cmd").start()
+
+    elif text.lower().strip() in ["/прибирання", "/tidy", "/почисти", "/чистка"]:
+        try:
+            import sys as _std2, os as _otd2
+            _std2.path.insert(0, _otd2.path.dirname(__file__))
+            import tidy as _td_cmd
+            send(chat_id, _td_cmd.report())
+            n = _td_cmd.run(force=True)
+            if not n:
+                send(chat_id, "🧹 Прибирати нічого — реєстри чисті.")
+        except Exception as _e_td:
+            send(chat_id, f"⚠️ Помилка прибирання: {str(_e_td)[:300]}")
+
     elif text.lower().strip() in ["/дати", "/dates", "дати", "/дн", "/birthdays"]:
         try:
             import sys as _sd2, os as _od2
@@ -6631,6 +6660,19 @@ def _route_callback(cb, confirmed: bool = False):
               data.startswith("calrem_add_") or data.startswith("calrem_skip_") or
               data.startswith("shop_add_") or data.startswith("shop_skip_")):
             handle_email_callback(cb)
+        elif data.startswith("mc_"):
+            # Події, які бот САМ створив у календарі з листів (mailcal.py)
+            try:
+                import mailcal as _mc_cb
+                _msg = _mc_cb.handle(data, cb) or "Готово"
+                api("editMessageReplyMarkup", {
+                    "chat_id": chat_id,
+                    "message_id": cb["message"]["message_id"],
+                    "reply_markup": {"inline_keyboard": []}})
+                cb_notify(cb["id"], chat_id, _msg)
+            except Exception as _e_mc_cb:
+                print(f"[mailcal] callback error: {_e_mc_cb}", flush=True)
+                cb_notify(cb["id"], chat_id, "⚠️ Помилка mailcal", alert=True)
         elif (data.startswith("bill_") or data.startswith("rp_") or
               data.startswith("shf_") or data.startswith("fu_") or
               data.startswith("wr_") or data.startswith("dl_") or

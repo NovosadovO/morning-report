@@ -1173,6 +1173,19 @@ def run_assistant_watcher():
                 _lc_w.check_expiring()
             except Exception as _e_lcw:
                 print(f"[lifecycle] watcher error: {_e_lcw}", flush=True)
+            # Лист → календар САМ: дати з листів одразу стають подіями,
+            # Олег дізнається постфактум і може прибрати кнопкою.
+            try:
+                import mailcal as _mc_w
+                _mc_w.run()
+            except Exception as _e_mcw:
+                print(f"[mailcal] watcher error: {_e_mcw}", flush=True)
+            # Самоприбирання реєстрів раз на добу (мертві записи).
+            try:
+                import tidy as _td_w
+                _td_w.run()
+            except Exception as _e_tdw:
+                print(f"[tidy] watcher error: {_e_tdw}", flush=True)
             # Розумна тиша: Олег прокинувся → віддаємо відкладене одним
             # дайджестом. flush() сам перевіряє, що сон уже скінчився.
             try:
