@@ -1,4 +1,9 @@
 {
+  "msg_rwa|2026-08-23t20_19_16_528062": {
+    "topic": "MSG_RWA",
+    "gist": "Олеже, бачу, що сектор RWA пережив сьогодні значне падіння, втративши понад 31% капіталізації за останні 24 години, що зменшило його до $47.72B. Це різке просід",
+    "ts": "2026-08-23T20:19:16.528062"
+  },
   "email_ai_item|2026-08-23t20_04_23_877675": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Pull&Bear є рекламною розсилкою, що пропонує ознайомитися з колекцією Influencer Edit. Він містить посилання на товари та ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
     "ts": "2026-08-23T18:02:36.232102"
-  },
-  "action_detect|2026-08-23t18_02_25_881496": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати лист InterFin\", \"action_date\": \"2026-08-24\", \"action_time\": null, \"action_summary\": \"Після зміни, зр",
-    "ts": "2026-08-23T18:02:25.881496"
   }
 }
