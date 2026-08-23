@@ -1,4 +1,9 @@
 {
+  "msg_health_pulse|2026-08-23t11_00_24_158072": {
+    "topic": "MSG_HEALTH_PULSE",
+    "gist": "Привіт Олеже! ❤️  Схоже, що твій організм чітко реагує на виклики, які не завжди йдуть на користь цілі. За тиждень ти набрав 1.2 кг, досягнувши 84.4 кг, незважа",
+    "ts": "2026-08-23T11:00:24.158072"
+  },
   "calendar|2026-08-23t10_44_23_707568": {
     "topic": "calendar",
     "gist": "Олеже, бачу, що платіж за Runable на $10.00 сьогодні відбувся. Це круто, що ти не забуваєш про інструменти для бігу, навіть перебуваючи на зміні! 💪 Пам'ятаю, ти",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-23T09:01:09.657641"
-  },
-  "action_detect|2026-08-23t09_01_09_629345": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-23T09:01:09.629345"
   }
 }
