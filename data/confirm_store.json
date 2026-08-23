@@ -2949,7 +2949,24 @@
     "action": "calrem_skip",
     "pid": "deep_analysis_1787473032",
     "subject": "Переглянути звіти по RWA з DefiLlama.com",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 76003,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_deep_analysis_1787473032"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_deep_analysis_1787473032"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-23T10:20:02.391265+00:00"
   },
   "6f9daca9fd": {
