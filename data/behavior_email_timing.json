@@ -1,9 +1,4 @@
 {
-  "77445": {
-    "sender": "newsletter@mail.theblock.co",
-    "sender_raw": "The Block <newsletter@mail.theblock.co>",
-    "seen_ts": "2026-08-13T17:01:36.158995+00:00"
-  },
   "77446": {
     "sender": "notifikacie@ekooperativa.sk",
     "sender_raw": "Notifikácie KOOPERATIVA <notifikacie@ekooperativa.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "novinky@aboutyou.com",
     "sender_raw": "Výpredaj na ABOUT YOU <novinky@aboutyou.com>",
     "seen_ts": "2026-08-23T05:59:37.013714+00:00"
+  },
+  "77867": {
+    "sender": "invoice+statements+acct_1raxgujk3urplkao@stripe.com",
+    "sender_raw": "Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com>",
+    "seen_ts": "2026-08-23T06:22:01.012615+00:00"
   }
 }
