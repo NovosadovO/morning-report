@@ -5311,6 +5311,12 @@
       "category": "confirm",
       "question": "email_delete: Purchasing Specialist в Carmeuse",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-23T10:19:51.152610+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_ebea0cb7dd"
     }
   ]
 }
