@@ -3400,7 +3400,44 @@
     "action": "email_delete",
     "pid": "77879",
     "subject": "Compute is an Asset Class now, & NVIDIA is the Bank of AI 🤖🏦; Cloudflare just shipped the full stack for AI Agents that spend money 🤖💸",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 76051,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77879"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77879"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77879"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77879"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77879"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77879"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-23T11:26:23.575535+00:00"
   }
 }
