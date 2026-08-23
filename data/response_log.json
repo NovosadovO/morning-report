@@ -5233,6 +5233,12 @@
       "category": "confirm",
       "question": "email_delete: Your receipt from Runable #2740-1261",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-23T09:04:56.925159+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_4cb1841c66"
     }
   ]
 }
