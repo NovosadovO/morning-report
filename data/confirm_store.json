@@ -3493,7 +3493,24 @@
     "action": "calrem_skip",
     "pid": "deep_analysis_1787477593",
     "subject": "Перевірити платіж Runable",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 76065,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_deep_analysis_1787477593"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_deep_analysis_1787477593"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-23T11:39:43.306051+00:00"
   }
 }
