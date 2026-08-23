@@ -148,5 +148,19 @@
     "paid": true,
     "paid_at": "2026-08-23",
     "created": "2026-08-23"
+  },
+  "runable|10_00|": {
+    "vendor": "Runable",
+    "amount": "10.00",
+    "currency": "USD",
+    "invoice_no": "",
+    "due": "",
+    "uid": "77876",
+    "sender": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
+    "subject": "$10.00 payment to Runable was unsuccessful",
+    "note": "Невдала спроба оплати $10.00 за Runable. Потрібно оновити платіжну інформацію.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-08-23"
   }
 }
