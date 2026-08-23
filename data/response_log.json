@@ -5728,6 +5728,16 @@
         "kind": "reminder",
         "date": "2026-08-24"
       }
+    },
+    {
+      "ts": "2026-08-24T01:30:23.827995+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити невдалу оплату Runable",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-24"
+      }
     }
   ]
 }
