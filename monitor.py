@@ -1608,6 +1608,15 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     except Exception as _e_nowc:
         print("[nowctx] skip: " + str(_e_nowc), flush=True)
 
+    # ─── РЕАКЦІЇ ОЛЕГА: що він уже натиснув (23.08) ──────────────────────────
+    # Щоб AI не нагадував про зроблене/оплачене/скасоване і не тягнув закриті
+    # теми в звіти як «нове». Дані реальні — з натискань кнопок, не з домислів.
+    try:
+        import react as _rct
+        body_bytes = _rct.inject(body_bytes, tag)
+    except Exception as _e_rct:
+        print("[react] skip: " + str(_e_rct), flush=True)
+
     # ─── ЄДИНИЙ МОЗОК: пам'ять + свобода в КОЖЕН AI-виклик ───────────────────
     # Раніше feedback_ctx підмішувався лише у 3 промпти з ~24 — тому AI не
     # пам'ятав відповідей Олега і повторював відхилене. Інжект тут накриває всі

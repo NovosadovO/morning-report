@@ -3290,6 +3290,16 @@ def handle_command(chat_id, text):
         except Exception as _e_td:
             send(chat_id, f"⚠️ Помилка прибирання: {str(_e_td)[:300]}")
 
+    elif text.lower().strip() in ["/реакції", "/реакции", "/reactions",
+                                  "/кнопки", "/закриті"]:
+        try:
+            import sys as _srx, os as _orx
+            _srx.path.insert(0, _orx.path.dirname(__file__))
+            import react as _rx_cmd
+            send(chat_id, _rx_cmd.report())
+        except Exception as _e_rx:
+            send(chat_id, f"⚠️ Помилка реакцій: {str(_e_rx)[:300]}")
+
     elif text.lower().strip() in ["/дати", "/dates", "дати", "/дн", "/birthdays"]:
         try:
             import sys as _sd2, os as _od2
@@ -6673,6 +6683,26 @@ def _route_callback(cb, confirmed: bool = False):
               data.startswith("calrem_add_") or data.startswith("calrem_skip_") or
               data.startswith("shop_add_") or data.startswith("shop_skip_")):
             handle_email_callback(cb)
+        elif data.startswith("rx_"):
+            # Кнопки реакції під сповіщеннями (react.py). Як і mc_*, вони НЕ
+            # отримують попереднього ack — тому відповідаємо тут першими,
+            # справжнім випливаючим вікном.
+            try:
+                import react as _rx_cb
+                _rr = _rx_cb.handle(data, cb) or {}
+                api("answerCallbackQuery", {
+                    "callback_query_id": cb["id"],
+                    "text": (_rr.get("text") or "Записав")[:190],
+                    "show_alert": bool(_rr.get("alert", True))})
+                _rkb = _rr.get("keyboard")
+                if _rkb is not None:
+                    api("editMessageReplyMarkup", {
+                        "chat_id": chat_id,
+                        "message_id": cb["message"]["message_id"],
+                        "reply_markup": {"inline_keyboard": _rkb}})
+            except Exception as _e_rx_cb:
+                print(f"[react] callback error: {_e_rx_cb}", flush=True)
+                cb_notify(cb["id"], chat_id, "⚠️ Помилка реакції", alert=True)
         elif data.startswith("mc_"):
             # Події, які бот САМ створив у календарі з листів (mailcal.py).
             # Кнопки mc_* НЕ отримують попереднього ack у _dispatch_callback_async,
@@ -6895,7 +6925,7 @@ def _dispatch_callback_async(cb):
     # mc_* (події з листів) відповідають САМІ — справжнім випливаючим вікном
     # (show_alert). Якщо ack'нути тут, Telegram відкине другу відповідь
     # ("query is too old") і Олег побачить дрібний тост замість вікна.
-    _NO_PREACK = ("mc_del_", "mc_yes_", "mc_no_", "mc_ok_")
+    _NO_PREACK = ("mc_del_", "mc_yes_", "mc_no_", "mc_ok_", "rx_")
     if any(data.startswith(_p) for _p in _NO_PREACK):
         _ack_text = None
     else:

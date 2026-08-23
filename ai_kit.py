@@ -227,6 +227,14 @@ def send_card(text: str, keyboard=None, tag="ai_kit", chat_id=None) -> bool:
         "parse_mode": "HTML",
         "disable_web_page_preview": True,
     }
+    if keyboard is None:
+        # Під КОЖНИМ сповіщенням мають бути кнопки відповіді, доречні темі
+        # (react.py). Модуль, який дав свої кнопки, лишається зі своїми.
+        try:
+            import react as _rx
+            keyboard = _rx.keyboard(_rx.detect(tag, text), title=_rx._first_line(text))
+        except Exception as _e:
+            log(tag, "react keyboard skip: " + str(_e))
     if keyboard:
         body["reply_markup"] = {"inline_keyboard": keyboard}
     res = tg("sendMessage", body, tag=tag)
