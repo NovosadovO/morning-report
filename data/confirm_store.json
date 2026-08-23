@@ -2760,7 +2760,24 @@
     "action": "calrem_skip",
     "pid": "77868",
     "subject": "$12.32 payment to Railway Corporation was unsuccessful",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 75897,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_77868"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_77868"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-23T09:06:24.469752+00:00"
   }
 }
