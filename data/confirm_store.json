@@ -3186,5 +3186,14 @@
     },
     "ts": "2026-08-23T11:25:00.556845+00:00",
     "answered": "yes"
+  },
+  "5295ab6ebd": {
+    "action": "gate_cal_skip",
+    "pid": "cal_skip_gen_1787475804652",
+    "subject": "Оплата Runable",
+    "extra": {
+      "msg": "📅 АІ помітив дію:\n«Оплата Runable», 2026-08-23\nОплатити Runable $10.00.\n\nДодати в Google Calendar?"
+    },
+    "ts": "2026-08-23T11:25:34.733550+00:00"
   }
 }
