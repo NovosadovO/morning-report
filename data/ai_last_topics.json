@@ -1,4 +1,34 @@
 {
+  "email_ai_item|2026-08-23t10_14_26_407643": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії, що відповідають налаштуванням одержувача. Зокрема, згадано вакансії Purchasing Spec",
+    "ts": "2026-08-23T10:14:26.407643"
+  },
+  "email_ai_item|2026-08-23t10_10_13_132387": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Footshop інформує про нові знижки на понад 11 000 товарів до 70%, а також про додаткову знижку 22% на літні кросівки та одяг в",
+    "ts": "2026-08-23T10:10:13.132387"
+  },
+  "action_detect|2026-08-23t10_08_41_900615": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-23T10:08:41.900615"
+  },
+  "action_detect|2026-08-23t10_07_08_917857": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати біг\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Запланувати чіткий час для б",
+    "ts": "2026-08-23T10:07:08.917857"
+  },
+  "msg_deep_analysis|2026-08-23t10_07_01_574449": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Ранок неділі, 23 серпня, і ти знову на ранній зміні. Хоча твій календар показує вільний час, твої ж слова \"Як вихідний як я на роботі?? Рання з",
+    "ts": "2026-08-23T10:07:01.574449"
+  },
+  "action_detect|2026-08-23t10_06_44_671234": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути пошту\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Швидко переглянути пошту, є лист в",
+    "ts": "2026-08-23T10:06:44.671234"
+  },
   "msg_event_soon|2026-08-23t10_06_34_174112": {
     "topic": "MSG_EVENT_SOON",
     "gist": "Привіт, Олеже! ⏰  З твоїх відповідей я пам'ятаю, що ти зараз на ранній зміні. Хоча сьогодні неділя, і зазвичай це вихідний, твій календар на 10:00 показує \"ранн",
@@ -268,35 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Відвідати навчання і",
     "ts": "2026-08-23T08:22:42.905688"
-  },
-  "msg_deep_analysis|2026-08-23t08_22_34_015232": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋  Ранок неділі, і поки Кошіце тільки прокидається, ти маєш повний карт-бланш на цей день, перебуваючи вдома. Це чудовий шанс свіжим поглядом оцін",
-    "ts": "2026-08-23T08:22:34.015232"
-  },
-  "action_detect|2026-08-23t08_20_51_115894": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-23T08:20:51.115894"
-  },
-  "bills|2026-08-23t08_16_14_073295": {
-    "topic": "bills",
-    "gist": "[]",
-    "ts": "2026-08-23T08:16:14.073295"
-  },
-  "action_detect|2026-08-23t08_11_23_310113": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-23T08:11:23.310113"
-  },
-  "msg_micro_checkin|2026-08-23t08_11_14_356434": {
-    "topic": "MSG_MICRO_CHECKIN",
-    "gist": "Привіт Олеже! 💭 Ранок неділі – це ж святе, правда? Особливо, коли є шанс видихнути і просто побути вдома, у вільний час, без метушні Minebea Mitsumi. Я знаю, що",
-    "ts": "2026-08-23T08:11:14.356434"
-  },
-  "action_detect|2026-08-23t08_03_16_723311": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Обов'язково записуй всі блискучі ідеї ",
-    "ts": "2026-08-23T08:03:16.723311"
   }
 }
