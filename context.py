@@ -270,7 +270,16 @@ def get_shift_from_calendar():
 
 # ─── CALENDAR: НАЙБЛИЖЧИЙ ВИХІДНИЙ ────────────────────────────────────────────
 
-_SHIFT_KEYWORDS = ["рання", "early", "нічна", "night"]
+# 23.08: було лише 4 слова — якщо Олег назвав подію «Zmena», «Nočná», «Shift»
+# або «Робота», зміна НЕ розпізнавалась і день вважався вільним.
+_SHIFT_KEYWORDS = [
+    "рання", "ранкова", "денна", "early",
+    "нічна", "ночна", "night",
+    "зміна", "змiна", "smena", "zmena", "shift",
+    "nocna", "nočná", "ranna", "ranná",
+    "робота", "work", "minebea",
+    "06:00-18:00", "18:00-06:00", "6-18", "18-6",
+]
 
 def _is_shift_event(summary: str) -> bool:
     s = (summary or "").lower()
