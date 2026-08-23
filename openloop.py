@@ -115,12 +115,30 @@ def _sent_mail(days=PROMISE_DAYS, limit=MAX_SENT_SCAN):
         return None
     out = []
     try:
+        # Теку «Надіслані» шукаємо за IMAP-флагом \Sent, а не за назвою:
+        # у Gmail вона локалізована («[Gmail]/Надіслані»), тому жорсткі
+        # назви не працювали — прод це й показав.
+        boxes = []
+        try:
+            typ, lst = mail.list()
+            if typ == "OK":
+                for raw in (lst or []):
+                    line = raw.decode(errors="replace") if isinstance(
+                        raw, bytes) else str(raw)
+                    if "\\Sent" in line:
+                        name = line.split(' "/" ')[-1].strip()
+                        if not name.startswith('"'):
+                            name = '"' + name + '"'
+                        boxes.append(name)
+        except Exception as e:
+            _log("IMAP LIST: " + str(e))
+        boxes += ['"[Gmail]/Sent Mail"', '"[Gmail]/Надіслані"', "Sent"]
         ok = False
-        for box in ('"[Gmail]/Sent Mail"', '"[Gmail]/&BB0AVQQ4BEAEMAQ- BD8EPgRJBEIEMA-"',
-                    "Sent"):
+        for box in boxes:
             try:
                 typ, _ = mail.select(box, readonly=True)
                 if typ == "OK":
+                    _log("тека надісланих: " + box)
                     ok = True
                     break
             except Exception:
