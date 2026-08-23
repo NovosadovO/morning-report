@@ -1,4 +1,14 @@
 {
+  "bills|2026-08-23t14_43_29_752799": {
+    "topic": "bills",
+    "gist": "```json [] ```",
+    "ts": "2026-08-23T14:43:29.752799"
+  },
+  "action_detect|2026-08-23t14_38_49_290178": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Pelikan.sk\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити онла",
+    "ts": "2026-08-23T14:38:49.290178"
+  },
   "msg_vip_email|2026-08-23t14_38_41_069761": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🤝  Дивлюся на твій тижневий прогрес і бачу цікаву динаміку: поки крипторинок стрімко зростає, даруючи приємні +22.8% для BTC, +29.4% для ETH та ма",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Використати енергію ",
     "ts": "2026-08-23T12:03:08.343104"
-  },
-  "proactive_ai|2026-08-23t12_03_01_984555": {
-    "topic": "proactive_ai",
-    "gist": "Олеже, як ранок пройшов на роботі? Чи встиг ти нормально поїсти за дієтою, як планував?",
-    "ts": "2026-08-23T12:03:01.984555"
-  },
-  "action_detect|2026-08-23t12_02_57_320244": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Спробуй зробити хоча б коротку, легку пробі",
-    "ts": "2026-08-23T12:02:57.320244"
   }
 }
