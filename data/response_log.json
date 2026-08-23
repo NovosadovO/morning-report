@@ -5618,6 +5618,12 @@
       "category": "confirm",
       "question": "email_delete: ",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-23T14:47:11.375106+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_d836b3b956"
     }
   ]
 }
