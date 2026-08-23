@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-23T01:01:33.149213",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77769"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77769"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77769"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77769"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77769"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77769"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-23T01:01:34.644447",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Online check-in for a smooth take-off. ATTENTION! Don’t forg</b>\n👤 letenky@pelikan.sk",
@@ -584,6 +545,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_77660"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-23T02:01:25.405417",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Re: other</b>\n👤 \"Booking.com Customer Service\" &lt;24-25523139647_88c",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77657"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77657"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77657"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77657"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77657"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77657"
             }
           ]
         ]
