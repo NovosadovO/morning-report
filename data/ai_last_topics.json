@@ -1,4 +1,14 @@
 {
+  "personal_ai|2026-08-23t13_00_59_050151": {
+    "topic": "personal_ai",
+    "gist": "Сон 5.8 години вчора — це ризик для відновлення, що вплине на продуктивність до кінця зміни та після неї. Перевиконані кроки (21273) компенсують відсутність про",
+    "ts": "2026-08-23T13:00:59.050151"
+  },
+  "action_detect|2026-08-23t13_00_06_674362": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-23T13:00:06.674362"
+  },
   "mailcal_extract|2026-08-23t12_56_24_044901": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
     "ts": "2026-08-23T11:03:29.304763"
-  },
-  "action_detect|2026-08-23t11_03_29_270087": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Runable\", \"action_date\": \"2026-08-23\", \"action_time\": \"09:00\", \"action_summary\": \"Сьогодні о 09:00 потрібно ",
-    "ts": "2026-08-23T11:03:29.270087"
-  },
-  "action_detect|2026-08-23t11_03_29_231966": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Runable\", \"action_date\": \"2026-08-23\", \"action_time\": null, \"action_summary\": \"Оплатити Runable $10.00.\"}",
-    "ts": "2026-08-23T11:03:29.231966"
   }
 }
