@@ -1,4 +1,44 @@
 {
+  "email_ai_item|2026-08-23t16_15_44_516105": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії, які відповідають налаштуванням користувача. Зокрема, згадано вакансії Purchasing Sp",
+    "ts": "2026-08-23T16:15:44.516105"
+  },
+  "openloop_promises|2026-08-23t16_06_17_206242": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"додати скріншоти повідомлень від туроператора\",     \"to\": \"Booking.com Customer Service\",     \"date\": null   },   {     \"what\": \"скас",
+    "ts": "2026-08-23T16:06:17.206242"
+  },
+  "action_detect|2026-08-23t16_06_06_064157": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-23T16:06:06.064157"
+  },
+  "action_detect|2026-08-23t16_04_54_828128": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Олег переніс біг на вівторок, 25.08.2026",
+    "ts": "2026-08-23T16:04:54.828128"
+  },
+  "msg_health_pulse|2026-08-23t16_04_47_235909": {
+    "topic": "MSG_HEALTH_PULSE",
+    "gist": "Привіт Олеже! ❤️  Бачу, ти зараз на роботі, тож давай швидко перевіримо твій \"пульс\" здоров'я. Сьогоднішня вага 84.4 кг, що на 1.2 кг більше за тиждень, і це тр",
+    "ts": "2026-08-23T16:04:47.235909"
+  },
+  "action_detect|2026-08-23t16_04_32_830174": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"У вівторок, 25.08, о",
+    "ts": "2026-08-23T16:04:32.830174"
+  },
+  "msg_deep_analysis|2026-08-23t16_04_24_880500": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Ти зараз на зміні, але навіть у такий час важливо тримати руку на пульсі. Твоя вага зросла до 84.4 кг, що на 1.2 кг більше за тиждень, і це сер",
+    "ts": "2026-08-23T16:04:24.880500"
+  },
+  "action_detect|2026-08-23t16_04_10_669829": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Перенесений біг на вівторок, 25 серпня.\"",
+    "ts": "2026-08-23T16:04:10.669829"
+  },
   "msg_vip_email|2026-08-23t16_04_01_473904": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🏹  На фоні значного зростання крипторинку (ETH +30.9% за тиждень, XRP +52.2%), твій шлях до фінансової незалежності набирає обертів, але аналіз да",
@@ -258,45 +298,5 @@
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 📧  Бачу, що обідній час сьогодні, в неділю, 23 серпня 2026 року, ти проводиш вдома, маючи вільний час, що дає можливість спокійно оцінити ситуацію",
     "ts": "2026-08-23T13:33:31.328443"
-  },
-  "email_ai_item|2026-08-23t13_33_15_761029": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист від Buzz Sneaker Station інформує про акцію \\\"Back to the office\\\", яка надає знижку 15% на вибрані товари для дорослих. Для отрим",
-    "ts": "2026-08-23T13:33:15.761029"
-  },
-  "msg_rwa|2026-08-23t13_28_04_888385": {
-    "topic": "MSG_RWA",
-    "gist": "Олеже, бачу, що сектор RWA просів за останні 24 години.  **Що сталося?** Весь сектор RWA втратив 32.7% своєї капіталізації за 24 години, опустившись до $47.28B.",
-    "ts": "2026-08-23T13:28:04.888385"
-  },
-  "action_detect|2026-08-23t13_13_07_026563": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-23T13:13:07.026563"
-  },
-  "msg_micro_checkin|2026-08-23t13_12_58_498648": {
-    "topic": "MSG_MICRO_CHECKIN",
-    "gist": "Привіт Олеже! 🫂  Обідаєш зараз, сподіваюся, є хвилинка перевести подих. Бачу, що ти сьогодні на ранній зміні, а це завжди виклик для режиму.  Знаю, що мета по в",
-    "ts": "2026-08-23T13:12:58.498648"
-  },
-  "action_detect|2026-08-23t13_03_12_482091": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Відновити пробіжки у вівторок.\"}",
-    "ts": "2026-08-23T13:03:12.482091"
-  },
-  "action_detect|2026-08-23t13_03_12_286804": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-23T13:03:12.286804"
-  },
-  "action_detect|2026-08-23t13_03_01_444247": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-23T13:03:01.444247"
-  },
-  "action_detect|2026-08-23t13_02_50_616387": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти на річницю 25.0",
-    "ts": "2026-08-23T13:02:50.616387"
   }
 }
