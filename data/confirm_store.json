@@ -3166,7 +3166,24 @@
     "action": "calrem_skip",
     "pid": "deep_analysis_1787474406",
     "subject": "Перегляд криптоактивів та фіксація прибутку",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 76020,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_deep_analysis_1787474406"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_deep_analysis_1787474406"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-23T11:25:00.556845+00:00"
   }
 }
