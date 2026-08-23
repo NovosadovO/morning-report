@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-08-23t20_24_45_007840": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-23T20:24:45.007840"
+  },
+  "action_detect|2026-08-23t20_20_00_091125": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Інвестиційне навчання\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Відвідати інвестиці",
+    "ts": "2026-08-23T20:20:00.091125"
+  },
+  "msg_vip_email|2026-08-23t20_19_53_203671": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🏹  Твій криптопортфель за останній тиждень демонструє значне зростання: XRP (+50.6%), DOGE (+32.4%), ETH (+29.3%) та SOL (+26.1%) показали потужну",
+    "ts": "2026-08-23T20:19:53.203671"
+  },
   "msg_rwa|2026-08-23t20_19_16_528062": {
     "topic": "MSG_RWA",
     "gist": "Олеже, бачу, що сектор RWA пережив сьогодні значне падіння, втративши понад 31% капіталізації за останні 24 години, що зменшило його до $47.72B. Це різке просід",
@@ -283,20 +298,5 @@
     "topic": "defi_digest",
     "gist": "За останні 24 години помітні рухи в окремих проєктах: Valdora Finance та Moonwell Lending зросли на 6.7%, тоді як SparkLend впав на 5.4%. Хоча лідери TVL Ethere",
     "ts": "2026-08-23T18:15:52.601989"
-  },
-  "action_detect|2026-08-23t18_02_58_302807": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати думки для навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Запи",
-    "ts": "2026-08-23T18:02:58.302807"
-  },
-  "action_detect|2026-08-23t18_02_47_262949": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Навчання інвестиціям",
-    "ts": "2026-08-23T18:02:47.262949"
-  },
-  "action_detect|2026-08-23t18_02_36_232102": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-23T18:02:36.232102"
   }
 }
