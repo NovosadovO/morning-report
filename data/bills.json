@@ -162,5 +162,19 @@
     "paid": false,
     "paid_at": "",
     "created": "2026-08-23"
+  },
+  "railway_corporation|12_32|": {
+    "vendor": "Railway Corporation",
+    "amount": "12.32",
+    "currency": "USD",
+    "invoice_no": "",
+    "due": "",
+    "uid": "77868",
+    "sender": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
+    "subject": "$12.32 payment to Railway Corporation was unsuccessful",
+    "note": "Невдала спроба оплати $12.32 за підписку Railway Corporation. Потрібно оновити платіжну інформацію.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-08-23"
   }
 }
