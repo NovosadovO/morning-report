@@ -5698,6 +5698,16 @@
         "kind": "calendar",
         "date": "2026-08-24"
       }
+    },
+    {
+      "ts": "2026-08-24T00:00:24.006200+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути лист від The Daily Degen",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-25"
+      }
     }
   ]
 }
