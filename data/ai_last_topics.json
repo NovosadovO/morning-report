@@ -1,4 +1,29 @@
 {
+  "action_detect|2026-08-23t22_55_15_137572": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-23T22:55:15.137572"
+  },
+  "action_detect|2026-08-23t22_50_42_937013": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Не забути скасуват",
+    "ts": "2026-08-23T22:50:42.937013"
+  },
+  "msg_deep_analysis|2026-08-23t22_50_36_116302": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Зараз, поки ти відновлюєш сили під час нічного відпочинку, бачу кілька моментів, які варто проаналізувати з огляду на твої цілі.  Твоя вага зар",
+    "ts": "2026-08-23T22:50:36.116302"
+  },
+  "bills|2026-08-23t22_49_55_303725": {
+    "topic": "bills",
+    "gist": "```json [] ```",
+    "ts": "2026-08-23T22:49:55.303725"
+  },
+  "action_detect|2026-08-23t22_49_38_258895": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти на річницю\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Купити квіти на річн",
+    "ts": "2026-08-23T22:49:38.258895"
+  },
   "msg_idle_timeout|2026-08-23t22_49_28_351862": {
     "topic": "MSG_IDLE_TIMEOUT",
     "gist": "Привіт Олеже! ⚡ Коли ти набираєшся сил під час нічного відпочинку, хочу зафіксувати кілька важливих моментів. Твій криптопортфель демонструє стійкість: ETH зрос",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-23T20:02:15.877742"
-  },
-  "action_detect|2026-08-23t20_02_05_051237": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Скасувати підписку",
-    "ts": "2026-08-23T20:02:05.051237"
-  },
-  "action_detect|2026-08-23t20_01_53_979658": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Тест\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Пройти тест 25.08.\"}",
-    "ts": "2026-08-23T20:01:53.979658"
-  },
-  "action_detect|2026-08-23t20_01_53_891614": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити фотоальбом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Купити фотоальбом на річ.\"}",
-    "ts": "2026-08-23T20:01:53.891614"
-  },
-  "action_detect|2026-08-23t20_01_43_152240": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Навчання інвестиціям",
-    "ts": "2026-08-23T20:01:43.152240"
-  },
-  "briefing|2026-08-23t20_01_39_103004": {
-    "topic": "briefing",
-    "gist": "Олеже, зараз 20:01, неділя, і ти на нічній зміні, що триватиме до ранку. Це дає тобі унікальну можливість використати спокійніші моменти для стратегічного плану",
-    "ts": "2026-08-23T20:01:39.103004"
   }
 }
