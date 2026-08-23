@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-23T02:01:20.897006",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Re: Re: other</b>\n👤 \"Booking.com Customer Service\" &lt;24-25523139647_88c",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77663"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77663"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77663"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77663"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77663"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77663"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-23T02:01:22.555271",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Re: Re: other</b>\n👤 \"Booking.com Customer Service\" &lt;24-25523139647_88c",
@@ -588,6 +549,55 @@
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 21 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '21 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 84.3 кг, ціль 78 кг (тренд +0.0 кг за останні 5 замірів). Кроки: 21273 (ціль 10000). Сон: 5.8г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 1 непрочитаних\n📅 Календар: 10:00 і ранні зміни!!",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-23T03:01:59.505254",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (5 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 2 nové pracovné ponuky\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 BRZDA\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 letenky\n📋 Online check-in for a smooth take-off. ATTENTION! Don’t forg\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Profesia.sk",
+              "callback_data": "email_reply_77863"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Profesia.sk",
+              "callback_data": "email_reply_77862"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_77847"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_77769"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: letenky",
+              "callback_data": "email_reply_77664"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_77863"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77863"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
