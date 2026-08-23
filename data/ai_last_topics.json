@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-08-23t20_38_34_767538": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"надіслати скріншоти повідомлень від туроператора\",     \"to\": \"Booking.com Customer Service (Stephanie)\",     \"date\": null   },   {   ",
+    "ts": "2026-08-23T20:38:34.767538"
+  },
+  "action_detect|2026-08-23t20_30_38_049725": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-23T20:30:38.049725"
+  },
   "email_ai_item|2026-08-23t20_28_47_728987": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від Airbnb нагадує про помешкання в Корфу, яке Олег переглядав і зберіг у списку обраного. Лист закликає забронювати його, ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
     "ts": "2026-08-23T18:46:01.695529"
-  },
-  "action_detect|2026-08-23t18_24_13_212378": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-23T18:24:13.212378"
-  },
-  "subs|2026-08-23t18_19_00_284808": {
-    "topic": "subs",
-    "gist": "```json [   {     \"uid\": \"77897\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"cycle\": \"unknown\",     \"charge_date\": null,     \"n",
-    "ts": "2026-08-23T18:19:00.284808"
   }
 }
