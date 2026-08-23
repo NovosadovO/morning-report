@@ -1,4 +1,19 @@
 {
+  "email_ai_item|2026-08-23t12_15_44_670665": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від Pixory є рекламною розсилкою, що пропонує створити фотокниги на різні теми, такі як Girls Trip, Euro Summer, Festival та Summer 20",
+    "ts": "2026-08-23T12:15:44.670665"
+  },
+  "action_detect|2026-08-23t12_15_06_979034": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Нагадування скасув",
+    "ts": "2026-08-23T12:15:06.979034"
+  },
+  "msg_vip_email|2026-08-23t12_14_59_099121": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 📧  Бачу, що обідній час на зміні, тож звертаю увагу на ключові моменти, що потребують уваги, особливо з огляду на твій прогрес.  Крипторинок демон",
+    "ts": "2026-08-23T12:14:59.099121"
+  },
   "mailcal_extract|2026-08-23t12_11_12_109711": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -283,20 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"77878\",     \"title\": \"Оплата Runable $10.00\",     \"date\": \"2026-08-23\",     \"time\": null,     \"kind\": \"payment\",     \"why\": \"Paid Augu",
     "ts": "2026-08-23T10:40:18.723533"
-  },
-  "action_detect|2026-08-23t10_40_07_716791": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд криптоактивів та фіксація прибутку\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після зм",
-    "ts": "2026-08-23T10:40:07.716791"
-  },
-  "msg_deep_analysis|2026-08-23t10_40_01_237143": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋  Ти зараз на зміні, але навіть так цифри за вихідні говорять самі за себе: твій портфель XRP виріс аж на 45.9% за тиждень, а от вага – на 1.2 кг",
-    "ts": "2026-08-23T10:40:01.237143"
-  },
-  "action_detect|2026-08-23t10_39_45_557237": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти на річницю.\"}",
-    "ts": "2026-08-23T10:39:45.557237"
   }
 }
