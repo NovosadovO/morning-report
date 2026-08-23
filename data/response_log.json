@@ -5442,6 +5442,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Оплата Runable",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-23T11:26:06.122768+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_494b690372"
     }
   ]
 }
