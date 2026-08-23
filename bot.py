@@ -3812,12 +3812,44 @@ def handle_command(chat_id, text):
             import traceback
             send(chat_id, f"⚠️ Помилка: {_le}\n{traceback.format_exc()[-300:]}")
 
+    elif text in ["/де", "/where", "/локація"]:
+        try:
+            import nowctx as _nw
+            send(chat_id, _nw.report())
+        except Exception as _ew:
+            send(chat_id, f"⚠️ Помилка: {_ew}")
+
+    elif text in ["/робота", "/зміна", "/work", "/на_роботі"]:
+        try:
+            import nowctx as _nw
+            ok = _nw.set_manual("robota")
+            send(chat_id, "✅ Записав: ти НА РОБОТІ. AI враховуватиме це "
+                          f"{_nw.MANUAL_TTL_H} год і не писатиме про вільний час."
+                 if ok else "⚠️ Не вдалось зберегти локацію")
+        except Exception as _ew:
+            send(chat_id, f"⚠️ Помилка: {_ew}")
+
+    elif text in ["/дома", "/вдома", "/home"]:
+        try:
+            import nowctx as _nw
+            ok = _nw.set_manual("doma")
+            send(chat_id, "✅ Записав: ти ВДОМА. AI враховуватиме це "
+                          f"{_nw.MANUAL_TTL_H} год."
+                 if ok else "⚠️ Не вдалось зберегти локацію")
+        except Exception as _ew:
+            send(chat_id, f"⚠️ Помилка: {_ew}")
+
     elif text.startswith("/set_location ") or text.startswith("location: "):
         try:
             loc = text.replace("/set_location ", "").replace("location: ", "").strip().lower()
             if loc in ["doma", "робота", "robota", "работа", "work"]:
                 loc = "robota" if loc != "doma" else "doma"
                 set_user_location(loc)
+                try:
+                    import nowctx as _nw2
+                    _nw2.set_manual(loc)
+                except Exception:
+                    pass
                 send(chat_id, f"✅ Локація встановлена: {loc}")
             else:
                 send(chat_id, "❌ Введи: /set_location doma або /set_location robota")

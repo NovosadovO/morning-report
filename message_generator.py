@@ -59,7 +59,22 @@ def _get_real_status(location_fallback: str = "doma") -> str:
             return label
         except Exception as e:
             _log(f"⚠️ _get_real_status: calendar check failed ({e}), falling back to manual location")
-    return "вдома (невизначено з календаря)" if location_fallback == "doma" else "на роботі (невизначено з календаря)"
+    # Календар недоступний. НЕ вигадуємо «вдома» — це і був баг 23.08:
+    # AI писав «ти вдома, вільний ранок», коли Олег був на зміні.
+    try:
+        import nowctx as _nw
+        _w = _nw.where()
+        if _w["state"] == "work":
+            return _w["label"] + " — ФІЗИЧНО НА РОБОТІ ЗАРАЗ, НЕ ВДОМА"
+        if _w["state"] == "unknown":
+            return ("НЕВІДОМО, де Олег зараз (календар недоступний). "
+                    "ЗАБОРОНЕНО стверджувати, що він вдома, відпочиває або "
+                    "має вільний час — краще спитай або не згадуй локацію")
+        return _w["label"]
+    except Exception:
+        pass
+    return ("НЕВІДОМО, де Олег зараз — не стверджуй локацію"
+            if location_fallback == "doma" else "на роботі (невизначено з календаря)")
 
 # ─── Config ──────────────────────────────────────────────────────────────────
 GEMINI_API_KEY  = os.getenv("GEMINI_API_KEY", "")

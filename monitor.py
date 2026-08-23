@@ -1597,6 +1597,17 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     if _gem_billing_dead():
         raise RuntimeError(f"[{tag}] Gemini billing depleted (cooldown active) — skip call")
 
+    # ─── ЗАРАЗ: дата, день тижня, час і ДЕ Олег (23.08) ──────────────────────
+    # Баг: AI написав «ти зараз вдома і маєш вільний ранок», коли Олег був на
+    # зміні. Причина — «вдома» було значенням за замовчуванням. Тепер час і
+    # локація йдуть у КОЖЕН не-JSON промпт, а невідома локація так і зветься
+    # невідомою (з прямою забороною її вигадувати).
+    try:
+        import nowctx as _nowc
+        body_bytes = _nowc.inject(body_bytes, tag)
+    except Exception as _e_nowc:
+        print("[nowctx] skip: " + str(_e_nowc), flush=True)
+
     # ─── ЄДИНИЙ МОЗОК: пам'ять + свобода в КОЖЕН AI-виклик ───────────────────
     # Раніше feedback_ctx підмішувався лише у 3 промпти з ~24 — тому AI не
     # пам'ятав відповідей Олега і повторював відхилене. Інжект тут накриває всі
