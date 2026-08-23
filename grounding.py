@@ -41,6 +41,12 @@ GROUND_TAGS = {
     # grounding не спрацьовував на найчастіших повідомленнях.
     "MORNING_AI", "LUNCH_AI", "AFTERNOON_AI", "EVENING_AI",
     "msg_gen",
+    # 23.08 — Олег: «перевіряй актуальну інформацію» має діяти й на генераторах,
+    # які писали текст без доступу до інтернету (реальні теги з прода).
+    "BRIEFING_GEN",       # contextual_briefing_engine — брифінг дня
+    "REC_GEN",            # recommendations_engine — рекомендації
+    "proactive_actions",  # проактивні дії/пропозиції
+    "health_ai",          # здоров'я: свіжі дані по бігу/вазі/сну + контекст
 }
 
 # Префікси тегів — MSG_CRYPTO_MOVE, MSG_DEEP_ANALYSIS, MSG_VIP_EMAIL тощо.

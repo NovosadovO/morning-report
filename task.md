@@ -452,3 +452,16 @@ spice.day_close() — замінив «🌟 Гарного дня!» у astro.py
 2. variety.check() — новий детект: якщо у хвості тексту (останні 160 символів)
    є «Хочеш, я…» / «Хочеш щоб я…» — це вважається шаблоном і йде перепит.
 Тести: tests_variety блок 14 (12 перевірок), fails 0. Лінт 3.11: bad 0.
+
+### Перевірка актуальної інформації — розширено (23.08)
+Уточнення: я раніше сказав, що інтернет має лише префікс MSG_ — це було
+НЕПРАВИЛЬНО. У GROUND_TAGS уже були personal_ai, themes_ai, daily_rec,
+briefing, deep_analysis, crypto_ai, weekly/monthly_coach.
+Реально не мали інтернету і додані зараз:
+  BRIEFING_GEN (contextual_briefing_engine), REC_GEN (recommendations_engine),
+  proactive_actions, health_ai.
+Свідомо БЕЗ інтернету лишились: astro_ai (транзити рахуються локально),
+email_summary / email_reply (зміст листів локальний, пошук лише сповільнить),
+усі JSON-парсери (action_detect, qwatch_parse, email_ai_item) — там grounding
+ламає парсер.
+Перевірено: grounding.wanted() дає True для 4 нових тегів і False для JSON.
