@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-08-23t18_24_13_212378": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-23T18:24:13.212378"
+  },
+  "subs|2026-08-23t18_19_00_284808": {
+    "topic": "subs",
+    "gist": "```json [   {     \"uid\": \"77897\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"cycle\": \"unknown\",     \"charge_date\": null,     \"n",
+    "ts": "2026-08-23T18:19:00.284808"
+  },
   "defi_digest|2026-08-23t18_15_52_601989": {
     "topic": "defi_digest",
     "gist": "За останні 24 години помітні рухи в окремих проєктах: Valdora Finance та Moonwell Lending зросли на 6.7%, тоді як SparkLend впав на 5.4%. Хоча лідери TVL Ethere",
@@ -288,15 +298,5 @@
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🤝  Бачу, ти зараз на зміні, тож давай поглянемо на декілька моментів, щоб ти мав змогу стратегічно оцінити свій тиждень. Цей тиждень приніс цікаві",
     "ts": "2026-08-23T16:00:49.999343"
-  },
-  "action_detect|2026-08-23t15_38_37_700833": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-23T15:38:37.700833"
-  },
-  "action_detect|2026-08-23t15_34_20_751459": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Біг перенесено на вівторок, 25.08.2026.\"",
-    "ts": "2026-08-23T15:34:20.751459"
   }
 }
