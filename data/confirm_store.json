@@ -3626,5 +3626,14 @@
     },
     "ts": "2026-08-23T12:25:58.339565+00:00",
     "answered": "yes"
+  },
+  "2d85f42029": {
+    "action": "gate_email_keep",
+    "pid": "email_keep_77876",
+    "subject": "📌 $10.00 payment to Runable was unsuccessful",
+    "extra": {
+      "msg": "💰 ✉️\n📌 $10.00 payment to Runable was unsuccessful\n👤 Runable <failed-payments+acct_1RaXgUJk3URPLkAO@str"
+    },
+    "ts": "2026-08-23T12:26:07.100468+00:00"
   }
 }
