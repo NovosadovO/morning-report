@@ -1,4 +1,39 @@
 {
+  "email_ai_item|2026-08-23t14_14_01_026963": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про нову вакансію Key Account Manager Ocular Health в компанії Alcon, розташованій у Братиславі. Ва",
+    "ts": "2026-08-23T14:14:01.026963"
+  },
+  "action_detect|2026-08-23t14_03_12_463979": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-23T14:03:12.463979"
+  },
+  "action_detect|2026-08-23t14_02_34_609035": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Скасувати підписку",
+    "ts": "2026-08-23T14:02:34.609035"
+  },
+  "action_detect|2026-08-23t14_02_34_607769": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Скасувати підписку",
+    "ts": "2026-08-23T14:02:34.607769"
+  },
+  "action_detect|2026-08-23t14_02_23_551843": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути звіти по RWA\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Сьогодні після зміни знайди",
+    "ts": "2026-08-23T14:02:23.551843"
+  },
+  "action_detect|2026-08-23t14_02_11_453215": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зафіксувати ідеї щодо InterFin\", \"action_date\": \"2026-08-23\", \"action_time\": null, \"action_summary\": \"Записати три ",
+    "ts": "2026-08-23T14:02:11.453215"
+  },
+  "action_detect|2026-08-23t14_02_11_407699": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-23T14:02:11.407699"
+  },
   "action_detect|2026-08-23t14_02_11_339556": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти на річницю.\"}",
@@ -263,40 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
     "ts": "2026-08-23T12:02:43.353227"
-  },
-  "briefing|2026-08-23t12_02_37_803297": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ Сьогодні твій День оцінений лише на 41/100, і це не дивно, враховуючи, що ти на ранній зміні в, по суті, вихідний день. При цьому вага продовжує зр",
-    "ts": "2026-08-23T12:02:37.803297"
-  },
-  "themes_ai|2026-08-23t12_02_24_560126": {
-    "topic": "themes_ai",
-    "gist": "Олеже, твої 84.4 кг із цільових 78 кг наразі показують тренд зростання на 1.1 кг за останні п'ять замірів, і це сигнал до дії, адже ціль не тільки віддаляється,",
-    "ts": "2026-08-23T12:02:24.560126"
-  },
-  "astro_ai|2026-08-23t12_02_08_817336": {
-    "topic": "astro_ai",
-    "gist": "Олеже, Юпітер щойно увійшов у знак твого Асценденту (Лева), і це рідкісна, потужна подія, що знаменує початок нового 12-річного циклу особистісного зростання, в",
-    "ts": "2026-08-23T12:02:08.817336"
-  },
-  "action_detect|2026-08-23t12_02_06_568822": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Скасувати підписку",
-    "ts": "2026-08-23T12:02:06.568822"
-  },
-  "email_ai_item|2026-08-23t12_01_55_895362": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист від Railway Corporation інформує про невдалу оплату підписки на суму $12.32 з картки Visa, що закінчується на 0311. Для продовження підпис",
-    "ts": "2026-08-23T12:01:55.895362"
-  },
-  "email_ai_item|2026-08-23t12_01_45_580440": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від Reserved є рекламною розсилкою, що анонсує нову колекцію Premium Quality. Він містить зображення та текст, що запрошує озн",
-    "ts": "2026-08-23T12:01:45.580440"
-  },
-  "email_ai_item|2026-08-23t12_01_33_786999": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист від Runable повідомляє, що платіж у розмірі $10.00 за допомогою Visa, що закінчується на 2620, був невдалим. Для завершення покупк",
-    "ts": "2026-08-23T12:01:33.786999"
   }
 }
