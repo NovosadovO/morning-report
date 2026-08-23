@@ -5281,6 +5281,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_00a70e2c11"
+    },
+    {
+      "ts": "2026-08-23T10:08:55.755308+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Запланувати біг",
+      "answer": "yes"
     }
   ]
 }
