@@ -5269,6 +5269,12 @@
       "category": "confirm",
       "question": "calrem_skip: Пробіжка",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-23T10:08:49.597136+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_00a70e2c11"
     }
   ]
 }
