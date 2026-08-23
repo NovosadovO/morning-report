@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-23T00:30:54.309276",
-      "kind": "deadlines",
-      "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 1 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📨 <b>Пояснення OpenAI та Anthropic</b>\n📆 до <b>2026-08-24</b>\n🏢 OpenAI and Anthropic\n\n➡️ Надати пояснення щодо моделей OpenAI та Anthropic",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-23T00:30:55.249852",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n📨 Пояснення OpenAI та Anthropic\n📆 до 2026-08-24\n🏢 OpenAI and Anthropic\n\n➡️ Надати пояснення щодо моделей OpenAI та Anthropic",
@@ -423,6 +417,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-23T02:01:16.609681",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>BRZDA</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77847"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77847"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77847"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77847"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77847"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77847"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
