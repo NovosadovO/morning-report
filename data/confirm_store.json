@@ -2956,7 +2956,44 @@
     "action": "email_delete",
     "pid": "77877",
     "subject": "$10.00 payment to Runable was unsuccessful",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 76005,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77877"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77877"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77877"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77877"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77877"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77877"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-23T10:20:04.039991+00:00"
   }
 }
