@@ -5323,6 +5323,12 @@
       "category": "confirm",
       "question": "email_delete: $10.00 payment to Runable was unsuccessful",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-23T10:20:17.540334+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_6f9daca9fd"
     }
   ]
 }
