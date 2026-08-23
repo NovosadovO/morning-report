@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-23T02:01:16.609681",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>BRZDA</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77847"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77847"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77847"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77847"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77847"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77847"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-23T02:01:18.114792",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
@@ -617,6 +578,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_77664"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-23T03:01:52.776098",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Re: Re: other</b>\n👤 \"Booking.com Customer Service\" &lt;24-25523139647_88c",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77663"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77663"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77663"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77663"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77663"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77663"
             }
           ]
         ]
