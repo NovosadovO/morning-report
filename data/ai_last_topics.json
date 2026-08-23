@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-08-23t12_11_12_109711": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-23T12:11:12.109711"
+  },
   "action_detect|2026-08-23t12_04_35_356245": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти на річницю.\"}",
     "ts": "2026-08-23T10:39:45.557237"
-  },
-  "msg_event_soon|2026-08-23t10_39_37_482420": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ⏰  З твоїх відповідей я бачу, що ти зараз на ранній зміні, хоча календар показує вільний час. Це важливо пам'ятати, щоб ефективно планувати день. ",
-    "ts": "2026-08-23T10:39:37.482420"
   }
 }
