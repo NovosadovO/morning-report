@@ -1,4 +1,9 @@
 {
+  "msg_idle_timeout|2026-08-23t20_49_02_265550": {
+    "topic": "MSG_IDLE_TIMEOUT",
+    "gist": "Привіт Олеже! ⚡ Вечір, ти вдома після ранньої зміни, тож час підбити короткий підсумок, дивлячись у майбутнє.  Твоя вага зараз 84.4 кг, що на 1.2 кг більше за т",
+    "ts": "2026-08-23T20:49:02.265550"
+  },
   "openloop_promises|2026-08-23t20_38_34_767538": {
     "topic": "openloop_promises",
     "gist": "```json [   {     \"what\": \"надіслати скріншоти повідомлень від туроператора\",     \"to\": \"Booking.com Customer Service (Stephanie)\",     \"date\": null   },   {   ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
     "ts": "2026-08-23T18:46:12.086263"
-  },
-  "action_detect|2026-08-23t18_46_01_695529": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-23T18:46:01.695529"
   }
 }
