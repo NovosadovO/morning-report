@@ -1,9 +1,4 @@
 {
-  "77447": {
-    "sender": "newsletter@investingmail.com",
-    "sender_raw": "Investing.com <newsletter@investingmail.com>",
-    "seen_ts": "2026-08-13T17:48:27.670683+00:00"
-  },
   "77448": {
     "sender": "contact@avax.network",
     "sender_raw": "Avalanche Summit <contact@avax.network>",
@@ -1498,5 +1493,10 @@
     "sender": "failed-payments+acct_1hnrvlcjopsrzqsd@stripe.com",
     "sender_raw": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
     "seen_ts": "2026-08-23T06:34:13.102151+00:00"
+  },
+  "77869": {
+    "sender": "team@ship.emergent.sh",
+    "sender_raw": "Emergent <team@ship.emergent.sh>",
+    "seen_ts": "2026-08-23T06:48:46.723313+00:00"
   }
 }
