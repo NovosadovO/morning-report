@@ -2538,7 +2538,44 @@
     "action": "email_delete",
     "pid": "77863",
     "subject": "Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 75733,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77863"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77863"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77863"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77863"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77863"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77863"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-23T05:27:59.024422+00:00"
   }
 }
