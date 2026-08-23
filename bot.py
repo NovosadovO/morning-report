@@ -3290,6 +3290,22 @@ def handle_command(chat_id, text):
         except Exception as _e_td:
             send(chat_id, f"⚠️ Помилка прибирання: {str(_e_td)[:300]}")
 
+    elif text.lower().strip() in ["/зависло", "/openloop", "/незакрите",
+                                  "/недороблене", "/петлі"]:
+        def _run_ol():
+            try:
+                import sys as _sol, os as _ool
+                _sol.path.insert(0, _ool.path.dirname(__file__))
+                import openloop as _ol_cmd
+                send(chat_id, _ol_cmd.report())
+                n = _ol_cmd.run(force=True)
+                if not n:
+                    send(chat_id, "🔎 Нових незакритих справ не знайшов.")
+            except Exception as _e_ol:
+                send(chat_id, f"⚠️ Помилка openloop: {str(_e_ol)[:300]}")
+        import threading as _th_ol
+        _th_ol.Thread(target=_run_ol, daemon=True, name="openloop-cmd").start()
+
     elif text.lower().strip() in ["/реакції", "/реакции", "/reactions",
                                   "/кнопки", "/закриті"]:
         try:

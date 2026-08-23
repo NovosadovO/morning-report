@@ -1195,6 +1195,14 @@ def run_assistant_watcher():
                 _wd_w.digest()
             except Exception as _e_wdw:
                 print(f"[watchdog] watcher error: {_e_wdw}", flush=True)
+            # Чого Олег НЕ зробив: листи без відповіді, прострочені
+            # нагадування, обіцянки з його ж листів. Бот сам створює подію
+            # з обіцянки, записує петлю і питає прямо, з кнопками.
+            try:
+                import openloop as _ol_w
+                _ol_w.run()
+            except Exception as _e_olw:
+                print(f"[openloop] watcher error: {_e_olw}", flush=True)
             # Розумна тиша: Олег прокинувся → віддаємо відкладене одним
             # дайджестом. flush() сам перевіряє, що сон уже скінчився.
             try:
