@@ -1,4 +1,74 @@
 {
+  "deadlines|2026-08-23t17_19_01_289855": {
+    "topic": "deadlines",
+    "gist": "```json [] ```",
+    "ts": "2026-08-23T17:19:01.289855"
+  },
+  "action_detect|2026-08-23t17_02_45_443244": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Скасувати підписку",
+    "ts": "2026-08-23T17:02:45.443244"
+  },
+  "action_detect|2026-08-23t17_02_45_409960": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-23T17:02:45.409960"
+  },
+  "action_detect|2026-08-23t17_02_34_528433": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд звіту DefiLlama по RWA\", \"action_date\": null, \"action_time\": \"19:30\", \"action_summary\": \"Після зміни приді",
+    "ts": "2026-08-23T17:02:34.528433"
+  },
+  "action_detect|2026-08-23t17_02_23_404682": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Купити квіти до 25 серпня.\"}",
+    "ts": "2026-08-23T17:02:23.404682"
+  },
+  "action_detect|2026-08-23t17_02_23_396687": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято Armolopid",
+    "ts": "2026-08-23T17:02:23.396687"
+  },
+  "action_detect|2026-08-23t17_02_12_306870": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Аналіз RWA сектора\", \"action_date\": \"2026-08-23\", \"action_time\": null, \"action_summary\": \"Присвятити перші 30-45 хв",
+    "ts": "2026-08-23T17:02:12.306870"
+  },
+  "briefing|2026-08-23t17_02_08_468335": {
+    "topic": "briefing",
+    "gist": "🧭 ВЕКТОР ДНЯ Олеже, зараз ти на фінішній прямій ранньої зміни, і цей час ідеальний для переосмислення, як ти використовуєш останні години робочого дня. Твоя фін",
+    "ts": "2026-08-23T17:02:08.468335"
+  },
+  "themes_ai|2026-08-23t17_01_55_069615": {
+    "topic": "themes_ai",
+    "gist": "💰 ФІНАНСИ Зараз немає свіжих даних по твоїх фінансах, Олеже, але пам'ятаю, що ти цікавишся звітами DefiLlama. Щоб тримати руку на пульсі, після зміни приділи 15",
+    "ts": "2026-08-23T17:01:55.069615"
+  },
+  "astro_ai|2026-08-23t17_01_49_367353": {
+    "topic": "astro_ai",
+    "gist": "Привіт, Олеже!  Сьогодні, 23 серпня 2026 року, о 17:01, у Кошице, Словаччина, астрологічна картина для тебе надзвичайно насичена, особливо враховуючи, що ти на ",
+    "ts": "2026-08-23T17:01:49.367353"
+  },
+  "email_ai_item|2026-08-23t17_01_29_236578": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист від Runable повідомляє, що платіж у розмірі $10.00 за допомогою картки Visa, що закінчується на 2620, був невдалим. Для завершення покупки",
+    "ts": "2026-08-23T17:01:29.236578"
+  },
+  "email_ai_item|2026-08-23t17_01_18_174447": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Runable повідомляє, що платіж у розмірі $10.00 за допомогою картки Visa, що закінчується на 2620, був невдалим. Для завершення",
+    "ts": "2026-08-23T17:01:18.174447"
+  },
+  "personal_ai|2026-08-23t17_01_00_503090": {
+    "topic": "personal_ai",
+    "gist": "Хоча сьогодні неділя і ти на ранній зміні, твої 21273 кроки на 17:00 вже значно перевищують щоденну ціль у 10000, вказуючи на високу активність. Після завершенн",
+    "ts": "2026-08-23T17:01:00.503090"
+  },
+  "action_detect|2026-08-23t17_00_37_205664": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Активне відновлення\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Виконати комплекс активного відн",
+    "ts": "2026-08-23T17:00:37.205664"
+  },
   "msg_workout_plan|2026-08-23t17_00_28_049436": {
     "topic": "MSG_WORKOUT_PLAN",
     "gist": "Привіт Олеже! 🏋️  Не дивлячись на те, що ти зараз на зміні, це не привід забувати про активне відновлення! Після робочого дня, коли тіло втомлене, але потребує ",
@@ -228,75 +298,5 @@
     "topic": "REC_GEN",
     "gist": "Привіт, Олеже! Зараз твоя найгостріша точка — це сон. 4 години сну при нічній зміні – це прямий шлях до виснаження, що впливає на все інше.  1️⃣ 😴 КАТЕГОРІЯ: ЗД",
     "ts": "2026-08-23T15:00:51.237162"
-  },
-  "afternoon_ai|2026-08-23t15_00_38_344666": {
-    "topic": "AFTERNOON_AI",
-    "gist": "Олеже,  Ти вже на зміні, тож сфокусуйся на ефективності під час пауз.  1. **Пріоритети на зміні:** Маєш 1 нерозглянутий VIP-лист – можливо, варто переглянути йо",
-    "ts": "2026-08-23T15:00:38.344666"
-  },
-  "subs|2026-08-23t14_58_07_938414": {
-    "topic": "subs",
-    "gist": "```json [   {     \"uid\": \"77881\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"cycle\": \"unknown\",     \"charge_date\": null,     \"n",
-    "ts": "2026-08-23T14:58:07.938414"
-  },
-  "email_ai_item|2026-08-23t14_46_50_648027": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист від Runable повідомляє, що платіж у розмірі $10.00 за допомогою картки Visa, що закінчується на 2620, був невдалим. Для завершення покупки",
-    "ts": "2026-08-23T14:46:50.648027"
-  },
-  "bills|2026-08-23t14_43_29_752799": {
-    "topic": "bills",
-    "gist": "```json [] ```",
-    "ts": "2026-08-23T14:43:29.752799"
-  },
-  "action_detect|2026-08-23t14_38_49_290178": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Pelikan.sk\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити онла",
-    "ts": "2026-08-23T14:38:49.290178"
-  },
-  "msg_vip_email|2026-08-23t14_38_41_069761": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 🤝  Дивлюся на твій тижневий прогрес і бачу цікаву динаміку: поки крипторинок стрімко зростає, даруючи приємні +22.8% для BTC, +29.4% для ETH та ма",
-    "ts": "2026-08-23T14:38:41.069761"
-  },
-  "mailcal_extract|2026-08-23t14_28_25_673038": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-08-23T14:28:25.673038"
-  },
-  "email_ai_item|2026-08-23t14_14_01_026963": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про нову вакансію Key Account Manager Ocular Health в компанії Alcon, розташованій у Братиславі. Ва",
-    "ts": "2026-08-23T14:14:01.026963"
-  },
-  "action_detect|2026-08-23t14_03_12_463979": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-23T14:03:12.463979"
-  },
-  "action_detect|2026-08-23t14_02_34_609035": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Скасувати підписку",
-    "ts": "2026-08-23T14:02:34.609035"
-  },
-  "action_detect|2026-08-23t14_02_34_607769": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Скасувати підписку",
-    "ts": "2026-08-23T14:02:34.607769"
-  },
-  "action_detect|2026-08-23t14_02_23_551843": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути звіти по RWA\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Сьогодні після зміни знайди",
-    "ts": "2026-08-23T14:02:23.551843"
-  },
-  "action_detect|2026-08-23t14_02_11_453215": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зафіксувати ідеї щодо InterFin\", \"action_date\": \"2026-08-23\", \"action_time\": null, \"action_summary\": \"Записати три ",
-    "ts": "2026-08-23T14:02:11.453215"
-  },
-  "action_detect|2026-08-23t14_02_11_407699": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-23T14:02:11.407699"
   }
 }
