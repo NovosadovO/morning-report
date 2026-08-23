@@ -1,0 +1,26 @@
+{
+  "runable": {
+    "vendor": "Runable",
+    "cycle": "unknown",
+    "currency": "USD",
+    "charges": [
+      {
+        "date": "2026-08-23",
+        "amount": "10.00",
+        "uid": "77881"
+      }
+    ],
+    "active": true,
+    "cancelled": false,
+    "confirmed": true,
+    "skipped": false,
+    "first_seen": "2026-08-23",
+    "note": "Невдала оплата Runable. Потрібно оновити платіжну інформацію.",
+    "amount": "10.00",
+    "sender": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
+    "subject": "$10.00 payment to Runable was unsuccessful",
+    "uid": "77881",
+    "last_seen": "2026-08-23",
+    "next_due": "2026-09-23"
+  }
+}
