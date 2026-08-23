@@ -1530,12 +1530,12 @@
     "norm": "переглянути звіти по rwa з defillama com"
   },
   "o:153822faa104": {
-    "kind": "calendar",
+    "kind": "calrem_skip",
     "key": "deep_analysis_1787473032",
     "title": "Переглянути звіти по RWA з DefiLlama.com",
-    "decided": false,
-    "ts": "2026-08-23T10:17:16.044170+00:00",
-    "until": "2026-08-30T10:17:16.044137+00:00",
+    "decided": true,
+    "ts": "2026-08-23T10:20:00.169462+00:00",
+    "until": "2026-10-22T10:20:00.169425+00:00",
     "norm": "переглянути звіти по rwa з defillama com"
   }
 }
