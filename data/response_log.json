@@ -5317,6 +5317,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_ebea0cb7dd"
+    },
+    {
+      "ts": "2026-08-23T10:20:13.790904+00:00",
+      "category": "confirm",
+      "question": "email_delete: $10.00 payment to Runable was unsuccessful",
+      "answer": "yes"
     }
   ]
 }
