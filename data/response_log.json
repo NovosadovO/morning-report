@@ -5678,6 +5678,16 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "весь сектор RWA втратив 31.8% за 24 години (капіталізація $47.72B)"
+    },
+    {
+      "ts": "2026-08-24T00:00:15.998269+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Оплатити Runable",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-25"
+      }
     }
   ]
 }
