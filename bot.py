@@ -6661,15 +6661,24 @@ def _route_callback(cb, confirmed: bool = False):
               data.startswith("shop_add_") or data.startswith("shop_skip_")):
             handle_email_callback(cb)
         elif data.startswith("mc_"):
-            # Події, які бот САМ створив у календарі з листів (mailcal.py)
+            # Події, які бот САМ створив у календарі з листів (mailcal.py).
+            # Кнопки mc_* НЕ отримують попереднього ack у _dispatch_callback_async,
+            # тому тут ми відповідаємо ПЕРШИМИ — і Telegram показує справжнє
+            # випливаюче вікно (show_alert), а не дрібний тост.
             try:
                 import mailcal as _mc_cb
-                _msg = _mc_cb.handle(data, cb) or "Готово"
-                api("editMessageReplyMarkup", {
-                    "chat_id": chat_id,
-                    "message_id": cb["message"]["message_id"],
-                    "reply_markup": {"inline_keyboard": []}})
-                cb_notify(cb["id"], chat_id, _msg)
+                _r = _mc_cb.handle(data, cb) or {}
+                _txt = _r.get("text") or "Готово"
+                api("answerCallbackQuery", {
+                    "callback_query_id": cb["id"],
+                    "text": _txt[:190],
+                    "show_alert": bool(_r.get("alert", True))})
+                _kb = _r.get("keyboard")
+                if _kb is not None:
+                    api("editMessageReplyMarkup", {
+                        "chat_id": chat_id,
+                        "message_id": cb["message"]["message_id"],
+                        "reply_markup": {"inline_keyboard": _kb}})
             except Exception as _e_mc_cb:
                 print(f"[mailcal] callback error: {_e_mc_cb}", flush=True)
                 cb_notify(cb["id"], chat_id, "⚠️ Помилка mailcal", alert=True)
@@ -6870,15 +6879,23 @@ def _dispatch_callback_async(cb):
         ("calrem_add_",     "📅 Додаю..."),
         ("cal_done_",       "🗑 Видаляю подію..."),
     ]
-    _ack_text = "⏳ Обробляю..."
-    for _p, _t in _acks:
-        if data.startswith(_p):
-            _ack_text = _t
-            break
-    try:
-        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": _ack_text})
-    except Exception:
-        pass
+    # mc_* (події з листів) відповідають САМІ — справжнім випливаючим вікном
+    # (show_alert). Якщо ack'нути тут, Telegram відкине другу відповідь
+    # ("query is too old") і Олег побачить дрібний тост замість вікна.
+    _NO_PREACK = ("mc_del_", "mc_yes_", "mc_no_", "mc_ok_")
+    if any(data.startswith(_p) for _p in _NO_PREACK):
+        _ack_text = None
+    else:
+        _ack_text = "⏳ Обробляю..."
+        for _p, _t in _acks:
+            if data.startswith(_p):
+                _ack_text = _t
+                break
+    if _ack_text is not None:
+        try:
+            api("answerCallbackQuery", {"callback_query_id": cb_id, "text": _ack_text})
+        except Exception:
+            pass
 
     import threading as _th_cb
     _done_ev = _th_cb.Event()

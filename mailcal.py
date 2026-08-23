@@ -334,30 +334,73 @@ def _card(created):
 
 # ─── КНОПКИ ──────────────────────────────────────────────────────────────────
 
-def handle(data: str, cb=None) -> str:
-    """Обробка mc_* callback. Повертає текст відповіді або ''."""
+def _label(rec):
+    tm = f" о {rec.get('time')}" if rec.get("time") else ""
+    return f"{rec.get('title','')} — {rec.get('date','')}{tm}"
+
+
+def handle(data: str, cb=None) -> dict:
+    """Обробка mc_* callback.
+
+    Повертає {"text": попап, "alert": bool, "keyboard": нова клавіатура|None}.
+    Видалення — у ДВА кроки: 🗑 лише перепитує (миттєвий попап + кнопки
+    Так/Ні), сама подія зникає з календаря тільки після «Так».
+    """
     if data.startswith("mc_ok_"):
         _store.drop(data[len("mc_ok_"):])
-        return "✅ Добре, лишаю в календарі."
+        return {"text": "✅ Добре, лишаю в календарі.", "alert": False,
+                "keyboard": []}
 
+    # ── Крок 1: натиснуто 🗑 → тільки питаємо, нічого не видаляємо ──────────
     if data.startswith("mc_del_"):
         pid = data[len("mc_del_"):]
+        payload = _store.get(pid) or {}
+        rec = items().get(payload.get("key", ""))
+        if not rec:
+            _store.drop(pid)
+            return {"text": "⚠️ Не знайшов цю подію — можливо, вже прибрана.",
+                    "alert": True, "keyboard": []}
+        if rec.get("state") != "live":
+            _store.drop(pid)
+            return {"text": f"ℹ️ Цю подію вже прибрано: {rec.get('title','')}",
+                    "alert": True, "keyboard": []}
+        return {
+            "text": (f"🗑 Прибрати з календаря?\n\n{_label(rec)}\n\n"
+                     f"Подія зараз У КАЛЕНДАРІ. Натисни «Так, прибрати» "
+                     f"під повідомленням — і я її видалю."),
+            "alert": True,
+            "keyboard": [[
+                {"text": "✅ Так, прибрати", "callback_data": f"mc_yes_{pid}"},
+                {"text": "↩️ Ні, лишити", "callback_data": f"mc_no_{pid}"},
+            ]],
+        }
+
+    # ── Крок 2: підтверджено → видаляємо ───────────────────────────────────
+    if data.startswith("mc_yes_"):
+        pid = data[len("mc_yes_"):]
         payload = _store.get(pid) or {}
         _store.drop(pid)
         key = payload.get("key", "")
         rec = items().get(key)
         if not rec:
-            return "⚠️ Не знайшов цю подію — можливо, вже прибрана."
+            return {"text": "⚠️ Не знайшов цю подію — можливо, вже прибрана.",
+                    "alert": True, "keyboard": []}
         ok = _calendar_delete(rec.get("event_id", ""))
         rec["state"] = "deleted" if ok else "delete_failed"
         rec["deleted_at"] = K.now().isoformat()
         K.update_key(ITEMS_FILE, key, rec)
         if ok:
-            return f"🗑 Прибрав з календаря: {rec.get('title','')}"
-        return ("⚠️ Не вдалось видалити з календаря — прибери вручну: "
-                f"{rec.get('title','')} ({rec.get('date','')})")
+            return {"text": f"🗑 Прибрав з календаря:\n{_label(rec)}",
+                    "alert": True, "keyboard": []}
+        return {"text": ("⚠️ Не вдалось видалити з календаря — прибери вручну:\n"
+                         f"{_label(rec)}"), "alert": True, "keyboard": []}
 
-    return ""
+    if data.startswith("mc_no_"):
+        _store.drop(data[len("mc_no_"):])
+        return {"text": "↩️ Ок, лишаю подію в календарі.", "alert": True,
+                "keyboard": []}
+
+    return {"text": "", "alert": False, "keyboard": None}
 
 
 # ─── ЗВІТ ────────────────────────────────────────────────────────────────────

@@ -158,15 +158,45 @@ n2 = MC.run(force=True)
 ok(n2 == 0, "повторний скан подій не створив")
 ok(len(_CAL) == 1, "у календарі так само 1 подія")
 
-# ── 6. Кнопка «прибрати» видаляє з календаря ─────────────────────────────────
-print("\n=== 6. mc_del ===")
+# ── 6. 🗑 лише перепитує попапом, видаляє тільки після «Так» ────────────────
+print("\n=== 6. попап-підтвердження ===")
 del_btn = [b for b in kb_flat if b["callback_data"].startswith("mc_del_")][0]
-msg = MC.handle(del_btn["callback_data"])
-ok("Прибрав" in msg, f"відповідь про видалення: {msg[:40]}")
-ok(len(_DELETED) == 1, "подію видалено з календаря")
+ask = MC.handle(del_btn["callback_data"])
+ok(ask.get("alert") is True, "перше натискання дає випливаюче вікно")
+ok("Прибрати з календаря?" in ask["text"], "вікно питає підтвердження")
+ok("Рейс" in ask["text"] and "2026-09-12" in ask["text"],
+   "у вікні назва й дата події")
+ok(not _DELETED, "нічого НЕ видалено до підтвердження")
+ask_kb = [b for row in (ask.get("keyboard") or []) for b in row]
+ok(any(b["callback_data"].startswith("mc_yes_") for b in ask_kb), "є кнопка Так")
+ok(any(b["callback_data"].startswith("mc_no_") for b in ask_kb), "є кнопка Ні")
+
+yes_btn = [b for b in ask_kb if b["callback_data"].startswith("mc_yes_")][0]
+res = MC.handle(yes_btn["callback_data"])
+ok(res.get("alert") is True, "після «Так» теж випливаюче вікно")
+ok("Прибрав з календаря" in res["text"], f"вікно підтверджує: {res['text'][:40]}")
+ok(len(_DELETED) == 1, "подію видалено з календаря після «Так»")
 recs = [r for r in (_FILES.get(MC.ITEMS_FILE) or {}).values()
         if isinstance(r, dict) and not r.get("empty")]
 ok(recs and recs[0].get("state") == "deleted", "стан записано як deleted")
+ok("Не знайшов" in MC.handle(yes_btn["callback_data"])["text"],
+   "повторне «Так» не падає")
+
+# ── 6b. «Ні» лишає подію ────────────────────────────────────────────────────
+print("\n=== 6b. Ні, лишити ===")
+_reset()
+_FILES[MC.ITEMS_FILE] = {"k9": {"uid": "9", "title": "Візит", "date": "2026-09-09",
+                                "time": "08:00", "kind": "appointment",
+                                "event_id": "ev9", "state": "live"}}
+pid = MC._store.put({"key": "k9"})
+a = MC.handle(f"mc_del_{pid}")
+ok(a.get("alert") is True, "вікно з питанням показано")
+n_btn = [b for row in a["keyboard"] for b in row
+         if b["callback_data"].startswith("mc_no_")][0]
+r = MC.handle(n_btn["callback_data"])
+ok("лишаю подію" in r["text"], "«Ні» лишає подію")
+ok(not _DELETED, "з календаря нічого не зникло")
+ok(_FILES[MC.ITEMS_FILE]["k9"]["state"] == "live", "стан лишився live")
 
 # ── 7. Пошта недоступна → нічого не робимо ───────────────────────────────────
 print("\n=== 7. пошта впала ===")
