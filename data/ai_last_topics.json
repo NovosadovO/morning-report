@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-08-23t23_55_29_454811": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-23T23:55:29.454811"
+  },
+  "action_detect|2026-08-23t23_45_24_782357": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-23T23:45:24.782357"
+  },
   "msg_vip_email|2026-08-23t23_45_15_952635": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🏹  Поки ти набираєшся сил після ранньої зміни, розслабляючись у нічній тиші, давай подивимось на твої довгострокові стратегічні напрямки. На цьому",
@@ -288,15 +298,5 @@
     "topic": "personal_ai",
     "gist": "Чи варто було б бігти, зважаючи на 21273 кроки сьогодні? Твої кроки значно перевищили денну ціль у 10000, тому додаткова пробіжка сьогодні не потрібна, враховую",
     "ts": "2026-08-23T21:00:46.557625"
-  },
-  "action_detect|2026-08-23t21_00_32_538446": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-23T21:00:32.538446"
-  },
-  "action_detect|2026-08-23t21_00_30_005359": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг та навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Пам'ятай, що ",
-    "ts": "2026-08-23T21:00:30.005359"
   }
 }
