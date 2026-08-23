@@ -3835,7 +3835,44 @@
     "action": "email_delete",
     "pid": "77882",
     "subject": "HR Administrator with Spanish and English – 12-months (fixed-term) contract , Time Services Spain, CTK Team в Amazon",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 76130,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77882"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77882"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77882"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77882"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77882"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77882"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-23T14:29:55.319356+00:00"
   },
   "eabfd62433": {
