@@ -1,4 +1,19 @@
 {
+  "email_ai_item|2026-08-23t20_53_11_752339": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від Temu повідомляє про повернення кредиту. У листі є посилання на рекомендовані товари та інформація про відмову від підпи",
+    "ts": "2026-08-23T20:53:11.752339"
+  },
+  "bills|2026-08-23t20_49_39_552854": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"77897\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"invoice_no\": \"\",     \"due\": \"\",     \"already_paid\"",
+    "ts": "2026-08-23T20:49:39.552854"
+  },
+  "action_detect|2026-08-23t20_49_11_483060": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Скасувати підписку",
+    "ts": "2026-08-23T20:49:11.483060"
+  },
   "msg_idle_timeout|2026-08-23t20_49_02_265550": {
     "topic": "MSG_IDLE_TIMEOUT",
     "gist": "Привіт Олеже! ⚡ Вечір, ти вдома після ранньої зміни, тож час підбити короткий підсумок, дивлячись у майбутнє.  Твоя вага зараз 84.4 кг, що на 1.2 кг більше за т",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Олег планує навчання",
     "ts": "2026-08-23T18:46:12.432046"
-  },
-  "action_detect|2026-08-23t18_46_12_189652": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-23T18:46:12.189652"
-  },
-  "action_detect|2026-08-23t18_46_12_180226": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-23T18:46:12.180226"
-  },
-  "action_detect|2026-08-23t18_46_12_086263": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-23T18:46:12.086263"
   }
 }
