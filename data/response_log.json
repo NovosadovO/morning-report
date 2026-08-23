@@ -5105,6 +5105,16 @@
         "kind": "calendar",
         "date": "2026-08-23"
       }
+    },
+    {
+      "ts": "2026-08-23T04:31:32.824927+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-23"
+      }
     }
   ]
 }
