@@ -1,4 +1,14 @@
 {
+  "personal_ai|2026-08-23t10_00_42_207644": {
+    "topic": "personal_ai",
+    "gist": "На 10:00 у календарі стоїть \"ранні зміни!!\", хоча зараз вільний день і ти вдома. Це може бути нагадування про твій звичний графік, або щось, пов'язане з майбутн",
+    "ts": "2026-08-23T10:00:42.207644"
+  },
+  "action_detect|2026-08-23t10_00_18_103859": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-23T10:00:18.103859"
+  },
   "email_ai_item|2026-08-23t09_56_32_424360": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист від iCloud повідомляє, що сховище майже заповнено (залишилось 952 МБ з 200 ГБ). Для подальшого використання сервісу та архіваці",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї щодо інвестицій\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записати всі свої нові",
     "ts": "2026-08-23T08:03:16.553366"
-  },
-  "action_detect|2026-08-23t08_03_05_582385": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити непрочитаний лист\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Приділи 5 хвилин, щоб п",
-    "ts": "2026-08-23T08:03:05.582385"
-  },
-  "action_detect|2026-08-23t08_02_51_554395": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Контроль харчування та рідини\", \"action_date\": \"2026-08-23\", \"action_time\": null, \"action_summary\": \"Свідомо контро",
-    "ts": "2026-08-23T08:02:51.554395"
   }
 }
