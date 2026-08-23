@@ -5430,6 +5430,12 @@
       "category": "confirm",
       "question": "email_delete: Сховище iCloud майже заповнено",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-23T11:25:54.140345+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_384ee4267c"
     }
   ]
 }
