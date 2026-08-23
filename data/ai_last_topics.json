@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-08-23t19_54_28_506564": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-23T19:54:28.506564"
+  },
+  "action_detect|2026-08-23t19_50_25_371124": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти до річниці у ві",
+    "ts": "2026-08-23T19:50:25.371124"
+  },
   "msg_deep_analysis|2026-08-23t19_50_15_979274": {
     "topic": "MSG_DEEP_ANALYSIS",
     "gist": "Привіт Олеже! 👋  Вечір, а ти ще на зміні, тож давай швидко підіб'ємо підсумки.  Крипторинок продовжує тішити: тиждень видався дуже позитивним для твого портфеля",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-23T17:02:45.409960"
-  },
-  "action_detect|2026-08-23t17_02_34_528433": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд звіту DefiLlama по RWA\", \"action_date\": null, \"action_time\": \"19:30\", \"action_summary\": \"Після зміни приді",
-    "ts": "2026-08-23T17:02:34.528433"
-  },
-  "action_detect|2026-08-23t17_02_23_404682": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Купити квіти до 25 серпня.\"}",
-    "ts": "2026-08-23T17:02:23.404682"
   }
 }
