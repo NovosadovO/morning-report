@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-24t01_25_45_097214": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-24T01:25:45.097214"
+  },
   "openloop_promises|2026-08-24t01_10_01_380751": {
     "topic": "openloop_promises",
     "gist": "```json [   {     \"what\": \"прикріпити скріншоти повідомлень від туроператора\",     \"to\": \"Booking.com Customer Service\",     \"date\": null   },   {     \"what\": \"",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Навчання інвестиціям",
     "ts": "2026-08-23T22:02:46.000069"
-  },
-  "action_detect|2026-08-23t22_02_45_929285": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Записати ідеї для на",
-    "ts": "2026-08-23T22:02:45.929285"
   }
 }
