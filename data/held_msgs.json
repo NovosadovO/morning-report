@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-23T01:01:31.688095",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>BRZDA</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77847"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77847"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77847"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77847"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77847"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77847"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-23T01:01:33.149213",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
@@ -584,6 +545,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_77662"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-23T02:01:24.003341",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Paxos and Antipaxos Boat Tour from Corfu — бронювання скасов</b>\n👤 noreply@booking.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77660"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77660"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77660"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77660"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77660"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77660"
             }
           ]
         ]
