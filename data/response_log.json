@@ -5357,6 +5357,16 @@
         "kind": "reminder",
         "date": "2026-08-23"
       }
+    },
+    {
+      "ts": "2026-08-23T10:31:22.435078+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Сплатити невдалий платіж Railway Corporation",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-23"
+      }
     }
   ]
 }
