@@ -1,4 +1,24 @@
 {
+  "personal_ai|2026-08-24t01_00_43_829019": {
+    "topic": "personal_ai",
+    "gist": "Завтра о 06:00 рання зміна починається, а ти спав лише 5.8 годин. З таким графіком, відновлення сил є ключовим. Врахуй, що біг перенесено на вівторок, тому не п",
+    "ts": "2026-08-24T01:00:43.829019"
+  },
+  "action_detect|2026-08-24t00_50_32_138577": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Навчання інвестиціям",
+    "ts": "2026-08-24T00:50:32.138577"
+  },
+  "msg_vip_email|2026-08-24t00_50_25_171724": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 📧  Поки ти відновлюєш сили, спостерігається значне зростання на крипторинку, особливо помітне за останній тиждень: XRP піднявся на 52.2%, а ETH – ",
+    "ts": "2026-08-24T00:50:25.171724"
+  },
+  "bills|2026-08-24t00_50_08_496971": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"77897\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"invoice_no\": \"\",     \"due\": \"\",     \"already_paid\"",
+    "ts": "2026-08-24T00:50:08.496971"
+  },
   "people|2026-08-24t00_49_23_432410": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"info@ionian-cruises.com\",     \"name\": \"Ionian Cruises\",     \"relation\": \"сервіс\",     \"topics\": [\"скасування круїзу\"],     \"my_promi",
@@ -278,25 +298,5 @@
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 📧  Твоя вага зросла на 1.2 кг за тиждень до 84.4 кг, що віддаляє тебе від цілі у 78 кг. Відсутність бігу, перенесеного на вівторок, та відсутність",
     "ts": "2026-08-23T21:34:49.058342"
-  },
-  "email_ai_item|2026-08-23t21_32_28_399669": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист є щотижневою безкоштовною розсилкою новин від Linas's Newsletter, що фокусується на фінансових технологіях. У ньому представле",
-    "ts": "2026-08-23T21:32:28.399669"
-  },
-  "action_detect|2026-08-23t21_30_50_599738": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-23T21:30:50.599738"
-  },
-  "action_detect|2026-08-23t21_30_11_878802": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Надіслати дані з QWatch Pro\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надішли дані з QWatch Pr",
-    "ts": "2026-08-23T21:30:11.878802"
-  },
-  "action_detect|2026-08-23t21_24_58_125574": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-23T21:24:58.125574"
   }
 }
