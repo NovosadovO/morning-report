@@ -1,4 +1,44 @@
 {
+  "msg_vip_email|2026-08-23t18_59_38_666351": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Вітаю, Олеже! 📈  Вечір, і ти на зміні, тож давай швидко про головне. Крипторинок цього тижня демонструє значне зростання: XRP додав майже 50% за тиждень, а ETH ",
+    "ts": "2026-08-23T18:59:38.666351"
+  },
+  "bills|2026-08-23t18_49_32_372626": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"77897\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"invoice_no\": \"\",     \"due\": \"\",     \"already_paid\"",
+    "ts": "2026-08-23T18:49:32.372626"
+  },
+  "action_detect|2026-08-23t18_46_23_193090": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Питний режим\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зосередься на питному режимі: постав ці",
+    "ts": "2026-08-23T18:46:23.193090"
+  },
+  "weekly_report|2026-08-23t18_46_14_890985": {
+    "topic": "weekly_report",
+    "gist": "Олеже, дивись на свій тиждень: холодному душу ти присвятив 5 днів з 7, це круто, але біг та вода \"просіли\" до 14%. З таким темпом, втрачаєш не лише форму, але й",
+    "ts": "2026-08-23T18:46:14.890985"
+  },
+  "action_detect|2026-08-23t18_46_12_432046": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Олег планує навчання",
+    "ts": "2026-08-23T18:46:12.432046"
+  },
+  "action_detect|2026-08-23t18_46_12_189652": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-23T18:46:12.189652"
+  },
+  "action_detect|2026-08-23t18_46_12_180226": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-23T18:46:12.180226"
+  },
+  "action_detect|2026-08-23t18_46_12_086263": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-23T18:46:12.086263"
+  },
   "action_detect|2026-08-23t18_46_01_695529": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
@@ -258,45 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії, які відповідають налаштуванням користувача. Зокрема, згадано вакансії Purchasing Sp",
     "ts": "2026-08-23T16:15:44.516105"
-  },
-  "openloop_promises|2026-08-23t16_06_17_206242": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {     \"what\": \"додати скріншоти повідомлень від туроператора\",     \"to\": \"Booking.com Customer Service\",     \"date\": null   },   {     \"what\": \"скас",
-    "ts": "2026-08-23T16:06:17.206242"
-  },
-  "action_detect|2026-08-23t16_06_06_064157": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-23T16:06:06.064157"
-  },
-  "action_detect|2026-08-23t16_04_54_828128": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Олег переніс біг на вівторок, 25.08.2026",
-    "ts": "2026-08-23T16:04:54.828128"
-  },
-  "msg_health_pulse|2026-08-23t16_04_47_235909": {
-    "topic": "MSG_HEALTH_PULSE",
-    "gist": "Привіт Олеже! ❤️  Бачу, ти зараз на роботі, тож давай швидко перевіримо твій \"пульс\" здоров'я. Сьогоднішня вага 84.4 кг, що на 1.2 кг більше за тиждень, і це тр",
-    "ts": "2026-08-23T16:04:47.235909"
-  },
-  "action_detect|2026-08-23t16_04_32_830174": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"У вівторок, 25.08, о",
-    "ts": "2026-08-23T16:04:32.830174"
-  },
-  "msg_deep_analysis|2026-08-23t16_04_24_880500": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋  Ти зараз на зміні, але навіть у такий час важливо тримати руку на пульсі. Твоя вага зросла до 84.4 кг, що на 1.2 кг більше за тиждень, і це сер",
-    "ts": "2026-08-23T16:04:24.880500"
-  },
-  "action_detect|2026-08-23t16_04_10_669829": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Перенесений біг на вівторок, 25 серпня.\"",
-    "ts": "2026-08-23T16:04:10.669829"
-  },
-  "msg_vip_email|2026-08-23t16_04_01_473904": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 🏹  На фоні значного зростання крипторинку (ETH +30.9% за тиждень, XRP +52.2%), твій шлях до фінансової незалежності набирає обертів, але аналіз да",
-    "ts": "2026-08-23T16:04:01.473904"
   }
 }
