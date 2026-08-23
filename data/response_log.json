@@ -5454,6 +5454,12 @@
       "category": "confirm",
       "question": "email_delete: $10.00 payment to Runable was unsuccessful",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-23T11:26:12.500660+00:00",
+      "category": "event_done",
+      "question": "📅 і ранні зміни!!\nПланувалась до 12:00 — виконано?",
+      "answer": "no"
     }
   ]
 }
