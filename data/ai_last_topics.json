@@ -1,4 +1,9 @@
 {
+  "people|2026-08-24t00_49_23_432410": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"info@ionian-cruises.com\",     \"name\": \"Ionian Cruises\",     \"relation\": \"сервіс\",     \"topics\": [\"скасування круїзу\"],     \"my_promi",
+    "ts": "2026-08-24T00:49:23.432410"
+  },
   "subs|2026-08-24t00_19_50_213298": {
     "topic": "subs",
     "gist": "```json [   {     \"uid\": \"77897\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"cycle\": \"unknown\",     \"charge_date\": null,     \"n",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
     "ts": "2026-08-23T21:24:58.125574"
-  },
-  "subs|2026-08-23t21_19_19_466940": {
-    "topic": "subs",
-    "gist": "```json [   {     \"uid\": \"77897\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"cycle\": \"unknown\",     \"charge_date\": null,     \"n",
-    "ts": "2026-08-23T21:19:19.466940"
   }
 }
