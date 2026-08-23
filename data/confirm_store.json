@@ -4171,7 +4171,29 @@
     "pid": "dl_due_done_cd1de798dd",
     "subject": "🔴 СЬОГОДНІ ОСТАННІЙ ДЕНЬ",
     "extra": {
-      "msg": "🔴 СЬОГОДНІ ОСТАННІЙ ДЕНЬ\n━━━━━━━━━━━━━━━━━━━━\n📄 Підписка Railway Corporation — оплата\n📆 до 2026-08-23\n🏢 Railway Corporation\n\n➡️ Оновити платіжну інформацію для продовження підписки Railway Corporation"
+      "msg": "🔴 СЬОГОДНІ ОСТАННІЙ ДЕНЬ\n━━━━━━━━━━━━━━━━━━━━\n📄 Підписка Railway Corporation — оплата\n📆 до 2026-08-23\n🏢 Railway Corporation\n\n➡️ Оновити платіжну інформацію для продовження підписки Railway Corporation",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 76176,
+        "kb": [
+          [
+            {
+              "text": "✅ Зроблено",
+              "callback_data": "dl_due_done_cd1de798dd"
+            }
+          ],
+          [
+            {
+              "text": "📅 В календар",
+              "callback_data": "dl_cal_cd1de798dd"
+            },
+            {
+              "text": "⏰ Нагадати завтра",
+              "callback_data": "dl_due_snooze_cd1de798dd"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-08-23T14:32:03.888722+00:00"
   }
