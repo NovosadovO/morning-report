@@ -471,7 +471,17 @@ def check_renewals() -> int:
                 f"💰 {_fmt_money(r.get('amount'), r.get('currency'))} — {when} ({nd})\n")
         if r.get("note"):
             text += f"\n{K.esc(r['note'])}\n"
-        text += "\nЯкщо не користуєшся — скасувати треба ДО списання."
+        # хвіст через spice: терміновість + ставка + €/рік + один крок.
+        # Раніше тут був один статичний рядок на всі випадки.
+        try:
+            import spice
+            _t = spice.tail("sub", left,
+                            {"amount": r.get("amount"), "cycle": r.get("cycle")},
+                            key=str(r.get("vendor") or key))
+        except Exception:
+            _t = "Якщо не користуєшся — скасувати треба ДО списання."
+        if _t:
+            text += "\n" + _t
         kb = [[{"text": "👍 Все ок, хай списують", "callback_data": f"sb_ok_{pid}"}],
               [{"text": "🚫 Хочу скасувати — нагадай",
                 "callback_data": f"sb_cancel_{pid}"}],

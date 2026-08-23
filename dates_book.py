@@ -328,20 +328,27 @@ def _head(item) -> str:
     when = item["when"].strftime("%d.%m")
     age = item.get("age")
     age_s = f", виповнюється <b>{age}</b>" if age else ""
+    # Хвіст картки — через spice: ставка + один конкретний крок, у ротації.
+    # Раніше тут був один статичний рядок на всі випадки — він нічого не
+    # додавав і повторювався щоразу.
+    try:
+        import spice
+        tail = spice.tail("date", left, key=str(rec.get("name") or "") + str(rec.get("kind")))
+    except Exception:
+        tail = ""
     if left == 0:
-        return (f"{icon} <b>СЬОГОДНІ — {label.upper()}</b>\n"
-                f"━━━━━━━━━━━━━━━━━━━━\n"
-                f"🎉 <b>{K.esc(rec.get('name'))}</b>{age_s}\n"
-                f"Не забудь привітати — я вже написав текст, лишилось надіслати.")
-    if left == 1:
-        return (f"{icon} <b>ЗАВТРА — {label}</b>\n"
-                f"━━━━━━━━━━━━━━━━━━━━\n"
-                f"🎉 <b>{K.esc(rec.get('name'))}</b> — {when}{age_s}\n"
-                f"Останній момент купити подарунок.")
-    return (f"{icon} <b>ЧЕРЕЗ {left} ДН. — {label}</b>\n"
-            f"━━━━━━━━━━━━━━━━━━━━\n"
-            f"🎉 <b>{K.esc(rec.get('name'))}</b> — {when}{age_s}\n"
-            f"Є час підготуватись без спіху.")
+        head = f"{icon} <b>СЬОГОДНІ — {label.upper()}</b>"
+        body = f"🎉 <b>{K.esc(rec.get('name'))}</b>{age_s}"
+    elif left == 1:
+        head = f"{icon} <b>ЗАВТРА — {label}</b>"
+        body = f"🎉 <b>{K.esc(rec.get('name'))}</b> — {when}{age_s}"
+    else:
+        head = f"{icon} <b>ЧЕРЕЗ {left} ДН. — {label}</b>"
+        body = f"🎉 <b>{K.esc(rec.get('name'))}</b> — {when}{age_s}"
+    out = head + "\n━━━━━━━━━━━━━━━━━━━━\n" + body
+    if tail:
+        out += "\n\n" + tail
+    return out
 
 
 def _kb(pid, left):

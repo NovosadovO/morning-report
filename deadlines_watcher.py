@@ -254,6 +254,15 @@ def _offer(it: dict, did: str) -> bool:
     if it.get("why"):
         text += f"\n💭 {K.esc(it['why'])}"
 
+    # хвіст: ставка + один крок (у ротації). Було: сухий перелік полів.
+    try:
+        import spice as _sp
+        _t = _sp.tail("deadline", left, key=str(title or "") + str(deadline or ""))
+        if _t:
+            text += "\n\n" + _t
+    except Exception:
+        pass
+
     kb = [
         [{"text": "📅 В календар на дедлайн", "callback_data": f"dl_cal_{pid}"}],
         [{"text": "⏰ Нагадати заздалегідь", "callback_data": f"dl_rem_{pid}"},

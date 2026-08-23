@@ -227,6 +227,16 @@ def _offer(b: dict, bid: str) -> bool:
     if b.get("note"):
         text += f"\n{K.esc(b['note'])}"
 
+    # хвіст: що на кону + один крок. Раніше картка була сухим переліком полів.
+    try:
+        import spice as _sp
+        _t = _sp.tail("bill", days_left,
+                      key=str(vendor or "") + str(b.get("invoice_no") or ""))
+        if _t:
+            text += "\n\n" + _t
+    except Exception:
+        pass
+
     kb = []
     if due:
         kb.append([{"text": "📅 В календар на дедлайн", "callback_data": f"bill_cal_{pid}"}])
