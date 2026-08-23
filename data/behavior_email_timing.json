@@ -1,9 +1,4 @@
 {
-  "77463": {
-    "sender": "discover@airbnb.com",
-    "sender_raw": "Airbnb <discover@airbnb.com>",
-    "seen_ts": "2026-08-14T07:47:08.142394+00:00"
-  },
   "77465": {
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@buzzsneakers-promo.com",
     "sender_raw": "\"Buzz Sneaker Station\" <newsletter@buzzsneakers-promo.com>",
     "seen_ts": "2026-08-23T11:33:19.375645+00:00"
+  },
+  "77889": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-08-23T12:14:04.617693+00:00"
   }
 }
