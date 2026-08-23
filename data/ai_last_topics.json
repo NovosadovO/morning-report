@@ -1,4 +1,19 @@
 {
+  "email_ai_item|2026-08-23t16_48_25_151472": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Лист від Runable повідомляє, що платіж у розмірі $10.00 з картки Visa, що закінчується на 2620, був невдалим. Для завершення покупки",
+    "ts": "2026-08-23T16:48:25.151472"
+  },
+  "mailcal_extract|2026-08-23t16_44_31_884227": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-23T16:44:31.884227"
+  },
+  "action_detect|2026-08-23t16_40_44_808480": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-23T16:40:44.808480"
+  },
   "action_detect|2026-08-23t16_40_33_805421": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
@@ -283,20 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від Runable повідомляє, що платіж у розмірі $10.00 за допомогою картки Visa, що закінчується на 2620, був невдалим. Для зав",
     "ts": "2026-08-23T14:00:55.458046"
-  },
-  "personal_ai|2026-08-23t14_00_37_708788": {
-    "topic": "personal_ai",
-    "gist": "21273 кроки на 14:00 значно перевищують щоденну ціль у 10000, вказуючи на високу активність вже на ранній зміні. Низький показник сну (5.8 години) може негативн",
-    "ts": "2026-08-23T14:00:37.708788"
-  },
-  "deadlines|2026-08-23t13_58_09_636958": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"77868\",     \"kind\": \"contract\",     \"title\": \"Підписка Railway Corporation — оплата\",     \"org\": \"Railway Corporation\",     \"deadline\"",
-    "ts": "2026-08-23T13:58:09.636958"
-  },
-  "action_detect|2026-08-23t13_33_39_055979": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити оплату Runable\", \"action_date\": \"2026-08-23\", \"action_time\": null, \"action_summary\": \"Перевірити нагадув",
-    "ts": "2026-08-23T13:33:39.055979"
   }
 }
