@@ -5151,6 +5151,12 @@
       "category": "confirm",
       "question": "email_delete: 2 nové pracovné ponuky",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-23T05:28:18.873993+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_19f9be5fc4"
     }
   ]
 }
