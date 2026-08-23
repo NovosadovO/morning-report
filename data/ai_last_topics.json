@@ -1,4 +1,9 @@
 {
+  "calendar|2026-08-23t07_48_41_028374": {
+    "topic": "calendar",
+    "gist": "Олеже, цікаво бачити в календарі \"і ранні зміни!!\" на сьогодні, при тому, що за твоїм графіком сьогодні — вихідний. Ти ж сам вчора писав: \"Як вихідний як я на р",
+    "ts": "2026-08-23T07:48:41.028374"
+  },
   "proactive_actions|2026-08-23t07_31_25_075336": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн-реєстрація на рейс\",     \"date\": \"2026-08-23\",     \"time\": \"18:00\",     \"message\": \"Олеже, у тебе є н",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Скасувати підписку",
     "ts": "2026-08-23T05:02:26.754415"
-  },
-  "action_detect|2026-08-23t05_02_26_651001": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-23T05:02:26.651001"
   }
 }
