@@ -347,7 +347,7 @@ def _sanitize_html(text: str) -> str:
     return protected
 
 
-def _send_telegram_chunk(text: str) -> bool:
+def _send_telegram_chunk(text: str, keyboard=None) -> bool:
     """Надсилає одне повідомлення з HTML parse_mode."""
     # ЧЕРГА ПЕРЕД GUARD-ом: під час /тиша повідомлення не губиться, а чекає
     # до 04:00 (раніше quiet-guard просто викидав його).
@@ -372,11 +372,14 @@ def _send_telegram_chunk(text: str) -> bool:
     text = _sanitize_html(text)
     print(f"[tg_chunk] len={len(text)} preview={repr(text[:120])}", flush=True)
 
-    payload = json.dumps({
+    _body = {
         "chat_id": TELEGRAM_CHAT,
         "text": text,
         "parse_mode": "HTML"
-    }).encode()
+    }
+    if keyboard:
+        _body["reply_markup"] = {"inline_keyboard": keyboard}
+    payload = json.dumps(_body).encode()
     req = urllib.request.Request(url, data=payload,
           headers={"Content-Type": "application/json"})
     try:
@@ -436,8 +439,17 @@ def _maybe_suggest_action(text: str):
 def send_telegram(text: str) -> bool:
     """Надсилає текст, автоматично розбиваючи на частини якщо > 4090 символів."""
     MAX = 4090
+    # Кнопки відповіді під КОЖНИМ повідомленням (react.py): доречні темі,
+    # натискання пишеться назавжди, закрите більше не нагадується.
+    _rkb = None
+    try:
+        import react as _rx_s
+        _rkb = _rx_s.keyboard(_rx_s.detect("report", text),
+                              title=_rx_s._first_line(text))
+    except Exception as _e_rxs:
+        print(f"[react] keyboard skip: {_e_rxs}", flush=True)
     if len(text) <= MAX:
-        result = _send_telegram_chunk(text)
+        result = _send_telegram_chunk(text, keyboard=_rkb)
         print(f"[send_telegram] single chunk returned {result}", flush=True)
         if result:
             _maybe_suggest_action(text)
