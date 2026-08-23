@@ -3721,7 +3721,24 @@
     "action": "calrem_skip",
     "pid": "vip_email_1787480908",
     "subject": "Оплатити Runable",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 76112,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_vip_email_1787480908"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_vip_email_1787480908"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-23T12:52:44.182277+00:00"
   }
 }
