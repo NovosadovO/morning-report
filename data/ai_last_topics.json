@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-23t19_33_52_560500": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Oleh Bezuhlyi через LinkedIn містить щоденний дайджест новин про криптовалюти за 23 серпня. У ньому йдеться про зростання ",
+    "ts": "2026-08-23T19:33:52.560500"
+  },
   "proactive_ai|2026-08-23t19_23_00_715113": {
     "topic": "proactive_ai",
     "gist": "Привіт, Олеже! Як минає зміна? Сподіваюся, вдалося трохи перепочити.",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято Armolopid",
     "ts": "2026-08-23T17:02:23.396687"
-  },
-  "action_detect|2026-08-23t17_02_12_306870": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Аналіз RWA сектора\", \"action_date\": \"2026-08-23\", \"action_time\": null, \"action_summary\": \"Присвятити перші 30-45 хв",
-    "ts": "2026-08-23T17:02:12.306870"
   }
 }
