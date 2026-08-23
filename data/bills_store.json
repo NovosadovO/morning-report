@@ -11,5 +11,18 @@
     "note": "Незапланована резервація авіаквитків на Корфу, потрібно оплатити, щоб зафіксувати ціну та доступність.",
     "uid": "77142",
     "ts": "2026-08-08T02:58:13.686260+00:00"
+  },
+  "803e807627": {
+    "bid": "runable|10_00|",
+    "vendor": "Runable",
+    "amount": "10.00",
+    "currency": "USD",
+    "due": "",
+    "invoice_no": "",
+    "sender": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
+    "subject": "$10.00 payment to Runable was unsuccessful",
+    "note": "Невдала спроба оплати $10.00 за Runable. Потрібно оновити платіжну інформацію.",
+    "uid": "77876",
+    "ts": "2026-08-23T10:30:54.365004+00:00"
   }
 }
