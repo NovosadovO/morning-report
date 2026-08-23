@@ -1,9 +1,4 @@
 {
-  "77475": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "Temu <temu@eu.temuemail.com>",
-    "seen_ts": "2026-08-14T09:50:57.562326+00:00"
-  },
   "77477": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
     "seen_ts": "2026-08-23T18:53:15.529747+00:00"
+  },
+  "77903": {
+    "sender": "newsletters@e.economist.com",
+    "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
+    "seen_ts": "2026-08-23T19:07:45.109123+00:00"
   }
 }
