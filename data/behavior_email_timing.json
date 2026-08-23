@@ -1,9 +1,4 @@
 {
-  "77467": {
-    "sender": "newsletter@ticketportal.sk",
-    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
-    "seen_ts": "2026-08-14T08:19:53.599528+00:00"
-  },
   "77468": {
     "sender": "info@nws.tesco.sk",
     "sender_raw": "\"Tesco\" <info@nws.tesco.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "no-reply@mail.thedefiant.io",
     "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
     "seen_ts": "2026-08-23T13:03:23.869715+00:00"
+  },
+  "77895": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-08-23T14:15:47.971922+00:00"
   }
 }
