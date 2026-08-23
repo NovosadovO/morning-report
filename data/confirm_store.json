@@ -3517,7 +3517,24 @@
     "action": "calrem_skip",
     "pid": "gen_1787477440818",
     "subject": "Приготувати овочевий салат на обід",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 76062,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1787477440818"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1787477440818"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-23T11:39:48.006478+00:00"
   }
 }
