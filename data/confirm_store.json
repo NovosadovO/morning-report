@@ -2809,7 +2809,24 @@
     "action": "calrem_skip",
     "pid": "event_soon_1787472403",
     "subject": "Переглянути пошту",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 75989,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_event_soon_1787472403"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_event_soon_1787472403"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-23T10:08:10.352493+00:00"
   }
 }
