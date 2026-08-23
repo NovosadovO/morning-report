@@ -4271,7 +4271,23 @@
     "pid": "cal_skip_deep_analysis_1787492058",
     "subject": "Не треба",
     "extra": {
-      "msg": "📅 АІ помітив дію:\n«Біг», 2026-08-25\nБіг перенесено на вівторок, 25.08.2026.\n\nДодати в Google Calendar?"
+      "msg": "📅 АІ помітив дію:\n«Біг», 2026-08-25\nБіг перенесено на вівторок, 25.08.2026.\n\nДодати в Google Calendar?",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 76221,
+        "kb": [
+          [
+            {
+              "text": "✅ Додати",
+              "callback_data": "cal_add_deep_analysis_1787492058"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "cal_skip_deep_analysis_1787492058"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-08-23T15:42:55.135300+00:00"
   }
