@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-08-24t01_30_09_601677": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути лист від The Daily Degen\",     \"date\": \"2026-08-24\",     \"time\": \"\",     \"message\": \"Олеже, у те",
+    "ts": "2026-08-24T01:30:09.601677"
+  },
   "action_detect|2026-08-24t01_25_45_097214": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "```json [   {     \"what\": \"надіслати скріншоти повідомлень від туроператора\",     \"to\": \"Booking.com Customer Service (Stephanie)\",     \"date\": null   },   {   ",
     "ts": "2026-08-23T22:08:35.319239"
-  },
-  "action_detect|2026-08-23t22_02_46_000069": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Навчання інвестиціям",
-    "ts": "2026-08-23T22:02:46.000069"
   }
 }
