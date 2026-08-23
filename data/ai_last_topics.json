@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-08-23t21_24_58_125574": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-23T21:24:58.125574"
+  },
+  "subs|2026-08-23t21_19_19_466940": {
+    "topic": "subs",
+    "gist": "```json [   {     \"uid\": \"77897\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"cycle\": \"unknown\",     \"charge_date\": null,     \"n",
+    "ts": "2026-08-23T21:19:19.466940"
+  },
   "mailcal_extract|2026-08-23t21_16_28_908574": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Скасувати підписку",
     "ts": "2026-08-23T19:01:57.776006"
-  },
-  "action_detect|2026-08-23t19_01_46_858403": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Купити квіти до річниці 25.08.\"",
-    "ts": "2026-08-23T19:01:46.858403"
-  },
-  "action_detect|2026-08-23t19_01_46_801357": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Скасувати підписку",
-    "ts": "2026-08-23T19:01:46.801357"
   }
 }
