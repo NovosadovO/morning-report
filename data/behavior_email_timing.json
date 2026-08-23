@@ -1,9 +1,4 @@
 {
-  "77462": {
-    "sender": "notification@service.tiktok.com",
-    "sender_raw": "TikTok <notification@service.tiktok.com>",
-    "seen_ts": "2026-08-14T06:44:09.649508+00:00"
-  },
   "77463": {
     "sender": "discover@airbnb.com",
     "sender_raw": "Airbnb <discover@airbnb.com>",
@@ -1498,5 +1493,10 @@
     "sender": "temu@eu-shop.temuemail.com",
     "sender_raw": "\"Temu\" <temu@eu-shop.temuemail.com>",
     "seen_ts": "2026-08-23T10:52:34.213423+00:00"
+  },
+  "77887": {
+    "sender": "newsletter@buzzsneakers-promo.com",
+    "sender_raw": "\"Buzz Sneaker Station\" <newsletter@buzzsneakers-promo.com>",
+    "seen_ts": "2026-08-23T11:33:19.375645+00:00"
   }
 }
