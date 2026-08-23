@@ -22,5 +22,29 @@
     "uid": "77876",
     "last_seen": "2026-08-23",
     "next_due": "2026-09-23"
+  },
+  "railwaycorporation": {
+    "vendor": "Railway Corporation",
+    "cycle": "unknown",
+    "currency": "USD",
+    "charges": [
+      {
+        "date": "2026-08-23",
+        "amount": "12.32",
+        "uid": "77868"
+      }
+    ],
+    "active": true,
+    "cancelled": false,
+    "confirmed": true,
+    "skipped": false,
+    "first_seen": "2026-08-23",
+    "note": "Невдала оплата підписки Railway Corporation. Потрібно оновити платіжну інформацію.",
+    "amount": "12.32",
+    "sender": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
+    "subject": "$12.32 payment to Railway Corporation was unsuccessful",
+    "uid": "77868",
+    "last_seen": "2026-08-23",
+    "next_due": "2026-09-23"
   }
 }
