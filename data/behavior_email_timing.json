@@ -1,9 +1,4 @@
 {
-  "77471": {
-    "sender": "cloudplatform-noreply@google.com",
-    "sender_raw": "Google Cloud Billing Alerts <CloudPlatform-noreply@google.com>",
-    "seen_ts": "2026-08-14T09:25:19.960722+00:00"
-  },
   "77472": {
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
@@ -1498,5 +1493,10 @@
     "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
     "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
     "seen_ts": "2026-08-23T14:48:28.375542+00:00"
+  },
+  "77899": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-23T17:33:56.898561+00:00"
   }
 }
