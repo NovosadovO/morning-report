@@ -4460,7 +4460,24 @@
     "action": "calrem_skip",
     "pid": "workout_plan_1787497236",
     "subject": "Активне відновлення",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 76271,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_workout_plan_1787497236"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_workout_plan_1787497236"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-23T17:01:24.504994+00:00"
   }
 }
