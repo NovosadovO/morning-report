@@ -24,5 +24,18 @@
     "note": "Невдала спроба оплати $10.00 за Runable. Потрібно оновити платіжну інформацію.",
     "uid": "77876",
     "ts": "2026-08-23T10:30:54.365004+00:00"
+  },
+  "c3a42ca61c": {
+    "bid": "railway_corporation|12_32|",
+    "vendor": "Railway Corporation",
+    "amount": "12.32",
+    "currency": "USD",
+    "due": "",
+    "invoice_no": "",
+    "sender": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
+    "subject": "$12.32 payment to Railway Corporation was unsuccessful",
+    "note": "Невдала спроба оплати $12.32 за підписку Railway Corporation. Потрібно оновити платіжну інформацію.",
+    "uid": "77868",
+    "ts": "2026-08-23T10:30:57.493707+00:00"
   }
 }
