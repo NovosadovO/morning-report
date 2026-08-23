@@ -1,9 +1,4 @@
 {
-  "77461": {
-    "sender": "news@flights.airbaltic.com",
-    "sender_raw": "airBaltic <news@flights.airbaltic.com>",
-    "seen_ts": "2026-08-14T06:25:44.355373+00:00"
-  },
   "77462": {
     "sender": "notification@service.tiktok.com",
     "sender_raw": "TikTok <notification@service.tiktok.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@investingmail.com",
     "sender_raw": "Investing.com <newsletter@investingmail.com>",
     "seen_ts": "2026-08-23T10:50:27.662384+00:00"
+  },
+  "77886": {
+    "sender": "temu@eu-shop.temuemail.com",
+    "sender_raw": "\"Temu\" <temu@eu-shop.temuemail.com>",
+    "seen_ts": "2026-08-23T10:52:34.213423+00:00"
   }
 }
