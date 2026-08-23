@@ -5406,6 +5406,12 @@
       "category": "event_done",
       "question": "📅 💳 Оплата Runable $10.00\nПланувалась до 11:00 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-23T11:25:16.643095+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_4de433b2a7"
     }
   ]
 }
