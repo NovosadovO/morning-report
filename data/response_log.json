@@ -5460,6 +5460,12 @@
       "category": "event_done",
       "question": "📅 і ранні зміни!!\nПланувалась до 12:00 — виконано?",
       "answer": "no"
+    },
+    {
+      "ts": "2026-08-23T11:26:13.129603+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_01f664cb2f"
     }
   ]
 }
