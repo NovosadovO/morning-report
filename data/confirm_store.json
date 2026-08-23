@@ -3339,7 +3339,24 @@
     "action": "calrem_skip",
     "pid": "gen_1787475824893",
     "subject": "Записати ідеї зі звіту RWA",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 76045,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1787475824893"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1787475824893"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-23T11:26:15.919822+00:00"
   }
 }
