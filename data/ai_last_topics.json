@@ -1,4 +1,14 @@
 {
+  "bills|2026-08-23t08_16_14_073295": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-08-23T08:16:14.073295"
+  },
+  "action_detect|2026-08-23t08_11_23_310113": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-23T08:11:23.310113"
+  },
   "msg_micro_checkin|2026-08-23t08_11_14_356434": {
     "topic": "MSG_MICRO_CHECKIN",
     "gist": "Привіт Олеже! 💭 Ранок неділі – це ж святе, правда? Особливо, коли є шанс видихнути і просто побути вдома, у вільний час, без метушні Minebea Mitsumi. Я знаю, що",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
     "ts": "2026-08-23T06:03:19.699258"
-  },
-  "action_detect|2026-08-23t06_03_19_629865": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Тест\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Пройти тест 25 серпня.\"}",
-    "ts": "2026-08-23T06:03:19.629865"
-  },
-  "briefing|2026-08-23t06_03_15_586830": {
-    "topic": "briefing",
-    "gist": "Ранковий звіт за 23 серпня свідчить про значні рухи на фінансових ринках, які безпосередньо стосуються твоїх інвестиційних цілей, Олеже. Особливу увагу приверта",
-    "ts": "2026-08-23T06:03:15.586830"
   }
 }
