@@ -5436,6 +5436,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_384ee4267c"
+    },
+    {
+      "ts": "2026-08-23T11:25:57.153406+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Оплата Runable",
+      "answer": "yes"
     }
   ]
 }
