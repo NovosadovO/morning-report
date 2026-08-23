@@ -2903,7 +2903,44 @@
     "action": "email_delete",
     "pid": "77875",
     "subject": "Purchasing Specialist в Carmeuse",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 75999,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77875"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77875"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77875"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77875"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77875"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77875"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-23T10:19:36.208303+00:00"
   }
 }
