@@ -1,4 +1,9 @@
 {
+  "msg_vip_email|2026-08-23t16_00_49_999343": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Бачу, ти зараз на зміні, тож давай поглянемо на декілька моментів, щоб ти мав змогу стратегічно оцінити свій тиждень. Цей тиждень приніс цікаві",
+    "ts": "2026-08-23T16:00:49.999343"
+  },
   "action_detect|2026-08-23t15_38_37_700833": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити прийом Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Відразу після повернення",
     "ts": "2026-08-23T13:02:50.562179"
-  },
-  "action_detect|2026-08-23t13_02_50_495168": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи був прийнятий Armo",
-    "ts": "2026-08-23T13:02:50.495168"
   }
 }
