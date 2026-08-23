@@ -1057,7 +1057,11 @@ def get_astro_report():
     lines.append(f"\n☀️ <b>СОНЦЕ В {sun_sign_ua.upper()}</b>")
     lines.append(f"<i>{SUN_TIPS.get(sun_sign_ua, '')}</i>")
     lines.append(f"\n━━━━━━━━━━━━━━━━━━━━")
-    lines.append("🌟 <i>Гарного дня!</i>")
+    try:
+        import spice as _sp_astro
+        lines.append("🌟 <i>" + _sp_astro.day_close() + "</i>")
+    except Exception:
+        lines.append("🌟 <i>Один крок сьогодні важить більше, ніж план на місяць.</i>")
 
     return "\n".join(lines)
 

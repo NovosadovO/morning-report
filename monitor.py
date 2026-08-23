@@ -1540,6 +1540,28 @@ def _gem_handle_billing_depleted():
         except Exception:
             pass
 
+def _spice_meal(kind):
+    """Живий рядок для нагадування про їжу на зміні.
+
+    Раніше тут стояв фіксований текст («Не забувай про воду 💧»), який
+    приходив щодня однаковим. Тепер — ротація через spice.py. Якщо модуль
+    з якоїсь причини недоступний, повертаємо простий робочий текст,
+    щоб нагадування не залишилось порожнім.
+    """
+    try:
+        import spice as _sp_meal
+        out = _sp_meal.meal(kind)
+        if out:
+            return out
+    except Exception as e:
+        print(f"[spice] meal skipped ({kind}): {e}", flush=True)
+    return {
+        "breakfast": "Поїж перед зміною — інакше просядеш до обіду.",
+        "lunch": "Середина зміни. Поїж і випий води.",
+        "dinner": "Зміна позаду — поїж нормально, без добавки.",
+    }.get(kind, "")
+
+
 def _gem_swap_model(url, model):
     """Підставляє іншу модель у Gemini-URL (.../models/MODEL:generateContent?...)."""
     import re as _re
@@ -7025,18 +7047,13 @@ def check_nutrition_reminder():
             send_telegram(
                 "🍳 <b>Сніданок!</b>\n\n"
                 "Перед ранньою зміною важливо поїсти — дасть енергію на всі 12г.\n"
-                "• Вівсянка / яйця / бутерброд\n"
-                "• Вода або кава\n\n"
-                "<i>Не виходь голодним!</i>"
+                + _spice_meal("breakfast")
             )
             mark("breakfast")
         elif h == 12 and 0 <= m < 3 and not already("lunch"):
             send_telegram(
                 "🥗 <b>Обід на зміні!</b>\n\n"
-                "Час поїсти — середина зміни.\n"
-                "Намагайся уникати фастфуду:\n"
-                "• Щось з собою > з кафетерію\n"
-                "• Не забувай про воду 💧"
+                + _spice_meal("lunch")
             )
             mark("lunch")
         elif h == 19 and 0 <= m < 3 and not already("dinner"):
@@ -14560,18 +14577,13 @@ def check_nutrition_reminder():
             send_telegram(
                 "🍳 <b>Сніданок!</b>\n\n"
                 "Перед ранньою зміною важливо поїсти — дасть енергію на всі 12г.\n"
-                "• Вівсянка / яйця / бутерброд\n"
-                "• Вода або кава\n\n"
-                "<i>Не виходь голодним!</i>"
+                + _spice_meal("breakfast")
             )
             mark("breakfast")
         elif h == 12 and 0 <= m < 3 and not already("lunch"):
             send_telegram(
                 "🥗 <b>Обід на зміні!</b>\n\n"
-                "Час поїсти — середина зміни.\n"
-                "Намагайся уникати фастфуду:\n"
-                "• Щось з собою > з кафетерію\n"
-                "• Не забувай про воду 💧"
+                + _spice_meal("lunch")
             )
             mark("lunch")
         elif h == 19 and 0 <= m < 3 and not already("dinner"):
