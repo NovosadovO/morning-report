@@ -3265,6 +3265,19 @@ def handle_command(chat_id, text):
         import threading as _th_mc
         _th_mc.Thread(target=_run_mc, daemon=True, name="mailcal-cmd").start()
 
+    elif text.lower().strip() in ["/наглядач", "/watchdog", "/датчики", "/сліпі"]:
+        def _run_wd():
+            try:
+                import sys as _swd, os as _owd
+                _swd.path.insert(0, _owd.path.dirname(__file__))
+                import watchdog as _wd_cmd
+                send(chat_id, _wd_cmd.report())
+                _wd_cmd.run(force=True)
+            except Exception as _e_wd:
+                send(chat_id, f"⚠️ Помилка наглядача: {str(_e_wd)[:300]}")
+        import threading as _th_wd
+        _th_wd.Thread(target=_run_wd, daemon=True, name="watchdog-cmd").start()
+
     elif text.lower().strip() in ["/прибирання", "/tidy", "/почисти", "/чистка"]:
         try:
             import sys as _std2, os as _otd2

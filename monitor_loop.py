@@ -1186,6 +1186,15 @@ def run_assistant_watcher():
                 _td_w.run()
             except Exception as _e_tdw:
                 print(f"[tidy] watcher error: {_e_tdw}", flush=True)
+            # Наглядач над наглядачами: раз на годину перевіряє КОЖЕН датчик
+            # живим запитом і каже Олегу, коли бот осліп. Плюс щоденна
+            # гарантія «нічого не пропущено» ввечері.
+            try:
+                import watchdog as _wd_w
+                _wd_w.run()
+                _wd_w.digest()
+            except Exception as _e_wdw:
+                print(f"[watchdog] watcher error: {_e_wdw}", flush=True)
             # Розумна тиша: Олег прокинувся → віддаємо відкладене одним
             # дайджестом. flush() сам перевіряє, що сон уже скінчився.
             try:
