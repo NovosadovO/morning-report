@@ -5245,6 +5245,12 @@
       "category": "confirm",
       "question": "calrem_skip: Перевірити листи",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-23T09:06:23.759750+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_3a81cfab47"
     }
   ]
 }
