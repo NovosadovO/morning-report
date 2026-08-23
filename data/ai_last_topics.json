@@ -1,4 +1,9 @@
 {
+  "personal_ai|2026-08-23t23_01_11_473063": {
+    "topic": "personal_ai",
+    "gist": "Сьогоднішні 21273 кроки, хоч і перевищують твою ціль, не замінюють пробіжки, яку ти переніс. Через короткий сон учора (5.8 годин) і високе навантаження кроками,",
+    "ts": "2026-08-23T23:01:11.473063"
+  },
   "action_detect|2026-08-23t22_55_15_137572": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Постав собі конкретн",
     "ts": "2026-08-23T20:02:16.077548"
-  },
-  "action_detect|2026-08-23t20_02_15_877742": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-23T20:02:15.877742"
   }
 }
