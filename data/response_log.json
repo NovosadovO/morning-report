@@ -5207,6 +5207,16 @@
         "kind": "reminder",
         "date": "2026-08-23"
       }
+    },
+    {
+      "ts": "2026-08-23T09:01:27.186354+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Онлайн-реєстрація на рейс Pelikan.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-23"
+      }
     }
   ]
 }
