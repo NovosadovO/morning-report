@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-23t20_28_47_728987": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від Airbnb нагадує про помешкання в Корфу, яке Олег переглядав і зберіг у списку обраного. Лист закликає забронювати його, ",
+    "ts": "2026-08-23T20:28:47.728987"
+  },
   "action_detect|2026-08-23t20_24_45_007840": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
@@ -293,10 +298,5 @@
     "topic": "subs",
     "gist": "```json [   {     \"uid\": \"77897\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"cycle\": \"unknown\",     \"charge_date\": null,     \"n",
     "ts": "2026-08-23T18:19:00.284808"
-  },
-  "defi_digest|2026-08-23t18_15_52_601989": {
-    "topic": "defi_digest",
-    "gist": "За останні 24 години помітні рухи в окремих проєктах: Valdora Finance та Moonwell Lending зросли на 6.7%, тоді як SparkLend впав на 5.4%. Хоча лідери TVL Ethere",
-    "ts": "2026-08-23T18:15:52.601989"
   }
 }
