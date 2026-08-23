@@ -3991,7 +3991,44 @@
     "action": "email_delete",
     "pid": "77878",
     "subject": "Your receipt from Runable #2386-8885",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 76134,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77878"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77878"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77878"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77878"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77878"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77878"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-23T14:30:06.867163+00:00"
   }
 }
