@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-08-23t11_30_42_595505": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Приготувати овочевий салат на обід\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Заплануй та приго",
+    "ts": "2026-08-23T11:30:42.595505"
+  },
+  "mailcal_extract|2026-08-23t11_26_03_484004": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-23T11:26:03.484004"
+  },
+  "action_detect|2026-08-23t11_24_21_598454": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-23T11:24:21.598454"
+  },
   "msg_micro_checkin|2026-08-23t11_24_12_154425": {
     "topic": "MSG_MICRO_CHECKIN",
     "gist": "Привіт Олеже! 🫂  Ранок неділі, бачу, ти вдома і маєш вільний час. Цікаво, як ця неділя починається щодо твоєї мети схуднення до 78 кг, адже остання вага 84.4 кг",
@@ -283,20 +298,5 @@
     "topic": "MSG_DAY_PLAN",
     "gist": "Привіт Олеже! 🧭 Сьогодні, коли ти вдома і маєш вільний час, чудова нагода закласти основу для продуктивного тижня, особливо враховуючи, що твоя вага за тиждень ",
     "ts": "2026-08-23T09:35:36.523165"
-  },
-  "action_detect|2026-08-23t09_35_19_686516": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Вирішити проблеми з платежами\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Вирішити проблеми з не",
-    "ts": "2026-08-23T09:35:19.686516"
-  },
-  "msg_deep_analysis|2026-08-23t09_35_11_817768": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Олеже, почну ранок з прямого питання: з огляду на зростання ваги до 84.4 кг (+1.2 кг за тиждень), чи скоригував ти свій план харчування та тренувань після того,",
-    "ts": "2026-08-23T09:35:11.817768"
-  },
-  "action_detect|2026-08-23t09_34_54_733250": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути листи та випити воду\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перед початком змін",
-    "ts": "2026-08-23T09:34:54.733250"
   }
 }
