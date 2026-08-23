@@ -2694,6 +2694,62 @@ def _try_become_leader():
     return _is_leader
 
 
+
+# ─── ГРАФІК ЗМІН: нагадування в останній день місяця ─────────────────────────
+# Олег (23.08): «кожного останнього дня місяця постав нагадування щоб я надав
+# боту новий графік змін». Бот читає зміни з Google Calendar, тому нагадування
+# просить внести графік саме туди.
+
+def _shift_schedule_reminder_loop():
+    """Раз на 30 хв перевіряє: чи сьогодні останній день місяця (після 10:00)."""
+    import time as _t
+    from datetime import datetime as _dt, timedelta as _td
+    while True:
+        try:
+            import nowctx as _nw
+            n = _nw.now()
+            is_last_day = (n + _td(days=1)).month != n.month
+            key = n.strftime("%Y-%m")
+            if is_last_day and n.hour >= 10:
+                import storage as _st
+                seen = _st.load("shift_schedule_asked.json", default={}) or {}
+                if not isinstance(seen, dict):
+                    seen = {}
+                if seen.get(key) != 1:
+                    nxt = (n + _td(days=1)).strftime("%m.%Y")
+                    txt = (
+                        "📅 <b>ГРАФІК ЗМІН НА " + nxt + "</b>\n\n"
+                        "Сьогодні останній день місяця — час внести новий графік.\n\n"
+                        "Я читаю зміни з твого Google Calendar. Щоб я точно знав, "
+                        "де ти, і не писав «ти вдома», коли ти на зміні:\n"
+                        "• додай зміни в календар подіями «Рання зміна» / "
+                        "«Нічна зміна» (можна повторюваними);\n"
+                        "• або скажи мені графік текстом — я підкажу, як внести.\n\n"
+                        "Поки графіка немає, я щодня питатиму або чекатиму команди "
+                        "/рання, /нічна, /вільний."
+                    )
+                    send(TELEGRAM_CHAT_ID, txt)
+                    # Подія в календарі — за правилом Олега: нагадування = подія
+                    try:
+                        import ai_kit as _K
+                        _start = n.replace(hour=18, minute=0, second=0, microsecond=0)
+                        _K.calendar_event(
+                            summary="📅 Внести графік змін на " + nxt,
+                            start_dt=_start,
+                            end_dt=_start + _td(minutes=30),
+                            description="Додати зміни на наступний місяць у календар, "
+                                        "щоб бот знав, де Олег (рання/нічна).")
+                    except Exception as _ec:
+                        print("[shift_sched] calendar: " + str(_ec), flush=True)
+                    seen = {key: 1}
+                    _st.save("shift_schedule_asked.json", seen)
+                    print("[shift_sched] нагадування про графік надіслано", flush=True)
+        except Exception as e:
+            print("[shift_sched] error: " + str(e), flush=True)
+        _t.sleep(1800)
+
+
+
 def _heartbeat_leader():
     """Оновлює lock кожні 45с. Якщо хтось перехопив — зупиняємо бота."""
     global _is_leader
@@ -3811,6 +3867,35 @@ def handle_command(chat_id, text):
         except Exception as _le:
             import traceback
             send(chat_id, f"⚠️ Помилка: {_le}\n{traceback.format_exc()[-300:]}")
+
+    elif text in ["/рання", "/ранкова", "/early"]:
+        try:
+            import nowctx as _nw
+            _nw.set_shift("early")
+            _nw.set_manual("robota")
+            send(chat_id, "☀️ Записав: сьогодні <b>РАННЯ ЗМІНА</b> (06:00–18:00).\n"
+                          "AI виходить з того, що ти на роботі, і не писатиме про вільний час.\n"
+                          "Завтра знову читаю Google Calendar.")
+        except Exception as _ew:
+            send(chat_id, f"⚠️ Помилка: {_ew}")
+
+    elif text in ["/нічна", "/ночна", "/night"]:
+        try:
+            import nowctx as _nw
+            _nw.set_shift("night")
+            send(chat_id, "🌙 Записав: сьогодні <b>НІЧНА ЗМІНА</b> (18:00–06:00).\n"
+                          "Завтра знову читаю Google Calendar.")
+        except Exception as _ew:
+            send(chat_id, f"⚠️ Помилка: {_ew}")
+
+    elif text in ["/вільний", "/вихідний", "/off"]:
+        try:
+            import nowctx as _nw
+            _nw.set_shift("free")
+            _nw.set_manual("doma")
+            send(chat_id, "🏠 Записав: сьогодні <b>вихідний</b>.")
+        except Exception as _ew:
+            send(chat_id, f"⚠️ Помилка: {_ew}")
 
     elif text in ["/де", "/where", "/локація"]:
         try:
@@ -6982,6 +7067,11 @@ def main():
     # threading не перезавантажується) — перевіряємо по імені перед стартом.
     def _thread_already_running(name: str) -> bool:
         return any(t.name == name and t.is_alive() for t in _threading.enumerate())
+
+    if not _thread_already_running("shift_schedule_reminder"):
+        _threading.Thread(target=_shift_schedule_reminder_loop, daemon=True,
+                          name="shift_schedule_reminder").start()
+        print("=== Starting shift schedule reminder (last day of month) ===", flush=True)
 
     if not _thread_already_running("heartbeat_leader"):
         _threading.Thread(target=_heartbeat_leader, daemon=True, name="heartbeat_leader").start()

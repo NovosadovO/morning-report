@@ -140,6 +140,47 @@ def _manual_fresh():
     return None
 
 
+SHIFT_FILE = "shift_today.json"       # ручна зміна на конкретну дату
+
+
+def set_shift(kind):
+    """Олег сказав, яка в нього СЬОГОДНІ зміна. Пріоритет вище за календар,
+    діє лише на сьогоднішню дату (завтра знову читаємо календар)."""
+    k = str(kind or "").strip().lower()
+    if k in ("рання", "ранкова", "early", "денна"):
+        k = "early"
+    elif k in ("нічна", "ночна", "night"):
+        k = "night"
+    elif k in ("вільний", "вихідний", "free", "off"):
+        k = "free"
+    else:
+        return False
+    try:
+        import storage
+        storage.save(SHIFT_FILE, {"kind": k, "date": now().strftime("%Y-%m-%d"),
+                                  "ts": now().isoformat(timespec="seconds")})
+        _log("зміна на сьогодні вручну: " + k)
+        return True
+    except Exception as e:
+        _log("set_shift error: " + str(e))
+        return False
+
+
+def manual_shift():
+    """Ручна зміна, якщо вона саме на сьогодні. Інакше None."""
+    try:
+        import storage
+        d = storage.load(SHIFT_FILE, default={}) or {}
+        if not isinstance(d, dict):
+            return None
+        if d.get("date") == now().strftime("%Y-%m-%d") and d.get("kind") in (
+                "early", "night", "free"):
+            return d["kind"]
+    except Exception as e:
+        _log("manual_shift error: " + str(e))
+    return None
+
+
 # ─── КАЛЕНДАР / ЗМІНА ────────────────────────────────────────────────────────
 
 def _calendar_shift():
@@ -176,6 +217,36 @@ def where():
         return {"state": "home", "sure": True,
                 "source": "Олег сам сказав " + str(m["age_h"]) + " год тому",
                 "label": "вдома (сказав сам)"}
+
+    ms = manual_shift()
+    if ms == "early":
+        if 6 <= h < 18:
+            return {"state": "work", "sure": True,
+                    "source": "Олег сам сказав: сьогодні РАННЯ зміна",
+                    "label": "НА РАННІЙ ЗМІНІ (06:00-18:00) — фізично на роботі"}
+        if 4 <= h < 6:
+            return {"state": "home", "sure": True,
+                    "source": "Олег сам сказав: сьогодні рання зміна",
+                    "label": "вдома, збирається на ранню зміну"}
+        return {"state": "home", "sure": True,
+                "source": "Олег сам сказав: сьогодні була рання зміна",
+                "label": "вдома після ранньої зміни"}
+    if ms == "night":
+        if h >= 18 or h < 6:
+            return {"state": "work", "sure": True,
+                    "source": "Олег сам сказав: сьогодні НІЧНА зміна",
+                    "label": "НА НІЧНІЙ ЗМІНІ (18:00-06:00) — фізично на роботі"}
+        if 6 <= h < 10:
+            return {"state": "after_night", "sure": True,
+                    "source": "Олег сам сказав: була нічна зміна",
+                    "label": "щойно з нічної зміни — вдома, має спати"}
+        return {"state": "home", "sure": True,
+                "source": "Олег сам сказав: сьогодні нічна зміна",
+                "label": "вдома, ввечері нічна зміна (початок ~17:30)"}
+    if ms == "free":
+        return {"state": "home", "sure": True,
+                "source": "Олег сам сказав: сьогодні вихідний",
+                "label": "вдома, вихідний (зміни немає)"}
 
     shift, cal_ok = _calendar_shift()
 

@@ -135,3 +135,39 @@ _ck("report показує ручну позначку", "ручна позна�
 
 print("\n" + "=" * 50)
 print("fails: " + str(FAILS[0]))
+
+
+# ── БЛОК 9: ручна зміна на сьогодні (Олег: «я на ранній зміні») ──────────────
+_h("БЛОК 9: set_shift — рання/нічна/вихідний")
+_MEM.clear()
+_ck("set_shift('рання') приймає українською", N.set_shift("рання") is True)
+_ck("manual_shift() = early", N.manual_shift() == "early")
+_ck("сміття не приймається", N.set_shift("бла") is False)
+
+_MEM.clear()
+N.set_shift("early")
+w9 = N.where()
+if 6 <= N.now().hour < 18:
+    _ck("у робочі години рання зміна = НА РОБОТІ", w9["state"] == "work")
+    _ck("label каже про ранню зміну", "РАННІЙ" in w9["label"].upper())
+else:
+    _ck("поза зміною state=home", w9["state"] == "home")
+_ck("джерело — сам Олег", "сам сказав" in w9["source"])
+
+_MEM.clear()
+N.set_shift("нічна")
+_ck("нічна зміна записалась", N.manual_shift() == "night")
+
+_MEM.clear()
+N.set_shift("вихідний")
+_ck("вихідний записався", N.manual_shift() == "free")
+_ck("вихідний = вдома", N.where()["state"] == "home")
+
+# ручна зміна на ВЧОРАШНЮ дату не діє сьогодні
+_MEM.clear()
+_MEM["shift_today.json"] = {"kind": "night",
+                            "date": (N.now() - timedelta(days=1)).strftime("%Y-%m-%d")}
+_ck("вчорашня ручна зміна не діє сьогодні", N.manual_shift() is None)
+
+print("\n" + "=" * 50)
+print("fails(final): " + str(FAILS[0]))
