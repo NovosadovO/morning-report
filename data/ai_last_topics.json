@@ -1,4 +1,9 @@
 {
+  "assistant|2026-08-23t20_00_17_546718": {
+    "topic": "assistant",
+    "gist": "Завтра у тебе знову рання зміна, тож після поточної зміни подбай про якісний відпочинок, аби зустріти ранок повним сил.",
+    "ts": "2026-08-23T20:00:17.546718"
+  },
   "action_detect|2026-08-23t19_54_28_506564": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Скасувати підписку",
     "ts": "2026-08-23T17:02:45.443244"
-  },
-  "action_detect|2026-08-23t17_02_45_409960": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-23T17:02:45.409960"
   }
 }
