@@ -1,4 +1,9 @@
 {
+  "msg_vip_email|2026-08-23t14_38_41_069761": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Дивлюся на твій тижневий прогрес і бачу цікаву динаміку: поки крипторинок стрімко зростає, даруючи приємні +22.8% для BTC, +29.4% для ETH та ма",
+    "ts": "2026-08-23T14:38:41.069761"
+  },
   "mailcal_extract|2026-08-23t14_28_25_673038": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Спробуй зробити хоча б коротку, легку пробі",
     "ts": "2026-08-23T12:02:57.320244"
-  },
-  "action_detect|2026-08-23t12_02_43_366748": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-08-23\", \"action_time\": null, \"action_summary\": \"Прийняти Armolopid після ",
-    "ts": "2026-08-23T12:02:43.366748"
   }
 }
