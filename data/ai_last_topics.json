@@ -1,4 +1,24 @@
 {
+  "personal_ai|2026-08-23t05_00_33_334946": {
+    "topic": "personal_ai",
+    "gist": "Олеже, чи готовий ти до ранньої зміни, враховуючи всього 5.8 годин сну? Зважаючи на сьогоднішній графік з ранньою зміною о 10:00, критично важливо максимально в",
+    "ts": "2026-08-23T05:00:33.334946"
+  },
+  "action_detect|2026-08-23t04_33_39_266370": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-23T04:33:39.266370"
+  },
+  "msg_rwa|2026-08-23t04_31_50_004100": {
+    "topic": "MSG_RWA",
+    "gist": "Олеже, чи є у тебе час перевірити DefiLlama зараз, чи краще обговоримо це після зміни?  Бачу серйозне падіння у секторі RWA. За останні 24 години загальна капіт",
+    "ts": "2026-08-23T04:31:50.004100"
+  },
+  "proactive_actions|2026-08-23t04_31_21_353984": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн реєстрація на рейс\",     \"date\": \"2026-08-23\",     \"time\": \"06:00\",     \"message\": \"Олеже, ти маєш не",
+    "ts": "2026-08-23T04:31:21.353984"
+  },
   "people|2026-08-23t04_30_56_712951": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"letenky@pelikan.sk\",     \"name\": \"Pelikan.sk\",     \"relation\": \"сервіс\",     \"topics\": [\"онлайн-реєстрація на рейс\"],     \"my_promis",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Нагадати Олегу ска",
     "ts": "2026-08-22T20:06:39.823436"
-  },
-  "action_detect|2026-08-22t20_03_18_892914": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Нагадати Олегу ска",
-    "ts": "2026-08-22T20:03:18.892914"
-  },
-  "action_detect|2026-08-22t20_02_27_444045": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Навчання інвестиціям",
-    "ts": "2026-08-22T20:02:27.444045"
-  },
-  "action_detect|2026-08-22t20_02_27_384391": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Нагадати Олегу ска",
-    "ts": "2026-08-22T20:02:27.384391"
-  },
-  "action_detect|2026-08-22t20_02_16_300279": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Виконати звичку 'water'\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Варто зосередитись на викона",
-    "ts": "2026-08-22T20:02:16.300279"
   }
 }
