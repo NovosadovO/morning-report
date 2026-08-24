@@ -2601,12 +2601,12 @@
     "norm": "прийом armolopid plus"
   },
   "o:4cba8753ebe6": {
-    "kind": "calendar",
+    "kind": "calrem_skip",
     "key": "botsend_1787599496337",
     "title": "Прийом Armolopid Plus",
-    "decided": false,
-    "ts": "2026-08-24T21:25:06.655194+00:00",
-    "until": "2026-08-31T21:25:06.655164+00:00",
+    "decided": true,
+    "ts": "2026-08-24T21:28:59.817582+00:00",
+    "until": "2026-10-23T21:28:59.817474+00:00",
     "norm": "прийом armolopid plus"
   }
 }
