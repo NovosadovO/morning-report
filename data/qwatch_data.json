@@ -952,5 +952,19 @@
     "spo2": 99,
     "source": "qwatch",
     "saved_at": "2026-08-22 21:40"
+  },
+  "2026-08-24": {
+    "date": "2026-08-24",
+    "steps": 19356,
+    "hr_avg": 64,
+    "calories": 347,
+    "stress": 42,
+    "hrv": 46,
+    "weight_kg": 83.0,
+    "age": 36,
+    "height_cm": 175,
+    "spo2": null,
+    "source": "qwatch",
+    "saved_at": "2026-08-24 21:42"
   }
 }
