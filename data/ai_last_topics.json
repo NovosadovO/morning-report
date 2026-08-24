@@ -1,4 +1,9 @@
 {
+  "msg_deep_analysis|2026-08-24t04_51_21_263241": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Поки ти готуєшся до зміни о 04:51, бачу, що ринок XRP за тиждень виріс на +47.2%, досягнувши $1.48, що є значним імпульсом, але сьогодні показу",
+    "ts": "2026-08-24T04:51:21.263241"
+  },
   "action_detect|2026-08-24t04_45_10_748356": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати в Apple H",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Швидка прогулянка\", \"action_date\": \"2026-08-24\", \"action_time\": \"06:00\", \"action_summary\": \"Заплануй хоча б 30 хвил",
     "ts": "2026-08-24T01:02:21.491886"
-  },
-  "action_detect|2026-08-24t01_02_10_374200": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-24T01:02:10.374200"
   }
 }
