@@ -351,6 +351,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-24T23:01:01.571793",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - August 24</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77949"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77949"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77949"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77949"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77949"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77949"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
