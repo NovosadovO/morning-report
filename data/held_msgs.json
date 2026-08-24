@@ -390,6 +390,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-24T23:01:03.180861",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin just posted its biggest weekly dollar g</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77946"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77946"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77946"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77946"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77946"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77946"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
