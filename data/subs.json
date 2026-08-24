@@ -37,6 +37,11 @@
         "date": "2026-08-23",
         "amount": "12.32",
         "uid": "77868"
+      },
+      {
+        "date": "2026-08-24",
+        "amount": "12.32",
+        "uid": "77925"
       }
     ],
     "active": true,
@@ -44,12 +49,12 @@
     "confirmed": true,
     "skipped": false,
     "first_seen": "2026-08-23",
-    "note": "Невдала оплата підписки Railway Corporation. Потрібно оновити платіжну інформацію.",
+    "note": "Невдала спроба списання за підписку Railway Corporation. Потрібно оновити платіжну інформацію.",
     "amount": "12.32",
     "sender": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
-    "subject": "$12.32 payment to Railway Corporation was unsuccessful",
-    "uid": "77868",
-    "last_seen": "2026-08-23",
+    "subject": "$12.32 payment to Railway Corporation was unsuccessful again",
+    "uid": "77925",
+    "last_seen": "2026-08-24",
     "next_due": "2026-09-23"
   }
 }
