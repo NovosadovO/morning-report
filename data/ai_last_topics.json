@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-24t12_14_16_902124": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про нову вакансію 'Administratívny pracovník / pracovníčka' в компанії kryptotax.sk у Словаччині, я",
+    "ts": "2026-08-24T12:14:16.902124"
+  },
   "email_ai_item|2026-08-24t12_10_05_841026": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від Avalanche Team1 інформує про те, що Кенія розмістила понад 15 мільйонів академічних записів на блокчейні Avalanche C-Chain, і ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Записати всі ідеї, щ",
     "ts": "2026-08-24T10:03:17.810184"
-  },
-  "action_detect|2026-08-24t10_03_17_447380": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-24T10:03:17.447380"
   }
 }
