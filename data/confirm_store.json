@@ -5095,7 +5095,24 @@
     "action": "calrem_skip",
     "pid": "botsend_1787596964524",
     "subject": "Перевірити RWA звіт",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 77234,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_botsend_1787596964524"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_botsend_1787596964524"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-24T21:16:32.259681+00:00"
   }
 }
