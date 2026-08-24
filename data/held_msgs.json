@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-25T00:01:17.921404",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-25T00:01:19.554066",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>🟪 Book review: Resistance Money</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -508,6 +502,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_77946"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-25T01:01:41.434245",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Administratívny pracovník / pracovníčka в kryptotax.sk</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77935"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77935"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77935"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77935"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77935"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77935"
             }
           ]
         ]
