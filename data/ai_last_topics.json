@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-08-24t04_45_10_748356": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати в Apple H",
+    "ts": "2026-08-24T04:45:10.748356"
+  },
+  "action_detect|2026-08-24t04_30_32_722118": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти для річниці\", \"action_date\": \"2026-08-24\", \"action_time\": null, \"action_summary\": \"Не забудь про завтр",
+    "ts": "2026-08-24T04:30:32.722118"
+  },
+  "msg_event_soon|2026-08-24t04_30_24_479391": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ✅ Бачу, ти готуєшся до ранньої зміни, яка почнеться вже через півтори години. Враховуючи, що твоя вага цього тижня зросла на 1.2 кг до 84.4 кг, а ",
+    "ts": "2026-08-24T04:30:24.479391"
+  },
   "action_detect|2026-08-24t04_30_17_899044": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Початок ранньої зміни о 06:00.\"}",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
     "ts": "2026-08-24T01:02:10.374200"
-  },
-  "action_detect|2026-08-24t01_02_01_997019": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти на річницю завт",
-    "ts": "2026-08-24T01:02:01.997019"
-  },
-  "action_detect|2026-08-24t01_01_59_359165": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-08-24\", \"action_time\": \"06:00\", \"action_summary\": \"Олег має ранню зміну, яка поч",
-    "ts": "2026-08-24T01:01:59.359165"
-  },
-  "briefing|2026-08-24t01_01_54_318044": {
-    "topic": "briefing",
-    "gist": "Наразі глибока ніч понеділка, 01:01, Олег, ти вдома, відпочиваєш перед ранньою зміною, яка почнеться о 06:00. Твій стан здоров'я показує, що вага зросла до 84.4",
-    "ts": "2026-08-24T01:01:54.318044"
   }
 }
