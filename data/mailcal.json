@@ -126,5 +126,19 @@
     "link": "https://www.google.com/calendar/event?eid=YmUxbXJ2ODQ4aTNkZWw5M25lODFwNHIxNTAgbm92b3NhZG92b2xlZ0Bt",
     "created_at": "2026-08-24T10:12:14.382490+00:00",
     "state": "live"
+  },
+  "77915_2026-08-24_невдалаоплатаrailwaycorp": {
+    "uid": "77915",
+    "title": "Невдала оплата Railway Corporation $12.32",
+    "date": "2026-08-24",
+    "time": "",
+    "kind": "payment",
+    "why": "$12.32 payment to Railway Corporation was unsuccessful",
+    "subject": "$12.32 payment to Railway Corporation was unsuccessful",
+    "sender": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
+    "event_id": "q6andpctg9bsmfej8j69eq6h3c",
+    "link": "https://www.google.com/calendar/event?eid=cTZhbmRwY3RnOWJzbWZlajhqNjllcTZoM2Mgbm92b3NhZG92b2xlZ0Bt",
+    "created_at": "2026-08-24T10:57:43.461644+00:00",
+    "state": "live"
   }
 }
