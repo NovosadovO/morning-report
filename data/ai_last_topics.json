@@ -1,4 +1,9 @@
 {
+  "proactive_ai|2026-08-24t18_57_46_803728": {
+    "topic": "proactive_ai",
+    "gist": "Привіт, Олеже! Як зміна пройшла? Ти ж тільки закінчив, мабуть, втомився.",
+    "ts": "2026-08-24T18:57:46.803728"
+  },
   "subs|2026-08-24t18_50_26_780703": {
     "topic": "subs",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
     "ts": "2026-08-24T16:01:51.289143"
-  },
-  "action_detect|2026-08-24t16_01_40_212237": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати динаміку AVAX та ONDO\", \"action_date\": \"2026-08-24\", \"action_time\": \"18:00\", \"action_summary\": \"Проа",
-    "ts": "2026-08-24T16:01:40.212237"
   }
 }
