@@ -5870,6 +5870,12 @@
       "category": "event_done",
       "question": "📅 💳 Невдала оплата Railway Corporation $12.32\nПланувалась до 11:00 — виконано?",
       "answer": "no"
+    },
+    {
+      "ts": "2026-08-24T14:50:33.712275+00:00",
+      "category": "rwa_move",
+      "question": "RWA",
+      "answer": "весь сектор RWA додав 48.7% за 24 години (капіталізація $70.61B)"
     }
   ]
 }
