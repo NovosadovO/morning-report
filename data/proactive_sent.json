@@ -21,6 +21,7 @@
     "evening_checkin": true
   },
   "2026-08-24": {
-    "anomaly_weight_rising": true
+    "anomaly_weight_rising": true,
+    "post_shift_checkin": true
   }
 }
