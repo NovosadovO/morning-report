@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-08-24t03_00_10_442298": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути нові вакансії\",     \"date\": \"2026-08-25\",     \"time\": \"09:00\",     \"message\": \"Олеже, на Profesi",
+    "ts": "2026-08-24T03:00:10.442298"
+  },
   "action_detect|2026-08-24t02_56_00_757086": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": \"2026-08-24\", \"action_time\": null, \"action_summary\": \"Запланувати пробіжку на ранок понед",
     "ts": "2026-08-23T23:03:02.883126"
-  },
-  "action_detect|2026-08-23t23_02_51_936117": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято Armolopid",
-    "ts": "2026-08-23T23:02:51.936117"
   }
 }
