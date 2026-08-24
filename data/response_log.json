@@ -5758,6 +5758,16 @@
         "kind": "calendar",
         "date": "2026-08-24"
       }
+    },
+    {
+      "ts": "2026-08-24T03:00:24.393376+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути The Daily Degen",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-25"
+      }
     }
   ]
 }
