@@ -5051,7 +5051,44 @@
     "action": "email_delete",
     "pid": "77946",
     "subject": "🔷 The Daily: Bitcoin just posted its biggest weekly dollar gain ever",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 77247,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77946"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77946"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77946"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77946"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77946"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77946"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-24T21:15:45.003613+00:00"
   }
 }
