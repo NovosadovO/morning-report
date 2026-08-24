@@ -1,4 +1,24 @@
 {
+  "msg_deep_analysis|2026-08-24t19_53_33_877592": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Вечір понеділка, 24 серпня, а ти вже відпочиваєш після зміни, що дуже добре, бо твій графік вимагає відновлення. Дивлюся на цифри, і є над чим ",
+    "ts": "2026-08-24T19:53:33.877592"
+  },
+  "action_detect|2026-08-24t19_44_20_874567": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег переніс біг на вівторок.\"}",
+    "ts": "2026-08-24T19:44:20.874567"
+  },
+  "context_ask_ai|2026-08-24t19_44_12_709360": {
+    "topic": "context_ask_ai",
+    "gist": "Привіт, Олег! Додав \"догляд за лицем\" до твоїх звичок.  Бачу, вже 19:44, і ти відпочиваєш після ранньої зміни. Нагадую, що о 19:30 має надійти щоденний RWA звіт",
+    "ts": "2026-08-24T19:44:12.709360"
+  },
+  "planner|2026-08-24t19_43_25_575925": {
+    "topic": "planner",
+    "gist": "```json [   {     \"title\": \"Догляд за лицем\",     \"date\": \"2026-08-24\",     \"time\": null,     \"allday\": true   } ] ```",
+    "ts": "2026-08-24T19:43:25.575925"
+  },
   "email_ai_item|2026-08-24t19_41_54_912494": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від OKX інформує про можливість отримати бонус до €5,000. Залишилося 7 днів для участі в акції. Лист не містить конкретних інструк",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз для Олега, що опис",
     "ts": "2026-08-24T17:02:36.342530"
-  },
-  "action_detect|2026-08-24t17_02_25_353302": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-24T17:02:25.353302"
-  },
-  "action_detect|2026-08-24t17_02_09_224773": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-24T17:02:09.224773"
-  },
-  "action_detect|2026-08-24t17_02_09_183106": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-24T17:02:09.183106"
-  },
-  "email_ai_item|2026-08-24t17_02_08_501896": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Лист від Buzz Sneaker Station інформує Олега про акцію -20% на кросівки adidas HYPERBOOST EUPHORIA за промокодом UNLOCK20. Акція діє до 30.08.2",
-    "ts": "2026-08-24T17:02:08.501896"
   }
 }
