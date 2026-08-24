@@ -1,4 +1,39 @@
 {
+  "email_ai_item|2026-08-24t11_01_46_600447": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є коротким повідомленням від Олега Новосадова, що містить лише подяку та його контактні дані. Лист також включає стандартне по",
+    "ts": "2026-08-24T11:01:46.600447"
+  },
+  "email_ai_item|2026-08-24t11_01_35_521182": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Олега Новосадова з темою \\\"BRZDA\\\" містить лише посилання на ChatGPT та стандартну підписну інформацію компанії Minebea Slovak",
+    "ts": "2026-08-24T11:01:35.521182"
+  },
+  "email_ai_item|2026-08-24t11_01_25_380570": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Railway Corporation повідомляє, що платіж у розмірі $12.32 за підписку не пройшов через проблему з карткою Visa, що закінчуєть",
+    "ts": "2026-08-24T11:01:25.380570"
+  },
+  "personal_ai|2026-08-24t11_01_01_101350": {
+    "topic": "personal_ai",
+    "gist": "Олеже, ти вже пройшов 21273 кроки до 11:00, що вдвічі більше за твою денну ціль у 10000! Це круто, але з урахуванням лише 5.8 годин сну, висока активність на зм",
+    "ts": "2026-08-24T11:01:01.101350"
+  },
+  "action_detect|2026-08-24t11_00_47_093041": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
+    "ts": "2026-08-24T11:00:47.093041"
+  },
+  "action_detect|2026-08-24t11_00_23_168142": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати пробіжку\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після зміни запланувати пробіжк",
+    "ts": "2026-08-24T11:00:23.168142"
+  },
+  "msg_health_pulse|2026-08-24t11_00_16_461867": {
+    "topic": "MSG_HEALTH_PULSE",
+    "gist": "Привіт Олеже! ❤️  Бачу, ти вже в розпалі ранкової зміни, вже 11:00, і робочий день у Minebea Mitsumi триває. Судячи з 21 273 кроків, ти вже активно рухаєшся, що",
+    "ts": "2026-08-24T11:00:16.461867"
+  },
   "mailcal_extract|2026-08-24t10_57_39_285597": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"77915\",     \"title\": \"Невдала оплата Railway Corporation $12.32\",     \"date\": \"2026-08-24\",     \"time\": null,     \"kind\": \"payment\",  ",
@@ -263,40 +298,5 @@
     "topic": "calendar",
     "gist": "Привіт, Олеже! Бачу, що завтра, у твій вільний від змін день, у тебе запланована важлива подія – купити квіти на річницю о 09:00. Це чудова можливість зробити п",
     "ts": "2026-08-24T08:15:51.224466"
-  },
-  "action_detect|2026-08-24t08_02_39_631714": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Подумати про прояв особистості\", \"action_date\": \"2026-08-24\", \"action_time\": null, \"action_summary\": \"Після зміни п",
-    "ts": "2026-08-24T08:02:39.631714"
-  },
-  "action_detect|2026-08-24t08_02_39_473868": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Спланувати конкретні",
-    "ts": "2026-08-24T08:02:39.473868"
-  },
-  "action_detect|2026-08-24t08_02_28_218491": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути звіт по RWA\", \"action_date\": null, \"action_time\": \"11:30\", \"action_summary\": \"Виділити 15 хвилин на обі",
-    "ts": "2026-08-24T08:02:28.218491"
-  },
-  "action_detect|2026-08-24t08_02_17_248712": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити фотоальбом\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Додати фотоальбом до списку покупо",
-    "ts": "2026-08-24T08:02:17.248712"
-  },
-  "action_detect|2026-08-24t08_02_06_180867": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-08-24\", \"action_time\": null, \"action_summary\": \"Прийняти Armolopid і відм",
-    "ts": "2026-08-24T08:02:06.180867"
-  },
-  "action_detect|2026-08-24t08_02_06_157247": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти на річницю.\"}",
-    "ts": "2026-08-24T08:02:06.157247"
-  },
-  "briefing|2026-08-24t08_02_01_182890": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ Сьогодні, під час ранньої зміни, фокус на схудненні до 78 кг вимагає особливої уваги, оскільки твоя вага зросла до 85.2 кг, і це віддаляє від цілі.",
-    "ts": "2026-08-24T08:02:01.182890"
   }
 }
