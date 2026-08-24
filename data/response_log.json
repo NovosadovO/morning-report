@@ -5748,6 +5748,16 @@
         "kind": "reminder",
         "date": "2026-08-25"
       }
+    },
+    {
+      "ts": "2026-08-24T03:00:20.212226+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Переглянути звіт RWA з DefiLlama.com",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-08-24"
+      }
     }
   ]
 }
