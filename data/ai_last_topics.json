@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-24t12_10_05_841026": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Avalanche Team1 інформує про те, що Кенія розмістила понад 15 мільйонів академічних записів на блокчейні Avalanche C-Chain, і ",
+    "ts": "2026-08-24T12:10:05.841026"
+  },
   "action_detect|2026-08-24t12_04_28_780580": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Ryanair\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Завтра від",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-24T10:03:17.447380"
-  },
-  "action_detect|2026-08-24t10_03_06_598306": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити пошту\", \"action_date\": null, \"action_time\": \"18:00\", \"action_summary\": \"Після зміни о 18:00 перевірити в",
-    "ts": "2026-08-24T10:03:06.598306"
   }
 }
