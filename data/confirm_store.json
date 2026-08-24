@@ -5006,7 +5006,44 @@
     "action": "email_delete",
     "pid": "77947",
     "subject": "Action Needed: Privacy Wall - Blocked Communications Digest",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 77246,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77947"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77947"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77947"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77947"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77947"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77947"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-24T21:15:38.119914+00:00"
   }
 }
