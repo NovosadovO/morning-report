@@ -298,5 +298,20 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти на річницю.\"}",
     "ts": "2026-08-24T09:02:58.257830"
+  },
+  "action_detect|2026-08-24t12_00_27_055777": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-24T12:00:27.055777"
+  },
+  "openloop_promises|2026-08-24t11_43_26_408440": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"надіслати скріншоти повідомлень від туроператора\",     \"to\": \"Booking.com Customer Service (Stephanie)\",     \"date\": null   },   {   ",
+    "ts": "2026-08-24T11:43:26.408440"
+  },
+  "mailcal_extract|2026-08-24t11_43_04_163005": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"77664\",     \"title\": \"Онлайн-реєстрація на рейс Ryanair\",     \"date\": \"2026-08-25\",     \"time\": null,     \"kind\": \"flight\",     \"why\":",
+    "ts": "2026-08-24T11:43:04.163005"
   }
 }
