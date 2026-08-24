@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-24T22:01:06.197987",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Online check-in for a smooth take-off. ATTENTION! Don’t forg</b>\n👤 letenky@pelikan.sk",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77664"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77664"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77664"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77664"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77664"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77664"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-24T22:01:09.627055",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 22 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '22 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 85.2 кг, ціль 78 кг (тренд +2.0 кг за останні 5 замірів). Кроки: 19356 (ціль 10000).\n✅ Звички: Виконано сьогодні: shower, water, tea (3/6). Ще не виконано: run, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 1 непрочитаних\n📅 Календар: 06:00 ☀️ Рання зміна (06:00-18:00), 07:51 📌 Ранковий дайджест ринків, 09:00 🚿 Холодний душ ✅, 09:00 🚿 Холодний душ ✅, 09:00 📌 Отримати знижкову картку Temu, 19:10 💈 Спрей для волосся ❌, 19:10 🧖 Сауна ❌, 19:10 ✅ 🍵 Трав'яний чай ❌, 19:10 ✅ 🍵 Трав'яний чай ✅, 19:10 🍵 Трав'яний чай ✅, 19:10 🧖 Сауна ❌, 19:10 🏃 Біг ❌, 19:10 ✅ 💧 Вода (2л+) ✅, 19:10 💧 Вода (2л+) ✅, 19:10 🏃 Біг ❌, 19:10 💈 Спрей для волосся ❌, 21:17 💊 Armolopid Plus ❌",
@@ -546,6 +507,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_77950"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-25T00:01:22.828086",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - August 24</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77949"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77949"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77949"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77949"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77949"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77949"
             }
           ]
         ]
