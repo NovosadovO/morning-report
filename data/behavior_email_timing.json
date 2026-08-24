@@ -1,9 +1,4 @@
 {
-  "77494": {
-    "sender": "no-reply+4c0d752f@toast-restaurants.com",
-    "sender_raw": "Aubree's Pizzeria & Grill <no-reply+4c0d752f@toast-restaurants.com>",
-    "seen_ts": "2026-08-14T16:11:39.870950+00:00"
-  },
   "77495": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "notification@service.tiktok.com",
     "sender_raw": "Ruslana*2784 у TikTok <notification@service.tiktok.com>",
     "seen_ts": "2026-08-24T09:24:53.615285+00:00"
+  },
+  "77920": {
+    "sender": "newsletter@genai.works",
+    "sender_raw": "Generative AI <newsletter@genai.works>",
+    "seen_ts": "2026-08-24T09:33:09.249385+00:00"
   }
 }
