@@ -1,9 +1,4 @@
 {
-  "77492": {
-    "sender": "noreply@mailing.fifa.com",
-    "sender_raw": "FIFA <noreply@mailing.fifa.com>",
-    "seen_ts": "2026-08-14T15:22:45.803014+00:00"
-  },
   "77493": {
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
     "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
     "seen_ts": "2026-08-24T08:35:53.947785+00:00"
+  },
+  "77918": {
+    "sender": "info@beautynews.douglas.sk",
+    "sender_raw": "\"Douglas\" <info@beautynews.douglas.sk>",
+    "seen_ts": "2026-08-24T09:14:37.070059+00:00"
   }
 }
