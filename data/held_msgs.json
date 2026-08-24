@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-24T22:01:12.064157",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Railway Corporation\n📋 $12.32 payment to Railway Corporation was unsuccessful again\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Railway Corporatio",
-              "callback_data": "email_reply_77925"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_77925"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77925"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-24T22:01:14.296065",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Railway Corporation\n📋 $12.32 payment to Railway Corporation was unsuccessful again\n📝 (AI-аналіз тимчасово недоступний)",
@@ -579,6 +554,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_77946"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-25T00:01:25.939018",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Administratívny pracovník / pracovníčka в kryptotax.sk</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77935"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77935"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77935"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77935"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77935"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77935"
             }
           ]
         ]
