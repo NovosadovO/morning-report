@@ -298,5 +298,15 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Навчання інвестиціям",
     "ts": "2026-08-24T11:02:42.375974"
+  },
+  "mailcal_extract|2026-08-24t13_59_05_557073": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-24T13:59:05.557073"
+  },
+  "action_detect|2026-08-24t13_52_45_279219": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати динаміку ваги\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після зміни прикинути, ",
+    "ts": "2026-08-24T13:52:45.279219"
   }
 }
