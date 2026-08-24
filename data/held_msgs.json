@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-24T23:01:01.571793",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - August 24</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77949"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77949"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77949"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77949"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77949"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77949"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-24T23:01:03.180861",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin just posted its biggest weekly dollar g</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -662,6 +623,12 @@
       "ts": "2026-08-25T00:06:30.447729",
       "kind": "watchdog",
       "text": "👁 <b>Я осліп на частину даних</b>\n\n🔴 <b>strava</b> — функції get_activities немає в monitor.py\n\n<i>Поки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-25T00:06:31.650673",
+      "kind": "watchdog",
+      "text": "👁 Я осліп на частину даних\n\n🔴 strava — функції get_activities немає в monitor.py\n\nПоки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.",
       "keyboard": null
     }
   ]
