@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-08-24t05_40_50_390479": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"cancel\",     \"to\": \"info@ionian-cruises.com\",     \"date\": null   } ] ```",
+    "ts": "2026-08-24T05:40:50.390479"
+  },
   "action_detect|2026-08-24t05_28_38_038075": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записати поточну вагу (85.2 кг) в Appl",
@@ -293,10 +298,5 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути нові вакансії\",     \"date\": \"2026-08-25\",     \"time\": \"09:00\",     \"message\": \"Олеже, на Profesi",
     "ts": "2026-08-24T03:00:10.442298"
-  },
-  "action_detect|2026-08-24t02_56_00_757086": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати підписку CapCut\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Олег має скасувати",
-    "ts": "2026-08-24T02:56:00.757086"
   }
 }
