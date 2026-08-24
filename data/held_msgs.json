@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-25T00:01:19.554066",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>🟪 Book review: Resistance Money</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77951"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77951"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77951"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77951"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77951"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77951"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-25T00:01:21.234999",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Trump Defends AI Data Centers, Saying ‘Smart Ones’ Want Them</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -541,6 +502,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_77935"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-25T01:01:43.227551",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>$12.32 payment to Railway Corporation was unsuccessful again</b>\n👤 Railway Corporation &lt;failed-payments+acct_1HNrvlCJ",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77925"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77925"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77925"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77925"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77925"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77925"
             }
           ]
         ]
