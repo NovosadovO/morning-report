@@ -5957,6 +5957,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Річниця",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-24T19:45:09.766279+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_a8365a9886"
     }
   ]
 }
