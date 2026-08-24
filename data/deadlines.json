@@ -154,5 +154,17 @@
     "sender": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
     "done": false,
     "created": "2026-08-23"
+  },
+  "підтвердження_пропозиції_temu|2026-08-24": {
+    "kind": "other",
+    "title": "Підтвердження пропозиції Temu",
+    "org": "Temu",
+    "deadline": "2026-08-24",
+    "action": "Переглянути та підтвердити пропозицію Temu до кінця дня.",
+    "why": "Пропозиція може стати недійсною, якщо її не підтвердити сьогодні.",
+    "uid": "77931",
+    "sender": "\"Temu\" <temu@eu.temuemail.com>",
+    "done": false,
+    "created": "2026-08-24"
   }
 }
