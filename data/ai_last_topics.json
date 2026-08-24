@@ -1,4 +1,14 @@
 {
+  "msg_event_soon|2026-08-24t10_33_23_845740": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ✅  Бачу, ти вже в робочому ритмі ранньої зміни (до 18:00), а час швидко летить, вже 10:33. Зараз важливо тримати фокус, адже попереду ще багато го",
+    "ts": "2026-08-24T10:33:23.845740"
+  },
+  "email_ai_item|2026-08-24t10_17_34_621114": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від Google AI Studio інформує про те, що білінговий акаунт Gemini API був переведений на нижчий рівень (paid Tier 1). Це пр",
+    "ts": "2026-08-24T10:17:34.621114"
+  },
   "email_ai_item|2026-08-24t10_15_21_804514": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про вакансію Operations Analyst - Transaction Reporting Unit (f/m/d) в Deutsche Börse Group у Празі",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": \"10:00\", \"action_summary\": \"Купити квіти на річницю.\"}",
     "ts": "2026-08-24T08:00:48.043488"
-  },
-  "personal_ai|2026-08-24t08_00_40_282163": {
-    "topic": "personal_ai",
-    "gist": "Олеже, з огляду на те, що зараз 08:00 і ти вже на роботі, приділи увагу сну та воді, щоб ефективно допрацювати зміну. Попри 21273 кроки, які вже є, ти спав лише",
-    "ts": "2026-08-24T08:00:40.282163"
-  },
-  "action_detect|2026-08-24t08_00_34_773914": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний прогноз, інформацію про с",
-    "ts": "2026-08-24T08:00:34.773914"
   }
 }
