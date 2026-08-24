@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-08-24t14_44_09_816529": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"прикріпити скріншоти повідомлень від туроператора\",     \"to\": \"Booking.com Customer Service\",     \"date\": null   },   {     \"what\": \"",
+    "ts": "2026-08-24T14:44:09.816529"
+  },
   "deadlines|2026-08-24t14_20_20_430564": {
     "topic": "deadlines",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти та зареєструватися на рейс\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"З",
     "ts": "2026-08-24T12:01:27.341405"
-  },
-  "email_ai_item|2026-08-24t12_01_24_653337": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист від Railway Corporation інформує, що платіж у розмірі $12.32 за підписку не пройшов з картки Visa, яка закінчується на 0311. Для п",
-    "ts": "2026-08-24T12:01:24.653337"
   }
 }
