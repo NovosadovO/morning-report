@@ -5768,6 +5768,12 @@
         "kind": "reminder",
         "date": "2026-08-25"
       }
+    },
+    {
+      "ts": "2026-08-24T05:27:46.288032+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_spray"
     }
   ]
 }
