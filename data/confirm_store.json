@@ -4529,7 +4529,44 @@
     "action": "email_delete",
     "pid": "77908",
     "subject": "💰 The Funding: Is crypto's bear market finally over?",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 76705,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77908"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77908"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77908"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77908"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77908"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77908"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-24T05:28:05.406256+00:00"
   }
 }
