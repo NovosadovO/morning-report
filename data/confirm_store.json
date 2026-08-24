@@ -4663,7 +4663,43 @@
     "pid": "email_keep_77912",
     "subject": "Operations Analyst - Transaction Reporting Unit (f/m/d) в De",
     "extra": {
-      "msg": "Привіт Олеже! 👋 Тобі щойно надійшов лист від Сповіщення про вакансії LinkedIn\n📋 Тема: «Operations Analyst - Transaction Reporting Unit (f/m/d) в Deutsche Bör»\n\nЦей лист від LinkedIn є сповіщенням про вакансію Operations Analyst - Transaction Reporting Unit (f/m/d) в Deutsche Börse Group у Празі. Компанія активно наймає персонал. Лист містить посилання для перегляду вакансії та керування сповіщення"
+      "msg": "Привіт Олеже! 👋 Тобі щойно надійшов лист від Сповіщення про вакансії LinkedIn\n📋 Тема: «Operations Analyst - Transaction Reporting Unit (f/m/d) в Deutsche Bör»\n\nЦей лист від LinkedIn є сповіщенням про вакансію Operations Analyst - Transaction Reporting Unit (f/m/d) в Deutsche Börse Group у Празі. Компанія активно наймає персонал. Лист містить посилання для перегляду вакансії та керування сповіщення",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 76866,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77912"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77912"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77912"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77912"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77912"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77912"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-08-24T10:20:56.498389+00:00"
   }
