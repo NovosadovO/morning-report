@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-08-24t05_20_01_290972": {
+    "topic": "deadlines",
+    "gist": "```json [] ```",
+    "ts": "2026-08-24T05:20:01.290972"
+  },
   "action_detect|2026-08-24t05_10_56_458519": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є крипто дашбордом з інформацією про різні ",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Profesia.sk інформує про 6 нових вакансій у Кошицях за критеріями, які Олег раніше встановив. Лист також пропонує можливіс",
     "ts": "2026-08-24T02:43:47.363078"
-  },
-  "openloop_promises|2026-08-24t02_40_05_982639": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {     \"what\": \"додати скріншоти повідомлень від туроператора\",     \"to\": \"Booking.com Customer Service\",     \"date\": null   },   {     \"what\": \"скас",
-    "ts": "2026-08-24T02:40:05.982639"
   }
 }
