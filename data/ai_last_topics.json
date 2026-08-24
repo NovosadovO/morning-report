@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-08-24t20_20_34_423680": {
+    "topic": "deadlines",
+    "gist": "```json [] ```",
+    "ts": "2026-08-24T20:20:34.423680"
+  },
   "email_ai_item|2026-08-24t20_06_42_003115": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Unstoppable Domains є рекламним повідомленням, що пропонує підключити Gmail, Calendar, Drive та MCP сервери до їхнього сер",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд стратегії навчання інвестиціям\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Пере",
     "ts": "2026-08-24T18:02:54.226104"
-  },
-  "action_detect|2026-08-24t18_02_54_057934": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-24T18:02:54.057934"
   }
 }
