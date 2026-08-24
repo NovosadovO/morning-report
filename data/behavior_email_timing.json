@@ -1,9 +1,4 @@
 {
-  "77485": {
-    "sender": "newsletter@biedronka.pl",
-    "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
-    "seen_ts": "2026-08-14T12:53:12.768326+00:00"
-  },
   "77486": {
     "sender": "offers@coinpoker.com",
     "sender_raw": "CoinPoker <offers@coinpoker.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@mail.theblock.co",
     "sender_raw": "The Block <newsletter@mail.theblock.co>",
     "seen_ts": "2026-08-24T03:08:06.873418+00:00"
+  },
+  "77910": {
+    "sender": "onboarding@resend.dev",
+    "sender_raw": "Morning Report <onboarding@resend.dev>",
+    "seen_ts": "2026-08-24T07:52:42.473270+00:00"
   }
 }
