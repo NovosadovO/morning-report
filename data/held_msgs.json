@@ -134,6 +134,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-24T22:01:01.592891",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>$12.32 payment to Railway Corporation was unsuccessful again</b>\n👤 Railway Corporation &lt;failed-payments+acct_1HNrvlCJ",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77925"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77925"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77925"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77925"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77925"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77925"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
