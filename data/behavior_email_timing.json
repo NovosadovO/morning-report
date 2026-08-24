@@ -1,9 +1,4 @@
 {
-  "77502": {
-    "sender": "team@unstoppabledomains.com",
-    "sender_raw": "Unstoppable <team@unstoppabledomains.com>",
-    "seen_ts": "2026-08-14T18:32:14.998685+00:00"
-  },
   "77505": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Securitize через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@news.paysend.com",
     "sender_raw": "\"Paysend\" <hello@news.paysend.com>",
     "seen_ts": "2026-08-24T10:20:41.167509+00:00"
+  },
+  "77929": {
+    "sender": "team@ship.emergent.sh",
+    "sender_raw": "Emergent <team@ship.emergent.sh>",
+    "seen_ts": "2026-08-24T11:15:58.814061+00:00"
   }
 }
