@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-24t09_00_16_675280": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-24T09:00:16.675280"
+  },
   "people|2026-08-24t08_49_25_102954": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"info@ionian-cruises.com\",     \"name\": \"Ionian Cruises\",     \"relation\": \"сервіс\",     \"topics\": [\"скасування круїзу\"],     \"my_promi",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Pelikan.sk\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь про о",
     "ts": "2026-08-24T06:01:05.597864"
-  },
-  "msg_event_soon|2026-08-24t06_00_57_753104": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ✅ Твоя вага зросла до 85.2 кг (+2.0 кг за тиждень), що є кроком у протилежний бік від цілі 78 кг. Це вимагає уваги, особливо з огляду на майбутнє ",
-    "ts": "2026-08-24T06:00:57.753104"
   }
 }
