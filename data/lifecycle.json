@@ -42,5 +42,16 @@
     "keyword": "парковка Ubian",
     "source": "email:77978",
     "ts": "2026-08-25T15:23:07.217841+00:00"
+  },
+  "підписка chatgpt go": {
+    "entity": "Підписка ChatGPT Go",
+    "kind": "subscription",
+    "state": "paid",
+    "valid_from": "2026-08-25",
+    "valid_to": null,
+    "next_due": null,
+    "keyword": "ChatGPT Go",
+    "source": "email:77982",
+    "ts": "2026-08-25T17:03:21.936311+00:00"
   }
 }
