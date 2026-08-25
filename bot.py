@@ -3306,6 +3306,20 @@ def handle_command(chat_id, text):
         import threading as _th_ol
         _th_ol.Thread(target=_run_ol, daemon=True, name="openloop-cmd").start()
 
+    elif text.lower().strip() in ["/гроші", "/гроши", "/money", "/витрати",
+                                  "/лінія"]:
+        def _run_mn():
+            try:
+                import sys as _smn, os as _omn
+                _smn.path.insert(0, _omn.path.dirname(__file__))
+                import money as _mn_cmd
+                send(chat_id, _mn_cmd.report())
+                _mn_cmd.run(force=True)
+            except Exception as _e_mn:
+                send(chat_id, f"⚠️ Помилка money: {str(_e_mn)[:300]}")
+        import threading as _th_mn
+        _th_mn.Thread(target=_run_mn, daemon=True, name="money-cmd").start()
+
     elif text.lower().strip() in ["/реакції", "/реакции", "/reactions",
                                   "/кнопки", "/закриті"]:
         try:

@@ -1203,6 +1203,13 @@ def run_assistant_watcher():
                 _ol_w.run()
             except Exception as _e_olw:
                 print(f"[openloop] watcher error: {_e_olw}", flush=True)
+            # Гроші однією лінією: факти списань із пошти → реєстр,
+            # великі майбутні платежі → календар, стрибок витрат → питання.
+            try:
+                import money as _mn_w
+                _mn_w.run()
+            except Exception as _e_mnw:
+                print(f"[money] watcher error: {_e_mnw}", flush=True)
             # Розумна тиша: Олег прокинувся → віддаємо відкладене одним
             # дайджестом. flush() сам перевіряє, що сон уже скінчився.
             try:
