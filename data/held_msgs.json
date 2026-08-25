@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-25T01:01:34.386210",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Book review: Resistance Money</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77951"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77951"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77951"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77951"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77951"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77951"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-25T01:01:36.024764",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Trump Defends AI Data Centers, Saying ‘Smart Ones’ Want Them</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -610,6 +571,12 @@
       "ts": "2026-08-25T02:49:55.528468",
       "kind": "dates",
       "text": "💍 СЬОГОДНІ — РІЧНИЦЯ\n━━━━━━━━━━━━━━━━━━━━\n🎉 купити квіти\n\n⚡ Сьогодні. Далі відкладати нема куди.\nОдин день прострочення — і замість подарунка вже вибачення.\n➡️ Вирішити краще сьогодні: подарунок, дзвінок чи зустріч.\n\n📝 та фотоальбом на Фотоапарат",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-25T02:49:58.407243",
+      "kind": "dates",
+      "text": "🎂 <b>ЧЕРЕЗ 7 ДН. — день народження</b>\n━━━━━━━━━━━━━━━━━━━━\n🎉 <b>Олі</b> — 01.09\n\n🗓 Ще 7 дн. — можна зробити спокійно, без нервів.\nЗабудеш — це не «ой», це образа на роками.\n➡️ Вирішити краще сьогодні: подарунок, дзвінок чи зустріч.",
       "keyboard": null
     }
   ]
