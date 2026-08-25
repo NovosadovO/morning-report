@@ -6660,6 +6660,12 @@
         "trigger": "micro_checkin",
         "note": null
       }
+    },
+    {
+      "ts": "2026-08-25T22:19:50.651173+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "gx_chart_129a8f2e02"
     }
   ]
 }
