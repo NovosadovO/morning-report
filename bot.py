@@ -3306,6 +3306,20 @@ def handle_command(chat_id, text):
         import threading as _th_ol
         _th_ol.Thread(target=_run_ol, daemon=True, name="openloop-cmd").start()
 
+    elif text.lower().strip() in ["/тренди", "/trend", "/динаміка",
+                                  "/здоровя", "/здоров'я"]:
+        def _run_ht():
+            try:
+                import sys as _sht, os as _oht
+                _sht.path.insert(0, _oht.path.dirname(__file__))
+                import healthtrend as _ht_cmd
+                send(chat_id, _ht_cmd.report())
+                _ht_cmd.run(force=True)
+            except Exception as _e_ht:
+                send(chat_id, f"⚠️ Помилка трендів: {str(_e_ht)[:300]}")
+        import threading as _th_ht
+        _th_ht.Thread(target=_run_ht, daemon=True, name="htrend-cmd").start()
+
     elif text.lower().strip() in ["/гроші", "/гроши", "/money", "/витрати",
                                   "/лінія"]:
         def _run_mn():

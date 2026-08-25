@@ -1210,6 +1210,13 @@ def run_assistant_watcher():
                 _mn_w.run()
             except Exception as _e_mnw:
                 print(f"[money] watcher error: {_e_mnw}", flush=True)
+            # Тренди здоров'я: вага/сон/кроки 7 днів проти попередніх 7,
+            # зв'язок зі змінами, застаріла вага → подія + пряме питання.
+            try:
+                import healthtrend as _ht_w
+                _ht_w.run()
+            except Exception as _e_htw:
+                print(f"[htrend] watcher error: {_e_htw}", flush=True)
             # Розумна тиша: Олег прокинувся → віддаємо відкладене одним
             # дайджестом. flush() сам перевіряє, що сон уже скінчився.
             try:
