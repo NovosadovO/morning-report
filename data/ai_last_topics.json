@@ -1,4 +1,19 @@
 {
+  "personal_ai|2026-08-25t05_00_54_832400": {
+    "topic": "personal_ai",
+    "gist": "Що маємо до 09:00? До запланованого бігу о 09:00 залишається 4 години, але є ще один, ранковий біг в цей самий час, що конфліктує. Враховуючи, що сьогодні річни",
+    "ts": "2026-08-25T05:00:54.832400"
+  },
+  "action_detect|2026-08-25t04_57_28_004481": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийом Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег пропустив прийом Armolopi",
+    "ts": "2026-08-25T04:57:28.004481"
+  },
+  "action_detect|2026-08-25t04_54_26_367627": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Догляд за обличчям\", \"action_date\": \"2024-08-01\", \"action_time\": null, \"action_summary\": \"Переконатися, що нотатка ",
+    "ts": "2026-08-25T04:54:26.367627"
+  },
   "msg_deep_analysis|2026-08-25t04_54_18_776366": {
     "topic": "MSG_DEEP_ANALYSIS",
     "gist": "Привіт Олеже! 👋 Бачу, зараз ти міцно спиш, це дуже добре, адже нічний відпочинок — твій пріоритет після насичених днів.  Поки ти відпочиваєш, я підбив деякі під",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Отримати знижкову картку Temu\", \"action_date\": \"2026-08-24\", \"action_time\": \"09:00\", \"action_summary\": \"Сьогодні о ",
     "ts": "2026-08-24T21:02:31.254974"
-  },
-  "action_detect|2026-08-24t21_02_31_067275": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"null\", \"action_time\": \"null\", \"action_summary\": \"Перевірити, чи був прийнятий ",
-    "ts": "2026-08-24T21:02:31.067275"
-  },
-  "action_detect|2026-08-24t21_02_20_035894": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Лягти спати\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Лягти спати протягом наступної години дл",
-    "ts": "2026-08-24T21:02:20.035894"
-  },
-  "briefing|2026-08-24t21_02_16_273353": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ  Зараз, коли ранкова зміна закінчилася, і ти вдома, найважливіше – зосередитися на конкретних діях. Твоя вага зросла на 0.8 кг за день, а біг вчора",
-    "ts": "2026-08-24T21:02:16.273353"
   }
 }
