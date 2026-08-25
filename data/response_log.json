@@ -6530,6 +6530,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_7716f9bcd9"
+    },
+    {
+      "ts": "2026-08-25T20:32:31.165920+00:00",
+      "category": "deadline_found",
+      "question": "Продовження підписки ChatGPT Go",
+      "answer": "2026-08-25",
+      "extra": {
+        "kind": "contract"
+      }
     }
   ]
 }
