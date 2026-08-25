@@ -1,4 +1,19 @@
 {
+  "msg_health_pulse|2026-08-25t11_00_28_776403": {
+    "topic": "MSG_HEALTH_PULSE",
+    "gist": "Привіт Олеже! ❤️  Твій ранок вівторка, 25 серпня, почався з вражаючого числа кроків – 19 356! Це неймовірно, ти вже зробив величезний обсяг фізичної активності.",
+    "ts": "2026-08-25T11:00:28.776403"
+  },
+  "action_detect|2026-08-25t10_55_15_907179": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити квитки Ryanair\", \"action_date\": \"2024-08-25\", \"action_time\": null, \"action_summary\": \"Перевірити квитки ",
+    "ts": "2026-08-25T10:55:15.907179"
+  },
+  "msg_deep_analysis|2026-08-25t10_55_08_558398": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Ти зараз на зміні, чи випав вільний ранок, щоб спокійно випити кави? Бо, судячи з календаря, сьогодні о 10:55, ти вдома, і якщо так, є пару важ",
+    "ts": "2026-08-25T10:55:08.558398"
+  },
   "bills|2026-08-25t10_51_38_205935": {
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"77925\",     \"vendor\": \"Railway Corporation\",     \"amount\": \"12.32\",     \"currency\": \"USD\",     \"invoice_no\": \"\",     \"due\": \"\",     \"a",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2024-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Переглянути теми нав",
     "ts": "2026-08-25T08:02:25.112687"
-  },
-  "action_detect|2026-08-25t08_02_10_477676": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки він ",
-    "ts": "2026-08-25T08:02:10.477676"
-  },
-  "action_detect|2026-08-25t08_02_10_452366": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти до річниці сьог",
-    "ts": "2026-08-25T08:02:10.452366"
-  },
-  "action_detect|2026-08-25t08_01_59_749559": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити та скоригувати бігові дані Strava\", \"action_date\": \"2023-08-25\", \"action_time\": \"17:00\", \"action_summary",
-    "ts": "2026-08-25T08:01:59.749559"
   }
 }
