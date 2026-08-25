@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-25T02:00:46.770499",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-25T02:00:48.325952",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 Book review: Resistance Money</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -541,6 +535,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_77935"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-25T03:01:06.671153",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>$12.32 payment to Railway Corporation was unsuccessful again</b>\n👤 Railway Corporation &lt;failed-payments+acct_1HNrvlCJ",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77925"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77925"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77925"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77925"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77925"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77925"
             }
           ]
         ]
