@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-08-25t09_36_55_808318": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Discord інформує про пропущені повідомлення в каналі Sui Whale. Він не містить конкретних дій чи дедлайнів, а є лише спові",
+    "ts": "2026-08-25T09:36:55.808318"
+  },
+  "proactive_ai|2026-08-25t09_31_15_773873": {
+    "topic": "proactive_ai",
+    "gist": "Привіт, Олеже! Бачу, твоя вага трохи підросла за останні три дні — з 84.3 до 85.2 кг. Щоб це скоригувати, згадай про дієту 16:8, не забувай пити достатньо води ",
+    "ts": "2026-08-25T09:31:15.773873"
+  },
   "action_detect|2026-08-25t09_28_30_638081": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти на річницю сьог",
     "ts": "2026-08-25T07:02:36.903477"
-  },
-  "action_detect|2026-08-25t07_02_36_834841": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийом Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийняв Олег Armolop",
-    "ts": "2026-08-25T07:02:36.834841"
-  },
-  "action_detect|2026-08-25t07_02_25_915472": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Ryanair\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Запланована онлайн",
-    "ts": "2026-08-25T07:02:25.915472"
   }
 }
