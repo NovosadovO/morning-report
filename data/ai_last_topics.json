@@ -1,4 +1,24 @@
 {
+  "openloop_promises|2026-08-25t22_23_34_591285": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-25T22:23:34.591285"
+  },
+  "action_detect|2026-08-25t22_19_51_331967": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-08-26\", \"action_time\": \"12:10\", \"action_summary\": \"Олег має візит до де",
+    "ts": "2026-08-25T22:19:51.331967"
+  },
+  "action_detect|2026-08-25t22_19_30_724426": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-08-26\", \"action_time\": \"12:10\", \"action_summary\": \"Олег має візит до де",
+    "ts": "2026-08-25T22:19:30.724426"
+  },
+  "action_detect|2026-08-25t22_18_17_713282": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": \"2026-08-26\", \"action_time\": \"09:00\", \"action_summary\": \"Олег планує біг завтра, 26 серпня, о ",
+    "ts": "2026-08-25T22:18:17.713282"
+  },
   "msg_micro_checkin|2026-08-25t22_18_07_542388": {
     "topic": "MSG_MICRO_CHECKIN",
     "gist": "Привіт Олеже! 💭 Бачу, зараз ти спиш, і це чудовий час для відновлення, особливо після такого насиченого дня, де ти зробив 19,356 кроків. Дуже цікаво, як ти себе",
@@ -278,25 +298,5 @@
     "topic": "calendar",
     "gist": "Олеже, завтра у тебе вільний день і лише одна запланована подія — візит до дерматолога о 12:10 в EC Cassovar kožné B. Це чудова можливість використати час ефект",
     "ts": "2026-08-25T19:04:05.386507"
-  },
-  "bills|2026-08-25t19_03_52_865778": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"77982\",     \"vendor\": \"Google Play\",     \"amount\": \"7.99\",     \"currency\": \"EUR\",     \"invoice_no\": \"GPA.3300-5103-6093-25884..0\",    ",
-    "ts": "2026-08-25T19:03:52.865778"
-  },
-  "action_detect|2026-08-25t19_03_52_439666": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Обстеження у дерматолога\", \"action_date\": \"2026-08-26\", \"action_time\": \"12:10\", \"action_summary\": \"Олег має обстеже",
-    "ts": "2026-08-25T19:03:52.439666"
-  },
-  "action_detect|2026-08-25t19_03_41_400887": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст є фідбеком на відповідь AI-асистента та містить",
-    "ts": "2026-08-25T19:03:41.400887"
-  },
-  "subs|2026-08-25t19_02_26_177375": {
-    "topic": "subs",
-    "gist": "```json [   {     \"uid\": \"77982\",     \"vendor\": \"ChatGPT Go\",     \"amount\": \"7.99\",     \"currency\": \"EUR\",     \"cycle\": \"monthly\",     \"charge_date\": \"2026-08-2",
-    "ts": "2026-08-25T19:02:26.177375"
   }
 }
