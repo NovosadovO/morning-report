@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-08-25t07_30_14_721144": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Купити квіти до річниці\",     \"date\": \"2026-08-25\",     \"time\": \"09:00\",     \"message\": \"Олеже, на 10:00 у т",
+    "ts": "2026-08-25T07:30:14.721144"
+  },
   "openloop_promises|2026-08-25t07_17_46_932199": {
     "topic": "openloop_promises",
     "gist": "```json [   {     \"what\": \"прикріпити скріншоти повідомлень\",     \"to\": \"Booking.com Customer Service\",     \"date\": null   },   {     \"what\": \"скасувати бронюва",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Отримати знижкову картку Temu\", \"action_date\": \"2024-08-24\", \"action_time\": null, \"action_summary\": \"Олег має отрим",
     "ts": "2026-08-25T04:02:28.803856"
-  },
-  "action_detect|2026-08-25t04_02_17_927700": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Ryanair\", \"action_date\": \"2024-08-25\", \"action_time\": null, \"action_summary\": \"Зробити он",
-    "ts": "2026-08-25T04:02:17.927700"
   }
 }
