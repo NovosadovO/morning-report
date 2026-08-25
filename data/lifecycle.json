@@ -31,5 +31,16 @@
     "keyword": "Runable credits",
     "source": "email:77867",
     "ts": "2026-08-23T08:22:02.839653+00:00"
+  },
+  "паркувальний талон ubian": {
+    "entity": "Паркувальний талон Ubian",
+    "kind": "other",
+    "state": "paid",
+    "valid_from": null,
+    "valid_to": null,
+    "next_due": null,
+    "keyword": "парковка Ubian",
+    "source": "email:77978",
+    "ts": "2026-08-25T15:23:07.217841+00:00"
   }
 }
