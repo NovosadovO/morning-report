@@ -5498,7 +5498,44 @@
     "action": "email_delete",
     "pid": "77988",
     "subject": "Dobierka je teraz k dispozícii!",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 77714,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77988"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77988"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77988"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77988"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77988"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77988"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-25T19:02:48.271932+00:00"
   }
 }
