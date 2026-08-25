@@ -5669,7 +5669,44 @@
     "action": "email_delete",
     "pid": "77993",
     "subject": "OpenAI's CFO Just Shared a Timeline",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 77753,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77993"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77993"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77993"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77993"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77993"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77993"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-25T20:27:09.778952+00:00"
   }
 }
