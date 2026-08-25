@@ -204,5 +204,19 @@
     "paid": true,
     "paid_at": "2026-08-25",
     "created": "2026-08-25"
+  },
+  "google_play|7_99|": {
+    "vendor": "Google Play",
+    "amount": "7.99",
+    "currency": "EUR",
+    "invoice_no": "GPA.3300-5103-6093-25884..0",
+    "due": "",
+    "uid": "77982",
+    "sender": "Google Play <googleplay-noreply@google.com>",
+    "subject": "Квитанція замовлення в Google Play від 25 серп. 2026 р.",
+    "note": "Підписка на ChatGPT Go продовжена, платіж вже стягнуто.",
+    "paid": true,
+    "paid_at": "2026-08-25",
+    "created": "2026-08-25"
   }
 }
