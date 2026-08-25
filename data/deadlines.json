@@ -178,5 +178,17 @@
     "sender": "Google Play <googleplay-noreply@google.com>",
     "done": false,
     "created": "2026-08-25"
+  },
+  "підписка_railway_corporation_-_оплата|2026-08-25": {
+    "kind": "contract",
+    "title": "Підписка Railway Corporation - оплата",
+    "org": "Railway Corporation",
+    "deadline": "2026-08-25",
+    "action": "Оновити платіжну інформацію для підписки Railway Corporation",
+    "why": "Без оновлення платіжної інформації підписка на Railway Corporation буде призупинена.",
+    "uid": "77925",
+    "sender": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
+    "done": false,
+    "created": "2026-08-25"
   }
 }
