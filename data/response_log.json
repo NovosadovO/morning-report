@@ -6545,6 +6545,12 @@
       "category": "confirm",
       "question": "gate_dl_skip: 📄 ДЕДЛАЙН У ПОШТІ — ДОГОВІР",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-25T20:46:48.357192+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "gx_mute_986c7114d2"
     }
   ]
 }
