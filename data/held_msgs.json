@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-25T02:00:52.865479",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin just posted its biggest weekly dollar g</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77946"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77946"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77946"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77946"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77946"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77946"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-25T02:00:54.286012",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Administratívny pracovník / pracovníčka в kryptotax.sk</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -512,6 +473,45 @@
       "kind": "chunk",
       "text": "🔮🤖 <b>АСТРО-АНАЛІЗ ВСІ АСПЕКТИ</b>\n\n🌙 <b>ТРАНЗИТИ СЬОГОДНІ</b> (AI тимчасово перевантажена, без інтерпретації)\n🔮 АСТРО — транзити до натальних планет\n🌔 Прибуваючий гіббус  ·  Місяць у Козеріг ♑\n🏔 Серйозність, амбіції, структура\n\n🌟 ♃ Юпітер увійшов у знак твого Асценденту (Leo)! Це РІДКІСНИЙ і ВАЖЛИВИЙ транзит — торкається особистості, зовнішнього вигляду, нового циклу в житті.\n\n🔴 ♂ Марс Кон'юнкція ☌ натальний ♃ Юпітер  (0.2°)\n    ↳ Велика енергія і ентузіазм. Дерзай — успіх близько.\n🟢 ☀️ Сонце Трин △ натальний ⛢ Уран  (0.5°)\n    ↳ Несподівані позитивні зміни. Будь відкритим до нового.\n🟢 ⛢ Уран Трин △ натальний ☿ Меркурій  (0.5°)\n    ↳ Блискучі ідеї і інсайти. Записуй все що приходить!\n🔴 ♂ Марс Опозиція ☍ натальний ♆ Нептун  (0.7°)\n    ↳ Дії марно витрачаються. Перевір чи ти йдеш у правильному напрямку.\n🟡 ♄ Сатурн Квінконкс ⚻ натальний ♇ Плутон  (0.7°)\n🔴 ♃ Юпітер Квадрат □ натальний ♇ Плутон  (1.2°)\n\n📌 УВАГА: дані з Calendar недоступні. Зараз вечір/ніч — МОЖЛИВО Олег на нічній зміні (18:00–06:00) або вдома. НЕ пиши впевнено що він вдома — уточни або ",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-25T03:12:02.128922",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Profesia.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk»\n\n<i>«Nové pracovné ponuky \"Personalizované pracovné ponuky e-mailom\"\r\n\r\nLogo Profesia ( https://www.profesia.sk/?utm_medium=mail&amp;utm_source=10007&amp;utm_campaign=10007&amp;utm_term=2026-08-25&amp;eid=6a8ce296504d00899366e666a1548b86&amp;utm_content=logo )\r\n\r\n*************************************************************...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77952"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77952"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77952"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77952"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77952"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77952"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
