@@ -49,7 +49,7 @@
     "confirmed": true,
     "skipped": false,
     "first_seen": "2026-08-23",
-    "note": "Платіж за підписку Railway Corporation був невдалим. Потрібно оновити платіжну інформацію.",
+    "note": "Невдала спроба списання за підписку Railway Corporation. Потрібно оновити платіжну інформацію.",
     "amount": "12.32",
     "sender": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
     "subject": "$12.32 payment to Railway Corporation was unsuccessful again",
