@@ -700,5 +700,11 @@
     "subject": "OpenAI's CFO Just Shared a Timeline",
     "answer": "yes",
     "ts": "2026-08-25T20:27:16.933073+00:00"
+  },
+  "gate_dl_skip|_дедлайн_у_пошті_договір|2026-08-25t20_46_45": {
+    "action": "gate_dl_skip",
+    "subject": "📄 ДЕДЛАЙН У ПОШТІ — ДОГОВІР",
+    "answer": "yes",
+    "ts": "2026-08-25T20:46:45.822817+00:00"
   }
 }
