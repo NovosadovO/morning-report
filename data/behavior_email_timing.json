@@ -1,9 +1,4 @@
 {
-  "77550": {
-    "sender": "newsletter@istores.sk",
-    "sender_raw": "iStores Apple Premium Partner <newsletter@istores.sk>",
-    "seen_ts": "2026-08-16T11:09:45.206602+00:00"
-  },
   "77551": {
     "sender": "googleaistudio-noreply@google.com",
     "sender_raw": "Google AI Studio <googleaistudio-noreply@google.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@plunge.com",
     "sender_raw": "PLUNGE <hello@plunge.com>",
     "seen_ts": "2026-08-25T16:16:55.011097+00:00"
+  },
+  "77985": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-25T16:21:08.068481+00:00"
   }
 }
