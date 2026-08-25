@@ -6164,6 +6164,16 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "весь сектор RWA додав 50.3% за 24 години (капіталізація $71.20B)"
+    },
+    {
+      "ts": "2026-08-25T04:30:19.712605+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Оплатити Railway Corporation",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-25"
+      }
     }
   ]
 }
