@@ -6190,6 +6190,16 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "ONDO (твоя позиція) виріс на 5.8% за 24 години (зараз $0.39336)"
+    },
+    {
+      "ts": "2026-08-25T06:00:17.103797+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-25"
+      }
     }
   ]
 }
