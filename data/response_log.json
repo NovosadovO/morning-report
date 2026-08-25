@@ -6200,6 +6200,16 @@
         "kind": "reminder",
         "date": "2026-08-25"
       }
+    },
+    {
+      "ts": "2026-08-25T06:00:21.410990+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Онлайн-реєстрація на рейс Ryanair",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-25"
+      }
     }
   ]
 }
