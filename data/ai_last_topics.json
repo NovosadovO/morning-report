@@ -1,4 +1,39 @@
 {
+  "calendar|2026-08-25t06_48_44_888181": {
+    "topic": "calendar",
+    "gist": "Олеже, нагадую, що сьогодні на 09:00 у тебе стоїть дві події: купити квіти на річницю та онлайн-реєстрація на рейс Ryanair. З огляду на те, що квіти ти *вже* ви",
+    "ts": "2026-08-25T06:48:44.888181"
+  },
+  "action_detect|2026-08-25t06_02_46_395320": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-25T06:02:46.395320"
+  },
+  "action_detect|2026-08-25t06_02_35_592461": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти до річниці\", \"action_date\": null, \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти до річниці, ",
+    "ts": "2026-08-25T06:02:35.592461"
+  },
+  "action_detect|2026-08-25t06_02_24_756816": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти на річницю сьог",
+    "ts": "2026-08-25T06:02:24.756816"
+  },
+  "action_detect|2026-08-25t06_02_24_456293": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки вказ",
+    "ts": "2026-08-25T06:02:24.456293"
+  },
+  "action_detect|2026-08-25t06_02_13_469640": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Купити квіти для річниці.\"}",
+    "ts": "2026-08-25T06:02:13.469640"
+  },
+  "briefing|2026-08-25t06_02_10_423741": {
+    "topic": "briefing",
+    "gist": "🧭 ВЕКТОР ДНЯ Олеже, твій ранковий старт о 05:00 сьогодні, 25 серпня, є чітким сигналом до дисципліни, яка зараз є ключовою для всіх твоїх цілей, особливо для сх",
+    "ts": "2026-08-25T06:02:10.423741"
+  },
   "themes_ai|2026-08-25t06_01_55_996307": {
     "topic": "themes_ai",
     "gist": "Який твій пріоритет сьогодні між річницею та бігом, щоб не пропустити жодне з запланованих завдань?  🏃 БІГ Остання зафіксована пробіжка була 23 дні тому, 2 серп",
@@ -263,40 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення є запитом на надання детального розкладу",
     "ts": "2026-08-24T21:34:11.071282"
-  },
-  "context_ask_ai|2026-08-24t21_34_02_979241": {
-    "topic": "context_ask_ai",
-    "gist": "Олег, я розумію, що ти вказуєш на свій графік, який вже є у календарі. Я бачу твій загальний змінний графік і як догляд за обличчям підлаштовується під нього (р",
-    "ts": "2026-08-24T21:34:02.979241"
-  },
-  "action_detect|2026-08-24t21_34_00_071524": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запис до дерматолога\", \"action_date\": \"2023-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Олег має запис до де",
-    "ts": "2026-08-24T21:34:00.071524"
-  },
-  "action_detect|2026-08-24t21_33_19_513610": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2024-08-24\", \"action_time\": null, \"action_summary\": \"Не забудь прийняти A",
-    "ts": "2026-08-24T21:33:19.513610"
-  },
-  "context_ask_ai|2026-08-24t21_33_11_557509": {
-    "topic": "context_ask_ai",
-    "gist": "Олег, розумію, що ти хочеш на місяць. Але я не можу автоматично додати \"Догляд за обличчям\" на цілий місяць, враховуючи твій змінний графік і різні часи для вих",
-    "ts": "2026-08-24T21:33:11.557509"
-  },
-  "action_detect|2026-08-24t21_32_31_797878": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-08-24\", \"action_time\": null, \"action_summary\": \"Сьогодні Олег пропус",
-    "ts": "2026-08-24T21:32:31.797878"
-  },
-  "context_ask_ai|2026-08-24t21_32_23_991963": {
-    "topic": "context_ask_ai",
-    "gist": "Олег, це великий обсяг подій, і я не можу додати їх усі автоматично одним запитом, бо твій графік змін вимагає окремої обробки кожного дня. Також я не можу ство",
-    "ts": "2026-08-24T21:32:23.991963"
-  },
-  "action_detect|2026-08-24t21_31_39_267066": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Сьогодні ти пропустив Armolo",
-    "ts": "2026-08-24T21:31:39.267066"
   }
 }
