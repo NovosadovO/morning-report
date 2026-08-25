@@ -6292,6 +6292,12 @@
       "category": "event_done",
       "question": "📅 Біг та дерматолог\nПланувалась до 11:00 — виконано?",
       "answer": "skip"
+    },
+    {
+      "ts": "2026-08-25T10:37:02.316253+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
