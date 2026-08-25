@@ -68,8 +68,8 @@
         "uid": "77982"
       }
     ],
-    "active": true,
-    "cancelled": false,
+    "active": false,
+    "cancelled": true,
     "confirmed": true,
     "skipped": false,
     "first_seen": "2026-08-25",
@@ -79,6 +79,7 @@
     "sender": "Google Play <googleplay-noreply@google.com>",
     "subject": "Квитанція замовлення в Google Play від 25 серп. 2026 р.",
     "uid": "77982",
-    "last_seen": "2026-08-25"
+    "last_seen": "2026-08-25",
+    "cancelled_at": "2026-08-25"
   }
 }
