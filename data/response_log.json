@@ -6506,6 +6506,12 @@
       "category": "confirm",
       "question": "gate_cal_add: Відвідування дерматолога",
       "answer": "no"
+    },
+    {
+      "ts": "2026-08-25T20:25:56.188857+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_05d3625130"
     }
   ]
 }
