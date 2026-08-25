@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-08-25t09_44_41_188893": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-25T09:44:41.188893"
+  },
+  "email_ai_item|2026-08-25t09_39_05_472978": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є ранковим дайджестом ринків за 25 серпня 2026 року, що містить інформацію про індекси, криптовалюти та акції США. Також лист ",
+    "ts": "2026-08-25T09:39:05.472978"
+  },
   "email_ai_item|2026-08-25t09_36_55_808318": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Discord інформує про пропущені повідомлення в каналі Sui Whale. Він не містить конкретних дій чи дедлайнів, а є лише спові",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийом Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег пропустив прийом Armolopi",
     "ts": "2026-08-25T07:02:58.905037"
-  },
-  "action_detect|2026-08-25t07_02_47_882716": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Ryanair\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, коли в",
-    "ts": "2026-08-25T07:02:47.882716"
-  },
-  "action_detect|2026-08-25t07_02_36_903477": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": \"2026-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти на річницю сьог",
-    "ts": "2026-08-25T07:02:36.903477"
   }
 }
