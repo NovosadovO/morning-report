@@ -6298,6 +6298,17 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-08-25T10:37:24.591379+00:00",
+      "category": "calendar_button",
+      "question": "✈️ Онлайн-реєстрація на рейс Ryanair",
+      "answer": "missed",
+      "extra": {
+        "stage": "after",
+        "when": "09:00–10:00",
+        "note": null
+      }
     }
   ]
 }
