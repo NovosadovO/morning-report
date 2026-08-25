@@ -6174,6 +6174,16 @@
         "kind": "reminder",
         "date": "2026-08-25"
       }
+    },
+    {
+      "ts": "2026-08-25T04:30:24.049983+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Прийом Armolopid Plus",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-08-25"
+      }
     }
   ]
 }
