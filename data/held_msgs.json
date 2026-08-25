@@ -1,3 +1,43 @@
 {
-  "items": []
+  "items": [
+    {
+      "ts": "2026-08-25T23:27:03.716530",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Forbes через LinkedIn</b>\n📋 Тема: «Big, Bold, Breaking Ground: Forbes’ Most Innovative Large Companies Li»\n\n<i>«Forbes P.M.\r\n\r\nАвтор: Forbes\r\n\r\n\r\nАвтор: Forbes\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/big-bold-breaking-ground-forbes-most-innovative-large-ictoc?lipi=urn%3Ali%3Apage%3Aemail_email_series_follow...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77997"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77997"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77997"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77997"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77997"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77997"
+            }
+          ]
+        ]
+      }
+    }
+  ]
 }
