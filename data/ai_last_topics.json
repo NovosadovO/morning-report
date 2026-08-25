@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-25t12_14_57_627468": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від LinkedIn є сповіщенням про нову вакансію 'Head of Operations (Gibraltar)' в компанії Confidential, розташованій в Іспанії, яка від",
+    "ts": "2026-08-25T12:14:57.627468"
+  },
   "proactive_ai|2026-08-25t12_06_00_808029": {
     "topic": "proactive_ai",
     "gist": "Привіт, Олеже! Ти казав, що відпочиваєш, як ранок пройшов? Чи вдалося вже щось поїсти по плану 16:8?",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є астрологічним аналізом для Олега, що опис",
     "ts": "2026-08-25T10:02:35.187573"
-  },
-  "action_detect|2026-08-25t10_02_24_139001": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти до річниці\", \"action_date\": \"2024-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти до р",
-    "ts": "2026-08-25T10:02:24.139001"
   }
 }
