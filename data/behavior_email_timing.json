@@ -1,9 +1,4 @@
 {
-  "77554": {
-    "sender": "cru.notifier@3s-api.eu",
-    "sender_raw": "Ionian Cruises <cru.notifier@3s-api.eu>",
-    "seen_ts": "2026-08-16T12:13:01.917584+00:00"
-  },
   "77555": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
     "seen_ts": "2026-08-25T16:35:24.801498+00:00"
+  },
+  "77988": {
+    "sender": "temu@eu.temuemail.com",
+    "sender_raw": "Temu <temu@eu.temuemail.com>",
+    "seen_ts": "2026-08-25T16:51:45.961666+00:00"
   }
 }
