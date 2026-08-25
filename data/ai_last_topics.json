@@ -1,4 +1,19 @@
 {
+  "personal_ai|2026-08-25t22_00_26_553621": {
+    "topic": "personal_ai",
+    "gist": "Зараз 22:00, і завтрашній ранок насичений, тож потрібно підготуватись: ти ще не купив квіти на річницю та пропустив онлайн-реєстрацію на рейс Ryanair, яка також",
+    "ts": "2026-08-25T22:00:26.553621"
+  },
+  "action_detect|2026-08-25t21_31_16_125840": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-08-26\", \"action_time\": \"12:10\", \"action_summary\": \"Олег має візит до де",
+    "ts": "2026-08-25T21:31:16.125840"
+  },
+  "action_detect|2026-08-25t21_31_02_196376": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Надіслати дані з QWatch Pro\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надішли дані з QWatch Pr",
+    "ts": "2026-08-25T21:31:02.196376"
+  },
   "money|2026-08-25t21_28_13_793663": {
     "topic": "money",
     "gist": "```json [   {     \"uid\": \"77982\",     \"vendor\": \"Google Commerce Limited\",     \"amount\": \"7.99\",     \"currency\": \"EUR\",     \"date\": \"2026-08-25\",     \"kind\": \"s",
@@ -283,20 +298,5 @@
     "topic": "personal_ai",
     "gist": "Твої кроки сьогодні вже перевищили ціль (19356 проти 10000), але пробіжку на 17:00 ти пропустив. Враховуючи, що о 19:00 вже вечір і не підтверджено, чи ти вдома",
     "ts": "2026-08-25T19:00:56.156791"
-  },
-  "action_detect|2026-08-25t19_00_23_158423": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення містить аналіз крипторинку та запитання ",
-    "ts": "2026-08-25T19:00:23.158423"
-  },
-  "msg_interview_practice|2026-08-25t19_00_15_460497": {
-    "topic": "MSG_INTERVIEW_PRACTICE",
-    "gist": "Привіт Олеже! 🎤  Вечір вівторка, і ти вільний — чудовий час для \"інвестиційної розминки\". Бачу, крипторинок показує цікаву динаміку: SOL та BTC зросли на +2.2% ",
-    "ts": "2026-08-25T19:00:15.460497"
-  },
-  "money|2026-08-25t18_57_51_801157": {
-    "topic": "money",
-    "gist": "```json [   {     \"uid\": \"77982\",     \"vendor\": \"Google Commerce Limited\",     \"amount\": \"7.99\",     \"currency\": \"€\",     \"date\": \"2026-08-25\",     \"kind\": \"sub",
-    "ts": "2026-08-25T18:57:51.801157"
   }
 }
