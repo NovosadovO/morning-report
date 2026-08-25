@@ -130,5 +130,15 @@
     "state": "snoozed",
     "ts": "2026-08-25T13:25:43",
     "until": "2026-08-25T19:25:43"
+  },
+  "generic|t|-": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "",
+    "title": "",
+    "action": "seen",
+    "label": "seen",
+    "state": "open",
+    "ts": "2026-08-25T13:25:48"
   }
 }
