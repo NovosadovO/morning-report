@@ -6286,6 +6286,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_b54786cf28"
+    },
+    {
+      "ts": "2026-08-25T10:36:08.085019+00:00",
+      "category": "event_done",
+      "question": "📅 Біг та дерматолог\nПланувалась до 11:00 — виконано?",
+      "answer": "skip"
     }
   ]
 }
