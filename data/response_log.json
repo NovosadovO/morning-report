@@ -6557,6 +6557,12 @@
       "category": "confirm",
       "question": "gx_mute: крипто",
       "answer": "no"
+    },
+    {
+      "ts": "2026-08-25T20:46:58.163435+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dl_skip_0a2f12e911"
     }
   ]
 }
