@@ -1,4 +1,24 @@
 {
+  "action_detect|2026-08-25t20_47_06_565277": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Обстеження у дерматолога\", \"action_date\": \"2026-08-26\", \"action_time\": \"12:10\", \"action_summary\": \"Олег має обстеже",
+    "ts": "2026-08-25T20:47:06.565277"
+  },
+  "action_detect|2026-08-25t20_33_45_623148": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-08-26\", \"action_time\": \"12:10\", \"action_summary\": \"Завтра, 26.08, о 12:",
+    "ts": "2026-08-25T20:33:45.623148"
+  },
+  "msg_deep_analysis|2026-08-25t20_33_39_185073": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋 Вечір вівторка, 25 серпня, і ти зараз вдома, маєш вільний час, тому давай підіб’ємо деякі підсумки.  На жаль, за тиждень ти набрав 1.3 кг, і тво",
+    "ts": "2026-08-25T20:33:39.185073"
+  },
+  "deadlines|2026-08-25t20_32_27_432943": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"77982\",     \"kind\": \"contract\",     \"title\": \"Продовження підписки ChatGPT Go\",     \"org\": \"OpenAI\",     \"deadline\": \"2026-08-25\",    ",
+    "ts": "2026-08-25T20:32:27.432943"
+  },
   "action_detect|2026-08-25t20_30_13_242577": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити квіти\", \"action_date\": \"null\", \"action_time\": \"null\", \"action_summary\": \"Перевірити, чи куплені квіти на річ",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити листи Pelikan та Ionian Cruises\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зайди в п",
     "ts": "2026-08-25T17:28:51.741792"
-  },
-  "msg_vip_email|2026-08-25t17_28_43_364539": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже!  Що робити з квитками? Бачу, що ти пропустив онлайн-реєстрацію на рейс Ryanair сьогодні, а також маєш зірочку на пошті від Pelikan про відкриття о",
-    "ts": "2026-08-25T17:28:43.364539"
-  },
-  "action_detect|2026-08-25t17_23_16_209996": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити квитанцію Google Play\", \"action_date\": \"2026-08-25\", \"action_time\": null, \"action_summary\": \"Перевірити ",
-    "ts": "2026-08-25T17:23:16.209996"
-  },
-  "msg_event_soon|2026-08-25t17_23_08_786280": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ✅  Бачу, щойно, о 17:02, відбулося списання коштів за підписку ChatGPT Go. Це вже факт, тому готуватись до нього не потрібно. Зараз важливо переві",
-    "ts": "2026-08-25T17:23:08.786280"
-  },
-  "mailcal_extract|2026-08-25t17_22_44_586820": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"77982\",     \"title\": \"Списання коштів за підписку ChatGPT Go\",     \"date\": \"2026-08-25\",     \"time\": \"17:02\",     \"kind\": \"payment\",  ",
-    "ts": "2026-08-25T17:22:44.586820"
   }
 }
