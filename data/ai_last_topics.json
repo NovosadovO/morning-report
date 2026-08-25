@@ -1,4 +1,19 @@
 {
+  "openloop_promises|2026-08-25t14_52_06_456140": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-25T14:52:06.456140"
+  },
+  "action_detect|2026-08-25t14_32_58_792189": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег переніс подію 'купити квіти — річн",
+    "ts": "2026-08-25T14:32:58.792189"
+  },
+  "msg_deep_analysis|2026-08-25t14_32_51_215810": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Обідаємо, і є нагода глянути на кілька цікавих моментів, що вибиваються із загальної картини. Бачу, твій криптопортфель за тиждень показав гарн",
+    "ts": "2026-08-25T14:32:51.215810"
+  },
   "deadlines|2026-08-25t14_32_17_237538": {
     "topic": "deadlines",
     "gist": "```json [] ```",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-25T11:30:52.140260"
-  },
-  "action_detect|2026-08-25t11_26_10_880474": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відпочинок/Сон\", \"action_date\": \"2024-08-25\", \"action_time\": null, \"action_summary\": \"Негайно знайди можливість для",
-    "ts": "2026-08-25T11:26:10.880474"
-  },
-  "msg_health_pulse|2026-08-25t11_26_03_516684": {
-    "topic": "MSG_HEALTH_PULSE",
-    "gist": "Привіт Олеже! 🩺  Твої поточні дані показують критичну ситуацію зі сном: \"None год\" сьогодні зранку. Це прямо впливає на вагу (+1.3 кг за тиждень, до 84.5 кг), я",
-    "ts": "2026-08-25T11:26:03.516684"
-  },
-  "action_detect|2026-08-25t11_25_48_910809": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийом Armolopid Plus\", \"action_date\": \"2023-08-25\", \"action_time\": null, \"action_summary\": \"Сьогодні, 25 серпня, п",
-    "ts": "2026-08-25T11:25:48.910809"
   }
 }
