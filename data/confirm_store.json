@@ -5143,7 +5143,40 @@
     "action": "cw_miss",
     "pid": "b83236d964",
     "subject": "✈️ Онлайн-реєстрація на рейс Ryanair",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 77567,
+        "kb": [
+          [
+            {
+              "text": "✅ Було",
+              "callback_data": "cw_done_b83236d964"
+            },
+            {
+              "text": "❌ Не було",
+              "callback_data": "cw_miss_b83236d964"
+            }
+          ],
+          [
+            {
+              "text": "⏭ Перенесли",
+              "callback_data": "cw_moved_b83236d964"
+            },
+            {
+              "text": "✍️ Нотатка",
+              "callback_data": "cw_note_b83236d964"
+            }
+          ],
+          [
+            {
+              "text": "🤖 Що далі?",
+              "callback_data": "cw_next_b83236d964"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-25T10:34:52.498703+00:00"
   }
 }
