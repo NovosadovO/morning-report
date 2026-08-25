@@ -6250,6 +6250,12 @@
         "kind": "reminder",
         "date": "2026-08-26"
       }
+    },
+    {
+      "ts": "2026-08-25T10:34:56.116350+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_miss_b83236d964"
     }
   ]
 }
