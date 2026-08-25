@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-25T01:01:44.808833",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Administratívny pracovník / pracovníčka в kryptotax.sk</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77924"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77924"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77924"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77924"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77924"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77924"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-25T01:01:48.409555",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 22 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '22 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 85.2 кг, ціль 78 кг (тренд +2.0 кг за останні 5 замірів). Кроки: 19356 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 09:00 💍 купити квіти — річниця, 09:00 Біг та дерматолог, 09:00 ✈️ Онлайн-реєстрація на рейс Ryanair, 15:00 Навчання інвестиціям, 17:00 Біг",
@@ -413,6 +374,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-25T03:00:58.455311",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 Book review: Resistance Money</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77951"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77951"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77951"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77951"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77951"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77951"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
