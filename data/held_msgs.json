@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-25T02:00:49.913871",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Trump Defends AI Data Centers, Saying ‘Smart Ones’ Want Them</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77950"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77950"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77950"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77950"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77950"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77950"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-25T02:00:51.452737",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - August 24</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
@@ -578,6 +539,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-25T03:01:12.037830",
+      "kind": "chunk",
+      "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 23 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '23 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 85.2 кг, ціль 78 кг (тренд +2.0 кг за останні 5 замірів). Кроки: 19356 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 09:00 💍 купити квіти — річниця, 09:00 Біг та дерматолог, 09:00 ✈️ Онлайн-реєстрація на рейс Ryanair, 15:00 Навчання інвестиціям, 17:00 Біг",
+      "keyboard": null
     }
   ]
 }
