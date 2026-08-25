@@ -1,9 +1,4 @@
 {
-  "77540": {
-    "sender": "info@notifikacie.allegro.sk",
-    "sender_raw": "Allegro <info@notifikacie.allegro.sk>",
-    "seen_ts": "2026-08-16T08:04:46.885393+00:00"
-  },
   "77541": {
     "sender": "streetguide@sizeer.sk",
     "sender_raw": "Sizeer Street guide <streetguide@sizeer.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
     "seen_ts": "2026-08-25T11:55:16.967570+00:00"
+  },
+  "77974": {
+    "sender": "newsletter@mail.dailybones.com",
+    "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
+    "seen_ts": "2026-08-25T12:05:31.574507+00:00"
   }
 }
