@@ -6695,6 +6695,12 @@
       "category": "confirm",
       "question": "email_delete: Ви надали сервісу DI.FM деякі дані свого облікового запису Google",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-25T22:42:45.687170+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_3d35df92ff"
     }
   ]
 }
