@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-25T01:01:36.024764",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Trump Defends AI Data Centers, Saying ‘Smart Ones’ Want Them</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77950"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77950"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77950"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77950"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77950"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77950"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-25T01:01:37.761070",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - August 24</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
@@ -577,6 +538,12 @@
       "ts": "2026-08-25T02:49:58.407243",
       "kind": "dates",
       "text": "🎂 <b>ЧЕРЕЗ 7 ДН. — день народження</b>\n━━━━━━━━━━━━━━━━━━━━\n🎉 <b>Олі</b> — 01.09\n\n🗓 Ще 7 дн. — можна зробити спокійно, без нервів.\nЗабудеш — це не «ой», це образа на роками.\n➡️ Вирішити краще сьогодні: подарунок, дзвінок чи зустріч.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-25T02:49:59.571636",
+      "kind": "dates",
+      "text": "🎂 ЧЕРЕЗ 7 ДН. — день народження\n━━━━━━━━━━━━━━━━━━━━\n🎉 Олі — 01.09\n\n🗓 Ще 7 дн. — можна зробити спокійно, без нервів.\nЗабудеш — це не «ой», це образа на роками.\n➡️ Вирішити краще сьогодні: подарунок, дзвінок чи зустріч.",
       "keyboard": null
     }
   ]
