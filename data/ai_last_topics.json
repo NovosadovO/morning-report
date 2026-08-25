@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-08-25t11_16_05_736607": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"77660\",     \"title\": \"Скасовано: Paxos and Antipaxos Boat Tour from Corfu\",     \"date\": \"2026-08-19\",     \"time\": \"08:20\",     \"kind\":",
+    "ts": "2026-08-25T11:16:05.736607"
+  },
   "action_detect|2026-08-25t11_11_20_326249": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати в Apple H",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Купити квіти на річницю\", \"action_date\": \"2024-08-25\", \"action_time\": \"09:00\", \"action_summary\": \"Купити квіти на р",
     "ts": "2026-08-25T09:02:09.294170"
-  },
-  "themes_ai|2026-08-25t09_02_05_462279": {
-    "topic": "themes_ai",
-    "gist": "Олеже, 09:01, 25 серпня.  🏃 БІГ 23 дні без бігу – це втрата тренованості, що зробить наступну пробіжку значно важчою. Запланований біг на 17:00 – є час відновит",
-    "ts": "2026-08-25T09:02:05.462279"
   }
 }
