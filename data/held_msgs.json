@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-25T02:00:48.325952",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Book review: Resistance Money</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77951"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77951"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77951"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77951"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77951"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77951"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-25T02:00:49.913871",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Trump Defends AI Data Centers, Saying ‘Smart Ones’ Want Them</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -574,6 +535,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_77925"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-25T03:01:08.184925",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Administratívny pracovník / pracovníčka в kryptotax.sk</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77924"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77924"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77924"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77924"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77924"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77924"
             }
           ]
         ]
