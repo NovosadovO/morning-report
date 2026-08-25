@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-25t12_51_57_050693": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Temu повідомляє, що 25 серпня 2026 року було отримано повернення кредиту, і просить підтвердити його якомога швидше. Також лис",
+    "ts": "2026-08-25T12:51:57.050693"
+  },
   "mailcal_extract|2026-08-25t12_47_31_635980": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-08-25T10:29:55.668507"
-  },
-  "openloop_promises|2026-08-25t10_18_34_650197": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {     \"what\": \"надіслати скріншоти повідомлень від туроператора\",     \"to\": \"Booking.com Customer Service (Stephanie)\",     \"date\": null   },   {   ",
-    "ts": "2026-08-25T10:18:34.650197"
   }
 }
