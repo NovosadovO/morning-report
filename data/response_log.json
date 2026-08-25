@@ -6315,6 +6315,12 @@
       "category": "confirm",
       "question": "cw_miss: ✈️ Онлайн-реєстрація на рейс Ryanair",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-25T10:37:34.427305+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_2eb2505139"
     }
   ]
 }
