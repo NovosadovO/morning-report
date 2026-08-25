@@ -298,5 +298,20 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від Pelikan.sk нагадує Олегу про необхідність онлайн-реєстрації на рейс Ryanair з кодом бронювання Y9SB5U. Реєстрація відкриваєтьс",
     "ts": "2026-08-25T11:02:02.868993"
+  },
+  "email_ai_item|2026-08-25t13_55_11_393643": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від CoinMarketCap Spotlight інформує про останні новини криптоіндустрії, зокрема про відкриття Пакистаном порталу ліцензування криптов",
+    "ts": "2026-08-25T13:55:11.393643"
+  },
+  "mailcal_extract|2026-08-25t13_33_21_535823": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"77660\",     \"title\": \"Скасовано: Paxos and Antipaxos Boat Tour from Corfu\",     \"date\": \"2026-08-19\",     \"time\": \"08:20\",     \"kind\":",
+    "ts": "2026-08-25T13:33:21.535823"
+  },
+  "action_detect|2026-08-25t13_30_49_509101": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2024-08-25\", \"action_time\": \"15:00\", \"action_summary\": \"Відвідати навчання і",
+    "ts": "2026-08-25T13:30:49.509101"
   }
 }
