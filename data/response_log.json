@@ -6446,6 +6446,12 @@
       "category": "confirm",
       "question": "email_delete: Dobierka je teraz k dispozícii!",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-25T19:03:04.637437+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_b44e95e3e9"
     }
   ]
 }
