@@ -218,5 +218,19 @@
     "paid": true,
     "paid_at": "2026-08-25",
     "created": "2026-08-25"
+  },
+  "ubian_eshop|0_99|": {
+    "vendor": "Ubian Eshop",
+    "amount": "0.99",
+    "currency": "EUR",
+    "invoice_no": "13904874",
+    "due": "",
+    "uid": "77978",
+    "sender": "Ubian Eshop <no-reply@ubian.sk>",
+    "subject": "UBIAN - Expiry of a parking ticket",
+    "note": "Підтвердження оплати паркувального талона.",
+    "paid": true,
+    "paid_at": "2026-08-25",
+    "created": "2026-08-25"
   }
 }
