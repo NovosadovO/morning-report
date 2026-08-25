@@ -1,4 +1,24 @@
 {
+  "openloop_promises|2026-08-25t11_49_36_395592": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"надіслати скріншоти повідомлень від туроператора\",     \"to\": \"Booking.com Customer Service (Stephanie)\",     \"date\": null   },   {   ",
+    "ts": "2026-08-25T11:49:36.395592"
+  },
+  "action_detect|2026-08-25t11_32_55_463321": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Релаксація\", \"action_date\": \"2024-08-25\", \"action_time\": null, \"action_summary\": \"Виділити 20-30 хвилин для повної ",
+    "ts": "2026-08-25T11:32:55.463321"
+  },
+  "msg_health_pulse|2026-08-25t11_32_48_244298": {
+    "topic": "MSG_HEALTH_PULSE",
+    "gist": "Привіт Олеже! ❤️ Ранок вівторка, 25 серпня, а ти вдома і маєш вільний час, це чудово. Проте, дивлюсь на твої дані і бачу одну річ, яка одразу кидається в очі — ",
+    "ts": "2026-08-25T11:32:48.244298"
+  },
+  "action_detect|2026-08-25t11_32_33_638343": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийом Armolopid Plus\", \"action_date\": \"2024-08-25\", \"action_time\": null, \"action_summary\": \"Врахувати пропущений п",
+    "ts": "2026-08-25T11:32:33.638343"
+  },
   "msg_deep_analysis|2026-08-25t11_32_25_159732": {
     "topic": "MSG_DEEP_ANALYSIS",
     "gist": "Привіт Олеже! 👋  Ти зараз на зміні чи вдома? Бачу, що цей ранок вівторка, 25 серпня, приносить досить змішані новини, тож давай швидко розберемося, що до чого. ",
@@ -278,25 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Discord інформує про пропущені повідомлення в каналі Sui Whale. Він не містить конкретних дій чи дедлайнів, а є лише спові",
     "ts": "2026-08-25T09:36:55.808318"
-  },
-  "proactive_ai|2026-08-25t09_31_15_773873": {
-    "topic": "proactive_ai",
-    "gist": "Привіт, Олеже! Бачу, твоя вага трохи підросла за останні три дні — з 84.3 до 85.2 кг. Щоб це скоригувати, згадай про дієту 16:8, не забувай пити достатньо води ",
-    "ts": "2026-08-25T09:31:15.773873"
-  },
-  "action_detect|2026-08-25t09_28_30_638081": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-25T09:28:30.638081"
-  },
-  "action_detect|2026-08-25t09_10_25_582443": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Крипто Дашборд\", \"action_date\": \"2024-08-25\", \"action_time\": null, \"action_summary\": \"Переглянути крипто дашборд на",
-    "ts": "2026-08-25T09:10:25.582443"
-  },
-  "email_ai_item|2026-08-25t09_08_20_163230": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від Austrian Airlines є інформаційним бюлетенем з темою «One more summer, please! ☀️». Він містить посилання для перегляду ",
-    "ts": "2026-08-25T09:08:20.163230"
   }
 }
