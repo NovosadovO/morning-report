@@ -1,9 +1,4 @@
 {
-  "77534": {
-    "sender": "news@mail.lidlplus.sk",
-    "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
-    "seen_ts": "2026-08-16T05:41:14.674471+00:00"
-  },
   "77535": {
     "sender": "hello@news.footshop.sk",
     "sender_raw": "Footshop <hello@news.footshop.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@pelikan.sk",
     "sender_raw": "Roland z Pelikána <newsletter@pelikan.sk>",
     "seen_ts": "2026-08-25T09:50:21.268648+00:00"
+  },
+  "77968": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-08-25T10:15:01.744299+00:00"
   }
 }
