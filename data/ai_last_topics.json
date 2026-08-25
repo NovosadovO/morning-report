@@ -1,4 +1,9 @@
 {
+  "msg_deep_analysis|2026-08-25t11_32_25_159732": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Ти зараз на зміні чи вдома? Бачу, що цей ранок вівторка, 25 серпня, приносить досить змішані новини, тож давай швидко розберемося, що до чого. ",
+    "ts": "2026-08-25T11:32:25.159732"
+  },
   "action_detect|2026-08-25t11_30_52_140260": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від Austrian Airlines є інформаційним бюлетенем з темою «One more summer, please! ☀️». Він містить посилання для перегляду ",
     "ts": "2026-08-25T09:08:20.163230"
-  },
-  "action_detect|2026-08-25t09_02_55_582880": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Планування витрат\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Спланувати свої витрати сьогодні, ",
-    "ts": "2026-08-25T09:02:55.582880"
   }
 }
