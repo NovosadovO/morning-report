@@ -5183,7 +5183,44 @@
     "action": "email_delete",
     "pid": "77963",
     "subject": "Crypto & Fiat Operations Specialist в BITEXPERT",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 77565,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77963"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77963"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77963"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77963"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77963"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77963"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-25T10:35:32.838048+00:00"
   }
 }
