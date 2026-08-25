@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-25T00:49:50.092420",
-      "kind": "dates",
-      "text": "🎂 СЬОГОДНІ — ДЕНЬ НАРОДЖЕННЯ\n━━━━━━━━━━━━━━━━━━━━\n🎉 тест\n\n⚡ Сьогодні. Далі відкладати нема куди.\nОдин день прострочення — і замість подарунка вже вибачення.\n➡️ Візьми ідеї подарунка зараз, поки є з чого вибрати.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-25T00:49:53.086056",
       "kind": "dates",
       "text": "💍 <b>СЬОГОДНІ — РІЧНИЦЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🎉 <b>купити квіти</b>\n\n⚡ Сьогодні. Далі відкладати нема куди.\nПривітати з запізненням коштує дорожче, ніж вчасно.\n➡️ Візьми ідеї подарунка зараз, поки є з чого вибрати.\n\n📝 та фотоальбом на Фотоапарат",
@@ -541,6 +535,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_77935"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-25T02:00:55.777814",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>$12.32 payment to Railway Corporation was unsuccessful again</b>\n👤 Railway Corporation &lt;failed-payments+acct_1HNrvlCJ",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77925"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77925"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77925"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77925"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77925"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77925"
             }
           ]
         ]
