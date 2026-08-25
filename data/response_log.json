@@ -6362,6 +6362,12 @@
       "category": "confirm",
       "question": "email_delete: Úspešne podaná žiadosť!",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-25T13:25:59.745463+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_2fa812637e"
     }
   ]
 }
