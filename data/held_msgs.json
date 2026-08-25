@@ -125,6 +125,45 @@
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n📌 Socios.com: зміна способу входу\n📆 до 2026-08-27\n🏢 Socios.com\n\n➡️ Переконатися, що обліковий запис Socios.com налаштований на вхід за допомогою Passkey, і перевірити електронну пошту.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-26T01:37:19.759740",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Defiant</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Cosmos Labs Tells All EVM Chains to Halt»\n\n<i>«**gm, Defiers!**\n\nThese are the biggest stories in DeFi and crypto:\n\n* **[Cosmos Labs](https://thedefiant.io/news/blockchains/cosmos-labs-urges-evm-chains-halt-shared-bug-drains-three-networks)**[ tells every chain on its EVM module to halt and patch](https://thedefiant.io/news/blockchains/cosmos-la...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77999"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77999"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77999"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77999"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77999"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77999"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
