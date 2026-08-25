@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-25T01:01:37.761070",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - August 24</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77949"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77949"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77949"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77949"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77949"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77949"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-25T01:01:39.913796",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin just posted its biggest weekly dollar g</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -544,6 +505,12 @@
       "ts": "2026-08-25T02:49:59.571636",
       "kind": "dates",
       "text": "🎂 ЧЕРЕЗ 7 ДН. — день народження\n━━━━━━━━━━━━━━━━━━━━\n🎉 Олі — 01.09\n\n🗓 Ще 7 дн. — можна зробити спокійно, без нервів.\nЗабудеш — це не «ой», це образа на роками.\n➡️ Вирішити краще сьогодні: подарунок, дзвінок чи зустріч.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-25T02:57:07.649637",
+      "kind": "chunk",
+      "text": "🔭 Новий транзит\n☽ <b>Місяць</b> ⚻ ☽ <b>Натальний Місяць</b> (орб 1.3°)\n📍 Місяць у <b>Козеріг ♑</b> | Натальний Місяць у Близнюки ♊, 11-й дім\n<i>Квінкункс · Друзі/Цілі</i>\n\n📖 <b>Що означає Квінкункс:</b>\n🟣 Потреба коригування — щось не стикується й вимагає адаптації. Дрібний дисбаланс (часто здоров'я/рутина), який варто м'яко вирівняти.\n\nПривіт, Олег! Зараз 02:57 вівторка, 25 серпня.",
       "keyboard": null
     }
   ]
