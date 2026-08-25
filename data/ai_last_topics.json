@@ -1,4 +1,9 @@
 {
+  "personal_ai|2026-08-25t04_00_49_587843": {
+    "topic": "personal_ai",
+    "gist": "Що треба підготувати перед сном, враховуючи, що вже 04:00, 25 серпня? До 09:00 тобі потрібно купити квіти для річниці, але також о 09:00 біг і дерматолог, а ще ",
+    "ts": "2026-08-25T04:00:49.587843"
+  },
   "action_detect|2026-08-24t21_37_43_034554": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийом Armolopid Plus\", \"action_date\": \"2024-08-24\", \"action_time\": null, \"action_summary\": \"Олег пропустив прийом ",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Unstoppable Domains є рекламним повідомленням, що пропонує підключити Gmail, Calendar, Drive та MCP сервери до їхнього сер",
     "ts": "2026-08-24T20:06:42.003115"
-  },
-  "mailcal_extract|2026-08-24t20_04_13_105322": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-08-24T20:04:13.105322"
   }
 }
