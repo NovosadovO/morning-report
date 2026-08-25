@@ -6268,6 +6268,12 @@
       "category": "event_done",
       "question": "📅 ✈️ Онлайн-реєстрація на рейс Ryanair\nПланувалась до 11:00 — виконано?",
       "answer": "no"
+    },
+    {
+      "ts": "2026-08-25T10:35:51.701992+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_d536b8ce58"
     }
   ]
 }
