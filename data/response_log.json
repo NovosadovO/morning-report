@@ -6641,6 +6641,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "rw_mute_today"
+    },
+    {
+      "ts": "2026-08-25T22:19:29.888928+00:00",
+      "category": "mood",
+      "question": "Оцінка настрою",
+      "answer": "😊 Добре",
+      "extra": {
+        "score": 4
+      }
     }
   ]
 }
