@@ -5834,7 +5834,44 @@
     "action": "email_delete",
     "pid": "77996",
     "subject": "Ви надали сервісу DI.FM деякі дані свого облікового запису Google",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 77810,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_77996"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77996"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77996"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77996"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77996"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77996"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-25T22:42:33.950081+00:00"
   }
 }
