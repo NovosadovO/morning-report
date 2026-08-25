@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-08-25t09_28_30_638081": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-25T09:28:30.638081"
+  },
+  "action_detect|2026-08-25t09_10_25_582443": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Крипто Дашборд\", \"action_date\": \"2024-08-25\", \"action_time\": null, \"action_summary\": \"Переглянути крипто дашборд на",
+    "ts": "2026-08-25T09:10:25.582443"
+  },
   "email_ai_item|2026-08-25t09_08_20_163230": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від Austrian Airlines є інформаційним бюлетенем з темою «One more summer, please! ☀️». Він містить посилання для перегляду ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Ryanair\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Запланована онлайн",
     "ts": "2026-08-25T07:02:25.915472"
-  },
-  "briefing|2026-08-25t07_02_20_963709": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ Сьогоднішній ранок, розпочатий з перевірки BTC, вказує на твій пріоритет фінансової свободи, проте ринок залишається ведмежим, а ETF зростають. Осн",
-    "ts": "2026-08-25T07:02:20.963709"
-  },
-  "themes_ai|2026-08-25t07_02_13_799336": {
-    "topic": "themes_ai",
-    "gist": "Олеже, доброго ранку! Зараз 07:01, вівторок. День розпочинається активно, і є кілька моментів, на які варто звернути увагу.  🏃 БІГ Остання пробіжка була 23 дні ",
-    "ts": "2026-08-25T07:02:13.799336"
   }
 }
