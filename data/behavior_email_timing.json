@@ -1,14 +1,4 @@
 {
-  "77524": {
-    "sender": "media@mail.saily.com",
-    "sender_raw": "\"Saily\" <media@mail.saily.com>",
-    "seen_ts": "2026-08-15T14:07:04.182709+00:00"
-  },
-  "77526": {
-    "sender": "ben@startengine.com",
-    "sender_raw": "Ben at StartEngine <ben@startengine.com>",
-    "seen_ts": "2026-08-15T15:03:50.602608+00:00"
-  },
   "77527": {
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
@@ -1503,5 +1493,10 @@
     "sender": "news@flights.airbaltic.com",
     "sender_raw": "airBaltic <news@flights.airbaltic.com>",
     "seen_ts": "2026-08-25T05:49:01.582460+00:00"
+  },
+  "77958": {
+    "sender": "noreply@newsletter.austrian.com",
+    "sender_raw": "\"Austrian Airlines\" <noreply@newsletter.austrian.com>",
+    "seen_ts": "2026-08-25T07:08:24.310316+00:00"
   }
 }
