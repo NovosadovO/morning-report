@@ -1,4 +1,24 @@
 {
+  "email_ai_item|2026-08-27t01_10_23_038035": {
+    "topic": "email_ai_item",
+    "gist": "```json { \"description\": \"Цей лист від The Defiant є дайджестом новин зі світу DeFi та криптовалют. Він містить п'ять головних історій, зокрема про те, як Core ",
+    "ts": "2026-08-27T01:10:23.038035"
+  },
+  "action_detect|2026-08-27t01_05_26_165347": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Railway Corporation\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Спроба оплати $12.32 до",
+    "ts": "2026-08-27T01:05:26.165347"
+  },
+  "action_detect|2026-08-27t01_05_15_144792": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зареєструватися до дерматолога\", \"action_date\": \"2024-09-16\", \"action_time\": null, \"action_summary\": \"Олегу потрібн",
+    "ts": "2026-08-27T01:05:15.144792"
+  },
+  "action_detect|2026-08-27t01_05_04_222064": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зміни в графіку роботи\", \"action_date\": \"2026-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря р",
+    "ts": "2026-08-27T01:05:04.222064"
+  },
   "action_detect|2026-08-27t01_05_04_196814": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зміни в розкладі\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря ранню з",
@@ -278,25 +298,5 @@
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"78045\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"invoice_no\": \"\",     \"due\": \"\",     \"already_paid\"",
     "ts": "2026-08-26T23:15:27.340437"
-  },
-  "action_detect|2026-08-26t23_02_49_391145": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз для Олега, що опис",
-    "ts": "2026-08-26T23:02:49.391145"
-  },
-  "action_detect|2026-08-26t23_02_38_295351": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати ранню зміну на 18.09 до к",
-    "ts": "2026-08-26T23:02:38.295351"
-  },
-  "action_detect|2026-08-26t23_02_27_414981": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зміни в розкладі\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати ранню зміну на 18.09",
-    "ts": "2026-08-26T23:02:27.414981"
-  },
-  "action_detect|2026-08-26t23_02_27_321714": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-09-18\", \"action_time\": null, \"action_summary\": \"Додати ранню зміну на 18.09.\"}",
-    "ts": "2026-08-26T23:02:27.321714"
   }
 }
