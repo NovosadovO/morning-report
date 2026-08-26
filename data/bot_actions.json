@@ -20,6 +20,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, weight_kg, sleep_total_min",
       "module": "qwsync",
       "ts": "2026-08-26T15:10:16"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-08-26",
+      "detail": "автосинк з годинника: steps, hr_avg, sleep_total_min",
+      "module": "qwsync",
+      "ts": "2026-08-26T15:14:07"
     }
   ]
 }
