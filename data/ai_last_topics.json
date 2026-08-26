@@ -1,4 +1,29 @@
 {
+  "openloop_promises|2026-08-26t19_29_47_160139": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-26T19:29:47.160139"
+  },
+  "action_detect|2026-08-26t19_24_44_429813": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути крипто-портфель та новини\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після закін",
+    "ts": "2026-08-26T19:24:44.429813"
+  },
+  "msg_deep_analysis|2026-08-26t19_24_37_643853": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Ти зараз на нічній зміні, і це, звісно, не найкращий час для глибоких роздумів, але я все ж хочу коротко підсумувати деякі моменти, поки ти зай",
+    "ts": "2026-08-26T19:24:37.643853"
+  },
+  "action_detect|2026-08-26t19_24_22_581108": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-26T19:24:22.581108"
+  },
+  "msg_vip_email|2026-08-26t19_24_16_723322": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🏹 Навіть під час нічної зміни, яка щойно розпочалася, варто окинути стратегічним поглядом динаміку останніх днів, особливо враховуючи рух ринку та",
+    "ts": "2026-08-26T19:24:16.723322"
+  },
   "subs|2026-08-26t19_23_32_178681": {
     "topic": "subs",
     "gist": "```json [   {     \"uid\": \"78045\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"cycle\": \"unknown\",     \"charge_date\": \"2026-08-26\"",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-26T17:12:26.340878"
-  },
-  "msg_micro_checkin|2026-08-26t17_12_17_999195": {
-    "topic": "MSG_MICRO_CHECKIN",
-    "gist": "Привіт Олеже! 💭 Бачу, що ти вже *сьогодні* активно готуєшся до нічної зміни, яка ось-ось почнеться — залишилося менше 15 хвилин до 17:30. Як ти себе почуваєш, з",
-    "ts": "2026-08-26T17:12:17.999195"
-  },
-  "bills|2026-08-26t17_08_36_126599": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"78045\",     \"vendor\": \"Railway\",     \"amount\": \"12.32\",     \"currency\": \"USD\",     \"invoice_no\": \"\",     \"due\": \"2026-08-26\",     \"alr",
-    "ts": "2026-08-26T17:08:36.126599"
-  },
-  "action_detect|2026-08-26t17_02_21_243778": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": null, \"action_time\": \"18:00\", \"action_summary\": \"Олег готується до нічної змін",
-    "ts": "2026-08-26T17:02:21.243778"
-  },
-  "action_detect|2026-08-26t17_02_21_048331": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати цілі особистого розвитку\", \"action_date\": null, \"action_time\": \"17:30\", \"action_summary\": \"Записати щонайм",
-    "ts": "2026-08-26T17:02:21.048331"
-  },
-  "email_ai_item|2026-08-26t17_02_17_891987": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Лист від Runable містить звіт про заплановані події в календарі на тиждень (26-30 серпня) та аналіз важливих листів. Зазначено три н",
-    "ts": "2026-08-26T17:02:17.891987"
   }
 }
