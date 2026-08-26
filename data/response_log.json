@@ -7329,6 +7329,17 @@
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-26T20:16:26.412117+00:00",
+      "category": "calendar_button",
+      "question": "🔔 Догляд за обличчям (вечір)",
+      "answer": "done",
+      "extra": {
+        "stage": "after",
+        "when": "19:30–20:00",
+        "note": null
+      }
     }
   ]
 }
