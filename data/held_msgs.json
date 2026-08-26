@@ -188,6 +188,45 @@
       "kind": "rwa",
       "text": "🏦 RWA-РАДАР\n━━━━━━━━━━━━━━━━━━━━\n• 🚨 АНОМАЛІЯ: токенізований фонд FIGR_HELOC (Figure Heloc) зробив -2.79% за 24 години — такі інструменти мають стояти на місці (зараз $1.010)\n• ONDO (твоя позиція) впав на 5.6% за 24 години (зараз $0.36600)\n\nAI-коментар недоступний — вище тільки живі цифри.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-26T03:15:04.041305",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Profesia.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk»\n\n<i>«Nové pracovné ponuky \"Personalizované pracovné ponuky e-mailom\"\r\n\r\nLogo Profesia ( https://www.profesia.sk/?utm_medium=mail&amp;utm_source=10007&amp;utm_campaign=10007&amp;utm_term=2026-08-26&amp;eid=6a8e34aa60ca5c0bc906ed0355d7b1ca&amp;utm_content=logo )\r\n\r\n*************************************************************...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78000"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78000"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78000"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78000"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78000"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78000"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
