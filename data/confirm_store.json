@@ -6505,7 +6505,24 @@
     "action": "calrem_skip",
     "pid": "event_soon_1787774507",
     "subject": "Перевірити статус повернення коштів за круїз та завершити онлайн-чек-ін",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 78439,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_event_soon_1787774507"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_event_soon_1787774507"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-26T22:06:52.650329+00:00"
   }
 }
