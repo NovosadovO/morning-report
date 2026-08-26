@@ -231,5 +231,15 @@
     "label": "👀 Спостерігаю",
     "state": "open",
     "ts": "2026-08-26T20:15:13"
+  },
+  "generic|t|нові вакансії linkedin": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "нові вакансії linkedin",
+    "title": "Нові вакансії LinkedIn",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "state": "closed",
+    "ts": "2026-08-26T20:20:48"
   }
 }
