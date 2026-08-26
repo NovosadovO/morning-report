@@ -1074,7 +1074,8 @@ def get_astro_alerts():
     """
     import json as _json, os as _os
     if not _KERYKEION_OK:
-        return []
+        # kerykeion у проді немає — рахуємо чистим Python, а не мовчимо
+        return get_astro_alerts_fallback()
 
     STATE_FILE = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "data", "astro_last_aspects.json")
     _os.makedirs(_os.path.dirname(STATE_FILE), exist_ok=True)
@@ -1174,3 +1175,157 @@ def get_astro_alerts():
 
 if __name__ == "__main__":
     print(get_astro_report())
+
+
+# ─── АЛЕРТИ БЕЗ KERYKEION (чистий Python) ────────────────────────────────────
+# Причина існування: у проді kerykeion не імпортується, тому get_astro_alerts()
+# завжди повертав [] і астро-алертів не було ЖОДНОГО. Тут той самий розрахунок,
+# що і в _get_natal_transits_fallback, але у вигляді структурованих подій.
+
+_ALERT_STATE_FILE = "astro_alerts_state.json"   # гілка data (через ai_kit)
+
+_FB_SIGNS = ["Овен ♈", "Телець ♉", "Близнюки ♊", "Рак ♋", "Лев ♌", "Діва ♍",
+             "Терези ♎", "Скорпіон ♏", "Стрілець ♐", "Козеріг ♑",
+             "Водолій ♒", "Риби ♓"]
+
+_FB_ASPECTS = {
+    0: ("Кон'юнкція ☌", "🔴", 6.0),
+    60: ("Секстиль ⚹", "🟢", 4.0),
+    90: ("Квадрат □", "🔴", 5.0),
+    120: ("Трин △", "🟢", 5.0),
+    150: ("Квінконкс ⚻", "🟡", 3.0),
+    180: ("Опозиція ☍", "🔴", 5.0),
+}
+
+_FB_ORB = {
+    "Меркурій": (0.2056, 77.4, 252.3, 4.0923),
+    "Венера": (0.0068, 131.6, 181.9, 1.6021),
+    "Марс": (0.0934, 336.0, 355.4, 0.5240),
+    "Юпітер": (0.0489, 14.7, 34.3, 0.0831),
+    "Сатурн": (0.0565, 92.4, 50.1, 0.0335),
+    "Уран": (0.0457, 172.0, 314.1, 0.0120),
+    "Нептун": (0.0113, 46.7, 304.9, 0.0061),
+    "Плутон": (0.2482, 224.1, 238.9, 0.0040),
+}
+
+
+def _fb_jd(dt):
+    y, m, d = dt.year, dt.month, dt.day
+    h = dt.hour + dt.minute / 60 + dt.second / 3600
+    if m <= 2:
+        y -= 1
+        m += 12
+    a = int(y / 100)
+    b = 2 - a + int(a / 4)
+    return int(365.25 * (y + 4716)) + int(30.6001 * (m + 1)) + d + h / 24 + b - 1524.5
+
+
+def _fb_sun(jd):
+    import math
+    n = jd - 2451545.0
+    lon = (280.460 + 0.9856474 * n) % 360
+    g = math.radians((357.528 + 0.9856003 * n) % 360)
+    return (lon + 1.915 * math.sin(g) + 0.020 * math.sin(2 * g)) % 360
+
+
+def _fb_moon(jd):
+    import math
+    n = jd - 2451545.0
+    lon = (218.316 + 13.176396 * n) % 360
+    mm = math.radians((134.963 + 13.064993 * n) % 360)
+    f = math.radians((93.272 + 13.229350 * n) % 360)
+    return (lon + 6.289 * math.sin(mm) - 1.274 * math.sin(2 * f - mm)) % 360
+
+
+def _fb_planet(jd, e, w_deg, m0, n_mot):
+    import math
+    n = jd - 2451545.0
+    mm = math.radians((m0 + n_mot * n) % 360)
+    ecc = mm + e * math.sin(mm) * (1 + e * math.cos(mm))
+    for _ in range(6):
+        ecc = ecc - (ecc - e * math.sin(ecc) - mm) / (1 - e * math.cos(ecc))
+    v = 2 * math.atan2(math.sqrt(1 + e) * math.sin(ecc / 2),
+                       math.sqrt(1 - e) * math.cos(ecc / 2))
+    return (math.degrees(v) + w_deg) % 360
+
+
+def _fb_lons(jd):
+    out = {"Сонце": _fb_sun(jd), "Місяць": _fb_moon(jd)}
+    for name, (e, w, m0, n_mot) in _FB_ORB.items():
+        out[name] = _fb_planet(jd, e, w, m0, n_mot)
+    return out
+
+
+def _fb_diff(a, b):
+    d = abs(a - b) % 360
+    return min(d, 360 - d)
+
+
+def _fb_sign(lon):
+    return _FB_SIGNS[int(lon / 30) % 12]
+
+
+def get_astro_alerts_fallback():
+    """
+    Астро-алерти без kerykeion. Подія = зміна знаку транзитної планети або
+    НОВИЙ аспект транзит→натал, якого не було в попередньому стані.
+    Стан живе в гілці data (astro_alerts_state.json), бо файлова система
+    Railway ефемерна і локальний файл гине при кожному деплої.
+    """
+    try:
+        import ai_kit as _K
+    except Exception as e:
+        print(f"[astro_alert] ai_kit недоступний: {e}", flush=True)
+        return []
+
+    now_utc = datetime.now(timezone.utc)
+    jd_now = _fb_jd(now_utc)
+    jd_birth = _fb_jd(datetime(1989, 9, 22, 0, 52, tzinfo=timezone.utc))
+
+    transit = _fb_lons(jd_now)
+    natal = {k: v for k, v in _fb_lons(jd_birth).items()
+             if k in ("Сонце", "Місяць", "Меркурій", "Венера", "Марс",
+                      "Юпітер", "Сатурн")}
+
+    cur_signs = {name: _fb_sign(lon) for name, lon in transit.items()}
+    cur_aspects = {}
+    for t_name, t_lon in transit.items():
+        for n_name, n_lon in natal.items():
+            diff = _fb_diff(t_lon, n_lon)
+            for angle, (asp, emoji, orb) in _FB_ASPECTS.items():
+                if abs(diff - angle) <= orb:
+                    key = f"{t_name}|{asp}|{n_name}"
+                    cur_aspects[key] = {"t": t_name, "n": n_name, "asp": asp,
+                                        "emoji": emoji,
+                                        "orb": round(abs(diff - angle), 1)}
+
+    old = _K.load(_ALERT_STATE_FILE, default={}) or {}
+    old_signs = old.get("signs") or {}
+    old_aspects = set(old.get("aspects") or [])
+
+    alerts = []
+    for name, sign in cur_signs.items():
+        prev = old_signs.get(name)
+        if prev and prev != sign:
+            alerts.append(f"🪐 <b>{name}</b> перейшов з {prev} у <b>{sign}</b>")
+
+    if old_signs:      # перший запуск лише запам'ятовує стан, не спамить
+        for key, a in cur_aspects.items():
+            if key in old_aspects:
+                continue
+            desc = ""
+            try:
+                desc = get_aspect_description(a["t"], a["asp"], a["n"]) or ""
+            except Exception:
+                desc = ""
+            line = (f"{a['emoji']} <b>{a['t']} {a['asp']} натальний {a['n']}</b>"
+                    f"  <i>(орб {a['orb']}°)</i>")
+            if desc:
+                line += f"\n    <i>↳ {desc}</i>"
+            alerts.append(line)
+
+    _K.save(_ALERT_STATE_FILE, {"signs": cur_signs,
+                                "aspects": sorted(cur_aspects.keys()),
+                                "updated": now_utc.isoformat()})
+    # Місяць рухається швидко: щоб не сипати щопівгодини, лишаємо максимум 4
+    return alerts[:4]

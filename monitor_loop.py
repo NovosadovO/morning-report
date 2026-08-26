@@ -784,6 +784,23 @@ def run_astro_alert_watcher():
             if alerts and token and chat:
                 header = "🔮 <b>АСТРО-АЛЕРТ</b>\n━━━━━━━━━━━━━━━━━━━━\n"
                 text = header + "\n\n".join(alerts)
+                # AI-розбір самої події: що це означає саме для Олега
+                # (зміна, локація, реакції — усе підмішує _gem_post усередині).
+                try:
+                    import monitor as _m_ai
+                    _key_ai = _os.environ.get("GEMINI_API_KEY", "")
+                    if _key_ai:
+                        _ai = _m_ai._get_astro_ai_analysis(
+                            text, _key_ai, shift_hint="астро-алерт")
+                        if _ai and len(_ai) > 80:
+                            text += "\n\n🧠 <b>ЩО ЦЕ ОЗНАЧАЄ</b>\n" + _ai
+                            print(f"[astro_alert] AI-розбір додано "
+                                  f"({len(_ai)} симв.)", flush=True)
+                        else:
+                            print("[astro_alert] AI порожній — шлю без розбору",
+                                  flush=True)
+                except Exception as _e_ai:
+                    print(f"[astro_alert] AI error: {_e_ai}", flush=True)
                 chunks = [text[i:i+4000] for i in range(0, len(text), 4000)]
                 msg_url = f"https://api.telegram.org/bot{token}/sendMessage"
                 for chunk in chunks:
