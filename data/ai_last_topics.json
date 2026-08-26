@@ -1,4 +1,14 @@
 {
+  "selfact|2026-08-26t21_52_10_979126": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення платіжних даних Runable\",     \"text\": \"Олег, зверни увагу, що Runable тричі надсилав листи про невда",
+    "ts": "2026-08-26T21:52:10.979126"
+  },
+  "email_ai_item|2026-08-26t21_46_56_610119": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від Runable повідомляє, що платіж у розмірі $10.00 за допомогою картки Visa, що закінчується на 2620, був невдалим. Для зав",
+    "ts": "2026-08-26T21:46:56.610119"
+  },
   "email_ai_item|2026-08-26t21_46_45_655993": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист від Runable повідомляє, що платіж у розмірі $10.00 за допомогою картки Visa, що закінчується на 2620, був невдалим. Для заверше",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Виконати звички\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після зміни зосередься на виконанні ",
     "ts": "2026-08-26T20:02:19.151714"
-  },
-  "action_detect|2026-08-26t20_02_07_052761": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-08-26\", \"action_time\": \"18:00\", \"action_summary\": \"Запланована нічна зміна.\"}",
-    "ts": "2026-08-26T20:02:07.052761"
-  },
-  "action_detect|2026-08-26t20_02_07_031294": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2023-08-26\", \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято A",
-    "ts": "2026-08-26T20:02:07.031294"
   }
 }
