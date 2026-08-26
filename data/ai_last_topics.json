@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-08-26t19_13_30_642243": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-26T19:13:30.642243"
+  },
   "calendar|2026-08-26t19_09_13_341499": {
     "topic": "calendar",
     "gist": "Олеже, бачу, що нічна зміна сьогодні триває до 6 ранку, і це може виснажувати, особливо коли немає конкретних планів на день, що слідує за нею. 😴 Твоя вага 83.1",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armolopid",
     "ts": "2026-08-26T17:02:04.654786"
-  },
-  "action_detect|2026-08-26t17_01_48_053752": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Прийняти Armolopid Plus\",   \"action_date\": \"2026-08-26\",   \"action_time\": \"17:30\",   \"action_summary\":",
-    "ts": "2026-08-26T17:01:48.053752"
   }
 }
