@@ -6849,6 +6849,16 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "XLM впав на 8.1% за 24 години (зараз $0.18308)"
+    },
+    {
+      "ts": "2026-08-26T09:00:56.076785+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії на Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-26"
+      }
     }
   ]
 }
