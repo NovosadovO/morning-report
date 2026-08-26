@@ -190,5 +190,17 @@
     "sender": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
     "done": false,
     "created": "2026-08-25"
+  },
+  "закінчення_паркування_в_кошице|2026-08-26": {
+    "kind": "other",
+    "title": "Закінчення паркування в Кошице",
+    "org": "Ubian",
+    "deadline": "2026-08-26",
+    "action": "Перевірити, чи потрібно продовжити паркування для автомобіля LE066BI",
+    "why": "Після закінчення терміну дії паркувального талона автомобіль може бути оштрафований за неправильне паркування.",
+    "uid": "78018",
+    "sender": "Ubian Eshop <no-reply@ubian.sk>",
+    "done": false,
+    "created": "2026-08-26"
   }
 }
