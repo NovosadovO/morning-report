@@ -261,5 +261,15 @@
     "label": "👌 Прийняв",
     "state": "open",
     "ts": "2026-08-26T21:35:56"
+  },
+  "generic|t|несплата runable": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "несплата runable",
+    "title": "Несплата Runable",
+    "action": "ok",
+    "label": "👌 Прийняв",
+    "state": "open",
+    "ts": "2026-08-26T21:36:03"
   }
 }
