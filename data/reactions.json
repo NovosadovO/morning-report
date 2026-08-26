@@ -171,5 +171,15 @@
     "state": "snoozed",
     "ts": "2026-08-26T10:34:42",
     "until": "2026-08-26T16:34:42"
+  },
+  "generic|t|оновити платіжні дані для runable": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "оновити платіжні дані для runable",
+    "title": "Оновити платіжні дані для Runable",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "state": "closed",
+    "ts": "2026-08-26T14:43:18"
   }
 }
