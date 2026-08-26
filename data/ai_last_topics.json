@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-08-26t17_59_08_700796": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-26T17:59:08.700796"
+  },
+  "email_ai_item|2026-08-26t17_55_08_247860": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Ticketportal.sk є рекламною розсилкою, що анонсує мюзикл «Алжбета Баторі». Він описує драматичний сюжет про одну з найвідо",
+    "ts": "2026-08-26T17:55:08.247860"
+  },
   "deadlines|2026-08-26t17_53_29_716626": {
     "topic": "deadlines",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що платежі за підписки Runable ($10.00) були невдалими чотири рази поспіль. Останній невдал",
     "ts": "2026-08-26T15:45:03.475905"
-  },
-  "action_detect|2026-08-26t15_37_36_700678": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-08-26\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має нічну зміну 26 серпн",
-    "ts": "2026-08-26T15:37:36.700678"
-  },
-  "action_detect|2026-08-26t15_37_25_504109": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-08-26\", \"action_time\": null, \"action_summary\": \"Олегу потрібно прийн",
-    "ts": "2026-08-26T15:37:25.504109"
   }
 }
