@@ -21,7 +21,9 @@ try:
     import requests as _requests
     _HAS_REQUESTS = True
 except ImportError:
-    _HAS_REQUESTS = False
+    # Рантайм Railway інколи не бачить requests — вмикаємо urllib-шим.
+    import httpreq as _requests
+    _HAS_REQUESTS = True
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
 TELEGRAM_TOKEN  = os.environ.get("TELEGRAM_TOKEN", "")
@@ -527,7 +529,10 @@ def _send_photo_bytes(photo_bytes: bytes, caption: str = "") -> bool:
     except Exception:
         pass
     try:
-        import requests as _req_pb
+        try:
+            import requests as _req_pb
+        except ImportError:
+            import httpreq as _req_pb
         import io as _io_pb
         r = _req_pb.post(
             f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto",
@@ -11110,7 +11115,11 @@ def main():
     # Фото збираємо окремо в album, текст об'єднуємо в 2 повідомлення.
     # "SPLIT_HERE" — маркер між двома текстовими повідомленнями.
     import time as _time_main
-    import requests as _req_send
+    try:
+        import requests as _req_send
+    except ImportError:
+        import httpreq as _req_send
+        print('[send] requests відсутній — використовую httpreq (urllib)', flush=True)
     import io as _io_send
     import json as _json_send
 
