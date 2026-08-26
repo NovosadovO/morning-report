@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-08-26t17_53_29_716626": {
+    "topic": "deadlines",
+    "gist": "```json [] ```",
+    "ts": "2026-08-26T17:53:29.716626"
+  },
   "selfact|2026-08-26t17_47_04_633285": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: платіж за Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію. Ти вже отри",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-08-26\", \"action_time\": null, \"action_summary\": \"Олегу потрібно прийн",
     "ts": "2026-08-26T15:37:25.504109"
-  },
-  "action_detect|2026-08-26t15_37_14_541776": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
-    "ts": "2026-08-26T15:37:14.541776"
   }
 }
