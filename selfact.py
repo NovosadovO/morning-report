@@ -140,11 +140,19 @@ def _calendar_block() -> str:
 def _mail_block() -> str:
     try:
         import monitor
-        emails = monitor.get_emails() or []
+        raw = monitor.get_emails()
     except Exception as e:
         _log("mail: " + str(e))
         return ""
-    if not emails:
+    # get_emails() віддає dict {"__email_block__","header","items"},
+    # або рядок при помилці/відсутності листів.
+    if isinstance(raw, dict):
+        emails = raw.get("items") or []
+    elif isinstance(raw, list):
+        emails = raw
+    else:
+        emails = []
+    if not isinstance(emails, list) or not emails:
         return ""
     try:
         cache = K.load("email_body_cache.json", default={}) or {}
