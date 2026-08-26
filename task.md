@@ -655,3 +655,34 @@ react.is_closed і dismissed.is_muted. IMAP впав → модуль мовчи
 у проді 0 помилок, живий прохід: `[selfact] виконано дій: 2` (сповіщення про
 невдалі платежі Runable/Railway + нагадування оновити платіжні дані),
 `bot_actions.json` створений у гілці data.
+
+## qwsync.py — АВТОСИНК здоров'я з QWatch Pro (26.08.2026)
+
+Факт: QWatch Pro (com.qcwireless.qcwatch) НЕ має публічного API й експорту.
+Єдиний офіційний вихід даних — на iOS синхронізує кроки/калорії/дистанцію/
+пульс/сон у Apple Health. Тому ланцюжок:
+  QWatch Pro → Apple Health → Apple Shortcuts (автоматизація за часом)
+  → POST /qw → qwatch_data.json.
+
+Чому qwatch_data.json: `storage.load_health()` мерджить його ПОВЕРХ health.json,
+тому дані одразу бачать усі звіти, AI-контексти, healthtrend, графіки, selfact.
+
+- `qwsync.normalize()` — приймає «як завгодно» названі поля (Shortcuts віддає
+  рядки): steps/кроки, sleep/sleep_min/sleep_h, hr/heart_rate/пульс, calories,
+  distance, weight, hrv, spo2, health_score, body_battery, stress.
+  Розбирає '4 989' → 4989, '09h 08min' → 548 хв, '83,4' → 83.4.
+  Відсіює сміття: кроки 0..100000, пульс 25..230, сон 0..1080 хв, вага 35..250.
+- `qwsync.save()` — мердж у наявний запис дня (нічого не затирає), сповіщення в
+  Telegram + `selfact.journal`.
+- Маршрут у `health_webhook.py`: `POST /qw` (також /qwatch, /health),
+  БЕЗ часового вікна (у Widgets-handler вікно 18:45-19:15 — не годиться).
+  Захист: заголовок `X-QW-Secret` або поле `secret` у JSON.
+  Змінна `QW_SECRET` на Railway = oleh-qwatch-2026 (фолбек —
+  TELEGRAM_WEBHOOK_SECRET).
+- health_webhook.py — ЄДИНИЙ HTTP-сервер бота в проді (Railway PORT), уже
+  обробляє /telegram, /upload (ZIP HAE), POST / (Healthy Widgets).
+
+Перевірено живим POST у прод: HTTP 200,
+{"ok":true,"fields":["steps","hr_avg","weight_kg","sleep_total_min"]},
+у гілці data з'явилось 2026-08-26: steps 4989, hr_avg 71, weight_kg 83.4,
+sleep_total_min 548. Traceback 0.
