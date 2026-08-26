@@ -1,4 +1,9 @@
 {
+  "msg_rwa|2026-08-27t00_30_11_582186": {
+    "topic": "MSG_RWA",
+    "gist": "🚨 **Аномалія FIGR_HELOC: Що не так?**  Токенізований фонд FIGR_HELOC, який мав би залишатися стабільним біля $1.000, за останні 24 години просів на 3.46%, що є ",
+    "ts": "2026-08-27T00:30:11.582186"
+  },
   "selfact|2026-08-27t00_23_31_760415": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Увага: Проблеми з оплатою Runable\",     \"text\": \"Олег, зверніть увагу: платіж за Runable 26 серпня був успішни",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Додати ранні зміни та видалити нічну зміну\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Додати ра",
     "ts": "2026-08-26T22:02:11.945274"
-  },
-  "action_detect|2026-08-26t22_02_00_199359": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати ранню зміну до календаря ",
-    "ts": "2026-08-26T22:02:00.199359"
   }
 }
