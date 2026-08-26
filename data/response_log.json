@@ -7516,6 +7516,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_e3662f4dfb"
+    },
+    {
+      "ts": "2026-08-27T01:30:34.714977+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Онлайн-реєстрація на рейс",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-27"
+      }
     }
   ]
 }
