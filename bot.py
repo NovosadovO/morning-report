@@ -6551,7 +6551,7 @@ def _route_callback(cb, confirmed: bool = False):
             elif data == "hai_mute":
                 try:
                     import dismissed as _dm_cb
-                    _dm_cb.mute("healthai", hours=12)
+                    _dm_cb.mute("healthai", note="12 год тиші за запитом")
                 except Exception:
                     pass
                 send(chat_id, "🔇 Не буду турбувати про здоров'я 12 годин.")

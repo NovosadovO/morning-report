@@ -349,6 +349,11 @@ def create_calendar_event(summary: str, start_dt: datetime, end_dt: datetime = N
         body["description"] = description
     if location:
         body["location"] = location
+    # Явні нагадування (попап за 10 хв) — щоб Олег бачив сповіщення в календарі
+    body["reminders"] = {
+        "useDefault": False,
+        "overrides": [{"method": "popup", "minutes": 10}],
+    }
 
     url = f"https://www.googleapis.com/calendar/v3/calendars/{_CAL_ID}/events"
     headers = {

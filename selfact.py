@@ -354,6 +354,14 @@ def _do_reminder(a: dict) -> bool:
         "sent": False,
     })
     K.save(REMINDERS_FILE, data)
+    # Нагадування ЗАВЖДИ дублюємо подією в Google Calendar (вимога Олега)
+    try:
+        res = K.calendar_event("🔔 " + str(a["title"])[:90], dt, dt + timedelta(minutes=30),
+                               str(a.get("text") or "")[:500])
+        if not (res and res.get("ok")):
+            _log("нагадування: календар відмовив: " + _short(res, 120))
+    except Exception as e:
+        _log("нагадування: календар помилка: " + str(e))
     return True
 
 
