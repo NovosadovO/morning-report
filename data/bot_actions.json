@@ -300,6 +300,13 @@
       "detail": "З календаря на 27.08: '08:00 💳 Повернення кредиту від Temu' та листа 'Temu <temu@eu.temuemail.com> | Odmena za návrat odoslaná 26. aug 2026!'.",
       "module": "selfact",
       "ts": "2026-08-26T20:20:20"
+    },
+    {
+      "kind": "notify",
+      "what": "Нові вакансії LinkedIn",
+      "detail": "З листів 'Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Revenue Accountant (f/m/d) в Siemens Healthineers' та 'Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Data Collector в Convatec'.",
+      "module": "selfact",
+      "ts": "2026-08-26T20:20:26"
     }
   ]
 }
