@@ -409,6 +409,11 @@ class HealthHandler(BaseHTTPRequestHandler):
             self._handle_telegram_webhook()
             return
 
+        # ── QWatch Pro автосинк з Apple Health через Shortcuts ───────────────
+        if path in ("/qw", "/qwatch", "/health"):
+            self._handle_qwatch_json()
+            return
+
         # Route: /upload або ZIP/multipart/octet/csv → HAE handler (без time window)
         # JSON → Healthy Widgets handler (з time window)
         if path == "/upload" or "multipart" in content_type or "octet" in content_type or "zip" in content_type or "csv" in content_type or "text/plain" in content_type:
@@ -604,6 +609,61 @@ class HealthHandler(BaseHTTPRequestHandler):
             self.send_response(500)
             self.end_headers()
             self.wfile.write(json.dumps({"error": str(e)}).encode())
+
+    def _handle_qwatch_json(self):
+        """POST /qw — дані здоров'я з Apple Health (Shortcuts). Без часового вікна."""
+        try:
+            length = int(self.headers.get("Content-Length", 0) or 0)
+            body = self.rfile.read(length) if length else b"{}"
+            print(f"[QW] {length}b body={body[:300]}", flush=True)
+
+            try:
+                payload = json.loads(body.decode("utf-8", "replace") or "{}")
+            except Exception as je:
+                print(f"[QW] bad JSON: {je}", flush=True)
+                self.send_response(400)
+                self.end_headers()
+                self.wfile.write(b'{"ok":false,"error":"bad json"}')
+                return
+
+            if not isinstance(payload, dict):
+                payload = {}
+
+            import importlib.util as _ilu, os as _os
+            _spec = _ilu.spec_from_file_location(
+                "qwsync", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
+                                        "qwsync.py"))
+            qwsync = _ilu.module_from_spec(_spec)
+            _spec.loader.exec_module(qwsync)
+
+            given = (self.headers.get("X-QW-Secret", "")
+                     or str(payload.get("secret") or ""))
+            if not qwsync.secret_ok(given):
+                print("[QW] REJECTED: bad secret", flush=True)
+                self.send_response(403)
+                self.end_headers()
+                self.wfile.write(b'{"ok":false,"error":"forbidden"}')
+                return
+
+            res = qwsync.save(payload)
+            code = 200 if res.get("ok") else 422
+            self.send_response(code)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            out = {"ok": bool(res.get("ok")),
+                   "fields": res.get("fields", []),
+                   "error": res.get("error", "")}
+            self.wfile.write(json.dumps(out).encode())
+        except Exception as e:
+            import traceback
+            print(f"[QW] error: {e}", flush=True)
+            traceback.print_exc()
+            try:
+                self.send_response(500)
+                self.end_headers()
+                self.wfile.write(b'{"ok":false}')
+            except Exception:
+                pass
 
     def _handle_widgets_json(self):
         """Приймає JSON від Healthy Widgets (щоденний)."""
