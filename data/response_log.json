@@ -6955,6 +6955,12 @@
       "category": "confirm",
       "question": "email_delete: UBIAN - Potvrdenie o zaplatení",
       "answer": "no"
+    },
+    {
+      "ts": "2026-08-26T12:06:43.382871+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_n_b00e9d9071"
     }
   ]
 }
