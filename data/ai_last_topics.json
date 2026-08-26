@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-08-26t22_00_14_489829": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2023-08-27\", \"action_time\": \"18:00\", \"action_summary\": \"Завтра нічна зміна з 18:00 до",
+    "ts": "2026-08-26T22:00:14.489829"
+  },
+  "action_detect|2026-08-26t21_52_44_771095": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зміни в графіку роботи\", \"action_date\": \"2023-09-18\", \"action_time\": null, \"action_summary\": \"Додати ранню зміну на",
+    "ts": "2026-08-26T21:52:44.771095"
+  },
+  "action_detect|2026-08-26t21_52_33_871006": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зміни в графіку роботи\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати ранні зміни на",
+    "ts": "2026-08-26T21:52:33.871006"
+  },
   "selfact|2026-08-26t21_52_10_979126": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення платіжних даних Runable\",     \"text\": \"Олег, зверни увагу, що Runable тричі надсилав листи про невда",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2023-08-27\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має нічну зміну 27 серпн",
     "ts": "2026-08-26T20:15:03.224317"
-  },
-  "action_detect|2026-08-26t20_14_52_279157": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2023-08-27\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має нічну зміну 27 серпн",
-    "ts": "2026-08-26T20:14:52.279157"
-  },
-  "action_detect|2026-08-26t20_02_30_670276": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Занотувати ідеї\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Занотуй усі несподівані думки та ріш",
-    "ts": "2026-08-26T20:02:30.670276"
-  },
-  "action_detect|2026-08-26t20_02_19_151714": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Виконати звички\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після зміни зосередься на виконанні ",
-    "ts": "2026-08-26T20:02:19.151714"
   }
 }
