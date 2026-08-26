@@ -1,4 +1,49 @@
 {
+  "selfact|2026-08-27t00_54_22_780650": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що платіж за Railway Corporation на суму $12.32 був знову неуспішним. Потрібно оновити плат",
+    "ts": "2026-08-27T00:54:22.780650"
+  },
+  "action_detect|2026-08-27t00_49_54_358495": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря ранню зміну ",
+    "ts": "2026-08-27T00:49:54.358495"
+  },
+  "action_detect|2026-08-27t00_49_54_292458": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря ранню зміну ",
+    "ts": "2026-08-27T00:49:54.292458"
+  },
+  "action_detect|2026-08-27t00_49_54_246230": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря ранню зміну ",
+    "ts": "2026-08-27T00:49:54.246230"
+  },
+  "action_detect|2026-08-27t00_49_54_224814": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря ранню зміну ",
+    "ts": "2026-08-27T00:49:54.224814"
+  },
+  "action_detect|2026-08-27t00_49_54_213816": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2023-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря ранню зміну ",
+    "ts": "2026-08-27T00:49:54.213816"
+  },
+  "action_detect|2026-08-27t00_49_54_157838": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря ранню зміну ",
+    "ts": "2026-08-27T00:49:54.157838"
+  },
+  "action_detect|2026-08-27t00_49_43_212050": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря ранню зміну ",
+    "ts": "2026-08-27T00:49:43.212050"
+  },
+  "action_detect|2026-08-27t00_49_10_940918": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зміни в графіку роботи\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря р",
+    "ts": "2026-08-27T00:49:10.940918"
+  },
   "action_detect|2026-08-27t00_48_56_696359": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Railway\", \"action_date\": \"2026-08-24\", \"action_time\": \"09:00\", \"action_summary\": \"Оплатити Railway 24 серп",
@@ -253,50 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії, які відповідають налаштуванням користувача. Зокрема, пропонується вакансія ",
     "ts": "2026-08-26T22:14:29.758792"
-  },
-  "action_detect|2026-08-26t22_10_39_413978": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid Plus післ",
-    "ts": "2026-08-26T22:10:39.413978"
-  },
-  "context_ask_ai|2026-08-26t22_10_32_067389": {
-    "topic": "context_ask_ai",
-    "gist": "Олег, дякую за твоє бажання допомогти, це дуже цінно.  Справа не в конкретному повідомленні про помилку, яке я міг би тобі показати (як, наприклад, \"Невірний фо",
-    "ts": "2026-08-26T22:10:32.067389"
-  },
-  "action_detect|2026-08-26t22_09_48_384701": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забувай про Armolopid Plu",
-    "ts": "2026-08-26T22:09:48.384701"
-  },
-  "context_ask_ai|2026-08-26t22_09_40_643303": {
-    "topic": "context_ask_ai",
-    "gist": "Олег, я ціную твоє бажання допомогти, але справа не в помилці, яку ти міг би виправити. Це технічна проблема на *моїй* стороні, яка заважає мені додавати події ",
-    "ts": "2026-08-26T22:09:40.643303"
-  },
-  "context_ask_ai|2026-08-26t22_08_22_029593": {
-    "topic": "context_ask_ai",
-    "gist": "Олег, я зрозумів твоє прохання. Я вже запам'ятав це і тримаю в пам'яті: * **18.09** – рання зміна * **19.09** – рання зміна * **21.09** – нічну зміну видалено  ",
-    "ts": "2026-08-26T22:08:22.029593"
-  },
-  "proactive_ai|2026-08-26t22_03_28_440192": {
-    "topic": "proactive_ai",
-    "gist": "Привіт, Олеже! Зараз ти на нічній зміні, тому тримайся там. Пам'ятай, завтра на тебе чекає ще одна нічна зміна, тож спробуй добре відпочити після цієї, щоб був ",
-    "ts": "2026-08-26T22:03:28.440192"
-  },
-  "action_detect|2026-08-26t22_02_34_912596": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Внутрішня робота та обмірковування\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Під час нічної зм",
-    "ts": "2026-08-26T22:02:34.912596"
-  },
-  "action_detect|2026-08-26t22_02_34_671563": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити робочі завдання\", \"action_date\": \"2023-08-26\", \"action_time\": \"22:01\", \"action_summary\": \"Перевірити пот",
-    "ts": "2026-08-26T22:02:34.671563"
-  },
-  "action_detect|2026-08-26t22_02_23_663976": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити оплати Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи дійсно всі ",
-    "ts": "2026-08-26T22:02:23.663976"
   }
 }
