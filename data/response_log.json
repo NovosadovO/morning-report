@@ -7019,6 +7019,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_done_af50723ed0"
+    },
+    {
+      "ts": "2026-08-26T13:51:41.150853+00:00",
+      "category": "calendar_button",
+      "question": "💳 Оплата паркування в Кошице (LE066BI)",
+      "answer": "done",
+      "extra": {
+        "stage": "after",
+        "when": "11:56–12:56",
+        "note": null
+      }
     }
   ]
 }
