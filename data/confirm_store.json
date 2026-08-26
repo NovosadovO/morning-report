@@ -6481,7 +6481,24 @@
     "action": "calrem_skip",
     "pid": "deep_analysis_1787769081",
     "subject": "Онлайн-реєстрація Pelikan.sk",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 78383,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_deep_analysis_1787769081"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_deep_analysis_1787769081"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-26T21:35:21.377992+00:00"
   }
 }
