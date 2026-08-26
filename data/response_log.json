@@ -6823,6 +6823,16 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "ONDO (твоя позиція) впав на 6.1% за 24 години (зараз $0.36712)"
+    },
+    {
+      "ts": "2026-08-26T07:30:57.425212+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Прийняти Armolopid Plus",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-08-26"
+      }
     }
   ]
 }
