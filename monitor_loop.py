@@ -36,28 +36,34 @@ signal.signal(signal.SIGINT, _handle_sigterm)
 # графіки здоров'я, Strava і Google API. Якщо ми не в тому інтерпретаторі —
 # перезапускаємо себе венвовим python (один раз, прапор _VENV_REEXEC).
 def _ensure_venv():
+    """
+    Railway перейшов на білдер railpack: залежності ставляться у
+    /app/.venv/lib/python3.11/site-packages, а процес піднімається СИСТЕМНИМ
+    python (/mise/installs/...), який того venv не бачить. Через це в проді
+    зникли kerykeion (астро), matplotlib (графіки здоров'я), requests, Google API.
+
+    Fix: додаємо site-packages венва прямо в sys.path. Версія Python однакова
+    (3.11), тому пакети сумісні. Працює навіть якщо в венві немає bin/python.
+    """
+    import glob as _glob
     import importlib.util as _ilu
     if _ilu.find_spec("requests") is not None and _ilu.find_spec("matplotlib") is not None:
         return
-    if os.environ.get("_VENV_REEXEC") == "1":
-        print("[boot] venv re-exec уже пробували — працюю як є", flush=True)
-        return
-    for cand in ("/app/.venv/bin/python", "/app/.venv/bin/python3",
-                 "/opt/venv/bin/python", "/opt/venv/bin/python3"):
-        if not os.path.exists(cand):
-            continue
-        try:
-            if os.path.realpath(cand) == os.path.realpath(sys.executable):
-                continue
-        except Exception:
-            pass
-        os.environ["_VENV_REEXEC"] = "1"
-        print(f"[boot] пакетів немає в {sys.executable} — перезапуск через {cand}", flush=True)
-        try:
-            os.execv(cand, [cand] + sys.argv)
-        except Exception as _e_exec:
-            print(f"[boot] re-exec помилка: {_e_exec}", flush=True)
-            return
+    added = []
+    for pat in ("/app/.venv/lib/python3.*/site-packages",
+                "/opt/venv/lib/python3.*/site-packages",
+                "/root/.local/lib/python3.*/site-packages"):
+        for d in sorted(_glob.glob(pat)):
+            if d not in sys.path and os.path.isdir(d):
+                sys.path.insert(0, d)
+                added.append(d)
+    if added:
+        import importlib as _il
+        _il.invalidate_caches()
+        print(f"[boot] додано в sys.path: {', '.join(added)}", flush=True)
+    else:
+        print("[boot] site-packages венва не знайдено — працюю на фолбеках", flush=True)
+
 
 try:
     _ensure_venv()
