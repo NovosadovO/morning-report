@@ -27,6 +27,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, sleep_total_min",
       "module": "qwsync",
       "ts": "2026-08-26T15:14:07"
+    },
+    {
+      "kind": "reminder",
+      "what": "Перевірити Socios.com",
+      "detail": "Дедлайн для Socios.com 'зміна способу входу' наступає 27.08.2026.",
+      "module": "selfact",
+      "ts": "2026-08-26T15:14:14"
     }
   ]
 }
