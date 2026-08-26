@@ -20,4 +20,4 @@ cmds = [
 ]
 
 [start]
-cmd = "python monitor_loop.py"
+cmd = "if [ -x /app/.venv/bin/python ]; then exec /app/.venv/bin/python monitor_loop.py; else exec python monitor_loop.py; fi"

@@ -29,6 +29,42 @@ signal.signal(signal.SIGTERM, _handle_sigterm)
 signal.signal(signal.SIGINT, _handle_sigterm)
 
 
+# ─── BOOT: запуск у правильному Python ────────────────────────────────────────
+# Railway перейшов на білдер railpack: він ставить залежності у /app/.venv,
+# а старт-команда піднімала СИСТЕМНИЙ python (/mise/installs/...), де немає
+# нічого — ні requests, ні kerykeion, ні matplotlib. Через це вмирали астро,
+# графіки здоров'я, Strava і Google API. Якщо ми не в тому інтерпретаторі —
+# перезапускаємо себе венвовим python (один раз, прапор _VENV_REEXEC).
+def _ensure_venv():
+    import importlib.util as _ilu
+    if _ilu.find_spec("requests") is not None and _ilu.find_spec("matplotlib") is not None:
+        return
+    if os.environ.get("_VENV_REEXEC") == "1":
+        print("[boot] venv re-exec уже пробували — працюю як є", flush=True)
+        return
+    for cand in ("/app/.venv/bin/python", "/app/.venv/bin/python3",
+                 "/opt/venv/bin/python", "/opt/venv/bin/python3"):
+        if not os.path.exists(cand):
+            continue
+        try:
+            if os.path.realpath(cand) == os.path.realpath(sys.executable):
+                continue
+        except Exception:
+            pass
+        os.environ["_VENV_REEXEC"] = "1"
+        print(f"[boot] пакетів немає в {sys.executable} — перезапуск через {cand}", flush=True)
+        try:
+            os.execv(cand, [cand] + sys.argv)
+        except Exception as _e_exec:
+            print(f"[boot] re-exec помилка: {_e_exec}", flush=True)
+            return
+
+try:
+    _ensure_venv()
+except Exception as _e_boot:
+    print(f"[boot] error: {_e_boot}", flush=True)
+
+
 # ─── ДІАГНОСТИКА РАНТАЙМУ ─────────────────────────────────────────────────────
 # Причина: у проді пропадали requests і kerykeion, хоч у requirements.txt вони є.
 # Один рядок у логах показує, ЯКИЙ інтерпретатор і що в ньому реально стоїть.
