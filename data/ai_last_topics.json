@@ -1,4 +1,9 @@
 {
+  "bills|2026-08-27t01_15_45_758111": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"78045\",     \"vendor\": \"Railway\",     \"amount\": \"12.32\",     \"currency\": \"USD\",     \"invoice_no\": \"\",     \"due\": \"\",     \"already_paid\"",
+    "ts": "2026-08-27T01:15:45.758111"
+  },
   "email_ai_item|2026-08-27t01_10_23_038035": {
     "topic": "email_ai_item",
     "gist": "```json { \"description\": \"Цей лист від The Defiant є дайджестом новин зі світу DeFi та криптовалют. Він містить п'ять головних історій, зокрема про те, як Core ",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, твій платіж за Runable на $10.00 був невдалим. Будь ласка, онови ",
     "ts": "2026-08-26T23:23:06.567388"
-  },
-  "bills|2026-08-26t23_15_27_340437": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"78045\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"invoice_no\": \"\",     \"due\": \"\",     \"already_paid\"",
-    "ts": "2026-08-26T23:15:27.340437"
   }
 }
