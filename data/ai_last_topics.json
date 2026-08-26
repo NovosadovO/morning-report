@@ -1,4 +1,34 @@
 {
+  "email_ai_item|2026-08-26t18_36_12_320902": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Oleh Bezuhlyi через LinkedIn є щоденним дайджестом новин про криптовалюти за 26 серпня. У ньому йдеться про падіння Bitcoi",
+    "ts": "2026-08-26T18:36:12.320902"
+  },
+  "mailcal_extract|2026-08-26t18_27_30_930322": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-26T18:27:30.930322"
+  },
+  "action_detect|2026-08-26t18_25_07_803640": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-26T18:25:07.803640"
+  },
+  "action_detect|2026-08-26t18_24_57_211816": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-09-23\", \"action_time\": \"10:00\", \"action_summary\": \"Олег має візит до де",
+    "ts": "2026-08-26T18:24:57.211816"
+  },
+  "action_detect|2026-08-26t18_24_57_059486": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-09-23\", \"action_time\": \"10:00\", \"action_summary\": \"Олег має візит до де",
+    "ts": "2026-08-26T18:24:57.059486"
+  },
+  "action_detect|2026-08-26t18_24_46_089740": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-09-23\", \"action_time\": \"10:00\", \"action_summary\": \"Олег має візит до де",
+    "ts": "2026-08-26T18:24:46.089740"
+  },
   "msg_rwa|2026-08-26t18_23_42_328456": {
     "topic": "MSG_RWA",
     "gist": "🚨 **Аномалія FIGR_HELOC: Ситуація та вплив на RWA** 📉  Сьогодні, 26 серпня, токенізований фонд FIGR_HELOC, який має стояти на місці, продемонстрував незвичне па",
@@ -268,35 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-23\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має неплановану нічну зм",
     "ts": "2026-08-26T16:30:55.661341"
-  },
-  "msg_event_soon|2026-08-26t16_30_53_245686": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ⏰  Через півтори години ти вже будеш на нічній зміні, тому варто зосередитись на підготовці, щоб уникнути зайвих витрат енергії. Твоя вага зараз 8",
-    "ts": "2026-08-26T16:30:53.245686"
-  },
-  "openloop_promises|2026-08-26t16_28_32_410970": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-08-26T16:28:32.410970"
-  },
-  "action_detect|2026-08-26t16_27_39_636045": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забувай про Armolopid Plu",
-    "ts": "2026-08-26T16:27:39.636045"
-  },
-  "context_ask_ai|2026-08-26t16_27_31_498023": {
-    "topic": "context_ask_ai",
-    "gist": "Олег, добре, що поділився свіжими даними. Вага 83.1 кг — це, звісно, далеко від 75 кг. 6200 кроків і 7 годин сну — це непогано, але для нічної зміни цього може ",
-    "ts": "2026-08-26T16:27:31.498023"
-  },
-  "email_ai_item|2026-08-26t16_27_18_789521": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від Slovnaft Move інформує про акцію, де можна отримати знижки до 37% на кухонні приналежності Tramontina за цифрові наліпки. ",
-    "ts": "2026-08-26T16:27:18.789521"
-  },
-  "action_detect|2026-08-26t16_26_56_960461": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-08-26\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має неплановану нічну зм",
-    "ts": "2026-08-26T16:26:56.960461"
   }
 }
