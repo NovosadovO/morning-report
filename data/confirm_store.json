@@ -6013,7 +6013,44 @@
     "action": "email_delete",
     "pid": "78000",
     "subject": "Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 77842,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78000"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78000"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78000"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78000"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78000"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78000"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-26T10:35:34.813143+00:00"
   }
 }
