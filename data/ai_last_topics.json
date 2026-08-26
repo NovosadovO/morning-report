@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-08-26t23_30_43_608425": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря ранню зміну ",
+    "ts": "2026-08-26T23:30:43.608425"
+  },
+  "email_ai_item|2026-08-26t23_26_31_581526": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від Forbes через LinkedIn є інформаційним бюлетенем, що розповідає про стартап Instinct, який розробляє AI-асистента. Оцінк",
+    "ts": "2026-08-26T23:26:31.581526"
+  },
   "selfact|2026-08-26t23_23_06_567388": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, твій платіж за Runable на $10.00 був невдалим. Будь ласка, онови ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Спробуй мати під рукою засіб для швидк",
     "ts": "2026-08-26T21:02:46.396984"
-  },
-  "action_detect|2026-08-26t21_02_46_269429": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зміни в розкладі роботи\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати ранню зміну н",
-    "ts": "2026-08-26T21:02:46.269429"
-  },
-  "action_detect|2026-08-26t21_02_35_101891": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Розтяжка після зміни\", \"action_date\": \"2026-08-27\", \"action_time\": \"06:00\", \"action_summary\": \"Після завершення ніч",
-    "ts": "2026-08-26T21:02:35.101891"
   }
 }
