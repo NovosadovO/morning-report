@@ -1,9 +1,4 @@
 {
-  "77590": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "Temu <temu@eu.temuemail.com>",
-    "seen_ts": "2026-08-17T13:53:25.180397+00:00"
-  },
   "77591": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@e.runna.com",
     "sender_raw": "\"Runna\" <hello@e.runna.com>",
     "seen_ts": "2026-08-26T10:28:48.259326+00:00"
+  },
+  "78024": {
+    "sender": "spotlight@newsletters.coinmarketcap.com",
+    "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
+    "seen_ts": "2026-08-26T11:13:35.504927+00:00"
   }
 }
