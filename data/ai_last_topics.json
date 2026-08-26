@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-26t17_47_04_633285": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: платіж за Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію. Ти вже отри",
+    "ts": "2026-08-26T17:47:04.633285"
+  },
   "mailcal_extract|2026-08-26t17_42_14_479359": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"78045\",     \"title\": \"Оплата Runable\",     \"date\": \"2026-08-26\",     \"time\": \"09:00\",     \"kind\": \"payment\",     \"why\": \"Календар — за",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
     "ts": "2026-08-26T15:37:14.541776"
-  },
-  "action_detect|2026-08-26t15_37_14_371251": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата паркувального талона Ubian\", \"action_date\": \"2026-08-26\", \"action_time\": \"11:56\", \"action_summary\": \"Оплатит",
-    "ts": "2026-08-26T15:37:14.371251"
   }
 }
