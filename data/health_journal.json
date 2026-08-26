@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "raw": "вага 83.1, спав 7г 10хв, кроки 6200, пульс 72",
+      "fields": {
+        "steps": 6200,
+        "sleep_total_min": 430,
+        "hr_avg": 72,
+        "weight_kg": 83.1,
+        "sleep_hours": 7.17,
+        "date": "2026-08-26",
+        "source": "qwatch_auto",
+        "saved_at": "2026-08-26 16:27"
+      },
+      "source": "telegram",
+      "ts": "2026-08-26T16:27:08",
+      "day": "2026-08-26"
+    }
+  ],
+  "updated": "2026-08-26T16:27:08"
+}
