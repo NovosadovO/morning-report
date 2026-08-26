@@ -1,4 +1,34 @@
 {
+  "action_detect|2026-08-26t13_51_49_834683": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
+    "ts": "2026-08-26T13:51:49.834683"
+  },
+  "action_detect|2026-08-26t13_45_05_851730": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-08-26\", \"action_time\": null, \"action_summary\": \"Прийняти Armolopid P",
+    "ts": "2026-08-26T13:45:05.851730"
+  },
+  "msg_nutrition_tip|2026-08-26t13_44_57_702625": {
+    "topic": "MSG_NUTRITION_TIP",
+    "gist": "Привіт Олеже! 🍽  Бачу, зараз обідній час, і, судячи з того, що ти вдома та маєш вільний час, це чудова нагода перевірити, як іде твоя ціль по схудненню до 78 кг",
+    "ts": "2026-08-26T13:44:57.702625"
+  },
+  "action_detect|2026-08-26t13_44_42_140183": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-08-26\", \"action_time\": \"null\", \"action_summary\": \"Прийняти пропущени",
+    "ts": "2026-08-26T13:44:42.140183"
+  },
+  "msg_deep_analysis|2026-08-26t13_44_35_352131": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт, Олеже! 👋  Бачу, ти вдома і маєш вільний час, що чудово для аналізу твого прогресу. Здається, ти починаєш наближатися до своєї цілі щодо схуднення, адже ",
+    "ts": "2026-08-26T13:44:35.352131"
+  },
+  "action_detect|2026-08-26t13_44_18_806384": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити онлайн-реєстрац",
+    "ts": "2026-08-26T13:44:18.806384"
+  },
   "msg_event_soon|2026-08-26t13_44_05_736126": {
     "topic": "MSG_EVENT_SOON",
     "gist": "Привіт Олеже! ✅  Бачу, ти вже подбав про паркування LE066BI у Кошице, адже його закінчення було позначено як \"remembered\" сьогодні о 12:56. Це чудово, що такі д",
@@ -268,35 +298,5 @@
     "topic": "people",
     "gist": "```json [   {     \"email\": \"support.booking.com\",     \"name\": \"Booking.com Customer Service\",     \"relation\": \"сервіс\",     \"topics\": [],     \"my_promises\": [],",
     "ts": "2026-08-26T11:32:10.683547"
-  },
-  "action_detect|2026-08-26t11_30_51_243607": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить пораду випити воду перед візитом до дер",
-    "ts": "2026-08-26T11:30:51.243607"
-  },
-  "calendar|2026-08-26t11_28_25_268059": {
-    "topic": "calendar",
-    "gist": "Олеже, бачу, що сьогодні у тебе дуже важливий день для здоров'я і краси! 🧖‍♂️ За півтори години, о 12:10, запланований візит до дерматолога в EC Cassovar kožné ",
-    "ts": "2026-08-26T11:28:25.268059"
-  },
-  "email_ai_item|2026-08-26t11_18_39_729237": {
-    "topic": "email_ai_item",
-    "gist": "```json { \"description\": \"Цей лист є автоматичними рекомендаціями подій від AllEvents для Олега. Він не містить конкретних подій чи дат, а лише загальну інформа",
-    "ts": "2026-08-26T11:18:39.729237"
-  },
-  "calendar|2026-08-26t11_15_14_482168": {
-    "topic": "calendar",
-    "gist": "Олеже, бачу, що ранковий догляд за обличчям вже відбувся, і ти встиг це зробити перед візитом до дерматолога, що дуже круто! 💪 Пам'ятаю, ти казав, що хочеш щоде",
-    "ts": "2026-08-26T11:15:14.482168"
-  },
-  "action_detect|2026-08-26t11_11_19_200103": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати вагу в Ap",
-    "ts": "2026-08-26T11:11:19.200103"
-  },
-  "action_detect|2026-08-26t11_11_07_127608": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Ryanair\", \"action_date\": \"2026-08-26\", \"action_time\": null, \"action_summary\": \"Звернути у",
-    "ts": "2026-08-26T11:11:07.127608"
   }
 }
