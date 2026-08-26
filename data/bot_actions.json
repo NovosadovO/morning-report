@@ -377,6 +377,13 @@
       "detail": "Три листи від Runable про невдалу оплату ($10.00 payment to Runable was unsuccessful) та нотатка в підписках про можливі проблеми з карткою.",
       "module": "selfact",
       "ts": "2026-08-26T21:52:16"
+    },
+    {
+      "kind": "reminder",
+      "what": "Виступ Кевіна Ворша на Jackson Hole",
+      "detail": "Подія 'Виступ Кевіна Ворша на Jackson Hole' запланована на 28.08 о 08:00.",
+      "module": "selfact",
+      "ts": "2026-08-26T21:52:20"
     }
   ]
 }
