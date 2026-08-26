@@ -13,7 +13,10 @@ import urllib.error
 from datetime import datetime, timezone, timedelta
 
 try:
-    import requests as _requests
+    try:
+        import requests as _requests
+    except ImportError:  # рантайм Railway без requests
+        import httpreq as _requests
     _HAS_REQUESTS = True
 except ImportError:
     _HAS_REQUESTS = False

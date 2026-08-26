@@ -176,7 +176,10 @@ def _get_today_shift_type():
             f"&singleEvents=true&orderBy=startTime&maxResults=20"
         )
         try:
-            import requests as _req
+            try:
+                import requests as _req
+            except ImportError:  # рантайм Railway без requests
+                import httpreq as _req
             r = _req.get(url, headers=headers, timeout=15)
             r.raise_for_status()
             today_events = r.json().get("items", [])
@@ -203,7 +206,10 @@ def _get_today_shift_type():
                 f"&singleEvents=true&orderBy=startTime&maxResults=20"
             )
             try:
-                import requests as _req2
+                try:
+                    import requests as _req2
+                except ImportError:  # рантайм Railway без requests
+                    import httpreq as _req2
                 r2 = _req2.get(url2, headers=headers, timeout=15)
                 r2.raise_for_status()
                 yest_events = r2.json().get("items", [])

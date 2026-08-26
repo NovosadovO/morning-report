@@ -8,7 +8,10 @@ import os, json, re, urllib.request, urllib.parse
 from datetime import datetime, timezone, timedelta
 
 try:
-    import requests as _req
+    try:
+        import requests as _req
+    except ImportError:  # рантайм Railway без requests
+        import httpreq as _req
     _HAS_REQUESTS = True
 except ImportError:
     _HAS_REQUESTS = False

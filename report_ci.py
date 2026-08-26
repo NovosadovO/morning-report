@@ -413,7 +413,10 @@ def fetch_news():
 # ── EMAIL VIA RESEND ─────────────────────────────────────────────────────
 
 def send_email(subject, html):
-    import requests as req_lib
+    try:
+        import requests as req_lib
+    except ImportError:  # рантайм Railway без requests
+        import httpreq as req_lib
     payload = {
         "from": "Morning Report <onboarding@resend.dev>",
         "to": [RECIPIENT],

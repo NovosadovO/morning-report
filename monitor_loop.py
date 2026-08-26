@@ -29,6 +29,25 @@ signal.signal(signal.SIGTERM, _handle_sigterm)
 signal.signal(signal.SIGINT, _handle_sigterm)
 
 
+# ─── ДІАГНОСТИКА РАНТАЙМУ ─────────────────────────────────────────────────────
+# Причина: у проді пропадали requests і kerykeion, хоч у requirements.txt вони є.
+# Один рядок у логах показує, ЯКИЙ інтерпретатор і що в ньому реально стоїть.
+def _runtime_diag():
+    import importlib.util as _ilu
+    mods = ("requests", "kerykeion", "matplotlib", "numpy", "yfinance",
+            "googleapiclient", "cryptography", "pypdf", "docx")
+    have = [m for m in mods if _ilu.find_spec(m) is not None]
+    miss = [m for m in mods if m not in have]
+    print(f"[diag] python={sys.executable} {sys.version.split()[0]}", flush=True)
+    print(f"[diag] є: {', '.join(have) or '—'}", flush=True)
+    print(f"[diag] НЕМА: {', '.join(miss) or '—'}", flush=True)
+
+try:
+    _runtime_diag()
+except Exception as _e_diag:
+    print(f"[diag] error: {_e_diag}", flush=True)
+
+
 def run_bot():
     """Запускає bot main() inline (не subprocess) — гарантовано один процес."""
     print("=== Starting bot listener ===", flush=True)
@@ -1606,7 +1625,10 @@ def _run_evening_charts_watcher_DISABLED():
             )
             body_parts.append(f"--{boundary}--".encode())
             body = b"\r\n".join(body_parts)
-            import requests as _req
+            try:
+                import requests as _req
+            except ImportError:  # рантайм Railway без requests
+                import httpreq as _req
             _req.post(
                 f"https://api.telegram.org/bot{token}/sendPhoto",
                 data={"chat_id": chat, "caption": caption, "parse_mode": "HTML"},
@@ -1706,7 +1728,10 @@ def run_report_card_watcher():
         if not token or not chat:
             return
         try:
-            import requests as _req
+            try:
+                import requests as _req
+            except ImportError:  # рантайм Railway без requests
+                import httpreq as _req
             media = []
             files = {}
             for i, p in enumerate(photos):

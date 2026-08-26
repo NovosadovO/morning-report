@@ -744,7 +744,10 @@ def send_photo(chat_id, photo_bytes, caption=None):
     except Exception:
         pass
     try:
-        import requests as _rq
+        try:
+            import requests as _rq
+        except ImportError:  # рантайм Railway без requests
+            import httpreq as _rq
         import io as _io
         data = {"chat_id": str(chat_id)}
         if caption:
@@ -3798,7 +3801,10 @@ def handle_command(chat_id, text):
             # 5. тест Gemini виклику
             if gk:
                 try:
-                    import requests as _dr
+                    try:
+                        import requests as _dr
+                    except ImportError:  # рантайм Railway без requests
+                        import httpreq as _dr
                     _resp = _dr.post(
                         f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gk}",
                         json={"contents": [{"parts": [{"text": "Скажи 'ок' одним словом"}]}]},

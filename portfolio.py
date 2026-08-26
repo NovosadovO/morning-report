@@ -4,7 +4,10 @@
 """
 import os
 import json
-import requests
+try:
+    import requests as requests
+except ImportError:  # рантайм Railway без requests
+    import httpreq as requests
 from datetime import datetime, timezone, timedelta
 
 # ─── ПОЗИЦІЇ ПОРТФЕЛЮ ────────────────────────────────────────────────────────
