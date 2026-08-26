@@ -7164,6 +7164,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_done_f83368fb95"
+    },
+    {
+      "ts": "2026-08-26T14:38:29.687472+00:00",
+      "category": "deadline_found",
+      "question": "Закінчення паркування в Кошице",
+      "answer": "2026-08-26",
+      "extra": {
+        "kind": "other"
+      }
     }
   ]
 }
