@@ -1,9 +1,4 @@
 {
-  "77601": {
-    "sender": "newsletters@e.economist.com",
-    "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
-    "seen_ts": "2026-08-17T16:28:45.850615+00:00"
-  },
   "77603": {
     "sender": "updates@okx.com",
     "sender_raw": "OKX <updates@okx.com>",
@@ -1498,5 +1493,10 @@
     "sender": "slovnaftmove@mail.loyaltyteam.com",
     "sender_raw": "\"Slovnaft Move\" <slovnaftmove@mail.loyaltyteam.com>",
     "seen_ts": "2026-08-26T14:27:19.728238+00:00"
+  },
+  "78044": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-26T14:35:36.551647+00:00"
   }
 }
