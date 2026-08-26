@@ -6170,7 +6170,44 @@
     "action": "email_delete",
     "pid": "78019",
     "subject": "",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 77954,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78019"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78019"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78019"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78019"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78019"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78019"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-26T12:05:21.954244+00:00"
   }
 }
