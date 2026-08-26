@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-26t23_23_06_567388": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, твій платіж за Runable на $10.00 був невдалим. Будь ласка, онови ",
+    "ts": "2026-08-26T23:23:06.567388"
+  },
   "bills|2026-08-26t23_15_27_340437": {
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"78045\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"invoice_no\": \"\",     \"due\": \"\",     \"already_paid\"",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Розтяжка після зміни\", \"action_date\": \"2026-08-27\", \"action_time\": \"06:00\", \"action_summary\": \"Після завершення ніч",
     "ts": "2026-08-26T21:02:35.101891"
-  },
-  "action_detect|2026-08-26t21_02_24_276582": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Повернення кредиту від Temu\", \"action_date\": \"2026-08-27\", \"action_time\": \"09:00\", \"action_summary\": \"Повернути кре",
-    "ts": "2026-08-26T21:02:24.276582"
   }
 }
