@@ -7185,6 +7185,12 @@
       "category": "confirm",
       "question": "gx_mute: крипто",
       "answer": "no"
+    },
+    {
+      "ts": "2026-08-26T15:09:07.235540+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_n_715e3023dd"
     }
   ]
 }
