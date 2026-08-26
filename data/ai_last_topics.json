@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-08-26t17_42_14_479359": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"78045\",     \"title\": \"Оплата Runable\",     \"date\": \"2026-08-26\",     \"time\": \"09:00\",     \"kind\": \"payment\",     \"why\": \"Календар — за",
+    "ts": "2026-08-26T17:42:14.479359"
+  },
   "money|2026-08-26t17_31_41_003569": {
     "topic": "money",
     "gist": "```json [   {     \"uid\": \"78045\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"date\": \"2026-08-26\",     \"kind\": \"sub\",     \"note\"",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата паркувального талона Ubian\", \"action_date\": \"2026-08-26\", \"action_time\": \"11:56\", \"action_summary\": \"Оплатит",
     "ts": "2026-08-26T15:37:14.371251"
-  },
-  "action_detect|2026-08-26t15_37_03_499612": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-08-26\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має нічну зміну сьогодні",
-    "ts": "2026-08-26T15:37:03.499612"
   }
 }
