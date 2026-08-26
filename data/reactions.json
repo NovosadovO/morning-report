@@ -411,5 +411,15 @@
     "label": "👌 Прийняв",
     "state": "open",
     "ts": "2026-08-27T01:03:24"
+  },
+  "generic|t|інтерес до jackson hole": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "інтерес до jackson hole",
+    "title": "Інтерес до Jackson Hole",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "state": "closed",
+    "ts": "2026-08-27T01:50:20"
   }
 }
