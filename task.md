@@ -686,3 +686,16 @@ react.is_closed і dismissed.is_muted. IMAP впав → модуль мовчи
 {"ok":true,"fields":["steps","hr_avg","weight_kg","sleep_total_min"]},
 у гілці data з'явилось 2026-08-26: steps 4989, hr_avg 71, weight_kg 83.4,
 sleep_total_min 548. Traceback 0.
+
+## httpreq.py — фікс щогодинних звітів (26.08.2026)
+ПРИЧИНА: у рантаймі Railway відсутній модуль `requests`. main() у monitor.py
+падав на `import requests as _req_send` (рядок ~11113) — уже ПІСЛЯ того, як
+забрав lock. Тому в data/monitor_main_sent.json lock_slot оновлювався щогодини,
+а sent_slot застряг на 2026-08-25T11:00. Жоден звіт не доходив з 25.08.
+ФІКС: httpreq.py — urllib-шим із API `requests` (post/get, multipart для фото,
+Response.status_code/.text/.json()). У monitor.py три місця імпорту
+(top-level _requests, _send_photo_bytes _req_pb, main() _req_send) тепер
+падають у фолбек `import httpreq`.
+ПЕРЕВІРЕНО: прод-лог — "[send] requests відсутній — використовую httpreq
+(urllib)", 6× "send_telegram single chunk returned True", "=== Report sent ===",
+Traceback 0.
