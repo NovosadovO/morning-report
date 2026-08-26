@@ -6973,6 +6973,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_b658b24c68"
+    },
+    {
+      "ts": "2026-08-26T13:40:07.143246+00:00",
+      "category": "calendar_button",
+      "question": "📌 Закінчення паркування в Кошице (LE066BI)",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t30",
+        "when": "12:56–13:56",
+        "note": null
+      }
     }
   ]
 }
