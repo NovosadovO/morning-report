@@ -298,5 +298,20 @@
     "topic": "proactive_ai",
     "gist": "Привіт, Олеже! Зараз 07:10, середа, у тебе сьогодні вихідний. Як твій ранок, що плануєш робити?",
     "ts": "2026-08-26T07:10:59.197150"
+  },
+  "action_detect|2026-08-26t10_36_54_746134": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Догляд за обличчям (вечір)\", \"action_date\": \"2026-08-26\", \"action_time\": \"19:30\", \"action_summary\": \"Нагадування пр",
+    "ts": "2026-08-26T10:36:54.746134"
+  },
+  "action_detect|2026-08-26t10_35_50_575338": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
+    "ts": "2026-08-26T10:35:50.575338"
+  },
+  "email_ai_item|2026-08-26t10_33_55_426775": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Zara є рекламною розсилкою, що представляє нову колекцію товарів для спальні. Він містить зображення та посилання на різні",
+    "ts": "2026-08-26T10:33:55.426775"
   }
 }
