@@ -624,3 +624,34 @@ react.is_closed і dismissed.is_muted. IMAP впав → модуль мовчи
 - ЗАПИТУЄ: прострочені рахунки; місяць дорожчий за попередній на ≥25% (база ≥40€) — пряме питання «разові витрати чи нова постійна вага».
 - Мовчить, коли даних немає. Rate-limit 150 хв, макс 2 картки за прохід, повага до react/dismissed.
 Команда /гроші (/money, /витрати, /лінія). Виклик у monitor_loop після openloop. Тести tests_money.py — 0 падінь.
+
+## selfact.py — AI-ІНІЦІАТОР + журнал власних дій (26.08.2026)
+
+Що зроблено:
+- `context()` — повна картина для AI: календар 7 днів, свіжі листи з тілами
+  (`monitor.get_emails()` віддає dict з `items`, не список!), реєстри
+  (bills, subs, money_charges, health, habits, dates, deadlines, openloop,
+  ai_notes, reactions), заплановані нагадування, журнал дій за 48 год.
+- `decide()` — Gemini JSON: 0-2 дії `{type: note|reminder|event|notify|ask,
+  title, text, date, time, why}`. У промпті прямо заборонено вигадувати факти
+  й дублювати вже зроблене. Немає причини → `[]`.
+- Виконавці: нотатка → `ai_notes.add_note(source="selfact")`;
+  нагадування → СПИСОК `reminders.json`, `sent: false`, id `selfact_YYYYMMDDHHMM`
+  (дата через `K.valid_future_date` — минула дата відкидається);
+  подія → `K.calendar_event(datetime)`; notify/ask → `K.send_card` з кнопками react.
+- Після кожної створеної речі Олегу летить «🤖 Зробив сам: …» + рядок «Чому».
+- `journal(kind, what, detail, module)` → `bot_actions.json` (400 записів).
+  ПУБЛІЧНИЙ хелпер — інші модулі можуть писати свої дії туди ж.
+- `digest()` — міні-звіт 21:30 «Що я зробив сам за сьогодні», групування
+  подія/нагадування/нотатка/питання/сповіщення + підрахунок за реєстрами
+  (mailcal, money_charges, money_events, reactions). Без дій — каже прямо.
+- `run(force)` — rate-limit 90 хв (`selfact_scan.json`), макс 2 дії,
+  дедуп `selfact_dedup.json` (5 днів), повага до `react.is_closed` і
+  `dismissed.is_muted`.
+- Інтеграція: `monitor_loop.py` у watcher-циклі після `healthtrend`;
+  команди `/сам` (`/ініціатива`, `/selfact`) і `/зроблено` (`/дії`) у `bot.py`.
+
+Перевірено: `tests_selfact.py` — 13 блоків, 0 падінь. Деплой c6ed3bf5 SUCCESS,
+у проді 0 помилок, живий прохід: `[selfact] виконано дій: 2` (сповіщення про
+невдалі платежі Runable/Railway + нагадування оновити платіжні дані),
+`bot_actions.json` створений у гілці data.
