@@ -3319,6 +3319,33 @@ def handle_command(chat_id, text):
         import threading as _th_ol
         _th_ol.Thread(target=_run_ol, daemon=True, name="openloop-cmd").start()
 
+    elif text.lower().strip() in ["/сам", "/ініціатива", "/selfact",
+                                  "/инициатива"]:
+        def _run_sa():
+            try:
+                import sys as _ssa, os as _osa
+                _ssa.path.insert(0, _osa.path.dirname(__file__))
+                import selfact as _sa_cmd
+                send(chat_id, _sa_cmd.report())
+                _sa_cmd.run(force=True)
+            except Exception as _e_sa:
+                send(chat_id, f"⚠️ Помилка ініціативи: {str(_e_sa)[:300]}")
+        import threading as _th_sa
+        _th_sa.Thread(target=_run_sa, daemon=True, name="selfact-cmd").start()
+
+    elif text.lower().strip() in ["/зроблено", "/зробив", "/дії", "/journal",
+                                  "/actions"]:
+        def _run_sd():
+            try:
+                import sys as _ssd, os as _osd
+                _ssd.path.insert(0, _osd.path.dirname(__file__))
+                import selfact as _sd_cmd
+                send(chat_id, _sd_cmd.digest(force=True))
+            except Exception as _e_sd:
+                send(chat_id, f"⚠️ Помилка звіту дій: {str(_e_sd)[:300]}")
+        import threading as _th_sd
+        _th_sd.Thread(target=_run_sd, daemon=True, name="selfact-digest").start()
+
     elif text.lower().strip() in ["/тренди", "/trend", "/динаміка",
                                   "/здоровя", "/здоров'я"]:
         def _run_ht():

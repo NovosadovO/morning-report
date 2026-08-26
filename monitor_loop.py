@@ -1234,6 +1234,14 @@ def run_assistant_watcher():
                 _ht_w.run()
             except Exception as _e_htw:
                 print(f"[htrend] watcher error: {_e_htw}", flush=True)
+            # AI-ІНІЦІАТОР: бот сам дивиться на календар+пошту+усі реєстри і
+            # САМ створює нотатку / нагадування / подію / питання.
+            # Плюс міні-звіт 21:30 «що я зробив сам за день».
+            try:
+                import selfact as _sa_w
+                _sa_w.run()
+            except Exception as _e_saw:
+                print(f"[selfact] watcher error: {_e_saw}", flush=True)
             # Розумна тиша: Олег прокинувся → віддаємо відкладене одним
             # дайджестом. flush() сам перевіряє, що сон уже скінчився.
             try:
