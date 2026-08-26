@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-26t18_48_25_640413": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, твій платіж за підписку Runable на $10.00 був невдалим. Потрібно ",
+    "ts": "2026-08-26T18:48:25.640413"
+  },
   "email_ai_item|2026-08-26t18_36_12_320902": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Oleh Bezuhlyi через LinkedIn є щоденним дайджестом новин про криптовалюти за 26 серпня. У ньому йдеться про падіння Bitcoi",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Pelikan.sk\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити онла",
     "ts": "2026-08-26T16:31:00.789284"
-  },
-  "action_detect|2026-08-26t16_30_55_661341": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-23\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має неплановану нічну зм",
-    "ts": "2026-08-26T16:30:55.661341"
   }
 }
