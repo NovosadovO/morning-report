@@ -524,6 +524,13 @@
       "detail": "Згідно з 'ДЕДЛАЙНИ', сьогодні, 27.08.2026, дедлайн для 'Socios.com: зміна способу входу'.",
       "module": "selfact",
       "ts": "2026-08-27T01:55:22"
+    },
+    {
+      "kind": "notify",
+      "what": "Core Lightning: рекомендація відключити ноди",
+      "detail": "Олег отримує та цікавиться крипто-новинами (факт з пам'яті), а свіжий лист від The Defiant містить заголовок 'Core Lightning Tells Node Operators to Go Offline'.",
+      "module": "selfact",
+      "ts": "2026-08-27T01:55:25"
     }
   ]
 }
