@@ -1,4 +1,14 @@
 {
+  "selfact|2026-08-27t01_25_11_114939": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливі крипто-новини\",     \"text\": \"Олеже, The Defiant повідомляє, що Core Lightning радить операторам вузлів",
+    "ts": "2026-08-27T01:25:11.114939"
+  },
+  "mailcal_extract|2026-08-27t01_18_44_388867": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-27T01:18:44.388867"
+  },
   "bills|2026-08-27t01_15_45_758111": {
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"78045\",     \"vendor\": \"Railway\",     \"amount\": \"12.32\",     \"currency\": \"USD\",     \"invoice_no\": \"\",     \"due\": \"\",     \"already_paid\"",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря ранню зміну ",
     "ts": "2026-08-26T23:30:43.608425"
-  },
-  "email_ai_item|2026-08-26t23_26_31_581526": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від Forbes через LinkedIn є інформаційним бюлетенем, що розповідає про стартап Instinct, який розробляє AI-асистента. Оцінк",
-    "ts": "2026-08-26T23:26:31.581526"
-  },
-  "selfact|2026-08-26t23_23_06_567388": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, твій платіж за Runable на $10.00 був невдалим. Будь ласка, онови ",
-    "ts": "2026-08-26T23:23:06.567388"
   }
 }
