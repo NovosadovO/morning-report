@@ -1,4 +1,49 @@
 {
+  "context_ask_ai|2026-08-26t20_19_52_373796": {
+    "topic": "context_ask_ai",
+    "gist": "Олег, зрозумів тебе ще раз, без проблем. Я чітко занотував: * **18 вересня** – рання зміна * **19 вересня** – рання зміна * **21 вересня** – нічну зміну видален",
+    "ts": "2026-08-26T20:19:52.373796"
+  },
+  "context_ask_ai|2026-08-26t20_16_59_064625": {
+    "topic": "context_ask_ai",
+    "gist": "Олег, зрозумів твоє прохання!  Я занотував: * **18.09** – рання зміна * **19.09** – рання зміна * **21.09** – нічна зміна видалена  На жаль, у мене досі є техні",
+    "ts": "2026-08-26T20:16:59.064625"
+  },
+  "calendar|2026-08-26t20_16_07_616564": {
+    "topic": "calendar",
+    "gist": "Олеже, бачу, що догляд за обличчям був запланований на вечір, але ти зараз на нічній зміні. Це точно не найкращий час для повноцінного догляду. Краще відклади ц",
+    "ts": "2026-08-26T20:16:07.616564"
+  },
+  "action_detect|2026-08-26t20_15_03_636033": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2023-08-27\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має нічну зміну 27 серпн",
+    "ts": "2026-08-26T20:15:03.636033"
+  },
+  "action_detect|2026-08-26t20_15_03_372237": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2023-08-27\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має нічну зміну 27 серпн",
+    "ts": "2026-08-26T20:15:03.372237"
+  },
+  "action_detect|2026-08-26t20_15_03_356198": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2023-08-27\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має нічну зміну 27 серпн",
+    "ts": "2026-08-26T20:15:03.356198"
+  },
+  "action_detect|2026-08-26t20_15_03_355671": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2023-08-27\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має нічну зміну 27 серпн",
+    "ts": "2026-08-26T20:15:03.355671"
+  },
+  "action_detect|2026-08-26t20_15_03_341380": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2023-08-27\", \"action_time\": \"18:00\", \"action_summary\": \"Записати нічну зміну на 27 се",
+    "ts": "2026-08-26T20:15:03.341380"
+  },
+  "action_detect|2026-08-26t20_15_03_224317": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2023-08-27\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має нічну зміну 27 серпн",
+    "ts": "2026-08-26T20:15:03.224317"
+  },
   "action_detect|2026-08-26t20_14_52_279157": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2023-08-27\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має нічну зміну 27 серпн",
@@ -253,50 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Oleh Bezuhlyi через LinkedIn є щоденним дайджестом новин про криптовалюти за 26 серпня. У ньому йдеться про падіння Bitcoi",
     "ts": "2026-08-26T18:36:12.320902"
-  },
-  "mailcal_extract|2026-08-26t18_27_30_930322": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-08-26T18:27:30.930322"
-  },
-  "action_detect|2026-08-26t18_25_07_803640": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-26T18:25:07.803640"
-  },
-  "action_detect|2026-08-26t18_24_57_211816": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-09-23\", \"action_time\": \"10:00\", \"action_summary\": \"Олег має візит до де",
-    "ts": "2026-08-26T18:24:57.211816"
-  },
-  "action_detect|2026-08-26t18_24_57_059486": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-09-23\", \"action_time\": \"10:00\", \"action_summary\": \"Олег має візит до де",
-    "ts": "2026-08-26T18:24:57.059486"
-  },
-  "action_detect|2026-08-26t18_24_46_089740": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-09-23\", \"action_time\": \"10:00\", \"action_summary\": \"Олег має візит до де",
-    "ts": "2026-08-26T18:24:46.089740"
-  },
-  "msg_rwa|2026-08-26t18_23_42_328456": {
-    "topic": "MSG_RWA",
-    "gist": "🚨 **Аномалія FIGR_HELOC: Ситуація та вплив на RWA** 📉  Сьогодні, 26 серпня, токенізований фонд FIGR_HELOC, який має стояти на місці, продемонстрував незвичне па",
-    "ts": "2026-08-26T18:23:42.328456"
-  },
-  "action_detect|2026-08-26t18_18_59_274650": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-26T18:18:59.274650"
-  },
-  "msg_vip_email|2026-08-26t18_18_54_103575": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 🤝  Сподіваюся, твоя нічна зміна, яка щойно почалася, проходить спокійно. Бачу, що навіть під час роботи ти не випадаєш з інформаційного потоку, пр",
-    "ts": "2026-08-26T18:18:54.103575"
-  },
-  "selfact|2026-08-26t18_17_49_602809": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оплата Runable\",     \"text\": \"Нагадую, що сьогодні, 26.08, о 08:00 було заплановано дві оплати Runable, а тако",
-    "ts": "2026-08-26T18:17:49.602809"
   }
 }
