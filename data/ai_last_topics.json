@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-26t11_47_12_528589": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Лист від Ticketportal.sk пропонує придбати квитки до зоопарків Братислави або Бойниці онлайн, щоб уникнути черг. Це дає можливість в",
+    "ts": "2026-08-26T11:47:12.528589"
+  },
   "mailcal_extract|2026-08-26t11_36_58_521173": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-26T09:00:22.025406"
-  },
-  "openloop_promises|2026-08-26t08_55_48_082738": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-08-26T08:55:48.082738"
   }
 }
