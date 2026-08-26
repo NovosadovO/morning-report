@@ -69,6 +69,26 @@ except Exception as _e_boot:
 # Причина: у проді пропадали requests і kerykeion, хоч у requirements.txt вони є.
 # Один рядок у логах показує, ЯКИЙ інтерпретатор і що в ньому реально стоїть.
 def _runtime_diag():
+    import glob as _glob
+    # Де взагалі лежать пакети в цьому образі — шукаємо site-packages з requests
+    try:
+        pats = ["/app/.venv/lib/python*/site-packages", "/opt/venv/lib/python*/site-packages",
+                "/usr/lib/python3*/site-packages", "/usr/local/lib/python3*/site-packages",
+                "/root/.local/lib/python3*/site-packages", "/app/*/lib/python*/site-packages",
+                "/mise/installs/python/*/lib/python*/site-packages"]
+        found = []
+        for pat in pats:
+            for d in _glob.glob(pat):
+                try:
+                    names = os.listdir(d)
+                except Exception:
+                    continue
+                mark = [n for n in ("requests", "kerykeion", "matplotlib") if n in names]
+                found.append(f"{d} [{len(names)} пакетів{', ' + '/'.join(mark) if mark else ''}]")
+        print(f"[diag] site-packages: {' | '.join(found) or 'не знайдено'}", flush=True)
+        print(f"[diag] /app: {sorted(os.listdir('/app'))[:25]}", flush=True)
+    except Exception as _e_sp:
+        print(f"[diag] scan error: {_e_sp}", flush=True)
     import importlib.util as _ilu
     mods = ("requests", "kerykeion", "matplotlib", "numpy", "yfinance",
             "googleapiclient", "cryptography", "pypdf", "docx")
