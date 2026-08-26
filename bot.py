@@ -2958,6 +2958,13 @@ def handle_command(chat_id, text):
         _q_cmd.touch_user()
     except Exception:
         pass
+    # ПОВНА ПАМ'ЯТЬ: кожне повідомлення Олега — і команда, і звичайний текст.
+    try:
+        import recall as _rc_msg
+        _rc_msg.log_message(text or "",
+                            kind=("cmd" if str(text or "").strip().startswith("/") else "msg"))
+    except Exception as _rce:
+        print(f"[recall] msg error: {_rce}", flush=True)
     # ЄДИНИЙ МОЗОК: запам'ятовуємо кожне ЗВИЧАЙНЕ (не командне) повідомлення
     # Олега як його відповідь — щоб AI посилався на його слова потім.
     try:
@@ -3318,6 +3325,18 @@ def handle_command(chat_id, text):
                 send(chat_id, f"⚠️ Помилка openloop: {str(_e_ol)[:300]}")
         import threading as _th_ol
         _th_ol.Thread(target=_run_ol, daemon=True, name="openloop-cmd").start()
+
+    elif text.lower().strip() in ["/память", "/пам'ять", "/memory", "/recall"]:
+        def _run_rc():
+            try:
+                import sys as _src, os as _orc
+                _src.path.insert(0, _orc.path.dirname(__file__))
+                import recall as _rc_cmd
+                send(chat_id, _rc_cmd.report())
+            except Exception as _e_rc:
+                send(chat_id, f"⚠️ Помилка пам'яті: {str(_e_rc)[:300]}")
+        import threading as _th_rc
+        _th_rc.Thread(target=_run_rc, daemon=True, name="recall-cmd").start()
 
     elif text.lower().strip() in ["/сам", "/ініціатива", "/selfact",
                                   "/инициатива"]:
@@ -6462,6 +6481,17 @@ def _confirm_gate(cb, data: str) -> bool:
 def _route_callback(cb, confirmed: bool = False):
     data = cb.get("data", "")
     chat_id = cb["message"]["chat"]["id"]
+    # ПОВНА ПАМ'ЯТЬ: кожне натискання кнопки — теж відповідь Олега.
+    try:
+        import recall as _rc_cb
+        _lbl = ""
+        for _row in (cb.get("message", {}).get("reply_markup", {}) or {}).get("inline_keyboard", []) or []:
+            for _b in _row or []:
+                if _b.get("callback_data") == data:
+                    _lbl = _b.get("text", "")
+        _rc_cb.log_button(data, _lbl)
+    except Exception as _rcbe:
+        print(f"[recall] btn error: {_rcbe}", flush=True)
     # Натиск кнопки = дія Олега → режим сну не глушить реакцію на неї.
     try:
         import quiet as _q_cb

@@ -211,6 +211,15 @@ def memory_block(max_chars: int = MEM_MAX) -> str:
     except Exception as e:
         _log(f"ai_notes error: {e}")
 
+    # 1.5 ПОВНА ПАМ'ЯТЬ: усе, що Олег писав і натискав (recall.py)
+    try:
+        import recall
+        rc = recall.block(max_chars=2200)
+        if rc and rc.strip():
+            parts.append(rc.strip())
+    except Exception as e:
+        _log(f"recall error: {e}")
+
     # 2. його відповіді власними словами
     a = _answers_block()
     if a:
