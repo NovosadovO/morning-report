@@ -6901,6 +6901,12 @@
       "category": "confirm",
       "question": "email_delete: Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-26T10:35:47.650859+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_bd50924d57"
     }
   ]
 }
