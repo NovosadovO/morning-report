@@ -1,9 +1,4 @@
 {
-  "77581": {
-    "sender": "newsletter@ticketportal.sk",
-    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
-    "seen_ts": "2026-08-17T10:23:39.557194+00:00"
-  },
   "77586": {
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "no-reply@ubian.sk",
     "sender_raw": "Ubian Eshop <no-reply@ubian.sk>",
     "seen_ts": "2026-08-26T09:57:33.453528+00:00"
+  },
+  "78019": {
+    "sender": "news@msk.marionnaud.com",
+    "sender_raw": "\"Marionnaud\" <news@msk.marionnaud.com>",
+    "seen_ts": "2026-08-26T10:01:47.877476+00:00"
   }
 }
