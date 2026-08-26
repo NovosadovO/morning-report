@@ -331,5 +331,15 @@
     "label": "👌 Прийняв",
     "state": "open",
     "ts": "2026-08-26T21:52:36"
+  },
+  "generic|t|виступ кевіна ворша на jackson hole": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "виступ кевіна ворша на jackson hole",
+    "title": "Виступ Кевіна Ворша на Jackson Hole",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "state": "closed",
+    "ts": "2026-08-26T21:52:40"
   }
 }
