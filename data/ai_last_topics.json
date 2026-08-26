@@ -1,4 +1,29 @@
 {
+  "action_detect|2026-08-26t13_56_18_582328": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
+    "ts": "2026-08-26T13:56:18.582328"
+  },
+  "context_ask_ai|2026-08-26t13_54_56_549434": {
+    "topic": "context_ask_ai",
+    "gist": "Ок, Олег, зрозумів! Додаю нічну зміну на сьогодні до твого календаря.  Буду в курсі твого графіку.  Не забудь про Armolopid Plus сьогодні ввечері, це дуже важли",
+    "ts": "2026-08-26T13:54:56.549434"
+  },
+  "mailcal_extract|2026-08-26t13_54_02_748628": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-26T13:54:02.748628"
+  },
+  "action_detect|2026-08-26t13_52_11_840446": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
+    "ts": "2026-08-26T13:52:11.840446"
+  },
+  "action_detect|2026-08-26t13_52_01_043749": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-08-26\", \"action_time\": null, \"action_summary\": \"Олегу потрібно прийн",
+    "ts": "2026-08-26T13:52:01.043749"
+  },
   "action_detect|2026-08-26t13_51_49_834683": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
@@ -273,30 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-08-26T11:36:58.521173"
-  },
-  "action_detect|2026-08-26t11_35_19_751712": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-08-26\", \"action_time\": \"null\", \"action_summary\": \"Прийняти Armolopid",
-    "ts": "2026-08-26T11:35:19.751712"
-  },
-  "msg_deep_analysis|2026-08-26t11_35_13_797963": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋  Ранок середи, 26 серпня, приніс цікавий мікс на твоїх радарах. Важливо зараз подивитись на цілісну картину, особливо коли є такі коливання.  ##",
-    "ts": "2026-08-26T11:35:13.797963"
-  },
-  "action_detect|2026-08-26t11_32_47_196233": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Відвідати дерматолога за 38 хви",
-    "ts": "2026-08-26T11:32:47.196233"
-  },
-  "msg_event_soon|2026-08-26t11_32_38_543229": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ✅  За 38 хвилин у тебе візит до дерматолога. Чи врахував ти, що твоя вага зросла на 1.3 кг за тиждень до 84.5 кг? Це не критично, але важливо для ",
-    "ts": "2026-08-26T11:32:38.543229"
-  },
-  "people|2026-08-26t11_32_10_683547": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"support.booking.com\",     \"name\": \"Booking.com Customer Service\",     \"relation\": \"сервіс\",     \"topics\": [],     \"my_promises\": [],",
-    "ts": "2026-08-26T11:32:10.683547"
   }
 }
