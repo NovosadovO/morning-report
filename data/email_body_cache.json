@@ -1,4 +1,9 @@
 {
+  "78035": {
+    "subject": "$10.00 payment to Runable was unsuccessful",
+    "sender": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
+    "body": "Runable\r\n\r\n$10.00 payment to Runable was unsuccessful We were unable to charge your Visa ending in 2620 for your Runable payment. Please update your payment information to complete your purchase. Update payment information (https://invoice.stripe.com/i/acct_1RaXgUJk3URPLkAO/live_YWNjdF8xUmFYZ1VKazNVUlBMa0FPLF9WOHlrRVZVWnVRTjhKRWJqQTBFSWQxR1E1NzlIYlRHLDE3ODI5MTM4NQ0200arbvyVsA?s=em) Questions? Contact us at support@runable.com (support@runable.com).\r\n\r\nPowered by    stripe logo (https://stripe.com)"
+  },
   "78034": {
     "subject": "$10.00 payment to Runable was unsuccessful",
     "sender": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
@@ -28,10 +33,5 @@
     "subject": "UBIAN - Potvrdenie o zaplatení",
     "sender": "Ubian Eshop <no-reply@ubian.sk>",
     "body": "\r\nObjednávka č. 13915759 vo výške 0.99 EUR zo dňa 8/26/2026 11:56 AM bola úspešne zrealizovaná.\r\n\r\nInformácie o objednávke:\r\n\r\nParkovací lístok Košice, Tarifné pásmo BN\r\nEČV vozidla: LE066BI\r\nZačiatok parkovania: 8/26/2026 11:56 AM\r\nKoniec parkovania: 8/26/2026 12:56 PM\r\nCena: 0.99 EUR\r\n\r\nPrevádzkovateľ: Mesto Košice\r\n\r\nPotvrdenie o zaplatení objednávky Vám príde až po skončení platnosti lístka. Potvrdenie bude možné stiahnuť aj po prihlásení na stránke https://www.ubian.sk v záložke Objednávky.\r\n\r\nLístok je elektronický, nemusíte ho zakladať za predné sklo vozidla. Pri kontrole systém automaticky overí, či pre dané EČV bol vydaný parkovací lístok.\r\nViac informácií nájdete na stránke https://parking.kosice.sk/.\r\n\r\nS pozdravom\r\nTím Ubian\r\n\r\nTransData s.r.o.\r\nM.R.Štefánika 139\r\n010 01 Žilina\r\n\r\ntelefón: +421 41 399 88 99\r\ne-mail: info@ubian.sk\r\nweb: http://www.ubian.sk"
-  },
-  "77925": {
-    "subject": "$12.32 payment to Railway Corporation was unsuccessful again",
-    "sender": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
-    "body": "Railway Corporation  (https://railway.com)\r\n\r\nRailway Corporation\r\n\r\n$12.32 payment to Railway Corporation was unsuccessful We attempted to charge your Visa ending in 0311 for your Railway Corporation subscription again, but were unsuccessful. Please update your billing information to continue your subscription. Update payment method (https://railway.app/account/billing?referer=failed_payment) Questions? Contact us at billing@railway.com (billing@railway.com).\r\n\r\nPowered by    stripe logo (https://stripe.com)"
   }
 }
