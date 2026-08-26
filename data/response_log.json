@@ -7042,6 +7042,17 @@
       "category": "event_done",
       "question": "📅 Візит до дерматолога, EC Cassovar kožné B.\nПланувалась до 14:10 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-26T13:52:01.262912+00:00",
+      "category": "calendar_button",
+      "question": "Візит до дерматолога, EC Cassovar kožné B.",
+      "answer": "done",
+      "extra": {
+        "stage": "after",
+        "when": "12:10–13:10",
+        "note": null
+      }
     }
   ]
 }
