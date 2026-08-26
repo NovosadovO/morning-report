@@ -125,6 +125,13 @@
       "detail": "Згідно з листом від GenAI Works через LinkedIn <newsletters-noreply@linkedin.com> Олег отримав цю статтю.",
       "module": "selfact",
       "ts": "2026-08-26T16:46:34"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, платіж на $10.00 для Runable не пройшов. Потрібно онов",
+      "detail": "З листа 'Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com> | $10.00 payment to Runable was unsuccessful' та запису в календарі '26.08: 08:00 💳 Оплата Runable' і запланованого нагадування '2026-08-26T18:00:00 — 🤖 Оновити платіжні дані для Runable'.",
+      "module": "selfact",
+      "ts": "2026-08-26T17:16:56"
     }
   ]
 }
