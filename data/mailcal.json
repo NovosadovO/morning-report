@@ -554,5 +554,19 @@
     "uid": "78053",
     "empty": true,
     "at": "2026-08-26"
+  },
+  "78055_2026-08-27_поверненнякредитувідtemu": {
+    "uid": "78055",
+    "title": "Повернення кредиту від Temu",
+    "date": "2026-08-27",
+    "time": "",
+    "kind": "payment",
+    "why": "Poslali sme vám vrátenie kreditu! Prijmite ho čo najskôr.",
+    "subject": "@Oleg Novosadov, dostali ste to?",
+    "sender": "Temu <temu@eu.temuemail.com>",
+    "event_id": "rvfn4287793oegbfqkvtae2nrk",
+    "link": "https://www.google.com/calendar/event?eid=cnZmbjQyODc3OTNvZWdiZnFrdnRhZTJucmsgbm92b3NhZG92b2xlZ0Bt",
+    "created_at": "2026-08-26T19:59:20.398877+00:00",
+    "state": "live"
   }
 }
