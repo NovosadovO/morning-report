@@ -7083,6 +7083,17 @@
       "category": "confirm",
       "question": "gate_cal_add: Нічна зміна",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-26T13:57:30.443566+00:00",
+      "category": "calendar_confirm",
+      "question": "Нічна зміна",
+      "answer": "✅ Додано",
+      "extra": {
+        "events": [
+          "Нічна зміна"
+        ]
+      }
     }
   ]
 }
