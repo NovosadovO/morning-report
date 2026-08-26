@@ -246,5 +246,19 @@
     "paid": false,
     "paid_at": "",
     "created": "2026-08-26"
+  },
+  "railway|12_32|": {
+    "vendor": "Railway",
+    "amount": "12.32",
+    "currency": "USD",
+    "invoice_no": "",
+    "due": "",
+    "uid": "78045",
+    "sender": "Runable <umesh@hey.runable.com>",
+    "subject": "Runable finished your scheduled task: Переглянь мені календар і сповісти що я маю на цьому тижні і які листи важливі ч",
+    "note": "Платіж за хостинг бота не пройшов. Потрібно оновити картку, інакше підписку зупинять.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-08-26"
   }
 }
