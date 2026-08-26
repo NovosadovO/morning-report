@@ -6919,6 +6919,12 @@
       "category": "confirm",
       "question": "gate_pa_rem: 📅 Пропоную додати в календар",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-26T10:36:53.858071+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_rem_aa6d5fc0cd"
     }
   ]
 }
