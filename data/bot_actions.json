@@ -335,6 +335,13 @@
       "detail": "Лист від Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com> про невдалу оплату Runable і нотатка про підписку Runable.",
       "module": "selfact",
       "ts": "2026-08-26T20:50:57"
+    },
+    {
+      "kind": "notify",
+      "what": "Важливі вакансії",
+      "detail": "Свіжі листи від LinkedIn Job Alerts про вакансії, які відповідають налаштуванням Олега.",
+      "module": "selfact",
+      "ts": "2026-08-26T20:51:03"
     }
   ]
 }
