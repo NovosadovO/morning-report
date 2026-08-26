@@ -6567,7 +6567,24 @@
     "action": "calrem_skip",
     "pid": "gen_1787781720607",
     "subject": "Занотувати інсайти",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 78522,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1787781720607"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1787781720607"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-27T00:50:04.420674+00:00"
   }
 }
