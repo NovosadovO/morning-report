@@ -1193,27 +1193,40 @@ def handle_email_callback(callback_query):
             cb_notify(cb_id, chat_id, "⚠️ Оригінал листа не знайдено.")
 
     elif data.startswith("email_delete_"):
+        # Олег попросив: без перепитувань — натиснув «🗑 Видалити», лист іде
+        # в корзину одразу. Підтвердження навмисно НЕ показуємо.
         uid_str = data[len("email_delete_"):]
-        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "❓ Перепитую..."})
+        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "🗑 Видаляю..."})
+        _subj_d = ""
         try:
-            import confirm as _cfm_d
-            _subj_d = ""
-            try:
-                import storage as _st_d
-                _bc = _st_d.load("email_body_cache.json") or {}
-                _subj_d = str((_bc.get(uid_str) or {}).get("subject") or "")
-            except Exception as _se:
-                print(f"email_delete subject lookup: {_se}")
-            q = _cfm_d.ask("email_delete", uid_str, _subj_d)
-            if q.get("ok"):
-                # питання про видалення — під тим самим листом
-                if not _ask_confirm_inline(callback_query, q):
-                    send_with_keyboard(chat_id, q["text"], q["keyboard"])
-            else:
-                cb_notify(cb_id, chat_id, "⚠️ Не вдалось запитати підтвердження.")
+            import storage as _st_d
+            _bc = _st_d.load("email_body_cache.json") or {}
+            _subj_d = str((_bc.get(uid_str) or {}).get("subject") or "")
+        except Exception as _se:
+            print(f"email_delete subject lookup: {_se}", flush=True)
+        try:
+            from monitor import _imap_delete_email
+            _done_d = bool(_imap_delete_email(uid_str))
         except Exception as e:
-            print(f"email_delete ask error: {e}")
-            cb_notify(cb_id, chat_id, f"⚠️ Помилка: {e}")
+            print(f"email_delete error: {e}", flush=True)
+            _done_d = False
+        if _done_d:
+            print(f"[email_delete] 🗑 видалено одразу: {_subj_d[:60]} "
+                  f"(uid {uid_str})", flush=True)
+            try:
+                _drop_important_email(uid_str)
+            except Exception as _e_dd:
+                print(f"email_delete drop important: {_e_dd}", flush=True)
+            api("editMessageReplyMarkup", {
+                "chat_id": chat_id,
+                "message_id": msg_id,
+                "reply_markup": {"inline_keyboard": [[{
+                    "text": "🗑 Видалено", "callback_data": "noop"}]]}
+            })
+            send(chat_id, "🗑 <b>Лист видалено.</b>"
+                          + (f"\n<i>{_subj_d[:120]}</i>" if _subj_d else ""))
+        else:
+            cb_notify(chat_id, chat_id, "⚠️ Не вдалось видалити лист із пошти.")
 
     elif data.startswith("email_keep_"):
         # Тема листа закрита назавжди: прибираємо його зі списку важливих, щоб
