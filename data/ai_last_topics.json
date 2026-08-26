@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-26t09_00_22_025406": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-26T09:00:22.025406"
+  },
   "openloop_promises|2026-08-26t08_55_48_082738": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-08-26\",     \"time\": \"21:00\",     \"message\": \"Олеже, нагадую, що ",
     "ts": "2026-08-26T04:30:19.277719"
-  },
-  "openloop_promises|2026-08-26t04_25_00_866812": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-08-26T04:25:00.866812"
   }
 }
