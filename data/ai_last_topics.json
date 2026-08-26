@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-08-27t00_48_56_696359": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Railway\", \"action_date\": \"2026-08-24\", \"action_time\": \"09:00\", \"action_summary\": \"Оплатити Railway 24 серп",
+    "ts": "2026-08-27T00:48:56.696359"
+  },
+  "mailcal_extract|2026-08-27t00_32_52_853110": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-27T00:32:52.853110"
+  },
   "msg_rwa|2026-08-27t00_30_11_582186": {
     "topic": "MSG_RWA",
     "gist": "🚨 **Аномалія FIGR_HELOC: Що не так?**  Токенізований фонд FIGR_HELOC, який мав би залишатися стабільним біля $1.000, за останні 24 години просів на 3.46%, що є ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити оплати Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи дійсно всі ",
     "ts": "2026-08-26T22:02:23.663976"
-  },
-  "action_detect|2026-08-26t22_02_11_968152": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Додати/видалити зміни\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Додати ранні зміни на ",
-    "ts": "2026-08-26T22:02:11.968152"
-  },
-  "action_detect|2026-08-26t22_02_11_945274": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Додати ранні зміни та видалити нічну зміну\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Додати ра",
-    "ts": "2026-08-26T22:02:11.945274"
   }
 }
