@@ -699,3 +699,27 @@ Response.status_code/.text/.json()). У monitor.py три місця імпор�
 ПЕРЕВІРЕНО: прод-лог — "[send] requests відсутній — використовую httpreq
 (urllib)", 6× "send_telegram single chunk returned True", "=== Report sent ===",
 Traceback 0.
+
+## healthai.py — здоров'я під AI (26.08.2026)
+ПРИЧИНА ВСІХ ТРЬОХ ПРОБЛЕМ (астро, графіки, Strava): Railway перейшов на білдер
+railpack — залежності ставляться у /app/.venv/lib/python3.11/site-packages, а
+процес піднімався системним python (/mise/installs/...), де НЕМА нічого.
+Лог: "[diag] НЕМА: requests, kerykeion, matplotlib, numpy, yfinance, ...".
+ФІКС: _ensure_venv() у monitor_loop.py додає site-packages венва в sys.path.
+Після фіксу: "[diag] є: requests, kerykeion, matplotlib, ... | НЕМА: —".
+Плюс httpreq-фолбек у 10 модулях (strava, portfolio, traffic, report*, meds, bot).
+
+healthai.py:
+- capture(text) — зберігає ВСЕ, що надсилає Олег: сирий текст у health_journal.json
+  + розібрані числа через qwsync у qwatch_data.json. Хук у bot.py на кожне
+  повідомлення зі словами вага/сон/кроки/пульс/hrv/ккал/spo2/тиск.
+- analytics(days) — вага/сон/кроки/пульс/HRV/калорії: last, avg, avg7, min, max,
+  тренд (перша vs друга половина періоду), streak, пропущені дні, stale_hours,
+  прогрес до 78 кг, км бігу за тиждень.
+- ai_analysis / ai_recommendations — Gemini строго на цих числах.
+- coach_report() 08:15, tracker_report() 21:15, weekly_report() нд 19:30.
+- initiative() кожні 30 хв: weight_up / sleep_low / steps_low / hr_high / stale
+  (дані не оновлювались 36 год), дедуп 12 год на привід, повага до quiet+dismissed.
+- tick() — викликається з monitor_loop щохвилини.
+- Команди: /здоров'я /коуч /трекер. Кнопки hai_stats/hai_reco/hai_ok/hai_mute.
+ТЕСТИ: tests_healthai.py — 13 блоків, 0 падінь.

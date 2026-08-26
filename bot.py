@@ -2963,6 +2963,18 @@ def handle_command(chat_id, text):
         pass
     # ПОВНА ПАМ'ЯТЬ: кожне повідомлення Олега — і команда, і звичайний текст.
     try:
+        # Дані здоров'я з будь-якого повідомлення (вага/сон/кроки/пульс) —
+        # зберігаємо назавжди в health_journal.json + у qwatch_data.json.
+        try:
+            import healthai as _hai_msg
+            if any(_w in (text or "").lower() for _w in
+                   ("вага", "сон", "кроки", "пульс", "hrv", "спав", "weight",
+                    "sleep", "steps", "ккал", "калорі", "spo2", "тиск")):
+                _hf = _hai_msg.capture(text, source="telegram")
+                if _hf:
+                    print(f"[healthai] збережено з повідомлення: {_hf}", flush=True)
+        except Exception as _e_hm:
+            print(f"[healthai] capture error: {_e_hm}", flush=True)
         import recall as _rc_msg
         _rc_msg.log_message(text or "",
                             kind=("cmd" if str(text or "").strip().startswith("/") else "msg"))
@@ -3340,6 +3352,42 @@ def handle_command(chat_id, text):
                 send(chat_id, f"⚠️ Помилка пам'яті: {str(_e_rc)[:300]}")
         import threading as _th_rc
         _th_rc.Thread(target=_run_rc, daemon=True, name="recall-cmd").start()
+
+    elif text.lower().strip() in ["/здоров'я", "/здоровя", "/health", "/hai"]:
+        def _run_h1():
+            try:
+                import sys as _sh1, os as _oh1
+                _sh1.path.insert(0, _oh1.path.dirname(__file__))
+                import healthai as _h1
+                send(chat_id, _h1.stats_report())
+            except Exception as _e_h1:
+                send(chat_id, f"⚠️ Помилка здоров'я: {str(_e_h1)[:300]}")
+        import threading as _th_h1
+        _th_h1.Thread(target=_run_h1, daemon=True, name="healthai-stats").start()
+
+    elif text.lower().strip() in ["/коуч", "/coach", "/тренер"]:
+        def _run_h2():
+            try:
+                import sys as _sh2, os as _oh2
+                _sh2.path.insert(0, _oh2.path.dirname(__file__))
+                import healthai as _h2
+                _h2.coach_report(send=True)
+            except Exception as _e_h2:
+                send(chat_id, f"⚠️ Помилка коуча: {str(_e_h2)[:300]}")
+        import threading as _th_h2
+        _th_h2.Thread(target=_run_h2, daemon=True, name="healthai-coach").start()
+
+    elif text.lower().strip() in ["/трекер", "/tracker", "/днз"]:
+        def _run_h3():
+            try:
+                import sys as _sh3, os as _oh3
+                _sh3.path.insert(0, _oh3.path.dirname(__file__))
+                import healthai as _h3
+                _h3.tracker_report(send=True)
+            except Exception as _e_h3:
+                send(chat_id, f"⚠️ Помилка трекера: {str(_e_h3)[:300]}")
+        import threading as _th_h3
+        _th_h3.Thread(target=_run_h3, daemon=True, name="healthai-tracker").start()
 
     elif text.lower().strip() in ["/сам", "/ініціатива", "/selfact",
                                   "/инициатива"]:
@@ -6487,6 +6535,29 @@ def _confirm_gate(cb, data: str) -> bool:
 def _route_callback(cb, confirmed: bool = False):
     data = cb.get("data", "")
     chat_id = cb["message"]["chat"]["id"]
+    # ── healthai: кнопки під звітами здоров'я ──────────────────────────────
+    if data.startswith("hai_"):
+        try:
+            import healthai as _h_cb
+            if data == "hai_stats":
+                send(chat_id, _h_cb.stats_report())
+            elif data == "hai_reco":
+                import threading as _th_hr
+                _th_hr.Thread(target=lambda: _h_cb.coach_report(send=True),
+                              daemon=True, name="hai-reco").start()
+                send(chat_id, "🎯 Готую рекомендації…")
+            elif data == "hai_ok":
+                send(chat_id, "👍 Прийняв. Тримаю далі.")
+            elif data == "hai_mute":
+                try:
+                    import dismissed as _dm_cb
+                    _dm_cb.mute("healthai", hours=12)
+                except Exception:
+                    pass
+                send(chat_id, "🔇 Не буду турбувати про здоров'я 12 годин.")
+        except Exception as _e_hcb:
+            send(chat_id, f"⚠️ healthai: {str(_e_hcb)[:200]}")
+        return
     # ПОВНА ПАМ'ЯТЬ: кожне натискання кнопки — теж відповідь Олега.
     try:
         import recall as _rc_cb

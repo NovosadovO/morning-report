@@ -1318,6 +1318,15 @@ def run_assistant_watcher():
             # AI-ІНІЦІАТОР: бот сам дивиться на календар+пошту+усі реєстри і
             # САМ створює нотатку / нагадування / подію / питання.
             # Плюс міні-звіт 21:30 «що я зробив сам за день».
+            # Здоров'я під AI: коуч 08:15, трекер 21:15, тижневий розбір нд 19:30,
+            # плюс ініціатива — сам пише про аномалії у вазі/сні/кроках/пульсі.
+            try:
+                import healthai as _hai_w
+                _hai_done = _hai_w.tick()
+                if _hai_done:
+                    print(f"[healthai] {_hai_done}", flush=True)
+            except Exception as _e_hai:
+                print(f"[healthai] watcher error: {_e_hai}", flush=True)
             try:
                 import selfact as _sa_w
                 _sa_w.run()
