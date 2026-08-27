@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T11:01:23.442363",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Director of Operations, Europe в Modulr</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78078"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78078"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78078"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78078"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78078"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78078"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T11:01:24.919560",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
@@ -725,6 +686,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78072"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T12:01:06.582450",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Software Engineer - Full-stack - Growth Product в Kra</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78070"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78070"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78070"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78070"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78070"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78070"
             }
           ]
         ]
