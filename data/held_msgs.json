@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T16:08:16.609209",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T16:08:17.728160",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -442,6 +436,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_77769"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T17:02:01.788472",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Online check-in for a smooth take-off. ATTENTION! Don’t forg</b>\n👤 letenky@pelikan.sk",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77664"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77664"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77664"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77664"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77664"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77664"
             }
           ]
         ]
