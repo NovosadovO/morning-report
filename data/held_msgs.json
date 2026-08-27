@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T10:36:16.356978",
-      "kind": "calendar",
-      "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T10:36:17.320155",
       "kind": "calendar",
       "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nВідповідь збережу — це піде в аналітику тижня.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78074"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T11:01:28.187033",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в VenomBridge</b>\n👤 Discord &lt;noreply@discord.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78072"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78072"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78072"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78072"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78072"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78072"
             }
           ]
         ]
