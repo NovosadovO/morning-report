@@ -1,4 +1,19 @@
 {
+  "openloop_promises|2026-08-27t07_35_37_336499": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"I am attaching screenshots of the messages I received from the tour operator. The screenshots show the sender’s contact details and t",
+    "ts": "2026-08-27T07:35:37.336499"
+  },
+  "selfact|2026-08-27t07_30_59_229444": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Онлайн-реєстрація на рейс Ryanair\",     \"text\": \"Олеже, нагадую, що онлайн-реєстрація на ваш рейс Ryanair (Y9S",
+    "ts": "2026-08-27T07:30:59.229444"
+  },
+  "action_detect|2026-08-27t07_30_37_350592": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Повернення кредиту Temu\", \"action_date\": \"2024-08-27\", \"action_time\": \"09:00\", \"action_summary\": \"Перевірити деталі",
+    "ts": "2026-08-27T07:30:37.350592"
+  },
   "msg_event_soon|2026-08-27t07_30_27_802633": {
     "topic": "MSG_EVENT_SOON",
     "gist": "Олеже, як тобі ранок після зміни? Знаю, що відновлення зараз найважливіше, але маємо коротку справу.  Через півтори години, о 09:00, заплановано повернення кред",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Виступ Кевіна Ворша на Jackson Hole\", \"action_date\": \"2024-08-28\", \"action_time\": \"08:00\", \"action_summary\": \"Запла",
     "ts": "2026-08-27T05:32:34.783844"
-  },
-  "msg_deep_analysis|2026-08-27t05_32_27_681180": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋 Бачу, що ти вже майже на фінішній прямій нічної зміни, адже зараз 05:32 ранку, а до її завершення залишилося менше години. На крипторинку сьогод",
-    "ts": "2026-08-27T05:32:27.681180"
-  },
-  "selfact|2026-08-27t05_28_47_314141": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання туру\",     \"text\": \"Твоє бронювання 'Paxos and Antipaxos Boat Tour from Corfu' скасовано ",
-    "ts": "2026-08-27T05:28:47.314141"
-  },
-  "bills|2026-08-27t05_16_06_228265": {
-    "topic": "bills",
-    "gist": "[]",
-    "ts": "2026-08-27T05:16:06.228265"
   }
 }
