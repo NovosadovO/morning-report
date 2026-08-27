@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T08:01:36.968677",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в VenomBridge</b>\n👤 Discord &lt;noreply@discord.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78072"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78072"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78072"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78072"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78072"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78072"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T08:01:38.390388",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Software Engineer - Full-stack - Growth Product в Kra</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -443,6 +404,12 @@
       "ts": "2026-08-27T08:24:45.184062",
       "kind": "calendar",
       "text": "🔔 <b>Пора збиратись — 30 хв</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Останні хвилини — перевір, чи все взяв.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T08:24:46.084993",
+      "kind": "calendar",
+      "text": "🔔 Пора збиратись — 30 хв\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nОстанні хвилини — перевір, чи все взяв.",
       "keyboard": null
     }
   ]
