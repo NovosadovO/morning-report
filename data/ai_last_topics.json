@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-27t03_26_15_050722": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Зверни увагу на лист від Pelikan.sk про онлайн-реєстрацію на рейс Ryanair. Вона відкривається за",
+    "ts": "2026-08-27T03:26:15.050722"
+  },
   "bills|2026-08-27t03_16_09_437806": {
     "topic": "bills",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зареєструватися до дерматолога\", \"action_date\": \"2024-09-16\", \"action_time\": null, \"action_summary\": \"Олегу потрібн",
     "ts": "2026-08-27T01:03:24.714352"
-  },
-  "action_detect|2026-08-27t01_03_24_539169": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-27T01:03:24.539169"
   }
 }
