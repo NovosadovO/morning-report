@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T15:01:09.202702",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Bernstein Just Set a New Bitcoin Price Target for 2027</b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78093"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78093"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78093"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78093"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78093"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78093"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T15:01:10.773780",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>New bots: TWAP and Iceberg are here</b>\n👤 OKX &lt;updates@okx.com&gt;",
@@ -300,6 +261,45 @@
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T15:37:26.267207",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Investing.com</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🔦 Up 86% since we picked it in July»\n\n<i>«96 ProPick AI Spotlight /*Master CSS START*/ :root { color-scheme: light dark; supported-color-schemes: light dark; } body { margin: 0 auto; padding: 0; -webkit-text-size-adjust: 100% !important; -ms-text-size-adjust: 100% !important; -webkit-font-smoothing: antialiased !important; } img { border: 0...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78102"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78102"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78102"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78102"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78102"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78102"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
