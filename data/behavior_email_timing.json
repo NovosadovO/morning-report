@@ -1,9 +1,4 @@
 {
-  "77702": {
-    "sender": "newsletter@pelikan.sk",
-    "sender_raw": "Roland z Pelikána <newsletter@pelikan.sk>",
-    "seen_ts": "2026-08-19T15:50:14.418807+00:00"
-  },
   "77703": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Cointelegraph через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-08-27T23:02:41.196565+00:00"
+  },
+  "78145": {
+    "sender": "newsletter@email.blockchain.com",
+    "sender_raw": "\"Blockchain\" <newsletter@email.blockchain.com>",
+    "seen_ts": "2026-08-27T23:47:01.110366+00:00"
   }
 }
