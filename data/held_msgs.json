@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T12:00:54.982664",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T12:00:56.547900",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🧬 AGI is here</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -626,6 +620,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78078"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T13:01:25.313407",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78075"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78075"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78075"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78075"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78075"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78075"
             }
           ]
         ]
