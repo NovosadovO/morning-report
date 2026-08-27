@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T17:01:52.574229",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>  🔴 2 непрочитаних",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T17:01:54.250387",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Your login change is moving to 10 September</b>\n👤 \"Socios.com\" &lt;service@support.socios.com&gt;",
@@ -720,6 +714,55 @@
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 25 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '25 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 82.5 кг, ціль 78 кг (тренд -1.8 кг за останні 5 замірів). Кроки: 6200 (ціль 10000). Сон: 7.2г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 1 непрочитаних\n📅 Календар: 09:00 💳 Повернення кредиту від Temu, 18:00 🌙 Нічна зміна (18:00-06:00)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T18:01:50.798447",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (5 важливих листів)\n\n👤 \"Socios.com\"\n📋 Your login change is moving to 10 September\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Runable\n📋 $10.00 payment to Runable was unsuccessful\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Umesh from Runable\n📋 We raised $21M to help small businesses grow\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 letenky\n📋 Online check-in for a smooth take-off. ATTENTION! Don’t forg\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Socios.com",
+              "callback_data": "email_reply_78114"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Runable",
+              "callback_data": "email_reply_78113"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Umesh from Runable",
+              "callback_data": "email_reply_78091"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_77769"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: letenky",
+              "callback_data": "email_reply_77664"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_78114"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78114"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
