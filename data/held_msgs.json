@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T13:01:25.313407",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78075"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78075"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78075"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78075"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78075"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78075"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T13:01:26.928914",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>4 nové pracovné ponuky</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -671,6 +632,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78098"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T14:11:59.734054",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Emergent</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Skip the repeat work»\n\n<i>«No more building the same thing twice :root { color-scheme: light only !important; } html { color-scheme: light only !important; } body, table, td, a { -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; } table, td { mso-table-lspace:0pt; mso-table-rspace:0pt; } img { -ms-interpolation-mode:b...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78099"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78099"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78099"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78099"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78099"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78099"
             }
           ]
         ]
