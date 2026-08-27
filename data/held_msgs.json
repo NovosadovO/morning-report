@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T20:01:29.101918",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T20:01:30.603568",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Email Marketing Specialist в Voňavý domov</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -593,6 +587,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78128"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T21:01:00.610112",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>How many windows have you got open right now?</b>\n👤 Unstoppable &lt;team@unstoppabledomains.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78127"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78127"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78127"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78127"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78127"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78127"
             }
           ]
         ]
