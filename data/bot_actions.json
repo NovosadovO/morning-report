@@ -706,6 +706,13 @@
       "detail": "Лист від LinkedIn про нову вакансію за запитом 'Cryptocurrency в Slovakia'.",
       "module": "selfact",
       "ts": "2026-08-27T05:59:30"
+    },
+    {
+      "kind": "notify",
+      "what": "Скасоване бронювання",
+      "detail": "Лист від noreply@booking.com повідомляє про скасування бронювання та повернення коштів.",
+      "module": "selfact",
+      "ts": "2026-08-27T06:30:06"
     }
   ]
 }
