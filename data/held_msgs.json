@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T11:01:31.385620",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77769"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77769"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77769"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77769"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77769"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77769"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T11:01:33.123607",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Online check-in for a smooth take-off. ATTENTION! Don’t forg</b>\n👤 letenky@pelikan.sk",
@@ -616,6 +577,45 @@
       "kind": "chunk",
       "text": "🔮🤖 <b>АСТРО-АНАЛІЗ ВСІ АСПЕКТИ</b>\n\n🌙 <b>ТРАНЗИТИ СЬОГОДНІ</b> (AI тимчасово перевантажена, без інтерпретації)\n🔮 АСТРО — транзити до натальних планет\n🌔 Прибуваючий гіббус  ·  Місяць у Водолій ♒\n🔭 Інновації, друзі, нестандартні рішення\n\n🌟 ♃ Юпітер увійшов у знак твого Асценденту (Leo)! Це РІДКІСНИЙ і ВАЖЛИВИЙ транзит — торкається особистості, зовнішнього вигляду, нового циклу в житті.\n\n🟢 ♂ Марс Трин △ натальний ♀ Венера  (0.5°)\n🟡 ♄ Сатурн Квінконкс ⚻ натальний ♇ Плутон  (0.6°)\n🟢 ⛢ Уран Трин △ натальний ☿ Меркурій  (0.6°)\n    ↳ Блискучі ідеї і інсайти. Записуй все що приходить!\n🔴 ♃ Юпітер Квадрат □ натальний ♇ Плутон  (0.6°)\n    ↳ Боротьба за владу або ресурси. Дій обережно.\n🔴 ♂ Марс Опозиція ☍ натальний ♆ Нептун  (0.9°)\n    ↳ Дії марно витрачаються. Перевір чи ти йдеш у правильному напрямку.\n🔴 ♆ Нептун Опозиція ☍ натальний ☿ Меркурій  (1.3°)\n    ↳ Ризик обману або самообману. Будь уважний у домовлен\n\n📌 Нічна зміна щойно закінчилась (18:00–06:00), Олег вдома відпочиває. Здоров'я: кроки 6200, сон 7.2г.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T12:01:38.222023",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Biedronka</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Sprawdź najświeższe oferty w Biedronce od czwartku 27.08!»\n\n<i>«Sprawdź najświeższe oferty w Biedronce od czwartku 27.08!\nW promocji m.in. Winogrono jasne na wagę, nektarynka na wagę, Świeży filet z piersi  kurczaka Kraina Mięs i wiele innych!\n Zapoznaj się z wersją online newsletter-a https://links.newsletter.biedronka.pl/c/n64/jtC/ZextBdZNPDKXh3tplsS3zQ/7/DiH-...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78084"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78084"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78084"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78084"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78084"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78084"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
