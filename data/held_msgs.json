@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T18:01:32.972780",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T18:01:34.712687",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your login change is moving to 10 September</b>\n👤 \"Socios.com\" &lt;service@support.socios.com&gt;",
@@ -716,6 +710,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78120"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T20:01:37.537919",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Email Marketing Specialist в Voňavý domov</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78119"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78119"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78119"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78119"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78119"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78119"
             }
           ]
         ]
