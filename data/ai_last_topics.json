@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-08-27t23_14_41_034976": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від The Defiant інформує про останні новини у світі DeFi та криптовалют. Зокрема, Ethena пропонує спрямувати весь чистий дохід на ",
+    "ts": "2026-08-27T23:14:41.034976"
+  },
+  "action_detect|2026-08-27t23_03_28_763848": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-27T23:03:28.763848"
+  },
   "action_detect|2026-08-27t23_02_47_614025": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -288,15 +298,5 @@
     "topic": "healthai",
     "gist": "Олеже, ти питаєш, чому немає звітів, і це тому, що дані здоров'я не оновлювались 45 годин, з 2026-08-26. Це означає, що інформація про твою вагу (83.1 кг), сон ",
     "ts": "2026-08-27T21:06:52.870453"
-  },
-  "action_detect|2026-08-27t21_06_52_179845": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"null\", \"action_time\": \"null\", \"action_summary\": \"Прийняти Armolopid Plus ",
-    "ts": "2026-08-27T21:06:52.179845"
-  },
-  "context_ask_ai|2026-08-27t21_06_43_469395": {
-    "topic": "context_ask_ai",
-    "gist": "Олег, ти знову питаєш про звіти, і я розумію твоє незадоволення.  Система не надсилає звіти щогодини. Вони приходять з іншою, менш частою періодичністю, наприкл",
-    "ts": "2026-08-27T21:06:43.469395"
   }
 }
