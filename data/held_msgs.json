@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T13:01:26.928914",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>4 nové pracovné ponuky</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78074"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78074"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78074"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78074"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78074"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78074"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T13:01:28.589227",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в VenomBridge</b>\n👤 Discord &lt;noreply@discord.com&gt;",
@@ -671,6 +632,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78099"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T14:14:07.089475",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Slovak Speaking Agent for Hospitality Sector -Relocation to Greece в R»\n\n<i>«Сповіщення про вакансії в Slovakia\r\n        \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nSlovak Speaking Agent for Hospitality Sector -Relocation to Greece\r\nRDN CONS\r\nNitra\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4459343389/?trackingId=nsgqK4JGuRE4KrIl1HOKO...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78100"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78100"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78100"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78100"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78100"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78100"
             }
           ]
         ]
