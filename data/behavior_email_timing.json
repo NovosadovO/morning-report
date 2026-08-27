@@ -1,9 +1,4 @@
 {
-  "77654": {
-    "sender": "mailer-daemon@googlemail.com",
-    "sender_raw": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
-    "seen_ts": "2026-08-18T18:17:28.915501+00:00"
-  },
   "77656": {
     "sender": "newsletter@mail.theblock.co",
     "sender_raw": "The Block <newsletter@mail.theblock.co>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Startitup через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-08-27T11:04:36.040179+00:00"
+  },
+  "78092": {
+    "sender": "updates@okx.com",
+    "sender_raw": "OKX <updates@okx.com>",
+    "seen_ts": "2026-08-27T11:49:18.778961+00:00"
   }
 }
