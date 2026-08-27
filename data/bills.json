@@ -274,5 +274,19 @@
     "paid": false,
     "paid_at": "",
     "created": "2026-08-26"
+  },
+  "runable|8_93|": {
+    "vendor": "Runable",
+    "amount": "8.93",
+    "currency": "EUR",
+    "invoice_no": "",
+    "due": "",
+    "uid": "78135",
+    "sender": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
+    "subject": "€8.93 payment to Runable was unsuccessful again",
+    "note": "Платіж на Runable у розмірі €8.93 був невдалим знову. Потрібно оновити платіжну інформацію.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-08-27"
   }
 }
