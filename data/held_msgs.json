@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T12:00:56.547900",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🧬 AGI is here</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78083"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78083"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78083"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78083"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78083"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78083"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T12:00:58.212552",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Revolut built EURR stablecoin to own Europe’s euro stables o</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
@@ -659,6 +620,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78075"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T13:01:26.928914",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>4 nové pracovné ponuky</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78074"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78074"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78074"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78074"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78074"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78074"
             }
           ]
         ]
