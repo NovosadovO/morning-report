@@ -1,9 +1,4 @@
 {
-  "77660": {
-    "sender": "noreply@booking.com",
-    "sender_raw": "noreply@booking.com",
-    "seen_ts": "2026-08-19T00:35:45.019040+00:00"
-  },
   "77661": {
     "sender": "support@profesia.sk",
     "sender_raw": "\"Profesia.sk\" <support@profesia.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "googleaistudio-noreply@google.com",
     "sender_raw": "Google AI Studio <googleaistudio-noreply@google.com>",
     "seen_ts": "2026-08-27T12:09:53.741989+00:00"
+  },
+  "78099": {
+    "sender": "team@ship.emergent.sh",
+    "sender_raw": "Emergent <team@ship.emergent.sh>",
+    "seen_ts": "2026-08-27T12:11:58.699408+00:00"
   }
 }
