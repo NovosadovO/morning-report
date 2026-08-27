@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-27t04_58_27_433879": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Нагадую, що сьогодні, 27.08, о 17:00 у тебе починається нічна зміна, яка триватиме до 06:00 ранк",
+    "ts": "2026-08-27T04:58:27.433879"
+  },
   "openloop_promises|2026-08-27t04_34_18_681606": {
     "topic": "openloop_promises",
     "gist": "```json [   {     \"what\": \"cancel the booking\",     \"to\": \"Ionian Cruises\",     \"date\": null   } ] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid Plus післ",
     "ts": "2026-08-27T02:03:24.812589"
-  },
-  "action_detect|2026-08-27t02_03_13_840741": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Повернення кредиту від Temu\", \"action_date\": null, \"action_time\": \"09:00\", \"action_summary\": \"Перевірити лист \\\"Пов",
-    "ts": "2026-08-27T02:03:13.840741"
   }
 }
