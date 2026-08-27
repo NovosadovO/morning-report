@@ -1,43 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T14:01:59.833728",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Temu\n📋 Dobrá správa! Dobierka je kdispozícii!\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 OKX\n📋 New bots: TWAP and Iceberg are here\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Umesh from Runable\n📋 We raised $21M to help small businesses grow\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Temu",
-              "callback_data": "email_reply_78094"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: OKX",
-              "callback_data": "email_reply_78092"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Umesh from Runable",
-              "callback_data": "email_reply_78091"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_78094"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78094"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T14:02:02.289163",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Temu\n📋 Dobrá správa! Dobierka je kdispozícii!\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 OKX\n📋 New bots: TWAP and Iceberg are here\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Umesh from Runable\n📋 We raised $21M to help small businesses grow\n📝 (AI-аналіз тимчасово недоступний)",
@@ -407,6 +370,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78095"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T15:01:07.649911",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Dobrá správa! Dobierka je kdispozícii!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78094"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78094"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78094"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78094"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78094"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78094"
             }
           ]
         ]
