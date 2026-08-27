@@ -1,9 +1,4 @@
 {
-  "77672": {
-    "sender": "info@notifikacie.allegro.sk",
-    "sender_raw": "Allegro <info@notifikacie.allegro.sk>",
-    "seen_ts": "2026-08-19T07:55:59.846575+00:00"
-  },
   "77674": {
     "sender": "peknyden@zlavomat.sk",
     "sender_raw": "\"Zlavomat.sk\" <peknyden@zlavomat.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter.sk@email.pepco.eu",
     "sender_raw": "\"Pepco\" <newsletter.sk@email.pepco.eu>",
     "seen_ts": "2026-08-27T14:10:24.273877+00:00"
+  },
+  "78108": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-08-27T14:14:36.055213+00:00"
   }
 }
