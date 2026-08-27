@@ -1,4 +1,9 @@
 {
+  "subs|2026-08-28t01_48_08_369376": {
+    "topic": "subs",
+    "gist": "```json [   {     \"uid\": \"78132\",     \"vendor\": \"Railway Corporation\",     \"amount\": \"5.00\",     \"currency\": \"USD\",     \"cycle\": \"monthly\",     \"charge_date\": \"",
+    "ts": "2026-08-28T01:48:08.369376"
+  },
   "email_ai_item|2026-08-28t01_46_57_625594": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від Blockchain є інформаційним бюлетенем, який містить огляд ринкових тенденцій криптовалют за останній тиждень, а саме дані про к",
@@ -293,10 +298,5 @@
     "topic": "bills",
     "gist": "```json [   {     \"uid\": \"78137\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"invoice_no\": \"\",     \"due\": \"\",     \"already_paid\"",
     "ts": "2026-08-27T23:28:30.931276"
-  },
-  "email_ai_item|2026-08-27t23_27_07_495274": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від Forbes через LinkedIn є новинною розсилкою, що інформує про зростання вартості акцій Nvidia майже на 10% до $230, що пі",
-    "ts": "2026-08-27T23:27:07.495274"
   }
 }
