@@ -1,55 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T18:01:50.798447",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (5 важливих листів)\n\n👤 \"Socios.com\"\n📋 Your login change is moving to 10 September\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Runable\n📋 $10.00 payment to Runable was unsuccessful\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Umesh from Runable\n📋 We raised $21M to help small businesses grow\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 letenky\n📋 Online check-in for a smooth take-off. ATTENTION! Don’t forg\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Socios.com",
-              "callback_data": "email_reply_78114"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Runable",
-              "callback_data": "email_reply_78113"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Umesh from Runable",
-              "callback_data": "email_reply_78091"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_77769"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: letenky",
-              "callback_data": "email_reply_77664"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_78114"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78114"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T18:01:53.116103",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (5 важливих листів)\n\n👤 \"Socios.com\"\n📋 Your login change is moving to 10 September\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Runable\n📋 $10.00 payment to Runable was unsuccessful\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Umesh from Runable\n📋 We raised $21M to help small businesses grow\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 letenky\n📋 Online check-in for a smooth take-off. ATTENTION! Don’t forg\n📝 (AI-аналіз тимчасово недоступний)",
@@ -669,6 +620,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78127"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T20:15:13.354526",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Email Marketing Specialist в Voňavý domov»\n\n<i>«Сповіщення про вакансії в Košice\r\n        \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nEmail Marketing Specialist\r\nVoňavý domov\r\nKošice\r\nПодати заявку за допомогою резюме і профілю\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4457231439/?trackingId=IXokl6X8CZrcz...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78128"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78128"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78128"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78128"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78128"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78128"
             }
           ]
         ]
