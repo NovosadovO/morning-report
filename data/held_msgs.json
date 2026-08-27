@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T17:54:32.028518",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Aave</b>\n📋 Тема: «Aave Mobile App Early Access»\n\n<i>«Get early access to Aave App with Ghost Passes.\r\n\r\n͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏\r\n  ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78117"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78117"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78117"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78117"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78117"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78117"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T18:01:25.162062",
       "kind": "chunk",
       "text": "🌙\n<b>ЗВІТ  ·  Чт 27.08  ·  18:00</b>\n🏭 На роботі  ·  Нічна зміна\n<i>Вечірній аналіз: 1 добрий лист InterFin > 10 поганих рішень 💼</i>\n📌 Нічна зміна +6\n\n⚡ <b>День: ⭐☆☆☆☆ 27/100</b>  ↓7 vs вчора\n\n☀️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>27°C</b>\n<i>☀️ Тепло — сонцезахисний крем</i>\n\n📅 <b>Прогноз сьогодні:</b>\n05:45   🌇 19:27  09:00 ☁️20°  │  12:00 ☀️26°  │  15:00 ☁️29°  │  18:00 ☁️28°  │  21:00 ⛅️25°\n\n<b>Завтра:</b>  ☁️ Хмарно  🔻16°  /  🔺29°\n<code>09:00</code> ☁️20°  │  <code>12:00</code> ☀️26°  │  <code>15:00</code> ☁️29°  │  <code>18:00</code> ☁️28°  │  <code>21:00</code> ⛅️25°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n  • 🐢 Затор (+2 хв) — Steel Aréna\n  • 🚧 Перекрито — Baštová\n\n💰\n<b>КРИПТО  ·  🔴 ВЕДМЕЖИЙ 📉</b>\n🔻 <b>BTC</b> <code>$78,716.00</code>  -2.11%\n🔻 <b>ETH</b> <code>$2,493.85</code>  -1.16%\n🔻 <b>AVAX</b> <code>$7.35</code>  -2.26%\n🔻 <b>ONDO</b> <code>$0.37</code>  -2.05%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🟢 <b>IBIT</b>  <code>$45.52</code>  <i>+2.38% за день</i>\n🟢 <b>ETHA</b>  <code>$19.05</code>  <i>+2.14% за день</i>\n⚪️ <b>VAVA</b>  <code>$0.66</code>\n⚪️ <b>GAVA</b>  <code>$17.69</code>\n🟢 <b>QQQ</b>  <code>$718.71</code>  <i>+1.03% за день</i>\n",
@@ -650,6 +611,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78125"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T20:01:32.391378",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>K.R.E.D.IT</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78122"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78122"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78122"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78122"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78122"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78122"
             }
           ]
         ]
