@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-27t03_51_04_227619": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Google Cloud Billing Alerts повідомляє, що 90% бюджету в розмірі €16.00 для облікового запису \\\"My Billing Account\\\" було ",
+    "ts": "2026-08-27T03:51:04.227619"
+  },
   "mailcal_extract|2026-08-27t03_36_09_674901": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"77660\",     \"title\": \"Скасування Paxos and Antipaxos Boat Tour from Corfu\",     \"date\": \"2026-08-19\",     \"time\": \"08:20\",     \"kind\":",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid Plus післ",
     "ts": "2026-08-27T01:03:34.210791"
-  },
-  "msg_event_soon|2026-08-27t01_03_26_979854": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ✅  Бачу, ти зараз на нічному відпочинку, а твій календар показує нічну зміну лише о 18:00 сьогодні. Це означає, що до зміни ще багато часу для пов",
-    "ts": "2026-08-27T01:03:26.979854"
   }
 }
