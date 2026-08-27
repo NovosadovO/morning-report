@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T15:53:15.517132",
-      "kind": "day_mode",
-      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T15:56:00.503265",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Railway Corporation</b>\n📋 Тема: «$12.32 payment to Railway Corporation was unsuccessful again»\n\n<i>«Railway Corporation  (https://railway.com)\r\n\r\nRailway Corporation\r\n\r\n$12.32 payment to Railway Corporation was unsuccessful We attempted to charge your Visa ending in 0311 for your Railway Corporation subscription again, but were unsuccessful. Please update your billing information to continue your...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -537,6 +531,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-27T16:13:16.870925",
+      "kind": "day_mode",
+      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
     }
   ]
 }
