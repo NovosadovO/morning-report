@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T15:58:15.516265",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T15:58:16.659557",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -500,6 +494,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78108"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T16:14:40.228212",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Footshop</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Y-3 v zľave? Čítaš správne! 🔥»\n\n<i>«[ Otvoriť v prehliadači ](http://r.newsletter2.footshop.com/mk/mr/sh/WCPxRrNLV1LtxLyW5O6L32pQ74dANqad/2jn12ovQK5V7)\r\n\r\n**TVOJE NOVÉ MUST-HAVES OD Y-3 S EXTRA ZĽAVOU**\r\n===============================================\r\n\r\nY-3 v zľave? To sa nestáva každý deň. Vybrané kúsky teraz získaš...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78109"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78109"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78109"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78109"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78109"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78109"
             }
           ]
         ]
