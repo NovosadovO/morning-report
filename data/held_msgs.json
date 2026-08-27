@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T08:41:54.434095",
-      "kind": "calendar",
-      "text": "🔔 <b>Пора збиратись — 30 хв</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Останні хвилини — перевір, чи все взяв.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T08:41:55.421690",
       "kind": "calendar",
       "text": "🔔 Пора збиратись — 30 хв\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nОстанні хвилини — перевір, чи все взяв.",
@@ -500,6 +494,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78075"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T10:01:57.532920",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>4 nové pracovné ponuky</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78074"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78074"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78074"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78074"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78074"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78074"
             }
           ]
         ]
