@@ -17,6 +17,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T08:01:36.968677",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в VenomBridge</b>\n👤 Discord &lt;noreply@discord.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78072"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78072"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78072"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78072"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78072"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78072"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
