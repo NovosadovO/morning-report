@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T17:02:00.140331",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77769"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77769"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77769"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77769"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77769"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77769"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T17:02:01.788472",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Online check-in for a smooth take-off. ATTENTION! Don’t forg</b>\n👤 letenky@pelikan.sk",
@@ -664,6 +625,45 @@
       "kind": "chunk",
       "text": "🎯 ТОЧНИЙ АСПЕКТ\n☽ <b>Місяць</b> ⚻ ☉ <b>Натальний Сонце</b> <b>(ТОЧНИЙ!)</b>\n📍 Місяць у <b>Водолій ♒</b> | Натальний Сонце у Діва ♍, 3-й дім\n<i>Квінкункс · Комунікація</i>\n\n📖 <b>Що означає Квінкункс:</b>\n🟣 Потреба коригування — щось не стикується й вимагає адаптації. Дрібний дисбаланс (часто здоров'я/рутина), який варто м'яко вирівняти.\n\nСьогодні четвер 27.08.2026, 18:06.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T18:14:52.281123",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Email Marketing Specialist в Voňavý domov»\n\n<i>«Сповіщення про вакансії в Košice\r\n        \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nEmail Marketing Specialist\r\nVoňavý domov\r\nKošice\r\nПодати заявку за допомогою резюме і профілю\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4457231439/?trackingId=jeYjA3nbdpbQI...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78119"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78119"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78119"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78119"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78119"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78119"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
