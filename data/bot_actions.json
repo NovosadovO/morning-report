@@ -622,6 +622,13 @@
       "detail": "Олег отримав лист від The Defiant з новинами про Core Lightning та Unstoppable, а також раніше отримував листи від The Block.",
       "module": "selfact",
       "ts": "2026-08-27T03:57:40"
+    },
+    {
+      "kind": "notify",
+      "what": "Скасування туру Paxos and Antipaxos",
+      "detail": "Лист від noreply@booking.com про скасування бронювання туру та повернення коштів.",
+      "module": "selfact",
+      "ts": "2026-08-27T04:27:47"
     }
   ]
 }
