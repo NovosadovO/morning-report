@@ -1,4 +1,24 @@
 {
+  "msg_idle_timeout|2026-08-27t06_10_37_679179": {
+    "topic": "MSG_IDLE_TIMEOUT",
+    "gist": "Привіт Олеже! 🚶  Бачу, ти зараз відновлюєшся після нічного відпочинку, це дуже важливо для твого організму. Твоя вага тримається на позначці 82.5 кг, що є добри",
+    "ts": "2026-08-27T06:10:37.679179"
+  },
+  "openloop_promises|2026-08-27t06_05_08_869212": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-27T06:05:08.869212"
+  },
+  "action_detect|2026-08-27t06_03_37_382048": {
+    "topic": "action_detect",
+    "gist": "```json { \"action_type\": \"calendar\", \"action_title\": \"Переглянути плани щодо Малаги\", \"action_date\": \"2024-09-02\", \"action_time\": null, \"action_summary\": \"Перев",
+    "ts": "2026-08-27T06:03:37.382048"
+  },
+  "action_detect|2026-08-27t06_03_37_066731": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-08-27T06:03:37.066731"
+  },
   "action_detect|2026-08-27t06_03_26_108940": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Повернення кредиту Temu\", \"action_date\": \"2024-08-27\", \"action_time\": \"09:00\", \"action_summary\": \"Сьогодні о 09:00 ",
@@ -278,25 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист є щотижневою розсилкою від CryptoJobsList з переліком актуальних вакансій у криптоіндустрії. У ньому представлені такі позиції",
     "ts": "2026-08-27T04:05:21.934611"
-  },
-  "action_detect|2026-08-27t04_03_05_821121": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Астро-аналіз описує вплив Юпітера на Асцендент Олега,",
-    "ts": "2026-08-27T04:03:05.821121"
-  },
-  "action_detect|2026-08-27t04_03_05_588177": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оцінити стратегічні зміни\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після закінчення зміни при",
-    "ts": "2026-08-27T04:03:05.588177"
-  },
-  "action_detect|2026-08-27t04_02_54_366986": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Повернення кредиту від Temu\", \"action_date\": \"2026-08-27\", \"action_time\": \"09:00\", \"action_summary\": \"Перевірити, ч",
-    "ts": "2026-08-27T04:02:54.366986"
-  },
-  "action_detect|2026-08-27t04_02_40_033056": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки не в",
-    "ts": "2026-08-27T04:02:40.033056"
   }
 }
