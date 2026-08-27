@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T20:01:33.959153",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The terrifying mechanics of Nepal’s catastrophe</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78121"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78121"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78121"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78121"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78121"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78121"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T20:01:35.589959",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — August 27</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
@@ -626,6 +587,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78125"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T21:01:05.628109",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>K.R.E.D.IT</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78122"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78122"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78122"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78122"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78122"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78122"
             }
           ]
         ]
