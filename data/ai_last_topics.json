@@ -1,4 +1,9 @@
 {
+  "msg_event_soon|2026-08-28t01_23_08_336506": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ⏰  Ти продовжуєш нічну зміну, зараз 01:23. До завершення ще трохи менше ніж п'ять годин.  Попри нічну роботу, твоя вага знизилась до 83.5 кг (-0.7",
+    "ts": "2026-08-28T01:23:08.336506"
+  },
   "selfact|2026-08-28t01_18_40_726579": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Проблеми з Runable\",     \"text\": \"Олег, зверни увагу: твої платежі за Runable (€8.93 та $10.00) знову були неу",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armolopid",
     "ts": "2026-08-27T23:02:25.763350"
-  },
-  "action_detect|2026-08-27t23_02_14_707876": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-08-28\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
-    "ts": "2026-08-27T23:02:14.707876"
   }
 }
