@@ -1,4 +1,9 @@
 {
+  "calendar|2026-08-27t06_48_21_028920": {
+    "topic": "calendar",
+    "gist": "Привіт, Олеже! Бачу, що сьогодні на 09:00 заплановано повернення кредиту від Temu, а ти щойно закінчив нічну зміну о 06:00. Це важливо закрити, щоб не накопичув",
+    "ts": "2026-08-27T06:48:21.028920"
+  },
   "mailcal_extract|2026-08-27t06_39_31_159809": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"77660\",     \"title\": \"Скасування Paxos and Antipaxos Boat Tour from Corfu\",     \"date\": \"2026-08-19\",     \"time\": \"08:20\",     \"kind\":",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист є сповіщенням від LinkedIn про нову вакансію Senior Software Engineer - Full-stack - Growth Product у компанії Kraken, розт",
     "ts": "2026-08-27T04:15:35.651000"
-  },
-  "action_detect|2026-08-27t04_07_04_436166": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-09-18\", \"action_time\": null, \"action_summary\": \"Додати ранню зміну до календаря ",
-    "ts": "2026-08-27T04:07:04.436166"
   }
 }
