@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T12:17:54.514641",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Tripadvisor</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Hotels that go the extra mile»\n\n<i>«Free breakfast&amp;#44; infinity pools&amp;#44; and more&amp;#46;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78087"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78087"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78087"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78087"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78087"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78087"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T12:30:07.329534",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Sorare</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Double Up 🔥»\n\n<i>«Buy a card. Get\na bonus reward.\nsorare-double-up-event \n( https://clicks.sorare.com/f/a/XG_CjK-jhL7F1X4S89DNCA~~/AAAHahA~/pv7Yl9PJKpkmTsrg7uy5bcc2xtpc9PwpMOaGQV9pY7ZWmVDslhnaaswXhfWwlgcx-4n64O9FUksfYTo_tjiW0nfbMcgM32Esd7w7LrC9QU0jn3JQlbbkQ3ShrFOgXeNq1IwwobVGMo1XnMrqfs4cs5UYSdwqNxPb216A3wOHwXhNcftKxG...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -640,6 +601,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78092"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T14:01:45.773392",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>We raised $21M to help small businesses grow</b>\n👤 Umesh from Runable &lt;umesh@hey.runable.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78091"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78091"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78091"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78091"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78091"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78091"
             }
           ]
         ]
