@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T18:01:53.116103",
-      "kind": "chunk",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (5 важливих листів)\n\n👤 \"Socios.com\"\n📋 Your login change is moving to 10 September\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Runable\n📋 $10.00 payment to Runable was unsuccessful\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Umesh from Runable\n📋 We raised $21M to help small businesses grow\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 letenky\n📋 Online check-in for a smooth take-off. ATTENTION! Don’t forg\n📝 (AI-аналіз тимчасово недоступний)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T18:01:59.060891",
       "kind": "chunk",
       "text": "🔮🤖 <b>АСТРО-АНАЛІЗ ВСІ АСПЕКТИ</b>\n\n🌙 <b>ТРАНЗИТИ СЬОГОДНІ</b> (AI тимчасово перевантажена, без інтерпретації)\n🔮 АСТРО — транзити до натальних планет\n🌔 Прибуваючий гіббус  ·  Місяць у Водолій ♒\n🔭 Інновації, друзі, нестандартні рішення\n\n🌟 ♃ Юпітер увійшов у знак твого Асценденту (Leo)! Це РІДКІСНИЙ і ВАЖЛИВИЙ транзит — торкається особистості, зовнішнього вигляду, нового циклу в житті.\n\n🟢 ♂ Марс Трин △ натальний ♀ Венера  (0.3°)\n🟡 🌙 Місяць Квінконкс ⚻ натальний ☀️ Сонце  (0.5°)\n🟡 ♄ Сатурн Квінконкс ⚻ натальний ♇ Плутон  (0.5°)\n🟢 ⛢ Уран Трин △ натальний ☿ Меркурій  (0.6°)\n    ↳ Блискучі ідеї і інсайти. Записуй все що приходить!\n🔴 ♃ Юпітер Квадрат □ натальний ♇ Плутон  (0.6°)\n    ↳ Боротьба за владу або ресурси. Дій обережно.\n🔴 ♂ Марс Опозиція ☍ натальний ♆ Нептун  (1.0°)\n    ↳ Дії марно витрачаються. Перевір чи ти йдеш у правильному напрямку.\n🟢 🌙 Місяць Трин △ натальний 🌙 Місяць  (1.2°)\n    ↳ Емоційна\n\n📌 Олег ЗАРАЗ на нічній зміні (18:00–06:00). Зміна вже йде. Здоров'я: кроки 6200, сон 7.2г.",
@@ -659,6 +653,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78128"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T20:17:18.805742",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Pixory</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «one book for every summer you've had»\n\n<i>«[Pixory](https://www.pixoryofficial.com/)\r\n\r\n[summer 2026 is nearly over | shop summer covers](https://www.pixoryofficia=\r\nl.com/moments/custom-photobook/moments-series/Summer_2026)\r\n\r\n[every summer feels unforgettable while you're in it. | make summer 2026](h=\r\nttps://www.pixoryofficial.com/moments...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78129"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78129"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78129"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78129"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78129"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78129"
             }
           ]
         ]
