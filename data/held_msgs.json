@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T11:20:50.935945",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>FlixBus</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Faster bookings. 20% off.»\n\n<i>«96    body, table, td, div, p, span, a, strong, h1, h2, h3, h4,\nh5, h6 { font-family: Arial, sans-serif !important;\nmso-hyphenate:none; } table { border-spacing: 0; } table, td {\nborder-collapse: collapse !important; mso-table-lspace: 0pt;\nmso-table-rspace: 0pt; } sup...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78080"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78080"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78080"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78080"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78080"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78080"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T11:24:58.084692",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Zara</b> 📢<i>(промо)</i>\n📋 Тема: «ZARA | Into The Process IX»\n\n<i>«Zara html {width: 100%;} body { width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0 auto!important; padding: 0!important; } .ExternalClass * {line-height: 100%} div[style*=\"margin: 16px 0\"] {margin: 0 !important;} table td {border-collapse: collapse;} table...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -629,6 +590,12 @@
       "ts": "2026-08-27T13:00:56.693461",
       "kind": "chunk",
       "text": "🥗 <b>Обід!</b>\n\nЧас заправитись 🍽\n• Тарілка: ½ овочі, ¼ білок, ¼ крупи\n• Не переїдай — вечеря ще буде\n\n<i>Слідкуй за порціями → 78 кг реальні!</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T13:01:07.428613",
+      "kind": "chunk",
+      "text": "☀️\n<b>ЗВІТ  ·  Чт 27.08  ·  13:00</b>\n🏠 Вдома\n<i>Якщо AVAX рухається — ти вже знаєш. Якщо ні — їж і відпочинь 💪</i>\n📌 Нічна зміна +6\n\n⚡ <b>День: ⭐☆☆☆☆ 27/100</b>  ↓7 vs вчора\n\n☀️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>27°C</b>\n<i>☀️ Тепло — сонцезахисний крем</i>\n\n📅 <b>Прогноз сьогодні:</b>\n05:45   🌇 19:27  14:00 ☀️28°  │  15:00 ☀️28°  │  16:00 ☀️28°  │  17:00 ☀️28°  │  18:00 ☀️26°  │  19:00 ☀️25°  09:00 🌤20°  │  12:00 ☀️26°  │  15:00 ☁️29°  │  18:00 ☁️28°  │  21:00 ☁️25°\n\n<b>Завтра:</b>  ☁️ Хмарно  🔻16°  /  🔺29°\n<code>09:00</code> 🌤20°  │  <code>12:00</code> ☀️26°  │  <code>15:00</code> ☁️29°  │  <code>18:00</code> ☁️28°  │  <code>21:00</code> ☁️25°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n  • 🚧 Перекрито — Baštová\n  • 🚧 Перекрито — Svornosti\n\n💰\n<b>КРИПТО  ·  🔴 ВЕДМЕЖИЙ 📉</b>\n🔻 <b>BTC</b> <code>$78,716.00</code>  -1.63%\n🔻 <b>ETH</b> <code>$2,493.85</code>  -1.58%\n🔻 <b>AVAX</b> <code>$7.35</code>  -1.34%\n🔻 <b>ONDO</b> <code>$0.37</code>  -1.83%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🔴 <b>IBIT</b>  <code>$44.46</code>  <i>-0.58% за день</i>\n🟢 <b>ETHA</b>  <code>$18.65</code>  <i>+0.27% за день</i>\n⚪️ <b>VAVA</b>  <code>$0.65</code>\n🔴 <b>GAVA</b>  <code>$17.69",
       "keyboard": null
     }
   ]
