@@ -431,5 +431,15 @@
     "label": "👌 Прийняв",
     "state": "open",
     "ts": "2026-08-27T01:50:33"
+  },
+  "generic|t|core lightning рекомендація відключити ноди": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "core lightning рекомендація відключити ноди",
+    "title": "Core Lightning: рекомендація відключити ноди",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "state": "closed",
+    "ts": "2026-08-27T02:30:45"
   }
 }
