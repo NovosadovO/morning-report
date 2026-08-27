@@ -7647,6 +7647,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ack_d5f1f3d6b6"
+    },
+    {
+      "ts": "2026-08-27T19:28:52.244631+00:00",
+      "category": "ai_button",
+      "question": "email",
+      "answer": "mail",
+      "extra": {
+        "trigger": "vip_email",
+        "note": null
+      }
     }
   ]
 }
