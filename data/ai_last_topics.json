@@ -1,4 +1,14 @@
 {
+  "selfact|2026-08-27t06_29_58_963431": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання\",     \"text\": \"Олеже, твоє бронювання 'Paxos and Antipaxos Boat Tour from Corfu' скасован",
+    "ts": "2026-08-27T06:29:58.963431"
+  },
+  "action_detect|2026-08-27t06_16_55_757281": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить аналіз поточного стану Олега щодо його ",
+    "ts": "2026-08-27T06:16:55.757281"
+  },
   "msg_vip_email|2026-08-27t06_16_47_029658": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🏹  Твій організм зараз перезавантажується після нічного відпочинку, що є ключовим для довгострокової витривалості як у роботі, так і в твоїх інвес",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити витрати Google Cloud\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Потрібно перевірити ",
     "ts": "2026-08-27T04:06:38.164936"
-  },
-  "msg_vip_email|2026-08-27t04_06_32_289050": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 📧  Бачу, ти зараз глибоко у нічній зміні, вже 04:06, а до її завершення залишилось менш ніж дві години. Поки ти на роботі, крипторинкові тренди за",
-    "ts": "2026-08-27T04:06:32.289050"
-  },
-  "action_detect|2026-08-27t04_06_02_583447": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Pelikan.sk\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь про о",
-    "ts": "2026-08-27T04:06:02.583447"
   }
 }
