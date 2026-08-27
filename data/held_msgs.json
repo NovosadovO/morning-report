@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T10:02:00.529454",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Software Engineer - Full-stack - Growth Product в Kra</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78070"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78070"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78070"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78070"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78070"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78070"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T10:02:02.099349",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
@@ -371,6 +332,12 @@
       "ts": "2026-08-27T10:22:10.066269",
       "kind": "calendar",
       "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T10:22:11.208101",
+      "kind": "calendar",
+      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nВідповідь збережу — це піде в аналітику тижня.",
       "keyboard": null
     }
   ]
