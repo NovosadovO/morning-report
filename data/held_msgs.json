@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T20:02:55.120645",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Morning Report</b>\n📋 Тема: «📊 Ранковий дайджест ринків — 27.08.2026»\n\n<i>«📊 РАНКОВИЙ РИНКОВИЙ ДАЙДЖЕСТ\r\n\r\n🗓 27 August 2026, 18:00\r\n📈 Відкрити живі графіки TradingView → https://040d5yvqudeeuhzw0s13dcp9yjftfazu.runable.site\r\n\r\n\r\n📉 ІНДЕКСИ\r\n\r\nІндексРівеньЗміна S&amp;P 500 $7,730.58 +0.71% NASDAQ 100 $29,552.72 +1.12% Dow Jones $53,616.19 +0.28% VIX $14.66 -3.62%\r\n\r\n\r\n🪙 КРИПТОВА...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78126"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78126"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78126"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78126"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78126"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78126"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T20:07:03.517964",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Unstoppable</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «How many windows have you got open right now?»\n\n<i>«One app for coding, writing, video, admin and everything else you keep a tab for  \r\n\r\n( https://unstoppable.ai/?utm_campaign=UD-replace-apps&amp;utm_content=UD-replace-apps&amp;utm_medium=lifecycle_email&amp;utm_source=lifecycle_UD )\r\n\r\nUnstoppable AI ( https://code.unstoppabledomains.com/?utm_campaign=UD-repla...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -536,6 +497,12 @@
       "ts": "2026-08-27T21:02:56.341668",
       "kind": "watchdog",
       "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 15\n• ⏳ відкритих дедлайнів під наглядом: 17\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\n<i>За цим я стежити НЕ можу, поки не виправлено.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T21:02:57.502793",
+      "kind": "watchdog",
+      "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 15\n• ⏳ відкритих дедлайнів під наглядом: 17\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\nЗа цим я стежити НЕ можу, поки не виправлено.",
       "keyboard": null
     }
   ]
