@@ -992,14 +992,16 @@
     "saved_at": "2026-08-26 16:27"
   },
   "2026-08-27": {
+    "date": "2026-08-27",
+    "health_score": 82,
     "steps": 18793,
     "hr_avg": 58,
-    "calories": 798,
+    "calories": 797,
+    "hrv": 44,
     "weight_kg": 83.0,
+    "height_cm": 175,
     "spo2": 96,
-    "stress": 37,
-    "date": "2026-08-27",
-    "source": "qwatch_auto",
+    "source": "qwatch",
     "saved_at": "2026-08-27 23:46"
   }
 }
