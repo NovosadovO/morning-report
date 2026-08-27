@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T14:03:43.528045",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Daily Bone</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «📈 Nvidia smashes earnings and adds billions to market cap»\n\n<i>«Today’s newsletter is brought to you by **[Choose Rich Live](https://www.youtube.com/@chooserichnick/streams)**[!](https://www.youtube.com/@chooserichnick/streams)\r\n\r\nOur very own Nick O’Neill is has launched a new stream covering crypto, finance, AI, tech, and the stories shaping the internet econo...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78095"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78095"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78095"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78095"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78095"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78095"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T14:09:55.050410",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Google AI Studio</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🚀 Introducing intelligent transcription with Gemini 3.5 Transcribe»\n\n<i>«Google AI  \r\nStudio&lt;https://c.gle/ACT4xYxqT1A-CP4S0ONcxrrSOQRUD1st2K6RMSlHwD1SolKK-vz30bFNDlvv1iiIR5cpqSTWpZW6QoWZgbpRhWy7bhtwjF16tYEllQQKWWJ33-B7BXyBEIWq59bAj4nUsvCVu9xyImhTEcWKFdJz5ga5oqgoUK4&gt;\r\n\r\nIntroducing Gemini 3.5 Transcribe\r\n\r\nBuilt for real-time voice-first experiences such as voice agents,...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -475,6 +436,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78092"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T15:01:12.290400",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>We raised $21M to help small businesses grow</b>\n👤 Umesh from Runable &lt;umesh@hey.runable.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78091"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78091"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78091"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78091"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78091"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78091"
             }
           ]
         ]
