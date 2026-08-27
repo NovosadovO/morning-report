@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T08:38:55.439441",
-      "kind": "calendar",
-      "text": "🔔 Пора збиратись — 30 хв\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nОстанні хвилини — перевір, чи все взяв.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T08:39:53.466964",
       "kind": "calendar",
       "text": "🔔 <b>Пора збиратись — 30 хв</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Останні хвилини — перевір, чи все взяв.</i>",
@@ -434,6 +428,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78076"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T09:41:14.726295",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Nike</b>\n📋 Тема: «Gavi locks in with Nike Mind»\n\n<i>«@font-face { font-family: \"Nike Futura\"; src: url(\"https://www.nike.com/assets/ncss/2.2/dotcom/fonts/nike-futura-extra-bold-v200.woff2\") format(\"woff2\"), url(\"https://www.nike.com/assets/ncss/2.2/dotcom/fonts/nike-futura-extra-bold-v200.woff\") format(\"woff\"), url(\"https://www.nike.com/assets/ncss/2....»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78077"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78077"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78077"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78077"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78077"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78077"
             }
           ]
         ]
