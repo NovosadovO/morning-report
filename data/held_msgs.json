@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T20:07:03.517964",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Unstoppable</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «How many windows have you got open right now?»\n\n<i>«One app for coding, writing, video, admin and everything else you keep a tab for  \r\n\r\n( https://unstoppable.ai/?utm_campaign=UD-replace-apps&amp;utm_content=UD-replace-apps&amp;utm_medium=lifecycle_email&amp;utm_source=lifecycle_UD )\r\n\r\nUnstoppable AI ( https://code.unstoppabledomains.com/?utm_campaign=UD-repla...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78127"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78127"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78127"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78127"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78127"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78127"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T20:15:13.354526",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Email Marketing Specialist в Voňavý domov»\n\n<i>«Сповіщення про вакансії в Košice\r\n        \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nEmail Marketing Specialist\r\nVoňavý domov\r\nKošice\r\nПодати заявку за допомогою резюме і профілю\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4457231439/?trackingId=IXokl6X8CZrcz...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -503,6 +464,12 @@
       "ts": "2026-08-27T21:02:57.502793",
       "kind": "watchdog",
       "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 15\n• ⏳ відкритих дедлайнів під наглядом: 17\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\nЗа цим я стежити НЕ можу, поки не виправлено.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T21:04:15.194850",
+      "kind": "watchdog",
+      "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 15\n• ⏳ відкритих дедлайнів під наглядом: 17\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\n<i>За цим я стежити НЕ можу, поки не виправлено.</i>",
       "keyboard": null
     }
   ]
