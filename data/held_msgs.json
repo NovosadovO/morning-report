@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T11:01:26.620417",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>4 nové pracovné ponuky</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78074"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78074"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78074"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78074"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78074"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78074"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T11:01:28.187033",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в VenomBridge</b>\n👤 Discord &lt;noreply@discord.com&gt;",
@@ -696,6 +657,31 @@
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 25 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '25 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 82.5 кг, ціль 78 кг (тренд -1.8 кг за останні 5 замірів). Кроки: 6200 (ціль 10000). Сон: 7.2г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 09:00 💳 Повернення кредиту від Temu, 18:00 🌙 Нічна зміна (18:00-06:00)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T12:01:12.591926",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 4 nové pracovné ponuky\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Profesia.sk",
+              "callback_data": "email_reply_78074"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_78074"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78074"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
