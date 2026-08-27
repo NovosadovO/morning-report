@@ -115,18 +115,5 @@
     "note": "Платіж за хостинг бота не пройшов, потрібно оновити картку, інакше підписку зупинять.",
     "uid": "78045",
     "ts": "2026-08-27T00:29:40.480698+00:00"
-  },
-  "be00040be5": {
-    "bid": "runable|8_93|",
-    "vendor": "Runable",
-    "amount": "8.93",
-    "currency": "EUR",
-    "due": "",
-    "invoice_no": "",
-    "sender": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
-    "subject": "€8.93 payment to Runable was unsuccessful again",
-    "note": "Платіж на Runable у розмірі €8.93 був невдалим знову. Потрібно оновити платіжну інформацію.",
-    "uid": "78135",
-    "ts": "2026-08-27T23:28:32.223110+00:00"
   }
 }
