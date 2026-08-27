@@ -7600,6 +7600,15 @@
       "category": "event_done",
       "question": "📅 💳 Повернення кредиту від Temu\nПланувалась до 11:00 — виконано?",
       "answer": "no"
+    },
+    {
+      "ts": "2026-08-27T18:58:35.977663+00:00",
+      "category": "day_energy",
+      "question": "Як ти сьогодні",
+      "answer": "Втома",
+      "extra": {
+        "shift": "night"
+      }
     }
   ]
 }
