@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T10:01:56.027032",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78075"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78075"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78075"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78075"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78075"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78075"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T10:01:57.532920",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>4 nové pracovné ponuky</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -437,6 +398,12 @@
       "ts": "2026-08-27T10:21:10.980557",
       "kind": "calendar",
       "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T10:21:12.296260",
+      "kind": "calendar",
+      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nВідповідь збережу — це піде в аналітику тижня.",
       "keyboard": null
     }
   ]
