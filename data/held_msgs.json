@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T14:01:49.523248",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Zapojte sa do politickej debaty naživo: Richard Dírer otvára</b>\n👤 Startitup через LinkedIn&lt;newsletters-noreply@linke",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78089"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78089"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78089"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78089"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78089"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78089"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T14:01:51.193753",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Office Manager в TDK InvenSense, зарплата до 28 тис. EUR/рік</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -378,6 +339,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T15:01:01.930412",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Slovak Speaking Agent for Hospitality Sector -Relocation to </b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78100"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78100"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78100"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78100"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78100"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78100"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
