@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-08-27t06_39_31_159809": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"77660\",     \"title\": \"Скасування Paxos and Antipaxos Boat Tour from Corfu\",     \"date\": \"2026-08-19\",     \"time\": \"08:20\",     \"kind\":",
+    "ts": "2026-08-27T06:39:31.159809"
+  },
   "selfact|2026-08-27t06_29_58_963431": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання\",     \"text\": \"Олеже, твоє бронювання 'Paxos and Antipaxos Boat Tour from Corfu' скасован",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-09-18\", \"action_time\": null, \"action_summary\": \"Додати ранню зміну до календаря ",
     "ts": "2026-08-27T04:07:04.436166"
-  },
-  "action_detect|2026-08-27t04_06_38_164936": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити витрати Google Cloud\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Потрібно перевірити ",
-    "ts": "2026-08-27T04:06:38.164936"
   }
 }
