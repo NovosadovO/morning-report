@@ -1,4 +1,24 @@
 {
+  "mailcal_extract|2026-08-27t02_50_18_509721": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"77660\",     \"title\": \"Скасування туру Paxos and Antipaxos Boat Tour from Corfu\",     \"date\": \"2026-08-19\",     \"time\": \"08:20\",     \"k",
+    "ts": "2026-08-27T02:50:18.509721"
+  },
+  "action_detect|2026-08-27t02_34_46_679800": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Виступ Кевіна Ворша\", \"action_date\": \"2024-08-28\", \"action_time\": \"08:00\", \"action_summary\": \"Спланувати ранок післ",
+    "ts": "2026-08-27T02:34:46.679800"
+  },
+  "msg_event_soon|2026-08-27t02_34_39_549377": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ⏰  Ти зараз глибоко в нічній зміні, і хоча крипторинок демонструє переважно зростання (BTC +0.3%, ETH +2.2% за 24г), пам'ятай про майбутні події. ",
+    "ts": "2026-08-27T02:34:39.549377"
+  },
+  "action_detect|2026-08-27t02_32_14_703427": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid Plus післ",
+    "ts": "2026-08-27T02:32:14.703427"
+  },
   "msg_deep_analysis|2026-08-27t02_32_06_717318": {
     "topic": "MSG_DEEP_ANALYSIS",
     "gist": "Привіт Олеже! 👋  Ти зараз глибоко в нічній зміні, вже третя година ночі, і поки Кошице спить, крипто-ринок демонструє досить змішану динаміку, з фокусом на зага",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2023-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря ранню зміну ",
     "ts": "2026-08-27T00:49:54.213816"
-  },
-  "action_detect|2026-08-27t00_49_54_157838": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря ранню зміну ",
-    "ts": "2026-08-27T00:49:54.157838"
-  },
-  "action_detect|2026-08-27t00_49_43_212050": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря ранню зміну ",
-    "ts": "2026-08-27T00:49:43.212050"
-  },
-  "action_detect|2026-08-27t00_49_10_940918": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зміни в графіку роботи\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря р",
-    "ts": "2026-08-27T00:49:10.940918"
-  },
-  "action_detect|2026-08-27t00_48_56_696359": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Railway\", \"action_date\": \"2026-08-24\", \"action_time\": \"09:00\", \"action_summary\": \"Оплатити Railway 24 серп",
-    "ts": "2026-08-27T00:48:56.696359"
   }
 }
