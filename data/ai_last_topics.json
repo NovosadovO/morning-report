@@ -1,4 +1,34 @@
 {
+  "action_detect|2026-08-27t23_36_59_430174": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
+    "ts": "2026-08-27T23:36:59.430174"
+  },
+  "action_detect|2026-08-27t23_30_55_385395": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-08-28\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
+    "ts": "2026-08-27T23:30:55.385395"
+  },
+  "action_detect|2026-08-27t23_30_14_319703": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Позначено оплаченим Runable на суму",
+    "ts": "2026-08-27T23:30:14.319703"
+  },
+  "bills|2026-08-27t23_28_30_931276": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"78137\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"invoice_no\": \"\",     \"due\": \"\",     \"already_paid\"",
+    "ts": "2026-08-27T23:28:30.931276"
+  },
+  "email_ai_item|2026-08-27t23_27_07_495274": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від Forbes через LinkedIn є новинною розсилкою, що інформує про зростання вартості акцій Nvidia майже на 10% до $230, що пі",
+    "ts": "2026-08-27T23:27:07.495274"
+  },
+  "healthai|2026-08-27t23_26_05_175294": {
+    "topic": "healthai",
+    "gist": "Олеже, останні дані по твоєму здоров'ю датуються 2026-08-26, тобто оновлень немає вже 47 годин. Це означає, що зараз я не можу оцінити твою поточну вагу (ти вчо",
+    "ts": "2026-08-27T23:26:05.175294"
+  },
   "mailcal_extract|2026-08-27t23_25_52_452180": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -268,55 +298,5 @@
     "topic": "context_ask_ai",
     "gist": "Олег, я розумію, що ти все ще чекаєш на звіти.  Ще раз пояснюю: система, з якою я працюю, не генерує звіти щогодини. Вони надаються з іншою періодичністю (напри",
     "ts": "2026-08-27T22:25:10.903516"
-  },
-  "context_ask_ai|2026-08-27t22_25_10_026644": {
-    "topic": "context_ask_ai",
-    "gist": "Зрозумів, Олег.  Зараз 22:25, ти на нічній зміні.  Пам'ятай, що після зміни, перед сном, тобі потрібно прийняти Armolopid Plus. Також не забудь про вечірній дог",
-    "ts": "2026-08-27T22:25:10.026644"
-  },
-  "healthai|2026-08-27t22_25_08_970985": {
-    "topic": "healthai",
-    "gist": "Олеже, останні дані по твоєму здоров'ю були отримані 2026-08-26, тобто 46 годин тому, що є аномалією, враховуючи твоє питання \"Чому немає звітів?\" о 21:06 сього",
-    "ts": "2026-08-27T22:25:08.970985"
-  },
-  "action_detect|2026-08-27t22_25_08_153512": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
-    "ts": "2026-08-27T22:25:08.153512"
-  },
-  "action_detect|2026-08-27t22_24_57_218700": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
-    "ts": "2026-08-27T22:24:57.218700"
-  },
-  "openloop_promises|2026-08-27t21_11_24_220269": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-08-27T21:11:24.220269"
-  },
-  "action_detect|2026-08-27t21_07_41_871685": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст містить астрологічний прогноз та історію вз",
-    "ts": "2026-08-27T21:07:41.871685"
-  },
-  "action_detect|2026-08-27t23_30_14_319703": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Позначено оплаченим Runable на суму",
-    "ts": "2026-08-27T23:30:14.319703"
-  },
-  "bills|2026-08-27t23_28_30_931276": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"78137\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"invoice_no\": \"\",     \"due\": \"\",     \"already_paid\"",
-    "ts": "2026-08-27T23:28:30.931276"
-  },
-  "email_ai_item|2026-08-27t23_27_07_495274": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від Forbes через LinkedIn є новинною розсилкою, що інформує про зростання вартості акцій Nvidia майже на 10% до $230, що пі",
-    "ts": "2026-08-27T23:27:07.495274"
-  },
-  "healthai|2026-08-27t23_26_05_175294": {
-    "topic": "healthai",
-    "gist": "Олеже, останні дані по твоєму здоров'ю датуються 2026-08-26, тобто оновлень немає вже 47 годин. Це означає, що зараз я не можу оцінити твою поточну вагу (ти вчо",
-    "ts": "2026-08-27T23:26:05.175294"
   }
 }
