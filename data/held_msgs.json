@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T16:01:26.037832",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Dobrá správa! Dobierka je kdispozícii!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78094"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78094"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78094"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78094"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78094"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78094"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T16:01:27.547634",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Bernstein Just Set a New Bitcoin Price Target for 2027</b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
@@ -437,6 +398,12 @@
       "ts": "2026-08-27T16:31:44.348345",
       "kind": "chunk",
       "text": "📊 <b>ETF алерт!</b>\n\n🚀 <b>NVDA</b> +7.0% за ~1г\n   Зараз: <code>$225.84</code>  Було: <code>$211.15</code>\n\n🚀 <b>COIN</b> +3.7% за ~1г\n   Зараз: <code>$189.10</code>  Було: <code>$182.39</code>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T16:33:20.316003",
+      "kind": "day_mode",
+      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
