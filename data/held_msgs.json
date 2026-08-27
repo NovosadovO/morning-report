@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T09:01:19.389269",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Online check-in for a smooth take-off. ATTENTION! Don’t forg</b>\n👤 letenky@pelikan.sk",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77664"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77664"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77664"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77664"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77664"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77664"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T09:01:20.975386",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Re: Re: other</b>\n👤 \"Booking.com Customer Service\" &lt;24-25523139647_88c",
@@ -562,6 +523,45 @@
       "kind": "calendar",
       "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nВідповідь збережу — це піде в аналітику тижня.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T10:15:50.562707",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Director of Operations, Europe в Modulr»\n\n<i>«Сповіщення про вакансії за запитом Директор з операцій в European Union\r\n        \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nDirector of Operations, Europe\r\nModulr\r\nAmsterdam\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4446680084/?trackingId=VShcanFxwWRa8vowxC...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78078"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78078"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78078"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78078"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78078"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78078"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
