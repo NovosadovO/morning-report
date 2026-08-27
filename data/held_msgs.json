@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T18:01:36.386958",
-      "kind": "offer",
-      "text": "💰 ✉️\n📌 <b>$10.00 payment to Runable was unsuccessful</b>\n👤 Runable &lt;failed-payments+acct_1RaXgUJk3URPLkAO@str",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78113"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78113"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78113"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78113"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78113"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78113"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T18:01:38.123475",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>We raised $21M to help small businesses grow</b>\n👤 Umesh from Runable &lt;umesh@hey.runable.com&gt;",
@@ -749,6 +710,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78118"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T20:01:41.367903",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Your login change is moving to 10 September</b>\n👤 \"Socios.com\" &lt;service@support.socios.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78114"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78114"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78114"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78114"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78114"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78114"
             }
           ]
         ]
