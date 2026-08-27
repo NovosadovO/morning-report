@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T17:16:00.139315",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Buzz Sneaker Station</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Happy Hours práve začínajú 👀»\n\n<i>«https://click.sportvision-promo.com/?qs=ABB7InYiOjEsImQiOjQ5ODF9ADMAAAAAAMXtRMCPB6_9p7hfgB_ucRKEopE86AAN9itNr3iGtCvkNjPzT9_08KMPfbBFxlLpGTIjSxJEojOgQeHDBsxRzaJLRuylw0HLnwK-bzQ \r\n\r\n\r\n\r\nDOPRAVA ZADARMO - pri objedn&amp;aacute;vkach nad 100 &amp;euro;\r\n\r\n\r\n\r\nhttps://click.sportvision-promo.com/?q...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78115"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78115"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78115"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78115"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78115"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78115"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T17:54:32.028518",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Aave</b>\n📋 Тема: «Aave Mobile App Early Access»\n\n<i>«Get early access to Aave App with Ghost Passes.\r\n\r\n͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏\r\n  ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏   ­͏...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -654,6 +615,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T20:01:30.603568",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Email Marketing Specialist в Voňavý domov</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78125"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78125"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78125"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78125"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78125"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78125"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
