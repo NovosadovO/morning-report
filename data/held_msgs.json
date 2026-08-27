@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T10:34:15.358948",
-      "kind": "calendar",
-      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nВідповідь збережу — це піде в аналітику тижня.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T10:35:15.729855",
       "kind": "calendar",
       "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T11:01:23.442363",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Director of Operations, Europe в Modulr</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78078"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78078"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78078"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78078"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78078"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78078"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
