@@ -1,4 +1,9 @@
 {
+  "msg_vip_email|2026-08-27t22_52_02_969393": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🏹  Зараз 22:51, ти продовжуєш нічну зміну, і у тебе на пошті є кілька важливих сигналів, що вимагають стратегічного погляду. Серед нових листів ви",
+    "ts": "2026-08-27T22:52:02.969393"
+  },
   "email_ai_item|2026-08-27t22_51_02_950063": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від StartEngine інформує про нову пропозицію інвестування в компанію Lambda Labs, яка, за повідомленнями Bloomberg, прагне ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-27T16:36:20.401853"
-  },
-  "action_detect|2026-08-27t16_34_58_708541": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2024-08-27\", \"action_time\": \"18:00\", \"action_summary\": \"Сьогодні о 18:00 розпочнеться",
-    "ts": "2026-08-27T16:34:58.708541"
   }
 }
