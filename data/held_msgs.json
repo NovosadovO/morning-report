@@ -251,6 +251,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-27T08:01:45.494075",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Paxos and Antipaxos Boat Tour from Corfu — бронювання скасов</b>\n👤 noreply@booking.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77660"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77660"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77660"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77660"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77660"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77660"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
