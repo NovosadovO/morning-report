@@ -1,43 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T08:01:51.608812",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 letenky\n📋 Online check-in for a smooth take-off. ATTENTION! Don’t forg\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Booking.com Customer Service\"\n📋 Re: Re: other\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_77769"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: letenky",
-              "callback_data": "email_reply_77664"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Booking.com Custom",
-              "callback_data": "email_reply_77663"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_77769"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77769"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T08:01:53.835171",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 letenky\n📋 Online check-in for a smooth take-off. ATTENTION! Don’t forg\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Booking.com Customer Service\"\n📋 Re: Re: other\n📝 (AI-аналіз тимчасово недоступний)",
@@ -212,6 +175,12 @@
       "ts": "2026-08-27T08:28:46.774094",
       "kind": "calendar",
       "text": "🔔 <b>Пора збиратись — 30 хв</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Останні хвилини — перевір, чи все взяв.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T08:28:47.733070",
+      "kind": "calendar",
+      "text": "🔔 Пора збиратись — 30 хв\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nОстанні хвилини — перевір, чи все взяв.",
       "keyboard": null
     }
   ]
