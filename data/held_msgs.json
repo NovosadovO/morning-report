@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T17:02:01.788472",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Online check-in for a smooth take-off. ATTENTION! Don’t forg</b>\n👤 letenky@pelikan.sk",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77664"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77664"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77664"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77664"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77664"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77664"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T17:02:03.495034",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Re: Re: other</b>\n👤 \"Booking.com Customer Service\" &lt;24-25523139647_88c",
@@ -660,6 +621,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78119"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T18:18:58.926024",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleh Bezuhlyi через LinkedIn</b>\n📋 Тема: «📰 Daily Crypto Digest — August 27»\n\n<i>«Daily Crypto Digest\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/daily-crypto-digest-august-27-oleh-bezuhlyi-kxmzf?lipi=urn%3Ali%3Apage%3Aemail_email_s...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78120"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78120"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78120"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78120"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78120"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78120"
             }
           ]
         ]
