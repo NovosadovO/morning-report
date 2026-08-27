@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T11:41:15.067479",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Linas from Linas's Newsletter</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Revolut built EURR stablecoin to own Europe’s euro stables on-ramp 🪙; »\n\n<i>«View this post on the web at https://linas.substack.com/p/fintechpulse1119\r\n\r\nHey Everyone,\r\nGood morning &amp; happy Thursday! Today, we’re breaking down Revolut's EURR euro stablecoin launch to see why the real story here isn't another token but a white-label distribution play (the PayPal/Paxos playbo...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78082"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78082"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78082"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78082"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78082"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78082"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T11:51:26.012843",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Generative AI</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🧬 AGI is here»\n\n<i>«----------\r\n######           [Subscribe](https://academynews.genai.works/)   -    [Collaborate with us](https://utm.genai.works/r/cq9vsh4)\r\n\r\n\r\n--------------------\r\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/8776fa6...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -564,6 +525,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T13:01:18.145586",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Office Manager в TDK InvenSense, зарплата до 28 тис. EUR/рік</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78086"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78086"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78086"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78086"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78086"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78086"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
