@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T15:51:41.851343",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>LinkedIn</b>\n📋 Тема: «Не пропустіть обговорення в Information Technology (IT) Professionals »\n\n<i>«Не пропустіть обговорення в Information Technology (IT) Professionals 🟥\r\n\r\n.....................................Information Technology (IT) Professionals 🟥\r\nIT Community is a professional group for IT leaders, system administrators, network engineers, cloud architects, cybersecurity professionals, s...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78103"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78103"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78103"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78103"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78103"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78103"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T15:53:14.418030",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -536,6 +497,12 @@
       "ts": "2026-08-27T16:08:16.609209",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T16:08:17.728160",
+      "kind": "day_mode",
+      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
