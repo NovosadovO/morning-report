@@ -1,9 +1,4 @@
 {
-  "77669": {
-    "sender": "news@flights.airbaltic.com",
-    "sender_raw": "airBaltic <news@flights.airbaltic.com>",
-    "seen_ts": "2026-08-19T06:33:42.911532+00:00"
-  },
   "77670": {
     "sender": "slovakia@delivery-marketing.bolt.eu",
     "sender_raw": "\"Bolt Food\" <slovakia@delivery-marketing.bolt.eu>",
@@ -1498,5 +1493,10 @@
     "sender": "failed-payments+acct_1hnrvlcjopsrzqsd@stripe.com",
     "sender_raw": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
     "seen_ts": "2026-08-27T13:55:59.176483+00:00"
+  },
+  "78104": {
+    "sender": "slovnaftmove@mail.loyaltyteam.com",
+    "sender_raw": "\"Slovnaft Move\" <slovnaftmove@mail.loyaltyteam.com>",
+    "seen_ts": "2026-08-27T13:56:01.430431+00:00"
   }
 }
