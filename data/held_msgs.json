@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T10:02:04.271731",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Online check-in for a smooth take-off. ATTENTION! Don’t forg</b>\n👤 letenky@pelikan.sk",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77664"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77664"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77664"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77664"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77664"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77664"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T10:02:05.756293",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Re: Re: other</b>\n👤 \"Booking.com Customer Service\" &lt;24-25523139647_88c",
@@ -305,6 +266,12 @@
       "ts": "2026-08-27T10:23:10.247827",
       "kind": "calendar",
       "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T10:23:11.199420",
+      "kind": "calendar",
+      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nВідповідь збережу — це піде в аналітику тижня.",
       "keyboard": null
     }
   ]
