@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T09:37:04.127627",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Reserved</b>\n📋 Тема: «-20% na vybrané detské produkty»\n\n<i>«Email table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; } img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; } body { margin: 0; padding: 0; background-color: #ffffff; } a { text-decoration: none; } .keep-white { mso-style-textfill-...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78076"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78076"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78076"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78076"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78076"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78076"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T09:41:14.726295",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Nike</b>\n📋 Тема: «Gavi locks in with Nike Mind»\n\n<i>«@font-face { font-family: \"Nike Futura\"; src: url(\"https://www.nike.com/assets/ncss/2.2/dotcom/fonts/nike-futura-extra-bold-v200.woff2\") format(\"woff2\"), url(\"https://www.nike.com/assets/ncss/2.2/dotcom/fonts/nike-futura-extra-bold-v200.woff\") format(\"woff\"), url(\"https://www.nike.com/assets/ncss/2....»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -503,6 +464,12 @@
       "ts": "2026-08-27T10:18:08.859949",
       "kind": "calendar",
       "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nВідповідь збережу — це піде в аналітику тижня.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T10:19:08.520630",
+      "kind": "calendar",
+      "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
       "keyboard": null
     }
   ]
