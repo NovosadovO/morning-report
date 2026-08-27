@@ -713,5 +713,19 @@
     "uid": "78132",
     "empty": true,
     "at": "2026-08-27"
+  },
+  "78138_2026-08-28_оплатаrunable1000": {
+    "uid": "78138",
+    "title": "Оплата Runable $10.00",
+    "date": "2026-08-28",
+    "time": "",
+    "kind": "payment",
+    "why": "Paid August 28, 2026",
+    "subject": "Your receipt from Runable #2756-9274",
+    "sender": "Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com>",
+    "event_id": "upk9957296nm2upttbh95p84fo",
+    "link": "https://www.google.com/calendar/event?eid=dXBrOTk1NzI5Nm5tMnVwdHRiaDk1cDg0Zm8gbm92b3NhZG92b2xlZ0Bt",
+    "created_at": "2026-08-27T22:40:33.875388+00:00",
+    "state": "live"
   }
 }
