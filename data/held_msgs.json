@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T10:41:19.563030",
-      "kind": "calendar",
-      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nВідповідь збережу — це піде в аналітику тижня.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T10:42:19.553977",
       "kind": "calendar",
       "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
@@ -465,6 +459,45 @@
       "kind": "chunk",
       "text": "🎯 ТОЧНИЙ АСПЕКТ\n♂ <b>Марс</b> △ ♀ <b>Натальний Венера</b> <b>(ТОЧНИЙ!)</b>\n📍 Марс у <b>Рак ♋</b> | Натальний Венера у Скорпіон ♏, 4-й дім\n<i>Трин · Дім/Родина</i>\n\n📖 <b>Що означає Трин:</b>\n🔵 Природна підтримка — все складається легко й само собою. Талант, удача, потік. Гарний час реалізувати задумане.\n\nПривіт, Олеже! Сподіваюсь, ранок проходить добре.\n\n**Щодо астрології.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T11:41:15.067479",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Linas from Linas's Newsletter</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Revolut built EURR stablecoin to own Europe’s euro stables on-ramp 🪙; »\n\n<i>«View this post on the web at https://linas.substack.com/p/fintechpulse1119\r\n\r\nHey Everyone,\r\nGood morning &amp; happy Thursday! Today, we’re breaking down Revolut's EURR euro stablecoin launch to see why the real story here isn't another token but a white-label distribution play (the PayPal/Paxos playbo...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78082"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78082"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78082"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78082"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78082"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78082"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
