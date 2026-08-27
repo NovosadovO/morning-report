@@ -720,6 +720,13 @@
       "detail": "У дедлайнах є пункт 'Socios.com: зміна способу входу' з дедлайном 2026-08-27.",
       "module": "selfact",
       "ts": "2026-08-27T06:30:09"
+    },
+    {
+      "kind": "notify",
+      "what": "Скасоване бронювання Booking.com",
+      "detail": "Знайдено лист від noreply@booking.com про скасування бронювання 'Paxos and Antipaxos Boat Tour from Corfu' та повернення коштів. Це важлива інформація, яку Олег міг пропустити серед інших листів від Booking.com.",
+      "module": "selfact",
+      "ts": "2026-08-27T07:00:31"
     }
   ]
 }
