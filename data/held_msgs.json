@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T16:01:19.319933",
-      "kind": "offer",
-      "text": "💰 ✉️\n📌 <b>$12.32 payment to Railway Corporation was unsuccessful again</b>\n👤 Railway Corporation &lt;failed-payments+acct_1HNrvlCJ",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78105"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78105"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78105"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78105"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78105"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78105"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T16:01:21.014208",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Slovak Speaking Agent for Hospitality Sector -Relocation to </b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -569,6 +530,12 @@
       "ts": "2026-08-27T16:23:17.548183",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T16:23:18.740705",
+      "kind": "day_mode",
+      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
