@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T18:01:41.276565",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Online check-in for a smooth take-off. ATTENTION! Don’t forg</b>\n👤 letenky@pelikan.sk",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77664"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77664"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77664"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77664"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77664"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77664"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T18:01:42.788454",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Re: Re: other</b>\n👤 \"Booking.com Customer Service\" &lt;24-25523139647_88c",
@@ -706,6 +667,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-27T20:01:50.910054",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 K.R.E.D.IT\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
