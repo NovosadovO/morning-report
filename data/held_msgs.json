@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T16:01:22.685272",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Welcome back: here’s what’s new</b>\n👤 \"Kraken\" &lt;no-reply@email.kraken.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78097"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78097"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78097"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78097"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78097"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78097"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T16:01:24.304482",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📈 Nvidia smashes earnings and adds billions to market cap</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
@@ -503,6 +464,12 @@
       "ts": "2026-08-27T16:28:18.541005",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T16:28:19.741191",
+      "kind": "day_mode",
+      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
