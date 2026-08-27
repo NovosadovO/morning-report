@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T12:14:55.404363",
-      "kind": "watchdog",
-      "text": "👁 Я осліп на частину даних\n\n🔴 strava — функції get_activities немає в monitor.py\n\nПоки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T12:17:54.514641",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Tripadvisor</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Hotels that go the extra mile»\n\n<i>«Free breakfast&amp;#44; infinity pools&amp;#44; and more&amp;#46;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -607,6 +601,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78093"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T14:01:43.855966",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>New bots: TWAP and Iceberg are here</b>\n👤 OKX &lt;updates@okx.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78092"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78092"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78092"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78092"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78092"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78092"
             }
           ]
         ]
