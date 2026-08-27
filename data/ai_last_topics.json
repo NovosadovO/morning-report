@@ -1,4 +1,39 @@
 {
+  "action_detect|2026-08-28t01_52_08_680204": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-09-18\", \"action_time\": null, \"action_summary\": \"Додати ранню зміну до календаря ",
+    "ts": "2026-08-28T01:52:08.680204"
+  },
+  "astro_ai|2026-08-28t01_50_59_390307": {
+    "topic": "astro_ai",
+    "gist": "Привіт, Олеже!  Дивно, як на тлі твоєї нічної зміни, що зараз триває (01:50, Кошице), Юпітер сьогодні *увійшов у знак твого Асценденту (Лева)*. Це не просто тра",
+    "ts": "2026-08-28T01:50:59.390307"
+  },
+  "selfact|2026-08-28t01_49_16_074683": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, Runable знову не зміг списати €8.93 з вашої Mastercard, що закін",
+    "ts": "2026-08-28T01:49:16.074683"
+  },
+  "action_detect|2026-08-28t01_48_56_528084": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після завершення зміни о ",
+    "ts": "2026-08-28T01:48:56.528084"
+  },
+  "msg_deep_analysis|2026-08-28t01_48_49_311135": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Зараз 01:48, ти на нічній зміні, і до її завершення о 06:00 залишилось менше ніж п'ять годин. Поки ти працюєш, давай подивимось на твої цифри. ",
+    "ts": "2026-08-28T01:48:49.311135"
+  },
+  "action_detect|2026-08-28t01_48_34_548388": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після зміни, коли будеш вдом",
+    "ts": "2026-08-28T01:48:34.548388"
+  },
+  "msg_event_soon|2026-08-28t01_48_27_544122": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ⏰  Ти продовжуєш нічну зміну, зараз 01:48, і до 06:00 ще кілька годин. Я бачу, що ти зробив 18 793 кроки, що є відмінним результатом, але водночас",
+    "ts": "2026-08-28T01:48:27.544122"
+  },
   "subs|2026-08-28t01_48_08_369376": {
     "topic": "subs",
     "gist": "```json [   {     \"uid\": \"78132\",     \"vendor\": \"Railway Corporation\",     \"amount\": \"5.00\",     \"currency\": \"USD\",     \"cycle\": \"monthly\",     \"charge_date\": \"",
@@ -263,40 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
     "ts": "2026-08-27T23:46:23.095727"
-  },
-  "money|2026-08-27t23_38_29_125336": {
-    "topic": "money",
-    "gist": "```json [   {     \"uid\": \"78138\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"date\": \"2026-08-28\",     \"kind\": \"sub\",     \"note\"",
-    "ts": "2026-08-27T23:38:29.125336"
-  },
-  "action_detect|2026-08-27t23_38_18_012219": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-08-27T23:38:18.012219"
-  },
-  "action_detect|2026-08-27t23_37_56_544118": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
-    "ts": "2026-08-27T23:37:56.544118"
-  },
-  "action_detect|2026-08-27t23_36_59_430174": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
-    "ts": "2026-08-27T23:36:59.430174"
-  },
-  "action_detect|2026-08-27t23_30_55_385395": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-08-28\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-08-27T23:30:55.385395"
-  },
-  "action_detect|2026-08-27t23_30_14_319703": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Позначено оплаченим Runable на суму",
-    "ts": "2026-08-27T23:30:14.319703"
-  },
-  "bills|2026-08-27t23_28_30_931276": {
-    "topic": "bills",
-    "gist": "```json [   {     \"uid\": \"78137\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"invoice_no\": \"\",     \"due\": \"\",     \"already_paid\"",
-    "ts": "2026-08-27T23:28:30.931276"
   }
 }
