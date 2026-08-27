@@ -1,4 +1,9 @@
 {
+  "deadlines|2026-08-27t03_00_13_309578": {
+    "topic": "deadlines",
+    "gist": "```json [] ```",
+    "ts": "2026-08-27T03:00:13.309578"
+  },
   "selfact|2026-08-27t02_55_47_359384": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання туру\",     \"text\": \"Твоє бронювання туру \\\"Paxos and Antipaxos Boat Tour from Corfu\\\" ска",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря ранню зміну ",
     "ts": "2026-08-27T00:49:54.246230"
-  },
-  "action_detect|2026-08-27t00_49_54_224814": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2024-09-18\", \"action_time\": null, \"action_summary\": \"Додати до календаря ранню зміну ",
-    "ts": "2026-08-27T00:49:54.224814"
   }
 }
