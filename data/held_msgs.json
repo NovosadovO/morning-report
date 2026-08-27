@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T15:33:12.128599",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T15:33:13.367659",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -475,6 +469,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78093"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T16:01:29.134392",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>New bots: TWAP and Iceberg are here</b>\n👤 OKX &lt;updates@okx.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78092"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78092"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78092"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78092"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78092"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78092"
             }
           ]
         ]
