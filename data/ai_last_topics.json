@@ -1,4 +1,14 @@
 {
+  "msg_vip_email|2026-08-27t07_21_57_396899": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 📧  Після нічної зміни сьогодні зранку найважливіше – це якісне відновлення. Бачу, що ти зараз вдома, і це чудова можливість зосередитися на відпоч",
+    "ts": "2026-08-27T07:21:57.396899"
+  },
+  "bills|2026-08-27t07_16_09_845962": {
+    "topic": "bills",
+    "gist": "```json [] ```",
+    "ts": "2026-08-27T07:16:09.845962"
+  },
   "email_ai_item|2026-08-27t07_14_27_354698": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Discord інформує про пропущені повідомлення в каналі VenomBridge. Лист не містить конкретних дат, сум або дій, які потрібн",
@@ -288,15 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"77660\",     \"title\": \"Скасування Paxos and Antipaxos Boat Tour from Corfu\",     \"date\": \"2026-08-19\",     \"time\": \"08:20\",     \"kind\":",
     "ts": "2026-08-27T05:08:11.308686"
-  },
-  "action_detect|2026-08-27t05_03_46_514216": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірка фінансових деталей\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після завершення зміни ",
-    "ts": "2026-08-27T05:03:46.514216"
-  },
-  "action_detect|2026-08-27t05_03_46_400334": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-27T05:03:46.400334"
   }
 }
