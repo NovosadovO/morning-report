@@ -645,6 +645,7 @@ def _journal(kind, what, detail=""):
 
 _SLOTS = {
     "morning": (7, 0, morning_plan),
+    "full": (20, 0, full_report),       # ЩОДНЯ: повний AI-аналіз + рекомендації + графік
     "evening": (21, 20, evening_review),
     "sleep": (14, 40, sleep_report),
 }
