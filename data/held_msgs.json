@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T16:28:18.541005",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T16:28:19.741191",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -522,6 +516,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T18:01:34.712687",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Your login change is moving to 10 September</b>\n👤 \"Socios.com\" &lt;service@support.socios.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78114"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78114"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78114"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78114"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78114"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78114"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
