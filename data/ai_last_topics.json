@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-27t05_59_21_869215": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасовано бронювання туру\",     \"text\": \"Твоє бронювання туру \\\"Paxos and Antipaxos Boat Tour from Corfu\\\" бул",
+    "ts": "2026-08-27T05:59:21.869215"
+  },
   "mailcal_extract|2026-08-27t05_53_54_497838": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"77660\",     \"title\": \"Скасовано: Paxos and Antipaxos Boat Tour from Corfu\",     \"date\": \"2026-08-19\",     \"time\": \"08:20\",     \"kind\":",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-27T03:03:11.302095"
-  },
-  "action_detect|2026-08-27t03_03_00_248638": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Повернення кредиту Temu\", \"action_date\": \"2026-08-27\", \"action_time\": \"09:00\", \"action_summary\": \"О 09:00 потрібно ",
-    "ts": "2026-08-27T03:03:00.248638"
   }
 }
