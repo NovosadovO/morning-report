@@ -3389,6 +3389,17 @@ def handle_command(chat_id, text):
         import threading as _th_h3
         _th_h3.Thread(target=_run_h3, daemon=True, name="healthai-tracker").start()
 
+    elif text.lower().strip() in ["/аналітика", "/аналитика", "/аналіз",
+                                  "/analytics", "/трекінг"]:
+        def _run_hc0():
+            try:
+                import hcoach as _hc0
+                _hc0.full_report(send=True)
+            except Exception as _e_hc0:
+                send(chat_id, f"⚠️ Помилка аналітики: {str(_e_hc0)[:300]}")
+        import threading as _th_hc0
+        _th_hc0.Thread(target=_run_hc0, daemon=True, name="hcoach-full").start()
+
     elif text.lower().strip() in ["/план", "/plan", "/ранок"]:
         def _run_hc1():
             try:
@@ -6600,7 +6611,11 @@ def _route_callback(cb, confirmed: bool = False):
         try:
             import hcoach as _hc_cb
             import threading as _th_hc
-            if data == "hc_stats":
+            if data == "hc_full":
+                _th_hc.Thread(target=lambda: _hc_cb.full_report(send=True),
+                              daemon=True, name="hc-full").start()
+                send(chat_id, "🧬 Роблю повну аналітику…")
+            elif data == "hc_stats":
                 import healthai as _ha_cb
                 send(chat_id, _ha_cb.stats_report())
             elif data == "hc_reco":

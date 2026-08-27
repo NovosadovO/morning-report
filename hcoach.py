@@ -245,6 +245,7 @@ def _kb():
          {"text": "🧠 Поради", "callback_data": "hc_reco"}],
         [{"text": "😴 Сон", "callback_data": "hc_sleep"},
          {"text": "📈 Графік", "callback_data": "hc_chart"}],
+        [{"text": "🧬 Повна аналітика", "callback_data": "hc_full"}],
     ]
 
 
@@ -530,6 +531,95 @@ def _period_report(days: int, title: str, tag: str, send: bool) -> str:
         K.send_card(txt, _kb(), tag=TAG)
         send_chart(days, "📈 Здоров'я за " + str(days) + " днів")
         _journal(tag, title)
+    return txt
+
+
+def full_report(send: bool = True) -> str:
+    """
+    ПОВНА АНАЛІТИКА ТРЕКІНГУ: усі дані, що є в базі, за весь доступний період.
+    Результати + динаміка + прогноз до цілі + AI-аналіз + рекомендації + графік.
+    """
+    health = _health()
+    all_days = sorted(d for d in health.keys() if len(str(d)) == 10)
+    span = len(all_days)
+    depth = max(30, min(180, span or 30))
+    a = HA.analytics(depth)
+
+    # покриття по кожній метриці за весь період
+    fields = [("weight_kg", "Вага"), ("sleep_hours", "Сон"), ("steps", "Кроки"),
+              ("hr_avg", "Пульс"), ("hrv", "HRV"), ("calories", "Калорії"),
+              ("distance_km", "Дистанція")]
+    cover = []
+    for key, label in fields:
+        n = sum(1 for d in all_days
+                if isinstance(health.get(d), dict) and health[d].get(key) is not None)
+        pct = round(100.0 * n / span) if span else 0
+        cover.append(label + ": " + str(n) + " з " + str(span) + " днів (" + str(pct) + "%)")
+
+    # прогноз досягнення 78 кг за фактичним темпом
+    forecast = "Прогноз по вазі: даних для темпу замало"
+    w = a.get("weight") or {}
+    if w.get("last") is not None and w.get("delta") is not None and w["delta"] < -0.05:
+        per_day = abs(w["delta"]) / max(1, depth / 2.0)
+        left = w["last"] - WEIGHT_GOAL
+        if left > 0 and per_day > 0:
+            days_left = int(left / per_day)
+            eta = (_now().date() + timedelta(days=days_left)).strftime("%d.%m.%Y")
+            forecast = ("Прогноз по вазі: темп " + str(round(per_day * 7, 2))
+                        + " кг/тиждень → 78 кг близько " + eta
+                        + " (" + str(days_left) + " днів)")
+    elif w.get("last") is not None and w.get("delta") is not None:
+        forecast = ("Прогноз по вазі: за поточним трендом (" + str(w["delta"])
+                    + ") ціль 78 кг НЕ наближається")
+
+    hist = score_history(depth)
+    scores_line = "Оцінка дня: даних ще немає"
+    if hist:
+        vals = [v for _, v in hist]
+        avg = round(sum(vals) / len(vals))
+        scores_line = ("Оцінка дня: сер. " + str(avg) + "/100 | найкраща "
+                       + str(max(vals)) + " | найгірша " + str(min(vals))
+                       + " | днів з оцінкою " + str(len(vals)))
+
+    anom = []
+    try:
+        anom = [t for _, t in HA.anomalies(a)]
+    except Exception as e:
+        _log("anomalies error: " + str(e))
+
+    facts = "\n".join([
+        "ПЕРІОД: " + (all_days[0] + " → " + all_days[-1] if all_days else "даних немає")
+        + " (" + str(span) + " днів у базі, глибина аналізу " + str(depth) + ")",
+        "",
+        HA.facts_block(a),
+        "",
+        "ПОКРИТТЯ ДАНИХ:",
+        "\n".join(cover),
+        "",
+        forecast,
+        scores_line,
+    ])
+    if anom:
+        facts += "\n\nВИЯВЛЕНІ ВІДХИЛЕННЯ:\n" + "\n".join("• " + x for x in anom)
+
+    prompt = (_STYLE + "\n\nПОВНІ ДАНІ ТРЕКІНГУ:\n" + facts + "\n\n"
+              "Зроби ПОВНИЙ АНАЛІТИЧНИЙ ЗВІТ як особистий коуч-аналітик:\n"
+              "1) 📌 ГОЛОВНЕ — стан здоров'я одним абзацом, честно\n"
+              "2) 📈 ЩО ПОКАЗУЮТЬ ЦИФРИ — по кожній метриці, де є дані: "
+              "що добре, що погано, чому\n"
+              "3) 🔗 ЗВ'ЯЗКИ — як сон/кроки/пульс впливають на вагу за цими даними\n"
+              "4) ⚠️ РИЗИКИ — на що звернути увагу зараз\n"
+              "5) 🎯 РЕКОМЕНДАЦІЇ — 5 конкретних дій з числами і термінами\n"
+              "6) 🕳 ДІРИ В ДАНИХ — чого не хватає для точнішого аналізу\n"
+              "Пиши предметно, з числами з даних. Без загальних порад.")
+    body = _ai(prompt, 1800) or "AI недоступний — нижче лише факти."
+
+    txt = ("🧬 <b>ПОВНА АНАЛІТИКА ЗДОРОВ'Я</b>\n" + _now().strftime("%d.%m.%Y %H:%M")
+           + "\n\n" + body + "\n\n<b>ФАКТИ</b>\n" + facts)
+    if send:
+        K.send_card(txt, _kb(), tag=TAG)
+        send_chart(depth, "📈 Трекінг здоров'я за " + str(depth) + " днів")
+        _journal("full_report", "повна аналітика здоров'я")
     return txt
 
 
