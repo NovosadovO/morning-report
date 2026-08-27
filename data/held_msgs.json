@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T18:18:58.926024",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleh Bezuhlyi через LinkedIn</b>\n📋 Тема: «📰 Daily Crypto Digest — August 27»\n\n<i>«Daily Crypto Digest\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/daily-crypto-digest-august-27-oleh-bezuhlyi-kxmzf?lipi=urn%3Ali%3Apage%3Aemail_email_s...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78120"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78120"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78120"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78120"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78120"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78120"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T18:35:15.708827",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Economist Today</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «The terrifying mechanics of Nepal’s catastrophe»\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -662,6 +623,12 @@
       "ts": "2026-08-27T21:00:27.168521",
       "kind": "watchdog",
       "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 15\n• ⏳ відкритих дедлайнів під наглядом: 17\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\nЗа цим я стежити НЕ можу, поки не виправлено.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T21:00:36.313526",
+      "kind": "chunk",
+      "text": "🥜 <b>Перекус на зміні</b>\n\nЯкщо голодний — час для легкого перекусу:\n• Горіхи, фрукт, йогурт\n• Уникай важкого — залишилась ще частина зміни\n\n<i>Тримай енергію, але не переїдай!</i>",
       "keyboard": null
     }
   ]
