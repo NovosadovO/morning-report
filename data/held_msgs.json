@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T16:14:37.446786",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Deployment &amp; Operations Engineer/TL в Thales»\n\n<i>«Сповіщення про вакансії за запитом Операційний спеціаліст в Prague\r\n        \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nDeployment &amp; Operations Engineer/TL\r\nThales\r\nPraha - východ\r\n\r\nЦя компанія активно наймає персонал\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/vi...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78108"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78108"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78108"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78108"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78108"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78108"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T16:14:40.228212",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Footshop</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Y-3 v zľave? Čítaš správne! 🔥»\n\n<i>«[ Otvoriť v prehliadači ](http://r.newsletter2.footshop.com/mk/mr/sh/WCPxRrNLV1LtxLyW5O6L32pQ74dANqad/2jn12ovQK5V7)\r\n\r\n**TVOJE NOVÉ MUST-HAVES OD Y-3 S EXTRA ZĽAVOU**\r\n===============================================\r\n\r\nY-3 v zľave? To sa nestáva každý deň. Vybrané kúsky teraz získaš...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -555,6 +516,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-27T17:02:14.280166",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (5 важливих листів)\n\n👤 \"Socios.com\"\n📋 Your login change is moving to 10 September\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Runable\n📋 $10.00 payment to Runable was unsuccessful\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Umesh from Runable\n📋 We raised $21M to help small businesses grow\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 letenky\n📋 Online check-in for a smooth take-off. ATTENTION! Don’t forg\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
