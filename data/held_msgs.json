@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T13:01:21.993474",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Revolut built EURR stablecoin to own Europe’s euro stables o</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78082"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78082"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78082"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78082"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78082"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78082"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T13:01:23.638030",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Director of Operations, Europe в Modulr</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -675,6 +636,45 @@
       "kind": "chunk",
       "text": "🔮🤖 <b>АСТРО-АНАЛІЗ ВСІ АСПЕКТИ</b>\n\n🌙 <b>ТРАНЗИТИ СЬОГОДНІ</b> (AI тимчасово перевантажена, без інтерпретації)\n🔮 АСТРО — транзити до натальних планет\n🌔 Прибуваючий гіббус  ·  Місяць у Водолій ♒\n🔭 Інновації, друзі, нестандартні рішення\n\n🌟 ♃ Юпітер увійшов у знак твого Асценденту (Leo)! Це РІДКІСНИЙ і ВАЖЛИВИЙ транзит — торкається особистості, зовнішнього вигляду, нового циклу в житті.\n\n🟢 ♂ Марс Трин △ натальний ♀ Венера  (0.4°)\n🟡 ♄ Сатурн Квінконкс ⚻ натальний ♇ Плутон  (0.5°)\n🟢 ⛢ Уран Трин △ натальний ☿ Меркурій  (0.6°)\n    ↳ Блискучі ідеї і інсайти. Записуй все що приходить!\n🔴 ♃ Юпітер Квадрат □ натальний ♇ Плутон  (0.6°)\n    ↳ Боротьба за владу або ресурси. Дій обережно.\n🟢 🌙 Місяць Трин △ натальний 🌙 Місяць  (0.9°)\n    ↳ Емоційна гармонія. Легко спілкуватись і приймати рішення.\n🔴 ♂ Марс Опозиція ☍ натальний ♆ Нептун  (0.9°)\n    ↳ Дії марно витрачаються. Перевір чи ти йдеш у правильному напрямку.\n\n\n📌 Нічна зміна щойно закінчилась (18:00–06:00), Олег вдома відпочиває. Здоров'я: кроки 6200, сон 7.2г.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T14:03:43.528045",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Daily Bone</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «📈 Nvidia smashes earnings and adds billions to market cap»\n\n<i>«Today’s newsletter is brought to you by **[Choose Rich Live](https://www.youtube.com/@chooserichnick/streams)**[!](https://www.youtube.com/@chooserichnick/streams)\r\n\r\nOur very own Nick O’Neill is has launched a new stream covering crypto, finance, AI, tech, and the stories shaping the internet econo...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78095"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78095"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78095"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78095"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78095"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78095"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
