@@ -302,5 +302,19 @@
     "paid": true,
     "paid_at": "2026-08-28",
     "created": "2026-08-28"
+  },
+  "railway_corporation|12_32|2026-08-27": {
+    "vendor": "Railway Corporation",
+    "amount": "12.32",
+    "currency": "USD",
+    "invoice_no": "DWWS7HU0-0006",
+    "due": "2026-08-27",
+    "uid": "78132",
+    "sender": "Railway Corporation <invoice+statements+acct_1HNrvlCJoPsRzQsd@stripe.com>",
+    "subject": "Your receipt from Railway Corporation #2645-8801",
+    "note": "Підтвердження оплати за послуги Railway Corporation за період 22 липня - 22 серпня 2026 року та за тарифний план Hobby на період 22 серпня - 22 вересня 2026 року.",
+    "paid": true,
+    "paid_at": "2026-08-28",
+    "created": "2026-08-28"
   }
 }
