@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T12:01:06.582450",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Software Engineer - Full-stack - Growth Product в Kra</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78070"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78070"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78070"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78070"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78070"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78070"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T12:01:10.231095",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 25 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '25 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 82.5 кг, ціль 78 кг (тренд -1.8 кг за останні 5 замірів). Кроки: 6200 (ціль 10000). Сон: 7.2г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 09:00 💳 Повернення кредиту від Temu, 18:00 🌙 Нічна зміна (18:00-06:00)",
@@ -564,6 +525,45 @@
       "kind": "chunk",
       "text": "🔭 Новий транзит\n☽ <b>Місяць</b> △ ☽ <b>Натальний Місяць</b> (орб 1.4°)\n📍 Місяць у <b>Водолій ♒</b> | Натальний Місяць у Близнюки ♊, 11-й дім\n<i>Трин · Друзі/Цілі</i>\n\n📖 <b>Що означає Трин:</b>\n🔵 Природна підтримка — все складається легко й само собою. Талант, удача, потік. Гарний час реалізувати задумане.\n\nОлеже, привіт!\n\n**Щодо астрології:**\nСьогодні транзитний Місяць у.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T13:49:20.103662",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>OKX</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «New bots: TWAP and Iceberg are here»\n\n<i>«:root { color-scheme: light only; supported-color-schemes: light only; } body { margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; } p { margin: 0 !important; padding: 0 !important; } a { color: inherit !important; } p a, li a, u { text-decoration: underline !importan...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78092"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78092"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78092"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78092"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78092"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78092"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
