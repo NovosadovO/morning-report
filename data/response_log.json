@@ -7630,6 +7630,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dm_low_b0a2cb89a8"
+    },
+    {
+      "ts": "2026-08-27T19:19:30.493041+00:00",
+      "category": "calendar_button",
+      "question": "tomorrow",
+      "answer": "accepted",
+      "extra": {
+        "stage": "tomorrow",
+        "when": "",
+        "note": null
+      }
     }
   ]
 }
