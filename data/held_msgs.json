@@ -1,55 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T17:02:11.757292",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (5 важливих листів)\n\n👤 \"Socios.com\"\n📋 Your login change is moving to 10 September\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Runable\n📋 $10.00 payment to Runable was unsuccessful\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Umesh from Runable\n📋 We raised $21M to help small businesses grow\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 letenky\n📋 Online check-in for a smooth take-off. ATTENTION! Don’t forg\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Socios.com",
-              "callback_data": "email_reply_78114"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Runable",
-              "callback_data": "email_reply_78113"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Umesh from Runable",
-              "callback_data": "email_reply_78091"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_77769"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: letenky",
-              "callback_data": "email_reply_77664"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_78114"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78114"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T17:02:14.280166",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (5 важливих листів)\n\n👤 \"Socios.com\"\n📋 Your login change is moving to 10 September\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Runable\n📋 $10.00 payment to Runable was unsuccessful\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Umesh from Runable\n📋 We raised $21M to help small businesses grow\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 letenky\n📋 Online check-in for a smooth take-off. ATTENTION! Don’t forg\n📝 (AI-аналіз тимчасово недоступний)",
@@ -697,6 +648,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-27T20:01:20.185818",
+      "kind": "chunk",
+      "text": "🌙\n<b>ЗВІТ  ·  Чт 27.08  ·  20:00</b>\n🏭 На роботі  ·  Нічна зміна\n<i>Зірки Кошіце і ONDO обидва в русі — вечір для стратегії 🌟</i>\n📌 Нічна зміна +6\n\n⚡ <b>День: ⭐☆☆☆☆ 27/100</b>  ↓7 vs вчора\n\n☀️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>23°C</b>\n<i>👌 Комфортно — ідеально для прогулянки</i>\n\n📅 <b>Прогноз сьогодні:</b>\n05:45   🌇 19:27  09:00 ☀️20°  │  12:00 ⛅️26°  │  15:00 ☁️29°  │  18:00 ☁️28°  │  21:00 ☁️25°\n\n<b>Завтра:</b>  ☁️ Хмарно  🔻16°  /  🔺29°\n<code>09:00</code> ☀️20°  │  <code>12:00</code> ⛅️26°  │  <code>15:00</code> ☁️29°  │  <code>18:00</code> ☁️28°  │  <code>21:00</code> ☁️25°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n  • 🚧 Перекрито — Baštová\n  • 🐢 Затор (+2 хв) — Komenského / Strojárenská\n\n💰\n<b>КРИПТО  ·  🔴 ВЕДМЕЖИЙ 📉</b>\n🔻 <b>BTC</b> <code>$78,716.00</code>  -2.41%\n🔻 <b>ETH</b> <code>$2,493.85</code>  -1.12%\n🔻 <b>AVAX</b> <code>$7.35</code>  -2.65%\n🔻 <b>ONDO</b> <code>$0.37</code>  -3.01%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🟢 <b>IBIT</b>  <code>$45.54</code>  <i>+2.43% за день</i>\n🟢 <b>ETHA</b>  <code>$19.00</code>  <i>+1.85% за день</i>\n⚪️ <b>VAVA</b>  <code>$0.66</code>\n🟢 <b>GAVA</b>  <code>$18.37</code>  <i>+3.84% за день</i>\n🟢 <b>QQQ</b>  <cod",
+      "keyboard": null
     }
   ]
 }
