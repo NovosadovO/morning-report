@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T09:01:17.747809",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77769"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77769"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77769"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77769"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77769"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77769"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T09:01:19.389269",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Online check-in for a smooth take-off. ATTENTION! Don’t forg</b>\n👤 letenky@pelikan.sk",
@@ -594,6 +555,12 @@
       "ts": "2026-08-27T10:15:07.367084",
       "kind": "calendar",
       "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T10:15:08.587454",
+      "kind": "calendar",
+      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nВідповідь збережу — це піде в аналітику тижня.",
       "keyboard": null
     }
   ]
