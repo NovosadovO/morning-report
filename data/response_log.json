@@ -7720,6 +7720,12 @@
       "category": "confirm",
       "question": "gate_bill_paid: 💸 НОВИЙ РАХУНОК У ПОШТІ",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-27T23:30:13.606682+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "bill_paid_be00040be5"
     }
   ]
 }
