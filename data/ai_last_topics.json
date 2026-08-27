@@ -298,5 +298,25 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст містить астрологічний прогноз та історію вз",
     "ts": "2026-08-27T21:07:41.871685"
+  },
+  "action_detect|2026-08-27t23_30_14_319703": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Позначено оплаченим Runable на суму",
+    "ts": "2026-08-27T23:30:14.319703"
+  },
+  "bills|2026-08-27t23_28_30_931276": {
+    "topic": "bills",
+    "gist": "```json [   {     \"uid\": \"78137\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"invoice_no\": \"\",     \"due\": \"\",     \"already_paid\"",
+    "ts": "2026-08-27T23:28:30.931276"
+  },
+  "email_ai_item|2026-08-27t23_27_07_495274": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від Forbes через LinkedIn є новинною розсилкою, що інформує про зростання вартості акцій Nvidia майже на 10% до $230, що пі",
+    "ts": "2026-08-27T23:27:07.495274"
+  },
+  "healthai|2026-08-27t23_26_05_175294": {
+    "topic": "healthai",
+    "gist": "Олеже, останні дані по твоєму здоров'ю датуються 2026-08-26, тобто оновлень немає вже 47 годин. Це означає, що зараз я не можу оцінити твою поточну вагу (ти вчо",
+    "ts": "2026-08-27T23:26:05.175294"
   }
 }
