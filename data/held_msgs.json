@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T10:15:50.562707",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Director of Operations, Europe в Modulr»\n\n<i>«Сповіщення про вакансії за запитом Директор з операцій в European Union\r\n        \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nDirector of Operations, Europe\r\nModulr\r\nAmsterdam\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4446680084/?trackingId=VShcanFxwWRa8vowxC...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78078"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78078"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78078"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78078"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78078"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78078"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T10:16:06.490693",
       "kind": "calendar",
       "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
@@ -214,6 +175,12 @@
       "ts": "2026-08-27T10:27:13.426832",
       "kind": "calendar",
       "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T10:27:14.351003",
+      "kind": "calendar",
+      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nВідповідь збережу — це піде в аналітику тижня.",
       "keyboard": null
     }
   ]
