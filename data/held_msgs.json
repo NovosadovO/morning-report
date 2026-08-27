@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T11:01:39.501642",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 4 nové pracovné ponuky\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Profesia.sk",
-              "callback_data": "email_reply_78074"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_78074"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78074"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T11:01:42.521293",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 4 nové pracovné ponuky\n📝 (AI-аналіз тимчасово недоступний)",
@@ -583,6 +558,45 @@
       "kind": "watchdog",
       "text": "👁 Я осліп на частину даних\n\n🔴 strava — функції get_activities немає в monitor.py\n\nПоки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T12:17:54.514641",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Tripadvisor</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Hotels that go the extra mile»\n\n<i>«Free breakfast&amp;#44; infinity pools&amp;#44; and more&amp;#46;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78087"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78087"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78087"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78087"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78087"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78087"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
