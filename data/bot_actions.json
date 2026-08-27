@@ -664,6 +664,13 @@
       "detail": "З листа від LinkedIn Job Alerts можна зробити висновок, що Олег цікавиться вакансіями у сфері Cryptocurrency в Словаччині, зокрема Senior Software Engineer.",
       "module": "selfact",
       "ts": "2026-08-27T04:58:40"
+    },
+    {
+      "kind": "notify",
+      "what": "Зверни увагу, що бронювання 'Paxos and Antipaxos Boat Tour f",
+      "detail": "Лист від noreply@booking.com інформує про скасування бронювання та повернення коштів, що є важливою інформацією для Олега.",
+      "module": "selfact",
+      "ts": "2026-08-27T04:58:46"
     }
   ]
 }
