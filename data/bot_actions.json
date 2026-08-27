@@ -741,6 +741,13 @@
       "detail": "Інформація з календаря про поїздку в Малагу 1 вересня та лист від letenky@pelikan.sk.",
       "module": "selfact",
       "ts": "2026-08-27T07:31:01"
+    },
+    {
+      "kind": "notify",
+      "what": "Скасований тур на Паксос та Антипаксос",
+      "detail": "Лист від noreply@booking.com про скасування бронювання 'Paxos and Antipaxos Boat Tour from Corfu' та повернення коштів.",
+      "module": "selfact",
+      "ts": "2026-08-27T07:31:07"
     }
   ]
 }
