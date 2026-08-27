@@ -1,4 +1,9 @@
 {
+  "msg_vip_email|2026-08-27t23_53_55_519248": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🏹 Нічна зміна вже підходить до завершення – зараз 23:53, а до 06:00 ще кілька годин, але вже можна подумати про те, як ефективно використати час, ",
+    "ts": "2026-08-27T23:53:55.519248"
+  },
   "action_detect|2026-08-27t23_46_23_095727": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
     "ts": "2026-08-27T22:25:22.941494"
-  },
-  "action_detect|2026-08-27t22_25_22_907094": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
-    "ts": "2026-08-27T22:25:22.907094"
   }
 }
