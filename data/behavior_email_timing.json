@@ -1,9 +1,4 @@
 {
-  "77653": {
-    "sender": "zara@news.zara.com",
-    "sender_raw": "Zara <zara@news.zara.com>",
-    "seen_ts": "2026-08-18T18:11:13.930478+00:00"
-  },
   "77654": {
     "sender": "mailer-daemon@googlemail.com",
     "sender_raw": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@news.sorare.com",
     "sender_raw": "\"Sorare\" <hello@news.sorare.com>",
     "seen_ts": "2026-08-27T10:30:06.045867+00:00"
+  },
+  "78089": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Startitup через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-27T11:04:36.040179+00:00"
   }
 }
