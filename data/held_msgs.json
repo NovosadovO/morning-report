@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T20:01:37.537919",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Email Marketing Specialist в Voňavý domov</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78119"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78119"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78119"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78119"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78119"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78119"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T20:01:39.301928",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - August 27</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
@@ -630,6 +591,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-27T21:01:10.951480",
+      "kind": "chunk",
+      "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 25 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '25 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 83.5 кг, ціль 78 кг (тренд -0.9 кг за останні 5 замірів). Кроки: 6200 (ціль 10000). Сон: 7.2г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 09:00 💳 Повернення кредиту від Temu, 18:00 🌙 Нічна зміна (18:00-06:00)",
+      "keyboard": null
     }
   ]
 }
