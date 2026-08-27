@@ -1327,6 +1327,16 @@ def run_assistant_watcher():
                     print(f"[healthai] {_hai_done}", flush=True)
             except Exception as _e_hai:
                 print(f"[healthai] watcher error: {_e_hai}", flush=True)
+            # AI-КОУЧ 2.0: ранковий план 07:00, вечірній розбір + оцінка 0-100
+            # о 21:20, аналіз сну (ср 14:40), тижневий нд 19:30, місячний 1-го
+            # о 10:00 — усе з графіками.
+            try:
+                import hcoach as _hc_w
+                _hc_done = _hc_w.tick()
+                if _hc_done:
+                    print(f"[hcoach] {_hc_done}", flush=True)
+            except Exception as _e_hc:
+                print(f"[hcoach] watcher error: {_e_hc}", flush=True)
             try:
                 import selfact as _sa_w
                 _sa_w.run()

@@ -3370,8 +3370,8 @@ def handle_command(chat_id, text):
             try:
                 import sys as _sh2, os as _oh2
                 _sh2.path.insert(0, _oh2.path.dirname(__file__))
-                import healthai as _h2
-                _h2.coach_report(send=True)
+                import hcoach as _h2
+                _h2.morning_plan(send=True)
             except Exception as _e_h2:
                 send(chat_id, f"⚠️ Помилка коуча: {str(_e_h2)[:300]}")
         import threading as _th_h2
@@ -3382,12 +3382,72 @@ def handle_command(chat_id, text):
             try:
                 import sys as _sh3, os as _oh3
                 _sh3.path.insert(0, _oh3.path.dirname(__file__))
-                import healthai as _h3
-                _h3.tracker_report(send=True)
+                import hcoach as _h3
+                _h3.evening_review(send=True)
             except Exception as _e_h3:
                 send(chat_id, f"⚠️ Помилка трекера: {str(_e_h3)[:300]}")
         import threading as _th_h3
         _th_h3.Thread(target=_run_h3, daemon=True, name="healthai-tracker").start()
+
+    elif text.lower().strip() in ["/план", "/plan", "/ранок"]:
+        def _run_hc1():
+            try:
+                import hcoach as _hc1
+                _hc1.morning_plan(send=True)
+            except Exception as _e_hc1:
+                send(chat_id, f"⚠️ Помилка плану: {str(_e_hc1)[:300]}")
+        import threading as _th_hc1
+        _th_hc1.Thread(target=_run_hc1, daemon=True, name="hcoach-morning").start()
+
+    elif text.lower().strip() in ["/розбір", "/розбир", "/оцінка", "/review"]:
+        def _run_hc2():
+            try:
+                import hcoach as _hc2
+                _hc2.evening_review(send=True)
+            except Exception as _e_hc2:
+                send(chat_id, f"⚠️ Помилка розбору: {str(_e_hc2)[:300]}")
+        import threading as _th_hc2
+        _th_hc2.Thread(target=_run_hc2, daemon=True, name="hcoach-evening").start()
+
+    elif text.lower().strip() in ["/сон", "/sleep"]:
+        def _run_hc3():
+            try:
+                import hcoach as _hc3
+                _hc3.sleep_report(send=True)
+            except Exception as _e_hc3:
+                send(chat_id, f"⚠️ Помилка сну: {str(_e_hc3)[:300]}")
+        import threading as _th_hc3
+        _th_hc3.Thread(target=_run_hc3, daemon=True, name="hcoach-sleep").start()
+
+    elif text.lower().strip() in ["/тиждень_здоров", "/тижденьз", "/hweek"]:
+        def _run_hc4():
+            try:
+                import hcoach as _hc4
+                _hc4.weekly_report(send=True)
+            except Exception as _e_hc4:
+                send(chat_id, f"⚠️ Помилка тижневого: {str(_e_hc4)[:300]}")
+        import threading as _th_hc4
+        _th_hc4.Thread(target=_run_hc4, daemon=True, name="hcoach-week").start()
+
+    elif text.lower().strip() in ["/місяць_здоров", "/місяцьз", "/hmonth"]:
+        def _run_hc5():
+            try:
+                import hcoach as _hc5
+                _hc5.monthly_report(send=True)
+            except Exception as _e_hc5:
+                send(chat_id, f"⚠️ Помилка місячного: {str(_e_hc5)[:300]}")
+        import threading as _th_hc5
+        _th_hc5.Thread(target=_run_hc5, daemon=True, name="hcoach-month").start()
+
+    elif text.lower().strip() in ["/графік_здоров", "/графікз", "/hchart"]:
+        def _run_hc6():
+            try:
+                import hcoach as _hc6
+                _hc6.send_chart(30, "📈 Здоров'я за 30 днів")
+            except Exception as _e_hc6:
+                send(chat_id, f"⚠️ Помилка графіка: {str(_e_hc6)[:300]}")
+        import threading as _th_hc6
+        _th_hc6.Thread(target=_run_hc6, daemon=True, name="hcoach-chart").start()
 
     elif text.lower().strip() in ["/сам", "/ініціатива", "/selfact",
                                   "/инициатива"]:
@@ -6535,6 +6595,30 @@ def _confirm_gate(cb, data: str) -> bool:
 def _route_callback(cb, confirmed: bool = False):
     data = cb.get("data", "")
     chat_id = cb["message"]["chat"]["id"]
+    # ── hcoach: кнопки під звітами AI-коуча 2.0 ───────────────────────────
+    if data.startswith("hc_"):
+        try:
+            import hcoach as _hc_cb
+            import threading as _th_hc
+            if data == "hc_stats":
+                import healthai as _ha_cb
+                send(chat_id, _ha_cb.stats_report())
+            elif data == "hc_reco":
+                _th_hc.Thread(target=lambda: _hc_cb.evening_review(send=True),
+                              daemon=True, name="hc-reco").start()
+                send(chat_id, "🧠 Готую розбір і поради…")
+            elif data == "hc_sleep":
+                _th_hc.Thread(target=lambda: _hc_cb.sleep_report(send=True),
+                              daemon=True, name="hc-sleep").start()
+                send(chat_id, "😴 Аналізую сон…")
+            elif data == "hc_chart":
+                _th_hc.Thread(
+                    target=lambda: _hc_cb.send_chart(30, "📈 Здоров'я за 30 днів"),
+                    daemon=True, name="hc-chart").start()
+                send(chat_id, "📈 Малюю графік…")
+        except Exception as _e_hccb:
+            send(chat_id, f"⚠️ hcoach: {str(_e_hccb)[:200]}")
+        return
     # ── healthai: кнопки під звітами здоров'я ──────────────────────────────
     if data.startswith("hai_"):
         try:

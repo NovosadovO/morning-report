@@ -506,10 +506,10 @@ def initiative(force: bool = False) -> int:
 
 # ─── ПЛАНУВАЛЬНИК (викликається з monitor_loop щохвилини) ────────────────────
 
-_SLOTS = {
-    "coach": (8, 15, coach_report),
-    "tracker": (21, 15, tracker_report),
-}
+# Звіти перенесені у hcoach.py (AI-коуч 2.0): ранковий план 07:00, вечірній
+# розбір + оцінка 21:20, сон, тижневий і місячний з графіками. Тут лишається
+# захоплення даних, аналітика і ініціатива по аномаліях — без дублювання звітів.
+_SLOTS = {}
 
 
 def tick() -> str:
@@ -532,15 +532,6 @@ def tick() -> str:
                 done.append(name)
             except Exception as e:
                 K.log(TAG, f"{name} error: {e}")
-
-    if (now.weekday() == 6 and now.hour == 19 and 30 <= now.minute < 36
-            and state.get("weekly_day") != day and not _muted()):
-        try:
-            weekly_report(send=True)
-            state["weekly_day"] = day
-            done.append("weekly")
-        except Exception as e:
-            K.log(TAG, f"weekly error: {e}")
 
     if done:
         K.save(STATE_FILE, state)
