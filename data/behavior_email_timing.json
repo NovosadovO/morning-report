@@ -1,9 +1,4 @@
 {
-  "77635": {
-    "sender": "awards@mp1.tripadvisor.com",
-    "sender_raw": "\"Tripadvisor\" <awards@mp1.tripadvisor.com>",
-    "seen_ts": "2026-08-18T11:44:27.574706+00:00"
-  },
   "77637": {
     "sender": "newsletter@mail.dailybones.com",
     "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply@discord.com",
     "sender_raw": "Discord <noreply@discord.com>",
     "seen_ts": "2026-08-27T05:14:30.800679+00:00"
+  },
+  "78073": {
+    "sender": "card@kcard.kaufland.sk",
+    "sender_raw": "Kaufland Card XTRA <card@kcard.kaufland.sk>",
+    "seen_ts": "2026-08-27T05:41:10.989978+00:00"
   }
 }
