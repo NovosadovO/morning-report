@@ -1,4 +1,44 @@
 {
+  "proactive_actions|2026-08-28t00_00_15_337437": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оплатити Runable\",     \"date\": \"2026-08-29\",     \"time\": \"09:00\",     \"message\": \"Олеже, бачу декілька листі",
+    "ts": "2026-08-28T00:00:15.337437"
+  },
+  "hcoach|2026-08-27t23_57_23_338597": {
+    "topic": "hcoach",
+    "gist": "Привіт, Олеже! Зараз ніч, четвер, 27 серпня 2026 року, ти на нічній зміні до 6 ранку.  📌 **ГОЛОВНЕ — стан здоров'я**  Твої дані показують, що ти зараз маєш стаб",
+    "ts": "2026-08-27T23:57:23.338597"
+  },
+  "astro_ai|2026-08-27t23_56_31_832232": {
+    "topic": "astro_ai",
+    "gist": "Олеже, почнемо з глибинних змін, які зараз розгортаються, а не з швидкоплинних подій.  🌍 **ТРАНЗИТИ СЬОГОДНІ: Юпітер в Леві – новий життєвий цикл**  *   **🌟 ♃ Ю",
+    "ts": "2026-08-27T23:56:31.832232"
+  },
+  "action_detect|2026-08-27t23_54_53_165963": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Runable\", \"action_date\": \"2024-08-28\", \"action_time\": \"09:00\", \"action_summary\": \"Оплата Runable на $10.00 б",
+    "ts": "2026-08-27T23:54:53.165963"
+  },
+  "msg_deep_analysis|2026-08-27t23_54_45_596178": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Зараз 23:54, ти на нічній зміні, і до 06:00 ще майже шість годин. Поки ти працюєш, давай подивимось на кілька важливих речей, які можуть вплину",
+    "ts": "2026-08-27T23:54:45.596178"
+  },
+  "action_detect|2026-08-27t23_54_28_075088": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Runable\", \"action_date\": \"2026-08-28\", \"action_time\": \"09:00\", \"action_summary\": \"Завтра, 28.08, о 09:00, за",
+    "ts": "2026-08-27T23:54:28.075088"
+  },
+  "msg_event_soon|2026-08-27t23_54_20_501185": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ⏰  На нічній зміні, зараз 23:54. Найближчі години до ранку пролетять швидко, а вже завтра на тебе чекають важливі події та фінансові рухи.  По-пер",
+    "ts": "2026-08-27T23:54:20.501185"
+  },
+  "action_detect|2026-08-27t23_54_06_185207": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2024-08-28\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
+    "ts": "2026-08-27T23:54:06.185207"
+  },
   "msg_vip_email|2026-08-27t23_53_55_519248": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🏹 Нічна зміна вже підходить до завершення – зараз 23:53, а до 06:00 ще кілька годин, але вже можна подумати про те, як ефективно використати час, ",
@@ -258,45 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopid Plus п",
     "ts": "2026-08-27T22:25:33.874096"
-  },
-  "action_detect|2026-08-27t22_25_30_134374": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
-    "ts": "2026-08-27T22:25:30.134374"
-  },
-  "context_ask_ai|2026-08-27t22_25_25_433317": {
-    "topic": "context_ask_ai",
-    "gist": "Олег, добре, що прокинувся!  Зараз 22:25. Ти все ще на нічній зміні, яка триває до 06:00.  Не забувай про Armolopid Plus, його потрібно прийняти після зміни пер",
-    "ts": "2026-08-27T22:25:25.433317"
-  },
-  "context_ask_ai|2026-08-27t22_25_24_062649": {
-    "topic": "context_ask_ai",
-    "gist": "Так, Олег, я тут.  Зараз 23:25, ти на нічній зміні.  Пам'ятай про Armolopid Plus після зміни перед сном.",
-    "ts": "2026-08-27T22:25:24.062649"
-  },
-  "action_detect|2026-08-27t22_25_23_048915": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
-    "ts": "2026-08-27T22:25:23.048915"
-  },
-  "action_detect|2026-08-27t22_25_22_971422": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
-    "ts": "2026-08-27T22:25:22.971422"
-  },
-  "action_detect|2026-08-27t22_25_22_966003": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2024-08-28\", \"action_time\": \"00:00\", \"action_summary\": \"Прийняти Armolopi",
-    "ts": "2026-08-27T22:25:22.966003"
-  },
-  "action_detect|2026-08-27t22_25_22_942599": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забувай про Armolopid Plu",
-    "ts": "2026-08-27T22:25:22.942599"
-  },
-  "action_detect|2026-08-27t22_25_22_941494": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
-    "ts": "2026-08-27T22:25:22.941494"
   }
 }
