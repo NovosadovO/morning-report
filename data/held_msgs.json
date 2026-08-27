@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T14:09:55.050410",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Google AI Studio</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🚀 Introducing intelligent transcription with Gemini 3.5 Transcribe»\n\n<i>«Google AI  \r\nStudio&lt;https://c.gle/ACT4xYxqT1A-CP4S0ONcxrrSOQRUD1st2K6RMSlHwD1SolKK-vz30bFNDlvv1iiIR5cpqSTWpZW6QoWZgbpRhWy7bhtwjF16tYEllQQKWWJ33-B7BXyBEIWq59bAj4nUsvCVu9xyImhTEcWKFdJz5ga5oqgoUK4&gt;\r\n\r\nIntroducing Gemini 3.5 Transcribe\r\n\r\nBuilt for real-time voice-first experiences such as voice agents,...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78098"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78098"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78098"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78098"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78098"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78098"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T14:11:59.734054",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Emergent</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Skip the repeat work»\n\n<i>«No more building the same thing twice :root { color-scheme: light only !important; } html { color-scheme: light only !important; } body, table, td, a { -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; } table, td { mso-table-lspace:0pt; mso-table-rspace:0pt; } img { -ms-interpolation-mode:b...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -479,6 +440,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-27T15:01:15.946350",
+      "kind": "chunk",
+      "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 25 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '25 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 82.5 кг, ціль 78 кг (тренд -1.8 кг за останні 5 замірів). Кроки: 6200 (ціль 10000). Сон: 7.2г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 09:00 💳 Повернення кредиту від Temu, 18:00 🌙 Нічна зміна (18:00-06:00)",
+      "keyboard": null
     }
   ]
 }
