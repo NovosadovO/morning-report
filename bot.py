@@ -3389,6 +3389,46 @@ def handle_command(chat_id, text):
         import threading as _th_h3
         _th_h3.Thread(target=_run_h3, daemon=True, name="healthai-tracker").start()
 
+    elif text.lower().strip() in ["/відкрите", "/огляд", "/нове", "/open"]:
+        def _run_om1():
+            try:
+                import openmind as _om1
+                _om1.digest(send=True)
+            except Exception as _e_om1:
+                send(chat_id, f"⚠️ Помилка огляду: {str(_e_om1)[:300]}")
+        import threading as _th_om1
+        _th_om1.Thread(target=_run_om1, daemon=True, name="openmind-digest").start()
+
+    elif text.lower().strip() in ["/топ20", "/top20", "/ринок"]:
+        def _run_om2():
+            try:
+                import openmind as _om2
+                send(chat_id, _om2.top_text())
+            except Exception as _e_om2:
+                send(chat_id, f"⚠️ Помилка ринку: {str(_e_om2)[:300]}")
+        import threading as _th_om2
+        _th_om2.Thread(target=_run_om2, daemon=True, name="openmind-top").start()
+
+    elif text.lower().strip() in ["/тренд", "/трендове", "/trending"]:
+        def _run_om3():
+            try:
+                import openmind as _om3
+                send(chat_id, _om3.trend_text())
+            except Exception as _e_om3:
+                send(chat_id, f"⚠️ Помилка тренду: {str(_e_om3)[:300]}")
+        import threading as _th_om3
+        _th_om3.Thread(target=_run_om3, daemon=True, name="openmind-trend").start()
+
+    elif text.lower().strip() in ["/горизонт", "/horizon", "/тема"]:
+        def _run_om4():
+            try:
+                import openmind as _om4
+                send(chat_id, _om4.horizon_text())
+            except Exception as _e_om4:
+                send(chat_id, f"⚠️ Помилка горизонту: {str(_e_om4)[:300]}")
+        import threading as _th_om4
+        _th_om4.Thread(target=_run_om4, daemon=True, name="openmind-horizon").start()
+
     elif text.lower().strip() in ["/аналітика", "/аналитика", "/аналіз",
                                   "/analytics", "/трекінг"]:
         def _run_hc0():
@@ -6606,6 +6646,25 @@ def _confirm_gate(cb, data: str) -> bool:
 def _route_callback(cb, confirmed: bool = False):
     data = cb.get("data", "")
     chat_id = cb["message"]["chat"]["id"]
+    # ── openmind: кнопки під відкритим оглядом ────────────────────────────
+    if data.startswith("om_"):
+        try:
+            import openmind as _om_cb
+            import threading as _th_om
+            if data == "om_trend":
+                send(chat_id, _om_cb.trend_text())
+            elif data == "om_news":
+                send(chat_id, "📰 <b>Новини ринку</b>\n\n" + _om_cb.news_block())
+            elif data == "om_horizon":
+                _th_om.Thread(target=lambda: send(chat_id, _om_cb.horizon_text()),
+                              daemon=True, name="om-horizon").start()
+                send(chat_id, "🧭 Шукаю нову тему…")
+            elif data == "om_top":
+                _th_om.Thread(target=lambda: send(chat_id, _om_cb.top_text()),
+                              daemon=True, name="om-top").start()
+        except Exception as _e_omcb:
+            send(chat_id, f"⚠️ openmind: {str(_e_omcb)[:200]}")
+        return
     # ── hcoach: кнопки під звітами AI-коуча 2.0 ───────────────────────────
     if data.startswith("hc_"):
         try:

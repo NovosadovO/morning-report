@@ -1330,6 +1330,15 @@ def run_assistant_watcher():
             # AI-КОУЧ 2.0: ранковий план 07:00, вечірній розбір + оцінка 0-100
             # о 21:20, аналіз сну (ср 14:40), тижневий нд 19:30, місячний 1-го
             # о 10:00 — усе з графіками.
+            # ВІДКРИТІСТЬ: ТОП-20 крипти динамічно, рухи по всьому ринку,
+            # трендове, новини з 4 джерел і тема поза звичними інтересами.
+            try:
+                import openmind as _om_w
+                _om_done = _om_w.tick()
+                if _om_done:
+                    print(f"[openmind] {_om_done}", flush=True)
+            except Exception as _e_om:
+                print(f"[openmind] watcher error: {_e_om}", flush=True)
             try:
                 import hcoach as _hc_w
                 _hc_done = _hc_w.tick()
