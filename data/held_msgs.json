@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T20:17:18.805742",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Pixory</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «one book for every summer you've had»\n\n<i>«[Pixory](https://www.pixoryofficial.com/)\r\n\r\n[summer 2026 is nearly over | shop summer covers](https://www.pixoryofficia=\r\nl.com/moments/custom-photobook/moments-series/Summer_2026)\r\n\r\n[every summer feels unforgettable while you're in it. | make summer 2026](h=\r\nttps://www.pixoryofficial.com/moments...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78129"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78129"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78129"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78129"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78129"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78129"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T21:00:08.850172",
       "kind": "chunk",
       "text": "📔 <b>ЩОДЕННИК</b> — 27.08.2026\n\n3 питання про твій день:\n\n1. ⚡️ Яка була твоя енергія сьогодні? (1-10)\n2. ✅ Що вдалось зробити сьогодні? (1-2 речення)\n3. 🚧 Що заважало або не вийшло? (чесно)\n\n<i>Відповідай одним повідомленням через кому або по рядку</i>",
@@ -437,6 +398,12 @@
       "ts": "2026-08-27T21:04:16.203216",
       "kind": "watchdog",
       "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 15\n• ⏳ відкритих дедлайнів під наглядом: 17\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\nЗа цим я стежити НЕ можу, поки не виправлено.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T21:05:29.355145",
+      "kind": "watchdog",
+      "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 15\n• ⏳ відкритих дедлайнів під наглядом: 17\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\n<i>За цим я стежити НЕ можу, поки не виправлено.</i>",
       "keyboard": null
     }
   ]
