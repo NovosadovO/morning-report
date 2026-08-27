@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T14:14:07.089475",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Slovak Speaking Agent for Hospitality Sector -Relocation to Greece в R»\n\n<i>«Сповіщення про вакансії в Slovakia\r\n        \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nSlovak Speaking Agent for Hospitality Sector -Relocation to Greece\r\nRDN CONS\r\nNitra\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4459343389/?trackingId=nsgqK4JGuRE4KrIl1HOKO...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78100"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78100"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78100"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78100"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78100"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78100"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T14:33:04.544328",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -432,6 +393,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-27T15:01:20.581783",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 Dobrá správa! Dobierka je kdispozícii!\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
