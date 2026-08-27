@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T15:56:00.503265",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Railway Corporation</b>\n📋 Тема: «$12.32 payment to Railway Corporation was unsuccessful again»\n\n<i>«Railway Corporation  (https://railway.com)\r\n\r\nRailway Corporation\r\n\r\n$12.32 payment to Railway Corporation was unsuccessful We attempted to charge your Visa ending in 0311 for your Railway Corporation subscription again, but were unsuccessful. Please update your billing information to continue your...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78105"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78105"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78105"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78105"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78105"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78105"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T15:56:02.587327",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Slovnaft Move</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Ďalšie prémiové tankovanie so zľavou 0,20€/l»\n\n<i>«&lt;link rel='preconnect' href='https://fonts.gstatic.com'&gt; \r\n&lt;link href='https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap' rel='stylesheet'&gt;\r\n&lt;link rel='preconnect' href='https://fonts.gstatic.com'&gt; \r\n&lt;link href='https://fonts.googleapis.com/css2?family=Poppins:wght@...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -536,6 +497,12 @@
       "ts": "2026-08-27T16:13:16.870925",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T16:13:17.985941",
+      "kind": "day_mode",
+      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
