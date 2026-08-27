@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T16:02:13.843282",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>0xResearch</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «1,000 Macs walk into a compute market»\n\n<i>«View image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/eaa70932-7ce4-467e-b338-a662ed575d6a/0xR_NL_Banner_Heading_Wordmark.jpg?t=1776775276)\r\nCaption: \r\n\r\nGm, and happy Thursday!\r\n\r\nNVDA beats earnings while crypto indices rally...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78106"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78106"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78106"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78106"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78106"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78106"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T16:03:16.055678",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -376,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78114"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T17:01:56.182337",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>$10.00 payment to Runable was unsuccessful</b>\n👤 Runable &lt;failed-payments+acct_1RaXgUJk3URPLkAO@str",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78113"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78113"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78113"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78113"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78113"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78113"
             }
           ]
         ]
