@@ -1,4 +1,19 @@
 {
+  "openloop_promises|2026-08-27t04_34_18_681606": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"cancel the booking\",     \"to\": \"Ionian Cruises\",     \"date\": null   } ] ```",
+    "ts": "2026-08-27T04:34:18.681606"
+  },
+  "proactive_actions|2026-08-27t04_30_34_670246": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн-реєстрація на рейс\",     \"date\": \"2026-09-01\",     \"time\": \"19:00\",     \"message\": \"Олеже, нагадую, щ",
+    "ts": "2026-08-27T04:30:34.670246"
+  },
+  "people|2026-08-27t04_29_54_596597": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"info@ionian-cruises.com\",     \"name\": \"Ionian Cruises\",     \"relation\": \"сервіс\",     \"topics\": [\"скасування круїзу\"],     \"my_promi",
+    "ts": "2026-08-27T04:29:54.596597"
+  },
   "selfact|2026-08-27t04_27_42_555686": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Онлайн-реєстрація на рейс\",     \"text\": \"Олеже, отримав лист від Pelikan.sk про онлайн-реєстрацію на рейс до М",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Повернення кредиту від Temu\", \"action_date\": null, \"action_time\": \"09:00\", \"action_summary\": \"Перевірити лист \\\"Пов",
     "ts": "2026-08-27T02:03:13.840741"
-  },
-  "action_detect|2026-08-27t02_03_02_825069": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Повернення кредиту від Temu\", \"action_date\": \"2026-08-27\", \"action_time\": \"09:00\", \"action_summary\": \"Повернути кре",
-    "ts": "2026-08-27T02:03:02.825069"
-  },
-  "action_detect|2026-08-27t02_03_02_612728": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийняв Олег Armol",
-    "ts": "2026-08-27T02:03:02.612728"
-  },
-  "action_detect|2026-08-27t02_02_51_860984": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прийом Armolopid Plus\", \"action_date\": \"2023-08-27\", \"action_time\": null, \"action_summary\": \"Спланувати при",
-    "ts": "2026-08-27T02:02:51.860984"
   }
 }
