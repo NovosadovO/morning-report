@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T13:01:23.638030",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Director of Operations, Europe в Modulr</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78078"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78078"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78078"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78078"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78078"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78078"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T13:01:25.313407",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
@@ -671,6 +632,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78095"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T14:09:55.050410",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Google AI Studio</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🚀 Introducing intelligent transcription with Gemini 3.5 Transcribe»\n\n<i>«Google AI  \r\nStudio&lt;https://c.gle/ACT4xYxqT1A-CP4S0ONcxrrSOQRUD1st2K6RMSlHwD1SolKK-vz30bFNDlvv1iiIR5cpqSTWpZW6QoWZgbpRhWy7bhtwjF16tYEllQQKWWJ33-B7BXyBEIWq59bAj4nUsvCVu9xyImhTEcWKFdJz5ga5oqgoUK4&gt;\r\n\r\nIntroducing Gemini 3.5 Transcribe\r\n\r\nBuilt for real-time voice-first experiences such as voice agents,...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78098"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78098"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78098"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78098"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78098"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78098"
             }
           ]
         ]
