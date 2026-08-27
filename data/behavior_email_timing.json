@@ -1,9 +1,4 @@
 {
-  "77678": {
-    "sender": "newsletter@email.hm.com",
-    "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
-    "seen_ts": "2026-08-19T08:37:15.248472+00:00"
-  },
   "77680": {
     "sender": "support@pixoryofficial.com",
     "sender_raw": "\"Pixory\" <support@pixoryofficial.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
     "seen_ts": "2026-08-27T14:41:20.546829+00:00"
+  },
+  "78113": {
+    "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
+    "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
+    "seen_ts": "2026-08-27T14:55:37.595114+00:00"
   }
 }
