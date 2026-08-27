@@ -134,6 +134,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-27T08:01:41.239016",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Online check-in for a smooth take-off. ATTENTION! Don’t forg</b>\n👤 letenky@pelikan.sk",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77664"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77664"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77664"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77664"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77664"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77664"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
