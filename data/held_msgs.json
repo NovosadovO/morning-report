@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T12:00:58.212552",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Revolut built EURR stablecoin to own Europe’s euro stables o</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78082"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78082"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78082"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78082"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78082"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78082"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T12:00:59.762665",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Director of Operations, Europe в Modulr</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -659,6 +620,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78074"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T13:01:28.589227",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в VenomBridge</b>\n👤 Discord &lt;noreply@discord.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78072"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78072"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78072"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78072"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78072"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78072"
             }
           ]
         ]
