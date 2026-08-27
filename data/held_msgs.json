@@ -393,6 +393,45 @@
       "kind": "calendar",
       "text": "🔔 Пора збиратись — 30 хв\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nОстанні хвилини — перевір, чи все взяв.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T08:21:49.621090",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Profesia.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «4 nové pracovné ponuky»\n\n<i>«Nové pracovné ponuky \"Pracovné ponuky e-mailom\r\n Košice, na dohodu (brigády), \"\r\n\r\nLogo Profesia ( https://www.profesia.sk/?utm_medium=mail&amp;utm_source=10007&amp;utm_campaign=10007&amp;utm_term=2026-08-27&amp;eid=6a8fa8ed9185419f3853be0dca966fda&amp;utm_content=logo )\r\n\r\n*********************************************...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78074"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78074"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78074"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78074"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78074"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78074"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
