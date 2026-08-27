@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T16:13:17.985941",
-      "kind": "day_mode",
-      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T16:14:37.446786",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Deployment &amp; Operations Engineer/TL в Thales»\n\n<i>«Сповіщення про вакансії за запитом Операційний спеціаліст в Prague\r\n        \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nDeployment &amp; Operations Engineer/TL\r\nThales\r\nPraha - východ\r\n\r\nЦя компанія активно наймає персонал\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/vi...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -512,6 +506,55 @@
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 25 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '25 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 82.5 кг, ціль 78 кг (тренд -1.8 кг за останні 5 замірів). Кроки: 6200 (ціль 10000). Сон: 7.2г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 2 непрочитаних\n📅 Календар: 09:00 💳 Повернення кредиту від Temu, 18:00 🌙 Нічна зміна (18:00-06:00)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T17:02:11.757292",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (5 важливих листів)\n\n👤 \"Socios.com\"\n📋 Your login change is moving to 10 September\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Runable\n📋 $10.00 payment to Runable was unsuccessful\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Umesh from Runable\n📋 We raised $21M to help small businesses grow\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 letenky\n📋 Online check-in for a smooth take-off. ATTENTION! Don’t forg\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Socios.com",
+              "callback_data": "email_reply_78114"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Runable",
+              "callback_data": "email_reply_78113"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Umesh from Runable",
+              "callback_data": "email_reply_78091"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_77769"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: letenky",
+              "callback_data": "email_reply_77664"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_78114"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78114"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
