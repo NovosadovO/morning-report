@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T16:01:27.547634",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Bernstein Just Set a New Bitcoin Price Target for 2027</b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78093"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78093"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78093"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78093"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78093"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78093"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T16:01:29.134392",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>New bots: TWAP and Iceberg are here</b>\n👤 OKX &lt;updates@okx.com&gt;",
@@ -404,6 +365,12 @@
       "ts": "2026-08-27T16:33:20.316003",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T16:33:21.355311",
+      "kind": "day_mode",
+      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
