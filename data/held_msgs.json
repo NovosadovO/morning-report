@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T10:40:19.872316",
-      "kind": "calendar",
-      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nВідповідь збережу — це піде в аналітику тижня.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T10:41:18.476153",
       "kind": "calendar",
       "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
@@ -428,6 +422,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78080"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T11:24:58.084692",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Zara</b> 📢<i>(промо)</i>\n📋 Тема: «ZARA | Into The Process IX»\n\n<i>«Zara html {width: 100%;} body { width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0 auto!important; padding: 0!important; } .ExternalClass * {line-height: 100%} div[style*=\"margin: 16px 0\"] {margin: 0 !important;} table td {border-collapse: collapse;} table...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78081"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78081"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78081"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78081"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78081"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78081"
             }
           ]
         ]
