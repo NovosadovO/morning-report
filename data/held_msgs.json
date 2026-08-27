@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T16:33:21.355311",
-      "kind": "day_mode",
-      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T16:55:39.104249",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Runable</b>\n📋 Тема: «$10.00 payment to Runable was unsuccessful»\n\n<i>«Runable\r\n\r\n$10.00 payment to Runable was unsuccessful We were unable to charge your Visa ending in 2620 for your Runable payment. Please update your payment information to complete your purchase. Update payment information (https://invoice.stripe.com/i/acct_1RaXgUJk3URPLkAO/live_YWNjdF8xUmFYZ1VKazNV...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -650,6 +644,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_77769"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T18:01:41.276565",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Online check-in for a smooth take-off. ATTENTION! Don’t forg</b>\n👤 letenky@pelikan.sk",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77664"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77664"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77664"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77664"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77664"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77664"
             }
           ]
         ]
