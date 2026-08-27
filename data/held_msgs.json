@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T10:44:20.100020",
-      "kind": "calendar",
-      "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>💳 Повернення кредиту від Temu</b>\n🕐 09:00–10:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T10:44:21.018461",
       "kind": "calendar",
       "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nВідповідь збережу — це піде в аналітику тижня.",
@@ -531,6 +525,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T12:00:56.547900",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🧬 AGI is here</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78083"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78083"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78083"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78083"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78083"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78083"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
