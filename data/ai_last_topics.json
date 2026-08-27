@@ -298,5 +298,30 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armolopid",
     "ts": "2026-08-27T23:02:25.763350"
+  },
+  "proactive_actions|2026-08-28t01_30_13_559583": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Спроба оплати Runable\",     \"date\": \"2026-08-28\",     \"time\": \"08:00\",     \"message\": \"Олеже, Runable не змо",
+    "ts": "2026-08-28T01:30:13.559583"
+  },
+  "astro_ai|2026-08-28t01_25_46_876089": {
+    "topic": "astro_ai",
+    "gist": "Олеже, почнемо з глибинних змін, які зараз розгортаються, а не з швидкоплинних подій, що в астрології задають тон твоєму життю на роки. Юпітер тільки-но увійшов",
+    "ts": "2026-08-28T01:25:46.876089"
+  },
+  "action_detect|2026-08-28t01_23_38_099606": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-08-28\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
+    "ts": "2026-08-28T01:23:38.099606"
+  },
+  "msg_deep_analysis|2026-08-28t01_23_30_925702": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! Глибока ніч на зміні – час для спокійних, але важливих думок про стратегію. Твій криптопортфель за останній тиждень показує вражаюче зростання, ос",
+    "ts": "2026-08-28T01:23:30.925702"
+  },
+  "action_detect|2026-08-28t01_23_16_144774": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити важливі листи\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити листи від Pelika",
+    "ts": "2026-08-28T01:23:16.144774"
   }
 }
