@@ -1,14 +1,4 @@
 {
-  "77637": {
-    "sender": "newsletter@mail.dailybones.com",
-    "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
-    "seen_ts": "2026-08-18T12:13:03.536268+00:00"
-  },
-  "77638": {
-    "sender": "jobalerts-noreply@linkedin.com",
-    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
-    "seen_ts": "2026-08-18T12:15:11.085749+00:00"
-  },
   "77639": {
     "sender": "hello@news.footshop.sk",
     "sender_raw": "Footshop <hello@news.footshop.sk>",
@@ -1503,5 +1493,10 @@
     "sender": "support@profesia.sk",
     "sender_raw": "\"Profesia.sk\" <support@profesia.sk>",
     "seen_ts": "2026-08-27T06:21:46.859862+00:00"
+  },
+  "78076": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-08-27T07:37:02.736384+00:00"
   }
 }
