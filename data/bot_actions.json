@@ -853,6 +853,13 @@
       "detail": "steps=18793, hr_avg=58, calories=798, weight_kg=83.0, spo2=96, stress=37, date=2026-08-27, source=qwatch_auto, saved_at=2026-08-27 23:46",
       "module": "healthai",
       "ts": "2026-08-27T23:46:28"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав сповіщення про вакансію Corporate Affairs Speci",
+      "detail": "У свіжих листах є сповіщення про вакансії LinkedIn, яке може бути важливим для Олега.",
+      "module": "selfact",
+      "ts": "2026-08-27T23:47:00"
     }
   ]
 }
