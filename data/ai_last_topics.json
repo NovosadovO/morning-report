@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-08-27t19_28_57_207879": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
+    "ts": "2026-08-27T19:28:57.207879"
+  },
+  "action_detect|2026-08-27t19_23_39_212458": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-27T19:23:39.212458"
+  },
   "msg_vip_email|2026-08-27t19_23_30_599341": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 📧  Бачу, ти зараз на нічній зміні, і важливо, щоб ми зберігали чіткість у всіх моментах. З огляду на твої поточні показники та події, є кілька важ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить аналіз поточного стану Олега щодо його ",
     "ts": "2026-08-27T06:16:55.757281"
-  },
-  "msg_vip_email|2026-08-27t06_16_47_029658": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 🏹  Твій організм зараз перезавантажується після нічного відпочинку, що є ключовим для довгострокової витривалості як у роботі, так і в твоїх інвес",
-    "ts": "2026-08-27T06:16:47.029658"
-  },
-  "action_detect|2026-08-27t06_10_45_038862": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-27T06:10:45.038862"
   }
 }
