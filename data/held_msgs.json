@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T16:03:16.055678",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T16:03:16.969956",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -376,6 +370,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78113"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T17:01:58.054477",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>We raised $21M to help small businesses grow</b>\n👤 Umesh from Runable &lt;umesh@hey.runable.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78091"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78091"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78091"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78091"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78091"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78091"
             }
           ]
         ]
