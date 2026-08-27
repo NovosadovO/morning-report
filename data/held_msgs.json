@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T16:08:17.728160",
-      "kind": "day_mode",
-      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T16:10:25.235408",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Pepco</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Užite si jesennú pohodu 🍂»\n\n<i>«Objavte naše velurové kúsky pre dámy a dievčatá, štýlové doplnky do domácnosti a pohodlné oblečenie pre vašich drobčekov. 🤎‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -475,6 +469,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_77664"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T17:02:03.495034",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Re: Re: other</b>\n👤 \"Booking.com Customer Service\" &lt;24-25523139647_88c",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_77663"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_77663"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_77663"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_77663"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_77663"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_77663"
             }
           ]
         ]
