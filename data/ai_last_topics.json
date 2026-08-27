@@ -1,4 +1,99 @@
 {
+  "subs|2026-08-27t22_31_25_180755": {
+    "topic": "subs",
+    "gist": "```json [   {     \"uid\": \"78132\",     \"vendor\": \"Railway Corporation\",     \"amount\": \"12.32\",     \"currency\": \"USD\",     \"cycle\": \"monthly\",     \"charge_date\": ",
+    "ts": "2026-08-27T22:31:25.180755"
+  },
+  "action_detect|2026-08-27t22_25_33_886814": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Пам'ятай про Armolopid Plus ",
+    "ts": "2026-08-27T22:25:33.886814"
+  },
+  "action_detect|2026-08-27t22_25_33_874096": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopid Plus п",
+    "ts": "2026-08-27T22:25:33.874096"
+  },
+  "action_detect|2026-08-27t22_25_30_134374": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
+    "ts": "2026-08-27T22:25:30.134374"
+  },
+  "context_ask_ai|2026-08-27t22_25_25_433317": {
+    "topic": "context_ask_ai",
+    "gist": "Олег, добре, що прокинувся!  Зараз 22:25. Ти все ще на нічній зміні, яка триває до 06:00.  Не забувай про Armolopid Plus, його потрібно прийняти після зміни пер",
+    "ts": "2026-08-27T22:25:25.433317"
+  },
+  "context_ask_ai|2026-08-27t22_25_24_062649": {
+    "topic": "context_ask_ai",
+    "gist": "Так, Олег, я тут.  Зараз 23:25, ти на нічній зміні.  Пам'ятай про Armolopid Plus після зміни перед сном.",
+    "ts": "2026-08-27T22:25:24.062649"
+  },
+  "action_detect|2026-08-27t22_25_23_048915": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
+    "ts": "2026-08-27T22:25:23.048915"
+  },
+  "action_detect|2026-08-27t22_25_22_971422": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
+    "ts": "2026-08-27T22:25:22.971422"
+  },
+  "action_detect|2026-08-27t22_25_22_966003": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2024-08-28\", \"action_time\": \"00:00\", \"action_summary\": \"Прийняти Armolopi",
+    "ts": "2026-08-27T22:25:22.966003"
+  },
+  "action_detect|2026-08-27t22_25_22_942599": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забувай про Armolopid Plu",
+    "ts": "2026-08-27T22:25:22.942599"
+  },
+  "action_detect|2026-08-27t22_25_22_941494": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
+    "ts": "2026-08-27T22:25:22.941494"
+  },
+  "action_detect|2026-08-27t22_25_22_907094": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
+    "ts": "2026-08-27T22:25:22.907094"
+  },
+  "action_detect|2026-08-27t22_25_19_075407": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
+    "ts": "2026-08-27T22:25:19.075407"
+  },
+  "context_ask_ai|2026-08-27t22_25_12_255669": {
+    "topic": "context_ask_ai",
+    "gist": "Олег, я розумію, що тебе непокоїть відсутність звітів.  Ще раз пояснюю: система, з якою я працюю, не генерує звіти щогодини. Вони надходять з іншою періодичніст",
+    "ts": "2026-08-27T22:25:12.255669"
+  },
+  "action_detect|2026-08-27t22_25_11_961523": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus та догляд за обличчям\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після ",
+    "ts": "2026-08-27T22:25:11.961523"
+  },
+  "context_ask_ai|2026-08-27t22_25_10_903516": {
+    "topic": "context_ask_ai",
+    "gist": "Олег, я розумію, що ти все ще чекаєш на звіти.  Ще раз пояснюю: система, з якою я працюю, не генерує звіти щогодини. Вони надаються з іншою періодичністю (напри",
+    "ts": "2026-08-27T22:25:10.903516"
+  },
+  "context_ask_ai|2026-08-27t22_25_10_026644": {
+    "topic": "context_ask_ai",
+    "gist": "Зрозумів, Олег.  Зараз 22:25, ти на нічній зміні.  Пам'ятай, що після зміни, перед сном, тобі потрібно прийняти Armolopid Plus. Також не забудь про вечірній дог",
+    "ts": "2026-08-27T22:25:10.026644"
+  },
+  "healthai|2026-08-27t22_25_08_970985": {
+    "topic": "healthai",
+    "gist": "Олеже, останні дані по твоєму здоров'ю були отримані 2026-08-26, тобто 46 годин тому, що є аномалією, враховуючи твоє питання \"Чому немає звітів?\" о 21:06 сього",
+    "ts": "2026-08-27T22:25:08.970985"
+  },
+  "action_detect|2026-08-27t22_25_08_153512": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
+    "ts": "2026-08-27T22:25:08.153512"
+  },
   "action_detect|2026-08-27t22_24_57_218700": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
@@ -203,100 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Kaufland Card XTRA запрошує взяти участь у конкурсі з можливістю виграти ваучери на покупки. Лист містить посилання на про",
     "ts": "2026-08-27T07:41:06.637348"
-  },
-  "openloop_promises|2026-08-27t07_35_37_336499": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {     \"what\": \"I am attaching screenshots of the messages I received from the tour operator. The screenshots show the sender’s contact details and t",
-    "ts": "2026-08-27T07:35:37.336499"
-  },
-  "selfact|2026-08-27t07_30_59_229444": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Онлайн-реєстрація на рейс Ryanair\",     \"text\": \"Олеже, нагадую, що онлайн-реєстрація на ваш рейс Ryanair (Y9S",
-    "ts": "2026-08-27T07:30:59.229444"
-  },
-  "action_detect|2026-08-27t07_30_37_350592": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Повернення кредиту Temu\", \"action_date\": \"2024-08-27\", \"action_time\": \"09:00\", \"action_summary\": \"Перевірити деталі",
-    "ts": "2026-08-27T07:30:37.350592"
-  },
-  "msg_event_soon|2026-08-27t07_30_27_802633": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Олеже, як тобі ранок після зміни? Знаю, що відновлення зараз найважливіше, але маємо коротку справу.  Через півтори години, о 09:00, заплановано повернення кред",
-    "ts": "2026-08-27T07:30:27.802633"
-  },
-  "mailcal_extract|2026-08-27t07_25_31_000749": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"77660\",     \"title\": \"Скасування Paxos and Antipaxos Boat Tour from Corfu\",     \"date\": \"2026-08-19\",     \"time\": \"08:20\",     \"kind\":",
-    "ts": "2026-08-27T07:25:31.000749"
-  },
-  "action_detect|2026-08-27t07_22_05_374252": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Заплановані події\", \"action_date\": \"2024-08-28\", \"action_time\": \"08:00\", \"action_summary\": \"Заплановані події на за",
-    "ts": "2026-08-27T07:22:05.374252"
-  },
-  "msg_vip_email|2026-08-27t07_21_57_396899": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 📧  Після нічної зміни сьогодні зранку найважливіше – це якісне відновлення. Бачу, що ти зараз вдома, і це чудова можливість зосередитися на відпоч",
-    "ts": "2026-08-27T07:21:57.396899"
-  },
-  "bills|2026-08-27t07_16_09_845962": {
-    "topic": "bills",
-    "gist": "```json [] ```",
-    "ts": "2026-08-27T07:16:09.845962"
-  },
-  "email_ai_item|2026-08-27t07_14_27_354698": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від Discord інформує про пропущені повідомлення в каналі VenomBridge. Лист не містить конкретних дат, сум або дій, які потрібн",
-    "ts": "2026-08-27T07:14:27.354698"
-  },
-  "proactive_ai|2026-08-27t07_04_12_067826": {
-    "topic": "proactive_ai",
-    "gist": "Привіт, Олеже! Сподіваюсь, після нічної зміни ти добре відпочив, як і писав, що настрій гарний. Сьогодні в тебе день на відновлення, а завтра знову нічна з 18:0",
-    "ts": "2026-08-27T07:04:12.067826"
-  },
-  "action_detect|2026-08-27t07_03_27_513340": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записувати ідеї щодо DeFi та крипто\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записувати рапто",
-    "ts": "2026-08-27T07:03:27.513340"
-  },
-  "action_detect|2026-08-27t07_03_27_108063": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-27T07:03:27.108063"
-  },
-  "action_detect|2026-08-27t07_03_16_548356": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Повернення кредиту від Temu\", \"action_date\": \"2023-08-27\", \"action_time\": \"09:00\", \"action_summary\": \"Перевірити по",
-    "ts": "2026-08-27T07:03:16.548356"
-  },
-  "action_detect|2026-08-27t07_03_05_083221": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято Armolopid",
-    "ts": "2026-08-27T07:03:05.083221"
-  },
-  "action_detect|2026-08-27t07_02_54_168042": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"09:00\", \"action_summary\": \"Відсвяткувати день на",
-    "ts": "2026-08-27T07:02:54.168042"
-  },
-  "action_detect|2026-08-27t07_02_54_134135": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути непрочитаний лист\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути непрочитан",
-    "ts": "2026-08-27T07:02:54.134135"
-  },
-  "briefing|2026-08-27t07_02_48_862398": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ Зараз, після нічної зміни, коли тіло потребує відновлення, твій фокус зміщується на стратегічне осмислення. Найближча ціль до прориву, безумовно, ф",
-    "ts": "2026-08-27T07:02:48.862398"
-  },
-  "themes_ai|2026-08-27t07_02_36_681299": {
-    "topic": "themes_ai",
-    "gist": "Олеже, 07:02, ти щойно після нічної зміни, що закінчилася о шостій ранку. Відновлення — це ключове зараз.  🏃 БІГ — Останній зафіксований біг був 25 днів тому, 2",
-    "ts": "2026-08-27T07:02:36.681299"
-  },
-  "astro_ai|2026-08-27t07_02_28_830910": {
-    "topic": "astro_ai",
-    "gist": "Олеже, Юпітер щойно увійшов у знак твого Асценденту у Леві, це кардинальна зміна курсу на найближчий рік, торкаючись твоєї особистості, самовираження та нового ",
-    "ts": "2026-08-27T07:02:28.830910"
   }
 }
