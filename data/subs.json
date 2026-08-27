@@ -35,7 +35,7 @@
   },
   "railwaycorporation": {
     "vendor": "Railway Corporation",
-    "cycle": "unknown",
+    "cycle": "monthly",
     "currency": "USD",
     "charges": [
       {
@@ -47,6 +47,11 @@
         "date": "2026-08-24",
         "amount": "12.32",
         "uid": "77925"
+      },
+      {
+        "date": "2026-08-27",
+        "amount": "12.32",
+        "uid": "78132"
       }
     ],
     "active": true,
@@ -54,13 +59,13 @@
     "confirmed": true,
     "skipped": false,
     "first_seen": "2026-08-23",
-    "note": "Платіж за підписку Railway Corporation був невдалим. Потрібно оновити платіжну інформацію.",
+    "note": "Щомісячний платіж за тариф Hobby plan, включаючи використання об'єктного сховища, диска, мережі, vCPU та пам'яті.",
     "amount": "12.32",
-    "sender": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
-    "subject": "$12.32 payment to Railway Corporation was unsuccessful again",
-    "uid": "77925",
-    "last_seen": "2026-08-26",
-    "next_due": "2026-09-23"
+    "sender": "Railway Corporation <invoice+statements+acct_1HNrvlCJoPsRzQsd@stripe.com>",
+    "subject": "Your receipt from Railway Corporation #2645-8801",
+    "uid": "78132",
+    "last_seen": "2026-08-27",
+    "next_due": "2026-09-22"
   },
   "chatgptgo": {
     "vendor": "ChatGPT Go",
