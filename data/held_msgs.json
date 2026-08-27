@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T18:01:34.712687",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your login change is moving to 10 September</b>\n👤 \"Socios.com\" &lt;service@support.socios.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78114"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78114"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78114"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78114"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78114"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78114"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T18:01:36.386958",
       "kind": "offer",
       "text": "💰 ✉️\n📌 <b>$10.00 payment to Runable was unsuccessful</b>\n👤 Runable &lt;failed-payments+acct_1RaXgUJk3URPLkAO@str",
@@ -749,6 +710,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78119"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T20:01:39.301928",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - August 27</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78118"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78118"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78118"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78118"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78118"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78118"
             }
           ]
         ]
