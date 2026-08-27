@@ -1,4 +1,24 @@
 {
+  "action_detect|2026-08-27t23_46_23_095727": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
+    "ts": "2026-08-27T23:46:23.095727"
+  },
+  "money|2026-08-27t23_38_29_125336": {
+    "topic": "money",
+    "gist": "```json [   {     \"uid\": \"78138\",     \"vendor\": \"Runable\",     \"amount\": \"10.00\",     \"currency\": \"USD\",     \"date\": \"2026-08-28\",     \"kind\": \"sub\",     \"note\"",
+    "ts": "2026-08-27T23:38:29.125336"
+  },
+  "action_detect|2026-08-27t23_38_18_012219": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-08-27T23:38:18.012219"
+  },
+  "action_detect|2026-08-27t23_37_56_544118": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
+    "ts": "2026-08-27T23:37:56.544118"
+  },
   "action_detect|2026-08-27t23_36_59_430174": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
     "ts": "2026-08-27T22:25:22.907094"
-  },
-  "action_detect|2026-08-27t22_25_19_075407": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2024-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олег має заплановану по",
-    "ts": "2026-08-27T22:25:19.075407"
-  },
-  "context_ask_ai|2026-08-27t22_25_12_255669": {
-    "topic": "context_ask_ai",
-    "gist": "Олег, я розумію, що тебе непокоїть відсутність звітів.  Ще раз пояснюю: система, з якою я працюю, не генерує звіти щогодини. Вони надходять з іншою періодичніст",
-    "ts": "2026-08-27T22:25:12.255669"
-  },
-  "action_detect|2026-08-27t22_25_11_961523": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus та догляд за обличчям\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після ",
-    "ts": "2026-08-27T22:25:11.961523"
-  },
-  "context_ask_ai|2026-08-27t22_25_10_903516": {
-    "topic": "context_ask_ai",
-    "gist": "Олег, я розумію, що ти все ще чекаєш на звіти.  Ще раз пояснюю: система, з якою я працюю, не генерує звіти щогодини. Вони надаються з іншою періодичністю (напри",
-    "ts": "2026-08-27T22:25:10.903516"
   }
 }
