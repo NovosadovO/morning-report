@@ -1,9 +1,4 @@
 {
-  "77668": {
-    "sender": "info@message.cropp.com",
-    "sender_raw": "\"Cropp\" <info@message.cropp.com>",
-    "seen_ts": "2026-08-19T05:57:03.879297+00:00"
-  },
   "77669": {
     "sender": "news@flights.airbaltic.com",
     "sender_raw": "airBaltic <news@flights.airbaltic.com>",
@@ -1498,5 +1493,10 @@
     "sender": "groups-noreply@linkedin.com",
     "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
     "seen_ts": "2026-08-27T13:51:40.640822+00:00"
+  },
+  "78105": {
+    "sender": "failed-payments+acct_1hnrvlcjopsrzqsd@stripe.com",
+    "sender_raw": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
+    "seen_ts": "2026-08-27T13:55:59.176483+00:00"
   }
 }
