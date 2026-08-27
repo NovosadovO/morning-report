@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T15:18:11.847685",
-      "kind": "day_mode",
-      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-27T15:23:10.625548",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78105"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T16:01:21.014208",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Slovak Speaking Agent for Hospitality Sector -Relocation to </b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78100"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78100"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78100"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78100"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78100"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78100"
             }
           ]
         ]
