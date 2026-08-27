@@ -462,5 +462,15 @@
     "label": "👌 Прийняв",
     "state": "open",
     "ts": "2026-08-27T02:31:46"
+  },
+  "generic|t|зміна способу входу socios com": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "зміна способу входу socios com",
+    "title": "Зміна способу входу Socios.com",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "state": "closed",
+    "ts": "2026-08-27T02:31:51"
   }
 }
