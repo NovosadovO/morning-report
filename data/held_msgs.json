@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T12:01:38.222023",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Biedronka</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Sprawdź najświeższe oferty w Biedronce od czwartku 27.08!»\n\n<i>«Sprawdź najświeższe oferty w Biedronce od czwartku 27.08!\nW promocji m.in. Winogrono jasne na wagę, nektarynka na wagę, Świeży filet z piersi  kurczaka Kraina Mięs i wiele innych!\n Zapoznaj się z wersją online newsletter-a https://links.newsletter.biedronka.pl/c/n64/jtC/ZextBdZNPDKXh3tplsS3zQ/7/DiH-...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78084"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78084"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78084"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78084"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78084"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78084"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T12:14:54.202780",
       "kind": "watchdog",
       "text": "👁 <b>Я осліп на частину даних</b>\n\n🔴 <b>strava</b> — функції get_activities немає в monitor.py\n\n<i>Поки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.</i>",
@@ -578,6 +539,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T14:01:40.415012",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Dobrá správa! Dobierka je kdispozícii!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78094"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78094"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78094"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78094"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78094"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78094"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
