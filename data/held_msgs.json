@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T11:51:26.012843",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Generative AI</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🧬 AGI is here»\n\n<i>«----------\r\n######           [Subscribe](https://academynews.genai.works/)   -    [Collaborate with us](https://utm.genai.works/r/cq9vsh4)\r\n\r\n\r\n--------------------\r\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/8776fa6...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78083"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78083"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78083"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78083"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78083"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78083"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T12:00:45.181162",
       "kind": "chunk",
       "text": "☀️\n<b>ЗВІТ  ·  Чт 27.08  ·  12:00</b>\n🏠 Вдома\n<i>Денний чекап: тіло, крипто, пошта — і назад до роботи 🔥</i>\n📌 Нічна зміна +6\n\n⚡ <b>День: ⭐☆☆☆☆ 27/100</b>  ↓7 vs вчора\n\n☀️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>25°C</b>\n<i>☀️ Тепло — сонцезахисний крем</i>\n\n📅 <b>Прогноз сьогодні:</b>\n05:45   🌇 19:27  13:00 ☀️27°  │  14:00 ☀️28°  │  15:00 ☀️28°  │  16:00 ☀️28°  │  17:00 ☀️28°  │  18:00 ☀️26°  09:00 🌤20°  │  12:00 ☀️26°  │  15:00 ☁️29°  │  18:00 ☁️28°  │  21:00 ☁️25°\n\n<b>Завтра:</b>  ☁️ Хмарно  🔻16°  /  🔺29°\n<code>09:00</code> 🌤20°  │  <code>12:00</code> ☀️26°  │  <code>15:00</code> ☁️29°  │  <code>18:00</code> ☁️28°  │  <code>21:00</code> ☁️25°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n  • 🚧 Перекрито — Baštová\n  • 🚧 Перекрито — Svornosti\n\n💰\n<b>КРИПТО  ·  🔴 ВЕДМЕЖИЙ 📉</b>\n🔻 <b>BTC</b> <code>$78,716.00</code>  -1.45%\n🔻 <b>ETH</b> <code>$2,493.85</code>  -1.58%\n🔻 <b>AVAX</b> <code>$7.35</code>  -1.47%\n🔻 <b>ONDO</b> <code>$0.37</code>  -2.05%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🔴 <b>IBIT</b>  <code>$44.46</code>  <i>-0.58% за день</i>\n🟢 <b>ETHA</b>  <code>$18.65</code>  <i>+0.27% за день</i>\n⚪️ <b>VAVA</b>  <code>$0.65</code>\n🔴 <b>GAVA</b>  <code>$17.69</code>",
@@ -560,6 +521,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78086"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T13:01:19.827364",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🧬 AGI is here</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78083"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78083"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78083"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78083"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78083"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78083"
             }
           ]
         ]
