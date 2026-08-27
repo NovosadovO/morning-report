@@ -315,13 +315,14 @@ def ai_recommendations(a: dict) -> str:
 # ─── ЗВІТИ ───────────────────────────────────────────────────────────────────
 
 def _kb():
-    return {"inline_keyboard": [[
+    # K.send_card очікує СПИСОК рядів кнопок, не {"inline_keyboard": ...}
+    return [[
         {"text": "📊 Аналітика", "callback_data": "hai_stats"},
         {"text": "🎯 Рекомендації", "callback_data": "hai_reco"},
     ], [
         {"text": "✅ Зрозумів", "callback_data": "hai_ok"},
         {"text": "🔇 Не зараз", "callback_data": "hai_mute"},
-    ]]}
+    ]]
 
 
 def coach_report(send: bool = True) -> str:
