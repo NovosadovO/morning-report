@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T16:01:29.134392",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>New bots: TWAP and Iceberg are here</b>\n👤 OKX &lt;updates@okx.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78092"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78092"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78092"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78092"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78092"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78092"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T16:01:34.626993",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 25 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '25 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 82.5 кг, ціль 78 кг (тренд -1.8 кг за останні 5 замірів). Кроки: 6200 (ціль 10000). Сон: 7.2г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 09:00 💳 Повернення кредиту від Temu, 18:00 🌙 Нічна зміна (18:00-06:00)",
@@ -372,6 +333,45 @@
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T16:55:39.104249",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Runable</b>\n📋 Тема: «$10.00 payment to Runable was unsuccessful»\n\n<i>«Runable\r\n\r\n$10.00 payment to Runable was unsuccessful We were unable to charge your Visa ending in 2620 for your Runable payment. Please update your payment information to complete your purchase. Update payment information (https://invoice.stripe.com/i/acct_1RaXgUJk3URPLkAO/live_YWNjdF8xUmFYZ1VKazNV...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78113"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78113"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78113"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78113"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78113"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78113"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
