@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T17:02:05.113601",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Re: Re: other</b>\n👤 \"Booking.com Customer Service\" &lt;24-25523139647_88c",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_77662"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_77662"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_77662"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_77662"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_77662"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_77662"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T17:02:09.180542",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 25 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '25 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 82.5 кг, ціль 78 кг (тренд -1.8 кг за останні 5 замірів). Кроки: 6200 (ціль 10000). Сон: 7.2г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 2 непрочитаних\n📅 Календар: 09:00 💳 Повернення кредиту від Temu, 18:00 🌙 Нічна зміна (18:00-06:00)",
@@ -660,6 +621,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78121"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-27T19:16:04.490476",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Výpredaj na ABOUT YOU</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Odteraz: \n  Ponuky až do -60%»\n\n<i>«96 AboutYou Email a { outline: none; color: #000; text-decoration: underline; } a:hover { text-decoration: none !important; } .h-u a { text-decoration: none; } .h-u a:hover { text-decoration: underline !important; } a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !import...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78123"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78123"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78123"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78123"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78123"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78123"
             }
           ]
         ]
