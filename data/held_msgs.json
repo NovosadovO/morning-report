@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-27T10:01:57.532920",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>4 nové pracovné ponuky</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78074"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78074"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78074"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78074"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78074"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78074"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-27T10:01:59.024042",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в VenomBridge</b>\n👤 Discord &lt;noreply@discord.com&gt;",
@@ -405,6 +366,45 @@
       "kind": "calendar",
       "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 💳 Повернення кредиту від Temu\n🕐 09:00–10:00\n\nВідповідь збережу — це піде в аналітику тижня.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-27T10:22:03.387491",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>H&amp;M</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Novinky: Sety a komplety»\n\n<i>«Open the email in browser on following link https://t19.email.hm.com/r/?id=t51b84c42-7c77-45f7-8e23-9164fe51621e,66407e27,f7f20950&amp;did=1715502631&amp;rid=3040093838&amp;erid=MzA0MDA5MzgzOA%3D%3D&amp;p1=%40NTUfPMWVLa58RH4tv1vSLHjZVNjtfLlX15u2vtfVmLmyI4nE5WLGmE%2BvJDnLIfoJwaKGg%2BkOSsgcJ271Cx4EcU3bYkEUyFSnqmvL3qs...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78079"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78079"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78079"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78079"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78079"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78079"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
