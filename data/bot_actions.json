@@ -1252,6 +1252,13 @@
       "detail": "Є свіжий лист від UniCredit Bank про реконструкцію відділення з 4 вересня, що є важливою інформацією, яку Олег міг не помітити, і вона може вплинути на його плани.",
       "module": "selfact",
       "ts": "2026-08-28T12:00:21"
+    },
+    {
+      "kind": "notify",
+      "what": "Реконструкція UniCredit Bank",
+      "detail": "Отримано лист від 'UniCredit Bank' з темою 'Od 4.septembra rekonštruujeme pobočku Košice Rooseveltova'.",
+      "module": "selfact",
+      "ts": "2026-08-28T12:30:18"
     }
   ]
 }
