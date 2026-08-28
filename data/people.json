@@ -322,5 +322,23 @@
     "last_out": "",
     "updated": "2026-08-28",
     "pinged_at": ""
+  },
+  "dtp_kea@faxcopy.sk": {
+    "name": "Faxcopy",
+    "relation": "сервіс",
+    "vip": false,
+    "topics": [
+      "запит"
+    ],
+    "my_promises": [],
+    "their_promises": [],
+    "open_question": "",
+    "next_step": "Написати до Faxcopy, щоб дізнатися, чи є відповідь на запит.",
+    "ping_in_days": 0,
+    "last_in": "",
+    "last_subject": "",
+    "last_out": "2026-08-25",
+    "updated": "2026-08-28",
+    "pinged_at": ""
   }
 }
