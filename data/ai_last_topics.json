@@ -1,4 +1,19 @@
 {
+  "selfact|2026-08-29t01_42_39_693045": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Прийом Armolopid Plus\",     \"text\": \"Олег, не забудь прийняти Armolopid Plus о 04:30. Це важливо для твого з",
+    "ts": "2026-08-29T01:42:39.693045"
+  },
+  "action_detect|2026-08-29t01_33_03_953991": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-29T01:33:03.953991"
+  },
+  "msg_vip_email|2026-08-29t01_32_55_732685": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 📧  Продовжуючи нічну зміну, коли більшість ринків уповільнюється, важливо оцінити, як поточні зміни впливають на твої довгострокові фінансові та з",
+    "ts": "2026-08-29T01:32:55.732685"
+  },
   "proactive_actions|2026-08-29t01_30_22_153082": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн-реєстрація на рейс Ryanair\",     \"date\": \"2026-08-31\",     \"time\": \"12:00\",     \"message\": \"Олеже, на",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Потрібно пройти он",
     "ts": "2026-08-28T23:32:32.632917"
-  },
-  "action_detect|2026-08-28t23_32_21_721496": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс\", \"action_date\": \"2026-09-01\", \"action_time\": \"null\", \"action_summary\": \"Олегу потрібно п",
-    "ts": "2026-08-28T23:32:21.721496"
-  },
-  "action_detect|2026-08-28t23_31_23_215066": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пройти онлайн-реєстрацію на рейс\", \"action_date\": \"2023-09-01\", \"action_time\": null, \"action_summary\": \"Олегу потрі",
-    "ts": "2026-08-28T23:31:23.215066"
-  },
-  "email_ai_item|2026-08-28t23_26_26_869718": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від Forbes через LinkedIn містить статтю про найбільш високооплачуваних тенісистів світу, які за останній рік заробили $333",
-    "ts": "2026-08-28T23:26:26.869718"
   }
 }
