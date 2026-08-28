@@ -1,4 +1,9 @@
 {
+  "msg_micro_checkin|2026-08-28t07_00_20_661075": {
+    "topic": "MSG_MICRO_CHECKIN",
+    "gist": "Привіт Олеже! 🫂  Ранок п'ятниці, ти щойно після нічної зміни, і зараз головне — відновлення. Сподіваюся, ти знайдеш час для якісного відпочинку, адже сон сьогод",
+    "ts": "2026-08-28T07:00:20.661075"
+  },
   "selfact|2026-08-28t06_55_30_438372": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олег, зверни увагу, що платежі до Runable на $10.00 були невдалими кіль",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-28T04:18:34.531211"
-  },
-  "action_detect|2026-08-28t04_04_25_069806": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Виконати дії після нічної зміни\", \"action_date\": \"2026-08-28\", \"action_time\": \"06:00\", \"action_summary\": \"Після зак",
-    "ts": "2026-08-28T04:04:25.069806"
   }
 }
