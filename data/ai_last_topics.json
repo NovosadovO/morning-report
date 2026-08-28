@@ -1,4 +1,34 @@
 {
+  "selfact|2026-08-28t03_52_34_154128": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Проблеми з оплатою Runable\",     \"text\": \"Олег, зверни увагу, що платежі за Runable $10.00 були неуспішними кі",
+    "ts": "2026-08-28T03:52:34.154128"
+  },
+  "email_ai_item|2026-08-28t03_51_13_035811": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Лист від Runable повідомляє, що платіж у розмірі $10.00 за допомогою картки Visa, що закінчується на 2620, був невдалим. Для заверше",
+    "ts": "2026-08-28T03:51:13.035811"
+  },
+  "action_detect|2026-08-28t03_48_14_194204": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus та догляд за обличчям\", \"action_date\": \"2026-08-28\", \"action_time\": \"06:00\", \"action_summar",
+    "ts": "2026-08-28T03:48:14.194204"
+  },
+  "action_detect|2026-08-28t03_48_11_145569": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-28T03:48:11.145569"
+  },
+  "allctx_ask_truthfix|2026-08-28t03_48_04_183533": {
+    "topic": "allctx_ask/truthfix",
+    "gist": "Привіт, Олег! Зараз п'ятниця, 28 серпня 2026 року, 03:47, ти на нічній зміні до 06:00.  Дані за 27 серпня (28 годин тому) показують, що твій сон за останні 7 дн",
+    "ts": "2026-08-28T03:48:04.183533"
+  },
+  "allctx_ask|2026-08-28t03_47_54_703552": {
+    "topic": "allctx_ask",
+    "gist": "Привіт, Олег! Зараз п'ятниця, 28 серпня, 03:47, ти на нічній зміні до 06:00.  Найважливіше для тебе цього тижня — це **критична ситуація з дедлайнами та фінанса",
+    "ts": "2026-08-28T03:47:54.703552"
+  },
   "action_detect|2026-08-28t03_47_33_722770": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
@@ -268,35 +298,5 @@
     "topic": "MSG_EVENT_SOON",
     "gist": "Привіт Олеже! ✅  Ти продовжуєш нічну зміну, зараз 02:10, і попереду ще кілька годин до 06:00. Це чудовий момент, щоб сфокусуватися на стратегії та відновленні. ",
     "ts": "2026-08-28T02:10:51.226580"
-  },
-  "action_detect|2026-08-28t02_05_31_955248": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-08-28T02:05:31.955248"
-  },
-  "action_detect|2026-08-28t02_03_18_039031": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зафіксувати проривні ідеї\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зафіксувати проривні ідеї ",
-    "ts": "2026-08-28T02:03:18.039031"
-  },
-  "action_detect|2026-08-28t02_03_17_946722": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-08-28\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
-    "ts": "2026-08-28T02:03:17.946722"
-  },
-  "action_detect|2026-08-28t02_03_06_841817": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopid Plus п",
-    "ts": "2026-08-28T02:03:06.841817"
-  },
-  "action_detect|2026-08-28t02_02_56_029355": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-08-28\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-08-28T02:02:56.029355"
-  },
-  "action_detect|2026-08-28t02_02_55_956187": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"09:00\", \"action_summary\": \"Відсвяткувати день на",
-    "ts": "2026-08-28T02:02:55.956187"
   }
 }
