@@ -2,7 +2,7 @@
   "2026-08-28": {
     "checked": 77,
     "issues": 62,
-    "fixed": 26,
+    "fixed": 27,
     "cut": 10
   },
   "by_tag": {
@@ -85,7 +85,8 @@
     },
     "proactive_ai": {
       "checked": 2,
-      "issues": 2
+      "issues": 2,
+      "fixed": 1
     },
     "MSG_DAY_PLAN": {
       "checked": 1
