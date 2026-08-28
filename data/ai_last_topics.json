@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-08-29t01_50_20_823604": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"прикріплюю скріншоти повідомлень, які я отримав від туроператора\",     \"to\": \"Booking.com Customer Service\",     \"date\": null   } ] `",
+    "ts": "2026-08-29T01:50:20.823604"
+  },
+  "email_ai_item|2026-08-29t01_44_38_049223": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від The Defiant є інформаційним дайджестом новин зі світу DeFi та криптовалют. Він містить п'ять заголовків про важливі події,",
+    "ts": "2026-08-29T01:44:38.049223"
+  },
   "selfact|2026-08-29t01_42_39_693045": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Прийом Armolopid Plus\",     \"text\": \"Олег, не забудь прийняти Armolopid Plus о 04:30. Це важливо для твого з",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Олегу потр",
     "ts": "2026-08-28T23:33:29.178783"
-  },
-  "action_detect|2026-08-28t23_32_32_736281": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка в Малагу\", \"action_date\": \"2026-09-01\", \"action_time\": \"12:00\", \"action_summary\": \"Олегу потрібно пройти он",
-    "ts": "2026-08-28T23:32:32.736281"
-  },
-  "action_detect|2026-08-28t23_32_32_632917": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Потрібно пройти он",
-    "ts": "2026-08-28T23:32:32.632917"
   }
 }
