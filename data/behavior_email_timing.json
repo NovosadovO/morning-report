@@ -1,9 +1,4 @@
 {
-  "77731": {
-    "sender": "newsletter@email.hm.com",
-    "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
-    "seen_ts": "2026-08-20T08:25:15.744731+00:00"
-  },
   "77732": {
     "sender": "inspiration@mp1.tripadvisor.com",
     "sender_raw": "\"Tripadvisor\" <inspiration@mp1.tripadvisor.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-08-28T14:44:23.086151+00:00"
+  },
+  "78182": {
+    "sender": "newsletter@buzzsneakers-promo.com",
+    "sender_raw": "\"Buzz Sneaker Station\" <newsletter@buzzsneakers-promo.com>",
+    "seen_ts": "2026-08-28T15:19:00.055259+00:00"
   }
 }
