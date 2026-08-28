@@ -1,6 +1,6 @@
 {
   "2026-08-28": {
-    "checked": 3,
+    "checked": 4,
     "issues": 3,
     "fixed": 1
   },
@@ -17,6 +17,9 @@
     "astro_ai": {
       "checked": 1,
       "issues": 1
+    },
+    "personal_ai": {
+      "checked": 1
     }
   },
   "last": [
