@@ -306,17 +306,18 @@
     "relation": "сервіс",
     "vip": false,
     "topics": [
-      "онлайн-реєстрація на рейс"
+      "онлайн реєстрація",
+      "рейс Ryanair"
     ],
     "my_promises": [],
     "their_promises": [],
     "open_question": "",
-    "next_step": "Перевірити, чи Олег зареєструвався на рейс Ryanair за кодом Y9SB5U.",
+    "next_step": "Зареєструватися онлайн на рейс Ryanair через додаток Ryanair, використовуючи код бронювання Y9SB5U та email novosadov@boarding.sk.",
     "ping_in_days": -1,
     "last_in": "",
     "last_subject": "",
     "last_out": "",
-    "updated": "2026-08-23",
+    "updated": "2026-08-28",
     "pinged_at": ""
   }
 }
