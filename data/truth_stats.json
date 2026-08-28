@@ -1,7 +1,7 @@
 {
   "2026-08-28": {
     "checked": 35,
-    "issues": 29,
+    "issues": 30,
     "fixed": 12,
     "cut": 5
   },
@@ -75,7 +75,8 @@
       "cut": 1
     },
     "assistant": {
-      "checked": 1
+      "checked": 1,
+      "issues": 1
     }
   },
   "last": [
