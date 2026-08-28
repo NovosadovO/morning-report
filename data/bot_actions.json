@@ -1420,6 +1420,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, weight_kg, spo2, stress",
       "module": "qwsync",
       "ts": "2026-08-28T23:46:19"
+    },
+    {
+      "kind": "note",
+      "what": "збережено дані здоров'я",
+      "detail": "steps=16079, hr_avg=76, weight_kg=83.0, spo2=96, stress=37, date=2026-08-28, source=qwatch_auto, saved_at=2026-08-28 23:46",
+      "module": "healthai",
+      "ts": "2026-08-28T23:46:22"
     }
   ]
 }
