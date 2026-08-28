@@ -8102,6 +8102,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_f3abaa4322"
+    },
+    {
+      "ts": "2026-08-29T00:47:19.338252+00:00",
+      "category": "confirm",
+      "question": "gate_bill_due_paid: 🔴 ПРОСТРОЧЕНИЙ РАХУНОК (5 дн.)",
+      "answer": "yes"
     }
   ]
 }
