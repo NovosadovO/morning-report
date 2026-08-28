@@ -1,9 +1,4 @@
 {
-  "77726": {
-    "sender": "notification@service.tiktok.com",
-    "sender_raw": "TikTok <notification@service.tiktok.com>",
-    "seen_ts": "2026-08-20T06:39:04.438565+00:00"
-  },
   "77728": {
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@istores.sk",
     "sender_raw": "iStores Apple Premium Partner <newsletter@istores.sk>",
     "seen_ts": "2026-08-28T13:10:40.329147+00:00"
+  },
+  "78175": {
+    "sender": "temu@eu.temuemail.com",
+    "sender_raw": "\"Temu\" <temu@eu.temuemail.com>",
+    "seen_ts": "2026-08-28T13:51:14.885318+00:00"
   }
 }
