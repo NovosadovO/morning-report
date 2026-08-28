@@ -3,7 +3,7 @@
     "checked": 31,
     "issues": 26,
     "fixed": 12,
-    "cut": 2
+    "cut": 3
   },
   "by_tag": {
     "MSG_EVENT_SOON": {
@@ -48,7 +48,8 @@
     },
     "calendar": {
       "checked": 2,
-      "issues": 1
+      "issues": 1,
+      "cut": 1
     },
     "MORNING_AI": {
       "checked": 1,
