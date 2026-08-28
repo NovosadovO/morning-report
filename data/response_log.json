@@ -8090,6 +8090,12 @@
       "category": "confirm",
       "question": "gate_bill_due_paid: 🔴 ПРОСТРОЧЕНИЙ РАХУНОК (3 дн.)",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-29T00:47:08.101582+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "bill_due_paid_b469f4fba5"
     }
   ]
 }
