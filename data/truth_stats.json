@@ -3,7 +3,7 @@
     "checked": 55,
     "issues": 46,
     "fixed": 19,
-    "cut": 9
+    "cut": 10
   },
   "by_tag": {
     "MSG_EVENT_SOON": {
@@ -14,7 +14,8 @@
     "MSG_DEEP_ANALYSIS": {
       "checked": 4,
       "issues": 4,
-      "fixed": 1
+      "fixed": 1,
+      "cut": 1
     },
     "astro_ai": {
       "checked": 9,
