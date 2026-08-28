@@ -4284,7 +4284,17 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
     except Exception as e:
         print(f"[astro_ai] WARNING: couldn't get transits: {e}", flush=True)
         transit_data = ""
-    
+
+    # ФАКТИЧНІ ДАТИ ВХОДУ ПЛАНЕТ У ЗНАКИ (проти вигадок «щойно увійшов»)
+    ingress_block = ""
+    try:
+        import astro as _astro_mod2
+        ingress_block = _astro_mod2.ingress_facts() or ""
+        print(f"[astro_ai] ingress_facts: {len(ingress_block)} chars", flush=True)
+    except Exception as e:
+        print(f"[astro_ai] WARNING: ingress_facts failed: {e}", flush=True)
+        ingress_block = ""
+
     # ПРОМПТ З НАТАЛЬНОЮ КАРТОЮ + ТРАНЗИТАМИ
     # Динамічна дата
     today_str = datetime.now(timezone.utc).strftime("%d.%m.%Y")
@@ -4301,6 +4311,9 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
 
 ━━━━━━━━━━━━━━━━━━ ПОТОЧНІ ТРАНЗИТИ СЬОГОДНІ ━━━━━━━━━━━━━━━━━━
 {transit_data if transit_data else "(транзити недоступні — проаналізуй загальний астро-фон дня)"}
+
+━━━━━━━━━━━━━━━━━━ ФАКТИЧНІ ДАТИ ВХОДУ В ЗНАКИ ━━━━━━━━━━━━━━━━━━
+{ingress_block if ingress_block else "(дати входу недоступні — НЕ пиши нічого про давність переходів)"}
 
 ━━━━━━━━━━━━━━━━━━ КОНТЕКСТ ━━━━━━━━━━━━━━━━━━
 {shift_hint[:200] if shift_hint else "вільний день"}
@@ -4326,6 +4339,7 @@ def _get_astro_ai_analysis(astro_text: str, gemini_key: str, shift_hint: str = "
 - Кожне речення = конкретна практична порада або спостереження
 - Якщо транзитних даних немає — дай загальну астро-погоду тижня без вигадки
 - НЕ пропускай жодного значного транзиту зі списку (особливо ingress-переходи і аспекти з орбом <1.5°)
+- ПРАВДА ПРО ЧАС: слова «щойно», «нещодавно», «тільки що», «вперше» дозволені ТІЛЬКИ якщо у блоці ФАКТИЧНИХ ДАТ стоїть 7 днів або менше. Якщо планета у знаку вже місяці/роки — так і напиши з конкретною датою і давністю з даних. Не вигадуй давність, не роби з давньої події «свіжу новину». Немає дати — не згадуй давність узагалі
 """
     # Генеруємо AI-аналіз через Gemini. _gem_post вже робить внутрішній
     # retry+model-fallback (2.5-flash->2.0-flash->2.5-flash-lite), тому зовнішній

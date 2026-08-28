@@ -819,6 +819,146 @@ def _get_natal_transits_fallback(max_aspects=6):
 
 # ─── КОРОТКИЙ БЛОК ДЛЯ ГОДИННОГО ЗВІТУ ───────────────────────────────────────
 
+
+# ─── РЕАЛЬНА ДАТА ВХОДУ ПЛАНЕТИ У ЗНАК (без вигадок) ─────────────────────────
+_INGRESS_CACHE_FILE = "astro_ingress.json"
+_SCAN_LIMIT = {"jupiter": 500, "saturn": 1200, "uranus": 3200,
+               "neptune": 6000, "pluto": 9000, "mars": 120,
+               "venus": 90, "mercury": 60, "sun": 40, "moon": 4}
+
+
+def _subject_at(dt):
+    """Транзитна карта на конкретну дату (UTC)."""
+    return AstrologicalSubject(
+        "t", dt.year, dt.month, dt.day, dt.hour, dt.minute,
+        lat=CURRENT_LAT, lng=CURRENT_LON, tz_str="UTC",
+        zodiac_type="Tropic", houses_system_identifier="P", online=False,
+    )
+
+
+def _sign_at(dt, key):
+    try:
+        p = getattr(_subject_at(dt), key, None)
+        return p.sign if p else None
+    except Exception:
+        return None
+
+
+def ingress_info(key: str, force: bool = False) -> dict:
+    """
+    ФАКТИЧНА дата входу планети у знак, де вона зараз.
+    Рахується по ефемеридах (kerykeion), НЕ вигадується.
+    Повертає {sign, since (YYYY-MM-DD), days_ago, phrase} або {}.
+    Кеш 7 днів у astro_ingress.json (гілка data).
+    """
+    if not _KERYKEION_OK:
+        return {}
+    now = datetime.now(timezone.utc)
+    try:
+        import ai_kit as _K
+        cache = _K.load(_INGRESS_CACHE_FILE, default={}) or {}
+    except Exception:
+        _K = None
+        cache = {}
+    if not isinstance(cache, dict):
+        cache = {}
+
+    cur_sign = _sign_at(now, key)
+    if not cur_sign:
+        return {}
+    hit = cache.get(key) or {}
+    if (not force and hit.get("sign") == cur_sign and hit.get("since")
+            and hit.get("checked")):
+        try:
+            checked = datetime.strptime(hit["checked"], "%Y-%m-%d")
+            if (now.replace(tzinfo=None) - checked).days < 7:
+                since = datetime.strptime(hit["since"], "%Y-%m-%d")
+                days = (now.replace(tzinfo=None) - since).days
+                return {"sign": cur_sign, "since": hit["since"],
+                        "days_ago": days, "phrase": _ingress_phrase(days, hit["since"])}
+        except Exception:
+            pass
+
+    # грубий крок назад, поки знак не зміниться
+    limit = _SCAN_LIMIT.get(key, 400)
+    step = 10 if limit > 200 else 2
+    prev = None
+    d = 0
+    while d < limit:
+        d += step
+        probe = now - timedelta(days=d)
+        sg = _sign_at(probe, key)
+        if sg and sg != cur_sign:
+            prev = probe
+            break
+    if prev is None:
+        return {"sign": cur_sign, "since": None, "days_ago": None,
+                "phrase": "у знаку " + str(cur_sign) + " щонайменше " + str(limit) + " днів"}
+
+    # уточнення по 1 дню вперед від точки зміни
+    cursor = prev
+    for _ in range(step + 2):
+        cursor = cursor + timedelta(days=1)
+        if _sign_at(cursor, key) == cur_sign:
+            break
+    since = cursor.strftime("%Y-%m-%d")
+    days = (now.replace(tzinfo=None) - cursor.replace(tzinfo=None)).days
+    if _K:
+        try:
+            cache[key] = {"sign": cur_sign, "since": since,
+                          "checked": now.strftime("%Y-%m-%d")}
+            _K.save(_INGRESS_CACHE_FILE, cache)
+        except Exception:
+            pass
+    return {"sign": cur_sign, "since": since, "days_ago": days,
+            "phrase": _ingress_phrase(days, since)}
+
+
+def _ingress_phrase(days, since) -> str:
+    """Правдиве формулювання: «щойно» ТІЛЬКИ якщо реально щойно."""
+    d = _fmt_date(since)
+    if days is None:
+        return "у цьому знаку (дата входу невідома)"
+    if days <= 7:
+        return "увійшов " + d + " — " + str(days) + " дн. тому (справді щойно)"
+    if days < 60:
+        return "у цьому знаку з " + d + " — уже " + str(days) + " дн."
+    months = round(days / 30.4)
+    if days < 400:
+        return "у цьому знаку з " + d + " — уже " + str(months) + " міс. (" + str(days) + " дн.)"
+    years = round(days / 365.25, 1)
+    return "у цьому знаку з " + d + " — уже " + str(years) + " р."
+
+
+def _fmt_date(iso) -> str:
+    if not iso:
+        return "невідомо"
+    try:
+        return datetime.strptime(iso, "%Y-%m-%d").strftime("%d.%m.%Y")
+    except Exception:
+        return str(iso)
+
+
+def ingress_facts(keys=None) -> str:
+    """Блок фактів для AI-промпту: де планета і З ЯКОГО ЧИСЛА. Проти вигадок."""
+    keys = keys or ["jupiter", "saturn", "uranus", "neptune", "pluto", "mars"]
+    rows = []
+    names = dict(PLANETS_LIST)
+    for k in keys:
+        info = ingress_info(k)
+        if not info:
+            continue
+        rows.append(names.get(k, k) + " — " + _sign_ua(info["sign"])
+                    + ": " + info["phrase"])
+    if not rows:
+        return ""
+    return ("ФАКТИЧНІ ПОЛОЖЕННЯ (обчислено по ефемеридах, дати точні):\n"
+            + "\n".join(rows)
+            + "\nЗАБОРОНЕНО писати «щойно увійшов», «нещодавно перейшов», "
+              "«тільки що змінив знак», якщо в даних вище стоїть інша давність. "
+              "Завжди спирайся на вказану дату.")
+
+
 def get_natal_transits_short(max_aspects=5):
     """
     Повертає короткий текстовий блок з актуальними транзитами до натальних планет.
@@ -877,9 +1017,13 @@ def get_natal_transits_short(max_aspects=5):
             for key, name_ua in PLANETS_LIST:
                 tp = getattr(transit, key, None)
                 if tp and tp.sign == asc_sign and key in ("jupiter", "saturn", "uranus", "neptune", "pluto"):
+                    # ПРАВДА, а не «щойно»: беремо ФАКТИЧНУ дату входу з ефемерид
+                    info = ingress_info(key)
+                    phrase = info.get("phrase") if info else None
                     ingress_lines.append(
-                        f"🌟 <b>{name_ua} увійшов у знак твого Асценденту ({_sign_ua(asc_sign) if '_sign_ua' in dir() else asc_sign})!</b> "
-                        f"Це РІДКІСНИЙ і ВАЖЛИВИЙ транзит — торкається особистості, зовнішнього вигляду, нового циклу в житті."
+                        f"🌟 <b>{name_ua} у знаку твого Асценденту ({_sign_ua(asc_sign)})</b> — "
+                        + (phrase or "дата входу не обчислена")
+                        + ". Рідкісний транзит: особистість, зовнішній вигляд, новий цикл."
                     )
         except Exception:
             pass
@@ -1136,8 +1280,12 @@ def get_astro_alerts():
         for name_ua, info in current_state.items():
             old_info = old_state.get(name_ua, {})
             if old_info.get("sign") and old_info["sign"] != info["sign"]:
+                _key_map = {v: k for k, v in PLANETS_LIST}
+                _ii = ingress_info(_key_map.get(name_ua, "")) if _key_map.get(name_ua) else {}
+                _when = (" (" + _ii.get("phrase", "") + ")") if _ii.get("phrase") else ""
                 alerts.append(
-                    f"🪐 <b>АСТРО-АЛЕРТ:</b> <b>{name_ua}</b> увійшов у <b>{info['sign']}</b>"
+                    f"🪐 <b>АСТРО-АЛЕРТ:</b> <b>{name_ua}</b> перейшов у <b>{info['sign']}</b>"
+                    + _when
                 )
             if old_info.get("house") and old_info["house"] != info["house"]:
                 alerts.append(
