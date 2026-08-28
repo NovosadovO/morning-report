@@ -782,5 +782,16 @@
     "label": "🙈 Не нагадуй",
     "state": "closed",
     "ts": "2026-08-28T07:44:49"
+  },
+  "bill|t|gemini закінчились prepayment credits весь ai аналіз вимкнено бот прац": {
+    "kind": "bill",
+    "key": "",
+    "tkey": "gemini закінчились prepayment credits весь ai аналіз вимкнено бот прац",
+    "title": "⚠️ Gemini: закінчились prepayment credits. Весь AI-аналіз вимкнено, бот працює на локальних fallback'ах без AI-інтерпрет",
+    "action": "later",
+    "label": "⏰ Пізніше",
+    "state": "snoozed",
+    "ts": "2026-08-28T16:32:21",
+    "until": "2026-08-28T22:32:21"
   }
 }
