@@ -1,7 +1,7 @@
 {
   "2026-08-28": {
     "checked": 88,
-    "issues": 71,
+    "issues": 72,
     "fixed": 33,
     "cut": 10
   },
@@ -117,7 +117,8 @@
       "checked": 1
     },
     "MSG_EVENING": {
-      "checked": 1
+      "checked": 1,
+      "issues": 1
     }
   },
   "last": [
