@@ -1,4 +1,79 @@
 {
+  "action_detect|2026-08-28t09_11_01_026044": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є крипто дашбордом з інформацією про різні ",
+    "ts": "2026-08-28T09:11:01.026044"
+  },
+  "email_ai_item|2026-08-28t09_04_23_699297": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від Discord інформує Олега про пропущені повідомлення в каналі VenomBridge. Лист містить внутрішні дані про Олега, такі як пропущені з",
+    "ts": "2026-08-28T09:04:23.699297"
+  },
+  "action_detect|2026-08-28t09_04_08_375352": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу нео",
+    "ts": "2026-08-28T09:04:08.375352"
+  },
+  "action_detect|2026-08-28t09_03_57_045509": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжні дані Strava\", \"action_date\": \"2026-08-04\", \"action_time\": null, \"action_summary\": \"Оновити платіжн",
+    "ts": "2026-08-28T09:03:57.045509"
+  },
+  "action_detect|2026-08-28t09_03_46_014841": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-08-28\", \"action_time\": null, \"action_summary\": \"Відмітити прийняття ліків",
+    "ts": "2026-08-28T09:03:46.014841"
+  },
+  "action_detect|2026-08-28t09_03_35_182031": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію та продовжити підписку Strava\", \"action_date\": \"2026-08-28\", \"action_time\": \"09:00\", \"a",
+    "ts": "2026-08-28T09:03:35.182031"
+  },
+  "briefing_truthfix|2026-08-28t09_03_28_983160": {
+    "topic": "briefing/truthfix",
+    "gist": "Після нічної зміни, яка завершилася о 05:00 за лондонським часом, і з урахуванням того, що дані про здоров'я оновлювалися 9 годин тому, а дані Strava доступні л",
+    "ts": "2026-08-28T09:03:28.983160"
+  },
+  "briefing|2026-08-28t09_03_24_582641": {
+    "topic": "briefing",
+    "gist": "🧭 ВЕКТОР ДНЯ Сьогодні, після нічної зміни, найважливішим для тебе є відновлення, яке закладає фундамент для всіх твоїх амбітних цілей. Попри зниження активності",
+    "ts": "2026-08-28T09:03:24.582641"
+  },
+  "themes_ai_truthfix|2026-08-28t09_03_13_226420": {
+    "topic": "themes_ai/truthfix",
+    "gist": "Олеже, зараз 09:03, ти після нічної зміни, яка завершилася о 05:00 за лондонським часом, і відновлення є пріоритетом.  💰 **ФІНАНСИ** За даними, витрати цього мі",
+    "ts": "2026-08-28T09:03:13.226420"
+  },
+  "themes_ai|2026-08-28t09_03_07_538382": {
+    "topic": "themes_ai",
+    "gist": "Олеже, зараз 09:02, ти після нічної зміни, і відновлення є пріоритетом.  💰 ФІНАНСИ Бачу, що цього місяця вже витрачено 1.98€, але чекає оплати 422.16€, і є два ",
+    "ts": "2026-08-28T09:03:07.538382"
+  },
+  "astro_ai|2026-08-28t09_02_56_523244": {
+    "topic": "astro_ai",
+    "gist": "Олеже, Юпітер перебуває у Леві, прямо на твоєму Асценденті, вже 58 днів, запускаючи новий 12-річний цикл, який сильно впливає на твоє самосприйняття та зовнішні",
+    "ts": "2026-08-28T09:02:56.523244"
+  },
+  "email_ai_item|2026-08-28t09_02_38_115991": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Booking.com повідомляє про скасування активності через непередбачені обставини та обіцяє повне повернення коштів. Процес повернення зай",
+    "ts": "2026-08-28T09:02:38.115991"
+  },
+  "email_ai_item|2026-08-28t09_02_27_042171": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Booking.com повідомляє про скасування раніше заброньованої активності через непередбачені обставини та вибачається за незручності. Вони",
+    "ts": "2026-08-28T09:02:27.042171"
+  },
+  "email_ai_item|2026-08-28t09_02_16_790411": {
+    "topic": "email_ai_item",
+    "gist": "```json { \"description\": \"Лист від Pelikan.sk нагадує Олегу Новосадову про необхідність онлайн-реєстрації на рейс Ryanair з кодом бронювання Y9SB5U. Реєстрація ",
+    "ts": "2026-08-28T09:02:16.790411"
+  },
+  "email_ai_item|2026-08-28t09_02_04_906045": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є автоматичним підписом електронної пошти від Олега Новосадова, Line Leader у Minebea Slovakia s.r.o. Він містить контактні да",
+    "ts": "2026-08-28T09:02:04.906045"
+  },
   "email_ai_item|2026-08-28t09_01_54_181572": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист від Runable інформує про успішне залучення $21 млн у рамках раунду фінансування Series A. Компанія дякує користувачам за підтри",
@@ -223,80 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Невдала оплата Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оплата $10.00 до Runable була",
     "ts": "2026-08-28T07:43:32.575203"
-  },
-  "action_detect|2026-08-28t07_43_32_565557": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зміна логіну\", \"action_date\": \"2026-09-10\", \"action_time\": null, \"action_summary\": \"Зміна логіну переноситься на 10",
-    "ts": "2026-08-28T07:43:32.565557"
-  },
-  "action_detect|2026-08-28t07_43_21_657436": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зміна логіну\", \"action_date\": \"2026-09-10\", \"action_time\": null, \"action_summary\": \"Зміна логіну переноситься на 10",
-    "ts": "2026-08-28T07:43:21.657436"
-  },
-  "action_detect|2026-08-28t07_43_21_584737": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Невдалий платіж Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Платіж $10.00 до Runable був",
-    "ts": "2026-08-28T07:43:21.584737"
-  },
-  "action_detect|2026-08-28t07_43_21_580718": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Невдалий платіж Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Платіж $10.00 до Runable був",
-    "ts": "2026-08-28T07:43:21.580718"
-  },
-  "action_detect|2026-08-28t07_43_21_462041": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-28T07:43:21.462041"
-  },
-  "action_detect|2026-08-28t07_43_21_380909": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-28T07:43:21.380909"
-  },
-  "action_detect|2026-08-28t07_43_10_469947": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-28T07:43:10.469947"
-  },
-  "selfact|2026-08-28t07_25_59_986322": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оновити платіжні дані Runable\",     \"text\": \"Олег, нагадую, що платіж до Runable на $10.00 знову був невдали",
-    "ts": "2026-08-28T07:25:59.986322"
-  },
-  "proactive_ai_truthfix|2026-08-28t07_17_08_990548": {
-    "topic": "proactive_ai/truthfix",
-    "gist": "Олеже, ти щойно завершив нічну зміну, яка тривала до 05:00 28 серпня 2026 року, і зараз 07:17.  Дані про твій сон за 27 серпня, яким 31 година, показують 7.2 го",
-    "ts": "2026-08-28T07:17:08.990548"
-  },
-  "proactive_ai|2026-08-28t07_16_59_980787": {
-    "topic": "proactive_ai",
-    "gist": "Привіт, Олеже! Бачу, ти щойно після нічної зміни і відпочиваєш вдома, як і вчора казав. Сподіваюся, добре відновишся після роботи.  Як зараз почуваєшся?",
-    "ts": "2026-08-28T07:16:59.980787"
-  },
-  "action_detect|2026-08-28t07_03_30_911184": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити рахунки та підписки\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Важливо реально оцінюва",
-    "ts": "2026-08-28T07:03:30.911184"
-  },
-  "action_detect|2026-08-28t07_03_30_827272": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить рекомендацію записувати ідеї, а також і",
-    "ts": "2026-08-28T07:03:30.827272"
-  },
-  "action_detect|2026-08-28t07_03_20_022802": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжні дані Strava та Runable\", \"action_date\": null, \"action_time\": \"09:00\", \"action_summary\": \"Використа",
-    "ts": "2026-08-28T07:03:20.022802"
-  },
-  "action_detect|2026-08-28t07_03_06_687556": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки не в",
-    "ts": "2026-08-28T07:03:06.687556"
-  },
-  "action_detect|2026-08-28t07_03_06_675616": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновлення платіжних даних для Runable\", \"action_date\": \"2026-08-28\", \"action_time\": \"09:00\", \"action_summary\": \"Оно",
-    "ts": "2026-08-28T07:03:06.675616"
   }
 }
