@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-28t11_00_00_065437": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, сьогодні о 17:00 у тебе починається нічна зміна (18:00-06:00). Зверни увагу, що ти пропустив прийом Armol",
+    "ts": "2026-08-28T11:00:00.065437"
+  },
   "action_detect|2026-08-28t10_50_18_496854": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний прогноз, інформацію про п",
@@ -293,10 +298,5 @@
     "topic": "calendar",
     "gist": "Олеже, бачу, що через 4 дні на тебе чекає не лише день народження Олі, а й дуже насичений день: рання зміна з 06:00 до 18:00, а вже о 13:00 — поїздка до Малаги.",
     "ts": "2026-08-28T09:01:10.498256"
-  },
-  "action_detect|2026-08-28t09_00_46_754400": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-28T09:00:46.754400"
   }
 }
