@@ -1,6 +1,6 @@
 {
   "2026-08-28": {
-    "checked": 59,
+    "checked": 60,
     "issues": 49,
     "fixed": 20,
     "cut": 10
@@ -97,6 +97,9 @@
       "checked": 1,
       "issues": 1,
       "cut": 1
+    },
+    "MSG_VIP_EMAIL": {
+      "checked": 1
     }
   },
   "last": [
