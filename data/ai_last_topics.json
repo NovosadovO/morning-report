@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-08-29t01_30_22_153082": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн-реєстрація на рейс Ryanair\",     \"date\": \"2026-08-31\",     \"time\": \"12:00\",     \"message\": \"Олеже, на",
+    "ts": "2026-08-29T01:30:22.153082"
+  },
   "action_detect|2026-08-29t01_23_35_058087": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Ryanair\", \"action_date\": \"2020-08-31\", \"action_time\": \"12:00\", \"action_summary\": \"Олегу п",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від Forbes через LinkedIn містить статтю про найбільш високооплачуваних тенісистів світу, які за останній рік заробили $333",
     "ts": "2026-08-28T23:26:26.869718"
-  },
-  "action_detect|2026-08-28t23_22_32_249708": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пройти онлайн-реєстрацію на рейс до Малаги\", \"action_date\": \"2023-09-01\", \"action_time\": null, \"action_summary\": \"Н",
-    "ts": "2026-08-28T23:22:32.249708"
   }
 }
