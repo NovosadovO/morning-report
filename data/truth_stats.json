@@ -1,6 +1,6 @@
 {
   "2026-08-28": {
-    "checked": 20,
+    "checked": 21,
     "issues": 17,
     "fixed": 9
   },
@@ -42,6 +42,9 @@
     "allctx_ask": {
       "checked": 1,
       "issues": 1
+    },
+    "calendar": {
+      "checked": 1
     }
   },
   "last": [
