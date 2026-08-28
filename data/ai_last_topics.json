@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-28t23_31_23_215066": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пройти онлайн-реєстрацію на рейс\", \"action_date\": \"2023-09-01\", \"action_time\": null, \"action_summary\": \"Олегу потрі",
+    "ts": "2026-08-28T23:31:23.215066"
+  },
   "email_ai_item|2026-08-28t23_26_26_869718": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від Forbes через LinkedIn містить статтю про найбільш високооплачуваних тенісистів світу, які за останній рік заробили $333",
@@ -293,10 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-08-28T21:26:34.754523"
-  },
-  "action_detect|2026-08-28t21_26_03_435632": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Поїздка в Малагу та День народження Олі\",   \"action_date\": \"2026-09-01\",   \"action_time\": null,   \"act",
-    "ts": "2026-08-28T21:26:03.435632"
   }
 }
