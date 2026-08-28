@@ -2,7 +2,7 @@
   "2026-08-28": {
     "checked": 5,
     "issues": 5,
-    "fixed": 2
+    "fixed": 3
   },
   "by_tag": {
     "MSG_EVENT_SOON": {
@@ -16,7 +16,8 @@
     },
     "astro_ai": {
       "checked": 2,
-      "issues": 2
+      "issues": 2,
+      "fixed": 1
     },
     "personal_ai": {
       "checked": 1,
