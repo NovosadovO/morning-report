@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-08-28t03_00_21_809051": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Сплатити Runable $10.00\",     \"date\": \"2026-08-28\",     \"time\": \"08:00\",     \"message\": \"Олеже, у тебе є три",
+    "ts": "2026-08-28T03:00:21.809051"
+  },
   "action_detect|2026-08-28t02_54_35_095257": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-08-28\", \"action_time\": null, \"action_summary\": \"Олегу потрібно прийн",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2023-08-28\", \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти A",
     "ts": "2026-08-28T01:03:06.958252"
-  },
-  "action_detect|2026-08-28t01_03_06_887299": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"09:00\", \"action_summary\": \"Відсвяткувати день на",
-    "ts": "2026-08-28T01:03:06.887299"
   }
 }
