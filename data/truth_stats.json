@@ -2,7 +2,7 @@
   "2026-08-28": {
     "checked": 35,
     "issues": 30,
-    "fixed": 12,
+    "fixed": 13,
     "cut": 5
   },
   "by_tag": {
@@ -76,7 +76,8 @@
     },
     "assistant": {
       "checked": 1,
-      "issues": 1
+      "issues": 1,
+      "fixed": 1
     }
   },
   "last": [
