@@ -7864,6 +7864,16 @@
         "kind": "reminder",
         "date": "2026-08-28"
       }
+    },
+    {
+      "ts": "2026-08-28T03:00:32.498348+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити зміну логіну Socios.com",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-10"
+      }
     }
   ]
 }
