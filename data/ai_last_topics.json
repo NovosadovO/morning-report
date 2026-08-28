@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-28t10_29_13_395236": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення платіжних даних для Runable\",     \"text\": \"Олег, платіж до Runable на $10.00 був невдалим. Потрібно ",
+    "ts": "2026-08-28T10:29:13.395236"
+  },
   "action_detect|2026-08-28t10_19_57_798036": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Онлайн реєстрація на рейс\",     \"text\": \"Олег, не забудь, що онлайн-реєстрація на рейс до Малаги відкриваєть",
     "ts": "2026-08-28T08:26:30.216258"
-  },
-  "action_detect|2026-08-28t08_19_30_285443": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-28T08:19:30.285443"
   }
 }
