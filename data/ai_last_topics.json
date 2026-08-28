@@ -1,4 +1,9 @@
 {
+  "subs|2026-08-28t20_14_17_327190": {
+    "topic": "subs",
+    "gist": "[]",
+    "ts": "2026-08-28T20:14:17.327190"
+  },
   "selfact|2026-08-28t20_05_45_454032": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що підписка на Runable знову не пройшла оплату сьогодні (28.08). Це вже четверта невдала сп",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-28T13:00:17.816707"
-  },
-  "action_detect|2026-08-28t12_51_09_778103": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-08-28T12:51:09.778103"
   }
 }
