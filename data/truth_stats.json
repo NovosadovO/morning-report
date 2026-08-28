@@ -2,7 +2,7 @@
   "2026-08-28": {
     "checked": 99,
     "issues": 78,
-    "fixed": 33,
+    "fixed": 34,
     "cut": 10
   },
   "by_tag": {
@@ -128,7 +128,8 @@
     },
     "MSG_HABIT_CHECKIN": {
       "checked": 1,
-      "issues": 1
+      "issues": 1,
+      "fixed": 1
     }
   },
   "last": [
