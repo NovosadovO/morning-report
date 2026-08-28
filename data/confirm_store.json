@@ -6885,7 +6885,24 @@
     "action": "calrem_skip",
     "pid": "gen_1787882651726",
     "subject": "Переглянути рахунки",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 79203,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1787882651726"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1787882651726"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-28T04:45:33.217685+00:00"
   }
 }
