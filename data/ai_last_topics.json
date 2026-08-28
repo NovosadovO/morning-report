@@ -1,4 +1,19 @@
 {
+  "selfact|2026-08-28t12_30_10_926609": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення платіжних даних Runable\",     \"text\": \"Нагадую, що сьогодні, 28.08, о 08:00 було заплановане оновлен",
+    "ts": "2026-08-28T12:30:10.926609"
+  },
+  "email_ai_item|2026-08-28t12_25_49_543772": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Лист від TradingView нагадує про обмежену пропозицію зі знижкою до 80%. Це маркетингове повідомлення, що спонукає до покупки підписк",
+    "ts": "2026-08-28T12:25:49.543772"
+  },
+  "action_detect|2026-08-28t12_25_37_571269": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити простроче",
+    "ts": "2026-08-28T12:25:37.571269"
+  },
   "msg_vip_email|2026-08-28t12_25_24_884739": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🏹 Попри твій відпочинок після нічної зміни, варто подивитися на дані з прицілом на майбутнє, адже деякі пропущені кроки можуть коштувати тобі біль",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжні дані для Runable\", \"action_date\": \"2026-08-28\", \"action_time\": \"09:00\", \"action_summary\": \"Не забу",
     "ts": "2026-08-28T11:00:23.795059"
-  },
-  "selfact|2026-08-28t11_00_00_065437": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, сьогодні о 17:00 у тебе починається нічна зміна (18:00-06:00). Зверни увагу, що ти пропустив прийом Armol",
-    "ts": "2026-08-28T11:00:00.065437"
-  },
-  "action_detect|2026-08-28t10_50_18_496854": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний прогноз, інформацію про п",
-    "ts": "2026-08-28T10:50:18.496854"
-  },
-  "mailcal_extract|2026-08-28t10_49_01_981482": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"78154\",     \"title\": \"Dni mesta Krásno nad Kysucou\",     \"date\": \"2026-08-28\",     \"time\": null,     \"kind\": \"other\",     \"why\": \"Dni ",
-    "ts": "2026-08-28T10:49:01.981482"
   }
 }
