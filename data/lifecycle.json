@@ -64,5 +64,16 @@
     "keyword": "парковка Кошице",
     "source": "email:78018",
     "ts": "2026-08-26T11:57:35.332679+00:00"
+  },
+  "google cloud platform apis": {
+    "entity": "Google Cloud Platform & APIs",
+    "kind": "bill",
+    "state": "paid",
+    "valid_from": null,
+    "valid_to": null,
+    "next_due": null,
+    "keyword": "Google Cloud Platform",
+    "source": "email:78188",
+    "ts": "2026-08-28T19:39:13.271682+00:00"
   }
 }
