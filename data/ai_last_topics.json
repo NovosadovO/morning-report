@@ -1,4 +1,34 @@
 {
+  "selfact|2026-08-28t02_19_56_429244": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Важливі новини DeFi та крипторинку\",     \"text\": \"Олеже, у свіжих листах є важливі новини: Ethena пропонує спр",
+    "ts": "2026-08-28T02:19:56.429244"
+  },
+  "action_detect|2026-08-28t02_14_33_004574": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-08-28\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
+    "ts": "2026-08-28T02:14:33.004574"
+  },
+  "astro_ai|2026-08-28t02_13_44_641051": {
+    "topic": "astro_ai",
+    "gist": "Олеже, почнемо з глибинних змін, які зараз розгортаються, а не з швидкоплинних подій, що в.  **🌍 ТРАНЗИТИ СЬОГОДНІ: Переосмислення особистості під тиском ідей**",
+    "ts": "2026-08-28T02:13:44.641051"
+  },
+  "action_detect|2026-08-28t02_11_23_631800": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після зміни прийми Armolo",
+    "ts": "2026-08-28T02:11:23.631800"
+  },
+  "msg_deep_analysis|2026-08-28t02_11_16_099087": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "П'ятниця, 02:11 — до кінця зміни залишилося менше 4 годин. Втрачений час сну сьогодні означає ризик для відновлення: як плануєш його компенсувати, щоб не зашкод",
+    "ts": "2026-08-28T02:11:16.099087"
+  },
+  "action_detect|2026-08-28t02_11_01_524584": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після завершення зміни не за",
+    "ts": "2026-08-28T02:11:01.524584"
+  },
   "msg_event_soon|2026-08-28t02_10_51_226580": {
     "topic": "MSG_EVENT_SOON",
     "gist": "Привіт Олеже! ✅  Ти продовжуєш нічну зміну, зараз 02:10, і попереду ще кілька годин до 06:00. Це чудовий момент, щоб сфокусуватися на стратегії та відновленні. ",
@@ -268,35 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
     "ts": "2026-08-28T00:02:43.686249"
-  },
-  "action_detect|2026-08-28t00_02_32_620044": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus та виконати вечірній догляд за обличчям\", \"action_date\": null, \"action_time\": \"06:00\", \"act",
-    "ts": "2026-08-28T00:02:32.620044"
-  },
-  "action_detect|2026-08-28t00_02_20_282915": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2023-08-28\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийнят",
-    "ts": "2026-08-28T00:02:20.282915"
-  },
-  "action_detect|2026-08-28t00_02_20_208582": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Runable\", \"action_date\": \"2026-08-28\", \"action_time\": \"09:00\", \"action_summary\": \"Оплатити Runable $10.00.\"}",
-    "ts": "2026-08-28T00:02:20.208582"
-  },
-  "action_detect|2026-08-28t00_02_09_316433": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2020-08-28\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
-    "ts": "2026-08-28T00:02:09.316433"
-  },
-  "briefing|2026-08-28t00_02_05_798929": {
-    "topic": "briefing",
-    "gist": "Олеже, зараз глибока ніч, 00:01, і ти на нічній зміні, яка триватиме ще 6 годин.  🧭 ВЕКТОР ДНЯ Твій фінансовий вектор сьогодні найближчий до прориву, адже крипт",
-    "ts": "2026-08-28T00:02:05.798929"
-  },
-  "themes_ai|2026-08-28t00_01_50_627289": {
-    "topic": "themes_ai",
-    "gist": "Олеже, що зараз є найпріоритетнішим?  Твоя вага складає 83.5 кг, при цільовому показнику 78 кг. Остання пробіжка була 25 днів тому, 2 серпня. За сьогодні не вик",
-    "ts": "2026-08-28T00:01:50.627289"
   }
 }
