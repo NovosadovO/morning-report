@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-08-28t09_17_00_157802": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-28T09:17:00.157802"
+  },
+  "openloop_promises|2026-08-28t09_14_38_876938": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-28T09:14:38.876938"
+  },
   "action_detect|2026-08-28t09_11_01_026044": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є крипто дашбордом з інформацією про різні ",
@@ -288,15 +298,5 @@
     "topic": "openloop_promises",
     "gist": "```json [] ```",
     "ts": "2026-08-28T07:43:55.171066"
-  },
-  "people|2026-08-28t07_43_34_456554": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"info@ionian-cruises.com\",     \"name\": \"Ionian Cruises\",     \"relation\": \"сервіс\",     \"topics\": [\"скасування круїзу\"],     \"my_promi",
-    "ts": "2026-08-28T07:43:34.456554"
-  },
-  "action_detect|2026-08-28t07_43_32_575203": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Невдала оплата Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оплата $10.00 до Runable була",
-    "ts": "2026-08-28T07:43:32.575203"
   }
 }
