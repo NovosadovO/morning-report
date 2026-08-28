@@ -266,16 +266,19 @@
     "pinged_at": ""
   },
   "info@ionian-cruises.com": {
-    "name": "Ionian Cruises",
+    "name": "Spiros",
     "relation": "сервіс",
     "vip": false,
     "topics": [
-      "скасування круїзу"
+      "скасування круїзу",
+      "повернення коштів"
     ],
     "my_promises": [],
-    "their_promises": [],
+    "their_promises": [
+      "повернення коштів протягом 7-10 робочих днів"
+    ],
     "open_question": "",
-    "next_step": "Написати Ionian Cruises, щоб дізнатися про статус скасування круїзу.",
+    "next_step": "Перевірити, чи надійшли кошти за скасований круїз протягом 7-10 робочих днів.",
     "ping_in_days": 0,
     "last_in": "",
     "last_subject": "",
