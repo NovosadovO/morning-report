@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-28t13_00_17_816707": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-28T13:00:17.816707"
+  },
   "action_detect|2026-08-28t12_51_09_778103": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від AllEvents інформує Олега про популярні події, що відбудуться цими вихідними та наступного тижня в Жиліні та околицях. С",
     "ts": "2026-08-28T11:01:08.574678"
-  },
-  "action_detect|2026-08-28t11_00_53_835898": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відновити сон\", \"action_date\": \"2026-08-28\", \"action_time\": null, \"action_summary\": \"Вимкнути всі сповіщення і спро",
-    "ts": "2026-08-28T11:00:53.835898"
   }
 }
