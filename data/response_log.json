@@ -7919,6 +7919,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_cb012d9963"
+    },
+    {
+      "ts": "2026-08-28T16:29:57.347299+00:00",
+      "category": "day_energy",
+      "question": "Як ти сьогодні",
+      "answer": "Втома",
+      "extra": {
+        "shift": "night"
+      }
     }
   ]
 }
