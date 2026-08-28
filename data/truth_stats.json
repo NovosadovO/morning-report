@@ -1,6 +1,6 @@
 {
   "2026-08-28": {
-    "checked": 6,
+    "checked": 7,
     "issues": 6,
     "fixed": 3
   },
@@ -27,6 +27,9 @@
     "themes_ai": {
       "checked": 1,
       "issues": 1
+    },
+    "briefing": {
+      "checked": 1
     }
   },
   "last": [
