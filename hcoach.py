@@ -464,30 +464,52 @@ def chart(days: int = 30) -> bytes:
 
 
 def send_chart(days: int = 30, caption: str = "") -> bool:
-    png = chart(days)
+    _log("send_chart START days=" + str(days))
+    try:
+        png = chart(days)
+    except Exception as e:
+        import traceback
+        _log("chart() EXCEPTION: " + str(e))
+        _log(traceback.format_exc()[-800:])
+        K.send_card("⚠️ Графік не намалювався: " + str(e)[:200], None, tag=TAG)
+        return False
+    _log("chart bytes=" + str(len(png or b"")))
     if not png:
         K.send_card("📈 Графіка немає — замало даних по здоров'ю.", None, tag=TAG)
         return False
     token = os.environ.get("TELEGRAM_TOKEN", "")
     chat = os.environ.get("TELEGRAM_CHAT_ID", "")
     if not token or not chat:
+        _log("sendPhoto SKIP: token=" + str(bool(token)) + " chat=" + str(bool(chat)))
         return False
     try:
         try:
             import requests as _rq
+            _log("sendPhoto via requests")
         except ImportError:
             import httpreq as _rq
+            _log("sendPhoto via httpreq")
         r = _rq.post("https://api.telegram.org/bot" + token + "/sendPhoto",
                      data={"chat_id": chat, "caption": caption[:900],
                            "parse_mode": "HTML"},
                      files={"photo": ("health.png", png, "image/png")},
                      timeout=60)
-        ok = bool(getattr(r, "ok", False))
+        code = getattr(r, "status_code", "?")
+        try:
+            body = (r.text or "")[:300]
+        except Exception:
+            body = "?"
+        _log("sendPhoto HTTP " + str(code) + " " + body)
+        ok = (code == 200)
         if not ok:
-            _log("sendPhoto: " + str(getattr(r, "status_code", "?")))
+            K.send_card("⚠️ Telegram не прийняв графік: " + str(code)
+                        + " " + body[:200], None, tag=TAG)
         return ok
     except Exception as e:
+        import traceback
         _log("sendPhoto error: " + str(e))
+        _log(traceback.format_exc()[-800:])
+        K.send_card("⚠️ Графік не відправився: " + str(e)[:200], None, tag=TAG)
         return False
 
 
