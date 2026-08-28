@@ -1,7 +1,7 @@
 {
   "2026-08-28": {
     "checked": 39,
-    "issues": 33,
+    "issues": 34,
     "fixed": 14,
     "cut": 7
   },
@@ -81,7 +81,8 @@
       "fixed": 1
     },
     "proactive_ai": {
-      "checked": 1
+      "checked": 1,
+      "issues": 1
     }
   },
   "last": [
