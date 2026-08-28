@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-28t19_39_04_626800": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Google Payments підтверджує отримання платежу в розмірі 10,00 EUR для облікового запису Google Cloud Platform & APIs. Плат",
+    "ts": "2026-08-28T19:39:04.626800"
+  },
   "selfact|2026-08-28t19_34_57_464898": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Бюджет Google Cloud досягнуто\",     \"text\": \"Олег, зверни увагу, що твій бюджет Google Cloud у розмірі €16.00 ",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"UniCredit Bank інформує про реконструкцію відділення Košice Rooseveltova, яка розпочнеться 4 вересня. Лист не містить жодних конкретних",
     "ts": "2026-08-28T12:01:05.284453"
-  },
-  "action_detect|2026-08-28t12_00_52_587890": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Легкий протеїновий обід\", \"action_date\": \"2026-08-28\", \"action_time\": \"12:00\", \"action_summary\": \"Зробити легкий пр",
-    "ts": "2026-08-28T12:00:52.587890"
   }
 }
