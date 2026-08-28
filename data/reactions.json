@@ -742,5 +742,15 @@
     "label": "🙈 Не нагадуй",
     "state": "closed",
     "ts": "2026-08-28T06:57:03"
+  },
+  "health|t|здоров я": {
+    "kind": "health",
+    "key": "",
+    "tkey": "здоров я",
+    "title": "ЗДОРОВ'Я",
+    "action": "done",
+    "label": "✅ Зробив",
+    "state": "closed",
+    "ts": "2026-08-28T07:42:49"
   }
 }
