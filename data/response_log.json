@@ -7940,6 +7940,12 @@
       "category": "confirm",
       "question": "gate_fu_skip: 📭 ЧЕКАЄШ ВІДПОВІДЬ 9 дн.",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-28T16:32:48.929428+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "fu_skip_d94a5a07c5"
     }
   ]
 }
