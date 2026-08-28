@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-08-28t04_43_09_276179": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-28T04:43:09.276179"
+  },
   "selfact|2026-08-28t04_23_05_989323": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Проблеми з оплатою Runable\",     \"text\": \"Олег, зверни увагу: є кілька листів від Runable про невдалі платежі ",
@@ -293,10 +298,5 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Сплатити Runable $10.00\",     \"date\": \"2026-08-28\",     \"time\": \"08:00\",     \"message\": \"Олеже, у тебе є три",
     "ts": "2026-08-28T03:00:21.809051"
-  },
-  "action_detect|2026-08-28t02_54_35_095257": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-08-28\", \"action_time\": null, \"action_summary\": \"Олегу потрібно прийн",
-    "ts": "2026-08-28T02:54:35.095257"
   }
 }
