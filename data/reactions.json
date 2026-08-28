@@ -642,5 +642,15 @@
     "label": "👌 Прийняв",
     "state": "open",
     "ts": "2026-08-28T01:19:06"
+  },
+  "generic|t|невдалий платіж runable": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "невдалий платіж runable",
+    "title": "Невдалий платіж Runable",
+    "action": "ok",
+    "label": "👌 Прийняв",
+    "state": "open",
+    "ts": "2026-08-28T02:05:24"
   }
 }
