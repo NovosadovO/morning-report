@@ -8130,6 +8130,16 @@
         "kind": "reminder",
         "date": "2026-08-31"
       }
+    },
+    {
+      "ts": "2026-08-29T01:30:35.173348+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Прийняти Armolopid Plus",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-29"
+      }
     }
   ]
 }
