@@ -1,4 +1,24 @@
 {
+  "action_detect|2026-08-28t10_50_18_496854": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний прогноз, інформацію про п",
+    "ts": "2026-08-28T10:50:18.496854"
+  },
+  "mailcal_extract|2026-08-28t10_49_01_981482": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"78154\",     \"title\": \"Dni mesta Krásno nad Kysucou\",     \"date\": \"2026-08-28\",     \"time\": null,     \"kind\": \"other\",     \"why\": \"Dni ",
+    "ts": "2026-08-28T10:49:01.981482"
+  },
+  "astro_ai_truthfix|2026-08-28t10_46_43_663117": {
+    "topic": "astro_ai/truthfix",
+    "gist": "Олеже, зараз п'ятниця, 28 серпня 2026 року, 10:46. Ти щойно після нічної зміни, і твої останні дані про сон, які були 11 годин тому, показують 7.2 години, що ни",
+    "ts": "2026-08-28T10:46:43.663117"
+  },
+  "astro_ai|2026-08-28t10_46_38_454118": {
+    "topic": "astro_ai",
+    "gist": "Привіт, Олеже! Сьогодні п'ятниця, 28 серпня 2026 року, 10:46. Після нічної зміни твоє тіло відновлюється, що дуже важливо враховувати в поточних астрологічних в",
+    "ts": "2026-08-28T10:46:38.454118"
+  },
   "openloop_promises|2026-08-28t10_45_37_333486": {
     "topic": "openloop_promises",
     "gist": "```json [   {     \"what\": \"прикріпити скріншоти повідомлень від туроператора\",     \"to\": \"Booking.com Customer Service\",     \"date\": null   } ] ```",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-28T09:00:46.754400"
-  },
-  "action_detect|2026-08-28t09_00_29_600403": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-28T09:00:29.600403"
-  },
-  "selfact|2026-08-28t08_57_37_018892": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання\",     \"text\": \"Олег, твоє бронювання 'Paxos and Antipaxos Boat Tour from Corfu' було скас",
-    "ts": "2026-08-28T08:57:37.018892"
-  },
-  "msg_rwa_truthfix|2026-08-28t08_44_36_603865": {
-    "topic": "MSG_RWA/truthfix",
-    "gist": "Олеже, дивись, маємо нетипову ситуацію з RWA сектором, яка прямо стосується твого ONDO. За даними, які були оновлені 9 годин тому, токенізований фонд FIGR_HELOC",
-    "ts": "2026-08-28T08:44:36.603865"
-  },
-  "msg_rwa|2026-08-28t08_44_25_681221": {
-    "topic": "MSG_RWA",
-    "gist": "Олеже, дивись, маємо нетипову ситуацію з RWA сектором, яка прямо стосується твого ONDO. Токенізований фонд FIGR_HELOC (Figure Heloc), який по суті мав би бути с",
-    "ts": "2026-08-28T08:44:25.681221"
   }
 }
