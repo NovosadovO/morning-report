@@ -1,6 +1,6 @@
 {
   "2026-08-28": {
-    "checked": 1,
+    "checked": 2,
     "issues": 1,
     "fixed": 1
   },
@@ -9,6 +9,9 @@
       "checked": 1,
       "issues": 1,
       "fixed": 1
+    },
+    "MSG_DEEP_ANALYSIS": {
+      "checked": 1
     }
   },
   "last": [
