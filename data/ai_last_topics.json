@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-08-29t01_59_53_476000": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-29T01:59:53.476000"
+  },
   "openloop_promises|2026-08-29t01_50_20_823604": {
     "topic": "openloop_promises",
     "gist": "```json [   {     \"what\": \"прикріплюю скріншоти повідомлень, які я отримав від туроператора\",     \"to\": \"Booking.com Customer Service\",     \"date\": null   } ] `",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу: онлайн-реєстрація на ваш рейс Ryanair до Малаги відкривається 31 серпня о 12:00, за 24 го",
     "ts": "2026-08-28T23:40:41.550030"
-  },
-  "action_detect|2026-08-28t23_33_29_178783": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Олегу потр",
-    "ts": "2026-08-28T23:33:29.178783"
   }
 }
