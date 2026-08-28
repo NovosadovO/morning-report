@@ -8084,6 +8084,12 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "ONDO (твоя позиція) впав на 7.4% за 24 години (зараз $0.35314)"
+    },
+    {
+      "ts": "2026-08-29T00:46:55.154492+00:00",
+      "category": "confirm",
+      "question": "gate_bill_due_paid: 🔴 ПРОСТРОЧЕНИЙ РАХУНОК (3 дн.)",
+      "answer": "yes"
     }
   ]
 }
