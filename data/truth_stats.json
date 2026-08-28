@@ -2,7 +2,7 @@
   "2026-08-28": {
     "checked": 114,
     "issues": 88,
-    "fixed": 38,
+    "fixed": 39,
     "cut": 10
   },
   "by_tag": {
@@ -125,7 +125,8 @@
     },
     "MSG_IDLE_TIMEOUT": {
       "checked": 2,
-      "issues": 1
+      "issues": 1,
+      "fixed": 1
     },
     "MSG_HABIT_CHECKIN": {
       "checked": 1,
