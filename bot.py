@@ -3212,7 +3212,10 @@ def handle_command(chat_id, text):
         import threading as _th_f
         _th_f.Thread(target=_run_fu, daemon=True, name="followup-cmd").start()
 
-    elif text.lower().strip().startswith(("/зміни", "/графік", "зміни:", "графік:", "/shifts")):
+    elif (text.lower().strip().startswith(("/зміни", "/графік", "зміни:",
+                                           "графік:", "/shifts"))
+          and text.lower().strip() not in ("/графік_здоров", "/графікз",
+                                           "/графік_здоровя", "/графікздоров")):
         import re as _re_sh
         _sched_txt = _re_sh.sub(r"^\s*(/зміни|/графік|/shifts|зміни:|графік:)\s*", "",
                                 text.strip(), flags=_re_sh.IGNORECASE)
