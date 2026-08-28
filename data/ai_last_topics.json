@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-28t04_23_05_989323": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Проблеми з оплатою Runable\",     \"text\": \"Олег, зверни увагу: є кілька листів від Runable про невдалі платежі ",
+    "ts": "2026-08-28T04:23:05.989323"
+  },
   "action_detect|2026-08-28t04_18_34_531211": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-08-28\", \"action_time\": null, \"action_summary\": \"Олегу потрібно прийн",
     "ts": "2026-08-28T02:54:35.095257"
-  },
-  "astro_ai_truthfix|2026-08-28t02_53_11_554420": {
-    "topic": "astro_ai/truthfix",
-    "gist": "Олеже, зараз 02:53, ти на нічній зміні. Дані, які я маю, не є свіжими, тому я не можу дати актуальних рекомендацій щодо астрологічних впливів. Однак, згідно з ц",
-    "ts": "2026-08-28T02:53:11.554420"
   }
 }
