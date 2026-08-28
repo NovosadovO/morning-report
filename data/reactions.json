@@ -804,5 +804,15 @@
     "state": "snoozed",
     "ts": "2026-08-28T16:49:56",
     "until": "2026-08-28T22:49:56"
+  },
+  "generic|t|нова вакансія head of it": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "нова вакансія head of it",
+    "title": "Нова вакансія Head of IT",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "state": "closed",
+    "ts": "2026-08-28T19:37:43"
   }
 }
