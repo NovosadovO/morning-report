@@ -1,4 +1,59 @@
 {
+  "selfact|2026-08-28t23_09_57_542801": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег пропустив прийом Armolopid Plus о 04:30 та 05:30 28.08, про що свідчать натискання кнопок '🙈 Не нагадуй' та ",
+    "ts": "2026-08-28T23:09:57.542801"
+  },
+  "action_detect|2026-08-28t23_03_34_698110": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути графік прийому ліків\", \"action_date\": \"2024-09-01\", \"action_time\": null, \"action_summary\": \"Переглянути",
+    "ts": "2026-08-28T23:03:34.698110"
+  },
+  "action_detect|2026-08-28t23_03_23_772757": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити прострочені рахунки\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Негайно розібратися з п",
+    "ts": "2026-08-28T23:03:23.772757"
+  },
+  "action_detect|2026-08-28t23_03_09_050249": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-08-28\", \"action_time\": null, \"action_summary\": \"Олег пропустив прийом Arm",
+    "ts": "2026-08-28T23:03:09.050249"
+  },
+  "action_detect|2026-08-28t23_03_08_924033": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновлення платіжних даних для Runable\", \"action_date\": \"2026-08-28\", \"action_time\": \"09:00\", \"action_summary\": \"Оно",
+    "ts": "2026-08-28T23:03:08.924033"
+  },
+  "action_detect|2026-08-28t23_02_57_843263": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-08-29\", \"action_time\": null, \"action_summary\": \"Встановити нагадуван",
+    "ts": "2026-08-28T23:02:57.843263"
+  },
+  "briefing|2026-08-28t23_02_52_520410": {
+    "topic": "briefing",
+    "gist": "🧭 ВЕКТОР ДНЯ Зараз, коли нічна зміна в розпалі, твої три ключові цілі — фінансова незалежність, схуднення та нова робота — потребують синхронізації, а не розфок",
+    "ts": "2026-08-28T23:02:52.520410"
+  },
+  "themes_ai_truthfix|2026-08-28t23_02_43_991248": {
+    "topic": "themes_ai/truthfix",
+    "gist": "Зараз 23:02, п'ятниця, 28 серпня 2026 року. Дані про здоров'я оновлені 23 години тому, фінансові дані за серпень.  Твоя нічна зміна завершилася о 05:00 28 серпн",
+    "ts": "2026-08-28T23:02:43.991248"
+  },
+  "themes_ai|2026-08-28t23_02_39_667047": {
+    "topic": "themes_ai",
+    "gist": "Зараз 23:02, Олеже, ніч, але твої цілі не чекають. Твій день набрав 80 балів, але є ще потенціал, який ми розкриємо негайно. Час діяти!  💰 ФІНАНСИ За серпень ти",
+    "ts": "2026-08-28T23:02:39.667047"
+  },
+  "astro_ai_truthfix|2026-08-28t23_02_30_318709": {
+    "topic": "astro_ai/truthfix",
+    "gist": "Юпітер у Леві вже 58 днів, і хоча це запускає новий 12-річний цикл, дані про крипторинок, оновлені 23 години тому, показують падіння: BTC -3.4%, ETH -3.2%, XRP ",
+    "ts": "2026-08-28T23:02:30.318709"
+  },
+  "astro_ai|2026-08-28t23_02_26_154561": {
+    "topic": "astro_ai",
+    "gist": "Олеже, Юпітер уже 58 днів перебуває у Леві, прямо на твоєму Асценденті (1°02' Лева), що є рідкісним і потужним транзитом. Це запускає новий 12-річний цикл розви",
+    "ts": "2026-08-28T23:02:26.154561"
+  },
   "email_ai_item|2026-08-28t23_02_11_451704": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від Pelikan.sk нагадує Олегу Новосадову про необхідність онлайн-реєстрації на рейс Ryanair за допомогою мобільного додатку. Реєстр",
@@ -243,60 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-28T21:22:55.900927"
-  },
-  "hcoach|2026-08-28t21_21_02_848484": {
-    "topic": "hcoach",
-    "gist": "Олеже, почнемо розбір твого вечора.  1.  **Що сьогодні вийшло добре:** Твій HRV становить 43.0 мс, що є вище середнього за 30 днів (40.7 мс) і зростає (+1.5 мс)",
-    "ts": "2026-08-28T21:21:02.848484"
-  },
-  "openloop_promises|2026-08-28t21_18_47_990644": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {     \"what\": \"надіслати скріншоти повідомлень від туроператора\",     \"to\": \"Booking.com Customer Service\",     \"date\": null   } ] ```",
-    "ts": "2026-08-28T21:18:47.990644"
-  },
-  "msg_rwa_truthfix|2026-08-28t21_14_59_477964": {
-    "topic": "MSG_RWA/truthfix",
-    "gist": "Олеже, вечір добрий. Бачу, ти на нічній зміні, тому коротко по суті.  ### 🚨 Аномалія FIGR_HELOC: Що не так?  Дані щодо крипторинку, включаючи токенізований фонд",
-    "ts": "2026-08-28T21:14:59.477964"
-  },
-  "msg_rwa|2026-08-28t21_14_49_028147": {
-    "topic": "MSG_RWA",
-    "gist": "Олеже, вечір добрий. Бачу, ти на нічній зміні, тому коротко по суті.  ### 🚨 Аномалія FIGR_HELOC: Що не так?  Токенізований фонд FIGR_HELOC (Figure Heloc), який ",
-    "ts": "2026-08-28T21:14:49.028147"
-  },
-  "selfact|2026-08-28t21_07_06_655721": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег пропустив прийом Armolopid Plus 28.08.2026, оскільки він прокинувся після нічної зміни і не взаємодіяв з наг",
-    "ts": "2026-08-28T21:07:06.655721"
-  },
-  "action_detect|2026-08-28t21_03_48_891775": {
-    "topic": "action_detect",
-    "gist": "```json { \"action_type\": \"calendar\", \"action_title\": \"Записати ідеї після зміни\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після зміни, д",
-    "ts": "2026-08-28T21:03:48.891775"
-  },
-  "action_detect|2026-08-28t21_03_48_745248": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути прострочені рахунки та дедлайни\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Необхідн",
-    "ts": "2026-08-28T21:03:48.745248"
-  },
-  "action_detect|2026-08-28t21_03_37_858042": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжну ",
-    "ts": "2026-08-28T21:03:37.858042"
-  },
-  "action_detect|2026-08-28t21_03_23_452719": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-08-28\", \"action_time\": null, \"action_summary\": \"Олег пропустив прийом Arm",
-    "ts": "2026-08-28T21:03:23.452719"
-  },
-  "action_detect|2026-08-28t21_03_23_402729": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"09:00\", \"action_summary\": \"Відзначити день народ",
-    "ts": "2026-08-28T21:03:23.402729"
-  },
-  "action_detect|2026-08-28t21_03_12_501289": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Перевірити та відмітити прийом Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\":",
-    "ts": "2026-08-28T21:03:12.501289"
   }
 }
