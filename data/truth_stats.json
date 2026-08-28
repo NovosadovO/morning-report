@@ -2,7 +2,7 @@
   "2026-08-28": {
     "checked": 60,
     "issues": 50,
-    "fixed": 20,
+    "fixed": 21,
     "cut": 10
   },
   "by_tag": {
@@ -100,7 +100,8 @@
     },
     "MSG_VIP_EMAIL": {
       "checked": 1,
-      "issues": 1
+      "issues": 1,
+      "fixed": 1
     }
   },
   "last": [
