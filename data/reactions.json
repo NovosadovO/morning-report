@@ -824,5 +824,15 @@
     "label": "🙈 Не нагадуй",
     "state": "closed",
     "ts": "2026-08-28T19:37:51"
+  },
+  "generic|t|бюджет google cloud досягнуто": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "бюджет google cloud досягнуто",
+    "title": "Бюджет Google Cloud досягнуто",
+    "action": "ok",
+    "label": "👌 Прийняв",
+    "state": "open",
+    "ts": "2026-08-28T19:37:59"
   }
 }
