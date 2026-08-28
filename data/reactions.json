@@ -762,5 +762,15 @@
     "label": "👍 Прочитав",
     "state": "open",
     "ts": "2026-08-28T07:44:32"
+  },
+  "generic|t|зміна дати socios com": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "зміна дати socios com",
+    "title": "Зміна дати Socios.com",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "state": "closed",
+    "ts": "2026-08-28T07:44:42"
   }
 }
