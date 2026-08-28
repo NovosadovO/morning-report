@@ -1789,6 +1789,21 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
                         _var3.note(tag, _resp["candidates"][0]["content"]["parts"][0]["text"])
                     except Exception:
                         pass
+                    # ─── ФАКТЧЕК: чи тримається текст на реальних даних ──
+                    # Запит Олега: бот мусить перевіряти достовірність усього,
+                    # що збирається написати. Числа/дати/свіжість — проти даних
+                    # промпту. Неправду або виправляємо, або вирізаємо.
+                    try:
+                        import truth as _tr
+                        import variety as _var4
+                        if _var4.applies(body_bytes):
+                            _pr_txt = json.loads(body_bytes.decode())["contents"][0]["parts"][0]["text"]
+                            _ans = _resp["candidates"][0]["content"]["parts"][0]["text"]
+                            _ver = _tr.verify(_pr_txt, _ans, tag)
+                            if _ver and _ver != _ans:
+                                _resp["candidates"][0]["content"]["parts"][0]["text"] = _ver
+                    except Exception as _tre:
+                        print(f"[truth] skipped for {tag}: {_tre}", flush=True)
                     return _resp
             except urllib.error.HTTPError as e:
                 last_exc = e

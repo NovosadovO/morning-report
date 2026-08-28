@@ -3493,6 +3493,13 @@ def handle_command(chat_id, text):
         import threading as _th_hc5
         _th_hc5.Thread(target=_run_hc5, daemon=True, name="hcoach-month").start()
 
+    elif text.lower().strip() in ["/правда", "/фактчек", "/truth", "/достовірність"]:
+        try:
+            import truth as _tr_cmd
+            send(chat_id, _tr_cmd.stats_text())
+        except Exception as _e_tr:
+            send(chat_id, f"⚠️ Фактчек недоступний: {str(_e_tr)[:300]}")
+
     elif text.lower().strip() in ["/графік_здоров", "/графікз", "/hchart"]:
         def _run_hc6():
             try:
