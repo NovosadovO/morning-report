@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-28t19_34_57_464898": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Бюджет Google Cloud досягнуто\",     \"text\": \"Олег, зверни увагу, що твій бюджет Google Cloud у розмірі €16.00 ",
+    "ts": "2026-08-28T19:34:57.464898"
+  },
   "action_detect|2026-08-28t13_30_58_233666": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": \"2026-08-04\", \"action_time\": null, \"action_summary\": \"Оновити п",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Легкий протеїновий обід\", \"action_date\": \"2026-08-28\", \"action_time\": \"12:00\", \"action_summary\": \"Зробити легкий пр",
     "ts": "2026-08-28T12:00:52.587890"
-  },
-  "personal_ai_truthfix|2026-08-28t12_00_42_120324": {
-    "topic": "personal_ai/truthfix",
-    "gist": "Олег, чи знаєш ти, що прострочені фінансові питання зараз блокують збір свіжих даних про твою активність? Дані Strava API заблоковані через неактивність застосу",
-    "ts": "2026-08-28T12:00:42.120324"
   }
 }
