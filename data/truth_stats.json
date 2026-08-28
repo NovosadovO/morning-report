@@ -2,7 +2,7 @@
   "2026-08-28": {
     "checked": 30,
     "issues": 25,
-    "fixed": 11,
+    "fixed": 12,
     "cut": 2
   },
   "by_tag": {
@@ -13,7 +13,8 @@
     },
     "MSG_DEEP_ANALYSIS": {
       "checked": 3,
-      "issues": 3
+      "issues": 3,
+      "fixed": 1
     },
     "astro_ai": {
       "checked": 6,
