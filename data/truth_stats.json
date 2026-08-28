@@ -1,7 +1,7 @@
 {
   "2026-08-28": {
     "checked": 41,
-    "issues": 34,
+    "issues": 35,
     "fixed": 14,
     "cut": 7
   },
@@ -88,7 +88,8 @@
       "checked": 1
     },
     "MSG_DAILY_ASTRO": {
-      "checked": 1
+      "checked": 1,
+      "issues": 1
     }
   },
   "last": [
