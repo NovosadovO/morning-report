@@ -1,7 +1,7 @@
 {
   "2026-08-28": {
     "checked": 2,
-    "issues": 1,
+    "issues": 2,
     "fixed": 1
   },
   "by_tag": {
@@ -11,7 +11,8 @@
       "fixed": 1
     },
     "MSG_DEEP_ANALYSIS": {
-      "checked": 1
+      "checked": 1,
+      "issues": 1
     }
   },
   "last": [
