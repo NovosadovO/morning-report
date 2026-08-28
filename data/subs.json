@@ -18,6 +18,11 @@
         "date": "2026-08-26",
         "amount": "10.00",
         "uid": "78045"
+      },
+      {
+        "date": "2026-08-28",
+        "amount": "10.00",
+        "uid": "78150"
       }
     ],
     "active": true,
@@ -25,12 +30,12 @@
     "confirmed": true,
     "skipped": false,
     "first_seen": "2026-08-23",
-    "note": "Платіж за Runable успішно списано 26 серпня, але якщо картка Visa ···2620 і далі буде відбивати, потрібно оновити метод оплати.",
+    "note": "Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.",
     "amount": "10.00",
-    "sender": "Runable <umesh@hey.runable.com>",
-    "subject": "Runable finished your scheduled task: Переглянь мені календар і сповісти що я маю на цьому тижні і які листи важливі ч",
-    "uid": "78045",
-    "last_seen": "2026-08-27",
+    "sender": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
+    "subject": "$10.00 payment to Runable was unsuccessful",
+    "uid": "78150",
+    "last_seen": "2026-08-28",
     "next_due": "2026-09-23"
   },
   "railwaycorporation": {
