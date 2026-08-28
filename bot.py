@@ -3493,6 +3493,30 @@ def handle_command(chat_id, text):
         import threading as _th_hc5
         _th_hc5.Thread(target=_run_hc5, daemon=True, name="hcoach-month").start()
 
+    elif text.lower().strip() in ["/доступ", "/access", "/джерела"]:
+        def _run_ac():
+            try:
+                import allctx as _ac
+                send(chat_id, _ac.report())
+            except Exception as _e_ac:
+                send(chat_id, f"⚠️ Доступ: {str(_e_ac)[:300]}")
+        import threading as _th_ac
+        _th_ac.Thread(target=_run_ac, daemon=True, name="allctx-report").start()
+
+    elif text.lower().strip().startswith(("/аі", "/ai ", "/спитай", "/ask")):
+        import re as _re_ai2
+        _q_ai = _re_ai2.sub(r"^\s*(/аі|/ai|/спитай|/ask)\s*", "", text.strip(),
+                            flags=_re_ai2.IGNORECASE)
+        def _run_ai2():
+            try:
+                import allctx as _ac2
+                send(chat_id, _ac2.ask(_q_ai))
+            except Exception as _e_ai2:
+                send(chat_id, f"⚠️ AI: {str(_e_ai2)[:300]}")
+        send(chat_id, "🧠 Дивлюсь усі твої дані…")
+        import threading as _th_ai2
+        _th_ai2.Thread(target=_run_ai2, daemon=True, name="allctx-ask").start()
+
     elif text.lower().strip() in ["/правда", "/фактчек", "/truth", "/достовірність"]:
         try:
             import truth as _tr_cmd

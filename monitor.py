@@ -1625,6 +1625,20 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     except Exception as _e_nowc:
         print("[nowctx] skip: " + str(_e_nowc), flush=True)
 
+    # ─── ПОВНИЙ ДОСТУП ДО ВСІХ ДАНИХ (28.08) ─────────────────────────────────
+    # Запит Олега: «підключи АІ до всього щоб він мав повний доступ». Раніше
+    # кожен модуль давав AI лише свій шматок (астро — транзити, hcoach —
+    # здоров'я), тому AI не бачив зв'язків. Тут у КОЖЕН промпт іде живий зріз
+    # усіх 21 підсистеми з поміткою свіжості (кеш 8 хв, щоб не палити API).
+    try:
+        import allctx as _allc
+        _b_all = body_bytes
+        body_bytes = _allc.inject(body_bytes, tag)
+        if body_bytes is not _b_all:
+            print(f"[allctx] 🔌 повний доступ до даних → {tag}", flush=True)
+    except Exception as _e_all:
+        print("[allctx] skip: " + str(_e_all), flush=True)
+
     # ─── РЕАКЦІЇ ОЛЕГА: що він уже натиснув (23.08) ──────────────────────────
     # Щоб AI не нагадував про зроблене/оплачене/скасоване і не тягнув закриті
     # теми в звіти як «нове». Дані реальні — з натискань кнопок, не з домислів.
