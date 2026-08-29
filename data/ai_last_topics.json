@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-29t20_51_18_234792": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-29T20:51:18.234792"
+  },
   "selfact|2026-08-29t20_45_31_492621": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення Google AI Plus\",     \"text\": \"Олег, ти перейшов на новий план Google AI Plus. Тепер у тебе 400 GB сх",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти ліки Armolopid, оскільки",
     "ts": "2026-08-29T19:03:09.337937"
-  },
-  "action_detect|2026-08-29t19_02_58_478730": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Аналіз позицій ONDO та AVAX\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Провести свідомий аналіз",
-    "ts": "2026-08-29T19:02:58.478730"
   }
 }
