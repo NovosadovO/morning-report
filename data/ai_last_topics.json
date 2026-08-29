@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-08-30t00_12_29_386224": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"77655\",     \"title\": \"Круїз Paxos & Antipaxos скасовано\",     \"date\": \"2026-08-19\",     \"time\": null,     \"kind\": \"cancel\",     \"why\":",
+    "ts": "2026-08-30T00:12:29.386224"
+  },
+  "selfact|2026-08-30t00_07_00_105870": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання туру\",     \"text\": \"Олег, твоє бронювання туру 'Paxos and Antipaxos Boat Tour from Corfu'",
+    "ts": "2026-08-30T00:07:00.105870"
+  },
   "bills|2026-08-30t00_05_42_080705": {
     "topic": "bills",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "personal_ai",
     "gist": "Завтра у тебе вільний день без запланованих змін, проте важливо врахувати, що підписка Strava досі прострочена з 4 серпня, через що API заблоковано і дані про м",
     "ts": "2026-08-29T23:00:38.151424"
-  },
-  "openloop_promises|2026-08-29t22_56_20_157672": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-08-29T22:56:20.157672"
-  },
-  "action_detect|2026-08-29t22_51_39_943739": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-29T22:51:39.943739"
   }
 }
