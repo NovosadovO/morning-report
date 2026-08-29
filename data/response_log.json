@@ -8414,6 +8414,12 @@
         "trigger": "deep_analysis",
         "note": null
       }
+    },
+    {
+      "ts": "2026-08-29T23:24:10.796040+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "gx_more_732d065ae1"
     }
   ]
 }
