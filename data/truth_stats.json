@@ -135,7 +135,8 @@
     },
     "email_describe": {
       "checked": 1,
-      "issues": 1
+      "issues": 1,
+      "fixed": 1
     }
   },
   "last": [
@@ -295,6 +296,6 @@
   "2026-08-29": {
     "checked": 17,
     "issues": 11,
-    "fixed": 4
+    "fixed": 5
   }
 }
