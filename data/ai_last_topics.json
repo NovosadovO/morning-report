@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-08-29t03_20_27_286840": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-29T03:20:27.286840"
+  },
   "selfact|2026-08-29t03_14_44_031296": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"event\",     \"title\": \"Поїздка в Малагу, Іспанія\",     \"text\": \"Олег, за твоїм проханням, я змінив дату поїздки в Малагу на 7 вересня.",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Прийом Armolopid Plus\",     \"text\": \"Олег, не забудь прийняти Armolopid Plus о 04:30. Це важливо для твого з",
     "ts": "2026-08-29T01:42:39.693045"
-  },
-  "action_detect|2026-08-29t01_33_03_953991": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-29T01:33:03.953991"
   }
 }
