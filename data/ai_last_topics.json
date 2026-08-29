@@ -1,4 +1,29 @@
 {
+  "openloop_promises|2026-08-29t04_51_13_051836": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-29T04:51:13.051836"
+  },
+  "action_detect|2026-08-29t04_48_26_618842": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Олег змінив дату поїздки д",
+    "ts": "2026-08-29T04:48:26.618842"
+  },
+  "action_detect|2026-08-29t04_48_15_452961": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату поїздки до Ма",
+    "ts": "2026-08-29T04:48:15.452961"
+  },
+  "action_detect|2026-08-29t04_48_00_179950": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2023-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату поїздки до Ма",
+    "ts": "2026-08-29T04:48:00.179950"
+  },
+  "action_detect|2026-08-29t04_47_20_161546": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату поїздки до Ма",
+    "ts": "2026-08-29T04:47:20.161546"
+  },
   "selfact|2026-08-29t04_45_34_325297": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"event\",     \"title\": \"Поїздка в Малагу, Іспанія\",     \"text\": \"Олег, я змінив дату твоєї поїздки в Малагу на 7 вересня, як ти просив.",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-29T02:16:02.653591"
-  },
-  "selfact|2026-08-29t02_13_35_236135": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від pelikan.sk про онлайн-реєстрацію на рейс до Малаги (Y9SB5U). Реєстрація відкрива",
-    "ts": "2026-08-29T02:13:35.236135"
-  },
-  "action_detect|2026-08-29t02_09_08_625161": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid Plus післ",
-    "ts": "2026-08-29T02:09:08.625161"
-  },
-  "context_ask_ai_truthfix|2026-08-29t02_08_58_406596": {
-    "topic": "context_ask_ai/truthfix",
-    "gist": "З огляду на те, що зараз 02:08 і ти на нічній зміні, а дані про сон відсутні, варто звернути увагу на аномалію у тренді сну: за останні 7 днів він падає на 2.6 ",
-    "ts": "2026-08-29T02:08:58.406596"
-  },
-  "context_ask_ai|2026-08-29t02_08_32_730803": {
-    "topic": "context_ask_ai",
-    "gist": "Олег, привіт. Я бачу, що ти знову запитуєш про календар.  Я вже кілька разів намагався додати події, але, на жаль, функція `google_calendar.create_calendar_even",
-    "ts": "2026-08-29T02:08:32.730803"
-  },
-  "calendar_truthfix|2026-08-29t02_04_49_010921": {
-    "topic": "calendar/truthfix",
-    "gist": "Олеже, бачу, що за три дні, 1 вересня, у Олі день народження, і того ж дня о 12:00 у тебе виліт до Малаги. При цьому, згідно з даними про зміни, 1 вересня у теб",
-    "ts": "2026-08-29T02:04:49.010921"
   }
 }
