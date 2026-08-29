@@ -24,7 +24,7 @@
       "cut": 2
     },
     "personal_ai": {
-      "checked": 31,
+      "checked": 32,
       "issues": 23,
       "fixed": 9,
       "cut": 2
@@ -116,7 +116,7 @@
       "cut": 4
     },
     "MSG_HEALTH_PULSE": {
-      "checked": 2,
+      "checked": 3,
       "issues": 2
     },
     "MSG_NUTRITION_TIP": {
@@ -165,14 +165,6 @@
     }
   },
   "last": [
-    {
-      "at": "2026-08-29 10:01",
-      "tag": "MSG_MICRO_CHECKIN",
-      "action": "залишено з попередженням",
-      "issues": [
-        "дані в промпті позначені як старі/кеш, а текст подає їх як актуальні — треба прямо сказати, що дані не свіжі"
-      ]
-    },
     {
       "at": "2026-08-29 10:03",
       "tag": "astro_ai",
@@ -331,7 +323,7 @@
     }
   ],
   "2026-08-29": {
-    "checked": 123,
+    "checked": 125,
     "issues": 99,
     "fixed": 35,
     "cut": 16
