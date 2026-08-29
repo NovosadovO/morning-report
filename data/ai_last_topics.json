@@ -1,4 +1,84 @@
 {
+  "selfact|2026-08-30t01_10_28_907145": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасування туру Paxos and Antipaxos\",     \"text\": \"Олег, зверни увагу, що твоє бронювання туру \\\"Paxos and Ant",
+    "ts": "2026-08-30T01:10:28.907145"
+  },
+  "action_detect|2026-08-30t01_04_19_450142": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2024-09-01\", \"action_time\": null, \"action_summary\": \"Олег має день народження",
+    "ts": "2026-08-30T01:04:19.450142"
+  },
+  "action_detect|2026-08-30t01_04_08_383839": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Олег має день народження",
+    "ts": "2026-08-30T01:04:08.383839"
+  },
+  "action_detect|2026-08-30t01_04_08_354821": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2024-09-01\", \"action_time\": null, \"action_summary\": \"Олег має день народження",
+    "ts": "2026-08-30T01:04:08.354821"
+  },
+  "action_detect|2026-08-30t01_03_57_403448": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": \"2026-08-04\", \"action_time\": null, \"action_summary\": \"Оновити п",
+    "ts": "2026-08-30T01:03:57.403448"
+  },
+  "action_detect|2026-08-30t01_03_44_540361": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"09:00\", \"action_summary\": \"Відсвяткувати день на",
+    "ts": "2026-08-30T01:03:44.540361"
+  },
+  "action_detect|2026-08-30t01_03_44_443431": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2024-09-01\", \"action_time\": null, \"action_summary\": \"Олег має день народження",
+    "ts": "2026-08-30T01:03:44.443431"
+  },
+  "action_detect|2026-08-30t01_03_33_457484": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про поїзд\", \"action_date\": \"2023-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставити ",
+    "ts": "2026-08-30T01:03:33.457484"
+  },
+  "briefing_truthfix|2026-08-30t01_03_28_620875": {
+    "topic": "briefing/truthfix",
+    "gist": "Олег, за даними календаря, ти зараз на нічній зміні з 18:00 до 06:00. Твоє повідомлення \"Я не на нічній зміні!! чому ти це пишеш? І я тебе просив поставити нага",
+    "ts": "2026-08-30T01:03:28.620875"
+  },
+  "briefing|2026-08-30t01_03_21_989963": {
+    "topic": "briefing",
+    "gist": "Важливо, Олег: незважаючи на попередні повідомлення системи та твоє заперечення, за даними календаря ти ЗАРАЗ на нічній зміні з 18:00 до 06:00. Твоє останнє пов",
+    "ts": "2026-08-30T01:03:21.989963"
+  },
+  "themes_ai_truthfix|2026-08-30t01_03_11_941175": {
+    "topic": "themes_ai/truthfix",
+    "gist": "Олеже, зараз 01:03 неділі, 30 серпня 2026 року, ти на нічній зміні, але деякі дані за 29 серпня показують суперечність між цілями та діями.  🏃 БІГ — Дані Strava",
+    "ts": "2026-08-30T01:03:11.941175"
+  },
+  "themes_ai|2026-08-30t01_03_06_795067": {
+    "topic": "themes_ai",
+    "gist": "Олеже, зараз 01:03, ти на нічній зміні, але деякі цифри показують, що твоя цілеспрямованість дає тріщину.  🏃 БІГ — Твоя остання пробіжка була 27 днів тому, 2 се",
+    "ts": "2026-08-30T01:03:06.795067"
+  },
+  "astro_ai|2026-08-30t01_02_59_845925": {
+    "topic": "astro_ai",
+    "gist": "Олеже, почнімо цю нічну зміну з головної астрологічної події, що вже майже два місяці формує твій новий особистісний цикл: транзитний Юпітер у Леві. Він увійшов",
+    "ts": "2026-08-30T01:02:59.845925"
+  },
+  "email_ai_item|2026-08-30t01_02_07_140218": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Booking.com повідомляє про скасування заброньованої активності через непередбачені обставини з боку постачальника. Компанія обіцяє повн",
+    "ts": "2026-08-30T01:02:07.140218"
+  },
+  "email_ai_item|2026-08-30t01_01_55_962903": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Booking.com повідомляє про скасування активності через непередбачені обставини та просить вибачення за попередній лист без альтернативн",
+    "ts": "2026-08-30T01:01:55.962903"
+  },
+  "email_ai_item|2026-08-30t01_01_45_472584": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Лист від Pelikan.sk нагадує Олегу Новосадову про необхідність онлайн-реєстрації на рейс Ryanair з кодом бронювання Y9SB5U. Реєстраці",
+    "ts": "2026-08-30T01:01:45.472584"
+  },
   "personal_ai|2026-08-30t01_01_19_845243": {
     "topic": "personal_ai",
     "gist": "Олег, ти вже понад сім годин на нічній зміні, і хоча ціль кроків (11807) досягнуто, не забувай про підтримку пильності. Для концентрації та енергії у решту ночі",
@@ -218,85 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити авіаквитки та відновити підписку Strava\", \"action_date\": \"2024-08-31\", \"action_time\": \"12:00\", \"action_s",
     "ts": "2026-08-29T23:23:44.427794"
-  },
-  "qr_more|2026-08-29t23_23_34_176121": {
-    "topic": "qr_more",
-    "gist": "Вага тримається на 83.0 кг, що на 5 кг вище цілі 78 кг, незважаючи на падіння кроків на 23.8% та сну на 2.6 години за тиждень. Авіаквитки до Малаги на 31.08 о 1",
-    "ts": "2026-08-29T23:23:34.176121"
-  },
-  "action_detect|2026-08-29t23_21_41_354503": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічні зміни\", \"action_date\": \"2026-08-26\", \"action_time\": null, \"action_summary\": \"Олег має нічні зміни 26, 27, 28 ",
-    "ts": "2026-08-29T23:21:41.354503"
-  },
-  "action_detect|2026-08-29t23_21_30_156343": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-08-29T23:21:30.156343"
-  },
-  "action_detect|2026-08-29t23_20_19_845405": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Перевірити та оновити дату рейсу до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summ",
-    "ts": "2026-08-29T23:20:19.845405"
-  },
-  "msg_deep_analysis_truthfix|2026-08-29t23_20_11_326219": {
-    "topic": "MSG_DEEP_ANALYSIS/truthfix",
-    "gist": "Олеже, твоя вага, за даними 23-годинної давності, становить 83.0 кг, що стабільно за 7 днів (+0.0) і на 5.0 кг більше від цілі. При цьому сон за 7 днів впав на ",
-    "ts": "2026-08-29T23:20:11.326219"
-  },
-  "msg_deep_analysis|2026-08-29t23_20_01_035090": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋  Ти зараз спиш, і це чудовий час для відновлення, але твоя вага, судячи з останніх даних за сьогодні (хоча й 23 години тому), тримається на позн",
-    "ts": "2026-08-29T23:20:01.035090"
-  },
-  "selfact|2026-08-29t23_19_49_386148": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасування туру Paxos and Antipaxos\",     \"text\": \"Олеже, твій тур \\\"Paxos and Antipaxos Boat Tour from Corfu\\",
-    "ts": "2026-08-29T23:19:49.386148"
-  },
-  "action_detect|2026-08-29t23_16_11_560602": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічні зміни\", \"action_date\": \"2026-08-29\", \"action_time\": null, \"action_summary\": \"Олег має нічні зміни 29 серпня.\"",
-    "ts": "2026-08-29T23:16:11.560602"
-  },
-  "action_detect|2026-08-29t23_15_48_087268": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить інформацію про попередні листи та спові",
-    "ts": "2026-08-29T23:15:48.087268"
-  },
-  "action_detect|2026-08-29t23_15_47_918339": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить інформацію про видалений лист та попере",
-    "ts": "2026-08-29T23:15:47.918339"
-  },
-  "action_detect|2026-08-29t23_15_47_905920": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічні зміни\", \"action_date\": \"2026-08-29\", \"action_time\": null, \"action_summary\": \"Олег має нічну зміну 29 серпня.\"",
-    "ts": "2026-08-29T23:15:47.905920"
-  },
-  "action_detect|2026-08-29t23_15_47_903476": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічні зміни\", \"action_date\": \"2026-08-29\", \"action_time\": null, \"action_summary\": \"Олег має нічні зміни 26, 27, 28 ",
-    "ts": "2026-08-29T23:15:47.903476"
-  },
-  "action_detect|2026-08-29t23_15_36_810717": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-29T23:15:36.810717"
-  },
-  "subs|2026-08-29t23_15_14_359548": {
-    "topic": "subs",
-    "gist": "[]",
-    "ts": "2026-08-29T23:15:14.359548"
-  },
-  "action_detect|2026-08-29t23_13_40_580734": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-29T23:13:40.580734"
-  },
-  "selfact|2026-08-29t23_03_50_122506": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олег, зверни увагу: підписка Runable мала кілька невдалих спроб платежу",
-    "ts": "2026-08-29T23:03:50.122506"
   }
 }
