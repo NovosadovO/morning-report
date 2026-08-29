@@ -1,4 +1,14 @@
 {
+  "selfact|2026-08-29t08_51_40_029772": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання\",     \"text\": \"Олег, твоє бронювання 'Paxos and Antipaxos Boat Tour from Corfu' було скас",
+    "ts": "2026-08-29T08:51:40.029772"
+  },
+  "calendar_truthfix|2026-08-29t08_46_02_102510": {
+    "topic": "calendar/truthfix",
+    "gist": "Олеже, бачу, що ти відклав ранковий догляд за обличчям о 04:47, хоча в календарі подія стояла на 07:00. Це логічно, враховуючи, що ти щойно завершив нічну зміну",
+    "ts": "2026-08-29T08:46:02.102510"
+  },
   "calendar|2026-08-29t08_45_51_221636": {
     "topic": "calendar",
     "gist": "Олеже, бачу, що ранковий догляд за обличчям ти відклав сьогодні о 04:47, хоча в календарі подія стояла на 07:00. Це цілком логічно після нічної зміни, яка завер",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату поїздки до Ма",
     "ts": "2026-08-29T07:04:18.133816"
-  },
-  "action_detect|2026-08-29t07_04_17_944491": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Змінити дату поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату ",
-    "ts": "2026-08-29T07:04:17.944491"
-  },
-  "action_detect|2026-08-29t07_04_06_841487": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-29T07:04:06.841487"
   }
 }
