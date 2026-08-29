@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-08-29t18_00_08_120238": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-29T18:00:08.120238"
+  },
+  "selfact|2026-08-29t17_52_06_255176": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасування туру Paxos and Antipaxos\",     \"text\": \"Олег, зверніть увагу: ваше бронювання туру 'Paxos and Antip",
+    "ts": "2026-08-29T17:52:06.255176"
+  },
   "action_detect|2026-08-29t17_50_54_275330": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжну ",
     "ts": "2026-08-29T16:01:07.849841"
-  },
-  "msg_health_pulse_truthfix|2026-08-29t16_00_58_385710": {
-    "topic": "MSG_HEALTH_PULSE/truthfix",
-    "gist": "Вага Олега становить 83.0 кг, що на 5.0 кг більше від цілі. Це дані станом на 29 серпня, 16 годин тому.  За останні 7 днів середня кількість кроків впала до 140",
-    "ts": "2026-08-29T16:00:58.385710"
-  },
-  "msg_health_pulse|2026-08-29t16_00_47_245385": {
-    "topic": "MSG_HEALTH_PULSE",
-    "gist": "Привіт Олеже! ❤️  Твій тижневий прогрес у схудненні продовжується: мінус 0.3 кг, і зараз вага 84.0 кг. До цілі в 78 кг залишається 6 кг, тож бачу, ти рухаєшся у",
-    "ts": "2026-08-29T16:00:47.245385"
   }
 }
