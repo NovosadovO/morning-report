@@ -8140,6 +8140,12 @@
         "kind": "reminder",
         "date": "2026-08-29"
       }
+    },
+    {
+      "ts": "2026-08-29T02:02:30.653134+00:00",
+      "category": "confirm",
+      "question": "gate_fu_skip: 📭 ЧЕКАЄШ ВІДПОВІДЬ 3 дн.",
+      "answer": "yes"
     }
   ]
 }
