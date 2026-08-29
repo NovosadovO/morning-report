@@ -979,5 +979,42 @@
         ]
       ]
     }
+  },
+  "2100366814_79968": {
+    "text": "🔐 ✉️\n📌 Global Product Owner - Licensing Platform (f/m/d) - Hybrid -\n👤 Сповіщення про вакансії LinkedIn<jobalerts-noreply",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ AI-Draft відповіді",
+            "callback_data": "email_reply_78198"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_78198"
+          }
+        ],
+        [
+          {
+            "text": "⭐ Важливий",
+            "callback_data": "email_star_78198"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_78198"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_78198"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_78198"
+          }
+        ]
+      ]
+    }
   }
 }
