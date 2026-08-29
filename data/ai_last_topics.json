@@ -1,4 +1,29 @@
 {
+  "astro_ai|2026-08-29t13_03_38_938675": {
+    "topic": "astro_ai",
+    "gist": "Олеже, після нічної зміни, що закінчилась о 06:00, ти вдома відновлюєш сили. Зараз, обідня пора, 13:02, і астрологічні транзити сигналізують про період активної",
+    "ts": "2026-08-29T13:03:38.938675"
+  },
+  "email_ai_item|2026-08-29t13_02_00_166398": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист є автоматичним підписом електронної пошти від Олега Новосадова, Line Leader у Minebea Slovakia s.r.o. Він містить контактні",
+    "ts": "2026-08-29T13:02:00.166398"
+  },
+  "personal_ai_truthfix|2026-08-29t13_01_29_983670": {
+    "topic": "personal_ai/truthfix",
+    "gist": "Олег, зараз 13:01 суботи, 29 серпня 2026 року. Ти після нічної зміни, тому пріоритет — відновлення та сон. Зверни увагу, що дані про здоров'я оновлювалися 37 го",
+    "ts": "2026-08-29T13:01:29.983670"
+  },
+  "personal_ai|2026-08-29t13_01_25_809946": {
+    "topic": "personal_ai",
+    "gist": "Олег щойно після нічної зміни, і найважливіше зараз — повноцінний сон та відновлення. З огляду на це, не поспішай оновлювати платіж Runable, що заплановано на 1",
+    "ts": "2026-08-29T13:01:25.809946"
+  },
+  "action_detect|2026-08-29t13_00_38_238652": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка в Малагу\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Поїздка Олега в Малагу, Ісп",
+    "ts": "2026-08-29T13:00:38.238652"
+  },
   "selfact|2026-08-29t12_59_22_101308": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні, 29.08, о 11:00 було заплановано оновлення платежу Runable. Судячи з даних, платіж R",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати вагу в Ap",
     "ts": "2026-08-29T11:11:54.911520"
-  },
-  "selfact|2026-08-29t11_11_07_357474": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Поїздка до Малаги\",     \"text\": \"Олег, зверни увагу, що в твоєму календарі досі стоїть поїздка до Малаги на 1 ",
-    "ts": "2026-08-29T11:11:07.357474"
-  },
-  "action_detect|2026-08-29t11_04_03_084289": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-08-29T11:04:03.084289"
-  },
-  "action_detect|2026-08-29t11_04_03_036850": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-08-29T11:04:03.036850"
-  },
-  "action_detect|2026-08-29t11_03_51_975768": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіж Runable\", \"action_date\": null, \"action_time\": \"12:00\", \"action_summary\": \"Оновити платіж Runable, як",
-    "ts": "2026-08-29T11:03:51.975768"
-  },
-  "action_detect|2026-08-29t11_03_40_982319": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийн",
-    "ts": "2026-08-29T11:03:40.982319"
   }
 }
