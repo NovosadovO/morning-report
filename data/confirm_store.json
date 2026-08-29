@@ -7464,7 +7464,24 @@
     "action": "calrem_skip",
     "pid": "gen_1787976174942",
     "subject": "Переглянути підписки та документи",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 80112,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1787976174942"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1787976174942"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-29T08:02:04.939278+00:00"
   }
 }
