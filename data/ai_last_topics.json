@@ -1,4 +1,19 @@
 {
+  "proactive_ai|2026-08-29t19_23_48_440623": {
+    "topic": "proactive_ai",
+    "gist": "Привіт, Олеже! Класно, що ти відпочиваєш вдома. Бачу, що за сьогодні пройшов 7231 крок, це менше, ніж зазвичай, але все одно непогано. Як твій день пройшов, що ",
+    "ts": "2026-08-29T19:23:48.440623"
+  },
+  "selfact|2026-08-29t19_10_21_371857": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Онлайн-реєстрація на рейс\",     \"text\": \"Олег, не забудьте зареєструватися онлайн на рейс до Малаги. Реєстраці",
+    "ts": "2026-08-29T19:10:21.371857"
+  },
+  "email_ai_item|2026-08-29t19_09_19_591310": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від StartEngine є «Pre-IPO Briefing», який містить огляд останніх новин та подій у світі штучного інтелекту. У ньому згадуютьс",
+    "ts": "2026-08-29T19:09:19.591310"
+  },
   "email_ai_item|2026-08-29t19_07_07_071095": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від The Economist Today є щоденною розсилкою з найкращими статтями видання. Він містить заголовок \\\"Harry and Meghan are ghastly and b",
@@ -283,20 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасування туру Paxos and Antipaxos\",     \"text\": \"Олег, зверніть увагу: ваше бронювання туру 'Paxos and Antip",
     "ts": "2026-08-29T17:52:06.255176"
-  },
-  "action_detect|2026-08-29t17_50_54_275330": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-29T17:50:54.275330"
-  },
-  "selfact|2026-08-29t17_36_11_006890": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег перейшов на новий тарифний план Google AI Plus зі сховищем 400 GB.\",     \"why\": \"З листа від Google One <goo",
-    "ts": "2026-08-29T17:36:11.006890"
-  },
-  "action_detect|2026-08-29t17_22_37_750514": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-29T17:22:37.750514"
   }
 }
