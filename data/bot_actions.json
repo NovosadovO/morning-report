@@ -2141,6 +2141,13 @@
       "detail": "Непрочитаний лист від Investing.com <newsletter@investingmail.com> з потенційно важливою інформацією.",
       "module": "selfact",
       "ts": "2026-08-29T16:34:36"
+    },
+    {
+      "kind": "notify",
+      "what": "Оновлення Google AI Plus",
+      "detail": "Є два свіжі листи від Google (Google One та Google Play) про оновлення плану Google AI Plus та повернення коштів, про які Олег міг не знати.",
+      "module": "selfact",
+      "ts": "2026-08-29T16:49:36"
     }
   ]
 }
