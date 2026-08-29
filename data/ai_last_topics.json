@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-08-29t03_32_04_135607": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-29T03:32:04.135607"
+  },
   "openloop_promises|2026-08-29t03_20_27_286840": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від The Defiant є інформаційним дайджестом новин зі світу DeFi та криптовалют. Він містить п'ять заголовків про важливі події,",
     "ts": "2026-08-29T01:44:38.049223"
-  },
-  "selfact|2026-08-29t01_42_39_693045": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Прийом Armolopid Plus\",     \"text\": \"Олег, не забудь прийняти Armolopid Plus о 04:30. Це важливо для твого з",
-    "ts": "2026-08-29T01:42:39.693045"
   }
 }
