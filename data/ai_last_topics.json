@@ -1,4 +1,34 @@
 {
+  "openloop_promises|2026-08-29t15_23_54_428398": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-29T15:23:54.428398"
+  },
+  "action_detect|2026-08-29t15_21_11_110309": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перенести поїздк",
+    "ts": "2026-08-29T15:21:11.110309"
+  },
+  "action_detect|2026-08-29t15_21_10_494842": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перенести поїздк",
+    "ts": "2026-08-29T15:21:10.494842"
+  },
+  "action_detect|2026-08-29t15_20_59_843557": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перенести поїздк",
+    "ts": "2026-08-29T15:20:59.843557"
+  },
+  "action_detect|2026-08-29t15_19_47_422537": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перенести поїздк",
+    "ts": "2026-08-29T15:19:47.422537"
+  },
+  "action_detect|2026-08-29t15_19_36_575518": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перенести поїздк",
+    "ts": "2026-08-29T15:19:36.575518"
+  },
   "action_detect|2026-08-29t15_19_25_710418": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перенести поїздк",
@@ -268,35 +298,5 @@
     "topic": "personal_ai/truthfix",
     "gist": "Олег, зараз 14:00, і хоча ти після нічної зміни, яка закінчилася о 06:00, твої дані про сон за 28 серпня відсутні, а середній показник за останні 7 днів (9.4 го",
     "ts": "2026-08-29T14:00:49.282752"
-  },
-  "personal_ai|2026-08-29t14_00_43_967005": {
-    "topic": "personal_ai",
-    "gist": "Олегу, зараз найважливіше — якісний відпочинок після нічної зміни, що закінчилась о 06:00. Зверни увагу на нагадування о 12:00 про оновлення платежу Runable, як",
-    "ts": "2026-08-29T14:00:43.967005"
-  },
-  "selfact|2026-08-29t14_00_27_938705": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"event\",     \"title\": \"Поїздка в Малагу, Іспанія\",     \"text\": \"Поїздка в Малагу, Іспанія, перенесена на 7 вересня 2026 року. Подія в ",
-    "ts": "2026-08-29T14:00:27.938705"
-  },
-  "email_ai_item|2026-08-29t13_55_18_349572": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист є інформаційним бюлетенем від MyClaw Newsletter з темою «Who’s the King of Open-Source AI Agents?». Він не містить конкретних ",
-    "ts": "2026-08-29T13:55:18.349572"
-  },
-  "openloop_promises|2026-08-29t13_52_49_499290": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {     \"what\": \"прикріпити скріншоти повідомлень від туроператора\",     \"to\": \"Booking.com Customer Service\",     \"date\": null   } ] ```",
-    "ts": "2026-08-29T13:52:49.499290"
-  },
-  "selfact|2026-08-29t13_44_58_991900": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оновити платіж Runable\",     \"text\": \"Олег, нагадую, що сьогодні, 29 серпня, о 11:00 заплановано оновлення п",
-    "ts": "2026-08-29T13:44:58.991900"
-  },
-  "mailcal_extract|2026-08-29t13_31_05_795225": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-08-29T13:31:05.795225"
   }
 }
