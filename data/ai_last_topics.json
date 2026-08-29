@@ -1,4 +1,14 @@
 {
+  "selfact|2026-08-29t17_36_11_006890": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег перейшов на новий тарифний план Google AI Plus зі сховищем 400 GB.\",     \"why\": \"З листа від Google One <goo",
+    "ts": "2026-08-29T17:36:11.006890"
+  },
+  "action_detect|2026-08-29t17_22_37_750514": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-29T17:22:37.750514"
+  },
   "mailcal_extract|2026-08-29t17_22_23_151826": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "personal_ai",
     "gist": "Кроки сьогодні на 7231, що значно нижче цілі в 10000, а вага 84.0 кг досі далека від 78 кг. Ти ризикуєш втратити прогрес у фізичній формі та контролі ваги. Акти",
     "ts": "2026-08-29T16:00:46.099604"
-  },
-  "email_ai_item|2026-08-29t15_51_41_165877": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від LinkedIn інформує про обговорення в групі \\\"Artificial Intelligence, Deep Learning, Machine Learning\\\" та запрошує перегля",
-    "ts": "2026-08-29T15:51:41.165877"
-  },
-  "selfact|2026-08-29t15_47_53_322333": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання туру\",     \"text\": \"Олег, зверніть увагу: ваше бронювання туру \\\"Paxos and Antipaxos Boat",
-    "ts": "2026-08-29T15:47:53.322333"
   }
 }
