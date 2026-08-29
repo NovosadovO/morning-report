@@ -298,5 +298,25 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Ryanair\", \"action_date\": \"2026-08-28\", \"action_time\": \"12:00\", \"action_summary\": \"Онлайн-",
     "ts": "2026-08-29T00:50:02.556628"
+  },
+  "proactive_actions|2026-08-29t03_00_20_683584": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн реєстрація на рейс\",     \"date\": \"2026-08-29\",     \"time\": \"18:00\",     \"message\": \"Олеже, у тебе є н",
+    "ts": "2026-08-29T03:00:20.683584"
+  },
+  "email_ai_item|2026-08-29t02_51_31_362567": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Лист від CoinList News інформує про інтеграцію Passage з Ondo Stocks, що додає понад 400 токенізованих продуктів до каталогу. Це зна",
+    "ts": "2026-08-29T02:51:31.362567"
+  },
+  "action_detect|2026-08-29t02_49_08_637804": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-08-29\", \"action_time\": \"06:00\", \"action_summary\": \"Після ніч",
+    "ts": "2026-08-29T02:49:08.637804"
+  },
+  "context_ask_ai_truthfix|2026-08-29t02_48_58_114964": {
+    "topic": "context_ask_ai/truthfix",
+    "gist": "Олег, бачу, що ти прийняв до відома День народження Олі за три дні, 1 вересня, і це добре. Однак, дані про поїздку до Малаги, які вказують на 7 вересня, є заста",
+    "ts": "2026-08-29T02:48:58.114964"
   }
 }
