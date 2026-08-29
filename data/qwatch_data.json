@@ -1018,16 +1018,17 @@
     "saved_at": "2026-08-28 23:46"
   },
   "2026-08-29": {
+    "date": "2026-08-29",
+    "health_score": 75,
     "steps": 7231,
     "hr_avg": 54,
     "calories": 306,
-    "distance_km": 4.0,
-    "weight_kg": 83.0,
     "hrv": 40,
+    "weight_kg": 83.0,
+    "age": 36,
+    "height_cm": 175,
     "spo2": 96,
-    "stress": 32,
-    "date": "2026-08-29",
-    "source": "qwatch_auto",
+    "source": "qwatch",
     "saved_at": "2026-08-29 15:26"
   }
 }
