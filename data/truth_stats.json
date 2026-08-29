@@ -116,7 +116,7 @@
     },
     "MSG_HEALTH_PULSE": {
       "checked": 2,
-      "issues": 1
+      "issues": 2
     },
     "MSG_NUTRITION_TIP": {
       "checked": 1,
@@ -311,7 +311,7 @@
   ],
   "2026-08-29": {
     "checked": 86,
-    "issues": 67,
+    "issues": 68,
     "fixed": 26,
     "cut": 10
   }
