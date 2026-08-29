@@ -1,4 +1,24 @@
 {
+  "selfact|2026-08-29t02_44_28_373356": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Онлайн-реєстрація на рейс до Малаги\",     \"text\": \"Олег, нагадую, що онлайн-реєстрація на рейс до Малаги (код ",
+    "ts": "2026-08-29T02:44:28.373356"
+  },
+  "calendar_truthfix|2026-08-29t02_17_20_946349": {
+    "topic": "calendar/truthfix",
+    "gist": "Олеже, бачу суперечність: ти прийняв до відома, що 1 вересня у Олі день народження, і що в цей день у тебе рання зміна з 06:00 до 18:00. Водночас, за нотатками,",
+    "ts": "2026-08-29T02:17:20.946349"
+  },
+  "calendar|2026-08-29t02_17_09_270691": {
+    "topic": "calendar",
+    "gist": "Олеже, бачу, що ти вже прийняв до відома День народження Олі за три дні, 1 вересня, і це добре, що ти про це пам'ятаєш! Це той самий день, коли ти маєш ранню зм",
+    "ts": "2026-08-29T02:17:09.270691"
+  },
+  "action_detect|2026-08-29t02_16_02_653591": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-29T02:16:02.653591"
+  },
   "selfact|2026-08-29t02_13_35_236135": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від pelikan.sk про онлайн-реєстрацію на рейс до Малаги (Y9SB5U). Реєстрація відкрива",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Ryanair\", \"action_date\": \"2024-08-31\", \"action_time\": \"12:00\", \"action_summary\": \"Пройти ",
     "ts": "2026-08-29T00:47:30.557673"
-  },
-  "action_detect|2026-08-29t00_47_13_377190": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс Ryanair\", \"action_date\": \"2024-08-31\", \"action_time\": \"12:00\", \"action_summary\": \"Пройти ",
-    "ts": "2026-08-29T00:47:13.377190"
-  },
-  "selfact|2026-08-29t00_41_29_306751": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Прийом Armolopid Plus\",     \"text\": \"Олег, не забудь прийняти Armolopid Plus о 04:30. Це важливо для твого з",
-    "ts": "2026-08-29T00:41:29.306751"
-  },
-  "mailcal_extract|2026-08-29t00_28_41_365928": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-08-29T00:28:41.365928"
-  },
-  "action_detect|2026-08-29t00_28_14_593465": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Підписка Strava прострочена",
-    "ts": "2026-08-29T00:28:14.593465"
   }
 }
