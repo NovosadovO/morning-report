@@ -1,9 +1,4 @@
 {
-  "77753": {
-    "sender": "hello@news.sorare.com",
-    "sender_raw": "\"Sorare\" <hello@news.sorare.com>",
-    "seen_ts": "2026-08-20T14:38:19.409018+00:00"
-  },
   "77754": {
     "sender": "info@mail.uefa.com",
     "sender_raw": "\"UEFA Champions League\" <info@mail.uefa.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Bybit через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-08-29T08:03:18.572514+00:00"
+  },
+  "78212": {
+    "sender": "streetguide@sizeer.sk",
+    "sender_raw": "Sizeer Street guide <streetguide@sizeer.sk>",
+    "seen_ts": "2026-08-29T08:13:35.449870+00:00"
   }
 }
