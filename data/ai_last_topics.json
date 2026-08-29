@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-08-29t09_22_12_587122": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"cancel the excursion\",     \"to\": \"Ionian Cruises\",     \"date\": null   } ] ```",
+    "ts": "2026-08-29T09:22:12.587122"
+  },
+  "people|2026-08-29t09_14_22_996759": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"info@ionian-cruises.com\",     \"name\": \"Spiros\",     \"relation\": \"сервіс\",     \"topics\": [       \"скасування круїзу\",       \"повернен",
+    "ts": "2026-08-29T09:14:22.996759"
+  },
   "action_detect|2026-08-29t09_10_24_908121": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Поїздка Олега до М",
@@ -288,15 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від Pelikan.sk нагадує Олегу про необхідність онлайн-реєстрації на рейс Ryanair з кодом бронювання Y9SB5U. Реєстрація відкриваєтьс",
     "ts": "2026-08-29T08:01:39.462823"
-  },
-  "msg_daily_astro|2026-08-29t08_01_34_107413": {
-    "topic": "MSG_DAILY_ASTRO",
-    "gist": "Привіт Олеже! 🔮  Зорі сьогодні шепочуть про непересічний час, коли твої внутрішні світи та зовнішня реальність особливо тісно переплітаються. Повний місяць у Ри",
-    "ts": "2026-08-29T08:01:34.107413"
-  },
-  "email_ai_item|2026-08-29t08_01_28_135709": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист є автоматичним підписом електронної пошти від Олега Новосадова, керівника лінії в Minebea Slovakia s.r.o. Він містить контактн",
-    "ts": "2026-08-29T08:01:28.135709"
   }
 }
