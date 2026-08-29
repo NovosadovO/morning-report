@@ -1,4 +1,9 @@
 {
+  "msg_event_soon|2026-08-29t06_31_22_709629": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ✅  Хоча зараз найважливіше — відновлення після нічної зміни та сон, не забудь, що вже за півтори години, о 07:00 за місцевим часом, на тебе чекає ",
+    "ts": "2026-08-29T06:31:22.709629"
+  },
   "openloop_promises|2026-08-29t06_21_46_762584": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"08:00\", \"action_summary\": \"День народження Олі з",
     "ts": "2026-08-29T04:03:47.921276"
-  },
-  "action_detect|2026-08-29t04_03_47_858691": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Змінити дату поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату ",
-    "ts": "2026-08-29T04:03:47.858691"
   }
 }
