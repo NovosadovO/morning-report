@@ -106,7 +106,8 @@
     "MSG_VIP_EMAIL": {
       "checked": 13,
       "issues": 8,
-      "fixed": 4
+      "fixed": 4,
+      "cut": 1
     },
     "MSG_HEALTH_PULSE": {
       "checked": 1,
@@ -308,6 +309,6 @@
     "checked": 63,
     "issues": 48,
     "fixed": 19,
-    "cut": 4
+    "cut": 5
   }
 }
