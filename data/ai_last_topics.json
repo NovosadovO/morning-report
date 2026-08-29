@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-08-29t16_54_04_225177": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-29T16:54:04.225177"
+  },
+  "action_detect|2026-08-29t16_50_33_903332": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-29T16:50:33.903332"
+  },
   "selfact|2026-08-29t16_49_28_391094": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення Google AI Plus\",     \"text\": \"Олег, зверніть увагу: Ви отримали сховище на 400 GB та розширений дост",
@@ -288,15 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-08-29T15:03:13.183671"
-  },
-  "action_detect|2026-08-29t15_03_06_784096": {
-    "topic": "action_detect",
-    "gist": "```json { \"action_type\": \"calendar\", \"action_title\": \"Відновити Strava API\", \"action_date\": \"2026-08-29\", \"action_time\": null, \"action_summary\": \"Відновити Stra",
-    "ts": "2026-08-29T15:03:06.784096"
-  },
-  "briefing_truthfix|2026-08-29t15_03_01_146088": {
-    "topic": "briefing/truthfix",
-    "gist": "29 серпня 2026, 15:02, Кошице. Дані про здоров'я оновлені 39 годин тому, Strava API заблоковано.  Твоя вага 83.0 кг, ціль +5.0 кг, а Strava API неактивний з 4 с",
-    "ts": "2026-08-29T15:03:01.146088"
   }
 }
