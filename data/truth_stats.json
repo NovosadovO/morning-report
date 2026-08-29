@@ -43,7 +43,8 @@
     "MSG_RWA": {
       "checked": 7,
       "issues": 7,
-      "fixed": 4
+      "fixed": 4,
+      "cut": 1
     },
     "allctx_ask": {
       "checked": 1,
@@ -312,6 +313,6 @@
     "checked": 84,
     "issues": 66,
     "fixed": 26,
-    "cut": 8
+    "cut": 9
   }
 }
