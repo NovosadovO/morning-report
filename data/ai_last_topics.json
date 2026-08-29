@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-08-29t09_10_24_908121": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Поїздка Олега до М",
+    "ts": "2026-08-29T09:10:24.908121"
+  },
+  "selfact|2026-08-29t09_07_17_375665": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Онлайн-реєстрація на рейс\",     \"text\": \"Олег, не забудь, що онлайн-реєстрація на твій рейс Ryanair до Малаг",
+    "ts": "2026-08-29T09:07:17.375665"
+  },
+  "action_detect|2026-08-29t09_04_20_777416": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перевірити всі ",
+    "ts": "2026-08-29T09:04:20.777416"
+  },
   "action_detect|2026-08-29t09_04_20_540652": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
@@ -283,20 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист є автоматичним підписом електронної пошти від Олега Новосадова, керівника лінії в Minebea Slovakia s.r.o. Він містить контактн",
     "ts": "2026-08-29T08:01:28.135709"
-  },
-  "action_detect|2026-08-29t08_01_11_517875": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Нагадування, що 1 вересн",
-    "ts": "2026-08-29T08:01:11.517875"
-  },
-  "personal_ai_truthfix|2026-08-29t08_01_00_901872": {
-    "topic": "personal_ai/truthfix",
-    "gist": "Дані про кроки (16079) за 28 серпня, тобто 32 години тому, показують перевищення цілі, але зараз 08:00 суботи, 29 серпня, і ти після нічної зміни. Відкладений р",
-    "ts": "2026-08-29T08:01:00.901872"
-  },
-  "personal_ai|2026-08-29t08_00_55_359511": {
-    "topic": "personal_ai",
-    "gist": "Попри перевиконану ціль кроків у 16079, ти щойно після нічної зміни, і відновлення є пріоритетом. Зверни увагу на відкладений ранковий догляд за обличчя, який п",
-    "ts": "2026-08-29T08:00:55.359511"
   }
 }
