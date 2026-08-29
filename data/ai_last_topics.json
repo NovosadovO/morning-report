@@ -1,4 +1,14 @@
 {
+  "personal_ai|2026-08-29t16_00_46_099604": {
+    "topic": "personal_ai",
+    "gist": "Кроки сьогодні на 7231, що значно нижче цілі в 10000, а вага 84.0 кг досі далека від 78 кг. Ти ризикуєш втратити прогрес у фізичній формі та контролі ваги. Акти",
+    "ts": "2026-08-29T16:00:46.099604"
+  },
+  "email_ai_item|2026-08-29t15_51_41_165877": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn інформує про обговорення в групі \\\"Artificial Intelligence, Deep Learning, Machine Learning\\\" та запрошує перегля",
+    "ts": "2026-08-29T15:51:41.165877"
+  },
   "selfact|2026-08-29t15_47_53_322333": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання туру\",     \"text\": \"Олег, зверніть увагу: ваше бронювання туру \\\"Paxos and Antipaxos Boat",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-29T14:03:04.840375"
-  },
-  "action_detect|2026-08-29t14_02_53_796105": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оновити підписку Strava\", \"action_date\": \"2026-08-04\", \"action_time\": null, \"action_summary\": \"Оновити прос",
-    "ts": "2026-08-29T14:02:53.796105"
-  },
-  "action_detect|2026-08-29t14_02_40_542008": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти ліки Armolopid, оскільки",
-    "ts": "2026-08-29T14:02:40.542008"
   }
 }
