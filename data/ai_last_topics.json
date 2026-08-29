@@ -1,4 +1,14 @@
 {
+  "personal_ai|2026-08-30t01_01_19_845243": {
+    "topic": "personal_ai",
+    "gist": "Олег, ти вже понад сім годин на нічній зміні, і хоча ціль кроків (11807) досягнуто, не забувай про підтримку пильності. Для концентрації та енергії у решту ночі",
+    "ts": "2026-08-30T01:01:19.845243"
+  },
+  "mailcal_extract|2026-08-30t00_57_44_529217": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-30T00:57:44.529217"
+  },
   "selfact|2026-08-30t00_54_17_466748": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання\",     \"text\": \"Олег, твоє бронювання 'Paxos and Antipaxos Boat Tour from Corfu' скасовано",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олег, зверни увагу: підписка Runable мала кілька невдалих спроб платежу",
     "ts": "2026-08-29T23:03:50.122506"
-  },
-  "action_detect|2026-08-29t23_03_29_110607": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз та історію взаємод",
-    "ts": "2026-08-29T23:03:29.110607"
-  },
-  "action_detect|2026-08-29t23_03_18_116806": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз транзитних аспекті",
-    "ts": "2026-08-29T23:03:18.116806"
   }
 }
