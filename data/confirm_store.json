@@ -7537,7 +7537,24 @@
     "action": "calrem_skip",
     "pid": "vip_email_1787977169",
     "subject": "Догляд за обличчям (ранок)",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 80130,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_vip_email_1787977169"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_vip_email_1787977169"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-29T08:03:04.276616+00:00"
   },
   "d268ad3146": {
