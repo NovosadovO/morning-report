@@ -8146,6 +8146,12 @@
       "category": "confirm",
       "question": "gate_fu_skip: 📭 ЧЕКАЄШ ВІДПОВІДЬ 3 дн.",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-29T02:02:39.965440+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "db_cal_dd9859ebb0"
     }
   ]
 }
