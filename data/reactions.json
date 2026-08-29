@@ -1125,5 +1125,15 @@
     "label": "👌 Прийняв",
     "state": "open",
     "ts": "2026-08-29T15:22:05"
+  },
+  "generic|t|нагадування про runable": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "нагадування про runable",
+    "title": "Нагадування про Runable",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "state": "closed",
+    "ts": "2026-08-29T15:22:08"
   }
 }
