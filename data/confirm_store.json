@@ -7733,7 +7733,24 @@
     "action": "calrem_skip",
     "pid": "botsend_1788038650795",
     "subject": "Перевірити новини по крипторинку",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 80851,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_botsend_1788038650795"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_botsend_1788038650795"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-29T23:24:32.206558+00:00"
   }
 }
