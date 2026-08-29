@@ -298,5 +298,15 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату поїздки до Ма",
     "ts": "2026-08-29T07:04:18.133816"
+  },
+  "action_detect|2026-08-29t09_00_18_942896": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-29T09:00:18.942896"
+  },
+  "mailcal_extract|2026-08-29t08_53_11_248088": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"77655\",     \"title\": \"Круїз Paxos & Antipaxos скасовано\",     \"date\": \"2026-08-19\",     \"time\": null,     \"kind\": \"cancel\",     \"why\":",
+    "ts": "2026-08-29T08:53:11.248088"
   }
 }
