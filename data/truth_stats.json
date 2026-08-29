@@ -140,7 +140,8 @@
     },
     "context_ask_ai": {
       "checked": 2,
-      "issues": 2
+      "issues": 2,
+      "fixed": 1
     }
   },
   "last": [
@@ -300,6 +301,6 @@
   "2026-08-29": {
     "checked": 21,
     "issues": 15,
-    "fixed": 7
+    "fixed": 8
   }
 }
