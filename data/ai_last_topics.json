@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-29t10_13_30_827680": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від Sizeer Street guide інформує про нові надходження культових моделей взуття Adidas (Handball Spezial, Samba, Superstar, ",
+    "ts": "2026-08-29T10:13:30.827680"
+  },
   "selfact|2026-08-29t10_08_41_673759": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на листа від Pelikan.sk. Онлайн-реєстрація на твій рейс Ryanair до Малаги відкривається за 2",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Лягти спати\", \"action_date\": \"2026-08-29\", \"action_time\": \"08:15\", \"action_summary\": \"Лягти спати, щоб надолужити с",
     "ts": "2026-08-29T08:16:01.078028"
-  },
-  "msg_deep_analysis_truthfix|2026-08-29t08_15_53_049153": {
-    "topic": "MSG_DEEP_ANALYSIS/truthfix",
-    "gist": "Привіт! Бачу, зараз 08:15 ранку суботи, 29 серпня 2026 року, і ти вдома після нічної зміни. Твоє \"Я спати\" о 08:11 — це найкращий план, адже дані про сон за сьо",
-    "ts": "2026-08-29T08:15:53.049153"
   }
 }
