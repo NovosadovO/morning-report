@@ -163,6 +163,9 @@
       "checked": 1,
       "issues": 1,
       "fixed": 1
+    },
+    "MSG_WORKOUT_PLAN": {
+      "checked": 1
     }
   },
   "last": [
@@ -323,7 +326,7 @@
     }
   ],
   "2026-08-29": {
-    "checked": 128,
+    "checked": 129,
     "issues": 102,
     "fixed": 37,
     "cut": 17
