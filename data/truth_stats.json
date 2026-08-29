@@ -104,7 +104,8 @@
     "openmind": {
       "checked": 2,
       "issues": 2,
-      "cut": 1
+      "cut": 1,
+      "fixed": 1
     },
     "MSG_VIP_EMAIL": {
       "checked": 13,
@@ -310,7 +311,7 @@
   "2026-08-29": {
     "checked": 78,
     "issues": 60,
-    "fixed": 22,
+    "fixed": 23,
     "cut": 7
   }
 }
