@@ -26,7 +26,8 @@
     "personal_ai": {
       "checked": 22,
       "issues": 14,
-      "fixed": 6
+      "fixed": 6,
+      "cut": 1
     },
     "themes_ai": {
       "checked": 21,
@@ -57,7 +58,8 @@
     "MORNING_AI": {
       "checked": 2,
       "issues": 2,
-      "cut": 1
+      "cut": 1,
+      "fixed": 1
     },
     "MSG_MORNING": {
       "checked": 2,
@@ -301,6 +303,7 @@
   "2026-08-29": {
     "checked": 45,
     "issues": 30,
-    "fixed": 13
+    "fixed": 14,
+    "cut": 1
   }
 }
