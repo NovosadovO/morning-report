@@ -1,9 +1,4 @@
 {
-  "77775": {
-    "sender": "newsletter@email.blockchain.com",
-    "sender_raw": "\"Blockchain\" <newsletter@email.blockchain.com>",
-    "seen_ts": "2026-08-20T23:20:13.101892+00:00"
-  },
   "77779": {
     "sender": "news@mail.lidlplus.sk",
     "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
     "seen_ts": "2026-08-29T17:07:12.133709+00:00"
+  },
+  "78237": {
+    "sender": "ben@startengine.com",
+    "sender_raw": "Ben at StartEngine <ben@startengine.com>",
+    "seen_ts": "2026-08-29T17:09:20.378236+00:00"
   }
 }
