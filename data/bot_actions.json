@@ -1602,6 +1602,13 @@
       "detail": "Олег отримав лист від letenky@pelikan.sk з нагадуванням про онлайн-реєстрацію на рейс Ryanair.",
       "module": "selfact",
       "ts": "2026-08-29T06:01:30"
+    },
+    {
+      "kind": "notify",
+      "what": "Бронювання скасовано",
+      "detail": "Отримано лист від noreply@booking.com про скасування бронювання 'Paxos and Antipaxos Boat Tour from Corfu' та повернення коштів.",
+      "module": "selfact",
+      "ts": "2026-08-29T06:17:21"
     }
   ]
 }
