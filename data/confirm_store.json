@@ -7684,7 +7684,24 @@
     "action": "calrem_skip",
     "pid": "gen_1788019369840",
     "subject": "Проаналізувати погані рішення",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 80582,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1788019369840"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1788019369840"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-29T22:13:10.652385+00:00"
   }
 }
