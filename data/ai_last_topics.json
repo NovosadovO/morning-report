@@ -1,4 +1,104 @@
 {
+  "selfact|2026-08-29t17_04_45_702392": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання туру\",     \"text\": \"Олег, зверніть увагу: ваше бронювання «Paxos and Antipaxos Boat Tour ",
+    "ts": "2026-08-29T17:04:45.702392"
+  },
+  "action_detect|2026-08-29t17_04_09_657754": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є астрологічним аналізом транзитів ",
+    "ts": "2026-08-29T17:04:09.657754"
+  },
+  "action_detect|2026-08-29t17_03_58_631154": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити документи для поїздки\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Ретельно пе",
+    "ts": "2026-08-29T17:03:58.631154"
+  },
+  "action_detect|2026-08-29t17_03_58_439241": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-29T17:03:58.439241"
+  },
+  "action_detect|2026-08-29t17_03_47_663682": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Збільшити фізичну активність\", \"action_date\": \"2026-08-29\", \"action_time\": null, \"action_summary\": \"Сьогодні критич",
+    "ts": "2026-08-29T17:03:47.663682"
+  },
+  "action_detect|2026-08-29t17_03_33_254360": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіж Runable\", \"action_date\": \"2026-08-29\", \"action_time\": \"12:00\", \"action_summary\": \"Сьогодні, 29.08.20",
+    "ts": "2026-08-29T17:03:33.254360"
+  },
+  "action_detect|2026-08-29t17_03_33_196160": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Runable\", \"action_date\": \"2026-08-29\", \"action_time\": \"11:00\", \"action_summary\": \"Олег ",
+    "ts": "2026-08-29T17:03:33.196160"
+  },
+  "action_detect|2026-08-29t17_03_22_066747": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжну інформа",
+    "ts": "2026-08-29T17:03:22.066747"
+  },
+  "briefing|2026-08-29t17_03_17_744503": {
+    "topic": "briefing",
+    "gist": "ВЕКТОР ДНЯ  Зараз, коли спека в Кошице досягає 30°C, найважливішим фокусом для тебе є інтеграція поточних дій з твоїми довгостроковими цілями, особливо щодо сху",
+    "ts": "2026-08-29T17:03:17.744503"
+  },
+  "themes_ai_truthfix|2026-08-29t17_03_06_800965": {
+    "topic": "themes_ai/truthfix",
+    "gist": "Олеже, зараз 17:03, субота, 29 серпня 2026 року. Дані, які я аналізую, були оновлені 17 годин тому, 29 серпня.  **Здоров'я та активність** Твоя вага становить 8",
+    "ts": "2026-08-29T17:03:06.800965"
+  },
+  "themes_ai|2026-08-29t17_03_02_323549": {
+    "topic": "themes_ai",
+    "gist": "Олеже, зануримося в твої показники сьогодні, 29 серпня, о 17:02.  💰 ФІНАНСИ Твої витрати за серпень становлять лише 1.98€, проте існує значний обсяг очікуваних ",
+    "ts": "2026-08-29T17:03:02.323549"
+  },
+  "astro_ai|2026-08-29t17_02_46_978351": {
+    "topic": "astro_ai",
+    "gist": "Олеже, зараз 17:02 в Кошице, субота. Поточна астрологічна картина показує, що для тебе настав період значного особистісного зростання та переосмислення. Приділи",
+    "ts": "2026-08-29T17:02:46.978351"
+  },
+  "action_detect|2026-08-29t17_02_17_893586": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-29T17:02:17.893586"
+  },
+  "msg_micro_checkin_truthfix|2026-08-29t17_02_08_038736": {
+    "topic": "MSG_MICRO_CHECKIN/truthfix",
+    "gist": "Олеже, бачу, що дані про твоє здоров'я оновлювалися 17 годин тому, тому інформація про кроки та сон може бути не зовсім свіжою. Попри це, вчорашні 7231 крок — ц",
+    "ts": "2026-08-29T17:02:08.038736"
+  },
+  "email_ai_item|2026-08-29t17_02_02_569351": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Booking.com повідомляє про скасування активності через непередбачені обставини та обіцяє повне повернення коштів. Процес повернення зай",
+    "ts": "2026-08-29T17:02:02.569351"
+  },
+  "msg_micro_checkin|2026-08-29t17_01_56_981349": {
+    "topic": "MSG_MICRO_CHECKIN",
+    "gist": "Привіт Олеже! 🫂 Бачу, ти вдома і маєш вільний час сьогодні ввечері. Навіть попри те, що вага йде вниз (-0.3 кг за тиждень до 83.0 кг), твої кроки різко впали — ",
+    "ts": "2026-08-29T17:01:56.981349"
+  },
+  "email_ai_item|2026-08-29t17_01_51_395655": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Booking.com повідомляє про скасування заброньованої активності через непередбачені обставини та вибачається за попередній лист без альтернативн",
+    "ts": "2026-08-29T17:01:51.395655"
+  },
+  "email_ai_item|2026-08-29t17_01_40_757313": {
+    "topic": "email_ai_item",
+    "gist": "```json { \"description\": \"Лист від Pelikan.sk нагадує Олегу Новосадову про необхідність онлайн-реєстрації на рейс Ryanair з кодом бронювання Y9SB5U. Реєстрація ",
+    "ts": "2026-08-29T17:01:40.757313"
+  },
+  "personal_ai|2026-08-29t17_01_15_334256": {
+    "topic": "personal_ai",
+    "gist": "Олеже, о 17:01, маючи 7231 крок при цілі 10000, ти ще маєш час для пробіжки, що допоможе скоротити розрив у 2769 кроків і наблизитись до цілі у 78 кг при поточн",
+    "ts": "2026-08-29T17:01:15.334256"
+  },
+  "action_detect|2026-08-29t17_00_50_289419": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Активне відновлення\", \"action_date\": \"2026-08-29\", \"action_time\": \"17:00\", \"action_summary\": \"Виконати план активно",
+    "ts": "2026-08-29T17:00:50.289419"
+  },
   "msg_workout_plan|2026-08-29t17_00_37_301698": {
     "topic": "MSG_WORKOUT_PLAN",
     "gist": "Привіт Олеже! 🧘 Чудово, що ти приділяєш час активному відновленню, це ключ до довготривалої витривалості та запобігання травмам. Сьогодні, в суботу, 29 серпня, ",
@@ -198,105 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-29T15:30:58.513304"
-  },
-  "action_detect|2026-08-29t15_26_15_587621": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перенести поїздк",
-    "ts": "2026-08-29T15:26:15.587621"
-  },
-  "action_detect|2026-08-29t15_25_55_344914": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Лікар\", \"action_date\": \"2023-08-30\", \"action_time\": \"10:00\", \"action_summary\": \"Завтра о 10:00 лікар.\"}",
-    "ts": "2026-08-29T15:25:55.344914"
-  },
-  "planner|2026-08-29t15_25_44_111940": {
-    "topic": "planner",
-    "gist": "```json [] ```",
-    "ts": "2026-08-29T15:25:44.111940"
-  },
-  "action_detect|2026-08-29t15_25_33_554191": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перенести поїздк",
-    "ts": "2026-08-29T15:25:33.554191"
-  },
-  "openloop_promises|2026-08-29t15_23_54_428398": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-08-29T15:23:54.428398"
-  },
-  "action_detect|2026-08-29t15_21_11_110309": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перенести поїздк",
-    "ts": "2026-08-29T15:21:11.110309"
-  },
-  "action_detect|2026-08-29t15_21_10_494842": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перенести поїздк",
-    "ts": "2026-08-29T15:21:10.494842"
-  },
-  "action_detect|2026-08-29t15_20_59_843557": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перенести поїздк",
-    "ts": "2026-08-29T15:20:59.843557"
-  },
-  "action_detect|2026-08-29t15_19_47_422537": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перенести поїздк",
-    "ts": "2026-08-29T15:19:47.422537"
-  },
-  "action_detect|2026-08-29t15_19_36_575518": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перенести поїздк",
-    "ts": "2026-08-29T15:19:36.575518"
-  },
-  "action_detect|2026-08-29t15_19_25_710418": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перенести поїздк",
-    "ts": "2026-08-29T15:19:25.710418"
-  },
-  "selfact|2026-08-29t15_17_02_635385": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що 1 вересня день народження Олі. У тебе є кілька дублюючих записів про це в календарі, а також ",
-    "ts": "2026-08-29T15:17:02.635385"
-  },
-  "email_ai_item|2026-08-29t15_15_00_937453": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист є щоденним дайджестом новин про криптовалюти від Олега Безуглого через LinkedIn. У ньому йдеться про падіння Bitcoin нижче ",
-    "ts": "2026-08-29T15:15:00.937453"
-  },
-  "email_ai_item|2026-08-29t15_06_40_983637": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист є щоденним дайджестом новин про криптовалюти від CryptoBeholder.com за 29 серпня. Він містить аналіз ринкових настроїв, рух",
-    "ts": "2026-08-29T15:06:40.983637"
-  },
-  "email_ai_item|2026-08-29t15_04_30_257450": {
-    "topic": "email_ai_item",
-    "gist": "```json { \"description\": \"Цей лист від Avalanche Team1 пояснює концепцію Layer 1 (L1) у блокчейні, порівнюючи підхід Avalanche з Ethereum та Bitcoin. Він описує",
-    "ts": "2026-08-29T15:04:30.257450"
-  },
-  "action_detect|2026-08-29t15_03_50_737466": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути прострочені дедлайни\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути 16 прос",
-    "ts": "2026-08-29T15:03:50.737466"
-  },
-  "action_detect|2026-08-29t15_03_39_654941": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Астрологічний аналіз вказує на період особистісного з",
-    "ts": "2026-08-29T15:03:39.654941"
-  },
-  "action_detect|2026-08-29t15_03_39_587282": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-29T15:03:39.587282"
-  },
-  "action_detect|2026-08-29t15_03_28_681219": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіж Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Сьогодні потрібно розібратися",
-    "ts": "2026-08-29T15:03:28.681219"
-  },
-  "action_detect|2026-08-29t15_03_17_768198": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-08-29\", \"action_time\": null, \"action_summary\": \"Прийняти ліки Armolopid, ",
-    "ts": "2026-08-29T15:03:17.768198"
   }
 }
