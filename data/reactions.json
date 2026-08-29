@@ -914,5 +914,15 @@
     "label": "👌 Прийняв",
     "state": "open",
     "ts": "2026-08-28T23:46:16"
+  },
+  "generic|t|вакансія global product owner": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "вакансія global product owner",
+    "title": "Вакансія Global Product Owner",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "state": "closed",
+    "ts": "2026-08-29T02:03:07"
   }
 }
