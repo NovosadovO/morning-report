@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-08-30t01_57_25_690614": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-30T01:57:25.690614"
+  },
+  "selfact|2026-08-30t01_56_07_756308": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання туру\",     \"text\": \"Олег, зверніть увагу: ваше бронювання «Paxos and Antipaxos Boat Tour ",
+    "ts": "2026-08-30T01:56:07.756308"
+  },
   "action_detect|2026-08-30t01_52_20_942732": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про поїздку\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставит",
@@ -288,15 +298,5 @@
     "topic": "personal_ai",
     "gist": "Олег, ти вже третину ночі на зміні, і хоча кроків назбирав чимало (11807), важливо підтримувати концентрацію до ранку. Щоб зберегти бадьорість і безпеку, спробу",
     "ts": "2026-08-30T00:01:08.814265"
-  },
-  "proactive_actions|2026-08-30t00_00_12_692999": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оновити платіж Runable\",     \"date\": \"2026-08-30\",     \"time\": \"13:00\",     \"message\": \"Олеже, платіж за під",
-    "ts": "2026-08-30T00:00:12.692999"
-  },
-  "selfact|2026-08-29t23_51_03_469587": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасовано тур на Корфу\",     \"text\": \"Олег, зверни увагу: твій тур \\\"Paxos and Antipaxos Boat Tour from Corfu\\",
-    "ts": "2026-08-29T23:51:03.469587"
   }
 }
