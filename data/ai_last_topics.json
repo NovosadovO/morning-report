@@ -1,4 +1,24 @@
 {
+  "selfact|2026-08-29t15_47_53_322333": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання туру\",     \"text\": \"Олег, зверніть увагу: ваше бронювання туру \\\"Paxos and Antipaxos Boat",
+    "ts": "2026-08-29T15:47:53.322333"
+  },
+  "action_detect|2026-08-29t15_39_33_088839": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь записати пото",
+    "ts": "2026-08-29T15:39:33.088839"
+  },
+  "action_detect|2026-08-29t15_39_04_266674": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-29T15:39:04.266674"
+  },
+  "msg_vip_email_truthfix|2026-08-29t15_38_56_173281": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Привіт!  Зараз субота, 29 серпня 2026 року, 15:38. Дані, які я маю, оновлені станом на 29 серпня, 16 годин тому, тому деяка інформація може бути не найсвіжішою.",
+    "ts": "2026-08-29T15:38:56.173281"
+  },
   "msg_vip_email|2026-08-29t15_38_44_741518": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 📧  Продовжуємо відстежувати твої фінансові та здоров'яні показники, фіксуючи ключові зрушення цього тижня. Зараз субота, 29 серпня, 15:38, і є кіл",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти ліки Armolopid, оскільки",
     "ts": "2026-08-29T14:02:40.542008"
-  },
-  "action_detect|2026-08-29t14_02_40_511378": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оновити платіж Runable\", \"action_date\": \"2026-08-29\", \"action_time\": \"12:00\", \"action_summary\": \"Оновити пл",
-    "ts": "2026-08-29T14:02:40.511378"
-  },
-  "bills|2026-08-29t14_02_34_684564": {
-    "topic": "bills",
-    "gist": "```json [] ```",
-    "ts": "2026-08-29T14:02:34.684564"
-  },
-  "action_detect|2026-08-29t14_02_29_554292": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Відновлення після нічної зміни\", \"action_date\": \"2026-08-29\", \"action_time\": \"17:00\", \"action_summary\": \"Сф",
-    "ts": "2026-08-29T14:02:29.554292"
-  },
-  "briefing_truthfix|2026-08-29t14_02_24_804719": {
-    "topic": "briefing/truthfix",
-    "gist": "Зараз, 29 серпня 2026 року, 14:02, Кошице, ти відновлюєшся після нічної зміни, що закінчилася о шостій ранку, і це ключовий момент для твого здоров'я, адже оста",
-    "ts": "2026-08-29T14:02:24.804719"
   }
 }
