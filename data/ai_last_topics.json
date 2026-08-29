@@ -1,4 +1,44 @@
 {
+  "selfact|2026-08-29t23_19_49_386148": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасування туру Paxos and Antipaxos\",     \"text\": \"Олеже, твій тур \\\"Paxos and Antipaxos Boat Tour from Corfu\\",
+    "ts": "2026-08-29T23:19:49.386148"
+  },
+  "action_detect|2026-08-29t23_16_11_560602": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічні зміни\", \"action_date\": \"2026-08-29\", \"action_time\": null, \"action_summary\": \"Олег має нічні зміни 29 серпня.\"",
+    "ts": "2026-08-29T23:16:11.560602"
+  },
+  "action_detect|2026-08-29t23_15_48_087268": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить інформацію про попередні листи та спові",
+    "ts": "2026-08-29T23:15:48.087268"
+  },
+  "action_detect|2026-08-29t23_15_47_918339": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить інформацію про видалений лист та попере",
+    "ts": "2026-08-29T23:15:47.918339"
+  },
+  "action_detect|2026-08-29t23_15_47_905920": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічні зміни\", \"action_date\": \"2026-08-29\", \"action_time\": null, \"action_summary\": \"Олег має нічну зміну 29 серпня.\"",
+    "ts": "2026-08-29T23:15:47.905920"
+  },
+  "action_detect|2026-08-29t23_15_47_903476": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічні зміни\", \"action_date\": \"2026-08-29\", \"action_time\": null, \"action_summary\": \"Олег має нічні зміни 26, 27, 28 ",
+    "ts": "2026-08-29T23:15:47.903476"
+  },
+  "action_detect|2026-08-29t23_15_36_810717": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-29T23:15:36.810717"
+  },
+  "subs|2026-08-29t23_15_14_359548": {
+    "topic": "subs",
+    "gist": "[]",
+    "ts": "2026-08-29T23:15:14.359548"
+  },
   "action_detect|2026-08-29t23_13_40_580734": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -258,45 +298,5 @@
     "topic": "MSG_IDLE_TIMEOUT/truthfix",
     "gist": "Олеже, дані, які я маю, оновлені 22 години тому, станом на 29 серпня 2026 року.  Твій день сьогодні оцінено на 88 зі 100 балів, що є найвищим показником за оста",
     "ts": "2026-08-29T21:41:02.393332"
-  },
-  "msg_idle_timeout|2026-08-29t21_40_51_787578": {
-    "topic": "MSG_IDLE_TIMEOUT",
-    "gist": "Привіт Олеже! 🚶  Сьогодні твій день оцінено на 88 зі 100 балів – це найвищий показник за останні два дні. Приємно бачити, що ти сьогодні зранку пам'ятав про дог",
-    "ts": "2026-08-29T21:40:51.787578"
-  },
-  "selfact|2026-08-29t21_32_02_467339": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олег, нагадую, що платіж до Runable на $10.00 був невдалим. У календарі",
-    "ts": "2026-08-29T21:32:02.467339"
-  },
-  "action_detect|2026-08-29t21_31_09_162557": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-29T21:31:09.162557"
-  },
-  "action_detect|2026-08-29t21_30_34_445059": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжну інформа",
-    "ts": "2026-08-29T21:30:34.445059"
-  },
-  "msg_vip_email_truthfix|2026-08-29t21_30_24_603345": {
-    "topic": "MSG_VIP_EMAIL/truthfix",
-    "gist": "Почнемо не з найочевиднішого, а з того, що дані по твоєму здоров'ю не оновлювалися вже 21 годину (останні дані: 2026-08-29). Це створює прогалину, яку необхідно",
-    "ts": "2026-08-29T21:30:24.603345"
-  },
-  "msg_vip_email|2026-08-29t21_30_04_937995": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 📧  Цей вечір суботи, 29 серпня, минає для тебе вдома, з вільним часом, і це чудовий момент, щоб підбити підсумки та зосередитися на конкретних кро",
-    "ts": "2026-08-29T21:30:04.937995"
-  },
-  "openloop_promises|2026-08-29t21_25_30_802030": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-08-29T21:25:30.802030"
-  },
-  "hcoach_truthfix|2026-08-29t21_21_09_340615": {
-    "topic": "hcoach/truthfix",
-    "gist": "Олеже, дані, які я маю, оновлені 21 годину тому, станом на 29 серпня 2026 року. Твій пульс спокою зараз 54.0 уд/хв, що на 11.1 уд/хв менше, ніж середнє за 14 дн",
-    "ts": "2026-08-29T21:21:09.340615"
   }
 }
