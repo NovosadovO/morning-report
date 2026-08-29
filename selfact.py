@@ -38,11 +38,11 @@ JOURNAL_FILE = "bot_actions.json"
 DIGEST_FILE = "selfact_digest.json"
 REMINDERS_FILE = "reminders.json"
 
-SCAN_GAP_MIN = 30          # ПОВНА ВОЛЯ: дивиться на життя Олега раз на 30 хв
-MAX_ACTIONS = 6            # максимум дій за один прохід
+SCAN_GAP_MIN = 15          # ПОВНА ВОЛЯ: дивиться на життя Олега раз на 15 хв (28.08: Олег хоче більше ініціативи)
+MAX_ACTIONS = 10           # максимум дій за один прохід (28.08: більше ініціативи)
 JOURNAL_KEEP = 400         # скільки записів журналу тримаємо
 CAL_DAYS = 7               # горизонт календаря
-MAIL_LIMIT = 8             # скільки свіжих листів даємо AI
+MAIL_LIMIT = 15            # скільки свіжих листів даємо AI (усі важливі)
 BODY_CHARS = 700           # скільки символів тіла листа
 DIGEST_HOUR = 21
 DIGEST_MIN = 30

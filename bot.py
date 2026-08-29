@@ -3493,6 +3493,17 @@ def handle_command(chat_id, text):
         import threading as _th_hc5
         _th_hc5.Thread(target=_run_hc5, daemon=True, name="hcoach-month").start()
 
+    elif text.lower().strip() in ["/доми", "/дома", "/houses", "/аспекти"]:
+        def _run_hs():
+            try:
+                import astro_houses as _ahb
+                send(chat_id, _ahb.houses_report())
+            except Exception as _e_hs:
+                send(chat_id, f"⚠️ Доми: {str(_e_hs)[:300]}")
+        send(chat_id, "🏠 Рахую доми й аспекти по ефемеридах…")
+        import threading as _th_hs
+        _th_hs.Thread(target=_run_hs, daemon=True, name="astro-houses").start()
+
     elif text.lower().strip() in ["/доступ", "/access", "/джерела"]:
         def _run_ac():
             try:
