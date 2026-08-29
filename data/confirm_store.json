@@ -7635,7 +7635,24 @@
     "action": "calrem_skip",
     "pid": "botsend_1788010772488",
     "subject": "Записати вагу в Apple Health",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 80497,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_botsend_1788010772488"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_botsend_1788010772488"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-29T15:43:49.358373+00:00"
   }
 }
