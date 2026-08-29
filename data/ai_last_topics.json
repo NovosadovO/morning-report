@@ -1,4 +1,19 @@
 {
+  "selfact|2026-08-29t22_33_17_402656": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оновити платіж Runable\",     \"text\": \"Нагадую, що завтра о 11:00 потрібно оновити платіжну інформацію для Ru",
+    "ts": "2026-08-29T22:33:17.402656"
+  },
+  "selfact|2026-08-29t22_17_30_391852": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Оновити платіж Runable\",     \"text\": \"Нагадую, що завтра, 30.08, о 11:00 потрібно оновити платіжну інформаці",
+    "ts": "2026-08-29T22:17:30.391852"
+  },
+  "deadlines|2026-08-29t22_16_20_071433": {
+    "topic": "deadlines",
+    "gist": "```json [] ```",
+    "ts": "2026-08-29T22:16:20.071433"
+  },
   "email_ai_item|2026-08-29t22_14_11_371044": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії за запитом 'Операційний спеціаліст' у Празі. Зокрема, пропонується вакансія Junior O",
@@ -283,20 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від Temu інформує Олега про те, що йому було надіслано повернення кредиту, і закликає його прийняти його якомога швидше. У листі т",
     "ts": "2026-08-29T20:53:10.754007"
-  },
-  "action_detect|2026-08-29t20_51_18_234792": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-29T20:51:18.234792"
-  },
-  "selfact|2026-08-29t20_45_31_492621": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення Google AI Plus\",     \"text\": \"Олег, ти перейшов на новий план Google AI Plus. Тепер у тебе 400 GB сх",
-    "ts": "2026-08-29T20:45:31.492621"
-  },
-  "action_detect|2026-08-29t20_30_26_760248": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-29T20:30:26.760248"
   }
 }
