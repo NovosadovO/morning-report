@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-30t00_38_17_517657": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасування бронювання туру\",     \"text\": \"Олег, зверніть увагу: ваше бронювання «Paxos and Antipaxos Boat Tour",
+    "ts": "2026-08-30T00:38:17.517657"
+  },
   "openloop_promises|2026-08-30t00_26_30_218972": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити 422.16€\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу необхідно організувати фінанс",
     "ts": "2026-08-29T23:03:18.115157"
-  },
-  "action_detect|2026-08-29t23_03_07_269227": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реактивація Strava API та оновлення платежу\", \"action_date\": \"2026-08-30\", \"action_time\": null, \"action_summary\": \"",
-    "ts": "2026-08-29T23:03:07.269227"
   }
 }
