@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-08-30t00_00_12_692999": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Оновити платіж Runable\",     \"date\": \"2026-08-30\",     \"time\": \"13:00\",     \"message\": \"Олеже, платіж за під",
+    "ts": "2026-08-30T00:00:12.692999"
+  },
   "selfact|2026-08-29t23_51_03_469587": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасовано тур на Корфу\",     \"text\": \"Олег, зверни увагу: твій тур \\\"Paxos and Antipaxos Boat Tour from Corfu\\",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реактивувати застосунок Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Потрібно реактивувати",
     "ts": "2026-08-29T22:04:26.182090"
-  },
-  "action_detect|2026-08-29t22_04_12_988656": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-08-29\", \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято A",
-    "ts": "2026-08-29T22:04:12.988656"
   }
 }
