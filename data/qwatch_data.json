@@ -1019,16 +1019,16 @@
   },
   "2026-08-29": {
     "date": "2026-08-29",
-    "health_score": 75,
     "steps": 11807,
     "hr_avg": 66,
-    "calories": 7,
-    "hrv": 40,
+    "calories": 7832,
+    "hrv": 36,
     "weight_kg": 83.0,
     "age": 36,
     "height_cm": 175,
-    "spo2": 96,
-    "source": "qwatch_auto",
+    "gender": "male",
+    "spo2": null,
+    "source": "qwatch",
     "saved_at": "2026-08-29 23:21"
   }
 }
