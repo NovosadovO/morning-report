@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-30t00_54_17_466748": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання\",     \"text\": \"Олег, твоє бронювання 'Paxos and Antipaxos Boat Tour from Corfu' скасовано",
+    "ts": "2026-08-30T00:54:17.466748"
+  },
   "selfact|2026-08-30t00_38_17_517657": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасування бронювання туру\",     \"text\": \"Олег, зверніть увагу: ваше бронювання «Paxos and Antipaxos Boat Tour",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз транзитних аспекті",
     "ts": "2026-08-29T23:03:18.116806"
-  },
-  "action_detect|2026-08-29t23_03_18_115157": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити 422.16€\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу необхідно організувати фінанс",
-    "ts": "2026-08-29T23:03:18.115157"
   }
 }
