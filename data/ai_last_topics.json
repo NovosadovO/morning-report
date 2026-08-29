@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-08-29t15_19_25_710418": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести поїздку до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перенести поїздк",
+    "ts": "2026-08-29T15:19:25.710418"
+  },
+  "selfact|2026-08-29t15_17_02_635385": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що 1 вересня день народження Олі. У тебе є кілька дублюючих записів про це в календарі, а також ",
+    "ts": "2026-08-29T15:17:02.635385"
+  },
   "email_ai_item|2026-08-29t15_15_00_937453": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист є щоденним дайджестом новин про криптовалюти від Олега Безуглого через LinkedIn. У ньому йдеться про падіння Bitcoin нижче ",
@@ -288,15 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-08-29T13:31:05.795225"
-  },
-  "selfact|2026-08-29t13_29_45_418129": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення платежу Runable\",     \"text\": \"Олег, зверни увагу, платіж до Runable на $10.00 був невдалим 28.08.20",
-    "ts": "2026-08-29T13:29:45.418129"
-  },
-  "action_detect|2026-08-29t13_28_19_612338": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
-    "ts": "2026-08-29T13:28:19.612338"
   }
 }
