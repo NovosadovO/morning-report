@@ -1,9 +1,4 @@
 {
-  "77759": {
-    "sender": "newsletter@ticketportal.sk",
-    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
-    "seen_ts": "2026-08-20T16:14:38.575962+00:00"
-  },
   "77761": {
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
@@ -1498,5 +1493,10 @@
     "sender": "notification@service.tiktok.com",
     "sender_raw": "TikTok <notification@service.tiktok.com>",
     "seen_ts": "2026-08-29T11:04:19.317420+00:00"
+  },
+  "78220": {
+    "sender": "noreply@e.economist.com",
+    "sender_raw": "\"The Economist\" <noreply@e.economist.com>",
+    "seen_ts": "2026-08-29T11:22:48.319001+00:00"
   }
 }
