@@ -1,4 +1,19 @@
 {
+  "openloop_promises|2026-08-30t00_26_30_218972": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-30T00:26:30.218972"
+  },
+  "selfact|2026-08-30t00_22_59_667993": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення Google AI Plus\",     \"text\": \"Олег, ти перейшов на новий план підписки Google AI Plus, який надає 40",
+    "ts": "2026-08-30T00:22:59.667993"
+  },
+  "action_detect|2026-08-30t00_21_59_645391": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про поїздку\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставит",
+    "ts": "2026-08-30T00:21:59.645391"
+  },
   "astro_ai|2026-08-30t00_19_07_032688": {
     "topic": "astro_ai",
     "gist": "Олеже, ця ніч, 30 серпня 2026 року, несе важливі акценти, які варто врахувати під час твоєї зміни в Кошице. Зараз, о 00:18, ми бачимо, як планети формують не пр",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реактивація Strava API та оновлення платежу\", \"action_date\": \"2026-08-30\", \"action_time\": null, \"action_summary\": \"",
     "ts": "2026-08-29T23:03:07.269227"
-  },
-  "action_detect|2026-08-29t23_02_56_190548": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-08-29\", \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскіл",
-    "ts": "2026-08-29T23:02:56.190548"
-  },
-  "action_detect|2026-08-29t23_02_45_142922": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реактивація Strava\", \"action_date\": \"2026-08-30\", \"action_time\": null, \"action_summary\": \"Реактивувати застосунок S",
-    "ts": "2026-08-29T23:02:45.142922"
-  },
-  "briefing_truthfix|2026-08-29t23_02_38_816941": {
-    "topic": "briefing/truthfix",
-    "gist": "Сьогоднішня ніч, субота 29 серпня 2026 року, з оцінкою дня 88 зі 100, вказує на відносно продуктивний день, попри те, що твої останні дані про кроки, отримані 2",
-    "ts": "2026-08-29T23:02:38.816941"
   }
 }
