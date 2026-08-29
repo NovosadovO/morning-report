@@ -1,14 +1,4 @@
 {
-  "77751": {
-    "sender": "researchteam@blockworks.com",
-    "sender_raw": "0xResearch <researchteam@blockworks.com>",
-    "seen_ts": "2026-08-20T14:03:31.735946+00:00"
-  },
-  "77752": {
-    "sender": "payments-noreply@google.com",
-    "sender_raw": "Google Payments <payments-noreply@google.com>",
-    "seen_ts": "2026-08-20T14:36:11.415846+00:00"
-  },
   "77753": {
     "sender": "hello@news.sorare.com",
     "sender_raw": "\"Sorare\" <hello@news.sorare.com>",
@@ -1503,5 +1493,10 @@
     "sender": "updates@okx.com",
     "sender_raw": "OKX <updates@okx.com>",
     "seen_ts": "2026-08-29T07:03:15.470563+00:00"
+  },
+  "78210": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Bybit через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-08-29T08:03:18.572514+00:00"
   }
 }
