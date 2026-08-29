@@ -134,7 +134,8 @@
     },
     "EVENING_AI": {
       "checked": 2,
-      "issues": 1
+      "issues": 1,
+      "fixed": 1
     },
     "MSG_IDLE_TIMEOUT": {
       "checked": 4,
@@ -333,7 +334,7 @@
   "2026-08-29": {
     "checked": 154,
     "issues": 117,
-    "fixed": 41,
+    "fixed": 42,
     "cut": 17
   }
 }
