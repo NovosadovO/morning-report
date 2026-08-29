@@ -1,4 +1,9 @@
 {
+  "people|2026-08-29t17_13_55_154968": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"michaela.bila@bukovinakosice.sk\",     \"name\": \"Mgr. Michaela Bilá\",     \"relation\": \"інше\",     \"topics\": [       \"фабрики на Україн",
+    "ts": "2026-08-29T17:13:55.154968"
+  },
   "selfact|2026-08-29t17_04_45_702392": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання туру\",     \"text\": \"Олег, зверніть увагу: ваше бронювання «Paxos and Antipaxos Boat Tour ",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу: 1 вересня у вашому календарі є дублюючі події 'День народження Олі' (тричі) та 'Олі — ден",
     "ts": "2026-08-29T15:32:38.278443"
-  },
-  "action_detect|2026-08-29t15_30_58_513304": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-29T15:30:58.513304"
   }
 }
