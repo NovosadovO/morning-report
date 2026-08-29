@@ -153,7 +153,8 @@
       "fixed": 1
     },
     "healthai": {
-      "checked": 1
+      "checked": 1,
+      "issues": 1
     }
   },
   "last": [
@@ -315,7 +316,7 @@
   ],
   "2026-08-29": {
     "checked": 94,
-    "issues": 74,
+    "issues": 75,
     "fixed": 30,
     "cut": 11
   }
