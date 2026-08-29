@@ -180,7 +180,8 @@
     },
     "ai_buttons": {
       "checked": 1,
-      "issues": 1
+      "issues": 1,
+      "fixed": 1
     }
   },
   "last": [
@@ -340,7 +341,7 @@
   "2026-08-29": {
     "checked": 184,
     "issues": 137,
-    "fixed": 53,
+    "fixed": 54,
     "cut": 17
   }
 }
