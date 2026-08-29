@@ -2281,6 +2281,13 @@
       "detail": "Лист від Google One <googleone-noreply@google.com> | Oleg, ознайомтеся з новим планом Google AI Plus.",
       "module": "selfact",
       "ts": "2026-08-29T18:55:32"
+    },
+    {
+      "kind": "ask",
+      "what": "Олег, ти плануєш подаватися на вакансію Application Support",
+      "detail": "Олег отримав сповіщення про вакансію, яка може бути для нього актуальною, і бот має дізнатися про його наміри.",
+      "module": "selfact",
+      "ts": "2026-08-29T18:55:40"
     }
   ]
 }
