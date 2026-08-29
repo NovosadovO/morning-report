@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-29t23_51_03_469587": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасовано тур на Корфу\",     \"text\": \"Олег, зверни увагу: твій тур \\\"Paxos and Antipaxos Boat Tour from Corfu\\",
+    "ts": "2026-08-29T23:51:03.469587"
+  },
   "selfact|2026-08-29t23_35_03_132686": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Скасоване бронювання туру\",     \"text\": \"Олег, зверніть увагу: ваше бронювання Paxos and Antipaxos Boat Tour f",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-08-29\", \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято A",
     "ts": "2026-08-29T22:04:12.988656"
-  },
-  "action_detect|2026-08-29t22_04_12_963916": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіж Runable\", \"action_date\": \"2026-08-29\", \"action_time\": \"12:00\", \"action_summary\": \"Оновити платіж за ",
-    "ts": "2026-08-29T22:04:12.963916"
   }
 }
