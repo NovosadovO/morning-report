@@ -8426,6 +8426,12 @@
       "category": "confirm",
       "question": "calrem_skip: Перевірити новини по крипторинку",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-29T23:24:50.056845+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_8a2a7318ed"
     }
   ]
 }
