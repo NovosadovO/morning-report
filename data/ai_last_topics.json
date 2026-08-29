@@ -1,4 +1,9 @@
 {
+  "msg_workout_plan|2026-08-29t17_00_37_301698": {
+    "topic": "MSG_WORKOUT_PLAN",
+    "gist": "Привіт Олеже! 🧘 Чудово, що ти приділяєш час активному відновленню, це ключ до довготривалої витривалості та запобігання травмам. Сьогодні, в суботу, 29 серпня, ",
+    "ts": "2026-08-29T17:00:37.301698"
+  },
   "openloop_promises|2026-08-29t16_54_04_225177": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-08-29\", \"action_time\": null, \"action_summary\": \"Прийняти ліки Armolopid, ",
     "ts": "2026-08-29T15:03:17.768198"
-  },
-  "mailcal_extract|2026-08-29t15_03_13_183671": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-08-29T15:03:13.183671"
   }
 }
