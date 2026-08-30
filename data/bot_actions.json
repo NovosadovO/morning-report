@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Важливий дедлайн Socios.com",
-      "detail": "Згідно з 'ДЕДЛАЙНИ', сьогодні, 27.08.2026, дедлайн для 'Socios.com: зміна способу входу'.",
-      "module": "selfact",
-      "ts": "2026-08-27T01:55:22"
-    },
-    {
-      "kind": "notify",
       "what": "Core Lightning: рекомендація відключити ноди",
       "detail": "Олег отримує та цікавиться крипто-новинами (факт з пам'яті), а свіжий лист від The Defiant містить заголовок 'Core Lightning Tells Node Operators to Go Offline'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Згідно зі свіжими листами: 'Сповіщення про вакансії LinkedIn | Business Analyst - Data Management в Capco, текст: Сповіщення про вакансії в Kosice Нові вакансії відповідають вашим налаштуванням. Business Analyst - Data Management Capco Košice'",
       "module": "selfact",
       "ts": "2026-08-30T15:41:51"
+    },
+    {
+      "kind": "event",
+      "what": "Привітати Олю з Днем народження",
+      "detail": "Календар на 01.09 містить дві події: '07:00 🔔 Привітати Олю з Днем народження' та '17:00 🤝 привітати Олю з Днем народження'. Також у 'ВАЖЛИВІ ДАТИ' є 'd|олі|09-01' з типом 'birthday'.",
+      "module": "selfact",
+      "ts": "2026-08-30T15:41:57"
     }
   ]
 }
