@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-08-30t12_52_09_415420": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від Temu є рекламною розсилкою, яка пропонує відвідати їхній вебсайт для перегляду рекомендованих товарів. У листі немає ко",
+    "ts": "2026-08-30T12:52:09.415420"
+  },
+  "selfact|2026-08-30t12_48_45_294204": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Зберегти акаунт Rondogo\",     \"text\": \"Олег, сьогодні о 11:00 було нагадування про збереження акаунту Rondog",
+    "ts": "2026-08-30T12:48:45.294204"
+  },
   "calendar|2026-08-30t12_45_57_802779": {
     "topic": "calendar",
     "gist": "Олеже, бачу, що сьогодні обідній час вже перевалив, а ти знову пропустив нагадування зберегти акаунт Rondogo на 12:00. 😬 Це вже вдруге, як ти не реагуєш на попе",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати вагу в Ap",
     "ts": "2026-08-30T11:12:05.921673"
-  },
-  "action_detect|2026-08-30t11_03_17_307858": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Досягти цілі ваги\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має ціль набрати +5 кг до сво",
-    "ts": "2026-08-30T11:03:17.307858"
-  },
-  "action_detect|2026-08-30t11_03_17_268911": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Точний Марс Трин Натальний Плутон\", \"action_date\": \"2026-08-30\", \"action_time\": null, \"action_summary\": \"Ви",
-    "ts": "2026-08-30T11:03:17.268911"
   }
 }
