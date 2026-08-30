@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Скасування туру Paxos and Antipaxos",
-      "detail": "Лист від noreply@booking.com про скасування бронювання туру та повернення коштів.",
-      "module": "selfact",
-      "ts": "2026-08-27T04:27:47"
-    },
-    {
       "kind": "note",
       "what": "Олег цікавиться вакансіями Senior Software Engineer - Full-s",
       "detail": "Отримано сповіщення про вакансії LinkedIn на Senior Software Engineer - Full-stack - Growth Product в Kraken (крипто-компанія).",
@@ -2799,6 +2792,13 @@
       "detail": "Кілька свіжих листів від 'Oleh Bezuhlyi через LinkedIn' та 'CryptoBeholder.com через LinkedIn' є крипто-дайджестами, що підтверджує раніше відомий інтерес Олега до криптовалют.",
       "module": "selfact",
       "ts": "2026-08-30T17:14:31"
+    },
+    {
+      "kind": "note",
+      "what": "Олег шукає роботу на позиції Business Analyst - Data Managem",
+      "detail": "Свіжий лист 'Сповіщення про вакансії LinkedIn | Business Analyst - Data Management в Capco' підтверджує його активний пошук роботи на цій позиції в Кошице.",
+      "module": "selfact",
+      "ts": "2026-08-30T17:14:39"
     }
   ]
 }
