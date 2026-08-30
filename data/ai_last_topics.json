@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-30t19_26_19_758773": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-30T19:26:19.758773"
+  },
   "selfact|2026-08-30t19_19_05_241067": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підготовка до ранньої зміни\",     \"text\": \"Олеже, нагадую, що о 20:00 за календарем у тебе запланована підгото",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зберегти акаунт Rondogo\", \"action_date\": \"2026-08-30\", \"action_time\": \"13:00\", \"action_summary\": \"Зберегти акаунт R",
     "ts": "2026-08-30T18:00:28.520824"
-  },
-  "action_detect|2026-08-30t18_00_11_240773": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Вечеря\", \"action_date\": null, \"action_time\": \"19:00\", \"action_summary\": \"Повечеряти до 19:00 легкою їжею, уникаючи ",
-    "ts": "2026-08-30T18:00:11.240773"
   }
 }
