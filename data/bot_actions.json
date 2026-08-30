@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег цікавиться вакансіями Senior Software Engineer - Full-s",
-      "detail": "Отримано сповіщення про вакансії LinkedIn на Senior Software Engineer - Full-stack - Growth Product в Kraken (крипто-компанія).",
-      "module": "selfact",
-      "ts": "2026-08-27T04:27:50"
-    },
-    {
-      "kind": "note",
       "what": "Олег працює Line Leader в Minebea Slovakia s.r.o. (Кошице).",
       "detail": "Лист від Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> містить його посаду та компанію.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист 'Сповіщення про вакансії LinkedIn | Business Analyst - Data Management в Capco' підтверджує його активний пошук роботи на цій позиції в Кошице.",
       "module": "selfact",
       "ts": "2026-08-30T17:14:39"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує сповіщення про вакансію Technical Writer в Octa",
+      "detail": "У 'СВІЖІ ЛИСТИ' є лист від 'Сповіщення про вакансії LinkedIn' про вакансію 'Technical Writer в Octave'.",
+      "module": "selfact",
+      "ts": "2026-08-30T17:30:30"
     }
   ]
 }
