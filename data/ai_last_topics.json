@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-08-30t04_30_15_231143": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн-реєстрація на рейс Ryanair\",     \"date\": \"2026-08-30\",     \"time\": \"06:00\",     \"message\": \"Олеже, на",
+    "ts": "2026-08-30T04:30:15.231143"
+  },
   "astro_ai|2026-08-30t04_19_59_512214": {
     "topic": "astro_ai",
     "gist": "Сьогодні, 30 серпня 2026 року, найнеочікуваніша цифра дня – це показник ваги: 83.0 кг. Хоча тренд стабільний, Олег, до твоєї цілі ще +5.0 кг. Це важливо, бо фіз",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про поїзд\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставити ",
     "ts": "2026-08-30T02:03:15.896513"
-  },
-  "action_detect|2026-08-30t02_03_05_151497": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжні дані Strava\", \"action_date\": \"2024-09-01\", \"action_time\": null, \"action_summary\": \"Оновити платіжн",
-    "ts": "2026-08-30T02:03:05.151497"
   }
 }
