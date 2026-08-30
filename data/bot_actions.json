@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав повернення коштів за скасований тур 'Paxos and",
-      "detail": "Лист від noreply@booking.com про скасування бронювання та повернення коштів.",
-      "module": "selfact",
-      "ts": "2026-08-27T07:31:10"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "/сон",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від LinkedIn про вакансію 'Regional AI Run Lead в EPAM Systems' містить нову інформацію про потенційні професійні інтереси Олега, яку варто зафіксувати.",
       "module": "selfact",
       "ts": "2026-08-30T19:19:17"
+    },
+    {
+      "kind": "note",
+      "what": "Олег цікавиться інвестиціями в AI-роботів, про що свідчить л",
+      "detail": "Свіжий лист 'Uber’s Co-Founder Just Raised $1.7B for AI-Powered Robots' від StartEngine показує інтерес Олега до інвестицій у високотехнологічні галузі.",
+      "module": "selfact",
+      "ts": "2026-08-30T19:19:25"
     }
   ]
 }
