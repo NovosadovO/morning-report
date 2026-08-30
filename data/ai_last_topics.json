@@ -1,4 +1,14 @@
 {
+  "msg_vip_email|2026-08-30t04_37_16_709148": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝 Зараз, коли ти відновлюєш сили, саме час спокійно поглянути на стратегічні моменти, щоб ранок понеділка, що наближається, був максимально продук",
+    "ts": "2026-08-30T04:37:16.709148"
+  },
+  "selfact|2026-08-30t04_32_58_669138": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Онлайн-реєстрація на рейс Ryanair\",     \"text\": \"Олег, онлайн-реєстрація на рейс Ryanair до Малаги (код бронюв",
+    "ts": "2026-08-30T04:32:58.669138"
+  },
   "proactive_actions|2026-08-30t04_30_15_231143": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Онлайн-реєстрація на рейс Ryanair\",     \"date\": \"2026-08-30\",     \"time\": \"06:00\",     \"message\": \"Олеже, на",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Знайти компроміс між роботою та особистим життям\", \"action_date\": \"null\", \"action_time\": \"null\", \"action_summary\": ",
     "ts": "2026-08-30T02:03:27.066218"
-  },
-  "action_detect|2026-08-30t02_03_15_941338": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити дедлайни по домашніх фінансах\", \"action_date\": \"2026-08-30\", \"action_time\": null, \"action_summary\": \"Не ",
-    "ts": "2026-08-30T02:03:15.941338"
-  },
-  "action_detect|2026-08-30t02_03_15_896513": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про поїзд\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставити ",
-    "ts": "2026-08-30T02:03:15.896513"
   }
 }
