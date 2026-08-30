@@ -2735,6 +2735,18 @@
       "data": "habit_no_run",
       "label": "❌ Ні",
       "ts": "2026-08-30T23:19:41"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_water",
+      "label": "✅ Так",
+      "ts": "2026-08-30T23:19:42"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_tea",
+      "label": "❌ Ні",
+      "ts": "2026-08-30T23:19:44"
     }
   ]
 }
