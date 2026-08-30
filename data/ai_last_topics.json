@@ -1,4 +1,14 @@
 {
+  "selfact|2026-08-30t17_45_35_194767": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег продовжує отримувати сповіщення про вакансії Technical Writer у Відні та Business Analyst - Data Management ",
+    "ts": "2026-08-30T17:45:35.194767"
+  },
+  "action_detect|2026-08-30t17_35_38_557394": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Піша прогулянка\", \"action_date\": \"2023-08-30\", \"action_time\": \"19:00\", \"action_summary\": \"Зробити сьогодні до 19:00",
+    "ts": "2026-08-30T17:35:38.557394"
+  },
   "msg_vip_email|2026-08-30t17_35_25_388605": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🏹  Твоя вага знизилась на 0.4 кг за тиждень до 84.0 кг, але ціль у 78 кг все ще на 6 кг попереду, і, зважаючи на відкладені нагадування про пробіж",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Зберегти акаунт Rondogo\",     \"text\": \"Олег, не забудь зберегти свій акаунт Rondogo. Сьогодні останній день,",
     "ts": "2026-08-30T15:57:36.363032"
-  },
-  "action_detect|2026-08-30t15_55_29_915442": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-30T15:55:29.915442"
-  },
-  "selfact|2026-08-30t15_41_44_132916": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Аккаунт Rondogo\",     \"text\": \"Олег, нагадую, що тобі потрібно зберегти акаунт Rondogo сьогодні, інакше його м",
-    "ts": "2026-08-30T15:41:44.132916"
   }
 }
