@@ -1,11 +1,4 @@
 {
-  "2026-08-26": {
-    "morning_greet": true,
-    "run_question": true,
-    "midday_checkin": true,
-    "ai_observations": true,
-    "night_summary": true
-  },
   "2026-08-27": {
     "morning_greet": true
   },
@@ -18,5 +11,8 @@
     "morning_greet": true,
     "midday_checkin": true,
     "evening_checkin": true
+  },
+  "2026-08-30": {
+    "morning_greet": true
   }
 }
