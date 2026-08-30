@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Оновлення платіжних даних Runable",
-      "detail": "Три листи від Runable про невдалу оплату ($10.00 payment to Runable was unsuccessful) та нотатка в підписках про можливі проблеми з карткою.",
-      "module": "selfact",
-      "ts": "2026-08-26T21:52:16"
-    },
-    {
       "kind": "reminder",
       "what": "Виступ Кевіна Ворша на Jackson Hole",
       "detail": "Подія 'Виступ Кевіна Ворша на Jackson Hole' запланована на 28.08 о 08:00.",
@@ -2799,6 +2792,13 @@
       "detail": "Зі свіжих листів видно, що Олег отримує сповіщення про вакансії з LinkedIn ('Technik/čka servisného oddelenia – podmienka § 22 в ENGIE Slovensko', 'Back Office Sales Admin в Brazing Technologies Europe') та Profesia.sk ('Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk') в Кошиц",
       "module": "selfact",
       "ts": "2026-08-30T12:18:24"
+    },
+    {
+      "kind": "ask",
+      "what": "Олеже, ти скаржився на нагадування про нічну зміну 29.08. У",
+      "detail": "Олег скаржився на нагадування про нічну зміну 29.08 і зазначав, що він не на нічній зміні. Водночас, у календарі чітко вказані нічні зміни на 04.09 та 05.09. Потрібно уточнити актуальність графіку, щоб уникнути подальшої плутанини.",
+      "module": "selfact",
+      "ts": "2026-08-30T12:18:32"
     }
   ]
 }
