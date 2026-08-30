@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-08-30t16_55_56_872337": {
+    "topic": "mailcal_extract",
+    "gist": "[]",
+    "ts": "2026-08-30T16:55:56.872337"
+  },
   "selfact|2026-08-30t16_44_05_135706": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Збереження акаунту Rondogo\",     \"text\": \"Олег, зверни увагу: ти можеш втратити обліковий запис Rondogo. Щоб з",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Аккаунт Rondogo\",     \"text\": \"Олег, нагадую, що сьогодні, 30.08, о 11:00 було заплановано зберегти акаунт Ron",
     "ts": "2026-08-30T14:37:59.971279"
-  },
-  "action_detect|2026-08-30t14_23_57_125420": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію для Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Спробувати он",
-    "ts": "2026-08-30T14:23:57.125420"
   }
 }
