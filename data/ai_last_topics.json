@@ -1,4 +1,14 @@
 {
+  "astro_ai|2026-08-30t04_19_59_512214": {
+    "topic": "astro_ai",
+    "gist": "Сьогодні, 30 серпня 2026 року, найнеочікуваніша цифра дня – це показник ваги: 83.0 кг. Хоча тренд стабільний, Олег, до твоєї цілі ще +5.0 кг. Це важливо, бо фіз",
+    "ts": "2026-08-30T04:19:59.512214"
+  },
+  "selfact|2026-08-30t04_17_11_160617": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Онлайн-реєстрація на рейс до Малаги\",     \"text\": \"Олег, нагадую, що онлайн-реєстрація на твій рейс Ryanair ві",
+    "ts": "2026-08-30T04:17:11.160617"
+  },
   "email_ai_item|2026-08-30t04_14_53_260697": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від LinkedIn є сповіщенням про нову вакансію 'Back Office Sales Admin' у компанії Brazing Technologies Europe в Кошице, Словаччина. Ва",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжні дані Strava\", \"action_date\": \"2024-09-01\", \"action_time\": null, \"action_summary\": \"Оновити платіжн",
     "ts": "2026-08-30T02:03:05.151497"
-  },
-  "action_detect|2026-08-30t02_02_52_884454": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про поїздку\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставит",
-    "ts": "2026-08-30T02:02:52.884454"
-  },
-  "action_detect|2026-08-30t02_02_52_879492": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"09:00\", \"action_summary\": \"День народження Олі з",
-    "ts": "2026-08-30T02:02:52.879492"
   }
 }
