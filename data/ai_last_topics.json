@@ -1,4 +1,19 @@
 {
+  "openloop_promises|2026-08-30t06_28_50_957696": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-30T06:28:50.957696"
+  },
+  "action_detect|2026-08-30t06_23_22_350051": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про поїзд\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставити ",
+    "ts": "2026-08-30T06:23:22.350051"
+  },
+  "selfact|2026-08-30t06_23_14_254907": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Онлайн-реєстрація на рейс до Малаги\",     \"text\": \"Олег, нагадую, що онлайн-реєстрація на твій рейс Ryanair до",
+    "ts": "2026-08-30T06:23:14.254907"
+  },
   "selfact|2026-08-30t06_07_20_944543": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення плану Google AI Plus\",     \"text\": \"Ти перейшов на новий план підписки Google AI Plus, який надає 40",
@@ -283,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про поїздку\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставит",
     "ts": "2026-08-30T04:48:02.702087"
-  },
-  "mailcal_extract|2026-08-30t04_45_33_328268": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-08-30T04:45:33.328268"
-  },
-  "action_detect|2026-08-30t04_37_34_473227": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2024-08-31\", \"action_time\": \"06:00\", \"action_summary\": \"Розпочнеться рання зміна завт",
-    "ts": "2026-08-30T04:37:34.473227"
-  },
-  "msg_vip_email_truthfix|2026-08-30t04_37_26_089585": {
-    "topic": "MSG_VIP_EMAIL/truthfix",
-    "gist": "Олеже, зараз 04:37, і завтра, 31 серпня, на тебе чекає рання зміна з 06:00.  Твій показник сну за останні 7 днів впав на 2.6 години, а свіжих даних за останню д",
-    "ts": "2026-08-30T04:37:26.089585"
-  },
-  "selfact|2026-08-30t06_23_14_254907": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Онлайн-реєстрація на рейс до Малаги\",     \"text\": \"Олег, нагадую, що онлайн-реєстрація на твій рейс Ryanair до",
-    "ts": "2026-08-30T06:23:14.254907"
   }
 }
