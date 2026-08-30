@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег цікавиться Full-stack вакансіями",
-      "detail": "Знайдено лист від LinkedIn про вакансію 'Senior Software Engineer - Full-stack - Growth Product в Kraken' за запитом 'Cryptocurrency in Slovakia'. Це свідчить про інтерес Олега до подібних вакансій, що не було чітко зазначено в попередніх нотатках.",
-      "module": "selfact",
-      "ts": "2026-08-27T07:00:34"
-    },
-    {
-      "kind": "note",
       "what": "Олег має запланований переліт до Малаги, Іспанія, 1 вересня,",
       "detail": "Інформація з календаря про поїздку в Малагу 1 вересня та лист від letenky@pelikan.sk.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи від 'The Breakdown <newsletter@blockworks.com> | 🟪 Load-bearing' та 'PLUNGE <hello@plunge.com> | The Counterintuitive Sleep Fix' вказують на ці інтереси.",
       "module": "selfact",
       "ts": "2026-08-30T19:03:00"
+    },
+    {
+      "kind": "note",
+      "what": "Олег мав змінити дату поїздки до Малаги на 7 вересня, але це",
+      "detail": "У 'НОТАТКИ ПРО ОЛЕГА' є записи: 'Олег змінив дату поїздки до Малаги на 7 вересня.' та 'Олег хоче змінити дату поїздки до Малаги на 7 вересня. Це суперечить поточній події в календарі на 1 вересня.'.",
+      "module": "selfact",
+      "ts": "2026-08-30T19:03:08"
     }
   ]
 }
