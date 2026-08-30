@@ -113,6 +113,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-31T00:01:51.411718",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>America is awash in indignation</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78279"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78279"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78279"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78279"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78279"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78279"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
