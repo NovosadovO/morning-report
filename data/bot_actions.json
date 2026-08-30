@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олеже, чи потрібно мені видалити дубльовані події 'Нічна змі",
-      "detail": "У звіті від Runable зазначено, що 'Нічна зміна' на сьогодні задубльована 3 рази, і Олег раніше просив виправити помилки в календарі.",
-      "module": "selfact",
-      "ts": "2026-08-27T01:25:20"
-    },
-    {
       "kind": "notify",
       "what": "Важливий дедлайн Socios.com",
       "detail": "Згідно з 'ДЕДЛАЙНИ', сьогодні, 27.08.2026, дедлайн для 'Socios.com: зміна способу входу'.",
@@ -2799,6 +2792,13 @@
       "detail": "Зі свіжих листів: \"Daily Crypto Digest — August 30\" від Oleh Bezuhlyi через LinkedIn та \"AI-curated Daily Crypto Digest - August 30\" від CryptoBeholder.com через LinkedIn.",
       "module": "selfact",
       "ts": "2026-08-30T15:25:41"
+    },
+    {
+      "kind": "note",
+      "what": "Інтерес до вакансій Business Analyst",
+      "detail": "Згідно зі свіжими листами: 'Сповіщення про вакансії LinkedIn | Business Analyst - Data Management в Capco, текст: Сповіщення про вакансії в Kosice Нові вакансії відповідають вашим налаштуванням. Business Analyst - Data Management Capco Košice'",
+      "module": "selfact",
+      "ts": "2026-08-30T15:41:51"
     }
   ]
 }
