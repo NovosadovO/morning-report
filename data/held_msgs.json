@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-31T00:01:45.597177",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-31T00:01:47.412741",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Operations &amp; ICT Governance Specialist в PPF banka</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -593,6 +587,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78277"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-31T01:01:30.792285",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Event Operations Specialist в Swiss Re</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78275"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78275"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78275"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78275"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78275"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78275"
             }
           ]
         ]
