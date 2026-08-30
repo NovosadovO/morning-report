@@ -7758,7 +7758,40 @@
     "action": "cw_miss",
     "pid": "a7419e5736",
     "subject": "🔔 Зберегти акаунт Rondogo",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 81363,
+        "kb": [
+          [
+            {
+              "text": "✅ Було",
+              "callback_data": "cw_done_a7419e5736"
+            },
+            {
+              "text": "❌ Не було",
+              "callback_data": "cw_miss_a7419e5736"
+            }
+          ],
+          [
+            {
+              "text": "⏭ Перенесли",
+              "callback_data": "cw_moved_a7419e5736"
+            },
+            {
+              "text": "✍️ Нотатка",
+              "callback_data": "cw_note_a7419e5736"
+            }
+          ],
+          [
+            {
+              "text": "🤖 Що далі?",
+              "callback_data": "cw_next_a7419e5736"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-30T13:10:58.429224+00:00"
   }
 }
