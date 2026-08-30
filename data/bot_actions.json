@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Нова вакансія Senior Software Engineer",
-      "detail": "Лист від LinkedIn Job Alerts інформує про нову вакансію, яка відповідає налаштуванням Олега.",
-      "module": "selfact",
-      "ts": "2026-08-27T05:28:54"
-    },
-    {
       "kind": "note",
       "what": "Олег цікавиться вакансіями в сфері криптовалют (Senior Softw",
       "detail": "Олег отримує сповіщення про вакансії за запитом 'Cryptocurrency' в Slovakia.",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є листи від 'Oleh Bezuhlyi через LinkedIn' та 'CryptoBeholder.com через LinkedIn' з 'Daily Crypto Digest'.",
       "module": "selfact",
       "ts": "2026-08-30T18:01:33"
+    },
+    {
+      "kind": "ask",
+      "what": "Олеже, чи хочеш, щоб я додав подію про реконструкцію UniCred",
+      "detail": "У календарі на 04.09 є події '07:00 🔔 Реконструкція UniCredit Bank' та '08:00 📌 Реконструкція відділення UniCredit Bank Кошице Rooseveltova', але це не є прямою дією, яку я маю виконувати без твого підтвердження.",
+      "module": "selfact",
+      "ts": "2026-08-30T18:01:41"
     }
   ]
 }
