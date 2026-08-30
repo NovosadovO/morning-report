@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Інтерес до Jackson Hole",
-      "detail": "Подія 'Виступ Кевіна Ворша на Jackson Hole' з'являється двічі в календарі на 29.08, що свідчить про потенційний інтерес Олега до цієї події.",
-      "module": "selfact",
-      "ts": "2026-08-27T01:25:15"
-    },
-    {
       "kind": "ask",
       "what": "Олеже, чи потрібно мені видалити дубльовані події 'Нічна змі",
       "detail": "У звіті від Runable зазначено, що 'Нічна зміна' на сьогодні задубльована 3 рази, і Олег раніше просив виправити помилки в календарі.",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є сповіщення про вакансії 'Business Analyst - Data Management в Capco' та 'Back Office Sales Admin в Brazing Technologies Europe'.",
       "module": "selfact",
       "ts": "2026-08-30T14:54:07"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує численні листи про крипто-дайджести від різних",
+      "detail": "Зі свіжих листів: \"Daily Crypto Digest — August 30\" від Oleh Bezuhlyi через LinkedIn та \"AI-curated Daily Crypto Digest - August 30\" від CryptoBeholder.com через LinkedIn.",
+      "module": "selfact",
+      "ts": "2026-08-30T15:25:41"
     }
   ]
 }
