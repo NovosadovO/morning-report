@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-30t22_24_59_795629": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення щодо поїздки до Малаги\",     \"text\": \"Поїздка до Малаги все ще відображається в календарі на 1 верес",
+    "ts": "2026-08-30T22:24:59.795629"
+  },
   "mailcal_extract|2026-08-30t22_15_26_015635": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити звички\", \"action_date\": \"null\", \"action_time\": \"null\", \"action_summary\": \"Перевірити та занотувати звичк",
     "ts": "2026-08-30T21:00:56.272072"
-  },
-  "action_detect|2026-08-30t21_00_49_157736": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Змінити дату поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Олег мав змін",
-    "ts": "2026-08-30T21:00:49.157736"
   }
 }
