@@ -168,7 +168,8 @@
       "fixed": 1
     },
     "MSG_WORKOUT_PLAN": {
-      "checked": 2
+      "checked": 2,
+      "issues": 1
     },
     "defi_digest": {
       "checked": 1
@@ -348,7 +349,7 @@
   },
   "2026-08-30": {
     "checked": 130,
-    "issues": 70,
+    "issues": 71,
     "fixed": 37,
     "cut": 1
   }
