@@ -1,4 +1,34 @@
 {
+  "selfact|2026-08-30t08_10_44_714703": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Онлайн-реєстрація на рейс Ryanair\",     \"text\": \"Олег, нагадую, що онлайн-реєстрація на ваш рейс Ryanair (код ",
+    "ts": "2026-08-30T08:10:44.714703"
+  },
+  "action_detect|2026-08-30t08_03_42_299937": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має несплач",
+    "ts": "2026-08-30T08:03:42.299937"
+  },
+  "action_detect|2026-08-30t08_03_42_298968": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про поїзд\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Поставити нагадування ",
+    "ts": "2026-08-30T08:03:42.298968"
+  },
+  "action_detect|2026-08-30t08_03_31_026669": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-30T08:03:31.026669"
+  },
+  "action_detect|2026-08-30t08_03_20_192414": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має несплач",
+    "ts": "2026-08-30T08:03:20.192414"
+  },
+  "action_detect|2026-08-30t08_03_05_307716": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Олю з Днем народження\", \"action_date\": \"2026-09-01\", \"action_time\": \"08:00\", \"action_summary\": \"Привітати",
+    "ts": "2026-08-30T08:03:05.307716"
+  },
   "action_detect|2026-08-30t08_03_05_271077": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має несплач",
@@ -268,35 +298,5 @@
     "topic": "openloop_promises",
     "gist": "```json [] ```",
     "ts": "2026-08-30T06:28:50.957696"
-  },
-  "action_detect|2026-08-30t06_23_22_350051": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про поїзд\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставити ",
-    "ts": "2026-08-30T06:23:22.350051"
-  },
-  "selfact|2026-08-30t06_23_14_254907": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Онлайн-реєстрація на рейс до Малаги\",     \"text\": \"Олег, нагадую, що онлайн-реєстрація на твій рейс Ryanair до",
-    "ts": "2026-08-30T06:23:14.254907"
-  },
-  "selfact|2026-08-30t06_07_20_944543": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення плану Google AI Plus\",     \"text\": \"Ти перейшов на новий план підписки Google AI Plus, який надає 40",
-    "ts": "2026-08-30T06:07:20.944543"
-  },
-  "action_detect|2026-08-30t06_03_40_350388": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про поїздку\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставит",
-    "ts": "2026-08-30T06:03:40.350388"
-  },
-  "action_detect|2026-08-30t06_03_29_452566": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Сатурн Квінконкс Плутон\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Твоя кар'єра чи статус потре",
-    "ts": "2026-08-30T06:03:29.452566"
-  },
-  "action_detect|2026-08-30t06_03_29_326550": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-30T06:03:29.326550"
   }
 }
