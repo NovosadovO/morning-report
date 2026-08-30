@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег цікавиться новинами про AGI та OpenAI.",
-      "detail": "Отримання та ймовірна зацікавленість листами з темою 'AGI' та 'Altman Says OpenAI Nears AGI' свідчить про інтерес до цієї теми.",
-      "module": "selfact",
-      "ts": "2026-08-27T16:40:29"
-    },
-    {
       "kind": "ask",
       "what": "Чи потрібно мені додати нагадування про повернення кредиту в",
       "detail": "Подія в календарі '08:00 💳 Повернення кредиту від Temu' сьогодні, 27.08, о 08:00, яка вже минула, але може потребувати контролю.",
@@ -2799,6 +2792,13 @@
       "detail": "У розділі 'ПІДПИСКИ' вказано: 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.' та 'sender': 'Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>', 'subject': '$10.00 payment to Runable was unsuccessful'.",
       "module": "selfact",
       "ts": "2026-08-30T19:35:08"
+    },
+    {
+      "kind": "note",
+      "what": "Олег цікавиться вакансією 'Regional AI Run Lead' в EPAM Syst",
+      "detail": "Отримано лист від LinkedIn з назвою 'Regional AI Run Lead в EPAM Systems' та текстом 'Сповіщення про вакансії в Slovakia Нові вакансії відповідають вашим налаштуванням. Regional AI Run Lead EPAM Systems Slovakia Ця компанія активно наймає персонал'.",
+      "module": "selfact",
+      "ts": "2026-08-30T19:35:13"
     }
   ]
 }
