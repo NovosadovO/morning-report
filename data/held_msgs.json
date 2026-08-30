@@ -74,6 +74,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-31T00:01:49.634782",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Revolut Research proves fintech’s real AI moat is proprietar</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78280"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78280"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78280"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78280"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78280"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78280"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
