@@ -1,4 +1,19 @@
 {
+  "selfact|2026-08-30t19_49_50_801833": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Підготовка до ранньої зміни\",     \"text\": \"Олег, нагадую, що о 20:00 потрібно підготуватися до ранньої зміни",
+    "ts": "2026-08-30T19:49:50.801833"
+  },
+  "action_detect|2026-08-30t19_45_57_257433": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Лягти спати раніше\", \"action_date\": \"2026-08-30\", \"action_time\": \"19:45\", \"action_summary\": \"Сьогодні ввечері, до 1",
+    "ts": "2026-08-30T19:45:57.257433"
+  },
+  "msg_vip_email_truthfix|2026-08-30t19_45_46_682241": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Твої дані за 29 серпня, яким вже 44 години, показують, що сон впав на 2.6 години за останні 7 днів, до 7.2 годин, тоді як середня за 14 днів була 9.3 години. Це",
+    "ts": "2026-08-30T19:45:46.682241"
+  },
   "msg_vip_email|2026-08-30t19_45_36_764223": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🤝  Вечір неділі, і я бачу, що ти зробив 11 807 кроків сьогодні, що є непоганим результатом, враховуючи, що в тебе завтра починається рання зміна о",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відновити платіжну інформацію для Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Потрібно ві",
     "ts": "2026-08-30T18:03:13.294042"
-  },
-  "action_detect|2026-08-30t18_03_02_276068": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Підготовка до ранньої зміни\", \"action_date\": \"2026-08-30\", \"action_time\": \"21:00\", \"action_summary\": \"Підготуватися",
-    "ts": "2026-08-30T18:03:02.276068"
-  },
-  "action_detect|2026-08-30t18_02_48_005875": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято Armolopid",
-    "ts": "2026-08-30T18:02:48.005875"
-  },
-  "action_detect|2026-08-30t18_02_48_003361": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зберегти акаунт Rondogo\", \"action_date\": \"2026-08-30\", \"action_time\": \"12:00\", \"action_summary\": \"Зберегти акаунт R",
-    "ts": "2026-08-30T18:02:48.003361"
   }
 }
