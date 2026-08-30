@@ -8528,6 +8528,16 @@
         "kind": "reminder",
         "date": "2026-08-30"
       }
+    },
+    {
+      "ts": "2026-08-30T04:30:28.030816+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії від Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-30"
+      }
     }
   ]
 }
