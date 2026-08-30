@@ -1,4 +1,9 @@
 {
+  "msg_vip_email|2026-08-30t19_45_36_764223": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Вечір неділі, і я бачу, що ти зробив 11 807 кроків сьогодні, що є непоганим результатом, враховуючи, що в тебе завтра починається рання зміна о",
+    "ts": "2026-08-30T19:45:36.764223"
+  },
   "email_ai_item|2026-08-30t19_39_18_909866": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист від Investing.com інформує про майбутнє підвищення цін на підписку InvestingPro. Це розпродаж '96 Summer Sale', який пропонує м",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зберегти акаунт Rondogo\", \"action_date\": \"2026-08-30\", \"action_time\": \"12:00\", \"action_summary\": \"Зберегти акаунт R",
     "ts": "2026-08-30T18:02:48.003361"
-  },
-  "action_detect|2026-08-30t18_02_37_122133": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Фіксація даних здоров'я та підготовка до ранньої зміни\", \"action_date\": \"2026-08-30\", \"action_time\": null, \"action_",
-    "ts": "2026-08-30T18:02:37.122133"
   }
 }
