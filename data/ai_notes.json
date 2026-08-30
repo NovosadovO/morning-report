@@ -1,11 +1,6 @@
 {
   "notes": [
     {
-      "text": "Зміни дату поіздки до Малаги на 7.09 (подія: День народження Олі)",
-      "source": "calendar_watch",
-      "ts": "2026-08-29T02:45:57.639841+00:00"
-    },
-    {
       "text": "Олег змінив дату поїздки до Малаги на 7 вересня.",
       "source": "auto_extract",
       "ts": "2026-08-29T02:49:01.311904+00:00"
@@ -749,6 +744,11 @@
       "text": "Олег активно цікавиться вакансіями Regional AI Run Lead, Technical Writer та Business Analyst - Data Management.",
       "source": "selfact",
       "ts": "2026-08-30T18:31:57.198323+00:00"
+    },
+    {
+      "text": "Олег отримує сповіщення про вакансії Regional AI Run Lead в EPAM Systems (Slovakia).",
+      "source": "selfact",
+      "ts": "2026-08-30T18:47:00.727041+00:00"
     }
   ]
 }
