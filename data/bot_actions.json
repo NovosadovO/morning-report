@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Сьогодні ввечері (26.08) о 19:30 у тебе запланований догляд",
-      "detail": "Календар показує 'Догляд за обличчям (вечір) 19:30' на 26.08, а також 'Нічна зміна 18:00–06:00'. Олег вже отримав звіт 'Догляд за обличчям і зміна на сьогодні перекриваються нормально, конфліктів немає.', але варто нагадати про це, щоб він не забув.",
-      "module": "selfact",
-      "ts": "2026-08-26T19:49:39"
-    },
-    {
       "kind": "reminder",
       "what": "Оновити платіжну інформацію Strava",
       "detail": "Дедлайн 'Підписка Strava — оновлення платіжної інформації' з датою 2026-08-04 все ще має status 'done: false'.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи від LinkedIn та Profesia.sk містять сповіщення про вакансії 'COO, Head of Operations (PCF-42), Payward Ireland Ltd в Kraken', 'Back Office Sales Admin в Brazing Technologies Europe', 'Application Support Specialist в Arcondis Group' та 'Senior Operations Manager в Square One Resources',",
       "module": "selfact",
       "ts": "2026-08-30T10:16:50"
+    },
+    {
+      "kind": "ask",
+      "what": "Олег, чи потрібно мені якось реагувати на ці нові вакансії,",
+      "detail": "Надійшло багато сповіщень про вакансії від LinkedIn та Profesia.sk, і я хочу зрозуміти, чи потрібна якась дія з мого боку, чи Олег вже ознайомився з ними.",
+      "module": "selfact",
+      "ts": "2026-08-30T10:16:58"
     }
   ]
 }
