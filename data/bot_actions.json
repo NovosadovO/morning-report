@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Зверни увагу, що бронювання 'Paxos and Antipaxos Boat Tour f",
-      "detail": "Лист від noreply@booking.com інформує про скасування бронювання та повернення коштів, що є важливою інформацією для Олега.",
-      "module": "selfact",
-      "ts": "2026-08-27T04:58:46"
-    },
-    {
-      "kind": "notify",
       "what": "Нова вакансія Senior Software Engineer",
       "detail": "Лист від LinkedIn Job Alerts інформує про нову вакансію, яка відповідає налаштуванням Олега.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є листи від LinkedIn про вакансії 'Technical Writer в Octave' та 'Business Analyst - Data Management в Capco'.",
       "module": "selfact",
       "ts": "2026-08-30T18:01:27"
+    },
+    {
+      "kind": "note",
+      "what": "Олег продовжує отримувати крипто-дайджести від Oleh Bezuhlyi",
+      "detail": "У свіжих листах є листи від 'Oleh Bezuhlyi через LinkedIn' та 'CryptoBeholder.com через LinkedIn' з 'Daily Crypto Digest'.",
+      "module": "selfact",
+      "ts": "2026-08-30T18:01:33"
     }
   ]
 }
