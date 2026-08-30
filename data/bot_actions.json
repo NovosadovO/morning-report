@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Поїздка в Малагу",
-      "detail": "У календарі на 01.09 вказано '12:00 Поїздка в Малагу, Іспанія'.",
-      "module": "selfact",
-      "ts": "2026-08-26T18:48:39"
-    },
-    {
-      "kind": "notify",
       "what": "Важливі крипто-новини",
       "detail": "Є кілька нових листів: 'WhaleTales <whaletales@mail.beehiiv.com> | $576M Left Bitcoin This Week', 'Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com> | 📰 Daily Crypto Digest — August 26', 'CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com> | 📰 AI-curated Daily Crypto Dig",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від Google One 'Oleg, ознайомтеся з новим планом Google AI Plus' та нотатки про Олега 'Олег цікавиться планами Google AI Plus, про що свідчить отриманий ним лист. - Олег має підписку Google AI Plus з 400 GB сховища та розширеним дос'",
       "module": "selfact",
       "ts": "2026-08-30T09:29:34"
+    },
+    {
+      "kind": "openmind",
+      "what": "digest",
+      "detail": "відкритий огляд ринку + горизонт",
+      "module": "фінансова безпека: шахрайство, приватність, гігієна даних",
+      "ts": "2026-08-30T09:31:12"
     }
   ]
 }
