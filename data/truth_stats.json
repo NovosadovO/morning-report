@@ -140,7 +140,7 @@
     },
     "MSG_IDLE_TIMEOUT": {
       "checked": 7,
-      "issues": 5,
+      "issues": 6,
       "fixed": 3
     },
     "MSG_HABIT_CHECKIN": {
@@ -351,7 +351,7 @@
   },
   "2026-08-30": {
     "checked": 154,
-    "issues": 80,
+    "issues": 81,
     "fixed": 39,
     "cut": 2
   }
