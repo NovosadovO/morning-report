@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег працює Line Leader в Minebea Slovakia s.r.o. (Кошице).",
-      "detail": "Лист від Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> містить його посаду та компанію.",
-      "module": "selfact",
-      "ts": "2026-08-27T04:27:56"
-    },
-    {
       "kind": "notify",
       "what": "Привіт, Олеже! Нагадую, що сьогодні, 27.08, о 17:00 у тебе п",
       "detail": "Початок нічної зміни сьогодні, 27.08 о 17:00, та повернення кредиту від Temu о 08:00 є важливими подіями, які відбудуться незабаром.",
@@ -2799,6 +2792,13 @@
       "detail": "У 'СВІЖІ ЛИСТИ' є лист від 'Сповіщення про вакансії LinkedIn' про вакансію 'Technical Writer в Octave'.",
       "module": "selfact",
       "ts": "2026-08-30T17:30:30"
+    },
+    {
+      "kind": "note",
+      "what": "Олег цікавиться новинами та аналітикою у сфері фізичного AI",
+      "detail": "У 'СВІЖІ ЛИСТИ' є лист від 'The Breakdown <newsletter@blockworks.com>' з темою 'The data layer of physical AI and robotics'.",
+      "module": "selfact",
+      "ts": "2026-08-30T17:30:38"
     }
   ]
 }
