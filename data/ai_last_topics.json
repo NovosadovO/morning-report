@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-30t05_20_17_041863": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що 1 вересня у Олі день народження. Це вже за два дні.\",     \"why\": \"У календарі на 01.09 зазнач",
+    "ts": "2026-08-30T05:20:17.041863"
+  },
   "subs|2026-08-30t05_15_24_951860": {
     "topic": "subs",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Використати період Юпітера в I домі\", \"action_date\": \"2026-09-21\", \"action_time\": null, \"action_summary\": \"Використ",
     "ts": "2026-08-30T03:03:33.785445"
-  },
-  "action_detect|2026-08-30t03_03_33_546226": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прострочені дедлайни\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Пам'ятай про прострочен",
-    "ts": "2026-08-30T03:03:33.546226"
   }
 }
