@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "reminder",
-      "what": "Повернення кредиту від Temu",
-      "detail": "З календаря на 27.08: '08:00 💳 Повернення кредиту від Temu' та листа 'Temu <temu@eu.temuemail.com> | Odmena za návrat odoslaná 26. aug 2026!'.",
-      "module": "selfact",
-      "ts": "2026-08-26T20:20:20"
-    },
-    {
       "kind": "notify",
       "what": "Нові вакансії LinkedIn",
       "detail": "З листів 'Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Revenue Accountant (f/m/d) в Siemens Healthineers' та 'Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Data Collector в Convatec'.",
@@ -2799,6 +2792,13 @@
       "detail": "У підписках є запис про Runable з 'note': 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.' та 'last_seen': '2026-08-…(обрізано)' та 'uid': '78113'.",
       "module": "selfact",
       "ts": "2026-08-30T10:32:09"
+    },
+    {
+      "kind": "notify",
+      "what": "Зберегти акаунт Rondogo",
+      "detail": "Нагадування про збереження акаунту Rondogo з календаря, а також свіжий лист від Rondogo.sk Akcie, який попереджає про видалення акаунту через неактивність і пропонує посилання для збереження.",
+      "module": "selfact",
+      "ts": "2026-08-30T11:01:59"
     }
   ]
 }
