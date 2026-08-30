@@ -1,4 +1,29 @@
 {
+  "action_detect|2026-08-30t15_31_05_224006": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Фізичні вправи\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зробити 20-30 хвилин легких фізичних ",
+    "ts": "2026-08-30T15:31:05.224006"
+  },
+  "selfact|2026-08-30t15_25_38_214004": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Зберегти акаунт Rondogo\",     \"text\": \"Олег, нагадую, що тобі потрібно зберегти акаунт Rondogo, інакше він м",
+    "ts": "2026-08-30T15:25:38.214004"
+  },
+  "astro_ai|2026-08-30t15_25_12_516913": {
+    "topic": "astro_ai",
+    "gist": "Олеже, сьогодні, 30 серпня 2026 року, енергія дня зосереджена навколо твоєї особистості та нового етапу, який розпочинається.  🌍 **ТРАНЗИТИ СЬОГОДНІ**  **НАЙВИЩ",
+    "ts": "2026-08-30T15:25:12.516913"
+  },
+  "action_detect|2026-08-30t15_25_10_832243": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Олю з Днем народження\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Олег має при",
+    "ts": "2026-08-30T15:25:10.832243"
+  },
+  "action_detect|2026-08-30t15_24_52_091450": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відновити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити платіжні дані д",
+    "ts": "2026-08-30T15:24:52.091450"
+  },
   "msg_vip_email|2026-08-30t15_24_32_813352": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 📧  Бачу, ти сьогодні вдома, і це чудова нагода перевірити, як ідуть справи з твоїми цілями. Оскільки твій портфель крипти зараз показує здебільшог",
@@ -273,30 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист від Buzz Sneaker Station інформує про розпродаж зі знижками до -20% на незазменені товари та -10% на знижені товари. Пропозиція діє лише с",
     "ts": "2026-08-30T13:22:38.459307"
-  },
-  "selfact|2026-08-30t13_19_43_165447": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Збереження акаунту Rondogo\",     \"text\": \"Олег, нагадую, що сьогодні до 11:00 потрібно було зберегти акаунт Ro",
-    "ts": "2026-08-30T13:19:43.165447"
-  },
-  "action_detect|2026-08-30t13_12_18_479335": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка в Малагу\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставити нагад",
-    "ts": "2026-08-30T13:12:18.479335"
-  },
-  "planner|2026-08-30t13_12_07_212597": {
-    "topic": "planner",
-    "gist": "```json [] ```",
-    "ts": "2026-08-30T13:12:07.212597"
-  },
-  "action_detect|2026-08-30t13_11_22_838989": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка в Малагу\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставити нагад",
-    "ts": "2026-08-30T13:11:22.838989"
-  },
-  "action_detect|2026-08-30t13_10_42_168795": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка в Малагу\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставити нагад",
-    "ts": "2026-08-30T13:10:42.168795"
   }
 }
