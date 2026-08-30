@@ -1,4 +1,14 @@
 {
+  "selfact|2026-08-30t09_14_15_263991": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Аккаунт RONDOgo\",     \"text\": \"Олег, зверніть увагу: ваш аккаунт на RONDOgo.sk може бути видалено через неакти",
+    "ts": "2026-08-30T09:14:15.263991"
+  },
+  "people|2026-08-30t09_13_51_443945": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"info@ionian-cruises.com\",     \"name\": \"Ionian Cruises\",     \"relation\": \"сервіс\",     \"topics\": [\"скасування круїзу\"],     \"my_promi",
+    "ts": "2026-08-30T09:13:51.443945"
+  },
   "action_detect|2026-08-30t09_10_11_841336": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про поїздку\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставит",
@@ -288,15 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від Lidl інформує про нові акційні пропозиції в магазинах та онлайн-магазині, які діють з 31 серпня по 6 вересня. Також пропонуєть",
     "ts": "2026-08-30T07:33:09.094340"
-  },
-  "action_detect|2026-08-30t07_27_24_791767": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має несплач",
-    "ts": "2026-08-30T07:27:24.791767"
-  },
-  "msg_idle_timeout_truthfix|2026-08-30t07_27_13_332286": {
-    "topic": "MSG_IDLE_TIMEOUT/truthfix",
-    "gist": "Привіт!  Схоже, твій вільний ранок неділі, коли календар на сьогодні чистий, контрастує з тим, що дані про сон за останні 14 днів показують падіння на 2.6 годин",
-    "ts": "2026-08-30T07:27:13.332286"
   }
 }
