@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-08-30t20_00_37_492320": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Змінити дату поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Олег мав змін",
+    "ts": "2026-08-30T20:00:37.492320"
+  },
+  "mailcal_extract|2026-08-30t19_58_28_944344": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-30T19:58:28.944344"
+  },
   "action_detect|2026-08-30t19_56_35_714093": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Змінити дату поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату ",
@@ -288,15 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії в Словаччині, які відповідають налаштуванням користувача. Зокрема, згадан",
     "ts": "2026-08-30T18:14:06.982165"
-  },
-  "action_detect|2026-08-30t18_03_24_230293": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжну ",
-    "ts": "2026-08-30T18:03:24.230293"
-  },
-  "action_detect|2026-08-30t18_03_13_306347": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати бюджет\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Приділити увагу плануванн",
-    "ts": "2026-08-30T18:03:13.306347"
   }
 }
