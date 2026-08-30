@@ -8538,6 +8538,16 @@
         "kind": "reminder",
         "date": "2026-08-30"
       }
+    },
+    {
+      "ts": "2026-08-30T06:00:21.738233+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Онлайн check-in для рейсу",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-30"
+      }
     }
   ]
 }
