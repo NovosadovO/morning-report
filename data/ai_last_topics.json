@@ -1,4 +1,9 @@
 {
+  "subs|2026-08-30t05_15_24_951860": {
+    "topic": "subs",
+    "gist": "```json [] ```",
+    "ts": "2026-08-30T05:15:24.951860"
+  },
   "calendar|2026-08-30t05_06_43_256336": {
     "topic": "calendar",
     "gist": "Олеже, бачу, сьогодні у тебе вільний день, а завтра вже ранкова зміна з 05:00. Це чудова нагода скористатися моментом для своїх цілей, адже твоя вага все ще 83 ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прострочені дедлайни\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Пам'ятай про прострочен",
     "ts": "2026-08-30T03:03:33.546226"
-  },
-  "action_detect|2026-08-30t03_03_22_817502": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжну ",
-    "ts": "2026-08-30T03:03:22.817502"
   }
 }
