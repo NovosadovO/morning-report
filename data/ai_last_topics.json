@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-30t19_56_35_714093": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Змінити дату поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату ",
+    "ts": "2026-08-30T19:56:35.714093"
+  },
   "selfact|2026-08-30t19_49_50_801833": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Підготовка до ранньої зміни\",     \"text\": \"Олег, нагадую, що о 20:00 потрібно підготуватися до ранньої зміни",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати бюджет\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Приділити увагу плануванн",
     "ts": "2026-08-30T18:03:13.306347"
-  },
-  "action_detect|2026-08-30t18_03_13_294042": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відновити платіжну інформацію для Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Потрібно ві",
-    "ts": "2026-08-30T18:03:13.294042"
   }
 }
