@@ -337,5 +337,26 @@
     "last_out": "2026-08-25",
     "updated": "2026-08-30",
     "pinged_at": ""
+  },
+  "novosadov@boarding.sk": {
+    "name": "Ryanair",
+    "relation": "сервіс",
+    "vip": false,
+    "topics": [
+      "онлайн реєстрація",
+      "рейс Ryanair"
+    ],
+    "my_promises": [],
+    "their_promises": [
+      "надіслати нагадування про онлайн реєстрацію"
+    ],
+    "open_question": "",
+    "next_step": "Пройти онлайн реєстрацію на рейс Ryanair через додаток Ryanair, використовуючи код бронювання Y9SB5U та електронну пошту novosadov@boarding.sk.",
+    "ping_in_days": -1,
+    "last_in": "",
+    "last_subject": "",
+    "last_out": "",
+    "updated": "2026-08-30",
+    "pinged_at": ""
   }
 }
