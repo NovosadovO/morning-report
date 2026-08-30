@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Чи потрібно мені відстежувати вакансію Data Collector в Conv",
-      "detail": "Олег отримав сповіщення про вакансію 'Data Collector в Convatec' від LinkedIn, але не відреагував на неї. Потрібно зрозуміти, чи це для нього актуально.",
-      "module": "selfact",
-      "ts": "2026-08-26T19:50:00"
-    },
-    {
       "kind": "reminder",
       "what": "Повернення кредиту від Temu",
       "detail": "З календаря на 27.08: '08:00 💳 Повернення кредиту від Temu' та листа 'Temu <temu@eu.temuemail.com> | Odmena za návrat odoslaná 26. aug 2026!'.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від 'Profesia.sk' з темою 'Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk'.",
       "module": "selfact",
       "ts": "2026-08-30T10:31:59"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу, що платіж до Runable на $10.00 був невда",
+      "detail": "У підписках є запис про Runable з 'note': 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.' та 'last_seen': '2026-08-…(обрізано)' та 'uid': '78113'.",
+      "module": "selfact",
+      "ts": "2026-08-30T10:32:09"
     }
   ]
 }
