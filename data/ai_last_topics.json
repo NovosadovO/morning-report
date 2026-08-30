@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-08-30t04_14_53_260697": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від LinkedIn є сповіщенням про нову вакансію 'Back Office Sales Admin' у компанії Brazing Technologies Europe в Кошице, Словаччина. Ва",
+    "ts": "2026-08-30T04:14:53.260697"
+  },
   "bills|2026-08-30t04_06_42_437539": {
     "topic": "bills",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"09:00\", \"action_summary\": \"День народження Олі з",
     "ts": "2026-08-30T02:02:52.879492"
-  },
-  "action_detect|2026-08-30t02_02_41_876243": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування на 7.9\", \"action_date\": \"2023-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставити наг",
-    "ts": "2026-08-30T02:02:41.876243"
   }
 }
