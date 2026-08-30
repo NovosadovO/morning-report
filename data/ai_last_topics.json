@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-30t15_55_29_915442": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-30T15:55:29.915442"
+  },
   "selfact|2026-08-30t15_41_44_132916": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Аккаунт Rondogo\",     \"text\": \"Олег, нагадую, що тобі потрібно зберегти акаунт Rondogo сьогодні, інакше його м",
@@ -293,10 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-08-30T13:52:45.839164"
-  },
-  "selfact|2026-08-30t13_51_30_299045": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Збереження облікового запису Rondogo\",     \"text\": \"Олег, зверни увагу, що твій обліковий запис Rondogo.sk мож",
-    "ts": "2026-08-30T13:51:30.299045"
   }
 }
