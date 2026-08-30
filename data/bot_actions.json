@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав кілька листів з крипто-новинами 26.08, що свідч",
-      "detail": "Олег отримав листи від 'WhaleTales', 'Oleh Bezuhlyi через LinkedIn', 'CryptoBeholder.com через LinkedIn' з крипто-новинами 26.08.",
-      "module": "selfact",
-      "ts": "2026-08-26T19:49:48"
-    },
-    {
-      "kind": "note",
       "what": "Олег активно видаляє сповіщення, що може свідчити про бажанн",
       "detail": "В пам'яті переписки за 26.08 Олег кілька разів натискав кнопку '🗑 Видалити'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Подія 'Зберегти акаунт Rondogo' в календарі на 30.08 о 11:00 та свіжий лист від 'Rondogo.sk Akcie' з попередженням про видалення акаунту.",
       "module": "selfact",
       "ts": "2026-08-30T10:31:48"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав сповіщення про вакансії Back Office Sales Admin",
+      "detail": "Свіжі листи від LinkedIn Job Alerts про вакансії 'Back Office Sales Admin в Brazing Technologies Europe' та 'Application Support Specialist в Arcondis Group' із зазначенням 'Сповіщення про вакансії за запитом Адміністративний помічник в Kosice'.",
+      "module": "selfact",
+      "ts": "2026-08-30T10:31:52"
     }
   ]
 }
