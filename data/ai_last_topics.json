@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-08-30t09_29_02_759980": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-30T09:29:02.759980"
+  },
+  "proactive_ai|2026-08-30t09_26_05_545676": {
+    "topic": "proactive_ai",
+    "gist": "Привіт! Сьогодні в тебе вільний день. Чи плануєш вийти на пробіжку, якщо погода дозволяє?",
+    "ts": "2026-08-30T09:26:05.545676"
+  },
   "action_detect|2026-08-30t09_24_15_151713": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має несплач",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про поїздку\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставит",
     "ts": "2026-08-30T07:53:55.729296"
-  },
-  "action_detect|2026-08-30t07_53_22_255237": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути пропозиції airBaltic та Lidl\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути",
-    "ts": "2026-08-30T07:53:22.255237"
-  },
-  "msg_vip_email|2026-08-30t07_53_10_792934": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 🤝  Ранок неділі — час, коли можна стратегічно поглянути на все, що відбувається, і спланувати наступні кроки. Бачу, твій тижневий результат по ваз",
-    "ts": "2026-08-30T07:53:10.792934"
   }
 }
