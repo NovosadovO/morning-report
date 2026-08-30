@@ -1366,5 +1366,15 @@
     "state": "snoozed",
     "ts": "2026-08-30T13:10:25",
     "until": "2026-08-30T19:10:25"
+  },
+  "generic|t|олег отримує сповіщення про вакансії technik ka servisn ho": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "олег отримує сповіщення про вакансії technik ka servisn ho",
+    "title": "Олег отримує сповіщення про вакансії 'Technik/čka servisného",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "state": "closed",
+    "ts": "2026-08-30T13:10:40"
   }
 }
