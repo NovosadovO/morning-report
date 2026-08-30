@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-30t20_37_13_112471": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж Runable на $10.00 був невдалим. Потрібно оновити платіжну",
+    "ts": "2026-08-30T20:37:13.112471"
+  },
   "action_detect|2026-08-30t20_30_33_189921": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Змінити дату поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату ",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json { \"description\": \"Лист від StartEngine інформує про нову інвестиційну можливість у компанію Atoms, засновану співзасновником Uber Тревісом Каланіком. Ко",
     "ts": "2026-08-30T19:04:48.620893"
-  },
-  "action_detect|2026-08-30t19_03_05_260362": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Трансформаційні зміни\", \"action_date\": \"2026-08-31\", \"action_time\": null, \"action_summary\": \"Завтра буде точний асп",
-    "ts": "2026-08-30T19:03:05.260362"
   }
 }
