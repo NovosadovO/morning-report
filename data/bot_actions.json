@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав інформацію про виступ Кевіна Ворша на Jackson H",
-      "detail": "З листа '0xResearch <researchteam@blockworks.com> | Railgun's Base case' та календаря '28.08: 08:00 📌 Виступ Кевіна Ворша на Jackson Hole'.",
-      "module": "selfact",
-      "ts": "2026-08-26T17:17:02"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав сповіщення від LinkedIn про нову вакансію Senio",
       "detail": "З листа 'Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Senior Account Manager, Partner Success в Bitpanda'",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег прямо вказав на помилку щодо нічної зміни у своїй останній репліці 'Я не на нічній зміні!! Чому ти це пишеш ?'.",
       "module": "selfact",
       "ts": "2026-08-30T07:09:06"
+    },
+    {
+      "kind": "note",
+      "what": "Олег помилково вважав, що його інформують про реєстрацію в М",
+      "detail": "Реакція Олега: 'Чому ти інформуєш мене про реєстрацію в малагу?' (29.08 23:25)",
+      "module": "selfact",
+      "ts": "2026-08-30T07:24:56"
     }
   ]
 }
