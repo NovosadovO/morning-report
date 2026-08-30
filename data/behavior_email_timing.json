@@ -1,9 +1,4 @@
 {
-  "77789": {
-    "sender": "newsletter@ticketportal.sk",
-    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
-    "seen_ts": "2026-08-21T08:50:26.900963+00:00"
-  },
   "77791": {
     "sender": "support@pixoryofficial.com",
     "sender_raw": "\"Pixory\" <support@pixoryofficial.com>",
@@ -1498,5 +1493,10 @@
     "sender": "news@flights.airbaltic.com",
     "sender_raw": "SALE at airBaltic <news@flights.airbaltic.com>",
     "seen_ts": "2026-08-30T05:39:31.135836+00:00"
+  },
+  "78250": {
+    "sender": "no-reply@news.crypto.com",
+    "sender_raw": "\"Crypto.com NFT\" <no-reply@news.crypto.com>",
+    "seen_ts": "2026-08-30T06:15:58.637319+00:00"
   }
 }
