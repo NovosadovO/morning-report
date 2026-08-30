@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег цікавиться новинами у сфері DeFi та криптовалют, зокрем",
-      "detail": "Олег отримав лист від The Defiant з новинами про Core Lightning та Unstoppable, а також раніше отримував листи від The Block.",
-      "module": "selfact",
-      "ts": "2026-08-27T03:57:40"
-    },
-    {
       "kind": "notify",
       "what": "Скасування туру Paxos and Antipaxos",
       "detail": "Лист від noreply@booking.com про скасування бронювання туру та повернення коштів.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи від LinkedIn містять сповіщення про вакансії Technical Writer в Octave (Відень) та Business Analyst - Data Management в Capco (Кошице), що є новою інформацією про його пошук роботи.",
       "module": "selfact",
       "ts": "2026-08-30T16:59:26"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує багато крипто-дайджестів через LinkedIn, що під",
+      "detail": "Кілька свіжих листів від 'Oleh Bezuhlyi через LinkedIn' та 'CryptoBeholder.com через LinkedIn' є крипто-дайджестами, що підтверджує раніше відомий інтерес Олега до криптовалют.",
+      "module": "selfact",
+      "ts": "2026-08-30T17:14:31"
     }
   ]
 }
