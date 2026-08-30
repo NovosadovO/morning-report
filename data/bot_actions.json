@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Важливі вакансії",
-      "detail": "Свіжі листи від LinkedIn Job Alerts про вакансії, які відповідають налаштуванням Олега.",
-      "module": "selfact",
-      "ts": "2026-08-26T20:51:03"
-    },
-    {
       "kind": "tracker",
       "what": "AI-трекер: підсумок дня",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Олег раніше зазначав, що активно шукає вакансії Back Office Sales Admin в Brazing Technologies Europe та Application Support Specialist в Arcondis Group у Кошице. Свіжі листи від LinkedIn підтверджують, що він продовжує отримувати сповіщення саме про такі вакансії.",
       "module": "selfact",
       "ts": "2026-08-30T11:47:56"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: stale",
+      "detail": "📵 Дані здоров'я не оновлювались 36 год (останні — 2026-08-29). Автосинк із годинника міг зламатись",
+      "module": "healthai",
+      "ts": "2026-08-30T11:56:51"
     }
   ]
 }
