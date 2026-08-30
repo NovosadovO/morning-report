@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-08-30t17_19_18_599544": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від Sweat Wallet інформує про отримання бонусу в розмірі $2 Bitcoin Miner від GoMining, а також про додаткові переваги для ",
+    "ts": "2026-08-30T17:19:18.599544"
+  },
+  "selfact|2026-08-30t17_14_28_331473": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олег, зверни увагу: платіж до Runable на $10.00 був невдалим. Потрібно ",
+    "ts": "2026-08-30T17:14:28.331473"
+  },
   "people|2026-08-30t17_13_55_239677": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"michaela.bila@bukovinakosice.sk\",     \"name\": \"Mgr. Michaela Bilá\",     \"relation\": \"інше\",     \"topics\": [       \"фабрики на Україн",
@@ -288,15 +298,5 @@
     "topic": "astro_ai",
     "gist": "Олеже, сьогодні, 30 серпня 2026 року, енергія дня зосереджена навколо твоєї особистості та нового етапу, який розпочинається.  🌍 **ТРАНЗИТИ СЬОГОДНІ**  **НАЙВИЩ",
     "ts": "2026-08-30T15:25:12.516913"
-  },
-  "action_detect|2026-08-30t15_25_10_832243": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Олю з Днем народження\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Олег має при",
-    "ts": "2026-08-30T15:25:10.832243"
-  },
-  "action_detect|2026-08-30t15_24_52_091450": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відновити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити платіжні дані д",
-    "ts": "2026-08-30T15:24:52.091450"
   }
 }
