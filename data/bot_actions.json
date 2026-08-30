@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег активно видаляє сповіщення, що може свідчити про бажанн",
-      "detail": "В пам'яті переписки за 26.08 Олег кілька разів натискав кнопку '🗑 Видалити'.",
-      "module": "selfact",
-      "ts": "2026-08-26T19:49:54"
-    },
-    {
       "kind": "ask",
       "what": "Чи потрібно мені відстежувати вакансію Data Collector в Conv",
       "detail": "Олег отримав сповіщення про вакансію 'Data Collector в Convatec' від LinkedIn, але не відреагував на неї. Потрібно зрозуміти, чи це для нього актуально.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи від LinkedIn Job Alerts про вакансії 'Back Office Sales Admin в Brazing Technologies Europe' та 'Application Support Specialist в Arcondis Group' із зазначенням 'Сповіщення про вакансії за запитом Адміністративний помічник в Kosice'.",
       "module": "selfact",
       "ts": "2026-08-30T10:31:52"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав 20 нових персоналізованих робочих пропозицій ві",
+      "detail": "Свіжий лист від 'Profesia.sk' з темою 'Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk'.",
+      "module": "selfact",
+      "ts": "2026-08-30T10:31:59"
     }
   ]
 }
