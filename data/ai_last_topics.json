@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-30t11_17_47_382568": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Зберегти акаунт Rondogo\",     \"text\": \"Олег, зверни увагу: сьогодні, 30.08, о 11:00 було нагадування про збере",
+    "ts": "2026-08-30T11:17:47.382568"
+  },
   "action_detect|2026-08-30t11_12_05_921673": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати вагу в Ap",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про поїздку\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставит",
     "ts": "2026-08-30T09:10:11.841336"
-  },
-  "action_detect|2026-08-30t09_03_52_578295": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про поїздку\", \"action_date\": \"2024-09-07\", \"action_time\": null, \"action_summary\": \"Олег просив поставит",
-    "ts": "2026-08-30T09:03:52.578295"
   }
 }
