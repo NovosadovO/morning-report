@@ -152,6 +152,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-31T00:01:53.087644",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - August 30th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78278"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78278"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78278"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78278"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78278"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78278"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
