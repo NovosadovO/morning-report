@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Скасоване бронювання Booking.com",
-      "detail": "Знайдено лист від noreply@booking.com про скасування бронювання 'Paxos and Antipaxos Boat Tour from Corfu' та повернення коштів. Це важлива інформація, яку Олег міг пропустити серед інших листів від Booking.com.",
-      "module": "selfact",
-      "ts": "2026-08-27T07:00:31"
-    },
-    {
       "kind": "note",
       "what": "Олег цікавиться Full-stack вакансіями",
       "detail": "Знайдено лист від LinkedIn про вакансію 'Senior Software Engineer - Full-stack - Growth Product в Kraken' за запитом 'Cryptocurrency in Slovakia'. Це свідчить про інтерес Олега до подібних вакансій, що не було чітко зазначено в попередніх нотатках.",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 30.08 є подія '11:00 🔔 Зберегти акаунт Rondogo', яка вже давно минула, а її статус не позначено як виконаний.",
       "module": "selfact",
       "ts": "2026-08-30T18:47:12"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує сповіщення від The Breakdown та PLUNGE, що свід",
+      "detail": "Свіжі листи від 'The Breakdown <newsletter@blockworks.com> | 🟪 Load-bearing' та 'PLUNGE <hello@plunge.com> | The Counterintuitive Sleep Fix' вказують на ці інтереси.",
+      "module": "selfact",
+      "ts": "2026-08-30T19:03:00"
     }
   ]
 }
