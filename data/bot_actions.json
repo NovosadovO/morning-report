@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-08-27",
-      "detail": "автосинк з годинника: steps, hr_avg, calories, weight_kg, spo2, stress",
-      "module": "qwsync",
-      "ts": "2026-08-27T23:46:21"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=18793, hr_avg=58, calories=798, weight_kg=83.0, spo2=96, stress=37, date=2026-08-27, source=qwatch_auto, saved_at=2026-08-27 23:46",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи від LinkedIn Job Alerts про вакансії 'Event Operations Specialist в Swiss Re', 'Regional AI Run Lead в EPAM Systems' та 'Technical Writer в Octave'.",
       "module": "selfact",
       "ts": "2026-08-30T20:05:35"
+    },
+    {
+      "kind": "notify",
+      "what": "Важливі дати",
+      "detail": "Важливі дати містять 'd|олі|09-01' та календарні події на 01.09 'Привітати Олю з Днем народження' та 'Олі — день народження'.",
+      "module": "selfact",
+      "ts": "2026-08-30T20:05:43"
     }
   ]
 }
