@@ -1,4 +1,24 @@
 {
+  "action_detect|2026-08-30t21_57_16_208208": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-30T21:57:16.208208"
+  },
+  "selfact|2026-08-30t21_53_41_782193": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підготовка до ранньої зміни\",     \"text\": \"Олеже, нагадую, що згідно з календарем, сьогодні о 20:00 була запла",
+    "ts": "2026-08-30T21:53:41.782193"
+  },
+  "action_detect|2026-08-30t21_52_32_994140": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Рання зміна\", \"action_date\": \"2026-08-31\", \"action_time\": null, \"action_summary\": \"Завтра, 31 серпня, у Олега рання",
+    "ts": "2026-08-30T21:52:32.994140"
+  },
+  "msg_vip_email_truthfix|2026-08-30t21_52_21_891383": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Олеже, зараз 21:52 неділі, 30 серпня 2026 року. Завтра в тебе рання зміна, 31 серпня.  Твоя вага тримається на 83.0 кг (середнє за 7 днів), що на 5 кг більше ві",
+    "ts": "2026-08-30T21:52:21.891383"
+  },
   "msg_vip_email|2026-08-30t21_52_11_821384": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 📧  Вечір неділі, 30 серпня 2026 року, — час для підсумків перед ранньою зміною завтра, 31 серпня. Ти залишаєшся у плюсі за вагою, що йде врозріз і",
@@ -278,25 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підготовка до ранньої зміни\",     \"text\": \"Олеже, нагадую, що о 20:00 сьогодні (30.08) була запланована підгот",
     "ts": "2026-08-30T20:05:22.315934"
-  },
-  "openloop_promises|2026-08-30t20_04_05_661543": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-08-30T20:04:05.661543"
-  },
-  "action_detect|2026-08-30t20_03_31_419336": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зміна дати поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату по",
-    "ts": "2026-08-30T20:03:31.419336"
-  },
-  "action_detect|2026-08-30t20_03_18_840997": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Внутрішні зміни\", \"action_date\": \"null\", \"action_time\": \"null\", \"action_summary\": \"Готуйся до того, що внут",
-    "ts": "2026-08-30T20:03:18.840997"
-  },
-  "action_detect|2026-08-30t20_03_18_815436": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Закрити дедлайни Strava та Temu\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олеже, закри",
-    "ts": "2026-08-30T20:03:18.815436"
   }
 }
