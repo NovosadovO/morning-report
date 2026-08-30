@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Несплата Runable",
-      "detail": "Лист від Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com> про невдалу оплату Runable і нотатка про підписку Runable.",
-      "module": "selfact",
-      "ts": "2026-08-26T20:50:57"
-    },
-    {
-      "kind": "notify",
       "what": "Важливі вакансії",
       "detail": "Свіжі листи від LinkedIn Job Alerts про вакансії, які відповідають налаштуванням Олега.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "В календарі є подія 'Зберегти акаунт Rondogo' на 30.08 о 11:00, а в свіжих листах є лист від 'Rondogo.sk Akcie' з попередженням про можливе видалення акаунту через неактивність, що підтверджує актуальність цієї задачі. Поточний час 11:32, тому нагадування про подію, яка вже мала відбутись, є доречни",
       "module": "selfact",
       "ts": "2026-08-30T11:32:50"
+    },
+    {
+      "kind": "note",
+      "what": "Олег продовжує отримувати сповіщення про вакансії 'Back Offi",
+      "detail": "Олег раніше зазначав, що активно шукає вакансії Back Office Sales Admin в Brazing Technologies Europe та Application Support Specialist в Arcondis Group у Кошице. Свіжі листи від LinkedIn підтверджують, що він продовжує отримувати сповіщення саме про такі вакансії.",
+      "module": "selfact",
+      "ts": "2026-08-30T11:47:56"
     }
   ]
 }
