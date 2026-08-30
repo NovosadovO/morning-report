@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "сповіщення про здоров'я: stale",
-      "detail": "📵 Дані здоров'я не оновлювались 47 год (останні — 2026-08-26). Автосинк із годинника міг зламатись",
-      "module": "healthai",
-      "ts": "2026-08-27T23:26:07"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-08-27",
       "detail": "автосинк з годинника: steps, hr_avg, calories, weight_kg, spo2, stress",
@@ -2799,6 +2792,13 @@
       "detail": "Події в календарі 'Зберегти акаунт Rondogo' на 30.08 о 11:00, а також реакції Олега 'Не нагадуй' та 'Видалити' на сповіщення про Rondogo.",
       "module": "selfact",
       "ts": "2026-08-30T20:05:28"
+    },
+    {
+      "kind": "note",
+      "what": "Олег активно цікавиться вакансіями у сфері AI (Event Operati",
+      "detail": "Свіжі листи від LinkedIn Job Alerts про вакансії 'Event Operations Specialist в Swiss Re', 'Regional AI Run Lead в EPAM Systems' та 'Technical Writer в Octave'.",
+      "module": "selfact",
+      "ts": "2026-08-30T20:05:35"
     }
   ]
 }
