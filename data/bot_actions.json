@@ -2652,6 +2652,13 @@
       "detail": "З листа від noreply@booking.com про скасування бронювання туру.",
       "module": "selfact",
       "ts": "2026-08-30T02:27:58"
+    },
+    {
+      "kind": "notify",
+      "what": "Оновлення плану Google One",
+      "detail": "З листа від Google One про новий план Google AI Plus.",
+      "module": "selfact",
+      "ts": "2026-08-30T02:28:06"
     }
   ]
 }
