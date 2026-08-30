@@ -2750,9 +2750,15 @@
     },
     {
       "t": "btn",
-      "data": "habit_no_sauna",
+      "data": "habit_no_spray",
       "label": "❌ Ні",
       "ts": "2026-08-30T23:19:45"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_water",
+      "label": "✅ Так",
+      "ts": "2026-08-30T23:19:54"
     }
   ]
 }
