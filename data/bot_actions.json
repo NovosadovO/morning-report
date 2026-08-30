@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримав статтю GenAI Works через LinkedIn, де Маск гово",
-      "detail": "Згідно з листом від GenAI Works через LinkedIn <newsletters-noreply@linkedin.com> Олег отримав цю статтю.",
-      "module": "selfact",
-      "ts": "2026-08-26T16:46:34"
-    },
-    {
       "kind": "notify",
       "what": "Олег, платіж на $10.00 для Runable не пройшов. Потрібно онов",
       "detail": "З листа 'Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com> | $10.00 payment to Runable was unsuccessful' та запису в календарі '26.08: 08:00 💳 Оплата Runable' і запланованого нагадування '2026-08-26T18:00:00 — 🤖 Оновити платіжні дані для Runable'.",
@@ -2799,6 +2792,13 @@
       "detail": "Календар містить інформацію про нічні зміни Олега на 04.09 та 05.09, що є важливим фактом для його графіку.",
       "module": "selfact",
       "ts": "2026-08-30T06:53:47"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-08-30T07:00:55"
     }
   ]
 }
