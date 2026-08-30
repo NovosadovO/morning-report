@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримує сповіщення про вакансії Data Collector",
-      "detail": "З листа 'Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Data Collector в Convatec'.",
-      "module": "selfact",
-      "ts": "2026-08-26T19:19:19"
-    },
-    {
       "kind": "notify",
       "what": "Сьогодні ввечері (26.08) о 19:30 у тебе запланований догляд",
       "detail": "Календар показує 'Догляд за обличчям (вечір) 19:30' на 26.08, а також 'Нічна зміна 18:00–06:00'. Олег вже отримав звіт 'Догляд за обличчям і зміна на сьогодні перекриваються нормально, конфліктів немає.', але варто нагадати про це, щоб він не забув.",
@@ -2799,6 +2792,13 @@
       "detail": "Є нагадування в календарі на 30.08 о 11:00 'Зберегти акаунт Rondogo' та свіжий лист від 'Rondogo.sk Akcie' з попередженням про видалення акаунту через неактивність.",
       "module": "selfact",
       "ts": "2026-08-30T10:16:46"
+    },
+    {
+      "kind": "note",
+      "what": "Олег цікавиться вакансіями Директора з операцій в European U",
+      "detail": "Свіжі листи від LinkedIn та Profesia.sk містять сповіщення про вакансії 'COO, Head of Operations (PCF-42), Payward Ireland Ltd в Kraken', 'Back Office Sales Admin в Brazing Technologies Europe', 'Application Support Specialist в Arcondis Group' та 'Senior Operations Manager в Square One Resources',",
+      "module": "selfact",
+      "ts": "2026-08-30T10:16:50"
     }
   ]
 }
