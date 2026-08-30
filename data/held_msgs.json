@@ -269,6 +269,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-31T00:01:58.620511",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Uber’s Co-Founder Just Raised $1.7B for AI-Powered Robots</b>\n👤 Ben at StartEngine &lt;ben@startengine.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78273"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78273"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78273"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78273"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78273"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78273"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
