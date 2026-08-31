@@ -189,6 +189,9 @@
     },
     "weekly_report": {
       "checked": 1
+    },
+    "MSG_WEEKLY_RUN_COMPARE": {
+      "checked": 1
     }
   },
   "last": [
@@ -360,7 +363,7 @@
     "cut": 4
   },
   "2026-08-31": {
-    "checked": 25,
+    "checked": 26,
     "issues": 13,
     "fixed": 9
   }
