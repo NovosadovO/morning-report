@@ -281,6 +281,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-31T22:01:57.991035",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📈 Robinhood memecoin causes repricing of AMC stock</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78303"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78303"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78303"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78303"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78303"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78303"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
