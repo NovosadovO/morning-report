@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-31T01:01:28.842002",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Technik/čka servisného oddelenia – podmienka § 22 в ENGIE Sl</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78277"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78277"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78277"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78277"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78277"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78277"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-31T01:01:30.792285",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Event Operations Specialist в Swiss Re</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -550,6 +511,45 @@
       "kind": "chunk",
       "text": "🔭 Новий транзит\n☽ <b>Місяць</b> ⚻ ♇ <b>Натальний Плутон</b> (орб 1.2°)\n📍 Місяць у <b>Овен ♈</b> | Натальний Плутон у Скорпіон ♏, 4-й дім\n<i>Квінкункс · Дім/Родина</i>\n\n📖 <b>Що означає Квінкункс:</b>\n🟣 Потреба коригування — щось не стикується й вимагає адаптації. Дрібний дисбаланс (часто здоров'я/рутина), який варто м'яко вирівняти.\n\n**Астрологічне тлумачення:**\nСьогодні транзитний Місяць у О.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-31T02:36:14.060431",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Profesia.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk»\n\n<i>«Nové pracovné ponuky \"Personalizované pracovné ponuky e-mailom\"\r\n\r\nLogo Profesia ( https://www.profesia.sk/?utm_medium=mail&amp;utm_source=10007&amp;utm_campaign=10007&amp;utm_term=2026-08-31&amp;eid=6a94c8eac157b66e75859d54bfc7573a&amp;utm_content=logo )\r\n\r\n*************************************************************...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78284"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78284"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78284"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78284"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78284"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78284"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
