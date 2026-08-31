@@ -1016,5 +1016,42 @@
         ]
       ]
     }
+  },
+  "2100366814_82335": {
+    "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від CMC Spotlight 🗑(схоже на розсилку)\n📋 Тема: «Saylor Just Posted \"We're Back\" and the Market Is Listening»\n\nЦей лист від CMC Spotlight є інформаційним бюлетенем від CoinMarketCap, що містить останні новини галузі, аналітичні дані та оновлення. Він не містить жодних конкретних дій або дедлайнів для одержувача.\n\n🤖 Це інформаційний лист, який не вимагає жодної дії.\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+    "keyboard": {
+      "inline_keyboard": [
+        [
+          {
+            "text": "🤖✍️ Відповідь",
+            "callback_data": "email_reply_78300"
+          },
+          {
+            "text": "📖 Описати лист",
+            "callback_data": "email_describe_78300"
+          }
+        ],
+        [
+          {
+            "text": "⭐ Важливий",
+            "callback_data": "email_star_78300"
+          },
+          {
+            "text": "📅 В календар",
+            "callback_data": "email_cal_78300"
+          }
+        ],
+        [
+          {
+            "text": "📥 Залишити",
+            "callback_data": "email_keep_78300"
+          },
+          {
+            "text": "🗑 Видалити",
+            "callback_data": "email_delete_78300"
+          }
+        ]
+      ]
+    }
   }
 }
