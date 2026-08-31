@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нагадування про реєстрацію на рейс",
-      "detail": "Олег отримав лист від pelikan.sk про онлайн-check-in для рейсу Ryanair, який відкривається за 24 години до вильоту. Оскільки поїздка до Малаги була перенесена, йому потрібно перевірити нову дату вильоту та відповідно зареєструватися онлайн.",
-      "module": "selfact",
-      "ts": "2026-08-29T07:04:09"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, нагадую, що 1 вересня у Олі День народження. У календа",
       "detail": "У календарі на 01.09 є 'День народження Олі' (кілька разів) та 'Олі — день народження' (кілька разів), а також у 'ВАЖЛИВІ ДАТИ' є 'd|олі|09-01'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Інформація з календаря на 31.08: 05:00 ☀️ Рання зміна (06:00-18:00).",
       "module": "selfact",
       "ts": "2026-08-31T15:45:55"
+    },
+    {
+      "kind": "note",
+      "what": "Олег активно читає щоденні дайджести крипто-новин, а також н",
+      "detail": "Свіжі листи від Oleh Bezuhlyi через LinkedIn | 📰 Daily Crypto Digest — August 31, CryptoBeholder.com через LinkedIn | 📰 AI-curated Daily Crypto Digest - August 31, The Daily Bone | 📈 Robinhood memecoin causes repricing of AMC stock, CMC Spotlight | Saylor Just Posted 'We're Back' and the Market Is L",
+      "module": "selfact",
+      "ts": "2026-08-31T15:46:03"
     }
   ]
 }
