@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-31T02:01:09.259026",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Event Operations Specialist в Swiss Re</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78275"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78275"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78275"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78275"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78275"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78275"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-31T02:01:11.134186",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Uber’s Co-Founder Just Raised $1.7B for AI-Powered Robots</b>\n👤 Ben at StartEngine &lt;ben@startengine.com&gt;",
@@ -555,6 +516,12 @@
       "ts": "2026-08-31T03:14:57.433513",
       "kind": "dates",
       "text": "🎂 ЗАВТРА — день народження\n━━━━━━━━━━━━━━━━━━━━\n🎉 Олі — 01.09\n\n🔥 Завтра. Останній спокійний вечір, щоб зробити.\nЗабудеш — це не «ой», це образа на роками.\n➡️ Вирішити краще сьогодні: подарунок, дзвінок чи зустріч.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-31T03:30:46.665698",
+      "kind": "chunk",
+      "text": "🌤 <b>Погода на дорогу до роботи</b> (05:00)\n\n☁️ Похмуро  21°C (відчувається 19°C)\n💧 Дощ: 0%  💨 Вітер: 9 км/г\n\n✅ Погода нормальна — нічого особливого",
       "keyboard": null
     }
   ]
