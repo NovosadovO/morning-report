@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Реконструкція UniCredit Bank",
-      "detail": "Отримано лист від 'UniCredit Bank' з темою 'Od 4.septembra rekonštruujeme pobočku Košice Rooseveltova'.",
-      "module": "selfact",
-      "ts": "2026-08-28T12:30:18"
-    },
-    {
-      "kind": "notify",
       "what": "Реконструкція відділення UniCredit Bank",
       "detail": "Надійшов лист від UniCredit Bank про реконструкцію відділення Košice Rooseveltova з 4 вересня.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Згідно з пам'яттю, Олег цікавиться вакансіями у сфері AI, Technical Writer та Event Operations Specialist, і є свіжі листи з відповідними вакансіями.",
       "module": "selfact",
       "ts": "2026-08-31T06:57:48"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-08-31T07:01:18"
     }
   ]
 }
