@@ -1,9 +1,4 @@
 {
-  "77841": {
-    "sender": "notification@service.tiktok.com",
-    "sender_raw": "TikTok <notification@service.tiktok.com>",
-    "seen_ts": "2026-08-22T11:04:49.702769+00:00"
-  },
   "77843": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@mail.dailybones.com",
     "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
     "seen_ts": "2026-08-31T12:31:33.360748+00:00"
+  },
+  "78304": {
+    "sender": "info@myasteria.com",
+    "sender_raw": "Asteria Network <info@myasteria.com>",
+    "seen_ts": "2026-08-31T12:47:48.907399+00:00"
   }
 }
