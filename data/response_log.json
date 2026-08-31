@@ -8620,6 +8620,16 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-08-31T04:30:20.616483+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути вакансії Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-08-31"
+      }
     }
   ]
 }
