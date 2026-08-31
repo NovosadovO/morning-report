@@ -1034,18 +1034,20 @@
   "2026-08-31": {
     "date": "2026-08-31",
     "health_score": 90,
-    "steps": 17906,
-    "sleep_total_min": 340,
+    "steps": 17167,
+    "sleep_total_min": 300,
     "sleep_deep_min": 109,
     "sleep_light_min": 175,
     "sleep_quality": 100,
-    "hr_avg": 85,
-    "calories": 762,
+    "hr_avg": 45,
+    "calories": 5,
     "hrv": 45,
     "weight_kg": 83.0,
     "height_cm": 175,
     "spo2": null,
-    "source": "qwatch",
-    "saved_at": "2026-08-31 15:09"
+    "source": "qwatch_auto",
+    "saved_at": "2026-08-31 20:58",
+    "stress": 64,
+    "sleep_hours": 5.0
   }
 }
