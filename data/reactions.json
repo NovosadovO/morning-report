@@ -1607,5 +1607,15 @@
     "label": "👌 Прийняв",
     "state": "open",
     "ts": "2026-08-31T11:50:30"
+  },
+  "generic|t|новини від volkswagen group": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "новини від volkswagen group",
+    "title": "Новини від Volkswagen Group",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "state": "closed",
+    "ts": "2026-08-31T11:50:40"
   }
 }
