@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-31t11_22_07_949189": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег отримав контракт на бронювання August Villa Málaga - Villa з 07.09.2026 по 11.09.2026.\",     \"why\": \"Свіжий ",
+    "ts": "2026-08-31T11:22:07.949189"
+  },
   "openloop_promises|2026-08-31t11_10_24_502109": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Завтра день наро",
     "ts": "2026-08-31T09:04:21.478573"
-  },
-  "action_detect|2026-08-31t09_04_17_064313": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-31T09:04:17.064313"
   }
 }
