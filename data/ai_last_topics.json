@@ -1,4 +1,59 @@
 {
+  "action_detect|2026-08-31t19_04_38_786583": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути незакриті платежі\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути незакриті ",
+    "ts": "2026-08-31T19:04:38.786583"
+  },
+  "action_detect|2026-08-31t19_04_23_952153": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"12:15\", \"action_summary\": \"Завтра, 1 вересня 202",
+    "ts": "2026-08-31T19:04:23.952153"
+  },
+  "action_detect|2026-08-31t19_04_23_890049": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-08-31\", \"action_time\": null, \"action_summary\": \"Перевірити, чи Олег прийн",
+    "ts": "2026-08-31T19:04:23.890049"
+  },
+  "action_detect|2026-08-31t19_04_12_781155": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-31T19:04:12.781155"
+  },
+  "briefing_truthfix|2026-08-31t19_04_07_111608": {
+    "topic": "briefing/truthfix",
+    "gist": "Сьогодні, 31 серпня 2026 року, після завершення ранньої зміни, фокус зміщується на використання вечірнього часу для вирішення накопичених питань.  **Що змінилос",
+    "ts": "2026-08-31T19:04:07.111608"
+  },
+  "briefing|2026-08-31t19_03_59_194194": {
+    "topic": "briefing",
+    "gist": "🧭 ВЕКТОР ДНЯ  Сьогоднішня рання зміна закінчилася, і ти вдома, що дає можливість для фокусованих дій. Вага знову зросла на 0.3 кг за день, що віддаляє від цілі ",
+    "ts": "2026-08-31T19:03:59.194194"
+  },
+  "themes_ai|2026-08-31t19_03_45_037856": {
+    "topic": "themes_ai",
+    "gist": "💰 ФІНАНСИ Твої витрати за серпень становлять лише 1.98€, тоді як очікувана сума до оплати — 422.16€, а щомісячні підписки додають ще 27.32€. Це створює фінансов",
+    "ts": "2026-08-31T19:03:45.037856"
+  },
+  "astro_ai|2026-08-31t19_03_36_864254": {
+    "topic": "astro_ai",
+    "gist": "Олеже, твій сьогоднішній вечір, 31 серпня 2026 року, у Кошице, підкреслює глибокі зміни, що вже відбуваються у твоєму житті. Центральною темою останніх двох міс",
+    "ts": "2026-08-31T19:03:36.864254"
+  },
+  "email_ai_item|2026-08-31t19_02_43_401563": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від 0xResearch містить огляд ринку криптовалют та фінансових новин. Зокрема, йдеться про зростання ймовірності підвищення ставки Ф",
+    "ts": "2026-08-31T19:02:43.401563"
+  },
+  "email_ai_item|2026-08-31t19_02_31_283008": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист від carVertical пропонує знижку 20% на перевірку історії авто (пробіг, аварії, кількість власників) перед покупкою. Акція діє лише у верес",
+    "ts": "2026-08-31T19:02:31.283008"
+  },
+  "personal_ai|2026-08-31t19_02_08_195679": {
+    "topic": "personal_ai",
+    "gist": "Олеже, твій сон минулої ночі склав лише 5.7 години, що значно нижче середнього за тиждень (8.2 години) і може вплинути на продуктивність завтрашньої ранньої змі",
+    "ts": "2026-08-31T19:02:08.195679"
+  },
   "action_detect|2026-08-31t19_00_30_172934": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -243,60 +298,5 @@
     "topic": "people",
     "gist": "```json [   {     \"email\": \"michaela.bila@bukovinakosice.sk\",     \"name\": \"Mgr. Michaela Bilá\",     \"relation\": \"інше\",     \"topics\": [\"фабрики на Україні\"],   ",
     "ts": "2026-08-31T17:14:01.495971"
-  },
-  "openloop_promises|2026-08-31t17_12_54_521031": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-08-31T17:12:54.521031"
-  },
-  "mailcal_extract|2026-08-31t17_12_43_015323": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-08-31T17:12:43.015323"
-  },
-  "email_ai_item|2026-08-31t17_12_21_732753": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Цей лист від Sizeer Street guide є рекламною розсилкою, що пропонує нові моделі кросівок Asics Gel-Cumulus 16 та інші товари бренду Asics. У ли",
-    "ts": "2026-08-31T17:12:21.732753"
-  },
-  "email_ai_item|2026-08-31t17_05_59_480722": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист від Buzz Sneaker Station інформує Олега про знижку -20% на кросівки New Balance 1906A за промокодом UNLOCK20. Акція діє до 6 верес",
-    "ts": "2026-08-31T17:05:59.480722"
-  },
-  "action_detect|2026-08-31t17_04_25_170565": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз для Олега на 31 се",
-    "ts": "2026-08-31T17:04:25.170565"
-  },
-  "action_detect|2026-08-31t17_04_25_160231": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз та дані про здоров",
-    "ts": "2026-08-31T17:04:25.160231"
-  },
-  "action_detect|2026-08-31t17_04_14_160602": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Випити воду\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після зміни зосередься на питному режимі",
-    "ts": "2026-08-31T17:04:14.160602"
-  },
-  "action_detect|2026-08-31t17_03_58_742317": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"12:15\", \"action_summary\": \"Завтра, 1 вересня 202",
-    "ts": "2026-08-31T17:03:58.742317"
-  },
-  "action_detect|2026-08-31t17_03_58_651568": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято Armolopid",
-    "ts": "2026-08-31T17:03:58.651568"
-  },
-  "action_detect|2026-08-31t17_03_47_629270": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Випити воду\", \"action_date\": \"2026-08-31\", \"action_time\": \"18:00\", \"action_summary\": \"Випити 0.5-1 літр води до кін",
-    "ts": "2026-08-31T17:03:47.629270"
-  },
-  "briefing_truthfix|2026-08-31t17_03_42_472578": {
-    "topic": "briefing/truthfix",
-    "gist": "Зараз, коли ти на ранній зміні до 18:00, важливо пам'ятати, що завтра, 1 вересня, день народження Олі. Це може бути гарним приводом зробити короткий, але сфокус",
-    "ts": "2026-08-31T17:03:42.472578"
   }
 }
