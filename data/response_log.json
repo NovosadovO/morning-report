@@ -8906,6 +8906,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_c5e86a6f93"
+    },
+    {
+      "ts": "2026-08-31T20:09:26.341454+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Запланувати раціон",
+      "answer": "yes"
     }
   ]
 }
