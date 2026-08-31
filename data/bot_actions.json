@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, 1 вересня у Олі день народження. У календарі є дві под",
-      "detail": "У календарі на 01.09 зазначено '08:00 🎂 Олі — день народження; 11:00 День народження Олі', а також у важливих датах є 'd|олі|09-01': {'name': 'Олі', 'md': '09-01', 'kind': 'birthday'}.",
-      "module": "selfact",
-      "ts": "2026-08-28T09:58:43"
-    },
-    {
       "kind": "note",
       "what": "Олег цікавиться вакансіями Директора з операцій в Європейськ",
       "detail": "Отримано лист від LinkedIn з вакансією Executive Director. Chief Operating Officer в Wise Wolves Corporation.",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є сповіщення про вакансії 'Regional AI Run Lead в EPAM Systems', 'Technical Writer в Octave', 'Event Operations Specialist в Swiss Re', що узгоджується з попередніми нотатками про його інтереси.",
       "module": "selfact",
       "ts": "2026-08-31T05:40:30"
+    },
+    {
+      "kind": "note",
+      "what": "Олег цікавиться темою сну та способами його покращення, про",
+      "detail": "Лист 'The Counterintuitive Sleep Fix' від PLUNGE, що пропонує рішення для покращення сну за допомогою сауни, вказує на інтерес Олега до цієї теми.",
+      "module": "selfact",
+      "ts": "2026-08-31T05:40:38"
     }
   ]
 }
