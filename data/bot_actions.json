@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Вакансія Global Product Owner",
-      "detail": "В свіжих листах є сповіщення про вакансії LinkedIn, яке може бути цікавим для Олега, враховуючи його інтерес до вакансій у регіоні.",
-      "module": "selfact",
-      "ts": "2026-08-29T01:42:47"
-    },
-    {
       "kind": "note",
       "what": "Олег має заплановану нічну зміну 29.08.2026 з 18:00 до 06:00",
       "detail": "Інформація про нічну зміну 29.08 є в календарі, але відсутня в нотатках про Олега.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від Volkswagen Group через LinkedIn '✨ August Accelerated: Global Perspectives, AI Innovation & Energy Solutions'.",
       "module": "selfact",
       "ts": "2026-08-31T11:38:22"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на лист від no-reply@chekin.com. Твій кон",
+      "detail": "Олег має бронювання в August Villa Málaga з 07.09 по 11.09, і контракт на нього вже доступний, що є важливою інформацією для подорожі.",
+      "module": "selfact",
+      "ts": "2026-08-31T11:53:28"
     }
   ]
 }
