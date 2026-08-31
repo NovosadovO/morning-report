@@ -8723,6 +8723,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_49ab69443c"
+    },
+    {
+      "ts": "2026-08-31T07:47:25.554811+00:00",
+      "category": "calendar_button",
+      "question": "Реєстрація в готель",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t30",
+        "when": "08:00–09:00",
+        "note": null
+      }
     }
   ]
 }
