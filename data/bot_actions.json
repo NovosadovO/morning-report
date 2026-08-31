@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олег, ти плануєш відвідати Fest Jedlo 2026 або Dni mesta Krá",
-      "detail": "У календарі на сьогодні є дві події: 08:00 📌 Fest Jedlo 2026 та 08:00 📌 Dni mesta Krásno nad Kysucou. Хочу зрозуміти, чи ти плануєш відвідувати ці заходи.",
-      "module": "selfact",
-      "ts": "2026-08-29T01:12:02"
-    },
-    {
       "kind": "notify",
       "what": "Нова вакансія Global Product Owner в Siemens Healthineers",
       "detail": "З листа від Сповіщення про вакансії LinkedIn: Global Product Owner - Licensing Platform (f/m/d) - Hybrid - Bratislava/Zilina/Kosice в Siemens Healthineers",
@@ -2799,6 +2792,13 @@
       "detail": "Наявність великої кількості свіжих листів зі сповіщеннями про вакансії, які Олег міг не переглянути, та відсутність його реакції на них у пам'яті переписки.",
       "module": "selfact",
       "ts": "2026-08-31T11:22:17"
+    },
+    {
+      "kind": "note",
+      "what": "Бронювання August Villa Málaga",
+      "detail": "Свіжий лист від no-reply@chekin.com підтверджує 'Your reservation contract - August Villa Málaga - Villa'.",
+      "module": "selfact",
+      "ts": "2026-08-31T11:38:13"
     }
   ]
 }
