@@ -8009,7 +8009,24 @@
     "action": "calrem_skip",
     "pid": "gen_1788148954647",
     "subject": "Записати особисті цілі",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 82030,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1788148954647"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1788148954647"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-08-31T07:36:25.884439+00:00"
   }
 }
