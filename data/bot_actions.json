@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, є нове сповіщення про вакансію IT Allrounder (m/w/d) в",
-      "detail": "Олег отримав лист від LinkedIn про вакансію 'IT Allrounder (m/w/d) в Randstad Österreich Vienna', і компанія активно наймає персонал.",
-      "module": "selfact",
-      "ts": "2026-08-29T13:45:24"
-    },
-    {
       "kind": "note",
       "what": "Олег пропустив оновлення платіжної інформації для Runable на",
       "detail": "Згідно з календарем, Олег мав оновити платіж Runable сьогодні об 11:00, але вже 14:00, і платіж все ще невдалий.",
@@ -2799,6 +2792,13 @@
       "detail": "Згідно з даними про підписки, платіж до Runable на $10.00 був невдалим, і є запис 'Потрібно оновити платіжну інформацію'.",
       "module": "selfact",
       "ts": "2026-08-31T20:55:27"
+    },
+    {
+      "kind": "note",
+      "what": "Олег активно цікавиться новинами про крипторинок та макроеко",
+      "detail": "З листа від 0xResearch видно, що 'Kevin Warsh’s hawkish Jackson Hole speech pushed rate hike odds to 60% and sent equities and gold lower'.",
+      "module": "selfact",
+      "ts": "2026-08-31T20:55:32"
     }
   ]
 }
