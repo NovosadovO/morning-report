@@ -8102,5 +8102,14 @@
       }
     },
     "ts": "2026-08-31T15:05:13.620628+00:00"
+  },
+  "0579ee57c4": {
+    "action": "gate_cal_skip",
+    "pid": "cal_skip_botsend_1788181597835",
+    "subject": "Бронювання August Villa Málaga",
+    "extra": {
+      "msg": "📅 АІ помітив дію:\n«Бронювання August Villa Málaga», 2026-09-07\nОлег має бронювання August Villa Málaga з 07/09/2026 по 11/09/2026.\n\nДодати в Google Calendar?"
+    },
+    "ts": "2026-08-31T15:06:55.773273+00:00"
   }
 }
