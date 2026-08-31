@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-01T00:01:28.256144",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Maroš Sivák\n📋 InterFin Malaga trip - detailné informácie\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Maroš Sivák",
-              "callback_data": "email_reply_78328"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_78328"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78328"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-01T00:01:31.814662",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Maroš Sivák\n📋 InterFin Malaga trip - detailné informácie\n📝 (AI-аналіз тимчасово недоступний)",
@@ -450,6 +425,12 @@
       "ts": "2026-09-01T01:15:55.334065",
       "kind": "deadlines",
       "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 3 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Видалення неактивного облікового запису Philips</b>\n📆 до <b>2026-09-04</b>\n🏢 Philips\n\n➡️ Увійти в обліковий запис MyPhilips, щоб він залишався активним",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-01T01:15:56.552705",
+      "kind": "deadlines",
+      "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n📌 Видалення неактивного облікового запису Philips\n📆 до 2026-09-04\n🏢 Philips\n\n➡️ Увійти в обліковий запис MyPhilips, щоб він залишався активним",
       "keyboard": null
     }
   ]
