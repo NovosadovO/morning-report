@@ -1,4 +1,29 @@
 {
+  "selfact|2026-08-31t05_24_30_690864": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олег, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжн",
+    "ts": "2026-08-31T05:24:30.690864"
+  },
+  "calendar_truthfix|2026-08-31t05_11_54_781171": {
+    "topic": "calendar/truthfix",
+    "gist": "Олеже, о 05:11, за 49 хвилин до початку ранньої зміни, є кілька моментів, які потребують уваги.  Твоя вага стабільно тримається на позначці 83.0 кг протягом 7 д",
+    "ts": "2026-08-31T05:11:54.781171"
+  },
+  "calendar|2026-08-31t05_11_44_927943": {
+    "topic": "calendar",
+    "gist": "Олеже, почнемо ранок з аналізу поточного стану. Сьогоднішній день розпочинається з ранньої зміни о 06:00, яка триватиме до 18:00. Це означає, що у тебе є вільни",
+    "ts": "2026-08-31T05:11:44.927943"
+  },
+  "action_detect|2026-08-31t05_10_33_197445": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-31T05:10:33.197445"
+  },
+  "selfact|2026-08-31t05_09_24_767005": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олег, зверни увагу, що було кілька невдалих платежів за підписку Runabl",
+    "ts": "2026-08-31T05:09:24.767005"
+  },
   "openloop_promises|2026-08-31t05_07_56_469138": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Уникнути поспішних рішень у кар'єрі\", \"action_date\": \"2026-08-30\", \"action_time\": null, \"action_summary\": \"Не прийм",
     "ts": "2026-08-30T23:02:49.918704"
-  },
-  "action_detect|2026-08-30t23_02_38_953484": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Уникати імпульсивних кроків щодо кар'єри\", \"action_date\": \"2026-08-31\", \"action_time\": null, \"action_summar",
-    "ts": "2026-08-30T23:02:38.953484"
-  },
-  "action_detect|2026-08-30t23_02_27_879270": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Покрити борг\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Переглянути, що створює борг у ",
-    "ts": "2026-08-30T23:02:27.879270"
-  },
-  "action_detect|2026-08-30t23_02_14_172705": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-08-30\", \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскіл",
-    "ts": "2026-08-30T23:02:14.172705"
-  },
-  "action_detect|2026-08-30t23_02_13_990946": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зберегти акаунт Rondogo\", \"action_date\": \"2026-08-30\", \"action_time\": \"12:00\", \"action_summary\": \"Зберегти акаунт R",
-    "ts": "2026-08-30T23:02:13.990946"
-  },
-  "action_detect|2026-08-30t23_02_03_024998": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Ранкова пробіжка\", \"action_date\": \"2026-08-31\", \"action_time\": null, \"action_summary\": \"Запланувати ранкову пробіжк",
-    "ts": "2026-08-30T23:02:03.024998"
   }
 }
