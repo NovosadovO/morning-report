@@ -1887,5 +1887,15 @@
     "label": "🙈 Не нагадуй",
     "state": "closed",
     "ts": "2026-08-31T20:57:34"
+  },
+  "generic|t|невдалі платежі runable": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "невдалі платежі runable",
+    "title": "Невдалі платежі Runable",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "state": "closed",
+    "ts": "2026-08-31T20:57:54"
   }
 }
