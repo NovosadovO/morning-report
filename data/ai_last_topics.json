@@ -1,4 +1,24 @@
 {
+  "email_ai_item|2026-08-31t20_52_54_873621": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від Temu є рекламною розсилкою, яка пропонує відвідати їхній вебсайт для перегляду рекомендованих товарів. У листі немає ко",
+    "ts": "2026-08-31T20:52:54.873621"
+  },
+  "action_detect|2026-08-31t20_41_39_854275": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відновити відстеження пробіжок Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіж",
+    "ts": "2026-08-31T20:41:39.854275"
+  },
+  "msg_vip_email_truthfix|2026-08-31t20_41_28_931855": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Олеже, є суперечність: ти відмітив \"Зробив\" щодо здоров'я, але дані за 31 серпня, оновлені 21 годину тому, показують оцінку дня 69 балів, а твій сон за останню ",
+    "ts": "2026-08-31T20:41:28.931855"
+  },
+  "msg_vip_email|2026-08-31t20_41_20_543752": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🏹  Відновившись після ранньої зміни, що завершилася сьогодні о 17:00, ти маєш чудову нагоду для стратегічного погляду на свої цілі, особливо з огл",
+    "ts": "2026-08-31T20:41:20.543752"
+  },
   "selfact|2026-08-31t20_40_03_966011": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег цікавиться вакансіями Linux Operations Engineer в Aeven (Прага) та Security Consultant в Syntax (Кошице), що",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2024-09-01\", \"action_time\": null, \"action_summary\": \"Завтра, 1 вересня, день ",
     "ts": "2026-08-31T19:10:04.615419"
-  },
-  "msg_idle_timeout|2026-08-31t19_09_50_344326": {
-    "topic": "MSG_IDLE_TIMEOUT",
-    "gist": "Привіт Олеже! 🚶  Вечір після зміни – чудовий час для відновлення сил, тим паче, що твоя рання зміна закінчилася ще о 17:00, і ти вже 4 години відпочиваєш. Бачу,",
-    "ts": "2026-08-31T19:09:50.344326"
-  },
-  "selfact|2026-08-31t19_06_51_463228": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег активно шукає роботу в Кошице, отримуючи сповіщення про вакансії Security Consultant в Syntax та Back Office",
-    "ts": "2026-08-31T19:06:51.463228"
-  },
-  "action_detect|2026-08-31t19_05_01_362567": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-31T19:05:01.362567"
-  },
-  "action_detect|2026-08-31t19_05_01_047373": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Вирішити прострочені дедлайни\", \"action_date\": \"2026-09-02\", \"action_time\": null, \"action_summary\": \"Заплануй чіткі",
-    "ts": "2026-08-31T19:05:01.047373"
   }
 }
