@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-08-31t06_38_28_153926": {
+    "topic": "openloop_promises",
+    "gist": "```json [   {     \"what\": \"I am attaching screenshots of the messages I received from the tour operator. The screenshots show the sender’s contact details and t",
+    "ts": "2026-08-31T06:38:28.153926"
+  },
+  "action_detect|2026-08-31t06_28_40_477457": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути дублюючі події\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Переглянути дублю",
+    "ts": "2026-08-31T06:28:40.477457"
+  },
   "selfact|2026-08-31t06_26_27_395816": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег ігнорує сповіщення про вакансії з LinkedIn, незважаючи на їх надходження та активне наймання компаніями.\",  ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-08-31T04:56:36.805497"
-  },
-  "action_detect|2026-08-31t04_56_36_772855": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-31T04:56:36.772855"
-  },
-  "action_detect|2026-08-31t04_56_25_761370": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-31T04:56:25.761370"
   }
 }
