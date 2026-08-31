@@ -8706,6 +8706,17 @@
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
       "answer": "pa_note_98c6e30532"
+    },
+    {
+      "ts": "2026-08-31T07:36:38.797265+00:00",
+      "category": "calendar_button",
+      "question": "Привітати Олю з Днем народження",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t24h",
+        "when": "07:00–08:00",
+        "note": null
+      }
     }
   ]
 }
