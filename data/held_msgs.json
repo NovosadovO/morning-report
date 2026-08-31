@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-31T01:01:27.026050",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Daily Degen - August 30th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78278"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78278"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78278"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78278"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78278"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78278"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-31T01:01:28.842002",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Technik/čka servisného oddelenia – podmienka § 22 в ENGIE Sl</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -583,6 +544,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-31T02:27:55.574319",
+      "kind": "chunk",
+      "text": "🔭 Новий транзит\n☽ <b>Місяць</b> ⚻ ♇ <b>Натальний Плутон</b> (орб 1.2°)\n📍 Місяць у <b>Овен ♈</b> | Натальний Плутон у Скорпіон ♏, 4-й дім\n<i>Квінкункс · Дім/Родина</i>\n\n📖 <b>Що означає Квінкункс:</b>\n🟣 Потреба коригування — щось не стикується й вимагає адаптації. Дрібний дисбаланс (часто здоров'я/рутина), який варто м'яко вирівняти.\n\n**Астрологічне тлумачення:**\nСьогодні транзитний Місяць у О.",
+      "keyboard": null
     }
   ]
 }
