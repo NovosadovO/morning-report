@@ -1,4 +1,49 @@
 {
+  "action_detect|2026-08-31t05_00_07_797808": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-31T05:00:07.797808"
+  },
+  "action_detect|2026-08-31t04_57_57_755367": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь записати сьог",
+    "ts": "2026-08-31T04:57:57.755367"
+  },
+  "action_detect|2026-08-31t04_56_58_939836": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату поїздки до Ма",
+    "ts": "2026-08-31T04:56:58.939836"
+  },
+  "action_detect|2026-08-31t04_56_48_137270": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Змінити дату поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату ",
+    "ts": "2026-08-31T04:56:48.137270"
+  },
+  "action_detect|2026-08-31t04_56_47_923664": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату поїздки до Ма",
+    "ts": "2026-08-31T04:56:47.923664"
+  },
+  "action_detect|2026-08-31t04_56_36_981277": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Змінити дату поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату ",
+    "ts": "2026-08-31T04:56:36.981277"
+  },
+  "action_detect|2026-08-31t04_56_36_805497": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-31T04:56:36.805497"
+  },
+  "action_detect|2026-08-31t04_56_36_772855": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-31T04:56:36.772855"
+  },
+  "action_detect|2026-08-31t04_56_25_761370": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-31T04:56:25.761370"
+  },
   "selfact|2026-08-31t04_54_00_458380": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Рання зміна\",     \"text\": \"Олег, сьогодні 31.08.2026, 04:53. За 7 хвилин (о 05:00) у тебе починається рання зм",
@@ -253,50 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потріб",
     "ts": "2026-08-30T22:40:13.832098"
-  },
-  "selfact|2026-08-30t22_24_59_795629": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення щодо поїздки до Малаги\",     \"text\": \"Поїздка до Малаги все ще відображається в календарі на 1 верес",
-    "ts": "2026-08-30T22:24:59.795629"
-  },
-  "mailcal_extract|2026-08-30t22_15_26_015635": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-08-30T22:15:26.015635"
-  },
-  "selfact|2026-08-30t22_09_39_294056": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Зміна на заводі\",     \"text\": \"Олеже, нагадую, що завтра, 31 серпня, у тебе рання зміна на заводі (06:00-18:00",
-    "ts": "2026-08-30T22:09:39.294056"
-  },
-  "action_detect|2026-08-30t22_03_17_459441": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оновити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити підписку Str",
-    "ts": "2026-08-30T22:03:17.459441"
-  },
-  "action_detect|2026-08-30t22_03_06_239110": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Подати заявку на вакансію Regional AI Run Lead в EPAM Systems\", \"action_date\": null, \"action_time\": null, \"action_s",
-    "ts": "2026-08-30T22:03:06.239110"
-  },
-  "action_detect|2026-08-30t22_03_05_962389": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Змінити дату поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату ",
-    "ts": "2026-08-30T22:03:05.962389"
-  },
-  "action_detect|2026-08-30t22_02_54_998756": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Rondogo\", \"action_date\": \"2026-08-31\", \"action_time\": null, \"action_summary\": \"Перевірити деталі щодо опла",
-    "ts": "2026-08-30T22:02:54.998756"
-  },
-  "action_detect|2026-08-30t22_02_54_911611": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Олю з Днем народження\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Привітати Ол",
-    "ts": "2026-08-30T22:02:54.911611"
-  },
-  "msg_micro_checkin_truthfix|2026-08-30t22_02_44_388625": {
-    "topic": "MSG_MICRO_CHECKIN/truthfix",
-    "gist": "Олеже, зараз 22:02 неділі, 30 серпня 2026 року, і, дивлячись на динаміку, помітно розбіжність між твоїми показниками здоров'я: хоча пульс за 14 днів знизився на",
-    "ts": "2026-08-30T22:02:44.388625"
   }
 }
