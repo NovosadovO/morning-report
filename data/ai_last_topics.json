@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-08-31t18_15_17_911204": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-31T18:15:17.911204"
+  },
   "selfact|2026-08-31t18_05_35_141892": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олег, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потріб",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег сьогодні, 31.08.2026, мав ранкову зміну з 06:00 до 18:00, що відповідає запису в календарі.\",     \"why\": \"Ін",
     "ts": "2026-08-31T16:32:12.610546"
-  },
-  "action_detect|2026-08-31t16_30_21_364192": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Олег планує поїздку до Мал",
-    "ts": "2026-08-31T16:30:21.364192"
   }
 }
