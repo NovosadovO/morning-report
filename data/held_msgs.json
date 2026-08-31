@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-31T00:16:10.501970",
-      "kind": "rwa",
-      "text": "🏦 RWA-РАДАР\n━━━━━━━━━━━━━━━━━━━━\n• весь сектор RWA втратив 31.9% за 24 години (капіталізація $47.01B)\n\nAI-коментар недоступний — вище тільки живі цифри.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-31T00:35:48.806886",
       "kind": "watchdog",
       "text": "👁 <b>Я осліп на частину даних</b>\n\n🔴 <b>strava</b> — функції get_activities немає в monitor.py\n\n<i>Поки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.</i>",
@@ -494,6 +488,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78279"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-31T02:01:05.555337",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - August 30th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78278"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78278"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78278"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78278"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78278"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78278"
             }
           ]
         ]
