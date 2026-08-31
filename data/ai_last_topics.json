@@ -1,4 +1,19 @@
 {
+  "msg_vip_email|2026-08-31t10_19_30_547261": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Цей ранок застав тебе на ранній зміні в Minebea Mitsumi, і вже понад чотири години ти активно працюєш. Хочу підтримати тебе, адже бачу цікаві р",
+    "ts": "2026-08-31T10:19:30.547261"
+  },
+  "selfact|2026-08-31t10_19_05_112490": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"День народження Олі\",     \"text\": \"Нагадую, що завтра, 1 вересня, день народження Олі. Можливо, варто підгот",
+    "ts": "2026-08-31T10:19:05.112490"
+  },
+  "deadlines|2026-08-31t10_16_25_379355": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-08-31T10:16:25.379355"
+  },
   "email_ai_item|2026-08-31t10_15_27_197512": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від LinkedIn є сповіщенням про нову вакансію «Manažér obchodnej agentúry v Trebišove» в компанії UNIQA CZ, яка відповідає налаштування",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Strava\", \"action_date\": \"2026-08-04\", \"action_time\": null, \"action_summary\": \"Оплатити прострочену підписк",
     "ts": "2026-08-31T08:03:26.411209"
-  },
-  "action_detect|2026-08-31t08_03_22_509620": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Перевірити очікувані платежі\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Заплануй переві",
-    "ts": "2026-08-31T08:03:22.509620"
-  },
-  "action_detect|2026-08-31t08_03_05_439292": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти ліки Armolopid, оскільки",
-    "ts": "2026-08-31T08:03:05.439292"
-  },
-  "action_detect|2026-08-31t08_03_05_153366": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"12:15\", \"action_summary\": \"Відсвяткувати день на",
-    "ts": "2026-08-31T08:03:05.153366"
   }
 }
