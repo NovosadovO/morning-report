@@ -8108,7 +8108,23 @@
     "pid": "cal_skip_botsend_1788181597835",
     "subject": "Бронювання August Villa Málaga",
     "extra": {
-      "msg": "📅 АІ помітив дію:\n«Бронювання August Villa Málaga», 2026-09-07\nОлег має бронювання August Villa Málaga з 07/09/2026 по 11/09/2026.\n\nДодати в Google Calendar?"
+      "msg": "📅 АІ помітив дію:\n«Бронювання August Villa Málaga», 2026-09-07\nОлег має бронювання August Villa Málaga з 07/09/2026 по 11/09/2026.\n\nДодати в Google Calendar?",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 82399,
+        "kb": [
+          [
+            {
+              "text": "✅ Додати",
+              "callback_data": "cal_add_botsend_1788181597835"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "cal_skip_botsend_1788181597835"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-08-31T15:06:55.773273+00:00"
   }
