@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримав інформацію про скасування бронювання 'Paxos and",
-      "detail": "Листи від noreply@booking.com та info@ionian-cruises.com про скасування туру та повернення коштів.",
-      "module": "selfact",
-      "ts": "2026-08-29T09:22:53"
-    },
-    {
       "kind": "openmind",
       "what": "digest",
       "detail": "відкритий огляд ринку + горизонт",
@@ -2799,6 +2792,13 @@
       "detail": "У розділі 'ПІДПИСКИ' є активна підписка 'runable', де зазначено: 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.' та 'charges' показує невдалі спроби оплати.",
       "module": "selfact",
       "ts": "2026-08-31T16:32:19"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує сповіщення про вакансії Operations Director в S",
+      "detail": "У 'СВІЖИХ ЛИСТАХ' є два сповіщення про вакансії LinkedIn: 'Operations Director в SPARK Europe' та 'Security Consultant в Syntax' у Кошице. Це розширює інформацію про його кар'єрні інтереси.",
+      "module": "selfact",
+      "ts": "2026-08-31T16:32:24"
     }
   ]
 }
