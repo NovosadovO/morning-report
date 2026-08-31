@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-31T23:01:24.919005",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Program Manager в EPAM Systems</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78329"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78329"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78329"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78329"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78329"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78329"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-31T23:01:27.341547",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>InterFin Malaga trip - detailné informácie</b>\n👤 Maroš Sivák &lt;maros.sivak.sro@gmail.com&gt;",
@@ -721,6 +682,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-01T00:01:31.814662",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Maroš Sivák\n📋 InterFin Malaga trip - detailné informácie\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
