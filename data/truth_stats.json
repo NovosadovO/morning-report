@@ -191,7 +191,8 @@
       "checked": 1
     },
     "MSG_WEEKLY_RUN_COMPARE": {
-      "checked": 1
+      "checked": 1,
+      "issues": 1
     }
   },
   "last": [
@@ -364,7 +365,7 @@
   },
   "2026-08-31": {
     "checked": 26,
-    "issues": 13,
+    "issues": 14,
     "fixed": 9
   }
 }
