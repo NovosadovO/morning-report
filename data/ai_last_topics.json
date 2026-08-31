@@ -1,4 +1,19 @@
 {
+  "selfact|2026-08-31t20_40_03_966011": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег цікавиться вакансіями Linux Operations Engineer в Aeven (Прага) та Security Consultant в Syntax (Кошице), що",
+    "ts": "2026-08-31T20:40:03.966011"
+  },
+  "action_detect|2026-08-31t20_30_49_546354": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Підготуватися до",
+    "ts": "2026-08-31T20:30:49.546354"
+  },
+  "msg_deep_analysis_truthfix|2026-08-31t20_30_38_258154": {
+    "topic": "MSG_DEEP_ANALYSIS/truthfix",
+    "gist": "Чи не здається тобі, Олеже, що дані про твоє здоров'я, які були оновлені 21 годину тому, 31 серпня, та застарілі дані Strava, можуть впливати на твої рішення що",
+    "ts": "2026-08-31T20:30:38.258154"
+  },
   "msg_deep_analysis|2026-08-31t20_30_23_569737": {
     "topic": "MSG_DEEP_ANALYSIS",
     "gist": "Привіт Олеже! 👋  Зараз 20:29, ти відпочиваєш після ранньої зміни, що завершилася сьогодні о 17:00. Вчора, 30 серпня, ти пропустив день з даними по здоров'ю, і ц",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Вирішити прострочені дедлайни\", \"action_date\": \"2026-09-02\", \"action_time\": null, \"action_summary\": \"Заплануй чіткі",
     "ts": "2026-08-31T19:05:01.047373"
-  },
-  "action_detect|2026-08-31t19_04_49_702886": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-31T19:04:49.702886"
-  },
-  "action_detect|2026-08-31t19_04_49_646140": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-31T19:04:49.646140"
-  },
-  "action_detect|2026-08-31t19_04_38_786583": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути незакриті платежі\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути незакриті ",
-    "ts": "2026-08-31T19:04:38.786583"
   }
 }
