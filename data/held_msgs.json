@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-31T21:33:47.580358",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Maroš Sivák</b>\n📋 Тема: «InterFin Malaga trip - detailné informácie»\n\n<i>«Ahojte,\r\n\r\nNižšie vám posielam sľúbený súhrn všetkých informácií k tripu do Malagy (\r\nŠpanielsko ), kde nájdete všetky najdôležitejšie info, ktoré vám pripravila\r\nnaša Gabika ( GabiGo ) :) Máte to v slovenčine, ale aj Ukrajinštine.\r\n\r\nV prípade, ak by ste potrebovali doplniť ďalšie informácie alebo...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78328"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78328"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78328"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78328"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78328"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78328"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-31T22:01:36.893393",
       "kind": "chunk",
       "text": "🌃\n<b>ЗВІТ  ·  Пн 31.08  ·  22:00</b>\n🏠 Вдома\n<i>Тихо навколо — найкращий час для глибоких думок про майбутнє 💤</i>\n📌 ☀️ Рання зміна (06:00-18:00) +11\n\n⚡ <b>День: ⭐⭐☆☆☆ 48/100</b>  ↑+28 vs вчора\n\n☀️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>27°C</b>\n<i>☀️ Тепло — сонцезахисний крем</i>\n<i>🕶️ УФ 6 — захист</i>\n\n📅 <b>Прогноз сьогодні:</b>\n05:50   🌇 19:19  09:00 ☀️25°  │  12:00 ☁️28°  │  15:00 ☀️31°🌧46%  │  18:00 ☀️27°  │  21:00 ☀️23°\n\n<b>Завтра:</b>  ☁️ Хмарно  🔻21°  /  🔺31°\n<code>09:00</code> ☀️25°  │  <code>12:00</code> ☁️28°  │  <code>15:00</code> ☀️31°🌧46%  │  <code>18:00</code> ☀️27°  │  <code>21:00</code> ☀️23°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n  • 🚧 Перекрито — Baštová\n  • 🚧 Перекрито — Svornosti\n\n💰\n<b>КРИПТО  ·  🟡 НЕЙТРАЛЬНИЙ 〰️</b>\n➡️ <b>BTC</b> <code>$78,908.00</code>  -0.07%\n➡️ <b>ETH</b> <code>$2,482.00</code>  +0.03%\n➡️ <b>AVAX</b> <code>$7.21</code>  0.00%\n➡️ <b>ONDO</b> <code>$0.35</code>  -0.06%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🟢 <b>IBIT</b>  <code>$44.67</code>  <i>+1.75% за день</i>\n🟢 <b>ETHA</b>  <code>$18.72</code>  <i>+1.91% за день</i>\n🔴 <b>VAVA</b>  <code>$0.64</code>  <i>-2.80% за день</i>\n🔴 <b>GAVA</b>  <code>$17.56</code>  <i",
@@ -665,6 +626,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78305"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-31T23:01:37.061836",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📈 Robinhood memecoin causes repricing of AMC stock</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78303"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78303"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78303"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78303"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78303"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78303"
             }
           ]
         ]
