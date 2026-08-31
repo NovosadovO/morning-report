@@ -1,4 +1,14 @@
 {
+  "msg_health_pulse|2026-08-31t11_00_41_979424": {
+    "topic": "MSG_HEALTH_PULSE",
+    "gist": "Привіт Олеже! 🩺  Зараз 11:00, ти на ранній зміні. Твої кроки вже вражають — 11,807, що вище середнього показника за останні 7 днів (13,946.2) та 14 днів (14,783",
+    "ts": "2026-08-31T11:00:41.979424"
+  },
+  "action_detect|2026-08-31t10_56_17_966006": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Усунути дублювання подій",
+    "ts": "2026-08-31T10:56:17.966006"
+  },
   "action_detect|2026-08-31t10_55_58_597444": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить інформацію про видалений лист, попередн",
@@ -288,15 +298,5 @@
     "topic": "proactive_ai",
     "gist": "Олег, бачу, твоя вага за останні три дні зросла на 0.9 кг — з 83.4 до 84.3 кг. Після зміни варто повернутися до дієти 16:8, не забувати пити воду і, за можливос",
     "ts": "2026-08-31T09:00:37.603881"
-  },
-  "action_detect|2026-08-31t09_00_26_304312": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Інформація про секторні ETF та їх особливості.\"}",
-    "ts": "2026-08-31T09:00:26.304312"
-  },
-  "action_detect|2026-08-31t08_51_08_814475": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь прийняти Armolopid",
-    "ts": "2026-08-31T08:51:08.814475"
   }
 }
