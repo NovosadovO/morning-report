@@ -8700,6 +8700,12 @@
         "kind": "reminder",
         "date": "2026-09-01"
       }
+    },
+    {
+      "ts": "2026-08-31T07:34:21.375790+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_note_98c6e30532"
     }
   ]
 }
