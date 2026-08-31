@@ -1,4 +1,34 @@
 {
+  "msg_idle_timeout|2026-08-31t19_09_50_344326": {
+    "topic": "MSG_IDLE_TIMEOUT",
+    "gist": "Привіт Олеже! 🚶  Вечір після зміни – чудовий час для відновлення сил, тим паче, що твоя рання зміна закінчилася ще о 17:00, і ти вже 4 години відпочиваєш. Бачу,",
+    "ts": "2026-08-31T19:09:50.344326"
+  },
+  "selfact|2026-08-31t19_06_51_463228": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег активно шукає роботу в Кошице, отримуючи сповіщення про вакансії Security Consultant в Syntax та Back Office",
+    "ts": "2026-08-31T19:06:51.463228"
+  },
+  "action_detect|2026-08-31t19_05_01_362567": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-31T19:05:01.362567"
+  },
+  "action_detect|2026-08-31t19_05_01_047373": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Вирішити прострочені дедлайни\", \"action_date\": \"2026-09-02\", \"action_time\": null, \"action_summary\": \"Заплануй чіткі",
+    "ts": "2026-08-31T19:05:01.047373"
+  },
+  "action_detect|2026-08-31t19_04_49_702886": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-31T19:04:49.702886"
+  },
+  "action_detect|2026-08-31t19_04_49_646140": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-31T19:04:49.646140"
+  },
   "action_detect|2026-08-31t19_04_38_786583": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути незакриті платежі\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути незакриті ",
@@ -268,35 +298,5 @@
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🏹  Твоя рання зміна добігає кінця, і, дивлячись на останні дані, є чіткий сигнал, що зараз настав стратегічний момент для переосмислення кількох к",
     "ts": "2026-08-31T17:30:06.253422"
-  },
-  "action_detect|2026-08-31t17_29_47_995210": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Завтра, 1 вересня, у Олі",
-    "ts": "2026-08-31T17:29:47.995210"
-  },
-  "msg_deep_analysis_truthfix|2026-08-31t17_29_37_994365": {
-    "topic": "MSG_DEEP_ANALYSIS/truthfix",
-    "gist": "Привіт! Зараз 17:29, і до кінця твоєї ранньої зміни залишилася година.  За даними, які були оновлені 17 годин тому (станом на 31 серпня), ти зробив 17 906 крокі",
-    "ts": "2026-08-31T17:29:37.994365"
-  },
-  "msg_deep_analysis|2026-08-31t17_29_26_473537": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋 Менше години залишилося до завершення твоєї ранньої зміни (до 18:00), і, дивлячись на твої показники за день, бачу, що ти й на роботі тримаєш те",
-    "ts": "2026-08-31T17:29:26.473537"
-  },
-  "selfact|2026-08-31t17_18_41_365027": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж на $10.00 до Runable був невдалим. Потрібно оновити платіж",
-    "ts": "2026-08-31T17:18:41.365027"
-  },
-  "subs|2026-08-31t17_16_35_321502": {
-    "topic": "subs",
-    "gist": "[]",
-    "ts": "2026-08-31T17:16:35.321502"
-  },
-  "people|2026-08-31t17_14_01_495971": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"michaela.bila@bukovinakosice.sk\",     \"name\": \"Mgr. Michaela Bilá\",     \"relation\": \"інше\",     \"topics\": [\"фабрики на Україні\"],   ",
-    "ts": "2026-08-31T17:14:01.495971"
   }
 }
