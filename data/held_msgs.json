@@ -465,6 +465,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-31T23:01:24.919005",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Program Manager в EPAM Systems</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78329"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78329"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78329"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78329"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78329"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78329"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
