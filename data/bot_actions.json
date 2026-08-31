@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "збережено дані здоров'я",
-      "detail": "steps=16079, hr_avg=76, weight_kg=83.0, spo2=96, stress=37, date=2026-08-28, source=qwatch_auto, saved_at=2026-08-28 23:46",
-      "module": "healthai",
-      "ts": "2026-08-28T23:46:22"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав два однакові листи від Booking.com Customer Ser",
       "detail": "Зі свіжих листів видно, що Олег отримав два ідентичні листи від Booking.com Customer Service, що може свідчити про спам або дублювання.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Нова інформація про бронювання вілли в Малазі, яка є важливою для Олега і не занотована раніше.",
       "module": "selfact",
       "ts": "2026-08-31T10:50:30"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав інформаційний лист від Volkswagen Group через L",
+      "detail": "Свіжий лист від Volkswagen Group через LinkedIn.",
+      "module": "selfact",
+      "ts": "2026-08-31T11:06:30"
     }
   ]
 }
