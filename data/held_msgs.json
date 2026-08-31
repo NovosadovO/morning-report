@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-31T23:01:35.109963",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - August 31</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78305"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78305"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78305"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78305"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78305"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78305"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-31T23:01:37.061836",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📈 Robinhood memecoin causes repricing of AMC stock</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
@@ -588,6 +549,12 @@
       "ts": "2026-09-01T00:15:50.739874",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n📌 Видалення неактивного облікового запису Philips\n📆 до 2026-09-04\n🏢 Philips\n\n➡️ Увійти в обліковий запис MyPhilips, щоб він залишався активним",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-01T00:40:52.761495",
+      "kind": "watchdog",
+      "text": "👁 <b>Я осліп на частину даних</b>\n\n🔴 <b>strava</b> — функції get_activities немає в monitor.py\n\n<i>Поки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.</i>",
       "keyboard": null
     }
   ]
