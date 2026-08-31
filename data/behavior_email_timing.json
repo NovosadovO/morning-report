@@ -1,9 +1,4 @@
 {
-  "77877": {
-    "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
-    "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
-    "seen_ts": "2026-08-23T08:17:41.174934+00:00"
-  },
   "77879": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Linas Beliūnas через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@mail.theblock.co",
     "sender_raw": "The Block <newsletter@mail.theblock.co>",
     "seen_ts": "2026-08-31T21:39:32.051018+00:00"
+  },
+  "78332": {
+    "sender": "newsletter@blockworks.com",
+    "sender_raw": "The Breakdown <newsletter@blockworks.com>",
+    "seen_ts": "2026-08-31T22:01:52.763425+00:00"
   }
 }
