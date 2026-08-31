@@ -8870,6 +8870,12 @@
       "category": "confirm",
       "question": "gate_shop_skip: Купити кросівки New Balance 1906A зі знижкою",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-31T17:25:04.175474+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_5b5d5a8742"
     }
   ]
 }
