@@ -1,9 +1,4 @@
 {
-  "77867": {
-    "sender": "invoice+statements+acct_1raxgujk3urplkao@stripe.com",
-    "sender_raw": "Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com>",
-    "seen_ts": "2026-08-23T06:22:01.012615+00:00"
-  },
   "77868": {
     "sender": "failed-payments+acct_1hnrvlcjopsrzqsd@stripe.com",
     "sender_raw": "Railway Corporation <failed-payments+acct_1HNrvlCJoPsRzQsd@stripe.com>",
@@ -1498,5 +1493,10 @@
     "sender": "team@unstoppabledomains.com",
     "sender_raw": "Unstoppable <team@unstoppabledomains.com>",
     "seen_ts": "2026-08-31T18:08:07.628114+00:00"
+  },
+  "78324": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-08-31T18:14:20.305808+00:00"
   }
 }
