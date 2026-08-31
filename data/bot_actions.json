@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-08-28",
-      "detail": "автосинк з годинника: steps, hr_avg, weight_kg, spo2, stress",
-      "module": "qwsync",
-      "ts": "2026-08-28T23:46:19"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=16079, hr_avg=76, weight_kg=83.0, spo2=96, stress=37, date=2026-08-28, source=qwatch_auto, saved_at=2026-08-28 23:46",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Є свіжий лист від no-reply@chekin.com про контракт на бронювання August Villa Málaga, який Олег міг не помітити, а це важлива інформація про майбутню поїздку.",
       "module": "selfact",
       "ts": "2026-08-31T10:50:25"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав контракт на бронювання August Villa Málaga - Vi",
+      "detail": "Нова інформація про бронювання вілли в Малазі, яка є важливою для Олега і не занотована раніше.",
+      "module": "selfact",
+      "ts": "2026-08-31T10:50:30"
     }
   ]
 }
