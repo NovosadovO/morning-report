@@ -1,4 +1,19 @@
 {
+  "mailcal_extract|2026-08-31t10_24_19_634787": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-08-31T10:24:19.634787"
+  },
+  "action_detect|2026-08-31t10_19_54_447781": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути крипторинок\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зробити паузу та переглянути",
+    "ts": "2026-08-31T10:19:54.447781"
+  },
+  "msg_vip_email_truthfix|2026-08-31t10_19_45_009718": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Ранок, Олеже. Ти вже понад чотири години на ранній зміні в Minebea Mitsumi, яка триватиме до 17:00 за лондонським часом.  **Крипторинок: що відбувається зараз**",
+    "ts": "2026-08-31T10:19:45.009718"
+  },
   "msg_vip_email|2026-08-31t10_19_30_547261": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🤝  Цей ранок застав тебе на ранній зміні в Minebea Mitsumi, і вже понад чотири години ти активно працюєш. Хочу підтримати тебе, адже бачу цікаві р",
@@ -283,20 +298,5 @@
     "topic": "openloop_promises",
     "gist": "```json [] ```",
     "ts": "2026-08-31T08:09:11.848794"
-  },
-  "action_detect|2026-08-31t08_03_31_371878": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Вирішити питання з домом та сім'єю\", \"action_date\": null, \"action_time\": \"18:00\", \"action_summary\": \"Після 18:00, к",
-    "ts": "2026-08-31T08:03:31.371878"
-  },
-  "action_detect|2026-08-31t08_03_26_498369": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-31T08:03:26.498369"
-  },
-  "action_detect|2026-08-31t08_03_26_411209": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Strava\", \"action_date\": \"2026-08-04\", \"action_time\": null, \"action_summary\": \"Оплатити прострочену підписк",
-    "ts": "2026-08-31T08:03:26.411209"
   }
 }
