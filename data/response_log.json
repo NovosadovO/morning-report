@@ -8758,6 +8758,12 @@
       "category": "event_done",
       "question": "📅 Реєстрація в готель\nПланувалась до 10:00 — виконано?",
       "answer": "skip"
+    },
+    {
+      "ts": "2026-08-31T11:16:39.679326+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "pm_skip_6cf6010465"
     }
   ]
 }
