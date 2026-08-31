@@ -8912,6 +8912,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Запланувати раціон",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-31T20:09:57.362142+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_89abda3ec2"
     }
   ]
 }
