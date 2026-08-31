@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-31T23:25:17.913817",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Forbes через LinkedIn</b>\n📋 Тема: «The Media-Shy Billionaire Helping Millionaires Dodge Taxes»\n\n<i>«Forbes P.M.\r\n\r\nАвтор: Forbes\r\n\r\n\r\nАвтор: Forbes\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/media-shy-billionaire-helping-millionaires-dodge-taxes-lo4dc?lipi=urn%3Ali%3Apage%3Aemail_email_series_follo...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78330"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78330"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78330"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78330"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78330"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78330"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-31T23:39:34.047121",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Block</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🔷 The Daily: Strategy resumes bitcoin buying»\n\n<i>«Strategy resumes bitcoin buying | Hyperliquid seeks U.S. entry through Kraken parent Payward | OpenSea set to bring back Solana NFT trading | Kalshi permanently bans George Santos | Cronos network halts after Tectonic exploit\r\n\r\nThe Daily ( https://www.theblock.co/?utm_campaign=website&amp;utm_medium=re...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -527,6 +488,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78331"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-01T01:01:56.646889",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Media-Shy Billionaire Helping Millionaires Dodge Taxes</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78330"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78330"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78330"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78330"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78330"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78330"
             }
           ]
         ]
