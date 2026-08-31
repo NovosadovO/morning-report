@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нова вакансія Global Product Owner в Siemens Healthineers",
-      "detail": "З листа від Сповіщення про вакансії LinkedIn: Global Product Owner - Licensing Platform (f/m/d) - Hybrid - Bratislava/Zilina/Kosice в Siemens Healthineers",
-      "module": "selfact",
-      "ts": "2026-08-29T01:12:08"
-    },
-    {
-      "kind": "notify",
       "what": "Вакансія Global Product Owner",
       "detail": "В свіжих листах є сповіщення про вакансії LinkedIn, яке може бути цікавим для Олега, враховуючи його інтерес до вакансій у регіоні.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від no-reply@chekin.com підтверджує 'Your reservation contract - August Villa Málaga - Villa'.",
       "module": "selfact",
       "ts": "2026-08-31T11:38:13"
+    },
+    {
+      "kind": "note",
+      "what": "Новини від Volkswagen Group",
+      "detail": "Свіжий лист від Volkswagen Group через LinkedIn '✨ August Accelerated: Global Perspectives, AI Innovation & Energy Solutions'.",
+      "module": "selfact",
+      "ts": "2026-08-31T11:38:22"
     }
   ]
 }
