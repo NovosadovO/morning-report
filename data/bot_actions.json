@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег має нічну зміну з 18:00 до 06:00 04.09.",
-      "detail": "У календарі вказано нічну зміну 04.09 з 18:00 до 06:00.",
-      "module": "selfact",
-      "ts": "2026-08-29T02:14:07"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав кілька листів від Booking.com Customer Service,",
       "detail": "Кілька листів від Booking.com та Ionian Cruises інформують про скасування туру та повернення коштів, що є важливою подією, яка може потребувати подальшого відстеження.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Є свіжий лист від 'no-reply@chekin.com' з темою 'Your reservation contract - August Villa Málaga - Villa', де вказані дати бронювання.",
       "module": "selfact",
       "ts": "2026-08-31T12:24:24"
+    },
+    {
+      "kind": "note",
+      "what": "Олег цікавиться вакансією Regional CISO Nordics & CEE в team",
+      "detail": "Є свіжий лист від 'Сповіщення про вакансії LinkedIn' про вакансію 'Regional CISO Nordics & CEE в team.blue Bratislava', яка 'активно наймає персонал'.",
+      "module": "selfact",
+      "ts": "2026-08-31T12:24:31"
     }
   ]
 }
