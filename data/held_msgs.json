@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-31T01:01:40.290211",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 The Daily Degen\n📋 The Daily Degen - August 30th, 2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: The Daily Degen",
-              "callback_data": "email_reply_78278"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_78278"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78278"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-31T01:01:43.450843",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 The Daily Degen\n📋 The Daily Degen - August 30th, 2026\n📝 (AI-аналіз тимчасово недоступний)",
@@ -484,6 +459,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-31T03:01:36.251528",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>2 nové pracovné ponuky</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78285"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78285"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78285"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78285"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78285"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78285"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
