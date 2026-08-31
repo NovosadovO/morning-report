@@ -1,9 +1,4 @@
 {
-  "77853": {
-    "sender": "no_reply@email.apple.com",
-    "sender_raw": "Apple <no_reply@email.apple.com>",
-    "seen_ts": "2026-08-22T16:08:45.426838+00:00"
-  },
   "77854": {
     "sender": "googleaistudio-noreply@google.com",
     "sender_raw": "Google AI Studio <googleaistudio-noreply@google.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@plunge.com",
     "sender_raw": "PLUNGE <hello@plunge.com>",
     "seen_ts": "2026-08-31T15:47:06.614007+00:00"
+  },
+  "78317": {
+    "sender": "newsletters@e.economist.com",
+    "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
+    "seen_ts": "2026-08-31T16:23:40.967781+00:00"
   }
 }
