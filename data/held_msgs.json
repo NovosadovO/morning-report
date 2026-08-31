@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-31T01:01:21.429673",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Operations &amp; ICT Governance Specialist в PPF banka</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78281"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78281"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78281"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78281"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78281"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78281"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-31T01:01:23.244179",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Revolut Research proves fintech’s real AI moat is proprietar</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
@@ -649,6 +610,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-31T02:01:21.555039",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 The Daily Degen\n📋 The Daily Degen - August 30th, 2026\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
