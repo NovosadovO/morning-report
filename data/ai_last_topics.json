@@ -1,4 +1,9 @@
 {
+  "selfact|2026-08-31t20_25_01_168135": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, твоя підписка Runable на $10.00 не пройшла через невдалу оплату. ",
+    "ts": "2026-08-31T20:25:01.168135"
+  },
   "subs|2026-08-31t20_16_41_025503": {
     "topic": "subs",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"12:15\", \"action_summary\": \"Завтра, 1 вересня 202",
     "ts": "2026-08-31T19:04:23.952153"
-  },
-  "action_detect|2026-08-31t19_04_23_890049": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-08-31\", \"action_time\": null, \"action_summary\": \"Перевірити, чи Олег прийн",
-    "ts": "2026-08-31T19:04:23.890049"
   }
 }
