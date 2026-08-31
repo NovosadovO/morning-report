@@ -8900,6 +8900,12 @@
       "category": "confirm",
       "question": "calrem_skip: Осмислення особистих цілей та зовнішнього вигляду",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-08-31T20:04:26.390541+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_c5e86a6f93"
     }
   ]
 }
