@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, підписка Runable на $10.00 була невдалою 28.08.2026. П",
-      "detail": "У підписках є запис: 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.' та 'charges': [{'date': '2026-08-28', 'amount': '10.00', 'uid': '78150'}]. Олег міг не помітити це повідомлення.",
-      "module": "selfact",
-      "ts": "2026-08-29T09:38:13"
-    },
-    {
       "kind": "reminder",
       "what": "Оновити платіж Runable",
       "detail": "Платіж до Runable на $10.00 був невдалим 28.08.2026, і про це потрібно нагадати Олегу, щоб він оновив платіжні дані.",
@@ -2799,6 +2792,13 @@
       "detail": "У 'СВІЖИХ ЛИСТАХ' є лист від carVertical з темою 'У нас є відповіді. Перевір пробіг, аварії та багато іншого перед купівлею наступного авто.', що вказує на його інтерес до автомобільної тематики.",
       "module": "selfact",
       "ts": "2026-08-31T16:32:40"
+    },
+    {
+      "kind": "note",
+      "what": "Олег слідкує за крипто-новинами від різних джерел, зокрема з",
+      "detail": "Олег отримав листи 'Daily Crypto Digest — August 31' від Oleh Bezuhlyi через LinkedIn, 'AI-curated Daily Crypto Digest - August 31' від CryptoBeholder.com через LinkedIn та '📈 Robinhood memecoin causes repricing of AMC stock' від The Daily Bone.",
+      "module": "selfact",
+      "ts": "2026-08-31T16:47:28"
     }
   ]
 }
