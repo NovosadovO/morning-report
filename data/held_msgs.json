@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-31T22:01:47.256703",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-08-31T22:01:49.122599",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>InterFin Malaga trip - detailné informácie</b>\n👤 Maroš Sivák &lt;maros.sivak.sro@gmail.com&gt;",
@@ -694,6 +688,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-31T23:01:50.929805",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Maroš Sivák\n📋 InterFin Malaga trip - detailné informácie\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 0xResearch\n📋 HIP-4 Opens Up\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
