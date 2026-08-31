@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-31T00:14:42.828805",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Diana Rose (через LinkedIn)</b>\n📋 Тема: «Я хочу встановити контакт на LinkedIn»\n\n<i>«👤 Diana Rose Sinday, Community Manager, чекає Вашої відповіді.\r\n        \r\n\r\nDiana Rose чекає на Вашу відповідь\r\nDiana Rose Sinday запрошує Вас встановити контакт, запрошення надіслано 17 серпня 2026 р. о 08:01\r\n\r\n\r\nDiana Rose Sinday\r\nWeb3 Community Manager &amp; Moderator | Social Media Manager | Market...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78282"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78282"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78282"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78282"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78282"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78282"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-31T00:16:09.295633",
       "kind": "rwa",
       "text": "🏦 <b>RWA-РАДАР</b>\n━━━━━━━━━━━━━━━━━━━━\n• весь сектор RWA втратив 31.9% за 24 години (капіталізація $47.01B)\n\n<i>AI-коментар недоступний — вище тільки живі цифри.</i>",
@@ -461,6 +422,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78281"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-08-31T02:01:02.007288",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Revolut Research proves fintech’s real AI moat is proprietar</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78280"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78280"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78280"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78280"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78280"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78280"
             }
           ]
         ]
