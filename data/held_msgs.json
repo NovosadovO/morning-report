@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-01T00:01:14.805774",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>InterFin Malaga trip - detailné informácie</b>\n👤 Maroš Sivák &lt;maros.sivak.sro@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78328"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78328"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78328"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78328"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78328"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78328"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-01T00:01:16.857106",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Aave Newsletter: Issue #019</b>\n👤 Aave &lt;aave@aave.com&gt;",
@@ -583,6 +544,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-01T01:02:16.940797",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Maroš Sivák\n📋 InterFin Malaga trip - detailné informácie\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
