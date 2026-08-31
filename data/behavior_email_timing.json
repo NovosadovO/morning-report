@@ -1,14 +1,4 @@
 {
-  "77862": {
-    "sender": "support@profesia.sk",
-    "sender_raw": "\"Profesia.sk\" <support@profesia.sk>",
-    "seen_ts": "2026-08-23T00:45:23.481042+00:00"
-  },
-  "77865": {
-    "sender": "novinky@aboutyou.com",
-    "sender_raw": "Výpredaj na ABOUT YOU <novinky@aboutyou.com>",
-    "seen_ts": "2026-08-23T05:59:37.013714+00:00"
-  },
   "77867": {
     "sender": "invoice+statements+acct_1raxgujk3urplkao@stripe.com",
     "sender_raw": "Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com>",
@@ -1503,5 +1493,10 @@
     "sender": "events@myasteria.com",
     "sender_raw": "Asteria Events <events@myasteria.com>",
     "seen_ts": "2026-08-31T18:03:45.504633+00:00"
+  },
+  "78323": {
+    "sender": "team@unstoppabledomains.com",
+    "sender_raw": "Unstoppable <team@unstoppabledomains.com>",
+    "seen_ts": "2026-08-31T18:08:07.628114+00:00"
   }
 }
