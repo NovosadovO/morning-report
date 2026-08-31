@@ -1,4 +1,9 @@
 {
+  "calendar|2026-08-31t09_15_50_502366": {
+    "topic": "calendar",
+    "gist": "Привіт, Олеже! Бачу, що о 8:30 була реєстрація в готель, а ти саме тоді був на ранній зміні до 18:00. Це, мабуть, трохи ускладнило процес, адже фізично ти на ро",
+    "ts": "2026-08-31T09:15:50.502366"
+  },
   "action_detect|2026-08-31t09_04_28_653703": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Усунути дублювання подій\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Усунути дублювання ",
     "ts": "2026-08-31T07:34:22.151745"
-  },
-  "action_detect|2026-08-31t07_33_28_348183": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Олю з Днем народження\", \"action_date\": \"2023-09-01\", \"action_time\": null, \"action_summary\": \"Привітати Ол",
-    "ts": "2026-08-31T07:33:28.348183"
   }
 }
