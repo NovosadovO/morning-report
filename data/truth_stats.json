@@ -18,7 +18,7 @@
       "cut": 1
     },
     "astro_ai": {
-      "checked": 96,
+      "checked": 97,
       "issues": 28,
       "fixed": 12,
       "cut": 5
@@ -133,7 +133,8 @@
     },
     "MSG_EVENING": {
       "checked": 4,
-      "issues": 3
+      "issues": 3,
+      "fixed": 1
     },
     "EVENING_AI": {
       "checked": 4,
@@ -363,8 +364,8 @@
     "cut": 4
   },
   "2026-08-31": {
-    "checked": 141,
+    "checked": 142,
     "issues": 75,
-    "fixed": 39
+    "fixed": 40
   }
 }
