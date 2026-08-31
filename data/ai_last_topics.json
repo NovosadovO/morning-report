@@ -1,4 +1,39 @@
 {
+  "openloop_promises|2026-08-31t08_09_11_848794": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-08-31T08:09:11.848794"
+  },
+  "action_detect|2026-08-31t08_03_31_371878": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Вирішити питання з домом та сім'єю\", \"action_date\": null, \"action_time\": \"18:00\", \"action_summary\": \"Після 18:00, к",
+    "ts": "2026-08-31T08:03:31.371878"
+  },
+  "action_detect|2026-08-31t08_03_26_498369": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-08-31T08:03:26.498369"
+  },
+  "action_detect|2026-08-31t08_03_26_411209": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Strava\", \"action_date\": \"2026-08-04\", \"action_time\": null, \"action_summary\": \"Оплатити прострочену підписк",
+    "ts": "2026-08-31T08:03:26.411209"
+  },
+  "action_detect|2026-08-31t08_03_22_509620": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Перевірити очікувані платежі\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Заплануй переві",
+    "ts": "2026-08-31T08:03:22.509620"
+  },
+  "action_detect|2026-08-31t08_03_05_439292": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти ліки Armolopid, оскільки",
+    "ts": "2026-08-31T08:03:05.439292"
+  },
+  "action_detect|2026-08-31t08_03_05_153366": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"12:15\", \"action_summary\": \"Відсвяткувати день на",
+    "ts": "2026-08-31T08:03:05.153366"
+  },
   "action_detect|2026-08-31t08_02_55_296276": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Переглянути дублюючі події Дня народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_s",
@@ -263,40 +298,5 @@
     "topic": "astro_ai",
     "gist": "Олеже, Юпітер на твоєму Асценденті вже 61 день, з 1 липня. Цей транзит, який буває раз на 12 років, акцентує твою особистість, зовнішність і запускає новий житт",
     "ts": "2026-08-31T06:57:39.991273"
-  },
-  "selfact|2026-08-31t06_41_57_565750": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олег, зверніть увагу: платежі за підписку Runable все ще невдалі, хоча ",
-    "ts": "2026-08-31T06:41:57.565750"
-  },
-  "openloop_promises|2026-08-31t06_38_28_153926": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {     \"what\": \"I am attaching screenshots of the messages I received from the tour operator. The screenshots show the sender’s contact details and t",
-    "ts": "2026-08-31T06:38:28.153926"
-  },
-  "action_detect|2026-08-31t06_28_40_477457": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути дублюючі події\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Переглянути дублю",
-    "ts": "2026-08-31T06:28:40.477457"
-  },
-  "selfact|2026-08-31t06_26_27_395816": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег ігнорує сповіщення про вакансії з LinkedIn, незважаючи на їх надходження та активне наймання компаніями.\",  ",
-    "ts": "2026-08-31T06:26:27.395816"
-  },
-  "calendar_truthfix|2026-08-31t06_16_25_073214": {
-    "topic": "calendar/truthfix",
-    "gist": "Олеже, привіт! Бачу, що ти зараз на ранній зміні, тому коротко.  Пам'ятаєш, ти минулого тижня прийняв до відома дублювання подій \"День народження Олі\" на 1 вере",
-    "ts": "2026-08-31T06:16:25.073214"
-  },
-  "calendar|2026-08-31t06_16_15_151702": {
-    "topic": "calendar",
-    "gist": "Олеже, бачу, що завтра буде гаряче з Днем народження Олі, адже в календарі аж чотири події на це свято! 🎉 Це чудово, що ти хочеш привітати її стільки разів, але",
-    "ts": "2026-08-31T06:16:15.151702"
-  },
-  "calendar_truthfix|2026-08-31t06_15_35_694675": {
-    "topic": "calendar/truthfix",
-    "gist": "Олеже, привіт! Бачу, ти вже на ранній зміні з 06:00, і дані, які я маю, оновлювалися 54 години тому, 29 серпня.  Ти вчора о 23:19 прийняв до відома дублювання п",
-    "ts": "2026-08-31T06:15:35.694675"
   }
 }
