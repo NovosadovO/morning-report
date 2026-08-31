@@ -29,6 +29,45 @@
       "kind": "chunk",
       "text": "🌙 <b>ПІДСУМОК ДНЯ — Понеділок, 31.08</b>\n\n💪 <b>Звички</b>  <code>[🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜]</code> 3/5  👍 Непогано\n   🏃 Біг  ❌\n   💧 Вода 2л+  ✅\n   🚿 Хол.душ  ✅\n   🍵 Трав.чай  ✅\n   🧖 Сауна  ❌\n\n💊 <b>Armolopid Plus</b>  ⬜ Не відмічено — прийняв?\n\n⚖️ <b>Вага сьогодні:</b> <b>84.3 кг</b>  ↗️+0.3  (до 78 кг: -6.3)\n\n🍎 <b>Apple Health</b>\n   👟 25,460 кроків ✅ 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩\n   😴 Сон 5.7г ❌\n   💓 HRV 45\n\n⌚ <b>QWatch Pro</b>\n  🚶 Кроки: <b>25,460</b>\n  🛌 Сон: <b>5г 40хв</b>\n  ❤️ ЧСС: <b>68 уд/хв</b>\n  🧘 HRV: <b>45 мс</b>\n  🔥 Калорії: <b>4 ккал</b>\n\n🤖 <i>Привіт, Олеже! Закінчується понеділок, і є кілька моментів, які варто від.</i>\n\n👍 Непогано — але ти можеш краще, знаємо обидва.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-08-31T21:33:47.580358",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Maroš Sivák</b>\n📋 Тема: «InterFin Malaga trip - detailné informácie»\n\n<i>«Ahojte,\r\n\r\nNižšie vám posielam sľúbený súhrn všetkých informácií k tripu do Malagy (\r\nŠpanielsko ), kde nájdete všetky najdôležitejšie info, ktoré vám pripravila\r\nnaša Gabika ( GabiGo ) :) Máte to v slovenčine, ale aj Ukrajinštine.\r\n\r\nV prípade, ak by ste potrebovali doplniť ďalšie informácie alebo...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78328"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78328"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78328"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78328"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78328"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78328"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
