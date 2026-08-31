@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-31T02:01:07.471016",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Technik/čka servisného oddelenia – podmienka § 22 в ENGIE Sl</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78277"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78277"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78277"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78277"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78277"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78277"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-31T02:01:09.259026",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Event Operations Specialist в Swiss Re</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -588,6 +549,12 @@
       "ts": "2026-08-31T03:14:56.126391",
       "kind": "dates",
       "text": "🎂 <b>ЗАВТРА — день народження</b>\n━━━━━━━━━━━━━━━━━━━━\n🎉 <b>Олі</b> — 01.09\n\n🔥 Завтра. Останній спокійний вечір, щоб зробити.\nЗабудеш — це не «ой», це образа на роками.\n➡️ Вирішити краще сьогодні: подарунок, дзвінок чи зустріч.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-08-31T03:14:57.433513",
+      "kind": "dates",
+      "text": "🎂 ЗАВТРА — день народження\n━━━━━━━━━━━━━━━━━━━━\n🎉 Олі — 01.09\n\n🔥 Завтра. Останній спокійний вечір, щоб зробити.\nЗабудеш — це не «ой», це образа на роками.\n➡️ Вирішити краще сьогодні: подарунок, дзвінок чи зустріч.",
       "keyboard": null
     }
   ]
