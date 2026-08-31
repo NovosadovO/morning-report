@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, нагадую, що сьогодні, 29.08, о 11:00 було заплановано",
-      "detail": "У календарі на 29.08 о 11:00 є подія 'Оновити платіж Runable', а в підписках Runable зазначено, що платіж на $10.00 був невдалим 28.08 і потрібно оновити платіжну інформацію.",
-      "module": "selfact",
-      "ts": "2026-08-29T12:59:30"
-    },
-    {
       "kind": "note",
       "what": "Олег пропустив сповіщення в VenomBridge, від Discord.",
       "detail": "Є свіжий лист від Discord <noreply@discord.com> | Ти пропустив повідомлення в VenomBridge.",
@@ -2799,6 +2792,13 @@
       "detail": "У 'СВІЖІ ЛИСТИ' є лист від 'Сповіщення про вакансії LinkedIn | Security Consultant в Syntax' з текстом: 'Сповіщення про вакансії в Košice Нові вакансії відповідають вашим налаштуванням. Security Consultant Syntax Košice Ця компанія активно наймає персонал'.",
       "module": "selfact",
       "ts": "2026-08-31T20:25:09"
+    },
+    {
+      "kind": "note",
+      "what": "Олег цікавиться вакансіями Linux Operations Engineer в Aeven",
+      "detail": "На основі свіжих листів від LinkedIn Job Alerts.",
+      "module": "selfact",
+      "ts": "2026-08-31T20:40:14"
     }
   ]
 }
