@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "morning_plan",
-      "detail": "ранковий план здоров'я",
-      "module": "selfact",
-      "ts": "2026-08-29T07:01:03"
-    },
-    {
       "kind": "note",
       "what": "Олег просив перенести поїздку до Малаги на 7 вересня 2026 ро",
       "detail": "Олег кілька разів просив змінити дату поїздки до Малаги на 7 вересня, і це важлива зміна в його планах.",
@@ -2799,6 +2792,13 @@
       "detail": "steps=17906, sleep_total_min=300, hr_avg=85, weight_kg=83.0, sleep_hours=5.0, date=2026-08-31, source=qwatch_auto, saved_at=2026-08-31 15:08",
       "module": "healthai",
       "ts": "2026-08-31T15:08:57"
+    },
+    {
+      "kind": "note",
+      "what": "Олег цікавиться вакансією Security Consultant в Syntax",
+      "detail": "У свіжих листах є лист від 'Сповіщення про вакансії LinkedIn | Security Consultant в Syntax', що підтверджує інтерес Олега до цієї вакансії.",
+      "module": "selfact",
+      "ts": "2026-08-31T15:30:35"
     }
   ]
 }
