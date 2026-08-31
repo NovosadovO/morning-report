@@ -1,37 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-08-31T22:02:06.938083",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Maroš Sivák\n📋 InterFin Malaga trip - detailné informácie\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 0xResearch\n📋 HIP-4 Opens Up\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Maroš Sivák",
-              "callback_data": "email_reply_78328"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: 0xResearch",
-              "callback_data": "email_reply_78307"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_78328"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78328"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-08-31T22:02:10.243622",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Maroš Sivák\n📋 InterFin Malaga trip - detailné informácie\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 0xResearch\n📋 HIP-4 Opens Up\n📝 (AI-аналіз тимчасово недоступний)",
@@ -591,6 +560,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78330"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-01T00:01:12.629319",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Program Manager в EPAM Systems</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78329"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78329"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78329"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78329"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78329"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78329"
             }
           ]
         ]
