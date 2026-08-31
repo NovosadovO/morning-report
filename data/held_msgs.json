@@ -242,6 +242,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-08-31T22:01:56.206374",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - August 31</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78305"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78305"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78305"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78305"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78305"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78305"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
