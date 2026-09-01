@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав лист від Temu",
-      "detail": "Свіжі листи містять лист від Temu <temu@eu.temuemail.com> | @Oleg Novosadov, dostali ste to?",
-      "module": "selfact",
-      "ts": "2026-08-29T21:32:06"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав лист від The Economist Today",
       "detail": "Свіжі листи містять лист від \"The Economist Today\" <newsletters@e.economist.com> | Harry and Meghan are ghastly and back in Britain. Good",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Надійшов лист від no-reply@chekin.com з контрактом на бронювання August Villa Málaga, що є важливою інформацією для майбутньої поїздки Олега.",
       "module": "selfact",
       "ts": "2026-09-01T08:50:12"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує численні листи від Booking.com Customer Service",
+      "detail": "Отримано два свіжі листи від 'Booking.com Customer Service' з темою 'Re: Re: other', що може вказувати на поточні активності Олега з Booking.com.",
+      "module": "selfact",
+      "ts": "2026-09-01T08:50:17"
     }
   ]
 }
