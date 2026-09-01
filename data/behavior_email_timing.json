@@ -1,9 +1,4 @@
 {
-  "77933": {
-    "sender": "newsletter@mail.dailybones.com",
-    "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
-    "seen_ts": "2026-08-24T12:15:21.677061+00:00"
-  },
   "77934": {
     "sender": "researchteam@blockworks.com",
     "sender_raw": "0xResearch <researchteam@blockworks.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-09-01T20:14:46.029250+00:00"
+  },
+  "78381": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-01T21:27:53.467046+00:00"
   }
 }
