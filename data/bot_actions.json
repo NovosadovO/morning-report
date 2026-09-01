@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "event",
-      "what": "Виліт в Малагу",
-      "detail": "Олег просив перенести поїздку в Малагу з 1 вересня на 7 вересня 2026 року. Потрібно оновити календар, щоб відобразити актуальну дату.",
-      "module": "selfact",
-      "ts": "2026-08-29T15:48:06"
-    },
-    {
       "kind": "ask",
       "what": "Олег, чи потрібно мені видалити подію 'Поїздка в Малагу, Ісп",
       "detail": "Існує конфлікт між бажанням Олега перенести поїздку на 7 вересня та наявністю події в календарі на 1 вересня. Потрібно уточнити, чи слід видалити стару подію.",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від Maroš Sivák <maros.sivak.sro@gmail.com> | InterFin Malaga trip - detailné informácie містить 'súhrn všetkých informácií k tripu do Malagy ( Španielsko )'.",
       "module": "selfact",
       "ts": "2026-09-01T05:14:33"
+    },
+    {
+      "kind": "notify",
+      "what": "Нові вакансії Senior Program Manager",
+      "detail": "Свіжий лист від Сповіщення про вакансії LinkedIn | Senior Program Manager в EPAM Systems, де зазначено, що компанія 'активно наймає персонал'.",
+      "module": "selfact",
+      "ts": "2026-09-01T05:14:42"
     }
   ]
 }
