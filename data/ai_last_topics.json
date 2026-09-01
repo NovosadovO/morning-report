@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-09-01t16_57_08_102178": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист є щоденним дайджестом новин про криптовалюти від CryptoBeholder.com, отриманий через LinkedIn. Він містить статті про інсти",
+    "ts": "2026-09-01T16:57:08.102178"
+  },
+  "selfact|2026-09-01t16_49_55_218655": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Вітання з Днем народження Олі\",     \"text\": \"Сьогодні, 1 вересня, у Олі День народження! Сподіваюся, ти вже пр",
+    "ts": "2026-09-01T16:49:55.218655"
+  },
   "mailcal_extract|2026-09-01t16_47_24_860912": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має проблем",
     "ts": "2026-09-01T15:04:24.710913"
-  },
-  "action_detect|2026-09-01t15_04_13_716508": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Перевірити договір бронювання вілли\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевіри",
-    "ts": "2026-09-01T15:04:13.716508"
-  },
-  "action_detect|2026-09-01t15_04_13_629585": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Сьогодні, 1 вересня 2026",
-    "ts": "2026-09-01T15:04:13.629585"
   }
 }
