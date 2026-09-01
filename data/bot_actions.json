@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег перейшов на тарифний план Google AI Plus з 400 GB схови",
-      "detail": "З листа від Google One видно, що Олег перейшов на новий тарифний план, і це важливий факт, який варто зберегти в нотатках.",
-      "module": "selfact",
-      "ts": "2026-08-29T17:52:09"
-    },
-    {
       "kind": "notify",
       "what": "Олег, зверніть увагу на лист від Pelikan.sk щодо онлайн-реєс",
       "detail": "З листа від letenky@pelikan.sk про онлайн-реєстрацію на рейс Ryanair. Поїздка в Малагу 1 вересня.",
@@ -2799,6 +2792,13 @@
       "detail": "Є свіжий лист від 'The Block <newsletter@mail.theblock.co>' з темою '🔷 The Daily: Strategy resumes bitcoin buying'.",
       "module": "selfact",
       "ts": "2026-09-01T06:47:10"
+    },
+    {
+      "kind": "notify",
+      "what": "Новий випуск Aave Newsletter",
+      "detail": "Є свіжий лист від 'Aave <aave@aave.com>' з темою 'Aave Newsletter: Issue #019'.",
+      "module": "selfact",
+      "ts": "2026-09-01T06:47:16"
     }
   ]
 }
