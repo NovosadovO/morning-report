@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-01T02:01:38.173518",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>HIP-4 Opens Up</b>\n👤 0xResearch &lt;researchteam@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78307"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78307"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78307"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78307"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78307"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78307"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-01T02:01:40.090959",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — August 31</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
@@ -516,6 +477,12 @@
       "ts": "2026-09-01T03:15:47.636094",
       "kind": "dates",
       "text": "🎂 <b>СЬОГОДНІ — ДЕНЬ НАРОДЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🎉 <b>Олі</b>\n\n⚡ Сьогодні. Далі відкладати нема куди.\nПривітати з запізненням коштує дорожче, ніж вчасно.\n➡️ Постав у календар щороку — і більше не думай про це.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-01T03:15:49.017782",
+      "kind": "dates",
+      "text": "🎂 СЬОГОДНІ — ДЕНЬ НАРОДЖЕННЯ\n━━━━━━━━━━━━━━━━━━━━\n🎉 Олі\n\n⚡ Сьогодні. Далі відкладати нема куди.\nПривітати з запізненням коштує дорожче, ніж вчасно.\n➡️ Постав у календар щороку — і більше не думай про це.",
       "keyboard": null
     }
   ]
