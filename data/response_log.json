@@ -9022,6 +9022,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Підготуватись до незручностей між кар'єрою та домом",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-01T07:32:38.813097+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_792452f9ae"
     }
   ]
 }
