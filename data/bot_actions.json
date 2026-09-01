@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Оновлення Google AI Plus",
-      "detail": "Є два свіжі листи від Google (Google One та Google Play) про оновлення плану Google AI Plus та повернення коштів, про які Олег міг не знати.",
-      "module": "selfact",
-      "ts": "2026-08-29T16:49:36"
-    },
-    {
       "kind": "note",
       "what": "Олег перейшов на новий тарифний план Google AI Plus з 400 GB",
       "detail": "Свіжий лист від Google One інформує про оновлення тарифного плану, що є новим фактом про Олега.",
@@ -2799,6 +2792,13 @@
       "detail": "Отримано лист від Maroš Sivák <maros.sivak.sro@gmail.com> з темою 'InterFin Malaga trip - detailné informácie', де вказано, що інформація надана словацькою та українською.",
       "module": "selfact",
       "ts": "2026-09-01T05:45:30"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав нові персоналізовані пропозиції роботи від Prof",
+      "detail": "Свіжі листи від 'Profesia.sk' <support@profesia.sk> з темами 'Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk' та '17 nových pracovných ponúk'.",
+      "module": "selfact",
+      "ts": "2026-09-01T05:45:37"
     }
   ]
 }
