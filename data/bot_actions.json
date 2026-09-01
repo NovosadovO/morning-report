@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, зверніть увагу, що ваше бронювання 'Paxos and Antipaxo",
-      "detail": "З листів від noreply@booking.com та info@ionian-cruises.com.",
-      "module": "selfact",
-      "ts": "2026-08-29T18:08:29"
-    },
-    {
       "kind": "note",
       "what": "Олег отримав повернення коштів у розмірі €136 за скасований",
       "detail": "З листів від noreply@booking.com та info@ionian-cruises.com.",
@@ -2799,6 +2792,13 @@
       "detail": "ранковий план здоров'я",
       "module": "selfact",
       "ts": "2026-09-01T07:01:37"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує нові персоналізовані пропозиції роботи від Prof",
+      "detail": "Листи від 'Profesia.sk' <support@profesia.sk> | Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk та 'Profesia.sk' <support@profesia.sk> | 17 nových pracovných ponúk.",
+      "module": "selfact",
+      "ts": "2026-09-01T07:01:53"
     }
   ]
 }
