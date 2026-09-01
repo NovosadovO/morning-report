@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-01T23:01:28.862555",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Robinhood Chain has a breakout app</b>\n👤 DefiLlama Newsletter &lt;defillama@mail.beehiiv.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78379"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78379"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78379"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78379"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78379"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78379"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-01T23:01:30.915062",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Gold vs Bitcoin: The Allocation Debate</b>\n👤 VanEck через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -663,6 +624,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-02T00:01:34.023933",
+      "kind": "chunk",
+      "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 30 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '30 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 85.4 кг, ціль 78 кг (тренд +1.9 кг за останні 5 замірів). Кроки: 23449 (ціль 10000). Сон: 7.9г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 1 непрочитаних\n📅 Календар: нічого не заплановано",
+      "keyboard": null
     }
   ]
 }
