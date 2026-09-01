@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег цікавиться новими тарифними планами Google AI Plus, про",
-      "detail": "З листа від Google One видно, що Олег отримав інформацію про новий план Google AI Plus, що може свідчити про його інтерес до цієї теми.",
-      "module": "selfact",
-      "ts": "2026-08-30T01:56:11"
-    },
-    {
       "kind": "ask",
       "what": "Олег, ти просив поставити нагадування на 7.09 поїздку. Уточн",
       "detail": "Олег 29.08 о 23:26 написав: 'І я тебе просив поставити нагадування на 7.9 поіз'. Це є прямим проханням, яке потребує уточнення для виконання.",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є нові сповіщення про вакансії: 'Сповіщення про вакансії LinkedIn | Service Disruption Management (SDM) в SAP' та 'Сповіщення про вакансії LinkedIn | Associate в Eccleston Park Capital'.",
       "module": "selfact",
       "ts": "2026-09-01T12:41:52"
+    },
+    {
+      "kind": "notify",
+      "what": "Новини про AI",
+      "detail": "У свіжих листах є два повідомлення, що стосуються AI: 'Linas from Linas's Newsletter <linas@substack.com> | The Ultimate Guide to Grok Bot: The First Real AI Agent OS 🤖' та 'Generative AI <newsletter@genai.works> | 🤖 USA launches ChatGPT Military'. Також, у нотатках про Олега є запис про його інтере",
+      "module": "selfact",
+      "ts": "2026-09-01T12:42:01"
     }
   ]
 }
