@@ -9225,6 +9225,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_90c536bd27"
+    },
+    {
+      "ts": "2026-09-01T15:55:45.525086+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Проаналізувати активні підписки",
+      "answer": "yes"
     }
   ]
 }
