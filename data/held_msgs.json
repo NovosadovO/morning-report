@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-01T00:15:50.739874",
-      "kind": "deadlines",
-      "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n📌 Видалення неактивного облікового запису Philips\n📆 до 2026-09-04\n🏢 Philips\n\n➡️ Увійти в обліковий запис MyPhilips, щоб він залишався активним",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-01T00:40:52.761495",
       "kind": "watchdog",
       "text": "👁 <b>Я осліп на частину даних</b>\n\n🔴 <b>strava</b> — функції get_activities немає в monitor.py\n\n<i>Поки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.</i>",
@@ -428,6 +422,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78331"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-01T02:01:30.759103",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Media-Shy Billionaire Helping Millionaires Dodge Taxes</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78330"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78330"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78330"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78330"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78330"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78330"
             }
           ]
         ]
