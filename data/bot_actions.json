@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав лист від The Economist Today",
-      "detail": "Свіжі листи містять лист від \"The Economist Today\" <newsletters@e.economist.com> | Harry and Meghan are ghastly and back in Britain. Good",
-      "module": "selfact",
-      "ts": "2026-08-29T21:32:13"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав лист від Ben at StartEngine",
       "detail": "Свіжі листи містять лист від Ben at StartEngine <ben@startengine.com> | The AI Buildout Ran From the Cloud to Orbit This Week",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Отримано два свіжі листи від 'Booking.com Customer Service' з темою 'Re: Re: other', що може вказувати на поточні активності Олега з Booking.com.",
       "module": "selfact",
       "ts": "2026-09-01T08:50:17"
+    },
+    {
+      "kind": "note",
+      "what": "Олег пропустив повідомлення в VenomBridge, про що свідчить л",
+      "detail": "Надійшов лист від Discord <noreply@discord.com> з темою 'Ти пропустив повідомлення в VenomBridge'.",
+      "module": "selfact",
+      "ts": "2026-09-01T08:50:24"
     }
   ]
 }
