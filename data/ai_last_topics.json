@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-01t11_55_17_502183": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Деталі поїздки в Малагу\",     \"text\": \"Олег, у тебе є новий лист від Maroš Sivák з детальними інструкціями щод",
+    "ts": "2026-09-01T11:55:17.502183"
+  },
   "email_ai_item|2026-09-01t11_51_02_758047": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист є інформаційним бюлетенем від Generative AI, який повідомляє про запуск військової версії ChatGPT (ChatGPT Mil) для Збройних с",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2023-09-01\", \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскіл",
     "ts": "2026-09-01T10:02:59.046863"
-  },
-  "action_detect|2026-09-01t10_02_59_037946": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Початок відпустки в Малазі\", \"action_date\": \"2023-09-07\", \"action_time\": \"09:00\", \"action_summary\": \"Початок відпус",
-    "ts": "2026-09-01T10:02:59.037946"
   }
 }
