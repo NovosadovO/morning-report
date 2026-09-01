@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-01T00:40:54.129221",
-      "kind": "watchdog",
-      "text": "👁 Я осліп на частину даних\n\n🔴 strava — функції get_activities немає в monitor.py\n\nПоки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-01T01:01:42.887359",
       "kind": "chunk",
       "text": "🌃\n<b>ЗВІТ  ·  Вт 01.09  ·  01:00</b>\n🏠 Вдома\n<i>Нічний сторож: BTC не спить, і ти теж моніториш 🦉</i>\n\n⚡ <b>День: ⭐✨☆☆☆ 38/100</b>  ↓10 vs вчора\n\n☁️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>24°C</b>\n<i>☀️ Тепло — сонцезахисний крем</i>\n\n📅 <b>Прогноз сьогодні:</b>\n05:52   🌇 19:17  02:00 ☀️24°  │  03:00 ☁️24°  │  04:00 ☁️24°  │  05:00 ☁️23°  │  06:00 🌤23°  │  07:00 ☁️23°  09:00 ☀️25°  │  12:00 ⛅️29°  │  15:00 ⛅️31°🌧46%  │  18:00 ☁️28°  │  21:00 🌤23°\n\n<b>Завтра:</b>  ☁️ Хмарно  🔻17°  /  🔺27°\n<code>09:00</code> ☀️25°  │  <code>12:00</code> ⛅️29°  │  <code>15:00</code> ⛅️31°🌧46%  │  <code>18:00</code> ☁️28°  │  <code>21:00</code> 🌤23°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n  • 🚧 Перекрито — Baštová\n  • 🚧 Перекрито — Svornosti\n\n💰\n<b>КРИПТО  ·  🟡 НЕЙТРАЛЬНИЙ 〰️</b>\n🔻 <b>BTC</b> <code>$78,574.00</code>  -0.13%\n➡️ <b>ETH</b> <code>$2,468.85</code>  -0.01%\n➡️ <b>AVAX</b> <code>$7.22</code>  0.00%\n➡️ <b>ONDO</b> <code>$0.35</code>  +0.01%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🟢 <b>IBIT</b>  <code>$44.67</code>  <i>+1.75% за день</i>\n🟢 <b>ETHA</b>  <code>$18.72</code>  <i>+1.91% за день</i>\n⚪️ <b>VAVA</b>  <code>$0.66</code>\n🔴 <b>GAVA</b>  <code>$17.56</code>  <i>-0.97",
@@ -494,6 +488,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78329"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-01T02:01:34.245993",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>InterFin Malaga trip - detailné informácie</b>\n👤 Maroš Sivák &lt;maros.sivak.sro@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78328"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78328"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78328"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78328"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78328"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78328"
             }
           ]
         ]
