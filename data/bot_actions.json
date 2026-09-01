@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег перейшов на новий тарифний план Google AI Plus зі схови",
-      "detail": "З листа від Google One <googleone-noreply@google.com> | Oleg, ознайомтеся з новим планом Google AI Plus",
-      "module": "selfact",
-      "ts": "2026-08-29T17:36:17"
-    },
-    {
       "kind": "notify",
       "what": "Олег, зверніть увагу: тур 'Paxos and Antipaxos Boat Tour fro",
       "detail": "З листів від noreply@booking.com | Paxos and Antipaxos Boat Tour from Corfu — бронювання скасовано та info@ionian-cruises.com | Re: Ionian Cruises - Check in",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 01.09 зазначено: '11:15 🎂 Олі — день народження'. Це також є у 'ВАЖЛИВІ ДАТИ' та 'НОТАТКИ ПРО ОЛЕГА'.",
       "module": "selfact",
       "ts": "2026-09-01T06:46:57"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав два листи від Profesia.sk з новими вакансіями,",
+      "detail": "Є два свіжі листи від 'Profesia.sk' з темами 'Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk' та '17 nových pracovných ponúk'.",
+      "module": "selfact",
+      "ts": "2026-09-01T06:47:02"
     }
   ]
 }
