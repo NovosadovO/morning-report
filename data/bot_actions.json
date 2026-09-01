@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Аккаунт RONDOgo",
-      "detail": "Лист від 'Rondogo.sk Akcie' повідомляє про можливе видалення неактивного облікового запису.",
-      "module": "selfact",
-      "ts": "2026-08-30T09:14:22"
-    },
-    {
       "kind": "reminder",
       "what": "Зберегти акаунт Rondogo",
       "detail": "Свіжий лист від 'Rondogo.sk Akcie' з попередженням про видалення акаунту через неактивність.",
@@ -2799,6 +2792,13 @@
       "detail": "/сон",
       "module": "healthai",
       "ts": "2026-09-01T21:17:05"
+    },
+    {
+      "kind": "hcoach",
+      "what": "sleep_report",
+      "detail": "аналіз сну",
+      "module": "selfact",
+      "ts": "2026-09-01T21:17:11"
     }
   ]
 }
