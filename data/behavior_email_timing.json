@@ -1,9 +1,4 @@
 {
-  "77919": {
-    "sender": "notification@service.tiktok.com",
-    "sender_raw": "Ruslana*2784 у TikTok <notification@service.tiktok.com>",
-    "seen_ts": "2026-08-24T09:24:53.615285+00:00"
-  },
   "77920": {
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@buzzsneakers-promo.com",
     "sender_raw": "\"Buzz Sneaker Station\" <newsletter@buzzsneakers-promo.com>",
     "seen_ts": "2026-09-01T15:03:29.497058+00:00"
+  },
+  "78369": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-09-01T16:14:40.785542+00:00"
   }
 }
