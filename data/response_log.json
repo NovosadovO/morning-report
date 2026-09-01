@@ -9201,6 +9201,12 @@
       "category": "event_done",
       "question": "📅 📌 Ранковий дайджест ринків\nПланувалась до 14:15 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-01T15:53:46.814191+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Придбати квиток на DAS London за ранніми тарифами",
+      "answer": "yes"
     }
   ]
 }
