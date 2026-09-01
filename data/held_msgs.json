@@ -486,6 +486,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-01T23:01:30.915062",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Gold vs Bitcoin: The Allocation Debate</b>\n👤 VanEck через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78363"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78363"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78363"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78363"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78363"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78363"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
