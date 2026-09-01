@@ -16,6 +16,7 @@
     "post_shift_checkin": true
   },
   "2026-09-01": {
-    "anomaly_weight_rising": true
+    "anomaly_weight_rising": true,
+    "anomaly_no_run": true
   }
 }
