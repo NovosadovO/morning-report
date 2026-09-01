@@ -1,4 +1,19 @@
 {
+  "selfact|2026-09-01t12_56_58_018091": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Деталі поїздки в Малагу\",     \"text\": \"Олег, сьогодні о 09:00 ти мав отримати деталі поїздки в Малагу. Перевір",
+    "ts": "2026-09-01T12:56:58.018091"
+  },
+  "action_detect|2026-09-01t12_50_38_597695": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка в Малагу\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Олег має поїздку в Малагу з",
+    "ts": "2026-09-01T12:50:38.597695"
+  },
+  "openloop_promises|2026-09-01t12_50_26_937258": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-01T12:50:26.937258"
+  },
   "action_detect|2026-09-01t12_50_08_411031": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка в Малагу\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Олег має поїздку в Малагу з",
@@ -283,20 +298,5 @@
     "topic": "astro_ai",
     "gist": "Олеже, добрий ранок 1 вересня 2026 року! Сьогодні ти на ранковій зміні з 06:00 до 17:00 у Кошице, Словаччина. Астрологічна ситуація насичена, особливо щодо твог",
     "ts": "2026-09-01T11:02:45.118304"
-  },
-  "email_ai_item|2026-09-01t11_01_17_498798": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист від Maroš Sivák містить детальні інформації щодо поїздки до Малаги, Іспанія. Інформація підготовлена Gabika (GabiGo) і доступна сл",
-    "ts": "2026-09-01T11:01:17.498798"
-  },
-  "action_detect|2026-09-01t11_01_09_003483": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити лист від Pelikan.sk\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити лист від P",
-    "ts": "2026-09-01T11:01:09.003483"
-  },
-  "action_detect|2026-09-01t11_01_05_689936": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка в Малагу\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Олег має поїздку в Малагу 7",
-    "ts": "2026-09-01T11:01:05.689936"
   }
 }
