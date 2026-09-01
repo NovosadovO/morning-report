@@ -9057,6 +9057,16 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "sleep_8"
+    },
+    {
+      "ts": "2026-09-01T09:00:25.057973+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути деталі поїздки в Малагу",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-01"
+      }
     }
   ]
 }
