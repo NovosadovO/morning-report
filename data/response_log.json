@@ -9153,6 +9153,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_cca41c7b4b"
+    },
+    {
+      "ts": "2026-09-01T13:17:54.292134+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Загальна оцінка здоров'я",
+      "answer": "yes"
     }
   ]
 }
