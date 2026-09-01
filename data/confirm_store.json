@@ -8513,7 +8513,24 @@
     "action": "calrem_skip",
     "pid": "78363",
     "subject": "Gold vs Bitcoin: The Allocation Debate",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 83349,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_78363"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_78363"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-01T19:00:51.532319+00:00"
   }
 }
