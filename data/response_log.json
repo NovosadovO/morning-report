@@ -9103,6 +9103,15 @@
       "category": "confirm",
       "question": "gate_calrem_add: Оновити дані про здоров'я",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-01T11:41:30.910449+00:00",
+      "category": "calendar_reminder_confirm",
+      "question": "Оновити дані про здоров'я",
+      "answer": "✅ Поставлено",
+      "extra": {
+        "date": "2026-09-02"
+      }
     }
   ]
 }
