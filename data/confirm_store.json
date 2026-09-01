@@ -8538,7 +8538,43 @@
     "pid": "email_star_78376",
     "subject": "ZARA PRE-OWNED",
     "extra": {
-      "msg": "Привіт Олеже! 👋 Тобі щойно надійшов лист від Zara 📢(промо)\n📋 Тема: «ZARA PRE-OWNED»\n\n«Zara html {width: 100%;} body { width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0 auto!important; padding: 0!important; } .ExternalClass * {line-height: 100%} div[style*=\"margin: 16px 0\"] {margin: 0 !important;} table td {border-collapse: collapse;} table...»\n\nДавай я з"
+      "msg": "Привіт Олеже! 👋 Тобі щойно надійшов лист від Zara 📢(промо)\n📋 Тема: «ZARA PRE-OWNED»\n\n«Zara html {width: 100%;} body { width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0 auto!important; padding: 0!important; } .ExternalClass * {line-height: 100%} div[style*=\"margin: 16px 0\"] {margin: 0 !important;} table td {border-collapse: collapse;} table...»\n\nДавай я з",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 83523,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78376"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78376"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78376"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78376"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78376"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78376"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-09-01T21:10:12.394677+00:00"
   }
