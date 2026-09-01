@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримав лист від Ben at StartEngine про розвиток ШІ від",
-      "detail": "Лист від Ben at StartEngine <ben@startengine.com> | The AI Buildout Ran From the Cloud to Orbit This Week",
-      "module": "selfact",
-      "ts": "2026-08-29T21:16:36"
-    },
-    {
       "kind": "hcoach",
       "what": "evening_review",
       "detail": "вечірній розбір, оцінка 88",
@@ -2799,6 +2792,13 @@
       "detail": "Є кілька листів від 'Booking.com Customer Service' та один про скасування бронювання 'Paxos and Antipaxos Boat Tour from Corfu', що вказує на активну взаємодію з сервісом, але з негативним результатом щодо однієї з поїздок.",
       "module": "selfact",
       "ts": "2026-09-01T08:35:01"
+    },
+    {
+      "kind": "reminder",
+      "what": "Нічна зміна",
+      "detail": "У календарі є подія '🌙 Нічна зміна (18:00-06:00)' на 04.09 о 17:00.",
+      "module": "selfact",
+      "ts": "2026-09-01T08:35:09"
     }
   ]
 }
