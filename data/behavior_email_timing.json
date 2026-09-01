@@ -1,9 +1,4 @@
 {
-  "77921": {
-    "sender": "newsletter@email.hm.com",
-    "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
-    "seen_ts": "2026-08-24T09:41:29.262474+00:00"
-  },
   "77923": {
     "sender": "avalancheteam1@substack.com",
     "sender_raw": "Avalanche Team1 <avalancheteam1@substack.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
     "seen_ts": "2026-09-01T16:28:59.896758+00:00"
+  },
+  "78371": {
+    "sender": "newsletter@biedronka.pl",
+    "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
+    "seen_ts": "2026-09-01T17:10:21.648447+00:00"
   }
 }
