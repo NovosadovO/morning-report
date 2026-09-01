@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег активно шукає роботу, отримуючи сповіщення про вакансії",
-      "detail": "Є кілька свіжих листів від 'Profesia.sk' та 'Сповіщення про вакансії LinkedIn' з новими пропозиціями роботи.",
-      "module": "selfact",
-      "ts": "2026-08-30T04:01:28"
-    },
-    {
-      "kind": "note",
       "what": "Олег цікавиться вакансіями Back Office Sales Admin в Brazing",
       "detail": "Олег отримав сповіщення про вакансії Back Office Sales Admin в Brazing Technologies Europe та Application Support Specialist в Arcondis Group, що свідчить про його потенційний інтерес до цих позицій.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Є детальні інструкції щодо поїздки в Малагу, і я можу допомогти структурувати цю інформацію в календарі, але мені потрібне підтвердження Олега.",
       "module": "selfact",
       "ts": "2026-09-01T13:43:21"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав детальні інструкції та підтвердження бронювання",
+      "detail": "Олег отримав листи 'InterFin Malaga trip - detailné informácie' від Maroš Sivák, 'Your reservation contract - August Villa Málaga - Villa' від no-reply@chekin.com та 'Online check-in for a smooth take-off. ATTENTION! Don’t forget – it opens 24 hours before departure. (Y9SB5U)' від letenky@pelikan.sk",
+      "module": "selfact",
+      "ts": "2026-09-01T13:58:15"
     }
   ]
 }
