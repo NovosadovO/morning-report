@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олег, ти просив поставити нагадування на 7.09 поїздку. Уточн",
-      "detail": "Олег 29.08 о 23:26 написав: 'І я тебе просив поставити нагадування на 7.9 поіз'. Це є прямим проханням, яке потребує уточнення для виконання.",
-      "module": "selfact",
-      "ts": "2026-08-30T02:12:10"
-    },
-    {
       "kind": "note",
       "what": "Олег мав заплановану поїздку до Корфу, яка включала тур на P",
       "detail": "З листа від noreply@booking.com про скасування бронювання туру.",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є два повідомлення, що стосуються AI: 'Linas from Linas's Newsletter <linas@substack.com> | The Ultimate Guide to Grok Bot: The First Real AI Agent OS 🤖' та 'Generative AI <newsletter@genai.works> | 🤖 USA launches ChatGPT Military'. Також, у нотатках про Олега є запис про його інтере",
       "module": "selfact",
       "ts": "2026-09-01T12:42:01"
+    },
+    {
+      "kind": "note",
+      "what": "Олег продовжує отримувати сповіщення про вакансії Service Di",
+      "detail": "Зі свіжих листів видно, що Олег отримує сповіщення про вакансії в SAP Košice та Eccleston Park Capital Vienna, що доповнює його відомі інтереси щодо пошуку роботи.",
+      "module": "selfact",
+      "ts": "2026-09-01T12:57:06"
     }
   ]
 }
