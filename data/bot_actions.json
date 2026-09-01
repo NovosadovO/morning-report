@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег мав заплановану поїздку до Корфу, яка включала тур на P",
-      "detail": "З листа від noreply@booking.com про скасування бронювання туру.",
-      "module": "selfact",
-      "ts": "2026-08-30T02:27:58"
-    },
-    {
       "kind": "notify",
       "what": "Оновлення плану Google One",
       "detail": "З листа від Google One про новий план Google AI Plus.",
@@ -2799,6 +2792,13 @@
       "detail": "Зі свіжих листів видно, що Олег отримує сповіщення про вакансії в SAP Košice та Eccleston Park Capital Vienna, що доповнює його відомі інтереси щодо пошуку роботи.",
       "module": "selfact",
       "ts": "2026-09-01T12:57:06"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав детальні інформації щодо поїздки в Малагу від M",
+      "detail": "З листа від Maroš Sivák <maros.sivak.sro@gmail.com> | InterFin Malaga trip - detailné informácie",
+      "module": "selfact",
+      "ts": "2026-09-01T13:12:08"
     }
   ]
 }
