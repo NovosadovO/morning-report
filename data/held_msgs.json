@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-01T00:15:49.313973",
-      "kind": "deadlines",
-      "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 3 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Видалення неактивного облікового запису Philips</b>\n📆 до <b>2026-09-04</b>\n🏢 Philips\n\n➡️ Увійти в обліковий запис MyPhilips, щоб він залишався активним",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-01T00:15:50.739874",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n📌 Видалення неактивного облікового запису Philips\n📆 до 2026-09-04\n🏢 Philips\n\n➡️ Увійти в обліковий запис MyPhilips, щоб він залишався активним",
@@ -399,6 +393,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-01T02:01:28.929481",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Strategy resumes bitcoin buying</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78331"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78331"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78331"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78331"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78331"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78331"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
