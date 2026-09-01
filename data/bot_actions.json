@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримав сповіщення про новий тарифний план Google AI Pl",
-      "detail": "Лист від Google One <googleone-noreply@google.com> | Oleg, ознайомтеся з новим планом Google AI Plus.",
-      "module": "selfact",
-      "ts": "2026-08-29T18:55:32"
-    },
-    {
       "kind": "ask",
       "what": "Олег, ти плануєш подаватися на вакансію Application Support",
       "detail": "Олег отримав сповіщення про вакансію, яка може бути для нього актуальною, і бот має дізнатися про його наміри.",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист від Maroš Sivák з темою 'InterFin Malaga trip - detailné informácie' перед поїздкою 7 вересня.",
       "module": "selfact",
       "ts": "2026-09-01T07:33:04"
+    },
+    {
+      "kind": "note",
+      "what": "Олег активно переглядає нові вакансії, що надходять від Prof",
+      "detail": "Олег отримав два листи від Profesia.sk з новими вакансіями (20 та 17 пропозицій), а також сповіщення про вакансію Senior Program Manager від LinkedIn.",
+      "module": "selfact",
+      "ts": "2026-09-01T07:33:16"
     }
   ]
 }
