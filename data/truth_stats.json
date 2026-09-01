@@ -83,7 +83,7 @@
     "hcoach": {
       "checked": 18,
       "issues": 12,
-      "cut": 2,
+      "cut": 3,
       "fixed": 2
     },
     "assistant": {
@@ -370,6 +370,7 @@
   "2026-09-01": {
     "checked": 52,
     "issues": 25,
-    "fixed": 14
+    "fixed": 14,
+    "cut": 1
   }
 }
