@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-02T00:01:13.708280",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Top 10 Richest People In The World—September 2026</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78381"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78381"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78381"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78381"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78381"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78381"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-02T00:01:15.757206",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Digital Operations &amp; Insights Analyst в Caterpillar I</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -626,6 +587,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78381"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-02T01:01:13.000330",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Digital Operations &amp; Insights Analyst в Caterpillar I</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78380"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78380"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78380"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78380"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78380"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78380"
             }
           ]
         ]
