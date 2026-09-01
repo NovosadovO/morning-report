@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-01t14_29_55_435340": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Деталі поїздки в Малагу\",     \"text\": \"Олег, ти отримав детальні інформації щодо поїздки в Малагу від Maroš Si",
+    "ts": "2026-09-01T14:29:55.435340"
+  },
   "openloop_promises|2026-09-01t14_21_07_366072": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка в Малагу\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Олег має поїздку в Малагу з",
     "ts": "2026-09-01T12:50:38.597695"
-  },
-  "openloop_promises|2026-09-01t12_50_26_937258": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-09-01T12:50:26.937258"
   }
 }
