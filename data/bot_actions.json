@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Скасування бронювання туру",
-      "detail": "Є лист від noreply@booking.com про скасування бронювання туру з поверненням коштів, Олег міг його не побачити.",
-      "module": "selfact",
-      "ts": "2026-08-30T00:38:25"
-    },
-    {
       "kind": "note",
       "what": "Олег отримав сповіщення про новий план Google AI Plus, що вк",
       "detail": "Є лист від Google One про новий план Google AI Plus, це може бути важливим фактом про його використання сервісів.",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист від Aave <aave@aave.com> | Aave Newsletter: Issue #019, а також у нотатках вже є згадка, що він отримує багато крипто-дайджестів.",
       "module": "selfact",
       "ts": "2026-09-01T11:39:38"
+    },
+    {
+      "kind": "note",
+      "what": "Олег цікавиться вакансіями Associate в Eccleston Park Capital",
+      "detail": "Олег отримав лист від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Associate в Eccleston Park Capital.",
+      "module": "selfact",
+      "ts": "2026-09-01T11:39:45"
     }
   ]
 }
