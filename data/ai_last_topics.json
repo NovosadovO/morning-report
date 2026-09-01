@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-01t07_25_12_820559": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Занотувати день народжен",
+    "ts": "2026-09-01T07:25:12.820559"
+  },
   "selfact|2026-09-01t07_17_05_292056": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Вітання для Олі\",     \"text\": \"Олеже, сьогодні, 1 вересня, у Олі день народження! Не забудь привітати її.\",   ",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"День народження Олі\",     \"text\": \"Сьогодні, 1 вересня, у Олі день народження! 🎉\",     \"why\": \"У календарі на ",
     "ts": "2026-09-01T05:14:17.043892"
-  },
-  "action_detect|2026-09-01t05_10_24_281950": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-09-01T05:10:24.281950"
   }
 }
