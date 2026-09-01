@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав сповіщення від Temu з пропозицією переглянути р",
-      "detail": "Новий лист від Temu <temu@eu.temuemail.com> | @Oleg Novosadov, dostali ste to?",
-      "module": "selfact",
-      "ts": "2026-08-29T22:02:15"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав сповіщення про вакансію Monetization Principal",
       "detail": "Новий лист від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Monetization Principal (Remote) в iubenda",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "відкритий огляд ринку + горизонт",
       "module": "наука і космос — свіжа ідея, яку легко зрозуміти",
       "ts": "2026-09-01T09:31:23"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, надійшли детальні інструкції щодо поїздки в Малагу від",
+      "detail": "Олег має подію 'Деталі поїздки в Малагу' сьогодні о 09:00, і щойно надійшов лист від Maroš Sivák з деталями поїздки, який Олег міг не помітити.",
+      "module": "selfact",
+      "ts": "2026-09-01T09:37:05"
     }
   ]
 }
