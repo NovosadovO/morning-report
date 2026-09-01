@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав сповіщення про вакансію Monetization Principal",
-      "detail": "Новий лист від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Monetization Principal (Remote) в iubenda",
-      "module": "selfact",
-      "ts": "2026-08-29T22:02:22"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав сповіщення про вакансію Technical Project Manag",
       "detail": "Новий лист від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Technical Project Manager в Convatec",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег має подію 'Деталі поїздки в Малагу' сьогодні о 09:00, і щойно надійшов лист від Maroš Sivák з деталями поїздки, який Олег міг не помітити.",
       "module": "selfact",
       "ts": "2026-09-01T09:37:05"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, твій договір бронювання August Villa Málaga - Villa на",
+      "detail": "Олег має бронювання August Villa Málaga - Villa на 07.09, і щойно надійшов лист з договором, який потрібно переглянути.",
+      "module": "selfact",
+      "ts": "2026-09-01T09:37:11"
     }
   ]
 }
