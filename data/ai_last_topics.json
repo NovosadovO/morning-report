@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-09-01t10_45_51_467379": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Ticketportal.sk рекламує концерт Міхала Давіда та його гурту KVATRO на подвір'ї замку Шімак у Пезінку. Пропонується придбати к",
+    "ts": "2026-09-01T10:45:51.467379"
+  },
+  "mailcal_extract|2026-09-01t10_42_57_547001": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-01T10:42:57.547001"
+  },
   "email_ai_item|2026-09-01t10_41_35_634291": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від H&M пропонує отримати знижку 15% або 20%. Це рекламний лист без конкретних дій чи термінів для одержувача.\", \"opinion\": \"Лист ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити 422.16€\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Наразі чекає оплати 422.16€.\"}",
     "ts": "2026-09-01T09:04:35.919171"
-  },
-  "action_detect|2026-09-01t09_04_24_537392": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2023-09-01\", \"action_time\": null, \"action_summary\": \"Сьогодні, 1 вересня, у О",
-    "ts": "2026-09-01T09:04:24.537392"
-  },
-  "action_detect|2026-09-01t09_04_10_273684": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2023-09-01\", \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскіл",
-    "ts": "2026-09-01T09:04:10.273684"
   }
 }
