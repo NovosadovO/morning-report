@@ -447,6 +447,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-01T23:01:28.862555",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Robinhood Chain has a breakout app</b>\n👤 DefiLlama Newsletter &lt;defillama@mail.beehiiv.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78379"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78379"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78379"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78379"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78379"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78379"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
