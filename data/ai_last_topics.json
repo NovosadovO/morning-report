@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-09-01t16_47_24_860912": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-01T16:47:24.860912"
+  },
+  "action_detect|2026-09-01t16_42_31_847801": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": \"2024-01-09\", \"action_time\": \"18:00\", \"action_summary\": \"Як тільки закінчиш зміну о 18:00",
+    "ts": "2026-09-01T16:42:31.847801"
+  },
   "msg_event_soon|2026-09-01t16_42_17_226131": {
     "topic": "MSG_EVENT_SOON",
     "gist": "Привіт Олеже! ✅  Бачу, твоя ранкова зміна майже завершена – залишилась остання година до 18:00. Це чудова нагода подумати про перехід після роботи.  1. **Здоров",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Сьогодні, 1 вересня 2026",
     "ts": "2026-09-01T15:04:13.629585"
-  },
-  "action_detect|2026-09-01t15_04_02_694256": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути підписки\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після зміни варто переглянути щ",
-    "ts": "2026-09-01T15:04:02.694256"
-  },
-  "action_detect|2026-09-01t15_03_44_130446": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прийом Armolopid\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Олег не відмітив пр",
-    "ts": "2026-09-01T15:03:44.130446"
   }
 }
