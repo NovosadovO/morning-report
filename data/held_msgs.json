@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-01T01:15:56.552705",
-      "kind": "deadlines",
-      "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n📌 Видалення неактивного облікового запису Philips\n📆 до 2026-09-04\n🏢 Philips\n\n➡️ Увійти в обліковий запис MyPhilips, щоб він залишався активним",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-01T02:01:17.234812",
       "kind": "chunk",
       "text": "🌃\n<b>ЗВІТ  ·  Вт 01.09  ·  02:00</b>\n🏠 Вдома\n<i>Опівніч у Кошіце — ринок ніколи не закривається, але ти маєш право на сон 🌌</i>\n\n⚡ <b>День: ⭐✨☆☆☆ 38/100</b>  ↓10 vs вчора\n\n☀️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>24°C</b>\n<i>☀️ Тепло — сонцезахисний крем</i>\n\n📅 <b>Прогноз сьогодні:</b>\n05:52   🌇 19:17  03:00 🌤24°  │  04:00 ☁️24°  │  05:00 ☁️23°  │  06:00 ☁️23°  │  07:00 ☀️23°  │  08:00 ☀️24°  09:00 ☁️21°  │  12:00 ☁️25°  │  15:00 ☁️27°  │  18:00 ☁️27°  │  21:00 ☁️24°\n\n<b>Завтра:</b>  ☁️ Хмарно  🔻18°  /  🔺27°\n<code>09:00</code> ☁️21°  │  <code>12:00</code> ☁️25°  │  <code>15:00</code> ☁️27°  │  <code>18:00</code> ☁️27°  │  <code>21:00</code> ☁️24°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n  • 🚧 Перекрито — Baštová\n  • 🚧 Перекрито — Svornosti\n\n💰\n<b>КРИПТО  ·  🟢 БИЧАЧИЙ 🚀</b>\n➡️ <b>BTC</b> <code>$78,546.00</code>  +0.03%\n➡️ <b>ETH</b> <code>$2,466.99</code>  +0.07%\n🔺 <b>AVAX</b> <code>$7.23</code>  +0.14%\n➡️ <b>ONDO</b> <code>$0.35</code>  -0.05%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🟢 <b>IBIT</b>  <code>$44.67</code>  <i>+1.75% за день</i>\n🟢 <b>ETHA</b>  <code>$18.72</code>  <i>+1.91% за день</i>\n⚪️ <b>VAVA</b>  <code>$0.66</code>\n🔴 <b>GAVA</b>  <code>$17.56<",
@@ -527,6 +521,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78328"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-01T03:01:20.860199",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Aave Newsletter: Issue #019</b>\n👤 Aave &lt;aave@aave.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78326"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78326"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78326"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78326"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78326"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78326"
             }
           ]
         ]
