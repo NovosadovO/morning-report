@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег перейшов на новий тарифний план Google AI Plus, отримав",
-      "detail": "З листа від Google One видно, що Олег отримав новий тарифний план Google AI Plus, що є новим фактом про його підписки та послуги.",
-      "module": "selfact",
-      "ts": "2026-08-29T17:04:57"
-    },
-    {
       "kind": "notify",
       "what": "Олег, зверніть увагу: Booking.com скасував ваше бронювання «",
       "detail": "З листа від noreply@booking.com видно, що бронювання скасовано і гроші повернено, Олег міг не помітити цього листа.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи від The Block <newsletter@mail.theblock.co> та Aave <aave@aave.com> з новинами про крипторинок.",
       "module": "selfact",
       "ts": "2026-09-01T05:45:57"
+    },
+    {
+      "kind": "notify",
+      "what": "Деталі поїздки до Малаги",
+      "detail": "Отримано лист від Maroš Sivák <maros.sivak.sro@gmail.com> з темою 'InterFin Malaga trip - detailné informácie', де зазначено, що є деталі поїздки до Малаги українською та словацькою.",
+      "module": "selfact",
+      "ts": "2026-09-01T06:00:38"
     }
   ]
 }
