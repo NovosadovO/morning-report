@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримував сповіщення про вакансію Senior Operations Man",
-      "detail": "Знайдено лист від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Senior Operations Manager в Square One Resources",
-      "module": "selfact",
-      "ts": "2026-08-30T00:54:32"
-    },
-    {
-      "kind": "note",
       "what": "Олег має невирішену проблему з онлайн-реєстрацією на рейс Ry",
       "detail": "Є свіжий лист від letenky@pelikan.sk з нагадуванням про онлайн-реєстрацію на рейс Ryanair з важливими деталями.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є лист від no-reply@chekin.com з підтвердженням бронювання August Villa Málaga - Villa та доступним контрактом.",
       "module": "selfact",
       "ts": "2026-09-01T11:55:24"
+    },
+    {
+      "kind": "note",
+      "what": "Олег продовжує отримувати новини у сфері ШІ та криптовалют,",
+      "detail": "Є кілька свіжих листів від Linas's Newsletter, Generative AI та Aave, що підтверджує постійний інтерес Олега до цих тем.",
+      "module": "selfact",
+      "ts": "2026-09-01T12:11:10"
     }
   ]
 }
