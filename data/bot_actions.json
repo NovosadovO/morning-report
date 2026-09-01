@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримав скасування бронювання туру 'Paxos and Antipaxos",
-      "detail": "З листа від noreply@booking.com є інформація про скасування бронювання та повернення коштів, яку варто занотувати.",
-      "module": "selfact",
-      "ts": "2026-08-29T16:03:12"
-    },
-    {
       "kind": "ask",
       "what": "Олег, ти хочеш, щоб я видалив дублюючі події 'День народженн",
       "detail": "У календарі є кілька дублюючих подій 'День народження Олі' на 1 вересня, і Олег вже згадував про це раніше. Потрібно уточнити, чи варто їх видалити.",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 01.09 зазначено: 11:15 🎂 Олі — день народження.",
       "module": "selfact",
       "ts": "2026-09-01T05:30:21"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав детальні інформації щодо поїздки до Малаги від",
+      "detail": "Свіжий лист від 'Maroš Sivák <maros.sivak.sro@gmail.com>' з темою 'InterFin Malaga trip - detailné informácie' містить текст: 'Ahojte, Nižšie vám posielam sľúbený súhrn všetkých informácií k tripu do Malagy ( Španielsko ), kde nájdete všetky najdôležitejšie info, ktoré vám pripravila naša Gabika ( G",
+      "module": "selfact",
+      "ts": "2026-09-01T05:30:25"
     }
   ]
 }
