@@ -2158,5 +2158,15 @@
     "label": "👌 Прийняв",
     "state": "open",
     "ts": "2026-09-01T15:51:54"
+  },
+  "generic|t|знижка temu": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "знижка temu",
+    "title": "Знижка Temu",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "state": "closed",
+    "ts": "2026-09-01T15:52:05"
   }
 }
