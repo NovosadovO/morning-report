@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверніть увагу на лист від Pelikan.sk щодо онлайн-реєс",
-      "detail": "З листа від letenky@pelikan.sk про онлайн-реєстрацію на рейс Ryanair. Поїздка в Малагу 1 вересня.",
-      "module": "selfact",
-      "ts": "2026-08-29T18:08:23"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, зверніть увагу, що ваше бронювання 'Paxos and Antipaxo",
       "detail": "З листів від noreply@booking.com та info@ionian-cruises.com.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Є свіжий лист від 'Aave <aave@aave.com>' з темою 'Aave Newsletter: Issue #019'.",
       "module": "selfact",
       "ts": "2026-09-01T06:47:16"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-09-01T07:01:37"
     }
   ]
 }
