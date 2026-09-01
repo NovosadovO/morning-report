@@ -9249,6 +9249,15 @@
       "category": "event_done",
       "question": "📅 💳 Отримання повернення кредиту Temu\nПланувалась до 11:00 — виконано?",
       "answer": "no"
+    },
+    {
+      "ts": "2026-09-01T16:17:10.541566+00:00",
+      "category": "deadline_found",
+      "question": "Підтвердження повернення кредиту Temu",
+      "answer": "2026-09-01",
+      "extra": {
+        "kind": "other"
+      }
     }
   ]
 }
