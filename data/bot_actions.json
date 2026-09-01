@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-08-29",
-      "detail": "автосинк з годинника: steps, hr_avg, calories, distance_km, weight_kg, hrv, spo2, stress",
-      "module": "qwsync",
-      "ts": "2026-08-29T15:26:16"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=7231, hr_avg=54, calories=306, distance_km=4.0, weight_kg=83.0, hrv=40, spo2=96, stress=32, date=2026-08-29, source=qwatch_auto, saved_at=2026-08-29 15:26",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист 'Сповіщення про вакансії LinkedIn | Senior Program Manager в EPAM Systems' вказує на активний пошук роботи Олегом у Кошице.",
       "module": "selfact",
       "ts": "2026-09-01T04:59:36"
+    },
+    {
+      "kind": "note",
+      "what": "Олег цікавиться новинами криптовалют та фінансових ринків, п",
+      "detail": "Свіжі листи 'The Daily: Strategy resumes bitcoin buying' від The Block та 'Aave Newsletter: Issue #019' від Aave підтверджують інтерес Олега до криптовалют та фінансових ринків.",
+      "module": "selfact",
+      "ts": "2026-09-01T04:59:44"
     }
   ]
 }
