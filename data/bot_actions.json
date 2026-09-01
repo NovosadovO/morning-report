@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав інформаційний лист від Ben at StartEngine про р",
-      "detail": "Новий лист від Ben at StartEngine <ben@startengine.com> | The AI Buildout Ran From the Cloud to Orbit This Week",
-      "module": "selfact",
-      "ts": "2026-08-29T22:02:38"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав щоденну розсилку від The Economist.",
       "detail": "Новий лист від \"The Economist Today\" <newsletters@e.economist.com> | Harry and Meghan are ghastly and back in Britain. Good",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег сьогодні вранці кілька разів натискав 'Не нагадуй' або 'Пізніше' на сповіщення, пов'язані з ранньою зміною та днем народження Олі, що підтверджує попередні нотатки про його поведінку зі сповіщеннями.",
       "module": "selfact",
       "ts": "2026-09-01T09:37:16"
+    },
+    {
+      "kind": "note",
+      "what": "Олег ігнорує сповіщення про необхідність оновлення платіжної",
+      "detail": "В даних про підписки є активна підписка Runable з нотаткою 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.', а в списаннях є успішна оплата Runable після кількох невдалих спроб. Це суперечність, яка свідчить про ігнорування або затримку реакції Олега на важливі фінан",
+      "module": "selfact",
+      "ts": "2026-09-01T09:37:24"
     }
   ]
 }
