@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-01T01:01:54.799966",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Strategy resumes bitcoin buying</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78331"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78331"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78331"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78331"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78331"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78331"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-01T01:01:56.646889",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Media-Shy Billionaire Helping Millionaires Dodge Taxes</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -630,6 +591,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-01T02:01:45.089725",
+      "kind": "chunk",
+      "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 30 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '30 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 84.3 кг, ціль 78 кг (тренд +1.8 кг за останні 5 замірів). Кроки: 25460 (ціль 10000). Сон: 5.7г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 06:00 ☀️ Рання зміна (06:00-18:00), 12:15 🎂 Олі — день народження",
+      "keyboard": null
     }
   ]
 }
