@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-01T02:01:30.759103",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Media-Shy Billionaire Helping Millionaires Dodge Taxes</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78330"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78330"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78330"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78330"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78330"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78330"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-01T02:01:32.479156",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Program Manager в EPAM Systems</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -616,6 +577,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-01T03:01:35.623185",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Maroš Sivák\n📋 InterFin Malaga trip - detailné informácie\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
