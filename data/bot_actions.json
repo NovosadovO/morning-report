@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-08-29",
-      "detail": "автосинк з годинника: steps, hr_avg, calories, weight_kg",
-      "module": "qwsync",
-      "ts": "2026-08-29T23:21:37"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=11807, hr_avg=66, calories=7, weight_kg=83.0, date=2026-08-29, source=qwatch_auto, saved_at=2026-08-29 23:21",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Олег має подію 'Деталі поїздки в Малагу' на 01.09 о 09:00, а також поїздку в Малагу 07.09. Цей лист містить важливу інформацію, яку він міг пропустити.",
       "module": "selfact",
       "ts": "2026-09-01T10:38:19"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, отримано договір бронювання August Villa Málaga - Vill",
+      "detail": "Олег має бронювання August Villa Málaga - Villa на 07.09. Це важливий документ, який варто переглянути.",
+      "module": "selfact",
+      "ts": "2026-09-01T10:38:25"
     }
   ]
 }
