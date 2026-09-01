@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Оновлення плану Google One",
-      "detail": "З листа від Google One про новий план Google AI Plus.",
-      "module": "selfact",
-      "ts": "2026-08-30T02:28:06"
-    },
-    {
       "kind": "ask",
       "what": "Олег, чи є у вас актуальний графік роботи на заводі? Моя інф",
       "detail": "Олег раніше вказував на неточності в графіку нічних змін. У календарі є нічні зміни 4 та 5 вересня, і важливо переконатись, що це актуально.",
@@ -2799,6 +2792,13 @@
       "detail": "З листа від Maroš Sivák <maros.sivak.sro@gmail.com> | InterFin Malaga trip - detailné informácie",
       "module": "selfact",
       "ts": "2026-09-01T13:12:08"
+    },
+    {
+      "kind": "note",
+      "what": "Олег продовжує отримувати сповіщення про вакансії, зокрема '",
+      "detail": "Зі свіжих листів від LinkedIn: 'Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Service Disruption Management (SDM) в SAP' та 'Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Associate в Eccleston Park Capital'.",
+      "module": "selfact",
+      "ts": "2026-09-01T13:12:16"
     }
   ]
 }
