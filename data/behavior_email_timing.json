@@ -1,9 +1,4 @@
 {
-  "77910": {
-    "sender": "onboarding@resend.dev",
-    "sender_raw": "Morning Report <onboarding@resend.dev>",
-    "seen_ts": "2026-08-24T07:52:42.473270+00:00"
-  },
   "77911": {
     "sender": "noreply@discord.com",
     "sender_raw": "Discord <noreply@discord.com>",
@@ -1498,5 +1493,10 @@
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
     "seen_ts": "2026-09-01T13:52:57.921261+00:00"
+  },
+  "78362": {
+    "sender": "researchteam@blockworks.com",
+    "sender_raw": "0xResearch <researchteam@blockworks.com>",
+    "seen_ts": "2026-09-01T14:01:14.751529+00:00"
   }
 }
