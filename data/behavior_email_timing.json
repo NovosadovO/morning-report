@@ -1,9 +1,4 @@
 {
-  "77901": {
-    "sender": "discover@airbnb.com",
-    "sender_raw": "Airbnb <discover@airbnb.com>",
-    "seen_ts": "2026-08-23T18:28:51.154776+00:00"
-  },
   "77902": {
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@myclaw.ai",
     "sender_raw": "MyClaw Newsletter <newsletter@myclaw.ai>",
     "seen_ts": "2026-09-01T11:27:20.489622+00:00"
+  },
+  "78350": {
+    "sender": "spotlight@newsletters.coinmarketcap.com",
+    "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
+    "seen_ts": "2026-09-01T11:33:46.283893+00:00"
   }
 }
