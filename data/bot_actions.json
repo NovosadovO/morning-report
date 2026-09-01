@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег підписався на новий план Google AI Plus, який включає 4",
-      "detail": "Лист від Google One 'Oleg, ознайомтеся з новим планом Google AI Plus' та попередні нотатки про Олега.",
-      "module": "selfact",
-      "ts": "2026-08-29T21:16:22"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав лист від Temu з пропозицією переглянути рекомен",
       "detail": "Лист від Temu <temu@eu.temuemail.com> | @Oleg Novosadov, dostali ste to?",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист від Maroš Sivák з детальною інформацією про поїздку в Малагу, що є важливим фактом для його майбутніх планів.",
       "module": "selfact",
       "ts": "2026-09-01T08:19:03"
+    },
+    {
+      "kind": "notify",
+      "what": "Договір бронювання August Villa Málaga",
+      "detail": "Є лист від no-reply@chekin.com з договором бронювання August Villa Málaga, і в календарі є подія 'Бронювання August Villa Málaga - Villa' на 07.09.2026.",
+      "module": "selfact",
+      "ts": "2026-09-01T08:34:56"
     }
   ]
 }
