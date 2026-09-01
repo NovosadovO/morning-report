@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-01t05_30_12_849152": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Вітання для Олі\",     \"text\": \"Сьогодні, 1 вересня, у Олі день народження! 🎉\",     \"why\": \"У календарі на 01.0",
+    "ts": "2026-09-01T05:30:12.849152"
+  },
   "openloop_promises|2026-09-01t05_17_13_697940": {
     "topic": "openloop_promises",
     "gist": "```json [   {     \"what\": \"надіслати скріншоти повідомлень від туроператора\",     \"to\": \"Booking.com Customer Service\",     \"date\": null   } ] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-08-31\", \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято A",
     "ts": "2026-08-31T21:04:03.482511"
-  },
-  "action_detect|2026-08-31t21_03_52_436072": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити статус підписк",
-    "ts": "2026-08-31T21:03:52.436072"
   }
 }
