@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "openmind",
-      "what": "digest",
-      "detail": "відкритий огляд ринку + горизонт",
-      "module": "мова: словацька або англійська — корисна конструкція",
-      "ts": "2026-08-29T18:31:35"
-    },
-    {
       "kind": "note",
       "what": "Олег отримав сповіщення про новий тарифний план Google AI Pl",
       "detail": "Лист від Google One <googleone-noreply@google.com> | Oleg, ознайомтеся з новим планом Google AI Plus.",
@@ -2799,6 +2792,13 @@
       "detail": "Отримано листи від 'Profesia.sk' з 20 та 17 новими пропозиціями роботи, а також від 'Сповіщення про вакансії LinkedIn' про Senior Program Manager в EPAM Systems.",
       "module": "selfact",
       "ts": "2026-09-01T07:17:13"
+    },
+    {
+      "kind": "reminder",
+      "what": "Деталі поїздки в Малагу",
+      "detail": "Олег отримав лист від Maroš Sivák з темою 'InterFin Malaga trip - detailné informácie' перед поїздкою 7 вересня.",
+      "module": "selfact",
+      "ts": "2026-09-01T07:33:04"
     }
   ]
 }
