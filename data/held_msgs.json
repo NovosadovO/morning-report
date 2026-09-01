@@ -339,6 +339,45 @@
       "kind": "chunk",
       "text": "🎯 ТОЧНИЙ АСПЕКТ\n☽ <b>Місяць</b> △ ♄ <b>Натальний Сатурн</b> <b>(ТОЧНИЙ!)</b>\n📍 Місяць у <b>Телець ♉</b> | Натальний Сатурн у Козеріг ♑, 6-й дім\n<i>Трин · Здоров'я</i>\n\n📖 <b>Що означає Трин:</b>\n🔵 Природна підтримка — все складається легко й само собою. Талант, удача, потік. Гарний час реалізувати задумане.\n\n",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-01T22:14:47.947285",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Senior Digital Operations &amp; Insights Analyst в Caterpillar Inc.»\n\n<i>«Сповіщення про вакансії в Košice\r\n        \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nSenior Digital Operations &amp; Insights Analyst\r\nCaterpillar Inc.\r\nKošice\r\n\r\nЦя компанія активно наймає персонал\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4441260246/?tracking...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78380"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78380"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78380"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78380"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78380"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78380"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
