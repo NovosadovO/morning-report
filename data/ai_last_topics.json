@@ -1,4 +1,24 @@
 {
+  "bills|2026-09-01t08_18_31_826857": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-09-01T08:18:31.826857"
+  },
+  "action_detect|2026-09-01t08_05_00_934715": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний прогноз та інформацію про",
+    "ts": "2026-09-01T08:05:00.934715"
+  },
+  "action_detect|2026-09-01t08_04_50_484294": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-01T08:04:50.484294"
+  },
+  "action_detect|2026-09-01t08_04_50_349689": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст надає астрологічний аналіз потенціалу для фінан",
+    "ts": "2026-09-01T08:04:50.349689"
+  },
   "action_detect|2026-09-01t08_04_40_396365": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оновити платіжну інформацію Strava\",   \"action_date\": \"2026-09-01\",   \"action_time\": \"12:15\",   \"actio",
@@ -278,25 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"День народження Олі\",     \"text\": \"Сьогодні, 1 вересня, у Олі день народження! 🎉\",     \"why\": \"У календарі на ",
     "ts": "2026-09-01T06:30:53.651323"
-  },
-  "selfact|2026-09-01t06_16_02_488141": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"День народження Олі\",     \"text\": \"Сьогодні, 1 вересня, день народження Олі! Не забудь привітати її.\",     \"wh",
-    "ts": "2026-09-01T06:16:02.488141"
-  },
-  "action_detect|2026-09-01t06_03_32_556933": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати харчування\", \"action_date\": \"2026-09-01\", \"action_time\": \"18:00\", \"action_summary\": \"Після зміни зна",
-    "ts": "2026-09-01T06:03:32.556933"
-  },
-  "msg_morning_truthfix|2026-09-01t06_03_23_933703": {
-    "topic": "MSG_MORNING/truthfix",
-    "gist": "Олеже, зараз 06:03, ти на ранній зміні до 17:00 за часом Лондона. Бачу, що дані за 31 серпня, які були оновлені 30 годин тому, показують суперечність, яка потре",
-    "ts": "2026-09-01T06:03:23.933703"
-  },
-  "msg_morning|2026-09-01t06_03_14_435250": {
-    "topic": "MSG_MORNING",
-    "gist": "Привіт Олеже!  Поки ти на ранній зміні з 06:00, бачу явну суперечність у цифрах, які потребують твоєї уваги. Вчора, 31 серпня, ти оцінив свій день на 77 балів, ",
-    "ts": "2026-09-01T06:03:14.435250"
   }
 }
