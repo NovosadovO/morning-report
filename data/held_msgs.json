@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-01T02:01:47.949030",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Maroš Sivák\n📋 InterFin Malaga trip - detailné informácie\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Maroš Sivák",
-              "callback_data": "email_reply_78328"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_78328"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78328"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-01T02:01:53.688753",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Maroš Sivák\n📋 InterFin Malaga trip - detailné informácie\n📝 (AI-аналіз тимчасово недоступний)",
@@ -451,6 +426,45 @@
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n📌 Видалення неактивного облікового запису Philips\n📆 до 2026-09-04\n🏢 Philips\n\n➡️ Увійти в обліковий запис MyPhilips, щоб він залишався активним",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-01T03:16:54.808417",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Profesia.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk»\n\n<i>«Nové pracovné ponuky \"Personalizované pracovné ponuky e-mailom\"\r\n\r\nLogo Profesia ( https://www.profesia.sk/?utm_medium=mail&amp;utm_source=10007&amp;utm_campaign=10007&amp;utm_term=2026-09-01&amp;eid=6a961d6b757c1ffe8342d0f18bbc531f&amp;utm_content=logo )\r\n\r\n*************************************************************...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78334"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78334"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78334"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78334"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78334"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78334"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
