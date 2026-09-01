@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверніть увагу на лист від Investing.com про NVDA – мо",
-      "detail": "Непрочитаний лист від Investing.com <newsletter@investingmail.com> з потенційно важливою інформацією.",
-      "module": "selfact",
-      "ts": "2026-08-29T16:34:36"
-    },
-    {
-      "kind": "notify",
       "what": "Оновлення Google AI Plus",
       "detail": "Є два свіжі листи від Google (Google One та Google Play) про оновлення плану Google AI Plus та повернення коштів, про які Олег міг не знати.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 01.09 зазначено: '11:15 🎂 Олі — день народження'.",
       "module": "selfact",
       "ts": "2026-09-01T05:45:25"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав детальні інформацію про поїздку в Малагу від Ma",
+      "detail": "Отримано лист від Maroš Sivák <maros.sivak.sro@gmail.com> з темою 'InterFin Malaga trip - detailné informácie', де вказано, що інформація надана словацькою та українською.",
+      "module": "selfact",
+      "ts": "2026-09-01T05:45:30"
     }
   ]
 }
