@@ -9159,6 +9159,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Загальна оцінка здоров'я",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-01T13:18:10.173552+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_73d738040f"
     }
   ]
 }
