@@ -1,4 +1,94 @@
 {
+  "selfact|2026-09-01t04_13_21_969468": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"День народження Олі\",     \"text\": \"Сьогодні, 1 вересня, у Олі день народження! 🎉\",     \"why\": \"У календарі на ",
+    "ts": "2026-09-01T04:13:21.969468"
+  },
+  "action_detect|2026-09-01t04_03_35_763540": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Шукати шляхи для зростання доходу\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Протягом ранков",
+    "ts": "2026-09-01T04:03:35.763540"
+  },
+  "action_detect|2026-09-01t04_03_35_445296": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-09-01T04:03:35.445296"
+  },
+  "action_detect|2026-09-01t04_03_24_472220": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-01T04:03:24.472220"
+  },
+  "action_detect|2026-09-01t04_03_15_462156": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Олю з днем народження\", \"action_date\": \"2026-08-31\", \"action_time\": \"18:00\", \"action_summary\": \"Після змі",
+    "ts": "2026-09-01T04:03:15.462156"
+  },
+  "action_detect|2026-09-01t04_03_00_141891": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"12:15\", \"action_summary\": \"Сьогодні день народже",
+    "ts": "2026-09-01T04:03:00.141891"
+  },
+  "action_detect|2026-09-01t04_03_00_092507": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято Armolopid",
+    "ts": "2026-09-01T04:03:00.092507"
+  },
+  "action_detect|2026-09-01t04_02_49_528381": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid та відмітити звичку «Вода»\", \"action_date\": \"2026-09-01\", \"action_time\": \"05:00\", \"action_summar",
+    "ts": "2026-09-01T04:02:49.528381"
+  },
+  "briefing|2026-09-01t04_02_43_858153": {
+    "topic": "briefing",
+    "gist": "Ти зараз на порозі нової ранньої зміни, і її старт о 06:00 дозволяє закласти фундамент продуктивного дня до того, як більшість прокинеться. Чи готовий ти викори",
+    "ts": "2026-09-01T04:02:43.858153"
+  },
+  "themes_ai|2026-09-01t04_02_31_994693": {
+    "topic": "themes_ai",
+    "gist": "Олеже, 04:02. Ранкова зміна починається через дві години. Часу обмаль, але є кілька моментів, які варто зафіксувати до виходу.  💰 ФІНАНСИ Твої 422.16€ чекають о",
+    "ts": "2026-09-01T04:02:31.994693"
+  },
+  "astro_ai|2026-09-01t04_02_24_746563": {
+    "topic": "astro_ai",
+    "gist": "Олеже, почнемо з найактуальнішого: твій сон сьогодні становив лише 5.7 години, тоді як середня тривалість за 7 днів — 6.5 годин. З урахуванням ранньої зміни (06",
+    "ts": "2026-09-01T04:02:24.746563"
+  },
+  "email_ai_item|2026-09-01t04_01_58_281351": {
+    "topic": "email_ai_item",
+    "gist": "{ \"description\": \"Цей лист від Profesia.sk містить 17 нових пропозицій роботи за критеріями 'Кошице, на договір (бригади)'. Лист надає посилання для перегляду т",
+    "ts": "2026-09-01T04:01:58.281351"
+  },
+  "email_ai_item|2026-09-01t04_01_46_926066": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від Profesia.sk містить персоналізовані пропозиції роботи, яких є 20 нових. Користувач може переглянути ці пропозиції або змінити крит",
+    "ts": "2026-09-01T04:01:46.926066"
+  },
+  "personal_ai_truthfix|2026-09-01t04_01_25_761719": {
+    "topic": "personal_ai/truthfix",
+    "gist": "Зараз 04:01, а твоя рання зміна починається о 06:00. Дані про сон, останні з яких були 28 годин тому (31.08), показують 5.7 години, що нижче середнього за 7 дні",
+    "ts": "2026-09-01T04:01:25.761719"
+  },
+  "personal_ai|2026-09-01t04_01_18_111733": {
+    "topic": "personal_ai",
+    "gist": "Зараз 04:01, а твоя рання зміна починається о 06:00, тому тобі потрібно лягати вже. Оскільки ти спав лише 5.7 години минулої ночі, а сьогодні ще й день народжен",
+    "ts": "2026-09-01T04:01:18.111733"
+  },
+  "action_detect|2026-09-01t04_01_16_570844": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Сьогодні, 1 вересня, у О",
+    "ts": "2026-09-01T04:01:16.570844"
+  },
+  "msg_day_plan_truthfix|2026-09-01t04_00_54_457841": {
+    "topic": "MSG_DAY_PLAN/truthfix",
+    "gist": "Олеже, привіт!  Ти готуєшся до ранньої зміни, що починається о 06:00, і зараз 04:00.  **Чи є суперечність між твоїми планами та даними?** Так, є. 28 годин тому,",
+    "ts": "2026-09-01T04:00:54.457841"
+  },
+  "msg_day_plan|2026-09-01t04_00_40_376500": {
+    "topic": "MSG_DAY_PLAN",
+    "gist": "Привіт Олеже! 🧭  Сьогодні, 1 вересня, ти готуєшся до ранньої зміни, що починається о 06:00, і це саме той час, коли варто максимально сфокусуватися на відновлен",
+    "ts": "2026-09-01T04:00:40.376500"
+  },
   "hcoach|2026-08-31t21_06_37_432666": {
     "topic": "hcoach",
     "gist": "Привіт, Олеже!  Твій сон викликає чимало запитань. Сьогоднішня ніч дала лише 5.7 години сну, що майже на дві години менше, ніж твоя ціль у 7.5 годин. Якщо погля",
@@ -208,100 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Змінити дату поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату ",
     "ts": "2026-08-31T20:09:01.309906"
-  },
-  "action_detect|2026-08-31t20_09_01_256800": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-31T20:09:01.256800"
-  },
-  "action_detect|2026-08-31t20_09_01_181296": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-31T20:09:01.181296"
-  },
-  "action_detect|2026-08-31t20_09_01_154939": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-31T20:09:01.154939"
-  },
-  "action_detect|2026-08-31t20_08_50_407169": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Змінити дату поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату ",
-    "ts": "2026-08-31T20:08:50.407169"
-  },
-  "email_ai_item|2026-08-31t20_08_06_870114": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Цей лист від Unstoppable Domains рекламує їхній вбудований помічник App Advisor для Unstoppable Code та інші AI-інструменти, такі як AI Site Bu",
-    "ts": "2026-08-31T20:08:06.870114"
-  },
-  "action_detect|2026-08-31t20_05_50_482014": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Змінити дату поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату ",
-    "ts": "2026-08-31T20:05:50.482014"
-  },
-  "action_detect|2026-08-31t20_05_50_186936": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Змінити дату поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату ",
-    "ts": "2026-08-31T20:05:50.186936"
-  },
-  "action_detect|2026-08-31t20_05_39_416765": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Змінити дату поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Змінити дату ",
-    "ts": "2026-08-31T20:05:39.416765"
-  },
-  "email_ai_item|2026-08-31t20_03_44_340943": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист від Asteria Events запрошує на два заходи – семінар STARTING та воркшоп Reseller & Business, які відбудуться 12 вересня 2026 року ",
-    "ts": "2026-08-31T20:03:44.340943"
-  },
-  "action_detect|2026-08-31t20_03_37_629392": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записуй все, що приходить у голову, ад",
-    "ts": "2026-08-31T20:03:37.629392"
-  },
-  "action_detect|2026-08-31t20_03_37_575114": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Осмислення особистих цілей та зовнішнього вигляду\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Пр",
-    "ts": "2026-08-31T20:03:37.575114"
-  },
-  "action_detect|2026-08-31t20_03_26_181855": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-31T20:03:26.181855"
-  },
-  "action_detect|2026-08-31t20_03_15_303903": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути та запланувати погашення платежів\", \"action_date\": \"null\", \"action_time\": \"null\", \"action_summary\": \"Сь",
-    "ts": "2026-08-31T20:03:15.303903"
-  },
-  "action_detect|2026-08-31t20_02_53_221972": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Відмітити прийом Armolopid, оскіл",
-    "ts": "2026-08-31T20:02:53.221972"
-  },
-  "action_detect|2026-08-31t20_02_53_219488": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"12:15\", \"action_summary\": \"День народження Олі з",
-    "ts": "2026-08-31T20:02:53.219488"
-  },
-  "action_detect|2026-08-31t20_02_42_287965": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати раціон\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Запланувати детальний рац",
-    "ts": "2026-08-31T20:02:42.287965"
-  },
-  "briefing|2026-08-31t20_02_36_850882": {
-    "topic": "briefing",
-    "gist": "Звіт за 31 серпня 2026 року, 20:02.  🧭 ВЕКТОР ДНЯ Сьогоднішня рання зміна завершилася, і ти вдома, що дає унікальну можливість переключити увагу на особистісний",
-    "ts": "2026-08-31T20:02:36.850882"
-  },
-  "action_detect|2026-08-31t20_02_18_253776": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Вирішити питання зі Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Подивитись, чому ",
-    "ts": "2026-08-31T20:02:18.253776"
-  },
-  "msg_day_plan|2026-09-01t04_00_40_376500": {
-    "topic": "MSG_DAY_PLAN",
-    "gist": "Привіт Олеже! 🧭  Сьогодні, 1 вересня, ти готуєшся до ранньої зміни, що починається о 06:00, і це саме той час, коли варто максимально сфокусуватися на відновлен",
-    "ts": "2026-09-01T04:00:40.376500"
   }
 }
