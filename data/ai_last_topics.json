@@ -1,4 +1,44 @@
 {
+  "selfact|2026-09-01t05_45_17_382835": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Сьогодні, 1 вересня, у Олі день народження! 🎉\",     \"why\": \"У календарі на 01.09 зазначено: '11:15 🎂 Олі — день",
+    "ts": "2026-09-01T05:45:17.382835"
+  },
+  "action_detect|2026-09-01t05_33_21_429772": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути непрочитані листи\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Варто швидко пробігтис",
+    "ts": "2026-09-01T05:33:21.429772"
+  },
+  "msg_deep_analysis_truthfix|2026-09-01t05_33_12_719413": {
+    "topic": "MSG_DEEP_ANALYSIS/truthfix",
+    "gist": "Олеже, зважаючи на те, що зараз 05:33, а твоя рання зміна починається о 06:00, і дані про здоров'я оновлювалися 30 годин тому (31 серпня), варто скептично оціни",
+    "ts": "2026-09-01T05:33:12.719413"
+  },
+  "msg_deep_analysis|2026-09-01t05_33_04_226635": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже!  Зважаючи на твій поточний статус \"готується до зміни\", і те, що вже 05:32, а робоча зміна починається о 06:00, я бачу цікаву картину твого ранку.",
+    "ts": "2026-09-01T05:33:04.226635"
+  },
+  "calendar_truthfix|2026-09-01t05_32_39_251992": {
+    "topic": "calendar/truthfix",
+    "gist": "Олеже, сьогодні, 1 вересня, у тебе рання зміна з 05:00 до 17:00 за часом Лондона. Дані про сон за 30 годин тому показують падіння тренду (-0.1), середній сон за",
+    "ts": "2026-09-01T05:32:39.251992"
+  },
+  "calendar|2026-09-01t05_32_28_708288": {
+    "topic": "calendar",
+    "gist": "Олеже, бачу, що сьогоднішня рання зміна (06:00-18:00) завершиться, але вже за три дні, у п'ятницю, на тебе чекає нічна з 18:00 до 06:00. Твій сон зараз падає (с",
+    "ts": "2026-09-01T05:32:28.708288"
+  },
+  "action_detect|2026-09-01t05_32_16_667036": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь записати пото",
+    "ts": "2026-09-01T05:32:16.667036"
+  },
+  "action_detect|2026-09-01t05_31_36_328862": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-01T05:31:36.328862"
+  },
   "selfact|2026-09-01t05_30_12_849152": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Вітання для Олі\",     \"text\": \"Сьогодні, 1 вересня, у Олі день народження! 🎉\",     \"why\": \"У календарі на 01.0",
@@ -258,45 +298,5 @@
     "topic": "MSG_DAY_PLAN",
     "gist": "Привіт Олеже! 🧭  Сьогодні, 1 вересня, ти готуєшся до ранньої зміни, що починається о 06:00, і це саме той час, коли варто максимально сфокусуватися на відновлен",
     "ts": "2026-09-01T04:00:40.376500"
-  },
-  "hcoach|2026-08-31t21_06_37_432666": {
-    "topic": "hcoach",
-    "gist": "Привіт, Олеже!  Твій сон викликає чимало запитань. Сьогоднішня ніч дала лише 5.7 години сну, що майже на дві години менше, ніж твоя ціль у 7.5 годин. Якщо погля",
-    "ts": "2026-08-31T21:06:37.432666"
-  },
-  "action_detect|2026-08-31t21_04_41_553319": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Завтра, 1 вересня, день ",
-    "ts": "2026-08-31T21:04:41.553319"
-  },
-  "action_detect|2026-08-31t21_04_41_325644": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-31T21:04:41.325644"
-  },
-  "action_detect|2026-08-31t21_04_30_526399": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний прогноз для Олега, що опи",
-    "ts": "2026-08-31T21:04:30.526399"
-  },
-  "action_detect|2026-08-31t21_04_30_339058": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-08-31T21:04:30.339058"
-  },
-  "action_detect|2026-08-31t21_04_20_088471": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути очікувані платежі\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Сьогодні варто перегля",
-    "ts": "2026-08-31T21:04:20.088471"
-  },
-  "action_detect|2026-08-31t21_04_03_491016": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"12:15\", \"action_summary\": \"Завтра, 1 вересня 202",
-    "ts": "2026-08-31T21:04:03.491016"
-  },
-  "action_detect|2026-08-31t21_04_03_482511": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-08-31\", \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято A",
-    "ts": "2026-08-31T21:04:03.482511"
   }
 }
