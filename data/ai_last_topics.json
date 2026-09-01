@@ -1,4 +1,19 @@
 {
+  "msg_event_soon|2026-09-01t16_42_17_226131": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ✅  Бачу, твоя ранкова зміна майже завершена – залишилась остання година до 18:00. Це чудова нагода подумати про перехід після роботи.  1. **Здоров",
+    "ts": "2026-09-01T16:42:17.226131"
+  },
+  "selfact|2026-09-01t16_34_06_819898": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, сьогодні, 1 вересня, день народження Олі. Календар показує, що ти мав це нагадування на 08:00.\",     \"why",
+    "ts": "2026-09-01T16:34:06.819898"
+  },
+  "action_detect|2026-09-01t16_33_56_685983": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-01T16:33:56.685983"
+  },
   "action_detect|2026-09-01t16_31_35_980384": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прийом Armolopid\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Олег не відмітив пр",
     "ts": "2026-09-01T15:03:44.130446"
-  },
-  "action_detect|2026-09-01t15_03_44_041629": {
-    "topic": "action_detect",
-    "gist": "```json { \"action_type\": \"calendar\", \"action_title\": \"Проаналізувати активні підписки\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"Під",
-    "ts": "2026-09-01T15:03:44.041629"
-  },
-  "action_detect|2026-09-01t15_03_44_038784": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"День народження Олі\", \"action_date\": \"2026-09-01\", \"action_time\": \"09:00\", \"action_summary\": \"Сьогодні день народже",
-    "ts": "2026-09-01T15:03:44.038784"
-  },
-  "action_detect|2026-09-01t15_03_32_937693": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-01T15:03:32.937693"
   }
 }
