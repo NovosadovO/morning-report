@@ -9294,6 +9294,17 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_spray"
+    },
+    {
+      "ts": "2026-09-01T19:55:42.689081+00:00",
+      "category": "calendar_button",
+      "question": "🔔 Підготовка до нічної зміни 03.09",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t24h",
+        "when": "20:00–20:30",
+        "note": null
+      }
     }
   ]
 }
