@@ -1,4 +1,19 @@
 {
+  "email_ai_item|2026-09-01t10_41_35_634291": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від H&M пропонує отримати знижку 15% або 20%. Це рекламний лист без конкретних дій чи термінів для одержувача.\", \"opinion\": \"Лист ",
+    "ts": "2026-09-01T10:41:35.634291"
+  },
+  "selfact|2026-09-01t10_38_14_479946": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від Maroš Sivák «InterFin Malaga trip - detailné informácie». Там є детальна інформа",
+    "ts": "2026-09-01T10:38:14.479946"
+  },
+  "action_detect|2026-09-01t10_36_48_235595": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Онлайн-реєстрація на рейс\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Пройти онлайн-реєстрацію н",
+    "ts": "2026-09-01T10:36:48.235595"
+  },
   "msg_event_soon_truthfix|2026-09-01t10_36_35_408420": {
     "topic": "MSG_EVENT_SOON/truthfix",
     "gist": "Олеже, ти на ранковій зміні до 18:00, і поки ринок показує невелике падіння (BTC -0.3%, XRP -0.4%), є важливіші речі. Дані щодо здоров'я, які були оновлені 35 г",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2023-09-01\", \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскіл",
     "ts": "2026-09-01T09:04:10.273684"
-  },
-  "action_detect|2026-09-01t09_04_10_262018": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Початок відпустки в Малазі\", \"action_date\": \"2023-09-07\", \"action_time\": \"09:00\", \"action_summary\": \"Початок відпус",
-    "ts": "2026-09-01T09:04:10.262018"
-  },
-  "action_detect|2026-09-01t09_03_59_372896": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": \"2026-09-01\", \"action_time\": \"18:00\", \"action_summary\": \"Після ",
-    "ts": "2026-09-01T09:03:59.372896"
-  },
-  "briefing_truthfix|2026-09-01t09_03_51_041526": {
-    "topic": "briefing/truthfix",
-    "gist": "Вага 83.0 кг, зафіксована 33 години тому, не просто цифра – це сигнал про стабільний тренд (+0.0 кг), який не наближає до цілі 78 кг. Поточні дані, хоч і не сві",
-    "ts": "2026-09-01T09:03:51.041526"
   }
 }
