@@ -1,9 +1,4 @@
 {
-  "77902": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "Temu <temu@eu.temuemail.com>",
-    "seen_ts": "2026-08-23T18:53:15.529747+00:00"
-  },
   "77903": {
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
@@ -1498,5 +1493,10 @@
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
     "seen_ts": "2026-09-01T11:33:46.283893+00:00"
+  },
+  "78351": {
+    "sender": "temu@eu.temuemail.com",
+    "sender_raw": "Temu <temu@eu.temuemail.com>",
+    "seen_ts": "2026-09-01T11:54:20.751355+00:00"
   }
 }
