@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег цікавиться вакансіями Back Office Sales Admin в Brazing",
-      "detail": "Олег отримав сповіщення про вакансії Back Office Sales Admin в Brazing Technologies Europe та Application Support Specialist в Arcondis Group, що свідчить про його потенційний інтерес до цих позицій.",
-      "module": "selfact",
-      "ts": "2026-08-30T04:17:14"
-    },
-    {
       "kind": "ask",
       "what": "Олег, у тебе є непідтверджені дані про зміну '17:00 🌙 Нічна",
       "detail": "У календарі на 04.09 та 05.09 зазначена '17:00 🌙 Нічна зміна (18:00-06:00)', причому 05.09 вона вказана двічі, що може бути помилкою або вимагає уточнення.",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав листи 'InterFin Malaga trip - detailné informácie' від Maroš Sivák, 'Your reservation contract - August Villa Málaga - Villa' від no-reply@chekin.com та 'Online check-in for a smooth take-off. ATTENTION! Don’t forget – it opens 24 hours before departure. (Y9SB5U)' від letenky@pelikan.sk",
       "module": "selfact",
       "ts": "2026-09-01T13:58:15"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав сповіщення про вакансії Sales Manager в E-hygie",
+      "detail": "У свіжих листах є два сповіщення від LinkedIn про вакансії: 'Sales Manager (B2B/HoReCa/FMSG) в E-hygiena s. r. o.' та 'Associate в Eccleston Park Capital'.",
+      "module": "selfact",
+      "ts": "2026-09-01T14:14:19"
     }
   ]
 }
