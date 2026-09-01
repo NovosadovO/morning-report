@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-01T01:15:55.334065",
-      "kind": "deadlines",
-      "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 3 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Видалення неактивного облікового запису Philips</b>\n📆 до <b>2026-09-04</b>\n🏢 Philips\n\n➡️ Увійти в обліковий запис MyPhilips, щоб він залишався активним",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-01T01:15:56.552705",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n📌 Видалення неактивного облікового запису Philips\n📆 до 2026-09-04\n🏢 Philips\n\n➡️ Увійти в обліковий запис MyPhilips, щоб він залишався активним",
@@ -494,6 +488,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78329"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-01T03:01:18.667011",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>InterFin Malaga trip - detailné informácie</b>\n👤 Maroš Sivák &lt;maros.sivak.sro@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78328"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78328"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78328"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78328"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78328"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78328"
             }
           ]
         ]
