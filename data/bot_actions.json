@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав лист від Ben at StartEngine",
-      "detail": "Свіжі листи містять лист від Ben at StartEngine <ben@startengine.com> | The AI Buildout Ran From the Cloud to Orbit This Week",
-      "module": "selfact",
-      "ts": "2026-08-29T21:32:20"
-    },
-    {
-      "kind": "note",
       "what": "Нічні зміни Олега",
       "detail": "З нотаток про Олега: 'Олег має нічні зміни 26, 27, 28 та 29 серпня.'",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Надійшов лист від Discord <noreply@discord.com> з темою 'Ти пропустив повідомлення в VenomBridge'.",
       "module": "selfact",
       "ts": "2026-09-01T08:50:24"
+    },
+    {
+      "kind": "note",
+      "what": "Олег цікавиться оновленнями від Aave, про що свідчить отрима",
+      "detail": "Надійшов лист від Aave <aave@aave.com> з темою 'Aave Newsletter: Issue #019'.",
+      "module": "selfact",
+      "ts": "2026-09-01T08:50:32"
     }
   ]
 }
