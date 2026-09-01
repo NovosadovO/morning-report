@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав повернення коштів у розмірі €136 за скасований",
-      "detail": "З листів від noreply@booking.com та info@ionian-cruises.com.",
-      "module": "selfact",
-      "ts": "2026-08-29T18:08:33"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав сповіщення про вакансію Application Support Spe",
       "detail": "З листа від LinkedIn Job Alerts видно, що Олегу надійшло сповіщення про нову вакансію, яка може бути для нього цікавою.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Листи від 'Profesia.sk' <support@profesia.sk> | Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk та 'Profesia.sk' <support@profesia.sk> | 17 nových pracovných ponúk.",
       "module": "selfact",
       "ts": "2026-09-01T07:01:53"
+    },
+    {
+      "kind": "notify",
+      "what": "Важливі деталі щодо поїздки в Малагу",
+      "detail": "Лист від Maroš Sivák <maros.sivak.sro@gmail.com> | InterFin Malaga trip - detailné informácie. Календар на 07.09: 08:00 🔔 Початок відпустки в Малазі; 12:00 Поїздка в Малагу, Іспанія.",
+      "module": "selfact",
+      "ts": "2026-09-01T07:02:01"
     }
   ]
 }
