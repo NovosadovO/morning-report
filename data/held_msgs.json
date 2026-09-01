@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-01T23:01:25.566909",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Digital Operations &amp; Insights Analyst в Caterpillar I</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78380"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78380"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78380"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78380"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78380"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78380"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-01T23:01:28.862555",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Robinhood Chain has a breakout app</b>\n👤 DefiLlama Newsletter &lt;defillama@mail.beehiiv.com&gt;",
@@ -659,6 +620,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78326"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-02T00:01:27.612141",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Your reservation contract - August Villa Málaga - Villa</b>\n👤 no-reply@chekin.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78291"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78291"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78291"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78291"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78291"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78291"
             }
           ]
         ]
