@@ -202,5 +202,17 @@
     "sender": "Ubian Eshop <no-reply@ubian.sk>",
     "done": false,
     "created": "2026-08-26"
+  },
+  "підтвердження_повернення_кредиту_temu|2026-09-01": {
+    "kind": "other",
+    "title": "Підтвердження повернення кредиту Temu",
+    "org": "Temu",
+    "deadline": "2026-09-01",
+    "action": "Підтвердити повернення кредиту на Temu",
+    "why": "Необхідно підтвердити повернення кредиту, щоб він був зарахований на ваш рахунок.",
+    "uid": "78361",
+    "sender": "Temu <temu@eu.temuemail.com>",
+    "done": false,
+    "created": "2026-09-01"
   }
 }
