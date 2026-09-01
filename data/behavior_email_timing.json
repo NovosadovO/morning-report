@@ -1,9 +1,4 @@
 {
-  "77895": {
-    "sender": "jobalerts-noreply@linkedin.com",
-    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
-    "seen_ts": "2026-08-23T14:15:47.971922+00:00"
-  },
   "77896": {
     "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
     "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
@@ -1498,5 +1493,10 @@
     "sender": "info@mail.uefa.com",
     "sender_raw": "\"UEFA Europa League\" <info@mail.uefa.com>",
     "seen_ts": "2026-09-01T08:14:54.727337+00:00"
+  },
+  "78344": {
+    "sender": "newsletter@email.hm.com",
+    "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
+    "seen_ts": "2026-09-01T08:41:40.934482+00:00"
   }
 }
