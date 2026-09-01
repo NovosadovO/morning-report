@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-01T01:15:49.092572",
-      "kind": "dates",
-      "text": "🎂 СЬОГОДНІ — ДЕНЬ НАРОДЖЕННЯ\n━━━━━━━━━━━━━━━━━━━━\n🎉 Олі\n\n⚡ Сьогодні. Далі відкладати нема куди.\nОдин день прострочення — і замість подарунка вже вибачення.\n➡️ Натисни «Текст привітання» — надішлеш за 30 секунд.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-01T01:15:55.334065",
       "kind": "deadlines",
       "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 3 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Видалення неактивного облікового запису Philips</b>\n📆 до <b>2026-09-04</b>\n🏢 Philips\n\n➡️ Увійти в обліковий запис MyPhilips, щоб він залишався активним",
@@ -461,6 +455,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78330"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-01T03:01:16.793011",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Program Manager в EPAM Systems</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78329"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78329"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78329"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78329"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78329"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78329"
             }
           ]
         ]
