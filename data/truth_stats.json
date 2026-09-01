@@ -99,7 +99,7 @@
     "MSG_DAY_PLAN": {
       "checked": 5,
       "issues": 3,
-      "fixed": 1
+      "fixed": 2
     },
     "MSG_DAILY_ASTRO": {
       "checked": 4,
@@ -370,6 +370,7 @@
   },
   "2026-09-01": {
     "checked": 1,
-    "issues": 1
+    "issues": 1,
+    "fixed": 1
   }
 }
