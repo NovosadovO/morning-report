@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олег, чи є у вас актуальний графік роботи на заводі? Моя інф",
-      "detail": "Олег раніше вказував на неточності в графіку нічних змін. У календарі є нічні зміни 4 та 5 вересня, і важливо переконатись, що це актуально.",
-      "module": "selfact",
-      "ts": "2026-08-30T02:28:12"
-    },
-    {
       "kind": "notify",
       "what": "Скасування бронювання туру на Paxos та Antipaxos",
       "detail": "У свіжих листах є повідомлення від noreply@booking.com про скасування бронювання туру та повернення коштів. Це важлива інформація про фінанси та плани.",
@@ -2799,6 +2792,13 @@
       "detail": "Зі свіжих листів від LinkedIn: 'Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Service Disruption Management (SDM) в SAP' та 'Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Associate в Eccleston Park Capital'.",
       "module": "selfact",
       "ts": "2026-09-01T13:12:16"
+    },
+    {
+      "kind": "note",
+      "what": "Олег цікавиться новинами у сфері FinTech та Artificial Intel",
+      "detail": "Зі свіжого листа від Linas from Linas's Newsletter <linas@substack.com> | The Ultimate Guide to Grok Bot: The First Real AI Agent OS 🤖",
+      "module": "selfact",
+      "ts": "2026-09-01T13:12:24"
     }
   ]
 }
