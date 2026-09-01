@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Нова вакансія Senior Operations Manager",
-      "detail": "Отримано сповіщення про вакансії LinkedIn <jobalerts-noreply@linkedin.com> за запитом 'Директор з операцій в European Union', що відповідає інтересам Олега щодо вакансій.",
-      "module": "selfact",
-      "ts": "2026-08-30T01:40:23"
-    },
-    {
       "kind": "note",
       "what": "Олег цікавиться новими тарифними планами Google AI Plus, про",
       "detail": "З листа від Google One видно, що Олег отримав інформацію про новий план Google AI Plus, що може свідчити про його інтерес до цієї теми.",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 02.09 є подія '🔔 Лист від потребує відповіді'.",
       "module": "selfact",
       "ts": "2026-09-01T12:41:44"
+    },
+    {
+      "kind": "note",
+      "what": "Олег продовжує отримувати сповіщення про вакансії, зокрема R",
+      "detail": "У свіжих листах є нові сповіщення про вакансії: 'Сповіщення про вакансії LinkedIn | Service Disruption Management (SDM) в SAP' та 'Сповіщення про вакансії LinkedIn | Associate в Eccleston Park Capital'.",
+      "module": "selfact",
+      "ts": "2026-09-01T12:41:52"
     }
   ]
 }
