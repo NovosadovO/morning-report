@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримав сповіщення про вакансію Application Support Spe",
-      "detail": "З листа від LinkedIn Job Alerts видно, що Олегу надійшло сповіщення про нову вакансію, яка може бути для нього цікавою.",
-      "module": "selfact",
-      "ts": "2026-08-29T18:24:45"
-    },
-    {
       "kind": "openmind",
       "what": "digest",
       "detail": "відкритий огляд ринку + горизонт",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від Maroš Sivák <maros.sivak.sro@gmail.com> | InterFin Malaga trip - detailné informácie. Календар на 07.09: 08:00 🔔 Початок відпустки в Малазі; 12:00 Поїздка в Малагу, Іспанія.",
       "module": "selfact",
       "ts": "2026-09-01T07:02:01"
+    },
+    {
+      "kind": "note",
+      "what": "Олег активно шукає роботу, отримуючи персоналізовані пропози",
+      "detail": "Отримано листи від 'Profesia.sk' з 20 та 17 новими пропозиціями роботи, а також від 'Сповіщення про вакансії LinkedIn' про Senior Program Manager в EPAM Systems.",
+      "module": "selfact",
+      "ts": "2026-09-01T07:17:13"
     }
   ]
 }
