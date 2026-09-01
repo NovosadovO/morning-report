@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "evening_review",
-      "detail": "вечірній розбір, оцінка 88",
-      "module": "selfact",
-      "ts": "2026-08-29T21:21:11"
-    },
-    {
       "kind": "note",
       "what": "Олег отримав лист від Temu",
       "detail": "Свіжі листи містять лист від Temu <temu@eu.temuemail.com> | @Oleg Novosadov, dostali ste to?",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі є подія '🌙 Нічна зміна (18:00-06:00)' на 04.09 о 17:00.",
       "module": "selfact",
       "ts": "2026-09-01T08:35:09"
+    },
+    {
+      "kind": "notify",
+      "what": "Контракт на бронювання August Villa Málaga",
+      "detail": "Надійшов лист від no-reply@chekin.com з контрактом на бронювання August Villa Málaga, що є важливою інформацією для майбутньої поїздки Олега.",
+      "module": "selfact",
+      "ts": "2026-09-01T08:50:12"
     }
   ]
 }
