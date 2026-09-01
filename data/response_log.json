@@ -9028,6 +9028,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_792452f9ae"
+    },
+    {
+      "ts": "2026-09-01T07:53:45.025957+00:00",
+      "category": "calendar_button",
+      "question": "🔔 Деталі поїздки в Малагу",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t2h",
+        "when": "10:00–10:30",
+        "note": null
+      }
     }
   ]
 }
