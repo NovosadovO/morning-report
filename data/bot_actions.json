@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олег, ти хочеш, щоб я видалив дублюючі події 'День народженн",
-      "detail": "У календарі є кілька дублюючих подій 'День народження Олі' на 1 вересня, і Олег вже згадував про це раніше. Потрібно уточнити, чи варто їх видалити.",
-      "module": "selfact",
-      "ts": "2026-08-29T16:03:24"
-    },
-    {
       "kind": "notify",
       "what": "Олег, зверніть увагу: тур на Паксос і Антипаксос від Corfu б",
       "detail": "Booking.com скасував бронювання туру та повернув кошти, Олег має бути поінформований про це.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від 'Maroš Sivák <maros.sivak.sro@gmail.com>' з темою 'InterFin Malaga trip - detailné informácie' містить текст: 'Ahojte, Nižšie vám posielam sľúbený súhrn všetkých informácií k tripu do Malagy ( Španielsko ), kde nájdete všetky najdôležitejšie info, ktoré vám pripravila naša Gabika ( G",
       "module": "selfact",
       "ts": "2026-09-01T05:30:25"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує сповіщення про вакансії Senior Program Manager",
+      "detail": "Свіжий лист від 'Сповіщення про вакансії LinkedIn' з темою 'Senior Program Manager в EPAM Systems' підтверджує це.",
+      "module": "selfact",
+      "ts": "2026-09-01T05:30:33"
     }
   ]
 }
