@@ -8984,6 +8984,12 @@
         "kind": "reminder",
         "date": "2026-09-01"
       }
+    },
+    {
+      "ts": "2026-09-01T07:25:08.627760+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "db_cal_c31da89ac1"
     }
   ]
 }
