@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег перейшов на новий тарифний план Google AI Plus з 400 GB",
-      "detail": "Свіжий лист від Google One інформує про оновлення тарифного плану, що є новим фактом про Олега.",
-      "module": "selfact",
-      "ts": "2026-08-29T16:49:40"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав повернення коштів у розмірі 0,90 EUR від Google",
       "detail": "Свіжий лист від Google Play інформує про повернення коштів, що є новим фінансовим фактом про Олега.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи від 'Profesia.sk' <support@profesia.sk> з темами 'Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk' та '17 nových pracovných ponúk'.",
       "module": "selfact",
       "ts": "2026-09-01T05:45:37"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав сповіщення про вакансію Senior Program Manager",
+      "detail": "Свіжий лист від 'Сповіщення про вакансії LinkedIn' <jobalerts-noreply@linkedin.com> з темою 'Senior Program Manager в EPAM Systems'.",
+      "module": "selfact",
+      "ts": "2026-09-01T05:45:44"
     }
   ]
 }
