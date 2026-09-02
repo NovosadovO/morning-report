@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег активно цікавиться вакансіями у сфері AI (Event Operati",
-      "detail": "Свіжі листи від LinkedIn Job Alerts про вакансії 'Event Operations Specialist в Swiss Re', 'Regional AI Run Lead в EPAM Systems' та 'Technical Writer в Octave'.",
-      "module": "selfact",
-      "ts": "2026-08-30T20:05:35"
-    },
-    {
       "kind": "notify",
       "what": "Важливі дати",
       "detail": "Важливі дати містять 'd|олі|09-01' та календарні події на 01.09 'Привітати Олю з Днем народження' та 'Олі — день народження'.",
@@ -2799,6 +2792,13 @@
       "detail": "З листа від Google Health видно, що активність Олега знизилася, і це може бути важливим для нього.",
       "module": "selfact",
       "ts": "2026-09-03T01:03:56"
+    },
+    {
+      "kind": "notify",
+      "what": "Нова вакансія Regionalny kierownik sprzedaży",
+      "detail": "Отримано лист від LinkedIn про нову вакансію 'Regionalny kierownik sprzedaży' та є подія в календарі на 05.09 '09:00 🔔 Переглянути вакансію Regionalny kierownik sprzedaży'.",
+      "module": "selfact",
+      "ts": "2026-09-03T01:19:43"
     }
   ]
 }
