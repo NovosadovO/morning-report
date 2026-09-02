@@ -174,7 +174,117 @@ def check_all() -> list:
     return out
 
 
+# ─── ВЕБХУК: САМОЛІКУВАННЯ (403/розбіжність секрету → бот мовчить) ───────────
+
+_WH_FILE = "watchdog_webhook.json"
+
+
+def _tg_token() -> str:
+    import os
+    for n in ("TELEGRAM_BOT_TOKEN", "BOT_TOKEN", "TELEGRAM_TOKEN", "TOKEN"):
+        v = os.environ.get(n)
+        if v and ":" in v:
+            return v
+    return str(getattr(K, "TOKEN", "") or "")
+
+
+def _wh_url() -> str:
+    import os
+    u = os.environ.get("WEBHOOK_URL") or os.environ.get("PUBLIC_URL") or ""
+    if u:
+        return u.rstrip("/") if u.endswith("/telegram") else \
+            u.rstrip("/") + "/telegram"
+    d = os.environ.get("RAILWAY_PUBLIC_DOMAIN") or ""
+    return ("https://" + d.strip("/") + "/telegram") if d else ""
+
+
+def _webhook_guard() -> str:
+    """Раз на годину: getWebhookInfo. Якщо вебхук зламаний — ставимо наново.
+
+    Лікує саме той збій, через який бот замовкає на години: Telegram
+    відбиває апдейти з 403 (секрет розійшовся) або черга не тане.
+    """
+    import os
+    import json as _js
+    import urllib.request as _u
+    if str(os.environ.get("USE_WEBHOOK", "1")).strip() in ("0", "false", "no"):
+        return ""
+    tok = _tg_token()
+    sec = os.environ.get("TELEGRAM_WEBHOOK_SECRET") or ""
+    if not tok or not sec:
+        return ""
+    st = K.load(_WH_FILE, default={}) or {}
+    now = K.now()
+    try:
+        prev = datetime.fromisoformat(str(st.get("checked_at"))[:19])
+        if (now.replace(tzinfo=None) - prev.replace(tzinfo=None)
+                ).total_seconds() < 3300:
+            return ""
+    except Exception:
+        pass
+
+    def _api(method, data=None):
+        url = "https://api.telegram.org/bot" + tok + "/" + method
+        body = _js.dumps(data).encode() if data else None
+        req = _u.Request(url, data=body, headers={
+            "Content-Type": "application/json"})
+        with _u.urlopen(req, timeout=20) as r:
+            return _js.loads(r.read().decode())
+
+    info = {}
+    try:
+        info = (_api("getWebhookInfo") or {}).get("result", {}) or {}
+    except Exception as e:
+        K.log(TAG, "getWebhookInfo error: " + str(e))
+        return ""
+    st["checked_at"] = now.isoformat(timespec="seconds")
+    err = str(info.get("last_error_message") or "")
+    pending = int(info.get("pending_update_count") or 0)
+    want = _wh_url()
+    cur = str(info.get("url") or "")
+    broken = bool(err) or pending > 5 or (want and cur != want)
+    if not broken:
+        st["state"] = "ok"
+        K.save(_WH_FILE, st)
+        return ""
+    K.log(TAG, "вебхук зламаний: url=" + cur + " err=" + err[:80] +
+          " pending=" + str(pending) + " → ставлю наново")
+    ok = False
+    try:
+        res = _api("setWebhook", {
+            "url": want or cur,
+            "secret_token": sec,
+            "drop_pending_updates": False,
+            "allowed_updates": ["message", "callback_query", "edited_message"],
+        }) or {}
+        ok = bool(res.get("ok"))
+    except Exception as e:
+        K.log(TAG, "setWebhook error: " + str(e))
+    st["state"] = "refixed" if ok else "broken"
+    st["last_error"] = err[:200]
+    st["fixed_at"] = now.isoformat(timespec="seconds") if ok else \
+        st.get("fixed_at")
+    K.save(_WH_FILE, st)
+    msg = ("🔌 <b>Вебхук впав — я його підняв</b>\n\n"
+           "Telegram не міг доставляти повідомлення" +
+           ((": <code>" + err[:120] + "</code>") if err else "") +
+           ("\nУ черзі було апдейтів: " + str(pending) if pending else "") +
+           "\n\n" + ("✅ Вебхук перевстановлено — бот знову чує тебе."
+                     if ok else
+                     "❌ Перевстановити не вдалось — потрібна ручна дія."))
+    try:
+        K.send_card(msg, tag=TAG)
+    except Exception:
+        pass
+    return "webhook"
+
+
 def run(force=False) -> int:
+    try:
+        _webhook_guard()
+    except Exception as _e_wg:
+        K.log(TAG, "webhook guard error: " + str(_e_wg))
+
     """Перевіряє датчики, пише лише про ЗМІНИ стану. Повертає к-ть алертів."""
     if not force and not K.rate_ok(SCAN_STATE, CHECK_GAP_MIN):
         return 0
