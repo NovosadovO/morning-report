@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, твій платіж до Runable на $10.00 був невдалим. Потріб",
-      "detail": "У розділі 'ПІДПИСКИ' вказано: 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.' та 'sender': 'Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>', 'subject': '$10.00 payment to Runable was unsuccessful'.",
-      "module": "selfact",
-      "ts": "2026-08-30T19:35:08"
-    },
-    {
       "kind": "note",
       "what": "Олег цікавиться вакансією 'Regional AI Run Lead' в EPAM Syst",
       "detail": "Отримано лист від LinkedIn з назвою 'Regional AI Run Lead в EPAM Systems' та текстом 'Сповіщення про вакансії в Slovakia Нові вакансії відповідають вашим налаштуванням. Regional AI Run Lead EPAM Systems Slovakia Ця компанія активно наймає персонал'.",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав свіжий лист від LinkedIn про нову вакансію 'Regionalny kierownik sprzedaży в Antal Poland', яка активно наймає персонал і відповідає його запиту 'Менеджер з продажу в Bratislava Metropolitan Area'.",
       "module": "selfact",
       "ts": "2026-09-03T00:33:30"
+    },
+    {
+      "kind": "reminder",
+      "what": "Переглянути вакансію Regionalny kierownik sprzedaży",
+      "detail": "Свіжий лист від LinkedIn про нову вакансію, яка може бути цікавою Олегу, і її варто переглянути до відпустки.",
+      "module": "selfact",
+      "ts": "2026-09-03T00:33:34"
     }
   ]
 }
