@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав сповіщення про вакансії Technical Writer в Octa",
-      "detail": "У свіжих листах є листи від LinkedIn про вакансії 'Technical Writer в Octave' та 'Business Analyst - Data Management в Capco'.",
-      "module": "selfact",
-      "ts": "2026-08-30T18:01:27"
-    },
-    {
-      "kind": "note",
       "what": "Олег продовжує отримувати крипто-дайджести від Oleh Bezuhlyi",
       "detail": "У свіжих листах є листи від 'Oleh Bezuhlyi через LinkedIn' та 'CryptoBeholder.com через LinkedIn' з 'Daily Crypto Digest'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег має дві важливі події завтра: підготовка до відпустки та нічна зміна. Важливо нагадати йому про це, щоб він міг спланувати свій день, враховуючи, що нічна зміна починається ввечері, а підготовка до відпустки вранці.",
       "module": "selfact",
       "ts": "2026-09-02T23:31:12"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, ти отримав детальні інформації щодо поїздки в Малагу",
+      "detail": "Олег отримав лист 'InterFin Malaga trip - detailné informácie' від Maroš Sivák, який містить важливу інформацію для його майбутньої відпустки в Малазі. Це важлива інформація, яку він міг пропустити, тому варто нагадати про неї.",
+      "module": "selfact",
+      "ts": "2026-09-02T23:31:18"
     }
   ]
 }
