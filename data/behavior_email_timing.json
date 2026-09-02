@@ -1,9 +1,4 @@
 {
-  "77953": {
-    "sender": "offers@travel.wizznews.com",
-    "sender_raw": "\"Wizz Air\" <offers@travel.wizznews.com>",
-    "seen_ts": "2026-08-25T02:49:39.554994+00:00"
-  },
   "77955": {
     "sender": "news@flights.airbaltic.com",
     "sender_raw": "airBaltic <news@flights.airbaltic.com>",
@@ -1498,5 +1493,10 @@
     "sender": "zara@news.zara.com",
     "sender_raw": "Zara <zara@news.zara.com>",
     "seen_ts": "2026-09-02T07:15:53.616991+00:00"
+  },
+  "78394": {
+    "sender": "noreply@discord.com",
+    "sender_raw": "Discord <noreply@discord.com>",
+    "seen_ts": "2026-09-02T07:50:39.182353+00:00"
   }
 }
