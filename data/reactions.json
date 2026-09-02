@@ -638,10 +638,11 @@
     "key": "",
     "tkey": "проблеми з runable",
     "title": "Проблеми з Runable",
-    "action": "ok",
-    "label": "👌 Прийняв",
-    "state": "open",
-    "ts": "2026-08-28T01:19:06"
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "about": "Проблеми з Runable",
+    "state": "closed",
+    "ts": "2026-09-02T19:55:36"
   },
   "generic|t|невдалий платіж runable": {
     "kind": "generic",
