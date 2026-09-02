@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег цікавиться вакансіями Директора з операцій в European U",
-      "detail": "Свіжі листи від LinkedIn та Profesia.sk містять сповіщення про вакансії 'COO, Head of Operations (PCF-42), Payward Ireland Ltd в Kraken', 'Back Office Sales Admin в Brazing Technologies Europe', 'Application Support Specialist в Arcondis Group' та 'Senior Operations Manager в Square One Resources',",
-      "module": "selfact",
-      "ts": "2026-08-30T10:16:50"
-    },
-    {
       "kind": "ask",
       "what": "Олег, чи потрібно мені якось реагувати на ці нові вакансії,",
       "detail": "Надійшло багато сповіщень про вакансії від LinkedIn та Profesia.sk, і я хочу зрозуміти, чи потрібна якась дія з мого боку, чи Олег вже ознайомився з ними.",
@@ -2799,6 +2792,13 @@
       "detail": "аналіз сну",
       "module": "selfact",
       "ts": "2026-09-02T14:40:40"
+    },
+    {
+      "kind": "openmind",
+      "what": "digest",
+      "detail": "відкритий огляд ринку + горизонт",
+      "module": "локальне: Кошице і Словаччина — подія, зміна, можливість",
+      "ts": "2026-09-02T18:31:01"
     }
   ]
 }
