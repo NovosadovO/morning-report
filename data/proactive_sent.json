@@ -1,9 +1,4 @@
 {
-  "2026-08-29": {
-    "morning_greet": true,
-    "midday_checkin": true,
-    "evening_checkin": true
-  },
   "2026-08-30": {
     "morning_greet": true,
     "run_question": true,
@@ -18,5 +13,8 @@
   "2026-09-01": {
     "anomaly_weight_rising": true,
     "anomaly_no_run": true
+  },
+  "2026-09-02": {
+    "anomaly_weight_rising": true
   }
 }
