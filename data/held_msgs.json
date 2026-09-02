@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-02T01:01:13.000330",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Digital Operations &amp; Insights Analyst в Caterpillar I</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78380"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78380"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78380"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78380"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78380"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78380"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-02T01:01:15.007544",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Robinhood Chain has a breakout app</b>\n👤 DefiLlama Newsletter &lt;defillama@mail.beehiiv.com&gt;",
@@ -574,6 +535,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78387"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-02T03:01:18.193983",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Head of Product в Scrambly</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78386"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78386"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78386"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78386"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78386"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78386"
             }
           ]
         ]
