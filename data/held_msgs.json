@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-02T00:15:30.667544",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>FOX</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🍁 FOX Fall Preview 🍁»\n\n<i>«Best Medicine trailer, behind-the-scenes, and more!\nFOX ( https://clicks.fox.com/f/a/OBRmZNuI0RkodUl41iFokQ~~/AAQRxRA~/z80oo0w4St6LwjjjD2HJDYRziBpn3txLBy9Hk6Lp4W314z_LbJJwJiIHeZoABVc9MeywGOyjoS96EyUWaf2FoNw8tT5IBya-_ihJIiKcPz-sTABSKmj8qdZolE05d0ZT )          Get Ready\nfor\nSeason 2    Best Medicine r...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78384"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78384"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78384"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78384"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78384"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78384"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-02T00:25:43.307615",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Google Health</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Your weekly progress report from Google Health»\n\n<i>«Google Health Google Health\r\n\r\n\r\nWeekly stats\r\n\r\n\r\n\r\n\r\n\r\n\r\nUser avatar\r\n\r\n\r\nHi, Oleg N.!\r\n\r\n\r\n\r\nHere are your stats for Aug 22 - Aug 28\r\n\r\n\r\n\r\n\r\n\r\n\r\nBest day Goal met Goal met Goal percentage No steps No steps No steps\r\n\r\nBest day!\r\n20,656 Mon Tue Wed Thu Fri Sat\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n61,824\r\n\r\ntotal steps...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -574,6 +535,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78381"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-02T02:01:47.097562",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Digital Operations &amp; Insights Analyst в Caterpillar I</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78380"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78380"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78380"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78380"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78380"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78380"
             }
           ]
         ]
