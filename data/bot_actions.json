@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег ігнорує нагадування про збереження акаунту Rondogo, нат",
-      "detail": "Події в календарі 'Зберегти акаунт Rondogo' на 30.08 о 11:00, а також реакції Олега 'Не нагадуй' та 'Видалити' на сповіщення про Rondogo.",
-      "module": "selfact",
-      "ts": "2026-08-30T20:05:28"
-    },
-    {
-      "kind": "note",
       "what": "Олег активно цікавиться вакансіями у сфері AI (Event Operati",
       "detail": "Свіжі листи від LinkedIn Job Alerts про вакансії 'Event Operations Specialist в Swiss Re', 'Regional AI Run Lead в EPAM Systems' та 'Technical Writer в Octave'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 05.09 є подія 'Переглянути вакансію Regionalny kierownik sprzedaży'.",
       "module": "selfact",
       "ts": "2026-09-03T01:03:49"
+    },
+    {
+      "kind": "notify",
+      "what": "Зменшення активності Google Health",
+      "detail": "З листа від Google Health видно, що активність Олега знизилася, і це може бути важливим для нього.",
+      "module": "selfact",
+      "ts": "2026-09-03T01:03:56"
     }
   ]
 }
