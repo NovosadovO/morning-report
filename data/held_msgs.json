@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-02T02:01:43.258947",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 It's a wonderful bank</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78382"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78382"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78382"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78382"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78382"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78382"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-02T02:01:45.187165",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Top 10 Richest People In The World—September 2026</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -611,6 +572,45 @@
       "kind": "people",
       "text": "🧠 ПАМ'ЯТЬ ПРО ЛЮДЕЙ\n━━━━━━━━━━━━━━━━━━━━\n👤 Veronika Hricová  ·  сервіс\n📧 veronika.hricova@bukovinakosice.sk\n🕐 останній контакт: 2 дн. тому\n💬 Про що говорили: координація весілля, підготовка зали\n\n🔴 ТИ ОБІЦЯВ:\n   • написати на WhatsApp\n\n🟡 ТОБІ ОБІЦЯЛИ:\n   • чекати на Олега\n   • показати склад\n   • передати ключі від кімнати\n\n❓ Зависло: О котрій годині прийдуть прикрашати зал у неділю?\n\n➡️ Далі: Написати Вероніці на WhatsApp, щоб обговорити деталі.\n\nЧому пишу: є твоя обіцянка, зависло питання, час пінгувати",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-02T03:18:08.979448",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Profesia.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «10 nových pracovných ponúk»\n\n<i>«Nové pracovné ponuky \"Pracovné ponuky e-mailom\r\n Košice, na dohodu (brigády), \"\r\n\r\nLogo Profesia ( https://www.profesia.sk/?utm_medium=mail&amp;utm_source=10007&amp;utm_campaign=10007&amp;utm_term=2026-09-02&amp;eid=6a976e478aee7f43f491236cf14ef07e&amp;utm_content=logo )\r\n\r\n*********************************************...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78388"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78388"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78388"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78388"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78388"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78388"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
