@@ -1,9 +1,4 @@
 {
-  "78003": {
-    "sender": "noreply@discord.com",
-    "sender_raw": "Discord <noreply@discord.com>",
-    "seen_ts": "2026-08-26T06:41:41.910966+00:00"
-  },
   "78004": {
     "sender": "slovakia@delivery-marketing.bolt.eu",
     "sender_raw": "\"Bolt Food\" <slovakia@delivery-marketing.bolt.eu>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "NEAR Protocol через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-09-02T21:43:28.934767+00:00"
+  },
+  "78454": {
+    "sender": "no-reply@mail.thedefiant.io",
+    "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
+    "seen_ts": "2026-09-02T22:38:52.308432+00:00"
   }
 }
