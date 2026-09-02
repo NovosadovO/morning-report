@@ -1,9 +1,4 @@
 {
-  "77955": {
-    "sender": "news@flights.airbaltic.com",
-    "sender_raw": "airBaltic <news@flights.airbaltic.com>",
-    "seen_ts": "2026-08-25T05:49:01.582460+00:00"
-  },
   "77958": {
     "sender": "noreply@newsletter.austrian.com",
     "sender_raw": "\"Austrian Airlines\" <noreply@newsletter.austrian.com>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply@discord.com",
     "sender_raw": "Discord <noreply@discord.com>",
     "seen_ts": "2026-09-02T07:50:39.182353+00:00"
+  },
+  "78395": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Startitup через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-02T08:02:57.488087+00:00"
   }
 }
