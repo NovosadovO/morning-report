@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримує сповіщення про вакансію Regional AI Run Lead в",
-      "detail": "Свіжий лист від LinkedIn про вакансію 'Regional AI Run Lead в EPAM Systems' містить нову інформацію про потенційні професійні інтереси Олега, яку варто зафіксувати.",
-      "module": "selfact",
-      "ts": "2026-08-30T19:19:17"
-    },
-    {
-      "kind": "note",
       "what": "Олег цікавиться інвестиціями в AI-роботів, про що свідчить л",
       "detail": "Свіжий лист 'Uber’s Co-Founder Just Raised $1.7B for AI-Powered Robots' від StartEngine показує інтерес Олега до інвестицій у високотехнологічні галузі.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Це видно з листа від Maroš Sivák <maros.sivak.sro@gmail.com> | InterFin Malaga trip - detailné informácie",
       "module": "selfact",
       "ts": "2026-09-03T00:02:36"
+    },
+    {
+      "kind": "notify",
+      "what": "Невдалі звички",
+      "detail": "Згідно з календарем, Олег пропустив заплановані на 03.09 о 18:10 біг, сауну та воду (2л+).",
+      "module": "selfact",
+      "ts": "2026-09-03T00:18:18"
     }
   ]
 }
