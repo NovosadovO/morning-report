@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Rondogo: ризик видалення акаунту",
-      "detail": "Сьогодні, 30.08, в календарі була подія 'Зберегти акаунт Rondogo', а також є свіжий лист від 'Rondogo.sk Akcie' з попередженням про можливе видалення акаунту через неактивність. Олег ігнорував попередні нагадування про Rondogo, про що свідчить 'ПАМ'ЯТЬ ПРО ОЛЕГА'.",
-      "module": "selfact",
-      "ts": "2026-08-30T16:28:58"
-    },
-    {
       "kind": "note",
       "what": "Олег продовжує ігнорувати сповіщення та листи щодо збереженн",
       "detail": "З 'ПАМ'ЯТІ ПРО ОЛЕГА' видно, що Олег ігнорував нагадування про Rondogo, а також у 'СВІЖИХ ЛИСТАХ' є лист 'Môžete prísť o účet, Oleh 🛑' від Rondogo.sk Akcie, який свідчить про продовження проблеми. Його останні дії ('🗑 Видалити', '🙈 Не нагадуй', '❌ Не треба') підтверджують це.",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є лист від Google Health <google-health-noreply@google.com> 'Your weekly progress report from Google Health', де вказано значне зниження показників фізичної активності.",
       "module": "selfact",
       "ts": "2026-09-02T21:41:37"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на звіт Google Health: за останній тижден",
+      "detail": "У свіжих листах є лист від Google Health 'Your weekly progress report from Google Health', де вказано 'Avg 8,832 steps/day red downward arrow 42,542 fewer than last week' та інші зниження показників.",
+      "module": "selfact",
+      "ts": "2026-09-02T21:56:39"
     }
   ]
 }
