@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Збереження акаунта Rondogo",
-      "detail": "Є нагадування в календарі на 30.08 о 11:00 'Зберегти акаунт Rondogo' та свіжий лист від 'Rondogo.sk Akcie' з попередженням про видалення акаунту через неактивність.",
-      "module": "selfact",
-      "ts": "2026-08-30T10:16:46"
-    },
-    {
       "kind": "note",
       "what": "Олег цікавиться вакансіями Директора з операцій в European U",
       "detail": "Свіжі листи від LinkedIn та Profesia.sk містять сповіщення про вакансії 'COO, Head of Operations (PCF-42), Payward Ireland Ltd в Kraken', 'Back Office Sales Admin в Brazing Technologies Europe', 'Application Support Specialist в Arcondis Group' та 'Senior Operations Manager в Square One Resources',",
@@ -2799,6 +2792,13 @@
       "detail": "📵 Дані здоров'я не оновлювались 36 год (останні — 2026-09-01). Автосинк із годинника міг зламатись",
       "module": "healthai",
       "ts": "2026-09-02T11:37:39"
+    },
+    {
+      "kind": "hcoach",
+      "what": "sleep_report",
+      "detail": "аналіз сну",
+      "module": "selfact",
+      "ts": "2026-09-02T14:40:40"
     }
   ]
 }
