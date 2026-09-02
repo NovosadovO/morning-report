@@ -649,10 +649,11 @@
     "key": "",
     "tkey": "невдалий платіж runable",
     "title": "Невдалий платіж Runable",
-    "action": "ok",
-    "label": "👌 Прийняв",
-    "state": "open",
-    "ts": "2026-08-28T02:05:24"
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "about": "Невдалий платіж Runable",
+    "state": "closed",
+    "ts": "2026-09-02T21:20:53"
   },
   "generic|t|олег цікавиться новинами defi та крипторинку що підтверджує": {
     "kind": "generic",
