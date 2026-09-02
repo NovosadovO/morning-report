@@ -51,6 +51,7 @@ import ai_kit as K  # noqa: E402
 TAG = "react"
 FILE = "reactions.json"
 STORE_FILE = "react_store.json"
+LAST_FILE = "react_last.json"
 
 MARK = "⁣REACT⁣"
 KEEP_DAYS = 400          # історія реакцій — на рік з гаком
@@ -203,24 +204,38 @@ _HINTS = (
 
 
 def detect(tag: str = "", text: str = "") -> str:
-    """Вид сповіщення з тегу або тексту. Не вгадав — generic (безпечно)."""
-    hay = (str(tag or "") + " " + str(text or "")[:400]).lower()
+    """Вид сповіщення. Тег важить утричі більше за текст. Не вгадав — generic."""
+    t = str(tag or "").lower()
+    body = str(text or "")[:600].lower()
+    best, best_score = "generic", 0
     for kind, words in _HINTS:
+        score = 0
         for w in words:
-            if w in hay:
-                return kind
-    return "generic"
+            if w in t:
+                score += 3
+            if w in body:
+                score += 1
+        if score > best_score:
+            best, best_score = kind, score
+    return best
 
 
 # ─── КЛАВІАТУРА ──────────────────────────────────────────────────────────────
 
 def keyboard(kind: str = "generic", key: str = "", title: str = "",
-             extra=None) -> list:
-    """Рядки кнопок під сповіщення. extra — власні кнопки модуля (йдуть вище)."""
+             extra=None, text: str = "", tag: str = "") -> list:
+    """Рядки кнопок під сповіщення. extra — власні кнопки модуля (йдуть вище).
+
+    У payload кладемо і сам текст сповіщення — щоб при натисканні і бот, і AI
+    знали, ПІД ЧИМ саме натиснута кнопка, а не лише яку дію вибрано.
+    """
     kind = kind if kind in KINDS else "generic"
+    body = _TAGS.sub("", str(text or "")).strip()[:600]
     try:
         pid = _store.put({"kind": kind, "key": str(key or "")[:60],
-                          "title": str(title or "")[:120]})
+                          "title": str(title or "")[:120],
+                          "text": body, "tag": str(tag or "")[:40],
+                          "ts": _now().isoformat(timespec="seconds")})
     except Exception as e:
         _log("store error: " + str(e))
         return list(extra or [])
@@ -238,7 +253,8 @@ def card(text: str, kind: str = None, key: str = "", title: str = "",
     """Надіслати сповіщення разом із доречними кнопками."""
     k = kind or detect(tag, text)
     return K.send_card(text, keyboard(k, key, title or _first_line(text),
-                                      extra), tag=tag or TAG)
+                                      extra, text=text, tag=tag),
+                       tag=tag or TAG)
 
 
 def _first_line(text: str) -> str:
@@ -252,7 +268,7 @@ def _first_line(text: str) -> str:
 # ─── ЗАПИС РЕАКЦІЇ ───────────────────────────────────────────────────────────
 
 def mark(kind: str, action: str, key: str = "", title: str = "",
-         label: str = "") -> dict:
+         label: str = "", about: str = "") -> dict:
     """Пише реакцію назавжди. Закриття теми дублює в dismissed (глобальна тиша)."""
     kind = kind or "generic"
     state = "closed" if action in CLOSING else (
@@ -264,6 +280,7 @@ def mark(kind: str, action: str, key: str = "", title: str = "",
         "title": str(title or "")[:120],
         "action": action,
         "label": label or action,
+        "about": str(about or "")[:400],
         "state": state,
         "ts": _now().isoformat(timespec="seconds"),
     }
@@ -352,8 +369,10 @@ def handle(data: str, cb=None) -> dict:
     if not p:
         # payload протух (редеплой/gc) — записуємо хоч вид, не вигадуємо назву
         _log("payload " + pid + " не знайдено — пишу без назви")
-    rec = mark(kind, action, key, title,
-               label=dict(KINDS.get(kind, [])).get(action, action))
+    about = p.get("text") or ""
+    lbl0 = dict(KINDS.get(kind, [])).get(action, action)
+    rec = mark(kind, action, key, title, label=lbl0, about=about)
+    _save_answer(lbl0, action, title, about, kind)
     txt = ACK.get(action, "Записав.")
     if title:
         txt = txt + "\n\n« " + title[:80] + " »"
@@ -368,6 +387,51 @@ def handle(data: str, cb=None) -> dict:
         except Exception:
             pass
     return {"text": txt, "alert": True, "keyboard": kb}
+
+
+# ─── ОСТАННЯ ВІДПОВІДЬ ОЛЕГА: ЩО НАТИСНУВ І ПІД ЧИМ ──────────────────────────
+
+def _save_answer(label: str, action: str, title: str, about: str,
+                 kind: str = "") -> None:
+    """Останнє натискання — окремо, щоб наступна дія бота йшла саме з нього."""
+    try:
+        K.save(LAST_FILE, {
+            "label": str(label or action),
+            "action": str(action or ""),
+            "kind": str(kind or ""),
+            "title": str(title or "")[:120],
+            "about": str(about or "")[:600],
+            "means": str(SAID.get(action, action)),
+            "ts": _now().isoformat(timespec="seconds"),
+        })
+    except Exception as e:
+        _log("last save error: " + str(e))
+
+
+def answer_context(max_age_min: int = 180) -> str:
+    """Блок для промпту: яку кнопку Олег натиснув і під яким сповіщенням."""
+    try:
+        d = K.load(LAST_FILE, default={}) or {}
+    except Exception:
+        return ""
+    if not d or not d.get("label"):
+        return ""
+    ts = _dt(d.get("ts"))
+    if not ts:
+        return ""
+    age = (_now() - ts).total_seconds() / 60.0
+    if age < 0 or age > max_age_min:
+        return ""
+    out = ["", "ОСТАННЯ ВІДПОВІДЬ ОЛЕГА КНОПКОЮ (реальне натискання):",
+           "• натиснув: «" + str(d.get("label")) + "» — це означає: " +
+           str(d.get("means")) + " (" + str(ts.strftime("%d.%m %H:%M")) + ")"]
+    if d.get("title"):
+        out.append("• під сповіщенням: «" + str(d.get("title"))[:110] + "»")
+    if d.get("about"):
+        out.append("• текст того сповіщення: " + str(d.get("about"))[:400])
+    out.append("Відповідай саме на цей вибір: він стосується цього сповіщення, "
+               "а не чогось іншого. Не перепитуй те, що кнопка вже сказала.")
+    return "\n".join(out)
 
 
 # ─── AI: ПАМ'ЯТЬ ПРО РЕАКЦІЇ В ПРОМПТ ────────────────────────────────────────
@@ -391,9 +455,14 @@ def block() -> str:
     closed = []
     for ts, r in rows[:CTX_MAX]:
         name = r.get("title") or r.get("key") or r.get("kind")
-        lines.append("• " + str(ts.strftime("%d.%m %H:%M")) + " — «" +
-                     str(name)[:70] + "»: " +
-                     str(SAID.get(r.get("action"), r.get("action"))))
+        line = ("• " + str(ts.strftime("%d.%m %H:%M")) + " — «" +
+                str(name)[:70] + "»: натиснув «" +
+                str(r.get("label") or r.get("action")) + "» = " +
+                str(SAID.get(r.get("action"), r.get("action"))))
+        ab = str(r.get("about") or "").strip()
+        if ab:
+            line += " [сповіщення було про: " + ab[:140] + "]"
+        lines.append(line)
         if r.get("state") == "closed":
             closed.append(str(name)[:70])
     out = ["", "РЕАКЦІЇ ОЛЕГА (реальні натискання кнопок, не вигадка):"]
@@ -422,6 +491,9 @@ def inject(body_bytes, tag=""):
         except Exception:
             pass
         blk = block()
+        ans = answer_context()
+        if ans:
+            blk = (blk + "\n" + ans) if blk else ans
         if not blk:
             return body_bytes
         b["contents"][0]["parts"][0]["text"] = p + "\n" + blk + "\n" + MARK

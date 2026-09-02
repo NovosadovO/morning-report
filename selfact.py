@@ -315,7 +315,7 @@ def decide(ctx: str = None) -> list:
 def _kb(kind: str, title: str):
     try:
         import react
-        return react.keyboard(kind, title=title)
+        return react.keyboard(kind, title=title, text=title, tag=kind)
     except Exception:
         return None
 
