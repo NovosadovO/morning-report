@@ -1,14 +1,4 @@
 {
-  "77964": {
-    "sender": "hello@news.footshop.sk",
-    "sender_raw": "Footshop <hello@news.footshop.sk>",
-    "seen_ts": "2026-08-25T09:02:40.086887+00:00"
-  },
-  "77967": {
-    "sender": "newsletter@pelikan.sk",
-    "sender_raw": "Roland z Pelikána <newsletter@pelikan.sk>",
-    "seen_ts": "2026-08-25T09:50:21.268648+00:00"
-  },
   "77968": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1503,5 +1493,10 @@
     "sender": "noreply@atguest.com",
     "sender_raw": "noreply@atguest.com",
     "seen_ts": "2026-09-02T09:10:57.755480+00:00"
+  },
+  "78403": {
+    "sender": "newsletter@ticketportal.sk",
+    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
+    "seen_ts": "2026-09-02T09:11:02.541408+00:00"
   }
 }
