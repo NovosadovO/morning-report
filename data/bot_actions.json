@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олег, чи потрібно мені видалити завдання 'Зберегти акаунт Ro",
-      "detail": "У календарі на 30.08 є подія '11:00 🔔 Зберегти акаунт Rondogo', яка вже давно минула, а її статус не позначено як виконаний.",
-      "module": "selfact",
-      "ts": "2026-08-30T18:47:12"
-    },
-    {
       "kind": "note",
       "what": "Олег отримує сповіщення від The Breakdown та PLUNGE, що свід",
       "detail": "Свіжі листи від 'The Breakdown <newsletter@blockworks.com> | 🟪 Load-bearing' та 'PLUNGE <hello@plunge.com> | The Counterintuitive Sleep Fix' вказують на ці інтереси.",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від Google Health містить звіт про зниження фізичної активності Олега за минулий тиждень.",
       "module": "selfact",
       "ts": "2026-09-02T23:47:16"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав огляд новин від Avalanche Team1 за серпень 2026",
+      "detail": "Надійшов лист від Avalanche Team1 з підсумками серпня 2026 року, що містить важливі новини про Avalanche.",
+      "module": "selfact",
+      "ts": "2026-09-02T23:47:22"
     }
   ]
 }
