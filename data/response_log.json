@@ -9477,6 +9477,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: 📅 Пропоную додати в календар",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-02T19:36:36.326313+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_116943b84d"
     }
   ]
 }
