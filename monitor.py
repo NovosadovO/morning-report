@@ -3379,12 +3379,11 @@ def _get_report_slot(now_local):
     Повертає ключ слоту або None якщо ми не у вікні.
     Вікно: 0-2хв кожної години (звужено з 5 до 3 — антидубль)
     """
-    m = now_local.minute
     h = now_local.hour
     date_str = now_local.strftime("%Y-%m-%d")
-    if 0 <= m < 3:
-        return f"{date_str}T{h:02d}:00"
-    return None
+    # Слот = поточна година, у будь-яку хвилину. Дедуп за sent_slot лишає
+    # рівно ОДИН звіт на годину, але дозволяє догнати пропущену годину.
+    return f"{date_str}T{h:02d}:00"
 
 
 def _build_report_header(now_local, slot_key, cal_events_raw):

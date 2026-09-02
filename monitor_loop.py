@@ -279,7 +279,7 @@ def run_monitor_loop():
         m = now_local.minute
         # Запускаємо ТІЛЬКИ на першій хвилині години (:00)
         # Вікно звужено до m == 0 щоб виключити дублі при m=1,2
-        if m == 0:
+        if m in (0, 15, 30, 45):
             print(f"\n[{now.strftime('%Y-%m-%d %H:%M')} UTC] Running monitor INLINE (local {now_local.strftime('%H:%M')})...", flush=True)
             try:
                 # INLINE замість subprocess: логи AI-блоків видно в реальному часі,
@@ -293,8 +293,8 @@ def run_monitor_loop():
                 import traceback
                 print(f"Monitor error: {e}\n{traceback.format_exc()}", flush=True)
             # АНТИДУБЛЬ: спимо 3 хв щоб ГАРАНТОВАНО вийти за вікно m==0
-            print(f"[monitor] sleeping 180s after run (anti-dup guard)", flush=True)
-            time.sleep(180)
+            print(f"[monitor] sleeping 300s after run (anti-dup guard)", flush=True)
+            time.sleep(300)
         else:
             time.sleep(60)
 
