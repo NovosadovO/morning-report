@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримує сповіщення про вакансію Technical Writer в Octa",
-      "detail": "У 'СВІЖІ ЛИСТИ' є лист від 'Сповіщення про вакансії LinkedIn' про вакансію 'Technical Writer в Octave'.",
-      "module": "selfact",
-      "ts": "2026-08-30T17:30:30"
-    },
-    {
-      "kind": "note",
       "what": "Олег цікавиться новинами та аналітикою у сфері фізичного AI",
       "detail": "У 'СВІЖІ ЛИСТИ' є лист від 'The Breakdown <newsletter@blockworks.com>' з темою 'The data layer of physical AI and robotics'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від VanEck через LinkedIn свідчить про інтерес Олега до порівняльного аналізу золота та біткоїна.",
       "module": "selfact",
       "ts": "2026-09-02T22:59:32"
+    },
+    {
+      "kind": "notify",
+      "what": "Зменшення активності за останній тиждень",
+      "detail": "Свіжий лист від Google Health 'Your weekly progress report from Google Health' містить інформацію про значне зниження активності.",
+      "module": "selfact",
+      "ts": "2026-09-02T22:59:39"
     }
   ]
 }
