@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-02T02:01:45.187165",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Top 10 Richest People In The World—September 2026</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78381"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78381"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78381"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78381"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78381"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78381"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-02T02:01:47.097562",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Digital Operations &amp; Insights Analyst в Caterpillar I</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -607,6 +568,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78388"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-02T03:18:12.177118",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Profesia.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk»\n\n<i>«Nové pracovné ponuky \"Personalizované pracovné ponuky e-mailom\"\r\n\r\nLogo Profesia ( https://www.profesia.sk/?utm_medium=mail&amp;utm_source=10007&amp;utm_campaign=10007&amp;utm_term=2026-09-02&amp;eid=6a976e907871407d5e8e6c7f2cb69175&amp;utm_content=logo )\r\n\r\n*************************************************************...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78389"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78389"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78389"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78389"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78389"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78389"
             }
           ]
         ]
