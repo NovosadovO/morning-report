@@ -1,4 +1,19 @@
 {
+  "selfact|2026-09-02t20_39_51_788458": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Незавершені справи перед відпусткою\",     \"text\": \"Олеже, зверни увагу, що у тебе є кілька незавершених справ ",
+    "ts": "2026-09-02T20:39:51.788458"
+  },
+  "bills|2026-09-02t20_34_29_554886": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-09-02T20:34:29.554886"
+  },
+  "openloop_promises|2026-09-02t20_31_15_582928": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-02T20:31:15.582928"
+  },
   "action_detect|2026-09-02t20_30_45_242359": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати легкий сніданок\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перед сном заплануй легк",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-03\", \"action_time\": null, \"action_summary\": \"Поставити нагадування на 3.09 ні",
     "ts": "2026-09-02T19:03:46.733637"
-  },
-  "action_detect|2026-09-02t19_03_35_682577": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Стабілізувати сон\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Звернути увагу на стабілізацію сну",
-    "ts": "2026-09-02T19:03:35.682577"
-  },
-  "action_detect|2026-09-02t19_03_35_625194": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-03\", \"action_time\": null, \"action_summary\": \"Поставити нагадування про нічну ",
-    "ts": "2026-09-02T19:03:35.625194"
-  },
-  "action_detect|2026-09-02t19_03_24_767815": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-03\", \"action_time\": null, \"action_summary\": \"Поставити нагадування на 3 верес",
-    "ts": "2026-09-02T19:03:24.767815"
   }
 }
