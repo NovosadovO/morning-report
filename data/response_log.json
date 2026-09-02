@@ -9602,6 +9602,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Переглянути Підготовку до відпустки",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-02T22:06:39.231579+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: 📅 Пропоную додати в календар",
+      "answer": "yes"
     }
   ]
 }
