@@ -1,9 +1,4 @@
 {
-  "77972": {
-    "sender": "info@emails.tesco.sk",
-    "sender_raw": "\"Tesco Clubcard\" <info@emails.tesco.sk>",
-    "seen_ts": "2026-08-25T11:26:40.220435+00:00"
-  },
   "77973": {
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-09-02T10:14:41.772682+00:00"
+  },
+  "78409": {
+    "sender": "news@msk.marionnaud.com",
+    "sender_raw": "\"Marionnaud\" <news@msk.marionnaud.com>",
+    "seen_ts": "2026-09-02T10:26:59.297321+00:00"
   }
 }
