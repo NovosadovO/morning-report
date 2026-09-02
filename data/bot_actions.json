@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав попередження від Rondogo.sk про можливе видален",
-      "detail": "Свіжий лист від 'Rondogo.sk Akcie' і подія в календарі на 30.08 о 11:00 'Зберегти акаунт Rondogo'.",
-      "module": "selfact",
-      "ts": "2026-08-30T12:33:57"
-    },
-    {
-      "kind": "note",
       "what": "Підписка Runable мала кілька невдалих платежів, і в нотатках",
       "detail": "Інформація про підписки Runable та нотатка про необхідність оновлення платіжної інформації.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Серед свіжих листів є 'The Daily: Why Strategy sold bitcoin at $60K just to buy it back at $80K' від The Block та 'BitMine Nears 5% of ETH' від WhaleTales.",
       "module": "selfact",
       "ts": "2026-09-02T19:39:08"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав звіт про свій прогрес у Google Health, де вказа",
+      "detail": "У листі від Google Health 'Your weekly progress report from Google Health' зазначено: '42,542 fewer than last week' (кроків), '11 below last week' (поверхів), '38.26 below last week' (кілометрів).",
+      "module": "selfact",
+      "ts": "2026-09-02T19:39:15"
     }
   ]
 }
