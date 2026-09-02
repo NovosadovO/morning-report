@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав сповіщення про вакансії Back Office Sales Admin",
-      "detail": "Свіжі листи від LinkedIn Job Alerts про вакансії 'Back Office Sales Admin в Brazing Technologies Europe' та 'Application Support Specialist в Arcondis Group' із зазначенням 'Сповіщення про вакансії за запитом Адміністративний помічник в Kosice'.",
-      "module": "selfact",
-      "ts": "2026-08-30T10:31:52"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав 20 нових персоналізованих робочих пропозицій ві",
       "detail": "Свіжий лист від 'Profesia.sk' з темою 'Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Наближається початок відпустки та поїздка, що є важливою подією і потребує уваги до деталей.",
       "module": "selfact",
       "ts": "2026-09-02T18:37:32"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, ти отримав детальні інформації щодо поїздки в Малагу в",
+      "detail": "Лист від Maroš Sivák містить важливу інформацію щодо майбутньої поїздки в Малагу, яку Олег міг не прочитати.",
+      "module": "selfact",
+      "ts": "2026-09-02T18:37:50"
     }
   ]
 }
