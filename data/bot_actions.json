@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Інтерес до вакансій Business Analyst",
-      "detail": "Згідно зі свіжими листами: 'Сповіщення про вакансії LinkedIn | Business Analyst - Data Management в Capco, текст: Сповіщення про вакансії в Kosice Нові вакансії відповідають вашим налаштуванням. Business Analyst - Data Management Capco Košice'",
-      "module": "selfact",
-      "ts": "2026-08-30T15:41:51"
-    },
-    {
       "kind": "event",
       "what": "Привітати Олю з Днем народження",
       "detail": "Календар на 01.09 містить дві події: '07:00 🔔 Привітати Олю з Днем народження' та '17:00 🤝 привітати Олю з Днем народження'. Також у 'ВАЖЛИВІ ДАТИ' є 'd|олі|09-01' з типом 'birthday'.",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від Google Health <google-health-noreply@google.com> | Your weekly progress report from Google Health містить дані: 'Avg 8,832 steps/day red downward arrow 42,542 fewer than last week', 'total floors red downward arrow 11 below last week', 'total distance red downward arrow 38.26 below last wee",
       "module": "selfact",
       "ts": "2026-09-02T20:55:21"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу, що ти пропустив заплановані на сьогодні",
+      "detail": "Згідно з календарем, Олег мав бігати, відвідати сауну та випити 2л+ води 02.09, але позначив ці події як '❌'. Крім того, Google Health звіт показує зниження його активності.",
+      "module": "selfact",
+      "ts": "2026-09-02T21:10:45"
     }
   ]
 }
