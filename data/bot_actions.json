@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "openmind",
-      "what": "digest",
-      "detail": "відкритий огляд ринку + горизонт",
-      "module": "книга або довгий текст, який варто прочитати цього тижня",
-      "ts": "2026-08-30T18:30:42"
-    },
-    {
       "kind": "note",
       "what": "Олег активно цікавиться вакансіями Regional AI Run Lead, Tec",
       "detail": "Нові сповіщення про вакансії з LinkedIn підтверджують інтереси Олега у цих сферах.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, calories, stress, sleep_total_min",
       "module": "qwsync",
       "ts": "2026-09-02T23:42:46"
+    },
+    {
+      "kind": "note",
+      "what": "збережено дані здоров'я",
+      "detail": "steps=9637, hr_avg=81, calories=407, stress=35, sleep_total_min=240, sleep_hours=4.0, date=2026-09-02, source=qwatch_auto, saved_at=2026-09-02 23:42",
+      "module": "healthai",
+      "ts": "2026-09-02T23:42:53"
     }
   ]
 }
