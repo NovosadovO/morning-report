@@ -9692,6 +9692,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_cbfa8bb62c"
+    },
+    {
+      "ts": "2026-09-02T22:31:24.559434+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти Maroš Sivák про поїздку в Малагу",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-09-03"
+      }
     }
   ]
 }
