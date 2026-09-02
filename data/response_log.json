@@ -9736,6 +9736,12 @@
         "kind": "reminder",
         "date": "2026-09-03"
       }
+    },
+    {
+      "ts": "2026-09-03T00:01:36.699530+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Запланувати активність",
+      "answer": "yes"
     }
   ]
 }
