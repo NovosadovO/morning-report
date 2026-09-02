@@ -1057,14 +1057,15 @@
     "saved_at": "2026-09-01 21:27"
   },
   "2026-09-02": {
-    "steps": 9637,
-    "hr_avg": 81,
-    "calories": 407,
-    "stress": 35,
-    "sleep_total_min": 240,
-    "sleep_hours": 4.0,
     "date": "2026-09-02",
-    "source": "qwatch_auto",
-    "saved_at": "2026-09-02 23:42"
+    "health_score": 92,
+    "steps": 9637,
+    "sleep_quality": 100,
+    "hr_avg": 81,
+    "calories": 406,
+    "hrv": 47,
+    "spo2": null,
+    "source": "qwatch",
+    "saved_at": "2026-09-02 23:43"
   }
 }
