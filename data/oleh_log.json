@@ -4529,6 +4529,18 @@
       "data": "habit_no_sauna",
       "label": "❌ Ні",
       "ts": "2026-09-02T19:24:56"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_water",
+      "label": "❌ Ні",
+      "ts": "2026-09-02T19:24:58"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_run",
+      "label": "❌ Ні",
+      "ts": "2026-09-02T19:25:00"
     }
   ]
 }
