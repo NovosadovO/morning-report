@@ -9668,6 +9668,12 @@
       "category": "confirm",
       "question": "calrem_skip: Розібратися з документами",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-02T22:08:04.123409+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_97cf0d7d4e"
     }
   ]
 }
