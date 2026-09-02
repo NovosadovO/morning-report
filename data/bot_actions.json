@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримує численні листи про крипто-дайджести від різних",
-      "detail": "Зі свіжих листів: \"Daily Crypto Digest — August 30\" від Oleh Bezuhlyi через LinkedIn та \"AI-curated Daily Crypto Digest - August 30\" від CryptoBeholder.com через LinkedIn.",
-      "module": "selfact",
-      "ts": "2026-08-30T15:25:41"
-    },
-    {
-      "kind": "note",
       "what": "Інтерес до вакансій Business Analyst",
       "detail": "Згідно зі свіжими листами: 'Сповіщення про вакансії LinkedIn | Business Analyst - Data Management в Capco, текст: Сповіщення про вакансії в Kosice Нові вакансії відповідають вашим налаштуванням. Business Analyst - Data Management Capco Košice'",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Календар на 02.09 показує '18:10 🏃 Біг ❌; 18:10 🧖 Сауна ❌; 18:10 💧 Вода (2л+) ❌', а також '08:00 🚿 Холодний душ ✅' (перший) та '08:00 🚿 Холодний душ ✅' (другий) – при цьому другий душ відмічений як виконаний, а перший – ні. З пам'яті переписки видно, що Олег відхиляв нагадування про ці активності.",
       "module": "selfact",
       "ts": "2026-09-02T20:55:14"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримав щотижневий звіт від Google Health, який показує",
+      "detail": "Лист від Google Health <google-health-noreply@google.com> | Your weekly progress report from Google Health містить дані: 'Avg 8,832 steps/day red downward arrow 42,542 fewer than last week', 'total floors red downward arrow 11 below last week', 'total distance red downward arrow 38.26 below last wee",
+      "module": "selfact",
+      "ts": "2026-09-02T20:55:21"
     }
   ]
 }
