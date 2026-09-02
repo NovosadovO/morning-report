@@ -16,6 +16,7 @@
   },
   "2026-09-02": {
     "anomaly_weight_rising": true,
-    "evening_checkin": true
+    "evening_checkin": true,
+    "anomaly_no_run": true
   }
 }
