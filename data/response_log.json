@@ -9686,6 +9686,12 @@
       "category": "confirm",
       "question": "calrem_skip: Перевірити умови кредиту Temu",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-02T22:08:25.556803+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_cbfa8bb62c"
     }
   ]
 }
