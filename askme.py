@@ -153,6 +153,10 @@ def ask(question: str, kind: str = "confirm", key: str = "",
     if is_promo(q + " " + str((meta or {}).get("summary", ""))):
         _log("реклама — питання не ставлю: " + q[:60])
         return False
+    if _is_tracker(str((meta or {}).get("summary", ""))):
+        _log("трекер/галочка — питання не ставлю: " +
+             str((meta or {}).get("summary", ""))[:60])
+        return False
     if not force:
         if answered(key):
             _log("уже відповів — не питаю вдруге: " + key[:50])
@@ -257,6 +261,22 @@ def _do_plan(meta: dict, q: str) -> str:
 _ROUTINE = ("зміна", "shift", "нічна", "рання", "сон", "будильник", "обід",
             "робота", "work")
 
+# Записи-галочки й трекери звичок — це НЕ події, про них не перепитуємо.
+_STATUS_MARKS = ("✅", "❌", "☑", "✔", "🚫", "✓", "[x]", "[ ]")
+_HABITISH = ("вода", "душ", "сауна", "чай", "спрей", "вітамін", "крем",
+             "зарядк", "розтяжк", "медитац", "щоденник", "трекер", "habit",
+             "звичк", "калор", "вага", "крок", "steps", "чекліст", "checklist",
+             "план дня", "рутин", "виконано", "done")
+
+
+def _is_tracker(title: str) -> bool:
+    """Галочка звички/трекер, а не подія: «🏃 Біг ❌», «💧 Вода (2л+) ✅»."""
+    t = str(title or "")
+    if any(m in t for m in _STATUS_MARKS):
+        return True
+    low = t.lower()
+    return any(w in low for w in _HABITISH)
+
 
 def _ev_title(ev) -> str:
     if isinstance(ev, dict):
@@ -299,6 +319,12 @@ def sweep() -> int:
             st = _ev_start(ev)
             if not title or not st or _is_routine(title) or is_promo(title):
                 continue
+            if _is_tracker(title):
+                continue
+            # Питаємо лише про те, що справді варте питання: зустрічі, люди,
+            # платежі, візити, дзвінки, дедлайни — а не про побутові позначки.
+            if len(title.strip()) < 5:
+                continue
             age_h = (now - st).total_seconds() / 3600.0
             if age_h < 1.5 or age_h > 30:
                 continue
@@ -324,7 +350,7 @@ def sweep() -> int:
                 continue
             title = str(r.get("text") or r.get("title") or "")[:110]
             due = _dt(r.get("when") or r.get("due") or r.get("date"))
-            if not title or not due or is_promo(title):
+            if not title or not due or is_promo(title) or _is_tracker(title):
                 continue
             over_h = (now - due).total_seconds() / 3600.0
             if over_h < 3 or over_h > 24 * 14:
