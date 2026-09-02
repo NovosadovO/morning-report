@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег ігнорує або відкладає вирішення питання з акаунтом Rond",
-      "detail": "Олег проігнорував нагадування 'Зберегти акаунт Rondogo' сьогодні о 11:00, а також неодноразово натискав 'Не нагадуй' та 'Видалити' щодо цього завдання. Крім того, він отримав лист 'Môžete prísť o účet, Oleh 🛑' від Rondogo.sk, який попереджає про можливе видалення неактивного акаунту.",
-      "module": "selfact",
-      "ts": "2026-08-30T16:13:51"
-    },
-    {
       "kind": "notify",
       "what": "Зверни увагу на лист від The Economist 'Well Informed: Hit t",
       "detail": "Олег цікавиться здоров'ям, про що свідчать його запити '/звички', '/графікз', '/аі що для мене найважливіше на цьому тижні за всіма даними', а також його 'Оцінка здоров'я'. Лист від The Economist з темою 'Well Informed: Hit the gym with…video games?' може бути для нього актуальним.",
@@ -2799,6 +2792,13 @@
       "detail": "Є свіжий лист від Maroš Sivák <maros.sivak.sro@gmail.com> з темою 'InterFin Malaga trip - detailné informácie', який містить важливу інформацію для майбутньої поїздки в Малагу.",
       "module": "selfact",
       "ts": "2026-09-02T21:26:40"
+    },
+    {
+      "kind": "notify",
+      "what": "Зниження фізичної активності",
+      "detail": "У свіжих листах є лист від Google Health <google-health-noreply@google.com> 'Your weekly progress report from Google Health', де вказано '42,542 fewer than last week' для кроків, '11 below last week' для поверхів, і '38.26 below last week' для відстані.",
+      "module": "selfact",
+      "ts": "2026-09-02T21:41:32"
     }
   ]
 }
