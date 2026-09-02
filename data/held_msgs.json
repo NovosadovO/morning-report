@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-02T00:15:27.806304",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Head of Product в Scrambly»\n\n<i>«Сповіщення про вакансії в Slovakia\r\n        \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nHead of Product\r\nScrambly\r\nSlovakia\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4458896863/?trackingId=1q6VavjveMGq9VJMmLXb8w%3D%3D&amp;refId=xyn3AZfHoZA0lTHMO6ywKA%3D%3D&amp;lipi=...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78383"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78383"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78383"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78383"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78383"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78383"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-02T00:15:30.667544",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>FOX</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🍁 FOX Fall Preview 🍁»\n\n<i>«Best Medicine trailer, behind-the-scenes, and more!\nFOX ( https://clicks.fox.com/f/a/OBRmZNuI0RkodUl41iFokQ~~/AAQRxRA~/z80oo0w4St6LwjjjD2HJDYRziBpn3txLBy9Hk6Lp4W314z_LbJJwJiIHeZoABVc9MeywGOyjoS96EyUWaf2FoNw8tT5IBya-_ihJIiKcPz-sTABSKmj8qdZolE05d0ZT )          Get Ready\nfor\nSeason 2    Best Medicine r...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -574,6 +535,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78382"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-02T02:01:45.187165",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Top 10 Richest People In The World—September 2026</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78381"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78381"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78381"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78381"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78381"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78381"
             }
           ]
         ]
