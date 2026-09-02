@@ -9495,6 +9495,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_116943b84d"
+    },
+    {
+      "ts": "2026-09-02T19:36:52.533128+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
+      "answer": "yes"
     }
   ]
 }
