@@ -9483,6 +9483,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_116943b84d"
+    },
+    {
+      "ts": "2026-09-02T19:36:50.105279+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_488db31cd3"
     }
   ]
 }
