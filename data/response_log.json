@@ -9335,6 +9335,17 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-09-02T16:31:25.503921+00:00",
+      "category": "calendar_button",
+      "question": "Miriam, Classic strih, Staré Mesto 463, 040 01 Košice",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t3d",
+        "when": "16:30–17:00",
+        "note": null
+      }
     }
   ]
 }
