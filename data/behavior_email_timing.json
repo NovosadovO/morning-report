@@ -1,9 +1,4 @@
 {
-  "77942": {
-    "sender": "newsletter@message.reserved.com",
-    "sender_raw": "Reserved <newsletter@message.reserved.com>",
-    "seen_ts": "2026-08-24T17:04:39.955059+00:00"
-  },
   "77943": {
     "sender": "streetguide@sizeer.sk",
     "sender_raw": "Sizeer Street guide <streetguide@sizeer.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-09-02T00:14:15.036215+00:00"
+  },
+  "78387": {
+    "sender": "no-reply@mail.thedefiant.io",
+    "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
+    "seen_ts": "2026-09-02T00:20:24.038563+00:00"
   }
 }
