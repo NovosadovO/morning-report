@@ -3610,6 +3610,14 @@ def handle_command(chat_id, text):
         except Exception as _e_rx:
             send(chat_id, f"⚠️ Помилка реакцій: {str(_e_rx)[:300]}")
 
+    elif text.lower().strip() in ["/питання", "/відповіді", "/questions",
+                                  "/askme"]:
+        try:
+            import askme as _am_cmd
+            send(chat_id, _am_cmd.report())
+        except Exception as _e_am:
+            send(chat_id, f"⚠️ Помилка питань: {str(_e_am)[:300]}")
+
     elif text.lower().strip() in ["/дати", "/dates", "дати", "/дн", "/birthdays"]:
         try:
             import sys as _sd2, os as _od2
@@ -7077,6 +7085,25 @@ def _route_callback(cb, confirmed: bool = False):
               data.startswith("calrem_add_") or data.startswith("calrem_skip_") or
               data.startswith("shop_add_") or data.startswith("shop_skip_")):
             handle_email_callback(cb)
+        elif data.startswith("am_"):
+            # Кнопки відповіді на ПИТАННЯ бота (askme.py): варіанти завжди
+            # відповідають самому питанню, відповідь запам'ятовується назавжди.
+            try:
+                import askme as _am_cb
+                _ar = _am_cb.handle(data, cb) or {}
+                api("answerCallbackQuery", {
+                    "callback_query_id": cb["id"],
+                    "text": (_ar.get("text") or "Записав")[:190],
+                    "show_alert": bool(_ar.get("alert", True))})
+                _akb = _ar.get("keyboard")
+                if _akb is not None:
+                    api("editMessageReplyMarkup", {
+                        "chat_id": chat_id,
+                        "message_id": cb["message"]["message_id"],
+                        "reply_markup": {"inline_keyboard": _akb}})
+            except Exception as _e_am_cb:
+                print(f"[askme] callback error: {_e_am_cb}", flush=True)
+                cb_notify(cb["id"], chat_id, "⚠️ Помилка відповіді", alert=True)
         elif data.startswith("rx_"):
             # Кнопки реакції під сповіщеннями (react.py). Як і mc_*, вони НЕ
             # отримують попереднього ack — тому відповідаємо тут першими,
@@ -7319,7 +7346,7 @@ def _dispatch_callback_async(cb):
     # mc_* (події з листів) відповідають САМІ — справжнім випливаючим вікном
     # (show_alert). Якщо ack'нути тут, Telegram відкине другу відповідь
     # ("query is too old") і Олег побачить дрібний тост замість вікна.
-    _NO_PREACK = ("mc_del_", "mc_yes_", "mc_no_", "mc_ok_", "rx_")
+    _NO_PREACK = ("mc_del_", "mc_yes_", "mc_no_", "mc_ok_", "rx_", "am_")
     if any(data.startswith(_p) for _p in _NO_PREACK):
         _ack_text = None
     else:

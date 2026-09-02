@@ -1648,6 +1648,13 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     except Exception as _e_rct:
         print("[react] skip: " + str(_e_rct), flush=True)
 
+    # ─── ВІДПОВІДІ НА ПИТАННЯ БОТА: не питати те саме вдруге ─────────────────
+    try:
+        import askme as _amj
+        body_bytes = _amj.inject(body_bytes, tag)
+    except Exception as _e_amj:
+        print("[askme] skip: " + str(_e_amj), flush=True)
+
     # ─── ЄДИНИЙ МОЗОК: пам'ять + свобода в КОЖЕН AI-виклик ───────────────────
     # Раніше feedback_ctx підмішувався лише у 3 промпти з ~24 — тому AI не
     # пам'ятав відповідей Олега і повторював відхилене. Інжект тут накриває всі

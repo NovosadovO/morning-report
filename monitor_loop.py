@@ -1287,6 +1287,13 @@ def run_assistant_watcher():
             # Наглядач над наглядачами: раз на годину перевіряє КОЖЕН датчик
             # живим запитом і каже Олегу, коли бот осліп. Плюс щоденна
             # гарантія «нічого не пропущено» ввечері.
+            # Питання з доречними кнопками: минулі події, прострочене,
+            # порожній день. Відповіді пам'ятаються — повторів немає.
+            try:
+                import askme as _am_w
+                _am_w.sweep()
+            except Exception as _e_amw:
+                print(f"[askme] sweep error: {_e_amw}", flush=True)
             try:
                 import watchdog as _wd_w
                 _wd_w.run()

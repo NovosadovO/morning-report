@@ -308,7 +308,14 @@ def gemini_json(prompt: str, max_tokens: int = 1400, temperature: float = 0.5,
 
 def calendar_event(summary: str, start_dt: datetime, end_dt: datetime = None,
                    description: str = "") -> dict:
-    """Створює подію в Google Calendar Олега."""
+    """Створює подію в Google Calendar Олега. Рекламу не пускає."""
+    try:
+        import askme as _am_g
+        if _am_g.is_promo(str(summary) + " " + str(description or "")):
+            log("ai_kit", "календар: реклама відкинута — " + str(summary)[:70])
+            return {"ok": False, "error": "promo blocked"}
+    except Exception:
+        pass
     try:
         import context as _ctx
         return _ctx.create_calendar_event(
