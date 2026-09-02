@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримав сповіщення про вакансію Technical Writer в Octa",
-      "detail": "У свіжих листах є 'Сповіщення про вакансії LinkedIn | Technical Writer в Octave' з текстом 'Нові вакансії відповідають вашим налаштуванням.' та в пам'яті про Олега зазначено, що він цікавиться цією вакансією.",
-      "module": "selfact",
-      "ts": "2026-08-30T19:50:10"
-    },
-    {
       "kind": "hcoach",
       "what": "full_report",
       "detail": "повна аналітика здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від Avalanche Team1 <avalancheteam1@substack.com> з темою 'AVALANCHE AUGUST 2026 RECAP'.",
       "module": "selfact",
       "ts": "2026-09-03T00:48:54"
+    },
+    {
+      "kind": "note",
+      "what": "Інтерес до вакансії Regionalny kierownik sprzedaży",
+      "detail": "З листа від LinkedIn та календаря видно, що Олег цікавиться цією вакансією, і це новий факт для нотаток.",
+      "module": "selfact",
+      "ts": "2026-09-03T01:03:41"
     }
   ]
 }
