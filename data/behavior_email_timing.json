@@ -1,9 +1,4 @@
 {
-  "77988": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "Temu <temu@eu.temuemail.com>",
-    "seen_ts": "2026-08-25T16:51:45.961666+00:00"
-  },
   "77990": {
     "sender": "support@pixoryofficial.com",
     "sender_raw": "\"Pixory\" <support@pixoryofficial.com>",
@@ -1498,5 +1493,10 @@
     "sender": "contact@avax.network",
     "sender_raw": "Avalanche Summit <contact@avax.network>",
     "seen_ts": "2026-09-02T15:02:30.711103+00:00"
+  },
+  "78430": {
+    "sender": "zeno@updates.resend.com",
+    "sender_raw": "Zeno from Resend <zeno@updates.resend.com>",
+    "seen_ts": "2026-09-02T15:37:06.928797+00:00"
   }
 }
