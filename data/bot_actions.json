@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Підписка Runable мала кілька невдалих платежів, і в нотатках",
-      "detail": "Інформація про підписки Runable та нотатка про необхідність оновлення платіжної інформації.",
-      "module": "selfact",
-      "ts": "2026-08-30T12:34:04"
-    },
-    {
-      "kind": "note",
       "what": "Олег має привітати Олю з Днем народження 1 вересня.",
       "detail": "Подія в календарі на 01.09: 'Привітати Олю з Днем народження' та 'Олі — день народження'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У листі від Google Health 'Your weekly progress report from Google Health' зазначено: '42,542 fewer than last week' (кроків), '11 below last week' (поверхів), '38.26 below last week' (кілометрів).",
       "module": "selfact",
       "ts": "2026-09-02T19:39:15"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на звіт Google Health: твої показники акт",
+      "detail": "У листі від Google Health 'Your weekly progress report from Google Health' зазначено значне зниження показників активності, тоді як у пам'яті про Олега є дані про 'Загальна оцінка здоров'я: 90% (Дата: 01.09.2026, 13:16)'.",
+      "module": "selfact",
+      "ts": "2026-09-02T19:39:24"
     }
   ]
 }
