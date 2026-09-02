@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-02T00:25:43.307615",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Google Health</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Your weekly progress report from Google Health»\n\n<i>«Google Health Google Health\r\n\r\n\r\nWeekly stats\r\n\r\n\r\n\r\n\r\n\r\n\r\nUser avatar\r\n\r\n\r\nHi, Oleg N.!\r\n\r\n\r\n\r\nHere are your stats for Aug 22 - Aug 28\r\n\r\n\r\n\r\n\r\n\r\n\r\nBest day Goal met Goal met Goal percentage No steps No steps No steps\r\n\r\nBest day!\r\n20,656 Mon Tue Wed Thu Fri Sat\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n61,824\r\n\r\ntotal steps...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78385"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78385"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78385"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78385"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78385"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78385"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-02T00:35:43.459030",
       "kind": "chunk",
       "text": "🎯 ТОЧНИЙ АСПЕКТ\n☽ <b>Місяць</b> ⚹ ♃ <b>Натальний Юпітер</b> <b>(ТОЧНИЙ!)</b>\n📍 Місяць у <b>Телець ♉</b> | Натальний Юпітер у Рак ♋, 12-й дім\n<i>Секстиль · Підсвідоме</i>\n\n📖 <b>Що означає Секстиль:</b>\n🟢 Гармонійна можливість — легкий потік енергії. Сприятливий момент діяти, домовлятися, вчитися нового. Потрібна твоя ініціатива.\n\n",
@@ -574,6 +535,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78380"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-02T02:01:49.040293",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Robinhood Chain has a breakout app</b>\n👤 DefiLlama Newsletter &lt;defillama@mail.beehiiv.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78379"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78379"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78379"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78379"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78379"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78379"
             }
           ]
         ]
