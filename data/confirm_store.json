@@ -8934,7 +8934,24 @@
     "action": "calrem_skip",
     "pid": "gen_1788379417956",
     "subject": "Розібратися з документами",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 84265,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1788379417956"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1788379417956"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-02T22:07:39.214451+00:00"
   }
 }
