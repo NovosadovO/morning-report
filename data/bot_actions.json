@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав сповіщення про вакансію Security Consultant в S",
-      "detail": "Лист від Сповіщення про вакансії LinkedIn з темою 'Security Consultant в Syntax'.",
-      "module": "selfact",
-      "ts": "2026-08-31T14:45:01"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримує розсилки від The Daily Bone та CMC Spotlight пр",
       "detail": "Свіжі листи від The Daily Bone, CMC Spotlight та The Economist через LinkedIn.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "steps=8866, hr_avg=36, calories=446, spo2=97, sleep_total_min=480, sleep_hours=8.0, date=2026-09-03, source=qwatch_auto, saved_at=2026-09-03 11:31",
       "module": "healthai",
       "ts": "2026-09-03T11:31:17"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-09-03",
+      "detail": "автосинк з годинника: steps, hr_avg, calories, spo2, sleep_total_min",
+      "module": "qwsync",
+      "ts": "2026-09-03T11:31:22"
     }
   ]
 }
