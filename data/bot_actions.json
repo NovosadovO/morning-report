@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав нові персоналізовані пропозиції роботи від Prof",
-      "detail": "Свіжі листи від 'Profesia.sk' <support@profesia.sk> з темами 'Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk' та '17 nových pracovných ponúk'.",
-      "module": "selfact",
-      "ts": "2026-09-01T05:45:37"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав сповіщення про вакансію Senior Program Manager",
       "detail": "Свіжий лист від 'Сповіщення про вакансії LinkedIn' <jobalerts-noreply@linkedin.com> з темою 'Senior Program Manager в EPAM Systems'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Згідно з 'ПАМ'ЯТЬ ПРО ОЛЕГА', Олег зараз на нічній зміні, яка закінчується о 06:00, і йому потрібно прийняти Armolopid Plus після зміни перед сном. Це важливе нагадування про його здоров'я.",
       "module": "selfact",
       "ts": "2026-09-03T23:06:24"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу, що 07.09 у тебе починається відпустка в",
+      "detail": "Наявність кількох листів про відпустку в Малазі (від Maroš Sivák та chekin.com) та подій у календарі (07.09: Відпустка в Малазі, Початок відпустки в Малазі, Бронювання August Villa Málaga - Villa, Поїздка в Малагу, Іспанія) свідчить про важливість цієї події, і Олег міг не звернути увагу на всі дета",
+      "module": "selfact",
+      "ts": "2026-09-03T23:22:17"
     }
   ]
 }
