@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег має невирішені питання щодо бронювань, які вимагають до",
-      "detail": "Є завислі петлі з такими назвами: 'додати скріншоти повідомлень від туроператора', 'скасувати бронювання', 'cancel', 'прикріпити скріншоти…(обрізано)'.",
-      "module": "selfact",
-      "ts": "2026-08-31T04:07:55"
-    },
-    {
-      "kind": "note",
       "what": "Олег цікавиться новинами у сфері фінтеху та AI, зокрема досл",
       "detail": "Олег отримав лист від Linas from Linas's Newsletter з заголовком 'Revolut Research proves fintech’s real AI moat is proprietary data 🤖📊; Stripe now owns the $140B startup Legal'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є розсилка від CryptoJobsList з переліком вакансій, що свідчить про його інтерес.",
       "module": "selfact",
       "ts": "2026-09-03T04:26:22"
+    },
+    {
+      "kind": "notify",
+      "what": "Зверни увагу на лист від LinkedIn щодо вакансії Engineering",
+      "detail": "У свіжих листах є сповіщення від LinkedIn про вакансію Engineering Manager, і компанія активно наймає.",
+      "module": "selfact",
+      "ts": "2026-09-03T04:26:29"
     }
   ]
 }
