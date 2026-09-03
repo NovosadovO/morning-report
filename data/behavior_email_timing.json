@@ -1,14 +1,4 @@
 {
-  "78033": {
-    "sender": "peknyden@zlavomat.sk",
-    "sender_raw": "\"Zlavomat.sk\" <peknyden@zlavomat.sk>",
-    "seen_ts": "2026-08-26T12:56:29.335587+00:00"
-  },
-  "78036": {
-    "sender": "invoice+statements+acct_1raxgujk3urplkao@stripe.com",
-    "sender_raw": "Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com>",
-    "seen_ts": "2026-08-26T13:27:03.862492+00:00"
-  },
   "78037": {
     "sender": "saksham_t@runable.com",
     "sender_raw": "Team Runable <saksham_t@runable.com>",
@@ -1503,5 +1493,10 @@
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
     "seen_ts": "2026-09-03T11:52:55.614025+00:00"
+  },
+  "78480": {
+    "sender": "newsletter@mail.dailybones.com",
+    "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
+    "seen_ts": "2026-09-03T12:09:25.864849+00:00"
   }
 }
