@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-03t20_25_49_391913": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Невдалий платіж Runable\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Платіж $10.00 до Runable був",
+    "ts": "2026-09-03T20:25:49.391913"
+  },
   "email_ai_item|2026-09-03t20_18_27_986442": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Pull&Bear є рекламною розсилкою, яка пропонує ознайомитися з різними фасонами джинсів (WIDE, FLARE, BARREL). Він не містит",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Зверніть увагу, що платежі до Runable на $10.00 були невдалими кілька р",
     "ts": "2026-09-03T19:26:07.567615"
-  },
-  "action_detect|2026-09-03t19_21_18_316515": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжну ",
-    "ts": "2026-09-03T19:21:18.316515"
   }
 }
