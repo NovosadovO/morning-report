@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-09-03t09_41_07_435762": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-03T09:41:07.435762"
+  },
+  "selfact|2026-09-03t09_37_44_558358": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу: платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію, інакше пі",
+    "ts": "2026-09-03T09:37:44.558358"
+  },
   "email_ai_item|2026-09-03t09_35_39_990234": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від MetaMask Team інформує про останні оновлення та функції, зокрема про новий рахунок MetaMask Money Account, який пропонує до 6%",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Адаптація кар'єри та сім'ї\", \"action_date\": \"2026-09-05\", \"action_time\": null, \"action_summary\": \"Адаптуватися до н",
     "ts": "2026-09-03T08:03:21.307767"
-  },
-  "action_detect|2026-09-03t08_03_21_213940": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз та інформацію про ",
-    "ts": "2026-09-03T08:03:21.213940"
-  },
-  "action_detect|2026-09-03t08_03_10_287314": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити прострочені рахунки та підписки\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Знайди 15 х",
-    "ts": "2026-09-03T08:03:10.287314"
   }
 }
