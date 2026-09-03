@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Вітання для Олі",
-      "detail": "У календарі на 01.09 зазначено: 11:15 🎂 Олі — день народження.",
-      "module": "selfact",
-      "ts": "2026-09-01T05:30:21"
-    },
-    {
       "kind": "note",
       "what": "Олег отримав детальні інформації щодо поїздки до Малаги від",
       "detail": "Свіжий лист від 'Maroš Sivák <maros.sivak.sro@gmail.com>' з темою 'InterFin Malaga trip - detailné informácie' містить текст: 'Ahojte, Nižšie vám posielam sľúbený súhrn všetkých informácií k tripu do Malagy ( Španielsko ), kde nájdete všetky najdôležitejšie info, ktoré vám pripravila naša Gabika ( G",
@@ -2799,6 +2792,13 @@
       "detail": "Згідно з даними, платіж до Runable на $10.00 був невдалим, і підписка потребує оновлення платіжної інформації. Це важлива інформація, яку Олег міг пропустити, і вона вже є в нотатках, але потребує дії.",
       "module": "selfact",
       "ts": "2026-09-03T22:02:45"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на свіжий лист від Maroš Sivák з InterFin",
+      "detail": "Олег отримав лист з детальною інформацією про поїздку в Малагу, яка є важливою перед відпусткою, що починається 7 вересня. Він міг не помітити цей лист серед інших.",
+      "module": "selfact",
+      "ts": "2026-09-03T22:02:53"
     }
   ]
 }
