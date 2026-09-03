@@ -1,4 +1,84 @@
 {
+  "foresight|2026-09-03t23_22_30_370010": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:22:30.370010"
+  },
+  "foresight|2026-09-03t23_22_19_334669": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T23:22:19.334669"
+  },
+  "selfact|2026-09-03t23_22_10_564262": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що 07.09 у тебе починається відпустка в Малазі. Перевір ще раз бронювання August Villa Mála",
+    "ts": "2026-09-03T23:22:10.564262"
+  },
+  "foresight|2026-09-03t23_20_49_955969": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:20:49.955969"
+  },
+  "foresight|2026-09-03t23_20_38_984003": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:20:38.984003"
+  },
+  "foresight|2026-09-03t23_20_28_075344": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:20:28.075344"
+  },
+  "action_detect|2026-09-03t23_20_17_372273": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
+    "ts": "2026-09-03T23:20:17.372273"
+  },
+  "action_detect|2026-09-03t23_20_17_370502": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
+    "ts": "2026-09-03T23:20:17.370502"
+  },
+  "foresight|2026-09-03t23_20_17_054560": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T23:20:17.054560"
+  },
+  "action_detect|2026-09-03t23_20_06_368730": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-03T23:20:06.368730"
+  },
+  "action_detect|2026-09-03t23_19_51_571059": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії Profesia.sk\", \"action_date\": \"2023-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Переглян",
+    "ts": "2026-09-03T23:19:51.571059"
+  },
+  "msg_vip_email_truthfix|2026-09-03t23_19_43_819232": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Олеже, бачу суперечність: ти на нічній зміні, але календар показує заплановані події на ранок, які можуть бути неактуальними.  ### Зміна та плани на найближчі 2",
+    "ts": "2026-09-03T23:19:43.819232"
+  },
+  "msg_vip_email|2026-09-03t23_19_35_078902": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Зважаючи на те, що ти зараз на нічній зміні, яка триватиме до 06:00 ранку, важливо ефективно використовувати цей час для планування, особливо з",
+    "ts": "2026-09-03T23:19:35.078902"
+  },
+  "foresight|2026-09-03t23_19_01_900870": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-03T23:19:01.900870"
+  },
+  "foresight|2026-09-03t23_18_50_997228": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:18:50.997228"
+  },
+  "foresight|2026-09-03t23_18_40_047818": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:18:40.047818"
+  },
   "foresight|2026-09-03t23_18_28_909524": {
     "topic": "foresight",
     "gist": "{\"city\": \"\"}",
@@ -218,85 +298,5 @@
     "topic": "foresight",
     "gist": "{\"city\": \"\"}",
     "ts": "2026-09-03T23:04:18.059202"
-  },
-  "action_detect|2026-09-03t23_04_07_347469": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу",
-    "ts": "2026-09-03T23:04:07.347469"
-  },
-  "action_detect|2026-09-03t23_03_10_484065": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірка вакансій на Profesia.sk\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Переглянут",
-    "ts": "2026-09-03T23:03:10.484065"
-  },
-  "foresight|2026-09-03t23_03_09_917351": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:03:09.917351"
-  },
-  "action_detect|2026-09-03t23_02_59_531674": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Аналіз прострочених платежів та погашення кредиту\", \"action_date\": \"2024-09-04\", \"action_time\": \"06:00\", \"action_su",
-    "ts": "2026-09-03T23:02:59.531674"
-  },
-  "foresight|2026-09-03t23_02_58_707484": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:02:58.707484"
-  },
-  "foresight|2026-09-03t23_02_47_766734": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:02:47.766734"
-  },
-  "action_detect|2026-09-03t23_02_45_704310": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити вакансії Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"07:00\", \"action_summary\": \"Перевірит",
-    "ts": "2026-09-03T23:02:45.704310"
-  },
-  "action_detect|2026-09-03t23_02_45_546961": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
-    "ts": "2026-09-03T23:02:45.546961"
-  },
-  "foresight|2026-09-03t23_02_36_722873": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T23:02:36.722873"
-  },
-  "action_detect|2026-09-03t23_02_34_680480": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Перег",
-    "ts": "2026-09-03T23:02:34.680480"
-  },
-  "briefing_truthfix|2026-09-03t23_02_29_021134": {
-    "topic": "briefing/truthfix",
-    "gist": "Зараз, о 23:02, під час нічної зміни на заводі Minebea Mitsumi, твоя ціль у фінансовій незалежності через крипто та InterFin залишається без чіткого прогресу, о",
-    "ts": "2026-09-03T23:02:29.021134"
-  },
-  "briefing|2026-09-03t23_02_23_414046": {
-    "topic": "briefing",
-    "gist": "Олеже, нічна зміна йде, і твій фокус на заводі Minebea Mitsumi, але це не скасовує стратегічного погляду на твої цілі.  🧭 ВЕКТОР ДНЯ Зараз, під час нічної зміни",
-    "ts": "2026-09-03T23:02:23.414046"
-  },
-  "themes_ai|2026-09-03t23_02_08_582179": {
-    "topic": "themes_ai",
-    "gist": "Твій поточний стан демонструє розрив між інвестиційними цілями та фінансовою дисципліною, що вимагає негайної уваги до оптимізації витрат. Хоча на ринку криптов",
-    "ts": "2026-09-03T23:02:08.582179"
-  },
-  "astro_ai_truthfix|2026-09-03t23_02_02_973556": {
-    "topic": "astro_ai/truthfix",
-    "gist": "Олеже, зараз 23:01 3 вересня 2026 року, ти на нічній зміні. Дані про астрологічні транзити, які є у мене, застаріли (останні дані про Юпітер у Леві з 01.07.2026",
-    "ts": "2026-09-03T23:02:02.973556"
-  },
-  "astro_ai|2026-09-03t23_01_56_471676": {
-    "topic": "astro_ai",
-    "gist": "Олеже, зараз 23:01 3 вересня 2026 року, ти на нічній зміні, і астрологічна картина дня вказує на потужні трансформації та можливості для особистого зростання, я",
-    "ts": "2026-09-03T23:01:56.471676"
-  },
-  "email_ai_item|2026-09-03t23_01_31_932660": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист є щомісячним оглядом новин від Avalanche Team1 за серпень 2026 року. Він інформує про значне зростання токенізованих активів н",
-    "ts": "2026-09-03T23:01:31.932660"
   }
 }
