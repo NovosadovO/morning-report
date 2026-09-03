@@ -642,6 +642,28 @@ def handle_document_explain(chat_id, text_content: str, filename: str = "") -> b
 
 # ─── TELEGRAM API ─────────────────────────────────────────────────────────────
 
+# ─── KEEP-ALIVE до Telegram ──────────────────────────────────────────────────
+# Кожен клік по кнопці = 2-4 виклики Telegram API (ack, editMessage, send).
+# Раніше кожен з них відкривав новий TLS-конект (~0.3 с на рукостискання) —
+# півсекунди-секунда затримки на порожньому місці. Тримаємо одну сесію.
+_TG_SESSION = None
+
+
+def _tg_sess():
+    global _TG_SESSION
+    if _TG_SESSION is None:
+        try:
+            import requests
+            from requests.adapters import HTTPAdapter
+            _s = requests.Session()
+            _s.mount("https://", HTTPAdapter(pool_connections=4, pool_maxsize=8,
+                                             max_retries=0))
+            _TG_SESSION = _s
+        except Exception:
+            _TG_SESSION = False
+    return _TG_SESSION or None
+
+
 def api(method, data=None):
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/{method}"
     payload = json.dumps(data or {}).encode()
@@ -656,6 +678,31 @@ def api(method, data=None):
             _http_to = int(_poll_to) + 15
     except Exception:
         pass
+    _sess = _tg_sess()
+    if _sess is not None:
+        try:
+            _r = _sess.post(url, data=payload,
+                            headers={"Content-Type": "application/json"},
+                            timeout=_http_to)
+            if _r.status_code == 200:
+                resp = _r.json()
+                if not resp.get("ok"):
+                    print(f"[API] {method} not ok: {resp.get('description','?')} | data={str(data)[:200]}")
+                return resp
+            _b = _r.text
+            _benign_s = (
+                method == "answerCallbackQuery" and "query is too old" in _b
+            ) or (
+                method in ("editMessageReplyMarkup", "editMessageText")
+                and "message is not modified" in _b
+            )
+            if not _benign_s:
+                print(f"[API] {method} HTTP {_r.status_code}: {_b[:300]}")
+            if _r.status_code == 409:
+                return {"ok": False, "error_code": 409, "description": _b[:200]}
+            return {}
+        except Exception as _se:
+            print(f"[API] {method} sess error: {_se} — відкат на urllib")
     try:
         with urllib.request.urlopen(req, timeout=_http_to) as r:
             resp = json.loads(r.read().decode())

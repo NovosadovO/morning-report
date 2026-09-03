@@ -38,6 +38,56 @@ def _get_file_lock(filename: str):
 
 DATA_BRANCH = "data"  # окрема гілка для даних — не тригерить Railway редеплой
 
+# ─── KEEP-ALIVE ────────────────────────────────────────────────────────────────
+# Раніше кожен GET/PUT відкривав НОВИЙ TLS-конект до api.github.com (~0.3-0.5 с
+# на рукостискання). Один клік по кнопці = GET + PUT, тобто секунда чистого
+# очікування ще до того, як щось збережеться. Тримаємо одну сесію на процес.
+_GH_SESSION = None
+
+
+def _gh_sess():
+    global _GH_SESSION
+    if _GH_SESSION is None:
+        try:
+            import requests
+            from requests.adapters import HTTPAdapter
+            s = requests.Session()
+            s.mount("https://", HTTPAdapter(pool_connections=4, pool_maxsize=8,
+                                            max_retries=0))
+            _GH_SESSION = s
+        except Exception:
+            _GH_SESSION = False
+    return _GH_SESSION or None
+
+
+def _http(method, url, headers, data=None, timeout=15):
+    """(status, text). Через keep-alive сесію, з відкатом на urllib."""
+    sess = _gh_sess()
+    if sess is not None:
+        try:
+            r = sess.request(method, url, headers=headers, data=data,
+                             timeout=timeout)
+            return r.status_code, r.text
+        except Exception as e:
+            print(f"GitHub sess {method} error: {e} — відкат на urllib")
+    try:
+        req = urllib.request.Request(url, data=data, headers=headers,
+                                     method=method)
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return 200, r.read().decode()
+    except urllib.error.HTTPError as e:
+        try:
+            return e.code, e.read().decode()
+        except Exception:
+            return e.code, ""
+    except Exception as e:
+        return 0, str(e)
+
+
+# SHA файлів, щоб не робити зайвий GET перед кожним PUT (економія одного кола)
+_SHA = {}
+
+
 def _gh_request(method, path, body=None):
     url = f"{GITHUB_API}/repos/{GITHUB_REPO}/contents/{path}"
     if method == "GET":
@@ -48,22 +98,21 @@ def _gh_request(method, path, body=None):
         "Accept": "application/vnd.github.v3+json",
         "User-Agent": "morning-report-bot"
     }
+    if body and method == "PUT":
+        body["branch"] = DATA_BRANCH
+    data = json.dumps(body).encode() if body else None
+    code, text = _http(method, url, headers, data)
+    if code == 404:
+        return None
+    if code != 200 and code != 201:
+        print(f"GitHub {method} {path} error {code}: {str(text)[:200]}")
+        return None
     try:
-        if body and method == "PUT":
-            body["branch"] = DATA_BRANCH
-        data = json.dumps(body).encode() if body else None
-        req = urllib.request.Request(url, data=data, headers=headers, method=method)
-        with urllib.request.urlopen(req, timeout=15) as r:
-            return json.loads(r.read())
-    except urllib.error.HTTPError as e:
-        if e.code == 404:
-            return None
-        body_err = e.read().decode()
-        print(f"GitHub {method} {path} error {e.code}: {body_err[:200]}")
-        return None
+        return json.loads(text)
     except Exception as e:
-        print(f"GitHub error [{method} {path}]: {e}")
+        print(f"GitHub {method} {path} parse error: {e}")
         return None
+
 
 def _gh_get(path, tries=3):
     """GET з розрізненням «файлу немає» і «GET впав».
@@ -81,22 +130,25 @@ def _gh_get(path, tries=3):
         "User-Agent": "morning-report-bot",
     }
     for i in range(tries):
-        try:
-            req = urllib.request.Request(url, headers=headers, method="GET")
-            with urllib.request.urlopen(req, timeout=15) as r:
-                return "ok", json.loads(r.read())
-        except urllib.error.HTTPError as e:
-            if e.code == 404:
-                return "missing", None
-            if e.code in (403, 408, 429) or e.code >= 500:
-                time.sleep(0.4 * (2 ** i))
-                continue
-            print(f"GitHub GET {path} error {e.code}")
-            return "error", None
-        except Exception as e:
-            if i == tries - 1:
-                print(f"GitHub GET {path} failed: {e}")
+        code, text = _http("GET", url, headers)
+        if code in (200, 201):
+            try:
+                js = json.loads(text)
+            except Exception as e:
+                print(f"GitHub GET {path} parse error: {e}")
+                return "error", None
+            try:
+                _SHA[path.split("/")[-1]] = js.get("sha")
+            except Exception:
+                pass
+            return "ok", js
+        if code == 404:
+            return "missing", None
+        if code in (403, 408, 429) or code >= 500 or code == 0:
             time.sleep(0.4 * (2 ** i))
+            continue
+        print(f"GitHub GET {path} error {code}")
+        return "error", None
     return "error", None
 
 
@@ -137,13 +189,18 @@ def _save_github(filename, data):
     payload = data
 
     for attempt in range(5):  # 5 спроб з exponential backoff
-        # Отримуємо поточний SHA (потрібен для update) — завжди свіжий
-        state, existing = _gh_get(f"data/{filename}")
-        if state == "error":
-            # GET впав — PUT без sha перезаписав би файл / дав 422. Пробуємо ще.
-            time.sleep(0.5 * (2 ** attempt))
-            continue
-        sha = existing["sha"] if existing else None
+        existing = None
+        # Перша спроба: якщо sha цього файлу вже відомий з попередньої
+        # операції — не витрачаємо ще одне коло на GET. Якщо sha застарів,
+        # PUT віддасть 409/422 і наступна спроба піде звичайним шляхом.
+        sha = _SHA.get(filename) if attempt == 0 else None
+        if sha is None:
+            state, existing = _gh_get(f"data/{filename}")
+            if state == "error":
+                # GET впав — PUT без sha перезаписав би файл / дав 422.
+                time.sleep(0.5 * (2 ** attempt))
+                continue
+            sha = existing["sha"] if existing else None
 
         # ─── MERGE-ON-CONFLICT ────────────────────────────────────────────
         # Раніше при 409 (інший потік записав файл між нашим GET і PUT) ми
@@ -180,9 +237,14 @@ def _save_github(filename, data):
 
         result = _gh_request("PUT", f"data/{filename}", body)
         if result:
+            try:
+                _SHA[filename] = (result.get("content") or {}).get("sha")
+            except Exception:
+                _SHA.pop(filename, None)
             print(f"✅ [storage] SAVED {filename} to GitHub (attempt {attempt+1}/5)")
             return True
         else:
+            _SHA.pop(filename, None)
             wait_time = 0.5 * (2 ** attempt)  # 0.5s, 1s, 2s, 4s, 8s
             if attempt >= 2:
                 print(f"⚠️ [storage] {filename}: спроба {attempt+1}/5, чекаю {wait_time}s")
@@ -207,6 +269,7 @@ def _save_local(filename, data):
 
 def invalidate_cache(filename):
     _CACHE_TIME[filename] = 0
+    _SHA.pop(filename, None)
 
 # ─── PUBLIC API ───────────────────────────────────────────────────────────────
 
