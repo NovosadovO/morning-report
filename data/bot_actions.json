@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав детальні інформацію про поїздку в Малагу від Ma",
-      "detail": "Отримано лист від Maroš Sivák <maros.sivak.sro@gmail.com> з темою 'InterFin Malaga trip - detailné informácie', де вказано, що інформація надана словацькою та українською.",
-      "module": "selfact",
-      "ts": "2026-09-01T05:45:30"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав нові персоналізовані пропозиції роботи від Prof",
       "detail": "Свіжі листи від 'Profesia.sk' <support@profesia.sk> з темами 'Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk' та '17 nových pracovných ponúk'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег активно шукає вакансії (перевірка Profesia.sk 03.09, перегляд вакансії Regionalny kierownik sprzedaży 04.09), тому сповіщення про нову релевантну вакансію з LinkedIn є важливим.",
       "module": "selfact",
       "ts": "2026-09-03T23:06:19"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, враховуючи, що ви зараз на нічній зміні, нагадую, що п",
+      "detail": "Згідно з 'ПАМ'ЯТЬ ПРО ОЛЕГА', Олег зараз на нічній зміні, яка закінчується о 06:00, і йому потрібно прийняти Armolopid Plus після зміни перед сном. Це важливе нагадування про його здоров'я.",
+      "module": "selfact",
+      "ts": "2026-09-03T23:06:24"
     }
   ]
 }
