@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "збережено дані здоров'я",
-      "detail": "steps=17906, sleep_total_min=300, hr_avg=85, weight_kg=83.0, sleep_hours=5.0, date=2026-08-31, source=qwatch_auto, saved_at=2026-08-31 15:08",
-      "module": "healthai",
-      "ts": "2026-08-31T15:08:57"
-    },
-    {
-      "kind": "note",
       "what": "Олег цікавиться вакансією Security Consultant в Syntax",
       "detail": "У свіжих листах є лист від 'Сповіщення про вакансії LinkedIn | Security Consultant в Syntax', що підтверджує інтерес Олега до цієї вакансії.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Серед свіжих листів є лист від Discord з темою 'Ти пропустив повідомлення в suiboop.fun🦉'.",
       "module": "selfact",
       "ts": "2026-09-03T11:58:44"
+    },
+    {
+      "kind": "ask",
+      "what": "Олег, чи потрібно мені якось реагувати на листи від Temu, як",
+      "detail": "Є два свіжі листи від Temu з темами 'Prosím vyzdvihnite si točo najskôr...' та 'dostali ste to?', що вказує на незавершену справу з доставкою.",
+      "module": "selfact",
+      "ts": "2026-09-03T11:58:50"
     }
   ]
 }
