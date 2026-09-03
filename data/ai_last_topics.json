@@ -1,4 +1,59 @@
 {
+  "foresight|2026-09-03t22_41_10_540188": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T22:41:10.540188"
+  },
+  "foresight|2026-09-03t22_39_58_554406": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T22:39:58.554406"
+  },
+  "foresight|2026-09-03t22_39_47_454811": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T22:39:47.454811"
+  },
+  "foresight|2026-09-03t22_39_36_590095": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T22:39:36.590095"
+  },
+  "foresight|2026-09-03t22_39_25_688945": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T22:39:25.688945"
+  },
+  "subs|2026-09-03t22_38_29_879565": {
+    "topic": "subs",
+    "gist": "[]",
+    "ts": "2026-09-03T22:38:29.879565"
+  },
+  "foresight|2026-09-03t22_38_18_942987": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T22:38:18.942987"
+  },
+  "foresight|2026-09-03t22_38_07_957167": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T22:38:07.957167"
+  },
+  "foresight|2026-09-03t22_37_56_854142": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T22:37:56.854142"
+  },
+  "foresight|2026-09-03t22_37_45_797919": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T22:37:45.797919"
+  },
+  "foresight|2026-09-03t22_36_38_812802": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T22:36:38.812802"
+  },
   "foresight|2026-09-03t22_36_27_851692": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -243,60 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд вакансій на Profesia.sk\", \"action_date\": \"2023-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Після зм",
     "ts": "2026-09-03T22:18:32.501025"
-  },
-  "action_detect|2026-09-03t22_18_32_488722": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд вакансій\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Переглянути вакансії на",
-    "ts": "2026-09-03T22:18:32.488722"
-  },
-  "action_detect|2026-09-03t22_18_21_342044": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд вакансій\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег планує переглядати",
-    "ts": "2026-09-03T22:18:21.342044"
-  },
-  "action_detect|2026-09-03t22_18_21_152953": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-09-03T22:18:21.152953"
-  },
-  "action_detect|2026-09-03t22_18_10_570454": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести перевірку вакансій\", \"action_date\": \"2023-09-04\", \"action_time\": null, \"action_summary\": \"Перенеси заплан",
-    "ts": "2026-09-03T22:18:10.570454"
-  },
-  "action_detect|2026-09-03t22_17_54_861558": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти",
-    "ts": "2026-09-03T22:17:54.861558"
-  },
-  "action_detect|2026-09-03t22_17_54_644754": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансію Regionalny kierownik sprzedaży\", \"action_date\": \"2023-09-04\", \"action_time\": \"10:00\", \"action_",
-    "ts": "2026-09-03T22:17:54.644754"
-  },
-  "action_detect|2026-09-03t22_17_43_948986": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії Profesia.sk\", \"action_date\": \"2023-09-04\", \"action_time\": \"07:00\", \"action_summary\": \"Переглян",
-    "ts": "2026-09-03T22:17:43.948986"
-  },
-  "briefing_truthfix|2026-09-03t22_17_38_919356": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, зараз 22:17, ти на нічній зміні на заводі Minebea Mitsumi.  Крипторинок показує зростання: BTC +5.6%, ETH +5.1%, а ZEC лідирує з +19.1% за 24 години. Ці ",
-    "ts": "2026-09-03T22:17:38.919356"
-  },
-  "foresight|2026-09-03t22_17_24_692045": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T22:17:24.692045"
-  },
-  "briefing|2026-09-03t22_17_22_760916": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ Олеже, зараз, під час нічної зміни, твій фокус на фінансовій незалежності через криптоінвестиції є критично важливим, адже сектор RWA показує зрост",
-    "ts": "2026-09-03T22:17:22.760916"
-  },
-  "foresight|2026-09-03t22_17_13_830327": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T22:17:13.830327"
   }
 }
