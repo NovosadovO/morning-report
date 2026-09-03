@@ -1,4 +1,54 @@
 {
+  "action_detect|2026-09-03t11_06_16_086567": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-03T11:06:16.086567"
+  },
+  "astro_ai|2026-09-03t11_04_28_137295": {
+    "topic": "astro_ai",
+    "gist": "Привіт, Олеже! Зараз 11:04, четвер, 3 вересня 2026 року. Ти в Кошице і, судячи з календаря, готуєшся до нічної зміни, яка почнеться о 17:30. Сьогодні є кілька п",
+    "ts": "2026-09-03T11:04:28.137295"
+  },
+  "action_detect|2026-09-03t11_03_59_337711": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Кардіо тренування\", \"action_date\": \"2026-09-03\", \"action_time\": \"16:00\", \"action_summary\": \"Зробити 20-30 х",
+    "ts": "2026-09-03T11:03:59.337711"
+  },
+  "msg_health_pulse_truthfix|2026-09-03t11_03_49_107509": {
+    "topic": "MSG_HEALTH_PULSE/truthfix",
+    "gist": "Наразі, у четвер, 3 вересня 2026 року, о 11:03 ранку, коли ти вдома перед нічною зміною, дані про твоє здоров'я, оновлені 35 годин тому (2026-09-02), показують ",
+    "ts": "2026-09-03T11:03:49.107509"
+  },
+  "msg_health_pulse|2026-09-03t11_03_36_969866": {
+    "topic": "MSG_HEALTH_PULSE",
+    "gist": "Привіт Олеже! 🩺 Ранок четверга, 3 вересня, і ти вдома, вільний час, хоча ввечері чекає нічна зміна. На тлі того, що твоя вага за тиждень зросла на 0.5 кг до 84.",
+    "ts": "2026-09-03T11:03:36.969866"
+  },
+  "action_detect|2026-09-03t11_03_17_600932": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відпочинок перед нічною зміною\", \"action_date\": \"2026-09-03\", \"action_time\": \"15:00\", \"action_summary\": \"Спланувати",
+    "ts": "2026-09-03T11:03:17.600932"
+  },
+  "msg_deep_analysis_truthfix|2026-09-03t11_03_08_069614": {
+    "topic": "MSG_DEEP_ANALYSIS/truthfix",
+    "gist": "Привіт Олеже! Зараз ранок четверга, 3 вересня 2026 року, 11:03, ти вдома, і попереду нічна зміна, яка розпочнеться близько 17:30. Хочу звернути твою увагу на ці",
+    "ts": "2026-09-03T11:03:08.069614"
+  },
+  "msg_deep_analysis|2026-09-03t11_02_59_297253": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋 Бачу, ранок четверга, 3 вересня, застав тебе вдома, поки є ще трохи вільного часу перед нічною зміною, яка розпочнеться вже через кілька годин, ",
+    "ts": "2026-09-03T11:02:59.297253"
+  },
+  "action_detect|2026-09-03t11_02_41_214724": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд вакансій\", \"action_date\": \"2026-09-04\", \"action_time\": null, \"action_summary\": \"Завтра, 4 вересня, у тебе ",
+    "ts": "2026-09-03T11:02:41.214724"
+  },
+  "msg_vip_email_truthfix|2026-09-03t11_02_31_710347": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Олеже, привіт!  Чи справді ранкові справи наближають до мети? Календар показує, що сьогодні, 3 вересня, ти перевіряв вакансії на Profesia.sk, де є 20 нових перс",
+    "ts": "2026-09-03T11:02:31.710347"
+  },
   "msg_vip_email|2026-09-03t11_02_14_827651": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🤝  Як почуваєшся після ранкових справ вдома? Я бачу, що за сьогодні, 3 вересня, ти вже \"відбулось\" холодний душ і платіж Google Cloud Platform, що",
@@ -248,55 +298,5 @@
     "topic": "proactive_ai",
     "gist": "Олеже, знаю, що ти давно не бігав, але зараз ти щойно після нічної зміни, і найважливіше – це добре виспатися. Краще відновити сили, а пробіжку перенести на піз",
     "ts": "2026-09-03T09:10:39.900884"
-  },
-  "action_detect|2026-09-03t09_10_34_477853": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-03T09:10:34.477853"
-  },
-  "mailcal_extract|2026-09-03t09_09_16_306117": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-09-03T09:09:16.306117"
-  },
-  "action_detect|2026-09-03t09_08_51_357605": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-03T09:08:51.357605"
-  },
-  "msg_deep_analysis_truthfix|2026-09-03t09_08_42_063436": {
-    "topic": "MSG_DEEP_ANALYSIS/truthfix",
-    "gist": "Олеже, зараз 09:08 ранку четверга, 3 вересня 2026 року, і ти щойно після нічної зміни, тому найважливіше — повноцінно відпочити. Здоров'я показує аномалію: твій",
-    "ts": "2026-09-03T09:08:42.063436"
-  },
-  "msg_deep_analysis|2026-09-03t09_08_28_968242": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋  Ранок четверга, 3 вересня, застав тебе після нічної зміни, і зараз найважливіше — якісно відновитися, щоб підготуватися до наступних трьох нічн",
-    "ts": "2026-09-03T09:08:28.968242"
-  },
-  "selfact|2026-09-03t09_06_00_513640": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олег, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потріб",
-    "ts": "2026-09-03T09:06:00.513640"
-  },
-  "action_detect|2026-09-03t09_03_34_492521": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Адаптація кар'єрних цілей та домашніх зобов'язань\", \"action_date\": \"2026-09-05\", \"action_time\": null, \"action_summa",
-    "ts": "2026-09-03T09:03:34.492521"
-  },
-  "action_detect|2026-09-03t09_03_23_173868": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-03T09:03:23.173868"
-  },
-  "action_detect|2026-09-03t09_03_23_082965": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-03T09:03:23.082965"
-  },
-  "action_detect|2026-09-03t09_03_12_178077": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-03T09:03:12.178077"
   }
 }
