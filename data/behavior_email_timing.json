@@ -1,9 +1,4 @@
 {
-  "78019": {
-    "sender": "news@msk.marionnaud.com",
-    "sender_raw": "\"Marionnaud\" <news@msk.marionnaud.com>",
-    "seen_ts": "2026-08-26T10:01:47.877476+00:00"
-  },
   "78020": {
     "sender": "avalancheteam1@substack.com",
     "sender_raw": "Avalanche Team1 <avalancheteam1@substack.com>",
@@ -1498,5 +1493,10 @@
     "sender": "info@sk.edenred.info",
     "sender_raw": "Edenred Slovakia <info@sk.edenred.info>",
     "seen_ts": "2026-09-03T07:31:32.520976+00:00"
+  },
+  "78463": {
+    "sender": "hello@metamask.io",
+    "sender_raw": "MetaMask Team <hello@metamask.io>",
+    "seen_ts": "2026-09-03T07:35:43.518746+00:00"
   }
 }
