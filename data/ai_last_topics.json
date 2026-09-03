@@ -1,4 +1,64 @@
 {
+  "bills|2026-09-03t23_09_19_053954": {
+    "topic": "bills",
+    "gist": "```json [] ```",
+    "ts": "2026-09-03T23:09:19.053954"
+  },
+  "msg_rwa_truthfix|2026-09-03t23_08_48_598264": {
+    "topic": "MSG_RWA/truthfix",
+    "gist": "Олеже, зараз 23:08, ти на нічній зміні, і є важливі дані щодо ринку, хоча вони не є найсвіжішими.  ### Ринок Криптовалют: Що відбувається?  **Що сталося?** За д",
+    "ts": "2026-09-03T23:08:48.598264"
+  },
+  "foresight|2026-09-03t23_08_43_935861": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:08:43.935861"
+  },
+  "msg_rwa|2026-09-03t23_08_37_490580": {
+    "topic": "MSG_RWA",
+    "gist": "Олеже, бачу, ти ще на нічній зміні, зараз 23:08, а ONDO показує активність.  ### ONDO: Нічний Стрибок 📈  Що сталося? Сьогодні вночі ONDO, твоя позиція в портфел",
+    "ts": "2026-09-03T23:08:37.490580"
+  },
+  "foresight|2026-09-03t23_08_33_052459": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:08:33.052459"
+  },
+  "foresight|2026-09-03t23_08_21_980661": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:08:21.980661"
+  },
+  "foresight|2026-09-03t23_08_11_017058": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T23:08:11.017058"
+  },
+  "foresight|2026-09-03t23_06_58_854644": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:06:58.854644"
+  },
+  "foresight|2026-09-03t23_06_47_880461": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:06:47.880461"
+  },
+  "foresight|2026-09-03t23_06_36_952938": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:06:36.952938"
+  },
+  "foresight|2026-09-03t23_06_25_896735": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T23:06:25.896735"
+  },
+  "selfact|2026-09-03t23_06_13_927264": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу на лист від LinkedIn: нова вакансія Growth Marketing Lead (B2B SaaS & Payments) в Ruby Lab",
+    "ts": "2026-09-03T23:06:13.927264"
+  },
   "foresight|2026-09-03t23_04_51_055811": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
@@ -238,65 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-03T22:50:27.412424"
-  },
-  "foresight|2026-09-03t22_50_16_313695": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:50:16.313695"
-  },
-  "foresight|2026-09-03t22_50_05_301524": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T22:50:05.301524"
-  },
-  "selfact|2026-09-03t22_49_48_176789": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що зараз 22:49, і твоя нічна зміна триває. У календарі зазначено, що вона закінчується о 06:00 р",
-    "ts": "2026-09-03T22:49:48.176789"
-  },
-  "foresight|2026-09-03t22_48_29_956416": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"madrid\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:48:29.956416"
-  },
-  "foresight|2026-09-03t22_48_18_972942": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:48:18.972942"
-  },
-  "foresight|2026-09-03t22_48_08_026234": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:48:08.026234"
-  },
-  "foresight|2026-09-03t22_47_56_963758": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T22:47:56.963758"
-  },
-  "foresight|2026-09-03t22_46_49_666720": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T22:46:49.666720"
-  },
-  "foresight|2026-09-03t22_46_38_705080": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T22:46:38.705080"
-  },
-  "foresight|2026-09-03t22_46_27_767373": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:46:27.767373"
-  },
-  "foresight|2026-09-03t22_46_16_713114": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T22:46:16.713114"
-  },
-  "foresight|2026-09-03t22_45_03_398047": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T22:45:03.398047"
   }
 }
