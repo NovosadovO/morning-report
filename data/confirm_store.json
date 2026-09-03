@@ -9116,7 +9116,24 @@
     "action": "calrem_skip",
     "pid": "gen_1788458633092",
     "subject": "",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 85401,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1788458633092"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1788458633092"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-03T20:26:07.346756+00:00"
   }
 }
