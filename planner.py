@@ -228,7 +228,16 @@ def _get_primary_calendar_id() -> str:
 
 
 def create_calendar_event(title: str, date: str, time_str: str = None, allday: bool = True) -> bool:
-    """Створює подію в Google Calendar. Повертає True якщо успішно."""
+    """Створює подію в Google Calendar. Повертає True якщо успішно.
+
+    Без дозволу Олега не пише: calgate спершу питає його кнопками.
+    """
+    try:
+        import calgate as _cg
+        if _cg.gate(title, None, None, "", force=False, source="planner"):
+            return False
+    except Exception as _e_cg:
+        print("[calgate] planner skip: " + str(_e_cg), flush=True)
     token = _get_token_write()
     if not token:
         print("create_calendar_event: no token")

@@ -321,13 +321,25 @@ def get_next_day_off(start_offset: int = 1, max_days: int = 14):
 
 
 def create_calendar_event(summary: str, start_dt: datetime, end_dt: datetime = None,
-                           description: str = "", location: str = "") -> dict:
+                           description: str = "", location: str = "",
+                           force: bool = False) -> dict:
     """
     Створює подію в Google Calendar.
     start_dt / end_dt — об'єкти datetime (локальний час UTC+2).
     Якщо end_dt не вказано — подія тривалістю 1 годину.
     Повертає {"ok": True, "event_id": "...", "link": "..."} або {"ok": False, "error": "..."}
     """
+    # Нічого не пишемо в календар без дозволу Олега (calgate). force=True —
+    # тільки коли він сам попросив, або після натискання «📅 Так, запиши».
+    try:
+        import calgate as _cg
+        _blocked = _cg.gate(summary, start_dt, end_dt, description,
+                            force=force, source="context")
+        if _blocked:
+            return _blocked
+    except Exception as _e_cg:
+        print("[calgate] skip: " + str(_e_cg), flush=True)
+
     token = _get_token()
     if not token:
         return {"ok": False, "error": "Google Calendar не підключений"}
@@ -1144,7 +1156,8 @@ def _handle_create_event(intent: dict, now: datetime) -> str:
         start_dt = datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M")
         end_dt   = start_dt + timedelta(hours=duration)
 
-        res = create_calendar_event(summary, start_dt, end_dt, description)
+        res = create_calendar_event(summary, start_dt, end_dt, description,
+                                    force=True)
         if res["ok"]:
             wd = ["понеділок","вівторок","середа","четвер","п'ятниця","субота","неділя"][start_dt.weekday()]
             date_fmt = start_dt.strftime("%d.%m.%Y")

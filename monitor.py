@@ -349,6 +349,16 @@ def _sanitize_html(text: str) -> str:
     return protected
 
 
+def _autokb(text: str, tag: str = "monitor"):
+    """Кнопки під зміст повідомлення. Помилка → без кнопок, не падаємо."""
+    try:
+        import autokb as _akb
+        return _akb.build(text, tag)
+    except Exception as _e_akb:
+        print("[autokb] skip: " + str(_e_akb), flush=True)
+        return None
+
+
 def _send_telegram_chunk(text: str, keyboard=None) -> bool:
     """Надсилає одне повідомлення з HTML parse_mode."""
     # ЧЕРГА ПЕРЕД GUARD-ом: під час /тиша повідомлення не губиться, а чекає
@@ -443,13 +453,18 @@ def send_telegram(text: str) -> bool:
     MAX = 4090
     # Кнопки відповіді під КОЖНИМ повідомленням (react.py): доречні темі,
     # натискання пишеться назавжди, закрите більше не нагадується.
+    # autokb: якщо в тексті є питання — кнопки будуються з САМОГО питання
+    # (і відповідь пам'ятається назавжди); якщо це сповіщення — дії під його
+    # вид. Уже закрите питання не шлемо повторно взагалі.
     _rkb = None
     try:
-        import react as _rx_s
-        _rkb = _rx_s.keyboard(_rx_s.detect("report", text),
-                              title=_rx_s._first_line(text))
+        import autokb as _akb_s
+        if not _akb_s.should_send(text, "report"):
+            print("[autokb] питання вже закрито — не шлю вдруге", flush=True)
+            return True
+        _rkb = _akb_s.build(text, "report")
     except Exception as _e_rxs:
-        print(f"[react] keyboard skip: {_e_rxs}", flush=True)
+        print(f"[autokb] keyboard skip: {_e_rxs}", flush=True)
     if len(text) <= MAX:
         result = _send_telegram_chunk(text, keyboard=_rkb)
         print(f"[send_telegram] single chunk returned {result}", flush=True)
