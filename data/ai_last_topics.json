@@ -298,5 +298,10 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Підготовка до відпустки\", \"action_date\": \"2026-09-08\", \"action_time\": null, \"action_summary\": \"Приділити увагу дета",
     "ts": "2026-09-03T03:02:34.905119"
+  },
+  "selfact|2026-09-03t05_13_27_308771": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
+    "ts": "2026-09-03T05:13:27.308771"
   }
 }
