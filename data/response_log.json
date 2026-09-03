@@ -9826,6 +9826,16 @@
         "kind": "reminder",
         "date": "2026-09-03"
       }
+    },
+    {
+      "ts": "2026-09-03T04:31:40.134001+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути вакансію Engineering Manager",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-04"
+      }
     }
   ]
 }
