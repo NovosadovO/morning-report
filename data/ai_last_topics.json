@@ -1,4 +1,59 @@
 {
+  "foresight|2026-09-03t23_27_25_360036": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T23:27:25.360036"
+  },
+  "foresight|2026-09-03t23_26_17_711202": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:26:17.711202"
+  },
+  "foresight|2026-09-03t23_26_06_765702": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:26:06.765702"
+  },
+  "foresight|2026-09-03t23_25_55_828451": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:25:55.828451"
+  },
+  "foresight|2026-09-03t23_25_44_754899": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T23:25:44.754899"
+  },
+  "foresight|2026-09-03t23_24_37_052081": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:24:37.052081"
+  },
+  "foresight|2026-09-03t23_24_26_044420": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:24:26.044420"
+  },
+  "foresight|2026-09-03t23_24_14_953105": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:24:14.953105"
+  },
+  "foresight|2026-09-03t23_24_03_911330": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T23:24:03.911330"
+  },
+  "foresight|2026-09-03t23_22_52_290270": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:22:52.290270"
+  },
+  "foresight|2026-09-03t23_22_41_443909": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:22:41.443909"
+  },
   "foresight|2026-09-03t23_22_30_370010": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -243,60 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-03T23:08:33.052459"
-  },
-  "foresight|2026-09-03t23_08_21_980661": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:08:21.980661"
-  },
-  "foresight|2026-09-03t23_08_11_017058": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T23:08:11.017058"
-  },
-  "foresight|2026-09-03t23_06_58_854644": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:06:58.854644"
-  },
-  "foresight|2026-09-03t23_06_47_880461": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:06:47.880461"
-  },
-  "foresight|2026-09-03t23_06_36_952938": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:06:36.952938"
-  },
-  "foresight|2026-09-03t23_06_25_896735": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T23:06:25.896735"
-  },
-  "selfact|2026-09-03t23_06_13_927264": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу на лист від LinkedIn: нова вакансія Growth Marketing Lead (B2B SaaS & Payments) в Ruby Lab",
-    "ts": "2026-09-03T23:06:13.927264"
-  },
-  "foresight|2026-09-03t23_04_51_055811": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:04:51.055811"
-  },
-  "foresight|2026-09-03t23_04_40_039921": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:04:40.039921"
-  },
-  "foresight|2026-09-03t23_04_29_042531": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:04:29.042531"
-  },
-  "foresight|2026-09-03t23_04_18_059202": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T23:04:18.059202"
   }
 }
