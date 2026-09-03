@@ -1,4 +1,69 @@
 {
+  "proactive_actions|2026-09-04t00_00_08_358673": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reply\",     \"title\": \"Відповісти Maroš Sivák про поїздку\",     \"date\": \"2026-09-04\",     \"time\": \"06:15\",     \"message\": \"Олеже, у те",
+    "ts": "2026-09-04T00:00:08.358673"
+  },
+  "foresight|2026-09-03t23_59_41_686397": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Іспанія\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:59:41.686397"
+  },
+  "foresight|2026-09-03t23_59_30_576812": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:59:30.576812"
+  },
+  "foresight|2026-09-03t23_59_19_801432": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:59:19.801432"
+  },
+  "foresight|2026-09-03t23_59_08_664602": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\"} ```",
+    "ts": "2026-09-03T23:59:08.664602"
+  },
+  "foresight|2026-09-03t23_58_01_458692": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:58:01.458692"
+  },
+  "foresight|2026-09-03t23_57_50_648136": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:57:50.648136"
+  },
+  "action_detect|2026-09-03t23_57_39_784415": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег планує перегляд",
+    "ts": "2026-09-03T23:57:39.784415"
+  },
+  "foresight|2026-09-03t23_57_39_611189": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:57:39.611189"
+  },
+  "foresight|2026-09-03t23_57_28_560330": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\"} ```",
+    "ts": "2026-09-03T23:57:28.560330"
+  },
+  "foresight|2026-09-03t23_56_22_327937": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:56:22.327937"
+  },
+  "foresight|2026-09-03t23_56_11_197766": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:56:11.197766"
+  },
+  "foresight|2026-09-03t23_56_00_213374": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:56:00.213374"
+  },
   "foresight|2026-09-03t23_55_49_175717": {
     "topic": "foresight",
     "gist": "{\"city\": \"\"}",
@@ -233,70 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-03T23:36:01.290400"
-  },
-  "foresight|2026-09-03t23_35_50_269861": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T23:35:50.269861"
-  },
-  "foresight|2026-09-03t23_34_45_704621": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:34:45.704621"
-  },
-  "foresight|2026-09-03t23_34_34_748186": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:34:34.748186"
-  },
-  "foresight|2026-09-03t23_34_23_649501": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:34:23.649501"
-  },
-  "foresight|2026-09-03t23_34_12_624437": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T23:34:12.624437"
-  },
-  "foresight|2026-09-03t23_33_01_448124": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:33:01.448124"
-  },
-  "foresight|2026-09-03t23_32_50_466385": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:32:50.466385"
-  },
-  "foresight|2026-09-03t23_32_39_504203": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:32:39.504203"
-  },
-  "foresight|2026-09-03t23_32_28_475888": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T23:32:28.475888"
-  },
-  "foresight|2026-09-03t23_31_21_285069": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:31:21.285069"
-  },
-  "email_ai_item|2026-09-03t23_31_11_115499": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Цей лист від Forbes через LinkedIn містить статтю про стартап Fluidstack, який допомагає Google конкурувати з Nvidia і оцінюється в $18 мільярд",
-    "ts": "2026-09-03T23:31:11.115499"
-  },
-  "foresight|2026-09-03t23_31_10_211686": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:31:10.211686"
-  },
-  "foresight|2026-09-03t23_30_59_262918": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:30:59.262918"
   }
 }
