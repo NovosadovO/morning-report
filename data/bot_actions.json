@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег має бронювання August Villa Málaga - Villa з 07/09/2026",
-      "detail": "У свіжих листах є лист від no-reply@chekin.com про 'Your reservation contract - August Villa Málaga - Villa from 07/09/2026 to 11/09/2026'. Цей факт є важливим для планування подорожі Олега і ще не зафіксований у нотатках.",
-      "module": "selfact",
-      "ts": "2026-08-31T13:26:57"
-    },
-    {
       "kind": "notify",
       "what": "Олег, зверни увагу: твоє бронювання 'Paxos and Antipaxos Boa",
       "detail": "З'явився свіжий лист від noreply@booking.com про скасування бронювання та повернення коштів, що є важливою фінансовою та туристичною інформацією.",
@@ -2799,6 +2792,13 @@
       "detail": "Календар на 03.09 містить три нагадування про 'Перевірка невиконаних звичок' та 'Невиконані звички' о 14:10, 15:10 та 16:10.",
       "module": "selfact",
       "ts": "2026-09-03T11:27:41"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує сповіщення про вакансії Growth Marketing Lead (",
+      "detail": "Свіжий лист від LinkedIn 'Сповіщення про вакансії LinkedIn | Growth Marketing Lead (B2B SaaS & Payments) в Ruby Labs' вказує на відповідність запиту 'Cryptocurrency' в Slovakia.",
+      "module": "selfact",
+      "ts": "2026-09-03T11:27:49"
     }
   ]
 }
