@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег сьогодні, 31.08.2026, мав ранкову зміну з 06:00 до 18:0",
-      "detail": "Інформація з календаря на 31.08: 05:00 ☀️ Рання зміна (06:00-18:00).",
-      "module": "selfact",
-      "ts": "2026-08-31T15:45:55"
-    },
-    {
-      "kind": "note",
       "what": "Олег активно читає щоденні дайджести крипто-новин, а також н",
       "detail": "Свіжі листи від Oleh Bezuhlyi через LinkedIn | 📰 Daily Crypto Digest — August 31, CryptoBeholder.com через LinkedIn | 📰 AI-curated Daily Crypto Digest - August 31, The Daily Bone | 📈 Robinhood memecoin causes repricing of AMC stock, CMC Spotlight | Saylor Just Posted 'We're Back' and the Market Is L",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримує сповіщення про вакансії LinkedIn, і серед них є вакансія Growth Marketing Lead, що відповідає його інтересам у пошуку роботи.",
       "module": "selfact",
       "ts": "2026-09-03T12:13:59"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує регулярні сповіщення від Temu, що може свідчити",
+      "detail": "Олег отримав два листи від Temu з проханням забрати замовлення.",
+      "module": "selfact",
+      "ts": "2026-09-03T12:14:05"
     }
   ]
 }
