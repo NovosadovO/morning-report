@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Нагадую, що платіж до Runable на $10.00 був невдалим. Потріб",
-      "detail": "У підписках Runable є запис: 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.'",
-      "module": "selfact",
-      "ts": "2026-09-01T05:45:53"
-    },
-    {
       "kind": "note",
       "what": "Олег слідкує за криптоновинами, зокрема про стратегію віднов",
       "detail": "Свіжі листи від The Block <newsletter@mail.theblock.co> та Aave <aave@aave.com> з новинами про крипторинок.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, weight_kg, hrv, stress, sleep_total_min",
       "module": "qwsync",
       "ts": "2026-09-03T23:57:14"
+    },
+    {
+      "kind": "note",
+      "what": "збережено дані здоров'я",
+      "detail": "steps=18915, sleep_total_min=156, hr_avg=69, weight_kg=83.0, hrv=35, stress=32, sleep_hours=2.6, date=2026-09-03, source=qwatch_auto, saved_at=2026-09-03 23:57",
+      "module": "healthai",
+      "ts": "2026-09-03T23:57:16"
     }
   ]
 }
