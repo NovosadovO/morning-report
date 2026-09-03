@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег цікавиться новинами про токенізацію реальних активів, п",
-      "detail": "У листі від The Block згадується нова розсилка 'Tokenization Briefing' про токенізацію реальних активів, що може бути цікавим Олегу, враховуючи його інтерес до крипто-новин.",
-      "module": "selfact",
-      "ts": "2026-08-31T19:54:12"
-    },
-    {
       "kind": "hcoach",
       "what": "full_report",
       "detail": "повна аналітика здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є 'Сповіщення про вакансії LinkedIn | SEO Content Specialist в Trade Nation'.",
       "module": "selfact",
       "ts": "2026-09-03T15:03:53"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує численні новинні розсилки про криптовалюти та Ш",
+      "detail": "Багато свіжих листів від LinkedIn, CryptoBeholder.com, The Daily Bone, Morning Report, Cointelegraph, CMC Spotlight стосуються криптовалют та ШІ. Це підтверджує раніше зафіксований факт про його інтерес.",
+      "module": "selfact",
+      "ts": "2026-09-03T15:20:19"
     }
   ]
 }
