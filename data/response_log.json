@@ -10189,6 +10189,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: 📅 Пропоную додати в календар",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-04T01:09:19.371090+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ✉️ Лист чекає на відповідь",
+      "answer": "yes"
     }
   ]
 }
