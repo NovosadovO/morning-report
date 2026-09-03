@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "evening_review",
-      "detail": "вечірній розбір, оцінка 69",
-      "module": "selfact",
-      "ts": "2026-08-31T20:12:25"
-    },
-    {
       "kind": "note",
       "what": "Олег активно цікавиться вакансіями Security Consultant в Кош",
       "detail": "У 'СВІЖІ ЛИСТИ' є лист від 'Сповіщення про вакансії LinkedIn | Security Consultant в Syntax' з текстом: 'Сповіщення про вакансії в Košice Нові вакансії відповідають вашим налаштуванням. Security Consultant Syntax Košice Ця компанія активно наймає персонал'.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи від Oleh Bezuhlyi через LinkedIn (Daily Crypto Digest — September 3), CryptoBeholder.com через LinkedIn (AI-curated Daily Crypto Digest - September 3), The Daily Bone (Crypto bounces on rumors of Iran wind down), Morning Report (Ранковий дайджест ринків — 03.09.2026), Cointelegraph через",
       "module": "selfact",
       "ts": "2026-09-03T15:35:32"
+    },
+    {
+      "kind": "note",
+      "what": "Олег пропустив перевірку невиконаних звичок сьогодні о 14:10",
+      "detail": "У календарі на 03.09 є пункт '14:10 🔔 Перевірка невиконаних звичок', який вже минув. Також на 04.09 є '16:10 🔔 Невдалі звички'.",
+      "module": "selfact",
+      "ts": "2026-09-03T15:35:39"
     }
   ]
 }
