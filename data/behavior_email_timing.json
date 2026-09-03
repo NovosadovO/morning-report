@@ -1,14 +1,4 @@
 {
-  "78027": {
-    "sender": "newsletters-noreply@linkedin.com",
-    "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
-    "seen_ts": "2026-08-26T11:30:19.051685+00:00"
-  },
-  "78030": {
-    "sender": "invoice+statements+acct_1raxgujk3urplkao@stripe.com",
-    "sender_raw": "Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com>",
-    "seen_ts": "2026-08-26T12:09:59.930615+00:00"
-  },
   "78031": {
     "sender": "newsletter@mail.dailybones.com",
     "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
@@ -1503,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-09-03T10:14:51.347464+00:00"
+  },
+  "78475": {
+    "sender": "promo@sizeer.sk",
+    "sender_raw": "Sizeer Promo  <promo@sizeer.sk>",
+    "seen_ts": "2026-09-03T11:15:53.366845+00:00"
   }
 }
