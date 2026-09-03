@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримує сповіщення про вакансію Security Consultant в S",
-      "detail": "Олег отримав лист від LinkedIn 'Сповіщення про вакансії LinkedIn | Security Consultant в Syntax'.",
-      "module": "selfact",
-      "ts": "2026-08-31T19:37:50"
-    },
-    {
       "kind": "notify",
       "what": "Статті The Economist",
       "detail": "Олег отримав два свіжі листи від The Economist та The Economist Today з цими заголовками.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи включають кілька дайджестів та новин про крипто, наприклад, 'Daily Crypto Digest', 'AI-curated Daily Crypto Digest', 'Crypto bounces on rumors of Iran wind down', 'Ранковий дайджест ринків', 'Crypto Biz', 'New Jersey Just Took Kalshi to the Supreme Court'.",
       "module": "selfact",
       "ts": "2026-09-03T14:48:51"
+    },
+    {
+      "kind": "note",
+      "what": "Олег, ймовірно, не перевіряє свої звички регулярно або ігнор",
+      "detail": "У календарі на сьогодні (03.09) є дві події 'Перевірка невиконаних звичок' та 'Перевірити невиконані звички' (о 14:10 та 15:10), що може свідчити про те, що попередні перевірки не були виконані або проігноровані.",
+      "module": "selfact",
+      "ts": "2026-09-03T14:49:00"
     }
   ]
 }
