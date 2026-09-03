@@ -1,14 +1,4 @@
 {
-  "78056": {
-    "sender": "jobalerts-noreply@linkedin.com",
-    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
-    "seen_ts": "2026-08-26T17:56:18.701245+00:00"
-  },
-  "78059": {
-    "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
-    "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
-    "seen_ts": "2026-08-26T19:46:49.637713+00:00"
-  },
   "78060": {
     "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
     "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
@@ -1503,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-09-03T17:56:45.701362+00:00"
+  },
+  "78499": {
+    "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
+    "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
+    "seen_ts": "2026-09-03T18:05:05.278859+00:00"
   }
 }
