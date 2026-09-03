@@ -1,4 +1,19 @@
 {
+  "assistant|2026-09-03t20_00_45_991753": {
+    "topic": "assistant",
+    "gist": "Олеже, враховуючи, що після нічної зміни ти маєш важливі перегляди вакансій о 10:00 та 11:00, спробуй максимально відпочити після 06:00, щоб бути свіжим. Твій т",
+    "ts": "2026-09-03T20:00:45.991753"
+  },
+  "msg_evening|2026-09-03t20_00_37_754734": {
+    "topic": "MSG_EVENING",
+    "gist": "Привіт Олеже! 📋  Вечір, а ти знову на нічній зміні, яка триватиме до 06:00 завтра. Бачу, що крипторинок сьогодні активно зростає: BTC +5.2%, ETH +5.1%, BNB +5.2",
+    "ts": "2026-09-03T20:00:37.754734"
+  },
+  "selfact|2026-09-03t19_57_21_360339": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
+    "ts": "2026-09-03T19:57:21.360339"
+  },
   "email_ai_item|2026-09-03t19_56_41_033037": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії за запитом 'Менеджер з продажу' в районі Братислави. Зокрема, пропонується в",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Адаптація кар'єри та сімейних справ\", \"action_date\": \"null\", \"action_time\": \"null\", \"action_summary\": \"Потрібна ада",
     "ts": "2026-09-03T18:03:01.209513"
-  },
-  "action_detect|2026-09-03t18_02_50_178967": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": \"2026-08-04\", \"action_time\": null, \"action_summary\": \"Оновити п",
-    "ts": "2026-09-03T18:02:50.178967"
-  },
-  "action_detect|2026-09-03t18_02_36_770117": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки вказ",
-    "ts": "2026-09-03T18:02:36.770117"
-  },
-  "action_detect|2026-09-03t18_02_25_807835": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийом Armolopid\", \"action_date\": \"2024-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Після зміни, о 06:00, ві",
-    "ts": "2026-09-03T18:02:25.807835"
   }
 }
