@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-09-03t11_00_35_679365": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"План на сьогодні\", \"action_date\": \"2026-09-03\", \"action_time\": null, \"action_summary\": \"Виконати легку прогулянку, ",
+    "ts": "2026-09-03T11:00:35.679365"
+  },
+  "selfact|2026-09-03t10_55_19_211203": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олег! Зверни увагу на нову вакансію Growth Marketing Lead (B2B SaaS & Payments) в Ruby Labs, яку тобі н",
+    "ts": "2026-09-03T10:55:19.211203"
+  },
   "bills|2026-09-03t10_52_11_120585": {
     "topic": "bills",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити вакансії Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"07:00\", \"action_summary\": \"Перевірит",
     "ts": "2026-09-03T09:02:59.529225"
-  },
-  "action_detect|2026-09-03t09_02_59_470608": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Відмітити, чи був прийнятий препа",
-    "ts": "2026-09-03T09:02:59.470608"
-  },
-  "action_detect|2026-09-03t09_02_48_444101": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити вакансії Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": null, \"action_summary\": \"Перевірити в",
-    "ts": "2026-09-03T09:02:48.444101"
   }
 }
