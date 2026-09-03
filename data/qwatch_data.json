@@ -1070,17 +1070,16 @@
   },
   "2026-09-03": {
     "date": "2026-09-03",
+    "health_score": 95,
     "steps": 18915,
-    "sleep_total_min": 156,
-    "sleep_quality": 100,
+    "sleep_total_min": 502,
     "hr_avg": 69,
-    "calories": 445,
+    "calories": 867,
     "hrv": 35,
-    "spo2": 97,
-    "source": "qwatch_auto",
-    "saved_at": "2026-09-03 23:57",
     "weight_kg": 83.0,
-    "stress": 32,
-    "sleep_hours": 2.6
+    "height_cm": 175,
+    "spo2": null,
+    "source": "qwatch",
+    "saved_at": "2026-09-03 23:57"
   }
 }
