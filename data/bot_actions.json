@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримав сповіщення про вакансію Senior Program Manager",
-      "detail": "Свіжий лист від 'Сповіщення про вакансії LinkedIn' <jobalerts-noreply@linkedin.com> з темою 'Senior Program Manager в EPAM Systems'.",
-      "module": "selfact",
-      "ts": "2026-09-01T05:45:44"
-    },
-    {
       "kind": "notify",
       "what": "Нагадую, що платіж до Runable на $10.00 був невдалим. Потріб",
       "detail": "У підписках Runable є запис: 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.'",
@@ -2799,6 +2792,13 @@
       "detail": "Наявність кількох листів про відпустку в Малазі (від Maroš Sivák та chekin.com) та подій у календарі (07.09: Відпустка в Малазі, Початок відпустки в Малазі, Бронювання August Villa Málaga - Villa, Поїздка в Малагу, Іспанія) свідчить про важливість цієї події, і Олег міг не звернути увагу на всі дета",
       "module": "selfact",
       "ts": "2026-09-03T23:22:17"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-09-03",
+      "detail": "автосинк з годинника: steps, hr_avg, weight_kg, hrv, stress, sleep_total_min",
+      "module": "qwsync",
+      "ts": "2026-09-03T23:57:14"
     }
   ]
 }
