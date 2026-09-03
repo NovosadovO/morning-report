@@ -1,4 +1,14 @@
 {
+  "personal_ai|2026-09-03t03_00_35_049164": {
+    "topic": "personal_ai",
+    "gist": "Нічна зміна триває до 06:00, Олег вже пройшов 9637 кроків, а пульс тримається на 81 уд/хв. З огляду на падаючий тренд сну (-1.9 год за 7 днів), зараз важливо зб",
+    "ts": "2026-09-03T03:00:35.049164"
+  },
+  "selfact|2026-09-03t02_52_36_675665": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потрі",
+    "ts": "2026-09-03T02:52:36.675665"
+  },
   "bills|2026-09-03t02_51_34_572079": {
     "topic": "bills",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі звички\",     \"text\": \"Олеже, зверніть увагу: сьогодні, 03.09, ви пропустили біг, сауну та не випили до",
     "ts": "2026-09-03T00:18:11.065097"
-  },
-  "action_detect|2026-09-03t00_18_07_851461": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-03T00:18:07.851461"
-  },
-  "action_detect|2026-09-03t00_18_07_840028": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-03T00:18:07.840028"
   }
 }
