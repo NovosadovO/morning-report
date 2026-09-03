@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримує багато сповіщень про вакансії від Profesia.sk,",
-      "detail": "Є два свіжі листи від Profesia.sk з великою кількістю нових вакансій ('20 нових робочих пропозицій', '17 нових робочих пропозицій').",
-      "module": "selfact",
-      "ts": "2026-09-01T05:14:26"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримує детальні інструкції щодо поїздки в Малагу від M",
       "detail": "Лист від Maroš Sivák <maros.sivak.sro@gmail.com> | InterFin Malaga trip - detailné informácie містить 'súhrn všetkých informácií k tripu do Malagy ( Španielsko )'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Календар на 7 днів: 04.09: 09:00 🔔 Переглянути вакансію Regionalny kierownik sprzedaży; 17:00 🌙 Нічна зміна. 05.09: 17:00 🌙 Нічна зміна. 06.09: 17:00 🌙 Нічна зміна. 07.09: 07:00 🔔 Відпустка в Малазі.",
       "module": "selfact",
       "ts": "2026-09-03T21:00:56"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, ваш тижневий звіт від Google Health показує зниження а",
+      "detail": "Лист від 'Google Health <google-health-noreply@google.com>' містить звіт, де вказано '42,542 fewer than last week' та інші знижені показники.",
+      "module": "selfact",
+      "ts": "2026-09-03T21:16:06"
     }
   ]
 }
