@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав лист про резервацію в August Villa Málaga з 07.",
-      "detail": "Є свіжий лист від 'no-reply@chekin.com' з темою 'Your reservation contract - August Villa Málaga - Villa', де вказані дати бронювання.",
-      "module": "selfact",
-      "ts": "2026-08-31T12:24:24"
-    },
-    {
-      "kind": "note",
       "what": "Олег цікавиться вакансією Regional CISO Nordics & CEE в team",
       "detail": "Є свіжий лист від 'Сповіщення про вакансії LinkedIn' про вакансію 'Regional CISO Nordics & CEE в team.blue Bratislava', яка 'активно наймає персонал'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримує щоденні розсилки від Profesia.sk з персоналізованими та загальними вакансіями для Кошице, що свідчить про його активний пошук роботи. Сьогодні (03.09) він вже мав нагадування про перегляд вакансій, але ці листи нові.",
       "module": "selfact",
       "ts": "2026-09-03T10:55:30"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує регулярні розсилки від TradingView, що свідчить",
+      "detail": "Свіжий лист від TradingView про 'Новую идею от trade_soul' є прямим доказом цього інтересу.",
+      "module": "selfact",
+      "ts": "2026-09-03T10:55:34"
     }
   ]
 }
