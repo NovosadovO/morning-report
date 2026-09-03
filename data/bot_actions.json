@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримав сповіщення про вакансію Regional AI Run Lead в",
-      "detail": "У свіжих листах є повідомлення від LinkedIn про вакансію 'Regional AI Run Lead в EPAM Systems' в Словаччині.",
-      "module": "selfact",
-      "ts": "2026-08-30T21:08:08"
-    },
-    {
       "kind": "hcoach",
       "what": "evening_review",
       "detail": "вечірній розбір, оцінка None",
@@ -2799,6 +2792,13 @@
       "detail": "У розділі 'СВІЖІ ЛИСТИ' є лист від LinkedIn про нову вакансію, а також у 'ПАМ'ЯТЬ ПРО ОЛЕГА' є відповідний факт.",
       "module": "selfact",
       "ts": "2026-09-03T02:05:49"
+    },
+    {
+      "kind": "note",
+      "what": "Олег активно цікавиться вакансіями Engineering Manager - Del",
+      "detail": "Зі свіжих листів отримано два сповіщення про вакансії від LinkedIn, які відповідають налаштуванням Олега.",
+      "module": "selfact",
+      "ts": "2026-09-03T02:21:42"
     }
   ]
 }
