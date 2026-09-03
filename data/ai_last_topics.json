@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-09-04t00_13_58_599618": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
+    "ts": "2026-09-04T00:13:58.599618"
+  },
+  "selfact|2026-09-04t00_09_11_859023": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Деталі поїздки в Малагу\",     \"text\": \"Олег, ти отримав детальні інструкції та підтвердження бронювання щодо с",
+    "ts": "2026-09-04T00:09:11.859023"
+  },
   "people|2026-09-04t00_08_28_382814": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [\"поїздка в Малагу\", \"інформація ",
@@ -288,15 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-03T23:45:41.590920"
-  },
-  "foresight|2026-09-03t23_45_30_590532": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:45:30.590532"
-  },
-  "foresight|2026-09-03t23_45_19_555228": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:45:19.555228"
   }
 }
