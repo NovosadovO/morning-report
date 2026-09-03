@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, сьогодні, 1 вересня, у Олі день народження! 🎉",
-      "detail": "У календарі на 01.09 зазначено: '11:15 🎂 Олі — день народження'.",
-      "module": "selfact",
-      "ts": "2026-09-01T04:43:36"
-    },
-    {
       "kind": "note",
       "what": "Олег отримує багато новинних розсилок з криптотематики та фі",
       "detail": "Свіжі листи від The Block ('Strategy resumes bitcoin buying') та Aave ('Aave Newsletter: Issue #019') свідчать про постійний інтерес Олега до криптоновин.",
@@ -2799,6 +2792,13 @@
       "detail": "Є свіжий лист від Maroš Sivák <maros.sivak.sro@gmail.com> з темою 'InterFin Malaga trip - detailné informácie', який містить важливу інформацію про майбутню відпустку в Малазі, що починається 07.09.",
       "module": "selfact",
       "ts": "2026-09-03T17:37:25"
+    },
+    {
+      "kind": "notify",
+      "what": "Google Health: Зниження активності",
+      "detail": "З листа від Google Health <google-health-noreply@google.com> | Your weekly progress report from Google Health, де вказано '42,542 fewer than last week' та інші зниження показників.",
+      "module": "selfact",
+      "ts": "2026-09-03T18:08:09"
     }
   ]
 }
