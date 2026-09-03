@@ -198,7 +198,8 @@
     },
     "foresight": {
       "checked": 3,
-      "issues": 3
+      "issues": 3,
+      "fixed": 1
     }
   },
   "last": [
@@ -388,6 +389,6 @@
     "checked": 217,
     "issues": 150,
     "cut": 22,
-    "fixed": 60
+    "fixed": 61
   }
 }
