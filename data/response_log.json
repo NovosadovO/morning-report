@@ -10167,6 +10167,16 @@
         "kind": "calendar",
         "date": "2026-09-04"
       }
+    },
+    {
+      "ts": "2026-09-04T00:00:24.679731+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути вакансію Regionalny kierownik sprzedaży",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-04"
+      }
     }
   ]
 }
