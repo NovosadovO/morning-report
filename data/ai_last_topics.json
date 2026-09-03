@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-03t11_58_26_427442": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олег! Зверни увагу, що підписка на Runable має невдалі платежі. Останній платіж на $10.00 був неуспішни",
+    "ts": "2026-09-03T11:58:26.427442"
+  },
+  "msg_rwa_truthfix|2026-09-03t11_52_33_144217": {
+    "topic": "MSG_RWA/truthfix",
+    "gist": "Наразі, 3 вересня 2026 року, о 11:52, дані щодо ринку криптовалют, включаючи RWA-сектор, недоступні. Тому інформація про токенізований фонд FIGR_HELOC, його пад",
+    "ts": "2026-09-03T11:52:33.144217"
+  },
   "msg_rwa|2026-09-03t11_52_23_465435": {
     "topic": "MSG_RWA",
     "gist": "Сьогодні, 3 вересня, о 11:51, спостерігається аномалія у RWA-секторі: токенізований фонд FIGR_HELOC (Figure Heloc) показав падіння на 2.01% за останні 24 години",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-03T10:04:14.266826"
-  },
-  "action_detect|2026-09-03t10_04_03_418256": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Забезпечити якісний сон\", \"action_date\": \"2024-09-03\", \"action_time\": \"null\", \"action_summary\": \"Сьогодні, 3 вересн",
-    "ts": "2026-09-03T10:04:03.418256"
-  },
-  "action_detect|2026-09-03t10_03_59_941678": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Підготовка до відпустки\", \"action_date\": null, \"action_time\": \"10:00\", \"action_summary\": \"Підготуватись до відпустк",
-    "ts": "2026-09-03T10:03:59.941678"
   }
 }
