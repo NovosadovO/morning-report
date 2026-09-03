@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Новини від Volkswagen Group",
-      "detail": "Свіжий лист від Volkswagen Group через LinkedIn '✨ August Accelerated: Global Perspectives, AI Innovation & Energy Solutions'.",
-      "module": "selfact",
-      "ts": "2026-08-31T11:38:22"
-    },
-    {
       "kind": "notify",
       "what": "Олег, зверни увагу на лист від no-reply@chekin.com. Твій кон",
       "detail": "Олег має бронювання в August Villa Málaga з 07.09 по 11.09, і контракт на нього вже доступний, що є важливою інформацією для подорожі.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від LinkedIn про нову вакансію, яка відповідає інтересам Олега у криптосфері та маркетингу, і яку він міг ще не бачити.",
       "module": "selfact",
       "ts": "2026-09-03T10:40:01"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, перегляньте 20 нових персоналізованих вакансій від Pr",
+      "detail": "Два свіжі листи від Profesia.sk з новими вакансіями, які Олег міг ще не бачити, незважаючи на те, що він активно шукає роботу.",
+      "module": "selfact",
+      "ts": "2026-09-03T10:40:06"
     }
   ]
 }
