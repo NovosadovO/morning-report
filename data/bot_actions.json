@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав пропозицію від StartEngine щодо інвестицій в AI",
-      "detail": "Свіжий лист від Ben at StartEngine з темою 'Uber’s Co-Founder Just Raised $1.7B for AI-Powered Robots' містить інформацію про потенційні інвестиції.",
-      "module": "selfact",
-      "ts": "2026-08-31T06:26:41"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав інформацію про переваги сауни для покращення сн",
       "detail": "Свіжий лист від PLUNGE з темою 'The Counterintuitive Sleep Fix' містить деталі про вплив сауни на сон, такі як 83.5% покращення сну та 10-хвилинне швидше засинання.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від LinkedIn та подія в календарі на 04.09 підтверджують інтерес Олега до вакансії Regionalny kierownik sprzedaży.",
       "module": "selfact",
       "ts": "2026-09-03T06:46:23"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-09-03T07:01:23"
     }
   ]
 }
