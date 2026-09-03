@@ -514,5 +514,28 @@
       "kind": "note"
     },
     "ts": "2026-09-04T01:28:23.828789+00:00"
+  },
+  "04e4722b58": {
+    "key": "note|олег отримав лист від oleg novosadov olegnovosadovminebea",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег отримав лист від Oleg Novosadov <oleg.novosadov@minebea »\n\nОлег отримав лист від Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> з посиланням на оголошення про продаж будинку.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег отримав лист від Oleg Novosadov <oleg.novosadov@minebea",
+      "desc": "Олег отримав лист від Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> з посиланням на оголошення про продаж будинку.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-04T01:44:15.922672+00:00"
   }
 }
