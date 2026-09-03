@@ -9921,6 +9921,12 @@
       "category": "confirm",
       "question": "cw_cancel: 🔔 Невдалі звички",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-03T16:28:20.436793+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_b4fc725cad"
     }
   ]
 }
