@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-09-04t00_23_36_724583": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-04T00:23:36.724583"
+  },
   "action_detect|2026-09-04t00_13_58_599618": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
@@ -293,10 +298,5 @@
     "topic": "foresight",
     "gist": "{\"city\": \"\"}",
     "ts": "2026-09-03T23:46:47.319177"
-  },
-  "foresight|2026-09-03t23_45_41_590920": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:45:41.590920"
   }
 }
