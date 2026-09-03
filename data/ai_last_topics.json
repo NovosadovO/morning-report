@@ -1,4 +1,119 @@
 {
+  "foresight|2026-09-03t22_05_06_218048": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T22:05:06.218048"
+  },
+  "foresight|2026-09-03t22_04_55_433376": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T22:04:55.433376"
+  },
+  "foresight|2026-09-03t22_04_44_189368": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T22:04:44.189368"
+  },
+  "foresight|2026-09-03t22_03_28_016685": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T22:03:28.016685"
+  },
+  "foresight|2026-09-03t22_03_16_974820": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T22:03:16.974820"
+  },
+  "foresight|2026-09-03t22_03_05_964615": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T22:03:05.964615"
+  },
+  "foresight|2026-09-03t22_02_54_982291": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T22:02:54.982291"
+  },
+  "action_detect|2026-09-03t22_02_49_237146": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Переглянути нові вак",
+    "ts": "2026-09-03T22:02:49.237146"
+  },
+  "action_detect|2026-09-03t22_02_49_131340": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-03T22:02:49.131340"
+  },
+  "action_detect|2026-09-03t22_02_38_396945": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
+    "ts": "2026-09-03T22:02:38.396945"
+  },
+  "action_detect|2026-09-03t22_02_38_175743": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-03T22:02:38.175743"
+  },
+  "selfact|2026-09-03t22_02_36_971946": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що тобі потрібно оновити платіжну інформацію для підписки Runable. Спроби оплати були невдалими,",
+    "ts": "2026-09-03T22:02:36.971946"
+  },
+  "action_detect|2026-09-03t22_02_27_251238": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити платежі\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після зміни, о 06:00, одразу п",
+    "ts": "2026-09-03T22:02:27.251238"
+  },
+  "action_detect|2026-09-03t22_02_14_881117": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
+    "ts": "2026-09-03T22:02:14.881117"
+  },
+  "action_detect|2026-09-03t22_02_13_778029": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансію Regionalny kierownik sprzedaży\", \"action_date\": \"2023-09-04\", \"action_time\": \"10:00\", \"action_",
+    "ts": "2026-09-03T22:02:13.778029"
+  },
+  "action_detect|2026-09-03t22_02_02_669777": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
+    "ts": "2026-09-03T22:02:02.669777"
+  },
+  "briefing_truthfix|2026-09-03t22_01_57_120308": {
+    "topic": "briefing/truthfix",
+    "gist": "Зараз, 3 вересня 2026 року, 22:01, ти на нічній зміні.  Твої дані про здоров'я оновлені 22 години тому, 3 вересня 2026 року. Вага стабільна – 83.0 кг, але до ці",
+    "ts": "2026-09-03T22:01:57.120308"
+  },
+  "briefing|2026-09-03t22_01_51_626909": {
+    "topic": "briefing",
+    "gist": "🧭 ВЕКТОР ДНЯ Зараз, під час нічної зміни, твоя ціль у фінансовій незалежності через крипто та InterFin знаходиться на перехресті стагнації ринку та власних блок",
+    "ts": "2026-09-03T22:01:51.626909"
+  },
+  "themes_ai|2026-09-03t22_01_38_906902": {
+    "topic": "themes_ai",
+    "gist": "Олеже, вечір четверга, ти на нічній зміні, і ось що маємо.  💰 ФІНАНСИ — Маємо 422.16€, що чекають оплати, при щомісячних підписках на 27.32€. Це вказує на невир",
+    "ts": "2026-09-03T22:01:38.906902"
+  },
+  "astro_ai|2026-09-03t22_01_31_885116": {
+    "topic": "astro_ai",
+    "gist": "Олеже, зараз 22:01 3 вересня 2026 року, ти на нічній зміні, і астрологічна картина дня вказує на значні трансформації та можливості, що вимагають уваги до детал",
+    "ts": "2026-09-03T22:01:31.885116"
+  },
+  "foresight|2026-09-03t22_01_19_961652": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T22:01:19.961652"
+  },
+  "foresight|2026-09-03t22_01_08_976868": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T22:01:08.976868"
+  },
+  "email_ai_item|2026-09-03t22_01_03_053193": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є підсумком новин та подій в екосистемі Avalanche за серпень 2026 року. Він інформує про інтеграцію AVAX з Charles Schwab, ток",
+    "ts": "2026-09-03T22:01:03.053193"
+  },
   "foresight|2026-09-03t22_00_57_941895": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -183,120 +298,5 @@
     "topic": "foresight",
     "gist": "{\"city\": \"\"}",
     "ts": "2026-09-03T21:46:39.173906"
-  },
-  "selfact|2026-09-03t21_46_32_520923": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверніть увагу: платіж за підписку Runable на $10.00 був невдали",
-    "ts": "2026-09-03T21:46:32.520923"
-  },
-  "foresight|2026-09-03t21_45_14_051813": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T21:45:14.051813"
-  },
-  "foresight|2026-09-03t21_45_02_904621": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T21:45:02.904621"
-  },
-  "foresight|2026-09-03t21_44_51_971315": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T21:44:51.971315"
-  },
-  "foresight|2026-09-03t21_44_41_143389": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T21:44:41.143389"
-  },
-  "action_detect|2026-09-03t21_43_38_639471": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-09-03T21:43:38.639471"
-  },
-  "foresight|2026-09-03t21_43_34_059745": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T21:43:34.059745"
-  },
-  "foresight|2026-09-03t21_43_23_045412": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T21:43:23.045412"
-  },
-  "foresight|2026-09-03t21_43_12_111062": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T21:43:12.111062"
-  },
-  "foresight|2026-09-03t21_43_01_203318": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T21:43:01.203318"
-  },
-  "foresight|2026-09-03t21_41_48_029645": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-03T21:41:48.029645"
-  },
-  "foresight|2026-09-03t21_41_37_060151": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T21:41:37.060151"
-  },
-  "foresight|2026-09-03t21_41_26_271918": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T21:41:26.271918"
-  },
-  "foresight|2026-09-03t21_41_14_951895": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T21:41:14.951895"
-  },
-  "action_detect|2026-09-03t21_40_51_331494": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після закінчення ",
-    "ts": "2026-09-03T21:40:51.331494"
-  },
-  "msg_event_soon_truthfix|2026-09-03t21_40_43_651605": {
-    "topic": "MSG_EVENT_SOON/truthfix",
-    "gist": "Привіт Олеже!  Як нічна зміна? Зараз 21:40, і ти на роботі до 06:00.  Щодо здоров'я, останні дані були 22 години тому, 3 вересня. Твоя вага 83.0 кг, що стабільн",
-    "ts": "2026-09-03T21:40:43.651605"
-  },
-  "msg_event_soon|2026-09-03t21_40_31_129462": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ✅  Нічна зміна триває, і вже майже опівночі. Зараз 21:40, а ти на роботі, пам'ятаєш? До закінчення зміни сьогодні о 06:00 залишилось ще багато год",
-    "ts": "2026-09-03T21:40:31.129462"
-  },
-  "foresight|2026-09-03t21_40_07_371739": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-03T21:40:07.371739"
-  },
-  "foresight|2026-09-03t21_39_56_334755": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T21:39:56.334755"
-  },
-  "foresight|2026-09-03t21_39_45_329110": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T21:39:45.329110"
-  },
-  "foresight|2026-09-03t21_39_34_263154": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T21:39:34.263154"
-  },
-  "msg_rwa_truthfix|2026-09-03t21_38_55_304055": {
-    "topic": "MSG_RWA/truthfix",
-    "gist": "ONDO, що є у твоєму портфелі, показав помітне зростання на 7.74% за останні 24 години, досягнувши позначки $0.36734, тоді як сектор RWA в цілому зріс на 3.19%. ",
-    "ts": "2026-09-03T21:38:55.304055"
-  },
-  "msg_rwa|2026-09-03t21_38_48_226264": {
-    "topic": "MSG_RWA",
-    "gist": "ONDO, що є у твоєму портфелі, показав помітне зростання на 7.74% за останні 24 години, досягнувши позначки $0.36734, тоді як сектор RWA в цілому зріс на 3.19%. ",
-    "ts": "2026-09-03T21:38:48.226264"
   }
 }
