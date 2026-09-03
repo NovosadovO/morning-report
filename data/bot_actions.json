@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег цікавиться новинами про крипторинок та макроекономіку,",
-      "detail": "Кілька листів (0xResearch, The Economist) стосуються виступу Кевіна Ворша на Jackson Hole та його впливу на ринки, а також Олег сам слідкує за крипто-новинами.",
-      "module": "selfact",
-      "ts": "2026-08-31T18:51:56"
-    },
-    {
-      "kind": "note",
       "what": "Олег активно шукає роботу в Кошице, отримуючи сповіщення про",
       "detail": "Листи від LinkedIn про вакансії Security Consultant в Syntax (Кошице) та попередні нотатки про пошук роботи в Кошице.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи містять розсилки 'The Daily Bone | 📈 Crypto bounces on rumors of Iran wind down', 'Morning Report | 📊 Ранковий дайджест ринків — 03.09.2026' та 'Cointelegraph через LinkedIn | Crypto Biz: AI took a back seat when Bitcoin started climbing'.",
       "module": "selfact",
       "ts": "2026-09-03T14:17:45"
+    },
+    {
+      "kind": "note",
+      "what": "Олег готується до відпустки в Малазі, яка розпочнеться 7 вер",
+      "detail": "У календарі на 07.09 є події 'Відпустка в Малазі', 'Початок відпустки в Малазі' та 'Бронювання August Villa Málaga - Villa'.",
+      "module": "selfact",
+      "ts": "2026-09-03T14:17:53"
     }
   ]
 }
