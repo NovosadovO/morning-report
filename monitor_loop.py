@@ -870,7 +870,7 @@ def run_astro_alert_watcher():
         try:
             import astro as _astro_mod
             importlib.reload(_astro_mod)
-            alerts = _astro_mod.get_astro_alerts() if _hg("astro_alert") else []
+            alerts = _astro_mod.get_astro_alerts()
 
             if alerts and token and chat:
                 header = "🔮 <b>АСТРО-АЛЕРТ</b>\n━━━━━━━━━━━━━━━━━━━━\n"
@@ -940,8 +940,7 @@ def run_smart_notifications_watcher():
     time.sleep(95)
     while True:
         try:
-            if _hg("smart_notifications"):
-                _load_monitor().check_smart_notifications()
+            _load_monitor().check_smart_notifications()
         except Exception as e:
             print(f"Smart notif watcher error: {e}", flush=True)
         time.sleep(60)
@@ -1366,8 +1365,7 @@ def run_assistant_watcher():
                 print(f"[hcoach] watcher error: {_e_hc}", flush=True)
             try:
                 import selfact as _sa_w
-                if _hg("selfact"):
-                    _sa_w.run()
+                _sa_w.run()
             except Exception as _e_saw:
                 print(f"[selfact] watcher error: {_e_saw}", flush=True)
             # Розумна тиша: Олег прокинувся → віддаємо відкладене одним
