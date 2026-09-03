@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Зміна платіжної інформації Runable",
-      "detail": "Згідно з даними 'ПІДПИСКИ', 'Runable' має невдалі платежі, і в 'СПИСАННЯХ' є нотатка 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.', а також 'Оплата Runable після кількох невдалих спроб.', що свідчить про проблему, яку потрібно вирішити.",
-      "module": "selfact",
-      "ts": "2026-08-31T10:03:17"
-    },
-    {
       "kind": "note",
       "what": "Олег цікавиться новинами про інвестиції та крипто",
       "detail": "У 'СВІЖИХ ЛИСТАХ' є кілька листів на ці теми: 'Boj o peniaze. Staré úroky dobiehajú zadlžené Slovensko' від TREND.sk, 'Daily Crypto Digest — August 30' від Oleh Bezuhlyi та 'AI-curated Daily Crypto Digest - August 30' від CryptoBeholder.com.",
@@ -2799,6 +2792,13 @@
       "detail": "Олег цікавиться вакансіями Engineering Manager, і є свіже сповіщення від LinkedIn про цю вакансію.",
       "module": "selfact",
       "ts": "2026-09-03T09:22:10"
+    },
+    {
+      "kind": "notify",
+      "what": "Також є нове сповіщення від LinkedIn: вакансія 'Regionalny k",
+      "detail": "Олег цікавиться вакансіями Regionalny kierownik sprzedaży, і є свіже сповіщення від LinkedIn про цю вакансію.",
+      "module": "selfact",
+      "ts": "2026-09-03T09:22:15"
     }
   ]
 }
