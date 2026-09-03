@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримує детальні інструкції щодо поїздки в Малагу від M",
-      "detail": "Лист від Maroš Sivák <maros.sivak.sro@gmail.com> | InterFin Malaga trip - detailné informácie містить 'súhrn všetkých informácií k tripu do Malagy ( Španielsko )'.",
-      "module": "selfact",
-      "ts": "2026-09-01T05:14:33"
-    },
-    {
       "kind": "notify",
       "what": "Нові вакансії Senior Program Manager",
       "detail": "Свіжий лист від Сповіщення про вакансії LinkedIn | Senior Program Manager в EPAM Systems, де зазначено, що компанія 'активно наймає персонал'.",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від 'Google Health <google-health-noreply@google.com>' містить звіт, де вказано '42,542 fewer than last week' та інші знижені показники.",
       "module": "selfact",
       "ts": "2026-09-03T21:16:06"
+    },
+    {
+      "kind": "notify",
+      "what": "Лист від InterFin Malaga trip",
+      "detail": "Згідно зі 'СВІЖИМИ ЛИСТАМИ', Олег отримав лист від Maroš Sivák <maros.sivak.sro@gmail.com> з темою 'InterFin Malaga trip - detailné informácie', де міститься важлива інформація щодо поїздки в Малагу, включаючи українську версію.",
+      "module": "selfact",
+      "ts": "2026-09-03T21:46:36"
     }
   ]
 }
