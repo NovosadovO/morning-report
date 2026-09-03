@@ -10111,6 +10111,12 @@
       "category": "confirm",
       "question": "gate_shop_skip: Перекус на зміні",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-03T23:04:06.490689+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_7e8df98f2e"
     }
   ]
 }
