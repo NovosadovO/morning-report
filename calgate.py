@@ -55,6 +55,28 @@ def _take_allow() -> bool:
     return (_t.monotonic() - at) <= ALLOW_TTL
 
 
+ASK_STATE = "writegate_asks.json"
+_MAX_ASK_PER_DAY = 8
+
+
+def _ask_budget_ok() -> bool:
+    """Ворота не мають перетворитись на спам: не більше _MAX_ASK_PER_DAY питань."""
+    try:
+        import ai_kit as K
+        day = K.now().strftime("%Y-%m-%d")
+        st = K.load(ASK_STATE, default={}) or {}
+        if not isinstance(st, dict):
+            st = {}
+        n = int(st.get(day) or 0)
+        if n >= _MAX_ASK_PER_DAY:
+            return False
+        K.update_key(ASK_STATE, day, n + 1)
+        return True
+    except Exception as e:
+        _log("budget skip: " + str(e))
+        return True
+
+
 def worth_asking(summary: str, description: str = "") -> bool:
     """Чи варте це того, щоб узагалі питати Олега."""
     s = str(summary or "").strip()
@@ -166,7 +188,11 @@ def gate_write(kind: str, title: str, start_dt=None, detail: str = "",
         if A.answered(key):
             _log("уже відповідав про це — не питаю вдруге: " + s[:60])
             return {"ok": False, "error": "calgate: already answered"}
-        A.ask(q, kind="remind", key=key, meta=meta,
+        if not _ask_budget_ok():
+            _log("ліміт питань на добу — тихо відкидаю: " + s[:60])
+            return {"ok": False, "error": "calgate: ask budget"}
+        _ask_kind = "remind" if str(kind) == "reminder" else "write"
+        A.ask(q, kind=_ask_kind, key=key, meta=meta,
               tag="MSG_WRITE_ASK_" + str(source or kind or "bot"))
         _log("запитав дозвіл на запис (" + str(kind) + "): " + s[:70])
     except Exception as e:

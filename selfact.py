@@ -321,6 +321,17 @@ def _kb(kind: str, title: str):
 
 
 def _do_note(a: dict) -> bool:
+    # Нічого не пишемо без «так» Олега — питаємо кнопками (calgate)
+    try:
+        import calgate as _cg_n
+        _blk = _cg_n.gate_write("note", str(a.get("title") or a.get("text") or ""),
+                                None, str(a.get("text") or ""), source=TAG)
+        if _blk is not None:
+            _log("нотатка → спершу питаю Олега: "
+                 + str(a.get("title") or a.get("text") or "")[:60])
+            return False
+    except Exception as _e_cg:
+        _log("calgate skip: " + str(_e_cg))
     try:
         import ai_notes
         ai_notes.add_note(a["text"], source=TAG)

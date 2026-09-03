@@ -37,6 +37,8 @@ SETS = {
     # Нагадування: пишеться в reminders.json ЛИШЕ після «🔔 Так, нагадай»
     "remind": [("save", "🔔 Так, нагадай"), ("other", "🕒 Інший час"),
                ("no", "🚫 Не треба")],
+    # Будь-який інший запис (нотатка, покупка, задача) — теж лише після «так»
+    "write": [("save", "💾 Так, запиши"), ("no", "🚫 Не треба")],
 }
 
 MEANS = {
@@ -301,10 +303,13 @@ def _do_plan(meta: dict, q: str) -> str:
 
 
 def _do_save(meta: dict, q: str) -> str:
-    """Ставить РЕАЛЬНЕ нагадування — лише після «🔔 Так, нагадай»."""
+    """Реальний запис — лише після «так». Нотатка/покупка/задача → ai_notes,
+    усе інше → нагадування в reminders.json."""
     title = str(meta.get("summary") or q)[:110]
     if is_promo(title + " " + str(meta.get("desc") or "")):
-        return "🚫 Це схоже на рекламу — нагадування не ставлю."
+        return "🚫 Це схоже на рекламу — не записую."
+    if str(meta.get("kind") or "") in ("note", "shopping", "task"):
+        return _do_save_note(meta, title)
     start = _dt(meta.get("start"))
     if not start:
         start = (_now() + timedelta(hours=2)).replace(minute=0, second=0,
@@ -345,6 +350,23 @@ def _do_save(meta: dict, q: str) -> str:
         except Exception as e:
             _log("reminder calendar skip: " + str(e))
     return "🔔 Нагадаю: « " + title + " » " + when + "." + cal
+
+
+def _do_save_note(meta: dict, title: str) -> str:
+    """Нотатка/покупка/задача в ai_notes — лише після «💾 Так, запиши»."""
+    body = str(meta.get("desc") or "")[:400]
+    text = title + ((" — " + body) if body else "")
+    try:
+        import ai_notes
+        ai_notes.add_note(text, source="askme")
+    except Exception as e:
+        _log("note save error: " + str(e))
+        return "⚠️ Не вдалось записати нотатку — спробую ще раз."
+    kind = str(meta.get("kind") or "note")
+    label = {"note": "📝 Записав у нотатки",
+             "shopping": "🛒 Додав у список покупок",
+             "task": "✅ Поставив задачу"}.get(kind, "📝 Записав")
+    return label + ": « " + title + " »."
 
 
 # ─── ЩО РОБИТИ САМОМУ: МИНУЛІ ПОДІЇ, ПРОСТРОЧЕНЕ, ПОРОЖНІЙ ДЕНЬ ──────────────
