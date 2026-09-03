@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Нічні зміни на заводі",
-      "detail": "Згідно з календарем, Олег має нічні зміни 4, 5 та 6 вересня. Попередня нотатка про Олега вказує на його плутанину з графіком нічних змін, тому це важливе нагадування.",
-      "module": "selfact",
-      "ts": "2026-08-31T20:10:03"
-    },
-    {
       "kind": "hcoach",
       "what": "evening_review",
       "detail": "вечірній розбір, оцінка 69",
@@ -2799,6 +2792,13 @@
       "detail": "З календаря на 03.09 видно '14:10 🔔 Перевірка невиконаних звичок'. Поточний час 15:20, тому це нагадування вже минуло.",
       "module": "selfact",
       "ts": "2026-09-03T15:20:31"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує численні крипто-дайджести та новини, включаючи",
+      "detail": "Свіжі листи від Oleh Bezuhlyi через LinkedIn (Daily Crypto Digest — September 3), CryptoBeholder.com через LinkedIn (AI-curated Daily Crypto Digest - September 3), The Daily Bone (Crypto bounces on rumors of Iran wind down), Morning Report (Ранковий дайджест ринків — 03.09.2026), Cointelegraph через",
+      "module": "selfact",
+      "ts": "2026-09-03T15:35:32"
     }
   ]
 }
