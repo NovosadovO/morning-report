@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег ігнорує сповіщення про вакансії з Profesia.sk та Linked",
-      "detail": "Олег ігнорував сповіщення про вакансії з LinkedIn раніше, а сьогодні прийшло 2 листи від Profesia.sk та 2 від LinkedIn.",
-      "module": "selfact",
-      "ts": "2026-08-31T04:23:14"
-    },
-    {
-      "kind": "note",
       "what": "Олег ігнорує оновлення платіжної інформації для Runable, нез",
       "detail": "Згідно з підписками, платежі до Runable були невдалими 23, 24, 26 та 28 серпня, а також є нотатка про пропущене оновлення 29.08.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У 'СВІЖИХ ЛИСТАХ' є лист від CryptoJobsList <newsletter@cryptojobslist.com> | Jobs Newsletter #463.",
       "module": "selfact",
       "ts": "2026-09-03T04:58:42"
+    },
+    {
+      "kind": "note",
+      "what": "Олег читає новини The Defiant та The Breakdown",
+      "detail": "У 'СВІЖИХ ЛИСТАХ' є листи від The Defiant та The Breakdown, а також у пам'яті про Олега є запис, що він отримує та читає щоденні дайджести крипто-новин від The Defiant та The Breakdown.",
+      "module": "selfact",
+      "ts": "2026-09-03T04:58:48"
     }
   ]
 }
