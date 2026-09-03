@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-04t01_28_13_770547": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олег, зверни увагу, що платежі за підписку Runable були невдалими. Потр",
+    "ts": "2026-09-04T01:28:13.770547"
+  },
+  "openloop_promises|2026-09-04t01_13_36_264235": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-04T01:13:36.264235"
+  },
   "selfact|2026-09-04t01_12_22_009887": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що тобі потрібно прийняти Armolopid Plus після закінчення нічної зміни (о 06:00) перед сном.\",  ",
@@ -288,15 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-03T23:57:50.648136"
-  },
-  "action_detect|2026-09-03t23_57_39_784415": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег планує перегляд",
-    "ts": "2026-09-03T23:57:39.784415"
-  },
-  "foresight|2026-09-03t23_57_39_611189": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:57:39.611189"
   }
 }
