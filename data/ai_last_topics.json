@@ -1,4 +1,69 @@
 {
+  "foresight|2026-09-03t21_47_12_155334": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T21:47:12.155334"
+  },
+  "foresight|2026-09-03t21_47_01_088057": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T21:47:01.088057"
+  },
+  "foresight|2026-09-03t21_46_50_283103": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T21:46:50.283103"
+  },
+  "foresight|2026-09-03t21_46_39_173906": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T21:46:39.173906"
+  },
+  "selfact|2026-09-03t21_46_32_520923": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверніть увагу: платіж за підписку Runable на $10.00 був невдали",
+    "ts": "2026-09-03T21:46:32.520923"
+  },
+  "foresight|2026-09-03t21_45_14_051813": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T21:45:14.051813"
+  },
+  "foresight|2026-09-03t21_45_02_904621": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T21:45:02.904621"
+  },
+  "foresight|2026-09-03t21_44_51_971315": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T21:44:51.971315"
+  },
+  "foresight|2026-09-03t21_44_41_143389": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T21:44:41.143389"
+  },
+  "action_detect|2026-09-03t21_43_38_639471": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
+    "ts": "2026-09-03T21:43:38.639471"
+  },
+  "foresight|2026-09-03t21_43_34_059745": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T21:43:34.059745"
+  },
+  "foresight|2026-09-03t21_43_23_045412": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T21:43:23.045412"
+  },
+  "foresight|2026-09-03t21_43_12_111062": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T21:43:12.111062"
+  },
   "foresight|2026-09-03t21_43_01_203318": {
     "topic": "foresight",
     "gist": "{\"city\": \"\"}",
@@ -233,70 +298,5 @@
     "topic": "foresight",
     "gist": "{\"city\": \"\"}",
     "ts": "2026-09-03T21:25:33.739455"
-  },
-  "foresight|2026-09-03t21_24_25_203528": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-03T21:24:25.203528"
-  },
-  "foresight|2026-09-03t21_24_14_175692": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T21:24:14.175692"
-  },
-  "foresight|2026-09-03t21_24_03_225510": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T21:24:03.225510"
-  },
-  "foresight|2026-09-03t21_23_52_092010": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T21:23:52.092010"
-  },
-  "foresight|2026-09-03t21_22_47_022361": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-03T21:22:47.022361"
-  },
-  "foresight|2026-09-03t21_22_36_026559": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T21:22:36.026559"
-  },
-  "foresight|2026-09-03t21_22_25_074017": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T21:22:25.074017"
-  },
-  "foresight|2026-09-03t21_22_13_946790": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T21:22:13.946790"
-  },
-  "email_ai_item|2026-09-03t21_21_56_764266": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від Unstoppable Domains є рекламною розсилкою, що пропонує ознайомитись з функціями Audit Trail та Statistics їхнього продукту",
-    "ts": "2026-09-03T21:21:56.764266"
-  },
-  "foresight|2026-09-03t21_20_53_295060": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-03T21:20:53.295060"
-  },
-  "foresight|2026-09-03t21_20_42_219886": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T21:20:42.219886"
-  },
-  "foresight|2026-09-03t21_20_31_246459": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T21:20:31.246459"
-  },
-  "foresight|2026-09-03t21_20_20_601426": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T21:20:20.601426"
   }
 }
