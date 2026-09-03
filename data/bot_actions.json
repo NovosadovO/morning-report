@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, зверни увагу: твоє бронювання 'Paxos and Antipaxos Boa",
-      "detail": "З'явився свіжий лист від noreply@booking.com про скасування бронювання та повернення коштів, що є важливою фінансовою та туристичною інформацією.",
-      "module": "selfact",
-      "ts": "2026-08-31T13:41:59"
-    },
-    {
       "kind": "note",
       "what": "Олег отримав інформаційний лист від MyClaw Newsletter про ро",
       "detail": "З'явився свіжий лист від MyClaw Newsletter <newsletter@myclaw.ai> з темою 'Ride the AI Boom', що є інформаційним фактом.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від LinkedIn 'Сповіщення про вакансії LinkedIn | Growth Marketing Lead (B2B SaaS & Payments) в Ruby Labs' вказує на відповідність запиту 'Cryptocurrency' в Slovakia.",
       "module": "selfact",
       "ts": "2026-09-03T11:27:49"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує новинні розсилки від Generative AI та TradingVi",
+      "detail": "Свіжі листи від 'Generative AI <newsletter@genai.works>' та 'TradingView <noreply@tradingview.com>' підтверджують інтерес до цих тем.",
+      "module": "selfact",
+      "ts": "2026-09-03T11:28:01"
     }
   ]
 }
