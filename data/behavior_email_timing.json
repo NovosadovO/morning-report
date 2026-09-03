@@ -1,9 +1,4 @@
 {
-  "78022": {
-    "sender": "hello@e.runna.com",
-    "sender_raw": "\"Runna\" <hello@e.runna.com>",
-    "seen_ts": "2026-08-26T10:28:48.259326+00:00"
-  },
   "78024": {
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@email.hm.com",
     "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
     "seen_ts": "2026-09-03T08:14:33.984828+00:00"
+  },
+  "78468": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-09-03T09:07:19.080247+00:00"
   }
 }
