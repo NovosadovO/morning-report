@@ -1,4 +1,64 @@
 {
+  "selfact|2026-09-03t23_37_49_793498": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі за Runable\",     \"text\": \"Олеже, зверніть увагу: ваші платежі за підписку Runable були невдали",
+    "ts": "2026-09-03T23:37:49.793498"
+  },
+  "foresight|2026-09-03t23_36_23_309423": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:36:23.309423"
+  },
+  "foresight|2026-09-03t23_36_12_619194": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:36:12.619194"
+  },
+  "foresight|2026-09-03t23_36_01_290400": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:36:01.290400"
+  },
+  "foresight|2026-09-03t23_35_50_269861": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T23:35:50.269861"
+  },
+  "foresight|2026-09-03t23_34_45_704621": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:34:45.704621"
+  },
+  "foresight|2026-09-03t23_34_34_748186": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:34:34.748186"
+  },
+  "foresight|2026-09-03t23_34_23_649501": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:34:23.649501"
+  },
+  "foresight|2026-09-03t23_34_12_624437": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T23:34:12.624437"
+  },
+  "foresight|2026-09-03t23_33_01_448124": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:33:01.448124"
+  },
+  "foresight|2026-09-03t23_32_50_466385": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:32:50.466385"
+  },
+  "foresight|2026-09-03t23_32_39_504203": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:32:39.504203"
+  },
   "foresight|2026-09-03t23_32_28_475888": {
     "topic": "foresight",
     "gist": "{\"city\": \"\"}",
@@ -238,65 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-03T23:15:34.505619"
-  },
-  "foresight|2026-09-03t23_15_23_667651": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:15:23.667651"
-  },
-  "foresight|2026-09-03t23_15_12_620350": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:15:12.620350"
-  },
-  "foresight|2026-09-03t23_15_01_588630": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T23:15:01.588630"
-  },
-  "foresight|2026-09-03t23_13_56_394273": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:13:56.394273"
-  },
-  "foresight|2026-09-03t23_13_45_403825": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:13:45.403825"
-  },
-  "foresight|2026-09-03t23_13_34_374877": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:13:34.374877"
-  },
-  "foresight|2026-09-03t23_13_23_426819": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T23:13:23.426819"
-  },
-  "foresight|2026-09-03t23_12_10_343847": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:12:10.343847"
-  },
-  "action_detect|2026-09-03t23_11_59_665400": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після зміни обов'язково п",
-    "ts": "2026-09-03T23:11:59.665400"
-  },
-  "foresight|2026-09-03t23_11_59_355330": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:11:59.355330"
-  },
-  "msg_event_soon_truthfix|2026-09-03t23_11_51_524131": {
-    "topic": "MSG_EVENT_SOON/truthfix",
-    "gist": "Олеже, зараз 23:11, ти на нічній зміні.  **Здоров'я** * Вага 83.0 кг, тренд стабільний (+0.0) [дані 23 год тому]. * Сон за 7 днів впав до 7.3 год (-0.9) [дані 2",
-    "ts": "2026-09-03T23:11:51.524131"
-  },
-  "foresight|2026-09-03t23_11_48_316761": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:11:48.316761"
   }
 }
