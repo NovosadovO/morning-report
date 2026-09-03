@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримує багато новинних розсилок з криптотематики та фі",
-      "detail": "Свіжі листи від The Block ('Strategy resumes bitcoin buying') та Aave ('Aave Newsletter: Issue #019') свідчать про постійний інтерес Олега до криптоновин.",
-      "module": "selfact",
-      "ts": "2026-09-01T04:43:41"
-    },
-    {
       "kind": "notify",
       "what": "Олег, зверни увагу на лист від Maroš Sivák з детальною інфор",
       "detail": "Свіжий лист від Maroš Sivák 'InterFin Malaga trip - detailné informácie' містить важливу інформацію про майбутню поїздку в Малагу, яка запланована на 07.09, і в ньому зазначено, що інформація доступна українською.",
@@ -2799,6 +2792,13 @@
       "detail": "З листа від Google Health <google-health-noreply@google.com> | Your weekly progress report from Google Health, де вказано '42,542 fewer than last week' та інші зниження показників.",
       "module": "selfact",
       "ts": "2026-09-03T18:08:09"
+    },
+    {
+      "kind": "notify",
+      "what": "Ти пропустив перегляд вакансій на Profesia.sk сьогодні о 06:",
+      "detail": "КАЛЕНДАР НА 7 ДНІВ: 03.09: 06:00 🔔 Перевірити вакансії Profesia.sk; 07:00 🔔 Переглянути вакансії Profesia.sk. Поточний час 19:10.",
+      "module": "selfact",
+      "ts": "2026-09-03T19:10:43"
     }
   ]
 }
