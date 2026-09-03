@@ -10225,6 +10225,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-04T01:09:51.820204+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_9db2b10f39"
     }
   ]
 }
