@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олег, чи бажаєш, щоб я видалив застарілі події 'Поїздка в Ма",
-      "detail": "З нотаток відомо, що подія 'Поїздка в Малагу, Іспанія' на 1 вересня є застарілою і була перенесена на 7 вересня. Потрібно уточнити, чи Олег хоче видалити ці застарілі події.",
-      "module": "selfact",
-      "ts": "2026-08-31T05:24:46"
-    },
-    {
       "kind": "note",
       "what": "Олег цікавиться вакансіями у сфері AI, Technical Writer та E",
       "detail": "У свіжих листах є сповіщення про вакансії 'Regional AI Run Lead в EPAM Systems', 'Technical Writer в Octave', 'Event Operations Specialist в Swiss Re', що узгоджується з попередніми нотатками про його інтереси.",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримує сповіщення про вакансії 'Engineering Manager - Delivery & Team Leadership (m/w/d) в Deutsche Telekom' та 'Regionalny kierownik sprzedaży в Antal Poland' від LinkedIn, що вказує на його активний пошук роботи в цих напрямках.",
       "module": "selfact",
       "ts": "2026-09-03T05:59:59"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, нагадую, що початок відпустки в Малазі заплановано на",
+      "detail": "В календарі є розбіжність: '07.09: 08:00 🔔 Початок відпустки в Малазі' та '08.09: 08:00 📌 Бронювання August Villa Málaga - Villa'.",
+      "module": "selfact",
+      "ts": "2026-09-03T06:00:07"
     }
   ]
 }
