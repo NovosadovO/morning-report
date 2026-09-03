@@ -1,4 +1,14 @@
 {
+  "bills|2026-09-03t02_51_34_572079": {
+    "topic": "bills",
+    "gist": "```json [] ```",
+    "ts": "2026-09-03T02:51:34.572079"
+  },
+  "selfact|2026-09-03t02_36_52_987459": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж на $10.00 до Runable був невдалим. Потрібно оновити платі",
+    "ts": "2026-09-03T02:36:52.987459"
+  },
   "openloop_promises|2026-09-03t02_34_18_898349": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-03T00:18:07.840028"
-  },
-  "action_detect|2026-09-03t00_17_56_596335": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжну ",
-    "ts": "2026-09-03T00:17:56.596335"
-  },
-  "action_detect|2026-09-03t00_17_39_815938": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято Armolopid",
-    "ts": "2026-09-03T00:17:39.815938"
   }
 }
