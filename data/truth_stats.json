@@ -27,7 +27,7 @@
     "personal_ai": {
       "checked": 125,
       "issues": 84,
-      "fixed": 27,
+      "fixed": 28,
       "cut": 3
     },
     "themes_ai": {
@@ -90,7 +90,7 @@
     "assistant": {
       "checked": 12,
       "issues": 5,
-      "fixed": 2
+      "fixed": 3
     },
     "proactive_ai": {
       "checked": 22,
@@ -389,6 +389,6 @@
     "checked": 232,
     "issues": 159,
     "cut": 22,
-    "fixed": 63
+    "fixed": 65
   }
 }
