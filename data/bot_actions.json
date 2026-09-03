@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег активно шукає вакансії в Кошице, зокрема 'Senior Progra",
-      "detail": "Свіжий лист 'Сповіщення про вакансії LinkedIn | Senior Program Manager в EPAM Systems' вказує на активний пошук роботи Олегом у Кошице.",
-      "module": "selfact",
-      "ts": "2026-09-01T04:59:36"
-    },
-    {
-      "kind": "note",
       "what": "Олег цікавиться новинами криптовалют та фінансових ринків, п",
       "detail": "Свіжі листи 'The Daily: Strategy resumes bitcoin buying' від The Block та 'Aave Newsletter: Issue #019' від Aave підтверджують інтерес Олега до криптовалют та фінансових ринків.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "СВІЖІ ЛИСТИ: від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Employee Services Operations Specialist в the LEGO Group",
       "module": "selfact",
       "ts": "2026-09-03T19:10:52"
+    },
+    {
+      "kind": "ask",
+      "what": "Олеже, чи потрібно мені нагадати тобі про стрижку у Міріам 0",
+      "detail": "У календарі на 06.09 є подія '14:30 🔔 Стрижка у Міріам' та '15:30 Miriam, Classic strih, Staré Mesto 463, 040 01 Košice'.",
+      "module": "selfact",
+      "ts": "2026-09-03T19:57:27"
     }
   ]
 }
