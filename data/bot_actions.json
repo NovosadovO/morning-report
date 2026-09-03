@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег активно читає щоденні дайджести крипто-новин, а також н",
-      "detail": "Свіжі листи від Oleh Bezuhlyi через LinkedIn | 📰 Daily Crypto Digest — August 31, CryptoBeholder.com через LinkedIn | 📰 AI-curated Daily Crypto Digest - August 31, The Daily Bone | 📈 Robinhood memecoin causes repricing of AMC stock, CMC Spotlight | Saylor Just Posted 'We're Back' and the Market Is L",
-      "module": "selfact",
-      "ts": "2026-08-31T15:46:03"
-    },
-    {
-      "kind": "note",
       "what": "Олег слідкує за новинами у сфері ШІ, про що свідчить лист ві",
       "detail": "Свіжий лист від MyClaw Newsletter | 🦞 Ride the AI Boom та з пам'яті: 'Олег отримав інформаційний лист від MyClaw Newsletter про розвиток ШІ.'",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав два листи від Temu з проханням забрати замовлення.",
       "module": "selfact",
       "ts": "2026-09-03T12:14:05"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, ви пропустили повідомлення в suiboop.fun🦉 на Discord.",
+      "detail": "Олег отримав лист від Discord з темою 'Ти пропустив повідомлення в suiboop.fun🦉'.",
+      "module": "selfact",
+      "ts": "2026-09-03T12:14:17"
     }
   ]
 }
