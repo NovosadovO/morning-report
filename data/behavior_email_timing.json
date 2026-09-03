@@ -1,9 +1,4 @@
 {
-  "78047": {
-    "sender": "newsletter@ticketportal.sk",
-    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
-    "seen_ts": "2026-08-26T15:55:10.708391+00:00"
-  },
   "78048": {
     "sender": "hello@metamask.io",
     "sender_raw": "MetaMask Team <hello@metamask.io>",
@@ -1498,5 +1493,10 @@
     "sender": "researchteam@blockworks.com",
     "sender_raw": "0xResearch <researchteam@blockworks.com>",
     "seen_ts": "2026-09-03T14:03:21.990551+00:00"
+  },
+  "78490": {
+    "sender": "payments-noreply@google.com",
+    "sender_raw": "Google Payments <payments-noreply@google.com>",
+    "seen_ts": "2026-09-03T14:18:57.908302+00:00"
   }
 }
