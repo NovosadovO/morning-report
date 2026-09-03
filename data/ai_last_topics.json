@@ -1,4 +1,24 @@
 {
+  "subs|2026-09-04t01_38_47_258236": {
+    "topic": "subs",
+    "gist": "[]",
+    "ts": "2026-09-04T01:38:47.258236"
+  },
+  "proactive_actions|2026-09-04t01_30_14_917497": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-04\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
+    "ts": "2026-09-04T01:30:14.917497"
+  },
+  "action_detect|2026-09-04t01_30_00_526195": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-04\", \"action_time\": \"09:00\", \"action_summary\": \"Перег",
+    "ts": "2026-09-04T01:30:00.526195"
+  },
+  "msg_vip_email|2026-09-04t01_29_53_768386": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 📧  Поки ти відновлюєш сили під час нічного відпочинку, за останні години відбулося кілька рухів, які можуть бути цікавими. Крипторинок продемонстр",
+    "ts": "2026-09-04T01:29:53.768386"
+  },
   "selfact|2026-09-04t01_28_13_770547": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олег, зверни увагу, що платежі за підписку Runable були невдалими. Потр",
@@ -278,25 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-03T23:59:30.576812"
-  },
-  "foresight|2026-09-03t23_59_19_801432": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:59:19.801432"
-  },
-  "foresight|2026-09-03t23_59_08_664602": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\"} ```",
-    "ts": "2026-09-03T23:59:08.664602"
-  },
-  "foresight|2026-09-03t23_58_01_458692": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:58:01.458692"
-  },
-  "foresight|2026-09-03t23_57_50_648136": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:57:50.648136"
   }
 }
