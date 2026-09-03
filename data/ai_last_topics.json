@@ -1,4 +1,54 @@
 {
+  "foresight|2026-09-03t23_55_49_175717": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T23:55:49.175717"
+  },
+  "foresight|2026-09-03t23_54_38_072344": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:54:38.072344"
+  },
+  "foresight|2026-09-03t23_54_27_129218": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:54:27.129218"
+  },
+  "foresight|2026-09-03t23_54_16_124239": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:54:16.124239"
+  },
+  "foresight|2026-09-03t23_54_05_048436": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T23:54:05.048436"
+  },
+  "selfact|2026-09-03t23_53_57_676176": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверни увагу, що платіж за підписку Runable на $10.00 був невдал",
+    "ts": "2026-09-03T23:53:57.676176"
+  },
+  "foresight|2026-09-03t23_52_38_143796": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:52:38.143796"
+  },
+  "foresight|2026-09-03t23_52_27_149008": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:52:27.149008"
+  },
+  "foresight|2026-09-03t23_52_16_064610": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:52:16.064610"
+  },
+  "foresight|2026-09-03t23_52_05_080486": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T23:52:05.080486"
+  },
   "foresight|2026-09-03t23_50_47_780820": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
@@ -248,55 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-03T23:30:59.262918"
-  },
-  "foresight|2026-09-03t23_30_48_161950": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T23:30:48.161950"
-  },
-  "action_detect|2026-09-03t23_30_29_994706": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2024-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-09-03T23:30:29.994706"
-  },
-  "foresight|2026-09-03t23_29_43_461685": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:29:43.461685"
-  },
-  "foresight|2026-09-03t23_29_32_593749": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:29:32.593749"
-  },
-  "foresight|2026-09-03t23_29_21_510681": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:29:21.510681"
-  },
-  "foresight|2026-09-03t23_29_10_517675": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T23:29:10.517675"
-  },
-  "foresight|2026-09-03t23_27_58_455271": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T23:27:58.455271"
-  },
-  "foresight|2026-09-03t23_27_47_407172": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:27:47.407172"
-  },
-  "foresight|2026-09-03t23_27_36_476546": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T23:27:36.476546"
-  },
-  "foresight|2026-09-03t23_27_25_360036": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T23:27:25.360036"
   }
 }
