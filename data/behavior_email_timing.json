@@ -1,9 +1,4 @@
 {
-  "78004": {
-    "sender": "slovakia@delivery-marketing.bolt.eu",
-    "sender_raw": "\"Bolt Food\" <slovakia@delivery-marketing.bolt.eu>",
-    "seen_ts": "2026-08-26T07:08:16.971770+00:00"
-  },
   "78005": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Peter Varga через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "no-reply@mail.thedefiant.io",
     "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
     "seen_ts": "2026-09-02T22:38:52.308432+00:00"
+  },
+  "78455": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-09-03T00:14:12.777496+00:00"
   }
 }
