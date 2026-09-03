@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-09-03t03_49_59_261292": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-03T03:49:59.261292"
+  },
   "selfact|2026-09-03t03_39_20_301805": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверніть увагу: платіж до Runable на $10.00 був невдалим. Потріб",
@@ -293,10 +298,5 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути AVALANCHE AUGUST 2026 RECAP\",     \"date\": \"2026-09-03\",     \"time\": \"\",     \"message\": \"Олеже, у",
     "ts": "2026-09-03T01:31:21.036338"
-  },
-  "action_detect|2026-09-03t01_21_22_404360": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": \"2026-08-04\", \"action_time\": null, \"action_summary\": \"Оновити п",
-    "ts": "2026-09-03T01:21:22.404360"
   }
 }
