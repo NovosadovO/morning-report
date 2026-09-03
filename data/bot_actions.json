@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримав інформаційний лист від MyClaw Newsletter про ро",
-      "detail": "З'явився свіжий лист від MyClaw Newsletter <newsletter@myclaw.ai> з темою 'Ride the AI Boom', що є інформаційним фактом.",
-      "module": "selfact",
-      "ts": "2026-08-31T13:42:04"
-    },
-    {
       "kind": "notify",
       "what": "Олег, зверни увагу: бронювання 'Paxos and Antipaxos Boat Tou",
       "detail": "З листа noreply@booking.com видно, що бронювання скасовано і кошти повернені. Це важлива інформація, яку Олег міг пропустити, оскільки він раніше натискав '🙈 Не нагадуй' та '🗑 Видалити' на інші сповіщення.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи від 'Generative AI <newsletter@genai.works>' та 'TradingView <noreply@tradingview.com>' підтверджують інтерес до цих тем.",
       "module": "selfact",
       "ts": "2026-09-03T11:28:01"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-09-03",
+      "detail": "автосинк з годинника: steps, hr_avg, calories, spo2, sleep_total_min",
+      "module": "qwsync",
+      "ts": "2026-09-03T11:31:13"
     }
   ]
 }
