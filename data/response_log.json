@@ -9898,6 +9898,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-09-03T16:27:57.550611+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_cancel_b5b194980d"
     }
   ]
 }
