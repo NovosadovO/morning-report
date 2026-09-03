@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-08-31",
-      "detail": "автосинк з годинника: steps, hr_avg, calories, stress, sleep_total_min",
-      "module": "qwsync",
-      "ts": "2026-08-31T20:58:36"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=17167, sleep_total_min=300, hr_avg=45, calories=5, stress=64, sleep_hours=5.0, date=2026-08-31, source=qwatch_auto, saved_at=2026-08-31 20:58",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Надійшов лист від LinkedIn Job Alerts з новою вакансією Logistics Supervisor LOC в Volvo Cars у Кошице, що свідчить про його активний пошук роботи.",
       "module": "selfact",
       "ts": "2026-09-03T16:21:00"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує сповіщення про вакансії SEO Content Specialist",
+      "detail": "Надійшов лист від LinkedIn Job Alerts з новою вакансією SEO Content Specialist в Trade Nation у Словаччині, що вказує на його різнобічний пошук роботи.",
+      "module": "selfact",
+      "ts": "2026-09-03T16:21:09"
     }
   ]
 }
