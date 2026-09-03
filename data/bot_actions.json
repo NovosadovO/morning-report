@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "збережено дані здоров'я",
-      "detail": "/сон",
-      "module": "healthai",
-      "ts": "2026-08-30T23:20:19"
-    },
-    {
       "kind": "hcoach",
       "what": "sleep_report",
       "detail": "аналіз сну",
@@ -2799,6 +2792,13 @@
       "detail": "Олег натискав кнопки '✅ Відбулось' та '❌ Скасувалось' для звичок о 00:01 03.09.",
       "module": "selfact",
       "ts": "2026-09-03T04:10:18"
+    },
+    {
+      "kind": "notify",
+      "what": "У тебе є нові сповіщення про вакансії Engineering Manager -",
+      "detail": "Є свіжі листи від LinkedIn про вакансії 'Engineering Manager - Delivery & Team Leadership (m/w/d)' та 'Regionalny kierownik sprzedaży'. Олег цікавиться цими вакансіями, що зазначено в пам'яті.",
+      "module": "selfact",
+      "ts": "2026-09-03T04:10:25"
     }
   ]
 }
