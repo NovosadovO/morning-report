@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, зверни увагу на лист від Maroš Sivák з детальною інфор",
-      "detail": "Свіжий лист від Maroš Sivák 'InterFin Malaga trip - detailné informácie' містить важливу інформацію про майбутню поїздку в Малагу, яка запланована на 07.09, і в ньому зазначено, що інформація доступна українською.",
-      "module": "selfact",
-      "ts": "2026-09-01T04:59:31"
-    },
-    {
       "kind": "note",
       "what": "Олег активно шукає вакансії в Кошице, зокрема 'Senior Progra",
       "detail": "Свіжий лист 'Сповіщення про вакансії LinkedIn | Senior Program Manager в EPAM Systems' вказує на активний пошук роботи Олегом у Кошице.",
@@ -2799,6 +2792,13 @@
       "detail": "КАЛЕНДАР НА 7 ДНІВ: 03.09: 06:00 🔔 Перевірити вакансії Profesia.sk; 07:00 🔔 Переглянути вакансії Profesia.sk. Поточний час 19:10.",
       "module": "selfact",
       "ts": "2026-09-03T19:10:43"
+    },
+    {
+      "kind": "notify",
+      "what": "Тобі надійшло нове сповіщення про вакансію Employee Services",
+      "detail": "СВІЖІ ЛИСТИ: від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Employee Services Operations Specialist в the LEGO Group",
+      "module": "selfact",
+      "ts": "2026-09-03T19:10:52"
     }
   ]
 }
