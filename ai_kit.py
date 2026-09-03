@@ -228,13 +228,23 @@ def send_card(text: str, keyboard=None, tag="ai_kit", chat_id=None) -> bool:
         "disable_web_page_preview": True,
     }
     if keyboard is None:
-        # Під КОЖНИМ сповіщенням мають бути кнопки відповіді, доречні темі
-        # (react.py). Модуль, який дав свої кнопки, лишається зі своїми.
+        # Під КОЖНИМ повідомленням — кнопки, доречні саме його змісту:
+        # питання → варіанти відповіді на це питання (пам'ять назавжди),
+        # сповіщення → дії під його вид. Модуль зі своїми кнопками лишається
+        # зі своїми. Питання, на яке Олег уже відповів, не надсилаємо взагалі.
         try:
-            import react as _rx
-            keyboard = _rx.keyboard(_rx.detect(tag, text), title=_rx._first_line(text))
+            import autokb as _akb
+            if not _akb.should_send(text, tag):
+                return True
+            keyboard = _akb.build(text, tag)
         except Exception as _e:
-            log(tag, "react keyboard skip: " + str(_e))
+            log(tag, "autokb skip: " + str(_e))
+            try:
+                import react as _rx
+                keyboard = _rx.keyboard(_rx.detect(tag, text),
+                                        title=_rx._first_line(text))
+            except Exception as _e2:
+                log(tag, "react keyboard skip: " + str(_e2))
     if keyboard:
         body["reply_markup"] = {"inline_keyboard": keyboard}
     res = tg("sendMessage", body, tag=tag)

@@ -186,6 +186,38 @@ def ask(question: str, kind: str = "confirm", key: str = "",
     return bool(ok)
 
 
+def buttons(question: str, kind: str = "confirm", key: str = "",
+            options=None, meta=None):
+    """Кнопки під це питання БЕЗ відправки (для autokb / інших модулів).
+
+    None → питати не треба: реклама, трекер або Олег уже відповів.
+    """
+    q = str(question or "").strip()
+    if not q:
+        return None
+    key = str(key or q)[:80]
+    meta = meta or {}
+    if is_promo(q + " " + str(meta.get("summary", ""))):
+        return None
+    if _is_tracker(str(meta.get("summary", ""))):
+        return None
+    if answered(key):
+        return None
+    opts = list(options or SETS.get(kind) or SETS["confirm"])
+    try:
+        pid = _store.put({"key": key, "q": q[:400], "kind": kind,
+                          "opts": opts, "meta": meta,
+                          "ts": _now().isoformat(timespec="seconds")})
+    except Exception as e:
+        _log("store error: " + str(e))
+        return None
+    _remember(key, {"q": q[:400], "kind": kind,
+                    "asked_at": _now().isoformat(timespec="seconds")})
+    btns = [{"text": lbl, "callback_data": "am_" + act + "_" + pid}
+            for act, lbl in opts]
+    return [btns[i:i + 2] for i in range(0, len(btns), 2)]
+
+
 # ─── ОБРОБКА НАТИСКАННЯ ──────────────────────────────────────────────────────
 
 def handle(data: str, cb=None) -> dict:
