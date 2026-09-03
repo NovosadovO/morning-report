@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег слідкує за криптоновинами, зокрема впливом виступу Кеві",
-      "detail": "Листи від 0xResearch, The Daily Bone, Oleh Bezuhlyi та CryptoBeholder.com містять цю інформацію.",
-      "module": "selfact",
-      "ts": "2026-08-31T20:55:39"
-    },
-    {
-      "kind": "note",
       "what": "Записав дані здоров'я за 2026-08-31",
       "detail": "автосинк з годинника: steps, hr_avg, calories, stress, sleep_total_min",
       "module": "qwsync",
@@ -2799,6 +2792,13 @@
       "detail": "Надійшов лист від Google Payments про зміну даних користувача, що є важливою інформацією для безпеки облікового запису.",
       "module": "selfact",
       "ts": "2026-09-03T16:20:55"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує сповіщення про вакансії Logistics Supervisor LO",
+      "detail": "Надійшов лист від LinkedIn Job Alerts з новою вакансією Logistics Supervisor LOC в Volvo Cars у Кошице, що свідчить про його активний пошук роботи.",
+      "module": "selfact",
+      "ts": "2026-09-03T16:21:00"
     }
   ]
 }
