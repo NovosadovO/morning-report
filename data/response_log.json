@@ -9780,6 +9780,16 @@
         "kind": "calendar",
         "date": "2026-09-04"
       }
+    },
+    {
+      "ts": "2026-09-03T03:01:33.588827+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути звіт Avalanche August 2026 Recap",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-03"
+      }
     }
   ]
 }
