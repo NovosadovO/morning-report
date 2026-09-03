@@ -145,7 +145,7 @@
     "MSG_IDLE_TIMEOUT": {
       "checked": 15,
       "issues": 12,
-      "fixed": 5
+      "fixed": 6
     },
     "MSG_HABIT_CHECKIN": {
       "checked": 6,
@@ -391,6 +391,6 @@
     "checked": 267,
     "issues": 181,
     "cut": 22,
-    "fixed": 79
+    "fixed": 80
   }
 }
