@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав контракт на бронювання August Villa Málaga - Vi",
-      "detail": "Нова інформація про бронювання вілли в Малазі, яка є важливою для Олега і не занотована раніше.",
-      "module": "selfact",
-      "ts": "2026-08-31T10:50:30"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав інформаційний лист від Volkswagen Group через L",
       "detail": "Свіжий лист від Volkswagen Group через LinkedIn.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Два свіжі листи від Profesia.sk з новими вакансіями, а також заплановані події в календарі на сьогодні ('Перевірити вакансії Profesia.sk', 'Переглянути вакансії Profesia.sk') та на завтра ('Переглянути вакансію Engineering Manager', 'Переглянути вакансію Regionalny kierownik sprzedaży') підтверджуют",
       "module": "selfact",
       "ts": "2026-09-03T09:37:52"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує багато сповіщень про вакансії з Profesia.sk, що",
+      "detail": "Свіжі листи від Profesia.sk з 20 та 11 новими вакансіями.",
+      "module": "selfact",
+      "ts": "2026-09-03T09:53:44"
     }
   ]
 }
