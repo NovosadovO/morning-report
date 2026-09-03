@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Виліт Ryanair 1 вересня",
-      "detail": "У нотатках про Олега є інформація про запланований виліт, і це важлива подія, про яку варто нагадати.",
-      "module": "selfact",
-      "ts": "2026-08-31T19:23:00"
-    },
-    {
       "kind": "note",
       "what": "Олег отримує сповіщення про вакансію Security Consultant в S",
       "detail": "Олег отримав лист від LinkedIn 'Сповіщення про вакансії LinkedIn | Security Consultant в Syntax'.",
@@ -2799,6 +2792,13 @@
       "detail": "У розділі 'ПІДПИСКИ' є запис про Runable з приміткою 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.' та 'last_seen': '2026-08-…(обрізано)', а в 'СПИСАННЯ' є успішний платіж за 2026-08-26. Це може бути актуальною проблемою.",
       "module": "selfact",
       "ts": "2026-09-03T14:33:21"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує багато розсилок, пов'язаних з криптосвітом та ф",
+      "detail": "Свіжі листи включають кілька дайджестів та новин про крипто, наприклад, 'Daily Crypto Digest', 'AI-curated Daily Crypto Digest', 'Crypto bounces on rumors of Iran wind down', 'Ранковий дайджест ринків', 'Crypto Biz', 'New Jersey Just Took Kalshi to the Supreme Court'.",
+      "module": "selfact",
+      "ts": "2026-09-03T14:48:51"
     }
   ]
 }
