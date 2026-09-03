@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег активно цікавиться крипторинком, про що свідчать числен",
-      "detail": "Кілька свіжих листів від 0xResearch, Oleh Bezuhlyi та CryptoBeholder.com стосуються крипто-новин та аналітики.",
-      "module": "selfact",
-      "ts": "2026-08-31T18:36:37"
-    },
-    {
       "kind": "event",
       "what": "Реконструкція UniCredit Bank",
       "detail": "У календарі на 4 вересня є дві пов'язані події: '🔔 Реконструкція UniCredit Bank' та '📌 Реконструкція відділення UniCredit Bank Кошице Rooseveltova'.",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримує регулярні сповіщення від Temu, що може свідчити про його інтерес до покупок на цій платформі або про активні замовлення, які потрібно забрати. Лист від Temu 'Prosím vyzdvihnite si točo najskôr...' підтверджує це.",
       "module": "selfact",
       "ts": "2026-09-03T14:02:39"
+    },
+    {
+      "kind": "note",
+      "what": "Олег активно цікавиться криптовалютами та штучним інтелектом",
+      "detail": "Отримано листи: '📊 Ранковий дайджест ринків', 'Crypto Biz: AI took a back seat when Bitcoin started climbing', 'New Jersey Just Took Kalshi to the Supreme Court', '🖱️ Claude got the biggest upgrade ever'.",
+      "module": "selfact",
+      "ts": "2026-09-03T14:02:46"
     }
   ]
 }
