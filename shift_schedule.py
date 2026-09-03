@@ -280,7 +280,8 @@ def _apply(pid: str, with_sleep: bool) -> dict:
         ok_any = False
         for title, start, end in _events_for(s, with_sleep):
             res = K.calendar_event(title, start, end,
-                                   description="— графік створено AI-асистентом")
+                                   description="— графік створено AI-асистентом",
+                                   force=True)
             if res.get("ok"):
                 created += 1
                 ok_any = True

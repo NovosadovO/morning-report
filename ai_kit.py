@@ -317,8 +317,9 @@ def gemini_json(prompt: str, max_tokens: int = 1400, temperature: float = 0.5,
 # ─── CALENDAR ────────────────────────────────────────────────────────────────
 
 def calendar_event(summary: str, start_dt: datetime, end_dt: datetime = None,
-                   description: str = "") -> dict:
-    """Створює подію в Google Calendar Олега. Рекламу не пускає."""
+                   description: str = "", force: bool = False) -> dict:
+    """Створює подію в Google Calendar Олега. Рекламу не пускає.
+    force=True — Олег уже дав дозвіл кнопкою, ворота calgate пропускаємо."""
     try:
         import askme as _am_g
         if _am_g.is_promo(str(summary) + " " + str(description or "")):
@@ -330,7 +331,7 @@ def calendar_event(summary: str, start_dt: datetime, end_dt: datetime = None,
         import context as _ctx
         return _ctx.create_calendar_event(
             summary=summary, start_dt=start_dt, end_dt=end_dt,
-            description=description)
+            description=description, force=force)
     except Exception as e:
         return {"ok": False, "error": str(e)}
 

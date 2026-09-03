@@ -380,6 +380,9 @@ def _send_telegram_chunk(text: str, keyboard=None) -> bool:
         pass
     import re as _re
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+    # Прямі виклики чанка (без send_telegram) теж мають отримати кнопки під зміст
+    if keyboard is None:
+        keyboard = _autokb(text, "chunk")
     # Автоматично фіксуємо голі & перед відправкою
     text = _sanitize_html(text)
     print(f"[tg_chunk] len={len(text)} preview={repr(text[:120])}", flush=True)
