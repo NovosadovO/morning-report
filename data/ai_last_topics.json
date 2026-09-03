@@ -1,4 +1,9 @@
 {
+  "msg_vip_email|2026-09-03t07_57_47_892439": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Цей ранній ранок четверга, 3 вересня, після нічної зміни, показує цікаву динаміку, особливо у контексті твоїх фінансових цілей. Хоча на криптор",
+    "ts": "2026-09-03T07:57:47.892439"
+  },
   "email_ai_item|2026-09-03t07_51_57_131341": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від Kaufland Card XTRA про знижку на покупки в рамках акції \\\"Колесо щастя\\\". Це рекламне повідомлення, яке не містить конкретних ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансію Engineering Manager\", \"action_date\": \"2026-09-04\", \"action_time\": \"09:00\", \"action_summary\": \"",
     "ts": "2026-09-03T06:02:49.889218"
-  },
-  "action_detect|2026-09-03t06_02_44_509796": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки вчор",
-    "ts": "2026-09-03T06:02:44.509796"
   }
 }
