@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олег, чи потрібно мені відстежувати вакансії, які приходять",
-      "detail": "Наявність великої кількості свіжих листів зі сповіщеннями про вакансії, які Олег міг не переглянути, та відсутність його реакції на них у пам'яті переписки.",
-      "module": "selfact",
-      "ts": "2026-08-31T11:22:17"
-    },
-    {
       "kind": "note",
       "what": "Бронювання August Villa Málaga",
       "detail": "Свіжий лист від no-reply@chekin.com підтверджує 'Your reservation contract - August Villa Málaga - Villa'.",
@@ -2799,6 +2792,13 @@
       "detail": "Згідно зі свіжими листами, є сповіщення про вакансії від CryptoJobsList.",
       "module": "selfact",
       "ts": "2026-09-03T10:25:02"
+    },
+    {
+      "kind": "note",
+      "what": "Олег має активний інтерес до вакансій Growth Marketing Lead",
+      "detail": "Свіжі листи містять сповіщення про вакансії Growth Marketing Lead (B2B SaaS & Payments) в Ruby Labs та Engineering Manager - Delivery & Team Leadership (m/w/d) в Deutsche Telekom.",
+      "module": "selfact",
+      "ts": "2026-09-03T10:25:06"
     }
   ]
 }
