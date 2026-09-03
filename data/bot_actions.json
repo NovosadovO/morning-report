@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег слідкує за крипто-новинами від різних джерел, зокрема з",
-      "detail": "Олег отримав листи 'Daily Crypto Digest — August 31' від Oleh Bezuhlyi через LinkedIn, 'AI-curated Daily Crypto Digest - August 31' від CryptoBeholder.com через LinkedIn та '📈 Robinhood memecoin causes repricing of AMC stock' від The Daily Bone.",
-      "module": "selfact",
-      "ts": "2026-08-31T16:47:28"
-    },
-    {
-      "kind": "note",
       "what": "Олег активно цікавиться новинами у сфері криптовалют та фіна",
       "detail": "Кілька свіжих листів є щоденними дайджестами крипто-новин та фінансів від різних джерел.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Два нагадування 'Перевірка невиконаних звичок' та 'Перевірити невиконані звички' на 03.09 у календарі, які ще не відбулися.",
       "module": "selfact",
       "ts": "2026-09-03T13:31:57"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує сповіщення про вакансії Executive Assistant в B",
+      "detail": "Свіжі листи від LinkedIn Job Alerts з новими вакансіями, які розширюють відомі інтереси Олега у пошуку роботи.",
+      "module": "selfact",
+      "ts": "2026-09-03T13:32:02"
     }
   ]
 }
