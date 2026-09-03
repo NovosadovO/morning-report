@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, ти отримував щоденні крипто-дайджести від Oleh Bezuhl",
-      "detail": "Олег активно цікавиться крипторинком, і ці листи є свіжими дайджестами, які він міг не помітити серед інших сповіщень.",
-      "module": "selfact",
-      "ts": "2026-08-31T20:40:35"
-    },
-    {
       "kind": "note",
       "what": "Олег, ймовірно, не перевіряв всі свіжі листи, оскільки є кіл",
       "detail": "Аналіз часу отримання листів (31.08) та останніх дій Олега (31.08 20:03-20:12) показує, що він реагував на інші сповіщення, але ці листи залишилися без прямої реакції, що може свідчити про те, що він їх не бачив або ігнорував.",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав листи 'Daily Crypto Digest — September 3', 'AI-curated Daily Crypto Digest - September 3', 'Crypto bounces on rumors of Iran wind down', 'Ранковий дайджест ринків — 03.09.2026', 'Crypto Biz: AI took a back seat when Bitcoin started climbing' та 'New Jersey Just Took Kalshi to the Suprem",
       "module": "selfact",
       "ts": "2026-09-03T15:50:39"
+    },
+    {
+      "kind": "notify",
+      "what": "Нова вакансія SEO Content Specialist",
+      "detail": "Отримано лист 'Сповіщення про вакансії LinkedIn | SEO Content Specialist в Trade Nation'.",
+      "module": "selfact",
+      "ts": "2026-09-03T15:50:46"
     }
   ]
 }
