@@ -1,9 +1,4 @@
 {
-  "78025": {
-    "sender": "newsletter@myclaw.ai",
-    "sender_raw": "MyClaw Newsletter <newsletter@myclaw.ai>",
-    "seen_ts": "2026-08-26T11:24:02.687414+00:00"
-  },
   "78027": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "linas@substack.com",
     "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
     "seen_ts": "2026-09-03T10:06:24.810453+00:00"
+  },
+  "78473": {
+    "sender": "noreply@travel.mail.flixbus.com",
+    "sender_raw": "\"FlixBus\" <noreply@travel.mail.flixbus.com>",
+    "seen_ts": "2026-09-03T10:10:37.971334+00:00"
   }
 }
