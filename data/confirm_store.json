@@ -9067,7 +9067,24 @@
     "action": "calrem_skip",
     "pid": "gen_1788447753149",
     "subject": "Розібратися з підпискою Strava",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 85279,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1788447753149"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1788447753149"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-03T17:07:39.717602+00:00"
   }
 }
