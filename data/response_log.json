@@ -9944,6 +9944,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_82ab31a374"
+    },
+    {
+      "ts": "2026-09-03T16:36:56.153212+00:00",
+      "category": "calendar_button",
+      "question": "🔔 Невиконані звички",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t30",
+        "when": "17:10–17:40",
+        "note": null
+      }
     }
   ]
 }
