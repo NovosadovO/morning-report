@@ -1,9 +1,9 @@
 {
-  "label": "👍 Прочитав",
-  "action": "read",
-  "kind": "report",
-  "title": "📊 ETF алерт!",
-  "about": "📊 ETF алерт!\n\n🚀 IBIT +3.2% за ~1г\n   Зараз: $45.21  Було: $43.81\n\n🚀 TSLA +7.2% за ~1г\n   Зараз: $378.16  Було: $352.74\n\n🚀 COIN +7.8% за ~1г\n   Зараз: $189.52  Було: $175.79",
-  "means": "прочитав",
-  "ts": "2026-09-03T16:37:30"
+  "label": "🙈 Не нагадуй",
+  "action": "mute",
+  "kind": "generic",
+  "title": "Олег зацікавлений у вакансіях Engineering Manager та Regionalny kierownik sprzedaży",
+  "about": "Олег зацікавлений у вакансіях Engineering Manager та Regionalny kierownik sprzedaży",
+  "means": "попросив більше не нагадувати",
+  "ts": "2026-09-03T16:37:42"
 }
