@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Статті The Economist",
-      "detail": "Олег отримав два свіжі листи від The Economist та The Economist Today з цими заголовками.",
-      "module": "selfact",
-      "ts": "2026-08-31T19:37:59"
-    },
-    {
       "kind": "note",
       "what": "Олег активно цікавиться вакансіями Security Consultant в Syn",
       "detail": "Зі свіжих листів LinkedIn видно нові сповіщення про вакансії Security Consultant в Syntax (Кошице) та Operations Director в SPARK Europe.",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на сьогодні (03.09) є дві події 'Перевірка невиконаних звичок' та 'Перевірити невиконані звички' (о 14:10 та 15:10), що може свідчити про те, що попередні перевірки не були виконані або проігноровані.",
       "module": "selfact",
       "ts": "2026-09-03T14:49:00"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, на LinkedIn з'явилася нова вакансія 'SEO Content Spec",
+      "detail": "У свіжих листах є сповіщення від LinkedIn про вакансію 'SEO Content Specialist в Trade Nation'.",
+      "module": "selfact",
+      "ts": "2026-09-03T14:49:10"
     }
   ]
 }
