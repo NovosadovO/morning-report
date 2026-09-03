@@ -1,4 +1,9 @@
 {
+  "msg_rwa|2026-09-03t11_52_23_465435": {
+    "topic": "MSG_RWA",
+    "gist": "Сьогодні, 3 вересня, о 11:51, спостерігається аномалія у RWA-секторі: токенізований фонд FIGR_HELOC (Figure Heloc) показав падіння на 2.01% за останні 24 години",
+    "ts": "2026-09-03T11:52:23.465435"
+  },
   "selfact|2026-09-03t11_43_06_024376": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Підготовка до відпустки\", \"action_date\": null, \"action_time\": \"10:00\", \"action_summary\": \"Підготуватись до відпустк",
     "ts": "2026-09-03T10:03:59.941678"
-  },
-  "action_detect|2026-09-03t10_03_50_170438": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки вчор",
-    "ts": "2026-09-03T10:03:50.170438"
   }
 }
