@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-08-31",
-      "detail": "автосинк з годинника: steps, hr_avg, weight_kg, sleep_total_min",
-      "module": "qwsync",
-      "ts": "2026-08-31T15:08:35"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=17906, sleep_total_min=300, hr_avg=85, weight_kg=83.0, sleep_hours=5.0, date=2026-08-31, source=qwatch_auto, saved_at=2026-08-31 15:08",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є сповіщення від LinkedIn про вакансію 'Growth Marketing Lead (B2B SaaS & Payments) в Ruby Labs', яка відповідає запиту 'Cryptocurrency в Slovakia' (СВІЖІ ЛИСТИ: від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Growth Marketing Lead (B2B SaaS & Payments) в Ruby",
       "module": "selfact",
       "ts": "2026-09-03T11:43:14"
+    },
+    {
+      "kind": "notify",
+      "what": "Новини про Claude AI",
+      "detail": "Олег отримує розсилку від Generative AI, яка містить важливі новини про оновлення Claude та нову модель Google. Це може бути цікаво Олегу, враховуючи його загальний інтерес до AI (СВІЖІ ЛИСТИ: від Generative AI <newsletter@genai.works> | 🖱️ Claude got the biggest upgrade ever).",
+      "module": "selfact",
+      "ts": "2026-09-03T11:43:23"
     }
   ]
 }
