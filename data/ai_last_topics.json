@@ -1,4 +1,19 @@
 {
+  "selfact|2026-09-03t11_43_06_024376": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
+    "ts": "2026-09-03T11:43:06.024376"
+  },
+  "openloop_promises|2026-09-03t11_37_35_334255": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-03T11:37:35.334255"
+  },
+  "context_ask_ai_truthfix|2026-09-03t11_33_50_803942": {
+    "topic": "context_ask_ai/truthfix",
+    "gist": "Олег, я бачу, що ти бігав 7 км, але ці дані з кешу і були оновлені 12 годин тому, тому не можу сказати, чи це було сьогодні. На жаль, Strava API заблоковано, то",
+    "ts": "2026-09-03T11:33:50.803942"
+  },
   "context_ask_ai|2026-09-03t11_33_42_226636": {
     "topic": "context_ask_ai",
     "gist": "Олег, я зафіксував, що сьогодні ти бігав 7 км. Я додав це до твоїх нотаток.  На жаль, я все ще не можу додавати це безпосередньо в Strava чи календар через техн",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки вчор",
     "ts": "2026-09-03T10:03:50.170438"
-  },
-  "action_detect|2026-09-03t10_03_49_721362": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити вакансії Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"07:00\", \"action_summary\": \"Перевірит",
-    "ts": "2026-09-03T10:03:49.721362"
-  },
-  "msg_event_soon|2026-09-03t10_03_46_460995": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ✅  О 10:00 у тебе запланована підготовка до відпустки, і це чудовий час, щоб підбити підсумки та налаштуватись на продуктивний відпочинок. Твій по",
-    "ts": "2026-09-03T10:03:46.460995"
-  },
-  "action_detect|2026-09-03t10_03_37_776455": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити вакансії Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": null, \"action_summary\": \"Перевірити в",
-    "ts": "2026-09-03T10:03:37.776455"
   }
 }
