@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримує розсилку The Breakdown, яка включає інформацію",
-      "detail": "У свіжих листах є лист від The Breakdown з темою '🟪 Load-bearing' та згадкою про 'The data layer of physical AI and robotics'.",
-      "module": "selfact",
-      "ts": "2026-08-31T05:55:45"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримує рекламні пропозиції від PLUNGE щодо саун та їхн",
       "detail": "У свіжих листах є лист від PLUNGE з темою 'The Counterintuitive Sleep Fix', що рекламує сауни та їх переваги для сну.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи від Profesia.sk з новими вакансіями співпадають із запланованими подіями в календарі на сьогодні.",
       "module": "selfact",
       "ts": "2026-09-03T06:46:04"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, LinkedIn надіслав сповіщення про нову вакансію Enginee",
+      "detail": "Свіжі листи від LinkedIn з новими вакансіями, які відповідають його налаштуванням та інтересам.",
+      "module": "selfact",
+      "ts": "2026-09-03T06:46:09"
     }
   ]
 }
