@@ -1,4 +1,79 @@
 {
+  "foresight|2026-09-03t23_13_23_426819": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T23:13:23.426819"
+  },
+  "foresight|2026-09-03t23_12_10_343847": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:12:10.343847"
+  },
+  "action_detect|2026-09-03t23_11_59_665400": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після зміни обов'язково п",
+    "ts": "2026-09-03T23:11:59.665400"
+  },
+  "foresight|2026-09-03t23_11_59_355330": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:11:59.355330"
+  },
+  "msg_event_soon_truthfix|2026-09-03t23_11_51_524131": {
+    "topic": "MSG_EVENT_SOON/truthfix",
+    "gist": "Олеже, зараз 23:11, ти на нічній зміні.  **Здоров'я** * Вага 83.0 кг, тренд стабільний (+0.0) [дані 23 год тому]. * Сон за 7 днів впав до 7.3 год (-0.9) [дані 2",
+    "ts": "2026-09-03T23:11:51.524131"
+  },
+  "foresight|2026-09-03t23_11_48_316761": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:11:48.316761"
+  },
+  "msg_event_soon|2026-09-03t23_11_41_216611": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ✅  Зараз 23:11, ти ще на нічній зміні, яка триватиме до 06:00. Твоя вага зросла до 84.0 кг за тиждень, а сон за останні 7 днів знизився до 7.3 год",
+    "ts": "2026-09-03T23:11:41.216611"
+  },
+  "foresight|2026-09-03t23_11_37_344441": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T23:11:37.344441"
+  },
+  "action_detect|2026-09-03t23_11_26_568138": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopid Plus п",
+    "ts": "2026-09-03T23:11:26.568138"
+  },
+  "msg_deep_analysis_truthfix|2026-09-03t23_11_19_195422": {
+    "topic": "MSG_DEEP_ANALYSIS/truthfix",
+    "gist": "Олеже, як плануєш тримати енергію до кінця зміни?  Зараз 23:11, і ти на нічній зміні, яка триватиме до 06:00. Дані про вагу за 3 вересня, яким вже 23 години, по",
+    "ts": "2026-09-03T23:11:19.195422"
+  },
+  "msg_deep_analysis|2026-09-03t23_11_09_675097": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт, Олеже! 👋  Ти зараз на нічній зміні, і це вже 23:10, а вага показує 84.0 кг, що на 0.5 кг більше за тиждень. Це віддаляє тебе від цілі в 78 кг, а поперед",
+    "ts": "2026-09-03T23:11:09.675097"
+  },
+  "foresight|2026-09-03t23_10_21_926997": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:10:21.926997"
+  },
+  "foresight|2026-09-03t23_10_11_002264": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T23:10:11.002264"
+  },
+  "foresight|2026-09-03t23_10_00_131972": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T23:10:00.131972"
+  },
+  "foresight|2026-09-03t23_09_48_911912": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T23:09:48.911912"
+  },
   "bills|2026-09-03t23_09_19_053954": {
     "topic": "bills",
     "gist": "```json [] ```",
@@ -223,80 +298,5 @@
     "topic": "foresight",
     "gist": "{\"city\": \"\"}",
     "ts": "2026-09-03T22:57:19.484875"
-  },
-  "foresight|2026-09-03t22_56_06_037840": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T22:56:06.037840"
-  },
-  "foresight|2026-09-03t22_55_55_029877": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:55:55.029877"
-  },
-  "foresight|2026-09-03t22_55_44_090267": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:55:44.090267"
-  },
-  "foresight|2026-09-03t22_55_32_929617": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T22:55:32.929617"
-  },
-  "foresight|2026-09-03t22_54_15_689317": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"madrid\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:54:15.689317"
-  },
-  "foresight|2026-09-03t22_54_04_669612": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:54:04.669612"
-  },
-  "foresight|2026-09-03t22_53_53_713927": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:53:53.713927"
-  },
-  "foresight|2026-09-03t22_53_42_661616": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T22:53:42.661616"
-  },
-  "foresight|2026-09-03t22_52_37_182510": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"madrid\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:52:37.182510"
-  },
-  "foresight|2026-09-03t22_52_26_192416": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:52:26.192416"
-  },
-  "foresight|2026-09-03t22_52_15_318333": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-03T22:52:15.318333"
-  },
-  "foresight|2026-09-03t22_52_04_316732": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T22:52:04.316732"
-  },
-  "mailcal_extract|2026-09-03t22_51_53_191969": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-09-03T22:51:53.191969"
-  },
-  "foresight|2026-09-03t22_50_38_358701": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"madrid\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:50:38.358701"
-  },
-  "foresight|2026-09-03t22_50_27_412424": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:50:27.412424"
   }
 }
