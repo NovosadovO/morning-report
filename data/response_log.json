@@ -10237,6 +10237,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_2de46e2afc"
+    },
+    {
+      "ts": "2026-09-04T01:30:18.656649+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Прийняти Armolopid Plus",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-04"
+      }
     }
   ]
 }
