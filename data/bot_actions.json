@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Нові вакансії за твоїми інтересами",
-      "detail": "Згідно з пам'яттю, Олег цікавиться вакансіями у сфері AI, Technical Writer та Event Operations Specialist, і є свіжі листи з відповідними вакансіями.",
-      "module": "selfact",
-      "ts": "2026-08-31T06:57:48"
-    },
-    {
       "kind": "hcoach",
       "what": "morning_plan",
       "detail": "ранковий план здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "Наявність свіжих листів від CryptoJobsList, The Defiant та The Breakdown, які містять новини та вакансії з криптосфери.",
       "module": "selfact",
       "ts": "2026-09-03T07:01:44"
+    },
+    {
+      "kind": "note",
+      "what": "Інтерес до вакансій Engineering Manager та Regionalny kierownik sprzedaży",
+      "detail": "Зі свіжих листів видно сповіщення від LinkedIn про вакансії 'Engineering Manager - Delivery & Team Leadership (m/w/d) в Deutsche Telekom' та 'Regionalny kierownik sprzedaży в Antal Poland', а також події в календарі на 04.09 '08:00 🔔 Переглянути вакансію Engineering Manager' та '09:00 🔔 Переглянути",
+      "module": "selfact",
+      "ts": "2026-09-03T07:17:16"
     }
   ]
 }
