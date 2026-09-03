@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег має бронювання в August Villa Málaga з 07.09.2026 по 11",
-      "detail": "Лист від no-reply@chekin.com підтверджує наявність контракту на бронювання.",
-      "module": "selfact",
-      "ts": "2026-08-31T15:00:17"
-    },
-    {
-      "kind": "note",
       "what": "Олег має заплановану поїздку в Малагу, Іспанія, яка почнетьс",
       "detail": "З листа від chekin.com та нагадування 'Поїздка в Малагу, Іспанія' видно, що поїздка починається 7 вересня, а не 1 вересня, як вказано в одному з нагадувань. Це уточнення важливе.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, calories, spo2, sleep_total_min",
       "module": "qwsync",
       "ts": "2026-09-03T11:31:31"
+    },
+    {
+      "kind": "note",
+      "what": "збережено дані здоров'я",
+      "detail": "steps=8866, hr_avg=36, calories=446, spo2=97, sleep_total_min=480, sleep_hours=8.0, date=2026-09-03, source=qwatch_auto, saved_at=2026-09-03 11:31",
+      "module": "healthai",
+      "ts": "2026-09-03T11:31:34"
     }
   ]
 }
