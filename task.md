@@ -723,3 +723,16 @@ healthai.py:
 - tick() — викликається з monitor_loop щохвилини.
 - Команди: /здоров'я /коуч /трекер. Кнопки hai_stats/hai_reco/hai_ok/hai_mute.
 ТЕСТИ: tests_healthai.py — 13 блоків, 0 падінь.
+
+## 03.09.2026 — «завжди питати» + форсайт (в роботі)
+- askme: набір "remind" (🔔 Так, нагадай / 🕒 Інший час / 🚫 Не треба) + _do_save() —
+  реальний запис у reminders.json ЛИШЕ після натискання, + подія в календар (allow_once).
+- calgate: worth_asking тепер ПИТАЄ про все, крім реклами/трекерів/рутини (_JUNK).
+  Новий gate_write(kind=reminder|note|shopping|task) — жодного запису без «так».
+- selfact._do_reminder → через calgate.gate_write.
+- foresight.py (НОВИЙ): дивиться вперед — поїздки (місто+погода open-meteo+речі+
+  що відвідати+дії до вильоту), блок нічних змін + незакриті справи, листи
+  (важливі спершу, реклама одним рядком). tick() раз на 150 хв, дедуп у
+  foresight_state.json. Усі записи — через askme.ask(kind="remind").
+- Тест /tmp/t_foresight.py — 29/29 ok. Hook у monitor_loop (після selfact), команда
+  /вперед /форсайт /foresight (звіт + примусовий tick у потоці).

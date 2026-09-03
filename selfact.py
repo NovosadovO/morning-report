@@ -340,6 +340,17 @@ def _do_reminder(a: dict) -> bool:
     except Exception as e:
         _log("parse_dt: " + str(e))
         return False
+    # Нічого не пишемо без «так» Олега — питаємо кнопками (calgate)
+    try:
+        import calgate as _cg_r
+        _blk = _cg_r.gate_write("reminder", str(a.get("title") or ""), dt,
+                                str(a.get("text") or ""), source="selfact")
+        if _blk is not None:
+            _log("нагадування → спершу питаю Олега: " +
+                 str(a.get("title") or "")[:60])
+            return False
+    except Exception as _e_cg:
+        _log("calgate skip: " + str(_e_cg))
     data = K.load(REMINDERS_FILE, default=[]) or []
     if not isinstance(data, list):
         data = []

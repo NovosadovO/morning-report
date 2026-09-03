@@ -34,6 +34,9 @@ SETS = {
     "happened": [("done", "✅ Відбулось"), ("moved", "🔁 Перенеслось"),
                  ("cancel", "❌ Скасувалось")],
     "confirm": [("yes", "✅ Так"), ("no", "❌ Ні"), ("later", "⏰ Пізніше")],
+    # Нагадування: пишеться в reminders.json ЛИШЕ після «🔔 Так, нагадай»
+    "remind": [("save", "🔔 Так, нагадай"), ("other", "🕒 Інший час"),
+               ("no", "🚫 Не треба")],
 }
 
 MEANS = {
@@ -46,6 +49,7 @@ MEANS = {
     "moved": "сказав, що перенеслось",
     "cancel": "сказав, що скасувалось",
     "later": "відклав",
+    "save": "погодився поставити нагадування",
 }
 
 ACK = {
@@ -57,6 +61,7 @@ ACK = {
     "moved": "🔁 Записав: перенеслось. Скажи новий час — поставлю.",
     "cancel": "❌ Записав: скасувалось.",
     "later": "⏰ Добре, повернусь пізніше.",
+    "save": "🔔 Поставив нагадування.",
 }
 
 # ─── ФІЛЬТР РЕКЛАМИ (у календар таке НЕ потрапляє) ───────────────────────────
@@ -237,6 +242,8 @@ def handle(data: str, cb=None) -> dict:
 
     if action == "plan":
         txt = _do_plan(meta, q)
+    elif action == "save":
+        txt = _do_save(meta, q)
     elif action in ("drop", "no", "cancel"):
         try:
             import dismissed as D
@@ -291,6 +298,53 @@ def _do_plan(meta: dict, q: str) -> str:
         return "📅 Записав у календар: « " + summary + " » на " + when + "."
     return ("⚠️ У календар не вдалось записати (« " + summary + " » на " +
             when + "). Спробую ще раз пізніше.")
+
+
+def _do_save(meta: dict, q: str) -> str:
+    """Ставить РЕАЛЬНЕ нагадування — лише після «🔔 Так, нагадай»."""
+    title = str(meta.get("summary") or q)[:110]
+    if is_promo(title + " " + str(meta.get("desc") or "")):
+        return "🚫 Це схоже на рекламу — нагадування не ставлю."
+    start = _dt(meta.get("start"))
+    if not start:
+        start = (_now() + timedelta(hours=2)).replace(minute=0, second=0,
+                                                      microsecond=0)
+    body = str(meta.get("desc") or "")[:400]
+    try:
+        data = K.load("reminders.json", default=[]) or []
+        if not isinstance(data, list):
+            data = []
+        rid = "askme_" + start.strftime("%Y%m%d%H%M")
+        if any(isinstance(r, dict) and r.get("id") == rid for r in data):
+            return "🔔 Таке нагадування вже стоїть."
+        text = "🔔 <b>" + K.esc(title) + "</b>"
+        if body:
+            text += "\n\n" + K.esc(body)
+        data.append({
+            "id": rid,
+            "datetime_utc": start.replace(tzinfo=None).isoformat(
+                timespec="seconds"),
+            "text": text,
+            "sent": False,
+        })
+        K.save("reminders.json", data)
+    except Exception as e:
+        _log("reminder save error: " + str(e))
+        return "⚠️ Не вдалось поставити нагадування — спробую ще раз."
+    when = start.strftime("%d.%m о %H:%M")
+    # Дублюємо подією в календар — дозвіл Олег уже дав цією ж кнопкою
+    cal = ""
+    if meta.get("calendar") is not False:
+        try:
+            import calgate as _cg
+            _cg.allow_once()
+            res = K.calendar_event("🔔 " + title[:90], start,
+                                   start + timedelta(minutes=30), body[:300])
+            if res and res.get("ok"):
+                cal = " + подія в календарі"
+        except Exception as e:
+            _log("reminder calendar skip: " + str(e))
+    return "🔔 Нагадаю: « " + title + " » " + when + "." + cal
 
 
 # ─── ЩО РОБИТИ САМОМУ: МИНУЛІ ПОДІЇ, ПРОСТРОЧЕНЕ, ПОРОЖНІЙ ДЕНЬ ──────────────

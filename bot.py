@@ -3617,6 +3617,16 @@ def handle_command(chat_id, text):
         except Exception as _e_hg:
             send(chat_id, f"⚠️ Помилка воріт: {str(_e_hg)[:300]}")
 
+    elif text.lower().strip() in ["/вперед", "/форсайт", "/foresight"]:
+        try:
+            import foresight as _fs_cmd
+            send(chat_id, _fs_cmd.report())
+            import threading as _th_fs
+            _th_fs.Thread(target=_fs_cmd.tick, kwargs={"force": True},
+                          daemon=True).start()
+        except Exception as _e_fs:
+            send(chat_id, f"⚠️ Помилка форсайту: {str(_e_fs)[:300]}")
+
     elif text.lower().strip() in ["/питання", "/відповіді", "/questions",
                                   "/askme"]:
         try:

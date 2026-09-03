@@ -69,11 +69,9 @@ def worth_asking(summary: str, description: str = "") -> bool:
         pass
     if any(w in low for w in _JUNK):
         return False
-    # Або явно важлива тема, або конкретика з часом/сумою/іменем
-    if any(w in low for w in _WORTH):
-        return True
-    has_num = any(ch.isdigit() for ch in s)
-    return bool(has_num and len(s) >= 8)
+    # Усе інше — ПИТАЄМО. Вимога Олега: жодного запису без його «так»,
+    # тому сумнівне не відкидаємо тихо, а показуємо йому кнопками.
+    return True
 
 
 def gate(summary: str, start_dt=None, end_dt=None, description: str = "",
@@ -113,6 +111,64 @@ def gate(summary: str, start_dt=None, end_dt=None, description: str = "",
         A.ask(q, kind="plan", key=key, meta=meta,
               tag="MSG_CAL_ASK_" + str(source or "bot"))
         _log("запитав дозвіл на запис: " + s[:70])
+    except Exception as e:
+        _log("ask error: " + str(e))
+    return {"ok": False, "pending": True,
+            "error": "calgate: чекаю підтвердження Олега"}
+
+
+# ─── ЗАПИС КУДИ-ЗАВГОДНО, НЕ ТІЛЬКИ В КАЛЕНДАР ───────────────────────────────
+# Вимога Олега: питати ЗАВЖДИ перед будь-яким записом — нагадування, нотатка,
+# список покупок, задача. Дія виконується лише після натискання кнопки.
+
+_WRITE_LABEL = {
+    "reminder": "🔔 Хочу поставити нагадування",
+    "note": "📝 Хочу записати нотатку",
+    "shopping": "🛒 Хочу додати в список покупок",
+    "task": "✅ Хочу поставити задачу",
+    "write": "✍️ Хочу записати",
+}
+
+
+def gate_write(kind: str, title: str, start_dt=None, detail: str = "",
+               force: bool = False, source: str = "",
+               calendar: bool = True) -> dict:
+    """None → писати можна. dict → писати НЕ можна (питання вже надіслано).
+
+    kind: reminder | note | shopping | task | write
+    """
+    if force or _take_allow():
+        return None
+    s = str(title or "").strip()
+    if not worth_asking(s, detail):
+        _log("не вартує запису — тихо відкидаю: " + s[:70])
+        return {"ok": False, "error": "calgate: not worth"}
+    when = ""
+    try:
+        when = start_dt.strftime("%d.%m о %H:%M")
+    except Exception:
+        pass
+    head = _WRITE_LABEL.get(str(kind), _WRITE_LABEL["write"])
+    q = (head + ":\n\n« " + s[:110] + " »" +
+         (("\n🕐 " + when) if when else "") +
+         (("\n\n" + str(detail)[:200]) if detail else "") +
+         "\n\nПоставити?")
+    meta = {"summary": s[:110], "desc": str(detail or "")[:300],
+            "minutes": 30, "calendar": bool(calendar), "kind": str(kind)}
+    try:
+        meta["start"] = start_dt.isoformat()
+    except Exception:
+        pass
+    try:
+        import askme as A
+        key = (str(kind) + "|" + "".join(ch for ch in s.lower()
+               if ch.isalnum() or ch == " ")[:60].strip())
+        if A.answered(key):
+            _log("уже відповідав про це — не питаю вдруге: " + s[:60])
+            return {"ok": False, "error": "calgate: already answered"}
+        A.ask(q, kind="remind", key=key, meta=meta,
+              tag="MSG_WRITE_ASK_" + str(source or kind or "bot"))
+        _log("запитав дозвіл на запис (" + str(kind) + "): " + s[:70])
     except Exception as e:
         _log("ask error: " + str(e))
     return {"ok": False, "pending": True,

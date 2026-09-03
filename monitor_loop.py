@@ -1368,6 +1368,17 @@ def run_assistant_watcher():
                 _sa_w.run()
             except Exception as _e_saw:
                 print(f"[selfact] watcher error: {_e_saw}", flush=True)
+            # ФОРСАЙТ: бот дивиться ВПЕРЕД і пропонує сам — поїздка (місто,
+            # погода там, речі, що відвідати, що зробити до вильоту), блок
+            # нічних змін зведений з незакритими справами, листи (важливі
+            # спершу). Сам нічого не пише — питає кнопками. Раз на 150 хв.
+            try:
+                import foresight as _fs_w
+                _fs_done = _fs_w.tick()
+                if _fs_done:
+                    print(f"[foresight] {_fs_done}", flush=True)
+            except Exception as _e_fs:
+                print(f"[foresight] watcher error: {_e_fs}", flush=True)
             # Розумна тиша: Олег прокинувся → віддаємо відкладене одним
             # дайджестом. flush() сам перевіряє, що сон уже скінчився.
             try:
