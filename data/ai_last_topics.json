@@ -1,4 +1,84 @@
 {
+  "foresight|2026-09-03t22_22_15_056203": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T22:22:15.056203"
+  },
+  "foresight|2026-09-03t22_21_09_195591": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T22:21:09.195591"
+  },
+  "foresight|2026-09-03t22_20_58_140237": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T22:20:58.140237"
+  },
+  "foresight|2026-09-03t22_20_47_131376": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T22:20:47.131376"
+  },
+  "foresight|2026-09-03t22_20_36_110308": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T22:20:36.110308"
+  },
+  "foresight|2026-09-03t22_19_24_069925": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T22:19:24.069925"
+  },
+  "foresight|2026-09-03t22_19_13_149782": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-03T22:19:13.149782"
+  },
+  "foresight|2026-09-03t22_19_02_038875": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-03T22:19:02.038875"
+  },
+  "foresight|2026-09-03t22_18_51_119572": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-03T22:18:51.119572"
+  },
+  "selfact|2026-09-03t22_18_43_573944": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що підписка Runable не оплачується через невдалі платежі. Потрібно оновити платіжну інформа",
+    "ts": "2026-09-03T22:18:43.573944"
+  },
+  "action_detect|2026-09-03t22_18_32_501025": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд вакансій на Profesia.sk\", \"action_date\": \"2023-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Після зм",
+    "ts": "2026-09-03T22:18:32.501025"
+  },
+  "action_detect|2026-09-03t22_18_32_488722": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд вакансій\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Переглянути вакансії на",
+    "ts": "2026-09-03T22:18:32.488722"
+  },
+  "action_detect|2026-09-03t22_18_21_342044": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд вакансій\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег планує переглядати",
+    "ts": "2026-09-03T22:18:21.342044"
+  },
+  "action_detect|2026-09-03t22_18_21_152953": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-09-03T22:18:21.152953"
+  },
+  "action_detect|2026-09-03t22_18_10_570454": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перенести перевірку вакансій\", \"action_date\": \"2023-09-04\", \"action_time\": null, \"action_summary\": \"Перенеси заплан",
+    "ts": "2026-09-03T22:18:10.570454"
+  },
+  "action_detect|2026-09-03t22_17_54_861558": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти",
+    "ts": "2026-09-03T22:17:54.861558"
+  },
   "action_detect|2026-09-03t22_17_54_644754": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансію Regionalny kierownik sprzedaży\", \"action_date\": \"2023-09-04\", \"action_time\": \"10:00\", \"action_",
@@ -218,85 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-03T22:05:06.218048"
-  },
-  "foresight|2026-09-03t22_04_55_433376": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:04:55.433376"
-  },
-  "foresight|2026-09-03t22_04_44_189368": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T22:04:44.189368"
-  },
-  "foresight|2026-09-03t22_03_28_016685": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T22:03:28.016685"
-  },
-  "foresight|2026-09-03t22_03_16_974820": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-03T22:03:16.974820"
-  },
-  "foresight|2026-09-03t22_03_05_964615": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-03T22:03:05.964615"
-  },
-  "foresight|2026-09-03t22_02_54_982291": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-03T22:02:54.982291"
-  },
-  "action_detect|2026-09-03t22_02_49_237146": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Переглянути нові вак",
-    "ts": "2026-09-03T22:02:49.237146"
-  },
-  "action_detect|2026-09-03t22_02_49_131340": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-03T22:02:49.131340"
-  },
-  "action_detect|2026-09-03t22_02_38_396945": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-09-03T22:02:38.396945"
-  },
-  "action_detect|2026-09-03t22_02_38_175743": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-03T22:02:38.175743"
-  },
-  "selfact|2026-09-03t22_02_36_971946": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що тобі потрібно оновити платіжну інформацію для підписки Runable. Спроби оплати були невдалими,",
-    "ts": "2026-09-03T22:02:36.971946"
-  },
-  "action_detect|2026-09-03t22_02_27_251238": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити платежі\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після зміни, о 06:00, одразу п",
-    "ts": "2026-09-03T22:02:27.251238"
-  },
-  "action_detect|2026-09-03t22_02_14_881117": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
-    "ts": "2026-09-03T22:02:14.881117"
-  },
-  "action_detect|2026-09-03t22_02_13_778029": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансію Regionalny kierownik sprzedaży\", \"action_date\": \"2023-09-04\", \"action_time\": \"10:00\", \"action_",
-    "ts": "2026-09-03T22:02:13.778029"
-  },
-  "action_detect|2026-09-03t22_02_02_669777": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
-    "ts": "2026-09-03T22:02:02.669777"
-  },
-  "briefing_truthfix|2026-09-03t22_01_57_120308": {
-    "topic": "briefing/truthfix",
-    "gist": "Зараз, 3 вересня 2026 року, 22:01, ти на нічній зміні.  Твої дані про здоров'я оновлені 22 години тому, 3 вересня 2026 року. Вага стабільна – 83.0 кг, але до ці",
-    "ts": "2026-09-03T22:01:57.120308"
   }
 }
