@@ -1,4 +1,19 @@
 {
+  "email_ai_item|2026-09-03t09_35_39_990234": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від MetaMask Team інформує про останні оновлення та функції, зокрема про новий рахунок MetaMask Money Account, який пропонує до 6%",
+    "ts": "2026-09-03T09:35:39.990234"
+  },
+  "email_ai_item|2026-09-03t09_31_31_493266": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Edenred Slovakia інформує про конкурс «Назад до школи з TESCO», де можна виграти 3 ваучери по 100 євро. Для участі необхідно п",
+    "ts": "2026-09-03T09:31:31.493266"
+  },
+  "openmind_truthfix|2026-09-03t09_31_10_769802": {
+    "topic": "openmind/truthfix",
+    "gist": "Олеже, зараз 09:31, четвер, 3 вересня 2026 року. Ти щойно з нічної зміни, тому фокус на відновленні.  Твої показники здоров'я за останні 14 днів, дані яких онов",
+    "ts": "2026-09-03T09:31:10.769802"
+  },
   "openmind|2026-09-03t09_31_04_065800": {
     "topic": "openmind",
     "gist": "Олеже, враховуючи, що ти щойно після нічної зміни і тобі потрібен сон, сьогоднішній огляд буде максимально сфокусованим і коротким, щоб не забирати твого часу. ",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити прострочені рахунки та підписки\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Знайди 15 х",
     "ts": "2026-09-03T08:03:10.287314"
-  },
-  "action_detect|2026-09-03t08_02_54_053005": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити вакансії Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"07:00\", \"action_summary\": \"Перевірит",
-    "ts": "2026-09-03T08:02:54.053005"
-  },
-  "action_detect|2026-09-03t08_02_53_995835": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти ліки Armolopid, оскільки",
-    "ts": "2026-09-03T08:02:53.995835"
-  },
-  "action_detect|2026-09-03t08_02_42_891318": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити вакансії Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": null, \"action_summary\": \"Перевірити в",
-    "ts": "2026-09-03T08:02:42.891318"
   }
 }
