@@ -18,6 +18,7 @@
     "post_shift_checkin": true,
     "anomaly_no_run": true,
     "midday_checkin": true,
-    "ai_observations": true
+    "ai_observations": true,
+    "night_summary": true
   }
 }
