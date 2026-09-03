@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав детальні інформації щодо поїздки до Малаги від",
-      "detail": "Свіжий лист від 'Maroš Sivák <maros.sivak.sro@gmail.com>' з темою 'InterFin Malaga trip - detailné informácie' містить текст: 'Ahojte, Nižšie vám posielam sľúbený súhrn všetkých informácií k tripu do Malagy ( Španielsko ), kde nájdete všetky najdôležitejšie info, ktoré vám pripravila naša Gabika ( G",
-      "module": "selfact",
-      "ts": "2026-09-01T05:30:25"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримує сповіщення про вакансії Senior Program Manager",
       "detail": "Свіжий лист від 'Сповіщення про вакансії LinkedIn' з темою 'Senior Program Manager в EPAM Systems' підтверджує це.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист з детальною інформацією про поїздку в Малагу, яка є важливою перед відпусткою, що починається 7 вересня. Він міг не помітити цей лист серед інших.",
       "module": "selfact",
       "ts": "2026-09-03T22:02:53"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, нагадую, що зараз 22:49, і твоя нічна зміна триває. У",
+      "detail": "Олег зараз на нічній зміні, яка закінчується о 06:00, і йому потрібно прийняти Armolopid Plus після зміни перед сном. Час 22:49, тому нагадування доречне.",
+      "module": "selfact",
+      "ts": "2026-09-03T22:49:53"
     }
   ]
 }
