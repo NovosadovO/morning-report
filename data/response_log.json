@@ -10247,6 +10247,16 @@
         "kind": "reminder",
         "date": "2026-09-04"
       }
+    },
+    {
+      "ts": "2026-09-04T01:30:25.220188+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Переглянути вакансії Profesia.sk",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-09-04"
+      }
     }
   ]
 }
