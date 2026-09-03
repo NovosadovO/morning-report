@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримує сповіщення про вакансії Operations Director в S",
-      "detail": "У 'СВІЖИХ ЛИСТАХ' є два сповіщення про вакансії LinkedIn: 'Operations Director в SPARK Europe' та 'Security Consultant в Syntax' у Кошице. Це розширює інформацію про його кар'єрні інтереси.",
-      "module": "selfact",
-      "ts": "2026-08-31T16:32:24"
-    },
-    {
-      "kind": "note",
       "what": "Олег цікавиться фінансовими та криптоновинами, про що свідча",
       "detail": "У 'СВІЖИХ ЛИСТАХ' є кілька листів про крипто- та фінансові новини: від 0xResearch, Oleh Bezuhlyi (Daily Crypto Digest), CryptoBeholder.com (AI-curated Daily Crypto Digest) та The Daily Bone. Це підтверджує його інтерес до цієї тематики.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист від Generative AI з темою 'Claude got the biggest upgrade ever'.",
       "module": "selfact",
       "ts": "2026-09-03T13:16:36"
+    },
+    {
+      "kind": "note",
+      "what": "Олег слідкує за ідеями від trade_soul на TradingView, що під",
+      "detail": "Олег отримав лист від TradingView з темою 'Новая идея от trade_soul. Посмотрите!'",
+      "module": "selfact",
+      "ts": "2026-09-03T13:16:44"
     }
   ]
 }
