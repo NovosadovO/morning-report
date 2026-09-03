@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Рання зміна скоро",
-      "detail": "Згідно з календарем, сьогодні, 31.08, о 05:00 починається підготовка до ранньої зміни.",
-      "module": "selfact",
-      "ts": "2026-08-31T04:23:10"
-    },
-    {
       "kind": "note",
       "what": "Олег ігнорує сповіщення про вакансії з Profesia.sk та Linked",
       "detail": "Олег ігнорував сповіщення про вакансії з LinkedIn раніше, а сьогодні прийшло 2 листи від Profesia.sk та 2 від LinkedIn.",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 04.09 є події '08:00 🔔 Переглянути вакансію Engineering Manager' та '09:00 🔔 Переглянути вакансію Regionalny kierownik sprzedaży', і є відповідні листи з LinkedIn.",
       "module": "selfact",
       "ts": "2026-09-03T04:42:16"
+    },
+    {
+      "kind": "note",
+      "what": "Олег цікавиться крипто вакансіями",
+      "detail": "У 'СВІЖИХ ЛИСТАХ' є лист від CryptoJobsList <newsletter@cryptojobslist.com> | Jobs Newsletter #463.",
+      "module": "selfact",
+      "ts": "2026-09-03T04:58:42"
     }
   ]
 }
