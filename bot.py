@@ -3610,6 +3610,13 @@ def handle_command(chat_id, text):
         except Exception as _e_rx:
             send(chat_id, f"⚠️ Помилка реакцій: {str(_e_rx)[:300]}")
 
+    elif text.lower().strip() in ["/блоки", "/ліміти", "/hourgate"]:
+        try:
+            import hourgate as _hg_cmd
+            send(chat_id, _hg_cmd.report())
+        except Exception as _e_hg:
+            send(chat_id, f"⚠️ Помилка воріт: {str(_e_hg)[:300]}")
+
     elif text.lower().strip() in ["/питання", "/відповіді", "/questions",
                                   "/askme"]:
         try:

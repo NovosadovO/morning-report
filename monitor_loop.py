@@ -265,6 +265,16 @@ def run_defi_report_loop():
             time.sleep(60)
 
 
+def _hg(name: str) -> bool:
+    """Один окремий AI-блок на годину. Помилка воріт не блокує роботу."""
+    try:
+        import hourgate as _hgm
+        return bool(_hgm.allow(name))
+    except Exception as _e_hg:
+        print(f"[hourgate] skip {name}: {_e_hg}", flush=True)
+        return True
+
+
 def run_monitor_loop():
     """
     Основний звіт — перевіряє кожну хвилину чи ми точно на :00.
@@ -860,7 +870,7 @@ def run_astro_alert_watcher():
         try:
             import astro as _astro_mod
             importlib.reload(_astro_mod)
-            alerts = _astro_mod.get_astro_alerts()
+            alerts = _astro_mod.get_astro_alerts() if _hg("astro_alert") else []
 
             if alerts and token and chat:
                 header = "🔮 <b>АСТРО-АЛЕРТ</b>\n━━━━━━━━━━━━━━━━━━━━\n"
@@ -930,7 +940,8 @@ def run_smart_notifications_watcher():
     time.sleep(95)
     while True:
         try:
-            _load_monitor().check_smart_notifications()
+            if _hg("smart_notifications"):
+                _load_monitor().check_smart_notifications()
         except Exception as e:
             print(f"Smart notif watcher error: {e}", flush=True)
         time.sleep(60)
@@ -1341,21 +1352,22 @@ def run_assistant_watcher():
             # трендове, новини з 4 джерел і тема поза звичними інтересами.
             try:
                 import openmind as _om_w
-                _om_done = _om_w.tick()
+                _om_done = _om_w.tick() if _hg("openmind") else ""
                 if _om_done:
                     print(f"[openmind] {_om_done}", flush=True)
             except Exception as _e_om:
                 print(f"[openmind] watcher error: {_e_om}", flush=True)
             try:
                 import hcoach as _hc_w
-                _hc_done = _hc_w.tick()
+                _hc_done = _hc_w.tick() if _hg("hcoach") else ""
                 if _hc_done:
                     print(f"[hcoach] {_hc_done}", flush=True)
             except Exception as _e_hc:
                 print(f"[hcoach] watcher error: {_e_hc}", flush=True)
             try:
                 import selfact as _sa_w
-                _sa_w.run()
+                if _hg("selfact"):
+                    _sa_w.run()
             except Exception as _e_saw:
                 print(f"[selfact] watcher error: {_e_saw}", flush=True)
             # Розумна тиша: Олег прокинувся → віддаємо відкладене одним
