@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег має заплановану поїздку в Малагу, Іспанія, яка почнетьс",
-      "detail": "З листа від chekin.com та нагадування 'Поїздка в Малагу, Іспанія' видно, що поїздка починається 7 вересня, а не 1 вересня, як вказано в одному з нагадувань. Це уточнення важливе.",
-      "module": "selfact",
-      "ts": "2026-08-31T15:00:27"
-    },
-    {
-      "kind": "note",
       "what": "Записав дані здоров'я за 2026-08-31",
       "detail": "автосинк з годинника: steps, hr_avg, weight_kg, sleep_total_min",
       "module": "qwsync",
@@ -2799,6 +2792,13 @@
       "detail": "steps=8866, hr_avg=36, calories=446, spo2=97, sleep_total_min=480, sleep_hours=8.0, date=2026-09-03, source=qwatch_auto, saved_at=2026-09-03 11:31",
       "module": "healthai",
       "ts": "2026-09-03T11:31:34"
+    },
+    {
+      "kind": "note",
+      "what": "Олег отримує сповіщення про вакансії з тематикою 'Cryptocurr",
+      "detail": "У свіжих листах є сповіщення від LinkedIn про вакансію 'Growth Marketing Lead (B2B SaaS & Payments) в Ruby Labs', яка відповідає запиту 'Cryptocurrency в Slovakia' (СВІЖІ ЛИСТИ: від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Growth Marketing Lead (B2B SaaS & Payments) в Ruby",
+      "module": "selfact",
+      "ts": "2026-09-03T11:43:14"
     }
   ]
 }
