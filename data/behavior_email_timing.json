@@ -1,9 +1,4 @@
 {
-  "78024": {
-    "sender": "spotlight@newsletters.coinmarketcap.com",
-    "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
-    "seen_ts": "2026-08-26T11:13:35.504927+00:00"
-  },
   "78025": {
     "sender": "newsletter@myclaw.ai",
     "sender_raw": "MyClaw Newsletter <newsletter@myclaw.ai>",
@@ -1498,5 +1493,10 @@
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
     "seen_ts": "2026-09-03T09:07:19.080247+00:00"
+  },
+  "78472": {
+    "sender": "linas@substack.com",
+    "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
+    "seen_ts": "2026-09-03T10:06:24.810453+00:00"
   }
 }
