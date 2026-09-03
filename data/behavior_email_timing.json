@@ -1,9 +1,4 @@
 {
-  "78066": {
-    "sender": "jobalerts-noreply@linkedin.com",
-    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
-    "seen_ts": "2026-08-27T00:15:28.336219+00:00"
-  },
   "78068": {
     "sender": "cloudplatform-noreply@google.com",
     "sender_raw": "Google Cloud Billing Alerts <CloudPlatform-noreply@google.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@investingmail.com",
     "sender_raw": "Investing.com <newsletter@investingmail.com>",
     "seen_ts": "2026-09-03T18:55:08.127810+00:00"
+  },
+  "78506": {
+    "sender": "newsletters@e.economist.com",
+    "sender_raw": "\"Robert Guest at The Economist\" <newsletters@e.economist.com>",
+    "seen_ts": "2026-09-03T19:07:32.990083+00:00"
   }
 }
