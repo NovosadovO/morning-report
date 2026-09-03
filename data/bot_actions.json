@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Бронювання August Villa Málaga",
-      "detail": "Свіжий лист від no-reply@chekin.com підтверджує 'Your reservation contract - August Villa Málaga - Villa'.",
-      "module": "selfact",
-      "ts": "2026-08-31T11:38:13"
-    },
-    {
-      "kind": "note",
       "what": "Новини від Volkswagen Group",
       "detail": "Свіжий лист від Volkswagen Group через LinkedIn '✨ August Accelerated: Global Perspectives, AI Innovation & Energy Solutions'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи містять сповіщення про вакансії Growth Marketing Lead (B2B SaaS & Payments) в Ruby Labs та Engineering Manager - Delivery & Team Leadership (m/w/d) в Deutsche Telekom.",
       "module": "selfact",
       "ts": "2026-09-03T10:25:06"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, зверніть увагу на нову вакансію Growth Marketing Lead",
+      "detail": "Свіжий лист від LinkedIn про нову вакансію, яка відповідає інтересам Олега у криптосфері та маркетингу, і яку він міг ще не бачити.",
+      "module": "selfact",
+      "ts": "2026-09-03T10:40:01"
     }
   ]
 }
