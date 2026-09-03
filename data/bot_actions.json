@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег цікавиться новинами у сфері фінтеху та AI, зокрема досл",
-      "detail": "Олег отримав лист від Linas from Linas's Newsletter з заголовком 'Revolut Research proves fintech’s real AI moat is proprietary data 🤖📊; Stripe now owns the $140B startup Legal'.",
-      "module": "selfact",
-      "ts": "2026-08-31T04:08:02"
-    },
-    {
-      "kind": "note",
       "what": "Олег відстежує новини у сфері криптовалют та загального ринк",
       "detail": "Олег отримав лист від The Daily Degen з оглядом ринку криптовалют та інших фінансових показників.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є сповіщення від LinkedIn про вакансію Engineering Manager, і компанія активно наймає.",
       "module": "selfact",
       "ts": "2026-09-03T04:26:29"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, нагадую, що сьогодні о 17:10 у тебе запланована переві",
+      "detail": "З календаря на 03.09 видно подію '17:10 🔔 Невиконані звички сьогодні'. Олег зараз не спить (04:42) і може встигнути щось зробити.",
+      "module": "selfact",
+      "ts": "2026-09-03T04:42:11"
     }
   ]
 }
