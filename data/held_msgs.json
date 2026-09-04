@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T09:10:15.541608",
-      "kind": "chunk",
-      "text": "💹 <b>КРИПТО ДАШБОРД</b> · 09-04\n\n🟢 <b>BTC</b>  <b>$80,880.00</b>\n   24г: +3.72%  7д: +1.3%\n   <code>[🟢🟢🟢🟢🟢🟢🟢🟢⬜⬜]</code>\n\n🟢 <b>ETH</b>  <b>$2,513.30</b>\n   24г: +4.19%  7д: +0.5%\n   <code>[🟢🟢🟢🟢🟢🟢🟢🟢🟢⬜]</code>\n\n🟢 <b>BNB</b>  <b>$721.13</b>\n   24г: +3.30%  7д: +1.1%\n   <code>[🟢🟢🟢🟢🟢🟢🟢🟢⬜⬜]</code>\n\n🟢 <b>XRP</b>  <b>$1.45</b>\n   24г: +5.73%  7д: +1.6%\n   <code>[🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢]</code>\n\n🟢 <b>SOL</b>  <b>$103.92</b>\n   24г: +2.80%  7д: -3.4%\n   <code>[🟢🟢🟢🟢🟢🟢🟢⬜⬜⬜]</code>\n\n🟢 <b>DOGE</b>  <b>$0.09</b>\n   24г: +4.63%  7д: -0.9%\n   <code>[🟢🟢🟢🟢🟢🟢🟢🟢🟢⬜]</code>\n\n🟢 <b>ADA</b>  <b>$0.22</b>\n   24г: +7.66%  7д: +5.3%\n   <code>[🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢]</code>\n\n🟢 <b>TRX</b>  <b>$0.33</b>\n   24г: +0.60%  7д: -3.3%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>LINK</b>  <b>$11.95</b>\n   24г: +6.13%  7д: +0.7%\n   <code>[🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢]</code>\n\n🟢 <b>AVAX</b>  <b>$7.49</b>\n   24г: +2.24%  7д: 0.0%\n   <code>[🟢🟢🟢🟢🟢🟢🟢⬜⬜⬜]</code>\n\n🟢 <b>TON</b>  <b>$1.36</b>\n   24г: +1.59%  7д: -3.4%\n   <code>[🟢🟢🟢🟢🟢🟢⬜⬜⬜⬜]</code>\n\n🟢 <b>XLM</b>  <b>$0.18</b>\n   24г: +3.68%  7д: -0.6%\n   <code>[🟢🟢🟢🟢🟢🟢🟢🟢⬜⬜]</code>\n\n🟢 <b>HBAR</b>  <b>$0.08</b>\n   24г: +2.35%  7д: 0.0%\n   <code>[🟢🟢🟢🟢🟢🟢🟢⬜⬜⬜]</code>\n\n🟢 <b>SUI</b>  <b>$0.77</b>\n   24г: +0.22%  7д: +0.9%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T09:10:26.649798",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Austrian Airlines</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Do you really know these cities?»\n\n<i>«Servus Oleh Novosadov,\r\n\r\nSie haben den Austrian Newsletter erhalten! Bitte klicken Sie hier, um den Newsletter zu lesen:\r\nhttps://newsletter.austrian.com/z53esTe63PnvMMGOEIGtyR/B12cSG9jTLQH9UAj/7SEN9z6TbmFe7STw/JuoV36pJrchRZBuW/yfMSWTQdJm87A5Lw/8eK2-a8QLNHFy5Gb/bu4/PQnO.php?ID=X3iT0lYS...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -638,6 +632,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78402"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T09:31:09.121989",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Your weekly progress report from Google Health</b>\n👤 Google Health &lt;google-health-noreply@google.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78385"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78385"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78385"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78385"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78385"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78385"
             }
           ]
         ]
