@@ -10357,6 +10357,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_2feca0f7cf"
+    },
+    {
+      "ts": "2026-09-04T07:24:04.360335+00:00",
+      "category": "calendar_button",
+      "question": "Зібрати речі",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t3d",
+        "when": "17:00–18:00",
+        "note": null
+      }
     }
   ]
 }
