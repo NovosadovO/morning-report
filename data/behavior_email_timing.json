@@ -1,9 +1,4 @@
 {
-  "78104": {
-    "sender": "slovnaftmove@mail.loyaltyteam.com",
-    "sender_raw": "\"Slovnaft Move\" <slovnaftmove@mail.loyaltyteam.com>",
-    "seen_ts": "2026-08-27T13:56:01.430431+00:00"
-  },
   "78106": {
     "sender": "researchteam@blockworks.com",
     "sender_raw": "0xResearch <researchteam@blockworks.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
     "seen_ts": "2026-09-04T16:20:58.513833+00:00"
+  },
+  "78560": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-09-04T17:55:07.616471+00:00"
   }
 }
