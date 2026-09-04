@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T14:46:39.976039",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - September 4</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78545"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78545"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78545"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78545"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78545"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78545"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T14:46:41.167798",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Revenue Accountant (f/m/d) в Siemens Healthineers</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -365,6 +326,12 @@
       "ts": "2026-09-04T14:49:38.046731",
       "kind": "openloop",
       "text": "<b>⏳ Нагадування висить</b>\n\n« 🤖 Реконструкція UniCredit Bank Олег, 4 вересня о 08:00 запланована реконструкція відділенн »\n⏱ час минув сьогодні, закриття не бачив\n\nЗробив — тисни, і я перестану питати.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T14:49:38.845070",
+      "kind": "openloop",
+      "text": "⏳ Нагадування висить\n\n« 🤖 Реконструкція UniCredit Bank Олег, 4 вересня о 08:00 запланована реконструкція відділенн »\n⏱ час минув сьогодні, закриття не бачив\n\nЗробив — тисни, і я перестану питати.",
       "keyboard": null
     }
   ]
