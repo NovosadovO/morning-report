@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T13:42:41.368688",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T13:42:42.086516",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78534"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T13:46:17.402898",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🌟 ChatGPT drops AGI level model</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78533"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78533"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78533"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78533"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78533"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78533"
             }
           ]
         ]
