@@ -1,37 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T20:16:46.210053",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Reserved\n📋 Novinky prémiovej kvality\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Ben at StartEngine\n📋 DST Global, Goldman, and Accel Just Backed Higgsfield’s $400\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Reserved",
-              "callback_data": "email_reply_78560"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Ben at StartEngine",
-              "callback_data": "email_reply_78559"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_78560"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78560"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T20:16:51.017408",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Reserved\n📋 Novinky prémiovej kvality\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Ben at StartEngine\n📋 DST Global, Goldman, and Accel Just Backed Higgsfield’s $400\n📝 (AI-аналіз тимчасово недоступний)",
@@ -429,6 +398,12 @@
       "ts": "2026-09-04T21:05:13.431388",
       "kind": "watchdog",
       "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 20\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\n<i>За цим я стежити НЕ можу, поки не виправлено.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T21:05:14.179248",
+      "kind": "watchdog",
+      "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 20\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\nЗа цим я стежити НЕ можу, поки не виправлено.",
       "keyboard": null
     }
   ]
