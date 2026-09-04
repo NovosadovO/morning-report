@@ -179,6 +179,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-04T20:01:49.757172",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>DST Global, Goldman, and Accel Just Backed Higgsfield’s $400</b>\n👤 Ben at StartEngine &lt;ben@startengine.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78559"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78559"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78559"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78559"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78559"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78559"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
