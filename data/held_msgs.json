@@ -218,6 +218,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-04T20:01:50.924485",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Cybersecurity Enthusiast Wanted! (m/f/n) в ESET</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78557"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78557"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78557"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78557"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78557"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78557"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
