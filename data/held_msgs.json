@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T11:01:32.562110",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Why I’m Buying Every Bitcoin Correction</b>\n👤 Adrian Pape через LinkedIn&lt;newsletters-noreply@lin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78530"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78530"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78530"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78530"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78530"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78530"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T11:01:33.843181",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в VenomBridge</b>\n👤 Discord &lt;noreply@discord.com&gt;",
@@ -375,6 +336,12 @@
     },
     {
       "ts": "2026-09-04T11:05:32.010476",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T11:05:33.040942",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
