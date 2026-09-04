@@ -1,9 +1,4 @@
 {
-  "78111": {
-    "sender": "newsletter@ticketportal.sk",
-    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
-    "seen_ts": "2026-08-27T14:41:20.546829+00:00"
-  },
   "78113": {
     "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
     "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@news.railway.app",
     "sender_raw": "Railway <hello@news.railway.app>",
     "seen_ts": "2026-09-04T22:32:02.274710+00:00"
+  },
+  "78571": {
+    "sender": "oleg.novosadov@minebeamitsumi.eu",
+    "sender_raw": "Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu>",
+    "seen_ts": "2026-09-04T23:00:34.253974+00:00"
   }
 }
