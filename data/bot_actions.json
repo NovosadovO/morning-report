@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, отримано договір бронювання August Villa Málaga - Vill",
-      "detail": "Олег має бронювання August Villa Málaga - Villa на 07.09. Це важливий документ, який варто переглянути.",
-      "module": "selfact",
-      "ts": "2026-09-01T10:38:25"
-    },
-    {
       "kind": "note",
       "what": "Олег продовжує отримувати крипто-дайджести, зокрема від Aave",
       "detail": "Олег отримав лист від Aave 'Aave Newsletter: Issue #019', що підтверджує його інтерес до крипто-новин, як це вже зазначалося в нотатках раніше.",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист від 'Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu>' з посиланням на нерухомість: 'https://www.nehnutelnosti.sk/detail/JuOJzdJamz1/nova-rekonstrukcia-3-izbovy-byt-s-loggiou-zupkova-ul'.",
       "module": "selfact",
       "ts": "2026-09-04T19:12:27"
+    },
+    {
+      "kind": "notify",
+      "what": "Вакансія Cybersecurity Enthusiast в ESET",
+      "detail": "Згідно зі 'СВІЖІ ЛИСТИ', є лист від 'Сповіщення про вакансії LinkedIn' про вакансію 'Cybersecurity Enthusiast Wanted! (m/f/n) в ESET, Košice'.",
+      "module": "selfact",
+      "ts": "2026-09-04T19:28:15"
     }
   ]
 }
