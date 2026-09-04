@@ -10912,7 +10912,18 @@ def main():
         _gemini_key_astro = os.environ.get("GEMINI_API_KEY", "")
         print(f"[main] GEMINI_API_KEY={'***' if _gemini_key_astro else 'NOT_SET'}, shift_hint={shift_hint[:40]}", flush=True)
         _astro_ai = ""
-        if not _ai_time_left(40):
+        # AI-розбір астро — раз на 4 години, а не щогодини (економія кредитів).
+        # Самі транзити (astro_text) лишаються в КОЖНОМУ звіті, а астро-алерти
+        # про реальні зміни йдуть одразу, повз ці ворота.
+        _astro_ai_due = True
+        try:
+            import hourgate as _hg_astro
+            _astro_ai_due = _hg_astro.allow_every("astro_ai", 4)
+        except Exception as _e_hg:
+            print(f"[astro_ai] hourgate skip: {_e_hg}", flush=True)
+        if not _astro_ai_due:
+            print("[astro_ai] SKIP — AI-розбір раз на 4 год, транзити в звіті лишаються", flush=True)
+        elif not _ai_time_left(40):
             print("[astro_ai] SKIP — мало часу до дедлайну", flush=True)
         else:
             # Додаємо контекст здоров'я до shift_hint для астро AI

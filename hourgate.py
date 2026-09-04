@@ -43,6 +43,31 @@ def allow(name: str, per_hour: int = 1) -> bool:
     return True
 
 
+def allow_every(name: str, hours: int = 4) -> bool:
+    """True — можна ОДИН раз на кожні N годин (слот = година // N).
+
+    Для дорогих описових AI-блоків (астро), які не мусять оновлюватись
+    щогодини. Алерти й реакції на зміни сюди НЕ йдуть — вони спрацьовують
+    одразу, коли є причина.
+    """
+    name = str(name or "ai")[:40]
+    n = max(1, int(hours))
+    now = K.now()
+    slot = now.strftime("%Y-%m-%d") + "#" + str(now.hour // n)
+    try:
+        data = K.load(FILE, default={}) or {}
+    except Exception:
+        data = {}
+    rec = data.get(name) or {}
+    if rec.get("slot") == slot:
+        return False
+    try:
+        K.update_key(FILE, name, {"slot": slot, "used": 1})
+    except Exception as e:
+        _log("save error: " + str(e))
+    return True
+
+
 def used(name: str) -> int:
     try:
         rec = (K.load(FILE, default={}) or {}).get(str(name)[:40]) or {}
