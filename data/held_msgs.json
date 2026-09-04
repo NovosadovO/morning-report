@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T19:57:13.325175",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Operations Manager — Crypto &amp; Payments в BITEXPERT»\n\n<i>«Сповіщення про вакансії в Slovakia          \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nOperations Manager — Crypto &amp; Payments\r\nBITEXPERT\r\nBratislava, Slovakia\r\nПодати заявку за допомогою резюме і профілю\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4455855718/...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78561"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78561"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78561"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78561"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78561"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78561"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T20:00:48.687976",
       "kind": "chunk",
       "text": "🎉 <b>КІНЕЦЬ ТИЖНЯ — П'ятниця!</b>\n\n💪 <b>Звички за тиждень (Пн–Пт)</b>\n   🏃 Біг: 1/5  🟩⬜⬜⬜⬜  👍\n   💧 Вода: 4/5  🟩🟩🟩🟩⬜  ⭐️\n   🚿 Душ: 5/5  🟩🟩🟩🟩🟩  🏆\n\n⚖️ <b>Вага:</b> 84.3→84.3 кг  ↘️ 0.0 кг\n   🎯 До цілі 78 кг: ще -6.3 кг\n\n🤖 <i>Олег, ти молодець з водою, але біг і вага поки що відстають, тож</i>\n\n🎊 Хороших вихідних, Олеже!",
@@ -638,6 +599,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78559"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T20:16:38.721016",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Cybersecurity Enthusiast Wanted! (m/f/n) в ESET</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78557"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78557"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78557"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78557"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78557"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78557"
             }
           ]
         ]
