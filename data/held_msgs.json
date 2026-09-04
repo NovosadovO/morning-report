@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T14:11:57.658608",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T14:11:58.388046",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78538"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T14:16:02.073427",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Bull Run Waits for No One</b>\n👤 \"CMC Market Pulse\" &lt;marketpulse@newsletters.coinma",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78537"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78537"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78537"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78537"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78537"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78537"
             }
           ]
         ]
