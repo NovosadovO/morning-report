@@ -1,4 +1,54 @@
 {
+  "email_ai_item|2026-09-04t07_34_59_143847": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Lidl інформує Олега про акційну пропозицію на продукти SILVERCREST зі знижкою 20% та пропонує переглянути вікендову пропоз",
+    "ts": "2026-09-04T07:34:59.143847"
+  },
+  "foresight|2026-09-04t07_34_07_356959": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T07:34:07.356959"
+  },
+  "foresight|2026-09-04t07_33_56_447879": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T07:33:56.447879"
+  },
+  "foresight|2026-09-04t07_33_45_459462": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T07:33:45.459462"
+  },
+  "foresight|2026-09-04t07_32_39_049774": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T07:32:39.049774"
+  },
+  "foresight|2026-09-04t07_32_28_207671": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T07:32:28.207671"
+  },
+  "foresight|2026-09-04t07_32_17_118222": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T07:32:17.118222"
+  },
+  "foresight|2026-09-04t07_31_09_083985": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T07:31:09.083985"
+  },
+  "foresight|2026-09-04t07_30_58_043956": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T07:30:58.043956"
+  },
+  "foresight|2026-09-04t07_30_47_096322": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T07:30:47.096322"
+  },
   "selfact|2026-09-04t07_30_38_275042": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Деталі поїздки в Малагу\",     \"text\": \"Олег, у тебе є детальні інструкції та підтвердження бронювання щодо пої",
@@ -248,55 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-04T07:08:33.460282"
-  },
-  "foresight|2026-09-04t07_08_22_152199": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:08:22.152199"
-  },
-  "foresight|2026-09-04t07_07_13_018396": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-04T07:07:13.018396"
-  },
-  "foresight|2026-09-04t07_07_02_240691": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:07:02.240691"
-  },
-  "action_detect|2026-09-04t07_06_51_201229": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopid Plus п",
-    "ts": "2026-09-04T07:06:51.201229"
-  },
-  "foresight|2026-09-04t07_06_50_790907": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:06:50.790907"
-  },
-  "msg_vip_email_truthfix|2026-09-04t07_06_45_125728": {
-    "topic": "MSG_VIP_EMAIL/truthfix",
-    "gist": "Олеже, зараз 07:06, п'ятниця, 4 вересня 2026 року.  Твоя підписка на Strava прострочена вже 31 день, і це блокує API, що заважає повноцінно відстежувати прогрес",
-    "ts": "2026-09-04T07:06:45.125728"
-  },
-  "msg_vip_email|2026-09-04t07_06_35_852012": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 📧  Після нічної зміни, яка завершилась сьогодні о 06:00, головним пріоритетом залишається відновлення, особливо враховуючи, що попереду ще дві ніч",
-    "ts": "2026-09-04T07:06:35.852012"
-  },
-  "foresight|2026-09-04t07_05_32_281660": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T07:05:32.281660"
-  },
-  "foresight|2026-09-04t07_05_21_440359": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:05:21.440359"
-  },
-  "foresight|2026-09-04t07_05_10_387765": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:05:10.387765"
   }
 }
