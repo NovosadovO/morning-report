@@ -603,6 +603,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-04T20:16:36.252890",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Novinky prémiovej kvality</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78560"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78560"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78560"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78560"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78560"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78560"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
