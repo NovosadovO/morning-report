@@ -10305,6 +10305,17 @@
       "category": "confirm",
       "question": "gate_cal_add: Зібрати речі",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-04T04:35:32.018178+00:00",
+      "category": "calendar_confirm",
+      "question": "Зібрати речі",
+      "answer": "✅ Додано",
+      "extra": {
+        "events": [
+          "Зібрати речі"
+        ]
+      }
     }
   ]
 }
