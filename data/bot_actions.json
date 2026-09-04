@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримує сповіщення про вакансії Associate в Eccleston P",
-      "detail": "Олег отримав лист від LinkedIn 'Associate в Eccleston Park Capital', що є новою інформацією про його пошук роботи, яка доповнює вже існуючі нотатки.",
-      "module": "selfact",
-      "ts": "2026-09-01T10:38:38"
-    },
-    {
       "kind": "notify",
       "what": "Олег, надійшов лист від Maroš Sivák з детальними інформаціям",
       "detail": "Олег має поїздку в Малагу 07.09, і цей лист містить важливу інформацію, яку він міг пропустити, перебуваючи на ранній зміні.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, weight_kg, hrv, spo2, stress",
       "module": "qwsync",
       "ts": "2026-09-04T20:30:48"
+    },
+    {
+      "kind": "note",
+      "what": "збережено дані здоров'я",
+      "detail": "steps=8941, hr_avg=100, weight_kg=83.0, hrv=36, spo2=96, stress=45, date=2026-09-04, source=qwatch_auto, saved_at=2026-09-04 20:30",
+      "module": "healthai",
+      "ts": "2026-09-04T20:30:52"
     }
   ]
 }
