@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T22:01:32.562330",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your weekly progress report from Google Health</b>\n👤 Google Health &lt;google-health-noreply@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78385"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78385"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78385"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78385"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78385"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78385"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T22:01:36.960823",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 33 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '33 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 84.3 кг, ціль 78 кг (тренд +0.3 кг за останні 5 замірів). Кроки: 13367 (ціль 10000).\n✅ Звички: Виконано сьогодні: shower, water, tea (3/6). Ще не виконано: run, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 1 непрочитаних\n📅 Календар: 09:00 ✅ 🚿 Холодний душ ✅, 18:00 🌙 Нічна зміна (18:00-06:00), 19:10 ✅ 🍵 Трав'яний чай ✅, 19:10 🧖 Сауна ❌, 19:10 🏃 Біг ❌, 19:10 💈 Спрей для волосся ❌, 19:10 💧 Вода (2л+) ✅",
@@ -630,6 +591,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78435"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T22:31:37.351697",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>AVALANCHE AUGUST 2026 RECAP</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78407"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78407"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78407"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78407"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78407"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78407"
             }
           ]
         ]
