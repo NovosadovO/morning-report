@@ -10340,6 +10340,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_9639705dde"
+    },
+    {
+      "ts": "2026-09-04T07:23:51.425917+00:00",
+      "category": "calendar_button",
+      "question": "Зібрати речі",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t3d",
+        "when": "17:00–18:00",
+        "note": null
+      }
     }
   ]
 }
