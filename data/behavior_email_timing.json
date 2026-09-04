@@ -1,9 +1,4 @@
 {
-  "78106": {
-    "sender": "researchteam@blockworks.com",
-    "sender_raw": "0xResearch <researchteam@blockworks.com>",
-    "seen_ts": "2026-08-27T14:02:12.651280+00:00"
-  },
   "78107": {
     "sender": "newsletter.sk@email.pepco.eu",
     "sender_raw": "\"Pepco\" <newsletter.sk@email.pepco.eu>",
@@ -1498,5 +1493,10 @@
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
     "seen_ts": "2026-09-04T17:55:07.616471+00:00"
+  },
+  "78561": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-09-04T17:57:12.597601+00:00"
   }
 }
