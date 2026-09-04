@@ -7046,5 +7046,31 @@
       "summary": "🔔 Переглянути вакансію Regionalny kierownik sprzedaży"
     },
     "ts": "2026-09-04T16:14:00.750481+00:00"
+  },
+  "1280182e5b": {
+    "key": "cal|отримання повернення кредиту temu",
+    "q": "📅 Хочу записати в календар:\n\n« 💳 Отримання повернення кредиту Temu »\n🕐 04.09 о 09:00\n\nАвтоматично з листа.\nВід: Temu <temu@eu.temuemail.com>\nТема: Dostali ste vrátenie kreditu!\nDňa 4. sep 2026. Potvrďte ho čo najskôr\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "💳 Отримання повернення кредиту Temu",
+      "desc": "Автоматично з листа.\nВід: Temu <temu@eu.temuemail.com>\nТема: Dostali ste vrátenie kreditu!\nDňa 4. sep 2026. Potvrďte ho čo najskôr",
+      "minutes": 60,
+      "start": "2026-09-04T09:00:00"
+    },
+    "ts": "2026-09-04T17:55:10.919966+00:00"
   }
 }
