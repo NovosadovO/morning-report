@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T21:05:14.179248",
-      "kind": "watchdog",
-      "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 20\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\nЗа цим я стежити НЕ можу, поки не виправлено.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T21:06:32.844363",
       "kind": "watchdog",
       "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 20\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\n<i>За цим я стежити НЕ можу, поки не виправлено.</i>",
@@ -467,6 +461,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78435"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T21:31:24.476520",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>AVALANCHE AUGUST 2026 RECAP</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78407"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78407"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78407"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78407"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78407"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78407"
             }
           ]
         ]
