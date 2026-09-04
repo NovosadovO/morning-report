@@ -1,9 +1,4 @@
 {
-  "78076": {
-    "sender": "message@message.reserved.com",
-    "sender_raw": "Reserved <message@message.reserved.com>",
-    "seen_ts": "2026-08-27T07:37:02.736384+00:00"
-  },
   "78077": {
     "sender": "nike@official.nike.com",
     "sender_raw": "Nike <nike@official.nike.com>",
@@ -1498,5 +1493,10 @@
     "sender": "support@profesia.sk",
     "sender_raw": "\"Profesia.sk\" <support@profesia.sk>",
     "seen_ts": "2026-09-04T01:12:28.276741+00:00"
+  },
+  "78520": {
+    "sender": "news@mail.lidlplus.sk",
+    "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
+    "seen_ts": "2026-09-04T05:35:01.515966+00:00"
   }
 }
