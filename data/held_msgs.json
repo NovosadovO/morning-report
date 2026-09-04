@@ -1,6 +1,45 @@
 {
   "items": [
     {
+      "ts": "2026-09-04T09:46:18.845239",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>13 nových pracovných ponúk</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78522"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78522"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78522"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78522"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78522"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78522"
+            }
+          ]
+        ]
+      }
+    },
+    {
       "ts": "2026-09-04T09:46:20.145872",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
