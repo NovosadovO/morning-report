@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Важливі новини крипторинку",
-      "detail": "Є свіжий лист від 'The Block <newsletter@mail.theblock.co>' з темою '🔷 The Daily: Strategy resumes bitcoin buying'.",
-      "module": "selfact",
-      "ts": "2026-09-01T06:47:10"
-    },
-    {
-      "kind": "notify",
       "what": "Новий випуск Aave Newsletter",
       "detail": "Є свіжий лист від 'Aave <aave@aave.com>' з темою 'Aave Newsletter: Issue #019'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист з посиланням на нерухомість, що може бути для нього важливим.",
       "module": "selfact",
       "ts": "2026-09-04T02:16:11"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, нагадую, що твоя нічна зміна сьогодні закінчується о 0",
+      "detail": "Згідно з календарем, Олег зараз на нічній зміні (18:00-06:00), а в нотатках зазначено, що він приймає Armolopid Plus після нічної зміни перед сном.",
+      "module": "selfact",
+      "ts": "2026-09-04T02:31:51"
     }
   ]
 }
