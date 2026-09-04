@@ -9376,7 +9376,24 @@
     "action": "calrem_skip",
     "pid": "gen_1788487378718",
     "subject": "Перевірити деталі листа від Maroš Sivák",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 85764,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1788487378718"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1788487378718"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-04T04:35:21.981464+00:00"
   }
 }
