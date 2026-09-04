@@ -10692,6 +10692,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: 📅 Пропоную додати в календар",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-05T01:58:48.007971+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
+      "answer": "yes"
     }
   ]
 }
