@@ -257,6 +257,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-04T08:01:42.277631",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Aave Newsletter: Issue #019</b>\n👤 Aave &lt;aave@aave.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78326"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78326"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78326"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78326"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78326"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78326"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
