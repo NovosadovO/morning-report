@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T14:26:11.503363",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T14:26:12.359901",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78544"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T14:31:18.431630",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Standard Chartered Just Launched Spot Crypto Trading in UAE</b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78542"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78542"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78542"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78542"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78542"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78542"
             }
           ]
         ]
