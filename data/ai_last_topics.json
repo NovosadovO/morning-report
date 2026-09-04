@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-04t03_44_36_272784": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-04T03:44:36.272784"
+  },
   "selfact|2026-09-04t03_35_26_709302": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що тобі потрібно прийняти Armolopid Plus після закінчення нічної зміни (о 06:00) перед сном.\",  ",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олег, зверни увагу, що платежі за підписку Runable були невдалими. Потр",
     "ts": "2026-09-04T01:44:11.915677"
-  },
-  "subs|2026-09-04t01_38_47_258236": {
-    "topic": "subs",
-    "gist": "[]",
-    "ts": "2026-09-04T01:38:47.258236"
   }
 }
