@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T14:43:06.533553",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T14:43:07.654031",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78539"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T14:46:46.185393",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Dobrá správa! Dobierka je kdispozícii!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78538"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78538"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78538"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78538"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78538"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78538"
             }
           ]
         ]
