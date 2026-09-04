@@ -194,6 +194,7 @@ def _save_github(filename, data):
         # операції — не витрачаємо ще одне коло на GET. Якщо sha застарів,
         # PUT віддасть 409/422 і наступна спроба піде звичайним шляхом.
         sha = _SHA.get(filename) if attempt == 0 else None
+        _from_cache = sha is not None
         if sha is None:
             state, existing = _gh_get(f"data/{filename}")
             if state == "error":
@@ -245,6 +246,11 @@ def _save_github(filename, data):
             return True
         else:
             _SHA.pop(filename, None)
+            if _from_cache:
+                # Кешований sha застарів (хтось писав у гілку паралельно) —
+                # це не збій мережі, чекати немає сенсу. Одразу нова спроба
+                # зі свіжим GET, щоб кнопка не гальмувала на порожньому місці.
+                continue
             wait_time = 0.5 * (2 ** attempt)  # 0.5s, 1s, 2s, 4s, 8s
             if attempt >= 2:
                 print(f"⚠️ [storage] {filename}: спроба {attempt+1}/5, чекаю {wait_time}s")
