@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-04t03_51_25_439596": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Деталі поїздки в Малагу\",     \"text\": \"Олег, ти отримав детальні інструкції та підтвердження бронювання щодо с",
+    "ts": "2026-09-04T03:51:25.439596"
+  },
   "action_detect|2026-09-04t03_44_36_272784": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
     "ts": "2026-09-04T01:44:13.676039"
-  },
-  "selfact|2026-09-04t01_44_11_915677": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олег, зверни увагу, що платежі за підписку Runable були невдалими. Потр",
-    "ts": "2026-09-04T01:44:11.915677"
   }
 }
