@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T20:01:53.418390",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78516"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78516"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78516"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78516"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78516"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78516"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T20:01:54.632183",
       "kind": "offer",
       "text": "💰 ✉️\n📌 <b>Google Cloud Platform &amp; APIs: ми отримали Ваш платіж для дом</b>\n👤 Google Payments &lt;payments-noreply@google.com&gt;",
@@ -534,6 +495,12 @@
       "ts": "2026-09-04T21:01:03.746755",
       "kind": "watchdog",
       "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 20\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\n<i>За цим я стежити НЕ можу, поки не виправлено.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T21:01:04.619858",
+      "kind": "watchdog",
+      "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 20\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\nЗа цим я стежити НЕ можу, поки не виправлено.",
       "keyboard": null
     }
   ]
