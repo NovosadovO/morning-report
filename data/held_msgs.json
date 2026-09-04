@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T13:56:41.234118",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Morning Report</b>\n📋 Тема: «📊 Ранковий дайджест ринків — 04.09.2026»\n\n<i>«📊 РАНКОВИЙ РИНКОВИЙ ДАЙДЖЕСТ\r\n\r\n🗓 04 September 2026, 11:54\r\n📈 Відкрити живі графіки TradingView → https://040d5yvqudeeuhzw0s13dcp9yjftfazu.runable.site\r\n\r\n\r\n📉 ІНДЕКСИ\r\n\r\nІндексРівеньЗміна S&amp;P 500 $7,747.71 +1.06% NASDAQ 100 $29,482.32 +1.16% Dow Jones $53,686.11 +1.18% VIX $14.12 -1.40%\r\n\r\n\r\n🪙 КРИПТ...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78541"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78541"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78541"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78541"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78541"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78541"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T13:56:43.065165",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>CMC Spotlight</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Standard Chartered Just Launched Spot Crypto Trading in UAE»\n\n<i>«Explore the latest industry news, insightful data, and exciting\nupdates from CoinMarketCap.     CoinMarketCap Logo \n( https://link.coinmarketcap.com/f/a/FmtUOUSqYatO__bjdWAnJQ~~/AAQRxRA~/Ho1EHXK9-3lTYCtUUiLO5FUdmUYKEjHj3xXttDO5WoZ4GciSTmSu48au7K92Bs-iqHHxojLbUVNt5BrbVlDFBinfj8RkZGLN7ZPC1VQ9TpwZuHEV3...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -277,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78541"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T14:01:35.391594",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🦞 MyClaw Never Dies</b>\n👤 MyClaw Newsletter &lt;newsletter@myclaw.ai&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78539"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78539"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78539"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78539"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78539"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78539"
             }
           ]
         ]
