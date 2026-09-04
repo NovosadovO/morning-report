@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T10:09:00.399945",
-      "kind": "calendar",
-      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Доволенка в Іспанії</b>\n📅 08.09 (Tue) — через 4 дн.\n🕐 10:00–11:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T10:09:01.458928",
       "kind": "calendar",
       "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Доволенка в Іспанії\n📅 08.09 (Tue) — через 4 дн.\n🕐 10:00–11:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78435"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T10:16:30.517499",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>AVALANCHE AUGUST 2026 RECAP</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78407"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78407"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78407"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78407"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78407"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78407"
             }
           ]
         ]
