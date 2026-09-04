@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T13:56:43.065165",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>CMC Spotlight</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Standard Chartered Just Launched Spot Crypto Trading in UAE»\n\n<i>«Explore the latest industry news, insightful data, and exciting\nupdates from CoinMarketCap.     CoinMarketCap Logo \n( https://link.coinmarketcap.com/f/a/FmtUOUSqYatO__bjdWAnJQ~~/AAQRxRA~/Ho1EHXK9-3lTYCtUUiLO5FUdmUYKEjHj3xXttDO5WoZ4GciSTmSu48au7K92Bs-iqHHxojLbUVNt5BrbVlDFBinfj8RkZGLN7ZPC1VQ9TpwZuHEV3...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78542"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78542"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78542"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78542"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78542"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78542"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T13:56:51.804158",
       "kind": "calendar",
       "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Доволенка в Іспанії</b>\n📅 08.09 (Tue) — через 4 дн.\n🕐 10:00–11:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
@@ -277,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78539"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T14:01:36.694283",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Dobrá správa! Dobierka je kdispozícii!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78538"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78538"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78538"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78538"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78538"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78538"
             }
           ]
         ]
