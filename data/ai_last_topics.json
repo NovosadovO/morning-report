@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-05t01_28_10_465791": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"text\": \"Олеже, твоя нічна зміна закінчується о 06:00. Не забудь прийняти Armo",
+    "ts": "2026-09-05T01:28:10.465791"
+  },
+  "openloop_promises|2026-09-05t01_23_52_046777": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-05T01:23:52.046777"
+  },
   "bills|2026-09-05t01_22_51_198276": {
     "topic": "bills",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-04T23:34:12.234038"
-  },
-  "action_detect|2026-09-04t23_34_01_197083": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2024-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
-    "ts": "2026-09-04T23:34:01.197083"
-  },
-  "foresight|2026-09-04t23_34_00_979993": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-04T23:34:00.979993"
   }
 }
