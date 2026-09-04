@@ -62,6 +62,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-04T08:01:36.382929",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>Google Cloud Platform &amp; APIs: ми отримали Ваш платіж для дом</b>\n👤 Google Payments &lt;payments-noreply@google.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78435"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78435"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78435"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78435"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78435"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78435"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
