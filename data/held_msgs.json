@@ -564,6 +564,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-04T08:16:01.478082",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>InterFin Malaga trip - detailné informácie</b>\n👤 Maroš Sivák &lt;maros.sivak.sro@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78328"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78328"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78328"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78328"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78328"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78328"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
