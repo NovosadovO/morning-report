@@ -10606,6 +10606,12 @@
         "kind": "reminder",
         "date": "2026-09-05"
       }
+    },
+    {
+      "ts": "2026-09-05T01:15:51.949012+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ⏰ Пропоную поставити нагадування",
+      "answer": "yes"
     }
   ]
 }
