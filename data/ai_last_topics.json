@@ -1,4 +1,59 @@
 {
+  "msg_deep_analysis|2026-09-04t02_11_50_602664": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Ти зараз на нічній зміні, і хоча за календарем вже майже 02:11 ранку, твій організм показує чудовий результат за кроками — 18915 за останню доб",
+    "ts": "2026-09-04T02:11:50.602664"
+  },
+  "email_ai_item|2026-09-04t02_07_32_232056": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від The Defiant є інформаційним бюлетенем про останні новини у світі DeFi та криптовалют. Він висвітлює зростання комісій на R",
+    "ts": "2026-09-04T02:07:32.232056"
+  },
+  "action_detect|2026-09-04t02_05_05_449807": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз та інформацію про ",
+    "ts": "2026-09-04T02:05:05.449807"
+  },
+  "action_detect|2026-09-04t02_05_05_386406": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Записати 3 цілі на майбутнє\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Запиши 3 конкрет",
+    "ts": "2026-09-04T02:05:05.386406"
+  },
+  "action_detect|2026-09-04t02_05_05_233110": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
+    "ts": "2026-09-04T02:05:05.233110"
+  },
+  "action_detect|2026-09-04t02_04_55_350350": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записуй усе, що приходить в голову, ос",
+    "ts": "2026-09-04T02:04:55.350350"
+  },
+  "action_detect|2026-09-04t02_04_54_087580": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Закінчення нічної зміни\", \"action_date\": \"2026-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Нічна зміна Олега",
+    "ts": "2026-09-04T02:04:54.087580"
+  },
+  "action_detect|2026-09-04t02_04_43_121904": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": \"2026-08-04\", \"action_time\": null, \"action_summary\": \"Оновити п",
+    "ts": "2026-09-04T02:04:43.121904"
+  },
+  "action_detect|2026-09-04t02_04_30_919889": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-05\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
+    "ts": "2026-09-04T02:04:30.919889"
+  },
+  "action_detect|2026-09-04t02_04_30_821686": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансію Regionalny kierownik sprzedaży\", \"action_date\": \"2026-09-04\", \"action_time\": \"10:00\", \"action_",
+    "ts": "2026-09-04T02:04:30.821686"
+  },
+  "action_detect|2026-09-04t02_04_19_940709": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopid піс",
+    "ts": "2026-09-04T02:04:19.940709"
+  },
   "briefing_truthfix|2026-09-04t02_04_13_875251": {
     "topic": "briefing/truthfix",
     "gist": "Олеже, як справи на нічній зміні? Зараз 02:04 п'ятниці, 4 вересня 2026 року, і ти, найімовірніше, вдома, судячи з календаря.  **Що зараз найважливіше?**  Зараз,",
@@ -243,60 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Вирішити питання з підпискою Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Вирішити",
     "ts": "2026-09-04T00:03:53.433443"
-  },
-  "action_detect|2026-09-04t00_03_53_304477": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Підтвердити повернення кредиту Temu\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Необхідно підтве",
-    "ts": "2026-09-04T00:03:53.304477"
-  },
-  "action_detect|2026-09-04t00_03_42_235710": {
-    "topic": "action_detect",
-    "gist": "```json { \"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після закінчення",
-    "ts": "2026-09-04T00:03:42.235710"
-  },
-  "action_detect|2026-09-04t00_03_28_626705": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти Armolo",
-    "ts": "2026-09-04T00:03:28.626705"
-  },
-  "action_detect|2026-09-04t00_03_28_571026": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансію\", \"action_date\": \"2026-09-05\", \"action_time\": \"09:00\", \"action_summary\": \"Переглянути вакансію",
-    "ts": "2026-09-04T00:03:28.571026"
-  },
-  "action_detect|2026-09-04t00_03_17_643727": {
-    "topic": "action_detect",
-    "gist": "```json { \"action_type\": \"calendar\", \"action_title\": \"Перегляд вакансії\", \"action_date\": \"2026-09-04\", \"action_time\": \"09:00\", \"action_summary\": \"Після зміни, о",
-    "ts": "2026-09-04T00:03:17.643727"
-  },
-  "briefing_truthfix|2026-09-04t00_03_12_891599": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, зараз 00:03, ти на нічній зміні.  **Суперечність: Здоров'я та цілі** Твої дані за 2026-09-03 (24 години тому) показують вагу 83.0 кг, що на 5.0 кг більше",
-    "ts": "2026-09-04T00:03:12.891599"
-  },
-  "briefing|2026-09-04t00_03_08_451530": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ Зараз, у розпалі нічної зміни, твій основний фокус має бути на збереженні енергії для ефективного завершення роботи, а потім — на відновленні перед",
-    "ts": "2026-09-04T00:03:08.451530"
-  },
-  "themes_ai_truthfix|2026-09-04t00_02_57_428182": {
-    "topic": "themes_ai/truthfix",
-    "gist": "Олеже, зараз 00:02 п'ятниці, 4 вересня 2026 року, ти на нічній зміні, і ось що бачу.  **Здоров'я та вага** Твоя вага 83.0 кг, а ціль — 78 кг, що означає 5 кг до",
-    "ts": "2026-09-04T00:02:57.428182"
-  },
-  "themes_ai|2026-09-04t00_02_54_057538": {
-    "topic": "themes_ai",
-    "gist": "Олеже, зараз глибока ніч, ти на нічній зміні, і ось що маємо.  🏃 БІГ Твоя остання пробіжка була 32 дні тому, 2 серпня, що показує значну паузу в бігових тренува",
-    "ts": "2026-09-04T00:02:54.057538"
-  },
-  "astro_ai|2026-09-04t00_02_50_185660": {
-    "topic": "astro_ai",
-    "gist": "Олеже, прямо зараз ти відчуваєш потужну внутрішню трансформацію, що штовхає тебе до переоцінки особистих цілей та відносин, проте ризикуєш зануритись у самообма",
-    "ts": "2026-09-04T00:02:50.185660"
-  },
-  "foresight_truthfix|2026-09-04t00_01_42_989387": {
-    "topic": "foresight/truthfix",
-    "gist": "Олеже, зараз глибока ніч, 4 вересня 2026 року, ти на нічній зміні. Дані, які я маю, оновлені станом на 3 вересня, тобто їм близько доби.  Твоя вага тримається н",
-    "ts": "2026-09-04T00:01:42.989387"
   }
 }
