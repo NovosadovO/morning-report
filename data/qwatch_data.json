@@ -1085,14 +1085,15 @@
   "2026-09-04": {
     "date": "2026-09-04",
     "health_score": 70,
-    "steps": 6941,
-    "hr_avg": 69,
+    "steps": 8941,
+    "hr_avg": 100,
     "calories": 289,
-    "hrv": 49,
+    "hrv": 36,
     "weight_kg": 83.0,
     "height_cm": 175,
-    "spo2": null,
-    "source": "qwatch",
-    "saved_at": "2026-09-04 07:37"
+    "spo2": 96,
+    "source": "qwatch_auto",
+    "saved_at": "2026-09-04 20:30",
+    "stress": 45
   }
 }
