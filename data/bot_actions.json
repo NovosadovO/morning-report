@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Контракт на бронювання August Villa Málaga",
-      "detail": "Надійшов лист від no-reply@chekin.com з контрактом на бронювання August Villa Málaga, що є важливою інформацією для майбутньої поїздки Олега.",
-      "module": "selfact",
-      "ts": "2026-09-01T08:50:12"
-    },
-    {
       "kind": "note",
       "what": "Олег отримує численні листи від Booking.com Customer Service",
       "detail": "Отримано два свіжі листи від 'Booking.com Customer Service' з темою 'Re: Re: other', що може вказувати на поточні активності Олега з Booking.com.",
@@ -2799,6 +2792,13 @@
       "detail": "ранковий план здоров'я",
       "module": "selfact",
       "ts": "2026-09-04T07:02:06"
+    },
+    {
+      "kind": "notify",
+      "what": "Лист від Олега",
+      "detail": "У свіжих листах є лист від 'Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu>' з темою '1' та посиланням на оголошення про квартиру. Це може бути важливим, але незрозуміло, що Олег хоче з цим робити.",
+      "module": "selfact",
+      "ts": "2026-09-04T07:14:53"
     }
   ]
 }
