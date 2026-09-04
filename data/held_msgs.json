@@ -257,6 +257,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-04T20:01:52.188217",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Dostali ste vrátenie kreditu!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78555"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78555"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78555"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78555"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78555"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78555"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
