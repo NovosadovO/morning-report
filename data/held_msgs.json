@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T21:31:26.964190",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your weekly progress report from Google Health</b>\n👤 Google Health &lt;google-health-noreply@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78385"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78385"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78385"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78385"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78385"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78385"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T21:31:28.236928",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>InterFin Malaga trip - detailné informácie</b>\n👤 Maroš Sivák &lt;maros.sivak.sro@gmail.com&gt;",
@@ -624,6 +585,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78565"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T22:01:26.702382",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78516"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78516"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78516"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78516"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78516"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78516"
             }
           ]
         ]
