@@ -1,4 +1,44 @@
 {
+  "email_ai_item|2026-09-04t18_14_21_416921": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії, які відповідають налаштуванням користувача в Кошице. Зокрема, пропонуєть",
+    "ts": "2026-09-04T18:14:21.416921"
+  },
+  "foresight|2026-09-04t18_13_18_712305": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T18:13:18.712305"
+  },
+  "foresight|2026-09-04t18_13_07_714254": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T18:13:07.714254"
+  },
+  "foresight|2026-09-04t18_12_00_881059": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-04T18:12:00.881059"
+  },
+  "foresight|2026-09-04t18_11_49_658708": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T18:11:49.658708"
+  },
+  "foresight|2026-09-04t18_10_35_172628": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-04T18:10:35.172628"
+  },
+  "foresight|2026-09-04t18_10_24_266924": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T18:10:24.266924"
+  },
+  "selfact|2026-09-04t18_10_16_985660": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що підписка Runable досі має проблеми з оплатою. Потрібно оновити платіжну інформацію, інак",
+    "ts": "2026-09-04T18:10:16.985660"
+  },
   "email_ai_item|2026-09-04t18_10_03_648730": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від FIFA пропонує знижки до 50% на офіційні товари Чемпіонату світу з футболу 2026 року. Пропозиція включає футболки, шарфи та",
@@ -258,45 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-04T17:50:47.878205"
-  },
-  "openloop_promises|2026-09-04t17_50_36_842938": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-09-04T17:50:36.842938"
-  },
-  "foresight|2026-09-04t17_49_24_679618": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T17:49:24.679618"
-  },
-  "foresight|2026-09-04t17_49_13_603238": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T17:49:13.603238"
-  },
-  "foresight|2026-09-04t17_47_54_336214": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T17:47:54.336214"
-  },
-  "foresight|2026-09-04t17_47_43_031220": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T17:47:43.031220"
-  },
-  "foresight|2026-09-04t17_46_36_642521": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T17:46:36.642521"
-  },
-  "foresight|2026-09-04t17_46_27_094236": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T17:46:27.094236"
-  },
-  "foresight|2026-09-04t17_45_17_251485": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T17:45:17.251485"
   }
 }
