@@ -10493,6 +10493,12 @@
       "category": "confirm",
       "question": "calrem_skip: Перевірити статус оплати",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-04T19:08:30.896176+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_1af80edba7"
     }
   ]
 }
