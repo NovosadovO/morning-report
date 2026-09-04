@@ -1,4 +1,49 @@
 {
+  "selfact|2026-09-04t05_40_55_335650": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег отримав сповіщення про вакансію Logistics Supervisor LOC в Volvo Cars у Кошице.\",     \"why\": \"З листа від Сп",
+    "ts": "2026-09-04T05:40:55.335650"
+  },
+  "foresight|2026-09-04t05_39_34_815233": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T05:39:34.815233"
+  },
+  "foresight|2026-09-04t05_39_23_837945": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T05:39:23.837945"
+  },
+  "foresight|2026-09-04t05_39_12_854621": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T05:39:12.854621"
+  },
+  "foresight|2026-09-04t05_38_06_675190": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T05:38:06.675190"
+  },
+  "foresight|2026-09-04t05_37_55_591279": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T05:37:55.591279"
+  },
+  "foresight|2026-09-04t05_37_44_618281": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T05:37:44.618281"
+  },
+  "foresight|2026-09-04t05_36_38_560247": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-04T05:36:38.560247"
+  },
+  "foresight|2026-09-04t05_36_27_481238": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T05:36:27.481238"
+  },
   "foresight|2026-09-04t05_36_16_515337": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -253,50 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-04T05:12:09.449580"
-  },
-  "foresight|2026-09-04t05_11_58_513116": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T05:11:58.513116"
-  },
-  "foresight|2026-09-04t05_11_47_420328": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T05:11:47.420328"
-  },
-  "foresight|2026-09-04t05_10_33_721372": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-04T05:10:33.721372"
-  },
-  "foresight|2026-09-04t05_10_22_689118": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T05:10:22.689118"
-  },
-  "foresight|2026-09-04t05_10_11_698951": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T05:10:11.698951"
-  },
-  "selfact|2026-09-04t05_10_00_091168": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег отримав детальні інструкції щодо поїздки в Малагу від Maroš Sivák, включаючи інформацію від Gabika (GabiGo),",
-    "ts": "2026-09-04T05:10:00.091168"
-  },
-  "calendar_truthfix|2026-09-04t05_09_58_621201": {
-    "topic": "calendar/truthfix",
-    "gist": "Олеже, зараз 05:09 п'ятниці, 4 вересня 2026 року, і ти на нічній зміні, яка триватиме до 06:00. Це вже третя ніч поспіль, а попереду ще одна. Важливо пам'ятати,",
-    "ts": "2026-09-04T05:09:58.621201"
-  },
-  "calendar|2026-09-04t05_09_48_244491": {
-    "topic": "calendar",
-    "gist": "Олеже, бачу, що твоя нічна зміна сьогодні триватиме до 6 ранку, і це вже третя ніч поспіль, а попереду ще одна. Важливо не забути прийняти Armolopid Plus після ",
-    "ts": "2026-09-04T05:09:48.244491"
-  },
-  "bills|2026-09-04t05_09_32_513387": {
-    "topic": "bills",
-    "gist": "```json [] ```",
-    "ts": "2026-09-04T05:09:32.513387"
   }
 }
