@@ -1,4 +1,49 @@
 {
+  "foresight|2026-09-04t17_39_48_236223": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T17:39:48.236223"
+  },
+  "foresight|2026-09-04t17_38_42_873188": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-04T17:38:42.873188"
+  },
+  "action_detect|2026-09-04t17_38_31_945091": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2024-09-06\", \"action_time\": null, \"action_summary\": \"Нічна зміна триватиме до 6 верес",
+    "ts": "2026-09-04T17:38:31.945091"
+  },
+  "foresight|2026-09-04t17_38_31_816212": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T17:38:31.816212"
+  },
+  "selfact|2026-09-04t17_38_23_962708": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від Maroš Sivák з детальними інструкціями щодо поїздки в Малагу. Там є важлива інфор",
+    "ts": "2026-09-04T17:38:23.962708"
+  },
+  "msg_micro_checkin_truthfix|2026-09-04t17_38_13_765521": {
+    "topic": "MSG_MICRO_CHECKIN/truthfix",
+    "gist": "Привіт!  Як справи в цілому, що зараз на думці, може є щось, про що хочеш поговорити перед тим, як поринати у зміну? Бачу, що ти якраз готуєшся до нічної зміни,",
+    "ts": "2026-09-04T17:38:13.765521"
+  },
+  "msg_micro_checkin|2026-09-04t17_38_03_760699": {
+    "topic": "MSG_MICRO_CHECKIN",
+    "gist": "Привіт Олеже! 🫂  Як справи в цілому, що зараз на думці, може є щось, про що хочеш поговорити перед тим, як поринати у зміну? Бачу, що ти якраз готуєшся до нічно",
+    "ts": "2026-09-04T17:38:03.760699"
+  },
+  "foresight|2026-09-04t17_36_55_429344": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-04T17:36:55.429344"
+  },
+  "foresight|2026-09-04t17_36_44_325600": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T17:36:44.325600"
+  },
   "foresight|2026-09-04t17_35_38_340722": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
@@ -253,50 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні о 17:00 у тебе починається нічна зміна (18:00-06:00).\",     \"why\": \"Згідно з календа",
     "ts": "2026-09-04T17:08:04.262357"
-  },
-  "foresight|2026-09-04t17_06_41_249743": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-04T17:06:41.249743"
-  },
-  "foresight|2026-09-04t17_06_30_215810": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T17:06:30.215810"
-  },
-  "foresight|2026-09-04t17_05_24_806900": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-04T17:05:24.806900"
-  },
-  "foresight|2026-09-04t17_05_13_889610": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T17:05:13.889610"
-  },
-  "foresight|2026-09-04t17_03_58_265468": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-04T17:03:58.265468"
-  },
-  "foresight|2026-09-04t17_03_47_306529": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T17:03:47.306529"
-  },
-  "action_detect|2026-09-04t17_02_57_550928": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Закрити прострочені дедлайни\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Закрити 17 прострочених",
-    "ts": "2026-09-04T17:02:57.550928"
-  },
-  "action_detect|2026-09-04t17_02_57_534056": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити кредит Temu\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оплатити прострочений кредит Te",
-    "ts": "2026-09-04T17:02:57.534056"
-  },
-  "action_detect|2026-09-04t17_02_46_474065": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжні дані Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після нічної зміни, до ",
-    "ts": "2026-09-04T17:02:46.474065"
   }
 }
