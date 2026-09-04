@@ -2216,5 +2216,28 @@
       "summary": "🔔 Переглянути вакансію Regionalny kierownik sprzedaży"
     },
     "ts": "2026-09-04T12:00:53.905052+00:00"
+  },
+  "829cbd13fb": {
+    "key": "past|🔔 переглянути вакансію regionalny kierownik sprzed|2026-09-04",
+    "q": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+    "kind": "happened",
+    "opts": [
+      [
+        "done",
+        "✅ Відбулось"
+      ],
+      [
+        "moved",
+        "🔁 Перенеслось"
+      ],
+      [
+        "cancel",
+        "❌ Скасувалось"
+      ]
+    ],
+    "meta": {
+      "summary": "🔔 Переглянути вакансію Regionalny kierownik sprzedaży"
+    },
+    "ts": "2026-09-04T12:02:05.791565+00:00"
   }
 }
