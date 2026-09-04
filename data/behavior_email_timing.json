@@ -1,9 +1,4 @@
 {
-  "78101": {
-    "sender": "events@blockworks.com",
-    "sender_raw": "Blockworks <events@blockworks.com>",
-    "seen_ts": "2026-08-27T13:02:49.188864+00:00"
-  },
   "78102": {
     "sender": "newsletter@investingmail.com",
     "sender_raw": "Investing.com <newsletter@investingmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@news.footshop.sk",
     "sender_raw": "Footshop <hello@news.footshop.sk>",
     "seen_ts": "2026-09-04T14:37:09.439077+00:00"
+  },
+  "78553": {
+    "sender": "hello@plunge.com",
+    "sender_raw": "PLUNGE <hello@plunge.com>",
+    "seen_ts": "2026-09-04T15:34:55.279688+00:00"
   }
 }
