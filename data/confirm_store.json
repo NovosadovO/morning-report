@@ -9438,7 +9438,24 @@
     "action": "calrem_skip",
     "pid": "gen_1788531535890",
     "subject": "Випити склянку води",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 85967,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1788531535890"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1788531535890"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-04T16:36:33.151599+00:00"
   }
 }
