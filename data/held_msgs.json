@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T15:42:38.932735",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T15:42:39.806524",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78542"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T15:46:12.080809",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📊 Ранковий дайджест ринків — 04.09.2026</b>\n👤 Morning Report &lt;onboarding@resend.dev&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78541"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78541"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78541"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78541"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78541"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78541"
             }
           ]
         ]
