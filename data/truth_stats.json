@@ -68,10 +68,10 @@
       "checked": 7,
       "issues": 7,
       "cut": 2,
-      "fixed": 1
+      "fixed": 2
     },
     "REC_GEN": {
-      "checked": 26,
+      "checked": 27,
       "issues": 23,
       "fixed": 7
     },
@@ -393,9 +393,9 @@
     "fixed": 84
   },
   "2026-09-04": {
-    "checked": 41,
+    "checked": 42,
     "issues": 27,
-    "fixed": 8,
+    "fixed": 9,
     "cut": 3
   }
 }
