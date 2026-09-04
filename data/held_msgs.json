@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T21:31:24.476520",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>AVALANCHE AUGUST 2026 RECAP</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78407"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78407"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78407"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78407"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78407"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78407"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T21:31:25.723678",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Reservation confirmation</b>\n👤 noreply@atguest.com",
@@ -628,6 +589,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T22:01:23.958663",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Onchain Assets Weekly: 9/4/26</b>\n👤 Securitize через LinkedIn&lt;newsletters-noreply@link",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78566"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78566"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78566"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78566"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78566"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78566"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
