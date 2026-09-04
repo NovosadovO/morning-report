@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T08:44:06.214438",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Discord</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Ти пропустив повідомлення в VenomBridge»\n\n<i>«#outlook a { padding:0; } body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%; } table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt; } img { border:0;height:auto;line-height:100%; outline:none;text-decoration:none;-ms-interpolation-mode:bicub...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78523"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78523"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78523"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78523"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78523"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78523"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T08:46:32.733361",
       "kind": "chunk",
       "text": "🌅\n<b>ЗВІТ  ·  Пт 04.09  ·  08:45</b>\n🏠 Вдома\n<i>Ранок Олега: Strava + CoinGecko + кава. Ідеальна комбінація ☕📈</i>\n📌 🌙 Нічна зміна (18:00-06:00) +2\n\n⚡ <b>День: ✨☆☆☆☆ 17/100</b>  ↓38 vs вчора\n\n🌫️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>19°C</b>\n<i>👌 Комфортно — ідеально для прогулянки</i>\n\n📅 <b>Прогноз сьогодні:</b>\n05:56   🌇 19:11  09:00 ☁️20°  │  10:00 ☁️22°  │  11:00 ☁️24°  │  12:00 ☁️25°  │  13:00 ☁️27°  │  14:00 ☁️28°  09:00 ☁️21°  │  12:00 ☁️24°🌧53%  │  15:00 🌦20°🌧70%  │  18:00 ☁️22°  │  21:00 ☀️19°\n\n<b>Завтра:</b>  🌦 Мряка  🔻18°  /  🔺24°  🌧 0.1 мм\n<code>09:00</code> ☁️21°  │  <code>12:00</code> ☁️24°🌧53%  │  <code>15:00</code> 🌦20°🌧70%  │  <code>18:00</code> ☁️22°  │  <code>21:00</code> ☀️19°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n  • 🐢 Затор (+3 хв) — Ipeľská\n  • 🐢 Затор (+1 хв) — Kuzmányho\n\n💰\n<b>КРИПТО  ·  🟢 БИЧАЧИЙ 🚀</b>\n➡️ <b>BTC</b> <code>$80,827.00</code>  +0.10%\n➡️ <b>ETH</b> <code>$2,507.96</code>  +0.08%\n🔺 <b>AVAX</b> <code>$7.47</code>  +0.27%\n🔺 <b>ONDO</b> <code>$0.36</code>  +0.45%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🟢 <b>IBIT</b>  <code>$46.35</code>  <i>+5.85% за день</i>\n🟢 <b>ETHA</b>  <code>$19.02</code>  <i>+5.37% за день</i>\n⚪️ <b",
@@ -605,6 +566,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78407"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T09:01:29.396340",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Reservation confirmation</b>\n👤 noreply@atguest.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78402"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78402"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78402"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78402"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78402"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78402"
             }
           ]
         ]
