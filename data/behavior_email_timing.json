@@ -1,9 +1,4 @@
 {
-  "78110": {
-    "sender": "noreply@waze.com",
-    "sender_raw": "Waze <noreply@waze.com>",
-    "seen_ts": "2026-08-27T14:16:51.853908+00:00"
-  },
   "78111": {
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-09-04T22:15:44.354190+00:00"
+  },
+  "78570": {
+    "sender": "hello@news.railway.app",
+    "sender_raw": "Railway <hello@news.railway.app>",
+    "seen_ts": "2026-09-04T22:32:02.274710+00:00"
   }
 }
