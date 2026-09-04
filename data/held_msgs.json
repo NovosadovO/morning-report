@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T22:01:31.132265",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Reservation confirmation</b>\n👤 noreply@atguest.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78402"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78402"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78402"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78402"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78402"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78402"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T22:01:32.562330",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your weekly progress report from Google Health</b>\n👤 Google Health &lt;google-health-noreply@google.com&gt;",
@@ -630,6 +591,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78516"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T22:31:36.096510",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>Google Cloud Platform &amp; APIs: ми отримали Ваш платіж для дом</b>\n👤 Google Payments &lt;payments-noreply@google.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78435"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78435"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78435"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78435"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78435"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78435"
             }
           ]
         ]
