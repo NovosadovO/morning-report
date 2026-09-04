@@ -1,4 +1,9 @@
 {
+  "qwatch_parse|2026-09-04t20_30_58_337594": {
+    "topic": "qwatch_parse",
+    "gist": "```json {   \"health_score\": 70,   \"steps\": 13367,   \"sleep_total_min\": null,   \"sleep_deep_min\": null,   \"sleep_light_min\": null,   \"sleep_quality\": null,   \"hr",
+    "ts": "2026-09-04T20:30:58.337594"
+  },
   "foresight|2026-09-04t20_18_24_861180": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -293,10 +298,5 @@
     "topic": "foresight",
     "gist": "{\"city\": \"Malaga\", \"country\": \"Spain\"}",
     "ts": "2026-09-04T19:09:27.104406"
-  },
-  "foresight|2026-09-04t19_08_17_962113": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T19:08:17.962113"
   }
 }
