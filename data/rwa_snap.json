@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-04 14:30",
+  "ts": "2026-09-04 14:46",
   "ids": [
     "figure-heloc",
     "chainlink",
@@ -14,15 +14,15 @@
   ],
   "prices": {
     "figure-heloc": 1.032,
-    "chainlink": 12.03,
-    "stellar": 0.18498,
+    "chainlink": 11.71,
+    "stellar": 0.181145,
     "blackrock-usd-institutional-digital-liquidity-fund": 1.0,
-    "tether-gold": 4463.13,
+    "tether-gold": 4398.79,
     "hashnote-usyc": 1.14,
     "ondo-us-dollar-yield": 1.14,
-    "pax-gold": 4470.61,
-    "ondo-finance": 0.367049,
-    "spiko-amundi-overnight-swap-fund-eur": 1.18
+    "pax-gold": 4406.24,
+    "ondo-finance": 0.358166,
+    "spiko-amundi-overnight-swap-fund-eur": 1.17
   },
-  "sector_mcap": 48148244436.734535
+  "sector_mcap": 70443112045.20865
 }
