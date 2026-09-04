@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T21:46:53.335353",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>AVALANCHE AUGUST 2026 RECAP</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78407"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78407"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78407"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78407"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78407"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78407"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T21:46:54.693723",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Reservation confirmation</b>\n👤 noreply@atguest.com",
@@ -634,6 +595,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T22:16:00.706505",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Cybersecurity Enthusiast Wanted! (m/f/n) в ESET</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78567"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78567"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78567"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78567"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78567"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78567"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
