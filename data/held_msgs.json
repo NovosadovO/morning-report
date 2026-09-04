@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T22:46:10.627955",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 4th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78565"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78565"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78565"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78565"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78565"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78565"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T22:46:12.114630",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
@@ -624,6 +585,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78568"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T23:16:00.992777",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Cybersecurity Enthusiast Wanted! (m/f/n) в ESET</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78567"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78567"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78567"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78567"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78567"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78567"
             }
           ]
         ]
