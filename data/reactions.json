@@ -2953,5 +2953,17 @@
     "about": "🌦 Погода на завтра (05.09)\n🌦 Мряка, 88% імовірність опадів, 0.4 мм\n🌡 18…23°C\n\n☔ Не забудь парасольку!",
     "state": "open",
     "ts": "2026-09-04T19:37:26"
+  },
+  "generic|t|вакансія cybersecurity enthusiast": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "вакансія cybersecurity enthusiast",
+    "title": "Вакансія Cybersecurity Enthusiast",
+    "action": "later",
+    "label": "⏰ Пізніше",
+    "about": "Вакансія Cybersecurity Enthusiast",
+    "state": "snoozed",
+    "ts": "2026-09-04T19:37:40",
+    "until": "2026-09-05T01:37:40"
   }
 }
