@@ -1,43 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T09:15:56.503385",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 13 nových pracovných ponúk\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Avalanche Team1\n📋 AVALANCHE AUGUST 2026 RECAP\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Profesia.sk",
-              "callback_data": "email_reply_78522"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_78516"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Avalanche Team1",
-              "callback_data": "email_reply_78407"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_78522"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78522"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T09:15:59.045954",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 13 nových pracovných ponúk\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Avalanche Team1\n📋 AVALANCHE AUGUST 2026 RECAP\n📝 (AI-аналіз тимчасово недоступний)",
@@ -537,6 +500,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78516"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T09:46:21.510065",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>Google Cloud Platform &amp; APIs: ми отримали Ваш платіж для дом</b>\n👤 Google Payments &lt;payments-noreply@google.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78435"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78435"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78435"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78435"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78435"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78435"
             }
           ]
         ]
