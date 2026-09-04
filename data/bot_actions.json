@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверни увагу на лист від Maroš Sivák «InterFin Malaga",
-      "detail": "Олег має подію 'Деталі поїздки в Малагу' на 01.09 о 09:00, а також поїздку в Малагу 07.09. Цей лист містить важливу інформацію, яку він міг пропустити.",
-      "module": "selfact",
-      "ts": "2026-09-01T10:38:19"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, отримано договір бронювання August Villa Málaga - Vill",
       "detail": "Олег має бронювання August Villa Málaga - Villa на 07.09. Це важливий документ, який варто переглянути.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав новий лист від LinkedIn з оповіщенням про вакансію 'Cybersecurity Enthusiast Wanted! (m/f/n) в ESET', яка відповідає його налаштуванням.",
       "module": "selfact",
       "ts": "2026-09-04T19:12:22"
+    },
+    {
+      "kind": "notify",
+      "what": "Посилання на квартиру",
+      "detail": "Олег отримав лист від 'Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu>' з посиланням на нерухомість: 'https://www.nehnutelnosti.sk/detail/JuOJzdJamz1/nova-rekonstrukcia-3-izbovy-byt-s-loggiou-zupkova-ul'.",
+      "module": "selfact",
+      "ts": "2026-09-04T19:12:27"
     }
   ]
 }
