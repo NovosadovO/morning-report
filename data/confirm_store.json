@@ -9326,7 +9326,24 @@
     "action": "calrem_skip",
     "pid": "gen_1788483794820",
     "subject": "Записати ідеї та переглянути домовленості",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 85729,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1788483794820"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1788483794820"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-04T03:20:48.896468+00:00"
   }
 }
