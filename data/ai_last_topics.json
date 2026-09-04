@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-09-04t03_25_47_132383": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-04T03:25:47.132383"
+  },
   "selfact|2026-09-04t03_19_15_176486": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег отримав лист від Maroš Sivák з детальними інструкціями та підтвердженням бронювання щодо своєї поїздки в Мал",
@@ -293,10 +298,5 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-04\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
     "ts": "2026-09-04T01:30:14.917497"
-  },
-  "action_detect|2026-09-04t01_30_00_526195": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-04\", \"action_time\": \"09:00\", \"action_summary\": \"Перег",
-    "ts": "2026-09-04T01:30:00.526195"
   }
 }
