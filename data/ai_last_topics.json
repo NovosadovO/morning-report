@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-09-05t00_15_41_340459": {
+    "topic": "email_ai_item",
+    "gist": "```json { \"description\": \"Лист від LinkedIn містить сповіщення про нову вакансію Business Development Manager IBM в Arrow Components, розташовану в Братиславі. ",
+    "ts": "2026-09-05T00:15:41.340459"
+  },
   "selfact|2026-09-05t00_09_53_179511": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні о 17:00 у тебе починається нічна зміна (18:00-06:00).\",     \"why\": \"Згідно з календа",
@@ -293,10 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-04T21:13:24.928319"
-  },
-  "foresight|2026-09-04t21_12_16_682371": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"madrid\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T21:12:16.682371"
   }
 }
