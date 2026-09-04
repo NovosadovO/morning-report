@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Контракт на August Villa Málaga",
-      "detail": "Є свіжий лист від no-reply@chekin.com з контрактом на бронювання August Villa Málaga - Villa, який безпосередньо стосується майбутньої поїздки Олега і потребує його уваги.",
-      "module": "selfact",
-      "ts": "2026-09-01T08:03:45"
-    },
-    {
-      "kind": "notify",
       "what": "Скасування туру Paxos and Antipaxos",
       "detail": "Олег отримав лист від noreply@booking.com про скасування бронювання 'Paxos and Antipaxos Boat Tour from Corfu' та повернення коштів. Це важлива інформація, яка стосується його фінансів та минулих планів.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "З календаря: 04.09: 09:00 🔔 Переглянути вакансію Regionalny kierownik sprzedaży",
       "module": "selfact",
       "ts": "2026-09-04T05:10:05"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, твій платіж у розмірі 10.00 EUR для Google Cloud Platf",
+      "detail": "Зі свіжих листів: від Google Payments <payments-noreply@google.com> | Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD",
+      "module": "selfact",
+      "ts": "2026-09-04T05:10:09"
     }
   ]
 }
