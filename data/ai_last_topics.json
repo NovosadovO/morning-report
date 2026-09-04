@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-04t18_31_08_527189": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-04T18:31:08.527189"
+  },
+  "foresight|2026-09-04t18_29_56_888537": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T18:29:56.888537"
+  },
+  "foresight|2026-09-04t18_29_45_906935": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-04T18:29:45.906935"
+  },
+  "foresight|2026-09-04t18_28_40_134874": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T18:28:40.134874"
+  },
+  "foresight|2026-09-04t18_28_29_024593": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-04T18:28:29.024593"
+  },
+  "action_detect|2026-09-04t18_27_13_417058": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Марс на асц\", \"action_date\": \"2024-09-30\", \"action_time\": null, \"action_summary\": \"Записати подію 'Марс на асц' на ",
+    "ts": "2026-09-04T18:27:13.417058"
+  },
+  "foresight|2026-09-04t18_27_13_182217": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-04T18:27:13.182217"
+  },
   "foresight|2026-09-04t18_27_02_138453": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-04T18:07:56.520365"
-  },
-  "foresight|2026-09-04t18_06_49_440015": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-04T18:06:49.440015"
-  },
-  "foresight|2026-09-04t18_06_38_361602": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T18:06:38.361602"
-  },
-  "foresight|2026-09-04t18_05_24_375162": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-04T18:05:24.375162"
-  },
-  "foresight|2026-09-04t18_05_13_519733": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T18:05:13.519733"
-  },
-  "action_detect|2026-09-04t18_04_32_620993": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Марс на асц\", \"action_date\": \"2024-09-30\", \"action_time\": null, \"action_summary\": \"Занотувати подію 'Марс на асц' н",
-    "ts": "2026-09-04T18:04:32.620993"
-  },
-  "action_detect|2026-09-04t18_04_32_032304": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Марс на асц\", \"action_date\": \"2024-09-30\", \"action_time\": null, \"action_summary\": \"Занотувати подію 'Марс на асц' н",
-    "ts": "2026-09-04T18:04:32.032304"
-  },
-  "action_detect|2026-09-04t18_04_28_445110": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2024-09-05\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
-    "ts": "2026-09-04T18:04:28.445110"
   }
 }
