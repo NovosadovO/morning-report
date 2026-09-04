@@ -1,4 +1,49 @@
 {
+  "foresight|2026-09-04t17_06_41_249743": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-04T17:06:41.249743"
+  },
+  "foresight|2026-09-04t17_06_30_215810": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T17:06:30.215810"
+  },
+  "foresight|2026-09-04t17_05_24_806900": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-04T17:05:24.806900"
+  },
+  "foresight|2026-09-04t17_05_13_889610": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T17:05:13.889610"
+  },
+  "foresight|2026-09-04t17_03_58_265468": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-04T17:03:58.265468"
+  },
+  "foresight|2026-09-04t17_03_47_306529": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T17:03:47.306529"
+  },
+  "action_detect|2026-09-04t17_02_57_550928": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Закрити прострочені дедлайни\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Закрити 17 прострочених",
+    "ts": "2026-09-04T17:02:57.550928"
+  },
+  "action_detect|2026-09-04t17_02_57_534056": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити кредит Temu\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оплатити прострочений кредит Te",
+    "ts": "2026-09-04T17:02:57.534056"
+  },
+  "action_detect|2026-09-04t17_02_46_474065": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжні дані Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після нічної зміни, до ",
+    "ts": "2026-09-04T17:02:46.474065"
+  },
   "foresight|2026-09-04t17_02_41_042033": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
@@ -253,50 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-04T16:43:58.957254"
-  },
-  "foresight|2026-09-04t16_42_51_776938": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T16:42:51.776938"
-  },
-  "foresight|2026-09-04t16_42_40_744017": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T16:42:40.744017"
-  },
-  "foresight|2026-09-04t16_41_27_802657": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T16:41:27.802657"
-  },
-  "foresight|2026-09-04t16_41_16_754545": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T16:41:16.754545"
-  },
-  "action_detect|2026-09-04t16_40_14_653539": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-04T16:40:14.653539"
-  },
-  "foresight|2026-09-04t16_40_10_140321": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T16:40:10.140321"
-  },
-  "foresight|2026-09-04t16_39_59_054568": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T16:39:59.054568"
-  },
-  "day_mode|2026-09-04t16_39_51_812574": {
-    "topic": "day_mode",
-    "gist": "```json {   \"text\": \"Привіт, Олеже! 👋 Бачу, що сьогодні твій стан «Норма» 😐 – це чудово, адже є змога додати одну корисну дію до базового плану. Пам'ятаю про тв",
-    "ts": "2026-09-04T16:39:51.812574"
-  },
-  "subs|2026-09-04t16_39_07_953535": {
-    "topic": "subs",
-    "gist": "[]",
-    "ts": "2026-09-04T16:39:07.953535"
   }
 }
