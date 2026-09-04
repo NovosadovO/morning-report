@@ -1,9 +1,4 @@
 {
-  "78094": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "Temu <temu@eu.temuemail.com>",
-    "seen_ts": "2026-08-27T11:53:25.994018+00:00"
-  },
   "78095": {
     "sender": "newsletter@mail.dailybones.com",
     "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
@@ -1498,5 +1493,10 @@
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
     "seen_ts": "2026-09-04T11:56:40.291008+00:00"
+  },
+  "78542": {
+    "sender": "spotlight@newsletters.coinmarketcap.com",
+    "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
+    "seen_ts": "2026-09-04T11:56:41.983651+00:00"
   }
 }
