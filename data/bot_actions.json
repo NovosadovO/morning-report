@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "morning_plan",
-      "detail": "ранковий план здоров'я",
-      "module": "selfact",
-      "ts": "2026-09-01T07:01:37"
-    },
-    {
       "kind": "note",
       "what": "Олег отримує нові персоналізовані пропозиції роботи від Prof",
       "detail": "Листи від 'Profesia.sk' <support@profesia.sk> | Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk та 'Profesia.sk' <support@profesia.sk> | 17 nových pracovných ponúk.",
@@ -2799,6 +2792,13 @@
       "detail": "Є невідповідність між часом початку відпустки в календарі (08:00) та інформацією з листів (07:00), а також важливо нагадати про початок відпустки, оскільки Олег зараз на нічній зміні і може бути втомленим.",
       "module": "selfact",
       "ts": "2026-09-04T02:47:51"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, ти отримав підтвердження бронювання August Villa Málag",
+      "detail": "Підтвердження бронювання є важливою інформацією перед відпусткою, яку Олег міг пропустити.",
+      "module": "selfact",
+      "ts": "2026-09-04T02:47:56"
     }
   ]
 }
