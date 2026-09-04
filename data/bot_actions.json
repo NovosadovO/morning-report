@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримав два листи від Profesia.sk з новими вакансіями,",
-      "detail": "Є два свіжі листи від 'Profesia.sk' з темами 'Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk' та '17 nových pracovných ponúk'.",
-      "module": "selfact",
-      "ts": "2026-09-01T06:47:02"
-    },
-    {
       "kind": "notify",
       "what": "Важливі новини крипторинку",
       "detail": "Є свіжий лист від 'The Block <newsletter@mail.theblock.co>' з темою '🔷 The Daily: Strategy resumes bitcoin buying'.",
@@ -2799,6 +2792,13 @@
       "detail": "Є свіжий лист від LinkedIn зі сповіщенням про вакансію, яка відповідає запиту Олега. Це важлива інформація для нього.",
       "module": "selfact",
       "ts": "2026-09-04T02:16:06"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, ти отримав листа від Oleg Novosadov з посиланням на пр",
+      "detail": "Олег отримав лист з посиланням на нерухомість, що може бути для нього важливим.",
+      "module": "selfact",
+      "ts": "2026-09-04T02:16:11"
     }
   ]
 }
