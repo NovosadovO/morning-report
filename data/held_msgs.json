@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T13:16:32.433803",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T13:16:33.706400",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Dobrá správa! Dobierka je kdispozícii!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
@@ -402,6 +396,12 @@
     },
     {
       "ts": "2026-09-04T13:20:00.569076",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T13:20:01.327325",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
