@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-04t18_27_02_138453": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T18:27:02.138453"
+  },
+  "foresight|2026-09-04t18_25_56_855191": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-04T18:25:56.855191"
+  },
+  "foresight|2026-09-04t18_25_45_896778": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T18:25:45.896778"
+  },
+  "selfact|2026-09-04t18_25_37_633854": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від LinkedIn: є нова вакансія 'Cybersecurity Enthusiast Wanted! (m/f/n)' в ESET у Ко",
+    "ts": "2026-09-04T18:25:37.633854"
+  },
+  "foresight|2026-09-04t18_24_16_315005": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-04T18:24:16.315005"
+  },
+  "foresight|2026-09-04t18_24_05_391061": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T18:24:05.391061"
+  },
+  "foresight|2026-09-04t18_22_59_310669": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-04T18:22:59.310669"
+  },
   "foresight|2026-09-04t18_22_48_245868": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2024-09-05\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
     "ts": "2026-09-04T18:04:28.445110"
-  },
-  "action_detect|2026-09-04t18_04_17_831251": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати суперечливі моменти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після зміни, пере",
-    "ts": "2026-09-04T18:04:17.831251"
-  },
-  "action_detect|2026-09-04t18_04_17_735937": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Астро-аналіз для Олега на 4 вересня 2026 року, що вкл",
-    "ts": "2026-09-04T18:04:17.735937"
-  },
-  "action_detect|2026-09-04t18_04_09_621421": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-05\", \"action_time\": \"06:00\", \"action_summary\": \"Необхідно прийнят",
-    "ts": "2026-09-04T18:04:09.621421"
-  },
-  "foresight|2026-09-04t18_04_07_078071": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-04T18:04:07.078071"
-  },
-  "action_detect|2026-09-04t18_03_55_357694": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armolopid",
-    "ts": "2026-09-04T18:03:55.357694"
-  },
-  "action_detect|2026-09-04t18_03_53_761131": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансію Regionalny kierownik sprzedaży\", \"action_date\": \"2026-09-04\", \"action_time\": \"10:00\", \"action_",
-    "ts": "2026-09-04T18:03:53.761131"
-  },
-  "foresight|2026-09-04t18_03_49_545494": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T18:03:49.545494"
   }
 }
