@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег продовжує отримувати крипто-дайджести, зокрема від Aave",
-      "detail": "Олег отримав лист від Aave 'Aave Newsletter: Issue #019', що підтверджує його інтерес до крипто-новин, як це вже зазначалося в нотатках раніше.",
-      "module": "selfact",
-      "ts": "2026-09-01T10:38:30"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримує сповіщення про вакансії Associate в Eccleston P",
       "detail": "Олег отримав лист від LinkedIn 'Associate в Eccleston Park Capital', що є новою інформацією про його пошук роботи, яка доповнює вже існуючі нотатки.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Згідно зі 'СВІЖІ ЛИСТИ', є лист від 'Сповіщення про вакансії LinkedIn' про вакансію 'Cybersecurity Enthusiast Wanted! (m/f/n) в ESET, Košice'.",
       "module": "selfact",
       "ts": "2026-09-04T19:28:15"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-09-04",
+      "detail": "автосинк з годинника: steps, hr_avg, weight_kg, hrv, spo2, stress",
+      "module": "qwsync",
+      "ts": "2026-09-04T20:30:48"
     }
   ]
 }
