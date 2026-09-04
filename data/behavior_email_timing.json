@@ -1,9 +1,4 @@
 {
-  "78084": {
-    "sender": "newsletter@biedronka.pl",
-    "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
-    "seen_ts": "2026-08-27T10:01:36.978015+00:00"
-  },
   "78087": {
     "sender": "savings@mp1.tripadvisor.com",
     "sender_raw": "\"Tripadvisor\" <savings@mp1.tripadvisor.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Adrian Pape через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-09-04T08:54:00.541534+00:00"
+  },
+  "78531": {
+    "sender": "updates@allevents.in",
+    "sender_raw": "AllEvents <updates@allevents.in>",
+    "seen_ts": "2026-09-04T08:56:05.096190+00:00"
   }
 }
