@@ -1,9 +1,4 @@
 {
-  "78083": {
-    "sender": "newsletter@genai.works",
-    "sender_raw": "Generative AI <newsletter@genai.works>",
-    "seen_ts": "2026-08-27T09:51:24.573160+00:00"
-  },
   "78084": {
     "sender": "newsletter@biedronka.pl",
     "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
@@ -1498,5 +1493,10 @@
     "sender": "support@pixoryofficial.com",
     "sender_raw": "\"Pixory\" <support@pixoryofficial.com>",
     "seen_ts": "2026-09-04T08:45:50.783086+00:00"
+  },
+  "78530": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Adrian Pape через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-04T08:54:00.541534+00:00"
   }
 }
