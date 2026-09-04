@@ -1,4 +1,34 @@
 {
+  "foresight|2026-09-04t17_43_49_391687": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T17:43:49.391687"
+  },
+  "foresight|2026-09-04t17_42_35_384585": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T17:42:35.384585"
+  },
+  "foresight|2026-09-04t17_42_24_329963": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T17:42:24.329963"
+  },
+  "foresight|2026-09-04t17_41_19_028480": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T17:41:19.028480"
+  },
+  "foresight|2026-09-04t17_41_07_991793": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T17:41:07.991793"
+  },
+  "foresight|2026-09-04t17_39_59_447178": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-04T17:39:59.447178"
+  },
   "foresight|2026-09-04t17_39_48_236223": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -268,35 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-04T17:10:58.955381"
-  },
-  "bills|2026-09-04t17_10_36_641880": {
-    "topic": "bills",
-    "gist": "```json [] ```",
-    "ts": "2026-09-04T17:10:36.641880"
-  },
-  "foresight|2026-09-04t17_09_44_331276": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-04T17:09:44.331276"
-  },
-  "foresight|2026-09-04t17_09_33_091498": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T17:09:33.091498"
-  },
-  "foresight|2026-09-04t17_08_23_067682": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-04T17:08:23.067682"
-  },
-  "foresight|2026-09-04t17_08_11_942472": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T17:08:11.942472"
-  },
-  "selfact|2026-09-04t17_08_04_262357": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні о 17:00 у тебе починається нічна зміна (18:00-06:00).\",     \"why\": \"Згідно з календа",
-    "ts": "2026-09-04T17:08:04.262357"
   }
 }
