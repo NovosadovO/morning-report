@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T10:37:51.089406",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T10:37:52.035340",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -182,6 +176,45 @@
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T10:43:46.592670",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>H&amp;M</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Špeciálne ceny pre členov»\n\n<i>«Open the email in browser on following link https://t19.email.hm.com/r/?id=tf23451ef-3c65-40ea-834d-68f8c1ca3c56,6643664b,f8091c14&amp;did=1715693131&amp;rid=3040093838&amp;erid=MzA0MDA5MzgzOA%3D%3D&amp;p1=%40dlhWYjxYidew8UefgbCBnyon39L9ZFnXFVmYS%2F%2FQOD0hBahcScB2opfWsvfh41JYfcA15kCrbx8wnZiA4O8wDoaARPUy%2FmLo4al%2...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78528"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78528"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78528"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78528"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78528"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78528"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
