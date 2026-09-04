@@ -10279,6 +10279,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_d8b9cb0ca3"
+    },
+    {
+      "ts": "2026-09-04T03:00:16.944379+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти Maroš Sivák",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-09-04"
+      }
     }
   ]
 }
