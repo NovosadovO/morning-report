@@ -10596,6 +10596,16 @@
         "kind": "reminder",
         "date": "2026-09-06"
       }
+    },
+    {
+      "ts": "2026-09-05T00:00:34.804024+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути вакансії на Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-05"
+      }
     }
   ]
 }
