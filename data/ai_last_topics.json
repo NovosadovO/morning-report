@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-09-04t04_30_11_993583": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-04\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
+    "ts": "2026-09-04T04:30:11.993583"
+  },
   "selfact|2026-09-04t04_22_54_676886": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"text\": \"Олег, не забудь прийняти Armolopid Plus після закінчення нічної зміни",
@@ -293,10 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-04T02:31:53.741994"
-  },
-  "selfact|2026-09-04t02_31_44_916389": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що твоя нічна зміна сьогодні закінчується о 06:00. Після неї тобі потрібно прийняти Armolopid Pl",
-    "ts": "2026-09-04T02:31:44.916389"
   }
 }
