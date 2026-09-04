@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T15:46:05.453007",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>👑 Nvidia builds an AI empire</b>\n👤 GenAI Works через LinkedIn&lt;newsletters-noreply@lin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78547"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78547"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78547"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78547"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78547"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78547"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T15:46:06.658961",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📈 Crypto pumps as Zcash hits new ATH</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-09-04T15:49:58.403850",
       "kind": "calendar",
       "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Доволенка в Іспанії\n📅 08.09 (Tue) — через 4 дн.\n🕐 10:00–11:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T15:50:57.114045",
+      "kind": "calendar",
+      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Доволенка в Іспанії</b>\n📅 08.09 (Tue) — через 4 дн.\n🕐 10:00–11:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
       "keyboard": null
     }
   ]
