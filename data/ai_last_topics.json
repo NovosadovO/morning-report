@@ -1,4 +1,9 @@
 {
+  "bills|2026-09-05t01_22_51_198276": {
+    "topic": "bills",
+    "gist": "```json [] ```",
+    "ts": "2026-09-05T01:22:51.198276"
+  },
   "selfact|2026-09-05t01_12_22_772376": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на підписку Runable. Кілька платежів були невдалими, і потрібно оновити платіжну інформацію,",
@@ -293,10 +298,5 @@
     "topic": "foresight",
     "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
     "ts": "2026-09-04T23:34:00.979993"
-  },
-  "action_detect|2026-09-04t23_33_50_172572": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
-    "ts": "2026-09-04T23:33:50.172572"
   }
 }
