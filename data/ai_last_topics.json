@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-04t23_28_33_718582": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-04T23:28:33.718582"
+  },
   "foresight|2026-09-04t21_13_35_945543": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
@@ -293,10 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"madrid\", \"country\": \"spain\"} ```",
     "ts": "2026-09-04T19:25:21.055300"
-  },
-  "foresight|2026-09-04t19_25_09_942053": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T19:25:09.942053"
   }
 }
