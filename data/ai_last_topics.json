@@ -1,4 +1,19 @@
 {
+  "selfact|2026-09-04t02_16_00_000763": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на нову вакансію Logistics Supervisor LOC в Volvo Cars, яка відповідає твоїм налаштуванням. ",
+    "ts": "2026-09-04T02:16:00.000763"
+  },
+  "action_detect|2026-09-04t02_12_07_743445": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Після зміни, що з",
+    "ts": "2026-09-04T02:12:07.743445"
+  },
+  "msg_deep_analysis_truthfix|2026-09-04t02_12_00_571802": {
+    "topic": "MSG_DEEP_ANALYSIS/truthfix",
+    "gist": "Олеже, бачу, що ти зараз на нічній зміні, і хоча твої кроки вражають — 18915 за останню добу, що вище середнього за 7 та 14 днів, — є одна суперечність: дані пр",
+    "ts": "2026-09-04T02:12:00.571802"
+  },
   "msg_deep_analysis|2026-09-04t02_11_50_602664": {
     "topic": "MSG_DEEP_ANALYSIS",
     "gist": "Привіт Олеже! 👋  Ти зараз на нічній зміні, і хоча за календарем вже майже 02:11 ранку, твій організм показує чудовий результат за кроками — 18915 за останню доб",
@@ -283,20 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Деталі поїздки в Малагу\",     \"text\": \"Олег, ти отримав детальні інструкції та підтвердження бронювання щодо с",
     "ts": "2026-09-04T00:09:11.859023"
-  },
-  "people|2026-09-04t00_08_28_382814": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [\"поїздка в Малагу\", \"інформація ",
-    "ts": "2026-09-04T00:08:28.382814"
-  },
-  "action_detect|2026-09-04t00_04_04_686856": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Переосмислення кар'єрних цілей\", \"action_date\": \"2026-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"До",
-    "ts": "2026-09-04T00:04:04.686856"
-  },
-  "action_detect|2026-09-04t00_03_53_433443": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Вирішити питання з підпискою Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Вирішити",
-    "ts": "2026-09-04T00:03:53.433443"
   }
 }
