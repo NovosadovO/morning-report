@@ -1,4 +1,49 @@
 {
+  "foresight|2026-09-04t06_35_23_037479": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T06:35:23.037479"
+  },
+  "foresight|2026-09-04t06_34_15_717080": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-04T06:34:15.717080"
+  },
+  "foresight|2026-09-04t06_34_04_777833": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T06:34:04.777833"
+  },
+  "foresight|2026-09-04t06_33_53_757589": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T06:33:53.757589"
+  },
+  "foresight|2026-09-04t06_32_48_657984": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-04T06:32:48.657984"
+  },
+  "foresight|2026-09-04t06_32_37_649646": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T06:32:37.649646"
+  },
+  "foresight|2026-09-04t06_32_26_620631": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T06:32:26.620631"
+  },
+  "foresight|2026-09-04t06_31_20_295627": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-04T06:31:20.295627"
+  },
+  "foresight|2026-09-04t06_31_09_350545": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T06:31:09.350545"
+  },
   "foresight|2026-09-04t06_30_58_328664": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -253,50 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-04T06:06:17.137857"
-  },
-  "foresight|2026-09-04t06_06_06_088095": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T06:06:06.088095"
-  },
-  "foresight|2026-09-04t06_05_54_991183": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T06:05:54.991183"
-  },
-  "foresight|2026-09-04t06_04_43_648074": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-04T06:04:43.648074"
-  },
-  "foresight|2026-09-04t06_04_32_887430": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T06:04:32.887430"
-  },
-  "foresight|2026-09-04t06_04_21_648460": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T06:04:21.648460"
-  },
-  "action_detect|2026-09-04t06_04_08_717709": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадати зібрати речі для поїздки до Малаги\", \"action_date\": \"2024-09-06\", \"action_time\": null, \"action_summary\": \"",
-    "ts": "2026-09-04T06:04:08.717709"
-  },
-  "action_detect|2026-09-04t06_04_08_626295": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-04\", \"action_time\": null, \"action_summary\": \"Прийняти Armolopid P",
-    "ts": "2026-09-04T06:04:08.626295"
-  },
-  "action_detect|2026-09-04t06_03_57_751948": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд вакансії\", \"action_date\": \"2026-09-04\", \"action_time\": \"09:00\", \"action_summary\": \"Переглянути вакансію \\\"",
-    "ts": "2026-09-04T06:03:57.751948"
-  },
-  "action_detect|2026-09-04t06_03_45_021623": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-04T06:03:45.021623"
   }
 }
