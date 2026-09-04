@@ -10436,6 +10436,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-09-04T16:42:17.443472+00:00",
+      "category": "confirm",
+      "question": "gate_dm_skip: Норма",
+      "answer": "yes"
     }
   ]
 }
