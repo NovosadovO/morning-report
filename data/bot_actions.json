@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Договір бронювання August Villa Málaga",
-      "detail": "Є лист від no-reply@chekin.com з договором бронювання August Villa Málaga, і в календарі є подія 'Бронювання August Villa Málaga - Villa' на 07.09.2026.",
-      "module": "selfact",
-      "ts": "2026-09-01T08:34:56"
-    },
-    {
       "kind": "note",
       "what": "Олег отримує листи від Booking.com Customer Service, але йог",
       "detail": "Є кілька листів від 'Booking.com Customer Service' та один про скасування бронювання 'Paxos and Antipaxos Boat Tour from Corfu', що вказує на активну взаємодію з сервісом, але з негативним результатом щодо однієї з поїздок.",
@@ -2799,6 +2792,13 @@
       "detail": "Дедлайн щодо оновлення платіжної інформації для Strava прострочений, і Олег має про це знати, оскільки це впливає на його підписку.",
       "module": "selfact",
       "ts": "2026-09-04T06:27:40"
+    },
+    {
+      "kind": "ask",
+      "what": "Олеже, чи потрібно додати до календаря або нотаток інформаці",
+      "detail": "Є лист 'Reservation confirmation' від noreply@atguest.com, що стосується бронювання August Villa Málaga, яке вже є в календарі, але можливо Олег хоче додати деталі з листа.",
+      "module": "selfact",
+      "ts": "2026-09-04T06:43:10"
     }
   ]
 }
