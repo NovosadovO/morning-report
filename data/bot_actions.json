@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримує нові персоналізовані пропозиції роботи від Prof",
-      "detail": "Листи від 'Profesia.sk' <support@profesia.sk> | Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk та 'Profesia.sk' <support@profesia.sk> | 17 nových pracovných ponúk.",
-      "module": "selfact",
-      "ts": "2026-09-01T07:01:53"
-    },
-    {
       "kind": "notify",
       "what": "Важливі деталі щодо поїздки в Малагу",
       "detail": "Лист від Maroš Sivák <maros.sivak.sro@gmail.com> | InterFin Malaga trip - detailné informácie. Календар на 07.09: 08:00 🔔 Початок відпустки в Малазі; 12:00 Поїздка в Малагу, Іспанія.",
@@ -2799,6 +2792,13 @@
       "detail": "Підтвердження бронювання є важливою інформацією перед відпусткою, яку Олег міг пропустити.",
       "module": "selfact",
       "ts": "2026-09-04T02:47:56"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, нагадую, що сьогодні о 09:00 у тебе заплановано перегл",
+      "detail": "Нагадування про заплановані події на сьогодні, щоб Олег був в курсі свого розкладу.",
+      "module": "selfact",
+      "ts": "2026-09-04T03:03:38"
     }
   ]
 }
