@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T09:15:50.277876",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your weekly progress report from Google Health</b>\n👤 Google Health &lt;google-health-noreply@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78385"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78385"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78385"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78385"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78385"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78385"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T09:15:54.199327",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 33 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '33 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 84.0 кг, ціль 78 кг (тренд +0.6 кг за останні 5 замірів). Кроки: 6941 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 10:00 🔔 Переглянути вакансію Regionalny kierownik sprzedaży, 18:00 🌙 Нічна зміна (18:00-06:00)",
@@ -504,6 +465,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78523"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T09:46:18.845239",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>13 nových pracovných ponúk</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78522"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78522"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78522"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78522"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78522"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78522"
             }
           ]
         ]
