@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T13:56:06.099437",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T13:56:41.234118",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Morning Report</b>\n📋 Тема: «📊 Ранковий дайджест ринків — 04.09.2026»\n\n<i>«📊 РАНКОВИЙ РИНКОВИЙ ДАЙДЖЕСТ\r\n\r\n🗓 04 September 2026, 11:54\r\n📈 Відкрити живі графіки TradingView → https://040d5yvqudeeuhzw0s13dcp9yjftfazu.runable.site\r\n\r\n\r\n📉 ІНДЕКСИ\r\n\r\nІндексРівеньЗміна S&amp;P 500 $7,747.71 +1.06% NASDAQ 100 $29,482.32 +1.16% Dow Jones $53,686.11 +1.18% VIX $14.12 -1.40%\r\n\r\n\r\n🪙 КРИПТ...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78542"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T14:01:34.100171",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📊 Ранковий дайджест ринків — 04.09.2026</b>\n👤 Morning Report &lt;onboarding@resend.dev&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78541"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78541"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78541"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78541"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78541"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78541"
             }
           ]
         ]
