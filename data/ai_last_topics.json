@@ -1,4 +1,54 @@
 {
+  "foresight|2026-09-04t06_44_40_937189": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T06:44:40.937189"
+  },
+  "foresight|2026-09-04t06_43_34_596938": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-04T06:43:34.596938"
+  },
+  "foresight|2026-09-04t06_43_23_577469": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T06:43:23.577469"
+  },
+  "foresight|2026-09-04t06_43_12_565490": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T06:43:12.565490"
+  },
+  "selfact|2026-09-04t06_43_05_186154": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверни увагу, що платежі за підписку Runable були невдалими кіль",
+    "ts": "2026-09-04T06:43:05.186154"
+  },
+  "foresight|2026-09-04t06_41_43_799327": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-04T06:41:43.799327"
+  },
+  "foresight|2026-09-04t06_41_32_767969": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T06:41:32.767969"
+  },
+  "foresight|2026-09-04t06_41_21_900081": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T06:41:21.900081"
+  },
+  "foresight|2026-09-04t06_40_15_682062": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T06:40:15.682062"
+  },
+  "foresight|2026-09-04t06_40_04_455854": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T06:40:04.455854"
+  },
   "foresight|2026-09-04t06_39_53_604128": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -248,55 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-04T06:15:22.080544"
-  },
-  "action_detect|2026-09-04t06_15_11_508430": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2020-09-04\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-09-04T06:15:11.508430"
-  },
-  "foresight|2026-09-04t06_15_11_131295": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T06:15:11.131295"
-  },
-  "foresight|2026-09-04t06_14_04_207430": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T06:14:04.207430"
-  },
-  "foresight|2026-09-04t06_13_53_047043": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T06:13:53.047043"
-  },
-  "foresight|2026-09-04t06_13_42_139445": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T06:13:42.139445"
-  },
-  "foresight|2026-09-04t06_12_33_510706": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T06:12:33.510706"
-  },
-  "foresight|2026-09-04t06_12_22_443340": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T06:12:22.443340"
-  },
-  "foresight|2026-09-04t06_12_11_398797": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T06:12:11.398797"
-  },
-  "selfact|2026-09-04t06_12_03_288202": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"text\": \"Олег, не забудь прийняти Armolopid Plus після закінчення нічної зміни",
-    "ts": "2026-09-04T06:12:03.288202"
-  },
-  "foresight|2026-09-04t06_10_42_962113": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T06:10:42.962113"
   }
 }
