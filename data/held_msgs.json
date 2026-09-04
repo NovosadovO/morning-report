@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T08:31:18.439916",
-      "kind": "offer",
-      "text": "💰 ✉️\n📌 <b>Google Cloud Platform &amp; APIs: ми отримали Ваш платіж для дом</b>\n👤 Google Payments &lt;payments-noreply@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78435"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78435"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78435"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78435"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78435"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78435"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T08:31:19.737729",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>AVALANCHE AUGUST 2026 RECAP</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -639,6 +600,12 @@
       "ts": "2026-09-04T09:00:06.500677",
       "kind": "chunk",
       "text": "🌅 <b>Сніданок!</b>\n\nПочинаємо день правильно 💪\n• Повноцінний сніданок = енергія на весь ранок\n• Не пропускай — особливо якщо плануєш біг!\n\n<i>Ціль 78 кг: важливо що і коли їсти</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T09:00:37.177681",
+      "kind": "chunk",
+      "text": "🎓 <b>УРОК ДНЯ #20 — ROI і P&amp;L</b>\n\n1.  **Розширене пояснення:** ROI (Return on Investment) — це відсотковий показник, який демонструє ефективність ваших інвестицій, тобто скільки прибутку ви отримали на кожну вкладену одиницю капіталу. P&amp;L (Profit &amp; Loss) — це абсолютна сума вашого чистого прибутку або збитку, виражена у грошах. Важливо розуміти, що високий відсотковий ROI не завжди означає великий P&amp;L, якщо сума початкових інвестицій була незначною.\n2\n\n<i>💡 Відповідай прямо в чат — я збережу твою відповідь</i>",
       "keyboard": null
     }
   ]
