@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T12:30:58.850096",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Employee Services Operations Specialist в the LEGO Group</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78535"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78535"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78535"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78535"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78535"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78535"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T12:31:00.093144",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ruslana*2784надіслав(-ла) тобі повідомлення</b>\n👤 Ruslana*2784 у TikTok &lt;notification@service.tiktok",
@@ -365,6 +326,12 @@
       "ts": "2026-09-04T12:35:13.977589",
       "kind": "calendar",
       "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Доволенка в Іспанії</b>\n📅 08.09 (Tue) — через 4 дн.\n🕐 10:00–11:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T12:35:14.817667",
+      "kind": "calendar",
+      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Доволенка в Іспанії\n📅 08.09 (Tue) — через 4 дн.\n🕐 10:00–11:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
       "keyboard": null
     }
   ]
