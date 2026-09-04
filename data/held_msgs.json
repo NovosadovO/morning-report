@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T15:28:05.635689",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T15:28:06.422707",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78545"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T15:31:55.603151",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Revenue Accountant (f/m/d) в Siemens Healthineers</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78544"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78544"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78544"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78544"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78544"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78544"
             }
           ]
         ]
