@@ -1,4 +1,34 @@
 {
+  "foresight|2026-09-04t16_49_34_035677": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:49:34.035677"
+  },
+  "foresight|2026-09-04t16_49_22_887778": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:49:22.887778"
+  },
+  "foresight|2026-09-04t16_48_13_256008": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:48:13.256008"
+  },
+  "foresight|2026-09-04t16_48_02_226036": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:48:02.226036"
+  },
+  "foresight|2026-09-04t16_46_47_272265": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:46:47.272265"
+  },
+  "foresight|2026-09-04t16_46_36_472305": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:46:36.472305"
+  },
   "foresight|2026-09-04t16_45_26_162646": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
@@ -268,35 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансію Regionalny kierownik sprzedaży\", \"action_date\": \"2026-09-04\", \"action_time\": \"10:00\", \"action_",
     "ts": "2026-09-04T16:18:39.454496"
-  },
-  "action_detect|2026-09-04t16_18_39_424182": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armolopid",
-    "ts": "2026-09-04T16:18:39.424182"
-  },
-  "action_detect|2026-09-04t16_18_28_552080": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2023-09-04\", \"action_time\": \"18:00\", \"action_summary\": \"Початок нічної зміни з 18:00 ",
-    "ts": "2026-09-04T16:18:28.552080"
-  },
-  "briefing_truthfix|2026-09-04t16_18_23_950444": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже,  Зараз, о 16:18, до початку нічної зміни (приблизно о 17:30) залишилося близько години. Дані, які я використовую, були оновлені 16 годин тому, 4 вересня ",
-    "ts": "2026-09-04T16:18:23.950444"
-  },
-  "foresight|2026-09-04t16_18_20_479484": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T16:18:20.479484"
-  },
-  "foresight|2026-09-04t16_18_09_675257": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T16:18:09.675257"
-  },
-  "briefing|2026-09-04t16_18_09_323903": {
-    "topic": "briefing",
-    "gist": "Олеже,  🧭 ВЕКТОР ДНЯ Зараз, за лічені хвилини до початку нічної зміни, твій вектор дня має бути сфокусований на максимально ефективній підготовці та аналітичній",
-    "ts": "2026-09-04T16:18:09.323903"
   }
 }
