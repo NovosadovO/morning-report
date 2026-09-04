@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T20:01:50.924485",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Cybersecurity Enthusiast Wanted! (m/f/n) в ESET</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78557"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78557"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78557"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78557"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78557"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78557"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T20:01:52.188217",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Dostali ste vrátenie kreditu!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
@@ -600,6 +561,12 @@
       "ts": "2026-09-04T21:00:20.305285",
       "kind": "chunk",
       "text": "📔 <b>ЩОДЕННИК</b> — 04.09.2026\n\n3 питання про твій день:\n\n1. ⚡️ Яка була твоя енергія сьогодні? (1-10)\n2. ✅ Що вдалось зробити сьогодні? (1-2 речення)\n3. 🚧 Що заважало або не вийшло? (чесно)\n\n<i>Відповідай одним повідомленням через кому або по рядку</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T21:01:01.256725",
+      "kind": "chunk",
+      "text": "🌙\n<b>ЗВІТ  ·  Пт 04.09  ·  21:00</b>\n🏭 На роботі  ·  Нічна зміна\n<i>Вечір — підбиваємо: скільки кг скинув, скільки % заробив? 🌙</i>\n📌 ✅ 🚿 Холодний душ ✅ +8\n\n⚡ <b>День: ⭐✨☆☆☆ 30/100</b>  ↓25 vs вчора\n\n🌫️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>25°C</b>\n<i>☀️ Тепло — сонцезахисний крем</i>\n\n📅 <b>Прогноз сьогодні:</b>\n05:56   🌇 19:11  09:00 ☁️22°  │  12:00 ☁️23°🌧73%  │  15:00 🌦17°🌧82%  │  18:00 ☀️21°🌧35%  │  21:00 ☀️18°\n\n<b>Завтра:</b>  🌦 Мряка  🔻17°  /  🔺23°  🌧 0.5 мм\n<code>09:00</code> ☁️22°  │  <code>12:00</code> ☁️23°🌧73%  │  <code>15:00</code> 🌦17°🌧82%  │  <code>18:00</code> ☀️21°🌧35%  │  <code>21:00</code> ☀️18°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n  • 🚧 Перекрито — Mäsiarska\n  • 🚧 Перекрито — Svornosti\n\n💰\n<b>КРИПТО  ·  🟢 БИЧАЧИЙ 🚀</b>\n➡️ <b>BTC</b> <code>$79,646.00</code>  +0.10%\n➡️ <b>ETH</b> <code>$2,450.85</code>  +0.09%\n🔺 <b>AVAX</b> <code>$7.37</code>  +0.27%\n🔺 <b>ONDO</b> <code>$0.36</code>  +0.65%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🔴 <b>IBIT</b>  <code>$45.12</code>  <i>-2.66% за день</i>\n🔴 <b>ETHA</b>  <code>$18.50</code>  <i>-2.76% за день</i>\n⚪️ <b>VAVA</b>  <code>$0.65</code>\n🔴 <b>GAVA</b>  <code>$17.96</code>  <i>-1.86% за день</i>\n🟢 <",
       "keyboard": null
     }
   ]
