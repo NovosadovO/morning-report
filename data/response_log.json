@@ -10328,6 +10328,12 @@
       "category": "confirm",
       "question": "gate_pa_skip: ✉️ Лист чекає на відповідь",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-04T04:36:10.166212+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_skip_80817abd08"
     }
   ]
 }
