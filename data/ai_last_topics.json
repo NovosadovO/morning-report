@@ -1,4 +1,29 @@
 {
+  "selfact|2026-09-04t18_56_01_410717": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нічна зміна\",     \"text\": \"Олег, нагадую, що о 17:00 у тебе почалася нічна зміна (18:00-06:00).\",     \"why\": \"",
+    "ts": "2026-09-04T18:56:01.410717"
+  },
+  "foresight|2026-09-04t18_54_39_011998": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T18:54:39.011998"
+  },
+  "foresight|2026-09-04t18_54_27_775804": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-04T18:54:27.775804"
+  },
+  "foresight|2026-09-04t18_53_22_352278": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T18:53:22.352278"
+  },
+  "foresight|2026-09-04t18_53_11_127302": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-04T18:53:11.127302"
+  },
   "foresight|2026-09-04t18_52_00_290768": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Марс на асц\", \"action_date\": \"2024-09-30\", \"action_time\": null, \"action_summary\": \"Занотувати подію 'Марс на асц' н",
     "ts": "2026-09-04T18:19:28.698073"
-  },
-  "action_detect|2026-09-04t18_19_18_028415": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2024-09-05\", \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти",
-    "ts": "2026-09-04T18:19:18.028415"
-  },
-  "action_detect|2026-09-04t18_19_03_838240": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансію Regionalny kierownik sprzedaży\", \"action_date\": \"2026-09-04\", \"action_time\": \"10:00\", \"action_",
-    "ts": "2026-09-04T18:19:03.838240"
-  },
-  "action_detect|2026-09-04t18_19_03_822263": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armolopid",
-    "ts": "2026-09-04T18:19:03.822263"
-  },
-  "action_detect|2026-09-04t18_18_52_902465": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-05\", \"action_time\": \"06:00\", \"action_summary\": \"Запланува",
-    "ts": "2026-09-04T18:18:52.902465"
-  },
-  "briefing_truthfix|2026-09-04t18_18_48_172435": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, зараз 18:18, ти на нічній зміні, яка триватиме до 06:00. Дані, що я використовую, були оновлені 18 годин тому, 4 вересня.  ### Здоров'я та відновлення Тв",
-    "ts": "2026-09-04T18:18:48.172435"
   }
 }
