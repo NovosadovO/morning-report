@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T20:01:49.757172",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>DST Global, Goldman, and Accel Just Backed Higgsfield’s $400</b>\n👤 Ben at StartEngine &lt;ben@startengine.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78559"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78559"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78559"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78559"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78559"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78559"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T20:01:50.924485",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Cybersecurity Enthusiast Wanted! (m/f/n) в ESET</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -633,6 +594,12 @@
       "ts": "2026-09-04T21:00:14.745078",
       "kind": "chunk",
       "text": "🥜 <b>Перекус на зміні</b>\n\nЯкщо голодний — час для легкого перекусу:\n• Горіхи, фрукт, йогурт\n• Уникай важкого — залишилась ще частина зміни\n\n<i>Тримай енергію, але не переїдай!</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T21:00:20.305285",
+      "kind": "chunk",
+      "text": "📔 <b>ЩОДЕННИК</b> — 04.09.2026\n\n3 питання про твій день:\n\n1. ⚡️ Яка була твоя енергія сьогодні? (1-10)\n2. ✅ Що вдалось зробити сьогодні? (1-2 речення)\n3. 🚧 Що заважало або не вийшло? (чесно)\n\n<i>Відповідай одним повідомленням через кому або по рядку</i>",
       "keyboard": null
     }
   ]
