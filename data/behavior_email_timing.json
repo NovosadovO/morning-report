@@ -1,9 +1,4 @@
 {
-  "78082": {
-    "sender": "linas@substack.com",
-    "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
-    "seen_ts": "2026-08-27T09:41:13.724677+00:00"
-  },
   "78083": {
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@email.hm.com",
     "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
     "seen_ts": "2026-09-04T08:43:45.658239+00:00"
+  },
+  "78529": {
+    "sender": "support@pixoryofficial.com",
+    "sender_raw": "\"Pixory\" <support@pixoryofficial.com>",
+    "seen_ts": "2026-09-04T08:45:50.783086+00:00"
   }
 }
