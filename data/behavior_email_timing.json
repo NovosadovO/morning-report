@@ -1,9 +1,4 @@
 {
-  "78095": {
-    "sender": "newsletter@mail.dailybones.com",
-    "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
-    "seen_ts": "2026-08-27T12:03:42.223918+00:00"
-  },
   "78098": {
     "sender": "googleaistudio-noreply@google.com",
     "sender_raw": "Google AI Studio <googleaistudio-noreply@google.com>",
@@ -1498,5 +1493,10 @@
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
     "seen_ts": "2026-09-04T11:56:41.983651+00:00"
+  },
+  "78543": {
+    "sender": "newsletter@pelikan.sk",
+    "sender_raw": "Roland z Pelikána <newsletter@pelikan.sk>",
+    "seen_ts": "2026-09-04T12:04:58.418043+00:00"
   }
 }
