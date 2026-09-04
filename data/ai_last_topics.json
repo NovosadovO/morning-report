@@ -1,4 +1,29 @@
 {
+  "openloop_promises|2026-09-04t19_21_00_680821": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-04T19:21:00.680821"
+  },
+  "foresight|2026-09-04t19_19_40_822607": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"madrid\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T19:19:40.822607"
+  },
+  "foresight|2026-09-04t19_19_29_998444": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-04T19:19:29.998444"
+  },
+  "foresight|2026-09-04t19_18_23_108822": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"madrid\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T19:18:23.108822"
+  },
+  "foresight|2026-09-04t19_18_12_166776": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T19:18:12.166776"
+  },
   "foresight|2026-09-04t19_16_35_556553": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"іспанія\", \"country\": \"іспанія\"} ```",
@@ -273,30 +298,5 @@
     "topic": "foresight",
     "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
     "ts": "2026-09-04T18:56:10.023420"
-  },
-  "selfact|2026-09-04t18_56_01_410717": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нічна зміна\",     \"text\": \"Олег, нагадую, що о 17:00 у тебе почалася нічна зміна (18:00-06:00).\",     \"why\": \"",
-    "ts": "2026-09-04T18:56:01.410717"
-  },
-  "foresight|2026-09-04t18_54_39_011998": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T18:54:39.011998"
-  },
-  "foresight|2026-09-04t18_54_27_775804": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-04T18:54:27.775804"
-  },
-  "foresight|2026-09-04t18_53_22_352278": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T18:53:22.352278"
-  },
-  "foresight|2026-09-04t18_53_11_127302": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-04T18:53:11.127302"
   }
 }
