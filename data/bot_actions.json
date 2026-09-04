@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег пропустив повідомлення в VenomBridge, про що свідчить л",
-      "detail": "Надійшов лист від Discord <noreply@discord.com> з темою 'Ти пропустив повідомлення в VenomBridge'.",
-      "module": "selfact",
-      "ts": "2026-09-01T08:50:24"
-    },
-    {
-      "kind": "note",
       "what": "Олег цікавиться оновленнями від Aave, про що свідчить отрима",
       "detail": "Надійшов лист від Aave <aave@aave.com> з темою 'Aave Newsletter: Issue #019'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, weight_kg, stress",
       "module": "qwsync",
       "ts": "2026-09-04T07:37:30"
+    },
+    {
+      "kind": "note",
+      "what": "збережено дані здоров'я",
+      "detail": "steps=6941, hr_avg=69, weight_kg=83.0, stress=43, date=2026-09-04, source=qwatch_auto, saved_at=2026-09-04 07:37",
+      "module": "healthai",
+      "ts": "2026-09-04T07:37:32"
     }
   ]
 }
