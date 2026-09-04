@@ -282,7 +282,18 @@
   "note|олег отримав звіт про діяльність avalanche за серпень 2026 р": {
     "q": "📝 Хочу записати нотатку:\n\n« Олег отримав звіт про діяльність Avalanche за серпень 2026 р »\n\nОлег отримав звіт про діяльність Avalanche за серпень 2026 року, де згадується залучення Wall Street та запуск Team1 у Кореї.\n\nПоставити?",
     "kind": "write",
-    "asked_at": "2026-09-04T01:28:25"
+    "asked_at": "2026-09-04T01:28:25",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-09-04T03:17:42",
+    "meta": {
+      "summary": "Олег отримав звіт про діяльність Avalanche за серпень 2026 р",
+      "desc": "Олег отримав звіт про діяльність Avalanche за серпень 2026 року, де згадується з",
+      "minutes": "30",
+      "calendar": "True",
+      "kind": "note"
+    }
   },
   "note|олег отримав лист від oleg novosadov olegnovosadovminebea": {
     "q": "📝 Хочу записати нотатку:\n\n« Олег отримав лист від Oleg Novosadov <oleg.novosadov@minebea »\n\nОлег отримав лист від Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> з посиланням на оголошення про продаж будинку.\n\nПоставити?",
