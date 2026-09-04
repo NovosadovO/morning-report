@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T20:16:36.252890",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Novinky prémiovej kvality</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78560"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78560"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78560"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78560"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78560"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78560"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T20:16:37.469497",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>DST Global, Goldman, and Accel Just Backed Higgsfield’s $400</b>\n👤 Ben at StartEngine &lt;ben@startengine.com&gt;",
@@ -561,6 +522,12 @@
       "ts": "2026-09-04T21:01:36.923792",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Avalanche Team1\n📋 AVALANCHE AUGUST 2026 RECAP\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T21:02:24.822676",
+      "kind": "watchdog",
+      "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 20\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\n<i>За цим я стежити НЕ можу, поки не виправлено.</i>",
       "keyboard": null
     }
   ]
