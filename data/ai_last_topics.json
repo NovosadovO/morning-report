@@ -1,4 +1,54 @@
 {
+  "mailcal_extract|2026-09-04t16_24_08_994252": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-04T16:24:08.994252"
+  },
+  "foresight|2026-09-04t16_22_58_263628": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:22:58.263628"
+  },
+  "foresight|2026-09-04t16_22_47_311562": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:22:47.311562"
+  },
+  "foresight|2026-09-04t16_21_40_777986": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:21:40.777986"
+  },
+  "foresight|2026-09-04t16_21_29_737720": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:21:29.737720"
+  },
+  "selfact|2026-09-04t16_21_16_944615": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що підписка Runable знову має проблеми з оплатою. Потрібно оновити платіжну інформацію.\",  ",
+    "ts": "2026-09-04T16:21:16.944615"
+  },
+  "foresight|2026-09-04t16_19_59_058917": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:19:59.058917"
+  },
+  "foresight|2026-09-04t16_19_48_270455": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:19:48.270455"
+  },
+  "openloop_promises|2026-09-04t16_19_36_952176": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-09-04T16:19:36.952176"
+  },
+  "action_detect|2026-09-04t16_19_18_755359": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зверни увагу на про",
+    "ts": "2026-09-04T16:19:18.755359"
+  },
   "action_detect|2026-09-04t16_19_18_537375": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -248,55 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Деталі поїздки в Малагу\",     \"text\": \"Олег, у тебе є детальні інструкції та підтвердження бронювання щодо пої",
     "ts": "2026-09-04T07:30:38.275042"
-  },
-  "foresight|2026-09-04t07_29_16_327808": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T07:29:16.327808"
-  },
-  "foresight|2026-09-04t07_29_05_295521": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T07:29:05.295521"
-  },
-  "foresight|2026-09-04t07_28_54_328832": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:28:54.328832"
-  },
-  "foresight|2026-09-04t07_27_49_081370": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T07:27:49.081370"
-  },
-  "foresight|2026-09-04t07_27_38_406197": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T07:27:38.406197"
-  },
-  "foresight|2026-09-04t07_27_27_003716": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:27:27.003716"
-  },
-  "foresight|2026-09-04t07_26_19_593670": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T07:26:19.593670"
-  },
-  "action_detect|2026-09-04t07_26_08_949050": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2024-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
-    "ts": "2026-09-04T07:26:08.949050"
-  },
-  "action_detect|2026-09-04t07_26_08_811973": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-04T07:26:08.811973"
-  },
-  "foresight|2026-09-04t07_26_08_585319": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"Malaga\", \"country\": \"Spain\"}",
-    "ts": "2026-09-04T07:26:08.585319"
   }
 }
