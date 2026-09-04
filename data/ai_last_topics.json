@@ -1,4 +1,74 @@
 {
+  "foresight|2026-09-04t16_54_32_317651": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:54:32.317651"
+  },
+  "action_detect|2026-09-04t16_53_19_414424": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити лист від Oleg Novosadov\", \"action_date\": \"2026-09-04\", \"action_time\": \"17:30\", \"action_summary\": \"Переві",
+    "ts": "2026-09-04T16:53:19.414424"
+  },
+  "foresight|2026-09-04t16_53_19_124068": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Barcelona\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:53:19.124068"
+  },
+  "context_ask_ai_truthfix|2026-09-04t16_53_09_352192": {
+    "topic": "context_ask_ai/truthfix",
+    "gist": "Олег, Марс у Раку вже 23 дні, з 12 серпня 2026 року, а Юпітер у Леві з 1 липня 2026 року, тобто вже 2 місяці. Це дані з кешу, оновлені 4 вересня 2026 року, 17 г",
+    "ts": "2026-09-04T16:53:09.352192"
+  },
+  "action_detect|2026-09-04t16_53_08_432422": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-04T16:53:08.432422"
+  },
+  "foresight|2026-09-04t16_53_08_069123": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:53:08.069123"
+  },
+  "context_ask_ai|2026-09-04t16_53_00_421988": {
+    "topic": "context_ask_ai",
+    "gist": "Олег, прийняв до відома: Марс на Асценденті 30 вересня. Це цікава астрологічна замітка.  Зараз 20:35, четвер, 3 вересня. Ти на нічній зміні, яка триває до 06:00",
+    "ts": "2026-09-04T16:53:00.421988"
+  },
+  "context_ask_ai_truthfix|2026-09-04t16_52_58_131611": {
+    "topic": "context_ask_ai/truthfix",
+    "gist": "Олег, бачу, ти прийняв до відома інформацію про лист від Oleg Novosadov. Зараз 16:52, і за дві години, о 18:00, у тебе починається нічна зміна, яка триватиме до",
+    "ts": "2026-09-04T16:52:58.131611"
+  },
+  "context_ask_ai|2026-09-04t16_52_47_317119": {
+    "topic": "context_ask_ai",
+    "gist": "Олег, прийнято. Записав, що 30 вересня Марс буде на асценденті.  Зараз 20:34. Ти на нічній зміні, яка триватиме до 06:00. Не забудь про Armolopid Plus після змі",
+    "ts": "2026-09-04T16:52:47.317119"
+  },
+  "selfact|2026-09-04t16_52_09_787741": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що згідно з календарем, о 17:00 у тебе починається нічна зміна (18:00-06:00).\",     \"why\": \"Поді",
+    "ts": "2026-09-04T16:52:09.787741"
+  },
+  "action_detect|2026-09-04t16_51_41_168017": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
+    "ts": "2026-09-04T16:51:41.168017"
+  },
+  "planner|2026-09-04t16_51_21_757826": {
+    "topic": "planner",
+    "gist": "```json [   {     \"title\": \"Юпітер 2 дім\",     \"date\": \"2026-09-28\",     \"time\": null,     \"allday\": true   } ] ```",
+    "ts": "2026-09-04T16:51:21.757826"
+  },
+  "foresight|2026-09-04t16_50_51_447687": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:50:51.447687"
+  },
+  "foresight|2026-09-04t16_50_40_404531": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:50:40.404531"
+  },
   "foresight|2026-09-04t16_49_34_035677": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
@@ -228,75 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-04T16:24:20.024831"
-  },
-  "mailcal_extract|2026-09-04t16_24_08_994252": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-09-04T16:24:08.994252"
-  },
-  "foresight|2026-09-04t16_22_58_263628": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T16:22:58.263628"
-  },
-  "foresight|2026-09-04t16_22_47_311562": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T16:22:47.311562"
-  },
-  "foresight|2026-09-04t16_21_40_777986": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T16:21:40.777986"
-  },
-  "foresight|2026-09-04t16_21_29_737720": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T16:21:29.737720"
-  },
-  "selfact|2026-09-04t16_21_16_944615": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що підписка Runable знову має проблеми з оплатою. Потрібно оновити платіжну інформацію.\",  ",
-    "ts": "2026-09-04T16:21:16.944615"
-  },
-  "foresight|2026-09-04t16_19_59_058917": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T16:19:59.058917"
-  },
-  "foresight|2026-09-04t16_19_48_270455": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T16:19:48.270455"
-  },
-  "openloop_promises|2026-09-04t16_19_36_952176": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-09-04T16:19:36.952176"
-  },
-  "action_detect|2026-09-04t16_19_18_755359": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зверни увагу на про",
-    "ts": "2026-09-04T16:19:18.755359"
-  },
-  "action_detect|2026-09-04t16_19_18_537375": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-04T16:19:18.537375"
-  },
-  "action_detect|2026-09-04t16_19_07_490857": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-04T16:19:07.490857"
-  },
-  "action_detect|2026-09-04t16_18_56_676308": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Випити склянку води\", \"action_date\": \"null\", \"action_time\": \"18:00\", \"action_summary\": \"Випити склянку води перед п",
-    "ts": "2026-09-04T16:18:56.676308"
-  },
-  "action_detect|2026-09-04t16_18_39_454496": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансію Regionalny kierownik sprzedaży\", \"action_date\": \"2026-09-04\", \"action_time\": \"10:00\", \"action_",
-    "ts": "2026-09-04T16:18:39.454496"
   }
 }
