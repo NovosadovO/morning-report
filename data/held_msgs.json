@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T08:31:23.556249",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>InterFin Malaga trip - detailné informácie</b>\n👤 Maroš Sivák &lt;maros.sivak.sro@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78328"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78328"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78328"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78328"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78328"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78328"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T08:31:27.556635",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 33 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '33 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 84.0 кг, ціль 78 кг (тренд +0.6 кг за останні 5 замірів). Кроки: 6941 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 1 непрочитаних\n📅 Календар: 10:00 🔔 Переглянути вакансію Regionalny kierownik sprzedaży, 18:00 🌙 Нічна зміна (18:00-06:00)",
@@ -508,6 +469,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T09:01:22.873340",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в VenomBridge</b>\n👤 Discord &lt;noreply@discord.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78523"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78523"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78523"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78523"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78523"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78523"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
