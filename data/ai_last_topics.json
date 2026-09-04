@@ -1,4 +1,59 @@
 {
+  "foresight|2026-09-04t07_39_46_825991": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T07:39:46.825991"
+  },
+  "subs|2026-09-04t07_38_52_739614": {
+    "topic": "subs",
+    "gist": "[]",
+    "ts": "2026-09-04T07:38:52.739614"
+  },
+  "foresight|2026-09-04t07_38_40_579822": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-04T07:38:40.579822"
+  },
+  "foresight|2026-09-04t07_38_29_606258": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-04T07:38:29.606258"
+  },
+  "foresight|2026-09-04t07_38_18_583942": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T07:38:18.583942"
+  },
+  "foresight|2026-09-04t07_37_11_694845": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T07:37:11.694845"
+  },
+  "foresight|2026-09-04t07_37_00_681309": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T07:37:00.681309"
+  },
+  "foresight|2026-09-04t07_36_49_720053": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T07:36:49.720053"
+  },
+  "foresight|2026-09-04t07_35_36_048590": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T07:35:36.048590"
+  },
+  "foresight|2026-09-04t07_35_25_124287": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T07:35:25.124287"
+  },
+  "foresight|2026-09-04t07_35_14_155074": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T07:35:14.155074"
+  },
   "email_ai_item|2026-09-04t07_34_59_143847": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Lidl інформує Олега про акційну пропозицію на продукти SILVERCREST зі знижкою 20% та пропонує переглянути вікендову пропоз",
@@ -243,60 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
     "ts": "2026-09-04T07:13:21.200167"
-  },
-  "foresight|2026-09-04t07_13_10_139619": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:13:10.139619"
-  },
-  "foresight|2026-09-04t07_12_59_194177": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:12:59.194177"
-  },
-  "foresight|2026-09-04t07_11_46_457602": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-04T07:11:46.457602"
-  },
-  "foresight|2026-09-04t07_11_35_463707": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:11:35.463707"
-  },
-  "foresight|2026-09-04t07_11_24_461026": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:11:24.461026"
-  },
-  "foresight|2026-09-04t07_10_11_470588": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-04T07:10:11.470588"
-  },
-  "foresight|2026-09-04t07_10_00_538302": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:10:00.538302"
-  },
-  "foresight|2026-09-04t07_09_49_393767": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:09:49.393767"
-  },
-  "bills|2026-09-04t07_09_37_093953": {
-    "topic": "bills",
-    "gist": "```json [] ```",
-    "ts": "2026-09-04T07:09:37.093953"
-  },
-  "foresight|2026-09-04t07_08_44_241487": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-04T07:08:44.241487"
-  },
-  "foresight|2026-09-04t07_08_33_460282": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:08:33.460282"
   }
 }
