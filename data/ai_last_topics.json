@@ -1,4 +1,29 @@
 {
+  "selfact|2026-09-04t17_23_11_644445": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що тобі потрібно прийняти Armolopid Plus після закінчення нічної зміни (о 06:00 ранку).\",     \"w",
+    "ts": "2026-09-04T17:23:11.644445"
+  },
+  "foresight|2026-09-04t17_21_52_107449": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-04T17:21:52.107449"
+  },
+  "foresight|2026-09-04t17_21_41_208676": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T17:21:41.208676"
+  },
+  "foresight|2026-09-04t17_20_27_351832": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T17:20:27.351832"
+  },
+  "foresight|2026-09-04t17_20_16_388972": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T17:20:16.388972"
+  },
   "foresight|2026-09-04t17_19_10_201088": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
@@ -273,30 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
     "ts": "2026-09-04T16:58:37.214843"
-  },
-  "foresight|2026-09-04t16_58_26_105027": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T16:58:26.105027"
-  },
-  "foresight|2026-09-04t16_57_19_246782": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T16:57:19.246782"
-  },
-  "foresight|2026-09-04t16_57_08_236989": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T16:57:08.236989"
-  },
-  "foresight|2026-09-04t16_56_00_099791": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-04T16:56:00.099791"
-  },
-  "foresight|2026-09-04t16_55_49_262231": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T16:55:49.262231"
   }
 }
