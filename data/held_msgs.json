@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T14:53:46.187597",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>GenAI Works через LinkedIn</b>\n📋 Тема: «👑 Nvidia builds an AI empire»\n\n<i>«The Atlas\r\n\r\nАвтор: GenAI Works\r\n\r\n\r\nАвтор: GenAI Works\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/nvidia-builds-ai-empire-genai-works-tui3f?lipi=urn%3Ali%3Apage%3Aemail_email_series_follow_newslette...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78547"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78547"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78547"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78547"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78547"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78547"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T14:54:21.358744",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -181,6 +142,12 @@
       "ts": "2026-09-04T14:59:23.396158",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T14:59:33.475873",
+      "kind": "calendar",
+      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Доволенка в Іспанії</b>\n📅 08.09 (Tue) — через 4 дн.\n🕐 10:00–11:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
       "keyboard": null
     }
   ]
