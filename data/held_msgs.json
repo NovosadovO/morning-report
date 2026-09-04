@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T14:15:56.736345",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Standard Chartered Just Launched Spot Crypto Trading in UAE</b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78542"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78542"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78542"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78542"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78542"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78542"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T14:15:58.096273",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📊 Ранковий дайджест ринків — 04.09.2026</b>\n👤 Morning Report &lt;onboarding@resend.dev&gt;",
@@ -332,6 +293,12 @@
       "ts": "2026-09-04T14:20:05.138382",
       "kind": "calendar",
       "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Доволенка в Іспанії\n📅 08.09 (Tue) — через 4 дн.\n🕐 10:00–11:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T14:20:16.582408",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
