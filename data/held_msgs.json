@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T22:31:36.096510",
-      "kind": "offer",
-      "text": "💰 ✉️\n📌 <b>Google Cloud Platform &amp; APIs: ми отримали Ваш платіж для дом</b>\n👤 Google Payments &lt;payments-noreply@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78435"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78435"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78435"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78435"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78435"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78435"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T22:31:37.351697",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>AVALANCHE AUGUST 2026 RECAP</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -624,6 +585,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78566"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T23:01:33.870351",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 4th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78565"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78565"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78565"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78565"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78565"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78565"
             }
           ]
         ]
