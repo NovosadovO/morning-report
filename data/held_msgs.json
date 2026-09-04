@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T20:16:34.951246",
-      "kind": "offer",
-      "text": "💰 ✉️\n📌 <b>Operations Manager — Crypto &amp; Payments в BITEXPERT</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78561"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78561"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78561"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78561"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78561"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78561"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T20:16:36.252890",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Novinky prémiovej kvality</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
@@ -595,6 +556,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-04T21:01:36.923792",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Avalanche Team1\n📋 AVALANCHE AUGUST 2026 RECAP\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
