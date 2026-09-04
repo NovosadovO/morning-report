@@ -10499,6 +10499,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_1af80edba7"
+    },
+    {
+      "ts": "2026-09-04T19:36:57.728802+00:00",
+      "category": "calendar_button",
+      "question": "tomorrow",
+      "answer": "accepted",
+      "extra": {
+        "stage": "tomorrow",
+        "when": "",
+        "note": null
+      }
     }
   ]
 }
