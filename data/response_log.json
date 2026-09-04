@@ -10380,6 +10380,17 @@
       "category": "event_done",
       "question": "📅 🔔 Переглянути вакансію Regionalny kierownik sprzedaży\nПланувалась до 11:30 — виконано?",
       "answer": "no"
+    },
+    {
+      "ts": "2026-09-04T16:16:20.389060+00:00",
+      "category": "calendar_button",
+      "question": "Доволенка в Іспанії",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t3d",
+        "when": "10:00–11:00",
+        "note": null
+      }
     }
   ]
 }
