@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-09-05t01_58_55_441729": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-05T01:58:55.441729"
+  },
+  "selfact|2026-09-05t01_43_51_117988": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"text\": \"Олеже, твоя нічна зміна закінчується о 06:00. Не забудь прийняти Armo",
+    "ts": "2026-09-05T01:43:51.117988"
+  },
   "action_detect|2026-09-05t01_43_27_675828": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оновити Strava\", \"action_date\": \"2026-09-05\", \"action_time\": \"06:00\", \"action_summary\": \"Після 06:00 оновит",
@@ -288,15 +298,5 @@
     "topic": "foresight",
     "gist": "Олеже, привіт! Бачу, що ти на нічній зміні, тому тримай короткий брифінг по Малазі, щоб можна було швидко пробігтися очима.  ### 🌴 **ПОЇЗДКА В МАЛАГУ**  🧳 **ЩО ",
     "ts": "2026-09-04T23:37:29.479566"
-  },
-  "foresight|2026-09-04t23_36_57_178801": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T23:36:57.178801"
-  },
-  "foresight|2026-09-04t23_36_46_159555": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T23:36:46.159555"
   }
 }
