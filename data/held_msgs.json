@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T10:41:24.000545",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T10:41:24.839728",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78522"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T10:46:09.492905",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78516"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78516"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78516"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78516"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78516"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78516"
             }
           ]
         ]
