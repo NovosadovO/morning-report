@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T20:16:38.721016",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Cybersecurity Enthusiast Wanted! (m/f/n) в ESET</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78557"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78557"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78557"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78557"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78557"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78557"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T20:16:39.940537",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Dostali ste vrátenie kreditu!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
@@ -495,6 +456,12 @@
       "ts": "2026-09-04T21:02:25.567374",
       "kind": "watchdog",
       "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 20\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\nЗа цим я стежити НЕ можу, поки не виправлено.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T21:03:57.736236",
+      "kind": "watchdog",
+      "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 20\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\n<i>За цим я стежити НЕ можу, поки не виправлено.</i>",
       "keyboard": null
     }
   ]
