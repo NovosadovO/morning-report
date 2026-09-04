@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T13:46:09.238593",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🦞 MyClaw Never Dies</b>\n👤 MyClaw Newsletter &lt;newsletter@myclaw.ai&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78539"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78539"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78539"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78539"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78539"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78539"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T13:46:10.657885",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Dobrá správa! Dobierka je kdispozícii!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
@@ -396,6 +357,12 @@
     },
     {
       "ts": "2026-09-04T13:50:11.870995",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T13:50:12.736121",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
