@@ -1,9 +1,4 @@
 {
-  "2026-08-31": {
-    "anomaly_weight_rising": true,
-    "ai_observations": true,
-    "post_shift_checkin": true
-  },
   "2026-09-01": {
     "anomaly_weight_rising": true,
     "anomaly_no_run": true
@@ -20,5 +15,8 @@
     "midday_checkin": true,
     "ai_observations": true,
     "night_summary": true
+  },
+  "2026-09-04": {
+    "morning_greet": true
   }
 }
