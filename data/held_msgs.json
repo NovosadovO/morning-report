@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T21:07:51.095463",
-      "kind": "watchdog",
-      "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 20\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\n<i>За цим я стежити НЕ можу, поки не виправлено.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T21:07:51.957759",
       "kind": "watchdog",
       "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 20\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\nЗа цим я стежити НЕ можу, поки не виправлено.",
@@ -566,6 +560,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78385"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T21:31:28.236928",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>InterFin Malaga trip - detailné informácie</b>\n👤 Maroš Sivák &lt;maros.sivak.sro@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78328"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78328"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78328"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78328"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78328"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78328"
             }
           ]
         ]
