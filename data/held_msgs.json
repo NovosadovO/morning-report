@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T13:57:21.386948",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T13:57:22.238427",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78536"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-04T14:01:40.856578",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Employee Services Operations Specialist в the LEGO Group</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78535"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78535"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78535"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78535"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78535"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78535"
             }
           ]
         ]
