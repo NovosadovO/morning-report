@@ -1,4 +1,59 @@
 {
+  "selfact|2026-09-04t07_30_38_275042": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Деталі поїздки в Малагу\",     \"text\": \"Олег, у тебе є детальні інструкції та підтвердження бронювання щодо пої",
+    "ts": "2026-09-04T07:30:38.275042"
+  },
+  "foresight|2026-09-04t07_29_16_327808": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T07:29:16.327808"
+  },
+  "foresight|2026-09-04t07_29_05_295521": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T07:29:05.295521"
+  },
+  "foresight|2026-09-04t07_28_54_328832": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T07:28:54.328832"
+  },
+  "foresight|2026-09-04t07_27_49_081370": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T07:27:49.081370"
+  },
+  "foresight|2026-09-04t07_27_38_406197": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T07:27:38.406197"
+  },
+  "foresight|2026-09-04t07_27_27_003716": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T07:27:27.003716"
+  },
+  "foresight|2026-09-04t07_26_19_593670": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T07:26:19.593670"
+  },
+  "action_detect|2026-09-04t07_26_08_949050": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2024-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
+    "ts": "2026-09-04T07:26:08.949050"
+  },
+  "action_detect|2026-09-04t07_26_08_811973": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-04T07:26:08.811973"
+  },
+  "foresight|2026-09-04t07_26_08_585319": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"Malaga\", \"country\": \"Spain\"}",
+    "ts": "2026-09-04T07:26:08.585319"
+  },
   "foresight|2026-09-04t07_25_57_792270": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -243,60 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-04T07:05:10.387765"
-  },
-  "foresight|2026-09-04t07_04_04_010523": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T07:04:04.010523"
-  },
-  "foresight|2026-09-04t07_03_52_883330": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:03:52.883330"
-  },
-  "foresight|2026-09-04t07_03_41_871127": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:03:41.871127"
-  },
-  "action_detect|2026-09-04t07_03_40_429265": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз різних аспектів пл",
-    "ts": "2026-09-04T07:03:40.429265"
-  },
-  "action_detect|2026-09-04t07_03_40_202071": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить загальні поради щодо кар'єри та фізично",
-    "ts": "2026-09-04T07:03:40.202071"
-  },
-  "action_detect|2026-09-04t07_03_29_167706": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансію Regionalny kierownik sprzedaży\", \"action_date\": null, \"action_time\": \"09:00\", \"action_summary\"",
-    "ts": "2026-09-04T07:03:29.167706"
-  },
-  "action_detect|2026-09-04t07_03_28_991233": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-04T07:03:28.991233"
-  },
-  "action_detect|2026-09-04t07_03_18_191841": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансію Regionalny kierownik sprzedaży\", \"action_date\": \"2024-09-04\", \"action_time\": \"10:00\", \"action_",
-    "ts": "2026-09-04T07:03:18.191841"
-  },
-  "action_detect|2026-09-04t07_03_05_629758": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-04T07:03:05.629758"
-  },
-  "action_detect|2026-09-04t07_03_05_545282": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансію\", \"action_date\": \"2023-09-05\", \"action_time\": \"09:00\", \"action_summary\": \"Переглянути вакансію",
-    "ts": "2026-09-04T07:03:05.545282"
-  },
-  "action_detect|2026-09-04t07_02_54_511807": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-04\", \"action_time\": \"07:02\", \"action_summary\": \"Прийняти Armolopi",
-    "ts": "2026-09-04T07:02:54.511807"
   }
 }
