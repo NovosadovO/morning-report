@@ -10487,6 +10487,12 @@
       "extra": {
         "kind": "submit"
       }
+    },
+    {
+      "ts": "2026-09-04T19:08:27.738820+00:00",
+      "category": "confirm",
+      "question": "calrem_skip: Перевірити статус оплати",
+      "answer": "yes"
     }
   ]
 }
