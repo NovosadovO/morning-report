@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T22:31:32.137231",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Onchain Assets Weekly: 9/4/26</b>\n👤 Securitize через LinkedIn&lt;newsletters-noreply@link",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78566"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78566"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78566"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78566"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78566"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78566"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T22:31:33.506765",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - September 4th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -628,6 +589,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T23:01:28.864112",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>🟪 Friday Charts</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78568"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78568"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78568"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78568"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78568"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78568"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
