@@ -1,9 +1,4 @@
 {
-  "78113": {
-    "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
-    "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
-    "seen_ts": "2026-08-27T14:55:37.595114+00:00"
-  },
   "78115": {
     "sender": "newsletter@buzzsneakers-promo.com",
     "sender_raw": "\"Buzz Sneaker Station\" <newsletter@buzzsneakers-promo.com>",
@@ -1498,5 +1493,10 @@
     "sender": "oleg.novosadov@minebeamitsumi.eu",
     "sender_raw": "Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu>",
     "seen_ts": "2026-09-04T23:00:34.253974+00:00"
+  },
+  "78572": {
+    "sender": "no-reply@mail.thedefiant.io",
+    "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
+    "seen_ts": "2026-09-04T23:39:30.155360+00:00"
   }
 }
