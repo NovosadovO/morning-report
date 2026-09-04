@@ -1,43 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T09:46:32.148831",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 13 nových pracovných ponúk\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Avalanche Team1\n📋 AVALANCHE AUGUST 2026 RECAP\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Profesia.sk",
-              "callback_data": "email_reply_78522"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_78516"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Avalanche Team1",
-              "callback_data": "email_reply_78407"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_78522"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78522"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T09:46:34.937405",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 13 nových pracovných ponúk\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Avalanche Team1\n📋 AVALANCHE AUGUST 2026 RECAP\n📝 (AI-аналіз тимчасово недоступний)",
@@ -441,6 +404,12 @@
       "ts": "2026-09-04T10:03:56.021108",
       "kind": "calendar",
       "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Доволенка в Іспанії\n📅 08.09 (Tue) — через 4 дн.\n🕐 10:00–11:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T10:04:56.199744",
+      "kind": "calendar",
+      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Доволенка в Іспанії</b>\n📅 08.09 (Tue) — через 4 дн.\n🕐 10:00–11:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
       "keyboard": null
     }
   ]
