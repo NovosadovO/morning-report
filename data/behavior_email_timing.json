@@ -1,9 +1,4 @@
 {
-  "78092": {
-    "sender": "updates@okx.com",
-    "sender_raw": "OKX <updates@okx.com>",
-    "seen_ts": "2026-08-27T11:49:18.778961+00:00"
-  },
   "78094": {
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
     "seen_ts": "2026-09-04T11:34:22.779430+00:00"
+  },
+  "78541": {
+    "sender": "onboarding@resend.dev",
+    "sender_raw": "Morning Report <onboarding@resend.dev>",
+    "seen_ts": "2026-09-04T11:56:40.291008+00:00"
   }
 }
