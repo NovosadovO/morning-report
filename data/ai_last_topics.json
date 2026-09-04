@@ -1,4 +1,9 @@
 {
+  "people|2026-09-05t00_22_10_937411": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"info@ionian-cruises.com\",     \"name\": \"Ionian Cruises\",     \"relation\": \"сервіс\",     \"topics\": [\"скасування круїзу\"],     \"my_promi",
+    "ts": "2026-09-05T00:22:10.937411"
+  },
   "email_ai_item|2026-09-05t00_15_41_340459": {
     "topic": "email_ai_item",
     "gist": "```json { \"description\": \"Лист від LinkedIn містить сповіщення про нову вакансію Business Development Manager IBM в Arrow Components, розташовану в Братиславі. ",
@@ -293,10 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
     "ts": "2026-09-04T21:13:35.945543"
-  },
-  "foresight|2026-09-04t21_13_24_928319": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T21:13:24.928319"
   }
 }
