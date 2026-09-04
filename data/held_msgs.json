@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T09:01:29.396340",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Reservation confirmation</b>\n👤 noreply@atguest.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78402"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78402"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78402"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78402"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78402"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78402"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T09:01:30.867431",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your weekly progress report from Google Health</b>\n👤 Google Health &lt;google-health-noreply@google.com&gt;",
@@ -541,6 +502,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T09:31:00.818845",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в VenomBridge</b>\n👤 Discord &lt;noreply@discord.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78523"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78523"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78523"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78523"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78523"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78523"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
