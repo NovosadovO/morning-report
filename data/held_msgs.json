@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T08:15:56.311731",
-      "kind": "offer",
-      "text": "💰 ✉️\n📌 <b>Google Cloud Platform &amp; APIs: ми отримали Ваш платіж для дом</b>\n👤 Google Payments &lt;payments-noreply@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78435"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78435"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78435"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78435"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78435"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78435"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T08:15:57.630099",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>AVALANCHE AUGUST 2026 RECAP</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -667,6 +628,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-04T08:46:32.733361",
+      "kind": "chunk",
+      "text": "🌅\n<b>ЗВІТ  ·  Пт 04.09  ·  08:45</b>\n🏠 Вдома\n<i>Ранок Олега: Strava + CoinGecko + кава. Ідеальна комбінація ☕📈</i>\n📌 🌙 Нічна зміна (18:00-06:00) +2\n\n⚡ <b>День: ✨☆☆☆☆ 17/100</b>  ↓38 vs вчора\n\n🌫️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>19°C</b>\n<i>👌 Комфортно — ідеально для прогулянки</i>\n\n📅 <b>Прогноз сьогодні:</b>\n05:56   🌇 19:11  09:00 ☁️20°  │  10:00 ☁️22°  │  11:00 ☁️24°  │  12:00 ☁️25°  │  13:00 ☁️27°  │  14:00 ☁️28°  09:00 ☁️21°  │  12:00 ☁️24°🌧53%  │  15:00 🌦20°🌧70%  │  18:00 ☁️22°  │  21:00 ☀️19°\n\n<b>Завтра:</b>  🌦 Мряка  🔻18°  /  🔺24°  🌧 0.1 мм\n<code>09:00</code> ☁️21°  │  <code>12:00</code> ☁️24°🌧53%  │  <code>15:00</code> 🌦20°🌧70%  │  <code>18:00</code> ☁️22°  │  <code>21:00</code> ☀️19°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n  • 🐢 Затор (+3 хв) — Ipeľská\n  • 🐢 Затор (+1 хв) — Kuzmányho\n\n💰\n<b>КРИПТО  ·  🟢 БИЧАЧИЙ 🚀</b>\n➡️ <b>BTC</b> <code>$80,827.00</code>  +0.10%\n➡️ <b>ETH</b> <code>$2,507.96</code>  +0.08%\n🔺 <b>AVAX</b> <code>$7.47</code>  +0.27%\n🔺 <b>ONDO</b> <code>$0.36</code>  +0.45%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🟢 <b>IBIT</b>  <code>$46.35</code>  <i>+5.85% за день</i>\n🟢 <b>ETHA</b>  <code>$19.02</code>  <i>+5.37% за день</i>\n⚪️ <b",
+      "keyboard": null
     }
   ]
 }
