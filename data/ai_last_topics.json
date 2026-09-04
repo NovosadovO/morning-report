@@ -1,4 +1,49 @@
 {
+  "foresight|2026-09-04t16_32_50_419191": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:32:50.419191"
+  },
+  "foresight|2026-09-04t16_31_42_808216": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:31:42.808216"
+  },
+  "foresight|2026-09-04t16_31_31_846389": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:31:31.846389"
+  },
+  "action_detect|2026-09-04t16_30_33_676014": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2024-09-05\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
+    "ts": "2026-09-04T16:30:33.676014"
+  },
+  "action_detect|2026-09-04t16_30_29_800344": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-04\", \"action_time\": \"18:00\", \"action_summary\": \"Початок нічної зміни о 18:00,",
+    "ts": "2026-09-04T16:30:29.800344"
+  },
+  "msg_event_soon|2026-09-04t16_30_24_807397": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ⏰  Наближається твоя нічна зміна, яка стартує сьогодні о 18:00 і триватиме до 06:00 ранку. Враховуючи, що ти готуєшся, сфокусуйся на відпочинку пе",
+    "ts": "2026-09-04T16:30:24.807397"
+  },
+  "foresight|2026-09-04t16_29_48_289270": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:29:48.289270"
+  },
+  "foresight|2026-09-04t16_29_37_354244": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:29:37.354244"
+  },
+  "foresight|2026-09-04t16_28_31_395826": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T16:28:31.395826"
+  },
   "foresight|2026-09-04t16_28_20_763786": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -253,50 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-04T07:37:11.694845"
-  },
-  "foresight|2026-09-04t07_37_00_681309": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T07:37:00.681309"
-  },
-  "foresight|2026-09-04t07_36_49_720053": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:36:49.720053"
-  },
-  "foresight|2026-09-04t07_35_36_048590": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T07:35:36.048590"
-  },
-  "foresight|2026-09-04t07_35_25_124287": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T07:35:25.124287"
-  },
-  "foresight|2026-09-04t07_35_14_155074": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:35:14.155074"
-  },
-  "email_ai_item|2026-09-04t07_34_59_143847": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від Lidl інформує Олега про акційну пропозицію на продукти SILVERCREST зі знижкою 20% та пропонує переглянути вікендову пропоз",
-    "ts": "2026-09-04T07:34:59.143847"
-  },
-  "foresight|2026-09-04t07_34_07_356959": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T07:34:07.356959"
-  },
-  "foresight|2026-09-04t07_33_56_447879": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T07:33:56.447879"
-  },
-  "foresight|2026-09-04t07_33_45_459462": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T07:33:45.459462"
   }
 }
