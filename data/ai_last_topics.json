@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-04t19_00_08_419769": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-04T19:00:08.419769"
+  },
+  "foresight|2026-09-04t18_58_58_087945": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T18:58:58.087945"
+  },
+  "foresight|2026-09-04t18_58_47_109002": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-04T18:58:47.109002"
+  },
+  "foresight|2026-09-04t18_57_37_714176": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T18:57:37.714176"
+  },
+  "foresight|2026-09-04t18_57_26_570203": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-04T18:57:26.570203"
+  },
+  "foresight|2026-09-04t18_56_20_968638": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T18:56:20.968638"
+  },
+  "foresight|2026-09-04t18_56_10_023420": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-04T18:56:10.023420"
+  },
   "selfact|2026-09-04t18_56_01_410717": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нічна зміна\",     \"text\": \"Олег, нагадую, що о 17:00 у тебе почалася нічна зміна (18:00-06:00).\",     \"why\": \"",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-04T18:22:48.245868"
-  },
-  "foresight|2026-09-04t18_21_22_052652": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-04T18:21:22.052652"
-  },
-  "foresight|2026-09-04t18_21_10_942988": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T18:21:10.942988"
-  },
-  "email_ai_item|2026-09-04t18_20_57_702402": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від The Economist Today є щоденною розсилкою з найкращими статтями видання. Він містить заголовок \\\"Milei’s outburst over the ",
-    "ts": "2026-09-04T18:20:57.702402"
-  },
-  "foresight|2026-09-04t18_20_05_679215": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-04T18:20:05.679215"
-  },
-  "foresight|2026-09-04t18_19_54_444745": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-04T18:19:54.444745"
-  },
-  "action_detect|2026-09-04t18_19_28_727337": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-04T18:19:28.727337"
-  },
-  "action_detect|2026-09-04t18_19_28_698073": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Марс на асц\", \"action_date\": \"2024-09-30\", \"action_time\": null, \"action_summary\": \"Занотувати подію 'Марс на асц' н",
-    "ts": "2026-09-04T18:19:28.698073"
   }
 }
