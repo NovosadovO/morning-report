@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T14:46:41.167798",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Revenue Accountant (f/m/d) в Siemens Healthineers</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78544"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78544"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78544"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78544"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78544"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78544"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T14:46:42.494806",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Standard Chartered Just Launched Spot Crypto Trading in UAE</b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
@@ -332,6 +293,12 @@
       "ts": "2026-09-04T14:49:38.845070",
       "kind": "openloop",
       "text": "⏳ Нагадування висить\n\n« 🤖 Реконструкція UniCredit Bank Олег, 4 вересня о 08:00 запланована реконструкція відділенн »\n⏱ час минув сьогодні, закриття не бачив\n\nЗробив — тисни, і я перестану питати.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T14:50:26.201790",
+      "kind": "calendar",
+      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Доволенка в Іспанії</b>\n📅 08.09 (Tue) — через 4 дн.\n🕐 10:00–11:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
       "keyboard": null
     }
   ]
