@@ -1,43 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T20:02:00.676534",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Reserved\n📋 Novinky prémiovej kvality\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Ben at StartEngine\n📋 DST Global, Goldman, and Accel Just Backed Higgsfield’s $400\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Temu\n📋 Dostali ste vrátenie kreditu!\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Reserved",
-              "callback_data": "email_reply_78560"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Ben at StartEngine",
-              "callback_data": "email_reply_78559"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Temu",
-              "callback_data": "email_reply_78555"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_78560"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78560"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T20:02:03.890304",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Reserved\n📋 Novinky prémiovej kvality\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Ben at StartEngine\n📋 DST Global, Goldman, and Accel Just Backed Higgsfield’s $400\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Temu\n📋 Dostali ste vrátenie kreditu!\n📝 (AI-аналіз тимчасово недоступний)",
@@ -469,6 +432,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T21:01:17.952409",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>AI Isn’t Replacing Stock Brokers—It’s Making Them Better</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78564"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78564"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78564"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78564"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78564"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78564"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
