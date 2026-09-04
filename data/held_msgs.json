@@ -447,6 +447,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-04T08:15:57.630099",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>AVALANCHE AUGUST 2026 RECAP</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78407"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78407"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78407"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78407"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78407"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78407"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
