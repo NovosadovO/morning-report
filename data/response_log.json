@@ -10442,6 +10442,12 @@
       "category": "confirm",
       "question": "gate_dm_skip: Норма",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-04T16:42:27.373511+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dm_skip_15cee04794"
     }
   ]
 }
