@@ -10403,6 +10403,12 @@
       "category": "confirm",
       "question": "calrem_skip: Випити склянку води",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-04T16:36:45.982567+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_9c131c2d8d"
     }
   ]
 }
