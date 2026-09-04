@@ -1,3 +1,43 @@
 {
-  "items": []
+  "items": [
+    {
+      "ts": "2026-09-04T19:55:08.893082",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Reserved</b>\n📋 Тема: «Novinky prémiovej kvality»\n\n<i>«96 *{box-sizing:border-box}body{margin:0;padding:0}a[x-apple-data-detectors]{color:inherit!important;text-decoration:inherit!important}#MessageViewBody a{color:inherit;text-decoration:none}p{line-height:inherit}.desktop_hide,.desktop_hide table{mso-hide:all;display:none;max-height:0;overflow:hidden}...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78560"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78560"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78560"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78560"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78560"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78560"
+            }
+          ]
+        ]
+      }
+    }
+  ]
 }
