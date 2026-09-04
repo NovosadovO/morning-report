@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T14:31:15.900415",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - September 4</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78545"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78545"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78545"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78545"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78545"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78545"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-04T14:31:17.069377",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Revenue Accountant (f/m/d) в Siemens Healthineers</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -398,6 +359,12 @@
       "ts": "2026-09-04T14:34:38.410070",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔔 Переглянути вакансію Regionalny kierownik sprzedaży » було 04.09 о 09:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-04T14:35:11.174707",
+      "kind": "calendar",
+      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Доволенка в Іспанії</b>\n📅 08.09 (Tue) — через 4 дн.\n🕐 10:00–11:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
       "keyboard": null
     }
   ]
