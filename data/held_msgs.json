@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-04T08:31:14.685487",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-04T08:31:15.861796",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>13 nových pracovných ponúk</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -706,6 +700,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-04T08:47:02.366177",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 13 nových pracovných ponúk\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 1\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Avalanche Team1\n📋 AVALANCHE AUGUST 2026 RECAP\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
