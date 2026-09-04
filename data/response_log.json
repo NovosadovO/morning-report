@@ -10322,6 +10322,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_a5a89ea5f7"
+    },
+    {
+      "ts": "2026-09-04T04:36:02.956821+00:00",
+      "category": "confirm",
+      "question": "gate_pa_skip: ✉️ Лист чекає на відповідь",
+      "answer": "yes"
     }
   ]
 }
