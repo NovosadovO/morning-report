@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-04t05_17_46_182401": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T05:17:46.182401"
+  },
+  "foresight|2026-09-04t05_16_34_453700": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T05:16:34.453700"
+  },
+  "foresight|2026-09-04t05_16_23_294172": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T05:16:23.294172"
+  },
+  "foresight|2026-09-04t05_16_12_409212": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T05:16:12.409212"
+  },
+  "foresight|2026-09-04t05_15_06_151257": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-04T05:15:06.151257"
+  },
+  "foresight|2026-09-04t05_14_55_143141": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T05:14:55.143141"
+  },
+  "foresight|2026-09-04t05_14_44_107312": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-04T05:14:44.107312"
+  },
   "foresight|2026-09-04t05_13_38_800699": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"text\": \"Олег, не забудь прийняти Armolopid Plus після закінчення нічної зміни",
     "ts": "2026-09-04T04:22:54.676886"
-  },
-  "openloop_promises|2026-09-04t04_15_30_618924": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-09-04T04:15:30.618924"
-  },
-  "astro_ai_truthfix|2026-09-04t04_13_03_317639": {
-    "topic": "astro_ai/truthfix",
-    "gist": "Олеже, зараз 04:12, п'ятниця, 4 вересня 2026 року. Ти на нічній зміні у Кошице.  Дані астрологічних транзитів, на яких базується цей аналіз, були обчислені по е",
-    "ts": "2026-09-04T04:13:03.317639"
-  },
-  "astro_ai|2026-09-04t04_12_56_316063": {
-    "topic": "astro_ai",
-    "gist": "Олеже, Юпітер вже 65 днів у Леві, прямо на твоєму Асценденті, в 1-му домі, що робить цей період ключовим для особистих змін. Як ти відчуваєш цей вплив на своє с",
-    "ts": "2026-09-04T04:12:56.316063"
-  },
-  "selfact|2026-09-04t04_07_04_261475": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Деталі поїздки в Малагу\",     \"text\": \"Олег, ти отримав детальні інструкції та підтвердження бронювання щодо т",
-    "ts": "2026-09-04T04:07:04.261475"
-  },
-  "action_detect|2026-09-04t04_03_10_935701": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити домовленості та документи\", \"action_date\": \"2024-09-04\", \"action_time\": \"09:30\", \"action_summary\": \"Пере",
-    "ts": "2026-09-04T04:03:10.935701"
-  },
-  "action_detect|2026-09-04t04_02_59_985513": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити деталі листа від Maroš Sivák\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити у",
-    "ts": "2026-09-04T04:02:59.985513"
-  },
-  "action_detect|2026-09-04t04_02_59_927731": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зібрати речі\", \"action_date\": \"2026-09-06\", \"action_time\": \"17:00\", \"action_summary\": \"Олегу необхідно зібрати речі",
-    "ts": "2026-09-04T04:02:59.927731"
   }
 }
