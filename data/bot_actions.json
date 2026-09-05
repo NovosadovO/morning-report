@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег продовжує отримувати сповіщення про вакансії, зокрема '",
-      "detail": "Зі свіжих листів від LinkedIn: 'Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Service Disruption Management (SDM) в SAP' та 'Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Associate в Eccleston Park Capital'.",
-      "module": "selfact",
-      "ts": "2026-09-01T13:12:16"
-    },
-    {
-      "kind": "note",
       "what": "Олег цікавиться новинами у сфері FinTech та Artificial Intel",
       "detail": "Зі свіжого листа від Linas from Linas's Newsletter <linas@substack.com> | The Ultimate Guide to Grok Bot: The First Real AI Agent OS 🤖",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав значну кількість нових вакансій та оголошень про квартири, і боту потрібно зрозуміти, чи є якась дія, яку Олег хотів би виконати з цією інформацією.",
       "module": "selfact",
       "ts": "2026-09-05T03:33:39"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на нові пропозиції по квартирах у Кошице.",
+      "detail": "Олег отримав листа '🏠 Нові квартири у Кошіці — 137 нових оголошень' від Oleg Novosadov, що свідчить про його зацікавленість у цій темі.",
+      "module": "selfact",
+      "ts": "2026-09-05T03:49:35"
     }
   ]
 }
