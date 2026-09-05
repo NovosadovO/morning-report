@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T15:40:46.141422",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-05T15:40:46.793989",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -380,6 +374,45 @@
       "kind": "calendar",
       "text": "📅 Завтра у тебе\n━━━━━━━━━━━━━━━━━━━━\n📌 Miriam, Classic strih, Staré Mesto 463, 040 01 Košice\n📅 06.09 (Sun) — завтра\n🕐 16:30–17:00\n📍 Staré Mesto 463, 040 01 Košice\n\nСьогодні ще є час підготуватись — документи, дорога, час виїзду.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T15:50:21.243188",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>LinkedIn</b>\n📋 Тема: «Не пропустіть обговорення в AI Innovators Network for Artificial Intel»\n\n<i>«Не пропустіть обговорення в AI Innovators Network for Artificial Intelligence, ChatGPT, Claude, Gemini, Perplexity &amp; Copilot\r\n\r\n.....................................AI Innovators Network for Artificial Intelligence, ChatGPT, Claude, Gemini, Perplexity &amp; Copilot\r\nAI Innovators Network for Artificial...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78597"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78597"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78597"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78597"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78597"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78597"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
