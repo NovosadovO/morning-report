@@ -9898,7 +9898,43 @@
     "pid": "email_cal_78591",
     "subject": "📌 1€ Svet",
     "extra": {
-      "msg": "🕐 15:46\n📩 ✉️\n📌 1€ Svet\n👤 Temu <temu@eu.temuemail.com>"
+      "msg": "🕐 15:46\n📩 ✉️\n📌 1€ Svet\n👤 Temu <temu@eu.temuemail.com>",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 86609,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78591"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78591"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78591"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78591"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78591"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78591"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-09-05T15:54:35.114040+00:00"
   }
