@@ -3307,5 +3307,16 @@
     "about": "Інформація про поїздку до Малаги",
     "state": "open",
     "ts": "2026-09-05T21:07:45"
+  },
+  "generic|t|нова вакансія project manager": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "нова вакансія project manager",
+    "title": "Нова вакансія Project Manager",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "about": "Нова вакансія Project Manager",
+    "state": "closed",
+    "ts": "2026-09-05T21:07:51"
   }
 }
