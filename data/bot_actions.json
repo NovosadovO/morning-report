@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-01",
-      "detail": "автосинк з годинника: steps, hr_avg, weight_kg, hrv, sleep_total_min",
-      "module": "qwsync",
-      "ts": "2026-09-01T13:17:25"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=13, hr_avg=66, weight_kg=83.0, hrv=46, sleep_total_min=420, sleep_hours=7.0, date=2026-09-01, source=qwatch_auto, saved_at=2026-09-01 13:17",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи містять повідомлення від Profesia.sk про '20 нових робочих пропозицій' та '5 нових робочих пропозицій', а також три листи від Oleg Novosadov про '28 нових оголошень', '47 нових оголошень' та '137 нових оголошень' про квартири.",
       "module": "selfact",
       "ts": "2026-09-05T04:05:12"
+    },
+    {
+      "kind": "notify",
+      "what": "Нові вакансії та квартири",
+      "detail": "Є кілька свіжих листів: 'Сповіщення про вакансії LinkedIn', 'Profesia.sk | Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk', 'Profesia.sk | 5 nových pracovných ponúk', а також 'Oleg Novosadov | 🏠 Нові квартири у Кошіці — 28 нових оголошень', 'Oleg Novosadov | 🏠 Нові квартири у",
+      "module": "selfact",
+      "ts": "2026-09-05T04:36:42"
     }
   ]
 }
