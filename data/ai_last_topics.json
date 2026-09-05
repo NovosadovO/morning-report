@@ -1,4 +1,49 @@
 {
+  "selfact|2026-09-05t22_45_23_065730": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Незавершені звички\",     \"text\": \"Олег, зверни увагу, що сьогодні ти не відмітив спрей для волосся, сауну та б",
+    "ts": "2026-09-05T22:45:23.065730"
+  },
+  "foresight|2026-09-05t22_44_05_741157": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:44:05.741157"
+  },
+  "foresight|2026-09-05t22_43_54_720917": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:43:54.720917"
+  },
+  "foresight|2026-09-05t22_42_47_496105": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:42:47.496105"
+  },
+  "foresight|2026-09-05t22_42_36_467558": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:42:36.467558"
+  },
+  "foresight|2026-09-05t22_41_29_930381": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:41:29.930381"
+  },
+  "foresight|2026-09-05t22_41_18_949835": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:41:18.949835"
+  },
+  "action_detect|2026-09-05t22_40_56_205152": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-05T22:40:56.205152"
+  },
+  "action_detect|2026-09-05t22_40_45_285741": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Закінчення нічних змін\", \"action_date\": \"2026-09-06\", \"action_time\": null, \"action_summary\": \"Нічні зміни О",
+    "ts": "2026-09-05T22:40:45.285741"
+  },
   "foresight|2026-09-05t22_40_14_576829": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
@@ -253,50 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T22:08:58.646304"
-  },
-  "foresight|2026-09-05t22_08_47_667270": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T22:08:47.667270"
-  },
-  "foresight|2026-09-05t22_07_43_752650": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T22:07:43.752650"
-  },
-  "foresight|2026-09-05t22_07_32_759442": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T22:07:32.759442"
-  },
-  "mailcal_extract|2026-09-05t22_07_16_211594": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"78607\",     \"title\": \"Відліт з Братислави до Малаги (InterFin Discovery Day)\",     \"date\": \"2026-09-07\",     \"time\": \"16:05\",     \"kin",
-    "ts": "2026-09-05T22:07:16.211594"
-  },
-  "foresight|2026-09-05t22_05_59_201121": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T22:05:59.201121"
-  },
-  "foresight|2026-09-05t22_05_48_265042": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T22:05:48.265042"
-  },
-  "foresight|2026-09-05t22_04_39_707439": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T22:04:39.707439"
-  },
-  "foresight|2026-09-05t22_04_28_678845": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T22:04:28.678845"
-  },
-  "foresight|2026-09-05t22_03_23_566128": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T22:03:23.566128"
   }
 }
