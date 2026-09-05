@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-05t07_48_16_530429": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-05T07:48:16.530429"
+  },
+  "foresight|2026-09-05t07_47_09_129591": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T07:47:09.129591"
+  },
+  "foresight|2026-09-05t07_46_58_100744": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T07:46:58.100744"
+  },
+  "foresight|2026-09-05t07_45_52_502350": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T07:45:52.502350"
+  },
+  "foresight|2026-09-05t07_45_41_527649": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-05T07:45:41.527649"
+  },
+  "selfact|2026-09-05t07_45_32_912853": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні о 17:00 у тебе починається нічна зміна (18:00-06:00).\",     \"why\": \"Інформація про н",
+    "ts": "2026-09-05T07:45:32.912853"
+  },
+  "foresight|2026-09-05t07_44_18_572846": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T07:44:18.572846"
+  },
   "foresight|2026-09-05t07_44_07_524243": {
     "topic": "foresight",
     "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-05T07:12:47.091054"
-  },
-  "foresight|2026-09-05t07_11_41_308236": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:11:41.308236"
-  },
-  "foresight|2026-09-05t07_11_30_468839": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T07:11:30.468839"
-  },
-  "foresight|2026-09-05t07_10_18_380162": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:10:18.380162"
-  },
-  "foresight|2026-09-05t07_10_07_345922": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-05T07:10:07.345922"
-  },
-  "action_detect|2026-09-05t07_03_07_760941": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забувай прийняти Armolopi",
-    "ts": "2026-09-05T07:03:07.760941"
-  },
-  "action_detect|2026-09-05t07_02_56_622609": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-05T07:02:56.622609"
-  },
-  "action_detect|2026-09-05t07_02_45_593895": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-06\", \"action_time\": \"18:00\", \"action_summary\": \"Олег має ще одну нічну зміну ",
-    "ts": "2026-09-05T07:02:45.593895"
   }
 }
