@@ -298,5 +298,40 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T20:37:40.408338"
+  },
+  "selfact|2026-09-05t21_10_41_611749": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег не виконав заплановані на 05.09 звички: спрей для волосся, сауна та біг.\",     \"why\": \"З календаря на 05.09 ",
+    "ts": "2026-09-05T21:10:41.611749"
+  },
+  "foresight|2026-09-05t21_09_19_697656": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-05T21:09:19.697656"
+  },
+  "foresight|2026-09-05t21_09_08_843400": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:09:08.843400"
+  },
+  "foresight|2026-09-05t21_08_01_014768": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-05T21:08:01.014768"
+  },
+  "foresight|2026-09-05t21_07_49_968688": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:07:49.968688"
+  },
+  "action_detect|2026-09-05t21_07_22_671648": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
+    "ts": "2026-09-05T21:07:22.671648"
+  },
+  "foresight|2026-09-05t21_06_44_616473": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T21:06:44.616473"
   }
 }
