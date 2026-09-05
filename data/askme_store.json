@@ -7333,5 +7333,31 @@
       "start": "2026-09-11T23:35:00"
     },
     "ts": "2026-09-05T19:04:47.922041+00:00"
+  },
+  "03a22e1cee": {
+    "key": "cal|зустріч команди зі східної словаччини в пряшеві",
+    "q": "📅 Хочу записати в календар:\n\n« 🤝 Зустріч команди зі Східної Словаччини в Пряшеві »\n🕐 07.09 о 06:00\n\nАвтоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nZraz: Prešov – pred budovou BC Volgogradská ⏰\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "🤝 Зустріч команди зі Східної Словаччини в Пряшеві",
+      "desc": "Автоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nZraz: Prešov – pred budovou BC Volgogradská ⏰ 6:00 – 6:15",
+      "minutes": 60,
+      "start": "2026-09-07T06:00:00"
+    },
+    "ts": "2026-09-05T19:04:51.098790+00:00"
   }
 }
