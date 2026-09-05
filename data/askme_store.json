@@ -7281,5 +7281,31 @@
       "start": "2026-09-07T19:40:00"
     },
     "ts": "2026-09-05T19:04:41.444128+00:00"
+  },
+  "70323ca7bc": {
+    "key": "cal|відліт з малаги до братислави",
+    "q": "📅 Хочу записати в календар:\n\n« ✈️ Відліт з Малаги до Братислави »\n🕐 11.09 о 20:10\n\nАвтоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nOdlet z Malagy: 20:10\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "✈️ Відліт з Малаги до Братислави",
+      "desc": "Автоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nOdlet z Malagy: 20:10",
+      "minutes": 60,
+      "start": "2026-09-11T20:10:00"
+    },
+    "ts": "2026-09-05T19:04:44.727406+00:00"
   }
 }
