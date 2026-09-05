@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-05t20_40_27_050190": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:40:27.050190"
+  },
+  "foresight|2026-09-05t20_39_21_125878": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:39:21.125878"
+  },
+  "foresight|2026-09-05t20_39_10_178581": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:39:10.178581"
+  },
+  "selfact|2026-09-05t20_39_01_106080": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег зараз на нічній зміні (18:00-06:00) 05.09.2026.\",     \"why\": \"Інформація з календаря на 7 днів: 05.09: 17:00",
+    "ts": "2026-09-05T20:39:01.106080"
+  },
+  "foresight|2026-09-05t20_37_40_408338": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:37:40.408338"
+  },
+  "foresight|2026-09-05t20_37_29_414398": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:37:29.414398"
+  },
+  "foresight|2026-09-05t20_36_22_941715": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:36:22.941715"
+  },
   "foresight|2026-09-05t20_36_11_683509": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Астрологічний аналіз для Олега підкреслює тра",
     "ts": "2026-09-05T20:04:00.918866"
-  },
-  "action_detect|2026-09-05t20_04_00_806566": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
-    "ts": "2026-09-05T20:04:00.806566"
-  },
-  "action_detect|2026-09-05t20_03_49_471714": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оплатити платіж\", \"action_date\": \"2026-09-30\", \"action_time\": null, \"action_summary\": \"Перевірити деталі пл",
-    "ts": "2026-09-05T20:03:49.471714"
-  },
-  "action_detect|2026-09-05t20_03_34_903902": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Стрижка у Miriam\", \"action_date\": \"2026-09-06\", \"action_time\": \"16:30\", \"action_summary\": \"Завтра о 16:30 у Miriam,",
-    "ts": "2026-09-05T20:03:34.903902"
-  },
-  "action_detect|2026-09-05t20_03_34_856771": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-05T20:03:34.856771"
-  },
-  "action_detect|2026-09-05t20_03_23_866381": {
-    "topic": "action_detect",
-    "gist": "```json { \"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Поставит",
-    "ts": "2026-09-05T20:03:23.866381"
-  },
-  "briefing_truthfix|2026-09-05t20_03_19_334832": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, зараз 20:03, субота, 5 вересня 2026 року. Ти на нічній зміні, яка триватиме до 06:00.  **Суперечність у даних** Ти прийняв до відома повідомлення про збі",
-    "ts": "2026-09-05T20:03:19.334832"
-  },
-  "briefing|2026-09-05t20_03_14_569381": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ Зараз, о 20:03, ти вже дві години на нічній зміні, і цей час — не просто робочий період, а стратегічна ділянка для твоїх цілей. Зближення до фінанс",
-    "ts": "2026-09-05T20:03:14.569381"
   }
 }
