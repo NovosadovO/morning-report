@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T14:31:40.063295",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-05T14:31:41.223244",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Project Management Officer (Junior) – Remote в NATEK</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -560,6 +554,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78589"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T14:46:11.275032",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Anthropic Moves AI Agents Into the Physical World</b>\n👤 AI NOW &amp; BEYOND через LinkedIn&lt;newsletters-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78587"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78587"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78587"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78587"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78587"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78587"
             }
           ]
         ]
