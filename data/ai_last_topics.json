@@ -1,4 +1,44 @@
 {
+  "email_ai_item|2026-09-05t08_01_28_600003": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист містить дайджест з чотирьох нових оголошень про продаж 3-кімнатних квартир у Кошицях, Словаччина, станом на 2026-09-05 04:43:39. Ц",
+    "ts": "2026-09-05T08:01:28.600003"
+  },
+  "personal_ai_truthfix|2026-09-05t08_01_01_148865": {
+    "topic": "personal_ai/truthfix",
+    "gist": "Зараз 08:01 суботи, 5 вересня 2026 року. Ти щойно завершив нічну зміну. Твій середній сон за 7 днів падає на 2.1 години, а останні дані про сон були 8 годин том",
+    "ts": "2026-09-05T08:01:01.148865"
+  },
+  "personal_ai|2026-09-05t08_00_57_263819": {
+    "topic": "personal_ai",
+    "gist": "Ти щойно закінчив нічну зміну о 06:00, зараз вже 08:00, і маєш лише 10 годин до початку наступної нічної зміни о 18:00. Негайно прийми Armolopid Plus і лягай сп",
+    "ts": "2026-09-05T08:00:57.263819"
+  },
+  "foresight|2026-09-05t08_00_26_743235": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T08:00:26.743235"
+  },
+  "foresight|2026-09-05t08_00_13_890769": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T08:00:13.890769"
+  },
+  "foresight|2026-09-05t07_58_56_799899": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T07:58:56.799899"
+  },
+  "foresight|2026-09-05t07_58_45_945159": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T07:58:45.945159"
+  },
+  "foresight|2026-09-05t07_57_37_914282": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T07:57:37.914282"
+  },
   "foresight|2026-09-05t07_57_26_939779": {
     "topic": "foresight",
     "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
@@ -258,45 +298,5 @@
     "topic": "openloop_promises",
     "gist": "```json [] ```",
     "ts": "2026-09-05T07:26:24.597054"
-  },
-  "foresight|2026-09-05t07_25_12_634146": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:25:12.634146"
-  },
-  "foresight|2026-09-05t07_25_01_627240": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-05T07:25:01.627240"
-  },
-  "foresight|2026-09-05t07_23_55_392058": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:23:55.392058"
-  },
-  "bills|2026-09-05t07_23_55_307463": {
-    "topic": "bills",
-    "gist": "[]",
-    "ts": "2026-09-05T07:23:55.307463"
-  },
-  "foresight|2026-09-05t07_23_44_348895": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-05T07:23:44.348895"
-  },
-  "foresight|2026-09-05t07_22_38_730414": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:22:38.730414"
-  },
-  "foresight|2026-09-05t07_22_27_824930": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-05T07:22:27.824930"
-  },
-  "foresight|2026-09-05t07_21_16_482819": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:21:16.482819"
   }
 }
