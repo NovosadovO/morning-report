@@ -9892,5 +9892,14 @@
     "subject": "листи",
     "extra": {},
     "ts": "2026-09-05T03:57:10.229680+00:00"
+  },
+  "529b641aeb": {
+    "action": "gate_email_cal",
+    "pid": "email_cal_78591",
+    "subject": "📌 1€ Svet",
+    "extra": {
+      "msg": "🕐 15:46\n📩 ✉️\n📌 1€ Svet\n👤 Temu <temu@eu.temuemail.com>"
+    },
+    "ts": "2026-09-05T15:54:35.114040+00:00"
   }
 }
