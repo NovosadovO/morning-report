@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-09-06t00_25_01_152397": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"78607\",     \"title\": \"Відліт до Малаги на InterFin Discovery Day\",     \"date\": \"2026-09-07\",     \"time\": \"16:05\",     \"kind\": \"flight\"",
+    "ts": "2026-09-06T00:25:01.152397"
+  },
+  "selfact|2026-09-06t00_19_40_610709": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від LinkedIn щодо вакансії Director Of Operations в CareerWise Recruitment. Вона від",
+    "ts": "2026-09-06T00:19:40.610709"
+  },
   "action_detect|2026-09-06t00_18_49_464829": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -288,15 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T23:41:05.956824"
-  },
-  "foresight|2026-09-05t23_40_54_761488": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:40:54.761488"
-  },
-  "foresight|2026-09-05t23_39_50_783826": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-05T23:39:50.783826"
   }
 }
