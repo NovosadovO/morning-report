@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримав лист від VanEck про дискусію 'Gold vs Bitcoin:",
-      "detail": "У свіжих листах є лист від VanEck через LinkedIn <newsletters-noreply@linkedin.com> з темою 'Gold vs Bitcoin: The Allocation Debate' та лист від 0xResearch <researchteam@blockworks.com> з темою 'Derive’s Record Month'. З попередніх розмов відомо, що Олег регулярно відстежує ринкові новини та криптоа",
-      "module": "selfact",
-      "ts": "2026-09-01T16:50:17"
-    },
-    {
       "kind": "notify",
       "what": "Олег, зверни увагу: сьогодні день народження Олі! Це важлива",
       "detail": "Сьогодні, 01.09, 🎂 Олі — день народження. Поточний час 17:04, і Олег міг забути про це через ранню зміну.",
@@ -2799,6 +2792,13 @@
       "detail": "Отримано лист від Maroš Sivák | INTERFIN з темою '🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂', який містить важливі деталі щодо поїздки.",
       "module": "selfact",
       "ts": "2026-09-05T20:08:25"
+    },
+    {
+      "kind": "notify",
+      "what": "Інформація про поїздку до Малаги",
+      "detail": "Є свіжий лист від Maroš Sivák | INTERFIN з темою '🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂', який містить 'ближчі заключні інформації до Малаги'.",
+      "module": "selfact",
+      "ts": "2026-09-05T20:23:27"
     }
   ]
 }
