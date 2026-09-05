@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T15:31:06.977421",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - September 5</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78594"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78594"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78594"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78594"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78594"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78594"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T15:31:08.098910",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Project Management Officer (Junior) – Remote в NATEK</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -544,6 +505,12 @@
       "ts": "2026-09-05T15:46:31.203427",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 34 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '34 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 84.3 кг, ціль 78 кг (тренд +0.3 кг за останні 5 замірів).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 18:00 🌙 Нічна зміна (18:00-06:00)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T15:46:43.524166",
+      "kind": "calendar",
+      "text": "📅 <b>Завтра у тебе</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Miriam, Classic strih, Staré Mesto 463, 040 01 Košice</b>\n📅 06.09 (Sun) — завтра\n🕐 16:30–17:00\n📍 Staré Mesto 463, 040 01 Košice\n\n<i>Сьогодні ще є час підготуватись — документи, дорога, час виїзду.</i>",
       "keyboard": null
     }
   ]
