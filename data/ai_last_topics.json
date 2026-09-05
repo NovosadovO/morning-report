@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-05t03_17_58_941958": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Runable\",     \"text\": \"Олеже, зверніть увагу: платіж до Runable на $10.00 був невдалим. Потрібно онов",
+    "ts": "2026-09-05T03:17:58.941958"
+  },
   "action_detect|2026-09-05t03_11_04_564302": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати прострочені дедлайни\", \"action_date\": \"2026-09-05\", \"action_time\": \"06:00\", \"action_summary\": \"Після",
     "ts": "2026-09-05T01:03:34.411404"
-  },
-  "action_detect|2026-09-05t01_03_23_316229": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-05\", \"action_time\": \"18:00\", \"action_summary\": \"Нічна зміна з 18:00 до 06:00.",
-    "ts": "2026-09-05T01:03:23.316229"
   }
 }
