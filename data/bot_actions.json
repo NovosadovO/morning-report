@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав детальні інформації щодо поїздки в Малагу від M",
-      "detail": "З листа від Maroš Sivák <maros.sivak.sro@gmail.com> | InterFin Malaga trip - detailné informácie",
-      "module": "selfact",
-      "ts": "2026-09-01T13:12:08"
-    },
-    {
-      "kind": "note",
       "what": "Олег продовжує отримувати сповіщення про вакансії, зокрема '",
       "detail": "Зі свіжих листів від LinkedIn: 'Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Service Disruption Management (SDM) в SAP' та 'Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Associate в Eccleston Park Capital'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист від Oleg Novosadov <novosadovoleg@gmail.com> з темою '🏠 Нові квартири у Кошіці — 137 нових оголошень', що містить список нових оголошень про квартири. Це важлива інформація, яку він міг пропустити, особливо враховуючи його нічну зміну.",
       "module": "selfact",
       "ts": "2026-09-05T03:18:04"
+    },
+    {
+      "kind": "ask",
+      "what": "Олег, чи потрібно мені якось реагувати на нові вакансії від",
+      "detail": "Олег отримав значну кількість нових вакансій та оголошень про квартири, і боту потрібно зрозуміти, чи є якась дія, яку Олег хотів би виконати з цією інформацією.",
+      "module": "selfact",
+      "ts": "2026-09-05T03:33:39"
     }
   ]
 }
