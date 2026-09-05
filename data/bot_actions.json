@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег цікавиться новинами крипторинку, зокрема біткойном та е",
-      "detail": "Серед свіжих листів є 'The Daily: Why Strategy sold bitcoin at $60K just to buy it back at $80K' від The Block та 'BitMine Nears 5% of ETH' від WhaleTales.",
-      "module": "selfact",
-      "ts": "2026-09-02T19:39:08"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав звіт про свій прогрес у Google Health, де вказа",
       "detail": "У листі від Google Health 'Your weekly progress report from Google Health' зазначено: '42,542 fewer than last week' (кроків), '11 below last week' (поверхів), '38.26 below last week' (кілометрів).",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Календар на 7 днів чітко вказує на початок відпустки, бронювання вілли та час відльоту 7 вересня.",
       "module": "selfact",
       "ts": "2026-09-06T00:04:12"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, нагадую, що завтра, 7 вересня, о 15:30 у тебе стрижка",
+      "detail": "Завтра запланована важлива особиста подія (стрижка), про яку варто нагадати заздалегідь.",
+      "module": "selfact",
+      "ts": "2026-09-06T00:19:43"
     }
   ]
 }
