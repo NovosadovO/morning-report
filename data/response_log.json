@@ -10806,6 +10806,17 @@
         "kind": "reminder",
         "date": "2026-09-05"
       }
+    },
+    {
+      "ts": "2026-09-05T15:54:18.416031+00:00",
+      "category": "calendar_button",
+      "question": "Miriam, Classic strih, Staré Mesto 463, 040 01 Košice",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t24h",
+        "when": "16:30–17:00",
+        "note": null
+      }
     }
   ]
 }
