@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-05t22_53_39_748863": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:53:39.748863"
+  },
+  "mailcal_extract|2026-09-05t22_53_26_242895": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"78607\",     \"title\": \"Відліт з Братислави до Малаги\",     \"date\": \"2026-09-07\",     \"time\": \"16:05\",     \"kind\": \"flight\",     \"why\": ",
+    "ts": "2026-09-05T22:53:26.242895"
+  },
+  "foresight|2026-09-05t22_52_15_018158": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:52:15.018158"
+  },
+  "foresight|2026-09-05t22_52_03_999715": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:52:03.999715"
+  },
+  "foresight|2026-09-05t22_50_59_616343": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:50:59.616343"
+  },
+  "foresight|2026-09-05t22_50_48_706125": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:50:48.706125"
+  },
+  "foresight|2026-09-05t22_49_38_320111": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:49:38.320111"
+  },
   "foresight|2026-09-05t22_49_27_327375": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-05T22:18:38.724092"
-  },
-  "foresight|2026-09-05t22_17_28_223564": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T22:17:28.223564"
-  },
-  "foresight|2026-09-05t22_17_17_070860": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T22:17:17.070860"
-  },
-  "foresight|2026-09-05t22_16_09_849307": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T22:16:09.849307"
-  },
-  "foresight|2026-09-05t22_15_58_769314": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T22:15:58.769314"
-  },
-  "email_ai_item|2026-09-05t22_15_48_751198": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від LinkedIn містить сповіщення про дві нові вакансії Application Support Specialist та Application Support Associate в ком",
-    "ts": "2026-09-05T22:15:48.751198"
-  },
-  "foresight|2026-09-05t22_14_47_343210": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T22:14:47.343210"
-  },
-  "foresight|2026-09-05t22_14_36_279865": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T22:14:36.279865"
   }
 }
