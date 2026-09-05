@@ -1,4 +1,74 @@
 {
+  "msg_rwa|2026-09-06t00_13_51_571287": {
+    "topic": "MSG_RWA",
+    "gist": "Сьогодні, 6 вересня 2026 року, о 00:13, у секторі RWA помітна аномалія: токенізований фонд FIGR_HELOC, який зазвичай стабільний, втратив -3.24686% за останні 24",
+    "ts": "2026-09-06T00:13:51.571287"
+  },
+  "action_detect|2026-09-06t00_04_01_911083": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Стрижка\", \"action_date\": null, \"action_time\": \"15:30\", \"action_summary\": \"Використати час після нічної змін",
+    "ts": "2026-09-06T00:04:01.911083"
+  },
+  "selfact|2026-09-06t00_03_55_907559": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні, 6 вересня, у тебе заплановані звички на 18:10: спрей для волосся, сауна, біг, вода ",
+    "ts": "2026-09-06T00:03:55.907559"
+  },
+  "action_detect|2026-09-06t00_03_50_903495": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
+    "ts": "2026-09-06T00:03:50.903495"
+  },
+  "action_detect|2026-09-06t00_03_50_887856": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-06T00:03:50.887856"
+  },
+  "openloop_promises|2026-09-06t00_03_41_701912": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-06T00:03:41.701912"
+  },
+  "action_detect|2026-09-06t00_03_39_880272": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжну інформацію",
+    "ts": "2026-09-06T00:03:39.880272"
+  },
+  "action_detect|2026-09-06t00_03_28_377874": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зібрати речі: Málaga\", \"action_date\": \"2026-09-06\", \"action_time\": \"18:00\", \"action_summary\": \"Зібрати речі для пої",
+    "ts": "2026-09-06T00:03:28.377874"
+  },
+  "action_detect|2026-09-06t00_03_28_330152": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armolopid",
+    "ts": "2026-09-06T00:03:28.330152"
+  },
+  "action_detect|2026-09-06t00_03_17_418920": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зібрати речі для Малаги\", \"action_date\": \"2023-09-07\", \"action_time\": null, \"action_summary\": \"Зібрати речі для пої",
+    "ts": "2026-09-06T00:03:17.418920"
+  },
+  "briefing_truthfix|2026-09-06t00_03_13_495264": {
+    "topic": "briefing/truthfix",
+    "gist": "🧭 ВЕКТОР ДНЯ Зараз 00:03 неділі, 6 вересня 2026 року. Твої останні дані про здоров'я, отримані 24 години тому (5 вересня), показують зростання кроків на 4115.7 ",
+    "ts": "2026-09-06T00:03:13.495264"
+  },
+  "briefing|2026-09-06t00_03_10_005937": {
+    "topic": "briefing",
+    "gist": "🧭 ВЕКТОР ДНЯ Зараз, у глибокій ночі вихідного дня, твій головний пріоритет — підготовка до відпустки в Малазі, що починається вже завтра, 7 вересня. Ця подія сл",
+    "ts": "2026-09-06T00:03:10.005937"
+  },
+  "themes_ai_truthfix|2026-09-06t00_03_02_885675": {
+    "topic": "themes_ai/truthfix",
+    "gist": "Олеже, чи є у тебе план щодо 19 прострочених дедлайнів, враховуючи, що зараз 00:03 неділі, 6 вересня 2026 року, і ти на нічній зміні?  **Фінанси** На вересень 2",
+    "ts": "2026-09-06T00:03:02.885675"
+  },
+  "themes_ai|2026-09-06t00_02_58_542445": {
+    "topic": "themes_ai",
+    "gist": "Який план дій щодо прострочених дедлайнів, Олег? Їх зараз 19, і серед них — підписка Strava, що впливає на твій біговий прогрес.  💰 ФІНАНСИ Наразі відомо, що на",
+    "ts": "2026-09-06T00:02:58.542445"
+  },
   "astro_ai|2026-09-06t00_02_45_629941": {
     "topic": "astro_ai",
     "gist": "Олеже, Юпітер у твоєму Асценденті вже 66 днів – це потужний період особистого оновлення, який зараз вступає у свою фінальну фазу у I домі. Це час, коли світ бач",
@@ -228,75 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T23:39:39.852700"
-  },
-  "mailcal_extract|2026-09-05t23_39_27_404699": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"78607\",     \"title\": \"Відліт з Братислави до Малаги (InterFin Discovery Day)\",     \"date\": \"2026-09-07\",     \"time\": \"16:05\",     \"kin",
-    "ts": "2026-09-05T23:39:27.404699"
-  },
-  "foresight|2026-09-05t23_38_10_272083": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-05T23:38:10.272083"
-  },
-  "foresight|2026-09-05t23_37_59_341285": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:37:59.341285"
-  },
-  "foresight|2026-09-05t23_36_52_839072": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:36:52.839072"
-  },
-  "foresight|2026-09-05t23_36_41_911409": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:36:41.911409"
-  },
-  "foresight|2026-09-05t23_35_28_113263": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:35:28.113263"
-  },
-  "foresight|2026-09-05t23_35_16_950778": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:35:16.950778"
-  },
-  "foresight|2026-09-05t23_34_12_996484": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:34:12.996484"
-  },
-  "foresight|2026-09-05t23_34_02_112108": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:34:02.112108"
-  },
-  "selfact|2026-09-05t23_33_47_539480": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що у тебе є непрочитані листи від Maroš Sivák та Renáta Gabrielová щодо поїздки в Малагу. Т",
-    "ts": "2026-09-05T23:33:47.539480"
-  },
-  "foresight|2026-09-05t23_32_26_117651": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:32:26.117651"
-  },
-  "foresight|2026-09-05t23_32_15_126371": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:32:15.126371"
-  },
-  "foresight|2026-09-05t23_31_08_120925": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:31:08.120925"
-  },
-  "foresight|2026-09-05t23_30_57_209850": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:30:57.209850"
   }
 }
