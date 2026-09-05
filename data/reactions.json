@@ -3374,5 +3374,17 @@
     "about": "Незавершені звички",
     "state": "open",
     "ts": "2026-09-05T22:53:13"
+  },
+  "generic|t|олег у тебе є непрочитаний лист від noreply atguest com з н": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "олег у тебе є непрочитаний лист від noreply atguest com з н",
+    "title": "Олег, у тебе є непрочитаний лист від noreply@atguest.com з н",
+    "action": "later",
+    "label": "⏰ Пізніше",
+    "about": "Олег, у тебе є непрочитаний лист від noreply@atguest.com з н",
+    "state": "snoozed",
+    "ts": "2026-09-05T23:34:17",
+    "until": "2026-09-06T05:34:17"
   }
 }
