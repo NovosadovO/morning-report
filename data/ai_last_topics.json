@@ -1,4 +1,44 @@
 {
+  "foresight|2026-09-05t17_26_54_736924": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T17:26:54.736924"
+  },
+  "foresight|2026-09-05t17_26_43_712329": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T17:26:43.712329"
+  },
+  "foresight|2026-09-05t17_25_30_759233": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T17:25:30.759233"
+  },
+  "foresight|2026-09-05t17_25_19_767266": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T17:25:19.767266"
+  },
+  "bills|2026-09-05t17_24_25_254503": {
+    "topic": "bills",
+    "gist": "```json [] ```",
+    "ts": "2026-09-05T17:24:25.254503"
+  },
+  "foresight|2026-09-05t17_24_14_317754": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T17:24:14.317754"
+  },
+  "foresight|2026-09-05t17_24_03_386775": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T17:24:03.386775"
+  },
+  "foresight|2026-09-05t17_22_55_789733": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T17:22:55.789733"
+  },
   "foresight|2026-09-05t17_22_44_762922": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -258,45 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
     "ts": "2026-09-05T16:59:16.329835"
-  },
-  "foresight|2026-09-05t16_58_44_614788": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:58:44.614788"
-  },
-  "foresight|2026-09-05t16_58_33_496848": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T16:58:33.496848"
-  },
-  "foresight|2026-09-05t16_57_27_160025": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:57:27.160025"
-  },
-  "foresight|2026-09-05t16_57_16_089826": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T16:57:16.089826"
-  },
-  "selfact|2026-09-05t16_57_07_975559": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні о 17:00 у тебе починається нічна зміна (18:00-06:00).\",     \"why\": \"Згідно з календа",
-    "ts": "2026-09-05T16:57:07.975559"
-  },
-  "foresight|2026-09-05t16_55_52_936032": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:55:52.936032"
-  },
-  "action_detect|2026-09-05t16_55_49_718593": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-05T16:55:49.718593"
-  },
-  "foresight|2026-09-05t16_55_41_965274": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T16:55:41.965274"
   }
 }
