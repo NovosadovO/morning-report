@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег ігнорує сповіщення про ранковий дайджест ринків, натиск",
-      "detail": "Олег 01.09 15:53 натиснув '🗑 Видалити' та '❌ Не треба' на сповіщення про ранковий дайджест ринків.",
-      "module": "selfact",
-      "ts": "2026-09-01T16:03:54"
-    },
-    {
-      "kind": "note",
       "what": "Олег ігнорує сповіщення про підписку Runable, натискаючи 'Ви",
       "detail": "Олег 01.09 15:54-15:55 кілька разів натиснув '🗑 Видалити' та '❌ Не треба' на сповіщення, яке, ймовірно, стосувалося Runable.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "З листа від Socios.com: 'Generate your Recovery Kit before 10 Sep' та 'To ensure you never lose access when switching or upgrading devices, make sure cloud syncing is turned on'.",
       "module": "selfact",
       "ts": "2026-09-05T17:29:32"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверніть увагу: Socios.com переходить на вхід через Pa",
+      "detail": "Лист від 'Socios.com' <news@mail.socios.com> інформує про зміну способу входу та необхідність згенерувати Recovery Kit до 10 вересня.",
+      "module": "selfact",
+      "ts": "2026-09-05T17:44:37"
     }
   ]
 }
