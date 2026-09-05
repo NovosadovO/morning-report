@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-05t23_40_54_761488": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T23:40:54.761488"
+  },
+  "foresight|2026-09-05t23_39_50_783826": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-05T23:39:50.783826"
+  },
+  "foresight|2026-09-05t23_39_39_852700": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T23:39:39.852700"
+  },
+  "mailcal_extract|2026-09-05t23_39_27_404699": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"78607\",     \"title\": \"Відліт з Братислави до Малаги (InterFin Discovery Day)\",     \"date\": \"2026-09-07\",     \"time\": \"16:05\",     \"kin",
+    "ts": "2026-09-05T23:39:27.404699"
+  },
+  "foresight|2026-09-05t23_38_10_272083": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-05T23:38:10.272083"
+  },
+  "foresight|2026-09-05t23_37_59_341285": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T23:37:59.341285"
+  },
+  "foresight|2026-09-05t23_36_52_839072": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T23:36:52.839072"
+  },
   "foresight|2026-09-05t23_36_41_911409": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
     "ts": "2026-09-05T23:03:19.201658"
-  },
-  "foresight|2026-09-05t23_03_09_699883": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:03:09.699883"
-  },
-  "action_detect|2026-09-05t23_02_54_032974": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-05T23:02:54.032974"
-  },
-  "action_detect|2026-09-05t23_02_53_712823": {
-    "topic": "action_detect",
-    "gist": "```json { \"action_type\": \"calendar\", \"action_title\": \"Зібрати речі: Málaga\", \"action_date\": \"2026-09-06\", \"action_time\": \"18:00\", \"action_summary\": \"Зібрати реч",
-    "ts": "2026-09-05T23:02:53.712823"
-  },
-  "action_detect|2026-09-05t23_02_42_640437": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка в Малагу та InterFin Discovery Day\", \"action_date\": \"2023-09-07\", \"action_time\": null, \"action_summary\": \"П",
-    "ts": "2026-09-05T23:02:42.640437"
-  },
-  "briefing|2026-09-05t23_02_38_004785": {
-    "topic": "briefing",
-    "gist": "Вітаю, Олеже! Зараз 23:02 суботи, і, судячи з твого повідомлення, ти вдома, відпочиваєш, і настрій у тебе добрий. Це чудово, адже попереду насичений тиждень.  🧭",
-    "ts": "2026-09-05T23:02:38.004785"
-  },
-  "themes_ai_truthfix|2026-09-05t23_02_28_390774": {
-    "topic": "themes_ai/truthfix",
-    "gist": "Олеже, чи є у тебе чітке розуміння, як прострочена на 32 дні підписка Strava впливає на твій прогрес бігу, враховуючи, що свіжих даних немає?  Дані Strava API з",
-    "ts": "2026-09-05T23:02:28.390774"
-  },
-  "themes_ai|2026-09-05t23_02_25_693171": {
-    "topic": "themes_ai",
-    "gist": "Олеже, чи є у тебе чітке розуміння, як прострочена на 32 дні підписка Strava впливає на твій прогрес бігу? Без актуальних даних складно оцінити твою поточну фор",
-    "ts": "2026-09-05T23:02:25.693171"
   }
 }
