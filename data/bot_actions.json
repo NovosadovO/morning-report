@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав повернення кредиту від Temu, але ще не використ",
-      "detail": "У календарі на 01.09 зазначено: '08:00 💳 Отримання повернення кредиту Temu'. У свіжих листах є лист від Temu <temu@eu.temuemail.com> з темою 'Dostali ste vrátenie kreditu!'. У календарі на 02.09 зазначено: '11:50 🔔 Використати знижку Temu' та '12:50 ⏳ Використати знижку 5,57 € від Temu'.",
-      "module": "selfact",
-      "ts": "2026-09-01T16:50:08"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав лист від VanEck про дискусію 'Gold vs Bitcoin:",
       "detail": "У свіжих листах є лист від VanEck через LinkedIn <newsletters-noreply@linkedin.com> з темою 'Gold vs Bitcoin: The Allocation Debate' та лист від 0xResearch <researchteam@blockworks.com> з темою 'Derive’s Record Month'. З попередніх розмов відомо, що Олег регулярно відстежує ринкові новини та криптоа",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "повна аналітика здоров'я",
       "module": "selfact",
       "ts": "2026-09-05T20:01:30"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на лист від Maroš Sivák | INTERFIN. Він м",
+      "detail": "Отримано лист від Maroš Sivák | INTERFIN з темою '🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂', який містить важливі деталі щодо поїздки.",
+      "module": "selfact",
+      "ts": "2026-09-05T20:08:25"
     }
   ]
 }
