@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-05t18_22_37_440122": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T18:22:37.440122"
+  },
+  "foresight|2026-09-05t18_21_30_392459": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T18:21:30.392459"
+  },
+  "foresight|2026-09-05t18_21_19_385302": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T18:21:19.385302"
+  },
+  "foresight|2026-09-05t18_20_07_169137": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T18:20:07.169137"
+  },
+  "foresight|2026-09-05t18_19_55_980997": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T18:19:55.980997"
+  },
+  "foresight|2026-09-05t18_18_46_341848": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T18:18:46.341848"
+  },
+  "foresight|2026-09-05t18_18_35_379982": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T18:18:35.379982"
+  },
   "mailcal_extract|2026-09-05t18_18_24_654844": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"78603\",     \"title\": \"Створити Recovery Kit для Socios.com\",     \"date\": \"2026-09-10\",     \"time\": null,     \"kind\": \"deadline\",     \"",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-05T17:53:55.907843"
-  },
-  "email_ai_item|2026-09-05t17_52_56_157648": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від Ivica Aračić через LinkedIn містить статтю під назвою \\\"On Privacy in DLT\\\" з блоку \\\"Blockchain Short Stories\\\". Стаття о",
-    "ts": "2026-09-05T17:52:56.157648"
-  },
-  "foresight|2026-09-05t17_52_41_639852": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T17:52:41.639852"
-  },
-  "foresight|2026-09-05t17_52_30_659848": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T17:52:30.659848"
-  },
-  "foresight|2026-09-05t17_51_25_407103": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T17:51:25.407103"
-  },
-  "foresight|2026-09-05t17_51_14_291534": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T17:51:14.291534"
-  },
-  "foresight|2026-09-05t17_50_08_279491": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T17:50:08.279491"
-  },
-  "foresight|2026-09-05t17_49_57_293300": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T17:49:57.293300"
   }
 }
