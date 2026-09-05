@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T13:16:43.946209",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Anthropic Moves AI Agents Into the Physical World</b>\n👤 AI NOW &amp; BEYOND через LinkedIn&lt;newsletters-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78587"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78587"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78587"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78587"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78587"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78587"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T13:16:45.205920",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -648,6 +609,12 @@
       "ts": "2026-09-05T13:31:20.990476",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T13:46:18.134203",
+      "kind": "chunk",
+      "text": "☀️\n<b>ЗВІТ  ·  Сб 05.09  ·  13:45</b>\n🏖 Вихідний\n<i>Якщо AVAX рухається — ти вже знаєш. Якщо ні — їж і відпочинь 💪</i>\n📌 🌙 Нічна зміна (18:00-06:00) +2\n\n⚡ <b>День: ⭐☆☆☆☆ 25/100</b>  ↓5 vs вчора\n\n🌦️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>21°C</b>\n<i>👌 Комфортно — ідеально для прогулянки</i>\n<i>☂️ парасолька</i>\n\n📅 <b>Прогноз сьогодні:</b>\n05:57   🌇 19:09  14:00 🌦21°🌧71%  │  15:00 ☁️21°🌧62%  │  16:00 ☁️22°🌧46%  │  17:00 ☁️22°🌧31%  │  18:00 ☁️22°  │  19:00 ☀️22°  09:00 ☀️18°  │  12:00 ☀️21°  │  15:00 ☀️23°  │  18:00 ☀️21°  │  21:00 ☀️18°  14:00 (71%)\n\n<b>Завтра:</b>  ☀️ Ясно  🔻16°  /  🔺23°\n<code>09:00</code> ☀️18°  │  <code>12:00</code> ☀️21°  │  <code>15:00</code> ☀️23°  │  <code>18:00</code> ☀️21°  │  <code>21:00</code> ☀️18°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n  • 🐢 Затор (+3 хв) — Popradská\n  • 🐢 Затор — Němcovej\n\n💰\n<b>КРИПТО  ·  🟡 НЕЙТРАЛЬНИЙ 〰️</b>\n➡️ <b>BTC</b> <code>$79,624.00</code>  0.00%\n➡️ <b>ETH</b> <code>$2,453.76</code>  0.00%\n➡️ <b>AVAX</b> <code>$7.49</code>  0.00%\n🔺 <b>ONDO</b> <code>$0.37</code>  +0.18%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🔴 <b>IBIT</b>  <code>$45.23</code>  <i>-2.42% за день</i>\n🔴 <b>ETHA</b>  <code>$18.52</code>  <i>",
       "keyboard": null
     }
   ]
