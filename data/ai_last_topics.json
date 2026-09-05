@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-09-05t02_44_30_119812": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист є інформаційним дайджестом нових оголошень про продаж 3-кімнатних квартир у Кошицях, Словаччина. Знайдено 137 нових оголошень станом н",
+    "ts": "2026-09-05T02:44:30.119812"
+  },
   "selfact|2026-09-05t02_30_40_254751": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Runable\",     \"text\": \"Олеже, платіж за підписку Runable знову був невдалим. Будь ласка, онови платіж",
@@ -293,10 +298,5 @@
     "topic": "people",
     "gist": "```json [   {     \"email\": \"info@ionian-cruises.com\",     \"name\": \"Ionian Cruises\",     \"relation\": \"сервіс\",     \"topics\": [\"скасування круїзу\"],     \"my_promi",
     "ts": "2026-09-05T00:22:10.937411"
-  },
-  "email_ai_item|2026-09-05t00_15_41_340459": {
-    "topic": "email_ai_item",
-    "gist": "```json { \"description\": \"Лист від LinkedIn містить сповіщення про нову вакансію Business Development Manager IBM в Arrow Components, розташовану в Братиславі. ",
-    "ts": "2026-09-05T00:15:41.340459"
   }
 }
