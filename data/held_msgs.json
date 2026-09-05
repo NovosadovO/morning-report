@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T11:45:53.671480",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78586"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78586"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78586"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78586"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78586"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78586"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T11:45:54.947181",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в VenomBridge</b>\n👤 Discord &lt;noreply@discord.com&gt;",
@@ -706,6 +667,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-05T12:01:39.192609",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 25 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 4 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
