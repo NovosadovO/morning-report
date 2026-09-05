@@ -1,4 +1,74 @@
 {
+  "foresight|2026-09-05t21_14_52_949926": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:14:52.949926"
+  },
+  "foresight|2026-09-05t21_13_36_001667": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T21:13:36.001667"
+  },
+  "foresight|2026-09-05t21_13_25_048662": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:13:25.048662"
+  },
+  "foresight|2026-09-05t21_12_19_239529": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T21:12:19.239529"
+  },
+  "foresight|2026-09-05t21_12_08_307795": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:12:08.307795"
+  },
+  "foresight|2026-09-05t21_11_02_655385": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T21:11:02.655385"
+  },
+  "foresight|2026-09-05t21_10_51_666007": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:10:51.666007"
+  },
+  "selfact|2026-09-05t21_10_41_611749": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег не виконав заплановані на 05.09 звички: спрей для волосся, сауна та біг.\",     \"why\": \"З календаря на 05.09 ",
+    "ts": "2026-09-05T21:10:41.611749"
+  },
+  "foresight|2026-09-05t21_09_19_697656": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-05T21:09:19.697656"
+  },
+  "foresight|2026-09-05t21_09_08_843400": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:09:08.843400"
+  },
+  "foresight|2026-09-05t21_08_01_014768": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-05T21:08:01.014768"
+  },
+  "foresight|2026-09-05t21_07_49_968688": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:07:49.968688"
+  },
+  "action_detect|2026-09-05t21_07_22_671648": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
+    "ts": "2026-09-05T21:07:22.671648"
+  },
+  "foresight|2026-09-05t21_06_44_616473": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T21:06:44.616473"
+  },
   "foresight|2026-09-05t21_06_33_648654": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -228,110 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T20:47:03.684799"
-  },
-  "foresight|2026-09-05t20_45_54_636133": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:45:54.636133"
-  },
-  "foresight|2026-09-05t20_45_43_762049": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:45:43.762049"
-  },
-  "foresight|2026-09-05t20_44_37_312134": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:44:37.312134"
-  },
-  "foresight|2026-09-05t20_44_26_403383": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:44:26.403383"
-  },
-  "foresight|2026-09-05t20_43_14_223333": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:43:14.223333"
-  },
-  "foresight|2026-09-05t20_43_03_136263": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:43:03.136263"
-  },
-  "foresight|2026-09-05t20_41_56_877514": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:41:56.877514"
-  },
-  "foresight|2026-09-05t20_41_45_990804": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:41:45.990804"
-  },
-  "foresight|2026-09-05t20_40_38_048714": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:40:38.048714"
-  },
-  "foresight|2026-09-05t20_40_27_050190": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:40:27.050190"
-  },
-  "foresight|2026-09-05t20_39_21_125878": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:39:21.125878"
-  },
-  "foresight|2026-09-05t20_39_10_178581": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:39:10.178581"
-  },
-  "selfact|2026-09-05t20_39_01_106080": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег зараз на нічній зміні (18:00-06:00) 05.09.2026.\",     \"why\": \"Інформація з календаря на 7 днів: 05.09: 17:00",
-    "ts": "2026-09-05T20:39:01.106080"
-  },
-  "foresight|2026-09-05t20_37_40_408338": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:37:40.408338"
-  },
-  "selfact|2026-09-05t21_10_41_611749": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег не виконав заплановані на 05.09 звички: спрей для волосся, сауна та біг.\",     \"why\": \"З календаря на 05.09 ",
-    "ts": "2026-09-05T21:10:41.611749"
-  },
-  "foresight|2026-09-05t21_09_19_697656": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-05T21:09:19.697656"
-  },
-  "foresight|2026-09-05t21_09_08_843400": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T21:09:08.843400"
-  },
-  "foresight|2026-09-05t21_08_01_014768": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-05T21:08:01.014768"
-  },
-  "foresight|2026-09-05t21_07_49_968688": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T21:07:49.968688"
-  },
-  "action_detect|2026-09-05t21_07_22_671648": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
-    "ts": "2026-09-05T21:07:22.671648"
-  },
-  "foresight|2026-09-05t21_06_44_616473": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:06:44.616473"
   }
 }
