@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T12:03:10.377766",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Biedronka</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Najlepsze okazje tygodnia już od soboty 5.09!»\n\n<i>«Najlepsze okazje tygodnia już od soboty 5.09! \nW promocji m.in. akcesoria kuchenne, akcesoria zasilające, zabawki i wiele innych! \n Zapoznaj się z wersją online newsletter-a https://links.newsletter.biedronka.pl/c/n64/jQ3/PrWGOcWsihP2lXjA8CsjS3/7/DiH-/F/407ad130...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78588"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78588"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78588"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78588"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78588"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78588"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T12:15:56.346956",
       "kind": "chunk",
       "text": "☀️\n<b>ЗВІТ  ·  Сб 05.09  ·  12:15</b>\n🏖 Вихідний\n<i>Денний чекап: тіло, крипто, пошта — і назад до роботи 🔥</i>\n📌 🌙 Нічна зміна (18:00-06:00) +2\n\n⚡ <b>День: ⭐☆☆☆☆ 25/100</b>  ↓5 vs вчора\n\n🌦️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>23°C</b>\n<i>👌 Комфортно — ідеально для прогулянки</i>\n<i>☂️ парасолька</i>\n\n📅 <b>Прогноз сьогодні:</b>\n05:57   🌇 19:09  13:00 ☁️22°🌧69%  │  14:00 🌦21°🌧71%  │  15:00 ☁️21°🌧62%  │  16:00 ☁️22°🌧46%  │  17:00 ☁️22°🌧31%  │  18:00 ☁️22°  09:00 ☀️18°  │  12:00 ☀️21°  │  15:00 ☀️23°  │  18:00 ☀️21°  │  21:00 ☀️18°  13:00 (69%)\n\n<b>Завтра:</b>  ☀️ Ясно  🔻16°  /  🔺23°\n<code>09:00</code> ☀️18°  │  <code>12:00</code> ☀️21°  │  <code>15:00</code> ☀️23°  │  <code>18:00</code> ☀️21°  │  <code>21:00</code> ☀️18°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n  • 🚧 Перекрито — Baštová\n  • 🚧 Перекрито — Svornosti\n\n💰\n<b>КРИПТО  ·  🟡 НЕЙТРАЛЬНИЙ 〰️</b>\n➡️ <b>BTC</b> <code>$79,617.00</code>  -0.01%\n➡️ <b>ETH</b> <code>$2,457.62</code>  -0.03%\n➡️ <b>AVAX</b> <code>$7.50</code>  0.00%\n➡️ <b>ONDO</b> <code>$0.37</code>  +0.03%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🔴 <b>IBIT</b>  <code>$45.23</code>  <i>-2.42% за день</i>\n🔴 <b>ETHA</b>  <code>$18.52</code>  <i>-",
@@ -560,6 +521,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78585"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T12:31:36.109388",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Linux Platform &amp; Blockchain Operations Engineer в Bit</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78583"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78583"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78583"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78583"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78583"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78583"
             }
           ]
         ]
