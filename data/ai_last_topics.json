@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-05t04_52_02_062106": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверніть увагу, що платежі за підписку Runable були невдалими, і",
+    "ts": "2026-09-05T04:52:02.062106"
+  },
   "email_ai_item|2026-09-05t04_44_28_927716": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист містить дайджест нових оголошень про продаж 3-кімнатних квартир у Кошицях, Словаччина, станом на 2026-09-05. Представлено чотир",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "```json [] ```",
     "ts": "2026-09-05T02:54:47.345886"
-  },
-  "action_detect|2026-09-05t02_48_29_709013": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
-    "ts": "2026-09-05T02:48:29.709013"
   }
 }
