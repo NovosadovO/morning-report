@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T09:16:06.951678",
-      "kind": "offer",
-      "text": "💰 ✉️\n📌 <b>Google Cloud Platform &amp; APIs: ми отримали Ваш платіж для дом</b>\n👤 Google Payments &lt;payments-noreply@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78435"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78435"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78435"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78435"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78435"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78435"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T09:16:10.375897",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 34 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '34 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 84.3 кг, ціль 78 кг (тренд +0.3 кг за останні 5 замірів).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 18:00 🌙 Нічна зміна (18:00-06:00)",
@@ -615,6 +576,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78578"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T09:46:06.408118",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 4th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78565"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78565"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78565"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78565"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78565"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78565"
             }
           ]
         ]
