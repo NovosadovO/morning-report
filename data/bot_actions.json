@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Новини про AI",
-      "detail": "У свіжих листах є два повідомлення, що стосуються AI: 'Linas from Linas's Newsletter <linas@substack.com> | The Ultimate Guide to Grok Bot: The First Real AI Agent OS 🤖' та 'Generative AI <newsletter@genai.works> | 🤖 USA launches ChatGPT Military'. Також, у нотатках про Олега є запис про його інтере",
-      "module": "selfact",
-      "ts": "2026-09-01T12:42:01"
-    },
-    {
       "kind": "note",
       "what": "Олег продовжує отримувати сповіщення про вакансії Service Di",
       "detail": "Зі свіжих листів видно, що Олег отримує сповіщення про вакансії в SAP Košice та Eccleston Park Capital Vienna, що доповнює його відомі інтереси щодо пошуку роботи.",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 06.09 є дві події: '15:30 Miriam, Classic strih, Staré Mesto 463, 040 01 Košice' та '17:00 🔔 🧳 Зібрати речі: Málaga'.",
       "module": "selfact",
       "ts": "2026-09-05T02:46:29"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на нові 3-кімнатні квартири у Кошице (137",
+      "detail": "Олег отримував листи від Oleg Novosadov <novosadovoleg@gmail.com> та <oleg.novosadov@minebeamitsumi.eu> з новими оголошеннями про квартири, що свідчить про його інтерес до цієї теми.",
+      "module": "selfact",
+      "ts": "2026-09-05T03:02:12"
     }
   ]
 }
