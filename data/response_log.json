@@ -10796,6 +10796,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "gx_later_afe94f13e5"
+    },
+    {
+      "ts": "2026-09-05T04:30:15.488429+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові квартири у Кошице",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-05"
+      }
     }
   ]
 }
