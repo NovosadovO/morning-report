@@ -90,7 +90,7 @@
     },
     "assistant": {
       "checked": 15,
-      "issues": 5,
+      "issues": 6,
       "fixed": 3
     },
     "proactive_ai": {
@@ -139,7 +139,7 @@
       "fixed": 2
     },
     "EVENING_AI": {
-      "checked": 7,
+      "checked": 8,
       "issues": 1,
       "fixed": 1
     },
@@ -405,8 +405,8 @@
     "cut": 11
   },
   "2026-09-05": {
-    "checked": 74,
-    "issues": 54,
+    "checked": 75,
+    "issues": 55,
     "fixed": 19,
     "cut": 11
   }
