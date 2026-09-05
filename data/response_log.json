@@ -10728,6 +10728,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_fa811ee17b"
+    },
+    {
+      "ts": "2026-09-05T03:00:17.937299+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Переглянути нові оголошення квартир",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-09-05"
+      }
     }
   ]
 }
