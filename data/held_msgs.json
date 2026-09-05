@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T14:46:10.106735",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>General Manager Advanced Trading (Fusion) в Bitpanda</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78589"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78589"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78589"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78589"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78589"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78589"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T14:46:11.275032",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Anthropic Moves AI Agents Into the Physical World</b>\n👤 AI NOW &amp; BEYOND через LinkedIn&lt;newsletters-noreply",
@@ -517,6 +478,45 @@
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 1€ Svet\n📝 (AI-аналіз тимчасово недоступний)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T15:03:35.216822",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleh Bezuhlyi через LinkedIn</b>\n📋 Тема: «📰 Daily Crypto Digest — September 5»\n\n<i>«Daily Crypto Digest\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/daily-crypto-digest-september-5-oleh-bezuhlyi-no3rf?lipi=urn%3Ali%3Apage%3Aemail_email...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78595"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78595"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78595"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78595"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78595"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78595"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
