@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег продовжує отримувати сповіщення про вакансії Service Di",
-      "detail": "Зі свіжих листів видно, що Олег отримує сповіщення про вакансії в SAP Košice та Eccleston Park Capital Vienna, що доповнює його відомі інтереси щодо пошуку роботи.",
-      "module": "selfact",
-      "ts": "2026-09-01T12:57:06"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав детальні інформації щодо поїздки в Малагу від M",
       "detail": "З листа від Maroš Sivák <maros.sivak.sro@gmail.com> | InterFin Malaga trip - detailné informácie",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримував листи від Oleg Novosadov <novosadovoleg@gmail.com> та <oleg.novosadov@minebeamitsumi.eu> з новими оголошеннями про квартири, що свідчить про його інтерес до цієї теми.",
       "module": "selfact",
       "ts": "2026-09-05T03:02:12"
+    },
+    {
+      "kind": "notify",
+      "what": "Нові квартири у Кошице",
+      "detail": "Олег отримав лист від Oleg Novosadov <novosadovoleg@gmail.com> з темою '🏠 Нові квартири у Кошіці — 137 нових оголошень', що містить список нових оголошень про квартири. Це важлива інформація, яку він міг пропустити, особливо враховуючи його нічну зміну.",
+      "module": "selfact",
+      "ts": "2026-09-05T03:18:04"
     }
   ]
 }
