@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T15:31:08.098910",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Project Management Officer (Junior) – Remote в NATEK</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78593"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78593"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78593"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78593"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78593"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78593"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T15:31:09.243787",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Important: We will soon be deleting your inactive BKK accoun</b>\n👤 \"Budapesti Közlekedési Központ\" &lt;noreplybpgo@bkk.h",
@@ -511,6 +472,12 @@
       "ts": "2026-09-05T15:46:43.524166",
       "kind": "calendar",
       "text": "📅 <b>Завтра у тебе</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Miriam, Classic strih, Staré Mesto 463, 040 01 Košice</b>\n📅 06.09 (Sun) — завтра\n🕐 16:30–17:00\n📍 Staré Mesto 463, 040 01 Košice\n\n<i>Сьогодні ще є час підготуватись — документи, дорога, час виїзду.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T15:46:44.118763",
+      "kind": "calendar",
+      "text": "📅 Завтра у тебе\n━━━━━━━━━━━━━━━━━━━━\n📌 Miriam, Classic strih, Staré Mesto 463, 040 01 Košice\n📅 06.09 (Sun) — завтра\n🕐 16:30–17:00\n📍 Staré Mesto 463, 040 01 Košice\n\nСьогодні ще є час підготуватись — документи, дорога, час виїзду.",
       "keyboard": null
     }
   ]
