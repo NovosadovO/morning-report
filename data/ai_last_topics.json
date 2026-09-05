@@ -1,4 +1,89 @@
 {
+  "day_mode|2026-09-05t15_56_31_211541": {
+    "topic": "day_mode",
+    "gist": "```json {   \"text\": \"Привіт, Олеже! 👋 Бачу, сьогодні твій стан «Норма» 😐 – це чудово, адже є енергія для звичайного плану дня і ще й на корисну дію! \\n\\nСьогодн",
+    "ts": "2026-09-05T15:56:31.211541"
+  },
+  "foresight|2026-09-05t15_56_02_083542": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Іспанія\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-05T15:56:02.083542"
+  },
+  "foresight|2026-09-05t15_55_51_148491": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T15:55:51.148491"
+  },
+  "selfact|2026-09-05t15_55_36_564981": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег прокинувся сьогодні, 05.09.2026, о 15:52.\",     \"why\": \"З даних 'ПАМ'ЯТЬ ПРО ОЛЕГА' видно, що Олег виконав к",
+    "ts": "2026-09-05T15:55:36.564981"
+  },
+  "action_detect|2026-09-05t15_55_19_347579": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
+    "ts": "2026-09-05T15:55:19.347579"
+  },
+  "email_describe_truthfix|2026-09-05t15_55_09_244564": {
+    "topic": "email_describe/truthfix",
+    "gist": "Олеже, зараз 15:55 суботи, 5 вересня 2026 року.  Твоя бездіяльність щодо прострочених підписок Strava вже коштує тобі доступу до свіжих даних про активність, що",
+    "ts": "2026-09-05T15:55:09.244564"
+  },
+  "action_detect|2026-09-05t15_55_08_412962": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
+    "ts": "2026-09-05T15:55:08.412962"
+  },
+  "action_detect|2026-09-05t15_55_08_294223": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-05T15:55:08.294223"
+  },
+  "email_describe|2026-09-05t15_54_59_557943": {
+    "topic": "email_describe",
+    "gist": "ВІДПРАВНИК Цей лист від CryptoBeholder.com, який розсилає щоденний дайджест новин зі світу криптовалют через платформу LinkedIn, використовуючи алгоритми штучно",
+    "ts": "2026-09-05T15:54:59.557943"
+  },
+  "action_detect|2026-09-05t15_54_45_572070": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
+    "ts": "2026-09-05T15:54:45.572070"
+  },
+  "action_detect|2026-09-05t15_54_34_548918": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
+    "ts": "2026-09-05T15:54:34.548918"
+  },
+  "foresight|2026-09-05t15_54_23_232033": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T15:54:23.232033"
+  },
+  "foresight|2026-09-05t15_54_12_222526": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T15:54:12.222526"
+  },
+  "calendar_truthfix|2026-09-05t15_53_15_895157": {
+    "topic": "calendar/truthfix",
+    "gist": "Олеже, зараз субота, 5 вересня 2026 року, 15:53. Ти щойно прийняв до відома повідомлення про стрижку перед відпусткою, але дані про саму стрижку, її час та місц",
+    "ts": "2026-09-05T15:53:15.895157"
+  },
+  "calendar|2026-09-05t15_53_04_371617": {
+    "topic": "calendar",
+    "gist": "Олеже, завтра у тебе стрижка \"Класичний стиль\" у Міріам о 16:30. Це чудовий спосіб освіжитися перед поїздкою до Малаги, тим паче, що завтра в тебе вільний день ",
+    "ts": "2026-09-05T15:53:04.371617"
+  },
+  "foresight|2026-09-05t15_52_52_290575": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T15:52:52.290575"
+  },
+  "foresight|2026-09-05t15_52_41_171006": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T15:52:41.171006"
+  },
   "action_detect|2026-09-05t15_52_30_390718": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
@@ -213,90 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-05T07:58:45.945159"
-  },
-  "foresight|2026-09-05t07_57_37_914282": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:57:37.914282"
-  },
-  "foresight|2026-09-05t07_57_26_939779": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-05T07:57:26.939779"
-  },
-  "foresight|2026-09-05t07_56_21_335848": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:56:21.335848"
-  },
-  "foresight|2026-09-05t07_56_10_363239": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-05T07:56:10.363239"
-  },
-  "foresight|2026-09-05t07_55_04_449567": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:55:04.449567"
-  },
-  "foresight|2026-09-05t07_54_53_604821": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T07:54:53.604821"
-  },
-  "foresight|2026-09-05t07_53_42_337387": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:53:42.337387"
-  },
-  "foresight|2026-09-05t07_53_31_340196": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-05T07:53:31.340196"
-  },
-  "foresight|2026-09-05t07_52_23_134095": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:52:23.134095"
-  },
-  "foresight|2026-09-05t07_52_12_049175": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-05T07:52:12.049175"
-  },
-  "foresight|2026-09-05t07_51_06_629368": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:51:06.629368"
-  },
-  "foresight|2026-09-05t07_50_55_481672": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-05T07:50:55.481672"
-  },
-  "foresight|2026-09-05t07_49_50_076256": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:49:50.076256"
-  },
-  "foresight|2026-09-05t07_49_39_084566": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-05T07:49:39.084566"
-  },
-  "foresight|2026-09-05t07_48_27_521267": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:48:27.521267"
-  },
-  "foresight|2026-09-05t07_48_16_530429": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-05T07:48:16.530429"
-  },
-  "foresight|2026-09-05t07_47_09_129591": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:47:09.129591"
   }
 }
