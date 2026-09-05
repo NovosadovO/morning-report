@@ -7671,5 +7671,31 @@
       "start": "2026-09-07T13:00:00"
     },
     "ts": "2026-09-05T20:35:53.886712+00:00"
+  },
+  "67096f6c5b": {
+    "key": "cal|дедлайн для команди із західної словаччини interfin discove",
+    "q": "📅 Хочу записати в календар:\n\n« ⏳ Дедлайн для команди із Західної Словаччини (InterFin Discovery Day) »\n🕐 07.09 о 13:30\n\nАвтоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\n13:30 є DEADL\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "⏳ Дедлайн для команди із Західної Словаччини (InterFin Discovery Day)",
+      "desc": "Автоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\n13:30 є DEADL",
+      "minutes": 60,
+      "start": "2026-09-07T13:30:00"
+    },
+    "ts": "2026-09-05T20:35:57.762075+00:00"
   }
 }
