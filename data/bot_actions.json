@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав сповіщення про вакансії Sales Manager в E-hygie",
-      "detail": "У свіжих листах є два сповіщення від LinkedIn про вакансії: 'Sales Manager (B2B/HoReCa/FMSG) в E-hygiena s. r. o.' та 'Associate в Eccleston Park Capital'.",
-      "module": "selfact",
-      "ts": "2026-09-01T14:14:19"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав підтвердження бронювання August Villa Málaga -",
       "detail": "У свіжих листах є лист від 'no-reply@chekin.com' з темою 'Your reservation contract - August Villa Málaga - Villa', який підтверджує бронювання.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег зараз на нічній зміні, яка закінчується о 06:00. Він приймає Armolopid Plus після зміни перед сном. Зараз 06:58, отже зміна вже закінчилася, і йому потрібно прийняти ліки.",
       "module": "selfact",
       "ts": "2026-09-05T06:58:08"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-09-05T07:00:40"
     }
   ]
 }
