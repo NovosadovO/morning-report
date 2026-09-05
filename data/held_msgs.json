@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T09:01:51.969950",
-      "kind": "chunk",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 25 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 4 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 28 нових оголошень (Уточнення)\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 The Daily Degen\n📋 The Daily Degen - September 4th, 2026\n📝 (AI-аналіз тимчасово недоступний)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-05T09:10:12.655065",
       "kind": "chunk",
       "text": "💹 <b>КРИПТО ДАШБОРД</b> · 09-05\n\n🔴 <b>BTC</b>  <b>$79,696.00</b>\n   24г: -1.49%  7д: +2.6%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>ETH</b>  <b>$2,454.38</b>\n   24г: -2.37%  7д: +0.6%\n   <code>[🔴🔴⬜⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>BNB</b>  <b>$727.08</b>\n   24г: +0.80%  7д: +5.3%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>XRP</b>  <b>$1.40</b>\n   24г: -3.17%  7д: +1.1%\n   <code>[🔴⬜⬜⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>SOL</b>  <b>$102.39</b>\n   24г: -1.53%  7д: -1.6%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>DOGE</b>  <b>$0.09</b>\n   24г: -1.74%  7д: +0.6%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>ADA</b>  <b>$0.21</b>\n   24г: -3.95%  7д: +5.9%\n   <code>[🔴⬜⬜⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>TRX</b>  <b>$0.33</b>\n   24г: +1.48%  7д: -2.0%\n   <code>[🟢🟢🟢🟢🟢🟢⬜⬜⬜⬜]</code>\n\n🔴 <b>LINK</b>  <b>$11.73</b>\n   24г: -1.86%  7д: +3.1%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>AVAX</b>  <b>$7.46</b>\n   24г: -0.38%  7д: +2.0%\n   <code>[🔴🔴🔴🔴⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>TON</b>  <b>$1.42</b>\n   24г: +3.86%  7д: +4.2%\n   <code>[🟢🟢🟢🟢🟢🟢🟢🟢⬜⬜]</code>\n\n🔴 <b>XLM</b>  <b>$0.18</b>\n   24г: -0.24%  7д: +2.7%\n   <code>[🔴🔴🔴🔴⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>HBAR</b>  <b>$0.08</b>\n   24г: +2.54%  7д: +5.9%\n   <code>[🟢🟢🟢🟢🟢🟢🟢⬜⬜⬜]</code>\n\n🟢 <b>SUI</b>  <b>$0.78</b>\n   24г: +1.34%  7д: +5.1%\n   <code>[🟢🟢🟢🟢🟢🟢⬜",
@@ -611,6 +605,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78516"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T09:31:43.929605",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>Google Cloud Platform &amp; APIs: ми отримали Ваш платіж для дом</b>\n👤 Google Payments &lt;payments-noreply@google.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78435"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78435"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78435"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78435"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78435"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78435"
             }
           ]
         ]
