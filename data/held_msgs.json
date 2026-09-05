@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T11:01:42.731270",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Technical Operations Specialist (f/m/d) - ID:2724327 в Prewa</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78579"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78579"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78579"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78579"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78579"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78579"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T11:01:44.021817",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 28 нових оголошень (Уточнення)</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -636,6 +597,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78581"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T11:31:31.250650",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 4 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78580"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78580"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78580"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78580"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78580"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78580"
             }
           ]
         ]
