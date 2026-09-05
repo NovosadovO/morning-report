@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T12:31:38.737825",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 4 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78580"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78580"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78580"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78580"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78580"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78580"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T12:31:41.906158",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 34 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '34 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 84.3 кг, ціль 78 кг (тренд +0.3 кг за останні 5 замірів).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 18:00 🌙 Нічна зміна (18:00-06:00)",
@@ -612,6 +573,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78583"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T13:01:28.025438",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 25 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78581"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78581"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78581"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78581"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78581"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78581"
             }
           ]
         ]
