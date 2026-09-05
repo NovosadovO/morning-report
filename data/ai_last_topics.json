@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-06t01_22_57_032740": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: Google Cloud Billing Alert повідомляє, що твій бюджет на €16.00 вичерпано на 50% станом на ",
+    "ts": "2026-09-06T01:22:57.032740"
+  },
+  "mailcal_extract|2026-09-06t01_10_21_108131": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"78607\",     \"title\": \"Відліт до Малаги (InterFin Discovery Day)\",     \"date\": \"2026-09-07\",     \"time\": \"16:05\",     \"kind\": \"flight\",",
+    "ts": "2026-09-06T01:10:21.108131"
+  },
   "selfact|2026-09-06t01_06_59_088913": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Увага: Google Cloud Billing\",     \"text\": \"Олег, зверни увагу: твій Google Cloud Billing досяг 50% бюджету (€1",
@@ -288,15 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T23:58:13.334629"
-  },
-  "foresight|2026-09-05t23_58_02_247360": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:58:02.247360"
-  },
-  "foresight|2026-09-05t23_56_57_487504": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:56:57.487504"
   }
 }
