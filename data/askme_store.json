@@ -7359,5 +7359,31 @@
       "start": "2026-09-07T06:00:00"
     },
     "ts": "2026-09-05T19:04:51.098790+00:00"
+  },
+  "6768b763ae": {
+    "key": "cal|відправлення автомобілів з пряшева до братислави",
+    "q": "📅 Хочу записати в календар:\n\n« 📌 Відправлення автомобілів з Пряшева до Братислави »\n🕐 07.09 о 06:30\n\nАвтоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nNajneskôr o 6:30 odchádzame dvoma autami smer\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "📌 Відправлення автомобілів з Пряшева до Братислави",
+      "desc": "Автоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nNajneskôr o 6:30 odchádzame dvoma autami smer Bratislava.",
+      "minutes": 60,
+      "start": "2026-09-07T06:30:00"
+    },
+    "ts": "2026-09-05T19:04:54.173204+00:00"
   }
 }
