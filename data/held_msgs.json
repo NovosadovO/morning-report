@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T14:16:19.808175",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>1€ Svet</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78591"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78591"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78591"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78591"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78591"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78591"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T14:16:21.107672",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Should you take creatine?</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
@@ -582,6 +543,12 @@
       "ts": "2026-09-05T14:35:39.914135",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T14:35:40.744623",
+      "kind": "day_mode",
+      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
