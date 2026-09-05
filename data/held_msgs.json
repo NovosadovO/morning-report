@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T11:45:56.162677",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Linux Platform &amp; Blockchain Operations Engineer в Bit</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78583"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78583"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78583"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78583"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78583"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78583"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T11:45:57.494146",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 25 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -640,6 +601,45 @@
       "kind": "chunk",
       "text": "🔮🤖 <b>АСТРО-АНАЛІЗ ВСІ АСПЕКТИ</b>\n\n🌙 <b>ТРАНЗИТИ СЬОГОДНІ</b> (AI тимчасово перевантажена, без інтерпретації)\n🔮 АСТРО — транзити до натальних планет\n🌗 Остання чверть  ·  Місяць у Близнюки ♊\n💬 Активна комунікація, навчання, ідеї\n\n🌟 ♃ Юпітер у знаку твого Асценденту (Лев ♌) — у цьому знаку з 01.07.2026 — уже 2 міс. (66 дн.). Рідкісний транзит: особистість, зовнішній вигляд, новий цикл.\n\n🟡 ♄ Сатурн Квінконкс ⚻ натальний ♇ Плутон  (0.0°)\n🔴 🌙 Місяць Кон'юнкція ☌ натальний 🌙 Місяць  (0.1°)\n    ↳ Емоційний резонанс — дуже чутливий день. Слухай себе.\n🟢 ☀️ Сонце Секстиль ⚹ натальний ♇ Плутон  (0.5°)\n    ↳ Поступова трансформація сили і характеру.\n🟢 ♀ Венера Трин △ натальний 🌙 Місяць  (0.6°)\n    ↳ Тепло у стосунках. Добрий час для зближення.\n🟢 ⛢ Уран Трин △ натальний ☿ Меркурій  (0.6°)\n    ↳ Блискучі ідеї і інсайти. Записуй все що приходить!\n🔴 ♃ Юпітер Квадрат □ натальний ♇ Плутон  (1.2°)\n    ↳ Боротьба за \n\n📌 Нічна зміна щойно закінчилась (18:00–06:00), Олег вдома відпочиває.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T12:03:10.377766",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Biedronka</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Najlepsze okazje tygodnia już od soboty 5.09!»\n\n<i>«Najlepsze okazje tygodnia już od soboty 5.09! \nW promocji m.in. akcesoria kuchenne, akcesoria zasilające, zabawki i wiele innych! \n Zapoznaj się z wersją online newsletter-a https://links.newsletter.biedronka.pl/c/n64/jQ3/PrWGOcWsihP2lXjA8CsjS3/7/DiH-/F/407ad130...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78588"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78588"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78588"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78588"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78588"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78588"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
