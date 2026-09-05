@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-05t03_33_34_324019": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Armolopid Plus\",     \"text\": \"Олег, не забудь прийняти Armolopid Plus після закінчення нічної зміни перед сн",
+    "ts": "2026-09-05T03:33:34.324019"
+  },
   "bills|2026-09-05t03_23_01_063844": {
     "topic": "bills",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"text\": \"Олеже, твоя нічна зміна закінчується о 06:00. Не забудь прийняти Armo",
     "ts": "2026-09-05T01:28:10.465791"
-  },
-  "openloop_promises|2026-09-05t01_23_52_046777": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-09-05T01:23:52.046777"
   }
 }
