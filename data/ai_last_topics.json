@@ -1,4 +1,34 @@
 {
+  "foresight|2026-09-05t19_39_51_345309": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T19:39:51.345309"
+  },
+  "foresight|2026-09-05t19_38_45_096934": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T19:38:45.096934"
+  },
+  "foresight|2026-09-05t19_38_34_118351": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T19:38:34.118351"
+  },
+  "foresight|2026-09-05t19_37_21_141001": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T19:37:21.141001"
+  },
+  "foresight|2026-09-05t19_37_10_018478": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T19:37:10.018478"
+  },
+  "selfact|2026-09-05t19_37_00_498920": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що тобі потрібно зібрати речі для поїздки в Малагу до 17:00 завтра, 6 вересня. Відпустка починає",
+    "ts": "2026-09-05T19:37:00.498920"
+  },
   "foresight|2026-09-05t19_35_37_332104": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
@@ -268,35 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T19:03:19.709195"
-  },
-  "foresight|2026-09-05t19_03_08_666661": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T19:03:08.666661"
-  },
-  "action_detect|2026-09-05t19_02_38_461191": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути підписки\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після закінчення зміни переглян",
-    "ts": "2026-09-05T19:02:38.461191"
-  },
-  "action_detect|2026-09-05t19_02_26_143776": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти Armolo",
-    "ts": "2026-09-05T19:02:26.143776"
-  },
-  "action_detect|2026-09-05t19_02_26_090565": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-05\", \"action_time\": \"18:00\", \"action_summary\": \"Нічна зміна з 18:00 до 06:00.",
-    "ts": "2026-09-05T19:02:26.090565"
-  },
-  "action_detect|2026-09-05t19_02_15_178039": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-09-05T19:02:15.178039"
-  },
-  "briefing|2026-09-05t19_02_10_910783": {
-    "topic": "briefing",
-    "gist": "На нічній зміні, о 19:01, ти вже у вирі робочого процесу, Олеже. Важливо бачити цю ніч не як паузу, а як можливість для внутрішньої стратегії.  🧭 ВЕКТОР ДНЯ Зар",
-    "ts": "2026-09-05T19:02:10.910783"
   }
 }
