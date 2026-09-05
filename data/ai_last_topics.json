@@ -1,4 +1,54 @@
 {
+  "foresight|2026-09-06t01_47_23_564911": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-06T01:47:23.564911"
+  },
+  "foresight|2026-09-06t01_47_12_553323": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T01:47:12.553323"
+  },
+  "foresight|2026-09-06t01_46_07_016403": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T01:46:07.016403"
+  },
+  "foresight|2026-09-06t01_45_56_201603": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T01:45:56.201603"
+  },
+  "foresight|2026-09-06t01_44_40_751737": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-06T01:44:40.751737"
+  },
+  "foresight|2026-09-06t01_44_29_914742": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T01:44:29.914742"
+  },
+  "msg_rwa_truthfix|2026-09-06t01_44_26_314737": {
+    "topic": "MSG_RWA/truthfix",
+    "gist": "Олеже, зараз глибока ніч, 01:44, і хоча дані по сектору RWA, які я маю, не є свіжими, вони все ж вказують на значну турбулентність. Згідно з даними, які були ак",
+    "ts": "2026-09-06T01:44:26.314737"
+  },
+  "msg_rwa|2026-09-06t01_44_12_259088": {
+    "topic": "MSG_RWA",
+    "gist": "Сектор RWA сьогодні пережив значне потрясіння, Олеже. За останні 24 години загальна капіталізація RWA-активів впала на приголомшливі 32.1%, досягнувши $47.85B. ",
+    "ts": "2026-09-06T01:44:12.259088"
+  },
+  "people|2026-09-06t01_43_40_507249": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"gabrielova.renata@gmail.com\",     \"name\": \"Renáta Gabrielová\",     \"relation\": \"інше\",     \"topics\": [       \"InterFin Discovery Day",
+    "ts": "2026-09-06T01:43:40.507249"
+  },
+  "foresight|2026-09-06t01_43_24_244558": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-06T01:43:24.244558"
+  },
   "foresight|2026-09-06t01_43_13_151787": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -248,55 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-06T00:18:49.464829"
-  },
-  "msg_rwa|2026-09-06t00_13_51_571287": {
-    "topic": "MSG_RWA",
-    "gist": "Сьогодні, 6 вересня 2026 року, о 00:13, у секторі RWA помітна аномалія: токенізований фонд FIGR_HELOC, який зазвичай стабільний, втратив -3.24686% за останні 24",
-    "ts": "2026-09-06T00:13:51.571287"
-  },
-  "action_detect|2026-09-06t00_04_01_911083": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Стрижка\", \"action_date\": null, \"action_time\": \"15:30\", \"action_summary\": \"Використати час після нічної змін",
-    "ts": "2026-09-06T00:04:01.911083"
-  },
-  "selfact|2026-09-06t00_03_55_907559": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні, 6 вересня, у тебе заплановані звички на 18:10: спрей для волосся, сауна, біг, вода ",
-    "ts": "2026-09-06T00:03:55.907559"
-  },
-  "action_detect|2026-09-06t00_03_50_903495": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-09-06T00:03:50.903495"
-  },
-  "action_detect|2026-09-06t00_03_50_887856": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-06T00:03:50.887856"
-  },
-  "openloop_promises|2026-09-06t00_03_41_701912": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-09-06T00:03:41.701912"
-  },
-  "action_detect|2026-09-06t00_03_39_880272": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжну інформацію",
-    "ts": "2026-09-06T00:03:39.880272"
-  },
-  "action_detect|2026-09-06t00_03_28_377874": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зібрати речі: Málaga\", \"action_date\": \"2026-09-06\", \"action_time\": \"18:00\", \"action_summary\": \"Зібрати речі для пої",
-    "ts": "2026-09-06T00:03:28.377874"
-  },
-  "action_detect|2026-09-06t00_03_28_330152": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armolopid",
-    "ts": "2026-09-06T00:03:28.330152"
-  },
-  "action_detect|2026-09-06t00_03_17_418920": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зібрати речі для Малаги\", \"action_date\": \"2023-09-07\", \"action_time\": null, \"action_summary\": \"Зібрати речі для пої",
-    "ts": "2026-09-06T00:03:17.418920"
   }
 }
