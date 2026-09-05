@@ -10829,6 +10829,12 @@
       "category": "confirm",
       "question": "gate_email_cal: 📌 1€ Svet",
       "answer": "no"
+    },
+    {
+      "ts": "2026-09-05T15:54:45.979648+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_n_529b641aeb"
     }
   ]
 }
