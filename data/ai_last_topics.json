@@ -1,4 +1,44 @@
 {
+  "foresight|2026-09-05t16_51_53_397284": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T16:51:53.397284"
+  },
+  "foresight|2026-09-05t16_51_42_429946": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T16:51:42.429946"
+  },
+  "foresight|2026-09-05t16_50_35_883449": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T16:50:35.883449"
+  },
+  "foresight|2026-09-05t16_50_24_839516": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T16:50:24.839516"
+  },
+  "action_detect|2026-09-05t16_49_18_763689": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
+    "ts": "2026-09-05T16:49:18.763689"
+  },
+  "foresight|2026-09-05t16_49_18_279615": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T16:49:18.279615"
+  },
+  "foresight|2026-09-05t16_49_07_432796": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T16:49:07.432796"
+  },
+  "foresight|2026-09-05t16_47_55_687647": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T16:47:55.687647"
+  },
   "foresight|2026-09-05t16_47_44_686366": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -258,45 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T16:20:09.277470"
-  },
-  "foresight|2026-09-05t16_19_58_158293": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:19:58.158293"
-  },
-  "email_ai_item|2026-09-05t16_18_52_872554": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист є розсилкою від Investing.com і містить заголовок 'Read the yield move again, Oleg'. Основний зміст листа — це технічна інформ",
-    "ts": "2026-09-05T16:18:52.872554"
-  },
-  "foresight|2026-09-05t16_18_51_847047": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-05T16:18:51.847047"
-  },
-  "foresight|2026-09-05t16_18_40_899301": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:18:40.899301"
-  },
-  "foresight|2026-09-05t16_17_34_913509": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-05T16:17:34.913509"
-  },
-  "foresight|2026-09-05t16_17_24_062609": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:17:24.062609"
-  },
-  "foresight|2026-09-05t16_16_16_194201": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:16:16.194201"
-  },
-  "foresight|2026-09-05t16_16_05_191886": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:16:05.191886"
   }
 }
