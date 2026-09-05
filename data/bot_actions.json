@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримав щотижневий звіт про прогрес від Google Health,",
-      "detail": "Свіжий лист від Google Health <google-health-noreply@google.com> містить деталі про зниження показників активності.",
-      "module": "selfact",
-      "ts": "2026-09-02T19:23:59"
-    },
-    {
       "kind": "reminder",
       "what": "Стрижка у Міріам",
       "detail": "У календарі на 06.09 є подія '15:30 Miriam, Classic strih, Staré Mesto 463, 040 01 Košice'.",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 7 днів є події на 06.09: '15:30 Miriam, Classic strih, Staré Mesto 463, 040 01 Košice' та '17:00 🔔 🧳 Зібрати речі: Málaga'.",
       "module": "selfact",
       "ts": "2026-09-05T23:48:55"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-09-05",
+      "detail": "автосинк з годинника: hr_avg, distance_km, stress",
+      "module": "qwsync",
+      "ts": "2026-09-05T23:52:04"
     }
   ]
 }
