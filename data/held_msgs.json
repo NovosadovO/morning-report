@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T15:31:10.404919",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>1€ Svet</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78591"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78591"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78591"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78591"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78591"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78591"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T15:31:11.596767",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Should you take creatine?</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
@@ -445,6 +406,12 @@
       "ts": "2026-09-05T15:47:45.059059",
       "kind": "calendar",
       "text": "📅 <b>Завтра у тебе</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Miriam, Classic strih, Staré Mesto 463, 040 01 Košice</b>\n📅 06.09 (Sun) — завтра\n🕐 16:30–17:00\n📍 Staré Mesto 463, 040 01 Košice\n\n<i>Сьогодні ще є час підготуватись — документи, дорога, час виїзду.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T15:47:45.722795",
+      "kind": "calendar",
+      "text": "📅 Завтра у тебе\n━━━━━━━━━━━━━━━━━━━━\n📌 Miriam, Classic strih, Staré Mesto 463, 040 01 Košice\n📅 06.09 (Sun) — завтра\n🕐 16:30–17:00\n📍 Staré Mesto 463, 040 01 Košice\n\nСьогодні ще є час підготуватись — документи, дорога, час виїзду.",
       "keyboard": null
     }
   ]
