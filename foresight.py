@@ -12,7 +12,7 @@
     дія виконується тільки після натискання кнопки.
 
 Дедуп: кожна тема брифиться один раз (ключ у foresight_state.json).
-Частота: не частіше ніж раз на 150 хв, і лише коли реально є що сказати.
+Частота: не частіше ніж раз на 45 хв, і лише коли реально є що сказати.
 """
 
 from datetime import datetime, timedelta
@@ -22,7 +22,7 @@ import ai_kit as K
 TAG = "foresight"
 STATE = "foresight_state.json"
 RATE = "foresight_rate.json"
-MIN_GAP_MIN = 150
+MIN_GAP_MIN = 45
 
 # Скільки днів наперед дивимось
 TRIP_HORIZON = 21
@@ -575,6 +575,7 @@ def tick(force: bool = False) -> str:
     """Один прохід. Повертає що саме надіслано ('' — нічого)."""
     if not force and not K.rate_ok(RATE, MIN_GAP_MIN):
         return ""
+    sent = []
     for fn in (_trip_brief, _shift_brief, _mail_brief):
         try:
             done = fn()
@@ -582,13 +583,17 @@ def tick(force: bool = False) -> str:
             _log(fn.__name__ + " error: " + str(e))
             done = ""
         if done:
-            try:
-                K.rate_mark(RATE)
-            except Exception:
-                pass
+            sent.append(done)
             _log("надіслано → " + done)
-            return done
-    return ""
+            # За один прохід — максимум дві теми: ініціативи більше, спаму ні.
+            if len(sent) >= 2:
+                break
+    if sent:
+        try:
+            K.rate_mark(RATE)
+        except Exception:
+            pass
+    return ", ".join(sent)
 
 
 def report(limit: int = 12) -> str:

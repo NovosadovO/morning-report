@@ -491,7 +491,7 @@ def _counted_today() -> list:
 
 def digest(force: bool = False) -> str:
     """Міні-звіт: що бот зробив САМ за день. '' якщо нічого і не час."""
-    if not force and not K.rate_ok(DIGEST_FILE, 60 * 20):
+    if not force and not K.rate_ok(DIGEST_FILE, 60 * 6):
         return ""
     acts = _today_actions()
     counted = _counted_today()

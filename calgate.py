@@ -56,7 +56,7 @@ def _take_allow() -> bool:
 
 
 ASK_STATE = "writegate_asks.json"
-_MAX_ASK_PER_DAY = 8
+_MAX_ASK_PER_DAY = 16
 
 
 def _ask_budget_ok() -> bool:
