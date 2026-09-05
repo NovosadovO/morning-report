@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-05t21_23_08_219766": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:23:08.219766"
+  },
+  "deadlines|2026-09-05t21_22_59_258968": {
+    "topic": "deadlines",
+    "gist": "```json [   {     \"uid\": \"78607\",     \"kind\": \"other\",     \"title\": \"Відліт до Малаги\",     \"org\": \"InterFin\",     \"deadline\": \"2026-09-07\",     \"action\": \"Бути",
+    "ts": "2026-09-05T21:22:59.258968"
+  },
+  "foresight|2026-09-05t21_21_55_070273": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T21:21:55.070273"
+  },
+  "foresight|2026-09-05t21_21_43_945919": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:21:43.945919"
+  },
+  "mailcal_extract|2026-09-05t21_21_36_169964": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"78607\",     \"title\": \"Відліт до Малаги (InterFin Discovery Day)\",     \"date\": \"2026-09-07\",     \"time\": \"16:05\",     \"kind\": \"flight\",",
+    "ts": "2026-09-05T21:21:36.169964"
+  },
+  "foresight|2026-09-05t21_20_18_718310": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T21:20:18.718310"
+  },
+  "foresight|2026-09-05t21_20_07_723553": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:20:07.723553"
+  },
   "foresight|2026-09-05t21_18_59_985484": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "personal_ai/truthfix",
     "gist": "Олеже, зараз 21:00, ти вже третю годину на нічній зміні, яка триватиме до 06:00. Згідно з останніми даними про здоров'я, які були оновлені 21 годину тому, твій ",
     "ts": "2026-09-05T21:01:06.248885"
-  },
-  "foresight|2026-09-05t21_01_05_101495": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:01:05.101495"
-  },
-  "personal_ai|2026-09-05t21_00_55_137398": {
-    "topic": "personal_ai",
-    "gist": "Олеже, ти вже третю годину на нічній зміні, і хоча питний режим та чай виконані, пробіжки сьогодні ще не було, що може вплинути на концентрацію. З огляду на ста",
-    "ts": "2026-09-05T21:00:55.137398"
-  },
-  "foresight|2026-09-05t21_00_54_467340": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:00:54.467340"
-  },
-  "action_detect|2026-09-05t21_00_51_604445": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-09-05T21:00:51.604445"
-  },
-  "action_detect|2026-09-05t21_00_40_711785": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення надає рекомендації щодо легкого ",
-    "ts": "2026-09-05T21:00:40.711785"
-  },
-  "foresight|2026-09-05t20_59_24_370453": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:59:24.370453"
-  },
-  "foresight|2026-09-05t20_59_13_398495": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:59:13.398495"
   }
 }
