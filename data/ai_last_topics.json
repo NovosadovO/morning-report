@@ -1,4 +1,39 @@
 {
+  "action_detect|2026-09-05t15_52_30_390718": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-05T15:52:30.390718"
+  },
+  "hcoach_truthfix|2026-09-05t08_12_51_823065": {
+    "topic": "hcoach/truthfix",
+    "gist": "Олеже, зараз 08:12 суботи, 5 вересня 2026 року. Ти щойно закінчив нічну зміну, яка тривала до 06:00, і найважливіше зараз — це твій сон і відновлення. Дані про ",
+    "ts": "2026-09-05T08:12:51.823065"
+  },
+  "foresight|2026-09-05t08_12_44_175564": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T08:12:44.175564"
+  },
+  "foresight|2026-09-05t08_12_33_120600": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T08:12:33.120600"
+  },
+  "hcoach|2026-09-05t08_12_32_256395": {
+    "topic": "hcoach",
+    "gist": "Олеже, ти щойно закінчив нічну зміну, яка тривала до 06:00, і зараз, о 08:12, найважливіше – це твій сон і відновлення. Твій останній сон тривав 8.4 години, це ",
+    "ts": "2026-09-05T08:12:32.256395"
+  },
+  "foresight|2026-09-05t08_11_16_377134": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T08:11:16.377134"
+  },
+  "foresight|2026-09-05t08_11_05_434733": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-05T08:11:05.434733"
+  },
   "foresight|2026-09-05t08_09_52_255404": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T07:47:09.129591"
-  },
-  "foresight|2026-09-05t07_46_58_100744": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T07:46:58.100744"
-  },
-  "foresight|2026-09-05t07_45_52_502350": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:45:52.502350"
-  },
-  "foresight|2026-09-05t07_45_41_527649": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-05T07:45:41.527649"
-  },
-  "selfact|2026-09-05t07_45_32_912853": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні о 17:00 у тебе починається нічна зміна (18:00-06:00).\",     \"why\": \"Інформація про н",
-    "ts": "2026-09-05T07:45:32.912853"
-  },
-  "foresight|2026-09-05t07_44_18_572846": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:44:18.572846"
-  },
-  "foresight|2026-09-05t07_44_07_524243": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-05T07:44:07.524243"
-  },
-  "foresight|2026-09-05t07_42_55_971827": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T07:42:55.971827"
   }
 }
