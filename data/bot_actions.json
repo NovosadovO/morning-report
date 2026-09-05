@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав детальні інструкції та підтвердження бронювання",
-      "detail": "Олег отримав листи 'InterFin Malaga trip - detailné informácie' від Maroš Sivák, 'Your reservation contract - August Villa Málaga - Villa' від no-reply@chekin.com та 'Online check-in for a smooth take-off. ATTENTION! Don’t forget – it opens 24 hours before departure. (Y9SB5U)' від letenky@pelikan.sk",
-      "module": "selfact",
-      "ts": "2026-09-01T13:58:15"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав сповіщення про вакансії Sales Manager в E-hygie",
       "detail": "У свіжих листах є два сповіщення від LinkedIn про вакансії: 'Sales Manager (B2B/HoReCa/FMSG) в E-hygiena s. r. o.' та 'Associate в Eccleston Park Capital'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав кілька листів від 'Oleg Novosadov' з великою кількістю нових оголошень про квартири, що може бути для нього важливим, враховуючи, що це повторювані сповіщення.",
       "module": "selfact",
       "ts": "2026-09-05T06:42:36"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, твоя нічна зміна закінчується о 06:00. Вже 06:58. Не з",
+      "detail": "Олег зараз на нічній зміні, яка закінчується о 06:00. Він приймає Armolopid Plus після зміни перед сном. Зараз 06:58, отже зміна вже закінчилася, і йому потрібно прийняти ліки.",
+      "module": "selfact",
+      "ts": "2026-09-05T06:58:08"
     }
   ]
 }
