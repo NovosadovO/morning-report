@@ -1,4 +1,19 @@
 {
+  "mailcal_extract|2026-09-05t05_21_01_169660": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-05T05:21:01.169660"
+  },
+  "calendar_truthfix|2026-09-05t05_08_24_445661": {
+    "topic": "calendar/truthfix",
+    "gist": "Олеже, зараз 05:08, ти на нічній зміні, яка закінчується о 06:00. Дані про твоє здоров'я оновлювалися 29 годин тому, 4 вересня. Вага 83.0 кг залишається стабіль",
+    "ts": "2026-09-05T05:08:24.445661"
+  },
+  "calendar|2026-09-05t05_08_15_645814": {
+    "topic": "calendar",
+    "gist": "Привіт, Олеже! Бачу, що ти зараз на нічній зміні, і це вже друга ніч поспіль, що вимагає значних зусиль від організму. Важливо пам'ятати про фізіологічний вплив",
+    "ts": "2026-09-05T05:08:15.645814"
+  },
   "selfact|2026-09-05t05_07_41_354164": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потрі",
@@ -283,20 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-09-05T03:03:20.693720"
-  },
-  "action_detect|2026-09-05t03_02_58_831835": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopid Plus п",
-    "ts": "2026-09-05T03:02:58.831835"
-  },
-  "action_detect|2026-09-05t03_02_47_842130": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зібрати речі: Málaga\", \"action_date\": \"2026-09-06\", \"action_time\": \"18:00\", \"action_summary\": \"Зібрати речі для пої",
-    "ts": "2026-09-05T03:02:47.842130"
-  },
-  "action_detect|2026-09-05t03_02_47_826004": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийняв Олег Armol",
-    "ts": "2026-09-05T03:02:47.826004"
   }
 }
