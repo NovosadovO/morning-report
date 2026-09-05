@@ -1,4 +1,9 @@
 {
+  "bills|2026-09-06t01_29_51_015014": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-09-06T01:29:51.015014"
+  },
   "selfact|2026-09-06t01_22_57_032740": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: Google Cloud Billing Alert повідомляє, що твій бюджет на €16.00 вичерпано на 50% станом на ",
@@ -293,10 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T23:59:21.009874"
-  },
-  "foresight|2026-09-05t23_58_13_334629": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:58:13.334629"
   }
 }
