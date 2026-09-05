@@ -5036,6 +5036,86 @@
   },
   "2026-08-22": {
     "sleep_quality": "2",
+    "sleep_quality_label": "😐 Нормально",
+    "steps": 21273,
+    "sleep_hours": 5.8,
+    "hr_avg": 89,
+    "hrv": 47,
+    "spo2": 99
+  },
+  "2026-08-24": {
+    "steps": 19356,
+    "weight_kg": 83.0,
+    "hr_avg": 64,
+    "hrv": 46
+  },
+  "2026-08-25": {
+    "steps": 16852,
+    "sleep_hours": 11.7,
+    "weight_kg": 83.0,
+    "hr_avg": 67,
+    "hrv": 41,
+    "spo2": 96
+  },
+  "2026-08-26": {
+    "steps": 6200,
+    "sleep_hours": 7.2,
+    "weight_kg": 83.1,
+    "hr_avg": 72
+  },
+  "2026-08-27": {
+    "steps": 18793,
+    "weight_kg": 83.0,
+    "hr_avg": 58,
+    "hrv": 44,
+    "spo2": 96
+  },
+  "2026-08-28": {
+    "steps": 16079,
+    "weight_kg": 83.0,
+    "hr_avg": 76,
+    "hrv": 32,
+    "spo2": 96
+  },
+  "2026-08-29": {
+    "steps": 11807,
+    "weight_kg": 83.0,
+    "hr_avg": 66,
+    "hrv": 36
+  },
+  "2026-08-31": {
+    "steps": 25460,
+    "sleep_hours": 5.7,
+    "hr_avg": 68,
+    "hrv": 45
+  },
+  "2026-09-01": {
+    "steps": 23449,
+    "sleep_hours": 7.9,
+    "hr_avg": 62,
+    "hrv": 48
+  },
+  "2026-09-02": {
+    "steps": 9637,
+    "hr_avg": 81,
+    "hrv": 47
+  },
+  "2026-09-03": {
+    "steps": 18915,
+    "sleep_hours": 8.4,
+    "weight_kg": 83.0,
+    "hr_avg": 69,
+    "hrv": 35
+  },
+  "2026-09-04": {
+    "steps": 17348,
+    "weight_kg": 83.0,
+    "hr_avg": 63,
+    "hrv": 46,
+    "spo2": 96
+  },
+  "2026-09-05": {
+    "sleep_quality": "2",
     "sleep_quality_label": "😐 Нормально"
   }
 }
