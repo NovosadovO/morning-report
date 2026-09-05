@@ -7203,5 +7203,31 @@
       "start": "2026-09-06T19:00:00"
     },
     "ts": "2026-09-05T03:57:07.742075+00:00"
+  },
+  "515256d633": {
+    "key": "cal|створити recovery kit для socioscom",
+    "q": "📅 Хочу записати в календар:\n\n« ⏳ Створити Recovery Kit для Socios.com »\n🕐 10.09 о 09:00\n\nАвтоматично з листа.\nВід: \"Socios.com\" <news@mail.socios.com>\nТема: Generate your Recovery Kit before 10 Sep\nGenerate your Recovery Kit before 10 Sep\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "⏳ Створити Recovery Kit для Socios.com",
+      "desc": "Автоматично з листа.\nВід: \"Socios.com\" <news@mail.socios.com>\nТема: Generate your Recovery Kit before 10 Sep\nGenerate your Recovery Kit before 10 Sep",
+      "minutes": 60,
+      "start": "2026-09-10T09:00:00"
+    },
+    "ts": "2026-09-05T17:32:19.261245+00:00"
   }
 }
