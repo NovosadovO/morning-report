@@ -7723,5 +7723,31 @@
       "start": "2026-09-11T20:10:00"
     },
     "ts": "2026-09-05T20:36:01.277365+00:00"
+  },
+  "fc8872d5d0": {
+    "key": "cal|приліт до братислави interfin discovery day",
+    "q": "📅 Хочу записати в календар:\n\n« ✈️ Приліт до Братислави (InterFin Discovery Day) »\n🕐 11.09 о 23:35\n\nАвтоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nПланований приліт до Братислави: 23:35\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "✈️ Приліт до Братислави (InterFin Discovery Day)",
+      "desc": "Автоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nПланований приліт до Братислави: 23:35",
+      "minutes": 60,
+      "start": "2026-09-11T23:35:00"
+    },
+    "ts": "2026-09-05T20:36:04.897869+00:00"
   }
 }
