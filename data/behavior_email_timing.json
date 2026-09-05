@@ -1,9 +1,4 @@
 {
-  "78138": {
-    "sender": "invoice+statements+acct_1raxgujk3urplkao@stripe.com",
-    "sender_raw": "Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com>",
-    "seen_ts": "2026-08-27T20:17:29.522641+00:00"
-  },
   "78139": {
     "sender": "ben@startengine.com",
     "sender_raw": "Ben at StartEngine <ben@startengine.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-09-05T13:03:34.417903+00:00"
+  },
+  "78596": {
+    "sender": "newsletter@mail.dailybones.com",
+    "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
+    "seen_ts": "2026-09-05T13:11:52.099814+00:00"
   }
 }
