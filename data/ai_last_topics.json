@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-06t00_18_49_464829": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-06T00:18:49.464829"
+  },
   "msg_rwa|2026-09-06t00_13_51_571287": {
     "topic": "MSG_RWA",
     "gist": "Сьогодні, 6 вересня 2026 року, о 00:13, у секторі RWA помітна аномалія: токенізований фонд FIGR_HELOC, який зазвичай стабільний, втратив -3.24686% за останні 24",
@@ -293,10 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
     "ts": "2026-09-05T23:39:50.783826"
-  },
-  "foresight|2026-09-05t23_39_39_852700": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:39:39.852700"
   }
 }
