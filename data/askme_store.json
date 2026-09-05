@@ -8204,5 +8204,31 @@
       "start": "2026-09-07T13:00:00"
     },
     "ts": "2026-09-06T00:25:12.678637+00:00"
+  },
+  "5af8f55ea4": {
+    "key": "cal|дедлайн для західнословацької частини команди",
+    "q": "📅 Хочу записати в календар:\n\n« ⏳ Дедлайн для західнословацької частини команди »\n🕐 07.09 о 13:30\n\nАвтоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\n13:30 є DEADL\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "⏳ Дедлайн для західнословацької частини команди",
+      "desc": "Автоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\n13:30 є DEADL",
+      "minutes": 60,
+      "start": "2026-09-07T13:30:00"
+    },
+    "ts": "2026-09-06T00:25:16.015682+00:00"
   }
 }
