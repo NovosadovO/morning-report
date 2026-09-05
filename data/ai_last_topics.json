@@ -1,4 +1,34 @@
 {
+  "foresight|2026-09-05t20_57_56_716911": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:57:56.716911"
+  },
+  "foresight|2026-09-05t20_56_48_815634": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:56:48.815634"
+  },
+  "foresight|2026-09-05t20_56_37_787469": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:56:37.787469"
+  },
+  "foresight|2026-09-05t20_55_31_878770": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:55:31.878770"
+  },
+  "foresight|2026-09-05t20_55_20_953199": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:55:20.953199"
+  },
+  "selfact|2026-09-05t20_55_11_301825": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від Maroš Sivák | INTERFIN з темою «Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy ",
+    "ts": "2026-09-05T20:55:11.301825"
+  },
   "foresight|2026-09-05t20_53_51_482101": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
@@ -268,35 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T20:19:27.004694"
-  },
-  "foresight|2026-09-05t20_19_15_988838": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:19:15.988838"
-  },
-  "foresight|2026-09-05t20_17_58_034549": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:17:58.034549"
-  },
-  "foresight|2026-09-05t20_17_47_000070": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:17:47.000070"
-  },
-  "foresight|2026-09-05t20_16_40_241010": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:16:40.241010"
-  },
-  "foresight|2026-09-05t20_16_29_194552": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:16:29.194552"
-  },
-  "email_ai_item|2026-09-05t20_15_17_013342": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про дві нові вакансії, які відповідають налаштуванням Олега: Project Manager у Convatec (Micha",
-    "ts": "2026-09-05T20:15:17.013342"
   }
 }
