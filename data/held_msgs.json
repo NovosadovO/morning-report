@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T15:10:43.262768",
-      "kind": "day_mode",
-      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-05T15:11:52.952429",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Daily Bone</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🐶📰Weekend Update»\n\n<i>«**BTC** $79,709 (0.4%) | **ETH** $2,460 (0.5%) | **SOL** $103 (1.7%)\r\n\r\n———————————————————————————\r\n\r\nWelcome to the Daily Bone Weekend Update where we recap the top stories from the  week. Be sure to check out our daily newsletter to get all of your news hot off the press each and every weekday!...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -442,6 +436,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78596"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T15:31:05.792367",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — September 5</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78595"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78595"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78595"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78595"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78595"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78595"
             }
           ]
         ]
