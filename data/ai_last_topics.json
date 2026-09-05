@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-09-05t03_49_13_372199": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-05T03:49:13.372199"
+  },
   "selfact|2026-09-05t03_33_34_324019": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Armolopid Plus\",     \"text\": \"Олег, не забудь прийняти Armolopid Plus після закінчення нічної зміни перед сн",
@@ -293,10 +298,5 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-05\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
     "ts": "2026-09-05T01:30:08.274850"
-  },
-  "selfact|2026-09-05t01_28_10_465791": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"text\": \"Олеже, твоя нічна зміна закінчується о 06:00. Не забудь прийняти Armo",
-    "ts": "2026-09-05T01:28:10.465791"
   }
 }
