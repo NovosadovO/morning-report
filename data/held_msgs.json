@@ -191,6 +191,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-05T09:01:42.466728",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 4th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78565"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78565"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78565"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78565"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78565"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78565"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
