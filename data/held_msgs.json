@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T13:31:03.574316",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-05T13:31:05.041697",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Should you take creatine?</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
@@ -648,6 +642,12 @@
       "ts": "2026-09-05T13:50:34.007300",
       "kind": "watchdog",
       "text": "👁 <b>Я осліп на частину даних</b>\n\n🔴 <b>strava</b> — функції get_activities немає в monitor.py\n\n<i>Поки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T13:50:34.620370",
+      "kind": "watchdog",
+      "text": "👁 Я осліп на частину даних\n\n🔴 strava — функції get_activities немає в monitor.py\n\nПоки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.",
       "keyboard": null
     }
   ]
