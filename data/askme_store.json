@@ -7437,5 +7437,31 @@
       "start": "2026-09-07T06:00:00"
     },
     "ts": "2026-09-05T19:50:32.974450+00:00"
+  },
+  "7080bd4caf": {
+    "key": "cal|збір команди із західної словаччини в аеропорту братислави",
+    "q": "📅 Хочу записати в календар:\n\n« 🤝 Збір команди із Західної Словаччини в аеропорту Братислави »\n🕐 07.09 о 13:00\n\nАвтоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nЗраз: Letisko Bratislava ⏰ 13:00 – 13:30\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "🤝 Збір команди із Західної Словаччини в аеропорту Братислави",
+      "desc": "Автоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nЗраз: Letisko Bratislava ⏰ 13:00 – 13:30",
+      "minutes": 60,
+      "start": "2026-09-07T13:00:00"
+    },
+    "ts": "2026-09-05T19:50:36.263676+00:00"
   }
 }
