@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-01",
-      "detail": "автосинк з годинника: steps, hr_avg, calories, stress, sleep_total_min",
-      "module": "qwsync",
-      "ts": "2026-09-01T21:27:29"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=23449, sleep_total_min=420, hr_avg=48, calories=1, stress=36, sleep_hours=7.0, date=2026-09-01, source=qwatch_auto, saved_at=2026-09-01 21:27",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Зі свіжих листів: 'від Maroš Sivák | INTERFIN <maros.sivak@interfin.sk> | Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂', де вказано, що це 'ближчі завіречні інформації до Малаги'.",
       "module": "selfact",
       "ts": "2026-09-05T21:10:50"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, у тебе є нові оголошення про квартири в Кошице. Можлив",
+      "detail": "Олег отримав кілька листів від 'Oleg Novosadov <novosadovoleg@gmail.com>' з темами '🏠 Нові квартири у Кошіці — 1 нове оголошення', '🏠 Нові квартири у Кошіці — 4 нових оголошень' та '🏠 Нові квартири у Кошіці — 28 нових оголошень (Уточнення)'.",
+      "module": "selfact",
+      "ts": "2026-09-05T21:25:58"
     }
   ]
 }
