@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримує багато інформації про криптовалюти та ринки, ал",
-      "detail": "Є свіжі листи від CryptoBeholder.com, VanEck, 0xResearch та Morning Report, які стосуються криптовалют та ринків. У нотатках є 'Олег цікавиться новинами у сфері фінтеху та AI, зокрема дослідженнями Revolut та роллю пропрієтарних даних в AI для фінтеху, а також новинами про Stripe та Legal.' та 'Олег",
-      "module": "selfact",
-      "ts": "2026-09-01T17:05:12"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримує сповіщення про повернення кредиту від Temu, що",
       "detail": "Є свіжий лист від Temu 'Dostali ste vrátenie kreditu!' та в календарі на сьогодні '08:00 💳 Отримання повернення кредиту Temu'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є повідомлення від 'Сповіщення про вакансії LinkedIn' про 'Project Manager в Convatec Michalovce'.",
       "module": "selfact",
       "ts": "2026-09-05T20:23:31"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на лист від Maroš Sivák | INTERFIN щодо п",
+      "detail": "Отримано новий лист 'Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂' від Maroš Sivák, який містить важливу інформацію щодо майбутньої поїздки до Малаги, що починається 07.09.",
+      "module": "selfact",
+      "ts": "2026-09-05T20:39:04"
     }
   ]
 }
