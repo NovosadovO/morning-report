@@ -1,4 +1,49 @@
 {
+  "foresight|2026-09-05t07_30_49_245989": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-05T07:30:49.245989"
+  },
+  "foresight|2026-09-05t07_29_43_501927": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T07:29:43.501927"
+  },
+  "foresight|2026-09-05t07_29_32_484928": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-05T07:29:32.484928"
+  },
+  "selfact|2026-09-05t07_29_24_560808": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"text\": \"Пам'ятай, що після закінчення нічної зміни тобі потрібно прийняти Arm",
+    "ts": "2026-09-05T07:29:24.560808"
+  },
+  "foresight|2026-09-05t07_28_09_312762": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T07:28:09.312762"
+  },
+  "foresight|2026-09-05t07_27_58_312475": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-05T07:27:58.312475"
+  },
+  "proactive_ai_truthfix|2026-09-05t07_27_10_408108": {
+    "topic": "proactive_ai/truthfix",
+    "gist": "Олеже, зараз 07:27 суботи, 5 вересня 2026 року. Ти щойно закінчив нічну зміну, яка тривала до 05:00.  **Що робити зараз?** Прийми Armolopid Plus і лягай спати. ",
+    "ts": "2026-09-05T07:27:10.408108"
+  },
+  "proactive_ai|2026-09-05t07_26_59_425024": {
+    "topic": "proactive_ai",
+    "gist": "Привіт, Олеже! Нарешті зміна позаду, вітаю! Знаю, що ти, мабуть, дуже втомився, тож головне зараз — це добре відпочити. Не забудь прийняти Armolopid Plus, а пот",
+    "ts": "2026-09-05T07:26:59.425024"
+  },
+  "foresight|2026-09-05t07_26_46_776057": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T07:26:46.776057"
+  },
   "foresight|2026-09-05t07_26_35_776365": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -253,50 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Runable\",     \"text\": \"Олег, зверни увагу: платіж до Runable на $10.00 був невдалим. Потрібно оновити",
     "ts": "2026-09-05T06:42:31.570720"
-  },
-  "action_detect|2026-09-05t06_28_58_361532": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-05\", \"action_time\": null, \"action_summary\": \"Прийняти Armolopid P",
-    "ts": "2026-09-05T06:28:58.361532"
-  },
-  "msg_vip_email_truthfix|2026-09-05t06_28_50_809916": {
-    "topic": "MSG_VIP_EMAIL/truthfix",
-    "gist": "Олеже, як ти плануєш відновитись після нічної зміни, що завершилась сьогодні, 5 вересня, о 06:00?  Твоя підписка на Strava прострочена з 4 серпня 2026 року (32 ",
-    "ts": "2026-09-05T06:28:50.809916"
-  },
-  "msg_vip_email|2026-09-05t06_28_42_175705": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 🏹 На тлі завершення нічної зміни, щойно о 06:28, фокус зміщується на відновлення, але стратегічні точки росту залишаються актуальними.  Зараз, кол",
-    "ts": "2026-09-05T06:28:42.175705"
-  },
-  "selfact|2026-09-05t06_26_51_831302": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"text\": \"Олег, твоя нічна зміна закінчилася о 06:00. Не забудь прийняти Armolo",
-    "ts": "2026-09-05T06:26:51.831302"
-  },
-  "action_detect|2026-09-05t06_17_34_688163": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата за вересень\", \"action_date\": \"2026-09-01\", \"action_time\": null, \"action_summary\": \"На вересень чекає оплата ",
-    "ts": "2026-09-05T06:17:34.688163"
-  },
-  "action_detect|2026-09-05t06_17_23_633042": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти",
-    "ts": "2026-09-05T06:17:23.633042"
-  },
-  "action_detect|2026-09-05t06_17_23_550786": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Miriam, Classic strih\", \"action_date\": \"2023-09-06\", \"action_time\": \"16:30\", \"action_summary\": \"Відвідати Miriam дл",
-    "ts": "2026-09-05T06:17:23.550786"
-  },
-  "action_detect|2026-09-05t06_17_12_612181": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus та лягти спати\", \"action_date\": \"2026-09-05\", \"action_time\": null, \"action_summary\": \"Прийн",
-    "ts": "2026-09-05T06:17:12.612181"
-  },
-  "briefing_truthfix|2026-09-05t06_17_09_312244": {
-    "topic": "briefing/truthfix",
-    "gist": "Олег, зараз 06:17, субота, 5 вересня 2026 року, і ти щойно закінчив нічну зміну. Дані про твоє здоров'я востаннє оновлювалися 30 годин тому, 4 вересня, і показу",
-    "ts": "2026-09-05T06:17:09.312244"
   }
 }
