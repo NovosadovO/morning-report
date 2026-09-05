@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-05t23_19_15_765274": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T23:19:15.765274"
+  },
+  "foresight|2026-09-05t23_18_11_495923": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T23:18:11.495923"
+  },
+  "foresight|2026-09-05t23_18_00_522588": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T23:18:00.522588"
+  },
+  "selfact|2026-09-05t23_17_43_661156": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що ти не відмітив звички «Спрей для волосся», «Сауна» та «Біг» за 05.09.2026. Можливо, ти з",
+    "ts": "2026-09-05T23:17:43.661156"
+  },
+  "foresight|2026-09-05t23_16_25_157374": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T23:16:25.157374"
+  },
+  "foresight|2026-09-05t23_16_14_032382": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T23:16:14.032382"
+  },
+  "foresight|2026-09-05t23_15_07_575202": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T23:15:07.575202"
+  },
   "foresight|2026-09-05t23_14_56_567162": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-05T22:49:27.327375"
-  },
-  "action_detect|2026-09-05t22_48_34_270088": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-09-05T22:48:34.270088"
-  },
-  "foresight|2026-09-05t22_48_20_096020": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T22:48:20.096020"
-  },
-  "foresight|2026-09-05t22_48_09_092758": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T22:48:09.092758"
-  },
-  "foresight|2026-09-05t22_47_03_259790": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T22:47:03.259790"
-  },
-  "foresight|2026-09-05t22_46_52_255299": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T22:46:52.255299"
-  },
-  "foresight|2026-09-05t22_45_47_842951": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T22:45:47.842951"
-  },
-  "foresight|2026-09-05t22_45_37_333097": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T22:45:37.333097"
   }
 }
