@@ -8077,5 +8077,28 @@
       "kind": "note"
     },
     "ts": "2026-09-06T00:04:01.249125+00:00"
+  },
+  "cbaab255cc": {
+    "key": "note|олег має бронювання august villa málaga  villa з 0709 по 1",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег має бронювання August Villa Málaga - Villa з 07.09 по 1 »\n\nОлег має бронювання August Villa Málaga - Villa з 07.09 по 11.09.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег має бронювання August Villa Málaga - Villa з 07.09 по 1",
+      "desc": "Олег має бронювання August Villa Málaga - Villa з 07.09 по 11.09.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-06T00:04:14.607246+00:00"
   }
 }
