@@ -1,9 +1,4 @@
 {
-  "78132": {
-    "sender": "invoice+statements+acct_1hnrvlcjopsrzqsd@stripe.com",
-    "sender_raw": "Railway Corporation <invoice+statements+acct_1HNrvlCJoPsRzQsd@stripe.com>",
-    "seen_ts": "2026-08-27T19:44:37.570539+00:00"
-  },
   "78138": {
     "sender": "invoice+statements+acct_1raxgujk3urplkao@stripe.com",
     "sender_raw": "Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply@e.economist.com",
     "sender_raw": "\"The Economist\" <noreply@e.economist.com>",
     "seen_ts": "2026-09-05T11:22:14.077385+00:00"
+  },
+  "78595": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-05T13:03:34.417903+00:00"
   }
 }
