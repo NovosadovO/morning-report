@@ -8283,5 +8283,31 @@
       "start": "2026-09-06T15:00:00"
     },
     "ts": "2026-09-06T00:51:10.652361+00:00"
+  },
+  "b86f5a6113": {
+    "key": "cal|збір команди зі східної словаччини interfin discovery day",
+    "q": "📅 Хочу записати в календар:\n\n« 🤝 Збір команди зі Східної Словаччини (InterFin Discovery Day) »\n🕐 07.09 о 06:00\n\nАвтоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nЗраз: Прешов – перед будинком BC Volgogradská\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "🤝 Збір команди зі Східної Словаччини (InterFin Discovery Day)",
+      "desc": "Автоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nЗраз: Прешов – перед будинком BC Volgogradská ⏰ 6:00 – 6:15",
+      "minutes": 60,
+      "start": "2026-09-07T06:00:00"
+    },
+    "ts": "2026-09-06T01:10:21.109468+00:00"
   }
 }
