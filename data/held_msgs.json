@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T12:31:33.085976",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78586"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78586"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78586"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78586"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78586"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78586"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T12:31:34.507007",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в VenomBridge</b>\n👤 Discord &lt;noreply@discord.com&gt;",
@@ -612,6 +573,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78589"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T13:01:22.709046",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Anthropic Moves AI Agents Into the Physical World</b>\n👤 AI NOW &amp; BEYOND через LinkedIn&lt;newsletters-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78587"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78587"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78587"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78587"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78587"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78587"
             }
           ]
         ]
