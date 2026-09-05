@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег цікавиться вакансіями VAL Operator в DSV - Global Trans",
-      "detail": "Лист від LinkedIn 'VAL Operator в DSV - Global Transport and Logistics' свідчить про інтерес Олега до цієї вакансії, що відповідає його загальному інтересу до вакансій у сфері AI, Technical Writer та Operations.",
-      "module": "selfact",
-      "ts": "2026-09-01T16:34:40"
-    },
-    {
-      "kind": "note",
       "what": "Олег стежить за аналітикою ринку золота та біткойна, зокрема",
       "detail": "Лист від VanEck через LinkedIn 'Gold vs Bitcoin: The Allocation Debate' свідчить про інтерес Олега до фінансових технологій та криптоіндустрії.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав листа від Maroš Sivák | INTERFIN з темою '🇪🇸 InterFin Discovery Day – відліт до Малаги вже за нецілих 48 годин! 🥂', що є критично важливою інформацією перед поїздкою.",
       "module": "selfact",
       "ts": "2026-09-05T19:37:04"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу, що 10 вересня закінчується термін для ст",
+      "detail": "У свіжих листах є повідомлення від 'Socios.com' з темою 'Generate your Recovery Kit before 10 Sep', що є дедлайном для важливої дії з безпеки.",
+      "module": "selfact",
+      "ts": "2026-09-05T19:37:08"
     }
   ]
 }
