@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T13:46:32.890277",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Linux Platform &amp; Blockchain Operations Engineer в Bit</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78583"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78583"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78583"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78583"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78583"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78583"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T13:46:34.228357",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 25 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -484,6 +445,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T14:16:17.153124",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Project Management Officer (Junior) – Remote в NATEK</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78593"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78593"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78593"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78593"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78593"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78593"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
