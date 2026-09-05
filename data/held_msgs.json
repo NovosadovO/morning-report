@@ -1,43 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T12:01:37.264519",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 25 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 4 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_78586"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_78581"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_78580"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_78586"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78586"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T12:01:39.192609",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 25 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 4 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
@@ -492,6 +455,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78589"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T12:31:31.723273",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Anthropic Moves AI Agents Into the Physical World</b>\n👤 AI NOW &amp; BEYOND через LinkedIn&lt;newsletters-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78587"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78587"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78587"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78587"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78587"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78587"
             }
           ]
         ]
