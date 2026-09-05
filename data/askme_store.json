@@ -8100,5 +8100,31 @@
       "kind": "note"
     },
     "ts": "2026-09-06T00:04:14.607246+00:00"
+  },
+  "1687e598f2": {
+    "key": "cal|відліт з малаги",
+    "q": "📅 Хочу записати в календар:\n\n« ✈️ Відліт з Малаги »\n🕐 11.09 о 20:10\n\nАвтоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nВідліт з Малаги: 20:10\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "✈️ Відліт з Малаги",
+      "desc": "Автоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nВідліт з Малаги: 20:10",
+      "minutes": 60,
+      "start": "2026-09-11T20:10:00"
+    },
+    "ts": "2026-09-06T00:25:03.343003+00:00"
   }
 }
