@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T13:31:05.041697",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Should you take creatine?</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78590"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78590"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78590"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78590"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78590"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78590"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T13:31:06.408556",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>General Manager Advanced Trading (Fusion) в Bitpanda</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -648,6 +609,12 @@
       "ts": "2026-09-05T13:50:34.620370",
       "kind": "watchdog",
       "text": "👁 Я осліп на частину даних\n\n🔴 strava — функції get_activities немає в monitor.py\n\nПоки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T13:58:33.742155",
+      "kind": "chunk",
+      "text": "🎯 ТОЧНИЙ АСПЕКТ\n☽ <b>Місяць</b> □ ☉ <b>Натальний Сонце</b> <b>(ТОЧНИЙ!)</b>\n📍 Місяць у <b>Близнюки ♊</b> | Натальний Сонце у Діва ♍, 3-й дім\n<i>Квадратура · Комунікація</i>\n\n📖 <b>Що означає Квадратура:</b>\n🟠 Напруга й виклик — внутрішнє тертя, що штовхає до дії. Дискомфорт, який при правильному підході дає зростання і силу.\n\nПривіт, Олеже!\n\n**Астрологія для тебе сьогодні:**\nТранзитний Місяць.",
       "keyboard": null
     }
   ]
