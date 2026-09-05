@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-05t19_18_33_870310": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T19:18:33.870310"
+  },
+  "foresight|2026-09-05t19_17_25_923016": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T19:17:25.923016"
+  },
+  "foresight|2026-09-05t19_17_14_947288": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T19:17:14.947288"
+  },
+  "foresight|2026-09-05t19_16_08_248803": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T19:16:08.248803"
+  },
+  "foresight|2026-09-05t19_15_57_178540": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T19:15:57.178540"
+  },
+  "foresight|2026-09-05t19_14_44_277302": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T19:14:44.277302"
+  },
+  "foresight|2026-09-05t19_14_33_362477": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T19:14:33.362477"
+  },
   "foresight|2026-09-05t19_13_27_055418": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-05T18:48:36.681631"
-  },
-  "selfact|2026-09-05t18_48_24_093852": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що тобі потрібно зібрати речі для поїздки в Малагу завтра о 17:00. Це вже завтра, 6 вересня!\",  ",
-    "ts": "2026-09-05T18:48:24.093852"
-  },
-  "email_ai_item|2026-09-05t18_47_49_186286": {
-    "topic": "email_ai_item",
-    "gist": "```json { \"description\": \"Лист є нагадуванням про майбутню поїздку до Малаги на InterFin Discovery Day, яка відбудеться 7-11 вересня 2026 року. У ньому міститьс",
-    "ts": "2026-09-05T18:47:49.186286"
-  },
-  "foresight|2026-09-05t18_47_01_472274": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T18:47:01.472274"
-  },
-  "foresight|2026-09-05t18_46_50_358572": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T18:46:50.358572"
-  },
-  "foresight|2026-09-05t18_45_44_404248": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T18:45:44.404248"
-  },
-  "foresight|2026-09-05t18_45_33_336892": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T18:45:33.336892"
-  },
-  "foresight|2026-09-05t18_44_27_174572": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T18:44:27.174572"
   }
 }
