@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T14:46:11.275032",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Anthropic Moves AI Agents Into the Physical World</b>\n👤 AI NOW &amp; BEYOND через LinkedIn&lt;newsletters-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78587"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78587"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78587"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78587"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78587"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78587"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T14:46:12.568402",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -517,6 +478,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-05T15:05:42.511041",
+      "kind": "day_mode",
+      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
     }
   ]
 }
