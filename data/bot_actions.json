@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, зверни увагу на лист від Maroš Sivák з деталями поїздк",
-      "detail": "У календарі на 01.09 о 09:00 є '🔔 Деталі поїздки в Малагу', і щойно надійшов лист 'InterFin Malaga trip - detailné informácie' від Maroš Sivák.",
-      "module": "selfact",
-      "ts": "2026-09-01T14:45:34"
-    },
-    {
       "kind": "reminder",
       "what": "Використати знижку Temu",
       "detail": "У календарі на 02.09 є '⏳ Використати знижку 5,57 € від Temu', і є свіжий лист від Temu 'Získali ste zľavu: 5,57 €'.",
@@ -2799,6 +2792,13 @@
       "detail": "/сон",
       "module": "healthai",
       "ts": "2026-09-05T08:12:02"
+    },
+    {
+      "kind": "hcoach",
+      "what": "sleep_report",
+      "detail": "аналіз сну",
+      "module": "selfact",
+      "ts": "2026-09-05T08:12:54"
     }
   ]
 }
