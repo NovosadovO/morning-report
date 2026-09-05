@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег проігнорував нагадування про день народження Олі 1 вере",
-      "detail": "У календарі на 01.09 є подія '🎂 Олі — день народження', але немає жодної реакції Олега щодо неї, хоча вже 16:18.",
-      "module": "selfact",
-      "ts": "2026-09-01T16:18:55"
-    },
-    {
       "kind": "notify",
       "what": "Олег, сьогодні, 1 вересня, день народження Олі. Календар пок",
       "detail": "Подія 'Олі — день народження' в календарі на 01.09.2026 08:00, а зараз 16:34. Олег міг забути про це.",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є лист від noreply@atguest.com з темою 'Reservation reminder', який, ймовірно, стосується бронювання August Villa Málaga, запланованого на 07.09.",
       "module": "selfact",
       "ts": "2026-09-05T18:00:57"
+    },
+    {
+      "kind": "notify",
+      "what": "Recovery Kit для Socios.com",
+      "detail": "З листа від Socios.com: 'Generate your Recovery Kit before 10 Sep' та 'Login is moving to Passkey. Make sure you have a Recovery Kit, so you never lose your Wallet access.'",
+      "module": "selfact",
+      "ts": "2026-09-05T18:32:16"
     }
   ]
 }
