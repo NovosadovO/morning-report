@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-05t02_30_40_254751": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка Runable\",     \"text\": \"Олеже, платіж за підписку Runable знову був невдалим. Будь ласка, онови платіж",
+    "ts": "2026-09-05T02:30:40.254751"
+  },
+  "action_detect|2026-09-05t02_23_52_848764": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після закінчення зміни о ",
+    "ts": "2026-09-05T02:23:52.848764"
+  },
   "msg_deep_analysis|2026-09-05t02_23_45_105724": {
     "topic": "MSG_DEEP_ANALYSIS",
     "gist": "Привіт Олеже! 👋  Зараз глибока ніч, 02:23, і ти на нічній зміні, яка триватиме ще майже чотири години — до 06:00. Враховуючи, що твоя нічна зміна також запланов",
@@ -288,15 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json { \"description\": \"Лист від LinkedIn містить сповіщення про нову вакансію Business Development Manager IBM в Arrow Components, розташовану в Братиславі. ",
     "ts": "2026-09-05T00:15:41.340459"
-  },
-  "selfact|2026-09-05t00_09_53_179511": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні о 17:00 у тебе починається нічна зміна (18:00-06:00).\",     \"why\": \"Згідно з календа",
-    "ts": "2026-09-05T00:09:53.179511"
-  },
-  "action_detect|2026-09-05t00_04_01_957703": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є астрологічним аналізом для Олега, що опис",
-    "ts": "2026-09-05T00:04:01.957703"
   }
 }
