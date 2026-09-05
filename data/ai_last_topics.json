@@ -1,4 +1,44 @@
 {
+  "selfact|2026-09-05t16_26_48_860258": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, нагадую, що о 17:00 у тебе починається нічна зміна (18:00-06:00).\",     \"why",
+    "ts": "2026-09-05T16:26:48.860258"
+  },
+  "foresight|2026-09-05t16_25_27_565434": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-05T16:25:27.565434"
+  },
+  "foresight|2026-09-05t16_25_16_584008": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T16:25:16.584008"
+  },
+  "foresight|2026-09-05t16_24_09_092273": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-05T16:24:09.092273"
+  },
+  "foresight|2026-09-05t16_23_58_000488": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T16:23:58.000488"
+  },
+  "foresight|2026-09-05t16_22_51_920112": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-05T16:22:51.920112"
+  },
+  "foresight|2026-09-05t16_22_40_936949": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T16:22:40.936949"
+  },
+  "people|2026-09-05t16_22_10_995079": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"michaela.bila@bukovinakosice.sk\",     \"name\": \"Mgr. Michaela Bilá\",     \"relation\": \"робота\",     \"topics\": [\"фабрики на Україні\"], ",
+    "ts": "2026-09-05T16:22:10.995079"
+  },
   "foresight|2026-09-05t16_21_32_364481": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
@@ -258,45 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T15:57:18.552568"
-  },
-  "foresight|2026-09-05t15_57_07_554055": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T15:57:07.554055"
-  },
-  "action_detect|2026-09-05t15_56_50_078113": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь записати пото",
-    "ts": "2026-09-05T15:56:50.078113"
-  },
-  "day_mode|2026-09-05t15_56_31_211541": {
-    "topic": "day_mode",
-    "gist": "```json {   \"text\": \"Привіт, Олеже! 👋 Бачу, сьогодні твій стан «Норма» 😐 – це чудово, адже є енергія для звичайного плану дня і ще й на корисну дію! \\n\\nСьогодн",
-    "ts": "2026-09-05T15:56:31.211541"
-  },
-  "foresight|2026-09-05t15_56_02_083542": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Іспанія\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-05T15:56:02.083542"
-  },
-  "foresight|2026-09-05t15_55_51_148491": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T15:55:51.148491"
-  },
-  "selfact|2026-09-05t15_55_36_564981": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег прокинувся сьогодні, 05.09.2026, о 15:52.\",     \"why\": \"З даних 'ПАМ'ЯТЬ ПРО ОЛЕГА' видно, що Олег виконав к",
-    "ts": "2026-09-05T15:55:36.564981"
-  },
-  "action_detect|2026-09-05t15_55_19_347579": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-09-05T15:55:19.347579"
-  },
-  "email_describe_truthfix|2026-09-05t15_55_09_244564": {
-    "topic": "email_describe/truthfix",
-    "gist": "Олеже, зараз 15:55 суботи, 5 вересня 2026 року.  Твоя бездіяльність щодо прострочених підписок Strava вже коштує тобі доступу до свіжих даних про активність, що",
-    "ts": "2026-09-05T15:55:09.244564"
   }
 }
