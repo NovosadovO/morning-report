@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-05t23_49_09_317927": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T23:49:09.317927"
+  },
+  "foresight|2026-09-05t23_48_58_333253": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T23:48:58.333253"
+  },
+  "selfact|2026-09-05t23_48_50_669141": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег не виконав звички 'Спрей для волосся', 'Сауна' та 'Біг' за 5 вересня 2026 року.\",     \"why\": \"Календар на 7 ",
+    "ts": "2026-09-05T23:48:50.669141"
+  },
+  "foresight|2026-09-05t23_47_33_327000": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-05T23:47:33.327000"
+  },
+  "foresight|2026-09-05t23_47_22_209484": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T23:47:22.209484"
+  },
+  "foresight|2026-09-05t23_46_16_902401": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-05T23:46:16.902401"
+  },
+  "foresight|2026-09-05t23_46_06_007409": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T23:46:06.007409"
+  },
   "foresight|2026-09-05t23_45_01_185878": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T23:12:24.728213"
-  },
-  "foresight|2026-09-05t23_11_14_030699": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:11:14.030699"
-  },
-  "foresight|2026-09-05t23_11_03_010419": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:11:03.010419"
-  },
-  "foresight|2026-09-05t23_09_56_167389": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:09:56.167389"
-  },
-  "foresight|2026-09-05t23_09_45_071795": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:09:45.071795"
-  },
-  "foresight|2026-09-05t23_08_39_223435": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:08:39.223435"
-  },
-  "foresight|2026-09-05t23_08_28_299204": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:08:28.299204"
-  },
-  "foresight|2026-09-05t23_07_24_166659": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:07:24.166659"
   }
 }
