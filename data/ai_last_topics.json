@@ -1,4 +1,49 @@
 {
+  "foresight|2026-09-06t01_52_36_896924": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T01:52:36.896924"
+  },
+  "foresight|2026-09-06t01_51_17_066605": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T01:51:17.066605"
+  },
+  "foresight|2026-09-06t01_51_06_076114": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T01:51:06.076114"
+  },
+  "foresight|2026-09-06t01_49_54_972328": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T01:49:54.972328"
+  },
+  "foresight|2026-09-06t01_49_43_926382": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T01:49:43.926382"
+  },
+  "foresight|2026-09-06t01_48_39_466169": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T01:48:39.466169"
+  },
+  "foresight|2026-09-06t01_48_28_535140": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T01:48:28.535140"
+  },
+  "astro_ai_truthfix|2026-09-06t01_47_46_005186": {
+    "topic": "astro_ai/truthfix",
+    "gist": "Олеже, зараз 01:47, і Юпітер у Леві вже 66 днів, залишаючись у твоєму I домі ще приблизно 16 днів. Це створює напругу між бажанням самоствердження та потребою в",
+    "ts": "2026-09-06T01:47:46.005186"
+  },
+  "astro_ai|2026-09-06t01_47_41_710229": {
+    "topic": "astro_ai",
+    "gist": "Олеже, Юпітер у твоєму Асценденті (Лев) вже 66 днів – це не просто \"новий цикл\", а потужний період особистого оновлення, який зараз в самому розпалі, адже Юпіте",
+    "ts": "2026-09-06T01:47:41.710229"
+  },
   "foresight|2026-09-06t01_47_23_564911": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
@@ -253,50 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
     "ts": "2026-09-06T00:47:20.379056"
-  },
-  "foresight|2026-09-06t00_47_09_427832": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T00:47:09.427832"
-  },
-  "action_detect|2026-09-06t00_44_35_752133": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-06\", \"action_time\": null, \"action_summary\": \"Прийняти Armolopid P",
-    "ts": "2026-09-06T00:44:35.752133"
-  },
-  "msg_deep_analysis_truthfix|2026-09-06t00_44_28_099857": {
-    "topic": "MSG_DEEP_ANALYSIS/truthfix",
-    "gist": "Олеже,  Зараз 00:44 неділі, 6 вересня. Твої зміни на цей тиждень вказують, що сьогодні та наступні шість днів у тебе вільні.  Згідно з даними, які були оновлені",
-    "ts": "2026-09-06T00:44:28.099857"
-  },
-  "msg_deep_analysis|2026-09-06t00_44_17_505424": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт, Олеже! 👋  Зараз глибока ніч, 00:43 неділі, 6 вересня. Твій календар показує, що ти зараз відпочиваєш, і це чудово, адже нічні зміни закінчились сьогодні",
-    "ts": "2026-09-06T00:44:17.505424"
-  },
-  "deadlines|2026-09-06t00_43_44_744376": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"78607\",     \"kind\": \"other\",     \"title\": \"Відліт до Малаги\",     \"org\": \"InterFin\",     \"deadline\": \"2026-09-07\",     \"action\": \"Бути",
-    "ts": "2026-09-06T00:43:44.744376"
-  },
-  "selfact|2026-09-06t00_35_44_440067": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні (06.09) тобі потрібно виконати кілька завдань зі списку звичок: скористатися спреєм ",
-    "ts": "2026-09-06T00:35:44.440067"
-  },
-  "mailcal_extract|2026-09-06t00_25_01_152397": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"78607\",     \"title\": \"Відліт до Малаги на InterFin Discovery Day\",     \"date\": \"2026-09-07\",     \"time\": \"16:05\",     \"kind\": \"flight\"",
-    "ts": "2026-09-06T00:25:01.152397"
-  },
-  "selfact|2026-09-06t00_19_40_610709": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від LinkedIn щодо вакансії Director Of Operations в CareerWise Recruitment. Вона від",
-    "ts": "2026-09-06T00:19:40.610709"
-  },
-  "action_detect|2026-09-06t00_18_49_464829": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-06T00:18:49.464829"
   }
 }
