@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T11:52:46.167232",
-      "kind": "rwa",
-      "text": "🏦 RWA-РАДАР\n━━━━━━━━━━━━━━━━━━━━\n• весь сектор RWA додав 47.2% за 24 години (капіталізація $70.79B)\n\nAI-коментар недоступний — вище тільки живі цифри.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-05T12:01:05.962635",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>AI NOW &amp; BEYOND через LinkedIn</b>\n📋 Тема: «Anthropic Moves AI Agents Into the Physical World»\n\n<i>«AI NOW &amp; BEYOND\r\n\r\nАвтор: AI NOW &amp; BEYOND\r\n\r\n\r\nАвтор: AI NOW &amp; BEYOND\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/anthropic-moves-ai-agents-physical-world-gptai-ranxc?lipi=urn%3Ali%3Apage%3Aemail_emai...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -638,6 +632,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78583"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T12:16:12.100683",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 25 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78581"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78581"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78581"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78581"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78581"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78581"
             }
           ]
         ]
