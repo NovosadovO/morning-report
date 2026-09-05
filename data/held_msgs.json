@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T09:46:16.333874",
-      "kind": "chunk",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 25 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 4 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 28 нових оголошень (Уточнення)\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 The Daily Degen\n📋 The Daily Degen - September 4th, 2026\n📝 (AI-аналіз тимчасово недоступний)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-05T09:55:23.637715",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Footshop</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Vieš o všetkých novinkách z posledných dní? ❤️‍🔥»\n\n<i>«[ Otvoriť v prehliadači ](http://r.newsletter2.footshop.com/mk/mr/sh/WCPxRrNLV1LtxLyW5O6L32pQ74dANqad/q2uhrCO_yQsC)\r\n\r\n**ON X PAF**\r\n============\r\n\r\nZnačky On a PAF uzatvárajú svoju šesťsezónnu spoluprácu posledným dropom: bežeckým modelom **Cloudsoma PAF**.\r\n\r\nTopánka zrodená z hôr...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -644,6 +638,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78565"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T10:16:10.098821",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>1</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78516"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78516"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78516"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78516"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78516"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78516"
             }
           ]
         ]
