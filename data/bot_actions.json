@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег продовжує отримувати сповіщення про вакансії, зокрема R",
-      "detail": "У свіжих листах є нові сповіщення про вакансії: 'Сповіщення про вакансії LinkedIn | Service Disruption Management (SDM) в SAP' та 'Сповіщення про вакансії LinkedIn | Associate в Eccleston Park Capital'.",
-      "module": "selfact",
-      "ts": "2026-09-01T12:41:52"
-    },
-    {
       "kind": "notify",
       "what": "Новини про AI",
       "detail": "У свіжих листах є два повідомлення, що стосуються AI: 'Linas from Linas's Newsletter <linas@substack.com> | The Ultimate Guide to Grok Bot: The First Real AI Agent OS 🤖' та 'Generative AI <newsletter@genai.works> | 🤖 USA launches ChatGPT Military'. Також, у нотатках про Олега є запис про його інтере",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист від Oleg Novosadov <novosadovoleg@gmail.com> про 137 нових оголошень 3-кімнатних квартир у Кошице, що може бути для нього актуальним.",
       "module": "selfact",
       "ts": "2026-09-05T02:46:25"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, завтра, 06.09, о 17:00 тобі потрібно зібрати речі для",
+      "detail": "У календарі на 06.09 є дві події: '15:30 Miriam, Classic strih, Staré Mesto 463, 040 01 Košice' та '17:00 🔔 🧳 Зібрати речі: Málaga'.",
+      "module": "selfact",
+      "ts": "2026-09-05T02:46:29"
     }
   ]
 }
