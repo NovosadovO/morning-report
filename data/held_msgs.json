@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T15:31:03.445569",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-05T15:31:04.543140",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🐶📰Weekend Update</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
@@ -541,6 +535,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78592"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T15:46:26.474438",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>1€ Svet</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78591"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78591"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78591"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78591"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78591"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78591"
             }
           ]
         ]
