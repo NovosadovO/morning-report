@@ -1,4 +1,34 @@
 {
+  "selfact|2026-09-05t21_57_43_922183": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що ти не відмітив виконання звичок: Спрей для волосся, Сауна та Біг за сьогодні, 05.09.2026",
+    "ts": "2026-09-05T21:57:43.922183"
+  },
+  "foresight|2026-09-05t21_56_32_200152": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T21:56:32.200152"
+  },
+  "foresight|2026-09-05t21_56_21_374879": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:56:21.374879"
+  },
+  "foresight|2026-09-05t21_55_11_532529": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T21:55:11.532529"
+  },
+  "foresight|2026-09-05t21_55_00_601570": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:55:00.601570"
+  },
+  "foresight|2026-09-05t21_53_51_938418": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T21:53:51.938418"
+  },
   "foresight|2026-09-05t21_53_40_979296": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -268,35 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-05T21:18:49.028854"
-  },
-  "foresight|2026-09-05t21_17_42_777778": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:17:42.777778"
-  },
-  "action_detect|2026-09-05t21_17_36_003929": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Аналіз дня вказує на розбіжність між бажанням Олега с",
-    "ts": "2026-09-05T21:17:36.003929"
-  },
-  "foresight|2026-09-05t21_17_31_785850": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T21:17:31.785850"
-  },
-  "action_detect|2026-09-05t21_17_24_626775": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-05\", \"action_time\": \"18:00\", \"action_summary\": \"Сьогодні о 18:00 починається ",
-    "ts": "2026-09-05T21:17:24.626775"
-  },
-  "action_detect|2026-09-05t21_17_24_623701": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-09-05T21:17:24.623701"
-  },
-  "action_detect|2026-09-05t21_17_13_551385": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прочитати лист від Maroš Sivák | INTERFIN\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прочитати ",
-    "ts": "2026-09-05T21:17:13.551385"
   }
 }
