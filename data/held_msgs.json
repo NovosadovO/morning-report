@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T15:15:43.912374",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-05T15:15:44.599381",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -508,6 +502,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78593"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T15:31:09.243787",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Important: We will soon be deleting your inactive BKK accoun</b>\n👤 \"Budapesti Közlekedési Központ\" &lt;noreplybpgo@bkk.h",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78592"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78592"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78592"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78592"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78592"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78592"
             }
           ]
         ]
