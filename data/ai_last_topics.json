@@ -1,4 +1,19 @@
 {
+  "msg_deep_analysis|2026-09-05t02_23_45_105724": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Зараз глибока ніч, 02:23, і ти на нічній зміні, яка триватиме ще майже чотири години — до 06:00. Враховуючи, що твоя нічна зміна також запланов",
+    "ts": "2026-09-05T02:23:45.105724"
+  },
+  "mailcal_extract|2026-09-05t02_17_08_874416": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-05T02:17:08.874416"
+  },
+  "selfact|2026-09-05t02_15_00_226479": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нічна зміна сьогодні\",     \"text\": \"Олеже, нагадую, що сьогодні, 5 вересня, о 17:00 у тебе починається нічна з",
+    "ts": "2026-09-05T02:15:00.226479"
+  },
   "email_ai_item|2026-09-05t02_13_57_806932": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від LinkedIn є сповіщенням про вакансії за запитом 'Директор з операцій' в Європейському Союзі. У ньому представлені дві ва",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Цей текст є астрологічним аналізом для Олега, що опис",
     "ts": "2026-09-05T00:04:01.957703"
-  },
-  "action_detect|2026-09-05t00_04_01_898493": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Розібратися з простроченими дедлайнами\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Використай ен",
-    "ts": "2026-09-05T00:04:01.898493"
-  },
-  "action_detect|2026-09-05t00_04_01_813520": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2024-09-05\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
-    "ts": "2026-09-05T00:04:01.813520"
-  },
-  "action_detect|2026-09-05t00_03_50_699415": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зафіксувати вагу\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зафіксувати вагу вранці після зміни",
-    "ts": "2026-09-05T00:03:50.699415"
   }
 }
