@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T14:01:01.496288",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 1€ Svet\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Temu",
-              "callback_data": "email_reply_78591"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_78591"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78591"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T14:01:03.290708",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 1€ Svet\n📝 (AI-аналіз тимчасово недоступний)",
@@ -546,6 +521,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78590"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T14:31:46.254262",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>General Manager Advanced Trading (Fusion) в Bitpanda</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78589"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78589"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78589"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78589"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78589"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78589"
             }
           ]
         ]
