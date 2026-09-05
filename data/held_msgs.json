@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T11:16:03.093427",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в VenomBridge</b>\n👤 Discord &lt;noreply@discord.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78585"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78585"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78585"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78585"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78585"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78585"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T11:16:04.303116",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Linux Platform &amp; Blockchain Operations Engineer в Bit</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -640,6 +601,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T11:45:53.671480",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78586"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78586"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78586"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78586"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78586"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78586"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
