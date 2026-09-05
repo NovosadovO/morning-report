@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T15:01:28.214932",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>General Manager Advanced Trading (Fusion) в Bitpanda</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78589"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78589"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78589"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78589"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78589"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78589"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T15:01:29.362499",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Anthropic Moves AI Agents Into the Physical World</b>\n👤 AI NOW &amp; BEYOND через LinkedIn&lt;newsletters-noreply",
@@ -530,6 +491,12 @@
       "ts": "2026-09-05T15:20:43.445796",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T15:20:44.204388",
+      "kind": "day_mode",
+      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
