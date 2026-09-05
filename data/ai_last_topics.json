@@ -1,4 +1,64 @@
 {
+  "selfact|2026-09-06t01_06_59_088913": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Увага: Google Cloud Billing\",     \"text\": \"Олег, зверни увагу: твій Google Cloud Billing досяг 50% бюджету (€1",
+    "ts": "2026-09-06T01:06:59.088913"
+  },
+  "email_ai_item|2026-09-06t01_02_54_899910": {
+    "topic": "email_ai_item",
+    "gist": "```json { \"description\": \"Лист від Google Cloud Billing Alerts повідомляє, що 50% бюджету (€16.00) для облікового запису 'My Billing Account' було досягнуто. Бю",
+    "ts": "2026-09-06T01:02:54.899910"
+  },
+  "action_detect|2026-09-06t01_02_21_074376": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2024-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopi",
+    "ts": "2026-09-06T01:02:21.074376"
+  },
+  "action_detect|2026-09-06t01_02_10_032644": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийнят",
+    "ts": "2026-09-06T01:02:10.032644"
+  },
+  "action_detect|2026-09-06t01_01_59_128654": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зібрати речі та перевірити деталі подорожі до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": \"16:00\", \"action",
+    "ts": "2026-09-06T01:01:59.128654"
+  },
+  "action_detect|2026-09-06t01_01_58_978749": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зібрати речі: Málaga\", \"action_date\": \"2026-09-06\", \"action_time\": \"18:00\", \"action_summary\": \"Зібрати речі для пої",
+    "ts": "2026-09-06T01:01:58.978749"
+  },
+  "briefing|2026-09-06t01_01_52_668864": {
+    "topic": "briefing",
+    "gist": "🧭 ВЕКТОР ДНЯ Зараз глибока ніч перед початком твоєї відпустки, Олеже, і найближчі години критичні для успішного старту поїздки до Малаги. Хоча ти і вдома, але п",
+    "ts": "2026-09-06T01:01:52.668864"
+  },
+  "themes_ai|2026-09-06t01_01_42_639388": {
+    "topic": "themes_ai",
+    "gist": "Олеже, зараз глибока ніч, 01:01, і хоча календар показує, що сьогодні, 6 вересня, у тебе вільний день, пам'ять зберігає інформацію про твою нічну зміну до 06:00",
+    "ts": "2026-09-06T01:01:42.639388"
+  },
+  "email_ai_item|2026-09-06t01_01_26_696272": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист містить звіт про нові 3-кімнатні квартири у Кошіці, Словаччина, станом на 05.09.2026 04:02. У листі представлено 9 оголошень з",
+    "ts": "2026-09-06T01:01:26.696272"
+  },
+  "email_ai_item|2026-09-06t01_01_15_998389": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист містить дайджест нових оголошень про продаж 3-кімнатних квартир у Кошіце (Словаччина) станом на 2026-09-05. Представлено чотири ог",
+    "ts": "2026-09-06T01:01:15.998389"
+  },
+  "email_ai_item|2026-09-06t01_01_06_112832": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист є нагадуванням про майбутню поїздку до Малаги на InterFin Discovery Day. Відправлення з Братислави заплановано на понеділок",
+    "ts": "2026-09-06T01:01:06.112832"
+  },
+  "email_ai_item|2026-09-06t01_00_53_806398": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист є відповіддю на попереднє повідомлення щодо події 'InterFin Discovery Day' та відльоту до Малаги. Він містить лише підтверд",
+    "ts": "2026-09-06T01:00:53.806398"
+  },
   "personal_ai|2026-09-06t01_00_35_528573": {
     "topic": "personal_ai",
     "gist": "Олеже, за календарем сьогодні, 6 вересня, у тебе вихідний, але пам'ять вказує, що ти на нічній зміні до 06:00 ранку. Оскільки вже 01:00 ночі, залишилось п'ять г",
@@ -238,65 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T23:56:57.487504"
-  },
-  "foresight|2026-09-05t23_56_46_596881": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:56:46.596881"
-  },
-  "foresight|2026-09-05t23_55_41_695870": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:55:41.695870"
-  },
-  "foresight|2026-09-05t23_55_30_727605": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:55:30.727605"
-  },
-  "foresight|2026-09-05t23_54_20_610267": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:54:20.610267"
-  },
-  "foresight|2026-09-05t23_54_09_604474": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:54:09.604474"
-  },
-  "foresight|2026-09-05t23_53_03_180128": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:53:03.180128"
-  },
-  "foresight|2026-09-05t23_52_52_331367": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:52:52.331367"
-  },
-  "qwatch_parse|2026-09-05t23_52_09_942533": {
-    "topic": "qwatch_parse",
-    "gist": "```json {   \"health_score\": 75,   \"steps\": 18972,   \"sleep_total_min\": null,   \"sleep_deep_min\": null,   \"sleep_light_min\": null,   \"sleep_quality\": null,   \"hr",
-    "ts": "2026-09-05T23:52:09.942533"
-  },
-  "foresight|2026-09-05t23_51_47_585705": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:51:47.585705"
-  },
-  "foresight|2026-09-05t23_51_36_568288": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:51:36.568288"
-  },
-  "foresight|2026-09-05t23_50_31_906802": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-05T23:50:31.906802"
-  },
-  "foresight|2026-09-05t23_50_20_892582": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:50:20.892582"
   }
 }
