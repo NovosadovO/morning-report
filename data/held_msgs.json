@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T13:22:15.014386",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Economist</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Should you take creatine?»\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_78590"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78590"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78590"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78590"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78590"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78590"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T13:22:46.330333",
       "kind": "rwa",
       "text": "🏦 <b>RWA-РАДАР</b>\n━━━━━━━━━━━━━━━━━━━━\n• весь сектор RWA додав 46.9% за 24 години (капіталізація $70.74B)\n\n<i>AI-коментар недоступний — вище тільки живі цифри.</i>",
@@ -626,6 +587,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78583"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T13:46:34.228357",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 25 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78581"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78581"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78581"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78581"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78581"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78581"
             }
           ]
         ]
