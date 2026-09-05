@@ -7567,5 +7567,31 @@
       "start": "2026-09-07T16:05:00"
     },
     "ts": "2026-09-05T20:35:39.824988+00:00"
+  },
+  "2cfc800280": {
+    "key": "cal|приліт до малаги interfin discovery day",
+    "q": "📅 Хочу записати в календар:\n\n« ✈️ Приліт до Малаги (InterFin Discovery Day) »\n🕐 07.09 о 19:40\n\nАвтоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nПланований приліт до Малаги: 19:40\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "✈️ Приліт до Малаги (InterFin Discovery Day)",
+      "desc": "Автоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nПланований приліт до Малаги: 19:40",
+      "minutes": 60,
+      "start": "2026-09-07T19:40:00"
+    },
+    "ts": "2026-09-05T20:35:43.415719+00:00"
   }
 }
