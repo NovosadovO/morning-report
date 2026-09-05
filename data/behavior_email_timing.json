@@ -1,9 +1,4 @@
 {
-  "78129": {
-    "sender": "support@pixoryofficial.com",
-    "sender_raw": "\"Pixory\" <support@pixoryofficial.com>",
-    "seen_ts": "2026-08-27T18:17:17.669095+00:00"
-  },
   "78132": {
     "sender": "invoice+statements+acct_1hnrvlcjopsrzqsd@stripe.com",
     "sender_raw": "Railway Corporation <invoice+statements+acct_1HNrvlCJoPsRzQsd@stripe.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@biedronka.pl",
     "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
     "seen_ts": "2026-09-05T10:03:09.622350+00:00"
+  },
+  "78590": {
+    "sender": "noreply@e.economist.com",
+    "sender_raw": "\"The Economist\" <noreply@e.economist.com>",
+    "seen_ts": "2026-09-05T11:22:14.077385+00:00"
   }
 }
