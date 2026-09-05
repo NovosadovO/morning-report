@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "збережено дані здоров'я",
-      "detail": "steps=13, hr_avg=66, weight_kg=83.0, hrv=46, sleep_total_min=420, sleep_hours=7.0, date=2026-09-01, source=qwatch_auto, saved_at=2026-09-01 13:17",
-      "module": "healthai",
-      "ts": "2026-09-01T13:17:28"
-    },
-    {
-      "kind": "note",
       "what": "Записав дані здоров'я за 2026-09-01",
       "detail": "автосинк з годинника: steps, hr_avg, weight_kg, hrv, sleep_total_min",
       "module": "qwsync",
@@ -2799,6 +2792,13 @@
       "detail": "Є кілька свіжих листів: 'Сповіщення про вакансії LinkedIn', 'Profesia.sk | Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk', 'Profesia.sk | 5 nových pracovných ponúk', а також 'Oleg Novosadov | 🏠 Нові квартири у Кошіці — 28 нових оголошень', 'Oleg Novosadov | 🏠 Нові квартири у",
       "module": "selfact",
       "ts": "2026-09-05T04:36:42"
+    },
+    {
+      "kind": "notify",
+      "what": "Завершення бронювання August Villa Málaga",
+      "detail": "Згідно з 'КАЛЕНДАР НА 7 ДНІВ', на 11.09 є подія '08:00 📌 Закінчення бронювання August Villa Málaga - Villa'.",
+      "module": "selfact",
+      "ts": "2026-09-05T04:52:06"
     }
   ]
 }
