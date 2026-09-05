@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T14:25:41.472516",
-      "kind": "chunk",
-      "text": "🚪 <b>🌙 Місяць перейшов у 12-й натальний дім</b>\n♑ Знак: Близнюки ♊\n🌊 Підсвідоме, усамітнення",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-05T14:30:38.725090",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -399,6 +393,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T14:46:05.052213",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Project Management Officer (Junior) – Remote в NATEK</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78593"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78593"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78593"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78593"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78593"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78593"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
