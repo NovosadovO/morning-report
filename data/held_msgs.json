@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T12:16:21.074739",
-      "kind": "chunk",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-05T12:22:25.081848",
       "kind": "people",
       "text": "🧠 <b>ПАМ'ЯТЬ ПРО ЛЮДЕЙ</b>\n━━━━━━━━━━━━━━━━━━━━\n👤 <b>Veronika Hricová</b>  ·  сервіс\n📧 veronika.hricova@bukovinakosice.sk\n🕐 останній контакт: <b>2 дн. тому</b>\n💬 Про що говорили: координація весілля, підготовка зали\n\n🔴 <b>ТИ ОБІЦЯВ:</b>\n   • написати на WhatsApp\n\n🟡 <b>ТОБІ ОБІЦЯЛИ:</b>\n   • чекати на Олега\n   • показати склад\n   • передати ключі від кімнати\n\n❓ Зависло: <i>О котрій годині прийдуть прикрашати зал у неділю?</i>\n\n➡️ <b>Далі:</b> Написати Вероніці на WhatsApp, щоб обговорити деталі.\n\n<i>Чому пишу: є твоя обіцянка, зависло питання, час пінгувати</i>",
@@ -527,6 +521,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78585"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T12:46:00.189950",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Linux Platform &amp; Blockchain Operations Engineer в Bit</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78583"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78583"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78583"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78583"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78583"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78583"
             }
           ]
         ]
