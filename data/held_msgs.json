@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T13:16:57.821732",
-      "kind": "chunk",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-05T13:22:15.014386",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Economist</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Should you take creatine?»\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -593,6 +587,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78585"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T13:46:32.890277",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Linux Platform &amp; Blockchain Operations Engineer в Bit</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78583"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78583"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78583"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78583"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78583"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78583"
             }
           ]
         ]
