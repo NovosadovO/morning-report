@@ -1,4 +1,24 @@
 {
+  "openloop_promises|2026-09-06t01_34_52_809710": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-06T01:34:52.809710"
+  },
+  "foresight|2026-09-06t01_33_34_284214": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T01:33:34.284214"
+  },
+  "foresight|2026-09-06t01_33_23_204628": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T01:33:23.204628"
+  },
+  "proactive_actions|2026-09-06t01_30_08_720636": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-06\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
+    "ts": "2026-09-06T01:30:08.720636"
+  },
   "bills|2026-09-06t01_29_51_015014": {
     "topic": "bills",
     "gist": "[]",
@@ -278,25 +298,5 @@
     "topic": "personal_ai",
     "gist": "З огляду на те, що зараз північ неділі, 6 вересня, і твоя нічна зміна завершиться о 06:00, найважливіше підготувати речі для поїздки до Малаги, нагадування про ",
     "ts": "2026-09-06T00:01:01.615703"
-  },
-  "foresight|2026-09-06t00_00_53_837036": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T00:00:53.837036"
-  },
-  "proactive_actions|2026-09-06t00_00_07_586779": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-06\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
-    "ts": "2026-09-06T00:00:07.586779"
-  },
-  "foresight|2026-09-05t23_59_31_988213": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:59:31.988213"
-  },
-  "foresight|2026-09-05t23_59_21_009874": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T23:59:21.009874"
   }
 }
