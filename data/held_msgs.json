@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T14:31:45.052704",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Should you take creatine?</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78590"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78590"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78590"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78590"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78590"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78590"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T14:31:46.254262",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>General Manager Advanced Trading (Fusion) в Bitpanda</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -550,6 +511,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-05T14:46:19.986541",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 1€ Svet\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
