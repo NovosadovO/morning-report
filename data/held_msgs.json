@@ -1,43 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T10:16:15.696766",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 25 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 4 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 28 нових оголошень (Уточнення)\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_78581"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_78580"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_78578"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_78581"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78581"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T10:16:17.898306",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 25 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 4 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 28 нових оголошень (Уточнення)\n📝 (AI-аналіз тимчасово недоступний)",
@@ -663,6 +626,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78578"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T10:46:21.230364",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 4th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78565"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78565"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78565"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78565"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78565"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78565"
             }
           ]
         ]
