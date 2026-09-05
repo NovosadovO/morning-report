@@ -3252,5 +3252,16 @@
     "about": "Збір речей до Малаги",
     "state": "open",
     "ts": "2026-09-05T16:49:23"
+  },
+  "generic|t|прострочена підписка runable": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "прострочена підписка runable",
+    "title": "Прострочена підписка Runable",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "about": "Прострочена підписка Runable",
+    "state": "closed",
+    "ts": "2026-09-05T16:49:27"
   }
 }
