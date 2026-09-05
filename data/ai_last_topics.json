@@ -1,4 +1,44 @@
 {
+  "foresight|2026-09-05t18_30_50_033580": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T18:30:50.033580"
+  },
+  "foresight|2026-09-05t18_30_39_180679": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T18:30:39.180679"
+  },
+  "action_detect|2026-09-05t18_29_49_728058": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
+    "ts": "2026-09-05T18:29:49.728058"
+  },
+  "action_detect|2026-09-05t18_29_38_795810": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд вакансій на Profesia.sk\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег пла",
+    "ts": "2026-09-05T18:29:38.795810"
+  },
+  "foresight|2026-09-05t18_29_32_106491": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T18:29:32.106491"
+  },
+  "foresight|2026-09-05t18_29_21_172094": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T18:29:21.172094"
+  },
+  "foresight|2026-09-05t18_28_14_848907": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T18:28:14.848907"
+  },
+  "foresight|2026-09-05t18_28_03_882597": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T18:28:03.882597"
+  },
   "foresight|2026-09-05t18_26_46_832734": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
@@ -258,45 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від Socios.com інформує Олега про перехід на вхід за допомогою Passkey та необхідність згенерувати Recovery Kit до 10 вересня 2026",
     "ts": "2026-09-05T18:01:15.110013"
-  },
-  "foresight|2026-09-05t18_01_10_792244": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T18:01:10.792244"
-  },
-  "foresight|2026-09-05t18_01_00_688541": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T18:01:00.688541"
-  },
-  "personal_ai|2026-09-05t18_00_52_424174": {
-    "topic": "personal_ai",
-    "gist": "Олег, ти тільки-но розпочав нічну зміну, і твій середній пульс за останні 7 днів становить 68.6 уд/хв, що є зростаючим трендом (+0.8), що може вказувати на підв",
-    "ts": "2026-09-05T18:00:52.424174"
-  },
-  "selfact|2026-09-05t18_00_50_170832": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Socios.com: Оновлення Recovery Kit\",     \"text\": \"Олег, Socios.com змінює систему входу на Passkey. До 10 вере",
-    "ts": "2026-09-05T18:00:50.170832"
-  },
-  "openloop_promises|2026-09-05t18_00_34_301111": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-09-05T18:00:34.301111"
-  },
-  "foresight|2026-09-05t17_59_23_103612": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T17:59:23.103612"
-  },
-  "foresight|2026-09-05t17_59_12_100207": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T17:59:12.100207"
-  },
-  "foresight|2026-09-05t17_57_58_761983": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T17:57:58.761983"
   }
 }
