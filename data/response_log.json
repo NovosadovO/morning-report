@@ -10921,6 +10921,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ack_e16b154885"
+    },
+    {
+      "ts": "2026-09-05T21:23:04.304909+00:00",
+      "category": "deadline_found",
+      "question": "Відліт до Малаги",
+      "answer": "2026-09-07",
+      "extra": {
+        "kind": "other"
+      }
     }
   ]
 }
