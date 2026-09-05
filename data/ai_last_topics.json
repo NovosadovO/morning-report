@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-05t17_52_41_639852": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T17:52:41.639852"
+  },
+  "foresight|2026-09-05t17_52_30_659848": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T17:52:30.659848"
+  },
+  "foresight|2026-09-05t17_51_25_407103": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T17:51:25.407103"
+  },
+  "foresight|2026-09-05t17_51_14_291534": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T17:51:14.291534"
+  },
+  "foresight|2026-09-05t17_50_08_279491": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T17:50:08.279491"
+  },
+  "foresight|2026-09-05t17_49_57_293300": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T17:49:57.293300"
+  },
+  "foresight|2026-09-05t17_48_51_164969": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T17:48:51.164969"
+  },
   "foresight|2026-09-05t17_48_40_299450": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T17:16:23.570103"
-  },
-  "foresight|2026-09-05t17_16_12_873964": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T17:16:12.873964"
-  },
-  "calendar|2026-09-05t17_15_57_683258": {
-    "topic": "calendar",
-    "gist": "Олеже, завтра, у твій вільний від змін день, о 18:00–18:30 у тебе заплановано збирання речей для поїздки до Малаги. Зважаючи на те, що сьогодні ти на нічній змі",
-    "ts": "2026-09-05T17:15:57.683258"
-  },
-  "foresight|2026-09-05t17_15_00_883107": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T17:15:00.883107"
-  },
-  "foresight|2026-09-05t17_14_49_927888": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T17:14:49.927888"
-  },
-  "foresight|2026-09-05t17_13_44_038931": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T17:13:44.038931"
-  },
-  "foresight|2026-09-05t17_13_33_049681": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T17:13:33.049681"
-  },
-  "selfact|2026-09-05t17_13_19_255601": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні, 5 вересня, у тебе нічна зміна з 18:00 до 06:00. Вже 17:13, тому скоро потрібно буде",
-    "ts": "2026-09-05T17:13:19.255601"
   }
 }
