@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-05t21_36_40_231908": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:36:40.231908"
+  },
+  "foresight|2026-09-05t21_35_31_998214": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T21:35:31.998214"
+  },
+  "foresight|2026-09-05t21_35_20_852413": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:35:20.852413"
+  },
+  "foresight|2026-09-05t21_34_14_415506": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T21:34:14.415506"
+  },
+  "foresight|2026-09-05t21_34_03_378436": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:34:03.378436"
+  },
+  "foresight|2026-09-05t21_32_57_858171": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T21:32:57.858171"
+  },
+  "foresight|2026-09-05t21_32_46_855414": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:32:46.855414"
+  },
   "foresight|2026-09-05t21_31_33_874971": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
     "ts": "2026-09-05T21:07:22.671648"
-  },
-  "foresight|2026-09-05t21_06_44_616473": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:06:44.616473"
-  },
-  "foresight|2026-09-05t21_06_33_648654": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:06:33.648654"
-  },
-  "foresight|2026-09-05t21_05_22_466375": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:05:22.466375"
-  },
-  "foresight|2026-09-05t21_05_11_442982": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:05:11.442982"
-  },
-  "foresight|2026-09-05t21_04_06_036998": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:04:06.036998"
-  },
-  "foresight|2026-09-05t21_03_55_051585": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:03:55.051585"
-  },
-  "action_detect|2026-09-05t21_02_57_434679": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути прострочені дедлайни\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після закінчення",
-    "ts": "2026-09-05T21:02:57.434679"
   }
 }
