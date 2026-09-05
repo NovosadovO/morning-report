@@ -1,4 +1,34 @@
 {
+  "foresight|2026-09-05t18_56_30_475324": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T18:56:30.475324"
+  },
+  "foresight|2026-09-05t18_55_24_043883": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T18:55:24.043883"
+  },
+  "foresight|2026-09-05t18_55_13_042522": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T18:55:13.042522"
+  },
+  "foresight|2026-09-05t18_54_04_547320": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T18:54:04.547320"
+  },
+  "foresight|2026-09-05t18_53_53_538872": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T18:53:53.538872"
+  },
+  "foresight|2026-09-05t18_52_40_841890": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T18:52:40.841890"
+  },
   "foresight|2026-09-05t18_52_29_619094": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -268,35 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-05T18:19:55.980997"
-  },
-  "foresight|2026-09-05t18_18_46_341848": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T18:18:46.341848"
-  },
-  "foresight|2026-09-05t18_18_35_379982": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T18:18:35.379982"
-  },
-  "mailcal_extract|2026-09-05t18_18_24_654844": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"78603\",     \"title\": \"Створити Recovery Kit для Socios.com\",     \"date\": \"2026-09-10\",     \"time\": null,     \"kind\": \"deadline\",     \"",
-    "ts": "2026-09-05T18:18:24.654844"
-  },
-  "foresight|2026-09-05t18_17_15_917185": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T18:17:15.917185"
-  },
-  "foresight|2026-09-05t18_17_04_801337": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T18:17:04.801337"
-  },
-  "selfact|2026-09-05t18_16_57_627410": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що тобі потрібно згенерувати Recovery Kit для Socios.com до 10 вересня. Це важливо, щоб не втрат",
-    "ts": "2026-09-05T18:16:57.627410"
   }
 }
