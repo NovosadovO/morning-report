@@ -1,4 +1,84 @@
 {
+  "foresight|2026-09-05t22_05_59_201121": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:05:59.201121"
+  },
+  "foresight|2026-09-05t22_05_48_265042": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:05:48.265042"
+  },
+  "foresight|2026-09-05t22_04_39_707439": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:04:39.707439"
+  },
+  "foresight|2026-09-05t22_04_28_678845": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:04:28.678845"
+  },
+  "foresight|2026-09-05t22_03_23_566128": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:03:23.566128"
+  },
+  "action_detect|2026-09-05t22_03_18_210934": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити прострочені дедлайни\", \"action_date\": \"2026-09-05\", \"action_time\": \"22:02\", \"action_summary\": \"Переглянути",
+    "ts": "2026-09-05T22:03:18.210934"
+  },
+  "foresight|2026-09-05t22_03_12_282170": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:03:12.282170"
+  },
+  "action_detect|2026-09-05t22_02_40_972848": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Miriam, Classic strih\", \"action_date\": \"2023-09-06\", \"action_time\": \"16:30\", \"action_summary\": \"Відвідати Miriam дл",
+    "ts": "2026-09-05T22:02:40.972848"
+  },
+  "action_detect|2026-09-05t22_02_40_969961": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armolopid",
+    "ts": "2026-09-05T22:02:40.969961"
+  },
+  "action_detect|2026-09-05t22_02_29_967887": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Завершити планування 'Зібрати речі: Málaga'\", \"action_date\": \"2026-09-06\", \"action_time\": \"18:00\", \"action_summary\"",
+    "ts": "2026-09-05T22:02:29.967887"
+  },
+  "briefing_truthfix|2026-09-05t22_02_25_415344": {
+    "topic": "briefing/truthfix",
+    "gist": "Зараз 22:02 суботи, 5 вересня 2026 року. Ти на нічній зміні, яка триватиме до 06:00 ранку.  Твоя відпустка в Малазі починається 7 вересня, що робить найближчі г",
+    "ts": "2026-09-05T22:02:25.415344"
+  },
+  "briefing|2026-09-05t22_02_21_764598": {
+    "topic": "briefing",
+    "gist": "🧭 ВЕКТОР ДНЯ Олеже, зараз 22:02 суботи, і ти на нічній зміні, яка завершиться о 06:00 ранку неділі. Попри робочий процес, твоя відпустка в Малазі починається вж",
+    "ts": "2026-09-05T22:02:21.764598"
+  },
+  "themes_ai_truthfix|2026-09-05t22_02_11_634296": {
+    "topic": "themes_ai/truthfix",
+    "gist": "Олеже, зараз субота, 5 вересня 2026 року, 22:02. Дані, що я маю, оновлені 22 години тому, тому можуть бути не зовсім свіжими.  Твоя вага 83.0 кг, що стабільно з",
+    "ts": "2026-09-05T22:02:11.634296"
+  },
+  "foresight|2026-09-05t22_02_08_357528": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:02:08.357528"
+  },
+  "themes_ai|2026-09-05t22_02_02_156313": {
+    "topic": "themes_ai",
+    "gist": "Олеже, ти зараз на нічній зміні, вже 22:01. Твоя вага 83 кг, що не наближає до цілі 75 кг, а це вже -0.3 кг за п'ять вимірів.  💰 ФІНАНСИ — Чекає оплати 422.16€,",
+    "ts": "2026-09-05T22:02:02.156313"
+  },
+  "foresight|2026-09-05t22_01_57_415029": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:01:57.415029"
+  },
   "email_ai_item|2026-09-05t22_01_49_572828": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист містить дайджест нових оголошень про продаж 3- та 4-кімнатних квартир у Кошиці, Словаччина, станом на 2026-09-05. Представлено чот",
@@ -218,85 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T21:35:31.998214"
-  },
-  "foresight|2026-09-05t21_35_20_852413": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T21:35:20.852413"
-  },
-  "foresight|2026-09-05t21_34_14_415506": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:34:14.415506"
-  },
-  "foresight|2026-09-05t21_34_03_378436": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T21:34:03.378436"
-  },
-  "foresight|2026-09-05t21_32_57_858171": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:32:57.858171"
-  },
-  "foresight|2026-09-05t21_32_46_855414": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T21:32:46.855414"
-  },
-  "foresight|2026-09-05t21_31_33_874971": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:31:33.874971"
-  },
-  "foresight|2026-09-05t21_31_22_571943": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T21:31:22.571943"
-  },
-  "foresight|2026-09-05t21_30_10_151273": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:30:10.151273"
-  },
-  "foresight|2026-09-05t21_29_59_089478": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T21:29:59.089478"
-  },
-  "foresight|2026-09-05t21_28_53_091892": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:28:53.091892"
-  },
-  "foresight|2026-09-05t21_28_42_155775": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T21:28:42.155775"
-  },
-  "foresight|2026-09-05t21_27_36_537587": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:27:36.537587"
-  },
-  "foresight|2026-09-05t21_27_24_259627": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T21:27:24.259627"
-  },
-  "foresight|2026-09-05t21_26_12_563191": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:26:12.563191"
-  },
-  "foresight|2026-09-05t21_26_01_490264": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T21:26:01.490264"
-  },
-  "selfact|2026-09-05t21_25_53_761109": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що тобі потрібно оновити платіжну інформацію для підписки Runable. Схоже, останні платежі були н",
-    "ts": "2026-09-05T21:25:53.761109"
   }
 }
