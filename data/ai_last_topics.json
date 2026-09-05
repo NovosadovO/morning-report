@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-05t20_19_27_004694": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:19:27.004694"
+  },
+  "foresight|2026-09-05t20_19_15_988838": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:19:15.988838"
+  },
+  "foresight|2026-09-05t20_17_58_034549": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:17:58.034549"
+  },
+  "foresight|2026-09-05t20_17_47_000070": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:17:47.000070"
+  },
+  "foresight|2026-09-05t20_16_40_241010": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:16:40.241010"
+  },
+  "foresight|2026-09-05t20_16_29_194552": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:16:29.194552"
+  },
+  "email_ai_item|2026-09-05t20_15_17_013342": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про дві нові вакансії, які відповідають налаштуванням Олега: Project Manager у Convatec (Micha",
+    "ts": "2026-09-05T20:15:17.013342"
+  },
   "foresight|2026-09-05t20_15_16_042809": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T19:55:21.259417"
-  },
-  "foresight|2026-09-05t19_55_10_279519": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T19:55:10.279519"
-  },
-  "foresight|2026-09-05t19_53_57_865219": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T19:53:57.865219"
-  },
-  "foresight|2026-09-05t19_53_46_938453": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T19:53:46.938453"
-  },
-  "foresight|2026-09-05t19_52_41_583354": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T19:52:41.583354"
-  },
-  "foresight|2026-09-05t19_52_30_337596": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T19:52:30.337596"
-  },
-  "selfact|2026-09-05t19_52_23_045667": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підготовка до відпустки\",     \"text\": \"Олег, нагадую, що тобі потрібно зібрати речі для поїздки в Малагу вже з",
-    "ts": "2026-09-05T19:52:23.045667"
-  },
-  "foresight|2026-09-05t19_51_03_008111": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T19:51:03.008111"
   }
 }
