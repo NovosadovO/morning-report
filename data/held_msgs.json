@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T15:31:04.543140",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🐶📰Weekend Update</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78596"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78596"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78596"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78596"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78596"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78596"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T15:31:05.792367",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — September 5</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
@@ -574,6 +535,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78591"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T15:46:27.962243",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Should you take creatine?</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78590"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78590"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78590"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78590"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78590"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78590"
             }
           ]
         ]
