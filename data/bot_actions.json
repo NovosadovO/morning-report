@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "sleep_report",
-      "detail": "аналіз сну",
-      "module": "selfact",
-      "ts": "2026-09-01T21:17:11"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-09-01",
       "detail": "автосинк з годинника: steps, hr_avg, calories, stress, sleep_total_min",
@@ -2799,6 +2792,13 @@
       "detail": "Зі свіжих листів: '🏠 Нові квартири у Кошіці — 1 нове оголошення', '🏠 Нові квартири у Кошіці — 4 нових оголошень', '🏠 Нові квартири у Кошіці — 28 нових оголошень (Уточнення)' та лист від 'Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> | 1' з посиланням на nehnutelnosti.sk.",
       "module": "selfact",
       "ts": "2026-09-05T21:10:46"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, зверни увагу на листа від Maroš Sivák | INTERFIN з те",
+      "detail": "Зі свіжих листів: 'від Maroš Sivák | INTERFIN <maros.sivak@interfin.sk> | Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂', де вказано, що це 'ближчі завіречні інформації до Малаги'.",
+      "module": "selfact",
+      "ts": "2026-09-05T21:10:50"
     }
   ]
 }
