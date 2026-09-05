@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Зниження активності Google Health",
-      "detail": "Лист від Google Health 'Your weekly progress report from Google Health' вказує на '42,542 fewer than last week' кроків та зниження інших показників.",
-      "module": "selfact",
-      "ts": "2026-09-02T19:54:31"
-    },
-    {
-      "kind": "notify",
       "what": "Проблеми з Runable",
       "detail": "У розділі 'ПІДПИСКИ' для Runable є запис: 'note': 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.'",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У пам'яті про Олега є запис: 'Олег планує переглядати вакансії на Profesia.sk о 06:00 3 вересня.' Дата '3 вересня' може бути помилковою, оскільки сьогодні 6 вересня, а він досі на нічній зміні, і це може бути актуальним.",
       "module": "selfact",
       "ts": "2026-09-06T00:51:17"
+    },
+    {
+      "kind": "notify",
+      "what": "Увага: Google Cloud Billing",
+      "detail": "Олег отримав лист від Google Cloud Billing Alerts про досягнення 50% бюджету (€16.00) за вересень, що є важливим фінансовим сповіщенням.",
+      "module": "selfact",
+      "ts": "2026-09-06T01:07:04"
     }
   ]
 }
