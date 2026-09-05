@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-05t20_44_37_312134": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:44:37.312134"
+  },
+  "foresight|2026-09-05t20_44_26_403383": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:44:26.403383"
+  },
+  "foresight|2026-09-05t20_43_14_223333": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:43:14.223333"
+  },
+  "foresight|2026-09-05t20_43_03_136263": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:43:03.136263"
+  },
+  "foresight|2026-09-05t20_41_56_877514": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:41:56.877514"
+  },
+  "foresight|2026-09-05t20_41_45_990804": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:41:45.990804"
+  },
+  "foresight|2026-09-05t20_40_38_048714": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T20:40:38.048714"
+  },
   "foresight|2026-09-05t20_40_27_050190": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T20:07:00.896933"
-  },
-  "foresight|2026-09-05t20_06_49_857306": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:06:49.857306"
-  },
-  "foresight|2026-09-05t20_05_44_060028": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:05:44.060028"
-  },
-  "foresight|2026-09-05t20_05_33_022650": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:05:33.022650"
-  },
-  "foresight|2026-09-05t20_04_20_783473": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:04:20.783473"
-  },
-  "action_detect|2026-09-05t20_04_11_836478": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Обробка інформації\", \"action_date\": \"2023-09-05\", \"action_time\": \"20:01\", \"action_summary\": \"Сьогодні о 20:01 під ч",
-    "ts": "2026-09-05T20:04:11.836478"
-  },
-  "foresight|2026-09-05t20_04_09_800712": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T20:04:09.800712"
-  },
-  "action_detect|2026-09-05t20_04_00_918866": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Астрологічний аналіз для Олега підкреслює тра",
-    "ts": "2026-09-05T20:04:00.918866"
   }
 }
