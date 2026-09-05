@@ -1,4 +1,49 @@
 {
+  "personal_ai_truthfix|2026-09-05t17_01_10_217155": {
+    "topic": "personal_ai/truthfix",
+    "gist": "Зараз 17:01, субота, 5 вересня 2026 року, і до початку нічної зміни о 17:30 залишилось менш ніж пів години. Дані Strava заблоковані, тому свіжих даних про актив",
+    "ts": "2026-09-05T17:01:10.217155"
+  },
+  "personal_ai|2026-09-05t17_01_05_931466": {
+    "topic": "personal_ai",
+    "gist": "Зараз 17:00, і до початку нічної зміни (18:00) залишилась лише одна година. Часу на повноцінну пробіжку сьогодні вже немає, краще зосередитись на підготовці до ",
+    "ts": "2026-09-05T17:01:05.931466"
+  },
+  "foresight|2026-09-05t17_00_06_951388": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T17:00:06.951388"
+  },
+  "foresight|2026-09-05t16_59_55_907848": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T16:59:55.907848"
+  },
+  "action_detect|2026-09-05t16_59_16_329835": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
+    "ts": "2026-09-05T16:59:16.329835"
+  },
+  "foresight|2026-09-05t16_58_44_614788": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T16:58:44.614788"
+  },
+  "foresight|2026-09-05t16_58_33_496848": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T16:58:33.496848"
+  },
+  "foresight|2026-09-05t16_57_27_160025": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T16:57:27.160025"
+  },
+  "foresight|2026-09-05t16_57_16_089826": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T16:57:16.089826"
+  },
   "selfact|2026-09-05t16_57_07_975559": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні о 17:00 у тебе починається нічна зміна (18:00-06:00).\",     \"why\": \"Згідно з календа",
@@ -253,50 +298,5 @@
     "topic": "openloop_promises",
     "gist": "```json [] ```",
     "ts": "2026-09-05T16:29:46.346233"
-  },
-  "action_detect|2026-09-05t16_29_10_848384": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-05T16:29:10.848384"
-  },
-  "action_detect|2026-09-05t16_29_00_104879": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2024-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу пот",
-    "ts": "2026-09-05T16:29:00.104879"
-  },
-  "foresight|2026-09-05t16_28_34_409099": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-05T16:28:34.409099"
-  },
-  "foresight|2026-09-05t16_28_23_433882": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:28:23.433882"
-  },
-  "foresight|2026-09-05t16_27_15_931975": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:27:15.931975"
-  },
-  "foresight|2026-09-05t16_27_04_994758": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:27:04.994758"
-  },
-  "selfact|2026-09-05t16_26_48_860258": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нічна зміна\",     \"text\": \"Олеже, нагадую, що о 17:00 у тебе починається нічна зміна (18:00-06:00).\",     \"why",
-    "ts": "2026-09-05T16:26:48.860258"
-  },
-  "foresight|2026-09-05t16_25_27_565434": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-05T16:25:27.565434"
-  },
-  "foresight|2026-09-05t16_25_16_584008": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:25:16.584008"
   }
 }
