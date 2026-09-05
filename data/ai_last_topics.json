@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-05t19_44_01_715283": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T19:44:01.715283"
+  },
+  "foresight|2026-09-05t19_43_50_673091": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T19:43:50.673091"
+  },
+  "foresight|2026-09-05t19_42_37_421443": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T19:42:37.421443"
+  },
+  "foresight|2026-09-05t19_42_26_317236": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T19:42:26.317236"
+  },
+  "foresight|2026-09-05t19_41_20_794293": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T19:41:20.794293"
+  },
+  "foresight|2026-09-05t19_41_09_624810": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T19:41:09.624810"
+  },
+  "foresight|2026-09-05t19_40_02_561896": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T19:40:02.561896"
+  },
   "foresight|2026-09-05t19_39_51_345309": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-05T19:07:57.878711"
-  },
-  "foresight|2026-09-05t19_06_51_239033": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T19:06:51.239033"
-  },
-  "foresight|2026-09-05t19_06_40_317046": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T19:06:40.317046"
-  },
-  "foresight|2026-09-05t19_05_33_849023": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T19:05:33.849023"
-  },
-  "foresight|2026-09-05t19_05_23_102149": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T19:05:23.102149"
-  },
-  "selfact|2026-09-05t19_05_15_309310": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підготовка до Малаги\",     \"text\": \"Олеже, нагадую, що тобі потрібно зібрати речі для поїздки в Малагу до 17:0",
-    "ts": "2026-09-05T19:05:15.309310"
-  },
-  "mailcal_extract|2026-09-05t19_04_37_474418": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"78607\",     \"title\": \"Відліт до Малаги на InterFin Discovery Day\",     \"date\": \"2026-09-07\",     \"time\": \"16:05\",     \"kind\": \"flight\"",
-    "ts": "2026-09-05T19:04:37.474418"
-  },
-  "foresight|2026-09-05t19_03_19_709195": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T19:03:19.709195"
   }
 }
