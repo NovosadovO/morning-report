@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T14:46:03.823918",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-05T14:46:05.052213",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Project Management Officer (Junior) – Remote в NATEK</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -560,6 +554,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78590"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-05T15:01:28.214932",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>General Manager Advanced Trading (Fusion) в Bitpanda</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78589"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78589"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78589"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78589"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78589"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78589"
             }
           ]
         ]
