@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T14:46:19.986541",
-      "kind": "chunk",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 1€ Svet\n📝 (AI-аналіз тимчасово недоступний)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-05T14:50:40.370933",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -432,6 +426,45 @@
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T15:11:52.952429",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Daily Bone</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🐶📰Weekend Update»\n\n<i>«**BTC** $79,709 (0.4%) | **ETH** $2,460 (0.5%) | **SOL** $103 (1.7%)\r\n\r\n———————————————————————————\r\n\r\nWelcome to the Daily Bone Weekend Update where we recap the top stories from the  week. Be sure to check out our daily newsletter to get all of your news hot off the press each and every weekday!...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_78596"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78596"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78596"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78596"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78596"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78596"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
