@@ -1,4 +1,9 @@
 {
+  "foresight|2026-09-05t21_44_37_422301": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T21:44:37.422301"
+  },
   "foresight|2026-09-05t21_40_47_706762": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
@@ -293,10 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-05T21:12:08.307795"
-  },
-  "foresight|2026-09-05t21_11_02_655385": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:11:02.655385"
   }
 }
