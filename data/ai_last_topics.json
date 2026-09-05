@@ -1,4 +1,44 @@
 {
+  "foresight|2026-09-05t22_49_27_327375": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:49:27.327375"
+  },
+  "action_detect|2026-09-05t22_48_34_270088": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
+    "ts": "2026-09-05T22:48:34.270088"
+  },
+  "foresight|2026-09-05t22_48_20_096020": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:48:20.096020"
+  },
+  "foresight|2026-09-05t22_48_09_092758": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:48:09.092758"
+  },
+  "foresight|2026-09-05t22_47_03_259790": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:47:03.259790"
+  },
+  "foresight|2026-09-05t22_46_52_255299": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:46:52.255299"
+  },
+  "foresight|2026-09-05t22_45_47_842951": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:45:47.842951"
+  },
+  "foresight|2026-09-05t22_45_37_333097": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:45:37.333097"
+  },
   "selfact|2026-09-05t22_45_23_065730": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Незавершені звички\",     \"text\": \"Олег, зверни увагу, що сьогодні ти не відмітив спрей для волосся, сауну та б",
@@ -258,45 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
     "ts": "2026-09-05T22:14:36.279865"
-  },
-  "foresight|2026-09-05t22_13_32_119604": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T22:13:32.119604"
-  },
-  "foresight|2026-09-05t22_13_21_123083": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T22:13:21.123083"
-  },
-  "selfact|2026-09-05t22_13_02_679548": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на листа від Maroš Sivák | INTERFIN з темою «Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy",
-    "ts": "2026-09-05T22:13:02.679548"
-  },
-  "foresight|2026-09-05t22_11_43_582545": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T22:11:43.582545"
-  },
-  "foresight|2026-09-05t22_11_32_645094": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T22:11:32.645094"
-  },
-  "foresight|2026-09-05t22_10_25_940112": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T22:10:25.940112"
-  },
-  "foresight|2026-09-05t22_10_14_745444": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T22:10:14.745444"
-  },
-  "foresight|2026-09-05t22_08_58_646304": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T22:08:58.646304"
   }
 }
