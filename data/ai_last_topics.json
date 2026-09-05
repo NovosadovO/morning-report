@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-05t22_40_14_576829": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:40:14.576829"
+  },
+  "foresight|2026-09-05t22_40_03_451087": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:40:03.451087"
+  },
+  "foresight|2026-09-05t22_38_53_391971": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:38:53.391971"
+  },
+  "foresight|2026-09-05t22_38_42_450398": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:38:42.450398"
+  },
+  "foresight|2026-09-05t22_37_35_211313": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:37:35.211313"
+  },
+  "foresight|2026-09-05t22_37_24_281968": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:37:24.281968"
+  },
+  "foresight|2026-09-05t22_36_19_406656": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:36:19.406656"
+  },
   "foresight|2026-09-05t22_36_08_438427": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T22:03:23.566128"
-  },
-  "action_detect|2026-09-05t22_03_18_210934": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити прострочені дедлайни\", \"action_date\": \"2026-09-05\", \"action_time\": \"22:02\", \"action_summary\": \"Переглянути",
-    "ts": "2026-09-05T22:03:18.210934"
-  },
-  "foresight|2026-09-05t22_03_12_282170": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T22:03:12.282170"
-  },
-  "action_detect|2026-09-05t22_02_40_972848": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Miriam, Classic strih\", \"action_date\": \"2023-09-06\", \"action_time\": \"16:30\", \"action_summary\": \"Відвідати Miriam дл",
-    "ts": "2026-09-05T22:02:40.972848"
-  },
-  "action_detect|2026-09-05t22_02_40_969961": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armolopid",
-    "ts": "2026-09-05T22:02:40.969961"
-  },
-  "action_detect|2026-09-05t22_02_29_967887": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Завершити планування 'Зібрати речі: Málaga'\", \"action_date\": \"2026-09-06\", \"action_time\": \"18:00\", \"action_summary\"",
-    "ts": "2026-09-05T22:02:29.967887"
-  },
-  "briefing_truthfix|2026-09-05t22_02_25_415344": {
-    "topic": "briefing/truthfix",
-    "gist": "Зараз 22:02 суботи, 5 вересня 2026 року. Ти на нічній зміні, яка триватиме до 06:00 ранку.  Твоя відпустка в Малазі починається 7 вересня, що робить найближчі г",
-    "ts": "2026-09-05T22:02:25.415344"
-  },
-  "briefing|2026-09-05t22_02_21_764598": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ Олеже, зараз 22:02 суботи, і ти на нічній зміні, яка завершиться о 06:00 ранку неділі. Попри робочий процес, твоя відпустка в Малазі починається вж",
-    "ts": "2026-09-05T22:02:21.764598"
   }
 }
