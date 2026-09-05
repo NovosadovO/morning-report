@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-09-05t04_35_16_699036": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-05T04:35:16.699036"
+  },
   "proactive_actions|2026-09-05t04_30_11_183996": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-05\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після закінчення зміни о ",
     "ts": "2026-09-05T02:23:52.848764"
-  },
-  "msg_deep_analysis|2026-09-05t02_23_45_105724": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋  Зараз глибока ніч, 02:23, і ти на нічній зміні, яка триватиме ще майже чотири години — до 06:00. Враховуючи, що твоя нічна зміна також запланов",
-    "ts": "2026-09-05T02:23:45.105724"
   }
 }
