@@ -10850,6 +10850,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dm_ok_fe1f3f4508"
+    },
+    {
+      "ts": "2026-09-05T15:57:21.084973+00:00",
+      "category": "confirm",
+      "question": "gate_dm_skip: Норма",
+      "answer": "yes"
     }
   ]
 }
