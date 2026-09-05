@@ -1,4 +1,34 @@
 {
+  "foresight|2026-09-05t22_10_14_745444": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:10:14.745444"
+  },
+  "foresight|2026-09-05t22_08_58_646304": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:08:58.646304"
+  },
+  "foresight|2026-09-05t22_08_47_667270": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:08:47.667270"
+  },
+  "foresight|2026-09-05t22_07_43_752650": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T22:07:43.752650"
+  },
+  "foresight|2026-09-05t22_07_32_759442": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T22:07:32.759442"
+  },
+  "mailcal_extract|2026-09-05t22_07_16_211594": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"78607\",     \"title\": \"Відліт з Братислави до Малаги (InterFin Discovery Day)\",     \"date\": \"2026-09-07\",     \"time\": \"16:05\",     \"kin",
+    "ts": "2026-09-05T22:07:16.211594"
+  },
   "foresight|2026-09-05t22_05_59_201121": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
@@ -268,35 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T21:39:30.553926"
-  },
-  "foresight|2026-09-05t21_39_19_644711": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T21:39:19.644711"
-  },
-  "foresight|2026-09-05t21_38_13_848795": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:38:13.848795"
-  },
-  "foresight|2026-09-05t21_38_02_788396": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T21:38:02.788396"
-  },
-  "foresight|2026-09-05t21_36_51_169373": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:36:51.169373"
-  },
-  "foresight|2026-09-05t21_36_40_231908": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T21:36:40.231908"
-  },
-  "foresight|2026-09-05t21_35_31_998214": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T21:35:31.998214"
   }
 }
