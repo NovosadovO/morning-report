@@ -1,4 +1,44 @@
 {
+  "foresight|2026-09-05t18_52_29_619094": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T18:52:29.619094"
+  },
+  "foresight|2026-09-05t18_51_24_106441": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T18:51:24.106441"
+  },
+  "foresight|2026-09-05t18_51_13_297858": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T18:51:13.297858"
+  },
+  "foresight|2026-09-05t18_50_06_733257": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T18:50:06.733257"
+  },
+  "foresight|2026-09-05t18_49_55_742549": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T18:49:55.742549"
+  },
+  "foresight|2026-09-05t18_48_47_584604": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T18:48:47.584604"
+  },
+  "foresight|2026-09-05t18_48_36_681631": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T18:48:36.681631"
+  },
+  "selfact|2026-09-05t18_48_24_093852": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що тобі потрібно зібрати речі для поїздки в Малагу завтра о 17:00. Це вже завтра, 6 вересня!\",  ",
+    "ts": "2026-09-05T18:48:24.093852"
+  },
   "email_ai_item|2026-09-05t18_47_49_186286": {
     "topic": "email_ai_item",
     "gist": "```json { \"description\": \"Лист є нагадуванням про майбутню поїздку до Малаги на InterFin Discovery Day, яка відбудеться 7-11 вересня 2026 року. У ньому міститьс",
@@ -258,45 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що тобі потрібно згенерувати Recovery Kit для Socios.com до 10 вересня. Це важливо, щоб не втрат",
     "ts": "2026-09-05T18:16:57.627410"
-  },
-  "defi_digest|2026-09-05t18_16_07_870138": {
-    "topic": "defi_digest",
-    "gist": "Протягом останніх 24 годин на DeFi ринку спостерігається аномальний ріст Reservoir Protocol на понад 212%, що виділяється на фоні помірних змін інших проєктів. ",
-    "ts": "2026-09-05T18:16:07.870138"
-  },
-  "foresight|2026-09-05t18_15_42_579571": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T18:15:42.579571"
-  },
-  "foresight|2026-09-05t18_15_31_521708": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T18:15:31.521708"
-  },
-  "foresight|2026-09-05t18_14_19_054981": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T18:14:19.054981"
-  },
-  "foresight|2026-09-05t18_14_08_041679": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T18:14:08.041679"
-  },
-  "foresight|2026-09-05t18_13_02_041052": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T18:13:02.041052"
-  },
-  "foresight|2026-09-05t18_12_51_100003": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
-    "ts": "2026-09-05T18:12:51.100003"
-  },
-  "foresight|2026-09-05t18_11_45_144149": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T18:11:45.144149"
   }
 }
