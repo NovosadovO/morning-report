@@ -1,4 +1,44 @@
 {
+  "selfact|2026-09-05t16_57_07_975559": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні о 17:00 у тебе починається нічна зміна (18:00-06:00).\",     \"why\": \"Згідно з календа",
+    "ts": "2026-09-05T16:57:07.975559"
+  },
+  "foresight|2026-09-05t16_55_52_936032": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T16:55:52.936032"
+  },
+  "action_detect|2026-09-05t16_55_49_718593": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-05T16:55:49.718593"
+  },
+  "foresight|2026-09-05t16_55_41_965274": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T16:55:41.965274"
+  },
+  "foresight|2026-09-05t16_54_35_596379": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T16:54:35.596379"
+  },
+  "foresight|2026-09-05t16_54_24_581615": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T16:54:24.581615"
+  },
+  "foresight|2026-09-05t16_53_13_172633": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-05T16:53:13.172633"
+  },
+  "foresight|2026-09-05t16_53_02_184290": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"malaga\", \"country\": \"spain\"} ```",
+    "ts": "2026-09-05T16:53:02.184290"
+  },
   "foresight|2026-09-05t16_51_53_397284": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
@@ -258,45 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-05T16:25:16.584008"
-  },
-  "foresight|2026-09-05t16_24_09_092273": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-05T16:24:09.092273"
-  },
-  "foresight|2026-09-05t16_23_58_000488": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:23:58.000488"
-  },
-  "foresight|2026-09-05t16_22_51_920112": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-05T16:22:51.920112"
-  },
-  "foresight|2026-09-05t16_22_40_936949": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:22:40.936949"
-  },
-  "people|2026-09-05t16_22_10_995079": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"michaela.bila@bukovinakosice.sk\",     \"name\": \"Mgr. Michaela Bilá\",     \"relation\": \"робота\",     \"topics\": [\"фабрики на Україні\"], ",
-    "ts": "2026-09-05T16:22:10.995079"
-  },
-  "foresight|2026-09-05t16_21_32_364481": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-05T16:21:32.364481"
-  },
-  "foresight|2026-09-05t16_21_21_486966": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:21:21.486966"
-  },
-  "foresight|2026-09-05t16_20_09_277470": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-05T16:20:09.277470"
   }
 }
