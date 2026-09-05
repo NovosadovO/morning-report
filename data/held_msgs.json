@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-05T10:46:14.662674",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Linux Platform &amp; Blockchain Operations Engineer в Bit</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78583"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78583"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78583"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78583"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78583"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78583"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-05T10:46:15.865984",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 25 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -666,6 +627,12 @@
       "ts": "2026-09-05T11:01:51.005711",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 25 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 4 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-05T11:15:52.744426",
+      "kind": "chunk",
+      "text": "☀️\n<b>ЗВІТ  ·  Сб 05.09  ·  11:15</b>\n🏖 Вихідний\n<i>Якщо AVAX рухається — ти вже знаєш. Якщо ні — їж і відпочинь 💪</i>\n📌 🌙 Нічна зміна (18:00-06:00) +2\n\n⚡ <b>День: ⭐☆☆☆☆ 25/100</b>  ↓5 vs вчора\n\n🌦️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>24°C</b>\n<i>☀️ Тепло — сонцезахисний крем</i>\n<i>☂️ парасолька</i>\n\n📅 <b>Прогноз сьогодні:</b>\n05:57   🌇 19:09  12:00 ☁️23°🌧59%  │  13:00 ☁️22°🌧69%  │  14:00 🌦21°🌧71%  │  15:00 ☁️21°🌧62%  │  16:00 ☁️22°🌧46%  │  17:00 ☁️22°🌧31%  09:00 ☀️18°  │  12:00 ☀️21°  │  15:00 ☀️23°  │  18:00 ☀️21°  │  21:00 ☀️18°  13:00 (69%)\n\n<b>Завтра:</b>  ☀️ Ясно  🔻16°  /  🔺23°\n<code>09:00</code> ☀️18°  │  <code>12:00</code> ☀️21°  │  <code>15:00</code> ☀️23°  │  <code>18:00</code> ☀️21°  │  <code>21:00</code> ☀️18°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n  • 🚧 Перекрито — Baštová\n  • 🚧 Перекрито — Svornosti\n\n💰\n<b>КРИПТО  ·  🟢 БИЧАЧИЙ 🚀</b>\n➡️ <b>BTC</b> <code>$79,724.00</code>  +0.06%\n➡️ <b>ETH</b> <code>$2,459.39</code>  +0.07%\n➡️ <b>AVAX</b> <code>$7.50</code>  0.00%\n🔺 <b>ONDO</b> <code>$0.37</code>  +0.18%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🔴 <b>IBIT</b>  <code>$45.23</code>  <i>-2.42% за день</i>\n🔴 <b>ETHA</b>  <code>$18.52</code>  <i>-2.6",
       "keyboard": null
     }
   ]
