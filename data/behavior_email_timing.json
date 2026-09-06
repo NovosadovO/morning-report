@@ -1,9 +1,4 @@
 {
-  "78151": {
-    "sender": "news@mail.lidlplus.sk",
-    "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
-    "seen_ts": "2026-08-28T05:55:10.418306+00:00"
-  },
   "78152": {
     "sender": "noreply@discord.com",
     "sender_raw": "Discord <noreply@discord.com>",
@@ -1498,5 +1493,10 @@
     "sender": "cloudplatform-noreply@google.com",
     "sender_raw": "Google Cloud Billing Alerts <CloudPlatform-noreply@google.com>",
     "seen_ts": "2026-09-05T23:02:55.640760+00:00"
+  },
+  "78620": {
+    "sender": "support@profesia.sk",
+    "sender_raw": "\"Profesia.sk\" <support@profesia.sk>",
+    "seen_ts": "2026-09-06T00:46:06.932900+00:00"
   }
 }
