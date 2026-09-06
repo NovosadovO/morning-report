@@ -241,6 +241,14 @@ def gate_write(kind: str, title: str, start_dt=None, detail: str = "",
         if A.answered(key):
             _log("уже відповідав про це — не питаю вдруге: " + s[:60])
             return {"ok": False, "error": "calgate: already answered"}
+        try:
+            _sim_old = A.answered_similar(s)
+        except Exception:
+            _sim_old = ""
+        if _sim_old:
+            _log("на схоже питання вже є відповідь (" + _sim_old[:40]
+                 + ") — не перепитую: " + s[:60])
+            return {"ok": False, "error": "calgate: answered similar"}
         if _similar_asked(s):
             _log("про це саме вже питав днями — не повторююсь: " + s[:60])
             return {"ok": False, "error": "calgate: similar asked"}

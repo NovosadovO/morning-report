@@ -128,6 +128,36 @@ def answered(key: str) -> bool:
     return bool(answer_of(key))
 
 
+def answered_similar(title: str, thresh: float = 0.6) -> str:
+    """Ключ питання, на яке Олег УЖЕ відповів і яке значить те саме.
+
+    Пам'ять назавжди: формулювання щоразу інше («Зібрати речі на Малагу» /
+    «Зібрати речі: Málaga»), а справа одна — і перепитувати її не можна.
+    """
+    def _w(t):
+        t = str(t or "").lower()
+        return set(x for x in "".join(
+            (c if (c.isalnum() or c == " ") else " ") for c in t).split()
+            if len(x) > 2)
+    w = _w(title)
+    if not w:
+        return ""
+    try:
+        data = _load() or {}
+    except Exception:
+        return ""
+    for k in list(data)[:400]:
+        try:
+            if not answer_of(k):
+                continue
+            ow = _w(k)
+            if ow and len(w & ow) / max(1, min(len(w), len(ow))) >= thresh:
+                return str(k)
+        except Exception:
+            continue
+    return ""
+
+
 def _asked_recently(key: str) -> bool:
     r = (_load() or {}).get(str(key)[:80]) or {}
     ts = _dt(r.get("asked_at"))
