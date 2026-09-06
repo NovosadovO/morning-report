@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Зниження фізичної активності",
-      "detail": "У свіжих листах є лист від Google Health <google-health-noreply@google.com> 'Your weekly progress report from Google Health', де вказано '42,542 fewer than last week' для кроків, '11 below last week' для поверхів, і '38.26 below last week' для відстані.",
-      "module": "selfact",
-      "ts": "2026-09-02T21:41:32"
-    },
-    {
       "kind": "note",
       "what": "Олег отримав звіт від Google Health, який свідчить про значн",
       "detail": "У свіжих листах є лист від Google Health <google-health-noreply@google.com> 'Your weekly progress report from Google Health', де вказано значне зниження показників фізичної активності.",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист від Maroš Sivák | INTERFIN з темою 'Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂', де міститься 'bližšie záverečné informácie k Malage'.",
       "module": "selfact",
       "ts": "2026-09-06T04:01:15"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, твоя нічна зміна закінчується о 06:00. Не забудь прийн",
+      "detail": "Згідно з нотатками, Олег приймає Armolopid Plus після нічної зміни перед сном, а його зміна закінчується о 06:00 сьогодні. Поточний час 04:16, тому це актуальне нагадування.",
+      "module": "selfact",
+      "ts": "2026-09-06T04:16:13"
     }
   ]
 }
