@@ -4366,5 +4366,13 @@
     "text": "звіт бота за день",
     "tag": "generic",
     "ts": "2026-09-06T21:30:56.182508+00:00"
+  },
+  "5ded52bc73": {
+    "kind": "report",
+    "key": "",
+    "title": "⚠️ Gemini: закінчились prepayment credits. Весь AI-аналіз вимкнено, бот працює на локальних fallback'ах без AI",
+    "text": "⚠️ Gemini: закінчились prepayment credits. Весь AI-аналіз вимкнено, бот працює на локальних fallback'ах без AI-інтерпретації. Поповни баланс на https://ai.studio → Billing.",
+    "tag": "report",
+    "ts": "2026-09-06T22:01:14.073097+00:00"
   }
 }
