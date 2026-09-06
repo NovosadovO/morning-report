@@ -1,9 +1,4 @@
 {
-  "78159": {
-    "sender": "newsletter@genai.works",
-    "sender_raw": "Generative AI <newsletter@genai.works>",
-    "seen_ts": "2026-08-28T09:32:42.087505+00:00"
-  },
   "78160": {
     "sender": "unicreditbank@info.unicreditgroup.sk",
     "sender_raw": "\"UniCredit Bank\" <UniCreditBank@info.unicreditgroup.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "news@mail.lidlplus.sk",
     "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
     "seen_ts": "2026-09-06T05:29:23.836710+00:00"
+  },
+  "78625": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-09-06T06:30:08.757394+00:00"
   }
 }
