@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-06t04_47_02_836030": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підготовка до відпустки\",     \"text\": \"Олег, нагадую, що сьогодні о 17:00 тобі потрібно зібрати речі для поїзд",
+    "ts": "2026-09-06T04:47:02.836030"
+  },
   "openloop_promises|2026-09-06t04_35_27_493358": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T03:55:45.698548"
-  },
-  "foresight|2026-09-06t03_54_40_663287": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T03:54:40.663287"
   }
 }
