@@ -1,4 +1,79 @@
 {
+  "foresight|2026-09-06t02_06_01_380029": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:06:01.380029"
+  },
+  "foresight|2026-09-06t02_04_55_910018": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:04:55.910018"
+  },
+  "foresight|2026-09-06t02_04_44_960072": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:04:44.960072"
+  },
+  "foresight|2026-09-06t02_03_40_299389": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:03:40.299389"
+  },
+  "foresight|2026-09-06t02_03_29_395042": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:03:29.395042"
+  },
+  "action_detect|2026-09-06t02_02_25_943081": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Зустріч Miriam та збір речей на Малагу\",   \"action_date\": \"2026-09-07\",   \"action_time\": \"16:30\",   \"a",
+    "ts": "2026-09-06T02:02:25.943081"
+  },
+  "foresight|2026-09-06t02_02_24_493989": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
+    "ts": "2026-09-06T02:02:24.493989"
+  },
+  "action_detect|2026-09-06t02_02_14_585605": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки вказ",
+    "ts": "2026-09-06T02:02:14.585605"
+  },
+  "action_detect|2026-09-06t02_02_14_569478": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Miriam, Classic strih\", \"action_date\": \"2026-09-06\", \"action_time\": \"16:30\", \"action_summary\": \"Відвідати Miriam дл",
+    "ts": "2026-09-06T02:02:14.569478"
+  },
+  "foresight|2026-09-06t02_02_13_537705": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:02:13.537705"
+  },
+  "action_detect|2026-09-06t02_02_04_242726": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зібрати речі для подорожі\", \"action_date\": \"2024-09-06\", \"action_time\": null, \"action_summary\": \"Зібрати речі для п",
+    "ts": "2026-09-06T02:02:04.242726"
+  },
+  "briefing_truthfix|2026-09-06t02_01_59_837176": {
+    "topic": "briefing/truthfix",
+    "gist": "Олеже, зараз 02:01 неділі, 6 вересня. Ти на нічній зміні, яка триватиме до 06:00 ранку.  Твоя вага 83.0 кг, що є стабільним показником за останні 14 днів, але д",
+    "ts": "2026-09-06T02:01:59.837176"
+  },
+  "briefing|2026-09-06t02_01_56_618459": {
+    "topic": "briefing",
+    "gist": "Олеже, зараз глибока ніч, але твій моніторинг крипторинку триває. Враховуючи твій вихідний та майбутню подорож до Малаги, фокус зміщується на стратегічну підгот",
+    "ts": "2026-09-06T02:01:56.618459"
+  },
+  "themes_ai|2026-09-06t02_01_44_730251": {
+    "topic": "themes_ai",
+    "gist": "Олеже, зараз глибока ніч, 02:01, і хоча календар показує вільний день, я пам'ятаю, що ти планував нічну зміну до 06:00 ранку. Тож, тримайся, ще трохи.  🏃 БІГ Ди",
+    "ts": "2026-09-06T02:01:44.730251"
+  },
+  "email_ai_item|2026-09-06t02_01_29_347337": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист містить дайджест з 4 нових оголошень про продаж 3-кімнатних квартир у Кошіці, Словаччина, станом на 2026-09-05. Ціни варіюються ві",
+    "ts": "2026-09-06T02:01:29.347337"
+  },
   "email_ai_item|2026-09-06t02_01_18_492349": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист є нагадуванням про майбутню поїздку до Малаги на InterFin Discovery Day. Відправлення з Братислави заплановано на понеділок",
@@ -223,80 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
     "ts": "2026-09-06T01:39:31.936589"
-  },
-  "foresight|2026-09-06t01_39_21_021930": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:39:21.021930"
-  },
-  "selfact|2026-09-06t01_39_01_635628": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: Google Cloud Billing Alert показує, що 50% бюджету (€16.00) вже використано до 5 вересня. П",
-    "ts": "2026-09-06T01:39:01.635628"
-  },
-  "foresight|2026-09-06t01_37_46_447575": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-06T01:37:46.447575"
-  },
-  "foresight|2026-09-06t01_37_35_466927": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:37:35.466927"
-  },
-  "foresight|2026-09-06t01_36_30_751380": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:36:30.751380"
-  },
-  "foresight|2026-09-06t01_36_19_740920": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:36:19.740920"
-  },
-  "foresight|2026-09-06t01_35_15_014923": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:35:15.014923"
-  },
-  "foresight|2026-09-06t01_35_03_839494": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:35:03.839494"
-  },
-  "openloop_promises|2026-09-06t01_34_52_809710": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-09-06T01:34:52.809710"
-  },
-  "foresight|2026-09-06t01_33_34_284214": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:33:34.284214"
-  },
-  "foresight|2026-09-06t01_33_23_204628": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:33:23.204628"
-  },
-  "proactive_actions|2026-09-06t01_30_08_720636": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-06\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
-    "ts": "2026-09-06T01:30:08.720636"
-  },
-  "bills|2026-09-06t01_29_51_015014": {
-    "topic": "bills",
-    "gist": "[]",
-    "ts": "2026-09-06T01:29:51.015014"
-  },
-  "selfact|2026-09-06t01_22_57_032740": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: Google Cloud Billing Alert повідомляє, що твій бюджет на €16.00 вичерпано на 50% станом на ",
-    "ts": "2026-09-06T01:22:57.032740"
-  },
-  "mailcal_extract|2026-09-06t01_10_21_108131": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"78607\",     \"title\": \"Відліт до Малаги (InterFin Discovery Day)\",     \"date\": \"2026-09-07\",     \"time\": \"16:05\",     \"kind\": \"flight\",",
-    "ts": "2026-09-06T01:10:21.108131"
   }
 }
