@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-06t05_08_03_845235": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-06T05:08:03.845235"
+  },
+  "foresight|2026-09-06t05_07_52_863002": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:07:52.863002"
+  },
+  "foresight|2026-09-06t05_06_41_170301": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:06:41.170301"
+  },
+  "foresight|2026-09-06t05_06_30_149232": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:06:30.149232"
+  },
+  "foresight|2026-09-06t05_05_24_034610": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:05:24.034610"
+  },
+  "foresight|2026-09-06t05_05_13_020080": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-06T05:05:13.020080"
+  },
+  "foresight|2026-09-06t05_04_08_100287": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:04:08.100287"
+  },
   "foresight|2026-09-06t05_03_57_105681": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T04:03:57.625735"
-  },
-  "action_detect|2026-09-06t04_03_28_159063": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-09-06T04:03:28.159063"
-  },
-  "action_detect|2026-09-06t04_03_17_289431": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати підписки\", \"action_date\": \"2026-09-06\", \"action_time\": null, \"action_summary\": \"Сьогодні доцільно пр",
-    "ts": "2026-09-06T04:03:17.289431"
-  },
-  "action_detect|2026-09-06t04_03_06_314011": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зібрати речі: Málaga\", \"action_date\": \"2026-09-06\", \"action_time\": \"18:00\", \"action_summary\": \"Зібрати речі для пої",
-    "ts": "2026-09-06T04:03:06.314011"
-  },
-  "action_detect|2026-09-06t04_03_06_195940": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийнят",
-    "ts": "2026-09-06T04:03:06.195940"
-  },
-  "action_detect|2026-09-06t04_02_55_128084": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зібрати речі для поїздки\", \"action_date\": \"2026-09-06\", \"action_time\": null, \"action_summary\": \"Зібрати речі для по",
-    "ts": "2026-09-06T04:02:55.128084"
-  },
-  "foresight|2026-09-06t04_02_51_966418": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-06T04:02:51.966418"
-  },
-  "briefing|2026-09-06t04_02_49_228636": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ Зараз, у глибокій ночі перед стартом важливої поїздки до Малаги, твій фокус розривається між відпочинком та підготовкою до InterFin Discovery Day. ",
-    "ts": "2026-09-06T04:02:49.228636"
   }
 }
