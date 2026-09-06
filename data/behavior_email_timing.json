@@ -1,14 +1,4 @@
 {
-  "78183": {
-    "sender": "hello@plunge.com",
-    "sender_raw": "PLUNGE <hello@plunge.com>",
-    "seen_ts": "2026-08-28T15:33:13.195158+00:00"
-  },
-  "78184": {
-    "sender": "jobalerts-noreply@linkedin.com",
-    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
-    "seen_ts": "2026-08-28T16:15:49.782847+00:00"
-  },
   "78185": {
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
@@ -1503,5 +1493,10 @@
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
     "seen_ts": "2026-09-06T15:30:00.767437+00:00"
+  },
+  "78648": {
+    "sender": "noreply@atguest.com",
+    "sender_raw": "noreply@atguest.com",
+    "seen_ts": "2026-09-06T16:00:39.104524+00:00"
   }
 }
