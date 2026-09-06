@@ -1,4 +1,34 @@
 {
+  "selfact|2026-09-06t02_57_05_629116": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твій бюджет Google Cloud досяг 50% від €16.00 за вересень. Перевір деталі у консолі.\",     \"why\": \"Лист ",
+    "ts": "2026-09-06T02:57:05.629116"
+  },
+  "foresight|2026-09-06t02_55_53_273188": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:55:53.273188"
+  },
+  "foresight|2026-09-06t02_55_42_307527": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:55:42.307527"
+  },
+  "foresight|2026-09-06t02_54_31_059995": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:54:31.059995"
+  },
+  "foresight|2026-09-06t02_54_19_952355": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:54:19.952355"
+  },
+  "foresight|2026-09-06t02_53_16_358465": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:53:16.358465"
+  },
   "foresight|2026-09-06t02_53_05_212183": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -268,35 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T02:20:33.365530"
-  },
-  "foresight|2026-09-06t02_19_28_443755": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:19:28.443755"
-  },
-  "foresight|2026-09-06t02_19_17_463438": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:19:17.463438"
-  },
-  "foresight|2026-09-06t02_18_12_579992": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:18:12.579992"
-  },
-  "foresight|2026-09-06t02_18_01_625979": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:18:01.625979"
-  },
-  "foresight|2026-09-06t02_16_49_293494": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:16:49.293494"
-  },
-  "foresight|2026-09-06t02_16_38_518719": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:16:38.518719"
   }
 }
