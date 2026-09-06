@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-06t05_13_06_940633": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:13:06.940633"
+  },
+  "foresight|2026-09-06t05_11_55_192904": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-06T05:11:55.192904"
+  },
+  "foresight|2026-09-06t05_11_44_210309": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-06T05:11:44.210309"
+  },
+  "foresight|2026-09-06t05_10_37_901181": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:10:37.901181"
+  },
+  "foresight|2026-09-06t05_10_26_903994": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-06T05:10:26.903994"
+  },
+  "foresight|2026-09-06t05_09_22_034324": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-06T05:09:22.034324"
+  },
+  "foresight|2026-09-06t05_09_10_986575": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
+    "ts": "2026-09-06T05:09:10.986575"
+  },
   "foresight|2026-09-06t05_08_03_845235": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
     "ts": "2026-09-06T04:06:56.699481"
-  },
-  "foresight|2026-09-06t04_06_45_706973": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T04:06:45.706973"
-  },
-  "action_detect|2026-09-06t04_05_41_767953": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": \"09:00\", \"action_summary\": \"Поїздка до Малаги почин",
-    "ts": "2026-09-06T04:05:41.767953"
-  },
-  "foresight|2026-09-06t04_05_41_325862": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-06T04:05:41.325862"
-  },
-  "foresight|2026-09-06t04_05_30_308168": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T04:05:30.308168"
-  },
-  "msg_vip_email|2026-09-06t04_05_26_227202": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 📧  Поки ти насолоджуєшся нічним відпочинком, є один важливий зв'язок між твоїм здоров'ям та фінансовими зобов'язаннями, який потребує уваги: незва",
-    "ts": "2026-09-06T04:05:26.227202"
-  },
-  "foresight|2026-09-06t04_04_08_712328": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T04:04:08.712328"
-  },
-  "foresight|2026-09-06t04_03_57_625735": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T04:03:57.625735"
   }
 }
