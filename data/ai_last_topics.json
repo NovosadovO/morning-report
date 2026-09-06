@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-06t05_59_33_193136": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-06T05:59:33.193136"
+  },
+  "foresight|2026-09-06t05_59_22_126214": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:59:22.126214"
+  },
+  "foresight|2026-09-06t05_58_17_744037": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-06T05:58:17.744037"
+  },
+  "foresight|2026-09-06t05_58_06_700562": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:58:06.700562"
+  },
+  "foresight|2026-09-06t05_56_54_817872": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:56:54.817872"
+  },
+  "foresight|2026-09-06t05_56_43_876078": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:56:43.876078"
+  },
+  "foresight|2026-09-06t05_55_38_913423": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:55:38.913423"
+  },
   "foresight|2026-09-06t05_55_27_984431": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист є автоматичним дайджестом нових оголошень про 3-кімнатні квартири в Кошіце, Словаччина, станом на 5 вересня 2026 року. У нь",
     "ts": "2026-09-06T05:01:52.428541"
-  },
-  "email_ai_item|2026-09-06t05_01_42_294634": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист від Maroš Sivák з InterFin містить фінальні деталі щодо поїздки до Малаги на InterFin Discovery Day. Відліт з Братислави запланова",
-    "ts": "2026-09-06T05:01:42.294634"
-  },
-  "email_ai_item|2026-09-06t05_01_30_520792": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист є відповіддю на попереднє повідомлення щодо події 'InterFin Discovery Day' та відльоту до Малаги. Зміст листа дуже короткий і ",
-    "ts": "2026-09-06T05:01:30.520792"
-  },
-  "personal_ai|2026-09-06t05_01_12_282507": {
-    "topic": "personal_ai",
-    "gist": "Олеже, твоя нічна зміна закінчується за годину, о 06:00, і це єдина активність на найближчі години, що дає тобі змогу прийняти Armolopid Plus та відпочити перед",
-    "ts": "2026-09-06T05:01:12.282507"
-  },
-  "foresight|2026-09-06t05_00_53_338167": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-06T05:00:53.338167"
-  },
-  "foresight|2026-09-06t05_00_42_498490": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T05:00:42.498490"
-  },
-  "mailcal_extract|2026-09-06t04_59_28_514264": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"78607\",     \"title\": \"Відліт до Малаги на InterFin Discovery Day\",     \"date\": \"2026-09-07\",     \"time\": \"16:05\",     \"kind\": \"flight\"",
-    "ts": "2026-09-06T04:59:28.514264"
-  },
-  "action_detect|2026-09-06t04_48_11_997858": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-06T04:48:11.997858"
   }
 }
