@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверни увагу на лист від Maroš Sivák з детальними інфо",
-      "detail": "Є свіжий лист від Maroš Sivák <maros.sivak.sro@gmail.com> з темою 'InterFin Malaga trip - detailné informácie', який містить важливу інформацію для майбутньої поїздки в Малагу.",
-      "module": "selfact",
-      "ts": "2026-09-02T21:26:40"
-    },
-    {
-      "kind": "notify",
       "what": "Зниження фізичної активності",
       "detail": "У свіжих листах є лист від Google Health <google-health-noreply@google.com> 'Your weekly progress report from Google Health', де вказано '42,542 fewer than last week' для кроків, '11 below last week' для поверхів, і '38.26 below last week' для відстані.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист від Google Cloud Billing Alerts про досягнення 50% бюджету (€16.00) за вересень.",
       "module": "selfact",
       "ts": "2026-09-06T04:01:09"
+    },
+    {
+      "kind": "notify",
+      "what": "Інформація про відліт до Малаги",
+      "detail": "Олег отримав лист від Maroš Sivák | INTERFIN з темою 'Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂', де міститься 'bližšie záverečné informácie k Malage'.",
+      "module": "selfact",
+      "ts": "2026-09-06T04:01:15"
     }
   ]
 }
