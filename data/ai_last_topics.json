@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-06t04_12_06_917241": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T04:12:06.917241"
+  },
+  "foresight|2026-09-06t04_11_55_875655": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T04:11:55.875655"
+  },
+  "foresight|2026-09-06t04_10_51_662342": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T04:10:51.662342"
+  },
+  "foresight|2026-09-06t04_10_40_819219": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T04:10:40.819219"
+  },
+  "foresight|2026-09-06t04_09_29_492233": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T04:09:29.492233"
+  },
+  "foresight|2026-09-06t04_09_18_497732": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T04:09:18.497732"
+  },
+  "foresight|2026-09-06t04_08_14_604898": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T04:08:14.604898"
+  },
   "foresight|2026-09-06t04_08_03_603550": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: Google Cloud Billing Alerts повідомив, що 50% твого бюджету (€16.00) вже використано за пер",
     "ts": "2026-09-06T03:45:20.403420"
-  },
-  "action_detect|2026-09-06t03_45_06_111868": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відпустка в Малазі\", \"action_date\": \"2026-09-07\", \"action_time\": \"09:00\", \"action_summary\": \"Завтра, 7 вересня, у О",
-    "ts": "2026-09-06T03:45:06.111868"
-  },
-  "msg_deep_analysis|2026-09-06t03_45_00_556826": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт, Олеже! 👋  Зараз 03:44 неділі, глибока ніч, і твій календар показує, що ти зараз відпочиваєш. Це дуже важливо, особливо перед насиченим тижнем, адже вже ",
-    "ts": "2026-09-06T03:45:00.556826"
-  },
-  "deadlines|2026-09-06t03_44_03_147105": {
-    "topic": "deadlines",
-    "gist": "```json [   {     \"uid\": \"78607\",     \"kind\": \"other\",     \"title\": \"Відліт до Малаги\",     \"org\": \"InterFin\",     \"deadline\": \"2026-09-07\",     \"action\": \"Бути",
-    "ts": "2026-09-06T03:44:03.147105"
-  },
-  "foresight|2026-09-06t03_44_02_649459": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T03:44:02.649459"
-  },
-  "foresight|2026-09-06t03_43_51_599084": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T03:43:51.599084"
-  },
-  "foresight|2026-09-06t03_42_30_720662": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T03:42:30.720662"
-  },
-  "foresight|2026-09-06t03_42_19_777792": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T03:42:19.777792"
   }
 }
