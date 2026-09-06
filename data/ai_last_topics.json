@@ -1,4 +1,44 @@
 {
+  "foresight|2026-09-06t05_55_27_984431": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:55:27.984431"
+  },
+  "foresight|2026-09-06t05_24_01_230192": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-06T05:24:01.230192"
+  },
+  "foresight|2026-09-06t05_23_50_039249": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:23:50.039249"
+  },
+  "action_detect|2026-09-06t05_23_30_992759": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Закінчення нічної зміни\", \"action_date\": \"2026-09-06\", \"action_time\": \"06:00\", \"action_summary\": \"Нічна зміна Олега",
+    "ts": "2026-09-06T05:23:30.992759"
+  },
+  "msg_vip_email|2026-09-06t05_23_23_377444": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🏹 Навіть коли ти міцно спиш, відновлюючи сили перед насиченим тижнем, ринок не зупиняється, а твої довгострокові фінансові та фізичні цілі вимагаю",
+    "ts": "2026-09-06T05:23:23.377444"
+  },
+  "foresight|2026-09-06t05_22_38_500530": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
+    "ts": "2026-09-06T05:22:38.500530"
+  },
+  "foresight|2026-09-06t05_22_27_568375": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:22:27.568375"
+  },
+  "foresight|2026-09-06t05_21_20_134472": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Spain\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T05:21:20.134472"
+  },
   "foresight|2026-09-06t05_21_09_173252": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -258,45 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-06T04:48:11.997858"
-  },
-  "selfact|2026-09-06t04_47_02_836030": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підготовка до відпустки\",     \"text\": \"Олег, нагадую, що сьогодні о 17:00 тобі потрібно зібрати речі для поїзд",
-    "ts": "2026-09-06T04:47:02.836030"
-  },
-  "openloop_promises|2026-09-06t04_35_27_493358": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-09-06T04:35:27.493358"
-  },
-  "selfact|2026-09-06t04_32_02_268911": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підготовка до відпустки\",     \"text\": \"Олег, нагадую, що сьогодні ввечері о 17:00 потрібно зібрати речі для по",
-    "ts": "2026-09-06T04:32:02.268911"
-  },
-  "proactive_actions|2026-09-06t04_30_45_233511": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-06\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
-    "ts": "2026-09-06T04:30:45.233511"
-  },
-  "action_detect|2026-09-06t04_18_09_558938": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги та зустріч команди\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": ",
-    "ts": "2026-09-06T04:18:09.558938"
-  },
-  "msg_vip_email|2026-09-06t04_18_04_452476": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 🤝 Глибока ніч, 04:17, і поки ти спиш, відновлюючи сили, ринок не спить, пропонуючи певні нюанси, що варті уваги, але лише після твого повноцінного",
-    "ts": "2026-09-06T04:18:04.452476"
-  },
-  "action_detect|2026-09-06t04_17_59_421812": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-06T04:17:59.421812"
-  },
-  "selfact|2026-09-06t04_16_09_522445": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, твоя нічна зміна закінчується о 06:00. Не забудь прийняти Armolopid Plus після зміни перед сном.\",     \"w",
-    "ts": "2026-09-06T04:16:09.522445"
   }
 }
