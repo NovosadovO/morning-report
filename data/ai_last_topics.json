@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-06t02_44_52_261426": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:44:52.261426"
+  },
+  "foresight|2026-09-06t02_43_40_152611": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:43:40.152611"
+  },
+  "foresight|2026-09-06t02_43_29_198895": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:43:29.198895"
+  },
+  "foresight|2026-09-06t02_42_25_489280": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:42:25.489280"
+  },
+  "foresight|2026-09-06t02_42_14_487402": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:42:14.487402"
+  },
+  "selfact|2026-09-06t02_42_02_493921": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: Google Cloud Billing Alerts повідомляє, що твій бюджет у €16.00 досяг 50% станом на 5 верес",
+    "ts": "2026-09-06T02:42:02.493921"
+  },
+  "mailcal_extract|2026-09-06t02_41_38_173387": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"78618\",     \"title\": \"Досягнуто 50% бюджету Google Cloud\",     \"date\": \"2026-09-05\",     \"time\": \"16:02\",     \"kind\": \"payment\",     \"",
+    "ts": "2026-09-06T02:41:38.173387"
+  },
   "foresight|2026-09-06t02_40_22_627672": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T02:07:34.965626"
-  },
-  "foresight|2026-09-06t02_07_24_044696": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:07:24.044696"
-  },
-  "foresight|2026-09-06t02_06_12_387018": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:06:12.387018"
-  },
-  "foresight|2026-09-06t02_06_01_380029": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:06:01.380029"
-  },
-  "foresight|2026-09-06t02_04_55_910018": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:04:55.910018"
-  },
-  "foresight|2026-09-06t02_04_44_960072": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:04:44.960072"
-  },
-  "foresight|2026-09-06t02_03_40_299389": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:03:40.299389"
-  },
-  "foresight|2026-09-06t02_03_29_395042": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:03:29.395042"
   }
 }
