@@ -1,4 +1,39 @@
 {
+  "mailcal_extract|2026-09-06t03_27_40_708100": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"78618\",     \"title\": \"Досягнуто 50% бюджету Google Cloud\",     \"date\": \"2026-09-05\",     \"time\": \"16:02\",     \"kind\": \"payment\",     \"",
+    "ts": "2026-09-06T03:27:40.708100"
+  },
+  "foresight|2026-09-06t03_26_22_929186": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:26:22.929186"
+  },
+  "foresight|2026-09-06t03_26_11_975600": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:26:11.975600"
+  },
+  "foresight|2026-09-06t03_25_08_312297": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:25:08.312297"
+  },
+  "foresight|2026-09-06t03_24_57_305649": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:24:57.305649"
+  },
+  "foresight|2026-09-06t03_23_52_997238": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:23:52.997238"
+  },
+  "foresight|2026-09-06t03_23_42_124726": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:23:42.124726"
+  },
   "foresight|2026-09-06t03_22_36_886022": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Початок насиченого періоду\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Завтра, 7",
     "ts": "2026-09-06T03:00:29.334639"
-  },
-  "msg_vip_email_truthfix|2026-09-06t03_00_21_513070": {
-    "topic": "MSG_VIP_EMAIL/truthfix",
-    "gist": "Олеже, зараз 03:00, глибока ніч.  Твої дані за 5 вересня (27 годин тому) показують: вага 83.0 кг, кроки 18972.0. При цьому підписка Strava прострочена з 4 серпн",
-    "ts": "2026-09-06T03:00:21.513070"
-  },
-  "msg_vip_email|2026-09-06t03_00_13_771655": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 🤝  Нічний спокій – це час для відновлення, і твій поточний статус підтверджує, що ти зараз відпочиваєш, що є надзвичайно важливим перед насиченим ",
-    "ts": "2026-09-06T03:00:13.771655"
-  },
-  "foresight|2026-09-06t02_59_55_737745": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:59:55.737745"
-  },
-  "foresight|2026-09-06t02_59_44_732952": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:59:44.732952"
-  },
-  "foresight|2026-09-06t02_58_40_916843": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:58:40.916843"
-  },
-  "foresight|2026-09-06t02_58_29_891051": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:58:29.891051"
-  },
-  "foresight|2026-09-06t02_57_24_842402": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:57:24.842402"
   }
 }
