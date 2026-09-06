@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-06t02_27_13_194104": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:27:13.194104"
+  },
+  "foresight|2026-09-06t02_26_09_233801": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:26:09.233801"
+  },
+  "foresight|2026-09-06t02_25_58_289938": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:25:58.289938"
+  },
+  "selfact|2026-09-06t02_25_50_726184": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на сповіщення від Google Cloud Billing Alerts. Твій бюджет у €16.00 досяг 50% (€8.00) за пер",
+    "ts": "2026-09-06T02:25:50.726184"
+  },
+  "foresight|2026-09-06t02_24_37_447477": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:24:37.447477"
+  },
+  "foresight|2026-09-06t02_24_26_449386": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:24:26.449386"
+  },
+  "foresight|2026-09-06t02_23_22_277018": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:23:22.277018"
+  },
   "foresight|2026-09-06t02_23_11_251193": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T01:55:57.416094"
-  },
-  "foresight|2026-09-06t01_55_46_329894": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:55:46.329894"
-  },
-  "mailcal_extract|2026-09-06t01_55_38_501495": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"78607\",     \"title\": \"Відліт до Малаги (InterFin Discovery Day)\",     \"date\": \"2026-09-07\",     \"time\": \"16:05\",     \"kind\": \"flight\",",
-    "ts": "2026-09-06T01:55:38.501495"
-  },
-  "action_detect|2026-09-06t01_55_24_991218": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити деталі поїздки до Малаги\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Перекона",
-    "ts": "2026-09-06T01:55:24.991218"
-  },
-  "msg_vip_email_truthfix|2026-09-06t01_55_18_331087": {
-    "topic": "MSG_VIP_EMAIL/truthfix",
-    "gist": "Олеже, зараз 01:55 неділі, 6 вересня. Ти перебуваєш у періоді нічного відпочинку, і це час, коли важливо мінімізувати відволікання та зосередитись на відновленн",
-    "ts": "2026-09-06T01:55:18.331087"
-  },
-  "msg_vip_email|2026-09-06t01_55_09_753935": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 📧  Зараз глибока ніч, 01:54 неділі, 6 вересня. Ти перебуваєш у періоді нічного відпочинку, і це час, коли важливо мінімізувати відволікання та зос",
-    "ts": "2026-09-06T01:55:09.753935"
-  },
-  "foresight|2026-09-06t01_54_21_452303": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-06T01:54:21.452303"
-  },
-  "foresight|2026-09-06t01_54_10_230481": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:54:10.230481"
   }
 }
