@@ -1,9 +1,4 @@
 {
-  "78175": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "\"Temu\" <temu@eu.temuemail.com>",
-    "seen_ts": "2026-08-28T13:51:14.885318+00:00"
-  },
   "78176": {
     "sender": "cloudplatform-noreply@google.com",
     "sender_raw": "Google Cloud Billing Alerts <CloudPlatform-noreply@google.com>",
@@ -1498,5 +1493,10 @@
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
     "seen_ts": "2026-09-06T11:27:48.385561+00:00"
+  },
+  "78640": {
+    "sender": "newsletter@myclaw.ai",
+    "sender_raw": "MyClaw Newsletter <newsletter@myclaw.ai>",
+    "seen_ts": "2026-09-06T12:43:52.444325+00:00"
   }
 }
