@@ -252,7 +252,13 @@ def _trip_brief() -> str:
     trip = sorted(trips, key=lambda t: t["offset"])[0]
     if trip["offset"] > 14:
         return ""
-    key = "trip|" + trip["city"].lower() + "|" + trip["date"].strftime("%Y%m%d")
+    # Ключ із «сходинкою» зворотного відліку: бриф оновлюється, коли поїздка
+    # наближається (за тиждень, за 3 дні, напередодні, у день вильоту), а не
+    # один раз назавжди.
+    _o = int(trip["offset"])
+    _step = 0 if _o <= 0 else (1 if _o <= 1 else (3 if _o <= 3 else (7 if _o <= 7 else 14)))
+    key = ("trip|" + trip["city"].lower() + "|"
+           + trip["date"].strftime("%Y%m%d") + "|t" + str(_step))
     if _seen(key):
         return ""
     o1, o2 = _trip_span(trip, trips)

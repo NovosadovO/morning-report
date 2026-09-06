@@ -56,7 +56,7 @@ def _take_allow() -> bool:
 
 
 ASK_STATE = "writegate_asks.json"
-_MAX_ASK_PER_DAY = 16
+_MAX_ASK_PER_DAY = 30
 
 
 def _ask_budget_ok() -> bool:
@@ -75,6 +75,59 @@ def _ask_budget_ok() -> bool:
     except Exception as e:
         _log("budget skip: " + str(e))
         return True
+
+
+RECENT_ASKS = "writegate_recent.json"
+_SIM_HOURS = 72
+
+
+def _norm_words(t: str) -> set:
+    t = str(t or "").lower()
+    out = []
+    for ch in t:
+        out.append(ch if (ch.isalnum() or ch == " ") else " ")
+    return set(w for w in "".join(out).split() if len(w) > 2)
+
+
+def _similar_asked(title: str) -> bool:
+    """Чи питали про майже те саме останні 72 год.
+
+    Причина: selfact формулює одну справу трьома способами («Зібрати речі на
+    Малагу» / «Зібрати речі: Малага» / «Зібрати речі: Málaga») — і кожен
+    варіант з'їдав денний ліміт питань, через що справді нові пропозиції
+    тихо відкидались.
+    """
+    import ai_kit as K
+    from datetime import datetime as _dt
+    w = _norm_words(title)
+    if not w:
+        return False
+    try:
+        st = K.load(RECENT_ASKS, default={}) or {}
+    except Exception:
+        st = {}
+    now = K.now().replace(tzinfo=None)
+    fresh = {}
+    hit = False
+    for k, v in (st.items() if isinstance(st, dict) else []):
+        try:
+            age = (now - _dt.fromisoformat(str(v)).replace(tzinfo=None)).total_seconds() / 3600.0
+        except Exception:
+            continue
+        if age > _SIM_HOURS:
+            continue
+        fresh[k] = v
+        ow = set(k.split("_"))
+        if ow and len(w & ow) / max(1, min(len(w), len(ow))) >= 0.6:
+            hit = True
+    if hit:
+        return True
+    fresh["_".join(sorted(w))[:120]] = K.now().isoformat()
+    try:
+        K.save(RECENT_ASKS, fresh)
+    except Exception:
+        pass
+    return False
 
 
 def worth_asking(summary: str, description: str = "") -> bool:
@@ -188,6 +241,9 @@ def gate_write(kind: str, title: str, start_dt=None, detail: str = "",
         if A.answered(key):
             _log("уже відповідав про це — не питаю вдруге: " + s[:60])
             return {"ok": False, "error": "calgate: already answered"}
+        if _similar_asked(s):
+            _log("про це саме вже питав днями — не повторююсь: " + s[:60])
+            return {"ok": False, "error": "calgate: similar asked"}
         if not _ask_budget_ok():
             _log("ліміт питань на добу — тихо відкидаю: " + s[:60])
             return {"ok": False, "error": "calgate: ask budget"}
