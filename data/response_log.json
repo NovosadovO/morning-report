@@ -11010,6 +11010,16 @@
         "kind": "reminder",
         "date": "2026-09-06"
       }
+    },
+    {
+      "ts": "2026-09-06T03:00:49.016335+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти Maroš Sivák (InterFin)",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-09-06"
+      }
     }
   ]
 }
