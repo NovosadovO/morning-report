@@ -1,4 +1,19 @@
 {
+  "proactive_actions|2026-09-06t04_30_45_233511": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-06\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
+    "ts": "2026-09-06T04:30:45.233511"
+  },
+  "action_detect|2026-09-06t04_18_09_558938": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Поїздка до Малаги та зустріч команди\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": ",
+    "ts": "2026-09-06T04:18:09.558938"
+  },
+  "msg_vip_email|2026-09-06t04_18_04_452476": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝 Глибока ніч, 04:17, і поки ти спиш, відновлюючи сили, ринок не спить, пропонуючи певні нюанси, що варті уваги, але лише після твого повноцінного",
+    "ts": "2026-09-06T04:18:04.452476"
+  },
   "action_detect|2026-09-06t04_17_59_421812": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -283,20 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T03:53:18.403274"
-  },
-  "foresight|2026-09-06t03_53_07_446442": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T03:53:07.446442"
-  },
-  "foresight|2026-09-06t03_52_02_870992": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T03:52:02.870992"
-  },
-  "foresight|2026-09-06t03_51_51_959930": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T03:51:51.959930"
   }
 }
