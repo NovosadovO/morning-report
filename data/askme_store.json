@@ -8829,5 +8829,31 @@
       "kind": "note"
     },
     "ts": "2026-09-06T04:32:09.241030+00:00"
+  },
+  "53be5bb993": {
+    "key": "cal|зустріч східнословацької частини команди в прешові",
+    "q": "📅 Хочу записати в календар:\n\n« 🤝 Зустріч східнословацької частини команди в Прешові »\n🕐 07.09 о 06:00\n\nАвтоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nЗраз: Прешов – перед будинком BC Volgogradská\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "🤝 Зустріч східнословацької частини команди в Прешові",
+      "desc": "Автоматично з листа.\nВід: Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>\nТема: Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂\nЗраз: Прешов – перед будинком BC Volgogradská ⏰ 6:00 – 6:15",
+      "minutes": 60,
+      "start": "2026-09-07T06:00:00"
+    },
+    "ts": "2026-09-06T04:59:30.791063+00:00"
   }
 }
