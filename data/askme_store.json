@@ -8806,5 +8806,28 @@
       "kind": "note"
     },
     "ts": "2026-09-06T04:32:04.935919+00:00"
+  },
+  "389aecb2d7": {
+    "key": "note|олег переглядає вакансії",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег переглядає вакансії »\n\nОлег переглядає вакансії, зокрема Regional Business Developer (m/ž) pre ICT & Cyber Security služby в Orange Košice, а також нові оголошення про квартири в Кошице.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег переглядає вакансії",
+      "desc": "Олег переглядає вакансії, зокрема Regional Business Developer (m/ž) pre ICT & Cyber Security služby в Orange Košice, а також нові оголошення про квартири в Кошице.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-06T04:32:09.241030+00:00"
   }
 }
