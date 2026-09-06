@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-09-06t04_59_28_514264": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"78607\",     \"title\": \"Відліт до Малаги на InterFin Discovery Day\",     \"date\": \"2026-09-07\",     \"time\": \"16:05\",     \"kind\": \"flight\"",
+    "ts": "2026-09-06T04:59:28.514264"
+  },
+  "action_detect|2026-09-06t04_48_11_997858": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-06T04:48:11.997858"
+  },
   "selfact|2026-09-06t04_47_02_836030": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підготовка до відпустки\",     \"text\": \"Олег, нагадую, що сьогодні о 17:00 тобі потрібно зібрати речі для поїзд",
@@ -288,15 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T03:57:01.012909"
-  },
-  "foresight|2026-09-06t03_55_56_708720": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T03:55:56.708720"
-  },
-  "foresight|2026-09-06t03_55_45_698548": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T03:55:45.698548"
   }
 }
