@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-06t03_13_34_163376": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:13:34.163376"
+  },
+  "foresight|2026-09-06t03_13_23_167843": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:13:23.167843"
+  },
+  "selfact|2026-09-06t03_13_15_287750": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу: Ви досягли 50% бюджету Google Cloud (€16.00) за вересень. Перегляньте деталі у консолі.\",",
+    "ts": "2026-09-06T03:13:15.287750"
+  },
+  "foresight|2026-09-06t03_12_01_920363": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:12:01.920363"
+  },
+  "foresight|2026-09-06t03_11_50_937232": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:11:50.937232"
+  },
+  "foresight|2026-09-06t03_10_39_614996": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:10:39.614996"
+  },
+  "foresight|2026-09-06t03_10_28_600594": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:10:28.600594"
+  },
   "foresight|2026-09-06t03_09_24_183148": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T02:47:52.984751"
-  },
-  "foresight|2026-09-06t02_47_41_968416": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:47:41.968416"
-  },
-  "foresight|2026-09-06t02_46_26_247358": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:46:26.247358"
-  },
-  "foresight|2026-09-06t02_46_15_266893": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:46:15.266893"
-  },
-  "email_ai_item|2026-09-06t02_46_05_086798": {
-    "topic": "email_ai_item",
-    "gist": "```json { \"description\": \"Цей лист від Profesia.sk містить 20 нових персоналізованих пропозицій роботи. Він пропонує оновити критерії пошуку вакансій або відпис",
-    "ts": "2026-09-06T02:46:05.086798"
-  },
-  "foresight|2026-09-06t02_45_03_203383": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:45:03.203383"
-  },
-  "foresight|2026-09-06t02_44_52_261426": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:44:52.261426"
-  },
-  "foresight|2026-09-06t02_43_40_152611": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:43:40.152611"
   }
 }
