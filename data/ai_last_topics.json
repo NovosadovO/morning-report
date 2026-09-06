@@ -1,4 +1,49 @@
 {
+  "foresight|2026-09-06t03_18_32_017000": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:18:32.017000"
+  },
+  "foresight|2026-09-06t03_17_27_667938": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:17:27.667938"
+  },
+  "foresight|2026-09-06t03_17_16_645664": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:17:16.645664"
+  },
+  "foresight|2026-09-06t03_16_04_561870": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:16:04.561870"
+  },
+  "foresight|2026-09-06t03_15_53_640376": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:15:53.640376"
+  },
+  "foresight|2026-09-06t03_14_49_913472": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:14:49.913472"
+  },
+  "foresight|2026-09-06t03_14_39_096369": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:14:39.096369"
+  },
+  "msg_rwa_truthfix|2026-09-06t03_14_17_010855": {
+    "topic": "MSG_RWA/truthfix",
+    "gist": "Олеже, зараз 03:14, ти вдома, і є кілька моментів, на які варто звернути увагу.  **Що відбувається з ринком?**  Сьогодні, 6 вересня 2026 року, у криптосекторі R",
+    "ts": "2026-09-06T03:14:17.010855"
+  },
+  "msg_rwa|2026-09-06t03_14_07_860006": {
+    "topic": "MSG_RWA",
+    "gist": "Олеже, бачу ти ще не спиш, зараз 03:13, і на нічній зміні є не дуже приємні новини для твого портфеля.  ### 📉 Що трапилось?  Весь сектор RWA (Real World Assets)",
+    "ts": "2026-09-06T03:14:07.860006"
+  },
   "foresight|2026-09-06t03_13_34_163376": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
@@ -253,50 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T02:53:16.358465"
-  },
-  "foresight|2026-09-06t02_53_05_212183": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:53:05.212183"
-  },
-  "foresight|2026-09-06t02_51_59_659308": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:51:59.659308"
-  },
-  "foresight|2026-09-06t02_51_48_765016": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:51:48.765016"
-  },
-  "foresight|2026-09-06t02_50_44_486361": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:50:44.486361"
-  },
-  "foresight|2026-09-06t02_50_33_513739": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:50:33.513739"
-  },
-  "foresight|2026-09-06t02_49_07_658692": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:49:07.658692"
-  },
-  "action_detect|2026-09-06t02_49_04_286329": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-06T02:49:04.286329"
-  },
-  "foresight|2026-09-06t02_48_56_868911": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:48:56.868911"
-  },
-  "foresight|2026-09-06t02_47_52_984751": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:47:52.984751"
   }
 }
