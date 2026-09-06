@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-06t02_40_22_627672": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:40:22.627672"
+  },
+  "foresight|2026-09-06t02_40_11_613530": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:40:11.613530"
+  },
+  "foresight|2026-09-06t02_39_07_638936": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:39:07.638936"
+  },
+  "foresight|2026-09-06t02_38_56_688674": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:38:56.688674"
+  },
+  "foresight|2026-09-06t02_37_44_835887": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:37:44.835887"
+  },
+  "foresight|2026-09-06t02_37_33_823378": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:37:33.823378"
+  },
+  "foresight|2026-09-06t02_36_29_836349": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:36:29.836349"
+  },
   "foresight|2026-09-06t02_36_18_892569": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T02:03:29.395042"
-  },
-  "action_detect|2026-09-06t02_02_25_943081": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Зустріч Miriam та збір речей на Малагу\",   \"action_date\": \"2026-09-07\",   \"action_time\": \"16:30\",   \"a",
-    "ts": "2026-09-06T02:02:25.943081"
-  },
-  "foresight|2026-09-06t02_02_24_493989": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-06T02:02:24.493989"
-  },
-  "action_detect|2026-09-06t02_02_14_585605": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки вказ",
-    "ts": "2026-09-06T02:02:14.585605"
-  },
-  "action_detect|2026-09-06t02_02_14_569478": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Miriam, Classic strih\", \"action_date\": \"2026-09-06\", \"action_time\": \"16:30\", \"action_summary\": \"Відвідати Miriam дл",
-    "ts": "2026-09-06T02:02:14.569478"
-  },
-  "foresight|2026-09-06t02_02_13_537705": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:02:13.537705"
-  },
-  "action_detect|2026-09-06t02_02_04_242726": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зібрати речі для подорожі\", \"action_date\": \"2024-09-06\", \"action_time\": null, \"action_summary\": \"Зібрати речі для п",
-    "ts": "2026-09-06T02:02:04.242726"
-  },
-  "briefing_truthfix|2026-09-06t02_01_59_837176": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, зараз 02:01 неділі, 6 вересня. Ти на нічній зміні, яка триватиме до 06:00 ранку.  Твоя вага 83.0 кг, що є стабільним показником за останні 14 днів, але д",
-    "ts": "2026-09-06T02:01:59.837176"
   }
 }
