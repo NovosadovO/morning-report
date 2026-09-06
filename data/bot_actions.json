@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, зверни увагу на звіт Google Health: за останній тижден",
-      "detail": "У свіжих листах є лист від Google Health 'Your weekly progress report from Google Health', де вказано 'Avg 8,832 steps/day red downward arrow 42,542 fewer than last week' та інші зниження показників.",
-      "module": "selfact",
-      "ts": "2026-09-02T21:56:39"
-    },
-    {
       "kind": "note",
       "what": "Олег цікавиться новинами зі світу криптовалют та фінансів, п",
       "detail": "У свіжих листах є листи від 'The Daily Degen', 'Avalanche Team1', 'VanEck через LinkedIn' та 'Edward Carr at The Economist', що підтверджує інтерес Олега до цих тем.",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є лист від 'Maroš Sivák | INTERFIN' з темою 'Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂', де він пересилає 'ближчі заключні інформації до Малаги'.",
       "module": "selfact",
       "ts": "2026-09-06T04:47:08"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-09-06T07:00:30"
     }
   ]
 }
