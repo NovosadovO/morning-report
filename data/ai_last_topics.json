@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-09-06t04_35_27_493358": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-06T04:35:27.493358"
+  },
+  "selfact|2026-09-06t04_32_02_268911": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підготовка до відпустки\",     \"text\": \"Олег, нагадую, що сьогодні ввечері о 17:00 потрібно зібрати речі для по",
+    "ts": "2026-09-06T04:32:02.268911"
+  },
   "proactive_actions|2026-09-06t04_30_45_233511": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-06\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
@@ -288,15 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T03:54:40.663287"
-  },
-  "foresight|2026-09-06t03_54_29_553219": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T03:54:29.553219"
-  },
-  "foresight|2026-09-06t03_53_18_403274": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T03:53:18.403274"
   }
 }
