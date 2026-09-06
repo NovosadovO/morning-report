@@ -1,4 +1,69 @@
 {
+  "foresight|2026-09-06t03_01_11_734755": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:01:11.734755"
+  },
+  "personal_ai_truthfix|2026-09-06t03_01_01_436023": {
+    "topic": "personal_ai/truthfix",
+    "gist": "Олеже, зараз глибока ніч, 03:01 неділі, 6 вересня 2026 року, ти вдома. Твоя нічна зміна сьогодні була вільною, а дані про поїздку до Малаги, які ти щойно опрацю",
+    "ts": "2026-09-06T03:01:01.436023"
+  },
+  "personal_ai|2026-09-06t03_00_58_644556": {
+    "topic": "personal_ai",
+    "gist": "Зараз глибока ніч, 03:00, і твоя нічна зміна сьогодні була вільною, але ти вже опрацював сповіщення про поїздку до Малаги. До відльоту залишилося менше 48 годин",
+    "ts": "2026-09-06T03:00:58.644556"
+  },
+  "proactive_actions|2026-09-06t03_00_42_280631": {
+    "topic": "proactive_actions",
+    "gist": "[   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-06\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна зміна зак",
+    "ts": "2026-09-06T03:00:42.280631"
+  },
+  "action_detect|2026-09-06t03_00_29_334639": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Початок насиченого періоду\", \"action_date\": \"2026-09-07\", \"action_time\": null, \"action_summary\": \"Завтра, 7",
+    "ts": "2026-09-06T03:00:29.334639"
+  },
+  "msg_vip_email_truthfix|2026-09-06t03_00_21_513070": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Олеже, зараз 03:00, глибока ніч.  Твої дані за 5 вересня (27 годин тому) показують: вага 83.0 кг, кроки 18972.0. При цьому підписка Strava прострочена з 4 серпн",
+    "ts": "2026-09-06T03:00:21.513070"
+  },
+  "msg_vip_email|2026-09-06t03_00_13_771655": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Нічний спокій – це час для відновлення, і твій поточний статус підтверджує, що ти зараз відпочиваєш, що є надзвичайно важливим перед насиченим ",
+    "ts": "2026-09-06T03:00:13.771655"
+  },
+  "foresight|2026-09-06t02_59_55_737745": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:59:55.737745"
+  },
+  "foresight|2026-09-06t02_59_44_732952": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:59:44.732952"
+  },
+  "foresight|2026-09-06t02_58_40_916843": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:58:40.916843"
+  },
+  "foresight|2026-09-06t02_58_29_891051": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:58:29.891051"
+  },
+  "foresight|2026-09-06t02_57_24_842402": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:57:24.842402"
+  },
+  "foresight|2026-09-06t02_57_13_691211": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:57:13.691211"
+  },
   "selfact|2026-09-06t02_57_05_629116": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твій бюджет Google Cloud досяг 50% від €16.00 за вересень. Перевір деталі у консолі.\",     \"why\": \"Лист ",
@@ -233,70 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T02:28:36.606475"
-  },
-  "foresight|2026-09-06t02_27_24_277720": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:27:24.277720"
-  },
-  "foresight|2026-09-06t02_27_13_194104": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:27:13.194104"
-  },
-  "foresight|2026-09-06t02_26_09_233801": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:26:09.233801"
-  },
-  "foresight|2026-09-06t02_25_58_289938": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:25:58.289938"
-  },
-  "selfact|2026-09-06t02_25_50_726184": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на сповіщення від Google Cloud Billing Alerts. Твій бюджет у €16.00 досяг 50% (€8.00) за пер",
-    "ts": "2026-09-06T02:25:50.726184"
-  },
-  "foresight|2026-09-06t02_24_37_447477": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:24:37.447477"
-  },
-  "foresight|2026-09-06t02_24_26_449386": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:24:26.449386"
-  },
-  "foresight|2026-09-06t02_23_22_277018": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:23:22.277018"
-  },
-  "foresight|2026-09-06t02_23_11_251193": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:23:11.251193"
-  },
-  "foresight|2026-09-06t02_21_59_179085": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:21:59.179085"
-  },
-  "foresight|2026-09-06t02_21_48_247660": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:21:48.247660"
-  },
-  "foresight|2026-09-06t02_20_44_261505": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:20:44.261505"
-  },
-  "foresight|2026-09-06t02_20_33_365530": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:20:33.365530"
   }
 }
