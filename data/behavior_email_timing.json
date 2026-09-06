@@ -1,9 +1,4 @@
 {
-  "78164": {
-    "sender": "hello@tradingview.com",
-    "sender_raw": "TradingView <hello@tradingview.com>",
-    "seen_ts": "2026-08-28T10:25:50.826636+00:00"
-  },
   "78165": {
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
@@ -1498,5 +1493,10 @@
     "sender": "offers@travel.wizznews.com",
     "sender_raw": "\"Wizz Air\" <offers@travel.wizznews.com>",
     "seen_ts": "2026-09-06T08:31:31.262314+00:00"
+  },
+  "78629": {
+    "sender": "newsletter@investingmail.com",
+    "sender_raw": "Investing.com <newsletter@investingmail.com>",
+    "seen_ts": "2026-09-06T08:41:43.114873+00:00"
   }
 }
