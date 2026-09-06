@@ -1,9 +1,4 @@
 {
-  "78160": {
-    "sender": "unicreditbank@info.unicreditgroup.sk",
-    "sender_raw": "\"UniCredit Bank\" <UniCreditBank@info.unicreditgroup.sk>",
-    "seen_ts": "2026-08-28T09:32:52.007580+00:00"
-  },
   "78161": {
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
     "seen_ts": "2026-09-06T06:30:08.757394+00:00"
+  },
+  "78626": {
+    "sender": "info@message.cropp.com",
+    "sender_raw": "\"Cropp\" <info@message.cropp.com>",
+    "seen_ts": "2026-09-06T07:32:49.283598+00:00"
   }
 }
