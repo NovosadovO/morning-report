@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримав щотижневий звіт від Google Health, який показує",
-      "detail": "Лист від Google Health <google-health-noreply@google.com> | Your weekly progress report from Google Health містить дані: 'Avg 8,832 steps/day red downward arrow 42,542 fewer than last week', 'total floors red downward arrow 11 below last week', 'total distance red downward arrow 38.26 below last wee",
-      "module": "selfact",
-      "ts": "2026-09-02T20:55:21"
-    },
-    {
       "kind": "notify",
       "what": "Олег, зверни увагу, що ти пропустив заплановані на сьогодні",
       "detail": "Згідно з календарем, Олег мав бігати, відвідати сауну та випити 2л+ води 02.09, але позначив ці події як '❌'. Крім того, Google Health звіт показує зниження його активності.",
@@ -2799,6 +2792,13 @@
       "detail": "Подія 'Miriam, Classic strih' на 06.09 о 15:30 в календарі є важливою і може бути забута, враховуючи ранній час.",
       "module": "selfact",
       "ts": "2026-09-06T03:29:15"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, сьогодні, 6 вересня, о 17:00 тобі потрібно зібрати реч",
+      "detail": "Подія '🔔 🧳 Зібрати речі: Málaga' на 06.09 о 17:00 в календарі є критичною перед відпусткою.",
+      "module": "selfact",
+      "ts": "2026-09-06T03:29:19"
     }
   ]
 }
