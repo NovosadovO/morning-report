@@ -1115,5 +1115,15 @@
     "sleep_quality": null,
     "hr_avg": 66,
     "stress": 39
+  },
+  "2026-09-06": {
+    "steps": 10027,
+    "hr_avg": 46,
+    "hrv": 46,
+    "spo2": 99,
+    "stress": 39,
+    "date": "2026-09-06",
+    "source": "qwatch_auto",
+    "saved_at": "2026-09-06 22:22"
   }
 }
