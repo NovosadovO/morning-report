@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-06t03_22_36_886022": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:22:36.886022"
+  },
+  "foresight|2026-09-06t03_22_25_858058": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:22:25.858058"
+  },
+  "foresight|2026-09-06t03_21_13_614374": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:21:13.614374"
+  },
+  "foresight|2026-09-06t03_21_02_613300": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:21:02.613300"
+  },
+  "foresight|2026-09-06t03_19_58_785873": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:19:58.785873"
+  },
+  "foresight|2026-09-06t03_19_47_610801": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:19:47.610801"
+  },
+  "foresight|2026-09-06t03_18_43_083432": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T03:18:43.083432"
+  },
   "foresight|2026-09-06t03_18_32_017000": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T02:57:24.842402"
-  },
-  "foresight|2026-09-06t02_57_13_691211": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:57:13.691211"
-  },
-  "selfact|2026-09-06t02_57_05_629116": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твій бюджет Google Cloud досяг 50% від €16.00 за вересень. Перевір деталі у консолі.\",     \"why\": \"Лист ",
-    "ts": "2026-09-06T02:57:05.629116"
-  },
-  "foresight|2026-09-06t02_55_53_273188": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:55:53.273188"
-  },
-  "foresight|2026-09-06t02_55_42_307527": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:55:42.307527"
-  },
-  "foresight|2026-09-06t02_54_31_059995": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:54:31.059995"
-  },
-  "foresight|2026-09-06t02_54_19_952355": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:54:19.952355"
-  },
-  "foresight|2026-09-06t02_53_16_358465": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T02:53:16.358465"
   }
 }
