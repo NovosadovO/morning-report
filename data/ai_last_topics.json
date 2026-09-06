@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-06t02_23_11_251193": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:23:11.251193"
+  },
+  "foresight|2026-09-06t02_21_59_179085": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:21:59.179085"
+  },
+  "foresight|2026-09-06t02_21_48_247660": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:21:48.247660"
+  },
+  "foresight|2026-09-06t02_20_44_261505": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:20:44.261505"
+  },
+  "foresight|2026-09-06t02_20_33_365530": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:20:33.365530"
+  },
+  "foresight|2026-09-06t02_19_28_443755": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:19:28.443755"
+  },
+  "foresight|2026-09-06t02_19_17_463438": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:19:17.463438"
+  },
   "foresight|2026-09-06t02_18_12_579992": {
     "topic": "foresight",
     "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T01:54:10.230481"
-  },
-  "selfact|2026-09-06t01_53_59_851655": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що тобі потрібно оновити платіжну інформацію для підписки Runable. Було кілька невдалих спроб сп",
-    "ts": "2026-09-06T01:53:59.851655"
-  },
-  "foresight|2026-09-06t01_52_47_880855": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-06T01:52:47.880855"
-  },
-  "foresight|2026-09-06t01_52_36_896924": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:52:36.896924"
-  },
-  "foresight|2026-09-06t01_51_17_066605": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:51:17.066605"
-  },
-  "foresight|2026-09-06t01_51_06_076114": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:51:06.076114"
-  },
-  "foresight|2026-09-06t01_49_54_972328": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:49:54.972328"
-  },
-  "foresight|2026-09-06t01_49_43_926382": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:49:43.926382"
   }
 }
