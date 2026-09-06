@@ -1,9 +1,4 @@
 {
-  "78186": {
-    "sender": "store+55390994629@g.shopifyemail.com",
-    "sender_raw": "UEFA Club Competitions Online Store <store+55390994629@g.shopifyemail.com>",
-    "seen_ts": "2026-08-28T17:06:37.877026+00:00"
-  },
   "78188": {
     "sender": "payments-noreply@google.com",
     "sender_raw": "Google Payments <payments-noreply@google.com>",
@@ -1498,5 +1493,10 @@
     "sender": "updates@okx.com",
     "sender_raw": "OKX <updates@okx.com>",
     "seen_ts": "2026-09-06T16:04:45.046314+00:00"
+  },
+  "78650": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-09-06T16:14:59.968461+00:00"
   }
 }
