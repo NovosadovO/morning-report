@@ -1,4 +1,39 @@
 {
+  "foresight|2026-09-06t02_14_07_496343": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:14:07.496343"
+  },
+  "foresight|2026-09-06t02_13_03_590176": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:13:03.590176"
+  },
+  "foresight|2026-09-06t02_12_52_686232": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:12:52.686232"
+  },
+  "foresight|2026-09-06t02_11_40_617863": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:11:40.617863"
+  },
+  "foresight|2026-09-06t02_11_29_660369": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:11:29.660369"
+  },
+  "foresight|2026-09-06t02_10_25_682579": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Madrid\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:10:25.682579"
+  },
+  "foresight|2026-09-06t02_10_14_703570": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
+    "ts": "2026-09-06T02:10:14.703570"
+  },
   "selfact|2026-09-06t02_10_03_939662": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на сповіщення від Google Cloud Billing Alerts: твій бюджет на Google Cloud досяг 50% (€16.00",
@@ -263,40 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T01:46:07.016403"
-  },
-  "foresight|2026-09-06t01_45_56_201603": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:45:56.201603"
-  },
-  "foresight|2026-09-06t01_44_40_751737": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-06T01:44:40.751737"
-  },
-  "foresight|2026-09-06t01_44_29_914742": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T01:44:29.914742"
-  },
-  "msg_rwa_truthfix|2026-09-06t01_44_26_314737": {
-    "topic": "MSG_RWA/truthfix",
-    "gist": "Олеже, зараз глибока ніч, 01:44, і хоча дані по сектору RWA, які я маю, не є свіжими, вони все ж вказують на значну турбулентність. Згідно з даними, які були ак",
-    "ts": "2026-09-06T01:44:26.314737"
-  },
-  "msg_rwa|2026-09-06t01_44_12_259088": {
-    "topic": "MSG_RWA",
-    "gist": "Сектор RWA сьогодні пережив значне потрясіння, Олеже. За останні 24 години загальна капіталізація RWA-активів впала на приголомшливі 32.1%, досягнувши $47.85B. ",
-    "ts": "2026-09-06T01:44:12.259088"
-  },
-  "people|2026-09-06t01_43_40_507249": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"gabrielova.renata@gmail.com\",     \"name\": \"Renáta Gabrielová\",     \"relation\": \"інше\",     \"topics\": [       \"InterFin Discovery Day",
-    "ts": "2026-09-06T01:43:40.507249"
-  },
-  "foresight|2026-09-06t01_43_24_244558": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"\", \"country\": \"\"} ```",
-    "ts": "2026-09-06T01:43:24.244558"
   }
 }
