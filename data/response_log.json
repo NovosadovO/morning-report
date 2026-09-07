@@ -11209,6 +11209,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_414c3cd95f"
+    },
+    {
+      "ts": "2026-09-07T12:24:15.676743+00:00",
+      "category": "calendar_button",
+      "question": "Поїздка в Малагу, Іспанія",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t30",
+        "when": "13:00–14:00",
+        "note": null
+      }
     }
   ]
 }
