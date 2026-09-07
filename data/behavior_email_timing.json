@@ -1,9 +1,4 @@
 {
-  "78236": {
-    "sender": "newsletters@e.economist.com",
-    "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
-    "seen_ts": "2026-08-29T17:07:12.133709+00:00"
-  },
   "78237": {
     "sender": "ben@startengine.com",
     "sender_raw": "Ben at StartEngine <ben@startengine.com>",
@@ -1498,5 +1493,10 @@
     "sender": "updates@okx.com",
     "sender_raw": "OKX <updates@okx.com>",
     "seen_ts": "2026-09-07T11:39:17.546584+00:00"
+  },
+  "78689": {
+    "sender": "temu@eu.temuemail.com",
+    "sender_raw": "Temu <temu@eu.temuemail.com>",
+    "seen_ts": "2026-09-07T11:53:29.397135+00:00"
   }
 }
