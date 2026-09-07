@@ -1,9 +1,4 @@
 {
-  "78207": {
-    "sender": "offers@travel.wizznews.com",
-    "sender_raw": "\"Wizz Air\" <offers@travel.wizznews.com>",
-    "seen_ts": "2026-08-29T02:22:46.469884+00:00"
-  },
   "78208": {
     "sender": "updates@okx.com",
     "sender_raw": "OKX <updates@okx.com>",
@@ -1498,5 +1493,10 @@
     "sender": "ethermail@ethermail.io",
     "sender_raw": "EtherMail <ethermail@ethermail.io>",
     "seen_ts": "2026-09-07T00:01:31.662793+00:00"
+  },
+  "78663": {
+    "sender": "support@profesia.sk",
+    "sender_raw": "\"Profesia.sk\" <support@profesia.sk>",
+    "seen_ts": "2026-09-07T00:31:53.139999+00:00"
   }
 }
