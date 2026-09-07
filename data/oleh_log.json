@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_yes_done_op36u1rdvdpvrhb90mgkq71b4s_2026-08-26",
-      "label": "✅ Виконано",
-      "ts": "2026-08-26T20:16:04"
-    },
-    {
-      "t": "btn",
       "data": "evdone_yes_done_h6erkaq9fe0q85jhf29clcqjes_2026-08-26",
       "label": "✅ Виконано",
       "ts": "2026-08-26T20:16:11"
@@ -7199,6 +7193,12 @@
       "data": "rx_done_c75b24e4ca",
       "label": "✅ Зробив",
       "ts": "2026-09-08T00:01:48"
+    },
+    {
+      "t": "btn",
+      "data": "am_no_9ef73fe2ae",
+      "label": "🚫 Не треба",
+      "ts": "2026-09-08T00:01:53"
     }
   ]
 }
