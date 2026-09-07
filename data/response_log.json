@@ -11192,6 +11192,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_done_a8e98ea47e"
+    },
+    {
+      "ts": "2026-09-07T09:26:37.996116+00:00",
+      "category": "calendar_button",
+      "question": "Доволенка в Іспанії",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t24h",
+        "when": "10:00–11:00",
+        "note": null
+      }
     }
   ]
 }
