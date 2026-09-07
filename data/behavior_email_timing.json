@@ -1,9 +1,4 @@
 {
-  "78250": {
-    "sender": "no-reply@news.crypto.com",
-    "sender_raw": "\"Crypto.com NFT\" <no-reply@news.crypto.com>",
-    "seen_ts": "2026-08-30T06:15:58.637319+00:00"
-  },
   "78251": {
     "sender": "akcie@moje.rondogo.sk",
     "sender_raw": "\"Rondogo.sk Akcie\" <akcie@moje.rondogo.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@data.theblock.co",
     "sender_raw": "The Block <newsletter@data.theblock.co>",
     "seen_ts": "2026-09-07T14:31:51.021340+00:00"
+  },
+  "78703": {
+    "sender": "email@info.temuemail.com",
+    "sender_raw": "Temu <email@info.temuemail.com>",
+    "seen_ts": "2026-09-07T14:52:07.777831+00:00"
   }
 }
