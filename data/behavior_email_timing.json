@@ -1,9 +1,4 @@
 {
-  "78249": {
-    "sender": "news@flights.airbaltic.com",
-    "sender_raw": "SALE at airBaltic <news@flights.airbaltic.com>",
-    "seen_ts": "2026-08-30T05:39:31.135836+00:00"
-  },
   "78250": {
     "sender": "no-reply@news.crypto.com",
     "sender_raw": "\"Crypto.com NFT\" <no-reply@news.crypto.com>",
@@ -1498,5 +1493,10 @@
     "sender": "info@beautynews.douglas.sk",
     "sender_raw": "\"Douglas\" <info@beautynews.douglas.sk>",
     "seen_ts": "2026-09-07T14:11:32.183462+00:00"
+  },
+  "78702": {
+    "sender": "newsletter@data.theblock.co",
+    "sender_raw": "The Block <newsletter@data.theblock.co>",
+    "seen_ts": "2026-09-07T14:31:51.021340+00:00"
   }
 }
