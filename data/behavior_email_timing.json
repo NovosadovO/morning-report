@@ -1,9 +1,4 @@
 {
-  "78251": {
-    "sender": "akcie@moje.rondogo.sk",
-    "sender_raw": "\"Rondogo.sk Akcie\" <akcie@moje.rondogo.sk>",
-    "seen_ts": "2026-08-30T06:20:13.145766+00:00"
-  },
   "78253": {
     "sender": "info@message.cropp.com",
     "sender_raw": "\"Cropp\" <info@message.cropp.com>",
@@ -1498,5 +1493,10 @@
     "sender": "email@info.temuemail.com",
     "sender_raw": "Temu <email@info.temuemail.com>",
     "seen_ts": "2026-09-07T14:52:07.777831+00:00"
+  },
+  "78704": {
+    "sender": "newsletter@buzzsneakers-promo.com",
+    "sender_raw": "\"Buzz Sneaker Station\" <newsletter@buzzsneakers-promo.com>",
+    "seen_ts": "2026-09-07T15:04:28.176807+00:00"
   }
 }
