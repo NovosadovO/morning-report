@@ -1,9 +1,4 @@
 {
-  "78219": {
-    "sender": "notification@service.tiktok.com",
-    "sender_raw": "TikTok <notification@service.tiktok.com>",
-    "seen_ts": "2026-08-29T11:04:19.317420+00:00"
-  },
   "78220": {
     "sender": "noreply@e.economist.com",
     "sender_raw": "\"The Economist\" <noreply@e.economist.com>",
@@ -1498,5 +1493,10 @@
     "sender": "maros.sivak@interfin.sk",
     "sender_raw": "Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>",
     "seen_ts": "2026-09-07T05:58:25.801006+00:00"
+  },
+  "78672": {
+    "sender": "notification@service.tiktok.com",
+    "sender_raw": "Ruslana*2784 у TikTok <notification@service.tiktok.com>",
+    "seen_ts": "2026-09-07T07:35:54.027351+00:00"
   }
 }
