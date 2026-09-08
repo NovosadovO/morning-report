@@ -1,16 +1,16 @@
 {
   "moon__venus__90": {
-    "orb": 1.14,
+    "orb": 1.44,
     "sent": false,
     "exact_sent": true
   },
   "moon__pluto__90": {
-    "orb": 1.29,
-    "sent": true,
-    "event": "enter"
+    "orb": 0.99,
+    "sent": false,
+    "exact_sent": false
   },
   "mercury__moon__90": {
-    "orb": 0.84,
+    "orb": 0.8,
     "sent": false,
     "exact_sent": false
   },
