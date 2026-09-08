@@ -1,9 +1,4 @@
 {
-  "78294": {
-    "sender": "newsletter@biedronka.pl",
-    "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
-    "seen_ts": "2026-08-31T10:03:27.667465+00:00"
-  },
   "78298": {
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-09-08T12:15:20.434864+00:00"
+  },
+  "78751": {
+    "sender": "hello@news.sorare.com",
+    "sender_raw": "\"Sorare\" <hello@news.sorare.com>",
+    "seen_ts": "2026-09-08T12:31:39.608533+00:00"
   }
 }
