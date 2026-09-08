@@ -1,9 +1,4 @@
 {
-  "78303": {
-    "sender": "newsletter@mail.dailybones.com",
-    "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
-    "seen_ts": "2026-08-31T12:31:33.360748+00:00"
-  },
   "78304": {
     "sender": "info@myasteria.com",
     "sender_raw": "Asteria Network <info@myasteria.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-09-08T13:08:33.655086+00:00"
+  },
+  "78755": {
+    "sender": "media@mail.saily.com",
+    "sender_raw": "\"Saily\" <media@mail.saily.com>",
+    "seen_ts": "2026-09-08T13:10:40.299483+00:00"
   }
 }
