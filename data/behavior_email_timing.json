@@ -1,9 +1,4 @@
 {
-  "78269": {
-    "sender": "hello@plunge.com",
-    "sender_raw": "PLUNGE <hello@plunge.com>",
-    "seen_ts": "2026-08-30T14:18:22.904116+00:00"
-  },
   "78271": {
     "sender": "marketing@promo.sweateconomy.com",
     "sender_raw": "Sweat Wallet <marketing@promo.sweateconomy.com>",
@@ -1498,5 +1493,10 @@
     "sender": "offers@travel.wizznews.com",
     "sender_raw": "\"Wizz Air\" <offers@travel.wizznews.com>",
     "seen_ts": "2026-09-08T02:43:29.657926+00:00"
+  },
+  "78728": {
+    "sender": "support@profesia.sk",
+    "sender_raw": "\"Profesia.sk\" <support@profesia.sk>",
+    "seen_ts": "2026-09-08T06:25:39.679393+00:00"
   }
 }
