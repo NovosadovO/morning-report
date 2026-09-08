@@ -1,9 +1,4 @@
 {
-  "78300": {
-    "sender": "spotlight@newsletters.coinmarketcap.com",
-    "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
-    "seen_ts": "2026-08-31T11:51:02.401606+00:00"
-  },
   "78303": {
     "sender": "newsletter@mail.dailybones.com",
     "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
@@ -1498,5 +1493,10 @@
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
     "seen_ts": "2026-09-08T12:33:45.207346+00:00"
+  },
+  "78754": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-08T13:08:33.655086+00:00"
   }
 }
