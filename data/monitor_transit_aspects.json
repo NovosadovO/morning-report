@@ -1,13 +1,9 @@
 {
-  "moon__pluto__90": {
-    "orb": 1.39,
-    "sent": false,
-    "exact_sent": true
-  },
   "mercury__moon__90": {
-    "orb": 0.52,
-    "sent": false,
-    "exact_sent": false
+    "orb": 0.48,
+    "sent": true,
+    "event": "exact",
+    "exact_sent": true
   },
   "saturn__pluto__150": {
     "orb": 0.16,
