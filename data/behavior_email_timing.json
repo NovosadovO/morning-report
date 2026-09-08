@@ -1,9 +1,4 @@
 {
-  "78308": {
-    "sender": "newsletters-noreply@linkedin.com",
-    "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
-    "seen_ts": "2026-08-31T14:09:07.559767+00:00"
-  },
   "78311": {
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
@@ -1498,5 +1493,10 @@
     "sender": "groups-noreply@linkedin.com",
     "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
     "seen_ts": "2026-09-08T13:51:43.133784+00:00"
+  },
+  "78761": {
+    "sender": "researchteam@blockworks.com",
+    "sender_raw": "0xResearch <researchteam@blockworks.com>",
+    "seen_ts": "2026-09-08T14:01:57.604526+00:00"
   }
 }
