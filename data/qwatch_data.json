@@ -1141,10 +1141,12 @@
     "saved_at": "2026-09-07 23:56"
   },
   "2026-09-09": {
-    "hr_avg": 92,
-    "stress": 41,
     "date": "2026-09-09",
-    "source": "qwatch_auto",
+    "hr_avg": 92,
+    "calories": 92,
+    "hrv": 48,
+    "spo2": null,
+    "source": "qwatch",
     "saved_at": "2026-09-09 00:23"
   }
 }
