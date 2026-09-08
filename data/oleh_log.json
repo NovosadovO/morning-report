@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "t": "btn",
-      "data": "evdone_yes_done_7vr5caapl19aek0f3odn28m8bg_2026-08-26",
-      "label": "✅ Виконано",
-      "ts": "2026-08-26T20:21:10"
-    },
-    {
       "t": "msg",
       "kind": "msg",
       "text": "Ти нагадування не зробив!!!",
@@ -7199,6 +7193,12 @@
       "data": "habit_yes_shower",
       "label": "✅ Зробив",
       "ts": "2026-09-08T22:01:37"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_shower",
+      "label": "✅ Так",
+      "ts": "2026-09-08T22:01:38"
     }
   ]
 }
