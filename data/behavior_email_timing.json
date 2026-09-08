@@ -1,9 +1,4 @@
 {
-  "78326": {
-    "sender": "aave@aave.com",
-    "sender_raw": "Aave <aave@aave.com>",
-    "seen_ts": "2026-08-31T18:57:12.852069+00:00"
-  },
   "78328": {
     "sender": "maros.sivak.sro@gmail.com",
     "sender_raw": "Maroš Sivák <maros.sivak.sro@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-09-08T21:25:02.115545+00:00"
+  },
+  "78778": {
+    "sender": "no-reply@mail.thedefiant.io",
+    "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
+    "seen_ts": "2026-09-08T22:27:59.319360+00:00"
   }
 }
