@@ -1,9 +1,4 @@
 {
-  "78290": {
-    "sender": "hello@email.di.fm",
-    "sender_raw": "\"DI.FM\" <hello@email.di.fm>",
-    "seen_ts": "2026-08-31T08:42:11.730584+00:00"
-  },
   "78291": {
     "sender": "no-reply@chekin.com",
     "sender_raw": "no-reply@chekin.com",
@@ -1498,5 +1493,10 @@
     "sender": "info@emails.tesco.sk",
     "sender_raw": "\"Tesco Clubcard\" <info@emails.tesco.sk>",
     "seen_ts": "2026-09-08T11:34:24.338346+00:00"
+  },
+  "78748": {
+    "sender": "newsletter@myclaw.ai",
+    "sender_raw": "MyClaw Newsletter <newsletter@myclaw.ai>",
+    "seen_ts": "2026-09-08T12:00:53.142761+00:00"
   }
 }
