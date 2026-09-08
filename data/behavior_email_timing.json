@@ -1,9 +1,4 @@
 {
-  "78318": {
-    "sender": "noreply-omv@omv.com",
-    "sender_raw": "OMV MyStation <noreply-omv@omv.com>",
-    "seen_ts": "2026-08-31T16:32:03.453979+00:00"
-  },
   "78319": {
     "sender": "noreply@e.economist.com",
     "sender_raw": "\"The Economist\" <noreply@e.economist.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@data.theblock.co",
     "sender_raw": "The Block <newsletter@data.theblock.co>",
     "seen_ts": "2026-09-08T17:11:09.815873+00:00"
+  },
+  "78768": {
+    "sender": "events@blockworks.com",
+    "sender_raw": "Blockworks <events@blockworks.com>",
+    "seen_ts": "2026-09-08T17:29:35.691421+00:00"
   }
 }
