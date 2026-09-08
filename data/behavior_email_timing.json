@@ -1,9 +1,4 @@
 {
-  "78314": {
-    "sender": "hello@plunge.com",
-    "sender_raw": "PLUNGE <hello@plunge.com>",
-    "seen_ts": "2026-08-31T15:47:06.614007+00:00"
-  },
   "78317": {
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
@@ -1498,5 +1493,10 @@
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
     "seen_ts": "2026-09-08T14:36:42.888351+00:00"
+  },
+  "78765": {
+    "sender": "hello@news.paysend.com",
+    "sender_raw": "\"Paysend\" <hello@news.paysend.com>",
+    "seen_ts": "2026-09-08T15:39:44.050297+00:00"
   }
 }
