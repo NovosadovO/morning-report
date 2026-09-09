@@ -1,9 +1,4 @@
 {
-  "78349": {
-    "sender": "newsletter@myclaw.ai",
-    "sender_raw": "MyClaw Newsletter <newsletter@myclaw.ai>",
-    "seen_ts": "2026-09-01T11:27:20.489622+00:00"
-  },
   "78350": {
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
@@ -1498,5 +1493,10 @@
     "sender": "avalancheteam1@substack.com",
     "sender_raw": "Avalanche Team1 <avalancheteam1@substack.com>",
     "seen_ts": "2026-09-09T10:11:41.995557+00:00"
+  },
+  "78806": {
+    "sender": "temu@eu.temuemail.com",
+    "sender_raw": "Temu <temu@eu.temuemail.com>",
+    "seen_ts": "2026-09-09T10:52:18.498840+00:00"
   }
 }
