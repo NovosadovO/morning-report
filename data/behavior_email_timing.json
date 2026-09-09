@@ -1,9 +1,4 @@
 {
-  "78342": {
-    "sender": "info@mail.uefa.com",
-    "sender_raw": "\"UEFA Europa League\" <info@mail.uefa.com>",
-    "seen_ts": "2026-09-01T08:14:54.727337+00:00"
-  },
   "78344": {
     "sender": "newsletter@email.hm.com",
     "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
@@ -1498,5 +1493,10 @@
     "sender": "info@notifikacie.allegro.sk",
     "sender_raw": "Allegro <info@notifikacie.allegro.sk>",
     "seen_ts": "2026-09-09T08:00:53.463638+00:00"
+  },
+  "78794": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Startitup через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-09T08:03:01.502231+00:00"
   }
 }
