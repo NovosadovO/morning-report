@@ -1,9 +1,4 @@
 {
-  "78356": {
-    "sender": "events@blockworks.com",
-    "sender_raw": "Blockworks <events@blockworks.com>",
-    "seen_ts": "2026-09-01T13:05:47.290649+00:00"
-  },
   "78357": {
     "sender": "info@emails.tesco.sk",
     "sender_raw": "\"Tesco Clubcard\" <info@emails.tesco.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-09-09T12:14:22.936365+00:00"
+  },
+  "78814": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-09T12:24:34.387800+00:00"
   }
 }
