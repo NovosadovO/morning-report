@@ -1,9 +1,4 @@
 {
-  "78335": {
-    "sender": "offers@travel.wizznews.com",
-    "sender_raw": "\"Wizz Air\" <offers@travel.wizznews.com>",
-    "seen_ts": "2026-09-01T02:34:24.773668+00:00"
-  },
   "78336": {
     "sender": "greece@rides-marketing.bolt.eu",
     "sender_raw": "\"Bolt Global\" <greece@rides-marketing.bolt.eu>",
@@ -1498,5 +1493,10 @@
     "sender": "no-reply@substack.com",
     "sender_raw": "Substack <no-reply@substack.com>",
     "seen_ts": "2026-09-09T05:30:27.826847+00:00"
+  },
+  "78787": {
+    "sender": "no-reply@news.crypto.com",
+    "sender_raw": "\"Crypto.com NFT\" <no-reply@news.crypto.com>",
+    "seen_ts": "2026-09-09T06:27:14.192320+00:00"
   }
 }
