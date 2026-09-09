@@ -1,11 +1,12 @@
 {
   "mercury__sun__0": {
-    "orb": 0.53,
-    "sent": false,
-    "exact_sent": false
+    "orb": 0.49,
+    "sent": true,
+    "event": "exact",
+    "exact_sent": true
   },
   "mercury__moon__90": {
-    "orb": 1.21,
+    "orb": 1.24,
     "sent": false,
     "exact_sent": true
   },
