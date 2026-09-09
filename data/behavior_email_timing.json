@@ -1,14 +1,4 @@
 {
-  "78357": {
-    "sender": "info@emails.tesco.sk",
-    "sender_raw": "\"Tesco Clubcard\" <info@emails.tesco.sk>",
-    "seen_ts": "2026-09-01T13:08:13.219098+00:00"
-  },
-  "78361": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "Temu <temu@eu.temuemail.com>",
-    "seen_ts": "2026-09-01T13:52:57.921261+00:00"
-  },
   "78362": {
     "sender": "researchteam@blockworks.com",
     "sender_raw": "0xResearch <researchteam@blockworks.com>",
@@ -1503,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-09-09T12:34:45.756545+00:00"
+  },
+  "78817": {
+    "sender": "novosadovoleg@gmail.com",
+    "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
+    "seen_ts": "2026-09-09T13:49:58.561204+00:00"
   }
 }
