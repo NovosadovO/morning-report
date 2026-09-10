@@ -1,14 +1,4 @@
 {
-  "78414": {
-    "sender": "spotlight@newsletters.coinmarketcap.com",
-    "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
-    "seen_ts": "2026-09-02T11:34:37.161907+00:00"
-  },
-  "78415": {
-    "sender": "onboarding@resend.dev",
-    "sender_raw": "Morning Report <onboarding@resend.dev>",
-    "seen_ts": "2026-09-02T11:54:55.472243+00:00"
-  },
   "78417": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1503,5 +1493,10 @@
     "sender": "info@autopay.pl",
     "sender_raw": "\"Autopay Mobility\" <info@autopay.pl>",
     "seen_ts": "2026-09-10T15:00:54.359969+00:00"
+  },
+  "78887": {
+    "sender": "hello@wexopay.com",
+    "sender_raw": "Wexo Cashback <hello@wexopay.com>",
+    "seen_ts": "2026-09-10T15:23:17.963561+00:00"
   }
 }
