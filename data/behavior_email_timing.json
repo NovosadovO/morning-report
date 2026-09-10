@@ -1,9 +1,4 @@
 {
-  "78384": {
-    "sender": "email@inbox.fox.com",
-    "sender_raw": "\"FOX\" <email@inbox.fox.com>",
-    "seen_ts": "2026-09-01T22:15:29.218357+00:00"
-  },
   "78385": {
     "sender": "google-health-noreply@google.com",
     "sender_raw": "Google Health <google-health-noreply@google.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@cryptojobslist.com",
     "sender_raw": "CryptoJobsList <newsletter@cryptojobslist.com>",
     "seen_ts": "2026-09-10T02:03:49.259181+00:00"
+  },
+  "78845": {
+    "sender": "messages-noreply@linkedin.com",
+    "sender_raw": "LinkedIn <messages-noreply@linkedin.com>",
+    "seen_ts": "2026-09-10T02:14:05.594569+00:00"
   }
 }
