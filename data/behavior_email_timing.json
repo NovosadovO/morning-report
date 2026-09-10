@@ -1,9 +1,4 @@
 {
-  "78403": {
-    "sender": "newsletter@ticketportal.sk",
-    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
-    "seen_ts": "2026-09-02T09:11:02.541408+00:00"
-  },
   "78405": {
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-09-10T12:07:40.218308+00:00"
+  },
+  "78874": {
+    "sender": "newsletter@mail.dailybones.com",
+    "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
+    "seen_ts": "2026-09-10T12:07:42.416452+00:00"
   }
 }
