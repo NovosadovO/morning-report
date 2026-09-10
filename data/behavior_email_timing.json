@@ -1,9 +1,4 @@
 {
-  "78427": {
-    "sender": "contact@avax.network",
-    "sender_raw": "Avalanche Summit <contact@avax.network>",
-    "seen_ts": "2026-09-02T15:02:30.711103+00:00"
-  },
   "78430": {
     "sender": "zeno@updates.resend.com",
     "sender_raw": "Zeno from Resend <zeno@updates.resend.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"Robert Guest at The Economist\" <newsletters@e.economist.com>",
     "seen_ts": "2026-09-10T18:30:34.723818+00:00"
+  },
+  "78898": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Financial Times через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-10T18:36:42.947459+00:00"
   }
 }
