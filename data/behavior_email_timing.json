@@ -1,9 +1,4 @@
 {
-  "78392": {
-    "sender": "slovakia@delivery-marketing.bolt.eu",
-    "sender_raw": "\"Bolt Food\" <slovakia@delivery-marketing.bolt.eu>",
-    "seen_ts": "2026-09-02T07:09:43.684901+00:00"
-  },
   "78393": {
     "sender": "zara@news.zara.com",
     "sender_raw": "Zara <zara@news.zara.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@email.hm.com",
     "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
     "seen_ts": "2026-09-10T08:36:07.508943+00:00"
+  },
+  "78857": {
+    "sender": "info@mail.lidlplus.sk",
+    "sender_raw": "\"Lidl Plus\" <info@mail.lidlplus.sk>",
+    "seen_ts": "2026-09-10T09:08:38.565621+00:00"
   }
 }
