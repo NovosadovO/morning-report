@@ -1,9 +1,4 @@
 {
-  "78405": {
-    "sender": "newsletter@genai.works",
-    "sender_raw": "Generative AI <newsletter@genai.works>",
-    "seen_ts": "2026-09-02T09:31:36.339544+00:00"
-  },
   "78406": {
     "sender": "linas@substack.com",
     "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@mail.dailybones.com",
     "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
     "seen_ts": "2026-09-10T12:07:42.416452+00:00"
+  },
+  "78875": {
+    "sender": "pullandbear@news.pullandbear.com",
+    "sender_raw": "Pull&Bear <pullandbear@news.pullandbear.com>",
+    "seen_ts": "2026-09-10T12:11:50.883621+00:00"
   }
 }
