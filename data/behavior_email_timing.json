@@ -1,9 +1,4 @@
 {
-  "78402": {
-    "sender": "noreply@atguest.com",
-    "sender_raw": "noreply@atguest.com",
-    "seen_ts": "2026-09-02T09:10:57.755480+00:00"
-  },
   "78403": {
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@myclaw.ai",
     "sender_raw": "MyClaw Newsletter <newsletter@myclaw.ai>",
     "seen_ts": "2026-09-10T11:55:24.167583+00:00"
+  },
+  "78873": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-10T12:07:40.218308+00:00"
   }
 }
