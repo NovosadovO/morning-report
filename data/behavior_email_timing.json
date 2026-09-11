@@ -1,9 +1,4 @@
 {
-  "78490": {
-    "sender": "payments-noreply@google.com",
-    "sender_raw": "Google Payments <payments-noreply@google.com>",
-    "seen_ts": "2026-09-03T14:18:57.908302+00:00"
-  },
   "78492": {
     "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
     "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
@@ -1498,5 +1493,10 @@
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
     "seen_ts": "2026-09-11T15:34:27.953769+00:00"
+  },
+  "78961": {
+    "sender": "noreply@mailing.fifa.com",
+    "sender_raw": "FIFA <noreply@mailing.fifa.com>",
+    "seen_ts": "2026-09-11T16:44:11.576106+00:00"
   }
 }
