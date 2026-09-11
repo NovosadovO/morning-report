@@ -1,9 +1,4 @@
 {
-  "78498": {
-    "sender": "jobalerts-noreply@linkedin.com",
-    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
-    "seen_ts": "2026-09-03T17:56:45.701362+00:00"
-  },
   "78499": {
     "sender": "failed-payments+acct_1raxgujk3urplkao@stripe.com",
     "sender_raw": "Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-09-11T20:14:57.509483+00:00"
+  },
+  "78971": {
+    "sender": "newsletter@blockworks.com",
+    "sender_raw": "The Breakdown <newsletter@blockworks.com>",
+    "seen_ts": "2026-09-11T21:04:26.020410+00:00"
   }
 }
