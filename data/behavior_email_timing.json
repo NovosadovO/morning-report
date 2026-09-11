@@ -1,9 +1,4 @@
 {
-  "78459": {
-    "sender": "card@kcard.kaufland.sk",
-    "sender_raw": "Kaufland Card XTRA <card@kcard.kaufland.sk>",
-    "seen_ts": "2026-09-03T05:52:01.280069+00:00"
-  },
   "78461": {
     "sender": "support@pixoryofficial.com",
     "sender_raw": "\"Pixory\" <support@pixoryofficial.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
     "seen_ts": "2026-09-11T09:10:29.381360+00:00"
+  },
+  "78928": {
+    "sender": "linas@substack.com",
+    "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
+    "seen_ts": "2026-09-11T09:30:48.107633+00:00"
   }
 }
