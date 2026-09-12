@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-12t21_00_43_938721": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-12T21:00:43.938721"
+  },
   "selfact|2026-09-12t20_54_50_677191": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на нові оголошення про квартири у Кошице, які надійшли на твою пошту. Можливо, там є щось ці",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу: на Bybit було зафіксовано вхід у систему та заявку на виведення коштів 12 вересня о 17:03",
     "ts": "2026-09-12T18:51:10.212624"
-  },
-  "selfact|2026-09-12t18_35_57_437818": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег отримав сповіщення про вакансії Technology Operations Specialist в ExxonMobil та Anti-Fraud Officer в Cybert",
-    "ts": "2026-09-12T18:35:57.437818"
   }
 }
