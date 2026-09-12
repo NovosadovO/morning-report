@@ -10000,7 +10000,24 @@
     "action": "calrem_skip",
     "pid": "gen_1789236209238",
     "subject": "Оновити підписку Strava",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 91961,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1789236209238"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1789236209238"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-12T20:03:59.084092+00:00"
   }
 }
