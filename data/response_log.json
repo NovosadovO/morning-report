@@ -11578,6 +11578,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "rw_mute_today"
+    },
+    {
+      "ts": "2026-09-12T22:33:18.824786+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові оголошення про квартири",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-13"
+      }
     }
   ]
 }
