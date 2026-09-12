@@ -11642,6 +11642,16 @@
         "kind": "reminder",
         "date": "2026-09-13"
       }
+    },
+    {
+      "ts": "2026-09-13T00:03:23.022383+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Відновити підписку Strava",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-13"
+      }
     }
   ]
 }
