@@ -3621,5 +3621,16 @@
     "about": "Стаття The Economist Today",
     "state": "closed",
     "ts": "2026-09-12T22:35:09"
+  },
+  "generic|t|стаття про anthropic та claude": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "стаття про anthropic та claude",
+    "title": "Стаття про Anthropic та Claude",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "about": "Стаття про Anthropic та Claude",
+    "state": "closed",
+    "ts": "2026-09-12T22:35:12"
   }
 }
