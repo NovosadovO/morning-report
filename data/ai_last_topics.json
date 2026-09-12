@@ -1,4 +1,24 @@
 {
+  "msg_rwa|2026-09-12t21_34_57_763621": {
+    "topic": "MSG_RWA",
+    "gist": "Олеже, бачу, що зараз 21:34 UTC, а ти вільно проводиш вечір перед нічними змінами, які почнуться завтра. У криптопортфелі з'явилась цікава аномалія, яка стосуєт",
+    "ts": "2026-09-12T21:34:57.763621"
+  },
+  "action_detect|2026-09-12t21_31_53_595677": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
+    "ts": "2026-09-12T21:31:53.595677"
+  },
+  "action_detect|2026-09-12t21_31_21_416800": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії\", \"action_date\": \"2023-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег планує перегляд",
+    "ts": "2026-09-12T21:31:21.416800"
+  },
+  "action_detect|2026-09-12t21_30_35_795100": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Надіслати дані з QWatch Pro\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надішли дані з QWatch Pr",
+    "ts": "2026-09-12T21:30:35.795100"
+  },
   "action_detect|2026-09-12t21_30_24_772881": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважитись\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважитись, оскільки минуло 7 днів з останн",
@@ -278,25 +298,5 @@
     "topic": "deadlines",
     "gist": "[]",
     "ts": "2026-09-12T19:34:42.126450"
-  },
-  "proactive_actions|2026-09-12t19_33_01_951231": {
-    "topic": "proactive_actions",
-    "gist": "[   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-13\",     \"time\": \"06:00\",     \"message\": \"Олеже, завтра о 06:00 ранку",
-    "ts": "2026-09-12T19:33:01.951231"
-  },
-  "selfact|2026-09-12t19_21_56_748299": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Незавершене замовлення Banxa\",     \"text\": \"Олеже, ти майже завершив замовлення USDC на Banxa. Залишилось кіль",
-    "ts": "2026-09-12T19:21:56.748299"
-  },
-  "email_ai_item|2026-09-12t19_16_03_709944": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від Banxa нагадує Олегу, що він майже завершив замовлення на покупку USDC (криптовалюти) під номером 22201324. Йому залишилося",
-    "ts": "2026-09-12T19:16:03.709944"
-  },
-  "email_ai_item|2026-09-12t19_11_54_551724": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від The Economist Today є щоденною розсилкою з найкращими статтями видання. Він містить заголовок статті про японську істоту Ч",
-    "ts": "2026-09-12T19:11:54.551724"
   }
 }
