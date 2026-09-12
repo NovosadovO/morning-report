@@ -2,18 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_ok_bcfbd62b24",
-      "label": "👌 Прийняв",
-      "ts": "2026-08-27T01:50:31"
-    },
-    {
-      "t": "btn",
-      "data": "pa_skip_f436017646",
-      "label": "❌ Не треба",
-      "ts": "2026-08-27T01:50:35"
-    },
-    {
-      "t": "btn",
       "data": "rx_mute_f76c17b76b",
       "label": "🙈 Не нагадуй",
       "ts": "2026-08-27T02:30:44"
@@ -7199,6 +7187,18 @@
       "data": "evdone_no_done_2ph29nl20kornunsnmbkvk8j48_2026-09-12",
       "label": "❌ Не виконано",
       "ts": "2026-09-12T21:34:21"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_no_done_7774gcv75umvjh680t5mkg7g9s_2026-09-12",
+      "label": "❌ Не виконано",
+      "ts": "2026-09-12T21:34:21"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_no_done_idkfuuqirp4ejjt19l2plvurkc_2026-09-12",
+      "label": "❌ Не виконано",
+      "ts": "2026-09-12T21:34:23"
     }
   ]
 }
