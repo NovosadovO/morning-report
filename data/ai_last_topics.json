@@ -1,4 +1,19 @@
 {
+  "deadlines|2026-09-13t01_34_49_928420": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-09-13T01:34:49.928420"
+  },
+  "proactive_actions|2026-09-13t01_33_16_165984": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-14\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
+    "ts": "2026-09-13T01:33:16.165984"
+  },
+  "selfact|2026-09-13t01_32_51_546309": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від LinkedIn: є нова вакансія Senior Digital Business Product Owner в Caterpillar In",
+    "ts": "2026-09-13T01:32:51.546309"
+  },
   "email_ai_item|2026-09-13t01_30_38_620009": {
     "topic": "email_ai_item",
     "gist": "```json { \"description\": \"Цей лист є щоденною розсилкою новин The Daily Degen за 12 вересня 2026 року, що містить оновлення ринку криптовалют та макроекономічні",
@@ -283,20 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: ти отримав два листи з виплатною відомістю за серпень 2026 року від Minebea. Один з них є в",
     "ts": "2026-09-12T23:27:24.457987"
-  },
-  "selfact|2026-09-12t23_12_13_622976": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що 12.09 ти не використав спрей для волосся, не бігав і не відвідував сауну, хоча це було з",
-    "ts": "2026-09-12T23:12:13.622976"
-  },
-  "action_detect|2026-09-12t23_03_13_466692": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2020-09-13\", \"action_time\": null, \"action_summary\": \"На завтра, 13 вересня, у Олега з",
-    "ts": "2026-09-12T23:03:13.466692"
-  },
-  "action_detect|2026-09-12t23_03_01_320230": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки вказ",
-    "ts": "2026-09-12T23:03:01.320230"
   }
 }
