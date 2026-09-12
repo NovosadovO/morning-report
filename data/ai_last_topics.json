@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-12t19_37_11_555879": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег не завершив замовлення USDC на Banxa, хоча верифікація особи пройдена.\",     \"why\": \"З листа Banxa: 'You've ",
+    "ts": "2026-09-12T19:37:11.555879"
+  },
+  "deadlines|2026-09-12t19_34_42_126450": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-09-12T19:34:42.126450"
+  },
   "proactive_actions|2026-09-12t19_33_01_951231": {
     "topic": "proactive_actions",
     "gist": "[   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-13\",     \"time\": \"06:00\",     \"message\": \"Олеже, завтра о 06:00 ранку",
@@ -288,15 +298,5 @@
     "topic": "proactive_ai",
     "gist": "Привіт, Олеже! Бачу, що вже 8 днів без пробіжок, а зараз якраз є вільний час, 17:03. Можеш виділити 20 хвилин на легку пробіжку, щоб розім'ятися?",
     "ts": "2026-09-12T17:03:12.678934"
-  },
-  "action_detect|2026-09-12t17_02_31_520736": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відновити біг\", \"action_date\": \"2023-09-13\", \"action_time\": null, \"action_summary\": \"Заплануй короткий, але інтенси",
-    "ts": "2026-09-12T17:02:31.520736"
-  },
-  "action_detect|2026-09-12t17_02_20_624825": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2026-09-20\", \"action_time\": null, \"action_summary\": \"Створити бота на т",
-    "ts": "2026-09-12T17:02:20.624825"
   }
 }
