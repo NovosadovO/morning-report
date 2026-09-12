@@ -1,4 +1,44 @@
 {
+  "selfact|2026-09-12t22_41_48_017019": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні, 12 вересня, ти не виконав звички: спрей для волосся, біг та сауна. Зверни увагу, що",
+    "ts": "2026-09-12T22:41:48.017019"
+  },
+  "action_detect|2026-09-12t22_35_06_956722": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег планує перегляд",
+    "ts": "2026-09-12T22:35:06.956722"
+  },
+  "action_detect|2026-09-12t22_34_53_265742": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-12T22:34:53.265742"
+  },
+  "action_detect|2026-09-12t22_34_53_125580": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
+    "ts": "2026-09-12T22:34:53.125580"
+  },
+  "deadlines|2026-09-12t22_34_53_059838": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-09-12T22:34:53.059838"
+  },
+  "action_detect|2026-09-12t22_34_42_296342": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-12T22:34:42.296342"
+  },
+  "action_detect|2026-09-12t22_34_26_920678": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-12T22:34:26.920678"
+  },
+  "proactive_actions|2026-09-12t22_33_16_039596": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути нові оголошення про квартири\",     \"date\": \"2026-09-13\",     \"time\": \"09:00\",     \"message\": \"Ол",
+    "ts": "2026-09-12T22:33:16.039596"
+  },
   "people|2026-09-12t22_32_55_820293": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"dtp_kea@faxcopy.sk\",     \"name\": \"dtp_kea@faxcopy.sk\",     \"relation\": \"сервіс\",     \"topics\": [],     \"my_promises\": [],     \"their",
@@ -258,45 +298,5 @@
     "topic": "MSG_RWA",
     "gist": "Олеже, бачу, що сьогоднішня аномалія з FIGR_HELOC не залишить тебе байдужим.  1. Токенізований фонд FIGR_HELOC, який зазвичай стабільний на рівні $1.010, за ост",
     "ts": "2026-09-12T20:04:44.616240"
-  },
-  "action_detect|2026-09-12t20_04_17_744614": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Останній прийом їжі\", \"action_date\": null, \"action_time\": \"20:00\", \"action_summary\": \"Останній прийом їжі о 20:00, ",
-    "ts": "2026-09-12T20:04:17.744614"
-  },
-  "bills|2026-09-12t20_03_45_379448": {
-    "topic": "bills",
-    "gist": "[]",
-    "ts": "2026-09-12T20:03:45.379448"
-  },
-  "action_detect|2026-09-12t20_03_32_126736": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-12T20:03:32.126736"
-  },
-  "action_detect|2026-09-12t20_03_31_990777": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
-    "ts": "2026-09-12T20:03:31.990777"
-  },
-  "action_detect|2026-09-12t20_03_31_915071": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжну інформацію ",
-    "ts": "2026-09-12T20:03:31.915071"
-  },
-  "action_detect|2026-09-12t20_03_20_963278": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічні зміни\", \"action_date\": \"2026-09-13\", \"action_time\": null, \"action_summary\": \"Календар показує, що 13 і 14 вер",
-    "ts": "2026-09-12T20:03:20.963278"
-  },
-  "action_detect|2026-09-12t20_03_07_452509": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реєстрація до дерматолога\", \"action_date\": \"2026-09-16\", \"action_time\": \"10:00\", \"action_summary\": \"Зареєструватися",
-    "ts": "2026-09-12T20:03:07.452509"
-  },
-  "action_detect|2026-09-12t20_03_07_291343": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки він ",
-    "ts": "2026-09-12T20:03:07.291343"
   }
 }
