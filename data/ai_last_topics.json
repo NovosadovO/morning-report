@@ -1,4 +1,9 @@
 {
+  "people|2026-09-12t22_32_55_820293": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"dtp_kea@faxcopy.sk\",     \"name\": \"dtp_kea@faxcopy.sk\",     \"relation\": \"сервіс\",     \"topics\": [],     \"my_promises\": [],     \"their",
+    "ts": "2026-09-12T22:32:55.820293"
+  },
   "selfact|2026-09-12t22_26_44_335373": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на нові вакансії Product Development Specialist та Strategic Sourcer в GymBeam, що надійшли ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки він ",
     "ts": "2026-09-12T20:03:07.291343"
-  },
-  "action_detect|2026-09-12t20_02_56_569016": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створення бота для трейдингу\", \"action_date\": \"2026-09-20\", \"action_time\": null, \"action_summary\": \"Заплановано ств",
-    "ts": "2026-09-12T20:02:56.569016"
   }
 }
