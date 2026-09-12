@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-12t18_35_57_437818": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег отримав сповіщення про вакансії Technology Operations Specialist в ExxonMobil та Anti-Fraud Officer в Cybert",
+    "ts": "2026-09-12T18:35:57.437818"
+  },
   "action_detect|2026-09-12t18_25_01_145353": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2023-09-20\", \"action_time\": null, \"action_summary\": \"Олегу потрібно ств",
@@ -293,10 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
     "ts": "2026-09-06T05:22:38.500530"
-  },
-  "foresight|2026-09-06t05_22_27_568375": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T05:22:27.568375"
   }
 }
