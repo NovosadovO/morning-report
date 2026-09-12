@@ -1,9 +1,4 @@
 {
-  "78538": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "Temu <temu@eu.temuemail.com>",
-    "seen_ts": "2026-09-04T10:53:43.145476+00:00"
-  },
   "78540": {
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "no-reply@banxa.com",
     "sender_raw": "Banxa <no-reply@banxa.com>",
     "seen_ts": "2026-09-12T17:16:06.475956+00:00"
+  },
+  "79011": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-09-12T17:56:59.669731+00:00"
   }
 }
