@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег активно шукає роботу, переглядаючи вакансії на Profesia",
-      "detail": "Наявність свіжих листів від Profesia.sk та LinkedIn з новими вакансіями, а також заплановані події на 03.09, 04.09, 05.09 щодо перегляду вакансій.",
-      "module": "selfact",
-      "ts": "2026-09-03T07:01:38"
-    },
-    {
-      "kind": "note",
       "what": "Олег цікавиться новинами та аналітикою крипторинку, що видно",
       "detail": "Наявність свіжих листів від CryptoJobsList, The Defiant та The Breakdown, які містять новини та вакансії з криптосфери.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи від 'ehuman@minebeamitsumi.eu' з темами '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu' та '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026'.",
       "module": "selfact",
       "ts": "2026-09-13T01:48:26"
+    },
+    {
+      "kind": "ask",
+      "what": "Олег, чи потрібно мені перенести нагадування про реєстрацію",
+      "detail": "У календарі на 17.09 є подія '05:00 ☀️ Рання зміна (06:00-18:00)' та '09:00 🔔 Реєстрація до дерматолога'. Рання зміна може конфліктувати з реєстрацією, і вже є заплановане нагадування на 16.09 10:00.",
+      "module": "selfact",
+      "ts": "2026-09-13T01:48:29"
     }
   ]
 }
