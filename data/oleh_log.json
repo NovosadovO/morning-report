@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_yes_done_qmsb4kosoq5o168ah3rkk75sak_2026-08-26",
-      "label": "✅ Виконано",
-      "ts": "2026-08-26T22:06:41"
-    },
-    {
-      "t": "btn",
       "data": "calrem_skip_event_soon_1787774507",
       "label": "❌ Не треба",
       "ts": "2026-08-26T22:06:48"
@@ -7199,6 +7193,12 @@
       "data": "email_delete_78973",
       "label": "🗑 Видалити",
       "ts": "2026-09-12T03:28:44"
+    },
+    {
+      "t": "btn",
+      "data": "email_delete_78974",
+      "label": "🗑 Видалити",
+      "ts": "2026-09-12T03:28:49"
     }
   ]
 }
