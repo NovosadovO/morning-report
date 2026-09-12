@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, LinkedIn надіслав сповіщення про нову вакансію Enginee",
-      "detail": "Свіжі листи від LinkedIn з новими вакансіями, які відповідають його налаштуванням та інтересам.",
-      "module": "selfact",
-      "ts": "2026-09-03T06:46:09"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, є новий дайджест від CryptoJobsList #463 з топовими ва",
       "detail": "Свіжі листи від CryptoJobsList та The Defiant, що відповідають його інтересам у крипто-новинах.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Згідно з даними 'ПІДПИСКИ', платіж до Runable був невдалим, і є нотатка про необхідність оновлення платіжної інформації. Це важлива інформація, яку Олег міг пропустити, і вона потребує його уваги.",
       "module": "selfact",
       "ts": "2026-09-13T01:01:47"
+    },
+    {
+      "kind": "notify",
+      "what": "Виплата зарплати Minebea",
+      "detail": "З листів 'ehuman@minebeamitsumi.eu | Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu' та 'ehuman@minebeamitsumi.eu | Minebea, Výplatná páska/Payslip 08/2026'",
+      "module": "selfact",
+      "ts": "2026-09-13T01:16:58"
     }
   ]
 }
