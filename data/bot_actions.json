@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Вакансії Engineering Manager та Regionalny kierownik sprzedaży",
-      "detail": "Олег отримує сповіщення про вакансії Engineering Manager та Regionalny kierownik sprzedaży, і ці листи є свіжими. Також у 'ПАМ'ЯТІ ПРО ОЛЕГА' зазначено, що 'Олег активно цікавиться вакансіями Engineering Manager - Delivery & Team Leadership (m/w/d) в Deutsche Telekom у Кошице та Regionalny kierownik",
-      "module": "selfact",
-      "ts": "2026-09-03T05:13:43"
-    },
-    {
       "kind": "reminder",
       "what": "Невиконані звички",
       "detail": "У календарі на 03.09 о 17:10 є подія 'Невиконані звички сьогодні'. Також у 'ПАМ'ЯТІ ПРО ОЛЕГА' зазначено, що 'Олег має невиконані звички на сьогодні, 3 вересня 2026 року'.",
@@ -2799,6 +2792,13 @@
       "detail": "З календаря на 7 днів: 15.09: 08:00 ⏳ Голосування Сенату США щодо Clarity Act.",
       "module": "selfact",
       "ts": "2026-09-12T22:57:19"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу, що 12.09 ти не використав спрей для воло",
+      "detail": "Календар на 12.09 показує невиконані звички: 💈 Спрей для волосся ❌; 🏃 Біг ❌; 🧖 Сауна ❌.",
+      "module": "selfact",
+      "ts": "2026-09-12T23:12:19"
     }
   ]
 }
