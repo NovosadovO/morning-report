@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-09-12t20_38_15_492007": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-09-12T20:38:15.492007"
+  },
+  "mailcal_extract|2026-09-12t20_33_16_919477": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-12T20:33:16.919477"
+  },
   "action_detect|2026-09-12t20_30_47_957389": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на сповіщення від Bybit про заявку на виведення коштів та вхід у систему. Також Google повід",
     "ts": "2026-09-12T18:20:50.465273"
-  },
-  "mailcal_extract|2026-09-12t18_17_17_536080": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"79001\",     \"title\": \"Вхід у Bybit через Google\",     \"date\": \"2026-09-12\",     \"time\": \"17:03\",     \"kind\": \"other\",     \"why\": \"Ви с",
-    "ts": "2026-09-12T18:17:17.536080"
-  },
-  "defi_digest|2026-09-12t18_15_26_228703": {
-    "topic": "defi_digest",
-    "gist": "За останні 24 години на DeFi ринку найбільшою зміною став аномальний ріст стейблкоїна USDD на 40.3%, що є значним відхиленням для такого типу активів і може сві",
-    "ts": "2026-09-12T18:15:26.228703"
   }
 }
