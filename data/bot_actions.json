@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег активно цікавиться вакансіями Engineering Manager та Re",
-      "detail": "Свіжі листи від LinkedIn та заплановані події в календарі прямо вказують на інтерес Олега до цих конкретних вакансій, що є новим фактом для нотаток.",
-      "module": "selfact",
-      "ts": "2026-09-03T06:15:06"
-    },
-    {
       "kind": "notify",
       "what": "Нові вакансії Engineering Manager та Regionalny kierownik sprzedaży",
       "detail": "Олег отримував сповіщення про вакансії Engineering Manager та Regionalny kierownik sprzedaży, і ці події є в календарі на 04.09, тому йому варто повідомити про нові листи зараз.",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав листа від себе ж з темою '🏠 Нові квартири у Кошіці — 3 нових оголошень'.",
       "module": "selfact",
       "ts": "2026-09-13T00:14:06"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на лист від Apple: «Your Subscription is",
+      "detail": "Є свіжий лист від Apple з темою 'Your Subscription is Expiring', що може вимагати уваги до поновлення або скасування підписки.",
+      "module": "selfact",
+      "ts": "2026-09-13T00:29:56"
     }
   ]
 }
