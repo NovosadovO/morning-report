@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав лист від The Defiant про те, як мемкоїн підняв",
-      "detail": "Свіжий лист від The Defiant <no-reply@mail.thedefiant.io> з темою 'A Memecoin Ran A Nasdaq Stock Up 321%'.",
-      "module": "selfact",
-      "ts": "2026-09-03T00:48:43"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав лист від The Breakdown про те, що транзакція є",
       "detail": "Свіжий лист від The Breakdown <newsletter@blockworks.com> з темою '🟪 The transaction is the product'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "ранковий план здоров'я",
       "module": "selfact",
       "ts": "2026-09-12T07:00:25"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: stale",
+      "detail": "📵 Дані здоров'я не оновлювались 85 год (останні — 2026-09-09). Автосинк із годинника міг зламатись",
+      "module": "healthai",
+      "ts": "2026-09-12T12:55:51"
     }
   ]
 }
