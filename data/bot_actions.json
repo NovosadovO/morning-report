@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нові вакансії Engineering Manager та Regionalny kierownik sprzedaży",
-      "detail": "Олег отримував сповіщення про вакансії Engineering Manager та Regionalny kierownik sprzedaży, і ці події є в календарі на 04.09, тому йому варто повідомити про нові листи зараз.",
-      "module": "selfact",
-      "ts": "2026-09-03T06:31:25"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, на Profesia.sk з'явилося 20 нових персоналізованих вак",
       "detail": "Свіжі листи від Profesia.sk з новими вакансіями співпадають із запланованими подіями в календарі на сьогодні.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Є свіжий лист від Apple з темою 'Your Subscription is Expiring', що може вимагати уваги до поновлення або скасування підписки.",
       "module": "selfact",
       "ts": "2026-09-13T00:29:56"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, ти отримав два листи від Minebea щодо виплатних пасок",
+      "detail": "Олег отримав два свіжих листи від ehuman@minebeamitsumi.eu з темою 'Minebea, Výplatná páska/Payslip 08/2026' та 'Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu', які стосуються його заробітної плати.",
+      "module": "selfact",
+      "ts": "2026-09-13T00:30:00"
     }
   ]
 }
