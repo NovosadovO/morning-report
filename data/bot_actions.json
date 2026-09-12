@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "morning_plan",
-      "detail": "ранковий план здоров'я",
-      "module": "selfact",
-      "ts": "2026-09-03T07:01:23"
-    },
-    {
       "kind": "note",
       "what": "Олег активно шукає роботу, переглядаючи вакансії на Profesia",
       "detail": "Наявність свіжих листів від Profesia.sk та LinkedIn з новими вакансіями, а також заплановані події на 03.09, 04.09, 05.09 щодо перегляду вакансій.",
@@ -2799,6 +2792,13 @@
       "detail": "😴 Сон за тиждень у середньому 5.8 год — нижче за 6.5",
       "module": "healthai",
       "ts": "2026-09-13T01:39:07"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, тобі прийшли виплатні листи за серпень 2026 року від M",
+      "detail": "Свіжі листи від 'ehuman@minebeamitsumi.eu' з темами '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu' та '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026'.",
+      "module": "selfact",
+      "ts": "2026-09-13T01:48:26"
     }
   ]
 }
