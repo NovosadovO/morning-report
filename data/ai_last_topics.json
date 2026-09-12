@@ -298,5 +298,10 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2023-09-20\", \"action_time\": null, \"action_summary\": \"Створити бота на т",
     "ts": "2026-09-12T18:03:09.215196"
+  },
+  "selfact|2026-09-12t20_22_53_857235": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Незавершене замовлення USDC\",     \"text\": \"Олеже, ти не завершив замовлення USDC на Banxa. Залишилось кілька к",
+    "ts": "2026-09-12T20:22:53.857235"
   }
 }
