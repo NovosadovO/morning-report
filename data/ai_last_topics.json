@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-09-13t01_30_38_620009": {
+    "topic": "email_ai_item",
+    "gist": "```json { \"description\": \"Цей лист є щоденною розсилкою новин The Daily Degen за 12 вересня 2026 року, що містить оновлення ринку криптовалют та макроекономічні",
+    "ts": "2026-09-13T01:30:38.620009"
+  },
   "selfact|2026-09-13t01_16_53_409927": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, твої платежі за підписку Runable були невдалими. Потрібно оновит",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки вказ",
     "ts": "2026-09-12T23:03:01.320230"
-  },
-  "action_detect|2026-09-12t23_03_01_312975": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-13\", \"action_time\": \"18:00\", \"action_summary\": \"Нічна зміна з 18:00 до 06:00.",
-    "ts": "2026-09-12T23:03:01.312975"
   }
 }
