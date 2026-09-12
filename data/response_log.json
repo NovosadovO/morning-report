@@ -11439,6 +11439,16 @@
         "kind": "reminder",
         "date": "2026-09-13"
       }
+    },
+    {
+      "ts": "2026-09-12T19:33:10.717938+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Відповісти Ben at StartEngine",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-09-13"
+      }
     }
   ]
 }
