@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав лист від The Breakdown про те, що транзакція є",
-      "detail": "Свіжий лист від The Breakdown <newsletter@blockworks.com> з темою '🟪 The transaction is the product'.",
-      "module": "selfact",
-      "ts": "2026-09-03T00:48:48"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав звіт Avalanche August 2026 Recap від Avalanche",
       "detail": "Свіжий лист від Avalanche Team1 <avalancheteam1@substack.com> з темою 'AVALANCHE AUGUST 2026 RECAP'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "📵 Дані здоров'я не оновлювались 85 год (останні — 2026-09-09). Автосинк із годинника міг зламатись",
       "module": "healthai",
       "ts": "2026-09-12T12:55:51"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: sleep_low",
+      "detail": "😴 Сон за тиждень у середньому 5.8 год — нижче за 6.5",
+      "module": "healthai",
+      "ts": "2026-09-12T13:25:52"
     }
   ]
 }
