@@ -11455,6 +11455,12 @@
       "category": "confirm",
       "question": "calrem_skip: Оновити підписку Strava",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-12T20:04:12.678877+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_4603f5933c"
     }
   ]
 }
