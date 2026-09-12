@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-13t00_45_50_336606": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег отримав два листи з виплатними квитанціями за серпень 2026 року від Minebea, один з яких є виправленням форм",
+    "ts": "2026-09-13T00:45:50.336606"
+  },
   "selfact|2026-09-13t00_29_50_780325": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від Apple: «Your Subscription is Expiring». Можливо, це стосується важливої підписки",
@@ -293,10 +298,5 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути нові оголошення про квартири\",     \"date\": \"2026-09-13\",     \"time\": \"09:00\",     \"message\": \"Ол",
     "ts": "2026-09-12T22:33:16.039596"
-  },
-  "people|2026-09-12t22_32_55_820293": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"dtp_kea@faxcopy.sk\",     \"name\": \"dtp_kea@faxcopy.sk\",     \"relation\": \"сервіс\",     \"topics\": [],     \"my_promises\": [],     \"their",
-    "ts": "2026-09-12T22:32:55.820293"
   }
 }
