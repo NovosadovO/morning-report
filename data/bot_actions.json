@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег активно перевіряє свої звички, що підтверджується його",
-      "detail": "Олег натискав кнопки '✅ Відбулось' та '❌ Скасувалось' для звичок о 00:01 03.09.",
-      "module": "selfact",
-      "ts": "2026-09-03T04:10:18"
-    },
-    {
       "kind": "notify",
       "what": "У тебе є нові сповіщення про вакансії Engineering Manager -",
       "detail": "Є свіжі листи від LinkedIn про вакансії 'Engineering Manager - Delivery & Team Leadership (m/w/d)' та 'Regionalny kierownik sprzedaży'. Олег цікавиться цими вакансіями, що зазначено в пам'яті.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист: від Oleg Novosadov <novosadovoleg@gmail.com> | 🏠 Нові квартири у Кошіці — 8 нових оголошень",
       "module": "selfact",
       "ts": "2026-09-12T21:55:46"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, є нове оголошення про квартиру у Кошице: 3-кімнатний",
+      "detail": "Свіжий лист: від Oleg Novosadov <novosadovoleg@gmail.com> | 🏠 Нові квартири у Кошіці — 1 нове оголошення",
+      "module": "selfact",
+      "ts": "2026-09-12T21:55:50"
     }
   ]
 }
