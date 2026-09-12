@@ -3704,5 +3704,12 @@
     "ts": "2026-09-12T17:13:47.880590+00:00",
     "norm": "bybit кошти",
     "keyword": "bybit кошти"
+  },
+  "k:lifecycle|79006": {
+    "kind": "lifecycle",
+    "key": "79006",
+    "title": "Виведення коштів Bybit",
+    "note": "other:closed",
+    "ts": "2026-09-12T17:13:57.251539+00:00"
   }
 }
