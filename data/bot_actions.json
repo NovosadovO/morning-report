@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, є новий дайджест від CryptoJobsList #463 з топовими ва",
-      "detail": "Свіжі листи від CryptoJobsList та The Defiant, що відповідають його інтересам у крипто-новинах.",
-      "module": "selfact",
-      "ts": "2026-09-03T06:46:14"
-    },
-    {
       "kind": "note",
       "what": "Олег активно цікавиться вакансіями Engineering Manager, що п",
       "detail": "Свіжий лист від LinkedIn та подія в календарі на 04.09 підтверджують інтерес Олега до вакансії Engineering Manager.",
@@ -2799,6 +2792,13 @@
       "detail": "З листів 'ehuman@minebeamitsumi.eu | Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu' та 'ehuman@minebeamitsumi.eu | Minebea, Výplatná páska/Payslip 08/2026'",
       "module": "selfact",
       "ts": "2026-09-13T01:16:58"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, тобі прийшли дві виплатні картки за серпень 2026 року",
+      "detail": "Олег отримав два листи про виплатну картку за серпень, один з яких є виправленням формату, що потребує його уваги.",
+      "module": "selfact",
+      "ts": "2026-09-13T01:32:54"
     }
   ]
 }
