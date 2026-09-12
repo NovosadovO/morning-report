@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримав звіт Avalanche August 2026 Recap від Avalanche",
-      "detail": "Свіжий лист від Avalanche Team1 <avalancheteam1@substack.com> з темою 'AVALANCHE AUGUST 2026 RECAP'.",
-      "module": "selfact",
-      "ts": "2026-09-03T00:48:54"
-    },
-    {
-      "kind": "note",
       "what": "Інтерес до вакансії Regionalny kierownik sprzedaży",
       "detail": "З листа від LinkedIn та календаря видно, що Олег цікавиться цією вакансією, і це новий факт для нотаток.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "😴 Сон за тиждень у середньому 5.8 год — нижче за 6.5",
       "module": "healthai",
       "ts": "2026-09-12T13:25:52"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверніть увагу: ви щойно увійшли в Bybit через Google.",
+      "detail": "Олег отримав два листи (від Bybit та Google) про вхід у Bybit через Google о 17:03. Це важлива інформація про безпеку облікового запису, про яку він міг не знати.",
+      "module": "selfact",
+      "ts": "2026-09-12T17:04:36"
     }
   ]
 }
