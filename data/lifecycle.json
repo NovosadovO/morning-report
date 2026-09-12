@@ -97,5 +97,16 @@
     "keyword": "Bybit кошти",
     "source": "email:79005",
     "ts": "2026-09-12T17:13:46.987207+00:00"
+  },
+  "виведення коштів bybit": {
+    "entity": "Виведення коштів Bybit",
+    "kind": "other",
+    "state": "completed",
+    "valid_from": null,
+    "valid_to": null,
+    "next_due": null,
+    "keyword": "Bybit виведення",
+    "source": "email:79006",
+    "ts": "2026-09-12T17:13:56.403075+00:00"
   }
 }
