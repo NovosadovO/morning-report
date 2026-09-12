@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Вакансія Regionalny kierownik sprzedaży",
-      "detail": "У розділі 'СВІЖІ ЛИСТИ' є лист від LinkedIn про нову вакансію, а також у 'ПАМ'ЯТЬ ПРО ОЛЕГА' є відповідний факт.",
-      "module": "selfact",
-      "ts": "2026-09-03T02:05:49"
-    },
-    {
       "kind": "note",
       "what": "Олег активно цікавиться вакансіями Engineering Manager - Del",
       "detail": "Зі свіжих листів отримано два сповіщення про вакансії від LinkedIn, які відповідають налаштуванням Олега.",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від Banxa <no-reply@banxa.com> повідомляє про незавершене замовлення USDC і пропонує його завершити.",
       "module": "selfact",
       "ts": "2026-09-12T19:22:04"
+    },
+    {
+      "kind": "notify",
+      "what": "Сповіщення про вхід Bybit",
+      "detail": "Лист від Google <noreply-accounts@google.com> та Bybit <noreply@email-service.bybit.com> підтверджують вхід у Bybit через Google.",
+      "module": "selfact",
+      "ts": "2026-09-12T19:22:12"
     }
   ]
 }
