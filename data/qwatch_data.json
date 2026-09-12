@@ -1148,5 +1148,15 @@
     "spo2": null,
     "source": "qwatch",
     "saved_at": "2026-09-09 00:23"
+  },
+  "2026-09-12": {
+    "steps": 8,
+    "hr_avg": 89,
+    "distance_km": 513.2,
+    "hrv": 48,
+    "stress": 44,
+    "date": "2026-09-12",
+    "source": "qwatch_auto",
+    "saved_at": "2026-09-12 23:44"
   }
 }
