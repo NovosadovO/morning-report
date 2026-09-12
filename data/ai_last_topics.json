@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-12t18_25_01_145353": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2023-09-20\", \"action_time\": null, \"action_summary\": \"Олегу потрібно ств",
+    "ts": "2026-09-12T18:25:01.145353"
+  },
   "selfact|2026-09-12t18_20_50_465273": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на сповіщення від Bybit про заявку на виведення коштів та вхід у систему. Також Google повід",
@@ -293,10 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T05:22:27.568375"
-  },
-  "foresight|2026-09-06t05_21_20_134472": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T05:21:20.134472"
   }
 }
