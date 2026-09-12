@@ -1,4 +1,29 @@
 {
+  "mailcal_extract|2026-09-12t17_31_22_107043": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"79001\",     \"title\": \"Вхід у Bybit через Google\",     \"date\": \"2026-09-12\",     \"time\": \"17:03\",     \"kind\": \"other\",     \"why\": \"Ви с",
+    "ts": "2026-09-12T17:31:22.107043"
+  },
+  "action_detect|2026-09-12t17_23_23_947818": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2023-09-20\", \"action_time\": null, \"action_summary\": \"Олег планує створи",
+    "ts": "2026-09-12T17:23:23.947818"
+  },
+  "action_detect|2026-09-12t17_23_12_933625": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2023-09-20\", \"action_time\": null, \"action_summary\": \"Олег планує створи",
+    "ts": "2026-09-12T17:23:12.933625"
+  },
+  "action_detect|2026-09-12t17_23_12_895739": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2023-09-20\", \"action_time\": null, \"action_summary\": \"Створити бота на т",
+    "ts": "2026-09-12T17:23:12.895739"
+  },
+  "action_detect|2026-09-12t17_23_01_908976": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2023-09-20\", \"action_time\": null, \"action_summary\": \"Олег планує створи",
+    "ts": "2026-09-12T17:23:01.908976"
+  },
   "selfact|2026-09-12t17_19_47_785350": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу: Bybit надіслав кілька листів щодо виведення та внесення коштів, а також сповіщення про вх",
@@ -273,30 +298,5 @@
     "topic": "foresight",
     "gist": "```json {\"city\": \"Spain\", \"country\": \"Spain\"} ```",
     "ts": "2026-09-06T05:10:37.901181"
-  },
-  "foresight|2026-09-06t05_10_26_903994": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-06T05:10:26.903994"
-  },
-  "foresight|2026-09-06t05_09_22_034324": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-06T05:09:22.034324"
-  },
-  "foresight|2026-09-06t05_09_10_986575": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"malaga\", \"country\": \"spain\"}",
-    "ts": "2026-09-06T05:09:10.986575"
-  },
-  "foresight|2026-09-06t05_08_03_845235": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Spain\", \"country\": \"Іспанія\"} ```",
-    "ts": "2026-09-06T05:08:03.845235"
-  },
-  "foresight|2026-09-06t05_07_52_863002": {
-    "topic": "foresight",
-    "gist": "```json {\"city\": \"Malaga\", \"country\": \"Spain\"} ```",
-    "ts": "2026-09-06T05:07:52.863002"
   }
 }
