@@ -165,7 +165,8 @@
     },
     "healthai": {
       "checked": 5,
-      "issues": 5
+      "issues": 5,
+      "fixed": 1
     },
     "AFTERNOON_AI": {
       "checked": 7,
@@ -419,6 +420,6 @@
   "2026-09-13": {
     "checked": 7,
     "issues": 4,
-    "fixed": 1
+    "fixed": 2
   }
 }
