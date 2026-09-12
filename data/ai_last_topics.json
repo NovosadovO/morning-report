@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-09-12t21_30_24_772881": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважитись\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважитись, оскільки минуло 7 днів з останн",
+    "ts": "2026-09-12T21:30:24.772881"
+  },
+  "selfact|2026-09-12t21_25_34_391607": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, нагадую, що 16 вересня о 09:00 у тебе запланована реєстрація до дерматолога. Це за 4 дні.\",     \"why\": \"",
+    "ts": "2026-09-12T21:25:34.391607"
+  },
   "action_detect|2026-09-12t21_25_19_959486": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
@@ -288,15 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від The Economist Today є щоденною розсилкою з найкращими статтями видання. Він містить заголовок статті про японську істоту Ч",
     "ts": "2026-09-12T19:11:54.551724"
-  },
-  "openloop_promises|2026-09-12t19_08_05_096166": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {     \"what\": \"створити бота на трейдинг\",     \"to\": null,     \"date\": \"2026-09-20\"   } ] ```",
-    "ts": "2026-09-12T19:08:05.096166"
-  },
-  "email_ai_item|2026-09-12t19_07_42_989712": {
-    "topic": "email_ai_item",
-    "gist": "```json { \"description\": \"Цей лист від StartEngine є Pre-IPO Briefing, що містить новини про значні угоди в сферах AI, космосу та криптовалют. Зокрема, згадують",
-    "ts": "2026-09-12T19:07:42.989712"
   }
 }
