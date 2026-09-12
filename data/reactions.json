@@ -3610,5 +3610,16 @@
     "about": "Олеже, не забудь зареєструватися до дерматолога 16 вересня о",
     "state": "open",
     "ts": "2026-09-12T22:08:09"
+  },
+  "generic|t|стаття the economist today": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "стаття the economist today",
+    "title": "Стаття The Economist Today",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "about": "Стаття The Economist Today",
+    "state": "closed",
+    "ts": "2026-09-12T22:35:09"
   }
 }
