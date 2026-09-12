@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "У тебе є нові сповіщення про вакансії Engineering Manager -",
-      "detail": "Є свіжі листи від LinkedIn про вакансії 'Engineering Manager - Delivery & Team Leadership (m/w/d)' та 'Regionalny kierownik sprzedaży'. Олег цікавиться цими вакансіями, що зазначено в пам'яті.",
-      "module": "selfact",
-      "ts": "2026-09-03T04:10:25"
-    },
-    {
-      "kind": "notify",
       "what": "Сьогодні, 3 вересня, о 17:10 у тебе запланована перевірка не",
       "detail": "З календаря видно, що о 17:10 Олег має перевірити невиконані звички, і це є важливим нагадуванням про його самодисципліну.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист: від Oleg Novosadov <novosadovoleg@gmail.com> | 🏠 Нові квартири у Кошіці — 1 нове оголошення",
       "module": "selfact",
       "ts": "2026-09-12T21:55:50"
+    },
+    {
+      "kind": "notify",
+      "what": "Стаття The Economist Today",
+      "detail": "Олег підписаний на The Economist Today, тому його може зацікавити нова стаття.",
+      "module": "selfact",
+      "ts": "2026-09-12T22:10:46"
     }
   ]
 }
