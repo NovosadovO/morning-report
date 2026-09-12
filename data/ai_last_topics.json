@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-12t20_54_50_677191": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на нові оголошення про квартири у Кошице, які надійшли на твою пошту. Можливо, там є щось ці",
+    "ts": "2026-09-12T20:54:50.677191"
+  },
+  "selfact|2026-09-12t20_38_29_537749": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Незавершене замовлення USDC на Banxa\",     \"text\": \"Олеже, твоє замовлення USDC на Banxa (номер 22201324) майж",
+    "ts": "2026-09-12T20:38:29.537749"
+  },
   "openloop_promises|2026-09-12t20_38_15_492007": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег отримав сповіщення про вакансії Technology Operations Specialist в ExxonMobil та Anti-Fraud Officer в Cybert",
     "ts": "2026-09-12T18:35:57.437818"
-  },
-  "action_detect|2026-09-12t18_25_01_145353": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2023-09-20\", \"action_time\": null, \"action_summary\": \"Олегу потрібно ств",
-    "ts": "2026-09-12T18:25:01.145353"
-  },
-  "selfact|2026-09-12t18_20_50_465273": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на сповіщення від Bybit про заявку на виведення коштів та вхід у систему. Також Google повід",
-    "ts": "2026-09-12T18:20:50.465273"
   }
 }
