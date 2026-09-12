@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-09-12t19_33_01_951231": {
+    "topic": "proactive_actions",
+    "gist": "[   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-13\",     \"time\": \"06:00\",     \"message\": \"Олеже, завтра о 06:00 ранку",
+    "ts": "2026-09-12T19:33:01.951231"
+  },
   "selfact|2026-09-12t19_21_56_748299": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Незавершене замовлення Banxa\",     \"text\": \"Олеже, ти майже завершив замовлення USDC на Banxa. Залишилось кіль",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2026-09-20\", \"action_time\": null, \"action_summary\": \"Створити бота на т",
     "ts": "2026-09-12T17:02:20.624825"
-  },
-  "action_detect|2026-09-12t17_02_09_577059": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поновити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Поновити підписку Strava, щ",
-    "ts": "2026-09-12T17:02:09.577059"
   }
 }
