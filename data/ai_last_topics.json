@@ -1,4 +1,14 @@
 {
+  "personal_ai|2026-09-13t01_00_32_683161": {
+    "topic": "personal_ai",
+    "gist": "Олеже, зараз глибока ніч неділі, 13 вересня, і завтра у тебе нічна зміна.  Ти зараз вдома, хоча в попередніх нотатках згадувалося про нічну зміну. Важливо пам'я",
+    "ts": "2026-09-13T01:00:32.683161"
+  },
+  "action_detect|2026-09-13t00_51_21_302622": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оновити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Важливо не забувати ",
+    "ts": "2026-09-13T00:51:21.302622"
+  },
   "msg_vip_email|2026-09-13t00_51_11_795190": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🤝  Поки ти відновлюєш сили під час нічного відпочинку, хотілося б коротко підсумувати деякі ключові моменти, що стосуються твоїх фінансових та осо",
@@ -288,15 +298,5 @@
     "topic": "deadlines",
     "gist": "[]",
     "ts": "2026-09-12T22:34:53.059838"
-  },
-  "action_detect|2026-09-12t22_34_42_296342": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-12T22:34:42.296342"
-  },
-  "action_detect|2026-09-12t22_34_26_920678": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-12T22:34:26.920678"
   }
 }
