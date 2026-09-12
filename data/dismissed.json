@@ -3680,5 +3680,12 @@
     "ts": "2026-09-12T17:07:27.278074+00:00",
     "norm": "bybit eur",
     "keyword": "bybit eur"
+  },
+  "k:lifecycle|79005": {
+    "kind": "lifecycle",
+    "key": "79005",
+    "title": "Відправлення коштів Bybit",
+    "note": "other:closed",
+    "ts": "2026-09-12T17:13:47.880590+00:00"
   }
 }
