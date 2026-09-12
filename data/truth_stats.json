@@ -26,7 +26,7 @@
     },
     "personal_ai": {
       "checked": 170,
-      "issues": 114,
+      "issues": 115,
       "fixed": 35,
       "cut": 5
     },
@@ -413,6 +413,7 @@
     "cut": 1
   },
   "2026-09-12": {
-    "checked": 1
+    "checked": 1,
+    "issues": 1
   }
 }
