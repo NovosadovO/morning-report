@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-13t23_45_59_563774": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolop",
+    "ts": "2026-09-13T23:45:59.563774"
+  },
   "selfact|2026-09-13t23_34_14_275947": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, надійшла виправлена версія твоєї виплатної картки за серпень 2026 року від Minebea. Зверни увагу на це п",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"В",
     "ts": "2026-09-13T21:17:40.512525"
-  },
-  "action_detect|2026-09-13t21_17_29_498362": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Запланувати прийом Armolo",
-    "ts": "2026-09-13T21:17:29.498362"
   }
 }
