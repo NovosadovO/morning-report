@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-13t09_23_43_903195": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твій сон минулої доби склав всього 2 години 35 хвилин. Це критично низький показник для відновлення, осо",
+    "ts": "2026-09-13T09:23:43.903195"
+  },
   "action_detect|2026-09-13t09_11_00_415829": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що 16.09 о 09:00 у тебе реєстрація до дерматолога. Це важлива подія, не пропусти її.\",     ",
     "ts": "2026-09-13T07:50:08.062322"
-  },
-  "action_detect|2026-09-13t07_45_29_283541": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-13\", \"action_time\": null, \"action_summary\": \"Прийняти Armolopid P",
-    "ts": "2026-09-13T07:45:29.283541"
   }
 }
