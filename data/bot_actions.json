@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Тобі надійшло нове сповіщення про вакансію Employee Services",
-      "detail": "СВІЖІ ЛИСТИ: від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Employee Services Operations Specialist в the LEGO Group",
-      "module": "selfact",
-      "ts": "2026-09-03T19:10:52"
-    },
-    {
       "kind": "ask",
       "what": "Олеже, чи потрібно мені нагадати тобі про стрижку у Міріам 0",
       "detail": "У календарі на 06.09 є подія '14:30 🔔 Стрижка у Міріам' та '15:30 Miriam, Classic strih, Staré Mesto 463, 040 01 Košice'.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи від ehuman@minebeamitsumi.eu: 'Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu' та 'Minebea, Výplatná páska/Payslip 08/2026'.",
       "module": "selfact",
       "ts": "2026-09-13T22:46:50"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на нову вакансію Expert Full Stack Engine",
+      "detail": "Олег отримував сповіщення про вакансії за запитом Cryptocurrency в Slovakia, і прийшла нова вакансія, яка може бути для нього цікавою.",
+      "module": "selfact",
+      "ts": "2026-09-13T23:02:00"
     }
   ]
 }
