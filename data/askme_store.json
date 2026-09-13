@@ -9900,28 +9900,5 @@
       "start": "2026-09-13T07:00:00"
     },
     "ts": "2026-09-13T03:53:21.915452+00:00"
-  },
-  "9868f51b15": {
-    "key": "note|повторні сповіщення linkedin",
-    "q": "📝 Хочу записати нотатку:\n\n« Повторні сповіщення LinkedIn »\n\nОлег отримав два ідентичні сповіщення про вакансію Operations Manager - Build & Own в AI Acquisition від LinkedIn.\n\nПоставити?",
-    "kind": "write",
-    "opts": [
-      [
-        "save",
-        "💾 Так, запиши"
-      ],
-      [
-        "no",
-        "🚫 Не треба"
-      ]
-    ],
-    "meta": {
-      "summary": "Повторні сповіщення LinkedIn",
-      "desc": "Олег отримав два ідентичні сповіщення про вакансію Operations Manager - Build & Own в AI Acquisition від LinkedIn.",
-      "minutes": 30,
-      "calendar": true,
-      "kind": "note"
-    },
-    "ts": "2026-09-13T04:39:07.540316+00:00"
   }
 }
