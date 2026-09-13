@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-13t18_22_54_890929": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, твій платіж до Runable на $10.00 був невдалим. Потрібно оновити ",
+    "ts": "2026-09-13T18:22:54.890929"
+  },
+  "defi_digest|2026-09-13t18_16_09_525815": {
+    "topic": "defi_digest",
+    "gist": "Сьогоднішня DeFi картина показує помітне падіння деяких протоколів, таких як Euler V2 (-4.2%) та Rhea Lend (-4.1%), що може свідчити про короткострокову корекці",
+    "ts": "2026-09-13T18:16:09.525815"
+  },
   "email_ai_item|2026-09-13t18_14_49_642106": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії, що відповідають запиту «Операційний спеціаліст в Prague». Зокрема, пропо",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-13T16:33:13.141530"
-  },
-  "planner|2026-09-13t16_33_01_976264": {
-    "topic": "planner",
-    "gist": "```json [] ```",
-    "ts": "2026-09-13T16:33:01.976264"
-  },
-  "action_detect|2026-09-13t16_32_51_326525": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
-    "ts": "2026-09-13T16:32:51.326525"
   }
 }
