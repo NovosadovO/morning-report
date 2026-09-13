@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримує звіти про здоров'я від Google Health",
-      "detail": "Є свіжий лист від Google Health про 'Your weekly progress report from Google Health'. Це новий факт про те, як Олег відстежує своє здоров'я, і варто його зафіксувати.",
-      "module": "selfact",
-      "ts": "2026-09-03T16:36:37"
-    },
-    {
       "kind": "notify",
       "what": "Статистика Google Health",
       "detail": "Олег отримав лист від Google Health 'Your weekly progress report from Google Health', де вказано значне зниження фізичної активності за минулий тиждень. Це важлива інформація для Олега, яку він міг пропустити, і яка може вплинути на його здоров'я.",
@@ -2799,6 +2792,13 @@
       "detail": "Є два листи від ehuman@minebamitsumi.eu з темою 'Minebea, Výplatná páska/Payslip 08/2026' та 'Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu'. Другий є виправленням.",
       "module": "selfact",
       "ts": "2026-09-13T21:44:43"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, ти отримав дві виплати за серпень 2026 року від Minebe",
+      "detail": "Є два свіжі листи від 'ehuman@minebamitsumi.eu' з темами 'Minebea, Výplatná páska/Payslip 08/2026' та 'Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu'.",
+      "module": "selfact",
+      "ts": "2026-09-13T22:00:04"
     }
   ]
 }
