@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-13t03_53_06_577214": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на нові вакансії від Profesia.sk (20 пропозицій) та LinkedIn (Operations Manager в AI Acquis",
+    "ts": "2026-09-13T03:53:06.577214"
+  },
   "selfact|2026-09-13t03_36_57_639707": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на нові вакансії від Profesia.sk та LinkedIn. Особливо цікавою може бути позиція Senior Digi",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-13\", \"action_time\": \"18:00\", \"action_summary\": \"Нічна зміна Олега з 18:00 до ",
     "ts": "2026-09-13T01:02:34.401315"
-  },
-  "action_detect|2026-09-13t01_02_34_363063": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надіслати /weight або /health_",
-    "ts": "2026-09-13T01:02:34.363063"
   }
 }
