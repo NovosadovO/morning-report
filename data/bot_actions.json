@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-03",
-      "detail": "автосинк з годинника: steps, hr_avg, calories, spo2, sleep_total_min",
-      "module": "qwsync",
-      "ts": "2026-09-03T11:31:31"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=8866, hr_avg=36, calories=446, spo2=97, sleep_total_min=480, sleep_hours=8.0, date=2026-09-03, source=qwatch_auto, saved_at=2026-09-03 11:31",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Згідно з останнім звітом про здоров'я від 12.09 23:45, Олег спав лише 2 години 35 хвилин, що є критично низьким показником.",
       "module": "selfact",
       "ts": "2026-09-13T09:23:50"
+    },
+    {
+      "kind": "notify",
+      "what": "Нові квартири у Кошиці",
+      "detail": "Отримано лист від 'Oleg Novosadov <novosadovoleg@gmail.com>' з темою '🏠 Нові квартири у Кошіці — 1 нове оголошення'.",
+      "module": "selfact",
+      "ts": "2026-09-13T09:39:57"
     }
   ]
 }
