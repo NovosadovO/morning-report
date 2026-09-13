@@ -1,4 +1,9 @@
 {
+  "personal_ai|2026-09-13t04_00_56_966881": {
+    "topic": "personal_ai",
+    "gist": "Олеже, до кінця нічної зміни залишилося дві години, і твій пульс підвищений до 89 уд/хв, що свідчить про навантаження. Для збереження концентрації та енергії за",
+    "ts": "2026-09-13T04:00:56.966881"
+  },
   "selfact|2026-09-13t03_53_06_577214": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на нові вакансії від Profesia.sk (20 пропозицій) та LinkedIn (Operations Manager в AI Acquis",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд виплатних відомостей\", \"action_date\": \"2026-08-31\", \"action_time\": null, \"action_summary\": \"Запланувати пе",
     "ts": "2026-09-13T01:02:46.238987"
-  },
-  "action_detect|2026-09-13t01_02_34_401315": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-13\", \"action_time\": \"18:00\", \"action_summary\": \"Нічна зміна Олега з 18:00 до ",
-    "ts": "2026-09-13T01:02:34.401315"
   }
 }
