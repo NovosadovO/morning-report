@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримує сповіщення про вакансії Growth Marketing Lead (",
-      "detail": "Свіжий лист від LinkedIn 'Сповіщення про вакансії LinkedIn | Growth Marketing Lead (B2B SaaS & Payments) в Ruby Labs' вказує на відповідність запиту 'Cryptocurrency' в Slovakia.",
-      "module": "selfact",
-      "ts": "2026-09-03T11:27:49"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримує новинні розсилки від Generative AI та TradingVi",
       "detail": "Свіжі листи від 'Generative AI <newsletter@genai.works>' та 'TradingView <noreply@tradingview.com>' підтверджують інтерес до цих тем.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист від Discord про пропущене повідомлення, що може бути важливою інформацією.",
       "module": "selfact",
       "ts": "2026-09-13T08:20:31"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу, що твої нічні зміни триватимуть сьогодні",
+      "detail": "У календарі Олега на 13.09 та 14.09 зазначені нічні зміни з 18:00 до 06:00. Це важлива інформація для його планування.",
+      "module": "selfact",
+      "ts": "2026-09-13T08:20:35"
     }
   ]
 }
