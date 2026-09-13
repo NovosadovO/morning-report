@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Ти пропустив перегляд вакансій на Profesia.sk сьогодні о 06:",
-      "detail": "КАЛЕНДАР НА 7 ДНІВ: 03.09: 06:00 🔔 Перевірити вакансії Profesia.sk; 07:00 🔔 Переглянути вакансії Profesia.sk. Поточний час 19:10.",
-      "module": "selfact",
-      "ts": "2026-09-03T19:10:43"
-    },
-    {
-      "kind": "notify",
       "what": "Тобі надійшло нове сповіщення про вакансію Employee Services",
       "detail": "СВІЖІ ЛИСТИ: від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Employee Services Operations Specialist в the LEGO Group",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від Сповіщення про вакансії LinkedIn: 'Expert Full Stack Engineer в Ciklum Czech Republic & Slovakia', 'Ця компанія активно наймає персонал'.",
       "module": "selfact",
       "ts": "2026-09-13T22:46:46"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, твої виплатні листи за серпень 2026 року (основний та",
+      "detail": "Свіжі листи від ehuman@minebeamitsumi.eu: 'Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu' та 'Minebea, Výplatná páska/Payslip 08/2026'.",
+      "module": "selfact",
+      "ts": "2026-09-13T22:46:50"
     }
   ]
 }
