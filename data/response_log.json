@@ -11814,6 +11814,15 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-09-13T19:35:10.383740+00:00",
+      "category": "deadline_found",
+      "question": "Підтвердження повернення кредиту Temu",
+      "answer": "2026-09-13",
+      "extra": {
+        "kind": "submit"
+      }
     }
   ]
 }
