@@ -298,5 +298,10 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надіслати /weight або /health_",
     "ts": "2026-09-13T09:02:19.418786"
+  },
+  "selfact|2026-09-13t11_12_00_062797": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, твої платежі за підписку Runable були невдалими. Будь ласка, оно",
+    "ts": "2026-09-13T11:12:00.062797"
   }
 }
