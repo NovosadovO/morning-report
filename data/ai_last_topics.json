@@ -1,4 +1,19 @@
 {
+  "selfact|2026-09-13t04_38_54_719989": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"text\": \"Нагадую, що після закінчення нічної зміни тобі потрібно прийняти Armo",
+    "ts": "2026-09-13T04:38:54.719989"
+  },
+  "msg_rwa_truthfix|2026-09-13t04_35_24_064108": {
+    "topic": "MSG_RWA/truthfix",
+    "gist": "Олеже, зараз глибока ніч, 04:35, ти на нічній зміні, яка закінчується о 05:00 за лондонським часом (06:00 за твоїм місцевим часом у Кошице). Зверни увагу на дан",
+    "ts": "2026-09-13T04:35:24.064108"
+  },
+  "msg_rwa|2026-09-13t04_35_13_588822": {
+    "topic": "MSG_RWA",
+    "gist": "Олеже, бачу, зараз глибока ніч, ти ще на нічній зміні, а крипторинок підкинув тобі сюрприз у RWA-секторі.  ### 📉 Обвал RWA-сектора за 24 години  Весь RWA-сектор",
+    "ts": "2026-09-13T04:35:13.588822"
+  },
   "proactive_actions|2026-09-13t04_33_17_855963": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-13\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Розібратися з простроченими дедлайнами\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Пі",
     "ts": "2026-09-13T02:02:42.973151"
-  },
-  "action_detect|2026-09-13t02_02_29_227633": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані про вагу/здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надіслати /weight або",
-    "ts": "2026-09-13T02:02:29.227633"
-  },
-  "action_detect|2026-09-13t02_02_27_738974": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-13\", \"action_time\": \"18:00\", \"action_summary\": \"Сьогодні о 18:00 починається ",
-    "ts": "2026-09-13T02:02:27.738974"
-  },
-  "action_detect|2026-09-13t02_02_16_759897": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані про вагу\", \"action_date\": \"2020-09-13\", \"action_time\": \"06:00\", \"action_summary\": \"Оновити дані про ва",
-    "ts": "2026-09-13T02:02:16.759897"
   }
 }
