@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "збережено дані здоров'я",
-      "detail": "steps=8866, hr_avg=36, calories=446, spo2=97, sleep_total_min=480, sleep_hours=8.0, date=2026-09-03, source=qwatch_auto, saved_at=2026-09-03 11:31",
-      "module": "healthai",
-      "ts": "2026-09-03T11:31:34"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримує сповіщення про вакансії з тематикою 'Cryptocurr",
       "detail": "У свіжих листах є сповіщення від LinkedIn про вакансію 'Growth Marketing Lead (B2B SaaS & Payments) в Ruby Labs', яка відповідає запиту 'Cryptocurrency в Slovakia' (СВІЖІ ЛИСТИ: від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Growth Marketing Lead (B2B SaaS & Payments) в Ruby",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Отримано лист від 'Oleg Novosadov <novosadovoleg@gmail.com>' з темою '🏠 Нові квартири у Кошіці — 1 нове оголошення'.",
       "module": "selfact",
       "ts": "2026-09-13T09:39:57"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на нові вакансії Floor Manažér/ka в Preci",
+      "detail": "Олег отримує сповіщення про вакансії, що свідчить про його зацікавленість у пошуку роботи. Бот має інформувати про нові можливості.",
+      "module": "selfact",
+      "ts": "2026-09-13T09:55:55"
     }
   ]
 }
