@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-13t10_11_08_571355": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твій платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.\",     \"why\": \"Згідн",
+    "ts": "2026-09-13T10:11:08.571355"
+  },
   "email_ai_item|2026-09-13t10_05_37_158618": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист від Allegro повідомляє, що сьогодні видаляється поточний купон на 10 євро. Це остання можливість скористатися ним для покупок.\"",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надіслати /weight або /health_",
     "ts": "2026-09-13T08:04:14.698591"
-  },
-  "action_detect|2026-09-13t08_04_03_777785": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-13\", \"action_time\": null, \"action_summary\": \"Олегу потрібно прийн",
-    "ts": "2026-09-13T08:04:03.777785"
   }
 }
