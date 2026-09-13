@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-13t20_57_45_975343": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що у тебе є два листи від Minebea з виплатними квитанціями за серпень 2026 року. Один з них",
+    "ts": "2026-09-13T20:57:45.975343"
+  },
+  "openloop_promises|2026-09-13t20_48_29_807354": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-09-13T20:48:29.807354"
+  },
   "action_detect|2026-09-13t20_46_32_138757": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після зміни, перед сном, ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armolopid",
     "ts": "2026-09-13T19:01:56.395761"
-  },
-  "action_detect|2026-09-13t19_01_45_994044": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перегляд ринку RWA\", \"action_date\": \"2026-09-13\", \"action_time\": \"06:00\", \"action_summary\": \"Запланувати детальний ",
-    "ts": "2026-09-13T19:01:45.994044"
-  },
-  "briefing_truthfix|2026-09-13t19_01_41_689907": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, чи врахував ти, що дані про ринок крипто, які ти бачиш, оновлювалися 19 годин тому, і сектор RWA, що просів на 34% за 24 години, може вже мати іншу динам",
-    "ts": "2026-09-13T19:01:41.689907"
   }
 }
