@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-13t03_36_57_639707": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на нові вакансії від Profesia.sk та LinkedIn. Особливо цікавою може бути позиція Senior Digi",
+    "ts": "2026-09-13T03:36:57.639707"
+  },
+  "mailcal_extract|2026-09-13t03_24_19_391898": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-13T03:24:19.391898"
+  },
   "selfact|2026-09-13t03_21_47_773189": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що 16 вересня о 09:00 запланована реєстрація до дерматолога. Це важлива подія, яка вже є в ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надіслати /weight або /health_",
     "ts": "2026-09-13T01:02:34.363063"
-  },
-  "action_detect|2026-09-13t01_02_23_382948": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжну ",
-    "ts": "2026-09-13T01:02:23.382948"
-  },
-  "briefing_truthfix|2026-09-13t01_02_18_939773": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, зараз глибока ніч неділі, 13 вересня 2026 року, 01:02. Ти на нічній зміні, яка триватиме до 06:00.  Чи є у тебе доступ до актуальних даних по портфелю, щ",
-    "ts": "2026-09-13T01:02:18.939773"
   }
 }
