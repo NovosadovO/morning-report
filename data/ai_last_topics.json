@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-13t21_59_59_287886": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що твоя підписка Apple закінчується. Перевір деталі у листі від Apple.\",     \"why\": \"У свіж",
+    "ts": "2026-09-13T21:59:59.287886"
+  },
   "selfact|2026-09-13t21_44_34_545531": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу: Apple повідомляє про закінчення терміну дії підписки. Перевірте деталі у листі.\",     \"wh",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
     "ts": "2026-09-13T20:04:29.146958"
-  },
-  "action_detect|2026-09-13t20_04_18_080559": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-14\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-09-13T20:04:18.080559"
   }
 }
