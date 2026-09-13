@@ -1,4 +1,14 @@
 {
+  "msg_deep_analysis|2026-09-13t14_45_06_934455": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Ти зараз вдома, і до нічної зміни, яка почнеться о 17:00 (18:00 за твоїм часом), у тебе є ще кілька годин. Це якраз час, щоб глянути на твій пр",
+    "ts": "2026-09-13T14:45:06.934455"
+  },
+  "people|2026-09-13t14_32_59_063695": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"dtp_kea@faxcopy.sk\",     \"name\": \"dtp_kea@faxcopy.sk\",     \"relation\": \"сервіс\",     \"topics\": [],     \"my_promises\": [],     \"their",
+    "ts": "2026-09-13T14:32:59.063695"
+  },
   "selfact|2026-09-13t14_31_00_310394": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: сьогодні, 13.09, о 17:00 починається твоя нічна зміна (18:00-06:00). Це важливо врахувати, ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-13T12:04:41.586367"
-  },
-  "action_detect|2026-09-13t12_04_30_811855": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписку Strava\", \"action_date\": \"2026-09-13\", \"action_time\": null, \"action_summary\": \"Зверни увагу на про",
-    "ts": "2026-09-13T12:04:30.811855"
-  },
-  "action_detect|2026-09-13t12_04_15_854400": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надіслати /weight або /health_",
-    "ts": "2026-09-13T12:04:15.854400"
   }
 }
