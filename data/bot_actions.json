@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-03",
-      "detail": "автосинк з годинника: steps, hr_avg, weight_kg, hrv, stress, sleep_total_min",
-      "module": "qwsync",
-      "ts": "2026-09-03T23:57:14"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=18915, sleep_total_min=156, hr_avg=69, weight_kg=83.0, hrv=35, stress=32, sleep_hours=2.6, date=2026-09-03, source=qwatch_auto, saved_at=2026-09-03 23:57",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "З календаря звичок видно, що 'Сауна', 'Біг' та 'Спрей для волосся' на 14.09 позначені як невиконані (❌).",
       "module": "selfact",
       "ts": "2026-09-14T00:51:14"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, на 17 та 18 вересня у тебе заплановані ранні зміни з 0",
+      "detail": "У календарі на 17.09 та 18.09 зазначено 'Рання зміна (06:00-18:00)'.",
+      "module": "selfact",
+      "ts": "2026-09-14T00:51:18"
     }
   ]
 }
