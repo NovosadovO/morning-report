@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-13t09_55_49_326651": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на нові вакансії Floor Manažér/ka в Precise Group Košice та Regional Account Manager в Sati ",
+    "ts": "2026-09-13T09:55:49.326651"
+  },
   "email_ai_item|2026-09-13t09_49_18_375127": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Cropp є рекламною розсилкою, що пропонує мікрофіброві худі для осені. Він не містить жодних конкретних дат, сум чи дій, як",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopid Plus п",
     "ts": "2026-09-13T08:01:09.804457"
-  },
-  "personal_ai_truthfix|2026-09-13t08_01_02_472329": {
-    "topic": "personal_ai/truthfix",
-    "gist": "Яка найважливіша тема зараз? Дані за 2026-09-12 (32 години тому) показують, що твій пульс 89 уд/хв, а середній за 7 днів — 87.3 уд/хв, що на 9.2 уд/хв більше, н",
-    "ts": "2026-09-13T08:01:02.472329"
   }
 }
