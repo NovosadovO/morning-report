@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег активно цікавиться криптовалютами та штучним інтелектом",
-      "detail": "Отримано листи: '📊 Ранковий дайджест ринків', 'Crypto Biz: AI took a back seat when Bitcoin started climbing', 'New Jersey Just Took Kalshi to the Supreme Court', '🖱️ Claude got the biggest upgrade ever'.",
-      "module": "selfact",
-      "ts": "2026-09-03T14:02:46"
-    },
-    {
-      "kind": "note",
       "what": "Олег цікавиться новинами у криптосвіті та фінансах, отримуюч",
       "detail": "Свіжі листи містять розсилки 'The Daily Bone | 📈 Crypto bounces on rumors of Iran wind down', 'Morning Report | 📊 Ранковий дайджест ринків — 03.09.2026' та 'Cointelegraph через LinkedIn | Crypto Biz: AI took a back seat when Bitcoin started climbing'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі є подія 'Реєстрація до дерматолога' на 16.09 о 09:00, але також є нагадування 'Нагадування про реєстрацію до дерматолога' на 19.09 о 09:00. Це може свідчити про конфлікт або помилку, тому варто уточнити.",
       "module": "selfact",
       "ts": "2026-09-13T15:02:13"
+    },
+    {
+      "kind": "notify",
+      "what": "Реєстрація до дерматолога",
+      "detail": "Подія в календарі 16.09: 09:00 🔔 Реєстрація до дерматолога, а також нагадування про це 19.09.",
+      "module": "selfact",
+      "ts": "2026-09-13T15:32:17"
     }
   ]
 }
