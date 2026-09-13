@@ -1,4 +1,34 @@
 {
+  "selfact|2026-09-13t12_13_51_468631": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нічна зміна сьогодні\",     \"text\": \"Олеже, нагадую, що сьогодні, 13 вересня, о 17:00 у тебе починається нічна ",
+    "ts": "2026-09-13T12:13:51.468631"
+  },
+  "proactive_ai|2026-09-13t12_07_57_780220": {
+    "topic": "proactive_ai",
+    "gist": "Привіт, Олеже! Ти відпочивав, як планував? Цікаво, як ранок пройшов після зміни і чи вдалося поїсти з урахуванням дієти 16:8?",
+    "ts": "2026-09-13T12:07:57.780220"
+  },
+  "action_detect|2026-09-13t12_04_52_759321": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відпочити перед зміною\", \"action_date\": \"2026-09-13\", \"action_time\": \"17:00\", \"action_summary\": \"Спробуй сьогодні (",
+    "ts": "2026-09-13T12:04:52.759321"
+  },
+  "action_detect|2026-09-13t12_04_52_633280": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-13T12:04:52.633280"
+  },
+  "action_detect|2026-09-13t12_04_41_755296": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-13\", \"action_time\": \"17:00\", \"action_summary\": \"Олег готується до нічної змін",
+    "ts": "2026-09-13T12:04:41.755296"
+  },
+  "action_detect|2026-09-13t12_04_41_586367": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-13T12:04:41.586367"
+  },
   "action_detect|2026-09-13t12_04_30_811855": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписку Strava\", \"action_date\": \"2026-09-13\", \"action_time\": null, \"action_summary\": \"Зверни увагу на про",
@@ -268,35 +298,5 @@
     "topic": "personal_ai/truthfix",
     "gist": "Олеже, дані про твоє здоров'я востаннє оновлювалися 35 годин тому, 12 вересня. Згідно з ними, середня тривалість сну за останні 7 днів становить 5.8 години, що ",
     "ts": "2026-09-13T11:16:35.433022"
-  },
-  "personal_ai|2026-09-13t11_16_23_159098": {
-    "topic": "personal_ai",
-    "gist": "Після нічної зміни, що закінчилася о 06:00, і перед початком наступної о 17:00 (за часом Лондона, тобто о 18:00 у Кошице), у тебе є лише близько 6 годин 45 хвил",
-    "ts": "2026-09-13T11:16:23.159098"
-  },
-  "selfact|2026-09-13t11_12_00_062797": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, твої платежі за підписку Runable були невдалими. Будь ласка, оно",
-    "ts": "2026-09-13T11:12:00.062797"
-  },
-  "email_ai_item|2026-09-13t11_05_30_211894": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист є щотижневим дайджестом новин у сфері фінансових технологій від Linas Beliūnas через LinkedIn. Він містить огляд статей про Pa",
-    "ts": "2026-09-13T11:05:30.211894"
-  },
-  "action_detect|2026-09-13t11_03_48_910526": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid Plus післ",
-    "ts": "2026-09-13T11:03:48.910526"
-  },
-  "action_detect|2026-09-13t11_03_32_884703": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-13\", \"action_time\": \"18:00\", \"action_summary\": \"Сьогодні о 18:00 починається ",
-    "ts": "2026-09-13T11:03:32.884703"
-  },
-  "action_detect|2026-09-13t11_03_32_866896": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надіслати /weight або /health_",
-    "ts": "2026-09-13T11:03:32.866896"
   }
 }
