@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-09-13t18_45_28_190235": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-13T18:45:28.190235"
+  },
+  "selfact|2026-09-13t18_38_01_894496": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на нові вакансії від LinkedIn, які відповідають твоїм налаштуванням: Senior Specialist Accou",
+    "ts": "2026-09-13T18:38:01.894496"
+  },
+  "mailcal_extract|2026-09-13t18_37_47_487570": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-13T18:37:47.487570"
+  },
   "msg_rwa|2026-09-13t18_35_21_297082": {
     "topic": "MSG_RWA",
     "gist": "Олеже, бачу, що сьогодні о 18:35, під час твоєї нічної зміни, на ринку RWA відбулася значна аномалія. Токенізований фонд FIGR_HELOC, який має бути стабільним ($",
@@ -283,20 +298,5 @@
     "topic": "deadlines",
     "gist": "[]",
     "ts": "2026-09-13T16:35:03.149019"
-  },
-  "selfact|2026-09-13t16_34_25_988688": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні, 13.09, о 17:00 у тебе починається нічна зміна (18:00-06:00).\",     \"why\": \"Нагадува",
-    "ts": "2026-09-13T16:34:25.988688"
-  },
-  "action_detect|2026-09-13t16_33_13_303869": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
-    "ts": "2026-09-13T16:33:13.303869"
-  },
-  "action_detect|2026-09-13t16_33_13_237097": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
-    "ts": "2026-09-13T16:33:13.237097"
   }
 }
