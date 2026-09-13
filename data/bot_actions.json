@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, ваш тижневий звіт від Google Health показує зниження а",
-      "detail": "Лист від 'Google Health <google-health-noreply@google.com>' містить звіт, де вказано '42,542 fewer than last week' та інші знижені показники.",
-      "module": "selfact",
-      "ts": "2026-09-03T21:16:06"
-    },
-    {
-      "kind": "notify",
       "what": "Лист від InterFin Malaga trip",
       "detail": "Згідно зі 'СВІЖИМИ ЛИСТАМИ', Олег отримав лист від Maroš Sivák <maros.sivak.sro@gmail.com> з темою 'InterFin Malaga trip - detailné informácie', де міститься важлива інформація щодо поїздки в Малагу, включаючи українську версію.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав два листи з виплатною карткою, один з яких є 'оправою формату', що вказує на виправлену версію.",
       "module": "selfact",
       "ts": "2026-09-13T23:34:20"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-09-13",
+      "detail": "автосинк з годинника: hr_avg, weight_kg, hrv",
+      "module": "qwsync",
+      "ts": "2026-09-13T23:46:03"
     }
   ]
 }
