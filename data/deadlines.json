@@ -274,5 +274,17 @@
     "sender": "Maroš Sivák | INTERFIN <maros.sivak@interfin.sk>",
     "done": false,
     "created": "2026-09-05"
+  },
+  "підтвердження_повернення_кредиту_temu|2026-09-13": {
+    "kind": "submit",
+    "title": "Підтвердження повернення кредиту Temu",
+    "org": "Temu",
+    "deadline": "2026-09-13",
+    "action": "Підтвердити повернення кредиту на сайті Temu",
+    "why": "Непідтверджений кредит може бути втрачений або мати обмежений термін дії.",
+    "uid": "79049",
+    "sender": "Temu <temu@eu.temuemail.com>",
+    "done": false,
+    "created": "2026-09-13"
   }
 }
