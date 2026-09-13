@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-09-14t01_53_23_280294": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-14T01:53:23.280294"
+  },
+  "selfact|2026-09-14t01_37_26_516560": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення платіжної інформації Runable\",     \"text\": \"Олег, платіж за підписку Runable знову був невдалим. Пот",
+    "ts": "2026-09-14T01:37:26.516560"
+  },
   "deadlines|2026-09-14t01_35_13_439099": {
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"78676\",     \"kind\": \"contract\",     \"title\": \"Підписка Apple — закінчення терміну дії\",     \"org\": \"Apple\",     \"deadline\": \"2026-09-3",
@@ -288,15 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-09-13T23:49:23.034661"
-  },
-  "action_detect|2026-09-13t23_47_16_852260": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"В",
-    "ts": "2026-09-13T23:47:16.852260"
-  },
-  "msg_deep_analysis_truthfix|2026-09-13t23_47_09_391905": {
-    "topic": "MSG_DEEP_ANALYSIS/truthfix",
-    "gist": "Зараз ніч, Олеже, і це час для відпочинку.  Дані по ринку крипти, які є в мене, показують, що за тиждень біткоїн просів на 3.1%, BNB — на 3.6%, SOL — на 3.8%. E",
-    "ts": "2026-09-13T23:47:09.391905"
   }
 }
