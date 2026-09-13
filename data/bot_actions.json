@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Відпустка в Малазі",
-      "detail": "Є свіжий лист від Maroš Sivák <maros.sivak.sro@gmail.com> з темою 'InterFin Malaga trip - detailné informácie', який містить важливу інформацію про майбутню відпустку в Малазі, що починається 07.09.",
-      "module": "selfact",
-      "ts": "2026-09-03T17:37:25"
-    },
-    {
-      "kind": "notify",
       "what": "Google Health: Зниження активності",
       "detail": "З листа від Google Health <google-health-noreply@google.com> | Your weekly progress report from Google Health, де вказано '42,542 fewer than last week' та інші зниження показників.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримував сповіщення про вакансії, і ця вакансія може бути для нього актуальною, враховуючи активний найм.",
       "module": "selfact",
       "ts": "2026-09-13T22:15:28"
+    },
+    {
+      "kind": "notify",
+      "what": "Нові вакансії та виплатна картка",
+      "detail": "Є свіжі листи від LinkedIn з вакансією Expert Full Stack Engineer, два листи від ehuman@minebeamitsumi.eu з виплатними картками за 08/2026, і лист від Oleg Novosadov <novosadovoleg@gmail.com> про 3 нові оголошення квартир у Кошице.",
+      "module": "selfact",
+      "ts": "2026-09-13T22:30:37"
     }
   ]
 }
