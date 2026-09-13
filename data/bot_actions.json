@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег, ймовірно, не приділяє достатньої уваги регулярним плат",
-      "detail": "У даних 'ПІДПИСКИ' та 'НОТАТКАХ ПРО ОЛЕГА' чітко видно, що платіж Runable був невдалим, і Олег ігнорує сповіщення.",
-      "module": "selfact",
-      "ts": "2026-09-03T15:50:31"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримав декілька крипто-дайджестів від різних джерел 3",
       "detail": "Олег отримав листи 'Daily Crypto Digest — September 3', 'AI-curated Daily Crypto Digest - September 3', 'Crypto bounces on rumors of Iran wind down', 'Ранковий дайджест ринків — 03.09.2026', 'Crypto Biz: AI took a back seat when Bitcoin started climbing' та 'New Jersey Just Took Kalshi to the Suprem",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Звички за 13.09 показують, що біг не був виконаний (🏃 Біг ❌), а Олег зараз на нічній зміні.",
       "module": "selfact",
       "ts": "2026-09-13T19:40:55"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, ти не відмітив звичку 'Сауна' 13.09.2026. Можливо, че",
+      "detail": "Звички за 13.09 показують, що сауна не була виконана (🧖 Сауна ❌), а Олег зараз на нічній зміні.",
+      "module": "selfact",
+      "ts": "2026-09-13T19:40:58"
     }
   ]
 }
