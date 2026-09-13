@@ -11979,6 +11979,12 @@
       "category": "confirm",
       "question": "gate_lc_add: ⏳ СКОРО ПРОДОВЖЕННЯ",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-14T00:38:02.498693+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "lc_add_613490081c"
     }
   ]
 }
