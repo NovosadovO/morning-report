@@ -1,4 +1,24 @@
 {
+  "action_detect|2026-09-13t06_16_06_860979": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:15\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-13T06:16:06.860979"
+  },
+  "selfact|2026-09-13t06_14_16_201532": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні, 13 вересня, о 17:00 у тебе починається нічна зміна, яка триватиме до 06:00 ранку 14",
+    "ts": "2026-09-13T06:14:16.201532"
+  },
+  "action_detect|2026-09-13t06_12_09_740452": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-13\", \"action_time\": \"17:00\", \"action_summary\": \"Сьогодні, 13 вересня, на тебе",
+    "ts": "2026-09-13T06:12:09.740452"
+  },
+  "msg_vip_email_truthfix|2026-09-13t06_12_01_690718": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Зараз 06:11, 13 вересня 2026 року, неділя. Ти щойно завершив нічну зміну.  ### Відновлення після зміни Твої біометричні дані, оновлені 30 годин тому (станом на ",
+    "ts": "2026-09-13T06:12:01.690718"
+  },
   "msg_vip_email|2026-09-13t06_11_52_772871": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🤝  Після нічної зміни, яка щойно завершилася о 06:00, найважливіше — якісний відпочинок, адже відновлення сил є запорукою ефективності у всіх сфер",
@@ -278,25 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json { \"description\": \"Лист від LinkedIn містить сповіщення про дві нові вакансії в Словаччині: Operations Manager - Build & Own в AI Acquisition та Anti-Fra",
     "ts": "2026-09-13T04:15:31.590737"
-  },
-  "openloop_promises|2026-09-13t04_11_00_343225": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-09-13T04:11:00.343225"
-  },
-  "selfact|2026-09-13t04_08_09_580857": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що тобі прийшли дві виплатні квитанції за серпень 2026 року від Minebea. Одна з них позначе",
-    "ts": "2026-09-13T04:08:09.580857"
-  },
-  "action_detect|2026-09-13t04_03_15_791454": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Записати думки та спланувати крок щодо здоров'я\", \"action_date\": \"2026-09-15\", \"action_time\": null, \"action",
-    "ts": "2026-09-13T04:03:15.791454"
-  },
-  "action_detect|2026-09-13t04_03_15_621231": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Використати силу волі, щоб ",
-    "ts": "2026-09-13T04:03:15.621231"
   }
 }
