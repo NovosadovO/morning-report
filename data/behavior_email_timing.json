@@ -1,9 +1,4 @@
 {
-  "78553": {
-    "sender": "hello@plunge.com",
-    "sender_raw": "PLUNGE <hello@plunge.com>",
-    "seen_ts": "2026-09-04T15:34:55.279688+00:00"
-  },
   "78556": {
     "sender": "noreply@mailing.fifa.com",
     "sender_raw": "FIFA <noreply@mailing.fifa.com>",
@@ -1498,5 +1493,10 @@
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
     "seen_ts": "2026-09-13T02:17:40.904534+00:00"
+  },
+  "79026": {
+    "sender": "noreply@discord.com",
+    "sender_raw": "Discord <noreply@discord.com>",
+    "seen_ts": "2026-09-13T05:00:12.537658+00:00"
   }
 }
