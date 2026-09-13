@@ -1,9 +1,4 @@
 {
-  "78552": {
-    "sender": "hello@news.footshop.sk",
-    "sender_raw": "Footshop <hello@news.footshop.sk>",
-    "seen_ts": "2026-09-04T14:37:09.439077+00:00"
-  },
   "78553": {
     "sender": "hello@plunge.com",
     "sender_raw": "PLUNGE <hello@plunge.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-09-13T02:15:34.549249+00:00"
+  },
+  "79023": {
+    "sender": "novosadovoleg@gmail.com",
+    "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
+    "seen_ts": "2026-09-13T02:17:40.904534+00:00"
   }
 }
