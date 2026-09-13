@@ -1,9 +1,4 @@
 {
-  "78560": {
-    "sender": "message@message.reserved.com",
-    "sender_raw": "Reserved <message@message.reserved.com>",
-    "seen_ts": "2026-09-04T17:55:07.616471+00:00"
-  },
   "78561": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
     "seen_ts": "2026-09-13T06:19:27.225909+00:00"
+  },
+  "79030": {
+    "sender": "info@message.cropp.com",
+    "sender_raw": "\"Cropp\" <info@message.cropp.com>",
+    "seen_ts": "2026-09-13T07:49:21.659837+00:00"
   }
 }
