@@ -1,4 +1,14 @@
 {
+  "msg_vip_email|2026-09-13t13_22_43_872085": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🏹  Обідній час, ти вдома перед нічною зміною, яка розпочнеться сьогодні о 17:00, і це дає змогу стратегічно поглянути на твій прогрес, особливо у ",
+    "ts": "2026-09-13T13:22:43.872085"
+  },
+  "openloop_promises|2026-09-13t13_15_39_795019": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-09-13T13:15:39.795019"
+  },
   "selfact|2026-09-13t13_14_18_867924": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, твої платежі за підписку Runable знову були невдалими. Потрібно ",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від Oleg Novosadov щодо нових квартир у Кошице. Можливо, це цікаво для тебе.\",     \"",
     "ts": "2026-09-13T11:43:24.471408"
-  },
-  "action_detect|2026-09-13t11_33_19_218078": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Railway Corporation\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Оплатити 5.00$ дл",
-    "ts": "2026-09-13T11:33:19.218078"
-  },
-  "action_detect|2026-09-13t11_32_56_661807": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надіслати /weight або /health_",
-    "ts": "2026-09-13T11:32:56.661807"
   }
 }
