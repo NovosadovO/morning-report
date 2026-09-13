@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_yes_done_dr2ba9els02t2atrh390rob060_2026-08-27",
-      "label": "✅ Виконано",
-      "ts": "2026-08-28T00:10:33"
-    },
-    {
-      "t": "btn",
       "data": "rx_mute_84173ec96c",
       "label": "🙈 Не нагадуй",
       "ts": "2026-08-28T01:19:01"
@@ -7199,6 +7193,12 @@
       "data": "habit_no_spray",
       "label": "❌ Ні",
       "ts": "2026-09-13T19:33:39"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_sauna",
+      "label": "❌ Ні",
+      "ts": "2026-09-13T19:33:40"
     }
   ]
 }
