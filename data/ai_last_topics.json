@@ -1,4 +1,39 @@
 {
+  "msg_vip_email|2026-09-13t16_37_52_311029": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🏹 Бачу, ти зараз готуєшся до зміни, і це чудовий час, щоб стратегічно оцінити твій прогрес та скоригувати курс. Звертаю увагу, що твій статус \"гот",
+    "ts": "2026-09-13T16:37:52.311029"
+  },
+  "deadlines|2026-09-13t16_35_03_149019": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-09-13T16:35:03.149019"
+  },
+  "selfact|2026-09-13t16_34_25_988688": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні, 13.09, о 17:00 у тебе починається нічна зміна (18:00-06:00).\",     \"why\": \"Нагадува",
+    "ts": "2026-09-13T16:34:25.988688"
+  },
+  "action_detect|2026-09-13t16_33_13_303869": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
+    "ts": "2026-09-13T16:33:13.303869"
+  },
+  "action_detect|2026-09-13t16_33_13_237097": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
+    "ts": "2026-09-13T16:33:13.237097"
+  },
+  "action_detect|2026-09-13t16_33_13_141530": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-13T16:33:13.141530"
+  },
+  "planner|2026-09-13t16_33_01_976264": {
+    "topic": "planner",
+    "gist": "```json [] ```",
+    "ts": "2026-09-13T16:33:01.976264"
+  },
   "action_detect|2026-09-13t16_32_51_326525": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
@@ -263,40 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потрі",
     "ts": "2026-09-13T14:46:39.007417"
-  },
-  "openloop_promises|2026-09-13t14_46_25_179033": {
-    "topic": "openloop_promises",
-    "gist": "Олег не зробив жодних явних обіцянок у наданих листах. Усі листи, які він \"написав сам\", є автоматичними сповіщеннями про нові квартири або реакціями на повідом",
-    "ts": "2026-09-13T14:46:25.179033"
-  },
-  "action_detect|2026-09-13t14_45_23_338863": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": null, \"action_time\": \"17:00\", \"action_summary\": \"Нічна зміна Олега почнеться о 17:00 (",
-    "ts": "2026-09-13T14:45:23.338863"
-  },
-  "msg_deep_analysis_truthfix|2026-09-13t14_45_17_159483": {
-    "topic": "MSG_DEEP_ANALYSIS/truthfix",
-    "gist": "Олеже, привіт!  Як ти плануєш використати час до нічної зміни, що починається о 17:00 за лондонським часом (18:00 за твоїм часом у Кошице), щоб змінити поточний",
-    "ts": "2026-09-13T14:45:17.159483"
-  },
-  "msg_deep_analysis|2026-09-13t14_45_06_934455": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋  Ти зараз вдома, і до нічної зміни, яка почнеться о 17:00 (18:00 за твоїм часом), у тебе є ще кілька годин. Це якраз час, щоб глянути на твій пр",
-    "ts": "2026-09-13T14:45:06.934455"
-  },
-  "people|2026-09-13t14_32_59_063695": {
-    "topic": "people",
-    "gist": "```json [   {     \"email\": \"dtp_kea@faxcopy.sk\",     \"name\": \"dtp_kea@faxcopy.sk\",     \"relation\": \"сервіс\",     \"topics\": [],     \"my_promises\": [],     \"their",
-    "ts": "2026-09-13T14:32:59.063695"
-  },
-  "selfact|2026-09-13t14_31_00_310394": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: сьогодні, 13.09, о 17:00 починається твоя нічна зміна (18:00-06:00). Це важливо врахувати, ",
-    "ts": "2026-09-13T14:31:00.310394"
-  },
-  "action_detect|2026-09-13t14_28_07_034587": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-13T14:28:07.034587"
   }
 }
