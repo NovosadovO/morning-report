@@ -10270,7 +10270,24 @@
     "action": "calrem_skip",
     "pid": "vip_email_1789333485",
     "subject": "Переглянути виплатні відомості Minebea",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 93047,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_vip_email_1789333485"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_vip_email_1789333485"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-13T23:12:45.247411+00:00"
   }
 }
