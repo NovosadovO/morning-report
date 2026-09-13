@@ -1324,6 +1324,17 @@
   "note|повторні сповіщення linkedin": {
     "q": "📝 Хочу записати нотатку:\n\n« Повторні сповіщення LinkedIn »\n\nОлег отримав два ідентичні сповіщення про вакансію Operations Manager - Build & Own в AI Acquisition від LinkedIn.\n\nПоставити?",
     "kind": "write",
-    "asked_at": "2026-09-13T04:39:09"
+    "asked_at": "2026-09-13T04:39:09",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-09-13T04:48:32",
+    "meta": {
+      "summary": "Повторні сповіщення LinkedIn",
+      "desc": "Олег отримав два ідентичні сповіщення про вакансію Operations Manager - Build & ",
+      "minutes": "30",
+      "calendar": "True",
+      "kind": "note"
+    }
   }
 }
