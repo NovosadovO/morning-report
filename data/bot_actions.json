@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Google Health: Зниження активності",
-      "detail": "З листа від Google Health <google-health-noreply@google.com> | Your weekly progress report from Google Health, де вказано '42,542 fewer than last week' та інші зниження показників.",
-      "module": "selfact",
-      "ts": "2026-09-03T18:08:09"
-    },
-    {
-      "kind": "notify",
       "what": "Ти пропустив перегляд вакансій на Profesia.sk сьогодні о 06:",
       "detail": "КАЛЕНДАР НА 7 ДНІВ: 03.09: 06:00 🔔 Перевірити вакансії Profesia.sk; 07:00 🔔 Переглянути вакансії Profesia.sk. Поточний час 19:10.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Є свіжі листи від LinkedIn з вакансією Expert Full Stack Engineer, два листи від ehuman@minebeamitsumi.eu з виплатними картками за 08/2026, і лист від Oleg Novosadov <novosadovoleg@gmail.com> про 3 нові оголошення квартир у Кошице.",
       "module": "selfact",
       "ts": "2026-09-13T22:30:37"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, зверни увагу на лист від LinkedIn: з'явилася нова вак",
+      "detail": "Свіжий лист від Сповіщення про вакансії LinkedIn: 'Expert Full Stack Engineer в Ciklum Czech Republic & Slovakia', 'Ця компанія активно наймає персонал'.",
+      "module": "selfact",
+      "ts": "2026-09-13T22:46:46"
     }
   ]
 }
