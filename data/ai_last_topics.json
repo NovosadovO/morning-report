@@ -1,4 +1,34 @@
 {
+  "proactive_actions|2026-09-14t00_00_26_319990": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-14\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
+    "ts": "2026-09-14T00:00:26.319990"
+  },
+  "selfact|2026-09-13t23_49_37_102704": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Виплатні листи Minebea\",     \"text\": \"Олег, ти отримав два виплатні листи від Minebea за серпень 2026 року. Од",
+    "ts": "2026-09-13T23:49:37.102704"
+  },
+  "openloop_promises|2026-09-13t23_49_23_034661": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-09-13T23:49:23.034661"
+  },
+  "action_detect|2026-09-13t23_47_16_852260": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"В",
+    "ts": "2026-09-13T23:47:16.852260"
+  },
+  "msg_deep_analysis_truthfix|2026-09-13t23_47_09_391905": {
+    "topic": "MSG_DEEP_ANALYSIS/truthfix",
+    "gist": "Зараз ніч, Олеже, і це час для відпочинку.  Дані по ринку крипти, які є в мене, показують, що за тиждень біткоїн просів на 3.1%, BNB — на 3.6%, SOL — на 3.8%. E",
+    "ts": "2026-09-13T23:47:09.391905"
+  },
+  "msg_deep_analysis|2026-09-13t23_46_59_010363": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋 Бачу, що ніч зараз — час для спокійного відпочинку.  Зараз ринок трохи коливається: за тиждень біткоїн просів на 3.1%, BNB — на 3.6%, SOL — на 3",
+    "ts": "2026-09-13T23:46:59.010363"
+  },
   "action_detect|2026-09-13t23_45_59_563774": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolop",
@@ -268,35 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег не виконав звичку 'Сауна' та 'Біг' 13 вересня, хоча мав нічну зміну.\",     \"why\": \"З календаря 13.09 видно, ",
     "ts": "2026-09-13T21:29:32.524245"
-  },
-  "action_detect|2026-09-13t21_21_14_750557": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після зміни, приблизно о ",
-    "ts": "2026-09-13T21:21:14.750557"
-  },
-  "msg_idle_timeout_truthfix|2026-09-13t21_21_07_013730": {
-    "topic": "MSG_IDLE_TIMEOUT/truthfix",
-    "gist": "Зараз, 21:20, ти на нічній зміні, яка триватиме до 06:00 ранку, і це вже друга ніч поспіль, адже завтра, 14 вересня, тебе чекає ще одна нічна зміна. Дані про зд",
-    "ts": "2026-09-13T21:21:07.013730"
-  },
-  "msg_idle_timeout|2026-09-13t21_20_57_043534": {
-    "topic": "MSG_IDLE_TIMEOUT",
-    "gist": "Привіт Олеже! 🚶  Вечір, 21:20, і ти глибоко в нічній зміні, яка триватиме до 06:00 ранку. Це вже друга ніч поспіль, адже завтра тебе чекає ще одна зміна. З огля",
-    "ts": "2026-09-13T21:20:57.043534"
-  },
-  "action_detect|2026-09-13t21_17_55_881703": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжну інформацію ",
-    "ts": "2026-09-13T21:17:55.881703"
-  },
-  "action_detect|2026-09-13t21_17_40_660495": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки вказ",
-    "ts": "2026-09-13T21:17:40.660495"
-  },
-  "action_detect|2026-09-13t21_17_40_512525": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"В",
-    "ts": "2026-09-13T21:17:40.512525"
   }
 }
