@@ -1,4 +1,9 @@
 {
+  "msg_rwa|2026-09-13t18_35_21_297082": {
+    "topic": "MSG_RWA",
+    "gist": "Олеже, бачу, що сьогодні о 18:35, під час твоєї нічної зміни, на ринку RWA відбулася значна аномалія. Токенізований фонд FIGR_HELOC, який має бути стабільним ($",
+    "ts": "2026-09-13T18:35:21.297082"
+  },
   "selfact|2026-09-13t18_22_54_890929": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, твій платіж до Runable на $10.00 був невдалим. Потрібно оновити ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
     "ts": "2026-09-13T16:33:13.237097"
-  },
-  "action_detect|2026-09-13t16_33_13_141530": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-13T16:33:13.141530"
   }
 }
