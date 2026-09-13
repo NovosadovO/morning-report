@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег отримує сповіщення про вакансії Logistics Supervisor LO",
-      "detail": "Надійшов лист від LinkedIn Job Alerts з новою вакансією Logistics Supervisor LOC в Volvo Cars у Кошице, що свідчить про його активний пошук роботи.",
-      "module": "selfact",
-      "ts": "2026-09-03T16:21:00"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримує сповіщення про вакансії SEO Content Specialist",
       "detail": "Надійшов лист від LinkedIn Job Alerts з новою вакансією SEO Content Specialist в Trade Nation у Словаччині, що вказує на його різнобічний пошук роботи.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Є два нові листи з виплатними квитанціями від Minebea, які можуть бути важливими для Олега.",
       "module": "selfact",
       "ts": "2026-09-13T20:57:51"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, є нові оголошення про квартири в Кошице. Можеш перегля",
+      "detail": "Є новий лист з оголошеннями про квартири, що може бути цікаво Олегу.",
+      "module": "selfact",
+      "ts": "2026-09-13T20:57:57"
     }
   ]
 }
