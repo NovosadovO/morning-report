@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_no_done_87kn1n4of7g6hnb4ht3tinfjso_2026-08-27",
-      "label": "❌ Не виконано",
-      "ts": "2026-08-28T00:10:23"
-    },
-    {
-      "t": "btn",
       "data": "evdone_yes_done_dr2ba9els02t2atrh390rob060_2026-08-27",
       "label": "✅ Виконано",
       "ts": "2026-08-28T00:10:33"
@@ -7199,6 +7193,12 @@
       "data": "am_no_ece056fe0e",
       "label": "🚫 Не треба",
       "ts": "2026-09-13T19:32:36"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_spray",
+      "label": "❌ Ні",
+      "ts": "2026-09-13T19:33:39"
     }
   ]
 }
