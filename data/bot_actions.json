@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Нові вакансії CryptoJobsList",
-      "detail": "Згідно зі свіжими листами, є сповіщення про вакансії від CryptoJobsList.",
-      "module": "selfact",
-      "ts": "2026-09-03T10:25:02"
-    },
-    {
       "kind": "note",
       "what": "Олег має активний інтерес до вакансій Growth Marketing Lead",
       "detail": "Свіжі листи містять сповіщення про вакансії Growth Marketing Lead (B2B SaaS & Payments) в Ruby Labs та Engineering Manager - Delivery & Team Leadership (m/w/d) в Deutsche Telekom.",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі є подія 'Реєстрація до дерматолога' 16.09 о 09:00 та нагадування про неї 19.09 о 09:00. Олег міг не помітити ці дві різні дати.",
       "module": "selfact",
       "ts": "2026-09-13T05:58:15"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, у тебе є нові оголошення про квартири в Кошице та 20 н",
+      "detail": "Олег отримав листи від Oleg Novosadov про нові квартири, від Profesia.sk про 20 нових вакансій та два сповіщення від LinkedIn про вакансії Operations Manager та Senior Digital Business Product Owner.",
+      "module": "selfact",
+      "ts": "2026-09-13T05:58:18"
     }
   ]
 }
