@@ -1,4 +1,19 @@
 {
+  "mailcal_extract|2026-09-13t10_16_00_667669": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-13T10:16:00.667669"
+  },
+  "email_ai_item|2026-09-13t10_13_57_435533": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії, які відповідають налаштуванням користувача. Зокрема, згадано дві вакансії: ",
+    "ts": "2026-09-13T10:13:57.435533"
+  },
+  "openloop_promises|2026-09-13t10_13_36_982576": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-13T10:13:36.982576"
+  },
   "selfact|2026-09-13t10_11_08_571355": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твій платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.\",     \"why\": \"Згідн",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Закінчення нічної зміни\", \"action_date\": \"2026-09-13\", \"action_time\": \"06:00\", \"action_summary\": \"Нічна зміна Олега",
     "ts": "2026-09-13T08:04:39.445988"
-  },
-  "action_detect|2026-09-13t08_04_28_167273": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Railway Corporation\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Очікується оплата",
-    "ts": "2026-09-13T08:04:28.167273"
-  },
-  "action_detect|2026-09-13t08_04_14_801845": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-13\", \"action_time\": \"18:00\", \"action_summary\": \"Сьогодні о 18:00 починається ",
-    "ts": "2026-09-13T08:04:14.801845"
-  },
-  "action_detect|2026-09-13t08_04_14_698591": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надіслати /weight або /health_",
-    "ts": "2026-09-13T08:04:14.698591"
   }
 }
