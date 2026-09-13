@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "cfm_y_110c59e848",
-      "label": "✅ Так, оплачено",
-      "ts": "2026-08-27T23:30:02"
-    },
-    {
-      "t": "btn",
       "data": "bill_paid_be00040be5",
       "label": "",
       "ts": "2026-08-27T23:30:09"
@@ -7199,6 +7193,12 @@
       "data": "habit_yes_shower",
       "label": "✅ Так",
       "ts": "2026-09-13T16:30:59"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_ld65qh44su2vu54j8kf6erqog8_2026-09-13",
+      "label": "✅ Виконано",
+      "ts": "2026-09-13T16:32:46"
     }
   ]
 }
