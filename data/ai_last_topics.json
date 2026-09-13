@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-09-13t02_40_40_518572": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-13T02:40:40.518572"
+  },
+  "mailcal_extract|2026-09-13t02_38_12_609661": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-13T02:38:12.609661"
+  },
   "selfact|2026-09-13t02_34_44_158826": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олег, зверни увагу: є кілька невдалих платежів за підписку Runable. Пот",
@@ -288,15 +298,5 @@
     "topic": "bills",
     "gist": "[]",
     "ts": "2026-09-13T00:03:51.173217"
-  },
-  "action_detect|2026-09-13t00_03_37_943102": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Закінчення нічної зміни\", \"action_date\": \"2026-09-13\", \"action_time\": \"06:00\", \"action_summary\": \"Пам'ятати, що ніч",
-    "ts": "2026-09-13T00:03:37.943102"
-  },
-  "action_detect|2026-09-13t00_03_37_799003": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записуй всі блискучі ідеї т",
-    "ts": "2026-09-13T00:03:37.799003"
   }
 }
