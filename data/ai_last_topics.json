@@ -1,4 +1,9 @@
 {
+  "msg_vip_email|2026-09-14t01_19_54_459523": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🏹 Бачу, зараз глибока ніч, час для відновлення, і, згідно з календарем, ти зараз відпочиваєш.  Останні дані про твою вагу за 14.09 показують 83.0 ",
+    "ts": "2026-09-14T01:19:54.459523"
+  },
   "selfact|2026-09-14t01_06_14_466141": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сповіщення про вакансію\",     \"text\": \"Олеже, LinkedIn має нову вакансію 'Administratívny/a špecialista/špecia",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-13T23:13:21.278615"
-  },
-  "action_detect|2026-09-13t23_12_48_659209": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-13T23:12:48.659209"
   }
 }
