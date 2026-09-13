@@ -1,4 +1,39 @@
 {
+  "msg_vip_email|2026-09-13t06_11_52_772871": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Після нічної зміни, яка щойно завершилася о 06:00, найважливіше — якісний відпочинок, адже відновлення сил є запорукою ефективності у всіх сфер",
+    "ts": "2026-09-13T06:11:52.772871"
+  },
+  "proactive_actions|2026-09-13t06_03_30_554938": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-13\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
+    "ts": "2026-09-13T06:03:30.554938"
+  },
+  "action_detect|2026-09-13t06_03_18_195837": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-13\", \"action_time\": \"06:03\", \"action_summary\": \"Прийняти Armolopi",
+    "ts": "2026-09-13T06:03:18.195837"
+  },
+  "msg_morning_truthfix|2026-09-13t06_03_11_548976": {
+    "topic": "MSG_MORNING/truthfix",
+    "gist": "Привіт Олеже!  Зараз неділя, 13 вересня 2026 року, 06:03 ранку в Кошице. Твоя нічна зміна завершилася 3 хвилини тому, і найважливіше зараз — це повноцінний сон ",
+    "ts": "2026-09-13T06:03:11.548976"
+  },
+  "msg_morning|2026-09-13t06_03_02_292525": {
+    "topic": "MSG_MORNING",
+    "gist": "Привіт Олеже! ✨  Зараз неділя, 13 вересня, 07:02 ранку в Кошице. Твоя нічна зміна щойно завершилася, і найважливіше зараз — це повноцінний сон та відновлення. Т",
+    "ts": "2026-09-13T06:03:02.292525"
+  },
+  "action_detect|2026-09-13t06_02_21_517559": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus та лягти спати\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Тобі потрі",
+    "ts": "2026-09-13T06:02:21.517559"
+  },
+  "action_detect|2026-09-13t06_02_10_483604": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-13\", \"action_time\": \"18:00\", \"action_summary\": \"Нічна зміна з 18:00 до 06:00.",
+    "ts": "2026-09-13T06:02:10.483604"
+  },
   "action_detect|2026-09-13t06_02_10_479356": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надіслати /weight або /health_",
@@ -263,40 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Використати силу волі, щоб ",
     "ts": "2026-09-13T04:03:15.621231"
-  },
-  "action_detect|2026-09-13t04_03_15_619557": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-13T04:03:15.619557"
-  },
-  "action_detect|2026-09-13t04_03_04_430999": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після зміни, о 06:00, тоб",
-    "ts": "2026-09-13T04:03:04.430999"
-  },
-  "action_detect|2026-09-13t04_02_53_468238": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-13\", \"action_time\": \"18:00\", \"action_summary\": \"Сьогодні 13.09.2026 о 18:00 п",
-    "ts": "2026-09-13T04:02:53.468238"
-  },
-  "action_detect|2026-09-13t04_02_53_396633": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надіслати /weight або /health_",
-    "ts": "2026-09-13T04:02:53.396633"
-  },
-  "action_detect|2026-09-13t04_02_42_370518": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реалізація бота для трейдингу\", \"action_date\": \"2026-09-20\", \"action_time\": null, \"action_summary\": \"Запланована ре",
-    "ts": "2026-09-13T04:02:42.370518"
-  },
-  "briefing_truthfix|2026-09-13t04_02_39_068923": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, зараз 04:02 неділі, 13 вересня 2026 року, і до кінця твоєї нічної зміни залишилося менше двох годин. Твоя оцінка дня за 9 вересня становила 10/100, що є ",
-    "ts": "2026-09-13T04:02:39.068923"
-  },
-  "briefing|2026-09-13t04_02_34_476933": {
-    "topic": "briefing",
-    "gist": "Олеже, зараз глибока ніч, 04:02, твоя нічна зміна вже підходить до завершення. До кінця зміни залишилося менше двох годин, і це ідеальний час, щоб перегрупувати",
-    "ts": "2026-09-13T04:02:34.476933"
   }
 }
