@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-13t02_34_44_158826": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олег, зверни увагу: є кілька невдалих платежів за підписку Runable. Пот",
+    "ts": "2026-09-13T02:34:44.158826"
+  },
+  "selfact|2026-09-13t02_18_30_075580": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверни увагу, що є невдалі платежі за підписку Runable. Потрібно",
+    "ts": "2026-09-13T02:18:30.075580"
+  },
   "email_ai_item|2026-09-13t02_15_16_558486": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії, які відповідають налаштуванням користувача. Зокрема, пропонується позиці",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати ідеї та інсайти\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Записуй всі блискучі ідеї т",
     "ts": "2026-09-13T00:03:37.799003"
-  },
-  "action_detect|2026-09-13t00_03_37_759359": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopid Plus о",
-    "ts": "2026-09-13T00:03:37.759359"
-  },
-  "action_detect|2026-09-13t00_03_26_650261": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Негайно онови пла",
-    "ts": "2026-09-13T00:03:26.650261"
   }
 }
