@@ -1395,6 +1395,17 @@
   "note|олег отримав статтю від the economist how hot should you d": {
     "q": "📝 Хочу записати нотатку:\n\n« Олег отримав статтю від The Economist: 'How hot should you d »\n\nОлег отримав статтю від The Economist: 'How hot should you drink your coffee?'.\n\nПоставити?",
     "kind": "write",
-    "asked_at": "2026-09-13T19:25:48"
+    "asked_at": "2026-09-13T19:25:48",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-09-13T19:32:39",
+    "meta": {
+      "summary": "Олег отримав статтю від The Economist: 'How hot should you d",
+      "desc": "Олег отримав статтю від The Economist: 'How hot should you drink your coffee?'.",
+      "minutes": "30",
+      "calendar": "True",
+      "kind": "note"
+    }
   }
 }
