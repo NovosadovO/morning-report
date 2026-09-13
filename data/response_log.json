@@ -11895,6 +11895,12 @@
       "category": "confirm",
       "question": "calrem_skip: Записати нові цілі",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-13T20:05:33.394689+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_fa2106d507"
     }
   ]
 }
