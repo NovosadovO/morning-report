@@ -1,4 +1,19 @@
 {
+  "email_ai_item|2026-09-13t22_15_02_786130": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про нову вакансію Expert Full Stack Engineer в Ciklum Czech Republic & Slovakia, що відповідає запи",
+    "ts": "2026-09-13T22:15:02.786130"
+  },
+  "proactive_ai|2026-09-13t22_12_31_059201": {
+    "topic": "proactive_ai",
+    "gist": "Привіт, Олеже! Бажаю тобі спокійної та продуктивної решти нічної зміни. Після 06:00 не забудь прийняти Armolopid Plus перед сном, щоб добре відпочити, адже завт",
+    "ts": "2026-09-13T22:12:31.059201"
+  },
+  "astro_ai_truthfix|2026-09-13t22_08_47_381463": {
+    "topic": "astro_ai/truthfix",
+    "gist": "Олеже, зараз 22:08 неділі, 13 вересня 2026 року, ти на нічній зміні у Кошице. Дані, що стосуються астрологічних транзитів, є застарілими, оскільки були обчислен",
+    "ts": "2026-09-13T22:08:47.381463"
+  },
   "astro_ai|2026-09-13t22_08_31_973491": {
     "topic": "astro_ai",
     "gist": "Олеже, зараз 22:08 неділі, 13 вересня 2026 року, ти на нічній зміні у Кошице. Сьогоднішній день, попри твою зайнятість, пропонує значні можливості для особистог",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-13T21:01:07.351527"
-  },
-  "action_detect|2026-09-13t21_00_56_544750": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-13T21:00:56.544750"
-  },
-  "action_detect|2026-09-13t21_00_44_340712": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після закінчення зміни о ",
-    "ts": "2026-09-13T21:00:44.340712"
-  },
-  "msg_habit_checkin_truthfix|2026-09-13t21_00_37_679973": {
-    "topic": "MSG_HABIT_CHECKIN/truthfix",
-    "gist": "Олеже,  Зараз 21:00, ти на нічній зміні. Дані про твій стан за 13 вересня оновлювалися 21 годину тому.  **Здоров'я та звички:** * Вага: 83.0 кг (даних про зміну",
-    "ts": "2026-09-13T21:00:37.679973"
   }
 }
