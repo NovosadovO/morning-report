@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олеже, на LinkedIn з'явилася нова вакансія 'SEO Content Spec",
-      "detail": "У свіжих листах є сповіщення від LinkedIn про вакансію 'SEO Content Specialist в Trade Nation'.",
-      "module": "selfact",
-      "ts": "2026-09-03T14:49:10"
-    },
-    {
       "kind": "note",
       "what": "Олег активно готується до відпустки в Малазі, про що свідчит",
       "detail": "У календарі є події '07.09: 07:00 🔔 Відпустка в Малазі', '08:00 🔔 Початок відпустки в Малазі', '08:00 📌 Бронювання August Villa Málaga - Villa', '12:00 Поїздка в Малагу, Іспанія'.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, calories, hrv, spo2, stress",
       "module": "qwsync",
       "ts": "2026-09-13T16:33:06"
+    },
+    {
+      "kind": "note",
+      "what": "збережено дані здоров'я",
+      "detail": "steps=6933, hr_avg=62, calories=304, hrv=47, spo2=96, stress=45, date=2026-09-13, source=qwatch_auto, saved_at=2026-09-13 16:33",
+      "module": "healthai",
+      "ts": "2026-09-13T16:33:07"
     }
   ]
 }
