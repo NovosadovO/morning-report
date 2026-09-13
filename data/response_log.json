@@ -12019,6 +12019,15 @@
         "kind": "reminder",
         "date": "2026-09-14"
       }
+    },
+    {
+      "ts": "2026-09-14T01:35:19.233910+00:00",
+      "category": "deadline_found",
+      "question": "Підписка Apple — закінчення терміну дії",
+      "answer": "2026-09-30",
+      "extra": {
+        "kind": "contract"
+      }
     }
   ]
 }
