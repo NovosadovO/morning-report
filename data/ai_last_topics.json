@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-09-13t19_15_47_547674": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від Banxa нагадує про незавершене замовлення на покупку USDC з номером 22201324. Повідомляється, що майже завершена верифікація особи ",
+    "ts": "2026-09-13T19:15:47.547674"
+  },
   "selfact|2026-09-13t19_10_23_745097": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, зверніть увагу: платежі за підписку Runable знову були невдалими",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь записати пото",
     "ts": "2026-09-13T17:20:04.712960"
-  },
-  "action_detect|2026-09-13t17_18_48_242761": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-13\", \"action_time\": \"17:30\", \"action_summary\": \"Нічна зміна Олега поч",
-    "ts": "2026-09-13T17:18:48.242761"
   }
 }
