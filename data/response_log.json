@@ -12034,6 +12034,12 @@
       "category": "confirm",
       "question": "gate_dl_cal: 📄 ДЕДЛАЙН У ПОШТІ — ДОГОВІР",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-14T01:53:16.458760+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dl_cal_7105c48157"
     }
   ]
 }
