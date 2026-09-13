@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег отримав декілька крипто-дайджестів від різних джерел 3",
-      "detail": "Олег отримав листи 'Daily Crypto Digest — September 3', 'AI-curated Daily Crypto Digest - September 3', 'Crypto bounces on rumors of Iran wind down', 'Ранковий дайджест ринків — 03.09.2026', 'Crypto Biz: AI took a back seat when Bitcoin started climbing' та 'New Jersey Just Took Kalshi to the Suprem",
-      "module": "selfact",
-      "ts": "2026-09-03T15:50:39"
-    },
-    {
       "kind": "notify",
       "what": "Нова вакансія SEO Content Specialist",
       "detail": "Отримано лист 'Сповіщення про вакансії LinkedIn | SEO Content Specialist в Trade Nation'.",
@@ -2799,6 +2792,13 @@
       "detail": "Звички за 13.09 показують, що сауна не була виконана (🧖 Сауна ❌), а Олег зараз на нічній зміні.",
       "module": "selfact",
       "ts": "2026-09-13T19:40:58"
+    },
+    {
+      "kind": "notify",
+      "what": "Нагадування про дерматолога",
+      "detail": "У календарі є дві пов'язані події: 'Реєстрація до дерматолога' 16.09 та 'Нагадування про реєстрацію до дерматолога' 19.09.",
+      "module": "selfact",
+      "ts": "2026-09-13T19:56:23"
     }
   ]
 }
