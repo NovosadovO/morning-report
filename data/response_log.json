@@ -12009,6 +12009,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_c3caa53add"
+    },
+    {
+      "ts": "2026-09-14T01:30:13.827567+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити виплатні листи",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-14"
+      }
     }
   ]
 }
