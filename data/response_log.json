@@ -11913,6 +11913,12 @@
       "category": "confirm",
       "question": "gate_dl_due_done: 🔴 СЬОГОДНІ ОСТАННІЙ ДЕНЬ",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-13T21:04:29.389735+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dl_due_done_ae300cf930"
     }
   ]
 }
