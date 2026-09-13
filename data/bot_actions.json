@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Олег має активний інтерес до вакансій Growth Marketing Lead",
-      "detail": "Свіжі листи містять сповіщення про вакансії Growth Marketing Lead (B2B SaaS & Payments) в Ruby Labs та Engineering Manager - Delivery & Team Leadership (m/w/d) в Deutsche Telekom.",
-      "module": "selfact",
-      "ts": "2026-09-03T10:25:06"
-    },
-    {
       "kind": "notify",
       "what": "Олеже, зверніть увагу на нову вакансію Growth Marketing Lead",
       "detail": "Свіжий лист від LinkedIn про нову вакансію, яка відповідає інтересам Олега у криптосфері та маркетингу, і яку він міг ще не бачити.",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав листи від Oleg Novosadov про нові квартири, від Profesia.sk про 20 нових вакансій та два сповіщення від LinkedIn про вакансії Operations Manager та Senior Digital Business Product Owner.",
       "module": "selfact",
       "ts": "2026-09-13T05:58:18"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, нагадую, що сьогодні, 13 вересня, о 17:00 у тебе почин",
+      "detail": "Згідно з календарем, сьогодні о 17:00 починається нічна зміна. Олег приймає Armolopid Plus після нічної зміни перед сном.",
+      "module": "selfact",
+      "ts": "2026-09-13T06:14:19"
     }
   ]
 }
