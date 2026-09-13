@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-13t12_59_04_270440": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, твої платежі за підписку Runable були невдалими. Потрібно оновит",
+    "ts": "2026-09-13T12:59:04.270440"
+  },
   "selfact|2026-09-13t12_43_59_062935": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на декілька нових вакансій, що відповідають твоїм налаштуванням на LinkedIn: 'Sekretárka/rec",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічна зміна\", \"action_date\": \"2026-09-13\", \"action_time\": \"17:00\", \"action_summary\": \"Нічна зміна починається сього",
     "ts": "2026-09-13T11:18:16.616246"
-  },
-  "action_detect|2026-09-13t11_18_04_064923": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити дані здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надіслати /weight або /health_",
-    "ts": "2026-09-13T11:18:04.064923"
   }
 }
