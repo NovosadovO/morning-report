@@ -1159,5 +1159,16 @@
     "spo2": null,
     "source": "qwatch",
     "saved_at": "2026-09-12 23:45"
+  },
+  "2026-09-13": {
+    "steps": 6933,
+    "hr_avg": 62,
+    "calories": 304,
+    "hrv": 47,
+    "spo2": 96,
+    "stress": 45,
+    "date": "2026-09-13",
+    "source": "qwatch_auto",
+    "saved_at": "2026-09-13 16:33"
   }
 }
