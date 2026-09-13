@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "t": "msg",
-      "kind": "cmd",
-      "text": "/аналітика",
-      "ts": "2026-08-27T23:57:14"
-    },
-    {
       "t": "btn",
       "data": "evdone_no_done_5hu8irdlotr8kggrpq9lrrga28_2026-08-27",
       "label": "❌ Не виконано",
@@ -7199,6 +7193,12 @@
       "data": "rx_ok_53916febc4",
       "label": "👌 Прийняв",
       "ts": "2026-09-13T17:22:20"
+    },
+    {
+      "t": "btn",
+      "data": "qr_ok_cfcfc4d186",
+      "label": "👍 Ок",
+      "ts": "2026-09-13T19:32:33"
     }
   ]
 }
