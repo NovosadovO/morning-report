@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "Інтерес до вакансій Engineering Manager та Regionalny kierownik sprzedaży",
-      "detail": "Зі свіжих листів видно сповіщення від LinkedIn про вакансії 'Engineering Manager - Delivery & Team Leadership (m/w/d) в Deutsche Telekom' та 'Regionalny kierownik sprzedaży в Antal Poland', а також події в календарі на 04.09 '08:00 🔔 Переглянути вакансію Engineering Manager' та '09:00 🔔 Переглянути",
-      "module": "selfact",
-      "ts": "2026-09-03T07:17:16"
-    },
-    {
       "kind": "notify",
       "what": "Олег, зверни увагу, що сьогодні, 3 вересня, у тебе запланова",
       "detail": "Наявність нічної зміни сьогодні о 17:00 є важливою інформацією, яку Олег міг пропустити, враховуючи ранковий час (07:32) і насичений календар.",
@@ -2799,6 +2792,13 @@
       "detail": "Поточний час 02:03, а подія 'Доволенка в Іспанії' запланована на 07:00 того ж дня (13.09), що вказує на близькість події та потенційну необхідність підготовки або вже перебування в місці призначення.",
       "module": "selfact",
       "ts": "2026-09-13T02:03:31"
+    },
+    {
+      "kind": "notify",
+      "what": "Зверни увагу: у твоїй пошті є два листи з виплатною карткою",
+      "detail": "У 'СВІЖИХ ЛИСТАХ' є два листи від 'ehuman@minebeamitsumi.eu' з темою 'Minebea, Výplatná páska/Payslip 08/2026' та 'Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu'.",
+      "module": "selfact",
+      "ts": "2026-09-13T02:03:37"
     }
   ]
 }
