@@ -1163,11 +1163,12 @@
   "2026-09-13": {
     "date": "2026-09-13",
     "steps": 6933,
-    "hr_avg": 62,
+    "hr_avg": 46,
     "calories": 304,
-    "hrv": 47,
+    "hrv": 4,
     "spo2": 96,
-    "source": "qwatch",
-    "saved_at": "2026-09-13 16:33"
+    "source": "qwatch_auto",
+    "saved_at": "2026-09-13 23:46",
+    "weight_kg": 83.0
   }
 }
