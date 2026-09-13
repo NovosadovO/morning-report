@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Олег має нагадування про перевірку невиконаних звичок о 14:1",
-      "detail": "З календаря на 03.09 видно '14:10 🔔 Перевірка невиконаних звичок'. Поточний час 15:20, тому це нагадування вже минуло.",
-      "module": "selfact",
-      "ts": "2026-09-03T15:20:31"
-    },
-    {
-      "kind": "note",
       "what": "Олег отримує численні крипто-дайджести та новини, включаючи",
       "detail": "Свіжі листи від Oleh Bezuhlyi через LinkedIn (Daily Crypto Digest — September 3), CryptoBeholder.com через LinkedIn (AI-curated Daily Crypto Digest - September 3), The Daily Bone (Crypto bounces on rumors of Iran wind down), Morning Report (Ранковий дайджест ринків — 03.09.2026), Cointelegraph через",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Подія в календарі 15.09: Голосування Сенату США щодо Clarity Act, а Олег отримує Daily Crypto Digest.",
       "module": "selfact",
       "ts": "2026-09-13T17:21:40"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, ти отримуєш сповіщення про вакансії LinkedIn, зокрема",
+      "detail": "Свіжі листи зі сповіщеннями про вакансії LinkedIn.",
+      "module": "selfact",
+      "ts": "2026-09-13T17:21:44"
     }
   ]
 }
