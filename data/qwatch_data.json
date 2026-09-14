@@ -1173,13 +1173,16 @@
     "saved_at": "2026-09-13 23:46"
   },
   "2026-09-14": {
-    "hr_avg": 67,
-    "distance_km": 5.0,
-    "weight_kg": 83.0,
-    "hrv": 46,
-    "stress": 29,
     "date": "2026-09-14",
-    "source": "qwatch_auto",
+    "steps": 8700,
+    "hr_avg": 67,
+    "calories": 7,
+    "hrv": 46,
+    "weight_kg": 83.0,
+    "age": 37,
+    "height_cm": 175,
+    "spo2": null,
+    "source": "qwatch",
     "saved_at": "2026-09-14 23:01"
   }
 }
