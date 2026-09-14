@@ -12310,6 +12310,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Не треба",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-14T21:02:19.483257+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_f52cbd7e56"
     }
   ]
 }
