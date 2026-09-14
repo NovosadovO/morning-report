@@ -1,9 +1,4 @@
 {
-  "78599": {
-    "sender": "newsletter@investingmail.com",
-    "sender_raw": "Investing.com <newsletter@investingmail.com>",
-    "seen_ts": "2026-09-05T14:18:55.523574+00:00"
-  },
   "78601": {
     "sender": "newsletter@email.blockchain.com",
     "sender_raw": "\"Blockchain\" <newsletter@email.blockchain.com>",
@@ -1498,5 +1493,10 @@
     "sender": "support@profesia.sk",
     "sender_raw": "\"Profesia.sk\" <support@profesia.sk>",
     "seen_ts": "2026-09-14T00:43:05.127997+00:00"
+  },
+  "79063": {
+    "sender": "hello@plunge.com",
+    "sender_raw": "PLUNGE <hello@plunge.com>",
+    "seen_ts": "2026-09-14T01:46:33.247868+00:00"
   }
 }
