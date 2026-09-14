@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Вакансія Cybersecurity Enthusiast",
-      "detail": "Олег отримав новий лист від LinkedIn з оповіщенням про вакансію 'Cybersecurity Enthusiast Wanted! (m/f/n) в ESET', яка відповідає його налаштуванням.",
-      "module": "selfact",
-      "ts": "2026-09-04T19:12:22"
-    },
-    {
-      "kind": "notify",
       "what": "Посилання на квартиру",
       "detail": "Олег отримав лист від 'Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu>' з посиланням на нерухомість: 'https://www.nehnutelnosti.sk/detail/JuOJzdJamz1/nova-rekonstrukcia-3-izbovy-byt-s-loggiou-zupkova-ul'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег надсилав собі посилання на квартиру, що може свідчити про його інтерес до нерухомості.",
       "module": "selfact",
       "ts": "2026-09-14T11:11:43"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: stale",
+      "detail": "📵 Дані здоров'я не оновлювались 36 год (останні — 2026-09-13). Автосинк із годинника міг зламатись",
+      "module": "healthai",
+      "ts": "2026-09-14T11:46:39"
     }
   ]
 }
