@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T01:16:53.579951",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>🏠 Нові квартири у Кошіці — 3 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78839"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78839"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78839"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78839"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78839"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78839"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-15T01:16:57.457611",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 43 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '43 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 83.7 кг, ціль 78 кг (тренд -0.3 кг за останні 5 замірів). Кроки: 8700 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 2 непрочитаних\n📅 Календар: 08:00 Біг, 09:00 ⏳ Голосування Сенату США щодо Clarity Act",
@@ -207,6 +168,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 2 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-15T01:31:08.379098",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Сховище iCloud заповнено</b>\n👤 iCloud &lt;noreply@email.apple.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79116"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79116"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79116"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79116"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79116"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79116"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
