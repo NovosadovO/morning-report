@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-14t03_41_27_967969": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олег, зверни увагу, що є проблема з невдалими платежами за підписку Run",
+    "ts": "2026-09-14T03:41:27.967969"
+  },
   "action_detect|2026-09-14t03_30_22_272934": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"З",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сповіщення про вакансію\",     \"text\": \"Олеже, LinkedIn має нову вакансію 'Administratívny/a špecialista/špecia",
     "ts": "2026-09-14T01:06:14.466141"
-  },
-  "action_detect|2026-09-14t01_02_38_682539": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписки та кредит\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Розберися з простроченим",
-    "ts": "2026-09-14T01:02:38.682539"
   }
 }
