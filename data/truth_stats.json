@@ -26,7 +26,7 @@
     },
     "personal_ai": {
       "checked": 211,
-      "issues": 145,
+      "issues": 146,
       "fixed": 44,
       "cut": 6
     },
@@ -198,7 +198,8 @@
     },
     "MSG_WEEKLY_RUN_COMPARE": {
       "checked": 2,
-      "issues": 2
+      "issues": 2,
+      "fixed": 1
     },
     "foresight": {
       "checked": 13,
@@ -431,7 +432,7 @@
   },
   "2026-09-14": {
     "checked": 45,
-    "issues": 32,
-    "fixed": 11
+    "issues": 33,
+    "fixed": 12
   }
 }
