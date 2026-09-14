@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-14t21_57_20_022356": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити гель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег згадав, що потрібно купити гель.\"}",
+    "ts": "2026-09-14T21:57:20.022356"
+  },
   "selfact|2026-09-14t21_45_28_122080": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що підписка на Apple закінчується. Перевір, чи це та підписка, якою ти ще користуєшся, або ",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Голосування Сенату США щодо Clarity Act\",     \"text\": \"Олеже, завтра, 15.09 о 08:00, відбудеться голосування С",
     "ts": "2026-09-14T20:12:19.872352"
-  },
-  "action_detect|2026-09-14t20_04_24_786966": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Останній прийом їжі\", \"action_date\": null, \"action_time\": \"20:00\", \"action_summary\": \"Останній прийом їжі о 20:00 с",
-    "ts": "2026-09-14T20:04:24.786966"
   }
 }
