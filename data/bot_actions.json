@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олег, чи потрібно мені додати в календар подію або нагадуван",
-      "detail": "У календарі вже є запис про перегляд вакансії, але Олег міг пропустити його. Питання допоможе уточнити, чи потрібна додаткова дія.",
-      "module": "selfact",
-      "ts": "2026-09-04T03:35:37"
-    },
-    {
       "kind": "notify",
       "what": "Нова вакансія Logistics Supervisor LOC в Volvo Cars",
       "detail": "Олег отримав свіжий лист від LinkedIn зі сповіщенням про вакансію Logistics Supervisor LOC в Volvo Cars.",
@@ -2799,6 +2792,13 @@
       "detail": "З даних про підписки: 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.' та 'Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>', а також з нотаток: 'Олег має проблему з невдалими платежами за підписку Runable, що вимагає оновлення платіжної інформації.'",
       "module": "selfact",
       "ts": "2026-09-14T07:22:04"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, ти отримав дві виплатні квитанції за серпень 2026 рок",
+      "detail": "З листів від ehuman@minebeamitsumi.eu: '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu' та '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026'",
+      "module": "selfact",
+      "ts": "2026-09-14T07:22:20"
     }
   ]
 }
