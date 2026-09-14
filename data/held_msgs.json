@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T01:05:58.429390",
-      "kind": "rwa",
-      "text": "🏦 <b>RWA-РАДАР</b>\n━━━━━━━━━━━━━━━━━━━━\n• XLM виріс на 9.7% за 24 години (зараз $0.19370)\n• весь сектор RWA додав 54.0% за 24 години (капіталізація $71.22B)\n\n<i>AI-коментар недоступний — вище тільки живі цифри.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-15T01:05:59.173619",
       "kind": "rwa",
       "text": "🏦 RWA-РАДАР\n━━━━━━━━━━━━━━━━━━━━\n• XLM виріс на 9.7% за 24 години (зараз $0.19370)\n• весь сектор RWA додав 54.0% за 24 години (капіталізація $71.22B)\n\nAI-коментар недоступний — вище тільки живі цифри.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79115"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-15T01:16:48.405165",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Operations Specialist в Precision For Medicine</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79114"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79114"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79114"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79114"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79114"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79114"
             }
           ]
         ]
