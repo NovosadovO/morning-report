@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Нова вакансія Director General – Operations Directorate (OPS)",
-      "detail": "Свіжий лист від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Director General – Operations Directorate (OPS) - based in Luxembourg в European Investment Bank (EIB)",
-      "module": "selfact",
-      "ts": "2026-09-04T02:00:17"
-    },
-    {
       "kind": "ask",
       "what": "Олеже, ти бігав 7 км, як планував сьогодні?",
       "detail": "Календар на 04.09: 09:00 що я ще бігав 7км. Зараз 02:00, і це подія, яка вже мала б відбутися або ось-ось відбудеться.",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від Google <noreply-accounts@google.com> про вхід на CoinMarketCap.",
       "module": "selfact",
       "ts": "2026-09-14T02:39:50"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, на вашу пошту надійшли дві виплатні відомості (payslip",
+      "detail": "Листи від ehuman@minebeamitsumi.eu про виплатні відомості за 08/2026.",
+      "module": "selfact",
+      "ts": "2026-09-14T02:39:54"
     }
   ]
 }
