@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-14t12_29_47_014514": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег працює в ранню зміну 16.09, 17.09, 18.09, 19.09, 20.09.\",     \"why\": \"Інформація з календаря на 7 днів.\"   }",
+    "ts": "2026-09-14T12:29:47.014514"
+  },
+  "proactive_ai|2026-09-14t12_14_50_006729": {
+    "topic": "proactive_ai",
+    "gist": "Привіт! Як ранок пройшов, вдалося нормально поїсти, враховуючи твою ціль 78 кг?",
+    "ts": "2026-09-14T12:14:50.006729"
+  },
   "selfact|2026-09-14t12_13_46_307376": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олег, зверни увагу, що платежі за підписку Runable були невдалими. Потр",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег отримав сповіщення про вакансію Senior Commercial Project Manager (m/w/d) в Siemens у Відні, що свідчить про",
     "ts": "2026-09-14T10:40:42.592942"
-  },
-  "mailcal_extract|2026-09-14t10_35_53_218651": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-09-14T10:35:53.218651"
-  },
-  "action_detect|2026-09-14t10_27_44_854582": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolop",
-    "ts": "2026-09-14T10:27:44.854582"
   }
 }
