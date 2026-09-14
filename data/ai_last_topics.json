@@ -1,4 +1,24 @@
 {
+  "subs|2026-09-14t21_36_00_592031": {
+    "topic": "subs",
+    "gist": "```json [   {     \"uid\": \"78780\",     \"vendor\": \"Google Health\",     \"amount\": \"unknown\",     \"currency\": \"unknown\",     \"cycle\": \"weekly\",     \"charge_date\": \"",
+    "ts": "2026-09-14T21:36:00.592031"
+  },
+  "action_detect|2026-09-14t21_32_21_128274": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-14T21:32:21.128274"
+  },
+  "action_detect|2026-09-14t21_31_00_428609": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": \"2026-09-15\", \"action_time\": \"08:00\", \"action_summary\": \"Заплановано біг на завтра о 8:00.\"}",
+    "ts": "2026-09-14T21:31:00.428609"
+  },
+  "action_detect|2026-09-14t21_30_36_833143": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Надіслати дані з QWatch Pro\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надішли дані з QWatch Pr",
+    "ts": "2026-09-14T21:30:36.833143"
+  },
   "selfact|2026-09-14t21_30_25_033263": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що підписка на Apple закінчується. Перевір, чи потрібно її продовжити, щоб уникнути перебої",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скласти список задач\", \"action_date\": \"2026-09-16\", \"action_time\": null, \"action_summary\": \"Скласти список задач пе",
     "ts": "2026-09-14T20:03:22.401210"
-  },
-  "action_detect|2026-09-14t20_03_11_861100": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": \"2023-09-14\", \"action_time\": null, \"action_summary\": \"Оновити п",
-    "ts": "2026-09-14T20:03:11.861100"
-  },
-  "action_detect|2026-09-14t20_02_53_940357": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-09-15\", \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armo",
-    "ts": "2026-09-14T20:02:53.940357"
-  },
-  "action_detect|2026-09-14t20_02_53_891005": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"З",
-    "ts": "2026-09-14T20:02:53.891005"
-  },
-  "action_detect|2026-09-14t20_02_42_919519": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": null, \"action_summary\": \"Завт",
-    "ts": "2026-09-14T20:02:42.919519"
   }
 }
