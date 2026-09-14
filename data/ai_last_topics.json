@@ -1,4 +1,34 @@
 {
+  "email_ai_item|2026-09-14t09_01_31_746353": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Олега Новосадова містить посилання на оголошення про продаж модернізованої 3-кімнатної квартири площею 65м² на сайті bazos.sk.",
+    "ts": "2026-09-14T09:01:31.746353"
+  },
+  "action_detect|2026-09-14t09_00_58_785584": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-14T09:00:58.785584"
+  },
+  "assistant|2026-09-14t09_00_46_186842": {
+    "topic": "assistant",
+    "gist": "Чи ти плануєш сьогодні зайнятися раннім переглядом крипторинку, адже деякі монети показують падіння за тиждень, а тобі ще бота для трейдингу створювати?  * Врах",
+    "ts": "2026-09-14T09:00:46.186842"
+  },
+  "action_detect|2026-09-14t09_00_38_080218": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-14T09:00:38.080218"
+  },
+  "personal_ai|2026-09-14t09_00_31_778988": {
+    "topic": "personal_ai",
+    "gist": "Твоя бездіяльність зі Strava вже 41 день коштує тобі не лише доступу до даних пробіжок, а й втрати контролю над однією з ключових сфер здоров'я. Незважаючи на в",
+    "ts": "2026-09-14T09:00:31.778988"
+  },
+  "action_detect|2026-09-14t09_00_16_137470": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolop",
+    "ts": "2026-09-14T09:00:16.137470"
+  },
   "action_detect|2026-09-14t08_57_30_725888": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний прогноз та інформацію про",
@@ -268,35 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скасувати некритичні підписки\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити сьогодні, ч",
     "ts": "2026-09-14T07:03:01.017373"
-  },
-  "action_detect|2026-09-14t07_02_45_314831": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"З",
-    "ts": "2026-09-14T07:02:45.314831"
-  },
-  "action_detect|2026-09-14t07_02_45_193548": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolop",
-    "ts": "2026-09-14T07:02:45.193548"
-  },
-  "action_detect|2026-09-14t07_02_34_174444": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поновити доступ до Strava API\", \"action_date\": \"2026-09-14\", \"action_time\": null, \"action_summary\": \"Поновити досту",
-    "ts": "2026-09-14T07:02:34.174444"
-  },
-  "briefing|2026-09-14t07_02_29_298107": {
-    "topic": "briefing",
-    "gist": "Олеже, ранок понеділка, 14 вересня. Свіжість у Кошице, 14°C, ідеальна для бадьорого старту. Звіт показує тобі повну картину, але давай виділимо головне, щоб цей",
-    "ts": "2026-09-14T07:02:29.298107"
-  },
-  "themes_ai_truthfix|2026-09-14t07_02_13_001185": {
-    "topic": "themes_ai/truthfix",
-    "gist": "Олеже, зараз понеділок, 14 вересня 2026 року, 07:02 ранку. Дані, які я використовую, оновлені 31 годину тому, тобто 13 вересня.  Твоя вага 83.0 кг, і вона стабі",
-    "ts": "2026-09-14T07:02:13.001185"
-  },
-  "themes_ai|2026-09-14t07_02_04_019307": {
-    "topic": "themes_ai",
-    "gist": "Ти зараз вільний за графіком, Олеже, але це не означає паузу. Треба діяти.  💰 ФІНАНСИ — Маєш 422.16€ в очікуванні оплати та 27.32€ місячних підписок. Конкретна ",
-    "ts": "2026-09-14T07:02:04.019307"
   }
 }
