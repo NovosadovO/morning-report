@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-09-14t15_42_35_469948": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Allegro інформує про нові купони та другий тиждень акції Allegro Дні, пропонуючи додаткову знижку 10 євро. Лист є рекламни",
+    "ts": "2026-09-14T15:42:35.469948"
+  },
   "subs|2026-09-14t15_35_53_036033": {
     "topic": "subs",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Легка вечеря\", \"action_date\": \"2026-09-14\", \"action_time\": null, \"action_summary\": \"Заплануй на вечір 14.09 легку в",
     "ts": "2026-09-14T13:02:31.455950"
-  },
-  "action_detect|2026-09-14t13_02_20_385560": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolopid Pl",
-    "ts": "2026-09-14T13:02:20.385560"
   }
 }
