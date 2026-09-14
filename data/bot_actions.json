@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "збережено дані здоров'я",
-      "detail": "steps=17, hr_avg=46, distance_km=11.0, weight_kg=83.0, hrv=46, stress=33, date=2026-09-04, source=qwatch_auto, saved_at=2026-09-04 23:46",
-      "module": "healthai",
-      "ts": "2026-09-04T23:46:39"
-    },
-    {
       "kind": "notify",
       "what": "Олег, зверни увагу на листа від Oleg Novosadov <oleg.novosad",
       "detail": "Отримано свіжий лист від Олега Новосадова з посиланням на нерухомість: 'https://www.nehnutelnosti.sk/detail/JuOJzdJamz1/nova-rekonstrukcia-3-izbovy-byt-s-loggiou-zupkova-ul'.",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від Linas's Newsletter <linas@substack.com> | OpenAI just built a Bloomberg competitor into ChatGPT 🤖📊, що прямо стосується інтересів Олега щодо трейдингу та створення бота.",
       "module": "selfact",
       "ts": "2026-09-14T13:00:58"
+    },
+    {
+      "kind": "notify",
+      "what": "Привіт, Олеже! Нагадую, що 15.09 о 08:00 відбудеться голосув",
+      "detail": "Голосування Сенату США щодо Clarity Act 15.09 о 08:00 (Кошице) є важливою подією, яка може вплинути на ринок, а Олег цікавиться трейдингом (планує створити бота 20.09) та отримує листи про фінансові новини (OpenAI Bloomberg competitor).",
+      "module": "selfact",
+      "ts": "2026-09-14T13:16:02"
     }
   ]
 }
