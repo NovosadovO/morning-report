@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T00:31:14.572427",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78870"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78870"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78870"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78870"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78870"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78870"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-15T00:31:15.891257",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>🏠 Нові квартири у Кошіці — 3 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -239,6 +200,12 @@
       "ts": "2026-09-15T00:45:28.516435",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 2\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-15T00:46:27.133028",
+      "kind": "chunk",
+      "text": "🌃\n<b>ЗВІТ  ·  Вт 15.09  ·  00:45</b>\n🏠 Вдома\n<i>Опівніч у Кошіце — ринок ніколи не закривається, але ти маєш право на сон 🌌</i>\n📌 Біг +2\n\n⚡ <b>День: ⭐☆☆☆☆ 22/100</b>  ↓3 vs вчора\n\n☀️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>15°C</b>\n<i>😊 Свіжо — легка куртка</i>\n\n📅 <b>Прогноз сьогодні:</b>\n06:11   🌇 18:47  01:00 ☀️15°  │  02:00 ☀️14°  │  03:00 ☀️14°  │  04:00 ☀️14°  │  05:00 ☀️14°  │  06:00 ☀️13°  09:00 ☁️17°  │  12:00 ☁️20°  │  15:00 ☀️23°🌧78%  │  18:00 ☁️23°🌧31%  │  21:00 🌤18°\n\n<b>Завтра:</b>  ⛅️ Мінлива хмарність  🔻14°  /  🔺28°\n<code>09:00</code> ☁️17°  │  <code>12:00</code> ☁️20°  │  <code>15:00</code> ☀️23°🌧78%  │  <code>18:00</code> ☁️23°🌧31%  │  <code>21:00</code> 🌤18°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n  • 🚧 Перекрито — Baštová\n  • 🚧 Перекрито — Tajovského\n\n💰\n<b>КРИПТО  ·  🟡 НЕЙТРАЛЬНИЙ 〰️</b>\n🔺 <b>BTC</b> <code>$78,650.00</code>  +0.15%\n🔻 <b>ETH</b> <code>$2,539.01</code>  -0.13%\n➡️ <b>AVAX</b> <code>$7.63</code>  0.00%\n➡️ <b>ONDO</b> <code>$0.36</code>  +0.07%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🟢 <b>IBIT</b>  <code>$44.74</code>  <i>+2.22% за день</i>\n🟢 <b>ETHA</b>  <code>$19.17</code>  <i>+0.05% за день</i>\n⚪️ <b>VAVA</b>  <code>$0.68</cod",
       "keyboard": null
     }
   ]
