@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-09-14t10_27_44_854582": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolop",
+    "ts": "2026-09-14T10:27:44.854582"
+  },
+  "selfact|2026-09-14t10_25_26_504148": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія від Siemens\",     \"text\": \"Олеже, на LinkedIn з'явилася нова вакансія Senior Commercial Project ",
+    "ts": "2026-09-14T10:25:26.504148"
+  },
   "openloop_promises|2026-09-14t10_23_00_531985": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, надійшла виправлена версія твоєї зарплатної картки за серпень 2026 року від Minebea. Перевір її.\",     \"w",
     "ts": "2026-09-14T08:38:44.783428"
-  },
-  "email_ai_item|2026-09-14t08_36_22_430415": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від Crypto.com NFT інформує про можливість придбати спортивні NFT, які дозволяють фанатам взаємодіяти зі спортсменами та ко",
-    "ts": "2026-09-14T08:36:22.430415"
-  },
-  "selfact|2026-09-14t08_23_36_509719": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, надійшла виправлена версія твоєї зарплатної картки за серпень 2026 року від Minebea. Перевір її, будь лас",
-    "ts": "2026-09-14T08:23:36.509719"
   }
 }
