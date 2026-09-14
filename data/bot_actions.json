@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Recovery Kit для Socios.com",
-      "detail": "З листа від Socios.com: 'Generate your Recovery Kit before 10 Sep' та 'Login is moving to Passkey. Make sure you have a Recovery Kit, so you never lose your Wallet access.'",
-      "module": "selfact",
-      "ts": "2026-09-05T18:32:16"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, нагадую, що тобі потрібно зібрати речі для поїздки в М",
       "detail": "Згідно з календарем, 06.09 о 17:00 заплановано '🔔 🧳 Зібрати речі: Málaga'. Повідомлення від Maroš Sivák також підтверджує, що до відльоту залишається менше 48 годин, що робить це нагадування актуальним.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "hr_avg=67, distance_km=5.0, weight_kg=83.0, hrv=46, stress=29, date=2026-09-14, source=qwatch_auto, saved_at=2026-09-14 23:01",
       "module": "healthai",
       "ts": "2026-09-14T23:01:11"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу, що твої дані про сон за 14.09.2026 відсу",
+      "detail": "Згідно з останнім звітом про здоров'я (14.09.2026, 22:59), 'Сон: Дані про тривалість, глибокий та легкий сон відсутні, що ускладнює оцінку відновлення'.",
+      "module": "selfact",
+      "ts": "2026-09-14T23:03:00"
     }
   ]
 }
