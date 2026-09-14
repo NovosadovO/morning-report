@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-09-14t02_14_14_797567": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"79058\",     \"title\": \"Вхід в CoinMarketCap через Google\",     \"date\": \"2026-09-14\",     \"time\": \"02:12\",     \"kind\": \"other\",     \"why",
+    "ts": "2026-09-14T02:14:14.797567"
+  },
+  "email_ai_item|2026-09-14t02_12_26_699496": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Google інформує, що ви скористалися функцією \\\"Вхід через Google\\\" для входу в сервіс CoinMarketCap 14 вересня о 02:12. Се",
+    "ts": "2026-09-14T02:12:26.699496"
+  },
   "selfact|2026-09-14t02_09_31_072804": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від iStores SK Apple Premium Partner. Там є вакансія Administratívny/a špecialista/š",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolopid Pl",
     "ts": "2026-09-14T00:02:43.240408"
-  },
-  "action_detect|2026-09-14t00_02_43_121011": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"В",
-    "ts": "2026-09-14T00:02:43.121011"
-  },
-  "action_detect|2026-09-14t00_02_32_247731": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути графіки та скласти план\", \"action_date\": \"2026-09-14\", \"action_time\": \"00:00\", \"action_summary\": \"Перег",
-    "ts": "2026-09-14T00:02:32.247731"
   }
 }
