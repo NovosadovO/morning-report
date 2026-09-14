@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Вакансія Cybersecurity Enthusiast в ESET",
-      "detail": "Згідно зі 'СВІЖІ ЛИСТИ', є лист від 'Сповіщення про вакансії LinkedIn' про вакансію 'Cybersecurity Enthusiast Wanted! (m/f/n) в ESET, Košice'.",
-      "module": "selfact",
-      "ts": "2026-09-04T19:28:15"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-09-04",
       "detail": "автосинк з годинника: steps, hr_avg, weight_kg, hrv, spo2, stress",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав листа від airBaltic <news@flights.airbaltic.com> з темою 'An update from airBaltic– flights continue as normal', де йдеться про фінансову реорганізацію.",
       "module": "selfact",
       "ts": "2026-09-14T11:58:43"
+    },
+    {
+      "kind": "notify",
+      "what": "airBaltic розпочала фінансову реорганізацію під наглядом суд",
+      "detail": "Лист від airBaltic про фінансову реорганізацію.",
+      "module": "selfact",
+      "ts": "2026-09-14T12:29:53"
     }
   ]
 }
