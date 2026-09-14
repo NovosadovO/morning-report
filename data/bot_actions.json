@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нова вакансія Logistics Supervisor LOC в Volvo Cars",
-      "detail": "Олег отримав свіжий лист від LinkedIn зі сповіщенням про вакансію Logistics Supervisor LOC в Volvo Cars.",
-      "module": "selfact",
-      "ts": "2026-09-04T04:23:00"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, нагадую, що сьогодні о 09:00 тобі потрібно переглянути",
       "detail": "З календаря: 04.09: 09:00 🔔 Переглянути вакансію Regionalny kierownik sprzedaży",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "З листів від ehuman@minebeamitsumi.eu: '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu' та '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026'",
       "module": "selfact",
       "ts": "2026-09-14T07:22:20"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, отримано два листи з виплатними квитанціями за серпень",
+      "detail": "Є два нових листи з виплатними квитанціями, один з яких є виправленням. Олег мав би про це знати.",
+      "module": "selfact",
+      "ts": "2026-09-14T07:37:19"
     }
   ]
 }
