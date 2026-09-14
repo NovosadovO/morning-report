@@ -1,37 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T00:31:22.925946",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 2\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_79061"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: ehuman",
-              "callback_data": "email_reply_78880"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79061"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79061"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-15T00:31:25.673757",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 2\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)",
@@ -174,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 2 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-15T00:46:36.423513",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Сховище iCloud заповнено</b>\n👤 iCloud &lt;noreply@email.apple.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79116"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79116"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79116"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79116"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79116"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79116"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
