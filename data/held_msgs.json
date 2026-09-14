@@ -158,6 +158,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-15T00:01:01.400268",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Operations Specialist в Precision For Medicine</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79114"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79114"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79114"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79114"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79114"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79114"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
