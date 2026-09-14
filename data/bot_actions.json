@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нові вакансії та квартири",
-      "detail": "Є кілька свіжих листів: 'Сповіщення про вакансії LinkedIn', 'Profesia.sk | Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk', 'Profesia.sk | 5 nových pracovných ponúk', а також 'Oleg Novosadov | 🏠 Нові квартири у Кошіці — 28 нових оголошень', 'Oleg Novosadov | 🏠 Нові квартири у",
-      "module": "selfact",
-      "ts": "2026-09-05T04:36:42"
-    },
-    {
-      "kind": "notify",
       "what": "Завершення бронювання August Villa Málaga",
       "detail": "Згідно з 'КАЛЕНДАР НА 7 ДНІВ', на 11.09 є подія '08:00 📌 Закінчення бронювання August Villa Málaga - Villa'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Два свіжі листи від ehuman@minebeamitsumi.eu про виплатні листи за 08/2026.",
       "module": "selfact",
       "ts": "2026-09-14T16:19:45"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на лист від 0xResearch. У ньому згадуєтьс",
+      "detail": "Лист від 0xResearch містить важливу інформацію про Clarity Act, яка перегукується з подією в календарі на 15.09.",
+      "module": "selfact",
+      "ts": "2026-09-14T16:35:03"
     }
   ]
 }
