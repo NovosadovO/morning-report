@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-14t04_29_33_843170": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія від Siemens Healthineers\",     \"text\": \"Олег, на LinkedIn з'явилася нова вакансія ServiceNow Sen",
+    "ts": "2026-09-14T04:29:33.843170"
+  },
   "openloop_promises|2026-09-14t04_20_28_623568": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Profesia.sk містить дві нові пропозиції роботи за критеріями, які Олег раніше встановив: \\\"Pracovné ponuky e-mailom Košice",
     "ts": "2026-09-14T02:30:44.777200"
-  },
-  "action_detect|2026-09-14t02_25_05_990864": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Ранні зміни\", \"action_date\": \"2026-09-16\", \"action_time\": null, \"action_summary\": \"Пам'ятай про майбутні ранні змін",
-    "ts": "2026-09-14T02:25:05.990864"
   }
 }
