@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-14t02_39_44_395625": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу: 14 вересня о 02:12 ви увійшли до сервісу CoinMarketCap за допомогою Google-акаунта. Це сп",
+    "ts": "2026-09-14T02:39:44.395625"
+  },
   "email_ai_item|2026-09-14t02_30_44_777200": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Profesia.sk містить дві нові пропозиції роботи за критеріями, які Олег раніше встановив: \\\"Pracovné ponuky e-mailom Košice",
@@ -293,10 +298,5 @@
     "topic": "subs",
     "gist": "```json [   {     \"uid\": \"78780\",     \"vendor\": \"Google Health\",     \"amount\": null,     \"currency\": null,     \"cycle\": \"weekly\",     \"charge_date\": null,     \"",
     "ts": "2026-09-14T00:05:12.999733"
-  },
-  "bills|2026-09-14t00_05_01_067254": {
-    "topic": "bills",
-    "gist": "[]",
-    "ts": "2026-09-14T00:05:01.067254"
   }
 }
