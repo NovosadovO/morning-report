@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-09-14t09_35_16_486138": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від UEFA Champions League пропонує Олегу взяти участь у грі Predict Six, щоб виграти ексклюзивні призи, включаючи квитки на фі",
+    "ts": "2026-09-14T09:35:16.486138"
+  },
   "action_detect|2026-09-14t09_30_47_997597": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"З",
     "ts": "2026-09-14T08:00:35.579343"
-  },
-  "msg_day_plan|2026-09-14t08_00_30_110857": {
-    "topic": "MSG_DAY_PLAN",
-    "gist": "Привіт Олеже! 🗓 Ранок понеділка, 14 вересня, і згідно з календарем, сьогодні у тебе вільний день без змін. Це чудова нагода не лише трохи видихнути, а й активно",
-    "ts": "2026-09-14T08:00:30.110857"
   }
 }
