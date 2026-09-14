@@ -298,5 +298,25 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
     "ts": "2026-09-14T20:51:51.933074"
+  },
+  "openloop_promises|2026-09-14t22_28_27_717324": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-14T22:28:27.717324"
+  },
+  "selfact|2026-09-14t22_15_48_515051": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу на нову вакансію Senior Operations Specialist в Precision For Medicine у Братиславі, яка в",
+    "ts": "2026-09-14T22:15:48.515051"
+  },
+  "action_detect|2026-09-14t22_14_48_118337": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": \"2026-09-15\", \"action_time\": \"08:00\", \"action_summary\": \"Завтра, 15 вересня, о 08:00 у тебе за",
+    "ts": "2026-09-14T22:14:48.118337"
+  },
+  "msg_vip_email_truthfix|2026-09-14t22_14_39_670590": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Привіт, Олеже!  Чи змінилось щось з твоїм VIP-листом від Minebea Mitsumi? Даних про його сканування досі немає, а це стосується платіжної відомості за серпень 2",
+    "ts": "2026-09-14T22:14:39.670590"
   }
 }
