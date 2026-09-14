@@ -299,5 +299,17 @@
     "sender": "Apple <no_reply@email.apple.com>",
     "done": false,
     "created": "2026-09-14"
+  },
+  "підписка_apple_закінчення|2026-09-14": {
+    "kind": "contract",
+    "title": "Підписка Apple — закінчення",
+    "org": "Apple",
+    "deadline": "2026-09-14",
+    "action": "Перевірити статус підписки Apple та вирішити, чи продовжувати її.",
+    "why": "Якщо не продовжити підписку, вона закінчиться сьогодні, і доступ до сервісів Apple буде втрачено.",
+    "uid": "78676",
+    "sender": "Apple <no_reply@email.apple.com>",
+    "done": false,
+    "created": "2026-09-14"
   }
 }
