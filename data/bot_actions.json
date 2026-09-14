@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверніть увагу: Socios.com переходить на вхід через Pa",
-      "detail": "Лист від 'Socios.com' <news@mail.socios.com> інформує про зміну способу входу та необхідність згенерувати Recovery Kit до 10 вересня.",
-      "module": "selfact",
-      "ts": "2026-09-05T17:44:37"
-    },
-    {
-      "kind": "notify",
       "what": "Нагадування про бронювання August Villa Málaga",
       "detail": "У свіжих листах є лист від noreply@atguest.com з темою 'Reservation reminder', який, ймовірно, стосується бронювання August Villa Málaga, запланованого на 07.09.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від 'Сповіщення про вакансії LinkedIn' з деталями вакансії.",
       "module": "selfact",
       "ts": "2026-09-14T22:47:07"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-09-14",
+      "detail": "автосинк з годинника: hr_avg, distance_km, weight_kg, hrv, stress",
+      "module": "qwsync",
+      "ts": "2026-09-14T23:01:09"
     }
   ]
 }
