@@ -12257,6 +12257,17 @@
       "category": "confirm",
       "question": "gate_cal_add: Додати",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-14T20:59:00.067615+00:00",
+      "category": "calendar_confirm",
+      "question": "Біг",
+      "answer": "✅ Додано",
+      "extra": {
+        "events": [
+          "Біг"
+        ]
+      }
     }
   ]
 }
