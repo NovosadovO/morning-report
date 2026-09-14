@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T00:16:39.949679",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>2</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79061"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79061"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79061"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79061"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79061"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79061"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-15T00:16:41.158362",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
@@ -305,6 +266,12 @@
       "ts": "2026-09-15T00:28:54.555913",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 2\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-15T00:29:25.884019",
+      "kind": "chunk",
+      "text": "🎯 ТОЧНИЙ АСПЕКТ\n☽ <b>Місяць</b> △ ♃ <b>Натальний Юпітер</b> <b>(ТОЧНИЙ!)</b>\n📍 Місяць у <b>Скорпіон ♏</b> | Натальний Юпітер у Рак ♋, 12-й дім\n<i>Трин · Підсвідоме</i>\n\n📖 <b>Що означає Трин:</b>\n🔵 Природна підтримка — все складається легко й само собою. Талант, удача, потік. Гарний час реалізувати задумане.\n\nПривіт, Олеже! Вівторок, 00:29.\n\nСьогодні Міся.",
       "keyboard": null
     }
   ]
