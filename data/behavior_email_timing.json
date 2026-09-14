@@ -1,9 +1,4 @@
 {
-  "78645": {
-    "sender": "hello@plunge.com",
-    "sender_raw": "PLUNGE <hello@plunge.com>",
-    "seen_ts": "2026-09-06T15:17:49.587630+00:00"
-  },
   "78646": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@aboutyou.com",
     "sender_raw": "ABOUT YOU <newsletter@aboutyou.com>",
     "seen_ts": "2026-09-14T17:52:28.190219+00:00"
+  },
+  "79110": {
+    "sender": "pullandbear@news.pullandbear.com",
+    "sender_raw": "Pull&Bear <pullandbear@news.pullandbear.com>",
+    "seen_ts": "2026-09-14T17:58:49.123320+00:00"
   }
 }
