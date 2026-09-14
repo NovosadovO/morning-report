@@ -12337,6 +12337,17 @@
       "category": "confirm",
       "question": "gate_shop_add: Купити гель",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-14T21:58:03.862541+00:00",
+      "category": "shopping_confirm",
+      "question": "Купити гель",
+      "answer": "✅ Додано",
+      "extra": {
+        "items": [
+          "Купити гель"
+        ]
+      }
     }
   ]
 }
