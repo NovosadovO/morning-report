@@ -1,4 +1,24 @@
 {
+  "email_ai_item|2026-09-14t02_30_44_777200": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Profesia.sk містить дві нові пропозиції роботи за критеріями, які Олег раніше встановив: \\\"Pracovné ponuky e-mailom Košice",
+    "ts": "2026-09-14T02:30:44.777200"
+  },
+  "action_detect|2026-09-14t02_25_05_990864": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Ранні зміни\", \"action_date\": \"2026-09-16\", \"action_time\": null, \"action_summary\": \"Пам'ятай про майбутні ранні змін",
+    "ts": "2026-09-14T02:25:05.990864"
+  },
+  "msg_vip_email|2026-09-14t02_24_59_231177": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 📧  Зараз глибока ніч, 02:24, і ти, найімовірніше, спокійно відпочиваєш вдома. Це важливий час для відновлення, адже попереду на тебе чекають нові ",
+    "ts": "2026-09-14T02:24:59.231177"
+  },
+  "selfact|2026-09-14t02_24_38_362840": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Голосування Сенату США щодо Clarity Act\",     \"text\": \"Завтра, 15 вересня о 08:00 (Кошице), відбудеться голосу",
+    "ts": "2026-09-14T02:24:38.362840"
+  },
   "mailcal_extract|2026-09-14t02_14_14_797567": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"79058\",     \"title\": \"Вхід в CoinMarketCap через Google\",     \"date\": \"2026-09-14\",     \"time\": \"02:12\",     \"kind\": \"other\",     \"why",
@@ -278,30 +298,5 @@
     "topic": "bills",
     "gist": "[]",
     "ts": "2026-09-14T00:05:01.067254"
-  },
-  "action_detect|2026-09-14t00_03_07_918802": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити рахунки та підписки\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оплатити 422.16€ та під",
-    "ts": "2026-09-14T00:03:07.918802"
-  },
-  "action_detect|2026-09-14t00_03_07_742936": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopid Plus п",
-    "ts": "2026-09-14T00:03:07.742936"
-  },
-  "action_detect|2026-09-14t00_02_56_767660": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити прострочені дедлайни\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити та закрити ",
-    "ts": "2026-09-14T00:02:56.767660"
-  },
-  "action_detect|2026-09-14t00_02_43_240408": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolopid Pl",
-    "ts": "2026-09-14T00:02:43.240408"
-  },
-  "selfact|2026-09-14t02_24_38_362840": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Голосування Сенату США щодо Clarity Act\",     \"text\": \"Завтра, 15 вересня о 08:00 (Кошице), відбудеться голосу",
-    "ts": "2026-09-14T02:24:38.362840"
   }
 }
