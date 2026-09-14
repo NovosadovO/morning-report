@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "qr_ok_f9329caa3d",
-      "label": "👍 Ок",
-      "ts": "2026-08-28T23:33:21"
-    },
-    {
-      "t": "btn",
       "data": "email_delete_78195",
       "label": "🗑 Видалити",
       "ts": "2026-08-28T23:33:23"
@@ -7199,6 +7193,12 @@
       "data": "habit_no_spray",
       "label": "❌ Ні",
       "ts": "2026-09-14T20:47:12"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_sauna",
+      "label": "❌ Ні",
+      "ts": "2026-09-14T20:47:17"
     }
   ]
 }
