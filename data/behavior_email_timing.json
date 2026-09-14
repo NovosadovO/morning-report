@@ -1,9 +1,4 @@
 {
-  "78628": {
-    "sender": "offers@travel.wizznews.com",
-    "sender_raw": "\"Wizz Air\" <offers@travel.wizznews.com>",
-    "seen_ts": "2026-09-06T08:31:31.262314+00:00"
-  },
   "78629": {
     "sender": "newsletter@investingmail.com",
     "sender_raw": "Investing.com <newsletter@investingmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "no-reply@email.kraken.com",
     "sender_raw": "\"Kraken\" <no-reply@email.kraken.com>",
     "seen_ts": "2026-09-14T14:33:27.793380+00:00"
+  },
+  "79095": {
+    "sender": "info@ether.fi",
+    "sender_raw": "Ether.fi Team <info@ether.fi>",
+    "seen_ts": "2026-09-14T14:49:49.210630+00:00"
   }
 }
