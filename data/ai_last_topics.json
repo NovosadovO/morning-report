@@ -1,4 +1,24 @@
 {
+  "openloop_promises|2026-09-14t05_51_14_713902": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-14T05:51:14.713902"
+  },
+  "action_detect|2026-09-14t05_48_38_974607": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": null, \"action_summary",
+    "ts": "2026-09-14T05:48:38.974607"
+  },
+  "msg_deep_analysis_truthfix|2026-09-14t05_48_31_228043": {
+    "topic": "MSG_DEEP_ANALYSIS/truthfix",
+    "gist": "Олеже, зараз 05:48 ранку, і ти, найпевніше, вдома, відпочиваєш після нічної зміни. Важливо відзначити, що дані про твоє здоров'я, включаючи вагу, сон, кроки, пу",
+    "ts": "2026-09-14T05:48:31.228043"
+  },
+  "msg_deep_analysis|2026-09-14t05_48_21_739797": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Зараз, о 05:48 ранку, ти, найімовірніше, ще спокійно спиш після нічного відпочинку, і це чудово – адже належний сон є основою для всіх твоїх ці",
+    "ts": "2026-09-14T05:48:21.739797"
+  },
   "selfact|2026-09-14t05_46_33_006187": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Оновлення платіжної інформації Runable\",     \"text\": \"Олег, платіж до Runable на $10.00 був невдалим. Потрібно",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolop",
     "ts": "2026-09-14T03:47:02.529972"
-  },
-  "action_detect|2026-09-14t03_47_02_366647": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-14T03:47:02.366647"
-  },
-  "action_detect|2026-09-14t03_46_51_726908": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
-    "ts": "2026-09-14T03:46:51.726908"
-  },
-  "email_ai_item|2026-09-14t03_46_30_440225": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист від Plunge рекламує їхні продукти, такі як холодні ванни та сауни, посилаючись на згадки в Architectural Digest, Forbes та ",
-    "ts": "2026-09-14T03:46:30.440225"
-  },
-  "selfact|2026-09-14t03_41_27_967969": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олег, зверни увагу, що є проблема з невдалими платежами за підписку Run",
-    "ts": "2026-09-14T03:41:27.967969"
   }
 }
