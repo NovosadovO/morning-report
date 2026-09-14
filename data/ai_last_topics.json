@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-09-14t03_30_22_272934": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"З",
+    "ts": "2026-09-14T03:30:22.272934"
+  },
+  "msg_vip_email_truthfix|2026-09-14t03_30_15_633548": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Олеже, зараз 03:30, глибока ніч, і ти, найпевніше, відпочиваєш. Поки ринок крипти демонструє спад, а саме BTC, ETH, BNB, XRP, SOL, DOGE, AVAX та ONDO падають за",
+    "ts": "2026-09-14T03:30:15.633548"
+  },
+  "msg_vip_email|2026-09-14t03_30_06_372576": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Зараз глибока ніч, і ти, найпевніше, спокійно відпочиваєш, що дуже важливо після минулих днів та напередодні нових викликів. Звісно, час віднов",
+    "ts": "2026-09-14T03:30:06.372576"
+  },
   "selfact|2026-09-14t03_26_16_980208": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалі платежі Runable\",     \"text\": \"Олеже, твої платежі до Runable знову невдалі. Потрібно оновити платіжну",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписки та кредит\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Розберися з простроченим",
     "ts": "2026-09-14T01:02:38.682539"
-  },
-  "action_detect|2026-09-14t01_02_26_745265": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"З",
-    "ts": "2026-09-14T01:02:26.745265"
-  },
-  "action_detect|2026-09-14t01_02_26_732032": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid, оскільки вказ",
-    "ts": "2026-09-14T01:02:26.732032"
-  },
-  "action_detect|2026-09-14t01_02_15_760559": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписки Railway та Runable\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Оплатит",
-    "ts": "2026-09-14T01:02:15.760559"
   }
 }
