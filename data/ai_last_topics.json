@@ -1,4 +1,74 @@
 {
+  "selfact|2026-09-14t18_07_51_237213": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, на Socios.com є важливе сповіщення про Recover Kit. Це твій спосіб відновити доступ до гаманця, якщо його",
+    "ts": "2026-09-14T18:07:51.237213"
+  },
+  "action_detect|2026-09-14t18_03_08_018548": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Приділити хоча б ",
+    "ts": "2026-09-14T18:03:08.018548"
+  },
+  "action_detect|2026-09-14t18_02_54_076112": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"З",
+    "ts": "2026-09-14T18:02:54.076112"
+  },
+  "action_detect|2026-09-14t18_02_54_058913": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято Armolopid",
+    "ts": "2026-09-14T18:02:54.058913"
+  },
+  "action_detect|2026-09-14t18_02_42_997039": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити Strava API\", \"action_date\": \"2026-09-14\", \"action_time\": null, \"action_summary\": \"Оновити Strava API, щоб в",
+    "ts": "2026-09-14T18:02:42.997039"
+  },
+  "briefing|2026-09-14t18_02_38_779906": {
+    "topic": "briefing",
+    "gist": "Вітаю, Олеже! Зараз 18:02 понеділка, 14 вересня. Звіт показує потенціал для важливих кроків, але й виклики, які варто розглянути.  🧭 ВЕКТОР ДНЯ Зараз найважливі",
+    "ts": "2026-09-14T18:02:38.779906"
+  },
+  "themes_ai_truthfix|2026-09-14t18_02_28_308150": {
+    "topic": "themes_ai/truthfix",
+    "gist": "Олеже, завтра, 15 вересня 2026 року, відбудеться голосування Сенату США щодо Clarity Act, яке може вплинути на ринок, і ти вже прийняв це до відома. Наразі, о 1",
+    "ts": "2026-09-14T18:02:28.308150"
+  },
+  "themes_ai|2026-09-14t18_02_24_937901": {
+    "topic": "themes_ai",
+    "gist": "Олеже, завтра на тебе чекає важливе голосування Сенату США щодо Clarity Act, яке стосується інвестицій, і поки що є час, щоб хоча б коротко переглянути його зна",
+    "ts": "2026-09-14T18:02:24.937901"
+  },
+  "email_ai_item|2026-09-14t18_02_10_692391": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Олега Новосадова містить посилання на оголошення про продаж модернізованої 3-кімнатної квартири площею 65 м² на сайті Bazos.sk",
+    "ts": "2026-09-14T18:02:10.692391"
+  },
+  "email_ai_item|2026-09-14t18_02_00_609461": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є щотижневим оглядом новин від 0xResearch, що стосується фінансових ринків та криптовалют. У ньому обговорюється падіння основ",
+    "ts": "2026-09-14T18:02:00.609461"
+  },
+  "email_ai_item|2026-09-14t18_01_48_893976": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Socios.com нагадує Олегу, що він ще не згенерував свій Recovery Kit, який є єдиним способом відновити доступ до гаманця у випа",
+    "ts": "2026-09-14T18:01:48.893976"
+  },
+  "personal_ai_truthfix|2026-09-14t18_01_23_620459": {
+    "topic": "personal_ai/truthfix",
+    "gist": "Олеже, дані про твоє здоров'я оновлювалися 42 години тому, тобто 13 вересня.  *   **Пульс:** 107 уд/хв, що вище середнього за 14 днів (77.1 уд/хв). *   **Сон:**",
+    "ts": "2026-09-14T18:01:23.620459"
+  },
+  "personal_ai|2026-09-14t18_01_19_936778": {
+    "topic": "personal_ai",
+    "gist": "Олег, сьогодні (14 вересня) у тебе вільний день від зміни. Пробіжки ще не було, хоча денна ціль кроків 16238 вже перевищена. Твій пульс зараз 107 уд/хв, що знач",
+    "ts": "2026-09-14T18:01:19.936778"
+  },
+  "action_detect|2026-09-14t18_00_23_652016": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
+    "ts": "2026-09-14T18:00:23.652016"
+  },
   "email_ai_item|2026-09-14t18_00_18_026812": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Booking.com інформує Олега про доступну винагороду. Лист не містить конкретних деталей про суму винагороди, умови її отрим",
@@ -228,75 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь записати пото",
     "ts": "2026-09-14T16:32:40.719322"
-  },
-  "planner|2026-09-14t16_32_26_587670": {
-    "topic": "planner",
-    "gist": "```json [   {     \"title\": \"Вага\",     \"date\": \"2026-09-14\",     \"time\": null,     \"allday\": true   } ] ```",
-    "ts": "2026-09-14T16:32:26.587670"
-  },
-  "planner|2026-09-14t16_32_26_543248": {
-    "topic": "planner",
-    "gist": "```json [   {     \"title\": \"Вага\",     \"date\": \"2026-09-14\",     \"time\": null,     \"allday\": true   } ] ```",
-    "ts": "2026-09-14T16:32:26.543248"
-  },
-  "action_detect|2026-09-14t16_32_15_654098": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolop",
-    "ts": "2026-09-14T16:32:15.654098"
-  },
-  "openloop_promises|2026-09-14t16_25_44_693314": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-09-14T16:25:44.693314"
-  },
-  "selfact|2026-09-14t16_19_38_488287": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Голосування Сенату США щодо Clarity Act\",     \"text\": \"Олеже, завтра, 15.09 о 08:00, відбудеться голосування С",
-    "ts": "2026-09-14T16:19:38.488287"
-  },
-  "email_ai_item|2026-09-14t16_15_31_371465": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії за запитом 'Директор з операцій' в Європейському Союзі. Представлено дві вак",
-    "ts": "2026-09-14T16:15:31.371465"
-  },
-  "selfact|2026-09-14t16_04_16_104489": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег цікавиться новими квартирами в Кошице, про що свідчать листи з посиланнями на оголошення про продаж нерухомо",
-    "ts": "2026-09-14T16:04:16.104489"
-  },
-  "action_detect|2026-09-14t16_04_11_278884": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": null, \"action_summary\": \"Бути",
-    "ts": "2026-09-14T16:04:11.278884"
-  },
-  "action_detect|2026-09-14t16_04_11_145580": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити підписку Strava\", \"action_date\": \"2026-09-14\", \"action_time\": null, \"action_summary\": \"Оновити платіжну інф",
-    "ts": "2026-09-14T16:04:11.145580"
-  },
-  "action_detect|2026-09-14t16_03_59_864857": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-14T16:03:59.864857"
-  },
-  "action_detect|2026-09-14t16_03_49_777365": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити пошту\", \"action_date\": \"null\", \"action_time\": \"null\", \"action_summary\": \"Перевірити пошту на наявність в",
-    "ts": "2026-09-14T16:03:49.777365"
-  },
-  "action_detect|2026-09-14t16_03_37_773116": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolopid Pl",
-    "ts": "2026-09-14T16:03:37.773116"
-  },
-  "action_detect|2026-09-14t16_03_26_819453": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"Г",
-    "ts": "2026-09-14T16:03:26.819453"
-  },
-  "action_detect|2026-09-14t16_03_15_651209": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Активувати Strava-застосунок\", \"action_date\": \"2026-09-14\", \"action_time\": null, \"action_summary\": \"Активувати Stra",
-    "ts": "2026-09-14T16:03:15.651209"
   }
 }
