@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Посилання на квартиру",
-      "detail": "Олег отримав лист від 'Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu>' з посиланням на нерухомість: 'https://www.nehnutelnosti.sk/detail/JuOJzdJamz1/nova-rekonstrukcia-3-izbovy-byt-s-loggiou-zupkova-ul'.",
-      "module": "selfact",
-      "ts": "2026-09-04T19:12:27"
-    },
-    {
-      "kind": "notify",
       "what": "Вакансія Cybersecurity Enthusiast в ESET",
       "detail": "Згідно зі 'СВІЖІ ЛИСТИ', є лист від 'Сповіщення про вакансії LinkedIn' про вакансію 'Cybersecurity Enthusiast Wanted! (m/f/n) в ESET, Košice'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "📵 Дані здоров'я не оновлювались 36 год (останні — 2026-09-13). Автосинк із годинника міг зламатись",
       "module": "healthai",
       "ts": "2026-09-14T11:46:39"
+    },
+    {
+      "kind": "notify",
+      "what": "Проблеми airBaltic",
+      "detail": "Олег отримав листа від airBaltic <news@flights.airbaltic.com> з темою 'An update from airBaltic– flights continue as normal', де йдеться про фінансову реорганізацію.",
+      "module": "selfact",
+      "ts": "2026-09-14T11:58:43"
     }
   ]
 }
