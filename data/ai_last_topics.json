@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-14t18_54_02_654791": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Голосування Сенату США щодо Clarity Act\",     \"text\": \"Олег, завтра, 15 вересня о 08:00, відбудеться голосуван",
+    "ts": "2026-09-14T18:54:02.654791"
+  },
   "selfact|2026-09-14t18_38_56_435019": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Голосування Сенату США щодо Clarity Act\",     \"text\": \"Олег, завтра, 15.09 о 08:00, відбудеться голосування Се",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
     "ts": "2026-09-14T16:50:57.419512"
-  },
-  "action_detect|2026-09-14t16_50_46_508169": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
-    "ts": "2026-09-14T16:50:46.508169"
   }
 }
