@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-14t10_40_42_592942": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег отримав сповіщення про вакансію Senior Commercial Project Manager (m/w/d) в Siemens у Відні, що свідчить про",
+    "ts": "2026-09-14T10:40:42.592942"
+  },
   "mailcal_extract|2026-09-14t10_35_53_218651": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "MSG_DEEP_ANALYSIS",
     "gist": "Привіт Олеже! 👋  О 08:48 понеділка бачу, що твої показники здоров'я потребують уваги, особливо з огляду на наступні дні. Твоя вага зараз 83.0 кг, що на 5.0 кг в",
     "ts": "2026-09-14T08:49:03.873158"
-  },
-  "action_detect|2026-09-14t08_47_06_638783": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
-    "ts": "2026-09-14T08:47:06.638783"
   }
 }
