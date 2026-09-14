@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, нагадую, що сьогодні о 09:00 тобі потрібно переглянути",
-      "detail": "З календаря: 04.09: 09:00 🔔 Переглянути вакансію Regionalny kierownik sprzedaży",
-      "module": "selfact",
-      "ts": "2026-09-04T05:10:05"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, твій платіж у розмірі 10.00 EUR для Google Cloud Platf",
       "detail": "Зі свіжих листів: від Google Payments <payments-noreply@google.com> | Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Є два нових листи з виплатними квитанціями, один з яких є виправленням. Олег мав би про це знати.",
       "module": "selfact",
       "ts": "2026-09-14T07:37:19"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, згідно з новим листом, Charles Schwab додає AVAX до св",
+      "detail": "Новини про Avalanche (AVAX) можуть бути корисними для майбутнього бота на трейдинг, який Олег планує створити.",
+      "module": "selfact",
+      "ts": "2026-09-14T07:37:23"
     }
   ]
 }
