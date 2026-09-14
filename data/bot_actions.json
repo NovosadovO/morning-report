@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, на Profesia.sk з'явилося 25 нових вакансій (20 + 5), а",
-      "detail": "Свіжі листи містять повідомлення від Profesia.sk про '20 нових робочих пропозицій' та '5 нових робочих пропозицій', а також три листи від Oleg Novosadov про '28 нових оголошень', '47 нових оголошень' та '137 нових оголошень' про квартири.",
-      "module": "selfact",
-      "ts": "2026-09-05T04:05:12"
-    },
-    {
-      "kind": "notify",
       "what": "Нові вакансії та квартири",
       "detail": "Є кілька свіжих листів: 'Сповіщення про вакансії LinkedIn', 'Profesia.sk | Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk', 'Profesia.sk | 5 nových pracovných ponúk', а також 'Oleg Novosadov | 🏠 Нові квартири у Кошіці — 28 нових оголошень', 'Oleg Novosadov | 🏠 Нові квартири у",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "На основі листів від 'ehuman@minebeamitsumi.eu' про виплатні листи за 08/2026.",
       "module": "selfact",
       "ts": "2026-09-14T16:04:37"
+    },
+    {
+      "kind": "notify",
+      "what": "Виплатні листи за серпень 2026",
+      "detail": "Два свіжі листи від ehuman@minebeamitsumi.eu про виплатні листи за 08/2026.",
+      "module": "selfact",
+      "ts": "2026-09-14T16:19:45"
     }
   ]
 }
