@@ -1171,5 +1171,15 @@
     "spo2": null,
     "source": "qwatch",
     "saved_at": "2026-09-13 23:46"
+  },
+  "2026-09-14": {
+    "hr_avg": 67,
+    "distance_km": 5.0,
+    "weight_kg": 83.0,
+    "hrv": 46,
+    "stress": 29,
+    "date": "2026-09-14",
+    "source": "qwatch_auto",
+    "saved_at": "2026-09-14 23:01"
   }
 }
