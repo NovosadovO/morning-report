@@ -1,4 +1,14 @@
 {
+  "personal_ai|2026-09-14t02_00_32_065206": {
+    "topic": "personal_ai",
+    "gist": "Олеже, зараз глибока ніч, і твоя нічна зміна триває до 06:00 ранку. Після її закінчення, о 06:00, не забудь прийняти Armolopid Plus перед сном, щоб нормалізуват",
+    "ts": "2026-09-14T02:00:32.065206"
+  },
+  "selfact|2026-09-14t01_53_36_842559": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сповіщення про вакансію\",     \"text\": \"Олеже, LinkedIn надіслав сповіщення про нову вакансію: Administratívny/",
+    "ts": "2026-09-14T01:53:36.842559"
+  },
   "action_detect|2026-09-14t01_53_23_280294": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -288,15 +298,5 @@
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Прийняти Armolopid Plus\",     \"date\": \"2026-09-14\",     \"time\": \"06:00\",     \"message\": \"Олеже, твоя нічна з",
     "ts": "2026-09-14T00:00:26.319990"
-  },
-  "selfact|2026-09-13t23_49_37_102704": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Виплатні листи Minebea\",     \"text\": \"Олег, ти отримав два виплатні листи від Minebea за серпень 2026 року. Од",
-    "ts": "2026-09-13T23:49:37.102704"
-  },
-  "openloop_promises|2026-09-13t23_49_23_034661": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-09-13T23:49:23.034661"
   }
 }
