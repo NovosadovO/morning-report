@@ -1,9 +1,4 @@
 {
-  "78603": {
-    "sender": "news@mail.socios.com",
-    "sender_raw": "\"Socios.com\" <news@mail.socios.com>",
-    "seen_ts": "2026-09-05T15:01:51.012783+00:00"
-  },
   "78604": {
     "sender": "hello@plunge.com",
     "sender_raw": "PLUNGE <hello@plunge.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-09-14T04:14:23.540291+00:00"
+  },
+  "79067": {
+    "sender": "no-reply@news.crypto.com",
+    "sender_raw": "\"Crypto.com NFT\" <no-reply@news.crypto.com>",
+    "seen_ts": "2026-09-14T06:36:25.476722+00:00"
   }
 }
