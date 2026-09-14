@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-14t21_45_28_122080": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що підписка на Apple закінчується. Перевір, чи це та підписка, якою ти ще користуєшся, або ",
+    "ts": "2026-09-14T21:45:28.122080"
+  },
   "subs|2026-09-14t21_36_00_592031": {
     "topic": "subs",
     "gist": "```json [   {     \"uid\": \"78780\",     \"vendor\": \"Google Health\",     \"amount\": \"unknown\",     \"currency\": \"unknown\",     \"cycle\": \"weekly\",     \"charge_date\": \"",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Останній прийом їжі\", \"action_date\": null, \"action_time\": \"20:00\", \"action_summary\": \"Останній прийом їжі о 20:00 с",
     "ts": "2026-09-14T20:04:24.786966"
-  },
-  "action_detect|2026-09-14t20_03_22_401210": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скласти список задач\", \"action_date\": \"2026-09-16\", \"action_time\": null, \"action_summary\": \"Скласти список задач пе",
-    "ts": "2026-09-14T20:03:22.401210"
   }
 }
