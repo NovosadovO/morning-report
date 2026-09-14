@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Візит до перукаря",
-      "detail": "З календаря на 7 днів видно, що 06.09 о 15:30 заплановано візит до Miriam.",
-      "module": "selfact",
-      "ts": "2026-09-05T16:26:54"
-    },
-    {
-      "kind": "notify",
       "what": "Збір речей до Малаги",
       "detail": "З календаря на 7 днів видно, що 06.09 о 17:00 стоїть нагадування про збір речей до Малаги.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист від Socios.com з темою 'Secure your Wallet: generate a Recovery Kit', де зазначено, що він ще не створив Recovery Kit.",
       "module": "selfact",
       "ts": "2026-09-14T19:56:27"
+    },
+    {
+      "kind": "hcoach",
+      "what": "full_report",
+      "detail": "повна аналітика здоров'я",
+      "module": "selfact",
+      "ts": "2026-09-14T20:01:36"
     }
   ]
 }
