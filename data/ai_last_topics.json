@@ -1,4 +1,14 @@
 {
+  "afternoon_ai|2026-09-14t15_00_31_160188": {
+    "topic": "AFTERNOON_AI",
+    "gist": "Привіт, Олеже!  Сьогодні понеділок, 14 вересня, 15:00, і твій графік показує вільний день, що дає тобі можливість якісно використати другу половину дня перед ти",
+    "ts": "2026-09-14T15:00:31.160188"
+  },
+  "openloop_promises|2026-09-14t14_55_38_816067": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-09-14T14:55:38.816067"
+  },
   "email_ai_item|2026-09-14t14_54_56_722557": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист є щоденним дайджестом новин про криптовалюти від Олега Безуглого через LinkedIn. Він містить інформацію про зростання бітко",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolopid Pl",
     "ts": "2026-09-14T12:03:04.855848"
-  },
-  "action_detect|2026-09-14t12_03_04_837831": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"Г",
-    "ts": "2026-09-14T12:03:04.837831"
-  },
-  "action_detect|2026-09-14t12_02_53_887616": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реактивувати Strava API\", \"action_date\": \"2026-09-14\", \"action_time\": null, \"action_summary\": \"Реактивувати Strava ",
-    "ts": "2026-09-14T12:02:53.887616"
   }
 }
