@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T00:01:17.719301",
-      "kind": "chunk",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 2\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-15T00:01:21.845578",
-      "kind": "chunk",
-      "text": "🔮🤖 <b>АСТРО-АНАЛІЗ ВСІ АСПЕКТИ</b>\n\n🌙 <b>ТРАНЗИТИ СЬОГОДНІ</b> (AI тимчасово перевантажена, без інтерпретації)\n🔮 АСТРО — транзити до натальних планет\n🌒 Молодик (зростання)  ·  Місяць у Скорпіон ♏\n🔍 Глибина, трансформація, інтуїція загострена\n\n🌟 ♃ Юпітер у знаку твого Асценденту (Лев ♌) — у цьому знаку з 01.07.2026 — уже 2 міс. (75 дн.). Рідкісний транзит: особистість, зовнішній вигляд, новий цикл.\n\n🔴 ☿ Меркурій Квадрат □ натальний ♄ Сатурн  (0.4°)\n    ↳ Важко зосередитись або довести до кінця. Список задач допоможе.\n🟡 ♄ Сатурн Квінконкс ⚻ натальний ♇ Плутон  (0.6°)\n🟢 ⛢ Уран Трин △ натальний ☿ Меркурій  (0.7°)\n    ↳ Блискучі ідеї і інсайти. Записуй все що приходить!\n🟢 🌙 Місяць Трин △ натальний ♃ Юпітер  (0.7°)\n    ↳ Оптимізм і добрий настрій. Використай момент!\n🟢 🌙 Місяць Секстиль ⚹ натальний ♄ Сатурн  (0.7°)\n    ↳ Практична підтримка оточення. Хороший час для планування.\n🟢 ♀ Венера Секстиль ⚹ натал\n\n📌 УВАГА: дані з Calendar недоступні. Зараз вечір/ніч — МОЖЛИВО Олег на нічній зміні (18:00–06:00) або вдома. НЕ пиши впевнено що він вдома — уточни або ",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-15T00:02:39.055321",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Breakdown</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🟪 A short history of technology freakouts»\n\n<i>«View image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/9f199753-ca31-4e3d-9435-5e12896ecff5/BD_NL_Banner_Heading.png?t=1781793903)\r\nCaption: \r\n\r\n----------\r\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,for...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -215,6 +203,51 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-15T00:16:34.768810",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>America’s Richest Sports Team Owners 2026</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79115"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79115"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79115"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79115"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79115"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79115"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-15T00:16:35.193216",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> → 2\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
     }
   ]
 }
