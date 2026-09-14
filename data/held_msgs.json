@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T00:51:58.832375",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 2\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n\n🧹 Реклама: 3 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-15T00:53:21.075429",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> → 2\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n\n🧹 Реклама: 3 — можна пропустити.",
@@ -380,6 +374,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-15T01:01:21.539237",
+      "kind": "chunk",
+      "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 43 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '43 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 83.7 кг, ціль 78 кг (тренд -0.3 кг за останні 5 замірів). Кроки: 8700 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 2 непрочитаних\n📅 Календар: 08:00 Біг, 09:00 ⏳ Голосування Сенату США щодо Clarity Act",
+      "keyboard": null
     }
   ]
 }
