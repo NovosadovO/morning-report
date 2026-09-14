@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-14t15_31_06_085449": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-14T15:31:06.085449"
+  },
   "selfact|2026-09-14t15_18_04_141729": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні о 18:00 у тебе починається рання зміна на заводі. Також нагадую, що завтра, 15.09 о 08:00, відб",
@@ -293,10 +298,5 @@
     "topic": "personal_ai",
     "gist": "Ваш пульс зараз 107 ударів на хвилину, що значно вище середнього за 14 днів (77.1 уд/хв) і має зростаючий тренд (+17.8), тоді як сон за останні відомі дані був ",
     "ts": "2026-09-14T13:01:20.770839"
-  },
-  "action_detect|2026-09-14t13_00_52_619815": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-14T13:00:52.619815"
   }
 }
