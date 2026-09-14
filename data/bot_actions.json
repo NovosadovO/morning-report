@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверни увагу, що 6 вересня о 15:30 у тебе запланована",
-      "detail": "Календар показує дві важливі події 06.09, які відбуваються в період відпочинку між нічними змінами, що може бути напруженим графіком і потребує уваги.",
-      "module": "selfact",
-      "ts": "2026-09-05T16:10:44"
-    },
-    {
-      "kind": "notify",
       "what": "Візит до перукаря",
       "detail": "З календаря на 7 днів видно, що 06.09 о 15:30 заплановано візит до Miriam.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист від LinkedIn про вакансію Senior Operations Specialist в Precision For Medicine, яка відповідає його налаштуванням.",
       "module": "selfact",
       "ts": "2026-09-14T19:56:21"
+    },
+    {
+      "kind": "notify",
+      "what": "Безпека гаманця Socios.com",
+      "detail": "Олег отримав лист від Socios.com з темою 'Secure your Wallet: generate a Recovery Kit', де зазначено, що він ще не створив Recovery Kit.",
+      "module": "selfact",
+      "ts": "2026-09-14T19:56:27"
     }
   ]
 }
