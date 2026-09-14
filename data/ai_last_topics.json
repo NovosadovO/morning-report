@@ -298,5 +298,10 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolopid Pl",
     "ts": "2026-09-14T00:02:43.240408"
+  },
+  "selfact|2026-09-14t02_24_38_362840": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Голосування Сенату США щодо Clarity Act\",     \"text\": \"Завтра, 15 вересня о 08:00 (Кошице), відбудеться голосу",
+    "ts": "2026-09-14T02:24:38.362840"
   }
 }
