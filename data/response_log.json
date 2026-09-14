@@ -12292,6 +12292,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_ef31079ccb"
+    },
+    {
+      "ts": "2026-09-14T21:01:49.606906+00:00",
+      "category": "confirm",
+      "question": "calrem_skip: Перевірити налаштування Strava",
+      "answer": "yes"
     }
   ]
 }
