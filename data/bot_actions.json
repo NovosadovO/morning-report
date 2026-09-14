@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, у тебе є детальні інформації щодо поїздки в Малагу від",
-      "detail": "Олег отримав лист від Maroš Sivák з InterFin, який містить детальні інформації щодо поїздки в Малагу, що є актуальним з огляду на його майбутню відпустку 08.09.",
-      "module": "selfact",
-      "ts": "2026-09-04T00:56:42"
-    },
-    {
-      "kind": "notify",
       "what": "Нова вакансія Director General – Operations Directorate (OPS)",
       "detail": "Свіжий лист від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Director General – Operations Directorate (OPS) - based in Luxembourg в European Investment Bank (EIB)",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Наявність двох листів про виплатну квитанцію за один і той самий період (один з 'oprava formátu') потребує уваги Олега для перевірки коректності.",
       "module": "selfact",
       "ts": "2026-09-14T02:09:41"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверніть увагу: 14 вересня о 02:12 ви увійшли до серві",
+      "detail": "Лист від Google <noreply-accounts@google.com> про вхід на CoinMarketCap.",
+      "module": "selfact",
+      "ts": "2026-09-14T02:39:50"
     }
   ]
 }
