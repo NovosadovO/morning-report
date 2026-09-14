@@ -1,4 +1,24 @@
 {
+  "openloop_promises|2026-09-14t13_25_27_352659": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-14T13:25:27.352659"
+  },
+  "selfact|2026-09-14t13_15_58_619114": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Нагадую, що 15.09 о 08:00 відбудеться голосування Сенату США щодо Clarity Act. Це може бути важл",
+    "ts": "2026-09-14T13:15:58.619114"
+  },
+  "action_detect|2026-09-14t13_13_08_652613": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Поновити Strava API\", \"action_date\": \"2026-09-14\", \"action_time\": null, \"action_summary\": \"Витрать 10-15 хвилин, що",
+    "ts": "2026-09-14T13:13:08.652613"
+  },
+  "msg_vip_email_truthfix|2026-09-14t13_13_00_949019": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Олеже, чи не здається тобі, що ігнорування простроченої підписки Strava вже 41 день, дані якої лише з кешу, а API заблоковано, корелює з падінням твоїх кроків н",
+    "ts": "2026-09-14T13:13:00.949019"
+  },
   "msg_vip_email|2026-09-14t13_12_52_408319": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт, Олеже! 🏹  Як стратег, я завжди шукаю неочевидні зв'язки. Поки ринок криптовалют демонструє сьогоднішній підйом (BTC +1.5%, ETH +1.6%, XRP +4.1%), і ти, ",
@@ -278,25 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Emergent нагадує про незавершені проєкти, зокрема 'pulsetrack-3'. Він містить загальну інформацію про те, що проєкти готов",
     "ts": "2026-09-14T11:14:38.460904"
-  },
-  "selfact|2026-09-14t11_11_36_027448": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Siemens\",     \"text\": \"Олеже, LinkedIn прислав нове сповіщення про вакансію Senior Commercial Pr",
-    "ts": "2026-09-14T11:11:36.027448"
-  },
-  "action_detect|2026-09-14t11_11_10_934942": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати вагу в Ap",
-    "ts": "2026-09-14T11:11:10.934942"
-  },
-  "action_detect|2026-09-14t11_02_44_701411": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реактивація застосунку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Реактивувати застосуно",
-    "ts": "2026-09-14T11:02:44.701411"
-  },
-  "action_detect|2026-09-14t11_02_43_444356": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Розблокувати Strava API\", \"action_date\": \"2026-09-14\", \"action_time\": null, \"action_summary\": \"Сьогодні розблокуват",
-    "ts": "2026-09-14T11:02:43.444356"
   }
 }
