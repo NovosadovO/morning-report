@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, нагадую, що у тебе прострочена підписка Strava і забло",
-      "detail": "У пам'яті про Олега є запис: 'Олег має прострочену підписку Strava (30 днів) і заблокований API'.",
-      "module": "selfact",
-      "ts": "2026-09-05T17:13:31"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, нагадую, що тобі потрібно згенерувати Recovery Kit для",
       "detail": "З листа від Socios.com: 'Generate your Recovery Kit before 10 Sep' та 'To ensure you never lose access when switching or upgrading devices, make sure cloud syncing is turned on'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "В секції 'ПІДПИСКИ' є запис про невдалий платіж до Runable, а в 'СПИСАННЯ' є нотатка про оплату Runable після кількох невдалих спроб, що свідчить про повторюваність проблеми.",
       "module": "selfact",
       "ts": "2026-09-14T21:15:05"
+    },
+    {
+      "kind": "ask",
+      "what": "Олег, ти мав біг сьогодні о 18:10, але він не відмічений. Ти",
+      "detail": "У календарі на 14.09 біг відмічений як невиконаний (❌), але Олег раніше вказував, що йому важливо відмічати виконані звички.",
+      "module": "selfact",
+      "ts": "2026-09-14T21:15:11"
     }
   ]
 }
