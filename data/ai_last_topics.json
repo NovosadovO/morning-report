@@ -1,4 +1,49 @@
 {
+  "selfact|2026-09-14t20_12_19_872352": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Голосування Сенату США щодо Clarity Act\",     \"text\": \"Олеже, завтра, 15.09 о 08:00, відбудеться голосування С",
+    "ts": "2026-09-14T20:12:19.872352"
+  },
+  "action_detect|2026-09-14t20_04_24_786966": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Останній прийом їжі\", \"action_date\": null, \"action_time\": \"20:00\", \"action_summary\": \"Останній прийом їжі о 20:00 с",
+    "ts": "2026-09-14T20:04:24.786966"
+  },
+  "action_detect|2026-09-14t20_03_22_401210": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скласти список задач\", \"action_date\": \"2026-09-16\", \"action_time\": null, \"action_summary\": \"Скласти список задач пе",
+    "ts": "2026-09-14T20:03:22.401210"
+  },
+  "action_detect|2026-09-14t20_03_11_861100": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": \"2023-09-14\", \"action_time\": null, \"action_summary\": \"Оновити п",
+    "ts": "2026-09-14T20:03:11.861100"
+  },
+  "action_detect|2026-09-14t20_02_53_940357": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-09-15\", \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armo",
+    "ts": "2026-09-14T20:02:53.940357"
+  },
+  "action_detect|2026-09-14t20_02_53_891005": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"З",
+    "ts": "2026-09-14T20:02:53.891005"
+  },
+  "action_detect|2026-09-14t20_02_42_919519": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": null, \"action_summary\": \"Завт",
+    "ts": "2026-09-14T20:02:42.919519"
+  },
+  "briefing_truthfix|2026-09-14t20_02_38_132353": {
+    "topic": "briefing/truthfix",
+    "gist": "Олеже,  Наразі 20:02 понеділка, 14 вересня 2026 року. Дані про твоє здоров'я востаннє оновлювалися 44 години тому, 13 вересня.  Твої дані Strava заблоковані з 4",
+    "ts": "2026-09-14T20:02:38.132353"
+  },
+  "action_detect|2026-09-14t20_02_26_334577": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"З",
+    "ts": "2026-09-14T20:02:26.334577"
+  },
   "briefing|2026-09-14t20_02_24_608623": {
     "topic": "briefing",
     "gist": "Олеже,  🧭 ВЕКТОР ДНЯ Сьогоднішній вечір вимагає стратегічного фокусу, особливо з огляду на \"бичачий\" тренд на крипторинку та майбутнє голосування Сенату США щод",
@@ -253,50 +298,5 @@
     "topic": "defi_digest",
     "gist": "Аналізуючи DeFi дані за останні 24 години, помітно, що деякі менші DeFi протоколи, такі як Nexus BTC (+11.5%) та OKX xBTC (+8.3%), продемонстрували значне зрост",
     "ts": "2026-09-14T18:16:19.819596"
-  },
-  "email_ai_item|2026-09-14t18_14_35_963334": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії, які відповідають налаштуванням користувача. Зокрема, пропонується вакансія ",
-    "ts": "2026-09-14T18:14:35.963334"
-  },
-  "selfact|2026-09-14t18_07_51_237213": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, на Socios.com є важливе сповіщення про Recover Kit. Це твій спосіб відновити доступ до гаманця, якщо його",
-    "ts": "2026-09-14T18:07:51.237213"
-  },
-  "action_detect|2026-09-14t18_03_08_018548": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Приділити хоча б ",
-    "ts": "2026-09-14T18:03:08.018548"
-  },
-  "action_detect|2026-09-14t18_02_54_076112": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"З",
-    "ts": "2026-09-14T18:02:54.076112"
-  },
-  "action_detect|2026-09-14t18_02_54_058913": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято Armolopid",
-    "ts": "2026-09-14T18:02:54.058913"
-  },
-  "action_detect|2026-09-14t18_02_42_997039": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити Strava API\", \"action_date\": \"2026-09-14\", \"action_time\": null, \"action_summary\": \"Оновити Strava API, щоб в",
-    "ts": "2026-09-14T18:02:42.997039"
-  },
-  "briefing|2026-09-14t18_02_38_779906": {
-    "topic": "briefing",
-    "gist": "Вітаю, Олеже! Зараз 18:02 понеділка, 14 вересня. Звіт показує потенціал для важливих кроків, але й виклики, які варто розглянути.  🧭 ВЕКТОР ДНЯ Зараз найважливі",
-    "ts": "2026-09-14T18:02:38.779906"
-  },
-  "themes_ai_truthfix|2026-09-14t18_02_28_308150": {
-    "topic": "themes_ai/truthfix",
-    "gist": "Олеже, завтра, 15 вересня 2026 року, відбудеться голосування Сенату США щодо Clarity Act, яке може вплинути на ринок, і ти вже прийняв це до відома. Наразі, о 1",
-    "ts": "2026-09-14T18:02:28.308150"
-  },
-  "themes_ai|2026-09-14t18_02_24_937901": {
-    "topic": "themes_ai",
-    "gist": "Олеже, завтра на тебе чекає важливе голосування Сенату США щодо Clarity Act, яке стосується інвестицій, і поки що є час, щоб хоча б коротко переглянути його зна",
-    "ts": "2026-09-14T18:02:24.937901"
   }
 }
