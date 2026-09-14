@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-14t15_18_04_141729": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, сьогодні о 18:00 у тебе починається рання зміна на заводі. Також нагадую, що завтра, 15.09 о 08:00, відб",
+    "ts": "2026-09-14T15:18:04.141729"
+  },
   "mailcal_extract|2026-09-14t15_10_54_403686": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-14T13:00:52.619815"
-  },
-  "selfact|2026-09-14t13_00_50_242455": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег цікавиться вакансіями Security Monitoring Analyst в ESET (Кошице) та Senior Commercial Project Manager в Sie",
-    "ts": "2026-09-14T13:00:50.242455"
   }
 }
