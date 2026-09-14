@@ -12209,6 +12209,12 @@
         "trigger": "idle_timeout",
         "note": null
       }
+    },
+    {
+      "ts": "2026-09-14T20:51:00.418371+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "gx_runplan_d3f7bc68c4"
     }
   ]
 }
