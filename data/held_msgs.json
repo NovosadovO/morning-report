@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T01:05:02.624661",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 2\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n\n🧹 Реклама: 3 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-15T01:05:58.429390",
       "kind": "rwa",
       "text": "🏦 <b>RWA-РАДАР</b>\n━━━━━━━━━━━━━━━━━━━━\n• XLM виріс на 9.7% за 24 години (зараз $0.19370)\n• весь сектор RWA додав 54.0% за 24 години (капіталізація $71.22B)\n\n<i>AI-коментар недоступний — вище тільки живі цифри.</i>",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79116"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-15T01:16:47.167262",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>America’s Richest Sports Team Owners 2026</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79115"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79115"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79115"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79115"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79115"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79115"
             }
           ]
         ]
