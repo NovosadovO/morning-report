@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-09-14t10_35_53_218651": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-14T10:35:53.218651"
+  },
   "action_detect|2026-09-14t10_27_44_854582": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolop",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вакансії на Profesia.sk\", \"action_date\": \"2026-09-03\", \"action_time\": \"06:00\", \"action_summary\": \"Олег ",
     "ts": "2026-09-14T08:47:06.638783"
-  },
-  "selfact|2026-09-14t08_38_44_783428": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, надійшла виправлена версія твоєї зарплатної картки за серпень 2026 року від Minebea. Перевір її.\",     \"w",
-    "ts": "2026-09-14T08:38:44.783428"
   }
 }
