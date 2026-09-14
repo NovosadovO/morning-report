@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-04",
-      "detail": "автосинк з годинника: steps, hr_avg, weight_kg, hrv, spo2, stress",
-      "module": "qwsync",
-      "ts": "2026-09-04T20:30:48"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=8941, hr_avg=100, weight_kg=83.0, hrv=36, spo2=96, stress=45, date=2026-09-04, source=qwatch_auto, saved_at=2026-09-04 20:30",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від airBaltic про фінансову реорганізацію.",
       "module": "selfact",
       "ts": "2026-09-14T12:29:53"
+    },
+    {
+      "kind": "notify",
+      "what": "Привіт, Олеже! Зверни увагу на лист від Linas's Newsletter:",
+      "detail": "Лист від Linas's Newsletter містить важливу інформацію про розвиток AI у фінансовій сфері, що безпосередньо стосується майбутнього проекту Олега зі створення бота для трейдингу. Олег міг не помітити цей лист.",
+      "module": "selfact",
+      "ts": "2026-09-14T12:44:54"
     }
   ]
 }
