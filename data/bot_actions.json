@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, нагадую, що тобі потрібно згенерувати Recovery Kit для",
-      "detail": "З листа від Socios.com: 'Generate your Recovery Kit before 10 Sep' та 'To ensure you never lose access when switching or upgrading devices, make sure cloud syncing is turned on'.",
-      "module": "selfact",
-      "ts": "2026-09-05T17:29:32"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, зверніть увагу: Socios.com переходить на вхід через Pa",
       "detail": "Лист від 'Socios.com' <news@mail.socios.com> інформує про зміну способу входу та необхідність згенерувати Recovery Kit до 10 вересня.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 14.09 біг відмічений як невиконаний (❌), але Олег раніше вказував, що йому важливо відмічати виконані звички.",
       "module": "selfact",
       "ts": "2026-09-14T21:15:11"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, LinkedIn надіслав сповіщення про вакансію Senior Oper",
+      "detail": "Свіжий лист від 'Сповіщення про вакансії LinkedIn' з деталями вакансії.",
+      "module": "selfact",
+      "ts": "2026-09-14T22:47:07"
     }
   ]
 }
