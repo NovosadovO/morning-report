@@ -12082,6 +12082,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Перевірити статус Strava API",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-14T03:46:50.971273+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_bd0b4291ae"
     }
   ]
 }
