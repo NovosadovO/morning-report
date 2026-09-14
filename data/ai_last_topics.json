@@ -1,4 +1,19 @@
 {
+  "email_ai_item|2026-09-14t11_16_45_765273": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Pixory є рекламним повідомленням, що пропонує знижки на фотокниги та шаблони для подорожей. Він містить посилання на різні",
+    "ts": "2026-09-14T11:16:45.765273"
+  },
+  "email_ai_item|2026-09-14t11_14_38_460904": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Emergent нагадує про незавершені проєкти, зокрема 'pulsetrack-3'. Він містить загальну інформацію про те, що проєкти готов",
+    "ts": "2026-09-14T11:14:38.460904"
+  },
+  "selfact|2026-09-14t11_11_36_027448": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія Siemens\",     \"text\": \"Олеже, LinkedIn прислав нове сповіщення про вакансію Senior Commercial Pr",
+    "ts": "2026-09-14T11:11:36.027448"
+  },
   "action_detect|2026-09-14t11_11_10_934942": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати вагу в Ap",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolopid Pl",
     "ts": "2026-09-14T09:02:52.310289"
-  },
-  "action_detect|2026-09-14t09_02_41_439988": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реактивувати Strava API\", \"action_date\": \"2026-09-14\", \"action_time\": null, \"action_summary\": \"Реактивувати Strava ",
-    "ts": "2026-09-14T09:02:41.439988"
-  },
-  "briefing_truthfix|2026-09-14t09_02_36_641810": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, ранок понеділка, 14 вересня 2026 року, 09:02.  **Вектор дня: Відновлення контролю над даними здоров'я**  Твоя підписка Strava прострочена з 4 серпня 2026",
-    "ts": "2026-09-14T09:02:36.641810"
-  },
-  "briefing|2026-09-14t09_02_32_977062": {
-    "topic": "briefing",
-    "gist": "Олеже, ранок понеділка, 14 вересня, пропонує тобі унікальну можливість перезавантажити фокус.  🧭 ВЕКТОР ДНЯ Сьогодні твої цілі – фінансова незалежність, схуднен",
-    "ts": "2026-09-14T09:02:32.977062"
   }
 }
