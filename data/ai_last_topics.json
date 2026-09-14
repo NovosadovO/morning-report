@@ -1,4 +1,39 @@
 {
+  "msg_vip_email|2026-09-14t12_07_31_128912": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Олеже, чи дійсно ти зараз можеш повністю зосередитись на фінансових питаннях? Хоча ти і \"вдома, вільний час\" згідно зі статусом, пам'ятаємо, що твій сон \"None г",
+    "ts": "2026-09-14T12:07:31.128912"
+  },
+  "action_detect|2026-09-14t12_03_29_180210": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolop",
+    "ts": "2026-09-14T12:03:29.180210"
+  },
+  "action_detect|2026-09-14t12_03_18_027886": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Railway Corporation\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Оплатити Railwa",
+    "ts": "2026-09-14T12:03:18.027886"
+  },
+  "action_detect|2026-09-14t12_03_04_855848": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolopid Pl",
+    "ts": "2026-09-14T12:03:04.855848"
+  },
+  "action_detect|2026-09-14t12_03_04_837831": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"Г",
+    "ts": "2026-09-14T12:03:04.837831"
+  },
+  "action_detect|2026-09-14t12_02_53_887616": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реактивувати Strava API\", \"action_date\": \"2026-09-14\", \"action_time\": null, \"action_summary\": \"Реактивувати Strava ",
+    "ts": "2026-09-14T12:02:53.887616"
+  },
+  "briefing|2026-09-14t12_02_48_166694": {
+    "topic": "briefing",
+    "gist": "Олеже, зараз 12:02, понеділок 14 вересня. Сьогоднішній день \"free\" дає тобі простір для дій, особливо з огляду на \"ведмежий\" крипторинок та твою активність зі S",
+    "ts": "2026-09-14T12:02:48.166694"
+  },
   "themes_ai|2026-09-14t12_02_37_362582": {
     "topic": "themes_ai",
     "gist": "Які твої ключові показники на сьогодні, Олеже? Твоя вага знизилася до 83.0 кг, що є позитивним трендом стабільності, але це все ще на 5.0 кг вище від цілі 78 кг",
@@ -263,40 +298,5 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від Sizeer інформує про запуск нової марки одягу та взуття NOKWOL, доступної в їхньому магазині. Лист містить посилання на різні катег",
     "ts": "2026-09-14T10:11:45.047222"
-  },
-  "selfact|2026-09-14t10_10_07_759492": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від airBaltic. Вони почали фінансову реорганізацію під наглядом суду, але запевняють",
-    "ts": "2026-09-14T10:10:07.759492"
-  },
-  "action_detect|2026-09-14t10_02_54_720864": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": \"2026-09-15\", \"action_time\": \"08:00\", \"action_summary\": \"Оновит",
-    "ts": "2026-09-14T10:02:54.720864"
-  },
-  "action_detect|2026-09-14t10_02_39_388512": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олег має прийняти Armolop",
-    "ts": "2026-09-14T10:02:39.388512"
-  },
-  "action_detect|2026-09-14t10_02_28_527987": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відновити Strava API та перевірити дедлайни\", \"action_date\": \"2026-09-14\", \"action_time\": null, \"action_summary\": \"",
-    "ts": "2026-09-14T10:02:28.527987"
-  },
-  "briefing_truthfix|2026-09-14t10_02_23_735925": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, твоя бездіяльність зі Strava вже 41 день коштує тобі не тільки пробіжок, а й втрати контролю над однією з ключових метрик здоров'я, адже дані про вагу за",
-    "ts": "2026-09-14T10:02:23.735925"
-  },
-  "briefing|2026-09-14t10_02_20_392465": {
-    "topic": "briefing",
-    "gist": "🧭 ВЕКТОР ДНЯ Сьогоднішній ранок дає тобі рідкісну можливість для стратегічного переосмислення, враховуючи, що даних про зміну немає, і ти, ймовірно, не на завод",
-    "ts": "2026-09-14T10:02:20.392465"
-  },
-  "themes_ai_truthfix|2026-09-14t10_02_09_537056": {
-    "topic": "themes_ai/truthfix",
-    "gist": "Твоя підписка Strava прострочена вже 41 день, дані з кешу, свіжих немає. Це блокує доступ до аналізу твоїх 16238 кроків, які ти зробив за останні 34 години, і н",
-    "ts": "2026-09-14T10:02:09.537056"
   }
 }
