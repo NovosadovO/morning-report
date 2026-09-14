@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "email_delete_78193",
-      "label": "🗑 Видалити",
-      "ts": "2026-08-28T23:32:16"
-    },
-    {
-      "t": "btn",
       "data": "rx_paid_a21bd56cce",
       "label": "💸 Оплатив",
       "ts": "2026-08-28T23:32:39"
@@ -7199,6 +7193,12 @@
       "data": "habit_no_water",
       "label": "❌ Ні",
       "ts": "2026-09-14T20:47:06"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_tea",
+      "label": "✅ Так",
+      "ts": "2026-09-14T20:47:08"
     }
   ]
 }
