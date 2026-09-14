@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Нова вакансія Business Development Manager IBM",
-      "detail": "Олег отримав лист від LinkedIn із сповіщенням про вакансію Business Development Manager IBM в Arrow Components Bratislava, яка відповідає його налаштуванням.",
-      "module": "selfact",
-      "ts": "2026-09-05T00:25:41"
-    },
-    {
       "kind": "ask",
       "what": "Олег, чи бажаєш ти, щоб я додав до твого календаря перегляд",
       "detail": "У пам'яті бота є запис, що Олег планує переглядати вакансії на Profesia.sk о 06:00 3 вересня, але це не відображено в поточному календарі.",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від Linas's Newsletter 'OpenAI just built a Bloomberg competitor into ChatGPT' безпосередньо стосується теми 'створити бота на трейдинг', запланованої на 20.09.2026, і може бути корисним для Олега.",
       "module": "selfact",
       "ts": "2026-09-14T13:31:28"
+    },
+    {
+      "kind": "notify",
+      "what": "Є нове сповіщення про вакансію Security Monitoring Analyst (",
+      "detail": "Олег отримав сповіщення про вакансію в Кошице, де він зараз знаходиться, що може бути для нього актуальним.",
+      "module": "selfact",
+      "ts": "2026-09-14T13:31:33"
     }
   ]
 }
