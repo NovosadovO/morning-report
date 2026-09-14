@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-14t13_00_08_395079": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зробити 20-хвилинну пробіжку після обіду сь",
+    "ts": "2026-09-14T13:00:08.395079"
+  },
   "mailcal_extract|2026-09-14t12_53_41_785267": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Авіакомпанія airBaltic повідомляє про початок фінансової реорганізації під наглядом суду (Chapter 11). Лист запевняє, що польоти продов",
     "ts": "2026-09-14T11:01:06.231357"
-  },
-  "action_detect|2026-09-14t11_00_55_531581": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Розтяжка та повноцінний сон\", \"action_date\": \"2026-09-14\", \"action_time\": null, \"action_summary\": \"Приділи 20-30 хв",
-    "ts": "2026-09-14T11:00:55.531581"
   }
 }
