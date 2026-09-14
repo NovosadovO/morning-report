@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-09-14t18_14_35_963334": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії, які відповідають налаштуванням користувача. Зокрема, пропонується вакансія ",
+    "ts": "2026-09-14T18:14:35.963334"
+  },
   "selfact|2026-09-14t18_07_51_237213": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, на Socios.com є важливе сповіщення про Recover Kit. Це твій спосіб відновити доступ до гаманця, якщо його",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист від Kraken інформує про запуск xStocks Vaults, що дозволяють заробляти до 2% на токенізованих активах SPYx, QQQx та NVDAx. Це н",
     "ts": "2026-09-14T16:33:26.953051"
-  },
-  "action_detect|2026-09-14t16_32_40_719322": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь записати пото",
-    "ts": "2026-09-14T16:32:40.719322"
   }
 }
