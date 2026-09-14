@@ -1,9 +1,4 @@
 {
-  "78624": {
-    "sender": "news@mail.lidlplus.sk",
-    "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
-    "seen_ts": "2026-09-06T05:29:23.836710+00:00"
-  },
   "78625": {
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
@@ -1498,5 +1493,10 @@
     "sender": "info@notifikacie.allegro.sk",
     "sender_raw": "Allegro <info@notifikacie.allegro.sk>",
     "seen_ts": "2026-09-14T13:42:38.620738+00:00"
+  },
+  "79091": {
+    "sender": "researchteam@blockworks.com",
+    "sender_raw": "0xResearch <researchteam@blockworks.com>",
+    "seen_ts": "2026-09-14T14:01:07.561947+00:00"
   }
 }
