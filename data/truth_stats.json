@@ -153,7 +153,7 @@
     "MSG_HABIT_CHECKIN": {
       "checked": 8,
       "issues": 7,
-      "fixed": 4
+      "fixed": 5
     },
     "email_describe": {
       "checked": 8,
@@ -162,7 +162,7 @@
     },
     "context_ask_ai": {
       "checked": 28,
-      "issues": 24,
+      "issues": 25,
       "fixed": 11
     },
     "healthai": {
@@ -434,8 +434,8 @@
   },
   "2026-09-14": {
     "checked": 150,
-    "issues": 104,
-    "fixed": 41,
+    "issues": 105,
+    "fixed": 42,
     "cut": 2
   }
 }
