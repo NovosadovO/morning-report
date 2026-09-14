@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Чи потрібно мені перевірити або допомогти з онлайн-реєстраці",
-      "detail": "У нотатках про Олега є інформація: 'Олег отримав детальні інструкції та підтвердження бронювання щодо своєї поїздки в Малагу, включаючи інформацію про онлайн-реєстрацію на рейс Ryanair.'",
-      "module": "selfact",
-      "ts": "2026-09-05T00:10:05"
-    },
-    {
       "kind": "notify",
       "what": "Нова вакансія Business Development Manager IBM",
       "detail": "Олег отримав лист від LinkedIn із сповіщенням про вакансію Business Development Manager IBM в Arrow Components Bratislava, яка відповідає його налаштуванням.",
@@ -2799,6 +2792,13 @@
       "detail": "У 'ЗАВИСЛИХ ПЕТЛЯХ' є дві записи: 'promise|скасувати бронювання' та 'promise|cancel' від info@ionian-cruises.com, що свідчить про незавершену дію щодо бронювання.",
       "module": "selfact",
       "ts": "2026-09-14T13:16:07"
+    },
+    {
+      "kind": "notify",
+      "what": "Привіт, Олеже! Зверни увагу на лист від Linas from Linas's N",
+      "detail": "Лист від Linas's Newsletter 'OpenAI just built a Bloomberg competitor into ChatGPT' безпосередньо стосується теми 'створити бота на трейдинг', запланованої на 20.09.2026, і може бути корисним для Олега.",
+      "module": "selfact",
+      "ts": "2026-09-14T13:31:28"
     }
   ]
 }
