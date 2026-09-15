@@ -1,4 +1,24 @@
 {
+  "selfact|2026-09-15t17_09_19_148763": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег ігнорує сповіщення про листи від CryptoBeholder.com, натискаючи 'Видалити'.\",     \"why\": \"З історії реакцій ",
+    "ts": "2026-09-15T17:09:19.148763"
+  },
+  "action_detect|2026-09-15t17_04_14_352051": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-15T17:04:14.352051"
+  },
+  "action_detect|2026-09-15t17_04_14_291787": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-15T17:04:14.291787"
+  },
+  "action_detect|2026-09-15t17_04_03_363347": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-15T17:04:03.363347"
+  },
   "action_detect|2026-09-15t17_02_54_771809": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписки\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"На рахунках чекає оплати 422.16€ т",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
     "ts": "2026-09-15T15:30:34.247043"
-  },
-  "selfact|2026-09-15t15_20_17_621062": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег сьогодні, 15.09.2026, пробіг 7 км, зробив 10 643 кроки та пройшов 8.2 км. Його загальний час сну склав 8:22 ",
-    "ts": "2026-09-15T15:20:17.621062"
-  },
-  "openloop_promises|2026-09-15t15_06_14_967911": {
-    "topic": "openloop_promises",
-    "gist": "```json [   {     \"what\": \"надіслати дані про пробіжку\",     \"to\": null,     \"date\": null   } ] ```",
-    "ts": "2026-09-15T15:06:14.967911"
-  },
-  "selfact|2026-09-15t15_04_44_055439": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Голосування Сенату США\",     \"text\": \"Олег, зверни увагу, що сьогодні о 08:00 (за часом Кошице) відбувалося го",
-    "ts": "2026-09-15T15:04:44.055439"
-  },
-  "action_detect|2026-09-15t15_02_53_400709": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Railway Corporation\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Найближчий плат",
-    "ts": "2026-09-15T15:02:53.400709"
   }
 }
