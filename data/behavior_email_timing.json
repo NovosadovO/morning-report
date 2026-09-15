@@ -1,9 +1,4 @@
 {
-  "78672": {
-    "sender": "notification@service.tiktok.com",
-    "sender_raw": "Ruslana*2784 у TikTok <notification@service.tiktok.com>",
-    "seen_ts": "2026-09-07T07:35:54.027351+00:00"
-  },
   "78673": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
     "seen_ts": "2026-09-15T12:25:24.993922+00:00"
+  },
+  "79142": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-15T12:27:34.948184+00:00"
   }
 }
