@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "сповіщення про здоров'я: stale",
-      "detail": "📵 Дані здоров'я не оновлювались 36 год (останні — 2026-09-06). Автосинк із годинника міг зламатись",
-      "module": "healthai",
-      "ts": "2026-09-07T11:42:16"
-    },
-    {
       "kind": "hcoach",
       "what": "full_report",
       "detail": "повна аналітика здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "Олег надіслав посилання на квартиру, але не вказав, що з ним робити.",
       "module": "selfact",
       "ts": "2026-09-15T20:59:31"
+    },
+    {
+      "kind": "notify",
+      "what": "Зверни увагу на лист від Minebea з виправленою виплатною кар",
+      "detail": "Отримано два листи від ehuman@minebeamitsumi.eu з темами '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu' та '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026'.",
+      "module": "selfact",
+      "ts": "2026-09-15T21:30:09"
     }
   ]
 }
