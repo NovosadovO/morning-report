@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверни увагу на попередження від Google Cloud Billing",
-      "detail": "Лист від 'Google Cloud Billing Alerts' про досягнення 50% бюджету є важливою фінансовою інформацією, яку Олег міг пропустити.",
-      "module": "selfact",
-      "ts": "2026-09-06T03:29:23"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, твоя підписка Runable вже кілька разів не оплачувалася",
       "detail": "Інформація про невдалі платежі за підписку Runable (з розділу 'ПІДПИСКИ' та 'НОТАТКИ ПРО ОЛЕГА') є критичною і вимагає уваги Олега, оскільки підписка може бути призупинена.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "З листа 'Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> | 2' з посиланням на квартиру.",
       "module": "selfact",
       "ts": "2026-09-15T17:24:43"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на лист від LinkedIn: Ciklum Czech Republ",
+      "detail": "Свіжий лист від LinkedIn про вакансію Expert JavaScript Engineer в Ciklum Czech Republic & Slovakia, яка відповідає запиту Cryptocurrency в Slovakia. Олег міг пропустити це сповіщення серед інших.",
+      "module": "selfact",
+      "ts": "2026-09-15T17:40:01"
     }
   ]
 }
