@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, отримано нові оголошення про квартири у Кошице: 1 нов",
-      "detail": "Зі свіжих листів: '🏠 Нові квартири у Кошіці — 1 нове оголошення', '🏠 Нові квартири у Кошіці — 4 нових оголошень', '🏠 Нові квартири у Кошіці — 28 нових оголошень (Уточнення)' та лист від 'Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> | 1' з посиланням на nehnutelnosti.sk.",
-      "module": "selfact",
-      "ts": "2026-09-05T21:10:46"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, зверни увагу на листа від Maroš Sivák | INTERFIN з те",
       "detail": "Зі свіжих листів: 'від Maroš Sivák | INTERFIN <maros.sivak@interfin.sk> | Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂', де вказано, що це 'ближчі завіречні інформації до Малаги'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Календар на 15.09: 08:00 ⏳ Голосування Сенату США щодо Clarity Act; Лист від The Defiant: Trump Agrees To CLARITY Act Ethics Rules",
       "module": "selfact",
       "ts": "2026-09-15T09:25:12"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, сьогодні (15.09) о 08:00 відбулося голосування Сенату",
+      "detail": "Календар на 15.09: 08:00 ⏳ Голосування Сенату США щодо Clarity Act; Лист від The Defiant <no-reply@mail.thedefiant.io> | Trump Agrees To CLARITY Act Ethics Rules",
+      "module": "selfact",
+      "ts": "2026-09-15T09:40:34"
     }
   ]
 }
