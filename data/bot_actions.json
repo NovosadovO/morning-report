@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, ти не відмітив виконання звичок 'Спрей для волосся', '",
-      "detail": "У календарі на 05.09 є незавершені звички: 18:10 💈 Спрей для волосся ❌; 18:10 🧖 Сауна ❌; 18:10 🏃 Біг ❌.",
-      "module": "selfact",
-      "ts": "2026-09-05T20:39:08"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, зверни увагу на лист від Maroš Sivák | INTERFIN з темо",
       "detail": "Олег отримав лист від Maroš Sivák з важливими деталями щодо поїздки до Малаги, який він міг пропустити, оскільки він зараз на нічній зміні.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Календар на 15.09: 08:00 ⏳ Голосування Сенату США щодо Clarity Act та лист від The Defiant <no-reply@mail.thedefiant.io> | Trump Agrees To CLARITY Act Ethics Rules",
       "module": "selfact",
       "ts": "2026-09-15T06:50:26"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-09-15T07:00:56"
     }
   ]
 }
