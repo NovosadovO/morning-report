@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T23:01:11.276450",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>2</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79061"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79061"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79061"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79061"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79061"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79061"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-15T23:01:12.589805",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
@@ -624,6 +585,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79163"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-15T23:31:10.617572",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Product Builder в CloudTalk</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79161"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79161"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79161"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79161"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79161"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79161"
             }
           ]
         ]
