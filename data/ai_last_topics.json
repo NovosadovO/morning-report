@@ -1,4 +1,24 @@
 {
+  "email_ai_item|2026-09-15t20_56_51_987138": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є щоденною розсилкою новин від The Block, що стосуються криптовалютного ринку. У ньому йдеться про відмову республіканців від ",
+    "ts": "2026-09-15T20:56:51.987138"
+  },
+  "action_detect|2026-09-15t20_44_37_008319": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-15T20:44:37.008319"
+  },
+  "selfact|2026-09-15t20_44_08_797269": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підписка CapCut\",     \"text\": \"Олеже, твоя підписка CapCut закінчується за 7 днів. Перевір, чи потрібно її пон",
+    "ts": "2026-09-15T20:44:08.797269"
+  },
+  "action_detect|2026-09-15t20_44_06_868719": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-15T20:44:06.868719"
+  },
   "action_detect|2026-09-15t20_43_55_872144": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити підписку Railway Corporation\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Пере",
     "ts": "2026-09-15T19:02:08.659173"
-  },
-  "briefing_truthfix|2026-09-15t19_02_02_008496": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже,  Твоя вага 83.0 кг, що на 5.0 кг більше від цільових 78 кг. Дані про вагу оновлені 19 годин тому. Сьогодні ти зробив 10643 кроки, що перевищує ціль у 100",
-    "ts": "2026-09-15T19:02:02.008496"
-  },
-  "action_detect|2026-09-15t19_01_49_998390": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нагадування про реєстрацію до дерматолога\", \"action_date\": \"2023-09-16\", \"action_time\": \"10:00\", \"action_summary\": ",
-    "ts": "2026-09-15T19:01:49.998390"
-  },
-  "briefing|2026-09-15t19_01_47_608377": {
-    "topic": "briefing",
-    "gist": "Олеже,  🧭 ВЕКТОР ДНЯ Твій фокус на схудненні до 78 кг демонструє чіткий прогрес, з вагою 83.2 кг і виконаною нормою кроків 10,643. Ця ціль зараз найближча до пр",
-    "ts": "2026-09-15T19:01:47.608377"
-  },
-  "msg_idle_timeout_truthfix|2026-09-15t19_01_42_639882": {
-    "topic": "MSG_IDLE_TIMEOUT/truthfix",
-    "gist": "Привіт, Олеже!  Сьогоднішні дані, хоч і не найсвіжіші (останні оновлення по здоров'ю були 19 годин тому), показують цікаву картину: ти зробив 10643 кроки, що на",
-    "ts": "2026-09-15T19:01:42.639882"
   }
 }
