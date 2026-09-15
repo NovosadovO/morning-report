@@ -1,4 +1,14 @@
 {
+  "msg_vip_email|2026-09-15t11_22_38_479442": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 📧  Цей ранок відкривається з неочікуваного, але важливого показника: твій середній пульс за 7 днів виріс на 19.2 уд/хв, сягнувши 88.8 уд/хв. Це зн",
+    "ts": "2026-09-15T11:22:38.479442"
+  },
+  "selfact|2026-09-15t11_12_45_794877": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від The Defiant: 'Trump Agrees To CLARITY Act Ethics Rules'. Це може бути пов'язано ",
+    "ts": "2026-09-15T11:12:45.794877"
+  },
   "action_detect|2026-09-15t11_11_21_491245": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати в Apple H",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"С",
     "ts": "2026-09-15T09:02:48.035907"
-  },
-  "action_detect|2026-09-15t09_02_47_894656": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"null\", \"action_time\": \"null\", \"action_summary\": \"Відмітити прийняття Armolopid",
-    "ts": "2026-09-15T09:02:47.894656"
-  },
-  "msg_event_soon|2026-09-15t09_02_40_389464": {
-    "topic": "MSG_EVENT_SOON",
-    "gist": "Привіт Олеже! ⏰  Голосування Сенату США щодо Clarity Act почнеться ось-ось, о 09:00, але ти вже прийняв це до відома вчора. Це важлива подія для крипторинку, вр",
-    "ts": "2026-09-15T09:02:40.389464"
   }
 }
