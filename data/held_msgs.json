@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T00:16:47.610322",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Product Builder в CloudTalk</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79161"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79161"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79161"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79161"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79161"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79161"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-16T00:16:52.323586",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 44 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '44 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 83.2 кг, ціль 78 кг (тренд -1.1 кг за останні 5 замірів). Кроки: 13264 (ціль 10000). Сон: 8.4г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 06:00 ☀️ Рання зміна (06:00-18:00), 10:00 🔔 Реєстрація до дерматолога",
@@ -310,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79167"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T00:31:08.487986",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>We stopped trusting posted APY and built a better way to ver</b>\n👤 DefiLlama Newsletter &lt;defillama@mail.beehiiv.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79165"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79165"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79165"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79165"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79165"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79165"
             }
           ]
         ]
