@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-15t04_30_06_222924": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, твоє сховище iCloud заповнено. Це може призвести до того, що документи, контакти, фото та відео не будуть",
+    "ts": "2026-09-15T04:30:06.222924"
+  },
+  "selfact|2026-09-15t04_14_33_209772": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, твоє сховище iCloud заповнене. Документи, контакти та дані з пристроїв більше не архівуються, а фото й ві",
+    "ts": "2026-09-15T04:14:33.209772"
+  },
   "mailcal_extract|2026-09-15t04_11_02_560464": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Спланувати фінанси\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Спробувати сьогодні ввечері прики",
     "ts": "2026-09-14T22:03:18.270362"
-  },
-  "action_detect|2026-09-14t22_03_02_266166": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Голосування Сенату США щодо Clarity Act\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"В",
-    "ts": "2026-09-14T22:03:02.266166"
-  },
-  "action_detect|2026-09-14t22_03_01_965291": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити гель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Додати гель до списку покупок.\"}",
-    "ts": "2026-09-14T22:03:01.965291"
   }
 }
