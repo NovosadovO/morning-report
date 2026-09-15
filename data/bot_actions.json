@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, твоя нічна зміна закінчується о 06:00. Не забудь прийн",
-      "detail": "Згідно з нотатками, Олег приймає Armolopid Plus після нічної зміни перед сном, а його зміна закінчується о 06:00 сьогодні. Поточний час 04:16, тому це актуальне нагадування.",
-      "module": "selfact",
-      "ts": "2026-09-06T04:16:13"
-    },
-    {
-      "kind": "notify",
       "what": "Додаткова інформація про поїздку в Малагу",
       "detail": "У свіжих листах є лист від 'Maroš Sivák | INTERFIN' з темою 'Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂', де він пересилає 'ближчі заключні інформації до Малаги'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Зі свіжих листів: 'від Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> | 2' з посиланням на 'https://reality.bazos.sk/inzerat/195379712/na-predaj-moderne-zrekonstruovany-3-izbovy-byt-65m.php'.",
       "module": "selfact",
       "ts": "2026-09-15T18:41:47"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, зверніть увагу: ваш бюджет Google Cloud досяг 90% (€1",
+      "detail": "Олег отримав лист від Google Cloud Billing Alerts про досягнення 90% бюджету (€16.00) 15.09.2026. Це важливе фінансове сповіщення, яке Олег міг пропустити серед інших ігнорованих листів.",
+      "module": "selfact",
+      "ts": "2026-09-15T19:12:01"
     }
   ]
 }
