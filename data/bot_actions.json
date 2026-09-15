@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "full_report",
-      "detail": "повна аналітика здоров'я",
-      "module": "selfact",
-      "ts": "2026-09-07T20:00:41"
-    },
-    {
       "kind": "notify",
       "what": "сповіщення про здоров'я: stale",
       "detail": "📵 Дані здоров'я не оновлювались 48 год (останні — 2026-09-06). Автосинк із годинника міг зламатись",
@@ -2799,6 +2792,13 @@
       "detail": "Отримано два листи від ehuman@minebeamitsumi.eu з темами '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu' та '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026'.",
       "module": "selfact",
       "ts": "2026-09-15T21:30:09"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, у тебе є непрочитаний лист від DefiLlama Newsletter пр",
+      "detail": "Отримано лист від DefiLlama Newsletter з темою 'We stopped trusting posted APY and built a better way to verify yields'.",
+      "module": "selfact",
+      "ts": "2026-09-15T21:30:14"
     }
   ]
 }
