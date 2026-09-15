@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, зверни увагу на листа від Maroš Sivák | INTERFIN з те",
-      "detail": "Зі свіжих листів: 'від Maroš Sivák | INTERFIN <maros.sivak@interfin.sk> | Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂', де вказано, що це 'ближчі завіречні інформації до Малаги'.",
-      "module": "selfact",
-      "ts": "2026-09-05T21:10:50"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, у тебе є нові оголошення про квартири в Кошице. Можлив",
       "detail": "Олег отримав кілька листів від 'Oleg Novosadov <novosadovoleg@gmail.com>' з темами '🏠 Нові квартири у Кошіці — 1 нове оголошення', '🏠 Нові квартири у Кошіці — 4 нових оголошень' та '🏠 Нові квартири у Кошіці — 28 нових оголошень (Уточнення)'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Календар на 15.09: 08:00 ⏳ Голосування Сенату США щодо Clarity Act; Лист від The Defiant <no-reply@mail.thedefiant.io> | Trump Agrees To CLARITY Act Ethics Rules",
       "module": "selfact",
       "ts": "2026-09-15T09:40:34"
+    },
+    {
+      "kind": "ask",
+      "what": "Олег, чи бажаєш ти, щоб я переглянув ці 30 нових вакансій ві",
+      "detail": "Свіжі листи від Profesia.sk з 10 та 20 новими вакансіями, а також нотатки про Олега: 'Олег цікавиться вакансіями в сферах B2B/HoReCa/FMSG та фінансів/інвестицій...'",
+      "module": "selfact",
+      "ts": "2026-09-15T09:40:38"
     }
   ]
 }
