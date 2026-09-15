@@ -12605,6 +12605,12 @@
       "category": "event_done",
       "question": "📅 🧖 Сауна ❌\nПланувалась до 20:40 — виконано?",
       "answer": "no"
+    },
+    {
+      "ts": "2026-09-15T20:55:14.078452+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Початок серії ранніх змін",
+      "answer": "yes"
     }
   ]
 }
