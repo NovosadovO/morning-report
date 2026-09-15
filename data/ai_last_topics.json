@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-15t18_56_48_939042": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Увага: Google Cloud бюджет\",     \"text\": \"Олеже, твій бюджет Google Cloud досяг 90% (€16.00) за вересень. Пере",
+    "ts": "2026-09-15T18:56:48.939042"
+  },
+  "selfact|2026-09-15t18_41_31_566902": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Бюджет Google Cloud\",     \"text\": \"Олеже, твій бюджет Google Cloud на вересень досяг 90% (€16.00). Переглянь д",
+    "ts": "2026-09-15T18:41:31.566902"
+  },
   "mailcal_extract|2026-09-15t18_40_08_292112": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"79154\",     \"title\": \"Досягнуто 90% бюджету Google Cloud\",     \"date\": \"2026-09-15\",     \"time\": \"09:02\",     \"kind\": \"payment\",     \"",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
     "ts": "2026-09-15T17:01:10.637613"
-  },
-  "personal_ai|2026-09-15t17_01_09_378307": {
-    "topic": "personal_ai",
-    "gist": "Хоча сьогоднішня норма кроків (10643) перевищена, запланований на ранок біг ще не відбувся, а показники пульсу зростають (+16.7 уд/хв за 14 днів). Враховуючи, щ",
-    "ts": "2026-09-15T17:01:09.378307"
-  },
-  "action_detect|2026-09-15t17_00_56_809770": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Розтяжка/Мобільність\", \"action_date\": \"2026-09-15\", \"action_time\": \"17:00\", \"action_summary\": \"Виконати комплекс на",
-    "ts": "2026-09-15T17:00:56.809770"
   }
 }
