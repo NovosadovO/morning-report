@@ -1,37 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T23:31:21.890119",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 CapCut\n📋 Your CapCut subscription will expire in 7 days..\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 2\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: CapCut",
-              "callback_data": "email_reply_79163"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_79061"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79163"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79163"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-15T23:31:24.687284",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 CapCut\n📋 Your CapCut subscription will expire in 7 days..\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 2\n📝 (AI-аналіз тимчасово недоступний)",
@@ -519,6 +488,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79167"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T00:01:10.190304",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>We stopped trusting posted APY and built a better way to ver</b>\n👤 DefiLlama Newsletter &lt;defillama@mail.beehiiv.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79165"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79165"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79165"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79165"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79165"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79165"
             }
           ]
         ]
