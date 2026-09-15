@@ -1,21 +1,21 @@
 {
   "mercury__jupiter__90": {
-    "orb": 0.57,
+    "orb": 0.54,
     "sent": false,
     "exact_sent": false
   },
   "mercury__saturn__90": {
-    "orb": 0.74,
+    "orb": 0.78,
     "sent": false,
     "exact_sent": true
   },
   "mercury__neptune__90": {
-    "orb": 1.47,
-    "sent": true,
-    "event": "enter"
+    "orb": 1.44,
+    "sent": false,
+    "exact_sent": false
   },
   "saturn__pluto__150": {
-    "orb": 0.63,
+    "orb": 0.64,
     "sent": false,
     "exact_sent": true
   },
