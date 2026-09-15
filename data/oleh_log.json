@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_yes_water",
-      "label": "✅ Так",
-      "ts": "2026-08-29T23:14:01"
-    },
-    {
-      "t": "btn",
       "data": "habit_yes_tea",
       "label": "✅ Так",
       "ts": "2026-08-29T23:14:02"
@@ -7199,6 +7193,12 @@
       "data": "rx_mute_8cfc3845c3",
       "label": "🙈 Не нагадуй",
       "ts": "2026-09-15T20:43:50"
+    },
+    {
+      "t": "btn",
+      "data": "cal_all_done_today",
+      "label": "✅ Виконано",
+      "ts": "2026-09-15T20:43:52"
     }
   ]
 }
