@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "email_delete_78242",
-      "label": "🗑 Видалити",
-      "ts": "2026-08-29T23:15:31"
-    },
-    {
-      "t": "btn",
       "data": "email_delete_78240",
       "label": "🗑 Видалити",
       "ts": "2026-08-29T23:15:32"
@@ -7199,6 +7193,12 @@
       "data": "evdone_no_done_ji12m7d2ramltj5ns76plan5fk_2026-09-15",
       "label": "❌ Не виконано",
       "ts": "2026-09-15T20:54:45"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_no_done_ulod5456g8aghqojprbl36nmeg_2026-09-15",
+      "label": "❌ Не виконано",
+      "ts": "2026-09-15T20:54:47"
     }
   ]
 }
