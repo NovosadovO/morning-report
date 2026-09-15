@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T01:36:06.655028",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• CapCut <admin@mail.capcut.com> → Your CapCut subscription will expire in 7 days..\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-16T01:36:07.275159",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• CapCut  → Your CapCut subscription will expire in 7 days..\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79163"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T01:46:05.670671",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Product Builder в CloudTalk</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79161"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79161"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79161"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79161"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79161"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79161"
             }
           ]
         ]
