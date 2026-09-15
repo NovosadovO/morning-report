@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T01:34:42.537975",
-      "kind": "deadlines",
-      "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 14 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Підписка Apple — закінчення терміну дії\n📆 до 2026-09-30\n🏢 Apple\n\n➡️ Перевірити підписку Apple та вирішити, чи потрібно її продовжувати.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-16T01:34:45.748582",
       "kind": "deadlines",
       "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 14 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Підписка Apple — закінчення</b>\n📆 до <b>2026-09-30</b>\n🏢 Apple\n\n➡️ Перевірити статус підписки Apple та вирішити, чи потрібно її продовжувати.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79170"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T01:45:59.719758",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 AI without the data center</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79169"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79169"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79169"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79169"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79169"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79169"
             }
           ]
         ]
