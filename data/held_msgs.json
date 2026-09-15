@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T23:36:23.648441",
-      "kind": "rwa",
-      "text": "🏦 RWA-РАДАР\n━━━━━━━━━━━━━━━━━━━━\n• XLM впав на 9.7% за 24 години (зараз $0.17494)\n• ONDO (твоя позиція) впав на 8.2% за 24 години (зараз $0.32934)\n\nAI-коментар недоступний — вище тільки живі цифри.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-15T23:43:56.377101",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Forbes через LinkedIn</b>\n📋 Тема: «The 10 Youngest Billionaires On The 2026 Forbes 400 List»\n\n<i>«Forbes P.M.\r\n\r\nАвтор: Forbes\r\n\r\n\r\nАвтор: Forbes\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/10-youngest-billionaires-2026-forbes-400-list-forbes-magazine-ayyze?lipi=urn%3Ali%3Apage%3Aemail_email_serie...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -593,6 +587,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79161"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T00:01:14.015011",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>2</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79061"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79061"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79061"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79061"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79061"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79061"
             }
           ]
         ]
