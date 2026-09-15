@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-15t15_35_34_492425": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег сьогодні бігав 7 км, про що він повідомив о 12:24, хоча в календарі біг на 07:00 позначений без відмітки про",
+    "ts": "2026-09-15T15:35:34.492425"
+  },
   "action_detect|2026-09-15t15_30_34_247043": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжну інформацію ",
     "ts": "2026-09-15T13:03:17.330883"
-  },
-  "action_detect|2026-09-15t13_03_06_418317": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-09-15\", \"action_time\": null, \"action_summary\": \"Відмітити прийом Armolopi",
-    "ts": "2026-09-15T13:03:06.418317"
   }
 }
