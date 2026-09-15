@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверни увагу на лист від Google Cloud Billing Alerts.",
-      "detail": "Надійшов лист від Google Cloud Billing Alerts з попередженням про досягнення 50% бюджету.",
-      "module": "selfact",
-      "ts": "2026-09-06T01:54:04"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, зверни увагу на сповіщення від Google Cloud Billing Al",
       "detail": "Лист від Google Cloud Billing Alerts про досягнення 50% бюджету (€16.00) за поточний місяць. Це важливе фінансове сповіщення, яке Олег міг пропустити, оскільки зараз нічна зміна.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег запитував 'Чому strava не працює?' (15.09 12:27) і є невиконаний дедлайн 'Підписка Strava — оновлення платіжної інформації'.",
       "module": "selfact",
       "ts": "2026-09-15T15:35:52"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, зверни увагу на лист від MinebeaMitsumi.eu з посиланн",
+      "detail": "Зі свіжих листів: 'від Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> | 2 текст: https://reality.bazos.sk/inzerat/195379712/na-predaj-moderne-zrekonstruovany-3-izbovy-byt-65m.php'",
+      "module": "selfact",
+      "ts": "2026-09-15T15:51:13"
     }
   ]
 }
