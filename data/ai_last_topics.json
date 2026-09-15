@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-09-15t04_11_02_560464": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-15T04:11:02.560464"
+  },
+  "email_ai_item|2026-09-15t04_05_40_530715": {
+    "topic": "email_ai_item",
+    "gist": "```json { \"description\": \"Цей лист від Douglas Newsletter повідомляє Олегу, що його «великий день» (ймовірно, день народження) буде вже за тиждень, і пропонує р",
+    "ts": "2026-09-15T04:05:40.530715"
+  },
   "email_ai_item|2026-09-15t04_05_29_385041": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від Discord інформує про пропущені повідомлення в каналі 'Sui Whale'. Він також містить внутрішні дані про користувача Олег",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити гель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Додати гель до списку покупок.\"}",
     "ts": "2026-09-14T22:03:01.965291"
-  },
-  "action_detect|2026-09-14t22_02_51_155768": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Активувати підписку Strava та API\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Необхідно активува",
-    "ts": "2026-09-14T22:02:51.155768"
-  },
-  "briefing_truthfix|2026-09-14t22_02_46_078960": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, з моменту останнього повідомлення ти прийняв до відома звіт бота за день, а також інформацію про голосування Clarity Act. Водночас, ти попросив не нагаду",
-    "ts": "2026-09-14T22:02:46.078960"
   }
 }
