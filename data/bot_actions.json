@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверни увагу на лист від Maroš Sivák | INTERFIN. Він м",
-      "detail": "Отримано лист від Maroš Sivák | INTERFIN з темою '🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂', який містить важливі деталі щодо поїздки.",
-      "module": "selfact",
-      "ts": "2026-09-05T20:08:25"
-    },
-    {
-      "kind": "notify",
       "what": "Інформація про поїздку до Малаги",
       "detail": "Є свіжий лист від Maroš Sivák | INTERFIN з темою '🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂', який містить 'ближчі заключні інформації до Малаги'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "аналіз сну",
       "module": "selfact",
       "ts": "2026-09-14T23:19:21"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: hr_high",
+      "detail": "❤️ Середній пульс 88.8 уд/хв — вище за 85",
+      "module": "healthai",
+      "ts": "2026-09-15T04:00:58"
     }
   ]
 }
