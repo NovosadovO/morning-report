@@ -1,4 +1,19 @@
 {
+  "healthai|2026-09-15t16_14_45_083218": {
+    "topic": "healthai",
+    "gist": "Олеже, твій середній пульс за останні 7 днів становить 85.4 уд/хв, що перевищує 85. Це може бути пов'язано зі зменшенням часу сну до 5.8 год за останні 24 годин",
+    "ts": "2026-09-15T16:14:45.083218"
+  },
+  "selfact|2026-09-15t16_06_28_096445": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що завтра о 05:00 у вас рання зміна (06:00-18:00).\",     \"why\": \"Завтра, 16.09, у Олега рання зм",
+    "ts": "2026-09-15T16:06:28.096445"
+  },
+  "action_detect|2026-09-15t16_04_27_058730": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Почати щось нове\", \"action_date\": \"2026-09-15\", \"action_time\": null, \"action_summary\": \"Сьогодні – чудовий день, що",
+    "ts": "2026-09-15T16:04:27.058730"
+  },
   "action_detect|2026-09-15t16_04_27_056940": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реактивувати Strava\", \"action_date\": \"2026-09-15\", \"action_time\": null, \"action_summary\": \"Реактивувати застосунок ",
     "ts": "2026-09-15T14:03:25.155905"
-  },
-  "action_detect|2026-09-15t14_03_11_366658": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписку Railway Corporation\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Цього ",
-    "ts": "2026-09-15T14:03:11.366658"
-  },
-  "action_detect|2026-09-15t14_03_11_335476": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-15T14:03:11.335476"
-  },
-  "action_detect|2026-09-15t14_03_00_267655": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-15T14:03:00.267655"
   }
 }
