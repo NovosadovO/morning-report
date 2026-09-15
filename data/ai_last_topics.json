@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-09-15t13_00_20_406112": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-15T13:00:20.406112"
+  },
+  "selfact|2026-09-15t12_45_09_626073": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу: ваша підписка Runable не оплачена, і платіж був невдалим. Потрібно оновити платіжну інфор",
+    "ts": "2026-09-15T12:45:09.626073"
+  },
   "email_ai_item|2026-09-15t12_42_12_581565": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Лист від Pixory повідомляє про продовження акції зі знижками до 60% на фотокниги ще на один день. Знижка діятиме до 8 ранку за брита",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати в Apple H",
     "ts": "2026-09-15T11:11:21.491245"
-  },
-  "action_detect|2026-09-15t11_02_57_575188": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути майбутні платежі\", \"action_date\": \"2026-09-15\", \"action_time\": null, \"action_summary\": \"Сьогодні варто ",
-    "ts": "2026-09-15T11:02:57.575188"
-  },
-  "action_detect|2026-09-15t11_02_42_619820": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реєстрація до дерматолога\", \"action_date\": \"2026-09-16\", \"action_time\": \"10:00\", \"action_summary\": \"Завтра о 10:00 ",
-    "ts": "2026-09-15T11:02:42.619820"
   }
 }
