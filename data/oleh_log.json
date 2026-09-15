@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_ok_586994caff",
-      "label": "👌 Прийняв",
-      "ts": "2026-08-29T23:14:49"
-    },
-    {
-      "t": "btn",
       "data": "rx_ok_6d5e6ed2c6",
       "label": "👌 Прийняв",
       "ts": "2026-08-29T23:14:56"
@@ -7199,6 +7193,12 @@
       "data": "cal_skip_vip_email_1789497617",
       "label": "❌ Не треба",
       "ts": "2026-09-15T20:44:58"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_briqa85fp86r8mv0pcggelc6ec_2026-09-15",
+      "label": "✅ Виконано",
+      "ts": "2026-09-15T20:54:43"
     }
   ]
 }
