@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-09-15t11_33_06_193605": {
+    "topic": "email_ai_item",
+    "gist": "```json { \"description\": \"Цей лист від Linas's Newsletter інформує про майбутнє IPO компанії Anthropic на Nasdaq, яке може оцінити її в $2 трильйони або більше.",
+    "ts": "2026-09-15T11:33:06.193605"
+  },
+  "action_detect|2026-09-15t11_30_09_811876": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити гель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег згадав, що йому потрібно купити гел",
+    "ts": "2026-09-15T11:30:09.811876"
+  },
   "selfact|2026-09-15t11_27_47_770404": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Сьогодні о 17:00 заплановано обговорення створення бота для трейдингу. Переглянь свіжий лист від TradingView «Н",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, твоє сховище iCloud заповнене. Щоб продовжити користуватися службами iCloud, потрібно оновити план до iCl",
     "ts": "2026-09-15T09:09:48.062455"
-  },
-  "openloop_promises|2026-09-15t09_03_48_260605": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-09-15T09:03:48.260605"
-  },
-  "action_detect|2026-09-15t09_03_07_460371": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати підписки\", \"action_date\": \"null\", \"action_time\": \"null\", \"action_summary\": \"Сьогодні проанал",
-    "ts": "2026-09-15T09:03:07.460371"
   }
 }
