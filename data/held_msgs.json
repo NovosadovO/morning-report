@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T02:46:13.529410",
-      "kind": "chunk",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 2\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-15T02:46:32.141239",
       "kind": "watchdog",
       "text": "👁 <b>Я осліп на частину даних</b>\n\n🔴 <b>strava</b> — функції get_activities немає в monitor.py\n\n<i>Поки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.</i>",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 2 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-15T03:01:22.766474",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Сховище iCloud заповнено</b>\n👤 iCloud &lt;noreply@email.apple.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79116"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79116"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79116"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79116"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79116"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79116"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
