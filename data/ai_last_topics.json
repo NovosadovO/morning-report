@@ -1,4 +1,19 @@
 {
+  "selfact|2026-09-15t20_28_58_001811": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег, ймовірно, пропустив голосування Сенату США щодо Clarity Act, яке було заплановане на сьогодні, 15.09, о 08:",
+    "ts": "2026-09-15T20:28:58.001811"
+  },
+  "email_ai_item|2026-09-15t20_14_05_945860": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn є сповіщенням про нову вакансію Expert JavaScript Engineer у компанії Ciklum Czech Republic & Slovakia в Братисла",
+    "ts": "2026-09-15T20:14:05.945860"
+  },
+  "selfact|2026-09-15t20_13_30_370457": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії Product Builder\",     \"text\": \"Олеже, LinkedIn прислав нові вакансії Product Builder в CloudTalk",
+    "ts": "2026-09-15T20:13:30.370457"
+  },
   "mailcal_extract|2026-09-15t20_12_04_807238": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реєстрація до дерматолога\", \"action_date\": \"2026-09-16\", \"action_time\": \"10:00\", \"action_summary\": \"Завтра на тебе ",
     "ts": "2026-09-15T19:00:40.166565"
-  },
-  "msg_interview_practice|2026-09-15t19_00_27_663934": {
-    "topic": "MSG_INTERVIEW_PRACTICE",
-    "gist": "Привіт Олеже! 🎤  Після досить активного дня з 10 643 кроками, а також багатьох рухів на крипторинку (де, на жаль, більшість активів з твого портфеля, як-от BTC,",
-    "ts": "2026-09-15T19:00:27.663934"
-  },
-  "selfact|2026-09-15t18_56_48_939042": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Увага: Google Cloud бюджет\",     \"text\": \"Олеже, твій бюджет Google Cloud досяг 90% (€16.00) за вересень. Пере",
-    "ts": "2026-09-15T18:56:48.939042"
-  },
-  "selfact|2026-09-15t18_41_31_566902": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Бюджет Google Cloud\",     \"text\": \"Олеже, твій бюджет Google Cloud на вересень досяг 90% (€16.00). Переглянь д",
-    "ts": "2026-09-15T18:41:31.566902"
   }
 }
