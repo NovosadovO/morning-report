@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T22:06:21.036021",
-      "kind": "rwa",
-      "text": "🏦 <b>RWA-РАДАР</b>\n━━━━━━━━━━━━━━━━━━━━\n• ONDO (твоя позиція) впав на 6.7% за 24 години (зараз $0.33522)\n\n<i>AI-коментар недоступний — вище тільки живі цифри.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-15T22:06:21.818629",
       "kind": "rwa",
       "text": "🏦 RWA-РАДАР\n━━━━━━━━━━━━━━━━━━━━\n• ONDO (твоя позиція) впав на 6.7% за 24 години (зараз $0.33522)\n\nAI-коментар недоступний — вище тільки живі цифри.",
@@ -632,6 +626,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78880"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-15T22:31:08.113992",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78870"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78870"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78870"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78870"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78870"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78870"
             }
           ]
         ]
