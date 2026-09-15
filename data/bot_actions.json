@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверни увагу на сповіщення від Google Cloud Billing Al",
-      "detail": "Лист від Google Cloud Billing Alerts про досягнення 50% бюджету (€16.00) за поточний місяць. Це важливе фінансове сповіщення, яке Олег міг пропустити, оскільки зараз нічна зміна.",
-      "module": "selfact",
-      "ts": "2026-09-06T02:10:09"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, ти отримав нові оголошення про квартири у Кошице (4 та",
       "detail": "Листи від Oleg Novosadov <novosadovoleg@gmail.com> | 🏠 Нові квартири у Кошіці — 4 нових оголошень та 🏠 Нові квартири у Кошіці — 28 нових оголошень (Уточнення). Олег, ймовірно, шукає житло, тому це важливі оновлення.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Зі свіжих листів: 'від Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> | 2 текст: https://reality.bazos.sk/inzerat/195379712/na-predaj-moderne-zrekonstruovany-3-izbovy-byt-65m.php'",
       "module": "selfact",
       "ts": "2026-09-15T15:51:13"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, у LinkedIn з'явилася нова вакансія Product Builder в",
+      "detail": "Зі свіжих листів: 'від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Product Builder в CloudTalk текст: Сповіщення про вакансії в Slovakia Нові вакансії відповідають вашим налаштуванням. Product Builder CloudTalk Slovakia'",
+      "module": "selfact",
+      "ts": "2026-09-15T15:51:18"
     }
   ]
 }
