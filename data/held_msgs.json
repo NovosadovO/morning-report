@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T23:46:43.946114",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>2</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79061"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79061"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79061"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79061"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79061"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79061"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-15T23:46:45.281802",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
@@ -483,6 +444,12 @@
       "ts": "2026-09-16T00:03:08.331423",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• CapCut  → Your CapCut subscription will expire in 7 days..\n• Oleg Novosadov  → 2\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-16T00:04:25.792791",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• CapCut <admin@mail.capcut.com> → Your CapCut subscription will expire in 7 days..\n• Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> → 2\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
