@@ -1,9 +1,4 @@
 {
-  "78676": {
-    "sender": "no_reply@email.apple.com",
-    "sender_raw": "Apple <no_reply@email.apple.com>",
-    "seen_ts": "2026-09-07T08:42:51.868450+00:00"
-  },
   "78678": {
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
@@ -1498,5 +1493,10 @@
     "sender": "researchteam@blockworks.com",
     "sender_raw": "0xResearch <researchteam@blockworks.com>",
     "seen_ts": "2026-09-15T14:02:16.895668+00:00"
+  },
+  "79149": {
+    "sender": "card@kcard.kaufland.sk",
+    "sender_raw": "Kaufland Card XTRA <card@kcard.kaufland.sk>",
+    "seen_ts": "2026-09-15T14:22:44.779933+00:00"
   }
 }
