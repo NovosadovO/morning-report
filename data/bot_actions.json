@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "збережено дані здоров'я",
-      "detail": "sleep_total_min=133, hr_avg=81, weight_kg=83.0, hrv=35, stress=39, sleep_hours=2.22, date=2026-09-07, source=qwatch_auto, saved_at=2026-09-07 23:56",
-      "module": "healthai",
-      "ts": "2026-09-07T23:56:40"
-    },
-    {
       "kind": "hcoach",
       "what": "morning_plan",
       "detail": "ранковий план здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "steps=13264, hr_avg=75, calories=625, stress=33, sleep_total_min=120, sleep_hours=2.0, date=2026-09-15, source=qwatch_auto, saved_at=2026-09-15 21:42",
       "module": "healthai",
       "ts": "2026-09-15T21:42:28"
+    },
+    {
+      "kind": "note",
+      "what": "збережено дані здоров'я",
+      "detail": "/сон",
+      "module": "healthai",
+      "ts": "2026-09-15T21:42:42"
     }
   ]
 }
