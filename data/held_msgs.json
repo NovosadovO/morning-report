@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T23:01:14.225663",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78870"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78870"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78870"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78870"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78870"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78870"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-15T23:01:19.138710",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 44 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '44 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 83.2 кг, ціль 78 кг (тренд -1.1 кг за останні 5 замірів). Кроки: 13264 (ціль 10000). Сон: 8.4г.\n✅ Звички: Виконано сьогодні: shower, run, tea (3/6). Ще не виконано: water, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 1 непрочитаних\n📅 Календар: 08:00 Біг, 09:00 ✅ 🚿 Холодний душ ✅, 09:00 ⏳ Голосування Сенату США щодо Clarity Act, 19:10 ✅ 🏃 Біг ✅, 19:10 🧖 Сауна ❌, 19:10 💧 Вода (2л+) ❌, 19:10 ✅ 🍵 Трав'яний чай ✅, 19:10 💈 Спрей для волосся ❌",
@@ -624,6 +585,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79061"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-15T23:31:13.666251",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78880"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78880"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78880"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78880"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78880"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78880"
             }
           ]
         ]
