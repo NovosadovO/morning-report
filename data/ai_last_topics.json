@@ -1,4 +1,39 @@
 {
+  "astro_ai|2026-09-15t12_12_23_093911": {
+    "topic": "astro_ai",
+    "gist": "Привіт, Олеже! Зараз обідня пора, 12:11 у Кошице. Сьогоднішній день, 15 вересня 2026 року, приносить ряд динамічних астрологічних впливів, які можуть суттєво по",
+    "ts": "2026-09-15T12:12:23.093911"
+  },
+  "openloop_promises|2026-09-15t12_04_23_709615": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-09-15T12:04:23.709615"
+  },
+  "action_detect|2026-09-15t12_03_24_816851": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має прострочену підпис",
+    "ts": "2026-09-15T12:03:24.816851"
+  },
+  "action_detect|2026-09-15t12_03_24_678615": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити деталі та документи\", \"action_date\": \"2026-09-16\", \"action_time\": null, \"action_summary\": \"Завтра особли",
+    "ts": "2026-09-15T12:03:24.678615"
+  },
+  "action_detect|2026-09-15t12_03_13_257033": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-15T12:03:13.257033"
+  },
+  "action_detect|2026-09-15t12_03_11_334336": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь записати пото",
+    "ts": "2026-09-15T12:03:11.334336"
+  },
+  "action_detect|2026-09-15t12_03_02_448029": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оплатити Strava\", \"action_date\": \"2026-09-15\", \"action_time\": null, \"action_summary\": \"Підписка Strava прос",
+    "ts": "2026-09-15T12:03:02.448029"
+  },
   "action_detect|2026-09-15t12_02_57_303530": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег має прострочену підпис",
@@ -263,40 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Голосування Сенату США щодо Clarity Act\",     \"text\": \"Олег, сьогодні о 08:00 (за твоїм часом) відбулося голос",
     "ts": "2026-09-15T10:57:21.779161"
-  },
-  "selfact|2026-09-15t10_42_12_266621": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні, 15.09, о 08:00 відбулося голосування Сенату США щодо Clarity Act. За листом від The",
-    "ts": "2026-09-15T10:42:12.266621"
-  },
-  "openloop_promises|2026-09-15t10_33_50_446522": {
-    "topic": "openloop_promises",
-    "gist": "[]",
-    "ts": "2026-09-15T10:33:50.446522"
-  },
-  "proactive_actions|2026-09-15t10_30_12_109813": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Зареєструватися до дерматолога\",     \"date\": \"2026-09-16\",     \"time\": \"11:00\",     \"message\": \"Олеже, завтр",
-    "ts": "2026-09-15T10:30:12.109813"
-  },
-  "selfact|2026-09-15t10_27_50_994497": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від The Defiant: 'Trump Agrees To CLARITY Act Ethics Rules'. Це може бути важливо з ",
-    "ts": "2026-09-15T10:27:50.994497"
-  },
-  "email_ai_item|2026-09-15t10_21_58_008870": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист від Emergent інформує про оновлення Fable 5.1. Основна частина листа містить особисті дані Олега, його показники здоров'я (кроки, ",
-    "ts": "2026-09-15T10:21:58.008870"
-  },
-  "mailcal_extract|2026-09-15t10_17_51_298204": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-09-15T10:17:51.298204"
-  },
-  "action_detect|2026-09-15t10_17_29_111281": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": \"2026-09-15\", \"action_time\": \"07:00\", \"action_summary\": \"Запланований біг на сьогодні, 15 вере",
-    "ts": "2026-09-15T10:17:29.111281"
   }
 }
