@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-09-15t12_42_12_581565": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Лист від Pixory повідомляє про продовження акції зі знижками до 60% на фотокниги ще на один день. Знижка діятиме до 8 ранку за брита",
+    "ts": "2026-09-15T12:42:12.581565"
+  },
   "mailcal_extract|2026-09-15t12_33_37_571191": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реєстрація до дерматолога\", \"action_date\": \"2026-09-16\", \"action_time\": \"10:00\", \"action_summary\": \"Завтра о 10:00 ",
     "ts": "2026-09-15T11:02:42.619820"
-  },
-  "action_detect|2026-09-15t11_02_42_518933": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято Armolopid",
-    "ts": "2026-09-15T11:02:42.518933"
   }
 }
