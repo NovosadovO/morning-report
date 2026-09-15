@@ -1,4 +1,24 @@
 {
+  "calendar|2026-09-15t08_19_02_515607": {
+    "topic": "calendar",
+    "gist": "Олеже, бачу, сьогодні в тебе на 09:00 заплановано голосування Сенату США щодо Clarity Act. Це вже за півгодини. Ти вільний сьогодні, змін немає, що дає можливіс",
+    "ts": "2026-09-15T08:19:02.515607"
+  },
+  "selfact|2026-09-15t08_07_42_490397": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сховище iCloud заповнено\",     \"text\": \"Олег, твоє сховище iCloud заповнено. Документи, контакти та дані з при",
+    "ts": "2026-09-15T08:07:42.490397"
+  },
+  "action_detect|2026-09-15t08_04_49_044952": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити гель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег хоче купити гель.\"}",
+    "ts": "2026-09-15T08:04:49.044952"
+  },
+  "action_detect|2026-09-15t08_04_38_441813": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз та інформацію про ",
+    "ts": "2026-09-15T08:04:38.441813"
+  },
   "action_detect|2026-09-15t08_04_27_447537": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -278,25 +298,5 @@
     "topic": "MSG_MORNING",
     "gist": "Привіт Олеже! ✨  Твоя нічна зміна завершується, і новий день уже зустрічає тебе. Зараз 06:04 ранку в Кошице. Важливо використати цей ранковий час для відновленн",
     "ts": "2026-09-15T06:04:17.407925"
-  },
-  "selfact|2026-09-15t06_03_16_598461": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сховище iCloud заповнено\",     \"text\": \"Олег, твоє сховище iCloud заповнено. Документи, контакти та дані з при",
-    "ts": "2026-09-15T06:03:16.598461"
-  },
-  "action_detect|2026-09-15t06_03_01_017129": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути витрати\", \"action_date\": \"2026-09-15\", \"action_time\": \"09:00\", \"action_summary\": \"Сьогодні, до 09:00, п",
-    "ts": "2026-09-15T06:03:01.017129"
-  },
-  "action_detect|2026-09-15t06_02_50_035080": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити гель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег згадав, що потрібно купити гель.\"}",
-    "ts": "2026-09-15T06:02:50.035080"
-  },
-  "action_detect|2026-09-15t06_02_49_883609": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити гель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег згадав, що потрібно купити гель.\"}",
-    "ts": "2026-09-15T06:02:49.883609"
   }
 }
