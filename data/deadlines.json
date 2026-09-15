@@ -311,5 +311,17 @@
     "sender": "Apple <no_reply@email.apple.com>",
     "done": false,
     "created": "2026-09-14"
+  },
+  "підписка_apple_закінчення|2026-09-30": {
+    "kind": "contract",
+    "title": "Підписка Apple — закінчення",
+    "org": "Apple",
+    "deadline": "2026-09-30",
+    "action": "Перевірити статус підписки Apple та вирішити, чи потрібно її продовжувати.",
+    "why": "Якщо підписка не буде продовжена, доступ до сервісів Apple може бути припинений.",
+    "uid": "78676",
+    "sender": "Apple <no_reply@email.apple.com>",
+    "done": false,
+    "created": "2026-09-15"
   }
 }
