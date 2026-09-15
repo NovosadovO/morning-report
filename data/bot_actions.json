@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверни увагу на лист від Maroš Sivák | INTERFIN щодо п",
-      "detail": "Отримано новий лист 'Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂' від Maroš Sivák, який містить важливу інформацію щодо майбутньої поїздки до Малаги, що починається 07.09.",
-      "module": "selfact",
-      "ts": "2026-09-05T20:39:04"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, ти не відмітив виконання звичок 'Спрей для волосся', '",
       "detail": "У календарі на 05.09 є незавершені звички: 18:10 💈 Спрей для волосся ❌; 18:10 🧖 Сауна ❌; 18:10 🏃 Біг ❌.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> | 2 з посиланням на reality.bazos.sk",
       "module": "selfact",
       "ts": "2026-09-15T05:01:50"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, сьогодні о 08:00 відбудеться голосування Сенату США що",
+      "detail": "Календар на 15.09: 08:00 ⏳ Голосування Сенату США щодо Clarity Act та лист від The Defiant <no-reply@mail.thedefiant.io> | Trump Agrees To CLARITY Act Ethics Rules",
+      "module": "selfact",
+      "ts": "2026-09-15T06:50:26"
     }
   ]
 }
