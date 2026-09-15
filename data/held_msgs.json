@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T23:16:38.784754",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Technik/čka servisného oddelenia – podmienka § 22 в ENGIE Sl</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79167"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79167"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79167"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79167"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79167"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79167"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-15T23:16:40.267480",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>We stopped trusting posted APY and built a better way to ver</b>\n👤 DefiLlama Newsletter &lt;defillama@mail.beehiiv.com&gt;",
@@ -661,6 +622,45 @@
       "kind": "rwa",
       "text": "🏦 RWA-РАДАР\n━━━━━━━━━━━━━━━━━━━━\n• XLM впав на 9.7% за 24 години (зараз $0.17494)\n• ONDO (твоя позиція) впав на 8.2% за 24 години (зараз $0.32934)\n\nAI-коментар недоступний — вище тільки живі цифри.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-15T23:43:56.377101",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Forbes через LinkedIn</b>\n📋 Тема: «The 10 Youngest Billionaires On The 2026 Forbes 400 List»\n\n<i>«Forbes P.M.\r\n\r\nАвтор: Forbes\r\n\r\n\r\nАвтор: Forbes\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/10-youngest-billionaires-2026-forbes-400-list-forbes-magazine-ayyze?lipi=urn%3Ali%3Apage%3Aemail_email_serie...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79168"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79168"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79168"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79168"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79168"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79168"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
