@@ -263,6 +263,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-15T22:01:56.717736",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>🏠 Нові квартири у Кошіці — 3 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78839"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78839"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78839"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78839"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78839"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78839"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
