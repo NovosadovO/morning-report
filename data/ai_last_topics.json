@@ -1,4 +1,14 @@
 {
+  "calendar|2026-09-15t09_15_49_968474": {
+    "topic": "calendar",
+    "gist": "Привіт, Олеже! Бачу, завтра з 10:00 до 10:30 у тебе реєстрація до дерматолога. Це важливий крок для твоєї цілі щодо здоров'я, тим паче, що твій показник здоров'",
+    "ts": "2026-09-15T09:15:49.968474"
+  },
+  "action_detect|2026-09-15t09_10_13_004851": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-15T09:10:13.004851"
+  },
   "selfact|2026-09-15t09_09_48_062455": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, твоє сховище iCloud заповнене. Щоб продовжити користуватися службами iCloud, потрібно оновити план до iCl",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-15T07:30:48.605576"
-  },
-  "proactive_actions|2026-09-15t07_30_11_645911": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Зареєструватися до дерматолога\",     \"date\": \"2026-09-16\",     \"time\": \"11:00\",     \"message\": \"Олеже, завтр",
-    "ts": "2026-09-15T07:30:11.645911"
-  },
-  "selfact|2026-09-15t07_21_17_213365": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, твоє сховище iCloud заповнено. Документи, контакти та дані з пристроїв більше не архівуються, а фото й ві",
-    "ts": "2026-09-15T07:21:17.213365"
   }
 }
