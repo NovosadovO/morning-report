@@ -1,9 +1,4 @@
 {
-  "78660": {
-    "sender": "ethermail@ethermail.io",
-    "sender_raw": "EtherMail <ethermail@ethermail.io>",
-    "seen_ts": "2026-09-07T00:01:31.662793+00:00"
-  },
   "78663": {
     "sender": "support@profesia.sk",
     "sender_raw": "\"Profesia.sk\" <support@profesia.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "team@ship.emergent.sh",
     "sender_raw": "Emergent <team@ship.emergent.sh>",
     "seen_ts": "2026-09-15T08:22:00.884055+00:00"
+  },
+  "79131": {
+    "sender": "linas@substack.com",
+    "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
+    "seen_ts": "2026-09-15T09:33:09.497599+00:00"
   }
 }
