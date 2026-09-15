@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-15t05_00_34_377048": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити гель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олег згадав, що йому потрібно купити гел",
+    "ts": "2026-09-15T05:00:34.377048"
+  },
   "selfact|2026-09-15t04_45_46_329622": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сховище iCloud заповнено\",     \"text\": \"Олег, твоє сховище iCloud заповнено. Документи, контакти та дані з при",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу на нову вакансію Senior Operations Specialist в Precision For Medicine у Братиславі, яка в",
     "ts": "2026-09-14T22:15:48.515051"
-  },
-  "action_detect|2026-09-14t22_14_48_118337": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": \"2026-09-15\", \"action_time\": \"08:00\", \"action_summary\": \"Завтра, 15 вересня, о 08:00 у тебе за",
-    "ts": "2026-09-14T22:14:48.118337"
   }
 }
