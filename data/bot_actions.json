@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Бюджет Google Cloud",
-      "detail": "Олег отримав лист від Google Cloud Billing Alerts про досягнення 50% бюджету (€16.00) за вересень.",
-      "module": "selfact",
-      "ts": "2026-09-06T04:01:09"
-    },
-    {
-      "kind": "notify",
       "what": "Інформація про відліт до Малаги",
       "detail": "Олег отримав лист від Maroš Sivák | INTERFIN з темою 'Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂', де міститься 'bližšie záverečné informácie k Malage'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Надійшов лист від Google Cloud Billing Alerts про досягнення 90% бюджету (€16.00) на вересень.",
       "module": "selfact",
       "ts": "2026-09-15T18:26:05"
+    },
+    {
+      "kind": "notify",
+      "what": "Бюджет Google Cloud",
+      "detail": "З листа від Google Cloud Billing Alerts: '90% of budget reached' 15.09.2026, 9:02 AM.",
+      "module": "selfact",
+      "ts": "2026-09-15T18:41:35"
     }
   ]
 }
