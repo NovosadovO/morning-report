@@ -1,4 +1,9 @@
 {
+  "calendar|2026-09-15t10_15_20_236517": {
+    "topic": "calendar",
+    "gist": "Олеже, голосування Сенату США щодо Clarity Act вже завершилося сьогодні о 10:00. Сподіваюся, ти встиг ознайомитися з результатами, якщо це було для тебе актуаль",
+    "ts": "2026-09-15T10:15:20.236517"
+  },
   "selfact|2026-09-15t10_10_57_210418": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сховище iCloud заповнено\",     \"text\": \"Олег, твоє сховище iCloud заповнено. Це означає, що документи, контакт",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-15T08:04:27.447537"
-  },
-  "action_detect|2026-09-15t08_04_16_291202": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реактивувати Strava та спланувати біг\", \"action_date\": \"2026-09-15\", \"action_time\": null, \"action_summary\": \"Реакти",
-    "ts": "2026-09-15T08:04:16.291202"
   }
 }
