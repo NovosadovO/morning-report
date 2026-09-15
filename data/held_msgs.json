@@ -363,6 +363,45 @@
       "kind": "rwa",
       "text": "🏦 RWA-РАДАР\n━━━━━━━━━━━━━━━━━━━━\n• ONDO (твоя позиція) впав на 6.7% за 24 години (зараз $0.33522)\n\nAI-коментар недоступний — вище тільки живі цифри.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-15T22:14:25.501134",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Technik/čka servisného oddelenia – podmienka § 22 в ENGIE Slovensko»\n\n<i>«Сповіщення про вакансії в Košice          \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nTechnik/čka servisného oddelenia – podmienka § 22\r\nENGIE Slovensko\r\nKošice\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4467281973/?trackingId=PPM7aGnxjWvIXsjebs3Lzw%3D%3D&amp;ref...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79167"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79167"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79167"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79167"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79167"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79167"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
