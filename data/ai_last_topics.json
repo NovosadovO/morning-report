@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-15t10_10_57_210418": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сховище iCloud заповнено\",     \"text\": \"Олег, твоє сховище iCloud заповнено. Це означає, що документи, контакт",
+    "ts": "2026-09-15T10:10:57.210418"
+  },
+  "msg_rwa_truthfix|2026-09-15t10_06_28_277097": {
+    "topic": "MSG_RWA/truthfix",
+    "gist": "Олеже, бачу, ти сьогодні вільний, але крипторинок підкинув цікавий момент.  Яка ситуація в RWA-секторі? Загальна капіталізація RWA-сектора становить $70.57B, ал",
+    "ts": "2026-09-15T10:06:28.277097"
+  },
   "msg_rwa|2026-09-15t10_06_17_451984": {
     "topic": "MSG_RWA",
     "gist": "Олеже, щойно побачив, що за останні 24 години весь RWA-сектор злетів на 49.6%, а його загальна капіталізація сягнула $70.57B. Це просто шалений стрибок, врахову",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реактивувати Strava та спланувати біг\", \"action_date\": \"2026-09-15\", \"action_time\": null, \"action_summary\": \"Реакти",
     "ts": "2026-09-15T08:04:16.291202"
-  },
-  "action_detect|2026-09-15t08_03_58_888130": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-09-15\", \"action_time\": null, \"action_summary\": \"Прийняти Armolopi",
-    "ts": "2026-09-15T08:03:58.888130"
-  },
-  "action_detect|2026-09-15t08_03_58_835320": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Railway Corporation\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Цього тижня спишу",
-    "ts": "2026-09-15T08:03:58.835320"
   }
 }
