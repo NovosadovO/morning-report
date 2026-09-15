@@ -1186,13 +1186,15 @@
     "saved_at": "2026-09-14 23:01"
   },
   "2026-09-15": {
-    "steps": 1064,
-    "calories": 515,
-    "weight_kg": 83.0,
-    "hrv": 35,
-    "stress": 45,
     "date": "2026-09-15",
-    "source": "qwatch_auto",
+    "steps": 10643,
+    "hr_avg": 72,
+    "calories": 514,
+    "hrv": 35,
+    "weight_kg": 83.0,
+    "height_cm": 175,
+    "spo2": 99,
+    "source": "qwatch",
     "saved_at": "2026-09-15 12:28"
   }
 }
