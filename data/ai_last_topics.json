@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-15t15_30_34_247043": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-15T15:30:34.247043"
+  },
   "selfact|2026-09-15t15_20_17_621062": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег сьогодні, 15.09.2026, пробіг 7 км, зробив 10 643 кроки та пройшов 8.2 км. Його загальний час сну склав 8:22 ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-09-15\", \"action_time\": null, \"action_summary\": \"Відмітити прийом Armolopi",
     "ts": "2026-09-15T13:03:06.418317"
-  },
-  "action_detect|2026-09-15t13_02_55_476759": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Реєстрація до дерматолога\", \"action_date\": \"2026-09-16\", \"action_time\": \"10:00\", \"action_summary\": \"Зареєст",
-    "ts": "2026-09-15T13:02:55.476759"
   }
 }
