@@ -1188,16 +1188,12 @@
   "2026-09-15": {
     "date": "2026-09-15",
     "steps": 13264,
+    "sleep_total_min": 502,
     "hr_avg": 75,
     "calories": 625,
-    "hrv": 35,
-    "weight_kg": 83.0,
-    "height_cm": 175,
-    "spo2": 99,
-    "source": "qwatch_auto",
-    "saved_at": "2026-09-15 21:42",
-    "stress": 33,
-    "sleep_total_min": 120,
-    "sleep_hours": 2.0
+    "hrv": 34,
+    "spo2": null,
+    "source": "qwatch",
+    "saved_at": "2026-09-15 21:42"
   }
 }
