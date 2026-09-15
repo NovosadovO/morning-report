@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T23:46:52.332204",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 CapCut\n📋 Your CapCut subscription will expire in 7 days..\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: CapCut",
-              "callback_data": "email_reply_79163"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79163"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79163"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-15T23:46:56.105582",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 CapCut\n📋 Your CapCut subscription will expire in 7 days..\n📝 (AI-аналіз тимчасово недоступний)",
@@ -417,6 +392,12 @@
       "ts": "2026-09-16T00:05:38.440751",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• CapCut <admin@mail.capcut.com> → Your CapCut subscription will expire in 7 days..\n• Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> → 2\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-16T00:05:39.531813",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• CapCut  → Your CapCut subscription will expire in 7 days..\n• Oleg Novosadov  → 2\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
