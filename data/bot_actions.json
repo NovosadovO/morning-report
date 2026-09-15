@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нова вакансія Project Manager",
-      "detail": "У свіжих листах є повідомлення від 'Сповіщення про вакансії LinkedIn' про 'Project Manager в Convatec Michalovce'.",
-      "module": "selfact",
-      "ts": "2026-09-05T20:23:31"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, зверни увагу на лист від Maroš Sivák | INTERFIN щодо п",
       "detail": "Отримано новий лист 'Fw: 🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂' від Maroš Sivák, який містить важливу інформацію щодо майбутньої поїздки до Малаги, що починається 07.09.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Календар на 15.09: 08:00 ⏳ Голосування Сенату США щодо Clarity Act; Лист від The Defiant <no-reply@mail.thedefiant.io> | Trump Agrees To CLARITY Act Ethics Rules",
       "module": "selfact",
       "ts": "2026-09-15T05:01:45"
+    },
+    {
+      "kind": "ask",
+      "what": "Олег, ти надсилав собі посилання на оголошення про продаж 3-",
+      "detail": "Лист від Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> | 2 з посиланням на reality.bazos.sk",
+      "module": "selfact",
+      "ts": "2026-09-15T05:01:50"
     }
   ]
 }
