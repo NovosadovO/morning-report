@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T02:46:02.880632",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78880"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78880"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78880"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78880"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78880"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78880"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-15T02:46:04.157537",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
@@ -272,6 +233,12 @@
       "ts": "2026-09-15T02:59:59.941110",
       "kind": "chunk",
       "text": "🔭 Новий транзит\n☽ <b>Місяць</b> ☌ ♀ <b>Натальний Венера</b> (орб 1.3°)\n📍 Місяць у <b>Скорпіон ♏</b> | Натальний Венера у Скорпіон ♏, 4-й дім\n<i>Кон'юнкція · Дім/Родина</i>\n\n📖 <b>Що означає Кон'юнкція:</b>\n🔴 Злиття енергій — два начала діють як одне. Потужний старт, нові починання, але можлива надмірна концентрація на одній темі.\n\nПривіт, Олеже! Бачу, ти ще спиш, але ось тобі ранковий прогноз і поради.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-15T03:00:28.946060",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> → 2\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
