@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T00:16:46.335753",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your CapCut subscription will expire in 7 days..</b>\n👤 CapCut &lt;admin@mail.capcut.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79163"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79163"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79163"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79163"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79163"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79163"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-16T00:16:47.610322",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Product Builder в CloudTalk</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -310,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79168"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T00:31:07.205031",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Technik/čka servisného oddelenia – podmienka § 22 в ENGIE Sl</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79167"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79167"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79167"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79167"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79167"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79167"
             }
           ]
         ]
