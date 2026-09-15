@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Інформація про поїздку до Малаги",
-      "detail": "Є свіжий лист від Maroš Sivák | INTERFIN з темою '🇪🇸 InterFin Discovery Day – odlet do Malagy už o necelých 48 hodín! 🥂', який містить 'ближчі заключні інформації до Малаги'.",
-      "module": "selfact",
-      "ts": "2026-09-05T20:23:27"
-    },
-    {
-      "kind": "notify",
       "what": "Нова вакансія Project Manager",
       "detail": "У свіжих листах є повідомлення від 'Сповіщення про вакансії LinkedIn' про 'Project Manager в Convatec Michalovce'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "❤️ Середній пульс 88.8 уд/хв — вище за 85",
       "module": "healthai",
       "ts": "2026-09-15T04:00:58"
+    },
+    {
+      "kind": "notify",
+      "what": "Нагадую, сьогодні о 08:00 голосування Сенату США щодо Clarit",
+      "detail": "Календар на 15.09: 08:00 ⏳ Голосування Сенату США щодо Clarity Act; Лист від The Defiant <no-reply@mail.thedefiant.io> | Trump Agrees To CLARITY Act Ethics Rules",
+      "module": "selfact",
+      "ts": "2026-09-15T05:01:45"
     }
   ]
 }
