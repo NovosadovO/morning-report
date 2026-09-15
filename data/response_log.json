@@ -12464,6 +12464,12 @@
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-15T12:05:55.083762+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Перевірити деталі та документи",
+      "answer": "yes"
     }
   ]
 }
