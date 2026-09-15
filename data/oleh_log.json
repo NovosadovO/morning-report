@@ -2,18 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_ok_6d5e6ed2c6",
-      "label": "👌 Прийняв",
-      "ts": "2026-08-29T23:14:56"
-    },
-    {
-      "t": "btn",
-      "data": "email_delete_78243",
-      "label": "🗑 Видалити",
-      "ts": "2026-08-29T23:15:29"
-    },
-    {
-      "t": "btn",
       "data": "email_delete_78242",
       "label": "🗑 Видалити",
       "ts": "2026-08-29T23:15:31"
@@ -7199,6 +7187,18 @@
       "data": "evdone_yes_done_briqa85fp86r8mv0pcggelc6ec_2026-09-15",
       "label": "✅ Виконано",
       "ts": "2026-09-15T20:54:43"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_no_done_f0nkast07tmiqpojrfvltn2tdg_2026-09-15",
+      "label": "❌ Не виконано",
+      "ts": "2026-09-15T20:54:44"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_no_done_ji12m7d2ramltj5ns76plan5fk_2026-09-15",
+      "label": "❌ Не виконано",
+      "ts": "2026-09-15T20:54:45"
     }
   ]
 }
