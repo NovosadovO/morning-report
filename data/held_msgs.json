@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-15T23:46:39.481642",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>We stopped trusting posted APY and built a better way to ver</b>\n👤 DefiLlama Newsletter &lt;defillama@mail.beehiiv.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79165"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79165"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79165"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79165"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79165"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79165"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-15T23:46:41.271323",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your CapCut subscription will expire in 7 days..</b>\n👤 CapCut &lt;admin@mail.capcut.com&gt;",
@@ -582,6 +543,12 @@
       "ts": "2026-09-16T00:01:42.860900",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• CapCut <admin@mail.capcut.com> → Your CapCut subscription will expire in 7 days..\n• Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> → 2\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-16T00:01:43.496013",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• CapCut  → Your CapCut subscription will expire in 7 days..\n• Oleg Novosadov  → 2\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
