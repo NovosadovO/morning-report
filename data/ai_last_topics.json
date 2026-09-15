@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-15t19_11_54_187769": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег ігнорує сповіщення від Temu, LinkedIn Job Alerts, The Economist Today, Morning Report та CryptoBeholder.com,",
+    "ts": "2026-09-15T19:11:54.187769"
+  },
   "email_ai_item|2026-09-15t19_05_56_181175": {
     "topic": "email_ai_item",
     "gist": "```json { \"description\": \"Цей лист від Бена зі StartEngine анонсує запуск нового щоквартального листа про інвестування в компанії до їхнього IPO. Автор планує д",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від Buzz Sneaker Station пропонує знижку 20% на кросівки On Cloudtilt за промокодом UNLOCK20. Акція діє до 20.09.2026 і не комбіну",
     "ts": "2026-09-15T17:09:47.658338"
-  },
-  "selfact|2026-09-15t17_09_19_148763": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег ігнорує сповіщення про листи від CryptoBeholder.com, натискаючи 'Видалити'.\",     \"why\": \"З історії реакцій ",
-    "ts": "2026-09-15T17:09:19.148763"
   }
 }
