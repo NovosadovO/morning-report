@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-05",
-      "detail": "автосинк з годинника: hr_avg, distance_km, stress",
-      "module": "qwsync",
-      "ts": "2026-09-05T23:52:04"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "hr_avg=66, distance_km=12.0, stress=39, date=2026-09-05, source=qwatch_auto, saved_at=2026-09-05 23:52",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Є два листи від ehuman@minebeamitsumi.eu: один 'Minebea, Výplatná páska/Payslip 08/2026' і другий 'Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu'. Це важлива фінансова інформація, і Олег має бути про неї повідомлений.",
       "module": "selfact",
       "ts": "2026-09-15T13:46:53"
+    },
+    {
+      "kind": "ask",
+      "what": "Олеже, ти був на ранній зміні сьогодні 15.09, як було заплан",
+      "detail": "Календар на 15.09 містить '05:00 ☀️ Рання зміна (06:00-18:00)', але Олег прокинувся о 12:02, що викликає сумніви щодо виконання цієї події.",
+      "module": "selfact",
+      "ts": "2026-09-15T13:46:58"
     }
   ]
 }
