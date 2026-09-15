@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-09-15t19_57_35_943002": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від LinkedIn містить сповіщення про нові вакансії, які відповідають налаштуванням користувача. Зокрема, згадано вакансії Product B",
+    "ts": "2026-09-15T19:57:35.943002"
+  },
   "selfact|2026-09-15t19_42_58_860246": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Голосування Сенату США щодо Clarity Act\",     \"text\": \"Олег, зверни увагу, що сьогодні о 08:00 (за місцевим ча",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу на нову вакансію Expert JavaScript Engineer в Ciklum Czech Republic & Slovakia в Братислав",
     "ts": "2026-09-15T17:55:11.919486"
-  },
-  "mailcal_extract|2026-09-15t17_54_57_320921": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-09-15T17:54:57.320921"
   }
 }
