@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T00:46:25.776008",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Technik/čka servisného oddelenia – podmienka § 22 в ENGIE Sl</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79167"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79167"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79167"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79167"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79167"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79167"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-16T00:46:26.945844",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>We stopped trusting posted APY and built a better way to ver</b>\n👤 DefiLlama Newsletter &lt;defillama@mail.beehiiv.com&gt;",
@@ -310,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79170"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T01:01:53.454253",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 AI without the data center</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79169"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79169"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79169"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79169"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79169"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79169"
             }
           ]
         ]
