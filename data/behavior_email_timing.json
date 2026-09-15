@@ -1,9 +1,4 @@
 {
-  "78696": {
-    "sender": "hello@news.footshop.sk",
-    "sender_raw": "Footshop <hello@news.footshop.sk>",
-    "seen_ts": "2026-09-07T13:20:40.393729+00:00"
-  },
   "78697": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@data.theblock.co",
     "sender_raw": "The Block <newsletter@data.theblock.co>",
     "seen_ts": "2026-09-15T18:36:31.756940+00:00"
+  },
+  "79166": {
+    "sender": "newsletter@mail.theblock.co",
+    "sender_raw": "The Block <newsletter@mail.theblock.co>",
+    "seen_ts": "2026-09-15T18:56:54.913633+00:00"
   }
 }
