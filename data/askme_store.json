@@ -11983,5 +11983,28 @@
       "kind": "note"
     },
     "ts": "2026-09-16T18:08:52.465977+00:00"
+  },
+  "8e05151285": {
+    "key": "note|олег проігнорував сповіщення від temu odmena za návrat odos",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег проігнорував сповіщення від Temu 'Odmena za návrat odos »\n\nОлег проігнорував сповіщення від Temu 'Odmena za návrat odoslaná 16. sep 2026!'\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег проігнорував сповіщення від Temu 'Odmena za návrat odos",
+      "desc": "Олег проігнорував сповіщення від Temu 'Odmena za návrat odoslaná 16. sep 2026!'",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-16T18:39:32.856191+00:00"
   }
 }
