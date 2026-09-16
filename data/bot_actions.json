@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Незавершене замовлення Banxa",
-      "detail": "Лист від Banxa <no-reply@banxa.com> повідомляє про незавершене замовлення USDC і пропонує його завершити.",
-      "module": "selfact",
-      "ts": "2026-09-12T19:22:04"
-    },
-    {
-      "kind": "notify",
       "what": "Сповіщення про вхід Bybit",
       "detail": "Лист від Google <noreply-accounts@google.com> та Bybit <noreply@email-service.bybit.com> підтверджують вхід у Bybit через Google.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 17.09 є дві події, що перетинаються: 'Лікар' о 09:00 та 'Рання зміна' з 06:00 до 18:00. Олег мав схожу ситуацію 16.09 з дерматологом.",
       "module": "selfact",
       "ts": "2026-09-16T12:15:10"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на нове сповіщення про вакансію Junior Pr",
+      "detail": "Новий лист від LinkedIn з вакансією Junior Project Manager, що може бути цікавою для Олега, враховуючи його інтерес до нових можливостей.",
+      "module": "selfact",
+      "ts": "2026-09-16T12:45:23"
     }
   ]
 }
