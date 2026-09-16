@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-16t11_53_39_370660": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
+    "ts": "2026-09-16T11:53:39.370660"
+  },
   "action_detect|2026-09-16t11_48_18_889506": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вплив ринкових рухів на портфель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після з",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Олег Новосадов надіслав посилання на оголошення про продаж сучасно відремонтованої 3-кімнатної квартири площею 65м² на сайті bazos.sk. ",
     "ts": "2026-09-16T10:01:19.793663"
-  },
-  "personal_ai_truthfix|2026-09-16t10_00_50_766372": {
-    "topic": "personal_ai/truthfix",
-    "gist": "Олеже, зараз 10:00, і ти на ранній зміні, яка триватиме до 18:00. Дані про здоров'я, які є в наявності, оновлені 34 години тому (15.09), показують 13264 кроки. ",
-    "ts": "2026-09-16T10:00:50.766372"
   }
 }
