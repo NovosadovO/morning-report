@@ -1,4 +1,29 @@
 {
+  "openloop_promises|2026-09-16t10_42_12_064357": {
+    "topic": "openloop_promises",
+    "gist": "[]",
+    "ts": "2026-09-16T10:42:12.064357"
+  },
+  "mailcal_extract|2026-09-16t10_37_22_744930": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-16T10:37:22.744930"
+  },
+  "action_detect|2026-09-16t10_35_20_128658": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити виплатну картку та оголошення про квартири\", \"action_date\": null, \"action_time\": null, \"action_summary\":",
+    "ts": "2026-09-16T10:35:20.128658"
+  },
+  "msg_event_soon_truthfix|2026-09-16t10_35_12_069958": {
+    "topic": "MSG_EVENT_SOON/truthfix",
+    "gist": "Олеже, зараз ти на ранній зміні до 18:00.  Дані про крипторинок, оновлені 35 годин тому, показують зниження: BTC втратив 1.8%, ETH – 3.4%, а XRP – 7.9% за 24 го",
+    "ts": "2026-09-16T10:35:12.069958"
+  },
+  "msg_event_soon|2026-09-16t10_35_02_076877": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ✅ Ти зараз на ранній зміні до 18:00, тож сфокусуйся на робочих задачах, але пам'ятай про важливі моменти, які чекають на тебе.  Крипторинок сьогод",
+    "ts": "2026-09-16T10:35:02.076877"
+  },
   "action_detect|2026-09-16t10_34_28_817045": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -273,30 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від Minebea: 'Виплатна картка/Payslip 08/2026 - виправлення формату'. Можливо, це он",
     "ts": "2026-09-16T08:39:30.427579"
-  },
-  "selfact|2026-09-16t08_24_21_959310": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні, 16.09, о 09:00 у тебе запланована реєстрація до дерматолога. Зверни увагу, що ти вж",
-    "ts": "2026-09-16T08:24:21.959310"
-  },
-  "bills|2026-09-16t08_17_01_415967": {
-    "topic": "bills",
-    "gist": "[]",
-    "ts": "2026-09-16T08:17:01.415967"
-  },
-  "selfact|2026-09-16t08_09_04_940539": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що у тебе є два листи з виплатними квитанціями за серпень 2026 року від ehuman@minebeamitsu",
-    "ts": "2026-09-16T08:09:04.940539"
-  },
-  "action_detect|2026-09-16t08_04_08_943958": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
-    "ts": "2026-09-16T08:04:08.943958"
-  },
-  "action_detect|2026-09-16t08_03_51_192513": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Запланувати покращення фізичного стану та переглянути дедлайни\", \"action_date\": \"2026-09-16\", \"action_time\"",
-    "ts": "2026-09-16T08:03:51.192513"
   }
 }
