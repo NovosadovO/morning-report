@@ -1,9 +1,4 @@
 {
-  "78740": {
-    "sender": "newsletter@aboutyou.com",
-    "sender_raw": "ABOUT YOU Coins <newsletter@aboutyou.com>",
-    "seen_ts": "2026-09-08T10:16:48.214126+00:00"
-  },
   "78742": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@metamask.io",
     "sender_raw": "MetaMask Team <hello@metamask.io>",
     "seen_ts": "2026-09-16T15:02:57.281184+00:00"
+  },
+  "79211": {
+    "sender": "newsletters@e.economist.com",
+    "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
+    "seen_ts": "2026-09-16T16:18:31.041428+00:00"
   }
 }
