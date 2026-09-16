@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-17T01:31:11.539818",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Monetary policy is going asymmetric</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79229"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79229"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79229"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79229"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79229"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79229"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-17T01:31:12.826638",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>He’s No Longer A Trillionaire, But Here’s Why Elon Musk Rema</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -365,6 +326,12 @@
       "ts": "2026-09-17T01:35:38.175453",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 14 дн.\n━━━━━━━━━━━━━━━━━━━━\n📌 Регуляторний дедлайн для криптобізнесу в Австралії\n📆 до 2026-10-01\n🏢 Australia\n\n➡️ Ознайомитись з новими регуляторними вимогами, якщо Олег має криптобізнес в Австралії.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-17T01:36:20.819407",
+      "kind": "lifecycle",
+      "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
       "keyboard": null
     }
   ]
