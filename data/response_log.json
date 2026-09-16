@@ -12771,6 +12771,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_7529e7c873"
+    },
+    {
+      "ts": "2026-09-16T07:10:00.075739+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Перевірити виплатну відомість",
+      "answer": "yes"
     }
   ]
 }
