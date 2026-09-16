@@ -1,14 +1,4 @@
 {
-  "78703": {
-    "sender": "email@info.temuemail.com",
-    "sender_raw": "Temu <email@info.temuemail.com>",
-    "seen_ts": "2026-09-07T14:52:07.777831+00:00"
-  },
-  "78704": {
-    "sender": "newsletter@buzzsneakers-promo.com",
-    "sender_raw": "\"Buzz Sneaker Station\" <newsletter@buzzsneakers-promo.com>",
-    "seen_ts": "2026-09-07T15:04:28.176807+00:00"
-  },
   "78705": {
     "sender": "hello@plunge.com",
     "sender_raw": "PLUNGE <hello@plunge.com>",
@@ -1503,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-09-16T02:15:49.606047+00:00"
+  },
+  "79177": {
+    "sender": "offers@travel.wizznews.com",
+    "sender_raw": "\"Wizz Air\" <offers@travel.wizznews.com>",
+    "seen_ts": "2026-09-16T02:15:58.403662+00:00"
   }
 }
