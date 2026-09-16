@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T23:45:54.121684",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78880"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78880"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78880"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78880"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78880"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78880"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-16T23:45:55.461862",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
@@ -508,6 +469,45 @@
       "kind": "lifecycle",
       "text": "⏳ СКОРО ПРОДОВЖЕННЯ\n━━━━━━━━━━━━━━━━━━━━\n🔄 Підписка CapCut\n💸 Оплата: 22.09.2026 — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-17T00:01:50.453252",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Breakdown</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🟪 Monetary policy is going asymmetric»\n\n<i>«View image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/9f199753-ca31-4e3d-9435-5e12896ecff5/BD_NL_Banner_Heading.png?t=1781793903)\r\nCaption: \r\n\r\n----------\r\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,for...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79229"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79229"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79229"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79229"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79229"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79229"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
