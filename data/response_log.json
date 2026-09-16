@@ -12884,6 +12884,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_4f899bec30"
+    },
+    {
+      "ts": "2026-09-16T13:30:20.949693+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Переглянути виплатні листи",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-09-16"
+      }
     }
   ]
 }
