@@ -12801,6 +12801,12 @@
       "category": "confirm",
       "question": "calrem_skip: Переглянути листи та зарплату",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-16T08:55:18.166587+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_daad4a39fe"
     }
   ]
 }
