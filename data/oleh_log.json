@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "email_delete_78260",
-      "label": "🗑 Видалити",
-      "ts": "2026-08-30T13:11:15"
-    },
-    {
-      "t": "btn",
       "data": "cal_skip_vip_email_1788085756",
       "label": "❌ Не треба",
       "ts": "2026-08-30T13:11:25"
@@ -7199,6 +7193,12 @@
       "data": "cal_skip_event_soon_1789531303",
       "label": "",
       "ts": "2026-09-16T07:10:02"
+    },
+    {
+      "t": "btn",
+      "data": "calrem_skip_idle_timeout_1789541420",
+      "label": "❌ Не треба",
+      "ts": "2026-09-16T08:51:46"
     }
   ]
 }
