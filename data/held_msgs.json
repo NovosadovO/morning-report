@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T22:01:43.871686",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Schwab Is Bringing AVAX to Traditional Investors</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78683"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78683"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78683"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78683"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78683"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78683"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-16T22:01:47.971644",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 45 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '45 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 83.2 кг, ціль 78 кг (тренд -0.8 кг за останні 5 замірів). Кроки: 28555 (ціль 10000). Сон: 5.7г.\n✅ Звички: Виконано сьогодні: water, tea (2/6). Ще не виконано: shower, run, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 2 непрочитаних\n📅 Календар: 06:00 ☀️ Рання зміна (06:00-18:00), 10:00 🔔 Реєстрація до дерматолога, 19:10 ✅ 💧 Вода (2л+) ✅, 19:10 🧖 Сауна ❌, 19:10 🏃 Біг ❌, 19:10 ✅ 🍵 Трав'яний чай ✅",
@@ -654,6 +615,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78880"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T22:31:33.101720",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78870"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78870"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78870"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78870"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78870"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78870"
             }
           ]
         ]
