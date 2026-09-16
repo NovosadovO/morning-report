@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-16t04_45_26_623164": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати вагу в Ap",
+    "ts": "2026-09-16T04:45:26.623164"
+  },
   "openloop_promises|2026-09-16t04_40_02_859494": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Підписка Strava прострочена ",
     "ts": "2026-09-15T21:01:01.994664"
-  },
-  "personal_ai_truthfix|2026-09-15t21_00_51_323482": {
-    "topic": "personal_ai/truthfix",
-    "gist": "Олеже, завтра у тебе рання зміна, тому важливо добре підготуватися до сну. Згідно з даними, які оновлювалися 21 годину тому, ти пропустив сауну, спрей для волос",
-    "ts": "2026-09-15T21:00:51.323482"
   }
 }
