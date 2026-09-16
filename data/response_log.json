@@ -12765,6 +12765,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Темповий біг",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-16T07:09:46.843735+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_7529e7c873"
     }
   ]
 }
