@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-17T00:01:16.880398",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>He’s No Longer A Trillionaire, But Here’s Why Elon Musk Rema</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79228"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79228"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79228"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79228"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79228"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79228"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-17T00:01:18.162526",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - September 16th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -443,6 +404,12 @@
       "ts": "2026-09-17T00:05:38.741555",
       "kind": "lifecycle",
       "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-17T00:05:39.508595",
+      "kind": "lifecycle",
+      "text": "⏳ СКОРО ПРОДОВЖЕННЯ\n━━━━━━━━━━━━━━━━━━━━\n🔄 Підписка CapCut\n💸 Оплата: 22.09.2026 — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
       "keyboard": null
     }
   ]
