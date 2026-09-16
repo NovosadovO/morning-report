@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T02:36:26.754979",
-      "kind": "rwa",
-      "text": "🏦 <b>RWA-РАДАР</b>\n━━━━━━━━━━━━━━━━━━━━\n• XLM впав на 8.2% за 24 години (зараз $0.17626)\n• ONDO (твоя позиція) впав на 7.0% за 24 години (зараз $0.32894)\n\n<i>AI-коментар недоступний — вище тільки живі цифри.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-16T02:36:27.515465",
       "kind": "rwa",
       "text": "🏦 RWA-РАДАР\n━━━━━━━━━━━━━━━━━━━━\n• XLM впав на 8.2% за 24 години (зараз $0.17626)\n• ONDO (твоя позиція) впав на 7.0% за 24 години (зараз $0.32894)\n\nAI-коментар недоступний — вище тільки живі цифри.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79165"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T02:46:23.953658",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Your CapCut subscription will expire in 7 days..</b>\n👤 CapCut &lt;admin@mail.capcut.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79163"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79163"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79163"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79163"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79163"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79163"
             }
           ]
         ]
