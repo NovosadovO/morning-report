@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "cal_skip_botsend_1788154461374",
-      "label": "❌ Не треба",
-      "ts": "2026-08-31T07:37:05"
-    },
-    {
-      "t": "btn",
       "data": "cw_ok_bfe8fd0599",
       "label": "✅ Пам'ятаю",
       "ts": "2026-08-31T07:47:22"
@@ -7199,6 +7193,12 @@
       "data": "evdone_yes_done_m8dd2ubne6rqg4bbes6nlbngm4_2026-09-16",
       "label": "✅ Виконано",
       "ts": "2026-09-16T19:43:06"
+    },
+    {
+      "t": "btn",
+      "data": "am_no_3cfd91b3f1",
+      "label": "🚫 Не треба",
+      "ts": "2026-09-16T19:43:47"
     }
   ]
 }
