@@ -1,4 +1,9 @@
 {
+  "people|2026-09-16t06_33_09_795275": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інше\",     \"topics\": [\"поїздка в Малагу\"],     \"my_promises\"",
+    "ts": "2026-09-16T06:33:09.795275"
+  },
   "selfact|2026-09-16t06_21_46_216856": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про дерматолога\",     \"text\": \"Олег, сьогодні о 09:00 у тебе реєстрація до дерматолога. Не забудь ",
@@ -293,10 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-09-16T04:32:23.582969"
-  },
-  "action_detect|2026-09-16t04_31_16_816941": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopid Plus п",
-    "ts": "2026-09-16T04:31:16.816941"
   }
 }
