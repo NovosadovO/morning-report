@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-09-16t20_11_11_064388": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є щоденним інформаційним бюлетенем від The Block, що висвітлює новини криптоіндустрії. Основні теми включають провал Clarity A",
+    "ts": "2026-09-16T20:11:11.064388"
+  },
   "action_detect|2026-09-16t20_05_01_678235": {
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оплата Railway Corporation\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Найближча",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-16T19:01:00.108120"
-  },
-  "personal_ai|2026-09-16t19_00_42_561614": {
-    "topic": "personal_ai",
-    "gist": "Твоя рання зміна закінчилась, і сьогоднішній сон склав лише 5.7 годин, що значно нижче середнього показника в 7.1 годину за останній тиждень. Такий дефіцит сну,",
-    "ts": "2026-09-16T19:00:42.561614"
   }
 }
