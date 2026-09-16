@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T03:01:41.730589",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Account Manager (Chinese speaker) в Scrambly</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79171"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79171"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79171"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79171"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79171"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79171"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-16T03:01:42.939277",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>General Manager/Director EU Operations  в Unio Search</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -445,6 +406,12 @@
       "ts": "2026-09-16T03:12:05.551434",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\" <support@profesia.sk> → 15 nových pracovných ponúk\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-16T03:12:06.236726",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 15 nových pracovných ponúk\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
