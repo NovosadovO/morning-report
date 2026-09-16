@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-16t09_40_44_334533": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що у тебе є два листи з виплатними квитанціями за серпень 2026 року від Minebea. Один з них",
+    "ts": "2026-09-16T09:40:44.334533"
+  },
   "subs|2026-09-16t09_36_37_408346": {
     "topic": "subs",
     "gist": "```json [   {     \"uid\": \"78780\",     \"vendor\": \"Google Health\",     \"amount\": null,     \"currency\": null,     \"cycle\": \"weekly\",     \"charge_date\": null,     \"",
@@ -293,10 +298,5 @@
     "topic": "deadlines",
     "gist": "```json [   {     \"uid\": \"78676\",     \"kind\": \"contract\",     \"title\": \"Підписка Apple — закінчення\",     \"org\": \"Apple\",     \"deadline\": \"2026-09-30\",     \"act",
     "ts": "2026-09-16T07:36:34.373651"
-  },
-  "action_detect|2026-09-16t07_33_22_169587": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Переглянути виплатну квитанцію\", \"action_date\": \"2026-08-31\", \"action_time\": \"17:00\", \"action_summary\": \"Пі",
-    "ts": "2026-09-16T07:33:22.169587"
   }
 }
