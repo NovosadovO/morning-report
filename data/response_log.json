@@ -12942,6 +12942,12 @@
       "category": "event_done",
       "question": "📅 🍵 Трав'яний чай ✅\nПланувалась до 20:40 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-16T19:49:59.057365+00:00",
+      "category": "confirm",
+      "question": "calrem_skip: Це ви щойно увійшли неподалік Kosice з нового пристрою?",
+      "answer": "yes"
     }
   ]
 }
