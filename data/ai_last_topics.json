@@ -1,4 +1,44 @@
 {
+  "email_ai_item|2026-09-16t21_02_02_259759": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Minebea Slovakia s.r.o. містить виплатну відомість за серпень 2026 року у вкладенні. Для відкриття файлу потрібно використати ",
+    "ts": "2026-09-16T21:02:02.259759"
+  },
+  "email_ai_item|2026-09-16t21_01_51_398029": {
+    "topic": "email_ai_item",
+    "gist": "```json { \"description\": \"Цей лист від Minebea містить виплатну відомість за серпень 2026 року у вкладенні. Для відкриття файлу потрібно використати останні 4 ц",
+    "ts": "2026-09-16T21:01:51.398029"
+  },
+  "email_ai_item|2026-09-16t21_01_40_266576": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист містить посилання на оголошення про продаж сучасно відремонтованої 3-кімнатної квартири площею 65 м² на словацькому сайті нерухомо",
+    "ts": "2026-09-16T21:01:40.266576"
+  },
+  "email_ai_item|2026-09-16t21_01_29_343404": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист містить інформацію про два нових оголошення щодо продажу 3-кімнатних квартир у Кошіці, Словаччина. Перша квартира площею 66 м² кош",
+    "ts": "2026-09-16T21:01:29.343404"
+  },
+  "personal_ai|2026-09-16t21_01_03_248030": {
+    "topic": "personal_ai",
+    "gist": "Ти сьогодні зробив 28555 кроків, але спав лише 5.7 годин, а показник здоров'я впав до 65%. Після ранньої зміни та такої активності організм потребує відновлення",
+    "ts": "2026-09-16T21:01:03.248030"
+  },
+  "action_detect|2026-09-16t21_00_46_581874": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відмітити звички та написати про самопочуття\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Відміти",
+    "ts": "2026-09-16T21:00:46.581874"
+  },
+  "action_detect|2026-09-16t21_00_37_737855": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-16\", \"action_time\": null, \"action_summary\": \"Олегу потрібно прийн",
+    "ts": "2026-09-16T21:00:37.737855"
+  },
+  "msg_habit_checkin|2026-09-16t21_00_28_976377": {
+    "topic": "MSG_HABIT_CHECKIN",
+    "gist": "Привіт Олеже! 🌙  Ти сьогодні пробіг 7 км і водночас у звичках \"Біг\" стоїть як пропущене. То як минув твій день — дійсно вдалося пробігтися, чи це дані за минули",
+    "ts": "2026-09-16T21:00:28.976377"
+  },
   "selfact|2026-09-16t20_57_57_716304": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Звіт Google Health\",     \"text\": \"Олеже, твій щотижневий звіт від Google Health за період з 29 серпня по 4 вер",
@@ -258,45 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Погода на завтра\", \"action_date\": \"2024-09-17\", \"action_time\": null, \"action_summary\": \"На завтра, 17.09, очікуєтьс",
     "ts": "2026-09-16T19:24:00.482545"
-  },
-  "action_detect|2026-09-16t19_23_53_233825": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
-    "ts": "2026-09-16T19:23:53.233825"
-  },
-  "action_detect|2026-09-16t19_22_54_421589": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
-    "ts": "2026-09-16T19:22:54.421589"
-  },
-  "action_detect|2026-09-16t19_22_43_442731": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
-    "ts": "2026-09-16T19:22:43.442731"
-  },
-  "action_detect|2026-09-16t19_22_43_373008": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-16T19:22:43.373008"
-  },
-  "action_detect|2026-09-16t19_22_32_515318": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
-    "ts": "2026-09-16T19:22:32.515318"
-  },
-  "selfact|2026-09-16t19_09_59_102939": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: твій бюджет Google Cloud на €16.00 вичерпано на 100% за період з 1 по 30 вересня. Це може п",
-    "ts": "2026-09-16T19:09:59.102939"
-  },
-  "email_ai_item|2026-09-16t19_07_34_844538": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист від StartEngine інформує про закриття фонду Innovators Fund 25 вересня. Це остання можливість інвестувати в приватні компанії, так",
-    "ts": "2026-09-16T19:07:34.844538"
-  },
-  "action_detect|2026-09-16t19_05_37_955412": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
-    "ts": "2026-09-16T19:05:37.955412"
   }
 }
