@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-16t05_20_12_744157": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні, 16 вересня, о 09:00 у тебе запланована реєстрація до дерматолога. Враховуючи, що ти",
+    "ts": "2026-09-16T05:20:12.744157"
+  },
   "action_detect|2026-09-16t05_10_16_266511": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-16\", \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно пр",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-15T21:42:20.041186"
-  },
-  "action_detect|2026-09-15t21_41_02_651144": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити підписку Strava, щоб",
-    "ts": "2026-09-15T21:41:02.651144"
   }
 }
