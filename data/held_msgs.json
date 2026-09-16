@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T02:42:28.409793",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• CapCut <admin@mail.capcut.com> → Your CapCut subscription will expire in 7 days..\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-16T02:42:29.167519",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• CapCut  → Your CapCut subscription will expire in 7 days..\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -379,6 +373,12 @@
       "ts": "2026-09-16T02:50:10.041696",
       "kind": "watchdog",
       "text": "👁 Я осліп на частину даних\n\n🔴 strava — функції get_activities немає в monitor.py\n\nПоки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-16T02:50:20.907497",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• CapCut <admin@mail.capcut.com> → Your CapCut subscription will expire in 7 days..\n\n🧹 Реклама: 6 — можна пропустити.",
       "keyboard": null
     }
   ]
