@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-17T00:31:17.822948",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Support Associate (Full-Time Remote) в Wolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79226"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79226"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79226"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79226"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79226"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79226"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-17T00:31:19.093302",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -266,6 +227,12 @@
       "ts": "2026-09-17T00:36:45.135183",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - September 16th, 2026\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 2 нових оголошень\n• Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> → 2\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-17T00:36:46.720142",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Daily Degen  → The Daily Degen - September 16th, 2026\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 2 нових оголошень\n• Oleg Novosadov  → 2\n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
