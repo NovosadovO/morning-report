@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T23:01:35.659940",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78880"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78880"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78880"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78880"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78880"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78880"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-16T23:01:37.070919",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
@@ -652,6 +613,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-16T23:31:24.629774",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>He’s No Longer A Trillionaire, But Here’s Why Elon Musk Rema</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79228"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79228"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79228"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79228"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79228"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79228"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
