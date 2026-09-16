@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T22:31:29.223738",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79220"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79220"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79220"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79220"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79220"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79220"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-16T22:31:30.540318",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>2</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
@@ -652,6 +613,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 2 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-16T23:01:31.506906",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Support Associate (Full-Time Remote) в Wolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79226"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79226"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79226"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79226"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79226"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79226"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
