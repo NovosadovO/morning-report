@@ -1,9 +1,4 @@
 {
-  "78744": {
-    "sender": "spotlight@newsletters.coinmarketcap.com",
-    "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
-    "seen_ts": "2026-09-08T11:15:38.384952+00:00"
-  },
   "78745": {
     "sender": "info@emails.tesco.sk",
     "sender_raw": "\"Tesco Clubcard\" <info@emails.tesco.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-09-16T16:53:15.485480+00:00"
+  },
+  "79215": {
+    "sender": "ben@startengine.com",
+    "sender_raw": "Ben at StartEngine <ben@startengine.com>",
+    "seen_ts": "2026-09-16T17:07:35.771426+00:00"
   }
 }
