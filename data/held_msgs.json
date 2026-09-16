@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T23:31:40.478937",
-      "kind": "chunk",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 The Daily Degen\n📋 The Daily Degen - September 16th, 2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 2 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 2\n📝 (AI-аналіз тимчасово недоступний)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-16T23:45:39.052902",
       "kind": "chunk",
       "text": "🌃\n<b>ЗВІТ  ·  Ср 16.09  ·  23:45</b>\n🏠 Вдома\n<i>Тихо навколо — найкращий час для глибоких думок про майбутнє 💤</i>\n📌 ☀️ Рання зміна (06:00-18:00) +7\n\n⚡ <b>День: ⭐⭐☆☆☆ 45/100</b>  ↓10 vs вчора\n\n☀️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>19°C</b>\n<i>👌 Комфортно — ідеально для прогулянки</i>\n\n📅 <b>Прогноз сьогодні:</b>\n06:12   🌇 18:45  09:00 ☁️20°  │  12:00 ☁️22°  │  15:00 ☁️22°🌧55%  │  18:00 ☁️18°🌧89%  │  21:00 ☁️15°🌧59%\n\n<b>Завтра:</b>  ☁️ Хмарно  🔻15°  /  🔺22°\n<code>09:00</code> ☁️20°  │  <code>12:00</code> ☁️22°  │  <code>15:00</code> ☁️22°🌧55%  │  <code>18:00</code> ☁️18°🌧89%  │  <code>21:00</code> ☁️15°🌧59%\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n  • 🚧 Перекрито — Baštová\n  • 🚧 Перекрито — Tajovského\n\n💰\n<b>КРИПТО  ·  🔴 ВЕДМЕЖИЙ 📉</b>\n🔻 <b>BTC</b> <code>$75,913.00</code>  -0.15%\n🔻 <b>ETH</b> <code>$2,400.36</code>  -0.26%\n🔻 <b>AVAX</b> <code>$7.36</code>  -0.27%\n🔻 <b>ONDO</b> <code>$0.34</code>  -0.30%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🔴 <b>IBIT</b>  <code>$43.04</code>  <i>-0.16% за день</i>\n🔴 <b>ETHA</b>  <code>$18.15</code>  <i>-0.27% за день</i>\n⚪️ <b>VAVA</b>  <code>$0.64</code>\n🔴 <b>GAVA</b>  <code>$17.83</code>  <i>-0.20% за день</i>\n🟢 <b>QQQ</",
@@ -539,6 +533,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79220"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-17T00:01:22.954612",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>2</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79061"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79061"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79061"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79061"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79061"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79061"
             }
           ]
         ]
