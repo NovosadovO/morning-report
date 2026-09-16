@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-09-16t05_00_12_407706": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-16T05:00:12.407706"
+  },
+  "action_detect|2026-09-16t04_50_06_828371": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
+    "ts": "2026-09-16T04:50:06.828371"
+  },
   "selfact|2026-09-16t04_49_58_855605": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Рання зміна скоро\",     \"text\": \"Олеже, нагадую, що о 05:00 починається твоя рання зміна на заводі. Поточний ч",
@@ -288,15 +298,5 @@
     "topic": "themes_ai",
     "gist": "Олеже, вечір вівторка, 15 вересня, показує цікаву картину твого дня. Важливо зосередитися на ключових моментах, щоб рухатися вперед.  💰 ФІНАНСИ Бачу, що наразі ",
     "ts": "2026-09-15T21:01:43.568072"
-  },
-  "email_ai_item|2026-09-15t21_01_28_118425": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист від Олега Новосадова містить посилання на оголошення про продаж модернізованої 3-кімнатної квартири площею 65м² на сайті bazos.sk.",
-    "ts": "2026-09-15T21:01:28.118425"
-  },
-  "action_detect|2026-09-15t21_01_24_227740": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-15T21:01:24.227740"
   }
 }
