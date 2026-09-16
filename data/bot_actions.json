@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нова виплатна відомість Minebea",
-      "detail": "З листів від ehuman@minebeamitsumi.eu | [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu та ehuman@minebeamitsumi.eu | [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026.",
-      "module": "selfact",
-      "ts": "2026-09-12T22:57:15"
-    },
-    {
-      "kind": "notify",
       "what": "Голосування Сенату США щодо Clarity Act",
       "detail": "З календаря на 7 днів: 15.09: 08:00 ⏳ Голосування Сенату США щодо Clarity Act.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "повна аналітика здоров'я",
       "module": "selfact",
       "ts": "2026-09-16T20:01:24"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, на Facebook було попередження про вхід з нового прист",
+      "detail": "Лист від Facebook 'Це ви щойно увійшли неподалік Kosice з нового пристрою?' потребує уваги Олега, оскільки це може бути спроба несанкціонованого доступу.",
+      "module": "selfact",
+      "ts": "2026-09-16T20:12:06"
     }
   ]
 }
