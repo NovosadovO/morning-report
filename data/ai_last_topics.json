@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-16t06_21_46_216856": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нагадування про дерматолога\",     \"text\": \"Олег, сьогодні о 09:00 у тебе реєстрація до дерматолога. Не забудь ",
+    "ts": "2026-09-16T06:21:46.216856"
+  },
   "bills|2026-09-16t06_16_59_166327": {
     "topic": "bills",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Прийняти Armolopid Plus п",
     "ts": "2026-09-16T04:31:16.816941"
-  },
-  "action_detect|2026-09-16t04_30_56_770875": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити воду та здоровий перекус\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Візьми з собою на зм",
-    "ts": "2026-09-16T04:30:56.770875"
   }
 }
