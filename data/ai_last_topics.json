@@ -1,4 +1,14 @@
 {
+  "proactive_actions|2026-09-16t07_30_13_445011": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Зареєструватися до дерматолога\",     \"date\": \"2026-09-16\",     \"time\": \"18:00\",     \"message\": \"Олеже, нагад",
+    "ts": "2026-09-16T07:30:13.445011"
+  },
+  "email_ai_item|2026-09-16t07_26_21_603126": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Lidl інформує Олега про онлайн-знижку 20% на товари Silvercrest, яка закінчується опівночі. Також у листі згадується про актуа",
+    "ts": "2026-09-16T07:26:21.603126"
+  },
   "selfact|2026-09-16t07_23_24_547964": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що у тебе є два листи від ehuman@minebeamitsumi.eu з виплатними картками за серпень 2026 ро",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
     "ts": "2026-09-16T05:24:05.403652"
-  },
-  "action_detect|2026-09-16t05_21_42_374909": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
-    "ts": "2026-09-16T05:21:42.374909"
-  },
-  "day_mode|2026-09-16t05_21_33_711480": {
-    "topic": "day_mode",
-    "gist": "```json {   \"text\": \"Привіт, Олеже! 👋 Бачу, сьогодні ти сповнений сили (💪) і готовий підкорювати нові вершини! Це чудово, адже попереду рання зміна, а після неї",
-    "ts": "2026-09-16T05:21:33.711480"
   }
 }
