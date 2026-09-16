@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T03:34:43.616258",
-      "kind": "deadlines",
-      "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 14 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Підписка Apple — закінчення терміну дії\n📆 до 2026-09-30\n🏢 Apple\n\n➡️ Перевірити підписку Apple та вирішити, чи потрібно її продовжувати.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-16T03:34:45.598131",
       "kind": "deadlines",
       "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 14 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Підписка Apple — закінчення</b>\n📆 до <b>2026-09-30</b>\n🏢 Apple\n\n➡️ Перевірити статус підписки Apple та вирішити, чи потрібно її продовжувати.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79175"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T03:46:39.320904",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79174"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79174"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79174"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79174"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79174"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79174"
             }
           ]
         ]
