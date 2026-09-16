@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "cw_ok_808c598b46",
-      "label": "✅ Пам'ятаю",
-      "ts": "2026-08-31T11:50:17"
-    },
-    {
-      "t": "btn",
       "data": "rx_ok_801e67581e",
       "label": "👌 Прийняв",
       "ts": "2026-08-31T11:50:27"
@@ -7199,6 +7193,12 @@
       "data": "calrem_skip_habit_checkin_1789585245",
       "label": "❌ Не треба",
       "ts": "2026-09-16T21:01:11"
+    },
+    {
+      "t": "btn",
+      "data": "reminder_yes_health_data_daily",
+      "label": "✅ Вже ввів",
+      "ts": "2026-09-16T21:01:14"
     }
   ]
 }
