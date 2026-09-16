@@ -11276,7 +11276,24 @@
     "action": "calrem_skip",
     "pid": "vip_email_1789552098",
     "subject": "Переглянути вплив ринкових рухів на портфель",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 95114,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_vip_email_1789552098"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_vip_email_1789552098"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-16T11:54:43.873112+00:00"
   }
 }
