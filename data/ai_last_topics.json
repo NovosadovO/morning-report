@@ -1,4 +1,29 @@
 {
+  "selfact|2026-09-16t13_00_48_286644": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від Oleg Novosadov з посиланням на оголошення про продаж 3-кімнатної квартири в Коши",
+    "ts": "2026-09-16T13:00:48.286644"
+  },
+  "mailcal_extract|2026-09-16t12_53_42_787214": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-16T12:53:42.787214"
+  },
+  "action_detect|2026-09-16t12_53_31_996504": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відновити підписку Strava\", \"action_date\": null, \"action_time\": \"18:00\", \"action_summary\": \"Після зміни о 18:00 пер",
+    "ts": "2026-09-16T12:53:31.996504"
+  },
+  "msg_vip_email_truthfix|2026-09-16t12_53_24_489599": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Олеже, твій показник здоров'я сьогодні становить 65%, що є нижчим за вчорашні 95%. При цьому дані Strava залишаються заблокованими з 4 серпня, тобто вже 43 дні,",
+    "ts": "2026-09-16T12:53:24.489599"
+  },
+  "msg_vip_email|2026-09-16t12_53_13_748972": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Попри сьогоднішній показник здоров'я в 65% (найнижчий за 5 днів), ти все ще ігноруєш прострочену підписку Strava з 4 серпня (-43 дні), що блоку",
+    "ts": "2026-09-16T12:53:13.748972"
+  },
   "email_ai_item|2026-09-16t12_52_52_015635": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Temu інформує про відправлення «відданої винагороди» 16 вересня 2026 року. Лист містить посилання на рекомендовані товари,",
@@ -273,30 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Біг\", \"action_date\": \"2026-09-15\", \"action_time\": \"08:00\", \"action_summary\": \"Олег планує біг на 15 вересня 2026 ро",
     "ts": "2026-09-16T11:24:34.445960"
-  },
-  "mailcal_extract|2026-09-16t11_22_37_209231": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-09-16T11:22:37.209231"
-  },
-  "selfact|2026-09-16t11_13_07_283214": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу на лист від Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> з посиланням на оголошення п",
-    "ts": "2026-09-16T11:13:07.283214"
-  },
-  "action_detect|2026-09-16t11_02_30_730419": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": null, \"action_time\": \"18:00\", \"action_summary\": \"Оновити платіж",
-    "ts": "2026-09-16T11:02:30.730419"
-  },
-  "action_detect|2026-09-16t11_02_17_426485": {
-    "topic": "action_detect",
-    "gist": "```json { \"action_type\": \"calendar\", \"action_title\": \"Реєстрація до дерматолога\", \"action_date\": \"2026-09-16\", \"action_time\": \"10:00\", \"action_summary\": \"Зареєс",
-    "ts": "2026-09-16T11:02:17.426485"
-  },
-  "action_detect|2026-09-16t11_02_17_321187": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
-    "ts": "2026-09-16T11:02:17.321187"
   }
 }
