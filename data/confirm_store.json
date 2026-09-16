@@ -11338,7 +11338,24 @@
     "action": "calrem_skip",
     "pid": "79219",
     "subject": "Це ви щойно увійшли неподалік Kosice з нового пристрою?",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 95448,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_79219"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_79219"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-16T19:43:14.281442+00:00"
   }
 }
