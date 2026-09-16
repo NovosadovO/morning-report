@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-17T00:01:25.644196",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78870"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78870"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78870"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78870"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78870"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78870"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-17T00:01:29.121001",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 45 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '45 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 83.2 кг, ціль 78 кг (тренд -0.8 кг за останні 5 замірів). Кроки: 28555 (ціль 10000). Сон: 5.7г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 1 непрочитаних\n📅 Календар: 06:00 ☀️ Рання зміна (06:00-18:00), 10:00 Лікар",
@@ -245,6 +206,12 @@
       "ts": "2026-09-17T00:07:14.422097",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - September 16th, 2026\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 2 нових оголошень\n• Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> → 2\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-17T00:07:15.167256",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Daily Degen  → The Daily Degen - September 16th, 2026\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 2 нових оголошень\n• Oleg Novosadov  → 2\n• ehuman@minebeamitsumi.eu → [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
