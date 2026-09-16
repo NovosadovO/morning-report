@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-17T01:46:40.259184",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>He’s No Longer A Trillionaire, But Here’s Why Elon Musk Rema</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79228"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79228"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79228"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79228"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79228"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79228"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-17T01:46:41.599259",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - September 16th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -299,6 +260,12 @@
       "ts": "2026-09-17T01:52:23.595005",
       "kind": "lifecycle",
       "text": "⏳ СКОРО ПРОДОВЖЕННЯ\n━━━━━━━━━━━━━━━━━━━━\n🔄 Підписка CapCut\n💸 Оплата: 22.09.2026 — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-17T01:52:40.919302",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - September 16th, 2026\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 2 нових оголошень\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
