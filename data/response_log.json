@@ -12833,6 +12833,17 @@
       "category": "confirm",
       "question": "gate_cal_add: Лікар",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-16T11:29:33.961728+00:00",
+      "category": "calendar_confirm",
+      "question": "Лікар",
+      "answer": "✅ Додано",
+      "extra": {
+        "events": [
+          "Лікар"
+        ]
+      }
     }
   ]
 }
