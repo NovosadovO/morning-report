@@ -12856,6 +12856,16 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "весь сектор RWA додав 44.8% за 24 години (капіталізація $68.68B)"
+    },
+    {
+      "ts": "2026-09-16T12:00:19.728214+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Перевірити виплатні листи Minebea",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-16"
+      }
     }
   ]
 }
