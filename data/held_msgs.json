@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T23:16:07.709161",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78880"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78880"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78880"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78880"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78880"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78880"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-16T23:16:09.043677",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
@@ -642,6 +603,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79227"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T23:45:50.181384",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Support Associate (Full-Time Remote) в Wolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79226"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79226"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79226"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79226"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79226"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79226"
             }
           ]
         ]
