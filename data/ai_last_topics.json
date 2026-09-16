@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-16t04_49_58_855605": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Рання зміна скоро\",     \"text\": \"Олеже, нагадую, що о 05:00 починається твоя рання зміна на заводі. Поточний ч",
+    "ts": "2026-09-16T04:49:58.855605"
+  },
+  "action_detect|2026-09-16t04_49_04_829045": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь записати сьог",
+    "ts": "2026-09-16T04:49:04.829045"
+  },
   "action_detect|2026-09-16t04_45_26_623164": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати вагу в Ap",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Олегу потрібно прийняти A",
     "ts": "2026-09-15T21:01:24.227740"
-  },
-  "email_ai_item|2026-09-15t21_01_17_036203": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від CapCut повідомляє, що термін дії підписки закінчується через 7 днів. Це нагадування про необхідність продовжити підписку, ",
-    "ts": "2026-09-15T21:01:17.036203"
-  },
-  "action_detect|2026-09-15t21_01_01_994664": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Підписка Strava прострочена ",
-    "ts": "2026-09-15T21:01:01.994664"
   }
 }
