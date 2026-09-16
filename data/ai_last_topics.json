@@ -1,4 +1,39 @@
 {
+  "msg_idle_timeout|2026-09-16t19_28_21_743604": {
+    "topic": "MSG_IDLE_TIMEOUT",
+    "gist": "Привіт Олеже! 🚶  Вечір після зміни – це час для заслуженого відпочинку. Бачу, твій організм вже 8 годин неактивний, і це зрозуміло після ранньої зміни, що завер",
+    "ts": "2026-09-16T19:28:21.743604"
+  },
+  "selfact|2026-09-16t19_25_16_623710": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твій бюджет Google Cloud досяг 100% (€16.00) за вересень. Перевір деталі у консолі.\",     \"why\": \"Отрима",
+    "ts": "2026-09-16T19:25:16.623710"
+  },
+  "action_detect|2026-09-16t19_24_00_482545": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Погода на завтра\", \"action_date\": \"2024-09-17\", \"action_time\": null, \"action_summary\": \"На завтра, 17.09, очікуєтьс",
+    "ts": "2026-09-16T19:24:00.482545"
+  },
+  "action_detect|2026-09-16t19_23_53_233825": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
+    "ts": "2026-09-16T19:23:53.233825"
+  },
+  "action_detect|2026-09-16t19_22_54_421589": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
+    "ts": "2026-09-16T19:22:54.421589"
+  },
+  "action_detect|2026-09-16t19_22_43_442731": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
+    "ts": "2026-09-16T19:22:43.442731"
+  },
+  "action_detect|2026-09-16t19_22_43_373008": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-16T19:22:43.373008"
+  },
   "action_detect|2026-09-16t19_22_32_515318": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
@@ -263,40 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, зверніть увагу: платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію, щоб уник",
     "ts": "2026-09-16T17:53:33.748418"
-  },
-  "selfact|2026-09-16t17_37_48_321169": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на підписку Runable: платежі на $10.00 були невдалими кілька разів у серпні. Вона досі актив",
-    "ts": "2026-09-16T17:37:48.321169"
-  },
-  "selfact|2026-09-16t17_22_36_267176": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу: у вас є непрочитані листи від LinkedIn з вакансіями Sekretárka/recepčná в ENGIE Slovensko",
-    "ts": "2026-09-16T17:22:36.267176"
-  },
-  "action_detect|2026-09-16t17_19_46_965161": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-16\", \"action_time\": \"18:00\", \"action_summary\": \"Прийняти Armolopi",
-    "ts": "2026-09-16T17:19:46.965161"
-  },
-  "msg_vip_email_truthfix|2026-09-16t17_19_38_218693": {
-    "topic": "MSG_VIP_EMAIL/truthfix",
-    "gist": "Привіт Олеже! Твоя рання зміна добігає кінця, залишилося менше години, і це може бути час для підсумків та планування.  Дані щодо ринку криптовалют, які є в ная",
-    "ts": "2026-09-16T17:19:38.218693"
-  },
-  "msg_vip_email|2026-09-16t17_19_28_968093": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 📧 Твоя рання зміна добігає кінця, залишилося менше години, і, здається, цей вечір стане часом для важливих підсумків та планування подальших крокі",
-    "ts": "2026-09-16T17:19:28.968093"
-  },
-  "action_detect|2026-09-16t17_14_08_042938": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-16T17:14:08.042938"
-  },
-  "msg_micro_checkin|2026-09-16t17_13_57_556447": {
-    "topic": "MSG_MICRO_CHECKIN",
-    "gist": "Привіт Олеже! 💭 Бачу, твоя рання зміна майже добігає кінця – всього хвилин 45, і ти будеш вільний! Сьогоднішній день, судячи з оцінки дня, був досить напруженим",
-    "ts": "2026-09-16T17:13:57.556447"
   }
 }
