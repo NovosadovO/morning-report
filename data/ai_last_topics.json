@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-16t12_45_15_755766": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні, 16.09, о 09:00 була запланована реєстрація до дерматолога. Згідно з календарем, ти ",
+    "ts": "2026-09-16T12:45:15.755766"
+  },
   "action_detect|2026-09-16t12_34_44_521769": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-16\", \"action_time\": null, \"action_summary\": \"Олегу потрібно прийн",
     "ts": "2026-09-16T11:02:06.327215"
-  },
-  "briefing_truthfix|2026-09-16t11_02_02_801261": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже,  **Що робити зараз, коли ти на зміні?**  1.  **Перевір ONDO та XLM в обідню перерву.** За даними на 16 вересня 2026 року, 11:02, ONDO у червоній зоні (-5",
-    "ts": "2026-09-16T11:02:02.801261"
   }
 }
