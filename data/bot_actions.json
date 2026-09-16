@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, є нові оголошення про квартири у Кошице: одне від 11 в",
-      "detail": "Олег отримує сповіщення про нові квартири, і бот має його інформувати про це.",
-      "module": "selfact",
-      "ts": "2026-09-12T22:42:01"
-    },
-    {
-      "kind": "notify",
       "what": "Нова виплатна відомість Minebea",
       "detail": "З листів від ehuman@minebeamitsumi.eu | [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu та ehuman@minebeamitsumi.eu | [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Отримано лист від Google Cloud Billing Alerts про досягнення 100% бюджету.",
       "module": "selfact",
       "ts": "2026-09-16T19:56:48"
+    },
+    {
+      "kind": "hcoach",
+      "what": "full_report",
+      "detail": "повна аналітика здоров'я",
+      "module": "selfact",
+      "ts": "2026-09-16T20:01:24"
     }
   ]
 }
