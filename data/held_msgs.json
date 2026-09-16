@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T03:19:42.771409",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 15 nových pracovných ponúk\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-16T03:20:51.571546",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\" <support@profesia.sk> → 15 nových pracovných ponúk\n\n🧹 Реклама: 5 — можна пропустити.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79174"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T03:31:19.756084",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>15 nových pracovných ponúk</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79173"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79173"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79173"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79173"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79173"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79173"
             }
           ]
         ]
