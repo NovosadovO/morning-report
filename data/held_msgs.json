@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-17T01:16:41.480583",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 16th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79227"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79227"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79227"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79227"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79227"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79227"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-17T01:16:42.635152",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Support Associate (Full-Time Remote) в Wolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -299,6 +260,12 @@
       "ts": "2026-09-17T01:21:59.207223",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Daily Degen  → The Daily Degen - September 16th, 2026\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 2 нових оголошень\n• Oleg Novosadov  → 2\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-17T01:23:00.946229",
+      "kind": "lifecycle",
+      "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
       "keyboard": null
     }
   ]
