@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-16t20_42_57_800339": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег проігнорував сповіщення про нові квартири у Кошиці, натиснувши 'Видалити'.\",     \"why\": \"Зі свіжих листів ви",
+    "ts": "2026-09-16T20:42:57.800339"
+  },
+  "mailcal_extract|2026-09-16t20_28_57_832205": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-16T20:28:57.832205"
+  },
   "selfact|2026-09-16t20_27_40_442711": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег ігнорує сповіщення про крипто-дайджести та інші новинні розсилки, натискаючи 'Видалити' або 'Не треба'.\",   ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
     "ts": "2026-09-16T19:02:05.120348"
-  },
-  "action_detect|2026-09-16t19_01_52_816876": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реєстрація до дерматолога\", \"action_date\": \"2026-09-16\", \"action_time\": \"10:00\", \"action_summary\": \"Зареєструватися",
-    "ts": "2026-09-16T19:01:52.816876"
-  },
-  "action_detect|2026-09-16t19_01_52_783776": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-09-16\", \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято A",
-    "ts": "2026-09-16T19:01:52.783776"
   }
 }
