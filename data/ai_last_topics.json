@@ -1,4 +1,19 @@
 {
+  "action_detect|2026-09-16t10_34_28_817045": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-16T10:34:28.817045"
+  },
+  "proactive_actions|2026-09-16t10_30_12_894284": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Зареєструватися до дерматолога\",     \"date\": \"2026-09-16\",     \"time\": \"18:00\",     \"message\": \"Олеже, нагад",
+    "ts": "2026-09-16T10:30:12.894284"
+  },
+  "email_ai_item|2026-09-16t10_29_47_763076": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Asteria Events запрошує на стартовий семінар «WEXO SuperApp a Founders Pack» у Зволені 10 жовтня 2026 року. Реєстрація починає",
+    "ts": "2026-09-16T10:29:47.763076"
+  },
   "selfact|2026-09-16t10_26_33_675126": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нова вакансія в Празі\",     \"text\": \"Олеже, LinkedIn надіслав нове сповіщення про вакансію Automation & Operat",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Запланувати покращення фізичного стану та переглянути дедлайни\", \"action_date\": \"2026-09-16\", \"action_time\"",
     "ts": "2026-09-16T08:03:51.192513"
-  },
-  "action_detect|2026-09-16t08_03_50_943343": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Працювати над вагою\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно активно п",
-    "ts": "2026-09-16T08:03:50.943343"
-  },
-  "action_detect|2026-09-16t08_03_50_865068": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
-    "ts": "2026-09-16T08:03:50.865068"
-  },
-  "action_detect|2026-09-16t08_03_40_145259": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Оновити платіжну інформацію Strava\",   \"action_date\": null,   \"action_time\": null,   \"action_summary\":",
-    "ts": "2026-09-16T08:03:40.145259"
   }
 }
