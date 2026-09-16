@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T03:34:42.928365",
-      "kind": "deadlines",
-      "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 14 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Підписка Apple — закінчення терміну дії</b>\n📆 до <b>2026-09-30</b>\n🏢 Apple\n\n➡️ Перевірити підписку Apple та вирішити, чи потрібно її продовжувати.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-16T03:34:43.616258",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 14 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Підписка Apple — закінчення терміну дії\n📆 до 2026-09-30\n🏢 Apple\n\n➡️ Перевірити підписку Apple та вирішити, чи потрібно її продовжувати.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-16T03:46:38.147489",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Crypto Didn't Get CLARITY, But it Can Still Get Clarity</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79175"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79175"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79175"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79175"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79175"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79175"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
