@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T03:01:55.385004",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• CapCut <admin@mail.capcut.com> → Your CapCut subscription will expire in 7 days..\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-16T03:01:56.101387",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• CapCut  → Your CapCut subscription will expire in 7 days..\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -215,6 +209,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-16T03:15:56.061256",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Crypto Didn't Get CLARITY, But it Can Still Get Clarity</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79175"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79175"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79175"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79175"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79175"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79175"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
