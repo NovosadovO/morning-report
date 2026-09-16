@@ -1,4 +1,9 @@
 {
+  "subs|2026-09-16t09_36_37_408346": {
+    "topic": "subs",
+    "gist": "```json [   {     \"uid\": \"78780\",     \"vendor\": \"Google Health\",     \"amount\": null,     \"currency\": null,     \"cycle\": \"weekly\",     \"charge_date\": null,     \"",
+    "ts": "2026-09-16T09:36:37.408346"
+  },
   "selfact|2026-09-16t09_25_36_098315": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Зміни на заводі\",     \"text\": \"Олег, зверни увагу, що у тебе заплановані ранкові зміни з 16 по 19 вересня. Сьо",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Переглянути виплатну квитанцію\", \"action_date\": \"2026-08-31\", \"action_time\": \"17:00\", \"action_summary\": \"Пі",
     "ts": "2026-09-16T07:33:22.169587"
-  },
-  "msg_event_soon_truthfix|2026-09-16t07_33_14_037280": {
-    "topic": "MSG_EVENT_SOON/truthfix",
-    "gist": "Олеже, дані показують зміни на ринку та у твоєму здоров'ї.  Крипторинок демонструє корекцію: BTC знизився на 2.1%, ETH на 3.4%, XRP на 7.6% за останні 24 години",
-    "ts": "2026-09-16T07:33:14.037280"
   }
 }
