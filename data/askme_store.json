@@ -11720,5 +11720,28 @@
       "start": "2026-09-16T20:00:00"
     },
     "ts": "2026-09-16T14:33:40.532999+00:00"
+  },
+  "86af8adec4": {
+    "key": "note|олег ігнорує сповіщення від the daily bone та morning report",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег ігнорує сповіщення від The Daily Bone та Morning Report »\n\nОлег ігнорує сповіщення від The Daily Bone та Morning Report, натискаючи 'Видалити' або 'Не треба'.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег ігнорує сповіщення від The Daily Bone та Morning Report",
+      "desc": "Олег ігнорує сповіщення від The Daily Bone та Morning Report, натискаючи 'Видалити' або 'Не треба'.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-16T15:04:15.737276+00:00"
   }
 }
