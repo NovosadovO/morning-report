@@ -1,9 +1,4 @@
 {
-  "78705": {
-    "sender": "hello@plunge.com",
-    "sender_raw": "PLUNGE <hello@plunge.com>",
-    "seen_ts": "2026-09-07T15:18:43.043286+00:00"
-  },
   "78708": {
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
@@ -1498,5 +1493,10 @@
     "sender": "offers@travel.wizznews.com",
     "sender_raw": "\"Wizz Air\" <offers@travel.wizznews.com>",
     "seen_ts": "2026-09-16T02:15:58.403662+00:00"
+  },
+  "79178": {
+    "sender": "news@mail.lidlplus.sk",
+    "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
+    "seen_ts": "2026-09-16T05:26:22.426467+00:00"
   }
 }
