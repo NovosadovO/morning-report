@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T23:01:30.298596",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>  🔴 2 непрочитаних",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-16T23:01:31.506906",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Support Associate (Full-Time Remote) в Wolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -718,6 +712,45 @@
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 The Daily Degen\n📋 The Daily Degen - September 16th, 2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 2 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 2\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-16T23:27:15.581304",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Forbes через LinkedIn</b>\n📋 Тема: «He’s No Longer A Trillionaire, But Here’s Why Elon Musk Remains Americ»\n\n<i>«Forbes P.M.\r\n\r\nАвтор: Forbes\r\n\r\n\r\nАвтор: Forbes\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/hes-longer-trillionaire-heres-why-elon-musk-remains-americas-v4qze?lipi=urn%3Ali%3Apage%3Aemail_email_series...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79228"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79228"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79228"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79228"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79228"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79228"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
