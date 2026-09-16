@@ -298,5 +298,15 @@
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від 0xResearch є щотижневим оглядом новин крипторинку. Він інформує про падіння ринку після провалу законопроєкту CLARITY Act у Сенаті",
     "ts": "2026-09-16T18:01:39.043747"
+  },
+  "action_detect|2026-09-16t19_49_53_779649": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
+    "ts": "2026-09-16T19:49:53.779649"
+  },
+  "openloop_promises|2026-09-16t19_46_02_954890": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-16T19:46:02.954890"
   }
 }
