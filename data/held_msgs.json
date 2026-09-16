@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-17T01:12:31.533607",
-      "kind": "lifecycle",
-      "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-17T01:12:32.310794",
       "kind": "lifecycle",
       "text": "⏳ СКОРО ПРОДОВЖЕННЯ\n━━━━━━━━━━━━━━━━━━━━\n🔄 Підписка CapCut\n💸 Оплата: 22.09.2026 — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79220"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-17T01:16:47.210077",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>2</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79061"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79061"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79061"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79061"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79061"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79061"
             }
           ]
         ]
