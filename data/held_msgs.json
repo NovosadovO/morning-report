@@ -269,6 +269,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-16T22:01:43.871686",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Schwab Is Bringing AVAX to Traditional Investors</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78683"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78683"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78683"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78683"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78683"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78683"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
