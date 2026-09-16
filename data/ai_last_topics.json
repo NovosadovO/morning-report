@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-09-16t12_52_52_015635": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Temu інформує про відправлення «відданої винагороди» 16 вересня 2026 року. Лист містить посилання на рекомендовані товари,",
+    "ts": "2026-09-16T12:52:52.015635"
+  },
   "selfact|2026-09-16t12_45_15_755766": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні, 16.09, о 09:00 була запланована реєстрація до дерматолога. Згідно з календарем, ти ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
     "ts": "2026-09-16T11:02:17.321187"
-  },
-  "action_detect|2026-09-16t11_02_06_327215": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2026-09-16\", \"action_time\": null, \"action_summary\": \"Олегу потрібно прийн",
-    "ts": "2026-09-16T11:02:06.327215"
   }
 }
