@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T02:01:22.376488",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Technik/čka servisného oddelenia – podmienka § 22 в ENGIE Sl</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79167"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79167"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79167"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79167"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79167"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79167"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-16T02:01:23.597642",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>We stopped trusting posted APY and built a better way to ver</b>\n👤 DefiLlama Newsletter &lt;defillama@mail.beehiiv.com&gt;",
@@ -281,6 +242,45 @@
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• CapCut  → Your CapCut subscription will expire in 7 days..\n\n🧹 Реклама: 6 — можна пропустити.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-16T02:13:52.874900",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Account Manager (Chinese speaker) в Scrambly»\n\n<i>«Сповіщення про вакансії за запитом Менеджер облікових записів в Kosice          \r\nНова вакансія відповідає вашим налаштуванням.\r\n            \r\nAccount Manager (Chinese speaker)\r\nScrambly\r\nSlovakia\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4465242368/?trackingId=ljEyx8U%2BKu7ONLu...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79171"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79171"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79171"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79171"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79171"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79171"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
