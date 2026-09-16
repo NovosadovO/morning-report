@@ -1,4 +1,14 @@
 {
+  "deadlines|2026-09-16t13_36_40_552088": {
+    "topic": "deadlines",
+    "gist": "```json [] ```",
+    "ts": "2026-09-16T13:36:40.552088"
+  },
+  "selfact|2026-09-16t13_32_28_833632": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від Minebea з виправленою виплатною відомістю за серпень 2026 року. Можливо, тобі по",
+    "ts": "2026-09-16T13:32:28.833632"
+  },
   "proactive_actions|2026-09-16t13_30_15_564339": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Зареєструватися до дерматолога\",     \"date\": \"2026-09-16\",     \"time\": \"18:00\",     \"message\": \"Олеже, нагад",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверніть увагу: платіж до Runable на $10.00 був невдалим. Потрібн",
     "ts": "2026-09-16T11:59:24.387848"
-  },
-  "action_detect|2026-09-16t11_53_39_370660": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
-    "ts": "2026-09-16T11:53:39.370660"
-  },
-  "action_detect|2026-09-16t11_48_18_889506": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути вплив ринкових рухів на портфель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після з",
-    "ts": "2026-09-16T11:48:18.889506"
   }
 }
