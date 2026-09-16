@@ -12694,6 +12694,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_8d69e036e2"
+    },
+    {
+      "ts": "2026-09-16T05:21:29.819690+00:00",
+      "category": "day_energy",
+      "question": "Як ти сьогодні",
+      "answer": "Сила",
+      "extra": {
+        "shift": "early"
+      }
     }
   ]
 }
