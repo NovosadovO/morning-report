@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_skip_done_vq1cms4u3lma649du3c6fchuqo_2026-08-31",
-      "label": "⏭ Перенести",
-      "ts": "2026-08-31T10:24:02"
-    },
-    {
-      "t": "btn",
       "data": "rx_later_611ea5c467",
       "label": "⏰ Пізніше",
       "ts": "2026-08-31T10:55:39"
@@ -7199,6 +7193,12 @@
       "data": "email_delete_79218",
       "label": "🗑 Видалити",
       "ts": "2026-09-16T19:49:49"
+    },
+    {
+      "t": "btn",
+      "data": "email_delete_79223",
+      "label": "🗑 Видалити",
+      "ts": "2026-09-16T20:11:20"
     }
   ]
 }
