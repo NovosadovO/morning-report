@@ -12948,6 +12948,12 @@
       "category": "confirm",
       "question": "calrem_skip: Це ви щойно увійшли неподалік Kosice з нового пристрою?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-16T19:50:16.859957+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_99b41ab70a"
     }
   ]
 }
