@@ -1,9 +1,4 @@
 {
-  "78743": {
-    "sender": "team@ship.emergent.sh",
-    "sender_raw": "Emergent <team@ship.emergent.sh>",
-    "seen_ts": "2026-09-08T11:13:33.082817+00:00"
-  },
   "78744": {
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
@@ -1498,5 +1493,10 @@
     "sender": "cloudplatform-noreply@google.com",
     "sender_raw": "Google Cloud Billing Alerts <CloudPlatform-noreply@google.com>",
     "seen_ts": "2026-09-16T16:40:57.763162+00:00"
+  },
+  "79213": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-16T16:53:15.485480+00:00"
   }
 }
