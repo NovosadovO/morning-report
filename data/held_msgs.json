@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T23:01:47.871670",
-      "kind": "chunk",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 2 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 2\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-16T23:08:57.265184",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Daily Degen</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «The Daily Degen - September 16th, 2026»\n\n<i>«View this post on the web at https://thedailydegen.substack.com/p/the-daily-degen-september-16th-2026\r\n\r\nHappy Wednesday friends! The Fed has raised rates for the first time since 2023!\r\nLet’s dive in!\r\nAs always… stats/alerts/etc at top and tweets/news/links/videos/etc at bottom… and all tweets are...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -677,6 +671,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_78880"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T23:31:32.682518",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78870"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78870"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78870"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78870"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78870"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78870"
             }
           ]
         ]
