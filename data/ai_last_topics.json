@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-16t20_27_40_442711": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег ігнорує сповіщення про крипто-дайджести та інші новинні розсилки, натискаючи 'Видалити' або 'Не треба'.\",   ",
+    "ts": "2026-09-16T20:27:40.442711"
+  },
   "bills|2026-09-16t20_19_03_120027": {
     "topic": "bills",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-09-16\", \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято A",
     "ts": "2026-09-16T19:01:52.783776"
-  },
-  "action_detect|2026-09-16t19_01_41_779258": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": \"2023-09-16\", \"action_time\": \"23:00\", \"action_summary\": \"Олегу потрібно пр",
-    "ts": "2026-09-16T19:01:41.779258"
   }
 }
