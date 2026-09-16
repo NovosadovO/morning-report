@@ -12783,6 +12783,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_6fcc66f898"
+    },
+    {
+      "ts": "2026-09-16T08:53:23.608390+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Запланувати покращення фізичного стану та переглянути дедлай",
+      "answer": "yes"
     }
   ]
 }
