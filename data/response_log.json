@@ -12807,6 +12807,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_daad4a39fe"
+    },
+    {
+      "ts": "2026-09-16T10:30:16.002386+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові оголошення про квартири",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-16"
+      }
     }
   ]
 }
