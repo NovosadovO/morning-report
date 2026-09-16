@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T02:50:09.451366",
-      "kind": "watchdog",
-      "text": "👁 <b>Я осліп на частину даних</b>\n\n🔴 <b>strava</b> — функції get_activities немає в monitor.py\n\n<i>Поки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-16T02:50:10.041696",
       "kind": "watchdog",
       "text": "👁 Я осліп на частину даних\n\n🔴 strava — функції get_activities немає в monitor.py\n\nПоки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79170"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T03:01:44.085036",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 AI without the data center</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79169"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79169"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79169"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79169"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79169"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79169"
             }
           ]
         ]
