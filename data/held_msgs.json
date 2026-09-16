@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T02:36:18.883138",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• CapCut  → Your CapCut subscription will expire in 7 days..\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-16T02:36:26.754979",
       "kind": "rwa",
       "text": "🏦 <b>RWA-РАДАР</b>\n━━━━━━━━━━━━━━━━━━━━\n• XLM впав на 8.2% за 24 години (зараз $0.17626)\n• ONDO (твоя позиція) впав на 7.0% за 24 години (зараз $0.32894)\n\n<i>AI-коментар недоступний — вище тільки живі цифри.</i>",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79167"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T02:46:22.758377",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>We stopped trusting posted APY and built a better way to ver</b>\n👤 DefiLlama Newsletter &lt;defillama@mail.beehiiv.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79165"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79165"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79165"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79165"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79165"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79165"
             }
           ]
         ]
