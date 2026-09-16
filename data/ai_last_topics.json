@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-09-16t11_22_37_209231": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-16T11:22:37.209231"
+  },
   "selfact|2026-09-16t11_13_07_283214": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу на лист від Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> з посиланням на оголошення п",
@@ -293,10 +298,5 @@
     "topic": "MSG_EVENT_SOON",
     "gist": "Привіт Олеже! ⏰  Маєш насичений ранок, ти зараз на ранній зміні до 18:00. Однак, вже за годину, о 10:00, тобі потрібно зареєструватися до дерматолога.  **Що взя",
     "ts": "2026-09-16T09:04:04.615414"
-  },
-  "action_detect|2026-09-16t09_02_49_745815": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплата Railway Corporation\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Оплатити 5.00$ дл",
-    "ts": "2026-09-16T09:02:49.745815"
   }
 }
