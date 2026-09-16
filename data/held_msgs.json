@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T02:34:44.747297",
-      "kind": "deadlines",
-      "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 14 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Підписка Apple — закінчення</b>\n📆 до <b>2026-09-30</b>\n🏢 Apple\n\n➡️ Перевірити статус підписки Apple та вирішити, чи потрібно її продовжувати.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-16T02:34:45.511352",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 14 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Підписка Apple — закінчення\n📆 до 2026-09-30\n🏢 Apple\n\n➡️ Перевірити статус підписки Apple та вирішити, чи потрібно її продовжувати.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-16T02:46:16.710766",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Account Manager (Chinese speaker) в Scrambly</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79171"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79171"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79171"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79171"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79171"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79171"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
