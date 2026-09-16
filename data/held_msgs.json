@@ -1,49 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T23:01:45.881668",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 2 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 2\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_79220"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_79061"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: ehuman",
-              "callback_data": "email_reply_78880"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: ehuman",
-              "callback_data": "email_reply_78870"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79220"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79220"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-16T23:01:47.871670",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (4 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 2 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 2\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)",
@@ -681,6 +638,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79061"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T23:31:31.177859",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78880"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78880"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78880"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78880"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78880"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78880"
             }
           ]
         ]
