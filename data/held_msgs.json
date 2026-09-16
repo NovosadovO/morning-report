@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-16T22:01:42.594035",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your weekly progress report from Google Health</b>\n👤 Google Health &lt;google-health-noreply@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_78780"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_78780"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_78780"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_78780"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_78780"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_78780"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-16T22:01:43.871686",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Schwab Is Bringing AVAX to Traditional Investors</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -654,6 +615,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79061"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-16T22:31:31.813449",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_78880"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_78880"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_78880"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_78880"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_78880"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_78880"
             }
           ]
         ]
