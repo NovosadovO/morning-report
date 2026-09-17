@@ -13183,6 +13183,17 @@
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-17T11:52:03.272952+00:00",
+      "category": "calendar_button",
+      "question": "Лікар",
+      "answer": "moved",
+      "extra": {
+        "stage": "after",
+        "when": "10:00–11:00",
+        "note": null
+      }
     }
   ]
 }
