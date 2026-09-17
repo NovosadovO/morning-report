@@ -13148,6 +13148,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Поснідати перед ранньою зміною",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-17T08:44:44.372725+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_4a3c612352"
     }
   ]
 }
