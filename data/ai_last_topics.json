@@ -1,4 +1,24 @@
 {
+  "action_detect|2026-09-17t04_45_36_816275": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зважити себе\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зважити себе зараз і записати в Apple H",
+    "ts": "2026-09-17T04:45:36.816275"
+  },
+  "action_detect|2026-09-17t04_36_55_277567": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Ранні зміни\", \"action_date\": \"2026-09-17\", \"action_time\": null, \"action_summary\": \"Пам'ятай про ранні зміни",
+    "ts": "2026-09-17T04:36:55.277567"
+  },
+  "msg_vip_email_truthfix|2026-09-17t04_36_47_278098": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Олеже, зараз, о 04:36, коли ти готуєшся до ранньої зміни, важливо врахувати, що дані про твоє здоров'я оновлювалися востаннє 29 годин тому, 16 вересня 2026 року",
+    "ts": "2026-09-17T04:36:47.278098"
+  },
+  "msg_vip_email|2026-09-17t04_36_39_785171": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🏹  Перед початком ранкової зміни, коли ти готуєшся до чергового робочого дня, важливо стратегічно оцінити твій поточний стан та зробити висновки, ",
+    "ts": "2026-09-17T04:36:39.785171"
+  },
   "selfact|2026-09-17t04_35_06_064989": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що сьогодні, 17.09, о 05:00 у тебе починається рання зміна на заводі (06:00-18:00). Зараз 04:35,",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
     "ts": "2026-09-16T20:12:16.568301"
-  },
-  "selfact|2026-09-16t20_12_02_940780": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, на Facebook було попередження про вхід з нового пристрою неподалік Кошице. Якщо це були не ви, перевірте",
-    "ts": "2026-09-16T20:12:02.940780"
-  },
-  "email_ai_item|2026-09-16t20_11_11_064388": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист є щоденним інформаційним бюлетенем від The Block, що висвітлює новини криптоіндустрії. Основні теми включають провал Clarity A",
-    "ts": "2026-09-16T20:11:11.064388"
-  },
-  "action_detect|2026-09-16t20_05_01_678235": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оплата Railway Corporation\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Найближча",
-    "ts": "2026-09-16T20:05:01.678235"
-  },
-  "action_detect|2026-09-16t20_04_50_655882": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
-    "ts": "2026-09-16T20:04:50.655882"
   }
 }
