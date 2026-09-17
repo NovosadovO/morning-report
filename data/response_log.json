@@ -13022,6 +13022,17 @@
       "category": "confirm",
       "question": "gate_cal_add: Дерматолог",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-17T04:50:35.310765+00:00",
+      "category": "calendar_confirm",
+      "question": "Дерматолог",
+      "answer": "✅ Додано",
+      "extra": {
+        "events": [
+          "Дерматолог"
+        ]
+      }
     }
   ]
 }
