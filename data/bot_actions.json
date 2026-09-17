@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Виплата зарплати Minebea",
-      "detail": "З листів 'ehuman@minebeamitsumi.eu | Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu' та 'ehuman@minebeamitsumi.eu | Minebea, Výplatná páska/Payslip 08/2026'",
-      "module": "selfact",
-      "ts": "2026-09-13T01:16:58"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, тобі прийшли дві виплатні картки за серпень 2026 року",
       "detail": "Олег отримав два листи про виплатну картку за серпень, один з яких є виправленням формату, що потребує його уваги.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "ранковий план здоров'я",
       "module": "selfact",
       "ts": "2026-09-17T07:00:50"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-09-17",
+      "detail": "автосинк з годинника: steps, hr_avg, calories, weight_kg, spo2, stress, sleep_total_min",
+      "module": "qwsync",
+      "ts": "2026-09-17T09:43:30"
     }
   ]
 }
