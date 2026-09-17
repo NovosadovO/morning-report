@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-17T01:53:56.257067",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Daily Degen  → The Daily Degen - September 16th, 2026\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 2 нових оголошень\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-17T01:54:58.193230",
       "kind": "lifecycle",
       "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79231"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-17T02:01:05.736735",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Market Strategy and Partnerships Manager в Fever</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79230"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79230"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79230"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79230"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79230"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79230"
             }
           ]
         ]
