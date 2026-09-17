@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "qr_ok_3f9d6bcdae",
-      "label": "👍 Ок",
-      "ts": "2026-08-31T17:31:02"
-    },
-    {
-      "t": "btn",
       "data": "calrem_skip_gen_1788199411733",
       "label": "❌ Не треба",
       "ts": "2026-08-31T20:03:47"
@@ -7199,6 +7193,12 @@
       "data": "cw_moved_3c158c3db5",
       "label": "⏭ Перенесли",
       "ts": "2026-09-17T11:52:00"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_skip_done_2ama6jphv3edgnmhfhctvclbu8_2026-09-17",
+      "label": "⏭ Перенести",
+      "ts": "2026-09-17T11:52:08"
     }
   ]
 }
