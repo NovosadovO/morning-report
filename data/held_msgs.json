@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-17T02:31:05.936510",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 16th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79227"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79227"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79227"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79227"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79227"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79227"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-17T02:31:07.215509",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Support Associate (Full-Time Remote) в Wolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -214,6 +175,12 @@
       "ts": "2026-09-17T02:37:15.078717",
       "kind": "lifecycle",
       "text": "⏳ СКОРО ПРОДОВЖЕННЯ\n━━━━━━━━━━━━━━━━━━━━\n🔄 Підписка CapCut\n💸 Оплата: 22.09.2026 — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-17T02:37:35.419746",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - September 16th, 2026\n\n🧹 Реклама: 6 — можна пропустити.",
       "keyboard": null
     }
   ]
