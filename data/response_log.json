@@ -13160,6 +13160,17 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "sleep_7"
+    },
+    {
+      "ts": "2026-09-17T08:53:53.724055+00:00",
+      "category": "calendar_button",
+      "question": "Лікар",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t2h",
+        "when": "10:00–11:00",
+        "note": null
+      }
     }
   ]
 }
