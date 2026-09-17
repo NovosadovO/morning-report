@@ -13200,6 +13200,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_moved_3c158c3db5"
+    },
+    {
+      "ts": "2026-09-17T11:52:09.764547+00:00",
+      "category": "event_done",
+      "question": "🏥 Лікар\nПланувалась до 12:00 — виконано?",
+      "answer": "skip"
     }
   ]
 }
