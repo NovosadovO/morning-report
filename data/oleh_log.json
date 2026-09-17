@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "calrem_skip_gen_1788199411733",
-      "label": "❌ Не треба",
-      "ts": "2026-08-31T20:03:47"
-    },
-    {
-      "t": "btn",
       "data": "email_delete_78322",
       "label": "🗑 Видалити",
       "ts": "2026-08-31T20:04:05"
@@ -7199,6 +7193,12 @@
       "data": "evdone_skip_done_2ama6jphv3edgnmhfhctvclbu8_2026-09-17",
       "label": "⏭ Перенести",
       "ts": "2026-09-17T11:52:08"
+    },
+    {
+      "t": "btn",
+      "data": "email_delete_79262",
+      "label": "🗑 Видалити",
+      "ts": "2026-09-17T14:39:41"
     }
   ]
 }
