@@ -1,9 +1,4 @@
 {
-  "78796": {
-    "sender": "info@mail.uefa.com",
-    "sender_raw": "\"UEFA Champions League\" <info@mail.uefa.com>",
-    "seen_ts": "2026-09-09T08:13:21.076174+00:00"
-  },
   "78798": {
     "sender": "slovnaftmove@mail.loyaltyteam.com",
     "sender_raw": "\"Slovnaft Move\" <slovnaftmove@mail.loyaltyteam.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@news.railway.app",
     "sender_raw": "Railway <hello@news.railway.app>",
     "seen_ts": "2026-09-17T16:17:20.159345+00:00"
+  },
+  "79281": {
+    "sender": "newsletters@e.economist.com",
+    "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
+    "seen_ts": "2026-09-17T16:25:31.721328+00:00"
   }
 }
