@@ -1210,5 +1210,16 @@
     "spo2": 99,
     "source": "qwatch",
     "saved_at": "2026-09-16 20:56"
+  },
+  "2026-09-17": {
+    "hr_avg": 59,
+    "weight_kg": 83.0,
+    "spo2": 97,
+    "stress": 47,
+    "sleep_total_min": 60,
+    "sleep_hours": 1.0,
+    "date": "2026-09-17",
+    "source": "qwatch_auto",
+    "saved_at": "2026-09-17 04:52"
   }
 }
