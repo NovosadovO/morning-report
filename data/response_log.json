@@ -13090,6 +13090,16 @@
         "kind": "calendar",
         "date": "2026-09-18"
       }
+    },
+    {
+      "ts": "2026-09-17T06:00:54.078235+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Прийняти Armolopid Plus",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-17"
+      }
     }
   ]
 }
