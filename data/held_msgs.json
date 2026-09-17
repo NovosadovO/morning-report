@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-17T02:46:43.161816",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Daily Degen  → The Daily Degen - September 16th, 2026\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-17T02:47:44.657835",
       "kind": "lifecycle",
       "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
@@ -148,6 +142,12 @@
       "ts": "2026-09-17T02:54:34.949909",
       "kind": "watchdog",
       "text": "👁 Я осліп на частину даних\n\n🔴 strava — функції get_activities немає в monitor.py\n\nПоки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-17T02:54:45.400608",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - September 16th, 2026\n\n🧹 Реклама: 6 — можна пропустити.",
       "keyboard": null
     }
   ]
