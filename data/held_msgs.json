@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-17T03:39:55.860527",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 9 nových pracovných ponúk\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-17T03:40:57.390748",
-      "kind": "lifecycle",
-      "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-17T03:40:58.095667",
       "kind": "lifecycle",
       "text": "⏳ СКОРО ПРОДОВЖЕННЯ\n━━━━━━━━━━━━━━━━━━━━\n🔄 Підписка CapCut\n💸 Оплата: 22.09.2026 — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
@@ -280,6 +268,51 @@
       "ts": "2026-09-17T03:46:10.540831",
       "kind": "lifecycle",
       "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-17T03:46:11.669030",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Market Strategy and Partnerships Manager в Fever</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79230"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79230"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79230"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79230"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79230"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79230"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-17T03:46:12.299846",
+      "kind": "lifecycle",
+      "text": "⏳ СКОРО ПРОДОВЖЕННЯ\n━━━━━━━━━━━━━━━━━━━━\n🔄 Підписка CapCut\n💸 Оплата: 22.09.2026 — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
       "keyboard": null
     }
   ]
