@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-17T02:30:57.100913",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Office Support в SWEP</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79232"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79232"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79232"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79232"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79232"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79232"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-17T02:30:58.333000",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>SEC, CFTC Say They'll Write the Crypto Rulebook Without Cong</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-09-17T02:35:59.901909",
       "kind": "lifecycle",
       "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-17T02:36:00.636112",
+      "kind": "lifecycle",
+      "text": "⏳ СКОРО ПРОДОВЖЕННЯ\n━━━━━━━━━━━━━━━━━━━━\n🔄 Підписка CapCut\n💸 Оплата: 22.09.2026 — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
       "keyboard": null
     }
   ]
