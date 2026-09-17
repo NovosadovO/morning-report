@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-17T02:01:07.069595",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Monetary policy is going asymmetric</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79229"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79229"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79229"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79229"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79229"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79229"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-17T02:01:08.367818",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>He’s No Longer A Trillionaire, But Here’s Why Elon Musk Rema</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -332,6 +293,12 @@
       "ts": "2026-09-17T02:06:16.346475",
       "kind": "chunk",
       "text": "🔭 Новий транзит\n☽ <b>Місяць</b> ⚹ ☿ <b>Натальний Меркурій</b> (орб 1.3°)\n📍 Місяць у <b>Стрілець ♐</b> | Натальний Меркурій у Терези ♎, 3-й дім\n<i>Секстиль · Комунікація</i>\n\n📖 <b>Що означає Секстиль:</b>\n🟢 Гармонійна можливість — легкий потік енергії. Сприятливий момент діяти, домовлятися, вчитися нового. Потрібна твоя ініціатива.\n\nПривіт, друже! 📅 Сьогодні четвер, 17.09.2026,.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-17T02:07:09.439618",
+      "kind": "lifecycle",
+      "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 5 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
       "keyboard": null
     }
   ]
