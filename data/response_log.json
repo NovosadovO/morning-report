@@ -13142,6 +13142,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-09-17T08:44:00.301823+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Поснідати перед ранньою зміною",
+      "answer": "yes"
     }
   ]
 }
