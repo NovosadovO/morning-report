@@ -13106,6 +13106,15 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "ONDO (твоя позиція) виріс на 6.9% за 24 години (зараз $0.35011)"
+    },
+    {
+      "ts": "2026-09-17T08:42:36.642774+00:00",
+      "category": "day_energy",
+      "question": "Як ти сьогодні",
+      "answer": "Норма",
+      "extra": {
+        "shift": "early"
+      }
     }
   ]
 }
