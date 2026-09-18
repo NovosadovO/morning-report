@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "cal_skip_gen_1788231881374",
-      "label": "",
-      "ts": "2026-09-01T07:32:26"
-    },
-    {
-      "t": "btn",
       "data": "rx_keep_16c2bbb3e0",
       "label": "👌 Лишаю",
       "ts": "2026-09-01T07:32:55"
@@ -7199,6 +7193,12 @@
       "data": "rx_useful_afd79c8254",
       "label": "💡 Корисно",
       "ts": "2026-09-18T20:02:54"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_no_done_stn1e6cav6c7c3urebaobtvol8_2026-09-18",
+      "label": "❌ Не виконано",
+      "ts": "2026-09-18T20:03:17"
     }
   ]
 }
