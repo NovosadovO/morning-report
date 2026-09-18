@@ -1,99 +1,105 @@
 [
- {
-  "id": "financial_analysis_reminder",
-  "datetime_utc": "2026-04-29T14:15:00",
-  "text": "📊 <b>Нагадування!</b>\n\nВідправ фінансовий аналіз всім клієнтам 💼",
-  "sent": true
- },
- {
-  "id": "yanka_data_reminder",
-  "datetime_utc": "2026-04-30T05:10:00",
-  "text": "✍️ <b>Нагадування!</b>\n\nНаписати Янці за дані 📩",
-  "sent": true
- },
- {
-  "id": "health_data_daily",
-  "datetime_utc": "2026-05-13T19:15:00",
-  "text": "🍎 <b>Health дані за сьогодні!</b>\n\nВідкрий Apple Health і:\n\n📸 Надішли фото скріну — бот прочитає автоматично\n\nабо введи вручну:\n<code>/зд [кроки] [сон] [ЧСС] [кал] [score]</code>\n\n<i>Приклад: /зд 12500 7.5 68 2800 78</i>",
-  "sent": false,
-  "repeat": "daily"
- },
- {
-  "id": "learning_write_unknowns_20260501",
-  "datetime_utc": "2026-05-01T15:00:00",
-  "text": "📚 <b>Навчання!</b>\n\nЗапиши що не розумієш — питання, теми, поняття які треба розібрати. ✍️",
-  "sent": true
- },
- {
-  "id": "ruslana_birthday_reminder",
-  "datetime_utc": "2026-05-17T09:00:00",
-  "text": "🎂 <b>Нагадування!</b>\n\nПіслязавтра — день народження Руслани (20 травня) 🎉\nНе забудь привітати! 🌷",
-  "sent": false
- },
- {
-  "id": "buy_rackets_balls",
-  "datetime_utc": "2026-05-10T09:00:00",
-  "text": "🏓 <b>Нагадування!</b>\n\nКупити ракетки і кульки для пінг-понгу 🛒",
-  "sent": true
- },
- {
-  "id": "selfact_202609040800",
-  "datetime_utc": "2026-09-04T08:00:00",
-  "text": "🤖 <b>Реконструкція UniCredit Bank</b>\n\nОлег, 4 вересня о 08:00 запланована реконструкція відділення UniCredit Bank Кошице Rooseveltova.",
-  "sent": false
- },
- {
-  "id": "selfact_202609161000",
-  "datetime_utc": "2026-09-16T10:00:00",
-  "text": "🤖 <b>Реєстрація до дерматолога</b>\n\nОлег, нагадую, що потрібно зареєструватися до дерматолога за тиждень до візиту 23.09.2026 о 10:00.",
-  "sent": false
- },
- {
-  "id": "selfact_202609070900",
-  "datetime_utc": "2026-09-07T09:00:00",
-  "text": "🤖 <b>Початок відпустки в Малазі</b>\n\nОлег, 7 вересня починається твоя відпустка в August Villa Málaga - Villa. Триватиме до 11 вересня.",
-  "sent": false
- },
- {
-  "id": "selfact_202609061530",
-  "datetime_utc": "2026-09-06T15:30:00",
-  "text": "🤖 <b>Стрижка у Міріам</b>\n\nОлеже, нагадую, що 6 вересня о 15:30 у тебе запланована стрижка Miriam, Classic strih за адресою Staré Mesto 463, 040 01 Košice.",
-  "sent": false
- },
- {
-  "id": "selfact_202609041000",
-  "datetime_utc": "2026-09-04T10:00:00",
-  "text": "🤖 <b>Переглянути вакансію Regionalny kierownik sprzedaży</b>\n\nОлеже, переглянь нову вакансію Regionalny kierownik sprzedaży в Antal Poland, про яку LinkedIn повідомив. Вона відповідає твоїм налаштуванням.",
-  "sent": false
- },
- {
-  "id": "selfact_202609050900",
-  "datetime_utc": "2026-09-05T09:00:00",
-  "text": "🤖 <b>Переглянути вакансію</b>\n\nОлеже, нагадую про запланований перегляд вакансії Regionalny kierownik sprzedaży 05.09.",
-  "sent": false
- },
- {
-  "id": "selfact_202609040900",
-  "datetime_utc": "2026-09-04T09:00:00",
-  "text": "🤖 <b>Переглянути вакансію Engineering Manager</b>\n\nОлеже, не забудь переглянути вакансію Engineering Manager - Delivery &amp; Team Leadership (m/w/d) в Deutsche Telekom у Кошице, про яку прийшло сповіщення від LinkedIn.",
-  "sent": false
- },
- {
-  "id": "selfact_202609070800",
-  "datetime_utc": "2026-09-07T08:00:00",
-  "text": "🤖 <b>Відпустка в Малазі</b>\n\nНагадую, що 7 вересня починається твоя відпустка в Малазі. Не забудь про бронювання August Villa Málaga та поїздку.",
-  "sent": false
- },
- {
-  "id": "selfact_202609031800",
-  "datetime_utc": "2026-09-03T18:00:00",
-  "text": "🤖 <b>Переглянути вакансію Executive Assistant</b>\n\nОлеже, переглянь нову вакансію Executive Assistant в Bitpanda (Vienna), яку ти отримав від LinkedIn.",
-  "sent": false
- },
- {
-  "id": "askme_202609061800",
-  "datetime_utc": "2026-09-06T18:00:00",
-  "text": "🔔 <b>🧳 Зібрати речі: Málaga</b>\n\nБриф поїздки вже надіслано.",
-  "sent": false
- }
+  {
+    "id": "financial_analysis_reminder",
+    "datetime_utc": "2026-04-29T14:15:00",
+    "text": "📊 <b>Нагадування!</b>\n\nВідправ фінансовий аналіз всім клієнтам 💼",
+    "sent": true
+  },
+  {
+    "id": "yanka_data_reminder",
+    "datetime_utc": "2026-04-30T05:10:00",
+    "text": "✍️ <b>Нагадування!</b>\n\nНаписати Янці за дані 📩",
+    "sent": true
+  },
+  {
+    "id": "health_data_daily",
+    "datetime_utc": "2026-05-13T19:15:00",
+    "text": "🍎 <b>Health дані за сьогодні!</b>\n\nВідкрий Apple Health і:\n\n📸 Надішли фото скріну — бот прочитає автоматично\n\nабо введи вручну:\n<code>/зд [кроки] [сон] [ЧСС] [кал] [score]</code>\n\n<i>Приклад: /зд 12500 7.5 68 2800 78</i>",
+    "sent": false,
+    "repeat": "daily"
+  },
+  {
+    "id": "learning_write_unknowns_20260501",
+    "datetime_utc": "2026-05-01T15:00:00",
+    "text": "📚 <b>Навчання!</b>\n\nЗапиши що не розумієш — питання, теми, поняття які треба розібрати. ✍️",
+    "sent": true
+  },
+  {
+    "id": "ruslana_birthday_reminder",
+    "datetime_utc": "2026-05-17T09:00:00",
+    "text": "🎂 <b>Нагадування!</b>\n\nПіслязавтра — день народження Руслани (20 травня) 🎉\nНе забудь привітати! 🌷",
+    "sent": false
+  },
+  {
+    "id": "buy_rackets_balls",
+    "datetime_utc": "2026-05-10T09:00:00",
+    "text": "🏓 <b>Нагадування!</b>\n\nКупити ракетки і кульки для пінг-понгу 🛒",
+    "sent": true
+  },
+  {
+    "id": "selfact_202609040800",
+    "datetime_utc": "2026-09-04T08:00:00",
+    "text": "🤖 <b>Реконструкція UniCredit Bank</b>\n\nОлег, 4 вересня о 08:00 запланована реконструкція відділення UniCredit Bank Кошице Rooseveltova.",
+    "sent": false
+  },
+  {
+    "id": "selfact_202609161000",
+    "datetime_utc": "2026-09-16T10:00:00",
+    "text": "🤖 <b>Реєстрація до дерматолога</b>\n\nОлег, нагадую, що потрібно зареєструватися до дерматолога за тиждень до візиту 23.09.2026 о 10:00.",
+    "sent": false
+  },
+  {
+    "id": "selfact_202609070900",
+    "datetime_utc": "2026-09-07T09:00:00",
+    "text": "🤖 <b>Початок відпустки в Малазі</b>\n\nОлег, 7 вересня починається твоя відпустка в August Villa Málaga - Villa. Триватиме до 11 вересня.",
+    "sent": false
+  },
+  {
+    "id": "selfact_202609061530",
+    "datetime_utc": "2026-09-06T15:30:00",
+    "text": "🤖 <b>Стрижка у Міріам</b>\n\nОлеже, нагадую, що 6 вересня о 15:30 у тебе запланована стрижка Miriam, Classic strih за адресою Staré Mesto 463, 040 01 Košice.",
+    "sent": false
+  },
+  {
+    "id": "selfact_202609041000",
+    "datetime_utc": "2026-09-04T10:00:00",
+    "text": "🤖 <b>Переглянути вакансію Regionalny kierownik sprzedaży</b>\n\nОлеже, переглянь нову вакансію Regionalny kierownik sprzedaży в Antal Poland, про яку LinkedIn повідомив. Вона відповідає твоїм налаштуванням.",
+    "sent": false
+  },
+  {
+    "id": "selfact_202609050900",
+    "datetime_utc": "2026-09-05T09:00:00",
+    "text": "🤖 <b>Переглянути вакансію</b>\n\nОлеже, нагадую про запланований перегляд вакансії Regionalny kierownik sprzedaży 05.09.",
+    "sent": false
+  },
+  {
+    "id": "selfact_202609040900",
+    "datetime_utc": "2026-09-04T09:00:00",
+    "text": "🤖 <b>Переглянути вакансію Engineering Manager</b>\n\nОлеже, не забудь переглянути вакансію Engineering Manager - Delivery &amp; Team Leadership (m/w/d) в Deutsche Telekom у Кошице, про яку прийшло сповіщення від LinkedIn.",
+    "sent": false
+  },
+  {
+    "id": "selfact_202609070800",
+    "datetime_utc": "2026-09-07T08:00:00",
+    "text": "🤖 <b>Відпустка в Малазі</b>\n\nНагадую, що 7 вересня починається твоя відпустка в Малазі. Не забудь про бронювання August Villa Málaga та поїздку.",
+    "sent": false
+  },
+  {
+    "id": "selfact_202609031800",
+    "datetime_utc": "2026-09-03T18:00:00",
+    "text": "🤖 <b>Переглянути вакансію Executive Assistant</b>\n\nОлеже, переглянь нову вакансію Executive Assistant в Bitpanda (Vienna), яку ти отримав від LinkedIn.",
+    "sent": false
+  },
+  {
+    "id": "askme_202609061800",
+    "datetime_utc": "2026-09-06T18:00:00",
+    "text": "🔔 <b>🧳 Зібрати речі: Málaga</b>\n\nБриф поїздки вже надіслано.",
+    "sent": false
+  },
+  {
+    "id": "askme_202609181700",
+    "datetime_utc": "2026-09-18T17:00:00",
+    "text": "🔔 <b>Спробувати: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані)</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
+    "sent": false
+  }
 ]
