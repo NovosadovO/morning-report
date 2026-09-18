@@ -41,6 +41,45 @@
       "kind": "rwa",
       "text": "🏦 RWA-РАДАР\n━━━━━━━━━━━━━━━━━━━━\n• LINK виріс на 8.7% за 24 години (зараз $12.280)\n\nAI-коментар недоступний — вище тільки живі цифри.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-18T21:44:33.844450",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>OMV MyStation</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Novinka v MyStation: 30 % zľava na BILLA Premium produkty🛒»\n\n<i>«OMV /* Linked Styles */ /*body { padding: 0 !important; margin: 0 !important; display: block !important; min-width: 100% !important; width: 100% !important; background: #ffffff; -webkit-text-size-adjust: none }*/ a:link { color: #000000; } p { padding: 0; padding-bottom: 10px; } img { -ms-interpolat...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79360"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79360"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79360"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79360"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79360"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79360"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
