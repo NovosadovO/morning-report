@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, наразі 02:03, а в календарі на 07:00 запланована Довол",
-      "detail": "Поточний час 02:03, а подія 'Доволенка в Іспанії' запланована на 07:00 того ж дня (13.09), що вказує на близькість події та потенційну необхідність підготовки або вже перебування в місці призначення.",
-      "module": "selfact",
-      "ts": "2026-09-13T02:03:31"
-    },
-    {
-      "kind": "notify",
       "what": "Зверни увагу: у твоїй пошті є два листи з виплатною карткою",
       "detail": "У 'СВІЖИХ ЛИСТАХ' є два листи від 'ehuman@minebeamitsumi.eu' з темою 'Minebea, Výplatná páska/Payslip 08/2026' та 'Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "steps=27323, sleep_total_min=60, hr_avg=65, calories=1168, distance_km=18.0, hrv=50, stress=36, sleep_hours=1.0, date=2026-09-17, source=qwatch_auto, saved_at=2026-09-17 21:15",
       "module": "healthai",
       "ts": "2026-09-17T21:15:15"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-09-18T07:00:04"
     }
   ]
 }
