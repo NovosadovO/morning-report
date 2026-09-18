@@ -575,6 +575,273 @@ def _mail_brief() -> str:
     return "mail:" + str(len(важливі))
 
 
+# ─── ДІРКИ В КАЛЕНДАРІ: ВІЛЬНІ ВІКНА ─────────────────────────────────────────
+
+_GAP_MIN_MIN = 90      # мінімальна довжина вікна, щоб про нього казати
+_DAY_START_H = 8
+_DAY_END_H = 22
+
+
+def _events_span(ev):
+    """(start_dt, end_dt) без tz або None, None якщо подія без часу/зламана."""
+    try:
+        s = ev.get("start", {}).get("dateTime")
+        e = ev.get("end", {}).get("dateTime")
+        if not s or not e:
+            return None, None
+        sd = datetime.fromisoformat(s.replace("Z", "+00:00")).replace(tzinfo=None)
+        ed = datetime.fromisoformat(e.replace("Z", "+00:00")).replace(tzinfo=None)
+        return sd, ed
+    except Exception:
+        return None, None
+
+
+def _free_windows(events: list, day: "datetime.date") -> list:
+    """Вільні вікна ≥ _GAP_MIN_MIN хв у межах [_DAY_START_H, _DAY_END_H] дня."""
+    day_start = datetime(day.year, day.month, day.day, _DAY_START_H, 0)
+    day_end = datetime(day.year, day.month, day.day, _DAY_END_H, 0)
+    busy = []
+    for ev in events or []:
+        sd, ed = _events_span(ev)
+        if sd and ed:
+            busy.append((max(sd, day_start), min(ed, day_end)))
+    busy.sort()
+    windows = []
+    cursor = day_start
+    for bs, be in busy:
+        if bs > cursor:
+            windows.append((cursor, bs))
+        cursor = max(cursor, be)
+    if cursor < day_end:
+        windows.append((cursor, day_end))
+    return [(a, b) for a, b in windows
+            if (b - a).total_seconds() / 60 >= _GAP_MIN_MIN]
+
+
+def _gap_brief() -> str:
+    """На вільний (не змінний) день бачить велике вікно і пропонує, що туди
+    вставити. Ключ дедупу — конкретне вікно конкретного дня."""
+    try:
+        import ai_kit as _k2
+    except Exception:
+        _k2 = K
+    for offset in (0, 1):
+        try:
+            events = _k2.events_for_day(offset) or []
+        except Exception:
+            events = []
+        try:
+            shift = _k2.classify_shift(events)
+        except Exception:
+            shift = "free"
+        if shift != "free":
+            continue
+        day = (_now() + timedelta(days=offset)).date()
+        wins = _free_windows(events, day)
+        if not wins:
+            continue
+        win = max(wins, key=lambda w: (w[1] - w[0]))
+        a, b = win
+        mins = int((b - a).total_seconds() / 60)
+        key = ("gap|" + day.strftime("%Y%m%d") + "|" + a.strftime("%H%M")
+               + "-" + b.strftime("%H%M"))
+        if _seen(key):
+            continue
+        open_items = _open_items(4)
+        oi_txt = ("\n".join("- " + i for i in open_items) if open_items
+                  else "(незакритих справ немає)")
+        prompt = (
+            "Ти особистий асистент Олега. " + _PROFILE + "\n\n"
+            "У Олега вільне вікно " + a.strftime("%d.%m %H:%M") + "–" +
+            b.strftime("%H:%M") + " (" + str(mins) + " хв), день без зміни.\n"
+            "Незакриті справи/нагадування зараз:\n" + oi_txt + "\n\n"
+            "Запропонуй ОДНЕ конкретне заняття на це вікно — тренування/біг "
+            "(ціль схуднення 78 кг), конкретну справу з незакритого, або "
+            "усвідомлений відпочинок — залежно від часу дня і тривалості. "
+            "1-2 речення, українською, без загальних слів, з конкретною "
+            "дією. Без вступу.")
+        body = ""
+        try:
+            body = K.gemini_text(prompt, max_tokens=250, temperature=0.7,
+                                 tag=TAG) or ""
+        except Exception as e:
+            _log("gemini gap: " + str(e))
+        if not body.strip():
+            body = ("Вільно " + str(mins) + " хв " + a.strftime("%H:%M") +
+                    "–" + b.strftime("%H:%M") + " — гарний час для пробіжки "
+                    "або щоб закрити одну справу зі списку.")
+        head = ("🗓 <b>ВІЛЬНЕ ВІКНО " + day.strftime("%d.%m") + "</b> " +
+                a.strftime("%H:%M") + "–" + b.strftime("%H:%M") +
+                " (" + str(mins) + " хв)\n\n")
+        ok = False
+        try:
+            ok = K.send_card(head + body, tag="MSG_FORESIGHT_GAP")
+        except Exception as e:
+            _log("send gap: " + str(e))
+        if not ok:
+            continue
+        _mark(key, "gap " + day.strftime("%d.%m"))
+        try:
+            import askme as A
+            when = datetime(day.year, day.month, day.day, a.hour, a.minute)
+            A.ask("💾 Записати це у вікно " + a.strftime("%H:%M") + "–" +
+                  b.strftime("%H:%M") + " " + day.strftime("%d.%m") + "?",
+                  kind="write", key="gapfill|" + key,
+                  meta={"summary": body[:110], "start": when.isoformat(),
+                        "desc": body[:250]},
+                  tag="MSG_FORESIGHT_GAP_ASK")
+        except Exception as e:
+            _log("ask gap skip: " + str(e))
+        return "gap:" + day.strftime("%d.%m") + " " + str(mins) + "хв"
+    return ""
+
+
+# ─── СПРОБУЙ НОВЕ: ІДЕЯ ПОЗА ЗВИЧКОЮ ──────────────────────────────────────────
+
+_LIFE_POOL = [
+    "нове місце для пробіжки/прогулянки в Кошице чи поблизу",
+    "новий формат тренування (інтервали, силова, плавання) замість звичного",
+    "коротка книга/подкаст про інвестиції чи фінансову незалежність",
+    "нова страва на здорове харчування (ціль 78 кг) на вихідні",
+    "коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська)",
+    "новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице",
+    "спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані)",
+    "щось для сну/відновлення після нічних змін — новий рутин перед сном",
+    "зустріч чи дзвінок з людиною, з якою давно не спілкувався",
+    "нова активність на вихідний з кимось із близьких",
+    "новий трек чи плейлист під пробіжку",
+    "коротка фінансова ідея — переглянути один актив у портфелі свіжим оком",
+    "щось культурне — фільм, виставка, місце в Кошице/Братиславі",
+    "новий рецепт швидкого корисного обіду на робочий день",
+    "невеликий експеримент з розкладом дня під зміни (early/night)",
+]
+
+_TRY_NEW_GAP_DAYS = 3
+
+
+def _try_new_brief() -> str:
+    """Раз на кілька днів — ідея поза звичкою з кнопкою "додати"."""
+    st = _state()
+    last_day = str(st.get("try_new_last") or "")
+    today = _now().strftime("%Y-%m-%d")
+    if last_day:
+        try:
+            last_dt = datetime.strptime(last_day, "%Y-%m-%d")
+            if (_now() - last_dt).days < _TRY_NEW_GAP_DAYS:
+                return ""
+        except Exception:
+            pass
+    used = st.get("life_used") or []
+    pool = [t for t in _LIFE_POOL if t not in used]
+    if not pool:
+        pool = list(_LIFE_POOL)
+        used = []
+    idx = (_now().timetuple().tm_yday + _now().hour) % len(pool)
+    pick = pool[idx]
+    prompt = (
+        "Ти особистий асистент Олега. " + _PROFILE + "\n\n"
+        "Тема для «спробуй нове»: " + pick + ".\n\n"
+        "Розкрий це українською в 2-3 речення: чому саме зараз варто "
+        "спробувати, і одна конкретна дія. Без загальних слів, без вступу, "
+        "тон теплий і живий, як друг.")
+    body = ""
+    try:
+        body = K.gemini_text(prompt, max_tokens=300, temperature=0.85,
+                             tag=TAG) or ""
+    except Exception as e:
+        _log("gemini trynew: " + str(e))
+    if not body.strip():
+        body = "Ідея на найближчі дні: " + pick + "."
+    ok = False
+    try:
+        ok = K.send_card("✨ <b>СПРОБУЙ НОВЕ</b>\n\n" + body,
+                         tag="MSG_FORESIGHT_TRYNEW")
+    except Exception as e:
+        _log("send trynew: " + str(e))
+    if not ok:
+        return ""
+    try:
+        K.update_key(STATE, "try_new_last", today)
+        used2 = list(used) + [pick]
+        K.update_key(STATE, "life_used", used2[-len(_LIFE_POOL):])
+    except Exception as e:
+        _log("state trynew: " + str(e))
+    try:
+        import askme as A
+        A.ask("💾 Додати нагадування спробувати це найближчими днями?",
+              kind="write", key="trynew|" + today + "|" + pick[:40],
+              meta={"summary": "Спробувати: " + pick[:90],
+                    "desc": body[:250]},
+              tag="MSG_FORESIGHT_TRYNEW_ASK")
+    except Exception as e:
+        _log("ask trynew skip: " + str(e))
+    return "trynew:" + pick[:30]
+
+
+# ─── КРИПТО: РУХ ≥5% ЗА 24 ГОД (ТІЛЬКИ DEFILLAMA) ────────────────────────────
+
+_CRYPTO_MOVE_PCT = 5.0
+_CRYPTO_NOTE_PCT = 10.0
+
+
+def _crypto_watch_brief() -> str:
+    """Дивиться на watchlist через coins.llama.fi (DefiLlama). Жодного
+    CoinGecko тут. Мовчить, якщо DefiLlama недоступний."""
+    try:
+        import llama_prices as L
+    except Exception as e:
+        _log("llama_prices import: " + str(e))
+        return ""
+    try:
+        moves = L.change_pct(24) or {}
+    except Exception as e:
+        _log("llama change_pct: " + str(e))
+        return ""
+    if not moves:
+        return ""
+    today = _now().strftime("%Y-%m-%d")
+    for sym, m in sorted(moves.items(), key=lambda kv: -abs(kv[1]["pct"])):
+        pct = m["pct"]
+        if abs(pct) < _CRYPTO_MOVE_PCT:
+            continue
+        direction = "up" if pct > 0 else "down"
+        key = "crypto|" + sym + "|" + today + "|" + direction
+        if _seen(key):
+            continue
+        arrow = "🟢▲" if pct > 0 else "🔴▼"
+        txt = (arrow + " <b>" + sym + " " + ("+%.1f" % pct if pct > 0 else
+               "%.1f" % pct) + "% за 24г</b>\n\n"
+               "Зараз: " + ("%.4f" % m["now"] if m["now"] < 10 else
+                            "%.2f" % m["now"]) + " $\n"
+               "24г тому: " + ("%.4f" % m["then"] if m["then"] < 10 else
+                                "%.2f" % m["then"]) + " $\n\n"
+               "📊 Джерело: DefiLlama (coins.llama.fi)")
+        ok = False
+        try:
+            ok = K.send_card(txt, tag="MSG_FORESIGHT_CRYPTO")
+        except Exception as e:
+            _log("send crypto: " + str(e))
+        if not ok:
+            continue
+        _mark(key, sym + " " + str(pct) + "%")
+        if abs(pct) >= _CRYPTO_NOTE_PCT:
+            try:
+                import askme as A
+                A.ask("💾 Записати нотатку про рух " + sym + " (" +
+                      ("+%.1f" % pct if pct > 0 else "%.1f" % pct) +
+                      "% за 24г)?",
+                      kind="write", key="cryptonote|" + key,
+                      meta={"summary": "Нотатка: " + sym + " " +
+                            ("+%.1f" % pct if pct > 0 else "%.1f" % pct) +
+                            "% за 24г (DefiLlama)",
+                            "desc": txt[:250]},
+                      tag="MSG_FORESIGHT_CRYPTO_ASK")
+            except Exception as e:
+                _log("ask crypto skip: " + str(e))
+        return "crypto:" + sym + " " + str(pct) + "%"
+    return ""
+
+
 # ─── ТОЧКА ВХОДУ ────────────────────────────────────────────────────────────
 
 def tick(force: bool = False) -> str:
@@ -582,7 +849,8 @@ def tick(force: bool = False) -> str:
     if not force and not K.rate_ok(RATE, MIN_GAP_MIN):
         return ""
     sent = []
-    for fn in (_trip_brief, _shift_brief, _mail_brief):
+    for fn in (_trip_brief, _shift_brief, _mail_brief, _gap_brief,
+               _try_new_brief, _crypto_watch_brief):
         try:
             done = fn()
         except Exception as e:
@@ -591,8 +859,8 @@ def tick(force: bool = False) -> str:
         if done:
             sent.append(done)
             _log("надіслано → " + done)
-            # За один прохід — максимум дві теми: ініціативи більше, спаму ні.
-            if len(sent) >= 2:
+            # Активно — до 3 нових тем за прохід (Олег обрав "активно").
+            if len(sent) >= 3:
                 break
     if sent:
         try:

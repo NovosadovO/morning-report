@@ -41,6 +41,7 @@ SENT_FILE = "money_sent.json"           # антидубль карточок
 SCAN_STATE = "money_scan.json"          # rate-limit скану пошти
 ALERT_STATE = "money_alert.json"        # антидубль питань про перевитрату
 EVENT_STATE = "money_events.json"       # які платежі вже покладені в календар
+WEEK_DEDUP = "money_week_dedup.json"    # антидубль тижневих аномалій
 
 SCAN_GAP_MIN = 150          # скан пошти не частіше ніж раз на 2.5 години
 MAX_CARDS = 2               # максимум карточок за один прохід
@@ -48,10 +49,13 @@ LOOKAHEAD_DAYS = 14         # горизонт «що спишуть»
 BIG_EUR = 80.0              # від якої суми платіж вартий події в календарі
 JUMP_PCT = 25.0             # на скільки % місяць має бути дорожчим, щоб питати
 MIN_BASE_EUR = 40.0         # нижче цієї бази відсотки — шум, не питаємо
+WEEK_MULT = 2.5             # у скільки разів чек має перевищити середній
+WEEK_MIN_HISTORY = 21       # мінімум днів історії, щоб рахувати «незвично»
 
 _store = K.PayloadStore(STORE_FILE)
 _dedup = K.Dedup(SENT_FILE, ttl_days=20)
 _ev_dedup = K.Dedup(EVENT_STATE, ttl_days=45)
+_week_dedup = K.Dedup(WEEK_DEDUP, ttl_days=6)
 
 # Маркери ФАКТИЧНОГО списання (не рахунку — рахунки веде bills_watcher)
 _PAID_HINTS = (
@@ -461,6 +465,84 @@ def _muted(key) -> bool:
     return False
 
 
+# ─── ТИЖНЕВА АНОМАЛІЯ: НЕЗВИЧНЕ СПИСАННЯ ─────────────────────────────────────
+
+def _weekly_anomaly() -> bool:
+    """Одноразове списання за останній тиждень, що сильно вище середнього
+    чека, або новий постачальник — окремо від місячного JUMP_PCT. Мовчить,
+    якщо історії менше WEEK_MIN_HISTORY днів (замало даних для порівняння)."""
+    rows = list(load_charges().values())
+    if not rows:
+        return False
+    now = K.now().replace(tzinfo=None)
+    horizon_start = now - timedelta(days=WEEK_MIN_HISTORY)
+    hist = [r for r in rows if str(r.get("date", "")) >= horizon_start.strftime("%Y-%m-%d")]
+    if len(hist) < 3:
+        return False
+    oldest = min(str(r.get("date", "")) for r in hist if r.get("date"))
+    try:
+        oldest_dt = datetime.strptime(oldest, "%Y-%m-%d")
+    except Exception:
+        return False
+    if (now - oldest_dt).days < WEEK_MIN_HISTORY:
+        return False  # даних менше 3 тижнів — порівнювати нечесно
+
+    week_start = now - timedelta(days=7)
+    prior = [r for r in hist if str(r.get("date", "")) < week_start.strftime("%Y-%m-%d")]
+    this_week = [r for r in hist if str(r.get("date", "")) >= week_start.strftime("%Y-%m-%d")]
+    prior_eur = [_amount_f(r.get("amount")) for r in prior
+                if (r.get("currency") or "EUR").upper() == "EUR" and _amount_f(r.get("amount"))]
+    if len(prior_eur) < 3:
+        return False
+    avg = sum(prior_eur) / len(prior_eur)
+    if avg < MIN_BASE_EUR / 2:
+        return False  # база занадто мала — відсотки/кратність тут шум
+
+    known_vendors = {str(r.get("vendor", "")).lower().strip() for r in prior}
+    for r in sorted(this_week, key=lambda x: -_amount_f(x.get("amount"))):
+        if (r.get("currency") or "EUR").upper() != "EUR":
+            continue
+        amount = _amount_f(r.get("amount"))
+        vendor = str(r.get("vendor", "")).strip()
+        date = str(r.get("date", ""))
+        if not amount or not vendor:
+            continue
+        is_big = amount >= avg * WEEK_MULT
+        is_new = vendor.lower() not in known_vendors
+        if not (is_big or is_new):
+            continue
+        dkey = f"{vendor.lower()[:24]}|{amount}|{date}"
+        if _week_dedup.seen("anomaly", dkey):
+            continue
+        reason = []
+        if is_big:
+            reason.append(f"у {amount / avg:.1f}× більше за середній чек ({_fmt(avg)})")
+        if is_new:
+            reason.append("новий постачальник")
+        txt = (f"🔎 <b>Незвичне списання за тиждень</b>\n"
+               f"{date} · {K.esc(vendor)} — {_fmt(amount)}\n"
+               f"({'; '.join(reason)})\n\n"
+               f"Це нормально чи варто розібратись?")
+        try:
+            import askme as A
+            A.ask("💾 Записати задачу «розібратись із " + vendor[:50] +
+                  "»?", kind="write", key="moneyweek|" + dkey,
+                  meta={"summary": "Розібратись: " + vendor[:70] + " " +
+                        _fmt(amount), "desc": txt[:250]},
+                  tag="MSG_MONEY_WEEK_ASK")
+        except Exception as e:
+            K.log(TAG, "ask weekly skip: " + str(e))
+        ok = False
+        try:
+            ok = K.send_card(txt, tag="MSG_MONEY_WEEK")
+        except Exception as e:
+            K.log(TAG, "send weekly: " + str(e))
+        if ok:
+            _week_dedup.mark("anomaly", dkey)
+            return True
+    return False
+
+
 # ─── ГОЛОВНИЙ ПРОХІД ─────────────────────────────────────────────────────────
 
 def run(force: bool = False) -> int:
@@ -531,6 +613,14 @@ def run(force: bool = False) -> int:
                f"чи рахувати це в щомісячний мінімум.")
         if _ask(txt, "money", key):
             sent += 1
+
+    # 5. НЕЗВИЧНЕ СПИСАННЯ ЗА ТИЖДЕНЬ (окремо від місячного тренду)
+    if sent < MAX_CARDS:
+        try:
+            if _weekly_anomaly():
+                sent += 1
+        except Exception as e:
+            K.log(TAG, "weekly_anomaly error: " + str(e))
 
     if sent:
         K.log(TAG, f"карточок надіслано: {sent}")

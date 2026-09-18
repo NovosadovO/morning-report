@@ -219,6 +219,46 @@ r = M.handle(pid)
 ok(r["ok"], "handle приймає pid")
 ok(not M.handle(pid)["ok"], "payload одноразовий")
 
+print("\n14) Тижнева аномалія: замало історії — мовчить")
+reset()
+M._record({"vendor": "A", "amount": "20.00", "currency": "EUR", "date": d(-2)})
+M._record({"vendor": "B", "amount": "18.00", "currency": "EUR", "date": d(-4)})
+ok(M._weekly_anomaly() is False, "менше WEEK_MIN_HISTORY днів — мовчить")
+
+print("\n15) Тижнева аномалія: великий чек (2.5×) на тлі 3-тижневої історії")
+reset()
+for i in range(3, 22):
+    M._record({"vendor": "Постачальник" + str(i % 3), "amount": "20.00",
+               "currency": "EUR", "date": d(-i)})
+M._record({"vendor": "Постачальник0", "amount": "60.00", "currency": "EUR",
+           "date": d(-1)})
+ok(M._weekly_anomaly() is True, "великий чек ×3 за тиждень — спрацювало")
+ok(any("Незвичне списання" in c[0] for c in _CARDS), "картка про аномалію є")
+ok(any("більше за середній чек" in c[0] for c in _CARDS), "вказано кратність")
+cnt15 = len(_CARDS)
+ok(M._weekly_anomaly() is False, "той самий запис вдруге — тихо, вже позначено")
+ok(len(_CARDS) == cnt15, "картка не дублюється")
+
+print("\n16) Тижнева аномалія: новий постачальник (не за розміром)")
+reset()
+for i in range(3, 22):
+    M._record({"vendor": "Стара Крамниця", "amount": "20.00",
+               "currency": "EUR", "date": d(-i)})
+M._record({"vendor": "Новий Постачальник", "amount": "21.00",
+           "currency": "EUR", "date": d(-1)})
+ok(M._weekly_anomaly() is True, "новий постачальник (навіть без стрибка суми)")
+ok(any("новий постачальник" in c[0] for c in _CARDS),
+   "у причині вказано «новий постачальник»")
+
+print("\n17) Тижнева аномалія: усе звично — мовчить")
+reset()
+for i in range(3, 22):
+    M._record({"vendor": "Стабільний", "amount": "20.00",
+               "currency": "EUR", "date": d(-i)})
+M._record({"vendor": "Стабільний", "amount": "21.00", "currency": "EUR",
+           "date": d(-1)})
+ok(M._weekly_anomaly() is False, "чек у нормі, постачальник відомий — тихо")
+
 print("\n" + ("=" * 46))
 print(f"ПАДІНЬ: {len(fails)}" + ("  → " + ", ".join(fails) if fails else "  ✅"))
 sys.exit(1 if fails else 0)
