@@ -1,9 +1,4 @@
 {
-  "78887": {
-    "sender": "hello@wexopay.com",
-    "sender_raw": "Wexo Cashback <hello@wexopay.com>",
-    "seen_ts": "2026-09-10T15:23:17.963561+00:00"
-  },
   "78888": {
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@mail.theblock.co",
     "sender_raw": "The Block <newsletter@mail.theblock.co>",
     "seen_ts": "2026-09-18T19:07:56.809508+00:00"
+  },
+  "79360": {
+    "sender": "noreply-omv@omv.com",
+    "sender_raw": "OMV MyStation <noreply-omv@omv.com>",
+    "seen_ts": "2026-09-18T19:44:32.837356+00:00"
   }
 }
