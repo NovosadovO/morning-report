@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_yes_tea",
-      "label": "✅ Так",
-      "ts": "2026-08-31T20:56:39"
-    },
-    {
-      "t": "btn",
       "data": "habit_no_sauna",
       "label": "❌ Ні",
       "ts": "2026-08-31T20:56:40"
@@ -7198,6 +7192,12 @@
       "t": "btn",
       "data": "email_describe_79302",
       "label": "📖 Описати лист",
+      "ts": "2026-09-18T08:50:46"
+    },
+    {
+      "t": "btn",
+      "data": "email_delete_79302",
+      "label": "🗑 Видалити",
       "ts": "2026-09-18T08:50:46"
     }
   ]
