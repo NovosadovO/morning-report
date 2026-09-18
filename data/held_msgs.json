@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-18T21:28:31.531871",
-      "kind": "chunk",
-      "text": "🛠 <b>Самодіагностика бота</b>\n\n🔴 <b>АІ помітив проблему з собою:</b> Gemini (мозок аналізу) падає у 100% останніх спроб. Можливо вичерпані кредити, невалідний ключ, або тимчасовий збій Google. Відповіді йдуть на локальних шаблонах (менш точні) поки це не виправиться.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-18T21:30:12.971185",
       "kind": "chunk",
       "text": "🌙 <b>ПІДСУМОК ДНЯ — П'ятниця, 18.09</b>\n\n💪 <b>Звички</b>  <code>[🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜]</code> 2/5  😐 Середньо\n   🏃 Біг  ❌\n   💧 Вода 2л+  ✅\n   🚿 Хол.душ  ⬜\n   🍵 Трав.чай  ✅\n   🧖 Сауна  ❌\n\n💊 <b>Armolopid Plus</b>  ⬜ Не відмічено — прийняв?\n\n⚖️ <b>Вага сьогодні:</b> <b>84.5 кг</b>  ↘️0.0  (до 78 кг: -6.5)\n\n🍎 <b>Apple Health</b>\n   💓 HRV 37\n\n⌚ <b>QWatch Pro</b>\n  ❤️ ЧСС: <b>67 уд/хв</b>\n  🧘 HRV: <b>37 мс</b>\n  🔥 Калорії: <b>7 ккал</b>\n\n😐 Середній день. Завтра з ранку — чіткіше!",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79355"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-18T22:01:14.315343",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Alternatives to milk are losing moomentum</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79351"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79351"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79351"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79351"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79351"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79351"
             }
           ]
         ]
