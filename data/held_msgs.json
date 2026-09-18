@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-18T22:01:07.686117",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-18T22:01:09.026522",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: The CFTC sends its crypto rulemaking to the Whi</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -398,6 +392,12 @@
       "ts": "2026-09-18T22:09:10.923061",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-18T22:10:22.805549",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
