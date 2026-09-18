@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-18T21:30:43.376153",
-      "kind": "selfact_digest",
-      "text": "🤖 <b>Що я зробив сам за сьогодні</b>\n\n<b>Нотатка (4)</b>\n• Записав дані здоров'я за 2026-09-18\n• збережено дані здоров'я\n• Записав дані здоров'я за 2026-09-18\n• збережено дані здоров'я\n\n<b>Сповіщення (1)</b>\n• сповіщення про здоров'я: stale\n\n<b>hcoach (2)</b>\n• morning_plan\n• full_report\n\n<b>Автоматика за реєстрами</b>\n• твоїх реакцій: 7",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-18T21:30:44.128803",
       "kind": "selfact_digest",
       "text": "🤖 Що я зробив сам за сьогодні\n\nНотатка (4)\n• Записав дані здоров'я за 2026-09-18\n• збережено дані здоров'я\n• Записав дані здоров'я за 2026-09-18\n• збережено дані здоров'я\n\nСповіщення (1)\n• сповіщення про здоров'я: stale\n\nhcoach (2)\n• morning_plan\n• full_report\n\nАвтоматика за реєстрами\n• твоїх реакцій: 7",
@@ -376,6 +370,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79350"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-18T22:01:16.941002",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79339"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79339"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79339"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79339"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79339"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79339"
             }
           ]
         ]
