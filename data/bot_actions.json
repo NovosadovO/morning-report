@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Зверни увагу: у твоїй пошті є два листи з виплатною карткою",
-      "detail": "У 'СВІЖИХ ЛИСТАХ' є два листи від 'ehuman@minebeamitsumi.eu' з темою 'Minebea, Výplatná páska/Payslip 08/2026' та 'Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu'.",
-      "module": "selfact",
-      "ts": "2026-09-13T02:03:37"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, LinkedIn надіслав тобі сповіщення про нову вакансію Se",
       "detail": "У 'СВІЖИХ ЛИСТАХ' є лист від 'Сповіщення про вакансії LinkedIn' з темою 'Senior Digital Business Product Owner в Caterpillar Inc.' і згадкою про Кошице.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "ранковий план здоров'я",
       "module": "selfact",
       "ts": "2026-09-18T07:00:04"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: stale",
+      "detail": "📵 Дані здоров'я не оновлювались 36 год (останні — 2026-09-17). Автосинк із годинника міг зламатись",
+      "module": "healthai",
+      "ts": "2026-09-18T11:34:34"
     }
   ]
 }
