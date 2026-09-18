@@ -1,9 +1,4 @@
 {
-  "78866": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "Temu <temu@eu.temuemail.com>",
-    "seen_ts": "2026-09-10T10:52:20.998594+00:00"
-  },
   "78869": {
     "sender": "newsletter@pelikan.sk",
     "sender_raw": "Roland z Pelikána <newsletter@pelikan.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "email@info.temuemail.com",
     "sender_raw": "Temu <email@info.temuemail.com>",
     "seen_ts": "2026-09-18T12:54:11.852711+00:00"
+  },
+  "79341": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-18T13:29:01.797436+00:00"
   }
 }
