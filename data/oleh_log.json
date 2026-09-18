@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_ok_9c60bbe70d",
-      "label": "👌 Прийняв",
-      "ts": "2026-09-01T07:25:59"
-    },
-    {
-      "t": "btn",
       "data": "habit_yes_shower",
       "label": "✅ Зробив",
       "ts": "2026-09-01T07:26:09"
@@ -7199,6 +7193,18 @@
       "data": "habit_no_run",
       "label": "❌ Ні",
       "ts": "2026-09-18T20:02:16"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_water",
+      "label": "✅ Так",
+      "ts": "2026-09-18T20:02:17"
+    },
+    {
+      "t": "btn",
+      "data": "habit_yes_tea",
+      "label": "✅ Так",
+      "ts": "2026-09-18T20:02:18"
     }
   ]
 }
