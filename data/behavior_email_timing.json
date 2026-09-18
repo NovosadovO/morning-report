@@ -1,9 +1,4 @@
 {
-  "78861": {
-    "sender": "newsletter@biedronka.pl",
-    "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
-    "seen_ts": "2026-09-10T10:03:35.503679+00:00"
-  },
   "78865": {
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply@travel.mail.flixbus.com",
     "sender_raw": "\"FlixBus\" <noreply@travel.mail.flixbus.com>",
     "seen_ts": "2026-09-18T12:23:03.526115+00:00"
+  },
+  "79339": {
+    "sender": "novosadovoleg@gmail.com",
+    "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
+    "seen_ts": "2026-09-18T12:41:25.957601+00:00"
   }
 }
