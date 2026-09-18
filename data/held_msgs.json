@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-18T22:01:09.026522",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: The CFTC sends its crypto rulemaking to the Whi</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79359"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79359"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79359"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79359"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79359"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79359"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-18T22:01:10.392428",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -398,6 +359,12 @@
       "ts": "2026-09-18T22:10:22.805549",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-18T22:10:23.464306",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
