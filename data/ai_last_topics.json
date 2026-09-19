@@ -1,4 +1,24 @@
 {
+  "action_detect|2026-09-19t21_59_16_319984": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це повідомлення від Google Cloud Platform & A",
+    "ts": "2026-09-19T21:59:16.319984"
+  },
+  "action_detect|2026-09-19t21_50_41_633874": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Проаналізовано стан криптопортфеля та показники здоро",
+    "ts": "2026-09-19T21:50:41.633874"
+  },
+  "msg_vip_email_truthfix|2026-09-19t21_50_34_773319": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Привіт Олеже! 🏹  Вечір суботи, після ранньої зміни — ідеальний час, щоб підбити підсумки. Завтра на тебе чекають цілих чотири вільні дні до наступної ранньої зм",
+    "ts": "2026-09-19T21:50:34.773319"
+  },
+  "msg_vip_email|2026-09-19t21_50_25_630771": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🏹  Вечір суботи, після ранньої зміни — ідеальний час, щоб підбити підсумки та глянути на тиждень, що минає, з висоти стратегічного бачення. Завтра",
+    "ts": "2026-09-19T21:50:25.630771"
+  },
   "selfact|2026-09-19t21_48_49_645891": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, нагадую, що ти забув відзначити виконання звички \\\"Трав'яний чай\\\" та \\\"Спрей для волосся\\\" за 19.09.2026",
@@ -278,25 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Рання зміна та лікар\",     \"text\": \"Олеже, сьогодні, 17.09, у тебе о 05:00 починається рання зміна, а о 09:00 ",
     "ts": "2026-09-17T04:03:48.929043"
-  },
-  "action_detect|2026-09-17t04_03_12_421977": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийн",
-    "ts": "2026-09-17T04:03:12.421977"
-  },
-  "action_detect|2026-09-17t04_03_01_300380": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прострочена підписка Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Варто звернути увагу на ",
-    "ts": "2026-09-17T04:03:01.300380"
-  },
-  "action_detect|2026-09-17t04_03_01_214934": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-17T04:03:01.214934"
-  },
-  "action_detect|2026-09-17t04_02_50_504025": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписку Strava\", \"action_date\": \"2026-08-04\", \"action_time\": null, \"action_summary\": \"Переглянути",
-    "ts": "2026-09-17T04:02:50.504025"
   }
 }
