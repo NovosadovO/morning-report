@@ -5,7 +5,7 @@
 AI сам дивиться:
   📅 графік змін на 7 днів вперед (Google Calendar: «Рання зміна» / «Нічна зміна»)
   🏃 Strava — скільки бігав останні 2 тижні, темп, кілометраж
-  ⚖️ вага (health/weight) — прогрес до цілі 78 кг
+  ⚖️ вага (health/weight) — прогрес до цілі 75 кг
 
 і САМ ставить пробіжки у вільні вікна між зміною і сном.
 
@@ -112,7 +112,7 @@ def _weight_context() -> str:
             if keys:
                 last = w[keys[-1]]
                 val = last.get("weight") if isinstance(last, dict) else last
-                return f"вага {val} кг (ціль 78 кг), останнє зважування {keys[-1]}"
+                return f"вага {val} кг (ціль 75 кг), останнє зважування {keys[-1]}"
     except Exception:
         pass
     try:
@@ -121,14 +121,14 @@ def _weight_context() -> str:
         if keys:
             last = h[keys[-1]] or {}
             if last.get("weight"):
-                return f"вага {last['weight']} кг (ціль 78 кг), дата {keys[-1]}"
+                return f"вага {last['weight']} кг (ціль 75 кг), дата {keys[-1]}"
     except Exception:
         pass
-    return "вага невідома (ціль 78 кг)"
+    return "вага невідома (ціль 75 кг)"
 
 
 _PROMPT = """Ти — тренер Олега з бігу. Він працює в Minebea Mitsumi змінами
-(рання 06:00-18:00 / нічна 18:00-06:00), живе в Кошице, хоче схуднути до 78 кг.
+(рання 06:00-18:00 / нічна 18:00-06:00), живе в Кошице, хоче схуднути до 75 кг.
 
 ЗАРАЗ: {now}
 

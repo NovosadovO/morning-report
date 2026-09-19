@@ -315,7 +315,7 @@ def run(force: bool = False) -> int:
     if w and w["diff"] is not None and abs(w["diff"]) >= WEIGHT_JUMP:
         key = f"wjump_{K.now().strftime('%Y-%W')}"
         direction = "вниз" if w["diff"] < 0 else "вгору"
-        goal = " До 78 кг лишилось " + f"{w['now'] - 78:.1f} кг." if w["now"] > 78 else ""
+        goal = " До 75 кг лишилось " + f"{w['now'] - 75:.1f} кг." if w["now"] > 75 else ""
         txt = (f"⚖️ <b>Вага пішла {direction}: {w['diff']:+.1f} кг за тиждень</b>\n"
                f"Зараз середнє {w['now']:.1f} кг проти {w['prev']:.1f} кг.{goal}\n\n"
                f"Що змінилось цього тижня — їжа, рух чи зміни на роботі? "

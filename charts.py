@@ -229,7 +229,7 @@ def plot_health_month_bright(year: int = None, month: int = None) -> bytes | Non
         ax1 = plt.subplot(2, 2, 1)
         ax1.bar(day_nums, weight_arr, color=BRIGHT_BLUE, alpha=0.6, label="Вага (кг)", edgecolor=BRIGHT_BLUE, linewidth=1)
         ax1.plot(day_nums, weight_ma, color=TREND_COLOR, linewidth=3, marker='o', markersize=4, label="📈 Тренд (7-day)")
-        ax1.axhline(y=78, color=BRIGHT_GREEN, linestyle='--', linewidth=2, label="🎯 Ціль: 78 кг")
+        ax1.axhline(y=75, color=BRIGHT_GREEN, linestyle='--', linewidth=2, label="🎯 Ціль: 75 кг")
         ax1.set_title("⚖️ ВАГА", fontsize=13, fontweight='bold')
         ax1.set_ylabel("кг", fontsize=11, fontweight='bold')
         ax1.legend(fontsize=9)
@@ -432,8 +432,8 @@ def plot_day_dashboard(today_str: str = None) -> bytes | None:
             ax_w.scatter([xi[-1]], [yi[-1]], color=GREEN, s=270, zorder=6)
 
             # Ціль-лінія
-            ax_w.axhline(78.0, color=BLUE, linewidth=3.0, linestyle="--",
-                         alpha=0.9, label="ціль 78 кг")
+            ax_w.axhline(75.0, color=BLUE, linewidth=3.0, linestyle="--",
+                         alpha=0.9, label="ціль 75 кг")
 
             # Лінія тренду (linear regression)
             z    = np.polyfit(xi, yi, 1)
@@ -719,7 +719,7 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
             ax_w.fill_between(xi, yi, min(yi) - 0.5, alpha=0.18, color=GREEN)
             ax_w.plot(xi, yi, color=GREEN, linewidth=4.0, zorder=4)
             ax_w.scatter(xi, yi, color=GREEN, s=90, zorder=5, alpha=0.7)
-            ax_w.axhline(78.0, color=BLUE, linewidth=3.0, linestyle="--", alpha=0.7)
+            ax_w.axhline(75.0, color=BLUE, linewidth=3.0, linestyle="--", alpha=0.7)
 
             # Лінія тренду
             z_w = np.polyfit(xi, yi, 1)
@@ -749,7 +749,7 @@ def plot_weekly_dashboard(days: int = 7) -> bytes | None:
                           color=GREEN, fontsize=30, fontweight="bold",
                           arrowprops=dict(arrowstyle="-", color=GREEN, alpha=0.5))
             # Ціль
-            ax_w.text(1, 78.0 + 0.15, "ціль 78 кг",
+            ax_w.text(1, 75.0 + 0.15, "ціль 75 кг",
                       color=BLUE, fontsize=26, alpha=0.8)
         else:
             ax_w.text(0.5, 0.5, "Немає даних", ha="center", va="center",
@@ -945,8 +945,8 @@ def plot_monthly_dashboard(year: int = None, month: int = None) -> bytes | None:
                           xytext=(6, -16), textcoords="offset points",
                           color=YELLOW, fontsize=22, fontweight="bold")
 
-            ax_w.axhline(78.0, color=BLUE, linewidth=3.0, linestyle="--",
-                         alpha=0.7, label="ціль 78 кг")
+            ax_w.axhline(75.0, color=BLUE, linewidth=3.0, linestyle="--",
+                         alpha=0.7, label="ціль 75 кг")
 
             ax_w.set_xlim(xd[0], xd[-1])
             ax_w.set_ylim(min(yi) - 2, max(yi) + 2)
@@ -1075,7 +1075,7 @@ def plot_weight_anomaly(days: int = 14) -> bytes | None:
         ax.plot(xi, trend_y, color=trend_color, linewidth=3.0,
                 linestyle="--", alpha=0.8, zorder=3, label="Тренд")
         ax.scatter([xi[-1]], [yi[-1]], color=GREEN, s=210, zorder=5)
-        ax.axhline(78.0, color=BLUE, linewidth=3.0, linestyle=":", alpha=0.6)
+        ax.axhline(75.0, color=BLUE, linewidth=3.0, linestyle=":", alpha=0.6)
 
         tick_step = max(1, len(xi) // 7)
         ax.set_xticks(xi[::tick_step])
@@ -1145,7 +1145,7 @@ def plot_mini_dashboard(today_str: str = None) -> bytes | None:
             ax_w.scatter([xi[-1]], [yi[-1]], color=GREEN, s=210, zorder=6)
 
             # Ціль
-            ax_w.axhline(78.0, color=BLUE, linewidth=3.0, linestyle="--", alpha=0.8)
+            ax_w.axhline(75.0, color=BLUE, linewidth=3.0, linestyle="--", alpha=0.8)
 
             # Тренд
             z = np.polyfit(xi, yi, 1)
@@ -1396,8 +1396,8 @@ def plot_combined_dashboard() -> bytes | None:
                           xytext=(6, -18), textcoords="offset points",
                           color=YELLOW, fontsize=26, fontweight="bold")
 
-            ax_w.axhline(78.0, color=BLUE, linewidth=3.0, linestyle="--",
-                         alpha=0.7, label="ціль 78 кг")
+            ax_w.axhline(75.0, color=BLUE, linewidth=3.0, linestyle="--",
+                         alpha=0.7, label="ціль 75 кг")
 
             ax_w.set_xlim(xd[0], xd[-1])
             ax_w.set_ylim(min(yi) - 2, max(yi) + 2)
@@ -1815,7 +1815,7 @@ def plot_mood_energy(days: int = 30) -> bytes | None:
 
 
 def plot_goals_progress(days: int = 90) -> bytes | None:
-    """Прогрес до цілі: вага -> 78кг."""
+    """Прогрес до цілі: вага -> 75кг."""
     if not HAS_MPL:
         return None
     try:
@@ -1841,10 +1841,10 @@ def plot_goals_progress(days: int = 90) -> bytes | None:
 
         fig, ax = plt.subplots(figsize=(12, 5))
         ax.plot(w_xs, w_ys, marker="o", color=BLUE, linewidth=2, markersize=4, label="Вага (кг)")
-        ax.axhline(y=78, color=GREEN, linestyle="--", linewidth=1.5, label="Ціль: 78 кг")
+        ax.axhline(y=75, color=GREEN, linestyle="--", linewidth=1.5, label="Ціль: 75 кг")
 
         last_w = w_ys[-1]
-        to_go = round(last_w - 78, 1)
+        to_go = round(last_w - 75, 1)
         status = f"Залишилось: -{to_go} кг" if to_go > 0 else "Ціль досягнута!"
 
         ax.set_title(f"Прогрес до цілі — вага ({days} днів)\n{status}",

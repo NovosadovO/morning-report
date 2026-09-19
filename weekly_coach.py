@@ -294,7 +294,7 @@ def _build_coach_prompt(week_data: dict) -> str:
         "⚖️ ВАГА:",
         f"  Записів: {weight.get('count', 0)}",
         f"  Середня: {weight.get('avg') or 'немає даних'} кг",
-        f"  Остання: {weight.get('last') or 'немає'} кг (ціль: 78 кг)",
+        f"  Остання: {weight.get('last') or 'немає'} кг (ціль: 75 кг)",
     ]
 
     # Звички

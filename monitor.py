@@ -3460,11 +3460,11 @@ def _build_report_header(now_local, slot_key, cal_events_raw):
             "Ранній старт — поки інші сплять, ти вже в грі 🏆",
             "Бігун і трейдер прокидається першим — вперед до мети! 🌄",
             "Рання зміна: Minebea чекає, BTC вже торгує 🏭⚡",
-            "Дисципліна бігуна — щоденний старт 05:00 → 78кг ближче 🏃",
+            "Дисципліна бігуна — щоденний старт 05:00 → 75кг ближче 🏃",
         ],
         "morning": [
             "Ранок — перевірив BTC, поїв, побіг. Це і є фінансова свобода 🚀",
-            "Кожен кілометр бігу — крок до 78кг і нової версії себе 🏃💰",
+            "Кожен кілометр бігу — крок до 75кг і нової версії себе 🏃💰",
             "Сонце над Кошіце — хороший знак для крипто і для бігу 🌅",
             "Ранок Олега: Strava + CoinGecko + кава. Ідеальна комбінація ☕📈",
         ],
@@ -4494,7 +4494,7 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
         wd = _lw()
         if wd:
             last_key = sorted(wd.keys())[-1]
-            ctx_parts.append(f"Вага: {wd[last_key]} кг (ціль 75 кг, залишилось {wd[last_key]-78:.1f} кг)")
+            ctx_parts.append(f"Вага: {wd[last_key]} кг (ціль 75 кг, залишилось {wd[last_key]-75:.1f} кг)")
     except: pass
 
     # Здоров'я
@@ -6766,7 +6766,7 @@ def check_smart_notifications():
                 )
             mark("tomorrow_plan")
 
-        # ── 7. ПРОГРЕС ДО 78 КГ (щосереди о 12:00) ───────────────────────
+        # ── 7. ПРОГРЕС ДО 75 КГ (щосереди о 12:00) ───────────────────────
         if today_shift == "free" and now_local.weekday() == 2 and h == 12 and 0 <= m < 5 and not sent("weight_progress"):
             try:
                 from storage import load_weight as _lw
@@ -6945,7 +6945,7 @@ def check_morning_context():
                     wdata = _lw()
                     if wdata:
                         last_key = sorted(wdata.keys())[-1]
-                        weight_ctx = f"Вага: {wdata[last_key]} кг (ціль 78, залишилось {wdata[last_key]-78:.1f} кг)."
+                        weight_ctx = f"Вага: {wdata[last_key]} кг (ціль 75, залишилось {wdata[last_key]-75:.1f} кг)."
                 except Exception:
                     pass
 
@@ -7845,7 +7845,7 @@ def check_friday_recap():
         if gemini_key:
             try:
                 run_c = habit_stats.get("run",0)
-                w_info = f", вага {w_end} кг (ціль 78)" if w_end else ""
+                w_info = f", вага {w_end} кг (ціль 75)" if w_end else ""
                 prompt = (
                     f"Тиждень Олега: біг {run_c}/5 днів, вода {habit_stats.get('water',0)}/5{w_info}. "
                     f"Сьогодні п'ятниця. Дай: 1) одне речення підсумку тижня; "
@@ -9513,7 +9513,7 @@ def check_health_weekly_tracker():
         w_avg = round(sum(weight_vals) / len(weight_vals), 1)
         w_diff = round(w_end - w_start, 1)
         trend = "↘️ -" if w_diff < 0 else ("↗️ +" if w_diff > 0 else "→")
-        ctx_lines.append(f"Вага: початок {w_start}кг → кінець {w_end}кг ({trend}{abs(w_diff)}кг), середня {w_avg}кг, ціль 78кг (залишилось {round(w_end-78,1)}кг)")
+        ctx_lines.append(f"Вага: початок {w_start}кг → кінець {w_end}кг ({trend}{abs(w_diff)}кг), середня {w_avg}кг, ціль 75кг (залишилось {round(w_end-75,1)}кг)")
     else:
         ctx_lines.append("Вага: даних немає (нагадую вносити вагу щодня)")
 
@@ -10238,7 +10238,7 @@ def main():
                 wd_r = _lw_r()
                 if wd_r:
                     lk = sorted(wd_r.keys())[-1]
-                    weight_hint = f"Остання вага: {wd_r[lk]} кг (ціль 78 кг)."
+                    weight_hint = f"Остання вага: {wd_r[lk]} кг (ціль 75 кг)."
             except: pass
 
             # Контекст кроків і сну
@@ -10672,11 +10672,11 @@ def main():
                 _last_w_key = _all_w_keys[-1] if _all_w_keys else None
                 _last_w = _wd.get(_last_w_key) if _last_w_key else None
                 if _last_w:
-                    _diff_goal = round(_last_w - 78.0, 1)
+                    _diff_goal = round(_last_w - 75.0, 1)
                     _all_w_vals = [_wd[k] for k in _all_w_keys if _wd.get(k)]
                     _delta_w = round(_all_w_vals[-1] - _all_w_vals[-2], 1) if len(_all_w_vals) >= 2 else 0
                     _d_icon = "📈" if _delta_w > 0.1 else ("📉" if _delta_w < -0.1 else "➡️")
-                    _goal_str = f"до 78 кг: <b>{_diff_goal:+.1f} кг</b>" if _diff_goal > 0 else "🏆 <b>Ціль 78 кг досягнута!</b>"
+                    _goal_str = f"до 75 кг: <b>{_diff_goal:+.1f} кг</b>" if _diff_goal > 0 else "🏆 <b>Ціль 75 кг досягнута!</b>"
                     # Дата останнього запису
                     _last_w_ago = (now_local.date() - __import__('datetime').date.fromisoformat(_last_w_key)).days if _last_w_key else 999
                     _w_age_str = "" if _last_w_ago == 0 else (f" <i>(дані за {_last_w_ago}д тому)</i>" if _last_w_ago <= 30 else f" <i>(⚠️ дані за {_last_w_ago}д тому — надішли вагу!)</i>")
@@ -10987,7 +10987,7 @@ def main():
                 if len(_vals) >= 2:
                     _d = _vals[-1] - _vals[0]
                     _trend = f" (тренд {_d:+.1f} кг за останні {len(_vals)} замірів)"
-                _health_parts.append(f"Вага: {_wd_th[_lk]} кг, ціль 78 кг{_trend}")
+                _health_parts.append(f"Вага: {_wd_th[_lk]} кг, ціль 75 кг{_trend}")
             if steps_val > 0:
                 _health_parts.append(f"Кроки: {steps_val} (ціль 10000)")
             if sleep_val > 0:
@@ -11153,7 +11153,7 @@ def main():
                     f"Напиши ЛАЙФ-КОУЧ вступ до звіту. Структура ТОЧНО така:\n\n"
                     f"🧭 ВЕКТОР ДНЯ\n"
                     f"[3-4 речення: що НАЙВАЖЛИВІШЕ для Олега прямо зараз з точки зору його 3 цілей: "
-                    f"(1) фінансова незалежність через крипто і InterFin, (2) схуднення до 78 кг, (3) нова робота в інвестиціях. "
+                    f"(1) фінансова незалежність через крипто і InterFin, (2) схуднення до 75 кг, (3) нова робота в інвестиціях. "
                     f"Яка ціль найближча до прориву? Що блокує прогрес? Яка 1 дія дасть максимальний ефект сьогодні? "
                     f"Враховуй зміну — якщо на заводі пиши що реально зробити на роботі або після.]\n\n"
                     f"💡 ІНСАЙТ ДНЯ\n"
@@ -11928,7 +11928,7 @@ def check_morning_brief():
                     bars.append(blocks[bar_h])
                 trend = "↗️" if w_vals[-1] > w_vals[0] else ("↘️" if w_vals[-1] < w_vals[0] else "→")
                 last_w = w_vals[-1]
-                diff_goal = round(last_w - 78.0, 1)
+                diff_goal = round(last_w - 75.0, 1)
                 goal_str = f"до цілі: -{diff_goal} кг" if diff_goal > 0 else "✅ ЦІЛЬ ДОСЯГНУТА!"
                 lines_out.append(f"⚖️ <b>Вага</b>  {last_w} кг  {trend}  ({goal_str})")
                 lines_out.append(f"   <code>{''.join(bars)}</code>  7 днів")
@@ -11956,7 +11956,7 @@ def check_morning_brief():
                 f"{cal_ctx_brief}\n\n"
                 f"Дай ОДНУ конкретну actionable пораду на ЦЕЙ КОНКРЕТНИЙ день. "
                 f"Якщо є події в календарі — враховуй їх. "
-                f"Ціль: схуднення до 78 кг, регулярний біг, крипто-інвестиції. "
+                f"Ціль: схуднення до 75 кг, регулярний біг, крипто-інвестиції. "
                 f"1-2 речення, бадьоро, тільки конкретика. Українська."
             )
             payload = json.dumps({"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"maxOutputTokens":600,"temperature":0.95}}).encode()
@@ -12072,7 +12072,7 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
         wd = _lw()
         if wd:
             last_key = sorted(wd.keys())[-1]
-            ctx_parts.append(f"Вага: {wd[last_key]} кг (ціль 78 кг, залишилось {wd[last_key]-78:.1f} кг)")
+            ctx_parts.append(f"Вага: {wd[last_key]} кг (ціль 75 кг, залишилось {wd[last_key]-75:.1f} кг)")
     except: pass
 
     # Здоров'я
@@ -12142,7 +12142,7 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
     profile = (
         "Ти — персональний асистент Олега Новосадова (живе в Кошіце, Словаччина). "
         "Олег: завод Minebea Mitsumi, змінна робота (рання 06-18 / нічна 18-06 / вихідний), "
-        "цілі — схуднути до 78 кг, регулярно бігати, інвестиції в крипто (BTC,ETH,AVAX,ONDO), "
+        "цілі — схуднути до 75 кг, регулярно бігати, інвестиції в крипто (BTC,ETH,AVAX,ONDO), "
         "приймає ліки Armolopid щодня (курс 27.04–27.07.2026). "
         "Стиль: як близький друг — по-українськи, без шаблонних фраз. "
         "Враховуй ПОДІЇ КАЛЕНДАРЯ — якщо є заплановане, пов'яжи пораду з цим. "
@@ -12282,7 +12282,7 @@ def check_proactive_insights():
                 if last_entries:
                     last_date, last_w = last_entries[-1]
                     recent_change = last_w - last_entries[0][1] if len(last_entries) > 1 else 0
-                    to_goal = last_w - 78.0
+                    to_goal = last_w - 75.0
                     trend = "📉" if recent_change < -0.2 else "📈" if recent_change > 0.2 else "➡️"
 
                     # AI аналіз тренду
@@ -12295,7 +12295,7 @@ def check_proactive_insights():
                         f"⚖️ <b>Тижневий підсумок ваги</b>\n\n"
                         f"Зараз: <b>{last_w} кг</b> ({last_date})\n"
                         f"{trend} За тиждень: {recent_change:+.1f} кг\n"
-                        f"До цілі 78 кг: <b>{to_goal:.1f} кг</b>\n"
+                        f"До цілі 75 кг: <b>{to_goal:.1f} кг</b>\n"
                     )
                     if ai_msg:
                         msg += f"\n{ai_msg}"
@@ -12691,13 +12691,13 @@ def check_weekly_habit_stats():
                     w_start = w_days_data[sorted_keys[0]]
                     w_end   = w_days_data[sorted_keys[-1]]
                     diff = round(w_end - w_start, 1)
-                    to_goal = round(w_end - 78.0, 1)
+                    to_goal = round(w_end - 75.0, 1)
                     trend = "↗️ +{:.1f} кг".format(diff) if diff > 0 else "↘️ {:.1f} кг".format(diff)
                     lines_out.append(f"⚖️ <b>Вага за тиждень:</b> {w_start}→{w_end} кг  {trend}")
                     if to_goal > 0:
-                        lines_out.append(f"   🎯 До цілі 78 кг: ще -{to_goal} кг")
+                        lines_out.append(f"   🎯 До цілі 75 кг: ще -{to_goal} кг")
                     else:
-                        lines_out.append(f"   🏆 Ціль 78 кг ДОСЯГНУТА!")
+                        lines_out.append(f"   🏆 Ціль 75 кг ДОСЯГНУТА!")
                     lines_out.append("")
         except Exception:
             pass
@@ -13203,8 +13203,8 @@ def check_day_summary():
             w_recent = [wdata[d] for d in recent if wdata.get(d)]
             last_w = wdata.get(today)
             if last_w:
-                diff_goal = round(last_w - 78.0, 1)
-                goal_str = f"до 78 кг: -{diff_goal}" if diff_goal > 0 else "🏆 ЦІЛЬ!"
+                diff_goal = round(last_w - 75.0, 1)
+                goal_str = f"до 75 кг: -{diff_goal}" if diff_goal > 0 else "🏆 ЦІЛЬ!"
                 # Тренд
                 if len(w_recent) >= 2:
                     delta = round(w_recent[-1] - w_recent[-2], 1)
@@ -13837,7 +13837,7 @@ def check_investment_news_digest():
 FASTING_FILE = os.path.join(_DATA_DIR, "monitor_fasting.json")
 
 def check_fasting_reminder():
-    """О 20:00 у вільний день: нагадування закінчити їсти (ціль — схуднення до 78 кг)."""
+    """О 20:00 у вільний день: нагадування закінчити їсти (ціль — схуднення до 75 кг)."""
     now_local = datetime.now(timezone.utc) + timedelta(hours=2)
     if not (now_local.hour == 20 and now_local.minute < 5):
         return
@@ -13875,9 +13875,9 @@ def check_fasting_reminder():
     weight_note = ""
     if weight_data:
         last_w = sorted(weight_data.items())[-1][1]
-        to_goal = last_w - 78.0
+        to_goal = last_w - 75.0
         if to_goal > 0:
-            weight_note = f"\n\n⚖️ До цілі 78 кг ще: <b>{to_goal:.1f} кг</b> — кожен день рахується!"
+            weight_note = f"\n\n⚖️ До цілі 75 кг ще: <b>{to_goal:.1f} кг</b> — кожен день рахується!"
 
     send_telegram(
         "🕗 <b>Час зупинитись з їжею!</b>\n\n"
@@ -14242,7 +14242,7 @@ def check_smart_notifications():
         # Часи зміщені щоб НЕ збігались з morning_context (08:30/10:00),
         # crypto_morning (09:10), day_summary (19:00), mood (21:30)
         ai_slots = {
-            11: ("💡 Порада на день", "Олег вдома у вільний день, ранок минув. Дай ОДНУ конкретну дію на найближчі години — для схуднення (ціль 78 кг) або здоров'я. 1-2 речення, конкретно."),
+            11: ("💡 Порада на день", "Олег вдома у вільний день, ранок минув. Дай ОДНУ конкретну дію на найближчі години — для схуднення (ціль 75 кг) або здоров'я. 1-2 речення, конкретно."),
             15: ("☀️ Порада на другу половину дня", "Олег вдома в середині дня. Дай одну ідею — що зробити для здоров'я або продуктивності наступні 2 години. Коротко і конкретно."),
             20: ("🌙 Вечірня порада", "Вечір вільного дня Олега. 1-2 речення: коротка оцінка дня і одна порада перед сном (схуднення/здоров'я/фінанси). По суті, без загальних слів."),
         }
@@ -14313,7 +14313,7 @@ def check_smart_notifications():
                 )
             mark("tomorrow_plan")
 
-        # ── 7. ПРОГРЕС ДО 78 КГ (щосереди о 12:00) ───────────────────────
+        # ── 7. ПРОГРЕС ДО 75 КГ (щосереди о 12:00) ───────────────────────
         if today_shift == "free" and now_local.weekday() == 2 and h == 12 and 0 <= m < 5 and not sent("weight_progress"):
             try:
                 from storage import load_weight as _lw
@@ -14323,7 +14323,7 @@ def check_smart_notifications():
                     if len(sorted_keys) >= 2:
                         last_w = wdata[sorted_keys[-1]]
                         first_w = wdata[sorted_keys[0]]
-                        to_goal = round(last_w - 78.0, 1)
+                        to_goal = round(last_w - 75.0, 1)
                         total_lost = round(first_w - last_w, 1)
                         if to_goal > 0:
                             # Графік останніх 5 вимірювань
@@ -14338,7 +14338,7 @@ def check_smart_notifications():
                                 bars.append(blocks[max(0, min(7, b))])
                             trend = "↗️" if w_vals[-1] > w_vals[-2] else "↘️" if w_vals[-1] < w_vals[-2] else "→"
                             send_telegram(
-                                f"⚖️ <b>Прогрес до цілі 78 кг</b>\n\n"
+                                f"⚖️ <b>Прогрес до цілі 75 кг</b>\n\n"
                                 f"Зараз: <b>{last_w} кг</b>  {trend}\n"
                                 f"До цілі: <b>{to_goal} кг</b>\n"
                                 f"Всього скинуто: {total_lost} кг\n\n"
@@ -14492,7 +14492,7 @@ def check_morning_context():
                     wdata = _lw()
                     if wdata:
                         last_key = sorted(wdata.keys())[-1]
-                        weight_ctx = f"Вага: {wdata[last_key]} кг (ціль 78, залишилось {wdata[last_key]-78:.1f} кг)."
+                        weight_ctx = f"Вага: {wdata[last_key]} кг (ціль 75, залишилось {wdata[last_key]-75:.1f} кг)."
                 except Exception:
                     pass
 
@@ -14651,7 +14651,7 @@ def check_run_coach():
     if dow in (0, 2, 4) and h == 9 and 30 <= m < 35 and not state.get(run_key_day):
         plans = [
             "🏃 <b>День бігу!</b>\n\nПлан: 20-30 хв легкий біг.\n• Розминка 5 хв ходьба\n• Темп розмовний (можеш говорити)\n• Заминка 5 хв ходьба\n\n💪 Навіть 2 км — це прогрес!",
-            "🏃 <b>Час бігти!</b>\n\nСьогодні: 25-35 хв.\n• Перші 10 хв повільно\n• Середина — комфортний темп\n• Останні 5 хв — трохи швидше\n\n🔥 Кожне тренування = -калорії = ближче до 78 кг!",
+            "🏃 <b>Час бігти!</b>\n\nСьогодні: 25-35 хв.\n• Перші 10 хв повільно\n• Середина — комфортний темп\n• Останні 5 хв — трохи швидше\n\n🔥 Кожне тренування = -калорії = ближче до 75 кг!",
             "🏃 <b>Пробіжка!</b>\n\nЦього тижня скільки разів бігав? Якщо 0-1 — сьогодні обов'язково!\n• 20 хв — мінімум\n• Повітря + рух = настрій на весь день\n\n🎯 Ціль: 3 тренування/тиждень",
         ]
         send_telegram(plans[dow % 3])
@@ -14666,7 +14666,7 @@ def check_run_coach():
             f"🏃 <b>{days_without} днів без пробіжки!</b>\n\n"
             f"Сьогодні вихідний — гарний момент для 20 хв бігу після обіду!\n"
             f"Настрій гарантований 💪\n\n"
-            f"<i>Ціль 78 кг — кожне тренування рахується!</i>"
+            f"<i>Ціль 75 кг — кожне тренування рахується!</i>"
         )
         state[run_alert_key] = True
         save_json_file(RUN_COACH_FILE, state)
@@ -14766,7 +14766,7 @@ def check_nutrition_reminder():
                 "Починаємо день правильно 💪\n"
                 "• Повноцінний сніданок = енергія на весь ранок\n"
                 "• Не пропускай — особливо якщо плануєш біг!\n\n"
-                "<i>Ціль 78 кг: важливо що і коли їсти</i>"
+                "<i>Ціль 75 кг: важливо що і коли їсти</i>"
             )
             mark("breakfast")
         elif h == 13 and 0 <= m < 3 and not already("lunch"):
@@ -14775,7 +14775,7 @@ def check_nutrition_reminder():
                 "Час заправитись 🍽\n"
                 "• Тарілка: ½ овочі, ¼ білок, ¼ крупи\n"
                 "• Не переїдай — вечеря ще буде\n\n"
-                "<i>Слідкуй за порціями → 78 кг реальні!</i>"
+                "<i>Слідкуй за порціями → 75 кг реальні!</i>"
             )
             mark("lunch")
         elif h == 18 and 0 <= m < 3 and not already("dinner"):
@@ -14785,7 +14785,7 @@ def check_nutrition_reminder():
                 "• Їж до 19:00\n"
                 "• Легке: риба, овочі, яйця\n"
                 "• Уникай солодкого та важкого\n\n"
-                "💪 <i>Ціль 78 кг: дисципліна ввечері — результат вранці!</i>"
+                "💪 <i>Ціль 75 кг: дисципліна ввечері — результат вранці!</i>"
             )
             mark("dinner")
 
@@ -15032,7 +15032,7 @@ def check_week_goals():
             f"• Холодний душ: {habit_stats.get('shower',0)}/7 днів\n"
         )
         if last_weight:
-            prompt += f"• Вага: {last_weight} кг (ціль 78 кг)\n"
+            prompt += f"• Вага: {last_weight} кг (ціль 75 кг)\n"
         prompt += (
             f"\nСформулюй 3 конкретні цілі на наступний тиждень українською. "
             f"Враховуй слабкі місця цього тижня. Кожна ціль — одне речення, конкретна і досяжна. "
@@ -15062,7 +15062,7 @@ def check_week_goals():
             f"🚿 Душ: {habit_stats.get('shower',0)}/7 днів\n"
         )
         if last_weight:
-            diff = round(last_weight - 78.0, 1)
+            diff = round(last_weight - 75.0, 1)
             msg += f"⚖️ Вага: {last_weight} кг (до цілі: -{diff} кг)\n"
 
         msg += f"\n🎯 <b>Цілі на наступний тиждень:</b>\n{goals_text}"
@@ -15307,7 +15307,7 @@ def check_step_goal():
                     f"<code>[{bar}]</code> {pct}%\n\n"
                     f"До цілі ще {remaining:,} кроків.\n"
                     f"Час невеличкої прогулянки? 🚶‍♂️\n"
-                    f"<i>Кожен крок → ближче до 78 кг!</i>"
+                    f"<i>Кожен крок → ближче до 75 кг!</i>"
                 )
             send_telegram(msg)
             state[today] = True
@@ -15378,11 +15378,11 @@ def check_friday_recap():
         # Вага
         if w_start and w_end:
             diff = round(w_end - w_start, 1)
-            to_goal = round(w_end - 78.0, 1)
+            to_goal = round(w_end - 75.0, 1)
             trend = f"↗️ +{diff} кг" if diff > 0 else f"↘️ {diff} кг"
             lines_out.append(f"⚖️ <b>Вага:</b> {w_start}→{w_end} кг  {trend}")
             if to_goal > 0:
-                lines_out.append(f"   🎯 До цілі 78 кг: ще -{to_goal} кг")
+                lines_out.append(f"   🎯 До цілі 75 кг: ще -{to_goal} кг")
             else:
                 lines_out.append("   🏆 ЦІЛЬ ДОСЯГНУТА!")
             lines_out.append("")
@@ -15392,7 +15392,7 @@ def check_friday_recap():
         if gemini_key:
             try:
                 run_c = habit_stats.get("run",0)
-                w_info = f", вага {w_end} кг (ціль 78)" if w_end else ""
+                w_info = f", вага {w_end} кг (ціль 75)" if w_end else ""
                 prompt = (
                     f"Тиждень Олега: біг {run_c}/5 днів, вода {habit_stats.get('water',0)}/5{w_info}. "
                     f"Сьогодні п'ятниця. Дай: 1) одне речення підсумку тижня; "
@@ -15475,12 +15475,12 @@ def check_weight_trend_alert():
             bars.append(blocks[max(0, min(7, b))])
 
         total_rise = round(w_vals[-1] - w_vals[-rising_days-1], 1)
-        to_goal = round(w_vals[-1] - 78.0, 1)
+        to_goal = round(w_vals[-1] - 75.0, 1)
 
         send_telegram(
             f"⚠️ <b>Вага зростає {rising_days} дні поспіль!</b>\n"
             f"<code>{''.join(bars)}</code>  ↗️ +{total_rise} кг\n"
-            f"Зараз: <b>{w_vals[-1]} кг</b>  |  До 78 кг: -{to_goal}\n\n"
+            f"Зараз: <b>{w_vals[-1]} кг</b>  |  До 75 кг: -{to_goal}\n\n"
             f"🔍 Можливі причини:\n"
             f"• 💧 Недостатньо води\n"
             f"• 🍽 Пізня їжа або великі порції\n"
@@ -16501,11 +16501,11 @@ def check_monthly_summary():
             sign = "+" if w_delta > 0 else ""
             trend = "📈 зросла" if w_delta > 0 else ("📉 знизилась" if w_delta < 0 else "➡️ без змін")
             lines.append(f"⚖️ <b>Вага:</b> {w_start}→{w_end} кг ({sign}{w_delta} кг) {trend}")
-            to_goal = round(w_end - 78.0, 1)
+            to_goal = round(w_end - 75.0, 1)
             if to_goal > 0:
-                lines.append(f"   До цілі 78 кг: ще <b>{to_goal} кг</b>")
+                lines.append(f"   До цілі 75 кг: ще <b>{to_goal} кг</b>")
             else:
-                lines.append(f"   🏆 Ціль 78 кг досягнута!")
+                lines.append(f"   🏆 Ціль 75 кг досягнута!")
     except Exception:
         pass
 
@@ -16669,9 +16669,9 @@ def get_weekly_dashboard() -> str:
             sign    = "+" if delta > 0 else ""
             trend   = "📈" if delta > 0.1 else ("📉" if delta < -0.1 else "➡️")
             lines.append(f"\n⚖️ <b>Вага:</b> {w_last} кг {trend} ({sign}{delta} кг за тиждень)")
-            to_goal = round(w_last - 78.0, 1)
+            to_goal = round(w_last - 75.0, 1)
             if to_goal > 0:
-                lines.append(f"   До 78 кг: -{to_goal} кг")
+                lines.append(f"   До 75 кг: -{to_goal} кг")
         else:
             lines.append("\n⚖️ <b>Вага:</b> немає записів цього тижня")
     except Exception:
@@ -17060,7 +17060,7 @@ def check_health_weekly_tracker():
         w_avg = round(sum(weight_vals) / len(weight_vals), 1)
         w_diff = round(w_end - w_start, 1)
         trend = "↘️ -" if w_diff < 0 else ("↗️ +" if w_diff > 0 else "→")
-        ctx_lines.append(f"Вага: початок {w_start}кг → кінець {w_end}кг ({trend}{abs(w_diff)}кг), середня {w_avg}кг, ціль 78кг (залишилось {round(w_end-78,1)}кг)")
+        ctx_lines.append(f"Вага: початок {w_start}кг → кінець {w_end}кг ({trend}{abs(w_diff)}кг), середня {w_avg}кг, ціль 75кг (залишилось {round(w_end-75,1)}кг)")
     else:
         ctx_lines.append("Вага: даних немає (нагадую вносити вагу щодня)")
 
@@ -17096,7 +17096,7 @@ def check_health_weekly_tracker():
         try:
             prompt = (
                 f"Ти — персональний health-коуч Олега Новосадова.\n"
-                f"Ціль: схуднення до 78 кг, регулярний біг, здорові звички.\n\n"
+                f"Ціль: схуднення до 75 кг, регулярний біг, здорові звички.\n\n"
                 f"=== ДАНІ ТИЖНЯ ===\n{health_ctx}\n=================\n\n"
                 f"Напиши тижневий аналіз здоров'я:\n\n"
                 f"⚖️ ВАГА\n[2-3 речення: тренд за тиждень, темп схуднення, чи вкладається в план -0.5кг/тиждень]\n\n"
