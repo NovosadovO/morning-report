@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T00:31:34.762956",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-20T00:31:37.772135",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +17.7% за 24г</b>\n\nЗараз: 9.6728 $\n24г тому: 8.2156 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-09-20T00:35:29.876466",
       "kind": "lifecycle",
       "text": "⏳ СКОРО ПРОДОВЖЕННЯ\n━━━━━━━━━━━━━━━━━━━━\n🔄 Підписка CapCut\n💸 Оплата: 22.09.2026 — через 2 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T00:35:47.958549",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com → Your receipt from Runable #2714-2414\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 2 нових оголошень\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
