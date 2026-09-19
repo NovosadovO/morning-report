@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T01:15:55.116618",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 3 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79272"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79272"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79272"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79272"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79272"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79272"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-20T01:15:56.277039",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -239,6 +200,12 @@
       "ts": "2026-09-20T01:18:02.181238",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T01:18:04.998414",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +19.6% за 24г</b>\n\nЗараз: 9.7939 $\n24г тому: 8.1864 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
