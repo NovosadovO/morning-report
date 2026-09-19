@@ -303,16 +303,45 @@ class IntelligentListener:
             return []
     
     def _check_time_based(self) -> str or None:
-        """Ранок (6-7am) чи Вечір (20-21)?"""
+        """Ранок (6-7am) чи Вечір (20-21)?
+
+        DEDUP: smart_notifications_v3 (через proactive_scheduler) вже надсилає
+        повний структурований звіт (crypto+health+email+календар+рекомендації)
+        рівно о 6:00 і 20:00 — цей generic-тригер робив те саме іншими словами,
+        тобто Олег отримував 2 різні повідомлення на ту саму тему підряд.
+        Тому: якщо scheduler вже відзвітував за цей слот сьогодні — пропускаємо,
+        це не втрата функціоналу, бо контент вже покрито. Якщо scheduler НЕ
+        відзвітував (тред впав, редеплой, GEMINI quota і т.д.) — цей тригер
+        лишається як fallback і все одно спрацює.
+        """
         now = datetime.now(tz=_TZ)
         hour = now.hour
-        
+
+        slot = None
         if 6 <= hour < 7:
-            return "morning"
+            slot = "morning"
         elif 20 <= hour < 21:
-            return "evening"
-        
-        return None
+            slot = "evening"
+
+        if slot and self._covered_by_scheduler(slot):
+            return None
+
+        return slot
+
+    def _covered_by_scheduler(self, slot: str) -> bool:
+        """Чи smart_notifications_v3 вже надіслав звіт для цього слоту сьогодні
+        (data/scheduler_state.json, ведеться proactive_scheduler.py)."""
+        try:
+            state_path = os.path.join(_DATA_DIR, "scheduler_state.json")
+            with open(state_path) as f:
+                state = json.load(f) or {}
+            now = datetime.now(tz=_TZ)
+            today = now.strftime("%Y-%m-%d")
+            if state.get("last_run_date") != today:
+                return False
+            return slot in (state.get("completed_schedules") or [])
+        except Exception:
+            return False
     
     def _decode_header(self, header_str):
         """Декодує заголовок email"""

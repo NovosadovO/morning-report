@@ -15,12 +15,17 @@ from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 from email.header import decode_header
 
-try:
-    from recommendations_engine import get_recommendations_for_schedule
-    _RECOMMENDATIONS_AVAILABLE = True
-except ImportError:
-    _RECOMMENDATIONS_AVAILABLE = False
-    print("⚠️ recommendations_engine not available", flush=True)
+# recommendations_engine.py — БІЛЬШЕ НЕ використовується тут (24.09 merge):
+# він робив ОКРЕМИЙ Gemini-виклик і додавав "🎯 МОЇ РЕКОМЕНДАЦІЇ" на основі
+# ЧАСТКОВО ЗАШИТИХ фейкових даних (build_full_context мав хардкод-заглушки:
+# фіксований portfolio_value=50000, BTC/ETH/AVAX кількості, goals_progress
+# TODO-цифри) — тобто міг радити щось на основі даних, які не відповідають
+# реальності Олега, і коштував додатковий Gemini-запит. Розділ рекомендацій
+# нікуди не зник — тепер він генерується В ТОМУ Ж запиті що й основний аналіз
+# (_analyze_morning/_lunch/_afternoon/_evening), на РЕАЛЬНИХ даних, які й так
+# передаються в prompt (emails/crypto/health/events/status). Нічого не втрачено,
+# лише прибрано зайвий виклик і фейкові дані.
+_RECOMMENDATIONS_AVAILABLE = False
 
 # ============ CONFIG ============
 
@@ -263,6 +268,7 @@ WRITE A MESSAGE THAT:
 4. Highlights key cryptocurrency moves (BTC, ETH, AVAX, ONDO)
 5. Gives 1-2 health/fitness tips based on yesterday's data
 6. Sets positive tone for the day
+7. Ends with a section titled exactly "🎯 МОЇ РЕКОМЕНДАЦІЇ:" containing 2 SPECIFIC, ACTIONABLE recommendations based ONLY on the real data above (no invented numbers) — each with concrete action + why + when, 1-2 sentences per recommendation
 
 TONE: Motivating, professional, supportive. Use emojis appropriately.
 LANGUAGE: Ukrainian (Українська)
@@ -271,7 +277,7 @@ FORMAT: Plain text, no markdown."""
     body = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {
-            "maxOutputTokens": 500,
+            "maxOutputTokens": 700,
             "temperature": 0.7,
             "thinkingConfig": {"thinkingBudget": 0}
         }
@@ -335,6 +341,7 @@ WRITE A MESSAGE THAT:
 4. Gives a quick portfolio/finance progress note (toward financial independence goal)
 5. Encourages a lunch/break & hydration moment appropriate to his real status
 6. Suggests 1 quick action if needed
+7. Ends with a section titled exactly "🎯 МОЇ РЕКОМЕНДАЦІЇ:" containing 2 SPECIFIC, ACTIONABLE recommendations based ONLY on the real data above (no invented numbers) — each with concrete action + why + when, 1-2 sentences per recommendation
 
 TONE: Professional, helpful, brief but informative.
 LANGUAGE: Ukrainian.
@@ -343,7 +350,7 @@ FORMAT: Plain text."""
     body = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {
-            "maxOutputTokens": 550,
+            "maxOutputTokens": 750,
             "temperature": 0.7,
             "thinkingConfig": {"thinkingBudget": 0}
         }
@@ -439,6 +446,7 @@ WRITE A MESSAGE THAT:
 3. Reminds about crypto price points to watch
 4. Mentions traffic/weather if relevant to his commute
 5. Promotes activity goal (10k steps)
+6. Ends with a section titled exactly "🎯 МОЇ РЕКОМЕНДАЦІЇ:" containing 2 SPECIFIC, ACTIONABLE recommendations based ONLY on the real data above (no invented numbers) — each with concrete action + why + when, 1-2 sentences per recommendation
 
 TONE: Practical, motivating, action-oriented.
 LANGUAGE: Ukrainian.
@@ -447,7 +455,7 @@ FORMAT: Plain text."""
     body = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {
-            "maxOutputTokens": 550,
+            "maxOutputTokens": 750,
             "temperature": 0.7,
             "thinkingConfig": {"thinkingBudget": 0}
         }
@@ -495,6 +503,7 @@ WRITE A MESSAGE THAT:
 5. Celebrates progress (steps, email management, etc.)
 6. Gives 1-2 tips appropriate to his REAL status (e.g. night-shift energy/food tips if working nights, wind-down tips only if actually evening at home)
 7. Ends with an astrological insight or motivation
+8. Right before the astrological closing, add a section titled exactly "🎯 МОЇ РЕКОМЕНДАЦІЇ:" containing 2 SPECIFIC, ACTIONABLE recommendations for tomorrow based ONLY on the real data above (no invented numbers) — each with concrete action + why + when, 1-2 sentences per recommendation
 
 TONE: Reflective, supportive, closing-the-day vibe.
 LANGUAGE: Ukrainian.
@@ -503,7 +512,7 @@ FORMAT: Plain text with emojis."""
     body = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {
-            "maxOutputTokens": 700,
+            "maxOutputTokens": 900,
             "temperature": 0.7,
             "thinkingConfig": {"thinkingBudget": 0}
         }
@@ -545,15 +554,10 @@ def handle_morning_schedule(schedule_name, now_tz):
         message = _analyze_morning(emails, crypto, health, events)
         _log(f"Generated: {len(message)} chars")
         
-        # Add recommendations
-        if _RECOMMENDATIONS_AVAILABLE:
-            try:
-                recs = get_recommendations_for_schedule("morning")
-                if recs:
-                    message += "\n\n🎯 МОЇ РЕКОМЕНДАЦІЇ:\n" + recs
-                    _log(f"Added recommendations: {len(recs)} chars")
-            except Exception as e:
-                _log(f"⚠️ Recommendations failed: {e}")
+        # Рекомендації тепер вбудовані в саму _analyze_morning() (розділ
+        # "🎯 МОЇ РЕКОМЕНДАЦІЇ:" в самому prompt-і) — окремий Gemini-виклик
+        # до recommendations_engine.py прибрано (24.09 merge, дублював контент
+        # на частково фейкових даних, див. коментар вище про _RECOMMENDATIONS_AVAILABLE).
         
         if message:
             ok = _send_to_telegram(message)
@@ -576,15 +580,10 @@ def handle_lunch_schedule(schedule_name, now_tz):
         message = _analyze_lunch(emails, crypto, health)
         _log(f"Generated: {len(message)} chars")
         
-        # Add recommendations
-        if _RECOMMENDATIONS_AVAILABLE:
-            try:
-                recs = get_recommendations_for_schedule("lunch")
-                if recs:
-                    message += "\n\n🎯 МОЇ РЕКОМЕНДАЦІЇ:\n" + recs
-                    _log(f"Added recommendations: {len(recs)} chars")
-            except Exception as e:
-                _log(f"⚠️ Recommendations failed: {e}")
+        # Рекомендації тепер вбудовані в саму _analyze_lunch() (розділ
+        # "🎯 МОЇ РЕКОМЕНДАЦІЇ:" в самому prompt-і) — окремий Gemini-виклик
+        # до recommendations_engine.py прибрано (24.09 merge, дублював контент
+        # на частково фейкових даних, див. коментар вище про _RECOMMENDATIONS_AVAILABLE).
         
         if message:
             ok = _send_to_telegram(message)
@@ -608,15 +607,10 @@ def handle_afternoon_schedule(schedule_name, now_tz):
         message = _analyze_afternoon(emails, crypto, health, events)
         _log(f"Generated: {len(message)} chars")
         
-        # Add recommendations
-        if _RECOMMENDATIONS_AVAILABLE:
-            try:
-                recs = get_recommendations_for_schedule("afternoon")
-                if recs:
-                    message += "\n\n🎯 МОЇ РЕКОМЕНДАЦІЇ:\n" + recs
-                    _log(f"Added recommendations: {len(recs)} chars")
-            except Exception as e:
-                _log(f"⚠️ Recommendations failed: {e}")
+        # Рекомендації тепер вбудовані в саму _analyze_afternoon() (розділ
+        # "🎯 МОЇ РЕКОМЕНДАЦІЇ:" в самому prompt-і) — окремий Gemini-виклик
+        # до recommendations_engine.py прибрано (24.09 merge, дублював контент
+        # на частково фейкових даних, див. коментар вище про _RECOMMENDATIONS_AVAILABLE).
         
         if message:
             ok = _send_to_telegram(message)
@@ -642,15 +636,10 @@ def handle_evening_schedule(schedule_name, now_tz):
         message = _analyze_evening(emails, crypto, health, astro)
         _log(f"Generated: {len(message)} chars")
         
-        # Add recommendations
-        if _RECOMMENDATIONS_AVAILABLE:
-            try:
-                recs = get_recommendations_for_schedule("evening")
-                if recs:
-                    message += "\n\n🎯 МОЇ РЕКОМЕНДАЦІЇ:\n" + recs
-                    _log(f"Added recommendations: {len(recs)} chars")
-            except Exception as e:
-                _log(f"⚠️ Recommendations failed: {e}")
+        # Рекомендації тепер вбудовані в саму _analyze_evening() (розділ
+        # "🎯 МОЇ РЕКОМЕНДАЦІЇ:" в самому prompt-і) — окремий Gemini-виклик
+        # до recommendations_engine.py прибрано (24.09 merge, дублював контент
+        # на частково фейкових даних, див. коментар вище про _RECOMMENDATIONS_AVAILABLE).
         
         if message:
             ok = _send_to_telegram(message)
