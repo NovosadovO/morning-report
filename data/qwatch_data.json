@@ -1231,5 +1231,14 @@
     "spo2": null,
     "source": "qwatch",
     "saved_at": "2026-09-18 21:24"
+  },
+  "2026-09-19": {
+    "hr_avg": 65,
+    "hrv": 49,
+    "sleep_total_min": 60,
+    "sleep_hours": 1.0,
+    "date": "2026-09-19",
+    "source": "qwatch_auto",
+    "saved_at": "2026-09-19 22:14"
   }
 }
