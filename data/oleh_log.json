@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "calrem_add_deep_analysis_1788255286",
-      "label": "✅ Поставити",
-      "ts": "2026-09-01T11:41:02"
-    },
-    {
-      "t": "btn",
       "data": "cfm_y_ac0a3dc9e2",
       "label": "✅ Так, постав",
       "ts": "2026-09-01T11:41:14"
@@ -7199,6 +7193,18 @@
       "data": "cal_all_done_today",
       "label": "✅ Виконано",
       "ts": "2026-09-19T20:35:19"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_no_done_1ia51i1cs6ll4tgl956spc7a3k_2026-09-19",
+      "label": "❌ Не виконано",
+      "ts": "2026-09-19T20:35:30"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_no_done_a1oq0tmcm9h2bg1t6rn8e4a2i4_2026-09-19",
+      "label": "❌ Не виконано",
+      "ts": "2026-09-19T20:35:31"
     }
   ]
 }
