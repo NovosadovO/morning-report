@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T01:31:01.804438",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Google</b>\n👤 no-reply@apata.io",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79400"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79400"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79400"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79400"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79400"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79400"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-20T01:31:02.955765",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -305,6 +266,12 @@
       "ts": "2026-09-20T01:33:06.239326",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com → Your receipt from Runable #2714-2414\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 2 нових оголошень\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T01:33:06.882047",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Runable  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 2 нових оголошень\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
