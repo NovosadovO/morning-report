@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T00:58:26.477129",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>ONDO +6.2% за 24г</b>\n\nЗараз: 0.4215 $\n24г тому: 0.3968 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-20T00:58:27.129444",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ ONDO +6.2% за 24г\n\nЗараз: 0.4215 $\n24г тому: 0.3968 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-20T00:59:28.757403",
       "kind": "lifecycle",
       "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 2 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
@@ -248,6 +236,51 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-20T01:01:27.619789",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Google</b>\n👤 no-reply@apata.io",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79400"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79400"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79400"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79400"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79400"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79400"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-20T01:01:28.251408",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
     }
   ]
 }
