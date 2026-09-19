@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-19t21_18_23_698634": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег проігнорував нагадування про трав'яний чай та спрей для волосся 19.09, натиснувши '❌'.\",     \"why\": \"З кален",
+    "ts": "2026-09-19T21:18:23.698634"
+  },
+  "email_ai_item|2026-09-19t21_12_22_633389": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Google Payments підтверджує отримання платежу в розмірі 10,00 EUR для облікового запису Google Cloud Platform & APIs. Плат",
+    "ts": "2026-09-19T21:12:22.633389"
+  },
   "action_detect|2026-09-19t21_09_55_227234": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створення бота для трейдингу\", \"action_date\": \"2026-09-20\", \"action_time\": \"18:00\", \"action_summary\": \"Заплановано ",
@@ -288,15 +298,5 @@
     "topic": "MSG_DAY_PLAN",
     "gist": "Привіт Олеже! 🗓 Цей ранок знаменує не просто початок нового дня, а й черговий крок у твоєму стратегічному марафоні до фінансової незалежності та ідеальної форми",
     "ts": "2026-09-17T04:00:34.710975"
-  },
-  "action_detect|2026-09-16t21_05_56_030879": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
-    "ts": "2026-09-16T21:05:56.030879"
-  },
-  "action_detect|2026-09-16t21_03_54_330927": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Лягти спати\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Спробуй найближчим часом, можливо, за 30",
-    "ts": "2026-09-16T21:03:54.330927"
   }
 }
