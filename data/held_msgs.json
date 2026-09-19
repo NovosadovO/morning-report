@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-19T22:48:27.222547",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-19T22:48:28.051070",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-19T22:49:43.279388",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
@@ -148,6 +136,51 @@
       "ts": "2026-09-19T23:01:29.744118",
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-19T23:01:30.877245",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>Your receipt from Runable #2714-2414</b>\n👤 Runable &lt;invoice+statements+acct_1RaXgUJk3URPLkAO@",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79403"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79403"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79403"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79403"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79403"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79403"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-19T23:01:31.472276",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
