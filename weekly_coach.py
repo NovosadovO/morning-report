@@ -201,7 +201,7 @@ def _collect_week_data():
         import sys as _sys_wc
         _sys_wc.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         import llama_prices as _llama_wc
-        id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2", "ONDO": "ondo-finance"}
+        id_map = _llama_wc.get_top20_id_map()
         crypto_raw = list(_llama_wc.to_markets_shape(id_map, periods=("24h", "7d")).values())
         crypto_data = []
         for c in crypto_raw:

@@ -306,5 +306,117 @@ def to_markets_shape(id_map: dict, symbols=None, periods=("24h",)) -> dict:
     return out
 
 
+# ─── ДИНАМІЧНИЙ ТОП-20 (2026): watchlist сам оновлюється до реального ринкового
+# топ-20 за капіталізацією, а не сидить хардкодом. ───────────────────────────
+# Олег: "Хай сам оновлюється щодня до реального топ-20 за капою."
+#
+# Рейтинг (хто взагалі топ-20) — короткий запит раз на добу до CoinGecko
+# /coins/markets (тільки id+symbol, без цін — цей ендпоінт DefiLlama не має).
+# Самі ціни/% для цих монет — і далі йдуть через get_snapshot()/to_*_shape()
+# (DefiLlama основне, CoinGecko fallback), тут нічого не змінюється.
+#
+# Кеш — GitHub storage (гілка data), TTL 24г. Якщо CoinGecko API впав —
+# лишається старий кеш (навіть протермінований), і тільки якщо кешу взагалі
+# нема — статичний список нижче як останній рубіж (не вигадуємо монет).
+
+TOP20_CACHE_FILE = "top20_coins.json"
+TOP20_TTL_SEC = 24 * 3600
+
+# Останній рубіж, якщо і кеш, і CoinGecko недоступні одночасно (мало ймовірно).
+_STATIC_TOP20_FALLBACK = {
+    "BTC": "bitcoin", "ETH": "ethereum", "BNB": "binancecoin", "XRP": "ripple",
+    "SOL": "solana", "DOGE": "dogecoin", "ADA": "cardano", "TRX": "tron",
+    "LINK": "chainlink", "AVAX": "avalanche-2", "TON": "the-open-network",
+    "XLM": "stellar", "HBAR": "hedera-hashgraph", "SUI": "sui",
+    "BCH": "bitcoin-cash", "LTC": "litecoin", "DOT": "polkadot",
+    "HYPE": "hyperliquid", "XMR": "monero", "ONDO": "ondo-finance",
+}
+
+
+# Стейблкоіни виключаємо з "топ-20 за капою" — їхня ціна майже не рухається
+# (0.00% день у день), тож у watchlist для сповіщень/дашбордів вони тільки
+# засмічують місце, яке могло б зайняти щось живе. Список — найбільші
+# стейбли за капіталізацією (CoinGecko category=stablecoins).
+_STABLE_SYMS = {
+    "USDT", "USDC", "USDE", "DAI", "FDUSD", "USDS", "PYUSD", "TUSD", "USDP",
+    "GUSD", "RLUSD", "BUSD", "USD1", "USDD", "FRAX", "LUSD", "GHO", "CRVUSD",
+    "USDY", "EURS", "EURT", "USDX", "PAXG", "XAUT",
+}
+
+
+def _fetch_top20_ranking() -> dict:
+    """Короткий запит до CoinGecko: id+symbol топ-20 за капіталізацією,
+    без стейблкоінів (їх ціна не рухається, watchlist для них не має сенсу).
+    {} якщо CoinGecko не відповів."""
+    # Беремо запас (топ-40), бо частина верхніх позицій — стейблкоіни, які
+    # відфільтруються нижче.
+    url = (BASE_CG + "/coins/markets?vs_currency=usd&order=market_cap_desc"
+           "&per_page=40&page=1")
+    try:
+        req = urllib.request.Request(url, headers=UA)
+        with urllib.request.urlopen(req, timeout=15) as r:
+            raw = json.loads(r.read())
+    except Exception as e:
+        _log("top20 ranking fetch error: " + str(e))
+        return {}
+    if not isinstance(raw, list):
+        return {}
+    out = {}
+    for c in raw:
+        if not isinstance(c, dict):
+            continue
+        sym = str(c.get("symbol") or "").upper()
+        cid = str(c.get("id") or "")
+        if not sym or not cid or sym in out:
+            continue
+        if sym in _STABLE_SYMS:
+            continue
+        out[sym] = cid
+        if len(out) >= 20:
+            break
+    return out
+
+
+def get_top20_id_map(force_refresh: bool = False) -> dict:
+    """{"BTC": "bitcoin", ...} — поточний ринковий топ-20 за капіталізацією.
+
+    Оновлюється не частіше ніж раз на 24г (кеш у GitHub storage). Викликається
+    з watchlist-функцій (context.py, message_generator.py, monitor.COINS
+    тощо) — усі бачать один і той самий актуальний список.
+    """
+    try:
+        import storage
+        cached = storage.load(TOP20_CACHE_FILE, default=None)
+    except Exception as e:
+        _log("storage load error: " + str(e))
+        cached = None
+
+    now = time.time()
+    if not force_refresh and isinstance(cached, dict):
+        id_map = cached.get("id_map")
+        ts = cached.get("ts") or 0
+        if isinstance(id_map, dict) and len(id_map) >= 10 and (now - ts) < TOP20_TTL_SEC:
+            return id_map
+
+    fresh = _fetch_top20_ranking()
+    if fresh and len(fresh) >= 15:
+        try:
+            import storage
+            storage.save(TOP20_CACHE_FILE, {"ts": now, "id_map": fresh})
+        except Exception as e:
+            _log("storage save error: " + str(e))
+        return fresh
+
+    # CoinGecko недоступний зараз — тримаємось старого кешу, навіть протермінованого.
+    if isinstance(cached, dict):
+        id_map = cached.get("id_map")
+        if isinstance(id_map, dict) and len(id_map) >= 10:
+            _log("top20 refresh failed — використовую старий кеш")
+            return id_map
+
+    _log("top20 refresh failed і кешу немає — статичний останній рубіж")
+    return dict(_STATIC_TOP20_FALLBACK)
+
+
 if __name__ == "__main__":
     print(json.dumps(change_pct(24), indent=2))

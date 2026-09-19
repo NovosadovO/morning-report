@@ -128,6 +128,22 @@ def tvl_top(n=5):
     return out, total
 
 
+RESTAKING_CATS = {"Restaking", "Liquid Restaking", "Restaked BTC"}
+
+def restaking_top(n=5):
+    """Топ-N Restaking-протоколів за TVL + сумарний TVL сектора (DeFiLlama)."""
+    raw = _get(LLAMA, ttl=3600)
+    if not isinstance(raw, list):
+        return [], 0.0
+    rs = [p for p in raw
+          if isinstance(p, dict) and str(p.get("category") or "") in RESTAKING_CATS]
+    rs.sort(key=lambda p: -(p.get("tvl") or 0))
+    total = sum((p.get("tvl") or 0) for p in rs)
+    out = [{"name": str(p.get("name") or ""), "tvl": p.get("tvl") or 0,
+            "ch7d": p.get("change_7d"), "cat": p.get("category")} for p in rs[:n]]
+    return out, total
+
+
 # ─── ФОРМАТУВАННЯ ────────────────────────────────────────────────────────────
 
 def _money(v):
@@ -237,6 +253,19 @@ def report_block(n=TOP_N) -> str:
         lines.append("")
         lines.append(f"💠 TVL сектора: <b>{_money(total)}</b>")
         for p in prot:
+            ch = ""
+            if p.get("ch7d") is not None:
+                try:
+                    ch = f"  ({float(p['ch7d']):+.1f}% 7д)"
+                except Exception:
+                    ch = ""
+            lines.append(f"   • {K.esc(p['name'])} — {_money(p['tvl'])}{ch}")
+
+    rs_prot, rs_total = restaking_top(4)
+    if rs_prot:
+        lines.append("")
+        lines.append(f"♻️ <b>Restaking TVL:</b> {_money(rs_total)}")
+        for p in rs_prot:
             ch = ""
             if p.get("ch7d") is not None:
                 try:

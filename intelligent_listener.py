@@ -161,7 +161,7 @@ class IntelligentListener:
             return []
     
     def _check_crypto_moves(self) -> dict:
-        """Перевірити BTC/ETH/AVAX/ONDO/SOL/BNB/XRP за 1 годину (розширений watchlist).
+        """Перевірити динамічний реальний топ-20 за капіталізацією за 1 годину.
         DefiLlama — основне джерело (Олег попросив), CoinGecko лише fallback
         усередині llama_prices (там теж свій кеш, 3хв)."""
         try:
@@ -169,8 +169,7 @@ class IntelligentListener:
             _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
             import llama_prices as _llama
 
-            id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2",
-                      "ONDO": "ondo-finance", "SOL": "solana", "BNB": "binancecoin", "XRP": "ripple"}
+            id_map = _llama.get_top20_id_map()
             snap = _llama.get_snapshot(id_map, symbols=list(id_map.keys()), periods=("24h",))
             if not snap:
                 return {}

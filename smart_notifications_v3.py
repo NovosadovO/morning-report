@@ -153,14 +153,15 @@ def _get_important_emails(max_emails=5):
 # ============ CRYPTO DATA ============
 
 def _get_crypto_prices():
-    """DefiLlama: BTC, ETH, AVAX, ONDO — основне джерело (Олег попросив).
-    CoinGecko лише fallback усередині llama_prices, якщо DefiLlama не відповів."""
+    """DefiLlama: динамічний реальний топ-20 за капіталізацією — основне джерело
+    (Олег попросив). CoinGecko лише fallback усередині llama_prices, якщо
+    DefiLlama не відповів."""
     try:
         import sys as _sys_cp
         _sys_cp.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         import llama_prices as _llama_cp
 
-        id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2", "ONDO": "ondo-finance"}
+        id_map = _llama_cp.get_top20_id_map()
         snap = _llama_cp.get_snapshot(id_map, symbols=list(id_map.keys()), periods=("24h",))
         if not snap:
             return {}

@@ -9,7 +9,7 @@
    😴 сон / 👣 кроки (health)
    ✅ звички (habits.json — виконано з можливого)
    💸 рахунки (bills.json — прийшло / не оплачено)
-   📈 крипто (BTC/ETH/AVAX/ONDO за 7 днів)
+   📈 крипто (динамічний топ-20 за капіталізацією, за 7 днів)
    📅 навантаження змін
 
 Далі Gemini пише огляд + ставить 3 КОНКРЕТНІ цілі на наступний тиждень.
@@ -164,7 +164,7 @@ def _crypto():
         import os as _os_wr
         _sys_wr.path.insert(0, _os_wr.path.dirname(_os_wr.path.abspath(__file__)))
         import llama_prices as _llama_wr
-        id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2", "ONDO": "ondo-finance"}
+        id_map = _llama_wr.get_top20_id_map()
         data = list(_llama_wr.to_markets_shape(id_map, periods=("7d",)).values())
     except Exception as e:
         K.log(TAG, f"crypto error: {e}")

@@ -204,11 +204,11 @@ def _load_socials():
     return {"facebook_last_post": None, "youtube_last_post": None}
 
 def _load_crypto():
-    """BTC/ETH/AVAX/ONDO — DefiLlama (основне джерело), CoinGecko лише fallback."""
+    """Динамічний топ-20 за капіталізацією — DefiLlama (основне джерело), CoinGecko лише fallback."""
     try:
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         import llama_prices as _llama
-        id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2", "ONDO": "ondo-finance"}
+        id_map = _llama.get_top20_id_map()
         snap = _llama.get_snapshot(id_map, symbols=list(id_map.keys()), periods=("24h",))
         result = {}
         for sym, row in snap.items():

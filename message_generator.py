@@ -122,7 +122,8 @@ def _gemini_post(body: dict, timeout: int = 25, tag: str = "") -> str:
 
 # ─── Live Data ────────────────────────────────────────────────────────────────
 def _get_live_crypto() -> dict:
-    """Watchlist (BTC/ETH/AVAX/ONDO/SOL/BNB/XRP/DOGE) — DefiLlama, основне джерело
+    """Watchlist — динамічний реальний топ-20 за капіталізацією (сам оновлюється
+    раз на добу, llama_prices.get_top20_id_map()) — DefiLlama, основне джерело
     (Олег попросив). TOP-3 gainers/losers з топ-100 за market cap лишається на
     CoinGecko — DefiLlama рейтингів за капіталізацією не має, fallback дозволено."""
     try:
@@ -131,12 +132,7 @@ def _get_live_crypto() -> dict:
         from monitor import fetch_json_cached
         import llama_prices as _llama
 
-        id_map = {
-            "BTC": "bitcoin", "ETH": "ethereum",
-            "AVAX": "avalanche-2", "ONDO": "ondo-finance",
-            "SOL": "solana", "BNB": "binancecoin",
-            "XRP": "ripple", "DOGE": "dogecoin",
-        }
+        id_map = _llama.get_top20_id_map()
         snap = _llama.get_snapshot(id_map, symbols=list(id_map.keys()), periods=("24h", "7d"))
         result = {}
         for sym, row in snap.items():

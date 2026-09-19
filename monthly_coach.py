@@ -170,7 +170,7 @@ def _collect_month_data():
         import sys as _sys_mc
         _sys_mc.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         import llama_prices as _llama_mc
-        id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2", "ONDO": "ondo-finance"}
+        id_map = _llama_mc.get_top20_id_map()
         crypto_raw = list(_llama_mc.to_markets_shape(id_map, periods=("7d", "30d")).values())
         crypto_data = []
         for c in crypto_raw:

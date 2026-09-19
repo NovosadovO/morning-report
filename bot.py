@@ -2901,6 +2901,8 @@ HELP_TEXT = """
 /листи — останні email
 /астро — астрологічний прогноз
 /dd — DeFi дайджест 24h (зміни TVL, DEX, yields, stables)
+/defiall — ПОВНИЙ DeFi-огляд: TVL, chains, RWA, liquid staking, restaking, lending, DEX, yields, стейблкоіни
+/rwa — RWA-радар (топ-10 монет + TVL сектора + Restaking TVL)
 
 <b>🏃 Strava / Біг</b>
 /біг — аналіз + місячний графік
@@ -3159,6 +3161,16 @@ def handle_command(chat_id, text):
             digest_24h(force=True)
         except Exception as e:
             send(chat_id, f"⚠️ Помилка дайджесту: {e}")
+
+    elif text in ["/defiall", "/defi_all", "/defiвсе", "повний дефі", "повний defi", "defi all"]:
+        send(chat_id, "⏳ Збираю ПОВНИЙ DeFi-огляд (TVL, chains, RWA, liquid staking, restaking, lending, DEX, yields, стейблкоіни)... кілька повідомлень.")
+        try:
+            import sys as _sys, os as _os
+            _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+            from report_defi import full_overview
+            full_overview()
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка повного DeFi-огляду: {e}")
 
     elif text in ["/test_astro", "/astro_test", "тест астро"]:
         send(chat_id, "🔮 Тестую AI-астро окремо (без повного звіту)...")

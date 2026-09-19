@@ -575,13 +575,16 @@ def _get_recent_emails_context() -> str:
 
 def _get_crypto_context():
     # Джерело — DefiLlama (Олег попросив), CoinGecko лише fallback усередині llama_prices.
+    # Watchlist — динамічний реальний топ-20 за капіталізацією (сам оновлюється
+    # раз на добу через llama_prices.get_top20_id_map()), а не хардкод 4 монети.
     try:
         sys.path.insert(0, os.path.dirname(__file__))
         import llama_prices as _llama
-        id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2", "ONDO": "ondo-finance"}
-        snap = _llama.get_snapshot(id_map, symbols=["BTC", "ETH", "AVAX", "ONDO"], periods=("24h",))
+        id_map = _llama.get_top20_id_map()
+        symbols = list(id_map.keys())
+        snap = _llama.get_snapshot(id_map, symbols=symbols, periods=("24h",))
         parts = []
-        for sym in ["BTC", "ETH", "AVAX", "ONDO"]:
+        for sym in symbols:
             row = snap.get(sym)
             if not row:
                 continue

@@ -356,6 +356,108 @@ def get_chains():
     return "\n".join(lines)
 
 
+# ─── 9. LIQUID STAKING ────────────────────────────────────────────────────────
+
+def get_liquid_staking(protocols):
+    ls = [p for p in protocols if p.get("category") == "Liquid Staking" and (p.get("tvl") or 0) > 0]
+    ls = sorted(ls, key=lambda x: x.get("tvl") or 0, reverse=True)[:10]
+
+    total = sum(p.get("tvl") or 0 for p in ls)
+    lines = [f"🥩 <b>Liquid Staking — TVL: {fmt_b(total)}</b>\n"]
+
+    for i, p in enumerate(ls, 1):
+        tvl    = p.get("tvl") or 0
+        ch1d   = p.get("change_1d")
+        ch7d   = p.get("change_7d")
+        ar     = "📈" if (ch1d or 0) > 0 else ("📉" if (ch1d or 0) < 0 else "▪️")
+        d1     = f"{'+' if (ch1d or 0)>0 else ''}{ch1d:.1f}%" if ch1d is not None else "—"
+        d7     = f"{'+' if (ch7d or 0)>0 else ''}{ch7d:.1f}%" if ch7d is not None else "—"
+        chains = "/".join((p.get("chains") or [])[:2])
+        lines.append(f"{i:>2}. {ar} <b>{esc(p['name'])}</b> [{esc(chains)}]: {fmt_b(tvl)} · 1д {d1} · 7д {d7}")
+
+    return "\n".join(lines)
+
+
+# ─── 10. RESTAKING ─────────────────────────────────────────────────────────────
+
+RESTAKING_CATS = {"Restaking", "Liquid Restaking", "Restaked BTC"}
+
+def get_restaking(protocols):
+    rs = [p for p in protocols if p.get("category") in RESTAKING_CATS and (p.get("tvl") or 0) > 0]
+    rs = sorted(rs, key=lambda x: x.get("tvl") or 0, reverse=True)[:10]
+
+    total = sum(p.get("tvl") or 0 for p in rs)
+    lines = [f"♻️ <b>Restaking — TVL: {fmt_b(total)}</b>\n"]
+
+    if not rs:
+        lines.append("⚠️ Немає даних по Restaking протоколах зараз")
+        return "\n".join(lines)
+
+    for i, p in enumerate(rs, 1):
+        tvl    = p.get("tvl") or 0
+        ch1d   = p.get("change_1d")
+        ch7d   = p.get("change_7d")
+        cat    = p.get("category", "")
+        ar     = "📈" if (ch1d or 0) > 0 else ("📉" if (ch1d or 0) < 0 else "▪️")
+        d1     = f"{'+' if (ch1d or 0)>0 else ''}{ch1d:.1f}%" if ch1d is not None else "—"
+        d7     = f"{'+' if (ch7d or 0)>0 else ''}{ch7d:.1f}%" if ch7d is not None else "—"
+        chains = "/".join((p.get("chains") or [])[:2])
+        lines.append(f"{i:>2}. {ar} <b>{esc(p['name'])}</b> <i>({esc(cat)})</i> [{esc(chains)}]: {fmt_b(tvl)} · 1д {d1} · 7д {d7}")
+
+    return "\n".join(lines)
+
+
+# ─── ПОВНИЙ DEFI-ОГЛЯД (нова окрема команда /defiall) ─────────────────────────
+
+def full_overview():
+    """Повний DeFi-огляд на вимогу (команда /defiall): загальний TVL, топ-20
+    DeFi, Chain TVL, RWA, Liquid Staking, Restaking, Lending, DEX обсяги,
+    Yield-пули, стейблкоіни. Надсилається окремими повідомленнями (Telegram
+    ліміт 4096), бо блоків багато."""
+    local = datetime.now(timezone.utc) + timedelta(hours=2)
+    time_str = local.strftime("%H:%M")
+    date_str = local.strftime("%d.%m.%Y")
+
+    print(f"=== DeFi FULL OVERVIEW run at {local.isoformat()} ===")
+
+    protocols = _get(f"{LLAMA}/protocols")
+    if not protocols:
+        send_part("⚠️ Повний DeFi-огляд: не вдалось завантажити дані DeFiLlama")
+        return
+
+    send_part(f"📡 <b>ПОВНИЙ DEFI-ОГЛЯД</b>  ·  {time_str} {date_str}\n\n"
+              f"{get_total_tvl(protocols)}")
+    time.sleep(0.6)
+
+    send_part(get_chains())
+    time.sleep(0.6)
+
+    send_part(get_top_defi(protocols))
+    time.sleep(0.6)
+
+    send_part(get_rwa(protocols))
+    time.sleep(0.6)
+
+    send_part(get_liquid_staking(protocols))
+    time.sleep(0.6)
+
+    send_part(get_restaking(protocols))
+    time.sleep(0.6)
+
+    send_part(get_lending(protocols))
+    time.sleep(0.6)
+
+    send_part(get_dex_volumes())
+    time.sleep(0.6)
+
+    send_part(get_top_yields())
+    time.sleep(0.6)
+
+    send_part(get_stablecoins() + f"\n\n<i>📊 DeFiLlama · Повний огляд за запитом</i>")
+
+    print("DeFi full overview sent.")
+
+
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
 
 def _defi_dedup_check():

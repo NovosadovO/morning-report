@@ -1682,8 +1682,9 @@ def plot_health_2x2_dashboard(year: int = None, month: int = None) -> bytes | No
 
 
 def plot_crypto_trend(days: int = 30) -> bytes | None:
-    """Графік динаміки цін BTC/ETH/AVAX/ONDO/SOL за останні N днів (нормалізовано % від старту),
-    щоб порівняти відносний перформанс монет портфеля на одному графіку.
+    """Графік динаміки цін динамічного топ-10 монет (за капіталізацією, оновлюється
+    щодня) за останні N днів (нормалізовано % від старту), щоб порівняти відносний
+    перформанс монет ринку на одному графіку.
     Дані з DefiLlama chart endpoint — основне джерело (Олег попросив)."""
     if not HAS_MPL:
         return None
@@ -1693,12 +1694,13 @@ def plot_crypto_trend(days: int = 30) -> bytes | None:
         _sys_ct.path.insert(0, _os_ct.path.dirname(_os_ct.path.abspath(__file__)))
         import llama_prices as _llama_ct
 
+        # Динамічний топ-10 за капіталізацією (з топ-20, перші 10)
+        _id_map = _llama_ct.get_top20_id_map()
+        _palette = ["#F7931A", "#627EEA", "#F0B90B", "#23292F", "#14F195",
+                    "#E84142", "#345D9D", "#2A5ADA", "#00D395", "#8247E5"]
         coins = [
-            ("bitcoin", "BTC", "#F7931A"),
-            ("ethereum", "ETH", "#627EEA"),
-            ("avalanche-2", "AVAX", "#E84142"),
-            ("ondo-finance", "ONDO", "#5B8DEF"),
-            ("solana", "SOL", "#14F195"),
+            (cg_id, sym, _palette[i % len(_palette)])
+            for i, (sym, cg_id) in enumerate(list(_id_map.items())[:10])
         ]
 
         fig, ax = plt.subplots(figsize=(13, 7))
@@ -1730,7 +1732,7 @@ def plot_crypto_trend(days: int = 30) -> bytes | None:
             return None
 
         ax.axhline(0, color=MUTED, linewidth=1, linestyle="--", alpha=0.6)
-        ax.set_title(f"💹 Динаміка портфеля за {days} днів (% від старту періоду)",
+        ax.set_title(f"💹 Динаміка топ-10 монет за {days} днів (% від старту періоду)",
                      fontsize=14, fontweight="bold", color=TEXT, pad=12)
         ax.set_ylabel("% зміна", fontsize=11, color=TEXT)
         ax.tick_params(colors=TEXT)

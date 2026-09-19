@@ -97,21 +97,21 @@ def get_coingecko_top20():
         return []
 
 def get_user_watch_list():
-    """Отримує монети що стежить Олег (BTC, ETH, AVAX, ONDO).
+    """Отримує watchlist — динамічний реальний топ-20 за капіталізацією
+    (сам оновлюється раз на добу, llama_prices.get_top20_id_map()).
     DefiLlama — основне джерело (Олег попросив), CoinGecko лише fallback
     усередині llama_prices. market_cap DefiLlama не дає — тут не використовується."""
-    id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2", "ONDO": "ondo-finance"}
-    names = {"BTC": "Bitcoin", "ETH": "Ethereum", "AVAX": "Avalanche", "ONDO": "Ondo"}
-
     try:
         import sys as _s, os as _o
         _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))
         import llama_prices as _llama
+        id_map = _llama.get_top20_id_map()
         snap = _llama.get_snapshot(id_map, symbols=list(id_map.keys()), periods=("24h", "7d"))
         result = {}
         for sym, row in snap.items():
+            cg_id = id_map.get(sym, sym)
             result[sym] = {
-                "name": names.get(sym, sym),
+                "name": cg_id.replace("-", " ").title(),
                 "price": row.get("price", 0),
                 "change_24h": row.get("change_24h", 0),
                 "change_7d": row.get("change_7d", 0),

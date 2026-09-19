@@ -37,7 +37,9 @@ SEEN_EMAIL_FILE = os.path.join(_DATA_DIR, "monitor_seen_emails.json")
 PRICE_CACHE     = "/tmp/monitor_prices_3h.json"
 # PRICE_HISTORY moved to GitHub storage via storage.load_price_history() / save_price_history()
 
-COINS = {
+# Статичний фолбек — використовується тільки якщо динамічний топ-20 недоступний
+# (llama_prices.get_top20_id_map() сам падає на кеш/фолбек, тут просто для довідки)
+_STATIC_COINS_FALLBACK = {
     "BTC":  "bitcoin",
     "ETH":  "ethereum",
     "BNB":  "binancecoin",
@@ -59,6 +61,17 @@ COINS = {
     "XMR":  "monero",
     "ONDO": "ondo-finance",
 }
+
+def _coins():
+    """Динамічний топ-20 монет за капіталізацією (CoinGecko рейтинг, кеш 24г,
+    стейблкоіни відфільтровані). Сам оновлюється щодня. Падає на статичний
+    фолбек лише якщо і кеш, і CoinGecko недоступні одночасно."""
+    try:
+        m = llama_prices.get_top20_id_map()
+        return m if m else _STATIC_COINS_FALLBACK
+    except Exception as e:
+        print(f"_coins() error, falling back to static list: {e}")
+        return _STATIC_COINS_FALLBACK
 
 # Алерти >5% ТІЛЬКИ для монет Олега
 ALERT_COINS = {"BTC", "ETH", "AVAX", "ONDO"}
@@ -689,7 +702,7 @@ def save_json_file(path, data):
 
 def get_prices():
     # Джерело — DefiLlama (Олег попросив), CoinGecko лише fallback усередині llama_prices.
-    data = llama_prices.to_simple_price_shape(COINS, periods=("24h",))
+    data = llama_prices.to_simple_price_shape(_coins(), periods=("24h",))
 
     # Fallback на Kraken якщо і DefiLlama, і CoinGecko-fallback не відповіли
     if not data:
@@ -702,7 +715,7 @@ def get_prices():
     now_prices = {}
     lines = []
 
-    for symbol, cg_id in COINS.items():
+    for symbol, cg_id in _coins().items():
         price    = data.get(cg_id, {}).get("usd")
         change24 = data.get(cg_id, {}).get("usd_24h_change")
         if price is None:
@@ -735,7 +748,7 @@ def get_prices():
         _now_ts = int(time.time())
         _hist = storage.load_price_history()  # {cg_id: [[ts, price], ...]}
         _cutoff = _now_ts - 30 * 86400
-        for _sym, _cg_id in COINS.items():
+        for _sym, _cg_id in _coins().items():
             _price = now_prices.get(_cg_id, {}).get("price")
             if _price is None:
                 continue
@@ -4821,7 +4834,7 @@ def check_crypto_price_alert():
     now_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d %H")
 
     # ── Завантажуємо поточні ціни ────────────────────────────────────────────
-    data = llama_prices.to_simple_price_shape(COINS, periods=())
+    data = llama_prices.to_simple_price_shape(_coins(), periods=())
     if not data:
         # Fallback на Kraken
         data = _get_prices_kraken()
@@ -4830,7 +4843,7 @@ def check_crypto_price_alert():
 
     # ── Поточні ціни ─────────────────────────────────────────────────────────
     current = {}
-    for symbol, cg_id in COINS.items():
+    for symbol, cg_id in _coins().items():
         price = data.get(cg_id, {}).get("usd") if isinstance(data.get(cg_id), dict) else None
         if price:
             current[cg_id] = price
@@ -4845,7 +4858,7 @@ def check_crypto_price_alert():
     alerts = []
     alert_key_prefix = f"alerted_{now_str}"
 
-    for symbol, cg_id in COINS.items():
+    for symbol, cg_id in _coins().items():
         # Алерти ТІЛЬКИ для монет Олега: BTC/ETH/AVAX/ONDO
         if symbol not in ALERT_COINS:
             # Все одно зберігаємо snapshot для майбутнього використання
@@ -6079,14 +6092,14 @@ def check_crypto_weekly_summary():
         return
 
     try:
-        data = llama_prices.to_markets_shape(COINS, periods=("24h", "7d"))
+        data = llama_prices.to_markets_shape(_coins(), periods=("24h", "7d"))
         if not data:
             return
 
-        # symbol order from COINS dict
+        # symbol order from _coins() dict
         lines = []
         summary_parts = []
-        for symbol, cg_id in COINS.items():
+        for symbol, cg_id in _coins().items():
             coin = data.get(cg_id, {})
             price = coin.get("current_price")
             ch7d  = coin.get("price_change_percentage_7d_in_currency")
@@ -6899,7 +6912,7 @@ def check_morning_context():
         # ── КРОК 4: Крипто ───────────────────────────────────────────────────
         crypto_text = ""
         try:
-            raw = list(llama_prices.to_markets_shape(COINS, periods=("24h",)).values())
+            raw = list(llama_prices.to_markets_shape(_coins(), periods=("24h",)).values())
             crypto_lines = []
             for c in raw:
                 sym = c["symbol"].upper()
@@ -7335,8 +7348,8 @@ def check_crypto_morning():
         return
 
     try:
-        coins_map = list(COINS.items())
-        data = llama_prices.to_markets_shape(COINS, periods=("24h", "7d"))
+        coins_map = list(_coins().items())
+        data = llama_prices.to_markets_shape(_coins(), periods=("24h", "7d"))
 
         lines_out = []
         lines_out.append(f"💹 <b>КРИПТО ДАШБОРД</b> · {today[5:]}")
@@ -11831,8 +11844,8 @@ def check_morning_brief():
 
     # ── Крипто dashboard ────────────────────────────────────────────────────
     try:
-        sym_map = list(COINS.items())
-        data_c = llama_prices.to_markets_shape(COINS, periods=("24h", "7d", "30d"))
+        sym_map = list(_coins().items())
+        data_c = llama_prices.to_markets_shape(_coins(), periods=("24h", "7d", "30d"))
 
         def _trend_emoji(pct):
             """Емодзі тренду замість бару."""
@@ -12347,7 +12360,7 @@ def check_crypto_price_alert():
     now_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d %H")
 
     # ── Завантажуємо поточні ціни ────────────────────────────────────────────
-    data = llama_prices.to_simple_price_shape(COINS, periods=())
+    data = llama_prices.to_simple_price_shape(_coins(), periods=())
     if not data:
         # Fallback на Kraken
         data = _get_prices_kraken()
@@ -12356,7 +12369,7 @@ def check_crypto_price_alert():
 
     # ── Поточні ціни ─────────────────────────────────────────────────────────
     current = {}
-    for symbol, cg_id in COINS.items():
+    for symbol, cg_id in _coins().items():
         price = data.get(cg_id, {}).get("usd") if isinstance(data.get(cg_id), dict) else None
         if price:
             current[cg_id] = price
@@ -12371,7 +12384,7 @@ def check_crypto_price_alert():
     alerts = []
     alert_key_prefix = f"alerted_{now_str}"
 
-    for symbol, cg_id in COINS.items():
+    for symbol, cg_id in _coins().items():
         # Алерти ТІЛЬКИ для монет Олега: BTC/ETH/AVAX/ONDO
         if symbol not in ALERT_COINS:
             # Все одно зберігаємо snapshot для майбутнього використання
@@ -13605,14 +13618,14 @@ def check_crypto_weekly_summary():
         return
 
     try:
-        data = llama_prices.to_markets_shape(COINS, periods=("24h", "7d"))
+        data = llama_prices.to_markets_shape(_coins(), periods=("24h", "7d"))
         if not data:
             return
 
-        # symbol order from COINS dict
+        # symbol order from _coins() dict
         lines = []
         summary_parts = []
-        for symbol, cg_id in COINS.items():
+        for symbol, cg_id in _coins().items():
             coin = data.get(cg_id, {})
             price = coin.get("current_price")
             ch7d  = coin.get("price_change_percentage_7d_in_currency")
@@ -14425,7 +14438,7 @@ def check_morning_context():
         # ── КРОК 4: Крипто ───────────────────────────────────────────────────
         crypto_text = ""
         try:
-            raw = list(llama_prices.to_markets_shape(COINS, periods=("24h",)).values())
+            raw = list(llama_prices.to_markets_shape(_coins(), periods=("24h",)).values())
             crypto_lines = []
             for c in raw:
                 sym = c["symbol"].upper()
@@ -14861,8 +14874,8 @@ def check_crypto_morning():
         return
 
     try:
-        coins_map = list(COINS.items())
-        data = llama_prices.to_markets_shape(COINS, periods=("24h", "7d"))
+        coins_map = list(_coins().items())
+        data = llama_prices.to_markets_shape(_coins(), periods=("24h", "7d"))
 
         lines_out = []
         lines_out.append(f"💹 <b>КРИПТО ДАШБОРД</b> · {today[5:]}")
