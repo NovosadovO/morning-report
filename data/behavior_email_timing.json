@@ -1,9 +1,4 @@
 {
-  "78888": {
-    "sender": "newsletter@ticketportal.sk",
-    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
-    "seen_ts": "2026-09-10T15:25:23.346843+00:00"
-  },
   "78889": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "J.P. Morgan через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply-omv@omv.com",
     "sender_raw": "OMV MyStation <noreply-omv@omv.com>",
     "seen_ts": "2026-09-18T19:44:32.837356+00:00"
+  },
+  "79382": {
+    "sender": "noreply@github.com",
+    "sender_raw": "GitHub <noreply@github.com>",
+    "seen_ts": "2026-09-19T11:59:28.175424+00:00"
   }
 }
