@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-19T23:01:36.435111",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Google</b>\n👤 no-reply@apata.io",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79400"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79400"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79400"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79400"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79400"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79400"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-19T23:01:37.729096",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -344,6 +305,12 @@
       "ts": "2026-09-19T23:12:13.142652",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-19T23:12:13.874558",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
