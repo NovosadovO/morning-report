@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T00:43:27.601842",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Runable  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 2 нових оголошень\n\n🧹 Реклама: 3 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-20T00:43:29.949924",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 21.09</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79404"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-20T00:45:58.826109",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>Your receipt from Runable #2714-2414</b>\n👤 Runable &lt;invoice+statements+acct_1RaXgUJk3URPLkAO@",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79403"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79403"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79403"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79403"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79403"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79403"
             }
           ]
         ]
