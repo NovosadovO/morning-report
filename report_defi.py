@@ -169,7 +169,7 @@ def get_rwa(protocols):
     rwa = sorted(rwa, key=lambda x: x.get("tvl") or 0, reverse=True)
 
     total_rwa = sum(p.get("tvl") or 0 for p in rwa)
-    lines = [f"🏦 <b>RWA ринок — Загальний TVL: {fmt_b(total_rwa)}</b>\n"]
+    lines = [f"🏦 <b>RWA-протоколи (DeFi TVL) — {fmt_b(total_rwa)}</b>\n"]
 
     lines.append("<b>Топ-15 RWA протоколів:</b>")
     for i, p in enumerate(rwa[:15], 1):
@@ -192,6 +192,53 @@ def get_rwa(protocols):
         lambda p: f"{p['name'][:16]} {fmt_b(p.get('tvl'))}",
         width=10
     ))
+
+    lines.append(
+        "\n<i>ℹ️ Це протоколи з категорії RWA в DeFi TVL (DeFiLlama /protocols). "
+        "AUM-рейтинг емітентів (Securitize, Tether, Ondo, Circle...) на "
+        "сторінці defillama.com/rwa рахується інакше (Active/Onchain AUM по "
+        "платформах) і безкоштовне API його не надає.</i>"
+    )
+
+    return "\n".join(lines)
+
+
+# ─── 3b. ТОП ЧЕЙНІВ ЗА TVL З 7-ДЕННОЮ ЗМІНОЮ ──────────────────────────────────
+
+def get_chains_7d_change(top_n=10):
+    """Топ блокчейнів за TVL з точною 7-денною зміною, як на defillama.com/chains.
+    /chains endpoint дає "надуте" TVL (з double-counted liquid staking), тому
+    беремо з нього лише порядок/назви, а самі числа рахуємо з
+    /v2/historicalChainTvl/{chain} (там TVL без double-count, збігається з сайтом)."""
+    chains_list = _get(f"{LLAMA}/chains")
+    if not chains_list:
+        return None
+
+    ranked = sorted(chains_list, key=lambda c: c.get("tvl") or 0, reverse=True)[:top_n]
+
+    rows = []
+    for c in ranked:
+        name = c.get("name")
+        if not name:
+            continue
+        hist = _get(f"{LLAMA}/v2/historicalChainTvl/{urllib.parse.quote(name)}")
+        if not hist or len(hist) < 8:
+            continue
+        tvl_now  = hist[-1]["tvl"]
+        tvl_7d   = hist[-8]["tvl"]
+        chg_7d   = (tvl_now - tvl_7d) / tvl_7d * 100 if tvl_7d else None
+        rows.append((name, tvl_now, chg_7d))
+
+    if not rows:
+        return None
+
+    rows = sorted(rows, key=lambda r: r[1], reverse=True)
+
+    lines = ["⛓ <b>Топ чейнів за TVL (7-денна зміна)</b>\n"]
+    for i, (name, tvl, chg) in enumerate(rows, 1):
+        ar = "📈" if (chg or 0) > 0 else ("📉" if (chg or 0) < 0 else "▪️")
+        d7 = f"{'+' if (chg or 0) > 0 else ''}{chg:.2f}%" if chg is not None else "—"
+        lines.append(f"{i:>2}. <b>{esc(name)}</b>: {fmt_b(tvl)} {ar} 7д: {d7}")
 
     return "\n".join(lines)
 
@@ -432,6 +479,11 @@ def full_overview():
     send_part(get_chains())
     time.sleep(0.6)
 
+    chains_7d = get_chains_7d_change()
+    if chains_7d:
+        send_part(chains_7d)
+        time.sleep(0.6)
+
     send_part(get_top_defi(protocols))
     time.sleep(0.6)
 
@@ -525,24 +577,30 @@ def main():
         bar = "▓" * int(pct / 8) + "░" * (12 - int(pct / 8))
         tvl_lines.append(f"<code>{bar}</code>  {esc(cat)}: <b>{fmt_b(tvl)}</b> <i>{pct:.1f}%</i>")
 
-    # ── Топ-10 DeFi ──
+    # ── Топ-15 DeFi ──
     defi = [p for p in protocols if p.get("category") in DEFI_CATS and (p.get("tvl") or 0) > 0]
-    top10 = sorted(defi, key=lambda x: x.get("tvl") or 0, reverse=True)[:10]
+    top15 = sorted(defi, key=lambda x: x.get("tvl") or 0, reverse=True)[:15]
 
-    defi_lines = ["🏆 <b>ТОП-10 DeFi  (TVL)</b>\n"]
-    for i, p in enumerate(top10, 1):
+    defi_lines = ["🏆 <b>ТОП-15 DeFi  (TVL)</b>\n"]
+    for i, p in enumerate(top15, 1):
         tvl  = p.get("tvl") or 0
         ch1d = p.get("change_1d")
         ar   = "🟢" if (ch1d or 0) > 0 else ("🔴" if (ch1d or 0) < 0 else "⚪️")
         d1   = f"{'+' if (ch1d or 0)>0 else ''}{ch1d:.1f}%" if ch1d is not None else "—"
         defi_lines.append(f"{i:>2}. {ar} <b>{esc(p['name'])}</b>  <code>{fmt_b(tvl)}</code>  <i>{d1}</i>")
 
-    # ── RWA топ-8 ──
+    # ── Топ чейнів з 7d-зміною ──
+    chains_lines = []
+    chains_7d_block = get_chains_7d_change(top_n=10)
+    if chains_7d_block:
+        chains_lines = [chains_7d_block]
+
+    # ── RWA топ-8 (з дисклеймером про методологію defillama.com/rwa) ──
     rwa = [p for p in protocols if p.get("category") == "RWA" and (p.get("tvl") or 0) > 0]
     rwa = sorted(rwa, key=lambda x: x.get("tvl") or 0, reverse=True)[:8]
     total_rwa = sum(p.get("tvl") or 0 for p in rwa)
 
-    rwa_lines = [f"🏦 <b>RWA  —  {fmt_b(total_rwa)}</b>\n"]
+    rwa_lines = [f"🏦 <b>RWA-протоколи (DeFi TVL)  —  {fmt_b(total_rwa)}</b>\n"]
     for i, p in enumerate(rwa, 1):
         tvl  = p.get("tvl") or 0
         ch1d = p.get("change_1d")
@@ -550,6 +608,10 @@ def main():
         d1   = f"{'+' if (ch1d or 0)>0 else ''}{ch1d:.1f}%" if ch1d is not None else "—"
         chains = "/".join((p.get("chains") or [])[:2])
         rwa_lines.append(f"{i:>2}. {ar} <b>{esc(p['name'])}</b>  <code>{fmt_b(tvl)}</code>  <i>{d1}</i>  <i>[{esc(chains)}]</i>")
+    rwa_lines.append(
+        "\n<i>ℹ️ AUM-рейтинг емітентів (Securitize, Ondo, Circle...) з "
+        "defillama.com/rwa рахується інакше — безкоштовне API його не дає.</i>"
+    )
 
     # ── Lending топ-7 ──
     lending = [p for p in protocols if p.get("category") in ("Lending", "CDP") and (p.get("tvl") or 0) > 0]
@@ -585,6 +647,7 @@ def main():
         "\n".join(tvl_lines)
         + SEP
         + "\n".join(defi_lines)
+        + (SEP + "\n".join(chains_lines) if chains_lines else "")
         + SEP
         + "\n".join(rwa_lines)
         + SEP
@@ -598,14 +661,23 @@ def main():
     if sent_key:
         _defi_dedup_save(sent_data, sent_key)
 
-    # Telegram ліміт 4096 — ріжемо якщо треба
+    # Telegram ліміт 4096 — ріжемо на блоки по SEP, кожен шматок <= 4000 символів
     if len(report) <= 4090:
         send_part(report)
     else:
-        mid = report[:4090].rfind(SEP.strip())
-        send_part(report[:mid] if mid > 0 else report[:4090])
-        time.sleep(0.5)
-        send_part(report[mid:] if mid > 0 else "")
+        blocks = report.split(SEP)
+        chunk = ""
+        first = True
+        for b in blocks:
+            candidate = (chunk + SEP + b) if chunk else b
+            if len(candidate) > 4000 and chunk:
+                send_part(chunk)
+                time.sleep(0.5)
+                chunk = b
+            else:
+                chunk = candidate
+        if chunk:
+            send_part(chunk)
 
     print("DeFi report sent.")
 
