@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T01:46:26.137787",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79220"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79220"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79220"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79220"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79220"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79220"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-20T01:46:28.252316",
       "kind": "lifecycle",
       "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 2 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
@@ -206,6 +167,12 @@
       "ts": "2026-09-20T01:48:26.000686",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +23.7% за 24г</b>\n\nЗараз: 10.14 $\n24г тому: 8.1949 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T01:48:26.706922",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +23.7% за 24г\n\nЗараз: 10.14 $\n24г тому: 8.1949 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
