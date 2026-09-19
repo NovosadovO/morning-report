@@ -1,9 +1,4 @@
 {
-  "78895": {
-    "sender": "newsletter@mail.theblock.co",
-    "sender_raw": "The Block <newsletter@mail.theblock.co>",
-    "seen_ts": "2026-09-10T18:06:10.987870+00:00"
-  },
   "78897": {
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"Robert Guest at The Economist\" <newsletters@e.economist.com>",
@@ -1498,5 +1493,10 @@
     "sender": "info@superobchod.sk",
     "sender_raw": "Darčekový poradca SuperObchod.sk<info@superobchod.sk>",
     "seen_ts": "2026-09-19T12:25:51.430352+00:00"
+  },
+  "79389": {
+    "sender": "groups-noreply@linkedin.com",
+    "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
+    "seen_ts": "2026-09-19T13:50:13.579621+00:00"
   }
 }
