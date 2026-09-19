@@ -12537,5 +12537,28 @@
       "kind": "note"
     },
     "ts": "2026-09-19T21:18:31.519738+00:00"
+  },
+  "6c9f4fa881": {
+    "key": "note|олег отримав платіж від google payments за google cloud plat",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег отримав платіж від Google Payments за Google Cloud Plat »\n\nОлег отримав платіж від Google Payments за Google Cloud Platform & APIs у розмірі 10,00 EUR 19 вересня 2026 року.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег отримав платіж від Google Payments за Google Cloud Plat",
+      "desc": "Олег отримав платіж від Google Payments за Google Cloud Platform & APIs у розмірі 10,00 EUR 19 вересня 2026 року.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-19T21:33:35.854982+00:00"
   }
 }
