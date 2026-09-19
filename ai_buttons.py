@@ -1,14 +1,18 @@
 """
-ai_buttons — універсальні кнопки під УСІМА AI-сповіщеннями.
+ai_buttons — універсальні кнопки під AI-сповіщеннями.
 
-Кожне AI-повідомлення (крипто, здоров'я, біг, листи, звички, астро, гроші,
-робота, календар) отримує набір живих кнопок:
+message_generator._send_to_telegram більше НЕ бере тут повний набір: точні
+кнопки під зміст (питання → варіанти відповіді, сповіщення → дії по виду)
+дає autokb (askme/react). Звідси лишається тільки universal_row() —
+один рядок, який іде НИЖЧЕ точних кнопок і однаковий для будь-якого змісту:
 
-  🤖 Поясни детальніше   — розгорнутий AI-розбір саме цього повідомлення
   ✍️ Нотатка             — бот питає ТВІЙ текст і зберігає його в /нотатки
-  🔔 Нагадай пізніше     — відкладений повтор цього ж повідомлення (+2 год)
-  🚫 Не цікавить         — тиша по цій темі на 7 днів
-  + 1-2 кнопки під тему (графік, записати вагу, план бігу, рахунки...)
+  🔔 Пізніше             — відкладений повтор цього ж повідомлення (+2 год)
+  🚫 Не цікавить         — тиша по цій темі (перепит «точно?», потім 1 год)
+
+keyboard() (повний набір із 🤖 Поясни детальніше + тематичним рядком +
+gx_later_/gx_mute_) лишається для сумісності зі старими місцями викликів і
+вже надісланих повідомлень — нові повідомлення його не використовують.
 
 Правила:
   • НЕМА мертвих кнопок: payload у PayloadStore (гілка data), зник payload →
@@ -35,7 +39,11 @@ MUTE_FILE = "gx_mute.json"
 _store = K.PayloadStore(STORE_FILE)
 
 LATER_MINUTES = 120
-MUTE_DAYS = 7
+# 🚫 «Не цікавить»: Олег хоче лишити перепитування "точно?" (confirm.py), але
+# скоротити тишу по темі з 7 днів до 1 години — довше не потрібно, короткої
+# паузи досить, а тема сама повернеться в наступному релевантному сповіщенні.
+MUTE_HOURS = 1
+MUTE_DAYS = MUTE_HOURS / 24
 
 # ─── ТЕМИ ────────────────────────────────────────────────────────────────────
 
@@ -183,6 +191,29 @@ def keyboard(text: str, topic: str = "", trigger_type: str = "", extra: dict = N
     return pid, kb
 
 
+def universal_row(text: str, topic: str = "", trigger_type: str = "",
+                   extra: dict = None):
+    """Один рядок УНІВЕРСАЛЬНИХ кнопок, який іде ПІД точними кнопками змісту
+    (ті будує autokb/askme/react — питання → варіанти відповіді, сповіщення →
+    дії по виду). Тут лишається тільки те, чого в точних наборах нема:
+        ✍️ Нотатка     — довільний коментар Олега
+        🔔 Пізніше      — повторити САМЕ ЦЕ повідомлення через 2 год
+        🚫 Не цікавить  — тиша по темі (з перепитуванням «точно?», 1 год)
+    Повертає (pid, row)."""
+    topic = topic or detect_topic(text, trigger_type)
+    payload = {"topic": topic, "trigger": trigger_type or "",
+               "text": (text or "")[:2000]}
+    if extra:
+        payload.update(extra)
+    pid = _store.put(payload)
+    row = [
+        {"text": "✍️ Нотатка", "callback_data": f"gx_note_{pid}"},
+        {"text": "🔔 Пізніше", "callback_data": f"gx_later_{pid}"},
+        {"text": "🚫 Не цікавить", "callback_data": f"gx_mute_{pid}"},
+    ]
+    return pid, row
+
+
 # ─── ACK ─────────────────────────────────────────────────────────────────────
 
 def _ack(pid: str, answer: str, extra: dict = None) -> dict:
@@ -299,8 +330,8 @@ def do_later(pid: str, minutes: int = LATER_MINUTES) -> dict:
             "topic": p.get("topic")}
 
 
-def do_mute(pid: str, days: int = MUTE_DAYS) -> dict:
-    """🚫 Не цікавить — тиша по темі на N днів."""
+def do_mute(pid: str, days: float = MUTE_DAYS) -> dict:
+    """🚫 Не цікавить — тиша по темі на N днів (за замовчуванням — 1 година)."""
     p = _store.get(pid)
     if not p:
         return {"ok": False, "error": "payload_missing"}
@@ -308,9 +339,12 @@ def do_mute(pid: str, days: int = MUTE_DAYS) -> dict:
     until = K.now().replace(tzinfo=None) + timedelta(days=days)
     K.update_key(MUTE_FILE, topic, {"until": until.isoformat(),
                                     "ts": K.now().isoformat()})
-    _ack(pid, f"muted_{days}d")
+    _ack(pid, f"muted_{round(days * 24, 2)}h")
+    # < 1 доба — показуємо годину, інакше дату: коротка тиша — годину знати
+    # важливіше, ніж день (він і так сьогоднішній чи завтрашній).
+    until_label = until.strftime("%d.%m %H:%M") if days < 1 else until.strftime("%d.%m")
     return {"ok": True, "topic": topic, "label": TOPIC_LABEL.get(topic, topic),
-            "until": until.strftime("%d.%m")}
+            "until": until_label}
 
 
 def do_done(pid: str) -> dict:

@@ -98,6 +98,31 @@ chk("астрологія" in G.mute_status(), "/приховані_теми п�
 G.unmute_all()
 chk(not G.is_muted("astro"), "/увімкни_теми повертає тему")
 
+# Олег: перепит "точно?" лишається, але тиша по темі — 1 година, не 7 днів.
+chk(abs(G.MUTE_HOURS - 1) < 1e-9, "MUTE_HOURS = 1 (тиша по темі — 1 година)")
+pid2b, _ = G.keyboard("BTC впав на 8%", trigger_type="crypto_move")
+r = G.do_mute(pid2b)  # без аргументів — саме так викликає confirm.py
+until_dt = N + timedelta(hours=1)
+chk(r.get("ok") and r.get("topic") == "crypto", "gx_mute (default) → тема crypto прихована")
+chk(G.is_muted("crypto"), "тема прихована одразу після виклику")
+data_mute = STORE.get(G.MUTE_FILE, {})
+until_saved = datetime.fromisoformat(data_mute["crypto"]["until"])
+chk(abs((until_saved - until_dt).total_seconds()) < 5,
+    f"тиша по замовчуванню ≈ 1 година, а не 7 днів (until={until_saved})")
+G.unmute_all()
+
+print("\n=== 4b. UNIVERSAL_ROW (message_generator: точні кнопки + один спільний рядок) ===")
+pid3, row = G.universal_row("BTC $118 000 (+5.2%).", trigger_type="crypto_move")
+cds3 = [b["callback_data"] for b in row]
+chk(len(row) == 3, f"universal_row: рівно 3 кнопки (got {len(row)})")
+chk(any(c.startswith("gx_note_") for c in cds3), "universal_row: є «Нотатка»")
+chk(any(c.startswith("gx_later_") for c in cds3), "universal_row: є «Пізніше»")
+chk(any(c.startswith("gx_mute_") for c in cds3), "universal_row: є «Не цікавить»")
+chk(not any(c.startswith("gx_more_") for c in cds3), "universal_row: НЕМА «Поясни детальніше»")
+chk(all(c.endswith(pid3) for c in cds3), "universal_row: всі кнопки з живим payload")
+p3 = G.payload(pid3)
+chk(p3 and p3.get("topic") == "crypto", "universal_row: payload несе правильну тему")
+
 print("\n=== 5. МЕРТВИХ КНОПОК НЕМА ===")
 for fn in (G.do_more, G.do_note, G.do_later, G.do_mute, G.do_done, G.ask_note_text):
     r = fn("zzzz_no_such")

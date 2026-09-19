@@ -83,7 +83,7 @@ ok(len(SENT) == 0, "відкладене не спрацьовує після с
 # ── 6. Те саме для «Не цікавить» по темі ─────────────────────────────────────
 gpid = gx._store.put({"topic": "crypto", "trigger": "crypto_move", "text": "BTC -6%"})
 qg = cfm.ask("gx_mute", gpid, "крипто")
-ok("7 днів" in qg["text"], "у питанні названо термін тиші")
+ok("1 годину" in qg["text"], "у питанні названо термін тиші")
 ok(not gx.is_muted("crypto"), "до підтвердження тема НЕ прихована")
 cfm.no(qg["cid"])
 ok(not gx.is_muted("crypto"), "після «Ні» тема НЕ прихована")
