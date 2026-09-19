@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T00:58:19.616513",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-20T00:58:20.278708",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-20T00:58:23.513222",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +19.3% за 24г</b>\n\nЗараз: 9.7816 $\n24г тому: 8.1994 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -181,6 +169,51 @@
       "ts": "2026-09-20T01:01:18.899611",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com → Your receipt from Runable #2714-2414\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 2 нових оголошень\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T01:01:19.911748",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>Your receipt from Runable #2714-2414</b>\n👤 Runable &lt;invoice+statements+acct_1RaXgUJk3URPLkAO@",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79403"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79403"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79403"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79403"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79403"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79403"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-20T01:01:20.378395",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Runable  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 2 нових оголошень\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
