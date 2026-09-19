@@ -1233,12 +1233,19 @@
     "saved_at": "2026-09-18 21:24"
   },
   "2026-09-19": {
-    "hr_avg": 65,
-    "hrv": 49,
-    "sleep_total_min": 60,
-    "sleep_hours": 1.0,
     "date": "2026-09-19",
-    "source": "qwatch_auto",
-    "saved_at": "2026-09-19 22:14"
+    "hr_avg": 65,
+    "calories": 2,
+    "hrv": 65,
+    "spo2": 99,
+    "source": "qwatch",
+    "saved_at": "2026-09-19 22:14",
+    "health_score": 93,
+    "steps": 24166,
+    "sleep_total_min": 437,
+    "sleep_deep_min": 91,
+    "sleep_light_min": 215,
+    "sleep_quality": 100,
+    "stress": 41
   }
 }
