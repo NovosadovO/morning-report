@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T00:59:53.056923",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-20T00:59:53.736362",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79272"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-20T01:01:48.951066",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79220"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79220"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79220"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79220"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79220"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79220"
             }
           ]
         ]
