@@ -104,7 +104,7 @@ def extract_facts_from_conversation(user_message: str, ai_answer: str, gemini_ke
     }).encode()
 
     try:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key={api_key}"
         req = _ur.Request(url, data=req_body, headers={"Content-Type": "application/json"})
         with _ur.urlopen(req, timeout=15) as r:
             resp = json.loads(r.read())
