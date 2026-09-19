@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-19t21_09_55_227234": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створення бота для трейдингу\", \"action_date\": \"2026-09-20\", \"action_time\": \"18:00\", \"action_summary\": \"Заплановано ",
+    "ts": "2026-09-19T21:09:55.227234"
+  },
   "proactive_actions|2026-09-17t06_00_42_669817": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"calendar\",     \"title\": \"Візит до лікаря\",     \"date\": \"2026-09-18\",     \"time\": \"10:00\",     \"message\": \"Олеже, завтра, 18 вересня, ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Лягти спати\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Спробуй найближчим часом, можливо, за 30",
     "ts": "2026-09-16T21:03:54.330927"
-  },
-  "msg_deep_analysis|2026-09-16t21_03_46_192935": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт Олеже! 👋  Твої 28 555 кроків сьогодні – це просто неймовірний результат, але при цьому сон лише 5.7 годин. Це значна аномалія, яка, ймовірно, пояснює пад",
-    "ts": "2026-09-16T21:03:46.192935"
   }
 }
