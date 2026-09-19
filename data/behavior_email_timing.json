@@ -1,9 +1,4 @@
 {
-  "78897": {
-    "sender": "newsletters@e.economist.com",
-    "sender_raw": "\"Robert Guest at The Economist\" <newsletters@e.economist.com>",
-    "seen_ts": "2026-09-10T18:30:34.723818+00:00"
-  },
   "78898": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Financial Times через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "groups-noreply@linkedin.com",
     "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
     "seen_ts": "2026-09-19T13:50:13.579621+00:00"
+  },
+  "79391": {
+    "sender": "newsletter@investingmail.com",
+    "sender_raw": "Investing.com <newsletter@investingmail.com>",
+    "seen_ts": "2026-09-19T14:28:42.262040+00:00"
   }
 }
