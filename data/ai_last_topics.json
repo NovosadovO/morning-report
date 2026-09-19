@@ -1,4 +1,9 @@
 {
+  "foresight|2026-09-19t21_44_18_731454": {
+    "topic": "foresight",
+    "gist": "Олеже, дивись, зараз 21:44 суботи, ти після ранньої зміни, а попереду чотири вихідні дні до наступної ранньої в четвер. Це ідеальний час, щоб спробувати щось но",
+    "ts": "2026-09-19T21:44:18.731454"
+  },
   "action_detect|2026-09-19t21_40_06_344119": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Проаналізовано астрологічну ситуацію та надано поради",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято Armolopid",
     "ts": "2026-09-17T04:02:39.335904"
-  },
-  "action_detect|2026-09-17t04_02_28_386741": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до лікаря\", \"action_date\": \"2026-09-17\", \"action_time\": \"10:00\", \"action_summary\": \"Олег має візит до лікаря ",
-    "ts": "2026-09-17T04:02:28.386741"
   }
 }
