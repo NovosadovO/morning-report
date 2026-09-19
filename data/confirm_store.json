@@ -11503,7 +11503,43 @@
     "pid": "email_star_79401",
     "subject": "Google Cloud Platform & APIs: ми отримали Ваш платіж для дом",
     "extra": {
-      "msg": "Привіт Олеже! 👋 Тобі щойно надійшов лист від Google Payments 🗑(схоже на розсилку)\n📋 Тема: «Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74»\n\nЦей лист від Google Payments підтверджує отримання платежу в розмірі 10,00 EUR для облікового запису Google Cloud Platform & APIs. Платіж було додано 19 вересня 2026 року.\n\n🤖 Це інформаційний лист, який не потребує жодних дій.\n\nДавай я "
+      "msg": "Привіт Олеже! 👋 Тобі щойно надійшов лист від Google Payments 🗑(схоже на розсилку)\n📋 Тема: «Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74»\n\nЦей лист від Google Payments підтверджує отримання платежу в розмірі 10,00 EUR для облікового запису Google Cloud Platform & APIs. Платіж було додано 19 вересня 2026 року.\n\n🤖 Це інформаційний лист, який не потребує жодних дій.\n\nДавай я ",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 97871,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79401"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79401"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79401"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79401"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79401"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79401"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-09-19T21:59:13.672842+00:00"
   }
