@@ -2,6 +2,12 @@
   "items": [
     {
       "t": "btn",
+      "data": "calrem_add_deep_analysis_1788255286",
+      "label": "",
+      "ts": "2026-09-01T11:41:20"
+    },
+    {
+      "t": "btn",
       "data": "cw_ok_6ba3c8ddcf",
       "label": "✅ Пам'ятаю",
       "ts": "2026-09-01T11:41:32"
@@ -7199,6 +7205,12 @@
       "data": "evdone_no_done_cnvcg7pndkv6p7ceqq9aha9vok_2026-09-19",
       "label": "❌ Не виконано",
       "ts": "2026-09-19T20:35:33"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_d98ae5qlagkm5p7tmh3okp3g44_2026-09-19",
+      "label": "✅ Виконано",
+      "ts": "2026-09-19T20:35:36"
     }
   ]
 }
