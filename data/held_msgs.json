@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T01:31:02.955765",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79374"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79374"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79374"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79374"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79374"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79374"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-20T01:31:04.207054",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 3 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -272,6 +233,12 @@
       "ts": "2026-09-20T01:33:06.882047",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Runable  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 2 нових оголошень\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T01:33:09.856968",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 21.09</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
