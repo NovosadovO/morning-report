@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T00:16:33.002952",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Project Manager - Digital Operations в Caterpillar In</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79402"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79402"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79402"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79402"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79402"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79402"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-20T00:16:34.302577",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Google</b>\n👤 no-reply@apata.io",
@@ -338,6 +299,12 @@
       "ts": "2026-09-20T00:18:29.494648",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T00:18:30.309619",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
