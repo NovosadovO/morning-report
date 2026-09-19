@@ -153,31 +153,29 @@ def _get_important_emails(max_emails=5):
 # ============ CRYPTO DATA ============
 
 def _get_crypto_prices():
-    """CoinGecko: BTC, ETH, AVAX, ONDO. Кешується через monitor.fetch_json_cached (60с)
-    — уникає burst 429 коли 4 щоденні розклади + event-listener дзвонять паралельно."""
+    """DefiLlama: BTC, ETH, AVAX, ONDO — основне джерело (Олег попросив).
+    CoinGecko лише fallback усередині llama_prices, якщо DefiLlama не відповів."""
     try:
         import sys as _sys_cp
         _sys_cp.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from monitor import fetch_json_cached
+        import llama_prices as _llama_cp
 
-        url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,avalanche-2,ondo-finance&vs_currencies=usd&include_24h_change=true&include_market_cap=true"
-        data = fetch_json_cached(url, ttl=60)
-        if not data:
+        id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2", "ONDO": "ondo-finance"}
+        snap = _llama_cp.get_snapshot(id_map, symbols=list(id_map.keys()), periods=("24h",))
+        if not snap:
             return {}
 
         result = {}
-        for coin_id, coin_name in [("bitcoin", "BTC"), ("ethereum", "ETH"), ("avalanche-2", "AVAX"), ("ondo-finance", "ONDO")]:
-            if coin_id in data:
-                coin = data[coin_id]
-                result[coin_name] = {
-                    "price": coin.get("usd", 0),
-                    "change_24h": coin.get("usd_24h_change", 0),
-                    "market_cap": coin.get("usd_market_cap", 0),
-                }
+        for sym, row in snap.items():
+            result[sym] = {
+                "price": row.get("price", 0),
+                "change_24h": row.get("change_24h", 0),
+                "market_cap": 0,  # DefiLlama не дає market cap; тут не використовується
+            }
 
         return result
     except Exception as e:
-        _log(f"CoinGecko error: {e}")
+        _log(f"DefiLlama error: {e}")
         return {}
 
 # ============ HEALTH DATA ============

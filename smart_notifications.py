@@ -183,20 +183,24 @@ def check_for_calendar_alert() -> dict or None:
 # ============ CRYPTO ============
 
 def check_for_crypto_movement() -> dict or None:
-    """Перевіра на крипто рухи"""
+    """Перевіра на крипто рухи. DefiLlama — основне джерело (Олег попросив),
+    CoinGecko лише fallback усередині llama_prices."""
     try:
-        url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd&include_24hr_change=true"
-        
+        import sys as _sys_sn
+        _sys_sn.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import llama_prices as _llama_sn
+
         try:
-            with urllib.request.urlopen(url, timeout=5) as response:
-                data = json.loads(response.read().decode())
-        except:
+            snap = _llama_sn.get_snapshot({"BTC": "bitcoin"}, symbols=["BTC"], periods=("24h",))
+        except Exception:
             return None
-        
-        # Перевіра BTC
-        btc_data = data.get("bitcoin", {})
-        btc_change = btc_data.get("usd_24h_change", 0)
-        
+        if not snap.get("BTC"):
+            return None
+
+        btc_row = snap["BTC"]
+        btc_change = btc_row.get("change_24h", 0)
+        btc_data = {"usd": btc_row.get("price", 0)}
+
         if abs(btc_change) >= 10:
             notification_id = f"crypto_btc_{datetime.now(timezone.utc).strftime('%Y%m%d')}"
             

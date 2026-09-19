@@ -165,14 +165,13 @@ def _collect_month_data():
         print(f"[MonthlyCoach] health error: {e}")
         data["health"] = {}
 
-    # ── Крипто ──
+    # ── Крипто (DefiLlama — основне джерело, CoinGecko fallback усередині) ──
     try:
-        ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
-        url = (f"https://api.coingecko.com/api/v3/coins/markets"
-               f"?vs_currency=usd&ids={ids}&price_change_percentage=30d,7d")
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=8) as r:
-            crypto_raw = json.loads(r.read())
+        import sys as _sys_mc
+        _sys_mc.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import llama_prices as _llama_mc
+        id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2", "ONDO": "ondo-finance"}
+        crypto_raw = list(_llama_mc.to_markets_shape(id_map, periods=("7d", "30d")).values())
         crypto_data = []
         for c in crypto_raw:
             ch30 = c.get("price_change_percentage_30d_in_currency") or 0

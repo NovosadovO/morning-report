@@ -162,27 +162,24 @@ class IntelligentListener:
     
     def _check_crypto_moves(self) -> dict:
         """Перевірити BTC/ETH/AVAX/ONDO/SOL/BNB/XRP за 1 годину (розширений watchlist).
-        Використовує спільний TTL-кеш monitor.fetch_json_cached (60с) — цей чек
-        іде кожні ~35с, тому без кешу швидко впирається в CoinGecko rate-limit (30/хв)."""
+        DefiLlama — основне джерело (Олег попросив), CoinGecko лише fallback
+        усередині llama_prices (там теж свій кеш, 3хв)."""
         try:
-            ids = "bitcoin,ethereum,avalanche-2,ondo-finance,solana,binancecoin,ripple"
-            url = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd&include_24h_change=true"
-
             import sys as _sys
             _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-            from monitor import fetch_json_cached
-            data = fetch_json_cached(url, ttl=60)
-            if not data:
+            import llama_prices as _llama
+
+            id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2",
+                      "ONDO": "ondo-finance", "SOL": "solana", "BNB": "binancecoin", "XRP": "ripple"}
+            snap = _llama.get_snapshot(id_map, symbols=list(id_map.keys()), periods=("24h",))
+            if not snap:
                 return {}
 
             moves = {}
-            for coin_id, coin_name in [("bitcoin", "BTC"), ("ethereum", "ETH"),
-                                      ("avalanche-2", "AVAX"), ("ondo-finance", "ONDO"),
-                                      ("solana", "SOL"), ("binancecoin", "BNB"), ("ripple", "XRP")]:
-                if coin_id in data:
-                    change = data[coin_id].get("usd_24h_change", 0)
-                    if abs(change) >= 5:  # 5% move
-                        moves[coin_name] = change
+            for coin_name, row in snap.items():
+                change = row.get("change_24h", 0)
+                if abs(change) >= 5:  # 5% move
+                    moves[coin_name] = change
 
             return moves
         except Exception as e:

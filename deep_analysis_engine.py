@@ -5,6 +5,7 @@ Deep Analysis Engine v4.0 — Comprehensive Life Context Analysis
 """
 
 import os
+import sys
 import json
 import time
 import urllib.request
@@ -203,30 +204,18 @@ def _load_socials():
     return {"facebook_last_post": None, "youtube_last_post": None}
 
 def _load_crypto():
-    """BTC/ETH/AVAX/ONDO via /coins/markets (real 24h change)"""
+    """BTC/ETH/AVAX/ONDO — DefiLlama (основне джерело), CoinGecko лише fallback."""
     try:
-        ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
-        url = (
-            "https://api.coingecko.com/api/v3/coins/markets"
-            "?vs_currency=usd&ids=" + ids +
-            "&order=market_cap_desc&per_page=10&page=1&sparkline=false"
-            "&price_change_percentage=24h"
-        )
-        req = urllib.request.Request(url, headers={"User-Agent": "OlegBot/2.0"})
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            raw = json.loads(resp.read())
-        mapping = {
-            "bitcoin": "BTC", "ethereum": "ETH",
-            "avalanche-2": "AVAX", "ondo-finance": "ONDO"
-        }
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import llama_prices as _llama
+        id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2", "ONDO": "ondo-finance"}
+        snap = _llama.get_snapshot(id_map, symbols=list(id_map.keys()), periods=("24h",))
         result = {}
-        for coin in raw:
-            cid = coin.get("id", "")
-            if cid in mapping:
-                result[mapping[cid]] = {
-                    "price":      round(coin.get("current_price") or 0, 4),
-                    "change_24h": round(coin.get("price_change_percentage_24h") or 0, 2),
-                }
+        for sym, row in snap.items():
+            result[sym] = {
+                "price":      round(row.get("price") or 0, 4),
+                "change_24h": round(row.get("change_24h") or 0, 2),
+            }
         return result
     except Exception as e:
         _log(f"Crypto load error: {e}")

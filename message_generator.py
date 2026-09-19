@@ -122,42 +122,29 @@ def _gemini_post(body: dict, timeout: int = 25, tag: str = "") -> str:
 
 # ─── Live Data ────────────────────────────────────────────────────────────────
 def _get_live_crypto() -> dict:
-    """CoinGecko free API — розширений watchlist + TOP-мувери за 24г.
-    Основні монети Олега (BTC/ETH/AVAX/ONDO) + додаткові (SOL/BNB/XRP/DOGE)
-    для ширшого контексту крипто-огляду, плюс окремий TOP-3 gainers/losers з ринку.
-    Кешується через monitor.fetch_json_cached (60с) — уникає burst 429 коли
-    кілька тригерів/щоденних звітів дзвонять цю функцію майже одночасно."""
+    """Watchlist (BTC/ETH/AVAX/ONDO/SOL/BNB/XRP/DOGE) — DefiLlama, основне джерело
+    (Олег попросив). TOP-3 gainers/losers з топ-100 за market cap лишається на
+    CoinGecko — DefiLlama рейтингів за капіталізацією не має, fallback дозволено."""
     try:
         import sys as _sys_lc
         _sys_lc.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         from monitor import fetch_json_cached
+        import llama_prices as _llama
 
-        ids = "bitcoin,ethereum,avalanche-2,ondo-finance,solana,binancecoin,ripple,dogecoin"
-        url = (
-            "https://api.coingecko.com/api/v3/coins/markets"
-            "?vs_currency=usd&ids=" + ids +
-            "&order=market_cap_desc&per_page=10&page=1&sparkline=false"
-            "&price_change_percentage=24h,7d"
-        )
-        raw = fetch_json_cached(url, ttl=60)
-        if not raw:
-            return {}
-        mapping = {
-            "bitcoin": "BTC", "ethereum": "ETH",
-            "avalanche-2": "AVAX", "ondo-finance": "ONDO",
-            "solana": "SOL", "binancecoin": "BNB",
-            "ripple": "XRP", "dogecoin": "DOGE",
+        id_map = {
+            "BTC": "bitcoin", "ETH": "ethereum",
+            "AVAX": "avalanche-2", "ONDO": "ondo-finance",
+            "SOL": "solana", "BNB": "binancecoin",
+            "XRP": "ripple", "DOGE": "dogecoin",
         }
+        snap = _llama.get_snapshot(id_map, symbols=list(id_map.keys()), periods=("24h", "7d"))
         result = {}
-        for coin in raw:
-            cid = coin.get("id", "")
-            if cid in mapping:
-                cname = mapping[cid]
-                result[cname] = {
-                    "price":      round(coin.get("current_price") or 0, 4),
-                    "change_24h": round(coin.get("price_change_percentage_24h") or 0, 2),
-                    "change_7d":  round(coin.get("price_change_percentage_7d_in_currency") or 0, 2),
-                }
+        for sym, row in snap.items():
+            result[sym] = {
+                "price":      round(row.get("price") or 0, 4),
+                "change_24h": round(row.get("change_24h") or 0, 2),
+                "change_7d":  round(row.get("change_7d") or 0, 2),
+            }
         summary = ", ".join(
             f"{k}=${v['price']}({v['change_24h']:+.1f}%)" for k, v in result.items()
         )

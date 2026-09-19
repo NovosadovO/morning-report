@@ -54,7 +54,9 @@ VIP_CONTACTS = {
 # ============ CRYPTO: CoinGecko TOP-20 ============
 
 def get_coingecko_top20():
-    """Отримує TOP-20 монет з CoinGecko (free API)"""
+    """TOP-20 монет за капіталізацією. DefiLlama не має рейтингів за капіталізацією
+    (Олег погодився: рейтинг — з CoinGecko, а ціна/24h — перезаписуємо з DefiLlama,
+    де це основне джерело)."""
     try:
         url = "https://api.coingecko.com/api/v3/coins/markets"
         params = {
@@ -65,51 +67,57 @@ def get_coingecko_top20():
             "sparkline": False,
             "price_change_percentage": "24h"
         }
-        
+
         query_string = "&".join(f"{k}={v}" for k, v in params.items())
         full_url = f"{url}?{query_string}"
-        
+
         import sys as _s, os as _o
         _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))
         from monitor import fetch_json
-        return fetch_json(full_url) or []
+        raw = fetch_json(full_url) or []
+        if not raw:
+            return []
+
+        # Перезаписуємо price/24h із DefiLlama для тих самих 20 id (ранжування лишається CoinGecko)
+        try:
+            import llama_prices as _llama
+            id_map = {c["id"]: c["id"] for c in raw if c.get("id")}
+            snap = _llama.get_snapshot(id_map, symbols=list(id_map.keys()), periods=("24h",))
+            for c in raw:
+                row = snap.get(c.get("id"))
+                if row:
+                    c["current_price"] = row.get("price", c.get("current_price"))
+                    c["price_change_percentage_24h"] = row.get("change_24h", c.get("price_change_percentage_24h"))
+        except Exception as _e_llama:
+            print(f"⚠️ DefiLlama overlay error (top20): {_e_llama}")
+
+        return raw
     except Exception as e:
         print(f"❌ CoinGecko error: {e}")
         return []
 
 def get_user_watch_list():
-    """Отримує монети що стежить Олег (BTC, ETH, AVAX, ONDO)"""
-    watch_ids = ["bitcoin", "ethereum", "avalanche-2", "ondo-finance"]
-    watch_symbols = ["BTC", "ETH", "AVAX", "ONDO"]
-    
+    """Отримує монети що стежить Олег (BTC, ETH, AVAX, ONDO).
+    DefiLlama — основне джерело (Олег попросив), CoinGecko лише fallback
+    усередині llama_prices. market_cap DefiLlama не дає — тут не використовується."""
+    id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2", "ONDO": "ondo-finance"}
+    names = {"BTC": "Bitcoin", "ETH": "Ethereum", "AVAX": "Avalanche", "ONDO": "Ondo"}
+
     try:
-        url = "https://api.coingecko.com/api/v3/coins/markets"
-        params = {
-            "vs_currency": "usd",
-            "ids": ",".join(watch_ids),
-            "sparkline": False,
-            "price_change_percentage": "24h,7d,30d"
-        }
-        
-        query_string = "&".join(f"{k}={v}" for k, v in params.items())
-        full_url = f"{url}?{query_string}"
-        
         import sys as _s, os as _o
         _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))
-        from monitor import fetch_json
-        data = fetch_json(full_url) or []
-        if True:
-            result = {}
-            for coin in data:
-                sym = coin.get('symbol', '').upper()
-                result[sym] = {
-                    "name": coin.get('name'),
-                    "price": coin.get('current_price', 0),
-                    "change_24h": coin.get('price_change_percentage_24h', 0),
-                    "change_7d": coin.get('price_change_percentage_7d', 0),
-                    "market_cap": coin.get('market_cap', 0)
-                }
-            return result
+        import llama_prices as _llama
+        snap = _llama.get_snapshot(id_map, symbols=list(id_map.keys()), periods=("24h", "7d"))
+        result = {}
+        for sym, row in snap.items():
+            result[sym] = {
+                "name": names.get(sym, sym),
+                "price": row.get("price", 0),
+                "change_24h": row.get("change_24h", 0),
+                "change_7d": row.get("change_7d", 0),
+                "market_cap": 0,
+            }
+        return result
     except Exception as e:
         print(f"❌ Watch list error: {e}")
         return {}

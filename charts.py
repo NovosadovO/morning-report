@@ -1684,12 +1684,14 @@ def plot_health_2x2_dashboard(year: int = None, month: int = None) -> bytes | No
 def plot_crypto_trend(days: int = 30) -> bytes | None:
     """Графік динаміки цін BTC/ETH/AVAX/ONDO/SOL за останні N днів (нормалізовано % від старту),
     щоб порівняти відносний перформанс монет портфеля на одному графіку.
-    Дані з CoinGecko market_chart (безкоштовний ендпоінт, без ключа)."""
+    Дані з DefiLlama chart endpoint — основне джерело (Олег попросив)."""
     if not HAS_MPL:
         return None
     try:
-        import urllib.request as _ur
-        import json as _json_ct
+        import sys as _sys_ct
+        import os as _os_ct
+        _sys_ct.path.insert(0, _os_ct.path.dirname(_os_ct.path.abspath(__file__)))
+        import llama_prices as _llama_ct
 
         coins = [
             ("bitcoin", "BTC", "#F7931A"),
@@ -1706,18 +1708,15 @@ def plot_crypto_trend(days: int = 30) -> bytes | None:
         any_data = False
         for cid, sym, color in coins:
             try:
-                url = (
-                    f"https://api.coingecko.com/api/v3/coins/{cid}/market_chart"
-                    f"?vs_currency=usd&days={days}"
+                data = _llama_ct._get_json(
+                    _llama_ct.BASE + f"/chart/coingecko:{cid}?span={days}&period=1d"
                 )
-                req = _ur.Request(url, headers={"User-Agent": "SmartAssistantBot/2.0"})
-                with _ur.urlopen(req, timeout=12) as resp:
-                    data = _json_ct.loads(resp.read())
-                prices = data.get("prices", [])
+                coin_row = (data or {}).get("coins", {}).get(f"coingecko:{cid}", {})
+                prices = coin_row.get("prices", [])
                 if not prices:
                     continue
-                ts = [datetime.fromtimestamp(p[0] / 1000) for p in prices]
-                vals = [p[1] for p in prices]
+                ts = [datetime.fromtimestamp(p["timestamp"]) for p in prices]
+                vals = [p["price"] for p in prices]
                 base = vals[0] if vals[0] else 1
                 norm = [(v / base - 1) * 100 for v in vals]
                 ax.plot(ts, norm, label=sym, color=color, linewidth=2.2)

@@ -157,16 +157,15 @@ def _bills():
 
 
 def _crypto():
-    ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
-    url = ("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd"
-           f"&ids={ids}&price_change_percentage=7d")
+    # DefiLlama — основне джерело (Олег попросив), CoinGecko лише fallback усередині.
     data = None
     try:
-        import monitor as _m
-        if hasattr(_m, "fetch_json_cached"):
-            data = _m.fetch_json_cached(url, ttl=600)
-        elif hasattr(_m, "fetch_json"):
-            data = _m.fetch_json(url)
+        import sys as _sys_wr
+        import os as _os_wr
+        _sys_wr.path.insert(0, _os_wr.path.dirname(_os_wr.path.abspath(__file__)))
+        import llama_prices as _llama_wr
+        id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2", "ONDO": "ondo-finance"}
+        data = list(_llama_wr.to_markets_shape(id_map, periods=("7d",)).values())
     except Exception as e:
         K.log(TAG, f"crypto error: {e}")
     if not isinstance(data, list) or not data:

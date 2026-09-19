@@ -16,6 +16,7 @@ import urllib.parse
 import time
 from datetime import datetime, timezone, timedelta
 import storage
+import llama_prices
 
 try:
     import requests as _requests
@@ -687,11 +688,10 @@ def save_json_file(path, data):
 # ─── 1. ЦІНИ ──────────────────────────────────────────────────────────────────
 
 def get_prices():
-    ids = ",".join(COINS.values())
-    url = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd&include_24hr_change=true"
-    data = fetch_json(url)
+    # Джерело — DefiLlama (Олег попросив), CoinGecko лише fallback усередині llama_prices.
+    data = llama_prices.to_simple_price_shape(COINS, periods=("24h",))
 
-    # Fallback на Kraken якщо CoinGecko не відповів (rate limit)
+    # Fallback на Kraken якщо і DefiLlama, і CoinGecko-fallback не відповіли
     if not data:
         data = _get_prices_kraken()
 
@@ -4523,11 +4523,7 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
 
     # Крипто (швидко)
     try:
-        ids = "bitcoin,ethereum"
-        url_c = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd&include_24hr_change=true"
-        req_c = urllib.request.Request(url_c, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req_c, timeout=6) as r:
-            cd = json.loads(r.read())
+        cd = llama_prices.to_simple_price_shape({"BTC": "bitcoin", "ETH": "ethereum"}, periods=("24h",))
         btc_ch = cd.get("bitcoin", {}).get("usd_24h_change", 0)
         eth_ch = cd.get("ethereum", {}).get("usd_24h_change", 0)
         ctx_parts.append(f"Крипто зараз: BTC {btc_ch:+.1f}%, ETH {eth_ch:+.1f}% за 24г")
@@ -4825,9 +4821,7 @@ def check_crypto_price_alert():
     now_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d %H")
 
     # ── Завантажуємо поточні ціни ────────────────────────────────────────────
-    ids  = ",".join(COINS.values())
-    url  = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd"
-    data = fetch_json(url)
+    data = llama_prices.to_simple_price_shape(COINS, periods=())
     if not data:
         # Fallback на Kraken
         data = _get_prices_kraken()
@@ -6085,16 +6079,9 @@ def check_crypto_weekly_summary():
         return
 
     try:
-        ids = ",".join(COINS.values())
-        url = (
-            f"https://api.coingecko.com/api/v3/coins/markets"
-            f"?vs_currency=usd&ids={ids}&price_change_percentage=7d,24h"
-        )
-        raw = fetch_json_cached(url)
-        if not raw:
+        data = llama_prices.to_markets_shape(COINS, periods=("24h", "7d"))
+        if not data:
             return
-        # convert list → dict by id
-        data = {c["id"]: c for c in raw}
 
         # symbol order from COINS dict
         lines = []
@@ -6912,9 +6899,7 @@ def check_morning_context():
         # ── КРОК 4: Крипто ───────────────────────────────────────────────────
         crypto_text = ""
         try:
-            ids = ",".join(COINS.values())
-            url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h"
-            raw = fetch_json_cached(url)
+            raw = list(llama_prices.to_markets_shape(COINS, periods=("24h",)).values())
             crypto_lines = []
             for c in raw:
                 sym = c["symbol"].upper()
@@ -7351,10 +7336,7 @@ def check_crypto_morning():
 
     try:
         coins_map = list(COINS.items())
-        ids = ",".join(cg_id for _, cg_id in coins_map)
-        url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h,7d"
-        raw = fetch_json_cached(url)
-        data = {c["id"]: c for c in raw}
+        data = llama_prices.to_markets_shape(COINS, periods=("24h", "7d"))
 
         lines_out = []
         lines_out.append(f"💹 <b>КРИПТО ДАШБОРД</b> · {today[5:]}")
@@ -11850,10 +11832,7 @@ def check_morning_brief():
     # ── Крипто dashboard ────────────────────────────────────────────────────
     try:
         sym_map = list(COINS.items())
-        ids = ",".join(cg_id for _, cg_id in sym_map)
-        url_c = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h,7d,30d"
-        raw_c = fetch_json_cached(url_c)
-        data_c = {c["id"]: c for c in raw_c}
+        data_c = llama_prices.to_markets_shape(COINS, periods=("24h", "7d", "30d"))
 
         def _trend_emoji(pct):
             """Емодзі тренду замість бару."""
@@ -12101,11 +12080,7 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
 
     # Крипто (швидко)
     try:
-        ids = "bitcoin,ethereum"
-        url_c = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd&include_24hr_change=true"
-        req_c = urllib.request.Request(url_c, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req_c, timeout=6) as r:
-            cd = json.loads(r.read())
+        cd = llama_prices.to_simple_price_shape({"BTC": "bitcoin", "ETH": "ethereum"}, periods=("24h",))
         btc_ch = cd.get("bitcoin", {}).get("usd_24h_change", 0)
         eth_ch = cd.get("ethereum", {}).get("usd_24h_change", 0)
         ctx_parts.append(f"Крипто зараз: BTC {btc_ch:+.1f}%, ETH {eth_ch:+.1f}% за 24г")
@@ -12372,9 +12347,7 @@ def check_crypto_price_alert():
     now_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d %H")
 
     # ── Завантажуємо поточні ціни ────────────────────────────────────────────
-    ids  = ",".join(COINS.values())
-    url  = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd"
-    data = fetch_json(url)
+    data = llama_prices.to_simple_price_shape(COINS, periods=())
     if not data:
         # Fallback на Kraken
         data = _get_prices_kraken()
@@ -13632,16 +13605,9 @@ def check_crypto_weekly_summary():
         return
 
     try:
-        ids = ",".join(COINS.values())
-        url = (
-            f"https://api.coingecko.com/api/v3/coins/markets"
-            f"?vs_currency=usd&ids={ids}&price_change_percentage=7d,24h"
-        )
-        raw = fetch_json_cached(url)
-        if not raw:
+        data = llama_prices.to_markets_shape(COINS, periods=("24h", "7d"))
+        if not data:
             return
-        # convert list → dict by id
-        data = {c["id"]: c for c in raw}
 
         # symbol order from COINS dict
         lines = []
@@ -14459,9 +14425,7 @@ def check_morning_context():
         # ── КРОК 4: Крипто ───────────────────────────────────────────────────
         crypto_text = ""
         try:
-            ids = ",".join(COINS.values())
-            url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h"
-            raw = fetch_json_cached(url)
+            raw = list(llama_prices.to_markets_shape(COINS, periods=("24h",)).values())
             crypto_lines = []
             for c in raw:
                 sym = c["symbol"].upper()
@@ -14898,10 +14862,7 @@ def check_crypto_morning():
 
     try:
         coins_map = list(COINS.items())
-        ids = ",".join(cg_id for _, cg_id in coins_map)
-        url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={ids}&price_change_percentage=24h,7d"
-        raw = fetch_json_cached(url)
-        data = {c["id"]: c for c in raw}
+        data = llama_prices.to_markets_shape(COINS, periods=("24h", "7d"))
 
         lines_out = []
         lines_out.append(f"💹 <b>КРИПТО ДАШБОРД</b> · {today[5:]}")

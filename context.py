@@ -11,6 +11,7 @@ should_notify()      → чи доречно зараз писати
 """
 
 import os
+import sys
 import json
 import urllib.request
 import urllib.parse
@@ -573,21 +574,22 @@ def _get_recent_emails_context() -> str:
 
 
 def _get_crypto_context():
+    # Джерело — DefiLlama (Олег попросив), CoinGecko лише fallback усередині llama_prices.
     try:
-        ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
-        url = (f"https://api.coingecko.com/api/v3/coins/markets"
-               f"?vs_currency=usd&ids={ids}&price_change_percentage=24h")
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=8) as r:
-            raw = json.loads(r.read())
+        sys.path.insert(0, os.path.dirname(__file__))
+        import llama_prices as _llama
+        id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2", "ONDO": "ondo-finance"}
+        snap = _llama.get_snapshot(id_map, symbols=["BTC", "ETH", "AVAX", "ONDO"], periods=("24h",))
         parts = []
-        for c in raw:
-            sym   = c["symbol"].upper()
-            price = c["current_price"]
-            ch24  = c.get("price_change_percentage_24h") or 0
+        for sym in ["BTC", "ETH", "AVAX", "ONDO"]:
+            row = snap.get(sym)
+            if not row:
+                continue
+            price = row["price"]
+            ch24  = row.get("change_24h") or 0
             sign  = "+" if ch24 > 0 else ""
             parts.append(f"{sym} ${price:,.0f} ({sign}{ch24:.1f}%)")
-        return ", ".join(parts)
+        return ", ".join(parts) if parts else "крипто ціни недоступні"
     except Exception:
         return "крипто ціни недоступні"
 

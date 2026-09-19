@@ -196,14 +196,13 @@ def _collect_week_data():
         print(f"[WeeklyCoach] mood error: {e}")
         data["mood"] = {"avg": None}
 
-    # ── Крипто P&L ──
+    # ── Крипто P&L (DefiLlama — основне джерело, CoinGecko fallback усередині) ──
     try:
-        ids = "bitcoin,ethereum,avalanche-2,ondo-finance"
-        url = (f"https://api.coingecko.com/api/v3/coins/markets"
-               f"?vs_currency=usd&ids={ids}&price_change_percentage=7d,24h")
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=8) as r:
-            crypto_raw = json.loads(r.read())
+        import sys as _sys_wc
+        _sys_wc.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import llama_prices as _llama_wc
+        id_map = {"BTC": "bitcoin", "ETH": "ethereum", "AVAX": "avalanche-2", "ONDO": "ondo-finance"}
+        crypto_raw = list(_llama_wc.to_markets_shape(id_map, periods=("24h", "7d")).values())
         crypto_data = []
         for c in crypto_raw:
             ch7 = c.get("price_change_percentage_7d_in_currency") or 0
