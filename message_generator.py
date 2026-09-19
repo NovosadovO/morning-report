@@ -541,16 +541,18 @@ def _health_text(health: dict) -> str:
     if not health:
         return "Здоров'я: даних немає — надішли дані текстом (кроки/сон/вага)"
     parts = []
-    if "weight" in health:
+    if health.get("weight") is not None:
         delta_str = ""
-        if "weight_7d_delta" in health:
+        if health.get("weight_7d_delta") is not None:
             d = health["weight_7d_delta"]
             delta_str = f" ({d:+.1f} кг за тиж)"
         parts.append(f"Вага: {health['weight']} кг{delta_str}")
-    if "steps" in health:
+    if health.get("steps") is not None:
         parts.append(f"Кроки: {health['steps']:,}")
-    if "sleep" in health:
+    if health.get("sleep") is not None:
         parts.append(f"Сон: {health['sleep']} год")
+    if not parts:
+        return "Здоров'я: даних немає — надішли дані текстом (кроки/сон/вага)"
     return "Здоров'я: " + " | ".join(parts)
 
 def _emails_text(emails: list) -> str:
