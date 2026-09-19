@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T01:01:26.447353",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Project Manager - Digital Operations в Caterpillar In</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79402"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79402"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79402"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79402"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79402"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79402"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-20T01:01:27.619789",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Google</b>\n👤 no-reply@apata.io",
@@ -338,6 +299,12 @@
       "ts": "2026-09-20T01:03:03.212392",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ ONDO +6.0% за 24г\n\nЗараз: 0.4215 $\n24г тому: 0.3977 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T01:04:04.738430",
+      "kind": "lifecycle",
+      "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 2 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
       "keyboard": null
     }
   ]
