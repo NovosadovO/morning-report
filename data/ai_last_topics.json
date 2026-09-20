@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-20t10_51_21_937675": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олег, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потрібн",
+    "ts": "2026-09-20T10:51:21.937675"
+  },
   "email_ai_item|2026-09-20t10_47_15_245652": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Wizz Air є рекламним повідомленням, що пропонує послугу Disruption Assistance. Він не містить конкретних дат, сум або дій,",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Починаємо день правильно з повноцінного сніданку для ",
     "ts": "2026-09-20T09:00:30.327740"
-  },
-  "action_detect|2026-09-20t09_00_14_904641": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Це пояснення ринкової капіталізації та її значення дл",
-    "ts": "2026-09-20T09:00:14.904641"
   }
 }
