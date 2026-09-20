@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T02:43:45.730954",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-20T02:43:48.837881",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +29.7% за 24г</b>\n\nЗараз: 10.77 $\n24г тому: 8.3009 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -380,6 +374,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-20T02:46:30.762662",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com → Your receipt from Runable #2714-2414\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
     }
   ]
 }
