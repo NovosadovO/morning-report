@@ -1,9 +1,4 @@
 {
-  "78933": {
-    "sender": "newsletter@email.blockchain.com",
-    "sender_raw": "\"Blockchain\" <newsletter@email.blockchain.com>",
-    "seen_ts": "2026-09-11T10:23:47.304760+00:00"
-  },
   "78934": {
     "sender": "updates@allevents.in",
     "sender_raw": "AllEvents <updates@allevents.in>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@news.footshop.sk",
     "sender_raw": "Footshop <hello@news.footshop.sk>",
     "seen_ts": "2026-09-20T16:09:03.446126+00:00"
+  },
+  "79439": {
+    "sender": "pullandbear@news.pullandbear.com",
+    "sender_raw": "Pull&Bear <pullandbear@news.pullandbear.com>",
+    "seen_ts": "2026-09-20T18:01:01.368008+00:00"
   }
 }
