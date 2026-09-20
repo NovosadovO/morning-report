@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-20t15_14_48_856694": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що 20 вересня 2026 року о 11:18 (GMT) було змінено фото профілю LinkedIn з iOS у Кошице. Як",
+    "ts": "2026-09-20T15:14:48.856694"
+  },
   "mailcal_extract|2026-09-20t15_07_21_721679": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"79430\",     \"title\": \"Зміна фото профілю LinkedIn\",     \"date\": \"2026-09-20\",     \"time\": \"11:18\",     \"kind\": \"other\",     \"why\": \"Ва",
@@ -293,10 +298,5 @@
     "topic": "qwatch_parse",
     "gist": "```json {   \"health_score\": 72,   \"steps\": 1480,   \"sleep_total_min\": 607,   \"sleep_deep_min\": 150,   \"sleep_light_min\": 290,   \"sleep_quality\": 100,   \"hr_avg\"",
     "ts": "2026-09-20T13:33:03.845466"
-  },
-  "selfact|2026-09-20t13_26_13_535114": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдалий платіж Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платі",
-    "ts": "2026-09-20T13:26:13.535114"
   }
 }
