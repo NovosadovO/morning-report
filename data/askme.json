@@ -2615,6 +2615,17 @@
   "note|олег проігнорував сповіщення від the economist well informe": {
     "q": "📝 Хочу записати нотатку:\n\n« Олег проігнорував сповіщення від The Economist 'Well Informe »\n\nОлег проігнорував сповіщення від The Economist 'Well Informed: The dubious evidence for sunshine supplements', натиснувши 'Видалити' або 'Не треба'.\n\nПоставити?",
     "kind": "write",
-    "asked_at": "2026-09-20T14:28:41"
+    "asked_at": "2026-09-20T14:28:41",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-09-20T14:33:59",
+    "meta": {
+      "summary": "Олег проігнорував сповіщення від The Economist 'Well Informe",
+      "desc": "Олег проігнорував сповіщення від The Economist 'Well Informed: The dubious evide",
+      "minutes": "30",
+      "calendar": "True",
+      "kind": "note"
+    }
   }
 }
