@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "full_report",
-      "detail": "повна аналітика здоров'я",
-      "module": "selfact",
-      "ts": "2026-09-13T20:01:46"
-    },
-    {
       "kind": "notify",
       "what": "Нові виплатні листи",
       "detail": "Надійшли два листи від ehuman@minebeamitsumi.eu з темою 'Výplatná páska/Payslip 08/2026', один з яких 'oprava formátu'.",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-09-20T22:05:21"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, Facebook питає, чи це ви щойно увійшли неподалік Коши",
+      "detail": "Надійшов лист від Facebook з попередженням про вхід з нового пристрою, що може свідчити про несанкціонований доступ.",
+      "module": "selfact",
+      "ts": "2026-09-20T22:47:02"
     }
   ]
 }
