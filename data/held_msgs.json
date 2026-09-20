@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T02:11:52.561209",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>AVAX +23.9% за 24г</b>\n\nЗараз: 10.18 $\n24г тому: 8.2181 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-20T02:11:53.192304",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +23.9% за 24г\n\nЗараз: 10.18 $\n24г тому: 8.2181 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T02:15:43.339574",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Linux Platform &amp; Blockchain Operations Engineer в Bit</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79405"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79405"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79405"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79405"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79405"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79405"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
