@@ -222,7 +222,8 @@
     },
     "etf_summary": {
       "checked": 1,
-      "issues": 1
+      "issues": 1,
+      "fixed": 1
     }
   },
   "last": [
@@ -473,6 +474,6 @@
   "2026-09-20": {
     "checked": 100,
     "issues": 55,
-    "fixed": 31
+    "fixed": 32
   }
 }
