@@ -4,12 +4,6 @@
       "t": "btn",
       "data": "planner_write_today",
       "label": "✏️ Написати нагадування",
-      "ts": "2026-09-01T21:14:30"
-    },
-    {
-      "t": "btn",
-      "data": "planner_write_today",
-      "label": "✏️ Написати нагадування",
       "ts": "2026-09-01T21:15:04"
     },
     {
@@ -7199,6 +7193,12 @@
       "data": "email_delete_79439",
       "label": "🗑 Видалити",
       "ts": "2026-09-20T20:27:25"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_am7a9gs1n6nhkgmchg4o5s1vt4_2026-09-20",
+      "label": "✅ Виконано",
+      "ts": "2026-09-20T20:27:54"
     }
   ]
 }
