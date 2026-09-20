@@ -2903,6 +2903,7 @@ HELP_TEXT = """
 /dd — DeFi дайджест 24h (зміни TVL, DEX, yields, stables)
 /defiall — ПОВНИЙ DeFi-огляд: TVL, chains, RWA, liquid staking, restaking, lending, DEX, yields, стейблкоіни
 /rwa — RWA-радар (топ-10 монет + TVL сектора + Restaking TVL)
+/etf — крипто-ETF потоки капіталу (BTC/ETH/SOL spot, SoSoValue)
 
 <b>🏃 Strava / Біг</b>
 /біг — аналіз + місячний графік
@@ -3171,6 +3172,17 @@ def handle_command(chat_id, text):
             full_overview()
         except Exception as e:
             send(chat_id, f"⚠️ Помилка повного DeFi-огляду: {e}")
+
+    elif text in ["/etf", "/etfs", "етф", "etf", "крипто етф", "крипто-етф"]:
+        send(chat_id, "⏳ Дивлюсь потоки капіталу в BTC/ETH/SOL spot ETF (SoSoValue)...")
+        try:
+            import sys as _sys, os as _os
+            _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+            from report_etf import send_etf_report
+            import threading as _th
+            _th.Thread(target=send_etf_report, daemon=True).start()
+        except Exception as e:
+            send(chat_id, f"⚠️ Помилка ETF-звіту: {e}")
 
     elif text in ["/test_astro", "/astro_test", "тест астро"]:
         send(chat_id, "🔮 Тестую AI-астро окремо (без повного звіту)...")

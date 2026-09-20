@@ -203,6 +203,66 @@ def get_rwa(protocols):
     return "\n".join(lines)
 
 
+# ─── 3a. RWA ПО СЕКТОРАХ (Treasury Bills / Private Credit / Stocks...) ────────
+
+def get_rwa_categories(protocols, top_n=8):
+    """Розбивка RWA TVL по типу активу (tags DeFiLlama: Treasury Bills,
+    Private Credit, Stocks & ETFs, Real Estate, Commodities...) — таблиця,
+    аналогічна секторам на сторінці defillama.com/rwa."""
+    rwa = [p for p in protocols if p.get("category") == "RWA" and (p.get("tvl") or 0) > 0]
+    if not rwa:
+        return None
+
+    tag_tvl = {}
+    for p in rwa:
+        tags = p.get("tags") or ["Інше"]
+        tvl  = p.get("tvl") or 0
+        share = tvl / len(tags)
+        for t in tags:
+            tag_tvl[t] = tag_tvl.get(t, 0) + share
+
+    total = sum(tag_tvl.values())
+    if total <= 0:
+        return None
+
+    top_tags = sorted(tag_tvl.items(), key=lambda x: -x[1])[:top_n]
+
+    lines = [f"🗂 <b>RWA по типу активу (усього {fmt_b(total)}):</b>\n"]
+    for name, tvl in top_tags:
+        pct = tvl / total * 100
+        bar = "▓" * max(1, int(pct / 5)) + "░" * (20 - max(1, int(pct / 5)))
+        lines.append(f"<code>{bar[:16]}</code>  <b>{esc(name)}</b>: {fmt_b(tvl)} <i>({pct:.1f}%)</i>")
+
+    return "\n".join(lines)
+
+
+def get_rwa_chains(protocols, top_n=8):
+    """RWA TVL по чейнах — на яких блокчейнах живуть токенізовані активи."""
+    rwa = [p for p in protocols if p.get("category") == "RWA" and (p.get("tvl") or 0) > 0]
+    if not rwa:
+        return None
+
+    chain_tvl = {}
+    for p in rwa:
+        chains = p.get("chains") or ["?"]
+        tvl = p.get("tvl") or 0
+        share = tvl / len(chains)
+        for c in chains:
+            chain_tvl[c] = chain_tvl.get(c, 0) + share
+
+    total = sum(chain_tvl.values())
+    if total <= 0:
+        return None
+    top_chains = sorted(chain_tvl.items(), key=lambda x: -x[1])[:top_n]
+
+    lines = [f"⛓ <b>RWA по блокчейнах:</b>\n"]
+    for name, tvl in top_chains:
+        pct = tvl / total * 100
+        lines.append(f"  • <b>{esc(name)}</b>: {fmt_b(tvl)} <i>({pct:.1f}%)</i>")
+
+    return "\n".join(lines)
+
+
 # ─── 3b. ТОП ЧЕЙНІВ ЗА TVL З 7-ДЕННОЮ ЗМІНОЮ ──────────────────────────────────
 
 def get_chains_7d_change(top_n=10):
@@ -490,6 +550,25 @@ def full_overview():
     send_part(get_rwa(protocols))
     time.sleep(0.6)
 
+    rwa_cat = get_rwa_categories(protocols)
+    if rwa_cat:
+        send_part(rwa_cat)
+        time.sleep(0.6)
+
+    rwa_chains = get_rwa_chains(protocols)
+    if rwa_chains:
+        send_part(rwa_chains)
+        time.sleep(0.6)
+
+    try:
+        import report_etf as _etf
+        etf_full = _etf.build_report_text()
+        if etf_full:
+            send_part(etf_full)
+            time.sleep(0.6)
+    except Exception as e:
+        print(f"ETF full block error: {e}")
+
     send_part(get_liquid_staking(protocols))
     time.sleep(0.6)
 
@@ -595,23 +674,40 @@ def main():
     if chains_7d_block:
         chains_lines = [chains_7d_block]
 
-    # ── RWA топ-8 (з дисклеймером про методологію defillama.com/rwa) ──
-    rwa = [p for p in protocols if p.get("category") == "RWA" and (p.get("tvl") or 0) > 0]
-    rwa = sorted(rwa, key=lambda x: x.get("tvl") or 0, reverse=True)[:8]
-    total_rwa = sum(p.get("tvl") or 0 for p in rwa)
+    # ── RWA топ-12 (з дисклеймером про методологію defillama.com/rwa) ──
+    rwa_all = [p for p in protocols if p.get("category") == "RWA" and (p.get("tvl") or 0) > 0]
+    rwa = sorted(rwa_all, key=lambda x: x.get("tvl") or 0, reverse=True)[:12]
+    total_rwa = sum(p.get("tvl") or 0 for p in rwa_all)
 
     rwa_lines = [f"🏦 <b>RWA-протоколи (DeFi TVL)  —  {fmt_b(total_rwa)}</b>\n"]
     for i, p in enumerate(rwa, 1):
         tvl  = p.get("tvl") or 0
         ch1d = p.get("change_1d")
+        ch7d = p.get("change_7d")
         ar   = "🟢" if (ch1d or 0) > 0 else ("🔴" if (ch1d or 0) < 0 else "⚪️")
         d1   = f"{'+' if (ch1d or 0)>0 else ''}{ch1d:.1f}%" if ch1d is not None else "—"
+        d7   = f"{'+' if (ch7d or 0)>0 else ''}{ch7d:.1f}%" if ch7d is not None else "—"
         chains = "/".join((p.get("chains") or [])[:2])
-        rwa_lines.append(f"{i:>2}. {ar} <b>{esc(p['name'])}</b>  <code>{fmt_b(tvl)}</code>  <i>{d1}</i>  <i>[{esc(chains)}]</i>")
+        rwa_lines.append(f"{i:>2}. {ar} <b>{esc(p['name'])}</b>  <code>{fmt_b(tvl)}</code>  <i>1д {d1} · 7д {d7}</i>  <i>[{esc(chains)}]</i>")
+
+    rwa_cat_block = get_rwa_categories(protocols, top_n=6)
+    if rwa_cat_block:
+        rwa_lines.append("\n" + rwa_cat_block)
+
     rwa_lines.append(
         "\n<i>ℹ️ AUM-рейтинг емітентів (Securitize, Ondo, Circle...) з "
         "defillama.com/rwa рахується інакше — безкоштовне API його не дає.</i>"
     )
+
+    # ── Крипто-ETF потоки (BTC/ETH, SoSoValue API) ──
+    etf_lines = []
+    try:
+        import report_etf as _etf
+        etf_block = _etf.compact_block(("BTC", "ETH"))
+        if etf_block:
+            etf_lines = [etf_block]
+    except Exception as e:
+        print(f"ETF block error: {e}")
 
     # ── Lending топ-7 ──
     lending = [p for p in protocols if p.get("category") in ("Lending", "CDP") and (p.get("tvl") or 0) > 0]
@@ -650,6 +746,7 @@ def main():
         + (SEP + "\n".join(chains_lines) if chains_lines else "")
         + SEP
         + "\n".join(rwa_lines)
+        + (SEP + "\n".join(etf_lines) if etf_lines else "")
         + SEP
         + "\n".join(lend_lines)
         + SEP
