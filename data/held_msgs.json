@@ -284,6 +284,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-21T00:01:24.820655",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Operations &amp; Project Coordinator (m/w/d) в ISG International</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79432"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79432"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79432"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79432"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79432"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79432"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
