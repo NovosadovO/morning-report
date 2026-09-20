@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-09-20t09_10_39_123298": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
+    "ts": "2026-09-20T09:10:39.123298"
+  },
+  "action_detect|2026-09-20t09_07_38_567586": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": null, \"action_time\": \"18:00\", \"action_summary\": \"Створити бота на трейди",
+    "ts": "2026-09-20T09:07:38.567586"
+  },
   "proactive_ai|2026-09-20t09_05_14_967463": {
     "topic": "proactive_ai",
     "gist": "Привіт, Олеже! Вільний день сьогодні, то може плануєш пробіжку зранку, поки є час?",
@@ -288,15 +298,5 @@
     "topic": "foresight",
     "gist": "Олеже, привіт! Зараз 07:50 ранку неділі, і у тебе попереду чотири вільні дні до ранньої зміни в четвер.  Ти маєш мету знизити вагу з 83-84 кг до 75 кг, а на сьо",
     "ts": "2026-09-20T07:50:42.263877"
-  },
-  "selfact|2026-09-20t07_44_51_341330": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Нові вакансії\",     \"text\": \"Олеже, є кілька нових вакансій, які можуть бути цікавими: Key Account Manager – V",
-    "ts": "2026-09-20T07:44:51.341330"
-  },
-  "money|2026-09-20t07_35_17_232919": {
-    "topic": "money",
-    "gist": "```json [   {     \"uid\": \"79403\",     \"vendor\": \"Runable\",     \"amount\": \"30.00\",     \"currency\": \"USD\",     \"date\": \"2026-09-20\",     \"kind\": \"other\",     \"not",
-    "ts": "2026-09-20T07:35:17.232919"
   }
 }
