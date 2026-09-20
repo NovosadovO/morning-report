@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, нагадую, що 15.09 відбудеться голосування Сенату США щ",
-      "detail": "В календарі є важлива подія 'Голосування Сенату США щодо Clarity Act', яка може бути цікава Олегу, враховуючи його інтерес до криптоновин.",
-      "module": "selfact",
-      "ts": "2026-09-13T18:38:05"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, зверніть увагу: у вас є незавершена покупка USDC на B",
       "detail": "З листа від Banxa: 'Time's Ticking! ⏰ ... You're almost finished your identity verification — Don’t put that hard work to waste!'",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "З листа від The Defiant: 'Weekly Recap: Congress Said No, The Agencies Said Yes' з важливими новинами про крипторинок та фінанси.",
       "module": "selfact",
       "ts": "2026-09-20T21:14:02"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, нагадую, що 21.09 о 09:00 у тебе запланований візит до",
+      "detail": "З календаря на 7 днів: '21.09: 09:00 Дерматолог'",
+      "module": "selfact",
+      "ts": "2026-09-20T21:29:45"
     }
   ]
 }
