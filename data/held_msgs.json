@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T02:46:37.101666",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Runable\n📋 Your receipt from Runable #2714-2414\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Runable",
-              "callback_data": "email_reply_79403"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79403"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79403"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-20T02:46:37.177510",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 21.09 10:00–22:00 (720 хв)\n\nВільно 720 хв 10:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -167,6 +142,12 @@
       "ts": "2026-09-20T02:49:39.568480",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T02:49:42.189349",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +28.4% за 24г</b>\n\nЗараз: 10.68 $\n24г тому: 8.3181 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
