@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T02:56:09.063999",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Profesia.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «1 nová pracovná ponuka»\n\n<i>«Nové pracovné ponuky \"Pracovné ponuky e-mailom\r\n Košice, na dohodu (brigády), \"\r\n\r\nLogo Profesia ( https://www.profesia.sk/?utm_medium=mail&amp;utm_source=10007&amp;utm_campaign=10007&amp;utm_term=2026-09-20&amp;eid=6aaf27b41e70c6eed1c23a23513fb1fd&amp;utm_content=logo )\r\n\r\n*********************************************...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79406"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79406"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79406"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79406"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79406"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79406"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-20T02:56:14.122673",
       "kind": "lifecycle",
       "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 2 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
@@ -181,6 +142,12 @@
       "ts": "2026-09-20T02:59:07.379124",
       "kind": "lifecycle",
       "text": "⏳ СКОРО ПРОДОВЖЕННЯ\n━━━━━━━━━━━━━━━━━━━━\n🔄 Підписка CapCut\n💸 Оплата: 22.09.2026 — через 2 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T02:59:20.157039",
+      "kind": "watchdog",
+      "text": "👁 <b>Я осліп на частину даних</b>\n\n🔴 <b>strava</b> — функції get_activities немає в monitor.py\n\n<i>Поки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.</i>",
       "keyboard": null
     }
   ]
