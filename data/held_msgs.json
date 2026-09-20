@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T00:44:29.548841",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 21.09</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T00:44:30.613247",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 21.09 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79443"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-21T00:46:18.049038",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Trump drops demands to own Greenland, but the damage is done</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79442"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79442"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79442"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79442"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79442"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79442"
             }
           ]
         ]
