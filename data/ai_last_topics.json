@@ -298,5 +298,10 @@
     "topic": "MSG_DEEP_ANALYSIS/truthfix",
     "gist": "Вечір неділі, 20 вересня 2026 року, 21:49. Сьогодні ти виконав біг, пив воду та прийняв холодний душ, а також трав'яний чай, що є добрим результатом. Проте, оці",
     "ts": "2026-09-20T21:49:18.750442"
+  },
+  "action_detect|2026-09-20t23_32_47_907646": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-20T23:32:47.907646"
   }
 }
