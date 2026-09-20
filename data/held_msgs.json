@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T00:01:24.820655",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Operations &amp; Project Coordinator (m/w/d) в ISG International</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79432"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79432"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79432"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79432"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79432"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79432"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T00:01:26.172343",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your CapCut subscription will expire in 3 days..</b>\n👤 CapCut &lt;admin@mail.capcut.com&gt;",
@@ -239,6 +200,12 @@
       "ts": "2026-09-21T00:04:47.939977",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Facebook\" <security@facebookmail.com> → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n• CapCut <admin@mail.capcut.com> → Your CapCut subscription will expire in 3 days..\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T00:04:48.704516",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Facebook\"  → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n• CapCut  → Your CapCut subscription will expire in 3 days..\n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
