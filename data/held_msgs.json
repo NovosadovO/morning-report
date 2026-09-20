@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T03:47:16.673109",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 1 nová pracovná ponuka\n• Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com → Your receipt from Runable #2714-2414\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-20T03:47:19.119856",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 21.09</b> 10:00–22:00 (720 хв)\n\nВільно 720 хв 10:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -148,6 +142,12 @@
       "ts": "2026-09-20T03:50:12.977861",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T03:50:15.434222",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +12.7% за 24г</b>\n\nЗараз: 9.7775 $\n24г тому: 8.6736 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
