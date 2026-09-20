@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T02:43:25.792200",
-      "kind": "lifecycle",
-      "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 2 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-20T02:43:26.587543",
-      "kind": "lifecycle",
-      "text": "⏳ СКОРО ПРОДОВЖЕННЯ\n━━━━━━━━━━━━━━━━━━━━\n🔄 Підписка CapCut\n💸 Оплата: 22.09.2026 — через 2 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-20T02:43:38.546937",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com → Your receipt from Runable #2714-2414\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 3 нових оголошень\n\n🧹 Реклама: 4 — можна пропустити.",
@@ -215,6 +203,51 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-20T02:46:18.953367",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>Your receipt from Runable #2714-2414</b>\n👤 Runable &lt;invoice+statements+acct_1RaXgUJk3URPLkAO@",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79403"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79403"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79403"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79403"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79403"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79403"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-20T02:46:19.258902",
+      "kind": "lifecycle",
+      "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 2 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
+      "keyboard": null
     }
   ]
 }
