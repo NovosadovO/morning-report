@@ -1,4 +1,9 @@
 {
+  "mailcal_extract|2026-09-20t04_28_06_386955": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-20T04:28:06.386955"
+  },
   "selfact|2026-09-20t04_21_40_150300": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на нові вакансії Key account Manager – Východné Slovensko в Sandoz та Senior Project Manager",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Зустріч щодо створення бота для трейдингу\",   \"action_date\": \"2024-09-20\",   \"action_time\": \"18:00\",  ",
     "ts": "2026-09-19T21:34:45.499859"
-  },
-  "msg_idle_timeout_truthfix|2026-09-19t21_34_38_465233": {
-    "topic": "MSG_IDLE_TIMEOUT/truthfix",
-    "gist": "Олеже, привіт!  Зараз 21:34, і ти вже понад дві з половиною години вдома після ранньої зміни, яка завершилася о 19:00 за твоїм часом.  Дані про твоє здоров'я, я",
-    "ts": "2026-09-19T21:34:38.465233"
   }
 }
