@@ -13785,6 +13785,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-09-20T20:26:20.520918+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_miss_ee127c4e0a"
     }
   ]
 }
