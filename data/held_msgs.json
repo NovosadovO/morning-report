@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T03:46:17.869187",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>1 nová pracovná ponuka</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79406"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79406"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79406"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79406"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79406"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79406"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-20T03:46:18.961419",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Linux Platform &amp; Blockchain Operations Engineer в Bit</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -377,6 +338,12 @@
       "ts": "2026-09-20T03:48:41.633994",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 21.09 10:00–22:00 (720 хв)\n\nВільно 720 хв 10:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T03:48:43.371992",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
