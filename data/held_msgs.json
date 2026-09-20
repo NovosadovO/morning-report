@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T02:45:13.973112",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-20T02:45:16.550320",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +29.6% за 24г</b>\n\nЗараз: 10.77 $\n24г тому: 8.3092 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -398,6 +392,12 @@
       "ts": "2026-09-20T02:46:45.447068",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +29.4% за 24г</b>\n\nЗараз: 10.77 $\n24г тому: 8.3213 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T02:46:46.366942",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +29.4% за 24г\n\nЗараз: 10.77 $\n24г тому: 8.3213 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
