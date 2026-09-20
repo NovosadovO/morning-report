@@ -216,7 +216,8 @@
     },
     "MSG_CRYPTO_MOVE": {
       "checked": 2,
-      "issues": 1
+      "issues": 1,
+      "fixed": 1
     }
   },
   "last": [
@@ -467,6 +468,6 @@
   "2026-09-20": {
     "checked": 17,
     "issues": 7,
-    "fixed": 5
+    "fixed": 6
   }
 }
