@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-09-20t05_09_41_117086": {
+    "topic": "openloop_promises",
+    "gist": "Надані листи є автоматичними повідомленнями про нові оголошення нерухомості та не містять жодних явних обіцянок від Олега. Його повідомлення в пам'яті також не ",
+    "ts": "2026-09-20T05:09:41.117086"
+  },
+  "selfact|2026-09-20t05_08_21_997208": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на нове сповіщення від Runable про успішний платіж на $30.00. Це може бути пов'язано з попер",
+    "ts": "2026-09-20T05:08:21.997208"
+  },
   "money|2026-09-20t05_05_03_498562": {
     "topic": "money",
     "gist": "```json [   {     \"uid\": \"79403\",     \"vendor\": \"Runable\",     \"amount\": \"30.00\",     \"currency\": \"USD\",     \"date\": \"2026-09-20\",     \"kind\": \"sub\",     \"note\"",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що у тебе є 4 нові листи від Oleg Novosadov <novosadovoleg@gmail.com> та 1 лист від Oleg No",
     "ts": "2026-09-19T22:04:34.787468"
-  },
-  "action_detect|2026-09-19t22_02_21_405892": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити підписку Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оплатити підписку Strava, я",
-    "ts": "2026-09-19T22:02:21.405892"
-  },
-  "action_detect|2026-09-19t22_02_10_373759": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти Armolopid Plus післ",
-    "ts": "2026-09-19T22:02:10.373759"
   }
 }
