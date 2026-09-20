@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-13",
-      "detail": "автосинк з годинника: steps, hr_avg, calories, hrv, spo2, stress",
-      "module": "qwsync",
-      "ts": "2026-09-13T16:33:03"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=6933, hr_avg=62, calories=304, hrv=47, spo2=96, stress=45, date=2026-09-13, source=qwatch_auto, saved_at=2026-09-13 16:33",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Олег цікавиться вакансіями, і ця відповідає його локації та потенційним інтересам, виходячи з його попередніх запитів на вакансії.",
       "module": "selfact",
       "ts": "2026-09-20T19:09:01"
+    },
+    {
+      "kind": "hcoach",
+      "what": "full_report",
+      "detail": "повна аналітика здоров'я",
+      "module": "selfact",
+      "ts": "2026-09-20T20:01:42"
     }
   ]
 }
