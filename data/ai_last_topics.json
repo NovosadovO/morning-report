@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-09-20t04_15_08_791454": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії за запитом 'Менеджер з продажу в Bratislava Metropolitan Area'. У листі п",
+    "ts": "2026-09-20T04:15:08.791454"
+  },
+  "action_detect|2026-09-20t04_07_04_967165": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Підготувати питання щодо трейдинг-боту\", \"action_date\": \"2026-09-20\", \"action_time\": null, \"action_summary\": \"Підго",
+    "ts": "2026-09-20T04:07:04.967165"
+  },
   "selfact|2026-09-20t04_05_54_850692": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег отримав рахунок від Runable на $30.00, який був оплачений 20.09.2026. Це може бути пов'язано з попередніми н",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, сьогодні (19.09) ти не відмітив виконання звичок: трав'яний чай та спрей для волосся. Хочеш відмітити їх ",
     "ts": "2026-09-19T21:33:28.695770"
-  },
-  "action_detect|2026-09-19t21_30_58_009774": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2026-09-20\", \"action_time\": \"18:00\", \"action_summary\": \"Створити бота н",
-    "ts": "2026-09-19T21:30:58.009774"
-  },
-  "action_detect|2026-09-19t21_30_42_731533": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Планування бігу\",   \"action_date\": \"2026-09-15\",   \"action_time\": \"08:00\",   \"action_summary\": \"Заплан",
-    "ts": "2026-09-19T21:30:42.731533"
   }
 }
