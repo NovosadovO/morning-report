@@ -1,4 +1,29 @@
 {
+  "selfact|2026-09-20t13_10_42_071255": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, на Runable є невдалі платежі на $10.00. Потрібно оновити платіжну інформацію. Це може призвести до скасув",
+    "ts": "2026-09-20T13:10:42.071255"
+  },
+  "action_detect|2026-09-20t13_06_36_815795": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Прийняти Armolopid Plus\",   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Олегу пот",
+    "ts": "2026-09-20T13:06:36.815795"
+  },
+  "action_detect|2026-09-20t13_06_25_816994": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid Plus\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Олегу потрібно прийняти Armo",
+    "ts": "2026-09-20T13:06:25.816994"
+  },
+  "action_detect|2026-09-20t13_06_15_663254": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не зміг розпізнати жодної події. Спробуй чіткіше: зав",
+    "ts": "2026-09-20T13:06:15.663254"
+  },
+  "action_detect|2026-09-20t13_06_15_005873": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Збережено дані про вагу 84.4 кг. Сьогоднішня ",
+    "ts": "2026-09-20T13:06:15.005873"
+  },
   "planner|2026-09-20t13_06_03_832437": {
     "topic": "planner",
     "gist": "[]",
@@ -273,30 +298,5 @@
     "topic": "foresight/truthfix",
     "gist": "Олеже, ти зараз на зміні чи вдома?  Бачу, на сьогодні, 20 вересня, о 17:00 у тебе заплановано \"створити бота на трейдинг\", і це може бути шанс краще зрозуміти п",
     "ts": "2026-09-20T11:41:01.381092"
-  },
-  "foresight|2026-09-20t11_40_49_127824": {
-    "topic": "foresight",
-    "gist": "Привіт, Олеже! Бачу, що з 17:00 сьогодні у тебе заплановано \"створити бота на трейдинг\", а це класна нагода спробувати новий підхід до інвест-аналізу.  Саме зар",
-    "ts": "2026-09-20T11:40:49.127824"
-  },
-  "selfact|2026-09-20t11_37_21_199097": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олег, нагадую, що платіж до Runable на $10.00 був невдалим. Потрібно оно",
-    "ts": "2026-09-20T11:37:21.199097"
-  },
-  "action_detect|2026-09-20t11_30_43_075270": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Випий склянку води кімнатної температури.\"}",
-    "ts": "2026-09-20T11:30:43.075270"
-  },
-  "action_detect|2026-09-20t11_24_21_319131": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Аналіз криптопортфеля та стратегії для бота\",   \"action_date\": \"2023-09-20\",   \"action_time\": \"17:00\",",
-    "ts": "2026-09-20T11:24:21.319131"
-  },
-  "msg_vip_email_truthfix|2026-09-20t11_24_13_696799": {
-    "topic": "MSG_VIP_EMAIL/truthfix",
-    "gist": "Олеже, бачимо, що сьогодні, 20 вересня, ти вільний від змін, і це гарна нагода для стратегічного погляду на місяць уперед. Твій криптопортфель за 24 години втра",
-    "ts": "2026-09-20T11:24:13.696799"
   }
 }
