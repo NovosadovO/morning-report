@@ -11765,7 +11765,24 @@
     "action": "calrem_skip",
     "pid": "79447",
     "subject": "Підтвердьте робочу електронну адресу",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 98779,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_79447"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_79447"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-20T22:07:09.924273+00:00"
   }
 }
