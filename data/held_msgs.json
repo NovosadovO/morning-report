@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T03:15:46.721045",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Linux Platform &amp; Blockchain Operations Engineer в Bit</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79405"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79405"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79405"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79405"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79405"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79405"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-20T03:15:47.958870",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Project Manager - Digital Operations в Caterpillar In</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -344,6 +305,12 @@
       "ts": "2026-09-20T03:17:36.896993",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +19.8% за 24г</b>\n\nЗараз: 9.9544 $\n24г тому: 8.3106 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T03:17:37.698888",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +19.8% за 24г\n\nЗараз: 9.9544 $\n24г тому: 8.3106 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
