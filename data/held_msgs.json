@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T00:01:23.631920",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79434"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79434"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79434"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79434"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79434"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79434"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T00:01:24.820655",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Operations &amp; Project Coordinator (m/w/d) в ISG International</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -272,6 +233,12 @@
       "ts": "2026-09-21T00:03:30.347970",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +17.6% за 24г\n\nЗараз: 11.30 $\n24г тому: 9.6058 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T00:04:47.939977",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Facebook\" <security@facebookmail.com> → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n• CapCut <admin@mail.capcut.com> → Your CapCut subscription will expire in 3 days..\n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
