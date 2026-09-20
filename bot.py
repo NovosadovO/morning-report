@@ -387,7 +387,7 @@ def _gemini_simple(prompt: str, max_tokens: int = 700, temperature: float = 0.5)
     api_key = os.environ.get("GEMINI_API_KEY", "")
     if not api_key:
         return ""
-    models = ["gemini-2.5-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite"]
+    models = ["gemini-2.5-flash", "gemini-2.5-flash", "gemini-3.5-flash-lite"]
     payload = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"maxOutputTokens": max_tokens, "temperature": temperature}

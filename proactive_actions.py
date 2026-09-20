@@ -292,7 +292,7 @@ def _gemini_json(prompt: str, max_tokens: int = 1200):
         },
     }).encode()
     url = ("https://generativelanguage.googleapis.com/v1beta/models/"
-           f"gemini-2.5-flash-lite:generateContent?key={GEMINI_KEY}")
+           f"gemini-2.5-flash:generateContent?key={GEMINI_KEY}")
     try:
         resp = _gem_post(url, body, timeout=70, tag="proactive_actions", max_retries=3)
         raw = resp["candidates"][0]["content"]["parts"][0]["text"].strip()
