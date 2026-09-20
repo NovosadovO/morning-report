@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T03:46:18.961419",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Linux Platform &amp; Blockchain Operations Engineer в Bit</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79405"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79405"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79405"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79405"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79405"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79405"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-20T03:46:20.202795",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Project Manager - Digital Operations в Caterpillar In</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -344,6 +305,12 @@
       "ts": "2026-09-20T03:48:43.371992",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T03:48:44.068065",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
