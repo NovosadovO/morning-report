@@ -1,4 +1,19 @@
 {
+  "openloop_promises|2026-09-20t09_40_36_512241": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-20T09:40:36.512241"
+  },
+  "selfact|2026-09-20t09_33_05_985773": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від Runable про отримання квитанції на $30.00. Це може бути пов'язано з попередніми ",
+    "ts": "2026-09-20T09:33:05.985773"
+  },
+  "email_ai_item|2026-09-20t09_31_23_229072": {
+    "topic": "email_ai_item",
+    "gist": "```json { \"description\": \"Лист від Pixory інформує про акцію: безкоштовна доставка на всі фотокниги протягом 48 годин. Для активації пропозиції потрібно викорис",
+    "ts": "2026-09-20T09:31:23.229072"
+  },
   "proactive_actions|2026-09-20t09_29_39_271587": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Нагадування про дерматолога\",     \"date\": \"2026-09-21\",     \"time\": \"11:00\",     \"message\": \"Олеже, завтра о",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
     "ts": "2026-09-20T08:00:23.175641"
-  },
-  "msg_day_plan|2026-09-20t08_00_13_732054": {
-    "topic": "MSG_DAY_PLAN",
-    "gist": "Привіт Олеже! 🧭 Сьогодні неділя, 20 вересня 2026 року, 08:00 ранку, і за твоїм статусом ти зараз вдома, маєш вільний час, що дає чудову нагоду для продуктивного",
-    "ts": "2026-09-20T08:00:13.732054"
-  },
-  "proactive_actions|2026-09-20t07_59_36_091812": {
-    "topic": "proactive_actions",
-    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути пропозиції роботи\",     \"date\": \"2026-09-20\",     \"time\": \"\",     \"message\": \"Олеже, надійшло 21",
-    "ts": "2026-09-20T07:59:36.091812"
-  },
-  "action_detect|2026-09-20t07_58_53_585285": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
-    "ts": "2026-09-20T07:58:53.585285"
   }
 }
