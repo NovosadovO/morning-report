@@ -330,5 +330,19 @@
     "paid": true,
     "paid_at": "2026-09-20",
     "created": "2026-09-20"
+  },
+  "capcut||2026-09-23": {
+    "vendor": "CapCut",
+    "amount": "",
+    "currency": "EUR",
+    "invoice_no": "",
+    "due": "2026-09-23",
+    "uid": "79431",
+    "sender": "CapCut <admin@mail.capcut.com>",
+    "subject": "Your CapCut subscription will expire in 3 days..",
+    "note": "Ваша підписка CapCut закінчується через 3 дні. Це нагадування про необхідність її поновити.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-09-20"
   }
 }
