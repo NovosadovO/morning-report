@@ -13735,5 +13735,31 @@
       "kind": "note"
     },
     "ts": "2026-09-20T14:13:22.171342+00:00"
+  },
+  "172bb539e3": {
+    "key": "cal|закінчення підписки capcut",
+    "q": "📅 Хочу записати в календар:\n\n« ⏳ Закінчення підписки CapCut »\n🕐 23.09 о 09:00\n\nАвтоматично з листа.\nВід: CapCut <admin@mail.capcut.com>\nТема: Your CapCut subscription will expire in 3 days..\nYour CapCut subscription will expire in 3 days..\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "⏳ Закінчення підписки CapCut",
+      "desc": "Автоматично з листа.\nВід: CapCut <admin@mail.capcut.com>\nТема: Your CapCut subscription will expire in 3 days..\nYour CapCut subscription will expire in 3 days..",
+      "minutes": 60,
+      "start": "2026-09-23T09:00:00"
+    },
+    "ts": "2026-09-20T16:38:42.073708+00:00"
   }
 }
