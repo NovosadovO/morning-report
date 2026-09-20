@@ -1,4 +1,9 @@
 {
+  "calendar|2026-09-20t15_48_41_188278": {
+    "topic": "calendar",
+    "gist": "Привіт, Олеже! 👋 Бачу, що о 18:00 – 19:00 сьогодні у тебе заплановано \"створити бота на трейдинг\", і це чудова ідея для вільного дня! 🤖 Твій криптопортфель у 5 ",
+    "ts": "2026-09-20T15:48:41.188278"
+  },
   "selfact|2026-09-20t15_45_35_247127": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу: LinkedIn повідомляє про зміну вашого фото профілю 20 вересня 2026 р. о 11:18 (GMT) з iOS ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2026-09-20\", \"action_time\": \"17:00\", \"action_summary\": \"Створити бота н",
     "ts": "2026-09-20T14:02:52.206989"
-  },
-  "action_detect|2026-09-20t14_02_39_520450": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-20T14:02:39.520450"
   }
 }
