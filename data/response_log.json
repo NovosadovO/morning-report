@@ -13731,6 +13731,12 @@
       "category": "event_done",
       "question": "📅 🤝 створити бота на трейдинг\nПланувалась до 20:00 — виконано?",
       "answer": "skip"
+    },
+    {
+      "ts": "2026-09-20T19:04:46.420119+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dl_due_snooze_bfb42c5437"
     }
   ]
 }
