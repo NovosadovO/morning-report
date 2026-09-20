@@ -2583,7 +2583,18 @@
   "note|олег проігнорував сповіщення про вакансії software engineeri": {
     "q": "📝 Хочу записати нотатку:\n\n« Олег проігнорував сповіщення про вакансії Software Engineeri »\n\nОлег проігнорував сповіщення про вакансії Software Engineering Manager - Test Platform в SentinelOne, натиснувши 'Видалити' або 'Не треба'.\n\nПоставити?",
     "kind": "write",
-    "asked_at": "2026-09-20T14:28:31"
+    "asked_at": "2026-09-20T14:28:31",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-09-20T14:33:36",
+    "meta": {
+      "summary": "Олег проігнорував сповіщення про вакансії Software Engineeri",
+      "desc": "Олег проігнорував сповіщення про вакансії Software Engineering Manager - Test Pl",
+      "minutes": "30",
+      "calendar": "True",
+      "kind": "note"
+    }
   },
   "note|олег проігнорував сповіщення від temu tajomná karta čaká": {
     "q": "📝 Хочу записати нотатку:\n\n« Олег проігнорував сповіщення від Temu 'Tajomná karta čaká', »\n\nОлег проігнорував сповіщення від Temu 'Tajomná karta čaká', натиснувши 'Видалити' або 'Не треба'.\n\nПоставити?",
