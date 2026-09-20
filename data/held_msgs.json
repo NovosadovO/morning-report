@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T02:46:41.009745",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-20T02:46:43.712620",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Runable\n📋 Your receipt from Runable #2714-2414\n📝 (AI-аналіз тимчасово недоступний)",
@@ -148,6 +142,12 @@
       "ts": "2026-09-20T02:49:45.362881",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +5.0% за 24г</b>\n\nЗараз: 0.4222 $\n24г тому: 0.4020 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T02:49:46.026282",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ ONDO +5.0% за 24г\n\nЗараз: 0.4222 $\n24г тому: 0.4020 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
