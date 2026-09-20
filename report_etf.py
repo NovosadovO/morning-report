@@ -35,10 +35,12 @@ ETF_SYMBOLS = [
     ("BTC", "₿ Bitcoin spot ETF", "🟠"),
     ("ETH", "Ξ Ethereum spot ETF", "🔵"),
     ("SOL", "◎ Solana spot ETF", "🟣"),
+    ("AVAX", "🔺 Avalanche spot ETF", "🔺"),
 ]
 
 _cache = {}
-_CACHE_TTL = 900  # 15 хв
+_CACHE_TTL = 4 * 3600  # 4 год — ETF-дані SoSoValue оновлюються ~1 раз/добу,
+# частіше кешування лише зайве навантажує обмежений demo-ключ (429 rate-limit)
 
 
 def esc(s): return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
@@ -83,23 +85,32 @@ def _get(path, params, retries=2):
             _cache[cache_key] = (now, data)
             return data
         except Exception as e:
+            is_429 = "429" in str(e)
             print(f"SoSoValue GET attempt {attempt}/{retries} [{path}]: {e}")
             if attempt < retries:
-                time.sleep(2 * attempt)
+                time.sleep(6 * attempt if is_429 else 2 * attempt)
     return None
 
 
+# Фіксоване вікно запиту до API — не залежить від того, скільки днів просить
+# викликач. Це дозволяє build_report_text() (потрібно 10 днів) і
+# compact_block() (потрібно 8 днів) в одному прогоні звіту використовувати
+# ОДНАКОВІ query-параметри і отримати cache hit замість двох окремих
+# запитів до SoSoValue (economить лічильник demo-ключа).
+_FETCH_DAYS = 20
+
+
 def get_etf_flows(symbol, days=10):
-    """Останні `days` днів потоків для одного ETF (BTC/ETH/SOL spot).
+    """Останні `days` днів потоків для одного ETF (BTC/ETH/SOL/AVAX spot).
     Повертає список dict, найновіший день ПЕРШИЙ (як віддає API)."""
     end = datetime.now(timezone.utc)
-    start = end - timedelta(days=days + 3)
+    start = end - timedelta(days=_FETCH_DAYS + 3)
     params = {
         "symbol": symbol,
         "country_code": "US",
         "start_date": start.strftime("%Y-%m-%d"),
         "end_date": end.strftime("%Y-%m-%d"),
-        "limit": str(days + 5),
+        "limit": str(_FETCH_DAYS + 5),
     }
     rows = _get("/etfs/summary-history", params)
     if not rows:
@@ -132,9 +143,9 @@ def format_etf_block(symbol, label, emoji, rows):
 
     lines = [
         f"{emoji} <b>{esc(label)}</b>",
+        f"   💰 <b>TVL (AUM) зараз: {fmt_usd(aum)}</b>",
         f"   Сьогодні ({today.get('date','?')}): {ar_today} <b>{fmt_usd(net_today)}</b>",
         f"   7 днів сума: {ar_7d} <b>{fmt_usd(sum7)}</b>",
-        f"   AUM зараз: <b>{fmt_usd(aum)}</b>",
         f"   Всього з початку торгів: <b>{fmt_usd(cum_all)}</b>",
     ]
 
@@ -171,7 +182,7 @@ def compact_block(symbols=("BTC", "ETH")):
         ar_7 = "🟢" if sum7 > 0 else ("🔴" if sum7 < 0 else "⚪️")
         lines.append(
             f"{emoji} <b>{esc(label)}</b> ({today.get('date','?')}): {ar_t} {fmt_usd(net_today)}  "
-            f"· 7д {ar_7} {fmt_usd(sum7)}  · AUM {fmt_usd(aum)}"
+            f"· 7д {ar_7} {fmt_usd(sum7)}  · 💰TVL {fmt_usd(aum)}"
         )
     if not any_ok:
         return None
@@ -185,19 +196,28 @@ def build_report_text():
 
     blocks = [f"💹 <b>КРИПТО-ETF ПОТОКИ (US spot)</b>  ·  {time_str} {date_str}\n"]
     any_ok = False
+    total_tvl = 0.0
+    per_symbol_rows = {}
     for symbol, label, emoji in ETF_SYMBOLS:
         rows = get_etf_flows(symbol, days=10)
         if rows:
             any_ok = True
+            per_symbol_rows[symbol] = rows
+            aum = rows[0].get("total_net_assets")
+            if aum:
+                total_tvl += float(aum)
         blocks.append(format_etf_block(symbol, label, emoji, rows))
 
     if not any_ok:
         return None
 
+    if total_tvl > 0:
+        blocks.insert(1, f"💰 <b>Разом TVL усіх ETF (BTC+ETH+SOL+AVAX): {fmt_usd(total_tvl)}</b>")
+
     blocks.append(
         "\n<i>ℹ️ Джерело: SoSoValue (офіційний безкоштовний API). "
         "Netflow — чисті надходження/відтоки капіталу у $ за день, "
-        "AUM — загальні активи під управлінням усіх фондів символу.</i>"
+        "TVL (AUM) — загальні активи під управлінням усіх фондів символу.</i>"
     )
     return "\n\n".join(blocks)
 
@@ -266,7 +286,7 @@ def send_etf_report():
         rows = get_etf_flows(symbol, days=7)
         if rows:
             sum7 = sum((r.get("total_net_inflow") or 0) for r in rows[:7])
-            ctx_lines.append(f"{symbol}: today {fmt_usd(rows[0].get('total_net_inflow'))}, 7d sum {fmt_usd(sum7)}, AUM {fmt_usd(rows[0].get('total_net_assets'))}")
+            ctx_lines.append(f"{symbol}: today {fmt_usd(rows[0].get('total_net_inflow'))}, 7d sum {fmt_usd(sum7)}, TVL(AUM) {fmt_usd(rows[0].get('total_net_assets'))}")
     ai_text = _gemini_etf_summary("\n".join(ctx_lines)) if ctx_lines else ""
 
     full = text

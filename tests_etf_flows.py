@@ -64,7 +64,7 @@ chk("Bitcoin spot ETF" in full_text, "BTC блок присутній у пов�
 # ── 5. compact_block для вбудовування у DeFi-звіт ──
 compact = re.compact_block(("BTC", "ETH"))
 chk(compact is not None, "compact_block не None")
-chk("Bitcoin spot ETF" in compact and "AUM" in compact, "compact_block містить AUM і назву")
+chk("Bitcoin spot ETF" in compact and "TVL" in compact, "compact_block містить TVL і назву")
 chk("Останні 5 днів" not in compact, "compact_block без мінітаблиці (компактний)")
 
 # ── 6. Якщо ВСІ символи недоступні — build_report_text повертає None (немає порожнього спаму) ──

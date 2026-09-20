@@ -703,7 +703,7 @@ def main():
     etf_lines = []
     try:
         import report_etf as _etf
-        etf_block = _etf.compact_block(("BTC", "ETH"))
+        etf_block = _etf.compact_block(("BTC", "ETH", "AVAX"))
         if etf_block:
             etf_lines = [etf_block]
     except Exception as e:
