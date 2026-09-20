@@ -513,20 +513,27 @@ def sweep() -> int:
                    meta={"summary": title}):
                 asked += 1
 
-    # 3) Вільний день без планів — запропонувати конкретне корисне
+    # 3) Вільний день без планів — запропонувати конкретне корисне.
+    # 20.09: раніше дивився лише на «завтра». Тепер сканує найближчі 3 дні
+    # (бот бачить наперед не тільки 1 день) і бере ПЕРШИЙ вільний — щоб AI
+    # сам ІНІЦІЮВАВ створення події, а не лише реагував на запит Олега.
     if asked < MAX_PER_SWEEP and now.hour in (18, 19, 20):
-        try:
-            evs = K.events_for_day(1) or []
-        except Exception:
-            evs = []
-        real = [e for e in evs if not _is_routine(_ev_title(e))]
-        shift = [e for e in evs if _is_routine(_ev_title(e))]
-        if not real and not shift:
-            tom = (now + timedelta(days=1)).replace(hour=8, minute=0,
-                                                    second=0, microsecond=0)
-            q = ("🗓 Завтра " + tom.strftime("%d.%m") + " у календарі порожньо "
-                 "і зміни немає.\n\nЗапланувати пробіжку на 08:00? Ти казав, "
-                 "що ціль 75 кг — регулярний біг це найкоротший шлях.")
+        for _off in (1, 2, 3):
+            try:
+                evs = K.events_for_day(_off) or []
+            except Exception:
+                evs = []
+            real = [e for e in evs if not _is_routine(_ev_title(e))]
+            shift = [e for e in evs if _is_routine(_ev_title(e))]
+            if real or shift:
+                continue
+            tom = (now + timedelta(days=_off)).replace(hour=8, minute=0,
+                                                        second=0, microsecond=0)
+            day_word = "Завтра" if _off == 1 else "За " + str(_off) + " дні"
+            q = ("🗓 " + day_word + " (" + tom.strftime("%d.%m") +
+                 ") у календарі порожньо і зміни немає.\n\nЗапланувати "
+                 "пробіжку на 08:00? Ти казав, що ціль 75 кг — регулярний "
+                 "біг це найкоротший шлях.")
             if ask(q, kind="plan",
                    key="freeday|" + tom.strftime("%Y-%m-%d"),
                    tag="MSG_FREE_DAY",
@@ -534,6 +541,7 @@ def sweep() -> int:
                          "minutes": 60,
                          "desc": "Запропонував бот: вільний день, ціль 75 кг."}):
                 asked += 1
+            break
     if asked:
         _log("поставлено питань: " + str(asked))
     return asked

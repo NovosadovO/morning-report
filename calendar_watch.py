@@ -78,13 +78,16 @@ DEFAULT_HOURS = 192
 
 # ─── КАЛЕНДАР ────────────────────────────────────────────────────────────────
 
-def _raw_events(hours_ahead: int = DEFAULT_HOURS):
-    """Події з УСІХ календарів на N годин вперед (типово 8 днів) + 4 години назад
-    (для «як пройшло»). In-process кеш 4 хв — щоб не дьоргати Google API щосекунди.
-    Кеш враховує горизонт: запит на більший горизонт не віддає короткий кеш."""
+def _raw_events(hours_ahead: int = DEFAULT_HOURS, hours_back: int = 4):
+    """Події з УСІХ календарів на N годин вперед (типово 8 днів) + hours_back
+    годин назад (типово 4 — для «як пройшло»/«що щойно минуло»). In-process
+    кеш 4 хв — щоб не дьоргати Google API щосекунди. Кеш враховує і
+    майбутній, і минулий горизонт: запит на ширший діапазон не віддає
+    короткий кеш."""
     n = K.now().replace(tzinfo=None)
     if (_cache["ts"] and (n - _cache["ts"]).total_seconds() < _CACHE_SEC
-            and _cache.get("h", 0) >= hours_ahead):
+            and _cache.get("h", 0) >= hours_ahead
+            and _cache.get("hb", 0) >= hours_back):
         return _cache["events"]
     try:
         import monitor as M
@@ -99,7 +102,7 @@ def _raw_events(hours_ahead: int = DEFAULT_HOURS):
             K.log(TAG, "календар недоступний (немає токена)")
             return None
         headers = {"Authorization": f"Bearer {token}"}
-        t_min = datetime.now(timezone.utc) - timedelta(hours=4)
+        t_min = datetime.now(timezone.utc) - timedelta(hours=hours_back)
         t_max = datetime.now(timezone.utc) + timedelta(hours=hours_ahead)
         evs = M._fetch_events_all_calendars(headers, t_min, t_max, max_per_cal=40) or []
         if not evs:
@@ -127,6 +130,7 @@ def _raw_events(hours_ahead: int = DEFAULT_HOURS):
     _cache["ts"] = n
     _cache["events"] = out
     _cache["h"] = hours_ahead
+    _cache["hb"] = hours_back
     # Діагностика: видно чи «0 реальних подій» — правда, чи наслідок фільтрів
     try:
         _r = sum(1 for e in out if e["routine"])
@@ -971,6 +975,65 @@ def upcoming_text(days: int = 7, limit: int = 14) -> str:
         if len(out) >= limit:
             break
     return "; ".join(out)
+
+
+def recent_past_text(hours: int = 6, limit: int = 6) -> str:
+    """Компактний рядок «що ЩОЙНО МИНУЛО» — реальні події, які завершились
+    за останні `hours` годин. AI бачить це в кожному промпті (allctx) і може
+    сам запитати «як пройшло» чи прокоментувати, а не тільки через окреме
+    нагадування calendar_watch._send_event(stage='after').
+    Формат: «05.08 14:00–15:00 Зустріч (завершилась 40 хв тому)»."""
+    events = _raw_events(hours_ahead=6, hours_back=max(hours, 4))
+    if not events:
+        return ""
+    n = K.now().replace(tzinfo=None)
+    cutoff = n - timedelta(hours=hours)
+    out = []
+    for e in events:
+        if e["routine"] or e["shift"] or e["allday"]:
+            continue
+        if e["end"] > n or e["end"] < cutoff:
+            continue
+        ago_min = int((n - e["end"]).total_seconds() // 60)
+        ago = f"{ago_min} хв тому" if ago_min < 90 else f"{ago_min // 60} год тому"
+        out.append(f"{e['start'].strftime('%d.%m %H:%M')}–{e['end'].strftime('%H:%M')} "
+                   f"{e['title']} (завершилась {ago})")
+        if len(out) >= limit:
+            break
+    return "; ".join(out)
+
+
+def ai_context_text(past_hours: int = 6, ahead_days: int = 31, limit: int = 30) -> str:
+    """Єдиний компактний блок календаря для AI-контексту (allctx), який
+    підмішується в КОЖЕН AI-запит: що щойно минуло + сьогодні/найближче +
+    решта місяця вперед. Без AI-викликів, без мереживого шуму — лише реальні
+    (не routine/shift) події."""
+    past = recent_past_text(hours=past_hours)
+    events = _raw_events(hours_ahead=max(48, ahead_days * 24 + 12), hours_back=past_hours)
+    if events is None:
+        return ""
+    n = K.now().replace(tzinfo=None)
+    week_dt = n + timedelta(days=7)
+    month_dt = n + timedelta(days=ahead_days)
+    near, far = [], []
+    for e in events:
+        if e["routine"] or e["shift"] or e["start"] < n:
+            continue
+        when = "весь день" if e["allday"] else e["start"].strftime("%H:%M")
+        line = f"{e['start'].strftime('%d.%m')} {when} {e['title']}"
+        if e["start"] <= week_dt:
+            near.append(line)
+        elif e["start"] <= month_dt:
+            far.append(line)
+        if len(near) + len(far) >= limit:
+            break
+    parts = []
+    if past:
+        parts.append("ЩОЙНО МИНУЛО: " + past)
+    parts.append("НАЙБЛИЖЧІ 7 ДНІВ: " + ("; ".join(near) if near else "нічого реального"))
+    if far:
+        parts.append(f"ДАЛІ ДО {month_dt.strftime('%d.%m')}: " + "; ".join(far))
+    return " | ".join(parts)
 
 
 # ─── КНОПКИ ──────────────────────────────────────────────────────────────────

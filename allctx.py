@@ -34,7 +34,10 @@ import time
 TAG = "allctx"
 MARK = "⁣ALLCTX⁣"
 CACHE_TTL = 480          # 8 хв: щоб не палити API на кожному виклику
-MAX_CHARS = 5200         # стеля блоку, щоб не рвати промпт
+MAX_CHARS = 5800         # стеля блоку, щоб не рвати промпт
+                          # (20.09: +600 після розширення _src_calendar до
+                          # 1500 симв. — щоб хвостові джерела (react/truth)
+                          # не витіснялись повністю з бюджету)
 
 _CACHE = {"at": 0, "text": "", "status": {}}
 
@@ -52,6 +55,19 @@ def _cut(s, n=520):
 # Кожне: (ключ, підпис, функція). Функція повертає текст або "" (порожньо).
 
 def _src_calendar():
+    # 20.09 фікс: context.get_calendar_events(days=7) насправді ІГНОРУВАВ
+    # days і завжди повертав лише сьогодні+завтра — AI у ВСІХ промптах (не
+    # тільки в спеціальних календарних тригерах) бачив календар на 1 день
+    # вперед, а не на місяць, і не бачив те, що щойно минуло. Тепер джерело —
+    # calendar_watch.ai_context_text(): минулі 6 год + тиждень детально +
+    # решта місяця вперед, одним компактним рядком.
+    try:
+        import calendar_watch as cw
+        txt = cw.ai_context_text(past_hours=6, ahead_days=31, limit=30)
+        if txt:
+            return _cut(txt, 1500)
+    except Exception as e:
+        _log("calendar_watch fallback: " + str(e))
     import context
     d = context.get_calendar_events(days=7)
     if isinstance(d, dict):
@@ -170,7 +186,7 @@ def _src_truth():
 
 
 SOURCES = [
-    ("calendar", "📅 КАЛЕНДАР (7 днів)", _src_calendar),
+    ("calendar", "📅 КАЛЕНДАР (щойно минуле + місяць вперед)", _src_calendar),
     ("shift", "🏭 ЗМІНИ (7 днів)", _src_shift),
     ("health", "🩺 ЗДОРОВ'Я (14 днів)", _src_health),
     ("score", "🏅 ОЦІНКА ДНЯ", _src_score),
