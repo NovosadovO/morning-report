@@ -1,4 +1,44 @@
 {
+  "openloop_promises|2026-09-20t14_12_03_760057": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-20T14:12:03.760057"
+  },
+  "action_detect|2026-09-20t14_02_52_206989": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2026-09-20\", \"action_time\": \"17:00\", \"action_summary\": \"Створити бота н",
+    "ts": "2026-09-20T14:02:52.206989"
+  },
+  "action_detect|2026-09-20t14_02_39_520450": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-20T14:02:39.520450"
+  },
+  "action_detect|2026-09-20t14_02_28_664665": {
+    "topic": "action_detect",
+    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Створити бота на трейдинг\",   \"action_date\": \"2026-09-20\",   \"action_time\": \"17:00\",   \"action_summary",
+    "ts": "2026-09-20T14:02:28.664665"
+  },
+  "briefing_truthfix|2026-09-20t14_02_24_415282": {
+    "topic": "briefing/truthfix",
+    "gist": "На 14:02 неділі, 20 вересня 2026 року, твій день просувається вперед. Дані про твою вагу та кроки оновлені 14 годин тому, а інформація про Strava доступна лише ",
+    "ts": "2026-09-20T14:02:24.415282"
+  },
+  "briefing|2026-09-20t14_02_19_161690": {
+    "topic": "briefing",
+    "gist": "На 14:02 неділі, 20 вересня 2026 року, твій день просувається вперед, і зараз саме час для глибокого аналізу. Календар показує, що зміна не відмічена, тому немо",
+    "ts": "2026-09-20T14:02:19.161690"
+  },
+  "themes_ai|2026-09-20t14_02_10_788614": {
+    "topic": "themes_ai",
+    "gist": "Олеже, бачимо, що сьогодні 20 вересня 2026 року, 14:01, і твоя вага зросла до 84.4 кг, а остання пробіжка була 49 днів тому. Водночас, маємо заплановану подію о",
+    "ts": "2026-09-20T14:02:10.788614"
+  },
+  "email_ai_item|2026-09-20t14_01_48_696884": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Лист від Oleg Novosadov інформує про 2 нові оголошення 3-кімнатних квартир у Кошіці, Словаччина, знайдені 2026-09-16 о 19:42:58. Перша ",
+    "ts": "2026-09-20T14:01:48.696884"
+  },
   "email_ai_item|2026-09-20t14_01_37_710893": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Лист містить інформацію про 3 нові оголошення щодо продажу 2- та 3-кімнатних квартир у Кошицях, Словаччина, з цінами від 198 990 € до 219 000 €",
@@ -258,45 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2026-09-20\", \"action_time\": \"17:00\", \"action_summary\": \"Сьогодні, 20 ве",
     "ts": "2026-09-20T12:03:30.394380"
-  },
-  "msg_crypto_move_truthfix|2026-09-20t12_03_22_444038": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Привіт Олеже!  Дані щодо крипторинку від CoinGecko наразі недоступні. Інформація про твій портфель показує зміни за 24 години, але її актуальність не підтвердже",
-    "ts": "2026-09-20T12:03:22.444038"
-  },
-  "msg_crypto_move|2026-09-20t12_03_13_875034": {
-    "topic": "MSG_CRYPTO_MOVE",
-    "gist": "Привіт Олеже! ⚠️  Сьогоднішня крипто-динаміка показує чіткий сигнал, і твоя увага до ризик-менеджменту зараз особливо важлива. ZEC втратив 8.0% за 24 години, а ",
-    "ts": "2026-09-20T12:03:13.875034"
-  },
-  "action_detect|2026-09-20t12_02_42_108618": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2024-09-20\", \"action_time\": \"17:00\", \"action_summary\": \"Створити бота н",
-    "ts": "2026-09-20T12:02:42.108618"
-  },
-  "action_detect|2026-09-20t12_02_41_974750": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-20T12:02:41.974750"
-  },
-  "action_detect|2026-09-20t12_02_41_921034": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-20T12:02:41.921034"
-  },
-  "action_detect|2026-09-20t12_02_31_260976": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Зустріч: створити бота на трейдинг\",   \"action_date\": \"2023-09-20\",   \"action_time\": \"17:00\",   \"actio",
-    "ts": "2026-09-20T12:02:31.260976"
-  },
-  "action_detect|2026-09-20t12_02_17_252393": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Надано аналіз даних про стан здоров'я за 19 вересня 2",
-    "ts": "2026-09-20T12:02:17.252393"
-  },
-  "action_detect|2026-09-20t12_02_17_163067": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2026-09-20\", \"action_time\": \"18:00\", \"action_summary\": \"Створити бота н",
-    "ts": "2026-09-20T12:02:17.163067"
   }
 }
