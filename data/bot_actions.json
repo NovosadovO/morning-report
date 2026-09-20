@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, нагадую, що 15 вересня відбудеться голосування Сенату",
-      "detail": "У календарі є подія про голосування Сенату США щодо Clarity Act 15.09, а серед листів є новина про Avalanche, що може бути пов'язано з інвестиціями.",
-      "module": "selfact",
-      "ts": "2026-09-13T20:58:03"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, надійшла виправлена виплатна відомість за серпень 202",
       "detail": "Надійшов лист від ehuman@minebeamitsumi.eu з темою 'Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu', що вказує на виправлену версію.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: hr_avg, weight_kg, hrv, stress",
       "module": "qwsync",
       "ts": "2026-09-20T23:32:48"
+    },
+    {
+      "kind": "note",
+      "what": "збережено дані здоров'я",
+      "detail": "hr_avg=80, weight_kg=83.0, hrv=32, stress=47, date=2026-09-20, source=qwatch_auto, saved_at=2026-09-20 23:32",
+      "module": "healthai",
+      "ts": "2026-09-20T23:32:54"
     }
   ]
 }
