@@ -219,6 +219,9 @@
       "checked": 10,
       "issues": 8,
       "fixed": 6
+    },
+    "etf_summary": {
+      "checked": 1
     }
   },
   "last": [
@@ -467,7 +470,7 @@
     "fixed": 4
   },
   "2026-09-20": {
-    "checked": 99,
+    "checked": 100,
     "issues": 54,
     "fixed": 31
   }
