@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T01:42:26.168314",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>AVAX +12.2% за 24г</b>\n\nЗараз: 11.30 $\n24г тому: 10.07 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T01:42:26.847156",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +12.2% за 24г\n\nЗараз: 11.30 $\n24г тому: 10.07 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T01:46:15.162473",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Branch JUNIOR Operations Analyst (f/m/x) в Deutsche Bank</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79450"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79450"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79450"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79450"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79450"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79450"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
