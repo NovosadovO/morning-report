@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T00:00:31.553900",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T00:00:34.650516",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +17.1% за 24г</b>\n\nЗараз: 11.33 $\n24г тому: 9.6767 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -404,6 +398,12 @@
       "ts": "2026-09-21T00:01:57.888354",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +17.1% за 24г\n\nЗараз: 11.30 $\n24г тому: 9.6431 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T00:03:17.658562",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Facebook\" <security@facebookmail.com> → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n• CapCut <admin@mail.capcut.com> → Your CapCut subscription will expire in 3 days..\n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
