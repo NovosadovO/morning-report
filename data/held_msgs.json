@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T02:15:50.971911",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Google</b>\n👤 no-reply@apata.io",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79400"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79400"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79400"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79400"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79400"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79400"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-20T02:15:52.224046",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -266,6 +227,12 @@
       "ts": "2026-09-20T02:18:45.618212",
       "kind": "lifecycle",
       "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 2 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T02:18:46.318625",
+      "kind": "lifecycle",
+      "text": "⏳ СКОРО ПРОДОВЖЕННЯ\n━━━━━━━━━━━━━━━━━━━━\n🔄 Підписка CapCut\n💸 Оплата: 22.09.2026 — через 2 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
       "keyboard": null
     }
   ]
