@@ -1249,11 +1249,19 @@
     "stress": 41
   },
   "2026-09-20": {
-    "stress": 37,
-    "sleep_total_min": 120,
-    "sleep_hours": 2.0,
     "date": "2026-09-20",
-    "source": "qwatch_auto",
-    "saved_at": "2026-09-20 13:32"
+    "hr_avg": 77,
+    "calories": 60,
+    "hrv": 46,
+    "spo2": 96,
+    "source": "qwatch",
+    "saved_at": "2026-09-20 13:33",
+    "health_score": 72,
+    "steps": 1480,
+    "sleep_total_min": 607,
+    "sleep_deep_min": 150,
+    "sleep_light_min": 290,
+    "sleep_quality": 100,
+    "stress": 37
   }
 }
