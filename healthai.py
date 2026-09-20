@@ -722,7 +722,20 @@ def hourly_checkin(send: bool = True) -> str:
         return ""
     text = tip
     if send:
-        K.send_card(text, _kb(), tag=TAG)
+        # Якщо AI поставив тут ЖИВЕ питання ("а скільки годин ти спав?") —
+        # кнопки мають бути варіантами відповіді САМЕ на нього (autokb/askme),
+        # а не завжди однаковий рядок «Аналітика/Рекомендації». Fuzzy-дедуп
+        # у autokb також не дає перепитувати те саме іншими словами.
+        try:
+            import autokb as _akb
+            if not _akb.should_send(text, tag=TAG):
+                K.log(TAG, "hourly: питання вже закрито — не надсилаю повторно")
+                return text
+            rows = _akb.build(text, tag=TAG) or _kb()
+            K.send_card(text, rows, tag=TAG)
+        except Exception as e:
+            K.log(TAG, "autokb error: " + str(e))
+            K.send_card(text, _kb(), tag=TAG)
         _journal("hourly", "щогодинний чек-ін здоров'я")
     return text
 

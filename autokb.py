@@ -7,7 +7,15 @@
    пам'ятається назавжди, те саме більше не питається).
 2. Це сповіщення (лист, рахунок, подія, пробіжка, крипта, здоров'я) → кнопки
    дії саме для цього виду, через react (з текстом сповіщення в payload).
-3. Питання, на яке Олег уже відповів, повторно не ставиться взагалі.
+3. Питання, на яке Олег уже відповів, повторно не ставиться взагалі —
+   НАВІТЬ якщо AI сформулював його іншими словами (fuzzy-збіг по askme).
+
+02.10 фікс: раніше довгі тексти й повідомлення з тегом report/health/
+hcoach/pulse/... взагалі не перевірялись на питання (`_NEVER_BLOCK`,
+`_MAX_Q_LEN`) — тому під реальним питанням («…чи потрібна допомога?»)
+з'являлись узагальнені кнопки-дії («👌 Прийняв/⏰ Пізніше/🙈 Не нагадуй»),
+які не відповідали суті питання. Тепер питання шукається завжди, а
+кнопки-відповіді на нього ставляться під будь-яким повідомленням.
 """
 
 TAG = "autokb"
@@ -21,6 +29,8 @@ _Q_RULES = (
                   "все ще треба", "лишаємо", "чи в силі")),
     ("happened", ("відбулось", "відбулася", "як пройшло", "вже минул",
                   "було вчора", "чи сталось")),
+    ("result", ("вдалося", "досягти", "результат", "потрібна допомога",
+                "потрібна поміч", "справився")),
     ("confirm", ("готовий", "будеш", "підеш", "робимо", "варто", "погоджуєш",
                  "підтверджуєш", "ок?", "згоден")),
 )
@@ -38,11 +48,24 @@ def _clean(text: str) -> str:
 
 
 def _question_line(text: str) -> str:
-    """Останній рядок-питання — саме на нього мають відповідати кнопки."""
+    """Останнє питальне РЕЧЕННЯ — саме на нього мають відповідати кнопки.
+
+    Раніше повертався весь рядок цілим, навіть коли перед питанням стояло
+    довге вступне речення («Бачу, що сьогодні ти зробив ботаₒ... Чи вдалося
+    досягти результатів?») — тоді ключ пам'яті (перші 70 симв.) обрізав
+    саме питання, і той самий сенс іншими словами вже не розпізнавався."""
     lines = [l.strip() for l in _clean(text).split("\n") if l.strip()]
     for line in reversed(lines):
         if "?" in line and len(line) > 8:
-            return line[:300]
+            qpos = line.rfind("?")
+            seg = line[:qpos + 1]
+            start = 0
+            for i in range(len(seg) - 2, -1, -1):
+                if seg[i] in ".!?":
+                    start = i + 1
+                    break
+            sentence = seg[start:].strip()
+            return (sentence if len(sentence) > 8 else line)[:300]
     return ""
 
 
@@ -60,21 +83,28 @@ def is_question(text: str) -> bool:
     return any(m in low for m in _ASK_MARKS)
 
 
-def build(text: str, tag: str = ""):
+def _key_for(q: str, dedup_key: str = "") -> str:
+    """Ключ пам'яті askme. Якщо викликач дав стабільний dedup_key (тема
+    тригера, не буквальний текст) — використовуємо його: тоді питання, яке
+    AI щоразу формулює іншими словами про ту саму тему, лишається ОДНИМ
+    питанням для пам'яті, а не новим щоразу."""
+    if dedup_key:
+        return ("d|" + str(dedup_key))[:80]
+    norm = "".join(ch for ch in q.lower() if ch.isalnum() or ch == " ")
+    return ("q|" + norm[:70]).strip()
+
+
+def build(text: str, tag: str = "", dedup_key: str = ""):
     """Кнопки під це конкретне повідомлення. None → шле без кнопок."""
     body = _clean(text)
     if not body:
         return None
-    low_tag = str(tag or "").lower()
-    q = "" if (len(body) > _MAX_Q_LEN or
-               any(w in low_tag for w in _NEVER_BLOCK)) \
-        else _question_line(body)
+    q = _question_line(body)
     # 1) Питання → варіанти відповіді саме на нього (пам'ять askme)
     if q:
         try:
             import askme as A
-            key = "q|" + "".join(ch for ch in q.lower() if ch.isalnum() or
-                                 ch == " ")[:70].strip()
+            key = _key_for(q, dedup_key)
             rows = A.buttons(q, kind=_q_kind(q), key=key,
                              meta={"summary": _title(body), "desc": body[:300],
                                    "tag": str(tag or "")})
@@ -105,29 +135,23 @@ def _title(body: str) -> str:
     return body[:110]
 
 
-# Довгі тексти й звіти НІКОЛИ не блокуються: там «?» — частина розповіді,
-# а не питання до Олега.
-_NEVER_BLOCK = ("report", "звіт", "briefing", "брифінг", "digest", "themes",
-                "astro", "deep", "pulse", "health", "hcoach", "openmind")
-_MAX_Q_LEN = 900
-
-
-def should_send(text: str, tag: str = "") -> bool:
-    """False → це питання Олег уже закрив, не турбуємо його вдруге."""
+def should_send(text: str, tag: str = "", dedup_key: str = "") -> bool:
+    """False → це питання Олег уже закрив (буквально або по суті — навіть
+    якщо AI перефразував), не турбуємо його вдруге."""
     body = _clean(text)
-    if len(body) > _MAX_Q_LEN:
-        return True
-    low = str(tag or "").lower()
-    if any(w in low for w in _NEVER_BLOCK):
-        return True
     q = _question_line(body)
     if not q:
         return True
     try:
         import askme as A
-        key = "q|" + "".join(ch for ch in q.lower() if ch.isalnum() or
-                             ch == " ")[:70].strip()
+        key = _key_for(q, dedup_key)
         r = A.answer_of(key)
+        if not r and not dedup_key:
+            # буквального збігу нема — можливо, AI спитав те саме іншими
+            # словами. Шукаємо по суті серед уже закритих питань.
+            sim_key = A.answered_similar(q)
+            if sim_key:
+                r = A.answer_of(sim_key)
         if r:
             _log("це питання вже закрито («" + str(r.get("label")) +
                  "») — не питаю вдруге: " + q[:60])
