@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нові квартири у Кошіці",
-      "detail": "Олег отримав лист від Oleg Novosadov з темою '🏠 Нові квартири у Кошіці — 1 нових оголошень'.",
-      "module": "selfact",
-      "ts": "2026-09-13T12:13:57"
-    },
-    {
-      "kind": "notify",
       "what": "сповіщення про здоров'я: hr_high",
       "detail": "❤️ Середній пульс 87.3 уд/хв — вище за 85",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: stress, sleep_total_min",
       "module": "qwsync",
       "ts": "2026-09-20T13:32:56"
+    },
+    {
+      "kind": "note",
+      "what": "збережено дані здоров'я",
+      "detail": "stress=37, sleep_total_min=120, sleep_hours=2.0, date=2026-09-20, source=qwatch_auto, saved_at=2026-09-20 13:32",
+      "module": "healthai",
+      "ts": "2026-09-20T13:32:58"
     }
   ]
 }
