@@ -188,7 +188,8 @@
     },
     "MSG_INTERVIEW_PRACTICE": {
       "checked": 5,
-      "issues": 2
+      "issues": 2,
+      "cut": 1
     },
     "qr_more": {
       "checked": 1
@@ -477,6 +478,7 @@
   "2026-09-20": {
     "checked": 187,
     "issues": 115,
-    "fixed": 69
+    "fixed": 69,
+    "cut": 1
   }
 }
