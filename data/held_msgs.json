@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T03:14:31.898866",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-20T03:14:33.728370",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +20.2% за 24г</b>\n\nЗараз: 10.01 $\n24г тому: 8.3258 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -410,6 +404,12 @@
       "ts": "2026-09-20T03:16:07.580452",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +19.5% за 24г</b>\n\nЗараз: 9.9544 $\n24г тому: 8.3291 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T03:16:08.249935",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +19.5% за 24г\n\nЗараз: 9.9544 $\n24г тому: 8.3291 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
