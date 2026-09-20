@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T03:44:27.439031",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 21.09</b> 10:00–22:00 (720 хв)\n\nВільно 720 хв 10:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-20T03:44:28.112505",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 21.09 10:00–22:00 (720 хв)\n\nВільно 720 хв 10:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79402"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-20T03:46:23.897285",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Google</b>\n👤 no-reply@apata.io",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79400"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79400"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79400"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79400"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79400"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79400"
             }
           ]
         ]
