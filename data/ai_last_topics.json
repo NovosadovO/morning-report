@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-20t11_37_21_199097": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олег, нагадую, що платіж до Runable на $10.00 був невдалим. Потрібно оно",
+    "ts": "2026-09-20T11:37:21.199097"
+  },
   "action_detect|2026-09-20t11_30_43_075270": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Випий склянку води кімнатної температури.\"}",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Створити бота на трейдинг\", \"action_date\": \"2026-09-20\", \"action_time\": \"17:00\", \"action_summary\": \"Створити бота н",
     "ts": "2026-09-20T09:43:17.169166"
-  },
-  "msg_crypto_move_truthfix|2026-09-20t09_43_10_371702": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Олеже, сьогодні, 20 вересня, о 09:43, ти маєш заплановану подію \"створити бота на трейдинг\" о 17:00, яку відклав вчора, натиснувши \"Пізніше\" на нагадуванні. Це ",
-    "ts": "2026-09-20T09:43:10.371702"
   }
 }
