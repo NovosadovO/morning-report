@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T02:15:44.516656",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Project Manager - Digital Operations в Caterpillar In</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79404"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79404"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79404"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79404"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79404"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79404"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-20T02:15:45.731921",
       "kind": "offer",
       "text": "💰 ✉️\n📌 <b>Your receipt from Runable #2714-2414</b>\n👤 Runable &lt;invoice+statements+acct_1RaXgUJk3URPLkAO@",
@@ -365,6 +326,12 @@
       "ts": "2026-09-20T02:17:36.494094",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 21.09 10:00–22:00 (720 хв)\n\nВільно 720 хв 10:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T02:17:38.815344",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
