@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T03:43:12.318215",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ AVAX +16.9% за 24г\n\nЗараз: 9.8814 $\n24г тому: 8.4534 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-20T03:44:13.998768",
       "kind": "lifecycle",
       "text": "⏳ <b>СКОРО ПРОДОВЖЕННЯ</b>\n━━━━━━━━━━━━━━━━━━━━\n🔄 <b>Підписка CapCut</b>\n💸 Оплата: <b>22.09.2026</b> — через 2 дн.\n\nОлеже, щоб не було розриву — краще закрити це заздалегідь.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79407"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-20T03:46:17.869187",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>1 nová pracovná ponuka</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79406"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79406"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79406"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79406"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79406"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79406"
             }
           ]
         ]
