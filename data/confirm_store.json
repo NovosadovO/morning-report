@@ -11717,7 +11717,40 @@
     "action": "cw_miss",
     "pid": "ee127c4e0a",
     "subject": "🤝 створити бота на трейдинг",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 98631,
+        "kb": [
+          [
+            {
+              "text": "✅ Було",
+              "callback_data": "cw_done_ee127c4e0a"
+            },
+            {
+              "text": "❌ Не було",
+              "callback_data": "cw_miss_ee127c4e0a"
+            }
+          ],
+          [
+            {
+              "text": "⏭ Перенесли",
+              "callback_data": "cw_moved_ee127c4e0a"
+            },
+            {
+              "text": "✍️ Нотатка",
+              "callback_data": "cw_note_ee127c4e0a"
+            }
+          ],
+          [
+            {
+              "text": "🤖 Що далі?",
+              "callback_data": "cw_next_ee127c4e0a"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-20T20:26:17.690196+00:00"
   }
 }
