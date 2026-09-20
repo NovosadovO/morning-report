@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Вакансія Sekretárka/recepčná в Кошице",
-      "detail": "Є лист зі сповіщенням про вакансію LinkedIn 'Sekretárka/recepčná в ENGIE Slovensko' в Кошице.",
-      "module": "selfact",
-      "ts": "2026-09-13T18:23:00"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, нагадую, що 15.09 відбудеться голосування Сенату США щ",
       "detail": "В календарі є важлива подія 'Голосування Сенату США щодо Clarity Act', яка може бути цікава Олегу, враховуючи його інтерес до криптоновин.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "З календаря: '23.09: 09:00 дерматолога'",
       "module": "selfact",
       "ts": "2026-09-20T21:13:58"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на лист від The Defiant: 'Weekly Recap: C",
+      "detail": "З листа від The Defiant: 'Weekly Recap: Congress Said No, The Agencies Said Yes' з важливими новинами про крипторинок та фінанси.",
+      "module": "selfact",
+      "ts": "2026-09-20T21:14:02"
     }
   ]
 }
