@@ -2599,7 +2599,18 @@
   "note|олег проігнорував сповіщення від temu tajomná karta čaká": {
     "q": "📝 Хочу записати нотатку:\n\n« Олег проігнорував сповіщення від Temu 'Tajomná karta čaká', »\n\nОлег проігнорував сповіщення від Temu 'Tajomná karta čaká', натиснувши 'Видалити' або 'Не треба'.\n\nПоставити?",
     "kind": "write",
-    "asked_at": "2026-09-20T14:28:36"
+    "asked_at": "2026-09-20T14:28:36",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-09-20T14:33:53",
+    "meta": {
+      "summary": "Олег проігнорував сповіщення від Temu 'Tajomná karta čaká',",
+      "desc": "Олег проігнорував сповіщення від Temu 'Tajomná karta čaká', натиснувши 'Видалити",
+      "minutes": "30",
+      "calendar": "True",
+      "kind": "note"
+    }
   },
   "note|олег проігнорував сповіщення від the economist well informe": {
     "q": "📝 Хочу записати нотатку:\n\n« Олег проігнорував сповіщення від The Economist 'Well Informe »\n\nОлег проігнорував сповіщення від The Economist 'Well Informed: The dubious evidence for sunshine supplements', натиснувши 'Видалити' або 'Не треба'.\n\nПоставити?",
