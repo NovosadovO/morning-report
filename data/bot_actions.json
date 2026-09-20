@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нові вакансії в Кошице",
-      "detail": "У 'СВІЖІ ЛИСТИ' є два сповіщення про вакансії в Кошице, які можуть бути актуальними для Олега: Sekretárka/recepčná в ENGIE Slovensko та Floor Manažér/ka в Precise Group Košice.",
-      "module": "selfact",
-      "ts": "2026-09-13T12:29:03"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, зверни увагу на декілька нових вакансій, що відповідаю",
       "detail": "Надійшли нові сповіщення про вакансії на LinkedIn, які можуть бути релевантними для Олега, і він міг їх ще не бачити.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Надійшов лист від 'ehuman@minebeamitsumi.eu' з темою '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu', що є важливою інформацією про зарплату.",
       "module": "selfact",
       "ts": "2026-09-20T14:13:28"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, LinkedIn повідомив про зміну вашого фото профілю сьог",
+      "detail": "Отримано лист від LinkedIn з попередженням про зміну фото профілю, що може свідчити про несанкціонований доступ. Це вимагає негайної уваги.",
+      "module": "selfact",
+      "ts": "2026-09-20T14:28:26"
     }
   ]
 }
