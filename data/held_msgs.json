@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T02:00:36.817594",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>ONDO +5.4% за 24г</b>\n\nЗараз: 0.4203 $\n24г тому: 0.3989 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-20T02:00:37.469413",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ ONDO +5.4% за 24г\n\nЗараз: 0.4203 $\n24г тому: 0.3989 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -404,6 +398,12 @@
       "ts": "2026-09-20T02:02:07.069813",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +22.9% за 24г\n\nЗараз: 10.09 $\n24г тому: 8.2142 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T02:02:09.359765",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>ONDO +5.2% за 24г</b>\n\nЗараз: 0.4203 $\n24г тому: 0.3995 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
