@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T00:28:30.011584",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T00:28:33.761612",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +16.5% за 24г</b>\n\nЗараз: 11.27 $\n24г тому: 9.6693 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -405,6 +399,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-21T00:31:12.120564",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - September 20th, 2026\n• \"Facebook\" <security@facebookmail.com> → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
     }
   ]
 }
