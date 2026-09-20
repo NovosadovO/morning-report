@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-13",
-      "detail": "автосинк з годинника: steps, hr_avg, calories, hrv, spo2, stress",
-      "module": "qwsync",
-      "ts": "2026-09-13T16:33:06"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=6933, hr_avg=62, calories=304, hrv=47, spo2=96, stress=45, date=2026-09-13, source=qwatch_auto, saved_at=2026-09-13 16:33",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "З листів від Сповіщення про вакансії LinkedIn видно дві однакові вакансії Business Analyst - Data Management в Capco, Košice.",
       "module": "selfact",
       "ts": "2026-09-20T20:11:57"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, сьогодні, 20.09, о 17:00 у вас заплановано створити бо",
+      "detail": "З календаря на 20.09 видно подію '17:00 🤝 створити бота на трейдинг'.",
+      "module": "selfact",
+      "ts": "2026-09-20T20:12:01"
     }
   ]
 }
