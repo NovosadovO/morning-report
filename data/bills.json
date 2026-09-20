@@ -316,5 +316,19 @@
     "paid": true,
     "paid_at": "2026-08-28",
     "created": "2026-08-28"
+  },
+  "runable|30_00|": {
+    "vendor": "Runable",
+    "amount": "30.00",
+    "currency": "USD",
+    "invoice_no": "ROVUUWOH-0059",
+    "due": "",
+    "uid": "79403",
+    "sender": "Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com>",
+    "subject": "Your receipt from Runable #2714-2414",
+    "note": "Підтвердження оплати за 30,000 кредитів Runable.",
+    "paid": true,
+    "paid_at": "2026-09-20",
+    "created": "2026-09-20"
   }
 }
