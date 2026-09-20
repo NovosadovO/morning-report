@@ -13684,6 +13684,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_n_68c8732d16"
+    },
+    {
+      "ts": "2026-09-20T15:50:33.065274+00:00",
+      "category": "calendar_button",
+      "question": "🤝 створити бота на трейдинг",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t2h",
+        "when": "18:00–19:00",
+        "note": null
+      }
     }
   ]
 }
