@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-20t04_37_30_919222": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на нове сповіщення про вакансію Senior Project Manager - Digital Operations в Caterpillar In",
+    "ts": "2026-09-20T04:37:30.919222"
+  },
+  "action_detect|2026-09-20t04_32_22_920545": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Дерматолог\", \"action_date\": \"2024-09-21\", \"action_time\": \"10:00\", \"action_summary\": \"Відвідати дерматолога завтра о",
+    "ts": "2026-09-20T04:32:22.920545"
+  },
   "msg_deep_analysis|2026-09-20t04_32_15_452935": {
     "topic": "MSG_DEEP_ANALYSIS",
     "gist": "Привіт Олеже! 👋  Поки ти спиш, на крипторинку ZEC за тиждень виріс на +29.2%, але за останні 24 години просів на -5.9%. Загалом, твій портфель за 24 години дода",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Проаналізовано астрологічну ситуацію та надано поради",
     "ts": "2026-09-19T21:40:06.344119"
-  },
-  "mailcal_extract|2026-09-19t21_36_37_785621": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"79401\",     \"title\": \"Платіж Google Cloud Platform & APIs\",     \"date\": \"2026-09-19\",     \"time\": null,     \"kind\": \"payment\",     \"wh",
-    "ts": "2026-09-19T21:36:37.785621"
-  },
-  "openloop_promises|2026-09-19t21_35_32_178679": {
-    "topic": "openloop_promises",
-    "gist": "Олег не робив жодних явних обіцянок у наданих листах. Листи, які він \"написав сам\", є автоматичними повідомленнями про нові оголошення нерухомості або реакціями",
-    "ts": "2026-09-19T21:35:32.178679"
   }
 }
