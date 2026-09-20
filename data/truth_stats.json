@@ -129,7 +129,8 @@
     },
     "MSG_NUTRITION_TIP": {
       "checked": 9,
-      "issues": 8
+      "issues": 8,
+      "fixed": 1
     },
     "LUNCH_AI": {
       "checked": 11,
@@ -468,6 +469,6 @@
   "2026-09-20": {
     "checked": 76,
     "issues": 42,
-    "fixed": 23
+    "fixed": 24
   }
 }
