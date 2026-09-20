@@ -1,4 +1,9 @@
 {
+  "msg_vip_email|2026-09-20t14_53_32_512333": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Сьогодні обід неділі, і, дивлячись на твої дані, помічаю цікаву динаміку. За останній тиждень у тебе вимальовується чітка картина: криптовалютн",
+    "ts": "2026-09-20T14:53:32.512333"
+  },
   "selfact|2026-09-20t14_43_44_591298": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверніть увагу: LinkedIn повідомив про зміну вашого фото профілю сьогодні о 11:18 (GMT) з iOS у Кошице. Я",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-20T13:03:09.447143"
-  },
-  "action_detect|2026-09-20t13_02_58_527024": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Створити бота на трейдинг\",   \"action_date\": \"2026-09-20\",   \"action_time\": \"17:00\",   \"action_summary",
-    "ts": "2026-09-20T13:02:58.527024"
   }
 }
