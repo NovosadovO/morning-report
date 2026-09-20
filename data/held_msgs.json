@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-20T03:46:21.422860",
-      "kind": "offer",
-      "text": "💰 ✉️\n📌 <b>Your receipt from Runable #2714-2414</b>\n👤 Runable &lt;invoice+statements+acct_1RaXgUJk3URPLkAO@",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79403"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79403"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79403"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79403"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79403"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79403"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-20T03:46:22.702707",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Project Manager - Digital Operations в Caterpillar In</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -278,6 +239,12 @@
       "ts": "2026-09-20T03:48:47.432214",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +13.2% за 24г</b>\n\nЗараз: 9.7775 $\n24г тому: 8.6362 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-20T03:48:48.129709",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +13.2% за 24г\n\nЗараз: 9.7775 $\n24г тому: 8.6362 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
