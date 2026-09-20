@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "t": "btn",
-      "data": "planner_write_today",
-      "label": "✏️ Написати нагадування",
-      "ts": "2026-09-01T21:15:04"
-    },
-    {
       "t": "msg",
       "kind": "msg",
       "text": "02.09 - купити гель",
@@ -7199,6 +7193,18 @@
       "data": "evdone_yes_done_am7a9gs1n6nhkgmchg4o5s1vt4_2026-09-20",
       "label": "✅ Виконано",
       "ts": "2026-09-20T20:27:54"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_jlh1dcdvqi7hmafhe94ivjsa4o_2026-09-20",
+      "label": "✅ Виконано",
+      "ts": "2026-09-20T20:27:54"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_no_done_r8e4v70bc46t7l3rnu0jtdnqi0_2026-09-20",
+      "label": "❌ Не виконано",
+      "ts": "2026-09-20T20:27:55"
     }
   ]
 }
