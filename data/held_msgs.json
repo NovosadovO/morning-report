@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T00:30:58.196198",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Trump drops demands to own Greenland, but the damage is done</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79442"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79442"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79442"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79442"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79442"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79442"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T00:30:59.447256",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Weekly Recap: Congress Said No, The Agencies Said Yes</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
@@ -272,6 +233,12 @@
       "ts": "2026-09-21T00:32:56.495095",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +16.0% за 24г</b>\n\nЗараз: 11.27 $\n24г тому: 9.7166 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T00:32:57.131922",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +16.0% за 24г\n\nЗараз: 11.27 $\n24г тому: 9.7166 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
