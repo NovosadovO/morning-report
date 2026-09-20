@@ -89,6 +89,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T00:01:18.824619",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Це ви щойно увійшли неподалік Kosice з нового пристрою?</b>\n👤 \"Facebook\" &lt;security@facebookmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79446"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79446"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79446"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79446"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79446"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79446"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
