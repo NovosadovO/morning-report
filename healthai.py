@@ -650,32 +650,80 @@ def initiative(force: bool = False) -> int:
     return sent
 
 
-# ─── КОРОТКА ПОРАДА ПРОТЯГОМ ДНЯ ─────────────────────────────────────────────
-# Окремо від anomalies/good_signals (ті — приводи, ці — регулярні короткі
-# ноти): 3 фіксовані вікна на день, одна порада за раз, найактуальніша з
-# усіх даних (не обов'язково проблема).
+# ─── ЩОГОДИННИЙ ЧЕК-ІН ПРОТЯГОМ АКТИВНОГО ЧАСУ ───────────────────────────────
+# Раніше було 3 фіксовані поради на день — Олег попросив 20.09: "мало видно",
+# хоче майже щогодини протягом активного часу + AI сам вирішує коли актуально
+# (враховуючи календар) + AI має ставити уточнюючі питання, коли даних не
+# хватає, а не тільки констатувати факти.
 
-_TIP_SLOTS = (("midday", 11, 30), ("afternoon", 15, 30), ("evening_prep", 19, 0))
+HOURLY_START = 7             # активний час — з 07:00
+HOURLY_END = 23               # до 23:00 (включно, останній чек-ін о 23:xx)
+
+_MISSING_FIELDS = [("вагу", "weight"), ("сон", "sleep"), ("кроки", "steps"),
+                   ("пульс", "hr")]
 
 
-def daily_tip(slot: str = "", send: bool = True) -> str:
+def _missing_today(a: dict) -> list:
+    today = _now().strftime("%Y-%m-%d")
+    out = []
+    for label, key in _MISSING_FIELDS:
+        m = a.get(key) or {}
+        if m.get("last_day") != today:
+            out.append(label)
+    return out
+
+
+def _upcoming_events_text() -> str:
+    """Події сьогодні з календаря — щоб AI бачив контекст дня (зустрічі, зміна)."""
+    try:
+        events = K.events_for_day(0) or []
+    except Exception:
+        return "немає доступу до календаря"
+    if not events:
+        return "нічого не заплановано на сьогодні"
+    out = [ev.get("summary", "(без назви)") for ev in events if ev.get("summary")]
+    return ", ".join(out[:6]) if out else "нічого конкретного не видно"
+
+
+def hourly_checkin(send: bool = True) -> str:
+    """
+    Один чек-ін протягом активного часу (викликається з tick() щогодини).
+    AI сам вирішує, що написати: коротку пораду, конкретну дію, ПИТАННЯ якщо
+    даних не хватає, або щось прив'язане до найближчих подій з календаря.
+    Це НЕ звіт із фактами — це один живий рядок, як від людини-коуча.
+    """
     a = analytics(14)
+    missing = _missing_today(a)
+    events_txt = _upcoming_events_text()
+
     ctx = (facts_block(a) + "\n"
            + "Зміна сьогодні: " + _SHIFT_UA.get(a.get("shift_today"), "—")
-           + " | завтра: " + _SHIFT_UA.get(a.get("shift_tomorrow"), "—"))
-    prompt = (f"{_STYLE}\n\nДАНІ:\n{ctx}\n\n"
-              "Дай ОДНУ коротку конкретну пораду на найближчі години (2-3 речення, "
-              "з емодзі на початку, з конкретним числом чи часом) — те, що зараз "
-              "найдоцільніше зробити саме з цих даних. Обери найактуальніший "
-              "показник сам (не завжди проблема — може бути просто нагадування "
-              "закріпити хороший тренд). Без вступу, без списку, без загальних фраз.")
-    tip = (K.gemini_text(prompt, max_tokens=280, temperature=0.7, tag=TAG) or "").strip()
+           + " | завтра: " + _SHIFT_UA.get(a.get("shift_tomorrow"), "—") + "\n"
+           + "Сьогодні в календарі: " + events_txt + "\n"
+           + "Дані, яких СЬОГОДНІ ще немає: " + (", ".join(missing) if missing else "усе є"))
+
+    prompt = (
+        f"{_STYLE}\n\nДАНІ:\n{ctx}\n\n"
+        "Це живий проактивний чек-ін протягом дня (не звіт, не список). Напиши "
+        "РІВНО ОДНЕ повідомлення (2-4 речення, з емодзі на початку), обравши "
+        "САМ найдоцільніший ЗАРАЗ підхід:\n"
+        "А) якщо є дані, яких сьогодні ще немає — прямо ЗАПИТАЙ конкретне "
+        "('А скільки годин ти спав сьогодні?', 'Скільки кроків уже є?') — не "
+        "просто згадай, а поставте питання і поясни навіщо воно тобі для аналізу;\n"
+        "Б) якщо в календарі є щось найближче — прив'яжи коротку пораду чи "
+        "запитання саме до цієї події (як вона вплине на сон/їжу/рух);\n"
+        "В) інакше — дай одну конкретну дію чи спостереження з цифр вище, або "
+        "запитай щось саме про самопочуття/енергію зараз, якщо це логічно.\n"
+        "Пиши як активний партнер, який щиро цікавиться, а не як бот-нагадувалка. "
+        "Без вступу, без списку, без повторів попередніх повідомлень."
+    )
+    tip = (K.gemini_text(prompt, max_tokens=320, temperature=0.75, tag=TAG) or "").strip()
     if not tip:
         return ""
-    text = "💡 <b>Коротка порада</b>\n\n" + tip
+    text = tip
     if send:
         K.send_card(text, _kb(), tag=TAG)
-        _journal("tip", f"проактивна порада ({slot or 'ad-hoc'})")
+        _journal("hourly", "щогодинний чек-ін здоров'я")
     return text
 
 
@@ -683,34 +731,33 @@ def daily_tip(slot: str = "", send: bool = True) -> str:
 
 # Звіти перенесені у hcoach.py (AI-коуч 2.0): ранковий план 07:00, вечірній
 # розбір + оцінка 21:20, сон, тижневий і місячний з графіками. Тут лишається
-# захоплення даних, аналітика, короткі поради протягом дня і ініціатива по
-# аномаліях/хороших сигналах — без дублювання звітів.
+# захоплення даних, аналітика, щогодинний живий чек-ін протягом активного часу
+# і ініціатива по аномаліях/хороших сигналах — без дублювання звітів.
 _SLOTS = {}
 
 
 def tick() -> str:
     """
-    Один прохід: 3 короткі поради протягом дня (11:30/15:30/19:00), плюс
-    ініціатива по аномаліях/хороших сигналах кожні 20 хв. Дедуп — за днем.
+    Один прохід: живий чек-ін щогодини з 07:00 до 23:00 (о хв 5-11, щоб не
+    збігатись з іншими слотами), плюс ініціатива по аномаліях/хороших
+    сигналах кожні 20 хв. Дедуп чек-іну — за годиною, не за днем.
     """
     now = _now()
     state = K.load(STATE_FILE, default={}) or {}
-    day = now.strftime("%Y-%m-%d")
+    hour_key = now.strftime("%Y-%m-%d %H")
     done = []
     muted = _muted()
 
-    for slot, h, m in _TIP_SLOTS:
-        key = f"tip_{slot}"
-        if now.hour == h and m <= now.minute < m + 6 and state.get(f"{key}_day") != day:
-            if muted:
-                continue
-            try:
-                if daily_tip(slot, send=True):
-                    state[f"{key}_day"] = day
-                    done.append(key)
-            except Exception as e:
-                K.log(TAG, f"{key} error: {e}")
+    if (HOURLY_START <= now.hour <= HOURLY_END and 5 <= now.minute < 11
+            and state.get("hourly_slot") != hour_key and not muted):
+        try:
+            if hourly_checkin(send=True):
+                state["hourly_slot"] = hour_key
+                done.append("hourly")
+        except Exception as e:
+            K.log(TAG, f"hourly error: {e}")
 
+    day = now.strftime("%Y-%m-%d")
     for name, (h, m, fn) in _SLOTS.items():
         if now.hour == h and m <= now.minute < m + 6 and state.get(f"{name}_day") != day:
             if _muted():
@@ -733,3 +780,5 @@ def tick() -> str:
         K.log(TAG, f"initiative error: {e}")
 
     return ", ".join(done)
+
+
