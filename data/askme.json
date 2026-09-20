@@ -2187,7 +2187,17 @@
   "cal|дерматолог": {
     "q": "📅 Хочу записати в календар:\n\n« Дерматолог »\n🕐 21.09 о 09:00\n\nНагадую про візит до дерматолога завтра.\n\nЗаписати?",
     "kind": "plan",
-    "asked_at": "2026-09-20T14:28:44"
+    "asked_at": "2026-09-20T14:28:44",
+    "action": "plan",
+    "label": "📅 Так, запиши",
+    "means": "погодився запланувати",
+    "answered_at": "2026-09-20T14:34:21",
+    "meta": {
+      "summary": "Дерматолог",
+      "desc": "Нагадую про візит до дерматолога завтра.",
+      "minutes": "60",
+      "start": "2026-09-21T09:00:00"
+    }
   },
   "note|олег цікавиться вакансіями senior software engineer  fulls": {
     "q": "📝 Хочу записати нотатку:\n\n« Олег цікавиться вакансіями Senior Software Engineer - Full-s »\n\nОлег цікавиться вакансіями Senior Software Engineer - Full-stack - Growth Product в Kraken та Growth & Community Lead в Swivr, що пов'язані з криптовалютою та Web3.\n\nПоставити?",
