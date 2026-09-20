@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T00:46:12.823060",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Branch JUNIOR Operations Analyst (f/m/x) в Deutsche Bank</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79450"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79450"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79450"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79450"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79450"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79450"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T00:46:14.165352",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - September 20th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -404,6 +365,12 @@
       "ts": "2026-09-21T00:48:57.011377",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 22.09</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T00:48:57.677904",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 ВІЛЬНЕ ВІКНО 22.09 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
