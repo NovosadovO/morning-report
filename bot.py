@@ -3643,8 +3643,9 @@ def handle_command(chat_id, text):
         import threading as _th_sd
         _th_sd.Thread(target=_run_sd, daemon=True, name="selfact-digest").start()
 
-    elif text.lower().strip() in ["/тренди", "/trend", "/динаміка",
-                                  "/здоровя", "/здоров'я"]:
+    elif text.lower().strip() in ["/тренди", "/trend", "/динаміка"]:
+        # прим.: "/здоров'я"/"/здоровя" сюди НЕ додаємо — цей текст перехоплює
+        # elif вище (healthai.stats_report), тому alias тут був мертвим кодом.
         def _run_ht():
             try:
                 import sys as _sht, os as _oht

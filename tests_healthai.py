@@ -187,7 +187,10 @@ check("трекер надіслано", len(SENT) == 2, len(SENT))
 check("трекер має факти", "AI-ТРЕКЕР" in t)
 w = H.weekly_report(send=True)
 check("тижневий надіслано", len(SENT) == 3, len(SENT))
-check("stats без AI", "Здоров'я — факти" in H.stats_report())
+check("stats має факти", "Здоров'я — факти" in H.stats_report())
+check("stats має глибокий AI-аналіз", "Глибокий аналіз" in H.stats_report()
+      and "AI-текст" in H.stats_report())
+check("facts_only без AI", "Глибокий аналіз" not in H.facts_only())
 
 print("\n10. initiative — сповіщення + дедуп 12 год")
 STORE.clear()
@@ -203,13 +206,13 @@ sys.modules["dismissed"].is_muted = lambda k: True
 check("mute працює", H.initiative() == 0)
 sys.modules["dismissed"].is_muted = lambda k: False
 
-print("\n12. tick о 21:15 запускає трекер один раз")
+print("\n12. tick о 21:15 — звіти тепер у hcoach.py, тут лише ініціатива")
 STORE.clear()
 SENT.clear()
 r1 = H.tick()
-check("трекер у слоті", "tracker" in r1, r1)
+check("ініціатива відпрацювала", "initiative" in r1, r1)
 r2 = H.tick()
-check("двічі не повторює", "tracker" not in r2, r2)
+check("дедуп придушує повтор", "initiative" not in r2 or r2 == r1, r2)
 
 print("\n13. tick поза слотом нічого не ламає")
 sys.modules["ai_kit"].now = lambda: datetime(2026, 8, 26, 14, 3)

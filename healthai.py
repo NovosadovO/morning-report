@@ -34,6 +34,12 @@ SLEEP_MIN_OK = 6.5          # менше — недосип
 STEPS_GOAL = 8000
 HR_HIGH = 85                # середній пульс спокою вище — сигнал
 STALE_HOURS = 36            # дані не приходять довше — питаємо
+STRESS_HIGH = 60            # body battery/watch stress 0-100, вище — сигнал
+ENERGY_LOW = 30             # body battery 0-100, нижче — виснаження
+
+_SHIFT_UA = {"early": "☀️ рання 06:00–18:00",
+             "night": "🌙 нічна 18:00–06:00",
+             "free": "🏠 вихідний"}
 
 _NUM = re.compile(r"-?\d+(?:[.,]\d+)?")
 
@@ -166,6 +172,36 @@ def _avg(vals):
     return round(sum(vals) / len(vals), 1) if vals else None
 
 
+def _shift_for(offset: int = 0) -> str:
+    """'early' | 'night' | 'free' — зміна на день (offset у днях від сьогодні)."""
+    try:
+        return K.classify_shift(K.events_for_day(offset))
+    except Exception as e:
+        K.log(TAG, f"shift error: {e}")
+        return "free"
+
+
+def sleep_consistency(health: dict, days: int = 14) -> dict:
+    """
+    Стабільність сну — не тільки тривалість, а й розкид (якість ритму).
+    Розкид (стдев) днів з даними за period. None якщо даних < 4.
+    """
+    pairs = _series(health, "sleep_hours", days)
+    vals = [v for _, v in pairs]
+    if len(vals) < 4:
+        return {"n": len(vals), "std": None, "word": "мало даних"}
+    m = sum(vals) / len(vals)
+    var = sum((v - m) ** 2 for v in vals) / len(vals)
+    std = round(var ** 0.5, 2)
+    if std < 0.6:
+        word = "стабільний ритм"
+    elif std < 1.2:
+        word = "помірні перепади"
+    else:
+        word = "дуже нерівний ритм"
+    return {"n": len(vals), "std": std, "word": word}
+
+
 def _trend(pairs):
     """Порівнює першу і другу половину періоду. Повертає (дельта, словами)."""
     if len(pairs) < 4:
@@ -193,7 +229,8 @@ def analytics(days: int = 30) -> dict:
     out = {"days": days, "generated": _now().isoformat(timespec="seconds")}
 
     spec = [("weight_kg", "weight"), ("sleep_hours", "sleep"), ("steps", "steps"),
-            ("hr_avg", "hr"), ("hrv", "hrv"), ("calories", "calories")]
+            ("hr_avg", "hr"), ("hrv", "hrv"), ("calories", "calories"),
+            ("body_battery", "energy"), ("stress", "stress")]
     for field, name in spec:
         pairs = _series(health, field, days)
         vals = [v for _, v in pairs]
@@ -241,6 +278,13 @@ def analytics(days: int = 30) -> dict:
             pass
     out["stale_hours"] = hours
 
+    # якість/стабільність сну — не тільки скільки годин, а й наскільки рівно
+    out["sleep_quality"] = sleep_consistency(health, min(days, 14))
+
+    # зміна сьогодні/завтра — щоб AI бачив зв'язок графіка зі здоров'ям
+    out["shift_today"] = _shift_for(0)
+    out["shift_tomorrow"] = _shift_for(1)
+
     # біг зі Strava (якщо доступний) — контекст, не критично
     try:
         import strava
@@ -275,7 +319,15 @@ def facts_block(a: dict) -> str:
         line("Пульс", a.get("hr"), " уд/хв"),
         line("HRV", a.get("hrv"), " мс"),
         line("Калорії", a.get("calories"), " ккал"),
+        line("Енергія (body battery)", a.get("energy")),
+        line("Стрес (з годинника)", a.get("stress")),
     ]
+    sq = a.get("sleep_quality") or {}
+    if sq.get("std") is not None:
+        rows.append(f"Стабільність сну: {sq['word']} (розкид ±{sq['std']} год)")
+    if a.get("shift_today"):
+        rows.append("Зміна сьогодні: " + _SHIFT_UA.get(a["shift_today"], a["shift_today"])
+                    + " | завтра: " + _SHIFT_UA.get(a.get("shift_tomorrow"), "—"))
     if a.get("run_week_km"):
         rows.append(f"Біг за тиждень: {a['run_week_km']} км")
     rows.append(f"Днів підряд з даними: {a.get('streak', 0)}")
@@ -289,19 +341,33 @@ def facts_block(a: dict) -> str:
 # ─── AI ──────────────────────────────────────────────────────────────────────
 
 _STYLE = (
-    "Ти особистий тренер і лікар-аналітик Олега (37 р., Кошице, зміни 06-18 / 18-06, "
-    "ціль — 75 кг). Пиши українською, тепло і по-людськи, але тільки ФАКТАМИ з даних "
-    "нижче. ЗАБОРОНЕНО вигадувати числа, яких немає. Якщо даних бракує — скажи прямо, "
-    "яких саме і попроси надіслати. Без порожніх фраз."
+    "Ти особистий тренер і лікар-аналітик Олега (37 р., Кошице, змінний графік "
+    "06:00-18:00 / 18:00-06:00, ціль — 75 кг). Пиши українською, тепло і по-людськи, "
+    "але тільки ФАКТАМИ з даних нижче. ЗАБОРОНЕНО вигадувати числа чи стан (настрій, "
+    "енергію, стрес), яких немає в даних. Якщо якогось показника немає — прямо скажи, "
+    "чого саме бракує, і попроси надіслати, а не вигадуй за нього. Без порожніх фраз.\n"
+    "ГЛИБИНА: не просто перелічуй числа — РОЗБИРАЙ зв'язки: як графік зміни "
+    "(сьогодні/завтра) впливає на сон і коли він встигає відновитись; що якість і "
+    "стабільність сну (не тільки тривалість) кажуть про організм; якщо є дані по "
+    "енергії (body battery) чи стресу з годинника — пов'яжи їх зі сном і зміною; як усе "
+    "це разом тягне вагу до/від цілі 75 кг. Один показник окремо нічого не значить — "
+    "цінність у зв'язках між ними."
 )
 
 
 def ai_analysis(a: dict) -> str:
-    prompt = (f"{_STYLE}\n\nДАНІ:\n{facts_block(a)}\n\n"
-              "Дай аналіз 5-8 речень: що реально відбувається з організмом, які "
-              "зв'язки між сном, кроками, пульсом і вагою ти бачиш саме в цих числах, "
-              "що насторожує, що вдається добре. Без списків, суцільним текстом.")
-    return (K.gemini_text(prompt, max_tokens=900, temperature=0.6, tag=TAG) or "").strip()
+    ctx = (facts_block(a) + "\n"
+           + "Зміна сьогодні: " + _SHIFT_UA.get(a.get("shift_today"), "—")
+           + " | завтра: " + _SHIFT_UA.get(a.get("shift_tomorrow"), "—"))
+    prompt = (f"{_STYLE}\n\nДАНІ:\n{ctx}\n\n"
+              "Дай глибокий персональний аналіз 400-600 слів (не список, суцільним "
+              "текстом кількома абзацами): 1) що зараз реально відбувається з "
+              "організмом і чому — саме в цих числах; 2) як графік зміни, сон і його "
+              "стабільність тягнуть за собою кроки/пульс/енергію; 3) як усе це впливає "
+              "на прогрес до 75 кг; 4) що насторожує і що вдається добре; 5) одна річ, "
+              "яку сам Олег міг не помітити в цих даних. Якщо енергії/стресу немає в "
+              "даних — не вигадуй їх, просто пропусти цей зв'язок.")
+    return (K.gemini_text(prompt, max_tokens=1600, temperature=0.65, tag=TAG) or "").strip()
 
 
 def ai_recommendations(a: dict) -> str:
@@ -394,7 +460,20 @@ def weekly_report(send: bool = True) -> str:
 
 
 def stats_report() -> str:
-    """Тільки числа — для кнопки/команди, без AI."""
+    """
+    /здоров'я — факти + ГЛИБОКИЙ AI-аналіз (не шаблонний): зв'язки графік
+    зміни↔сон↔енергія/стрес↔вага, а не просто перелік чисел.
+    """
+    a = analytics(30)
+    parts = ["📊 <b>Здоров'я — факти й аналіз</b>", "", facts_block(a)]
+    an = ai_analysis(a)
+    if an:
+        parts += ["", "🧠 <b>Глибокий аналіз</b>", an]
+    return "\n".join(parts)
+
+
+def facts_only() -> str:
+    """Чисті факти без AI (для внутрішнього використання/дебагу)."""
     return "📊 <b>Здоров'я — факти</b>\n\n" + facts_block(analytics(30))
 
 
@@ -449,6 +528,24 @@ def anomalies(a: dict) -> list:
     if hr.get("avg7") is not None and hr["avg7"] > HR_HIGH:
         out.append(("hr_high", f"❤️ Середній пульс {hr['avg7']} уд/хв — вище за {HR_HIGH}"))
 
+    stress = a.get("stress") or {}
+    if stress.get("avg7") is not None and stress["avg7"] >= STRESS_HIGH:
+        out.append(("stress_high",
+                    f"😣 Стрес з годинника за тиждень у середньому {stress['avg7']} "
+                    f"— вище за {STRESS_HIGH}"))
+
+    energy = a.get("energy") or {}
+    if energy.get("avg7") is not None and energy["avg7"] <= ENERGY_LOW:
+        out.append(("energy_low",
+                    f"🔋 Енергія (body battery) за тиждень у середньому {energy['avg7']} "
+                    f"— нижче за {ENERGY_LOW}, організм виснажений"))
+
+    sq = a.get("sleep_quality") or {}
+    if sq.get("std") is not None and sq["std"] >= 1.2 and sq.get("n", 0) >= 5:
+        out.append(("sleep_unstable",
+                    f"😴 Сон дуже нерівний останні дні (розкид ±{sq['std']} год) — "
+                    "тіло не встигає підлаштуватись під ритм"))
+
     if a.get("stale_hours") is not None and a["stale_hours"] >= STALE_HOURS:
         out.append(("stale",
                     f"📵 Дані здоров'я не оновлювались {a['stale_hours']} год "
@@ -457,20 +554,46 @@ def anomalies(a: dict) -> list:
     return out
 
 
+def good_signals(a: dict) -> list:
+    """Приводи похвалити (не тільки проблеми) — теж приводи написати першим."""
+    out = []
+
+    st = a.get("steps") or {}
+    if st.get("avg7") is not None and st["avg7"] >= STEPS_GOAL and st.get("n", 0) >= 4:
+        out.append(("steps_good",
+                    f"🚶 Кроки за тиждень у середньому {int(st['avg7'])} — ціль "
+                    f"{STEPS_GOAL} досягнута"))
+
+    w = a.get("weight") or {}
+    if w.get("delta") is not None and w["delta"] <= -0.4 and w.get("n", 0) >= 4:
+        out.append(("weight_good",
+                    f"⚖️ Вага йде вниз: {w['delta']:+} кг за період, зараз {w['last']} кг "
+                    f"(до цілі {w.get('to_goal')} кг)"))
+
+    s = a.get("sleep") or {}
+    if s.get("avg7") is not None and s["avg7"] >= SLEEP_MIN_OK + 0.5 and s.get("n", 0) >= 4:
+        out.append(("sleep_good",
+                    f"😴 Сон за тиждень у середньому {s['avg7']} год — стабільно добре"))
+
+    return out
+
+
 def initiative(force: bool = False) -> int:
     """
-    Кожні 30 хв: якщо є привід — пише першим. Один привід не частіше разу на 12 год.
+    Кожні 20 хв: якщо є привід — пише першим (проблема або привід похвалити).
+    Проблема — не частіше разу на 8 год того самого типу, похвала — разу на 24 год.
     Повертає кількість надісланих сповіщень.
     """
     if not force and _muted():
         return 0
-    if not force and not K.rate_ok(STATE_FILE, 30):
+    if not force and not K.rate_ok(STATE_FILE, 20):
         return 0
     K.rate_mark(STATE_FILE)
 
     a = analytics(30)
-    found = anomalies(a)
-    if not found:
+    problems = anomalies(a)
+    good = good_signals(a)
+    if not problems and not good:
         return 0
 
     state = K.load(STATE_FILE, default={}) or {}
@@ -478,20 +601,29 @@ def initiative(force: bool = False) -> int:
     now = _now()
     sent = 0
 
-    for key, line in found:
+    def _due(key, hours):
         prev = seen.get(key)
-        if prev and not force:
-            try:
-                if (now - datetime.fromisoformat(prev)).total_seconds() < 12 * 3600:
-                    continue
-            except Exception:
-                pass
+        if not prev or force:
+            return True
+        try:
+            return (now - datetime.fromisoformat(prev)).total_seconds() >= hours * 3600
+        except Exception:
+            return True
 
-        prompt = (f"{_STYLE}\n\nДАНІ:\n{facts_block(a)}\n\nПРИВІД: {line}\n\n"
-                  "Напиши Олегу коротко (3-4 речення): що це означає саме для нього і "
-                  "одна конкретна дія зараз. Без вступів.")
+    for key, line, header, hours, tone in (
+        [(k, l, "🩺 <b>Помітив у твоїх даних</b>", 8,
+          "Напиши Олегу коротко (3-4 речення): що це означає саме для нього і "
+          "одна конкретна дія зараз. Без вступів.") for k, l in problems]
+        + [(k, l, "👍 <b>Помітив дещо хороше</b>", 24,
+            "Напиши Олегу коротко (2-3 речення): похвали конкретно за це і одним "
+            "рядком — що допоможе закріпити результат. Без вступів.") for k, l in good]
+    ):
+        if not _due(key, hours):
+            continue
+
+        prompt = f"{_STYLE}\n\nДАНІ:\n{facts_block(a)}\n\nПРИВІД: {line}\n\n{tone}"
         ai = (K.gemini_text(prompt, max_tokens=450, temperature=0.6, tag=TAG) or "").strip()
-        text = f"🩺 <b>Помітив у твоїх даних</b>\n\n{line}"
+        text = f"{header}\n\n{line}"
         if ai:
             text += f"\n\n{ai}"
         if K.send_card(text, _kb(), tag=TAG):
@@ -501,7 +633,7 @@ def initiative(force: bool = False) -> int:
 
     state["seen"] = seen
     K.save(STATE_FILE, state)
-    K.log(TAG, f"initiative: приводів {len(found)}, надіслано {sent}")
+    K.log(TAG, f"initiative: проблем {len(problems)}, похвал {len(good)}, надіслано {sent}")
     return sent
 
 
