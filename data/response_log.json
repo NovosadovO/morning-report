@@ -13821,6 +13821,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_n_c0a3d10471"
+    },
+    {
+      "ts": "2026-09-20T21:31:09.830400+00:00",
+      "category": "mood",
+      "question": "Оцінка настрою",
+      "answer": "😊 Добре",
+      "extra": {
+        "score": 4
+      }
     }
   ]
 }
