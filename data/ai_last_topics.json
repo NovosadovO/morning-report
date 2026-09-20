@@ -1,4 +1,9 @@
 {
+  "people|2026-09-20t14_35_34_902780": {
+    "topic": "people",
+    "gist": "```json [   {     \"email\": \"maros.sivak.sro@gmail.com\",     \"name\": \"Maroš Sivák\",     \"relation\": \"інвестиції\",     \"topics\": [\"InterFin Malaga trip\"],     \"my",
+    "ts": "2026-09-20T14:35:34.902780"
+  },
   "action_detect|2026-09-20t14_27_36_994844": {
     "topic": "action_detect",
     "gist": "```json {   \"action_type\": \"none\",   \"action_title\": null,   \"action_date\": null,   \"action_time\": null,   \"action_summary\": null } ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зробити 20 хв бігу після обіду.\"}",
     "ts": "2026-09-20T13:00:58.154422"
-  },
-  "action_detect|2026-09-20t13_00_41_129890": {
-    "topic": "action_detect",
-    "gist": "```json {   \"action_type\": \"calendar\",   \"action_title\": \"Прийняти Armolopid Plus\",   \"action_date\": null,   \"action_time\": null,   \"action_summary\": \"Олегу пот",
-    "ts": "2026-09-20T13:00:41.129890"
   }
 }
