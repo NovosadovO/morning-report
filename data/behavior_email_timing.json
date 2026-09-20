@@ -1,9 +1,4 @@
 {
-  "78916": {
-    "sender": "news@flights.airbaltic.com",
-    "sender_raw": "airBaltic <news@flights.airbaltic.com>",
-    "seen_ts": "2026-09-11T05:49:20.918075+00:00"
-  },
   "78917": {
     "sender": "news@mail.lidlplus.sk",
     "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "notification@service.tiktok.com",
     "sender_raw": "Ruslana*2784 у TikTok <notification@service.tiktok.com>",
     "seen_ts": "2026-09-20T07:47:47.173844+00:00"
+  },
+  "79413": {
+    "sender": "info@message.cropp.com",
+    "sender_raw": "\"Cropp\" <info@message.cropp.com>",
+    "seen_ts": "2026-09-20T07:47:56.133064+00:00"
   }
 }
