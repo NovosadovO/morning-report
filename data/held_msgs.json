@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T01:44:37.547458",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 6-й дім: Робота й здоров’я\n📅 26.09 (Sat) — через 4 дн.\n🕐 00:00–00:00\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T01:44:45.411434",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Unstoppable <team@unstoppabledomains.com> → Steer your agents from your phone\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79508"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-22T01:45:53.152471",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 Play your CARDS right</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79507"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79507"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79507"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79507"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79507"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79507"
             }
           ]
         ]
