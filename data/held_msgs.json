@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T01:10:42.675934",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ XRP +10.9% за 24г\n\nЗараз: 1.5631 $\n24г тому: 1.4090 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T01:10:44.195124",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>SOL +8.1% за 24г</b>\n\nЗараз: 119.66 $\n24г тому: 110.74 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-09-22T01:12:26.020166",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ SOL +8.1% за 24г\n\nЗараз: 119.66 $\n24г тому: 110.69 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T01:12:28.079533",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>BTC +6.6% за 24г</b>\n\nЗараз: 86559.81 $\n24г тому: 81202.12 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
