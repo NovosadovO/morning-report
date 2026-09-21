@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T23:41:12.795894",
-      "kind": "calendar",
-      "text": "📅 <b>Це вже завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 3-й дім: Спілкування й навчання</b>\n📅 23.09 (Wed) — післязавтра\n🕐 00:00–00:00\n\n<i>Подивись, чи не конфліктує зі зміною, і сплануй сон.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T23:41:13.570565",
       "kind": "calendar",
       "text": "📅 Це вже завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 3-й дім: Спілкування й навчання\n📅 23.09 (Wed) — післязавтра\n🕐 00:00–00:00\n\nПодивись, чи не конфліктує зі зміною, і сплануй сон.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T23:46:27.628830",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ramaswamy Would Be The Third-Richest Elected U.S. Official I</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79506"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79506"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79506"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79506"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79506"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79506"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
