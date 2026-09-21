@@ -3433,6 +3433,16 @@
   "cal|оплата паркування в кошице ubіan": {
     "q": "📅 Хочу записати в календар:\n\n« 💳 Оплата паркування в Кошице (Ubіan) »\n🕐 21.09 о 17:25\n\nАвтоматично з листа.\nВід: Ubian Eshop <no-reply@ubian.sk>\nТема: UBIAN - Potvrdenie o zaplatení\nObjednávka č. 14379210 во вишці 2.97 EUR зо дня 9/21/2026 5:25 PM була успішно зреалізована.\n\nЗаписати?",
     "kind": "plan",
-    "asked_at": "2026-09-21T18:40:00"
+    "asked_at": "2026-09-21T18:40:00",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-09-21T18:47:16",
+    "meta": {
+      "summary": "💳 Оплата паркування в Кошице (Ubіan)",
+      "desc": "Автоматично з листа.\nВід: Ubian Eshop <no-reply@ubian.sk>\nТема: UBIAN - Potvrden",
+      "minutes": "60",
+      "start": "2026-09-21T17:25:00"
+    }
   }
 }
