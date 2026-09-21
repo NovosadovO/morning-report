@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:16:29.264829",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>We're building a pipeline of Junior GL&amp;FA Accounting Special</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79499"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79499"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79499"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79499"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79499"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79499"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T00:16:30.492240",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔴 Inside Defence: Eric Schmidt on the era of AI warfare</b>\n👤 \"Zanny Minton Beddoes at The Economist\" &lt;noreply@e",
@@ -233,6 +194,12 @@
       "ts": "2026-09-22T00:17:30.593624",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ SOL +8.3% за 24г\n\nЗараз: 119.49 $\n24г тому: 110.29 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T00:17:32.989292",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>BTC +6.8% за 24г</b>\n\nЗараз: 86612.14 $\n24г тому: 81135.84 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
