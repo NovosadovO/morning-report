@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, сьогодні о 08:00 відбулося голосування Сенату США щод",
-      "detail": "Календар на 15.09: 08:00 ⏳ Голосування Сенату США щодо Clarity Act; Лист від The Defiant: Trump Agrees To CLARITY Act Ethics Rules",
-      "module": "selfact",
-      "ts": "2026-09-15T09:25:12"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, сьогодні (15.09) о 08:00 відбулося голосування Сенату",
       "detail": "Календар на 15.09: 08:00 ⏳ Голосування Сенату США щодо Clarity Act; Лист від The Defiant <no-reply@mail.thedefiant.io> | Trump Agrees To CLARITY Act Ethics Rules",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У даних про підписки вказано: 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.' і це було 'last_seen': '2026-08-…(обрізано)' що свідчить про проблему, яка не вирішена.",
       "module": "selfact",
       "ts": "2026-09-21T19:41:00"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на нове оголошення про квартири у Кошице",
+      "detail": "Отримано свіжий лист від 'Oleg Novosadov <novosadovoleg@gmail.com>' з темою '🏠 Нові квартири у Кошіці — 1 нове оголошення'.",
+      "module": "selfact",
+      "ts": "2026-09-21T19:41:06"
     }
   ]
 }
