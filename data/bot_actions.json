@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, на вашу пошту надійшли дві виплатні відомості (payslip",
-      "detail": "Листи від ehuman@minebeamitsumi.eu про виплатні відомості за 08/2026.",
-      "module": "selfact",
-      "ts": "2026-09-14T02:39:54"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, на Profesia.sk з'явилися 2 нові вакансії за вашими кри",
       "detail": "Лист від 'Profesia.sk' <support@profesia.sk> про нові робочі пропозиції.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 21.09 і 23.09 є два записи до дерматолога о 09:00. Це може бути дублювання або потребує уточнення.",
       "module": "selfact",
       "ts": "2026-09-21T09:16:12"
+    },
+    {
+      "kind": "notify",
+      "what": "Вакансія Branch JUNIOR Operations Analyst в Deutsche Bank",
+      "detail": "Олег отримав сповіщення про вакансії LinkedIn: 'Branch JUNIOR Operations Analyst (f/m/x) в Deutsche Bank' за запитом 'Операційний спеціаліст в Prague'.",
+      "module": "selfact",
+      "ts": "2026-09-21T09:47:56"
     }
   ]
 }
