@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-21t17_36_10_615952": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: ти сьогодні двічі поповнив кредит Ubian на 3 EUR та оплатив паркування на 2.97 EUR. Перевір",
+    "ts": "2026-09-21T17:36:10.615952"
+  },
+  "email_ai_item|2026-09-21t17_25_08_577786": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист є підтвердженням успішної оплати замовлення № 14379185 на суму 3,00 EUR, здійсненого 21 вересня 2026 року о 17:24. Оплата с",
+    "ts": "2026-09-21T17:25:08.577786"
+  },
   "openloop_promises|2026-09-21t17_23_33_414726": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Соляри\", \"action_date\": \"2024-09-29\", \"action_time\": null, \"action_summary\": \"Почекати з важливими рішеннями до пер",
     "ts": "2026-09-21T16:04:11.753316"
-  },
-  "action_detect|2026-09-21t16_04_11_746379": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна\", \"action_date\": \"2023-09-21\", \"action_time\": \"18:00\", \"action_summary\": \"Сьогодні о 18:00 Олег м",
-    "ts": "2026-09-21T16:04:11.746379"
-  },
-  "action_detect|2026-09-21t16_04_11_728344": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2023-09-21\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-21T16:04:11.728344"
   }
 }
