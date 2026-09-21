@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нові вакансії та виплатна картка",
-      "detail": "Є свіжі листи від LinkedIn з вакансією Expert Full Stack Engineer, два листи від ehuman@minebeamitsumi.eu з виплатними картками за 08/2026, і лист від Oleg Novosadov <novosadovoleg@gmail.com> про 3 нові оголошення квартир у Кошице.",
-      "module": "selfact",
-      "ts": "2026-09-13T22:30:37"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, зверни увагу на лист від LinkedIn: з'явилася нова вак",
       "detail": "Свіжий лист від Сповіщення про вакансії LinkedIn: 'Expert Full Stack Engineer в Ciklum Czech Republic & Slovakia', 'Ця компанія активно наймає персонал'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Є лист від Facebook про вхід з нового пристрою, що може свідчити про несанкціонований доступ.",
       "module": "selfact",
       "ts": "2026-09-21T04:51:39"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, нагадую, що сьогодні, 21.09, о 09:00 у тебе запланован",
+      "detail": "У календарі є два записи до дерматолога на 21.09 та 23.09, що може бути дублюванням або потребує уточнення.",
+      "module": "selfact",
+      "ts": "2026-09-21T04:51:43"
     }
   ]
 }
