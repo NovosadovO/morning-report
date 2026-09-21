@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-04T01:06:25.315124+00:00",
-      "category": "calendar_confirm",
-      "question": "Встановити план зважування та відстеження харчування",
-      "answer": "✅ Додано",
-      "extra": {
-        "events": [
-          "Встановити план зважування та відстеження харчування"
-        ]
-      }
-    },
-    {
       "ts": "2026-08-04T01:07:02.191765+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13955,6 +13944,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_note_6451135239"
+    },
+    {
+      "ts": "2026-09-21T13:02:23.419555+00:00",
+      "category": "calendar_button",
+      "question": "month",
+      "answer": "noted",
+      "extra": {
+        "stage": "month",
+        "when": "",
+        "note": "Заплануй біг на завтра рано о 9:00 (подія: month)"
+      }
     }
   ]
 }
