@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, сьогодні о 08:00 відбудеться голосування Сенату США що",
-      "detail": "Календар на 15.09: 08:00 ⏳ Голосування Сенату США щодо Clarity Act та лист від The Defiant <no-reply@mail.thedefiant.io> | Trump Agrees To CLARITY Act Ethics Rules",
-      "module": "selfact",
-      "ts": "2026-09-15T06:50:26"
-    },
-    {
       "kind": "hcoach",
       "what": "morning_plan",
       "detail": "ранковий план здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "Дві події в календарі ('Навчання інвестиціям' та 'Соляр — 1-й дім: Я і новий цикл; Особистий Новий Рік') заплановані на один і той же час: 21.09 о 23:00.",
       "module": "selfact",
       "ts": "2026-09-21T19:25:04"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, нагадую, що сьогодні, 21.09, у вас є дві події на 16:3",
+      "detail": "У календарі на 21.09 о 16:30 є два записи: 'Yevhenii, Classic strih, Staré Mesto 463, 040 01 Košice' та 'Yevhenii Classic strih UpCut'.",
+      "module": "selfact",
+      "ts": "2026-09-21T19:25:08"
     }
   ]
 }
