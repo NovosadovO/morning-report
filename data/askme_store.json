@@ -22646,5 +22646,28 @@
       "kind": "note"
     },
     "ts": "2026-09-21T17:52:18.984279+00:00"
+  },
+  "eefd8f03c4": {
+    "key": "past|yevhenii, classic strih, staré mesto 463, 040 01 k|2026-09-21",
+    "q": "🕰 « Yevhenii, Classic strih, Staré Mesto 463, 040 01 Košice » було 21.09 о 16:30 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+    "kind": "happened",
+    "opts": [
+      [
+        "done",
+        "✅ Відбулось"
+      ],
+      [
+        "moved",
+        "🔁 Перенеслось"
+      ],
+      [
+        "cancel",
+        "❌ Скасувалось"
+      ]
+    ],
+    "meta": {
+      "summary": "Yevhenii, Classic strih, Staré Mesto 463, 040 01 Košice"
+    },
+    "ts": "2026-09-21T18:00:31.828458+00:00"
   }
 }
