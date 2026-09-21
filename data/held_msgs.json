@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T03:16:15.123045",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Nubank launched in 35 countries without a single banking lic</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79443"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79443"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79443"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79443"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79443"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79443"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T03:16:16.345866",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Trump drops demands to own Greenland, but the damage is done</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
@@ -251,6 +212,12 @@
       "ts": "2026-09-21T03:18:27.644855",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T03:18:31.077730",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +16.8% за 24г</b>\n\nЗараз: 11.59 $\n24г тому: 9.9246 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
