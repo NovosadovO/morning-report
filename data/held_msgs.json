@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T03:00:58.238611",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Nubank launched in 35 countries without a single banking lic</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79443"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79443"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79443"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79443"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79443"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79443"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T03:00:58.971265",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Навчання інвестиціям » було 20.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -251,6 +212,12 @@
       "ts": "2026-09-21T03:03:02.245757",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T03:03:05.347609",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +11.2% за 24г</b>\n\nЗараз: 11.54 $\n24г тому: 10.38 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
