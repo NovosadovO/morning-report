@@ -1,4 +1,9 @@
 {
+  "msg_event_soon|2026-09-21t13_34_40_258276": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт, Олеже! ⏰  Через 30-90 хвилин у тебе заплановано навчання інвестиціям, і це чудовий час, адже твій криптопортфель за останні 24 години виріс на $508. Осо",
+    "ts": "2026-09-21T13:34:40.258276"
+  },
   "selfact|2026-09-21t13_27_56_717856": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Низька активність сьогодні\",     \"text\": \"Олеже, твої кроки сьогодні становлять лише 725. Це дуже низький пока",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-21T12:54:51.887525"
-  },
-  "action_detect|2026-09-21t12_54_41_001412": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-21T12:54:41.001412"
   }
 }
