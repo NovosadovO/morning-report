@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-04T00:35:33.310932+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Перевірити рахунки від Dekoračný Servis",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-04"
-      }
-    },
-    {
       "ts": "2026-08-04T00:35:37.077291+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -13958,6 +13948,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Фінансовий фокус",
       "answer": "no"
+    },
+    {
+      "ts": "2026-09-21T12:57:15.878870+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_n_9cf1c2800f"
     }
   ]
 }
