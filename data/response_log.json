@@ -13886,6 +13886,16 @@
         "kind": "reminder",
         "date": "2026-09-21"
       }
+    },
+    {
+      "ts": "2026-09-21T06:02:20.263485+00:00",
+      "category": "proactive_offer",
+      "question": "Лист чекає на відповідь",
+      "answer": "Перевірити вхід у Facebook",
+      "extra": {
+        "kind": "reply",
+        "date": "2026-09-21"
+      }
     }
   ]
 }
