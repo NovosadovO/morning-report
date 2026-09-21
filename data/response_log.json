@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-04T17:20:22.630317+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_done_88df333e4c"
-    },
-    {
       "ts": "2026-08-04T17:20:31.308949+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13956,6 +13950,12 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "весь сектор RWA додав 51.1% за 24 години (капіталізація $73.13B)"
+    },
+    {
+      "ts": "2026-09-21T20:16:18.871054+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "gx_note_99c122b6bd"
     }
   ]
 }
