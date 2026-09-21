@@ -1,4 +1,14 @@
 {
+  "msg_crypto_move|2026-09-21t07_40_13_694685": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "Привіт Олеже! 💹  Цей ранок понеділка, 21 вересня 2026 року, приносить не просто рух, а справжній \"вибух\" на крипторинку, особливо для твого портфеля, який додав",
+    "ts": "2026-09-21T07:40:13.694685"
+  },
+  "action_detect|2026-09-21t07_33_42_598905": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-09-23\", \"action_time\": \"10:00\", \"action_summary\": \"Нагадування ",
+    "ts": "2026-09-21T07:33:42.598905"
+  },
   "msg_idle_timeout|2026-09-21t07_33_34_681968": {
     "topic": "MSG_IDLE_TIMEOUT",
     "gist": "Привіт Олеже! 🚶  Ранок понеділка, 21 вересня, а твій криптопортфель показує вражаюче зростання, додавши $363 за останні 24 години, з P&L +$5,657. Особливо виділ",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Навчання інвестиціям\", \"action_date\": \"2026-09-21\", \"action_time\": \"00:00\", \"action_summary\": \"Сьогодні, 21 вересня",
     "ts": "2026-09-21T06:01:58.747599"
-  },
-  "action_detect|2026-09-21t06_01_57_643800": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": \"2026-09-21\", \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято A",
-    "ts": "2026-09-21T06:01:57.643800"
-  },
-  "action_detect|2026-09-21t06_01_46_772528": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Структурування ранку\", \"action_date\": \"2026-09-21\", \"action_time\": null, \"action_summary\": \"Чітко структурувати ран",
-    "ts": "2026-09-21T06:01:46.772528"
   }
 }
