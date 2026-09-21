@@ -2558,6 +2558,23 @@ def handle_health_photo(chat_id, msg):
                 entry["health_score"] = int(parts[4])
             health[today] = entry
             save_health(health)
+            # Дублюємо в канонічний qwatch_data.json (MERGE полів, не
+            # затираючи інше). Без цього storage.load_health() завжди
+            # віддає перевагу qwatch_data.json навіть якщо там лежить
+            # старий/неповний автосинк з годинника — ручні дані просто
+            # ігнорувались у звітах/AI-аналізі, хоч і зберігались тут.
+            try:
+                import qwsync
+                _sync_payload = {
+                    "date": today, "steps": entry["steps"],
+                    "sleep_hours": entry["sleep_hours"], "hr_avg": entry["heart_rate"],
+                    "calories": entry["calories"],
+                }
+                if entry.get("health_score"):
+                    _sync_payload["health_score"] = entry["health_score"]
+                qwsync.save(_sync_payload, notify=False)
+            except Exception as _qse:
+                print(f"[health->qwatch] sync error: {_qse}", flush=True)
             reply = f"✅ <b>Health дані {today} збережено!</b>\n\n"
             reply += f"👟 Кроки: {entry.get('steps','—')}\n"
             reply += f"😴 Сон: {entry.get('sleep_hours','—')} год\n"
@@ -2596,6 +2613,16 @@ def handle_health_photo(chat_id, msg):
             entry.update(data)
             health[today] = entry
             save_health(health)
+            # Дублюємо в канонічний qwatch_data.json (MERGE) — інакше
+            # storage.load_health() пізніше може показати старий/неповний
+            # автосинк з годинника замість цих щойно розпізнаних даних.
+            try:
+                import qwsync
+                _sync_payload = dict(entry)
+                _sync_payload["date"] = today
+                qwsync.save(_sync_payload, notify=False)
+            except Exception as _qse:
+                print(f"[health->qwatch] sync error: {_qse}", flush=True)
 
             reply = f"✅ <b>Health дані {today} зчитано автоматично!</b>\n\n"
             if entry.get("steps"):       reply += f"👟 Кроки: <b>{entry['steps']:,}</b>\n"
@@ -7546,26 +7573,30 @@ def process_update(update):
                           or "qwatch" in text.lower())
 
             # ── ПАРСИМО ЗДОРОВ'Я ТЕКСТ ──
+            # ЄДИНЕ канонічне місце запису — qwatch.py → data/qwatch_data.json
+            # (саме його читає storage.load_health(), тому саме на ньому
+            # будуються всі AI-сповіщення/звіти про сон, кроки, пульс тощо).
+            # Раніше тут стояв health_parser.save_daily_health(), який писав
+            # у ЛОКАЛЬНИЙ файл data/daily_health.json на диску контейнера —
+            # він НЕ синхронізований з GitHub і зникає при кожному redeploy,
+            # і головне — його ніхто з модулів "сон впав до X годин" не читає.
+            # Через це виходило: юзер бачить "✅ Записано", дані реально
+            # летять у мертвий файл, а на аналіз/сповіщення далі впливає лише
+            # qwatch_data.json — який тим часом міг ще нести старе/часткове
+            # значення з автосинку годинника (qwatch_auto). Тепер пишемо
+            # напряму в канонічне джерело й одразу віддаємо return, щоб
+            # handle_command() нижче не обробив той самий текст ще раз.
             if _is_qwatch:
                 try:
-                    from health_parser import parse_health_text, save_daily_health
-                    _parsed = parse_health_text(text)
-                    if _parsed:
-                        _date_key = save_daily_health(_parsed, os.path.join(_DATA_DIR, "daily_health.json"))
-                        print(f"[Health] Saved health data for {_date_key}: {_parsed}", flush=True)
-                        # Дамо юзеру фідбек про кілька найважливіших метрик
-                        _feedback_parts = []
-                        if "steps" in _parsed:
-                            _feedback_parts.append(f"🚶 Кроки: {_parsed['steps']}")
-                        if "sleep_hours" in _parsed:
-                            _feedback_parts.append(f"😴 Сон: {_parsed['sleep_hours']:.1f}г")
-                        if "hr" in _parsed:
-                            _feedback_parts.append(f"❤️ Пульс: {_parsed['hr']}")
-                        if _feedback_parts:
-                            _feedback = " · ".join(_feedback_parts)
-                            send(chat_id, f"✅ Записано: {_feedback}")
+                    from qwatch import parse_and_save, send_confirmation
+                    _record = parse_and_save(text)
+                    send_confirmation(_record)
                 except Exception as _hp_err:
-                    print(f"[Health] Parse error: {_hp_err}")
+                    print(f"[Health] qwatch parse error: {_hp_err}", flush=True)
+                    send(chat_id, f"⚠️ QWatch помилка: {_hp_err}")
+                if _st.get("mode") == "awaiting_shopping":
+                    _cs()
+                return
 
             if _is_qwatch and _st.get("mode") == "awaiting_shopping":
                 _cs()  # скидаємо shopping mode

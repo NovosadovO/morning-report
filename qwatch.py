@@ -284,12 +284,20 @@ def parse_and_save(text: str) -> dict:
         now = datetime.now(timezone.utc) + timedelta(hours=2)
         record["date"] = now.strftime("%Y-%m-%d")
 
-    # Зберігаємо
+    # Зберігаємо — MERGE поверх існуючого запису за цей день, а не повна
+    # заміна. Інакше ручний паст, що згадує лише частину показників (напр.
+    # тільки сон), стирав би вагу/health_score/степс, збережені раніше тим
+    # же днем (з автосинку годинника чи попереднього паста).
     db = _load()
-    db[record["date"]] = record
+    prev = db.get(record["date"]) or {}
+    merged = dict(prev)
+    for k, v in record.items():
+        if v is not None:
+            merged[k] = v
+    db[record["date"]] = merged
     _save(db)
-    print(f"qwatch: saved record for {record['date']}")
-    return record
+    print(f"qwatch: saved record for {record['date']} (merged with previous entry)")
+    return merged
 
 # ─── HELPERS ──────────────────────────────────────────────────────────────────
 
