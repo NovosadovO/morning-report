@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T01:01:36.916088",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>General Manager в Bolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79505"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79505"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79505"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79505"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79505"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79505"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T01:01:38.061824",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Steer your agents from your phone</b>\n👤 Unstoppable &lt;team@unstoppabledomains.com&gt;",
@@ -299,6 +260,12 @@
       "ts": "2026-09-22T01:02:56.331360",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ BTC +6.5% за 24г\n\nЗараз: 86387.94 $\n24г тому: 81150.32 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T01:02:57.893450",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>ONDO +6.0% за 24г</b>\n\nЗараз: 0.4585 $\n24г тому: 0.4325 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
