@@ -165,7 +165,7 @@
     "context_ask_ai": {
       "checked": 41,
       "issues": 36,
-      "fixed": 20
+      "fixed": 21
     },
     "healthai": {
       "checked": 33,
@@ -209,7 +209,7 @@
     },
     "foresight": {
       "checked": 63,
-      "issues": 52,
+      "issues": 53,
       "fixed": 26,
       "cut": 2
     },
@@ -483,8 +483,8 @@
   },
   "2026-09-21": {
     "checked": 115,
-    "issues": 83,
-    "fixed": 35,
+    "issues": 84,
+    "fixed": 36,
     "cut": 2
   }
 }
