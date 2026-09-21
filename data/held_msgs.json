@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T01:15:18.707842",
-      "kind": "calendar",
-      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔭 Юпітер переходить у 2-й дім — 19°</b>\n📅 26.09 (Sat) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T01:15:19.510436",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 🔭 Юпітер переходить у 2-й дім — 19°\n📅 26.09 (Sat) — через 4 дн.\n🕐 00:00–00:00\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79500"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-22T01:16:13.815054",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>We're building a pipeline of Junior GL&amp;FA Accounting Special</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79499"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79499"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79499"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79499"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79499"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79499"
             }
           ]
         ]
