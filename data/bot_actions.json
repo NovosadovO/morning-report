@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, Чарльз Шваб планує додати Avalanche (AVAX) до своїх п",
-      "detail": "На основі листа від 'Avalanche Team1 <avalancheteam1@substack.com>' про інтеграцію AVAX у Schwab.",
-      "module": "selfact",
-      "ts": "2026-09-14T16:04:27"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, у твоєму календарі на 18.09, 19.09 та 20.09 запланова",
       "detail": "На основі суперечливих записів у календарі: '18.09: 18:00 Рання зміна', '19.09: 18:00 Рання зміна', '20.09: 18:00 Рання зміна', що суперечить '16.09: 05:00 ☀️ Рання зміна (06:00-18:00)'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Analysis by Sleep Cycle alarm clock. Download here: https://www.sleepcycle.com #sleepCycle",
       "module": "healthai",
       "ts": "2026-09-21T15:11:28"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-09-21",
+      "detail": "автосинк з годинника: sleep_total_min",
+      "module": "qwsync",
+      "ts": "2026-09-21T15:12:33"
     }
   ]
 }
