@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "reminder_no_health_data_daily",
-      "label": "⏭ Пропустити",
-      "ts": "2026-09-03T21:41:38"
-    },
-    {
-      "t": "btn",
       "data": "rx_read_570c20714d",
       "label": "👍 Прочитав",
       "ts": "2026-09-03T22:45:02"
@@ -7198,6 +7192,12 @@
       "t": "btn",
       "data": "cal_skip_botsend_1790020548844",
       "label": "❌ Не треба",
+      "ts": "2026-09-21T21:59:40"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_gip3t0so2hpau7dlok2kogie0c_2026-09-21",
+      "label": "✅ Виконано",
       "ts": "2026-09-21T21:59:40"
     }
   ]
