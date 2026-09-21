@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:31:35.860617",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Play your CARDS right</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79507"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79507"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79507"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79507"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79507"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79507"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T00:31:37.147416",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ramaswamy Would Be The Third-Richest Elected U.S. Official I</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -365,6 +326,12 @@
       "ts": "2026-09-22T00:32:46.562557",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ DOGE +14.7% за 24г\n\nЗараз: 0.1003 $\n24г тому: 0.0874 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T00:32:49.091668",
+      "kind": "calendar",
+      "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 1-й дім: Я і новий цикл</b>\n🕐 00:00–00:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
       "keyboard": null
     }
   ]
