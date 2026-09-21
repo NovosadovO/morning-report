@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:01:58.635843",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Steer your agents from your phone</b>\n👤 Unstoppable &lt;team@unstoppabledomains.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79500"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79500"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79500"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79500"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79500"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79500"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T00:02:00.051014",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>We're building a pipeline of Junior GL&amp;FA Accounting Special</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -299,6 +260,12 @@
       "ts": "2026-09-22T00:03:09.170175",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>BTC +7.1% за 24г</b>\n\nЗараз: 86592.25 $\n24г тому: 80845.84 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T00:03:10.107424",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ BTC +7.1% за 24г\n\nЗараз: 86592.25 $\n24г тому: 80845.84 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
