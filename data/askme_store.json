@@ -18095,5 +18095,30 @@
       "tag": "MSG_FORESIGHT_MAIL"
     },
     "ts": "2026-09-21T02:46:25.885839+00:00"
+  },
+  "5a2f3d4a1e": {
+    "key": "q| це ви щойно увійшли неподалік kosice з нового пристрою",
+    "q": "📋 Це ви щойно увійшли неподалік Kosice з нового пристрою?",
+    "kind": "confirm",
+    "opts": [
+      [
+        "yes",
+        "✅ Так"
+      ],
+      [
+        "no",
+        "❌ Ні"
+      ],
+      [
+        "later",
+        "⏰ Пізніше"
+      ]
+    ],
+    "meta": {
+      "summary": "📧 AI АНАЛІЗ ПОШТИ  (4 важливих листів)",
+      "desc": "📧 AI АНАЛІЗ ПОШТИ  (4 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 3 nové pracovné ponuky\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 The Daily Degen\n📋 The Daily Degen - September 20th, 2026\n📝 (AI-а",
+      "tag": "report"
+    },
+    "ts": "2026-09-21T02:46:41.665688+00:00"
   }
 }
