@@ -1,9 +1,4 @@
 {
-  "78980": {
-    "sender": "recommendations@aboutyou.com",
-    "sender_raw": "ABOUT YOU odporúčanie<recommendations@aboutyou.com>",
-    "seen_ts": "2026-09-12T07:16:21.461261+00:00"
-  },
   "78981": {
     "sender": "info@beautynews.douglas.sk",
     "sender_raw": "\"Douglas\" <info@beautynews.douglas.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "no-reply@ubian.sk",
     "sender_raw": "Ubian Eshop <no-reply@ubian.sk>",
     "seen_ts": "2026-09-21T15:25:10.931831+00:00"
+  },
+  "79491": {
+    "sender": "newsletter@data.theblock.co",
+    "sender_raw": "The Block <newsletter@data.theblock.co>",
+    "seen_ts": "2026-09-21T15:50:01.198167+00:00"
   }
 }
