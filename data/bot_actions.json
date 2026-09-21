@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверніть увагу: Socios.com нагадує про необхідність зг",
-      "detail": "Лист від Socios.com <news@mail.socios.com> | Secure your Wallet: generate a Recovery Kit",
-      "module": "selfact",
-      "ts": "2026-09-14T16:50:32"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, 15 вересня о 08:00 відбудеться голосування Сенату США",
       "detail": "Календар на 7 днів: 15.09: 08:00 ⏳ Голосування Сенату США щодо Clarity Act та лист від 0xResearch <researchteam@blockworks.com> | Pump Strikes Back",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Важлива інформація про виплату зарплати, яку Олег міг пропустити через технічну назву листа.",
       "module": "selfact",
       "ts": "2026-09-21T15:17:03"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-09-21",
+      "detail": "автосинк з годинника: steps, hr_avg, sleep_total_min",
+      "module": "qwsync",
+      "ts": "2026-09-21T15:17:12"
     }
   ]
 }
