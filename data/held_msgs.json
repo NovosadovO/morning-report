@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T03:31:21.989422",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79452"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79452"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79452"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79452"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79452"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79452"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T03:31:23.148150",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>3 nové pracovné ponuky</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -416,6 +377,12 @@
       "ts": "2026-09-21T03:33:31.956506",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\" <support@profesia.sk> → 3 nové pracovné ponuky\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - September 20th, 2026\n• \"Facebook\" <security@facebookmail.com> → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T03:33:33.478039",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 3 nové pracovné ponuky\n• The Daily Degen  → The Daily Degen - September 20th, 2026\n• \"Facebook\"  → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
