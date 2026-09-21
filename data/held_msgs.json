@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:00:55.261068",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>DOGE +14.4% за 24г</b>\n\nЗараз: 0.0995 $\n24г тому: 0.0870 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T00:00:56.057849",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ DOGE +14.4% за 24г\n\nЗараз: 0.0995 $\n24г тому: 0.0870 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79506"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-22T00:01:57.320599",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>General Manager в Bolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79505"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79505"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79505"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79505"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79505"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79505"
             }
           ]
         ]
