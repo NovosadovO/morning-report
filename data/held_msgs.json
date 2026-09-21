@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:00:56.057849",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ DOGE +14.4% за 24г\n\nЗараз: 0.0995 $\n24г тому: 0.0870 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T00:01:02.600701",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>XRP +10.0% за 24г</b>\n\nЗараз: 1.5431 $\n24г тому: 1.4030 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79505"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-22T00:01:58.635843",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Steer your agents from your phone</b>\n👤 Unstoppable &lt;team@unstoppabledomains.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79500"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79500"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79500"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79500"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79500"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79500"
             }
           ]
         ]
