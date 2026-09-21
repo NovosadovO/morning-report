@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:46:11.310161",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Play your CARDS right</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79507"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79507"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79507"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79507"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79507"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79507"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T00:46:12.642384",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ramaswamy Would Be The Third-Richest Elected U.S. Official I</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -365,6 +326,12 @@
       "ts": "2026-09-22T00:47:27.369434",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ SOL +7.9% за 24г\n\nЗараз: 119.13 $\n24г тому: 110.41 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T00:47:30.016840",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>BTC +6.5% за 24г</b>\n\nЗараз: 86394.79 $\n24г тому: 81151.46 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
