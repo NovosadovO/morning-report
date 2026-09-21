@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, тобі прийшли дві виплатні паски за серпень 2026 року в",
-      "detail": "Є два свіжі листи від ehuman@minebeamitsumi.eu з темою 'Výplatná páska/Payslip 08/2026' та 'Výplatná páska/Payslip 08/2026 - oprava formátu'.",
-      "module": "selfact",
-      "ts": "2026-09-14T00:35:54"
-    },
-    {
       "kind": "coach",
       "what": "AI-коуч: план на день",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-09-21T07:05:46"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу: Facebook питає, чи це ти щойно увійшов н",
+      "detail": "Є лист від Facebook з попередженням про вхід з нового пристрою, що може бути спробою злому.",
+      "module": "selfact",
+      "ts": "2026-09-21T07:11:58"
     }
   ]
 }
