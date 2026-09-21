@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:01:06.013647",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>SOL +8.4% за 24г</b>\n\nЗараз: 119.22 $\n24г тому: 109.96 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T00:01:06.890226",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ SOL +8.4% за 24г\n\nЗараз: 119.22 $\n24г тому: 109.96 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79498"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-22T00:02:02.647511",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Reservation evaluation</b>\n👤 noreply@atguest.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79497"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79497"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79497"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79497"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79497"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79497"
             }
           ]
         ]
