@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-04T16:49:17.434323+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_shower"
-    },
-    {
       "ts": "2026-08-04T16:49:33.226718+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13941,6 +13935,17 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "ONDO (твоя позиція) виріс на 6.9% за 24 години (зараз $0.45102); весь сектор RWA додав 52.6% за 24 години (капіталізація"
+    },
+    {
+      "ts": "2026-09-21T18:46:46.125382+00:00",
+      "category": "calendar_button",
+      "question": "🔔 Привітати Мар'яна з днем народження",
+      "answer": "done",
+      "extra": {
+        "stage": "after",
+        "when": "18:00–18:30",
+        "note": null
+      }
     }
   ]
 }
