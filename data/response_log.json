@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-04T09:39:03.000954+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Записати вагу",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-08-05"
-      }
-    },
-    {
       "ts": "2026-08-04T16:29:19.161111+00:00",
       "category": "deadline_found",
       "question": "Зміни торгових комісій Bybit EU",
@@ -13948,6 +13938,12 @@
         "when": "18:00–18:30",
         "note": null
       }
+    },
+    {
+      "ts": "2026-09-21T17:36:56.285725+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ok_3e9d06e1bb"
     }
   ]
 }
