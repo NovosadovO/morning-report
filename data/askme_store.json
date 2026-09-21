@@ -19685,5 +19685,30 @@
       "tag": "report"
     },
     "ts": "2026-09-21T03:31:36.833139+00:00"
+  },
+  "0b2c6881ba": {
+    "key": "q| facebook   це ви щойно увійшли неподалік kosice з нового пристрою",
+    "q": "• \"Facebook\"  → Це ви щойно увійшли неподалік Kosice з нового пристрою?",
+    "kind": "confirm",
+    "opts": [
+      [
+        "yes",
+        "✅ Так"
+      ],
+      [
+        "no",
+        "❌ Ні"
+      ],
+      [
+        "later",
+        "⏰ Пізніше"
+      ]
+    ],
+    "meta": {
+      "summary": "📥 СПЕРШУ ВАЖЛИВЕ",
+      "desc": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 3 nové pracovné ponuky\n• The Daily Degen  → The Daily Degen - September 20th, 2026\n• \"Facebook\"  → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n\n🧹 ",
+      "tag": "MSG_FORESIGHT_MAIL"
+    },
+    "ts": "2026-09-21T03:31:51.820530+00:00"
   }
 }
