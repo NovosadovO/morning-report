@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-21t09_11_07_493118": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-21T09:11:07.493118"
+  },
   "healthai|2026-09-21t09_05_24_179000": {
     "topic": "healthai",
     "gist": "👋 Олег, ти відклав візит до дерматолога на 10:00 сьогодні, але даних про вагу та сон за сьогодні ще немає, останні були 33 години тому. Як ти спав сьогодні вноч",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-21T07:43:42.007379"
-  },
-  "selfact|2026-09-21t07_42_31_011317": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підозрілий вхід у Facebook\",     \"text\": \"Олеже, щойно о 07:42 (за Кошице) отримано сповіщення від Facebook пр",
-    "ts": "2026-09-21T07:42:31.011317"
   }
 }
