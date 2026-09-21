@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-04T00:40:40.348647+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_note_aa32f08ad3"
-    },
-    {
       "ts": "2026-08-04T00:41:51.004624+00:00",
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
@@ -13946,6 +13940,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_9cf1c2800f"
+    },
+    {
+      "ts": "2026-09-21T12:57:22.626180+00:00",
+      "category": "calendar_confirm",
+      "question": "Особистий Новий Рік",
+      "answer": "✅ Додано",
+      "extra": {
+        "events": [
+          "Особистий Новий Рік"
+        ]
+      }
     }
   ]
 }
