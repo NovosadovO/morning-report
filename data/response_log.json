@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-04T00:38:56.101967+00:00",
-      "category": "proactive_offer",
-      "question": "Лист чекає на відповідь",
-      "answer": "Відповісти Dekoračný Servis",
-      "extra": {
-        "kind": "reply",
-        "date": "2026-08-04"
-      }
-    },
-    {
       "ts": "2026-08-04T00:40:40.348647+00:00",
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
@@ -13947,6 +13937,12 @@
     },
     {
       "ts": "2026-09-21T12:57:16.593039+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_9cf1c2800f"
+    },
+    {
+      "ts": "2026-09-21T12:57:18.053404+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_9cf1c2800f"
