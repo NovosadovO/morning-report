@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T02:57:03.209102",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>AVAX +10.9% за 24г</b>\n\nЗараз: 11.57 $\n24г тому: 10.43 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T02:57:03.842476",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +10.9% за 24г\n\nЗараз: 11.57 $\n24г тому: 10.43 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T03:00:51.855410",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79452"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79452"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79452"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79452"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79452"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79452"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
