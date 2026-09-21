@@ -1356,9 +1356,14 @@ def run_assistant_watcher():
                     print(f"[openmind] {_om_done}", flush=True)
             except Exception as _e_om:
                 print(f"[openmind] watcher error: {_e_om}", flush=True)
+            # hcoach БЕЗ погодинних воріт (запит Олега 21.09) — модуль уже має
+            # власний дедуп по дню/слоту всередині tick(), тож зайве загальне
+            # обмеження 1/год лише затримувало реакцію (напр. одразу після
+            # надісланих даних). Реагує тепер миттєво, коли сам вирішить, що
+            # треба.
             try:
                 import hcoach as _hc_w
-                _hc_done = _hc_w.tick() if _hg("hcoach") else ""
+                _hc_done = _hc_w.tick()
                 if _hc_done:
                     print(f"[hcoach] {_hc_done}", flush=True)
             except Exception as _e_hc:

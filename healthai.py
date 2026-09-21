@@ -37,6 +37,12 @@ STALE_HOURS = 36            # дані не приходять довше — п
 STRESS_HIGH = 60            # body battery/watch stress 0-100, вище — сигнал
 ENERGY_LOW = 30             # body battery 0-100, нижче — виснаження
 
+# Олег оновлює дані 3 рази на день сам — якщо пройшло довше цього без
+# жодного нового запису (не плутати з STALE_HOURS вище, це для великого
+# розриву) — сам нагадує, поки день ще активний (запит Олега 21.09).
+REMINDER_STALE_HOURS = 5
+REMINDER_GAP_HOURS = 5      # не частіше цього між нагадуваннями
+
 _SHIFT_UA = {"early": "☀️ рання 06:00–18:00",
              "night": "🌙 нічна 18:00–06:00",
              "free": "🏠 вихідний"}
@@ -690,6 +696,141 @@ def initiative(force: bool = False) -> int:
     return sent
 
 
+# ─── НАГАДУВАННЯ «НАДІШЛИ ДАНІ» ───────────────────────────────────────────────
+# Олег сам оновлює дані ~3 рази на день, але може забути. Якщо пройшло довше
+# REMINDER_STALE_HOURS без жодного нового запису (не день без даних узагалі —
+# саме мовчання від останнього повідомлення) — коуч сам просить скинути цифри,
+# поки день ще активний. Дедуп: не частіше REMINDER_GAP_HOURS, щоб не спамити.
+
+def _hours_since_last_capture() -> float:
+    items = load_journal()
+    if not items:
+        return 999.0
+    try:
+        last_ts = datetime.fromisoformat(str(items[-1].get("ts") or ""))
+    except Exception:
+        return 999.0
+    return round((_now() - last_ts).total_seconds() / 3600.0, 1)
+
+
+def data_reminder(force: bool = False) -> bool:
+    """Сам нагадує надіслати дані, якщо довго мовчав. True — надіслано."""
+    if not force and _muted():
+        return False
+    now = _now()
+    if not force and not (HOURLY_START <= now.hour <= HOURLY_END):
+        return False
+
+    hours = _hours_since_last_capture()
+    if hours < REMINDER_STALE_HOURS:
+        return False
+
+    state = K.load(STATE_FILE, default={}) or {}
+    last = state.get("last_reminder")
+    if not force and last:
+        try:
+            gap = (now - datetime.fromisoformat(last)).total_seconds() / 3600
+            if gap < REMINDER_GAP_HOURS:
+                return False
+        except Exception:
+            pass
+
+    text = (
+        "📵 <b>Давно тебе не бачив у даних здоров'я</b>\n\n"
+        f"Останній запис — {hours:.0f} год тому. Ти зазвичай оновлюєш "
+        "приблизно 3 рази на день — скинь актуальні цифри (вага, сон, кроки, "
+        "пульс), щоб я не рахував аналіз і план дня на застарілому."
+    )
+    if K.send_card(text, _kb(), tag=TAG):
+        state["last_reminder"] = now.isoformat(timespec="seconds")
+        K.save(STATE_FILE, state)
+        _journal("reminder", "нагадування надіслати дані", f"{hours:.0f} год мовчання")
+        return True
+    return False
+
+
+# ─── ЛИСТИ ПРО ЗДОРОВ'Я ───────────────────────────────────────────────────────
+# Повний доступ до пошти для здоров'я (запит Олега 21.09): лікар, аптека,
+# страхова, результати аналізів — фільтр за темою/відправником, без витрати
+# Gemini на кожен скан. Один лист = одне сповіщення (дедуп за uid).
+
+_HEALTH_MAIL_KEYWORDS = (
+    "лікар", "лікарн", "клінік", "аналіз", "результат", "лаборатор",
+    "страхов", "аптек", "рецепт", "медичн", "мрт", "узі", "щеплен",
+    "вакцин", "стоматолог",
+    "doctor", "clinic", "pharmacy", "lab result", "blood test", "insurance",
+    "prescription", "medical", "vaccination", "poistenie", "poistovna",
+    "lekáreň", "lekar", "nemocnica",
+)
+
+MAIL_DEDUP_FILE = "healthai_mail_sent.json"
+MAIL_SCAN_STATE = "healthai_mail_scan.json"
+MAIL_SCAN_GAP_MIN = 45
+_mail_dedup = None  # лінива інціалізація — щоб не тягнути K.Dedup при імпорті
+
+
+def _get_mail_dedup():
+    global _mail_dedup
+    if _mail_dedup is None:
+        _mail_dedup = K.Dedup(MAIL_DEDUP_FILE, ttl_days=30)
+    return _mail_dedup
+
+
+def _health_emails() -> list:
+    """Останні листи, що стосуються здоров'я. [] якщо пошта недоступна."""
+    try:
+        import monitor as _m
+        raw = _m.get_emails()
+    except Exception as e:
+        K.log(TAG, f"get_emails error: {e}")
+        return []
+
+    if isinstance(raw, dict):
+        items = raw.get("items") or []
+    elif isinstance(raw, list):
+        items = raw
+    else:
+        return []
+
+    out = []
+    for e in items:
+        if not isinstance(e, dict):
+            continue
+        uid = str(e.get("uid") or "")
+        sender = str(e.get("sender") or e.get("from") or "")
+        subject = str(e.get("subject") or "")
+        blob = f"{sender} {subject}".lower()
+        if any(k in blob for k in _HEALTH_MAIL_KEYWORDS):
+            out.append({"uid": uid, "sender": sender, "subject": subject})
+    return out
+
+
+def health_mail_check(force: bool = False) -> int:
+    """Сповіщає про НОВИЙ лист про здоров'я (лікар/аптека/аналізи/страхова)."""
+    if not force and _muted():
+        return 0
+    dedup = _get_mail_dedup()
+    hits = _health_emails()
+    sent = 0
+    for h in hits[:5]:
+        uid = h.get("uid") or ""
+        if not uid or dedup.seen("mail", uid):
+            continue
+        text = (
+            "📧 <b>Лист про здоров'я</b>\n\n"
+            f"Від: {K.esc(h['sender'])}\n"
+            f"Тема: {K.esc(h['subject'])}\n\n"
+            "Схоже, це щось про лікаря, аптеку, аналізи чи страховку — "
+            "перевір лист і скажи мені результат чи дату цифрою, якщо там "
+            "щось варте фіксації для аналізу здоров'я."
+        )
+        if K.send_card(text, _kb(), tag=TAG):
+            dedup.mark("mail", uid)
+            sent += 1
+            _journal("mail", "лист про здоров'я", h["subject"][:100])
+    return sent
+
+
 # ─── ЩОГОДИННИЙ ЧЕК-ІН ПРОТЯГОМ АКТИВНОГО ЧАСУ ───────────────────────────────
 # Раніше було 3 фіксовані поради на день — Олег попросив 20.09: "мало видно",
 # хоче майже щогодини протягом активного часу + AI сам вирішує коли актуально
@@ -831,6 +972,21 @@ def tick() -> str:
             done.append(f"initiative:{n}")
     except Exception as e:
         K.log(TAG, f"initiative error: {e}")
+
+    try:
+        if data_reminder():
+            done.append("reminder")
+    except Exception as e:
+        K.log(TAG, f"reminder error: {e}")
+
+    try:
+        if K.rate_ok(MAIL_SCAN_STATE, MAIL_SCAN_GAP_MIN):
+            K.rate_mark(MAIL_SCAN_STATE)
+            n = health_mail_check()
+            if n:
+                done.append(f"mail:{n}")
+    except Exception as e:
+        K.log(TAG, f"mail check error: {e}")
 
     return ", ".join(done)
 
