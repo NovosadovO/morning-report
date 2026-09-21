@@ -298,5 +298,15 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-09-21\", \"action_time\": \"10:00\", \"action_summary\": \"Відвідати дерматолог",
     "ts": "2026-09-21T08:50:48.806488"
+  },
+  "action_detect|2026-09-21t10_40_28_632963": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-21T10:40:28.632963"
+  },
+  "action_detect|2026-09-21t10_36_00_627956": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-21T10:36:00.627956"
   }
 }
