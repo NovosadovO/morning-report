@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:51:03.288557",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ DOGE +14.6% за 24г\n\nЗараз: 0.1003 $\n24г тому: 0.0875 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T00:51:06.514817",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 6-й дім: Робота й здоров’я</b>\n📅 26.09 (Sat) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
@@ -148,6 +142,12 @@
       "ts": "2026-09-22T00:52:46.379183",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ XRP +10.1% за 24г\n\nЗараз: 1.5503 $\n24г тому: 1.4086 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T00:52:48.809175",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>SOL +7.5% за 24г</b>\n\nЗараз: 118.87 $\n24г тому: 110.60 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
