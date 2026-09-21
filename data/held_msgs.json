@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T23:46:28.874188",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>General Manager в Bolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79505"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79505"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79505"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79505"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79505"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79505"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T23:46:30.135362",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Steer your agents from your phone</b>\n👤 Unstoppable &lt;team@unstoppabledomains.com&gt;",
@@ -365,6 +326,12 @@
       "ts": "2026-09-21T23:51:05.379465",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T23:51:14.242401",
+      "kind": "calendar",
+      "text": "📅 <b>Це вже завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 3-й дім: Спілкування й навчання</b>\n📅 23.09 (Wed) — післязавтра\n🕐 00:00–00:00\n\n<i>Подивись, чи не конфліктує зі зміною, і сплануй сон.</i>",
       "keyboard": null
     }
   ]
