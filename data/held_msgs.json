@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:01:15.138248",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ BTC +7.0% за 24г\n\nЗараз: 86603.89 $\n24г тому: 80942.37 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T00:01:20.279066",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ETH +5.3% за 24г</b>\n\nЗараз: 2771.74 $\n24г тому: 2631.15 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -399,6 +393,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-22T00:02:11.278972",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Unstoppable\n📋 Steer your agents from your phone\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
