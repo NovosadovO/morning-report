@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Проблема з Strava",
-      "detail": "Олег запитав 'Чому strava не працює?', а в пам'яті бота є інформація про прострочену підписку Strava та заблокований API, що вимагає оновлення платіжної інформації.",
-      "module": "selfact",
-      "ts": "2026-09-15T12:29:59"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, нагадую, що 20.09 о 17:00 заплановано створення бота н",
       "detail": "У календарі є подія 'створити бота на трейдинг' на 20.09 о 17:00, про яку Олегу варто нагадати заздалегідь.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Отримано свіжий лист від The Economist з темою 'Inside Defence: Eric Schmidt on the era of AI warfare'.",
       "module": "selfact",
       "ts": "2026-09-21T21:28:27"
+    },
+    {
+      "kind": "notify",
+      "what": "The Economist Today: Вплив дочки на керівника",
+      "detail": "Отримано свіжий лист від The Economist Today з темою 'What having a daughter does to a boss'.",
+      "module": "selfact",
+      "ts": "2026-09-21T21:28:32"
     }
   ]
 }
