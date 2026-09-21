@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "morning_plan",
-      "detail": "ранковий план здоров'я",
-      "module": "selfact",
-      "ts": "2026-09-15T07:00:56"
-    },
-    {
       "kind": "notify",
       "what": "Олег, нагадування про реєстрацію до дерматолога вже завтра,",
       "detail": "КАЛЕНДАР НА 7 ДНІВ: 16.09: 09:00 🔔 Реєстрація до дерматолога",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 21.09 о 16:30 є два записи: 'Yevhenii, Classic strih, Staré Mesto 463, 040 01 Košice' та 'Yevhenii Classic strih UpCut'.",
       "module": "selfact",
       "ts": "2026-09-21T19:25:08"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, нагадую, що сьогодні, 21.09, у тебе були дві події о 1",
+      "detail": "У календарі на 21.09.2026 о 16:30 зазначено дві різні події, що стосуються стрижки: 'Yevhenii, Classic strih, Staré Mesto 463, 040 01 Košice' та 'Yevhenii Classic strih UpCut'. Це може бути дублювання або конфлікт.",
+      "module": "selfact",
+      "ts": "2026-09-21T19:40:56"
     }
   ]
 }
