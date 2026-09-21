@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, надійшла виправлена виплатна відомість за серпень 202",
-      "detail": "Надійшов лист від ehuman@minebeamitsumi.eu з темою 'Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu', що вказує на виправлену версію.",
-      "module": "selfact",
-      "ts": "2026-09-13T21:29:37"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, зверніть увагу: Apple повідомляє про закінчення термін",
       "detail": "У свіжих листах є повідомлення від Apple <no_reply@email.apple.com> з темою 'Your Subscription is Expiring'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "hr_avg=80, weight_kg=83.0, hrv=32, stress=47, date=2026-09-20, source=qwatch_auto, saved_at=2026-09-20 23:32",
       "module": "healthai",
       "ts": "2026-09-20T23:32:54"
+    },
+    {
+      "kind": "notify",
+      "what": "Підозрілий вхід у Facebook",
+      "detail": "Лист від 'Facebook' <security@facebookmail.com> про підозрілий вхід о 04:04, 21.09.2026.",
+      "module": "selfact",
+      "ts": "2026-09-21T04:04:42"
     }
   ]
 }
