@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:29:14.930998",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ BTC +6.7% за 24г\n\nЗараз: 86504.83 $\n24г тому: 81108.13 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T00:29:17.214794",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ETH +5.2% за 24г</b>\n\nЗараз: 2775.15 $\n24г тому: 2639.31 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-09-22T00:30:48.413784",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ SOL +8.0% за 24г\n\nЗараз: 119.36 $\n24г тому: 110.48 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T00:30:50.106482",
+      "kind": "calendar",
+      "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 1-й дім: Я і новий цикл</b>\n🕐 00:00–00:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
       "keyboard": null
     }
   ]
