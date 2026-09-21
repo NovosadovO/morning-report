@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T02:39:12.302047",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ AVAX +8.3% за 24г\n\nЗараз: 11.58 $\n24г тому: 10.69 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T02:39:14.529278",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +5.1% за 24г</b>\n\nЗараз: 0.4416 $\n24г тому: 0.4202 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-09-21T02:43:10.942600",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Навчання інвестиціям » було 20.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T02:43:30.556152",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\" <support@profesia.sk> → 3 nové pracovné ponuky\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - September 20th, 2026\n• \"Facebook\" <security@facebookmail.com> → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
