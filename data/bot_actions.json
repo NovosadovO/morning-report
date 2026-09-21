@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, Runable продовжує надсилати сповіщення про невдалі пл",
-      "detail": "З даних про підписки: 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.' та 'Runable <failed-payments+acct_1RaXgUJk3URPLkAO@stripe.com>', а також з нотаток: 'Олег має проблему з невдалими платежами за підписку Runable, що вимагає оновлення платіжної інформації.'",
-      "module": "selfact",
-      "ts": "2026-09-14T07:22:04"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, ти отримав дві виплатні квитанції за серпень 2026 рок",
       "detail": "З листів від ehuman@minebeamitsumi.eu: '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu' та '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026'",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Надійшов лист від Facebook з попередженням про несанкціонований вхід, що є критично важливою інформацією для негайного реагування.",
       "module": "selfact",
       "ts": "2026-09-21T11:56:09"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-09-21T12:05:53"
     }
   ]
 }
