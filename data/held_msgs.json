@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T02:11:57.818930",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ AVAX +11.5% за 24г\n\nЗараз: 11.44 $\n24г тому: 10.26 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T02:13:00.537105",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Навчання інвестиціям » було 20.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79450"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-21T02:15:53.386900",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 20th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79449"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79449"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79449"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79449"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79449"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79449"
             }
           ]
         ]
