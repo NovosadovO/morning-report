@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T02:46:27.391553",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>3 nové pracovné ponuky</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79451"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79451"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79451"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79451"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79451"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79451"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T02:46:28.555464",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Branch JUNIOR Operations Analyst (f/m/x) в Deutsche Bank</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -383,6 +344,12 @@
       "ts": "2026-09-21T02:48:13.500117",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T02:48:16.816333",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +9.2% за 24г</b>\n\nЗараз: 11.58 $\n24г тому: 10.61 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
