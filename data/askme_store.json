@@ -22669,5 +22669,28 @@
       "summary": "Yevhenii, Classic strih, Staré Mesto 463, 040 01 Košice"
     },
     "ts": "2026-09-21T18:00:31.828458+00:00"
+  },
+  "e6f592be64": {
+    "key": "past|yevhenii classic strih upcut|2026-09-21",
+    "q": "🕰 « Yevhenii Classic strih UpCut » було 21.09 о 16:30 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+    "kind": "happened",
+    "opts": [
+      [
+        "done",
+        "✅ Відбулось"
+      ],
+      [
+        "moved",
+        "🔁 Перенеслось"
+      ],
+      [
+        "cancel",
+        "❌ Скасувалось"
+      ]
+    ],
+    "meta": {
+      "summary": "Yevhenii Classic strih UpCut"
+    },
+    "ts": "2026-09-21T18:00:36.028401+00:00"
   }
 }
