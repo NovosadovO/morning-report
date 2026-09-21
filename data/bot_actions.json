@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, на Profesia.sk з'явилися 2 нові вакансії за вашими кри",
-      "detail": "Лист від 'Profesia.sk' <support@profesia.sk> про нові робочі пропозиції.",
-      "module": "selfact",
-      "ts": "2026-09-14T02:40:04"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, зверни увагу на лист від ehuman@minebeamitsumi.eu з ви",
       "detail": "Є два листи з виплатною карткою, один з яких 'oprava formátu' (виправлення формату), що може бути важливим для Олега.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав сповіщення про вакансії LinkedIn: 'Branch JUNIOR Operations Analyst (f/m/x) в Deutsche Bank' за запитом 'Операційний спеціаліст в Prague'.",
       "module": "selfact",
       "ts": "2026-09-21T09:47:56"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на лист від The Block: «The Funding: Why",
+      "detail": "Олег цікавиться аналітикою ринку золота та біткойна, а також отримує багато інформації про криптовалюти та ринки. Лист від The Block з темою 'Why S&P Global is moving deeper into crypto' безпосередньо стосується його інтересів.",
+      "module": "selfact",
+      "ts": "2026-09-21T10:03:46"
     }
   ]
 }
