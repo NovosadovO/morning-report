@@ -1,90 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T01:31:43.068707",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-22T01:31:44.228165",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Konzultant/ka pre operácie a digitalizáciu | Bankovníctvo a </b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79508"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79508"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79508"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79508"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79508"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79508"
-            }
-          ]
-        ]
-      }
-    },
-    {
-      "ts": "2026-09-22T01:31:45.533335",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Play your CARDS right</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79507"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79507"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79507"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79507"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79507"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79507"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T01:31:46.712126",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ramaswamy Would Be The Third-Richest Elected U.S. Official I</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -410,6 +326,12 @@
       "ts": "2026-09-22T01:32:28.307720",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ BTC +6.6% за 24г\n\nЗараз: 86491.05 $\n24г тому: 81159.47 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T01:32:29.948592",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>ETH +5.1% за 24г</b>\n\nЗараз: 2773.69 $\n24г тому: 2639.82 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
