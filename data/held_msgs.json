@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:31:37.147416",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Ramaswamy Would Be The Third-Richest Elected U.S. Official I</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79506"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79506"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79506"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79506"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79506"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79506"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T00:31:38.671518",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>General Manager в Bolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -332,6 +293,12 @@
       "ts": "2026-09-22T00:32:49.091668",
       "kind": "calendar",
       "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 1-й дім: Я і новий цикл</b>\n🕐 00:00–00:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T00:32:49.985321",
+      "kind": "calendar",
+      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 1-й дім: Я і новий цикл\n🕐 00:00–00:00\n\nВідповідь збережу — це піде в аналітику тижня.",
       "keyboard": null
     }
   ]
