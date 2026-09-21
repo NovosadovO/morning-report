@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-15",
-      "detail": "автосинк з годинника: steps, calories, weight_kg, hrv, stress",
-      "module": "qwsync",
-      "ts": "2026-09-15T12:28:14"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=1064, calories=515, weight_kg=83.0, hrv=35, stress=45, date=2026-09-15, source=qwatch_auto, saved_at=2026-09-15 12:28",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "вечірній розбір, оцінка 91",
       "module": "selfact",
       "ts": "2026-09-21T21:20:45"
+    },
+    {
+      "kind": "notify",
+      "what": "Unstoppable AI: Дистанційне керування",
+      "detail": "Отримано свіжий лист від Unstoppable Domains про нову функцію Remote Control для Unstoppable AI.",
+      "module": "selfact",
+      "ts": "2026-09-21T21:28:22"
     }
   ]
 }
