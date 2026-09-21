@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, твої виплатні листи за серпень 2026 року (основний та",
-      "detail": "Свіжі листи від ehuman@minebeamitsumi.eu: 'Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu' та 'Minebea, Výplatná páska/Payslip 08/2026'.",
-      "module": "selfact",
-      "ts": "2026-09-13T22:46:50"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, зверни увагу на нову вакансію Expert Full Stack Engine",
       "detail": "Олег отримував сповіщення про вакансії за запитом Cryptocurrency в Slovakia, і прийшла нова вакансія, яка може бути для нього цікавою.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Надійшли нові листи з вакансіями від Profesia.sk та LinkedIn, що відповідає інтересам Олега до пошуку роботи.",
       "module": "selfact",
       "ts": "2026-09-21T04:51:48"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверніть увагу: Facebook повідомив про вхід у ваш облі",
+      "detail": "Лист від Facebook 'Це ви щойно увійшли неподалік Kosice з нового пристрою?' потребує негайної уваги для забезпечення безпеки облікового запису.",
+      "module": "selfact",
+      "ts": "2026-09-21T05:07:37"
     }
   ]
 }
