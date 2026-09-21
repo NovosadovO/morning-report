@@ -1,37 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T02:01:52.840526",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 The Daily Degen\n📋 The Daily Degen - September 20th, 2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Facebook\"\n📋 Це ви щойно увійшли неподалік Kosice з нового пристрою?\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: The Daily Degen",
-              "callback_data": "email_reply_79449"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Facebook",
-              "callback_data": "email_reply_79446"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79449"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79449"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T02:01:56.105455",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 The Daily Degen\n📋 The Daily Degen - September 20th, 2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Facebook\"\n📋 Це ви щойно увійшли неподалік Kosice з нового пристрою?\n📝 (AI-аналіз тимчасово недоступний)",
@@ -173,6 +142,12 @@
       "ts": "2026-09-21T02:05:49.223829",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - September 20th, 2026\n• \"Facebook\" <security@facebookmail.com> → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T02:05:50.051433",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Daily Degen  → The Daily Degen - September 20th, 2026\n• \"Facebook\"  → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
