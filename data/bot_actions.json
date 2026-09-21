@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, на вашу корпоративну пошту ehuman@minebeamitsumi.eu на",
-      "detail": "Є два листи від ehuman@minebamitsumi.eu з темою 'Minebea, Výplatná páska/Payslip 08/2026' та 'Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu'. Другий є виправленням.",
-      "module": "selfact",
-      "ts": "2026-09-13T21:44:43"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, ти отримав дві виплати за серпень 2026 року від Minebe",
       "detail": "Є два свіжі листи від 'ehuman@minebamitsumi.eu' з темами 'Minebea, Výplatná páska/Payslip 08/2026' та 'Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від Facebook 'Це ви щойно увійшли неподалік Kosice з нового пристрою?' надійшов 21.09.2026 о 04:20 (Кошице), що вимагає негайної уваги до потенційної загрози безпеці.",
       "module": "selfact",
       "ts": "2026-09-21T04:20:20"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверніть увагу: сьогодні, 21.09, о 23:00 у вас навчанн",
+      "detail": "У календарі на 21.09 стоїть подія 'Навчання інвестиціям' о 23:00, а також є листи про крипторинки та інвестиції, що вказує на його інтерес.",
+      "module": "selfact",
+      "ts": "2026-09-21T04:35:59"
     }
   ]
 }
