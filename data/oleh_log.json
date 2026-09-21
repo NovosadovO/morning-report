@@ -2,18 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_yes_run",
-      "label": "✅ Так",
-      "ts": "2026-09-03T20:27:14"
-    },
-    {
-      "t": "btn",
-      "data": "evdone_yes_done_1ibrs0fo2gchg16rmkc4qgjks8_2026-09-03",
-      "label": "✅ Виконано",
-      "ts": "2026-09-03T20:30:26"
-    },
-    {
-      "t": "btn",
       "data": "evdone_yes_done_49accdiktri5rmcm00mmmi2sn4_2026-09-03",
       "label": "✅ Виконано",
       "ts": "2026-09-03T20:30:27"
@@ -7205,6 +7193,12 @@
       "data": "rx_mute_6679b1560e",
       "label": "🙈 Не нагадуй",
       "ts": "2026-09-21T21:51:22"
+    },
+    {
+      "t": "btn",
+      "data": "mood_4",
+      "label": "😊 4",
+      "ts": "2026-09-21T21:51:29"
     }
   ]
 }
