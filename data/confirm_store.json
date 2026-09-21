@@ -11855,7 +11855,23 @@
     "pid": "cal_skip_gen_1789984922668",
     "subject": "Оплата підписок",
     "extra": {
-      "msg": "📅 АІ помітив дію:\n«Оплата підписок», 2026-09-22\nЦього тижня спишуть кошти за підписки Railway (24.09), Runable (23.09) та Railway Corporation (22.09).\n\nДодати в Google Calendar?"
+      "msg": "📅 АІ помітив дію:\n«Оплата підписок», 2026-09-22\nЦього тижня спишуть кошти за підписки Railway (24.09), Runable (23.09) та Railway Corporation (22.09).\n\nДодати в Google Calendar?",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 99225,
+        "kb": [
+          [
+            {
+              "text": "✅ Додати",
+              "callback_data": "cal_add_gen_1789984922668"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "cal_skip_gen_1789984922668"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-09-21T12:54:24.777695+00:00"
   }
