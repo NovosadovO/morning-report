@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T01:01:38.061824",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Steer your agents from your phone</b>\n👤 Unstoppable &lt;team@unstoppabledomains.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79500"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79500"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79500"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79500"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79500"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79500"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T01:01:39.427538",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>We're building a pipeline of Junior GL&amp;FA Accounting Special</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -266,6 +227,12 @@
       "ts": "2026-09-22T01:02:57.893450",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +6.0% за 24г</b>\n\nЗараз: 0.4585 $\n24г тому: 0.4325 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T01:02:58.626724",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ ONDO +6.0% за 24г\n\nЗараз: 0.4585 $\n24г тому: 0.4325 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
