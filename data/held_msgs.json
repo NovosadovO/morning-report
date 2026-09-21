@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T03:13:51.833990",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>AVAX +16.7% за 24г</b>\n\nЗараз: 11.61 $\n24г тому: 9.9544 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T03:13:52.495346",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +16.7% за 24г\n\nЗараз: 11.61 $\n24г тому: 9.9544 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79443"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-21T03:16:16.345866",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Trump drops demands to own Greenland, but the damage is done</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79442"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79442"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79442"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79442"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79442"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79442"
             }
           ]
         ]
