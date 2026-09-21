@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-09-21t12_51_17_648434": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-21T12:51:17.648434"
+  },
   "action_detect|2026-09-21t12_44_42_531068": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-09-21T11:21:10.681121"
-  },
-  "calendar_truthfix|2026-09-21t11_15_48_351158": {
-    "topic": "calendar/truthfix",
-    "gist": "Олеже, візит до дерматолога сьогодні, 21 вересня, о 10:00 завершився 15 хвилин тому. Ти прийняв сповіщення про наступний запис на 23 вересня о 10:00 і підтверди",
-    "ts": "2026-09-21T11:15:48.351158"
   }
 }
