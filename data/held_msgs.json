@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:01:02.600701",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>XRP +10.0% за 24г</b>\n\nЗараз: 1.5431 $\n24г тому: 1.4030 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T00:01:03.342751",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ XRP +10.0% за 24г\n\nЗараз: 1.5431 $\n24г тому: 1.4030 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79500"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-22T00:02:00.051014",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>We're building a pipeline of Junior GL&amp;FA Accounting Special</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79499"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79499"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79499"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79499"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79499"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79499"
             }
           ]
         ]
