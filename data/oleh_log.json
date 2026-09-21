@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_no_done_rtcotoe6g7cso7jvu6k3f2soh0_2026-09-02",
-      "label": "❌ Не виконано",
-      "ts": "2026-09-02T19:43:51"
-    },
-    {
-      "t": "btn",
       "data": "evdone_no_done_a18eabltmb4li9bbs36v2g30ns_2026-09-02",
       "label": "❌ Не виконано",
       "ts": "2026-09-02T19:43:53"
@@ -7199,6 +7193,12 @@
       "data": "am_seen_fb379e9874",
       "label": "✓ 🚫 Не треба",
       "ts": "2026-09-21T11:27:42"
+    },
+    {
+      "t": "msg",
+      "kind": "msg",
+      "text": "84.3",
+      "ts": "2026-09-21T11:27:48"
     }
   ]
 }
