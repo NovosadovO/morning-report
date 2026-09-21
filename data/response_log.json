@@ -13956,6 +13956,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Оплата підписок",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-21T12:54:46.313366+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_2528b9e6c7"
     }
   ]
 }
