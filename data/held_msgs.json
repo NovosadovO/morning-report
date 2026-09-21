@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:17:11.624769",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Unstoppable <team@unstoppabledomains.com> → Steer your agents from your phone\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T00:17:12.784307",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Unstoppable  → Steer your agents from your phone\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -148,6 +142,12 @@
       "ts": "2026-09-22T00:17:53.985015",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ETH +5.3% за 24г</b>\n\nЗараз: 2776.82 $\n24г тому: 2638.17 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T00:17:54.766190",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ ETH +5.3% за 24г\n\nЗараз: 2776.82 $\n24г тому: 2638.17 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
