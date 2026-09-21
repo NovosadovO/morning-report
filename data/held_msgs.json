@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T02:31:14.747520",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Weekly Recap: Congress Said No, The Agencies Said Yes</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79435"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79435"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79435"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79435"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79435"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79435"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T02:31:18.076720",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 50 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '50 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 84.4 кг, ціль 75 кг (тренд +1.2 кг за останні 5 замірів). Кроки: 14590 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>  🔴 1 непрочитаних\n📅 Календар: 00:00 Навчання інвестиціям, 10:00 Дерматолог",
@@ -212,6 +173,12 @@
       "ts": "2026-09-21T02:33:11.017072",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +5.7% за 24г</b>\n\nЗараз: 0.4453 $\n24г тому: 0.4214 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T02:33:11.767196",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ ONDO +5.7% за 24г\n\nЗараз: 0.4453 $\n24г тому: 0.4214 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
