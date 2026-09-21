@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T23:01:34.068307",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>What having a daughter does to a boss</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79496"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79496"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79496"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79496"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79496"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79496"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T23:01:35.293099",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Project Coordinator HU в Atlas Copco</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -233,6 +194,12 @@
       "ts": "2026-09-21T23:12:15.801974",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T23:13:23.889500",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
