@@ -17613,5 +17613,30 @@
       "summary": "Навчання інвестиціям"
     },
     "ts": "2026-09-21T02:32:46.598667+00:00"
+  },
+  "0d7ede3a23": {
+    "key": "q| facebook   це ви щойно увійшли неподалік kosice з нового пристрою",
+    "q": "• \"Facebook\"  → Це ви щойно увійшли неподалік Kosice з нового пристрою?",
+    "kind": "confirm",
+    "opts": [
+      [
+        "yes",
+        "✅ Так"
+      ],
+      [
+        "no",
+        "❌ Ні"
+      ],
+      [
+        "later",
+        "⏰ Пізніше"
+      ]
+    ],
+    "meta": {
+      "summary": "📥 СПЕРШУ ВАЖЛИВЕ",
+      "desc": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 3 nové pracovné ponuky\n• The Daily Degen  → The Daily Degen - September 20th, 2026\n• \"Facebook\"  → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n\n🧹 ",
+      "tag": "MSG_FORESIGHT_MAIL"
+    },
+    "ts": "2026-09-21T02:32:56.199832+00:00"
   }
 }
