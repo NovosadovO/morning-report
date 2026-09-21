@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-04T08:08:57.495200+00:00",
-      "category": "proactive_offer",
-      "question": "Лист чекає на відповідь",
-      "answer": "Відповісти Veronika Hricová про весілля",
-      "extra": {
-        "kind": "reply",
-        "date": "2026-08-05"
-      }
-    },
-    {
       "ts": "2026-08-04T09:38:59.084738+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -13951,6 +13941,12 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "XLM виріс на 8.3% за 24 години (зараз $0.20746); ONDO (твоя позиція) виріс на 9.1% за 24 години (зараз $0.44694); весь с"
+    },
+    {
+      "ts": "2026-09-21T17:36:33.878927+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "lc_skip_a60dfa3e6a"
     }
   ]
 }
