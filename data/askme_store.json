@@ -22888,5 +22888,31 @@
       "tag": "vip_email"
     },
     "ts": "2026-09-21T19:23:13.396110+00:00"
+  },
+  "cf166066c0": {
+    "key": "cal|оплата паркування в кошице зона a1",
+    "q": "📅 Хочу записати в календар:\n\n« 💳 Оплата паркування в Кошице (зона A1) »\n🕐 21.09 о 17:25\n\nАвтоматично з листа.\nВід: Ubian Eshop <no-reply@ubian.sk>\nТема: UBIAN - Potvrdenie o zaplatení\nObjednávka č. 14379210 vo výške 2.97 EUR zo dňa 9/21/2026 5:25 PM bola úspešne zrealizovaná.\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "💳 Оплата паркування в Кошице (зона A1)",
+      "desc": "Автоматично з листа.\nВід: Ubian Eshop <no-reply@ubian.sk>\nТема: UBIAN - Potvrdenie o zaplatení\nObjednávka č. 14379210 vo výške 2.97 EUR zo dňa 9/21/2026 5:25 PM bola úspešne zrealizovaná.",
+      "minutes": 60,
+      "start": "2026-09-21T17:25:00"
+    },
+    "ts": "2026-09-21T19:26:49.723502+00:00"
   }
 }
