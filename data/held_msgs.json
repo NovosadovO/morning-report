@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T23:15:46.957024",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔴 Inside Defence: Eric Schmidt on the era of AI warfare</b>\n👤 \"Zanny Minton Beddoes at The Economist\" &lt;noreply@e",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79498"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79498"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79498"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79498"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79498"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79498"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T23:15:48.287396",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Reservation evaluation</b>\n👤 noreply@atguest.com",
@@ -299,6 +260,12 @@
       "ts": "2026-09-21T23:19:55.650942",
       "kind": "calendar",
       "text": "🔔 <b>Через 30 хвилин</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 2-й дім: Фінанси й цінності</b>\n🕐 00:00–00:00\n\n<i>Виходь, щоб не бігти.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T23:19:56.360538",
+      "kind": "calendar",
+      "text": "🔔 Через 30 хвилин\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 2-й дім: Фінанси й цінності\n🕐 00:00–00:00\n\nВиходь, щоб не бігти.",
       "keyboard": null
     }
   ]
