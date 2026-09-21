@@ -1,4 +1,29 @@
 {
+  "healthai|2026-09-21t11_39_50_879799": {
+    "topic": "healthai",
+    "gist": "Олеже, за останні 36 годин дані здоров'я не оновлювались, тому зараз ми працюємо з інформацією станом на 20 вересня. Твоя вага стабільно тримається на позначці ",
+    "ts": "2026-09-21T11:39:50.879799"
+  },
+  "action_detect|2026-09-21t11_30_11_823329": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Приготувати обід\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Приготувати легкий та поживний обід",
+    "ts": "2026-09-21T11:30:11.823329"
+  },
+  "action_detect|2026-09-21t11_27_53_833550": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записати вагу в Apple Health\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Не забудь записати пото",
+    "ts": "2026-09-21T11:27:53.833550"
+  },
+  "planner|2026-09-21t11_27_42_919728": {
+    "topic": "planner",
+    "gist": "```json [   {     \"title\": \"Оновлення ваги\",     \"date\": \"2026-09-21\",     \"time\": null,     \"allday\": true   } ] ```",
+    "ts": "2026-09-21T11:27:42.919728"
+  },
+  "selfact|2026-09-21t11_21_25_369939": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підозрілий вхід у Facebook\",     \"text\": \"Олеже, щойно надійшов лист від Facebook про вхід у ваш обліковий зап",
+    "ts": "2026-09-21T11:21:25.369939"
+  },
   "openloop_promises|2026-09-21t11_21_10_681121": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -273,40 +298,5 @@
     "topic": "healthai",
     "gist": "✨ Олег, бачу, що ти чудово відновився минулої ночі, адже твій сон склав 10:07, з яких 2:30 був глибокий сон, це значно краще за середні 7.3 год за 14 днів і є ч",
     "ts": "2026-09-21T10:06:04.902712"
-  },
-  "selfact|2026-09-21t10_03_42_422199": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від The Block: «The Funding: Why S&P Global is moving deeper into crypto». Це може б",
-    "ts": "2026-09-21T10:03:42.422199"
-  },
-  "action_detect|2026-09-21t10_02_36_299821": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": \"2026-09-21\", \"action_time\": null, \"action_summary\": \"С",
-    "ts": "2026-09-21T10:02:36.299821"
-  },
-  "action_detect|2026-09-21t10_02_24_623495": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Перевірити, чи прийнято Armolopid",
-    "ts": "2026-09-21T10:02:24.623495"
-  },
-  "action_detect|2026-09-21t10_02_13_656594": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оплатити Strava та Railway Corporation\", \"action_date\": \"2023-09-22\", \"action_time\": null, \"action_summary\": \"Онови",
-    "ts": "2026-09-21T10:02:13.656594"
-  },
-  "briefing_truthfix|2026-09-21t10_02_07_211893": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, чи не час, поки ти на вихідному, заглянути до нагадувань по Strava, адже прострочені платежі тягнуться з 4 серпня, а вже завтра, 22.09, чекає оплата Rail",
-    "ts": "2026-09-21T10:02:07.211893"
-  },
-  "planner|2026-09-21t11_27_42_919728": {
-    "topic": "planner",
-    "gist": "```json [   {     \"title\": \"Оновлення ваги\",     \"date\": \"2026-09-21\",     \"time\": null,     \"allday\": true   } ] ```",
-    "ts": "2026-09-21T11:27:42.919728"
-  },
-  "selfact|2026-09-21t11_21_25_369939": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підозрілий вхід у Facebook\",     \"text\": \"Олеже, щойно надійшов лист від Facebook про вхід у ваш обліковий зап",
-    "ts": "2026-09-21T11:21:25.369939"
   }
 }
