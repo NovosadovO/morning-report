@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:02:01.331926",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔴 Inside Defence: Eric Schmidt on the era of AI warfare</b>\n👤 \"Zanny Minton Beddoes at The Economist\" &lt;noreply@e",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79498"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79498"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79498"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79498"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79498"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79498"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T00:02:02.647511",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Reservation evaluation</b>\n👤 noreply@atguest.com",
@@ -233,6 +194,12 @@
       "ts": "2026-09-22T00:03:12.709118",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +5.9% за 24г</b>\n\nЗараз: 0.4508 $\n24г тому: 0.4259 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T00:03:13.413004",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ ONDO +5.9% за 24г\n\nЗараз: 0.4508 $\n24г тому: 0.4259 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
