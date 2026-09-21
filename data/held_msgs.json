@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T03:02:53.942485",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\" <support@profesia.sk> → 3 nové pracovné ponuky\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - September 20th, 2026\n• \"Facebook\" <security@facebookmail.com> → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n\n🧹 Реклама: 3 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T03:02:54.589563",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 3 nové pracovné ponuky\n• The Daily Degen  → The Daily Degen - September 20th, 2026\n• \"Facebook\"  → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n\n🧹 Реклама: 3 — можна пропустити.",
@@ -148,6 +142,12 @@
       "ts": "2026-09-21T03:05:57.433398",
       "kind": "watchdog",
       "text": "👁 <b>Я осліп на частину даних</b>\n\n🔴 <b>strava</b> — функції get_activities немає в monitor.py\n\n<i>Поки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T03:05:58.067098",
+      "kind": "watchdog",
+      "text": "👁 Я осліп на частину даних\n\n🔴 strava — функції get_activities немає в monitor.py\n\nПоки це не виправлено, я НЕ можу стежити за цією частиною. Краще скажу прямо, ніж буду молчати, наче все гаразд.",
       "keyboard": null
     }
   ]
