@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T02:46:32.185040",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Nubank launched in 35 countries without a single banking lic</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79443"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79443"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79443"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79443"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79443"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79443"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T02:46:33.363637",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Trump drops demands to own Greenland, but the damage is done</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
@@ -251,6 +212,12 @@
       "ts": "2026-09-21T02:49:20.697576",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Навчання інвестиціям » було 20.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T02:49:37.974143",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\" <support@profesia.sk> → 3 nové pracovné ponuky\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - September 20th, 2026\n• \"Facebook\" <security@facebookmail.com> → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
