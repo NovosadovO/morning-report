@@ -22623,5 +22623,28 @@
       "kind": "note"
     },
     "ts": "2026-09-21T17:52:08.460299+00:00"
+  },
+  "46e1a8acc3": {
+    "key": "note|олег отримав кілька нових листів з linkedin від genai works",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег отримав кілька нових листів з LinkedIn від GenAI Works, »\n\nОлег отримав кілька нових листів з LinkedIn від GenAI Works, Steve Nouri та The Economist, а також сповіщення про вакансію 'Manažér obchodnej agentúry v Trebišove' від UNIQA CZ.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег отримав кілька нових листів з LinkedIn від GenAI Works,",
+      "desc": "Олег отримав кілька нових листів з LinkedIn від GenAI Works, Steve Nouri та The Economist, а також сповіщення про вакансію 'Manažér obchodnej agentúry v Trebišove' від UNIQA CZ.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-21T17:52:18.984279+00:00"
   }
 }
