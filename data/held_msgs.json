@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:02:08.734899",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Unstoppable\n📋 Steer your agents from your phone\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Unstoppable",
-              "callback_data": "email_reply_79500"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79500"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79500"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T00:02:11.278972",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Unstoppable\n📋 Steer your agents from your phone\n📝 (AI-аналіз тимчасово недоступний)",
@@ -167,6 +142,12 @@
       "ts": "2026-09-22T00:03:16.809590",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ ETH +5.5% за 24г\n\nЗараз: 2770.17 $\n24г тому: 2626.97 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T00:03:19.412260",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>BNB +5.1% за 24г</b>\n\nЗараз: 804.39 $\n24г тому: 765.54 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
