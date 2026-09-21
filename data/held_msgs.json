@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T03:00:56.941435",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Це ви щойно увійшли неподалік Kosice з нового пристрою?</b>\n👤 \"Facebook\" &lt;security@facebookmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79446"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79446"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79446"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79446"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79446"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79446"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T03:00:58.238611",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Nubank launched in 35 countries without a single banking lic</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
@@ -284,6 +245,12 @@
       "ts": "2026-09-21T03:03:01.518219",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T03:03:02.245757",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
