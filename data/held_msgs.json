@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T23:27:05.702030",
-      "kind": "calendar",
-      "text": "🔔 <b>Через 30 хвилин</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 2-й дім: Фінанси й цінності</b>\n🕐 00:00–00:00\n\n<i>Виходь, щоб не бігти.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T23:27:06.414883",
       "kind": "calendar",
       "text": "🔔 Через 30 хвилин\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 2-й дім: Фінанси й цінності\n🕐 00:00–00:00\n\nВиходь, щоб не бігти.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T23:31:03.188629",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>General Manager в Bolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79505"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79505"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79505"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79505"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79505"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79505"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
