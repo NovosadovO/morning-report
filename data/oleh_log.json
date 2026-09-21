@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "rx_ok_45b1569384",
-      "label": "👌 Прийняв",
-      "ts": "2026-09-03T14:49:43"
-    },
-    {
-      "t": "btn",
       "data": "rx_mute_af04592764",
       "label": "🙈 Не нагадуй",
       "ts": "2026-09-03T14:50:18"
@@ -7199,6 +7193,12 @@
       "kind": "msg",
       "text": "Сьогодні я не спав 2 год.звідки такі дані?",
       "ts": "2026-09-21T15:11:00"
+    },
+    {
+      "t": "msg",
+      "kind": "msg",
+      "text": "Analysis by Sleep Cycle alarm clock. Download here: https://www.sleepcycle.com #sleepCycle",
+      "ts": "2026-09-21T15:11:29"
     }
   ]
 }
