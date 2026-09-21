@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-04T17:20:42.980775+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_sn_67d55377ca"
-    },
-    {
       "ts": "2026-08-04T17:20:50.455960+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13956,6 +13950,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_tea"
+    },
+    {
+      "ts": "2026-09-21T20:16:53.001855+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
