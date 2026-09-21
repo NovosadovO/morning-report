@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T23:15:50.876757",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Project Coordinator HU в Atlas Copco</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79494"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79494"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79494"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79494"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79494"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79494"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T23:15:53.443799",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -200,6 +161,12 @@
       "ts": "2026-09-21T23:19:59.070961",
       "kind": "calendar",
       "text": "📅 Це вже завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 3-й дім: Спілкування й навчання\n📅 23.09 (Wed) — післязавтра\n🕐 00:00–00:00\n\nПодивись, чи не конфліктує зі зміною, і сплануй сон.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T23:20:46.036928",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
