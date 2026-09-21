@@ -11784,5 +11784,45 @@
       }
     },
     "ts": "2026-09-20T22:07:09.924273+00:00"
+  },
+  "533064062c": {
+    "action": "cw_miss",
+    "pid": "b218bd9901",
+    "subject": "Дерматолог",
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 99196,
+        "kb": [
+          [
+            {
+              "text": "✅ Було",
+              "callback_data": "cw_done_b218bd9901"
+            },
+            {
+              "text": "❌ Не було",
+              "callback_data": "cw_miss_b218bd9901"
+            }
+          ],
+          [
+            {
+              "text": "⏭ Перенесли",
+              "callback_data": "cw_moved_b218bd9901"
+            },
+            {
+              "text": "✍️ Нотатка",
+              "callback_data": "cw_note_b218bd9901"
+            }
+          ],
+          [
+            {
+              "text": "🤖 Що далі?",
+              "callback_data": "cw_next_b218bd9901"
+            }
+          ]
+        ]
+      }
+    },
+    "ts": "2026-09-21T11:27:30.319663+00:00"
   }
 }
