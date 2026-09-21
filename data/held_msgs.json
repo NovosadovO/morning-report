@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T23:28:03.329858",
-      "kind": "calendar",
-      "text": "🔔 Через 30 хвилин\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 2-й дім: Фінанси й цінності\n🕐 00:00–00:00\n\nВиходь, щоб не бігти.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T23:28:05.812250",
       "kind": "calendar",
       "text": "📅 <b>Це вже завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 3-й дім: Спілкування й навчання</b>\n📅 23.09 (Wed) — післязавтра\n🕐 00:00–00:00\n\n<i>Подивись, чи не конфліктує зі зміною, і сплануй сон.</i>",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79497"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-21T23:31:09.824490",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>What having a daughter does to a boss</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79496"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79496"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79496"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79496"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79496"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79496"
             }
           ]
         ]
