@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T03:31:23.148150",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>3 nové pracovné ponuky</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79451"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79451"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79451"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79451"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79451"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79451"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T03:31:24.626864",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Branch JUNIOR Operations Analyst (f/m/x) в Deutsche Bank</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -383,6 +344,12 @@
       "ts": "2026-09-21T03:33:33.478039",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 3 nové pracovné ponuky\n• The Daily Degen  → The Daily Degen - September 20th, 2026\n• \"Facebook\"  → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T03:33:36.310259",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 22.09</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
