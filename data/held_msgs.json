@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T00:19:03.466191",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>dm-Newsletter</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «✨ Dnes svietia hviezdy iba pre Vás»\n\n<i>«96 ✨ Dnes svietia hviezdy iba pre Vás div, td, span, a, p, h1, h2, h3, ul { font-family: Arial, Helvetica, sans-serif !important; } table { border-collapse: collapse; border-spacing: 0; } body { background-color:#ffffff !important;} :root { color-scheme: light dark; supported-color-schemes: light da...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79509"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79509"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79509"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79509"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79509"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79509"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T00:19:09.714475",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Unstoppable <team@unstoppabledomains.com> → Steer your agents from your phone\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -181,6 +142,12 @@
       "ts": "2026-09-22T00:19:49.241181",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 🔭 Юпітер переходить у 2-й дім — 19°\n📅 26.09 (Sat) — через 4 дн.\n🕐 00:00–00:00\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T00:19:51.561649",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 6-й дім: Робота й здоров’я</b>\n📅 26.09 (Sat) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
       "keyboard": null
     }
   ]
