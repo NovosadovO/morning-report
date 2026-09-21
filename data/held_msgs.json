@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T23:31:03.188629",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>General Manager в Bolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79505"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79505"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79505"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79505"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79505"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79505"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T23:31:04.635841",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Steer your agents from your phone</b>\n👤 Unstoppable &lt;team@unstoppabledomains.com&gt;",
@@ -431,6 +392,12 @@
       "ts": "2026-09-21T23:33:11.838977",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T23:33:12.639613",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
