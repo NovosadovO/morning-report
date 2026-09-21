@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T03:13:49.343079",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T03:13:51.833990",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +16.7% за 24г</b>\n\nЗараз: 11.61 $\n24г тому: 9.9544 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79446"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-21T03:16:15.123045",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Nubank launched in 35 countries without a single banking lic</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79443"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79443"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79443"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79443"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79443"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79443"
             }
           ]
         ]
