@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T02:46:28.555464",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Branch JUNIOR Operations Analyst (f/m/x) в Deutsche Bank</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79450"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79450"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79450"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79450"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79450"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79450"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T02:46:29.734137",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - September 20th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -350,6 +311,12 @@
       "ts": "2026-09-21T02:48:16.816333",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +9.2% за 24г</b>\n\nЗараз: 11.58 $\n24г тому: 10.61 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T02:48:17.501847",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +9.2% за 24г\n\nЗараз: 11.58 $\n24г тому: 10.61 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
