@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T23:01:32.832801",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Reservation evaluation</b>\n👤 noreply@atguest.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79497"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79497"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79497"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79497"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79497"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79497"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T23:01:34.068307",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>What having a daughter does to a boss</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
@@ -266,6 +227,12 @@
       "ts": "2026-09-21T23:12:14.994077",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T23:12:15.801974",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
