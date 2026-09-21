@@ -22429,5 +22429,33 @@
       "tag": "vip_email"
     },
     "ts": "2026-09-21T16:15:37.521326+00:00"
+  },
+  "7f2c773a47": {
+    "key": "reminder|стрижка у yevhenii",
+    "q": "🔔 Хочу поставити нагадування:\n\n« Стрижка у Yevhenii »\n🕐 21.09 о 16:30\n\nОлеже, у тебе стрижка у Yevhenii, Classic strih, Staré Mesto 463, 040 01 Košice. Не забудь про це!\n\nПоставити?",
+    "kind": "remind",
+    "opts": [
+      [
+        "save",
+        "🔔 Так, нагадай"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Стрижка у Yevhenii",
+      "desc": "Олеже, у тебе стрижка у Yevhenii, Classic strih, Staré Mesto 463, 040 01 Košice. Не забудь про це!",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "reminder",
+      "start": "2026-09-21T16:30:00"
+    },
+    "ts": "2026-09-21T16:18:58.313517+00:00"
   }
 }
