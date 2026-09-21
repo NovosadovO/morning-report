@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T23:54:45.578655",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T23:55:24.876816",
       "kind": "calendar",
       "text": "📅 <b>Це вже завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 3-й дім: Спілкування й навчання</b>\n📅 23.09 (Wed) — післязавтра\n🕐 00:00–00:00\n\n<i>Подивись, чи не конфліктує зі зміною, і сплануй сон.</i>",
@@ -149,6 +143,45 @@
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 6-й дім: Робота й здоров’я\n📅 26.09 (Sat) — через 4 дн.\n🕐 00:00–00:00\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T00:00:38.094919",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Breakdown</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🟪 Play your CARDS right»\n\n<i>«View image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/9f199753-ca31-4e3d-9435-5e12896ecff5/BD_NL_Banner_Heading.png?t=1781793903)\r\nCaption: \r\n\r\nHappy Monday, readers! We’ve got the [0xResearch](https://blockworks.com/newsletter...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79507"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79507"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79507"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79507"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79507"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79507"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
