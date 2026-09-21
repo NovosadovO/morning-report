@@ -1,24 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T01:59:45.136257",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Daily Degen  → The Daily Degen - September 20th, 2026\n• \"Facebook\"  → Це ви щойно увійшли неподалік Kosice з нового пристрою?\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-21T01:59:47.305628",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 21.09</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-21T01:59:48.152161",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 ВІЛЬНЕ ВІКНО 21.09 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T01:59:50.359177",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 22.09</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -326,6 +308,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +11.7% за 24г\n\nЗараз: 11.34 $\n24г тому: 10.15 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T02:01:46.029289",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Weekly Recap: Congress Said No, The Agencies Said Yes</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79435"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79435"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79435"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79435"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79435"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79435"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
