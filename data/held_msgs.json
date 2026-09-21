@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T01:16:15.121627",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔴 Inside Defence: Eric Schmidt on the era of AI warfare</b>\n👤 \"Zanny Minton Beddoes at The Economist\" &lt;noreply@e",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79498"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79498"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79498"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79498"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79498"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79498"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T01:16:18.385832",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔭 Юпітер переходить у 2-й дім — 19°</b>\n📅 26.09 (Sat) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
@@ -200,6 +161,12 @@
       "ts": "2026-09-22T01:17:38.595364",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>BTC +6.8% за 24г</b>\n\nЗараз: 86665.78 $\n24г тому: 81177.08 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T01:17:39.338904",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ BTC +6.8% за 24г\n\nЗараз: 86665.78 $\n24г тому: 81177.08 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
