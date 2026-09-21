@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T23:41:29.940254",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-21T23:42:10.792114",
       "kind": "calendar",
       "text": "📅 <b>Це вже завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 3-й дім: Спілкування й навчання</b>\n📅 23.09 (Wed) — післязавтра\n🕐 00:00–00:00\n\n<i>Подивись, чи не конфліктує зі зміною, і сплануй сон.</i>",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79500"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-21T23:46:31.408507",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>We're building a pipeline of Junior GL&amp;FA Accounting Special</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79499"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79499"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79499"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79499"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79499"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79499"
             }
           ]
         ]
