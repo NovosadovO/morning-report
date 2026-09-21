@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "сповіщення про здоров'я: stale",
-      "detail": "📵 Дані здоров'я не оновлювались 36 год (останні — 2026-09-13). Автосинк із годинника міг зламатись",
-      "module": "healthai",
-      "ts": "2026-09-14T11:46:39"
-    },
-    {
-      "kind": "notify",
       "what": "Проблеми airBaltic",
       "detail": "Олег отримав листа від airBaltic <news@flights.airbaltic.com> з темою 'An update from airBaltic– flights continue as normal', де йдеться про фінансову реорганізацію.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на сьогодні, 21.09, о 23:00 зазначено 'Навчання інвестиціям'.",
       "module": "selfact",
       "ts": "2026-09-21T13:13:47"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-09-21",
+      "detail": "автосинк з годинника: hr_avg, calories, sleep_total_min",
+      "module": "qwsync",
+      "ts": "2026-09-21T13:13:53"
     }
   ]
 }
