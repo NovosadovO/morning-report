@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-21T03:16:16.345866",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Trump drops demands to own Greenland, but the damage is done</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79442"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79442"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79442"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79442"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79442"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79442"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-21T03:16:20.172738",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Остання пробіжка — 50 ДН. ТОМУ (02.08 19:32): 7.02 км за 44 хв, темп 6:23 хв/км. ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні! ВАЖЛИВО: довіряй лише слову '50 дн. тому' — це актуальний розрахунок, не вигадуй іншу дату.\n⚖️ Здоров'я: Вага: 84.4 кг, ціль 75 кг (тренд +1.2 кг за останні 5 замірів). Кроки: 14590 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 00:00 Навчання інвестиціям, 10:00 Дерматолог",
@@ -218,6 +179,12 @@
       "ts": "2026-09-21T03:18:31.077730",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +16.8% за 24г</b>\n\nЗараз: 11.59 $\n24г тому: 9.9246 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-21T03:18:31.864325",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +16.8% за 24г\n\nЗараз: 11.59 $\n24г тому: 9.9246 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
