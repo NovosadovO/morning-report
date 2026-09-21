@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T01:30:54.533908",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>ETH +5.2% за 24г</b>\n\nЗараз: 2773.69 $\n24г тому: 2637.65 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T01:30:55.160885",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ ETH +5.2% за 24г\n\nЗараз: 2773.69 $\n24г тому: 2637.65 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -398,6 +392,12 @@
       "ts": "2026-09-22T01:32:15.303270",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T01:32:17.961706",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>DOGE +14.6% за 24г</b>\n\nЗараз: 0.1001 $\n24г тому: 0.0873 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
