@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олеже, чи потрібно мені нагадати тобі оновити платіжну інфор",
-      "detail": "Олег запитував 'Чому strava не працює?' (15.09 12:27) і є невиконаний дедлайн 'Підписка Strava — оновлення платіжної інформації'.",
-      "module": "selfact",
-      "ts": "2026-09-15T15:35:52"
-    },
-    {
       "kind": "notify",
       "what": "Олеже, зверни увагу на лист від MinebeaMitsumi.eu з посиланн",
       "detail": "Зі свіжих листів: 'від Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> | 2 текст: https://reality.bazos.sk/inzerat/195379712/na-predaj-moderne-zrekonstruovany-3-izbovy-byt-65m.php'",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, weight_kg, health_score, sleep_total_min",
       "module": "qwsync",
       "ts": "2026-09-21T22:23:02"
+    },
+    {
+      "kind": "note",
+      "what": "збережено дані здоров'я",
+      "detail": "steps=9033, hr_avg=85, weight_kg=83.0, health_score=95, sleep_total_min=120, sleep_hours=2.0, date=2026-09-21, source=qwatch_auto, saved_at=2026-09-21 22:22",
+      "module": "healthai",
+      "ts": "2026-09-21T22:23:05"
     }
   ]
 }
