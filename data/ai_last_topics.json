@@ -1,4 +1,54 @@
 {
+  "msg_event_soon|2026-09-21t10_47_25_495064": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ✅  Ранок понеділка — чудова нагода спланувати тиждень, особливо з огляду на візит до дерматолога, який ти прийняв до відома на середу, 23.09, о 10",
+    "ts": "2026-09-21T10:47:25.495064"
+  },
+  "action_detect|2026-09-21t10_44_08_366197": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-21T10:44:08.366197"
+  },
+  "action_detect|2026-09-21t10_42_34_978478": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити підписку Strava\", \"action_date\": \"2023-09-21\", \"action_time\": null, \"action_summary\": \"Оновити платіжну інф",
+    "ts": "2026-09-21T10:42:34.978478"
+  },
+  "msg_deep_analysis_truthfix|2026-09-21t10_42_26_289832": {
+    "topic": "MSG_DEEP_ANALYSIS/truthfix",
+    "gist": "Олеже, доброго ранку!  Бачу, ти прийняв до відома візит до дерматолога на 23.09 о 10:00. Це добре, що в календарі порядок.  Ось що варто врахувати на найближчі ",
+    "ts": "2026-09-21T10:42:26.289832"
+  },
+  "msg_deep_analysis|2026-09-21t10_42_16_664466": {
+    "topic": "MSG_DEEP_ANALYSIS",
+    "gist": "Привіт Олеже! 👋  Бачу, ти сьогодні вранці вже активний, переглядаєш повідомлення. Добре, що звернув увагу на візит до дерматолога на 23.09 — тепер у календарі п",
+    "ts": "2026-09-21T10:42:16.664466"
+  },
+  "action_detect|2026-09-21t10_40_50_495136": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-21T10:40:50.495136"
+  },
+  "action_detect|2026-09-21t10_40_39_695770": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-21T10:40:39.695770"
+  },
+  "action_detect|2026-09-21t10_40_39_647386": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-21T10:40:39.647386"
+  },
+  "action_detect|2026-09-21t10_40_28_632963": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-21T10:40:28.632963"
+  },
+  "action_detect|2026-09-21t10_36_00_627956": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-21T10:36:00.627956"
+  },
   "selfact|2026-09-21t10_34_42_184510": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, зверніть увагу: платіж за підписку Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.",
@@ -248,65 +298,5 @@
     "topic": "themes_ai",
     "gist": "Олеже, почнемо з найактивнішого тренду: твій криптопортфель за останні 24 години додав $352, досягнувши $5,817. Це зростання варто використати для перегляду стр",
     "ts": "2026-09-21T09:03:07.811434"
-  },
-  "email_ai_item|2026-09-21t09_02_53_828056": {
-    "topic": "email_ai_item",
-    "gist": "```json {   \"description\": \"Цей лист є щоденним інформаційним бюлетенем «The Daily Degen» від 20 вересня 2026 року, що містить огляд ринку криптовалют, Nasdaq 1",
-    "ts": "2026-09-21T09:02:53.828056"
-  },
-  "email_ai_item|2026-09-21t09_02_42_818864": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від Profesia.sk містить три нові пропозиції роботи в Кошицях за домовленістю (бригади). Він також пропонує оновити критерії по",
-    "ts": "2026-09-21T09:02:42.818864"
-  },
-  "email_ai_item|2026-09-21t09_02_30_435705": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від Profesia.sk містить персоналізовані пропозиції роботи, яких є 20 нових. Лист пропонує можливість відредагувати критерії по",
-    "ts": "2026-09-21T09:02:30.435705"
-  },
-  "personal_ai_truthfix|2026-09-21t09_01_30_981084": {
-    "topic": "personal_ai/truthfix",
-    "gist": "Зараз понеділок, 21 вересня 2026 року, 09:01.  Ти відклав візит до дерматолога, запланований на 21.09, хоча дані за 20.09 (19 годин тому) показували, що ти пого",
-    "ts": "2026-09-21T09:01:30.981084"
-  },
-  "personal_ai|2026-09-21t09_01_26_861863": {
-    "topic": "personal_ai",
-    "gist": "Олеже, зараз 09:01, і найближча важлива подія в календарі – візит до дерматолога о 10:00, що означає, що залишилася година. Враховуючи, що ти вже пройшов 14590 ",
-    "ts": "2026-09-21T09:01:26.861863"
-  },
-  "action_detect|2026-09-21t09_01_08_002924": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-21T09:01:08.002924"
-  },
-  "action_detect|2026-09-21t09_00_54_454792": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-21T09:00:54.454792"
-  },
-  "action_detect|2026-09-21t09_00_42_791782": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-21T09:00:42.791782"
-  },
-  "selfact|2026-09-21t09_00_03_640550": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Підозрілий вхід на Facebook\",     \"text\": \"Олег, зверни увагу: Facebook повідомив про вхід з нового пристрою н",
-    "ts": "2026-09-21T09:00:03.640550"
-  },
-  "action_detect|2026-09-21t08_50_48_806488": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-09-21\", \"action_time\": \"10:00\", \"action_summary\": \"Відвідати дерматолог",
-    "ts": "2026-09-21T08:50:48.806488"
-  },
-  "action_detect|2026-09-21t10_40_28_632963": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-21T10:40:28.632963"
-  },
-  "action_detect|2026-09-21t10_36_00_627956": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-21T10:36:00.627956"
   }
 }
