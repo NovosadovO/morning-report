@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T03:29:38.950270",
-      "kind": "calendar",
-      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔭 Юпітер переходить у 2-й дім — 19°</b>\n📅 26.09 (Sat) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T03:29:39.607834",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 🔭 Юпітер переходить у 2-й дім — 19°\n📅 26.09 (Sat) — через 4 дн.\n🕐 00:00–00:00\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79508"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-22T03:30:59.145387",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 Play your CARDS right</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79507"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79507"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79507"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79507"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79507"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79507"
             }
           ]
         ]
