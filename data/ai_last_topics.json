@@ -1,4 +1,9 @@
 {
+  "foresight|2026-09-22t08_40_26_056960": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-22T08:40:26.056960"
+  },
   "email_ai_item|2026-09-22t08_36_01_514569": {
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист від Profesia.sk містить 7 нових пропозицій роботи за критеріями 'Кошице, на договір (бригади)'. Олег може переглянути ці пр",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-21\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
     "ts": "2026-09-22T07:02:19.963750"
-  },
-  "action_detect|2026-09-22t07_02_07_552790": {
-    "topic": "action_detect",
-    "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-22\", \"action_time\": \"18:00\", \"action_summary\"",
-    "ts": "2026-09-22T07:02:07.552790"
   }
 }
