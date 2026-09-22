@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, у тебе є непрочитаний лист від DefiLlama Newsletter пр",
-      "detail": "Отримано лист від DefiLlama Newsletter з темою 'We stopped trusting posted APY and built a better way to verify yields'.",
-      "module": "selfact",
-      "ts": "2026-09-15T21:30:14"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-09-15",
       "detail": "автосинк з годинника: steps, hr_avg, calories, stress, sleep_total_min",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на 22.09 є подія '23:00 Соляр — 2-й дім: Фінанси й цінності'.",
       "module": "selfact",
       "ts": "2026-09-22T08:25:38"
+    },
+    {
+      "kind": "notify",
+      "what": "Не забудьте, що сьогодні о 23:00 починається Соляр — 2-й дім",
+      "detail": "Подія 'Соляр — 2-й дім: Фінанси й цінності' запланована на сьогодні о 23:00.",
+      "module": "selfact",
+      "ts": "2026-09-22T08:42:09"
     }
   ]
 }
