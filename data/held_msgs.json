@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T23:31:27.724559",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Project Manager - eCommerce Deployments в Caterpillar Inc.</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79565"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79565"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79565"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79565"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79565"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79565"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T23:31:29.159401",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your exchange's numbers might not be real. Here's how to che</b>\n👤 DefiLlama Newsletter &lt;defillama@mail.beehiiv.com&gt;",
@@ -239,6 +200,12 @@
       "ts": "2026-09-22T23:34:46.644110",
       "kind": "calendar",
       "text": "🔔 Пора збиратись — 30 хв\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 3-й дім: Спілкування й навчання\n🕐 00:00–00:00\n\nОстанні хвилини — перевір, чи все взяв.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T23:34:48.996990",
+      "kind": "calendar",
+      "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 4-й дім: Дім і родина</b>\n📅 24.09 (Thu) — післязавтра\n🕐 00:00–00:00\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
       "keyboard": null
     }
   ]
