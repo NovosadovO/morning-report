@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T02:41:06.422821",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 6-й дім: Робота й здоров’я\n📅 26.09 (Sat) — через 4 дн.\n🕐 00:00–00:00\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T02:41:09.956737",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Unstoppable <team@unstoppabledomains.com> → Steer your agents from your phone\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -148,6 +142,12 @@
       "ts": "2026-09-22T02:42:50.249842",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ DOGE +13.7% за 24г\n\nЗараз: 0.1004 $\n24г тому: 0.0883 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T02:42:52.171664",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>XRP +7.5% за 24г</b>\n\nЗараз: 1.5285 $\n24г тому: 1.4214 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
