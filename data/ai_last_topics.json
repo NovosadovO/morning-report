@@ -1,4 +1,19 @@
 {
+  "msg_vip_email|2026-09-22t19_55_28_695302": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Цей вечір вівторка, 22 вересня, приносить із собою не лише завершення дня, а й черговий зріз важливих подій та показників, що можуть вплинути н",
+    "ts": "2026-09-22T19:55:28.695302"
+  },
+  "selfact|2026-09-22t19_50_06_581538": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від StartEngine: The Innovators Fund, який має експозицію до OpenAI, закривається ць",
+    "ts": "2026-09-22T19:50:06.581538"
+  },
+  "mailcal_extract|2026-09-22t19_48_43_330825": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-22T19:48:43.330825"
+  },
   "email_ai_item|2026-09-22t19_47_12_519421": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії, що відповідають налаштуванням користувача. Зокрема, пропонується дві вакансії в Кош",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Конференція NBS\", \"action_date\": \"2026-10-08\", \"action_time\": null, \"action_summary\": \"Відвідати конференцію NBS \\\"",
     "ts": "2026-09-22T18:02:47.657241"
-  },
-  "action_detect|2026-09-22t18_02_32_514844": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-22\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-22T18:02:32.514844"
-  },
-  "action_detect|2026-09-22t18_02_32_305686": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-22\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-22T18:02:32.305686"
-  },
-  "action_detect|2026-09-22t18_02_21_423099": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-22\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-22T18:02:21.423099"
   }
 }
