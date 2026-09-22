@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T23:55:03.012362",
-      "kind": "calendar",
-      "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 4-й дім: Дім і родина\n📅 24.09 (Thu) — післязавтра\n🕐 00:00–00:00\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T23:55:38.449617",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T00:00:57.142368",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Breakdown</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🟪 When the thesis plays out»\n\n<i>«View image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/9f199753-ca31-4e3d-9435-5e12896ecff5/BD_NL_Banner_Heading.png?t=1781793903)\r\nCaption: \r\n\r\n# The price is the product\r\n\r\nCrypto’s reflexivity never ceases to amaze me. Price...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79572"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79572"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79572"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79572"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79572"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79572"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
