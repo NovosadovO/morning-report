@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T00:31:10.627287",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 22nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79570"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79570"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79570"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79570"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79570"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79570"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T00:31:12.035424",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin ETFs see biggest inflow in 11 months</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -266,6 +227,12 @@
       "ts": "2026-09-23T00:32:59.620116",
       "kind": "calendar",
       "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 7-й дім: Партнерство</b>\n📅 27.09 (Sun) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T00:33:00.511978",
+      "kind": "calendar",
+      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 7-й дім: Партнерство\n📅 27.09 (Sun) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
       "keyboard": null
     }
   ]
