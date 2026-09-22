@@ -1,5 +1,5 @@
 {
-  "ts": 1790002462.8255723,
+  "ts": 1790089261.6757143,
   "id_map": {
     "BTC": "bitcoin",
     "ETH": "ethereum",
@@ -13,13 +13,13 @@
     "DOGE": "dogecoin",
     "XMR": "monero",
     "WBT": "whitebit",
-    "RAIN": "rain",
     "LINK": "chainlink",
+    "RAIN": "rain",
     "ADA": "cardano",
     "LEO": "leo-token",
     "XLM": "stellar",
-    "UNI": "uniswap",
+    "BCH": "bitcoin-cash",
     "NEAR": "near",
-    "BCH": "bitcoin-cash"
+    "UNI": "uniswap"
   }
 }
