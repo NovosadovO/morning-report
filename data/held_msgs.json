@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T23:15:54.081793",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79568"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79568"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79568"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79568"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79568"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79568"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T23:15:55.508641",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Projektleiter:in MSR (m/w/d) в ATP architekten ingenieure</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -338,6 +299,12 @@
       "ts": "2026-09-22T23:20:38.044523",
       "kind": "calendar",
       "text": "🔔 <b>Пора збиратись — 30 хв</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 3-й дім: Спілкування й навчання</b>\n🕐 00:00–00:00\n\n<i>Останні хвилини — перевір, чи все взяв.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T23:20:38.958675",
+      "kind": "calendar",
+      "text": "🔔 Пора збиратись — 30 хв\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 3-й дім: Спілкування й навчання\n🕐 00:00–00:00\n\nОстанні хвилини — перевір, чи все взяв.",
       "keyboard": null
     }
   ]
