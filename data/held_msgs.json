@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T03:33:00.418801",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Unstoppable  → Steer your agents from your phone\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T03:33:02.599622",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -148,6 +142,12 @@
       "ts": "2026-09-22T03:34:39.384772",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ BTC +5.3% за 24г\n\nЗараз: 85733.09 $\n24г тому: 81380.80 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T03:34:41.629918",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>SOL +5.2% за 24г</b>\n\nЗараз: 117.95 $\n24г тому: 112.13 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
