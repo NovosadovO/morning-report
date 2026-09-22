@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "збережено дані здоров'я",
-      "detail": "sleep_total_min=60, hr_avg=92, weight_kg=83.0, hrv=48, sleep_hours=1.0, date=2026-09-16, source=qwatch_auto, saved_at=2026-09-16 11:27",
-      "module": "healthai",
-      "ts": "2026-09-16T11:27:51"
-    },
-    {
       "kind": "notify",
       "what": "сповіщення про здоров'я: hr_high",
       "detail": "❤️ Середній пульс 86.0 уд/хв — вище за 85",
@@ -2799,6 +2792,13 @@
       "detail": "Згідно з 'ДЕДЛАЙНИ', є незавершений дедлайн 'Socios.com: зміна способу входу' від 2026-08-27.",
       "module": "selfact",
       "ts": "2026-09-22T15:44:05"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-09-22T16:06:02"
     }
   ]
 }
