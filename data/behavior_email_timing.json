@@ -1,9 +1,4 @@
 {
-  "79023": {
-    "sender": "novosadovoleg@gmail.com",
-    "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
-    "seen_ts": "2026-09-13T02:17:40.904534+00:00"
-  },
   "79026": {
     "sender": "noreply@discord.com",
     "sender_raw": "Discord <noreply@discord.com>",
@@ -1498,5 +1493,10 @@
     "sender": "linas@substack.com",
     "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
     "seen_ts": "2026-09-22T09:41:03.829016+00:00"
+  },
+  "79530": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-09-22T09:51:14.038248+00:00"
   }
 }
