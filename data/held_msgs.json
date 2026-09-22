@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T03:19:13.835046",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Соляр — 2-й дім: Фінанси й цінності » було 21.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T03:19:22.325693",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Unstoppable <team@unstoppabledomains.com> → Steer your agents from your phone\n\n🧹 Реклама: 5 — можна пропустити.",
@@ -148,6 +142,12 @@
       "ts": "2026-09-22T03:20:59.587136",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ DOGE +11.7% за 24г\n\nЗараз: 0.0995 $\n24г тому: 0.0891 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T03:21:01.561547",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>XRP +5.9% за 24г</b>\n\nЗараз: 1.5153 $\n24г тому: 1.4306 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
