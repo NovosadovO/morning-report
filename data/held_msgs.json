@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T23:01:34.880908",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Project Manager - eCommerce Deployments в Caterpillar Inc.</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79565"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79565"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79565"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79565"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79565"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79565"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T23:01:36.167681",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your exchange's numbers might not be real. Here's how to che</b>\n👤 DefiLlama Newsletter &lt;defillama@mail.beehiiv.com&gt;",
@@ -495,6 +456,12 @@
       "ts": "2026-09-22T23:18:16.449345",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T23:18:17.472277",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
     }
   ]
