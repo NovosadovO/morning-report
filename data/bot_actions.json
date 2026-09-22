@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Неоплачені підписки",
-      "detail": "У даних про підписки є запис про невдалий платіж до Runable з приміткою 'Потрібно оновити платіжну інформацію'.",
-      "module": "selfact",
-      "ts": "2026-09-16T09:25:41"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, ти отримав новий звіт про твій прогрес від Google Heal",
       "detail": "Олег отримав звіт про здоров'я, що показує значне покращення його фізичної активності, і це варто відзначити.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-09-22T14:05:32"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, зверніть увагу: 6 жовтня 2026 року змінюється договір",
+      "detail": "Лист від 'Crypto.com NFT' <no-reply@serviceinfo.crypto.com> | [ACTION REQUIRED] Change of Contracting Entity in Your Jurisdiction",
+      "module": "selfact",
+      "ts": "2026-09-22T14:09:58"
     }
   ]
 }
