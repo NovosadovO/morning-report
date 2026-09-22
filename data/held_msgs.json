@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T00:16:26.996091",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79568"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79568"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79568"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79568"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79568"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79568"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T00:16:28.424279",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Projektleiter:in MSR (m/w/d) в ATP architekten ingenieure</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -233,6 +194,12 @@
       "ts": "2026-09-23T00:17:45.814019",
       "kind": "calendar",
       "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 7-й дім: Партнерство\n📅 27.09 (Sun) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T00:18:37.116528",
+      "kind": "calendar",
+      "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 2-й дім: Фінанси й цінності</b>\n🕐 00:00–00:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
       "keyboard": null
     }
   ]
