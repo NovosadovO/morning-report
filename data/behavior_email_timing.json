@@ -1,9 +1,4 @@
 {
-  "79036": {
-    "sender": "newsletter@email.hm.com",
-    "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
-    "seen_ts": "2026-09-13T08:43:01.721300+00:00"
-  },
   "79037": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Linas Beliūnas через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
     "seen_ts": "2026-09-22T12:16:42.745636+00:00"
+  },
+  "79544": {
+    "sender": "newsletter@mail.dailybones.com",
+    "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
+    "seen_ts": "2026-09-22T12:35:44.997425+00:00"
   }
 }
