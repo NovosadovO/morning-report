@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T23:41:54.463196",
-      "kind": "calendar",
-      "text": "🔔 Пора збиратись — 30 хв\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 3-й дім: Спілкування й навчання\n🕐 00:00–00:00\n\nОстанні хвилини — перевір, чи все взяв.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T23:41:57.056081",
       "kind": "calendar",
       "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 4-й дім: Дім і родина</b>\n📅 24.09 (Thu) — післязавтра\n🕐 00:00–00:00\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79569"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-22T23:46:50.345380",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79568"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79568"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79568"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79568"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79568"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79568"
             }
           ]
         ]
