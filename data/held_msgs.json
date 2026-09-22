@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T00:16:21.466013",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 When the thesis plays out</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79572"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79572"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79572"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79572"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79572"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79572"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T00:16:22.813061",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>A Chinese Hacker Used AI To Attack 100+ Companies In One Of </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -365,6 +326,12 @@
       "ts": "2026-09-23T00:17:38.956657",
       "kind": "calendar",
       "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 2-й дім: Фінанси й цінності\n🕐 00:00–00:00\n\nВідповідь збережу — це піде в аналітику тижня.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T00:17:41.691008",
+      "kind": "calendar",
+      "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 4-й дім: Дім і родина</b>\n📅 24.09 (Thu) — завтра\n🕐 00:00–00:00\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
       "keyboard": null
     }
   ]
