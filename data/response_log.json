@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-04T23:37:12.862579+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "gx_note_d7453802fb"
-    },
-    {
       "ts": "2026-08-04T23:37:16.657132+00:00",
       "category": "ai_button",
       "question": "email",
@@ -13965,6 +13959,16 @@
       "answer": "Переглянути нові вакансії на Profesia.sk",
       "extra": {
         "kind": "reminder",
+        "date": "2026-09-22"
+      }
+    },
+    {
+      "ts": "2026-09-22T06:00:52.345281+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Важливість сну",
+      "extra": {
+        "kind": "note",
         "date": "2026-09-22"
       }
     }
