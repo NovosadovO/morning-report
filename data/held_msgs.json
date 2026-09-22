@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T01:13:27.042756",
-      "kind": "calendar",
-      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 7-й дім: Партнерство</b>\n📅 27.09 (Sun) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-23T01:13:27.802880",
       "kind": "calendar",
       "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 7-й дім: Партнерство\n📅 27.09 (Sun) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79571"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-23T01:16:09.112254",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 22nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79570"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79570"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79570"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79570"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79570"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79570"
             }
           ]
         ]
