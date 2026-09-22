@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T00:59:18.667526",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 24.09</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-23T00:59:19.416547",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 24.09 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79571"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-23T01:01:43.297913",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 22nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79570"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79570"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79570"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79570"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79570"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79570"
             }
           ]
         ]
