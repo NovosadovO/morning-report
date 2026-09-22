@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T23:28:00.744505",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T23:28:01.382874",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79567"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-22T23:31:26.119639",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Tokenization Briefing: Fed Raises Rate &amp; Stablecoins Rake in</b>\n👤 The Block &lt;newsletter@data.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79566"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79566"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79566"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79566"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79566"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79566"
             }
           ]
         ]
