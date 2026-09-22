@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олеже, чи потрібно мені перевірити посилання на квартиру, як",
-      "detail": "З листа 'Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> | 2' з посиланням на квартиру.",
-      "module": "selfact",
-      "ts": "2026-09-15T17:24:43"
-    },
-    {
       "kind": "notify",
       "what": "Олег, зверни увагу на лист від LinkedIn: Ciklum Czech Republ",
       "detail": "Свіжий лист від LinkedIn про вакансію Expert JavaScript Engineer в Ciklum Czech Republic & Slovakia, яка відповідає запиту Cryptocurrency в Slovakia. Олег міг пропустити це сповіщення серед інших.",
@@ -2799,6 +2792,13 @@
       "detail": "У календарі на сьогодні, 22.09, є подія '23:00 Соляр — 2-й дім: Фінанси й цінності'.",
       "module": "selfact",
       "ts": "2026-09-22T06:36:42"
+    },
+    {
+      "kind": "reminder",
+      "what": "нагадування надіслати дані",
+      "detail": "9 год мовчання",
+      "module": "healthai",
+      "ts": "2026-09-22T07:00:55"
     }
   ]
 }
