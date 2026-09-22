@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-04T23:44:09.696814+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "gx_note_4283d29b79"
-    },
-    {
       "ts": "2026-08-04T23:44:18.768567+00:00",
       "category": "ai_button",
       "question": "email",
@@ -13975,6 +13969,15 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "весь сектор RWA додав 49.6% за 24 години (капіталізація $72.80B)"
+    },
+    {
+      "ts": "2026-09-22T10:21:59.697982+00:00",
+      "category": "deadline_found",
+      "question": "Підписка CapCut — закінчення терміну дії",
+      "answer": "2026-09-23",
+      "extra": {
+        "kind": "contract"
+      }
     }
   ]
 }
