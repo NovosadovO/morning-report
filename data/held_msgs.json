@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T00:14:11.469218",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-23T00:14:24.551165",
       "kind": "calendar",
       "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 4-й дім: Дім і родина</b>\n📅 24.09 (Thu) — завтра\n🕐 00:00–00:00\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79571"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-23T00:16:24.203443",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 22nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79570"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79570"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79570"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79570"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79570"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79570"
             }
           ]
         ]
