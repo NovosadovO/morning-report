@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T23:15:50.993283",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 22nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79570"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79570"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79570"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79570"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79570"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79570"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T23:15:52.655030",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin ETFs see biggest inflow in 11 months</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -404,6 +365,12 @@
       "ts": "2026-09-22T23:19:40.656145",
       "kind": "calendar",
       "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 4-й дім: Дім і родина</b>\n📅 24.09 (Thu) — післязавтра\n🕐 00:00–00:00\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T23:19:41.488427",
+      "kind": "calendar",
+      "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 4-й дім: Дім і родина\n📅 24.09 (Thu) — післязавтра\n🕐 00:00–00:00\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
       "keyboard": null
     }
   ]
