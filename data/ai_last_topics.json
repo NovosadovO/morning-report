@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-22t15_59_05_109827": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, зверни увагу, що платіж до Runable на $10.00 був невдалим. Потріб",
+    "ts": "2026-09-22T15:59:05.109827"
+  },
   "email_ai_item|2026-09-22t15_51_37_548744": {
     "topic": "email_ai_item",
     "gist": "{\"description\": \"Цей лист від LinkedIn є інформаційним повідомленням про спільноту Technology Leadership Community, яка об'єднує керівників у сфері технологій д",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-21\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
     "ts": "2026-09-22T14:23:23.150959"
-  },
-  "action_detect|2026-09-22t14_23_23_129495": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-21\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-22T14:23:23.129495"
   }
 }
