@@ -411,5 +411,28 @@
       "tag": "crypto_move"
     },
     "ts": "2026-09-22T13:23:44.917196+00:00"
+  },
+  "4f5ceb2af7": {
+    "key": "note|олег отримав аналітичну статтю gold vs bitcoin the allocat",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег отримав аналітичну статтю 'Gold vs Bitcoin: The Allocat »\n\nОлег отримав аналітичну статтю 'Gold vs Bitcoin: The Allocation Debate' від VanEck через LinkedIn.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег отримав аналітичну статтю 'Gold vs Bitcoin: The Allocat",
+      "desc": "Олег отримав аналітичну статтю 'Gold vs Bitcoin: The Allocation Debate' від VanEck через LinkedIn.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-22T13:39:15.274890+00:00"
   }
 }
