@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-04T23:37:03.363364+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "gx_ack_4283d29b79"
-    },
-    {
       "ts": "2026-08-04T23:37:12.380982+00:00",
       "category": "ai_button",
       "question": "crypto",
@@ -13959,6 +13953,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Переглянути нові вакансії",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-22"
+      }
+    },
+    {
+      "ts": "2026-09-22T04:30:25.095824+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Привітати Мар'яна з Днем народження",
       "extra": {
         "kind": "reminder",
         "date": "2026-09-22"
