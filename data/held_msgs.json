@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T23:01:27.549948",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T23:01:28.719004",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - September 22nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -661,6 +655,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-22T23:16:10.137097",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 The Daily Degen\n📋 The Daily Degen - September 22nd, 2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
