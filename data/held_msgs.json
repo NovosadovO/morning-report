@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T01:59:27.262463",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T01:59:27.946069",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79507"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-22T02:01:08.633699",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ramaswamy Would Be The Third-Richest Elected U.S. Official I</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79506"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79506"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79506"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79506"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79506"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79506"
             }
           ]
         ]
