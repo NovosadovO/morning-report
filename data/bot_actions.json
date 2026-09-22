@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Зверни увагу на лист від Minebea з виправленою виплатною кар",
-      "detail": "Отримано два листи від ehuman@minebeamitsumi.eu з темами '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu' та '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026'.",
-      "module": "selfact",
-      "ts": "2026-09-15T21:30:09"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, у тебе є непрочитаний лист від DefiLlama Newsletter пр",
       "detail": "Отримано лист від DefiLlama Newsletter з темою 'We stopped trusting posted APY and built a better way to verify yields'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Є свіжі листи від Profesia.sk та LinkedIn з новими пропозиціями роботи.",
       "module": "selfact",
       "ts": "2026-09-22T08:09:41"
+    },
+    {
+      "kind": "notify",
+      "what": "Нагадую, що сьогодні 22.09 о 23:00 розпочинається Соляр – 2-",
+      "detail": "У календарі на 22.09 є подія '23:00 Соляр — 2-й дім: Фінанси й цінності'.",
+      "module": "selfact",
+      "ts": "2026-09-22T08:25:38"
     }
   ]
 }
