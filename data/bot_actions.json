@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверни увагу на лист від LinkedIn: Ciklum Czech Republ",
-      "detail": "Свіжий лист від LinkedIn про вакансію Expert JavaScript Engineer в Ciklum Czech Republic & Slovakia, яка відповідає запиту Cryptocurrency в Slovakia. Олег міг пропустити це сповіщення серед інших.",
-      "module": "selfact",
-      "ts": "2026-09-15T17:40:01"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, надійшов ранковий дайджест ринків за 15.09.2026. Может",
       "detail": "Олег ігнорує сповіщення про ранковий дайджест ринків, натискаючи 'Видалити' або 'Не треба', але це важлива інформація для його інтересів у трейдингу.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "9 год мовчання",
       "module": "healthai",
       "ts": "2026-09-22T07:00:55"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-09-22T07:01:24"
     }
   ]
 }
