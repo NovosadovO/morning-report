@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, на заводі Minebea сталася помилка з виплатною стрічкою",
-      "detail": "Знайдено два листи від ehuman@minebeamitsumi.eu з однаковою темою 'Minebea, Výplatná páska/Payslip 08/2026', один з яких має позначку 'oprava formátu'.",
-      "module": "selfact",
-      "ts": "2026-09-16T06:06:40"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, зверни увагу на лист від Avalanche Team1. Schwab плану",
       "detail": "Знайдено лист від Avalanche Team1 <avalancheteam1@substack.com> з темою 'Schwab Is Bringing AVAX to Traditional Investors'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "📵 Дані здоров'я не оновлювались 36 год (останні — 2026-09-21). Автосинк із годинника міг зламатись",
       "module": "healthai",
       "ts": "2026-09-22T11:33:52"
+    },
+    {
+      "kind": "reminder",
+      "what": "нагадування надіслати дані",
+      "detail": "14 год мовчання",
+      "module": "healthai",
+      "ts": "2026-09-22T12:01:51"
     }
   ]
 }
