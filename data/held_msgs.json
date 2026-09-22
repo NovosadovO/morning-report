@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T23:46:51.832261",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Projektleiter:in MSR (m/w/d) в ATP architekten ingenieure</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79567"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79567"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79567"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79567"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79567"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79567"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T23:46:53.616677",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Tokenization Briefing: Fed Raises Rate &amp; Stablecoins Rake in</b>\n👤 The Block &lt;newsletter@data.theblock.co&gt;",
@@ -272,6 +233,12 @@
       "ts": "2026-09-22T23:51:53.193499",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T23:51:54.002977",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
     }
   ]
