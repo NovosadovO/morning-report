@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T02:45:52.466412",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>DOGE +14.2% за 24г</b>\n\nЗараз: 0.1012 $\n24г тому: 0.0886 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T02:45:53.148983",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ DOGE +14.2% за 24г\n\nЗараз: 0.1012 $\n24г тому: 0.0886 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -398,6 +392,12 @@
       "ts": "2026-09-22T02:46:32.750127",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Unstoppable\n📋 Steer your agents from your phone\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T02:47:03.859186",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Соляр — 2-й дім: Фінанси й цінності » було 21.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
