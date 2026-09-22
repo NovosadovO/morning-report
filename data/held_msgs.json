@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T23:28:01.382874",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T23:28:43.611063",
       "kind": "calendar",
       "text": "🔔 <b>Пора збиратись — 30 хв</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 3-й дім: Спілкування й навчання</b>\n🕐 00:00–00:00\n\n<i>Останні хвилини — перевір, чи все взяв.</i>",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79566"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-22T23:31:27.724559",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Project Manager - eCommerce Deployments в Caterpillar Inc.</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79565"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79565"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79565"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79565"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79565"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79565"
             }
           ]
         ]
