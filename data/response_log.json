@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T01:53:02.857855+00:00",
-      "category": "ai_button",
-      "question": "email",
-      "answer": "noted",
-      "extra": {
-        "trigger": "vip_email",
-        "note": "12.08. Страховка авто"
-      }
-    },
-    {
       "ts": "2026-08-05T01:53:14.769576+00:00",
       "category": "calendar_confirm",
       "question": "Страховка авто",
@@ -13967,6 +13957,12 @@
       "extra": {
         "kind": "other"
       }
+    },
+    {
+      "ts": "2026-09-22T20:35:07.890559+00:00",
+      "category": "rwa_move",
+      "question": "RWA",
+      "answer": "🚨 АНОМАЛІЯ: токенізований фонд FIGR_HELOC (Figure Heloc) зробив +2.85% за 24 години — такі інструменти мають стояти на м"
     }
   ]
 }
