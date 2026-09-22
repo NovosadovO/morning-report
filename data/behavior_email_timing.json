@@ -1,9 +1,4 @@
 {
-  "79003": {
-    "sender": "noreply@email-service.bybit.com",
-    "sender_raw": "Bybit <noreply@email-service.bybit.com>",
-    "seen_ts": "2026-09-12T15:07:25.012895+00:00"
-  },
   "79005": {
     "sender": "noreply@email-service.bybit.com",
     "sender_raw": "Bybit <noreply@email-service.bybit.com>",
@@ -1498,5 +1493,10 @@
     "sender": "info@beautynews.douglas.sk",
     "sender_raw": "\"Douglas Newsletter\" <info@beautynews.douglas.sk>",
     "seen_ts": "2026-09-22T02:05:58.756068+00:00"
+  },
+  "79512": {
+    "sender": "no-reply@mail.thedefiant.io",
+    "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
+    "seen_ts": "2026-09-22T02:18:13.078807+00:00"
   }
 }
