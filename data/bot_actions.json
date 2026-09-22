@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, твій бюджет Google Cloud досяг 100% (€16.00) за верес",
-      "detail": "Отримано лист від Google Cloud Billing Alerts про досягнення 100% бюджету.",
-      "module": "selfact",
-      "ts": "2026-09-16T19:25:20"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, твій бюджет Google Cloud на вересень (€16.00) повніст",
       "detail": "Олег отримав лист від Google Cloud Billing Alerts про досягнення 100% бюджету (€16.00) на вересень.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "повна аналітика здоров'я",
       "module": "selfact",
       "ts": "2026-09-22T20:01:34"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-09-22T20:06:27"
     }
   ]
 }
