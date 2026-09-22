@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T01:32:06.092840",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 The Daily Degen\n📋 The Daily Degen - September 22nd, 2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: The Daily Degen",
-              "callback_data": "email_reply_79570"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79570"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79570"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T01:32:08.752734",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 The Daily Degen\n📋 The Daily Degen - September 22nd, 2026\n📝 (AI-аналіз тимчасово недоступний)",
@@ -167,6 +142,12 @@
       "ts": "2026-09-23T01:34:43.717422",
       "kind": "deadlines",
       "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 3 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Закриття фонду Innovators Fund</b>\n📆 до <b>2026-09-26</b>\n🏢 StartEngine\n\n➡️ Прийняти рішення щодо інвестування у фонд Innovators Fund",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T01:34:44.384636",
+      "kind": "deadlines",
+      "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n📌 Закриття фонду Innovators Fund\n📆 до 2026-09-26\n🏢 StartEngine\n\n➡️ Прийняти рішення щодо інвестування у фонд Innovators Fund",
       "keyboard": null
     }
   ]
