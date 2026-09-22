@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T02:45:41.981563",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Unstoppable <team@unstoppabledomains.com> → Steer your agents from your phone\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T02:45:42.624681",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Unstoppable  → Steer your agents from your phone\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79499"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-22T02:46:25.144094",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔴 Inside Defence: Eric Schmidt on the era of AI warfare</b>\n👤 \"Zanny Minton Beddoes at The Economist\" &lt;noreply@e",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79498"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79498"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79498"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79498"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79498"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79498"
             }
           ]
         ]
