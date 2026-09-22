@@ -1,6 +1,51 @@
 {
   "items": [
     {
+      "ts": "2026-09-22T02:30:59.738912",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ramaswamy Would Be The Third-Richest Elected U.S. Official I</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79506"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79506"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79506"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79506"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79506"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79506"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-22T02:31:00.592643",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔭 Юпітер переходить у 2-й дім — 19°</b>\n📅 26.09 (Sat) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
+      "keyboard": null
+    },
+    {
       "ts": "2026-09-22T02:31:02.079039",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>General Manager в Bolt</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -284,21 +329,9 @@
       "keyboard": null
     },
     {
-      "ts": "2026-09-22T02:32:11.710905",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ SOL +5.8% за 24г\n\nЗараз: 118.97 $\n24г тому: 112.46 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-22T02:32:13.690378",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>BTC +5.7% за 24г</b>\n\nЗараз: 86404.35 $\n24г тому: 81752.89 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-22T02:32:14.714892",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ BTC +5.7% за 24г\n\nЗараз: 86404.35 $\n24г тому: 81752.89 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "ts": "2026-09-22T02:32:23.718222",
+      "kind": "calendar",
+      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 6-й дім: Робота й здоров’я\n📅 26.09 (Sat) — через 4 дн.\n🕐 00:00–00:00\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
       "keyboard": null
     }
   ]
