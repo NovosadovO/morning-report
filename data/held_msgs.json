@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T01:28:46.364154",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-23T01:29:35.366998",
       "kind": "calendar",
       "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 7-й дім: Партнерство</b>\n📅 27.09 (Sun) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79574"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-23T01:31:48.535696",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Manažér obchodnej agentúry v Košiciach в UNIQA CZ</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79573"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79573"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79573"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79573"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79573"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79573"
             }
           ]
         ]
