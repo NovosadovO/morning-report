@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T23:46:53.616677",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Tokenization Briefing: Fed Raises Rate &amp; Stablecoins Rake in</b>\n👤 The Block &lt;newsletter@data.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79566"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79566"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79566"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79566"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79566"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79566"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T23:46:55.636946",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Project Manager - eCommerce Deployments в Caterpillar Inc.</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -239,6 +200,12 @@
       "ts": "2026-09-22T23:51:54.002977",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T23:52:00.339017",
+      "kind": "calendar",
+      "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 4-й дім: Дім і родина</b>\n📅 24.09 (Thu) — післязавтра\n🕐 00:00–00:00\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
       "keyboard": null
     }
   ]
