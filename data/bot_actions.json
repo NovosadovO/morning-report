@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-15",
-      "detail": "автосинк з годинника: steps, hr_avg, calories, stress, sleep_total_min",
-      "module": "qwsync",
-      "ts": "2026-09-15T21:42:26"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=13264, hr_avg=75, calories=625, stress=33, sleep_total_min=120, sleep_hours=2.0, date=2026-09-15, source=qwatch_auto, saved_at=2026-09-15 21:42",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Подія 'Соляр — 2-й дім: Фінанси й цінності' запланована на сьогодні о 23:00.",
       "module": "selfact",
       "ts": "2026-09-22T08:42:09"
+    },
+    {
+      "kind": "notify",
+      "what": "Ви отримали 7 нових робочих пропозицій від Profesia.sk та 20",
+      "detail": "Є кілька нових листів від Profesia.sk та LinkedIn з пропозиціями роботи.",
+      "module": "selfact",
+      "ts": "2026-09-22T08:42:16"
     }
   ]
 }
