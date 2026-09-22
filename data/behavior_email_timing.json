@@ -1,14 +1,4 @@
 {
-  "79058": {
-    "sender": "noreply-accounts@google.com",
-    "sender_raw": "Google <noreply-accounts@google.com>",
-    "seen_ts": "2026-09-14T00:12:27.522246+00:00"
-  },
-  "79060": {
-    "sender": "support@profesia.sk",
-    "sender_raw": "\"Profesia.sk\" <support@profesia.sk>",
-    "seen_ts": "2026-09-14T00:30:47.462381+00:00"
-  },
   "79062": {
     "sender": "support@profesia.sk",
     "sender_raw": "\"Profesia.sk\" <support@profesia.sk>",
@@ -1503,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-09-22T18:15:54.778153+00:00"
+  },
+  "79566": {
+    "sender": "newsletter@data.theblock.co",
+    "sender_raw": "The Block <newsletter@data.theblock.co>",
+    "seen_ts": "2026-09-22T19:28:54.845759+00:00"
   }
 }
