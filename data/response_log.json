@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T01:53:14.769576+00:00",
-      "category": "calendar_confirm",
-      "question": "Страховка авто",
-      "answer": "✅ Додано",
-      "extra": {
-        "events": [
-          "Страховка авто"
-        ]
-      }
-    },
-    {
       "ts": "2026-08-05T02:47:17.682146+00:00",
       "category": "bill_found",
       "question": "GASTROMILA, spol. s r.o.",
@@ -13963,6 +13952,12 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "🚨 АНОМАЛІЯ: токенізований фонд FIGR_HELOC (Figure Heloc) зробив +2.85% за 24 години — такі інструменти мають стояти на м"
+    },
+    {
+      "ts": "2026-09-22T22:05:32.558620+00:00",
+      "category": "rwa_move",
+      "question": "RWA",
+      "answer": "🚨 АНОМАЛІЯ: токенізований фонд FIGR_HELOC (Figure Heloc) зробив +2.73% за 24 години — такі інструменти мають стояти на м"
     }
   ]
 }
