@@ -1,9 +1,4 @@
 {
-  "79030": {
-    "sender": "info@message.cropp.com",
-    "sender_raw": "\"Cropp\" <info@message.cropp.com>",
-    "seen_ts": "2026-09-13T07:49:21.659837+00:00"
-  },
   "79031": {
     "sender": "info@notifikacie.allegro.sk",
     "sender_raw": "Allegro <info@notifikacie.allegro.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "updates@okx.com",
     "sender_raw": "OKX <updates@okx.com>",
     "seen_ts": "2026-09-22T11:08:56.578207+00:00"
+  },
+  "79535": {
+    "sender": "no-reply@serviceinfo.crypto.com",
+    "sender_raw": "\"Crypto.com NFT\" <no-reply@serviceinfo.crypto.com>",
+    "seen_ts": "2026-09-22T11:13:08.886502+00:00"
   }
 }
