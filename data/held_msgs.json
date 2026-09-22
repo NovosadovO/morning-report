@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T03:14:51.089981",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Unstoppable  → Steer your agents from your phone\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T03:14:53.209001",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -399,6 +393,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-22T03:16:03.597158",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Unstoppable\n📋 Steer your agents from your phone\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
