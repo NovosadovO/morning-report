@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T00:47:01.427519",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 22nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79570"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79570"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79570"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79570"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79570"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79570"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T00:47:02.914989",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin ETFs see biggest inflow in 11 months</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -266,6 +227,12 @@
       "ts": "2026-09-23T00:49:03.901131",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T00:49:04.968226",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
