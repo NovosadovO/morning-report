@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T03:44:02.305940",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>BTC +5.2% за 24г</b>\n\nЗараз: 85692.81 $\n24г тому: 81433.47 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T03:44:03.107357",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ BTC +5.2% за 24г\n\nЗараз: 85692.81 $\n24г тому: 81433.47 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T03:46:05.205193",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79510"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79510"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79510"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79510"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79510"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79510"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
