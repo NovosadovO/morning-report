@@ -1,4 +1,24 @@
 {
+  "foresight|2026-09-22t17_54_35_157996": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-22T17:54:35.157996"
+  },
+  "selfact|2026-09-22t17_47_00_854110": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, зверніть увагу: ваша підписка на Runable має проблеми з оплатою. Надіслано кілька листів про невдалі пла",
+    "ts": "2026-09-22T17:47:00.854110"
+  },
+  "action_detect|2026-09-22t17_45_42_569962": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-09-23\", \"action_time\": \"10:00\", \"action_summary\": \"Завтра, 23 вересня, ",
+    "ts": "2026-09-22T17:45:42.569962"
+  },
+  "msg_vip_email_truthfix|2026-09-22t17_45_34_534269": {
+    "topic": "MSG_VIP_EMAIL/truthfix",
+    "gist": "Олеже, найнеочікуваніша цифра дня — твоя вага 83.0 кг, яка тримається стабільно (+0.0) за останні 14 днів, залишаючи до цілі 8.0 кг. Це показує, що прогрес у сх",
+    "ts": "2026-09-22T17:45:34.534269"
+  },
   "msg_vip_email|2026-09-22t17_45_25_848798": {
     "topic": "MSG_VIP_EMAIL",
     "gist": "Привіт Олеже! 🏹 Сьогоднішній вечірній зріз даних показує, що ти продовжуєш рухатися до цілей, але є кілька ключових моментів, що вимагають стратегічного погляду",
@@ -278,25 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-09-23\", \"action_time\": null, \"action_summary\": \"Відвідати дерматолога д",
     "ts": "2026-09-22T16:03:41.092795"
-  },
-  "action_detect|2026-09-22t16_03_30_007294": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-22T16:03:30.007294"
-  },
-  "action_detect|2026-09-22t16_03_19_085896": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Візит до дерматолога\", \"action_date\": \"2026-09-23\", \"action_time\": \"10:00\", \"action_summary\": \"Завтра, 23 вересня, ",
-    "ts": "2026-09-22T16:03:19.085896"
-  },
-  "action_detect|2026-09-22t16_03_01_519094": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-21\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-22T16:03:01.519094"
-  },
-  "action_detect|2026-09-22t16_03_01_457337": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2023-09-22\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-22T16:03:01.457337"
   }
 }
