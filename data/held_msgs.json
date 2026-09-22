@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T23:33:51.165174",
-      "kind": "calendar",
-      "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 4-й дім: Дім і родина\n📅 24.09 (Thu) — післязавтра\n🕐 00:00–00:00\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T23:34:23.054869",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -149,6 +143,45 @@
       "kind": "calendar",
       "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 4-й дім: Дім і родина\n📅 24.09 (Thu) — післязавтра\n🕐 00:00–00:00\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T23:38:18.956254",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Forbes через LinkedIn</b>\n📋 Тема: «A Chinese Hacker Used AI To Attack 100+ Companies In One Of Largest\r\n »\n\n<i>«Forbes P.M.\r\n\r\nАвтор: Forbes\r\n\r\n\r\nАвтор: Forbes\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/chinese-hacker-used-ai-attack-100-companies-one-largest-9vfhe?lipi=urn%3Ali%3Apage%3Aemail_email_series_foll...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79571"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79571"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79571"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79571"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79571"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79571"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
