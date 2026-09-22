@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T01:52:38.734024+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "gx_note_08e2b0d48c"
-    },
-    {
       "ts": "2026-08-05T01:53:02.857855+00:00",
       "category": "ai_button",
       "question": "email",
@@ -13961,6 +13955,15 @@
       "category": "deadline_found",
       "question": "Закриття фонду Innovators Fund",
       "answer": "2026-09-26",
+      "extra": {
+        "kind": "other"
+      }
+    },
+    {
+      "ts": "2026-09-22T19:34:49.456570+00:00",
+      "category": "deadline_found",
+      "question": "Використати знижкову картку Temu",
+      "answer": "2026-09-22",
       "extra": {
         "kind": "other"
       }
