@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T03:28:46.672762",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ BTC +5.0% за 24г\n\nЗараз: 85632.05 $\n24г тому: 81541.82 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T03:29:38.950270",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔭 Юпітер переходить у 2-й дім — 19°</b>\n📅 26.09 (Sat) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79510"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-22T03:30:57.791022",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Konzultant/ka pre operácie a digitalizáciu | Bankovníctvo a </b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79508"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79508"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79508"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79508"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79508"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79508"
             }
           ]
         ]
