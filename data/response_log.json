@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T01:52:17.157397+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "pm_skip_aeece2488c"
-    },
-    {
       "ts": "2026-08-05T01:52:38.734024+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13961,6 +13955,15 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "🚨 АНОМАЛІЯ: токенізований фонд FIGR_HELOC (Figure Heloc) зробив -3.23% за 24 години — такі інструменти мають стояти на м"
+    },
+    {
+      "ts": "2026-09-22T19:34:45.246023+00:00",
+      "category": "deadline_found",
+      "question": "Закриття фонду Innovators Fund",
+      "answer": "2026-09-26",
+      "extra": {
+        "kind": "other"
+      }
     }
   ]
 }
