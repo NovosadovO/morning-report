@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверни увагу на лист від Avalanche Team1. Schwab плану",
-      "detail": "Знайдено лист від Avalanche Team1 <avalancheteam1@substack.com> з темою 'Schwab Is Bringing AVAX to Traditional Investors'.",
-      "module": "selfact",
-      "ts": "2026-09-16T06:06:44"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, зверни увагу, що у тебе є два листи від ehuman@minebea",
       "detail": "Наявність двох листів з виплатними картками, один з яких є виправленням, може свідчити про необхідність їх перегляду.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "14 год мовчання",
       "module": "healthai",
       "ts": "2026-09-22T12:01:51"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-09-22T12:06:32"
     }
   ]
 }
