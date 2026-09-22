@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T23:01:32.312483",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Projektleiter:in MSR (m/w/d) в ATP architekten ingenieure</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79567"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79567"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79567"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79567"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79567"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79567"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T23:01:33.600202",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Tokenization Briefing: Fed Raises Rate &amp; Stablecoins Rake in</b>\n👤 The Block &lt;newsletter@data.theblock.co&gt;",
@@ -561,6 +522,12 @@
       "ts": "2026-09-22T23:17:37.613502",
       "kind": "calendar",
       "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 4-й дім: Дім і родина</b>\n📅 24.09 (Thu) — післязавтра\n🕐 00:00–00:00\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T23:17:38.365683",
+      "kind": "calendar",
+      "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 4-й дім: Дім і родина\n📅 24.09 (Thu) — післязавтра\n🕐 00:00–00:00\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
       "keyboard": null
     }
   ]
