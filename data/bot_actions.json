@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-17",
-      "detail": "автосинк з годинника: hr_avg, weight_kg, spo2, stress, sleep_total_min",
-      "module": "qwsync",
-      "ts": "2026-09-17T04:52:35"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "sleep_total_min=60, hr_avg=59, weight_kg=83.0, spo2=97, stress=47, sleep_hours=1.0, date=2026-09-17, source=qwatch_auto, saved_at=2026-09-17 04:52",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "вечірній розбір, оцінка 80",
       "module": "selfact",
       "ts": "2026-09-22T21:21:29"
+    },
+    {
+      "kind": "notify",
+      "what": "У вас є запланований візит до дерматолога завтра, 23.09, о 0",
+      "detail": "У календарі на 23.09 є подія 'дерматолога' о 09:00, і це важлива особиста зустріч, про яку слід нагадати.",
+      "module": "selfact",
+      "ts": "2026-09-22T21:24:57"
     }
   ]
 }
