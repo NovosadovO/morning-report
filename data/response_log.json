@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-04T23:37:16.657132+00:00",
-      "category": "ai_button",
-      "question": "email",
-      "answer": "later_120",
-      "extra": {
-        "trigger": "vip_email",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-04T23:37:17.592509+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13969,6 +13959,16 @@
       "answer": "Важливість сну",
       "extra": {
         "kind": "note",
+        "date": "2026-09-22"
+      }
+    },
+    {
+      "ts": "2026-09-22T07:30:43.359592+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Ранковий біг",
+      "extra": {
+        "kind": "calendar",
         "date": "2026-09-22"
       }
     }
