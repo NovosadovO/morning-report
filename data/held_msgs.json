@@ -56,6 +56,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T23:01:28.719004",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 22nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79570"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79570"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79570"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79570"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79570"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79570"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
