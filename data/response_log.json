@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-04T23:37:22.832086+00:00",
-      "category": "ai_button",
-      "question": "crypto",
-      "answer": "muted_7d",
-      "extra": {
-        "trigger": "deep_analysis",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-04T23:37:23.927580+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13971,6 +13961,16 @@
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
       "answer": "Низький рівень сну та оцінка дня",
+      "extra": {
+        "kind": "note",
+        "date": "2026-09-22"
+      }
+    },
+    {
+      "ts": "2026-09-22T09:00:45.425564+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Низька оцінка дня",
       "extra": {
         "kind": "note",
         "date": "2026-09-22"
