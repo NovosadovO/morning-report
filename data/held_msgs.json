@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T03:51:17.007532",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T03:51:17.667452",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -148,6 +142,12 @@
       "ts": "2026-09-22T03:53:01.206931",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>DOGE +13.3% за 24г</b>\n\nЗараз: 0.0995 $\n24г тому: 0.0878 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T03:53:01.879199",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ DOGE +13.3% за 24г\n\nЗараз: 0.0995 $\n24г тому: 0.0878 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
