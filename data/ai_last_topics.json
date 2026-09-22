@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-09-22t08_36_01_514569": {
+    "topic": "email_ai_item",
+    "gist": "```json {   \"description\": \"Цей лист від Profesia.sk містить 7 нових пропозицій роботи за критеріями 'Кошице, на договір (бригади)'. Олег може переглянути ці пр",
+    "ts": "2026-09-22T08:36:01.514569"
+  },
+  "email_ai_item|2026-09-22t08_33_53_923718": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист від iCloud повідомляє, що сховище заповнено, і через це припинено архівацію документів, контактів, даних, а також завантаження фото та від",
+    "ts": "2026-09-22T08:33:53.923718"
+  },
   "openloop_promises|2026-09-22t08_29_57_763078": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "```json {\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-22\", \"action_time\": \"18:00\", \"action_summary\"",
     "ts": "2026-09-22T07:02:07.552790"
-  },
-  "action_detect|2026-09-22t07_02_07_532530": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2023-09-22\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-22T07:02:07.532530"
-  },
-  "action_detect|2026-09-22t07_01_56_430896": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-22\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-22T07:01:56.430896"
   }
 }
