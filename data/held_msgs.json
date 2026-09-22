@@ -1,3 +1,43 @@
 {
-  "items": []
+  "items": [
+    {
+      "ts": "2026-09-22T22:53:22.690913",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Block</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🔷 The Daily: Bitcoin ETFs see biggest inflow in 11 months»\n\n<i>«Spot bitcoin ETFs post largest daily inflow in 11 months | Coinbase adds fixed-rate bitcoin-backed loans through Morpho | SoFi begins stablecoin settlement on Mastercard network | CME adds Bitcoin Cash and Uniswap futures | Solo GP Jed Breed raises $15 million for second crypto fund\r\n\r\nThe Daily ( h...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79569"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79569"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79569"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79569"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79569"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79569"
+            }
+          ]
+        ]
+      }
+    }
+  ]
 }
