@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T00:47:00.139459",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>A Chinese Hacker Used AI To Attack 100+ Companies In One Of </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79571"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79571"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79571"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79571"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79571"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79571"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T00:47:01.427519",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - September 22nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -299,6 +260,12 @@
       "ts": "2026-09-23T00:49:00.506652",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 24.09 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T00:49:03.901131",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
