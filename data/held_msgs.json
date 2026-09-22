@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T03:56:13.394318",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T03:56:17.539758",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>DOGE +13.8% за 24г</b>\n\nЗараз: 0.0995 $\n24г тому: 0.0875 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-09-22T03:57:52.464533",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ SOL +5.8% за 24г\n\nЗараз: 117.57 $\n24г тому: 111.13 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T03:57:54.575882",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>BTC +5.7% за 24г</b>\n\nЗараз: 85644.04 $\n24г тому: 81014.52 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
