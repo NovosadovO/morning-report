@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T01:31:52.894121",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>A Chinese Hacker Used AI To Attack 100+ Companies In One Of </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79571"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79571"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79571"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79571"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79571"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79571"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T01:31:54.174248",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - September 22nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -299,6 +260,12 @@
       "ts": "2026-09-23T01:34:32.540915",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 7 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Підписка Apple — закінчення терміну дії\n📆 до 2026-09-30\n🏢 Apple\n\n➡️ Перевірити підписку Apple та вирішити, чи потрібно її продовжувати.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T01:34:34.598680",
+      "kind": "deadlines",
+      "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 7 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Підписка Apple — закінчення</b>\n📆 до <b>2026-09-30</b>\n🏢 Apple\n\n➡️ Перевірити статус підписки Apple та вирішити, чи потрібно її продовжувати.",
       "keyboard": null
     }
   ]
