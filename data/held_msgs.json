@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T03:01:31.971513",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T03:01:33.275117",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Konzultant/ka pre operácie a digitalizáciu | Bankovníctvo a </b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -398,6 +392,12 @@
       "ts": "2026-09-22T03:02:49.806497",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>DOGE +12.2% за 24г</b>\n\nЗараз: 0.0993 $\n24г тому: 0.0885 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T03:02:50.575142",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ DOGE +12.2% за 24г\n\nЗараз: 0.0993 $\n24г тому: 0.0885 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
