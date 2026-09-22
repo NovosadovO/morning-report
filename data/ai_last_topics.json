@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-09-22t14_32_28_300985": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-22T14:32:28.300985"
+  },
+  "mailcal_extract|2026-09-22t14_28_07_233745": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-22T14:28:07.233745"
+  },
   "selfact|2026-09-22t14_25_49_628710": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Сьогодні о 23:00 починається Соляр у 2-му домі (Фінанси й цінності). Це може бути чудовий час дл",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-22\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
     "ts": "2026-09-22T13:04:18.395455"
-  },
-  "planner|2026-09-22t13_04_06_759530": {
-    "topic": "planner",
-    "gist": "```json [] ```",
-    "ts": "2026-09-22T13:04:06.759530"
-  },
-  "action_detect|2026-09-22t13_02_20_931796": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оцінити цінність підписки Apple\", \"action_date\": \"2026-09-30\", \"action_time\": null, \"action_summary\": \"Приділи уваг",
-    "ts": "2026-09-22T13:02:20.931796"
   }
 }
