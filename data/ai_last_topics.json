@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-22t10_46_53_712649": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, твоє сховище iCloud заповнено. Це означає, що документи, контакти, фото та відео не синхронізуються, а iC",
+    "ts": "2026-09-22T10:46:53.712649"
+  },
   "mailcal_extract|2026-09-22t10_41_24_817129": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Списання підписок\", \"action_date\": \"2026-09-22\", \"action_time\": null, \"action_summary\": \"Цього тижня будуть списані",
     "ts": "2026-09-22T09:02:34.753136"
-  },
-  "action_detect|2026-09-22t09_02_23_637653": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Реактивувати Strava API\", \"action_date\": \"2026-09-22\", \"action_time\": \"12:00\", \"action_summary\": \"Реактивувати Stra",
-    "ts": "2026-09-22T09:02:23.637653"
   }
 }
