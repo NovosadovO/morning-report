@@ -1,4 +1,9 @@
 {
+  "foresight|2026-09-22t21_45_31_035963": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-22T21:45:31.035963"
+  },
   "selfact|2026-09-22t21_40_51_835508": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Сьогодні о 23:00 починається Соляр — 2-й дім: Фінанси й цінності. Це важливий період для переосм",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-22T20:03:32.458774"
-  },
-  "action_detect|2026-09-22t20_03_21_628029": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути фінансовий план\", \"action_date\": \"2026-09-30\", \"action_time\": null, \"action_summary\": \"Переглянути фіна",
-    "ts": "2026-09-22T20:03:21.628029"
   }
 }
