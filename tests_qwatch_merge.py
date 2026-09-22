@@ -36,7 +36,7 @@ def check(name, cond):
 _FAKE_DB.clear()
 qwatch._save({"2026-09-21": {"date": "2026-09-21", "steps": 9000, "weight_kg": 83.0,
                               "health_score": 90, "source": "qwatch_auto"}})
-rec = qwatch.parse_and_save("Сон: 6 годин 45 хвилин. Пульс сьогодні — 62 удари/хв.")
+rec = qwatch.parse_and_save("Дата: 2026-09-21. Сон: 6 годин 45 хвилин. Пульс сьогодні — 62 удари/хв.")
 db = qwatch._load()
 day = db.get("2026-09-21", {})
 check("merge: sleep записаний", day.get("sleep_total_min") == 405)

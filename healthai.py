@@ -272,7 +272,8 @@ def analytics(days: int = 30) -> dict:
         K.log(TAG, f"load_health error: {e}")
         health = {}
 
-    out = {"days": days, "generated": _now().isoformat(timespec="seconds")}
+    today_str = _now().strftime("%Y-%m-%d")
+    out = {"days": days, "generated": _now().isoformat(timespec="seconds"), "today": today_str}
 
     spec = [("weight_kg", "weight"), ("sleep_hours", "sleep"), ("steps", "steps"),
             ("hr_avg", "hr"), ("hrv", "hrv"), ("calories", "calories"),
@@ -282,10 +283,19 @@ def analytics(days: int = 30) -> dict:
         vals = [v for _, v in pairs]
         d7 = [v for _, v in _series(health, field, 7)]
         delta, word = _trend(pairs)
+        last_day = pairs[-1][0] if pairs else None
+        days_ago = None
+        if last_day:
+            try:
+                days_ago = (datetime.strptime(today_str, "%Y-%m-%d").date()
+                            - datetime.strptime(last_day, "%Y-%m-%d").date()).days
+            except Exception:
+                days_ago = None
         out[name] = {
             "n": len(vals),
             "last": vals[-1] if vals else None,
-            "last_day": pairs[-1][0] if pairs else None,
+            "last_day": last_day,
+            "days_ago": days_ago,          # 0 = сьогодні, 1+ = застаріле для ЦЬОГО показника
             "avg": _avg(vals),
             "avg7": _avg(d7),
             "min": min(vals) if vals else None,
@@ -348,6 +358,15 @@ def facts_block(a: dict) -> str:
         if not m or m.get("last") is None:
             return f"{label}: немає даних"
         s = f"{label}: {m['last']}{unit}"
+        da = m.get("days_ago")
+        if da is not None and da >= 1:
+            # ЦЕ ГОЛОВНИЙ ЗАХИСТ ВІД "НЕПРАВДИВОЇ ІНФОРМАЦІЇ": показник міг
+            # оновитись на попередній день (напр. QWatch-скрін без розділу
+            # сну), тоді як інші показники сьогодні вже свіжі. Без цього
+            # маркера AI бачив просто число і сам вирішував, що воно "за
+            # сьогодні" — звідси "ти спав 2.0 год за 22 вересня", хоча ці
+            # 2.0 год насправді за 21-ше.
+            s += f" [!!СТАРІ ДАНІ за {m['last_day']}, {da} дн. тому, НЕ сьогодні!!]"
         if m.get("avg7") is not None:
             s += f" | сер.7д {m['avg7']}{unit}"
         if m.get("avg") is not None:
@@ -359,6 +378,7 @@ def facts_block(a: dict) -> str:
     w = a.get("weight") or {}
     goal = f" | до цілі {w['to_goal']:+} кг" if w.get("to_goal") is not None else ""
     rows = [
+        f"Сьогодні: {a.get('today', '?')}",
         line("Вага", w, " кг", goal),
         line("Сон", a.get("sleep"), " год"),
         line("Кроки", a.get("steps")),
@@ -392,6 +412,14 @@ _STYLE = (
     "але тільки ФАКТАМИ з даних нижче. ЗАБОРОНЕНО вигадувати числа чи стан (настрій, "
     "енергію, стрес), яких немає в даних. Якщо якогось показника немає — прямо скажи, "
     "чого саме бракує, і попроси надіслати, а не вигадуй за нього. Без порожніх фраз.\n"
+    "КРИТИЧНО ПРО ДАТИ: рядок 'Сьогодні: YYYY-MM-DD' — це справжня сьогоднішня дата. "
+    "Якщо біля показника стоїть позначка [!!СТАРІ ДАНІ за ..., N дн. тому, НЕ сьогодні!!] "
+    "— це означає останнє ЗНАЧЕННЯ цього показника прийшло НЕ сьогодні, а раніше. "
+    "ТОБІ АБСОЛЮТНО ЗАБОРОНЕНО писати про це число 'сьогодні', 'зараз' чи вказувати "
+    "сьогоднішню дату — це буде НЕПРАВДА. Замість цього прямо скажи: 'за сьогодні "
+    "[показник] ще не приходив, останнє відоме — [дата], [N] дн. тому' і попроси "
+    "надіслати свіжі дані. Показники без цієї позначки — дійсно за сьогодні, про них "
+    "можна писати 'сьогодні'/'зараз'.\n"
     "ГЛИБИНА: не просто перелічуй числа — РОЗБИРАЙ зв'язки: як графік зміни "
     "(сьогодні/завтра) впливає на сон і коли він встигає відновитись; що якість і "
     "стабільність сну (не тільки тривалість) кажуть про організм; якщо є дані по "
@@ -609,6 +637,24 @@ def anomalies(a: dict) -> list:
         out.append(("stale",
                     f"📵 Дані здоров'я не оновлювались {a['stale_hours']} год "
                     f"(останні — {a['last_data_day']}). Автосинк із годинника міг зламатись"))
+
+    # Прямий фікс на "AI пише неправдиву інформацію": сьогодні прийшли
+    # СВІЖІ дані (last_data_day == сьогодні), але конкретний показник у них
+    # відсутній — і без цієї перевірки healthai мовчки бере ЙОГО останнє
+    # відоме значення з попереднього дня і подає як актуальне. Кожен такий
+    # показник — окремий привід написати й прямо попросити конкретні дані,
+    # а не здогадуватись.
+    today_str = a.get("today")
+    if today_str and a.get("last_data_day") == today_str:
+        for key, label, emoji in (("sleep", "сон", "😴"), ("hr", "пульс", "❤️"),
+                                    ("hrv", "HRV", "💓"), ("steps", "кроки", "🚶")):
+            m = a.get(key) or {}
+            da = m.get("days_ago")
+            if da is not None and da >= 1:
+                out.append((f"{key}_field_stale",
+                            f"{emoji} Сьогоднішні дані вже прийшли, але без {label} — "
+                            f"останнє відоме значення за {m['last_day']} ({da} дн. тому). "
+                            f"Скинь, будь ласка, {label} окремо, якщо він є в застосунку QWatch."))
 
     return out
 

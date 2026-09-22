@@ -536,6 +536,14 @@ def _health_text(health: dict) -> str:
         parts.append(f"Сон: {health['sleep']} год")
     if not parts:
         return "Здоров'я: даних немає — надішли дані текстом (кроки/сон/вага)"
+    # Захист від "неправдивої інформації": якщо health_date НЕ сьогодні —
+    # прямо позначаємо це в тексті, щоб Gemini не написав "сьогодні ти..."
+    # про дані, які прийшли вчора чи раніше.
+    today_str = datetime.now(tz=_TZ).strftime("%Y-%m-%d")
+    hd = health.get("health_date")
+    if hd and hd != today_str:
+        return ("Здоров'я (!! ОСТАННІ дані за " + hd + ", НЕ сьогодні — сьогоднішні ще "
+                "не приходили, не пиши 'сьогодні' про ці числа !!): " + " | ".join(parts))
     return "Здоров'я: " + " | ".join(parts)
 
 def _emails_text(emails: list) -> str:
@@ -946,13 +954,16 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
                 parts.append("💹 Крипто:\n" + "\n".join(f"  {l}" for l in crypto_lines))
 
         health_lines = []
+        _hd = health.get("health_date")
+        _today_str = datetime.now(tz=_TZ).strftime("%Y-%m-%d")
+        _stale_note = f" (дані за {_hd}, не сьогодні)" if _hd and _hd != _today_str else ""
         if health.get("weight"):
             delta = health.get("weight_7d_delta", 0)
             health_lines.append(f"⚖️ Вага: {health['weight']} кг ({delta:+.1f} кг за тиж)")
         if health.get("steps"):
-            health_lines.append(f"🚶 Кроки: {health['steps']:,}")
+            health_lines.append(f"🚶 Кроки: {health['steps']:,}{_stale_note}")
         if health.get("sleep"):
-            health_lines.append(f"😴 Сон: {health['sleep']} год")
+            health_lines.append(f"😴 Сон: {health['sleep']} год{_stale_note}")
         if health_lines:
             parts.append("\n" + "\n".join(health_lines))
 
