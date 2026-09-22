@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T23:40:56.116287",
-      "kind": "calendar",
-      "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 4-й дім: Дім і родина</b>\n📅 24.09 (Thu) — післязавтра\n🕐 00:00–00:00\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-22T23:40:56.900114",
       "kind": "calendar",
       "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 4-й дім: Дім і родина\n📅 24.09 (Thu) — післязавтра\n🕐 00:00–00:00\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T23:46:45.256701",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>A Chinese Hacker Used AI To Attack 100+ Companies In One Of </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79571"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79571"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79571"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79571"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79571"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79571"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
