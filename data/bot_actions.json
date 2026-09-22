@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, зверни увагу, що сьогодні, 17.09, о 09:00 у тебе запла",
-      "detail": "З календаря видно, що Олег має дві події, які перетинаються або йдуть одна за одною з дуже малим інтервалом: рання зміна (06:00-18:00) та лікар (09:00).",
-      "module": "selfact",
-      "ts": "2026-09-17T04:50:55"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-09-17",
       "detail": "автосинк з годинника: hr_avg, weight_kg, spo2, stress, sleep_total_min",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від Ben at StartEngine 'Gain Exposure to OpenAI’s “AGI Era” Before The Innovators Fund Closes' із зазначенням, що фонд закривається цього тижня.",
       "module": "selfact",
       "ts": "2026-09-22T21:09:18"
+    },
+    {
+      "kind": "hcoach",
+      "what": "evening_review",
+      "detail": "вечірній розбір, оцінка 80",
+      "module": "selfact",
+      "ts": "2026-09-22T21:21:29"
     }
   ]
 }
