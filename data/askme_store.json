@@ -25673,5 +25673,28 @@
       "tag": "report"
     },
     "ts": "2026-09-22T05:16:47.119153+00:00"
+  },
+  "704fff38ce": {
+    "key": "note|олег отримав нові пропозиції роботи від profesiask та linke",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег отримав нові пропозиції роботи від Profesia.sk та Linke »\n\nОлег отримав нові пропозиції роботи від Profesia.sk та LinkedIn (PwC Slovakia, Bolt).\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег отримав нові пропозиції роботи від Profesia.sk та Linke",
+      "desc": "Олег отримав нові пропозиції роботи від Profesia.sk та LinkedIn (PwC Slovakia, Bolt).",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-22T05:33:54.292639+00:00"
   }
 }
