@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-22T02:46:17.675471",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Konzultant/ka pre operácie a digitalizáciu | Bankovníctvo a </b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79508"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79508"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79508"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79508"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79508"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79508"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-22T02:46:18.893074",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 Play your CARDS right</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -398,6 +359,12 @@
       "ts": "2026-09-22T02:47:32.490517",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>SOL +5.8% за 24г</b>\n\nЗараз: 119.19 $\n24г тому: 112.67 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-22T02:47:33.232474",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ SOL +5.8% за 24г\n\nЗараз: 119.19 $\n24г тому: 112.67 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
