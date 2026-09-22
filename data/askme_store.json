@@ -700,5 +700,28 @@
       "tag": "report"
     },
     "ts": "2026-09-22T16:02:53.740819+00:00"
+  },
+  "e88e004802": {
+    "key": "note|олег отримав дайджест the price is the product від 0xresea",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег отримав дайджест 'The Price Is the Product' від 0xResea »\n\nОлег отримав дайджест 'The Price Is the Product' від 0xResearch, що стосується крипторинку та зростання протоколів.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег отримав дайджест 'The Price Is the Product' від 0xResea",
+      "desc": "Олег отримав дайджест 'The Price Is the Product' від 0xResearch, що стосується крипторинку та зростання протоколів.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-22T16:14:54.456391+00:00"
   }
 }
