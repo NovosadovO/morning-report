@@ -441,6 +441,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-22T23:15:52.655030",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin ETFs see biggest inflow in 11 months</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79569"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79569"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79569"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79569"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79569"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79569"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
