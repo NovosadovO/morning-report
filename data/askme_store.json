@@ -846,5 +846,33 @@
       "tag": "MSG_FORESIGHT_TRYNEW"
     },
     "ts": "2026-09-22T17:08:50.895724+00:00"
+  },
+  "ec652c0e86": {
+    "key": "reminder|переглянути вакансію senior product manager",
+    "q": "🔔 Хочу поставити нагадування:\n\n« Переглянути вакансію Senior Product Manager »\n🕐 23.09 о 11:00\n\nОлеже, переглянь вакансію Senior Product Manager в Toptal на LinkedIn. Це може бути цікаво.\n\nПоставити?",
+    "kind": "remind",
+    "opts": [
+      [
+        "save",
+        "🔔 Так, нагадай"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Переглянути вакансію Senior Product Manager",
+      "desc": "Олеже, переглянь вакансію Senior Product Manager в Toptal на LinkedIn. Це може бути цікаво.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "reminder",
+      "start": "2026-09-23T11:00:00"
+    },
+    "ts": "2026-09-22T17:16:43.952155+00:00"
   }
 }
