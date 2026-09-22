@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-16",
-      "detail": "автосинк з годинника: hr_avg, distance_km, spo2, stress",
-      "module": "qwsync",
-      "ts": "2026-09-16T20:56:05"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "hr_avg=85, distance_km=19.9, spo2=99, stress=41, date=2026-09-16, source=qwatch_auto, saved_at=2026-09-16 20:56",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Надійшли нові сповіщення про вакансії від LinkedIn, які можуть бути цікавими для Олега, з урахуванням його місця проживання та потенційних інтересів.",
       "module": "selfact",
       "ts": "2026-09-22T20:38:13"
+    },
+    {
+      "kind": "notify",
+      "what": "Зверни увагу на лист від Ben at StartEngine: 'Gain Exposure",
+      "detail": "Лист від StartEngine містить термінову інформацію про закриття фонду цього тижня, що потребує негайної уваги Олега.",
+      "module": "selfact",
+      "ts": "2026-09-22T20:38:18"
     }
   ]
 }
