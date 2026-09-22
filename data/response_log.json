@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T01:30:19.755891+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Перевірити рахунок від GASTROMILA",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-05"
-      }
-    },
-    {
       "ts": "2026-08-05T01:52:17.157397+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13965,6 +13955,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dl_due_snooze_e36a0b43e3"
+    },
+    {
+      "ts": "2026-09-22T17:34:35.717979+00:00",
+      "category": "rwa_move",
+      "question": "RWA",
+      "answer": "🚨 АНОМАЛІЯ: токенізований фонд FIGR_HELOC (Figure Heloc) зробив -3.23% за 24 години — такі інструменти мають стояти на м"
     }
   ]
 }
