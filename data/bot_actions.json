@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-20",
-      "detail": "автосинк з годинника: stress, sleep_total_min",
-      "module": "qwsync",
-      "ts": "2026-09-20T13:32:56"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "stress=37, sleep_total_min=120, sleep_hours=2.0, date=2026-09-20, source=qwatch_auto, saved_at=2026-09-20 13:32",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> 'Area Sales Manager в Essity' містить інформацію про потенційно цікаву вакансію.",
       "module": "selfact",
       "ts": "2026-09-23T13:21:09"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-09-23T14:05:50"
     }
   ]
 }
