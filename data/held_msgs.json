@@ -1,24 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T03:28:27.681919",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ XRP +5.4% за 24г\n\nЗараз: 1.5965 $\n24г тому: 1.5150 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-23T03:28:31.410702",
-      "kind": "calendar",
-      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 7-й дім: Партнерство</b>\n📅 27.09 (Sun) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-23T03:28:32.106255",
-      "kind": "calendar",
-      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 7-й дім: Партнерство\n📅 27.09 (Sun) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-23T03:29:30.802804",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Соляр — 3-й дім: Спілкування й навчання » було 22.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -326,6 +308,45 @@
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• The Daily Degen  → The Daily Degen - September 22nd, 2026\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T03:31:13.513906",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>A Chinese Hacker Used AI To Attack 100+ Companies In One Of </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79571"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79571"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79571"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79571"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79571"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79571"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
