@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T22:13:17.951019",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -5.1% за 24г</b>\n\nЗараз: 0.4124 $\n24г тому: 0.4345 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-23T22:13:19.691623",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -5.1% за 24г\n\nЗараз: 0.4124 $\n24г тому: 0.4345 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79627"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-23T22:16:36.774323",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Collaborative L&amp;D Specialist (Remote) в Laminar Projects</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79626"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79626"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79626"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79626"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79626"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79626"
             }
           ]
         ]
