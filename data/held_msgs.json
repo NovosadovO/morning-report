@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T22:10:03.359683",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-23T22:10:04.072741",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -5.1% за 24г\n\nЗараз: 0.4124 $\n24г тому: 0.4345 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T22:13:56.056002",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Operations Director в Siebert &amp; Wassink»\n\n<i>«Сповіщення про вакансії за запитом Директор з операцій в European Union          \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nOperations Director\r\nSiebert &amp; Wassink\r\nUtrecht, Netherlands\r\n\r\nЦя компанія активно наймає персонал\r\nПодати заявку за допомогою резюме і профілю\r\nПереглян...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79629"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79629"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79629"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79629"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79629"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79629"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
