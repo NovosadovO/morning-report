@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T23:01:22.380069",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79588"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79588"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79588"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79588"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79588"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79588"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T23:01:24.000008",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your weekly progress report from Google Health</b>\n👤 Google Health &lt;google-health-noreply@google.com&gt;",
@@ -239,6 +200,12 @@
       "ts": "2026-09-23T23:04:41.444124",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T23:04:44.531759",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>XRP -6.2% за 24г</b>\n\nЗараз: 1.4825 $\n24г тому: 1.5801 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
