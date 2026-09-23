@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T22:13:56.056002",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Operations Director в Siebert &amp; Wassink»\n\n<i>«Сповіщення про вакансії за запитом Директор з операцій в European Union          \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nOperations Director\r\nSiebert &amp; Wassink\r\nUtrecht, Netherlands\r\n\r\nЦя компанія активно наймає персонал\r\nПодати заявку за допомогою резюме і профілю\r\nПереглян...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79629"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79629"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79629"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79629"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79629"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79629"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T22:14:30.373888",
       "kind": "watchdog",
       "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 32\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\n<i>За цим я стежити НЕ можу, поки не виправлено.</i>",
@@ -343,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79613"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-23T22:16:39.629914",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79588"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79588"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79588"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79588"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79588"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79588"
             }
           ]
         ]
