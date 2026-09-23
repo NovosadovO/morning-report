@@ -5724,5 +5724,28 @@
       "tag": "report"
     },
     "ts": "2026-09-23T19:16:57.593375+00:00"
+  },
+  "f74ab23f81": {
+    "key": "note|олег отримав звіт a little more orange від whaletales з ог",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег отримав звіт 'A Little More Orange' від WhaleTales з ог »\n\nОлег отримав звіт 'A Little More Orange' від WhaleTales з оглядом новин крипторинку, зокрема про Bitcoin та Saylor.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег отримав звіт 'A Little More Orange' від WhaleTales з ог",
+      "desc": "Олег отримав звіт 'A Little More Orange' від WhaleTales з оглядом новин крипторинку, зокрема про Bitcoin та Saylor.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-23T19:47:57.802885+00:00"
   }
 }
