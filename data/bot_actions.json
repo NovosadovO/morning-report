@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-18",
-      "detail": "автосинк з годинника: hr_avg, hrv",
-      "module": "qwsync",
-      "ts": "2026-09-18T12:48:55"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "hr_avg=45, hrv=45, date=2026-09-18, source=qwatch_auto, saved_at=2026-09-18 12:48",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від Google Cloud Billing Alerts про перевищення бюджету на 150%.",
       "module": "selfact",
       "ts": "2026-09-23T05:32:13"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, нагадую про зустріч з дерматологом сьогодні о 09:00.",
+      "detail": "Запис у календарі на 23.09: 09:00 дерматолога.",
+      "module": "selfact",
+      "ts": "2026-09-23T05:32:18"
     }
   ]
 }
