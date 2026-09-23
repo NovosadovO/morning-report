@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T00:46:29.327030",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Startup At The Center Of Multiple Rogue AI Cyberattacks </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79630"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79630"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79630"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79630"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79630"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79630"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T00:46:30.619131",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Operations Director в Siebert &amp; Wassink</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -280,6 +241,12 @@
       "ts": "2026-09-24T00:48:25.892702",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 24.09 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T00:48:28.252822",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
