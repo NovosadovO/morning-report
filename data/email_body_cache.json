@@ -1,4 +1,9 @@
 {
+  "79627": {
+    "subject": "🏠 Нові квартири у Кошіці — 1 нове оголошення",
+    "sender": "Oleg Novosadov <novosadovoleg@gmail.com>",
+    "body": "body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; } .header { background-color: #f4f4f4; padding: 20px; text-align: center; } .listing { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; display: flex; align-items: flex-start; } .listing img { margin-right: 20px; border-radius: 4px; } .listing-details { flex: 1; } .listing-title { font-size: 18px; font-weight: bold; margin-bottom: 10px; } .listing-title a { color: #0066cc; text-decoration: none; } .listing-info { margin-bottom: 5px; } .error-note { color: #d9534f; background-color: #f9f2f2; padding: 10px; border-left: 5px solid #d9534f; margin-top: 20px; font-size: 14px; } 🏠 Нові 3-кімнатні квартири у Кошіці (Словаччина) Звіт сформовано: 2026-09-23 20:51:08 3-izbový byt po rekonštrukcii, 78m2, Ťahanovce - Madridská Ціна: 209 900 € Площа: 78.0 m² Сайт: nehnutelnosti.sk Примітка: Деякі сайти були тимчасово недоступні: • reality.sk: HTTPSConnectionPool(host='www.reality.sk', port=443): Max retries exceeded with url: /3-izbovy-byt/kosice/predaj/ (Caused by ConnectTimeoutError( , 'Connection to www.reality.sk timed out. (connect timeout=20)'))"
+  },
   "79626": {
     "subject": "Collaborative L&D Specialist (Remote) в Laminar Projects",
     "sender": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -28,10 +33,5 @@
     "subject": "🏠 Нові квартири у Кошіці — 1 нове оголошення",
     "sender": "Oleg Novosadov <novosadovoleg@gmail.com>",
     "body": "body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; } .card { border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 20px; display: flex; flex-wrap: wrap; } .photo { margin-right: 20px; } .details { flex: 1; min-width: 250px; } .title { font-size: 1.2em; font-weight: bold; margin-bottom: 10px; color: #2c3e50; } .price { font-size: 1.1em; color: #e74c3c; font-weight: bold; } .area { font-weight: bold; color: #34495e; } .site { font-size: 0.9em; color: #7f8c8d; } .error-note { color: #a94442; background-color: #f2dede; padding: 10px; border-radius: 4px; margin-top: 20px; } img { border-radius: 4px; border: 1px solid #eee; } a { text-decoration: none; color: #3498db; } a:hover { text-decoration: underline; } Нові 3-кімнатні квартири у Кошіці (Словаччина) Дані отримано: 2026-09-21 17:55:52 (Europe/Bratislava) NA PREDAJ 3 IZBOVÝ BYT S LOGGIOU PO KOMPLET REKONŠTRUKCII Ціна: 216 500 € Площа: н/д Сайт: bazos.sk"
-  },
-  "79434": {
-    "subject": "🏠 Нові квартири у Кошіці — 1 нових оголошень",
-    "sender": "Oleg Novosadov <novosadovoleg@gmail.com>",
-    "body": "body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; } .listing { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 8px; overflow: hidden; } .listing img { float: left; margin-right: 20px; border-radius: 4px; border: 1px solid #eee; } .listing-info { overflow: hidden; } .title { font-size: 18px; font-weight: bold; margin-bottom: 10px; } .price { color: #e67e22; font-size: 16px; font-weight: bold; } .details { margin: 5px 0; } .site { color: #7f8c8d; font-size: 12px; } .clear { clear: both; } a { color: #2980b9; text-decoration: none; } a:hover { text-decoration: underline; } Нові 3-кімнатні квартири у Кошіці (Словаччина) Звіт сформовано: 20.09.2026 17:34 Na predaj kompletne zariadený 3-izbový byt po rekonštrukcii. Ціна: 219 990 € Площа: 64.0 m² Джерело: nehnutelnosti.sk"
   }
 }
