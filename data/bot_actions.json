@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверни увагу на нове сповіщення від Discord. Можливо,",
-      "detail": "Є свіжий лист від Discord про пропущене повідомлення у VenomBridge, Олег міг його не помітити.",
-      "module": "selfact",
-      "ts": "2026-09-20T06:42:21"
-    },
-    {
-      "kind": "notify",
       "what": "Вакансії від LinkedIn та Profesia.sk",
       "detail": "Зі свіжих листів від LinkedIn та Profesia.sk, які містять сповіщення про нові вакансії.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-09-23T10:06:33"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, твій бюджет Google Cloud перевищено на 150% за вересе",
+      "detail": "Лист від Google Cloud Billing Alerts повідомляє про перевищення бюджету на 150% до 22.09.2026.",
+      "module": "selfact",
+      "ts": "2026-09-23T10:13:57"
     }
   ]
 }
