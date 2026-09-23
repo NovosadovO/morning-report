@@ -3998,5 +3998,10 @@
     "q": "📅 Хочу записати в календар:\n\n« 💳 Оплата рахунку Railway Corporation »\n🕐 22.09 о 09:00\n\nАвтоматично з листа.\nВід: Railway Corporation <invoice+statements+acct_1HNrvlCJoPsRzQsd@stripe.com>\nТема: Your receipt from Railway Corporation #2724-9971\nReceipt from Railway Corporation $12.55 Paid \n\nЗаписати?",
     "kind": "plan",
     "asked_at": "2026-09-23T10:17:25"
+  },
+  "reminder|оновити wirex": {
+    "q": "🔔 Хочу поставити нагадування:\n\n« Оновити Wirex »\n🕐 29.09 о 10:00\n\nНе забудьте оновити Wirex до версії Wirex One до 30 вересня, щоб зберегти доступ до сервісу.\n\nПоставити?",
+    "kind": "remind",
+    "asked_at": "2026-09-23T10:29:19"
   }
 }
