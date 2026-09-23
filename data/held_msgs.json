@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T00:00:10.045639",
-      "kind": "watchdog",
-      "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 32\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\nЗа цим я стежити НЕ можу, поки не виправлено.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T00:00:16.995467",
       "kind": "calendar",
       "text": "📅 <b>Завтра у тебе</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 5-й дім: Творчість і радість</b>\n📅 25.09 (Fri) — завтра\n🕐 00:00–00:00\n\n<i>Сьогодні ще є час підготуватись — документи, дорога, час виїзду.</i>",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79630"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-24T00:01:39.210287",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Operations Director в Siebert &amp; Wassink</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79629"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79629"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79629"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79629"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79629"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79629"
             }
           ]
         ]
