@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T01:14:45.839362",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>DOGE -8.1% за 24г</b>\n\nЗараз: 0.0927 $\n24г тому: 0.1009 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T01:14:46.783554",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ DOGE -8.1% за 24г\n\nЗараз: 0.0927 $\n24г тому: 0.1009 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T01:16:50.604702",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Process Analyst (f/m/d) в Deutsche Börse Group</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79633"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79633"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79633"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79633"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79633"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79633"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
