@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T00:44:34.928788",
-      "kind": "calendar",
-      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 3-й дім: Спілкування й навчання\n🕐 00:00–00:00\n\nВідповідь збережу — це піде в аналітику тижня.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T00:44:37.428139",
       "kind": "calendar",
       "text": "📅 <b>Завтра у тебе</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 5-й дім: Творчість і радість</b>\n📅 25.09 (Fri) — завтра\n🕐 00:00–00:00\n\n<i>Сьогодні ще є час підготуватись — документи, дорога, час виїзду.</i>",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79631"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-24T00:46:29.327030",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Startup At The Center Of Multiple Rogue AI Cyberattacks </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79630"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79630"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79630"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79630"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79630"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79630"
             }
           ]
         ]
