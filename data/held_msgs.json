@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T00:00:09.243099",
-      "kind": "watchdog",
-      "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 32\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\n<i>За цим я стежити НЕ можу, поки не виправлено.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T00:00:10.045639",
       "kind": "watchdog",
       "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 32\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\nЗа цим я стежити НЕ можу, поки не виправлено.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79631"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-24T00:01:37.877447",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Startup At The Center Of Multiple Rogue AI Cyberattacks </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79630"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79630"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79630"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79630"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79630"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79630"
             }
           ]
         ]
