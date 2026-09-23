@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Повідомлення в TikTok",
-      "detail": "Є свіжий лист від TikTok з повідомленням від Ruslana*2784.",
-      "module": "selfact",
-      "ts": "2026-09-20T11:53:00"
-    },
-    {
       "kind": "ask",
       "what": "Олег, ти плануєш відреагувати на повідомлення від Ruslana*27",
       "detail": "Свіжі листи від Ruslana*2784 у TikTok та Discord про пропущені повідомлення в VenomBridge, на які не було реакції.",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, calories, stress",
       "module": "qwsync",
       "ts": "2026-09-23T12:22:05"
+    },
+    {
+      "kind": "note",
+      "what": "збережено дані здоров'я",
+      "detail": "steps=4414, hr_avg=64, calories=209, stress=45, date=2026-09-23, source=qwatch_auto, saved_at=2026-09-23 12:22",
+      "module": "healthai",
+      "ts": "2026-09-23T12:22:07"
     }
   ]
 }
