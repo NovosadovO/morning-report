@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T07:52:17.559808+00:00",
-      "category": "proactive_action",
-      "question": "Кнопка пропозиції",
-      "answer": "pa_skip_1e6f195e56"
-    },
-    {
       "ts": "2026-08-05T07:52:25.231442+00:00",
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
@@ -13966,6 +13960,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Соляр",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-23T12:21:52.706541+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_fe22a637d1"
     }
   ]
 }
