@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T01:16:57.153454",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔴 The Insider: The end of America’s hegemony in the Middle E</b>\n👤 \"Edward Carr at The Economist\" &lt;noreply@e.economis",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79628"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79628"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79628"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79628"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79628"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79628"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T01:16:58.485474",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-09-24T01:19:39.364473",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 24.09 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T01:19:41.867055",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
     }
   ]
