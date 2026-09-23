@@ -57,6 +57,11 @@
         "date": "2026-08-27",
         "amount": "12.32",
         "uid": "78132"
+      },
+      {
+        "date": "2026-09-22",
+        "amount": "12.55",
+        "uid": "79579"
       }
     ],
     "active": true,
@@ -64,13 +69,13 @@
     "confirmed": true,
     "skipped": false,
     "first_seen": "2026-08-23",
-    "note": "Щомісячна оплата за тарифний план Hobby.",
-    "amount": "5.00",
+    "note": "Щомісячна оплата за тариф Hobby plan та використання ресурсів.",
+    "amount": "12.55",
     "sender": "Railway Corporation <invoice+statements+acct_1HNrvlCJoPsRzQsd@stripe.com>",
-    "subject": "Your receipt from Railway Corporation #2645-8801",
-    "uid": "78132",
-    "last_seen": "2026-08-28",
-    "next_due": "2026-09-22"
+    "subject": "Your receipt from Railway Corporation #2724-9971",
+    "uid": "79579",
+    "last_seen": "2026-09-23",
+    "next_due": "2026-10-22"
   },
   "chatgptgo": {
     "vendor": "ChatGPT Go",
