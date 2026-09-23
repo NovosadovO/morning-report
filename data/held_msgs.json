@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T01:44:40.426121",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ DOGE -7.7% за 24г\n\nЗараз: 0.0925 $\n24г тому: 0.1002 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T01:44:43.128369",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -6.8% за 24г</b>\n\nЗараз: 0.4126 $\n24г тому: 0.4425 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79631"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-24T01:46:33.166164",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Startup At The Center Of Multiple Rogue AI Cyberattacks </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79630"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79630"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79630"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79630"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79630"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79630"
             }
           ]
         ]
