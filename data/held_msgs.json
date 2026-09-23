@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T01:44:36.900330",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>AVAX -9.1% за 24г</b>\n\nЗараз: 10.26 $\n24г тому: 11.28 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T01:44:37.589465",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -9.1% за 24г\n\nЗараз: 10.26 $\n24г тому: 11.28 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T01:46:29.462916",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Process Analyst (f/m/d) в Deutsche Börse Group</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79633"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79633"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79633"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79633"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79633"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79633"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
