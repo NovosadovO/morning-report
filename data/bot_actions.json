@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Вакансії від LinkedIn та Profesia.sk",
-      "detail": "Зі свіжих листів від LinkedIn та Profesia.sk, які містять сповіщення про нові вакансії.",
-      "module": "selfact",
-      "ts": "2026-09-20T06:57:59"
-    },
-    {
       "kind": "hcoach",
       "what": "morning_plan",
       "detail": "ранковий план здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від Google Cloud Billing Alerts повідомляє про перевищення бюджету на 150% до 22.09.2026.",
       "module": "selfact",
       "ts": "2026-09-23T10:13:57"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, зверни увагу на 9 нових вакансій від Profesia.sk, що",
+      "detail": "Олег отримав лист від Profesia.sk з 9 новими пропозиціями роботи за критеріями 'Кошице, на договір (бригади)'.",
+      "module": "selfact",
+      "ts": "2026-09-23T10:14:03"
     }
   ]
 }
