@@ -68,5 +68,15 @@
     "note": "Поповнення кредитів Runable.",
     "uid": "79403",
     "ts": "2026-09-20T05:05:05.770681+00:00"
+  },
+  "railway_corporation|12.55|2026-09-22": {
+    "vendor": "Railway Corporation",
+    "amount": 12.55,
+    "currency": "USD",
+    "date": "2026-09-22",
+    "kind": "sub",
+    "note": "Оплата за послуги Railway Corporation та підписку Hobby plan.",
+    "uid": "79579",
+    "ts": "2026-09-23T10:56:12.554876+00:00"
   }
 }
