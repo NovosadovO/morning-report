@@ -1,9 +1,4 @@
 {
-  "79099": {
-    "sender": "newsletters-noreply@linkedin.com",
-    "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
-    "seen_ts": "2026-09-14T15:12:35.147299+00:00"
-  },
   "79100": {
     "sender": "rewards@booking.com",
     "sender_raw": "\"Booking.com\" <rewards@booking.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-09-23T12:28:35.569092+00:00"
+  },
+  "79604": {
+    "sender": "onboarding@resend.dev",
+    "sender_raw": "Morning Report <onboarding@resend.dev>",
+    "seen_ts": "2026-09-23T12:30:44.406491+00:00"
   }
 }
