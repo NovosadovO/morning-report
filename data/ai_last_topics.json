@@ -1,4 +1,19 @@
 {
+  "email_ai_item|2026-09-23t13_33_29_033045": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від The Economist через LinkedIn є інформаційним бюлетенем, що містить статтю під назвою «Яка мова світу наймиліша?». Він запрошує чит",
+    "ts": "2026-09-23T13:33:29.033045"
+  },
+  "action_detect|2026-09-23t13_23_51_866517": {
+    "topic": "action_detect",
+    "gist": "```json {\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null} ```",
+    "ts": "2026-09-23T13:23:51.866517"
+  },
+  "msg_vip_email|2026-09-23t13_23_42_221632": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Цей обідній час середи, 23 вересня, надає гарну нагоду переглянути твої поточні успіхи. Бачу, ти вчора оцінив свій день на 80 балів, що є значн",
+    "ts": "2026-09-23T13:23:42.221632"
+  },
   "selfact|2026-09-23t13_21_03_358770": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Wirex: доступ закінчується\",     \"text\": \"Доступ до поточної версії Wirex закінчується 30 вересня. Потрібно он",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-22\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
     "ts": "2026-09-23T12:03:07.371710"
-  },
-  "action_detect|2026-09-23t12_02_50_536614": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2023-09-23\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-23T12:02:50.536614"
-  },
-  "action_detect|2026-09-23t12_02_50_237533": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відвідати дерматолога\", \"action_date\": \"2026-09-23\", \"action_time\": \"10:00\", \"action_summary\": \"Сьогодні о 10:00 по",
-    "ts": "2026-09-23T12:02:50.237533"
-  },
-  "action_detect|2026-09-23t12_02_39_381747": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2023-09-23\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-23T12:02:39.381747"
   }
 }
