@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T03:46:43.966432",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>A Chinese Hacker Used AI To Attack 100+ Companies In One Of </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79571"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79571"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79571"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79571"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79571"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79571"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T03:46:45.246000",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - September 22nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -233,6 +194,12 @@
       "ts": "2026-09-23T03:49:49.232842",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• The Daily Degen  → The Daily Degen - September 22nd, 2026\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T03:49:52.607823",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
       "keyboard": null
     }
   ]
