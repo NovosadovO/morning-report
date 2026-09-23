@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T16:41:30.496109+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_ok_6f01f36e0a"
-    },
-    {
       "ts": "2026-08-05T16:48:11.713419+00:00",
       "category": "deadline_found",
       "question": "Socios.com: зміна способу входу",
@@ -13950,6 +13944,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-09-23T19:47:12.455729+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
