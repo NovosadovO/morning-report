@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T22:46:03.344200",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-23T22:46:04.528689",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Operations Director в Siebert &amp; Wassink</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -404,6 +398,12 @@
       "ts": "2026-09-23T22:48:37.298142",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -5.5% за 24г\n\nЗараз: 0.4120 $\n24г тому: 0.4358 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T22:48:39.758396",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>XRP -5.2% за 24г</b>\n\nЗараз: 1.4882 $\n24г тому: 1.5702 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
