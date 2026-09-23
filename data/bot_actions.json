@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "збережено дані здоров'я",
-      "detail": "hr_avg=65, hrv=49, sleep_total_min=60, sleep_hours=1.0, date=2026-09-19, source=qwatch_auto, saved_at=2026-09-19 22:14",
-      "module": "healthai",
-      "ts": "2026-09-19T22:14:06"
-    },
-    {
       "kind": "notify",
       "what": "Олег, нагадую, що завтра, 20.09, о 17:00 заплановано створит",
       "detail": "Календар на 20.09 містить подію '17:00 🤝 створити бота на трейдинг'.",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-09-23T07:05:46"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, ваш бюджет Google Cloud на вересень (€16.00) перевище",
+      "detail": "Лист від Google Cloud Billing Alerts про перевищення бюджету на 150%.",
+      "module": "selfact",
+      "ts": "2026-09-23T07:06:04"
     }
   ]
 }
