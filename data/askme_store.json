@@ -4922,5 +4922,31 @@
       "tag": "report"
     },
     "ts": "2026-09-23T11:01:36.278730+00:00"
+  },
+  "c8eb28d951": {
+    "key": "cal|початок періоду hobby plan",
+    "q": "📅 Хочу записати в календар:\n\n« 📌 Початок періоду Hobby plan »\n🕐 22.09 о 09:00\n\nАвтоматично з листа.\nВід: Railway Corporation <invoice+statements+acct_1HNrvlCJoPsRzQsd@stripe.com>\nТема: Your receipt from Railway Corporation #2724-9971\nSep 22–Oct 22, 2026 Hobby plan\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "📌 Початок періоду Hobby plan",
+      "desc": "Автоматично з листа.\nВід: Railway Corporation <invoice+statements+acct_1HNrvlCJoPsRzQsd@stripe.com>\nТема: Your receipt from Railway Corporation #2724-9971\nSep 22–Oct 22, 2026 Hobby plan",
+      "minutes": 60,
+      "start": "2026-09-22T09:00:00"
+    },
+    "ts": "2026-09-23T11:02:52.955638+00:00"
   }
 }
