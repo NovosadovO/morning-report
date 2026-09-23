@@ -344,5 +344,19 @@
     "paid": false,
     "paid_at": "",
     "created": "2026-09-20"
+  },
+  "google_cloud_platform||": {
+    "vendor": "Google Cloud Platform",
+    "amount": "",
+    "currency": "EUR",
+    "invoice_no": "",
+    "due": "",
+    "uid": "79616",
+    "sender": "\"Google Cloud Platform, Firebase, and APIs\" <CloudPlatform-noreply@google.com>",
+    "subject": "Your Project: My Roport is at risk of suspension",
+    "note": "Рахунок за проект \"My Roport\" прострочений або не має дійсних платіжних даних, що може призвести до призупинення послуг.",
+    "paid": false,
+    "paid_at": "",
+    "created": "2026-09-23"
   }
 }
