@@ -4141,6 +4141,16 @@
   "cal|отримано платіж google cloud platform  apis": {
     "q": "📅 Хочу записати в календар:\n\n« 💳 Отримано платіж Google Cloud Platform & APIs »\n🕐 23.09 о 09:00\n\nАвтоматично з листа.\nВід: Google Payments <payments-noreply@google.com>\nТема: Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD\nВаш платіж у розмірі 10,00 EUR ... до\n\nЗаписати?",
     "kind": "plan",
-    "asked_at": "2026-09-23T19:29:39"
+    "asked_at": "2026-09-23T19:29:39",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-09-23T19:46:30",
+    "meta": {
+      "summary": "💳 Отримано платіж Google Cloud Platform & APIs",
+      "desc": "Автоматично з листа.\nВід: Google Payments <payments-noreply@google.com>\nТема: Go",
+      "minutes": "60",
+      "start": "2026-09-23T09:00:00"
+    }
   }
 }
