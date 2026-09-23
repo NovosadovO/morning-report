@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, зверни увагу на нові вакансії від Profesia.sk та Linke",
-      "detail": "Свіжі листи від Profesia.sk та LinkedIn з пропозиціями роботи.",
-      "module": "selfact",
-      "ts": "2026-09-20T04:06:05"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, ти отримав код підтвердження Google. Якщо це було не з",
       "detail": "Свіжий лист від no-reply@apata.io | Google з кодом підтвердження.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Подія '09:00 дерматолога' у календарі на сьогодні, 23.09.",
       "module": "selfact",
       "ts": "2026-09-23T07:06:12"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, твій бюджет Google Cloud на вересень (€16.00) перевищ",
+      "detail": "Лист від Google Cloud Billing Alerts про перевищення бюджету на 150%.",
+      "module": "selfact",
+      "ts": "2026-09-23T07:52:46"
     }
   ]
 }
