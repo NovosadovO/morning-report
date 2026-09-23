@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T02:43:39.342975",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Daily Degen  → The Daily Degen - September 22nd, 2026\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-23T02:43:42.017964",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79570"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-23T02:46:29.426233",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin ETFs see biggest inflow in 11 months</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79569"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79569"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79569"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79569"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79569"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79569"
             }
           ]
         ]
