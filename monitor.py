@@ -1563,7 +1563,7 @@ _GEM_MIN_GAP = 11.0  # мін. секунд між викликами Gemini. Т
 _REPORT_AI_DEADLINE = 0.0  # monotonic-час, до якого можна робити AI-блоки (ставиться в main())
 
 # Моделі для fallback на 429: коли основна вичерпала квоту — пробуємо наступну (інший quota-pool)
-_GEM_MODELS = ["gemini-2.5-flash", "gemini-2.5-flash", "gemini-3.5-flash-lite"]
+_GEM_MODELS = ["gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-2.5-flash"]
 
 # "Prepayment credits depleted" — це НЕ per-model rate-limit, а вичерпаний
 # баланс акаунта: усі моделі впадуть з тим самим 429, тому ретраї/model-switch
