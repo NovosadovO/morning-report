@@ -4432,5 +4432,31 @@
       "desc": "Привіт, Олеже! Зараз середа, 23 вересня, 08:40. Ти сьогодні не на зміні, що дає тобі можливість спокійно зайнятися собою.\n\nТвоя вага тримається на 83 кг вже 14 днів, а сон впав до 2 годин (хоча середній за 7 днів – 5.7 годин). Це тривожний сигнал, ад"
     },
     "ts": "2026-09-23T08:40:26.450785+00:00"
+  },
+  "556a4c894c": {
+    "key": "cal|списання коштів railway corporation",
+    "q": "📅 Хочу записати в календар:\n\n« 💳 Списання коштів Railway Corporation »\n🕐 22.09 о 09:00\n\nАвтоматично з листа.\nВід: Railway Corporation <invoice+statements+acct_1HNrvlCJoPsRzQsd@stripe.com>\nТема: Your receipt from Railway Corporation #2724-9971\nReceipt from Railway Corporation $12.55 Paid \n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "💳 Списання коштів Railway Corporation",
+      "desc": "Автоматично з листа.\nВід: Railway Corporation <invoice+statements+acct_1HNrvlCJoPsRzQsd@stripe.com>\nТема: Your receipt from Railway Corporation #2724-9971\nReceipt from Railway Corporation $12.55 Paid September 22, 2026",
+      "minutes": 60,
+      "start": "2026-09-22T09:00:00"
+    },
+    "ts": "2026-09-23T08:45:51.130769+00:00"
   }
 }
