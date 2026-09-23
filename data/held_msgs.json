@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T03:14:31.303184",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Соляр — 3-й дім: Спілкування й навчання » було 22.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-23T03:14:43.466297",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - September 22nd, 2026\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 5 — можна пропустити.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79572"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-23T03:16:40.229168",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>A Chinese Hacker Used AI To Attack 100+ Companies In One Of </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79571"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79571"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79571"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79571"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79571"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79571"
             }
           ]
         ]
