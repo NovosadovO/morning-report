@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T04:30:18.070105+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Відповісти Dekoračný Servis",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-05"
-      }
-    },
-    {
       "ts": "2026-08-05T04:30:21.958689+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -13959,6 +13949,16 @@
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
       "answer": "Привітати Мар'яна з днем народження",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-23"
+      }
+    },
+    {
+      "ts": "2026-09-23T06:01:04.587964+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії",
       "extra": {
         "kind": "reminder",
         "date": "2026-09-23"
