@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T00:31:13.325448",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Startup At The Center Of Multiple Rogue AI Cyberattacks </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79630"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79630"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79630"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79630"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79630"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79630"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T00:31:14.829829",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Operations Director в Siebert &amp; Wassink</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -280,6 +241,12 @@
       "ts": "2026-09-24T00:32:58.891761",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T00:33:01.694606",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>DOGE -7.5% за 24г</b>\n\nЗараз: 0.0927 $\n24г тому: 0.1003 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
