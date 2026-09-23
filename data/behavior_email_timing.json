@@ -1,9 +1,4 @@
 {
-  "79095": {
-    "sender": "info@ether.fi",
-    "sender_raw": "Ether.fi Team <info@ether.fi>",
-    "seen_ts": "2026-09-14T14:49:49.210630+00:00"
-  },
   "79096": {
     "sender": "noreply-accounts@google.com",
     "sender_raw": "Google <noreply-accounts@google.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-09-23T11:33:32.562187+00:00"
+  },
+  "79600": {
+    "sender": "card@kcard.kaufland.sk",
+    "sender_raw": "Kaufland Card XTRA <card@kcard.kaufland.sk>",
+    "seen_ts": "2026-09-23T12:01:54.461235+00:00"
   }
 }
