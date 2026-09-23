@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T00:31:08.858472",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ DOGE -7.4% за 24г\n\nЗараз: 0.0927 $\n24г тому: 0.1001 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T00:31:11.909916",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily:'BTC still has room to catch up'</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -313,6 +307,12 @@
       "ts": "2026-09-24T00:32:54.722536",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 24.09 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T00:32:58.185307",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
