@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T22:01:01.804960",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79613"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79613"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79613"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79613"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79613"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79613"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T22:01:03.095516",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -311,6 +272,12 @@
       "ts": "2026-09-23T22:02:51.793151",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ XRP -5.6% за 24г\n\nЗараз: 1.4969 $\n24г тому: 1.5851 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T22:03:01.873081",
+      "kind": "calendar",
+      "text": "🕑 <b>2 години до</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 4-й дім: Дім і родина</b>\n🕐 00:00–00:00\n\n<i>Заклади 10 хв на дорогу і документи.</i>",
       "keyboard": null
     }
   ]
