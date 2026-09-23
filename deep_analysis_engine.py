@@ -23,7 +23,7 @@ GMAIL_APP_PASSWORD = os.getenv("GMAIL_APP_PASSWORD", "")
 _DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 _TZ = ZoneInfo("Europe/Bratislava")
 
-_GEM_MODELS = ["gemini-3-flash-preview", "gemini-3.5-flash-lite", "gemini-3.5-flash"]  # 23.09: 3.5-flash має ліміт лише 20 запитів/ДЕНЬ на free-tier (миттєво вичерпується) — 3-flash-preview має RPM-лімiт (~10/хв), набагато більший сумарний обсяг за день
+_GEM_MODELS = ["gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-3.5-flash-lite"]  # 23.09: платний ключ поповнено (auto-reload ВИМКНЕНО, жорсткий budget-cap). flash-lite першим — набагато дешевший за flash (менше "thinking"-токенів), flash як резерв для якості/при 429
 _GEM_MODEL_IDX = 0
 _GEM_LAST_CALL = 0
 _GEM_MIN_GAP = 3.0

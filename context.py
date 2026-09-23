@@ -811,7 +811,7 @@ def _fetch_week_calendar(token: str) -> str:
     return "\n".join(lines) if lines else "нічого не заплановано на тижень"
 
 
-_GEM_MODELS_CHAT = ["gemini-3-flash-preview", "gemini-3.5-flash-lite", "gemini-3.5-flash"]  # 23.09: gemini-2.5-flash 404 на нових проєктах без білінгу
+_GEM_MODELS_CHAT = ["gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-3.5-flash-lite"]  # 23.09: платний ключ поповнено, flash-lite першим для економії
 
 
 def _gemini_generate(api_key, contents, max_tokens=900, temperature=0.7):
