@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T03:16:36.061098",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your weekly progress report from Google Health</b>\n👤 Google Health &lt;google-health-noreply@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79574"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79574"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79574"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79574"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79574"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79574"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T03:16:37.303123",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Manažér obchodnej agentúry v Košiciach в UNIQA CZ</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -396,6 +357,12 @@
     },
     {
       "ts": "2026-09-23T03:19:07.348083",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Соляр — 3-й дім: Спілкування й навчання » було 22.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T03:19:08.202853",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Соляр — 3-й дім: Спілкування й навчання » було 22.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
