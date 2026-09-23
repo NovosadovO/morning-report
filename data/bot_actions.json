@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "full_report",
-      "detail": "повна аналітика здоров'я",
-      "module": "selfact",
-      "ts": "2026-09-17T20:00:56"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-09-17",
       "detail": "автосинк з годинника: steps, hr_avg, calories, distance_km, hrv, stress, sleep_total_min",
@@ -2799,6 +2792,13 @@
       "detail": "😴 Сон за тиждень у середньому 5.7 год — нижче за 6.5",
       "module": "healthai",
       "ts": "2026-09-23T04:00:53"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: sleep_unstable",
+      "detail": "😴 Сон дуже нерівний останні дні (розкид ±2.32 год) — тіло не встигає підлаштуватись під ритм",
+      "module": "healthai",
+      "ts": "2026-09-23T04:01:03"
     }
   ]
 }
