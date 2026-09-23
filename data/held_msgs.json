@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T02:13:27.363583",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Соляр — 3-й дім: Спілкування й навчання » було 22.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-23T02:13:28.037848",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Соляр — 3-й дім: Спілкування й навчання » було 22.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79571"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-23T02:16:23.262343",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - September 22nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79570"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79570"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79570"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79570"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79570"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79570"
             }
           ]
         ]
