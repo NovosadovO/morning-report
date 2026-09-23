@@ -1560,6 +1560,15 @@ def _parse_gmail_msg(msg_data, full=False):
 
 _GEM_LAST_CALL = [0.0]
 _GEM_MIN_GAP = 11.0  # мін. секунд між викликами Gemini. Тепер усі модулі (включно з новими тригерами event_prep/weekly_run_compare/habit_checkin) діляться цим лічильником — 11s тримає запас під більшим сумарним навантаженням
+# 23.09: перейшли на СПРАВЖНІЙ безкоштовний ключ (без білінгу) — і одразу
+# посипались 429 хоч і з інтервалом 11s між викликами. Причина: throttle-
+# перевірка (читання/запис _GEM_LAST_CALL[0]) не була захищена локом, тому
+# КІЛЬКА потоків (VIP-email, крипто-алерт, event_prep, astro_ai і т.д.
+# спрацьовують паралельно) одночасно бачили "минуло достатньо часу" і летіли
+# в Gemini одразу всі разом — секундний burst з 4-6 запитів пробивав вільний
+# ліміт ~15 RPM. Лок серіалізує ВСІ виклики через увесь процес — тепер
+# фізично не більше одного запиту що ~11s, незалежно від потоків.
+_GEM_LOCK = __import__("threading").Lock()
 _REPORT_AI_DEADLINE = 0.0  # monotonic-час, до якого можна робити AI-блоки (ставиться в main())
 
 # Моделі для fallback на 429: коли основна вичерпала квоту — пробуємо наступну (інший quota-pool)
@@ -1751,10 +1760,19 @@ def _gem_post(url, body_bytes, timeout=90, tag="gem", max_retries=3):
     _retried_var = False
     for _mi, _model in enumerate(_models):
         _url = _gem_swap_model(url, _model)
-        # throttle: тримаємо мін. інтервал між будь-якими викликами Gemini
-        _since = _t.time() - _GEM_LAST_CALL[0]
-        if _since < _GEM_MIN_GAP:
-            _t.sleep(_GEM_MIN_GAP - _since)
+        # throttle: тримаємо мін. інтервал між будь-якими викликами Gemini.
+        # ЛОК обов'язковий: без нього кілька потоків (VIP-email, крипто-алерт,
+        # event_prep, astro_ai, healthai...) одночасно читають старий
+        # _GEM_LAST_CALL[0], усі бачать "минуло достатньо часу" і летять у
+        # Gemini одним burst-ом — саме це й пробивало free-tier ліміт (429).
+        # Тепер резервацію "слоту" (перевірка+сон+оновлення таймстампу)
+        # серіалізуємо через лок; сам HTTP-запит лишається поза локом, щоб не
+        # блокувати інші потоки на час очікування відповіді.
+        with _GEM_LOCK:
+            _since = _t.time() - _GEM_LAST_CALL[0]
+            if _since < _GEM_MIN_GAP:
+                _t.sleep(_GEM_MIN_GAP - _since)
+            _GEM_LAST_CALL[0] = _t.time()
         _exhausted_429 = False
         for attempt in range(max_retries):
             _GEM_LAST_CALL[0] = _t.time()
