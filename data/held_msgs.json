@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T22:57:31.587355",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>XRP -5.5% за 24г</b>\n\nЗараз: 1.4820 $\n24г тому: 1.5688 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-23T22:57:32.357824",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ XRP -5.5% за 24г\n\nЗараз: 1.4820 $\n24г тому: 1.5688 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79626"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-23T23:01:21.096222",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79613"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79613"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79613"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79613"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79613"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79613"
             }
           ]
         ]
