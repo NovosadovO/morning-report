@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, нагадую, що 20.09 о 17:00 заплановано створити бота н",
-      "detail": "З календаря видно подію '20.09: 17:00 🤝 створити бота на трейдинг'.",
-      "module": "selfact",
-      "ts": "2026-09-19T21:18:28"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, твій платіж у розмірі 10.00 EUR для Google Cloud Plat",
       "detail": "Надійшов лист від Google Payments <payments-noreply@google.com> з темою 'Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD', що підтверджує отримання платежу.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Запис у календарі на 23.09 о 09:00 до дерматолога.",
       "module": "selfact",
       "ts": "2026-09-23T06:19:05"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, Google Cloud Billing Alerts повідомив, що ваш бюджет",
+      "detail": "Лист від Google Cloud Billing Alerts про перевищення бюджету на 150%.",
+      "module": "selfact",
+      "ts": "2026-09-23T06:34:50"
     }
   ]
 }
