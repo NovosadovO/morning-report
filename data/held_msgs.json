@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T23:16:41.709162",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79613"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79613"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79613"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79613"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79613"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79613"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T23:16:43.058399",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -272,6 +233,12 @@
       "ts": "2026-09-23T23:18:56.450596",
       "kind": "calendar",
       "text": "📅 <b>Завтра у тебе</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 5-й дім: Творчість і радість</b>\n📅 25.09 (Fri) — післязавтра\n🕐 00:00–00:00\n\n<i>Сьогодні ще є час підготуватись — документи, дорога, час виїзду.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T23:18:57.409055",
+      "kind": "calendar",
+      "text": "📅 Завтра у тебе\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 5-й дім: Творчість і радість\n📅 25.09 (Fri) — післязавтра\n🕐 00:00–00:00\n\nСьогодні ще є час підготуватись — документи, дорога, час виїзду.",
       "keyboard": null
     }
   ]
