@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "сповіщення про здоров'я: stale",
-      "detail": "📵 Дані здоров'я не оновлювались 36 год (останні — 2026-09-19). Автосинк із годинника міг зламатись",
-      "module": "healthai",
-      "ts": "2026-09-20T11:42:21"
-    },
-    {
-      "kind": "notify",
       "what": "Повідомлення в TikTok",
       "detail": "Є свіжий лист від TikTok з повідомленням від Ruslana*2784.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від Oleg Novosadov <novosadovoleg@gmail.com> | 🏠 Нові квартири у Кошіці — 2 нових оголошень.",
       "module": "selfact",
       "ts": "2026-09-23T12:17:16"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-09-23",
+      "detail": "автосинк з годинника: steps, hr_avg, calories, stress",
+      "module": "qwsync",
+      "ts": "2026-09-23T12:22:05"
     }
   ]
 }
