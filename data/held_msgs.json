@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T00:46:26.564980",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 NEAR's second act</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79632"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79632"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79632"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79632"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79632"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79632"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T00:46:27.958014",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily:'BTC still has room to catch up'</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-09-24T00:48:21.687292",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T00:48:24.986598",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 24.09</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
