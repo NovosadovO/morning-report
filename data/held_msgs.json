@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T03:16:37.303123",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Manažér obchodnej agentúry v Košiciach в UNIQA CZ</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79573"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79573"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79573"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79573"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79573"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79573"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T03:16:38.781536",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 When the thesis plays out</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -365,6 +326,12 @@
       "ts": "2026-09-23T03:19:08.202853",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Соляр — 3-й дім: Спілкування й навчання » було 22.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T03:19:19.331927",
+      "kind": "calendar",
+      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 7-й дім: Партнерство</b>\n📅 27.09 (Sun) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
       "keyboard": null
     }
   ]
