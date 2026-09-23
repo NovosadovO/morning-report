@@ -1,19 +1,4 @@
 {
-  "79104": {
-    "sender": "ben@startengine.com",
-    "sender_raw": "Ben at StartEngine <ben@startengine.com>",
-    "seen_ts": "2026-09-14T17:08:10.195733+00:00"
-  },
-  "79106": {
-    "sender": "no-reply@banxa.com",
-    "sender_raw": "Banxa <no-reply@banxa.com>",
-    "seen_ts": "2026-09-14T17:16:14.121637+00:00"
-  },
-  "79107": {
-    "sender": "message@message.reserved.com",
-    "sender_raw": "Reserved <message@message.reserved.com>",
-    "seen_ts": "2026-09-14T17:32:04.878508+00:00"
-  },
   "79108": {
     "sender": "newsletter@aboutyou.com",
     "sender_raw": "ABOUT YOU <newsletter@aboutyou.com>",
@@ -1508,5 +1493,10 @@
     "sender": "researchteam@blockworks.com",
     "sender_raw": "0xResearch <researchteam@blockworks.com>",
     "seen_ts": "2026-09-23T14:02:37.931967+00:00"
+  },
+  "79614": {
+    "sender": "temu@eu.temuemail.com",
+    "sender_raw": "Temu <temu@eu.temuemail.com>",
+    "seen_ts": "2026-09-23T14:53:21.475764+00:00"
   }
 }
