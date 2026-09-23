@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T03:16:51.141917",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 The Daily Degen\n📋 The Daily Degen - September 22nd, 2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: The Daily Degen",
-              "callback_data": "email_reply_79570"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79570"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79570"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T03:16:53.703225",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 The Daily Degen\n📋 The Daily Degen - September 22nd, 2026\n📝 (AI-аналіз тимчасово недоступний)",
@@ -167,6 +142,12 @@
       "ts": "2026-09-23T03:19:30.143368",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>XRP +5.9% за 24г</b>\n\nЗараз: 1.5970 $\n24г тому: 1.5080 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T03:19:30.897239",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ XRP +5.9% за 24г\n\nЗараз: 1.5970 $\n24г тому: 1.5080 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
