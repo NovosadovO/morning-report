@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T00:16:12.713257",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily:'BTC still has room to catch up'</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79631"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79631"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79631"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79631"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79631"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79631"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T00:16:14.109523",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Startup At The Center Of Multiple Rogue AI Cyberattacks </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -313,6 +274,12 @@
       "ts": "2026-09-24T00:17:38.138369",
       "kind": "calendar",
       "text": "📅 <b>Завтра у тебе</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 5-й дім: Творчість і радість</b>\n📅 25.09 (Fri) — завтра\n🕐 00:00–00:00\n\n<i>Сьогодні ще є час підготуватись — документи, дорога, час виїзду.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T00:17:38.941533",
+      "kind": "calendar",
+      "text": "📅 Завтра у тебе\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 5-й дім: Творчість і радість\n📅 25.09 (Fri) — завтра\n🕐 00:00–00:00\n\nСьогодні ще є час підготуватись — документи, дорога, час виїзду.",
       "keyboard": null
     }
   ]
