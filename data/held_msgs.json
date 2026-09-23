@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T01:16:53.307286",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily:'BTC still has room to catch up'</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79631"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79631"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79631"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79631"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79631"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79631"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T01:16:54.569805",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Startup At The Center Of Multiple Rogue AI Cyberattacks </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -313,6 +274,12 @@
       "ts": "2026-09-24T01:19:35.273673",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T01:19:36.064864",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 6 — можна пропустити.",
       "keyboard": null
     }
   ]
