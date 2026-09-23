@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T22:27:10.990939",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ XRP -5.6% за 24г\n\nЗараз: 1.4894 $\n24г тому: 1.5779 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-23T22:28:30.793905",
       "kind": "watchdog",
       "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 32\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\n<i>За цим я стежити НЕ можу, поки не виправлено.</i>",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79613"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-23T22:31:03.521716",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79588"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79588"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79588"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79588"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79588"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79588"
             }
           ]
         ]
