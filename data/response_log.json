@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T02:47:17.682146+00:00",
-      "category": "bill_found",
-      "question": "GASTROMILA, spol. s r.o.",
-      "answer": "4680.00 EUR",
-      "extra": {
-        "due": ""
-      }
-    },
-    {
       "ts": "2026-08-05T03:18:05.746451+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13958,6 +13949,16 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "🚨 АНОМАЛІЯ: токенізований фонд FIGR_HELOC (Figure Heloc) зробив +2.73% за 24 години — такі інструменти мають стояти на м"
+    },
+    {
+      "ts": "2026-09-23T04:30:13.552873+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Переглянути нові вакансії на Profesia.sk",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-09-23"
+      }
     }
   ]
 }
