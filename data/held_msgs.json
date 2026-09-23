@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T00:01:42.152488",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79627"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79627"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79627"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79627"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79627"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79627"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T00:01:43.571962",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Collaborative L&amp;D Specialist (Remote) в Laminar Projects</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -214,6 +175,12 @@
       "ts": "2026-09-24T00:03:29.147825",
       "kind": "calendar",
       "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 8-й дім: Трансформація й спільні ресурси</b>\n📅 28.09 (Mon) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T00:03:30.242908",
+      "kind": "calendar",
+      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 8-й дім: Трансформація й спільні ресурси\n📅 28.09 (Mon) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
       "keyboard": null
     }
   ]
