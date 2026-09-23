@@ -4633,5 +4633,31 @@
       "tag": "report"
     },
     "ts": "2026-09-23T09:30:35.024764+00:00"
+  },
+  "d57c6851ba": {
+    "key": "cal|оплата hobby plan railway corporation",
+    "q": "📅 Хочу записати в календар:\n\n« 💳 Оплата Hobby plan Railway Corporation »\n🕐 22.09 о 09:00\n\nАвтоматично з листа.\nВід: Railway Corporation <invoice+statements+acct_1HNrvlCJoPsRzQsd@stripe.com>\nТема: Your receipt from Railway Corporation #2724-9971\nSep 22–Oct 22, 2026 Hobby plan Qty 1 $5.00\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "💳 Оплата Hobby plan Railway Corporation",
+      "desc": "Автоматично з листа.\nВід: Railway Corporation <invoice+statements+acct_1HNrvlCJoPsRzQsd@stripe.com>\nТема: Your receipt from Railway Corporation #2724-9971\nSep 22–Oct 22, 2026 Hobby plan Qty 1 $5.00",
+      "minutes": 60,
+      "start": "2026-09-22T09:00:00"
+    },
+    "ts": "2026-09-23T09:31:39.894997+00:00"
   }
 }
