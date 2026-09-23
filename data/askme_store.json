@@ -5724,31 +5724,5 @@
       "tag": "report"
     },
     "ts": "2026-09-23T19:16:57.593375+00:00"
-  },
-  "85c8fd36b2": {
-    "key": "cal|отримано платіж google cloud platform  apis",
-    "q": "📅 Хочу записати в календар:\n\n« 💳 Отримано платіж Google Cloud Platform & APIs »\n🕐 23.09 о 09:00\n\nАвтоматично з листа.\nВід: Google Payments <payments-noreply@google.com>\nТема: Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD\nВаш платіж у розмірі 10,00 EUR ... до\n\nЗаписати?",
-    "kind": "plan",
-    "opts": [
-      [
-        "plan",
-        "📅 Так, запиши"
-      ],
-      [
-        "other",
-        "🕒 Інший час"
-      ],
-      [
-        "no",
-        "🚫 Не треба"
-      ]
-    ],
-    "meta": {
-      "summary": "💳 Отримано платіж Google Cloud Platform & APIs",
-      "desc": "Автоматично з листа.\nВід: Google Payments <payments-noreply@google.com>\nТема: Google Cloud Platform & APIs: ми отримали Ваш платіж для домену 01FB74-1CEEDC-1297AD\nВаш платіж у розмірі 10,00 EUR ... додано в обліковий запис Google Cloud Platform & APIs 23 вер. 2026 р.",
-      "minutes": 60,
-      "start": "2026-09-23T09:00:00"
-    },
-    "ts": "2026-09-23T19:29:36.653766+00:00"
   }
 }
