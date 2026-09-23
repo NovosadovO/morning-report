@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T01:22:44.233968",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T01:22:48.292103",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -8.8% за 24г</b>\n\nЗараз: 10.32 $\n24г тому: 11.31 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-09-24T01:24:31.688346",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -6.9% за 24г\n\nЗараз: 0.4131 $\n24г тому: 0.4437 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T01:24:33.901002",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>XRP -5.1% за 24г</b>\n\nЗараз: 1.5019 $\n24г тому: 1.5822 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
