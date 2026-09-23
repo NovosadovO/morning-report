@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-18",
-      "detail": "автосинк з годинника: sleep_total_min",
-      "module": "qwsync",
-      "ts": "2026-09-18T21:24:02"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "sleep_total_min=60, sleep_hours=1.0, date=2026-09-18, source=qwatch_auto, saved_at=2026-09-18 21:24",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Інформація в розділі 'ПІДПИСКИ' про невдалий платіж Runable.",
       "module": "selfact",
       "ts": "2026-09-23T05:47:11"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу: Google Cloud Billing Alert повідомляє, щ",
+      "detail": "Лист від Google Cloud Billing Alerts про перевищення бюджету на 150% є важливою інформацією, яка потребує негайної уваги Олега, щоб уникнути непередбачених витрат.",
+      "module": "selfact",
+      "ts": "2026-09-23T06:03:02"
     }
   ]
 }
