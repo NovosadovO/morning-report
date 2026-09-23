@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T22:31:02.141951",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79613"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79613"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79613"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79613"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79613"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79613"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T22:31:03.521716",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -272,6 +233,12 @@
       "ts": "2026-09-23T22:34:48.052741",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T22:34:49.024011",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
