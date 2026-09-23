@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T01:00:48.335231",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ DOGE -7.7% за 24г\n\nЗараз: 0.0926 $\n24г тому: 0.1004 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T01:00:49.054075",
       "kind": "calendar",
       "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 8-й дім: Трансформація й спільні ресурси</b>\n📅 28.09 (Mon) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
@@ -379,6 +373,12 @@
       "ts": "2026-09-24T01:02:13.674355",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -8.6% за 24г</b>\n\nЗараз: 10.32 $\n24г тому: 11.29 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T01:02:14.442351",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ AVAX -8.6% за 24г\n\nЗараз: 10.32 $\n24г тому: 11.29 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
