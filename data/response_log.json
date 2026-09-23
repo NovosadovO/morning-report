@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T07:52:02.779215+00:00",
-      "category": "calendar_reminder_confirm",
-      "question": "Замовити квитки та проживання на Корфу",
-      "answer": "✅ Поставлено",
-      "extra": {
-        "date": "2026-08-06"
-      }
-    },
-    {
       "ts": "2026-08-05T07:52:17.559808+00:00",
       "category": "proactive_action",
       "question": "Кнопка пропозиції",
@@ -13969,6 +13960,12 @@
       "extra": {
         "kind": "other"
       }
+    },
+    {
+      "ts": "2026-09-23T12:21:40.629340+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Соляр",
+      "answer": "yes"
     }
   ]
 }
