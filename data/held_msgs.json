@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T21:40:40.809187",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ XRP -5.2% за 24г\n\nЗараз: 1.5005 $\n24г тому: 1.5823 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-23T21:40:48.278279",
       "kind": "chunk",
       "text": "🔭 Новий транзит\n☽ <b>Місяць</b> △ ☽ <b>Натальний Місяць</b> (орб 1.3°)\n📍 Місяць у <b>Водолій ♒</b> | Натальний Місяць у Близнюки ♊, 11-й дім\n<i>Трин · Друзі/Цілі</i>\n\n📖 <b>Що означає Трин:</b>\n🔵 Природна підтримка — все складається легко й само собою. Талант, удача, потік. Гарний час реалізувати задумане.\n\nПривіт, Олег!\n\n**Тлумачення астрологічної ситуації:**\nСьогодніш.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79627"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-23T21:45:44.257987",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Collaborative L&amp;D Specialist (Remote) в Laminar Projects</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79626"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79626"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79626"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79626"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79626"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79626"
             }
           ]
         ]
