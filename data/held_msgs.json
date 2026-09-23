@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T21:01:00.661874",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your weekly progress report from Google Health</b>\n👤 Google Health &lt;google-health-noreply@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79574"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79574"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79574"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79574"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79574"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79574"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T21:01:02.107035",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Сховище iCloud заповнено</b>\n👤 iCloud &lt;noreply@email.apple.com&gt;",
@@ -278,6 +239,12 @@
       "ts": "2026-09-23T21:05:10.562982",
       "kind": "watchdog",
       "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 32\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\nЗа цим я стежити НЕ можу, поки не виправлено.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T21:05:13.783043",
+      "kind": "people",
+      "text": "🧠 <b>ПАМ'ЯТЬ ПРО ЛЮДЕЙ</b>\n━━━━━━━━━━━━━━━━━━━━\n👤 <b>Veronika Hricová</b>  ·  сервіс\n📧 veronika.hricova@bukovinakosice.sk\n🕐 останній контакт: <b>20 дн. тому</b>\n💬 Про що говорили: координація весілля, підготовка зали\n\n🔴 <b>ТИ ОБІЦЯВ:</b>\n   • написати на WhatsApp\n\n🟡 <b>ТОБІ ОБІЦЯЛИ:</b>\n   • чекати на Олега\n   • показати склад\n   • передати ключі від кімнати\n\n❓ Зависло: <i>О котрій годині прийдуть прикрашати зал у неділю?</i>\n\n➡️ <b>Далі:</b> Написати Вероніці на WhatsApp, щоб обговорити деталі.\n\n<i>Чому пишу: є твоя обіцянка, зависло питання, час пінгувати, вони обіцяли і тихо</i>",
       "keyboard": null
     }
   ]
