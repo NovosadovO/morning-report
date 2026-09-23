@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T01:46:35.705035",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔴 The Insider: The end of America’s hegemony in the Middle E</b>\n👤 \"Edward Carr at The Economist\" &lt;noreply@e.economis",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79628"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79628"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79628"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79628"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79628"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79628"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T01:46:36.859686",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -214,6 +175,12 @@
       "ts": "2026-09-24T01:49:12.378114",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T01:49:15.681158",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>AVAX -8.7% за 24г</b>\n\nЗараз: 10.25 $\n24г тому: 11.22 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
