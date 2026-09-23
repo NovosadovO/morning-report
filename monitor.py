@@ -1572,7 +1572,7 @@ _GEM_LOCK = __import__("threading").Lock()
 _REPORT_AI_DEADLINE = 0.0  # monotonic-час, до якого можна робити AI-блоки (ставиться в main())
 
 # Моделі для fallback на 429: коли основна вичерпала квоту — пробуємо наступну (інший quota-pool)
-_GEM_MODELS = ["gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-2.5-flash"]
+_GEM_MODELS = ["gemini-3-flash-preview", "gemini-3.5-flash-lite", "gemini-3.5-flash"]  # 23.09: 3.5-flash має ліміт лише 20 запитів/ДЕНЬ на free-tier (миттєво вичерпується) — 3-flash-preview має RPM-лімiт (~10/хв), набагато більший сумарний обсяг за день
 
 # "Prepayment credits depleted" — це НЕ per-model rate-limit, а вичерпаний
 # баланс акаунта: усі моделі впадуть з тим самим 429, тому ретраї/model-switch

@@ -88,7 +88,7 @@ _TZ = ZoneInfo("Europe/Bratislava")
 _HISTORY_FILE = os.path.join(_DATA_DIR, "message_history.json")
 _HISTORY_MAX  = 20   # remember last N messages for anti-repeat (було 8 — замало для різноманітності по всіх темах)
 
-_GEM_MODELS   = ["gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-2.5-flash"]
+_GEM_MODELS   = ["gemini-3-flash-preview", "gemini-3.5-flash-lite", "gemini-3.5-flash"]  # 23.09: 3.5-flash має ліміт лише 20 запитів/ДЕНЬ на free-tier (миттєво вичерпується) — 3-flash-preview має RPM-лімiт (~10/хв), набагато більший сумарний обсяг за день
 _GEM_MODEL_IDX = 0
 _GEM_LAST_CALL = 0.0
 _GEM_MIN_GAP   = 4.0
