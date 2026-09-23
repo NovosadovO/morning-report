@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T22:16:36.774323",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Collaborative L&amp;D Specialist (Remote) в Laminar Projects</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79626"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79626"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79626"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79626"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79626"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79626"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T22:16:38.266096",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -305,6 +266,12 @@
       "ts": "2026-09-23T22:20:21.161516",
       "kind": "watchdog",
       "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 32\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 7 із 8\n🔴 strava — функції get_activities немає в monitor.py\n\nЗа цим я стежити НЕ можу, поки не виправлено.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T22:20:36.848730",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
