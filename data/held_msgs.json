@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T00:14:04.907606",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ AVAX -6.5% за 24г\n\nЗараз: 10.40 $\n24г тому: 11.12 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T00:14:18.516930",
       "kind": "calendar",
       "text": "📅 <b>Завтра у тебе</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 5-й дім: Творчість і радість</b>\n📅 25.09 (Fri) — завтра\n🕐 00:00–00:00\n\n<i>Сьогодні ще є час підготуватись — документи, дорога, час виїзду.</i>",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79633"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-24T00:16:11.380784",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 NEAR's second act</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79632"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79632"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79632"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79632"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79632"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79632"
             }
           ]
         ]
