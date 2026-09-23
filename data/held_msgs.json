@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-23T03:31:13.513906",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>A Chinese Hacker Used AI To Attack 100+ Companies In One Of </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79571"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79571"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79571"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79571"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79571"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79571"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-23T03:31:14.834959",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - September 22nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -233,6 +194,12 @@
       "ts": "2026-09-23T03:34:06.528212",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-23T03:34:29.302589",
+      "kind": "bills",
+      "text": "🔴 <b>ОПЛАТИТИ СЬОГОДНІ</b>\n━━━━━━━━━━━━━━━━━━━━\n🏢 <b>CapCut</b>\n💰 сума не вказана\n📆 до <b>2026-09-23</b>\n\nВаша підписка CapCut закінчується через 3 дні. Це нагадування про необхідність її поновити.",
       "keyboard": null
     }
   ]
