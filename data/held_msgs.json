@@ -1,36 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T00:58:00.643695",
-      "kind": "calendar",
-      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 9-й дім: Сенси й подорожі\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-25T00:58:43.283144",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-25T00:58:43.936439",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-25T00:58:45.754121",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-25T00:58:46.468008",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T00:58:48.794199",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +25.4% за 24г</b>\n\nЗараз: 0.5193 $\n24г тому: 0.4141 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -338,6 +308,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +25.5% за 24г</b>\n\nЗараз: 0.5193 $\n24г тому: 0.4137 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T01:01:36.714584",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Head of Operations в Instaffo, зарплата до 110 тис. EUR/рік</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79688"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79688"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79688"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79688"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79688"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79688"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
