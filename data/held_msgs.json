@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T02:46:24.690081",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Startup At The Center Of Multiple Rogue AI Cyberattacks </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79630"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79630"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79630"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79630"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79630"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79630"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T02:46:25.865316",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Operations Director в Siebert &amp; Wassink</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -214,6 +175,12 @@
       "ts": "2026-09-24T02:48:08.937206",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -8.8% за 24г\n\nЗараз: 10.21 $\n24г тому: 11.20 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T02:48:11.515029",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>DOGE -7.6% за 24г</b>\n\nЗараз: 0.0931 $\n24г тому: 0.1008 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
