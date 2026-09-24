@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T03:01:28.970665",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Process Analyst (f/m/d) в Deutsche Börse Group</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79633"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79633"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79633"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79633"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79633"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79633"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T03:01:30.294019",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 NEAR's second act</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -280,6 +241,12 @@
       "ts": "2026-09-24T03:03:27.611379",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T03:03:30.482610",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>AVAX -8.3% за 24г</b>\n\nЗараз: 10.21 $\n24г тому: 11.13 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
