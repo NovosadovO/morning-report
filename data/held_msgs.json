@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T02:46:19.664495",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Manager Digital Operations Support в Caterpillar Inc.</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79634"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79634"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79634"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79634"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79634"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79634"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T02:46:20.893157",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Process Analyst (f/m/d) в Deutsche Börse Group</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -346,6 +307,12 @@
       "ts": "2026-09-24T02:47:58.718576",
       "kind": "calendar",
       "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 8-й дім: Трансформація й спільні ресурси\n📅 28.09 (Mon) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T02:48:03.566726",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
       "keyboard": null
     }
   ]
