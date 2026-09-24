@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T02:58:52.032224",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>XRP -5.4% за 24г</b>\n\nЗараз: 1.4997 $\n24г тому: 1.5860 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T02:58:52.810230",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ XRP -5.4% за 24г\n\nЗараз: 1.4997 $\n24г тому: 1.5860 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79634"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-24T03:01:28.970665",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Process Analyst (f/m/d) в Deutsche Börse Group</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79633"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79633"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79633"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79633"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79633"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79633"
             }
           ]
         ]
