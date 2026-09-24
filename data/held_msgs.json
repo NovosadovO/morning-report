@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T02:11:44.968092",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T02:11:47.576051",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
@@ -149,6 +143,45 @@
       "kind": "calendar",
       "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 8-й дім: Трансформація й спільні ресурси\n📅 28.09 (Mon) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T02:14:25.793230",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Manager Digital Operations Support в Caterpillar Inc.»\n\n<i>«Сповіщення про вакансії в Slovakia          \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nManager Digital Operations Support\r\nCaterpillar Inc.\r\nKošice\r\n\r\nЦя компанія активно наймає персонал\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4470453299/?trackingId=wf7Yk...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79634"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79634"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79634"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79634"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79634"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79634"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
