@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T22:31:13.868041",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T22:31:15.322094",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Head of Operations в Instaffo, зарплата до 110 тис. EUR/рік</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -398,6 +392,12 @@
       "ts": "2026-09-24T22:39:11.185953",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T22:39:12.163634",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
