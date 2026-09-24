@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T01:16:45.849688",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 96.9% of days negative</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79691"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79691"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79691"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79691"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79691"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79691"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T01:16:47.142607",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Forbes 250: America's Most Successful Living Builders</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -313,6 +274,12 @@
       "ts": "2026-09-25T01:20:14.301818",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T01:20:15.237116",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 6 — можна пропустити.",
       "keyboard": null
     }
   ]
