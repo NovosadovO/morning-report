@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T22:50:00.802668",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T22:51:20.922400",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79684"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-24T23:00:59.167138",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>AML Officer (Slovakia) в Manimama Law Firm</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79682"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79682"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79682"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79682"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79682"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79682"
             }
           ]
         ]
