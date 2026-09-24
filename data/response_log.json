@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T19:50:44.640099+00:00",
-      "category": "deadline_found",
-      "question": "Продовження підписки Strava",
-      "answer": "2026-08-05",
-      "extra": {
-        "kind": "contract"
-      }
-    },
-    {
       "ts": "2026-08-05T19:50:48.068950+00:00",
       "category": "deadline_found",
       "question": "Підтвердження повернення кредиту Temu",
@@ -13949,6 +13940,16 @@
       "answer": "Низька тривалість сну",
       "extra": {
         "kind": "note",
+        "date": "2026-09-24"
+      }
+    },
+    {
+      "ts": "2026-09-24T04:30:18.245750+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Привітати Мар'яна з днем народження",
+      "extra": {
+        "kind": "reminder",
         "date": "2026-09-24"
       }
     }
