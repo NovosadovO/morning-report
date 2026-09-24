@@ -12414,7 +12414,24 @@
     "action": "calrem_skip",
     "pid": "crypto_move_1790275576",
     "subject": "Перевірити ONDO",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 102512,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_crypto_move_1790275576"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_crypto_move_1790275576"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-24T20:52:44.337910+00:00"
   }
 }
