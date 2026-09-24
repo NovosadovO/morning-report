@@ -4562,7 +4562,17 @@
   "cal|закінчення доступу до преміумфункцій dune": {
     "q": "📅 Хочу записати в календар:\n\n« 📌 Закінчення доступу до преміум-функцій Dune »\n🕐 25.09 о 09:00\n\nАвтоматично з листа.\nВід: Dune <support@dune.com>\nТема: Your paid features end tomorrow.\nYour access to Dune premium features ends tomorrow.\n\nЗаписати?",
     "kind": "plan",
-    "asked_at": "2026-09-24T19:03:57"
+    "asked_at": "2026-09-24T19:03:57",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-09-24T20:02:40",
+    "meta": {
+      "summary": "📌 Закінчення доступу до преміум-функцій Dune",
+      "desc": "Автоматично з листа.\nВід: Dune <support@dune.com>\nТема: Your paid features end t",
+      "minutes": "60",
+      "start": "2026-09-25T09:00:00"
+    }
   },
   "q|що далі": {
     "q": "**Що далі?",
