@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T23:00:57.816093",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Building the Infrastructure for Always-On Markets</b>\n👤 Nasdaq через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79684"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79684"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79684"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79684"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79684"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79684"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T23:00:59.167138",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>AML Officer (Slovakia) в Manimama Law Firm</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -266,6 +227,12 @@
       "ts": "2026-09-24T23:10:30.653892",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T23:10:31.558820",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
