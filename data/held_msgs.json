@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T02:13:41.551731",
-      "kind": "calendar",
-      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 8-й дім: Трансформація й спільні ресурси\n📅 28.09 (Mon) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T02:14:25.793230",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Manager Digital Operations Support в Caterpillar Inc.»\n\n<i>«Сповіщення про вакансії в Slovakia          \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nManager Digital Operations Support\r\nCaterpillar Inc.\r\nKošice\r\n\r\nЦя компанія активно наймає персонал\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4470453299/?trackingId=wf7Yk...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79633"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-24T02:16:08.043735",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 NEAR's second act</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79632"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79632"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79632"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79632"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79632"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79632"
             }
           ]
         ]
