@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-06T00:00:16.498545+00:00",
-      "category": "proactive_offer",
-      "question": "Лист чекає на відповідь",
-      "answer": "Відповісти Dekoračný Servis",
-      "extra": {
-        "kind": "reply",
-        "date": "2026-08-06"
-      }
-    },
-    {
       "ts": "2026-08-06T00:00:20.295572+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -13965,6 +13955,12 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "LINK виріс на 8.4% за 24 години (зараз $13.260)"
+    },
+    {
+      "ts": "2026-09-24T21:38:43.021071+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
