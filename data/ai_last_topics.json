@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-24t09_00_36_245631": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-24T09:00:36.245631"
+  },
   "selfact|2026-09-24t08_52_23_946220": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: підписка Apple закінчується 30 вересня. Щоб уникнути перебоїв, перевір її статус.\",     \"wh",
@@ -293,10 +298,5 @@
     "topic": "MSG_MICRO_CHECKIN",
     "gist": "Привіт Олеже! 🫂  Бачу, що ти знову на ранковій зміні в Minebea Mitsumi, яка триває до 18:00. Знаю, як це може виснажувати, особливо коли сон залишає бажати кращ",
     "ts": "2026-09-24T07:12:33.622828"
-  },
-  "action_detect|2026-09-24t07_09_28_836147": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Відновлення сну\", \"action_date\": \"2024-09-24\", \"action_time\": \"18:00\", \"action_summary\": \"Після 18:00 максимально з",
-    "ts": "2026-09-24T07:09:28.836147"
   }
 }
