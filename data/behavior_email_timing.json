@@ -1,9 +1,4 @@
 {
-  "79124": {
-    "sender": "message@message.reserved.com",
-    "sender_raw": "Reserved <message@message.reserved.com>",
-    "seen_ts": "2026-09-15T07:39:08.150175+00:00"
-  },
   "79126": {
     "sender": "newsletter@email.hm.com",
     "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@istores.sk",
     "sender_raw": "iStores Apple Premium Partner <newsletter@istores.sk>",
     "seen_ts": "2026-09-24T06:16:47.861774+00:00"
+  },
+  "79641": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-09-24T07:13:28.052016+00:00"
   }
 }
