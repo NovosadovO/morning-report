@@ -1,9 +1,4 @@
 {
-  "79126": {
-    "sender": "newsletter@email.hm.com",
-    "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
-    "seen_ts": "2026-09-15T08:03:38.842843+00:00"
-  },
   "79128": {
     "sender": "team@ship.emergent.sh",
     "sender_raw": "Emergent <team@ship.emergent.sh>",
@@ -1498,5 +1493,10 @@
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
     "seen_ts": "2026-09-24T07:13:28.052016+00:00"
+  },
+  "79644": {
+    "sender": "newsletter@email.hm.com",
+    "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
+    "seen_ts": "2026-09-24T08:02:13.453495+00:00"
   }
 }
