@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-09-24t15_51_08_925193": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від LinkedIn інформує про обговорення в групі AI Innovators Network, яка налічує 1 000 000 учасників. Група зосереджена на штучному ін",
+    "ts": "2026-09-24T15:51:08.925193"
+  },
+  "selfact|2026-09-24t15_40_07_636923": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Привіт, Олеже! Нагадую, що термін дії підписки Apple закінчується 30 вересня. Щоб уникнути перебоїв, будь ласка",
+    "ts": "2026-09-24T15:40:07.636923"
+  },
   "email_ai_item|2026-09-24t15_38_52_174220": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист від Pepco є рекламною розсилкою, що пропонує товари для створення осінньої та Хелловінської атмосфери вдома. Він містить посил",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-24\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
     "ts": "2026-09-24T14:03:02.428073"
-  },
-  "action_detect|2026-09-24t14_02_51_499051": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Закінчення підписки Apple\", \"action_date\": \"2023-09-30\", \"action_time\": \"09:00\", \"action_summary\": \"Підписка Apple ",
-    "ts": "2026-09-24T14:02:51.499051"
-  },
-  "action_detect|2026-09-24t14_02_40_443047": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити прийом Armolopid\", \"action_date\": \"2024-09-24\", \"action_time\": null, \"action_summary\": \"Після зміни пере",
-    "ts": "2026-09-24T14:02:40.443047"
   }
 }
