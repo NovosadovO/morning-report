@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T00:31:44.253513",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 96.9% of days negative</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79691"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79691"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79691"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79691"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79691"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79691"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T00:31:45.469485",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Forbes 250: America's Most Successful Living Builders</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -346,6 +307,12 @@
       "ts": "2026-09-25T00:33:07.280388",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T00:33:08.169655",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
