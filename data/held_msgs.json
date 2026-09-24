@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T00:16:14.944740",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Head of Operations в Instaffo, зарплата до 110 тис. EUR/рік</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79688"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79688"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79688"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79688"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79688"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79688"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T00:16:17.273591",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -247,6 +208,12 @@
       "ts": "2026-09-25T00:17:48.271917",
       "kind": "calendar",
       "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 9-й дім: Сенси й подорожі</b>\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T00:17:49.898457",
+      "kind": "calendar",
+      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 9-й дім: Сенси й подорожі\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
       "keyboard": null
     }
   ]
