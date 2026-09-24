@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T00:16:08.908708",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 96.9% of days negative</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79691"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79691"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79691"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79691"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79691"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79691"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T00:16:11.360468",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Forbes 250: America's Most Successful Living Builders</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -346,6 +307,12 @@
       "ts": "2026-09-25T00:17:41.751464",
       "kind": "calendar",
       "text": "📅 Це вже завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 🔭 Юпітер переходить у 2-й дім — 19°\n📅 26.09 (Sat) — завтра\n🕐 00:00–00:00\n\nПодивись, чи не конфліктує зі зміною, і сплануй сон.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T00:17:44.643051",
+      "kind": "calendar",
+      "text": "📅 <b>Це вже завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 6-й дім: Робота й здоров’я</b>\n📅 26.09 (Sat) — завтра\n🕐 00:00–00:00\n\n<i>Подивись, чи не конфліктує зі зміною, і сплануй сон.</i>",
       "keyboard": null
     }
   ]
