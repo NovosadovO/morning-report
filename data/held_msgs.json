@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T23:29:11.114186",
-      "kind": "calendar",
-      "text": "🔔 <b>Через 30 хвилин</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 5-й дім: Творчість і радість</b>\n🕐 00:00–00:00\n\n<i>Виходь, щоб не бігти.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T23:29:12.198234",
       "kind": "calendar",
       "text": "🔔 Через 30 хвилин\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 5-й дім: Творчість і радість\n🕐 00:00–00:00\n\nВиходь, щоб не бігти.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T23:31:39.624638",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Forbes 250: America's Most Successful Living Builders</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79690"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79690"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79690"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79690"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79690"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79690"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
