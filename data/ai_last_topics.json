@@ -1,4 +1,14 @@
 {
+  "mailcal_extract|2026-09-24t04_38_05_871879": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-24T04:38:05.871879"
+  },
+  "action_detect|2026-09-24t04_30_55_103419": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"null\", \"action_time\": \"18:00\", \"action_summary\": \"Сьогодні о ",
+    "ts": "2026-09-24T04:30:55.103419"
+  },
   "proactive_actions|2026-09-24t04_30_08_844094": {
     "topic": "proactive_actions",
     "gist": "```json [   {     \"kind\": \"note\",     \"title\": \"Низька тривалість сну\",     \"date\": \"2026-09-24\",     \"time\": \"\",     \"message\": \"Олеже, твій сон становив лише ",
@@ -288,15 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Лист від LinkedIn містить сповіщення про нові вакансії в Кошице, які відповідають налаштуванням користувача. Зокрема, згадано дві вакан",
     "ts": "2026-09-23T19:57:45.879230"
-  },
-  "action_detect|2026-09-23t19_50_43_622112": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Астрологічні події\", \"action_date\": \"2023-09-24\", \"action_time\": null, \"action_summary\": \"Завтра заплановані астрол",
-    "ts": "2026-09-23T19:50:43.622112"
-  },
-  "msg_micro_checkin_truthfix|2026-09-23t19_50_34_410712": {
-    "topic": "MSG_MICRO_CHECKIN/truthfix",
-    "gist": "Олеже, бачу, сьогодні, 23 вересня, ти маєш вихідний.  Ринок крипти демонструє зниження за останню добу: BTC на рівні $84,279 (-2.6%) та ETH $2,668 (-3.0%). Твій",
-    "ts": "2026-09-23T19:50:34.410712"
   }
 }
