@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "збережено дані здоров'я",
-      "detail": "hr_avg=68, calories=32, weight_kg=83.0, sleep_total_min=120, sleep_hours=2.0, date=2026-09-21, source=qwatch_auto, saved_at=2026-09-21 13:07",
-      "module": "healthai",
-      "ts": "2026-09-21T13:07:29"
-    },
-    {
-      "kind": "note",
       "what": "Записав дані здоров'я за 2026-09-21",
       "detail": "автосинк з годинника: hr_avg, calories, weight_kg, sleep_total_min",
       "module": "qwsync",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримує сповіщення про вакансії, і важливо зрозуміти його інтерес, щоб діяти далі (наприклад, зберігати ці вакансії або ігнорувати подібні сповіщення).",
       "module": "selfact",
       "ts": "2026-09-24T16:26:54"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: steps_good",
+      "detail": "🚶 Кроки за тиждень у середньому 10904 — ціль 8000 досягнута",
+      "module": "healthai",
+      "ts": "2026-09-24T16:38:32"
     }
   ]
 }
