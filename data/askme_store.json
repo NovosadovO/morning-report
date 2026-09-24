@@ -10564,5 +10564,31 @@
       "start": "2026-09-24T09:00:00"
     },
     "ts": "2026-09-24T20:34:32.693263+00:00"
+  },
+  "6a46886326": {
+    "key": "cal|закінчення преміумфункцій dune",
+    "q": "📅 Хочу записати в календар:\n\n« ⏳ Закінчення преміум-функцій Dune »\n🕐 25.09 о 09:00\n\nАвтоматично з листа.\nВід: Dune <support@dune.com>\nТема: Your paid features end tomorrow.\nYour access to Dune premium features ends tomorrow.\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "⏳ Закінчення преміум-функцій Dune",
+      "desc": "Автоматично з листа.\nВід: Dune <support@dune.com>\nТема: Your paid features end tomorrow.\nYour access to Dune premium features ends tomorrow.",
+      "minutes": 60,
+      "start": "2026-09-25T09:00:00"
+    },
+    "ts": "2026-09-24T20:34:38.529838+00:00"
   }
 }
