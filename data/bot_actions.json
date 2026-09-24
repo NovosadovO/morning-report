@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-09-21T08:05:41"
-    },
-    {
       "kind": "notify",
       "what": "Олег, зверніть увагу: Facebook сповіщає про вхід у ваш акаун",
       "detail": "Лист від Facebook про підозрілий вхід з нового пристрою, який може бути несанкціонованим доступом.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від LinkedIn з пропозицією вакансії.",
       "module": "selfact",
       "ts": "2026-09-24T12:31:49"
+    },
+    {
+      "kind": "notify",
+      "what": "Оновлення Avalanche Mainnet",
+      "detail": "Олег отримав лист від Avalanche Team1 про запуск Helicon на Avalanche Mainnet.",
+      "module": "selfact",
+      "ts": "2026-09-24T12:47:46"
     }
   ]
 }
