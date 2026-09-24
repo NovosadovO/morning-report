@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T23:11:52.479033",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T23:11:55.119965",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79682"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-24T23:16:28.076630",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>Your receipt from Runable #2679-1786</b>\n👤 Runable &lt;invoice+statements+acct_1RaXgUJk3URPLkAO@",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79681"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79681"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79681"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79681"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79681"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79681"
             }
           ]
         ]
