@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T21:52:26.390516+00:00",
-      "category": "calendar_confirm",
-      "question": "Presov meeting",
-      "answer": "✅ Додано",
-      "extra": {
-        "events": [
-          "Presov meeting"
-        ]
-      }
-    },
-    {
       "ts": "2026-08-05T21:52:37.185332+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13951,6 +13940,16 @@
       "answer": "Відстежувати вагу для досягнення цілі",
       "extra": {
         "kind": "note",
+        "date": "2026-09-24"
+      }
+    },
+    {
+      "ts": "2026-09-24T06:01:33.789684+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Привітати Мар'яна з днем народження",
+      "extra": {
+        "kind": "calendar",
         "date": "2026-09-24"
       }
     }
