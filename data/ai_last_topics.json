@@ -1,4 +1,14 @@
 {
+  "selfact|2026-09-24t17_44_04_742057": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що 30 вересня закінчується термін дії підписки Apple. Перевір, чи потрібно її поновити або ",
+    "ts": "2026-09-24T17:44:04.742057"
+  },
+  "mailcal_extract|2026-09-24t17_32_22_394174": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-24T17:32:22.394174"
+  },
   "selfact|2026-09-24t17_28_56_076317": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Завершення підписки Apple\",     \"text\": \"Нагадую, що 30 вересня закінчується термін дії підписки Apple. Переві",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-24\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
     "ts": "2026-09-24T16:04:31.156411"
-  },
-  "action_detect|2026-09-24t16_04_20_223963": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Закінчення підписки Apple\", \"action_date\": \"2023-09-30\", \"action_time\": \"09:00\", \"action_summary\": \"Підписка Apple ",
-    "ts": "2026-09-24T16:04:20.223963"
-  },
-  "action_detect|2026-09-24t16_04_09_179600": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Аналіз InterFin\", \"action_date\": \"2026-09-24\", \"action_time\": \"18:00\", \"action_summary\": \"Після завершення зміни о ",
-    "ts": "2026-09-24T16:04:09.179600"
   }
 }
