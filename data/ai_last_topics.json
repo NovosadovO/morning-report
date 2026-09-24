@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-09-24t04_15_58_213281": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-24T04:15:58.213281"
+  },
+  "action_detect|2026-09-24t04_11_09_100726": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути Payslip 08/2026\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Переглянути лист від Min",
+    "ts": "2026-09-24T04:11:09.100726"
+  },
   "msg_event_soon|2026-09-24t04_11_00_544534": {
     "topic": "MSG_EVENT_SOON",
     "gist": "Привіт Олеже! ✅  Готуєшся до ранкової зміни, а попереду вже майже північ, коли розпочнеться \"Соляр — 4-й дім: Дім і родина\". Важливо пам'ятати про баланс, адже ",
@@ -288,15 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Проблеми з Google Cloud Platform\",     \"text\": \"Олеже, твій проєкт \\\"My Roport\\\" на Google Cloud Platform під ",
     "ts": "2026-09-23T19:47:53.006247"
-  },
-  "selfact|2026-09-23t19_31_58_756915": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Проблеми з оплатою Google Cloud\",     \"text\": \"Олеже, твій проєкт \\\"My Roport\\\" у Google Cloud Platform під за",
-    "ts": "2026-09-23T19:31:58.756915"
-  },
-  "mailcal_extract|2026-09-23t19_29_36_653007": {
-    "topic": "mailcal_extract",
-    "gist": "```json [   {     \"uid\": \"79622\",     \"title\": \"Отримано платіж Google Cloud Platform & APIs\",     \"date\": \"2026-09-23\",     \"time\": null,     \"kind\": \"payment\"",
-    "ts": "2026-09-23T19:29:36.653007"
   }
 }
