@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T21:52:54.024692+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_spray"
-    },
-    {
       "ts": "2026-08-05T21:52:57.385574+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13953,6 +13947,16 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "XLM впав на 9.5% за 24 години (зараз $0.20088)"
+    },
+    {
+      "ts": "2026-09-24T07:31:27.290536+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Низький сон 21 вересня",
+      "extra": {
+        "kind": "note",
+        "date": "2026-09-24"
+      }
     }
   ]
 }
