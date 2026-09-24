@@ -9584,5 +9584,28 @@
       "tag": "report"
     },
     "ts": "2026-09-24T14:02:44.192488+00:00"
+  },
+  "336a4d3b85": {
+    "key": "note|олег отримав два листи від temu про euroobchod ošial та",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег отримав два листи від Temu про 'Euro-obchod ošial' та ' »\n\nОлег отримав два листи від Temu про 'Euro-obchod ošial' та 'Dostali ste vrátenie kreditu!' 24 вересня.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег отримав два листи від Temu про 'Euro-obchod ošial' та '",
+      "desc": "Олег отримав два листи від Temu про 'Euro-obchod ošial' та 'Dostali ste vrátenie kreditu!' 24 вересня.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-24T14:53:18.592403+00:00"
   }
 }
