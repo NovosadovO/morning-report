@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T00:57:59.879568",
-      "kind": "calendar",
-      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 9-й дім: Сенси й подорожі</b>\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-25T00:58:00.643695",
-      "kind": "calendar",
-      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 9-й дім: Сенси й подорожі\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T00:58:43.283144",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -281,6 +269,51 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-25T01:01:24.399068",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: JPMorgan says $85,000 bitcoin could ease miner </b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79689"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79689"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79689"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79689"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79689"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79689"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-25T01:01:25.166717",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
     }
   ]
 }
