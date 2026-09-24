@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T23:08:09.387672",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T23:08:36.901606",
       "kind": "chunk",
       "text": "🔭 Новий транзит\n☽ <b>Місяць</b> △ ♀ <b>Натальний Венера</b> (орб 1.5°)\n📍 Місяць у <b>Риби ♓</b> | Натальний Венера у Скорпіон ♏, 4-й дім\n<i>Трин · Дім/Родина</i>\n\n📖 <b>Що означає Трин:</b>\n🔵 Природна підтримка — все складається легко й само собою. Талант, удача, потік. Гарний час реалізувати задумане.\n\nПривіт, друже! Дивись, що тобі хочу сказати.\n\n**Астрологія сьогодні:**.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T23:16:19.970861",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: JPMorgan says $85,000 bitcoin could ease miner </b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79689"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79689"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79689"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79689"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79689"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79689"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
