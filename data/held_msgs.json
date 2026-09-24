@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T03:33:00.644500",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>XRP -6.0% за 24г</b>\n\nЗараз: 1.4943 $\n24г тому: 1.5889 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T03:33:01.456901",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ XRP -6.0% за 24г\n\nЗараз: 1.4943 $\n24г тому: 1.5889 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-09-24T03:35:45.883274",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -8.8% за 24г</b>\n\nЗараз: 0.0929 $\n24г тому: 0.1019 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T03:35:46.555369",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ DOGE -8.8% за 24г\n\nЗараз: 0.0929 $\n24г тому: 0.1019 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
