@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-06T01:30:14.329004+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Відповісти на лист",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-06"
-      }
-    },
-    {
       "ts": "2026-08-06T01:30:18.473446+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -13957,6 +13947,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-09-24T21:39:37.534590+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
     }
   ]
 }
