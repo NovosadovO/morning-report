@@ -60,6 +60,23 @@ def _day_rec(day: str) -> dict:
     return rec if isinstance(rec, dict) else {}
 
 
+def _weight_for(day: str):
+    """Вага за конкретний день — канонічний weight_data.json (/вага) виграє,
+    qwatch weight_kg лише як fallback якщо canonical за цей день немає.
+    Раніше hcoach брав вагу напряму з qwatch weight_kg (storage.load_health()),
+    тому оцінка дня і ранковий план показували застаріле/чуже число (24.09
+    показав "83.0 кг за 22.09" замість актуальних 82.3/84.1 з weight_data.json)."""
+    try:
+        import storage
+        wd = storage.load_weight() or {}
+    except Exception:
+        wd = {}
+    v = wd.get(day)
+    if v not in (None, "", 0):
+        return v
+    return _day_rec(day).get("weight_kg")
+
+
 def _shift_for(offset: int = 0) -> str:
     """'early' | 'night' | 'free' — зміна на день (offset у днях)."""
     try:
@@ -127,7 +144,7 @@ def score_day(day: str = None) -> dict:
         parts["кроки"] = (round(25 * ratio), 25, str(steps))
 
     a = None
-    w = rec.get("weight_kg")
+    w = _weight_for(day)
     if w is not None:
         try:
             a = HA.analytics(14)
@@ -283,7 +300,7 @@ def morning_plan(send: bool = True) -> str:
         HA.facts_block(a),
         "",
         "ВЧОРА: сон " + str(yrec.get("sleep_hours") or "—") + " год, кроки "
-        + str(yrec.get("steps") or "—") + ", вага " + str(yrec.get("weight_kg") or "—") + " кг",
+        + str(yrec.get("steps") or "—") + ", вага " + str(_weight_for(yest) or "—") + " кг",
         "ЦІЛІ: вага " + str(WEIGHT_GOAL) + " кг, сон " + str(SLEEP_GOAL_H)
         + " год, кроки " + str(STEPS_GOAL) + ", вода " + str(WATER_GOAL_L) + " л",
     ]
@@ -436,7 +453,7 @@ def chart(days: int = 30) -> bytes:
         if not isinstance(rec, dict):
             rec = {}
         xs.append(d)
-        weight.append(rec.get("weight_kg"))
+        weight.append(_weight_for(key))
         sh = rec.get("sleep_hours")
         if sh is None and rec.get("sleep_total_min") is not None:
             sh = round(rec["sleep_total_min"] / 60.0, 2)

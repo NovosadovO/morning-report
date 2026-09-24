@@ -13,8 +13,10 @@
   • ЗАПИТУЄ  — при реальному зсуві (вага ±WEIGHT_JUMP кг, недосип
     SLEEP_DEBT год/ніч) пише пряме питання з кнопками react.py.
 
-Джерела: health.json (steps, sleep_hours, weight_kg, hr_avg, hrv),
-weight.json — запасне джерело ваги. Немає даних → модуль МОВЧИТЬ:
+Джерела (24.09, через storage.py): storage.load_health() = qwatch_data.json
+(steps, sleep_hours, hr_avg, hrv, weight_kg) злитий з health.json;
+storage.load_weight() = weight_data.json — канонічна вага (виграє над
+qwatch weight_kg). Немає даних → модуль МОВЧИТЬ:
 жодних нулів, жодних «схоже, ти...».
 
 Команда: /тренди (/trend, /здоровя, /динаміка)
@@ -49,7 +51,17 @@ _DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # ─── ДАНІ ────────────────────────────────────────────────────────────────────
 
 def _health() -> dict:
-    d = K.load("health.json", default={}) or {}
+    """24.09: раніше читало напряму health.json — Apple Health формат, який
+    востаннє писався 2026-05-11 і мертвий назавжди. Через це весь модуль
+    (тренди, "вагу давно не бачив", зсув вага/сон/кроки) працював на
+    даних 4+ місяці застарілих. Тепер через storage.py: load_health() =
+    qwatch_data.json (пише годинник щодня) злитий з health.json."""
+    try:
+        import storage
+        d = storage.load_health() or {}
+    except Exception as e:
+        K.log(TAG, f"load_health error: {e}")
+        d = {}
     return {k: v for k, v in d.items()
             if _DATE_RE.match(str(k)) and isinstance(v, dict)}
 
@@ -63,7 +75,13 @@ def _num(v):
 
 
 def series(field: str, days: int = 60) -> dict:
-    """{date: value} за останні N днів. Тільки реальні значення."""
+    """{date: value} за останні N днів. Тільки реальні значення.
+
+    Для ваги: канонічний storage.load_weight() (weight_data.json, пише /вага)
+    ВИГРАЄ для кожного дня; qwatch weight_kg зі storage.load_health() — лише
+    fallback для днів, яких там немає. Раніше падало на weight.json — старий
+    файл, не оновлювався з квітня, тому тренд ваги завжди був про давно
+    неактуальні числа."""
     cutoff = (K.now().date() - timedelta(days=days)).strftime("%Y-%m-%d")
     out = {}
     for date, rec in _health().items():
@@ -73,11 +91,17 @@ def series(field: str, days: int = 60) -> dict:
         if v is not None:
             out[date] = v
     if field == "weight_kg":
-        for date, v in (K.load("weight.json", default={}) or {}).items():
-            if _DATE_RE.match(str(date)) and date >= cutoff and date not in out:
+        try:
+            import storage
+            wd = storage.load_weight() or {}
+        except Exception as e:
+            K.log(TAG, f"load_weight error: {e}")
+            wd = {}
+        for date, v in wd.items():
+            if _DATE_RE.match(str(date)) and date >= cutoff:
                 n = _num(v)
                 if n is not None:
-                    out[date] = n
+                    out[date] = n  # канонічне джерело перекриває qwatch
     return dict(sorted(out.items()))
 
 

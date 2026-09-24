@@ -263,6 +263,50 @@ def _trend(pairs):
     return d, ("зростає" if d > 0 else "падає")
 
 
+def _weight_series(days: int):
+    """[(день, вага)] — weight_data.json (канонічний, пише /вага) виграє для
+    кожного дня; qwatch weight_kg використовується ЛИШЕ для днів, яких немає
+    у weight_data.json. Раніше analytics() брав вагу тільки з qwatch weight_kg
+    через storage.load_health(), тому показував застарілі/чужі числа (24.09 —
+    сказав "83.0 кг за 22.09", хоча weight_data.json уже мав 84.1 за 24.09 і
+    82.3 за 22.09 — 83.0 було старим значенням із qwatch за 21-22.09)."""
+    import storage
+    try:
+        wd = storage.load_weight() or {}
+    except Exception as e:
+        K.log(TAG, f"load_weight error: {e}")
+        wd = {}
+    try:
+        health = storage.load_health() or {}
+    except Exception:
+        health = {}
+
+    today = _now().date()
+    merged = {}
+    for day, rec in (health or {}).items():
+        if not isinstance(rec, dict):
+            continue
+        v = rec.get("weight_kg")
+        if v not in (None, "", 0):
+            merged[day] = v
+    for day, v in (wd or {}).items():
+        if v not in (None, "", 0):
+            merged[day] = v  # канонічне джерело перекриває qwatch
+
+    out = []
+    for day, v in merged.items():
+        try:
+            d = datetime.strptime(day, "%Y-%m-%d").date()
+        except Exception:
+            continue
+        if 0 <= (today - d).days < days:
+            try:
+                out.append((day, float(v)))
+            except Exception:
+                pass
+    return sorted(out)
+
+
 def analytics(days: int = 30) -> dict:
     """Повна картина фактами. Нічого не вигадує: чого немає — None."""
     import storage
@@ -279,9 +323,13 @@ def analytics(days: int = 30) -> dict:
             ("hr_avg", "hr"), ("hrv", "hrv"), ("calories", "calories"),
             ("body_battery", "energy"), ("stress", "stress")]
     for field, name in spec:
-        pairs = _series(health, field, days)
+        if field == "weight_kg":
+            pairs = _weight_series(days)
+            d7 = [v for _, v in _weight_series(7)]
+        else:
+            pairs = _series(health, field, days)
+            d7 = [v for _, v in _series(health, field, 7)]
         vals = [v for _, v in pairs]
-        d7 = [v for _, v in _series(health, field, 7)]
         delta, word = _trend(pairs)
         last_day = pairs[-1][0] if pairs else None
         days_ago = None
