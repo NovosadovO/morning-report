@@ -10149,5 +10149,31 @@
       "tag": "report"
     },
     "ts": "2026-09-24T18:15:34.901906+00:00"
+  },
+  "45e02697fc": {
+    "key": "cal|закінчення доступу до преміум функцій dune",
+    "q": "📅 Хочу записати в календар:\n\n« ⏳ Закінчення доступу до преміум функцій Dune »\n🕐 25.09 о 09:00\n\nАвтоматично з листа.\nВід: Dune <support@dune.com>\nТема: Your paid features end tomorrow.\nYour access to Dune premium features ends tomorrow.\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "⏳ Закінчення доступу до преміум функцій Dune",
+      "desc": "Автоматично з листа.\nВід: Dune <support@dune.com>\nТема: Your paid features end tomorrow.\nYour access to Dune premium features ends tomorrow.",
+      "minutes": 60,
+      "start": "2026-09-25T09:00:00"
+    },
+    "ts": "2026-09-24T18:17:50.585858+00:00"
   }
 }
