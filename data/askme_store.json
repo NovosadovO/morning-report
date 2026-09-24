@@ -9911,5 +9911,28 @@
       "tag": "micro_checkin"
     },
     "ts": "2026-09-24T17:13:58.829442+00:00"
+  },
+  "cad47b6364": {
+    "key": "note|олег отримав листа від ben at startengine про фонд the compu",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег отримав листа від Ben at StartEngine про фонд The Compu »\n\nОлег отримав листа від Ben at StartEngine про фонд The Compute & Infrastructure Fund, що націлений на вузькі місця AI.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег отримав листа від Ben at StartEngine про фонд The Compu",
+      "desc": "Олег отримав листа від Ben at StartEngine про фонд The Compute & Infrastructure Fund, що націлений на вузькі місця AI.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-24T17:29:00.994284+00:00"
   }
 }
