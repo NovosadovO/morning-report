@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-06T00:00:20.295572+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Перевірити лист від Вероні щодо весілля",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-06"
-      }
-    },
-    {
       "ts": "2026-08-06T01:30:14.329004+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -13961,6 +13951,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-09-24T21:38:44.969582+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_water"
     }
   ]
 }
