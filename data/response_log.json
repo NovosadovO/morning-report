@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T21:52:57.385574+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_sauna"
-    },
-    {
       "ts": "2026-08-05T21:53:00.747143+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13953,6 +13947,16 @@
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
       "answer": "Низький сон 21 вересня",
+      "extra": {
+        "kind": "note",
+        "date": "2026-09-24"
+      }
+    },
+    {
+      "ts": "2026-09-24T07:31:31.625938+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Низька оцінка дня 21 вересня",
       "extra": {
         "kind": "note",
         "date": "2026-09-24"
