@@ -51,18 +51,40 @@ def _gemini_post(body, timeout=20, tag="", max_retries=3):
 # ============ DATA LOADERS ============
 
 def _load_health_data():
-    """Завантажити health дані"""
+    """Завантажити health дані
+
+    24.09: daily_health.json — локальний диск-файл, зникає при кожному
+    редеплої і фактично ніколи не існував → ця функція завжди повертала
+    {}, і весь код нижче тихо підставляв ХАРДКОДЕНІ фейкові значення
+    (weight=83.0, sleep_hours=4 тощо) замість реальних даних. Канонічне
+    джерело — storage.py (GitHub data-branch, переживає редеплой):
+    load_weight()=weight_data.json, load_health()=qwatch_data.json
+    злитий з health.json.
+    """
+    result = {}
     try:
-        health_file = os.path.join(_DATA_DIR, "daily_health.json")
-        if os.path.exists(health_file):
-            with open(health_file) as f:
-                data = json.load(f)
-                if data:
-                    today = datetime.now(tz=_TZ).strftime("%Y-%m-%d")
-                    return data.get(today, {})
-    except:
-        pass
-    return {}
+        import sys as _sys_re
+        _sys_re.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import storage as _storage_re
+
+        wdata = _storage_re.load_weight() or {}
+        if wdata:
+            w_latest = sorted(wdata.keys())[-1]
+            result["weight"] = wdata[w_latest]
+
+        hdata = _storage_re.load_health() or {}
+        if hdata:
+            h_latest = sorted(hdata.keys())[-1]
+            h_entry = hdata[h_latest] or {}
+            if h_entry.get("sleep_hours"):
+                result["sleep_hours"] = h_entry["sleep_hours"]
+            if h_entry.get("steps"):
+                result["steps"] = h_entry["steps"]
+            if h_entry.get("hr_avg"):
+                result["hr"] = h_entry["hr_avg"]
+    except Exception as e:
+        _log(f"Health load error: {e}")
+    return result
 
 def _load_crypto_prices():
     """Завантажити крипто цени"""

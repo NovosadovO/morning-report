@@ -88,7 +88,7 @@ def _generate_fallback_briefing(context, location):
     else:
         parts.append("🌙 ВЕЧІР")
         health = context.get("health", {})
-        if health.get("sleep_avg", 0) < 6:
+        if (health.get("sleep_avg") or 0) < 6 and health.get("sleep_avg"):
             parts.append(f"  😴 Сон критичний: {health['sleep_avg']:.1f}h")
             parts.append("  💡 Лягай на годину раніше!")
         else:
@@ -109,19 +109,33 @@ def _load_context():
             with open(cal_file) as f:
                 calendar = json.load(f)
         
-        health_file = os.path.join(_DATA_DIR, "daily_health.json")
+        # 24.09: daily_health.json — локальний файл, живе лише на диску
+        # контейнера і зникає при кожному редеплої, а схема "entries" в нього
+        # ніколи й не писалась (health_parser.save_daily_health пише плаский
+        # {дата: показники}, без "entries"). Тому цей блок завжди повертав
+        # health={} — AI-блоки цього движка ніколи не бачили реальних даних.
+        # Канонічне джерело — storage.py (GitHub data-branch, переживає
+        # редеплой): load_weight()=weight_data.json, load_health()=
+        # qwatch_data.json злитий з health.json.
         health = {}
-        if os.path.exists(health_file):
-            with open(health_file) as f:
-                data = json.load(f)
-                entries = data.get("entries", {})
-                if entries:
-                    last_date = max(entries.keys())
-                    last = entries[last_date]
-                    health = {
-                        "weight_current": last.get("weight"),
-                        "sleep_avg": last.get("sleep_hours"),
-                    }
+        try:
+            import sys as _sys_ab
+            _sys_ab.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            import storage as _storage_ab
+            wdata = _storage_ab.load_weight()
+            if wdata:
+                w_latest = sorted(wdata.keys())[-1]
+                health["weight_current"] = wdata[w_latest]
+                health["weight_date"] = w_latest
+            hdata = _storage_ab.load_health()
+            if hdata:
+                h_latest = sorted(hdata.keys())[-1]
+                h_entry = hdata[h_latest] or {}
+                health["sleep_avg"] = h_entry.get("sleep_hours")
+                health["steps_current"] = h_entry.get("steps")
+                health["health_date"] = h_latest
+        except Exception as _e_ab:
+            _log(f"storage health load error: {_e_ab}")
         
         emails_file = os.path.join(_DATA_DIR, "emails_cache.json")
         emails = {"important": []}

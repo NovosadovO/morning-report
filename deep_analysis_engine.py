@@ -62,66 +62,46 @@ def _load_calendar():
     return {"today": [], "tomorrow": []}
 
 def _load_health():
-    """Здоров'я за місяць (вага, біг, сон, кроки)"""
+    """Здоров'я за місяць (вага, сон, кроки)
+
+    24.09: daily_health.json — локальний диск-файл, зникає при кожному
+    редеплої і ніколи не мав схеми "entries" (health_parser пише плаский
+    формат) — цей блок і його weight.json-fallback завжди повертали
+    майже порожні/застарілі дані. Канонічне джерело — storage.py
+    (GitHub data-branch, переживає редеплой): load_weight()=
+    weight_data.json (мерджений з legacy weight.json), load_health()=
+    qwatch_data.json злитий з health.json.
+    Даних про біг ("run") у канонічних джерелах немає — runs_month=0.
+    """
     try:
-        health_file = os.path.join(_DATA_DIR, "daily_health.json")
-        if not os.path.exists(health_file):
+        import sys as _sys_da
+        _sys_da.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import storage as _storage_da
+
+        wdata = _storage_da.load_weight() or {}
+        hdata = _storage_da.load_health() or {}
+        if not wdata and not hdata:
             return {}
-        
-        with open(health_file) as f:
-            data = json.load(f)
-        
-        entries = data.get("entries", {})
-        if not entries:
-            return {}
-        
-        dates = sorted(entries.keys())[-30:]
-        
-        weights = [entries[d].get("weight") for d in dates if "weight" in entries[d]]
-        runs = sum(1 for d in dates if "run" in entries[d])
-        sleeps = [entries[d].get("sleep_hours") for d in dates if "sleep_hours" in entries[d]]
-        steps = [entries[d].get("steps") for d in dates if "steps" in entries[d]]
-        
+
+        w_dates = sorted(wdata.keys())[-30:]
+        weights = [wdata[d] for d in w_dates if isinstance(wdata[d], (int, float))]
+
+        h_dates = sorted(hdata.keys())[-30:]
+        sleeps = [hdata[d]["sleep_hours"] for d in h_dates if isinstance(hdata[d], dict) and hdata[d].get("sleep_hours")]
+        steps = [hdata[d]["steps"] for d in h_dates if isinstance(hdata[d], dict) and hdata[d].get("steps")]
+
         return {
             "weight_current": weights[-1] if weights else None,
             "weight_start_month": weights[0] if weights else None,
-            "weight_trend": (weights[-1] - weights[0]) if len(weights) > 1 else 0,
-            "runs_month": runs,
+            "weight_trend": round(weights[-1] - weights[0], 1) if len(weights) > 1 else 0,
+            "runs_month": 0,
             "sleep_avg": sum(sleeps) / len(sleeps) if sleeps else 0,
             "sleep_min": min(sleeps) if sleeps else 0,
             "steps_avg": sum(steps) / len(steps) if steps else 0,
-            "entries_30d": len(dates),
+            "entries_30d": len(set(w_dates) | set(h_dates)),
         }
     except Exception as e:
         _log(f"Health load error: {e}")
-
-    # Fallback: weight.json
-    try:
-        wfile = os.path.join(_DATA_DIR, "weight.json")
-        if os.path.exists(wfile):
-            with open(wfile) as f:
-                wdata = json.load(f)
-            if wdata:
-                latest_key = sorted(wdata.keys())[-1]
-                latest_w = wdata[latest_key]
-                # Build minimal health dict if empty
-                result = {
-                    "weight_current": latest_w,
-                    "weight_start_month": latest_w,
-                    "weight_trend": 0,
-                    "runs_month": 0,
-                    "sleep_avg": 0,
-                    "entries_30d": 1,
-                }
-                week_ago = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
-                old_keys = [k for k in sorted(wdata.keys()) if k <= week_ago]
-                if old_keys:
-                    result["weight_start_month"] = wdata[old_keys[-1]]
-                    result["weight_trend"] = round(latest_w - wdata[old_keys[-1]], 1)
-                _log(f"Weight fallback: {latest_w}kg from {latest_key}")
-                return result
-    except Exception as e2:
-        _log(f"Weight fallback error: {e2}")
     return {}
 
 def _load_emails():

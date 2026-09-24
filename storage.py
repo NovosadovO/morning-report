@@ -363,6 +363,10 @@ def load_health():
             conv["hrv"] = e["hrv"]
         if e.get("spo2"):
             conv["spo2"] = e["spo2"]
+        if e.get("stress"):
+            conv["stress"] = e["stress"]
+        if e.get("calories"):
+            conv["calories"] = e["calories"]
         merged[day] = conv
     return merged
 

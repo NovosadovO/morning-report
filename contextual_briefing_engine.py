@@ -76,42 +76,36 @@ def load_calendar_data():
         return {"today": [], "tomorrow": []}
 
 def load_health_data():
-    """Отримати здоров'я (вага, біг, сон, кроки за місяць)"""
+    """Отримати здоров'я (вага, сон, кроки за місяць)
+
+    24.09: daily_health.json — локальний диск-файл, зникає при кожному
+    редеплої і ніколи не мав схеми "entries" (health_parser пише плаский
+    формат) — цей блок завжди повертав {}. Канонічне джерело — storage.py
+    (GitHub data-branch): load_weight()=weight_data.json,
+    load_health()=qwatch_data.json злитий з health.json.
+    Даних про біг ("run") у канонічних джерелах немає — runs_month=0.
+    """
     try:
-        health_file = os.path.join(_DATA_DIR, "daily_health.json")
-        if not os.path.exists(health_file):
+        import sys as _sys_cb
+        _sys_cb.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import storage as _storage_cb
+
+        wdata = _storage_cb.load_weight() or {}
+        hdata = _storage_cb.load_health() or {}
+        if not wdata and not hdata:
             return {}
-        
-        with open(health_file) as f:
-            data = json.load(f)
-        
-        # Обчислити тренди
-        entries = data.get("entries", {})
-        if not entries:
-            return {}
-        
-        dates = sorted(entries.keys())[-30:]  # Останні 30 днів
-        
-        weights = []
-        runs = 0
-        sleeps = []
-        steps = []
-        
-        for date in dates:
-            entry = entries[date]
-            if "weight" in entry:
-                weights.append(entry["weight"])
-            if "run" in entry:
-                runs += 1
-            if "sleep_hours" in entry:
-                sleeps.append(entry["sleep_hours"])
-            if "steps" in entry:
-                steps.append(entry["steps"])
-        
+
+        w_dates = sorted(wdata.keys())[-30:]
+        weights = [wdata[d] for d in w_dates if isinstance(wdata[d], (int, float))]
+
+        h_dates = sorted(hdata.keys())[-30:]
+        sleeps = [hdata[d]["sleep_hours"] for d in h_dates if isinstance(hdata[d], dict) and hdata[d].get("sleep_hours")]
+        steps = [hdata[d]["steps"] for d in h_dates if isinstance(hdata[d], dict) and hdata[d].get("steps")]
+
         return {
             "weight_current": weights[-1] if weights else None,
             "weight_trend": (weights[-1] - weights[0]) if len(weights) > 1 else 0,
-            "runs_month": runs,
+            "runs_month": 0,
             "sleep_avg": sum(sleeps) / len(sleeps) if sleeps else 0,
             "steps_avg": sum(steps) / len(steps) if steps else 0,
         }

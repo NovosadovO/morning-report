@@ -130,6 +130,47 @@ def _load_weight():
         return {}
 
 
+def _load_health_series():
+    """{date_str: {weight, steps, sleep_hours, run_km}} з канонічних джерел.
+
+    24.09: графіки здоров'я досі читали через health_parser.load_health_data()/
+    load_daily_health() з локального daily_health.json — файлу, який зникає
+    при кожному редеплої і ніколи не мав очікуваної схеми. Через це графіки
+    "Здоров'я за місяць" завжди виходили практично порожні. Тепер будуємо
+    серію напряму зі storage.py (GitHub data-branch): load_weight()=
+    weight_data.json, load_health()=qwatch_data.json злитий з health.json.
+    Даних про біг ("run_km") у канонічних джерелах немає — завжди 0.
+    """
+    try:
+        import sys; sys.path.insert(0, _DIR)
+        import storage as _st
+        wdata = _st.load_weight() or {}
+        hdata = _st.load_health() or {}
+        merged = {}
+        for d, w in wdata.items():
+            if isinstance(w, (int, float)):
+                merged.setdefault(d, {})["weight"] = w
+        for d, e in hdata.items():
+            if not isinstance(e, dict):
+                continue
+            entry = merged.setdefault(d, {})
+            if e.get("sleep_hours"):
+                entry["sleep_hours"] = e["sleep_hours"]
+            if e.get("steps"):
+                entry["steps"] = e["steps"]
+            if e.get("weight_kg") and "weight" not in entry:
+                entry["weight"] = e["weight_kg"]
+            if e.get("hrv"):
+                entry["hrv"] = e["hrv"]
+            if e.get("hr_avg"):
+                entry["hr"] = e["hr_avg"]
+            if e.get("stress"):
+                entry["stress"] = e["stress"]
+        return merged
+    except Exception:
+        return {}
+
+
 # ── 1. HEATMAP ЗВИЧОК (GitHub-style) ─────────────────────────────────────────
 
 
@@ -173,8 +214,7 @@ def plot_health_month_bright(year: int = None, month: int = None) -> bytes | Non
         
         # Завантажуємо дані
         try:
-            from health_parser import load_health_data
-            health_data = load_health_data() or {}
+            health_data = _load_health_series()
         except:
             health_data = {}
         
@@ -1565,9 +1605,6 @@ def plot_health_2x2_dashboard(year: int = None, month: int = None) -> bytes | No
         return None
     
     try:
-        import sys
-        sys.path.insert(0, _DIR)
-        from health_parser import load_daily_health
         import calendar as _cal
         
         _rc()
@@ -1579,8 +1616,8 @@ def plot_health_2x2_dashboard(year: int = None, month: int = None) -> bytes | No
         if month is None:
             month = now.month
         
-        # Завантажу дані здоров'я
-        health_data = load_daily_health(os.path.join(_DIR, "daily_health.json"))
+        # Завантажу дані здоров'я (storage.py, GitHub data-branch — переживає редеплой)
+        health_data = _load_health_series()
         
         # Фільтрую дані за місяць
         month_data = {}
