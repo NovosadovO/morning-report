@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T03:01:30.510913",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Соляр — 4-й дім: Дім і родина » було 23.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T03:01:31.525806",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily:'BTC still has room to catch up'</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -214,6 +208,12 @@
       "ts": "2026-09-24T03:03:31.459297",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -8.3% за 24г\n\nЗараз: 10.21 $\n24г тому: 11.13 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T03:03:33.836555",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>DOGE -8.0% за 24г</b>\n\nЗараз: 0.0929 $\n24г тому: 0.1010 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
