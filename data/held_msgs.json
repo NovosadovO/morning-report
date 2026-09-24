@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T23:16:26.754980",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>AML Officer (Slovakia) в Manimama Law Firm</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79682"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79682"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79682"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79682"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79682"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79682"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T23:16:28.076630",
       "kind": "offer",
       "text": "💰 ✉️\n📌 <b>Your receipt from Runable #2679-1786</b>\n👤 Runable &lt;invoice+statements+acct_1RaXgUJk3URPLkAO@",
@@ -233,6 +194,12 @@
       "ts": "2026-09-24T23:19:10.069123",
       "kind": "calendar",
       "text": "📅 Це вже завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 🔭 Юпітер переходить у 2-й дім — 19°\n📅 26.09 (Sat) — післязавтра\n🕐 00:00–00:00\n\nПодивись, чи не конфліктує зі зміною, і сплануй сон.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T23:19:12.570010",
+      "kind": "calendar",
+      "text": "📅 <b>Це вже завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 6-й дім: Робота й здоров’я</b>\n📅 26.09 (Sat) — післязавтра\n🕐 00:00–00:00\n\n<i>Подивись, чи не конфліктує зі зміною, і сплануй сон.</i>",
       "keyboard": null
     }
   ]
