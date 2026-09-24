@@ -1,24 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T00:30:08.488672",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>ONDO +25.5% за 24г</b>\n\nЗараз: 0.5195 $\n24г тому: 0.4139 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-25T00:30:09.241310",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ ONDO +25.5% за 24г\n\nЗараз: 0.5195 $\n24г тому: 0.4139 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-25T00:30:45.445499",
-      "kind": "calendar",
-      "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 4-й дім: Дім і родина</b>\n🕐 00:00–00:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T00:30:46.274278",
       "kind": "calendar",
       "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 4-й дім: Дім і родина\n🕐 00:00–00:00\n\nВідповідь збережу — це піде в аналітику тижня.",
@@ -326,6 +308,45 @@
       "kind": "calendar",
       "text": "📅 Це вже завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 🔭 Юпітер переходить у 2-й дім — 19°\n📅 26.09 (Sat) — завтра\n🕐 00:00–00:00\n\nПодивись, чи не конфліктує зі зміною, і сплануй сон.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T00:31:55.625181",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79687"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79687"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79687"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79687"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79687"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79687"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
