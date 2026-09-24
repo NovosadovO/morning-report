@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Навчання інвестиціям",
-      "detail": "У календарі на сьогодні, 21.09, о 23:00 зазначено 'Навчання інвестиціям'.",
-      "module": "selfact",
-      "ts": "2026-09-21T13:13:47"
-    },
-    {
       "kind": "note",
       "what": "Записав дані здоров'я за 2026-09-21",
       "detail": "автосинк з годинника: hr_avg, calories, sleep_total_min",
@@ -2799,6 +2792,13 @@
       "detail": "повна аналітика здоров'я",
       "module": "selfact",
       "ts": "2026-09-24T20:00:48"
+    },
+    {
+      "kind": "notify",
+      "what": "Завтра закінчується підписка Dune",
+      "detail": "З листа від Dune <support@dune.com> 'Your paid features end tomorrow.' видно, що термін дії платних функцій Dune закінчується 25.09.",
+      "module": "selfact",
+      "ts": "2026-09-24T20:04:26"
     }
   ]
 }
