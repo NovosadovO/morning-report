@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T03:01:31.525806",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily:'BTC still has room to catch up'</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79631"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79631"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79631"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79631"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79631"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79631"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T03:01:34.058718",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Operations Director в Siebert &amp; Wassink</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -214,6 +175,12 @@
       "ts": "2026-09-24T03:03:33.836555",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -8.0% за 24г</b>\n\nЗараз: 0.0929 $\n24г тому: 0.1010 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T03:03:34.510161",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ DOGE -8.0% за 24г\n\nЗараз: 0.0929 $\n24г тому: 0.1010 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
