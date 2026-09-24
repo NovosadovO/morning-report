@@ -212,6 +212,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-24T22:16:02.530644",
+      "kind": "offer",
+      "text": "💰 ✉️\n📌 <b>Your receipt from Runable #2679-1786</b>\n👤 Runable &lt;invoice+statements+acct_1RaXgUJk3URPLkAO@",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79681"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79681"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79681"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79681"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79681"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79681"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
