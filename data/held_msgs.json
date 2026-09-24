@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T02:43:46.103721",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ DOGE -7.5% за 24г\n\nЗараз: 0.0931 $\n24г тому: 0.1006 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T02:43:48.340813",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -6.3% за 24г</b>\n\nЗараз: 0.4105 $\n24г тому: 0.4380 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79635"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-24T02:46:19.664495",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Manager Digital Operations Support в Caterpillar Inc.</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79634"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79634"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79634"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79634"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79634"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79634"
             }
           ]
         ]
