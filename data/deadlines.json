@@ -395,5 +395,17 @@
     "sender": "The Defiant <no-reply@mail.thedefiant.io>",
     "done": false,
     "created": "2026-09-23"
+  },
+  "підтвердження_повернення_кредиту_temu|2026-09-24": {
+    "kind": "submit",
+    "title": "Підтвердження повернення кредиту Temu",
+    "org": "Temu",
+    "deadline": "2026-09-24",
+    "action": "Підтвердити повернення кредиту на сайті Temu",
+    "why": "Непідтверджений кредит може бути анульований або його використання може бути ускладнене.",
+    "uid": "79652",
+    "sender": "Temu <temu@eu.temuemail.com>",
+    "done": false,
+    "created": "2026-09-24"
   }
 }
