@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T02:58:48.632337",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -6.8% за 24г</b>\n\nЗараз: 0.4077 $\n24г тому: 0.4373 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T02:58:49.623065",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -6.8% за 24г\n\nЗараз: 0.4077 $\n24г тому: 0.4373 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T03:01:26.405465",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Zcash's ZEC Hits $1,600, a 10-Year High</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79635"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79635"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79635"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79635"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79635"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79635"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
