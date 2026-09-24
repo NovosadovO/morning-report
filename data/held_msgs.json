@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T00:31:55.625181",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79687"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79687"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79687"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79687"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79687"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79687"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T00:31:57.149450",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>When America walks away</b>\n👤 \"Robert Guest at The Economist\" &lt;newsletters@e.eco",
@@ -214,6 +175,12 @@
       "ts": "2026-09-25T00:33:48.018769",
       "kind": "calendar",
       "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 4-й дім: Дім і родина\n🕐 00:00–00:00\n\nВідповідь збережу — це піде в аналітику тижня.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T00:33:50.725593",
+      "kind": "calendar",
+      "text": "📅 <b>Це вже завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔭 Юпітер переходить у 2-й дім — 19°</b>\n📅 26.09 (Sat) — завтра\n🕐 00:00–00:00\n\n<i>Подивись, чи не конфліктує зі зміною, і сплануй сон.</i>",
       "keyboard": null
     }
   ]
