@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T00:16:07.001316",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Project Manager - Digital Operations в Caterpillar In</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79692"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79692"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79692"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79692"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79692"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79692"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T00:16:08.908708",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 96.9% of days negative</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-09-25T00:17:40.720466",
       "kind": "calendar",
       "text": "📅 <b>Це вже завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔭 Юпітер переходить у 2-й дім — 19°</b>\n📅 26.09 (Sat) — завтра\n🕐 00:00–00:00\n\n<i>Подивись, чи не конфліктує зі зміною, і сплануй сон.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T00:17:41.751464",
+      "kind": "calendar",
+      "text": "📅 Це вже завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 🔭 Юпітер переходить у 2-й дім — 19°\n📅 26.09 (Sat) — завтра\n🕐 00:00–00:00\n\nПодивись, чи не конфліктує зі зміною, і сплануй сон.",
       "keyboard": null
     }
   ]
