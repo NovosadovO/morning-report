@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T16:48:11.713419+00:00",
-      "category": "deadline_found",
-      "question": "Socios.com: зміна способу входу",
-      "answer": "2026-08-27",
-      "extra": {
-        "kind": "other"
-      }
-    },
-    {
       "ts": "2026-08-05T19:50:44.640099+00:00",
       "category": "deadline_found",
       "question": "Продовження підписки Strava",
@@ -13950,6 +13941,16 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-09-24T04:30:13.899333+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Низька тривалість сну",
+      "extra": {
+        "kind": "note",
+        "date": "2026-09-24"
+      }
     }
   ]
 }
