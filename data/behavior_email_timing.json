@@ -1,9 +1,4 @@
 {
-  "79182": {
-    "sender": "info@notifikacie.allegro.sk",
-    "sender_raw": "Allegro <info@notifikacie.allegro.sk>",
-    "seen_ts": "2026-09-16T08:19:35.924205+00:00"
-  },
   "79183": {
     "sender": "events@myasteria.com",
     "sender_raw": "Asteria Events <events@myasteria.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-09-24T21:26:21.252784+00:00"
+  },
+  "79693": {
+    "sender": "no-reply@mail.thedefiant.io",
+    "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
+    "seen_ts": "2026-09-24T22:47:31.844577+00:00"
   }
 }
