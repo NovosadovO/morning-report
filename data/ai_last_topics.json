@@ -1,4 +1,24 @@
 {
+  "foresight|2026-09-24t19_25_02_221339": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\", \"country\": \"\"}",
+    "ts": "2026-09-24T19:25:02.221339"
+  },
+  "action_detect|2026-09-24t19_24_20_391860": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Завершення підписки Apple\", \"action_date\": \"2026-09-30\", \"action_time\": null, \"action_summary\": \"Завтра, 30.09, зав",
+    "ts": "2026-09-24T19:24:20.391860"
+  },
+  "msg_event_soon|2026-09-24t19_24_10_843688": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ⏰  Наближається опівнічна подія \"Соляр\" – цього разу з акцентом на 5-й дім, що символізує творчість та радість. Це час для самовираження та насоло",
+    "ts": "2026-09-24T19:24:10.843688"
+  },
+  "bills|2026-09-24t19_23_15_450598": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-09-24T19:23:15.450598"
+  },
   "openloop_promises|2026-09-24t19_20_49_655948": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -278,25 +298,5 @@
     "topic": "healthai",
     "gist": "📉 Олеже, сьогоднішня оцінка дня в 14 балів є найнижчою за останні 10 днів, що збігається з падінням середнього сну за 7 днів до 4.7 години та дуже нерівним ритм",
     "ts": "2026-09-24T18:05:38.449476"
-  },
-  "action_detect|2026-09-24t18_03_25_952819": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжну інформацію Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжну ",
-    "ts": "2026-09-24T18:03:25.952819"
-  },
-  "action_detect|2026-09-24t18_03_14_749578": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-21\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-24T18:03:14.749578"
-  },
-  "action_detect|2026-09-24t18_03_03_768977": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-24\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-24T18:03:03.768977"
-  },
-  "action_detect|2026-09-24t18_02_52_787738": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2023-09-24\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-24T18:02:52.787738"
   }
 }
