@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T23:46:05.880441",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79687"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79687"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79687"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79687"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79687"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79687"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T23:46:07.233536",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>When America walks away</b>\n👤 \"Robert Guest at The Economist\" &lt;newsletters@e.eco",
@@ -299,6 +260,12 @@
       "ts": "2026-09-24T23:49:23.682091",
       "kind": "calendar",
       "text": "📅 Це вже завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 🔭 Юпітер переходить у 2-й дім — 19°\n📅 26.09 (Sat) — післязавтра\n🕐 00:00–00:00\n\nПодивись, чи не конфліктує зі зміною, і сплануй сон.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T23:49:26.381831",
+      "kind": "calendar",
+      "text": "📅 <b>Це вже завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 6-й дім: Робота й здоров’я</b>\n📅 26.09 (Sat) — післязавтра\n🕐 00:00–00:00\n\n<i>Подивись, чи не конфліктує зі зміною, і сплануй сон.</i>",
       "keyboard": null
     }
   ]
