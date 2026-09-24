@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-21",
-      "detail": "автосинк з годинника: hr_avg, calories, sleep_total_min",
-      "module": "qwsync",
-      "ts": "2026-09-21T13:13:33"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "hr_avg=68, calories=502, sleep_total_min=120, sleep_hours=2.0, date=2026-09-21, source=qwatch_auto, saved_at=2026-09-21 13:13",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від Dune <support@dune.com> | Your paid features end tomorrow.",
       "module": "selfact",
       "ts": "2026-09-24T19:49:27"
+    },
+    {
+      "kind": "notify",
+      "what": "Стаття про DeFi та AI інвестиції",
+      "detail": "СВІЖІ ЛИСТИ: від Adrian Pape через LinkedIn | The Case for Risk-On; СВІЖІ ЛИСТИ: від Ben at StartEngine | The Compute & Infrastructure Fund: Targeting AI’s Biggest Bottlenecks",
+      "module": "selfact",
+      "ts": "2026-09-24T19:49:38"
     }
   ]
 }
