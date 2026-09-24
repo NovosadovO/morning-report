@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T03:16:34.873445",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в Sui Whale</b>\n👤 Discord &lt;noreply@discord.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79636"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79636"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79636"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79636"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79636"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79636"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T03:16:36.667083",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Zcash's ZEC Hits $1,600, a 10-Year High</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
@@ -377,6 +338,12 @@
     },
     {
       "ts": "2026-09-24T03:18:20.948382",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Соляр — 4-й дім: Дім і родина » було 23.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T03:18:21.718149",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Соляр — 4-й дім: Дім і родина » було 23.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
