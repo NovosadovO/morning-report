@@ -178,39 +178,39 @@
       "keyboard": null
     },
     {
-      "ts": "2026-09-25T00:46:10.786740",
+      "ts": "2026-09-25T00:46:12.226329",
       "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 96.9% of days negative</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "text": "📩 ✉️\n📌 <b>Forbes 250: America's Most Successful Living Builders</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
       "keyboard": {
         "inline_keyboard": [
           [
             {
               "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79691"
+              "callback_data": "email_reply_79690"
             },
             {
               "text": "📖 Описати лист",
-              "callback_data": "email_describe_79691"
+              "callback_data": "email_describe_79690"
             }
           ],
           [
             {
               "text": "⭐ Важливий",
-              "callback_data": "email_star_79691"
+              "callback_data": "email_star_79690"
             },
             {
               "text": "📅 В календар",
-              "callback_data": "email_cal_79691"
+              "callback_data": "email_cal_79690"
             }
           ],
           [
             {
               "text": "📥 Залишити",
-              "callback_data": "email_keep_79691"
+              "callback_data": "email_keep_79690"
             },
             {
               "text": "🗑 Видалити",
-              "callback_data": "email_delete_79691"
+              "callback_data": "email_delete_79690"
             }
           ]
         ]
