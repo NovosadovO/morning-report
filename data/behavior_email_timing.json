@@ -1,9 +1,4 @@
 {
-  "79128": {
-    "sender": "team@ship.emergent.sh",
-    "sender_raw": "Emergent <team@ship.emergent.sh>",
-    "seen_ts": "2026-09-15T08:22:00.884055+00:00"
-  },
   "79131": {
     "sender": "linas@substack.com",
     "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@email.hm.com",
     "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
     "seen_ts": "2026-09-24T08:02:13.453495+00:00"
+  },
+  "79646": {
+    "sender": "inspiration@mp1.tripadvisor.com",
+    "sender_raw": "\"Tripadvisor\" <inspiration@mp1.tripadvisor.com>",
+    "seen_ts": "2026-09-24T09:23:09.242983+00:00"
   }
 }
