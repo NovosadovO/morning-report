@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T00:44:52.676589",
-      "kind": "calendar",
-      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 4-й дім: Дім і родина\n🕐 00:00–00:00\n\nВідповідь збережу — це піде в аналітику тижня.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T00:44:55.315701",
       "kind": "calendar",
       "text": "📅 <b>Це вже завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔭 Юпітер переходить у 2-й дім — 19°</b>\n📅 26.09 (Sat) — завтра\n🕐 00:00–00:00\n\n<i>Подивись, чи не конфліктує зі зміною, і сплануй сон.</i>",
@@ -281,6 +275,45 @@
       "kind": "calendar",
       "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 9-й дім: Сенси й подорожі\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T00:47:33.377469",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Defiant</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Bitget Halts Withdrawals After $351.6M Hot Wallet Breach»\n\n<i>«**gm, Defiers!**\n\nThese are the biggest stories in DeFi and crypto:\n\n* **[Bitget](https://thedefiant.io/news/cefi/bitget-disables-withdrawals-165-million-one-address-four-chains)**[ suspended withdrawals across every asset after unauthorized transfers hit its hot wallets.](https://thedefiant.io/news...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79693"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79693"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79693"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79693"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79693"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79693"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
