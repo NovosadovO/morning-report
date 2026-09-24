@@ -251,6 +251,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-24T22:16:03.845175",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Project Manager - Digital Operations в Caterpillar In</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79679"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79679"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79679"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79679"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79679"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79679"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
