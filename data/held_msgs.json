@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "ts": "2026-09-25T00:44:01.022354",
+      "kind": "calendar",
+      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 9-й дім: Сенси й подорожі</b>\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T00:44:01.789786",
+      "kind": "calendar",
+      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 9-й дім: Сенси й подорожі\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T00:44:29.682283",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T00:44:30.400001",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
+    },
+    {
       "ts": "2026-09-25T00:44:33.739124",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -271,45 +295,6 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79687"
-            }
-          ]
-        ]
-      }
-    },
-    {
-      "ts": "2026-09-25T00:46:18.383961",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>When America walks away</b>\n👤 \"Robert Guest at The Economist\" &lt;newsletters@e.eco",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79685"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79685"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79685"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79685"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79685"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79685"
             }
           ]
         ]
