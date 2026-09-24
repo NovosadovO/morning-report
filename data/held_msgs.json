@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T03:30:45.071838",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Manager Digital Operations Support в Caterpillar Inc.</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79634"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79634"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79634"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79634"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79634"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79634"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T03:30:46.309264",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Process Analyst (f/m/d) в Deutsche Börse Group</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -313,6 +274,12 @@
       "ts": "2026-09-24T03:32:47.999725",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T03:32:48.827177",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
       "keyboard": null
     }
   ]
