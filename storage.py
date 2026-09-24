@@ -367,6 +367,10 @@ def load_health():
             conv["stress"] = e["stress"]
         if e.get("calories"):
             conv["calories"] = e["calories"]
+        if e.get("distance_km"):
+            conv["distance_km"] = e["distance_km"]
+        if e.get("body_battery"):
+            conv["body_battery"] = e["body_battery"]
         merged[day] = conv
     return merged
 

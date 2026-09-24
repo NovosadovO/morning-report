@@ -89,6 +89,8 @@ def parse_qwatch_text(text: str) -> dict:
         hs = _extract_int(r'Оцінка\s*\([^)]*\)\s*[:\s]*(\d+)', text)
     if not hs:
         hs = _extract_int(r'^Оцінка\s*\n(\d+)', text, )
+    if not hs:
+        hs = _extract_int(r'бал здоров.я[^\d]*(\d+)', text)
     if hs and 0 < hs <= 100:
         result["health_score"] = hs
 
@@ -115,15 +117,26 @@ def parse_qwatch_text(text: str) -> dict:
     if m:
         result["sleep_total_min"] = int(m.group(1)) * 60 + int(m.group(2))
 
-    # Sleep deep — "3 години 17 хвилин глибокого"
+    # Sleep deep — "3 години 17 хвилин глибокого" АБО "1:39 години ... глибокий сон"
     m = re.search(r'(\d+)\s*годин[аи]?\s+(\d+)\s*хвилин\s+глибокого', text, re.IGNORECASE)
+    if not m:
+        m = re.search(r'(\d+):(\d{2})\s*годин[иу]?[^.\n]{0,40}глибок', text, re.IGNORECASE)
     if m:
         result["sleep_deep_min"] = int(m.group(1)) * 60 + int(m.group(2))
 
-    # Sleep light — "3 години 28 хвилин легкого"
+    # Sleep light — "3 години 28 хвилин легкого" АБО "3:01 години ... легкий сон"
     m = re.search(r'(\d+)\s*годин[аи]?\s+(\d+)\s*хвилин\s+легкого', text, re.IGNORECASE)
+    if not m:
+        m = re.search(r'(\d+):(\d{2})\s*годин[иу]?[^.\n]{0,40}легк', text, re.IGNORECASE)
     if m:
         result["sleep_light_min"] = int(m.group(1)) * 60 + int(m.group(2))
+
+    # Total sleep fallback — якщо словесний формат "N годин M хвилин" не
+    # зловився, але глибокий+легкий зловились — сумуємо їх.
+    if result.get("sleep_total_min") is None:
+        _dsum = (result.get("sleep_deep_min") or 0) + (result.get("sleep_light_min") or 0)
+        if _dsum:
+            result["sleep_total_min"] = _dsum
 
     # Sleep quality score — тільки в контексті сну
     m = re.search(r'(?:якість сну|sleep score|sleep quality)[^\d]*(\d+)', text, re.IGNORECASE)
@@ -143,7 +156,7 @@ def parse_qwatch_text(text: str) -> dict:
 
     # Calories — "508 620" після "споживання енергії" або просто ккал
     # QWatch Pro дає калорії як великі числа без "ккал" — шукаємо в контексті
-    m = re.search(r'(?:споживання енергії|витрат|калорі)[^\d]*([\d\s]+)', text, re.IGNORECASE)
+    m = re.search(r'(?:споживання енергії|витрат|калорі)[^\d]*([\d][\d\s\u00a0]*)', text, re.IGNORECASE)
     if m:
         val_str = m.group(1).replace(" ", "").replace("\u00a0", "")[:8]
         try:
@@ -152,13 +165,26 @@ def parse_qwatch_text(text: str) -> dict:
                 result["calories"] = val
         except: pass
     else:
-        m2 = re.search(r'(\d+)\s*ккал', text, re.IGNORECASE)
+        # "1165,0 ккал" — число з десятковою частиною через кому/крапку.
+        # Раніше regex ловив ЛИШЕ хвіст після коми (0), тому калорії
+        # виходили нульовими для будь-якого дробового значення.
+        m2 = re.search(r'(\d[\d\s\u00a0]*)(?:[.,]\d+)?\s*ккал', text, re.IGNORECASE)
         if m2:
-            result["calories"] = int(m2.group(1))
+            val_str = m2.group(1).replace(" ", "").replace("\u00a0", "")
+            try:
+                val = int(val_str)
+                if val > 0:
+                    result["calories"] = val
+            except: pass
 
     # Stress — "Показник стресу сьогодні — 45" або "варіабельність серцевого ритму на рівні 40 балів"
     # НЕ плутати з тиском (тиск: 48) або HRV
     m = re.search(r'(?:показник стресу)[^\d]*—?\s*(\d+)', text, re.IGNORECASE)
+    if not m:
+        # Деякі звіти QWatch чомусь називають цей показник "Індекс тиску",
+        # хоча за змістом (сусідній текст) це саме стрес, не артеріальний
+        # тиск — "Індекс тиску склав 34, що свідчить про помірний рівень стресу".
+        m = re.search(r'Індекс тиску[^\d]*(\d+)[^.\n]*стрес', text, re.IGNORECASE)
     if m:
         val = int(m.group(1))
         if val <= 100:
@@ -179,12 +205,12 @@ def parse_qwatch_text(text: str) -> dict:
         result["weight_kg"] = float(m.group(1).replace(",", "."))
 
     # Age — "Вік: 36 років"
-    m = re.search(r'Вік[:\s]+(\d+)\s*рок', text, re.IGNORECASE)
+    m = re.search(r'Вік[^\d]{0,30}(\d+)\s*рок', text, re.IGNORECASE)
     if m:
         result["age"] = int(m.group(1))
 
     # Height — "Зріст: 175 см"
-    m = re.search(r'Зріст[:\s]+(\d+)\s*см', text, re.IGNORECASE)
+    m = re.search(r'Зріст[^\d]{0,30}(\d+)\s*см', text, re.IGNORECASE)
     if m:
         result["height_cm"] = int(m.group(1))
 
@@ -193,6 +219,13 @@ def parse_qwatch_text(text: str) -> dict:
     if m:
         g = m.group(1).lower()
         result["gender"] = "male" if g in ("чоловіча", "male") else "female"
+
+    # Distance — "Загальна пройдена відстань становить 18,5 км"
+    m = re.search(r'(?:пройдена відстань|дистанці[юяї])[^\d]*(\d+(?:[.,]\d+)?)\s*км', text, re.IGNORECASE)
+    if m:
+        try:
+            result["distance_km"] = float(m.group(1).replace(",", "."))
+        except: pass
 
     # Blood pressure — "тиск: 48" або "тиск 120/80"
     m = re.search(r'тиск[:\s]+(\d+)/(\d+)', text, re.IGNORECASE)
@@ -211,9 +244,36 @@ def parse_qwatch_text(text: str) -> dict:
         if 80 <= val <= 100:
             result["spo2"] = val
 
-    # Якщо SpO2 не зафіксовано — зберігаємо null
+    if "spo2" not in result:
+        # "Максимальний рівень кисню в крові був 99%, а мінімальний — 96%" —
+        # звіт дає діапазон, а не одне число. Зберігаємо обидва краї, і як
+        # основне значення дня — мінімум (консервативніший показник, ближче
+        # до можливих провалів SpO2 уві сні).
+        m2 = re.search(
+            r'[Мм]аксимальн\w*[^\d]*?кисн\w*[^\d]*?(\d+)\s*%[^\d]*?мінімальн\w*[^\d]*?(\d+)\s*%',
+            text, re.IGNORECASE)
+        if m2:
+            spo2_max = int(m2.group(1))
+            spo2_min = int(m2.group(2))
+            if 80 <= spo2_max <= 100:
+                result["spo2_max"] = spo2_max
+            if 80 <= spo2_min <= 100:
+                result["spo2_min"] = spo2_min
+                result["spo2"] = spo2_min
+
+    # Якщо SpO2 досі не зафіксовано — зберігаємо null
     if "spo2" not in result:
         result["spo2"] = None
+
+    # Body battery / energy — "Енергетичний бал коливався від 15 до 79"
+    m = re.search(r'[Ее]нергетичний бал[^\d]*від\s*(\d+)\s*до\s*(\d+)', text, re.IGNORECASE)
+    if m:
+        try:
+            e_min, e_max = int(m.group(1)), int(m.group(2))
+            result["body_battery_min"] = e_min
+            result["body_battery_max"] = e_max
+            result["body_battery"] = round((e_min + e_max) / 2)
+        except: pass
 
     result["source"] = "qwatch"
     result["saved_at"] = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%Y-%m-%d %H:%M")
