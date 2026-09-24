@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T02:31:12.493459",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 NEAR's second act</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79632"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79632"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79632"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79632"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79632"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79632"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T02:31:13.753976",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily:'BTC still has room to catch up'</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -313,6 +274,12 @@
       "ts": "2026-09-24T02:33:14.594529",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T02:33:15.375978",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
       "keyboard": null
     }
   ]
