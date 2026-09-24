@@ -1,4 +1,9 @@
 {
+  "openloop_promises|2026-09-24t17_50_47_901657": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-24T17:50:47.901657"
+  },
   "selfact|2026-09-24t17_44_04_742057": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу, що 30 вересня закінчується термін дії підписки Apple. Перевір, чи потрібно її поновити або ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-21\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
     "ts": "2026-09-24T16:04:43.983430"
-  },
-  "action_detect|2026-09-24t16_04_31_156411": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-24\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-24T16:04:31.156411"
   }
 }
