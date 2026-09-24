@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T02:45:17.737165",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>DOGE -7.5% за 24г</b>\n\nЗараз: 0.0931 $\n24г тому: 0.1007 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T02:45:18.488076",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ DOGE -7.5% за 24г\n\nЗараз: 0.0931 $\n24г тому: 0.1007 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -379,6 +373,12 @@
       "ts": "2026-09-24T02:46:41.611314",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -8.8% за 24г\n\nЗараз: 10.21 $\n24г тому: 11.19 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T02:46:44.055574",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>DOGE -7.6% за 24г</b>\n\nЗараз: 0.0931 $\n24г тому: 0.1007 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
