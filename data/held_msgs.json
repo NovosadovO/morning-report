@@ -95,6 +95,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-24T22:15:58.310650",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>When America walks away</b>\n👤 \"Robert Guest at The Economist\" &lt;newsletters@e.eco",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79685"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79685"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79685"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79685"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79685"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79685"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
