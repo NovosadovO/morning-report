@@ -4650,5 +4650,10 @@
     "q": "А як же ми тоді планували відновитися після роботи?",
     "kind": "confirm",
     "asked_at": "2026-09-24T20:17:12"
+  },
+  "cal|оплата runable": {
+    "q": "📅 Хочу записати в календар:\n\n« 💳 Оплата Runable »\n🕐 24.09 о 09:00\n\nАвтоматично з листа.\nВід: Runable <invoice+statements+acct_1RaXgUJk3URPLkAO@stripe.com>\nТема: Your receipt from Runable #2679-1786\nReceipt from Runable $30.00 Paid September 24, 2026\n\nЗаписати?",
+    "kind": "plan",
+    "asked_at": "2026-09-24T20:34:36"
   }
 }
