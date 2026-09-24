@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T01:01:24.399068",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: JPMorgan says $85,000 bitcoin could ease miner </b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79689"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79689"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79689"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79689"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79689"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79689"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T01:01:25.166717",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -247,6 +208,12 @@
       "ts": "2026-09-25T01:04:11.092418",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T01:04:11.844777",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
       "keyboard": null
     }
   ]
