@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T22:15:58.310650",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>When America walks away</b>\n👤 \"Robert Guest at The Economist\" &lt;newsletters@e.eco",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79685"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79685"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79685"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79685"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79685"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79685"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T22:15:59.636753",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Building the Infrastructure for Always-On Markets</b>\n👤 Nasdaq через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -582,6 +543,12 @@
       "ts": "2026-09-24T22:31:32.644263",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T22:32:04.842022",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
