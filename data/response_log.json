@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-05T19:50:48.068950+00:00",
-      "category": "deadline_found",
-      "question": "Підтвердження повернення кредиту Temu",
-      "answer": "2026-08-05",
-      "extra": {
-        "kind": "submit"
-      }
-    },
-    {
       "ts": "2026-08-05T21:52:26.390516+00:00",
       "category": "calendar_confirm",
       "question": "Presov meeting",
@@ -13950,6 +13941,16 @@
       "answer": "Привітати Мар'яна з днем народження",
       "extra": {
         "kind": "reminder",
+        "date": "2026-09-24"
+      }
+    },
+    {
+      "ts": "2026-09-24T04:30:22.069323+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Відстежувати вагу для досягнення цілі",
+      "extra": {
+        "kind": "note",
         "date": "2026-09-24"
       }
     }
