@@ -4612,6 +4612,17 @@
   "note|олег отримав статтю the case for riskon від adrian pape ч": {
     "q": "📝 Хочу записати нотатку:\n\n« Олег отримав статтю 'The Case for Risk-On' від Adrian Pape ч »\n\nОлег отримав статтю 'The Case for Risk-On' від Adrian Pape через LinkedIn та 'How tech firms are rethinking “pervert glasses”' від The Economist Today.\n\nПоставити?",
     "kind": "write",
-    "asked_at": "2026-09-24T20:04:39"
+    "asked_at": "2026-09-24T20:04:39",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-09-24T20:06:51",
+    "meta": {
+      "summary": "Олег отримав статтю 'The Case for Risk-On' від Adrian Pape ч",
+      "desc": "Олег отримав статтю 'The Case for Risk-On' від Adrian Pape через LinkedIn та 'Ho",
+      "minutes": "30",
+      "calendar": "True",
+      "kind": "note"
+    }
   }
 }
