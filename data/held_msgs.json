@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T00:46:07.411090",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T00:46:08.814886",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Project Manager - Digital Operations в Caterpillar In</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -313,6 +307,12 @@
       "ts": "2026-09-25T00:49:10.386165",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T00:49:13.429506",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
