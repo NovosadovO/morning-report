@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T23:59:29.596184",
-      "kind": "calendar",
-      "text": "📅 <b>Це вже завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔭 Юпітер переходить у 2-й дім — 19°</b>\n📅 26.09 (Sat) — післязавтра\n🕐 00:00–00:00\n\n<i>Подивись, чи не конфліктує зі зміною, і сплануй сон.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T23:59:30.538913",
       "kind": "calendar",
       "text": "📅 Це вже завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 🔭 Юпітер переходить у 2-й дім — 19°\n📅 26.09 (Sat) — післязавтра\n🕐 00:00–00:00\n\nПодивись, чи не конфліктує зі зміною, і сплануй сон.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79687"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-25T00:01:29.262404",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>When America walks away</b>\n👤 \"Robert Guest at The Economist\" &lt;newsletters@e.eco",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79685"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79685"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79685"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79685"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79685"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79685"
             }
           ]
         ]
