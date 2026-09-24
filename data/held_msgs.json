@@ -173,6 +173,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-24T22:16:00.989114",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>AML Officer (Slovakia) в Manimama Law Firm</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79682"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79682"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79682"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79682"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79682"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79682"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
