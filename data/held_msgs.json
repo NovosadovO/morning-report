@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T00:46:09.458028",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T00:46:12.226329",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Forbes 250: America's Most Successful Living Builders</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -280,6 +274,12 @@
       "ts": "2026-09-25T00:49:14.179348",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T00:49:17.140208",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>ONDO +25.3% за 24г</b>\n\nЗараз: 0.5194 $\n24г тому: 0.4145 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
