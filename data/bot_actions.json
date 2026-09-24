@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "morning_plan",
-      "detail": "ранковий план здоров'я",
-      "module": "selfact",
-      "ts": "2026-09-21T07:01:10"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "У розділі 'СВІЖІ ЛИСТИ' є кілька листів на теми AI та криптовалют, які можуть зацікавити Олега.",
       "module": "selfact",
       "ts": "2026-09-24T11:45:38"
+    },
+    {
+      "kind": "notify",
+      "what": "Робота Operations Director",
+      "detail": "У розділі 'СВІЖІ ЛИСТИ' є лист від 'Сповіщення про вакансії LinkedIn' про 'Operations Director в Siebert & Wassink'.",
+      "module": "selfact",
+      "ts": "2026-09-24T11:45:45"
     }
   ]
 }
