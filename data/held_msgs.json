@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T23:16:24.060045",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>When America walks away</b>\n👤 \"Robert Guest at The Economist\" &lt;newsletters@e.eco",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79685"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79685"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79685"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79685"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79685"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79685"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T23:16:25.387298",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Building the Infrastructure for Always-On Markets</b>\n👤 Nasdaq через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -299,6 +260,12 @@
       "ts": "2026-09-24T23:19:06.734510",
       "kind": "calendar",
       "text": "🔔 Через 30 хвилин\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 5-й дім: Творчість і радість\n🕐 00:00–00:00\n\nВиходь, щоб не бігти.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T23:19:09.317719",
+      "kind": "calendar",
+      "text": "📅 <b>Це вже завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔭 Юпітер переходить у 2-й дім — 19°</b>\n📅 26.09 (Sat) — післязавтра\n🕐 00:00–00:00\n\n<i>Подивись, чи не конфліктує зі зміною, і сплануй сон.</i>",
       "keyboard": null
     }
   ]
