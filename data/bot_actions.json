@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Вакансія Branch JUNIOR Operations Analyst в Deutsche Bank",
-      "detail": "Олег отримав сповіщення про вакансії LinkedIn: 'Branch JUNIOR Operations Analyst (f/m/x) в Deutsche Bank' за запитом 'Операційний спеціаліст в Prague'.",
-      "module": "selfact",
-      "ts": "2026-09-21T09:47:56"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, зверни увагу на лист від The Block: «The Funding: Why",
       "detail": "Олег цікавиться аналітикою ринку золота та біткойна, а також отримує багато інформації про криптовалюти та ринки. Лист від The Block з темою 'Why S&P Global is moving deeper into crypto' безпосередньо стосується його інтересів.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "😴 Сон дуже нерівний останні дні (розкид ±2.32 год) — тіло не встигає підлаштуватись під ритм",
       "module": "healthai",
       "ts": "2026-09-24T12:53:49"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-09-24T13:05:57"
     }
   ]
 }
