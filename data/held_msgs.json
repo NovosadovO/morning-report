@@ -244,39 +244,39 @@
       }
     },
     {
-      "ts": "2026-09-25T00:46:15.036795",
+      "ts": "2026-09-25T00:46:16.611946",
       "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Head of Operations в Instaffo, зарплата до 110 тис. EUR/рік</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
       "keyboard": {
         "inline_keyboard": [
           [
             {
               "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79688"
+              "callback_data": "email_reply_79687"
             },
             {
               "text": "📖 Описати лист",
-              "callback_data": "email_describe_79688"
+              "callback_data": "email_describe_79687"
             }
           ],
           [
             {
               "text": "⭐ Важливий",
-              "callback_data": "email_star_79688"
+              "callback_data": "email_star_79687"
             },
             {
               "text": "📅 В календар",
-              "callback_data": "email_cal_79688"
+              "callback_data": "email_cal_79687"
             }
           ],
           [
             {
               "text": "📥 Залишити",
-              "callback_data": "email_keep_79688"
+              "callback_data": "email_keep_79687"
             },
             {
               "text": "🗑 Видалити",
-              "callback_data": "email_delete_79688"
+              "callback_data": "email_delete_79687"
             }
           ]
         ]
