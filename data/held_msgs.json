@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T00:14:35.844339",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ ONDO +25.1% за 24г\n\nЗараз: 0.5190 $\n24г тому: 0.4150 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T00:14:38.297935",
       "kind": "calendar",
       "text": "📅 <b>Це вже завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔭 Юпітер переходить у 2-й дім — 19°</b>\n📅 26.09 (Sat) — завтра\n🕐 00:00–00:00\n\n<i>Подивись, чи не конфліктує зі зміною, і сплануй сон.</i>",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79688"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-25T00:16:17.273591",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79687"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79687"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79687"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79687"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79687"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79687"
             }
           ]
         ]
