@@ -10003,5 +10003,28 @@
       "kind": "note"
     },
     "ts": "2026-09-24T17:44:15.547847+00:00"
+  },
+  "a9660ce989": {
+    "key": "note|олег отримав інформацію про the compute  infrastructure fun",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег отримав інформацію про The Compute & Infrastructure Fun »\n\nОлег отримав інформацію про The Compute & Infrastructure Fund від StartEngine, що фокусується на AI.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег отримав інформацію про The Compute & Infrastructure Fun",
+      "desc": "Олег отримав інформацію про The Compute & Infrastructure Fund від StartEngine, що фокусується на AI.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-24T18:00:07.184169+00:00"
   }
 }
