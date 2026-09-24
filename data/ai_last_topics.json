@@ -1,4 +1,19 @@
 {
+  "msg_vip_email|2026-09-24t05_54_27_574377": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🏹  Бачу, що ніч пройшла спокійно, а зараз, у ранній ранок четверга, 24 вересня 2026 року, ти вже готуєшся до ранкової зміни на Minebea Mitsumi, як",
+    "ts": "2026-09-24T05:54:27.574377"
+  },
+  "openloop_promises|2026-09-24t05_46_42_269354": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-24T05:46:42.269354"
+  },
+  "selfact|2026-09-24t05_44_19_899412": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: сьогодні, 24.09, о 23:00 починається Соляр — 4-й дім: Дім і родина. Це може бути час для ро",
+    "ts": "2026-09-24T05:44:19.899412"
+  },
   "action_detect|2026-09-24t05_43_00_930427": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-24\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Оновити платіжні дані Strava\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Оновити платіжні дані д",
     "ts": "2026-09-24T04:03:13.000189"
-  },
-  "action_detect|2026-09-24t04_03_01_050742": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити гель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Купити гель.\"}",
-    "ts": "2026-09-24T04:03:01.050742"
-  },
-  "action_detect|2026-09-24t04_02_50_190131": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірити статус підписки Apple\", \"action_date\": \"2024-09-30\", \"action_time\": null, \"action_summary\": \"Перевірити ",
-    "ts": "2026-09-24T04:02:50.190131"
-  },
-  "briefing_truthfix|2026-09-24t04_02_45_265886": {
-    "topic": "briefing/truthfix",
-    "gist": "Олеже, 24 вересня, 04:02.  Твій сон та кроки за останні дні знижуються, тоді як ринок крипто показує загальне падіння.  *   Сон 2.0 год (дані за 21.09, 3 дні то",
-    "ts": "2026-09-24T04:02:45.265886"
   }
 }
