@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Виправлена виплатна відомість",
-      "detail": "Отримано лист від ehuman@minebeamitsumi.eu з темою '[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná páska/Payslip 08/2026 - oprava formátu', що вказує на виправлення попередньої виплатної відомості.",
-      "module": "selfact",
-      "ts": "2026-09-21T13:28:15"
-    },
-    {
       "kind": "ask",
       "what": "Олеже, чи потрібно мені переглянути нові оголошення про квар",
       "detail": "Олег отримав кілька листів з новими оголошеннями про квартири, що свідчить про його інтерес до цієї теми. Питання допоможе зрозуміти, чи потрібна йому допомога з аналізом.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи: від Dune <support@dune.com> | Your paid features end tomorrow. Це критична інформація, яка впливає на функціонал сервісу.",
       "module": "selfact",
       "ts": "2026-09-24T20:35:28"
+    },
+    {
+      "kind": "notify",
+      "what": "Нова вакансія Shift Manager",
+      "detail": "Лист від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> | Vedúci/Vedúca zmeny v sklade - Shift Manager в DHL Supply Chain",
+      "module": "selfact",
+      "ts": "2026-09-24T20:50:17"
     }
   ]
 }
