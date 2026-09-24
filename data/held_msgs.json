@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T00:47:33.377469",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Defiant</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Bitget Halts Withdrawals After $351.6M Hot Wallet Breach»\n\n<i>«**gm, Defiers!**\n\nThese are the biggest stories in DeFi and crypto:\n\n* **[Bitget](https://thedefiant.io/news/cefi/bitget-disables-withdrawals-165-million-one-address-four-chains)**[ suspended withdrawals across every asset after unauthorized transfers hit its hot wallets.](https://thedefiant.io/news...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79693"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79693"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79693"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79693"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79693"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79693"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T00:47:44.437286",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нових оголошень\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -181,6 +142,12 @@
       "ts": "2026-09-25T00:50:36.957106",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ ONDO +25.3% за 24г\n\nЗараз: 0.5194 $\n24г тому: 0.4145 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T00:50:54.332421",
+      "kind": "calendar",
+      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 9-й дім: Сенси й подорожі</b>\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
       "keyboard": null
     }
   ]
