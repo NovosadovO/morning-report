@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T02:16:09.277791",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily:'BTC still has room to catch up'</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79631"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79631"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79631"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79631"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79631"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79631"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-24T02:16:10.604922",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Startup At The Center Of Multiple Rogue AI Cyberattacks </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -280,6 +241,12 @@
       "ts": "2026-09-24T02:17:51.909197",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -9.1% за 24г\n\nЗараз: 10.24 $\n24г тому: 11.26 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T02:17:54.053978",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>DOGE -8.0% за 24г</b>\n\nЗараз: 0.0928 $\n24г тому: 0.1008 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
