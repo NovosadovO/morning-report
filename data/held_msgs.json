@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-24T03:43:13.069238",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -6.3% за 24г</b>\n\nЗараз: 0.4103 $\n24г тому: 0.4377 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-24T03:43:13.871905",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -6.3% за 24г\n\nЗараз: 0.4103 $\n24г тому: 0.4377 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T03:45:49.423667",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в Sui Whale</b>\n👤 Discord &lt;noreply@discord.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79636"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79636"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79636"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79636"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79636"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79636"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
