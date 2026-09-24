@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "note",
-      "what": "збережено дані здоров'я",
-      "detail": "hr_avg=80, weight_kg=83.0, hrv=32, stress=47, date=2026-09-20, source=qwatch_auto, saved_at=2026-09-20 23:32",
-      "module": "healthai",
-      "ts": "2026-09-20T23:32:54"
-    },
-    {
       "kind": "notify",
       "what": "Підозрілий вхід у Facebook",
       "detail": "Лист від 'Facebook' <security@facebookmail.com> про підозрілий вхід о 04:04, 21.09.2026.",
@@ -2799,6 +2792,13 @@
       "detail": "19 год мовчання",
       "module": "healthai",
       "ts": "2026-09-24T07:00:05"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-09-24T07:00:21"
     }
   ]
 }
