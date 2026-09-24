@@ -17,6 +17,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-24T22:15:55.562927",
+      "kind": "offer",
+      "text": "🔐 🔴 <b>НОВЕ</b>\n📌 <b>Head of Operations в Instaffo, зарплата до 110 тис. EUR/рік</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79688"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79688"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79688"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79688"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79688"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79688"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
