@@ -9392,5 +9392,31 @@
       "kind": "note"
     },
     "ts": "2026-09-24T12:16:20.723106+00:00"
+  },
+  "1a4b3e2d79": {
+    "key": "cal|отримано повернення кредиту temu",
+    "q": "📅 Хочу записати в календар:\n\n« 💳 Отримано повернення кредиту Temu »\n🕐 24.09 о 09:00\n\nАвтоматично з листа.\nВід: Temu <temu@eu.temuemail.com>\nТема: Dostali ste vrátenie kreditu!\nDňa 24. sep 2026. Potvrďte ho čo najskôr\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "💳 Отримано повернення кредиту Temu",
+      "desc": "Автоматично з листа.\nВід: Temu <temu@eu.temuemail.com>\nТема: Dostali ste vrátenie kreditu!\nDňa 24. sep 2026. Potvrďte ho čo najskôr",
+      "minutes": 60,
+      "start": "2026-09-24T09:00:00"
+    },
+    "ts": "2026-09-24T12:59:07.523777+00:00"
   }
 }
