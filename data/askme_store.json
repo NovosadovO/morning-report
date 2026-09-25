@@ -14248,5 +14248,31 @@
       "start": "2026-09-26T09:00:00"
     },
     "ts": "2026-09-25T11:50:54.681093+00:00"
+  },
+  "6b0c18bbaa": {
+    "key": "cal|auto123 l cars in the castle  bytča 4",
+    "q": "📅 Хочу записати в календар:\n\n« 📌 Auto123 l Cars in The Castle - Bytča #4 »\n🕐 27.09 о 09:00\n\nАвтоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nSep 27 | Zámok Bytča\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "📌 Auto123 l Cars in The Castle - Bytča #4",
+      "desc": "Автоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nSep 27 | Zámok Bytča",
+      "minutes": 60,
+      "start": "2026-09-27T09:00:00"
+    },
+    "ts": "2026-09-25T11:50:59.295681+00:00"
   }
 }
