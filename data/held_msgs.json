@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T22:36:02.566479",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T22:37:16.658364",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79751"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-25T22:46:34.888150",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>UBIAN - Expiry of a parking ticket</b>\n👤 Ubian Eshop &lt;no-reply@ubian.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79749"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79749"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79749"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79749"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79749"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79749"
             }
           ]
         ]
