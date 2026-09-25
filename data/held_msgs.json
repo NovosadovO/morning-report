@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T00:45:08.772095",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>SOL +5.0% за 24г</b>\n\nЗараз: 122.21 $\n24г тому: 116.34 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T00:45:09.686660",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ SOL +5.0% за 24г\n\nЗараз: 122.21 $\n24г тому: 116.34 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -343,9 +337,48 @@
       "keyboard": null
     },
     {
-      "ts": "2026-09-26T00:47:03.250462",
+      "ts": "2026-09-26T00:47:02.264762",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Onchain Assets Weekly: 9/25/26</b>\n👤 Securitize через LinkedIn&lt;newsletters-noreply@link",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79757"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79757"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79757"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79757"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79757"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79757"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-26T00:47:05.819691",
       "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ ONDO +6.9% за 24г\n\nЗараз: 0.5557 $\n24г тому: 0.5198 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "text": "🟢▲ <b>SOL +5.0% за 24г</b>\n\nЗараз: 122.21 $\n24г тому: 116.36 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
