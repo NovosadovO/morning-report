@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T03:28:24.652925",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ ONDO +29.3% за 24г\n\nЗараз: 0.5293 $\n24г тому: 0.4095 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T03:28:34.450272",
       "kind": "calendar",
       "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 9-й дім: Сенси й подорожі</b>\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79697"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-25T03:30:59.329700",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в Sui Whale</b>\n👤 Discord &lt;noreply@discord.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79696"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79696"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79696"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79696"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79696"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79696"
             }
           ]
         ]
