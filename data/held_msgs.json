@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T02:01:08.430238",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Buy tokenized stocks on CoinList</b>\n👤 CoinList News &lt;noreply@coinlist.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79694"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79694"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79694"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79694"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79694"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79694"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T02:01:10.018705",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Bitget Halts Withdrawals After $351.6M Hot Wallet Breach</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-09-25T02:03:53.345927",
       "kind": "calendar",
       "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 9-й дім: Сенси й подорожі</b>\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T02:03:54.120300",
+      "kind": "calendar",
+      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 9-й дім: Сенси й подорожі\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
       "keyboard": null
     }
   ]
