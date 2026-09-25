@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T01:57:49.774824",
-      "kind": "calendar",
-      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 9-й дім: Сенси й подорожі</b>\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T01:57:50.586298",
       "kind": "calendar",
       "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 9-й дім: Сенси й подорожі\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79693"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-25T02:01:11.418897",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Project Manager - Digital Operations в Caterpillar In</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79692"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79692"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79692"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79692"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79692"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79692"
             }
           ]
         ]
