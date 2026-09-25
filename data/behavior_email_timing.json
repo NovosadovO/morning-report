@@ -1,9 +1,4 @@
 {
-  "79183": {
-    "sender": "events@myasteria.com",
-    "sender_raw": "Asteria Events <events@myasteria.com>",
-    "seen_ts": "2026-09-16T08:29:48.646642+00:00"
-  },
   "79185": {
     "sender": "info@beautynews.douglas.sk",
     "sender_raw": "\"Douglas\" <info@beautynews.douglas.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "no-reply@mail.thedefiant.io",
     "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
     "seen_ts": "2026-09-24T22:47:31.844577+00:00"
+  },
+  "79696": {
+    "sender": "noreply@discord.com",
+    "sender_raw": "Discord <noreply@discord.com>",
+    "seen_ts": "2026-09-25T00:20:44.497686+00:00"
   }
 }
