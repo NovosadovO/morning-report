@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-06T22:23:13.957436+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_tea"
-    },
-    {
       "ts": "2026-08-06T22:36:05.611938+00:00",
       "category": "event_done",
       "question": "📅 🍵 Трав'яний чай ❌\nПланувалась до 20:40 — виконано?",
@@ -13934,6 +13928,17 @@
       "category": "confirm",
       "question": "gate_cal_add: Зважитись та перевірити пульс",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-25T13:14:25.958546+00:00",
+      "category": "calendar_confirm",
+      "question": "Зважитись та перевірити пульс",
+      "answer": "✅ Додано",
+      "extra": {
+        "events": [
+          "Зважитись та перевірити пульс"
+        ]
+      }
     }
   ]
 }
