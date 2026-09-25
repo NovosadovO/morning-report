@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-07T22:01:10.306512+00:00",
-      "category": "calendar_reminder_confirm",
-      "question": "Рання зміна",
-      "answer": "✅ Поставлено",
-      "extra": {
-        "date": "2026-08-09"
-      }
-    },
-    {
       "ts": "2026-08-07T22:01:33.703579+00:00",
       "category": "mood",
       "question": "Оцінка настрою",
@@ -13907,6 +13898,12 @@
       "extra": {
         "score": 3
       }
+    },
+    {
+      "ts": "2026-09-25T21:31:20.041832+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
