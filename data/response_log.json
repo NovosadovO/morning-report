@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-07T00:00:22.622522+00:00",
-      "category": "proactive_offer",
-      "question": "Лист чекає на відповідь",
-      "answer": "Відповісти на лист від Dekoračný servis",
-      "extra": {
-        "kind": "reply",
-        "date": "2026-08-07"
-      }
-    },
-    {
       "ts": "2026-08-07T00:00:27.891075+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -13935,6 +13925,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "gx_mute_acce571576"
+    },
+    {
+      "ts": "2026-09-25T13:35:12.088450+00:00",
+      "category": "ai_button",
+      "question": "crypto",
+      "answer": "more",
+      "extra": {
+        "trigger": "crypto_move",
+        "note": null
+      }
     }
   ]
 }
