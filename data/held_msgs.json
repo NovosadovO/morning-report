@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T23:31:49.231222",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>🔷 The Daily: Bitget hit by $387.5 million security breach</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79756"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79756"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79756"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79756"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79756"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79756"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T23:31:50.719906",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Manažér obchodnej agentúry v Košiciach в UNIQA CZ</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -266,6 +227,12 @@
       "ts": "2026-09-25T23:34:34.641073",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T23:34:37.925313",
+      "kind": "calendar",
+      "text": "🔔 <b>Пора збиратись — 30 хв</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔭 Юпітер переходить у 2-й дім — 19°</b>\n🕐 00:00–00:00\n\n<i>Останні хвилини — перевір, чи все взяв.</i>",
       "keyboard": null
     }
   ]
