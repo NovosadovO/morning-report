@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T22:16:27.212045",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>UBIAN - Expiry of a parking ticket</b>\n👤 Ubian Eshop &lt;no-reply@ubian.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79749"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79749"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79749"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79749"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79749"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79749"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T22:16:28.575023",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Deadline Today: The Innovators Fund &amp; Exposure to OpenAI</b>\n👤 Ben at StartEngine &lt;ben@startengine.com&gt;",
@@ -478,6 +439,12 @@
       "ts": "2026-09-25T22:35:39.095215",
       "kind": "rwa",
       "text": "🏦 RWA-РАДАР\n━━━━━━━━━━━━━━━━━━━━\n• ONDO (твоя позиція) виріс на 7.8% за 24 години (зараз $0.54707)\n\nAI-коментар недоступний — вище тільки живі цифри.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T22:36:00.111478",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
