@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-06T10:30:40.264738+00:00",
-      "category": "calendar_confirm",
-      "question": "Оплата страховки авто",
-      "answer": "✅ Додано",
-      "extra": {
-        "events": [
-          "Оплата страховки авто"
-        ]
-      }
-    },
-    {
       "ts": "2026-08-06T10:30:52.481112+00:00",
       "category": "ai_button",
       "question": "email",
@@ -13944,6 +13933,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dm_ok_564c446fbe"
+    },
+    {
+      "ts": "2026-09-25T05:04:12.509507+00:00",
+      "category": "rwa_move",
+      "question": "RWA",
+      "answer": "XLM виріс на 8.5% за 24 години (зараз $0.21922)"
     }
   ]
 }
