@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-07T08:55:36.865382+00:00",
-      "category": "ai_button",
-      "question": "general",
-      "answer": "muted_7d",
-      "extra": {
-        "trigger": "morning",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-07T08:55:37.805158+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13907,6 +13897,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_4768ab960c"
+    },
+    {
+      "ts": "2026-09-25T21:21:35.423133+00:00",
+      "category": "deadline_found",
+      "question": "Інвестиції в The Innovators Fund",
+      "answer": "2026-09-25",
+      "extra": {
+        "kind": "other"
+      }
     }
   ]
 }
