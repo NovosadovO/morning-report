@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "У календарі на 21.09 та 23.09 є записи про 'Дерматолога' о 0",
-      "detail": "У календарі є дві зустрічі з дерматологом на різні дати (21.09 та 23.09) в один і той же час, що вимагає уточнення.",
-      "module": "selfact",
-      "ts": "2026-09-21T18:07:49"
-    },
-    {
-      "kind": "notify",
       "what": "Паркувальний талон, оплачений сьогодні (21.09.2026 17:25), д",
       "detail": "Олег отримав лист 'UBIAN - Potvrdenie o zaplatení' про оплату паркувального талона, який діє до 21.09.2026 6:24 PM (18:24), а поточний час 18:22. Залишилося 2 хвилини.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "steps=7965, sleep_total_min=180, hr_avg=94, calories=340, distance_km=5.4, weight_kg=84.1, health_score=88, stress=4, sleep_hours=3.0, date=2026-09-25, source=qwatch_auto, saved_at=2026-09-25 11:26",
       "module": "healthai",
       "ts": "2026-09-25T11:27:01"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-09-25",
+      "detail": "автосинк з годинника: steps, hr_avg, calories, distance_km, weight_kg, health_score, stress, sleep_total_min",
+      "module": "qwsync",
+      "ts": "2026-09-25T11:27:19"
     }
   ]
 }
