@@ -15306,5 +15306,33 @@
       "kind": "note"
     },
     "ts": "2026-09-25T19:31:45.733000+00:00"
+  },
+  "5df945e197": {
+    "key": "reminder|перевірити innovators fund",
+    "q": "🔔 Хочу поставити нагадування:\n\n« Перевірити Innovators Fund »\n🕐 25.09 о 22:00\n\nОлеже, сьогодні дедлайн для The Innovators Fund та можливості отримати доступ до OpenAI. Перевір інформацію в листі від Ben at StartEngine.\n\nПоставити?",
+    "kind": "remind",
+    "opts": [
+      [
+        "save",
+        "🔔 Так, нагадай"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Перевірити Innovators Fund",
+      "desc": "Олеже, сьогодні дедлайн для The Innovators Fund та можливості отримати доступ до OpenAI. Перевір інформацію в листі від Ben at StartEngine.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "reminder",
+      "start": "2026-09-25T22:00:00"
+    },
+    "ts": "2026-09-25T20:02:27.844217+00:00"
   }
 }
