@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T01:57:45.338117",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>ONDO +27.5% за 24г</b>\n\nЗараз: 0.5259 $\n24г тому: 0.4126 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T01:57:46.176366",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ ONDO +27.5% за 24г\n\nЗараз: 0.5259 $\n24г тому: 0.4126 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T02:01:08.430238",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Buy tokenized stocks on CoinList</b>\n👤 CoinList News &lt;noreply@coinlist.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79694"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79694"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79694"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79694"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79694"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79694"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
