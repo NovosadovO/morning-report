@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "evening_review",
-      "detail": "вечірній розбір, оцінка 91",
-      "module": "selfact",
-      "ts": "2026-09-21T21:20:45"
-    },
-    {
       "kind": "notify",
       "what": "Unstoppable AI: Дистанційне керування",
       "detail": "Отримано свіжий лист від Unstoppable Domains про нову функцію Remote Control для Unstoppable AI.",
@@ -2799,6 +2792,13 @@
       "detail": "З листів від Oleg Novosadov <novosadovoleg@gmail.com> | 🏠 Нові квартири у Кошіці.",
       "module": "selfact",
       "ts": "2026-09-25T16:07:34"
+    },
+    {
+      "kind": "notify",
+      "what": "Звіт про кроки",
+      "detail": "З календаря на 7 днів: 29.09: 08:38 аналіз основних даних кроки: сьогоднішній результат складає 4414 крокі. З пам'яті про Олега: Олег має середній показник кроків більше 12 166.",
+      "module": "selfact",
+      "ts": "2026-09-25T16:07:40"
     }
   ]
 }
