@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T22:16:28.575023",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Deadline Today: The Innovators Fund &amp; Exposure to OpenAI</b>\n👤 Ben at StartEngine &lt;ben@startengine.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79748"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79748"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79748"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79748"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79748"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79748"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T22:16:29.872189",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔔 Action needed: The Block newsletters</b>\n👤 The Block &lt;newsletter@data.theblock.co&gt;",
@@ -445,6 +406,12 @@
       "ts": "2026-09-25T22:36:00.111478",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T22:36:02.566479",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
