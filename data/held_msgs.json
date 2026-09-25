@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T00:17:00.824645",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79761"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79761"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79761"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79761"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79761"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79761"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-26T00:17:02.055894",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>These Fitness Fans Took Bootleg Peptides. It Landed Them In </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -344,6 +305,12 @@
       "ts": "2026-09-26T00:18:24.198271",
       "kind": "calendar",
       "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 7-й дім: Партнерство</b>\n📅 27.09 (Sun) — завтра\n🕐 00:00–00:00\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T00:18:25.011118",
+      "kind": "calendar",
+      "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 7-й дім: Партнерство\n📅 27.09 (Sun) — завтра\n🕐 00:00–00:00\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
       "keyboard": null
     }
   ]
