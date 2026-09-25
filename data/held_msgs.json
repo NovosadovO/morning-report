@@ -251,6 +251,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-25T22:01:09.413759",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔔 Action needed: The Block newsletters</b>\n👤 The Block &lt;newsletter@data.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79747"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79747"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79747"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79747"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79747"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79747"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
