@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, бачу, що за даними твого Sleep Cycle за 20-21 вересня",
-      "detail": "Олег сьогодні двічі запитував про розбіжність у даних про сон (2 години проти реальних 9 годин), що вказує на його занепокоєння та потребу в уточненні.",
-      "module": "selfact",
-      "ts": "2026-09-21T17:05:51"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, зверни увагу на нове оголошення про 3-кімнатні кварти",
       "detail": "Олег отримує сповіщення про нові квартири, і це може бути для нього важливою інформацією, яку варто підсвітити.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від 'Socios.com' <news@mail.socios.com> | Have you generated your Recovery Kit? та дедлайн Socios.com: зміна способу входу.",
       "module": "selfact",
       "ts": "2026-09-25T10:40:54"
+    },
+    {
+      "kind": "notify",
+      "what": "Пропозиція IPO від Kraken",
+      "detail": "Свіжий лист від 'Kraken' <no-reply@email.kraken.com> | Oura IPO 💍 Get xStocks access before it lists.",
+      "module": "selfact",
+      "ts": "2026-09-25T10:40:59"
     }
   ]
 }
