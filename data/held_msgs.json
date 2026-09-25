@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T03:15:02.682333",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T03:15:03.660092",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79695"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-25T03:16:51.818318",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Buy tokenized stocks on CoinList</b>\n👤 CoinList News &lt;noreply@coinlist.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79694"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79694"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79694"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79694"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79694"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79694"
             }
           ]
         ]
