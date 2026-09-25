@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T00:48:36.573485",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Railway <hello@news.railway.app> → Free VMs without an account, tracing, OpenCode on Cloud Agents\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Avalanche Summit <contact@avax.network> → Real Business, Real Momentum: Avalanche Summit Lands in NYC\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T00:48:37.336928",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Railway  → Free VMs without an account, tracing, OpenCode on Cloud Agents\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Avalanche Summit  → Real Business, Real Momentum: Avalanche Summit Lands in NYC\n\n🧹 Реклама: 4 — можна пропустити.",
@@ -148,6 +142,12 @@
       "ts": "2026-09-26T00:50:24.595923",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>SOL +5.1% за 24г</b>\n\nЗараз: 122.36 $\n24г тому: 116.45 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T00:50:25.282406",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ SOL +5.1% за 24г\n\nЗараз: 122.36 $\n24г тому: 116.45 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
