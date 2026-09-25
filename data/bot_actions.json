@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "На LinkedIn з'явилася нова вакансія Project Coordinator HU в",
-      "detail": "Зі свіжого листа від Сповіщення про вакансії LinkedIn видно нову вакансію, яка може зацікавити Олега.",
-      "module": "selfact",
-      "ts": "2026-09-21T18:53:29"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Лист від 'Socios.com' з темою 'Have you generated your Recovery Kit?'",
       "module": "selfact",
       "ts": "2026-09-25T12:14:21"
+    },
+    {
+      "kind": "notify",
+      "what": "Kraken пропонує можливість подати заявку на участь у IPO Our",
+      "detail": "Лист від 'Kraken' з темою 'Oura IPO 💍 Get xStocks access before it lists'.",
+      "module": "selfact",
+      "ts": "2026-09-25T12:14:25"
     }
   ]
 }
