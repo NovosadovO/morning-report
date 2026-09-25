@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-07T03:00:22.456838+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Відповісти Вероні щодо весілля",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-07"
-      }
-    },
-    {
       "ts": "2026-08-07T08:50:50.223577+00:00",
       "category": "day_energy",
       "question": "Як ти сьогодні",
@@ -13919,6 +13909,12 @@
       "category": "confirm",
       "question": "gx_later: здоров'я і вага",
       "answer": "no"
+    },
+    {
+      "ts": "2026-09-25T15:41:04.195946+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_n_a55df4dd25"
     }
   ]
 }
