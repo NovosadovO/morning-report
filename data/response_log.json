@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-07T08:55:05.623249+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_ack_7873a9c06f"
-    },
-    {
       "ts": "2026-08-07T08:55:12.284911+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13907,6 +13901,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Лягти спати раніше",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-25T20:59:29.423954+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "gx_note_bd67e7a153"
     }
   ]
 }
