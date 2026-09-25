@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T21:57:36.789164",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Ondo Finance</b>\n📋 Тема: «Apply to Attend: Ondo Summit 2027, the Largest Tokenization Event»\n\n<i>«The largest event in tokenization returns on Feb 18, 2027.\r\n\r\nemail-header_pending (https://d5vnWT04.na1.hubspotlinks.com/Ctc/RM+113/d5vnWT04/VWcpZb3TWghRV9jPX17cxQzZW2QY3Nh5Vnc8yN78Lwt-3pyd0W7lCdLW6lZ3p3W1NYXKN6ck_c6W4VZZL471z7wpW1wXV3D2FyZ1JW5LDfqX1MYX68VfFXV03s03RFW9dc67Q2PP38vW3S_bpW4qJpvnW7HKbL...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79754"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79754"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79754"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79754"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79754"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79754"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T22:00:51.227358",
       "kind": "chunk",
       "text": "🌃\n<b>ЗВІТ  ·  Пт 25.09  ·  22:00</b>\n🏠 Вдома\n<i>Тихо навколо — найкращий час для глибоких думок про майбутнє 💤</i>\n📌 Соляр — 5-й дім: Творчість і радість +12\n\n⚡ <b>День: ⭐⭐☆☆☆ 47/100</b>  ↑+35 vs вчора\n\n🌦️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>13°C</b>\n<i>😊 Свіжо — легка куртка</i>\n<i>☂️ парасолька</i>\n\n📅 <b>Прогноз сьогодні:</b>\n06:25   🌇 18:26  09:00 ⛅️14°  │  12:00 ⛅️18°  │  15:00 ⛅️22°  │  18:00 🌤21°  │  21:00 ⛅️17°  01:00 (9%)\n\n<b>Завтра:</b>  ☁️ Хмарно  🔻10°  /  🔺22°\n<code>09:00</code> ⛅️14°  │  <code>12:00</code> ⛅️18°  │  <code>15:00</code> ⛅️22°  │  <code>18:00</code> 🌤21°  │  <code>21:00</code> ⛅️17°\n\n🚦\n<b>ТРАФІК — Košice</b>\n\n<i>🚧 9 довготривалих перекриттів — без змін від минулого разу:</i>\n  • 🚧 Перекрито — Ipeľská\n  • 🚧 Перекрито — Trieda SNP\n<i>+ ще 7</i>\n\n💰\n<b>КРИПТО  ·  🟢 БИЧАЧИЙ 🚀</b>\n➡️ <b>BTC</b> <code>$83,998.13</code>  +0.09%\n🔺 <b>ETH</b> <code>$2,693.83</code>  +0.13%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🔴 <b>IBIT</b>  <code>$47.56</code>  <i>-0.52% за день</i>\n🔴 <b>ETHA</b>  <code>$20.31</code>  <i>-0.10% за день</i>\n⚪️ <b>VAVA</b>  <code>$0.93</code>\n🔴 <b>GAVA</b>  <code>$25.49</code>  <i>0.00% за день</i>\n🟢 <b>QQQ</b>  <code>$744.50</code>  <i>+0.46% за день</i>\n\n🏦 <b>R",
@@ -662,6 +623,12 @@
       "ts": "2026-09-25T22:29:55.034145",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T22:29:55.876405",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
