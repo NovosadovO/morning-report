@@ -1,4 +1,19 @@
 {
+  "personal_ai|2026-09-25t10_00_50_526826": {
+    "topic": "personal_ai",
+    "gist": "Олеже, хоч зараз ти на зміні, твій низький рейтинг дня (33 бали) і застарілі дані про сон (2.0 год, 4 дні тому) вказують на потребу у відновленні. Спробуй викор",
+    "ts": "2026-09-25T10:00:50.526826"
+  },
+  "action_detect|2026-09-25t09_56_16_095589": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-25T09:56:16.095589"
+  },
+  "msg_crypto_move|2026-09-25t09_56_09_705532": {
+    "topic": "MSG_CRYPTO_MOVE",
+    "gist": "Привіт Олеже! 💹  Бачу, що сьогодні на ранковій зміні ринок криптовалют продемонстрував цікавий рух, зокрема, LINK та XLM показали значне зростання на +7.9% та +",
+    "ts": "2026-09-25T09:56:09.705532"
+  },
   "selfact|2026-09-25t09_54_39_620360": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, зверніть увагу: 29 вересня у вас заплановано аналіз основних даних кроків, де сьогоднішній результат скл",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути прострочені платежі\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після зміни виділи 1",
     "ts": "2026-09-25T08:03:40.105754"
-  },
-  "action_detect|2026-09-25t08_03_29_126793": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2023-09-25\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-25T08:03:29.126793"
-  },
-  "action_detect|2026-09-25t08_03_18_026659": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-25\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-25T08:03:18.026659"
-  },
-  "action_detect|2026-09-25t08_03_07_093634": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Запланувати прийом Armolopid\", \"action_date\": \"2023-09-25\", \"action_time\": null, \"action_summary\": \"Запланувати при",
-    "ts": "2026-09-25T08:03:07.093634"
   }
 }
