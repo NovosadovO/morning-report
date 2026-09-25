@@ -12576,7 +12576,24 @@
     "action": "calrem_skip",
     "pid": "deep_analysis_1790336499",
     "subject": "Компенсувати дефіцит сну",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 103113,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_deep_analysis_1790336499"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_deep_analysis_1790336499"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-25T15:27:10.767414+00:00"
   }
 }
