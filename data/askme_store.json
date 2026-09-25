@@ -14939,5 +14939,28 @@
       "kind": "note"
     },
     "ts": "2026-09-25T17:25:26.757882+00:00"
+  },
+  "bb8770cbb6": {
+    "key": "note|олег отримав лист від genai works через linkedin з темою",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег отримав лист від GenAI Works через LinkedIn з темою '💣 »\n\nОлег отримав лист від GenAI Works через LinkedIn з темою '💣 Go build your own Higgsfield'.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег отримав лист від GenAI Works через LinkedIn з темою '💣",
+      "desc": "Олег отримав лист від GenAI Works через LinkedIn з темою '💣 Go build your own Higgsfield'.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-25T17:25:35.861305+00:00"
   }
 }
