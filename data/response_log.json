@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-06T10:33:22.558048+00:00",
-      "category": "ai_button",
-      "question": "calendar",
-      "answer": "later_120",
-      "extra": {
-        "trigger": "event_soon",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-06T10:33:23.477891+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13940,6 +13930,12 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "XLM виріс на 9.9% за 24 години (зараз $0.22155)"
+    },
+    {
+      "ts": "2026-09-25T08:04:17.005209+00:00",
+      "category": "rwa_move",
+      "question": "RWA",
+      "answer": "ONDO (твоя позиція) виріс на 25.6% за 24 години (зараз $0.53942)"
     }
   ]
 }
