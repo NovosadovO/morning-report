@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T02:59:11.891967",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T02:59:14.048275",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +28.1% за 24г</b>\n\nЗараз: 0.5240 $\n24г тому: 0.4091 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79694"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-25T03:01:21.690786",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Bitget Halts Withdrawals After $351.6M Hot Wallet Breach</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79693"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79693"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79693"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79693"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79693"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79693"
             }
           ]
         ]
