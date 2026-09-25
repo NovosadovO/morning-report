@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-25t06_00_26_303216": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Невдала оплата Runable\",     \"text\": \"Олеже, платіж до Runable на $10.00 був невдалим. Потрібно оновити платіж",
+    "ts": "2026-09-25T06:00:26.303216"
+  },
   "openloop_promises|2026-09-25t05_56_06_058325": {
     "topic": "openloop_promises",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-25T04:05:10.469041"
-  },
-  "msg_crypto_move_truthfix|2026-09-25t04_05_03_941642": {
-    "topic": "MSG_CRYPTO_MOVE/truthfix",
-    "gist": "Олеже, бачу, що твій день починається з ранньої зміни, і це накладається на цікаву ситуацію на ринку та потребу у відновленні. Дані, які є в наявності, показуют",
-    "ts": "2026-09-25T04:05:03.941642"
   }
 }
