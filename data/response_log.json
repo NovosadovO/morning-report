@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-06T10:30:52.481112+00:00",
-      "category": "ai_button",
-      "question": "email",
-      "answer": "noted",
-      "extra": {
-        "trigger": "vip_email",
-        "note": "84,2"
-      }
-    },
-    {
       "ts": "2026-08-06T10:30:52.757827+00:00",
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
@@ -13939,6 +13929,16 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "XLM виріс на 8.5% за 24 години (зараз $0.21922)"
+    },
+    {
+      "ts": "2026-09-25T06:01:57.042664+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Переглянути нові вакансії на Profesia.sk",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-25"
+      }
     }
   ]
 }
