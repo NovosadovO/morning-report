@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-06T19:11:06.638710+00:00",
-      "category": "calendar_button",
-      "question": "tomorrow",
-      "answer": "accepted",
-      "extra": {
-        "stage": "tomorrow",
-        "when": "",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-06T19:11:07.579809+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13931,6 +13920,12 @@
         "kind": "reminder",
         "date": "2026-09-25"
       }
+    },
+    {
+      "ts": "2026-09-25T11:04:22.366833+00:00",
+      "category": "rwa_move",
+      "question": "RWA",
+      "answer": "LINK виріс на 12.8% за 24 години (зараз $13.880); ONDO (твоя позиція) виріс на 31.2% за 24 години (зараз $0.56505); весь"
     }
   ]
 }
