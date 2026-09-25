@@ -14916,5 +14916,28 @@
       "tag": "report"
     },
     "ts": "2026-09-25T17:02:41.564824+00:00"
+  },
+  "e8cfd46f19": {
+    "key": "note|олег отримав лист від 0xresearch з темою can zcash really f",
+    "q": "📝 Хочу записати нотатку:\n\n« Олег отримав лист від 0xResearch з темою 'Can Zcash really f »\n\nОлег отримав лист від 0xResearch з темою 'Can Zcash really flip Bitcoin?'.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Олег отримав лист від 0xResearch з темою 'Can Zcash really f",
+      "desc": "Олег отримав лист від 0xResearch з темою 'Can Zcash really flip Bitcoin?'.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-25T17:25:26.757882+00:00"
   }
 }
