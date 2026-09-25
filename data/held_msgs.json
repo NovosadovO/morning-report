@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T01:14:07.041158",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T01:14:07.871851",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79762"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-26T01:16:30.076861",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79761"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79761"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79761"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79761"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79761"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79761"
             }
           ]
         ]
