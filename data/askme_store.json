@@ -14199,5 +14199,28 @@
       "kind": "note"
     },
     "ts": "2026-09-25T11:27:28.387456+00:00"
+  },
+  "89b986bfa9": {
+    "key": "note|нова ідея від tradesoul на tradingview",
+    "q": "📝 Хочу записати нотатку:\n\n« Нова ідея від trade_soul на TradingView »\n\nОлег отримав сповіщення від TradingView про нову ідею від користувача trade_soul.\n\nПоставити?",
+    "kind": "write",
+    "opts": [
+      [
+        "save",
+        "💾 Так, запиши"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "Нова ідея від trade_soul на TradingView",
+      "desc": "Олег отримав сповіщення від TradingView про нову ідею від користувача trade_soul.",
+      "minutes": 30,
+      "calendar": true,
+      "kind": "note"
+    },
+    "ts": "2026-09-25T11:27:37.232419+00:00"
   }
 }
