@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T23:41:48.008149",
-      "kind": "calendar",
-      "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 7-й дім: Партнерство</b>\n📅 27.09 (Sun) — післязавтра\n🕐 00:00–00:00\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T23:41:48.832335",
       "kind": "calendar",
       "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 7-й дім: Партнерство\n📅 27.09 (Sun) — післязавтра\n🕐 00:00–00:00\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79759"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-25T23:46:04.925587",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 Up 25x: Can Zcash flip Bitcoin?</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79758"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79758"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79758"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79758"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79758"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79758"
             }
           ]
         ]
