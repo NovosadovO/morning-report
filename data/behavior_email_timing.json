@@ -1,9 +1,4 @@
 {
-  "79241": {
-    "sender": "nike@official.nike.com",
-    "sender_raw": "Nike <nike@official.nike.com>",
-    "seen_ts": "2026-09-17T07:31:40.940459+00:00"
-  },
   "79242": {
     "sender": "hello@maple.finance",
     "sender_raw": "Maple <hello@maple.finance>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Securitize через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-09-25T21:00:20.726710+00:00"
+  },
+  "79758": {
+    "sender": "newsletter@blockworks.com",
+    "sender_raw": "The Breakdown <newsletter@blockworks.com>",
+    "seen_ts": "2026-09-25T21:04:26.435546+00:00"
   }
 }
