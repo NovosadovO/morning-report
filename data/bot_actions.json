@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олег, у твоєму календарі на 21.09 є дві події про стрижку у",
-      "detail": "У календарі на сьогодні, 21.09, є дві однакові події: '16:30 Yevhenii, Classic strih, Staré Mesto 463, 040 01 Košice' та '16:30 Yevhenii Classic strih UpCut'.",
-      "module": "selfact",
-      "ts": "2026-09-21T17:36:17"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, у твоєму календарі на 22.09 та 23.09 є прийоми до дерм",
       "detail": "У календарі на 22.09 о 09:00 та на 23.09 о 09:00 є події 'дерматолог'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-09-25T11:05:42"
+    },
+    {
+      "kind": "note",
+      "what": "Записав дані здоров'я за 2026-09-25",
+      "detail": "автосинк з годинника: steps, hr_avg, calories, distance_km, weight_kg, health_score, stress, sleep_total_min",
+      "module": "qwsync",
+      "ts": "2026-09-25T11:07:55"
     }
   ]
 }
