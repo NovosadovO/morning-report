@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-07T00:00:17.138274+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Замовити квитки та проживання на Корфу",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-07"
-      }
-    },
-    {
       "ts": "2026-08-07T00:00:22.622522+00:00",
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
@@ -13939,6 +13929,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_347d69b3f4"
+    },
+    {
+      "ts": "2026-09-25T13:14:39.869405+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "gx_mute_acce571576"
     }
   ]
 }
