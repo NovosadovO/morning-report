@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-07T00:00:27.891075+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Відповісти на лист від Вероні",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-07"
-      }
-    },
-    {
       "ts": "2026-08-07T01:30:17.070752+00:00",
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
@@ -13934,6 +13924,16 @@
       "extra": {
         "trigger": "crypto_move",
         "note": null
+      }
+    },
+    {
+      "ts": "2026-09-25T13:35:12.089783+00:00",
+      "category": "ai_button",
+      "question": "crypto",
+      "answer": "noted",
+      "extra": {
+        "trigger": "crypto_move",
+        "note": "купити ще ETH на просадці"
       }
     }
   ]
