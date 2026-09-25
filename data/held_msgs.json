@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T02:01:15.712615",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: JPMorgan says $85,000 bitcoin could ease miner </b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79689"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79689"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79689"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79689"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79689"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79689"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T02:01:17.055067",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Head of Operations в Instaffo, зарплата до 110 тис. EUR/рік</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -214,6 +175,12 @@
       "ts": "2026-09-25T02:04:21.174727",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T02:04:24.179088",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>ONDO +26.4% за 24г</b>\n\nЗараз: 0.5218 $\n24г тому: 0.4129 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
