@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-07T03:00:18.640485+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Купити угорську віньєтку",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-07"
-      }
-    },
-    {
       "ts": "2026-08-07T03:00:22.456838+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -13923,6 +13913,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "gx_later_244dcd7cee"
+    },
+    {
+      "ts": "2026-09-25T15:41:03.837389+00:00",
+      "category": "confirm",
+      "question": "gx_later: здоров'я і вага",
+      "answer": "no"
     }
   ]
 }
