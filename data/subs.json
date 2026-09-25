@@ -86,6 +86,11 @@
         "date": "2026-08-25",
         "amount": "7.99",
         "uid": "77982"
+      },
+      {
+        "date": "2026-09-25",
+        "amount": "7.99",
+        "uid": "79739"
       }
     ],
     "active": false,
@@ -93,13 +98,13 @@
     "confirmed": true,
     "skipped": false,
     "first_seen": "2026-08-25",
-    "note": "Підписка на ChatGPT Go від OpenAI, списується щомісяця.",
-    "next_due": "2026-09-25",
+    "note": "Підписка на сервіс ChatGPT Go з автоматичним поновленням, списується щомісяця.",
+    "next_due": "2026-10-25",
     "amount": "7.99",
     "sender": "Google Play <googleplay-noreply@google.com>",
-    "subject": "Квитанція замовлення в Google Play від 25 серп. 2026 р.",
-    "uid": "77982",
-    "last_seen": "2026-08-25",
+    "subject": "Квитанція замовлення в Google Play від 25 вер. 2026 р.",
+    "uid": "79739",
+    "last_seen": "2026-09-25",
     "cancelled_at": "2026-08-25"
   },
   "railway": {
