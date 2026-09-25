@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T00:59:09.453620",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Railway <hello@news.railway.app> → Free VMs without an account, tracing, OpenCode on Cloud Agents\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Avalanche Summit <contact@avax.network> → Real Business, Real Momentum: Avalanche Summit Lands in NYC\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T00:59:10.339532",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Railway  → Free VMs without an account, tracing, OpenCode on Cloud Agents\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Avalanche Summit  → Real Business, Real Momentum: Avalanche Summit Lands in NYC\n\n🧹 Реклама: 4 — можна пропустити.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T01:01:11.919076",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>\"How to Yield Farm Like a Degen in 2026\" and 4 more</b>\n👤 Substack &lt;no-reply@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79764"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79764"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79764"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79764"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79764"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79764"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
