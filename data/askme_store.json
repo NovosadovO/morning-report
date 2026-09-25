@@ -14352,5 +14352,31 @@
       "start": "2026-09-30T09:00:00"
     },
     "ts": "2026-09-25T11:51:13.618019+00:00"
+  },
+  "ed000233e0": {
+    "key": "cal|hcpunk covery vo včelíne  retroprotest czpr",
+    "q": "📅 Хочу записати в календар:\n\n« 📌 HC/Punk covery vo Včelíne - Retroprotest (CZ),P.R. »\n🕐 03.10 о 09:00\n\nАвтоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nOct 03, 2026\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "📌 HC/Punk covery vo Včelíne - Retroprotest (CZ),P.R.",
+      "desc": "Автоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nOct 03, 2026",
+      "minutes": 60,
+      "start": "2026-10-03T09:00:00"
+    },
+    "ts": "2026-09-25T11:51:20.132231+00:00"
   }
 }
