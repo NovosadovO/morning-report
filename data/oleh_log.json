@@ -2,18 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "cw_ack_bcae2aee0a",
-      "label": "👍 Готовий",
-      "ts": "2026-09-04T19:36:55"
-    },
-    {
-      "t": "btn",
-      "data": "habit_no_run",
-      "label": "❌ Ні",
-      "ts": "2026-09-04T19:37:01"
-    },
-    {
-      "t": "btn",
       "data": "habit_yes_water",
       "label": "✅ Так",
       "ts": "2026-09-04T19:37:03"
@@ -7205,6 +7193,12 @@
       "data": "email_delete_79718",
       "label": "🗑 Видалити",
       "ts": "2026-09-25T11:27:03"
+    },
+    {
+      "t": "btn",
+      "data": "email_delete_79717",
+      "label": "🗑 Видалити",
+      "ts": "2026-09-25T11:27:07"
     }
   ]
 }
