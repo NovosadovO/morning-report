@@ -15257,5 +15257,31 @@
       "start": "2026-09-25T23:59:00"
     },
     "ts": "2026-09-25T19:28:45.841497+00:00"
+  },
+  "3948e52f78": {
+    "key": "cal|оплата паркування košice le066bi",
+    "q": "📅 Хочу записати в календар:\n\n« 💳 Оплата паркування Košice (LE066BI) »\n🕐 25.09 о 18:49\n\nАвтоматично з листа.\nВід: Ubian Eshop <no-reply@ubian.sk>\nТема: UBIAN - Potvrdenie o zaplatení\nObjednávka č. 14463646 vo výške 0.99 EUR zo dňa 9/25/2026 6:49 PM bola úspešne zrealizovaná.\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "💳 Оплата паркування Košice (LE066BI)",
+      "desc": "Автоматично з листа.\nВід: Ubian Eshop <no-reply@ubian.sk>\nТема: UBIAN - Potvrdenie o zaplatení\nObjednávka č. 14463646 vo výške 0.99 EUR zo dňa 9/25/2026 6:49 PM bola úspešne zrealizovaná.",
+      "minutes": 60,
+      "start": "2026-09-25T18:49:00"
+    },
+    "ts": "2026-09-25T19:28:50.938668+00:00"
   }
 }
