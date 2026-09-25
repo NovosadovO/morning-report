@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T23:28:43.564148",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T23:28:44.485900",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T23:31:43.900169",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>These Fitness Fans Took Bootleg Peptides. It Landed Them In </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79760"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79760"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79760"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79760"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79760"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79760"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
