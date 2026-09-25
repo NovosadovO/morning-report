@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-06T12:01:53.354469+00:00",
-      "category": "calendar_button",
-      "question": "Оплата страховки Kooperativa",
-      "answer": "noted",
-      "extra": {
-        "stage": "t3d",
-        "when": "12:00–13:00",
-        "note": "15.08 страховка (подія: Оплата страховки Kooperativa)"
-      }
-    },
-    {
       "ts": "2026-08-06T12:02:09.781971+00:00",
       "category": "calendar_confirm",
       "question": "Оплата страховки Kooperativa",
@@ -13937,6 +13926,12 @@
         "kind": "reminder",
         "date": "2026-09-26"
       }
+    },
+    {
+      "ts": "2026-09-25T09:34:32.810189+00:00",
+      "category": "rwa_move",
+      "question": "RWA",
+      "answer": "ONDO (твоя позиція) виріс на 28.4% за 24 години (зараз $0.55702); QNT виріс на 41.4% за 24 години (зараз $102)"
     }
   ]
 }
