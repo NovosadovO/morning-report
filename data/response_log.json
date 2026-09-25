@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-06T10:33:23.477891+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "gx_later_a0013a4a2e"
-    },
-    {
       "ts": "2026-08-06T10:48:34.052479+00:00",
       "category": "deadline_found",
       "question": "Термін дії діальнічної známky",
@@ -13936,6 +13930,12 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "ONDO (твоя позиція) виріс на 25.6% за 24 години (зараз $0.53942)"
+    },
+    {
+      "ts": "2026-09-25T08:49:11.676473+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
