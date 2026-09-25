@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "У календарі на 22.09 заплановано дві події 'Ранковий біг' на",
-      "detail": "У календарі на 22.09 є дві події 'Ранковий біг' з різним часом, що може бути помилкою або вимагає уточнення.",
-      "module": "selfact",
-      "ts": "2026-09-21T18:07:42"
-    },
-    {
-      "kind": "notify",
       "what": "У календарі на 21.09 та 23.09 є записи про 'Дерматолога' о 0",
       "detail": "У календарі є дві зустрічі з дерматологом на різні дати (21.09 та 23.09) в один і той же час, що вимагає уточнення.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "автосинк з годинника: steps, hr_avg, calories, distance_km, weight_kg, health_score, stress, sleep_total_min",
       "module": "qwsync",
       "ts": "2026-09-25T11:26:59"
+    },
+    {
+      "kind": "note",
+      "what": "збережено дані здоров'я",
+      "detail": "steps=7965, sleep_total_min=180, hr_avg=94, calories=340, distance_km=5.4, weight_kg=84.1, health_score=88, stress=4, sleep_hours=3.0, date=2026-09-25, source=qwatch_auto, saved_at=2026-09-25 11:26",
+      "module": "healthai",
+      "ts": "2026-09-25T11:27:01"
     }
   ]
 }
