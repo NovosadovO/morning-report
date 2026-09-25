@@ -1,9 +1,4 @@
 {
-  "79207": {
-    "sender": "info@emails.tesco.sk",
-    "sender_raw": "\"Tesco Clubcard\" <info@emails.tesco.sk>",
-    "seen_ts": "2026-09-16T14:17:59.999725+00:00"
-  },
   "79209": {
     "sender": "hello@metamask.io",
     "sender_raw": "MetaMask Team <hello@metamask.io>",
@@ -1498,5 +1493,10 @@
     "sender": "linas@substack.com",
     "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
     "seen_ts": "2026-09-25T10:27:20.428700+00:00"
+  },
+  "79723": {
+    "sender": "spotlight@newsletters.coinmarketcap.com",
+    "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
+    "seen_ts": "2026-09-25T11:05:55.135657+00:00"
   }
 }
