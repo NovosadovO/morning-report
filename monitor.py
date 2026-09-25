@@ -10329,25 +10329,16 @@ def main():
             except: pass
             _ai_real_ctx += weight_hint + " " + steps_hint + sleep_hint
 
-            ai_prompt = (
-                f"Контекст: {shift_hint} {_ai_real_ctx}Календар: {cal_events_text}. {tip_ctx} "
-                f"Напиши 3-5 речень українською без вступу, без 'Звичайно', без 'Привіт'. "
-                f"ТІЛЬКИ реальні дані — якщо Олег вже пробіг сьогодні, НЕ раджи бігти. "
-                f"Конкретні поради для Олега на основі РЕАЛЬНОГО стану зараз. [seed:{seed}]"
-            )
-            ai_payload = json.dumps({
-                "contents": [{"parts": [{"text": ai_prompt}]}],
-                "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.7},
-            }).encode()
-            ai_resp = _gem_post(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
-                ai_payload, timeout=30, tag="personal_ai"
-            )
-            ai_insight = ai_resp["candidates"][0]["content"]["parts"][0]["text"].strip()
-            if ai_insight and ai_insight[-1] not in ".!?»":
-                ai_insight += "."
+            # 25.09.2026: ai_insight Gemini-виклик ВИДАЛЕНО — результат ніде не
+            # використовувався в звіті (вставка була закоментована нижче,
+            # "# if ai_insight: parts.append(...)"), тобто це був чистий злив
+            # 1 платного Gemini-запиту на КОЖЕН годинний звіт (24/добу) в
+            # порожнечу. shift_hint/weight_hint/steps_hint/sleep_hint/tip_ctx/
+            # _ai_real_ctx лишаються — їх реально використовують themes_ai
+            # і briefing нижче.
+            ai_insight = None
         except Exception as e:
-            print(f"ai_insight error: {e}")
+            print(f"ai_insight prep error: {e}")
 
     # ── СКЛАДАЄМО ЗВІТ ────────────────────────────────────────────────────────
     import re as _re_rep
@@ -10978,6 +10969,19 @@ def main():
     _themes_ai_full = ""
     try:
         _gem_key_th = os.environ.get("GEMINI_API_KEY", "")
+        # 25.09.2026: тематичний AI-блок — раз на 2 години, не щогодини
+        # (Олег просив: звіт від бота щогодини, а AI-контент у звіті раз
+        # на 2 години — економія Gemini-кредитів). Дані звіту (крипто,
+        # погода, здоров'я, календар) лишаються в КОЖНОМУ звіті.
+        _themes_due = True
+        try:
+            import hourgate as _hg_th
+            _themes_due = _hg_th.allow_every("report_themes_ai", 2)
+        except Exception as _e_hgt:
+            print(f"[themes_ai] hourgate error: {_e_hgt}", flush=True)
+        if not _themes_due:
+            print("[themes_ai] SKIP — AI-тема раз на 2 год (економія кредитів), звіт без цього блоку", flush=True)
+            raise RuntimeError("hourgate_skip")
         if not _ai_time_left(40):
             print("[themes_ai] SKIP — мало часу до дедлайну, звіт надсилаємо без themes AI", flush=True)
             raise RuntimeError("ai_deadline")
@@ -11117,7 +11121,18 @@ def main():
         parts.append("💤 <i>Вихідний — крипто/пошта з 11:00</i>")
 
     # ── AI-брифінг: генерується з ПОВНИХ даних звіту ─────────────────────────
-    if gemini_key and not _ai_time_left(30):
+    # 25.09.2026: раз на 2 години, не щогодини (Олег просив: звіт від бота
+    # щогодини, AI-вступ у звіті — раз на 2 години, економія кредитів).
+    _briefing_due = True
+    try:
+        import hourgate as _hg_brief
+        _briefing_due = _hg_brief.allow_every("report_briefing", 2)
+    except Exception as _e_hgb:
+        print(f"[briefing] hourgate error: {_e_hgb}", flush=True)
+    if not _briefing_due:
+        print("[briefing] SKIP — AI-вступ раз на 2 год (економія кредитів), звіт без цього блоку", flush=True)
+        gemini_key_for_brief = ""
+    elif gemini_key and not _ai_time_left(30):
         print("[briefing] SKIP — мало часу до дедлайну", flush=True)
         gemini_key_for_brief = ""
     else:

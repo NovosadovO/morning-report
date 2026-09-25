@@ -680,6 +680,10 @@ def get_tone_variation(trigger_type: str, hour: int) -> dict:
             {"tone": "теплий коуч, коротке особисте питання", "emoji": "🫂"},
             {"tone": "цікавий співрозмовник, без формальності", "emoji": "✨"},
         ],
+        "health_combined": [
+            {"tone": "уважний друг-коуч, health-пульс + живе питання", "emoji": "❤️"},
+            {"tone": "турботливий особистий тренер, конкретика і щирість", "emoji": "🩺"},
+        ],
     }
     base = variations.get(trigger_type, [{"tone": "дружелюбний, особистий", "emoji": "👋"}])
     idx = (hour + abs(hash(trigger_type))) % len(base)
@@ -690,7 +694,7 @@ def _should_send_message(trigger_type: str, trigger_data) -> bool:
     always = {"vip_email", "deep_analysis", "briefing", "contextual_briefing",
               "morning", "evening", "health", "weekly_run_compare", "habit_checkin",
               "nutrition_tip", "day_plan", "interview_practice", "workout_plan",
-              "daily_astro", "health_pulse", "micro_checkin"}
+              "daily_astro", "health_pulse", "micro_checkin", "health_combined"}
     if trigger_type in always:
         return True
     if trigger_type == "crypto_move":
@@ -835,6 +839,27 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
         _mc_idx = (live["hour"] + datetime.now(ZoneInfo("Europe/Bratislava")).timetuple().tm_yday) % len(_mc_themes)
         _mc_key, _mc_instruction = _mc_themes[_mc_idx]
         trigger_extra = f"\n💭 МІКРО-ОПИТУВАННЯ ({_mc_key}): {_mc_instruction} Закінчи фразою що чекаєш відповідь тут же в чаті."
+    elif trigger_type == "health_combined":
+        # 25.09.2026: об'єднує те, що раніше було 3 окремими AI-викликами
+        # (health_pulse + micro_checkin + deep_analysis) в ОДНЕ повідомлення
+        # — щоб не палити Gemini-кредити на три схожі за темою тригери.
+        _hc_themes = [
+            ("настрій", "Запитай як він себе почуває просто зараз — настрій, енергія, чи щось турбує."),
+            ("ціль_вага", "Запитай як просувається ціль схуднення до 75кг — чи тримається плану сьогодні/цього тижня."),
+            ("крипто_рішення", "Запитай чи діяв він сьогодні за своїм крипто-планом (імпульсивні рішення чи стримався)."),
+            ("сон", "Запитай як спав минулої ночі — якість сну, скільки годин, чи відчуває бадьорість зараз."),
+            ("загальне", "Запитай щось особисте про нього прямо зараз — як справи в цілому, що на думці."),
+        ]
+        _hc_idx = (live["hour"] + datetime.now(ZoneInfo("Europe/Bratislava")).timetuple().tm_yday) % len(_hc_themes)
+        _hc_key, _hc_instruction = _hc_themes[_hc_idx]
+        trigger_extra = (
+            f"\n❤️ HEALTH-ПУЛЬС + ЖИВЕ ПИТАННЯ (реальний статус — {real_status}): "
+            "1) Короткий чек-ін на основі поточних живих даних (кроки/вода/сон нижче) — чи в нормі "
+            "на цей момент дня, і ОДНА конкретна дія зараз якщо ні. "
+            f"2) Потім ({_hc_key}): {_hc_instruction} Одне тепле конкретне питання, без загальних фраз. "
+            "Закінчи фразою що чекаєш відповідь тут же в чаті. "
+            "Це ОДНЕ повідомлення замінює три окремі — не розтягуй, тримайся 5-7 речень."
+        )
 
     # ── Shift context ─────────────────────────────────────────────────────────
     h = live["hour"]
@@ -849,7 +874,7 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
 
     # ── Довжина/структура залежно від теми: короткі алерти vs довгі звіти ─────
     SHORT_TRIGGERS = {"event_soon", "habit_checkin", "idle_timeout", "nutrition_tip", "interview_practice", "health_pulse"}
-    MEDIUM_TRIGGERS = {"crypto_move", "vip_email", "weekly_run_compare", "health", "day_plan", "workout_plan", "daily_astro"}
+    MEDIUM_TRIGGERS = {"crypto_move", "vip_email", "weekly_run_compare", "health", "day_plan", "workout_plan", "daily_astro", "health_combined"}
     # решта (morning/evening/deep_analysis/briefing тощо) — LONG за замовчуванням
 
     # УВАГА про стелю токенів: українська кирилиця токенізується дорого —
@@ -1178,9 +1203,12 @@ def process_trigger(trigger_type: str, trigger_data, location: str = "doma", idl
                 except Exception as e:
                     _log(f"⚠️ interview_state save failed: {e}")
 
-            # Micro checkin: позначаємо очікування відповіді (persistent, GitHub data-гілка —
-            # переживає редеплой, на відміну від interview_state.json який лежить локально)
-            if trigger_type == "micro_checkin":
+            # Micro checkin / health_combined: позначаємо очікування відповіді (persistent,
+            # GitHub data-гілка — переживає редеплой, на відміну від interview_state.json
+            # який лежить локально). health_combined перевіряє цей же файл перед новим
+            # запитанням (intelligent_listener._health_combined_awaiting_reply) — щоб не
+            # питати знову поки Олег не відповів на попереднє.
+            if trigger_type in ("micro_checkin", "health_combined"):
                 try:
                     import sys as _sys_mc
                     _sys_mc.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

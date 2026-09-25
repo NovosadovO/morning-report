@@ -253,6 +253,27 @@ class IntelligentListener:
             return False
         return (11 <= now.hour < 12) or (16 <= now.hour < 17)
 
+    def _health_combined_awaiting_reply(self) -> bool:
+        """25.09.2026: не питати знову, якщо попереднє health/мікро-опитування
+        ще без відповіді (>24г — вважаємо застарілим, дозволяємо нове)."""
+        try:
+            import sys as _sys_hc
+            _sys_hc.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            import storage as _storage_hc
+            _pending = _storage_hc.load("monitor_micro_checkin_pending.json", default={}) or {}
+            if not _pending.get("awaiting"):
+                return False
+            _asked_at = _pending.get("asked_at")
+            if not _asked_at:
+                return False
+            _asked_dt = datetime.fromisoformat(_asked_at)
+            if _asked_dt.tzinfo is None:
+                _asked_dt = _asked_dt.replace(tzinfo=_TZ)
+            _age_h = (datetime.now(tz=_TZ) - _asked_dt).total_seconds() / 3600
+            return _age_h < 24
+        except Exception:
+            return False
+
     def _check_interview_window(self) -> bool:
         """Вечірнє вікно для практики співбесіди (не в нічну зміну — тоді він на роботі)."""
         now = datetime.now(tz=_TZ)
@@ -435,11 +456,22 @@ class IntelligentListener:
                     triggers.append((time_trigger, None))
                     self._log(f"TRIGGER: {time_trigger}")
                 
-                # 6. DEEP ANALYSIS (динамічна актуальність з local fallback)
+                # 6. HEALTH_COMBINED (25.09.2026: об'єднано deep_analysis +
+                # health_pulse + micro_checkin в ОДИН рідший AI-виклик — Олег
+                # просив менше окремих AI-повідомлень і менше витрачених
+                # Gemini-кредитів. Раніше це були 3 незалежні тригери з
+                # cooldown 3h/4h/5h, що разом могло давати до ~14 AI-повідомлень
+                # на день. Тепер — 1 тригер, cooldown 6h (макс 3-4x/день),
+                # і не питає знову, якщо попереднє питання ще без відповіді.
                 idle = self._check_idle_timeout()
-                if self._should_send_trigger("deep_analysis", 3.0):  # Макс 1x на 3h (було 4h — Олег просив частіше)
-                    triggers.append(("deep_analysis", idle))
-                    self._log(f"TRIGGER: deep_analysis (idle={idle:.1f}h)")
+                _health_combined_window = (
+                    self._check_health_pulse_window() or self._check_micro_checkin_window()
+                )
+                if (_health_combined_window
+                        and not self._health_combined_awaiting_reply()
+                        and self._should_send_trigger("health_combined", 6.0)):
+                    triggers.append(("health_combined", idle))
+                    self._log(f"TRIGGER: health_combined (idle={idle:.1f}h)")
 
                 # 7. WEEKLY RUN COMPARE (понеділок вранці, 1x/тиждень)
                 if self._check_weekly_run_compare() and self._should_send_trigger("weekly_run_compare", 24.0 * 6):
@@ -485,16 +517,7 @@ class IntelligentListener:
                         triggers.append(("daily_astro", _astro_txt))
                         self._log("TRIGGER: daily_astro")
 
-                # 14. HEALTH PULSE (2x/день, короткий чек-ін)
-                if self._check_health_pulse_window() and self._should_send_trigger("health_pulse", 4.0):
-                    triggers.append(("health_pulse", None))
-                    self._log("TRIGGER: health_pulse")
-
-                # 15. MICRO CHECKIN (широке опитування — настрій/ціль/крипто/сон/усе особисте,
-                # адаптивно на idle, кілька разів на день, тема ротується)
-                if self._check_micro_checkin_window() and self._should_send_trigger("micro_checkin", 5.0):
-                    triggers.append(("micro_checkin", None))
-                    self._log("TRIGGER: micro_checkin")
+                # 14+15. HEALTH PULSE + MICRO CHECKIN — об'єднано в health_combined (див. пункт 6 вище).
 
                 # 16. ПРОАКТИВНІ ПРОПОЗИЦІЇ ДІЙ (AI сам ініціює:
                 # "Олеже, пропоную додати це в календар / занотувати / нагадати").
