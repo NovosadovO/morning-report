@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "збережено дані здоров'я",
-      "detail": "steps=9033, hr_avg=85, weight_kg=83.0, health_score=95, sleep_total_min=120, sleep_hours=2.0, date=2026-09-21, source=qwatch_auto, saved_at=2026-09-21 21:52",
-      "module": "healthai",
-      "ts": "2026-09-21T21:52:40"
-    },
-    {
-      "kind": "note",
       "what": "Записав дані здоров'я за 2026-09-21",
       "detail": "автосинк з годинника: steps, hr_avg, weight_kg, health_score, sleep_total_min",
       "module": "qwsync",
@@ -2799,6 +2792,13 @@
       "detail": "З листа від Ubian Eshop видно, що термін дії паркувального талона закінчився 25.09.2026 о 19:19.",
       "module": "selfact",
       "ts": "2026-09-25T19:00:14"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-09-25T19:06:11"
     }
   ]
 }
