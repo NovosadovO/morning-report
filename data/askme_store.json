@@ -14300,5 +14300,31 @@
       "start": "2026-09-25T09:00:00"
     },
     "ts": "2026-09-25T11:51:03.026280+00:00"
+  },
+  "a8b2df75d9": {
+    "key": "cal|mineráли фосілії а шперки  oc tulip",
+    "q": "📅 Хочу записати в календар:\n\n« 📌 MINERÁЛИ, ФОСІЛІЇ А ШПЕРКИ | OC TULIP »\n🕐 26.09 о 09:00\n\nАвтоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nSep 26 - 27 | Pltníky 2, 03601 Martin, Slovakia\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "📌 MINERÁЛИ, ФОСІЛІЇ А ШПЕРКИ | OC TULIP",
+      "desc": "Автоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nSep 26 - 27 | Pltníky 2, 03601 Martin, Slovakia",
+      "minutes": 60,
+      "start": "2026-09-26T09:00:00"
+    },
+    "ts": "2026-09-25T11:51:07.427350+00:00"
   }
 }
