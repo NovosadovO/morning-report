@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T23:46:07.500684",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>🔷 The Daily: Bitget hit by $387.5 million security breach</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79756"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79756"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79756"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79756"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79756"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79756"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T23:46:08.918750",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Manažér obchodnej agentúry v Košiciach в UNIQA CZ</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -239,6 +200,12 @@
       "ts": "2026-09-25T23:51:44.051126",
       "kind": "calendar",
       "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 7-й дім: Партнерство</b>\n📅 27.09 (Sun) — післязавтра\n🕐 00:00–00:00\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T23:51:44.886261",
+      "kind": "calendar",
+      "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 7-й дім: Партнерство\n📅 27.09 (Sun) — післязавтра\n🕐 00:00–00:00\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
       "keyboard": null
     }
   ]
