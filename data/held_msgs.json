@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T03:01:14.294329",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79698"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79698"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79698"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79698"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79698"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79698"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T03:01:15.768785",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>16 nových pracovných ponúk</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -402,6 +363,12 @@
     },
     {
       "ts": "2026-09-25T03:03:12.259639",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Соляр — 5-й дім: Творчість і радість » було 24.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T03:03:13.163882",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Соляр — 5-й дім: Творчість і радість » було 24.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
