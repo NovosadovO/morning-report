@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T00:19:35.960768",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Railway <hello@news.railway.app> → Free VMs without an account, tracing, OpenCode on Cloud Agents\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Avalanche Summit <contact@avax.network> → Real Business, Real Momentum: Avalanche Summit Lands in NYC\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T00:19:36.885459",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Railway  → Free VMs without an account, tracing, OpenCode on Cloud Agents\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Avalanche Summit  → Real Business, Real Momentum: Avalanche Summit Lands in NYC\n\n🧹 Реклама: 4 — можна пропустити.",
@@ -148,6 +142,12 @@
       "ts": "2026-09-26T00:21:12.481210",
       "kind": "calendar",
       "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 7-й дім: Партнерство</b>\n📅 27.09 (Sun) — завтра\n🕐 00:00–00:00\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T00:21:13.447907",
+      "kind": "calendar",
+      "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 7-й дім: Партнерство\n📅 27.09 (Sun) — завтра\n🕐 00:00–00:00\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
       "keyboard": null
     }
   ]
