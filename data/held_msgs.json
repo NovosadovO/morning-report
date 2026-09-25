@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T03:12:15.474062",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T03:12:16.235050",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -148,6 +142,12 @@
       "ts": "2026-09-25T03:14:59.411356",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\" <support@profesia.sk> → 16 nových pracovných ponúk\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T03:15:00.120088",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 16 nových pracovných ponúk\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
