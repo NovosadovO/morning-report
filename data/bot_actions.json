@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "збережено дані здоров'я",
-      "detail": "Analysis by Sleep Cycle alarm clock. Download here: https://www.sleepcycle.com #sleepCycle",
-      "module": "healthai",
-      "ts": "2026-09-21T15:11:28"
-    },
-    {
-      "kind": "note",
       "what": "Записав дані здоров'я за 2026-09-21",
       "detail": "автосинк з годинника: sleep_total_min",
       "module": "qwsync",
@@ -2799,6 +2792,13 @@
       "detail": "Важливі сповіщення про вакансії, які Олег міг не побачити серед інших листів.",
       "module": "selfact",
       "ts": "2026-09-25T04:41:44"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, у тебе є незавершений платіж до Runable на $10.00. По",
+      "detail": "Згідно з даними про підписки, платіж до Runable був невдалим і потребує оновлення платіжної інформації.",
+      "module": "selfact",
+      "ts": "2026-09-25T04:41:49"
     }
   ]
 }
