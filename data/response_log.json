@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-07T09:42:01.944600+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_n_e64f1b9b2d"
-    },
-    {
       "ts": "2026-08-07T09:57:14.275650+00:00",
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
@@ -13909,6 +13903,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dl_skip_caa47a7bdb"
+    },
+    {
+      "ts": "2026-09-25T21:23:32.488630+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_e653297ae9"
     }
   ]
 }
