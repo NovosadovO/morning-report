@@ -15435,5 +15435,31 @@
       "start": "2026-09-25T23:59:00"
     },
     "ts": "2026-09-25T20:14:20.180976+00:00"
+  },
+  "0c2a825f68": {
+    "key": "cal|оплата паркування košice tarifné pásmo a2",
+    "q": "📅 Хочу записати в календар:\n\n« 💳 Оплата паркування Košice, Tarifné pásmo A2 »\n🕐 25.09 о 18:49\n\nАвтоматично з листа.\nВід: Ubian Eshop <no-reply@ubian.sk>\nТема: UBIAN - Potvrdenie o zaplatení\nObjednávka č. 14463646 vo výške 0.99 EUR zo dňa 9/25/2026 6:49 PM bola úspešne zrealizovaná.\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "💳 Оплата паркування Košice, Tarifné pásmo A2",
+      "desc": "Автоматично з листа.\nВід: Ubian Eshop <no-reply@ubian.sk>\nТема: UBIAN - Potvrdenie o zaplatení\nObjednávka č. 14463646 vo výške 0.99 EUR zo dňa 9/25/2026 6:49 PM bola úspešne zrealizovaná.",
+      "minutes": 60,
+      "start": "2026-09-25T18:49:00"
+    },
+    "ts": "2026-09-25T20:14:25.428306+00:00"
   }
 }
