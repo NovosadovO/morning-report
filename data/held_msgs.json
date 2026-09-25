@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T23:16:29.138157",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Onchain Assets Weekly: 9/25/26</b>\n👤 Securitize через LinkedIn&lt;newsletters-noreply@link",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79757"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79757"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79757"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79757"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79757"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79757"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T23:16:30.579272",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>🔷 The Daily: Bitget hit by $387.5 million security breach</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-09-25T23:19:32.462172",
       "kind": "calendar",
       "text": "🔔 <b>Пора збиратись — 30 хв</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 6-й дім: Робота й здоров’я</b>\n🕐 00:00–00:00\n\n<i>Останні хвилини — перевір, чи все взяв.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T23:19:33.233356",
+      "kind": "calendar",
+      "text": "🔔 Пора збиратись — 30 хв\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 6-й дім: Робота й здоров’я\n🕐 00:00–00:00\n\nОстанні хвилини — перевір, чи все взяв.",
       "keyboard": null
     }
   ]
