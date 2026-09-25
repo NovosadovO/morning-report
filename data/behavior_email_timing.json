@@ -1,9 +1,4 @@
 {
-  "79218": {
-    "sender": "message@message.reserved.com",
-    "sender_raw": "Reserved <message@message.reserved.com>",
-    "seen_ts": "2026-09-16T17:34:12.475810+00:00"
-  },
   "79219": {
     "sender": "security@facebookmail.com",
     "sender_raw": "\"Facebook\" <security@facebookmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-09-25T12:14:35.175698+00:00"
+  },
+  "79733": {
+    "sender": "slovnaftmove@mail.loyaltyteam.com",
+    "sender_raw": "\"Slovnaft Move\" <slovnaftmove@mail.loyaltyteam.com>",
+    "seen_ts": "2026-09-25T12:43:01.579256+00:00"
   }
 }
