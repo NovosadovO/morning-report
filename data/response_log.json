@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-06T10:30:52.757827+00:00",
-      "category": "event_done",
-      "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-06T10:31:17.033273+00:00",
       "category": "calendar_reminder_confirm",
       "question": "Записати вагу в Apple Health",
@@ -13938,6 +13932,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-09-25"
+      }
+    },
+    {
+      "ts": "2026-09-25T06:02:01.445304+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Юпітер переходить у 2-й дім",
+      "extra": {
+        "kind": "note",
+        "date": "2026-09-26"
       }
     }
   ]
