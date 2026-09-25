@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T00:31:33.900638",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Free VMs without an account, tracing, OpenCode on Cloud Agen</b>\n👤 Railway &lt;hello@news.railway.app&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79762"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79762"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79762"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79762"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79762"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79762"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-26T00:31:35.124999",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -377,6 +338,12 @@
       "ts": "2026-09-26T00:33:12.159785",
       "kind": "calendar",
       "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 5-й дім: Творчість і радість</b>\n🕐 00:00–00:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T00:33:13.018778",
+      "kind": "calendar",
+      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 5-й дім: Творчість і радість\n🕐 00:00–00:00\n\nВідповідь збережу — це піде в аналітику тижня.",
       "keyboard": null
     }
   ]
