@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-09-25t15_50_57_478793": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від LinkedIn інформує про нові обговорення в групі Artificial Intelligence, Deep Learning, Machine Learning. Він містить посилання на ",
+    "ts": "2026-09-25T15:50:57.478793"
+  },
   "qwatch_parse|2026-09-25t15_40_28_936370": {
     "topic": "qwatch_parse",
     "gist": "```json {   \"health_score\": 89,   \"steps\": 16709,   \"sleep_total_min\": 407,   \"sleep_deep_min\": 98,   \"sleep_light_min\": 201,   \"sleep_quality\": 100,   \"hr_avg\"",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти ліки Armolopid, оскільки",
     "ts": "2026-09-25T14:02:32.782084"
-  },
-  "foresight|2026-09-25t14_02_32_738955": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-25T14:02:32.738955"
   }
 }
