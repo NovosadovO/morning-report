@@ -5988,5 +5988,16 @@
     "about": "Звіт про кроки",
     "state": "open",
     "ts": "2026-09-25T16:47:48"
+  },
+  "generic|t|дії з розсилками the block": {
+    "kind": "generic",
+    "key": "",
+    "tkey": "дії з розсилками the block",
+    "title": "Дії з розсилками The Block",
+    "action": "mute",
+    "label": "🙈 Не нагадуй",
+    "about": "Дії з розсилками The Block",
+    "state": "closed",
+    "ts": "2026-09-25T20:55:01"
   }
 }
