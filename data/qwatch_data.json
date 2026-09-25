@@ -1302,10 +1302,10 @@
     "saved_at": "2026-09-24 06:27"
   },
   "2026-09-25": {
-    "steps": 16709,
-    "hr_avg": 84,
-    "calories": 721,
-    "distance_km": 5.4,
+    "steps": 24594,
+    "hr_avg": 81,
+    "calories": 1055,
+    "distance_km": 16.8,
     "weight_kg": 84.1,
     "health_score": 89,
     "stress": 43,
@@ -1313,11 +1313,13 @@
     "sleep_hours": 3.0,
     "date": "2026-09-25",
     "source": "qwatch",
-    "saved_at": "2026-09-25 15:40",
+    "saved_at": "2026-09-25 21:42",
     "sleep_quality": 100,
-    "hrv": 43,
+    "hrv": 38,
     "spo2": 99,
     "sleep_deep_min": 98,
-    "sleep_light_min": 201
+    "sleep_light_min": 201,
+    "age": 37,
+    "height_cm": 175
   }
 }
