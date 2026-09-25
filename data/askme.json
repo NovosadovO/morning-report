@@ -4995,7 +4995,17 @@
   "cal|вистава ach tie naše ženy  žilina": {
     "q": "📅 Хочу записати в календар:\n\n« 📌 Вистава Ach tie naše ženy | Žilina »\n🕐 30.09 о 09:00\n\nАвтоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nAch tie naše ženy | 30.9. | Žilina Sep 30, 2026\n\nЗаписати?",
     "kind": "plan",
-    "asked_at": "2026-09-25T12:36:40"
+    "asked_at": "2026-09-25T12:36:40",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-09-25T13:19:29",
+    "meta": {
+      "summary": "📌 Вистава Ach tie naše ženy | Žilina",
+      "desc": "Автоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular e",
+      "minutes": "60",
+      "start": "2026-09-30T09:00:00"
+    }
   },
   "cal|концерт mara ševčíková  kolektív v ústach cukor  di": {
     "q": "📅 Хочу записати в календар:\n\n« 📌 Концерт Mara Ševčíková & kolektív: V ústach cukor / DI »\n🕐 01.10 о 09:00\n\nАвтоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nMara Ševčíková & kolektív: V ústach cukor / DI Oct 01, 2026\n\nЗаписати?",
