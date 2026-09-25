@@ -1,4 +1,9 @@
 {
+  "proactive_actions|2026-09-25t07_31_43_809945": {
+    "topic": "proactive_actions",
+    "gist": "```json [   {     \"kind\": \"reminder\",     \"title\": \"Переглянути нові вакансії на Profesia.sk\",     \"date\": \"2026-09-25\",     \"time\": \"18:00\",     \"message\": \"Ол",
+    "ts": "2026-09-25T07:31:43.809945"
+  },
   "openloop_promises|2026-09-25t07_26_56_911013": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Моніторинг здоров'я\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Після зміни варто приділити уваг",
     "ts": "2026-09-25T06:01:24.924672"
-  },
-  "msg_morning_truthfix|2026-09-25t06_01_17_739626": {
-    "topic": "MSG_MORNING/truthfix",
-    "gist": "Олеже, твоя рання зміна вже триває. Ринок криптовалют показує такі дані: BTC на рівні $84,201 (+0.4% за 24 години, +9.8% за 7 днів), ETH – $2,678 (+0.1% за 24 г",
-    "ts": "2026-09-25T06:01:17.739626"
   }
 }
