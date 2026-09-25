@@ -1,9 +1,4 @@
 {
-  "79211": {
-    "sender": "newsletters@e.economist.com",
-    "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
-    "seen_ts": "2026-09-16T16:18:31.041428+00:00"
-  },
   "79212": {
     "sender": "cloudplatform-noreply@google.com",
     "sender_raw": "Google Cloud Billing Alerts <CloudPlatform-noreply@google.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hello@wexopay.com",
     "sender_raw": "Wexo Cashback <hello@wexopay.com>",
     "seen_ts": "2026-09-25T11:16:18.947143+00:00"
+  },
+  "79726": {
+    "sender": "newsletter@myclaw.ai",
+    "sender_raw": "MyClaw Newsletter <newsletter@myclaw.ai>",
+    "seen_ts": "2026-09-25T11:47:46.862770+00:00"
   }
 }
