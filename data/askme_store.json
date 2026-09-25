@@ -15409,5 +15409,31 @@
       "tag": "healthai"
     },
     "ts": "2026-09-25T20:06:00.464522+00:00"
+  },
+  "9028cc6250": {
+    "key": "cal|дедлайн the innovators fund  exposure to openai",
+    "q": "📅 Хочу записати в календар:\n\n« ⏳ Дедлайн: The Innovators Fund & Exposure to OpenAI »\n🕐 25.09 о 23:59\n\nАвтоматично з листа.\nВід: Ben at StartEngine <ben@startengine.com>\nТема: Deadline Today: The Innovators Fund & Exposure to OpenAI\nThe Innovators Fund closes today at midnight PT.\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "⏳ Дедлайн: The Innovators Fund & Exposure to OpenAI",
+      "desc": "Автоматично з листа.\nВід: Ben at StartEngine <ben@startengine.com>\nТема: Deadline Today: The Innovators Fund & Exposure to OpenAI\nThe Innovators Fund closes today at midnight PT.",
+      "minutes": 60,
+      "start": "2026-09-25T23:59:00"
+    },
+    "ts": "2026-09-25T20:14:20.180976+00:00"
   }
 }
