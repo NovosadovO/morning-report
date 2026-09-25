@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-25t12_45_42_764044": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу на лист від Linas's Newsletter: «The Claude Code Projects Playbook: Make Claude Your Chief o",
+    "ts": "2026-09-25T12:45:42.764044"
+  },
   "action_detect|2026-09-25t12_40_07_683204": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "email_ai_item",
     "gist": "```json {   \"description\": \"Цей лист є інформаційним бюлетенем від Generative AI, який обговорює останні новини та оновлення у світі штучного інтелекту. Ключова",
     "ts": "2026-09-25T11:26:03.217759"
-  },
-  "healthai_truthfix|2026-09-25t11_14_37_334681": {
-    "topic": "healthai/truthfix",
-    "gist": "Олеже, дані за сьогодні, 25 вересня 2026 року, показують, що ти спав 3.0 години, що значно менше середнього показника за останні 14 днів (5.7 години), і це супр",
-    "ts": "2026-09-25T11:14:37.334681"
   }
 }
