@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Є нове оголошення про квартири у Кошице. Переглянь, якщо цік",
-      "detail": "Олег отримав лист від Oleg Novosadov <novosadovoleg@gmail.com> | 🏠 Нові квартири у Кошіці — 1 нове оголошення.",
-      "module": "selfact",
-      "ts": "2026-09-21T18:22:53"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, нагадую, що сьогодні, 21.09.2026, о 23:00 у тебе запл",
       "detail": "Події у календарі на сьогодні: '23:00 Навчання інвестиціям' та '23:00 Соляр — 1-й дім: Я і новий цикл; Особистий Новий Рік'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "steps=7965, sleep_total_min=180, hr_avg=94, calories=340, distance_km=5.4, weight_kg=84.1, health_score=88, stress=4, sleep_hours=3.0, date=2026-09-25, source=qwatch_auto, saved_at=2026-09-25 11:27",
       "module": "healthai",
       "ts": "2026-09-25T11:27:22"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на лист від Socios.com: вони нагадують пр",
+      "detail": "Лист від Socios.com 'Have you generated your Recovery Kit?' є важливим для безпеки фінансових активів Олега.",
+      "module": "selfact",
+      "ts": "2026-09-25T11:42:34"
     }
   ]
 }
