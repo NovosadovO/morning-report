@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "note",
-      "what": "Записав дані здоров'я за 2026-09-21",
-      "detail": "автосинк з годинника: steps, hr_avg, weight_kg, health_score, sleep_total_min",
-      "module": "qwsync",
-      "ts": "2026-09-21T22:23:02"
-    },
-    {
-      "kind": "note",
       "what": "збережено дані здоров'я",
       "detail": "steps=9033, hr_avg=85, weight_kg=83.0, health_score=95, sleep_total_min=120, sleep_hours=2.0, date=2026-09-21, source=qwatch_auto, saved_at=2026-09-21 22:22",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є лист від The Block з темою '🔔 Action needed: The Block newsletters' та проханням відкрити лист.",
       "module": "selfact",
       "ts": "2026-09-25T20:18:15"
+    },
+    {
+      "kind": "notify",
+      "what": "Дії з розсилками The Block",
+      "detail": "Свіжі листи: від The Block | 🔔 Action needed: The Block newsletters",
+      "module": "selfact",
+      "ts": "2026-09-25T20:48:44"
     }
   ]
 }
