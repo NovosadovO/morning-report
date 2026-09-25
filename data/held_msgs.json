@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T00:46:54.172398",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>These Fitness Fans Took Bootleg Peptides. It Landed Them In </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79760"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79760"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79760"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79760"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79760"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79760"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-26T00:46:54.967883",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -311,6 +272,12 @@
       "ts": "2026-09-26T00:48:56.151550",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>SOL +5.1% за 24г</b>\n\nЗараз: 122.36 $\n24г тому: 116.42 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T00:48:57.116214",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ SOL +5.1% за 24г\n\nЗараз: 122.36 $\n24г тому: 116.42 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
