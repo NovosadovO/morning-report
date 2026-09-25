@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T03:28:23.930744",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>ONDO +29.3% за 24г</b>\n\nЗараз: 0.5293 $\n24г тому: 0.4095 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T03:28:24.652925",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ ONDO +29.3% за 24г\n\nЗараз: 0.5293 $\n24г тому: 0.4095 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79698"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-25T03:30:58.105809",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>16 nových pracovných ponúk</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79697"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79697"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79697"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79697"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79697"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79697"
             }
           ]
         ]
