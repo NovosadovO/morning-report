@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T01:16:32.575786",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Real Business, Real Momentum: Avalanche Summit Lands in NYC</b>\n👤 Avalanche Summit &lt;contact@avax.network&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79759"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79759"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79759"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79759"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79759"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79759"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-26T01:16:34.602910",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Railway\n📋 Free VMs without an account, tracing, OpenCode on Cloud Agen\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -206,6 +167,12 @@
       "ts": "2026-09-26T01:18:34.907202",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T01:18:37.746932",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>ONDO +6.6% за 24г</b>\n\nЗараз: 0.5525 $\n24г тому: 0.5182 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
