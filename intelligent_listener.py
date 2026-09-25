@@ -61,30 +61,62 @@ class IntelligentListener:
         print(f"[LISTENER {ts}] {msg}", flush=True)
     
     def _load_state(self):
-        """Завантажити saved state"""
+        """Завантажити saved state.
+
+        25.09.2026 ФІКС: раніше стан лежав ЛОКАЛЬНО (data/listener_state.json,
+        звичайний open()) — на Railway диск ефемерний, і КОЖЕН редеплой
+        стирав self.last_message_time. Оскільки цей словник — єдиний
+        dedup для "1x/день" тригерів (habit_checkin, day_plan, nutrition_tip,
+        workout_plan, daily_astro, health_combined тощо), редеплой посеред
+        вечірнього вікна (19-23г) миттю відкривав ВСІ ці тригери одразу —
+        Олег отримував 3+ майже однакових "Привіт Олеже!" повідомлення
+        поспіль. Тепер стан живе через storage.py (гілка data на GitHub) —
+        переживає редеплой, як і monitor_micro_checkin_pending.json.
+        Локальний файл лишається як fallback, якщо storage/GITHUB_TOKEN
+        недоступні (напр. локальний запуск для тестів).
+        """
+        state = None
         try:
-            state_file = os.path.join(_DATA_DIR, "listener_state.json")
-            if os.path.exists(state_file):
-                with open(state_file, "r") as f:
-                    state = json.load(f)
-                    self.user_location = state.get("location", "doma")
-                    self.last_message_time = state.get("last_messages", {})
-        except:
-            pass
-    
+            import sys as _sys_ls
+            _sys_ls.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            import storage as _storage_ls
+            state = _storage_ls.load("listener_state.json", default=None)
+        except Exception as e:
+            self._log(f"⚠️ listener_state storage.load failed: {e}")
+        if not state:
+            try:
+                state_file = os.path.join(_DATA_DIR, "listener_state.json")
+                if os.path.exists(state_file):
+                    with open(state_file, "r") as f:
+                        state = json.load(f)
+            except Exception:
+                state = None
+        if state:
+            self.user_location = state.get("location", "doma")
+            self.last_message_time = state.get("last_messages", {})
+
     def _save_state(self):
-        """Зберегти state"""
+        """Зберегти state — через storage.py (гілка data, переживає редеплой)
+        і локально як швидкий fallback-кеш на випадок збою GitHub API."""
+        payload = {
+            "location": self.user_location,
+            "last_messages": self.last_message_time,
+            "updated": datetime.now(tz=_TZ).isoformat(),
+        }
+        try:
+            import sys as _sys_ss
+            _sys_ss.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            import storage as _storage_ss
+            _storage_ss.save("listener_state.json", payload)
+        except Exception as e:
+            self._log(f"⚠️ listener_state storage.save failed: {e}")
         try:
             os.makedirs(_DATA_DIR, exist_ok=True)
             state_file = os.path.join(_DATA_DIR, "listener_state.json")
             with open(state_file, "w") as f:
-                json.dump({
-                    "location": self.user_location,
-                    "last_messages": self.last_message_time,
-                    "updated": datetime.now(tz=_TZ).isoformat(),
-                }, f, indent=2)
+                json.dump(payload, f, indent=2)
         except Exception as e:
-            self._log(f"Save state error: {e}")
+            self._log(f"Save state (local) error: {e}")
     
     def mark_user_active(self):
         """Позначити що юзер активний (при команді)"""
