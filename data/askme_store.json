@@ -14629,5 +14629,31 @@
       "start": "2026-09-25T09:00:00"
     },
     "ts": "2026-09-25T12:36:33.192400+00:00"
+  },
+  "52a90d35c8": {
+    "key": "cal|вистава ach tie naše ženy  žilina",
+    "q": "📅 Хочу записати в календар:\n\n« 📌 Вистава Ach tie naše ženy | Žilina »\n🕐 30.09 о 09:00\n\nАвтоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nAch tie naše ženy | 30.9. | Žilina Sep 30, 2026\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "📌 Вистава Ach tie naše ženy | Žilina",
+      "desc": "Автоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nAch tie naše ženy | 30.9. | Žilina Sep 30, 2026",
+      "minutes": 60,
+      "start": "2026-09-30T09:00:00"
+    },
+    "ts": "2026-09-25T12:36:37.455224+00:00"
   }
 }
