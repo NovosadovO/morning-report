@@ -14456,5 +14456,31 @@
       "start": "2026-10-02T09:00:00"
     },
     "ts": "2026-09-25T11:51:32.635050+00:00"
+  },
+  "203f7fb39e": {
+    "key": "cal|mara ševčíková  kolektív v ústach cukor  di",
+    "q": "📅 Хочу записати в календар:\n\n« 📌 Mara Ševčíková & kolektív: V ústach cukor / DI »\n🕐 01.10 о 09:00\n\nАвтоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nOct 01, 2026\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "📌 Mara Ševčíková & kolektív: V ústach cukor / DI",
+      "desc": "Автоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nOct 01, 2026",
+      "minutes": 60,
+      "start": "2026-10-01T09:00:00"
+    },
+    "ts": "2026-09-25T11:51:36.823291+00:00"
   }
 }
