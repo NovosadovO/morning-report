@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T23:46:03.562359",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Real Business, Real Momentum: Avalanche Summit Lands in NYC</b>\n👤 Avalanche Summit &lt;contact@avax.network&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79759"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79759"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79759"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79759"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79759"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79759"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T23:46:04.925587",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 Up 25x: Can Zcash flip Bitcoin?</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -338,6 +299,12 @@
       "ts": "2026-09-25T23:50:45.514044",
       "kind": "calendar",
       "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 7-й дім: Партнерство\n📅 27.09 (Sun) — післязавтра\n🕐 00:00–00:00\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T23:51:18.753104",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
