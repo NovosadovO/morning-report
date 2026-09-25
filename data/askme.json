@@ -5025,7 +5025,18 @@
   "note|потенційна вакансія в кошице": {
     "q": "📝 Хочу записати нотатку:\n\n« Потенційна вакансія в Кошице »\n\nОлег отримав сповіщення про вакансію Manager Digital Operations Support в Caterpillar Inc. у Кошице.\n\nПоставити?",
     "kind": "write",
-    "asked_at": "2026-09-25T13:00:59"
+    "asked_at": "2026-09-25T13:00:59",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-09-25T13:18:05",
+    "meta": {
+      "summary": "Потенційна вакансія в Кошице",
+      "desc": "Олег отримав сповіщення про вакансію Manager Digital Operations Support в Caterp",
+      "minutes": "30",
+      "calendar": "True",
+      "kind": "note"
+    }
   },
   "note|події у жиліні": {
     "q": "📝 Хочу записати нотатку:\n\n« Події у Жиліні »\n\nОлег отримав інформацію про події у Жиліні на ці вихідні, включаючи 'Žilinský Festival Kávy 2026' та 'Cars in The Castle - Bytča #4'.\n\nПоставити?",
