@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T23:05:53.098650",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T23:05:54.247164",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79757"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-25T23:16:30.579272",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>🔷 The Daily: Bitget hit by $387.5 million security breach</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79756"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79756"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79756"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79756"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79756"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79756"
             }
           ]
         ]
