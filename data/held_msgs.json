@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T01:28:58.643005",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T01:29:01.295464",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +5.8% за 24г</b>\n\nЗараз: 0.5498 $\n24г тому: 0.5198 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79763"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-26T01:31:38.149725",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Free VMs without an account, tracing, OpenCode on Cloud Agen</b>\n👤 Railway &lt;hello@news.railway.app&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79762"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79762"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79762"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79762"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79762"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79762"
             }
           ]
         ]
