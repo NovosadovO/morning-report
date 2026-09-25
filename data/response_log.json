@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-06T10:30:15.819197+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "gx_note_a823045378"
-    },
-    {
       "ts": "2026-08-06T10:30:40.264738+00:00",
       "category": "calendar_confirm",
       "question": "Оплата страховки авто",
@@ -13944,6 +13938,12 @@
       "extra": {
         "shift": "early"
       }
+    },
+    {
+      "ts": "2026-09-25T04:58:49.828019+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dm_ok_564c446fbe"
     }
   ]
 }
