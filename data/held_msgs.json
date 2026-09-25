@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T23:46:06.309161",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Onchain Assets Weekly: 9/25/26</b>\n👤 Securitize через LinkedIn&lt;newsletters-noreply@link",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79757"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79757"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79757"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79757"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79757"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79757"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T23:46:07.500684",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>🔷 The Daily: Bitget hit by $387.5 million security breach</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -272,6 +233,12 @@
       "ts": "2026-09-25T23:51:19.543146",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T23:51:44.051126",
+      "kind": "calendar",
+      "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 7-й дім: Партнерство</b>\n📅 27.09 (Sun) — післязавтра\n🕐 00:00–00:00\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
       "keyboard": null
     }
   ]
