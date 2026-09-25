@@ -1,9 +1,4 @@
 {
-  "79190": {
-    "sender": "awards@mp1.tripadvisor.com",
-    "sender_raw": "\"Tripadvisor\" <awards@mp1.tripadvisor.com>",
-    "seen_ts": "2026-09-16T10:30:32.980072+00:00"
-  },
   "79191": {
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "\"Temu\" <temu@eu.temuemail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "temu@eu.temuemail.com",
     "sender_raw": "Temu <temu@eu.temuemail.com>",
     "seen_ts": "2026-09-25T06:52:31.234549+00:00"
+  },
+  "79705": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-09-25T07:08:50.718337+00:00"
   }
 }
