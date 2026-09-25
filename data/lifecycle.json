@@ -57,14 +57,14 @@
   },
   "паркувальний квиток кошице": {
     "entity": "Паркувальний квиток Кошице",
-    "kind": "other",
+    "kind": "bill",
     "state": "paid",
-    "valid_from": "2026-08-26",
-    "valid_to": "2026-08-26",
+    "valid_from": "2026-09-25",
+    "valid_to": "2026-09-25",
     "next_due": null,
     "keyword": "парковка Кошице",
-    "source": "email:78018",
-    "ts": "2026-08-26T11:57:35.332679+00:00"
+    "source": "email:79746",
+    "ts": "2026-09-25T18:50:07.778327+00:00"
   },
   "google cloud platform apis": {
     "entity": "Google Cloud Platform & APIs",
