@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T23:29:33.839616",
-      "kind": "calendar",
-      "text": "🔔 <b>Пора збиратись — 30 хв</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>🔭 Юпітер переходить у 2-й дім — 19°</b>\n🕐 00:00–00:00\n\n<i>Останні хвилини — перевір, чи все взяв.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T23:29:34.788743",
       "kind": "calendar",
       "text": "🔔 Пора збиратись — 30 хв\n━━━━━━━━━━━━━━━━━━━━\n📌 🔭 Юпітер переходить у 2-й дім — 19°\n🕐 00:00–00:00\n\nОстанні хвилини — перевір, чи все взяв.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79759"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-25T23:31:46.579831",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 Up 25x: Can Zcash flip Bitcoin?</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79758"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79758"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79758"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79758"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79758"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79758"
             }
           ]
         ]
