@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-07T10:00:05.422701+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_e64f1b9b2d"
-    },
-    {
       "ts": "2026-08-07T16:41:19.051896+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13904,6 +13898,12 @@
       "category": "confirm",
       "question": "gate_dl_skip: 📌 ДЕДЛАЙН У ПОШТІ — ТЕРМІН",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-25T21:24:07.848163+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dl_skip_e6d70552a6"
     }
   ]
 }
