@@ -1,10 +1,4 @@
 {
-  "2026-09-21": {
-    "morning_greet": true,
-    "run_question": true,
-    "midday_checkin": true,
-    "evening_checkin": true
-  },
   "2026-09-22": {
     "morning_greet": true,
     "run_question": true,
@@ -18,6 +12,9 @@
     "evening_checkin": true
   },
   "2026-09-24": {
+    "post_shift_checkin": true
+  },
+  "2026-09-25": {
     "post_shift_checkin": true
   }
 }
