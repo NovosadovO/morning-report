@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T00:16:56.934957",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T00:16:58.163542",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Web Account Manager в Symprove CEE</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -410,6 +404,12 @@
       "ts": "2026-09-26T00:18:17.440550",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T00:18:20.489040",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>ONDO +5.4% за 24г</b>\n\nЗараз: 0.5447 $\n24г тому: 0.5168 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
