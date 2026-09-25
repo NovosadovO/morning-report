@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T23:31:46.579831",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Up 25x: Can Zcash flip Bitcoin?</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79758"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79758"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79758"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79758"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79758"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79758"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T23:31:47.880348",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Onchain Assets Weekly: 9/25/26</b>\n👤 Securitize через LinkedIn&lt;newsletters-noreply@link",
@@ -332,6 +293,12 @@
       "ts": "2026-09-25T23:33:46.268726",
       "kind": "calendar",
       "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 7-й дім: Партнерство\n📅 27.09 (Sun) — післязавтра\n🕐 00:00–00:00\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T23:34:33.582427",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
