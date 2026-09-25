@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T02:16:18.891202",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Bitget Halts Withdrawals After $351.6M Hot Wallet Breach</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79693"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79693"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79693"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79693"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79693"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79693"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T02:16:20.111153",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Project Manager - Digital Operations в Caterpillar In</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -313,6 +274,12 @@
       "ts": "2026-09-25T02:18:11.040966",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +27.4% за 24г</b>\n\nЗараз: 0.5247 $\n24г тому: 0.4118 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T02:18:11.814517",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ ONDO +27.4% за 24г\n\nЗараз: 0.5247 $\n24г тому: 0.4118 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
