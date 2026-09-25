@@ -1,9 +1,4 @@
 {
-  "79209": {
-    "sender": "hello@metamask.io",
-    "sender_raw": "MetaMask Team <hello@metamask.io>",
-    "seen_ts": "2026-09-16T15:02:57.281184+00:00"
-  },
   "79211": {
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
@@ -1498,5 +1493,10 @@
     "sender": "spotlight@newsletters.coinmarketcap.com",
     "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
     "seen_ts": "2026-09-25T11:05:55.135657+00:00"
+  },
+  "79724": {
+    "sender": "hello@wexopay.com",
+    "sender_raw": "Wexo Cashback <hello@wexopay.com>",
+    "seen_ts": "2026-09-25T11:16:18.947143+00:00"
   }
 }
