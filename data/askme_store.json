@@ -14222,5 +14222,31 @@
       "kind": "note"
     },
     "ts": "2026-09-25T11:27:37.232419+00:00"
+  },
+  "c68f7b5991": {
+    "key": "cal|žilinský festival kávy 2026",
+    "q": "📅 Хочу записати в календар:\n\n« 📌 Žilinský Festival Kávy 2026 »\n🕐 26.09 о 09:00\n\nАвтоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nSep 26 - 27 | Nová synagóga Žilina\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "📌 Žilinský Festival Kávy 2026",
+      "desc": "Автоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nSep 26 - 27 | Nová synagóga Žilina",
+      "minutes": 60,
+      "start": "2026-09-26T09:00:00"
+    },
+    "ts": "2026-09-25T11:50:54.681093+00:00"
   }
 }
