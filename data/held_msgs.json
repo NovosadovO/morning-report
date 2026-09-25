@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T00:46:48.770366",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T00:46:50.229041",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Web Account Manager в Symprove CEE</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -410,6 +404,12 @@
       "ts": "2026-09-26T00:48:47.858418",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T00:48:48.557969",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
     }
   ]
