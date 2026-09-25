@@ -14274,5 +14274,31 @@
       "start": "2026-09-27T09:00:00"
     },
     "ts": "2026-09-25T11:50:59.295681+00:00"
+  },
+  "059351426f": {
+    "key": "cal|z rozprávky do rozprávky  bytča",
+    "q": "📅 Хочу записати в календар:\n\n« 📌 Z rozprávky do rozprávky - Bytča »\n🕐 25.09 о 09:00\n\nАвтоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nSep 25 | Dom kultúry, Treskoňova 814/3, Bytča\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "📌 Z rozprávky do rozprávky - Bytča",
+      "desc": "Автоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nSep 25 | Dom kultúry, Treskoňova 814/3, Bytča",
+      "minutes": 60,
+      "start": "2026-09-25T09:00:00"
+    },
+    "ts": "2026-09-25T11:51:03.026280+00:00"
   }
 }
