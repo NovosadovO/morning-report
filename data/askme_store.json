@@ -14707,5 +14707,31 @@
       "start": "2026-10-02T09:00:00"
     },
     "ts": "2026-09-25T12:36:45.826038+00:00"
+  },
+  "f056dffad4": {
+    "key": "cal|концерт koncert romy  atestai  rever",
+    "q": "📅 Хочу записати в календар:\n\n« 📌 Концерт KONCERT ROMY / ATESTAI / REVER »\n🕐 02.10 о 09:00\n\nАвтоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nKONCERT ROMY / ATESTAI / REVER Oct 02, 2026\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "📌 Концерт KONCERT ROMY / ATESTAI / REVER",
+      "desc": "Автоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nKONCERT ROMY / ATESTAI / REVER Oct 02, 2026",
+      "minutes": 60,
+      "start": "2026-10-02T09:00:00"
+    },
+    "ts": "2026-09-25T12:36:49.892057+00:00"
   }
 }
