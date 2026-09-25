@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T23:57:46.834147",
-      "kind": "calendar",
-      "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 7-й дім: Партнерство</b>\n📅 27.09 (Sun) — післязавтра\n🕐 00:00–00:00\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T23:57:47.686737",
       "kind": "calendar",
       "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 7-й дім: Партнерство\n📅 27.09 (Sun) — післязавтра\n🕐 00:00–00:00\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79761"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-26T00:01:20.606949",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>These Fitness Fans Took Bootleg Peptides. It Landed Them In </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79760"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79760"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79760"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79760"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79760"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79760"
             }
           ]
         ]
