@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-06T10:48:34.052479+00:00",
-      "category": "deadline_found",
-      "question": "Термін дії діальнічної známky",
-      "answer": "2026-08-06",
-      "extra": {
-        "kind": "vehicle"
-      }
-    },
-    {
       "ts": "2026-08-06T12:01:41.063361+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13933,6 +13924,12 @@
     },
     {
       "ts": "2026-09-25T08:49:11.676473+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-09-25T08:49:14.079572+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
