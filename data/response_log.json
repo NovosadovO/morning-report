@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-07T08:55:12.284911+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_shower"
-    },
-    {
       "ts": "2026-08-07T08:55:36.865382+00:00",
       "category": "ai_button",
       "question": "general",
@@ -13907,6 +13901,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "gx_note_bd67e7a153"
+    },
+    {
+      "ts": "2026-09-25T20:59:35.279911+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_4768ab960c"
     }
   ]
 }
