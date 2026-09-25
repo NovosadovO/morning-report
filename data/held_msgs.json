@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T23:00:21.849065",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Securitize через LinkedIn</b>\n📋 Тема: «Onchain Assets Weekly: 9/25/26»\n\n<i>«Onchain Assets Weekly\r\n\r\nАвтор: Securitize\r\n\r\n\r\nАвтор: Securitize\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/onchain-assets-weekly-92526-securitize-fiogc?lipi=urn%3Ali%3Apage%3Aemail_email_series_fol...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79757"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79757"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79757"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79757"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79757"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79757"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T23:01:09.617430",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -445,6 +406,12 @@
       "ts": "2026-09-25T23:08:20.161718",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T23:08:20.928689",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
