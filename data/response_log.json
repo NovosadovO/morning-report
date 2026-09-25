@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-07T09:42:00.988755+00:00",
-      "category": "confirm",
-      "question": "cw_cancel: Демо-подія (перевірка кнопок)",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-07T09:42:01.944600+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13909,6 +13903,12 @@
       "category": "confirm",
       "question": "gate_dl_skip: 🚗 ДЕДЛАЙН У ПОШТІ — АВТО",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-25T21:23:32.488211+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dl_skip_caa47a7bdb"
     }
   ]
 }
