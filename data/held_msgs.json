@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T02:19:46.705802",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T02:19:49.029347",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +27.2% за 24г</b>\n\nЗараз: 0.5247 $\n24г тому: 0.4126 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -181,6 +175,12 @@
       "ts": "2026-09-25T02:22:34.562959",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +27.4% за 24г</b>\n\nЗараз: 0.5247 $\n24г тому: 0.4119 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T02:22:35.462719",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ ONDO +27.4% за 24г\n\nЗараз: 0.5247 $\n24г тому: 0.4119 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
