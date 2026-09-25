@@ -12800,7 +12800,29 @@
     "pid": "dl_due_done_47a57cda1d",
     "subject": "🔴 СЬОГОДНІ ОСТАННІЙ ДЕНЬ",
     "extra": {
-      "msg": "🔴 СЬОГОДНІ ОСТАННІЙ ДЕНЬ\n━━━━━━━━━━━━━━━━━━━━\n📌 Інвестиції в The Innovators Fund\n📆 до 2026-09-25\n🏢 StartEngine\n\n➡️ Прийняти рішення щодо інвестування в The Innovators Fund до півночі PT."
+      "msg": "🔴 СЬОГОДНІ ОСТАННІЙ ДЕНЬ\n━━━━━━━━━━━━━━━━━━━━\n📌 Інвестиції в The Innovators Fund\n📆 до 2026-09-25\n🏢 StartEngine\n\n➡️ Прийняти рішення щодо інвестування в The Innovators Fund до півночі PT.",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 103475,
+        "kb": [
+          [
+            {
+              "text": "✅ Зроблено",
+              "callback_data": "dl_due_done_47a57cda1d"
+            }
+          ],
+          [
+            {
+              "text": "📅 В календар",
+              "callback_data": "dl_cal_47a57cda1d"
+            },
+            {
+              "text": "⏰ Нагадати завтра",
+              "callback_data": "dl_due_snooze_47a57cda1d"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-09-25T21:23:51.578399+00:00"
   }
