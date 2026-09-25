@@ -1,9 +1,4 @@
 {
-  "79223": {
-    "sender": "newsletter@mail.theblock.co",
-    "sender_raw": "The Block <newsletter@mail.theblock.co>",
-    "seen_ts": "2026-09-16T18:11:14.236964+00:00"
-  },
   "79225": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "VanEck через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "zara@news.zara.com",
     "sender_raw": "Zara <zara@news.zara.com>",
     "seen_ts": "2026-09-25T13:30:37.931362+00:00"
+  },
+  "79736": {
+    "sender": "groups-noreply@linkedin.com",
+    "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
+    "seen_ts": "2026-09-25T13:51:00.995360+00:00"
   }
 }
