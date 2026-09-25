@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T01:28:54.902029",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 27.09</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T01:28:55.577302",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 27.09 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T01:31:33.933214",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>💸 Higgsfield hits an unprecedented milestone</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79765"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79765"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79765"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79765"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79765"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79765"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
