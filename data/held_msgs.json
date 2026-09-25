@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T03:30:56.880050",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79698"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79698"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79698"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79698"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79698"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79698"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T03:30:58.105809",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>16 nových pracovných ponúk</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -404,6 +365,12 @@
       "ts": "2026-09-25T03:32:41.983593",
       "kind": "calendar",
       "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 9-й дім: Сенси й подорожі</b>\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T03:32:42.913168",
+      "kind": "calendar",
+      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 9-й дім: Сенси й подорожі\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
       "keyboard": null
     }
   ]
