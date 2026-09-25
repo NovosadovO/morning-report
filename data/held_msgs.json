@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T00:46:51.508071",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Free VMs without an account, tracing, OpenCode on Cloud Agen</b>\n👤 Railway &lt;hello@news.railway.app&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79762"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79762"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79762"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79762"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79762"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79762"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-26T00:46:52.774879",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -377,6 +338,12 @@
       "ts": "2026-09-26T00:48:52.439586",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +6.5% за 24г</b>\n\nЗараз: 0.5530 $\n24г тому: 0.5192 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T00:48:53.494907",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ ONDO +6.5% за 24г\n\nЗараз: 0.5530 $\n24г тому: 0.5192 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
