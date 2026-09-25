@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-06T10:27:14.332164+00:00",
-      "category": "calendar_confirm",
-      "question": "Оплата страховки Kooperativa",
-      "answer": "✅ Додано",
-      "extra": {
-        "events": [
-          "Оплата страховки Kooperativa"
-        ]
-      }
-    },
-    {
       "ts": "2026-08-06T10:30:15.819197+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13945,6 +13934,15 @@
       "extra": {
         "kind": "note",
         "date": "2026-09-26"
+      }
+    },
+    {
+      "ts": "2026-09-25T04:58:43.044718+00:00",
+      "category": "day_energy",
+      "question": "Як ти сьогодні",
+      "answer": "Норма",
+      "extra": {
+        "shift": "early"
       }
     }
   ]
