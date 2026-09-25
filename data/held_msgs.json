@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T02:31:31.952800",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Buy tokenized stocks on CoinList</b>\n👤 CoinList News &lt;noreply@coinlist.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79694"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79694"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79694"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79694"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79694"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79694"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T02:31:33.234031",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Bitget Halts Withdrawals After $351.6M Hot Wallet Breach</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
@@ -313,6 +274,12 @@
       "ts": "2026-09-25T02:33:50.615646",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +26.5% за 24г</b>\n\nЗараз: 0.5215 $\n24г тому: 0.4121 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T02:33:51.509700",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ ONDO +26.5% за 24г\n\nЗараз: 0.5215 $\n24г тому: 0.4121 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
