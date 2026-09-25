@@ -339,11 +339,21 @@ def analytics(days: int = 30) -> dict:
                             - datetime.strptime(last_day, "%Y-%m-%d").date()).days
             except Exception:
                 days_ago = None
+        # Час останнього синку за last_day (з qwatch "saved_at") — потрібен,
+        # щоб відрізнити "сьогоднішнє число ЗАФІКСОВАНЕ ОСТАННІМ" від
+        # "сьогоднішнє число може ще ЗМІНИТИСЬ" (25.09: годинник синкнув
+        # сон о 11:27 як 3.0г, а насправді за ніч було 6:47 — повний
+        # показник дозаписався пізніше, автосинк його ще не підхопив;
+        # AI не мав про це знати і написав категоричне "сон лише 3.0г").
+        last_saved_at = None
+        if last_day and isinstance(health.get(last_day), dict):
+            last_saved_at = health[last_day].get("saved_at")
         out[name] = {
             "n": len(vals),
             "last": vals[-1] if vals else None,
             "last_day": last_day,
             "days_ago": days_ago,          # 0 = сьогодні, 1+ = застаріле для ЦЬОГО показника
+            "last_saved_at": last_saved_at,
             "avg": _avg(vals),
             "avg7": _avg(d7),
             "min": min(vals) if vals else None,
@@ -402,7 +412,7 @@ def analytics(days: int = 30) -> dict:
 
 def facts_block(a: dict) -> str:
     """Числа одним компактним блоком — і для AI-промпту, і для звіту."""
-    def line(label, m, unit="", extra=""):
+    def line(label, m, unit="", extra="", same_day_caveat=False):
         if not m or m.get("last") is None:
             return f"{label}: немає даних"
         s = f"{label}: {m['last']}{unit}"
@@ -415,6 +425,20 @@ def facts_block(a: dict) -> str:
             # сьогодні" — звідси "ти спав 2.0 год за 22 вересня", хоча ці
             # 2.0 год насправді за 21-ше.
             s += f" [!!СТАРІ ДАНІ за {m['last_day']}, {da} дн. тому, НЕ сьогодні!!]"
+        elif da == 0 and same_day_caveat:
+            # ДРУГИЙ ЗАХИСТ (25.09): значення "за сьогодні" саме по собі
+            # НЕ застаріле (days_ago=0), АЛЕ автосинк годинника пише
+            # ЧАСТКОВІ дані протягом дня — сон, зафіксований о 11:27, може
+            # бути НЕ фінальним нічним підсумком (реальний приклад: синк
+            # показав 3.0г, а насправді за ніч було 6:47 — доповнилось
+            # пізніше, новий синк того ж дня ще не прийшов). Без цієї
+            # позначки AI писав категоричне "сон сьогодні лише 3.0 години,
+            # значно менше середнього" — хоча це було ПРОМІЖНЕ число.
+            when = f" о {m['last_saved_at'][-5:]}" if m.get("last_saved_at") else ""
+            s += (f" [⚠️ ЗАФІКСОВАНО СЬОГОДНІ{when}, МОЖЕ БУТИ ЧАСТКОВИМ — "
+                  f"годинник ще може дослати повніше число пізніше того ж дня; "
+                  f"НЕ роби категоричних/тривожних висновків типа 'сон лише Xг' "
+                  f"на основі цього значення, подавай як 'поки що зафіксовано']")
         if m.get("avg7") is not None:
             s += f" | сер.7д {m['avg7']}{unit}"
         if m.get("avg") is not None:
@@ -428,7 +452,7 @@ def facts_block(a: dict) -> str:
     rows = [
         f"Сьогодні: {a.get('today', '?')}",
         line("Вага", w, " кг", goal),
-        line("Сон", a.get("sleep"), " год"),
+        line("Сон", a.get("sleep"), " год", same_day_caveat=True),
         line("Кроки", a.get("steps")),
         line("Пульс", a.get("hr"), " уд/хв"),
         line("HRV", a.get("hrv"), " мс"),

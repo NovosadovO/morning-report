@@ -182,29 +182,46 @@ def _get_crypto_prices():
 # ============ HEALTH DATA ============
 
 def _get_health_summary():
-    """Отримати останні дані здоров'я (вага, кроки, сон)"""
-    health_file = os.path.join(_DATA_DIR, "health.json")
-    weight_file = os.path.join(_DATA_DIR, "weight.json")
-    
-    health = _load_json(health_file)
-    weight_data = _load_json(weight_file)
-    
+    """Отримати останні дані здоров'я (вага, кроки, сон).
+
+    25.09 фікс: раніше читало НАПРЯМУ локальні data/health.json та
+    data/weight.json — обидва мертві файли (health.json не пишеться з
+    2026-05-11, weight.json — з 2026-04-27), тому за будь-яку сьогоднішню
+    дату після цього завжди виходило steps=0/sleep_hours=0/current_weight=
+    старе значення. Той самий клас бага, що вже фіксився в healthai.py/
+    hcoach.py/healthtrend.py (weight_kg з застарілого qwatch) — тепер
+    виправлено і тут: беремо канонічні дані через storage.load_health()
+    (мердж qwatch_data.json поверх health.json) і storage.load_weight()
+    (мердж weight_data.json поверх weight.json, канонічний виграє)."""
+    try:
+        import sys as _sys_hs
+        _sys_hs.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import storage as _storage_hs
+        health = _storage_hs.load_health() or {}
+        weight_data = _storage_hs.load_weight() or {}
+    except Exception as e:
+        _log(f"_get_health_summary storage error: {e}")
+        health, weight_data = {}, {}
+
     today_str = datetime.now(tz=_TZ).strftime("%Y-%m-%d")
-    
+
     steps = 0
     sleep_hours = 0
-    
+
     if health and today_str in health:
         today_health = health[today_str]
         steps = today_health.get("steps", 0)
         sleep_hours = today_health.get("sleep_hours", 0)
-    
+
     current_weight = None
     if weight_data:
-        # Останнє значення
-        latest_date = max(weight_data.keys())
-        current_weight = weight_data[latest_date]
-    
+        # Останнє значення (тільки дати у форматі YYYY-MM-DD)
+        date_keys = [k for k in weight_data.keys() if re.match(r"^\d{4}-\d{2}-\d{2}$", str(k))]
+        if date_keys:
+            latest_date = max(date_keys)
+            v = weight_data[latest_date]
+            current_weight = v.get("weight", v) if isinstance(v, dict) else v
+
     return {
         "steps": steps,
         "sleep_hours": sleep_hours,

@@ -122,10 +122,15 @@ ok(SENT == [], "нічого не надіслано")
 print("2. контекст із даних")
 reset()
 STORE["bills.json"] = {"b1": {"vendor": "Innogy", "amount": 62.4, "due": TOM}}
-STORE["health.json"] = {"2026-08-25": {"weight": 83.4, "steps": 5100}}
 ctx = S.context()
 ok("Innogy" in ctx, "рахунок у контексті")
-ok("83.4" in ctx, "здоров'я у контексті")
+# 25.09: health.json ВИДАЛЕНО з _REGISTRIES (див. selfact.py) — це був
+# мертвий локальний файл (не оновлювався з 2026-05-11), і selfact дампив
+# його СИРИМ, без мерджу з канонічним qwatch_data.json, поряд із
+# актуальними даними з healthai.facts_block()/allctx — AI бачив
+# суперечливі старі й нові цифри одночасно. Актуальне здоров'я тепер
+# приходить AI лише через healthai.analytics()/facts_block() (канонічний
+# storage.load_health()), тож тут більше нема що перевіряти.
 ok("СЬОГОДНІ" in ctx, "є дата/час")
 
 # ── 3. нагадування пишеться у СПИСОК зі sent:false ──────────────

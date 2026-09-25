@@ -16,9 +16,10 @@ from datetime import datetime, timezone, timedelta
 sys.path.insert(0, os.path.dirname(__file__))
 
 try:
-    from storage import load as storage_load
+    from storage import load as storage_load, load_weight as storage_load_weight
 except ImportError:
     storage_load = None
+    storage_load_weight = None
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
@@ -45,10 +46,22 @@ def _gem_post(url, body, tag):
 
 
 def load_weight_history():
-    """Завантажує історію ваги з GitHub"""
+    """Завантажує історію ваги з GitHub.
+
+    25.09 фікс: раніше було `storage_load("weight_data.json") or
+    storage_load("weight.json")` — якщо weight_data.json НЕПОРОЖНІЙ, весь
+    weight.json (стара історія) просто ігнорувався (а не мерджувався), і
+    навпаки якщо GitHub тимчасово повернув порожній weight_data.json —
+    падало на застарілий weight.json. storage.load_weight() робить
+    правильний мердж по датах (канонічний weight_data.json завжди виграє
+    при перетині), той самий, що вже використовує вся решта кодової бази."""
+    if storage_load_weight:
+        try:
+            return storage_load_weight() or {}
+        except Exception:
+            pass
     if not storage_load:
         return {}
-    
     try:
         weight_data = storage_load("weight_data.json") or storage_load("weight.json") or {}
         return weight_data if isinstance(weight_data, dict) else {}
@@ -65,7 +78,9 @@ def get_current_weight():
     # Найновіша запис
     latest_date = max(history.keys()) if history else None
     if latest_date:
-        return float(history[latest_date]), latest_date
+        v = history[latest_date]
+        val = v.get("weight") if isinstance(v, dict) else v
+        return float(val), latest_date
     
     return None
 

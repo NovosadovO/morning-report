@@ -223,15 +223,19 @@ def check_for_crypto_movement() -> dict or None:
 # ============ HEALTH ============
 
 def check_for_health_alert() -> dict or None:
-    """Перевіра на здоров'я"""
+    """Перевіра на здоров'я.
+
+    25.09 фікс: читало НАПРЯМУ мертвий data/health.json (не оновлювався з
+    2026-05-11) — тому today_health завжди виходив {} для будь-якого
+    "сьогодні" після цього, і алерт фізично ніколи не міг спрацювати.
+    Той самий клас бага, що вже фіксився в інших модулях — тепер бере
+    канонічні дані через storage.load_health() (мердж qwatch_data.json)."""
     try:
-        health_file = os.path.join(_DATA_DIR, "health.json")
-        if not os.path.exists(health_file):
-            return None
-        
-        with open(health_file, "r") as f:
-            health_data = json.load(f) or {}
-        
+        import sys as _sys_ha
+        _sys_ha.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import storage as _storage_ha
+        health_data = _storage_ha.load_health() or {}
+
         today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
         today_health = health_data.get(today_str, {})
         
@@ -247,8 +251,8 @@ def check_for_health_alert() -> dict or None:
         if sleep_hours > 0 and sleep_hours < 5:
             alerts.append(f"⚠️ Спав лише {sleep_hours}h — потрібно більше!")
         
-        # Перевіра ваги
-        weight = today_health.get("weight", 0)
+        # Перевіра ваги (канонічне поле storage.load_health() — weight_kg)
+        weight = today_health.get("weight_kg") or today_health.get("weight", 0)
         if weight > 85:
             alerts.append(f"⚖️ Вага {weight}kg — час худнути!")
         

@@ -79,7 +79,12 @@ def _events_text() -> str:
 
 
 def _sleep_steps() -> str:
-    h = K.load("health.json", default={}) or {}
+    # 25.09 фікс: K.load("health.json") бере файл НАПРЯМУ з GitHub без
+    # мерджу з qwatch_data.json (health.json мертвий з 2026-05-11) —
+    # тому це завжди показувало дані 4+ місяці застарілі. storage.load_health()
+    # мерджить свіжий qwatch поверх нього (канонічно).
+    import storage as _storage_dm
+    h = _storage_dm.load_health() or {}
     days = sorted(k for k in h.keys() if re.match(r"^\d{4}-\d{2}-\d{2}$", str(k)))
     if not days:
         return "даних про сон і кроки немає"
@@ -95,7 +100,10 @@ def _sleep_steps() -> str:
 
 
 def _weight_text() -> str:
-    w = K.load("weight.json", default={}) or {}
+    # 25.09 фікс: K.load("weight.json") — мертвий файл (не оновлювався з
+    # 2026-04-27). storage.load_weight() мерджить канонічний weight_data.json.
+    import storage as _storage_dm2
+    w = _storage_dm2.load_weight() or {}
     pts = sorted((k, v) for k, v in w.items()
                  if re.match(r"^\d{4}-\d{2}-\d{2}$", str(k)))
     for d, v in reversed(pts):

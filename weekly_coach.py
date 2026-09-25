@@ -98,9 +98,12 @@ def _collect_week_data():
         data["strava"] = {"runs": 0, "km": 0, "duration_min": 0}
 
     # ── Вага ──
+    # 25.09 фікс: load("weight.json") бере мертвий файл напряму (не
+    # оновлювався з 2026-04-27). storage.load_weight() мерджить канонічний
+    # weight_data.json поверх нього.
     try:
-        from storage import load
-        weight_data = load("weight.json", default={})
+        from storage import load_weight
+        weight_data = load_weight() or {}
         week_weights = {}
         for date_str, v in weight_data.items():
             try:

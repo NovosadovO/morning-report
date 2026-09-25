@@ -105,8 +105,14 @@ def _run_context() -> dict:
 
 
 def _weight_context() -> str:
+    # 25.09 фікс: K.load("weight.json")/K.load("health.json") — читали
+    # мертві файли НАПРЯМУ (без мерджу з канонічними weight_data.json/
+    # qwatch_data.json), тому вага завжди виходила застарілою (квітень/
+    # травень). storage.load_weight()/load_health() мерджать канонічні
+    # джерела поверх них.
     try:
-        w = K.load("weight.json", default={}) or {}
+        import storage as _storage_rp
+        w = _storage_rp.load_weight() or {}
         if isinstance(w, dict) and w:
             keys = sorted(k for k in w.keys() if re.match(r"^\d{4}-\d{2}-\d{2}$", str(k)))
             if keys:
@@ -116,12 +122,14 @@ def _weight_context() -> str:
     except Exception:
         pass
     try:
-        h = K.load("health.json", default={}) or {}
-        keys = sorted(h.keys())
+        import storage as _storage_rp2
+        h = _storage_rp2.load_health() or {}
+        keys = sorted(k for k in h.keys() if re.match(r"^\d{4}-\d{2}-\d{2}$", str(k)))
         if keys:
             last = h[keys[-1]] or {}
-            if last.get("weight"):
-                return f"вага {last['weight']} кг (ціль 75 кг), дата {keys[-1]}"
+            wv = last.get("weight_kg") or last.get("weight")
+            if wv:
+                return f"вага {wv} кг (ціль 75 кг), дата {keys[-1]}"
     except Exception:
         pass
     return "вага невідома (ціль 75 кг)"

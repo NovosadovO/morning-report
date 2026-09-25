@@ -62,8 +62,11 @@ def _running():
 
 
 def _weight():
+    # 25.09 фікс: K.load("weight.json") — мертвий файл (не оновлювався з
+    # 2026-04-27) напряму, без мерджу з канонічним weight_data.json.
     try:
-        w = K.load("weight.json", default={}) or {}
+        import storage as _storage_wr
+        w = _storage_wr.load_weight() or {}
         pts = sorted((k, v) for k, v in w.items()
                      if re.match(r"^\d{4}-\d{2}-\d{2}$", str(k)))
         vals = []
@@ -88,8 +91,11 @@ def _weight():
 
 
 def _health():
+    # 25.09 фікс: K.load("health.json") — мертвий файл напряму, без мерджу
+    # з канонічним qwatch_data.json (storage.load_health() робить мердж).
     try:
-        h = K.load("health.json", default={}) or {}
+        import storage as _storage_wr2
+        h = _storage_wr2.load_health() or {}
         days = sorted(k for k in h.keys() if re.match(r"^\d{4}-\d{2}-\d{2}$", str(k)))
         cutoff = (K.now() - timedelta(days=7)).strftime("%Y-%m-%d")
         week = [h[d] for d in days if d > cutoff and isinstance(h[d], dict)]
