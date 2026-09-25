@@ -1,9 +1,4 @@
 {
-  "79240": {
-    "sender": "card@kcard.kaufland.sk",
-    "sender_raw": "Kaufland Card XTRA <card@kcard.kaufland.sk>",
-    "seen_ts": "2026-09-17T05:41:27.463465+00:00"
-  },
   "79241": {
     "sender": "nike@official.nike.com",
     "sender_raw": "Nike <nike@official.nike.com>",
@@ -1498,5 +1493,10 @@
     "sender": "events@ondo.finance",
     "sender_raw": "Ondo Finance <events@ondo.finance>",
     "seen_ts": "2026-09-25T19:57:35.432691+00:00"
+  },
+  "79757": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Securitize через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-25T21:00:20.726710+00:00"
   }
 }
