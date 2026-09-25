@@ -700,6 +700,22 @@ class IntelligentListener:
                 except Exception as _e_gx:
                     self._log(f"ai_buttons error: {_e_gx}")
 
+                # ─── 17e. НАГАДУВАННЯ ПРО НЕВІДПОВІДЖЕНІ ГОЛОВНІ ПИТАННЯ ───
+                # 25.09.2026: Олег попросив — якщо він не відповів на
+                # головне питання/сповіщення (health_combined/micro_checkin,
+                # interview_practice) — нагадати коротко "ти ще не відповів
+                # на...", а не мовчати нескінченно (як зараз health_combined
+                # guard) чи ставити нове питання поверх старого. 0 AI-кредитів
+                # (локальний шаблон), нагадує 1 раз на кожне питання.
+                try:
+                    import pending_reminder as _pr_l
+                    if _due("pending_reminder", 900):
+                        _n_pr = _pr_l.tick()
+                        if _n_pr:
+                            self._log(f"✅ Нагадувань про невідповіджені питання: {_n_pr}")
+                except Exception as _e_pr:
+                    self._log(f"pending_reminder error: {_e_pr}")
+
                 # Процесувати тригери (генеруємо & надсилаємо messages)
                 if triggers:
                     for ttype, tdata in triggers:
