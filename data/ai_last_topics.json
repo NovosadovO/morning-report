@@ -1,4 +1,14 @@
 {
+  "action_detect|2026-09-25t16_47_56_788444": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2023-09-26\", \"action_time\": \"18:00\", \"action_summary\": \"Олег ",
+    "ts": "2026-09-25T16:47:56.788444"
+  },
+  "healthai_truthfix|2026-09-25t16_43_36_156647": {
+    "topic": "healthai/truthfix",
+    "gist": "Привіт, Олеже!  Бачу, сьогодні, 25 вересня 2026 року, ти зробив 16709 кроків, що значно вище за середній показник 11733.6 за останні 7 днів. Це круто, враховуюч",
+    "ts": "2026-09-25T16:43:36.156647"
+  },
   "healthai|2026-09-25t16_43_25_743265": {
     "topic": "healthai",
     "gist": "Олеже, за сьогоднішній день ти зробив 16709 кроків, що значно перевищує твою середню ціль у 8000, і це чудово. Щоб закріпити результат, спробуй після зміни сьог",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2023-09-25\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
     "ts": "2026-09-25T15:02:08.831162"
-  },
-  "action_detect|2026-09-25t15_01_55_876446": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти ліки Armolopid, оскільки",
-    "ts": "2026-09-25T15:01:55.876446"
-  },
-  "action_detect|2026-09-25t15_01_45_128041": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-25\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-25T15:01:45.128041"
   }
 }
