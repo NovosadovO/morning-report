@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T23:16:31.864465",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Manažér obchodnej agentúry v Košiciach в UNIQA CZ</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79755"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79755"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79755"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79755"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79755"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79755"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T23:16:33.113273",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Crypto Biz: Wall Street and crypto fight for the same turf</b>\n👤 Cointelegraph через LinkedIn&lt;newsletters-noreply@l",
@@ -280,6 +241,12 @@
       "ts": "2026-09-25T23:19:35.906835",
       "kind": "calendar",
       "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 7-й дім: Партнерство</b>\n📅 27.09 (Sun) — післязавтра\n🕐 00:00–00:00\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T23:19:36.805064",
+      "kind": "calendar",
+      "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 7-й дім: Партнерство\n📅 27.09 (Sun) — післязавтра\n🕐 00:00–00:00\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
       "keyboard": null
     }
   ]
