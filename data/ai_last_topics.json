@@ -1,4 +1,19 @@
 {
+  "email_ai_item|2026-09-25t14_14_23_494959": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є щоденним дайджестом новин про криптовалюти від CryptoBeholder.com, який містить інформацію про зростання альткоїнів, відновл",
+    "ts": "2026-09-25T14:14:23.494959"
+  },
+  "msg_rwa_truthfix|2026-09-25t14_10_13_777310": {
+    "topic": "MSG_RWA/truthfix",
+    "gist": "Олеже, привіт! Зараз, під час твоєї ранньої зміни, є цікаві рухи в портфелі. Твій ONDO за останні 24 години злетів аж на 16.9% до $0.54043, а LINK показав солід",
+    "ts": "2026-09-25T14:10:13.777310"
+  },
+  "msg_rwa|2026-09-25t14_10_03_782348": {
+    "topic": "MSG_RWA",
+    "gist": "Олеже, привіт! Зараз, під час твоєї ранньої зміни, є цікаві рухи в портфелі, особливо по RWA-сектору. Твій ONDO за останні 24 години злетів аж на 17.96% до $0.5",
+    "ts": "2026-09-25T14:10:03.782348"
+  },
   "mailcal_extract|2026-09-25t14_08_21_345327": {
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
@@ -283,20 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2023-09-25\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
     "ts": "2026-09-25T13:03:09.225800"
-  },
-  "action_detect|2026-09-25t13_02_58_083471": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Прийняти Armolopid\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Прийняти ліки Armolopid, оскільки",
-    "ts": "2026-09-25T13:02:58.083471"
-  },
-  "action_detect|2026-09-25t13_02_47_194067": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-25\", \"action_time\": \"18:00\", \"action_summary\": \"Олег ",
-    "ts": "2026-09-25T13:02:47.194067"
-  },
-  "action_detect|2026-09-25t13_02_36_177076": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2026-09-25\", \"action_time\": \"18:00\", \"action_summary\": \"Олег ",
-    "ts": "2026-09-25T13:02:36.177076"
   }
 }
