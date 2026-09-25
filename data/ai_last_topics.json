@@ -1,4 +1,34 @@
 {
+  "action_detect|2026-09-25t05_39_43_328746": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2023-09-25\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
+    "ts": "2026-09-25T05:39:43.328746"
+  },
+  "action_detect|2026-09-25t05_37_03_152388": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2023-09-25\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
+    "ts": "2026-09-25T05:37:03.152388"
+  },
+  "msg_event_soon|2026-09-25t05_36_55_384143": {
+    "topic": "MSG_EVENT_SOON",
+    "gist": "Привіт Олеже! ✅  Вітаю з початком нового дня, який для тебе розпочинається з ранньої зміни о 06:00. Ти вже готуєшся до роботи, і це чудовий момент, щоб коротко ",
+    "ts": "2026-09-25T05:36:55.384143"
+  },
+  "foresight_truthfix|2026-09-25t05_34_46_440467": {
+    "topic": "foresight/truthfix",
+    "gist": "Олеже, зараз 05:34, і ти збираєшся на ранню зміну, яка починається о 06:00.  **Що відбувається зі здоров'ям:**  Твоя вага сьогодні 84.1 кг, що на 9.1 кг більше ",
+    "ts": "2026-09-25T05:34:46.440467"
+  },
+  "foresight|2026-09-25t05_34_35_781772": {
+    "topic": "foresight",
+    "gist": "Олеже, почнімо з того, що тебе вже чекає рання зміна о 06:00, тобто за 26 хвилин. Сподіваюсь, ти встиг поснідати та зібратися.   **Твій стан перед зміною:**  Ти",
+    "ts": "2026-09-25T05:34:35.781772"
+  },
+  "foresight|2026-09-25t05_34_08_167470": {
+    "topic": "foresight",
+    "gist": "```json {\"city\": \"\"} ```",
+    "ts": "2026-09-25T05:34:08.167470"
+  },
   "deadlines|2026-09-25t05_33_56_568414": {
     "topic": "deadlines",
     "gist": "[]",
@@ -268,35 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Записувати ідеї\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Обов'язково записуй усі ідеї, що при",
     "ts": "2026-09-25T04:04:33.727106"
-  },
-  "action_detect|2026-09-25t04_04_31_487682": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Перевірка портфеля\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Проаналізуй найбільших \\\"зірок\\\" ",
-    "ts": "2026-09-25T04:04:31.487682"
-  },
-  "msg_deep_analysis|2026-09-25t04_04_23_944575": {
-    "topic": "MSG_DEEP_ANALYSIS",
-    "gist": "Привіт, Олеже! 👋  Бачу, ти вже готуєшся до ранкової зміни, і це чудовий момент, щоб коротко глянути, що відбувається. Ринок криптовалют сьогодні показує стабіль",
-    "ts": "2026-09-25T04:04:23.944575"
-  },
-  "action_detect|2026-09-25t04_04_22_257509": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-25T04:04:22.257509"
-  },
-  "action_detect|2026-09-25t04_04_11_561360": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Сплатити рахунок\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Сплатити хоча б один з прострочених",
-    "ts": "2026-09-25T04:04:11.561360"
-  },
-  "action_detect|2026-09-25t04_03_58_046747": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Привітати Мар'яна з днем народження\", \"action_date\": \"2023-09-25\", \"action_time\": \"18:00\", \"action_summary\": \"Сього",
-    "ts": "2026-09-25T04:03:58.046747"
-  },
-  "action_detect|2026-09-25t04_03_46_913732": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Закінчення підписки Apple\", \"action_date\": \"2024-09-30\", \"action_time\": null, \"action_summary\": \"Підписка Apple зак",
-    "ts": "2026-09-25T04:03:46.913732"
   }
 }
