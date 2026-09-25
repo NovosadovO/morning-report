@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-07T08:53:58.730844+00:00",
-      "category": "calendar_reminder_confirm",
-      "question": "Хімчистка",
-      "answer": "✅ Поставлено",
-      "extra": {
-        "date": "2026-08-09"
-      }
-    },
-    {
       "ts": "2026-08-07T08:55:04.699715+00:00",
       "category": "calendar_button",
       "question": "agenda",
@@ -13912,6 +13903,15 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "🚨 АНОМАЛІЯ: токенізований фонд FIGR_HELOC (Figure Heloc) зробив -1.12% за 24 години — такі інструменти мають стояти на м"
+    },
+    {
+      "ts": "2026-09-25T17:52:30.410270+00:00",
+      "category": "deadline_found",
+      "question": "Підписка ChatGPT Go - автопоновлення",
+      "answer": "2026-09-25",
+      "extra": {
+        "kind": "contract"
+      }
     }
   ]
 }
