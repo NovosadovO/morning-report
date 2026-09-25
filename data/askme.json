@@ -5458,6 +5458,16 @@
   "cal|оплата паркувального квитка košice": {
     "q": "📅 Хочу записати в календар:\n\n« 💳 Оплата паркувального квитка Košice »\n🕐 25.09 о 18:49\n\nАвтоматично з листа.\nВід: Ubian Eshop <no-reply@ubian.sk>\nТема: UBIAN - Potvrdenie o zaplatení\nObjednávka č. 14463646 vo výške 0.99 EUR zo dňa 9/25/2026 6:49 PM bola úspešne zrealizovaná.\n\nЗаписати?",
     "kind": "plan",
-    "asked_at": "2026-09-25T21:45:44"
+    "asked_at": "2026-09-25T21:45:44",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-09-25T21:50:45",
+    "meta": {
+      "summary": "💳 Оплата паркувального квитка Košice",
+      "desc": "Автоматично з листа.\nВід: Ubian Eshop <no-reply@ubian.sk>\nТема: UBIAN - Potvrden",
+      "minutes": "60",
+      "start": "2026-09-25T18:49:00"
+    }
   }
 }
