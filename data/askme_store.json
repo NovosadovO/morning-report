@@ -14404,5 +14404,31 @@
       "start": "2026-10-03T09:00:00"
     },
     "ts": "2026-09-25T11:51:24.328359+00:00"
+  },
+  "56d6085083": {
+    "key": "cal|dorota nvotová  band v žiline",
+    "q": "📅 Хочу записати в календар:\n\n« 📌 Dorota Nvotová & Band v Žiline »\n🕐 02.10 о 09:00\n\nАвтоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nOct 02, 2026\n\nЗаписати?",
+    "kind": "plan",
+    "opts": [
+      [
+        "plan",
+        "📅 Так, запиши"
+      ],
+      [
+        "other",
+        "🕒 Інший час"
+      ],
+      [
+        "no",
+        "🚫 Не треба"
+      ]
+    ],
+    "meta": {
+      "summary": "📌 Dorota Nvotová & Band v Žiline",
+      "desc": "Автоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nOct 02, 2026",
+      "minutes": 60,
+      "start": "2026-10-02T09:00:00"
+    },
+    "ts": "2026-09-25T11:51:28.401084+00:00"
   }
 }
