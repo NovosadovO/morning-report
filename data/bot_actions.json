@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "The Economist: AI warfare",
-      "detail": "Отримано свіжий лист від The Economist з темою 'Inside Defence: Eric Schmidt on the era of AI warfare'.",
-      "module": "selfact",
-      "ts": "2026-09-21T21:28:27"
-    },
-    {
-      "kind": "notify",
       "what": "The Economist Today: Вплив дочки на керівника",
       "detail": "Отримано свіжий лист від The Economist Today з темою 'What having a daughter does to a boss'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "5 год мовчання",
       "module": "healthai",
       "ts": "2026-09-25T16:25:14"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: steps_good",
+      "detail": "🚶 Кроки за тиждень у середньому 11733 — ціль 8000 досягнута",
+      "module": "healthai",
+      "ts": "2026-09-25T16:43:38"
     }
   ]
 }
