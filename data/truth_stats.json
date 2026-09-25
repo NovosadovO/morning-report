@@ -39,7 +39,7 @@
     "briefing": {
       "checked": 360,
       "issues": 270,
-      "fixed": 113,
+      "fixed": 114,
       "cut": 10
     },
     "MSG_RWA": {
@@ -507,6 +507,7 @@
   },
   "2026-09-25": {
     "checked": 9,
-    "issues": 4
+    "issues": 4,
+    "fixed": 1
   }
 }
