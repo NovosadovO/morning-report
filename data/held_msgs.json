@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T22:35:37.877466",
-      "kind": "rwa",
-      "text": "🏦 <b>RWA-РАДАР</b>\n━━━━━━━━━━━━━━━━━━━━\n• ONDO (твоя позиція) виріс на 7.8% за 24 години (зараз $0.54707)\n\n<i>AI-коментар недоступний — вище тільки живі цифри.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T22:35:39.095215",
       "kind": "rwa",
       "text": "🏦 RWA-РАДАР\n━━━━━━━━━━━━━━━━━━━━\n• ONDO (твоя позиція) виріс на 7.8% за 24 години (зараз $0.54707)\n\nAI-коментар недоступний — вище тільки живі цифри.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79755"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-25T22:46:30.306935",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Crypto Biz: Wall Street and crypto fight for the same turf</b>\n👤 Cointelegraph через LinkedIn&lt;newsletters-noreply@l",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79753"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79753"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79753"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79753"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79753"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79753"
             }
           ]
         ]
