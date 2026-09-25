@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T02:13:59.747196",
-      "kind": "calendar",
-      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 9-й дім: Сенси й подорожі</b>\n📅 29.09 (Tue) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-25T02:14:00.322325",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>ONDO +27.1% за 24г</b>\n\nЗараз: 0.5230 $\n24г тому: 0.4114 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79690"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-25T02:16:24.386405",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: JPMorgan says $85,000 bitcoin could ease miner </b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79689"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79689"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79689"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79689"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79689"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79689"
             }
           ]
         ]
