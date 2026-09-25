@@ -4990,7 +4990,17 @@
   "cal|вистава z rozprávky do rozprávky  bytča": {
     "q": "📅 Хочу записати в календар:\n\n« 📌 Вистава Z rozprávky do rozprávky - Bytča »\n🕐 25.09 о 09:00\n\nАвтоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nZ rozprávky do rozprávky - Bytča Sep 25\n\nЗаписати?",
     "kind": "plan",
-    "asked_at": "2026-09-25T12:36:36"
+    "asked_at": "2026-09-25T12:36:36",
+    "action": "no",
+    "label": "🚫 Не треба",
+    "means": "відмовився",
+    "answered_at": "2026-09-25T13:19:41",
+    "meta": {
+      "summary": "📌 Вистава Z rozprávky do rozprávky - Bytča",
+      "desc": "Автоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular e",
+      "minutes": "60",
+      "start": "2026-09-25T09:00:00"
+    }
   },
   "cal|вистава ach tie naše ženy  žilina": {
     "q": "📅 Хочу записати в календар:\n\n« 📌 Вистава Ach tie naše ženy | Žilina »\n🕐 30.09 о 09:00\n\nАвтоматично з листа.\nВід: AllEvents <updates@allevents.in>\nТема: Oleg, popular events this weekend in Zilina\nAch tie naše ženy | 30.9. | Žilina Sep 30, 2026\n\nЗаписати?",
