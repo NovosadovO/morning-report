@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Твій паркувальний талон у Кошице (зона A1, LE066BI) дійсний",
-      "detail": "Олег отримав підтвердження оплати паркування, яке діє до 18:24. Це важлива інформація, щоб уникнути штрафів.",
-      "module": "selfact",
-      "ts": "2026-09-21T17:52:16"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "steps=7965, sleep_total_min=180, hr_avg=94, calories=340, distance_km=5.4, weight_kg=84.1, health_score=88, stress=4, sleep_hours=3.0, date=2026-09-25, source=qwatch_auto, saved_at=2026-09-25 11:07",
       "module": "healthai",
       "ts": "2026-09-25T11:07:58"
+    },
+    {
+      "kind": "notify",
+      "what": "Важливо: Socios.com Recovery Kit",
+      "detail": "Свіжий лист від Socios.com попереджає про необхідність створення Recovery Kit для безпеки гаманця, і це критично важлива дія, яку Олег міг пропустити.",
+      "module": "selfact",
+      "ts": "2026-09-25T11:12:10"
     }
   ]
 }
