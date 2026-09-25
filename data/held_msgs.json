@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T22:16:24.268151",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Specialis/ka Middle office investiční společnosti в EMUN</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79752"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79752"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79752"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79752"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79752"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79752"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T22:16:25.916390",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Anti-Fraud Officer  в Cybertexex</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -544,6 +505,12 @@
       "ts": "2026-09-25T22:34:44.729453",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T22:35:37.877466",
+      "kind": "rwa",
+      "text": "🏦 <b>RWA-РАДАР</b>\n━━━━━━━━━━━━━━━━━━━━\n• ONDO (твоя позиція) виріс на 7.8% за 24 години (зараз $0.54707)\n\n<i>AI-коментар недоступний — вище тільки живі цифри.</i>",
       "keyboard": null
     }
   ]
