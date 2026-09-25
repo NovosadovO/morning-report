@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-07T08:55:04.699715+00:00",
-      "category": "calendar_button",
-      "question": "agenda",
-      "answer": "accepted",
-      "extra": {
-        "stage": "agenda",
-        "when": "",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-07T08:55:05.623249+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13912,6 +13901,12 @@
       "extra": {
         "kind": "contract"
       }
+    },
+    {
+      "ts": "2026-09-25T20:59:18.610359+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Лягти спати раніше",
+      "answer": "yes"
     }
   ]
 }
