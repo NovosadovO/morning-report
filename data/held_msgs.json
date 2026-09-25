@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T03:31:03.146152",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Bitget Halts Withdrawals After $351.6M Hot Wallet Breach</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79693"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79693"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79693"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79693"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79693"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79693"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T03:31:04.470952",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Project Manager - Digital Operations в Caterpillar In</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -239,6 +200,12 @@
       "ts": "2026-09-25T03:32:54.454179",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 16 nových pracovných ponúk\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T03:32:56.596996",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
       "keyboard": null
     }
   ]
