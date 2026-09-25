@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-25T02:16:16.044096",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Project Manager - Digital Operations в Caterpillar In</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79695"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79695"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79695"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79695"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79695"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79695"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-25T02:16:17.502786",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Buy tokenized stocks on CoinList</b>\n👤 CoinList News &lt;noreply@coinlist.co&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-09-25T02:18:06.735598",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-25T02:18:07.620205",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
