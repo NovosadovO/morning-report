@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T03:46:47.948741",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>SEC Staff Draws A Line On Token Buybacks and Liquid Staking </b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79767"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79767"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79767"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79767"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79767"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79767"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-26T03:46:49.312785",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Manager Digital Operations Support в Caterpillar Inc.</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -338,6 +299,12 @@
       "ts": "2026-09-26T03:49:05.600196",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T03:49:08.470683",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +6.1% за 24г</b>\n\nЗараз: 10.89 $\n24г тому: 10.26 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
