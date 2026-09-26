@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "сповіщення про здоров'я: sleep_low",
-      "detail": "😴 Сон за тиждень у середньому 5.7 год — нижче за 6.5",
-      "module": "healthai",
-      "ts": "2026-09-22T14:38:02"
-    },
-    {
-      "kind": "notify",
       "what": "сповіщення про здоров'я: sleep_unstable",
       "detail": "😴 Сон дуже нерівний останні дні (розкид ±2.32 год) — тіло не встигає підлаштуватись під ритм",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-09-26T15:05:32"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на лист від The Defiant про хак Bitget на",
+      "detail": "Свіжий лист від The Defiant <no-reply@mail.thedefiant.io> з важливою інформацією про безпеку криптоактивів.",
+      "module": "selfact",
+      "ts": "2026-09-26T15:14:29"
     }
   ]
 }
