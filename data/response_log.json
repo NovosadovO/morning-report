@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T06:59:59.254371+00:00",
-      "category": "confirm",
-      "question": "cw_cancel: Демо-подія (перевірка кнопок)",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-08T07:00:00.160645+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13898,6 +13892,17 @@
       "category": "chat",
       "question": "я зараз дома",
       "answer": "Зрозумів."
+    },
+    {
+      "ts": "2026-09-26T12:52:49.209016+00:00",
+      "category": "calendar_button",
+      "question": "Марс на асценденті",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t3d",
+        "when": "22:00–22:15",
+        "note": null
+      }
     }
   ]
 }
