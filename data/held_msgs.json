@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T02:14:03.917438",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔭 Юпітер переходить у 2-й дім — 19° » було 25.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T02:14:04.690908",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔭 Юпітер переходить у 2-й дім — 19° » було 25.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79765"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-26T02:16:42.048518",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>\"How to Yield Farm Like a Degen in 2026\" and 4 more</b>\n👤 Substack &lt;no-reply@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79764"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79764"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79764"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79764"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79764"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79764"
             }
           ]
         ]
