@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нова вакансія Produktový manažér (M/Ž) pre digitálne aktíva",
-      "detail": "У свіжих листах є вакансія 'Produktový manažér (M/Ž) pre digitálne aktíva' від Tatra banka, яка відповідає налаштуванням Олега за запитом 'Cryptocurrency'.",
-      "module": "selfact",
-      "ts": "2026-09-22T22:27:52"
-    },
-    {
-      "kind": "notify",
       "what": "сповіщення про здоров'я: sleep_low",
       "detail": "😴 Сон за тиждень у середньому 5.7 год — нижче за 6.5",
       "module": "healthai",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-09-26T23:06:02"
+    },
+    {
+      "kind": "ask",
+      "what": "Олеже, чи цікавлять тебе вакансії, які прийшли від LinkedIn,",
+      "detail": "Олег отримує багато сповіщень про вакансії, і важливо зрозуміти його пріоритети щодо них.",
+      "module": "selfact",
+      "ts": "2026-09-26T23:17:07"
     }
   ]
 }
