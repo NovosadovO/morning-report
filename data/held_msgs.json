@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T03:46:53.317107",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Web Account Manager в Symprove CEE</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79763"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79763"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79763"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79763"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79763"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79763"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-26T03:46:55.540411",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 14 nových pracovných ponúk\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -206,6 +167,12 @@
       "ts": "2026-09-26T03:49:30.465588",
       "kind": "calendar",
       "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 10-й дім: Кар’єра й статус\n📅 30.09 (Wed) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T03:50:12.835839",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 🔭 Юпітер переходить у 2-й дім — 19° » було 25.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
