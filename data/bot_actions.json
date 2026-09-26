@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, є нові вакансії Produktový manažér (M/Ž) pre digitáln",
-      "detail": "Знайдено нові листи зі сповіщеннями про вакансії LinkedIn: 'Produktový manažér (M/Ž) pre digitálne aktíva в Tatra banka' та 'Senior Product Manager в Toptal'.",
-      "module": "selfact",
-      "ts": "2026-09-22T18:33:48"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, завтра о 9:00 у тебе прийом до дерматолога. Не забудь",
       "detail": "У календарі на 23.09 о 09:00 заплановано 'дерматолога'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-09-26T19:06:09"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, зверни увагу на лист від The Economist Today: «Back a",
+      "detail": "Олег хоче, щоб AI детальніше слідкував за його здоров'ям, надавав рекомендації, репорти, звіти та алерти. Цей лист може містити важливу інформацію щодо здоров'я.",
+      "module": "selfact",
+      "ts": "2026-09-26T19:07:30"
     }
   ]
 }
