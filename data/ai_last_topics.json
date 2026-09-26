@@ -1,4 +1,24 @@
 {
+  "healthai|2026-09-26t21_06_09_145155": {
+    "topic": "healthai",
+    "gist": "🌙 Олеже, сьогодні о 21:05, і вже за годину 55 хвилин, о 23:00, Юпітер переходить у 2-й дім, що астрологічно акцентує увагу на матеріальних цінностях та роботі, ",
+    "ts": "2026-09-26T21:06:09.145155"
+  },
+  "action_detect|2026-09-26t21_01_18_469374": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-26T21:01:18.469374"
+  },
+  "action_detect|2026-09-26t21_01_07_540267": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-26T21:01:07.540267"
+  },
+  "email_ai_item|2026-09-26t21_00_57_319103": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від Temu є рекламною розсилкою, що пропонує COB LED стрічки та інші товари за низькими цінами. Лист містить посилання на веб-сайт Temu",
+    "ts": "2026-09-26T21:00:57.319103"
+  },
   "action_detect|2026-09-26t21_00_32_610832": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Соляр — 7-й дім: Партнерство\", \"action_date\": \"2023-09-27\", \"action_time\": \"00:00\", \"action_summary\": \"Пам'ятай, що",
@@ -278,25 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, зверни увагу на статтю від The Economist: 'Back and shoulder surgery is often worse than useless'. Вона ",
     "ts": "2026-09-26T19:38:20.028660"
-  },
-  "openloop_promises|2026-09-26t19_38_06_086181": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-09-26T19:38:06.086181"
-  },
-  "foresight_truthfix|2026-09-26t19_25_08_362412": {
-    "topic": "foresight/truthfix",
-    "gist": "Олеже, дані за 26 вересня 2026 року показують, що твоя вага становить 83.9 кг, що на 8.9 кг більше за цільові 75 кг, і за останні 7 днів спостерігається зростаю",
-    "ts": "2026-09-26T19:25:08.362412"
-  },
-  "foresight|2026-09-26t19_24_57_473472": {
-    "topic": "foresight",
-    "gist": "Зараз, коли до наступної нічної зміни в тебе цілий вільний день, а вага тримається на позначці 83.9 кг, варто спробувати нову страву для здорового харчування, щ",
-    "ts": "2026-09-26T19:24:57.473472"
-  },
-  "foresight|2026-09-26t19_24_45_714551": {
-    "topic": "foresight",
-    "gist": "{\"city\": \"\"}",
-    "ts": "2026-09-26T19:24:45.714551"
   }
 }
