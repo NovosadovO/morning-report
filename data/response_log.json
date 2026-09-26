@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T07:00:32.387990+00:00",
-      "category": "ai_button",
-      "question": "email",
-      "answer": "muted_7d",
-      "extra": {
-        "trigger": "vip_email",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-08T07:00:34.397234+00:00",
       "category": "confirm",
       "question": "gx_mute: листи",
@@ -13898,6 +13888,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_901d3e2418"
+    },
+    {
+      "ts": "2026-09-26T15:17:19.887689+00:00",
+      "category": "rwa_move",
+      "question": "RWA",
+      "answer": "QNT виріс на 9.1% за 24 години (зараз $105)"
     }
   ]
 }
