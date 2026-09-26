@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T02:46:11.180867",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Railway\n📋 Free VMs without an account, tracing, OpenCode on Cloud Agen\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Railway",
-              "callback_data": "email_reply_79762"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79762"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79762"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-26T02:46:13.778963",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Railway\n📋 Free VMs without an account, tracing, OpenCode on Cloud Agen\n📝 (AI-аналіз тимчасово недоступний)",
@@ -167,6 +142,12 @@
       "ts": "2026-09-26T02:49:26.309225",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T02:49:26.983738",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
