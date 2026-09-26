@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T01:01:40.108093",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Line Leader (Vedúci/vedúca výrobnej linky) в Essity</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79799"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79799"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79799"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79799"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79799"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79799"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T01:01:41.495647",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Business Analyst в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -313,6 +274,12 @@
       "ts": "2026-09-27T01:04:08.228149",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T01:04:34.336041",
+      "kind": "calendar",
+      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 11-й дім: Друзі й плани</b>\n📅 01.10 (Thu) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
       "keyboard": null
     }
   ]
