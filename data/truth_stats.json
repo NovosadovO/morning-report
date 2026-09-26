@@ -185,7 +185,8 @@
       "fixed": 5
     },
     "defi_digest": {
-      "checked": 17
+      "checked": 17,
+      "issues": 1
     },
     "MSG_INTERVIEW_PRACTICE": {
       "checked": 14,
@@ -519,7 +520,7 @@
   },
   "2026-09-26": {
     "checked": 123,
-    "issues": 84,
+    "issues": 85,
     "fixed": 42,
     "cut": 1
   }
