@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T03:13:50.112984",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔭 Юпітер переходить у 2-й дім — 19° » було 25.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T03:13:50.766838",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔭 Юпітер переходить у 2-й дім — 19° » було 25.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79766"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-26T03:16:20.848272",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>💸 Higgsfield hits an unprecedented milestone</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79765"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79765"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79765"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79765"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79765"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79765"
             }
           ]
         ]
