@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-09-26t06_15_48_761339": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є сповіщенням від LinkedIn про нову вакансію Anti-Fraud Officer в компанії Cybertexex, розташованій у Словаччині. Вакансія від",
+    "ts": "2026-09-26T06:15:48.761339"
+  },
   "selfact|2026-09-26t06_11_09_659170": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Завершення підписки Apple\",     \"text\": \"Олеже, нагадую, що 30 вересня закінчується термін дії твоєї підписки ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-26T04:03:23.403687"
-  },
-  "action_detect|2026-09-26t04_03_12_539949": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Нічні зміни\", \"action_date\": \"2026-09-27\", \"action_time\": null, \"action_summary\": \"Нічні зміни, що починаються 27.0",
-    "ts": "2026-09-26T04:03:12.539949"
   }
 }
