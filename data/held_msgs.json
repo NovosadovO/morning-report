@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T03:16:19.518941",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Manager Digital Operations Support в Caterpillar Inc.</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79766"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79766"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79766"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79766"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79766"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79766"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-26T03:16:20.848272",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>💸 Higgsfield hits an unprecedented milestone</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -303,6 +264,12 @@
     },
     {
       "ts": "2026-09-26T03:19:12.508376",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 🔭 Юпітер переходить у 2-й дім — 19° » було 25.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T03:19:13.358625",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔭 Юпітер переходить у 2-й дім — 19° » було 25.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
