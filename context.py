@@ -31,8 +31,7 @@ PROFILE = """
   - Крипто: BTC, ETH, AVAX, ONDO
   - Регулярний біг
   - Вивчення інвестицій (самоосвіта)
-Звички: холодний душ, ліки (Armolopid Plus), вода, біг, навчання
-Ліки: Armolopid Plus (курс 27.04–27.07.2026)
+Звички: холодний душ, вода, біг, навчання
 """
 
 SHIFT_HOURS = {
@@ -510,21 +509,6 @@ def _get_habits_context():
     except Exception:
         return "звички недоступні"
 
-def _get_meds_context():
-    try:
-        import sys
-        sys.path.insert(0, os.path.dirname(__file__))
-        from meds import load_meds
-        from habits import today_key
-        db = load_meds()
-        today = today_key()
-        taken = db.get(today)
-        if taken is True:  return "ліки сьогодні прийнято ✅"
-        if taken is False: return "ліки сьогодні НЕ прийнято ❌"
-        return "ліки сьогодні: не відмічено"
-    except Exception:
-        return "ліки: невідомо"
-
 def _get_strava_context():
     """Повертає рядок з останнім тренуванням і тижневою статистикою."""
     try:
@@ -617,7 +601,6 @@ def get_context(include_calendar=True, include_crypto=False):
         "health":         _get_health_context(),
         "weight":         _get_weight_context(),
         "habits":         _get_habits_context(),
-        "meds":           _get_meds_context(),
         "strava":         _get_strava_context(),
         "calendar_today":    cal["today_text"],
         "calendar_tomorrow": cal["tomorrow_text"],
@@ -678,7 +661,6 @@ def get_system_prompt(ctx=None):
         f"Вага: {ctx['weight']}",
         f"Здоров'я: {ctx['health']}",
         f"Звички: {ctx['habits']}",
-        f"Ліки: {ctx['meds']}",
         f"Біг/Strava: {ctx.get('strava', 'немає даних')}",
     ]
 

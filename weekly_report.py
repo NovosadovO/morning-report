@@ -105,16 +105,6 @@ def get_weight_data():
         data = load_json(initial, {})
     return data
 
-def get_meds_data():
-    """Завантажує дані ліків через storage (Google Sheets)."""
-    try:
-        import sys; sys.path.insert(0, _DIR)
-        from storage import load_meds
-        return load_meds()
-    except Exception as e:
-        print(f"get_meds_data error: {e}")
-        return load_json(os.path.join(_DIR, "meds_data.json"), {})
-
 def get_runs_from_health():
     """Витягує пробіжки з Apple Health XML за останні 7 днів."""
     import re
@@ -268,28 +258,6 @@ def block_habits():
 
     return "\n".join(lines)
 
-def block_meds():
-    """Блок ліків — використовує meds.py."""
-    try:
-        import sys, os as _os
-        sys.path.insert(0, _DIR)
-        from meds import get_meds_report_full
-        return get_meds_report_full("week")
-    except Exception as e:
-        # fallback
-        db    = get_meds_data()
-        dates = get_week_dates()
-        taken = sum(1 for d in dates if db.get(d) is True)
-        missed = 7 - taken
-        pct = taken / 7 * 100
-        b = bar(taken, 7, 7)
-        medal = "✅" if taken == 7 else ("⚠️" if taken >= 5 else "❌")
-        lines = ["💊 <b>ЛІКИ (Armolopid Plus)</b>", f"<code>{b}</code> {taken}/7 {medal}"]
-        if missed > 0:
-            missed_dates = [d[5:] for d in dates if not db.get(d)]
-            lines.append(f"Пропущено: {', '.join(missed_dates)}")
-        return "\n".join(lines)
-
 def block_weight():
     """Блок ваги."""
     db    = get_weight_data()
@@ -381,7 +349,6 @@ def block_recommendations():
     except:
         sleep_stats = None
 
-    meds_db = get_meds_data()
     weight_db = get_weight_data()
 
     recs = []
@@ -403,14 +370,6 @@ def block_recommendations():
         recs.append("🏃 Тиждень без бігу. Хоч одна коротка пробіжка наступного тижня!")
     elif len(runs) >= 3 or run_days >= 3:
         recs.append("🏃 Гарна активність! Ціль — підтримай темп наступного тижня")
-
-    # Ліки
-    meds_taken = sum(1 for d in dates if meds_db.get(d) is True)
-    if meds_taken < 7:
-        missed = 7 - meds_taken
-        recs.append(f"💊 Пропущено {missed} дні ліків — постав щоденне нагадування")
-    else:
-        recs.append("💊 Ліки — ідеально! Так тримати")
 
     # Вода
     water_days = sum(1 for d in dates if db.get(d, {}).get("water") is True)
@@ -445,7 +404,6 @@ def block_health_score():
     """Загальний Health Score тижня."""
     db    = get_habits_data()
     dates = get_week_dates()
-    meds_db  = get_meds_data()
     weight_db = get_weight_data()
 
     try:
@@ -472,11 +430,6 @@ def block_health_score():
         max_score += 8
         done = sum(1 for d in dates if db.get(d, {}).get(hid) is True)
         score += int(done / 7 * 8)
-
-    # Ліки (20 балів)
-    max_score += 20
-    meds_taken = sum(1 for d in dates if meds_db.get(d) is True)
-    score += int(meds_taken / 7 * 20)
 
     # Вага — відстежував (15 балів)
     max_score += 15
@@ -547,10 +500,7 @@ def send_weekly_report():
         block_sleep()
     )
 
-    msg2 = (
-        block_habits() + SEP +
-        block_meds()
-    )
+    msg2 = block_habits()
 
     msg3 = (
         block_weight() + SEP +
@@ -645,8 +595,6 @@ if __name__ == "__main__":
     print(block_sleep())
     print()
     print(block_habits())
-    print()
-    print(block_meds())
     print()
     print(block_weight())
     print()

@@ -883,155 +883,7 @@ def log_to_calendar(summary, date_str, hour, minute):
         print(f"Calendar log error: {e}")
 
 
-def handle_meds_callback(callback_query):
-    """Обробляє ✅/❌ відповідь на питання про ліки."""
-    import json as _json
-    data    = callback_query.get("data", "")
-    msg_id  = callback_query["message"]["message_id"]
-    chat_id = callback_query["message"]["chat"]["id"]
-    cb_id   = callback_query["id"]
 
-    # ПЕРШИМ — підтверджуємо callback (завжди, незалежно від решти)
-    try:
-        api("answerCallbackQuery", {"callback_query_id": cb_id, "text": "Записано ✓"})
-    except Exception as _ae:
-        print(f"answerCallbackQuery error: {_ae}")
-
-    # meds_yes_2026-04-27 або meds_no_2026-04-27
-    parts    = data.split("_", 2)
-    answer   = parts[1] if len(parts) > 1 else "yes"  # yes / no
-    date_raw = parts[2] if len(parts) > 2 else ""
-    from datetime import datetime, timezone, timedelta as _td
-    _now = datetime.now(timezone.utc) + _td(hours=2)
-    if not date_raw or date_raw == "today":
-        if 0 <= _now.hour < 6:
-            date = (_now - _td(days=1)).strftime("%Y-%m-%d")
-        else:
-            date = _now.strftime("%Y-%m-%d")
-    else:
-        date = date_raw
-
-    # ДРУГИМ — редагуємо повідомлення (прибираємо кнопки) — до будь-яких важких операцій
-    if answer == "yes":
-        reply = "💊 <b>ARMOLOPID PLUS</b>\n\n✅ <b>Прийнято!</b> Молодець 💪\nПродовжуй в тому ж дусі."
-    else:
-        reply = "💊 <b>ARMOLOPID PLUS</b>\n\n❌ <b>Не прийнято</b> — записано.\n🔕 Нагадувань на сьогодні більше не буде."
-
-    try:
-        api("editMessageText", {
-            "chat_id": chat_id,
-            "message_id": msg_id,
-            "text": reply,
-            "parse_mode": "HTML",
-            "reply_markup": {"inline_keyboard": []}
-        })
-    except Exception as _ee:
-        print(f"editMessageText error: {_ee}")
-        # Якщо edit не вдався — хоча б видалимо кнопки окремим запитом
-        try:
-            api("editMessageReplyMarkup", {
-                "chat_id": chat_id,
-                "message_id": msg_id,
-                "reply_markup": {"inline_keyboard": []}
-            })
-        except Exception as _re:
-            print(f"editMessageReplyMarkup error: {_re}")
-
-    # ТРЕТІМ — зберігаємо в storage (не критично якщо впаде)
-    try:
-        import sys as _sys; _sys.path.insert(0, os.path.dirname(__file__))
-        from storage import load_meds as _lm, save_meds as _sm
-        meds_db = _lm()
-        meds_db[date] = (answer == "yes")
-        ok = _sm(meds_db)
-        if ok:
-            print(f"✅ [meds] SAVED to GitHub: {date} = {answer}")
-        else:
-            print(f"⚠️ [meds] FAILED to save to GitHub, trying local fallback...")
-            raise Exception("GitHub save returned False")
-    except Exception as _se:
-        print(f"❌ [meds] storage error: {_se}")
-        # Fallback: локальний файл
-        try:
-            meds_file = "/tmp/meds_data.json"
-            try:
-                with open(meds_file) as f:
-                    meds_db = _json.load(f)
-            except Exception:
-                meds_db = {}
-            meds_db[date] = (answer == "yes")
-            with open(meds_file, "w") as f:
-                _json.dump(meds_db, f)
-            print(f"✅ [meds] SAVED to /tmp (fallback): {date} = {answer}")
-        except Exception as _fe:
-            print(f"❌ [meds] FAILED to save anywhere: {_fe}")
-            # Останнім — повідомимо юзеру що помилка
-            try:
-                api("sendMessage", {
-                    "chat_id": chat_id,
-                    "text": f"⚠️ Помилка при збереженні даних про ліки. Спробуй ще раз.",
-                    "parse_mode": "HTML"
-                })
-            except:
-                pass
-
-    # ЧЕТВЕРТИМ — логуємо в Google Calendar (не критично)
-    try:
-        now_l = datetime.now(timezone.utc) + _td(hours=2)
-        mark = "✅" if answer == "yes" else "❌"
-        log_to_calendar(f"💊 Armolopid Plus {mark}", date, now_l.hour, now_l.minute)
-    except Exception as _ce:
-        print(f"meds log_to_calendar error: {_ce}")
-
-
-def get_meds_report(period="week"):
-    """Звіт про прийом ліків за тиждень або місяць."""
-    import json as _json
-    from datetime import datetime, timezone, timedelta
-    # Читаємо з GitHub (persistent) через meds.py
-    try:
-        import sys as _sys, os as _os
-        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-        from meds import load_meds as _load_meds
-        db = _load_meds() or {}
-    except Exception as _e:
-        print(f"get_meds_report load error: {_e}")
-        db = {}
-
-    now = datetime.now(timezone.utc) + timedelta(hours=2)
-    if period == "week":
-        days = [(now - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(6, -1, -1)]
-        title = "тиждень"
-    else:
-        days = [(now - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(now.day - 1, -1, -1)]
-        title = now.strftime("%B %Y")
-
-    taken = sum(1 for d in days if db.get(d) is True)
-    missed = sum(1 for d in days if db.get(d) is False)
-    no_data = len(days) - taken - missed
-    pct = int(taken / len(days) * 100) if days else 0
-
-    stars = "⭐️" * min(taken, 7) + "☆" * (7 - min(taken, 7)) if period == "week" else ""
-
-    lines = [
-        f"💊 <b>Armolopid Plus — {title}</b>\n",
-        f"✅ Прийнято:    <b>{taken}</b> дн.",
-        f"❌ Пропущено:  <b>{missed}</b> дн.",
-        f"○  Немає даних: <b>{no_data}</b> дн.",
-    ]
-    if stars:
-        lines.append(f"\n{stars}  {pct}%")
-    else:
-        filled = int(pct / 10)
-        bar = "🟩" * filled + "⬜️" * (10 - filled)
-        lines.append(f"\n<code>[{bar}]</code>  {pct}%")
-
-    if pct == 100:   lines.append("🏆 Ідеально!")
-    elif pct >= 80:  lines.append("💪 Відмінно!")
-    elif pct >= 60:  lines.append("👍 Непогано")
-    else:            lines.append("⚠️ Намагайся не пропускати!")
-
-    return "\n".join(lines)
 
 
 def cb_notify(cb_id, chat_id, text, alert=False):
@@ -2974,11 +2826,6 @@ HELP_TEXT = """
 /qwatch тиждень — тижневий звіт
 /qwatch місяць — місячний звіт
 
-<b>💊 Ліки</b>
-/ліки — Armolopid Plus за тиждень
-/ліки місяць — за місяць
-/ліки курс — весь курс (27.04–27.07)
-
 <b>💰 Крипто-портфель</b>
 /портфель — повний портфель з P&L
 /купив BTC 0.01 по 60000 — записати ціну купівлі
@@ -3102,15 +2949,11 @@ def handle_command(chat_id, text):
 
     elif text in ["/звички", "звички"]:
         from habits import HABITS, load_data, today_key
-        from meds import load_meds, save_meds, now_local, MEDS_NAME, MEDS_START, MEDS_END
         hab_data = load_data()
         today = today_key()
         day_data = hab_data.get(today, {})
 
         all_habits = [{"id": "shower", "name": "Холодний душ", "emoji": "🚿"}] + HABITS
-        meds_db = load_meds()
-        meds_today = meds_db.get(today)
-        meds_status = "✅" if meds_today is True else ("❌" if meds_today is False else "⬜️")
 
         from datetime import datetime, timezone, timedelta
         date_str = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%d.%m")
@@ -3120,7 +2963,6 @@ def handle_command(chat_id, text):
             done = day_data.get(h["id"])
             s = "✅" if done is True else ("❌" if done is False else "⬜️")
             lines.append(f"{s} {h['emoji']} {h['name']}")
-        lines.append(f"{meds_status} 💊 {MEDS_NAME}")
         lines.append("\n<i>Натисни щоб змінити:</i>")
 
         keyboard = []
@@ -3132,12 +2974,6 @@ def handle_command(chat_id, text):
                 {"text": f"✅{yes_mark} {h['emoji']} {h['name']}", "callback_data": f"habit_yes_{h['id']}"},
                 {"text": f"❌{no_mark}", "callback_data": f"habit_no_{h['id']}"},
             ])
-        yes_mark = "·" if meds_today is True else ""
-        no_mark = "·" if meds_today is False else ""
-        keyboard.append([
-            {"text": f"✅{yes_mark} 💊 {MEDS_NAME}", "callback_data": "meds_yes_today"},
-            {"text": f"❌{no_mark}", "callback_data": "meds_no_today"},
-        ])
 
         send_with_keyboard(chat_id, "\n".join(lines), keyboard)
 
@@ -4793,36 +4629,6 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
-    elif text in ["/ліки", "ліки", "/armolopid"]:
-        try:
-            from meds import get_meds_report_full
-            send(chat_id, get_meds_report_full("week"))
-        except Exception as e:
-            print(f"/ліки (full) error: {e}")
-            try:
-                send(chat_id, get_meds_report("week"))
-            except Exception as e2:
-                send(chat_id, f"⚠️ Помилка звіту ліків: {e2}")
-
-    elif text in ["/ліки місяць", "ліки місяць"]:
-        try:
-            from meds import get_meds_report_full
-            send(chat_id, get_meds_report_full("month"))
-        except Exception as e:
-            print(f"/ліки місяць (full) error: {e}")
-            try:
-                send(chat_id, get_meds_report("month"))
-            except Exception as e2:
-                send(chat_id, f"⚠️ Помилка звіту ліків: {e2}")
-
-    elif text in ["/ліки курс", "ліки курс"]:
-        try:
-            from meds import get_meds_report_full
-            send(chat_id, get_meds_report_full("course"))
-        except Exception as e:
-            print(f"/ліки курс (full) error: {e}")
-            send(chat_id, f"⚠️ Помилка: {e}")
-
     elif text in ["/вага", "вага"]:
         try:
             from weight import format_weekly_weight_report, make_weight_chart
@@ -5032,7 +4838,6 @@ def handle_command(chat_id, text):
                 f"⚖️ {ctx['weight']}\n"
                 f"💚 {ctx['health']}\n"
                 f"📋 Звички: {ctx['habits']}\n"
-                f"💊 {ctx['meds']}\n"
             )
             if ctx.get("crypto"):
                 msg += f"\n💹 {ctx['crypto']}"
@@ -6937,8 +6742,6 @@ def _route_callback(cb, confirmed: bool = False):
             except Exception:
                 pass
             send(chat_id, f"✅ Сон записано: <b>{label}</b>")
-        elif data.startswith("meds_"):
-            handle_meds_callback(cb)
         elif data == "reminder_health_photo":
             api("answerCallbackQuery", {"callback_query_id": cb["id"], "text": "Надішли фото 📸"})
             send(chat_id, "📸 Надішли скрін Apple Health — прочитаю автоматично!")

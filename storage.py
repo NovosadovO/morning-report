@@ -285,27 +285,6 @@ def load_habits():
 def save_habits(data):
     return _save_github("habits.json", data)
 
-def load_meds():
-    data = _load_github("meds.json")
-    if not data:
-        repo_file = os.path.join(_DIR, "meds_data.json")
-        try:
-            with open(repo_file) as f:
-                data = json.load(f)
-            save_meds(data)
-        except:
-            pass
-    return data
-
-def save_meds(data):
-    return _save_github("meds.json", data)
-
-def load_meds_sent():
-    return _load_github("meds_sent.json") or {}
-
-def save_meds_sent(data):
-    return _save_github("meds_sent.json", data)
-
 def load_weight():
     """
     Канонічне джерело — weight_data.json (сюди пише weight.py при кожному /вазі

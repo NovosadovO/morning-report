@@ -282,30 +282,47 @@ def parse_qwatch_text(text: str) -> dict:
 
 def _gemini_parse(text: str) -> dict:
     """
-    Fallback — якщо regex не зловив всі поля, використовуємо Gemini.
+    AI-парсер — головний "запобіжник" точності. QWatch Pro генерує звіти
+    вільним текстом і формат речень міняється (напр. "Глибокий сон триває
+    3:44" замість "3:44 години глибокого сну") — регекси в
+    parse_qwatch_text() ловлять лише варіанти, які вже бачили, і тихо
+    пропускають поле, якщо фраза трохи інша (саме так одного дня зникло
+    поле сну, хоча текст його явно містив). Gemini читає текст як людина і
+    не залежить від точного порядку слів, тому parse_and_save() викликає
+    його щоразу, коли regex не зловив ХОЧА Б ОДНЕ з ключових полів дня —
+    не тільки коли зовсім нічого не спрацювало.
     Повертає dict з числовими полями.
     """
     prompt = (
-        "Витягни з тексту здоров'я наступні числові поля і поверни ТІЛЬКИ JSON без markdown:\n"
+        "Витягни з тексту звіту про здоров'я (QWatch Pro) наступні поля і "
+        "поверни ТІЛЬКИ JSON без markdown, без пояснень. Якщо значення в "
+        "тексті немає — null. Числа пиши без одиниць вимірювання.\n"
         "{\n"
         "  \"health_score\": число 0-100 або null,\n"
-        "  \"steps\": ціле число або null,\n"
-        "  \"sleep_total_min\": хвилини або null,\n"
-        "  \"sleep_deep_min\": хвилини або null,\n"
-        "  \"sleep_light_min\": хвилини або null,\n"
-        "  \"sleep_quality\": число 0-100 або null,\n"
-        "  \"hr_avg\": уд/хв або null,\n"
-        "  \"calories\": ккал або null,\n"
-        "  \"stress\": бали або null,\n"
-        "  \"hrv\": мс або null,\n"
-        "  \"spo2\": % або null,\n"
+        "  \"steps\": ціле число кроків або null,\n"
+        "  \"sleep_total_min\": загальна тривалість сну в ХВИЛИНАХ (переведи з годин) або null,\n"
+        "  \"sleep_deep_min\": глибокий сон в хвилинах або null,\n"
+        "  \"sleep_light_min\": легкий сон в хвилинах або null,\n"
+        "  \"sleep_quality\": якість сну 0-100 або null,\n"
+        "  \"hr_avg\": пульс уд/хв або null,\n"
+        "  \"calories\": калорії/витрачена енергія (ккал) або null,\n"
+        "  \"stress\": рівень стресу в балах або null,\n"
+        "  \"hrv\": варіабельність серцевого ритму (HRV/ВСР) в мс або null,\n"
+        "  \"weight_kg\": вага в кг або null,\n"
+        "  \"distance_km\": пройдена дистанція в км або null,\n"
+        "  \"bp_systolic\": систолічний тиск або null,\n"
+        "  \"bp_diastolic\": діастолічний тиск або null,\n"
+        "  \"spo2\": рівень кисню в крові % (якщо є лише одне число) або null,\n"
+        "  \"spo2_min\": мінімальний рівень кисню % або null,\n"
+        "  \"spo2_max\": максимальний рівень кисню % або null,\n"
+        "  \"body_battery\": енергетичний бал (середнє, якщо є діапазон) або null,\n"
         "  \"date\": \"YYYY-MM-DD\" або null\n"
         "}\n\n"
         f"Текст:\n{text[:4000]}"
     )
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"maxOutputTokens": 500, "temperature": 0, "thinkingConfig": {"thinkingBudget": 0}}
+        "generationConfig": {"maxOutputTokens": 600, "temperature": 0, "thinkingConfig": {"thinkingBudget": 0}}
     }).encode()
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
     try:
@@ -325,19 +342,42 @@ def _gemini_parse(text: str) -> dict:
 def parse_and_save(text: str) -> dict:
     """
     Основна функція: парсить текст QWatch → зберігає → повертає збережений запис.
+
+    AI (Gemini) — ГОЛОВНЕ джерело правди для цифр, regex — лише дешева
+    попередня спроба і аварійний fallback, якщо AI недоступний. Причина:
+    QWatch Pro формулює звіт вільним текстом і порядок слів міняється день
+    у день ("Глибокий сон триває 3:44" замість "3:44 години глибокого
+    сну") — regex на це не розрахований і може або взагалі не знайти
+    поле, або, гірше, тихо зловити НЕПРАВИЛЬНЕ число (напр. переплутати
+    легкий сон з загальним, якщо збіглась лише частина фрази). Gemini читає
+    текст як людина і не залежить від точного формулювання, тому саме його
+    результат вирішальний щоразу, коли він відповів — regex підставляється
+    тільки туди, де AI повернув null або взагалі не відповів (мережева
+    помилка). Це і є "тільки AI стежить за актуальністю даних".
     """
-    # Спочатку regex
+    # Дешева попередня спроба — і аварійний fallback, якщо AI недоступний.
     record = parse_qwatch_text(text)
 
-    # Якщо мало полів — допарсуємо через Gemini
-    fields = [record.get(f) for f in ["steps", "sleep_total_min", "hr_avg", "hrv"]]
-    if fields.count(None) >= 2:
-        print("qwatch: few fields from regex, trying Gemini...")
+    gemini_data = {}
+    try:
         gemini_data = _gemini_parse(text)
-        # Merge — regex має пріоритет
+    except Exception as e:
+        print(f"qwatch: gemini parse failed, falling back to regex only: {e}")
+
+    if gemini_data:
+        applied = []
         for k, v in gemini_data.items():
-            if k not in record or record[k] is None:
-                record[k] = v
+            if v is None:
+                continue
+            if k == "date":
+                continue  # дату вже визначено нижче/regex-ом — не даємо AI її плутати
+            if record.get(k) != v:
+                applied.append(k)
+            record[k] = v  # AI виграє завжди, коли дав відповідь
+        if applied:
+            print(f"qwatch: Gemini set/corrected {applied}")
+    else:
+        print("qwatch: Gemini returned nothing — using regex-only result")
 
     # Нормалізуємо дату
     if not record.get("date"):

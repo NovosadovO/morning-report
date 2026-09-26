@@ -186,7 +186,7 @@ class IntelligentListener:
             from monitor import get_calendar_events_upcoming
             events = get_calendar_events_upcoming(minutes_ahead=120)
             routine = ["shower", "water", "tea", "чай", "душ", "вода", "сауна",
-                       "armolopid", "армолопід", "run", "біг"]
+                       "run", "біг"]
             return [e for e in events if not any(r in str(e).lower() for r in routine)]
         except Exception as e:
             self._log(f"Calendar check error: {e}")
@@ -345,7 +345,7 @@ class IntelligentListener:
             from monitor import get_calendar_events_upcoming
             events = get_calendar_events_upcoming(minutes_ahead=90)
             routine = ["shower", "water", "tea", "чай", "душ", "вода", "сауна",
-                       "armolopid", "армолопід", "run", "біг"]
+                       "run", "біг"]
             real_events = [e for e in events if not any(r in str(e).lower() for r in routine)]
             return real_events
         except Exception:

@@ -340,7 +340,6 @@ def _build_system(ctx: dict, state: dict) -> str:
         f"• Вага: {ctx.get('weight','невідома')}",
         f"• Здоров'я: {ctx.get('health','немає даних')}",
         f"• Звички сьогодні: {ctx.get('habits','не відмічені')}",
-        f"• Ліки: {ctx.get('meds','невідомо')}",
     ]
     if ctx.get("calendar"):
         lines.append(f"• Календар сьогодні: {ctx['calendar'][:300]}")
@@ -504,10 +503,6 @@ def check_proactive():
         )
 
     # ── Нагадування про воду — ВИДАЛЕНО (обробляється check_water_reminder() в monitor.py) ──
-
-    # ── Нагадування про ліки — ВИДАЛЕНО (обробляється check_meds_reminder() в meds.py) ──
-    # elif 8 <= h < 10 and not _already_sent("meds_reminder"):
-    #     ... (дублювало meds.py, породжувало 4+ повідомлення)
 
     # ── Питання про пробіжку (вільний день, 09:00–11:00) ─────────────────────
     elif 9 <= h < 11 and status == "home" and ctx.get("shift_today") == "free" and not _already_sent("run_question"):

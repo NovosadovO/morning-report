@@ -453,23 +453,6 @@ def run_weekly_plan_watcher():
         time.sleep(60)
 
 
-def run_meds_reminder_watcher():
-    """Нагадування про Armolopid Plus — перевірка кожну хвилину (новий meds.py)."""
-    print("=== Starting meds reminder watcher ===", flush=True)
-    time.sleep(85)
-    while True:
-        try:
-            import importlib.util, os
-            spec = importlib.util.spec_from_file_location(
-                "meds", os.path.join(os.path.dirname(__file__), "meds.py"))
-            mod = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(mod)
-            mod.check_meds_reminder()
-        except Exception as e:
-            print(f"Meds reminder watcher error: {e}", flush=True)
-        time.sleep(60)
-
-
 def run_weight_reminder_watcher():
     """Нагадування зважитись — перевірка кожну хвилину."""
     print("=== Starting weight reminder watcher ===", flush=True)
@@ -533,7 +516,6 @@ threading.Thread(target=run_morning_brief_watcher,    daemon=True).start()
 threading.Thread(target=run_crypto_alert_watcher,     daemon=True).start()
 threading.Thread(target=run_etf_alert_watcher,        daemon=True).start()
 threading.Thread(target=run_weekly_plan_watcher,      daemon=True).start()
-threading.Thread(target=run_meds_reminder_watcher,    daemon=True).start()
 threading.Thread(target=run_weight_reminder_watcher,  daemon=True).start()
 threading.Thread(target=run_traffic_shift_watcher,    daemon=True).start()
 threading.Thread(target=run_day_summary_watcher,      daemon=True).start()
@@ -802,7 +784,7 @@ def run_astro_watcher():
             morning_key = f"{today}_morning"
             if not _astro_gh_sent(morning_key):
                 try:
-                    from meds import _get_today_shift_type
+                    from monitor import _get_today_shift_type
                     shift = _get_today_shift_type()
                 except Exception:
                     shift = "weekend"

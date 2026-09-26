@@ -1152,6 +1152,97 @@ def _get_google_token(creds_data, scope):
             return json.loads(r.read())["access_token"]
 
 
+def _get_today_shift_type():
+    """
+    Повертає:
+      'early'      — є рання зміна сьогодні
+      'night'      — нічна зміна сьогодні
+      'after_night'— вчора була нічна і зараз < 15:00
+      'weekend'    — вихідний або нема змін
+    """
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS", "")
+    if not creds_json:
+        return "weekend"
+
+    try:
+        import json as _json
+        creds_data = _json.loads(creds_json)
+
+        token   = _get_google_token(creds_data, "https://www.googleapis.com/auth/calendar.readonly")
+        headers = {"Authorization": f"Bearer {token}"}
+        cal_id  = "novosadovoleg%40gmail.com"
+
+        now_utc   = datetime.now(timezone.utc)
+        now_local_ = now_utc + timedelta(hours=2)
+        h_now     = now_local_.hour
+
+        # ── Сьогоднішні події ──────────────────────────────────────────
+        day_start = now_utc.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(hours=2)
+        day_end   = day_start + timedelta(hours=24)
+
+        url = (
+            f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+            f"?timeMin={urllib.parse.quote(day_start.isoformat())}"
+            f"&timeMax={urllib.parse.quote(day_end.isoformat())}"
+            f"&singleEvents=true&orderBy=startTime&maxResults=20"
+        )
+        try:
+            if _HAS_REQUESTS:
+                r = _requests.get(url, headers=headers, timeout=15)
+                r.raise_for_status()
+                today_events = r.json().get("items", [])
+            else:
+                req = urllib.request.Request(url, headers=headers)
+                with urllib.request.urlopen(req, timeout=15) as r:
+                    today_events = json.loads(r.read()).get("items", [])
+        except Exception:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as r:
+                today_events = json.loads(r.read()).get("items", [])
+
+        for ev in today_events:
+            summary = ev.get("summary", "").lower()
+            if any(x in summary for x in ["рання", "ранн", "early"]):
+                return "early"
+            if any(x in summary for x in ["нічна", "нічн", "night"]):
+                return "night"
+
+        # ── Вчорашні події (after_night) ───────────────────────────────
+        if h_now < 15:
+            yest_start = day_start - timedelta(hours=24)
+            yest_end   = day_start
+            url2 = (
+                f"https://www.googleapis.com/calendar/v3/calendars/{cal_id}/events"
+                f"?timeMin={urllib.parse.quote(yest_start.isoformat())}"
+                f"&timeMax={urllib.parse.quote(yest_end.isoformat())}"
+                f"&singleEvents=true&orderBy=startTime&maxResults=20"
+            )
+            try:
+                if _HAS_REQUESTS:
+                    r2 = _requests.get(url2, headers=headers, timeout=15)
+                    r2.raise_for_status()
+                    yest_events = r2.json().get("items", [])
+                else:
+                    req2 = urllib.request.Request(url2, headers=headers)
+                    with urllib.request.urlopen(req2, timeout=15) as r2:
+                        yest_events = json.loads(r2.read()).get("items", [])
+            except Exception:
+                req2 = urllib.request.Request(url2, headers=headers)
+                with urllib.request.urlopen(req2, timeout=15) as r2:
+                    yest_events = json.loads(r2.read()).get("items", [])
+
+            for ev in yest_events:
+                summary = ev.get("summary", "").lower()
+                if any(x in summary for x in ["нічна", "нічн", "night"]):
+                    return "after_night"
+
+        return "weekend"
+
+    except Exception as e:
+        print(f"shift_type calendar error: {e}")
+        return "weekend"
+
+
 def _get_all_calendar_ids(headers):
     """Повертає список всіх calendar_id з Google Calendar (всі підписані календарі)."""
     try:
@@ -1318,7 +1409,7 @@ def get_calendar_events_upcoming(minutes_ahead=90):
 # Рутинні/повторювані події, які НЕ показуємо у блоці "Найближчі події"
 _ROUTINE_EVENT_KEYS = [
     "біг", "вода", "чай", "сауна", "зміна", "рання", "нічна",
-    "armolopid", "армолопід", "навчання інвест", "чек крипто", "пошта",
+    "навчання інвест", "чек крипто", "пошта",
     "медитац", "розтяж", "сон", "крок", "вправ", "прокидан", "відбій",
     "💧", "🍵", "🏃", "🧖", "💊", "📈", "💹", "📬",
 ]
@@ -4638,7 +4729,6 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
         "Ти — персональний асистент Олега Новосадова (живе в Кошіце, Словаччина). "
         "Олег: завод Minebea Mitsumi, змінна робота (рання 06-18 / нічна 18-06 / вихідний), "
         "цілі — схуднути до 75 кг, регулярно бігати, інвестиції в крипто (BTC,ETH,AVAX,ONDO), "
-        "приймає ліки Armolopid щодня (курс 27.04–27.07.2026). "
         "Стиль: як близький друг — по-українськи, без шаблонних фраз. "
         "Враховуй ПОДІЇ КАЛЕНДАРЯ — якщо є заплановане, пов'яжи пораду з цим. "
         "Якщо нічого не заплановано — підкажи що зробити виходячи з цілей. "
@@ -5408,10 +5498,9 @@ def check_event_done():
                 events = json.loads(r.read()).get("items", [])
 
         # Фільтруємо зміни і нічні — не питати про них
-        # armolopid/ліки — є окремий /ліки функціонал, recurring events → не питати через event_done
         SKIP_KEYWORDS = {
             "нічна", "рання зміна", "night shift", "early shift", "відпустка", "вихідний",
-            "armolopid", "ліки", "таблетк", "medication", "pill", "навчання", "чек крипто",
+            "ліки", "таблетк", "medication", "pill", "навчання", "чек крипто",
             "пошта", "📈", "💹", "📬"
         }
 
@@ -5599,7 +5688,7 @@ def check_day_summary():
     # Час відправки залежить від зміни: нічна → 23:30, рання/вихідний → 21:30
     try:
         import sys as _sys; _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from meds import _get_today_shift_type as _gts
+        _gts = _get_today_shift_type
         _shift = _gts()
     except Exception:
         _shift = "weekend"
@@ -5671,21 +5760,6 @@ def check_day_summary():
         s_ico = "😴✅" if sleep_v >= 7.5 else ("😴⚠️" if sleep_v >= 6 else "😴❌")
         lines_out.append(f"   😴 Сон  {sleep_v}г  {s_ico}")
     lines_out.append("")
-
-    # ── Ліки ────────────────────────────────────────────────────────────────
-    try:
-        from storage import load_meds as _lmeds
-        meds_db = _lmeds()
-        meds_taken = meds_db.get(today)
-        if meds_taken is True:
-            lines_out.append("💊 <b>Armolopid Plus</b>  ✅ Прийнято")
-        elif meds_taken is False:
-            lines_out.append("💊 <b>Armolopid Plus</b>  ❌ <b>НЕ ПРИЙНЯТО!</b>")
-        else:
-            lines_out.append("💊 <b>Armolopid Plus</b>  ⬜ Не відмічено — прийняв?")
-        lines_out.append("")
-    except Exception:
-        pass
 
     # ── Вага + мінітренд ────────────────────────────────────────────────────
     try:
@@ -6071,7 +6145,7 @@ def check_health_data_reminder():
 
     # Визначаємо час залежно від зміни
     try:
-        from meds import _get_today_shift_type as _gst_hr
+        _gst_hr = _get_today_shift_type
         _shift_hr = _gst_hr()
     except Exception:
         _shift_hr = "weekend"
@@ -6633,7 +6707,7 @@ def check_smart_notifications():
 
             ai_txt = _ai_personal_message(
                 "Олег прокидається о 04:30 на ранню зміну (06:00–18:00). "
-                "Нагадай про сніданок, ліки Armolopid, підбадьори конкретно на основі реальних даних.",
+                "Нагадай про сніданок, підбадьори конкретно на основі реальних даних.",
                 {"Погода в Кошіце": weather_ctx} if weather_ctx else None,
                 max_tokens=180
             )
@@ -6647,7 +6721,7 @@ def check_smart_notifications():
                 f"│  ☀️ Рання зміна  06:00–18:00  │\n"
                 f"│  🚶 Вихід приблизно о 05:30  │\n"
                 f"└─────────────────────────┘\n"
-                f"💊 Armolopid  ·  🍳 Сніданок  ·  👕 Одяг\n\n"
+                f"🍳 Сніданок  ·  👕 Одяг\n\n"
             )
             send_telegram(header + (ai_txt or "Вперед — ти впораєшся!"))
             mark("pre_early")
@@ -6689,7 +6763,7 @@ def check_smart_notifications():
         elif today_shift == "night" and h == 16 and 30 <= m < 35 and not sent("pre_night"):
             ai_txt = _ai_personal_message(
                 "Олег готується до нічної зміни (18:00–06:00), старт через 1.5 години. "
-                "Нагадай поїсти зараз (до 06:00 не буде можливості), прийняти Armolopid, "
+                "Нагадай поїсти зараз (до 06:00 не буде можливості), "
                 "коротко підбадьори. Дуже конкретно, 2-3 речення.",
                 None,
                 max_tokens=180
@@ -6700,7 +6774,7 @@ def check_smart_notifications():
                 f"  🕕 Старт: 18:00  ·  🕕 Фініш: 06:00\n"
                 f"  🚶 Вихід о 17:50–18:00\n"
                 f"{'─' * 28}\n"
-                f"☑️ Поїж зараз  ·  💊 Armolopid  ·  ☕ Термос\n\n"
+                f"☑️ Поїж зараз  ·  ☕ Термос\n\n"
             )
             send_telegram(header + (ai_txt or "Хорошої зміни! Ти справишся 🌙"))
             mark("pre_night")
@@ -6780,8 +6854,7 @@ def check_smart_notifications():
                     f"  😴 Лягай до 22:30\n"
                     f"  ⏰ Поставь будильник 04:30\n"
                     f"  👕 Приготуй одяг і їжу\n"
-                    f"  💊 Armolopid на ранок (поруч)\n\n"
-                    f"<i>Хороший сон = успішна зміна!</i>"
+                                    f"<i>Хороший сон = успішна зміна!</i>"
                 )
             else:
                 send_telegram(
@@ -6794,8 +6867,7 @@ def check_smart_notifications():
                     f"  😴 Поспи вдень якщо зможеш\n"
                     f"  🍽 Поїж о 17:00–17:30 (до 06:00 більше не буде)\n"
                     f"  ☕ Підготуй термос з чаєм\n"
-                    f"  💊 Armolopid після обіду\n\n"
-                    f"<i>Ти впораєшся, нічна — твій режим 💪</i>"
+                                    f"<i>Ти впораєшся, нічна — твій режим 💪</i>"
                 )
             mark("tomorrow_plan")
 
@@ -9909,7 +9981,7 @@ def _check_event_reminders(gmail_service, gemini_key: str = None) -> list:
             title = event.get('summary', 'Без назви')
             
             # Фільтруємо рутину
-            routine_keywords = ['біг', 'вода', 'чай', 'сауна', 'зміна', 'armolopid', 'ванна', 'душ']
+            routine_keywords = ['біг', 'вода', 'чай', 'сауна', 'зміна', 'ванна', 'душ']
             if any(kw.lower() in title.lower() for kw in routine_keywords):
                 continue
             
@@ -10432,16 +10504,6 @@ def main():
                 breakdown["Кроки"] = k
             except: pass
 
-            # Ліки (10 балів)
-            try:
-                mdb = storage.load_meds()
-                if mdb.get(_today_rep) is True:
-                    score += 10
-                    breakdown["Ліки"] = 10
-                else:
-                    breakdown["Ліки"] = 0
-            except: pass
-
             # Біг сьогодні або вчора (10 балів)
             try:
                 from strava import get_last_activity as _gla_sc
@@ -10756,17 +10818,6 @@ def main():
             _health_lines.append(_st_header + "\n" + "\n".join(_st_rows))
             if _st_empty == 7:
                 _health_lines.append("  <i>📲 Синхронізуй QWatch або надішли /health_export</i>")
-        except Exception: pass
-
-        # Ліки
-        try:
-            from storage import load_meds as _lmeds_h
-            _meds_db = _lmeds_h()
-            _taken = _meds_db.get(_today_rep)
-            if _taken:
-                _health_lines.append("💊 Armolopid: ✅ <b>прийнято</b>")
-            else:
-                _health_lines.append("💊 Armolopid: ❌ <b>не відмічено</b> — прийняв?")
         except Exception: pass
 
         # Звички сьогодні — рядок іконок
@@ -11105,7 +11156,7 @@ def main():
                     return "🌾"
                 if any(k in t for k in ["мило","шампун","гель","зубн","туалет","паперов","косметик","крем","дезодорант"]):
                     return "🧴"
-                if any(k in t for k in ["ліки","таблетк","вітамін","аптек","препарат","armolopid","армолопід"]):
+                if any(k in t for k in ["ліки","таблетк","вітамін","аптек","препарат"]):
                     return "💊"
                 if any(k in t for k in ["спорт","протеїн","добавк","bcaa","омег"]):
                     return "💪"
@@ -11641,11 +11692,11 @@ def check_calendar_reminders():
             s_lower = summary.lower()
             if "нічна" in s_lower:
                 emoji = "🌙"
-                ev_tip = "Поїж перед виходом  ·  Armolopid  ·  Термос"
+                ev_tip = "Поїж перед виходом  ·  Термос"
                 ev_style = "shift_night"
             elif "рання" in s_lower:
                 emoji = "☀️"
-                ev_tip = "Приготуй одяг  ·  Сніданок  ·  Armolopid"
+                ev_tip = "Приготуй одяг  ·  Сніданок"
                 ev_style = "shift_early"
             elif "birthday" in s_lower or "народження" in s_lower:
                 emoji = "🎂"
@@ -12179,7 +12230,6 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
         "Ти — персональний асистент Олега Новосадова (живе в Кошіце, Словаччина). "
         "Олег: завод Minebea Mitsumi, змінна робота (рання 06-18 / нічна 18-06 / вихідний), "
         "цілі — схуднути до 75 кг, регулярно бігати, інвестиції в крипто (BTC,ETH,AVAX,ONDO), "
-        "приймає ліки Armolopid щодня (курс 27.04–27.07.2026). "
         "Стиль: як близький друг — по-українськи, без шаблонних фраз. "
         "Враховуй ПОДІЇ КАЛЕНДАРЯ — якщо є заплановане, пов'яжи пораду з цим. "
         "Якщо нічого не заплановано — підкажи що зробити виходячи з цілей. "
@@ -12949,10 +12999,9 @@ def check_event_done():
                 events = json.loads(r.read()).get("items", [])
 
         # Фільтруємо зміни і нічні — не питати про них
-        # armolopid/ліки — є окремий /ліки функціонал, recurring events → не питати через event_done
         SKIP_KEYWORDS = {
             "нічна", "рання зміна", "night shift", "early shift", "відпустка", "вихідний",
-            "armolopid", "ліки", "таблетк", "medication", "pill", "навчання", "чек крипто",
+            "ліки", "таблетк", "medication", "pill", "навчання", "чек крипто",
             "пошта", "📈", "💹", "📬"
         }
 
@@ -13140,7 +13189,7 @@ def check_day_summary():
     # Час відправки залежить від зміни: нічна → 23:30, рання/вихідний → 21:30
     try:
         import sys as _sys; _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from meds import _get_today_shift_type as _gts
+        _gts = _get_today_shift_type
         _shift = _gts()
     except Exception:
         _shift = "weekend"
@@ -13212,21 +13261,6 @@ def check_day_summary():
         s_ico = "😴✅" if sleep_v >= 7.5 else ("😴⚠️" if sleep_v >= 6 else "😴❌")
         lines_out.append(f"   😴 Сон  {sleep_v}г  {s_ico}")
     lines_out.append("")
-
-    # ── Ліки ────────────────────────────────────────────────────────────────
-    try:
-        from storage import load_meds as _lmeds
-        meds_db = _lmeds()
-        meds_taken = meds_db.get(today)
-        if meds_taken is True:
-            lines_out.append("💊 <b>Armolopid Plus</b>  ✅ Прийнято")
-        elif meds_taken is False:
-            lines_out.append("💊 <b>Armolopid Plus</b>  ❌ <b>НЕ ПРИЙНЯТО!</b>")
-        else:
-            lines_out.append("💊 <b>Armolopid Plus</b>  ⬜ Не відмічено — прийняв?")
-        lines_out.append("")
-    except Exception:
-        pass
 
     # ── Вага + мінітренд ────────────────────────────────────────────────────
     try:
@@ -13612,7 +13646,7 @@ def check_health_data_reminder():
 
     # Визначаємо час залежно від зміни
     try:
-        from meds import _get_today_shift_type as _gst_hr
+        _gst_hr = _get_today_shift_type
         _shift_hr = _gst_hr()
     except Exception:
         _shift_hr = "weekend"
@@ -14174,7 +14208,7 @@ def check_smart_notifications():
 
             ai_txt = _ai_personal_message(
                 "Олег прокидається о 04:30 на ранню зміну (06:00–18:00). "
-                "Нагадай про сніданок, ліки Armolopid, підбадьори конкретно на основі реальних даних.",
+                "Нагадай про сніданок, підбадьори конкретно на основі реальних даних.",
                 {"Погода в Кошіце": weather_ctx} if weather_ctx else None,
                 max_tokens=180
             )
@@ -14188,7 +14222,7 @@ def check_smart_notifications():
                 f"│  ☀️ Рання зміна  06:00–18:00  │\n"
                 f"│  🚶 Вихід приблизно о 05:30  │\n"
                 f"└─────────────────────────┘\n"
-                f"💊 Armolopid  ·  🍳 Сніданок  ·  👕 Одяг\n\n"
+                f"🍳 Сніданок  ·  👕 Одяг\n\n"
             )
             send_telegram(header + (ai_txt or "Вперед — ти впораєшся!"))
             mark("pre_early")
@@ -14230,7 +14264,7 @@ def check_smart_notifications():
         elif today_shift == "night" and h == 16 and 30 <= m < 35 and not sent("pre_night"):
             ai_txt = _ai_personal_message(
                 "Олег готується до нічної зміни (18:00–06:00), старт через 1.5 години. "
-                "Нагадай поїсти зараз (до 06:00 не буде можливості), прийняти Armolopid, "
+                "Нагадай поїсти зараз (до 06:00 не буде можливості), "
                 "коротко підбадьори. Дуже конкретно, 2-3 речення.",
                 None,
                 max_tokens=180
@@ -14241,7 +14275,7 @@ def check_smart_notifications():
                 f"  🕕 Старт: 18:00  ·  🕕 Фініш: 06:00\n"
                 f"  🚶 Вихід о 17:50–18:00\n"
                 f"{'─' * 28}\n"
-                f"☑️ Поїж зараз  ·  💊 Armolopid  ·  ☕ Термос\n\n"
+                f"☑️ Поїж зараз  ·  ☕ Термос\n\n"
             )
             send_telegram(header + (ai_txt or "Хорошої зміни! Ти справишся 🌙"))
             mark("pre_night")
@@ -14321,8 +14355,7 @@ def check_smart_notifications():
                     f"  😴 Лягай до 22:30\n"
                     f"  ⏰ Поставь будильник 04:30\n"
                     f"  👕 Приготуй одяг і їжу\n"
-                    f"  💊 Armolopid на ранок (поруч)\n\n"
-                    f"<i>Хороший сон = успішна зміна!</i>"
+                                    f"<i>Хороший сон = успішна зміна!</i>"
                 )
             else:
                 send_telegram(
@@ -14335,8 +14368,7 @@ def check_smart_notifications():
                     f"  😴 Поспи вдень якщо зможеш\n"
                     f"  🍽 Поїж о 17:00–17:30 (до 06:00 більше не буде)\n"
                     f"  ☕ Підготуй термос з чаєм\n"
-                    f"  💊 Armolopid після обіду\n\n"
-                    f"<i>Ти впораєшся, нічна — твій режим 💪</i>"
+                                    f"<i>Ти впораєшся, нічна — твій режим 💪</i>"
                 )
             mark("tomorrow_plan")
 

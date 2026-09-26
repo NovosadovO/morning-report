@@ -115,11 +115,6 @@ def _src_strava():
     return _cut(strava.format_strava_block(), 600)
 
 
-def _src_meds():
-    import context
-    return _cut(context._get_meds_context(), 300)
-
-
 def _src_habits():
     import context
     return _cut(context._get_habits_context(), 300)
@@ -193,7 +188,6 @@ SOURCES = [
     ("weight", "⚖️ ВАГА", _src_weight),
     ("sleep", "😴 СОН", _src_sleep),
     ("strava", "🏃 STRAVA", _src_strava),
-    ("meds", "💊 ЛІКИ", _src_meds),
     ("habits", "🔁 ЗВИЧКИ", _src_habits),
     ("emails", "📧 ПОШТА", _src_emails),
     ("crypto", "🪙 КРИПТО (ринок)", _src_crypto),

@@ -701,7 +701,7 @@ def _should_send_message(trigger_type: str, trigger_data) -> bool:
         if isinstance(trigger_data, dict):
             return any(abs(v) > 5 for v in trigger_data.values())
     if trigger_type == "event_soon":
-        routine = ["shower","water","tea","чай","душ","вода","сауна","armolopid","армолопід"]
+        routine = ["shower","water","tea","чай","душ","вода","сауна"]
         if isinstance(trigger_data, list):
             return any(not any(r in str(e).lower() for r in routine) for e in trigger_data)
     if trigger_type == "idle_timeout":
