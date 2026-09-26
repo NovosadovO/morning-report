@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Crypto.com NFT оновив умови користування. Потрібно перегляну",
-      "detail": "Свіжий лист від 'Crypto.com NFT' з важливою інформацією про зміну умов.",
-      "module": "selfact",
-      "ts": "2026-09-22T13:39:07"
-    },
-    {
-      "kind": "notify",
       "what": "У Reserved почався міжсезонний розпродаж. Можеш переглянути",
       "detail": "Свіжий лист від Reserved про розпродаж.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-09-26T14:05:48"
+    },
+    {
+      "kind": "notify",
+      "what": "Олег, зверни увагу на новини криптосвіту: за останній тижден",
+      "detail": "З листа від The Defiant <no-reply@mail.thedefiant.io> | Weekly Recap: Bitget's $387.5 Million Hack",
+      "module": "selfact",
+      "ts": "2026-09-26T14:13:25"
     }
   ]
 }
