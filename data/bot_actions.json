@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нагадую, що фонд The Innovators Fund, який дає доступ до Ope",
-      "detail": "Олег отримав лист від Ben at StartEngine про закриття Innovators Fund, який дає доступ до OpenAI. Це важлива інформація, яка вимагає негайної уваги, якщо Олег зацікавлений в інвестиціях.",
-      "module": "selfact",
-      "ts": "2026-09-22T21:41:00"
-    },
-    {
-      "kind": "notify",
       "what": "Фонд The Innovators Fund, який пропонує доступ до OpenAI, за",
       "detail": "Олег отримав лист від Ben at StartEngine з нагадуванням, що The Innovators Fund, який надає доступ до OpenAI, закривається цього тижня.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "",
       "module": "healthai",
       "ts": "2026-09-26T22:05:42"
+    },
+    {
+      "kind": "reminder",
+      "what": "нагадування надіслати дані",
+      "detail": "10 год мовчання",
+      "module": "healthai",
+      "ts": "2026-09-26T22:10:10"
     }
   ]
 }
