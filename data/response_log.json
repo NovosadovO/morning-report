@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T07:44:17.372933+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cfm_y_77111c89f2"
-    },
-    {
       "ts": "2026-08-08T07:55:18.857596+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13897,6 +13891,15 @@
       "category": "deadline_found",
       "question": "Відновлення виведення Bitcoin на Bitget",
       "answer": "2026-09-28",
+      "extra": {
+        "kind": "other"
+      }
+    },
+    {
+      "ts": "2026-09-26T18:47:10.911915+00:00",
+      "category": "deadline_found",
+      "question": "Відновлення виведення Ether на Bitget",
+      "answer": "2026-09-29",
       "extra": {
         "kind": "other"
       }
