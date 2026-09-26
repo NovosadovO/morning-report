@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T02:43:58.872464",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Railway <hello@news.railway.app> → Free VMs without an account, tracing, OpenCode on Cloud Agents\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T02:43:59.670120",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Railway  → Free VMs without an account, tracing, OpenCode on Cloud Agents\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 5 — можна пропустити.",
@@ -399,6 +393,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-26T02:46:13.778963",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Railway\n📋 Free VMs without an account, tracing, OpenCode on Cloud Agen\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
