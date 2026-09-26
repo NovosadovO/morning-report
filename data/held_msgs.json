@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T02:01:29.410456",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Free VMs without an account, tracing, OpenCode on Cloud Agen</b>\n👤 Railway &lt;hello@news.railway.app&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79762"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79762"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79762"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79762"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79762"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79762"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-26T02:01:30.548625",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -305,6 +266,12 @@
       "ts": "2026-09-26T02:03:27.221134",
       "kind": "calendar",
       "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 10-й дім: Кар’єра й статус\n📅 30.09 (Wed) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T02:03:41.813357",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Railway <hello@news.railway.app> → Free VMs without an account, tracing, OpenCode on Cloud Agents\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Avalanche Summit <contact@avax.network> → Real Business, Real Momentum: Avalanche Summit Lands in NYC\n\n🧹 Реклама: 4 — можна пропустити.",
       "keyboard": null
     }
   ]
