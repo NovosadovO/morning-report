@@ -108,7 +108,7 @@ def _src_sleep():
 
 
 def _src_strava():
-    import strava
+    import running as strava
     if strava.api_blocked():
         return "Strava API заблоковано: " + _cut(strava.app_inactive_reason(), 160) \
                + " → дані лише з кешу, свіжих НЕМА"

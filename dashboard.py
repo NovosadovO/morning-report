@@ -95,7 +95,7 @@ def generate_dashboard():
         pos_y += 60
         
         # СЕКЦІЯ: Strava
-        draw.text((50, pos_y), "🏃 STRAVA", fill=HEADER_COLOR, font=section_font)
+        draw.text((50, pos_y), "🏃 БІГ", fill=HEADER_COLOR, font=section_font)
         pos_y += 80
         draw.text((50, pos_y), "📅 Тиждень: — км", fill=ACCENT_COLOR, font=value_font)
         pos_y += 120

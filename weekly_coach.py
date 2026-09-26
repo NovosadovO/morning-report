@@ -84,7 +84,7 @@ def _collect_week_data():
 
     # ── Strava / Біг ──
     try:
-        from strava import get_week_stats, get_last_activity
+        from running import get_week_stats, get_last_activity
         week = get_week_stats()
         last = get_last_activity()
         data["strava"] = {

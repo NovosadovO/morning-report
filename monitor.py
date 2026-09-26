@@ -8628,13 +8628,20 @@ _STRAVA_LAST_ACT_FILE = os.path.join(_DATA_DIR, "monitor_strava_last_activity.js
 
 def check_strava_new_activity():
     """
-    Перевіряє кожні 10 хв: чи є нова активність у Strava.
-    Якщо є — надсилає результат + AI аналіз темпу і порівняння з попереднім.
+    ВІДКЛЮЧЕНО (26.09.2026): Strava видалена (403 Application/Inactive, платна
+    підписка API з 2026). Раніше цей watcher кожні 10 хв пітчав Strava API,
+    щоб зловити нову активність, яка синхронізувалась із затримкою.
+    Тепер запис ручний — bot.py відразу шле send_confirmation() в момент,
+    коли Олег написав про пробіжку (running.parse_and_save), тож окремий
+    watcher/поллінг тут більше не потрібен і лише зайве навантаження.
+    Функція лишена як no-op, щоб monitor_loop.py, який її й досі кличе
+    кожні 10 хв, не впав.
     """
+    return
     try:
         import sys as _sys_s
         _sys_s.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import get_activities
+        from running import get_activities
 
         state = load_json_file(_STRAVA_LAST_ACT_FILE, default={})
         last_id = state.get("last_id")
@@ -8700,7 +8707,7 @@ def check_strava_new_activity():
 
         # Тижнева статистика
         try:
-            from strava import get_week_stats
+            from running import get_week_stats
             wk = get_week_stats()
             if wk:
                 goal_km = 40
@@ -8757,7 +8764,7 @@ def check_strava_weekly_report():
     try:
         import sys as _sys_sr
         _sys_sr.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import format_weekly_run_report
+        from running import format_weekly_run_report
         from strava_charts import plot_week_chart
 
         text = format_weekly_run_report()
@@ -8781,7 +8788,7 @@ def check_strava_monthly_report():
     try:
         import sys as _sys_mr
         _sys_mr.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import format_monthly_run_report
+        from running import format_monthly_run_report
         from strava_charts import plot_month_chart, plot_year_chart
         from datetime import datetime as _dt_mr
         now = _dt_mr.now()
@@ -8904,7 +8911,7 @@ def check_stress_alert():
     # Сигнал 1: дні без бігу
     try:
         import sys as _sys_sa; _sys_sa.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import get_last_activity
+        from running import get_last_activity
         last_act = get_last_activity()
         if last_act:
             when = last_act.get("when", "")
@@ -9065,7 +9072,7 @@ def check_monthly_summary():
     # Strava — пробіжки за місяць
     try:
         import sys as _sys_ms; _sys_ms.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import get_activities
+        from running import get_activities
         import calendar as _cal
         _, last_day = _cal.monthrange(prev_month_end.year, prev_month_end.month)
         after_ts  = int(prev_month_start.replace(tzinfo=timezone.utc).timestamp())
@@ -9191,7 +9198,7 @@ def get_weekly_dashboard() -> str:
     # 1. Біг
     try:
         import sys as _sys_wd; _sys_wd.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import get_week_stats, get_last_activity
+        from running import get_week_stats, get_last_activity
         wk = get_week_stats()
         la = get_last_activity()
         if wk:
@@ -10385,7 +10392,7 @@ def main():
             # Зберемо реальні дані: Strava, звички, вага
             _ai_real_ctx = ""
             try:
-                from strava import get_last_activity as _gla
+                from running import get_last_activity as _gla
                 _la = _gla()
                 if _la and _la.get("when") == "сьогодні" and _la.get("distance_km", 0) >= 0.5:
                     _ai_real_ctx += f"Сьогодні вже пробіг: {_la['distance_km']} км за {_la.get('duration_min',0)} хв (темп {_la.get('pace','—')}). "
@@ -10506,7 +10513,7 @@ def main():
 
             # Біг сьогодні або вчора (10 балів)
             try:
-                from strava import get_last_activity as _gla_sc
+                from running import get_last_activity as _gla_sc
                 _lr = _gla_sc()
                 if _lr and _lr.get("when") in ("сьогодні", "вчора"):
                     score += 10
@@ -10843,7 +10850,7 @@ def main():
     try:
         import sys as _sys_strava
         _sys_strava.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import format_strava_block
+        from running import format_strava_block
         _strava_text = format_strava_block()
         if _strava_text:
             parts.append(_section_header("🏃", "БІГОВИЙ ТРЕКЕР") + "\n" + "\n".join(_strava_text.split("\n")[1:]) if "\n" in _strava_text else _section_header("🏃", "БІГОВИЙ ТРЕКЕР") + "\n" + _strava_text)
@@ -11046,7 +11053,7 @@ def main():
             _th_ctx["finance"] = "немає даних"
         # Біг / Strava
         try:
-            from strava import get_last_activity as _gla_th
+            from running import get_last_activity as _gla_th
             _la_th = _gla_th()
             if _la_th and _la_th.get("distance_km", 0) >= 0.3:
                 _stale_warn = " ⚠️СТАРІ ДАНІ, Strava API зараз недоступне, можуть бути неактуальні!" if _la_th.get("stale") else ""
@@ -16129,13 +16136,20 @@ _STRAVA_LAST_ACT_FILE = os.path.join(_DATA_DIR, "monitor_strava_last_activity.js
 
 def check_strava_new_activity():
     """
-    Перевіряє кожні 10 хв: чи є нова активність у Strava.
-    Якщо є — надсилає результат + AI аналіз темпу і порівняння з попереднім.
+    ВІДКЛЮЧЕНО (26.09.2026): Strava видалена (403 Application/Inactive, платна
+    підписка API з 2026). Раніше цей watcher кожні 10 хв пітчав Strava API,
+    щоб зловити нову активність, яка синхронізувалась із затримкою.
+    Тепер запис ручний — bot.py відразу шле send_confirmation() в момент,
+    коли Олег написав про пробіжку (running.parse_and_save), тож окремий
+    watcher/поллінг тут більше не потрібен і лише зайве навантаження.
+    Функція лишена як no-op, щоб monitor_loop.py, який її й досі кличе
+    кожні 10 хв, не впав.
     """
+    return
     try:
         import sys as _sys_s
         _sys_s.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import get_activities
+        from running import get_activities
 
         state = load_json_file(_STRAVA_LAST_ACT_FILE, default={})
         last_id = state.get("last_id")
@@ -16201,7 +16215,7 @@ def check_strava_new_activity():
 
         # Тижнева статистика
         try:
-            from strava import get_week_stats
+            from running import get_week_stats
             wk = get_week_stats()
             if wk:
                 goal_km = 40
@@ -16258,7 +16272,7 @@ def check_strava_weekly_report():
     try:
         import sys as _sys_sr
         _sys_sr.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import format_weekly_run_report
+        from running import format_weekly_run_report
         from strava_charts import plot_week_chart
 
         text = format_weekly_run_report()
@@ -16282,7 +16296,7 @@ def check_strava_monthly_report():
     try:
         import sys as _sys_mr
         _sys_mr.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import format_monthly_run_report
+        from running import format_monthly_run_report
         from strava_charts import plot_month_chart, plot_year_chart
         from datetime import datetime as _dt_mr
         now = _dt_mr.now()
@@ -16405,7 +16419,7 @@ def check_stress_alert():
     # Сигнал 1: дні без бігу
     try:
         import sys as _sys_sa; _sys_sa.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import get_last_activity
+        from running import get_last_activity
         last_act = get_last_activity()
         if last_act:
             when = last_act.get("when", "")
@@ -16566,7 +16580,7 @@ def check_monthly_summary():
     # Strava — пробіжки за місяць
     try:
         import sys as _sys_ms; _sys_ms.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import get_activities
+        from running import get_activities
         import calendar as _cal
         _, last_day = _cal.monthrange(prev_month_end.year, prev_month_end.month)
         after_ts  = int(prev_month_start.replace(tzinfo=timezone.utc).timestamp())
@@ -16692,7 +16706,7 @@ def get_weekly_dashboard() -> str:
     # 1. Біг
     try:
         import sys as _sys_wd; _sys_wd.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from strava import get_week_stats, get_last_activity
+        from running import get_week_stats, get_last_activity
         wk = get_week_stats()
         la = get_last_activity()
         if wk:

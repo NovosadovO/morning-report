@@ -619,11 +619,11 @@ def _make_run_weight_photo(now, today, wdata, run_data, last_run):
     # ══════════════════════════════════════════
     # СЕКЦІЯ БІГ
     # ══════════════════════════════════════════
-    y = _section_header(img, draw, PAD, y, "БІГ — STRAVA", f_sec)
+    y = _section_header(img, draw, PAD, y, "БІГ", f_sec)
 
     # Місячні бари якщо є дані за кілька місяців
     try:
-        from strava import get_year_stats, get_runs
+        from running import get_year_stats, get_runs
         year_data = get_year_stats(today.year)
         monthly = year_data.get("monthly", {})
         all_runs = get_runs(days=120)
@@ -976,7 +976,7 @@ def generate_report_album(period: str = "morning") -> list[bytes]:
     run_data = None
     last_run = None
     try:
-        from strava import get_month_stats, get_runs
+        from running import get_month_stats, get_runs
         run_data = get_month_stats(today.year, today.month)
         runs_list = get_runs(days=90)
         if runs_list:

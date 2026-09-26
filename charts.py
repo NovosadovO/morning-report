@@ -1483,7 +1483,7 @@ def plot_combined_dashboard() -> bytes | None:
 
         try:
             import sys as _sys_r; _sys_r.path.insert(0, _DIR)
-            from strava import get_month_stats as _gms_r
+            from running import get_month_stats as _gms_r
 
             # Місяці з 2026-01 до поточного
             _run_months = []

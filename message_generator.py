@@ -378,7 +378,7 @@ def _get_live_strava() -> dict:
     try:
         import sys, os as _os
         sys.path.insert(0, _os.path.dirname(__file__))
-        from strava import get_activities
+        from running import get_activities
         # Використовуємо централізовану get_activities() з TTL-кешем (10 хв) —
         # уникає прямого HTTP запиту в обхід кешу і зайвого Strava 429 burst
         acts = get_activities(days=7)
@@ -768,7 +768,7 @@ def _generate_message(trigger_type: str, trigger_data, location: str, idle_hours
         trigger_extra = f"\n😴 Олег неактивний {idle_hours:.1f} год | Реальний статус: {real_status}"
     elif trigger_type == "weekly_run_compare":
         try:
-            from strava import compare_weeks
+            from running import compare_weeks
             cmp = compare_weeks()
             tw, pw = cmp.get("this_week", {}), cmp.get("prev_week", {})
             trigger_extra = (

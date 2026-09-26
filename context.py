@@ -514,7 +514,7 @@ def _get_strava_context():
     try:
         import sys
         sys.path.insert(0, os.path.dirname(__file__))
-        from strava import get_last_activity, get_week_stats
+        from running import get_last_activity, get_week_stats
         last = get_last_activity()
         week = get_week_stats()
         parts = []

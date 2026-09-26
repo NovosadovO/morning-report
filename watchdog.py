@@ -3,7 +3,7 @@
 НАГЛЯДАЧ НАД НАГЛЯДАЧАМИ  (watchdog)
 
 Проблема, яку це закриває: бот має ~20 модулів-спостерігачів (пошта, крипто,
-календар, Strava, підписки, дедлайни, здоров'я). Коли якийсь із них тихо
+календар, біг, підписки, дедлайни, здоров'я). Коли якийсь із них тихо
 ламався — Олег про це НЕ дізнавався. Бот просто перестав писати про пошту,
 і все виглядало «нормально». Тиша була неправдою.
 
@@ -68,15 +68,17 @@ def _check_crypto():
     return True, "ціни приходять"
 
 
-def _check_strava():
-    import monitor as _m
-    fn = getattr(_m, "get_activities", None)
-    if not fn:
-        return False, "функції get_activities немає в monitor.py"
-    acts = fn()
-    if acts is None:
-        return False, "Strava API відмовляє (403/токен) — доступ треба поновити"
-    return True, f"активностей у кеші: {len(acts)}"
+def _check_running():
+    # Strava видалена (403 Application/Inactive, платна підписка API з
+    # 2026) — тепер Олег сам пише про пробіжки в Telegram, а running.py
+    # (AI-парсер) записує їх у data/running_data.json. Датчик тут — просто
+    # перевірка, що цей файл читається і немає завислого запису.
+    import running as _r
+    try:
+        acts = _r.get_activities(days=3650)
+    except Exception as e:
+        return False, f"data/running_data.json не читається: {e}"
+    return True, f"записів про біг у файлі: {len(acts)}"
 
 
 def _check_storage():
@@ -91,7 +93,7 @@ LIVE = {
     "пошта": _check_mail,
     "календар": _check_calendar,
     "крипто": _check_crypto,
-    "strava": _check_strava,
+    "біг": _check_running,
     "сховище": _check_storage,
 }
 

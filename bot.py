@@ -2784,7 +2784,7 @@ HELP_TEXT = """
 /rwa — RWA-радар (топ-10 монет + TVL сектора + Restaking TVL)
 /etf — крипто-ETF потоки капіталу (BTC/ETH/SOL spot, SoSoValue)
 
-<b>🏃 Strava / Біг</b>
+<b>🏃 Біг (ручний трекер)</b>
 /біг — аналіз + місячний графік
 /біг тиждень — тижневий звіт + графік прогресу
 /біг місяць — місячний звіт + 2 графіки
@@ -3104,14 +3104,14 @@ def handle_command(chat_id, text):
         _th_b.Thread(target=_run_bills, daemon=True, name="bills-cmd").start()
 
     elif text.lower().strip() in ["/план_бігу", "/runplan", "план бігу", "/біг_план"]:
-        send(chat_id, "🏃 Дивлюсь графік змін і Strava — складаю план...")
+        send(chat_id, "🏃 Дивлюсь графік змін і дані про біг — складаю план...")
         def _run_rp():
             try:
                 import sys as _sr, os as _or
                 _sr.path.insert(0, _or.path.dirname(__file__))
                 import run_planner as _rp_cmd
                 if not _rp_cmd.offer(force=True):
-                    send(chat_id, "⚠️ План не склався — немає даних календаря/Strava. Дивись логи [run_planner].")
+                    send(chat_id, "⚠️ План не склався — немає даних календаря/бігу. Дивись логи [run_planner].")
             except Exception as _e_r:
                 send(chat_id, f"⚠️ Помилка плану бігу: {str(_e_r)[:300]}")
         import threading as _th_r
@@ -3981,35 +3981,20 @@ def handle_command(chat_id, text):
                         lines.append(f"Gemini API: ❌ {_resp.status_code} → {_resp.text[:200]}")
                 except Exception as _ge:
                     lines.append(f"Gemini API: ❌ {type(_ge).__name__}: {str(_ge)[:200]}")
-            # 6. Strava live-перевірка (щоб бачити чи дані актуальні, чи stale-кеш)
+            # 6. Ручний трекер бігу (running.py) — Strava видалено (403 Application/Inactive,
+            # платна підписка API з 2026), тепер Олег сам пише про пробіжки в Telegram.
             try:
                 import sys as _ds, os as _dos
                 _ds.path.insert(0, _dos.path.dirname(__file__))
-                import strava as _dstr
-                import importlib as _dim; _dim.reload(_dstr)
-                # Перевіряємо refresh token і access token окремо, щоб бачити ТОЧНУ причину
-                _rt = _dstr._get_refresh_token()
-                lines.append(f"Strava refresh_token: {'✅ знайдено (' + str(len(_rt)) + ' симв)' if _rt else '❌ НЕМАЄ (ні в env, ні в GitHub)'}")
-                if _rt:
-                    try:
-                        _at = _dstr._get_access_token()
-                        lines.append(f"Strava access_token: ✅ отримано ({_at[:15]}...)")
-                    except Exception as _ate:
-                        lines.append(f"Strava access_token: ❌ {type(_ate).__name__}: {str(_ate)[:250]}")
-                try:
-                    _reason = _dstr.app_inactive_reason()
-                except Exception:
-                    _reason = ""
-                if _reason:
-                    lines.append(f"Strava API: ⛔ {_reason}")
-                _dla = _dstr.get_last_activity()
+                import running as _drun
+                import importlib as _dim; _dim.reload(_drun)
+                _dla = _drun.get_last_activity()
                 if _dla:
-                    _stale_tag = " ⚠️ STALE (API недоступне, старий кеш!)" if _dla.get("stale") else " ✅ LIVE (свіжі дані з API)"
-                    lines.append(f"Strava: {_dla.get('when','?')} ({_dla.get('date','?')}) — {_dla.get('distance_km','?')} км{_stale_tag}")
+                    lines.append(f"Біг (ручний): {_dla.get('when','?')} ({_dla.get('date','?')}) — {_dla.get('distance_km','?')} км, джерело: {_dla.get('notes') and 'AI-текст' or 'ручний'}")
                 else:
-                    lines.append("Strava: ❌ немає даних (ні API, ні кешу)")
+                    lines.append("Біг (ручний): ❌ немає записів — напиши мені про пробіжку вільним текстом")
             except Exception as _se:
-                lines.append(f"Strava: ❌ {type(_se).__name__}: {str(_se)[:150]}")
+                lines.append(f"Біг (ручний): ❌ {type(_se).__name__}: {str(_se)[:150]}")
             send(chat_id, "\n".join(lines))
         except Exception as _e_diag:
             import traceback
@@ -4431,25 +4416,25 @@ def handle_command(chat_id, text):
         except Exception as e:
             send(chat_id, f"⚠️ Помилка: {e}")
 
-    elif text in ["/біг", "біг", "/strava", "/пробіжка"]:
-        send(chat_id, "⏳ Завантажую дані Strava...")
+    elif text in ["/біг", "біг", "/пробіжка"]:
+        send(chat_id, "⏳ Завантажую дані про біг...")
         try:
             import sys as _sys_run, os as _os_run
             _sys_run.path.insert(0, _os_run.path.dirname(_os_run.path.abspath(__file__)))
-            from strava import format_run_analysis
+            from running import format_run_analysis
             from strava_charts import plot_month_chart
             result = format_run_analysis(short=False)
-            send(chat_id, result if result else "⚠️ Немає даних Strava")
+            send(chat_id, result if result else "⚠️ Немає даних про біг — напиши мені про пробіжку вільним текстом")
             chart = plot_month_chart()
             if chart:
                 send_photo(chat_id, chart, caption="📊 Місяць по днях")
         except Exception as e:
-            send(chat_id, f"⚠️ Помилка Strava: {e}")
+            send(chat_id, f"⚠️ Помилка: {e}")
 
     elif text in ["/біг тиждень", "біг тиждень", "/бігтиждень"]:
         send(chat_id, "⏳ Завантажую тижневий звіт...")
         try:
-            from strava import format_weekly_run_report
+            from running import format_weekly_run_report
             from strava_charts import plot_week_chart
             result = format_weekly_run_report()
             send(chat_id, result)
@@ -4462,7 +4447,7 @@ def handle_command(chat_id, text):
     elif text in ["/біг місяць", "біг місяць", "/бігмісяць"]:
         send(chat_id, "⏳ Завантажую місячний звіт...")
         try:
-            from strava import format_monthly_run_report
+            from running import format_monthly_run_report
             from strava_charts import plot_month_chart, plot_week_chart
             result = format_monthly_run_report()
             send(chat_id, result)
@@ -4478,7 +4463,7 @@ def handle_command(chat_id, text):
     elif text in ["/біг рік", "біг рік", "/біграік", "/бігрік"]:
         send(chat_id, "⏳ Завантажую річний звіт...")
         try:
-            from strava import get_year_stats
+            from running import get_year_stats
             from strava_charts import plot_year_chart, plot_week_chart
             ys = get_year_stats()
             from datetime import datetime as _dtr
@@ -7397,6 +7382,34 @@ def process_update(update):
                 except Exception as _hp_err:
                     print(f"[Health] qwatch parse error: {_hp_err}", flush=True)
                     send(chat_id, f"⚠️ QWatch помилка: {_hp_err}")
+                if _st.get("mode") == "awaiting_shopping":
+                    _cs()
+                return
+
+            # ── ВІЛЬНИЙ ТЕКСТ ПРО ПРОБІЖКУ (замінює Strava) ──
+            # Strava з 2026 вимагає платну підписку API — застосунок Олега
+            # деактивований (403 Application/Inactive), автопідтягування
+            # прибрано. Тепер Олег сам пише про пробіжку в Telegram, а AI
+            # (Gemini, running.py) розпізнає дистанцію/час/пульс і зберігає
+            # в data/running_data.json — саме на ньому будуються всі звіти
+            # про біг (день/тиждень/місяць/рік, графіки, AI-коучі).
+            try:
+                import re as _re_run
+                _low_run = text.lower()
+                _run_kw = bool(_re_run.search(r'пробіжк|пробіг|бігав|бігала|трейл|\bбіг\b', _low_run))
+                _run_metric = bool(_re_run.search(r'\d+(?:[.,]\d+)?\s*км', _low_run)) or "хвилин" in _low_run or "пульс" in _low_run
+                _is_running = _run_kw and _run_metric
+            except Exception:
+                _is_running = False
+
+            if _is_running:
+                try:
+                    from running import parse_and_save as _run_save, send_confirmation as _run_confirm
+                    _run_record = _run_save(text)
+                    _run_confirm(_run_record)
+                except Exception as _run_err:
+                    print(f"[Running] parse error: {_run_err}", flush=True)
+                    send(chat_id, f"⚠️ Помилка запису пробіжки: {_run_err}")
                 if _st.get("mode") == "awaiting_shopping":
                     _cs()
                 return

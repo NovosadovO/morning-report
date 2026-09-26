@@ -401,7 +401,7 @@ def analytics(days: int = 30) -> dict:
 
     # біг зі Strava (якщо доступний) — контекст, не критично
     try:
-        import strava
+        import running as strava
         wk = strava.get_week_stats() or {}
         out["run_week_km"] = wk.get("distance_km") or wk.get("km")
     except Exception:

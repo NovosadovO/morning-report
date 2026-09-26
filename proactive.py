@@ -730,7 +730,7 @@ def check_ai_observations():
 
     # Біг — Strava
     try:
-        from strava import get_month_stats as _gms, get_last_activity as _gla
+        from running import get_month_stats as _gms, get_last_activity as _gla
         ms = _gms(now.year, now.month)
         la = _gla()
         run_str = f"Цей місяць: {ms.get('runs',0)} пробіжок, {ms.get('km',0):.1f} км (ціль 40 км)"

@@ -40,7 +40,7 @@ _store = K.PayloadStore(STORE_FILE)
 
 def _running():
     try:
-        import strava
+        import running as strava
         c = strava.compare_weeks()
         t, p = c["this_week"], c["prev_week"]
 

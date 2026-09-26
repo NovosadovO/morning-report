@@ -84,7 +84,7 @@ def plot_week_chart(weeks_back=8):
         return None
     
     try:
-        from strava import get_activities
+        from running import get_activities
         
         # Беремо діяльність за weeks_back * 7 днів
         days_back = weeks_back * 7
@@ -168,7 +168,7 @@ def plot_month_chart(year=None, month=None):
         return None
     
     try:
-        from strava import get_activities
+        from running import get_activities
         
         # Визначаємо період (поточний або заданий місяць)
         now = datetime.now()
@@ -268,7 +268,7 @@ def plot_year_chart(year=None):
         return None
     
     try:
-        from strava import get_activities
+        from running import get_activities
         
         if year is None:
             year = datetime.now().year

@@ -84,7 +84,7 @@ def _collect_month_data():
 
     # ── Strava / Біг ──
     try:
-        from strava import get_month_stats, get_last_activity
+        from running import get_month_stats, get_last_activity
         month = get_month_stats()
         last = get_last_activity()
         data["strava"] = {
