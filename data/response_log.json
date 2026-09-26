@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T07:55:18.857596+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_miss_b5089372b6"
-    },
-    {
       "ts": "2026-08-08T07:55:23.740383+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13900,6 +13894,15 @@
       "category": "deadline_found",
       "question": "Відновлення виведення Ether на Bitget",
       "answer": "2026-09-29",
+      "extra": {
+        "kind": "other"
+      }
+    },
+    {
+      "ts": "2026-09-26T18:47:14.981138+00:00",
+      "category": "deadline_found",
+      "question": "Відновлення виведення USDT на Bitget",
+      "answer": "2026-09-30",
       "extra": {
         "kind": "other"
       }
