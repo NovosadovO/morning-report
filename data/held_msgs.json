@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T03:28:52.123015",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\" <support@profesia.sk> → 14 nových pracovných ponúk\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T03:28:52.820534",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 14 nových pracovných ponúk\n\n🧹 Реклама: 5 — можна пропустити.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79768"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-26T03:31:29.811392",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>SEC Staff Draws A Line On Token Buybacks and Liquid Staking </b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79767"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79767"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79767"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79767"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79767"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79767"
             }
           ]
         ]
