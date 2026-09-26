@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T02:16:42.048518",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>\"How to Yield Farm Like a Degen in 2026\" and 4 more</b>\n👤 Substack &lt;no-reply@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79764"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79764"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79764"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79764"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79764"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79764"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-26T02:16:43.438517",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Web Account Manager в Symprove CEE</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -332,6 +293,12 @@
       "ts": "2026-09-26T02:18:40.047608",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T02:18:42.628529",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>ONDO +5.5% за 24г</b>\n\nЗараз: 0.5516 $\n24г тому: 0.5227 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
