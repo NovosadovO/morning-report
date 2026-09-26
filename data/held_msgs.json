@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T02:24:20.178673",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Railway  → Free VMs without an account, tracing, OpenCode on Cloud Agents\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T02:24:22.815278",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -148,6 +142,12 @@
       "ts": "2026-09-26T02:27:12.480857",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T02:27:15.540190",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>ONDO +6.5% за 24г</b>\n\nЗараз: 0.5536 $\n24г тому: 0.5195 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
