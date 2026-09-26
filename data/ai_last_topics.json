@@ -1,4 +1,9 @@
 {
+  "foresight|2026-09-26t06_20_24_864344": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-26T06:20:24.864344"
+  },
   "email_ai_item|2026-09-26t06_15_48_761339": {
     "topic": "email_ai_item",
     "gist": "```json {\"description\": \"Цей лист є сповіщенням від LinkedIn про нову вакансію Anti-Fraud Officer в компанії Cybertexex, розташованій у Словаччині. Вакансія від",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, зверни увагу: термін дії твоєї підписки Apple закінчується 30.09.2026. Перевір, чи потрібно її продовжити",
     "ts": "2026-09-26T04:06:05.197784"
-  },
-  "action_detect|2026-09-26t04_03_23_403687": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-26T04:03:23.403687"
   }
 }
