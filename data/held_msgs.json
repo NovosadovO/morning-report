@@ -317,6 +317,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-27T00:01:47.207731",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟠 Is the AI trade getting broader, Oleg?</b>\n👤 Investing.com &lt;newsletter@investingmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79790"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79790"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79790"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79790"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79790"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79790"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
