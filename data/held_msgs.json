@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T01:46:16.386530",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Specialist - Operations в iSTYLE Czech Republic</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79800"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79800"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79800"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79800"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79800"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79800"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T01:46:16.975562",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 27.09</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -346,6 +307,12 @@
       "ts": "2026-09-27T01:48:13.883075",
       "kind": "deadlines",
       "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Підписка Apple — закінчення терміну дії\n📆 до 2026-09-30\n🏢 Apple\n\n➡️ Перевірити підписку Apple та вирішити, чи потрібно її продовжувати.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T01:48:15.665535",
+      "kind": "deadlines",
+      "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 3 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Підписка Apple — закінчення</b>\n📆 до <b>2026-09-30</b>\n🏢 Apple\n\n➡️ Перевірити статус підписки Apple та вирішити, чи потрібно її продовжувати.",
       "keyboard": null
     }
   ]
