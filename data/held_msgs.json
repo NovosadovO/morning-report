@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T02:42:44.604826",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T02:42:45.326865",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T02:45:59.748632",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Manager Digital Operations Support в Caterpillar Inc.</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79766"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79766"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79766"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79766"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79766"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79766"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
