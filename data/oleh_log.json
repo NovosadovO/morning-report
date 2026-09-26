@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "t": "msg",
-      "kind": "cmd",
-      "text": "/звички",
-      "ts": "2026-09-05T22:42:25"
-    },
-    {
       "t": "btn",
       "data": "meds_no_today",
       "label": "❌",
@@ -7199,6 +7193,12 @@
       "data": "cal_skip_health_combined_1790422338",
       "label": "",
       "ts": "2026-09-26T14:25:42"
+    },
+    {
+      "t": "btn",
+      "data": "email_delete_79785",
+      "label": "🗑 Видалити",
+      "ts": "2026-09-26T14:25:54"
     }
   ]
 }
