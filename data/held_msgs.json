@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T03:16:14.360786",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T03:16:15.650990",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -404,6 +398,12 @@
       "ts": "2026-09-26T03:18:07.125993",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T03:18:07.827567",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
       "keyboard": null
     }
   ]
