@@ -145,10 +145,43 @@
       "keyboard": null
     },
     {
-      "ts": "2026-09-27T01:01:35.600201",
-      "kind": "calendar",
-      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 11-й дім: Друзі й плани\n📅 01.10 (Thu) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
-      "keyboard": null
+      "ts": "2026-09-27T01:01:34.750009",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Director, Revenue Operations в PayPal</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79801"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79801"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79801"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79801"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79801"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79801"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
