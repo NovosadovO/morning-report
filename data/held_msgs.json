@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T03:44:49.109114",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>AVAX +5.6% за 24г</b>\n\nЗараз: 10.84 $\n24г тому: 10.26 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T03:44:49.890984",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +5.6% за 24г\n\nЗараз: 10.84 $\n24г тому: 10.26 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -405,6 +399,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-26T03:46:58.227369",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 14 nových pracovných ponúk\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
