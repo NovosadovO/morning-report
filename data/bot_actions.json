@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Зверніть увагу на лист від Linas from Linas's Newsletter про",
-      "detail": "Лист 'How to Use Jev AI: The Complete Guide to TypeSafe's System One Model 🤖' містить інформацію про нову модель AI, що приймає рішення, а не генерує текст. Це може бути актуально для Олега, враховуючи його інтерес до технологій.",
-      "module": "selfact",
-      "ts": "2026-09-22T14:57:25"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "СВІЖІ ЛИСТИ: від Google Health <google-health-noreply@google.com> | Your weekly progress report from Google Health",
       "module": "selfact",
       "ts": "2026-09-26T15:30:32"
+    },
+    {
+      "kind": "notify",
+      "what": "Транзитний Юпітер переходить у 2-й дім о 23:00 сьогодні, 26.",
+      "detail": "КАЛЕНДАР НА 7 ДНІВ: 26.09: 23:00 🔭 Юпітер переходить у 2-й дім — 19°; 23:00 Соляр — 6-й дім: Робота й здоров’я",
+      "module": "selfact",
+      "ts": "2026-09-26T15:30:38"
     }
   ]
 }
