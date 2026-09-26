@@ -1,9 +1,4 @@
 {
-  "79265": {
-    "sender": "newsletter.sk@email.pepco.eu",
-    "sender_raw": "\"Pepco\" <newsletter.sk@email.pepco.eu>",
-    "seen_ts": "2026-09-17T13:15:40.006631+00:00"
-  },
   "79267": {
     "sender": "groups-noreply@linkedin.com",
     "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "info@wexopay.com",
     "sender_raw": "Wexo <info@wexopay.com>",
     "seen_ts": "2026-09-26T12:41:22.858324+00:00"
+  },
+  "79787": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-26T13:54:19.056576+00:00"
   }
 }
