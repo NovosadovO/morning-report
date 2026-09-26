@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T01:16:29.431202",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Director, Revenue Operations в PayPal</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79801"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79801"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79801"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79801"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79801"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79801"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T01:16:30.812353",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Specialist - Operations в iSTYLE Czech Republic</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -379,6 +340,12 @@
       "ts": "2026-09-27T01:18:12.551611",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T01:18:33.141738",
+      "kind": "rwa",
+      "text": "🏦 <b>RWA-РАДАР</b>\n━━━━━━━━━━━━━━━━━━━━\n• QNT виріс на 49.0% за 24 години (зараз $148)\n\n<i>AI-коментар недоступний — вище тільки живі цифри.</i>",
       "keyboard": null
     }
   ]
