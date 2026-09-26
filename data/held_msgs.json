@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T00:45:38.257115",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Specialist - Operations в iSTYLE Czech Republic</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79800"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79800"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79800"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79800"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79800"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79800"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T00:45:39.503670",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Line Leader (Vedúci/vedúca výrobnej linky) в Essity</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -346,6 +307,12 @@
       "ts": "2026-09-27T00:47:30.314729",
       "kind": "calendar",
       "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 11-й дім: Друзі й плани</b>\n📅 01.10 (Thu) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T00:47:31.130018",
+      "kind": "calendar",
+      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 11-й дім: Друзі й плани\n📅 01.10 (Thu) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
       "keyboard": null
     }
   ]
