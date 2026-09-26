@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T02:46:09.139275",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>These Fitness Fans Took Bootleg Peptides. It Landed Them In </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79760"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79760"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79760"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79760"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79760"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79760"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-26T02:46:11.180867",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Railway\n📋 Free VMs without an account, tracing, OpenCode on Cloud Agen\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -200,6 +161,12 @@
       "ts": "2026-09-26T02:49:23.744287",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Railway  → Free VMs without an account, tracing, OpenCode on Cloud Agents\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T02:49:26.309225",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
