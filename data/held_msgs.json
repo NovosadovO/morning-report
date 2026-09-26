@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T03:44:46.380953",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T03:44:49.109114",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +5.6% за 24г</b>\n\nЗараз: 10.84 $\n24г тому: 10.26 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -376,6 +370,37 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79763"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-26T03:46:55.540411",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 14 nových pracovných ponúk\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Profesia.sk",
+              "callback_data": "email_reply_79769"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Profesia.sk",
+              "callback_data": "email_reply_79768"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_79769"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79769"
             }
           ]
         ]
