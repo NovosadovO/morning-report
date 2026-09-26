@@ -1,5 +1,7 @@
 {
-  "until": "2026-09-26T04:00:00",
-  "since": "2026-09-25T21:52:34.093662",
-  "wake_hour": 4
+  "until": null,
+  "since": null,
+  "wake_hour": 4,
+  "last_wake": "2026-09-26T04:00:12.452195",
+  "last_sleep_since": "2026-09-25T21:52:34.093662"
 }
