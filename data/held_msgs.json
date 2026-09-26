@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T00:14:04.288919",
-      "kind": "calendar",
-      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 11-й дім: Друзі й плани</b>\n📅 01.10 (Thu) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T00:14:05.103420",
       "kind": "calendar",
       "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 11-й дім: Друзі й плани\n📅 01.10 (Thu) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79793"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T00:15:57.654282",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>COB LED pásiky, 12V/2... Môže byť lacnejšie!</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79792"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79792"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79792"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79792"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79792"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79792"
             }
           ]
         ]
