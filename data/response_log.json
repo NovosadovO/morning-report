@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-07T22:23:23.458750+00:00",
-      "category": "event_done",
-      "question": "📅 🏃 Біг ❌\nПланувалась до 20:40 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-07T22:23:25.975588+00:00",
       "category": "event_done",
       "question": "📅 🧖 Сауна ❌\nПланувалась до 20:40 — виконано?",
@@ -13910,6 +13904,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_45dded016a"
+    },
+    {
+      "ts": "2026-09-26T04:30:13.249929+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Зміна ваги",
+      "extra": {
+        "kind": "note",
+        "date": "2026-09-26"
+      }
     }
   ]
 }
