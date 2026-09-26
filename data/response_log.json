@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T07:00:26.232776+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "gx_mute_4283d29b79"
-    },
-    {
       "ts": "2026-08-08T07:00:32.387990+00:00",
       "category": "ai_button",
       "question": "email",
@@ -13898,6 +13892,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Прогулянка",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-26T14:25:49.193238+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_901d3e2418"
     }
   ]
 }
