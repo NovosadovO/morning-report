@@ -104,6 +104,51 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-27T00:01:35.483807",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Line Leader (Vedúci/vedúca výrobnej linky) в Essity</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79799"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79799"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79799"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79799"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79799"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79799"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T00:01:35.670575",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Temu <temu@eu.temuemail.com> → COB LED pásiky, 12V/2... Môže byť lacnejšie!\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
     }
   ]
 }
