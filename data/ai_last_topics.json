@@ -1,4 +1,39 @@
 {
+  "healthai|2026-09-26t15_05_18_677434": {
+    "topic": "healthai",
+    "gist": "👋 Олеже, бачу, сьогоднішній вихідний ти використав на максимум для сну — поки що зафіксовано 13.0 годин! При твоєму змінному графіку це важливий ресурс, особлив",
+    "ts": "2026-09-26T15:05:18.677434"
+  },
+  "action_detect|2026-09-26t15_01_56_629890": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити гель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Додати гель до списку покупок.\"}",
+    "ts": "2026-09-26T15:01:56.629890"
+  },
+  "action_detect|2026-09-26t15_01_45_414435": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-26T15:01:45.414435"
+  },
+  "email_ai_item|2026-09-26t15_01_35_757928": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Лист містить інформацію про два нові оголошення 3-кімнатних квартир у Кошицях, Словаччина, зі звітом, сформованим 23.09.2026 о 16:47. Обидві кв",
+    "ts": "2026-09-26T15:01:35.757928"
+  },
+  "email_ai_item|2026-09-26t15_01_24_386367": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист є підсумком конференції Avalanche Summit NYC, яка відбулася минулого тижня в Нью-Йорку. У ньому йдеться про те, як Avalanche в",
+    "ts": "2026-09-26T15:01:24.386367"
+  },
+  "afternoon_ai_truthfix|2026-09-26t15_00_59_891737": {
+    "topic": "AFTERNOON_AI/truthfix",
+    "gist": "Олеже, зараз субота, 26 вересня 2026 року, 15:00. Ти підтвердив, що ти вдома.  Твої кроки сьогодні поки що 220, тоді як середній показник за 7 днів становить 94",
+    "ts": "2026-09-26T15:00:59.891737"
+  },
+  "afternoon_ai|2026-09-26t15_00_49_945641": {
+    "topic": "AFTERNOON_AI",
+    "gist": "Привіт, Олеже!  Оскільки твій статус зараз «вдома, вільний час», є чудова нагода використати цю другу половину дня для кількох важливих справ, перш ніж розпочну",
+    "ts": "2026-09-26T15:00:49.945641"
+  },
   "selfact|2026-09-26t14_58_59_859081": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, твоє сховище iCloud заповнено. Документи, контакти та дані з пристроїв більше не архівуються, а фото й в",
@@ -263,40 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-26T13:01:53.825472"
-  },
-  "action_detect|2026-09-26t13_01_42_889699": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Обід у Кошіце\", \"action_date\": \"2026-09-26\", \"action_time\": \"13:00\", \"action_summary\": \"Обід у Кошіце з максимумом ",
-    "ts": "2026-09-26T13:01:42.889699"
-  },
-  "email_ai_item|2026-09-26t13_01_32_643144": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист містить інформацію про нове оголошення щодо продажу 3-кімнатної квартири в Кошіце (Словаччина) за ціною 219 990 € та площею 64.0 м",
-    "ts": "2026-09-26T13:01:32.643144"
-  },
-  "email_ai_item|2026-09-26t13_01_21_579974": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист містить інформацію про два нових оголошення щодо 3-кімнатних квартир у Кошіці, Словаччина. Оголошення включають ціну 208 900 € та ",
-    "ts": "2026-09-26T13:01:21.579974"
-  },
-  "email_ai_item|2026-09-26t13_01_10_589354": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист є підсумком конференції Avalanche Summit NYC, яка відбулася минулого тижня в Нью-Йорку. У ньому йдеться про те, як Avalanche в",
-    "ts": "2026-09-26T13:01:10.589354"
-  },
-  "action_detect|2026-09-26t13_00_58_936083": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Сьогодні гарний момент для 20 хв бігу після",
-    "ts": "2026-09-26T13:00:58.936083"
-  },
-  "action_detect|2026-09-26t13_00_06_351469": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-26T13:00:06.351469"
-  },
-  "action_detect|2026-09-26t12_56_44_957941": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-26T12:56:44.957941"
   }
 }
