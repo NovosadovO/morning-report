@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T07:00:34.397234+00:00",
-      "category": "confirm",
-      "question": "gx_mute: листи",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-08T07:00:35.461344+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13894,6 +13888,15 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "QNT виріс на 9.1% за 24 години (зараз $105)"
+    },
+    {
+      "ts": "2026-09-26T15:47:01.241350+00:00",
+      "category": "deadline_found",
+      "question": "Сховище iCloud заповнено",
+      "answer": "2026-09-26",
+      "extra": {
+        "kind": "other"
+      }
     }
   ]
 }
