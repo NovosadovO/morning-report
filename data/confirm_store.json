@@ -12856,7 +12856,24 @@
     "action": "calrem_skip",
     "pid": "gen_1790417021665",
     "subject": "Вирішити прострочені дедлайни",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 103933,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_gen_1790417021665"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_gen_1790417021665"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-26T12:07:48.203556+00:00"
   }
 }
