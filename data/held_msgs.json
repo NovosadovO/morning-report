@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T02:16:49.612854",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Railway\n📋 Free VMs without an account, tracing, OpenCode on Cloud Agen\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Railway",
-              "callback_data": "email_reply_79762"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79762"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79762"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-26T02:16:52.015346",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Railway\n📋 Free VMs without an account, tracing, OpenCode on Cloud Agen\n📝 (AI-аналіз тимчасово недоступний)",
@@ -165,6 +140,12 @@
     },
     {
       "ts": "2026-09-26T02:19:51.238910",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 🔭 Юпітер переходить у 2-й дім — 19° » було 25.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-26T02:19:52.018704",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔭 Юпітер переходить у 2-й дім — 19° » було 25.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
