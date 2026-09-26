@@ -1326,12 +1326,19 @@
     "date": "2026-09-26",
     "steps": 220,
     "hr_avg": 53,
-    "calories": 9,
+    "calories": 9.5,
     "hrv": 48,
     "age": 37,
     "height_cm": 175,
     "spo2": 99,
     "source": "qwatch",
-    "saved_at": "2026-09-26 12:17"
+    "saved_at": "2026-09-26 12:17",
+    "health_score": 75,
+    "weight_kg": 83.0,
+    "sleep_deep_min": 224,
+    "sleep_light_min": 339,
+    "sleep_total_min": 563,
+    "sleep_hours": 9.4,
+    "stress": 31
   }
 }
