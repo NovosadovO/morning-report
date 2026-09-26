@@ -232,7 +232,8 @@
     },
     "MSG_HEALTH_COMBINED": {
       "checked": 1,
-      "issues": 1
+      "issues": 1,
+      "fixed": 1
     }
   },
   "last": [
@@ -520,7 +521,7 @@
   "2026-09-26": {
     "checked": 88,
     "issues": 54,
-    "fixed": 25,
+    "fixed": 26,
     "cut": 1
   }
 }
