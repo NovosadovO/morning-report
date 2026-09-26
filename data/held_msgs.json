@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T01:46:24.518431",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Business Analyst в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79796"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79796"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79796"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79796"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79796"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79796"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T01:46:26.016470",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Back and shoulder surgery is often worse than useless</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
@@ -280,6 +241,12 @@
       "ts": "2026-09-27T01:48:21.037260",
       "kind": "deadlines",
       "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 3 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Відновлення виведення USDT на Bitget</b>\n📆 до <b>2026-09-30</b>\n🏢 Bitget\n\n➡️ Перевірити можливість виведення USDT з Bitget.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T01:48:21.899563",
+      "kind": "deadlines",
+      "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n📌 Відновлення виведення USDT на Bitget\n📆 до 2026-09-30\n🏢 Bitget\n\n➡️ Перевірити можливість виведення USDT з Bitget.",
       "keyboard": null
     }
   ]
