@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T01:30:19.687704+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Спланувати дії після ранньої зміни",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-08"
-      }
-    },
-    {
       "ts": "2026-08-08T02:58:15.946054+00:00",
       "category": "bill_found",
       "question": "Pelikan.sk",
@@ -13925,6 +13915,16 @@
       "extra": {
         "kind": "note",
         "date": "2026-09-26"
+      }
+    },
+    {
+      "ts": "2026-09-26T09:01:17.261699+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную поставити нагадування",
+      "answer": "Підготуватися до нічної зміни",
+      "extra": {
+        "kind": "reminder",
+        "date": "2026-09-27"
       }
     }
   ]
