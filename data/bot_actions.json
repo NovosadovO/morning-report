@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Знайдено нову вакансію 'Operations Transformation - Transfor",
-      "detail": "Олег отримує сповіщення про вакансії, і ця пропозиція від Deutsche Börse Group може бути йому цікава.",
-      "module": "selfact",
-      "ts": "2026-09-22T22:12:55"
-    },
-    {
-      "kind": "notify",
       "what": "Нова вакансія Produktový manažér (M/Ž) pre digitálne aktíva",
       "detail": "У свіжих листах є вакансія 'Produktový manažér (M/Ž) pre digitálne aktíva' від Tatra banka, яка відповідає налаштуванням Олега за запитом 'Cryptocurrency'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Інформація про астрологічні події (Юпітер переходить у 2-й дім, Соляр — 6-й дім: Робота й здоров’я) сьогодні, 26.09, о 23:00 є важливою і може бути цікавою Олегу, враховуючи наявність інших астрологічних подій у календарі.",
       "module": "selfact",
       "ts": "2026-09-26T23:01:25"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-09-26T23:06:02"
     }
   ]
 }
