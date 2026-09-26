@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hcoach",
-      "what": "full_report",
-      "detail": "повна аналітика здоров'я",
-      "module": "selfact",
-      "ts": "2026-09-22T20:01:34"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримує та читає 'AI-curated Daily Crypto Digest' та 'Daily Crypto Digest', що свідчить про його інтерес до крипто та AI тем.",
       "module": "selfact",
       "ts": "2026-09-26T19:53:39"
+    },
+    {
+      "kind": "hcoach",
+      "what": "full_report",
+      "detail": "повна аналітика здоров'я",
+      "module": "selfact",
+      "ts": "2026-09-26T20:01:28"
     }
   ]
 }
