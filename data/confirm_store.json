@@ -12933,7 +12933,24 @@
     "action": "calrem_skip",
     "pid": "crypto_move_1790438280",
     "subject": "Аналіз RAIN",
-    "extra": {},
+    "extra": {
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 104159,
+        "kb": [
+          [
+            {
+              "text": "✅ Поставити",
+              "callback_data": "calrem_add_crypto_move_1790438280"
+            },
+            {
+              "text": "❌ Не треба",
+              "callback_data": "calrem_skip_crypto_move_1790438280"
+            }
+          ]
+        ]
+      }
+    },
     "ts": "2026-09-26T17:58:21.474619+00:00"
   }
 }
