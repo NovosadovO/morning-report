@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-26T03:44:32.684804",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 🔭 Юпітер переходить у 2-й дім — 19° » було 25.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-26T03:44:33.425940",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 🔭 Юпітер переходить у 2-й дім — 19° » було 25.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79768"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-26T03:46:47.948741",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>SEC Staff Draws A Line On Token Buybacks and Liquid Staking </b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79767"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79767"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79767"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79767"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79767"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79767"
             }
           ]
         ]
