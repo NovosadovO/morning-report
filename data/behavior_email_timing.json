@@ -1,19 +1,4 @@
 {
-  "79254": {
-    "sender": "spotlight@newsletters.coinmarketcap.com",
-    "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
-    "seen_ts": "2026-09-17T11:49:44.039792+00:00"
-  },
-  "79255": {
-    "sender": "newsletters-noreply@linkedin.com",
-    "sender_raw": "Adrian Pape через LinkedIn<newsletters-noreply@linkedin.com>",
-    "seen_ts": "2026-09-17T11:51:51.633809+00:00"
-  },
-  "79256": {
-    "sender": "peknyden@zlavomat.sk",
-    "sender_raw": "\"Zlavomat.sk\" <peknyden@zlavomat.sk>",
-    "seen_ts": "2026-09-17T11:55:57.925275+00:00"
-  },
   "79258": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1508,5 +1493,10 @@
     "sender": "newsletter@biedronka.pl",
     "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
     "seen_ts": "2026-09-26T10:02:19.373362+00:00"
+  },
+  "79781": {
+    "sender": "temu@eu.temuemail.com",
+    "sender_raw": "Temu <temu@eu.temuemail.com>",
+    "seen_ts": "2026-09-26T10:52:52.372051+00:00"
   }
 }
