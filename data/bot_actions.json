@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "ask",
-      "what": "Олег, чи бажаєте ви, щоб я відстежував та нагадував вам про",
-      "detail": "Олег отримує регулярні сповіщення про вакансії з LinkedIn, і це може бути цінною інформацією для його кар'єрного розвитку.",
-      "module": "selfact",
-      "ts": "2026-09-22T12:51:57"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжі листи від Google Health <google-health-noreply@google.com> | Your weekly progress report from Google Health",
       "module": "selfact",
       "ts": "2026-09-26T12:56:38"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-09-26T13:05:37"
     }
   ]
 }
