@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T06:50:48.049646+00:00",
-      "category": "calendar_reminder_confirm",
-      "question": "Завершити резервацію квитків на Корфу",
-      "answer": "✅ Поставлено",
-      "extra": {
-        "date": "2026-08-09"
-      }
-    },
-    {
       "ts": "2026-08-08T06:50:59.902402+00:00",
       "category": "calendar_confirm",
       "question": "Написати буковіні за фабрики",
@@ -13911,6 +13902,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-09-26T12:07:37.540661+00:00",
+      "category": "rwa_move",
+      "question": "RWA",
+      "answer": "QNT виріс на 11.3% за 24 години (зараз $107); весь сектор RWA додав 45.2% за 24 години (капіталізація $75.20B)"
     }
   ]
 }
