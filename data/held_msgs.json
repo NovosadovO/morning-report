@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T10:15:48.015083",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Director, Revenue Operations в PayPal</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79801"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79801"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79801"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79801"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79801"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79801"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T10:15:50.069095",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (5 важливих листів)\n\n👤 Reserved\n📋 Objavte viac\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Emergent\n📋 In case you missed this\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 3 nové pracovné ponuky\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Bolt Slovakia\n📋 Your Bolt ride on Sunday\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -224,6 +185,12 @@
       "ts": "2026-09-27T10:23:17.253504",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T10:23:20.242731",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +5.3% за 24г</b>\n\nЗараз: 11.24 $\n24г тому: 10.67 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
