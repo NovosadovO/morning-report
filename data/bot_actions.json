@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-09-23T09:06:08"
-    },
-    {
       "kind": "notify",
       "what": "Олеже, твій бюджет Google Cloud на €16.00 вже перевищено на",
       "detail": "Лист від Google Cloud Billing Alerts про перевищення бюджету на 150%.",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від 'Сповіщення про вакансії LinkedIn' про вакансію 'Director, Operational Excellence' в Adven.",
       "module": "selfact",
       "ts": "2026-09-27T16:39:39"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, тобі надійшло нове сповіщення про вакансію Deputy Chi",
+      "detail": "Свіжий лист від 'Сповіщення про вакансії LinkedIn' про вакансію 'Deputy Chief Technology Officer - Trading Firm'.",
+      "module": "selfact",
+      "ts": "2026-09-27T16:39:44"
     }
   ]
 }
