@@ -2,6 +2,18 @@
   "items": [
     {
       "t": "btn",
+      "data": "cal_all_done_today",
+      "label": "✅ Виконано",
+      "ts": "2026-09-09T12:39:37"
+    },
+    {
+      "t": "btn",
+      "data": "rx_read_fbcdb347d0",
+      "label": "👍 Прочитав",
+      "ts": "2026-09-09T12:39:38"
+    },
+    {
+      "t": "btn",
       "data": "rx_read_fbcdb347d0",
       "label": "👍 Прочитав",
       "ts": "2026-09-09T12:39:40"
