@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T01:30:21.038021+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Підготуватися до ранньої зміни",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-09"
-      }
-    },
-    {
       "ts": "2026-08-09T01:30:25.016129+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -13910,6 +13900,16 @@
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
       "answer": "Повернення кредиту від Temu",
+      "extra": {
+        "kind": "note",
+        "date": "2026-09-27"
+      }
+    },
+    {
+      "ts": "2026-09-27T16:30:34.721738+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Вага 84.1 кг",
       "extra": {
         "kind": "note",
         "date": "2026-09-27"
