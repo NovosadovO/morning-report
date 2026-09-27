@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T15:01:14.213679",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — September 27</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79822"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79822"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79822"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79822"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79822"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79822"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T15:01:15.611543",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Well Informed: Are weighted blankets really beneficial?</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
@@ -550,6 +511,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T15:31:13.600544",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 9 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79825"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79825"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79825"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79825"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79825"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79825"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
