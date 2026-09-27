@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T13:19:53.033105",
-      "kind": "pending_reminder",
-      "text": "Нагадую — досі чекаю відповідь на моє попереднє питання (питав 6.3 год тому):\n\n«Чи вдалося тобі сьогодні дотриматися свого крипто-плану, чи якісь імпульсивні рішення все ж прокралися?»",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T13:20:56.836193",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79818"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T13:30:57.883403",
+      "kind": "offer",
+      "text": "💼 ✉️\n📌 <b>Nubank launched in 35 countries without a single banking lic</b>\n👤 Linas Beliūnas через LinkedIn&lt;newsletters-noreply@",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79816"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79816"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79816"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79816"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79816"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79816"
             }
           ]
         ]
