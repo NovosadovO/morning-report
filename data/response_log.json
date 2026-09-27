@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T00:00:24.331455+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Підготуватися до процедури 'Ліки для обличчя'",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-08-10"
-      }
-    },
-    {
       "ts": "2026-08-09T01:30:17.118233+00:00",
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
@@ -13914,6 +13904,16 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_06a94d7032"
+    },
+    {
+      "ts": "2026-09-27T16:30:24.636392+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Нові квартири у Кошице",
+      "extra": {
+        "kind": "note",
+        "date": "2026-09-27"
+      }
     }
   ]
 }
