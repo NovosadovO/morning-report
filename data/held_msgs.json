@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T15:31:14.872484",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Deputy Chief Technology Officer - Trading Firm в Stealth</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79824"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79824"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79824"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79824"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79824"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79824"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T15:31:16.232693",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - September 27</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
@@ -365,6 +326,12 @@
       "ts": "2026-09-27T15:42:36.192314",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T15:42:36.989048",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
