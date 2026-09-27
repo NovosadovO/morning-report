@@ -1,43 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T08:30:50.517830",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 3 nové pracovné ponuky\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Bolt Slovakia\n📋 Your Bolt ride on Sunday\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Profesia.sk",
-              "callback_data": "email_reply_79805"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Profesia.sk",
-              "callback_data": "email_reply_79804"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Bolt Slovakia",
-              "callback_data": "email_reply_79803"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79805"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79805"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T08:30:53.286251",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -179,6 +142,12 @@
       "ts": "2026-09-27T08:43:41.552714",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T08:43:42.225216",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
