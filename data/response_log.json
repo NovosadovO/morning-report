@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T12:04:08.970472+00:00",
-      "category": "chat",
-      "question": "так",
-      "answer": "Чудово! Тоді, можливо, заплануємо біг на завтра? Я можу додати подію в календар."
-    },
-    {
       "ts": "2026-08-09T12:04:35.619304+00:00",
       "category": "calendar_confirm",
       "question": "Запланувати біг",
@@ -13889,6 +13883,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-09-27T21:30:32.114614+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
     }
   ]
 }
