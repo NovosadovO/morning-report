@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T03:28:52.027176",
-      "kind": "calendar",
-      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 11-й дім: Друзі й плани\n📅 01.10 (Thu) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T03:29:00.578213",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\" <support@profesia.sk> → 3 nové pracovné ponuky\n• Bolt Slovakia <receipts-slovakia@bolt.eu> → Your Bolt ride on Sunday\n\n🧹 Реклама: 4 — можна пропустити.",
@@ -376,6 +370,43 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79799"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T03:31:00.902497",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 3 nové pracovné ponuky\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Bolt Slovakia\n📋 Your Bolt ride on Sunday\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Profesia.sk",
+              "callback_data": "email_reply_79805"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Profesia.sk",
+              "callback_data": "email_reply_79804"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Bolt Slovakia",
+              "callback_data": "email_reply_79803"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_79805"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79805"
             }
           ]
         ]
