@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T08:06:09.814478",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T08:06:10.630869",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79802"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T08:15:49.616449",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Director, Revenue Operations в PayPal</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79801"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79801"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79801"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79801"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79801"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79801"
             }
           ]
         ]
