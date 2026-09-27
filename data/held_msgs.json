@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T11:25:26.088814",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-27T11:25:26.729052",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T11:25:29.213966",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +5.0% за 24г</b>\n\nЗараз: 11.06 $\n24г тому: 10.53 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -248,6 +236,51 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-27T11:31:30.664451",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>In case you missed this</b>\n👤 Emergent &lt;team@ship.emergent.sh&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79808"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79808"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79808"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79808"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79808"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79808"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T11:31:31.163663",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
     }
   ]
 }
