@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T09:45:41.448015",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your Bolt ride on Sunday</b>\n👤 Bolt Slovakia &lt;receipts-slovakia@bolt.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79803"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79803"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79803"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79803"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79803"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79803"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T09:45:42.659289",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Špecialista/ Špecialistka procesov a systémov logistiky в DH</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -323,6 +284,12 @@
       "ts": "2026-09-27T09:55:53.727408",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T09:55:54.459001",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
