@@ -1,12 +1,12 @@
 {
-  "ts": "2026-09-27 07:18",
+  "ts": "2026-09-27 08:01",
   "ids": [
     "figure-heloc",
     "chainlink",
     "stellar",
-    "quant-network",
     "tether-gold",
     "ondo-finance",
+    "quant-network",
     "hashnote-usyc",
     "blackrock-usd-institutional-digital-liquidity-fund",
     "ondo-us-dollar-yield",
@@ -14,15 +14,15 @@
   ],
   "prices": {
     "figure-heloc": 1.062,
-    "chainlink": 14.1,
-    "stellar": 0.213986,
-    "quant-network": 185.29,
-    "tether-gold": 4277.71,
-    "ondo-finance": 0.531456,
+    "chainlink": 14.17,
+    "stellar": 0.215582,
+    "tether-gold": 4278.04,
+    "ondo-finance": 0.535759,
+    "quant-network": 173.41,
     "hashnote-usyc": 1.14,
     "blackrock-usd-institutional-digital-liquidity-fund": 1.0,
     "ondo-us-dollar-yield": 1.15,
-    "pax-gold": 4276.5
+    "pax-gold": 4277.17
   },
-  "sector_mcap": 77071364752.90376
+  "sector_mcap": 77139686216.8114
 }
