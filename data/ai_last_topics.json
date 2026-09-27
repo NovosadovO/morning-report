@@ -1,4 +1,34 @@
 {
+  "calendar|2026-09-27t05_04_28_708366": {
+    "topic": "calendar",
+    "gist": "Олеже, почнімо з головного: ти зараз на нічній зміні, і це вже четверта ніч поспіль, що вимагає від тебе максимальної концентрації, а дані за вчора показують, щ",
+    "ts": "2026-09-27T05:04:28.708366"
+  },
+  "action_detect|2026-09-27t05_01_53_130248": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-27T05:01:53.130248"
+  },
+  "action_detect|2026-09-27t05_01_42_095391": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-27T05:01:42.095391"
+  },
+  "email_ai_item|2026-09-27t05_01_31_812722": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист є квитанцією від Bolt Slovakia за поїздку, яка відбулася в неділю. У листі міститься інформація про поїздку, але конкретні деталі, так",
+    "ts": "2026-09-27T05:01:31.812722"
+  },
+  "email_ai_item|2026-09-27t05_01_21_232637": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від Profesia.sk містить 3 нові пропозиції роботи за критеріями, які були встановлені раніше: Кошице, на договірній основі (бригади). Л",
+    "ts": "2026-09-27T05:01:21.232637"
+  },
+  "email_ai_item|2026-09-27t05_01_10_010836": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від Profesia.sk містить 20 нових персоналізованих пропозицій роботи. Користувач може переглянути їх, а також змінити критерії пошуку а",
+    "ts": "2026-09-27T05:01:10.010836"
+  },
   "selfact|2026-09-27t05_00_16_826329": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, сьогодні о 05:00 ранку ти вже мав бути на нічній зміні, яка триває до 06:00 ранку. Проте, судячи з твоїх ",
@@ -268,35 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-26T23:00:34.408579"
-  },
-  "action_detect|2026-09-26t22_54_52_229977": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Період 7-го дому гороскопу\", \"action_date\": \"2026-09-27\", \"action_time\": \"00:00\", \"action_summary\": \"Завтра, 27 вер",
-    "ts": "2026-09-26T22:54:52.229977"
-  },
-  "msg_vip_email_truthfix|2026-09-26t22_54_45_234487": {
-    "topic": "MSG_VIP_EMAIL/truthfix",
-    "gist": "Олеже, зараз 22:54 суботи, 26 вересня 2026 року.  Твої нічні зміни починаються завтра, 27 вересня, і триватимуть до 30 вересня. Це означає, що найближчі чотири ",
-    "ts": "2026-09-26T22:54:45.234487"
-  },
-  "msg_vip_email|2026-09-26t22_54_34_860531": {
-    "topic": "MSG_VIP_EMAIL",
-    "gist": "Привіт Олеже! 📧  Ніч — це час для спокою та відновлення, і хоча твій календар не показує робочих змін на цю годину, дані свідчать, що ти зараз відпочиваєш. Важл",
-    "ts": "2026-09-26T22:54:34.860531"
-  },
-  "mailcal_extract|2026-09-26t22_53_48_920545": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-09-26T22:53:48.920545"
-  },
-  "action_detect|2026-09-26t22_53_12_832196": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-26T22:53:12.832196"
-  },
-  "action_detect|2026-09-26t22_48_03_278186": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Спланувати день та перевірити підписку Apple\", \"action_date\": \"2024-09-27\", \"action_time\": null, \"action_summary\": ",
-    "ts": "2026-09-26T22:48:03.278186"
   }
 }
