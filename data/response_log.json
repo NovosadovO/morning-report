@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T12:01:25.566241+00:00",
-      "category": "calendar_reminder_confirm",
-      "question": "Пробіжка",
-      "answer": "✅ Поставлено",
-      "extra": {
-        "date": "2026-08-10"
-      }
-    },
-    {
       "ts": "2026-08-09T12:02:01.113597+00:00",
       "category": "calendar_confirm",
       "question": "Біг",
@@ -13894,6 +13885,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_f706b17883"
+    },
+    {
+      "ts": "2026-09-27T20:14:21.513008+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Завершити приховані справи",
+      "answer": "yes"
     }
   ]
 }
