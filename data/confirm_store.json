@@ -13366,7 +13366,29 @@
     "pid": "dl_due_done_8bcdc6b5d6",
     "subject": "⏰ ДЕДЛАЙН ЧЕРЕЗ 1 дн.",
     "extra": {
-      "msg": "⏰ ДЕДЛАЙН ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n📌 Відновлення виведення Ether на Bitget\n📆 до 2026-09-29\n🏢 Bitget\n\n➡️ Перевірити можливість виведення Ether з Bitget."
+      "msg": "⏰ ДЕДЛАЙН ЧЕРЕЗ 1 дн.\n━━━━━━━━━━━━━━━━━━━━\n📌 Відновлення виведення Ether на Bitget\n📆 до 2026-09-29\n🏢 Bitget\n\n➡️ Перевірити можливість виведення Ether з Bitget.",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 105150,
+        "kb": [
+          [
+            {
+              "text": "✅ Зроблено",
+              "callback_data": "dl_due_done_8bcdc6b5d6"
+            }
+          ],
+          [
+            {
+              "text": "📅 В календар",
+              "callback_data": "dl_cal_8bcdc6b5d6"
+            },
+            {
+              "text": "⏰ Нагадати завтра",
+              "callback_data": "dl_due_snooze_8bcdc6b5d6"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-09-28T00:16:38.655928+00:00"
   }
