@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-27t05_00_16_826329": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олег, сьогодні о 05:00 ранку ти вже мав бути на нічній зміні, яка триває до 06:00 ранку. Проте, судячи з твоїх ",
+    "ts": "2026-09-27T05:00:16.826329"
+  },
   "action_detect|2026-09-27t04_54_38_244460": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Спланувати день та перевірити підписку Apple\", \"action_date\": \"2024-09-27\", \"action_time\": null, \"action_summary\": ",
     "ts": "2026-09-26T22:48:03.278186"
-  },
-  "msg_idle_timeout_truthfix|2026-09-26t22_47_56_263878": {
-    "topic": "MSG_IDLE_TIMEOUT/truthfix",
-    "gist": "Олеже,  Зараз 22:47 суботи, 26 вересня 2026 року. Дані про твоє здоров'я, які я маю, оновлені станом на сьогодні, 26 вересня. Твоя вага зафіксована на рівні 83.",
-    "ts": "2026-09-26T22:47:56.263878"
   }
 }
