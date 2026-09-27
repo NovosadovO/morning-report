@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T13:30:52.928247",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T13:30:54.090512",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Well Informed: Are weighted blankets really beneficial?</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
@@ -398,6 +392,12 @@
       "ts": "2026-09-27T13:38:39.332702",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T13:38:40.253405",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
