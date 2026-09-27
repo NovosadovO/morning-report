@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T02:16:23.817292",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Line Leader (Vedúci/vedúca výrobnej linky) в Essity</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79799"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79799"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79799"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79799"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79799"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79799"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T02:16:25.054023",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Business Analyst в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -280,6 +241,12 @@
       "ts": "2026-09-27T02:20:18.624374",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T02:20:19.282100",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
       "keyboard": null
     }
   ]
