@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T03:42:36.015083",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 3 nové pracovné ponuky\n• Bolt Slovakia  → Your Bolt ride on Sunday\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T03:42:38.404880",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79805"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T03:45:47.908327",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>3 nové pracovné ponuky</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79804"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79804"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79804"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79804"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79804"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79804"
             }
           ]
         ]
