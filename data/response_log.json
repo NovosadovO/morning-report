@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T14:12:01.661650+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_cancel_a9a0b9a361"
-    },
-    {
       "ts": "2026-08-09T14:12:11.836412+00:00",
       "category": "confirm",
       "question": "cw_cancel: Оплата страховки Kooperativa",
@@ -13892,6 +13886,12 @@
         "kind": "reminder",
         "date": "2026-09-28"
       }
+    },
+    {
+      "ts": "2026-09-28T00:14:03.791577+00:00",
+      "category": "proactive_action",
+      "question": "Кнопка пропозиції",
+      "answer": "pa_note_a8ccd2a90a"
     }
   ]
 }
