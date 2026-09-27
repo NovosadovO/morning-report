@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T03:30:50.823898",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your Bolt ride on Sunday</b>\n👤 Bolt Slovakia &lt;receipts-slovakia@bolt.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79803"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79803"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79803"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79803"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79803"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79803"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T03:30:52.018552",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Špecialista/ Špecialistka procesov a systémov logistiky в DH</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -344,6 +305,12 @@
       "ts": "2026-09-27T03:33:01.913016",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T03:33:56.347482",
+      "kind": "calendar",
+      "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 11-й дім: Друзі й плани</b>\n📅 01.10 (Thu) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
       "keyboard": null
     }
   ]
