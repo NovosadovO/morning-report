@@ -1,37 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T12:46:12.944588",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Reserved\n📋 Objavte viac\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Emergent\n📋 In case you missed this\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Reserved",
-              "callback_data": "email_reply_79810"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Emergent",
-              "callback_data": "email_reply_79808"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79810"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79810"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T12:46:15.317723",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Reserved\n📋 Objavte viac\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Emergent\n📋 In case you missed this\n📝 (AI-аналіз тимчасово недоступний)",
@@ -173,6 +142,12 @@
       "ts": "2026-09-27T12:58:35.034662",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T12:58:35.811443",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
