@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T10:24:32.440840",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ AVAX +5.3% за 24г\n\nЗараз: 11.24 $\n24г тому: 10.67 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T10:25:34.723977",
       "kind": "chunk",
       "text": "🔭 Новий транзит\n☿ <b>Меркурій</b> △ ☽ <b>Натальний Місяць</b> (орб 1.5°)\n📍 Меркурій у <b>Терези ♎</b> | Натальний Місяць у Близнюки ♊, 11-й дім\n<i>Трин · Друзі/Цілі</i>\n\n📖 <b>Що означає Трин:</b>\n🔵 Природна підтримка — все складається легко й само собою. Талант, удача, потік. Гарний час реалізувати задумане.\n\nПривіт, друже!\n\nСьогодні транзитний Меркурій підказує, що тобі буде легко знаходи.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79802"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T10:30:47.823402",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Director, Revenue Operations в PayPal</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79801"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79801"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79801"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79801"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79801"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79801"
             }
           ]
         ]
