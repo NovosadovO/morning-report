@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T10:45:38.211944",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T10:45:39.448046",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>💼 Oleg, Here are your Weekly Watchlist Updates</b>\n👤 Investing.com &lt;newsletter@investingmail.com&gt;",
@@ -416,6 +410,12 @@
       "ts": "2026-09-27T10:53:01.521355",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T10:53:02.224422",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
