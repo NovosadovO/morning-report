@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T09:38:15.083638",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T09:39:29.917251",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -423,6 +417,45 @@
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (5 важливих листів)\n\n👤 Reserved\n📋 Objavte viac\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Emergent\n📋 In case you missed this\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 3 nové pracovné ponuky\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Bolt Slovakia\n📋 Your Bolt ride on Sunday\n📝 (AI-аналіз тимчасово недоступний)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T09:46:04.595320",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Paysend</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: « Все ще святкуєте? Ваш бонус до Дня народження все ще активний 🎉»\n\n<i>«Заберіть свій подарунок, поки він не зник\n\n\n96          * * Paysend * *    body, table, td, p, a, span,\nh1, h2, h3, h4, h5, h6 { font-family: 'Helvetica Neue',\nHelvetica, Arial, Tahoma, Verdana, sans-serif !important; }\n͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏\n͏ ͏ ͏ ͏ ͏ ͏ ͏...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79812"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79812"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79812"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79812"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79812"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79812"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
