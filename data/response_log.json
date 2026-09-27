@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T18:59:24.591468+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "gx_chart_56bc5cd1f9"
-    },
-    {
       "ts": "2026-08-09T19:05:42.629702+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13890,6 +13884,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Соляр — 8-й дім: Трансформація й спільні ресурси",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-28T00:15:20.338601+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_ebf28e1f4d"
     }
   ]
 }
