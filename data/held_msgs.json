@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T07:44:28.605764",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Lidl</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Ušetri až do -84 % v online výpredaji»\n\n<i>«Pozri si našu ponuku na ďalší týždeň.Pozri si našu ponuku na ďalší týždeň.\r\n\r\n\r\n \r\n  \r\n\r\nhttps://click.mail.lidlplus.sk/?qs=ABB7InYiOjEsImQiOjUwMTJ9ADIAAAAAAfpFVxm8y4vVl_PvvC5tqZP54PUVkExwOWtd72lxl2vf3Q01cxoqIQSJzL54ZQbBVCoAZwwE2O05T2x5Z_yFSYI1_KnwSfL8ZGtrAKvIenTZmb0 \r\nAk sa ti tento newsletter...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79807"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79807"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79807"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79807"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79807"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79807"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T07:52:11.450743",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
@@ -277,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79803"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T08:01:43.978605",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Špecialista/ Špecialistka procesov a systémov logistiky в DH</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79802"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79802"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79802"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79802"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79802"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79802"
             }
           ]
         ]
