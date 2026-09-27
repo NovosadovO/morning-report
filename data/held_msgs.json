@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T14:01:08.299152",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>💼 Oleg, Here are your Weekly Watchlist Updates</b>\n👤 Investing.com &lt;newsletter@investingmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79815"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79815"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79815"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79815"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79815"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79815"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T14:01:10.727512",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Objavte viac</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
@@ -299,6 +260,12 @@
       "ts": "2026-09-27T14:09:53.694644",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T14:11:02.448462",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
