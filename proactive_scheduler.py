@@ -1,10 +1,15 @@
 """
 Proactive Scheduler v3.0 — Thread-based scheduler для 4 щоденних аналізів
 Замість polling-based notifications, вико давати аналізи на РОЗКЛАДІ:
-  - 6:00 UTC+2: Ранок (календар, здоров'я, крипто огляд)
-  - 12:00 UTC+2: Обід (email VIP, крипто moves, здоров'я)
-  - 15:00 UTC+2: Після обід (рекомендації, планування)
-  - 20:00 UTC+2: Вечір (день summary, астро, слова мотивації)
+  - 6:30 UTC+2: Ранок (календар, здоров'я, крипто огляд)
+  - 12:30 UTC+2: Обід (email VIP, крипто moves, здоров'я)
+  - 15:30 UTC+2: Після обід (рекомендації, планування)
+  - 20:30 UTC+2: Вечір (день summary, астро, слова мотивації)
+
+27.09.2026: Олег попросив, щоб усі AI-звіти йшли рівно о ..:30 (economy
+платних Gemini-кредитів + передбачуваний ритм). SCHEDULES нижче лишає
+"якорні" години (6/12/15/20) — фактичне спрацювання (_scheduler_worker)
+зсунуте на HH:30, в фазі зі спільною message_generator.hourly_gate_ok().
 """
 
 import os
@@ -18,10 +23,10 @@ from zoneinfo import ZoneInfo
 
 TZ = ZoneInfo("Europe/Bratislava")  # UTC+2 (Kosice, Slovakia)
 SCHEDULES = {
-    "morning": 6,      # 6:00 UTC+2
-    "lunch": 12,       # 12:00 UTC+2
-    "afternoon": 15,   # 15:00 UTC+2
-    "evening": 20,     # 20:00 UTC+2
+    "morning": 6,      # 6:30 UTC+2 (див. коментар вище — зсунуто на :30)
+    "lunch": 12,       # 12:30 UTC+2
+    "afternoon": 15,   # 15:30 UTC+2
+    "evening": 20,     # 20:30 UTC+2
 }
 
 _DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
@@ -81,6 +86,7 @@ def _scheduler_worker():
         try:
             now = _get_current_time_tz()
             current_hour = now.hour
+            current_minute = now.minute
             current_date = now.strftime("%Y-%m-%d")
             
             state = _load_scheduler_state()
@@ -93,8 +99,14 @@ def _scheduler_worker():
                 state["last_run_date"] = current_date
             
             # Перевіряємо кожен розклад
+            # 27.09.2026: Олег попросив, щоб ВСІ AI-звіти йшли рівно о ..:30 —
+            # спрацьовуємо не на HH:00, а у вікні HH:30-HH:34 (тримає в фазі зі
+            # спільною message_generator.hourly_gate_ok, яка теж відкрита лише
+            # у вікні :30-:39; без цього ці 4 розклади завжди блокувалися б
+            # тією заслінкою, бо стукали б у двері рівно о HH:00).
             for name, hour in SCHEDULES.items():
-                if current_hour == hour and name not in completed_schedules:
+                if (current_hour == hour and 30 <= current_minute < 35
+                        and name not in completed_schedules):
                     print(f"[SCHEDULER] Triggered {name} at {now.strftime('%H:%M:%S')}")
                     
                     # Викликаємо callback якщо зареєстрований

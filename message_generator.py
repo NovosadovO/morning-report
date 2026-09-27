@@ -98,22 +98,40 @@ def _log(msg: str):
     ts = datetime.now(tz=_TZ).strftime("%H:%M:%S")
     print(f"[MSG_GEN {ts}] {msg}", flush=True)
 
-# ─── HOURLY GATE (27.09.2026) ────────────────────────────────────────────────
+# ─── HOURLY GATE (27.09.2026, оновлено 27.09.2026) ──────────────────────────
 # Олег: платний GEMINI_API_KEY (free-tier не спрацював, повернулись на платний)
 # швидко проїдає кредити (€1.90 з €10 за 4 дні) — попросив, щоб проактивні
-# AI-повідомлення ("Привіт Олеже!" з крипто/здоров'ям/астро/планами) йшли
-# НЕ ЧАСТІШЕ ОДНОГО РАЗУ НА ГОДИНУ, разом по всіх тригерах (не по 1/год на
-# кожен тип окремо — інакше при 13 типах тригерів + 4 денних розклади все
-# одно вийде десятки повідомлень/добу). Стан живе в storage.py (гілка data),
-# щоб переживав редеплой Railway. Перевіряємо ПЕРЕД генерацією тексту
-# (не тільки перед відправкою) — саме генерація й "should I send" рішення
-# через Gemini і є те, що жере платні кредити.
+# AI-звіти ("Привіт Олеже!" з крипто/здоров'ям/астро/планами) йшли КОЖНУ
+# ГОДИНУ РІВНО О ПОЛОВИНІ (..:30), а не будь-коли з розкидом — так весь
+# час напряму видно, коли чекати наступний звіт, і немає накладок кількох
+# тригерів одна на одну. Разом по всіх тригерах (не по 1/год на кожен тип
+# окремо — інакше при 13 типах тригерів + 4 денних розклади все одно вийде
+# десятки повідомлень/добу). Ручні команди (/звіт тощо) і кнопки під
+# повідомленнями НЕ проходять через цю заслінку — тут тільки автоматичні
+# проактивні AI-звіти. Стан живе в storage.py (гілка data), щоб переживав
+# редеплой Railway. Перевіряємо ПЕРЕД генерацією тексту (не тільки перед
+# відправкою) — саме генерація й "should I send" рішення через Gemini і є
+# те, що жере платні кредити.
 _HOURLY_GATE_FILE = "proactive_hourly_gate.json"
-_HOURLY_GATE_MIN_GAP_MIN = 60
+_HALF_HOUR_MARK = 30        # хвилина, о якій має йти звіт (..:30)
+_HALF_HOUR_WINDOW = 10      # хвилин "вікна" навколо :30 (30-39), щоб встигнути
+                            # згенерувати текст навіть якщо тригер спрацював
+                            # на кілька секунд/хвилин пізніше самої позначки
 
-def hourly_gate_ok(min_gap_min: float = _HOURLY_GATE_MIN_GAP_MIN) -> bool:
-    """True, якщо з останнього проактивного AI-повідомлення пройшло
-    >= min_gap_min хвилин (або їх не було ще жодного)."""
+def _current_half_hour_slot(now: datetime = None) -> str:
+    """Ключ поточного 'вікна :30' — 'YYYY-MM-DD-HH:30'. Однаковий для всіх
+    хвилин у вікні [30, 30+_HALF_HOUR_WINDOW), щоб кілька тригерів у ту саму
+    годину не надсилали по кілька повідомлень."""
+    now = now or datetime.now(tz=_TZ)
+    return now.strftime("%Y-%m-%d-%H") + ":30"
+
+def hourly_gate_ok() -> bool:
+    """True, лише якщо (1) зараз хвилина у вікні [:30, :30+_HALF_HOUR_WINDOW)
+    і (2) для цього ж годинного вікна ще не надсилали. Поза цим вікном —
+    завжди False (чекаємо наступної половини години)."""
+    now = datetime.now(tz=_TZ)
+    if not (_HALF_HOUR_MARK <= now.minute < _HALF_HOUR_MARK + _HALF_HOUR_WINDOW):
+        return False
     try:
         import sys as _sys_hg
         _sys_hg.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -122,27 +140,20 @@ def hourly_gate_ok(min_gap_min: float = _HOURLY_GATE_MIN_GAP_MIN) -> bool:
     except Exception as e:
         _log(f"⚠️ hourly_gate_ok storage.load failed (fail-open): {e}")
         return True
-    last = state.get("last_sent_at")
-    if not last:
-        return True
-    try:
-        then = datetime.fromisoformat(str(last))
-        if then.tzinfo is None:
-            then = then.replace(tzinfo=_TZ)
-    except Exception:
-        return True
-    now = datetime.now(tz=_TZ)
-    gap_min = (now - then).total_seconds() / 60.0
-    return gap_min >= min_gap_min
+    last_slot = state.get("last_slot")
+    return last_slot != _current_half_hour_slot(now)
 
 def hourly_gate_mark():
-    """Позначити, що щойно пішло проактивне AI-повідомлення."""
+    """Позначити, що для поточного вікна ':30' щойно пішло повідомлення —
+    інші тригери в цю саму годину вже нічого не надішлють."""
+    now = datetime.now(tz=_TZ)
     try:
         import sys as _sys_hg2
         _sys_hg2.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         import storage as _storage_hg2
         _storage_hg2.save(_HOURLY_GATE_FILE, {
-            "last_sent_at": datetime.now(tz=_TZ).isoformat(),
+            "last_slot": _current_half_hour_slot(now),
+            "last_sent_at": now.isoformat(),
         })
     except Exception as e:
         _log(f"⚠️ hourly_gate_mark failed: {e}")
@@ -1149,7 +1160,7 @@ def _send_to_telegram(text: str, topic: str = "", trigger_type: str = "") -> boo
     # (основна перевірка ДО генерації в process_trigger/smart_notifications_v3,
     # тут — про всяк випадок, якщо хтось викличе _send_to_telegram напряму).
     if not hourly_gate_ok():
-        _log("⏸ Hourly gate: пропускаю відправку — проактивне повідомлення вже було <1год тому")
+        _log("⏸ Hourly gate: пропускаю відправку — чекаємо вікна ..:30")
         return False
     import sys as _sys_gx
     _sys_gx.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -1236,7 +1247,7 @@ def process_trigger(trigger_type: str, trigger_data, location: str = "doma", idl
     # разом, див. hourly_gate_ok вище) — перевіряємо ДО генерації, щоб не
     # палити платні Gemini-кредити на текст, який однаково не піде.
     if not hourly_gate_ok():
-        _log(f"⏸ Hourly gate: пропускаю {trigger_type} — проактивне повідомлення вже було <1год тому")
+        _log(f"⏸ Hourly gate: пропускаю {trigger_type} — чекаємо вікна ..:30 (або цю годину вже надіслано)")
         return False
 
     try:

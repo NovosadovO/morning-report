@@ -576,7 +576,7 @@ def handle_morning_schedule(schedule_name, now_tz):
     _log(f"=== {schedule_name.upper()} ANALYSIS START ===")
 
     if not _hourly_gate_ok():
-        _log("⏸ Hourly gate: пропускаю morning — проактивне повідомлення вже було <1год тому")
+        _log("⏸ Hourly gate: пропускаю morning — чекаємо вікна ..:30 (або цю годину вже надіслано)")
         return ""
 
     try:
@@ -607,7 +607,7 @@ def handle_lunch_schedule(schedule_name, now_tz):
     _log(f"=== {schedule_name.upper()} ANALYSIS START ===")
 
     if not _hourly_gate_ok():
-        _log("⏸ Hourly gate: пропускаю lunch — проактивне повідомлення вже було <1год тому")
+        _log("⏸ Hourly gate: пропускаю lunch — чекаємо вікна ..:30 (або цю годину вже надіслано)")
         return ""
 
     try:
@@ -637,7 +637,7 @@ def handle_afternoon_schedule(schedule_name, now_tz):
     _log(f"=== {schedule_name.upper()} ANALYSIS START ===")
 
     if not _hourly_gate_ok():
-        _log("⏸ Hourly gate: пропускаю afternoon — проактивне повідомлення вже було <1год тому")
+        _log("⏸ Hourly gate: пропускаю afternoon — чекаємо вікна ..:30 (або цю годину вже надіслано)")
         return ""
 
     try:
@@ -668,7 +668,7 @@ def handle_evening_schedule(schedule_name, now_tz):
     _log(f"=== {schedule_name.upper()} ANALYSIS START ===")
 
     if not _hourly_gate_ok():
-        _log("⏸ Hourly gate: пропускаю evening — проактивне повідомлення вже було <1год тому")
+        _log("⏸ Hourly gate: пропускаю evening — чекаємо вікна ..:30 (або цю годину вже надіслано)")
         return ""
 
     try:
