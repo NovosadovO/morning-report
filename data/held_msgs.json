@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T10:05:15.420916",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T10:06:19.647749",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Allegro</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «DNES KONČÍME: Jesenný kupón expiruje 🚨»\n\n<i>«Allegro a { text-decoration:none; } .ReadMsgBody{ width: 100%; background-color: #ffffff; } .ExternalClass { width: 100%; background-color: #ffffff; line-height:100% !important; } body { width: 100%; background-color: #ffffff; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; } * { font-fa...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79804"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T10:15:45.605093",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Your Bolt ride on Sunday</b>\n👤 Bolt Slovakia &lt;receipts-slovakia@bolt.eu&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79803"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79803"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79803"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79803"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79803"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79803"
             }
           ]
         ]
