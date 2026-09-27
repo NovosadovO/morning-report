@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T09:15:35.259956",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T09:15:36.570639",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>In case you missed this</b>\n👤 Emergent &lt;team@ship.emergent.sh&gt;",
@@ -416,6 +410,12 @@
       "ts": "2026-09-27T09:24:01.728435",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T09:24:02.416510",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
