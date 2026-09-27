@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T11:09:50.183843",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T11:09:52.759153",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +5.0% за 24г</b>\n\nЗараз: 11.21 $\n24г тому: 10.68 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79816"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T11:16:34.590797",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>💼 Oleg, Here are your Weekly Watchlist Updates</b>\n👤 Investing.com &lt;newsletter@investingmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79815"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79815"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79815"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79815"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79815"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79815"
             }
           ]
         ]
