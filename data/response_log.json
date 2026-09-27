@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T19:50:54.089299+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_sauna"
-    },
-    {
       "ts": "2026-08-08T19:50:57.330671+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13917,6 +13911,17 @@
       "extra": {
         "kind": "note",
         "date": "2026-09-27"
+      }
+    },
+    {
+      "ts": "2026-09-27T05:34:51.155519+00:00",
+      "category": "calendar_button",
+      "question": "agenda",
+      "answer": "refreshed",
+      "extra": {
+        "stage": "agenda",
+        "when": "",
+        "note": null
       }
     }
   ]
