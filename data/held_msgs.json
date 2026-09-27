@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T11:31:38.526894",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>3 nové pracovné ponuky</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79804"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79804"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79804"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79804"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79804"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79804"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T11:31:39.818284",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your Bolt ride on Sunday</b>\n👤 Bolt Slovakia &lt;receipts-slovakia@bolt.eu&gt;",
@@ -245,6 +206,12 @@
       "ts": "2026-09-27T11:39:47.918993",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T11:39:48.739077",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
