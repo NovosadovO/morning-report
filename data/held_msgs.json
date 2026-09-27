@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T14:31:11.673798",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 9 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79825"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79825"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79825"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79825"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79825"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79825"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T14:31:13.117367",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Deputy Chief Technology Officer - Trading Firm в Stealth</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -398,6 +359,12 @@
       "ts": "2026-09-27T14:38:01.914912",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T14:38:48.632266",
+      "kind": "day_mode",
+      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
