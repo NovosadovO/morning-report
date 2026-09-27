@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T19:50:53.147638+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_spray"
-    },
-    {
       "ts": "2026-08-08T19:50:54.089299+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13910,6 +13904,16 @@
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
       "answer": "Збільшення ваги",
+      "extra": {
+        "kind": "note",
+        "date": "2026-09-27"
+      }
+    },
+    {
+      "ts": "2026-09-27T04:30:20.856626+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Соляр: 7-й дім (Партнерство)",
       "extra": {
         "kind": "note",
         "date": "2026-09-27"
