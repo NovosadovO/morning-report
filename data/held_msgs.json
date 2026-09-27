@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T14:01:17.877658",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleh Bezuhlyi через LinkedIn</b>\n📋 Тема: «📰 Daily Crypto Digest — September 27»\n\n<i>«Daily Crypto Digest\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/daily-crypto-digest-september-27-oleh-bezuhlyi-qrenf?lipi=urn%3Ali%3Apage%3Aemail_emai...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79822"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79822"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79822"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79822"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79822"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79822"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T14:01:21.432531",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 Dostali ste vrátenie kreditu!\n📝 (AI-аналіз тимчасово недоступний)",
@@ -181,6 +142,12 @@
       "ts": "2026-09-27T14:13:18.420468",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T14:13:19.170542",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
