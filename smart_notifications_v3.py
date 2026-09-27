@@ -66,6 +66,20 @@ def _send_to_telegram(text):
         _log(f"Telegram send error (delegate): {e}")
         return False
 
+def _hourly_gate_ok() -> bool:
+    """Глобальний тротлінг 1 проактивне AI-повідомлення/год, спільний з
+    message_generator.process_trigger (27.09.2026: Олег попросив рідше,
+    щоб не палити платні Gemini-кредити). Перевіряємо ПЕРЕД тим, як ці
+    4 денні розклади почнуть тягнути email/крипто/здоров'я і кликати Gemini."""
+    try:
+        import sys as _sys_hg
+        _sys_hg.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import message_generator as _mg_hg
+        return _mg_hg.hourly_gate_ok()
+    except Exception as e:
+        _log(f"⚠️ hourly_gate_ok delegate failed (fail-open): {e}")
+        return True
+
 
 def _load_json(path):
     """Завантажити JSON файл"""
@@ -560,7 +574,11 @@ FORMAT: Plain text with emojis."""
 def handle_morning_schedule(schedule_name, now_tz):
     """Called by scheduler at 6:00 AM"""
     _log(f"=== {schedule_name.upper()} ANALYSIS START ===")
-    
+
+    if not _hourly_gate_ok():
+        _log("⏸ Hourly gate: пропускаю morning — проактивне повідомлення вже було <1год тому")
+        return ""
+
     try:
         emails = _get_important_emails(5)
         crypto = _get_crypto_prices()
@@ -587,7 +605,11 @@ def handle_morning_schedule(schedule_name, now_tz):
 def handle_lunch_schedule(schedule_name, now_tz):
     """Called by scheduler at 12:00 PM"""
     _log(f"=== {schedule_name.upper()} ANALYSIS START ===")
-    
+
+    if not _hourly_gate_ok():
+        _log("⏸ Hourly gate: пропускаю lunch — проактивне повідомлення вже було <1год тому")
+        return ""
+
     try:
         emails = _get_important_emails(5)
         crypto = _get_crypto_prices()
@@ -613,7 +635,11 @@ def handle_lunch_schedule(schedule_name, now_tz):
 def handle_afternoon_schedule(schedule_name, now_tz):
     """Called by scheduler at 3:00 PM"""
     _log(f"=== {schedule_name.upper()} ANALYSIS START ===")
-    
+
+    if not _hourly_gate_ok():
+        _log("⏸ Hourly gate: пропускаю afternoon — проактивне повідомлення вже було <1год тому")
+        return ""
+
     try:
         emails = _get_important_emails(3)
         crypto = _get_crypto_prices()
@@ -640,7 +666,11 @@ def handle_afternoon_schedule(schedule_name, now_tz):
 def handle_evening_schedule(schedule_name, now_tz):
     """Called by scheduler at 8:00 PM"""
     _log(f"=== {schedule_name.upper()} ANALYSIS START ===")
-    
+
+    if not _hourly_gate_ok():
+        _log("⏸ Hourly gate: пропускаю evening — проактивне повідомлення вже було <1год тому")
+        return ""
+
     try:
         emails = _get_important_emails(7)
         crypto = _get_crypto_prices()

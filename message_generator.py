@@ -98,6 +98,55 @@ def _log(msg: str):
     ts = datetime.now(tz=_TZ).strftime("%H:%M:%S")
     print(f"[MSG_GEN {ts}] {msg}", flush=True)
 
+# ─── HOURLY GATE (27.09.2026) ────────────────────────────────────────────────
+# Олег: платний GEMINI_API_KEY (free-tier не спрацював, повернулись на платний)
+# швидко проїдає кредити (€1.90 з €10 за 4 дні) — попросив, щоб проактивні
+# AI-повідомлення ("Привіт Олеже!" з крипто/здоров'ям/астро/планами) йшли
+# НЕ ЧАСТІШЕ ОДНОГО РАЗУ НА ГОДИНУ, разом по всіх тригерах (не по 1/год на
+# кожен тип окремо — інакше при 13 типах тригерів + 4 денних розклади все
+# одно вийде десятки повідомлень/добу). Стан живе в storage.py (гілка data),
+# щоб переживав редеплой Railway. Перевіряємо ПЕРЕД генерацією тексту
+# (не тільки перед відправкою) — саме генерація й "should I send" рішення
+# через Gemini і є те, що жере платні кредити.
+_HOURLY_GATE_FILE = "proactive_hourly_gate.json"
+_HOURLY_GATE_MIN_GAP_MIN = 60
+
+def hourly_gate_ok(min_gap_min: float = _HOURLY_GATE_MIN_GAP_MIN) -> bool:
+    """True, якщо з останнього проактивного AI-повідомлення пройшло
+    >= min_gap_min хвилин (або їх не було ще жодного)."""
+    try:
+        import sys as _sys_hg
+        _sys_hg.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import storage as _storage_hg
+        state = _storage_hg.load(_HOURLY_GATE_FILE, default={}) or {}
+    except Exception as e:
+        _log(f"⚠️ hourly_gate_ok storage.load failed (fail-open): {e}")
+        return True
+    last = state.get("last_sent_at")
+    if not last:
+        return True
+    try:
+        then = datetime.fromisoformat(str(last))
+        if then.tzinfo is None:
+            then = then.replace(tzinfo=_TZ)
+    except Exception:
+        return True
+    now = datetime.now(tz=_TZ)
+    gap_min = (now - then).total_seconds() / 60.0
+    return gap_min >= min_gap_min
+
+def hourly_gate_mark():
+    """Позначити, що щойно пішло проактивне AI-повідомлення."""
+    try:
+        import sys as _sys_hg2
+        _sys_hg2.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import storage as _storage_hg2
+        _storage_hg2.save(_HOURLY_GATE_FILE, {
+            "last_sent_at": datetime.now(tz=_TZ).isoformat(),
+        })
+    except Exception as e:
+        _log(f"⚠️ hourly_gate_mark failed: {e}")
+
 # ─── Gemini ──────────────────────────────────────────────────────────────────
 def _gemini_post(body: dict, timeout: int = 25, tag: str = "") -> str:
     """Делегує до monitor._gem_post — СПІЛЬНИЙ rate-limiter на весь процес
@@ -1096,6 +1145,12 @@ def _send_to_telegram(text: str, topic: str = "", trigger_type: str = "") -> boo
     Довгі тексти ріже на частини, при 400 від HTML — повторює без parse_mode."""
     if not text or not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
         return False
+    # Глобальний тротлінг 1 проактивне AI-повідомлення/год — останній рубіж
+    # (основна перевірка ДО генерації в process_trigger/smart_notifications_v3,
+    # тут — про всяк випадок, якщо хтось викличе _send_to_telegram напряму).
+    if not hourly_gate_ok():
+        _log("⏸ Hourly gate: пропускаю відправку — проактивне повідомлення вже було <1год тому")
+        return False
     import sys as _sys_gx
     _sys_gx.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -1162,6 +1217,9 @@ def _send_to_telegram(text: str, topic: str = "", trigger_type: str = "") -> boo
         else:
             _log(f"❌ Chunk {idx+1}/{len(chunks)} FAILED permanently")
 
+    if sent_any:
+        hourly_gate_mark()
+
     return sent_any
 
 
@@ -1174,6 +1232,13 @@ def process_trigger(trigger_type: str, trigger_data, location: str = "doma", idl
     if not GEMINI_API_KEY:
         _log("⚠️ No GEMINI_API_KEY — fallback only")
 
+    # Глобальний тротлінг 1 проактивне AI-повідомлення/год (по всіх тригерах
+    # разом, див. hourly_gate_ok вище) — перевіряємо ДО генерації, щоб не
+    # палити платні Gemini-кредити на текст, який однаково не піде.
+    if not hourly_gate_ok():
+        _log(f"⏸ Hourly gate: пропускаю {trigger_type} — проактивне повідомлення вже було <1год тому")
+        return False
+
     try:
         if not _should_send_message(trigger_type, trigger_data):
             _log(f"Skipping {trigger_type}")
@@ -1185,6 +1250,7 @@ def process_trigger(trigger_type: str, trigger_data, location: str = "doma", idl
 
         success = _send_to_telegram(message, trigger_type=trigger_type)
         if success:
+            # hourly_gate_mark() вже викликаний всередині _send_to_telegram
             # Save first 100 chars as "topic" for anti-repeat
             topic = message[:100].replace("\n", " ")
             _save_to_history(trigger_type, topic)

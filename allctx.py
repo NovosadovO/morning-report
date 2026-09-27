@@ -187,7 +187,7 @@ SOURCES = [
     ("score", "🏅 ОЦІНКА ДНЯ", _src_score),
     ("weight", "⚖️ ВАГА", _src_weight),
     ("sleep", "😴 СОН", _src_sleep),
-    ("strava", "🏃 STRAVA", _src_strava),
+    ("strava", "🏃 БІГ", _src_strava),
     ("habits", "🔁 ЗВИЧКИ", _src_habits),
     ("emails", "📧 ПОШТА", _src_emails),
     ("crypto", "🪙 КРИПТО (ринок)", _src_crypto),
