@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T19:51:08.199366+00:00",
-      "category": "calendar_reminder_confirm",
-      "question": "Ліки для обличчя",
-      "answer": "✅ Поставлено",
-      "extra": {
-        "date": "2026-08-09"
-      }
-    },
-    {
       "ts": "2026-08-08T19:51:13.049981+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13923,6 +13914,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_refresh_39ccdcaa57"
+    },
+    {
+      "ts": "2026-09-27T05:49:06.995941+00:00",
+      "category": "rwa_move",
+      "question": "RWA",
+      "answer": "QNT виріс на 72.9% за 24 години (зараз $173)"
     }
   ]
 }
