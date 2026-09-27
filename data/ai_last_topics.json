@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-09-27t05_24_31_146345": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Discord інформує про пропущені повідомлення в каналі VenomBridge. Він містить історію взаємодії користувача Олега з AI, де",
+    "ts": "2026-09-27T05:24:31.146345"
+  },
   "action_detect|2026-09-27t05_20_11_624369": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Зарядка або прогулянка\", \"action_date\": null, \"action_time\": \"06:00\", \"action_summary\": \"Після завершення нічної зм",
@@ -293,10 +298,5 @@
     "topic": "calendar/truthfix",
     "gist": "Олеже, Соляр у 8-му домі \"Трансформація й спільні ресурси\" починається післязавтра, 28 вересня, коли ти будеш на нічній зміні. Чи справді твої інвестиції, що пр",
     "ts": "2026-09-26T23:15:36.440938"
-  },
-  "action_detect|2026-09-26t23_15_26_135444": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-26T23:15:26.135444"
   }
 }
