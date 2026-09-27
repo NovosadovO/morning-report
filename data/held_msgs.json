@@ -1,43 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T12:02:22.839231",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Reserved\n📋 Objavte viac\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Emergent\n📋 In case you missed this\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Reserved",
-              "callback_data": "email_reply_79810"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Emergent",
-              "callback_data": "email_reply_79808"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Profesia.sk",
-              "callback_data": "email_reply_79805"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79810"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79810"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T12:02:25.144819",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Reserved\n📋 Objavte viac\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Emergent\n📋 In case you missed this\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)",
@@ -180,6 +143,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T12:13:53.845615",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Deputy Chief Technology Officer - Trading Firm в Stealth»\n\n<i>«Сповіщення про вакансії в Slovakia          \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nDeputy Chief Technology Officer - Trading Firm\r\nStealth\r\nSlovakia\r\n\r\nЦя компанія активно наймає персонал\r\nПодати заявку за допомогою резюме і профілю\r\nПереглянути вакансію: https://www.linked...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79818"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79818"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79818"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79818"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79818"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79818"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
