@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, сьогодні о 9:00 у тебе прийом у дерматолога. Не забуд",
-      "detail": "Запис у календарі на 23.09 о 09:00 до дерматолога.",
-      "module": "selfact",
-      "ts": "2026-09-23T06:19:05"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, Google Cloud Billing Alerts повідомив, що ваш бюджет",
       "detail": "Лист від Google Cloud Billing Alerts про перевищення бюджету на 150%.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "19 год мовчання",
       "module": "healthai",
       "ts": "2026-09-27T07:00:25"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-09-27T07:00:57"
     }
   ]
 }
