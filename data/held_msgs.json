@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T10:30:47.823402",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Director, Revenue Operations в PayPal</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79801"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79801"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79801"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79801"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79801"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79801"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T10:30:49.828689",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (5 важливих листів)\n\n👤 Reserved\n📋 Objavte viac\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Emergent\n📋 In case you missed this\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 3 nové pracovné ponuky\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Bolt Slovakia\n📋 Your Bolt ride on Sunday\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -257,6 +218,12 @@
       "ts": "2026-09-27T10:42:16.558378",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T10:42:17.278650",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
