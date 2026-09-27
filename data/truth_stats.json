@@ -235,7 +235,8 @@
     "MSG_HEALTH_COMBINED": {
       "checked": 2,
       "issues": 2,
-      "fixed": 1
+      "fixed": 1,
+      "cut": 1
     }
   },
   "last": [
@@ -533,6 +534,6 @@
     "checked": 30,
     "issues": 24,
     "fixed": 5,
-    "cut": 6
+    "cut": 7
   }
 }
