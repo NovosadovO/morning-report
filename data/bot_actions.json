@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-09-23T13:06:23"
-    },
-    {
       "kind": "notify",
       "what": "Менеджер з продажу в Essity",
       "detail": "Лист від Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com> 'Area Sales Manager в Essity' містить інформацію про потенційно цікаву вакансію.",
@@ -2799,6 +2792,13 @@
       "detail": "КАЛЕНДАР НА 7 ДНІВ: 28.09: 18:10 💧 Вода (2л+) ❌",
       "module": "selfact",
       "ts": "2026-09-28T01:13:32"
+    },
+    {
+      "kind": "notify",
+      "what": "Звичка: Сауна",
+      "detail": "КАЛЕНДАР НА 7 ДНІВ: 28.09: 18:10 🧖 Сауна ❌",
+      "module": "selfact",
+      "ts": "2026-09-28T01:13:39"
     }
   ]
 }
