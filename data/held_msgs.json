@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T02:01:20.339414",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T02:01:21.492071",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Director, Revenue Operations в PayPal</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -379,6 +373,12 @@
       "ts": "2026-09-27T02:03:08.121267",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Temu  → COB LED pásiky, 12V/2... Môže byť lacnejšie!\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T02:03:10.493385",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
       "keyboard": null
     }
   ]
