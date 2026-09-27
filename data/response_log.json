@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T12:06:20.322854+00:00",
-      "category": "event_done",
-      "question": "📅 Біг\nПланувалась до 11:30 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-09T12:06:25.804219+00:00",
       "category": "ai_button",
       "question": "health",
@@ -13884,6 +13878,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-09-27T22:18:37.039772+00:00",
+      "category": "diary",
+      "question": "3 питання про день",
+      "answer": "це тільки перша нічна зміна"
     }
   ]
 }
