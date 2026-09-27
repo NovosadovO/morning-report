@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Прийом у дерматолога",
-      "detail": "Запис у календарі на 23.09: 09:00 дерматолога.",
-      "module": "selfact",
-      "ts": "2026-09-23T10:29:25"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, нагадую, що 30 вересня закінчується доступ до поточної",
       "detail": "Лист від Team Wirex <noreply@mail.wirexapp.com> | Your access ends Sept 30th. Upgrade now.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Тижневий звіт по здоров'ю",
       "module": "selfact",
       "ts": "2026-09-27T19:31:18"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: steps_good",
+      "detail": "🚶 Кроки за тиждень у середньому 8218 — ціль 8000 досягнута",
+      "module": "healthai",
+      "ts": "2026-09-27T19:36:51"
     }
   ]
 }
