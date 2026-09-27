@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T19:53:11.199924+00:00",
-      "category": "event_done",
-      "question": "📅 🧖 Сауна ❌\nПланувалась до 20:40 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-08T22:31:17.215429+00:00",
       "category": "calendar_button",
       "question": "Ліки для обличчя",
@@ -13927,6 +13921,12 @@
       "category": "confirm",
       "question": "calrem_skip: Перевірити напрямок дій та підписки",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-27T16:05:50.834755+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_a85a0f93d3"
     }
   ]
 }
