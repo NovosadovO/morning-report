@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T15:01:20.347362",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 9 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_79825"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79825"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79825"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T15:01:23.042272",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 9 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
@@ -546,6 +521,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79822"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T15:31:18.668101",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Well Informed: Are weighted blankets really beneficial?</b>\n👤 \"The Economist\" &lt;noreply@e.economist.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79821"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79821"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79821"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79821"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79821"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79821"
             }
           ]
         ]
