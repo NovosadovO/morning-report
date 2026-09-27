@@ -1,3 +1,43 @@
 {
-  "items": []
+  "items": [
+    {
+      "ts": "2026-09-27T07:44:28.605764",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Lidl</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Ušetri až do -84 % v online výpredaji»\n\n<i>«Pozri si našu ponuku na ďalší týždeň.Pozri si našu ponuku na ďalší týždeň.\r\n\r\n\r\n \r\n  \r\n\r\nhttps://click.mail.lidlplus.sk/?qs=ABB7InYiOjEsImQiOjUwMTJ9ADIAAAAAAfpFVxm8y4vVl_PvvC5tqZP54PUVkExwOWtd72lxl2vf3Q01cxoqIQSJzL54ZQbBVCoAZwwE2O05T2x5Z_yFSYI1_KnwSfL8ZGtrAKvIenTZmb0 \r\nAk sa ti tento newsletter...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79807"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79807"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79807"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79807"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79807"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79807"
+            }
+          ]
+        ]
+      }
+    }
+  ]
 }
