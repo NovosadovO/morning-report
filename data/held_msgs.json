@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T09:03:44.294378",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T09:03:45.048945",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79808"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T09:15:37.731664",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79805"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79805"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79805"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79805"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79805"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79805"
             }
           ]
         ]
