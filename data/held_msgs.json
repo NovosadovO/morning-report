@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T14:05:11.199790",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T14:06:17.816448",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79824"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T14:16:12.137424",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - September 27</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79823"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79823"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79823"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79823"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79823"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79823"
             }
           ]
         ]
