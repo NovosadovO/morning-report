@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T11:56:40.275265+00:00",
-      "category": "calendar_reminder_confirm",
-      "question": "Зважитись",
-      "answer": "✅ Поставлено",
-      "extra": {
-        "date": "2026-08-10"
-      }
-    },
-    {
       "ts": "2026-08-09T12:01:25.566241+00:00",
       "category": "calendar_reminder_confirm",
       "question": "Пробіжка",
@@ -13897,6 +13888,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "fu_skip_ade66e8c48"
+    },
+    {
+      "ts": "2026-09-27T20:02:04.862241+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_f706b17883"
     }
   ]
 }
