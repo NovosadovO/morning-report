@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T12:05:13.397538",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T12:06:23.411736",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79816"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T12:16:15.016902",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>💼 Oleg, Here are your Weekly Watchlist Updates</b>\n👤 Investing.com &lt;newsletter@investingmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79815"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79815"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79815"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79815"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79815"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79815"
             }
           ]
         ]
