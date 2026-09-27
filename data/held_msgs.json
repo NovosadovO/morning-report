@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T09:18:07.479464",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T09:19:16.719986",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T09:30:39.240886",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Objavte viac</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79810"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79810"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79810"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79810"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79810"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79810"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
