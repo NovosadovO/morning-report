@@ -120,5 +120,16 @@
     "keyword": "Ubian кредит",
     "source": "email:79489",
     "ts": "2026-09-21T17:25:12.620880+00:00"
+  },
+  "депозит aave": {
+    "entity": "Депозит Aave",
+    "kind": "other",
+    "state": "completed",
+    "valid_from": null,
+    "valid_to": null,
+    "next_due": null,
+    "keyword": "Aave депозит",
+    "source": "email:79833",
+    "ts": "2026-09-27T20:39:06.337929+00:00"
   }
 }
