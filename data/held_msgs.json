@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T09:00:42.482082",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Špecialista/ Špecialistka procesov a systémov logistiky в DH</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79802"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79802"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79802"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79802"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79802"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79802"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T09:00:43.705014",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Director, Revenue Operations в PayPal</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -344,6 +305,12 @@
       "ts": "2026-09-27T09:10:46.153714",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T09:10:51.847460",
+      "kind": "chunk",
+      "text": "💹 <b>КРИПТО ДАШБОРД</b> · 09-27\n\n🟢 <b>BTC</b>  <b>$84,511.75</b>\n   24г: +0.72%  7д: +5.0%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>ETH</b>  <b>$2,706.15</b>\n   24г: +0.77%  7д: +4.9%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>BNB</b>  <b>$774.83</b>\n   24г: +0.24%  7д: +2.8%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>XRP</b>  <b>$1.52</b>\n   24г: -1.84%  7д: +10.2%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>SOL</b>  <b>$121.38</b>\n   24г: +0.81%  7д: +11.7%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>TRX</b>  <b>$0.33</b>\n   24г: -1.16%  7д: -2.1%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>ZEC</b>  <b>$1,657.20</b>\n   24г: +7.86%  7д: +14.5%\n   <code>[🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢]</code>\n\n🟢 <b>FIGR_HELOC</b>  <b>$1.06</b>\n   24г: +3.69%  7д: +4.4%\n   <code>[🟢🟢🟢🟢🟢🟢🟢🟢⬜⬜]</code>\n\n🟢 <b>HYPE</b>  <b>$92.68</b>\n   24г: +1.14%  7д: +2.2%\n   <code>[🟢🟢🟢🟢🟢🟢⬜⬜⬜⬜]</code>\n\n🔴 <b>DOGE</b>  <b>$0.10</b>\n   24г: -0.66%  7д: +13.4%\n   <code>[🔴🔴🔴🔴⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>LINK</b>  <b>$14.28</b>\n   24г: +1.76%  7д: +18.4%\n   <code>[🟢🟢🟢🟢🟢🟢⬜⬜⬜⬜]</code>\n\n🟢 <b>XMR</b>  <b>$556.67</b>\n   24г: +0.17%  7д: +7.9%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>WBT</b>  <b>$84.39</b>\n   24г: +0.73%  7д: +3.1%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>ADA</b>  <b>$0.26</b>\n   24г: +0.49%  7д: +15.",
       "keyboard": null
     }
   ]
