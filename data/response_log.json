@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T19:51:16.277538+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_water"
-    },
-    {
       "ts": "2026-08-08T19:51:19.279652+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13924,6 +13918,15 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "QNT виріс на 86.7% за 24 години (зараз $185)"
+    },
+    {
+      "ts": "2026-09-27T14:49:00.301086+00:00",
+      "category": "day_energy",
+      "question": "Як ти сьогодні",
+      "answer": "Норма",
+      "extra": {
+        "shift": "night"
+      }
     }
   ]
 }
