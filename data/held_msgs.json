@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T11:07:04.508091",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Linas Beliūnas через LinkedIn</b>\n📋 Тема: «Nubank launched in 35 countries without a single banking license 😳🏦; C»\n\n<i>«Weekly FinTech Digest\r\n\r\nАвтор: Linas Beliūnas\r\n\r\n\r\nАвтор: Linas Beliūnas\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/nubank-launched-35-countries-without-single-banking-license-beli%C5%ABnas-cihof?li...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79816"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79816"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79816"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79816"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79816"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79816"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T11:07:34.244033",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
@@ -181,6 +142,12 @@
       "ts": "2026-09-27T11:15:55.824780",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T11:15:58.760141",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +5.7% за 24г</b>\n\nЗараз: 11.17 $\n24г тому: 10.56 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
