@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T11:56:24.534826+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_ok_a9a0b9a361"
-    },
-    {
       "ts": "2026-08-09T11:56:40.275265+00:00",
       "category": "calendar_reminder_confirm",
       "question": "Зважитись",
@@ -13897,6 +13891,12 @@
       "category": "confirm",
       "question": "gate_fu_skip: 📭 ЧЕКАЄШ ВІДПОВІДЬ 3 дн.",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-27T20:02:04.861787+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "fu_skip_ade66e8c48"
     }
   ]
 }
