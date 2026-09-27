@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T02:31:10.296489",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T02:31:11.558721",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your Bolt ride on Sunday</b>\n👤 Bolt Slovakia &lt;receipts-slovakia@bolt.eu&gt;",
@@ -398,6 +392,12 @@
       "ts": "2026-09-27T02:33:13.714319",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T02:33:14.540467",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
       "keyboard": null
     }
   ]
