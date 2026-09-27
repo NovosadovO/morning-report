@@ -1,4 +1,49 @@
 {
+  "deadlines|2026-09-27t18_48_56_643563": {
+    "topic": "deadlines",
+    "gist": "[]",
+    "ts": "2026-09-27T18:48:56.643563"
+  },
+  "action_detect|2026-09-27t18_46_40_125716": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": \"2023-10-01\", \"action_time\": null, \"action_summary\": \"Зробити хоча б одну пробіжку 1 або ",
+    "ts": "2026-09-27T18:46:40.125716"
+  },
+  "weekly_report|2026-09-27t18_46_32_442110": {
+    "topic": "weekly_report",
+    "gist": "Привіт, Олеже!  Попри нічну зміну, твоя вага продовжує тішити: -0.6 кг за тиждень — це класний результат, особливо зважаючи на те, що за місяць ти в плюсі лише ",
+    "ts": "2026-09-27T18:46:32.442110"
+  },
+  "action_detect|2026-09-27t18_46_18_031305": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-27T18:46:18.031305"
+  },
+  "action_detect|2026-09-27t18_46_07_199456": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжка\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Зробити хоч одну коротку пробіжку наступног",
+    "ts": "2026-09-27T18:46:07.199456"
+  },
+  "action_detect|2026-09-27t18_45_56_194166": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Пробіжки наступного тижня\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Наступного тижня обов'язко",
+    "ts": "2026-09-27T18:45:56.194166"
+  },
+  "action_detect|2026-09-27t18_45_45_112895": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-27T18:45:45.112895"
+  },
+  "action_detect|2026-09-27t18_45_34_095148": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-27T18:45:34.095148"
+  },
+  "mailcal_extract|2026-09-27t18_44_36_472193": {
+    "topic": "mailcal_extract",
+    "gist": "[]",
+    "ts": "2026-09-27T18:44:36.472193"
+  },
   "selfact|2026-09-27t18_43_29_369304": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Завершення підписки Apple\",     \"text\": \"Олеже, нагадую, що 30 вересня закінчується термін дії твоєї підписки ",
@@ -253,50 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Легке кардіо\", \"action_date\": \"2026-09-27\", \"action_time\": \"17:10\", \"action_summary\": \"Зробити 20 хвилин легкого ка",
     "ts": "2026-09-27T17:00:44.065493"
-  },
-  "action_detect|2026-09-27t17_00_40_271473": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-27T17:00:40.271473"
-  },
-  "msg_workout_plan_truthfix|2026-09-27t17_00_34_915662": {
-    "topic": "MSG_WORKOUT_PLAN/truthfix",
-    "gist": "Олеже, твої кроки сьогодні, 27 вересня 2026 року, становлять лише 1669, тоді як середній показник за 7 днів — 7593.3, а за 14 днів — 13057.8. Це значне падіння ",
-    "ts": "2026-09-27T17:00:34.915662"
-  },
-  "email_ai_item|2026-09-27t17_00_31_785108": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист містить 9 нових оголошень про продаж 3-кімнатних квартир у місті Кошице, Словаччина, з цінами від 189 900 € до 239 000 €. Оголошен",
-    "ts": "2026-09-27T17:00:31.785108"
-  },
-  "msg_workout_plan|2026-09-27t17_00_25_149612": {
-    "topic": "MSG_WORKOUT_PLAN",
-    "gist": "Привіт Олеже! 🏋️  Бачу, ти готуєшся до нічної зміни, яка почнеться зовсім скоро, близько 17:30. Незважаючи на підготовку до роботи, твоя ціль схуднути до 75 кг ",
-    "ts": "2026-09-27T17:00:25.149612"
-  },
-  "selfact|2026-09-27t16_54_55_352727": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Завершення підписки Apple\",     \"text\": \"Олеже, нагадую, що 30 вересня закінчується термін дії твоєї підписки ",
-    "ts": "2026-09-27T16:54:55.352727"
-  },
-  "msg_rwa|2026-09-27t16_49_12_048384": {
-    "topic": "MSG_RWA",
-    "gist": "Олеже, привіт. Бачу, ти готуєшся до нічної зміни, яка почнеться вже через годину. На крипторинку тим часом відбуваються цікаві рухи, особливо в твоєму рідному R",
-    "ts": "2026-09-27T16:49:12.048384"
-  },
-  "people|2026-09-27t16_47_45_095559": {
-    "topic": "people",
-    "gist": "```json [] ```",
-    "ts": "2026-09-27T16:47:45.095559"
-  },
-  "openloop_promises|2026-09-27t16_46_24_958766": {
-    "topic": "openloop_promises",
-    "gist": "```json [] ```",
-    "ts": "2026-09-27T16:46:24.958766"
-  },
-  "selfact|2026-09-27t16_39_30_921091": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"text\": \"Олеже, нагадую, що сьогодні о 17:00 починається нічна зміна (18:00-06:00).\",     \"why\": \"У календарі на 27.09 з",
-    "ts": "2026-09-27T16:39:30.921091"
   }
 }
