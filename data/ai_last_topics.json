@@ -1,4 +1,9 @@
 {
+  "action_detect|2026-09-27t20_12_54_186265": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-27T20:12:54.186265"
+  },
   "healthai|2026-09-27t20_05_23_642464": {
     "topic": "healthai",
     "gist": "👋 Олеже, бачу, що нічна зміна, яка триватиме до завтра 06:00, створює виклик для стабільності твого сну, оскільки середній розкид його ритму становить ±3.08 год",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-27T19:00:23.643882"
-  },
-  "weekly_review|2026-09-27t19_00_10_455626": {
-    "topic": "weekly_review",
-    "gist": "```json {   \"review\": \"Привіт, Олеже! Давай підсумуємо твій тиждень з 20 по 27 вересня.\\n\\n🏁 ЯК ПРОЙШОВ ТИЖДЕНЬ\\nЦього тижня ти зробив чудовий крок у напрямку ц",
-    "ts": "2026-09-27T19:00:10.455626"
   }
 }
