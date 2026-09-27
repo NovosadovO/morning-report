@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T03:23:31.364483",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 3 nové pracovné ponuky\n• Bolt Slovakia  → Your Bolt ride on Sunday\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T03:23:33.504853",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -146,6 +140,12 @@
     },
     {
       "ts": "2026-09-27T03:27:13.170980",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Соляр — 7-й дім: Партнерство » було 26.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T03:27:13.963636",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Соляр — 7-й дім: Партнерство » було 26.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
