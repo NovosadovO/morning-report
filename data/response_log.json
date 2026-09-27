@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T11:56:23.636212+00:00",
-      "category": "calendar_button",
-      "question": "Оплата страховки Kooperativa",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t24h",
-        "when": "12:00–13:00",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-09T11:56:24.534826+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13902,6 +13891,12 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "QNT виріс на 48.9% за 24 години (зараз $184)"
+    },
+    {
+      "ts": "2026-09-27T20:01:53.323758+00:00",
+      "category": "confirm",
+      "question": "gate_fu_skip: 📭 ЧЕКАЄШ ВІДПОВІДЬ 3 дн.",
+      "answer": "yes"
     }
   ]
 }
