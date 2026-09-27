@@ -1,4 +1,29 @@
 {
+  "evening_ai|2026-09-27t20_23_01_069033": {
+    "topic": "EVENING_AI",
+    "gist": "Олеже, вітаю тебе з початком нічної зміни, яка сьогодні, 27 вересня, вже триває з 18:00 і триватиме до 06:00. Це специфічний час, коли більшість відпочиває, а т",
+    "ts": "2026-09-27T20:23:01.069033"
+  },
+  "selfact|2026-09-27t20_17_18_363012": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Завершення підписки Apple\",     \"text\": \"Олеже, нагадую, що 30 вересня закінчується термін дії підписки Apple.",
+    "ts": "2026-09-27T20:17:18.363012"
+  },
+  "mailcal_extract|2026-09-27t20_15_56_844158": {
+    "topic": "mailcal_extract",
+    "gist": "```json [] ```",
+    "ts": "2026-09-27T20:15:56.844158"
+  },
+  "email_ai_item|2026-09-27t20_15_12_845126": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії, які відповідають налаштуванням користувача. Зокрема, пропонується вакансія ",
+    "ts": "2026-09-27T20:15:12.845126"
+  },
+  "action_detect|2026-09-27t20_14_36_372578": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-27T20:14:36.372578"
+  },
   "action_detect|2026-09-27t20_12_54_186265": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
@@ -273,50 +298,5 @@
     "topic": "MSG_EVENT_SOON",
     "gist": "Привіт Олеже! ⏰  Зважаючи, що ти зараз на нічній зміні (18:00-06:00) і маєш фізично працювати, а попереду о 00:00 (тобто вже **завтра**, 28.09) відбудеться \"Сол",
     "ts": "2026-09-27T19:05:12.978040"
-  },
-  "action_detect|2026-09-27t19_01_30_478943": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити гель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Треба купити гель.\"}",
-    "ts": "2026-09-27T19:01:30.478943"
-  },
-  "action_detect|2026-09-27t19_01_19_576604": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-27T19:01:19.576604"
-  },
-  "email_ai_item|2026-09-27t19_01_09_563826": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист містить 9 нових оголошень про продаж 3-кімнатних квартир у Кошиці, Словаччина, з цінами від 189 900 € до 239 000 €. Оголошення бул",
-    "ts": "2026-09-27T19:01:09.563826"
-  },
-  "email_ai_item|2026-09-27t19_00_58_036319": {
-    "topic": "email_ai_item",
-    "gist": "{\"description\": \"Цей лист від Temu є рекламною розсилкою, яка пропонує відвідати їхній вебсайт для перегляду рекомендованих товарів. У листі немає конкретних да",
-    "ts": "2026-09-27T19:00:58.036319"
-  },
-  "action_detect|2026-09-27t19_00_23_643882": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-27T19:00:23.643882"
-  },
-  "selfact|2026-09-27t20_17_18_363012": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Завершення підписки Apple\",     \"text\": \"Олеже, нагадую, що 30 вересня закінчується термін дії підписки Apple.",
-    "ts": "2026-09-27T20:17:18.363012"
-  },
-  "mailcal_extract|2026-09-27t20_15_56_844158": {
-    "topic": "mailcal_extract",
-    "gist": "```json [] ```",
-    "ts": "2026-09-27T20:15:56.844158"
-  },
-  "email_ai_item|2026-09-27t20_15_12_845126": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Цей лист від LinkedIn містить сповіщення про нові вакансії, які відповідають налаштуванням користувача. Зокрема, пропонується вакансія ",
-    "ts": "2026-09-27T20:15:12.845126"
-  },
-  "action_detect|2026-09-27t20_14_36_372578": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-27T20:14:36.372578"
   }
 }
