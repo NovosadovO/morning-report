@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, твій доступ до Wirex закінчується 30 вересня. Потрібн",
-      "detail": "Лист від Team Wirex <noreply@mail.wirexapp.com> | Your access ends Sept 30th. Upgrade now. прямо вказує на дедлайн 30 вересня.",
-      "module": "selfact",
-      "ts": "2026-09-23T11:31:42"
-    },
-    {
-      "kind": "notify",
       "what": "Нагадую, що підписка на Runable не оплачується з 23 серпня.",
       "detail": "В секції 'ПІДПИСКИ' є запис про Runable: 'Платіж до Runable на $10.00 був невдалим. Потрібно оновити платіжну інформацію.' та кілька невдалих спроб оплати у 'СПИСАННЯХ'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Подія '23:00 Соляр — 7-й дім: Партнерство' сьогодні, 27.09, є важливою і Олег міг її пропустити серед інших завдань.",
       "module": "selfact",
       "ts": "2026-09-27T20:01:41"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, також є нова вакансія Deputy Chief Technology Officer",
+      "detail": "Нова вакансія від LinkedIn 'Deputy Chief Technology Officer - Trading Firm в Stealth' у Словаччині, яка стосується криптовалют, може бути актуальною для Олега.",
+      "module": "selfact",
+      "ts": "2026-09-27T20:02:09"
     }
   ]
 }
