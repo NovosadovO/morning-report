@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T11:00:39.233359",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>In case you missed this</b>\n👤 Emergent &lt;team@ship.emergent.sh&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79808"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79808"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79808"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79808"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79808"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79808"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T11:00:40.467136",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -351,6 +312,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +5.2% за 24г\n\nЗараз: 11.21 $\n24г тому: 10.66 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T11:07:04.508091",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Linas Beliūnas через LinkedIn</b>\n📋 Тема: «Nubank launched in 35 countries without a single banking license 😳🏦; C»\n\n<i>«Weekly FinTech Digest\r\n\r\nАвтор: Linas Beliūnas\r\n\r\n\r\nАвтор: Linas Beliūnas\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/nubank-launched-35-countries-without-single-banking-license-beli%C5%ABnas-cihof?li...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79816"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79816"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79816"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79816"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79816"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79816"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
