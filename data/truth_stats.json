@@ -165,7 +165,8 @@
     "context_ask_ai": {
       "checked": 62,
       "issues": 44,
-      "fixed": 25
+      "fixed": 25,
+      "cut": 1
     },
     "healthai": {
       "checked": 169,
@@ -537,6 +538,6 @@
     "checked": 42,
     "issues": 33,
     "fixed": 7,
-    "cut": 8
+    "cut": 9
   }
 }
