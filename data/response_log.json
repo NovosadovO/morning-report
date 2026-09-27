@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T19:51:13.049981+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_spray"
-    },
-    {
       "ts": "2026-08-08T19:51:13.642254+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13920,6 +13914,16 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "QNT виріс на 72.9% за 24 години (зараз $173)"
+    },
+    {
+      "ts": "2026-09-27T06:00:17.598380+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную додати в календар",
+      "answer": "Аналіз 7-го дня Соляру",
+      "extra": {
+        "kind": "calendar",
+        "date": "2026-09-27"
+      }
     }
   ]
 }
