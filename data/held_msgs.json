@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T02:11:04.615038",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Temu <temu@eu.temuemail.com> → COB LED pásiky, 12V/2... Môže byť lacnejšie!\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T02:11:05.353479",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Temu  → COB LED pásiky, 12V/2... Môže byť lacnejšie!\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -182,6 +176,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-27T02:14:54.589248",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Соляр — 7-й дім: Партнерство » було 26.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
     }
   ]
 }
