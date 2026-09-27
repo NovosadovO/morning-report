@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T02:13:48.501144",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Temu  → COB LED pásiky, 12V/2... Môže byť lacnejšie!\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T02:13:50.806407",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -376,6 +370,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79794"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T02:16:28.708416",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Manager, Growth Analytics в Bitpanda</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79793"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79793"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79793"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79793"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79793"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79793"
             }
           ]
         ]
