@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T13:01:12.375355",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 Dostali ste vrátenie kreditu!\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Temu",
-              "callback_data": "email_reply_79820"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79820"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79820"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T13:01:14.931864",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Temu\n📋 Dostali ste vrátenie kreditu!\n📝 (AI-аналіз тимчасово недоступний)",
@@ -167,6 +142,12 @@
       "ts": "2026-09-27T13:13:49.309386",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T13:13:50.067826",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
