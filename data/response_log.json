@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T19:05:42.629702+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "wr_cal_37201886f0"
-    },
-    {
       "ts": "2026-08-09T19:06:16.555776+00:00",
       "category": "chat",
       "question": "але я бігав минулого тижня",
@@ -13890,6 +13884,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_ebf28e1f4d"
+    },
+    {
+      "ts": "2026-09-28T00:17:13.566944+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Запланувати сауну",
+      "answer": "yes"
     }
   ]
 }
