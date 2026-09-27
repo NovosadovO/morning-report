@@ -1,4 +1,9 @@
 {
+  "foresight|2026-09-27t18_54_01_173933": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-27T18:54:01.173933"
+  },
   "deadlines|2026-09-27t18_48_56_643563": {
     "topic": "deadlines",
     "gist": "[]",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити гель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Треба купити гель.\"}",
     "ts": "2026-09-27T17:00:51.052283"
-  },
-  "action_detect|2026-09-27t17_00_44_065493": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Легке кардіо\", \"action_date\": \"2026-09-27\", \"action_time\": \"17:10\", \"action_summary\": \"Зробити 20 хвилин легкого ка",
-    "ts": "2026-09-27T17:00:44.065493"
   }
 }
