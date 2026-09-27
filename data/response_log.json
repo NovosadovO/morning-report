@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T19:50:57.330671+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_tea"
-    },
-    {
       "ts": "2026-08-08T19:51:08.199366+00:00",
       "category": "calendar_reminder_confirm",
       "question": "Ліки для обличчя",
@@ -13923,6 +13917,12 @@
         "when": "",
         "note": null
       }
+    },
+    {
+      "ts": "2026-09-27T05:34:51.366483+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_refresh_39ccdcaa57"
     }
   ]
 }
