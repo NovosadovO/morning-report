@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T03:16:14.355995",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>3 nové pracovné ponuky</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79804"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79804"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79804"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79804"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79804"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79804"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T03:16:15.497864",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Your Bolt ride on Sunday</b>\n👤 Bolt Slovakia &lt;receipts-slovakia@bolt.eu&gt;",
@@ -377,6 +338,12 @@
       "ts": "2026-09-27T03:18:46.418327",
       "kind": "calendar",
       "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 11-й дім: Друзі й плани</b>\n📅 01.10 (Thu) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T03:18:47.233383",
+      "kind": "calendar",
+      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 11-й дім: Друзі й плани\n📅 01.10 (Thu) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
       "keyboard": null
     }
   ]
