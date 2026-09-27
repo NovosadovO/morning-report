@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T19:08:39.069263+00:00",
-      "category": "calendar_confirm",
-      "question": "Заплатити страховку Kooperativa",
-      "answer": "✅ Додано",
-      "extra": {
-        "events": [
-          "Заплатити страховку Kooperativa"
-        ]
-      }
-    },
-    {
       "ts": "2026-08-09T19:08:48.210550+00:00",
       "category": "calendar_button",
       "question": "tomorrow",
@@ -13893,6 +13882,16 @@
       "extra": {
         "kind": "reminder",
         "date": "2026-09-28"
+      }
+    },
+    {
+      "ts": "2026-09-28T01:30:15.757847+00:00",
+      "category": "proactive_offer",
+      "question": "Пропоную занотувати",
+      "answer": "Соляр - 8-й дім: Трансформація й спільні ресурси",
+      "extra": {
+        "kind": "note",
+        "date": "2026-09-29"
       }
     }
   ]
