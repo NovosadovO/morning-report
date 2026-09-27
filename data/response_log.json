@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T18:59:22.852318+00:00",
-      "category": "ai_button",
-      "question": "crypto",
-      "answer": "chart",
-      "extra": {
-        "trigger": "deep_analysis",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-09T18:59:24.591468+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13894,6 +13884,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_3103e7b7b8"
+    },
+    {
+      "ts": "2026-09-28T00:15:03.284055+00:00",
+      "category": "confirm",
+      "question": "gate_cal_skip: Соляр — 8-й дім: Трансформація й спільні ресурси",
+      "answer": "yes"
     }
   ]
 }
