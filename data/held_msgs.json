@@ -1,84 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T03:45:47.908327",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>3 nové pracovné ponuky</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79804"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79804"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79804"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79804"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79804"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79804"
-            }
-          ]
-        ]
-      }
-    },
-    {
-      "ts": "2026-09-27T03:45:49.059201",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your Bolt ride on Sunday</b>\n👤 Bolt Slovakia &lt;receipts-slovakia@bolt.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79803"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79803"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79803"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79803"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79803"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79803"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T03:45:50.428598",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Špecialista/ Špecialistka procesov a systémov logistiky в DH</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -377,6 +299,18 @@
       "ts": "2026-09-27T03:48:08.881954",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T03:48:09.767000",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T03:48:10.252255",
+      "kind": "bills",
+      "text": "🔴 <b>ПРОСТРОЧЕНИЙ РАХУНОК</b> (4 дн.)\n━━━━━━━━━━━━━━━━━━━━\n🏢 <b>CapCut</b>\n💰 сума не вказана\n📆 до <b>2026-09-23</b>\n\nВаша підписка CapCut закінчується через 3 дні. Це нагадування про необхідність її поновити.",
       "keyboard": null
     }
   ]
