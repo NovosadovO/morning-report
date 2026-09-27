@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T02:13:32.684652",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Соляр — 7-й дім: Партнерство » було 26.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T02:13:47.791561",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Temu <temu@eu.temuemail.com> → COB LED pásiky, 12V/2... Môže byť lacnejšie!\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79799"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T02:16:25.054023",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Business Analyst в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79796"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79796"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79796"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79796"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79796"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79796"
             }
           ]
         ]
