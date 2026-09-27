@@ -1,9 +1,4 @@
 {
-  "79293": {
-    "sender": "newsletters@e.economist.com",
-    "sender_raw": "\"Robert Guest at The Economist\" <newsletters@e.economist.com>",
-    "seen_ts": "2026-09-17T18:46:42.914524+00:00"
-  },
   "79294": {
     "sender": "newsletter@mail.theblock.co",
     "sender_raw": "The Block <newsletter@mail.theblock.co>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-09-27T12:01:17.056133+00:00"
+  },
+  "79823": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-27T12:15:40.816991+00:00"
   }
 }
