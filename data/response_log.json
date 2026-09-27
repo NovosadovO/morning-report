@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-08T19:53:07.151193+00:00",
-      "category": "event_done",
-      "question": "📅 🍵 Трав'яний чай ❌\nПланувалась до 20:40 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-08T19:53:07.617585+00:00",
       "category": "event_done",
       "question": "📅 🏃 Біг ❌\nПланувалась до 20:40 — виконано?",
@@ -13927,6 +13921,12 @@
       "category": "confirm",
       "question": "gate_cal_skip: Відпочинок перед нічною зміною",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-27T16:04:44.791317+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_9a8c7a1b1d"
     }
   ]
 }
