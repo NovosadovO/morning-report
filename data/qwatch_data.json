@@ -1345,5 +1345,27 @@
     "spo2_min": 96,
     "spo2_max": 99,
     "body_battery": 54
+  },
+  "2026-09-27": {
+    "date": "2026-09-27",
+    "steps": 1669,
+    "sleep_quality": 100,
+    "hr_avg": 76,
+    "calories": 72.5,
+    "hrv": 35,
+    "age": 37,
+    "height_cm": 175,
+    "source": "qwatch",
+    "saved_at": "2026-09-27 14:49",
+    "health_score": 76,
+    "sleep_total_min": 647,
+    "sleep_deep_min": 165,
+    "sleep_light_min": 266,
+    "stress": 45,
+    "weight_kg": 83.7,
+    "distance_km": 1.155,
+    "spo2_min": 96,
+    "spo2_max": 99,
+    "body_battery": 39.5
   }
 }
