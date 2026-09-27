@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T03:45:30.321201",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\" <support@profesia.sk> → 3 nové pracovné ponuky\n• Bolt Slovakia <receipts-slovakia@bolt.eu> → Your Bolt ride on Sunday\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T03:45:31.130622",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 3 nové pracovné ponuky\n• Bolt Slovakia  → Your Bolt ride on Sunday\n\n🧹 Реклама: 4 — можна пропустити.",
@@ -410,6 +404,12 @@
       "ts": "2026-09-27T03:47:00.989479",
       "kind": "calendar",
       "text": "📆 <b>Наперед: скоро подія</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 11-й дім: Друзі й плани</b>\n📅 01.10 (Thu) — через 4 дн.\n🕐 00:00–00:00\n\n<i>Внеси в план тижня, щоб не накладалось на зміну.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T03:47:01.783528",
+      "kind": "calendar",
+      "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 11-й дім: Друзі й плани\n📅 01.10 (Thu) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
       "keyboard": null
     }
   ]
