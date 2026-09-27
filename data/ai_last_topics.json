@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-09-28t01_49_51_384620": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-28T01:49:51.384620"
+  },
+  "selfact|2026-09-28t01_44_13_539812": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сховище iCloud заповнено\",     \"text\": \"Олег, твоє сховище iCloud заповнено. Документи, контакти та дані з при",
+    "ts": "2026-09-28T01:44:13.539812"
+  },
   "subs|2026-09-28t01_43_50_908426": {
     "topic": "subs",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "qwatch_parse",
     "gist": "```json {   \"health_score\": 95,   \"steps\": 12840,   \"sleep_total_min\": 647,   \"sleep_deep_min\": 165,   \"sleep_light_min\": 266,   \"sleep_quality\": 100,   \"hr_avg",
     "ts": "2026-09-27T23:48:10.918801"
-  },
-  "selfact|2026-09-27t23_39_50_425296": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сховище iCloud заповнено\",     \"text\": \"Олеже, твоє сховище iCloud заповнено. Це означає, що документи, контак",
-    "ts": "2026-09-27T23:39:50.425296"
-  },
-  "action_detect|2026-09-27t23_39_02_306635": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-27T23:39:02.306635"
   }
 }
