@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "email_delete_78737",
-      "label": "🗑 Видалити",
-      "ts": "2026-09-08T10:41:46"
-    },
-    {
-      "t": "btn",
       "data": "habit_yes_shower",
       "label": "✅ Зробив",
       "ts": "2026-09-08T22:01:37"
@@ -7199,6 +7193,12 @@
       "data": "am_yes_2fd7dba438",
       "label": "✅ Так",
       "ts": "2026-09-27T22:49:52"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_3qs4ciqpmq1cibrdthg9g8keqg_2026-09-27",
+      "label": "✅ Виконано",
+      "ts": "2026-09-27T22:50:06"
     }
   ]
 }
