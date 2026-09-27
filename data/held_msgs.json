@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T10:25:50.911591",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T10:25:56.363990",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +5.3% за 24г</b>\n\nЗараз: 11.24 $\n24г тому: 10.67 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -422,6 +416,12 @@
       "ts": "2026-09-27T10:30:52.240072",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (5 важливих листів)\n\n👤 Reserved\n📋 Objavte viac\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Emergent\n📋 In case you missed this\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 3 nové pracovné ponuky\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Bolt Slovakia\n📋 Your Bolt ride on Sunday\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T10:31:47.143281",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
