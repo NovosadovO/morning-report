@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T11:31:25.745472",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T11:31:26.952220",
       "kind": "offer",
       "text": "💼 ✉️\n📌 <b>Nubank launched in 35 countries without a single banking lic</b>\n👤 Linas Beliūnas через LinkedIn&lt;newsletters-noreply@",
@@ -410,6 +404,12 @@
       "ts": "2026-09-27T11:36:10.184923",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +5.1% за 24г</b>\n\nЗараз: 11.08 $\n24г тому: 10.55 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T11:36:11.003514",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +5.1% за 24г\n\nЗараз: 11.08 $\n24г тому: 10.55 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
