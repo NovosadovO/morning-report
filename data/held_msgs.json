@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T03:01:11.025553",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your Bolt ride on Sunday</b>\n👤 Bolt Slovakia &lt;receipts-slovakia@bolt.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79803"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79803"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79803"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79803"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79803"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79803"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T03:01:12.431392",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Špecialista/ Špecialistka procesov a systémov logistiky в DH</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -344,6 +305,12 @@
       "ts": "2026-09-27T03:03:37.448720",
       "kind": "calendar",
       "text": "📆 Наперед: скоро подія\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 11-й дім: Друзі й плани\n📅 01.10 (Thu) — через 4 дн.\n🕐 00:00–00:00\n\nВнеси в план тижня, щоб не накладалось на зміну.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T03:04:07.555158",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Соляр — 7-й дім: Партнерство » було 26.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
