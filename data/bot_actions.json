@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Wirex: оновлення до Wirex One",
-      "detail": "Лист від Team Wirex <noreply@mail.wirexapp.com> 'Your access ends Sept 30th. Upgrade now.' вказує на дедлайн 30 вересня 2026 року.",
-      "module": "selfact",
-      "ts": "2026-09-23T12:01:55"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Олег отримав лист від Aave про депозит $53, що є важливою фінансовою подією.",
       "module": "selfact",
       "ts": "2026-09-27T21:04:44"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-09-27T21:06:05"
     }
   ]
 }
