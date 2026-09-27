@@ -1,4 +1,9 @@
 {
+  "msg_vip_email|2026-09-27t05_11_25_631274": {
+    "topic": "MSG_VIP_EMAIL",
+    "gist": "Привіт Олеже! 🤝  Нічна зміна може бути часом для спокійного роздуму, але твої поточні дані показують, що навіть під час роботи важливо тримати руку на пульсі сп",
+    "ts": "2026-09-27T05:11:25.631274"
+  },
   "calendar|2026-09-27t05_04_28_708366": {
     "topic": "calendar",
     "gist": "Олеже, почнімо з головного: ти зараз на нічній зміні, і це вже четверта ніч поспіль, що вимагає від тебе максимальної концентрації, а дані за вчора показують, щ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
     "ts": "2026-09-26T23:00:45.445634"
-  },
-  "action_detect|2026-09-26t23_00_34_408579": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-26T23:00:34.408579"
   }
 }
