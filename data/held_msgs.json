@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T09:35:53.263989",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T09:37:01.658575",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79803"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T09:45:42.659289",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Špecialista/ Špecialistka procesov a systémov logistiky в DH</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79802"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79802"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79802"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79802"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79802"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79802"
             }
           ]
         ]
