@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T12:03:58.034958+00:00",
-      "category": "confirm",
-      "question": "gx_later: здоров'я і вага",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-09T12:03:59.071691+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13886,6 +13880,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cfm_y_7aca601c47"
+    },
+    {
+      "ts": "2026-09-27T21:30:30.155207+00:00",
+      "category": "mood",
+      "question": "Оцінка настрою",
+      "answer": "😐 Нормально",
+      "extra": {
+        "score": 3
+      }
     }
   ]
 }
