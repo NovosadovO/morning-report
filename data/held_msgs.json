@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T02:46:16.128779",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Business Analyst в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79796"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79796"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79796"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79796"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79796"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79796"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T02:46:17.305355",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Back and shoulder surgery is often worse than useless</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
@@ -233,6 +194,12 @@
       "ts": "2026-09-27T02:48:20.706668",
       "kind": "deadlines",
       "text": "⏰ <b>ДЕДЛАЙН ЧЕРЕЗ 3 дн.</b>\n━━━━━━━━━━━━━━━━━━━━\n📄 <b>Підписка Apple — закінчення</b>\n📆 до <b>2026-09-30</b>\n🏢 Apple\n\n➡️ Перевірити статус підписки Apple та вирішити, чи потрібно її продовжувати.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T02:48:21.433944",
+      "kind": "deadlines",
+      "text": "⏰ ДЕДЛАЙН ЧЕРЕЗ 3 дн.\n━━━━━━━━━━━━━━━━━━━━\n📄 Підписка Apple — закінчення\n📆 до 2026-09-30\n🏢 Apple\n\n➡️ Перевірити статус підписки Apple та вирішити, чи потрібно її продовжувати.",
       "keyboard": null
     }
   ]
