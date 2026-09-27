@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T00:00:20.109496+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную додати в календар",
-      "answer": "Завершити резервацію та оплатити квитки",
-      "extra": {
-        "kind": "calendar",
-        "date": "2026-08-10"
-      }
-    },
-    {
       "ts": "2026-08-09T00:00:24.331455+00:00",
       "category": "proactive_offer",
       "question": "Пропоную додати в календар",
@@ -13918,6 +13908,12 @@
       "category": "confirm",
       "question": "calrem_skip: ",
       "answer": "yes"
+    },
+    {
+      "ts": "2026-09-27T16:06:18.493856+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_y_06a94d7032"
     }
   ]
 }
