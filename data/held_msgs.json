@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T10:06:19.647749",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Allegro</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «DNES KONČÍME: Jesenný kupón expiruje 🚨»\n\n<i>«Allegro a { text-decoration:none; } .ReadMsgBody{ width: 100%; background-color: #ffffff; } .ExternalClass { width: 100%; background-color: #ffffff; line-height:100% !important; } body { width: 100%; background-color: #ffffff; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; } * { font-fa...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79813"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79813"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79813"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79813"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79813"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79813"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T10:06:24.210292",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
@@ -343,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79803"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-27T10:15:46.760118",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Špecialista/ Špecialistka procesov a systémov logistiky в DH</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79802"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79802"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79802"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79802"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79802"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79802"
             }
           ]
         ]
