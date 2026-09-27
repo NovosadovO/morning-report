@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T12:08:24.633275+00:00",
-      "category": "confirm",
-      "question": "cw_miss: Оплата страховки Kooperativa",
-      "answer": "yes"
-    },
-    {
       "ts": "2026-08-09T12:08:25.528080+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13880,6 +13874,12 @@
         "when": "00:00–00:00",
         "note": null
       }
+    },
+    {
+      "ts": "2026-09-27T23:16:11.114957+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ok_b74f018f68"
     }
   ]
 }
