@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T10:15:40.382844",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Objavte viac</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79810"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79810"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79810"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79810"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79810"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79810"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-27T10:15:41.732881",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>In case you missed this</b>\n👤 Emergent &lt;team@ship.emergent.sh&gt;",
@@ -422,6 +383,12 @@
       "ts": "2026-09-27T10:20:55.840928",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +5.2% за 24г\n\nЗараз: 11.24 $\n24г тому: 10.69 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T10:22:02.899653",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
