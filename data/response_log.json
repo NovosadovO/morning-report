@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T12:08:22.779209+00:00",
-      "category": "calendar_button",
-      "question": "Оплата страховки Kooperativa",
-      "answer": "missed",
-      "extra": {
-        "stage": "t24h",
-        "when": "12:00–13:00",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-09T12:08:24.633275+00:00",
       "category": "confirm",
       "question": "cw_miss: Оплата страховки Kooperativa",
@@ -13880,6 +13869,17 @@
       "category": "rwa_move",
       "question": "RWA",
       "answer": "QNT виріс на 60.3% за 24 години (зараз $194); весь сектор RWA втратив 29.9% за 24 години (капіталізація $52.81B)"
+    },
+    {
+      "ts": "2026-09-27T23:16:10.745274+00:00",
+      "category": "calendar_button",
+      "question": "Соляр — 9-й дім: Сенси й подорожі",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t24h",
+        "when": "00:00–00:00",
+        "note": null
+      }
     }
   ]
 }
