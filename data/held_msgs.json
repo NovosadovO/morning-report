@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-27T08:55:28.108497",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-27T08:55:28.953020",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -411,6 +405,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-27T09:01:26.033128",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Emergent</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «In case you missed this»\n\n<i>«Emergent @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&amp;display=swap'); :root { color-scheme: light only !important; } body, table, td, a { -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; } table, td { mso-table-lspace:0pt; mso-table-rspace:0pt;...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79808"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79808"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79808"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79808"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79808"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79808"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
