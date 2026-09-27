@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, Google Cloud Billing Alerts повідомив, що ваш бюджет",
-      "detail": "Лист від Google Cloud Billing Alerts про перевищення бюджету на 150%.",
-      "module": "selfact",
-      "ts": "2026-09-23T06:34:50"
-    },
-    {
-      "kind": "notify",
       "what": "Ваш щотижневий звіт від Google Health за період 12-18 вересн",
       "detail": "Лист від Google Health про щотижневий прогрес, зокрема про зниження кількості подоланих поверхів.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "ранковий план здоров'я",
       "module": "selfact",
       "ts": "2026-09-27T07:00:57"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-09-27T07:06:16"
     }
   ]
 }
