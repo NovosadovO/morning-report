@@ -1,37 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T09:31:12.869970",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_79843"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Profesia.sk",
-              "callback_data": "email_reply_79840"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79843"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79843"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T09:31:15.895734",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)",
@@ -173,6 +142,12 @@
       "ts": "2026-09-28T09:38:09.844484",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T09:38:10.834035",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
       "keyboard": null
     }
   ]
