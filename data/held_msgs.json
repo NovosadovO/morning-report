@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T12:31:22.890465",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔓 OpenAI's agents escaped again</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79852"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79852"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79852"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79852"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79852"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79852"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T12:31:24.457010",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
@@ -338,6 +299,12 @@
       "ts": "2026-09-28T12:34:21.682193",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T12:34:24.587280",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>ONDO -6.2% за 24г</b>\n\nЗараз: 0.5106 $\n24г тому: 0.5444 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
