@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T16:11:26.173342",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T16:11:27.319303",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79863"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T16:16:50.184601",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>💸 Bitcoin ETFs have massive week as US Treasury yields hit n</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79862"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79862"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79862"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79862"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79862"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79862"
             }
           ]
         ]
