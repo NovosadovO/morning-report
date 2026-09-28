@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T15:46:39.682425",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T15:46:41.271893",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -398,6 +392,12 @@
       "ts": "2026-09-28T15:53:29.920390",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -5.0% за 24г</b>\n\nЗараз: 0.5245 $\n24г тому: 0.5523 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T15:53:30.869576",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -5.0% за 24г\n\nЗараз: 0.5245 $\n24г тому: 0.5523 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
