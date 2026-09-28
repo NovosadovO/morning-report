@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T13:46:40.085128",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T13:46:43.519345",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔓 OpenAI's agents escaped again</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -278,6 +272,12 @@
       "ts": "2026-09-28T13:56:53.570444",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -5.0% за 24г</b>\n\nЗараз: 0.0930 $\n24г тому: 0.0980 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T13:56:54.310903",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ DOGE -5.0% за 24г\n\nЗараз: 0.0930 $\n24г тому: 0.0980 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
