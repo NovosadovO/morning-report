@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T11:46:48.001583",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Production Supervisor в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79841"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79841"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79841"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79841"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79841"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79841"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T11:46:49.297039",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -272,6 +233,12 @@
       "ts": "2026-09-28T11:49:04.068240",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ SOL -5.2% за 24г\n\nЗараз: 117.72 $\n24г тому: 124.23 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T11:50:14.162235",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
