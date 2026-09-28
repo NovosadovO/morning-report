@@ -1,84 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T11:16:50.585880",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 44 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79846"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79846"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79846"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79846"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79846"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79846"
-            }
-          ]
-        ]
-      }
-    },
-    {
-      "ts": "2026-09-28T11:16:51.883585",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Assistance of the Department в Universität Wien</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79844"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79844"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79844"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79844"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79844"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79844"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T11:16:53.205003",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -371,6 +293,18 @@
       "ts": "2026-09-28T11:19:52.996117",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T11:19:53.731824",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T11:19:56.221411",
+      "kind": "chunk",
+      "text": "🎯 ТОЧНИЙ АСПЕКТ\n☽ <b>Місяць</b> ⚹ ☽ <b>Натальний Місяць</b> <b>(ТОЧНИЙ!)</b>\n📍 Місяць у <b>Овен ♈</b> | Натальний Місяць у Близнюки ♊, 11-й дім\n<i>Секстиль · Друзі/Цілі</i>\n\n📖 <b>Що означає Секстиль:</b>\n🟢 Гармонійна можливість — легкий потік енергії. Сприятливий момент діяти, домовлятися, вчитися нового. Потрібна твоя ініціатива.\n\nПривіт, Олеже!\n\nТранзитний Місяць у Овні, що зараз і.",
       "keyboard": null
     }
   ]
