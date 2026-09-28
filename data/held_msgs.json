@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T11:31:11.076352",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79848"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79848"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79848"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79848"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79848"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79848"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T11:31:12.379125",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 44 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -404,6 +365,12 @@
       "ts": "2026-09-28T11:33:21.041292",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -5.1% за 24г\n\nЗараз: 0.5147 $\n24г тому: 0.5425 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T11:33:53.446003",
+      "kind": "calendar",
+      "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Марс на асценденті</b>\n📅 29.09 (Tue) — завтра\n🕐 11:00–11:15\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
       "keyboard": null
     }
   ]
