@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-10T01:30:17.668758+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Зважитись і записати в Apple Health",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-11"
-      }
-    },
-    {
       "ts": "2026-08-10T03:00:14.280968+00:00",
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
@@ -13888,6 +13878,15 @@
       "answer": "😐 Нормально",
       "extra": {
         "score": 3
+      }
+    },
+    {
+      "ts": "2026-09-28T21:44:14.168681+00:00",
+      "category": "mood",
+      "question": "Оцінка настрою",
+      "answer": "😕 Нижче норми",
+      "extra": {
+        "score": 2
       }
     }
   ]
