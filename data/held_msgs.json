@@ -1,37 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T12:31:31.800694",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Avalanche Team1\n📋 Avalanche Is Becoming a Home to RWA\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 44 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Avalanche Team1",
-              "callback_data": "email_reply_79853"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_79846"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79853"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79853"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T12:31:34.276711",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -173,6 +142,12 @@
       "ts": "2026-09-28T12:34:30.493248",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -5.1% за 24г</b>\n\nЗараз: 0.0929 $\n24г тому: 0.0979 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T12:34:31.626042",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ DOGE -5.1% за 24г\n\nЗараз: 0.0929 $\n24г тому: 0.0979 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
