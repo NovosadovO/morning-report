@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T12:01:46.472221",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Biedronka</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Sprawdź najświeższe oferty w Biedronce od poniedziałku 28.09!»\n\n<i>«Sprawdź najświeższe oferty w Biedronce od poniedziałku 28.09!\nW promocji m.in. Jabłko polskie czerwone na wagę, Pieczarka opak. 500 g, Filet z piersi kurczaka Mega Paka Kraina Mięs i wiele innych!\n Zapoznaj się z wersją online newsletter-a https://links.newsletter.biedronka.pl/c/n64/j4l/QPvDhtwVVIj8...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79851"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79851"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79851"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79851"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79851"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79851"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T12:02:01.219388",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -181,6 +142,12 @@
       "ts": "2026-09-28T12:04:54.782282",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -6.4% за 24г\n\nЗараз: 10.36 $\n24г тому: 11.06 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T12:04:57.411538",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>ONDO -6.2% за 24г</b>\n\nЗараз: 0.5096 $\n24г тому: 0.5434 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
