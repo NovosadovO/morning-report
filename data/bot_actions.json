@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Нові вакансії від Caterpillar Inc.",
-      "detail": "Свіжі листи від LinkedIn містять сповіщення про вакансії 'Manager Software Engineering' та 'Manager Digital Operations Support' від Caterpillar Inc. у Кошице.",
-      "module": "selfact",
-      "ts": "2026-09-24T06:00:14"
-    },
-    {
-      "kind": "notify",
       "what": "Нова вакансія Process Analyst",
       "detail": "Свіжий лист від LinkedIn містить сповіщення про вакансію 'Process Analyst (f/m/d)' від Deutsche Börse Group у Празі.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "У свіжих листах є лист від Aave: 'Ви отримали $53' з текстом 'Ви додали $53 $53 було зараховано на ваш обліковий запис Aave September 27 at 06:38PM UTC'.",
       "module": "selfact",
       "ts": "2026-09-28T18:20:14"
+    },
+    {
+      "kind": "notify",
+      "what": "Олеже, вчорашній результат кроків склав 4414. Це менше, ніж",
+      "detail": "В календарі є подія: '29.09: 08:38 аналіз основних даних кроки: сьогоднішній результат складає 4414 крокі'. Оскільки сьогодні 28.09, то це дані за вчора.",
+      "module": "selfact",
+      "ts": "2026-09-28T18:20:19"
     }
   ]
 }
