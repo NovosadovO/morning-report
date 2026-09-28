@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T13:47:19.712989",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>CMC Spotlight</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Vitalik Just Described What Ethereum Becomes After Its Next Fork»\n\n<i>«Explore the latest industry news, insightful data, and exciting\nupdates from CoinMarketCap.     CoinMarketCap Logo \n( https://link.coinmarketcap.com/f/a/AiXf2PMn77A3XBS3Xn8auw~~/AAQRxRA~/YK7v8tnRpT6Q3vyS9IXs4TaVUPCs7BwPNrUt2HTfwmhSaId6FE_LAePoCG2z3ooy0hG83k6tkLayiuyop5e80QdlcXZg46hQwOa_f0_sr4Bz8fzyL...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79858"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79858"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79858"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79858"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79858"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79858"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T13:47:50.043288",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -181,6 +142,12 @@
       "ts": "2026-09-28T13:58:09.338917",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ DOGE -5.0% за 24г\n\nЗараз: 0.0930 $\n24г тому: 0.0980 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T13:59:18.955036",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
