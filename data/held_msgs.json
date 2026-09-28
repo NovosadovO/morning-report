@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T10:45:58.689858",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Real Business, Real Momentum: Avalanche Summit Lands in NYC</b>\n👤 Avalanche Summit &lt;contact@avax.network&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79759"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79759"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79759"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79759"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79759"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79759"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T10:46:00.793099",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 44 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -212,6 +173,12 @@
       "ts": "2026-09-28T10:48:23.245895",
       "kind": "calendar",
       "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n📅 29.09 (Tue) — завтра\n🕐 11:00–11:15\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T10:49:19.537722",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
