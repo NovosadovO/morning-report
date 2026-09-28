@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-10T11:38:18.176697+00:00",
-      "category": "calendar_button",
-      "question": "Оплата страховки Kooperativa",
-      "answer": "remembered",
-      "extra": {
-        "stage": "t30",
-        "when": "12:00–13:00",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-10T11:38:19.243178+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13867,6 +13856,12 @@
     },
     {
       "ts": "2026-09-28T21:44:51.535866+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_spray"
+    },
+    {
+      "ts": "2026-09-28T21:44:53.911623+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_spray"
