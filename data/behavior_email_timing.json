@@ -1,9 +1,4 @@
 {
-  "79311": {
-    "sender": "message@message.reserved.com",
-    "sender_raw": "Reserved <message@message.reserved.com>",
-    "seen_ts": "2026-09-18T07:41:01.451552+00:00"
-  },
   "79312": {
     "sender": "info@beautynews.douglas.sk",
     "sender_raw": "\"Douglas\" <info@beautynews.douglas.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
     "seen_ts": "2026-09-28T08:44:37.964079+00:00"
+  },
+  "79849": {
+    "sender": "awards@mp1.tripadvisor.com",
+    "sender_raw": "\"Tripadvisor\" <awards@mp1.tripadvisor.com>",
+    "seen_ts": "2026-09-28T09:04:57.713439+00:00"
   }
 }
