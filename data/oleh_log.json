@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_no_done_7774gcv75umvjh680t5mkg7g9s_2026-09-12",
-      "label": "❌ Не виконано",
-      "ts": "2026-09-12T21:34:21"
-    },
-    {
-      "t": "btn",
       "data": "evdone_no_done_idkfuuqirp4ejjt19l2plvurkc_2026-09-12",
       "label": "❌ Не виконано",
       "ts": "2026-09-12T21:34:23"
@@ -7199,6 +7193,12 @@
       "kind": "cmd",
       "text": "/прокинувся",
       "ts": "2026-09-28T16:39:26"
+    },
+    {
+      "t": "btn",
+      "data": "rx_done_71e9cf9640",
+      "label": "✅ Опрацював",
+      "ts": "2026-09-28T16:48:24"
     }
   ]
 }
