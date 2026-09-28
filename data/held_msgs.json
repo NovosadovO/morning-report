@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T11:31:09.707453",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T11:31:11.076352",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
@@ -404,6 +398,12 @@
       "ts": "2026-09-28T11:33:20.074899",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -5.1% за 24г</b>\n\nЗараз: 0.5147 $\n24г тому: 0.5425 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T11:33:21.041292",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -5.1% за 24г\n\nЗараз: 0.5147 $\n24г тому: 0.5425 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
