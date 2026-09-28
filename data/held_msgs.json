@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T10:16:11.409872",
-      "kind": "calendar",
-      "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n📅 29.09 (Tue) — завтра\n🕐 11:00–11:15\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T10:16:14.151263",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -206,6 +200,12 @@
       "ts": "2026-09-28T10:19:37.432570",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -6.9% за 24г</b>\n\nЗараз: 10.48 $\n24г тому: 11.26 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T10:19:38.263688",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ AVAX -6.9% за 24г\n\nЗараз: 10.48 $\n24г тому: 11.26 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
