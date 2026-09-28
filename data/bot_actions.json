@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Привітання з днем народження",
-      "detail": "Олег отримав привітання з днем народження від Kaufland Card XTRA, що вказує на його день народження сьогодні, 23 вересня.",
-      "module": "selfact",
-      "ts": "2026-09-23T14:22:25"
-    },
-    {
-      "kind": "notify",
       "what": "Нова вакансія: Manager Digital Operations Support",
       "detail": "Олег отримав лист від LinkedIn про нову вакансію, яка відповідає його налаштуванням і знаходиться в Кошице.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "Отримано лист від Сповіщення про вакансії LinkedIn <jobalerts-noreply@linkedin.com> про вакансію Production Supervisor в Convatec.",
       "module": "selfact",
       "ts": "2026-09-28T04:20:39"
+    },
+    {
+      "kind": "notify",
+      "what": "20 нових вакансій на Profesia.sk",
+      "detail": "Отримано лист від 'Profesia.sk' <support@profesia.sk> про 20 нових персоналізованих вакансій.",
+      "module": "selfact",
+      "ts": "2026-09-28T04:20:44"
     }
   ]
 }
