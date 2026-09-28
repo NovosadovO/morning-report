@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T14:13:35.451773",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T14:13:38.531593",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -5.1% за 24г</b>\n\nЗараз: 0.0933 $\n24г тому: 0.0983 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -409,6 +403,37 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79852"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T14:16:37.145229",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Temu\n📋 K.R.E.D.IT\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 4 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Temu",
+              "callback_data": "email_reply_79856"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_79855"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_79856"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79856"
             }
           ]
         ]
