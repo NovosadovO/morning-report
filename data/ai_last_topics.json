@@ -298,5 +298,15 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-09-28T16:47:52.157137"
+  },
+  "email_ai_item|2026-09-28t19_00_41_459001": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від The Daily Degen є щоденним оглядом новин крипторинку станом на 28 вересня 2026 року. Він містить оновлення ринкових показн",
+    "ts": "2026-09-28T19:00:41.459001"
+  },
+  "action_detect|2026-09-28t18_51_39_965364": {
+    "topic": "action_detect",
+    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
+    "ts": "2026-09-28T18:51:39.965364"
   }
 }
