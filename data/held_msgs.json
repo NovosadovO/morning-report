@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T10:16:08.098334",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Ви отримали $53</b>\n👤 Aave &lt;no-reply@aave.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79833"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79833"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79833"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79833"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79833"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79833"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T10:16:09.681877",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Real Business, Real Momentum: Avalanche Summit Lands in NYC</b>\n👤 Avalanche Summit &lt;contact@avax.network&gt;",
@@ -272,6 +233,12 @@
       "ts": "2026-09-28T10:19:05.950295",
       "kind": "calendar",
       "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n📅 29.09 (Tue) — завтра\n🕐 11:00–11:15\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T10:19:34.274864",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
