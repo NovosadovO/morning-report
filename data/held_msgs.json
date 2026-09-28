@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T16:16:44.719666",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Revenue Doesn't Matter</b>\n👤 0xResearch &lt;researchteam@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79865"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79865"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79865"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79865"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79865"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79865"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T16:16:47.416851",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -371,6 +332,12 @@
       "ts": "2026-09-28T16:22:17.506065",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T16:22:18.338934",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
