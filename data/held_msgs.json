@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T13:46:36.699523",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 4 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79855"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79855"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79855"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79855"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79855"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79855"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T13:46:38.116766",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Nubank entered 35 countries without a banking licence, and n</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
@@ -377,6 +338,12 @@
       "ts": "2026-09-28T13:55:29.823497",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -5.0% за 24г</b>\n\nЗараз: 0.0930 $\n24г тому: 0.0980 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T13:55:30.663157",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ DOGE -5.0% за 24г\n\nЗараз: 0.0930 $\n24г тому: 0.0980 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
