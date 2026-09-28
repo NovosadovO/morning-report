@@ -1,4 +1,14 @@
 {
+  "email_ai_item|2026-09-28t04_01_27_252193": {
+    "topic": "email_ai_item",
+    "gist": "```json {\"description\": \"Цей лист від Profesia.sk містить 20 нових персоналізованих вакансій. Він пропонує переглянути пропозиції або змінити критерії пошуку. Т",
+    "ts": "2026-09-28T04:01:27.252193"
+  },
+  "mailcal_extract|2026-09-28t03_51_52_896001": {
+    "topic": "mailcal_extract",
+    "gist": "```json [   {     \"uid\": \"79833\",     \"title\": \"Зарахування $53 на рахунок Aave\",     \"date\": \"2026-09-27\",     \"time\": \"18:38\",     \"kind\": \"payment\",     \"why",
+    "ts": "2026-09-28T03:51:52.896001"
+  },
   "selfact|2026-09-28t03_49_39_146582": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сховище iCloud заповнено\",     \"text\": \"Олег, твоє сховище iCloud заповнено. Документи, контакти та дані з при",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити гель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Треба купити гель.\"}",
     "ts": "2026-09-28T01:01:14.432859"
-  },
-  "action_detect|2026-09-28t01_01_03_201945": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-28T01:01:03.201945"
-  },
-  "email_ai_item|2026-09-28t01_00_54_126147": {
-    "topic": "email_ai_item",
-    "gist": "```json {\"description\": \"Лист містить інформацію про два нових оголошення щодо 3-кімнатних квартир у Кошицях (Словаччина), звіт сформовано 23.09.2026 о 16:47. О",
-    "ts": "2026-09-28T01:00:54.126147"
   }
 }
