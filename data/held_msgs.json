@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T12:31:18.670719",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T12:31:20.097909",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Nubank entered 35 countries without a banking licence, and n</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
@@ -404,6 +398,12 @@
       "ts": "2026-09-28T12:33:09.972859",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -5.1% за 24г</b>\n\nЗараз: 0.0929 $\n24г тому: 0.0979 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T12:33:10.720792",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ DOGE -5.1% за 24г\n\nЗараз: 0.0929 $\n24г тому: 0.0979 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
