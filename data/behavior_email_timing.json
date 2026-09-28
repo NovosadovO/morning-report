@@ -1,14 +1,4 @@
 {
-  "79335": {
-    "sender": "newsletter@mail.dailybones.com",
-    "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
-    "seen_ts": "2026-09-18T12:18:52.292345+00:00"
-  },
-  "79337": {
-    "sender": "newsletters-noreply@linkedin.com",
-    "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
-    "seen_ts": "2026-09-18T12:23:01.337405+00:00"
-  },
   "79336": {
     "sender": "noreply@travel.mail.flixbus.com",
     "sender_raw": "\"FlixBus\" <noreply@travel.mail.flixbus.com>",
@@ -1503,5 +1493,10 @@
     "sender": "no-reply@aave.com",
     "sender_raw": "Aave App <no-reply@aave.com>",
     "seen_ts": "2026-09-28T18:01:45.784728+00:00"
+  },
+  "79885": {
+    "sender": "no-reply@aave.com",
+    "sender_raw": "Aave App <no-reply@aave.com>",
+    "seen_ts": "2026-09-28T18:45:32.810490+00:00"
   }
 }
