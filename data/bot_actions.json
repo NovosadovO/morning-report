@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Новини про Zcash",
-      "detail": "Отримано лист від The Defiant з новинами про Zcash та Cosmos Hub.",
-      "module": "selfact",
-      "ts": "2026-09-24T10:41:43"
-    },
-    {
       "kind": "hourly",
       "what": "щогодинний чек-ін здоров'я",
       "detail": "",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від Oleg Novosadov <novosadovoleg@gmail.com> | 🏠 Нові квартири у Кошіці — 2 нових оголошень.",
       "module": "selfact",
       "ts": "2026-09-28T22:57:48"
+    },
+    {
+      "kind": "hourly",
+      "what": "щогодинний чек-ін здоров'я",
+      "detail": "",
+      "module": "healthai",
+      "ts": "2026-09-28T23:05:30"
     }
   ]
 }
