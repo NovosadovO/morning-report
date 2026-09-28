@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Олег, зверни увагу, що 30 вересня закінчується термін дії тв",
-      "detail": "У календарі на 30.09 зазначено: '08:00 📄 Підписка Apple — закінчення терміну дії'.",
-      "module": "selfact",
-      "ts": "2026-09-24T06:45:37"
-    },
-    {
       "kind": "reminder",
       "what": "нагадування надіслати дані",
       "detail": "19 год мовчання",
@@ -2799,6 +2792,13 @@
       "detail": "Свіжий лист від 'Kraken' <no-reply@email.kraken.com> 'A new way to earn on stock tokens' пропонує заробіток до 2% net на NVDAx, SPYx, QQQx.",
       "module": "selfact",
       "ts": "2026-09-28T19:37:09"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: steps_good",
+      "detail": "🚶 Кроки за тиждень у середньому 9224 — ціль 8000 досягнута",
+      "module": "healthai",
+      "ts": "2026-09-28T19:44:01"
     }
   ]
 }
