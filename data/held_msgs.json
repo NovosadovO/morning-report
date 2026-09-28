@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T15:53:30.869576",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ ONDO -5.0% за 24г\n\nЗараз: 0.5245 $\n24г тому: 0.5523 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T15:54:39.055612",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79857"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T16:01:22.268670",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>K.R.E.D.IT</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79856"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79856"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79856"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79856"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79856"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79856"
             }
           ]
         ]
