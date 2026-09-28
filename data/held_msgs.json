@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T12:16:45.797736",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Assistance of the Department в Universität Wien</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79844"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79844"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79844"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79844"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79844"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79844"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T12:16:46.060544",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -239,6 +200,12 @@
       "ts": "2026-09-28T12:19:54.553440",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -5.6% за 24г</b>\n\nЗараз: 10.42 $\n24г тому: 11.03 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T12:19:55.350849",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ AVAX -5.6% за 24г\n\nЗараз: 10.42 $\n24г тому: 11.03 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
