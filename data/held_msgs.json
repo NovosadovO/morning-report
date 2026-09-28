@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T12:15:15.331349",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T12:15:18.898296",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -6.2% за 24г</b>\n\nЗараз: 0.5115 $\n24г тому: 0.5455 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -347,6 +341,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ SOL -5.3% за 24г\n\nЗараз: 117.89 $\n24г тому: 124.51 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T12:17:07.064599",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79843"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79843"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79843"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79843"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79843"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79843"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
