@@ -711,14 +711,7 @@ class IntelligentListener:
                 except Exception as _e_db:
                     self._log(f"dates_book error: {_e_db}")
 
-                try:
-                    import rwa_radar as _rw_l
-                    if _due("rwa_moves", 1800):
-                        _n_rw = _rw_l.check_moves()
-                        if _n_rw:
-                            self._log("✅ RWA-радар: сповіщення надіслано")
-                except Exception as _e_rw:
-                    self._log(f"rwa_radar error: {_e_rw}")
+                # RWA-радар (проактивні AI-сповіщення) вимкнено на прохання Олега (28.09.2026)
 
                 # ─── 17d. ВІДКЛАДЕНІ КНОПКОЮ «🔔 Нагадай пізніше» ──────────
                 try:

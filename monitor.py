@@ -4666,16 +4666,7 @@ def _ai_personal_message(situation: str, context: dict = None, max_tokens: int =
         ctx_parts.append(f"Крипто зараз: BTC {btc_ch:+.1f}%, ETH {eth_ch:+.1f}% за 24г")
     except: pass
 
-    # RWA / ПІДПИСКИ / ВАЖЛИВІ ДАТИ — щоб AI говорив і про це, з живими цифрами
-    try:
-        import rwa_radar as _rw_ctx
-        _rw_top = _rw_ctx.top_coins(6)
-        if _rw_top:
-            _rw_line = ", ".join(
-                f"{c['sym']} {c.get('ch24') or 0:+.1f}%" for c in _rw_top)
-            ctx_parts.append(f"Сектор RWA за 24г: {_rw_line}")
-    except Exception:
-        pass
+    # RWA вимкнено на прохання Олега (28.09.2026) — більше не додається в контекст AI
     try:
         import subs_watcher as _sb_ctx
         _sb_tot = _sb_ctx.monthly_total()
@@ -10706,14 +10697,7 @@ def main():
             parts.append(prices_text)
             print(f"crypto block error: {_e_cb}")
 
-    # ── Блок 3c: RWA ТОП-10 (сектор ONDO) ────────────────────────────────────
-    try:
-        import rwa_radar as _rw_rep
-        _rwa_block = _rw_rep.report_block()
-        if _rwa_block:
-            parts.append(_rwa_block)
-    except Exception as _e_rwa:
-        print(f"rwa block error: {_e_rwa}", flush=True)
+    # ── Блок 3c: RWA ТОП-10 — вимкнено на прохання Олега (28.09.2026) ───────
 
     # ── Блок 3d: ПІДПИСКИ (скільки з'їдають щомісяця) ────────────────────────
     try:
