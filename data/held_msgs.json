@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T10:11:27.092052",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ DOGE -5.3% за 24г\n\nЗараз: 0.0929 $\n24г тому: 0.0981 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T10:12:35.975812",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T10:16:02.194240",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Assistance of the Department в Universität Wien</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79844"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79844"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79844"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79844"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79844"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79844"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
