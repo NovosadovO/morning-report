@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T16:12:42.216660",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T16:12:43.065186",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -376,6 +370,37 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79858"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T16:16:57.503986",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 0xResearch\n📋 Revenue Doesn't Matter\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: 0xResearch",
+              "callback_data": "email_reply_79865"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_79863"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_79865"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79865"
             }
           ]
         ]
