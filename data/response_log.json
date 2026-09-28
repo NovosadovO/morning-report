@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-10T11:38:15.368634+00:00",
-      "category": "calendar_confirm",
-      "question": "Оплатити страховку Kooperativa",
-      "answer": "✅ Додано",
-      "extra": {
-        "events": [
-          "Оплатити страховку Kooperativa"
-        ]
-      }
-    },
-    {
       "ts": "2026-08-10T11:38:18.176697+00:00",
       "category": "calendar_button",
       "question": "Оплата страховки Kooperativa",
@@ -13875,6 +13864,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-09-28T21:44:51.535866+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_spray"
     }
   ]
 }
