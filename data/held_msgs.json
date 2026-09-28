@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T09:43:24.712077",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ AVAX -6.6% за 24г\n\nЗараз: 10.41 $\n24г тому: 11.15 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T09:44:10.631795",
       "kind": "rwa",
       "text": "🏦 <b>RWA-РАДАР</b>\n━━━━━━━━━━━━━━━━━━━━\n• QNT виріс на 55.4% за 24 години (зараз $271)\n\n<i>AI-коментар недоступний — вище тільки живі цифри.</i>",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79759"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T09:46:27.030108",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79613"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79613"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79613"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79613"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79613"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79613"
             }
           ]
         ]
