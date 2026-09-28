@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T12:43:36.569587",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -5.3% за 24г</b>\n\nЗараз: 0.5158 $\n24г тому: 0.5447 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T12:43:37.409444",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -5.3% за 24г\n\nЗараз: 0.5158 $\n24г тому: 0.5447 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -422,6 +416,37 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79844"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T12:46:58.669903",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 4 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Avalanche Team1\n📋 Avalanche Is Becoming a Home to RWA\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_79855"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Avalanche Team1",
+              "callback_data": "email_reply_79853"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_79855"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79855"
             }
           ]
         ]
