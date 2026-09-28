@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T10:43:51.603494",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -5.2% за 24г</b>\n\nЗараз: 0.5177 $\n24г тому: 0.5464 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T10:43:52.576156",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -5.2% за 24г\n\nЗараз: 0.5177 $\n24г тому: 0.5464 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -376,6 +370,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79833"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T10:45:58.689858",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Real Business, Real Momentum: Avalanche Summit Lands in NYC</b>\n👤 Avalanche Summit &lt;contact@avax.network&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79759"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79759"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79759"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79759"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79759"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79759"
             }
           ]
         ]
