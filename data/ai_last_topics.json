@@ -1,4 +1,9 @@
 {
+  "email_ai_item|2026-09-28t17_01_32_848527": {
+    "topic": "email_ai_item",
+    "gist": "{\"description\": \"Цей лист від Avalanche Team1 інформує про те, що платформа Avalanche стає домом для RWA (Real World Assets). Зокрема, 13 липня 2026 року Progma",
+    "ts": "2026-09-28T17:01:32.848527"
+  },
   "openloop_promises|2026-09-28t16_55_55_409927": {
     "topic": "openloop_promises",
     "gist": "```json [] ```",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Скинути графік змін\", \"action_date\": \"2026-09-28\", \"action_time\": \"11:00\", \"action_summary\": \"Скинути графік змін у",
     "ts": "2026-09-28T08:00:08.981633"
-  },
-  "selfact|2026-09-28t07_58_29_408159": {
-    "topic": "selfact",
-    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Скинути графік змін\",     \"text\": \"Олеже, нагадую, що сьогодні, 28 вересня, потрібно скинути графік змін на ",
-    "ts": "2026-09-28T07:58:29.408159"
   }
 }
