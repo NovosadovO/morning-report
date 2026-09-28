@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T14:16:30.818331",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Nubank entered 35 countries without a banking licence, and n</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79854"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79854"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79854"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79854"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79854"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79854"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T14:16:32.142076",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Avalanche Is Becoming a Home to RWA</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -305,6 +266,12 @@
       "ts": "2026-09-28T14:25:49.163256",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T14:27:05.424567",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
