@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T21:53:21.238472+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_run"
-    },
-    {
       "ts": "2026-08-09T21:53:22.062805+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13900,6 +13894,12 @@
         "kind": "reminder",
         "date": "2026-09-28"
       }
+    },
+    {
+      "ts": "2026-09-28T05:14:30.029438+00:00",
+      "category": "rwa_move",
+      "question": "RWA",
+      "answer": "ONDO (твоя позиція) виріс на 5.5% за 24 години (зараз $0.56443)"
     }
   ]
 }
