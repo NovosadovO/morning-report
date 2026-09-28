@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T10:01:40.746625",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79840"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79840"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79840"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79840"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79840"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79840"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T10:01:42.151902",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Ви отримали $53</b>\n👤 Aave &lt;no-reply@aave.com&gt;",
@@ -305,6 +266,12 @@
       "ts": "2026-09-28T10:04:54.490403",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ DOGE -5.7% за 24г\n\nЗараз: 0.0925 $\n24г тому: 0.0981 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T10:06:04.452483",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
