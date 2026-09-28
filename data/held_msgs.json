@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T10:01:37.962242",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79843"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79843"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79843"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79843"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79843"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79843"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T10:01:39.387709",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Production Supervisor в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -371,6 +332,12 @@
       "ts": "2026-09-28T10:04:51.363837",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -7.3% за 24г\n\nЗараз: 10.36 $\n24г тому: 11.18 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T10:04:53.527385",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>DOGE -5.7% за 24г</b>\n\nЗараз: 0.0925 $\n24г тому: 0.0981 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
