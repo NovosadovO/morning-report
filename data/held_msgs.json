@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T16:16:55.193249",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Vitalik Just Described What Ethereum Becomes After Its Next </b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79858"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79858"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79858"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79858"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79858"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79858"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T16:16:57.503986",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 0xResearch\n📋 Revenue Doesn't Matter\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -206,6 +167,12 @@
       "ts": "2026-09-28T16:23:33.923122",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T16:24:49.343958",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
