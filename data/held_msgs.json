@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T11:46:43.729379",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 44 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79846"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79846"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79846"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79846"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79846"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79846"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T11:46:45.178665",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Assistance of the Department в Universität Wien</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -371,6 +332,12 @@
       "ts": "2026-09-28T11:48:59.930796",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -5.7% за 24г</b>\n\nЗараз: 0.0923 $\n24г тому: 0.0978 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T11:49:00.727978",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ DOGE -5.7% за 24г\n\nЗараз: 0.0923 $\n24г тому: 0.0978 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
