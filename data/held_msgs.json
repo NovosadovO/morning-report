@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T09:31:09.301093",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Real Business, Real Momentum: Avalanche Summit Lands in NYC</b>\n👤 Avalanche Summit &lt;contact@avax.network&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79759"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79759"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79759"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79759"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79759"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79759"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T09:31:10.580456",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -239,6 +200,12 @@
       "ts": "2026-09-28T09:36:53.365055",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -6.9% за 24г</b>\n\nЗараз: 10.40 $\n24г тому: 11.16 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T09:36:54.177529",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ AVAX -6.9% за 24г\n\nЗараз: 10.40 $\n24г тому: 11.16 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
