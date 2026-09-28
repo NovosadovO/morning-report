@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T15:53:26.441742",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T15:53:29.920390",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -5.0% за 24г</b>\n\nЗараз: 0.5245 $\n24г тому: 0.5523 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79860"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T16:01:19.392951",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Vitalik Just Described What Ethereum Becomes After Its Next </b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79858"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79858"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79858"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79858"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79858"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79858"
             }
           ]
         ]
