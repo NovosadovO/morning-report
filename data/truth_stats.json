@@ -55,7 +55,7 @@
     "calendar": {
       "checked": 184,
       "issues": 111,
-      "cut": 5,
+      "cut": 6,
       "fixed": 53
     },
     "MORNING_AI": {
@@ -539,6 +539,7 @@
   "2026-09-28": {
     "checked": 35,
     "issues": 24,
-    "fixed": 11
+    "fixed": 11,
+    "cut": 1
   }
 }
