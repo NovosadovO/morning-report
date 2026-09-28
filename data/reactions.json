@@ -140,11 +140,12 @@
     "key": "",
     "tkey": "",
     "title": "",
-    "action": "mute",
-    "label": "🙈 Не нагадуй",
+    "action": "later",
+    "label": "⏰ Пізніше",
     "about": "",
-    "state": "closed",
-    "ts": "2026-09-27T23:11:10"
+    "state": "snoozed",
+    "ts": "2026-09-28T07:59:48",
+    "until": "2026-09-28T13:59:48"
   },
   "report|t|час зупинитись з їжею": {
     "kind": "report",
