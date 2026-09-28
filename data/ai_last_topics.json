@@ -1,4 +1,14 @@
 {
+  "openloop_promises|2026-09-28t04_51_33_623837": {
+    "topic": "openloop_promises",
+    "gist": "```json [] ```",
+    "ts": "2026-09-28T04:51:33.623837"
+  },
+  "bills|2026-09-28t04_44_35_670288": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-09-28T04:44:35.670288"
+  },
   "subs|2026-09-28t04_43_57_319941": {
     "topic": "subs",
     "gist": "[]",
@@ -288,15 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Проаналізувати дедлайни та оплати, зробити пробіжку\", \"action_date\": \"2026-09-28\", \"action_time\": \"18:00\", \"action_",
     "ts": "2026-09-28T02:02:53.135484"
-  },
-  "action_detect|2026-09-28t02_02_43_033467": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Соляр — 8-й дім: Трансформація й спільні ресурси\", \"action_date\": \"2026-09-28\", \"action_time\": \"00:00\", \"action_sum",
-    "ts": "2026-09-28T02:02:43.033467"
-  },
-  "action_detect|2026-09-28t02_02_41_519900": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити гель\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Купити гель.\"}",
-    "ts": "2026-09-28T02:02:41.519900"
   }
 }
