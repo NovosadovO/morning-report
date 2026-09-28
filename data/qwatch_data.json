@@ -1370,5 +1370,22 @@
     "body_battery_min": 1,
     "body_battery_max": 78,
     "spo2": 96
+  },
+  "2026-09-28": {
+    "date": "2026-09-28",
+    "steps": 9277,
+    "hr_avg": 70,
+    "calories": 381.7,
+    "stress": 35,
+    "hrv": 32,
+    "age": 37,
+    "height_cm": 175,
+    "source": "qwatch",
+    "saved_at": "2026-09-28 08:09",
+    "health_score": 75,
+    "weight_kg": 83.7,
+    "distance_km": 6.07,
+    "spo2_min": 96,
+    "spo2_max": 98
   }
 }
