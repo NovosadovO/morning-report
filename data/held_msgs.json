@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T14:10:47.599034",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>DOGE -5.1% за 24г</b>\n\nЗараз: 0.0933 $\n24г тому: 0.0982 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T14:10:48.340653",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ DOGE -5.1% за 24г\n\nЗараз: 0.0933 $\n24г тому: 0.0982 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -182,6 +176,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T14:16:25.203204",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Vitalik Just Described What Ethereum Becomes After Its Next </b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79858"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79858"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79858"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79858"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79858"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79858"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
