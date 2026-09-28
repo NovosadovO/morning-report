@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T14:14:48.473512",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T14:14:51.022744",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -5.1% за 24г</b>\n\nЗараз: 0.0933 $\n24г тому: 0.0983 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -438,6 +432,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ DOGE -5.1% за 24г\n\nЗараз: 0.0933 $\n24г тому: 0.0983 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T14:17:49.591649",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleh Bezuhlyi через LinkedIn</b>\n📋 Тема: «📰 Daily Crypto Digest — September 28»\n\n<i>«Daily Crypto Digest\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/daily-crypto-digest-september-28-oleh-bezuhlyi-ir8df?lipi=urn%3Ali%3Apage%3Aemail_emai...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79860"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79860"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79860"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79860"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79860"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79860"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
