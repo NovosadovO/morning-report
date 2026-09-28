@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T16:31:34.581613",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Запросіть друга за допомогою свого Ghost Pass</b>\n👤 Aave &lt;no-reply@aave.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79866"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79866"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79866"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79866"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79866"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79866"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T16:31:36.507705",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Revenue Doesn't Matter</b>\n👤 0xResearch &lt;researchteam@blockworks.com&gt;",
@@ -404,6 +365,12 @@
       "ts": "2026-09-28T16:35:51.438415",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -5.6% за 24г\n\nЗараз: 10.32 $\n24г тому: 10.93 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T16:37:05.954532",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
