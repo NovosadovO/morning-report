@@ -1,9 +1,4 @@
 {
-  "79321": {
-    "sender": "linas@substack.com",
-    "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
-    "seen_ts": "2026-09-18T09:30:54.987121+00:00"
-  },
   "79322": {
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-09-28T12:17:48.225266+00:00"
+  },
+  "79862": {
+    "sender": "newsletter@mail.dailybones.com",
+    "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
+    "seen_ts": "2026-09-28T12:30:00.366337+00:00"
   }
 }
