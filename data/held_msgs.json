@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T09:44:10.631795",
-      "kind": "rwa",
-      "text": "🏦 <b>RWA-РАДАР</b>\n━━━━━━━━━━━━━━━━━━━━\n• QNT виріс на 55.4% за 24 години (зараз $271)\n\n<i>AI-коментар недоступний — вище тільки живі цифри.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T09:44:11.445842",
       "kind": "rwa",
       "text": "🏦 RWA-РАДАР\n━━━━━━━━━━━━━━━━━━━━\n• QNT виріс на 55.4% за 24 години (зараз $271)\n\nAI-коментар недоступний — вище тільки живі цифри.",
@@ -376,6 +370,37 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79613"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T09:46:29.225064",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_79843"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Profesia.sk",
+              "callback_data": "email_reply_79840"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_79843"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79843"
             }
           ]
         ]
