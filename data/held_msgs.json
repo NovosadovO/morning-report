@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T16:10:09.998182",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ ONDO -5.4% за 24г\n\nЗараз: 0.5202 $\n24г тому: 0.5499 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T16:10:12.448422",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -5.3% за 24г</b>\n\nЗараз: 10.42 $\n24г тому: 11.00 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T16:16:42.978710",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Запросіть друга за допомогою свого Ghost Pass</b>\n👤 Aave &lt;no-reply@aave.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79866"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79866"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79866"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79866"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79866"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79866"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
