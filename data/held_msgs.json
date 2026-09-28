@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T14:19:47.463497",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T14:20:32.545100",
       "kind": "chunk",
       "text": "🎯 ТОЧНИЙ АСПЕКТ\n☽ <b>Місяць</b> ⚻ ☉ <b>Натальний Сонце</b> <b>(ТОЧНИЙ!)</b>\n📍 Місяць у <b>Овен ♈</b> | Натальний Сонце у Діва ♍, 3-й дім\n<i>Квінкункс · Комунікація</i>\n\n📖 <b>Що означає Квінкункс:</b>\n🟣 Потреба коригування — щось не стикується й вимагає адаптації. Дрібний дисбаланс (часто здоров'я/рутина), який варто м'яко вирівняти.\n\nПривіт, Олеже!\n\nТранзитний Місяць в Овні, що формує Квінку.",
@@ -182,6 +176,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T14:31:47.134239",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>💸 Bitcoin ETFs have massive week as US Treasury yields hit n</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79862"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79862"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79862"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79862"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79862"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79862"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
