@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T10:15:28.764399",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>DOGE -5.2% за 24г</b>\n\nЗараз: 0.0929 $\n24г тому: 0.0980 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T10:15:29.693841",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ DOGE -5.2% за 24г\n\nЗараз: 0.0929 $\n24г тому: 0.0980 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -404,6 +398,12 @@
       "ts": "2026-09-28T10:16:51.585101",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ SOL -5.1% за 24г\n\nЗараз: 118.36 $\n24г тому: 124.73 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T10:17:02.969731",
+      "kind": "calendar",
+      "text": "🗓 <b>Нагадую про завтра</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Марс на асценденті</b>\n📅 29.09 (Tue) — завтра\n🕐 11:00–11:15\n\n<i>Заплануй, коли виїжджаєш — щоб завтра не поспішати.</i>",
       "keyboard": null
     }
   ]
