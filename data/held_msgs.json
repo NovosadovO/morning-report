@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T11:13:40.933566",
-      "kind": "calendar",
-      "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n📅 29.09 (Tue) — завтра\n🕐 11:00–11:15\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T11:14:10.172542",
       "kind": "rwa",
       "text": "🏦 <b>RWA-РАДАР</b>\n━━━━━━━━━━━━━━━━━━━━\n• QNT виріс на 26.4% за 24 години (зараз $227)\n\n<i>AI-коментар недоступний — вище тільки живі цифри.</i>",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T11:16:49.152598",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79848"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79848"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79848"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79848"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79848"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79848"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
