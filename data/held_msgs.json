@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T08:51:28.599551",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T08:51:29.311181",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79843"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T09:01:18.442514",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Production Supervisor в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79841"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79841"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79841"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79841"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79841"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79841"
             }
           ]
         ]
