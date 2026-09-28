@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T15:53:29.920390",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -5.0% за 24г</b>\n\nЗараз: 0.5245 $\n24г тому: 0.5523 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T15:53:30.869576",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -5.0% за 24г\n\nЗараз: 0.5245 $\n24г тому: 0.5523 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79858"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T16:01:20.962253",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📍Blue Cross Says AI Raises Costs</b>\n👤 MyClaw Newsletter &lt;newsletter@myclaw.ai&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79857"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79857"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79857"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79857"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79857"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79857"
             }
           ]
         ]
