@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T10:31:26.253377",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79843"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79843"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79843"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79843"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79843"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79843"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T10:31:27.890301",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Production Supervisor в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -371,6 +332,12 @@
       "ts": "2026-09-28T10:33:13.868116",
       "kind": "calendar",
       "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n📅 29.09 (Tue) — завтра\n🕐 11:00–11:15\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T10:34:10.679501",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
