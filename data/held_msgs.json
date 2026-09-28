@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T08:52:43.337514",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T08:54:02.367280",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79833"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T09:01:22.592393",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Real Business, Real Momentum: Avalanche Summit Lands in NYC</b>\n👤 Avalanche Summit &lt;contact@avax.network&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79759"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79759"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79759"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79759"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79759"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79759"
             }
           ]
         ]
