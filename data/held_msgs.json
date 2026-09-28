@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T14:31:45.336591",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T14:31:47.134239",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>💸 Bitcoin ETFs have massive week as US Treasury yields hit n</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
@@ -379,6 +373,12 @@
       "ts": "2026-09-28T14:42:20.934174",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T14:42:21.843636",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
