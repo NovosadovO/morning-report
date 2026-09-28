@@ -1,24 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T10:12:43.130876",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ DOGE -5.2% за 24г\n\nЗараз: 0.0929 $\n24г тому: 0.0979 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-28T10:13:53.291057",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-28T10:13:54.031015",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T10:13:57.334797",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -6.4% за 24г</b>\n\nЗараз: 10.46 $\n24г тому: 11.18 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -359,6 +341,45 @@
       "kind": "calendar",
       "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n📅 29.09 (Tue) — завтра\n🕐 11:00–11:15\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T10:16:14.151263",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79613"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79613"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79613"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79613"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79613"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79613"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
