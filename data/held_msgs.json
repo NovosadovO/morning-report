@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T10:16:02.194240",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Assistance of the Department в Universität Wien</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79844"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79844"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79844"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79844"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79844"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79844"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T10:16:03.748607",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -404,6 +365,12 @@
       "ts": "2026-09-28T10:18:12.730742",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T10:18:15.041157",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>AVAX -6.8% за 24г</b>\n\nЗараз: 10.48 $\n24г тому: 11.24 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
