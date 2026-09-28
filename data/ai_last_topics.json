@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-28t02_30_48_752228": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сховище iCloud заповнено\",     \"text\": \"Олег, твоє сховище iCloud заповнено. Документи, контакти та дані з при",
+    "ts": "2026-09-28T02:30:48.752228"
+  },
   "mailcal_extract|2026-09-28t02_21_14_529864": {
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"79833\",     \"title\": \"Зарахування $53 на Aave\",     \"date\": \"2026-09-27\",     \"time\": \"18:38\",     \"kind\": \"payment\",     \"why\": \"$53 ",
@@ -293,10 +298,5 @@
     "topic": "action_detect",
     "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути криптопортфель\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Переглянути крипт",
     "ts": "2026-09-28T00:03:16.430898"
-  },
-  "action_detect|2026-09-28t00_03_05_119639": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Текст містить астрологічний аналіз без конкретних дій",
-    "ts": "2026-09-28T00:03:05.119639"
   }
 }
