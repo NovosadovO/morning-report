@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T16:01:16.212372",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - September 28</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79861"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79861"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79861"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79861"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79861"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79861"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T16:01:17.686141",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — September 28</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
@@ -332,6 +293,12 @@
       "ts": "2026-09-28T16:07:31.853647",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -5.1% за 24г\n\nЗараз: 0.5202 $\n24г тому: 0.5482 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T16:08:46.382354",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
