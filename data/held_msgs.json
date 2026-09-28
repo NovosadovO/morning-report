@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T12:16:38.261081",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Nubank entered 35 countries without a banking licence, and n</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79854"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79854"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79854"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79854"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79854"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79854"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T12:16:39.820291",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Avalanche Is Becoming a Home to RWA</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -404,6 +365,12 @@
       "ts": "2026-09-28T12:18:34.648231",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ SOL -5.3% за 24г\n\nЗараз: 117.89 $\n24г тому: 124.45 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T12:19:46.634918",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
     }
   ]
