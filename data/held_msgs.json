@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T12:31:25.907620",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 44 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79846"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79846"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79846"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79846"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79846"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79846"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T12:31:27.250275",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Assistance of the Department в Universität Wien</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -272,6 +233,12 @@
       "ts": "2026-09-28T12:34:25.290177",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -6.2% за 24г\n\nЗараз: 0.5106 $\n24г тому: 0.5444 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T12:34:27.540001",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>AVAX -5.3% за 24г</b>\n\nЗараз: 10.46 $\n24г тому: 11.05 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
