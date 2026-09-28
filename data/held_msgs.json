@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T12:13:54.411831",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -6.1% за 24г</b>\n\nЗараз: 0.5115 $\n24г тому: 0.5447 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T12:13:55.373643",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -6.1% за 24г\n\nЗараз: 0.5115 $\n24г тому: 0.5447 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79852"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T12:16:42.880097",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79848"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79848"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79848"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79848"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79848"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79848"
             }
           ]
         ]
