@@ -1,123 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T10:31:32.182362",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79840"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79840"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79840"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79840"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79840"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79840"
-            }
-          ]
-        ]
-      }
-    },
-    {
-      "ts": "2026-09-28T10:31:33.684786",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Ви отримали $53</b>\n👤 Aave &lt;no-reply@aave.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79833"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79833"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79833"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79833"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79833"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79833"
-            }
-          ]
-        ]
-      }
-    },
-    {
-      "ts": "2026-09-28T10:31:35.084944",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Real Business, Real Momentum: Avalanche Summit Lands in NYC</b>\n👤 Avalanche Summit &lt;contact@avax.network&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79759"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79759"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79759"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79759"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79759"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79759"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T10:31:35.734996",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -5.8% за 24г</b>\n\nЗараз: 10.46 $\n24г тому: 11.10 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -311,6 +194,18 @@
       "ts": "2026-09-28T10:34:15.960543",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -5.8% за 24г\n\nЗараз: 10.48 $\n24г тому: 11.13 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T10:34:18.540660",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>DOGE -5.5% за 24г</b>\n\nЗараз: 0.0929 $\n24г тому: 0.0984 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T10:34:19.362658",
+      "kind": "calendar",
+      "text": "🗓 Нагадую про завтра\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n📅 29.09 (Tue) — завтра\n🕐 11:00–11:15\n\nЗаплануй, коли виїжджаєш — щоб завтра не поспішати.",
       "keyboard": null
     }
   ]
