@@ -1,17 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-09T19:08:48.210550+00:00",
-      "category": "calendar_button",
-      "question": "tomorrow",
-      "answer": "accepted",
-      "extra": {
-        "stage": "tomorrow",
-        "when": "",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-09T19:08:49.160904+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13893,6 +13882,12 @@
         "kind": "note",
         "date": "2026-09-29"
       }
+    },
+    {
+      "ts": "2026-09-28T02:14:24.164417+00:00",
+      "category": "rwa_move",
+      "question": "RWA",
+      "answer": "QNT виріс на 106.2% за 24 години (зараз $307); ONDO (твоя позиція) виріс на 8.1% за 24 години (зараз $0.57751)"
     }
   ]
 }
