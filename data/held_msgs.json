@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T13:55:24.889166",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T13:55:25.834411",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79854"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T14:01:10.266623",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Avalanche Is Becoming a Home to RWA</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79853"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79853"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79853"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79853"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79853"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79853"
             }
           ]
         ]
