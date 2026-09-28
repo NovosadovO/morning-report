@@ -1,4 +1,9 @@
 {
+  "selfact|2026-09-28t05_54_26_985656": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Закінчення підписки Apple\",     \"text\": \"Олеже, нагадую, що 30.09 закінчується термін дії твоєї підписки Apple",
+    "ts": "2026-09-28T05:54:26.985656"
+  },
   "action_detect|2026-09-28t05_49_14_882347": {
     "topic": "action_detect",
     "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення містить астрологічну підказку про гармон",
@@ -293,10 +298,5 @@
     "topic": "openloop_promises",
     "gist": "[]",
     "ts": "2026-09-28T03:20:49.979952"
-  },
-  "action_detect|2026-09-28t03_18_54_583575": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": \"Повідомлення містить астрологічний прогноз, який вказ",
-    "ts": "2026-09-28T03:18:54.583575"
   }
 }
