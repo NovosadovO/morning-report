@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T11:01:24.715010",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Production Supervisor в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79841"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79841"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79841"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79841"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79841"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79841"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T11:01:25.963065",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -273,6 +234,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -6.7% за 24г\n\nЗараз: 10.46 $\n24г тому: 11.21 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T11:04:58.718278",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Tripadvisor</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «⚠️ Don’t open if you’re hungry»\n\n<i>«Travelers’ Choice-winning dishes you’re gonna want to try&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zw...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79849"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79849"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79849"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79849"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79849"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79849"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
