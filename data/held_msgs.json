@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T09:46:18.000768",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T09:46:19.275372",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Assistance of the Department в Universität Wien</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -404,6 +398,12 @@
       "ts": "2026-09-28T09:50:04.533700",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -6.3% за 24г</b>\n\nЗараз: 10.43 $\n24г тому: 11.13 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T09:50:05.596799",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ AVAX -6.3% за 24г\n\nЗараз: 10.43 $\n24г тому: 11.13 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
