@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T14:15:43.773143",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Ticketportal.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «✨ Umelecká pocta Celine Dion na Slovensku»\n\n<i>«My Heart Will Go On, Im Alive a ďalšie hity naživo. Lisa Harter prináša strhujúcu poctu Celine Dion do štyroch slovenských miest.\n\n\t\t[ticketportal PLG] [https://go.sparkpostmail.com/f/a/hv4SslSkRuhWCPiMgXN5mw~~/AAA-fBA~/RB_N7kABun5tuoV42Nygw-rv21EV2XqrnxJgZuT72MEZRmgf_Zn1eWzplfaRs_cv1x2Ftj5s-CqyjGge...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79859"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79859"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79859"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79859"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79859"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79859"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T14:16:00.573864",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
@@ -470,6 +431,12 @@
       "ts": "2026-09-28T14:18:37.243412",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T14:19:46.481077",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
