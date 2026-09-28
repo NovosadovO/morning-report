@@ -1,4 +1,19 @@
 {
+  "selfact|2026-09-28t18_51_06_952438": {
+    "topic": "selfact",
+    "gist": "```json [   {     \"type\": \"reminder\",     \"title\": \"Скинути графік змін\",     \"text\": \"Олеже, нагадую, що сьогодні, 28 вересня, потрібно скинути графік змін на ",
+    "ts": "2026-09-28T18:51:06.952438"
+  },
+  "bills|2026-09-28t18_45_34_081851": {
+    "topic": "bills",
+    "gist": "[]",
+    "ts": "2026-09-28T18:45:34.081851"
+  },
+  "msg_rwa_truthfix|2026-09-28t18_45_01_146284": {
+    "topic": "MSG_RWA/truthfix",
+    "gist": "Олеже, бачу, що сьогоднішні дані по крипторинку RWA, хоч і старі (з кешу), показують цікаву картину.  Весь RWA-сектор, за цими даними, додав 50.7% за 24 години,",
+    "ts": "2026-09-28T18:45:01.146284"
+  },
   "msg_rwa|2026-09-28t18_44_50_845169": {
     "topic": "MSG_RWA",
     "gist": "Олеже, бачу, що сьогодні крипторинок RWA видав справжнє шоу!  ### 📈 Стрибок сектору RWA та QNT  За останні 24 години весь RWA-сектор додав неймовірні 50.7%, дос",
@@ -283,20 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [] ```",
     "ts": "2026-09-28T16:47:52.157137"
-  },
-  "action_detect|2026-09-28t16_47_26_969247": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"none\", \"action_title\": null, \"action_date\": null, \"action_time\": null, \"action_summary\": null}",
-    "ts": "2026-09-28T16:47:26.969247"
-  },
-  "action_detect|2026-09-28t16_46_25_639454": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Потрібно купити лосьйон.\"}",
-    "ts": "2026-09-28T16:46:25.639454"
-  },
-  "action_detect|2026-09-28t16_46_14_654026": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Закінчення підписки Apple\", \"action_date\": \"2026-09-30\", \"action_time\": \"09:00\", \"action_summary\": \"Підписка Apple ",
-    "ts": "2026-09-28T16:46:14.654026"
   }
 }
