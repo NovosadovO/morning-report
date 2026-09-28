@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T11:08:52.301756",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ AVAX -7.0% за 24г\n\nЗараз: 10.38 $\n24г тому: 11.17 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-28T11:08:54.670991",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>DOGE -5.2% за 24г</b>\n\nЗараз: 0.0924 $\n24г тому: 0.0974 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T11:08:56.461351",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ DOGE -5.2% за 24г\n\nЗараз: 0.0924 $\n24г тому: 0.0974 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +136,18 @@
       "ts": "2026-09-28T11:11:45.895778",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ DOGE -5.1% за 24г\n\nЗараз: 0.0924 $\n24г тому: 0.0974 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T11:11:49.685111",
+      "kind": "chunk",
+      "text": "⚖️ <b>ЧАС ЗВАЖИТИСЬ</b>\n\nЗваж себе зараз і запиши в Apple Health.\n\nПотім надішли мені свою вагу, наприклад:\n<code>82.5</code>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T11:11:51.079697",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>ONDO -5.0% за 24г</b>\n\nЗараз: 0.5156 $\n24г тому: 0.5428 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
