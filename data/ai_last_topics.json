@@ -1,4 +1,9 @@
 {
+  "foresight|2026-09-28t02_37_07_717991": {
+    "topic": "foresight",
+    "gist": "{\"city\": \"\"}",
+    "ts": "2026-09-28T02:37:07.717991"
+  },
   "selfact|2026-09-28t02_30_48_752228": {
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"notify\",     \"title\": \"Сховище iCloud заповнено\",     \"text\": \"Олег, твоє сховище iCloud заповнено. Документи, контакти та дані з при",
@@ -293,10 +298,5 @@
     "topic": "mailcal_extract",
     "gist": "```json [   {     \"uid\": \"79833\",     \"title\": \"Депозит $53 на рахунок Aave\",     \"date\": \"2026-09-27\",     \"time\": \"18:38\",     \"kind\": \"payment\",     \"why\": \"",
     "ts": "2026-09-28T00:04:09.508745"
-  },
-  "action_detect|2026-09-28t00_03_16_430898": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"calendar\", \"action_title\": \"Переглянути криптопортфель\", \"action_date\": \"2026-09-28\", \"action_time\": null, \"action_summary\": \"Переглянути крипт",
-    "ts": "2026-09-28T00:03:16.430898"
   }
 }
