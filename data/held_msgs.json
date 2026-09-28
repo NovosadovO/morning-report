@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T14:17:20.952192",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T14:17:23.966939",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -5.1% за 24г</b>\n\nЗараз: 0.0933 $\n24г тому: 0.0983 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -182,6 +176,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T14:30:01.862618",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Daily Bone</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «💸 Bitcoin ETFs have massive week as US Treasury yields hit new highs»\n\n<i>«———————————————————————————\r\n\r\n## Top Stories\r\n\r\n**BTC** $83,037 (-2.2%) | **ETH** $2,666 (-1.7%) | **SOL** $119 (-4.5%)\r\n\r\n* Bitget's CEO says attackers exploited a third-party [zero-day](https://x.com/WuBlockchain/status/2104509451357368460) to steal about $380M — Bitget resumes withdrawals in pha...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79862"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79862"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79862"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79862"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79862"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79862"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
