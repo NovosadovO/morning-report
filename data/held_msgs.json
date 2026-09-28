@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T15:46:45.638645",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — September 28</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79860"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79860"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79860"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79860"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79860"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79860"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T15:46:48.058143",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Vitalik Just Described What Ethereum Becomes After Its Next </b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
@@ -299,6 +260,12 @@
       "ts": "2026-09-28T15:54:43.332024",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -5.2% за 24г</b>\n\nЗараз: 0.5245 $\n24г тому: 0.5531 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T15:54:44.143200",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -5.2% за 24г\n\nЗараз: 0.5245 $\n24г тому: 0.5531 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
