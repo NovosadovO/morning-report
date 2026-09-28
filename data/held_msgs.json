@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T16:10:12.448422",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>AVAX -5.3% за 24г</b>\n\nЗараз: 10.42 $\n24г тому: 11.00 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T16:10:13.948849",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -5.3% за 24г\n\nЗараз: 10.42 $\n24г тому: 11.00 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79866"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T16:16:44.719666",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Revenue Doesn't Matter</b>\n👤 0xResearch &lt;researchteam@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79865"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79865"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79865"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79865"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79865"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79865"
             }
           ]
         ]
