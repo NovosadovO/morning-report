@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-10T11:38:14.970816+00:00",
-      "category": "quick_reply_ok",
-      "question": "Привіт Олеже! ⏰ Ранок понеділка, 10 серпня, 11:31, і ти вдома, маєш вільний час, що чудово для підготовки.\n\nЧерез годину, о 12:00, тобі потрібно оплатити страховку Kooperativa. Згідно з твоєю нотаткою",
-      "answer": "👍 Ок"
-    },
-    {
       "ts": "2026-08-10T11:38:15.368634+00:00",
       "category": "calendar_confirm",
       "question": "Оплатити страховку Kooperativa",
@@ -13875,6 +13869,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-09-28T21:44:46.482050+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
