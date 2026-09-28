@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T11:31:15.174070",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79843"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79843"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79843"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79843"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79843"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79843"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-28T11:31:16.763732",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Production Supervisor в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -305,6 +266,12 @@
       "ts": "2026-09-28T11:34:30.135950",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T11:34:31.123939",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
