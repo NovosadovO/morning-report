@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T12:03:39.582608",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ SOL -5.3% за 24г\n\nЗараз: 117.70 $\n24г тому: 124.34 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T12:04:50.736865",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ DOGE -5.0% за 24г\n\nЗараз: 0.0930 $\n24г тому: 0.0979 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T12:07:55.313589",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Avalanche Team1</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Avalanche Is Becoming a Home to RWA»\n\n<i>«View this post on the web at https://www.team1.blog/p/avalanche-is-becoming-a-home-to-rwa\r\n\r\nWhen Japan’s largest security token platform moved house\r\nOn July 13, 2026, Progmat - Japan’s largest security token platform, backed by MUFG - announced the full migration [ https://substack.com/redirect/69...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79853"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79853"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79853"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79853"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79853"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79853"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
