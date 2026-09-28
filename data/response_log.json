@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-10T03:00:19.506075+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Відповісти на лист",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-10"
-      }
-    },
-    {
       "ts": "2026-08-10T04:30:13.404982+00:00",
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
@@ -13887,6 +13877,12 @@
       "extra": {
         "score": 2
       }
+    },
+    {
+      "ts": "2026-09-28T21:44:33.910043+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
