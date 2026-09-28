@@ -1,4 +1,9 @@
 {
+  "proactive_ai|2026-09-28t19_20_10_358895": {
+    "topic": "proactive_ai",
+    "gist": "Привіт, Олеже! Як твій вечір, вдалось відпочити після дня? Бачу, сьогодні ти добре походив, майже 9300 кроків, але звички ще не відмічені, і вага, схоже, сьогод",
+    "ts": "2026-09-28T19:20:10.358895"
+  },
   "people|2026-09-28t19_13_41_986669": {
     "topic": "people",
     "gist": "```json [   {     \"email\": \"oleg.novosadov@nmb-minebea.com\",     \"name\": \"Oleg Novosadov\",     \"relation\": \"робота\",     \"topics\": [],     \"my_promises\": [],   ",
@@ -293,10 +298,5 @@
     "topic": "selfact",
     "gist": "```json [   {     \"type\": \"note\",     \"text\": \"Олег активно шукає нові можливості для працевлаштування, про що свідчать свіжі листи від Profesia.sk та його інте",
     "ts": "2026-09-28T17:03:36.822740"
-  },
-  "action_detect|2026-09-28t17_02_15_997869": {
-    "topic": "action_detect",
-    "gist": "{\"action_type\": \"shopping\", \"action_title\": \"Купити\", \"action_date\": null, \"action_time\": null, \"action_summary\": \"Купити лосьйон.\"}",
-    "ts": "2026-09-28T17:02:15.997869"
   }
 }
