@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T13:46:31.590256",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T13:46:32.978198",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📍Blue Cross Says AI Raises Costs</b>\n👤 MyClaw Newsletter &lt;newsletter@myclaw.ai&gt;",
@@ -443,6 +437,12 @@
       "ts": "2026-09-28T13:53:50.872289",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-28T13:55:24.889166",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
