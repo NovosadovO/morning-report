@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T10:43:49.373593",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ DOGE -5.4% за 24г\n\nЗараз: 0.0928 $\n24г тому: 0.0981 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T10:43:51.603494",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -5.2% за 24г</b>\n\nЗараз: 0.5177 $\n24г тому: 0.5464 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79840"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T10:45:57.338224",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Ви отримали $53</b>\n👤 Aave &lt;no-reply@aave.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79833"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79833"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79833"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79833"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79833"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79833"
             }
           ]
         ]
