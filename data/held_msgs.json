@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-28T10:43:45.483878",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ AVAX -6.0% за 24г\n\nЗараз: 10.42 $\n24г тому: 11.09 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-28T10:43:48.472676",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>DOGE -5.4% за 24г</b>\n\nЗараз: 0.0928 $\n24г тому: 0.0981 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79843"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-28T10:45:54.278114",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Production Supervisor в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79841"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79841"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79841"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79841"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79841"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79841"
             }
           ]
         ]
