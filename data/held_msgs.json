@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T09:47:11.485924",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ AVAX +8.6% за 24г\n\nЗараз: 11.29 $\n24г тому: 10.40 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T09:48:22.098243",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +9.2% за 24г\n\nЗараз: 11.34 $\n24г тому: 10.38 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T09:55:08.403782",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Ticketportal.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🎶 Legendárne hity Richarda Müllera naživo»\n\n<i>«Richard Müller, jedna z najväčších hudobných legiend Slovenska, zavíta 18. júla 2027 na historické nádvorie Šimák Zámku Pezinok. Zažite nezabudnuteľný večer plný jeho najväčších hitov v jedinečnej atmosfére.\n\n\t\t[ticketportal PLG] [https://go.sparkpostmail.com/f/a/6yiIqLN6vQdFGM34cN_d_g~~/AAA-fBA~/fZ...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79905"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79905"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79905"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79905"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79905"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79905"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
