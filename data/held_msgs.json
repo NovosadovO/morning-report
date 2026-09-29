@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T12:31:31.616828",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 15 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79914"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79914"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79914"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79914"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79914"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79914"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T12:31:33.064820",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Railway usage alert</b>\n👤 Railway &lt;hello@notify.railway.app&gt;",
@@ -338,6 +299,12 @@
       "ts": "2026-09-29T12:33:43.319418",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +11.1% за 24г\n\nЗараз: 11.64 $\n24г тому: 10.48 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T12:34:34.614942",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
       "keyboard": null
     }
   ]
