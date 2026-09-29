@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T12:44:40.978521",
-      "kind": "calendar",
-      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T12:44:41.768432",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Нагадування: попрацювати над DEX-ботом\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79911"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T12:46:51.280913",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The House Doesn't Need to Cheat</b>\n👤 Jake Bartolo через LinkedIn&lt;newsletters-noreply@li",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79910"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79910"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79910"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79910"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79910"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79910"
             }
           ]
         ]
