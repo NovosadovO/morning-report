@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T14:15:48.110909",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T14:15:49.552075",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>📰 Daily Crypto Digest — September 29</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
@@ -404,6 +398,12 @@
       "ts": "2026-09-29T14:18:14.458278",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +11.3% за 24г</b>\n\nЗараз: 11.87 $\n24г тому: 10.66 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T14:18:15.277613",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +11.3% за 24г\n\nЗараз: 11.87 $\n24г тому: 10.66 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
