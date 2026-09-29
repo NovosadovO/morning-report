@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T11:45:48.335136",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The House Doesn't Need to Cheat</b>\n👤 Jake Bartolo через LinkedIn&lt;newsletters-noreply@li",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79910"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79910"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79910"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79910"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79910"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79910"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T11:45:49.739044",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Jeseň s štýle premium</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
@@ -239,6 +200,12 @@
       "ts": "2026-09-29T11:47:58.446750",
       "kind": "calendar",
       "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Марс на асценденті</b>\n🕐 11:00–11:15\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T11:47:59.302365",
+      "kind": "calendar",
+      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n🕐 11:00–11:15\n\nВідповідь збережу — це піде в аналітику тижня.",
       "keyboard": null
     }
   ]
