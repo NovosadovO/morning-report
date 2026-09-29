@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T08:45:45.894152",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Vitalik Buterin maps Ethereum's path to 2030</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79890"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79890"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79890"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79890"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79890"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79890"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T08:45:47.157558",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
@@ -206,6 +167,12 @@
       "ts": "2026-09-29T08:52:28.015990",
       "kind": "calendar",
       "text": "🕑 2 години до\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n🕐 11:00–11:15\n\nЗаклади 10 хв на дорогу і документи.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T08:53:01.380413",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
