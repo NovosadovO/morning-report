@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-10T18:22:15.168634+00:00",
-      "category": "deadline_found",
-      "question": "Дійсність словацької дорожньої марки",
-      "answer": "2026-08-10",
-      "extra": {
-        "kind": "vehicle"
-      }
-    },
-    {
       "ts": "2026-08-10T19:47:14.322648+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13867,6 +13858,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_34f6b98a2a"
+    },
+    {
+      "ts": "2026-09-29T16:31:12.903891+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
