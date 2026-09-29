@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T13:29:16.909619",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Марс на асценденті » було 29.09 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T13:29:17.839254",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Марс на асценденті » було 29.09 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79913"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T13:31:21.033703",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79912"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79912"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79912"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79912"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79912"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79912"
             }
           ]
         ]
