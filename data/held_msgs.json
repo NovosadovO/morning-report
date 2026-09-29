@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T11:33:54.374718",
-      "kind": "calendar",
-      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n🕐 11:00–11:15\n\nВідповідь збережу — це піде в аналітику тижня.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T11:33:57.912930",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +9.5% за 24г</b>\n\nЗараз: 11.41 $\n24г тому: 10.42 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +9.8% за 24г\n\nЗараз: 11.41 $\n24г тому: 10.39 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T11:36:40.234872",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Linas from Linas's Newsletter</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «How to Use Claude Opus 5.5: The Complete Guide 📚»\n\n<i>«View this post on the web at https://linas.substack.com/p/how-to-use-claude-opus-5-5\r\n\r\n👋 Hey, Linas here! Every day, I break down 3 stories shaping the future of FinTech &amp; Artificial Intelligence - plus the money movements and trends worth tracking. First time here? 400k+ FinTech and AI leaders get...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79915"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79915"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79915"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79915"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79915"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79915"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
