@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T15:26:19.339506",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Нагадування: попрацювати над DEX-ботом\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T15:26:24.726963",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +11.5% за 24г\n\nЗараз: 11.72 $\n24г тому: 10.51 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T15:30:19.033468",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Ticketportal.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🎼 Svetová vokálna špička zavíta do Žiliny»\n\n<i>«Britskí The Kings Singers vystúpia po prvýkrát na Slovensku spolu s domácim Žilinským miešaným zborom. Vokálne zoskupenie patrí už 55 rokov k svetovej elite.\n\n\t\t[ticketportal PLG] [https://go.sparkpostmail.com/f/a/csTGySdRGdsrcjAojL2PeQ~~/AAA-fBA~/J3pp5Z7WoDAISzfF7CazlgP_gkPzsrIcdYhsOwg0SXM7bgQEC3MO...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79928"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79928"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79928"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79928"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79928"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79928"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
