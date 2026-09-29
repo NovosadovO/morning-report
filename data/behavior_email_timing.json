@@ -1,9 +1,4 @@
 {
-  "79357": {
-    "sender": "no_reply@email.apple.com",
-    "sender_raw": "Apple <no_reply@email.apple.com>",
-    "seen_ts": "2026-09-18T18:27:18.481796+00:00"
-  },
   "79359": {
     "sender": "newsletter@mail.theblock.co",
     "sender_raw": "The Block <newsletter@mail.theblock.co>",
@@ -1498,5 +1493,10 @@
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
     "seen_ts": "2026-09-29T07:59:13.517026+00:00"
+  },
+  "79907": {
+    "sender": "newsletter@email.hm.com",
+    "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
+    "seen_ts": "2026-09-29T08:03:21.419515+00:00"
   }
 }
