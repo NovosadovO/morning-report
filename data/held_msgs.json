@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T15:16:15.890456",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - September 29</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79925"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79925"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79925"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79925"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79925"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79925"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T15:16:16.568721",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Нагадування: попрацювати над DEX-ботом\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
@@ -365,6 +326,12 @@
       "ts": "2026-09-29T15:18:21.071405",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +11.3% за 24г\n\nЗараз: 11.68 $\n24г тому: 10.50 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T15:18:55.656451",
+      "kind": "day_mode",
+      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
