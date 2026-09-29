@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T09:38:15.674382",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ AVAX +8.0% за 24г\n\nЗараз: 11.26 $\n24г тому: 10.42 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T09:39:33.577248",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79904"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T09:45:47.577368",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔎JEV Engineering: Stop Using an LLM for Every Decision;   Mo</b>\n👤 Steve Nouri через LinkedIn&lt;newsletters-noreply@lin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79903"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79903"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79903"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79903"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79903"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79903"
             }
           ]
         ]
