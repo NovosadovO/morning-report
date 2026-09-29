@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T12:01:14.268255",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Railway usage alert</b>\n👤 Railway &lt;hello@notify.railway.app&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79913"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79913"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79913"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79913"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79913"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79913"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T12:01:15.554333",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
@@ -338,6 +299,12 @@
       "ts": "2026-09-29T12:03:50.999078",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T12:03:54.349085",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +10.8% за 24г</b>\n\nЗараз: 11.56 $\n24г тому: 10.43 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
