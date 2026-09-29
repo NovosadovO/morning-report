@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T12:46:38.371604",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T12:46:39.923882",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>⚡ Claude launched a model nobody expected</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -404,6 +398,12 @@
       "ts": "2026-09-29T12:48:44.349346",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T12:48:45.239192",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
