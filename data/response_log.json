@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-10T11:38:27.301955+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_miss_0362f19757"
-    },
-    {
       "ts": "2026-08-10T11:38:38.408419+00:00",
       "category": "calendar_reminder_confirm",
       "question": "Зважитись",
@@ -13865,6 +13859,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "pm_skip_03f677384e"
+    },
+    {
+      "ts": "2026-09-29T15:43:50.784459+00:00",
+      "category": "calendar_button",
+      "question": "Нагадування: попрацювати над DEX-ботом",
+      "answer": "remembered",
+      "extra": {
+        "stage": "t3d",
+        "when": "10:00–10:15",
+        "note": null
+      }
     }
   ]
 }
