@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T13:00:49.874609",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Нагадування: попрацювати над DEX-ботом\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T13:00:53.468273",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>How to Use Claude Opus 5.5: The Complete Guide 📚</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
@@ -344,6 +338,12 @@
       "ts": "2026-09-29T13:03:31.921237",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T13:03:33.440940",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
