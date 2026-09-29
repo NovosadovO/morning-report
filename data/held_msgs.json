@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T08:01:40.714419",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Vitalik Buterin maps Ethereum's path to 2030</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79890"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79890"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79890"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79890"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79890"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79890"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T08:01:44.011147",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Сьогодні пробіжки ще не було.\n⚖️ Здоров'я: Вага: 83.7 кг, ціль 75 кг (тренд +1.4 кг за останні 5 замірів). Кроки: 21018 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 00:00 Соляр — 9-й дім: Сенси й подорожі, 11:00 Марс на асценденті, 19:00 Нічна зміна",
@@ -302,6 +263,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79897"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T08:15:48.753552",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Finance Automation Specialist в GymBeam</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79896"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79896"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79896"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79896"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79896"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79896"
             }
           ]
         ]
