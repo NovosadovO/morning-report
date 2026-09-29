@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T10:42:05.210948",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>AVAX +8.0% за 24г</b>\n\nЗараз: 11.24 $\n24г тому: 10.41 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T10:42:06.223562",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +8.0% за 24г\n\nЗараз: 11.24 $\n24г тому: 10.41 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T10:46:24.824858",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Important: On September 30th, your current access to Wirex A</b>\n👤 Team Wirex &lt;noreply@mail.wirexapp.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79911"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79911"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79911"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79911"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79911"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79911"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
