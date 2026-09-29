@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T08:01:39.224801",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>SEC Clarified Token Buyback FAQ: \"No Central Party\"</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79892"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79892"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79892"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79892"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79892"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79892"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T08:01:40.714419",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Vitalik Buterin maps Ethereum's path to 2030</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -302,6 +263,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79898"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T08:15:46.574432",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Business Development Manager в NATEK</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79897"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79897"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79897"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79897"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79897"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79897"
             }
           ]
         ]
