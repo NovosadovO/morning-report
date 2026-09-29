@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T08:30:42.289274",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79898"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79898"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79898"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79898"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79898"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79898"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T08:30:43.511993",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Business Development Manager в NATEK</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -371,6 +332,12 @@
       "ts": "2026-09-29T08:39:57.050408",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T08:41:04.673248",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
