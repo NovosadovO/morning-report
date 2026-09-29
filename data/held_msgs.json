@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T12:01:16.278345",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>AVAX +11.1% за 24г</b>\n\nЗараз: 11.53 $\n24г тому: 10.38 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T12:01:17.124036",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +11.1% за 24г\n\nЗараз: 11.53 $\n24г тому: 10.38 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -272,6 +266,12 @@
       "ts": "2026-09-29T12:03:55.269597",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +10.8% за 24г\n\nЗараз: 11.56 $\n24г тому: 10.43 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T12:04:08.195175",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
       "keyboard": null
     }
   ]
