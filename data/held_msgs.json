@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T09:00:48.814209",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Business Development Manager в NATEK</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79897"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79897"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79897"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79897"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79897"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79897"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T09:00:50.121415",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Finance Automation Specialist в GymBeam</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -299,6 +260,12 @@
       "ts": "2026-09-29T09:05:35.077676",
       "kind": "calendar",
       "text": "🕑 <b>2 години до</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Марс на асценденті</b>\n🕐 11:00–11:15\n\n<i>Заклади 10 хв на дорогу і документи.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T09:05:35.770327",
+      "kind": "calendar",
+      "text": "🕑 2 години до\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n🕐 11:00–11:15\n\nЗаклади 10 хв на дорогу і документи.",
       "keyboard": null
     }
   ]
