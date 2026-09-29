@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T08:56:40.582893",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-29T08:56:41.511772",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T08:57:30.323348",
       "kind": "calendar",
       "text": "🕑 <b>2 години до</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Марс на асценденті</b>\n🕐 11:00–11:15\n\n<i>Заклади 10 хв на дорогу і документи.</i>",
@@ -343,6 +331,51 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79895"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T09:00:52.010755",
+      "kind": "calendar",
+      "text": "🕑 2 години до\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n🕐 11:00–11:15\n\nЗаклади 10 хв на дорогу і документи.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T09:00:52.874821",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>SEC Clarified Token Buyback FAQ: \"No Central Party\"</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79892"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79892"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79892"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79892"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79892"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79892"
             }
           ]
         ]
