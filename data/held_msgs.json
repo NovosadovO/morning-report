@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T11:59:09.089854",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Нагадування: попрацювати над DEX-ботом\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T11:59:27.694843",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Марс на асценденті » було 29.09 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79911"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T12:01:21.367726",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The House Doesn't Need to Cheat</b>\n👤 Jake Bartolo через LinkedIn&lt;newsletters-noreply@li",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79910"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79910"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79910"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79910"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79910"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79910"
             }
           ]
         ]
