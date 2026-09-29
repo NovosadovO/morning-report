@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T15:38:23.643088",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Нагадування: попрацювати над DEX-ботом\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T15:38:32.283716",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>NovosadovO</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «[NovosadovO/morning-report] Run failed: Morning Market Report -\r\n main»\n\n<i>«[NovosadovO/morning-report] Morning Market Report workflow run\r\n\r\nRepository: NovosadovO/morning-report\r\nWorkflow: Morning Market Report\r\nDuration: 1 minute and 6.0 seconds\r\nFinished: 2026-09-29 13:37:44 UTC\r\n\r\nView results: https://github.com/NovosadovO/morning-report/actions/runs/36576361189\r\n\r\nJo...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -181,6 +175,12 @@
       "ts": "2026-09-29T15:42:02.343602",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T15:42:03.259002",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
