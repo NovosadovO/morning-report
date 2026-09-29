@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T10:12:42.326346",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ AVAX +9.5% за 24г\n\nЗараз: 11.45 $\n24г тому: 10.46 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T10:13:13.869308",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79898"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T10:16:28.569492",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Business Development Manager в NATEK</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79897"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79897"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79897"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79897"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79897"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79897"
             }
           ]
         ]
