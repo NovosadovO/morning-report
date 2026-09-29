@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T08:55:28.326078",
-      "kind": "calendar",
-      "text": "🕑 <b>2 години до</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Марс на асценденті</b>\n🕐 11:00–11:15\n\n<i>Заклади 10 хв на дорогу і документи.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T08:55:29.297109",
       "kind": "calendar",
       "text": "🕑 2 години до\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n🕐 11:00–11:15\n\nЗаклади 10 хв на дорогу і документи.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T09:00:44.689043",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔎JEV Engineering: Stop Using an LLM for Every Decision;   Mo</b>\n👤 Steve Nouri через LinkedIn&lt;newsletters-noreply@lin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79903"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79903"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79903"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79903"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79903"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79903"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
