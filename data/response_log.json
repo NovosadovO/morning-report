@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-10T11:38:19.243178+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "cw_ok_78d2807dff"
-    },
-    {
       "ts": "2026-08-10T11:38:27.301955+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13865,6 +13859,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_spray"
+    },
+    {
+      "ts": "2026-09-29T02:39:26.028678+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "pm_skip_03f677384e"
     }
   ]
 }
