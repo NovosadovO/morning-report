@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T10:46:24.824858",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Important: On September 30th, your current access to Wirex A</b>\n👤 Team Wirex &lt;noreply@mail.wirexapp.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79911"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79911"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79911"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79911"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79911"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79911"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T10:46:26.128953",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The House Doesn't Need to Cheat</b>\n👤 Jake Bartolo через LinkedIn&lt;newsletters-noreply@li",
@@ -365,6 +326,12 @@
       "ts": "2026-09-29T10:49:37.326467",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T10:49:38.086748",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
       "keyboard": null
     }
   ]
