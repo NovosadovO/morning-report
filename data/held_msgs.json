@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T09:55:58.879896",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-29T09:55:59.632886",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T09:56:02.992331",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +9.0% за 24г</b>\n\nЗараз: 11.34 $\n24г тому: 10.40 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -281,6 +269,51 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-29T10:01:07.130196",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Incident &amp; Problem Manager в Bloomreach</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79899"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79899"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79899"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79899"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79899"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79899"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T10:01:07.683601",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
+      "keyboard": null
     }
   ]
 }
