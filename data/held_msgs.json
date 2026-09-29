@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T14:01:43.765541",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Euro-obchod ošial</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79918"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79918"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79918"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79918"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79918"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79918"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T14:01:45.280522",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>⚡ Claude launched a model nobody expected</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -338,6 +299,12 @@
       "ts": "2026-09-29T14:04:29.378562",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +13.9% за 24г</b>\n\nЗараз: 11.97 $\n24г тому: 10.51 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T14:04:30.135208",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +13.9% за 24г\n\nЗараз: 11.97 $\n24г тому: 10.51 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
