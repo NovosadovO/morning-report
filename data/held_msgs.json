@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T10:09:30.925660",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Tesco Clubcard</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🔥 Zľavy až 51 % a ďalšie výhodné ponuky»\n\n<i>«Tento týždeň na vás čakajú nové ponuky, tipy aj Clubcard výhody.           &lt;!--[if gte mso 9]&gt;&lt;style acrite-mso-css=\"true\"&gt;.image-container div {  display: block;}.structure__table td {  padding: 0;  border: none;}.button-container {  border: none !important;  padding: 0 !important;  margin: 0 !impo...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79908"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79908"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79908"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79908"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79908"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79908"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T10:10:10.743164",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -181,6 +142,12 @@
       "ts": "2026-09-29T10:13:55.962472",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +9.3% за 24г\n\nЗараз: 11.45 $\n24г тому: 10.47 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T10:14:14.912905",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
       "keyboard": null
     }
   ]
