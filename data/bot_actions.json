@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Оновлення Avalanche Mainnet",
-      "detail": "Олег отримав лист від Avalanche Team1 про запуск Helicon на Avalanche Mainnet.",
-      "module": "selfact",
-      "ts": "2026-09-24T12:47:46"
-    },
-    {
-      "kind": "notify",
       "what": "Новини про AI",
       "detail": "Олег отримав лист від Generative AI з новинами про досягнення та події у сфері штучного інтелекту.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "53 год мовчання",
       "module": "healthai",
       "ts": "2026-09-29T20:44:42"
+    },
+    {
+      "kind": "hcoach",
+      "what": "evening_review",
+      "detail": "вечірній розбір, оцінка 73",
+      "module": "selfact",
+      "ts": "2026-09-29T21:21:10"
     }
   ]
 }
