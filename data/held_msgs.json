@@ -251,6 +251,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-29T08:01:40.714419",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Vitalik Buterin maps Ethereum's path to 2030</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79890"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79890"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79890"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79890"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79890"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79890"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
