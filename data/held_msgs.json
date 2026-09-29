@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T15:28:58.859282",
-      "kind": "day_mode",
-      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T15:28:59.785096",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79924"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T15:31:32.482699",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Strategy Just Set a New Bitcoin Holdings All-Time Record</b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79920"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79920"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79920"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79920"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79920"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79920"
             }
           ]
         ]
