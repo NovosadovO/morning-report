@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T10:46:27.550898",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Jeseň s štýle premium</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79906"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79906"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79906"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79906"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79906"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79906"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T10:46:28.940669",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>„Války o kapitál“ také v Praze: Zájem státní pokladny o fina</b>\n👤 Prague Finance Institute через LinkedIn&lt;newsletter",
@@ -299,6 +260,12 @@
       "ts": "2026-09-29T10:49:40.807492",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +8.8% за 24г</b>\n\nЗараз: 11.31 $\n24г тому: 10.39 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T10:49:41.689111",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +8.8% за 24г\n\nЗараз: 11.31 $\n24г тому: 10.39 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
