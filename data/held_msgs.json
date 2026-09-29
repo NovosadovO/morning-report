@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T15:29:14.163710",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T15:29:15.085405",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79919"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T15:31:36.802961",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Euro-obchod ošial</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79918"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79918"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79918"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79918"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79918"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79918"
             }
           ]
         ]
