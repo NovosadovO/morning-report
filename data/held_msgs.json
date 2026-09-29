@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T15:16:11.461053",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T15:16:13.533529",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Tomorrow: your Wirex App account changes</b>\n👤 Team Wirex &lt;noreply@mail.wirexapp.com&gt;",
@@ -398,6 +392,12 @@
       "ts": "2026-09-29T15:18:15.703658",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T15:18:16.715321",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
