@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T09:55:08.403782",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Ticketportal.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🎶 Legendárne hity Richarda Müllera naživo»\n\n<i>«Richard Müller, jedna z najväčších hudobných legiend Slovenska, zavíta 18. júla 2027 na historické nádvorie Šimák Zámku Pezinok. Zažite nezabudnuteľný večer plný jeho najväčších hitov v jedinečnej atmosfére.\n\n\t\t[ticketportal PLG] [https://go.sparkpostmail.com/f/a/6yiIqLN6vQdFGM34cN_d_g~~/AAA-fBA~/fZ...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79905"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79905"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79905"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79905"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79905"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79905"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T09:55:58.879896",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
@@ -277,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79904"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T10:01:05.219586",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔎JEV Engineering: Stop Using an LLM for Every Decision;   Mo</b>\n👤 Steve Nouri через LinkedIn&lt;newsletters-noreply@lin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79903"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79903"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79903"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79903"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79903"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79903"
             }
           ]
         ]
