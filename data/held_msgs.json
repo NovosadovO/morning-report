@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T14:01:46.807908",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>How to Use Claude Opus 5.5: The Complete Guide 📚</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79915"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79915"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79915"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79915"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79915"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79915"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T14:01:48.311038",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 15 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -306,6 +267,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-29T14:05:21.650142",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
+      "keyboard": null
     }
   ]
 }
