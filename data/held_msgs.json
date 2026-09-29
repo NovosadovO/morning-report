@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T12:01:20.055719",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Important: On September 30th, your current access to Wirex A</b>\n👤 Team Wirex &lt;noreply@mail.wirexapp.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79911"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79911"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79911"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79911"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79911"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79911"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T12:01:21.367726",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The House Doesn't Need to Cheat</b>\n👤 Jake Bartolo через LinkedIn&lt;newsletters-noreply@li",
@@ -272,6 +233,12 @@
       "ts": "2026-09-29T12:04:09.022082",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Нагадування: попрацювати над DEX-ботом\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T12:04:58.741460",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Марс на асценденті » було 29.09 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
