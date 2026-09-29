@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T08:15:43.629639",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Incident &amp; Problem Manager в Bloomreach</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79899"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79899"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79899"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79899"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79899"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79899"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T08:15:45.223519",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -404,6 +365,12 @@
       "ts": "2026-09-29T08:24:17.725252",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T08:25:33.341735",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
