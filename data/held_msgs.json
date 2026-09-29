@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T09:45:45.017150",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T09:45:46.248310",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>„Války o kapitál“ také v Praze: Zájem státní pokladny o fina</b>\n👤 Prague Finance Institute через LinkedIn&lt;newsletter",
@@ -398,6 +392,12 @@
       "ts": "2026-09-29T09:49:44.394005",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +8.5% за 24г</b>\n\nЗараз: 11.29 $\n24г тому: 10.40 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T09:49:45.257668",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +8.5% за 24г\n\nЗараз: 11.29 $\n24г тому: 10.40 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
