@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T15:34:22.377232",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Нагадування: попрацювати над DEX-ботом\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T15:34:26.375580",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Blockworks</b>\n📋 Тема: «DAS Asia is almost sold out»\n\n<i>«View image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/080e0c81-0abc-488e-b8e5-4d5c944c041e/X-Banners-Asia2026.jpg?t=1784575510)\r\nFollow image link: (https://blockworks.com/event/digital-asset-summit-asia)\r\nCaption: \r\n\r\n### DAS...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -181,6 +175,12 @@
       "ts": "2026-09-29T15:38:00.985353",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +11.4% за 24г</b>\n\nЗараз: 11.69 $\n24г тому: 10.50 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T15:38:01.988304",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +11.4% за 24г\n\nЗараз: 11.69 $\n24г тому: 10.50 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
