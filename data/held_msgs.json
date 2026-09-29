@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T14:26:37.686535",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Нагадування: попрацювати над DEX-ботом\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T14:27:16.791724",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Team Wirex</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Tomorrow: your Wirex App account changes»\n\n<i>«Deposits,\r\nwithdrawals and card transactions pause from 30 September. Here's\r\nwhat you need to do.   wirex\r\nlogo\r\n\r\n*****************************************************************\r\nTomorrow: your Wirex\r\nApp account changes\r\n*****************************************************************\r\n\r\nHey...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -181,6 +175,12 @@
       "ts": "2026-09-29T14:30:24.527695",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +11.2% за 24г</b>\n\nЗараз: 11.76 $\n24г тому: 10.58 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T14:30:25.487725",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +11.2% за 24г\n\nЗараз: 11.76 $\n24г тому: 10.58 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
