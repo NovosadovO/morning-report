@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T10:42:06.223562",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ AVAX +8.0% за 24г\n\nЗараз: 11.24 $\n24г тому: 10.41 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T10:42:26.999928",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79911"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T10:46:26.128953",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The House Doesn't Need to Cheat</b>\n👤 Jake Bartolo через LinkedIn&lt;newsletters-noreply@li",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79910"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79910"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79910"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79910"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79910"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79910"
             }
           ]
         ]
