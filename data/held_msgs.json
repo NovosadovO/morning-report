@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T09:08:32.114867",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Prague Finance Institute через LinkedIn</b>\n📋 Тема: «„Války o kapitál“ také v Praze: Zájem státní pokladny o finance českýc»\n\n<i>«PFI Monthly \r\n\r\nАвтор: Prague Finance Institute\r\n\r\n\r\nАвтор: Prague Finance Institute\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://cz.linkedin.com/comm/pulse/v%C3%A1lky-o-kapit%C3%A1l-tak%C3%A9-v-praze-z%C3%A1jem-st%C3%A1tn%C3%AD-...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79904"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79904"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79904"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79904"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79904"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79904"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T09:08:35.572113",
       "kind": "calendar",
       "text": "🕑 <b>2 години до</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Марс на асценденті</b>\n🕐 11:00–11:15\n\n<i>Заклади 10 хв на дорогу і документи.</i>",
@@ -181,6 +142,12 @@
       "ts": "2026-09-29T09:12:29.015124",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +5.8% за 24г</b>\n\nЗараз: 11.14 $\n24г тому: 10.53 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T09:12:29.696984",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +5.8% за 24г\n\nЗараз: 11.14 $\n24г тому: 10.53 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
