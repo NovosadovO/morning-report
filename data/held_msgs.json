@@ -1,24 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T11:59:05.833202",
-      "kind": "calendar",
-      "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Марс на асценденті</b>\n🕐 11:00–11:15\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-29T11:59:06.515807",
-      "kind": "calendar",
-      "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n🕐 11:00–11:15\n\nВідповідь збережу — це піде в аналітику тижня.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-29T11:59:08.405418",
-      "kind": "calendar",
-      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T11:59:09.089854",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Нагадування: попрацювати над DEX-ботом\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
@@ -293,6 +275,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +11.1% за 24г\n\nЗараз: 11.53 $\n24г тому: 10.38 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T12:01:20.055719",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Important: On September 30th, your current access to Wirex A</b>\n👤 Team Wirex &lt;noreply@mail.wirexapp.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79911"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79911"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79911"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79911"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79911"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79911"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
