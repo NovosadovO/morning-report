@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T15:29:15.085405",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T15:29:17.588576",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
@@ -376,6 +370,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79918"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T15:31:38.204681",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>⚡ Claude launched a model nobody expected</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79917"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79917"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79917"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79917"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79917"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79917"
             }
           ]
         ]
