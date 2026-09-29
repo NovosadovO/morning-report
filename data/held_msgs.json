@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T14:06:51.454370",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Saily</b> 📢<i>(промо)</i>\n📋 Тема: «Pack a jacket, grab a plan, and go on a fall adventure 🍂»\n\n<i>«Save on roaming with flexible plans from SailySaily logo \n( https://clicks.saily.com/f/a/PCNLZJKQ4ofvspWRwhZT1Q~~/AAQRxRA~/wLVJo_3-cp1U2B0BNxSa43YTt1n2iES-pbnQUh8v2FTnwj9gujKl_oK740QNcKTm6hsS04Ik_5c-4kt1d0FCipJ9dAsZW8yJaa-afSYq_dU4Hv_UxURekm--1FQXqbK5UJ8XUKMEy5ET-z3Yi_lFTtPqr6iN9ncwwtCsdBxSsgs~ )\nSa...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79923"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79923"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79923"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79923"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79923"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79923"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T14:07:15.850665",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Марс на асценденті » було 29.09 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -181,6 +142,12 @@
       "ts": "2026-09-29T14:10:07.869885",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +12.5% за 24г\n\nЗараз: 11.94 $\n24г тому: 10.62 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T14:10:26.419539",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
       "keyboard": null
     }
   ]
