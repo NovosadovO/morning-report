@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T14:30:54.177824",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T14:30:55.836639",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Tomorrow: your Wirex App account changes</b>\n👤 Team Wirex &lt;noreply@mail.wirexapp.com&gt;",
@@ -398,6 +392,12 @@
       "ts": "2026-09-29T14:33:05.209154",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +11.3% за 24г</b>\n\nЗараз: 11.77 $\n24г тому: 10.57 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T14:33:06.169915",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +11.3% за 24г\n\nЗараз: 11.77 $\n24г тому: 10.57 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
