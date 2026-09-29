@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T09:57:15.643125",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>AVAX +9.0% за 24г</b>\n\nЗараз: 11.34 $\n24г тому: 10.40 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T09:57:16.533709",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +9.0% за 24г\n\nЗараз: 11.34 $\n24г тому: 10.40 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -376,6 +370,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79897"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T10:01:26.084243",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Finance Automation Specialist в GymBeam</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79896"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79896"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79896"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79896"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79896"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79896"
             }
           ]
         ]
