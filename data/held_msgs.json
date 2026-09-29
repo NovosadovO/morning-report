@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T15:31:34.069307",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 6 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79919"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79919"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79919"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79919"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79919"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79919"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T15:31:36.802961",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Euro-obchod ošial</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
@@ -267,6 +228,45 @@
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Нагадування: попрацювати над DEX-ботом\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T15:34:26.375580",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Blockworks</b>\n📋 Тема: «DAS Asia is almost sold out»\n\n<i>«View image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/080e0c81-0abc-488e-b8e5-4d5c944c041e/X-Banners-Asia2026.jpg?t=1784575510)\r\nFollow image link: (https://blockworks.com/event/digital-asset-summit-asia)\r\nCaption: \r\n\r\n### DAS...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79929"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79929"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79929"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79929"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79929"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79929"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
