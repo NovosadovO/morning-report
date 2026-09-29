@@ -1,9 +1,4 @@
 {
-  "79352": {
-    "sender": "hello@news.footshop.sk",
-    "sender_raw": "Footshop <hello@news.footshop.sk>",
-    "seen_ts": "2026-09-18T16:39:09.081748+00:00"
-  },
   "79353": {
     "sender": "store+55390994629@g.shopifyemail.com",
     "sender_raw": "UEFA Club Competitions Online Store <store+55390994629@g.shopifyemail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply@discord.com",
     "sender_raw": "Discord <noreply@discord.com>",
     "seen_ts": "2026-09-29T05:33:13.608728+00:00"
+  },
+  "79904": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Prague Finance Institute через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-29T07:08:31.242482+00:00"
   }
 }
