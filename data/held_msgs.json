@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T14:39:39.946056",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T14:39:43.382109",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
@@ -149,6 +143,45 @@
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Марс на асценденті » було 29.09 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T14:43:32.908068",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Roland z Pelikána</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🚨 Tieto lacné Maldivy chcú všetci...»\n\n<i>«Zobraziť email v prehliadači [https://cdn2.pelikan.sk/pelikan-sk/e/.eJwTUgipnuuzT2WpvNiX_sYzp9JL-lcePWh3apGPmKzTUbbIb3-lJjNmlJQUFFvp6yen5BnpFaTmZGYn5ukVZ-tDmbpAZqq-c3pFVkFVqnO-r3duZmChY1VwZLCnW5B5Xmilrpd3aJpbWXBAenKVd5RxcEBhcoRTQHFhZohTZEpgcah7eFqSpW9YuaVuQUBxUUmBU3J6RWGpuVeAsX9AVqpTTrZuUahelktKVJ5Z...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79927"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79927"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79927"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79927"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79927"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79927"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
