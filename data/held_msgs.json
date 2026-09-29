@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T14:01:45.280522",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>⚡ Claude launched a model nobody expected</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79917"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79917"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79917"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79917"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79917"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79917"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T14:01:46.807908",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>How to Use Claude Opus 5.5: The Complete Guide 📚</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
@@ -306,6 +267,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +13.9% за 24г\n\nЗараз: 11.97 $\n24г тому: 10.51 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T14:04:46.939127",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>MyClaw Newsletter</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «📍Agents Still Need Humans»\n\n<i>«96 📍Agents Still Need Humans @media only screen and (max-width: 620px) { table.body { width: 100%; min-width: 100%; } table.body .content { padding: 0 !important; } table.body .container { padding: 0 !important; width: 100% !important; } table.body .main { border-spacing: 10px 0 !important; border-l...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79922"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79922"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79922"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79922"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79922"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79922"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
