@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T15:31:26.953770",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Tomorrow: your Wirex App account changes</b>\n👤 Team Wirex &lt;noreply@mail.wirexapp.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79926"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79926"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79926"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79926"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79926"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79926"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T15:31:28.496656",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - September 29</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
@@ -398,6 +359,12 @@
       "ts": "2026-09-29T15:33:30.511756",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +11.9% за 24г\n\nЗараз: 11.71 $\n24г тому: 10.46 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T15:33:57.693608",
+      "kind": "day_mode",
+      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
