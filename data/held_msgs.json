@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T09:30:56.157978",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Finance Automation Specialist в GymBeam</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79896"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79896"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79896"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79896"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79896"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79896"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T09:30:57.462486",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -233,6 +194,12 @@
       "ts": "2026-09-29T09:38:11.452772",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T09:38:12.219360",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
       "keyboard": null
     }
   ]
