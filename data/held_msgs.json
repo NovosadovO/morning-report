@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T13:32:03.654019",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>CMC Spotlight</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Strategy Just Set a New Bitcoin Holdings All-Time Record»\n\n<i>«Explore the latest industry news, insightful data, and exciting\nupdates from CoinMarketCap.     CoinMarketCap Logo \n( https://link.coinmarketcap.com/f/a/vdi5m7dZPyWjlOdFFOrVww~~/AAQRxRA~/unls9pe_Jdfl4dvoP5eYhCBRbCqhIZc1_8wLd-UIvQ60b80_6zd0RD_koJn1ilJrH18bI0iStHcXIJ3yeD2iZZDL3kKjbFZHYV4cZduB3nZ-uxskS...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79920"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79920"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79920"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79920"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79920"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79920"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T13:32:05.364085",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
@@ -181,6 +142,12 @@
       "ts": "2026-09-29T13:35:08.053184",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Нагадування: попрацювати над DEX-ботом\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T13:36:02.103009",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Марс на асценденті » було 29.09 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
