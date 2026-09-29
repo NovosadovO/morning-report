@@ -1,37 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T12:46:53.461550",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 15 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Railway\n📋 Railway usage alert\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_79914"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Railway",
-              "callback_data": "email_reply_79913"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_79914"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79914"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T12:46:56.147957",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 15 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Railway\n📋 Railway usage alert\n📝 (AI-аналіз тимчасово недоступний)",
@@ -173,6 +142,12 @@
       "ts": "2026-09-29T12:50:10.387359",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +9.8% за 24г</b>\n\nЗараз: 11.54 $\n24г тому: 10.51 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T12:50:11.330040",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +9.8% за 24г\n\nЗараз: 11.54 $\n24г тому: 10.51 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
