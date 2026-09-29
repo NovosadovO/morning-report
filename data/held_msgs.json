@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T10:03:10.261678",
-      "kind": "calendar",
-      "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Нагадування: попрацювати над DEX-ботом\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T10:03:22.419655",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>H&amp;M</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «-20% na online objednávky členov»\n\n<i>«Open the email in browser on following link https://t19.email.hm.com/r/?id=t93237f8c-1e87-4e38-9d64-b9c4f33ef5e0,548c9433,f8512ce3&amp;did=1418499123&amp;rid=3040093838&amp;erid=MzA0MDA5MzgzOA%3D%3D&amp;p1=%405evGwRXOgObQyMBY4Wyl0tYyz9JEt8qSPpIrVAqOvGLBTO2LFNYJubN%2BtEZG24jgCYhFUA89lH2%2Bdi8NqICGO5vHuWI1RWUvfUgHM8B...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -181,6 +175,12 @@
       "ts": "2026-09-29T10:07:34.873569",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +9.8% за 24г</b>\n\nЗараз: 11.45 $\n24г тому: 10.43 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T10:07:35.598834",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +9.8% за 24г\n\nЗараз: 11.45 $\n24г тому: 10.43 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
