@@ -1,9 +1,4 @@
 {
-  "79414": {
-    "sender": "notification@service.tiktok.com",
-    "sender_raw": "Ruslana*2784 у TikTok <notification@service.tiktok.com>",
-    "seen_ts": "2026-09-20T07:47:47.173844+00:00"
-  },
   "79413": {
     "sender": "info@message.cropp.com",
     "sender_raw": "\"Cropp\" <info@message.cropp.com>",
@@ -1498,5 +1493,10 @@
     "sender": "updates@okx.com",
     "sender_raw": "OKX <updates@okx.com>",
     "seen_ts": "2026-09-29T15:06:20.202104+00:00"
+  },
+  "79940": {
+    "sender": "no-reply+4c0d752f@toast-restaurants.com",
+    "sender_raw": "Aubree's Pizzeria & Grill <no-reply+4c0d752f@toast-restaurants.com>",
+    "seen_ts": "2026-09-29T15:22:39.216827+00:00"
   }
 }
