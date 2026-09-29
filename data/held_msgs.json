@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T10:46:26.128953",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The House Doesn't Need to Cheat</b>\n👤 Jake Bartolo через LinkedIn&lt;newsletters-noreply@li",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79910"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79910"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79910"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79910"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79910"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79910"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T10:46:27.550898",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Jeseň s štýle premium</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
@@ -332,6 +293,12 @@
       "ts": "2026-09-29T10:49:38.086748",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T10:49:40.807492",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +8.8% за 24г</b>\n\nЗараз: 11.31 $\n24г тому: 10.39 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
