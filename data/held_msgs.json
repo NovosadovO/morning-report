@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T11:12:57.542023",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>AVAX +8.9% за 24г</b>\n\nЗараз: 11.34 $\n24г тому: 10.41 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T11:12:58.312978",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +8.9% за 24г\n\nЗараз: 11.34 $\n24г тому: 10.41 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -409,6 +403,37 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79904"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T11:15:49.174056",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 15 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Railway\n📋 Railway usage alert\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_79914"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Railway",
+              "callback_data": "email_reply_79913"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_79914"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79914"
             }
           ]
         ]
