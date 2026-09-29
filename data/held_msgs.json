@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T11:45:41.186801",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>How to Use Claude Opus 5.5: The Complete Guide 📚</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79915"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79915"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79915"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79915"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79915"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79915"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T11:45:42.589892",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 15 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -404,6 +365,12 @@
       "ts": "2026-09-29T11:47:19.953560",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Марс на асценденті » було 29.09 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T11:47:28.821999",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
     }
   ]
