@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T15:16:31.409059",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>⚡ Claude launched a model nobody expected</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79917"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79917"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79917"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79917"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79917"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79917"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T15:16:33.836726",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 6 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -200,6 +161,12 @@
       "ts": "2026-09-29T15:19:25.779417",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Марс на асценденті » було 29.09 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T15:19:34.686978",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
