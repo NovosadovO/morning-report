@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T08:30:43.511993",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Business Development Manager в NATEK</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79897"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79897"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79897"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79897"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79897"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79897"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T08:30:44.754602",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Finance Automation Specialist в GymBeam</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -338,6 +299,12 @@
       "ts": "2026-09-29T08:41:04.673248",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T08:41:05.921463",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
