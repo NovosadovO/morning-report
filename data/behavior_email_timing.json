@@ -1,9 +1,4 @@
 {
-  "79436": {
-    "sender": "hello@news.footshop.sk",
-    "sender_raw": "Footshop <hello@news.footshop.sk>",
-    "seen_ts": "2026-09-20T16:09:03.446126+00:00"
-  },
   "79439": {
     "sender": "pullandbear@news.pullandbear.com",
     "sender_raw": "Pull&Bear <pullandbear@news.pullandbear.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@mail.theblock.co",
     "sender_raw": "The Block <newsletter@mail.theblock.co>",
     "seen_ts": "2026-09-29T20:58:27.543842+00:00"
+  },
+  "79953": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-09-29T21:28:59.934154+00:00"
   }
 }
