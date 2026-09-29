@@ -1,9 +1,4 @@
 {
-  "79442": {
-    "sender": "newsletters@e.economist.com",
-    "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
-    "seen_ts": "2026-09-20T18:48:27.914273+00:00"
-  },
   "79447": {
     "sender": "notification@facebookmail.com",
     "sender_raw": "\"Facebook\" <notification@facebookmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@blockworks.com",
     "sender_raw": "The Breakdown <newsletter@blockworks.com>",
     "seen_ts": "2026-09-29T22:01:25.381869+00:00"
+  },
+  "79956": {
+    "sender": "no-reply@aave.com",
+    "sender_raw": "Aave App <no-reply@aave.com>",
+    "seen_ts": "2026-09-29T22:23:48.282991+00:00"
   }
 }
