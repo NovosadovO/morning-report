@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T11:45:49.739044",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Jeseň s štýle premium</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79906"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79906"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79906"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79906"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79906"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79906"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T11:45:51.902670",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 15 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Railway\n📋 Railway usage alert\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -206,6 +167,12 @@
       "ts": "2026-09-29T11:47:59.302365",
       "kind": "calendar",
       "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n🕐 11:00–11:15\n\nВідповідь збережу — це піде в аналітику тижня.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T11:48:01.207005",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
       "keyboard": null
     }
   ]
