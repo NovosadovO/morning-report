@@ -1,9 +1,4 @@
 {
-  "79410": {
-    "sender": "news@mail.lidlplus.sk",
-    "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
-    "seen_ts": "2026-09-20T05:31:56.756219+00:00"
-  },
   "79411": {
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@blockworks.com",
     "sender_raw": "The Breakdown <newsletter@blockworks.com>",
     "seen_ts": "2026-09-29T14:17:17.310813+00:00"
+  },
+  "79937": {
+    "sender": "googleplay-noreply@google.com",
+    "sender_raw": "Google Play <googleplay-noreply@google.com>",
+    "seen_ts": "2026-09-29T14:37:47.087304+00:00"
   }
 }
