@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T15:31:30.235491",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — September 29</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79924"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79924"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79924"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79924"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79924"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79924"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T15:31:32.482699",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Strategy Just Set a New Bitcoin Holdings All-Time Record</b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
@@ -332,6 +293,12 @@
       "ts": "2026-09-29T15:33:58.770773",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T15:34:20.981135",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
       "keyboard": null
     }
   ]
