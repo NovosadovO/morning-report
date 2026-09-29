@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T10:46:28.940669",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>„Války o kapitál“ také v Praze: Zájem státní pokladny o fina</b>\n👤 Prague Finance Institute через LinkedIn&lt;newsletter",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79904"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79904"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79904"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79904"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79904"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79904"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T10:46:30.343213",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔎JEV Engineering: Stop Using an LLM for Every Decision;   Mo</b>\n👤 Steve Nouri через LinkedIn&lt;newsletters-noreply@lin",
@@ -266,6 +227,12 @@
       "ts": "2026-09-29T10:49:41.689111",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +8.8% за 24г\n\nЗараз: 11.31 $\n24г тому: 10.39 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T10:50:33.071462",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
       "keyboard": null
     }
   ]
