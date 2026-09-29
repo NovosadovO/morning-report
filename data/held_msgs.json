@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T12:43:25.254895",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>AVAX +9.5% за 24г</b>\n\nЗараз: 11.52 $\n24г тому: 10.52 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-29T12:43:25.961648",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ AVAX +9.5% за 24г\n\nЗараз: 11.52 $\n24г тому: 10.52 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T12:43:40.362442",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
@@ -195,6 +183,51 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-29T12:46:41.416903",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>How to Use Claude Opus 5.5: The Complete Guide 📚</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79915"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79915"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79915"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79915"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79915"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79915"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T12:46:42.348950",
+      "kind": "calendar",
+      "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
+      "keyboard": null
     }
   ]
 }
