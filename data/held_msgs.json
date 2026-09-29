@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T13:29:17.839254",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Марс на асценденті » було 29.09 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T13:29:26.299177",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -376,6 +370,43 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79912"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-29T13:31:23.210988",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 6 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Temu\n📋 Euro-obchod ošial\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 15 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_79919"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Temu",
+              "callback_data": "email_reply_79918"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_79914"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_79919"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79919"
             }
           ]
         ]
