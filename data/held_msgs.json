@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T15:34:36.015090",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Марс на асценденті » було 29.09 о 10:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-29T15:34:45.438677",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
@@ -149,6 +143,45 @@
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Нагадування: попрацювати над DEX-ботом\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T15:38:32.283716",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>NovosadovO</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «[NovosadovO/morning-report] Run failed: Morning Market Report -\r\n main»\n\n<i>«[NovosadovO/morning-report] Morning Market Report workflow run\r\n\r\nRepository: NovosadovO/morning-report\r\nWorkflow: Morning Market Report\r\nDuration: 1 minute and 6.0 seconds\r\nFinished: 2026-09-29 13:37:44 UTC\r\n\r\nView results: https://github.com/NovosadovO/morning-report/actions/runs/36576361189\r\n\r\nJo...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79930"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79930"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79930"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79930"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79930"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79930"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
