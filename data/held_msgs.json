@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T14:04:46.939127",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>MyClaw Newsletter</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «📍Agents Still Need Humans»\n\n<i>«96 📍Agents Still Need Humans @media only screen and (max-width: 620px) { table.body { width: 100%; min-width: 100%; } table.body .content { padding: 0 !important; } table.body .container { padding: 0 !important; width: 100% !important; } table.body .main { border-spacing: 10px 0 !important; border-l...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79922"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79922"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79922"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79922"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79922"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79922"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T14:05:21.650142",
       "kind": "calendar",
       "text": "🗓 <b>На горизонті</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Нагадування: попрацювати над DEX-ботом</b>\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\n<i>Якщо потрібні документи або запис — краще зробити зараз.</i>",
@@ -214,6 +175,12 @@
       "ts": "2026-09-29T14:08:45.209041",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T14:08:46.144473",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
