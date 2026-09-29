@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-10T11:38:38.408419+00:00",
-      "category": "calendar_reminder_confirm",
-      "question": "Зважитись",
-      "answer": "✅ Поставлено",
-      "extra": {
-        "date": "2026-08-11"
-      }
-    },
-    {
       "ts": "2026-08-10T18:22:15.168634+00:00",
       "category": "deadline_found",
       "question": "Дійсність словацької дорожньої марки",
@@ -13870,6 +13861,12 @@
         "when": "10:00–10:15",
         "note": null
       }
+    },
+    {
+      "ts": "2026-09-29T15:43:51.160684+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ok_34f6b98a2a"
     }
   ]
 }
