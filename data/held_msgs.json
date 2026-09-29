@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T09:00:44.689043",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔎JEV Engineering: Stop Using an LLM for Every Decision;   Mo</b>\n👤 Steve Nouri через LinkedIn&lt;newsletters-noreply@lin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79903"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79903"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79903"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79903"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79903"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79903"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T09:00:46.071900",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Incident &amp; Problem Manager в Bloomreach</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -398,6 +359,12 @@
       "ts": "2026-09-29T09:04:35.114765",
       "kind": "calendar",
       "text": "🕑 2 години до\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n🕐 11:00–11:15\n\nЗаклади 10 хв на дорогу і документи.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T09:05:03.754726",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
       "keyboard": null
     }
   ]
