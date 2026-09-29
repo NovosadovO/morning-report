@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T10:31:32.215221",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Finance Automation Specialist в GymBeam</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79896"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79896"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79896"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79896"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79896"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79896"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T10:31:34.470489",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Reserved\n📋 Jeseň s štýle premium\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -206,6 +167,12 @@
       "ts": "2026-09-29T10:34:26.989884",
       "kind": "calendar",
       "text": "🗓 На горизонті\n━━━━━━━━━━━━━━━━━━━━\n📌 Нагадування: попрацювати над DEX-ботом\n📅 03.10 (Sat) — через 4 дн.\n🕐 10:00–10:15\n\nЯкщо потрібні документи або запис — краще зробити зараз.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T10:34:33.241973",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
       "keyboard": null
     }
   ]
