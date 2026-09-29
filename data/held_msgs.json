@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-29T10:31:28.306642",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Incident &amp; Problem Manager в Bloomreach</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79899"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79899"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79899"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79899"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79899"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79899"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-29T10:31:29.606006",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -305,6 +266,12 @@
       "ts": "2026-09-29T10:34:22.700344",
       "kind": "calendar",
       "text": "🔔 <b>Старт за пів години</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Марс на асценденті</b>\n🕐 11:00–11:15\n\n<i>Час вирушати.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-29T10:34:23.432203",
+      "kind": "calendar",
+      "text": "🔔 Старт за пів години\n━━━━━━━━━━━━━━━━━━━━\n📌 Марс на асценденті\n🕐 11:00–11:15\n\nЧас вирушати.",
       "keyboard": null
     }
   ]
