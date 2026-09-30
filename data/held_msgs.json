@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T14:16:16.971165",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>CryptoQuant Says the Bitcoin Bull Market Is Showing Fatigue</b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79989"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79989"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79989"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79989"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79989"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79989"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T14:16:18.282538",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📍Kennedy Wants AI on Health Data</b>\n👤 MyClaw Newsletter &lt;newsletter@myclaw.ai&gt;",
@@ -371,6 +332,12 @@
       "ts": "2026-09-30T14:19:48.554342",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -6.3% за 24г</b>\n\nЗараз: 11.14 $\n24г тому: 11.88 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T14:19:49.382336",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ AVAX -6.3% за 24г\n\nЗараз: 11.14 $\n24г тому: 11.88 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
