@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T09:31:05.676529",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Robinhood Turns On 10x Crypto Perps in the US</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79958"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79958"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79958"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79958"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79958"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79958"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T09:31:08.045190",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Reserved\n📋 Medzisezónny výpredaj je teraz ešte väčší\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Temu\n📋 AC 100-250V 10A Bezdr...vyzerá lepšie za menej peňazí\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -278,6 +239,12 @@
       "ts": "2026-09-30T09:36:39.570206",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T09:37:42.880201",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
