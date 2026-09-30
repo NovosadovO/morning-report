@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T14:16:18.282538",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📍Kennedy Wants AI on Health Data</b>\n👤 MyClaw Newsletter &lt;newsletter@myclaw.ai&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79988"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79988"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79988"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79988"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79988"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79988"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T14:16:19.660850",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -338,6 +299,12 @@
       "ts": "2026-09-30T14:19:49.382336",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -6.3% за 24г\n\nЗараз: 11.14 $\n24г тому: 11.88 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T14:20:53.057843",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
