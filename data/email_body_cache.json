@@ -1,4 +1,9 @@
 {
+  "79978": {
+    "subject": "Abacus AI Agent: Ранковий брифінг — waiting for your input",
+    "sender": "no-reply@abacus.ai",
+    "body": "Your scheduled task \"Ранковий брифінг\" paused mid-run because it needs input from you.\n\nReply from the Tasks page (or open the run) and the task will pick up where it left off:\nhttps://apps.abacus.ai/chatllm/agent?convoId=50bf0749e"
+  },
   "79977": {
     "subject": "Abacus AI Agent: Щоденний проактивний брифінг — task run failed",
     "sender": "no-reply@abacus.ai",
@@ -28,10 +33,5 @@
     "subject": "Abacus AI Agent: DeFiLlama — огляд і зміни — waiting for your input",
     "sender": "no-reply@abacus.ai",
     "body": "Your scheduled task \"DeFiLlama — огляд і зміни\" paused mid-run because it needs input from you.\n\nReply from the Tasks page (or open the run) and the task will pick up where it left off:\nhttps://apps.abacus.ai/chatllm/agent?convoId=944484944"
-  },
-  "79965": {
-    "subject": "🏠 Нові квартири у Кошіці — 1 нове оголошення",
-    "sender": "Oleg Novosadov <novosadovoleg@gmail.com>",
-    "body": "body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; } .container { max-width: 800px; margin: 0 auto; } .listing { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 8px; overflow: hidden; } .listing img { float: left; margin-right: 15px; border-radius: 4px; } .listing-content { overflow: hidden; } .listing h3 { margin-top: 0; font-size: 1.2em; } .price { font-weight: bold; color: #e67e22; font-size: 1.1em; } .details { color: #7f8c8d; } .site { font-size: 0.9em; color: #95a5a6; } .error { color: #c0392b; font-style: italic; margin-top: 20px; } .footer { margin-top: 30px; font-size: 0.8em; color: #999; text-align: center; } a { color: #2980b9; text-decoration: none; } a:hover { text-decoration: underline; } 🏠 Нові 3-кімнатні квартири у Кошіці (Словаччина) Знайдено нових оголошень: 1 Дата та час перевірки: 2026-09-30 05:22:22 VIAC MIESTA PRE KUCHYŇU: 3-IZBOVÝ BYT NA BIELOCERKEVSKEJ Ціна: 193,000 €2898 €/m² Площа: 66 m² Сайт: reality.sk Цей звіт згенеровано автоматично кожні 2 години."
   }
 }
