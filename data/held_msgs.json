@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T13:41:11.708431",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>AVAX -5.2% за 24г</b>\n\nЗараз: 11.12 $\n24г тому: 11.72 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T13:41:12.535403",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -5.2% за 24г\n\nЗараз: 11.12 $\n24г тому: 11.72 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79985"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T13:46:05.729004",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Agentic Bank Run is coming for banking’s cheapest money </b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79984"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79984"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79984"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79984"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79984"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79984"
             }
           ]
         ]
