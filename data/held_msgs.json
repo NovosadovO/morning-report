@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T12:01:22.461836",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 8 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79983"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79983"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79983"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79983"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79983"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79983"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T12:01:23.886109",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
@@ -365,6 +326,12 @@
       "ts": "2026-09-30T12:05:59.227513",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T12:06:00.074129",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
