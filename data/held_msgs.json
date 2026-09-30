@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T14:40:30.554918",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T14:40:42.353355",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79994"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T14:46:11.408730",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — September 30</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79993"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79993"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79993"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79993"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79993"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79993"
             }
           ]
         ]
