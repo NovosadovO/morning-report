@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T08:01:29.259053",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Not all revenue sharing is equal. Do buybacks beat dividends</b>\n👤 DefiLlama Newsletter &lt;defillama@mail.beehiiv.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79948"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79948"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79948"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79948"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79948"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79948"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T08:01:30.643684",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Business Analyst and Prompt Engineer в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -624,6 +585,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79971"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T08:31:43.691064",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Abacus AI Agent: DeFiLlama — огляд і зміни — waiting for you</b>\n👤 no-reply@abacus.ai",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79970"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79970"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79970"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79970"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79970"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79970"
             }
           ]
         ]
