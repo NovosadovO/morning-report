@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T15:12:22.863417",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T15:12:23.662567",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
@@ -409,6 +403,37 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79988"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T15:16:36.269210",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Morning Report\n📋 📊 Ранковий дайджест ринків — 30.09.2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Temu\n📋 @Oleg Novosadov, Prosím vyzdvihnite si to čo najskôr...\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Morning Report",
+              "callback_data": "email_reply_79995"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Temu",
+              "callback_data": "email_reply_79991"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_79995"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79995"
             }
           ]
         ]
