@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T11:55:51.875035",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T11:56:38.735971",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Linas from Linas's Newsletter</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «The Agentic Bank Run is coming for banking’s cheapest money 🤖🏦; Anthro»\n\n<i>«View this post on the web at https://linas.substack.com/p/fintechpulse1132\r\n\r\nHey Everyone,\r\nGood morning &amp; happy Wednesday! Today, we’re breaking down Apollo’s “agentic bank run” warning &amp; why Meta Muse threatens bank profits long before it threatens bank deposits (why most of the cash never leaves...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79978"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T12:01:27.797287",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Abacus AI Agent: Щоденний проактивний брифінг — task run fai</b>\n👤 no-reply@abacus.ai",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79977"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79977"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79977"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79977"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79977"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79977"
             }
           ]
         ]
