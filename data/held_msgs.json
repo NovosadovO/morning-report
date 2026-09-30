@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T09:15:59.781058",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Medzisezónny výpredaj je teraz ešte väčší</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79974"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79974"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79974"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79974"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79974"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79974"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T09:16:01.286608",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>AC 100-250V 10A Bezdr...vyzerá lepšie za menej peňazí</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
@@ -411,6 +372,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T09:25:58.405761",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleg Novosadov</b>\n📋 Тема: «🏠 Нові квартири у Кошіці — 1 нове оголошення»\n\n<i>«body { font-family: Arial, sans-serif; } .card { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 8px; } .card img { max-width: 200px; display: block; margin-bottom: 10px; } .title { font-size: 18px; font-weight: bold; color: #333; } .details { color: #666; font-size: 14px;...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79976"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79976"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79976"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79976"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79976"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79976"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
