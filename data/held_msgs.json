@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T14:24:33.587806",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>CryptoBeholder.com через LinkedIn</b>\n📋 Тема: «📰 AI-curated Daily Crypto Digest - September 30»\n\n<i>«AI-curated Daily Crypto Digest\r\n\r\nАвтор: CryptoBeholder.com\r\n\r\n\r\nАвтор: CryptoBeholder.com\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/ai-curated-daily-crypto-digest-september-30-cryptobeholder-pmn1f?...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79992"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79992"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79992"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79992"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79992"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79992"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T14:24:50.493291",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -214,6 +175,12 @@
       "ts": "2026-09-30T14:29:00.742216",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -5.5% за 24г</b>\n\nЗараз: 11.13 $\n24г тому: 11.78 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T14:29:01.476802",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ AVAX -5.5% за 24г\n\nЗараз: 11.13 $\n24г тому: 11.78 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
