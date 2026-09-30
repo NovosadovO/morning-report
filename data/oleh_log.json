@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "habit_no_run",
-      "label": "❌ Ні",
-      "ts": "2026-09-13T19:34:03"
-    },
-    {
-      "t": "btn",
       "data": "evdone_no_done_04ba6d6n45b3ln8755l66okrl4_2026-09-13",
       "label": "❌ Не виконано",
       "ts": "2026-09-13T20:00:58"
@@ -7199,6 +7193,12 @@
       "data": "email_delete_79994",
       "label": "🗑 Видалити",
       "ts": "2026-09-30T17:05:30"
+    },
+    {
+      "t": "btn",
+      "data": "cal_all_done_today",
+      "label": "✅ Виконано",
+      "ts": "2026-09-30T17:10:18"
     }
   ]
 }
