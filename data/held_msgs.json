@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T14:16:23.602734",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Agentic Bank Run is coming for banking’s cheapest money </b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79984"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79984"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79984"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79984"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79984"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79984"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T14:16:25.661372",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Temu\n📋 @Oleg Novosadov, Prosím vyzdvihnite si to čo najskôr...\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -206,6 +167,12 @@
       "ts": "2026-09-30T14:21:04.177048",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T14:21:06.538687",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>AVAX -5.8% за 24г</b>\n\nЗараз: 11.14 $\n24г тому: 11.83 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
