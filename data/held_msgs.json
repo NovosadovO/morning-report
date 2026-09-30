@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T14:31:09.155423",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T14:31:10.417146",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — September 30</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
@@ -396,6 +390,12 @@
     },
     {
       "ts": "2026-09-30T14:34:03.692315",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T14:34:04.613739",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
