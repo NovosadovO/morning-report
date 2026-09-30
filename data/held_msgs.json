@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T08:01:30.643684",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Business Analyst and Prompt Engineer в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79947"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79947"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79947"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79947"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79947"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79947"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T08:01:35.383649",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Сьогодні пробіжки ще не було.\n⚖️ Здоров'я: Вага: 84.1 кг, ціль 75 кг (тренд +0.0 кг за останні 5 замірів). Кроки: 13345 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 00:00 Соляр — 10-й дім: Кар’єра й статус, 09:00 📄 Підписка Apple — закінчення терміну дії",
@@ -624,6 +585,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79970"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T08:31:45.270181",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79965"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79965"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79965"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79965"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79965"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79965"
             }
           ]
         ]
