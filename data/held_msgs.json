@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T13:29:46.025083",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleg Novosadov</b>\n📋 Тема: «🏠 Нові квартири у Кошіці — 1 нове оголошення»\n\n<i>«body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; } .container { max-width: 800px; margin: 0 auto; padding: 20px; } .header { border-bottom: 2px solid #0056b3; padding-bottom: 10px; margin-bottom: 20px; } .ad-card { border: 1px solid #ddd; border-radius: 8px; padding: 15px; margi...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79987"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79987"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79987"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79987"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79987"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79987"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T13:30:36.086767",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -437,6 +398,12 @@
       "ts": "2026-09-30T13:33:21.740084",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T13:34:25.160653",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
