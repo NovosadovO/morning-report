@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T15:45:50.615151",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🤯 OpenAI DevDay delivers massive updates</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79994"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79994"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79994"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79994"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79994"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79994"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T15:45:51.139693",
       "kind": "openloop",
       "text": "<b>⏳ Нагадування висить</b>\n\n« 🔔 Ранковий біг Олеже, нагадую про ранковий біг завтра, 22 вересня, о 08:00. »\n⏱ час минув 8 дн. тому, закриття не бачив\n\nЗробив — тисни, і я перестану питати.",
@@ -303,6 +264,12 @@
     },
     {
       "ts": "2026-09-30T15:50:49.801659",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T15:50:50.666638",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
