@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T10:25:44.874313",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T10:25:48.719386",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -5.0% за 24г</b>\n\nЗараз: 0.4985 $\n24г тому: 0.5248 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79971"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T10:30:54.756407",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Abacus AI Agent: DeFiLlama — огляд і зміни — waiting for you</b>\n👤 no-reply@abacus.ai",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79970"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79970"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79970"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79970"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79970"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79970"
             }
           ]
         ]
