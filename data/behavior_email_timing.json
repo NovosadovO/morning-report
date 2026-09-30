@@ -1,9 +1,4 @@
 {
-  "79465": {
-    "sender": "savings@mp1.tripadvisor.com",
-    "sender_raw": "\"Tripadvisor\" <savings@mp1.tripadvisor.com>",
-    "seen_ts": "2026-09-21T10:06:36.338186+00:00"
-  },
   "79469": {
     "sender": "newsletter@buzzsneakers-promo.com",
     "sender_raw": "\"Buzz Sneaker Station\" <newsletter@buzzsneakers-promo.com>",
@@ -1498,5 +1493,10 @@
     "sender": "no-reply@news.crypto.com",
     "sender_raw": "\"Crypto.com NFT\" <no-reply@news.crypto.com>",
     "seen_ts": "2026-09-30T06:16:04.162264+00:00"
+  },
+  "79973": {
+    "sender": "temu@eu.temuemail.com",
+    "sender_raw": "Temu <temu@eu.temuemail.com>",
+    "seen_ts": "2026-09-30T06:53:18.486250+00:00"
   }
 }
