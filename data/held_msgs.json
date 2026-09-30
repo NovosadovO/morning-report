@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T14:11:20.394726",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>AVAX -6.6% за 24г</b>\n\nЗараз: 11.11 $\n24г тому: 11.89 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T14:11:21.162325",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -6.6% за 24г\n\nЗараз: 11.11 $\n24г тому: 11.89 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79989"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T14:16:18.282538",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📍Kennedy Wants AI on Health Data</b>\n👤 MyClaw Newsletter &lt;newsletter@myclaw.ai&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79988"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79988"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79988"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79988"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79988"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79988"
             }
           ]
         ]
