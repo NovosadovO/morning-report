@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T11:31:06.644139",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 8 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79983"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79983"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79983"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79983"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79983"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79983"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T11:31:08.038776",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
@@ -404,6 +365,12 @@
       "ts": "2026-09-30T11:35:34.717537",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T11:36:39.411164",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
