@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T10:29:34.417993",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T10:29:35.436557",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -345,6 +339,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -5.0% за 24г\n\nЗараз: 0.4962 $\n24г тому: 0.5225 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T10:32:53.257981",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Cropp</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🤑 Rýchlejší prístup k Medzisezónnemu výpredaju v aplikácii 📲»\n\n<i>«🤑 Rýchlejší prístup k Medzisezónnemu výpredaju v aplikácii 📲 #outlook a { padding:0; } span.MsoHyperlink, span.MsoHyperlinkFollowed { color:inherit; mso-style-priority:99; } a.es-button { mso-style-priority:100!important; text-decoration:none!important; } a[x-apple-data-detectors], #MessageViewBody...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79980"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79980"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79980"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79980"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79980"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79980"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
