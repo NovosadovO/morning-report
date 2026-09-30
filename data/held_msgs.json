@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T15:31:40.823162",
-      "kind": "day_mode",
-      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T15:31:45.020390",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleg Novosadov</b>\n📋 Тема: «🏠 Нові квартири у Кошіці — 2 нових оголошень»\n\n<i>«body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; } .card { border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 20px; max-width: 600px; display: flex; } .card img { border-radius: 4px; margin-right: 15px; object-fit: cover; width: 200px; height: 150px; } .de...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -239,6 +233,12 @@
       "ts": "2026-09-30T15:37:39.619272",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T15:37:49.203026",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
     }
   ]
