@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T09:54:18.249830",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T09:54:19.184696",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T10:01:29.980723",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Abacus AI Agent: Ранковий брифінг — waiting for your input</b>\n👤 no-reply@abacus.ai",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79978"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79978"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79978"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79978"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79978"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79978"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
