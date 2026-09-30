@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T15:01:21.407736",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T15:01:22.658360",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🤯 OpenAI DevDay delivers massive updates</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
@@ -396,6 +390,12 @@
     },
     {
       "ts": "2026-09-30T15:05:49.855836",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T15:05:50.826844",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
