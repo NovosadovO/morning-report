@@ -251,6 +251,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-30T08:01:30.643684",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Business Analyst and Prompt Engineer в Convatec</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79947"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79947"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79947"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79947"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79947"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79947"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
