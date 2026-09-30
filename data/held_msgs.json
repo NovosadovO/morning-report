@@ -1,51 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T14:01:13.284133",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-30T14:01:14.849789",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>@Oleg Novosadov, Prosím vyzdvihnite si to čo najskôr...</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79991"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79991"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79991"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79991"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79991"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79991"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T14:01:16.284643",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>CryptoQuant Says the Bitcoin Bull Market Is Showing Fatigue</b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
@@ -410,6 +365,12 @@
       "ts": "2026-09-30T14:04:15.973955",
       "kind": "chunk",
       "text": "🌀 <b>☿ Меркурій увійшов у Скорпіон ♏</b>\n🏠 Натальний дім 4 — 🏠 Дім, родина\n<i>🔍 Глибина, трансформація, інтуїція загострена</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T14:04:25.632529",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
