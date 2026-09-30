@@ -173,6 +173,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-30T08:01:27.978124",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin correction could be near, CryptoQuant s</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79952"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79952"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79952"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79952"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79952"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79952"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
