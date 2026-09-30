@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T10:12:18.255564",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T10:12:21.586730",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -5.1% за 24г</b>\n\nЗараз: 0.4972 $\n24г тому: 0.5241 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -376,6 +370,43 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79970"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T10:15:50.375703",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Reserved\n📋 Medzisezónny výpredaj je teraz ešte väčší\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Temu\n📋 AC 100-250V 10A Bezdr...vyzerá lepšie za menej peňazí\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_79976"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Reserved",
+              "callback_data": "email_reply_79974"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Temu",
+              "callback_data": "email_reply_79973"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_79976"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79976"
             }
           ]
         ]
