@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "calrem_skip_vip_email_1789333485",
-      "label": "❌ Не треба",
-      "ts": "2026-09-13T23:12:34"
-    },
-    {
-      "t": "btn",
       "data": "cal_all_done_today",
       "label": "✅ Виконано",
       "ts": "2026-09-13T23:12:36"
@@ -7199,6 +7193,12 @@
       "kind": "cmd",
       "text": "/звички",
       "ts": "2026-09-30T21:57:33"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_sauna",
+      "label": "❌",
+      "ts": "2026-09-30T21:57:38"
     }
   ]
 }
