@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T10:55:26.313138",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T10:55:36.872469",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79981"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T11:00:59.996418",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Abacus AI Agent: Ранковий брифінг — waiting for your input</b>\n👤 no-reply@abacus.ai",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79978"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79978"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79978"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79978"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79978"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79978"
             }
           ]
         ]
