@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_no_done_376rlg7io4tma1qbp05iffjhs4_2026-09-13",
-      "label": "❌ Не виконано",
-      "ts": "2026-09-13T20:01:12"
-    },
-    {
-      "t": "btn",
       "data": "evdone_yes_done_2j9134q49ov2h4vrv3kvid7nq4_2026-09-13",
       "label": "✅ Виконано",
       "ts": "2026-09-13T20:01:18"
@@ -7199,6 +7193,12 @@
       "data": "rx_later_020736f9b9",
       "label": "⏰ Пізніше",
       "ts": "2026-09-30T19:44:57"
+    },
+    {
+      "t": "btn",
+      "data": "email_delete_80007",
+      "label": "🗑 Видалити",
+      "ts": "2026-09-30T19:45:00"
     }
   ]
 }
