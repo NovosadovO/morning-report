@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T08:01:21.820719",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Robinhood Turns On 10x Crypto Perps in the US</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79958"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79958"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79958"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79958"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79958"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79958"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T08:01:25.484264",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 6 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -726,6 +687,12 @@
       "ts": "2026-09-30T08:16:46.210154",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 6 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T08:31:29.264047",
+      "kind": "chunk",
+      "text": "🌅\n<b>ЗВІТ  ·  Ср 30.09  ·  08:30</b>\n🏠 Вдома\n<i>Ранок Олега: Strava + CoinGecko + кава. Ідеальна комбінація ☕📈</i>\n📌 Нічна зміна +2\n\n⚡ <b>День: ⭐☆☆☆☆ 20/100</b>  ↓10 vs вчора\n\n☀️\n<b>ПОГОДА — Košice</b>\n🌡️ <b>15°C</b>\n<i>😊 Свіжо — легка куртка</i>\n\n📅 <b>Прогноз сьогодні:</b>\n06:32   🌇 18:16  09:00 ☀️16°  │  10:00 ☀️17°  │  11:00 ☀️19°  │  12:00 ☀️21°  │  13:00 ☀️22°  │  14:00 ☀️23°  09:00 ☁️15°  │  12:00 ☀️20°  │  15:00 🌤23°  │  18:00 ☀️21°  │  21:00 ☀️16°\n\n<b>Завтра:</b>  ☁️ Хмарно  🔻12°  /  🔺23°\n<code>09:00</code> ☁️15°  │  <code>12:00</code> ☀️20°  │  <code>15:00</code> 🌤23°  │  <code>18:00</code> ☀️21°  │  <code>21:00</code> ☀️16°\n\n🚦\n<b>ТРАФІК</b>\n🚦 <b>Трафік Кошіце</b> — 🟢 Дороги вільні\n\n💰\n<b>КРИПТО  ·  🔴 ВЕДМЕЖИЙ 📉</b>\n🔻 <b>BTC</b> <code>$83,128.98</code>  -0.13%\n🔻 <b>ETH</b> <code>$2,665.58</code>  -0.14%\n\n📊 <b>ETF / ІНДЕКСИ / АКЦІЇ</b>\n🟢 <b>IBIT</b>  <code>$47.33</code>  <i>+0.25% за день</i>\n🟢 <b>ETHA</b>  <code>$20.28</code>  <i>+0.65% за день</i>\n⚪️ <b>VAVA</b>  <code>$0.93</code>\n🟢 <b>GAVA</b>  <code>$27.62</code>  <i>+9.60% за день</i>\n🟢 <b>QQQ</b>  <code>$737.93</code>  <i>+0.19% за день</i>\n\n🔄 <b>ПІДПИСКИ</b>: 3 активних — <b>34.87€/міс</b> (418€/рік)\n   • Railway Cor",
       "keyboard": null
     }
   ]
