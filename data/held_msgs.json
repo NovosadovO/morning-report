@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T10:24:30.311164",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-09-30T10:25:35.349091",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T10:25:36.265963",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -248,6 +236,51 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-30T10:30:46.635391",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Medzisezónny výpredaj je teraz ešte väčší</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79974"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79974"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79974"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79974"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79974"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79974"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T10:30:47.452107",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
     }
   ]
 }
