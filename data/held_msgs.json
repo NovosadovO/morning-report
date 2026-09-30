@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T09:01:00.966706",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 6 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79957"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79957"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79957"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79957"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79957"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79957"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T09:01:02.311065",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Specialista/ka administrace fondů в Golden Gate</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -272,6 +233,12 @@
       "ts": "2026-09-30T09:11:03.012817",
       "kind": "chunk",
       "text": "💹 <b>КРИПТО ДАШБОРД</b> · 09-30\n\n🔴 <b>BTC</b>  <b>$83,000.89</b>\n   24г: -1.15%  7д: -3.8%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>ETH</b>  <b>$2,662.08</b>\n   24г: -1.64%  7д: -3.3%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>BNB</b>  <b>$756.44</b>\n   24г: -1.39%  7д: -3.9%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>XRP</b>  <b>$1.49</b>\n   24г: -0.74%  7д: -7.5%\n   <code>[🔴🔴🔴🔴⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>SOL</b>  <b>$117.98</b>\n   24г: -1.09%  7д: -0.2%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>TRX</b>  <b>$0.34</b>\n   24г: +0.74%  7д: -2.0%\n   <code>[🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>ZEC</b>  <b>$1,393.44</b>\n   24г: -2.14%  7д: -13.6%\n   <code>[🔴🔴⬜⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🟢 <b>FIGR_HELOC</b>  <b>$1.03</b>\n   24г: +2.72%  7д: -0.1%\n   <code>[🟢🟢🟢🟢🟢🟢🟢⬜⬜⬜]</code>\n\n🔴 <b>HYPE</b>  <b>$85.30</b>\n   24г: -3.32%  7д: -12.1%\n   <code>[🔴⬜⬜⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>DOGE</b>  <b>$0.09</b>\n   24г: -1.84%  7д: -8.3%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>LINK</b>  <b>$14.29</b>\n   24г: -5.03%  7д: +10.0%\n   <code>[⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>XMR</b>  <b>$537.34</b>\n   24г: -0.89%  7д: -5.7%\n   <code>[🔴🔴🔴🔴⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>WBT</b>  <b>$82.96</b>\n   24г: -1.26%  7д: -4.4%\n   <code>[🔴🔴🔴⬜⬜⬜⬜⬜⬜⬜]</code>\n\n🔴 <b>ADA</b>  <b>$0.24</b>\n   24г: -2.51%  7д: -5.5%\n",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T09:11:48.944587",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
