@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T08:52:30.331521",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T08:53:19.565473",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Temu</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «AC 100-250V 10A Bezdr...vyzerá lepšie za menej peňazí»\n\n<i>«-----------------------------------------------------------------------\r\nTemu\r\n-----------------------------------------------------------------------\r\n\r\nTo properly view the full message content, please open this email in a high version mail client or browser.\r\n\r\nVisit this website to see our recom...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -376,6 +370,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79957"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T09:01:02.311065",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Specialista/ka administrace fondů в Golden Gate</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79955"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79955"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79955"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79955"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79955"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79955"
             }
           ]
         ]
