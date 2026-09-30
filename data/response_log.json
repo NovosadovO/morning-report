@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-11T03:00:14.671201+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Зважити себе та записати в Apple Health",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-11"
-      }
-    },
-    {
       "ts": "2026-08-11T03:00:18.834138+00:00",
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
@@ -13849,6 +13839,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_a99e08c139"
+    },
+    {
+      "ts": "2026-09-30T21:56:58.672599+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
