@@ -1,9 +1,4 @@
 {
-  "79492": {
-    "sender": "rewards@booking.com",
-    "sender_raw": "\"Booking.com\" <rewards@booking.com>",
-    "seen_ts": "2026-09-21T15:56:09.702720+00:00"
-  },
   "79493": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
     "seen_ts": "2026-09-30T13:15:12.902027+00:00"
+  },
+  "79996": {
+    "sender": "novosadovoleg@gmail.com",
+    "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
+    "seen_ts": "2026-09-30T13:31:43.845137+00:00"
   }
 }
