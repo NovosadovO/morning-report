@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T09:22:52.288487",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T09:24:01.020767",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -376,6 +370,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79965"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T09:31:05.676529",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Robinhood Turns On 10x Crypto Perps in the US</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79958"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79958"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79958"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79958"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79958"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79958"
             }
           ]
         ]
