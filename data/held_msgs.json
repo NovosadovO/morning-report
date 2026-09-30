@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T14:26:21.813947",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T14:26:24.144969",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -5.8% за 24г</b>\n\nЗараз: 11.11 $\n24г тому: 11.79 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -182,6 +176,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T14:31:10.417146",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — September 30</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79993"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79993"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79993"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79993"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79993"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79993"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
