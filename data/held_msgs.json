@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T15:31:38.217008",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>@Oleg Novosadov, Prosím vyzdvihnite si to čo najskôr...</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79991"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79991"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79991"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79991"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79991"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79991"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T15:31:39.550046",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>CryptoQuant Says the Bitcoin Bull Market Is Showing Fatigue</b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
@@ -305,6 +266,12 @@
       "ts": "2026-09-30T15:36:40.386366",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T15:36:41.312552",
+      "kind": "day_mode",
+      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
