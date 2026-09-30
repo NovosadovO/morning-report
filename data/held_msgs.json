@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T08:14:00.211935",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Product Manager в Ketryx»\n\n<i>«Сповіщення про вакансії в Vienna          \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nProduct Manager\r\nKetryx\r\nVienna\r\n\r\nЦя компанія активно наймає персонал\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4464315494/?trackingId=hFIN2y5bZv9bt6OlpG0fyA%3D%3D&amp;refId=g...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79971"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79971"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79971"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79971"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79971"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79971"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T08:16:05.256264",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Crypto.com NFT</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Discover Digital Masterpieces by Established Artists and Storytellers»\n\n<i>«Styles to suit anyone’s taste, from Pop Art to Surrealism, to\r\nFantasy.\r\n     Anti-phishing Code:\r\nNovosadovoleg22\r\n   Dear Valued Customer,\r\n\r\nNFTs have ushered in a new age for the art industry by\r\ndemocratising access to fine art and opening doors for creators\r\nto produce work they’re passionate...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -727,6 +688,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-30T08:31:56.414285",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 6 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
