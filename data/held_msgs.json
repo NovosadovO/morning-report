@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T09:16:09.456305",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 6 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79957"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79957"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79957"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79957"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79957"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79957"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T09:16:11.539991",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Reserved\n📋 Medzisezónny výpredaj je teraz ešte väčší\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Temu\n📋 AC 100-250V 10A Bezdr...vyzerá lepšie za menej peňazí\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -245,6 +206,12 @@
       "ts": "2026-09-30T09:29:01.221881",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T09:29:01.999731",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
