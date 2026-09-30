@@ -1,9 +1,4 @@
 {
-  "79478": {
-    "sender": "newsletter@pelikan.sk",
-    "sender_raw": "Roland z Pelikána <newsletter@pelikan.sk>",
-    "seen_ts": "2026-09-21T13:25:40.179995+00:00"
-  },
   "79479": {
     "sender": "onboarding@resend.dev",
     "sender_raw": "Morning Report <onboarding@resend.dev>",
@@ -1498,5 +1493,10 @@
     "sender": "info@message.cropp.com",
     "sender_raw": "\"Cropp\" <info@message.cropp.com>",
     "seen_ts": "2026-09-30T08:32:52.424867+00:00"
+  },
+  "79982": {
+    "sender": "info@mail.uefa.com",
+    "sender_raw": "\"UEFA Women's Champions League\" <info@mail.uefa.com>",
+    "seen_ts": "2026-09-30T08:59:17.750923+00:00"
   }
 }
