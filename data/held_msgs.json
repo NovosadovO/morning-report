@@ -310,39 +310,37 @@
       }
     },
     {
-      "ts": "2026-09-30T10:30:54.756407",
+      "ts": "2026-09-30T10:30:57.044909",
       "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Abacus AI Agent: DeFiLlama — огляд і зміни — waiting for you</b>\n👤 no-reply@abacus.ai",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Reserved\n📋 Medzisezónny výpredaj je teraz ešte väčší\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Temu\n📋 AC 100-250V 10A Bezdr...vyzerá lepšie za menej peňazí\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
       "keyboard": {
         "inline_keyboard": [
           [
             {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79970"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79970"
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_79976"
             }
           ],
           [
+            {
+              "text": "🤖✍️ Відповісти: Reserved",
+              "callback_data": "email_reply_79974"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Temu",
+              "callback_data": "email_reply_79973"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_79976"
+            },
             {
               "text": "⭐ Важливий",
-              "callback_data": "email_star_79970"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79970"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79970"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79970"
+              "callback_data": "email_star_79976"
             }
           ]
         ]
