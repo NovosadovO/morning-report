@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T09:46:11.330206",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Product Manager в Ketryx</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79971"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79971"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79971"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79971"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79971"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79971"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T09:46:12.865464",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Abacus AI Agent: DeFiLlama — огляд і зміни — waiting for you</b>\n👤 no-reply@abacus.ai",
@@ -243,6 +204,12 @@
     },
     {
       "ts": "2026-09-30T09:53:00.449931",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T09:53:01.262682",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
