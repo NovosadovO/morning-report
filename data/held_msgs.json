@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T09:20:14.190357",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T09:21:41.133025",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79974"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T09:30:59.693482",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>AC 100-250V 10A Bezdr...vyzerá lepšie za menej peňazí</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79973"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79973"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79973"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79973"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79973"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79973"
             }
           ]
         ]
