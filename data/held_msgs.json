@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T13:50:05.921413",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Ticketportal.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🎄 Zažite vianočný koncert Filmového orchestra Praha»\n\n<i>«Filmový orchester Praha prinesie 5. decembra do Bratislavy večer plný známych melódií a vianočnej nálady. Zastavte sa, započúvajte sa a nalaďte sa na vianočný čas.\n\n\t\t[ticketportal PLG] [https://go.sparkpostmail.com/f/a/NNHU0Uu9iag58SVJnNlSZA~~/AAA-fBA~/wk1bSmh3HP59Lm-QmDPQrtAgI4S6JGfV9o3Jsvm3fM_tuW...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79990"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79990"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79990"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79990"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79990"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79990"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T13:50:07.308424",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
@@ -181,6 +142,12 @@
       "ts": "2026-09-30T13:56:38.254271",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T13:56:40.940737",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>AVAX -5.2% за 24г</b>\n\nЗараз: 11.15 $\n24г тому: 11.76 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
