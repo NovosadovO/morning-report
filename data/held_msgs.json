@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T09:34:10.968296",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>no-reply@abacus.ai</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Abacus AI Agent: Ранковий брифінг — waiting for your input»\n\n<i>«Your scheduled task \"Ранковий брифінг\" paused mid-run because it needs input from you.\n\nReply from the Tasks page (or open the run) and the task will pick up where it left off:\nhttps://apps.abacus.ai/chatllm/agent?convoId=50bf0749e...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_79978"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79978"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79978"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79978"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79978"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79978"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T09:34:15.507654",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -181,6 +142,12 @@
       "ts": "2026-09-30T09:41:27.464106",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T09:41:33.567015",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
