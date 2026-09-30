@@ -378,6 +378,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-09-30T08:14:00.211935",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Product Manager в Ketryx»\n\n<i>«Сповіщення про вакансії в Vienna          \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nProduct Manager\r\nKetryx\r\nVienna\r\n\r\nЦя компанія активно наймає персонал\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4464315494/?trackingId=hFIN2y5bZv9bt6OlpG0fyA%3D%3D&amp;refId=g...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79971"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79971"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79971"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79971"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79971"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79971"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
