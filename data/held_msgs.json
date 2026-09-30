@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T09:46:12.865464",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Abacus AI Agent: DeFiLlama — огляд і зміни — waiting for you</b>\n👤 no-reply@abacus.ai",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79970"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79970"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79970"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79970"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79970"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79970"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T09:46:15.159100",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Reserved\n📋 Medzisezónny výpredaj je teraz ešte väčší\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Temu\n📋 AC 100-250V 10A Bezdr...vyzerá lepšie za menej peňazí\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -212,6 +173,12 @@
       "ts": "2026-09-30T09:53:01.262682",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T09:53:07.675773",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
