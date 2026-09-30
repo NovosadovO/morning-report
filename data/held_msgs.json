@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T15:31:29.409473",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📊 Ранковий дайджест ринків — 30.09.2026</b>\n👤 Morning Report &lt;onboarding@resend.dev&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79995"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79995"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79995"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79995"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79995"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79995"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T15:31:30.796701",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🤯 OpenAI DevDay delivers massive updates</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
@@ -437,6 +398,12 @@
       "ts": "2026-09-30T15:35:19.599564",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T15:35:20.357778",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
     }
   ]
