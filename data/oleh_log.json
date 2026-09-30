@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_yes_done_38i49gas0f45ujj3qmrs5r0e74_2026-09-13",
-      "label": "✅ Виконано",
-      "ts": "2026-09-13T20:01:00"
-    },
-    {
-      "t": "btn",
       "data": "evdone_yes_done_2j9134q49ov2h4vrv3kvid7nq4_2026-09-13",
       "label": "✅ Виконано",
       "ts": "2026-09-13T20:01:11"
@@ -7199,6 +7193,12 @@
       "data": "email_delete_80003",
       "label": "🗑 Видалити",
       "ts": "2026-09-30T19:44:24"
+    },
+    {
+      "t": "btn",
+      "data": "habit_no_shower",
+      "label": "❌ Ні",
+      "ts": "2026-09-30T19:44:29"
     }
   ]
 }
