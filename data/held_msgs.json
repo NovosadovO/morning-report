@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T08:50:05.088501",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T08:51:13.444031",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79971"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T09:00:56.751806",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Abacus AI Agent: DeFiLlama — огляд і зміни — waiting for you</b>\n👤 no-reply@abacus.ai",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79970"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79970"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79970"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79970"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79970"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79970"
             }
           ]
         ]
