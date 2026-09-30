@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T09:05:53.729538",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T09:05:54.479540",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79973"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T09:16:02.726937",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Product Manager в Ketryx</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79971"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79971"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79971"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79971"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79971"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79971"
             }
           ]
         ]
