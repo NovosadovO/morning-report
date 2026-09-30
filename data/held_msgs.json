@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T08:31:56.414285",
-      "kind": "chunk",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 6 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T08:34:23.531170",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79971"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T08:45:44.790851",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Abacus AI Agent: DeFiLlama — огляд і зміни — waiting for you</b>\n👤 no-reply@abacus.ai",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79970"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79970"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79970"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79970"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79970"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79970"
             }
           ]
         ]
