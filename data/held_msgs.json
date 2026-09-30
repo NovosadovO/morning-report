@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T16:01:01.714584",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔦 Up 47% since August. Now 14% overvalued</b>\n👤 Investing.com &lt;newsletter@investingmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79997"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79997"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79997"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79997"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79997"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79997"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T16:01:03.061183",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -437,6 +398,12 @@
       "ts": "2026-09-30T16:04:05.885463",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T16:04:06.692800",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
       "keyboard": null
     }
   ]
