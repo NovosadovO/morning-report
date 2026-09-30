@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T10:51:46.623024",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T10:52:55.248912",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T10:59:18.634783",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>UEFA Women's Champions League</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Oleg, win tickets for a league phase match!»\n\n<i>«Enjoy hospitality, pitch side access and more with Heineken.\nWin tickets \n( https://clicks.mail.uefa.com/f/a/OWwG3MTiZrRt8ebBVmWnEg~~/AAAHahA~/q3XRVMfWinKNLOpLYeimse1-dGlGa-ti4ztYl7UnTipL0BHizoTxESEgTFTZtMBR97bnf8wuW2LBEQ3-00_IGhxtAGRfATt06sv_vlt66iD7QI30tPsSVXiYafBNOqTAXnQidTdqp-3cu3Wt9nPuwTw5JXTzf...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79982"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79982"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79982"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79982"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79982"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79982"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
