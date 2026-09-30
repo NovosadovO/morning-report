@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T09:15:58.357495",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T09:15:59.781058",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Medzisezónny výpredaj je teraz ešte väčší</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
@@ -410,6 +404,12 @@
       "ts": "2026-09-30T09:25:09.307166",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T09:25:10.493177",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
