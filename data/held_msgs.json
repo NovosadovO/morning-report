@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T11:09:34.076329",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T11:09:56.318082",
       "kind": "chunk",
       "text": "🔭 Новий транзит\n☉ <b>Сонце</b> □ ♃ <b>Натальний Юпітер</b> (орб 1.5°)\n📍 Сонце у <b>Терези ♎</b> | Натальний Юпітер у Рак ♋, 12-й дім\n<i>Квадратура · Підсвідоме</i>\n\n📖 <b>Що означає Квадратура:</b>\n🟠 Напруга й виклик — внутрішнє тертя, що штовхає до дії. Дискомфорт, який при правильному підході дає зростання і силу.\n\n",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79976"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T11:16:06.653322",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Medzisezónny výpredaj je teraz ešte väčší</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79974"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79974"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79974"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79974"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79974"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79974"
             }
           ]
         ]
