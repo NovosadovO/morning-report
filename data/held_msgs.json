@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T14:26:25.033790",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ AVAX -5.8% за 24г\n\nЗараз: 11.11 $\n24г тому: 11.79 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T14:26:38.262462",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleh Bezuhlyi через LinkedIn</b>\n📋 Тема: «📰 Daily Crypto Digest — September 30»\n\n<i>«Daily Crypto Digest\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n\r\nАвтор: Oleh Bezuhlyi\r\n\r\n    \r\n    \r\n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\r\nПрочитати на LinkedIn\r\nhttps://www.linkedin.com/comm/pulse/daily-crypto-digest-september-30-oleh-bezuhlyi-h8nif?lipi=urn%3Ali%3Apage%3Aemail_emai...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79992"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T14:31:13.332188",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>@Oleg Novosadov, Prosím vyzdvihnite si to čo najskôr...</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79991"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79991"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79991"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79991"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79991"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79991"
             }
           ]
         ]
