@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T14:27:37.031029",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T14:27:37.889808",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79987"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-30T14:31:19.419493",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>How a Dutch gangster took over Sierra Leone</b>\n👤 The Economist через LinkedIn&lt;newsletters-noreply@l",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79986"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79986"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79986"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79986"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79986"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79986"
             }
           ]
         ]
