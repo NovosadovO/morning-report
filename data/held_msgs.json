@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T12:16:55.321370",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T12:16:56.572826",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>⚡ OpenAI's biggest day yet</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -398,6 +392,12 @@
       "ts": "2026-09-30T12:21:20.744297",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T12:21:21.542256",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
