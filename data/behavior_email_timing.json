@@ -1,9 +1,4 @@
 {
-  "79491": {
-    "sender": "newsletter@data.theblock.co",
-    "sender_raw": "The Block <newsletter@data.theblock.co>",
-    "seen_ts": "2026-09-21T15:50:01.198167+00:00"
-  },
   "79492": {
     "sender": "rewards@booking.com",
     "sender_raw": "\"Booking.com\" <rewards@booking.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Oleh Bezuhlyi через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-09-30T12:26:37.153039+00:00"
+  },
+  "79995": {
+    "sender": "onboarding@resend.dev",
+    "sender_raw": "Morning Report <onboarding@resend.dev>",
+    "seen_ts": "2026-09-30T13:15:12.902027+00:00"
   }
 }
