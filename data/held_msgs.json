@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T09:25:10.493177",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T09:25:58.405761",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleg Novosadov</b>\n📋 Тема: «🏠 Нові квартири у Кошіці — 1 нове оголошення»\n\n<i>«body { font-family: Arial, sans-serif; } .card { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 8px; } .card img { max-width: 200px; display: block; margin-bottom: 10px; } .title { font-size: 18px; font-weight: bold; color: #333; } .details { color: #666; font-size: 14px;...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -441,6 +435,12 @@
     },
     {
       "ts": "2026-09-30T09:31:20.652044",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T09:31:21.569113",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
