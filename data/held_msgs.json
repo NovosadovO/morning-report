@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T08:45:50.245643",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Specialista/ka administrace fondů в Golden Gate</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79955"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79955"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79955"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79955"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79955"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79955"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T08:45:51.708078",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin correction could be near, CryptoQuant s</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -272,6 +233,12 @@
       "ts": "2026-09-30T08:57:11.395527",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T08:58:26.489120",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
