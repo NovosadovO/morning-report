@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T09:46:07.241717",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79976"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79976"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79976"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79976"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79976"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79976"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T09:46:08.649286",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Medzisezónny výpredaj je teraz ešte väčší</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
@@ -344,6 +305,12 @@
       "ts": "2026-09-30T09:51:49.239153",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « 📄 Підписка Apple — закінчення терміну дії » було 30.09 о 08:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T09:51:55.324298",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
