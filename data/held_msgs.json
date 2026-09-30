@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T15:31:36.370623",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - September 30</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79992"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79992"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79992"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79992"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79992"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79992"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T15:31:38.217008",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>@Oleg Novosadov, Prosím vyzdvihnite si to čo najskôr...</b>\n👤 Temu &lt;temu@eu.temuemail.com&gt;",
@@ -338,6 +299,12 @@
       "ts": "2026-09-30T15:36:34.957983",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T15:36:40.386366",
+      "kind": "day_mode",
+      "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
