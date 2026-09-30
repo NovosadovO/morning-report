@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T11:46:10.853129",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Abacus AI Agent: Щоденний проактивний брифінг — task run fai</b>\n👤 no-reply@abacus.ai",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79977"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79977"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79977"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79977"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79977"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79977"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T11:46:12.188302",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -305,6 +266,12 @@
       "ts": "2026-09-30T11:52:05.531658",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T11:52:06.295855",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
       "keyboard": null
     }
   ]
