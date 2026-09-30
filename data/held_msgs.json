@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T14:01:20.078991",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79987"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79987"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79987"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79987"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79987"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79987"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T14:01:21.392343",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>How a Dutch gangster took over Sierra Leone</b>\n👤 The Economist через LinkedIn&lt;newsletters-noreply@l",
@@ -305,6 +266,12 @@
       "ts": "2026-09-30T14:04:28.865764",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -6.6% за 24г</b>\n\nЗараз: 11.13 $\n24г тому: 11.92 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T14:04:29.732618",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ AVAX -6.6% за 24г\n\nЗараз: 11.13 $\n24г тому: 11.92 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
