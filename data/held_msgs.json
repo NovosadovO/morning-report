@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T09:01:02.311065",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Specialista/ka administrace fondů в Golden Gate</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79955"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79955"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79955"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79955"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79955"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79955"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-09-30T09:01:04.629296",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Temu\n📋 AC 100-250V 10A Bezdr...vyzerá lepšie za menej peňazí\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -239,6 +200,12 @@
       "ts": "2026-09-30T09:11:48.944587",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T09:11:49.851883",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
