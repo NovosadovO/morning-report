@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-09-30T08:56:02.313162",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-09-30T08:57:10.471845",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
@@ -405,6 +399,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-09-30T09:03:29.953146",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Reserved</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Medzisezónny výpredaj je teraz ešte väčší»\n\n<i>«Email table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; } img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; } body { margin: 0; padding: 0; background-color: #ffffff; } a { text-decoration: none; } .keep-white { mso-style-textfill-...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_79974"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79974"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79974"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79974"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79974"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79974"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
