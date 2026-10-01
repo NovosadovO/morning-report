@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-01T03:01:04.205399",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-01T03:01:05.467166",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>AI Solutions Engineer в Bitcoin Suisse</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -398,6 +392,12 @@
       "ts": "2026-10-01T03:04:09.391208",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -5.3% за 24г</b>\n\nЗараз: 10.85 $\n24г тому: 11.45 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-01T03:04:10.186905",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ AVAX -5.3% за 24г\n\nЗараз: 10.85 $\n24г тому: 11.45 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
