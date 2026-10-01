@@ -1,9 +1,4 @@
 {
-  "79533": {
-    "sender": "temu@eu.temuemail.com",
-    "sender_raw": "Temu <temu@eu.temuemail.com>",
-    "seen_ts": "2026-09-22T10:52:41.549192+00:00"
-  },
   "79534": {
     "sender": "updates@okx.com",
     "sender_raw": "OKX <updates@okx.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-10-01T08:14:51.330498+00:00"
+  },
+  "80040": {
+    "sender": "nike@official.nike.com",
+    "sender_raw": "Nike <nike@official.nike.com>",
+    "seen_ts": "2026-10-01T08:16:57.536992+00:00"
   }
 }
