@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-01T23:36:27.385563",
-      "kind": "calendar",
-      "text": "🔔 Старт за пів години\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 12-й дім: Завершення й відновлення\n🕐 00:00–00:00\n\nЧас вирушати.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-01T23:37:25.390451",
       "kind": "calendar",
       "text": "🔔 <b>Старт за пів години</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 12-й дім: Завершення й відновлення</b>\n🕐 00:00–00:00\n\n<i>Час вирушати.</i>",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T00:01:32.321108",
+      "kind": "offer",
+      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>🟪 Thursday Links</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80095"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80095"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80095"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80095"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80095"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80095"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
