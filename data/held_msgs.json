@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-01T01:55:53.280200",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-01T01:55:54.067257",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: невеликий експеримент з розкладом дня під зміни (early/night).",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80022"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-01T02:01:07.026889",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Your weekly progress report from Google Health</b>\n👤 Google Health &lt;google-health-noreply@google.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79946"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79946"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79946"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79946"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79946"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79946"
             }
           ]
         ]
