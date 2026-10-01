@@ -1,9 +1,4 @@
 {
-  "79566": {
-    "sender": "newsletter@data.theblock.co",
-    "sender_raw": "The Block <newsletter@data.theblock.co>",
-    "seen_ts": "2026-09-22T19:28:54.845759+00:00"
-  },
   "79568": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
     "seen_ts": "2026-10-01T13:54:13.783352+00:00"
+  },
+  "80068": {
+    "sender": "onboarding@resend.dev",
+    "sender_raw": "Morning Report <onboarding@resend.dev>",
+    "seen_ts": "2026-10-01T14:06:26.966081+00:00"
   }
 }
