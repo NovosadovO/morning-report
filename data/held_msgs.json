@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-01T02:10:41.244672",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Соляр — 11-й дім: Друзі й плани » було 30.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-01T02:10:42.020550",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Соляр — 11-й дім: Друзі й плани » було 30.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80026"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-01T02:16:05.503393",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Base Writes a Seize Function Into Its Token Standard</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80025"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80025"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80025"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80025"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80025"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80025"
             }
           ]
         ]
