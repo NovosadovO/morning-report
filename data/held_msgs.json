@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T01:28:33.694340",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади ERP Project Manager в Arcwide – Активно набирає персонал\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Project Manager в Convatec – Активно набирає персонал\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T01:28:34.641016",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Сповіщення про вакансії LinkedIn → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 4 — можна пропустити.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80091"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-02T01:31:01.487767",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80089"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80089"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80089"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80089"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80089"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80089"
             }
           ]
         ]
