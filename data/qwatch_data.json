@@ -1412,5 +1412,20 @@
     "spo2": 99,
     "source": "qwatch",
     "saved_at": "2026-09-30 23:36"
+  },
+  "2026-10-01": {
+    "date": "2026-10-01",
+    "steps": 823,
+    "sleep_quality": 50,
+    "hr_avg": 50,
+    "calories": 36,
+    "hrv": 42,
+    "weight_kg": 83.3,
+    "height_cm": 175,
+    "spo2_max": 99,
+    "spo2_min": 96,
+    "spo2": 96,
+    "source": "qwatch",
+    "saved_at": "2026-10-01 16:23"
   }
 }
