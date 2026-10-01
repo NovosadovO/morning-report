@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T01:42:04.219663",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 ВІЛЬНЕ ВІКНО 02.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T01:42:07.101431",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80094"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-02T01:45:49.759591",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Claude was used to hack OpenAI</b>\n👤 AI NOW &amp; BEYOND через LinkedIn&lt;newsletters-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80093"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80093"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80093"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80093"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80093"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80093"
             }
           ]
         ]
