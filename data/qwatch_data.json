@@ -1415,19 +1415,20 @@
   },
   "2026-10-01": {
     "date": "2026-10-01",
-    "steps": 943,
-    "sleep_quality": 50,
-    "hr_avg": 53,
-    "calories": 36,
-    "hrv": 42,
+    "steps": 10201,
+    "sleep_quality": 100,
+    "hr_avg": 70,
+    "calories": 500,
+    "hrv": 46,
     "weight_kg": 83.3,
     "height_cm": 175,
     "spo2_max": 99,
     "spo2_min": 96,
     "spo2": 96,
-    "source": "qwatch_auto",
-    "saved_at": "2026-10-01 16:41",
-    "sleep_total_min": 231,
-    "sleep_hours": 3.85
+    "source": "qwatch",
+    "saved_at": "2026-10-01 23:18",
+    "sleep_total_min": 509,
+    "sleep_hours": 3.85,
+    "age": 37
   }
 }
