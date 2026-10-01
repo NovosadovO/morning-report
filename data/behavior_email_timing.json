@@ -1,9 +1,4 @@
 {
-  "79521": {
-    "sender": "team@astromix.net",
-    "sender_raw": "Astromix <team@astromix.net>",
-    "seen_ts": "2026-09-22T07:30:50.925393+00:00"
-  },
   "79522": {
     "sender": "admin@mail.capcut.com",
     "sender_raw": "CapCut <admin@mail.capcut.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-10-01T00:13:55.610862+00:00"
+  },
+  "80027": {
+    "sender": "support@profesia.sk",
+    "sender_raw": "\"Profesia.sk\" <support@profesia.sk>",
+    "seen_ts": "2026-10-01T01:08:43.181331+00:00"
   }
 }
