@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "сповіщення про здоров'я: steps_good",
-      "detail": "🚶 Кроки за тиждень у середньому 10904 — ціль 8000 досягнута",
-      "module": "healthai",
-      "ts": "2026-09-24T16:38:32"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, на вашу пошту надійшли нові вакансії: 'AML Officer (Sl",
       "detail": "Олег отримував сповіщення про вакансії LinkedIn з назвами 'AML Officer (Slovakia) в Manimama Law Firm' та 'Senior Project Manager - Digital Operations в Caterpillar Inc.'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "😴 Сон за тиждень у середньому 8.6 год — стабільно добре",
       "module": "healthai",
       "ts": "2026-10-01T17:00:18"
+    },
+    {
+      "kind": "hcoach",
+      "what": "full_report",
+      "detail": "повна аналітика здоров'я",
+      "module": "selfact",
+      "ts": "2026-10-01T20:00:56"
     }
   ]
 }
