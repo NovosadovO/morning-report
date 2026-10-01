@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-01T03:46:07.199282",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Your weekly progress report from Google Health</b>\n👤 Google Health &lt;google-health-noreply@google.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79946"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79946"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79946"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79946"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79946"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79946"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-01T03:46:09.399136",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -200,6 +161,12 @@
       "ts": "2026-10-01T03:50:51.745106",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-01T03:50:55.088739",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>AVAX -5.2% за 24г</b>\n\nЗараз: 10.85 $\n24г тому: 11.45 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
