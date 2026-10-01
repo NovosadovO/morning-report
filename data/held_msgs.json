@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T00:15:41.707020",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Thursday Links</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80095"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80095"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80095"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80095"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80095"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80095"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T00:15:43.296918",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Top 10 Richest People In The World | October 2026</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -346,6 +307,12 @@
       "ts": "2026-10-02T00:17:57.084297",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 02.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T00:17:57.944693",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 ВІЛЬНЕ ВІКНО 02.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
