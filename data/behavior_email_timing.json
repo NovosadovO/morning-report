@@ -1,9 +1,4 @@
 {
-  "79600": {
-    "sender": "card@kcard.kaufland.sk",
-    "sender_raw": "Kaufland Card XTRA <card@kcard.kaufland.sk>",
-    "seen_ts": "2026-09-23T12:01:54.461235+00:00"
-  },
   "79601": {
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@email.blockchain.com",
     "sender_raw": "\"Blockchain\" <newsletter@email.blockchain.com>",
     "seen_ts": "2026-10-01T19:58:34.000094+00:00"
+  },
+  "80093": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "AI NOW & BEYOND через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-01T21:03:39.098108+00:00"
   }
 }
