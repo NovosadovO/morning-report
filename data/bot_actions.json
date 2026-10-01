@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "У тебе є непрочитані листи з крипто-новинами від Morning Rep",
-      "detail": "Є три свіжі листи з крипто-новинами, які Олег міг не побачити: '📊 Ранковий дайджест ринків — 24.09.2026', '📰 Daily Crypto Digest — September 24', 'BlackRock Says AI Agents Are the Next Big Stablecoin Driver'.",
-      "module": "selfact",
-      "ts": "2026-09-24T15:09:11"
-    },
-    {
-      "kind": "notify",
       "what": "Олег, сьогодні о 23:00 розпочинається Соляр — 4-й дім: Дім і",
       "detail": "Інформація про Соляр на 24.09 о 23:00 є важливою астрологічною подією, яка може вплинути на настрій та пріоритети Олега.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "87 год мовчання",
       "module": "healthai",
       "ts": "2026-10-01T07:00:16"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-10-01T07:00:35"
     }
   ]
 }
