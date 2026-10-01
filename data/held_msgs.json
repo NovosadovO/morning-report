@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T01:45:48.481346",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Top 10 Richest People In The World | October 2026</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80094"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80094"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80094"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80094"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80094"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80094"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T01:45:49.759591",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Claude was used to hack OpenAI</b>\n👤 AI NOW &amp; BEYOND через LinkedIn&lt;newsletters-noreply",
@@ -313,6 +274,12 @@
       "ts": "2026-10-02T01:49:16.648588",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Сповіщення про вакансії LinkedIn → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T01:49:19.111340",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 02.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
