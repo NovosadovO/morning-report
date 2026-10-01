@@ -1,9 +1,4 @@
 {
-  "79582": {
-    "sender": "team@ship.emergent.sh",
-    "sender_raw": "Emergent <team@ship.emergent.sh>",
-    "seen_ts": "2026-09-23T07:31:15.287244+00:00"
-  },
   "79584": {
     "sender": "newsletter@email.hm.com",
     "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters@e.economist.com",
     "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
     "seen_ts": "2026-10-01T16:22:58.860630+00:00"
+  },
+  "80078": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-10-01T16:37:23.882024+00:00"
   }
 }
