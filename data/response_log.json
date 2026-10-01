@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-11T20:43:05.836065+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_water"
-    },
-    {
       "ts": "2026-08-11T20:55:41.781879+00:00",
       "category": "event_done",
       "question": "📅 🚿 Холодний душ ✅\nПланувалась до 10:30 — виконано?",
@@ -13831,6 +13825,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_run"
+    },
+    {
+      "ts": "2026-10-01T21:23:19.801926+00:00",
+      "category": "diary",
+      "question": "3 питання про день",
+      "answer": "ти сьогодні сповіщав мене щодо бігу?"
     }
   ]
 }
