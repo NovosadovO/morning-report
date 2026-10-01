@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-01T02:01:09.800472",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Tokenization Briefing: Tokenized Stock Holders grew 43x YoY</b>\n👤 The Block &lt;newsletter@data.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79944"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79944"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79944"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79944"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79944"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79944"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-01T02:01:13.310699",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Сьогодні пробіжки ще не було.\n⚖️ Здоров'я: Вага: 84.1 кг, ціль 75 кг (тренд +0.0 кг за останні 5 замірів). Кроки: 13000 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 00:00 Соляр — 11-й дім: Друзі й плани",
@@ -198,6 +159,12 @@
     },
     {
       "ts": "2026-10-01T02:08:14.655511",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Соляр — 11-й дім: Друзі й плани » було 30.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-01T02:08:15.297722",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Соляр — 11-й дім: Друзі й плани » було 30.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
