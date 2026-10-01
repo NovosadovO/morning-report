@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T00:01:39.317481",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin ETFs end 9-day inflow streak</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80092"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80092"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80092"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80092"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80092"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80092"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T00:01:40.551446",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Project Manager в Convatec – Ак</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -280,6 +241,12 @@
       "ts": "2026-10-02T00:05:57.500685",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Project Manager в Convatec – Активно набирає персонал\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T00:05:58.551091",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Сповіщення про вакансії LinkedIn → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 5 — можна пропустити.",
       "keyboard": null
     }
   ]
