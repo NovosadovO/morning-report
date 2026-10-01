@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-01T02:16:02.815255",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-01T02:16:04.322070",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>AI Solutions Engineer в Bitcoin Suisse</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -398,6 +392,12 @@
       "ts": "2026-10-01T02:21:09.402274",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-01T02:21:10.181238",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
       "keyboard": null
     }
   ]
