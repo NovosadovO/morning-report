@@ -1,9 +1,4 @@
 {
-  "79572": {
-    "sender": "newsletter@blockworks.com",
-    "sender_raw": "The Breakdown <newsletter@blockworks.com>",
-    "seen_ts": "2026-09-22T22:00:49.848742+00:00"
-  },
   "79577": {
     "sender": "no-reply@mail.thedefiant.io",
     "sender_raw": "The Defiant <no-reply@mail.thedefiant.io>",
@@ -1498,5 +1493,10 @@
     "sender": "no-reply@email.kraken.com",
     "sender_raw": "\"Kraken\" <no-reply@email.kraken.com>",
     "seen_ts": "2026-10-01T15:40:13.671424+00:00"
+  },
+  "80075": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-10-01T16:14:44.670522+00:00"
   }
 }
