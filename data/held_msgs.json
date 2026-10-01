@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-01T03:01:13.395481",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Why MAGA hates and loves Europe</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_79945"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_79945"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_79945"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_79945"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_79945"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_79945"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-01T03:01:15.625357",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 3 нових оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -200,6 +161,12 @@
       "ts": "2026-10-01T03:05:27.788112",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -5.3% за 24г\n\nЗараз: 10.85 $\n24г тому: 11.45 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-01T03:06:30.118542",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Соляр — 11-й дім: Друзі й плани » було 30.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
