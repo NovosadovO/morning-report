@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-01T02:13:56.556324",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «AI Solutions Engineer в Bitcoin Suisse»\n\n<i>«Сповіщення про вакансії за запитом Cryptocurrency в Slovakia          \r\nНова вакансія відповідає вашим налаштуванням.\r\n            \r\nAI Solutions Engineer\r\nBitcoin Suisse\r\nBratislava Metropolitan Area\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4472130402/?trackingId=tQFOoBqHrXpbd...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80026"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80026"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80026"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80026"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80026"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80026"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-01T02:14:31.623745",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Соляр — 11-й дім: Друзі й плани » було 30.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -431,6 +392,12 @@
       "ts": "2026-10-01T02:17:12.969665",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-01T02:18:15.863207",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Соляр — 11-й дім: Друзі й плани » було 30.09 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
