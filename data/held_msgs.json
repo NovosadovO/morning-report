@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-01T03:16:07.226694",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Supply Network Planner в Johnson &amp; Johnson Innovative Medici</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80024"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80024"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80024"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80024"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80024"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80024"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-01T03:16:08.585025",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 Book review: A Fabulous Debt</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -299,6 +260,12 @@
       "ts": "2026-10-01T03:21:59.609549",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-01T03:22:00.476652",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
