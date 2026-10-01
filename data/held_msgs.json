@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-01T01:57:00.708644",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 02.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-01T01:57:01.436938",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 02.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_79945"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-01T02:01:09.800472",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Tokenization Briefing: Tokenized Stock Holders grew 43x YoY</b>\n👤 The Block &lt;newsletter@data.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_79944"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_79944"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_79944"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_79944"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_79944"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_79944"
             }
           ]
         ]
