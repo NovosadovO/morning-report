@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T00:15:40.291949",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади ERP Project Manager в Arcwide –</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80096"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80096"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80096"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80096"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80096"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80096"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T00:15:41.707020",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 Thursday Links</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-02T00:17:54.816643",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Сповіщення про вакансії LinkedIn → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T00:17:57.084297",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 02.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
