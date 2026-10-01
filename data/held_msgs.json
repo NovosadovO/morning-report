@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T00:42:12.032678",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T00:43:01.619358",
       "kind": "calendar",
       "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 11-й дім: Друзі й плани</b>\n🕐 00:00–00:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80096"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-02T00:45:42.805280",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 Thursday Links</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80095"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80095"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80095"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80095"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80095"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80095"
             }
           ]
         ]
