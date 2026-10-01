@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T01:45:51.085133",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin ETFs end 9-day inflow streak</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80092"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80092"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80092"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80092"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80092"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80092"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T01:45:53.160398",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Project Manager в Convatec – Ак</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -247,6 +208,12 @@
       "ts": "2026-10-02T01:49:19.862795",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 02.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T01:49:22.592836",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка навичка на 20 хв (розтяжка, дихальні практики, швидка англійська).",
       "keyboard": null
     }
   ]
