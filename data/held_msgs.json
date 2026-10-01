@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T00:01:33.656059",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The Top 10 Richest People In The World | October 2026</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80094"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80094"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80094"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80094"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80094"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80094"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T00:01:34.176663",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
@@ -346,6 +307,12 @@
       "ts": "2026-10-02T00:04:35.998920",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T00:04:37.091188",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
     }
   ]
