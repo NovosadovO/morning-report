@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-11T20:42:57.317206+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_run"
-    },
-    {
       "ts": "2026-08-11T20:43:05.836065+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13831,6 +13825,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_water"
+    },
+    {
+      "ts": "2026-10-01T21:12:50.801287+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_run"
     }
   ]
 }
