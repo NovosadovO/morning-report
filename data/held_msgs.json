@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-01T23:40:27.757484",
-      "kind": "calendar",
-      "text": "🔔 Старт за пів години\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 12-й дім: Завершення й відновлення\n🕐 00:00–00:00\n\nЧас вирушати.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-01T23:41:26.824719",
       "kind": "calendar",
       "text": "🔔 <b>Старт за пів години</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 12-й дім: Завершення й відновлення</b>\n🕐 00:00–00:00\n\n<i>Час вирушати.</i>",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80089"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-02T00:01:43.414504",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>SGS наймає: Project Manager – AI &amp; Innovation</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80088"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80088"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80088"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80088"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80088"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80088"
             }
           ]
         ]
