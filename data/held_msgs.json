@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T02:26:10.238024",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T02:26:11.044420",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T02:31:05.767490",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Вакансія Securities Administrator (f/m/d) в Deutsche Börse G</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80097"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80097"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80097"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80097"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80097"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80097"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
