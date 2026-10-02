@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T01:16:10.576678",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Abacus AI Agent: DeFiLlama — огляд і зміни — waiting for you</b>\n👤 no-reply@abacus.ai",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80165"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80165"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80165"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80165"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80165"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80165"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T01:16:12.020114",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Plunge Club: Why your body notices fall before you do</b>\n👤 PLUNGE &lt;hello@plunge.com&gt;",
@@ -344,6 +305,12 @@
       "ts": "2026-10-03T01:18:52.024493",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Zeno from Resend  → Early access, new integrations, and more\n• PLUNGE  → Plunge Club: Why your body notices fall before you do\n• Straith Schreder from Uniswap Labs  → Listed everywhere at once\n• Forbes через LinkedIn → How Vivek Ramaswamy's Well-Timed Ohio Move Likely Saved Him $12\r\n Million In Taxes\n• The Daily Degen  → The Daily Degen - October 2nd, 2026\n\n🧹 Реклама: 2 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T01:18:54.951476",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
     }
   ]
