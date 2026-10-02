@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T02:43:01.788428",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади ERP Project Manager в Arcwide – Активно набирає персонал\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Project Manager в Convatec – Активно набирає персонал\n\n🧹 Реклама: 5 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T02:43:02.609935",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади ERP Project Manager в Arcwide – Активно набирає персонал\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Project Manager в Convatec – Активно набирає персонал\n\n🧹 Реклама: 5 — можна пропустити.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80092"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-02T02:46:13.109753",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Project Manager в Convatec – Ак</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80091"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80091"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80091"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80091"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80091"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80091"
             }
           ]
         ]
