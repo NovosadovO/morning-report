@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Підписка Dune",
-      "detail": "Лист від Dune <support@dune.com> | Your paid features end tomorrow.",
-      "module": "selfact",
-      "ts": "2026-09-24T18:46:29"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, завтра закінчується термін дії твоїх платних функцій",
       "detail": "Лист від Dune <support@dune.com> 'Your paid features end tomorrow.' вказує на важливе наближення закінчення підписки.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "19 год мовчання",
       "module": "healthai",
       "ts": "2026-10-02T12:00:49"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: sleep_unstable",
+      "detail": "😴 Сон дуже нерівний останні дні (розкид ±3.36 год) — тіло не встигає підлаштуватись під ритм",
+      "module": "healthai",
+      "ts": "2026-10-02T12:14:03"
     }
   ]
 }
