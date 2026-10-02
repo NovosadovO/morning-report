@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T03:31:04.118886",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>MetaMask Pulls Its Validators Out of Lido</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80100"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80100"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80100"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80100"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80100"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80100"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T03:31:05.914907",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
@@ -404,6 +365,12 @@
       "ts": "2026-10-02T03:34:07.074399",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 11 nových pracovných ponúk\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади ERP Project Manager в Arcwide – Активно набирає персонал\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T03:34:09.785901",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
