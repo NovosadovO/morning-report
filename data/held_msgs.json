@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T21:01:12.564607",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T21:01:13.896830",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Cena vami pridaného produktu klesla</b>\n👤 Temu &lt;email@info.temuemail.com&gt;",
@@ -416,6 +410,12 @@
       "ts": "2026-10-02T21:03:52.183596",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T21:03:53.042780",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
