@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T00:29:08.334531",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• PLUNGE <hello@plunge.com> → Plunge Club: Why your body notices fall before you do\n• Straith Schreder from Uniswap Labs <uniswap@substack.com> → Listed everywhere at once\n• Forbes через LinkedIn<newsletters-noreply@linkedin.com> → How Vivek Ramaswamy's Well-Timed Ohio Move Likely Saved Him $12\r\n Million In Taxes\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - October 2nd, 2026\n\n🧹 Реклама: 3 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T00:29:09.093598",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• PLUNGE  → Plunge Club: Why your body notices fall before you do\n• Straith Schreder from Uniswap Labs  → Listed everywhere at once\n• Forbes через LinkedIn → How Vivek Ramaswamy's Well-Timed Ohio Move Likely Saved Him $12\r\n Million In Taxes\n• The Daily Degen  → The Daily Degen - October 2nd, 2026\n\n🧹 Реклама: 3 — можна пропустити.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T00:31:29.247978",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Вакансія We're building a pipeline of  Automation Developers</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80166"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80166"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80166"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80166"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80166"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80166"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
