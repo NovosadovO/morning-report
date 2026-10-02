@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-12T12:24:25.826361+00:00",
-      "category": "deadline_found",
-      "question": "Пояснення OpenAI та Anthropic",
-      "answer": "2026-08-24",
-      "extra": {
-        "kind": "submit"
-      }
-    },
-    {
       "ts": "2026-08-12T20:47:01.690879+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13812,6 +13803,17 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_ok_b82f79122e"
+    },
+    {
+      "ts": "2026-10-02T20:26:13.188947+00:00",
+      "category": "calendar_button",
+      "question": "Перечитати огляд Aave про MiCA",
+      "answer": "moved",
+      "extra": {
+        "stage": "after",
+        "when": "20:00–20:10",
+        "note": null
+      }
     }
   ]
 }
