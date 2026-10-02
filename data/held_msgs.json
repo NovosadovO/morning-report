@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T01:43:37.403251",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T01:44:40.885666",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -410,6 +404,12 @@
       "ts": "2026-10-03T01:46:21.660910",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Zeno from Resend\n📋 Early access, new integrations, and more\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 PLUNGE\n📋 Plunge Club: Why your body notices fall before you do\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Straith Schreder from Uniswap Labs\n📋 Listed everywhere at once\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T01:46:26.803900",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
