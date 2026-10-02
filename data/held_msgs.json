@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T22:46:00.528807",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T22:46:02.531203",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>MongoDB high availability, custom headers for project webhoo</b>\n👤 Railway &lt;hello@news.railway.app&gt;",
@@ -404,6 +398,12 @@
       "ts": "2026-10-02T22:48:19.328784",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T22:48:20.297683",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
