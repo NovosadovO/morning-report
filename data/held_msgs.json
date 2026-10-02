@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T23:27:03.552037",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T23:27:14.657707",
       "kind": "watchdog",
       "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 38\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80162"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-02T23:31:31.437066",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - October 2nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80161"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80161"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80161"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80161"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80161"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80161"
             }
           ]
         ]
