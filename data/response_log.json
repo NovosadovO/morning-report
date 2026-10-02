@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-12T01:30:16.242722+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Зважитись і записати вагу",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-12"
-      }
-    },
-    {
       "ts": "2026-08-12T01:30:20.903649+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -13830,6 +13820,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_run"
+    },
+    {
+      "ts": "2026-10-02T19:36:25.101095+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
