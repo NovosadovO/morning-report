@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T00:04:32.991282",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T00:04:37.098206",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>PLUNGE</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Plunge Club: Why your body notices fall before you do»\n\n<i>«Save Up to $7,698 | [Shop Now](https://plunge.com/pages/product-lineup-discounts)\r\n\r\nSave Up to $7,698 | [Shop Now](https://plunge.com/pages/product-lineup-discounts)\r\n\r\n[Plunge Logo](https://plunge.com)\r\n\r\n[Why Your Body Notices Fall Before You Do](https://plunge.com/blogs/blog/why-your-body-notice...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -179,6 +173,12 @@
     },
     {
       "ts": "2026-10-03T00:08:41.334683",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T00:08:42.207462",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
