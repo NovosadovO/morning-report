@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T00:29:13.895976",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T00:29:53.161511",
       "kind": "calendar",
       "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 12-й дім: Завершення й відновлення</b>\n🕐 00:00–00:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80164"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-03T00:31:33.333759",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Listed everywhere at once</b>\n👤 Straith Schreder from Uniswap Labs &lt;uniswap@substa",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80163"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80163"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80163"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80163"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80163"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80163"
             }
           ]
         ]
