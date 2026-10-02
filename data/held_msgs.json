@@ -1,31 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T23:01:17.610896",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Railway\n📋 MongoDB high availability, custom headers for project webhoo\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Railway",
-              "callback_data": "email_reply_80157"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_80157"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80157"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T23:01:20.866015",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Railway\n📋 MongoDB high availability, custom headers for project webhoo\n📝 (AI-аналіз тимчасово недоступний)",
@@ -167,6 +142,12 @@
       "ts": "2026-10-02T23:05:31.291520",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T23:05:32.193223",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
