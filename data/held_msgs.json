@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T01:29:35.518933",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-03T01:29:36.285057",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T01:29:38.882487",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -377,6 +365,49 @@
     },
     {
       "ts": "2026-10-03T01:31:13.720025",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T01:31:15.957659",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Zeno from Resend\n📋 Early access, new integrations, and more\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 PLUNGE\n📋 Plunge Club: Why your body notices fall before you do\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Straith Schreder from Uniswap Labs\n📋 Listed everywhere at once\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Zeno from Resend",
+              "callback_data": "email_reply_80167"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: PLUNGE",
+              "callback_data": "email_reply_80164"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Straith Schreder f",
+              "callback_data": "email_reply_80163"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_80167"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80167"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-03T01:31:16.365974",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
