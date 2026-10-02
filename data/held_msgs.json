@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T03:31:29.511114",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T03:31:32.265276",
       "kind": "chunk",
       "text": "🌤 <b>Погода на дорогу до роботи</b> (05:00)\n\n☀️ Ясно  12°C (відчувається 8°C)\n💧 Дощ: 0%  💨 Вітер: 9 км/г\n\n🧥 Тепла куртка — на вулиці холодно",
@@ -148,6 +142,12 @@
       "ts": "2026-10-02T03:36:53.675640",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 11 nových pracovných ponúk\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади ERP Project Manager в Arcwide – Активно набирає персонал\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T03:36:56.316994",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
