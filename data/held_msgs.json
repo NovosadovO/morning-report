@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T23:01:03.833410",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T23:01:05.366988",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Paradigm-backed Blast winds down</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -398,6 +392,12 @@
       "ts": "2026-10-02T23:03:55.912809",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T23:03:56.915438",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
