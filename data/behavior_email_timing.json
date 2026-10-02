@@ -1,14 +1,4 @@
 {
-  "79685": {
-    "sender": "newsletters@e.economist.com",
-    "sender_raw": "\"Robert Guest at The Economist\" <newsletters@e.economist.com>",
-    "seen_ts": "2026-09-24T19:18:20.566954+00:00"
-  },
-  "79686": {
-    "sender": "newsletter@email.blockchain.com",
-    "sender_raw": "\"Blockchain\" <newsletter@email.blockchain.com>",
-    "seen_ts": "2026-09-24T19:18:31.500318+00:00"
-  },
   "79689": {
     "sender": "newsletter@mail.theblock.co",
     "sender_raw": "The Block <newsletter@mail.theblock.co>",
@@ -1503,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-10-02T20:14:59.971085+00:00"
+  },
+  "80157": {
+    "sender": "hello@news.railway.app",
+    "sender_raw": "Railway <hello@news.railway.app>",
+    "seen_ts": "2026-10-02T20:33:17.474454+00:00"
   }
 }
