@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T21:27:50.983813",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T21:28:54.407886",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80153"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-02T21:31:27.620615",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — October 2</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80135"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80135"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80135"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80135"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80135"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80135"
             }
           ]
         ]
