@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T23:31:37.741880",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Paradigm-backed Blast winds down</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80159"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80159"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80159"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80159"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80159"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80159"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T23:31:39.378004",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Onchain Assets Weekly: 10/2/26</b>\n👤 Securitize через LinkedIn&lt;newsletters-noreply@link",
@@ -299,6 +260,12 @@
       "ts": "2026-10-02T23:35:05.056962",
       "kind": "watchdog",
       "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 38\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T23:35:05.865625",
+      "kind": "watchdog",
+      "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 38\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
       "keyboard": null
     }
   ]
