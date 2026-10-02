@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Завтра, 25 вересня, закінчується термін дії вашої підписки н",
-      "detail": "Лист від Dune <support@dune.com> | Your paid features end tomorrow. вказує на закінчення терміну дії платного плану.",
-      "module": "selfact",
-      "ts": "2026-09-24T18:30:44"
-    },
-    {
-      "kind": "notify",
       "what": "Підписка Dune",
       "detail": "Лист від Dune <support@dune.com> | Your paid features end tomorrow.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "ранковий план здоров'я",
       "module": "selfact",
       "ts": "2026-10-02T07:00:32"
+    },
+    {
+      "kind": "reminder",
+      "what": "нагадування надіслати дані",
+      "detail": "19 год мовчання",
+      "module": "healthai",
+      "ts": "2026-10-02T12:00:49"
     }
   ]
 }
