@@ -1,9 +1,4 @@
 {
-  "79665": {
-    "sender": "newsletter.sk@email.pepco.eu",
-    "sender_raw": "\"Pepco\" <newsletter.sk@email.pepco.eu>",
-    "seen_ts": "2026-09-24T13:38:55.149185+00:00"
-  },
   "79666": {
     "sender": "groups-noreply@linkedin.com",
     "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "groups-noreply@linkedin.com",
     "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
     "seen_ts": "2026-10-02T13:50:07.461062+00:00"
+  },
+  "80140": {
+    "sender": "newsletter@mail.theblock.co",
+    "sender_raw": "The Block <newsletter@mail.theblock.co>",
+    "seen_ts": "2026-10-02T14:14:26.589624+00:00"
   }
 }
