@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T02:57:41.617546",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Соляр — 12-й дім: Завершення й відновлення » було 01.10 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T02:57:42.441656",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Соляр — 12-й дім: Завершення й відновлення » було 01.10 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80094"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-02T03:01:09.206028",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Claude was used to hack OpenAI</b>\n👤 AI NOW &amp; BEYOND через LinkedIn&lt;newsletters-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80093"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80093"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80093"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80093"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80093"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80093"
             }
           ]
         ]
