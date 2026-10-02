@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T03:16:05.124549",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Claude was used to hack OpenAI</b>\n👤 AI NOW &amp; BEYOND через LinkedIn&lt;newsletters-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80093"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80093"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80093"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80093"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80093"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80093"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T03:16:07.190237",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\" <support@profesia.sk> → 11 nových pracovných ponúk\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади ERP Project Manager в Arcwide – Активно набирає персонал\n\n🧹 Реклама: 4 — можна пропустити.",
@@ -204,6 +165,12 @@
     },
     {
       "ts": "2026-10-02T03:21:29.045346",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Соляр — 12-й дім: Завершення й відновлення » було 01.10 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T03:21:29.998272",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Соляр — 12-й дім: Завершення й відновлення » було 01.10 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
