@@ -1,43 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T22:01:49.390992",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Temu\n📋 Cena vami pridaného produktu klesla\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 Fwd: Do konca Novembra max. 10 dní dovolenky !\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 3 нових оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Temu",
-              "callback_data": "email_reply_80153"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_80132"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Oleg Novosadov",
-              "callback_data": "email_reply_80119"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_80153"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80153"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T22:01:52.241537",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Temu\n📋 Cena vami pridaného produktu klesla\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 Fwd: Do konca Novembra max. 10 dní dovolenky !\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 3 нових оголошення\n📝 (AI-аналіз тимчасово недоступний)",
@@ -179,6 +142,12 @@
       "ts": "2026-10-02T22:06:09.326605",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T22:06:10.185058",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
