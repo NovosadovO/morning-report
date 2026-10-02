@@ -1,9 +1,4 @@
 {
-  "79664": {
-    "sender": "events@blockworks.com",
-    "sender_raw": "Blockworks <events@blockworks.com>",
-    "seen_ts": "2026-09-24T13:02:19.444926+00:00"
-  },
   "79665": {
     "sender": "newsletter.sk@email.pepco.eu",
     "sender_raw": "\"Pepco\" <newsletter.sk@email.pepco.eu>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-02T13:37:52.612476+00:00"
+  },
+  "80138": {
+    "sender": "groups-noreply@linkedin.com",
+    "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
+    "seen_ts": "2026-10-02T13:50:07.461062+00:00"
   }
 }
