@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T02:56:38.277413",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T02:57:41.617546",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Соляр — 12-й дім: Завершення й відновлення » було 01.10 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80095"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-02T03:01:07.927561",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Top 10 Richest People In The World | October 2026</b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80094"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80094"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80094"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80094"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80094"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80094"
             }
           ]
         ]
