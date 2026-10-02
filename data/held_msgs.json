@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T23:51:18.548751",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T23:52:21.703232",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T23:56:28.498857",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Straith Schreder from Uniswap Labs</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Listed everywhere at once»\n\n<i>«View this post on the web at https://uniswap.substack.com/p/listed-everywhere-at-once\r\n\r\nCommunity news\r\nA DeFi gateway for Japan, built on v4: SMBC Nikko, one of Japan’s largest securities firms, and Nethermind are building a new trading venue on Uniswap. Compliance runs inside a hook, so each pool...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80163"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80163"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80163"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80163"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80163"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80163"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
