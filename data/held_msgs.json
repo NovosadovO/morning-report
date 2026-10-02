@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T23:41:56.113541",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T23:43:00.711711",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80158"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-02T23:45:44.567366",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>MongoDB high availability, custom headers for project webhoo</b>\n👤 Railway &lt;hello@news.railway.app&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80157"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80157"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80157"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80157"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80157"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80157"
             }
           ]
         ]
