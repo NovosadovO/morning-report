@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T00:29:53.161511",
-      "kind": "calendar",
-      "text": "✅ <b>Як пройшло?</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Соляр — 12-й дім: Завершення й відновлення</b>\n🕐 00:00–00:00\n\n<i>Відповідь збережу — це піде в аналітику тижня.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T00:29:54.090936",
       "kind": "calendar",
       "text": "✅ Як пройшло?\n━━━━━━━━━━━━━━━━━━━━\n📌 Соляр — 12-й дім: Завершення й відновлення\n🕐 00:00–00:00\n\nВідповідь збережу — це піде в аналітику тижня.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80163"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-03T00:31:34.591917",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>How Vivek Ramaswamy's Well-Timed Ohio Move Likely Saved Him </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80162"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80162"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80162"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80162"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80162"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80162"
             }
           ]
         ]
