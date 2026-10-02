@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T02:42:45.823027",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Соляр — 12-й дім: Завершення й відновлення » було 01.10 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T02:43:01.788428",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади ERP Project Manager в Arcwide – Активно набирає персонал\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Project Manager в Convatec – Активно набирає персонал\n\n🧹 Реклама: 5 — можна пропустити.",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80093"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-02T02:46:11.139616",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Bitcoin ETFs end 9-day inflow streak</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80092"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80092"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80092"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80092"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80092"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80092"
             }
           ]
         ]
