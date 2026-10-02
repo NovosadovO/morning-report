@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T22:15:48.898208",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Fwd: Do konca Novembra max. 10 dní dovolenky !</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80132"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80132"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80132"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80132"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80132"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80132"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T22:15:50.317849",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 3 нових оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -270,6 +231,12 @@
     },
     {
       "ts": "2026-10-02T22:19:47.359271",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T22:19:48.232974",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
