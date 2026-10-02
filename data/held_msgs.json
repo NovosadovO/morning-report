@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T23:16:31.999666",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Friday Charts</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80160"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80160"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80160"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80160"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80160"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80160"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T23:16:33.351595",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Paradigm-backed Blast winds down</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -371,6 +332,12 @@
       "ts": "2026-10-02T23:19:51.814427",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T23:19:53.301076",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
