@@ -1,15 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-12T12:24:20.502459+00:00",
-      "category": "deadline_found",
-      "question": "Підтвердити пропозицію Temu",
-      "answer": "2026-08-12",
-      "extra": {
-        "kind": "other"
-      }
-    },
-    {
       "ts": "2026-08-12T12:24:25.826361+00:00",
       "category": "deadline_found",
       "question": "Пояснення OpenAI та Anthropic",
@@ -13815,6 +13806,12 @@
         "when": "20:00–20:10",
         "note": null
       }
+    },
+    {
+      "ts": "2026-10-02T19:36:39.855282+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_ok_b82f79122e"
     }
   ]
 }
