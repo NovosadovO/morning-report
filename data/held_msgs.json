@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T00:14:42.044453",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T00:14:43.015757",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -376,6 +370,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80161"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-03T00:16:31.563777",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🟪 Friday Charts</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80160"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80160"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80160"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80160"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80160"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80160"
             }
           ]
         ]
