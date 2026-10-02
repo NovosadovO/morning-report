@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T23:12:53.986562",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T23:12:54.850844",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80160"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-02T23:16:33.351595",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Paradigm-backed Blast winds down</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80159"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80159"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80159"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80159"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80159"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80159"
             }
           ]
         ]
