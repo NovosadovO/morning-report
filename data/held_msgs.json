@@ -1,37 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T00:01:14.900215",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Straith Schreder from Uniswap Labs\n📋 Listed everywhere at once\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 The Daily Degen\n📋 The Daily Degen - October 2nd, 2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Straith Schreder f",
-              "callback_data": "email_reply_80163"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: The Daily Degen",
-              "callback_data": "email_reply_80161"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_80163"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80163"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T00:01:17.725864",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 Straith Schreder from Uniswap Labs\n📋 Listed everywhere at once\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 The Daily Degen\n📋 The Daily Degen - October 2nd, 2026\n📝 (AI-аналіз тимчасово недоступний)",
@@ -173,6 +142,12 @@
       "ts": "2026-10-03T00:04:19.168262",
       "kind": "MSG_FORESIGHT_TRIP",
       "text": "✈️ ПОЇЗДКА: Bratislava — через 11 дн. (14.10–17.10)\n\n🧳 ЩО ВЗЯТИ\n• одяг на 5…19°C\n• кофта, вітровка, закрите взуття\n• документи (паспорт/ID), картка + трохи готівки\n• зарядки, павербанк, перехідник\n• аптечка: обезболююче, пластир, засіб від шлунку\n• кросівки — щоб не випадати з бігу (3 дн.)\n\n🌤 ПОГОДА\n• 14.10: 16°/5°; 15.10: 16°/9°; 16.10: 19°/12°; 17.10: 19°/13°\n\n✅ ДО ВИЛЬОТУ\n• онлайн чек-ін за 24-48 год\n• перевірити термін дії документів\n• спланувати дорогу в аеропорт з урахуванням зміни\n• зняти/поповнити картку на місцеві витрати",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T00:04:27.839456",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Straith Schreder from Uniswap Labs <uniswap@substack.com> → Listed everywhere at once\n• Forbes через LinkedIn<newsletters-noreply@linkedin.com> → How Vivek Ramaswamy's Well-Timed Ohio Move Likely Saved Him $12\r\n Million In Taxes\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - October 2nd, 2026\n• Railway <hello@news.railway.app> → MongoDB high availability, custom headers for project webhooks, MySQL PITR\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
