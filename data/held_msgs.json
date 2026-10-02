@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T23:45:37.587807",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>How Vivek Ramaswamy's Well-Timed Ohio Move Likely Saved Him </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80162"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80162"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80162"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80162"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80162"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80162"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T23:45:38.875004",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Daily Degen - October 2nd, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
@@ -398,6 +359,12 @@
       "ts": "2026-10-02T23:48:05.830365",
       "kind": "watchdog",
       "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 38\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T23:48:21.758446",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий рецепт швидкого корисного обіду на робочий день.",
       "keyboard": null
     }
   ]
