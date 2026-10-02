@@ -1433,16 +1433,21 @@
   },
   "2026-10-02": {
     "date": "2026-10-02",
-    "steps": 5210,
+    "steps": 21319,
     "sleep_deep_min": 233,
     "sleep_light_min": 70,
     "sleep_total_min": 303,
-    "hr_avg": 78,
-    "calories": 221,
-    "hrv": 38,
+    "hr_avg": 60,
+    "calories": 900,
+    "hrv": 35,
     "height_cm": 175,
     "spo2": 98,
     "source": "qwatch",
-    "saved_at": "2026-10-02 11:18"
+    "saved_at": "2026-10-02 20:29",
+    "health_score": 88,
+    "sleep_quality": 3,
+    "body_battery_min": 9,
+    "body_battery_max": 44,
+    "body_battery": 26
   }
 }
