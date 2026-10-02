@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T03:42:04.440249",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Соляр — 12-й дім: Завершення й відновлення » було 01.10 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T03:42:05.323544",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Соляр — 12-й дім: Завершення й відновлення » було 01.10 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80097"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-02T03:46:14.063782",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади ERP Project Manager в Arcwide –</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80096"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80096"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80096"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80096"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80096"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80096"
             }
           ]
         ]
