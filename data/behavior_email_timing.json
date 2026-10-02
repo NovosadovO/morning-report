@@ -1,9 +1,4 @@
 {
-  "79648": {
-    "sender": "newsletter@biedronka.pl",
-    "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
-    "seen_ts": "2026-09-24T10:03:38.120028+00:00"
-  },
   "79649": {
     "sender": "avalancheteam1@substack.com",
     "sender_raw": "Avalanche Team1 <avalancheteam1@substack.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-02T11:29:10.775192+00:00"
+  },
+  "80126": {
+    "sender": "googleaistudio-noreply@google.com",
+    "sender_raw": "Google AI Studio <googleaistudio-noreply@google.com>",
+    "seen_ts": "2026-10-02T11:47:28.216981+00:00"
   }
 }
