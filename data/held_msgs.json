@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T01:16:13.356468",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Listed everywhere at once</b>\n👤 Straith Schreder from Uniswap Labs &lt;uniswap@substa",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80163"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80163"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80163"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80163"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80163"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80163"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T01:16:14.829386",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>How Vivek Ramaswamy's Well-Timed Ohio Move Likely Saved Him </b>\n👤 Forbes через LinkedIn&lt;newsletters-noreply@linkedin",
@@ -278,6 +239,12 @@
       "ts": "2026-10-03T01:18:55.894918",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T01:20:04.901594",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
