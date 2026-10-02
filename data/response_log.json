@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-12T00:00:32.076307+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную занотувати",
-      "answer": "Підготовка до поїздки на Корфу",
-      "extra": {
-        "kind": "note",
-        "date": "2026-08-12"
-      }
-    },
-    {
       "ts": "2026-08-12T01:30:16.242722+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -13834,6 +13824,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-10-02T19:36:23.260446+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_run"
     }
   ]
 }
