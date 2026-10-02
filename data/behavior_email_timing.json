@@ -1,9 +1,4 @@
 {
-  "79604": {
-    "sender": "onboarding@resend.dev",
-    "sender_raw": "Morning Report <onboarding@resend.dev>",
-    "seen_ts": "2026-09-23T12:30:44.406491+00:00"
-  },
   "79606": {
     "sender": "novosadovoleg@gmail.com",
     "sender_raw": "Oleg Novosadov <novosadovoleg@gmail.com>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-10-02T00:14:12.961687+00:00"
+  },
+  "80101": {
+    "sender": "noreply@discord.com",
+    "sender_raw": "Discord <noreply@discord.com>",
+    "seen_ts": "2026-10-02T04:03:16.537407+00:00"
   }
 }
