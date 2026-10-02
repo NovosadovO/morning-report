@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T02:16:05.483309",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T02:16:06.733738",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Вакансія Securities Administrator (f/m/d) в Deutsche Börse G</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -379,6 +373,12 @@
       "ts": "2026-10-02T02:19:27.290437",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T02:19:28.305052",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
     }
   ]
