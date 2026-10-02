@@ -13548,7 +13548,43 @@
     "pid": "email_star_80105",
     "subject": "Realitný sen sa rozplýva. Čakanie na lacnejší byt môže vyjsť",
     "extra": {
-      "msg": "Привіт Олеже! 👋 Тобі щойно надійшов лист від TREND.sk через LinkedIn\n📋 Тема: «Realitný sen sa rozplýva. Čakanie na lacnejší byt môže vyjsť draho»\n\n«VÝBER TRENDU\n\nАвтор: TREND.sk\n\n\nАвтор: TREND.sk\n\n    \n    \n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\nПрочитати на LinkedIn\nhttps://www.linkedin.com/comm/pulse/realitn%C3%BD-sen-sa-rozpl%C3%BDva-%C4%8Dakanie-na-lacnej%C5%A1%C3"
+      "msg": "Привіт Олеже! 👋 Тобі щойно надійшов лист від TREND.sk через LinkedIn\n📋 Тема: «Realitný sen sa rozplýva. Čakanie na lacnejší byt môže vyjsť draho»\n\n«VÝBER TRENDU\n\nАвтор: TREND.sk\n\n\nАвтор: TREND.sk\n\n    \n    \n    Прочитайте цю статтю на LinkedIn, щоб приєднатися до обговорення\nПрочитати на LinkedIn\nhttps://www.linkedin.com/comm/pulse/realitn%C3%BD-sen-sa-rozpl%C3%BDva-%C4%8Dakanie-na-lacnej%C5%A1%C3",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 107830,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80105"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80105"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80105"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80105"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80105"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80105"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-10-02T09:20:59.141297+00:00"
   }
