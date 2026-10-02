@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T22:49:25.039081",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-02T22:49:26.050269",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80158"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-02T22:53:37.604926",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Block</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🔷 The Daily: Paradigm-backed Blast winds down»\n\n<i>«Paradigm-backed Layer 2 Blast to wind down | BitGo CEO says Clarity Act failure left markets exposed to risks worse than Lehman | ECB outlines three models for bringing central bank money onchain | SEC proposes crypto custody framework for investment advisers, funds | Ethereum Foundation launches pr...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80159"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80159"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80159"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80159"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80159"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80159"
             }
           ]
         ]
