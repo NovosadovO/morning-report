@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T23:01:10.018180",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Bitpanda наймає: Senior Product Manager - Crypto</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80156"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80156"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80156"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80156"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80156"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80156"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T23:01:11.758174",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Blast Is Shutting Down Its Layer 2</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
@@ -297,6 +258,12 @@
     },
     {
       "ts": "2026-10-02T23:05:04.645811",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T23:05:05.548234",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
