@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T00:00:59.254114",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Onchain Assets Weekly: 10/2/26</b>\n👤 Securitize через LinkedIn&lt;newsletters-noreply@link",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80158"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80158"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80158"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80158"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80158"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80158"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T00:01:00.816342",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>MongoDB high availability, custom headers for project webhoo</b>\n👤 Railway &lt;hello@news.railway.app&gt;",
@@ -237,6 +198,12 @@
     },
     {
       "ts": "2026-10-03T00:03:56.687639",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T00:03:57.621478",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
