@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T01:43:33.349893",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Zeno from Resend  → Early access, new integrations, and more\n• PLUNGE  → Plunge Club: Why your body notices fall before you do\n• Straith Schreder from Uniswap Labs  → Listed everywhere at once\n• Forbes через LinkedIn → How Vivek Ramaswamy's Well-Timed Ohio Move Likely Saved Him $12\r\n Million In Taxes\n• The Daily Degen  → The Daily Degen - October 2nd, 2026\n\n🧹 Реклама: 2 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T01:43:36.526326",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -376,6 +370,43 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80161"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-03T01:46:19.269731",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Zeno from Resend\n📋 Early access, new integrations, and more\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 PLUNGE\n📋 Plunge Club: Why your body notices fall before you do\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Straith Schreder from Uniswap Labs\n📋 Listed everywhere at once\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Zeno from Resend",
+              "callback_data": "email_reply_80167"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: PLUNGE",
+              "callback_data": "email_reply_80164"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Straith Schreder f",
+              "callback_data": "email_reply_80163"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_80167"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80167"
             }
           ]
         ]
