@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T00:16:10.671346",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T00:16:12.011245",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Вакансія We're building a pipeline of  Automation Developers</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -404,6 +398,12 @@
       "ts": "2026-10-03T00:17:56.591561",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T00:17:59.609644",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
