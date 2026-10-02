@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-02T02:31:14.127758",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Project Manager в Convatec – Ак</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80091"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80091"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80091"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80091"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80091"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80091"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-02T02:31:54.616871",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Соляр — 12-й дім: Завершення й відновлення » було 01.10 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -181,6 +142,12 @@
       "ts": "2026-10-02T02:36:15.874070",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-02T02:37:18.809965",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Соляр — 12-й дім: Завершення й відновлення » було 01.10 о 23:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
