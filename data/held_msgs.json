@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T00:04:37.098206",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>PLUNGE</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Plunge Club: Why your body notices fall before you do»\n\n<i>«Save Up to $7,698 | [Shop Now](https://plunge.com/pages/product-lineup-discounts)\r\n\r\nSave Up to $7,698 | [Shop Now](https://plunge.com/pages/product-lineup-discounts)\r\n\r\n[Plunge Logo](https://plunge.com)\r\n\r\n[Why Your Body Notices Fall Before You Do](https://plunge.com/blogs/blog/why-your-body-notice...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80164"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80164"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80164"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80164"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80164"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80164"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T00:05:37.992035",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -181,6 +142,12 @@
       "ts": "2026-10-03T00:08:42.207462",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T00:08:53.306767",
+      "kind": "MSG_FORESIGHT_TRIP",
+      "text": "✈️ <b>ПОЇЗДКА: Bratislava</b> — через 11 дн. (14.10–17.10)\n\n🧳 <b>ЩО ВЗЯТИ</b>\n• одяг на 5…19°C\n• кофта, вітровка, закрите взуття\n• документи (паспорт/ID), картка + трохи готівки\n• зарядки, павербанк, перехідник\n• аптечка: обезболююче, пластир, засіб від шлунку\n• кросівки — щоб не випадати з бігу (3 дн.)\n\n🌤 <b>ПОГОДА</b>\n• 14.10: 16°/5°; 15.10: 16°/9°; 16.10: 19°/12°; 17.10: 19°/13°\n\n✅ <b>ДО ВИЛЬОТУ</b>\n• онлайн чек-ін за 24-48 год\n• перевірити термін дії документів\n• спланувати дорогу в аеропорт з урахуванням зміни\n• зняти/поповнити картку на місцеві витрати",
       "keyboard": null
     }
   ]
