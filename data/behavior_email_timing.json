@@ -1,9 +1,4 @@
 {
-  "79672": {
-    "sender": "ben@startengine.com",
-    "sender_raw": "Ben at StartEngine <ben@startengine.com>",
-    "seen_ts": "2026-09-24T15:06:50.488586+00:00"
-  },
   "79673": {
     "sender": "support@dune.com",
     "sender_raw": "Dune <support@dune.com>",
@@ -1498,5 +1493,10 @@
     "sender": "card@kcard.kaufland.sk",
     "sender_raw": "Kaufland Card XTRA <card@kcard.kaufland.sk>",
     "seen_ts": "2026-10-02T15:46:20.209569+00:00"
+  },
+  "80146": {
+    "sender": "updates@okx.com",
+    "sender_raw": "OKX <updates@okx.com>",
+    "seen_ts": "2026-10-02T16:04:51.258225+00:00"
   }
 }
