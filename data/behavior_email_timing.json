@@ -1,9 +1,4 @@
 {
-  "79646": {
-    "sender": "inspiration@mp1.tripadvisor.com",
-    "sender_raw": "\"Tripadvisor\" <inspiration@mp1.tripadvisor.com>",
-    "seen_ts": "2026-09-24T09:23:09.242983+00:00"
-  },
   "79648": {
     "sender": "newsletter@biedronka.pl",
     "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Cointelegraph через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-02T11:00:45.241076+00:00"
+  },
+  "80125": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-02T11:29:10.775192+00:00"
   }
 }
