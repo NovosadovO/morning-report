@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Завершення підписки Dune",
-      "detail": "Лист від Dune <support@dune.com> | Your paid features end tomorrow.",
-      "module": "selfact",
-      "ts": "2026-09-24T19:49:27"
-    },
-    {
-      "kind": "notify",
       "what": "Стаття про DeFi та AI інвестиції",
       "detail": "СВІЖІ ЛИСТИ: від Adrian Pape через LinkedIn | The Case for Risk-On; СВІЖІ ЛИСТИ: від Ben at StartEngine | The Compute & Infrastructure Fund: Targeting AI’s Biggest Bottlenecks",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "38 год мовчання",
       "module": "healthai",
       "ts": "2026-10-03T07:00:45"
+    },
+    {
+      "kind": "hcoach",
+      "what": "morning_plan",
+      "detail": "ранковий план здоров'я",
+      "module": "selfact",
+      "ts": "2026-10-03T07:01:01"
     }
   ]
 }
