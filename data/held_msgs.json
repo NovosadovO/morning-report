@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T03:28:18.236173",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T03:28:19.441857",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T03:31:00.575135",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Personalizované pracovné ponuky e-mailom - 20 nových pracovn</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80170"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80170"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80170"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80170"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80170"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80170"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
