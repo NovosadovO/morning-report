@@ -1,9 +1,4 @@
 {
-  "79715": {
-    "sender": "info@emails.tesco.sk",
-    "sender_raw": "\"Tesco Clubcard\" <info@emails.tesco.sk>",
-    "seen_ts": "2026-09-25T09:11:43.375689+00:00"
-  },
   "79717": {
     "sender": "newsletter@genai.works",
     "sender_raw": "Generative AI <newsletter@genai.works>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@investingmail.com",
     "sender_raw": "Investing.com <newsletter@investingmail.com>",
     "seen_ts": "2026-10-03T14:20:45.532457+00:00"
+  },
+  "80189": {
+    "sender": "team@ship.emergent.sh",
+    "sender_raw": "Emergent <team@ship.emergent.sh>",
+    "seen_ts": "2026-10-03T17:33:36.922273+00:00"
   }
 }
