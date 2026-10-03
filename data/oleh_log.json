@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "t": "btn",
-      "data": "habit_no_shower",
-      "label": "❌",
-      "ts": "2026-09-14T21:58:10"
-    },
-    {
       "t": "msg",
       "kind": "cmd",
       "text": "/звички",
@@ -7199,6 +7193,12 @@
       "data": "rx_done_6ddf41a131",
       "label": "✅ Опрацював",
       "ts": "2026-10-03T12:46:53"
+    },
+    {
+      "t": "btn",
+      "data": "shopping_all_done",
+      "label": "✅ Все куплено",
+      "ts": "2026-10-03T12:47:07"
     }
   ]
 }
