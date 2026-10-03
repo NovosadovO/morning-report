@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T03:15:09.293028",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → 6 nových pracovných ponúk\n• Zeno from Resend  → Early access, new integrations, and more\n• PLUNGE  → Plunge Club: Why your body notices fall before you do\n• Straith Schreder from Uniswap Labs  → Listed everywhere at once\n\n🧹 Реклама: 3 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T03:15:11.745816",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -405,6 +399,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T03:17:11.897244",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Profesia.sk</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk»\n\n<i>«Nové pracovné ponuky \"Personalizované pracovné ponuky e-mailom\"\r\n\r\nLogo Profesia ( https://www.profesia.sk/?utm_medium=mail&amp;utm_source=10007&amp;utm_campaign=10007&amp;utm_term=2026-10-03&amp;eid=6ac04d09184547eab2db66daea96b033&amp;utm_content=logo )\r\n\r\n*************************************************************...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80170"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80170"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80170"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80170"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80170"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80170"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
