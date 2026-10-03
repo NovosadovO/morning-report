@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T22:01:38.176570",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T22:01:38.677733",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 Fwd: Do konca Novembra max. 10 dní dovolenky !\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 3 нових оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Avalanche Team1\n📋 Team1 Africa Is Here To Connect the Continent\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -179,6 +173,12 @@
       "ts": "2026-10-03T22:07:12.976087",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +5.1% за 24г</b>\n\nЗараз: 11.15 $\n24г тому: 10.61 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T22:07:13.722404",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ AVAX +5.1% за 24г\n\nЗараз: 11.15 $\n24г тому: 10.61 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
