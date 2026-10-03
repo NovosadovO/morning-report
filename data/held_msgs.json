@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T20:56:33.439947",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ AVAX +5.6% за 24г\n\nЗараз: 11.11 $\n24г тому: 10.52 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T20:57:48.583615",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
@@ -409,6 +403,43 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80105"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-03T21:01:10.171595",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 Fwd: Do konca Novembra max. 10 dní dovolenky !\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 3 нових оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Avalanche Team1\n📋 Team1 Africa Is Here To Connect the Continent\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_80132"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_80119"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Avalanche Team1",
+              "callback_data": "email_reply_80118"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_80132"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80132"
             }
           ]
         ]
