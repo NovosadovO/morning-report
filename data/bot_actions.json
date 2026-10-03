@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Стаття про DeFi та AI інвестиції",
-      "detail": "СВІЖІ ЛИСТИ: від Adrian Pape через LinkedIn | The Case for Risk-On; СВІЖІ ЛИСТИ: від Ben at StartEngine | The Compute & Infrastructure Fund: Targeting AI’s Biggest Bottlenecks",
-      "module": "selfact",
-      "ts": "2026-09-24T19:49:38"
-    },
-    {
       "kind": "hcoach",
       "what": "full_report",
       "detail": "повна аналітика здоров'я",
@@ -2799,6 +2792,13 @@
       "detail": "ранковий план здоров'я",
       "module": "selfact",
       "ts": "2026-10-03T07:01:01"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: stale",
+      "detail": "📵 Дані здоров'я не оновлювались 36 год (останні — 2026-10-02). Автосинк із годинника міг зламатись",
+      "module": "healthai",
+      "ts": "2026-10-03T11:34:20"
     }
   ]
 }
