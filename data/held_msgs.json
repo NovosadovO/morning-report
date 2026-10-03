@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T22:46:29.641118",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>On-site Local IT Support Specialist (m/f) в adapa Group</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80197"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80197"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80197"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80197"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80197"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80197"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T22:46:31.070999",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — October 2</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
@@ -410,6 +371,12 @@
       "ts": "2026-10-03T22:50:05.708995",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T22:50:09.506753",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +5.3% за 24г</b>\n\nЗараз: 11.12 $\n24г тому: 10.56 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
