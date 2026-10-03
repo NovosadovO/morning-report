@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T03:46:03.862902",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>6 nových pracovných ponúk</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80169"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80169"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80169"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80169"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80169"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80169"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T03:46:05.093537",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Operations Specialist Mgr в IQVIA</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -377,6 +338,12 @@
       "ts": "2026-10-03T03:48:05.331873",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\" <support@profesia.sk> → 6 nových pracovných ponúk\n• Zeno from Resend <zeno@updates.resend.com> → Early access, new integrations, and more\n• PLUNGE <hello@plunge.com> → Plunge Club: Why your body notices fall before you do\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T03:48:06.128900",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 6 nových pracovných ponúk\n• Zeno from Resend  → Early access, new integrations, and more\n• PLUNGE  → Plunge Club: Why your body notices fall before you do\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
