@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T21:46:15.282667",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T21:46:16.514414",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — October 2</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
@@ -410,6 +404,12 @@
       "ts": "2026-10-03T21:49:41.141836",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T21:49:41.882389",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
       "keyboard": null
     }
   ]
