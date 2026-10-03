@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T03:01:06.133777",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Early access, new integrations, and more</b>\n👤 Zeno from Resend &lt;zeno@updates.resend.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80167"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80167"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80167"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80167"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80167"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80167"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T03:01:07.417012",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Вакансія We're building a pipeline of  Automation Developers</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -371,6 +332,12 @@
       "ts": "2026-10-03T03:03:12.930052",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Zeno from Resend <zeno@updates.resend.com> → Early access, new integrations, and more\n• PLUNGE <hello@plunge.com> → Plunge Club: Why your body notices fall before you do\n• Straith Schreder from Uniswap Labs <uniswap@substack.com> → Listed everywhere at once\n• Forbes через LinkedIn<newsletters-noreply@linkedin.com> → How Vivek Ramaswamy's Well-Timed Ohio Move Likely Saved Him $12\r\n Million In Taxes\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T03:03:13.779254",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Zeno from Resend  → Early access, new integrations, and more\n• PLUNGE  → Plunge Club: Why your body notices fall before you do\n• Straith Schreder from Uniswap Labs  → Listed everywhere at once\n• Forbes через LinkedIn → How Vivek Ramaswamy's Well-Timed Ohio Move Likely Saved Him $12\r\n Million In Taxes\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
