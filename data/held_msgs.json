@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T23:01:38.546274",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Fwd: Do konca Novembra max. 10 dní dovolenky !</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80132"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80132"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80132"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80132"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80132"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80132"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T23:01:39.908556",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 3 нових оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -311,6 +272,12 @@
       "ts": "2026-10-03T23:07:00.413983",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T23:07:01.333052",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
     }
   ]
