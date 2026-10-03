@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-12T20:49:06.293666+00:00",
-      "category": "event_done",
-      "question": "📅 🏃 Біг ❌\nПланувалась до 20:40 — виконано?",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-12T20:49:06.732207+00:00",
       "category": "event_done",
       "question": "📅 🧖 Сауна ❌\nПланувалась до 20:40 — виконано?",
@@ -13822,6 +13816,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dm_note_929ce154e5"
+    },
+    {
+      "ts": "2026-10-03T05:01:04.131634+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
