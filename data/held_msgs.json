@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T03:12:19.909077",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T03:12:20.760917",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T03:16:04.653101",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>6 nových pracovných ponúk</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80169"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80169"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80169"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80169"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80169"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80169"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
