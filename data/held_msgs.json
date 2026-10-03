@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T20:52:46.641040",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>AVAX +5.3% за 24г</b>\n\nЗараз: 11.10 $\n24г тому: 10.54 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T20:52:47.360520",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +5.3% за 24г\n\nЗараз: 11.10 $\n24г тому: 10.54 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -182,6 +176,45 @@
       "kind": "watchdog",
       "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 38\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T21:00:26.457190",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Colton at Plunge</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «The new guy brought an extra $500»\n\n<i>«A little help with my October goal. A little extra off your setup.‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \r\n\r\nHey there,\r\n\r\nI'm Colton, the...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80196"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80196"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80196"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80196"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80196"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80196"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
