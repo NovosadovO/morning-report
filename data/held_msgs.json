@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-04T01:46:33.354119",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 3 нових оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80119"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80119"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80119"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80119"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80119"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80119"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-04T01:46:34.649769",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Team1 Africa Is Here To Connect the Continent</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
@@ -239,6 +200,12 @@
       "ts": "2026-10-04T01:50:34.483690",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> → Fwd: Do konca Novembra max. 10 dní dovolenky !\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 3 нових оголошення\n• Avalanche Team1 <avalancheteam1@substack.com> → Team1 Africa Is Here To Connect the Continent\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-04T01:50:35.284852",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov  → Fwd: Do konca Novembra max. 10 dní dovolenky !\n• Oleg Novosadov  → 🏠 Нові квартири у Кошіці — 3 нових оголошення\n• Avalanche Team1  → Team1 Africa Is Here To Connect the Continent\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
