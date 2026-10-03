@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-04T01:01:31.091978",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-04T01:01:32.456464",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Web Compatibility Engineer в DuckDuckGo</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -404,6 +398,12 @@
       "ts": "2026-10-04T01:04:11.624544",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-04T01:04:12.469719",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
