@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T03:46:06.457703",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Early access, new integrations, and more</b>\n👤 Zeno from Resend &lt;zeno@updates.resend.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80167"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80167"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80167"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80167"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80167"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80167"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T03:46:07.856487",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Вакансія We're building a pipeline of  Automation Developers</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -311,6 +272,12 @@
       "ts": "2026-10-03T03:48:08.721670",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T03:48:09.439509",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
       "keyboard": null
     }
   ]
