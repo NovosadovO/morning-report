@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T02:43:36.638899",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T02:43:39.249896",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80166"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-03T02:46:12.469239",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Abacus AI Agent: DeFiLlama — огляд і зміни — waiting for you</b>\n👤 no-reply@abacus.ai",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80165"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80165"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80165"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80165"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80165"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80165"
             }
           ]
         ]
