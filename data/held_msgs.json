@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T22:11:35.527422",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T22:11:36.381956",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T22:16:30.665314",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>On-site Local IT Support Specialist (m/f) в adapa Group</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80197"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80197"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80197"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80197"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80197"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80197"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
