@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T21:16:01.675719",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — October 2</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80180"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80180"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80180"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80180"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80180"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80180"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T21:16:02.910750",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Fwd: Do konca Novembra max. 10 dní dovolenky !</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
@@ -410,6 +371,12 @@
       "ts": "2026-10-03T21:20:04.397705",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T21:20:09.316765",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +5.5% за 24г</b>\n\nЗараз: 11.13 $\n24г тому: 10.55 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
