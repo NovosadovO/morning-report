@@ -1,9 +1,4 @@
 {
-  "79712": {
-    "sender": "news@mail.socios.com",
-    "sender_raw": "\"Socios.com\" <news@mail.socios.com>",
-    "seen_ts": "2026-09-25T08:20:40.316289+00:00"
-  },
   "79713": {
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "info@beautynews.douglas.sk",
     "sender_raw": "\"Douglas\" <info@beautynews.douglas.sk>",
     "seen_ts": "2026-10-03T07:17:06.915124+00:00"
+  },
+  "80175": {
+    "sender": "notification@service.tiktok.com",
+    "sender_raw": "TikTok <notification@service.tiktok.com>",
+    "seen_ts": "2026-10-03T07:57:43.540470+00:00"
   }
 }
