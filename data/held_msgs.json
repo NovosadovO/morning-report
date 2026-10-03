@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T22:01:22.187670",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Team1 Africa Is Here To Connect the Continent</b>\n👤 Avalanche Team1 &lt;avalancheteam1@substack.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80118"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80118"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80118"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80118"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80118"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80118"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T22:01:23.507019",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>AI Trade Battles Rising Yields</b>\n👤 \"CMC Market Pulse\" &lt;marketpulse@newsletters.coinma",
@@ -311,6 +272,12 @@
       "ts": "2026-10-03T22:05:47.066266",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T22:05:51.242172",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +5.1% за 24г</b>\n\nЗараз: 11.15 $\n24г тому: 10.62 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
