@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T21:24:22.609325",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ AVAX +5.1% за 24г\n\nЗараз: 11.11 $\n24г тому: 10.58 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T21:25:34.497086",
       "kind": "watchdog",
       "text": "🛡 <b>Підсумок наглядача за день</b>\n\n<b>Що я бачив і робив сам:</b>\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 38\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\n<b>Датчики:</b> працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
@@ -211,6 +205,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80132"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-03T21:31:13.744559",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 3 нових оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80119"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80119"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80119"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80119"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80119"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80119"
             }
           ]
         ]
