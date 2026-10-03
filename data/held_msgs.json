@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T02:57:09.761325",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T02:57:10.681880",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T03:01:04.765665",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Operations Specialist Mgr в IQVIA</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80168"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80168"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80168"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80168"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80168"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80168"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
