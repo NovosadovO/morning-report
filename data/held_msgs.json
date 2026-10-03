@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T03:34:38.801161",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\" <support@profesia.sk> → 6 nových pracovných ponúk\n• Zeno from Resend <zeno@updates.resend.com> → Early access, new integrations, and more\n• PLUNGE <hello@plunge.com> → Plunge Club: Why your body notices fall before you do\n\n🧹 Реклама: 3 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T03:34:39.724964",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 6 nových pracovných ponúk\n• Zeno from Resend  → Early access, new integrations, and more\n• PLUNGE  → Plunge Club: Why your body notices fall before you do\n\n🧹 Реклама: 3 — можна пропустити.",
@@ -146,6 +140,12 @@
     },
     {
       "ts": "2026-10-03T03:38:45.128588",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T03:38:46.008204",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
