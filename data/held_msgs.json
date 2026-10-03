@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T22:31:35.506303",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>AI Trade Battles Rising Yields</b>\n👤 \"CMC Market Pulse\" &lt;marketpulse@newsletters.coinma",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80117"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80117"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80117"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80117"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80117"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80117"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T22:31:36.833573",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Огляд Aave Labs щодо перегляду MiCA в ЄС</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -245,6 +206,12 @@
       "ts": "2026-10-03T22:37:19.040354",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T22:37:19.887399",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
