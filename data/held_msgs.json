@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T02:57:10.681880",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T02:58:14.146441",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80168"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-03T03:01:06.133777",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Early access, new integrations, and more</b>\n👤 Zeno from Resend &lt;zeno@updates.resend.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80167"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80167"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80167"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80167"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80167"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80167"
             }
           ]
         ]
