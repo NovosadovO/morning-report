@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T21:16:09.586556",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Realitný sen sa rozplýva. Čakanie na lacnejší byt môže vyjsť</b>\n👤 TREND.sk через LinkedIn&lt;newsletters-noreply@linked",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80105"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80105"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80105"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80105"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80105"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80105"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T21:16:11.665848",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 Fwd: Do konca Novembra max. 10 dní dovolenky !\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 3 нових оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Avalanche Team1\n📋 Team1 Africa Is Here To Connect the Continent\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -212,6 +173,12 @@
       "ts": "2026-10-03T21:21:27.231768",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T21:21:29.907964",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🟢▲ <b>AVAX +5.4% за 24г</b>\n\nЗараз: 11.11 $\n24г тому: 10.54 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
