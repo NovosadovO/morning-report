@@ -1,43 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T03:31:11.580395",
-      "kind": "offer",
-      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 6 nových pracovných ponúk\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Zeno from Resend\n📋 Early access, new integrations, and more\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповісти: Profesia.sk",
-              "callback_data": "email_reply_80170"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Profesia.sk",
-              "callback_data": "email_reply_80169"
-            }
-          ],
-          [
-            {
-              "text": "🤖✍️ Відповісти: Zeno from Resend",
-              "callback_data": "email_reply_80167"
-            }
-          ],
-          [
-            {
-              "text": "📖 Описати перший",
-              "callback_data": "email_describe_80170"
-            },
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80170"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T03:31:13.941119",
       "kind": "chunk",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 6 nových pracovných ponúk\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Zeno from Resend\n📋 Early access, new integrations, and more\n📝 (AI-аналіз тимчасово недоступний)",
@@ -179,6 +142,12 @@
       "ts": "2026-10-03T03:34:16.996557",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T03:34:19.865775",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
