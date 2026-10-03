@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T22:42:57.371933",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ <b>AVAX +5.0% за 24г</b>\n\nЗараз: 11.12 $\n24г тому: 10.59 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T22:42:58.085667",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ AVAX +5.0% за 24г\n\nЗараз: 11.12 $\n24г тому: 10.59 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -411,6 +405,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-03T22:46:42.452122",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 Oleg Novosadov\n📋 Fwd: Do konca Novembra max. 10 dní dovolenky !\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 3 нових оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Avalanche Team1\n📋 Team1 Africa Is Here To Connect the Continent\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
