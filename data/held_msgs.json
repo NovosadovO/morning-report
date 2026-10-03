@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T20:52:47.360520",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🟢▲ AVAX +5.3% за 24г\n\nЗараз: 11.10 $\n24г тому: 10.54 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T20:53:00.413164",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Temu</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Pre Xiaomi Robotický... Môže byť lacnejšie!»\n\n<i>«-----------------------------------------------------------------------\r\nTemu\r\n-----------------------------------------------------------------------\r\n\r\nTo properly view the full message content, please open this email in a high version mail client or browser.\r\n\r\nVisit this website to see our recom...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -215,6 +209,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-03T21:00:38.264237",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий формат тренування (інтервали, силова, плавання) замість звичного.",
+      "keyboard": null
     }
   ]
 }
