@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T02:43:39.249896",
-      "kind": "MSG_PAST_EVENT",
-      "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T02:43:40.133038",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80165"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-03T02:46:13.890090",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Plunge Club: Why your body notices fall before you do</b>\n👤 PLUNGE &lt;hello@plunge.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80164"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80164"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80164"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80164"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80164"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80164"
             }
           ]
         ]
