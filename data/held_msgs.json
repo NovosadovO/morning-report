@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T03:50:56.121842",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 6 nových pracovných ponúk\n• Zeno from Resend  → Early access, new integrations, and more\n• PLUNGE  → Plunge Club: Why your body notices fall before you do\n\n🧹 Реклама: 3 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T03:50:58.870550",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова активність на вихідний з кимось із близьких.",
@@ -148,6 +142,12 @@
       "ts": "2026-10-03T03:54:59.718899",
       "kind": "MSG_PAST_EVENT",
       "text": "🕰 « Перечитати огляд Aave про MiCA » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T03:55:02.240714",
+      "kind": "MSG_PAST_EVENT",
+      "text": "🕰 « Перечитати матеріал про Ava Labs і Miku » було 02.10 о 19:00 — тобто вже минуло.\n\nВідбулось, чи переносимо?",
       "keyboard": null
     }
   ]
