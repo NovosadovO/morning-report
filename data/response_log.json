@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-12T20:47:07.252222+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_yes_water"
-    },
-    {
       "ts": "2026-08-12T20:47:08.402364+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13819,6 +13813,15 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_moved_ff34093524"
+    },
+    {
+      "ts": "2026-10-03T04:59:28.985168+00:00",
+      "category": "day_energy",
+      "question": "Як ти сьогодні",
+      "answer": "Норма",
+      "extra": {
+        "shift": "early"
+      }
     }
   ]
 }
