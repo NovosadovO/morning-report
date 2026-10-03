@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T20:56:28.861294",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нове місце для пробіжки/прогулянки в Кошице чи поблизу.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T20:56:32.425601",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🟢▲ <b>AVAX +5.6% за 24г</b>\n\nЗараз: 11.11 $\n24г тому: 10.52 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80117"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-03T21:01:06.682470",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Огляд Aave Labs щодо перегляду MiCA в ЄС</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80114"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80114"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80114"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80114"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80114"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80114"
             }
           ]
         ]
