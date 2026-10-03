@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T23:39:46.748794",
-      "kind": "watchdog",
-      "text": "🛡 Підсумок наглядача за день\n\nЩо я бачив і робив сам:\n• 📅 моїх подій у календарі живих: 29\n• ⏳ відкритих дедлайнів під наглядом: 38\n• 💳 активних підписок під наглядом: 3\n• 🎂 дат у реєстрі: 3\n\nДатчики: працює 8 із 8\n🟢 Усі датчики відповідають — сліпих зон немає.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T23:39:55.825829",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80180"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-03T23:45:55.218966",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Fwd: Do konca Novembra max. 10 dní dovolenky !</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80132"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80132"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80132"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80132"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80132"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80132"
             }
           ]
         ]
