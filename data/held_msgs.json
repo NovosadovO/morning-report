@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T03:27:07.087739",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\" <support@profesia.sk> → 6 nových pracovných ponúk\n• Zeno from Resend <zeno@updates.resend.com> → Early access, new integrations, and more\n• PLUNGE <hello@plunge.com> → Plunge Club: Why your body notices fall before you do\n\n🧹 Реклама: 3 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-03T03:27:07.834696",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 6 nových pracovných ponúk\n• Zeno from Resend  → Early access, new integrations, and more\n• PLUNGE  → Plunge Club: Why your body notices fall before you do\n\n🧹 Реклама: 3 — можна пропустити.",
@@ -148,6 +142,12 @@
       "ts": "2026-10-03T03:30:22.384990",
       "kind": "bills",
       "text": "🔴 <b>ПРОСТРОЧЕНИЙ РАХУНОК</b> (10 дн.)\n━━━━━━━━━━━━━━━━━━━━\n🏢 <b>CapCut</b>\n💰 сума не вказана\n📆 до <b>2026-09-23</b>\n\nВаша підписка CapCut закінчується через 3 дні. Це нагадування про необхідність її поновити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T03:30:23.331786",
+      "kind": "bills",
+      "text": "🔴 ПРОСТРОЧЕНИЙ РАХУНОК (10 дн.)\n━━━━━━━━━━━━━━━━━━━━\n🏢 CapCut\n💰 сума не вказана\n📆 до 2026-09-23\n\nВаша підписка CapCut закінчується через 3 дні. Це нагадування про необхідність її поновити.",
       "keyboard": null
     }
   ]
