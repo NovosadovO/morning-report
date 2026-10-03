@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-03T02:46:10.796833",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Вакансія We're building a pipeline of  Automation Developers</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80166"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80166"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80166"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80166"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80166"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80166"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-03T02:46:12.469239",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Abacus AI Agent: DeFiLlama — огляд і зміни — waiting for you</b>\n👤 no-reply@abacus.ai",
@@ -338,6 +299,12 @@
       "ts": "2026-10-03T02:48:15.453013",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Zeno from Resend  → Early access, new integrations, and more\n• PLUNGE  → Plunge Club: Why your body notices fall before you do\n• Straith Schreder from Uniswap Labs  → Listed everywhere at once\n• Forbes через LinkedIn → How Vivek Ramaswamy's Well-Timed Ohio Move Likely Saved Him $12\r\n Million In Taxes\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-03T02:48:18.020377",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
