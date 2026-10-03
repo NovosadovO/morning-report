@@ -1449,5 +1449,22 @@
     "body_battery_min": 9,
     "body_battery_max": 44,
     "body_battery": 26
+  },
+  "2026-10-03": {
+    "date": "2026-10-03",
+    "steps": 10166,
+    "sleep_deep_min": 500,
+    "sleep_light_min": 500,
+    "sleep_total_min": 1000,
+    "hr_avg": 85,
+    "calories": 439,
+    "stress": 44,
+    "hrv": 37,
+    "age": 37,
+    "spo2_max": 99,
+    "spo2_min": 96,
+    "spo2": 96,
+    "source": "qwatch",
+    "saved_at": "2026-10-03 12:49"
   }
 }
