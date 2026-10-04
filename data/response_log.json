@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-12T21:05:13.829710+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "gx_week_ee59e76987"
-    },
-    {
       "ts": "2026-08-12T21:05:30.098771+00:00",
       "category": "ai_button",
       "question": "calendar",
@@ -13823,6 +13817,15 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-10-04T04:57:12.004532+00:00",
+      "category": "day_energy",
+      "question": "Як ти сьогодні",
+      "answer": "Норма",
+      "extra": {
+        "shift": "early"
+      }
     }
   ]
 }
