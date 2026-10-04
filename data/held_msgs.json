@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-04T02:55:50.764225",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 ВІЛЬНЕ ВІКНО 05.10 13:15–22:00 (525 хв)\n\nВільно 525 хв 13:15–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-04T02:55:53.343666",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80201"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-04T03:00:49.194708",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Finančný účtovník/čka в Carmeus</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80200"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80200"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80200"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80200"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80200"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80200"
             }
           ]
         ]
