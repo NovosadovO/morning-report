@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-13T04:30:16.708217+00:00",
-      "category": "proactive_offer",
-      "question": "Лист чекає на відповідь",
-      "answer": "Переглянути нові вакансії на Profesia.sk",
-      "extra": {
-        "kind": "reply",
-        "date": "2026-08-13"
-      }
-    },
-    {
       "ts": "2026-08-13T04:30:21.678559+00:00",
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
@@ -13811,6 +13801,17 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-10-04T11:52:51.288831+00:00",
+      "category": "calendar_button",
+      "question": "Конференція NBS: Slovenský finančný trh a inovácie 2026",
+      "answer": "snooze_60",
+      "extra": {
+        "stage": "snooze",
+        "when": "09:00–12:00",
+        "note": null
+      }
     }
   ]
 }
