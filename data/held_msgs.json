@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-05T00:46:03.525585",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Senior Operations Specialist в Precision Medicine Group та щ</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80231"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80231"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80231"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80231"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80231"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80231"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-05T00:46:04.911921",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>How India saved its wildlife</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
@@ -346,6 +307,12 @@
       "ts": "2026-10-05T00:48:18.036228",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 05.10</b> 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-05T00:48:18.773426",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 ВІЛЬНЕ ВІКНО 05.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
