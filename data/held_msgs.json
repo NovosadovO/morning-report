@@ -128,6 +128,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-05T00:01:23.341738",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>How India saved its wildlife</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80230"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80230"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80230"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80230"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80230"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80230"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
