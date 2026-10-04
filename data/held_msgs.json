@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-04T02:57:43.275443",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 ВІЛЬНЕ ВІКНО 05.10 13:15–22:00 (525 хв)\n\nВільно 525 хв 13:15–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-04T02:57:47.905004",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -376,6 +370,37 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80132"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-04T03:00:59.553482",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Profesia.sk",
+              "callback_data": "email_reply_80201"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_80198"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_80201"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80201"
             }
           ]
         ]
