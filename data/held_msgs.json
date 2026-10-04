@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-04T02:01:30.817419",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — October 2</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80180"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80180"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80180"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80180"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80180"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80180"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-04T02:01:32.438176",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Fwd: Do konca Novembra max. 10 dní dovolenky !</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
@@ -305,6 +266,12 @@
       "ts": "2026-10-04T02:04:39.954005",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-04T02:06:01.075038",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> → Fwd: Do konca Novembra max. 10 dní dovolenky !\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 3 нових оголошення\n• Avalanche Team1 <avalancheteam1@substack.com> → Team1 Africa Is Here To Connect the Continent\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
