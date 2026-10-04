@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-13T09:00:47.809672+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную занотувати",
-      "answer": "Відпочинок на Корфу",
-      "extra": {
-        "kind": "note",
-        "date": "2026-08-20"
-      }
-    },
-    {
       "ts": "2026-08-13T09:00:52.401858+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -13808,6 +13798,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "cw_sn60_f59c5174f1"
+    },
+    {
+      "ts": "2026-10-04T19:31:59.657575+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_run"
     }
   ]
 }
