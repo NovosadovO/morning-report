@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-04T02:16:30.160331",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Finančný účtovník/čka в Carmeus</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80200"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80200"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80200"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80200"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80200"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80200"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-04T02:16:31.650077",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Web Compatibility Engineer в DuckDuckGo</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -398,6 +359,12 @@
       "ts": "2026-10-04T02:19:33.299172",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 05.10 13:15–22:00 (525 хв)\n\nВільно 525 хв 13:15–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-04T02:19:35.859230",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
