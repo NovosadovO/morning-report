@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-12T21:05:30.603363+00:00",
-      "category": "automation",
-      "question": "Кнопка автоматизації",
-      "answer": "gx_more_ee59e76987"
-    },
-    {
       "ts": "2026-08-13T00:00:14.611921+00:00",
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
@@ -13822,6 +13816,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dm_ok_a9dc2323bc"
+    },
+    {
+      "ts": "2026-10-04T04:57:24.849923+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dm_note_24fba0f96a"
     }
   ]
 }
