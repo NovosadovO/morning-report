@@ -1,6 +1,7 @@
 {
-  "ts": 1791101110.6535342,
+  "ts": 1791104064.370729,
   "keys": [
+    "6:Prešovská cesta:Hlinkova / Trieda armádného generála Ludvíka Svobodu",
     "8:Alvinczyho (Slovenskej jednoty):Národné námestie (Slovenskej jednoty)",
     "8:Bačíkova / Továrenská:Zbrojničná",
     "8:Bačíkova:Moyzesova",
@@ -25,7 +26,6 @@
     "8:Južná trieda (Holubyho):Rastislavova (Holubyho)",
     "8:Južná trieda (Námestie osloboditeľov):Jantárová (Senný trh)",
     "8:Komenského (Hlinkova/547):Kostolianska (Komenského/547)",
-    "8:Komenského (Hlinkova/547):Námestie nádeje (Hlinkova/547)",
     "8:Komenského (Kostolianska/3390):Ťahanovská (Kostolianska/3390)",
     "8:Komenského (Watsonova):Festivalové námestie (Watsonova)",
     "8:Kostolianska (Národná trieda):Vodárenská (Národná trieda)",
@@ -33,11 +33,10 @@
     "8:Kuzmányho (Hviezdoslavova):Moyzesova (Hviezdoslavova)",
     "8:Kuzmányho (Československej armády):Festivalové námestie (Československej armády)",
     "8:Kuzmányho (Štúrova):Južná trieda (Štúrova)",
-    "8:Magnezitárska (Hlinkova/547):Námestie nádeje (Hlinkova/547)",
+    "8:Magnezitárska (Hlinkova/547):Komenského (Hlinkova/547)",
     "8:Moyzesova (Bačíkova):Hlavná (Bačíkova)",
     "8:Námestie Maratónu mieru (Komenského):Hlinkova (Komenského)",
     "8:Námestie Maratónu mieru / Strojárenská:Garbiarska",
-    "8:Námestie nádeje (Hlinkova/547):Vodárenská (Hlinkova/547)",
     "8:Námestie nádeje (Národná trieda):Národné námestie (Národná trieda)",
     "8:Národná trieda (Vodárenská):Hlinkova (Vodárenská)",
     "8:Národné námestie (Gorkého):Hviezdoslavova (Gorkého)",
@@ -55,13 +54,15 @@
     "8:Staničné námestie (Štefánikova):Hviezdoslavova (Štefánikova)",
     "8:Svornosti:Slovenskej jednoty",
     "8:Svornosti:Slovenskej jednoty / Tyršovo nábrežie",
+    "8:Svätoplukova (Masarykova):Štefánikova (Masarykova)",
     "8:Trieda SNP (Popradská):Ipeľská (Popradská)",
     "8:Vodárenská (Národná trieda):Kostolianska (Národná trieda)",
-    "8:Za štadiónom (Čermeľská/547):Komenského (Hlinkova/547)",
+    "8:Za štadiónom (Čermeľská/547):Severné nábr. (Hlinkova/547)",
     "8:Zbrojničná:Hviezdoslavova / Námestie Maratónu mieru",
     "8:Štúrova (Južná trieda):Holubyho (Južná trieda)",
     "8:Štúrova (Moyzesova):Hviezdoslavova (Moyzesova)",
     "8:Štúrova (Rastislavova):Holubyho (Rastislavova)",
+    "8:Štúrova:Bočná",
     "8:Ťahanovská (Kostolianska/3390):Komenského (Kostolianska/3390)"
   ]
 }
