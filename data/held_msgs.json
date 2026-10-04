@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-04T03:30:50.980115",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Finančný účtovník/čka в Carmeus</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80200"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80200"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80200"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80200"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80200"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80200"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-04T03:30:52.233328",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Web Compatibility Engineer в DuckDuckGo</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -371,6 +332,12 @@
       "ts": "2026-10-04T03:33:48.252287",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Сповіщення про вакансії LinkedIn → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov  → Fwd: Do konca Novembra max. 10 dní dovolenky !\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-04T03:33:51.058801",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 05.10</b> 13:15–22:00 (525 хв)\n\nВільно 525 хв 13:15–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
