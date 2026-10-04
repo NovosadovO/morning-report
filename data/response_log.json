@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-13T00:00:20.461835+00:00",
-      "category": "proactive_offer",
-      "question": "Лист чекає на відповідь",
-      "answer": "Переглянути нові рекомендації від AllEvents",
-      "extra": {
-        "kind": "reply",
-        "date": "2026-08-13"
-      }
-    },
-    {
       "ts": "2026-08-13T00:00:26.618549+00:00",
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
@@ -13818,6 +13808,17 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_shower"
+    },
+    {
+      "ts": "2026-10-04T09:00:53.040622+00:00",
+      "category": "calendar_button",
+      "question": "Конференція NBS: Slovenský finančný trh a inovácie 2026",
+      "answer": "snooze_60",
+      "extra": {
+        "stage": "t3d",
+        "when": "09:00–12:00",
+        "note": null
+      }
     }
   ]
 }
