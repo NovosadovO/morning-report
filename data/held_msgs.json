@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-04T03:30:57.393851",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Fwd: Do konca Novembra max. 10 dní dovolenky !</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80132"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80132"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80132"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80132"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80132"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80132"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-04T03:31:00.401729",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 1 нове оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -206,6 +167,12 @@
       "ts": "2026-10-04T03:35:08.814691",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Finančný účtovník/čka в Carmeuse – Активно набирає персонал\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> → Fwd: Do konca Novembra max. 10 dní dovolenky !\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-04T03:35:09.569829",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Сповіщення про вакансії LinkedIn → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov  → Fwd: Do konca Novembra max. 10 dní dovolenky !\n\n🧹 Реклама: 3 — можна пропустити.",
       "keyboard": null
     }
   ]
