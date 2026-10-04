@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-04T02:01:28.126081",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 1 нове оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80198"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80198"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80198"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80198"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80198"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80198"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-04T02:01:29.504325",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>On-site Local IT Support Specialist (m/f) в adapa Group</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -371,6 +332,12 @@
       "ts": "2026-10-04T02:04:36.236079",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 05.10 13:15–22:00 (525 хв)\n\nВільно 525 хв 13:15–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-04T02:04:39.147454",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
