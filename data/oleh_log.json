@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "t": "btn",
+      "data": "email_delete_79126",
+      "label": "🗑 Видалити",
+      "ts": "2026-09-15T12:02:27"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_yes_done_iqt5rpv9sljlt01rfm4ci56c4o_2026-09-15",
+      "label": "✅ Виконано",
+      "ts": "2026-09-15T12:02:33"
+    },
+    {
       "t": "msg",
       "kind": "cmd",
       "text": "/прокинувся",
