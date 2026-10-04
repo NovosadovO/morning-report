@@ -1,6 +1,6 @@
 {
   "sun__neptune__90": {
-    "orb": 1.36,
+    "orb": 1.38,
     "sent": false,
     "exact_sent": true
   },
@@ -18,6 +18,11 @@
     "orb": 1.13,
     "sent": false,
     "exact_sent": false
+  },
+  "mars__mercury__60": {
+    "orb": 1.49,
+    "sent": true,
+    "event": "enter"
   },
   "saturn__venus__150": {
     "orb": 0.38,
