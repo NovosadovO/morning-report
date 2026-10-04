@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-12T21:05:30.098771+00:00",
-      "category": "ai_button",
-      "question": "calendar",
-      "answer": "more",
-      "extra": {
-        "trigger": "event_soon",
-        "note": null
-      }
-    },
-    {
       "ts": "2026-08-12T21:05:30.603363+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13826,6 +13816,12 @@
       "extra": {
         "shift": "early"
       }
+    },
+    {
+      "ts": "2026-10-04T04:57:16.780919+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dm_ok_a9dc2323bc"
     }
   ]
 }
