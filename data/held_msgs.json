@@ -284,6 +284,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-05T00:01:28.659343",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Fwd: Do konca Novembra max. 10 dní dovolenky !</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80132"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80132"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80132"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80132"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80132"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80132"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
