@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-04T03:42:02.312492",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Сповіщення про вакансії LinkedIn → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov  → Fwd: Do konca Novembra max. 10 dní dovolenky !\n\n🧹 Реклама: 3 — можна пропустити.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-04T03:42:05.465137",
-      "kind": "MSG_FORESIGHT_GAP",
-      "text": "🗓 <b>ВІЛЬНЕ ВІКНО 05.10</b> 13:15–22:00 (525 хв)\n\nВільно 525 хв 13:15–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-04T03:42:06.150491",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 05.10 13:15–22:00 (525 хв)\n\nВільно 525 хв 13:15–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
@@ -314,6 +302,51 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-04T03:45:58.621751",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — October 2</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80180"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80180"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80180"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80180"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80180"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80180"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-04T03:46:00.171757",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• \"Profesia.sk\" <support@profesia.sk> → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Finančný účtovník/čka в Carmeuse – Активно набирає персонал\n• Oleg Novosadov <novosadovoleg@gmail.com> → 🏠 Нові квартири у Кошіці — 1 нове оголошення\n• Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> → Fwd: Do konca Novembra max. 10 dní dovolenky !\n\n🧹 Реклама: 3 — можна пропустити.",
+      "keyboard": null
     }
   ]
 }
