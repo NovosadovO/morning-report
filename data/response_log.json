@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-13T00:00:14.611921+00:00",
-      "category": "proactive_offer",
-      "question": "Лист чекає на відповідь",
-      "answer": "Відповісти Sam from Runable",
-      "extra": {
-        "kind": "reply",
-        "date": "2026-08-13"
-      }
-    },
-    {
       "ts": "2026-08-13T00:00:20.461835+00:00",
       "category": "proactive_offer",
       "question": "Лист чекає на відповідь",
@@ -13822,6 +13812,12 @@
       "category": "automation",
       "question": "Кнопка автоматизації",
       "answer": "dm_note_24fba0f96a"
+    },
+    {
+      "ts": "2026-10-04T05:00:40.420882+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_shower"
     }
   ]
 }
