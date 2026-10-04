@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-04T02:16:37.065836",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Fwd: Do konca Novembra max. 10 dní dovolenky !</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80132"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80132"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80132"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80132"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80132"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80132"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-04T02:16:38.354915",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 3 нових оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -233,6 +194,12 @@
       "ts": "2026-10-04T02:20:49.956518",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 <b>ВІЛЬНЕ ВІКНО 05.10</b> 13:15–22:00 (525 хв)\n\nВільно 525 хв 13:15–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-04T02:20:50.824012",
+      "kind": "MSG_FORESIGHT_GAP",
+      "text": "🗓 ВІЛЬНЕ ВІКНО 05.10 13:15–22:00 (525 хв)\n\nВільно 525 хв 13:15–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
       "keyboard": null
     }
   ]
