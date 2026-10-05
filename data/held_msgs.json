@@ -1,3 +1,43 @@
 {
-  "items": []
+  "items": [
+    {
+      "ts": "2026-10-06T00:14:45.892831",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Senior Sales Manager в Veslo»\n\n<i>«Сповіщення про вакансії за запитом Cryptocurrency в Slovakia          \r\nНова вакансія відповідає вашим налаштуванням.\r\n            \r\nSenior Sales Manager\r\nVeslo\r\nBratislava-Rača\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4475544067/?trackingId=Tajexq6HiY8t9sahAzuuLA%3D%3D&amp;refId=6...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80290"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80290"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80290"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80290"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80290"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80290"
+            }
+          ]
+        ]
+      }
+    }
+  ]
 }
