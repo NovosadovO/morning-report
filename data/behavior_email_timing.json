@@ -1,9 +1,4 @@
 {
-  "79808": {
-    "sender": "team@ship.emergent.sh",
-    "sender_raw": "Emergent <team@ship.emergent.sh>",
-    "seen_ts": "2026-09-27T07:01:25.139199+00:00"
-  },
   "79812": {
     "sender": "hello@news.paysend.com",
     "sender_raw": "\"Paysend\" <hello@news.paysend.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-05T15:02:10.641484+00:00"
+  },
+  "80273": {
+    "sender": "newsletter@data.theblock.co",
+    "sender_raw": "The Block <newsletter@data.theblock.co>",
+    "seen_ts": "2026-10-05T15:59:50.904052+00:00"
   }
 }
