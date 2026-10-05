@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-05T02:01:42.327341",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Fwd: Do konca Novembra max. 10 dní dovolenky !</b>\n👤 Oleg Novosadov &lt;oleg.novosadov@minebeamitsumi.eu&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80132"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80132"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80132"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80132"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80132"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80132"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-05T02:01:46.362008",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Сьогодні пробіжки ще не було.\n⚖️ Здоров'я: Вага: 84.4 кг, ціль 75 кг (тренд +0.3 кг за останні 5 замірів). Кроки: 9056 (ціль 10000). Сон: 10.1г.\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 09:00 Написати Мареку щодо документів для Руслани, 14:00 Нагадування: попрацювати над DEX-ботом, 18:00 Зустріч із Marash і Ruslana",
@@ -181,6 +142,12 @@
       "ts": "2026-10-05T02:08:37.915530",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> → Fwd: Do konca Novembra max. 10 dní dovolenky !\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-05T02:08:38.764125",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → Fwd: Do konca Novembra max. 10 dní dovolenky !\n\n🧹 Реклама: 6 — можна пропустити.",
       "keyboard": null
     }
   ]
