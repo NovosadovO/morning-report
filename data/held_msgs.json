@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-05T02:46:30.074007",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>How India saved its wildlife</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80230"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80230"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80230"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80230"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80230"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80230"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-05T02:46:31.445657",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Agentic Bank Run is coming for banking’s cheapest money </b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
@@ -239,6 +200,12 @@
       "ts": "2026-10-05T02:52:49.970191",
       "kind": "chunk",
       "text": "🎯 ТОЧНИЙ АСПЕКТ\n☽ <b>Місяць</b> ⚹ ♂ <b>Натальний Марс</b> <b>(ТОЧНИЙ!)</b>\n📍 Місяць у <b>Лев ♌</b> | Натальний Марс у Терези ♎, 3-й дім\n<i>Секстиль · Комунікація</i>\n\n📖 <b>Що означає Секстиль:</b>\n🟢 Гармонійна можливість — легкий потік енергії. Сприятливий момент діяти, домовлятися, вчитися нового. Потрібна твоя ініціатива.\n\n",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-05T02:52:54.017130",
+      "kind": "chunk",
+      "text": "🎯 ТОЧНИЙ АСПЕКТ\n☽ <b>Місяць</b> ⚻ ⛢ <b>Натальний Уран</b> <b>(ТОЧНИЙ!)</b>\n📍 Місяць у <b>Лев ♌</b> | Натальний Уран у Козеріг ♑, 6-й дім\n<i>Квінкункс · Здоров'я</i>\n\n📖 <b>Що означає Квінкункс:</b>\n🟣 Потреба коригування — щось не стикується й вимагає адаптації. Дрібний дисбаланс (часто здоров'я/рутина), який варто м'яко вирівняти.\n\n",
       "keyboard": null
     }
   ]
