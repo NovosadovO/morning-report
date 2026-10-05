@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-05T03:16:26.248781",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Operátor valcovacej linky Veľká Ida в Mubea</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80232"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80232"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80232"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80232"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80232"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80232"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-05T03:16:27.574508",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Senior Operations Specialist в Precision Medicine Group та щ</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -305,6 +266,12 @@
       "ts": "2026-10-05T03:22:38.701652",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-05T03:22:39.548391",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
     }
   ]
