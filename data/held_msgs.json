@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-05T02:31:27.032675",
-      "kind": "offer",
-      "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>1 nová pracovná ponuka</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80234"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80234"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80234"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80234"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80234"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80234"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-05T02:31:28.251809",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Lean Specialist в Avio Aero – А</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -431,6 +392,12 @@
       "ts": "2026-10-05T02:35:07.949528",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-05T02:35:08.730879",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
       "keyboard": null
     }
   ]
