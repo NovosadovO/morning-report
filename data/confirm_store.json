@@ -13700,5 +13700,14 @@
       }
     },
     "ts": "2026-10-04T19:31:30.934388+00:00"
+  },
+  "a222895e82": {
+    "action": "gate_email_star",
+    "pid": "email_star_80263",
+    "subject": "Важливий",
+    "extra": {
+      "msg": "📩 ✉️\n📌 Oznámenie o prijatí objednávky 8807654472\n👤 \"NAY\" <noreply@nay.sk>"
+    },
+    "ts": "2026-10-05T16:07:06.748050+00:00"
   }
 }
