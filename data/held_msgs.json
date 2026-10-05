@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-05T02:01:39.653940",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Convatec наймає: Technical Production Operator</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80228"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80228"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80228"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80228"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80228"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80228"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-05T02:01:41.038964",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — October 2</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
@@ -247,6 +208,12 @@
       "ts": "2026-10-05T02:07:26.596529",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-05T02:07:27.471809",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
       "keyboard": null
     }
   ]
