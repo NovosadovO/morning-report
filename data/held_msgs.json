@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-05T02:54:43.522781",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 1 nová pracovná ponuka\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Lean Specialist в Avio Aero – Активно набирає персонал\n\n🧹 Реклама: 4 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-05T02:54:48.009038",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80233"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-05T03:01:26.788760",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Operátor valcovacej linky Veľká Ida в Mubea</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80232"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80232"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80232"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80232"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80232"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80232"
             }
           ]
         ]
