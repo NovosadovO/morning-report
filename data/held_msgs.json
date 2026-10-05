@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-06T01:46:39.923761",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🟪 Does the internet need to be liberated?</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80289"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80289"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80289"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80289"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80289"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80289"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-06T01:46:41.238296",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🔷 The Daily: Strategy's bitcoin holdings top 848,000 BTC</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
@@ -346,6 +307,12 @@
       "ts": "2026-10-06T01:49:27.305374",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-06T01:49:28.351184",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
