@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-05T02:01:36.923255",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>How India saved its wildlife</b>\n👤 \"The Economist Today\" &lt;newsletters@e.economist.com",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80230"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80230"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80230"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80230"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80230"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80230"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-05T02:01:38.259696",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The Agentic Bank Run is coming for banking’s cheapest money </b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
@@ -313,6 +274,12 @@
       "ts": "2026-10-05T02:07:23.204210",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• Oleg Novosadov <oleg.novosadov@minebeamitsumi.eu> → Fwd: Do konca Novembra max. 10 dní dovolenky !\n\n🧹 Реклама: 6 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-05T02:07:23.994769",
+      "kind": "MSG_FORESIGHT_MAIL",
+      "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• Oleg Novosadov  → Fwd: Do konca Novembra max. 10 dní dovolenky !\n\n🧹 Реклама: 6 — можна пропустити.",
       "keyboard": null
     }
   ]
