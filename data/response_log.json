@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-13T22:29:35.583985+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_spray"
-    },
-    {
       "ts": "2026-08-14T00:00:15.990727+00:00",
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
@@ -13805,6 +13799,12 @@
         "when": "14:00–14:15",
         "note": null
       }
+    },
+    {
+      "ts": "2026-10-05T13:32:39.355340+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cw_sn60_fdc7d71576"
     }
   ]
 }
