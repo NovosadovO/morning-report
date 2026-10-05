@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-05T03:16:24.939669",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Ви можете підійти для посади Lean Specialist в Avio Aero – А</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80233"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80233"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80233"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80233"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80233"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80233"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-05T03:16:26.248781",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Operátor valcovacej linky Veľká Ida в Mubea</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -338,6 +299,12 @@
       "ts": "2026-10-05T03:22:36.269552",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 1 nová pracovná ponuka\n• Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin. → Ви можете підійти для посади Lean Specialist в Avio Aero – Активно набирає персонал\n\n🧹 Реклама: 4 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-05T03:22:38.701652",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
     }
   ]
