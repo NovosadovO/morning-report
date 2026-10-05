@@ -1,13 +1,18 @@
 {
   "moon__mars__60": {
-    "orb": 0.08,
+    "orb": 0.21,
     "sent": false,
     "exact_sent": true
   },
   "moon__uranus__150": {
-    "orb": 0.04,
+    "orb": 0.33,
     "sent": false,
     "exact_sent": true
+  },
+  "mercury__saturn__60": {
+    "orb": 1.5,
+    "sent": true,
+    "event": "enter"
   },
   "venus__jupiter__120": {
     "orb": 0.28,
@@ -25,7 +30,7 @@
     "exact_sent": false
   },
   "mars__mercury__60": {
-    "orb": 1.0,
+    "orb": 0.99,
     "sent": false,
     "exact_sent": false
   },
