@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-05T03:25:18.356413",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-05T03:25:19.185056",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80232"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-05T03:31:23.216625",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Senior Operations Specialist в Precision Medicine Group та щ</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80231"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80231"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80231"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80231"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80231"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80231"
             }
           ]
         ]
