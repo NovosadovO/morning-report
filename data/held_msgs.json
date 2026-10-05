@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-06T01:15:45.007037",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The latest AI news we announced in September 2026</b>\n👤 Google через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80291"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80291"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80291"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80291"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80291"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80291"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-06T01:15:46.418248",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 Does the internet need to be liberated?</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -379,6 +340,12 @@
       "ts": "2026-10-06T01:18:26.224986",
       "kind": "MSG_FORESIGHT_GAP",
       "text": "🗓 ВІЛЬНЕ ВІКНО 06.10 08:00–22:00 (840 хв)\n\nВільно 840 хв 08:00–22:00 — гарний час для пробіжки або щоб закрити одну справу зі списку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-06T01:18:29.112946",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
