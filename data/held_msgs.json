@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-06T01:28:15.787837",
-      "kind": "MSG_FORESIGHT_MAIL",
-      "text": "📥 <b>СПЕРШУ ВАЖЛИВЕ</b>\n\n📬 <b>ВАЖЛИВІ ЛИСТИ</b>\n• The Daily Degen <thedailydegen@substack.com> → The Daily Degen - October 5th, 2026\n\n🧹 Реклама: 6 — можна пропустити.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-06T01:28:16.687847",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• The Daily Degen  → The Daily Degen - October 5th, 2026\n\n🧹 Реклама: 6 — можна пропустити.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80281"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-06T01:30:47.758810",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>The Daily Degen - October 5th, 2026</b>\n👤 The Daily Degen &lt;thedailydegen@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80280"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80280"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80280"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80280"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80280"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80280"
             }
           ]
         ]
