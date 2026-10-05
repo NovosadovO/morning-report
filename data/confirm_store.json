@@ -13706,7 +13706,43 @@
     "pid": "email_star_80263",
     "subject": "Важливий",
     "extra": {
-      "msg": "📩 ✉️\n📌 Oznámenie o prijatí objednávky 8807654472\n👤 \"NAY\" <noreply@nay.sk>"
+      "msg": "📩 ✉️\n📌 Oznámenie o prijatí objednávky 8807654472\n👤 \"NAY\" <noreply@nay.sk>",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 109878,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80263"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80263"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80263"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80263"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80263"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80263"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-10-05T16:07:06.748050+00:00"
   }
