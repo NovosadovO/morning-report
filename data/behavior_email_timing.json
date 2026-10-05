@@ -1,9 +1,4 @@
 {
-  "79807": {
-    "sender": "news@mail.lidlplus.sk",
-    "sender_raw": "\"Lidl\" <news@mail.lidlplus.sk>",
-    "seen_ts": "2026-09-27T05:44:27.476262+00:00"
-  },
   "79808": {
     "sender": "team@ship.emergent.sh",
     "sender_raw": "Emergent <team@ship.emergent.sh>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "The Economist через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-05T14:33:04.638961+00:00"
+  },
+  "80271": {
+    "sender": "newsletters-noreply@linkedin.com",
+    "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
+    "seen_ts": "2026-10-05T15:02:10.641484+00:00"
   }
 }
