@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-13T22:29:30.136823+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_sauna"
-    },
-    {
       "ts": "2026-08-13T22:29:35.583985+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13800,6 +13794,17 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-10-05T13:32:38.980882+00:00",
+      "category": "calendar_button",
+      "question": "Нагадування: попрацювати над DEX-ботом",
+      "answer": "snooze_60",
+      "extra": {
+        "stage": "t30",
+        "when": "14:00–14:15",
+        "note": null
+      }
     }
   ]
 }
