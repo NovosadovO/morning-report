@@ -1,9 +1,4 @@
 {
-  "79778": {
-    "sender": "zara@news.zara.com",
-    "sender_raw": "Zara <zara@news.zara.com>",
-    "seen_ts": "2026-09-26T09:58:09.163242+00:00"
-  },
   "79779": {
     "sender": "newsletter@biedronka.pl",
     "sender_raw": "\"Biedronka\" <newsletter@biedronka.pl>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply@discord.com",
     "sender_raw": "Discord <noreply@discord.com>",
     "seen_ts": "2026-10-05T06:51:22.447810+00:00"
+  },
+  "80244": {
+    "sender": "info@emails.tesco.sk",
+    "sender_raw": "\"Tesco Clubcard\" <info@emails.tesco.sk>",
+    "seen_ts": "2026-10-05T08:08:29.424081+00:00"
   }
 }
