@@ -13751,7 +13751,43 @@
     "pid": "email_star_80304",
     "subject": "Fwd: Konferencia Slovenský finančný trh a inovácie 2026 - or",
     "extra": {
-      "msg": "Привіт Олеже! 👋 Тобі щойно надійшов лист від Ruslana Kozanchyn\n📋 Тема: «Fwd: Konferencia Slovenský finančný trh a inovácie 2026 - organizačné »\n\n«-------- Переслане повідомлення -------\nВід: Pénzeš Peter <peter.penzes@nbs.sk>\nДата: вт 6. 10. 2026 о 10:02\nТема: Konferencia Slovenský finančný trh a inovácie 2026 - organizačné\npokyny\nКому: Pénzeš Peter <peter.penzes@nbs.sk>\n\n\nDobrý deň,\nďakujeme za V"
+      "msg": "Привіт Олеже! 👋 Тобі щойно надійшов лист від Ruslana Kozanchyn\n📋 Тема: «Fwd: Konferencia Slovenský finančný trh a inovácie 2026 - organizačné »\n\n«-------- Переслане повідомлення -------\nВід: Pénzeš Peter <peter.penzes@nbs.sk>\nДата: вт 6. 10. 2026 о 10:02\nТема: Konferencia Slovenský finančný trh a inovácie 2026 - organizačné\npokyny\nКому: Pénzeš Peter <peter.penzes@nbs.sk>\n\n\nDobrý deň,\nďakujeme za V",
+      "origin": {
+        "chat_id": 2100366814,
+        "msg_id": 110374,
+        "kb": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80304"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80304"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80304"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80304"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80304"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80304"
+            }
+          ]
+        ]
+      }
     },
     "ts": "2026-10-06T11:03:52.791377+00:00"
   }
