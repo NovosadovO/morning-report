@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-14T01:30:17.076035+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную занотувати",
-      "answer": "Стрижка",
-      "extra": {
-        "kind": "note",
-        "date": "2026-08-15"
-      }
-    },
-    {
       "ts": "2026-08-14T01:30:21.391758+00:00",
       "category": "proactive_offer",
       "question": "Пропоную поставити нагадування",
@@ -13797,6 +13787,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_run"
+    },
+    {
+      "ts": "2026-10-06T23:58:33.833861+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_water"
     }
   ]
 }
