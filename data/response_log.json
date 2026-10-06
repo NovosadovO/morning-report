@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-14T04:30:12.892894+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную занотувати",
-      "answer": "Олег на відпочинку на Корфу до 20.08",
-      "extra": {
-        "kind": "note",
-        "date": "2026-08-14"
-      }
-    },
-    {
       "ts": "2026-08-14T06:00:13.904346+00:00",
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
@@ -13789,6 +13779,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_tea"
+    },
+    {
+      "ts": "2026-10-06T23:58:49.684758+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_sauna"
     }
   ]
 }
