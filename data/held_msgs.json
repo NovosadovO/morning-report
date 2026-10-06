@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-06T03:46:28.942045",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>7 nových pracovných ponúk</b>\n👤 \"Profesia.sk\" &lt;support@profesia.sk&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80294"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80294"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80294"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80294"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80294"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80294"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-06T03:46:30.399562",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Treasury Drops Its Crypto Wallet Surveillance Rules</b>\n👤 The Defiant &lt;no-reply@mail.thedefiant.io&gt;",
@@ -371,6 +332,12 @@
       "ts": "2026-10-06T03:50:00.992451",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-06T03:50:01.762923",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
