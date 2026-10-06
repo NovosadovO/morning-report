@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-14T12:46:33.268000+00:00",
-      "category": "confirm",
-      "question": "email_delete: 50% of budget reached",
-      "answer": "no"
-    },
-    {
       "ts": "2026-08-14T12:46:34.623778+00:00",
       "category": "automation",
       "question": "Кнопка автоматизації",
@@ -13781,6 +13775,12 @@
       "category": "confirm",
       "question": "gate_bill_due_paid: 🔴 ПРОСТРОЧЕНИЙ РАХУНОК (14 дн.)",
       "answer": "no"
+    },
+    {
+      "ts": "2026-10-07T00:38:09.996921+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "cfm_n_8920c012a5"
     }
   ]
 }
