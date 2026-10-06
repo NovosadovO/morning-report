@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_no_done_ji12m7d2ramltj5ns76plan5fk_2026-09-15",
-      "label": "❌ Не виконано",
-      "ts": "2026-09-15T20:54:45"
-    },
-    {
-      "t": "btn",
       "data": "evdone_no_done_ulod5456g8aghqojprbl36nmeg_2026-09-15",
       "label": "❌ Не виконано",
       "ts": "2026-09-15T20:54:47"
@@ -7199,6 +7193,12 @@
       "data": "am_no_d64cd1a969",
       "label": "🚫 Не треба",
       "ts": "2026-10-07T01:41:31"
+    },
+    {
+      "t": "btn",
+      "data": "rx_watch_e1aa18e04c",
+      "label": "👀 Спостерігаю",
+      "ts": "2026-10-07T01:41:48"
     }
   ]
 }
