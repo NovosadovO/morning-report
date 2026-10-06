@@ -1,9 +1,4 @@
 {
-  "79864": {
-    "sender": "updates@okx.com",
-    "sender_raw": "OKX <updates@okx.com>",
-    "seen_ts": "2026-09-28T13:06:49.130028+00:00"
-  },
   "79870": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "alerts@account.garmin.com",
     "sender_raw": "Garmin <alerts@account.garmin.com>",
     "seen_ts": "2026-10-06T11:45:15.547687+00:00"
+  },
+  "80326": {
+    "sender": "notifications-noreply@linkedin.com",
+    "sender_raw": "LinkedIn <notifications-noreply@linkedin.com>",
+    "seen_ts": "2026-10-06T11:51:25.130415+00:00"
   }
 }
