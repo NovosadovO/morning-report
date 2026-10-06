@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-06T03:46:36.152149",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Strategy's bitcoin holdings top 848,000 BTC</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80288"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80288"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80288"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80288"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80288"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80288"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-06T03:46:38.468119",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 \"Profesia.sk\"\n📋 Personalizované pracovné ponuky e-mailom - 20 nových pracovn\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 \"Profesia.sk\"\n📋 7 nových pracovných ponúk\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -206,6 +167,12 @@
       "ts": "2026-10-06T03:51:30.766412",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 7 nových pracovných ponúk\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-06T03:51:33.710996",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
