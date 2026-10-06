@@ -1,9 +1,4 @@
 {
-  "79870": {
-    "sender": "newsletters-noreply@linkedin.com",
-    "sender_raw": "GenAI Works через LinkedIn<newsletters-noreply@linkedin.com>",
-    "seen_ts": "2026-09-28T15:12:46.178023+00:00"
-  },
   "79871": {
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "notifications-noreply@linkedin.com",
     "sender_raw": "LinkedIn <notifications-noreply@linkedin.com>",
     "seen_ts": "2026-10-06T11:51:25.130415+00:00"
+  },
+  "80327": {
+    "sender": "spotlight@newsletters.coinmarketcap.com",
+    "sender_raw": "\"CMC Spotlight\" <spotlight@newsletters.coinmarketcap.com>",
+    "seen_ts": "2026-10-06T11:59:43.523482+00:00"
   }
 }
