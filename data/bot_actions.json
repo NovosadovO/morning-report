@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Пропозиція IPO від Kraken",
-      "detail": "Свіжий лист від 'Kraken' <no-reply@email.kraken.com> | Oura IPO 💍 Get xStocks access before it lists.",
-      "module": "selfact",
-      "ts": "2026-09-25T10:40:59"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, Socios.com нагадує про важливість створення Recovery",
       "detail": "Свіжий лист від 'Socios.com' <news@mail.socios.com> з темою 'Have you generated your Recovery Kit?'",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "повна аналітика здоров'я",
       "module": "selfact",
       "ts": "2026-10-06T20:01:02"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: steps_good",
+      "detail": "🚶 Кроки за тиждень у середньому 10991 — ціль 8000 досягнута",
+      "module": "healthai",
+      "ts": "2026-10-06T20:45:41"
     }
   ]
 }
