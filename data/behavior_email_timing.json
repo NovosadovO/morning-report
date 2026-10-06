@@ -1,9 +1,4 @@
 {
-  "79845": {
-    "sender": "hello@news.footshop.sk",
-    "sender_raw": "\"Footshop\" <hello@news.footshop.sk>",
-    "seen_ts": "2026-09-28T05:10:08.048083+00:00"
-  },
   "79847": {
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "info@beautynews.douglas.sk",
     "sender_raw": "\"Douglas\" <info@beautynews.douglas.sk>",
     "seen_ts": "2026-10-06T07:16:24.273308+00:00"
+  },
+  "80302": {
+    "sender": "noreply@newsletter.austrian.com",
+    "sender_raw": "\"Austrian Airlines\" <noreply@newsletter.austrian.com>",
+    "seen_ts": "2026-10-06T07:25:00.907499+00:00"
   }
 }
