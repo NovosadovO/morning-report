@@ -26,5 +26,19 @@
     "subject": null,
     "to": "faktury@superfaktura.sk",
     "ts": "2026-08-04T04:18:23.643071+00:00"
+  },
+  "b2b3b3d8c1": {
+    "bid": "capcut||2026-09-23",
+    "vendor": "CapCut",
+    "amount": "",
+    "currency": "EUR",
+    "due": "2026-09-23",
+    "invoice_no": "",
+    "sender": "CapCut <admin@mail.capcut.com>",
+    "subject": "Your CapCut subscription will expire in 3 days..",
+    "note": "Ваша підписка CapCut закінчується через 3 дні. Це нагадування про необхідність її поновити.",
+    "uid": "79431",
+    "ts": "2026-10-07T00:38:01.976552+00:00",
+    "to": "admin@mail.capcut.com"
   }
 }
