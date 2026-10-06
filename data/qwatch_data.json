@@ -1493,5 +1493,21 @@
     "spo2": 98,
     "source": "qwatch",
     "saved_at": "2026-10-05 13:33"
+  },
+  "2026-10-06": {
+    "date": "2026-10-06",
+    "steps": 248,
+    "sleep_deep_min": 554,
+    "sleep_light_min": 118,
+    "sleep_total_min": 672,
+    "sleep_quality": 100,
+    "hr_avg": 60,
+    "calories": 9,
+    "hrv": 44,
+    "age": 37,
+    "height_cm": 175,
+    "spo2": 99,
+    "source": "qwatch",
+    "saved_at": "2026-10-06 11:05"
   }
 }
