@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-14T06:00:13.904346+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную занотувати",
-      "answer": "Нові вакансії від Profesia.sk",
-      "extra": {
-        "kind": "note",
-        "date": "2026-08-14"
-      }
-    },
-    {
       "ts": "2026-08-14T12:46:27.060208+00:00",
       "category": "confirm",
       "question": "calrem_skip: ",
@@ -13785,6 +13775,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_no_sauna"
+    },
+    {
+      "ts": "2026-10-06T23:58:57.094870+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_no_spray"
     }
   ]
 }
