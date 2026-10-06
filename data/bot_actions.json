@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Олеже, Socios.com нагадує про важливість створення Recovery",
-      "detail": "Свіжий лист від 'Socios.com' <news@mail.socios.com> з темою 'Have you generated your Recovery Kit?'",
-      "module": "selfact",
-      "ts": "2026-09-25T10:56:56"
-    },
-    {
-      "kind": "notify",
       "what": "Олеже, сьогодні о 23:00 розпочинається Соляр у 5-му домі: Тв",
       "detail": "У календарі на 25.09 зазначено: '23:00 Соляр — 5-й дім: Творчість і радість'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "🚶 Кроки за тиждень у середньому 10991 — ціль 8000 досягнута",
       "module": "healthai",
       "ts": "2026-10-06T20:45:41"
+    },
+    {
+      "kind": "hcoach",
+      "what": "evening_review",
+      "detail": "вечірній розбір, оцінка 62",
+      "module": "selfact",
+      "ts": "2026-10-06T21:20:29"
     }
   ]
 }
