@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-06T02:16:01.050460",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>[Action Advised] Manage your unused OAuth clients and protec</b>\n👤 Google Developers &lt;googledevelopers-noreply@google",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80287"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80287"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80287"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80287"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80287"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80287"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-06T02:16:02.480416",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>Cans Deco &amp; BE Team Leader в Crown Holdings, Inc.</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -214,6 +175,12 @@
       "ts": "2026-10-06T02:25:03.891948",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-06T02:25:04.908798",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка фінансова ідея — переглянути один актив у портфелі свіжим оком.",
       "keyboard": null
     }
   ]
