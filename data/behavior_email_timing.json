@@ -1,9 +1,4 @@
 {
-  "79905": {
-    "sender": "newsletter@ticketportal.sk",
-    "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
-    "seen_ts": "2026-09-29T07:55:07.307435+00:00"
-  },
   "79906": {
     "sender": "message@message.reserved.com",
     "sender_raw": "Reserved <message@message.reserved.com>",
@@ -1498,5 +1493,10 @@
     "sender": "hi@newsletter.defillama.com",
     "sender_raw": "DefiLlama Newsletter <hi@newsletter.defillama.com>",
     "seen_ts": "2026-10-06T18:46:37.561687+00:00"
+  },
+  "80355": {
+    "sender": "newsletter@data.theblock.co",
+    "sender_raw": "The Block <newsletter@data.theblock.co>",
+    "seen_ts": "2026-10-06T18:50:50.995688+00:00"
   }
 }
