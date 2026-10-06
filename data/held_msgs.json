@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-06T03:16:27.753056",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The latest AI news we announced in September 2026</b>\n👤 Google через LinkedIn&lt;newsletters-noreply@linkedin",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80291"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80291"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80291"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80291"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80291"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80291"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-06T03:16:29.053418",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🟪 Does the internet need to be liberated?</b>\n👤 The Breakdown &lt;newsletter@blockworks.com&gt;",
@@ -272,6 +233,12 @@
       "ts": "2026-10-06T03:22:08.204775",
       "kind": "MSG_FORESIGHT_MAIL",
       "text": "📥 СПЕРШУ ВАЖЛИВЕ\n\n📬 ВАЖЛИВІ ЛИСТИ\n• \"Profesia.sk\"  → Personalizované pracovné ponuky e-mailom - 20 nových pracovných ponúk\n• \"Profesia.sk\"  → 7 nových pracovných ponúk\n\n🧹 Реклама: 5 — можна пропустити.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-06T03:22:10.995299",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
       "keyboard": null
     }
   ]
