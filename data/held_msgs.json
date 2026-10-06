@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-06T03:10:54.733782",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-06T03:10:55.532968",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось культурне — фільм, виставка, місце в Кошице/Братиславі.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80289"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-06T03:16:30.435793",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🔷 The Daily: Strategy's bitcoin holdings top 848,000 BTC</b>\n👤 The Block &lt;newsletter@mail.theblock.co&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80288"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80288"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80288"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80288"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80288"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80288"
             }
           ]
         ]
