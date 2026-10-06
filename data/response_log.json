@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-14T01:30:21.391758+00:00",
-      "category": "proactive_offer",
-      "question": "Пропоную поставити нагадування",
-      "answer": "Прийняти Armolopid Plus",
-      "extra": {
-        "kind": "reminder",
-        "date": "2026-08-14"
-      }
-    },
-    {
       "ts": "2026-08-14T04:30:12.892894+00:00",
       "category": "proactive_offer",
       "question": "Пропоную занотувати",
@@ -13793,6 +13783,12 @@
       "category": "habit_sleep",
       "question": "Звичка/сон",
       "answer": "habit_yes_water"
+    },
+    {
+      "ts": "2026-10-06T23:58:42.568460+00:00",
+      "category": "habit_sleep",
+      "question": "Звичка/сон",
+      "answer": "habit_yes_tea"
     }
   ]
 }
