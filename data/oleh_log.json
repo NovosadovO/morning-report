@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "evdone_no_done_f0nkast07tmiqpojrfvltn2tdg_2026-09-15",
-      "label": "❌ Не виконано",
-      "ts": "2026-09-15T20:54:44"
-    },
-    {
-      "t": "btn",
       "data": "evdone_no_done_ji12m7d2ramltj5ns76plan5fk_2026-09-15",
       "label": "❌ Не виконано",
       "ts": "2026-09-15T20:54:45"
@@ -7199,6 +7193,12 @@
       "data": "rx_mute_9dd864084a",
       "label": "🙈 Не нагадуй",
       "ts": "2026-10-07T01:41:29"
+    },
+    {
+      "t": "btn",
+      "data": "am_no_d64cd1a969",
+      "label": "🚫 Не треба",
+      "ts": "2026-10-07T01:41:31"
     }
   ]
 }
