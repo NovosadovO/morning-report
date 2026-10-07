@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T14:01:32.702993",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📍A €401K Prize for AI Film</b>\n👤 MyClaw Newsletter &lt;newsletter@myclaw.ai&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80390"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80390"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80390"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80390"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80390"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80390"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T14:01:34.390881",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>The world’s most innovative countries</b>\n👤 The Economist через LinkedIn&lt;newsletters-noreply@l",
@@ -338,6 +299,12 @@
       "ts": "2026-10-07T14:05:00.917647",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ETH -5.1% за 24г</b>\n\nЗараз: 2576.60 $\n24г тому: 2714.33 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T14:05:01.879424",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ETH -5.1% за 24г\n\nЗараз: 2576.60 $\n24г тому: 2714.33 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
