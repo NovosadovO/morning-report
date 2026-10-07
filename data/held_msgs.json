@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T12:23:45.985829",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -6.6% за 24г</b>\n\nЗараз: 0.4673 $\n24г тому: 0.5002 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T12:23:46.914679",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -6.6% за 24г\n\nЗараз: 0.4673 $\n24г тому: 0.5002 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T12:30:49.128957",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>PFI Monthly - September Edition</b>\n👤 Prague Finance Institute через LinkedIn&lt;newsletter",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80386"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80386"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80386"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80386"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80386"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80386"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
