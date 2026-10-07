@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T15:13:09.194996",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ ONDO -6.8% за 24г\n\nЗараз: 0.4623 $\n24г тому: 0.4961 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T15:13:11.980421",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ETH -5.3% за 24г</b>\n\nЗараз: 2567.43 $\n24г тому: 2712.30 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -310,6 +304,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80394"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-07T15:16:44.411003",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Web withdrawal protection</b>\n👤 OKX &lt;updates@okx.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80393"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80393"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80393"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80393"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80393"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80393"
             }
           ]
         ]
