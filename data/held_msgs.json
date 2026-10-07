@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T14:58:10.890549",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -7.0% за 24г</b>\n\nЗараз: 0.4632 $\n24г тому: 0.4980 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T14:58:11.869471",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -7.0% за 24г\n\nЗараз: 0.4632 $\n24г тому: 0.4980 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80395"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-07T15:01:33.257342",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>MONETA Money Bank наймає: Application &amp; System Specialist</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80394"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80394"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80394"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80394"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80394"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80394"
             }
           ]
         ]
