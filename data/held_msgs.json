@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T09:31:36.006596",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Garmin Connect+ Subscription Confirmation</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80341"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80341"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80341"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80341"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80341"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80341"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T09:31:37.739259",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Thanks for Registering Your Venu X1</b>\n👤 Garmin &lt;garmin@registration.garmin.com&gt;",
@@ -266,6 +227,12 @@
       "ts": "2026-10-07T09:36:44.965384",
       "kind": "calendar",
       "text": "📅 Завтра у тебе\n━━━━━━━━━━━━━━━━━━━━\n📌 Конференція NBS: Slovenský finančný trh a inovácie 2026\n📅 08.10 (Thu) — завтра\n🕐 09:00–12:00\n📍 Онлайн\n\nСьогодні ще є час підготуватись — документи, дорога, час виїзду.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T09:36:54.700654",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
