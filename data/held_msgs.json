@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T14:15:57.132300",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>The world’s most innovative countries</b>\n👤 The Economist через LinkedIn&lt;newsletters-noreply@l",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80389"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80389"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80389"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80389"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80389"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80389"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T14:15:58.775809",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Polymarket Just Rebuilt Its Entire Protocol From the Ground </b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
@@ -278,6 +239,12 @@
       "ts": "2026-10-07T14:22:17.191735",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T14:22:21.299636",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>ONDO -6.7% за 24г</b>\n\nЗараз: 0.4632 $\n24г тому: 0.4966 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
