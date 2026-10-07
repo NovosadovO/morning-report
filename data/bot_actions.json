@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "hourly",
-      "what": "щогодинний чек-ін здоров'я",
-      "detail": "",
-      "module": "healthai",
-      "ts": "2026-09-25T12:05:52"
-    },
-    {
       "kind": "notify",
       "what": "Зверніть увагу на лист від Socios.com щодо створення Recover",
       "detail": "Лист від 'Socios.com' з темою 'Have you generated your Recovery Kit?'",
@@ -2799,6 +2792,13 @@
       "detail": "143 год мовчання",
       "module": "healthai",
       "ts": "2026-10-07T15:44:42"
+    },
+    {
+      "kind": "notify",
+      "what": "сповіщення про здоров'я: sleep_good",
+      "detail": "😴 Сон за тиждень у середньому 10.1 год — стабільно добре",
+      "module": "healthai",
+      "ts": "2026-10-07T17:47:24"
     }
   ]
 }
