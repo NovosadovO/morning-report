@@ -1,9 +1,4 @@
 {
-  "79937": {
-    "sender": "googleplay-noreply@google.com",
-    "sender_raw": "Google Play <googleplay-noreply@google.com>",
-    "seen_ts": "2026-09-29T14:37:47.087304+00:00"
-  },
   "79938": {
     "sender": "groups-noreply@linkedin.com",
     "sender_raw": "LinkedIn <groups-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "news@msk.marionnaud.com",
     "sender_raw": "\"Marionnaud\" <news@msk.marionnaud.com>",
     "seen_ts": "2026-10-07T10:04:53.607071+00:00"
+  },
+  "80385": {
+    "sender": "newsletter@genai.works",
+    "sender_raw": "Generative AI <newsletter@genai.works>",
+    "seen_ts": "2026-10-07T10:09:07.172581+00:00"
   }
 }
