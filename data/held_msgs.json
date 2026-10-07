@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T11:08:36.695539",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T11:09:56.029085",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -376,6 +370,31 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80370"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-07T11:15:46.883642",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Reserved\n📋 Rozšírená ponuka a ešte nižšie ceny.\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: Reserved",
+              "callback_data": "email_reply_80377"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_80377"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80377"
             }
           ]
         ]
