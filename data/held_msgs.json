@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T14:13:01.766306",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-07T14:13:04.310401",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -7.4% за 24г</b>\n\nЗараз: 0.4627 $\n24г тому: 0.4995 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T14:13:05.188727",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -7.4% за 24г\n\nЗараз: 0.4627 $\n24г тому: 0.4995 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -287,6 +275,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -5.5% за 24г\n\nЗараз: 11.02 $\n24г тому: 11.65 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T14:15:55.515537",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>📍A €401K Prize for AI Film</b>\n👤 MyClaw Newsletter &lt;newsletter@myclaw.ai&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80390"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80390"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80390"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80390"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80390"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80390"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
