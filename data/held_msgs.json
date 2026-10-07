@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T10:19:01.265769",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T10:19:02.210907",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T10:31:11.848228",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80380"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80380"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80380"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80380"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80380"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80380"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
