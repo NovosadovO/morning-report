@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T12:01:49.819174",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Strategic Sourcer в GymBeam</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80374"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80374"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80374"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80374"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80374"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80374"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T12:01:53.704513",
       "kind": "chunk",
       "text": "🧠🤖 <b>AI-АНАЛІЗ ДНЯ — ВСІ СФЕРИ</b>\n\n💡 <b>КОРОТКИЙ ОГЛЯД</b> (AI тимчасово перевантажена, дані без аналізу)\n🏃 Біг: Сьогодні пробіжки ще не було.\n⚖️ Здоров'я: Вага: 83.1 кг, ціль 75 кг (тренд +0.3 кг за останні 5 замірів). Кроки: 7086 (ціль 10000).\n✅ Звички: Виконано сьогодні: жодної (0/6). Ще не виконано: shower, run, water, tea, sauna, spray.\n📬 Пошта: 📬 <b>ПОШТА</b>\n📅 Календар: 19:00 Нічна зміна",
@@ -233,6 +194,12 @@
       "ts": "2026-10-07T12:07:51.719362",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -6.2% за 24г</b>\n\nЗараз: 0.4664 $\n24г тому: 0.4974 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T12:07:52.763122",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -6.2% за 24г\n\nЗараз: 0.4664 $\n24г тому: 0.4974 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
