@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T13:06:32.475766",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>CMC Spotlight</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Polymarket Just Rebuilt Its Entire Protocol From the Ground Up»\n\n<i>«Explore the latest industry news, insightful data, and exciting\nupdates from CoinMarketCap.     CoinMarketCap Logo \n( https://link.coinmarketcap.com/f/a/VzLAHGqCzMgQalc63zWIQg~~/AAQRxRA~/yVHa4-9aHIcvYGJ68t9GFQ0wAgM5jFTDnmUN055GlyU2SUirKqKcOtSogmIRAc556A_15tCwpRbZJGKbJjEK7VrfCrHqa-sUUsDvl7FR-M9aHyaEx...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80387"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80387"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80387"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80387"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80387"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80387"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T13:07:12.676934",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
@@ -181,6 +142,12 @@
       "ts": "2026-10-07T13:13:27.902867",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -6.6% за 24г\n\nЗараз: 0.4658 $\n24г тому: 0.4988 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T13:14:35.841351",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
       "keyboard": null
     }
   ]
