@@ -1,9 +1,4 @@
 {
-  "79963": {
-    "sender": "offers@travel.wizznews.com",
-    "sender_raw": "\"Wizz Air\" <offers@travel.wizznews.com>",
-    "seen_ts": "2026-09-30T02:33:06.610475+00:00"
-  },
   "79964": {
     "sender": "help@abacus.ai",
     "sender_raw": "Abacus AI <help@abacus.ai>",
@@ -1498,5 +1493,10 @@
     "sender": "jobalerts-noreply@linkedin.com",
     "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
     "seen_ts": "2026-10-07T18:15:00.344591+00:00"
+  },
+  "80422": {
+    "sender": "newsletter@mail.theblock.co",
+    "sender_raw": "The Block <newsletter@mail.theblock.co>",
+    "seen_ts": "2026-10-07T20:43:56.637459+00:00"
   }
 }
