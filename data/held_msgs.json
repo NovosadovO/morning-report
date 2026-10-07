@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T11:45:44.177479",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Strategic Sourcer в GymBeam</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80374"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80374"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80374"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80374"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80374"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80374"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T11:45:45.469320",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Сховище iCloud заповнено</b>\n👤 iCloud &lt;noreply@email.apple.com&gt;",
@@ -233,6 +194,12 @@
       "ts": "2026-10-07T11:52:23.945709",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T11:52:24.834097",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
     }
   ]
