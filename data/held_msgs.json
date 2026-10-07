@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T12:42:31.158212",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ETH -5.0% за 24г</b>\n\nЗараз: 2578.09 $\n24г тому: 2714.83 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T12:42:32.004542",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ETH -5.0% за 24г\n\nЗараз: 2578.09 $\n24г тому: 2714.83 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -399,6 +393,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-07T12:46:08.558853",
+      "kind": "chunk",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 2 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)",
+      "keyboard": null
     }
   ]
 }
