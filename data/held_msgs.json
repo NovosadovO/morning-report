@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T09:07:32.562922",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T09:07:33.356979",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -149,6 +143,45 @@
       "kind": "calendar",
       "text": "📅 Завтра у тебе\n━━━━━━━━━━━━━━━━━━━━\n📌 Конференція NBS: Slovenský finančný trh a inovácie 2026\n📅 08.10 (Thu) — завтра\n🕐 09:00–12:00\n📍 Онлайн\n\nСьогодні ще є час підготуватись — документи, дорога, час виїзду.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T09:13:43.568220",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Bolt Food</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Don't miss out on savings»\n\n<i>«Bolt @media screen and (max-width:599.98px){.title{font-size:28px!important;line-height:36px!important;padding-top:16px!important;letter-spacing:-1px!important}.linkblock,.s-featureleft,.s-featureright,.s-hero,.s-herofullspace.space1,.s-info,.s-infobg,.s-infoimg,.s-more,.s-news,.s-table{padding:0 24...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80375"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80375"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80375"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80375"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80375"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80375"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
