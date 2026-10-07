@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T15:01:28.876414",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80397"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80397"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80397"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80397"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80397"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80397"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T15:01:30.340210",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — October 7</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
@@ -431,6 +392,12 @@
       "ts": "2026-10-07T15:04:52.108518",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T15:04:52.947838",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
