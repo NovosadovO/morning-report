@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T14:17:06.338042",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>The Daily Bone</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «📉 Bitcoin breaks down as S&amp;P hits new highs»\n\n<i>«———————————————————————————\r\n\r\n## Top Stories\r\n\r\n**BTC** $83,577 (-3.1%) | **ETH** $2,574 (-5.2%) | **SOL** $117 (-2.7%)\r\n\r\n* Bitcoin falls below [$84,000](https://x.com/WatcherGuru/status/2107653450045739368) as over $400 million in longs get liquidated —Bitcoin ETFs pull in $118M while Ethereum ET...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80395"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80395"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80395"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80395"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80395"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80395"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T14:17:08.775986",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -6.8% за 24г</b>\n\nЗараз: 0.4645 $\n24г тому: 0.4985 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -181,6 +142,12 @@
       "ts": "2026-10-07T14:23:38.863038",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -6.7% за 24г\n\nЗараз: 0.4632 $\n24г тому: 0.4965 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T14:24:50.244848",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
