@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T09:47:05.967418",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>Strategic Sourcer в GymBeam</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80374"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80374"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80374"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80374"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80374"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80374"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T09:47:07.378592",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Сховище iCloud заповнено</b>\n👤 iCloud &lt;noreply@email.apple.com&gt;",
@@ -431,6 +392,12 @@
       "ts": "2026-10-07T09:55:59.332991",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T09:56:00.225141",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
