@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T09:17:20.135966",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Garmin Connect+ Subscription Confirmation</b>\n👤 Garmin &lt;GarminServicesBilling@garmin.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80341"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80341"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80341"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80341"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80341"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80341"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T09:17:21.581095",
       "kind": "offer",
       "text": "📩 🔴 <b>НОВЕ</b>\n📌 <b>Thanks for Registering Your Venu X1</b>\n👤 Garmin &lt;garmin@registration.garmin.com&gt;",
@@ -299,6 +260,12 @@
       "ts": "2026-10-07T09:22:38.454930",
       "kind": "calendar",
       "text": "📅 <b>Завтра у тебе</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Конференція NBS: Slovenský finančný trh a inovácie 2026</b>\n📅 08.10 (Thu) — завтра\n🕐 09:00–12:00\n📍 Онлайн\n\n<i>Сьогодні ще є час підготуватись — документи, дорога, час виїзду.</i>",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T09:22:39.338885",
+      "kind": "calendar",
+      "text": "📅 Завтра у тебе\n━━━━━━━━━━━━━━━━━━━━\n📌 Конференція NBS: Slovenský finančný trh a inovácie 2026\n📅 08.10 (Thu) — завтра\n🕐 09:00–12:00\n📍 Онлайн\n\nСьогодні ще є час підготуватись — документи, дорога, час виїзду.",
       "keyboard": null
     }
   ]
