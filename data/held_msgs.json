@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T13:00:59.078807",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>PFI Monthly - September Edition</b>\n👤 Prague Finance Institute через LinkedIn&lt;newsletter",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80386"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80386"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80386"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80386"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80386"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80386"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T13:01:00.330591",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🧮 OpenAI just changed math forever</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -399,6 +360,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -6.7% за 24г\n\nЗараз: 0.4657 $\n24г тому: 0.4989 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T13:06:32.475766",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>CMC Spotlight</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Polymarket Just Rebuilt Its Entire Protocol From the Ground Up»\n\n<i>«Explore the latest industry news, insightful data, and exciting\nupdates from CoinMarketCap.     CoinMarketCap Logo \n( https://link.coinmarketcap.com/f/a/VzLAHGqCzMgQalc63zWIQg~~/AAQRxRA~/yVHa4-9aHIcvYGJ68t9GFQ0wAgM5jFTDnmUN055GlyU2SUirKqKcOtSogmIRAc556A_15tCwpRbZJGKbJjEK7VrfCrHqa-sUUsDvl7FR-M9aHyaEx...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80387"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80387"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80387"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80387"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80387"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80387"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
