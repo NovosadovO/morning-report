@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T09:47:07.378592",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Сховище iCloud заповнено</b>\n👤 iCloud &lt;noreply@email.apple.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80373"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80373"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80373"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80373"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80373"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80373"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T09:47:08.860340",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>(Junior) Business Operations Manager Austria в Scalable Capi</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -398,6 +359,12 @@
       "ts": "2026-10-07T09:56:00.225141",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T09:57:07.638082",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
       "keyboard": null
     }
   ]
