@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T13:31:15.347970",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Novinárčina nie je len práca. Je to zodpovednosť a miesto, k</b>\n👤 Startitup через LinkedIn&lt;newsletters-noreply@linke",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80381"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80381"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80381"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80381"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80381"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80381"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T13:31:16.909635",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
@@ -233,6 +194,12 @@
       "ts": "2026-10-07T13:35:41.093379",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -7.2% за 24г</b>\n\nЗараз: 0.4638 $\n24г тому: 0.5000 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T13:35:41.943851",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -7.2% за 24г\n\nЗараз: 0.4638 $\n24г тому: 0.5000 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
