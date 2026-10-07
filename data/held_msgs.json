@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T11:54:56.751290",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ ONDO -6.4% за 24г\n\nЗараз: 0.4648 $\n24г тому: 0.4964 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T11:56:11.428440",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -178,6 +172,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80383"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-07T12:01:42.709550",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Did AmEx and Perplexity just launch an AI CFO for small busi</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80382"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80382"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80382"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80382"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80382"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80382"
             }
           ]
         ]
