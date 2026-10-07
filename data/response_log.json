@@ -1,12 +1,6 @@
 {
   "entries": [
     {
-      "ts": "2026-08-14T22:16:35.623358+00:00",
-      "category": "habit_sleep",
-      "question": "Звичка/сон",
-      "answer": "habit_no_spray"
-    },
-    {
       "ts": "2026-08-14T22:16:36.198737+00:00",
       "category": "habit_sleep",
       "question": "Звичка/сон",
@@ -13784,6 +13778,12 @@
       "extra": {
         "shift": "night"
       }
+    },
+    {
+      "ts": "2026-10-07T16:49:35.694784+00:00",
+      "category": "automation",
+      "question": "Кнопка автоматизації",
+      "answer": "dm_ok_311a022493"
     }
   ]
 }
