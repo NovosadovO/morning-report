@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T11:46:18.393272",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ ONDO -6.0% за 24г\n\nЗараз: 0.4642 $\n24г тому: 0.4938 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T11:47:24.446057",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
@@ -149,6 +143,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -6.4% за 24г\n\nЗараз: 0.4648 $\n24г тому: 0.4967 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T11:54:36.663514",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleg Novosadov</b>\n📋 Тема: «🏠 Нові квартири у Кошіці — 2 нових оголошень»\n\n<i>«body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; } .container { max-width: 800px; margin: 0 auto; padding: 20px; } h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; } .subtitle { color: #7f8c8d; font-size: 0.9em; margin-bottom: 30px; } .card { border:...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80383"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80383"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80383"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80383"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80383"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80383"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
