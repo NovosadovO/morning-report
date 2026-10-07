@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T11:25:55.174174",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T11:25:58.316738",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -5.5% за 24г</b>\n\nЗараз: 0.4668 $\n24г тому: 0.4938 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -399,6 +393,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий маршрут вихідного дня — місце в радіусі 1-2 год від Кошице.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T11:31:45.458484",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Linas from Linas's Newsletter</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Did AmEx and Perplexity just launch an AI CFO for small businesses? 🤖📊»\n\n<i>«View this post on the web at https://linas.substack.com/p/fintechpulse1135\r\n\r\nHey Everyone,\r\nGood morning &amp; happy Wednesday! Today, we're diving into AmEx &amp; Perplexity's new AI CFO for small businesses to see what it tells us about who will own the AI CFO for SMEs (what Perplexity gets from AmEx's s...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80382"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80382"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80382"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80382"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80382"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80382"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
