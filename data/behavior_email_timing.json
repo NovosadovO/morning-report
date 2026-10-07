@@ -1,9 +1,4 @@
 {
-  "79923": {
-    "sender": "media@mail.saily.com",
-    "sender_raw": "\"Saily\" <media@mail.saily.com>",
-    "seen_ts": "2026-09-29T12:06:50.396229+00:00"
-  },
   "79925": {
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "CryptoBeholder.com через LinkedIn<newsletters-noreply@linkedin.com>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply@email.apple.com",
     "sender_raw": "iCloud <noreply@email.apple.com>",
     "seen_ts": "2026-10-07T06:07:57.788476+00:00"
+  },
+  "80374": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-10-07T06:14:05.809864+00:00"
   }
 }
