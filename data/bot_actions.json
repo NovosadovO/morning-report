@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "kind": "notify",
-      "what": "Kraken пропонує можливість подати заявку на участь у IPO Our",
-      "detail": "Лист від 'Kraken' з темою 'Oura IPO 💍 Get xStocks access before it lists'.",
-      "module": "selfact",
-      "ts": "2026-09-25T12:14:25"
-    },
-    {
       "kind": "ask",
       "what": "Чи бажаєш, щоб я перевірив деталі вакансії 'Manager Digital",
       "detail": "Свіжі листи: Олег отримав сповіщення про вакансію Manager Digital Operations Support в Caterpillar Inc. у Кошице, що може бути для нього цікавим.",
@@ -2799,6 +2792,13 @@
       "detail": "повна аналітика здоров'я",
       "module": "selfact",
       "ts": "2026-10-07T20:01:01"
+    },
+    {
+      "kind": "reminder",
+      "what": "нагадування надіслати дані",
+      "detail": "148 год мовчання",
+      "module": "healthai",
+      "ts": "2026-10-07T20:45:40"
     }
   ]
 }
