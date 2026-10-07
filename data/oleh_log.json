@@ -2,12 +2,6 @@
   "items": [
     {
       "t": "btn",
-      "data": "cfm_y_7529e7c873",
-      "label": "✅ Так, не нагадуй",
-      "ts": "2026-09-16T07:09:33"
-    },
-    {
-      "t": "btn",
       "data": "cal_skip_event_soon_1789531303",
       "label": "❌ Не треба",
       "ts": "2026-09-16T07:09:39"
@@ -7199,6 +7193,12 @@
       "data": "evdone_no_done_k2nbhhlp27c5ulf2oupjtahn70_2026-10-07",
       "label": "❌ Не виконано",
       "ts": "2026-10-07T23:29:11"
+    },
+    {
+      "t": "btn",
+      "data": "evdone_no_done_mo91v63pv67rqshqjvbrdbqfms_2026-10-07",
+      "label": "❌ Не виконано",
+      "ts": "2026-10-07T23:29:12"
     }
   ]
 }
