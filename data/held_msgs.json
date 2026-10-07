@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T13:31:08.787712",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>PFI Monthly - September Edition</b>\n👤 Prague Finance Institute через LinkedIn&lt;newsletter",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80386"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80386"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80386"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80386"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80386"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80386"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T13:31:10.239391",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🧮 OpenAI just changed math forever</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -365,6 +326,12 @@
       "ts": "2026-10-07T13:34:26.471638",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ETH -5.1% за 24г</b>\n\nЗараз: 2577.26 $\n24г тому: 2715.91 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T13:34:27.662358",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ETH -5.1% за 24г\n\nЗараз: 2577.26 $\n24г тому: 2715.91 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
