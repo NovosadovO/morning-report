@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T10:00:54.742319",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T10:00:55.745873",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
@@ -399,6 +393,45 @@
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T10:07:26.074509",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>H&amp;M</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Výpredaj: až -50%»\n\n<i>«Open the email in browser on following link https://t19.email.hm.com/r/?id=t2e2deadb-3e7a-44ef-a2be-d1c3efdf066e,548f2ca6,f8639afe&amp;did=1418669222&amp;rid=3040093838&amp;erid=MzA0MDA5MzgzOA%3D%3D&amp;p1=%40ep9SIJo4izPRf%2F4VWliaezNh4eId3%2BCY398u22VwhYySKFsSohLGGFdDgGl%2BpkjsrEd0dosSLm8rttsHo5eGNg2jH6AWiGm0wuupg...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80378"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80378"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80378"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80378"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80378"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80378"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
