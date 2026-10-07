@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T12:30:47.758717",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T12:30:49.128957",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>PFI Monthly - September Edition</b>\n👤 Prague Finance Institute через LinkedIn&lt;newsletter",
@@ -398,6 +392,12 @@
       "ts": "2026-10-07T12:35:05.233693",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -6.7% за 24г</b>\n\nЗараз: 0.4664 $\n24г тому: 0.5000 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T12:35:06.190971",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -6.7% за 24г\n\nЗараз: 0.4664 $\n24г тому: 0.5000 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
