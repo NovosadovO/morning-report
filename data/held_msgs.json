@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T15:30:51.333355",
-      "kind": "offer",
-      "text": "🔐 ✉️\n📌 <b>MONETA Money Bank наймає: Application &amp; System Specialist</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80394"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80394"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80394"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80394"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80394"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80394"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T15:30:52.868637",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Web withdrawal protection</b>\n👤 OKX &lt;updates@okx.com&gt;",
@@ -266,6 +227,12 @@
       "ts": "2026-10-07T15:33:58.881450",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T15:35:03.420029",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
