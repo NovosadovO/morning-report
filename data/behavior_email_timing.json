@@ -1,9 +1,4 @@
 {
-  "79929": {
-    "sender": "events@blockworks.com",
-    "sender_raw": "Blockworks <events@blockworks.com>",
-    "seen_ts": "2026-09-29T13:34:25.280945+00:00"
-  },
   "79930": {
     "sender": "notifications@github.com",
     "sender_raw": "\"NovosadovO\" <notifications@github.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletter@email.hm.com",
     "sender_raw": "\"H&M\" <newsletter@email.hm.com>",
     "seen_ts": "2026-10-07T08:07:24.947975+00:00"
+  },
+  "80379": {
+    "sender": "noreply@discord.com",
+    "sender_raw": "Discord <noreply@discord.com>",
+    "seen_ts": "2026-10-07T08:11:36.579049+00:00"
   }
 }
