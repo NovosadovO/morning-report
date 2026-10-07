@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T15:30:49.766407",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📉 Bitcoin breaks down as S&amp;P hits new highs</b>\n👤 The Daily Bone &lt;newsletter@mail.dailybones.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80395"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80395"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80395"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80395"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80395"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80395"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T15:30:51.333355",
       "kind": "offer",
       "text": "🔐 ✉️\n📌 <b>MONETA Money Bank наймає: Application &amp; System Specialist</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
@@ -299,6 +260,12 @@
       "ts": "2026-10-07T15:33:57.857834",
       "kind": "day_mode",
       "text": "⚡ <b>ЯК ТИ СЬОГОДНІ?</b>\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T15:33:58.881450",
+      "kind": "day_mode",
+      "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
       "keyboard": null
     }
   ]
