@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T13:55:07.777439",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ ETH -5.2% за 24г\n\nЗараз: 2574.18 $\n24г тому: 2715.14 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T13:56:06.724992",
       "kind": "offer",
       "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Oleg Novosadov</b>\n📋 Тема: «🏠 Нові квартири у Кошіці — 2 нових оголошення»\n\n<i>«body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; } .card { border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 20px; display: flex; } .card img { margin-right: 20px; border-radius: 4px; object-fit: cover; } .card-content { flex: 1; } .price { font-size: 1.2...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
@@ -181,6 +175,12 @@
       "ts": "2026-10-07T14:00:57.034560",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ETH -5.0% за 24г</b>\n\nЗараз: 2576.93 $\n24г тому: 2713.84 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T14:00:57.885631",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ETH -5.0% за 24г\n\nЗараз: 2576.93 $\n24г тому: 2713.84 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
