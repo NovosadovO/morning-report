@@ -1512,16 +1512,17 @@
   },
   "2026-10-07": {
     "date": "2026-10-07",
-    "steps": 7086,
+    "steps": 8061,
     "sleep_quality": 58,
-    "hr_avg": 58,
-    "calories": 302,
-    "hrv": 42,
+    "hr_avg": 75,
+    "calories": 341,
+    "hrv": 47,
     "height_cm": 175,
     "spo2_max": 99,
     "spo2_min": 96,
     "spo2": 96,
     "source": "qwatch",
-    "saved_at": "2026-10-07 07:01"
+    "saved_at": "2026-10-07 16:51",
+    "age": 37
   }
 }
