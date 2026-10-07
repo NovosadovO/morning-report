@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T13:26:08.887155",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -8.0% за 24г</b>\n\nЗараз: 0.4629 $\n24г тому: 0.5033 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T13:26:09.839093",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -8.0% за 24г\n\nЗараз: 0.4629 $\n24г тому: 0.5033 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T13:31:07.265688",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Polymarket Just Rebuilt Its Entire Protocol From the Ground </b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80387"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80387"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80387"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80387"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80387"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80387"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
