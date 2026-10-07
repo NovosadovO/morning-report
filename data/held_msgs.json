@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T12:02:38.429005",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T12:02:39.378718",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -182,6 +176,45 @@
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -6.2% за 24г\n\nЗараз: 0.4664 $\n24г тому: 0.4973 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T12:09:08.283421",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Generative AI</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «🧮 OpenAI just changed math forever»\n\n<i>«----------\r\n######           [Subscribe](https://academynews.genai.works/)   -    [Collaborate with us](https://utm.genai.works/r/cq9vsh4)\r\n\r\n\r\n--------------------\r\nView image: (https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/8776fa6...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80385"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80385"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80385"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80385"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80385"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80385"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
