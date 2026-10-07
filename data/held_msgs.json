@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T14:13:08.414521",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ AVAX -5.7% за 24г\n\nЗараз: 11.00 $\n24г тому: 11.67 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T14:13:11.036684",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ETH -5.1% за 24г</b>\n\nЗараз: 2576.61 $\n24г тому: 2714.40 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -376,6 +370,43 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80387"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-07T14:16:01.074742",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (3 важливих листів)\n\n👤 OKX\n📋 Web withdrawal protection\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 2 нових оголошення\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 Temu\n📋 7. okt 2026\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: OKX",
+              "callback_data": "email_reply_80393"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Oleg Novosadov",
+              "callback_data": "email_reply_80392"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: Temu",
+              "callback_data": "email_reply_80391"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_80393"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80393"
             }
           ]
         ]
