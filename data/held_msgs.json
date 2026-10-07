@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T09:41:49.140815",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T09:41:49.953775",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: коротка книга/подкаст про інвестиції чи фінансову незалежність.",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80331"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-07T09:47:14.781919",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Підтвердьте свій обліковий запис</b>\n👤 Garmin &lt;alerts@account.garmin.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80324"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80324"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80324"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80324"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80324"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80324"
             }
           ]
         ]
