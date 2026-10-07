@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T15:33:43.497373",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T15:33:45.251602",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
@@ -148,6 +142,12 @@
       "ts": "2026-10-07T15:37:48.409608",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ETH -5.7% за 24г</b>\n\nЗараз: 2561.50 $\n24г тому: 2716.11 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T15:37:49.450338",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ETH -5.7% за 24г\n\nЗараз: 2561.50 $\n24г тому: 2716.11 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
