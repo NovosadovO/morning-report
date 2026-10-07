@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T12:41:16.411072",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ ETH -5.0% за 24г\n\nЗараз: 2578.09 $\n24г тому: 2713.87 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T12:42:24.061180",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
@@ -244,6 +238,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80383"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-07T12:45:58.281086",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Did AmEx and Perplexity just launch an AI CFO for small busi</b>\n👤 Linas from Linas's Newsletter &lt;linas@substack.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80382"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80382"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80382"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80382"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80382"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80382"
             }
           ]
         ]
