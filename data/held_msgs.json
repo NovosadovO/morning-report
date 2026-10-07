@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T15:30:43.035732",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T15:30:44.584756",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - October 7</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
@@ -398,6 +392,12 @@
       "ts": "2026-10-07T15:33:49.176302",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -7.2% за 24г</b>\n\nЗараз: 0.4633 $\n24г тому: 0.4995 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T15:33:50.150544",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -7.2% за 24г\n\nЗараз: 0.4633 $\n24г тому: 0.4995 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
