@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T11:23:31.714809",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -5.5% за 24г</b>\n\nЗараз: 0.4668 $\n24г тому: 0.4941 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T11:23:32.543271",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -5.5% за 24г\n\nЗараз: 0.4668 $\n24г тому: 0.4941 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -277,6 +271,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80377"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-07T11:30:41.117090",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Strategic Sourcer в GymBeam</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80374"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80374"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80374"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80374"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80374"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80374"
             }
           ]
         ]
