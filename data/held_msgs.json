@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T13:01:00.330591",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🧮 OpenAI just changed math forever</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80385"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80385"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80385"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80385"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80385"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80385"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T13:01:01.746866",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошень</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
@@ -399,6 +360,12 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-07T13:07:12.676934",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
     }
   ]
 }
