@@ -1,9 +1,4 @@
 {
-  "79927": {
-    "sender": "newsletter@pelikan.sk",
-    "sender_raw": "Roland z Pelikána <newsletter@pelikan.sk>",
-    "seen_ts": "2026-09-29T12:43:31.919795+00:00"
-  },
   "79928": {
     "sender": "newsletter@ticketportal.sk",
     "sender_raw": "\"Ticketportal.sk\" <newsletter@ticketportal.sk>",
@@ -1498,5 +1493,10 @@
     "sender": "info@beautynews.douglas.sk",
     "sender_raw": "\"Parfuméria Douglas\" <info@beautynews.douglas.sk>",
     "seen_ts": "2026-10-07T07:22:20.714401+00:00"
+  },
+  "80377": {
+    "sender": "message@message.reserved.com",
+    "sender_raw": "Reserved <message@message.reserved.com>",
+    "seen_ts": "2026-10-07T07:49:05.413282+00:00"
   }
 }
