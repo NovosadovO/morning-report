@@ -1,9 +1,4 @@
 {
-  "79931": {
-    "sender": "noreply@email.apple.com",
-    "sender_raw": "iCloud <noreply@email.apple.com>",
-    "seen_ts": "2026-09-29T13:44:40.535055+00:00"
-  },
   "79932": {
     "sender": "newsletter@mail.dailybones.com",
     "sender_raw": "The Daily Bone <newsletter@mail.dailybones.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Startitup через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-07T08:42:06.991769+00:00"
+  },
+  "80382": {
+    "sender": "linas@substack.com",
+    "sender_raw": "Linas from Linas's Newsletter <linas@substack.com>",
+    "seen_ts": "2026-10-07T09:31:44.472013+00:00"
   }
 }
