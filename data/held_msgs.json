@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T14:05:23.208031",
-      "kind": "offer",
-      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>OKX</b> 🗑<i>(схоже на розсилку)</i>\n📋 Тема: «Web withdrawal protection»\n\n<i>«:root { color-scheme: light only; supported-color-schemes: light only; } body { margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; } p { margin: 0 !important; padding: 0 !important; } a { color: inherit !important; } p a, li a, u { text-decoration: underline !importan...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ Відповідь",
-              "callback_data": "email_reply_80393"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80393"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80393"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80393"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80393"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80393"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T14:06:11.893966",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
@@ -181,6 +142,12 @@
       "ts": "2026-10-07T14:10:14.634077",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T14:10:18.977922",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>ONDO -7.4% за 24г</b>\n\nЗараз: 0.4627 $\n24г тому: 0.4997 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
