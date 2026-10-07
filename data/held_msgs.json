@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T11:45:41.219919",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Ти пропустив повідомлення в VenomBridge</b>\n👤 Discord &lt;noreply@discord.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80379"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80379"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80379"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80379"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80379"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80379"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T11:45:42.627756",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Rozšírená ponuka a ešte nižšie ceny.</b>\n👤 Reserved &lt;message@message.reserved.com&gt;",
@@ -299,6 +260,12 @@
       "ts": "2026-10-07T11:51:12.829893",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -6.4% за 24г</b>\n\nЗараз: 0.4648 $\n24г тому: 0.4967 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T11:51:13.793589",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -6.4% за 24г\n\nЗараз: 0.4648 $\n24г тому: 0.4967 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
