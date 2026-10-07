@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T15:30:45.909891",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80397"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80397"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80397"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80397"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80397"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80397"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T15:30:48.303384",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>📰 Daily Crypto Digest — October 7</b>\n👤 Oleh Bezuhlyi через LinkedIn&lt;newsletters-noreply@l",
@@ -365,6 +326,12 @@
       "ts": "2026-10-07T15:33:52.943968",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ETH -5.5% за 24г</b>\n\nЗараз: 2564.87 $\n24г тому: 2713.35 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T15:33:53.806243",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ETH -5.5% за 24г\n\nЗараз: 2564.87 $\n24г тому: 2713.35 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
