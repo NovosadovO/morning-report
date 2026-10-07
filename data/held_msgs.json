@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T13:16:13.866426",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>Новая идея от trade_soul. Посмотрите!</b>\n👤 TradingView &lt;noreply@tradingview.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80380"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80380"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80380"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80380"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80380"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80380"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T13:16:16.410722",
       "kind": "offer",
       "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (1 важливих листів)\n\n👤 Oleg Novosadov\n📋 🏠 Нові квартири у Кошіці — 2 нових оголошень\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
@@ -200,6 +161,12 @@
       "ts": "2026-10-07T13:23:31.703023",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: щось для сну/відновлення після нічних змін — новий рутин перед сном.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T13:23:35.222987",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>ONDO -7.9% за 24г</b>\n\nЗараз: 0.4629 $\n24г тому: 0.5025 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
