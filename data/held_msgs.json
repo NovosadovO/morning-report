@@ -38,6 +38,45 @@
           ]
         ]
       }
+    },
+    {
+      "ts": "2026-10-07T08:14:06.900966",
+      "kind": "offer",
+      "text": "Привіт Олеже! 👋 Тобі щойно надійшов лист від <b>Сповіщення про вакансії LinkedIn</b>\n📋 Тема: «Strategic Sourcer в GymBeam»\n\n<i>«Сповіщення про вакансії в Kosice          \r\nНові вакансії відповідають вашим налаштуванням.\r\n            \r\nStrategic Sourcer\r\nGymBeam\r\nKošice\r\nПереглянути вакансію: https://www.linkedin.com/comm/jobs/view/4475583275/?trackingId=3QG1MNih6ppg8Q3KjRELQg%3D%3D&amp;refId=UPn09KKU7FCNpNP3mYQIZw%3D%3D&amp;lipi=urn...»</i>\n\nДавай я зроблю аналіз і дам тобі кілька варіантів відповіді — тисни кнопку нижче 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповідь",
+              "callback_data": "email_reply_80374"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80374"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80374"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80374"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80374"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80374"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
