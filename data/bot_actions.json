@@ -2,13 +2,6 @@
   "actions": [
     {
       "kind": "notify",
-      "what": "Зверніть увагу на лист від Socios.com щодо створення Recover",
-      "detail": "Лист від 'Socios.com' з темою 'Have you generated your Recovery Kit?'",
-      "module": "selfact",
-      "ts": "2026-09-25T12:14:21"
-    },
-    {
-      "kind": "notify",
       "what": "Kraken пропонує можливість подати заявку на участь у IPO Our",
       "detail": "Лист від 'Kraken' з темою 'Oura IPO 💍 Get xStocks access before it lists'.",
       "module": "selfact",
@@ -2799,6 +2792,13 @@
       "detail": "😴 Сон за тиждень у середньому 10.1 год — стабільно добре",
       "module": "healthai",
       "ts": "2026-10-07T17:47:24"
+    },
+    {
+      "kind": "hcoach",
+      "what": "full_report",
+      "detail": "повна аналітика здоров'я",
+      "module": "selfact",
+      "ts": "2026-10-07T20:01:01"
     }
   ]
 }
