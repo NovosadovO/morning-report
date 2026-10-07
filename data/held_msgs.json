@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T14:27:17.113705",
-      "kind": "MSG_FORESIGHT_TRYNEW",
-      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T14:27:19.831055",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -6.8% за 24г</b>\n\nЗараз: 0.4627 $\n24г тому: 0.4965 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -409,6 +403,37 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80391"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-07T14:31:16.185574",
+      "kind": "offer",
+      "text": "📧 <b>AI АНАЛІЗ ПОШТИ</b>  (2 важливих листів)\n\n👤 ehuman\n📋 [WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá\n📝 (AI-аналіз тимчасово недоступний)\n\n👤 OKX\n📋 Web withdrawal protection\n📝 (AI-аналіз тимчасово недоступний)\n\n👉 Тисни, щоб я підготував відповідь 👇",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ Відповісти: ehuman",
+              "callback_data": "email_reply_80397"
+            }
+          ],
+          [
+            {
+              "text": "🤖✍️ Відповісти: OKX",
+              "callback_data": "email_reply_80393"
+            }
+          ],
+          [
+            {
+              "text": "📖 Описати перший",
+              "callback_data": "email_describe_80397"
+            },
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80397"
             }
           ]
         ]
