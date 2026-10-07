@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T13:16:02.923769",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T13:16:04.474121",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Polymarket Just Rebuilt Its Entire Protocol From the Ground </b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
@@ -398,6 +392,12 @@
       "ts": "2026-10-07T13:21:03.223041",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -7.1% за 24г</b>\n\nЗараз: 0.4659 $\n24г тому: 0.5014 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T13:21:04.412588",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -7.1% за 24г\n\nЗараз: 0.4659 $\n24г тому: 0.5014 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
