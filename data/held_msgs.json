@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T15:01:27.465763",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - October 7</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80398"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80398"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80398"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80398"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80398"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80398"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T15:01:28.876414",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
@@ -464,6 +425,12 @@
       "ts": "2026-10-07T15:03:56.460219",
       "kind": "day_mode",
       "text": "⚡ ЯК ТИ СЬОГОДНІ?\n━━━━━━━━━━━━━━━━━━━━\n🌙 Сьогодні нічна зміна (17:30–06:00)\n\nСкажи одним дотиком — і я перебудую план дня під твій реальний стан, а не під ідеальний.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T15:04:52.108518",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: новий трек чи плейлист під пробіжку.",
       "keyboard": null
     }
   ]
