@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T14:15:49.793165",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80392"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80392"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80392"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80392"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80392"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80392"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T14:15:50.025819",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>AVAX -5.5% за 24г</b>\n\nЗараз: 11.02 $\n24г тому: 11.65 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -377,6 +338,12 @@
       "ts": "2026-10-07T14:20:58.792891",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T14:20:59.782883",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
       "keyboard": null
     }
   ]
