@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T09:25:39.025835",
-      "kind": "calendar",
-      "text": "📅 <b>Завтра у тебе</b>\n━━━━━━━━━━━━━━━━━━━━\n📌 <b>Конференція NBS: Slovenský finančný trh a inovácie 2026</b>\n📅 08.10 (Thu) — завтра\n🕐 09:00–12:00\n📍 Онлайн\n\n<i>Сьогодні ще є час підготуватись — документи, дорога, час виїзду.</i>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T09:25:39.887178",
       "kind": "calendar",
       "text": "📅 Завтра у тебе\n━━━━━━━━━━━━━━━━━━━━\n📌 Конференція NBS: Slovenský finančný trh a inovácie 2026\n📅 08.10 (Thu) — завтра\n🕐 09:00–12:00\n📍 Онлайн\n\nСьогодні ще є час підготуватись — документи, дорога, час виїзду.",
@@ -149,6 +143,45 @@
       "kind": "chunk",
       "text": "📬 <b>ПОШТА</b>  🔴 1 непрочитаних",
       "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T09:31:30.734105",
+      "kind": "offer",
+      "text": "🔐 ✉️\n📌 <b>Strategic Sourcer в GymBeam</b>\n👤 Сповіщення про вакансії LinkedIn&lt;jobalerts-noreply",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80374"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80374"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80374"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80374"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80374"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80374"
+            }
+          ]
+        ]
+      }
     }
   ]
 }
