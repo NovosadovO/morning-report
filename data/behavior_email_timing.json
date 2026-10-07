@@ -1,9 +1,4 @@
 {
-  "79954": {
-    "sender": "newsletter@blockworks.com",
-    "sender_raw": "The Breakdown <newsletter@blockworks.com>",
-    "seen_ts": "2026-09-29T22:01:25.381869+00:00"
-  },
   "79956": {
     "sender": "no-reply@aave.com",
     "sender_raw": "Aave App <no-reply@aave.com>",
@@ -1498,5 +1493,10 @@
     "sender": "noreply@email-service.bybit.com",
     "sender_raw": "Bybit <noreply@email-service.bybit.com>",
     "seen_ts": "2026-10-07T15:05:57.190825+00:00"
+  },
+  "80415": {
+    "sender": "newsletters@e.economist.com",
+    "sender_raw": "\"The Economist Today\" <newsletters@e.economist.com>",
+    "seen_ts": "2026-10-07T16:20:14.244163+00:00"
   }
 }
