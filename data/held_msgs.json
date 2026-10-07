@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T14:26:05.754583",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ONDO -6.8% за 24г</b>\n\nЗараз: 0.4627 $\n24г тому: 0.4963 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
-      "ts": "2026-10-07T14:26:06.694225",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ ONDO -6.8% за 24г\n\nЗараз: 0.4627 $\n24г тому: 0.4963 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T14:27:16.360001",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
@@ -346,6 +334,51 @@
       "ts": "2026-10-07T14:31:08.110027",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -6.8% за 24г</b>\n\nЗараз: 0.4627 $\n24г тому: 0.4963 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T14:31:09.496065",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>🏠 Нові квартири у Кошіці — 2 нових оголошення</b>\n👤 Oleg Novosadov &lt;novosadovoleg@gmail.com&gt;",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80392"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80392"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80392"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80392"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80392"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80392"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-07T14:31:10.127958",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -6.8% за 24г\n\nЗараз: 0.4627 $\n24г тому: 0.4963 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
