@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T12:50:29.518533",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>ETH -5.2% за 24г</b>\n\nЗараз: 2576.38 $\n24г тому: 2716.13 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T12:50:30.257953",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ETH -5.2% за 24г\n\nЗараз: 2576.38 $\n24г тому: 2716.13 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -148,6 +142,12 @@
       "ts": "2026-10-07T12:56:47.981076",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ <b>ONDO -6.8% за 24г</b>\n\nЗараз: 0.4656 $\n24г тому: 0.4998 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T12:56:48.663931",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ ONDO -6.8% за 24г\n\nЗараз: 0.4656 $\n24г тому: 0.4998 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
