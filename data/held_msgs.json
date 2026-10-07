@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T10:46:14.110957",
-      "kind": "chunk",
-      "text": "📬 <b>ПОШТА</b>",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T10:46:15.415370",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>Novinárčina nie je len práca. Je to zodpovednosť a miesto, k</b>\n👤 Startitup через LinkedIn&lt;newsletters-noreply@linke",
@@ -398,6 +392,12 @@
       "ts": "2026-10-07T10:55:13.116309",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T10:55:14.200041",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: нова страва на здорове харчування (ціль 75 кг) на вихідні.",
       "keyboard": null
     }
   ]
