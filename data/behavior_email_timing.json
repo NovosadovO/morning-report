@@ -1,9 +1,4 @@
 {
-  "79908": {
-    "sender": "info@emails.tesco.sk",
-    "sender_raw": "\"Tesco Clubcard\" <info@emails.tesco.sk>",
-    "seen_ts": "2026-09-29T08:09:29.971735+00:00"
-  },
   "79909": {
     "sender": "info@message.cropp.com",
     "sender_raw": "\"Cropp\" <info@message.cropp.com>",
@@ -1498,5 +1493,10 @@
     "sender": "newsletters-noreply@linkedin.com",
     "sender_raw": "Forbes через LinkedIn<newsletters-noreply@linkedin.com>",
     "seen_ts": "2026-10-06T21:26:31.405847+00:00"
+  },
+  "80364": {
+    "sender": "jobalerts-noreply@linkedin.com",
+    "sender_raw": "Сповіщення про вакансії LinkedIn<jobalerts-noreply@linkedin.com>",
+    "seen_ts": "2026-10-07T00:14:02.660650+00:00"
   }
 }
