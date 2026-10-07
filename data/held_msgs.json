@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T14:13:07.588122",
-      "kind": "MSG_FORESIGHT_CRYPTO",
-      "text": "🔴▼ <b>AVAX -5.7% за 24г</b>\n\nЗараз: 11.00 $\n24г тому: 11.67 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
-      "keyboard": null
-    },
-    {
       "ts": "2026-10-07T14:13:08.414521",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ AVAX -5.7% за 24г\n\nЗараз: 11.00 $\n24г тому: 11.67 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
@@ -343,6 +337,45 @@
             {
               "text": "🗑 Видалити",
               "callback_data": "email_delete_80389"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "ts": "2026-10-07T14:15:58.775809",
+      "kind": "offer",
+      "text": "📩 ✉️\n📌 <b>Polymarket Just Rebuilt Its Entire Protocol From the Ground </b>\n👤 \"CMC Spotlight\" &lt;spotlight@newsletters.coinmarketc",
+      "keyboard": {
+        "inline_keyboard": [
+          [
+            {
+              "text": "🤖✍️ AI-Draft відповіді",
+              "callback_data": "email_reply_80387"
+            },
+            {
+              "text": "📖 Описати лист",
+              "callback_data": "email_describe_80387"
+            }
+          ],
+          [
+            {
+              "text": "⭐ Важливий",
+              "callback_data": "email_star_80387"
+            },
+            {
+              "text": "📅 В календар",
+              "callback_data": "email_cal_80387"
+            }
+          ],
+          [
+            {
+              "text": "📥 Залишити",
+              "callback_data": "email_keep_80387"
+            },
+            {
+              "text": "🗑 Видалити",
+              "callback_data": "email_delete_80387"
             }
           ]
         ]
