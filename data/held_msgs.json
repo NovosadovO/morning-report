@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T12:30:49.128957",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>PFI Monthly - September Edition</b>\n👤 Prague Finance Institute через LinkedIn&lt;newsletter",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80386"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80386"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80386"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80386"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80386"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80386"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T12:30:50.646056",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>🧮 OpenAI just changed math forever</b>\n👤 Generative AI &lt;newsletter@genai.works&gt;",
@@ -398,6 +359,12 @@
       "ts": "2026-10-07T12:35:06.190971",
       "kind": "MSG_FORESIGHT_CRYPTO",
       "text": "🔴▼ ONDO -6.7% за 24г\n\nЗараз: 0.4664 $\n24г тому: 0.5000 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T12:36:12.635545",
+      "kind": "MSG_FORESIGHT_TRYNEW",
+      "text": "✨ <b>СПРОБУЙ НОВЕ</b>\n\nІдея на найближчі дні: спробувати новий підхід до інвест-аналізу (напр. подивитись on-chain дані).",
       "keyboard": null
     }
   ]
