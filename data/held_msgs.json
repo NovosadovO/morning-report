@@ -1,45 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-10-07T14:46:15.762125",
-      "kind": "offer",
-      "text": "📩 ✉️\n📌 <b>📰 AI-curated Daily Crypto Digest - October 7</b>\n👤 CryptoBeholder.com через LinkedIn&lt;newsletters-nore",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {
-              "text": "🤖✍️ AI-Draft відповіді",
-              "callback_data": "email_reply_80398"
-            },
-            {
-              "text": "📖 Описати лист",
-              "callback_data": "email_describe_80398"
-            }
-          ],
-          [
-            {
-              "text": "⭐ Важливий",
-              "callback_data": "email_star_80398"
-            },
-            {
-              "text": "📅 В календар",
-              "callback_data": "email_cal_80398"
-            }
-          ],
-          [
-            {
-              "text": "📥 Залишити",
-              "callback_data": "email_keep_80398"
-            },
-            {
-              "text": "🗑 Видалити",
-              "callback_data": "email_delete_80398"
-            }
-          ]
-        ]
-      }
-    },
-    {
       "ts": "2026-10-07T14:46:17.077690",
       "kind": "offer",
       "text": "📩 ✉️\n📌 <b>[WARNING: UNSCANNABLE EXTRACTION FAILED]Minebea, Výplatná pá</b>\n👤 ehuman@minebeamitsumi.eu",
@@ -398,6 +359,12 @@
       "ts": "2026-10-07T14:49:38.306344",
       "kind": "MSG_FORESIGHT_TRYNEW",
       "text": "✨ СПРОБУЙ НОВЕ\n\nІдея на найближчі дні: зустріч чи дзвінок з людиною, з якою давно не спілкувався.",
+      "keyboard": null
+    },
+    {
+      "ts": "2026-10-07T14:49:41.897442",
+      "kind": "MSG_FORESIGHT_CRYPTO",
+      "text": "🔴▼ <b>ONDO -6.5% за 24г</b>\n\nЗараз: 0.4640 $\n24г тому: 0.4964 $\n\n📊 Джерело: DefiLlama (coins.llama.fi)",
       "keyboard": null
     }
   ]
